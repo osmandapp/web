@@ -58,8 +58,9 @@ input[type=range] { width: 100%; }
 .summary th { text-align: left; font-weight: 500; color: var(--muted); border-bottom: 1px solid var(--rule); padding: 2px 6px 2px 0; }
 .summary td { padding: 2px 6px 2px 0; border-bottom: 1px solid #eef1ee; vertical-align: top; }
 .summary td.num { text-align: right; font-family: "IBM Plex Mono", ui-monospace, monospace; white-space: nowrap; }
-.review .list { display: grid; gap: 2px; max-height: 260px; overflow-y: auto; }
+.review .list { display: grid; gap: 4px; max-height: 260px; overflow-y: auto; overflow-x: hidden; }
 .review .item { display: grid; grid-template-columns: 1fr auto auto; gap: 1px 8px; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; font-size: .82rem; background: var(--surface); }
+.review .item > span { min-width: 0; overflow-wrap: anywhere; }
 .review .item::after { content: "›"; grid-row: 1; grid-column: 3; align-self: center; color: var(--muted); font-size: 1.1rem; line-height: 1; }
 .review .item:hover, .review .item.hover { border-color: var(--accent); background: #f7f8f6; }
 .review .item:hover::after, .review .item.hover::after, .review .item.sel::after { color: var(--accent); }
@@ -69,16 +70,22 @@ input[type=range] { width: 100%; }
 .review .badge { font: 500 .7rem "IBM Plex Mono", ui-monospace, monospace; padding: 0 5px; border-radius: 3px; align-self: start; }
 .review .badge.ok { background: #dff1e4; color: #1e6b3a; }
 .review .badge.bad { background: #fde3d3; color: #8a3a00; }
-.review .card { display: grid; gap: 6px; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 4px; box-shadow: inset 3px 0 0 var(--accent); background: #fbf1ea; }
-.review .card h3 { font-size: .92rem; margin: 0; overflow-wrap: anywhere; }
+.review .card { display: grid; gap: 6px; padding: 12px 14px; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.review .card h3 { font-size: 1rem; margin: 0; overflow-wrap: anywhere; }
 .review .card .meta { font: 400 .74rem/1.5 "IBM Plex Mono", ui-monospace, monospace; color: var(--muted); overflow-wrap: anywhere; }
 .review .card .desc { font-size: .82rem; color: var(--ink); overflow-wrap: anywhere; }
 .review .card .actions { display: flex; gap: 8px; align-items: center; margin-top: 2px; }
 .review .card .actions button { display: inline-flex; gap: 6px; align-items: center; font-weight: 500; }
 .review .verdicts { display: flex; flex-wrap: wrap; gap: 6px; }
 .review .verdicts button[aria-pressed="true"] { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.review .primary { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 500; }
 .review button:disabled, .review textarea:disabled { opacity: .45; cursor: not-allowed; }
-.review textarea { font: inherit; width: 100%; min-height: 48px; border: 1px solid var(--rule); border-radius: 4px; padding: 4px 6px; }
+.review select, .review textarea { font: inherit; width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; background: var(--surface); color: var(--ink); }
+.review textarea { min-height: 56px; resize: vertical; }
+.review .form { display: grid; gap: 6px; padding-top: 10px; margin-top: 4px; border-top: 1px solid var(--rule); }
+.review .form .label { margin: 6px 0 0; }
+.review .form .label:first-child { margin-top: 0; }
+.review .form .row { margin-top: 4px; }
 .cellpop .tracksHere { margin-top: 6px; }
 .mapToggle { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; font: 500 .78rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; cursor: pointer; }
 .mapButtons { display: flex; gap: 8px; align-items: stretch; }
@@ -154,14 +161,18 @@ input[type=range] { width: 100%; }
   <div class="body review">
     <div class="hint" id="revHint">Zoom in to 16 or closer and click a track, or click a cell and press <b>Tracks here</b>. Anyone can look at the tracks and their reviews; sending one needs signing in on <span id="revSignIn">test.osmand.net/map</span>.</div>
     <div class="list" id="revList"></div>
-    <div id="revDetail" hidden>
-      <div class="card">
-        <div id="revInfo"></div>
-        <div class="actions"><button type="button" id="revDownload" title="The original file from OSM, with time and elevation">⤓ Download GPX</button><span id="revDownloadStatus" class="hint"></span></div>
+    <div id="revDetail" class="card" hidden>
+      <div id="revInfo"></div>
+      <div class="actions"><button type="button" id="revDownload" title="The original file from OSM, with time and elevation">⤓ Download GPX</button><span id="revDownloadStatus" class="hint"></span></div>
+      <div class="form">
+        <span class="label">Your verdict</span>
+        <div class="verdicts" id="revVerdicts"><button type="button" data-v="ok">Correct</button><button type="button" data-v="wrong_activity">Wrong activity</button><button type="button" data-v="bad_quality">Bad quality</button><button type="button" data-v="bad_line">Wrong line</button><button type="button" data-v="simulated">Simulated</button><button type="button" data-v="garbage">Not a track</button></div>
+        <label class="label" for="revActivity">Correct activity</label>
+        <select id="revActivity"><option value="">not specified</option></select>
+        <label class="label" for="revComment">Comment</label>
+        <textarea id="revComment" placeholder="Optional"></textarea>
+        <div class="row"><button type="button" id="revSend" class="primary">Send review</button><button type="button" id="revClear">Clear the verdict</button><span id="revStatus" class="hint"></span></div>
       </div>
-      <textarea id="revComment" placeholder="Comment (optional), e.g. the right activity; sent with the button you press" aria-label="Comment"></textarea>
-      <div class="verdicts" id="revVerdicts"><button type="button" data-v="ok">Correct</button><button type="button" data-v="wrong_activity">Wrong activity</button><button type="button" data-v="bad_quality">Bad quality</button><button type="button" data-v="bad_line">Wrong line</button><button type="button" data-v="simulated">Simulated</button><button type="button" data-v="garbage">Not a track</button></div>
-      <div class="row"><button type="button" id="revClear">Clear the verdict</button><span id="revStatus" class="hint"></span></div>
     </div>
     <a id="revExport" target="_blank" rel="noopener">Download reviewed tracks (.csv.gz)</a>
   </div>
@@ -772,6 +783,14 @@ function monthLabel(m) { return `${meta.monthsBase + Math.floor(m / 12)}-${Strin
 
 function buildTree() {
   const tree = $('tree'); tree.innerHTML = '';
+  const sel = $('revActivity');
+  for (const g of meta.groups) {
+    const kids = meta.acts.filter((a) => a.group === g.id && !a.key.includes('~') && a.key !== 'unknown');
+    if (!kids.length) continue;
+    const og = document.createElement('optgroup'); og.label = g.label;
+    for (const a of kids) og.appendChild(new Option(a.label, a.key));
+    sel.appendChild(og);
+  }
   for (const g of meta.groups) {
     const kids = meta.acts.map((a, i) => ({ ...a, i })).filter((a) => a.group === g.id && a.count > 0).sort((a, b) => b.count - a.count);
     if (!kids.length) continue;
@@ -1014,12 +1033,13 @@ async function loadReviews() {
 function reviewSummary(r) {
   if (!r) return '';
   const parts = [];
-  if (r.admin) parts.push(`admin: ${VERDICT_LABEL[r.admin.verdict] || r.admin.verdict}`);
+  const label = (v) => `${VERDICT_LABEL[v.verdict] || v.verdict}${v.activity ? ` → ${v.activity}` : ''}`;
+  if (r.admin) parts.push(`admin: ${label(r.admin)}`);
   if (r.users?.length) {
     const counts = {};
-    for (const u of r.users) counts[u.verdict] = (counts[u.verdict] || 0) + 1;
+    for (const u of r.users) counts[label(u)] = (counts[label(u)] || 0) + 1;
     parts.push(`${r.users.length} user${r.users.length > 1 ? 's' : ''}: ` + Object.entries(counts).sort((a, b) => b[1] - a[1])
-      .map(([v, n]) => `${VERDICT_LABEL[v] || v} ${n}`).join(', '));
+      .map(([v, n]) => `${v} ${n}`).join(', '));
   }
   return parts.join(' · ');
 }
@@ -1102,6 +1122,7 @@ function selectTrack(i, fit = true) {
   const trace = t.user ? `https://www.openstreetmap.org/user/${encodeURIComponent(t.user)}/traces/${t.id}` : null;
   const mine = t.review?.mine;
   reviewVerdict = mine?.verdict || null;
+  $('revActivity').value = mine?.activity || '';
   $('revComment').value = mine?.comment || '';
   const comments = [t.review?.admin, ...(t.review?.users || [])].filter((r) => r?.comment && r !== mine).map((r) => `“${r.comment}”`);
   const facts = [trace ? `<a href="${trace}" target="_blank" rel="noopener">OSM trace ${t.id}</a>` : `id ${t.id}`, `activity: ${esc(t.activity || 'none')}`,
@@ -1154,8 +1175,10 @@ function syncVerdicts() {
     b.setAttribute('aria-pressed', String(b.dataset.v === reviewVerdict));
     b.disabled = !reviewLoggedIn; // everyone sees the tracks and reviews, signed-in people send
   });
-  $('revClear').disabled = !reviewLoggedIn;
+  $('revSend').disabled = !reviewLoggedIn || !reviewVerdict; // nothing to send without a verdict
+  $('revClear').disabled = !reviewLoggedIn || !reviewTracks[reviewSel]?.review?.mine;
   $('revComment').disabled = !reviewLoggedIn;
+  $('revActivity').disabled = !reviewLoggedIn;
 }
 
 async function saveReview(verdict) {
@@ -1164,7 +1187,7 @@ async function saveReview(verdict) {
   $('revStatus').textContent = 'Saving…';
   try {
     const res = await fetch(`${API}/api/pubtracks/review`, { method: 'POST', credentials: 'include', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id: t.id, verdict: verdict || '', comment: verdict ? $('revComment').value : '' }) });
+      body: JSON.stringify({ id: t.id, verdict: verdict || '', activity: verdict ? $('revActivity').value : '', comment: verdict ? $('revComment').value : '' }) });
     if (!res.ok) {
       $('revStatus').textContent = res.status === 401 ? `Not saved: sign in on ${SIGN_IN}.` : `Not saved: HTTP ${res.status}`;
       return;
@@ -1172,6 +1195,7 @@ async function saveReview(verdict) {
     const saved = await res.json();
     t.review = saved.admin || saved.users?.length ? saved : null;
     renderReviewList();
+    syncVerdicts();
     $('revStatus').textContent = verdict ? 'Saved' : 'Verdict cleared';
   } catch (e) {
     $('revStatus').textContent = `Not saved: ${e.message}`;
@@ -1191,9 +1215,10 @@ $('revVerdicts').addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b || b.disabled) return;
   reviewVerdict = b.dataset.v;
+  $('revStatus').textContent = '';
   syncVerdicts();
-  saveReview(reviewVerdict); // a quick action: one press sends it with the comment
 });
+$('revSend').addEventListener('click', () => saveReview(reviewVerdict));
 $('revClear').addEventListener('click', () => { reviewVerdict = null; syncVerdicts(); saveReview(null); });
 
 // ---------- wiring
