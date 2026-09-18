@@ -118,10 +118,9 @@ export default function MvtLayer({ config }) {
             window.seIsTilesLoaded = true;
             console.warn(`${errorLabel}: WebGL is not available`);
             mtx.setTileURL(osmandTileURL);
-            mtx.setRenderingType(null);
             const configureMap = {
                 ...ctx.configureMapState,
-                mapStyle: { tileURL: osmandTileURL, renderingType: null },
+                mapStyle: { tileURL: osmandTileURL },
             };
             updateConfigureMapCache(configureMap);
             ctx.setConfigureMapState(configureMap);

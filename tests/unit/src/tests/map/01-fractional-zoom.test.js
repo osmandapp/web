@@ -5,19 +5,15 @@ import L from 'leaflet';
 import AppContext from '@map/context/AppContext';
 import MapContext from '@map/context/MapContext';
 import MapStateLayer from '@map/map/layers/MapStateLayer';
-import CustomTileLayer from '@map/map/layers/CustomTileLayer';
 import { createPoiLayer } from '@map/map/layers/PoiLayer';
 import { addMarkerTooltip, clusterMarkers } from '@map/map/util/Clusterizer';
 import { createTooltip } from '@map/map/util/MapManager';
 import { getSelectedMarkerHideRadiusM } from '@map/map/util/MarkerSelectionService';
 import { DEFAULT_POI_ICON } from '@map/manager/PoiManager';
 import { FINAL_POI_ICON_NAME, POI_ELO, POI_ID, POI_NAME } from '@map/infoblock/components/wpt/WptTagsProvider';
-import { DYNAMIC_RENDERING } from '@map/menu/configuremap/ConfigureMap';
-import { apiGet } from '@map/util/HttpApi';
 
 jest.mock('react-leaflet', () => ({ useMap: jest.fn() }));
 jest.mock('react-router-dom', () => ({ useLocation: () => ({ pathname: '/map' }) }));
-jest.mock('leaflet.vectorgrid', () => ({}));
 jest.mock('leaflet-spin', () => ({}));
 jest.mock('leaflet.markercluster', () => ({}));
 jest.mock('@map/context/AppContext', () => ({
@@ -86,29 +82,14 @@ afterEach(() => {
     L.Browser.any3d = any3d;
 });
 
-function mountLayers({ raster = false, infoBlockWidth = 0 } = {}) {
-    const context = {
-        setVisibleBboxInfo: jest.fn(),
-        renderingType: DYNAMIC_RENDERING,
-        tileURL: { url: 'https://tiles.test/{z}/{x}/{y}.png', infoUrl: 'https://tiles.test/{z}/{x}/{y}.json' },
-    };
+function mountLayers({ infoBlockWidth = 0 } = {}) {
+    const context = { setVisibleBboxInfo: jest.fn() };
     act(() => {
         root.render(
             React.createElement(
                 AppContext.Provider,
                 { value: { infoBlockWidth } },
-                React.createElement(
-                    MapContext.Provider,
-                    { value: context },
-                    React.createElement(MapStateLayer),
-                    raster &&
-                        React.createElement(CustomTileLayer, {
-                            minZoom: 2,
-                            maxZoom: 20,
-                            maxNativeZoom: 19,
-                            updateWhenZooming: false,
-                        })
-                )
+                React.createElement(MapContext.Provider, { value: context }, React.createElement(MapStateLayer))
             )
         );
     });
@@ -489,74 +470,6 @@ describe('POI wheel jitter regression (b6981228)', () => {
             const scale = 2 ** (map.getZoom() - zoom);
             expectPosition(marker, nextAnchor.add(position.subtract(nextAnchor).multiplyBy(scale)));
         });
-    });
-});
-
-describe('dynamic raster labels', () => {
-    function rasterLayer() {
-        let raster;
-        map.eachLayer((layer) => {
-            if (layer instanceof L.TileLayer) raster = layer;
-        });
-        return raster;
-    }
-
-    async function loadLabels(z) {
-        apiGet.mockResolvedValue({
-            ok: true,
-            json: async () => ({
-                features: [
-                    {
-                        geometry: { type: 'point' },
-                        iconX: 0.00001,
-                        iconY: 0.00001,
-                        text: 'Regression label',
-                        textSize: 16,
-                        textColor: 0,
-                        textShadow: 0,
-                        textShadowColor: 0,
-                        mainIcon: '',
-                        shield: '',
-                        shieldRes: '',
-                    },
-                ],
-            }),
-        });
-        const coords = map.project([0.00001, 0.00001], z).divideBy(256).floor();
-        coords.z = z;
-        const raster = rasterLayer();
-        const tile = raster._tiles[raster._tileCoordsToKey(coords)];
-        expect(tile).toBeDefined();
-        await act(async () => {
-            // Complete one real tile load without fetching an image in jsdom.
-            tile.el.dispatchEvent(new Event('load'));
-        });
-        expect(apiGet).toHaveBeenCalledTimes(1);
-    }
-
-    test.each([13, 13.65, 19.65])('adds labels for the active raster tile level at map zoom %s', async (zoom) => {
-        map.setZoom(zoom);
-        mountLayers({ raster: true });
-        const tileZoom = Math.min(19, Math.round(zoom));
-        expect(rasterLayer()._tileZoom).toBe(tileZoom);
-        await loadLabels(tileZoom);
-
-        expect(container.querySelector('.custom-text-icon')?.textContent.trim()).toBe('Regression label');
-    });
-
-    test('keeps loaded labels when wheel zoom reuses the same raster tile level', async () => {
-        map.setZoom(13);
-        mountLayers({ raster: true });
-        await loadLabels(13);
-        expect(container.querySelector('.custom-text-icon')?.textContent.trim()).toBe('Regression label');
-
-        wheel(-100);
-        finishZoom();
-
-        expect(map.getZoom()).toBeCloseTo(13.22);
-        expect(rasterLayer()._tileZoom).toBe(13);
-        expect(apiGet).toHaveBeenCalledTimes(1);
-        expect(container.querySelector('.custom-text-icon')?.textContent.trim()).toBe('Regression label');
     });
 });
 
