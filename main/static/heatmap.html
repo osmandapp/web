@@ -1335,7 +1335,7 @@ $('fbForm').addEventListener('submit', async (e) => {
   try {
     const res = await fetch(`${API}/api/pubtracks/feedback`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body) });
-    if (!res.ok) throw new Error(res.status === 429 ? 'too many messages from your address today' : `HTTP ${res.status}`);
+    if (!res.ok) throw new Error(res.status < 500 && (await res.text()) || `HTTP ${res.status}`); // 4xx carries the reason, 5xx is an nginx page
     $('fbText').value = '';
     $('fbStatus').textContent = 'Sent, thank you!';
   } catch (err) {
