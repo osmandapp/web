@@ -4,7 +4,6 @@ import MarkerOptions, {
     changeSvgColor,
     getBackground,
     getIconUrlByName,
-    getShaderUrlByName,
     removeShadowFromIconWpt,
     resolvePoiIconKey,
     BACKGROUND_WPT_SHAPE_CIRCLE,
@@ -107,7 +106,6 @@ describe('the file of an icon', () => {
         expect(getIconUrlByName(POI_ICON_TYPE, 'amenity_bank')).toBe('/map/images/poi-icons-svg/mx_amenity_bank.svg');
         expect(getIconUrlByName(POI_ICON_TYPE, 'not_existing')).toBe('/map/images/poi-icons-svg/c_mx_not_existing.svg');
         expect(getIconUrlByName(MAP_ICON_TYPE, 'not_existing')).toBe('/map/images/map-icons-svg/c_mx_not_existing.svg');
-        expect(getShaderUrlByName('not_existing')).toBe('/map/images/map-shaders-svg/c_h_not_existing.svg');
     });
 
     test('a poi type without an icon has no key', () => {

@@ -31,7 +31,6 @@ import cloneDeep from 'lodash-es/cloneDeep';
 import EmptyLogin from '../../login/EmptyLogin';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from '../actions/HeaderHelper';
-import { INTERACTIVE_LAYER } from '../../map/layers/CustomTileLayer';
 import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash-es/capitalize';
@@ -59,8 +58,6 @@ import { osmandTileURL } from '../../map/baseTileURL';
 import { isMvtTileURL, mvtOsmAndURL } from '../../map/layers/MvtLayerConfig';
 import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
-export const DYNAMIC_RENDERING = 'dynamic';
-export const VECTOR_GRID = 'vector_grid';
 const DEFAULT_MAP_STYLE_OPTIONS = [osmandTileURL, mvtOsmAndURL];
 
 export default function ConfigureMap() {
@@ -121,7 +118,6 @@ export default function ConfigureMap() {
     function setDefaultConfigureMap() {
         const defaultConfigureMap = defaultConfigureMapStateValues;
         mtx.setTileURL(defaultConfigureMap.mapStyle.tileURL);
-        mtx.setRenderingType(defaultConfigureMap.mapStyle.renderingType);
         ctx.setConfigureMapState({ ...defaultConfigureMap });
         updateConfigureMapCache(defaultConfigureMap);
     }
@@ -141,10 +137,8 @@ export default function ConfigureMap() {
         }
 
         mtx.setTileURL(selected);
-        const renderingType = selected.key === INTERACTIVE_LAYER ? DYNAMIC_RENDERING : null;
-        mtx.setRenderingType(renderingType);
         const newConfigureMap = cloneDeep(ctx.configureMapState);
-        newConfigureMap.mapStyle = { tileURL: selected, renderingType };
+        newConfigureMap.mapStyle = { tileURL: selected };
         updateConfigureMapCache(newConfigureMap);
         ctx.setConfigureMapState(newConfigureMap);
         setOpenMapStyleMenu(false);

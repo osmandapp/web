@@ -2,7 +2,6 @@ import L from 'leaflet';
 import { hexToRgba } from '../../util/ColorUtil';
 import poiicons from '../../resources/generated/poiicons.json';
 import mapicons from '../../resources/generated/mapicons.json';
-import shadersicons from '../../resources/generated/shadersicons.json';
 import poiTypes from '../../resources/poiStyles/poi-types.json';
 import poiCategoriesData from '../../resources/poiStyles/poi-categories.json';
 import backgrounds from '../../resources/generated/poiBackgroundIcons.json';
@@ -13,7 +12,6 @@ import { destinationPointIcon } from './DestinationPointMarker';
 
 const poiIconsSet = new Set(poiicons);
 const mapIconsSet = new Set(mapicons);
-const shaderIconsSet = new Set(shadersicons);
 
 const poiTypeFallbackMap = Object.fromEntries(
     poiTypes.filter((pt) => pt.tag && pt.value).map((pt) => [pt.name, `${pt.tag}_${pt.value}`])
@@ -29,14 +27,11 @@ export const DEFAULT_POI_COLOR = '#fe8800';
 export const DEFAULT_ICON_SIZE = 24;
 
 export const POI_ICONS_FOLDER = 'poi-icons-svg';
-export const SHADERS_FOLDER = 'map-shaders-svg';
 export const MAP_ICONS_FOLDER = 'map-icons-svg';
 export const POI_ICON_TYPE = 'poi';
 export const MAP_ICON_TYPE = 'map';
 export const ICONS_PREFIX = 'mx_';
 export const COLORED_ICONS_PREFIX = 'c_mx_';
-export const SHADERS_PREFIX = 'h_';
-export const COLORED_SHADERS_PREFIX = 'c_h_';
 
 const MarkerIcon = ({ iconType = 'default-marker', bg = 'blue' }) => {
     let svg =
@@ -471,12 +466,6 @@ export function getIconUrlByName(type, name) {
         } else return `/map/images/${MAP_ICONS_FOLDER}/${COLORED_ICONS_PREFIX}${name}.svg`;
     }
     return '';
-}
-
-export function getShaderUrlByName(name) {
-    if (shaderIconsSet.has(`${ICONS_PREFIX}${name}.svg`)) {
-        return `/map/images/${SHADERS_FOLDER}/${SHADERS_PREFIX}${name}.svg`;
-    } else return `/map/images/${SHADERS_FOLDER}/${COLORED_SHADERS_PREFIX}${name}.svg`;
 }
 
 const MarkerOptions = {
