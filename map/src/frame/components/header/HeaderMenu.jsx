@@ -11,7 +11,7 @@ import {
     Toolbar,
     Typography,
 } from '@mui/material';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ReactComponent as Logo } from '../../../assets/logo.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import styles from './header.module.css';
@@ -22,7 +22,7 @@ import enList from '../../../resources/translations/en/translation.json';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import supportedLanguages from '../../../resources/translations/supportedLanguages.json';
 import { handleLanguageChange } from '../../../i18n';
-import { collator } from '../../../context/AppContext';
+import AppContext, { collator } from '../../../context/AppContext';
 import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
 import { HEADER_MENU_Z_INDEX } from '../../../map/util/ZIndexes';
 
@@ -50,12 +50,19 @@ const pages = ({ t }) => [
         name: `🚵‍ ${t('web:header_join_us')}`,
         url: '/docs/hiring',
     },
+    {
+        name: `🔥 ${t('web:header_heatmap')}`,
+        url: '/heatmap.html',
+        target: '_blank',
+        devOnly: true,
+    },
 ];
 
 export const DEFAULT_LANG = 'en';
 const LANG_PARAM = 'lang';
 
 export default function HeaderMenu({ showInstallBanner = null }) {
+    const ctx = useContext(AppContext);
     const location = useLocation();
 
     const { i18n, t } = useTranslation();
@@ -156,21 +163,24 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                     OsmAnd
                 </IconButton>
                 <Box className={styles.menu}>
-                    {pages({ t }).map((page) => (
-                        <Button
-                            component="a"
-                            href={page.url}
-                            key={page.name}
-                            className={styles.menuItem}
-                            sx={
-                                page.url.startsWith(location.pathname)
-                                    ? { color: '#237bff !important' }
-                                    : { color: '#1c1e21 !important' }
-                            }
-                        >
-                            {page.name}
-                        </Button>
-                    ))}
+                    {pages({ t })
+                        .filter((page) => !page.devOnly || ctx.develFeatures)
+                        .map((page) => (
+                            <Button
+                                component="a"
+                                href={page.url}
+                                target={page.target}
+                                key={page.name}
+                                className={styles.menuItem}
+                                sx={
+                                    page.url.startsWith(location.pathname)
+                                        ? { color: '#237bff !important' }
+                                        : { color: '#1c1e21 !important' }
+                                }
+                            >
+                                {page.name}
+                            </Button>
+                        ))}
                 </Box>
                 <Box sx={{ flexGrow: 1 }} />
                 {(location.pathname === '/pricing' || location.pathname === '/pricing/') && (
