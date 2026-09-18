@@ -35,8 +35,14 @@ input[type=range] { width: 100%; }
 .darkbase .leaflet-tile-pane .osmand-base { filter: invert(1) grayscale(1) brightness(.8) contrast(1.1); }
 .darkbase #map { background: #1b1d1f; }
 .legend-labels span:nth-child(2) { text-align: center; }
-#status { position: absolute; right: 10px; bottom: 22px; z-index: 1000; background: rgba(255,255,255,.9); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; font: 400 .78rem "IBM Plex Mono", ui-monospace, monospace; }
-#selChip { position: absolute; left: 10px; bottom: 22px; z-index: 1000; max-width: min(60%, 420px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: rgba(255,255,255,.95); border: 1px solid var(--accent); border-left-width: 4px; border-radius: 4px; padding: 4px 10px; font: 500 .8rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); cursor: pointer; }
+#footbar { position: absolute; left: 10px; bottom: 22px; z-index: 1000; display: flex; gap: 8px; align-items: center; max-width: calc(100% - 20px); }
+#status { background: rgba(255,255,255,.9); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; font: 400 .78rem "IBM Plex Mono", ui-monospace, monospace; white-space: nowrap; }
+#selChip { max-width: min(60vw, 420px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: rgba(255,255,255,.95); border: 1px solid var(--accent); border-left-width: 4px; border-radius: 4px; padding: 4px 10px; font: 500 .8rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); cursor: pointer; }
+.adminPanel { position: absolute; right: 10px; bottom: 22px; z-index: 1000; width: 340px; max-width: calc(100% - 20px); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,.2); }
+.adminHead { display: flex; justify-content: space-between; align-items: center; padding: 6px 12px; border: 0; border-radius: 6px; background: none; font: 600 .85rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); cursor: pointer; text-align: left; }
+.adminBody { display: grid; gap: 10px; align-content: start; padding: 4px 12px 12px; border-top: 1px solid var(--rule); overflow-y: auto; }
+.adminPanel .btn { display: inline-block; padding: 4px 8px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); color: var(--ink); font-size: .82rem; text-decoration: none; }
+.adminPanel .btn:hover { border-color: var(--accent); }
 #progress { position: absolute; left: 0; right: 0; top: 0; height: 3px; z-index: 1000; background: rgba(0,0,0,.08); pointer-events: none; }
 #progressBar { height: 100%; width: 0; background: var(--accent); transition: width .15s; }
 #loading { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(243,245,242,.92); z-index: 2000; font-size: 1rem; padding: 16px; text-align: center; }
@@ -98,7 +104,7 @@ input[type=range] { width: 100%; }
 .feedback h2 { font-size: 1rem; margin: 0; }
 .feedback textarea, .feedback input[type=email] { font: inherit; width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; }
 .feedback textarea { min-height: 120px; resize: vertical; }
-@media (max-width: 760px) { .app { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { max-height: 40vh; } }
+@media (max-width: 760px) { .app { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { max-height: 40vh; } .adminPanel { width: calc(100% - 20px); } }
 </style>
 </head>
 <body>
@@ -190,7 +196,17 @@ input[type=range] { width: 100%; }
   </div>
   </details>
 </aside>
-<div id="map"><div id="progress" hidden><div id="progressBar"></div></div><div id="status" hidden></div><button type="button" id="selChip" title="Show the selected track in the list" hidden></button></div>
+<div id="map">
+  <div id="progress" hidden><div id="progressBar"></div></div>
+  <div id="footbar"><button type="button" id="selChip" title="Show the selected track in the list" hidden></button><div id="status" hidden></div></div>
+  <div id="admin" class="adminPanel" hidden>
+    <button type="button" id="adminToggle" class="adminHead">Admin <span id="adminArrow">▴</span></button>
+    <div id="adminBody" class="adminBody" hidden>
+      <div class="row"><label>Period <select id="adminPeriod"><option value="24">Last 24 h</option><option value="168">Last 7 days</option><option value="720">Last 30 days</option><option value="">All</option></select></label></div>
+      <div class="row"><a id="adminReviews" class="btn">⤓ Track reviews (.csv.gz)</a><a id="adminFeedbackCsv" class="btn">⤓ Page feedback (.csv)</a></div>
+    </div>
+  </div>
+</div>
 </div>
 <dialog id="fbDialog" class="feedback">
   <form id="fbForm">
@@ -1008,17 +1024,24 @@ async function tracksHere(lat, lon, cellM) {
   renderReviewList();
 }
 
+// asked once at load and again on the next click if it failed (sign-in state stays null, send buttons off)
+async function whoAmI() {
+  if (reviewLoggedIn !== null) return;
+  try {
+    const meRes = await fetch(`${API}/api/pubtracks/me`, { credentials: 'include' });
+    if (meRes.ok) {
+      const me = await meRes.json();
+      reviewLoggedIn = !!me.signedIn;
+      reviewAdmin = !!me.admin;
+    }
+  } catch (e) { /* offline or blocked */ }
+  $('admin').hidden = !reviewAdmin;
+}
+
 // public reviews of the listed tracks; "mine" and the send buttons only for a signed-in caller
 async function loadReviews() {
+  await whoAmI();
   try {
-    if (reviewLoggedIn === null) {
-      const meRes = await fetch(`${API}/api/pubtracks/me`, { credentials: 'include' });
-      if (meRes.ok) {
-        const me = await meRes.json();
-        reviewLoggedIn = !!me.signedIn;
-        reviewAdmin = !!me.admin;
-      }
-    }
     if (!reviewTracks.length) return;
     const res = await fetch(`${API}/api/pubtracks/reviews?ids=${reviewTracks.map((t) => t.id).join(',')}`, { credentials: 'include' });
     if (!res.ok) return;
@@ -1164,7 +1187,7 @@ $('revDownload').addEventListener('click', async () => {
 });
 
 // the chip over the map names the selected track and leads to its card, which the short phone panel may hide
-L.DomEvent.disableClickPropagation($('selChip'));
+L.DomEvent.disableClickPropagation($('footbar'));
 $('selChip').addEventListener('click', () => {
   $('secReview').open = true;
   $('revDetail').scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -1220,6 +1243,23 @@ $('revVerdicts').addEventListener('click', (e) => {
 });
 $('revSend').addEventListener('click', () => saveReview(reviewVerdict));
 $('revClear').addEventListener('click', () => { reviewVerdict = null; syncVerdicts(); saveReview(null); });
+
+// ---------- admin panel: reviews and page feedback downloads for a period
+function adminLinks() {
+  const h = +$('adminPeriod').value, q = h ? `?since=${encodeURIComponent(new Date(Date.now() - h * 3600e3).toISOString())}` : '';
+  $('adminReviews').href = `${API}/api/pubtracks/reviews.csv.gz${q}`;
+  $('adminFeedbackCsv').href = `${API}/api/pubtracks/feedback.csv${q}`;
+}
+function setAdminOpen(on) {
+  $('adminBody').hidden = !on;
+  $('adminArrow').textContent = on ? '▾' : '▴';
+  try { localStorage.setItem('heatmap_admin', on ? '1' : '0'); } catch (e) { /* storage blocked */ }
+  if (on) adminLinks();
+}
+L.DomEvent.disableClickPropagation($('admin'));
+$('adminToggle').addEventListener('click', () => setAdminOpen($('adminBody').hidden));
+$('adminPeriod').addEventListener('change', adminLinks);
+whoAmI().then(() => { try { if (reviewAdmin && localStorage.getItem('heatmap_admin') === '1') setAdminOpen(true); } catch (e) { /* storage blocked */ } });
 
 // ---------- wiring
 $('undated').addEventListener('change', update);
