@@ -181,6 +181,7 @@ export default function MapStateLayer() {
         const originalStop = map._stop;
         const originalZoomIn = map.zoomIn;
         const originalZoomOut = map.zoomOut;
+        const originalSetZoom = map.setZoom;
         let targetZoom = map.getZoom();
         let anchor = null;
         let anchorLatLng = null;
@@ -267,6 +268,11 @@ export default function MapStateLayer() {
 
         map.zoomIn = (delta, options) => zoomFromButton(delta ?? map.options.zoomDelta ?? 1, options);
         map.zoomOut = (delta, options) => zoomFromButton(-(delta ?? map.options.zoomDelta ?? 1), options);
+        // keyboard +/- zooms through setZoom
+        map.setZoom = (zoom, options) =>
+            options?.animate === false
+                ? originalSetZoom.call(map, zoom, options)
+                : zoomFromButton(zoom - map.getZoom(), options);
         L.DomEvent.on(container, 'wheel', onWheel);
 
         return () => {
@@ -274,6 +280,7 @@ export default function MapStateLayer() {
             map._stop = originalStop;
             map.zoomIn = originalZoomIn;
             map.zoomOut = originalZoomOut;
+            map.setZoom = originalSetZoom;
             stopZoom();
         };
     }, [map, ctx.infoBlockWidth]);
