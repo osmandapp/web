@@ -84,7 +84,7 @@ You can also change [the main source](#main) of maps from vector maps to online 
 
 In OsmAnd, raster maps can serve as an additional map source alongside the default vector maps, which are optimized for offline use.  
 
-You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen (plus Terrain). Think of them like a pie: [**Underlay**](#underlay) (raster base below), [**Main**](#main) (vector or raster core), [**Overlay**](#overlay) (raster atop), with [**Terrain**](#terrain) shading over all. For instance, you can use satellite imagery as the Underlay, OsmAnd's offline vector map as the Main layer with reduced transparency, and a bike path map as the Overlay on top.
+You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen (plus Terrain). Think of them like a pie: [**Underlay**](#underlay) (raster base below), [**Main**](#main) (vector or raster core), [**Overlay**](#overlay) (raster atop), with [**Terrain**](#terrain) shading over all. For instance, you can use satellite imagery as the Underlay, OsmAnd's offline vector map as the Main layer with increased transparency, and a bike path map as the Overlay on top.
 
 >[Vector maps](./vector-maps.md) are available **only** in the [Main](#main) layer (and are the default there). Raster maps can be used in all three layers: Main, Underlay, and Overlay.
 
@@ -116,7 +116,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 
 </Tabs>
 
-By default, the main map is set to [Offline vector maps](./vector-maps.md) (OsmAnd maps), optimized for offline use. You can choose a different map source from the list (_Add more_(Android) or _Install more_ (iOS)) or [add](#add-new-online-source) your own.
+By default, the main map is set to [Offline vector maps](./vector-maps.md) (OsmAnd maps), optimized for offline use. You can choose a different map source from the list (_Add more_ (Android) or _Install more_ (iOS)) or [add](#add-new-online-source) your own.
 
 ### Overlay {#overlay}
 
