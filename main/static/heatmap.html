@@ -38,9 +38,10 @@ input[type=range] { width: 100%; }
 #footbar { position: absolute; left: 10px; bottom: 22px; z-index: 1000; display: flex; gap: 8px; align-items: center; max-width: calc(100% - 20px); }
 #status { background: rgba(255,255,255,.9); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; font: 400 .78rem "IBM Plex Mono", ui-monospace, monospace; white-space: nowrap; }
 #selChip { max-width: min(60vw, 420px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: rgba(255,255,255,.95); border: 1px solid var(--accent); border-left-width: 4px; border-radius: 4px; padding: 4px 10px; font: 500 .8rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); cursor: pointer; }
-.adminPanel { position: absolute; right: 10px; bottom: 22px; z-index: 1000; width: 340px; max-width: calc(100% - 20px); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,.2); }
+.adminPanel { position: absolute; right: 10px; bottom: 22px; z-index: 1000; max-width: calc(100% - 20px); display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; box-shadow: 0 1px 6px rgba(0,0,0,.2); }
 .adminHead { display: flex; justify-content: space-between; align-items: center; padding: 6px 12px; border: 0; border-radius: 6px; background: none; font: 600 .85rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); cursor: pointer; text-align: left; }
-.adminBody { display: grid; gap: 10px; align-content: start; padding: 4px 12px 12px; border-top: 1px solid var(--rule); overflow-y: auto; }
+.adminBody { padding: 8px 12px 12px; border-top: 1px solid var(--rule); }
+.adminBody .row { flex-wrap: nowrap; }
 .adminPanel .btn { display: inline-block; padding: 4px 8px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); color: var(--ink); font-size: .82rem; text-decoration: none; }
 .adminPanel .btn:hover { border-color: var(--accent); }
 #progress { position: absolute; left: 0; right: 0; top: 0; height: 3px; z-index: 1000; background: rgba(0,0,0,.08); pointer-events: none; }
@@ -94,17 +95,7 @@ input[type=range] { width: 100%; }
 .review .form .row { margin-top: 4px; }
 .cellpop .tracksHere { margin-top: 6px; }
 .mapToggle { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 8px; font: 500 .78rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; cursor: pointer; }
-.mapButtons { display: flex; gap: 8px; align-items: stretch; }
-.mapButtons .mapToggle { padding: 7px 12px; font-size: .92rem; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
-.mapButtons .feedbackBtn { background: var(--accent); color: #fff; border-color: var(--accent); }
-.mapButtons .feedbackBtn:hover { background: #8f4400; }
-.feedback { width: min(480px, calc(100vw - 32px)); border: 1px solid var(--rule); border-radius: 6px; padding: 16px; color: var(--ink); background: var(--surface); }
-.feedback::backdrop { background: rgba(22,32,27,.35); }
-.feedback form { display: grid; gap: 10px; }
-.feedback h2 { font-size: 1rem; margin: 0; }
-.feedback textarea, .feedback input[type=email] { font: inherit; width: 100%; border: 1px solid var(--rule); border-radius: 4px; padding: 6px 8px; }
-.feedback textarea { min-height: 120px; resize: vertical; }
-@media (max-width: 760px) { .app { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { max-height: 40vh; } .adminPanel { width: calc(100% - 20px); } }
+@media (max-width: 760px) { .app { grid-template-columns: 1fr; grid-template-rows: auto 60vh; } aside { max-height: 40vh; } }
 </style>
 </head>
 <body>
@@ -202,21 +193,11 @@ input[type=range] { width: 100%; }
   <div id="admin" class="adminPanel" hidden>
     <button type="button" id="adminToggle" class="adminHead">Admin <span id="adminArrow">▴</span></button>
     <div id="adminBody" class="adminBody" hidden>
-      <div class="row"><label>Period <select id="adminPeriod"><option value="24">Last 24 h</option><option value="168">Last 7 days</option><option value="720">Last 30 days</option><option value="">All</option></select></label></div>
-      <div class="row"><a id="adminReviews" class="btn">⤓ Track reviews (.csv.gz)</a><a id="adminFeedbackCsv" class="btn">⤓ Page feedback (.csv)</a></div>
+      <div class="row"><label>Reviews <select id="adminPeriod"><option value="24">last 24 h</option><option value="168">last 7 days</option><option value="720">last 30 days</option><option value="">all</option></select></label><a id="adminReviews" class="btn">⤓ Download (.csv.gz)</a></div>
     </div>
   </div>
 </div>
 </div>
-<dialog id="fbDialog" class="feedback">
-  <form id="fbForm">
-    <h2>Give us your feedback</h2>
-    <div class="hint">What is wrong, missing or confusing on this page? The current map view and filter are sent with your message.</div>
-    <textarea id="fbText" maxlength="5000" required placeholder="Your feedback" aria-label="Feedback"></textarea>
-    <label>E-mail, optional, if you want an answer <input id="fbEmail" type="email" maxlength="200" autocomplete="email"></label>
-    <div class="row"><button type="submit" id="fbSend">Send</button><button type="button" id="fbCancel">Cancel</button><span id="fbStatus" class="hint"></span></div>
-  </form>
-</dialog>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/pmtiles@4.5.0/dist/pmtiles.js"></script>
 <script>
@@ -1233,7 +1214,7 @@ document.addEventListener('click', (e) => {
 $('revList').addEventListener('mouseover', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, true); });
 $('revList').addEventListener('mouseout', (e) => { const it = e.target.closest('.item'); if (it) hoverTrack(+it.dataset.i, false); });
 $('revList').addEventListener('click', (e) => { const it = e.target.closest('.item'); if (it) toggleTrack(+it.dataset.i, true); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && reviewSel !== null && !$('fbDialog').open) deselectTrack(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && reviewSel !== null) deselectTrack(); });
 $('revVerdicts').addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b || b.disabled) return;
@@ -1244,11 +1225,10 @@ $('revVerdicts').addEventListener('click', (e) => {
 $('revSend').addEventListener('click', () => saveReview(reviewVerdict));
 $('revClear').addEventListener('click', () => { reviewVerdict = null; syncVerdicts(); saveReview(null); });
 
-// ---------- admin panel: reviews and page feedback downloads for a period
+// ---------- admin panel: the reviews download for a period
 function adminLinks() {
   const h = +$('adminPeriod').value, q = h ? `?since=${encodeURIComponent(new Date(Date.now() - h * 3600e3).toISOString())}` : '';
   $('adminReviews').href = `${API}/api/pubtracks/reviews.csv.gz${q}`;
-  $('adminFeedbackCsv').href = `${API}/api/pubtracks/feedback.csv${q}`;
 }
 function setAdminOpen(on) {
   $('adminBody').hidden = !on;
@@ -1282,68 +1262,26 @@ $('lineRow').hidden = $('style').value === 'cells';
 heat.setOpacity(+$('opacity').value);
 $('opacity').addEventListener('input', () => { dimHeat(reviewSel !== null); savePrefs(); });
 $('basemap').addEventListener('change', () => { applyBasemap(); savePrefs(); });
-// one click between the grey and the colour map, without opening Display, and the feedback button next to it
-const MapButtons = L.Control.extend({
+// one click between the grey and the colour map, without opening Display
+const MapToggle = L.Control.extend({
   options: { position: 'topright' },
   onAdd() {
-    const box = L.DomUtil.create('div', 'mapButtons');
-    L.DomEvent.disableClickPropagation(box);
-    const toggle = L.DomUtil.create('button', 'mapToggle', box);
-    toggle.type = 'button';
-    toggle.title = 'Switch between the grey and the colour map';
-    const label = () => { toggle.textContent = $('basemap').value === 'colour' ? 'Grey map' : 'Colour map'; };
+    const b = L.DomUtil.create('button', 'mapToggle');
+    b.type = 'button';
+    b.title = 'Switch between the grey and the colour map';
+    const label = () => { b.textContent = $('basemap').value === 'colour' ? 'Grey map' : 'Colour map'; };
     label();
-    toggle.addEventListener('click', () => {
+    L.DomEvent.disableClickPropagation(b);
+    b.addEventListener('click', () => {
       $('basemap').value = $('basemap').value === 'colour' ? 'grey' : 'colour';
       $('basemap').dispatchEvent(new Event('change'));
     });
     $('basemap').addEventListener('change', label);
-    const feedback = L.DomUtil.create('button', 'mapToggle feedbackBtn', box);
-    feedback.type = 'button';
-    feedback.textContent = 'Give us your feedback';
-    feedback.addEventListener('click', openFeedback);
-    return box;
+    return b;
   },
 });
-new MapButtons().addTo(map);
+new MapToggle().addTo(map);
 
-// ---------- feedback: a free-form message with the map view and the filter it was written at, saved through /api/pubtracks/feedback
-function openFeedback() {
-  $('fbStatus').textContent = '';
-  $('fbDialog').showModal();
-}
-
-function filterSnapshot() {
-  if (!meta) return null;
-  const s = selected();
-  const f = { activities: meta.acts.filter((a, i) => s.act[i]).map((a) => a.key), from: monthLabel(s.from), to: monthLabel(s.to), undated: s.undated,
-    minTracks: Math.max(1, +$('minTracks').value || 1) };
-  if (COMBO) f.folders = meta.folders.filter((fo, i) => s.fold[i]).map((fo) => fo.path);
-  return f;
-}
-
-$('fbCancel').addEventListener('click', () => $('fbDialog').close());
-$('fbForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const text = $('fbText').value.trim();
-  if (!text) return;
-  const c = map.getCenter();
-  const body = { text, email: $('fbEmail').value.trim(), url: location.href,
-    view: { zoom: map.getZoom(), lat: +c.lat.toFixed(5), lon: +c.lng.toFixed(5) }, filters: filterSnapshot() };
-  $('fbSend').disabled = true;
-  $('fbStatus').textContent = 'Sending…';
-  try {
-    const res = await fetch(`${API}/api/pubtracks/feedback`, { method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body) });
-    if (!res.ok) throw new Error(res.status < 500 && (await res.text()) || `HTTP ${res.status}`); // 4xx carries the reason, 5xx is an nginx page
-    $('fbText').value = '';
-    $('fbStatus').textContent = 'Sent, thank you!';
-  } catch (err) {
-    $('fbStatus').textContent = `Not sent: ${err.message}`;
-  } finally {
-    $('fbSend').disabled = false;
-  }
-});
 $('palette').addEventListener('change', () => { setPalette($('palette').value); repaint(); savePrefs(); });
 $('scaleMode').addEventListener('change', () => { repaint(); savePrefs(); });
 $('style').addEventListener('change', () => { $('lineRow').hidden = $('style').value === 'cells'; $('mergeRow').hidden = $('style').value !== 'vector'; heat.redraw(); updateLegend(); savePrefs(); });
