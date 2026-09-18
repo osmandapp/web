@@ -52,6 +52,7 @@ applySubpixelMarkerPosition();
 const CENTRE_ICON_SIZE = 24;
 // wheelZoomRate of MapLibre: 450 px of wheel per zoom level
 const WHEEL_PX_PER_ZOOM = 450;
+// the part of the remaining zoom distance passed per frame
 const ZOOM_EASING = 0.3;
 
 const MAP_SPIN_COLOR = '#1976d2';
@@ -178,7 +179,8 @@ export default function MapStateLayer() {
         };
     }, []);
 
-    // Wheel and buttons share frame-by-frame zoom instead of CSS-scaling the MVT canvas.
+    // Leaflet's zoom animation CSS-scales the MapLibre canvas as a bitmap for 250 ms, then MapLibre redraws: the map
+    // and its markers jump. Moving the map by a fraction of a zoom level per frame lets MapLibre render every step.
     useEffect(() => {
         const container = map.getContainer();
         const originalStop = map._stop;
@@ -191,11 +193,13 @@ export default function MapStateLayer() {
         let anchorLatLng = null;
         let frame = null;
 
+        // the point under the cursor stays where it is
         function zoomAroundAnchor(zoom) {
             const offset = anchor.subtract(map.getSize().divideBy(2));
             return map.unproject(map.project(anchorLatLng, zoom).subtract(offset), zoom);
         }
 
+        // one animation frame: ease towards targetZoom, finish with a single zoomend
         function step() {
             const zoom = map.getZoom();
             const snappedTarget = map._limitZoom(targetZoom);
@@ -212,6 +216,7 @@ export default function MapStateLayer() {
             map._move(zoomAroundAnchor(next), next, { pinch: true });
         }
 
+        // ends the animation at the current zoom so another map movement can take over
         function stopZoom() {
             if (frame !== null) {
                 L.Util.cancelAnimFrame(frame);
@@ -229,6 +234,7 @@ export default function MapStateLayer() {
             return originalStop.call(this);
         };
 
+        // accumulates the target: wheel notches during the animation add up instead of restarting it
         function zoomBy(delta, nextAnchor) {
             if (map._animatingZoom) {
                 return;
@@ -252,6 +258,7 @@ export default function MapStateLayer() {
             }
         }
 
+        // replaces Leaflet's scrollWheelZoom, disabled in OsmAndMap
         function onWheel(event) {
             L.DomEvent.stop(event);
             // getWheelDelta divides deltaY by 3 on Mac
@@ -259,6 +266,7 @@ export default function MapStateLayer() {
             zoomBy(delta / WHEEL_PX_PER_ZOOM, map.mouseEventToContainerPoint(event));
         }
 
+        // the +/- buttons zoom around the center of the map part not covered by the side panel
         function zoomFromButton(delta, options) {
             const center = calcVisibleCenterPx(map, Number.parseInt(String(ctx.infoBlockWidth), 10));
             const point = center ? L.point(center.x, center.y) : map.getSize().divideBy(2);
