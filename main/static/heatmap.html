@@ -36,6 +36,7 @@ input[type=range] { width: 100%; }
 .darkbase #map { background: #1b1d1f; }
 .legend-labels span:nth-child(2) { text-align: center; }
 #status { position: absolute; right: 10px; bottom: 22px; z-index: 1000; background: rgba(255,255,255,.9); border: 1px solid var(--rule); border-radius: 4px; padding: 2px 8px; font: 400 .78rem "IBM Plex Mono", ui-monospace, monospace; }
+#selChip { position: absolute; left: 10px; bottom: 22px; z-index: 1000; max-width: min(60%, 420px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: rgba(255,255,255,.95); border: 1px solid var(--accent); border-left-width: 4px; border-radius: 4px; padding: 4px 10px; font: 500 .8rem "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; color: var(--ink); cursor: pointer; }
 #progress { position: absolute; left: 0; right: 0; top: 0; height: 3px; z-index: 1000; background: rgba(0,0,0,.08); pointer-events: none; }
 #progressBar { height: 100%; width: 0; background: var(--accent); transition: width .15s; }
 #loading { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(243,245,242,.92); z-index: 2000; font-size: 1rem; padding: 16px; text-align: center; }
@@ -58,8 +59,12 @@ input[type=range] { width: 100%; }
 .summary td { padding: 2px 6px 2px 0; border-bottom: 1px solid #eef1ee; vertical-align: top; }
 .summary td.num { text-align: right; font-family: "IBM Plex Mono", ui-monospace, monospace; white-space: nowrap; }
 .review .list { display: grid; gap: 2px; max-height: 260px; overflow-y: auto; }
-.review .item { display: grid; grid-template-columns: 1fr auto; gap: 1px 8px; padding: 4px 6px; border: 1px solid transparent; border-radius: 4px; cursor: pointer; font-size: .82rem; }
-.review .item:hover, .review .item.hover, .review .item.sel { border-color: var(--rule); background: #f7f8f6; }
+.review .item { display: grid; grid-template-columns: 1fr auto auto; gap: 1px 8px; padding: 6px 8px; border: 1px solid var(--rule); border-radius: 4px; cursor: pointer; font-size: .82rem; background: var(--surface); }
+.review .item::after { content: "›"; grid-row: 1; grid-column: 3; align-self: center; color: var(--muted); font-size: 1.1rem; line-height: 1; }
+.review .item:hover, .review .item.hover { border-color: var(--accent); background: #f7f8f6; }
+.review .item:hover::after, .review .item.hover::after, .review .item.sel::after { color: var(--accent); }
+.review .item.sel { border-color: var(--accent); background: #fbf1ea; box-shadow: inset 3px 0 0 var(--accent); }
+.review .item.sel > span:first-child { font-weight: 600; }
 .review .item .sub { grid-column: 1 / -1; color: var(--muted); font: 400 .74rem "IBM Plex Mono", ui-monospace, monospace; }
 .review .badge { font: 500 .7rem "IBM Plex Mono", ui-monospace, monospace; padding: 0 5px; border-radius: 3px; align-self: start; }
 .review .badge.ok { background: #dff1e4; color: #1e6b3a; }
@@ -165,7 +170,7 @@ input[type=range] { width: 100%; }
   </div>
   </details>
 </aside>
-<div id="map"><div id="progress" hidden><div id="progressBar"></div></div><div id="status" hidden></div></div>
+<div id="map"><div id="progress" hidden><div id="progressBar"></div></div><div id="status" hidden></div><button type="button" id="selChip" title="Show the selected track in the list" hidden></button></div>
 </div>
 <dialog id="fbDialog" class="feedback">
   <form id="fbForm">
@@ -945,6 +950,7 @@ async function tracksHere(lat, lon, cellM) {
   $('secReview').scrollIntoView({ block: 'start', behavior: 'smooth' });
   $('revHint').textContent = 'Loading tracks…';
   $('revDetail').hidden = true;
+  $('selChip').hidden = true;
   reviewSel = null;
   let fc;
   try {
@@ -1052,6 +1058,9 @@ function selectTrack(i, fit = true) {
   highlight(i, true);
   if (fit) map.fitBounds(t.line.getBounds(), { padding: [30, 30], maxZoom: 16 });
   $('revList').querySelectorAll('.item').forEach((el) => el.classList.toggle('sel', +el.dataset.i === i));
+  $('revList').querySelector('.item.sel')?.scrollIntoView({ block: 'nearest' });
+  $('selChip').textContent = `Selected: ${t.name || 'no name'}${t.dist ? ` · ${(t.dist / 1000).toFixed(1)} km` : ''} ›`;
+  $('selChip').hidden = false;
   const trace = t.user ? `https://www.openstreetmap.org/user/${encodeURIComponent(t.user)}/traces/${t.id}` : null;
   $('revInfo').innerHTML = `<b>${esc(t.name || 'no name')}</b><br>${trace ? `<a href="${trace}" target="_blank" rel="noopener">OSM trace ${t.id}</a>` : t.id}`
     + ` · stored activity: ${esc(t.activity || 'none')}` + (t.tags?.length ? `<br>tags: ${esc(t.tags.join(', '))}` : '')
@@ -1066,7 +1075,15 @@ function selectTrack(i, fit = true) {
     : mine ? `your verdict${reviewAdmin ? ' (admin)' : ''}: ${VERDICT_LABEL[mine.verdict] || mine.verdict}` : reviewAdmin ? 'you review as admin' : '';
   syncVerdicts();
   $('revDetail').hidden = false;
+  $('revDetail').scrollIntoView({ block: 'nearest', behavior: 'smooth' }); // the phone panel is short: keep the verdict buttons in view
 }
+
+// the chip over the map names the selected track and leads to its card, which the short phone panel may hide
+L.DomEvent.disableClickPropagation($('selChip'));
+$('selChip').addEventListener('click', () => {
+  $('secReview').open = true;
+  $('revDetail').scrollIntoView({ block: 'start', behavior: 'smooth' });
+});
 
 function syncVerdicts() {
   $('revVerdicts').querySelectorAll('button').forEach((b) => {
