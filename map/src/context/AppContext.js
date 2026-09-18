@@ -345,7 +345,7 @@ export const AppContextProvider = (props) => {
     const [travelShowStartFinish, setTravelShowStartFinish] = useState(false);
 
     const [closeMapObj, setCloseMapObj] = useState(false);
-    const [closeMenu, setCloseMenu] = useState(false);
+    const [closeSelectedMenu, setCloseSelectedMenu] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
     const [processingAnalytics, setProcessingAnalytics] = useState(false);
@@ -752,8 +752,8 @@ export const AppContextProvider = (props) => {
                 setStopByUrl,
                 closeMapObj,
                 setCloseMapObj,
-                closeMenu,
-                setCloseMenu,
+                closeSelectedMenu,
+                setCloseSelectedMenu,
                 saveTrackToCloud,
                 setSaveTrackToCloud,
                 selectedLocalTrackObj,

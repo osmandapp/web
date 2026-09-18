@@ -550,13 +550,13 @@ export default function MainMenu({
     }, [ctx.closeMapObj]);
 
     useEffect(() => {
-        if (!ctx.closeMenu) return;
-        ctx.setCloseMenu(false);
+        if (!ctx.closeSelectedMenu) return;
+        ctx.setCloseSelectedMenu(false);
         const item = items.find((i) => isSelectedMenuItem(i));
         if (!item) return;
         clearMenuState(item.type);
         doSelectMenu({ item });
-    }, [ctx.closeMenu]);
+    }, [ctx.closeSelectedMenu]);
 
     useEffect(() => {
         openMenuObject();

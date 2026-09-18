@@ -16,7 +16,7 @@ export default function CloseMenuBtn() {
             if (e.key !== 'Escape') return;
             if (e.defaultPrevented) return;
             if (e.target.closest?.(ESC_IGNORE_TARGETS)) return;
-            ctx.setCloseMenu(true);
+            ctx.setCloseSelectedMenu(true);
         };
         window.addEventListener('keydown', closeMenuByEsc);
 
@@ -25,7 +25,7 @@ export default function CloseMenuBtn() {
 
     return (
         <Paper className={`${mapStyles.button} ${mapStyles.closeMenuButton}`}>
-            <IconButton id="se-close-menu-button" onClick={() => ctx.setCloseMenu(true)}>
+            <IconButton id="se-close-menu-button" onClick={() => ctx.setCloseSelectedMenu(true)}>
                 <SvgIcon className={mapStyles.customIconPath} component={CloseIcon} inheritViewBox />
             </IconButton>
         </Paper>
