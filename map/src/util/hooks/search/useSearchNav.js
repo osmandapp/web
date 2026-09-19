@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react';
 import { matchPath, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
-import { MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
+import { EXPLORE_URL, MAIN_URL_WITH_SLASH, SEARCH_RESULT_URL, SEARCH_URL } from '../../../manager/GlobalManager';
 import AppContext, { SEARCH_ENGINE_SPATIAL } from '../../../context/AppContext';
 import { engineFromSpatial } from './useSpatialSearch';
 
@@ -56,6 +56,8 @@ export default function useSearchNav() {
         location.pathname
     );
 
+    const isExploreRoute = matchPath({ path: MAIN_URL_WITH_SLASH + SEARCH_URL + EXPLORE_URL + '*' }, location.pathname);
+
     function isSearchEqualToUrl(q) {
         const s = buildSearchParamsFromQuery(q);
         const sp = new URLSearchParams(s?.startsWith('?') ? s.slice(1) : s);
@@ -71,6 +73,7 @@ export default function useSearchNav() {
         navigateToSearchMenu,
         isSearchEqualToUrl,
         isSearchResultRoute,
+        isExploreRoute,
         location,
     };
 }

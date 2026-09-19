@@ -115,6 +115,7 @@ import useSearchNav from '../util/hooks/search/useSearchNav';
 import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
 import { searchTypeMap } from '../manager/searchConstants';
+import { useFocusMode } from '../util/hooks/map/useFocusMode';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -154,6 +155,7 @@ export default function MainMenu({
     const location = useLocation();
     const currentLoc = useGeoLocation(ctx);
     const { isSearchResultRoute } = useSearchNav();
+    const { clearSelectionFocus } = useFocusMode();
 
     const outlet = useOutlet();
     const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
@@ -548,6 +550,15 @@ export default function MainMenu({
     }, [ctx.closeMapObj]);
 
     useEffect(() => {
+        if (!ctx.closeSelectedMenu) return;
+        ctx.setCloseSelectedMenu(false);
+        const item = items.find((i) => isSelectedMenuItem(i));
+        if (!item) return;
+        clearMenuState(item.type);
+        doSelectMenu({ item });
+    }, [ctx.closeSelectedMenu]);
+
+    useEffect(() => {
         openMenuObject();
 
         if (openVisibleTracksPage()) {
@@ -770,6 +781,35 @@ export default function MainMenu({
         return res.join(' ');
     }
 
+    function clearMenuState(type) {
+        if (type === OBJECT_SEARCH) {
+            ctx.setSearchResult(null);
+            ctx.setSearchQuery(null);
+            ctx.setSearchFavoriteGroupIds(null);
+            ctx.setSelectedSearchObj(null);
+            ctx.setSelectedPoiObj(null);
+            ctx.setPoiCatMenu(false);
+            ctx.setExploreMenu(false);
+            ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
+        }
+        if (type === OBJECT_TYPE_FAVORITE) {
+            ctx.setSelectedFavoriteObj(null);
+            ctx.setPageParams((prev) => {
+                const params = new URLSearchParams(prev[OBJECT_TYPE_FAVORITE]);
+                params.delete(FAVORITES_URL_PARAM_FOLDER);
+
+                return { ...prev, [OBJECT_TYPE_FAVORITE]: params.size ? `?${params}` : '' };
+            });
+        }
+        if (type === OBJECT_TYPE_CLOUD_TRACK) {
+            ctx.setSelectedCloudTrackObj(null);
+            ctx.setOpenGroups([]);
+        }
+        // don't move the map back to the previous location
+        mtx.setMapViewStack([]);
+        clearSelectionFocus();
+    }
+
     function selectMenu({ item, openFromUrl = false }) {
         doSelectMenu({ item });
     }
@@ -792,7 +832,7 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(null);
             }
             ctx.setOpenNavigationSettings(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
+            ctx.setSearchSettings((prev) => ({ ...prev, showExploreMarkers: false }));
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
