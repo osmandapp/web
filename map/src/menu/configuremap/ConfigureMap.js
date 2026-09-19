@@ -55,6 +55,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { osmandTileURL } from '../../map/baseTileURL';
+import { apiPost } from '../../util/HttpApi';
 import { isMvtTileURL, mvtOsmAndURL } from '../../map/layers/MvtLayerConfig';
 import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
@@ -130,6 +131,13 @@ export default function ConfigureMap() {
     const mapStyleKey = mapStyleOptions.some((item) => item.key === mtx.tileURL.key) ? mtx.tileURL.key : '';
     const mapStyleLabel = mapStyleOptions.find((item) => item.key === mapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
     const hasRenderingSettings = Boolean(ctx.allTileURLs[mtx.tileURL.key]?.properties?.length);
+
+    // depth test styles (tools OsmAndServer): drop server tiles, fetch new depth maps and reload the layer
+    async function clearDepthTestCache() {
+        await apiPost(`${process.env.REACT_APP_TILES_API_SITE}/tile/depth-test/clear-cache`);
+        const url = mtx.tileURL.url.replace(/[?&]t=\d+/, '');
+        mtx.setTileURL({ ...mtx.tileURL, url: `${url}${url.includes('?') ? '&' : '?'}t=${Date.now()}` });
+    }
 
     function handleMapStyleSelect(selected) {
         if (!selected) {
@@ -326,6 +334,13 @@ export default function ConfigureMap() {
                                     <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
                                         <Button variant="outlined" fullWidth onClick={() => setOpenSettings(true)}>
                                             Rendering Props
+                                        </Button>
+                                    </Box>
+                                )}
+                                {mtx.tileURL.key?.startsWith('depth-') && (
+                                    <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
+                                        <Button variant="outlined" fullWidth onClick={clearDepthTestCache}>
+                                            Clear cache
                                         </Button>
                                     </Box>
                                 )}
