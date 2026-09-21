@@ -73,4 +73,7 @@ module.exports = function (app) {
     app.use('/online-routing-providers.json', others); // osrm-providers
     app.use('/share/', share);
     app.use('/fs/', fs);
+    // admin pages and their assets are served by the server from the web-server-config checkout
+    app.use('/admin/', others);
+    app.use('/js/', others);
 };
