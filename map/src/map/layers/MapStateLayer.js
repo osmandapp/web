@@ -50,8 +50,13 @@ export function getMapCenter(mtx, hash) {
 applySubpixelMarkerPosition();
 
 const CENTRE_ICON_SIZE = 24;
-// wheelZoomRate of MapLibre: 450 px of wheel per zoom level
+// deltaY of a mouse wheel tick, as ScrollZoomHandler of MapLibre
+const WHEEL_TICK_DELTA = 4.000244140625;
+// px of wheel per zoom level for a trackpad and for a mouse, as MapLibre
+const TRACKPAD_PX_PER_ZOOM = 100;
 const WHEEL_PX_PER_ZOOM = 450;
+// a longer pause between wheel events starts a new gesture
+const NEW_SCROLL_GAP_MS = 400;
 // the part of the remaining zoom distance passed per frame
 const ZOOM_EASING = 0.3;
 
@@ -258,12 +263,42 @@ export default function MapStateLayer() {
             }
         }
 
+        let wheelType = null;
+        let lastWheelTime = 0;
+
+        // trackpad or mouse, as ScrollZoomHandler of MapLibre without its 40 ms timeout: a lone tick zooms as a mouse
+        function classifyWheel(value, gap) {
+            if (value % WHEEL_TICK_DELTA === 0) {
+                return 'wheel';
+            }
+            if (Math.abs(value) < 4) {
+                return 'trackpad';
+            }
+            if (gap > NEW_SCROLL_GAP_MS) {
+                return null;
+            }
+
+            return wheelType ?? (Math.abs(gap * value) < 200 ? 'trackpad' : 'wheel');
+        }
+
         // replaces Leaflet's scrollWheelZoom, disabled in OsmAndMap
         function onWheel(event) {
             L.DomEvent.stop(event);
             // getWheelDelta divides deltaY by 3 on Mac
-            const delta = event.deltaMode === 0 ? -event.deltaY : L.DomEvent.getWheelDelta(event);
-            zoomBy(delta / WHEEL_PX_PER_ZOOM, map.mouseEventToContainerPoint(event));
+            const value = event.deltaMode === 0 ? event.deltaY : -L.DomEvent.getWheelDelta(event);
+            if (!value) {
+                return;
+            }
+            const gap = event.timeStamp - lastWheelTime;
+            lastWheelTime = event.timeStamp;
+            wheelType = classifyWheel(value, gap);
+            const pxPerZoom =
+                wheelType !== 'trackpad' && Math.abs(value) > WHEEL_TICK_DELTA
+                    ? WHEEL_PX_PER_ZOOM
+                    : TRACKPAD_PX_PER_ZOOM;
+            // sigmoid as MapLibre: small deltas zoom linearly, a fast flick is compressed to a level per event
+            const scale = 2 / (1 + Math.exp(-Math.abs(value) / pxPerZoom));
+            zoomBy(-Math.sign(value) * Math.log2(scale), map.mouseEventToContainerPoint(event));
         }
 
         // the +/- buttons zoom around the center of the map part not covered by the side panel
