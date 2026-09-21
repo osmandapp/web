@@ -95,10 +95,25 @@ function mountLayers({ infoBlockWidth = 0 } = {}) {
     });
 }
 
-function wheel(deltaY, point = L.point(400, 300)) {
-    container.dispatchEvent(
-        new WheelEvent('wheel', { deltaY, deltaMode: 0, clientX: point.x, clientY: point.y, cancelable: true })
-    );
+function wheel(deltaY, point = L.point(400, 300), timeStamp = Date.now()) {
+    const event = new WheelEvent('wheel', {
+        deltaY,
+        deltaMode: 0,
+        clientX: point.x,
+        clientY: point.y,
+        cancelable: true,
+    });
+    Object.defineProperty(event, 'timeStamp', { value: timeStamp });
+    container.dispatchEvent(event);
+}
+
+// ScrollZoomHandler of MapLibre: 100 px per level for a trackpad, 450 for a mouse, compressed by a sigmoid
+const TRACKPAD_PX = 100;
+const MOUSE_PX = 450;
+const MOUSE_TICK = 4.000244140625;
+
+function zoomStep(deltaY, pxPerZoom) {
+    return Math.log2(2 / (1 + Math.exp(-Math.abs(deltaY) / pxPerZoom)));
 }
 
 function nextFrame() {
@@ -126,7 +141,7 @@ describe('fractional wheel zoom', () => {
         wheel(-100);
         finishZoom();
 
-        expect(map.getZoom()).toBeCloseTo(10.22);
+        expect(map.getZoom()).toBeCloseTo(10 + zoomStep(100, MOUSE_PX));
         expect(zoomend).toHaveBeenCalledTimes(1);
         expect(moveend).toHaveBeenCalledTimes(1);
         expect(viewreset).not.toHaveBeenCalled();
@@ -140,7 +155,44 @@ describe('fractional wheel zoom', () => {
         }
         finishZoom();
 
-        expect(map.getZoom()).toBeCloseTo(10.22);
+        expect(map.getZoom()).toBeCloseTo(10 + 100 * zoomStep(1, TRACKPAD_PX));
+    });
+
+    test('a lone tick zooms as a mouse, a fast series of small deltas as a trackpad, a tick multiple as a mouse', () => {
+        mountLayers();
+        // a pause longer than 400 ms starts a new gesture: the lone tick is a mouse
+        wheel(-20, undefined, 1000);
+        // 8 ms * 20 px < 200: the series is a trackpad and stays one
+        wheel(-20, undefined, 1008);
+        wheel(-20, undefined, 1016);
+        // a multiple of the mouse tick is a mouse even inside the series
+        wheel(-2 * MOUSE_TICK, undefined, 1024);
+        finishZoom();
+
+        expect(map.getZoom()).toBeCloseTo(
+            10 + zoomStep(20, MOUSE_PX) + 2 * zoomStep(20, TRACKPAD_PX) + zoomStep(2 * MOUSE_TICK, MOUSE_PX)
+        );
+    });
+
+    test('a trackpad flick zooms further than the same wheel distance of a mouse', () => {
+        mountLayers();
+        for (let i = 0; i < 20; i++) {
+            wheel(-20, undefined, 1000 + 8 * i);
+        }
+        finishZoom();
+        const trackpadZoom = map.getZoom() - 10;
+
+        map.setZoom(10, { animate: false });
+        // 50 ms * 100 px > 200: a mouse
+        for (let i = 0; i < 4; i++) {
+            wheel(-100, undefined, 3000 + 50 * i);
+        }
+        finishZoom();
+
+        // the first event of a gesture is a lone tick until the next one classifies the series
+        expect(trackpadZoom).toBeCloseTo(zoomStep(20, MOUSE_PX) + 19 * zoomStep(20, TRACKPAD_PX));
+        expect(map.getZoom() - 10).toBeCloseTo(4 * zoomStep(100, MOUSE_PX));
+        expect(trackpadZoom).toBeGreaterThan(map.getZoom() - 10);
     });
 
     test('an explicit setView supersedes an unfinished wheel gesture', () => {
