@@ -11,7 +11,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 
 **OsmAnd Heatmap** is a new web tool that shows where people actually move — on foot, by bike, by car and more. It is built from the **public GPS traces of OpenStreetMap**: every track that OSM contributors have uploaded is counted per map cell, by activity and by upload month, and drawn as a heatmap. The brighter the line, the more tracks pass through that spot.
 
-Think of it as a Strava-style heatmap, but built on open data — and with a way to look at every single track behind the picture.
+It is built entirely on open data — and it lets you look at every single track behind the picture.
 
 The tool is currently in **test**: [test.osmand.net/map/prototypes/heatmap.html](https://test.osmand.net/map/prototypes/heatmap.html)
 
@@ -120,7 +120,13 @@ _________________
 - Use the *Dark* map with the *Hot* or *Blue* palette for the classic heatmap look.
 - On a busy street thousands of tracks may overlap; the track list shows the 60 nearest to your click.
 
-The heatmap is a prototype and will change. We would love to hear what you think — write to us in [our community channels](https://osmand.net/docs/user/troubleshooting/) or on [GitHub](https://github.com/osmandapp/OsmAnd/issues).
+## Tell us what you think
+
+The heatmap is a prototype, and your feedback decides where it goes next.
+
+- **2-minute survey** — how you use it and what is missing: [Heatmap feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdqh4qpBRe1vem3FbyufV950ahLA_B_odTdhUd55SwOMbZBXA/viewform)
+- **Ideas and discussion** — suggest features, report odd data, share what you found in your area: [GitHub Discussion #26169](https://github.com/osmandapp/OsmAnd/discussions/26169)
+- **Rate the tracks** — zoom in, click a trail you know and send a verdict. It takes a few seconds and directly improves the data (sign in with your OsmAnd Cloud account on [test.osmand.net/map/account](https://test.osmand.net/map/account) first).
 
 _________________
 
