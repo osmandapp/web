@@ -18,13 +18,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-**Tracks Analyzer** is a web tool that helps analyze repeating track segments between selected points on the map. To use this feature with your own data, you need an OsmAnd Pro account with tracks synced to OsmAnd Cloud — otherwise, your tracks won’t be available on the Web Planner. It scans your tracks and finds all segments that pass through the chosen location(s), allowing you to compare speed, elevation, distance, and time across multiple activities.
+**Tracks Analyzer** is a web tool that helps analyze repeating track segments between selected points on the map. For example, you can use it to compare your rides on the same climb or your daily commutes. To use this feature with your own data, you need an OsmAnd Pro account with tracks synced to OsmAnd Cloud — otherwise, your tracks won’t be available on the Web Planner. It scans your tracks and finds all segments that pass through the chosen location(s), allowing you to compare speed, elevation, distance, and time across multiple activities.
 
 ## How to Use {#how-to-use}
 
 After opening the Tracks Analyzer (shown as a wrench), the tool opens with a map view and an empty state. From here, you can choose which tracks will be included in the analysis using the **Select tracks** panel. The analyzer allows working with all available tracks or limiting the analysis to specific folders.
 
-To start the analysis, set one or two points directly on the map. Right-click on the desired location and select **Point A / Point B** from the context menu. The analyzer then searches for track segments that pass through the selected point or between the two points.
+To start the analysis, set one or two points directly on the map. Right-click on the desired location and select **Point A / Point B** from the context menu. With one point, the analyzer finds track segments that pass through the selected location. With two points, it finds and analyzes segments between Point A and Point B.
 
 ![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points_new.png)
 
@@ -34,27 +34,9 @@ After the analyzer finds matching segments, the results are shown as a list. The
 
 The available parameters are grouped by type:
 
-**Speed**
-- Max. speed
-- Avg. speed
-- Min. speed
-
-**Altitude**
-- Max. altitude
-- Avg. altitude
-- Min. altitude
-
-**Uphill / Downhill**
-
-**Date and time**
-- Date
-- Start time
-- End time
-- Time span
-- Duration
-- Time in motion
-
-**Length**
+- **Speed** — Max. speed, Avg. speed, and Min. speed.
+- **Altitude** — Max. altitude, Avg. altitude, Min. altitude, Uphill, and Downhill.
+- **Time and Distance** — Date, Start time, End time, Time span, Duration, Time in motion, and Length.
 
 ![Track Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Track Analyzer](@site/static/img/web/web_analyzer_fields.png)
 
