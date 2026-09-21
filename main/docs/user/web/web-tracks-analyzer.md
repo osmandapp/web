@@ -32,11 +32,14 @@ To start the analysis, set one or two points directly on the map. Right-click on
 ## Sorting and Visible Parameters {#sorting-and-visible-parameters}
 After the analyzer finds matching segments, the results are shown as a list. The list can be reordered using the **Sort** option, which changes how segments are listed. In addition, the **Fields** button opens the Visible parameters panel, where you can control which analysis parameters are shown for each segment. You can display all available parameters or select only those relevant to your analysis.
 
-The available parameters are grouped by type:
+The available parameters include:
 
-- **Speed** — Max. speed, Avg. speed, and Min. speed.
-- **Altitude** — Max. altitude, Avg. altitude, Min. altitude, Uphill, and Downhill.
-- **Time and Distance** — Date, Start time, End time, Time span, Duration, Time in motion, and Length.
+- Max. speed, Avg. speed, and Min. speed.
+- Max. altitude, Avg. altitude, and Min. altitude.
+- Uphill and Downhill.
+- Date.
+- Time span, Start time, End time, Duration, and Time in motion.
+- Length.
 
 ![Track Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Track Analyzer](@site/static/img/web/web_analyzer_fields.png)
 
