@@ -15,6 +15,8 @@ Das Tool basiert vollständig auf offenen Daten — und zeigt Ihnen jeden einzel
 
 Das Tool befindet sich derzeit im **Test**: [test.osmand.net/map/prototypes/heatmap.html](https://test.osmand.net/map/prototypes/heatmap.html)
 
+Am Ende dieses Artikels finden Sie eine kurze Umfrage. Ihr Feedback bestimmt, wie es weitergeht.
+
 ![OsmAnd Heatmap rund um Krakau](@site/static/img/promo/heatmap/overview.webp)
 
 :::note Was steckt drin
@@ -60,7 +62,7 @@ Jede Aktivitätsgruppe hat ein Kontrollkästchen und eine Track-Anzahl. Klappen 
 
 **Um eine Bewertung abzugeben, melden Sie sich zuerst an** — mit Ihrem OsmAnd-Konto unter [test.osmand.net/map/account](https://test.osmand.net/map/account) — und kehren Sie dann zur Heatmap zurück. Zum Ansehen der Tracks ist kein Konto nötig.
 
-Die Heatmap ist nicht nur ein Bild — Sie kommen an die Tracks dahinter. Zoomen Sie auf **16 oder näher** und klicken Sie auf eine Linie: Das Panel listet die Tracks, die unter Ihrem Klick verlaufen. Wählen Sie einen, um ihn mit seinen Details auf der Karte zu sehen, die Original-GPX-Datei herunterzuladen oder eine Bewertung abzugeben. Jeder kann die Tracks und ihre Bewertungen ansehen.
+Die Heatmap ist nicht nur ein Bild — Sie kommen an die Tracks dahinter. Zoomen Sie auf **16 oder näher** und klicken Sie auf eine Linie: Das Panel listet die Tracks, die unter Ihrem Klick verlaufen. Wählen Sie einen, um ihn mit seinen Details auf der Karte zu sehen, die Original-GPX-Datei herunterzuladen oder eine Bewertung abzugeben. Jeder kann die Tracks und ihre Bewertungen ansehen. Der Link **Download reviewed tracks (.csv.gz)** unten im Abschnitt exportiert alle bisher bewerteten Tracks mit ihren Urteilen als eine CSV-Datei.
 
 ### Data source
 

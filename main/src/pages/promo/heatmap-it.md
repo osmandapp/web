@@ -15,6 +15,8 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 
 Lo strumento è attualmente in **test**: [test.osmand.net/map/prototypes/heatmap.html](https://test.osmand.net/map/prototypes/heatmap.html)
 
+Alla fine di questo articolo trovi un breve sondaggio. Il tuo feedback decide cosa verrà dopo.
+
 ![OsmAnd Heatmap intorno a Cracovia](@site/static/img/promo/heatmap/overview.webp)
 
 :::note Cosa c'è dentro
@@ -60,7 +62,7 @@ Ogni gruppo di attività ha una casella e un conteggio delle tracce. Espandi un 
 
 **Per lasciare una recensione, accedi prima** con il tuo account OsmAnd su [test.osmand.net/map/account](https://test.osmand.net/map/account) — poi torna alla heatmap. Per vedere le tracce non serve alcun account.
 
-La heatmap non è solo un'immagine — puoi arrivare alle tracce che ci stanno dietro. Zooma a **16 o più** e clicca una linea sulla mappa: il pannello elenca le tracce che passano sotto il clic. Scegline una per vederla sulla mappa con i dettagli, scaricare il file GPX originale o lasciare una recensione. Chiunque può vedere le tracce e le recensioni.
+La heatmap non è solo un'immagine — puoi arrivare alle tracce che ci stanno dietro. Zooma a **16 o più** e clicca una linea sulla mappa: il pannello elenca le tracce che passano sotto il clic. Scegline una per vederla sulla mappa con i dettagli, scaricare il file GPX originale o lasciare una recensione. Chiunque può vedere le tracce e le recensioni. Il link **Download reviewed tracks (.csv.gz)** in fondo alla sezione esporta tutte le tracce recensite finora, con i relativi giudizi, in un unico file CSV.
 
 ### Data source
 
