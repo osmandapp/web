@@ -125,7 +125,6 @@ _________________
 The heatmap is a prototype, and your feedback decides where it goes next.
 
 - **2-minute survey** — how you use it and what is missing: [Heatmap feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdqh4qpBRe1vem3FbyufV950ahLA_B_odTdhUd55SwOMbZBXA/viewform)
-- **Ideas and discussion** — suggest features, report odd data, share what you found in your area: [GitHub Discussion #26169](https://github.com/osmandapp/OsmAnd/discussions/26169)
 - **Rate the tracks** — zoom in, click a trail you know and send a verdict. It takes a few seconds and directly improves the data (sign in with your OsmAnd Cloud account on [test.osmand.net/map/account](https://test.osmand.net/map/account) first).
 
 _________________
