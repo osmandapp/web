@@ -10,7 +10,6 @@ import { FAVORITES_URL, MAIN_URL_WITH_SLASH, POI_URL, SEARCH_URL, TRACKS_URL } f
 const CLOSE_MENU_URLS = [SEARCH_URL, POI_URL, TRACKS_URL, FAVORITES_URL].map((url) => MAIN_URL_WITH_SLASH + url);
 const ESC_IGNORE_TARGETS = 'input, textarea, [contenteditable="true"], [role="dialog"], [role="presentation"]';
 
-// Closes the currently selected menu with the opened object; place it in the app bar of a menu opened from a list
 export default function CloseMenuBtn() {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();

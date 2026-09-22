@@ -6,6 +6,7 @@ import {
     enumerateIds,
     expectInputExactBy,
     getMapHash,
+    getUrl,
     leftClickBy,
     sendKeysBy,
     waitBy,
@@ -27,6 +28,10 @@ import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.
 import setView from '../../actions/setView.mjs';
 
 const CLOSE_MENU_BUTTON = By.id('se-close-menu-button');
+
+const INFO_MENU_URL = 'info/';
+const POI_URL = 'poi/';
+const EXPLORE_URL = 'explore/';
 
 // a street is shown on the map as a search marker, not as a POI (a POI opens its own URL)
 const STREET_VIEW = { lat: 52.3745, lon: 4.8963, zoom: 16 };
@@ -58,7 +63,7 @@ export default async function test() {
 
     // --- My Places: Close closes the favorite and the menu, keeps the map, resets the opened folder ---
     await openFavoriteFromGroup(shortFavGroupName, wptName);
-    await closeMenuKeepingMap(By.id(`se-fav-item-info-${wptName}`));
+    await closeMenuKeepingMap(By.id(`se-fav-item-info-${wptName}`), INFO_MENU_URL);
     await waitByRemoved(By.id(`se-opened-fav-group-${shortFavGroupName}`));
 
     // the next opening starts from the list of folders, not from the opened folder or favorite
@@ -84,6 +89,7 @@ export default async function test() {
     await clickBy(CLOSE_MENU_BUTTON);
     await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
     await waitByRemoved(CLOSE_MENU_BUTTON);
+    await expectClosedUrl(INFO_MENU_URL);
     await clickBy(By.id('se-show-menu-search'));
     await expectCleanSearch();
 
@@ -115,6 +121,7 @@ export default async function test() {
     await clickBy(CLOSE_MENU_BUTTON);
     await waitByRemoved(By.id('se-wpt-details'));
     await waitByRemoved(CLOSE_MENU_BUTTON);
+    await expectClosedUrl(POI_URL);
 
     await clickBy(By.id('se-show-menu-search'));
     await openWikiPlace(wikiPlaceId);
@@ -129,6 +136,7 @@ export default async function test() {
     await clickBy(CLOSE_MENU_BUTTON);
     await waitByRemoved(By.id('se-explore-menu-name'));
     await waitByRemoved(CLOSE_MENU_BUTTON);
+    await expectClosedUrl(EXPLORE_URL);
 
     // the next opening starts from the search screen, not from the Explore list
     // (se-default-search-categories inside expectCleanSearch cannot coexist with the Explore list)
@@ -146,7 +154,7 @@ export default async function test() {
     await clickBy(By.id(`se-cloud-track-${trackName}`));
     await waitBy(By.id('se-track-context-menu'));
     await waitBy(CLOSE_MENU_BUTTON);
-    await closeMenuKeepingMap(By.id('se-track-context-menu'));
+    await closeMenuKeepingMap(By.id('se-track-context-menu'), INFO_MENU_URL);
 
     // the next opening starts from the list of folders, not from the opened folder
     await clickBy(By.id('se-show-menu-tracks'));
@@ -172,7 +180,7 @@ async function submitSearchQuery(query) {
 }
 
 // Close closes the opened object and the menu, the map stays where it is
-async function closeMenuKeepingMap(openedObject) {
+async function closeMenuKeepingMap(openedObject, urlPart) {
     await actionIdleWait();
     const hashBeforeClose = await getMapHash();
 
@@ -181,11 +189,17 @@ async function closeMenuKeepingMap(openedObject) {
     await waitByRemoved(CLOSE_MENU_BUTTON);
 
     await actionIdleWait();
+    await expectClosedUrl(urlPart);
     const hashAfterClose = await getMapHash();
     await assert(
         hashAfterClose === hashBeforeClose,
         `Close should not move the map (before: ${hashBeforeClose}, after: ${hashAfterClose})`
     );
+}
+
+async function expectClosedUrl(urlPart) {
+    const url = await getUrl();
+    await assert(!url.includes(urlPart), `Close should drop "${urlPart}" from the url (got: ${url})`);
 }
 
 // the search opens without the previous query and results

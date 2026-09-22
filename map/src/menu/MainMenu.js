@@ -30,9 +30,10 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
     FAVORITES_URL_PARAM_FOLDER,
     TRAVEL_ROUTE_ID_PARAM,
+    isCloudTrack,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
-import VisibleTracks from './visibletracks/VisibleTracks';
+import VisibleTracks, { hideTrackFromMapIfNotVisible } from './visibletracks/VisibleTracks';
 import ConfigureMap from './configuremap/ConfigureMap';
 import NavigationMenu from './navigation/NavigationMenu';
 import { matchPath, useLocation, useNavigate, useOutlet, useParams, useSearchParams } from 'react-router-dom';
@@ -553,9 +554,18 @@ export default function MainMenu({
         if (!ctx.closeSelectedMenu) return;
         ctx.setCloseSelectedMenu(false);
         const item = items.find((i) => isSelectedMenuItem(i));
-        if (!item) return;
-        clearMenuState(item.type);
-        doSelectMenu({ item });
+        if (item) {
+            clearMenuState(item.type);
+            doSelectMenu({ item });
+        } else {
+            ctx.setCurrentObjectType(null);
+            setShowInfoBlock(false);
+            ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
+        }
+        // don't move the map back to the previous location
+        mtx.setMapViewStack([]);
+        clearSelectionFocus();
+        navigateToUrl({ isMain: true, params: ctx.pageParams });
     }, [ctx.closeSelectedMenu]);
 
     useEffect(() => {
@@ -805,9 +815,10 @@ export default function MainMenu({
             ctx.setSelectedCloudTrackObj(null);
             ctx.setOpenGroups([]);
         }
-        // don't move the map back to the previous location
-        mtx.setMapViewStack([]);
-        clearSelectionFocus();
+        if (isCloudTrack(ctx)) {
+            hideTrackFromMapIfNotVisible({ ctx, track: ctx.selectedGpxFile });
+            ctx.setSelectedGpxFile({});
+        }
     }
 
     function selectMenu({ item, openFromUrl = false }) {
