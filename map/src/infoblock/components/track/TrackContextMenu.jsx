@@ -15,6 +15,7 @@ import AppContext, {
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
 import { getFileName } from '../../../manager/track/TracksManager';
 import ThreeDotsButton from '../../../frame/components/btns/ThreeDotsButton';
+import CloseMenuBtn from '../../../frame/components/btns/CloseMenuBtn';
 import ActionsMenu from '../../../menu/actions/ActionsMenu';
 import TrackActions from '../../../menu/actions/TrackActions';
 import { useTrackVisibility } from '../../../util/hooks/menu/useTrackVisibility';
@@ -82,6 +83,8 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                                 anchorEl={anchorEl}
                             />
                         )}
+                        {/* the track was opened from a list: Close drops the list menu together with the track */}
+                        {showBackButton && <CloseMenuBtn />}
                     </>
                 }
             />

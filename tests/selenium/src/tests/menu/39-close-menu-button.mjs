@@ -73,20 +73,13 @@ export default async function test() {
     await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
     await waitByRemoved(CLOSE_MENU_BUTTON);
 
-    // --- Search: Close resets the query and the results ---
-    // Close is shown for the search results without a selected result
+    // --- Search: Close of a result opened from the search results resets the query and the results ---
+    // the results list itself has no app bar, so it has no Close (checked inside submitSearchQuery)
     await clickBy(By.id('se-show-menu-search'));
-    await submitSearchQuery(wptName);
-    await clickBy(CLOSE_MENU_BUTTON);
-    await waitByRemoved(By.id('se-search-results'));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
-    await clickBy(By.id('se-show-menu-search'));
-    await expectCleanSearch();
-
-    // Close of a result opened from the search results
     await submitSearchQuery(wptName);
     await clickBy(By.id(`se-search-result-fav-${wptName}`));
     await waitBy(By.id(`se-fav-item-info-${wptName}`));
+    await waitBy(CLOSE_MENU_BUTTON);
 
     await clickBy(CLOSE_MENU_BUTTON);
     await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
@@ -107,15 +100,14 @@ export default async function test() {
     await driver.actions().sendKeys(Key.ESCAPE).perform();
     await waitBy(By.id('se-close-wpt-details'), { idle: true });
 
-    // X returns to the search results, where Close is available again
+    // X returns to the search results, which are left by the Back button of the search input
     await clickBy(By.id('se-close-wpt-details'));
     await waitBy(By.id('se-search-results'));
-    await clickBy(CLOSE_MENU_BUTTON);
-    await waitByRemoved(By.id('se-search-results'));
     await waitByRemoved(CLOSE_MENU_BUTTON);
+    await clickBy(By.id('se-search-input-back'));
+    await expectCleanSearch();
 
     // --- Search: a wiki place closed by Close opens again ---
-    await clickBy(By.id('se-show-menu-search'));
     await waitByRemoved(By.id('se-wiki-place-progress'));
     await waitBy(By.id('se-wiki-places-items'));
     const [wikiPlaceId] = await enumerateIds('se-wiki-place-');
@@ -170,13 +162,13 @@ export default async function test() {
     await actionFinish();
 }
 
-// the search menu must be open
+// the search menu must be open; the results list has no app bar, so Close is not shown there
 async function submitSearchQuery(query) {
     await waitBy(By.id('se-search-input'));
     await sendKeysBy(By.id('se-search-input'), `${query}\n`);
     await waitByRemoved(By.id('se-loading-page'));
     await waitBy(By.id('se-search-results'));
-    await waitBy(CLOSE_MENU_BUTTON);
+    await waitByRemoved(CLOSE_MENU_BUTTON);
 }
 
 // Close closes the opened object and the menu, the map stays where it is

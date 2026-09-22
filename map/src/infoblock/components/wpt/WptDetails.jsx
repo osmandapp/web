@@ -26,6 +26,7 @@ import AppContext, {
     OBJECT_TYPE_STOP,
 } from '../../../context/AppContext';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
+import CloseMenuBtn from '../../../frame/components/btns/CloseMenuBtn';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as TrackIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
@@ -911,7 +912,13 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 onClose={() => closeDetails()}
                 showBackButton={!wpt?.mapObj}
                 appBarProps={{ id: wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
-                rightContent={<MapObjectsNav />}
+                rightContent={
+                    <>
+                        <MapObjectsNav />
+                        {/* the object was opened from a list: Close drops the list menu together with the object */}
+                        {!wpt?.mapObj && <CloseMenuBtn />}
+                    </>
+                }
             />
         );
     };
