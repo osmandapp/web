@@ -58,7 +58,9 @@ Chaque groupe d'activités a une case à cocher et un nombre de traces. Dépliez
 
 ![Évaluer les traces](@site/static/img/promo/heatmap/review.webp)
 
-La carte de chaleur n'est pas qu'une image — vous pouvez accéder aux traces qui la composent. Zoomez à **16 ou plus** et cliquez sur une ligne de la carte : le panneau liste les traces qui passent sous votre clic. Choisissez-en une pour la voir sur la carte avec ses détails, télécharger le fichier GPX d'origine ou laisser une évaluation. Tout le monde peut consulter les traces et leurs évaluations ; en envoyer une nécessite de se connecter (voir plus bas).
+**Pour laisser une évaluation, connectez-vous d'abord** avec votre compte OsmAnd sur [test.osmand.net/map/account](https://test.osmand.net/map/account) — puis revenez à la carte de chaleur. Consulter les traces ne nécessite pas de compte.
+
+La carte de chaleur n'est pas qu'une image — vous pouvez accéder aux traces qui la composent. Zoomez à **16 ou plus** et cliquez sur une ligne de la carte : le panneau liste les traces qui passent sous votre clic. Choisissez-en une pour la voir sur la carte avec ses détails, télécharger le fichier GPX d'origine ou laisser une évaluation. Tout le monde peut consulter les traces et leurs évaluations.
 
 ### Data source
 

@@ -58,7 +58,9 @@ Jede Aktivitätsgruppe hat ein Kontrollkästchen und eine Track-Anzahl. Klappen 
 
 ![Tracks bewerten](@site/static/img/promo/heatmap/review.webp)
 
-Die Heatmap ist nicht nur ein Bild — Sie kommen an die Tracks dahinter. Zoomen Sie auf **16 oder näher** und klicken Sie auf eine Linie: Das Panel listet die Tracks, die unter Ihrem Klick verlaufen. Wählen Sie einen, um ihn mit seinen Details auf der Karte zu sehen, die Original-GPX-Datei herunterzuladen oder eine Bewertung abzugeben. Jeder kann die Tracks und ihre Bewertungen ansehen; zum Absenden einer Bewertung ist eine Anmeldung nötig (siehe unten).
+**Um eine Bewertung abzugeben, melden Sie sich zuerst an** — mit Ihrem OsmAnd-Konto unter [test.osmand.net/map/account](https://test.osmand.net/map/account) — und kehren Sie dann zur Heatmap zurück. Zum Ansehen der Tracks ist kein Konto nötig.
+
+Die Heatmap ist nicht nur ein Bild — Sie kommen an die Tracks dahinter. Zoomen Sie auf **16 oder näher** und klicken Sie auf eine Linie: Das Panel listet die Tracks, die unter Ihrem Klick verlaufen. Wählen Sie einen, um ihn mit seinen Details auf der Karte zu sehen, die Original-GPX-Datei herunterzuladen oder eine Bewertung abzugeben. Jeder kann die Tracks und ihre Bewertungen ansehen.
 
 ### Data source
 

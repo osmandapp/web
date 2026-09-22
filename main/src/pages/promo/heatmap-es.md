@@ -58,7 +58,9 @@ Cada grupo de actividad tiene una casilla y un recuento de trazas. Despliega un 
 
 ![Revisar trazas](@site/static/img/promo/heatmap/review.webp)
 
-El mapa de calor no es solo una imagen: puedes llegar a las trazas que hay detrás. Acerca el zoom a **16 o más** y haz clic en una línea del mapa: el panel lista las trazas que pasan bajo tu clic. Elige una para verla en el mapa con sus detalles, descargar el archivo GPX original o dejar una valoración. Cualquiera puede ver las trazas y sus valoraciones; para enviar una hace falta iniciar sesión (ver más abajo).
+**Para dejar una valoración, inicia sesión primero** con tu cuenta de OsmAnd en [test.osmand.net/map/account](https://test.osmand.net/map/account) y vuelve al mapa de calor. Para ver las trazas no hace falta cuenta.
+
+El mapa de calor no es solo una imagen: puedes llegar a las trazas que hay detrás. Acerca el zoom a **16 o más** y haz clic en una línea del mapa: el panel lista las trazas que pasan bajo tu clic. Elige una para verla en el mapa con sus detalles, descargar el archivo GPX original o dejar una valoración. Cualquiera puede ver las trazas y sus valoraciones.
 
 ### Data source
 

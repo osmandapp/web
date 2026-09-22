@@ -58,7 +58,9 @@ Every activity group has a checkbox and a track count. Expand a group to pick si
 
 ![Review tracks](@site/static/img/promo/heatmap/review.webp)
 
-The heatmap is not only a picture — you can get to the tracks behind it. Zoom in to **16 or closer** and click a line on the map: the panel lists the tracks that pass under your click. Pick one to see it on the map with its details, download the original GPX file, or leave a review. Anyone can look at the tracks and their reviews; sending a review requires signing in (see below).
+**To leave a review, sign in first** with your OsmAnd account at [test.osmand.net/map/account](https://test.osmand.net/map/account) — then come back to the heatmap. Viewing tracks does not require an account.
+
+The heatmap is not only a picture — you can get to the tracks behind it. Zoom in to **16 or closer** and click a line on the map: the panel lists the tracks that pass under your click. Pick one to see it on the map with its details, download the original GPX file, or leave a review. Anyone can look at the tracks and their reviews.
 
 ### Data source
 

@@ -58,7 +58,9 @@ Ogni gruppo di attività ha una casella e un conteggio delle tracce. Espandi un 
 
 ![Revisione tracce](@site/static/img/promo/heatmap/review.webp)
 
-La heatmap non è solo un'immagine — puoi arrivare alle tracce che ci stanno dietro. Zooma a **16 o più** e clicca una linea sulla mappa: il pannello elenca le tracce che passano sotto il clic. Scegline una per vederla sulla mappa con i dettagli, scaricare il file GPX originale o lasciare una recensione. Chiunque può vedere le tracce e le recensioni; per inviarne una serve l'accesso (vedi sotto).
+**Per lasciare una recensione, accedi prima** con il tuo account OsmAnd su [test.osmand.net/map/account](https://test.osmand.net/map/account) — poi torna alla heatmap. Per vedere le tracce non serve alcun account.
+
+La heatmap non è solo un'immagine — puoi arrivare alle tracce che ci stanno dietro. Zooma a **16 o più** e clicca una linea sulla mappa: il pannello elenca le tracce che passano sotto il clic. Scegline una per vederla sulla mappa con i dettagli, scaricare il file GPX originale o lasciare una recensione. Chiunque può vedere le tracce e le recensioni.
 
 ### Data source
 
