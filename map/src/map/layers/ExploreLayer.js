@@ -6,7 +6,7 @@ import L from 'leaflet';
 import styles from '../../menu/search/search.module.css';
 import 'leaflet-spin';
 import { Box, IconButton, Modal, Table, TableBody, TableCell, TableRow } from '@mui/material';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';

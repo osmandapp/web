@@ -3,7 +3,7 @@ import headerStyles from '../menu/trackfavmenu.module.css';
 import IconBtn from '../frame/components/btns/IconBtn';
 import styles from './login.module.css';
 import { closeHeader } from '../menu/actions/HeaderHelper';
-import { ReactComponent as CloseIcon } from '../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../context/AppContext';
 import { userLogin } from '../manager/AccountManager';

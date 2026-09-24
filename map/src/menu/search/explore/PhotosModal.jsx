@@ -7,7 +7,7 @@ import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.
 import { ReactComponent as BackForward } from '../../../assets/icons/ic_arrow_forward.svg';
 import headerStyles from '../../trackfavmenu.module.css';
 import styles from '../search.module.css';
-import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import { ReactComponent as WikimediaIcon } from '../../../assets/features/ic_action_logo_wikimedia.svg';
 import AppContext from '../../../context/AppContext';
 import { useInView } from 'react-intersection-observer';
@@ -129,7 +129,7 @@ export default function PhotosModal({ photos }) {
                             id={'se-close-photo'}
                             variant="contained"
                             type="button"
-                            sx={{ fill: 'white' }}
+                            sx={{ fill: 'white', color: 'white' }}
                             onClick={handleClose}
                         >
                             <CloseIcon />

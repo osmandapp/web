@@ -4,7 +4,7 @@ import { IconButton, Tooltip } from '@mui/material';
 import AppContext from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { CLOSE_MENU_BUTTON_ID } from '../../../util/hooks/menu/useCloseMenuByEsc';
-import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 
 // rendered by the shared headers next to Back; Esc does the same, see useCloseMenuByEsc
 export default function CloseMenuBtn() {
