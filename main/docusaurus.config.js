@@ -139,7 +139,6 @@ async function createConfig(){
             { to: '/blog', label: 'Blog', position: 'left'},
             { to: 'pathname:///pricing', label: '💳 Pricing', position: 'left' },
             { to: 'pathname:///map', target: '_self', label: '🌍 Map', position: 'left' },
-            { to: '/docs/hiring', label: '🚵‍♂️ Join us', position: 'left' },
             {
               href: 'https://github.com/osmandapp/',
               label: 'GitHub',

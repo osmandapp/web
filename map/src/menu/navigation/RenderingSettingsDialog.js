@@ -72,11 +72,6 @@ function applyRenderingParams(tileURL, options) {
         properties: copyOptions(options),
         renderingParams: query,
         url: `${tileURL.baseUrl ?? tileURL.url.split('?')[0]}${query}`,
-        ...(tileURL.infoUrl || tileURL.infoBaseUrl
-            ? {
-                  infoUrl: `${tileURL.infoBaseUrl ?? tileURL.infoUrl.split('?')[0]}${query}`,
-              }
-            : {}),
     };
 }
 
@@ -106,10 +101,7 @@ export default function RenderingSettingsDialog({ setOpenSettings }) {
             mtx.setTileURL(updatedTileURL);
             const configureMap = {
                 ...ctx.configureMapState,
-                mapStyle: {
-                    tileURL: updatedTileURL,
-                    renderingType: mtx.renderingType,
-                },
+                mapStyle: { tileURL: updatedTileURL },
             };
             updateConfigureMapCache(configureMap);
             ctx.setConfigureMapState(configureMap);

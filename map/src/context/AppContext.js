@@ -6,8 +6,6 @@ import { apiGet, apiPost } from '../util/HttpApi';
 import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import isEmpty from 'lodash-es/isEmpty';
-import cloneDeep from 'lodash-es/cloneDeep';
-import { INTERACTIVE_LAYER } from '../map/layers/CustomTileLayer';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
 import { GLOBAL_GRAPH_HEIGHT_SIZE } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
@@ -65,7 +63,7 @@ export const defaultConfigureMapStateValues = {
     pois: [],
     showTracks: true,
     terrain: NO_HEIGHTMAP.key,
-    mapStyle: { tileURL: osmandTileURL, renderingType: null },
+    mapStyle: { tileURL: osmandTileURL },
 };
 
 export const TIME_UPDATE_CONFIGURE_MAP = 1744806975000; // 2025-04-16
@@ -90,17 +88,10 @@ async function loadTileUrls(setAllTileURLs, develFeatures) {
     if (response.ok) {
         let data = await response.json();
 
-        data[INTERACTIVE_LAYER] = createInteractiveMap(data, 'hd');
-
         Object.values(data).forEach((item) => {
             item.tileSize = 256 << item.tileSizeLog;
             item.baseUrl = process.env.REACT_APP_TILES_API_SITE + '/tile/' + item.key + '/{z}/{x}/{y}.png';
             item.url = item.baseUrl;
-            if (item.key === INTERACTIVE_LAYER) {
-                item.infoBaseUrl =
-                    process.env.REACT_APP_TILES_API_SITE + '/tile/' + 'info/' + item.key + '/{z}/{x}/{y}.json';
-                item.infoUrl = item.infoBaseUrl;
-            }
             item.uiname = item.name.charAt(0).toUpperCase() + item.name.slice(1);
             if (item.tileSize > 256) {
                 item.uiname += ' HD';
@@ -113,15 +104,6 @@ async function loadTileUrls(setAllTileURLs, develFeatures) {
         }
         setAllTileURLs(data);
     }
-}
-
-function createInteractiveMap(data, type) {
-    let interactiveMap = cloneDeep(data[type]);
-    const name = type === 'hd' ? INTERACTIVE_LAYER : `${INTERACTIVE_LAYER}-${type}`;
-    interactiveMap.name = 'Interactive';
-    interactiveMap.key = name;
-
-    return interactiveMap;
 }
 
 const AppContext = React.createContext();

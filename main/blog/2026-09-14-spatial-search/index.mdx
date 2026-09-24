@@ -58,6 +58,15 @@ Take the earlier example, "Hotel Berlin." The old engine had no good way to know
 Spatial Search reads it differently: "Berlin" becomes the anchor, and "Hotel" gets searched within that context. Same logic applies whether you're combining a POI with a street name, dealing with different street-name formats, or searching in a translated category name — the engine works from how the pieces of your query relate geographically, not from guessing the "right" word order.
 
 
+## Finding Things That Belong Together
+
+Some searches are really about two things that need to be true at once — a gas station that sells diesel, a café that's vegan, a gas station with a McDonald's nearby. Spatial Search can look for the intersection of two categories, whether both apply to the same place or to two different places near each other.
+
+Type "Fuel Diesel" or "Cafe Vegan" and you'll get places matching both. Type "Fuel McDonald's" and you'll get gas stations near a McDonald's — not a long, separate list of one or the other. It's the kind of query that used to mean two separate searches and a lot of squinting at the map. Now it's one line.
+
+![Spatial Search Fuel](./img/fuel.webp)
+
+
 ## Searching Around a Place, Not Just Around You
 
 Search used to be built around your current position — useful most of the time, but not when you're planning ahead. With Spatial Search, you can find a city or another place first, then look for cafés, restaurants, hotels, shops, or fuel stations around that location instead of your own.

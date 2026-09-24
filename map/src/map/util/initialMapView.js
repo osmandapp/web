@@ -36,7 +36,7 @@ function getInitialViewFromHash() {
     const hash = globalThis.location.hash;
     if (!hash || hash.length < 2) return null;
     const [zoomStr, latStr, lngStr] = hash.slice(1).split('/');
-    const zoom = Number.parseInt(zoomStr, 10);
+    const zoom = Number.parseFloat(zoomStr);
     const lat = Number.parseFloat(latStr);
     const lng = Number.parseFloat(lngStr);
     if (Number.isNaN(zoom) || Number.isNaN(lat) || Number.isNaN(lng)) return null;

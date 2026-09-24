@@ -11,7 +11,7 @@ import {
     Toolbar,
     Typography,
 } from '@mui/material';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { ReactComponent as Logo } from '../../../assets/logo.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import styles from './header.module.css';
@@ -22,11 +22,11 @@ import enList from '../../../resources/translations/en/translation.json';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import supportedLanguages from '../../../resources/translations/supportedLanguages.json';
 import { handleLanguageChange } from '../../../i18n';
-import { collator } from '../../../context/AppContext';
+import AppContext, { collator } from '../../../context/AppContext';
 import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
 import { HEADER_MENU_Z_INDEX } from '../../../map/util/ZIndexes';
 
-const pages = ({ t }) => [
+const pages = ({ t, develFeatures }) => [
     {
         name: t('web:header_docs'),
         url: '/docs/intro',
@@ -50,12 +50,22 @@ const pages = ({ t }) => [
         name: `🚵‍ ${t('web:header_join_us')}`,
         url: '/docs/hiring',
     },
+    ...(develFeatures
+        ? [
+              {
+                  name: '🔥 Heatmap', // a prototype, not translated
+                  url: '/map/prototypes/heatmap.html',
+                  target: '_blank',
+              },
+          ]
+        : []),
 ];
 
 export const DEFAULT_LANG = 'en';
 const LANG_PARAM = 'lang';
 
 export default function HeaderMenu({ showInstallBanner = null }) {
+    const ctx = useContext(AppContext);
     const location = useLocation();
 
     const { i18n, t } = useTranslation();
@@ -156,10 +166,11 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                     OsmAnd
                 </IconButton>
                 <Box className={styles.menu}>
-                    {pages({ t }).map((page) => (
+                    {pages({ t, develFeatures: ctx.develFeatures }).map((page) => (
                         <Button
                             component="a"
                             href={page.url}
+                            target={page.target}
                             key={page.name}
                             className={styles.menuItem}
                             sx={
