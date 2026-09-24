@@ -104,7 +104,7 @@ Taking the dump **freezes the app for 5–10 seconds**. If you touch the screen 
 3. Tap **Share report** to send the latest report to the developers, or send it from the crash dialog the next time the app starts.
 4. Turn off *Collect on high usage* once the report is sent.
 
-![Java memory Android](@site/static/img/troubleshooting/heap_histogram_andr_1.png)  ![Heap dump panel Android](@site/static/img/troubleshooting/heap_histogram_andr_2.png)
+![Java memory Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Heap dump panel Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
 
 
 ## Send Tombstone Files (Android) {#send-tombstone-files-android}
