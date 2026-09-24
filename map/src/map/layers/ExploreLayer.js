@@ -570,7 +570,7 @@ export default function ExploreLayer() {
                         <IconButton
                             variant="contained"
                             type="button"
-                            sx={{ top: 0, right: 0, position: 'absolute' }}
+                            sx={{ top: 0, right: 0, position: 'absolute', color: 'var(--svg-icon-color)' }}
                             onClick={closeModal}
                         >
                             <CloseIcon />

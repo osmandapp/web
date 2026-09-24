@@ -121,6 +121,7 @@ import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
 import { searchTypeMap } from '../manager/searchConstants';
 import { useFocusMode } from '../util/hooks/map/useFocusMode';
+import { MAP_VIEW_ZOOM_FIT } from '../map/util/MapManager';
 import useCloseMenuByEsc from '../util/hooks/menu/useCloseMenuByEsc';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
@@ -576,7 +577,7 @@ export default function MainMenu({
         ctx.setSelectedWptId((prev) => (prev ? { ...prev, show: false } : prev));
         doSelectMenu({ item });
         // don't move the map back to the previous location
-        mtx.setMapViewStack([]);
+        mtx.setMapViewStack((prev) => prev.filter((entry) => entry.key !== MAP_VIEW_ZOOM_FIT));
         clearSelectionFocus();
         navigateToUrl({ isMain: true, params: ctx.pageParams });
     }, [ctx.closeSelectedMenu]);

@@ -119,6 +119,7 @@
     align-items: center !important;
     flex-shrink: 0 !important;
     fill: var(--svg-icon-color) !important;
+    color: var(--svg-icon-color) !important;
 }
 .loginDialogContent {
     padding: 0px 4px 20px 4px !important;
