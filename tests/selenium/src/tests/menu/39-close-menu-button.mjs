@@ -32,6 +32,7 @@ const CLOSE_MENU_BUTTON = By.id('se-close-menu-button');
 const INFO_MENU_URL = 'info/';
 const POI_URL = 'poi/';
 const EXPLORE_URL = 'explore/';
+const POI_CATEGORIES_URL = 'poi-categories/';
 
 // a street is shown on the map as a search marker, not as a POI (a POI opens its own URL)
 const STREET_VIEW = { lat: 52.3745, lon: 4.8963, zoom: 16 };
@@ -140,6 +141,18 @@ export default async function test() {
 
     // the next opening starts from the search screen, not from the Explore list
     // (se-default-search-categories inside expectCleanSearch cannot coexist with the Explore list)
+    await clickBy(By.id('se-show-menu-search'));
+    await expectCleanSearch();
+
+    // --- Search: Close on the POI categories list, it has an app bar with Back ---
+    await clickBy(By.id('se-search-categories-show-all'));
+    await waitBy(By.id('se-search-categories-list'));
+    await clickBy(CLOSE_MENU_BUTTON);
+    await waitByRemoved(By.id('se-search-categories-list'));
+    await waitByRemoved(CLOSE_MENU_BUTTON);
+    await expectClosedUrl(POI_CATEGORIES_URL);
+
+    // the next opening starts from the search screen, not from the categories list
     await clickBy(By.id('se-show-menu-search'));
     await expectCleanSearch();
 

@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import headerStyles from '../../trackfavmenu.module.css';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
+import CloseMenuBtn from '../../../frame/components/btns/CloseMenuBtn';
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
@@ -51,6 +52,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                     <Typography component="div" className={headerStyles.title}>
                         {t('search_categories')}
                     </Typography>
+                    <CloseMenuBtn />
                 </Toolbar>
             </AppBar>
             <CustomInput setSearchValue={setSearchValue} type={SEARCH_TYPE_CATEGORY} />

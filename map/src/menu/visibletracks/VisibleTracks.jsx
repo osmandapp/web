@@ -43,27 +43,6 @@ export function isVisibleTrack(file) {
     return !!savedVisible?.open?.includes(visibleCacheName(file, file.sharedWithMe));
 }
 
-export function hideTrackFromMapIfNotVisible({ ctx, track }) {
-    if (!isEmpty(track) && !isVisibleTrack(track)) {
-        if (!isEmpty(ctx.gpxFiles) && ctx.gpxFiles[track.name]) {
-            ctx.mutateGpxFiles((o) => (o[track.name].url = null));
-        }
-        // remove share file from visible tracks
-        if (ctx.shareWithMeFiles?.tracks[track.name]) {
-            ctx.setShareWithMeFiles({
-                ...ctx.shareWithMeFiles,
-                tracks: {
-                    ...ctx.shareWithMeFiles.tracks,
-                    [track.name]: {
-                        ...ctx.shareWithMeFiles.tracks[track.name],
-                        url: null,
-                    },
-                },
-            });
-        }
-    }
-}
-
 export function updateVisibleCache({ visible, file, smartf = null }) {
     const savedVisible = JSON.parse(localStorage.getItem(TRACK_VISIBLE_FLAG)) ?? { old: [], new: [] };
     if (!savedVisible.open) {

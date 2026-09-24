@@ -916,7 +916,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                     <>
                         <MapObjectsNav />
                         {/* the object was opened from a list: Close drops the list menu together with the object */}
-                        {!wpt?.mapObj && <CloseMenuBtn />}
+                        {/* newWpt, not wpt: wpt is null or the previous object until the tags are loaded */}
+                        {!newWpt?.mapObj && <CloseMenuBtn />}
                     </>
                 }
             />

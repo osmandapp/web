@@ -289,6 +289,12 @@ export function navigateBackToSearchResults(navigate, ctx, location) {
     return true;
 }
 
+export function clearSearchQuery(ctx) {
+    ctx.setSearchResult(null);
+    ctx.setSearchFavoriteGroupIds(null);
+    ctx.setSearchQuery(null);
+}
+
 // open waypoint details of an opened track from search results (like a favorite from search)
 export function openTrackWptFromSearch(ctx, { file, shared, name, lat, lon }) {
     const trackData = (shared ? ctx.shareWithMeFiles?.tracks : ctx.gpxFiles)?.[file];

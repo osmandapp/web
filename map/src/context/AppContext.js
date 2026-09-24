@@ -346,6 +346,7 @@ export const AppContextProvider = (props) => {
 
     const [closeMapObj, setCloseMapObj] = useState(false);
     const [closeSelectedMenu, setCloseSelectedMenu] = useState(false);
+    const [closableMenu, setClosableMenu] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
     const [processingAnalytics, setProcessingAnalytics] = useState(false);
@@ -754,6 +755,8 @@ export const AppContextProvider = (props) => {
                 setCloseMapObj,
                 closeSelectedMenu,
                 setCloseSelectedMenu,
+                closableMenu,
+                setClosableMenu,
                 saveTrackToCloud,
                 setSaveTrackToCloud,
                 selectedLocalTrackObj,

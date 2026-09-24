@@ -30,10 +30,9 @@ import AppContext, {
     OBJECT_TYPE_NAVIGATION_ALONE,
     FAVORITES_URL_PARAM_FOLDER,
     TRAVEL_ROUTE_ID_PARAM,
-    isCloudTrack,
 } from '../context/AppContext';
 import TracksMenu from './tracks/TracksMenu';
-import VisibleTracks, { hideTrackFromMapIfNotVisible } from './visibletracks/VisibleTracks';
+import VisibleTracks from './visibletracks/VisibleTracks';
 import ConfigureMap from './configuremap/ConfigureMap';
 import NavigationMenu from './navigation/NavigationMenu';
 import { matchPath, useLocation, useNavigate, useOutlet, useParams, useSearchParams } from 'react-router-dom';
@@ -108,6 +107,7 @@ import {
     navigateBackToSearchResults,
     isFavoriteFromSearch,
     isTrackFromSearch,
+    clearSearchQuery,
 } from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
 import { addFavoriteToMap } from '../manager/FavoritesManager';
@@ -433,6 +433,7 @@ export default function MainMenu({
             id: MENU_IDS.search,
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
             otherUrls: [MAIN_URL_WITH_SLASH + POI_URL],
+            clearState: clearSearchState,
         },
         {
             name: t('configure_map'),
@@ -460,6 +461,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.tracks,
             url: MAIN_URL_WITH_SLASH + TRACKS_URL,
+            clearState: clearCloudTracksState,
         },
         {
             name: t('shared_string_my_favorites'),
@@ -469,6 +471,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.favorites,
             url: MAIN_URL_WITH_SLASH + FAVORITES_URL,
+            clearState: clearFavoritesState,
         },
         {
             name: t('shared_string_navigation'),
@@ -517,6 +520,13 @@ export default function MainMenu({
         },
     ];
 
+    // Close is offered only by the menus that know how to forget their state
+    const closableMenu = !!items.find((i) => isSelectedMenuItem(i))?.clearState;
+
+    useEffect(() => {
+        ctx.setClosableMenu(closableMenu);
+    }, [closableMenu]);
+
     useEffect(() => {
         setOpenCloudSettings(ctx.cloudSettings.changes || ctx.cloudSettings.trash);
     }, [ctx.cloudSettings]);
@@ -554,14 +564,11 @@ export default function MainMenu({
         if (!ctx.closeSelectedMenu) return;
         ctx.setCloseSelectedMenu(false);
         const item = items.find((i) => isSelectedMenuItem(i));
-        if (item) {
-            clearMenuState(item.type);
-            doSelectMenu({ item });
-        } else {
-            ctx.setCurrentObjectType(null);
-            setShowInfoBlock(false);
-            ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
-        }
+        if (!item) return;
+        item.clearState?.();
+        // the list item hovered before opening the object gets no mouseleave, drop its hover as Back does
+        ctx.setSelectedWptId((prev) => (prev ? { ...prev, show: false } : prev));
+        doSelectMenu({ item });
         // don't move the map back to the previous location
         mtx.setMapViewStack([]);
         clearSelectionFocus();
@@ -791,34 +798,30 @@ export default function MainMenu({
         return res.join(' ');
     }
 
-    function clearMenuState(type) {
-        if (type === OBJECT_SEARCH) {
-            ctx.setSearchResult(null);
-            ctx.setSearchQuery(null);
-            ctx.setSearchFavoriteGroupIds(null);
-            ctx.setSelectedSearchObj(null);
-            ctx.setSelectedPoiObj(null);
-            ctx.setPoiCatMenu(false);
-            ctx.setExploreMenu(false);
-            ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
-        }
-        if (type === OBJECT_TYPE_FAVORITE) {
-            ctx.setSelectedFavoriteObj(null);
-            ctx.setPageParams((prev) => {
-                const params = new URLSearchParams(prev[OBJECT_TYPE_FAVORITE]);
-                params.delete(FAVORITES_URL_PARAM_FOLDER);
+    // the menu panels are never unmounted, so Close has to forget the browsing state of the closed menu,
+    // otherwise the next opening restores the previous query, folder or expanded groups
+    function clearSearchState() {
+        clearSearchQuery(ctx);
+        ctx.setSelectedSearchObj(null);
+        ctx.setSelectedPoiObj(null);
+        ctx.setPoiCatMenu(false);
+        ctx.setExploreMenu(false);
+        ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
+    }
 
-                return { ...prev, [OBJECT_TYPE_FAVORITE]: params.size ? `?${params}` : '' };
-            });
-        }
-        if (type === OBJECT_TYPE_CLOUD_TRACK) {
-            ctx.setSelectedCloudTrackObj(null);
-            ctx.setOpenGroups([]);
-        }
-        if (isCloudTrack(ctx)) {
-            hideTrackFromMapIfNotVisible({ ctx, track: ctx.selectedGpxFile });
-            ctx.setSelectedGpxFile({});
-        }
+    function clearFavoritesState() {
+        ctx.setSelectedFavoriteObj(null);
+        ctx.setPageParams((prev) => {
+            const params = new URLSearchParams(prev[OBJECT_TYPE_FAVORITE]);
+            params.delete(FAVORITES_URL_PARAM_FOLDER);
+
+            return { ...prev, [OBJECT_TYPE_FAVORITE]: params.size ? `?${params}` : '' };
+        });
+    }
+
+    function clearCloudTracksState() {
+        ctx.setSelectedCloudTrackObj(null);
+        ctx.setOpenGroups([]);
     }
 
     function selectMenu({ item, openFromUrl = false }) {

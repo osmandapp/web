@@ -1,25 +1,19 @@
 import React, { useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 import { IconButton, Tooltip } from '@mui/material';
 import AppContext from '../../../context/AppContext';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
-import { FAVORITES_URL, MAIN_URL_WITH_SLASH, POI_URL, SEARCH_URL, TRACKS_URL } from '../../../manager/GlobalManager';
 
-const CLOSE_MENU_URLS = [SEARCH_URL, POI_URL, TRACKS_URL, FAVORITES_URL].map((url) => MAIN_URL_WITH_SLASH + url);
 const ESC_IGNORE_TARGETS = 'input, textarea, [contenteditable="true"], [role="dialog"], [role="presentation"]';
 
 export default function CloseMenuBtn() {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
-    const location = useLocation();
-
-    const canCloseMenu = CLOSE_MENU_URLS.some((url) => location.pathname.startsWith(url));
 
     // close the selected menu by Esc, available together with the Close button
     useEffect(() => {
-        if (!canCloseMenu) return;
+        if (!ctx.closableMenu) return;
         const closeMenuByEsc = (e) => {
             if (e.key !== 'Escape') return;
             if (e.defaultPrevented) return;
@@ -29,9 +23,9 @@ export default function CloseMenuBtn() {
         window.addEventListener('keydown', closeMenuByEsc);
 
         return () => window.removeEventListener('keydown', closeMenuByEsc);
-    }, [canCloseMenu]);
+    }, [ctx.closableMenu]);
 
-    if (!canCloseMenu) {
+    if (!ctx.closableMenu) {
         return null;
     }
 
