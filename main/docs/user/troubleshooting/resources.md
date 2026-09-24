@@ -54,9 +54,9 @@ The list below provides converters for various data types supported by OsmAnd, a
 | Topo map into printable| This is [a tool](https://github.com/acui/osmand_topo_map_generator) to generate a printablea tool to generate a printable topographic map by using screenshots from OsmAnd (https://osmand.net). The map uses the UTM grid and has declination information. It's to be used with a compass or a GPS device with UTM coordinates.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 | lidar2map | A self-contained tool that downloads public LiDAR data from national portals across 22 countries| [lidar2map](https://github.com/nico579/lidar2map)|
+| GPX slope colours | Colours a GPX track by slope: climbs, descents and flat sections become separate tracks with their own colour, written into the file so OsmAnd displays them. The gradient is signed, so it follows the direction of travel. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Custom Resources {#custom-resources}
-
 ### Manuals {#manuals}
 
 OsmAnd's official documentation is thorough, but the community has also produced an array of custom manuals to help users with specific features and use cases.  
