@@ -79,6 +79,20 @@ If the issue persists, contact **support@osmand.net** and include:
 - Type of purchase (Pro / Maps+ one-time / Maps+ subscription).
 
 
+### Manual Transfer {#manual-transfer}
+
+If your purchase cannot be activated automatically through OsmAnd Cloud, Support may be able to transfer it manually.
+
+To request a manual transfer, provide:
+- Your OsmAnd Cloud email.
+- The purchase transaction or order number.
+- A screenshot showing the purchased product is also recommended.
+
+Without the purchase transaction or order number and a registered OsmAnd Cloud account, Support cannot normally transfer the purchase.
+
+Purchases made more than 10 years ago cannot be transferred.
+
+
 ### Purchases and Multiple Accounts {#purchases-and-multiple-accounts}
 
 A cross-platform purchase is linked to the OsmAnd Cloud account that was last activated on the device holding the original purchase receipt (from the App Store or Google Play). If you log out of your primary account and log into a new one on this device, the system automatically transfers the license to the new account. As a result, your original OsmAnd Cloud account loses its purchases status on other platforms, as the license can only be active on one OsmAnd Cloud account at a time. More info is [here](../troubleshooting/purchases_payments.md#purchase-association-with-multiple-osmand-cloud-accounts).
@@ -86,12 +100,12 @@ A cross-platform purchase is linked to the OsmAnd Cloud account that was last ac
 
 ## Example {#example}
 
-You purchased **Maps+** as a one-time in-app purchase in the free version of OsmAnd from the [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).  
+You purchased **Maps+** as a one-time in-app purchase in the free version of OsmAnd from the [Google Play](https://play.google.com/store/apps/details?id=net.osmand).  
 Later, you decide to switch to an iPhone and want to use **Maps+** with the [OsmAnd iOS version](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 To activate your Maps+ purchase on iOS:
 
-1. Open the **Amazon version** of the OsmAnd app on your original device.
+1. Open OsmAnd on your original Android device.
 2. Log in to your [OsmAnd Cloud account](../personal/osmand-cloud.md#login):  
    *Menu → Settings → OsmAnd Cloud → Create new account / I already have an account*
 3. Install OsmAnd on your iPhone from the [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
