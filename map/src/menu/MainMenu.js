@@ -96,10 +96,15 @@ import ProFeatures from '../frame/pro/ProFeatures';
 import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
-import { processDisplayTrack } from '../manager/track/TracksManager';
+import { processDisplayTrack, resetCloudTracksMenu } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
-import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
+import {
+    getFavMenuListByLayers,
+    openFavoriteObj,
+    addFavoriteToMap,
+    resetFavoritesMenu,
+} from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
 import {
     openPoiObj,
@@ -107,16 +112,16 @@ import {
     navigateBackToSearchResults,
     isFavoriteFromSearch,
     isTrackFromSearch,
-    clearSearchQuery,
+    resetSearchMenu,
 } from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
-import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
 import useSearchNav from '../util/hooks/search/useSearchNav';
 import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
 import { searchTypeMap } from '../manager/searchConstants';
 import { useFocusMode } from '../util/hooks/map/useFocusMode';
+import useCloseMenuByEsc from '../util/hooks/menu/useCloseMenuByEsc';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -157,6 +162,7 @@ export default function MainMenu({
     const currentLoc = useGeoLocation(ctx);
     const { isSearchResultRoute } = useSearchNav();
     const { clearSelectionFocus } = useFocusMode();
+    useCloseMenuByEsc();
 
     const outlet = useOutlet();
     const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
@@ -433,7 +439,7 @@ export default function MainMenu({
             id: MENU_IDS.search,
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
             otherUrls: [MAIN_URL_WITH_SLASH + POI_URL],
-            clearState: clearSearchState,
+            clearState: resetSearchMenu,
         },
         {
             name: t('configure_map'),
@@ -461,7 +467,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.tracks,
             url: MAIN_URL_WITH_SLASH + TRACKS_URL,
-            clearState: clearCloudTracksState,
+            clearState: resetCloudTracksMenu,
         },
         {
             name: t('shared_string_my_favorites'),
@@ -471,7 +477,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.favorites,
             url: MAIN_URL_WITH_SLASH + FAVORITES_URL,
-            clearState: clearFavoritesState,
+            clearState: resetFavoritesMenu,
         },
         {
             name: t('shared_string_navigation'),
@@ -565,7 +571,7 @@ export default function MainMenu({
         ctx.setCloseSelectedMenu(false);
         const item = items.find(isSelectedMenuItem);
         if (!item) return;
-        item.clearState?.();
+        item.clearState?.(ctx);
         // the list item hovered before opening the object gets no mouseleave, drop its hover as Back does
         ctx.setSelectedWptId((prev) => (prev ? { ...prev, show: false } : prev));
         doSelectMenu({ item });
@@ -796,32 +802,6 @@ export default function MainMenu({
         isSelectedMenuItem(item) && res.push(styles.menuItemSelected);
 
         return res.join(' ');
-    }
-
-    // the menu panels are never unmounted, so Close has to forget the browsing state of the closed menu,
-    // otherwise the next opening restores the previous query, folder or expanded groups
-    function clearSearchState() {
-        clearSearchQuery(ctx);
-        ctx.setSelectedSearchObj(null);
-        ctx.setSelectedPoiObj(null);
-        ctx.setPoiCatMenu(false);
-        ctx.setExploreMenu(false);
-        ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
-    }
-
-    function clearFavoritesState() {
-        ctx.setSelectedFavoriteObj(null);
-        ctx.setPageParams((prev) => {
-            const params = new URLSearchParams(prev[OBJECT_TYPE_FAVORITE]);
-            params.delete(FAVORITES_URL_PARAM_FOLDER);
-
-            return { ...prev, [OBJECT_TYPE_FAVORITE]: params.size ? `?${params}` : '' };
-        });
-    }
-
-    function clearCloudTracksState() {
-        ctx.setSelectedCloudTrackObj(null);
-        ctx.setOpenGroups([]);
     }
 
     function selectMenu({ item, openFromUrl = false }) {

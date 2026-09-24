@@ -1,6 +1,7 @@
 import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import styles from './header.module.css';
+import CloseMenuBtn from '../btns/CloseMenuBtn';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import React from 'react';
@@ -36,6 +37,7 @@ export default function HeaderWithUnderline({
                     {title}
                 </Typography>
                 {rightContent}
+                {showBackButton && <CloseMenuBtn />}
             </Toolbar>
         </AppBar>
     );

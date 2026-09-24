@@ -26,8 +26,6 @@ import AppContext, {
     OBJECT_TYPE_STOP,
 } from '../../../context/AppContext';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
-import CloseMenuBtn from '../../../frame/components/btns/CloseMenuBtn';
-import useCloseMenuByEsc from '../../../util/hooks/menu/useCloseMenuByEsc';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as TrackIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
@@ -122,6 +120,7 @@ import {
     isFavoriteFromSearch,
     isWptFromSearch,
     navigateBackToSearchResults,
+    closeWikiPoi,
 } from '../../../manager/SearchManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
@@ -356,9 +355,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
         return null;
     }, [ctx.selectedWpt]);
-
-    const showCloseMenu = !showLoading && !newWpt?.mapObj;
-    useCloseMenuByEsc(showCloseMenu);
 
     useEffect(() => {
         if (!ctx.selectedWpt) return;
@@ -666,11 +662,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 });
             }
             setShowInfoBlock(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
             if (wpt.mapObj) {
+                ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
                 closeObjectFromMap();
             } else {
-                ctx.setSelectedPoiObj(null);
+                closeWikiPoi(ctx);
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + (ctx.exploreMenu ? EXPLORE_URL : ''),
                     hash: liveHash(),
@@ -911,17 +907,15 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     };
 
     const Header = () => {
+        // newWpt knows the origin at once, wpt only after the details are loaded
+        const mapObj = newWpt?.mapObj;
+
         return (
             <HeaderWithUnderline
                 onClose={() => closeDetails()}
-                showBackButton={!wpt?.mapObj}
-                appBarProps={{ id: wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
-                rightContent={
-                    <>
-                        <MapObjectsNav />
-                        {showCloseMenu && <CloseMenuBtn />}
-                    </>
-                }
+                showBackButton={!mapObj}
+                appBarProps={{ id: mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
+                rightContent={<MapObjectsNav />}
             />
         );
     };

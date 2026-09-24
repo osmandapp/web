@@ -917,3 +917,13 @@ const FavoritesManager = {
 };
 
 export default FavoritesManager;
+
+export function resetFavoritesMenu(ctx) {
+    ctx.setSelectedFavoriteObj(null);
+    ctx.setPageParams((prev) => {
+        const params = new URLSearchParams(prev[OBJECT_TYPE_FAVORITE]);
+        params.delete(FAVORITES_URL_PARAM_FOLDER);
+
+        return { ...prev, [OBJECT_TYPE_FAVORITE]: params.size ? `?${params}` : '' };
+    });
+}
