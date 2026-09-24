@@ -126,6 +126,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 import { getPoiApi, getPoiByMapObjectApi, getTransportStopApi } from '../../../manager/SearchApi';
+import LoginContext from '../../../context/LoginContext';
+import PhotoLibraryOutlinedIcon from '@mui/icons-material/PhotoLibraryOutlined';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -212,6 +214,8 @@ export async function getAddressByLatLon(lat, lon) {
 
 export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
+    const isAdmin = ltx.loginRoles?.includes('ROLE_ADMIN');
     const { t } = useTranslation();
 
     const navigate = useNavigate();
@@ -1217,6 +1221,36 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                                 }}
                                             />
                                         )}
+                                    </>
+                                )}
+                                {wpt.wikidata && isAdmin && (
+                                    <>
+                                        <Divider />
+                                        <MenuItem className={styles.descTitle}>
+                                            <ListItemText>
+                                                <Typography className={styles.descTitleText}>
+                                                    {t('web:developer')}
+                                                </Typography>
+                                            </ListItemText>
+                                        </MenuItem>
+                                        <WptTagInfo
+                                            key={'top-photos'}
+                                            baseTag={{
+                                                icon: (
+                                                    <PhotoLibraryOutlinedIcon sx={{ color: 'var(--svg-icon-color)' }} />
+                                                ),
+                                                name: t('web:dev_top_photos'),
+                                                link: (
+                                                    <Link
+                                                        href={`${window.location.origin}/admin/top-photos/per-place?placeId=${wpt.wikidata}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        {wpt.wikidata}
+                                                    </Link>
+                                                ),
+                                            }}
+                                        />
                                     </>
                                 )}
                             </ListItemText>
