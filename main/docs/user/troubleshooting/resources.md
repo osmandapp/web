@@ -57,6 +57,7 @@ The list below provides converters for various data types supported by OsmAnd, a
 | GPX slope colours | Colours a GPX track by slope: climbs, descents and flat sections become separate tracks with their own colour, written into the file so OsmAnd displays them. The gradient is signed, so it follows the direction of travel. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Custom Resources {#custom-resources}
+
 ### Manuals {#manuals}
 
 OsmAnd's official documentation is thorough, but the community has also produced an array of custom manuals to help users with specific features and use cases.  
