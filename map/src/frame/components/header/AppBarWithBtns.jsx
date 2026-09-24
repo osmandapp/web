@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography } from '@mui/material';
 import styles from '../../../login/login.module.css';
 import React from 'react';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import IconBtn from '../btns/IconBtn';
 
 export default function AppBarWithBtns({ id, header, hasBackBtn = false, leftBtnAction = null, rightBtns = null }) {

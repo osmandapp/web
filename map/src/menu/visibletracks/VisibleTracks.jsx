@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useMemo, useState } from 'react';
 import visibleStyles from './visibletracks.module.css';
 import headerStyles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import CloudTrackItem from '../tracks/CloudTrackItem';
 import EmptyVisible from '../errors/EmptyVisible';

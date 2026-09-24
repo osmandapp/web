@@ -289,6 +289,30 @@ export function navigateBackToSearchResults(navigate, ctx, location) {
     return true;
 }
 
+export function clearSearchQuery(ctx) {
+    ctx.setSearchResult(null);
+    ctx.setSearchFavoriteGroupIds(null);
+    ctx.setSearchQuery(null);
+}
+
+export function closeExploreMenu(ctx) {
+    ctx.setLoadingContextMenu(false);
+    ctx.setExploreMenu(false);
+}
+
+export function closeWikiPoi(ctx) {
+    ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
+    ctx.setSelectedPoiObj(null);
+}
+
+export function resetSearchMenu(ctx) {
+    clearSearchQuery(ctx);
+    ctx.setSelectedSearchObj(null);
+    ctx.setPoiCatMenu(false);
+    closeExploreMenu(ctx);
+    closeWikiPoi(ctx);
+}
+
 // open waypoint details of an opened track from search results (like a favorite from search)
 export function openTrackWptFromSearch(ctx, { file, shared, name, lat, lon }) {
     const trackData = (shared ? ctx.shareWithMeFiles?.tracks : ctx.gpxFiles)?.[file];

@@ -5,7 +5,7 @@ import { apiGet } from '../../util/HttpApi';
 import { sendRequest } from '../../manager/ShareManager';
 import headerStyles from '../trackfavmenu.module.css';
 import styles from './share.module.css';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import AppContext, { OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import RequestAccessError from './errors/RequestAccessError';

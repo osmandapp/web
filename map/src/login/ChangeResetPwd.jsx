@@ -16,7 +16,7 @@ import styles from './login.module.css';
 import errorStyles from '../menu/errors/errors.module.css';
 import { closeHeader } from '../menu/actions/HeaderHelper';
 import React, { useContext, useEffect, useState } from 'react';
-import { ReactComponent as CloseIcon } from '../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import { ReactComponent as UserPasswordIcon } from '../assets/icons/ic_action_user_password.svg';
 import AppContext from '../context/AppContext';
 import { closeLoginMenu, EMPTY_INPUT, ERROR_EMAIL, ERROR_TOKEN, openLogin } from '../manager/LoginManager';

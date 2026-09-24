@@ -96,10 +96,15 @@ import ProFeatures from '../frame/pro/ProFeatures';
 import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
-import { processDisplayTrack } from '../manager/track/TracksManager';
+import { processDisplayTrack, resetCloudTracksMenu } from '../manager/track/TracksManager';
 import { openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
-import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
+import {
+    getFavMenuListByLayers,
+    openFavoriteObj,
+    addFavoriteToMap,
+    resetFavoritesMenu,
+} from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
 import {
     openPoiObj,
@@ -107,14 +112,17 @@ import {
     navigateBackToSearchResults,
     isFavoriteFromSearch,
     isTrackFromSearch,
+    resetSearchMenu,
 } from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
-import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
 import useSearchNav from '../util/hooks/search/useSearchNav';
 import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
 import { searchTypeMap } from '../manager/searchConstants';
+import { useFocusMode } from '../util/hooks/map/useFocusMode';
+import { MAP_VIEW_ZOOM_FIT } from '../map/util/MapManager';
+import useCloseMenuByEsc from '../util/hooks/menu/useCloseMenuByEsc';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -154,6 +162,8 @@ export default function MainMenu({
     const location = useLocation();
     const currentLoc = useGeoLocation(ctx);
     const { isSearchResultRoute } = useSearchNav();
+    const { clearSelectionFocus } = useFocusMode();
+    useCloseMenuByEsc();
 
     const outlet = useOutlet();
     const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
@@ -430,6 +440,7 @@ export default function MainMenu({
             id: MENU_IDS.search,
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
             otherUrls: [MAIN_URL_WITH_SLASH + POI_URL],
+            clearState: resetSearchMenu,
         },
         {
             name: t('configure_map'),
@@ -457,6 +468,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.tracks,
             url: MAIN_URL_WITH_SLASH + TRACKS_URL,
+            clearState: resetCloudTracksMenu,
         },
         {
             name: t('shared_string_my_favorites'),
@@ -466,6 +478,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.favorites,
             url: MAIN_URL_WITH_SLASH + FAVORITES_URL,
+            clearState: resetFavoritesMenu,
         },
         {
             name: t('shared_string_navigation'),
@@ -514,6 +527,13 @@ export default function MainMenu({
         },
     ];
 
+    // Close is offered only by the menus that know how to forget their state
+    const closableMenu = !!items.find(isSelectedMenuItem)?.clearState;
+
+    useEffect(() => {
+        ctx.setClosableMenu(closableMenu);
+    }, [closableMenu]);
+
     useEffect(() => {
         setOpenCloudSettings(ctx.cloudSettings.changes || ctx.cloudSettings.trash);
     }, [ctx.cloudSettings]);
@@ -546,6 +566,21 @@ export default function MainMenu({
             ctx.setCloseMapObj(false);
         }
     }, [ctx.closeMapObj]);
+
+    useEffect(() => {
+        if (!ctx.closeSelectedMenu) return;
+        ctx.setCloseSelectedMenu(false);
+        const item = items.find(isSelectedMenuItem);
+        if (!item) return;
+        item.clearState?.(ctx);
+        // the list item hovered before opening the object gets no mouseleave, drop its hover as Back does
+        ctx.setSelectedWptId((prev) => (prev ? { ...prev, show: false } : prev));
+        doSelectMenu({ item });
+        // don't move the map back to the previous location
+        mtx.setMapViewStack((prev) => prev.filter((entry) => entry.key !== MAP_VIEW_ZOOM_FIT));
+        clearSelectionFocus();
+        navigateToUrl({ isMain: true, params: ctx.pageParams });
+    }, [ctx.closeSelectedMenu]);
 
     useEffect(() => {
         openMenuObject();
@@ -792,7 +827,7 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(null);
             }
             ctx.setOpenNavigationSettings(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
+            ctx.setSearchSettings((prev) => ({ ...prev, showExploreMarkers: false }));
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
