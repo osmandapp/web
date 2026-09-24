@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import headerStyles from '../../trackfavmenu.module.css';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import CloseMenuBtn from '../../../frame/components/btns/CloseMenuBtn';
+import useCloseMenuByEsc from '../../../util/hooks/menu/useCloseMenuByEsc';
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
@@ -22,6 +23,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
     const { t } = useTranslation();
 
     const { navigateToSearchMenu, navigateToSearchResults } = useSearchNav();
+    useCloseMenuByEsc();
 
     const sortedCategories = categories?.sort((a, b) => {
         const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`));

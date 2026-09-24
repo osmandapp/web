@@ -19,6 +19,7 @@ import CloseMenuBtn from '../../../frame/components/btns/CloseMenuBtn';
 import ActionsMenu from '../../../menu/actions/ActionsMenu';
 import TrackActions from '../../../menu/actions/TrackActions';
 import { useTrackVisibility } from '../../../util/hooks/menu/useTrackVisibility';
+import useCloseMenuByEsc from '../../../util/hooks/menu/useCloseMenuByEsc';
 import { useCompactOnScroll } from '../../../util/hooks/useCompactOnScroll';
 import CloudTrackActionsButtons from './CloudTrackActionsButtons';
 import RouteTrackActionsButtons from './RouteTrackActionsButtons';
@@ -32,6 +33,8 @@ import { useFocusMode } from '../../../util/hooks/map/useFocusMode';
 export default function TrackContextMenu({ track, onClose, tabsObj, showBackButton = false }) {
     const ctx = useContext(AppContext);
     const { setSelectionFocus, clearSelectionFocus } = useFocusMode();
+    const showCloseMenu = showBackButton && tabsObj?.tabList.length > 0;
+    useCloseMenuByEsc(showCloseMenu);
 
     const anchorEl = useRef(null);
     const collapsibleHeaderRef = useRef(null);
@@ -83,8 +86,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                                 anchorEl={anchorEl}
                             />
                         )}
-                        {/* the track was opened from a list: Close drops the list menu together with the track */}
-                        {showBackButton && <CloseMenuBtn />}
+                        {showCloseMenu && <CloseMenuBtn />}
                     </>
                 }
             />

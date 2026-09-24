@@ -27,6 +27,7 @@ import AppContext, {
 } from '../../../context/AppContext';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import CloseMenuBtn from '../../../frame/components/btns/CloseMenuBtn';
+import useCloseMenuByEsc from '../../../util/hooks/menu/useCloseMenuByEsc';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_date_start.svg';
 import { ReactComponent as FolderIcon } from '../../../assets/icons/ic_action_folder.svg';
 import { ReactComponent as TrackIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
@@ -355,6 +356,9 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
         return null;
     }, [ctx.selectedWpt]);
+
+    const showCloseMenu = !showLoading && !newWpt?.mapObj;
+    useCloseMenuByEsc(showCloseMenu);
 
     useEffect(() => {
         if (!ctx.selectedWpt) return;
@@ -915,9 +919,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 rightContent={
                     <>
                         <MapObjectsNav />
-                        {/* the object was opened from a list: Close drops the list menu together with the object */}
-                        {/* newWpt, not wpt: wpt is null or the previous object until the tags are loaded */}
-                        {!newWpt?.mapObj && <CloseMenuBtn />}
+                        {showCloseMenu && <CloseMenuBtn />}
                     </>
                 }
             />

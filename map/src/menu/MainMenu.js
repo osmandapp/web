@@ -521,7 +521,7 @@ export default function MainMenu({
     ];
 
     // Close is offered only by the menus that know how to forget their state
-    const closableMenu = !!items.find((i) => isSelectedMenuItem(i))?.clearState;
+    const closableMenu = !!items.find(isSelectedMenuItem)?.clearState;
 
     useEffect(() => {
         ctx.setClosableMenu(closableMenu);
@@ -563,7 +563,7 @@ export default function MainMenu({
     useEffect(() => {
         if (!ctx.closeSelectedMenu) return;
         ctx.setCloseSelectedMenu(false);
-        const item = items.find((i) => isSelectedMenuItem(i));
+        const item = items.find(isSelectedMenuItem);
         if (!item) return;
         item.clearState?.();
         // the list item hovered before opening the object gets no mouseleave, drop its hover as Back does
