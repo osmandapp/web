@@ -52,7 +52,7 @@ export function addTrackToMap({ ctx, mtx, file, map, fit = false, recentSaver, n
     if (!layer) {
         return null;
     }
-    layer.on('click', (e) => clickHandler({ ctx, file, layer, recentSaver, navigate, e }));
+    layer.on('click', (e) => clickHandler({ ctx, file, recentSaver, navigate, e }));
 
     if (fit || file.zoomToTrack) {
         panToTrack({ map, layer, mtx });
