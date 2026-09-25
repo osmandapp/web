@@ -249,7 +249,8 @@ export function openPoiObj(ctx, object) {
         ctx.setSelectedWpt((prev) => ({ ...prev, ...object, id: object.wikidata?.properties?.id }));
         ctx.setCurrentObjectType(null);
     } else {
-        const id = object?.properties?.[POI_ID] ?? (object?.geometry ? getObjIdSearch(object) : undefined);
+        const { options, latlng } = object;
+        const id = options?.[POI_ID] ?? `${latlng.lat},${latlng.lng}`;
         ctx.setSelectedWpt((prev) => ({ ...prev, poi: object, id }));
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
     }
