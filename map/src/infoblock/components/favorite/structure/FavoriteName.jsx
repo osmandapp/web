@@ -81,7 +81,7 @@ export default function FavoriteName({
         const resolved = name && name.trim() !== '' ? name : t('web:transport_stop');
         setFavoriteName(resolved);
         onAutoFill?.(resolved);
-    }, [ctx.addFavorite]);
+    }, [ctx.addFavorite?.poi]);
 
     return (
         <Box sx={{ maxWidth: `${widthDialog}px` }}>
