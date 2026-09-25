@@ -289,7 +289,7 @@ const SortActions = forwardRef(
         };
 
         useEffect(() => {
-            if (currentMethod) {
+            if (currentMethod && !isNearestSort(currentMethod)) {
                 doSort({
                     method: currentMethod,
                     setSortFiles,

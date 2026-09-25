@@ -1,8 +1,9 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import { getFiles } from '../../util.mjs';
-import { clickBy, enclose, enumerateIds, waitBy } from '../../lib.mjs';
+import { clickBy, enclose, enumerateIds, setMapCenter, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
+import { driver } from '../../options.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../../actions/favorites/actionRenameFavGroup.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -68,6 +69,15 @@ export default async function test() {
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-nearestMapCenter'));
     await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+
+    // check opening the sort menu keeps the order after the map is moved
+    const favItemsNearestMapCenter = await enumerateIds('se-fav-item-name-');
+    await setMapCenter(50.4719142, 30.5059648);
+    await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await driver.executeScript('document.body.click();');
+    await waitByRemoved(By.id('se-sort-menu'));
+    await validateItemOrder(favItemsNearestMapCenter);
 
     // check item sort is restored after the group is reopened
     await clickBy(By.id('se-back-folder-button-favorites'));
