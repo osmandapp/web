@@ -1,4 +1,13 @@
 {
+  "city_type_city": "City",
+  "city_type_town": "Town",
+  "city_type_village": "Village",
+  "city_type_hamlet": "Hamlet",
+  "city_type_suburb": "Suburb",
+  "city_type_district": "District",
+  "city_type_neighbourhood": "Neighbourhood",
+  "city_type_boundary": "Area",
+  "postcode": "Postcode",
   "rendering_attr_hikingRoutesOSMC_name": "Hiking routes",
   "routeInfo_roadClass_name": "Road type",
   "rendering_attr_hideText_name": "Text",
