@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { clickBy, waitBy, waitByRemoved, assert } from '../../lib.mjs';
+import { clickBy, leftClickBy, waitBy, waitByRemoved, assert } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
@@ -65,6 +65,14 @@ export default async function test() {
 
     // Open track
     await clickBy(By.id('se-cloud-track-' + trackName));
+    await waitBy(By.id('se-track-context-menu'));
+
+    // Test: click a wpt marker of the opened track on the map — its details open and close back to the track
+    await leftClickBy(50.776637, 29.570159); // VELO-0
+    await waitBy(By.id('se-wpt-details'));
+    await clickBy(By.id('se-close-wpt-details'));
+    await waitByRemoved(By.id('se-wpt-details'));
+    await waitBy(By.id('se-track-context-menu'));
 
     // Open Waypoints tab
     await clickBy(By.css("[testid='se-tab-points']"));
