@@ -12,6 +12,8 @@ import { initialPosition, initialZoom } from '../util/initialMapView';
 import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManager';
 import { applySubpixelMarkerPosition } from '../markers/subpixelMarkerPosition';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
+import { isMvtTileURL } from './MvtLayerConfig';
+import { enableMvtIntegerZoom } from '../../menu/configuremap/MvtTweaks';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {
@@ -133,6 +135,7 @@ export default function MapStateLayer() {
     const mtx = useContext(MapContext);
     const map = useMap();
     const { pathname } = useLocation();
+    const fractionalZoom = !ctx.develFeatures || !isMvtTileURL(mtx.tileURL) || mtx.mvtTweaks?.fractionalZoom !== false;
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
@@ -187,6 +190,9 @@ export default function MapStateLayer() {
     // Leaflet's zoom animation CSS-scales the MapLibre canvas as a bitmap for 250 ms, then MapLibre redraws: the map
     // and its markers jump. Moving the map by a fraction of a zoom level per frame lets MapLibre render every step.
     useEffect(() => {
+        if (!fractionalZoom) {
+            return enableMvtIntegerZoom(map);
+        }
         const container = map.getContainer();
         const originalStop = map._stop;
         const originalZoomIn = map.zoomIn;
@@ -339,7 +345,7 @@ export default function MapStateLayer() {
             map.setZoomAround = originalSetZoomAround;
             stopZoom();
         };
-    }, [ctx.infoBlockWidth]);
+    }, [ctx.infoBlockWidth, fractionalZoom]);
 
     // Central zoom-to-fit handler driven by useZoomToFit.
     useEffect(() => {

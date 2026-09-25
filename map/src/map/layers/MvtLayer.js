@@ -9,7 +9,7 @@ import { osmandTileURL } from '../baseTileURL';
 import { isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
-import { getMvtTileStats } from '../../menu/configuremap/MvtTweaks';
+import { getMvtTileStats, watchMvtZoom } from '../../menu/configuremap/MvtTweaks';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,
@@ -152,9 +152,13 @@ export default function MvtLayer({ config }) {
             getZoom: () => maplibreMap.getZoom(),
         }));
         map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
+        const stopZoomStats = ctx.develFeatures ? watchMvtZoom(map, sources, mtx.setMvtTileStats) : null;
 
         const handleLoading = () => {
             window.seIsTilesLoaded = false;
+            if (ctx.develFeatures) {
+                mtx.setMvtTileStats((stats) => (stats ? { ...stats, bytes: null, count: null } : null));
+            }
         };
 
         const handleIdle = () => {
@@ -231,6 +235,7 @@ export default function MvtLayer({ config }) {
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
+            stopZoomStats?.();
             if (ctx.develFeatures) {
                 mtx.setMvtTileStats(null);
             }

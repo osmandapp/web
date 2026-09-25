@@ -4,6 +4,45 @@ import MapContext from '../../context/MapContext';
 import { isMvtTileURL } from '../../map/layers/MvtLayerConfig';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
+import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
+
+export function enableMvtIntegerZoom(map) {
+    const zoomSnap = map.options.zoomSnap;
+    map.stop();
+    map.options.zoomSnap = 1;
+    map.setZoom(Math.trunc(map.getZoom()), { animate: false });
+
+    const onWheel = (event) => {
+        L.DomEvent.stop(event);
+        const delta = L.DomEvent.getWheelDelta(event);
+        if (delta) {
+            map.setZoomAround(map.mouseEventToContainerPoint(event), map.getZoom() + Math.sign(delta), {
+                animate: false,
+            });
+        }
+    };
+    L.DomEvent.on(map.getContainer(), 'wheel', onWheel);
+
+    return () => {
+        L.DomEvent.off(map.getContainer(), 'wheel', onWheel);
+        map.options.zoomSnap = zoomSnap;
+    };
+}
+
+export function watchMvtZoom(map, sources, setStats) {
+    const update = () => {
+        const mapZoom = Number(map.getZoom().toFixed(2));
+        const zooms = sources.map((source) =>
+            Math.max(source.minzoom, Math.min(source.maxzoom, Math.floor(source.getZoom())))
+        );
+        const zoom = zooms.length ? Math.max(...zooms) : null;
+        setStats((stats) => (stats?.mapZoom === mapZoom && stats?.zoom === zoom ? stats : { ...stats, mapZoom, zoom }));
+    };
+    map.on('zoom', update);
+    update();
+
+    return () => map.off('zoom', update);
+}
 
 export function getMvtTileStats(maplibreMap, map) {
     const viewport = map.getPixelBounds();
@@ -29,7 +68,12 @@ export function getMvtTileStats(maplibreMap, map) {
         }
     }
 
-    return { count: tiles.size, bytes: [...tiles.values()].reduce((sum, size) => sum + size, 0), zoom };
+    return {
+        count: tiles.size,
+        bytes: [...tiles.values()].reduce((sum, size) => sum + size, 0),
+        zoom,
+        mapZoom: Number(map.getZoom().toFixed(2)),
+    };
 }
 
 export default function MvtTweaks() {
@@ -44,8 +88,14 @@ export default function MvtTweaks() {
             <SubTitleMenu text="MVT tweaks" />
             <SimpleText
                 id="se-mvt-tile-stats"
-                text={`Size: ${size} MB (${mtx.mvtTileStats?.count ?? '—'} tiles, z${mtx.mvtTileStats?.zoom ?? '—'})`}
+                text={`Size: ${size} MB (${mtx.mvtTileStats?.count ?? '—'} tiles, map z${mtx.mvtTileStats?.mapZoom ?? '—'}, mvt z${mtx.mvtTileStats?.zoom ?? '—'})`}
                 maxLines={1}
+            />
+            <SimpleItemWithSwitch
+                id="se-mvt-fractional-zoom"
+                text="Enable fractional zoom"
+                checked={mtx.mvtTweaks.fractionalZoom}
+                onChange={() => mtx.setMvtTweaks((prev) => ({ ...prev, fractionalZoom: !prev.fractionalZoom }))}
             />
         </>
     );
