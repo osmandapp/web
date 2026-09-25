@@ -43,6 +43,7 @@ export default async function test() {
     await clickBy(By.id('se-close-add-wpt-panel'));
     await waitByRemoved(By.id('se-add-fav-dialog'));
     await waitBy(By.id('se-wpt-details'));
+    await waitBy(By.css('[id^="se-selected-marker-"]')); // the POI pin is back once the panel is closed
 
     // add POI to favorites
     await clickBy(By.id('se-add-poi-to-fav-item'));
