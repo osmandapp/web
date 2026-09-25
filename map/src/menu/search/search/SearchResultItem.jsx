@@ -67,6 +67,7 @@ import { getTrackInfoText } from '../../tracks/CloudTrackItem';
 import {
     addFavoriteToMapFromSearch,
     getFavoriteMenuIconHtml,
+    MAP_CENTER_LOCATION,
     resolveFavoriteMarkerForSearch,
 } from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
@@ -320,6 +321,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     }
 
     const placeDetails = `${addInfo()}${addType()}${addCity()}`;
+    const distanceLoc = isUserLocation ? currentLoc : MAP_CENTER_LOCATION;
 
     function hasTextBeforeMatchedName(index) {
         return index > 0 || Boolean(placeDetails || distance > 0);
@@ -329,13 +331,13 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
         const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
         if (!resolved) return null;
-        const marker = { ...resolved.marker, locDist: distance };
+        const marker = { ...resolved.marker, locDist: distance, locBearing: bearing };
         return (
             <FavoriteItem
                 id={id}
                 marker={marker}
                 group={resolved.group}
-                currentLoc={currentLoc}
+                currentLoc={distanceLoc}
                 onOpen={() => addFavoriteToMapFromSearch(ctx, { group: resolved.group, marker: resolved.marker })}
                 hideActions
             />
@@ -346,9 +348,9 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         return (
             <FavoriteItem
                 id={id}
-                marker={buildWptMarker(item, name, distance)}
+                marker={buildWptMarker(item, name, distance, bearing)}
                 group={{ id: item.properties[WPT_TRACK_FILE], name: item.properties[CATEGORY_NAME] }}
-                currentLoc={currentLoc}
+                currentLoc={distanceLoc}
                 onOpen={() => {
                     openTrackWptFromSearch(ctx, {
                         file: item.properties[WPT_TRACK_FILE],
@@ -472,7 +474,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
 
 // FavoriteItem marker for a waypoint search result; the fake layer feeds the
 // second line (address slot) and getFavoriteId (getLatLng)
-function buildWptMarker(item, name, distance) {
+function buildWptMarker(item, name, distance, bearing) {
     const properties = item.properties;
 
     return {
@@ -483,6 +485,7 @@ function buildWptMarker(item, name, distance) {
             background: properties[BACKGROUND_TYPE_EXTENSION],
         }),
         locDist: distance,
+        locBearing: bearing,
         layer: {
             options: {
                 address: properties[CATEGORY_NAME],

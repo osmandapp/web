@@ -7,7 +7,7 @@ import MarkerOptions, {
     getBackground,
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
-import Utils, { getDistance, quickNaNfix } from '../util/Utils';
+import Utils, { getBearing, getDistance, quickNaNfix } from '../util/Utils';
 import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
@@ -26,6 +26,7 @@ const DEFAULT_TAB_ICONS = 'used';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
+export const MAP_CENTER_LOCATION = 'loc_map_center';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const FAVORITE_PLACEHOLDER_MAP = { '_-_': ':', '_%_': '/' };
 
@@ -691,8 +692,8 @@ export function updateFavoriteGroups({
     ctx.setUpdateMarkers({ ...ctx.favorites });
 }
 
-export function getColorLocation(location) {
-    return location === LOCATION_UNAVAILABLE ? '#ff8800' : '#237bff';
+export function isCurrentLocation(location) {
+    return !!location && location !== LOCATION_UNAVAILABLE && location !== MAP_CENTER_LOCATION;
 }
 
 export function getSize(group, t) {
@@ -779,19 +780,18 @@ export function addLocDist({ location, markers = null, wpts = null }) {
         if (markers && markers.length > 0) {
             markers.forEach((m) => {
                 if (m?.layer?._latlng) {
-                    m.locDist = getDistance(
-                        location.lat,
-                        location.lng,
-                        m.layer._latlng.lat,
-                        m.layer._latlng.lng
-                    ).toFixed(0);
+                    m.locDist = Math.round(
+                        getDistance(location.lat, location.lng, m.layer._latlng.lat, m.layer._latlng.lng)
+                    );
+                    m.locBearing = getBearing(location.lat, location.lng, m.layer._latlng.lat, m.layer._latlng.lng);
                 }
                 res.push(m);
             });
         } else if (wpts && wpts.length > 0) {
             wpts.forEach((w) => {
                 if (w.latlng) {
-                    w.locDist = getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng).toFixed(0);
+                    w.locDist = Math.round(getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng));
+                    w.locBearing = getBearing(location.lat, location.lng, w.latlng.lat, w.latlng.lng);
                 }
                 res.push(w);
             });

@@ -373,6 +373,8 @@
   "sort_distance_ascending": "Shortest distance first",
   "sort_date_ascending": "Newest date first",
   "sort_date_descending": "Oldest date first",
+  "sort_by_nearest_to_current_location": "Nearest to current location",
+  "sort_by_nearest_to_map_center": "Nearest to map center",
   "shared_string_nearest": "Nearest",
   "shared_string_visible_on_map": "Visible on map",
   "user_login": "Login",

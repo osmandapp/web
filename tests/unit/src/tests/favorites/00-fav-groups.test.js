@@ -7,6 +7,9 @@ import FavoritesManager, {
     getFavGroupKey,
     getFavMenuListByLayers,
     getSize,
+    isCurrentLocation,
+    LOCATION_UNAVAILABLE,
+    MAP_CENTER_LOCATION,
     normalizeFavoritePointsGroupName,
     normalizeGroupNameForFile,
 } from '@map/manager/FavoritesManager';
@@ -94,7 +97,7 @@ describe('the favorites of a group in the menu', () => {
         const list = getFavMenuListByLayers({ layers, wpts, currentLoc: { lat: 50, lng: 30 }, pointsGroups });
 
         expect(list.map((m) => m.name)).toEqual(['Hut', 'Peak']);
-        expect(list.map((m) => m.locDist)).toEqual(['0', '1112']);
+        expect(list.map((m) => m.locDist)).toEqual([0, 1112]);
         // the color of the group is used until the waypoint has its own
         expect(list.map((m) => m.color)).toEqual(['#00ff00', '#ff0000']);
         expect(list[0].icon).toContain('svg');
@@ -105,6 +108,26 @@ describe('the favorites of a group in the menu', () => {
 
         expect(list.map((m) => m.locDist)).toEqual([undefined, undefined]);
         expect(addLocDist({ location: null, wpts })).toBe(wpts);
+    });
+
+    test('the direction to a favorite is measured from the same point as the distance', () => {
+        const north = { layer: { _latlng: { lat: 50.01, lng: 30 } } };
+        const east = { layer: { _latlng: { lat: 50, lng: 30.01 } } };
+        const south = { latlng: { lat: 49.99, lng: 30 } };
+
+        addLocDist({ location: { lat: 50, lng: 30 }, markers: [north, east] });
+        addLocDist({ location: { lat: 50, lng: 30 }, wpts: [south] });
+
+        expect(north.locBearing).toBeCloseTo(0);
+        expect(east.locBearing).toBeCloseTo(90, 0);
+        expect(south.locBearing).toBeCloseTo(180);
+    });
+
+    test('only a real position counts as the location of the user', () => {
+        expect(isCurrentLocation({ lat: 50, lng: 30 })).toBe(true);
+        expect(isCurrentLocation(LOCATION_UNAVAILABLE)).toBe(false);
+        expect(isCurrentLocation(MAP_CENTER_LOCATION)).toBe(false);
+        expect(isCurrentLocation(null)).toBe(false);
     });
 });
 

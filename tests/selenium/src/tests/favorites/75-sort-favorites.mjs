@@ -62,6 +62,19 @@ export default async function test() {
     await waitBy(By.id('se-opened-fav-group-food'));
     await validateItemOrder(favItemsFood);
 
+    // check item sort by nearest to map center
+    // the resulting order depends on the current map view, so check the selected mode, not the order
+    await clickBy(By.id('se-sort-button-time-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await clickBy(By.id('se-sort-nearestMapCenter'));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+
+    // check item sort is restored after the group is reopened
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await clickBy(By.id('se-menu-fav-food'));
+    await waitBy(By.id('se-opened-fav-group-food'));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+
     // check save prev groups sort
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id('se-sort-button-oldDate-favorites'));

@@ -100,9 +100,6 @@
 .groupInfo {
     color: var(--text-secondary) !important;
 }
-.favLocationInfo {
-    margin-left: 5px !important;
-}
 .item {
     min-height: var(--menu-item-size) !important;
     width: 360px !important;
