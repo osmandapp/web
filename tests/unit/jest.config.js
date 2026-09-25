@@ -25,7 +25,9 @@ module.exports = {
     transform: {
         '^.+\\.[mc]?jsx?$': ['babel-jest', { configFile: path.resolve(__dirname, 'babel.config.js') }],
     },
-    transformIgnorePatterns: ['/node_modules/(?!(lodash-es)/)'],
+    transformIgnorePatterns: [
+        '/node_modules/(?!(lodash-es|@tiptap|prosemirror-.*|orderedmap|w3c-keyname|rope-sequence|crelt|linkifyjs)/)',
+    ],
     moduleNameMapper: {
         // static assets
         '\\.(css|less|sass|scss)$': `${STUBS}/style.js`,
@@ -75,6 +77,8 @@ module.exports = {
         'layers/(FavoriteLayer|ExploreLayer)$': `${STUBS}/empty.js`,
         // rebuilding the favorite groups after a change is plain logic over the server response
         'favorite/FavoriteHelper$': path.join(MAP_DIR, 'src/infoblock/components/favorite/FavoriteHelper.js'),
+        // the description html helpers are plain logic over the tiptap schema, no editor is rendered
+        'editor/htmlUtils$': path.join(MAP_DIR, 'src/frame/components/editor/htmlUtils.js'),
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
