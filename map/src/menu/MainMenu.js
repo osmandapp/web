@@ -176,6 +176,7 @@ export default function MainMenu({
     const { filename, favgroup, favname } = useParams();
 
     const isAccountOpen = location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && ltx.openLoginMenu;
+    const openObjectByUrl = location.pathname.includes(INFO_MENU_URL) && isEmpty(ctx.selectedGpxFile);
 
     const timerRef = useRef(null);
     const lastMenuUrlsRef = useRef({});
@@ -319,6 +320,7 @@ export default function MainMenu({
                         ctx,
                         sharedFile: location.pathname.includes(SHARE_MENU_URL),
                         mapObj: true,
+                        openedFolder: searchParams.get(FAVORITES_URL_PARAM_FOLDER) ?? undefined,
                     });
                 }
             }
@@ -540,15 +542,19 @@ export default function MainMenu({
 
     // url caching for every menu type
     useEffect(() => {
-        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
-            return;
-        }
         const menuByUrl = items.find(
             (i) => location.pathname.startsWith(i.url) || i.otherUrls?.some((u) => location.pathname.startsWith(u))
         );
-        if (menuByUrl) {
-            lastMenuUrlsRef.current[menuByUrl.type] = location.pathname + location.search + liveHash();
+        if (!menuByUrl) {
+            return;
         }
+        const mapObject = ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj;
+        // a favorite clicked on the map drops the one opened from the list, so its folder is the menu behind
+        if (mapObject && menuByUrl.type !== OBJECT_TYPE_FAVORITE) {
+            return;
+        }
+        const menuUrl = mapObject || openObjectByUrl ? menuByUrl.url : location.pathname;
+        lastMenuUrlsRef.current[menuByUrl.type] = menuUrl + location.search + liveHash();
     }, [location.pathname, location.search, location.hash]);
 
     // open menu after closing map object if any selected before
