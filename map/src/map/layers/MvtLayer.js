@@ -9,6 +9,7 @@ import { osmandTileURL } from '../baseTileURL';
 import { isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
+import { getMvtTileStats } from '../../menu/configuremap/MvtTweaks';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,
@@ -160,6 +161,9 @@ export default function MvtLayer({ config }) {
             // the first idle comes before the tiles of the view are loaded
             if (maplibreMap.loaded() && maplibreMap.areTilesLoaded()) {
                 window.seIsTilesLoaded = true;
+                if (ctx.develFeatures) {
+                    mtx.setMvtTileStats(getMvtTileStats(maplibreMap, map));
+                }
             }
         };
 
@@ -227,6 +231,9 @@ export default function MvtLayer({ config }) {
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
+            if (ctx.develFeatures) {
+                mtx.setMvtTileStats(null);
+            }
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
             );

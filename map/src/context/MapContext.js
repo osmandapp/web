@@ -37,6 +37,7 @@ export const MapContextProvider = ({ children }) => {
     // map tile — seeded from the single source of truth (configureMap in AppContext)
     const { configureMapState } = useContext(AppContext);
     const [tileURL, setTileURL] = useState(() => configureMapState.mapStyle?.tileURL ?? osmandTileURL);
+    const [mvtTileStats, setMvtTileStats] = useState(null);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);
@@ -61,6 +62,8 @@ export const MapContextProvider = ({ children }) => {
                 setFocusModeOn,
                 tileURL,
                 setTileURL,
+                mvtTileStats,
+                setMvtTileStats,
                 heightmap,
                 setHeightmap,
                 processHeightmaps,
