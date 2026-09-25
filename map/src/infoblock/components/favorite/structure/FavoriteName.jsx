@@ -73,18 +73,15 @@ export default function FavoriteName({
     }
 
     useEffect(() => {
-        if (ctx.selectedWpt?.poi) {
-            const objOptions = ctx.selectedWpt.poi?.options ?? ctx.selectedWpt.poi?.properties;
-            const { name } = getPropsFromSearchResultItem(objOptions, t);
-            setFavoriteName(name);
-            onAutoFill?.(name);
-        } else if (ctx.selectedWpt?.stop) {
-            const name = ctx.selectedWpt?.stop.options.name;
-            const resolved = name && name.trim() !== '' ? name : t('web:transport_stop');
-            setFavoriteName(resolved);
-            onAutoFill?.(resolved);
-        }
-    }, [ctx.selectedWpt]);
+        const poi = ctx.addFavorite?.poi;
+        if (!poi) return;
+
+        const objOptions = poi.options ?? poi.properties;
+        const name = objOptions ? getPropsFromSearchResultItem(objOptions, t).name : poi.name;
+        const resolved = name && name.trim() !== '' ? name : t('web:transport_stop');
+        setFavoriteName(resolved);
+        onAutoFill?.(resolved);
+    }, [ctx.addFavorite]);
 
     return (
         <Box sx={{ maxWidth: `${widthDialog}px` }}>
