@@ -21,9 +21,14 @@ import { addLayerToMap, applyZoomToFit } from '../util/MapManager';
 import { TRACKS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 
-function clickHandler({ ctx, file, navigate, recentSaver }) {
+function clickHandler({ ctx, file, navigate, recentSaver, e }) {
+    if (file.name === ctx.selectedGpxFile?.name) {
+        if (!e.propagatedFrom?.options?.wpt) {
+            ctx.setSelectedWpt(null);
+        }
+        return;
+    }
     ctx.setSelectedWpt(null);
-    if (file.name === ctx.selectedCloudTrackObj?.name) return;
 
     file.analysis = TracksManager.prepareAnalysis(file.analysis);
     file.mapObj = true;
@@ -47,7 +52,7 @@ export function addTrackToMap({ ctx, mtx, file, map, fit = false, recentSaver, n
     if (!layer) {
         return null;
     }
-    layer.on('click', () => clickHandler({ ctx, file, layer, recentSaver, navigate }));
+    layer.on('click', (e) => clickHandler({ ctx, file, layer, recentSaver, navigate, e }));
 
     if (fit || file.zoomToTrack) {
         panToTrack({ map, layer, mtx });
@@ -207,7 +212,7 @@ const CloudTrackLayer = () => {
                             data: file,
                             useMapBounds: true,
                         });
-                        layer.on('click', () => clickHandler({ ctx, file, navigate, recentSaver }));
+                        layer.on('click', (e) => clickHandler({ ctx, file, navigate, recentSaver, e }));
                         file.gpx = layer;
                         addLayerToMap(map, file.gpx, 'add-cloud-track-to-map-zoom-move');
                         processed++;
@@ -252,7 +257,7 @@ const CloudTrackLayer = () => {
             const file = ctx.gpxFiles[l];
             if (isTrackRenderedOnMap(file) && map.hasLayer(file.gpx)) {
                 file.gpx.off('click');
-                file.gpx.on('click', () => clickHandler({ ctx, file, navigate, recentSaver }));
+                file.gpx.on('click', (e) => clickHandler({ ctx, file, navigate, recentSaver, e }));
             }
         }
     }, [ctx.selectedGpxFile?.name, ctx.infoBlockWidth]);
