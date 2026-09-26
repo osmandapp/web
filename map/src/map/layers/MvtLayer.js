@@ -238,6 +238,7 @@ export default function MvtLayer({ config }) {
             stopZoomStats?.();
             if (ctx.develFeatures) {
                 mtx.setMvtTileStats(null);
+                mtx.setMvtStyleUpdating(false);
             }
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
@@ -253,19 +254,22 @@ export default function MvtLayer({ config }) {
             return undefined;
         }
 
+        const finishStyle = () => mtx.setMvtStyleUpdating(false);
         const applyStyle = () => {
             setMapHybridVisibility(maplibreMap, config.style, Boolean(hybridUnderlayUrl));
             setMapStyleDetailShift(maplibreMap, config.style, ctx.develFeatures ? mtx.mvtTweaks.styleDetailShift : 0);
+            maplibreMap.once('idle', finishStyle);
         };
 
         if (maplibreMap.isStyleLoaded()) {
             applyStyle();
-            return undefined;
+        } else {
+            maplibreMap.once('idle', applyStyle);
         }
 
-        maplibreMap.once('idle', applyStyle);
         return () => {
             maplibreMap.off('idle', applyStyle);
+            maplibreMap.off('idle', finishStyle);
         };
     }, [config, mtx.tileURL, hybridUnderlayUrl, ctx.develFeatures, mtx.mvtTweaks.styleDetailShift]);
 

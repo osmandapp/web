@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Stack, Typography } from '@mui/material';
+import { CircularProgress, Stack, Typography } from '@mui/material';
 import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import { isMvtTileURL } from '../../map/layers/MvtLayerConfig';
@@ -102,11 +102,14 @@ export default function MvtTweaks() {
             id: 'style-detail-shift',
             name: 'Style details (minZoom)',
             value: mtx.mvtTweaks.styleDetailShift,
-            onChange: (delta) =>
+            loading: mtx.mvtStyleUpdating,
+            onChange: (delta) => {
+                mtx.setMvtStyleUpdating(true);
                 mtx.setMvtTweaks((prev) => ({
                     ...prev,
                     styleDetailShift: Math.max(-3, Math.min(3, prev.styleDetailShift + delta)),
-                })),
+                }));
+            },
         },
     ];
 
@@ -122,13 +125,16 @@ export default function MvtTweaks() {
                 }
                 maxLines={1}
             />
-            {zoomShifts.map(({ id, name, value, onChange }) => (
+            {zoomShifts.map(({ id, name, value, loading, onChange }) => (
                 <SimpleText
                     key={id}
                     id={`se-mvt-${id}`}
                     text={
                         <Stack direction="row" alignItems="center" justifyContent="space-between">
-                            <Typography>{name}</Typography>
+                            <Stack direction="row" alignItems="center" spacing={1}>
+                                <Typography>{name}</Typography>
+                                {loading && <CircularProgress size={16} aria-label="Redrawing style" />}
+                            </Stack>
                             <Stack direction="row" alignItems="center" spacing={1}>
                                 <ActionIconBtn
                                     aria-label={`Decrease ${name}`}
