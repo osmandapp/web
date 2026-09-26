@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CircularProgress, Stack, Typography } from '@mui/material';
+import { CircularProgress, Link, Stack, TextField, Typography } from '@mui/material';
 import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import { isMvtTileURL } from '../../map/layers/MvtLayerConfig';
@@ -11,10 +11,13 @@ import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remov
 import { ReactComponent as AddActiveIcon } from '../../assets/icons/ic_action_add_filled.svg';
 import { ReactComponent as RemoveActiveIcon } from '../../assets/icons/ic_action_remove_filled.svg';
 
-export function setMapStyleDetailShift(maplibreMap, style, shift) {
+const MIN_ZOOM_ID_PLACEHOLDER = '^(admin_level_[24]|place-city-capital)';
+
+export function setMapStyleDetailShift(maplibreMap, style, shift, minZoomIdFilter = '') {
+    const filter = parseMinZoomIdFilter(minZoomIdFilter);
     style.layers.forEach((layer) => {
         if (layer.minzoom !== undefined && maplibreMap.getLayer(layer.id)) {
-            const minzoom = Math.max(0, Math.min(24, layer.minzoom - shift));
+            const minzoom = Math.max(0, Math.min(24, layer.minzoom - (filter?.test(layer.id) ? shift : 0)));
             maplibreMap.setLayerZoomRange(layer.id, minzoom, layer.maxzoom);
         }
     });
@@ -96,6 +99,14 @@ export default function MvtTweaks() {
         return null;
     }
     const size = Number.isFinite(mtx.mvtTileStats?.bytes) ? (mtx.mvtTileStats.bytes / 1024 ** 2).toFixed(2) : '—';
+    const invalidFilter = !parseMinZoomIdFilter(mtx.mvtTweaks.minZoomIdFilter);
+    const changeMinZoomIdFilter = (minZoomIdFilter) => {
+        if (minZoomIdFilter === mtx.mvtTweaks.minZoomIdFilter) {
+            return;
+        }
+        mtx.setMvtStyleUpdating(true);
+        mtx.setMvtTweaks((prev) => ({ ...prev, minZoomIdFilter }));
+    };
     const zoomShifts = [
         { id: 'data-zoom-shift', name: 'Data zoom shift', value: 0 },
         {
@@ -156,6 +167,43 @@ export default function MvtTweaks() {
                     }
                 />
             ))}
+            <SimpleText
+                maxLines={null}
+                text={
+                    <Stack spacing={1}>
+                        <Typography component="div">
+                            <label htmlFor="se-mvt-minzoom-id-filter">Limit minZoom shift by id</label> (
+                            <Link
+                                component="button"
+                                type="button"
+                                variant="inherit"
+                                color="inherit"
+                                underline="always"
+                                onClick={() =>
+                                    changeMinZoomIdFilter(
+                                        mtx.mvtTweaks.minZoomIdFilter === MIN_ZOOM_ID_PLACEHOLDER
+                                            ? ''
+                                            : MIN_ZOOM_ID_PLACEHOLDER
+                                    )
+                                }
+                            >
+                                regexp
+                            </Link>
+                            )
+                        </Typography>
+                        <TextField
+                            id="se-mvt-minzoom-id-filter"
+                            fullWidth
+                            size="small"
+                            placeholder={MIN_ZOOM_ID_PLACEHOLDER}
+                            value={mtx.mvtTweaks.minZoomIdFilter}
+                            error={invalidFilter}
+                            helperText={invalidFilter ? 'Invalid regular expression' : null}
+                            onChange={(event) => changeMinZoomIdFilter(event.target.value)}
+                        />
+                    </Stack>
+                }
+            />
             <SimpleItemWithSwitch
                 id="se-mvt-fractional-zoom"
                 text="Enable fractional zoom"
@@ -164,4 +212,12 @@ export default function MvtTweaks() {
             />
         </>
     );
+}
+
+function parseMinZoomIdFilter(pattern) {
+    try {
+        return new RegExp(pattern);
+    } catch {
+        return null;
+    }
 }

@@ -257,7 +257,12 @@ export default function MvtLayer({ config }) {
         const finishStyle = () => mtx.setMvtStyleUpdating(false);
         const applyStyle = () => {
             setMapHybridVisibility(maplibreMap, config.style, Boolean(hybridUnderlayUrl));
-            setMapStyleDetailShift(maplibreMap, config.style, ctx.develFeatures ? mtx.mvtTweaks.styleDetailShift : 0);
+            setMapStyleDetailShift(
+                maplibreMap,
+                config.style,
+                ctx.develFeatures ? mtx.mvtTweaks.styleDetailShift : 0,
+                mtx.mvtTweaks.minZoomIdFilter
+            );
             maplibreMap.once('idle', finishStyle);
         };
 
@@ -271,7 +276,14 @@ export default function MvtLayer({ config }) {
             maplibreMap.off('idle', applyStyle);
             maplibreMap.off('idle', finishStyle);
         };
-    }, [config, mtx.tileURL, hybridUnderlayUrl, ctx.develFeatures, mtx.mvtTweaks.styleDetailShift]);
+    }, [
+        config,
+        mtx.tileURL,
+        hybridUnderlayUrl,
+        ctx.develFeatures,
+        mtx.mvtTweaks.styleDetailShift,
+        mtx.mvtTweaks.minZoomIdFilter,
+    ]);
 
     return null;
 }
