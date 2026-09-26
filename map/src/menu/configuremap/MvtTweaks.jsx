@@ -1,10 +1,15 @@
 import React, { useContext } from 'react';
+import { Stack, Typography } from '@mui/material';
 import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import { isMvtTileURL } from '../../map/layers/MvtLayerConfig';
-import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
+import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
+import { ReactComponent as AddIcon } from '../../assets/icons/ic_action_add_outlined.svg';
+import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remove_outlined.svg';
+import { ReactComponent as AddActiveIcon } from '../../assets/icons/ic_action_add_filled.svg';
+import { ReactComponent as RemoveActiveIcon } from '../../assets/icons/ic_action_remove_filled.svg';
 
 export function enableMvtIntegerZoom(map) {
     const zoomSnap = map.options.zoomSnap;
@@ -85,12 +90,40 @@ export default function MvtTweaks() {
 
     return (
         <>
-            <SubTitleMenu text="MVT tweaks" />
             <SimpleText
                 id="se-mvt-tile-stats"
-                text={`Size: ${size} MB (${mtx.mvtTileStats?.count ?? '—'} tiles, map z${mtx.mvtTileStats?.mapZoom ?? '—'}, mvt z${mtx.mvtTileStats?.zoom ?? '—'})`}
+                text={
+                    <Typography component="div" align="center">
+                        Size <strong>{size} MB</strong>
+                        {` (${mtx.mvtTileStats?.count ?? '—'} tiles, map z${mtx.mvtTileStats?.mapZoom ?? '—'}, mvt z${mtx.mvtTileStats?.zoom ?? '—'})`}
+                    </Typography>
+                }
                 maxLines={1}
             />
+            {['Data', 'Style'].map((type) => (
+                <SimpleText
+                    key={type}
+                    id={`se-mvt-${type.toLowerCase()}-zoom-shift`}
+                    text={
+                        <Stack direction="row" alignItems="center" justifyContent="space-between">
+                            <Typography>{type} zoom shift</Typography>
+                            <Stack direction="row" alignItems="center" spacing={1}>
+                                <ActionIconBtn
+                                    aria-label={`Decrease ${type.toLowerCase()} zoom shift`}
+                                    icon={<RemoveIcon />}
+                                    activeIcon={<RemoveActiveIcon />}
+                                />
+                                <Typography>0</Typography>
+                                <ActionIconBtn
+                                    aria-label={`Increase ${type.toLowerCase()} zoom shift`}
+                                    icon={<AddIcon />}
+                                    activeIcon={<AddActiveIcon />}
+                                />
+                            </Stack>
+                        </Stack>
+                    }
+                />
+            ))}
             <SimpleItemWithSwitch
                 id="se-mvt-fractional-zoom"
                 text="Enable fractional zoom"

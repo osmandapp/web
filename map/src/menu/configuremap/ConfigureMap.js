@@ -330,6 +330,7 @@ export default function ConfigureMap() {
                                         </Button>
                                     </Box>
                                 )}
+                                <MvtTweaks />
                                 {isMvtTileURL(mtx.tileURL) && (
                                     <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
                                         <Button variant="outlined" fullWidth onClick={toggleHybridUnderlayUrl}>
@@ -339,7 +340,6 @@ export default function ConfigureMap() {
                                         </Button>
                                     </Box>
                                 )}
-                                <MvtTweaks />
                             </>
                         )}
                     </>
