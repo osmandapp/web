@@ -38,7 +38,7 @@ export const MapContextProvider = ({ children }) => {
     const { configureMapState } = useContext(AppContext);
     const [tileURL, setTileURL] = useState(() => configureMapState.mapStyle?.tileURL ?? osmandTileURL);
     const [mvtTileStats, setMvtTileStats] = useState(null);
-    const [mvtTweaks, setMvtTweaks] = useState({ fractionalZoom: true });
+    const [mvtTweaks, setMvtTweaks] = useState({ fractionalZoom: true, styleDetailShift: 0 });
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);

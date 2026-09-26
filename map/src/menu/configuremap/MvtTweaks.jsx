@@ -11,6 +11,15 @@ import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remov
 import { ReactComponent as AddActiveIcon } from '../../assets/icons/ic_action_add_filled.svg';
 import { ReactComponent as RemoveActiveIcon } from '../../assets/icons/ic_action_remove_filled.svg';
 
+export function setMapStyleDetailShift(maplibreMap, style, shift) {
+    style.layers.forEach((layer) => {
+        if (layer.minzoom !== undefined && maplibreMap.getLayer(layer.id)) {
+            const minzoom = Math.max(0, Math.min(24, layer.minzoom - shift));
+            maplibreMap.setLayerZoomRange(layer.id, minzoom, layer.maxzoom);
+        }
+    });
+}
+
 export function enableMvtIntegerZoom(map) {
     const zoomSnap = map.options.zoomSnap;
     map.stop();
@@ -87,6 +96,19 @@ export default function MvtTweaks() {
         return null;
     }
     const size = Number.isFinite(mtx.mvtTileStats?.bytes) ? (mtx.mvtTileStats.bytes / 1024 ** 2).toFixed(2) : '—';
+    const zoomShifts = [
+        { id: 'data-zoom-shift', name: 'Data zoom shift', value: 0 },
+        {
+            id: 'style-detail-shift',
+            name: 'Style details (minZoom)',
+            value: mtx.mvtTweaks.styleDetailShift,
+            onChange: (delta) =>
+                mtx.setMvtTweaks((prev) => ({
+                    ...prev,
+                    styleDetailShift: Math.max(-3, Math.min(3, prev.styleDetailShift + delta)),
+                })),
+        },
+    ];
 
     return (
         <>
@@ -100,22 +122,26 @@ export default function MvtTweaks() {
                 }
                 maxLines={1}
             />
-            {['Data', 'Style'].map((type) => (
+            {zoomShifts.map(({ id, name, value, onChange }) => (
                 <SimpleText
-                    key={type}
-                    id={`se-mvt-${type.toLowerCase()}-zoom-shift`}
+                    key={id}
+                    id={`se-mvt-${id}`}
                     text={
                         <Stack direction="row" alignItems="center" justifyContent="space-between">
-                            <Typography>{type} zoom shift</Typography>
+                            <Typography>{name}</Typography>
                             <Stack direction="row" alignItems="center" spacing={1}>
                                 <ActionIconBtn
-                                    aria-label={`Decrease ${type.toLowerCase()} zoom shift`}
+                                    aria-label={`Decrease ${name}`}
+                                    disabled={value <= -3}
+                                    onClick={onChange ? () => onChange(-1) : undefined}
                                     icon={<RemoveIcon />}
                                     activeIcon={<RemoveActiveIcon />}
                                 />
-                                <Typography>0</Typography>
+                                <Typography>{value}</Typography>
                                 <ActionIconBtn
-                                    aria-label={`Increase ${type.toLowerCase()} zoom shift`}
+                                    aria-label={`Increase ${name}`}
+                                    disabled={value >= 3}
+                                    onClick={onChange ? () => onChange(1) : undefined}
                                     icon={<AddIcon />}
                                     activeIcon={<AddActiveIcon />}
                                 />

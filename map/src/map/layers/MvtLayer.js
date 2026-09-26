@@ -9,7 +9,7 @@ import { osmandTileURL } from '../baseTileURL';
 import { isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
-import { getMvtTileStats, watchMvtZoom } from '../../menu/configuremap/MvtTweaks';
+import { getMvtTileStats, setMapStyleDetailShift, watchMvtZoom } from '../../menu/configuremap/MvtTweaks';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,
@@ -253,20 +253,21 @@ export default function MvtLayer({ config }) {
             return undefined;
         }
 
-        const applyVisibility = () => {
+        const applyStyle = () => {
             setMapHybridVisibility(maplibreMap, config.style, Boolean(hybridUnderlayUrl));
+            setMapStyleDetailShift(maplibreMap, config.style, ctx.develFeatures ? mtx.mvtTweaks.styleDetailShift : 0);
         };
 
         if (maplibreMap.isStyleLoaded()) {
-            applyVisibility();
+            applyStyle();
             return undefined;
         }
 
-        maplibreMap.once('idle', applyVisibility);
+        maplibreMap.once('idle', applyStyle);
         return () => {
-            maplibreMap.off('idle', applyVisibility);
+            maplibreMap.off('idle', applyStyle);
         };
-    }, [config, mtx.tileURL, hybridUnderlayUrl]);
+    }, [config, mtx.tileURL, hybridUnderlayUrl, ctx.develFeatures, mtx.mvtTweaks.styleDetailShift]);
 
     return null;
 }
