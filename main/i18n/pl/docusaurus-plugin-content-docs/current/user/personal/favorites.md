@@ -1,5 +1,5 @@
 ---
-source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
+source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
 sidebar_position: 7
 title:  Ulubione
 ---
@@ -131,7 +131,7 @@ Aby zmodyfikować punkt ulubiony:
 
 <TabItem value="android" label="Android">
 
-Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Wybierz ulubiony* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
 ![Moje miejsca ulubione android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -139,7 +139,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_my
 
 <TabItem value="ios" label="iOS">
 
-Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
+Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Wybierz ulubiony* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
 ![moje_miejsca_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -147,10 +147,10 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pla
 
 </Tabs>
 
-W OsmAnd dostępna jest szeroka gama ikon dla POI i punktów trasy. Możesz:
+Ekran **Wybierz ikonę** grupuje ikony według [kategorii](../search/search-poi.md#categories-and-their-filters). Wiersz chipów kategorii u góry pozwala od razu przejść do sekcji kategorii na liście poniżej. Dotknij ikony lupy, aby znaleźć ikonę po nazwie lub słowie kluczowym.
 
-- Wybrać ikonę z listy [kategorii POI](../search/search-poi.md#categories-and-their-filters).
-- Znaleźć odpowiednią ikonę za pomocą [opcji wyszukiwania](../search/search-all.md#how-to-use).
+- *Ostatnio używane* — Ostatnio wybrane ikony pojawiają się we własnej sekcji, umożliwiając szybkie ponowne użycie.
+- *Specjalne* — Zestaw ikon ogólnego przeznaczenia (gwiazda, flaga, znacznik, serce, aparat i inne), niepowiązanych z konkretną kategorią.
 
 
 ### Specjalne ulubione (Osobiste) {#special-favorites-personal}
@@ -162,7 +162,7 @@ Folder *Osobiste* zawiera specjalne punkty, takie jak **<Translate android="true
 
 ![Multimedia](@site/static/img/personal/media_actions.webp) ![Multimedia](@site/static/img/personal/media_menu.webp)
 
-Sekcja Multimedia umożliwia dołączanie zdjęć, filmów, nagrań audio i obrazów do punktu ulubionego. Multimedia można dodać podczas tworzenia ulubionego lub później z ekranu Edytuj ulubiony. Aby dołączyć multimedia, dotknij *Dodaj* w sekcji Multimedia i wybierz jedną z dostępnych opcji:
+Sekcja Multimedia umożliwia dołączanie zdjęć, filmów, nagrania audio i obrazów do punktu ulubionego. Multimedia można dodać podczas tworzenia ulubionego lub później z ekranu Edytuj ulubiony. Aby dołączyć multimedia, dotknij *Dodaj* w sekcji Multimedia i wybierz jedną z dostępnych opcji:
 - **Zrób zdjęcie** — Zrób nowe zdjęcie aparatem urządzenia.
 - **Zrób notatkę wideo** — Nagraj nowy film.
 - **Zrób notatkę audio** — Nagraj notatkę audio.
@@ -221,7 +221,7 @@ Sekcja **Ulubione** pozwala na:
 </Tabs>
 
 - **Sortowanie** — Foldery i punkty ulubione można sortować za pomocą dostępnych opcji sortowania w menu listy. Dla punktów ulubionych dostępne są następujące opcje: *Nazwa A – Z*, *Nazwa Z – A*, *Ostatnio zmodyfikowane*, *Najbliższe bieżącej lokalizacji*, *Najbliższe środka mapy*, *Najnowsza data jako pierwsza* i *Najstarsza data jako pierwsza*. Dla folderów ulubionych dostępne są następujące opcje: *Nazwa A – Z*, *Nazwa Z – A*, *Ostatnio zmodyfikowane*, *Najnowsza data jako pierwsza* i *Najstarsza data jako pierwsza*. Domyślnie elementy są sortowane według Nazwa A – Z. Przypięte foldery są zawsze wyświetlane na górze listy. Są one wizualnie oddzielone od reszty folderów separatorami. 
-- **Wyszukiwanie** — Użyj [Wyszukiwania globalnego](../search/search-all.md), aby znaleźć ulubione według nazwy. Ulubione są sortowane według odległości od środka mapy. Aby wyszukać punkty ulubione z listy Ulubione w zakładce Moje miejsca, dotknij ikony *Szukaj* (lupa).
+- **Wyszukiwanie** — Użyj [Wyszukiwania globalnego](../search/search-all.md), aby znaleźć ulubione według nazwy. Aby wyszukać punkty ulubione tylko w liście Ulubione w zakładce Moje miejsca, dotknij ikony *Szukaj* (lupa).
 
 ### Edycja zbiorcza / Usuwanie {#bulk-edit--delete}
 
@@ -266,29 +266,14 @@ Dostępne akcje dla wybranych punktów ulubionych są następujące:
 - **Dodaj do nawigacji** — Dodaj wybrane punkty do nawigacji.
 - **Usuń** — Usuń wybrane punkty ulubione.
 
-Dla wybranych folderów dostępne są te same akcje, z następującymi dodatkowymi opcjami:
+Dla wybronych folderów dostępne są te same akcje, z następującymi dodatkowymi opcjami:
 
-- **Pokaż na mapie** / **Ukryj na mapie** — Pokaż lub ukryj punkty ulubione z wybranych folderów na mapie.
+- **Pokaż na mapie** / **Ukryj na mapie** — Pokaż lub ukryj punkty ulubione z wybronych folderów na mapie.
 - **Przypnij** / **Odepnij folder** — Przypnij lub odepnij wybrane foldery.
 
 </TabItem>
 
 </Tabs>
-
-<!--
-### Add Favorites to Map Markers {#add-favorites-to-map-markers}
-
-<InfoAndroidOnly/>
-
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-You can add to or remove your favorites from [Map markers list](../personal/markers.md).
-Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
-
-**Functions for Favorite folder:**
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
-- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
--->
 
 
 ### Akcje grupy ulubionych {#favorite-group-actions}
@@ -312,7 +297,7 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 Na Androidzie użyj ***menu z trzema kropkami*** obok każdego folderu, aby zarządzać grupami ulubionych. Na iOS użyj ***długiego dotknięcia*** folderu, aby zarządzać grupami ulubionych: 
 
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Ukryj na mapie** — Przełącz tę opcję, aby wyświetlić lub ukryć punkty ulubione z folderu na mapie.
-- **<Translate android="true" ids="pin_folder"/>** — Przypnij wybrany folder, aby utrzymać go na górze listy ulubionych dla szybszego dostępu.
+- **<Translate android="true" ids="pin_folder"/>** — Przypnij wybrony folder, aby utrzymać go na górze listy ulubionych dla szybszego dostępu.
 - **<Translate android="true" ids="shared_string_rename"/>** — Użyj tej opcji, aby zmienić nazwę wybranego folderu.
 - [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Dostosuj wygląd punktów ulubionych w folderze na mapie, zmieniając ich ikony, kolory lub etykiety.
 - **<Translate android="true" ids="shared_string_share"/>** — Udostępnij punkty ulubione w folderze, eksportując je jako plik *Favorites.gpx*, co ułatwia transfer lub tworzenie kopii zapasowej danych.
@@ -429,30 +414,6 @@ Do korzystania z funkcji *Darmowa kopia zapasowa ulubionych* potrzebne jest kont
 - *[Pakiet OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Wybierz tę opcję, aby uzyskać dostęp do funkcji Darmowa kopia zapasowa ulubionych.
 - *Utwórz kopię zapasową* swoich ustawień.
 
-<!--
-### All Favorites {#all-favorites}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
-
-- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
-- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
--->
 
 ### Grupa ulubionych {#favorite-group}
 
@@ -471,8 +432,8 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-- Aby udostępnić wiele folderów ulubionych, wejdź w [tryb wybierania](#bulk-edit--delete), wybierz wymagane foldery i dotknij *Udostępnij*.
-- Aby udostępnić pojedynczy folder ulubionych, dotknij menu z trzema kropkami (*Android*) lub długo dotknij folder (*iOS*), wybierz *Udostępnij*, aby wysłać plik Favorites.gpx do pamięci urządzenia lub udostępnić go za pośrednictwem komunikatorów. Na Androidzie, jeśli folder zawiera dołączone multimedia, pojawia się dolny panel Udostępnij. Możesz wybrać:
+- Aby udostępnić wiele folderów ulubionych, zobacz sekcję [Edycja zbiorcza / Usuwanie](#bulk-edit--delete).
+- Aby udostępnić pojedynczy folder ulubionych, zobacz sekcję [Akcje grupy ulubionych](#favorite-group-actions). Na Androidzie, jeśli folder zawiera dołączone multimedia, pojawia się dolny panel Udostępnij. Możesz wybrać:
     - *Tylko punkty* — Udostępnij punkty ulubione z folderu jako plik GPX.
     - *Punkty i multimedia* — Udostępnij punkty ulubione i dołączone multimedia jako archiwum OSF.
 
@@ -499,7 +460,7 @@ Przejdź do: *Pliki → Na moim iPhonie → OsmAnd Maps → favourites_backup*
 
 </Tabs>
 
-OsmAnd tworzy **plik kopii zapasowej** za każdym razem, gdy ulubione są edytowane.
+OsmAnd automatycznie tworzy **plik kopii zapasowej** za każdym razem, gdy ulubione są edytowane, zachowując łącznie do 10 plików kopii zapasowych, przy czym nie więcej niż 2 nowe kopie zapasowe dziennie.
 
 - **Android**: Kopie zapasowe są przechowywane w *Android → data → net.osmand → files → backup*. Użyj menedżera plików innej firmy, aby uzyskać do nich dostęp.
 

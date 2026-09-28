@@ -1,7 +1,7 @@
 ---
-source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
+source-hash: 6d86091f99fcc3a40ed293334c95361fd6142d9eab867812422962bbd0783539
 sidebar_position: 2
-sidebar_label:  Konto
+sidebar_label: Konto
 title: Konto OsmAnd
 ---
 
@@ -15,10 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Przegląd {#overview}
 
@@ -89,17 +85,17 @@ Dla każdego elementu lista pokazuje:
 - Status – *Aktywne, Wygaśnięte lub Anulowane*.
 - Informacje o dacie.
 
-Jeśli klikniesz produkt na liście, otworzy się strona szczegółów. Tam możesz zobaczyć, gdzie produkt został zakupiony (*Google Play, Apple App Store, Huawei AppGallery, Amazon* lub *OsmAnd Web*) i znaleźć link lub instrukcje, jak zarządzać lub anulować subskrypcję w odpowiednim sklepie. Jeśli produkt został zakupiony w OsmAnd Web (FastSpring), strona szczegółów pokazuje link **Zarządzaj subskrypcją**, który otwiera portal zarządzania kontem FastSpring, gdzie możesz zaktualizować metodę płatności, anulować lub reaktywować subskrypcję, zmienić plan lub pobrać faktury.
+If you click a product in the list, the details page opens. There you can see where the product was purchased (*Google Play, Apple App Store, Huawei AppGallery, Amazon* or *OsmAnd Web*) and find a link or instructions on how to manage or cancel the subscription in the corresponding store. If the product was purchased on OsmAnd Web (FastSpring), the details page shows a **Manage subscription** link that opens the FastSpring account management portal, where you can update your payment method, cancel or re-activate the subscription, change the plan, or download invoices.
 
-Jeśli nie masz jeszcze żadnych zakupów powiązanych z kontem, ta sekcja pokazuje stan pusty z komunikatem **Nie masz żadnych zakupów** i przyciskiem **Dowiedz się więcej**, który prowadzi do strony z dostępnymi planami OsmAnd i opcjami uaktualnienia.
+If there are no purchases linked to your account yet, this section shows an empty state with the message **You don’t have any purchases** and a **Learn more** button that leads to a page with available OsmAnd plans and upgrade options.
 
-Więcej szczegółów na temat korzystania z zakupów na różnych platformach znajdziesz w artykule o [dostępie wieloplatformowym](../purchases/cross.md).
+For more details on using your purchases across different platforms, read about [cross-platform access](../purchases/cross.md).
 
 ![Web Account](@site/static/img/web/web_purchases.png)
 
 ### Synchronizacja w chmurze {#cloud-sync}
 
-Synchronizacja w chmurze pozwala na dostęp do danych zsynchronizowanych z OsmAnd Cloud bezpośrednio na [Portalu map internetowych](https://osmand.net/map/). Po zalogowaniu się za pomocą konta [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub OsmAnd Pro strona wyświetla Ulubione, Ścieżki i pliki kopii zapasowych, które wcześniej zsynchronizowałeś z aplikacji mobilnej. To prosty sposób na przeglądanie zawartości chmury na większym ekranie i pobieranie kopii zapasowych, kiedy tylko potrzebujesz.
+Synchronizacja w chmurze pozwala na dostęp do danych zsynchronizowanych z OsmAnd Cloud bezpośrednio na [Portalu map internetowych](https://osmand.net/map/). Po zalogowaniu się za pomocą konta OsmAnd Start lub OsmAnd Pro strona wyświetla Ulubione, Ścieżki i pliki kopii zapasowych, które wcześniej zsynchronizowałeś z aplikacji mobilnej. To prosty sposób na przeglądanie zawartości chmury na większym ekranie i pobieranie kopii zapasowych, kiedy tylko potrzebujesz.
 
 Te elementy stają się widoczne w menu zaraz po zalogowaniu się na stronie. Aby zaktualizować te informacje, musisz zsynchronizować dane z urządzeń za pomocą akcji [Synchronizuj teraz](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) w aplikacji mobilnej.
 
@@ -167,60 +163,6 @@ Aby usunąć konto, wybierz **Usuń konto** na dole panelu Konto OsmAnd. Pojawia
 
 ![Web Account](@site/static/img/web/web_delete.png)
 
-<!--
-## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
-
-- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#initial-setup) paid subscription. 
-- **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
-
-The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
-
-1. Subscribe to **OsmAnd Pro**. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. How to create **OsmAnd Start** account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
-3. Register your [Pro or Start account](/docs/user/personal/osmand-cloud/#cross-platform) on the OsmAnd server inside OsmAnd app.
-4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
-
-
-- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
-
-![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
-
-- Your data, such as tracks (OsmAnd Pro) and favorites(OsmAnd Pro and OsmAnd Start), will appear in the menu after you log in. They are available for display on the map. But you need [to sync this data](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) from your devices.
-
-![View OsmAnd Web data](@site/static/img/web/web_data.png)  
-
-- To *DOWNLOAD BACKUP* from [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), click the login field. On the login field you can see files info (total files number, total files size, cloud storage used) and account info (subscription type, start time and expire time of your subscription).
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)  
-
-Choose needed files for downloading, `.zip` or `.osf` format of downloaded files and click *DOWNLOAD BACKUP* button:
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_1.png)  
-
-There is also a button to *logout* of the account.  
-
-- *LOGOUT*, *DELETE YOUR ACCOUNT* or *Change email* you find on the login field too. For opening *DELETE YOUR ACCOUNT* or *Change email* you need to click *Dangerous area*.
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
-
-
-## Cloud data {#cloud-data}
-
-[Tracks and Favorites](web-map.md#tracks).
-
-## Map style {#map-style}
-
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
-**Some examples:**
-
-- Nautical map style
-
-![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
-
-- Topo map style
-
-![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
--->
 
 ## Powiązane artykuły {#related-articles}
 

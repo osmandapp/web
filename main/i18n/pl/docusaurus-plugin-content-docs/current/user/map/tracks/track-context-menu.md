@@ -1,5 +1,5 @@
 ---
-source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
+source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
 sidebar_position: 4
 title:  Menu Kontekstowe Śladu
 ---
@@ -42,9 +42,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Po dotknięciu śladu otwiera się pierwszy ekran *menu kontekstowego śladu* - zakładka *Przegląd*. Na tej karcie można znaleźć podsumowanie wybranego śladu (*[Panel informacyjny](#info-panel)*) i wykonać najczęstsze czynności ze śladem za pomocą *[menu akcji śladu](#track-actions)*. Możesz zobaczyć [opis i informacje serwisowe](#description-and-info) o swoim śladzie, jeśli pociągniesz zakładkę Przegląd w górę.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Panel informacyjny {#info-panel}
 
@@ -227,7 +224,7 @@ Ta sekcja zakładki *Przegląd* wyświetla ***dane tagów*** i ***wszystkie ogó
 </details>
 
 
-### Typ aktywności śladu {#ttrack-activity-type}
+### Typ aktywności śladu {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

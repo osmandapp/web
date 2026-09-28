@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
 sidebar_position: 5
 title:  Dzienniki awarii
 ---
@@ -74,6 +74,39 @@ Zachowaj ostrożność podczas wysyłania dzienników aplikacji, ponieważ mogą
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+## Histogram sterty dla problemów z pamięcią (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Tylko Android
+:::
+
+*Histogram sterty* to tabela pokazująca, co wypełnia pamięć Java aplikacji: nazwy klas z liczbą obiektów i ich rozmiarami. Pomaga programistom ustalić, co zużywa pamięć, gdy aplikacja zwalnia, zawiesza się lub zamyka po pewnym czasie. Nie zawiera Twoich lokalizacji, nazw śladów ani zapytań wyszukiwania. OsmAnd wykonuje pełny zrzut pamięci na urządzeniu, przekształca go w histogram i natychmiast usuwa zrzut.
+
+Wykonanie zrzutu **zamraża aplikację na 5–10 sekund**. Jeśli w tym czasie dotkniesz ekranu, Android może wyświetlić komunikat *OsmAnd nie odpowiada*. Dlatego automatyczne zbieranie jest **domyślnie wyłączone**.
+
+**Kiedy włączyć:**
+
+- OsmAnd zamyka się samoczynnie lub wielokrotnie wyświetla komunikat *nie odpowiada*, zwłaszcza po pewnym czasie użytkowania lub przy otwieraniu wyszukiwania, mapy z wieloma POI lub *Moich miejsc* z wieloma śladami.
+- Aplikacja działa coraz wolniej im dłużej jest uruchomiona, a ponowne uruchomienie pomaga.
+- Raport o awarii informuje, że aplikacji zabrakło pamięci (`OutOfMemoryError`).
+- Zespół wsparcia OsmAnd poprosił Cię o zebranie histogramu sterty.
+
+**Kiedy pozostawić wyłączone:**
+
+- Codzienne użytkowanie i nawigacja, gdy aplikacja działa prawidłowo.
+- Awarię występujące od razu przy każdym uruchomieniu lub przy konkretnej czynności, np. otwarciu jednego pliku. Wystarczy zwykły [dziennik awarii](#send-logs-from-osmand-app).
+
+**Jak zebrać i wysłać:**
+
+1. Włącz [wtyczkę programistyczną OsmAnd](../plugins/development.md) i przejdź do *Menu główne → Wtyczki → Rozwój OsmAnd → Ustawienia → Pamięć → Pamięć Java*.
+2. W panelu *Zrzut sterty* wybierz jedną z opcji:
+    - **Zbieraj przy wysokim zużyciu**. Histogram jest zbierany automatycznie, gdy pamięć Java jest prawie pełna, maksymalnie raz na 30 minut, i dołączany do następnego raportu o awarii. Kontynuuj normalne korzystanie z aplikacji, aż problem wystąpi ponownie.
+    - **Zbierz i przeanalizuj teraz**. Zbiera histogram natychmiast i wyświetla wynik. Użyj tej opcji, gdy aplikacja już działa wolno, a *Pamięć Java* pokazuje wysokie zużycie.
+3. Stuknij **Udostępnij raport**, aby wysłać najnowszy raport do programistów, lub wyślij go z okna awarii przy następnym uruchomieniu aplikacji.
+4. Wyłącz *Zbieraj przy wysokim zużyciu* po wysłaniu raportu.
+
+![Pamięć Java Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Panel zrzutu sterty Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Wysyłanie plików Tombstone (Android) {#send-tombstone-files-android}
 
