@@ -1,5 +1,5 @@
 ---
-source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title: Rotalar
 sidebar_position: 11
 ---
@@ -32,7 +32,7 @@ OsmAnd'ın haritada farklı [rotaları](./types-of-routes.md) görüntülemek i�
 
 - Haritada gerekli rotaları görüntülemek için bunları [Haritayı Yapılandır](../../map/configure-map-menu.md) menüsündeki *Rotalar listesi*nden etkinleştirin.
 - OsmAnd, [OpenStreetMap'te bulunan rotaları](https://wiki.openstreetmap.org/wiki/Relation:route) vurgulayabilir. Bunlar [rotadaki sembole](#save-as-a-track) dokunularak seçilebilir ve görünür rota kümesi doğru yapılandırılmışsa renk ve simgeleri takip edebilirsiniz.
-- Ana rota türleri ayrıca sınıflara ve alt sınıflara göre filtrelenebilir, böylece her tür içinde yalnızca belirli grupları görüntüleyebilirsiniz. Örneğin, yürüyüş rotalarını **OSMC sembolleri** ile sınıflar olarak ve *uluslararası, ulusal, bölgesel* veya *yerel ağlar* olarak alt sınıflar halinde gösterebilirsiniz; bisiklet rotaları için de benzer ağ sınıflandırma filtreleri mevcuttur. Bu seçenekler şu anda [OsmAnd Geliştirme](../../plugins/development.md) eklentisi etkinleştirildiğinde kullanılabilir. Birden fazla rota ağı çakıştığında, istenen rota düzeylerini yalnızca görüntülemek için ayrı sınıflandırmalar etkinleştirilebilir veya devre dışı bırakılabilir.
+- Ana rota türleri ayrıca sınıflara ve alt sınıflara göre filtrelenebilir, böylece her tür içinde yalnızca belirli grupları görüntüleyebilirsiniz. Örneğin, yürüyüş rotalarını **OSMC sembolleri** ile sınıflar olarak ve *uluslararası, ulusal, bölgesel* veya *yerel ağlar* ile *sınıflandırılmamış rotalar* olarak alt sınıflar halinde gösterebilirsiniz; bisiklet rotaları için de benzer ağ sınıflandırma filtreleri mevcuttur. Bu seçenekler şu anda [OsmAnd Geliştirme](../../plugins/development.md) eklentisi etkinleştirildiğinde kullanılabilir. Birden fazla rota ağı çakıştığında, istenen rota düzeylerini yalnızca görüntülemek için ayrı sınıflandırmalar etkinleştirilebilir veya devre dışı bırakılabilir.
 - [Rota Planla](../../plan-route/create-route.md) aracıyla rotaların üzerine bir iz oluşturabilirsiniz.
 - Birden fazla rota aynı yol boyunca ilerlediğinde, her rota diğerlerinin üzerine yerleştirilmiş ayrı yarı saydam bir çizgi olarak görüntülenir.
 - Birden fazla rotanın çakıştığı bir konuma dokunulduğunda, bu noktadan geçen tüm rotaları içeren bir bağlam menüsü gösterilir.
@@ -197,7 +197,7 @@ Rotaların açık veya kapalı olmasını [Hızlı Eylem](../../widgets/quick-ac
 
 </Tabs>  
 
-[Rota Arama](../../search/index.md) işlevini kullanarak adıyla veya [Kategoriler bölümünde](../../search/search-poi.md#) "Rotalar" seçerek rotaları bulun.
+[Rota Arama](../../search/index.md) işlevini kullanarak adıyla veya [Kategoriler bölümünde](../../search/search-poi.md#poi-search-by-categories) "Rotalar" seçerek rotaları bulun.
 
 Aramak için *<Translate android="true" ids="search_button"/>* menüsüne veya *<Translate android="true" ids="search_button,search_categories"/>* bölümüne gidin ve etkinliğinizi girin.
 
@@ -221,7 +221,7 @@ Aramak için *<Translate android="true" ids="search_button"/>* menüsüne veya *
 
 </Tabs>
 
-Rota arama sonuçlarında listeyi daraltmak için sağ üst köşedeki **Filtreler** düğmesine dokunun. Filtreler ekranında bir **Ada göre filtrele** alanı; *Büro*, *Posta şubesi* ve *Posta ortağı* içeren bir **Tür** bloğu; ve seçilen rota kategorisine veya etkinliğine bağlı **ek ölçütler** bulunur, çünkü her kategori kendi özelliklerini ve filtre değerlerini gösterebilir.
+Rota arama sonuçlarında listeyi daraltmak için sağ üst köşedeki **Filtreler** düğmesine dokunun. Filtreler ekranında bir **Ada göre filtrele** alanı ve seçilen rota kategorisine veya etkinliğine bağlı **ek ölçütler** bulunur, çünkü her kategori kendi özelliklerini ve filtre değerlerini gösterebilir.
 
 Anahtarları kullanarak filtreleri etkinleştirebilir veya devre dışı bırakabilirsiniz ve bazı bölümler ek değerleri görüntülemek için *Tümünü göster* içerir.
 
@@ -234,5 +234,5 @@ Anahtarları kullanarak filtreleri etkinleştirebilir veya devre dışı bıraka
 - [İzler Bağlam menüsü](../../map/tracks/track-context-menu.md)
 - [Toplu taşıma](../public-transport.md)
 - [Navigasyon rota çizgisi görünümü](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [POI Ara](../../search/search-poi.md#)
+- [POI Ara](../../search/search-poi.md)
 - [Rota Türleri](./types-of-routes.md)

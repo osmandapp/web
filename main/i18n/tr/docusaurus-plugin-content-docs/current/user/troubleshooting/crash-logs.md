@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
 sidebar_position: 5
 title:  Kilitlenme Günlükleri
 ---
@@ -74,6 +74,39 @@ Uygulama günlüklerini gönderirken dikkatli olun, çünkü cihaz konumu, arama
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+## Bellek Sorunları için Yığın Histogramı (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Yalnızca Android
+:::
+
+*Yığın histogramı*, uygulamanın Java belleğini dolduranları gösteren bir tablodur: sınıf adları, nesne sayıları ve boyutlarıyla birlikte. Geliştiricilerin uygulama yavaşladığında, donduğunda veya bir süre sonra kapandığında belleği neyin tükettiğini bulmasına yardımcı olur. Konumlarınızı, parça adlarınızı veya arama sorgularınızı içermez. OsmAnd cihazda tam bir bellek dökümü alır, bunu histograma dönüştürür ve dökümü hemen siler.
+
+Döküm almak uygulamayı **5–10 saniye dondurur**. Bu süre içinde ekrana dokunursanız Android *OsmAnd yanıt vermiyor* uyarısı gösterebilir. Bu nedenle otomatik toplama **varsayılan olarak kapalıdır**.
+
+**Ne zaman açmalısınız:**
+
+- OsmAnd kendi kendine kapanıyor veya *yanıt vermiyor* uyarısı tekrar tekrar gösteriyorsa, özellikle bir süre kullanımdan sonra veya arama, çok sayıda POI içeren harita ya da çok sayıda parça içeren *Yerlerim* açıldığında.
+- Uygulama çalıştıkça yavaşlıyor ve yeniden başlatmak işe yarıyorsa.
+- Çökme raporu uygulamanın bellek tükettiğini belirtiyorsa (`OutOfMemoryError`).
+- OsmAnd desteği sizden bir yığın histogramı toplamanızı istediyse.
+
+**Ne zaman kapalı bırakmalısınız:**
+
+- Uygulama normal çalışırken günlük kullanım ve navigasyon.
+- Her başlangıçta hemen oluşan çökmeler veya tek bir dosya açma gibi belirli bir eylemle ilgili çökmeler. Bu durumda normal bir [kilitlenme günlüğü](#send-logs-from-osmand-app) yeterlidir.
+
+**Nasıl toplanır ve gönderilir:**
+
+1. [OsmAnd geliştirme eklentisini](../plugins/development.md) etkinleştirin ve *Ana Menü → Eklentiler → OsmAnd geliştirme → Ayarlar → Bellek → Java belleği* bölümüne gidin.
+2. *Yığın dökümü* panelinde aşağıdakilerden birini seçin:
+    - **Yüksek kullanımda topla**. Java belleği neredeyse dolduğunda histogram otomatik olarak toplanır, en fazla 30 dakikada bir ve bir sonraki çökme raporuna eklenir. Sorun tekrar oluşana kadar uygulamayı normal şekilde kullanmaya devam edin.
+    - **Şimdi topla ve analiz et**. Histogramı hemen toplar ve sonucu gösterir. Uygulama zaten yavaşladığında ve *Java belleği* yüksek kullanım gösteriyorsa kullanın.
+3. En son raporu geliştiricilere göndermek için **Raporu paylaş** düğmesine dokunun veya uygulama bir sonraki başladığında çökme iletişim kutusundan gönderin.
+4. Rapor gönderildikten sonra *Yüksek kullanımda topla* seçeneğini kapatın.
+
+![Java belleği Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Yığın dökümü paneli Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Tombstone Dosyaları Gönderme (Android) {#send-tombstone-files-android}
 
