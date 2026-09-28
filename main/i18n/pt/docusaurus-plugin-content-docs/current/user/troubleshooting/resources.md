@@ -1,5 +1,5 @@
 ---
-source-hash: 2db18241dbf1f95628be281f981d88f2d48a309bde0f67e8d2e19a2c0885a059
+source-hash: 09518f7c9f30ff95cf4ee3c22d11fc8d1867a10a1fa6a3ea3d7b5c046dd047c7
 sidebar_position: 9
 title: Resources and Customizations
 ---
@@ -55,6 +55,7 @@ A lista abaixo fornece conversores para vários tipos de dados suportados pelo O
 | Topo map into printable| Esta é [uma ferramenta](https://github.com/acui/osmand_topo_map_generator) para gerar um mapa topográfico imprimível usando capturas de ecrã do OsmAnd (https://osmand.net). O mapa usa a grade UTM e tem informações de declinação. Deve ser usado com uma bússola ou um dispositivo GPS com coordenadas UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | O GPXsolar projeta um raio em direção ao sol a partir de cada ponto de um trilho GPX e testa-o contra o terreno e a vegetação (0,5 m HD LiDAR / IGN), para uma data e hora específicas. Ele informa, metro a metro, se é sol ou sombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 | lidar2map | Uma ferramenta autónoma que descarrega dados LiDAR públicos de portais nacionais em 22 países | [lidar2map](https://github.com/nico579/lidar2map)|
+| GPX slope colours | Colors a GPX track by slope: climbs, descents and flat sections become separate tracks with their own colour, written into the file so OsmAnd displays them. The gradient is signed, so it follows the direction of travel. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Recursos Personalizados {#custom-resources}
 
@@ -111,7 +112,16 @@ O ficheiro [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 | Selection Map Style | ["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA) é um estilo de mapa de Holder Tamm que permite escolher se deseja ocultar certos objetos ou não.  |["Selection" Map Style](https://groups.google.com/g/osmand/c/DS7WywdgsDA)|
 | ExplorerRS | [O estilo de renderização ExplorerRS](https://github.com/sykoram/OsmAnd-ExplorerRS) é principalmente baseado no UniMap e routes.addon.render.xml  |["ExplorerRS" Map Style](https://github.com/sykoram/OsmAnd-ExplorerRS/blob/main/README.md)|
 | Storm Chasing | [Este é um estilo de renderização OsmAnd otimizado para caça a tempestades](https://github.com/pqo/stormchasing-rendering-style)  |[Stormchasing rendering style](https://github.com/pqo/stormchasing-rendering-style/blob/main/stormchasing.render.xml)|
-| Gh0stz0x | Recursos personalizados definidos do projeto OsmAnd para ajustar finamente o comportamento do OsmAnd. Aqui são definidos: estilos de renderização de mapa usados no OsmAnd, vozes gravadas e TTS, configuração da geração de mapas offline, parâmetros de roteamento, repositório de ícones  |[Stormchasing rendering style](https://github.com/Gh0stz0x/OsmAnd-resources)|
+
+
+### Roteamento
+
+O ficheiro `routing.xml` predefinido pode ser personalizado para ajustar algoritmos e parâmetros de roteamento para condições específicas.
+
+| Nome da Fonte | Descrição | Link |
+| -- | -- | --|
+| Weather-aware Routing (Gh0stz0x) | Modificação personalizada de `routing.xml` que ajusta o cálculo de rotas para condições de chuva, tendo em conta o tipo de superfície (por exemplo, rocha nua), inclinação e classificações oficiais de dificuldade de trilhos (escalas CAI/SAC), além de uma lógica melhorada de "Evitar Túneis". | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+
 
 ### Mapas Offline {#offline-maps}
 

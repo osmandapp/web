@@ -1,5 +1,5 @@
 ---
-source-hash: f16263db8d987d5d802140c2f60261308cc6e1eb3b436559f0926217fa039b11
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title: Rotas
 sidebar_position: 11
 ---
@@ -28,11 +28,11 @@ O OsmAnd possui muitos recursos avançados para exibir diferentes [rotas](./type
 
 Acesse: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Seção Rotas do Configurar Mapa](@site/static/img/map/configure_map_routes_android.png) ![Classes de Rotas](@site/static/img/map/routes_classes_android.png)
+![Seção Rotas do Configurar Mapa](@site/static/img/map/configure_map_routes_android.png) ![Classes de Rotas](@site/static/img/map/routes_classes_android.webp)
 
 - Para exibir as rotas desejadas no mapa, ative-as na *lista de Rotas* do menu [Configurar Mapa](../../map/configure-map-menu.md).
 - O OsmAnd pode destacar [rotas presentes no OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Elas podem ser selecionadas tocando [no símbolo da rota](#save-as-a-track) e, se o conjunto visível de rotas estiver configurado corretamente, você poderá seguir a cor e os ícones.
-- Os principais tipos de rota também podem ser filtrados por classes e subclasses, permitindo exibir apenas grupos específicos dentro de cada tipo. Por exemplo, você pode mostrar rotas de caminhada por **símbolos OSMC** como classes e por redes *internacionais, nacionais, regionais* ou *locais* como subclasses, que estão atualmente disponíveis quando o plug-in [Desenvolvimento OsmAnd](../../plugins/development.md) está ativado.
+- Os principais tipos de rota também podem ser filtrados por classes e subclasses, permitindo exibir apenas grupos específicos dentro de cada tipo. Por exemplo, você pode mostrar rotas de caminhada por **símbolos OSMC** como classes e por *redes internacionais, nacionais, regionais* ou *locais*, bem como *rotas não classificadas* como subclasses. Filtros de classificação de rede semelhantes estão disponíveis para rotas de ciclismo. Essas opções estão atualmente disponíveis quando o plug-in [Desenvolvimento OsmAnd](../../plugins/development.md) está ativado. Quando várias redes de rotas se sobrepõem, classificações individuais podem ser ativadas ou desativadas para exibir apenas os níveis de rota desejados.
 - Você pode criar uma trilha sobre as rotas usando a ferramenta [Planejar uma Rota](../../plan-route/create-route.md).
 - Quando várias rotas seguem a mesma estrada, cada rota é exibida como uma linha semitransparente separada, colocada acima das outras.
 - Ao tocar em um local onde várias rotas se sobrepõem, é exibido um menu de contexto com todas as rotas que passam por esse ponto.
@@ -197,7 +197,7 @@ Você pode personalizar se as rotas estão ativadas ou desativadas usando o widg
 
 </Tabs>
 
-Encontre rotas usando a [função de Pesquisa](../../search/index.md) por nome ou selecionando "Rotas" na [seção Categorias](../../search/search-poi.md#).
+Encontre rotas usando a [função de Pesquisa](../../search/index.md) por nome ou selecionando "Rotas" na [seção Categorias](../../search/search-poi.md#poi-search-by-categories).
 
 Para pesquisar, acesse o menu *<Translate android="true" ids="search_button"/>* ou *<Translate android="true" ids="search_button,search_categories"/>* e insira sua atividade.
 
@@ -221,7 +221,7 @@ Navegue até *<Translate android="true" ids="search_button,search_categories,poi
 
 </Tabs>
 
-Nos resultados da pesquisa de rotas, toque no botão **Filtros** no canto superior direito para restringir a lista. A tela de Filtros inclui um campo **Filtrar por nome**; um bloco **Tipo** com *Bureau*, *Anexo postal* e *Parceiro postal*; e **critérios extras** que dependem da categoria de rota ou atividade selecionada, pois cada categoria pode expor suas próprias características e valores de filtro.
+Nos resultados da pesquisa de rotas, toque no botão **Filtros** no canto superior direito para restringir a lista. A tela de Filtros inclui um campo **Filtrar por nome** e **critérios extras** que dependem da categoria de rota ou atividade selecionada, pois cada categoria pode expor suas próprias características e valores de filtro.
 
 Você pode ativar ou desativar filtros usando os interruptores e algumas seções incluem *Mostrar tudo* para exibir valores adicionais.
 
@@ -234,5 +234,5 @@ Você pode ativar ou desativar filtros usando os interruptores e algumas seçõe
 - [Menu de contexto de trilhas](../../map/tracks/track-context-menu.md)
 - [Transporte público](../public-transport.md)
 - [Aparência da linha de rota de navegação](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [Pesquisar POI](../../search/search-poi.md#)
+- [Pesquisar POI](../../search/search-poi.md)
 - [Tipos de Rotas](./types-of-routes.md)

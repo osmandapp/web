@@ -1,5 +1,5 @@
 ---
-source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
+source-hash: cd041547a7f80045d462bbc7c5a375476089c6105d35475b185588517c4f7162
 sidebar_position: 2
 ---
 
@@ -19,6 +19,21 @@ Você pode obter a versão mais recente do OsmAnd gratuitamente nas lojas de apl
 Links diretos para versões gratuitas do OsmAnd.
 
 ## Versão 5 {#version-5}
+
+### Versão 5.4 {#version-54}
+
+Data de lançamento 09/2026:
+
+- UI de pesquisa renovada: ordenação, filtros de categoria, aparência mais limpa.
+- Anexar fotos e mídia aos Favoritos.
+- Favoritos: suporte a subgrupos e pastas fixáveis.
+- Coordenadas: pesquisa, grade do mapa e exibição de POI agora suportam EPSG e localizador Maidenhead.
+- Corrigidas interrupções de navegação; alternar entre roteamento Padrão e Rápido.
+- Definir escala do mapa do Android Auto separadamente do telefone.
+- Nova pesquisa espacial — encontre lugares e pesquise ao redor de um lugar.
+- Astronomia: adicionados exploradores de eclipses solares e lunares.
+
+<DownloadRelease blog="osmand-android-5-4-released" release="net.osmand-5.4.7-5407.apk" />
 
 ### Versão 5.3 {#version-53}
 
@@ -235,7 +250,7 @@ Data de lançamento 12/2022:
 
 ### Versão 4.2 {#version-42}
 
-Data de lançamento: 06/2022
+Release date: 06/2022
 
 - Redesenho de widgets: novo Look & Feel, agrupar por Páginas, alterar ordem e combinar como quiser.
 - Rotas de Caminhada / Ciclismo / Viagem: toque no símbolo da rota e obtenha informações completas sobre a rota.
@@ -246,7 +261,7 @@ Data de lançamento: 06/2022
 
 ### Versão 4.1 {#version-41}
 
-Data de lançamento: 12/2021
+Release date: 12/2021
 
 - Adicionado suporte inicial para Android Auto
 - Atualização da interface do usuário para pesquisa de coordenadas UTM

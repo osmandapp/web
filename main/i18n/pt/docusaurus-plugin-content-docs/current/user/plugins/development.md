@@ -1,5 +1,5 @@
 ---
-source-hash: cabb75b12e9f32ccc68c29e24d29528eb8658c901282dffdb500abb861fb9bef
+source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
 sidebar_position: 11
 title: Desenvolvimento do OsmAnd
 ---
@@ -47,13 +47,13 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 
 <TabItem value="android" label="Android">  
 
-![Configurações de Desenvolvimento Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Configurações de Desenvolvimento 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
+![Development Settings Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Configurações de Desenvolvimento iOS](@site/static/img/plugins/development/development_ios_3_new.png)
+![Development Settings iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -62,135 +62,135 @@ Use um dos seguintes caminhos para abrir as configurações do plugin:
 
 ### Terreno {#terrain}
 
-- **Usar formato raster [SQLite](../../technical/osmand-file-formats/osmand-sqlite) para hillshade e inclinação** (*Android*). Ao usar o mecanismo de renderização V2, em vez de calcular o hillshading ou inclinações a partir do mapa de Terreno 3D, use os mapas raster de formato antigo para esse propósito. Pode acelerar significativamente a renderização.
+- **Use raster [SQLite format](../../technical/osmand-file-formats/osmand-sqlite) for hillshade and slope** (*Android*). When using the V2 rendering engine, instead of calculating hillshading or slopes from the 3D Terrain map, use the old format raster maps for this purpose. Can speed up rendering significantly.
 
 
 ### Solução de problemas {#troubleshooting}
 
-- **Simular sua posição** (*Android* / *iOS*). [Simule](#gpx-track-simulation) a localização e o movimento usando uma trilha GPX.
-- **Modo de economia de bateria** (*Android* / *iOS*). Esta configuração reduz [a taxa de atualização da tela](#map-rendering-fps-widget) em 20 quadros por segundo para ajudar a economizar energia da bateria ao usar aplicativos.
-- **Usar ícones de posição de localização 3D** (*iOS*). Permite selecionar um ícone 3D para o [ícone Minha Localização](../personal/profiles.md#my-location-appearance).
-- **Simular dados obd** (*Android* / *iOS*). Permite a simulação do uso do [scanner OBD](./vehicle-metrics.md).
-- **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Exibe o desempenho de renderização e navegação.
-- **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Exibe informações de depuração de rasterização de tiles.
-- **Desativar camadas do mapa** (*Android*). Desativa todas as camadas do mapa sobre o mapa vetorial (requer reinício).
-- **Buffer Logcat** (*Android*). Verifica e compartilha logs detalhados do aplicativo.  
-- **Mostrar notificação sobre tecla pressionada** (*Android*). Exibe uma mensagem sobre a tecla.
-- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. O rumo é a direção da bússola da sua posição atual para o seu destino pretendido. Afeta a *[gravação de trilhas](../plugins/trip-recording.md)*.  
-- **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. A direção é a direção da bússola da sua posição atual em relação ao norte verdadeiro. Esta opção está ativada por padrão. Afeta a *[gravação de trilhas](../plugins/trip-recording.md)*.
-- **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Ativa o anti-aliasing multisample para suavizar a renderização do mapa. Melhora a qualidade visual do [ícone Minha Localização](../personal/profiles.md#my-location-appearance) e da linha de rota reduzindo as bordas pixeladas. No Android, esta opção afeta a renderização do mapa no dispositivo e ao usar [Android Auto](../navigation/auto-car.md). No iOS, aplica-se apenas ao [CarPlay](../navigation/car-play.md).
+- **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
+- **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 frames per second to help save battery power while using applications.
+- **Use 3D location position icons** (*iOS*). Allows you to select a 3D icon for the [My Location icon](../personal/profiles.md#my-location-appearance).
+- **Simulate obd data** (*Android* / *iOS*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
+- **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Displays rendering and navigation performance.
+- **<Translate android="true" ids="show_debug_tile"/>** (*Android* / *iOS*). Displays tile rasterization debug information.
+- **Disable map layers** (*Android*). Disables all map layers over the vector map (restart required).
+- **Logcat buffer** (*Android*). Check and share detailed logs of the app.  
+- **Show toast about pressed key** (*Android*). Display a message about the key.
+- **<Translate android="true" ids="write_bearing"/>** (*Android*). <Translate android="true" ids="write_bearing_description"/>. Bearing is the compass direction from your current position to your intended destination. Affects *[track recording](../plugins/trip-recording.md)*.  
+- **<Translate android="true" ids="write_heading"/>** (*Android*). <Translate android="true" ids="write_heading_description"/>. Heading is the compass direction from your current position towards true north. This option is enabled by default. Affects *[track recording](../plugins/trip-recording.md)*.
+- **<Translate android="true" ids="enable_msaa"/>** (*Android*) / **<Translate ios="true" ids="enable_msaa_carplay"/>** (*iOS*). Enables multisample anti-aliasing to smooth map rendering. Improves visual quality of the [My Location icon](../personal/profiles.md#my-location-appearance) and route line by reducing pixelated edges. On Android, this option affects map rendering on the device and when using [Android Auto](../navigation/auto-car.md). On iOS, it applies to [CarPlay](../navigation/car-play.md) only.
 
 
 ### Teste de aplicativo {#application-testing}
 
-:::caution Somente Android
-:::
-
-- **Simular primeira inicialização do aplicativo**. Define o sinalizador indicando a primeira inicialização do aplicativo, mantém todas as outras configurações inalteradas.  
-- **Testar avisos de voz**. Selecione uma voz e teste reproduzindo anúncios.
-- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Destaca os toques na tela com indicadores visuais.
-- **Barra de status transparente**. O mapa fica visível sob a barra de status.  
-- **Mostrar banner da versão gratuita**. Exibe o banner da versão gratuita mesmo na versão paga.  
-- **Mostrar informações de depuração**. Exibe informações gráficas sobre o posicionamento de cada texto no mapa.
-- **Permitir exibição no topo**. Permite que os textos do mapa sejam exibidos uns sobre os outros.
+- **Simulate first app start** (*Android*). Sets the flag indicating first app startup, keeps all other settings unchanged.  
+- **Test voice prompts** (*Android*). Select a voice and test by playing announcements.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
+- **Transparent status bar** (*Android*). The map becomes visible under the status bar.  
+- **Show free version banner** (*Android*). Display the free version banner even in the paid version.  
+- **Show debug information** (*Android*). Display graphical information about the placement of each text on the map.
+- **Allow display on top** (*Android*). Allows map texts to be displayed on top of each other.
 
 
 ### Algoritmos Internos {#internal-algorithms}
 
-:::caution Somente Android
+:::caution Android only
 :::
 
-- **Modo de segurança**. Executa o aplicativo em modo de segurança (mais lento).  
+- **Safe mode**. Runs OsmAnd without the native C++ library, using Java implementations for map rendering and route calculation instead. The app switches to this mode automatically if the native library fails during startup, allowing it to start and remain usable. Map rendering and route calculation are noticeably slower while safe mode is active. 
+- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
 
 
 ### Configurações de memória {#memory-settings}
 
-:::caution Somente Android
+:::caution Android only
 :::  
 
-- A opção **Memória alocada para roteamento** permite determinar a quantidade de memória alocada para o cálculo de rotas longas. Você pode usar esta opção se o [roteamento padrão A*](../navigation/guidance/navigation-settings.md#development-settings) estiver selecionado nas *Configurações de navegação*.
+- **Memory allocated for routing** option allows you to determine the amount of memory allocated for calculating long routes. You can use this option if the [Standard routing A*](../navigation/guidance/navigation-settings.md#development-settings) is selected in the *Navigation settings*.
 
-***Cálculo de rotas extralongas:***
+***Calculation of extra-long routes:***
 
-- Maior alocação de memória pode afetar o desempenho de outros aplicativos.
-- [Cálculo de rotas de 50 km para pedestres](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
+- Higher memory allocation may impact the performance of other apps.
+- [Calculation of 50 km routes for pedestrians](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
+
+- **Java memory** shows how much Java memory the app uses and opens the heap histogram tools: *Collect & analyze now*, *Share report*, and *Collect on high usage* (off by default). See [Heap Histogram for Memory Problems](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android) for when to use them.
 
 
 ### Informações e Estatísticas {#info-and-statistics}
 
-:::caution Somente Android
+:::caution Android only
 :::  
 
-- **Memória alocada**. Exibe a memória do sistema alocada para o aplicativo OsmAnd.  
-- **Memória nativa total**. Exibe a quantidade total de memória nativa alocada para o aplicativo, incluindo memória proporcional.  
-- **Informações A-GPS**. Indica quando os dados A-GPS foram baixados pela última vez.  
-- **Informações dia/noite**.  Indica os horários do nascer e pôr do sol de hoje.  
-- **Estatísticas de energia (média de 1 / 5 / 15 minutos)**. Exibe o nível da bateria por minuto (%) e o consumo médio de energia (mAh) em intervalos de 1, 5 e 15 minutos.  
-- **Estatísticas de renderização (média de 1 / 5 / 15 minutos)**. Mostra estatísticas de renderização, incluindo FPS nos últimos 1k quadros, CPU (blocos), CPU (tempo ocioso) e CPU (espera) médias em intervalos de 1, 5 e 15 minutos.  
+- **Allocated memory**. Displays the allocated system memory for the OsmAnd application.  
+- **Total native memory**. Displays the total amount of native memory allocated to the application, including proportional memory.  
+- **A-GPS info**. Indicates when A-GPS data was last downloaded.  
+- **Day/night info**.  Indicates today's sunrise and sunset times.  
+- **Energy statistics (average 1 / 5 / 15 minutes)**. Displays battery level per minute (%) and average energy consumption (mAh) over 1, 5, and 15-minute intervals.  
+- **Rendering statistics (average 1 / 5 / 15 minutes)**. Shows rendering statistics, including FPS over the last 1k frames, CPU (tiles), CPU (idle time), and CPU (standby) averages over 1, 5, and 15-minute intervals.  
 
-**Botão:**
+**Button:**
 
-- **Redefinir configurações do plugin para o padrão**. Redefine todas as configurações do plugin para seus valores padrão.
+- **Reset plugin settings to default**. Resets all plugin settings to their default values.
 
-    ![Configurações de Desenvolvimento Android](@site/static/img/plugins/development/devplugin_stat_and.png)
+    ![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png)
 
 
 ## Widget FPS de Renderização do Mapa {#map-rendering-fps-widget}
 
-:::info  Importante
-Os Widgets de desenvolvedor do OsmAnd podem ser adicionados à tela somente quando o plugin de desenvolvimento do OsmAnd estiver ativado.  
+:::info  Important
+OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Vá para: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![Widget de desenvolvimento fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Widget de desenvolvimento fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*  
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*  
 
-![Widget de desenvolvimento iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
 </TabItem>
 
 </Tabs>  
 
-O [Widget FPS](../widgets/info-widgets.md#map-rendering-fps) mostra a velocidade com que o mapa e os elementos do mapa são exibidos e atualizados. O valor numérico é indicado em quadros por segundo (FPS).
+The [FPS Widget](../widgets/info-widgets.md#map-rendering-fps) shows how fast the map and map elements are displayed and refreshed. The numeric value is indicated in frames per second (FPS).
 
 
 ## Widgets de Posição da Câmera {#camera-position-widgets}
 
-:::info  Importante
-Os Widgets de desenvolvedor do OsmAnd podem ser adicionados à tela somente quando o plugin de desenvolvimento do OsmAnd estiver ativado.  
+:::info  Important
+OsmAnd developer Widgets can be added to the screen only when OsmAnd development plugin is enabled.  
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-Vá para: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*  
+Go to: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*  
 
-![Widgets de posição da câmera 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Widgets de posição da câmera 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
 
-![Widgets de posição da câmera 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Widgets de posição da câmera 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
+![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-Você pode usar os [widgets de posição da câmera](../widgets/info-widgets.md#camera-widgets) para dar ao mapa do OsmAnd uma aparência realista e combinar fotos da Terra tiradas de cima e do espaço.  
+You can use [Camera position widgets](../widgets/info-widgets.md#camera-widgets) to give the OsmAnd map a realistic look and match photos of the Earth taken both from above and from space.  
 
 
 ### Inclinação da câmera {#camera-tilt}
@@ -199,23 +199,23 @@ Você pode usar os [widgets de posição da câmera](../widgets/info-widgets.md#
 
 <TabItem value="android" label="Android">  
 
-![Widget de inclinação da câmera Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Widget de inclinação da câmera Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
+![Camera tilt widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget de inclinação da câmera iOS 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Widget de inclinação da câmera iOS 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)  
+![Camera tilt widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camera tilt widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)  
 
 </TabItem>
 
 </Tabs>  
 
-O widget de inclinação da câmera exibe a inclinação entre o vetor de visão central da câmera (visualizador) e um terreno plano imaginário da Terra. O valor padrão é 90 graus (sem inclinação).  
+The Camera tilt widget displays the incline between the central view vector of the camera (viewer) and an imaginary flat ground of the earth. The default value is 90 degrees (no tilt).  
 
 :::note  
-A inclinação da câmera é alterada movendo a câmera (visualizador) enquanto o ponto central no mapa (que estamos olhando) permanece o mesmo. A distância até ele (na verdade, o zoom) não muda.
-Ao mesmo tempo, devido ao movimento imaginário do visualizador, a distância da câmera até a superfície muda.
+The camera tilt is changed by moving the camera (viewer) while the center point on the map (we are looking at) remains the same. The distance to it (in fact, zoom) does not change.
+At the same time, due to the imaginary movement of the viewer, the distance from the camera to the surface changes.
 :::
 
 
@@ -225,19 +225,19 @@ Ao mesmo tempo, devido ao movimento imaginário do visualizador, a distância da
 
 <TabItem value="android" label="Android">  
 
-![Widget de elevação da câmera Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Widget de elevação da câmera Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
+![Camera elevation widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget de elevação da câmera iOS 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Widget de elevação da câmera iOS 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)  
+![Camera elevation widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camera elevation widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)  
 
 </TabItem>
 
 </Tabs>  
 
-O widget de Elevação da Câmera mostra a elevação da câmera acima do nível da superfície. A elevação da câmera é indicada em metros / quilômetros.  
+The Camera Elevation widget shows the camera elevation above the surface level. Camera elevation is indicated in meters / kilometers.  
 
 
 ### Nível de Zoom {#zoom-level}
@@ -246,27 +246,27 @@ O widget de Elevação da Câmera mostra a elevação da câmera acima do nível
 
 <TabItem value="android" label="Android">  
 
-![Widget de nível de zoom Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Widget de nível de zoom Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
+![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget de nível de zoom iOS 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Widget de nível de zoom iOS 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)  
+![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)  
 
 </TabItem>
 
 </Tabs>  
 
-O widget possui duas visualizações que são alternadas ao tocar nele:  
+The widget has two views that are switched by tapping it:  
 
-- **<Translate android="true" ids="map_widget_zoom_level"/>**. Mostra o nível de zoom atual do mapa.
-- **<Translate android="true" ids="map_widget_map_scale"/>**. Mostra a proporção atual entre uma distância no mapa e a distância correspondente na Terra. Exemplos: "1 : 3 000", "1 : 3,3 M" "1: 340 K".  
+- **<Translate android="true" ids="map_widget_zoom_level"/>**. Shows the current map zoom level.
+- **<Translate android="true" ids="map_widget_map_scale"/>**. Shows the current ratio between a distance on a map and the corresponding distance on the earth. Examples: "1 : 3 000", "1 : 3,3 M" "1: 340 K".  
 
 :::note
 
-- O nível de zoom inicial (0) é o nível em que toda a superfície da Terra (o mapa completo) é exibida na tela, e seu tamanho é de 256 por 256 pixels.  
-- Cada próximo nível de zoom reduz a distância imaginária ao solo em cerca de 2 vezes.
+- The initial zoom level (0) is the level at which the entire surface of the earth (the full map) is displayed on the screen, and its size is 256 by 256 pixels.  
+- Each next zoom level reduces the imaginary distance to the ground by about 2 times.
 
 :::
 
@@ -276,46 +276,46 @@ O widget possui duas visualizações que são alternadas ao tocar nele:
 
 <TabItem value="android" label="Android">  
 
-![Widget de distância até o alvo 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Widget de distância até o alvo 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Widget de distância até o alvo 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Widget de distância até o alvo 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
+![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
 </TabItem>
 
 </Tabs>  
 
-O widget Distância da câmera ao alvo mostra a distância entre a câmera (visualizador) e o centro do mapa. Essa distância é exibida em metros / quilômetros.  
+The Distance from camera to target widget shows the distance between the camera (viewer) and the center of the map. This distance is displayed in meters / kilometers.  
 
 
 ### Comparação com uma Imagem de Satélite {#comparison-with-a-satellite-imagery}
 
-![Comparação](@site/static/img/plugins/development/comparison.png)
+![Comparison](@site/static/img/plugins/development/comparison.png)
 
-Uma comparação do mapa do OsmAnd e da superfície da Terra revela os seguintes padrões:  
+A comparison of the OsmAnd map and the earth's surface reveals the following patterns:  
 
-- A distorção máxima é observada em grandes zooms (zoom 6-7 para inclinação da câmera de 90 graus).  
-- À medida que a inclinação da câmera diminui (de 90 para 10 graus), a distorção do mapa aumenta.  
-- As distorções começam a ser observadas mais cedo em altas latitudes.
+- Maximum distortion is observed at large zooms (6-7 zoom for camera incline 90 degrees).  
+- As the camera tilt decreases (from 90 to 10 degrees), the distortion of the map increases.  
+- Distortions begin to be observed earlier in high latitudes.
 
-A tabela abaixo contém informações sobre a inclinação da câmera e a distância até o alvo e o nível de zoom em que as distorções do mapa do OsmAnd se tornam visíveis. Se a câmera continuar a se afastar do alvo, a distorção observada do mapa do OsmAnd aumentará.  
+The table below contains information about the tilt of the camera and the distance to the target and zoom level at which the OsmAnd map distortions become visible. If the camera continues to move away from the target, the observed distortion of the OsmAnd map will increase.  
 
-|Inclinação (90) |Latitude |Zoom Máx |Altura, km |Distorção|  
+|Incline (90) |Latitude |Max Zoom |Height, km |Distortion|  
 |-----|-----|-----|-----|-----|
 |90|26|6|5500|5%|
 |90|50|6|2500|5%|
 |90|66|7|1300|5%|
-|**Inclinação (60)** |**Latitude** |**Zoom Máx** |**Altura, km** |**Distorção**|
+|**Incline (60)** |**Latitude** |**Max Zoom** |**Height, km** |**Distortion**|
 |65|26|8|1100|6.5%|
 |65|50|8|800|6.5%|
 |65|66|9|630|6.5%|
-|**Inclinação (45)** |**Latitude** |**Zoom Máx** |**Altura, km** |**Distorção**|
+|**Incline (45)** |**Latitude** |**Max Zoom** |**Height, km** |**Distortion**|
 |45|26|9|350|7.5%|
 |45|50|9|320|7.5%|
 |45|66|8|210|7.5%|
-|**Inclinação (20)** |**Latitude** |**Zoom Máx** |**Altura, km** |**Distorção**|
+|**Incline (20)** |**Latitude** |**Max Zoom** |**Height, km** |**Distortion**|
 |20| 26|12|30|10%|
 |20| 50|11|30|10%|
 |20| 66|11|30|10%|
@@ -323,44 +323,44 @@ A tabela abaixo contém informações sobre a inclinação da câmera e a distâ
 
 ## Widget de Informações de Memória {#memory-info-widget}
 
-Este widget foi projetado especificamente para você ao usar o OsmAnd para fornecer uma interação mais conveniente e informativa com o uso de memória do dispositivo. Ele permite que você monitore de forma fácil e rápida diferentes tipos de memória usados pelo aplicativo, o que é especialmente útil ao usar o OsmAnd para navegação. Leia mais sobre o widget no artigo [Widgets de informação](../widgets/info-widgets.md#memory-info).
+This widget is designed specifically for you when using OsmAnd to provide a more convenient and informative interaction with device memory usage. It allows you to easily and quickly monitor different types of memory used by the application, which is especially useful when using OsmAnd for navigation. Read more about the widget in the [Information widgets](../widgets/info-widgets.md#memory-info) article.
 
 
 ## Simulação de Trilha GPX {#gpx-track-simulation}
 
-O OsmAnd oferece a oportunidade de simular a localização e o movimento do seu dispositivo usando uma trilha GPX. Para esses fins, use a opção *<Translate android="true" ids="simulate_location_by_gpx"/>* nas [configurações](#plugin-settings) do plugin de desenvolvimento do OsmAnd:  
+OsmAnd provides an opportunity to simulate the location and movement of your device using a GPX track. For these purposes, use *<Translate android="true" ids="simulate_location_by_gpx"/>* option in the OsmAnd development plugin [settings](#plugin-settings):  
 
-- Toque em *<Translate android="true" ids="simulate_location_by_gpx"/>*.  
-- Selecione uma trilha para simular a localização e o movimento do dispositivo.
-- Selecione a velocidade de simulação de movimento.
-- Toque no botão Iniciar.  
+- Tap *<Translate android="true" ids="simulate_location_by_gpx"/>*.  
+- Select a track to simulate the location and movement of the device.
+- Select movement simulation speed.
+- Tap Start buton.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">  
 
-![Configurações de Desenvolvimento Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Configurações de Desenvolvimento Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
+![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Configurações de Desenvolvimento iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Configurações de Desenvolvimento iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
+![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
 
 </TabItem>
 
 </Tabs>  
 
-Após executar a simulação, você verá na tela principal do aplicativo que a marca de navegação está se movendo de acordo com a trilha GPX. Toque no [botão minha posição](../map/interact-with-map.md#my-position-and-zoom) para sincronizar *Minha Localização* (geolocalização simulada do dispositivo) com o centro do mapa.  
-Para interromper a simulação do movimento do seu dispositivo, volte para as [configurações](#plugin-settings) de desenvolvimento do OsmAnd e toque em **parar** na opção **simular sua posição**.
+After running the simulation, you will see on the main screen of the app that navigation mark is moving according to GPX track. Tap [my position button](../map/interact-with-map.md#my-position-and-zoom) to synchronize *My Location* (simulated geolocation of the device) with the center of the map.  
+To stop simulation of the movement of your device, go back to the OsmAnd development [settings](#plugin-settings) and tap **stop** in the **simulate your position** option.
 
-- *<Translate android="true" ids="simulate_location_by_gpx"/>* também pode ser acessado através do **[Menu de ações rápidas](../widgets/quick-action.md#navigation)**.
-- A velocidade de movimento da localização durante a simulação pode ser definida igual à velocidade registrada (1), ou mais rápida (x2, x3, x4).
-- Você também pode simular o movimento ao longo de uma trilha GPX a partir do [menu de navegação](../navigation/setup/route-navigation.md#simulated-navigation) sem ativar o plugin de desenvolvimento do OsmAnd. Nesse caso, sua localização não será sincronizada com a trilha.
+- *<Translate android="true" ids="simulate_location_by_gpx"/>* can be also accessed through **[Quick action menu](../widgets/quick-action.md#navigation)**.
+- The location movement speed during the simulation can be set equal to the recorded speed (1), or faster (x2, x3, x4).
+- You can also simulate movement along a GPX-track from the [navigation menu](../navigation/setup/route-navigation.md#simulated-navigation) without enabling the OsmAnd development plugin. In that case, your location will not be synchronized with the track.
 
 
 ## Artigos Relacionados {#related-articles}
 
-- [Interagir com o Mapa](../../user/map/interact-with-map.md)
-- [Configurações Globais](../../user/personal/global-settings.md)
-- [Mapas Vetoriais (Estilos de Mapa)](../../user/map/vector-maps.md)
+- [Interact with Map](../../user/map/interact-with-map.md)
+- [Global Settings](../../user/personal/global-settings.md)
+- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
