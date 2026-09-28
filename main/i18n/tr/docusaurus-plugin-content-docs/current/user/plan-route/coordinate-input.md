@@ -1,9 +1,8 @@
 ---
-source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
+source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
 sidebar_position: 3
 title: Koordinat Girişi
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -13,6 +12,7 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
+
 
 
 <InfoAndroidOnly />
@@ -25,9 +25,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Nasıl Kullanılır {#how-to-use}
 
-Ara noktaları *[Harita işaretleyicileri](../personal/markers.md#actions)* menüsünden oluşturabilirsiniz. Şu yola gidin: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+Ara noktaları *[Harita işaretleyicileri](../personal/markers.md#actions)* menüsünden veya [Yerlerim](../personal/myplaces.md) bölümünden oluşturabilirsiniz (ekran görüntülerine bakın). Koordinat giriş seçeneğine ulaşmak için lütfen şu yolları izleyin:
+- *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Ekranın altındaki Dünya düğmesi*
+- *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Koordinat girişi nasıl bulunur](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png)
+![Koordinat girişi nasıl bulunur](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Koordinat girişi nasıl bulunur](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
 
 Koordinat giriş ekranını açtıktan sonra:
 
@@ -82,7 +84,7 @@ Veri girmek için kısa klavyeyi (varsayılan) veya sistem (Android) klavyesini 
 ![Koordinat girişi Nokta Ekle Android](@site/static/img/plan-route/coordinates_input/coordinates_input_keyboard.png)
 
 - *<Translate android="true" ids="shared_string_add"/>* düğmesi, bir noktayı *[Noktalar listesine](#points-list)* kaydetmenizi sağlar.
-- *<Translate android="true" ids="shared_string_clear"/>* düğmesi, girilen tüm verilerini sıfırlar.
+- *<Translate android="true" ids="shared_string_clear"/>* düğmesi, girilen tüm verileri sıfırlar.
 - &#9032; bir sonraki değere atlamanızı sağlar.
 - *Klavye düğmeleri* veri girmenizi, silmenizi, bir sonraki koordinat değerine atlamanızı, klavyeyi gizlemenizi sağlar.
 
@@ -99,7 +101,7 @@ Bir noktaya dokunduğunuzda, koordinatlarını değiştirmek mümkün hale gelir
 
 Noktalarınızı bir parkur olarak kaydetmek için *Geri* ( &#8592; ) düğmesine dokunun veya *[Seçenekler](#options)* menüsünü kullanın.
 
-![Koordinat girişi kaydetme noktası Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Koordinat girişi kaydetme noktası Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
+![Koordinat girişi kaydetme noktası Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Koordinat girişi kaydetme noktası Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
 
 Açılır menüde kendi parkur adınızı girebilir veya varsayılan olarak kaydedebilirsiniz. Eklenen noktaları yeni bir parkur olarak kaydetmek için <Translate android="true" ids="shared_string_save"/> öğesine dokunun.
 Parkurunuzu [Yerlerim menüsünde](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>) bulacaksınız.

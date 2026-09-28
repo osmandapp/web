@@ -1,5 +1,5 @@
 ---
-source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
+source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
 sidebar_position: 2
 title: Adres Ara
 ---
@@ -87,7 +87,6 @@ OsmAnd, birkaç yaygın adres formatını destekler. Adresi nasıl bildiğinize 
 | Adres formatı | Örnek sorgular |
 |---|---|
 | Ev numarası + cadde | 221B Baker Street<br />10 Downing Street |
-| Çift ev numarası + cadde | 243/11 Husova |
 | Cadde + ev numarası | Baker Street 221B<br />Main Street 101 |
 | Şehir + cadde + ev numarası | London Baker Street 221B<br />Paris Rue de Rivoli 10 |
 | Cadde kesişimleri | Broadway & Wall Street<br />Main Street and High Street |

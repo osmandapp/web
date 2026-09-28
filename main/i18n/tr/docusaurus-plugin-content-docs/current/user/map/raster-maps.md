@@ -1,5 +1,5 @@
 ---
-source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
+source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
 sidebar_position: 7
 title:  Raster Haritalar (Çevrimiçi / Çevrimdışı)
 ---
@@ -13,6 +13,10 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+<!--
+<InfoIncompleteArticle/>
+-->
 
 ## Genel Bakış {#overview}
 
@@ -84,7 +88,7 @@ Ayrıca haritaların [ana kaynağını](#main) vektör haritalardan çevrimiçi 
 
 OsmAnd'da raster haritalar, çevrimdışı kullanım için optimize edilmiş varsayılan vektör haritaların yanı sıra ek bir harita kaynağı olarak hizmet edebilir.  
 
-Temel haritanızı tamamlamak için bir veya iki çevrimiçi döşeme katmanı ekleme esnekliğine sahipsiniz. Bu, ekranınızda aynı anda üç harita katmanına kadar (artı Arazi) görüntülemenizi sağlar (artı Arazi). Bunları bir pasta gibi düşünün: [**Alt Katman**](#underlay) (alttaki raster taban), [**Ana**](#main) (vektör veya raster çekirdek), [**Üst Katman**](#overlay) (üstteki raster), tümünün üzerinde [**Arazi**](#terrain) gölgelendirmesiyle. Örneğin, uydu görüntüsünü Alt Katman olarak, OsmAnd'ın çevrimdışı vektör haritasını Ana katman olarak artan şeffaflıkla ve bisiklet yolu haritasını Üst Katman olarak kullanabilirsiniz.
+Temel haritanızı tamamlamak için bir veya iki çevrimiçi döşeme katmanı ekleme esnekliğine sahipsiniz. Bu, ekranınızda aynı anda üç harita katmanına kadar (artı Arazi) görüntülemenizi sağlar (artı Arazi). Bunları bir pasta gibi düşünün: [**Alt Katman**](#underlay) (alttaki raster taban), [**Ana**](#main) (vektör* veya raster çekirdek), [**Üst Katman**](#overlay) (üstteki raster), tümünün üzerinde [**Arazi**](#terrain) gölgelendirmesiyle. Örneğin, OsmAnd'ın çevrimdışı vektör haritasını Ana taban olarak kullanabilir, üzerine bir uydu görünümü yerleştirebilir ve ek ayrıntı için bir bisiklet yolu haritasını Alt Katman olarak yerleştirebilirsiniz.
 
 >[Vektör haritalar](./vector-maps.md), [Ana](#main) katmanında (**yalnızca** orada ve varsayılan olarak) kullanılabilir. Raster haritalar üç katmanda da kullanılabilir: Ana, Alt Katman ve Üst Katman.
 
@@ -140,7 +144,7 @@ Varsayılan olarak, ana harita [Çevrimdışı vektör haritalarına](./vector-m
 
 </Tabs>
 
-1. Üst katman haritasını *açın/kapatın*.
+1. Alt katman haritasını *açın/kapatın*.
 2. *Katman üstü şeffaflığı* (*Android*)/ Katman üstü haritasının *Şeffaflığı* (*iOS*).
 3. *Şeffaflık kaydırıcısını göster* (*Android*) / *Haritada kaydırıcıyı göster* (*iOS*). Şeffaflık ayarlarına hızlı erişim.
 4. *Katman üstü harita kaynağı* (*Android*) / *Mevcut katmanlar* (*iOS*). Yüklemek veya güncellemek için bir döşeme haritası seçebilirsiniz.
@@ -198,6 +202,79 @@ Arazi katmanını kullanmak için şunları yapmanız gerekir:
 Arazi görselleştirmesi, diğer raster katmanlarla ve varsayılan vektör haritayla birleştirilebilir.
 
 Daha gelişmiş arazi özellikleri, 3D kabartma (yalnızca Pro) ve ek araziyle ilgili seçenekler dahil, [Topografya](../plugins/topography.md) makalesinde açıklanmıştır.
+
+<!--
+## Tepe Gölgelendirme / Eğim {#hillshade--slope}
+
+![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
+
+**Tepe Gölgelendirme** ve **Eğim**, arazi kabartmasını gösteren çevrimdışı raster haritalardır. Özel bir harita katmanı olarak, temel harita üzerinde ikinci bir katman olarak görüntülenirler. Haritalar, manzaranın eğimini ve gölgelerini daha doğru anlamanıza yardımcı olmak için ek yükseklik bilgileri içerir. *Tepe Gölgelendirme* ve *Eğim* bilgileri, tek bir kaynaktan, *Küresel gezegen dosyasından* alınan verilere dayanır ve bölgelere ayrılmıştır.  
+
+Tepe Gölgelendirme ve Eğim katmanları arasında geçiş yapmanıza gerek yoktur, çünkü otomatik olarak birleştirilirler. Haritada görüntülemek için bu katmanlardan yalnızca birini seçebilirsiniz, ancak araziyi daha görsel bir şekilde temsil etmek için diğer katmanlar üzerinde [alt katman veya üst katman olarak](#layers) ikisini de birleştirme seçeneğiniz de vardır.
+
+Tepe Gölgelendirme ve Eğim ile başlamak için şunları yapmanız gerekir:
+
+1. Topografya eklentisini satın alın:
+    - [Android satın alımları](../purchases/android.md)
+    - [iOS satın alımları](../purchases/ios.md)
+2. [Topografya eklentisini](../plugins/topography.md) etkinleştirin:  
+    *Menü → Eklentiler → ︙ → Etkinleştir*
+3. Gerekli bölgenizi seçin ve **Arazi haritasını (3D)** indirin.
+4. İndirme işlemi, seçilen bölgenin boyutuna ve İnternet bağlantınızın hızına bağlı olarak biraz zaman alabilir.
+
+
+### Tepe Gölgelendirme ve 3D Kabartma {#hillshade-and-3d-relief}
+
+| Tepe Gölgelendirme | 3D Kabartma |
+|--------|---------|
+| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+
+Bu ayarlar uygulandığında harita üzerindeki kabartma gösteriminin farkı, **Topografya** makalesinde ilgili bölümde açıklanmıştır [Tepe Gölgelendirme ve 3D Kabartma](../plugins/topography.md#hillshade-and-3d-relief).
+
+
+### Görüntüleme Seçeneklerini Yapılandır {#configure-display-options}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Şuraya gidin: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+Şuraya gidin: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
+
+</TabItem>
+
+</Tabs>
+
+![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
+
+Tepe Gölgelendirme ve Eğim için yakınlaştırma seviyesini ve şeffaflığı özelleştirebilirsiniz. Daha fazla bilgiyi [Topografya makalesinde](../plugins/topography.md#hillshade-slope-and-altitude-layers) bulabilirsiniz.
+
+
+## 3D Kabartma {#3d-relief}
+
+:::note
+[3D Kabartma](../plugins/topography.md#3d-relief) bir [**OsmAnd Pro**](../purchases/index.md) ücretli özelliğidir <ProFeature />.
+:::
+
+![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
+
+[**3D Kabartma** özelliği](../plugins/topography.md#3d-relief), bir harita üzerinde araziyi üç boyutlu modeller kullanarak görselleştirmeye olanak tanıyan bir haritalama teknolojisidir. Bu özellik, normal iki boyutlu bir haritaya yükseklik bilgisi ekleyerek 3D ve derinlik efekti oluşturur ve araziyi daha iyi görselleştirmenizi sağlar.  
+
+*3D Kabartmayı kullanmaya başlamak için*:  
+[OsmAnd Pro satın alma planını](../plugins/index.md#purchase) satın almanız, [Topografya eklentisini](../plugins/topography.md) etkinleştirmeniz ve *Menü → Haritayı Yapılandır* bölümündeki [3D Kabartma](../plugins/topography.md#3d-relief) öğesini açmanız gerekir.
+
+
+*3D Kabartma özelliği nasıl çalışır*:  
+*1.* 3D kabartma oluşturmak için OsmAnd, arazi yüksekliği hakkında bilgi alır.  
+*2.* Yükseklik verilerine dayanarak, harita üzerinde dağları, tepeleri, vadileri ve diğer arazi unsurlarını görüntülemek için bir 3D model oluşturulur.  
+*3.* OsmAnd daha sonra bu üç boyutlu modelleri düz bir harita üzerinde görüntüler. Harita, araziyi farklı açılardan ve perspektiflerden görüntülemek için yakınlaştırılabilir, uzaklaştırılabilir ve döndürülebilir.  
+*4.* Harita üzerindeki kontur çizgilerinin gösterimi, harita kaynağının çevrimiçi mi yoksa çevrimdışı mı olduğuna bağlı değildir.
+-->
 
 
 ## Haritaları Hazırlama/Kopyalama {#preparecopy-maps}
@@ -321,6 +398,13 @@ Haritaların bir süre sonra döşemeleri otomatik olarak güncellemesi için bi
         <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-4.png').default} alt="raster-maps"/></td>
     </tr>
 </table>  
+
+<!--
+
+![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
+
+-->
+
 
 </TabItem>
 

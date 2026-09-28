@@ -1,5 +1,5 @@
 ---
-source-hash: cd041547a7f80045d462bbc7c5a375476089c6105d35475b185588517c4f7162
+source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
 sidebar_position: 2
 ---
 
@@ -19,21 +19,6 @@ OsmAnd'ın en son sürümünü listelenen uygulama mağazalarından ücretsiz ol
 Ücretsiz OsmAnd sürümlerine doğrudan bağlantılar.
 
 ## Sürüm 5 {#version-5}
-
-### Sürüm 5.4 {#version-54}
-
-Yayın tarihi 09/2026:
-
-- Yenilenmiş arama kullanıcı arayüzü: sıralama, kategori filtreleri, daha temiz görünüm.
-- Fotoğrafları ve medyayı Favorilere ekleyin.
-- Favoriler: alt grup desteği ve sabitlenebilir klasörler.
-- Koordinatlar: arama, harita ızgarası ve POI görüntüleme artık EPSG ve Maidenhead konum belirleyicisini destekliyor.
-- Navigasyon kesintileri düzeltildi; Standart ve Hızlı yönlendirme arasında geçiş yapın.
-- Android Auto harita ölçeğini telefonunuzdan ayrı olarak ayarlayın.
-- Yeni mekânsal arama — yerleri bulun ve bir yerin çevresinde arama yapın.
-- Astronomi: güneş ve ay tutulması gezginleri eklendi.
-
-<DownloadRelease blog="osmand-android-5-4-released" release="net.osmand-5.4.7-5407.apk" />
 
 ### Sürüm 5.3 {#version-53}
 

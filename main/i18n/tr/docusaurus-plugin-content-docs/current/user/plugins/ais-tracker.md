@@ -1,5 +1,5 @@
 ---
-source-hash: 04bb8eb2b1c8b30b97b5016c68f2b0de688c38c44449e4ebb8b695d258cad44b
+source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
 sidebar_position: 2
 title: AIS Gemi Takipçisi
 ---
@@ -14,11 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+<InfoAndroidOnly />
+
 ## Genel Bakış {#overview}
 
 **AIS Gemi Takipçisi** eklentisi, yakındaki gemiler hakkında [Otomatik Tanımlama Sistemi (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) konumlarını ve ayrıntılı bilgileri görüntüler. AIS verileri, harici bir AIS alıcısından bir ağ bağlantısı aracılığıyla alınır.
-
-Eklenti, TCP veya UDP kullanarak ağ bağlantısı üzerinden NMEA verilerini alabilir. RMC/GGA NMEA mesajlarından alınan GPS konumları, OsmAnd'da Benim konumum olarak da kullanılabilir.
 
 :::caution YASAL UYARI
 **Bu eklenti bir hobi projesidir ve güvenilirlik veya doğruluk için tasarlanmamıştır. Navigasyon veya can güvenliği için bu yazılıma GÜVENMEYİN.**
@@ -27,14 +27,12 @@ Eklenti, TCP veya UDP kullanarak ağ bağlantısı üzerinden NMEA verilerini al
 
 ## Gerekli Kurulum Parametreleri {#required-setup-parameters}
 
-AIS Gemi Takipçisi eklentisini kullanmak için eklentiyi etkinleştirmeniz ve harici bir AIS/NMEA veri kaynağına ağ bağlantısı yapılandırmanız gerekir:
+Çevrimiçi haritaları kullanma yeteneği, OsmAnd'ın iOS sürümünde otomatik olarak etkinleştirilir. Android'de Çevrimiçi haritaları görüntülemek için aşağıdaki ayarları yapmanız gerekir:
 
 1. *Ana Menü → Eklentiler → AIS gemi takipçisi* bölümünde **AIS gemi takipçisi** eklentisini [etkinleştirin](../plugins/index.md#enable--disable).
 2. [AIS ayarlarını](../map/raster-maps.md#layers) yapılandırın.
-3. **AIS/NMEA veri kaynağınıza** **TCP** veya **UDP** kullanarak bağlantıyı yapılandırın.
+3. Bir **AIS sunucu bağlantısı** yapılandırın veya **harici bir AIS alıcısı** bağlayın.
 4. Gemilerin OsmAnd haritasında görüntülendiğini kontrol edin.
-
-iOS'ta ayrıca *NMEA'yı konum kaynağı olarak kullan* seçeneğini etkinleştirerek RMC/GGA NMEA mesajlarından gelen GPS konumlarını OsmAnd'da geçerli konumunuz olarak kullanabilirsiniz.
 
 ## Haritadaki Gemiler {#vessels-on-the-map}
 
@@ -55,12 +53,6 @@ AIS, *VHF frekanslarında* (161.975 MHz ve 162.025 MHz) çalışır ve görüş 
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
-
-![AIS vessel tracker](@site/static/img/plugins/ais/ais.webp)
-
-</TabItem>
-
 </Tabs>
 
 Doğru şekilde ayarlandığında, gemi konumları haritada görünecektir. Temel özellikler:
@@ -76,13 +68,8 @@ Doğru şekilde ayarlandığında, gemi konumları haritada görünecektir. Teme
 
 <TabItem value="android" label="Android">
 
-![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png) ![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.webp)
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu.png)  
+![AIS vessel tracker](@site/static/img/plugins/ais/ais_menu_2.png)
 
 </TabItem>
 
@@ -171,14 +158,6 @@ AIS gemileri üç tür veri iletir:
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">  
-
-*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *AIS gemi takipçisi* → *<Translate ios="true" ids="shared_string_settings"/>* 
-
-![AIS vessel tracker](@site/static/img/plugins/ais/ais_settings_ios.webp)
-
-</TabItem>
-
 </Tabs>
 
 *AIS gemi takipçisi* eklentisi, engelli kullanıcılar için navigasyonu ve etkileşimi kişiselleştirmek üzere çeşitli ayarlar sunar. Bu ayarlar OsmAnd'daki tüm [profiller](../personal/profiles.md) için uygulanır.
@@ -191,12 +170,11 @@ AIS gemileri üç tür veri iletir:
 | IP adresi | AIS veri kaynağının IP'sini tanımlayın (TCP kullanılıyorsa) | `192.168.200.16` |
 | TCP bağlantı noktası   | AIS verileri için TCP bağlantı noktası numarasını tanımlayın | `4001` |
 | UDP bağlantı noktası | OsmAnd AIS alımı için UDP bağlantı noktasını tanımlayın  | `10110` |
-| OsmAnd duraklatıldığında bile AIS verilerini al (*Yalnızca Android*)   | OsmAnd duraklatıldığında veya arka planda çalışırken AIS ileti dinleyicisini çalışır durumda tutun. Devre dışı bırakılırsa, OsmAnd arka plandayken AIS iletileri alınmaz  | `Evet/Hayır` |
-| NMEA'yı konum kaynağı olarak kullan (*Yalnızca iOS*)   | RMC/GGA NMEA mesajlarından gelen GPS konumlarını Benim konumum olarak kullan  | `Açık/Kapalı` |
+| OsmAnd duraklatıldığında bile AIS verilerini al   | OsmAnd duraklatıldığında veya arka planda çalışırken AIS ileti dinleyicisini çalışır durumda tutun. Devre dışı bırakılırsa, OsmAnd arka plandayken AIS iletileri alınmaz  | `Evet/Hayır` |
 | | | |
 | **AIS Sinyal alım zaman aşımı** | |  |
-| Gemi güncelliğini yitirme zaman aşımı      | Gemi güncelliğini yitirme görünürlüğü için zaman aşımı ayarlayın: bu süre boyunca sinyal alınmazsa gemi simgesi üstü çizili olur | `2 - 15 dk / Devre Dışı` |
-| Gemi kaybolduğunda görünürlük için zaman aşımı     | AIS nesnesi görünürlüğü için bir zaman aşımı ayarlayın: Belirtilen süre içinde sinyal alınmazsa nesne ekrandan otomatik olarak kaldırılır | `3 - 20 dk` |
+| Kayıp AIS nesneleri için zaman aşımı     | Belirli bir süre boyunca sinyal alınmazsa gemiler kaybolur | `3 - 20 dk` |
+| Gemi görünürlüğü için zaman aşımı      | Sinyal alınmadığında gemi simgeleri durum değiştirecektir | `2 - 15 dk / Devre Dışı` |
 | | | |
 | **En Yakın Yaklaşma Noktası (CPA) Uyarıları** | | |
 | CPA Uyarı Süresi | CPA'ya kadar olan süre bu limitin altındaysa gemi kırmızı renkle işaretlenir | `1 - 60 dk / Devre Dışı` |

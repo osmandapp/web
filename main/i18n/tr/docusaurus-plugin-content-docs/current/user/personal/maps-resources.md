@@ -1,5 +1,5 @@
 ---
-source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
+source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
@@ -184,7 +184,7 @@ Daha fazla bilgi için [**Özel paket**](../plugins/custom) makalesine bakın.
 Gruplanmış bir ülke öğesi açıldığında, o ülke için tam harita listesini içeren bir alt sayfa görüntülenir ve bireysel haritaların seçilmesine veya hepsinin bir kerede indirilmesine olanak tanır.
 
 
-## Yerel Menüsü {#local-menu}
+## Yerel Menü {#local-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -318,6 +318,89 @@ Mevcut **Eylemler** veri türüne bağlıdır:
 
 </Tabs>
 
+<!--
+The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
+
+- ***Resources*** (*blue*).  
+    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+
+- ***My Places*** (*yellow*).  
+    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
+
+- ***Settings*** (*green*).  
+    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
+
+
+#### Viewing Data {#viewing-data}
+
+![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
+
+
+Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
+
+***Available actions:***
+
+- **Search**. Find specific data by name within the selected folder.
+- **Three-dot menu**:  
+    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
+    ***Import***. Access the device's storage to import files.
+- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
+
+
+#### Menu for Items from the List {#menu-for-items-from-the-list}
+
+![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
+
+Each item in the list offers a *three-dot menu* with options:
+
+- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
+- **Export**. Save data to a file via *Settings → Export to File*.
+
+***Additional options for maps:***
+
+- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
+- **Update**. Download the latest version of the map.
+- **Rename**. Customize the map’s name for better identification.
+- **Remove**. Delete the map from your device.
+- **Edit** (for Online Maps). Modify the online map configuration.
+
+#### Map source items menu {#map-source-items-menu}
+
+![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
+
+Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
+
+- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
+- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
+- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
+- **Export**. Saves the selected map source configuration for backup or sharing.  
+- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
+
+
+#### Local Data Item Overview {#local-data-item-overview}
+
+![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
+
+When viewing a local data item, you see:
+
+- **Type**. The data type from the **Local** list.
+- **Created**. The date the item was added.
+- **Size**. The item’s size is in MB.
+
+Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
+
+#### Sorting Options {#sorting-options}
+
+![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
+
+Use sorting options to organize map data:
+
+- **Name (A - Z / Z - A)**. Locate items alphabetically.
+- **Country name (A - Z / Z - A)**. Organize maps geographically.
+- **Newest date first** / **Oldest date first**. See updates or older versions.
+- **Large size first** / **Small size first**. Identify large maps to free storage space.
+
+-->
 
 ## Güncellemeler Menüsü {#updates-menu}
 
@@ -327,7 +410,7 @@ Mevcut **Eylemler** veri türüne bağlıdır:
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Haritalar menüsü Haritaları güncelle Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Haritalar menüsü Güncelleme sekmesi Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
+![Haritalar menüsü Haritaları güncelle Android](@site/static/img/personal/maps/maps_update_andr.png) ![Haritalar menüsü Güncelleme sekmesi Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
 
 **Güncellemeler** sekmesi, OsmAnd haritalarını ve kaynaklarını yenilemenizi sağlar. Standart ve yalnızca yol haritaları ayda bir kez, genellikle ayın 2'si ile 5'i arasında yayınlanır ve önceki ayın son gününe kadar olan OpenStreetMap verilerini içerir (örneğin, Ekim sürümü 30 Eylül'e kadar olan verileri içerir). Wikipedia, arazi veya deniz haritaları gibi diğer veriler farklı, düzensiz güncelleme programlarını takip edebilir. Hava durumu tahmini kendi düzenli güncelleme döngüsüne sahiptir. Ayrıntılar için [Tahmin İndir](../plugins/weather.md#download-forecast) bölümüne bakın. 
 
@@ -335,15 +418,13 @@ Aynı ülkenin birkaç haritası güncelleme gerektiriyorsa, OsmAnd bunları Gü
 
 Tüm haritaları aynı anda güncellemek için *Tümünü güncelle* düğmesini kullanın veya gerektiğinde tek tek haritaları güncelleyin. Saatlik güncellemeler için [Canlı Güncellemeler](#live-updates) abonelik durumunuzu kontrol edin. Etkinleştirilirse, **Canlı Güncellemeler** bölümü, Cihaz Belleği göstergesinin altında, sekmenin üst kısmında görünecektir.
 
-**Güncellemeler** sekmesi ayrıca bir **<Translate android="true" ids="unsupported_maps"/>** öğesi gösterebilir. Bu, daha küçük bölgelerle değiştirilen ve artık desteklenmeyen haritalarınız olduğunda görünür. Desteklenmeyen haritalara dokunarak listeyi inceleyin, eski haritaları kaldırın ve bunun yerine yeni bölge sürümlerini indirin. Desteklenmeyen haritalar ekranında, tüm desteklenmeyen haritaları görüntüleyebilir ve hepsini bir kerede kaldırmak için Sil hepsini kullanabilirsiniz (silme işleminden önce bir onay istemi gösterilir).
-
 Güncellemeler sekmesinden herhangi bir listelenmiş harita üzerinde uzun basma hareketi kullanarak haritaları doğrudan yönetebilirsiniz. Bu, seçilen harita hakkında ayrıntıları görüntüleme, mevcut en son sürümü indirme, haritayı verilerini kaldırmadan geçici olarak devre dışı bırakma veya harita verilerini cihazdan tamamen silme gibi birkaç seçenek sağlayan bir bağlam menüsü açar:
 - **Bilgi** — seçilen harita hakkında ayrıntıları görüntüleyin
 - **Güncelle** — mevcut en son sürümü indirin
 - **Devre Dışı Bırak** — haritayı verilerini kaldırmadan geçici olarak devre dışı bırakın
 - **Kaldır** — harita verilerini cihazdan tamamen silin
 
-Bir harita devre dışı bırakıldığında, Yerel sekmesinden geçici olarak kaybolabilir. Devre dışı bırakılmış bir harita için bir güncelleme mevcut hale gelirse, yine de Güncellemeler listesinde görünecek ve gri bir simgeyle gösterilecektir. Bu tür bir haritayı güncellemek onu otomatik olarak yeniden etkinleştirecektir.
+Bir harita devre dışı bırakıldığında, Yerel sekmesinden geçici olarak kaybolabilir. Devre dışı bırakılmış bir harita için bir güncelleme mevcut hale gelirse, yinede Güncellemeler listesinde görünecek ve gri bir simgeyle gösterilecektir. Bu tür bir haritayı güncellemek onu otomatik olarak yeniden etkinleştirecektir.
 
 </TabItem>
 

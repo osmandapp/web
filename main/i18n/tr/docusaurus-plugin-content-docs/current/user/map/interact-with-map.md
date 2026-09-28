@@ -1,5 +1,5 @@
 ---
-source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
+source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
 sidebar_position: 2
 title:  Harita ile Etkileşim
 ---
@@ -217,6 +217,8 @@ Eski [harita oluşturma motoru](../personal/global-settings.md#map-rendering-eng
 **Küresel Görünüm**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harita etkileşimini küresel navigasyona uyarlar.  
 
 Küresel Görünüm şu anda yalnızca şu durumlarda kullanılabilir:
+- [Geliştirme eklentisi](../plugins/development.md) etkinleştirildiğinde.  
+Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - [Topografi eklentisi](../plugins/topography.md) etkinleştirildiğinde.  
 Şuraya git: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - [Harita oluşturma motoru](../personal/global-settings.md#map-rendering-engine) Sürüm 2 (OpenGL) olarak ayarlandığında.  
@@ -245,7 +247,7 @@ Ufuk yakınındaki etkileşim, istenmeyen uzun mesafeli hareketleri önlemek iç
 
 Harici giriş cihazı düğmeleri, harita ve OsmAnd uygulama arayüzü ile etkileşim kurmak için kullanışlı ve verimli bir yol sağlar.  **Bluetooth veya diğer klavye türleri**, **araç navigasyon cihazlarındaki özel düğmeler** veya [WunderLINQ](https://blackboxembedded.com/) ve [Parrot](https://www.parrot.com/en) (*yalnızca Android*) kontrolörleri gibi harici cihazlarda bulunurlar.  
 
-Harici giriş cihazlarındaki düğmelerin ana işlevlerinden biri, haritayı yakınlaştırmak ve uzaklaştırmaktır. Ayrıca, ekrana dokunmak ve hareket etmek zorunda kalmadan haritada gezinmenizi ve yönünü değiştirmenizi sağlarlar. Harici giriş cihazlarındaki düğmeler, *Ana Menü*'yü açmak ve *Hızlı Eylemler* tetiklemek gibi birçok başka işlevi de destekler. Desteklenen cihazlar (Klavya, WunderLINQ ve özel harici kontrolörler) için düğme atamalarını özelleştirebilirsiniz.
+Harici giriş cihazlarındaki düğmelerin ana işlevlerinden biri, haritayı yakınlaştırmak ve uzaklaştırmaktır. Ayrıca, ekrana dokunmak ve hareket etmek zorunda kalmadan haritada gezinmenizi ve yönünü değiştirmenizi sağlarlar. Harici giriş cihazlarındaki düğmeler, *Ana Menü*'yü açmak ve *Hızlı Eylemler* tetiklemek gibi birçok başka işlevi de destekler. Desteklenen cihazlar (Klavye, WunderLINQ ve özel harici kontrolörler) için düğme atamalarını özelleştirebilirsiniz.
 
 :::note
 Klavye, *Harici giriş cihazları* seçeneği kapatıldığında ve *Yok* seçildiğinde bile işlevsel kalır. Ancak, özel tuş atamaları yalnızca *Harici giriş cihazları* etkinleştirildiğinde çalışır.
@@ -319,7 +321,7 @@ Harici bir giriş cihazının ayarlarına erişmek için bu özelliği etkinleş
 
 ![Harici cihazlar](@site/static/img/map/external_mypilot_android.png)  ![Harici cihazlar](@site/static/img/map/external_mypilot2_android.png)
 
-Harici bir giriş cihazı (klavya, joystick veya kontrolör gibi) için tuş atamak istiyorsanız, bir cihaz türü oluşturmanız gerekir: [Harici Giriş Cihazı](#external-input-devices) ayarlarına gidin, listeden **Tür**'ü seçin, &nbsp;"**＋**"&nbsp; öğesine dokunun ve bir ad girin. Her türün aşağıdaki seçenekleri içeren bir menüsü vardır: ***Yeniden Adlandır, Çoğalt*** ve ***Kaldır***.
+Harici bir giriş cihazı (klavye, joystick veya kontrolör gibi) için tuş atamak istiyorsanız, bir cihaz türü oluşturmanız gerekir: [Harici Giriş Cihazı](#external-input-devices) ayarlarına gidin, listeden **Tür**'ü seçin, &nbsp;"**＋**"&nbsp; öğesine dokunun ve bir ad girin. Her türün aşağıdaki seçenekleri içeren bir menüsü vardır: ***Yeniden Adlandır, Çoğalt*** ve ***Kaldır***.
 
 </TabItem>
 
@@ -329,7 +331,7 @@ Harici bir giriş cihazı (klavya, joystick veya kontrolör gibi) için tuş ata
 
 ![Harici cihazlar](@site/static/img/map/external_mypilot_ios.png)  ![Harici cihazlar](@site/static/img/map/external_mypilot2_ios.png)
 
-Harici bir giriş cihazı (klavya, joystick veya kontrolör gibi) için tuş atamak istiyorsanız, bir cihaz türü oluşturmanız gerekir: [Harici Giriş Cihazı](#external-input-devices) ayarlarına gidin, listeden **Device**'ı seçin, &nbsp;"**Add**"&nbsp; öğesine dokunun ve bir ad girin. Her türün aşağıdaki seçenekleri içeren bir menüsü vardır: ***Yeniden Adlandır, Çoğalt*** ve ***Kaldır***.
+Harici bir giriş cihazı (klavye, joystick veya kontrolör gibi) için tuş atamak istiyorsanız, bir cihaz türü oluşturmanız gerekir: [Harici Giriş Cihazı](#external-input-devices) ayarlarına gidin, listeden **Device**'ı seçin, &nbsp;"**Add**"&nbsp; öğesine dokunun ve bir ad girin. Her türün aşağıdaki seçenekleri içeren bir menüsü vardır: ***Yeniden Adlandır, Çoğalt*** ve ***Kaldır***.
 
 </TabItem>
 
@@ -388,7 +390,7 @@ Harici bir giriş cihazı (klavya, joystick veya kontrolör gibi) için tuş ata
 **Düzenle düğmesini** (*Android'de kalem şeklinde*) kullanarak birden fazla gereksiz eylemi aynı anda silebilirsiniz:
 
 - Öğe alanındaki &nbsp;"**−**"&nbsp; düğmesiyle eylem başına ***bir eylemi kaldırın***. Tuş ataması ayrıca bağlam menüsü (öğe üzerinde uzun basma) aracılığıyla da kaldırılabilir, **Kaldır**'a dokunarak.
-- Seçilen tür için ***tüm tuş atamalarını kaldırın***, Android'de *Adı düzenle*'nin yanındaki ekranın sağ üst köşesindeki düğmeye dokunarak; iOS'ta **Tümünü Temizle** düğüne dokunarak.
+- Seçilen tür için ***tüm tuş atamalarını kaldırın***, Android'de *Adı düzenle*'nin yanındaki ekranın sağ üst köşesindeki düğmeye dokunarak; iOS'ta **Tümünü Temizle** düğmesine dokunarak.
 
 
 ## İlgili Makaleler {#related-articles}

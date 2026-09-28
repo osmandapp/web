@@ -1,5 +1,5 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
 sidebar_position: 6
 sidebar_label: Favoriler
 title: Favoriler
@@ -26,7 +26,7 @@ Favoriler, Web Planlayıcı'da harita üzerinde önemli yerleri doğrudan kaydet
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
-[**OsmAnd Pro**](../personal/osmand-cloud.md#login) veya [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) hesabına giriş yaptıktan sonra, Web Planlayıcı'daki Favorileriniz klasörlere organize edilir. Her klasör, kaydedilen yerleri gruplar ve Favoriler menüsünden kullanılabilir bir dizi eylem sağlar. 
+[**OsmAnd Pro**](../personal/osmand-cloud.md#login) kaydı yaptıktan ve [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) için, Web Planlayıcı'daki Favorileriniz klasörlere organize edilir. Her klasör, kaydedilen yerleri gruplar ve Favoriler menüsünden kullanılabilir bir dizi eylem sağlar. 
 Aşağıdaki eylemler kullanılabilir:
 
 - *Haritada göster* - seçilen klasördeki favori noktaları haritada göster.
@@ -90,7 +90,7 @@ Adres alanı ayrıca algılanan adresi temizleme veya geri yükleme için hızl�
 
 **Açıklama** bölümü, favoriye notlar veya ek bilgiler eklemenize olanak tanır. Not ekle seçilmesi, açıklamayı ikincil bir panelde düzenleyici olarak açar. Zaten bir açıklama eklenmişse, ana panelde kısa bir önizleme görüntülenir ve iki metin satırıyla sınırlıdır. Açıklama düzenleyici zengin metin biçimlendirmesini destekler ve önceki panele dönüldüğünde değişiklikleri otomatik olarak korur.
 
-Favoriler, daha kolay yönetim ve hızlı erişim için klasörler halinde düzenenebilir. **Klasör** öğesi seçilmesi, mevcut klasörlerin seçilebileceği ikincil bir paneli açar. Önceden kullanılan klasör varsayılan olarak otomatik olarak seçilir. Her klasör ayrıca içinde depolanan favori noktalarının sayısını da gösterir.
+Favoriler, daha kolay yönetim ve hızlı erişim için klasörler halinde düzenlenebilir. **Klasör** öğesi seçilmesi, mevcut klasörlerin seçilebileceği ikincil bir paneli açar. Önceden kullanılan klasör varsayılan olarak otomatik olarak seçilir. Her klasör ayrıca içinde depolanan favori noktalarının sayısını da gösterir.
 
 Yeni klasörler doğrudan klasör seçim panelinden oluşturulabilir. Klasör ekle düğmesi seçilmesi, klasör adını girebileceğiniz ve Favoriler listesindeki konumunu seçebileceğiniz bir iletişim kutusunu açar.
 
@@ -100,7 +100,7 @@ Yeni klasörler doğrudan klasör seçim panelinden oluşturulabilir. Klasör ek
 
 ### Görünüm {#appearance}
 
-**Görünüm** bölümü, favorinin harita üzerinde nasıl görüntürüleceğini özelleştirmenize olanak tanır. Aşağıdaki özellikler kullanılabilir: simge, renk ve şekil. 
+**Görünüm** bölümü, favorinin harita üzerinde nasıl görüntürüleceğini özelleştirmenize olanak tanır. Aşağıdaki özellikler kullanılabilir: simge, renk, şekil ve simge. 
 
 **Simge** seçilmesi, kategorilere ayrılmış simge gruplarını içeren ikincil bir paneli açar.
 

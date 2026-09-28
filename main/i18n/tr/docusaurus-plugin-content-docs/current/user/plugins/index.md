@@ -1,5 +1,5 @@
 ---
-source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
+source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
 sidebar_position: 18
 title: Eklentiler
 ---
@@ -74,7 +74,7 @@ OsmAnd Eklentileri şu Özellik gruplarını artırabilir: **Katmanlar**, **Widg
 | [Çevrimiçi haritalar](#online-maps) |[Harita katmanı](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Gezi kaydı](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profil](../plugins/trip-recording.md#recording-settings) |
 | [Topografya](#topography) | [Harita katmanı](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [3D Rölyef](#topography) | [Harita katmanı](../plugins/topography.md#3d-relief) |
+| [3D Rölyef](#topography) 🤖  | [Harita katmanı](../plugins/topography.md#3d-relief) |
 | [Hava Durumu](../plugins/weather.md) | [Harita katmanı](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Ekran](../plugins/weather.md#weather-forecast-screen) |
 | [Deniz haritası görünümü](#nautical-map-view) | [Harita stili](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Kayak haritası görünümü](#ski-map-view) | [Harita stili](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
@@ -82,13 +82,13 @@ OsmAnd Eklentileri şu Özellik gruplarını artırabilir: **Katmanlar**, **Widg
 |[Park konumu](#parking-position) | [Bağlam menüsü](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[OpenStreetMap düzenleme](#openstreetmap-editing)| [Harita katmanı](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Harita katmanı](../plugins/mapillary.md#map-layer), [Bağlam menüsü](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|[Harici Sensörler](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
+|[Harici Sensörler](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Araç Metrikleri](#vehicle-metrics)  | [Özel Ayarlar](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
 |[Gökbilim](#astronomy)  | [Ekran](../plugins/astronomy.md#star-map-screen), [Bağlam Menüsü](../plugins/astronomy.md#context-menu) |
 |[Erişilebilirlik](#accessibility) 🤖  | [Özel Ayarlar](../plugins/accessibility.md#plugin-settings) |
 |[OsmAnd geliştirme](#osmand-development) | [Özel Ayarlar](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Harita Katmanı](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Bağlam Menüsü](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[AIS gemi takipçisi](#ais-vessel-tracker) |  [Özel Ayarlar](../plugins/ais-tracker.md#plugin-settings) |
+|[AIS gemi takipçisi](#ais-vessel-tracker) 🤖  |  [Özel Ayarlar](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Eklenti Ayarları {#plugin-settings}
@@ -217,3 +217,6 @@ AIS konumlarını ve çevredeki gemiler hakkındaki bilgileri görüntüleyin. A
 ## [Özel Eklenti Oluşturma](./custom.md) {#create-a-custom-plugin}
 
 *Özel Paket* makalesini takip ederek kendi eklentinizi oluşturabilirsiniz.
+
+
+_______

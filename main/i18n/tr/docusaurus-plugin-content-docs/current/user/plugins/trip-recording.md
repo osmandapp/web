@@ -1,5 +1,5 @@
 ---
-source-hash: bc6d5ba96cb9e583b36cbcf01a41444d6f79cda06c1a7921fa913f30e6f428a8
+source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
 sidebar_position: 17
 title:  Gezi Kaydı
 ---
@@ -160,7 +160,7 @@ OsmAnd'da, **Android** ve **iOS** sürümleri parkur kayıt arayüzünü biraz f
 Bir parkuru kaydederken, yolculuğunuz hakkında gerçek zamanlı görsel veriler sağlayan dinamik grafikler oluşturulur. Bu grafikler, yakınlaştırma seviyenize bağlı olarak tüm rota veya yalnızca seçilen bir segment için bilgileri yansıtabilir.  
 Bunlarda bulabilecekleriniz:
 
-- **Veri değerleri**. Grafhiğin sağ tarafında, parkurun görünür bölümü için ***en yüksek***, ***en düşük*** ve ***ortalama*** değerler bulunur.
+- **Veri değerleri**. Grafiğin sağ tarafında, parkurun görünür bölümü için ***en yüksek***, ***en düşük*** ve ***ortalama*** değerler bulunur.
 
 - **Anahtar bilgiler için grafik**:
     - ***Android***. Grafikteki ***Y ekseni*** için, *Rakım*, *Eğim*, *Hız* ve [harici sensör bilgileri](../plugins/external-sensors.md#trip-recording) gibi tüm mevcut verilerden *iki parametreye kadar* seçebilirsiniz. ***X ekseni*** için ise *Mesafe*, *Süre* veya *Günün Saati* görüntülemeyi seçin.

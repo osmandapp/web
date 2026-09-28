@@ -1,5 +1,5 @@
 ---
-source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
+source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
 sidebar_position: 7
 title:  Favoriler
 ---
@@ -131,7 +131,7 @@ Bir favori noktayı değiştirmek için:
 
 <TabItem value="android" label="Android">
 
-Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Favoriyi seç* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
+Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
 ![Yerlerim favoriler android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -139,7 +139,7 @@ Bir favori noktayı değiştirmek için:
 
 <TabItem value="ios" label="iOS">
 
-Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Favoriyi seç* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
+Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
 ![yerlerim_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -147,10 +147,10 @@ Bir favori noktayı değiştirmek için:
 
 </Tabs>
 
-**Simge seç** ekranı simgeleri [kategorilere](../search/search-poi.md#categories-and-their-filters) göre gruplandırır. Üstteki kategori çipleri satırı, listedeki bir kategorinin bölümüne doğrudan atlamanızı sağlar. Bir simgeyi ada veya anahtar kelimeye göre bulmak için büyüteç simgesine dokunun.
+OsmAnd'da İÇN'ler ve ara noktalar için geniş bir simge yelpazesi mevcuttur. Şunları yapabilirsiniz:
 
-- *Son kullanılan* — Son seçilen simgeler hızlı yeniden kullanım için kendi bölümlerinde görünür.
-- *Özel* — Belirli bir kategoriye bağlı olmayan genel amaçlı simge kümesi (yıldız, bayrak, işaretçi, kalp, kamera ve diğerleri).
+- [İÇN kategorileri](../search/search-poi.md#categories-and-their-filters) listesinden bir simge seçin.
+- [Arama seçeneğini](../search/search-all.md#how-to-use) kullanarak uygun bir simge bulun.
 
 
 ### Özel Favoriler (Kişisel) {#special-favorites-personal}
@@ -221,7 +221,7 @@ Herhangi bir öğeye dokunarak tam ekran görünümünde açabilirsiniz. Fotoğr
 </Tabs>
 
 - **Sıralama** — Favori klasörleri ve noktaları, liste menüsündeki mevcut sıralama seçeneklerini kullanarak sıralanabilir. Favori noktalar için mevcut seçenekler şunlardır: *Ad A – Z*, *Ad Z – A*, *Son değiştirilme*, *Geçerli konuma en yakın*, *Harita merkezine en yakın*, *En yeni tarih önce* ve *En eski tarih önce*. Favori klasörleri için mevcut seçenekler şunlardır: *Ad A – Z*, *Ad Z – A*, *Son değiştirilme*, *En yeni tarih önce* ve *En eski tarih önce*. Varsayılan olarak, öğeler Ad A – Z'ye göre sıralanır. Sabitlenmiş klasörler her zaman listenin en üstünde görüntülenir. Diğer klasörlerden görsel olarak bir ayırıcı ile ayrılırlar. 
-- **Arama** — Favorileri ada göre bulmak için [Küresel arama](../search/search-all.md) kullanın. Favori listesinde Arama sekmesindeki favori noktaları aramak için *Ara* (büyüteç) simgesine dokunun.
+- **Arama** — Favorileri ada göre bulmak için [Küresel arama](../search/search-all.md) kullanın. Favoriler, haritanın merkezine olan uzaklığa göre sıralanır. Favori listesinde Arama sekmesindeki favori noktaları aramak için *Ara* (büyüteç) simgesine dokunun.
 
 ### Toplu Düzenle / Sil {#bulk-edit--delete}
 
@@ -275,6 +275,21 @@ Seçilen klasörler için aynı eylemler kullanılabilir ve şu ek seçenekler b
 
 </Tabs>
 
+<!--
+### Add Favorites to Map Markers {#add-favorites-to-map-markers}
+
+<InfoAndroidOnly/>
+
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
+
+You can add to or remove your favorites from [Map markers list](../personal/markers.md).
+Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
+
+**Functions for Favorite folder:**
+- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
+- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
+-->
+
 
 ### Favori Grup Eylemleri {#favorite-group-actions}
 
@@ -299,7 +314,7 @@ Android'de her klasörün yanındaki ***Üç nokta menüsünü*** kullanarak fav
 - **<Translate android="true" ids="shared_string_show_on_map"/>** / **Haritada gizle** — Klasördeki favori noktaları haritada göstermek veya gizlemek için bu seçeneği açıp kapatın.
 - **<Translate android="true" ids="pin_folder"/>** — Seçilen klasörü favoriler listesinin en üstünde tutmak için sabitleyin, daha hızlı erişim için.
 - **<Translate android="true" ids="shared_string_rename"/>** — Seçilen klasörün adını değiştirmek için bu seçeneği kullanın.
-- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirerek özelleştirin.
+- [<Translate android="true" ids="change_default_appearance"/>](#change-group-appearance) — Klasördeki favori noktaların haritada nasıl göründüğünü simgelerini, renklerini veya etiketlerini değiştirleyerek özelleştirin.
 - **<Translate android="true" ids="shared_string_share"/>** — Klasördeki favori noktaları bir *Favorites.gpx* dosyası olarak dışa aktararak paylaşın, böylece verilerinizi aktarmak veya yedeklemek kolaylaşır.
 - **<Translate android="true" ids="shared_string_move"/>** — Seçilen klasörü, içindeki tüm favori noktaları ve iç içe alt klasörleriyle birlikte başka bir klasöre taşıyın. Geçerli klasör ve alt klasörleri hedef olarak seçilemez.
 - **<Translate android="true" ids="shared_string_add_to_map_markers"/>** / **Harita işaretçilerinden kaldır** — Klasördeki tüm favori noktaları *Harita işaretçileri listesine* ekleyin veya gerektiğinde kaldırın, kolay başvuru için.
@@ -460,7 +475,7 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 
 </Tabs>
 
-OsmAnd, favoriler her düzenlendiğinde otomatik olarak bir **yedekleme dosyası** oluşturur ve toplamda en fazla 10 yedekleme dosyası tutar, günde en fazla 2 yeni yedekleme ile.
+OsmAnd, favoriler her düzenlendiğinde bir **yedekleme dosyası** oluşturur.
 
 - **Android**: Yedeklemeler *Android → data → net.osmand → files → backup* konumunda saklanır. Bunlara erişmek için üçüncü taraf bir dosya yöneticisi kullanın.
 

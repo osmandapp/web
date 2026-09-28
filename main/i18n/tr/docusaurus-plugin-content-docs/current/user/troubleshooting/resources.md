@@ -1,5 +1,5 @@
 ---
-source-hash: 09518f7c9f30ff95cf4ee3c22d11fc8d1867a10a1fa6a3ea3d7b5c046dd047c7
+source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
 sidebar_position: 9
 title: Kaynaklar ve Özelleştirmeler
 ---
@@ -55,7 +55,6 @@ Aşağıdaki liste, OsmAnd tarafından desteklenen çeşitli veri türleri için
 | Topo map into printable| This is [a tool](https://github.com/acui/osmand_topo_map_generator) to generate a printablea tool to generate a printable topographic map by using screenshots from OsmAnd (https://osmand.net). The map uses the UTM grid and has declination information. It's to be used with a compass or a GPS device with UTM coordinates.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 | lidar2map | A self-contained tool that downloads public LiDAR data from national portals across 22 countries| [lidar2map](https://github.com/nico579/lidar2map)|
-| GPX slope colours | Colours a GPX track by slope: climbs, descents and flat sections become separate tracks with their own colour, written into the file so OsmAnd displays them. The gradient is signed, so it follows the direction of travel. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Özel Kaynaklar {#custom-resources}
 
@@ -68,9 +67,9 @@ Birden çok dilde mevcut olan bu kılavuzlar, genellikle resmi kılavuzlarda yer
 | Language | Description | Link |
 | :-- | :-- | :-- |
 | Spanish  |  ¿Qué es OsmAnd y para qué sirve?  |  [Goiena](https://www.goiena.org/osmand) |
-| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks y el Go to. Todo ello con la intención de obtener más herramientas para la navegación virtual y que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
-| Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas funciones.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
-| Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality ve recenze.   | [OsmAnd CZ](https://osmand.cz/) |
+| Spanish  |  Este manual tiene el fin de explicar detalladamente todas las funciones que tiene esta app, entre ellas explicar de qué manera funciona el waypoint, los tracks ve el Go to. Todo ello con la intention de obtener más herramientas para la navegación virtual ve que sirva como herramienta para los trabajos geodésicos. |  [Geodesia](https://www.studocu.com/pe/document/universidad-nacional-de-ingenieria/geodesia/manual-de-uso-aplicativo-osmand-gps-trabajo-de-campo/18722995) |
+| Spanish  |  OSMAnd, alternativa libre a Google Maps con muchas functions.  |  [Mapcolabora](https://mapcolabora.org/post/2024/2024-05-21-intro_osmand/) |
+| Czech   | OsmAnd CZ je český web podporující navigaci OsmAnd. Najdete zde návody, testy, tipy, aktuality a recenze.   | [OsmAnd CZ](https://osmand.cz/) |
 | French  | Ces tutoriels sont désormais disponible sur cette chaîne YouTube.  | [RandoVélo](https://randovelo.touteslatitudes.fr/osmand/)  |
 | Italian | Guida non ufficiale a OsmAnd, l'app di cartografia e navigazione per Android e iOS -- In Italiano!  | [GuidaOsmAnd](https://github.com/Max1234-Ita/GuidaOsmand)   |
 | Dutch | OsmAnd Handleiding 2021. | [OsmAnd Handleiding 2021](https://compostelagenootschap.be/wp-content/uploads/2021/09/OsmAnd_handleiding_v2.pdf)   |
