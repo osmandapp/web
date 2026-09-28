@@ -1,5 +1,5 @@
 ---
-source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
+source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
 sidebar_position: 5
 title: Vektör Haritalar
 ---
@@ -458,14 +458,6 @@ Deniz haritası görünümü hakkında daha fazla ayrıntı için [Deniz Haritas
 
 **Küre Görünümü**, haritayı düz bir projeksiyon yerine küresel bir Dünya olarak görüntülemenize olanak tanır. Bu mod, harita yüzeyinin geometrisini değiştirir ve harika etkileşimini küresel navigasyona uyarlar. Daha fazla bilgi için, Haritayla Etkileşim makalesindeki [Küre görünümü bölümü](../map/interact-with-map.md#globe-view)ne bakın.
 
-<!--
-## Map Legend {#map-legend}
-
-The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
-
-The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
--->
-
 
 ## Ek Ayarlar {#additional-settings}
 
@@ -514,17 +506,7 @@ Koordinat Izgarasının Renk Özelleştirmesi [ücretli bir özelliktir](../purc
 
 <TabItem value="android" label="Android">  
 
-![Koordinat ızgarası menüsü](@site/static/img/map/coordinates_grid_settings_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Koordinat ızgarası menüsü](@site/static/img/map/coordinates_grid_settings_andr.png) ![Koordinat ızgarası menüsü](@site/static/img/map/coordinates_grid_format_andr.webp)
 
 **Koordinat Izgarası** özelliği, harita üzerine bir referans ızgarası yerleştirerek farklı koordinat sistemlerine dayalı enlem ve boylam çizgilerini görselleştirmenizi sağlar. Bu özellik, hassas konum referansı ve jeo-uzamsal navigasyon için kullanışlıdır. 
 
@@ -534,6 +516,37 @@ Aşağıdaki seçenekleri yapılandırabilirsiniz:
 - **Izgara rengi:** Gündüz/Gece modu için ayrı ayrı mevcuttur. 
 - **Koordinat formatı:** mevcut birkaç formattan birini seçin (aşağıdaki listeye bakın).
 
+***Mevcut koordinat formatları:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Derece, Dakika, Saniye)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Ondalık Dereceler - WGS84 varsayılan formatı)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Derece, Ondalık Dakika)
+- **UTM** (EPSG:6387, Evrensel Enine Merkatör - bölge tabanlı ızgara sistemi). Minimum yakınlaştırma seviyesi 9'dur, her 6°'de bir meridyenlerle ayrıldığı için aynı anda yalnızca bir UTM bölgesi görüntülenir.
+- **OLC** (Açık Konum Kodu, ayrıca Artı Kodu olarak da bilinir)
+- **MGRS** (Askeri Izgara Referans Sistemi)
+- **İsviçre koordinat sistemi** - İsviçre Izgarası (CH1903) ve İsviçre Izgarası (CH1903+)
+- **Maidenhead** (Maidenhead Konum Belirleyici Sistemi)
+
+**Son kullanılan** bölümü, yakın zamanda kullanılan koordinat sistemlerini gösterir. Desteklenen başka bir koordinat sistemini eklemek için *Diğer formatı seç* öğesine dokunun. Koordinat sistemi adı veya EPSG koduyla arama yapabilir, ardından listeye eklemek için *+* öğesine dokunabilirsiniz.
+
+Varsayılan olarak, uygulama [Genel ayarlar](../personal/profiles.md#units--formats) bölümünde seçilen koordinat formatını kullanır, ancak bu menüde doğrudan değiştirebilirsiniz.
+
+[Hızlı eylem](../widgets/quick-action.md#overview): [Haritayı Yapılandır](../widgets/quick-action.md#configure-map) grubuna hızlı erişim için *Koordinat Izgarasını Göster/Gizle* hızlı geçişini de ekleyebilirsiniz.
+
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
+
+**Koordinat Izgarası** özelliği, harita üzerine bir referans ızgarası yerleştirerek farklı koordinat sistemlerine dayalı enlem ve boylam çizgilerini görselleştirmenizi sağlar. Bu özellik, hassas konum referansı ve jeo-uzamsal navigasyon için kullanışlıdır. 
+
+Aşağıdaki seçenekleri yapılandırabilirsiniz:
+- **Yakınlaştırma seviyeleri:** ızgaranın görünür olduğu minimum ve maksimum yakınlaştırma seviyelerini (2 - 22) ayarlayın.
+- **Etiket konumu:** ızgara etiketleri için *Kenarlar* (varsayılan) veya *Merkez* arasında seçim yapın.
+- **Izgara rengi:** Gündüz/Gece modu için ayrı ayrı mevcuttur. 
+- **Koordinat formatı:** mevcut birkaç formattan birini seçin (aşağıdaki listeye bakın).
 
 ***Mevcut koordinat formatları:***
 
@@ -546,6 +559,11 @@ Aşağıdaki seçenekleri yapılandırabilirsiniz:
 Varsayılan olarak, uygulama [Genel ayarlar](../personal/profiles.md#units--formats) bölümünde seçilen koordinat formatını kullanır, ancak bu menüde doğrudan değiştirebilirsiniz.
 
 [Hızlı eylem](../widgets/quick-action.md#overview): [Haritayı Yapılandır](../widgets/quick-action.md#configure-map) grubuna hızlı erişim için *Koordinat Izgarasını Göster/Gizle* hızlı geçişini de ekleyebilirsiniz.
+
+
+</TabItem>
+
+</Tabs>
 
 
 ## Rotalar {#routes}
@@ -579,18 +597,3 @@ Rota, belirli bir hedefe ulaşmak için izlenmesi gereken önceden belirlenmiş 
 - [Rotalar](../map/routes/index.md)
 - [İçe / Dışa Aktar](../personal/import-export.md)
 - [Renk Paleti Şemaları](../personal/color-palette-schemes.md)
-
-<!--
-| | | |
-|--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
--->

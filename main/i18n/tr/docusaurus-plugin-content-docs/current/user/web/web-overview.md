@@ -1,5 +1,5 @@
 ---
-source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
+source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
 sidebar_position: 1
 sidebar_label: Giriş
 title: Web Planlayıcıya Giriş
@@ -16,23 +16,16 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
-
 ## Genel Bakış {#overview}
 
 **Web Planlayıcı**, aynı zamanda [**OsmAnd Harita Portalı**](https://osmand.net/map) olarak da bilinir, OsmAnd mobil uygulamasının tarayıcı tabanlı bir uzantısıdır. Kullanıcıların küresel haritaları görüntülemesine, rotaları planlamasına, navigasyonu simüle etmesine, kişisel verileri yönetmesine ve cihazlarındaki senkronize içeriğe bulut aracılığıyla erişmesine olanak tanır.
 
 Android ve iOS için OsmAnd'ın çapraz platform arkadaşı olarak tasarlanan Web Portalı, kullanıcıların bir uygulama yüklemeden herhangi bir masaüstü veya tablet tarayıcısını kullanarak gezileri planlamasına, parkurları analiz etmesine, araziyi görüntülemesine ve dosyaları yönetmesine yardımcı olur.
 
-OsmAnd Web, favorileri, parkurları ve yedeklemeleri cihazlar ve platformlar arasında senkronize etmeyi sağlayan **OsmAnd Cloud** hizmetiyle sıkı bir şekilde entegre olur. **OsmAnd Start** (ücretsiz) veya **OsmAnd Pro** (ücretli) hesapları olan kullanıcılar, mobil ve web arasında veri senkronizasyonu yaparak bu ekosistemden tam olarak yararlanabilirler. *Start* ve *Pro* özelliklerinin ayrıntılı bir karşılaştırmasını aşağıda [Abonelik Erişimi](#subscription-accesses) bölümünde bulabilirsiniz.
+OsmAnd Web, favorileri, parkurları ve yedeklemeleri cihazlar ve platformlar arasında senkronize etmeyi sağlayan **OsmAnd Cloud** hizmetiyle sıkı bir şekilde entegre olur. **OsmAnd Start** (ücretsiz) veya **OsmAnd Pro** (ücretli) hesapları olan kullanıcılar, mobil ve web arasında veri senkronizasyonu yaparak bu ekosistemten tam olarak yararlanabilirler. *Start* ve *Pro* özelliklerinin ayrıntılı bir karşılaştırmasını aşağıda [Abonelik Erişimi](#subscription-accesses) bölümünde bulabilirsiniz.
 
-> **Not:** Giriş yapmasanız veya hesabınızı doğrulamasanız bile, birkaç temel Web Harita Portalı özelliğini kullanabilirsiniz; bunlar arasında: [Navigasyon Rotası](./web-navigation.md), [Rota Planlayıcı](./planner.md), [Hava durumu katmanları](./web-weather.md#) ve [Ayarlar](./web-map.md#settings) bulunur.
+> **Not:** Giriş yapmasanız veya hesabınızı doğrulamasanız bile, birkaç temel Web Harita Portalı özelliğini kullanabilirsiniz; bunlar arasında: [Navigasyon Rotası](./web-navigation.md), [Rota Planlayıcı](./planner.md), [Hava durumu katmanları](./web-weather.md) ve [Ayarlar](./web-map.md#settings) bulunur.
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 ## Temel Özellikler {#key-features}
 
@@ -40,7 +33,7 @@ Web Portalı, tarayıcıda haritalar ve kişisel verilerle çalışmak için aş
 
 - [Harita](./web-map.md), küresel kapsama alanı ve yüksek kaliteli vektör verileriyle.
 - [Rota planlama](./planner.md), yaya, araba, bisiklet ve diğer profiller kullanılarak.
-- [Navigasyon](./planner.md), adım adım talimatlarla önizleme.
+- [Navigasyon](./web-navigation.md) adım adım talimatlarla önizleme.
 - [Arama](./web-search.md) ve [keşfetme](./web-search.md#explore) yakınlardaki popüler yerleri.
 - Haritada [Favoriler](./web-map.md#favorites), [Parkurlar](./web-map.md#tracks) ve [POI'ler](./web-map.md#poi-overlay) gösterimi.
 - [Hava durumu katmanları](./web-weather.md): rüzgar, sıcaklık ve basınç.
@@ -50,11 +43,6 @@ Web Portalı, tarayıcıda haritalar ve kişisel verilerle çalışmak için aş
 - Dosya içe/dışa aktarma desteği (GPX: parkurlar, favoriler).
 - **OsmAnd Pro** ve **OsmAnd Start** ile sorunsuz entegrasyon.
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
-
-
 ### Abonelik Erişimi {#subscription-accesses}
 
 ![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
@@ -63,19 +51,15 @@ Web Harita Portalı, giriş yapmadan, OsmAnd Start ile ve OsmAnd Pro ile olmak �
 
 | Özellik | Mevcut Olduğu Yer |
 |--------|--------------|
-| [Navigasyon Rotası](./planner.md) | Giriş Yapmadan |
+| [Navigasyon Rotası](./web-navigation.md) | Giriş Yapmadan |
 | [Rota Planlayıcı](./planner.md) | Giriş Yapmadan |
 | [Hava Durumu Katmanları](./web-weather.md) | Giriş Yapmadan |
 | [Ayarlar](./web-map.md#settings) | Giriş Yapmadan |
-| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([POI'ler](./web-map.md#poi-overlay), [Favoriler](./web-map.md#favorites), [Parkurlar](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) veya [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([POI'ler](./web-map.md#poi-overlay), [Favoriler](./web-map.md#favorites), [Parkurlar](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 | [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([Arazi](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [OsmAnd Cloud Senkronizasyonu](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) veya [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Web Arama, Popüler Yerler](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) veya [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Senkronizasyonu](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Web Arama, Popüler Yerler](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 | [Parkur klasörleri ve Katman](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 
 ## Nasıl Başlanır {#how-to-start}
@@ -90,61 +74,6 @@ OsmAnd Web Portalı'nın tam özelliklerine erişmek için bir OsmAnd Cloud hesa
    - **Hesap oluştur**: Ücretsiz bir OsmAnd Start hesabı için kaydolun. Yeni bir hesap oluşturma için ayrıntılı adım adım rehber için [OsmAnd Hesabı](./web-cloud) makalesine bakın.
 
 ![Web Account](@site/static/img/web/web_account.png)
-
-<!--
-
-## Settings {#settings}
-
-### Language {#language}
-
-To switch the interface language:
-
-*Go to: Menu → ⚙ Settings → Display language*
-
-![Web Language](@site/static/img/web/web_language.png)
-
-### Units {#units}
-
-*Go to: Menu → ⚙ Settings → Units of length*  
-*Go to: Menu → ⚙ Settings → Unit of speed*
-
-You can choose which units are used to display distance, elevation and speed on the map, in route details and in measurement tools. This helps you keep OsmAnd consistent with your usual habits or regional standards.
-
-The **Units of length** option defines how horizontal distance and elevation are shown:
-- Kilometers/meters.
-- Miles/feet.
-- Miles/meters.
-- Miles/yards.
-- Nautical miles/meters.
-- Nautical miles/feet. 
-
-For example, a distance of 10 km will be shown as about 6.21 mi if you choose one of the Miles/... options, or as about 5.40 nmi when Nautical miles/... is selected.
-
-The **Unit of speed** option controls how current speed and speed limits are displayed:
-- Kilometers per hour.
-- Miles per hour.
-- Meters per second.
-- Minutes per mile.
-- Minutes per kilometer.
-- Nautical miles per hour (knots). 
-
-For example, a speed of 90 km/h corresponds to 25 m/s or about 55.92 mph.
-
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
-
-### OsmAnd Cloud {#osmand-cloud}
-
-![Web Cloud](@site/static/img/web/web_without_acc.png) ![Web Cloud](@site/static/img/web/web_with_acc.png)
-
-In the Web Map Portal, the *General settings* (Display language, Units of length, Unit of speed) are available for all users, whether you are signed in or not. Once you log in with your OsmAnd account, an additional OsmAnd Cloud section appears in the Settings panel. [OsmAnd Cloud](./web-cloud) connects the web map with your cloud backups so that you can manage data synchronized from your Android or iOS devices directly in the browser.
-
-**Changes** option shows a chronological list of files stored in your OsmAnd Cloud account. Items are grouped by month and include the file name, the type of change (for example, added, modified or deleted), the time of the last update and the device that created it. For each entry, you can open the three-dot menu and choose *Download* to save the selected file to your computer, or *Delete*.
-
-**Trash** option contains files that were deleted from OsmAnd Cloud. The list is also grouped by month and shows when each file was removed and from which device. Use the three-dot menu next to a file to *Download* a copy, *Restore from trash* (return the file to OsmAnd Cloud so it becomes available again in your data), or *Delete immediately* to remove it permanently. This helps prevent accidental data loss while still letting you free up cloud storage when you are sure a file is no longer needed. You can also clear all deleted items at once by clicking the Trash icon in the Trash panel header. This opens the **Empty trash** dialog, where you confirm deletion to permanently remove all files from Trash.
-
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
-
--->
 
 
 ## İlgili Makaleler {#related-articles}

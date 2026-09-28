@@ -1,5 +1,5 @@
 ---
-source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
+source-hash: 968394db45647827e95cb32f776ef7f818433675c6fb40f6ba7071f88e7d270d
 sidebar_position: 2
 title: Navigasyon Sırasında Harita Ekranı
 ---
@@ -49,7 +49,7 @@ Navigasyon sırasında, haritanın görünümü seçilen navigasyon profiline g�
 
 | Parametre | Açıklama | Not |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | Harita görünümünün hareket ettikten sonra mevcut konumla senkronize edildiği süre. | *Değer:* <br /> Asla, 5 sn, 10 sn, 15 sn, 20 sn, 25 sn, 30 sn, 45 sn, 60 sn, 50 sn. |
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | Harita görünümünün hareket ettikten sonra mevcut konumla senkronize edildiği süre. | *Değer:* <br /> Asla, 5 sn, 10 sn, 15 sn, 20 sn, 25 sn, 30 sn, 45 sn, 60 sn, 90 sn. |
 | *<Translate android="true" ids="auto_zoom_map"/>* | Harita mevcut konumunuzla senkronize olduğu sürece, haritayı hızınıza göre otomatik olarak ölçeklendirin. | *Değer:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manuel yakınlaştırma. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - yakınlaştırma 200 m'dir.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - yakınlaştırma 100 m'dir. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - yakınlaştırma 5 m'dir. <br /> Otomatik yakınlaştırma değişiklikleri, [Geliştirme ayarlarına](navigation-settings.md#development-settings) bağlı olarak animasyonlu (Pürüzsüz) veya adım tabanlı (Ayrık) olabilir. Pürüzsüz modda, yakınlaştırma değişiklikleri kontrollü bir animasyon kullanır (yaklaşık 0,1 yakınlaştırma/saniye). Otomatik yakınlaştırma, çok düşük hızlarda (yaklaşık 7 km/saatin altında) yakınlaştırmayı ayarlamaz. Gerekli yakınlaştırma değişikliği yaklaşık 1,5 saniyeden az sürecekse, animasyon başlatılmaz. <br /> Otomatik yakınlaştırma, yaklaşan manevrayı sabit bir ekran odak alanında tutmayı amaçlar, böylece sürüş sırasında öndeki görünür mesafe tutarlı kalır. |
 | *Otomatik yakınlaştırma 3D açısı* | Navigasyon sırasında 3D görünüme geçişte haritanın eğimini ayarlar. Daha yüksek bir açı, ufku daha uzak göstererek daha fazla ileri görüş sağlar. | Yalnızca Otomatik yakınlaştırma etkinleştirildiğinde uygulanır. Değerler: 20°, 25°, 30°, 35°, 40°. Varsayılan: 25°. <br /> Bir manevra/kavşağa yaklaşırken, uygulama bir sonraki dönüşün okunabilir kalması için 3D eğimi kademeli olarak 2D görünüme doğru azaltabilir. |
 | *Bir sonraki dönüşü önizle* | Navigasyon sırasında bir sonraki dönüşü veya manevrayı göstermek için haritayı biraz önceden otomatik olarak döndürür. Yaklaşan eylemleri öngörmeye yardımcı olur. | Varsayılan olarak etkin. Bir profili dışa aktarıp yeniden içe aktarırsanız, bu ayarı doğruladığınızdan emin olun; bazı eski sürümlerde "etkin" olarak sıfırlanabilir. <br /> Dönüş/önizleme, bir sonraki manevra noktası odak alanına girdiğinde tetiklenir (yani harita, dönüşün ilgili hale geldiğinde 'bakmaya' başlar). |
