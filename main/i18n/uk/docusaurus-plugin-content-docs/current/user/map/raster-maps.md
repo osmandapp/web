@@ -1,5 +1,5 @@
 ---
-source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
 sidebar_position: 7
 title:  Растрові карти (онлайн / офлайн)
 ---
@@ -13,10 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Огляд {#overview}
 
@@ -88,7 +84,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 В OsmAnd растрові карти можуть слугувати додатковим джерелом карт поряд зі стандартними векторними картами, які оптимізовані для офлайн-використання.  
 
-Ви маєте можливість додати один або два шари онлайн-тайлів для доповнення вашої базової карти. Це дозволяє одночасно переглядати до трьох шарів карти на екрані (плюс Рельєф). Уявіть їх як пиріг: [**Підкладка**](#underlay) (растровий базовий шар знизу), [**Основний**](#main) (векторний* або растровий основний), [**Накладення**](#overlay) (растровий зверху), з затіненням [**Рельєфу**](#terrain) над усім. Наприклад, ви можете мати офлайн-векторну карту OsmAnd як основну базу, накласти на неї супутниковий знімок і розмістити карту велосипедних доріжок як підкладку для додаткової деталізації.
+Ви маєте можливість додати один або два шари онлайн-тайлів для доповнення вашої базової карти. Це дозволяє одночасно переглядати до трьох шарів карти на екрані (плюс Рельєф). Уявіть їх як пиріг: [**Підкладка**](#underlay) (растровий базовий шар знизу), [**Основний**](#main) (векторний або растровий основний), [**Накладення**](#overlay) (растровий зверху), з затіненням [**Рельєфу**](#terrain) над усім. Наприклад, ви можете використовувати супутниковий знімок як Підкладку, офлайн-векторну карту OsmAnd як Основний шар зі збільшеною прозорістю та карту велосипедних доріжок як Накладення зверху.
 
 >[Векторні карти](./vector-maps.md) доступні **лише** у шарі [Основний](#main) (і є стандартними там). Растрові карти можна використовувати в усіх трьох шарах: Основний, Підкладка та Накладення.
 
@@ -202,79 +198,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Візуалізацію рельєфу можна поєднувати з іншими растровими шарами та стандартною векторною картою.
 
 Більш просунуті функції рельєфу, включаючи 3D-рельєф (лише Pro) та додаткові опції, пов'язані з рельєфом, описані в [статті "Топографія"](../plugins/topography.md).
-
-<!--
-## Затінення рельєфу / Ухил {#hillshade--slope}
-
-![Шари рельєфу](@site/static/img/plugins/online-maps/terrain_two_layers.png)
-
-**Затінення рельєфу** та **Ухил** — це офлайн-растрові карти, які показують рельєф місцевості. Вони відображаються як спеціальний шар карти, друге накладення на базову карту. Карти містять додаткову інформацію про висоту, щоб допомогти вам точніше зрозуміти ухил та тіні ландшафту. Інформація про *Затінення рельєфу* та *Ухил* базується на даних з одного джерела, *глобального файлу планети*, і поділена на регіони.  
-
-Вам не потрібно перемикатися між шарами "Затінення рельєфу" та "Ухил", оскільки вони об'єднуються автоматично. Ви можете вибрати для відображення на карті лише один із цих шарів, але у вас також є можливість поєднати їх обидва [як підкладку або накладення](#layers) на інші шари для більш наочного представлення рельєфу.
-
-Щоб почати роботу з "Затіненням рельєфу" та "Ухилом", вам потрібно:
-
-1. Придбати плагін "Топографія":
-    - [Покупки для Android](../purchases/android.md)
-    - [Покупки для iOS](../purchases/ios.md)
-2. Увімкнути [плагін "Топографія"](../plugins/topography.md):  
-    *Меню → Плагіни → ︙ → Увімкнути*
-3. Виберіть потрібний регіон і завантажте **Карту рельєфу (3D)**.
-4. Процес завантаження може зайняти деякий час, залежно від розміру вибраного регіону та швидкості вашого інтернет-з'єднання.
-
-
-### Затінення рельєфу та 3D-рельєф {#hillshade-and-3d-relief}
-
-| Затінення рельєфу | 3D-рельєф |
-|--------|---------|
-| ![Шари рельєфу](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Шари рельєфу](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
-
-Різниця у відображенні рельєфу на карті при застосуванні цих налаштувань описана у статті **Топографія** у відповідному розділі [Затінення рельєфу та 3D-рельєф](../plugins/topography.md#hillshade-and-3d-relief).
-
-
-### Налаштування параметрів відображення {#configure-display-options}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Перейдіть до: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Перейдіть до: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Шари рельєфу](@site/static/img/plugins/online-maps/terrain_layers.png)
-
-Ви можете налаштувати рівень масштабування для відображення та прозорість для "Затінення рельєфу" та "Ухилу". Детальніше про це можна прочитати у [статті "Топографія"](../plugins/topography.md#hillshade-slope-and-altitude-layers).
-
-
-## 3D-рельєф {#3d-relief}
-
-:::note
-[3D-рельєф](../plugins/topography.md#3d-relief) — це платна функція [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-:::
-
-![Шари рельєфу](@site/static/img/plugins/online-maps/raster_maps_3d.png)
-
-Функція [**3D-рельєф**](../plugins/topography.md#3d-relief) — це технологія картографування, яка дозволяє візуалізувати рельєф на карті за допомогою тривимірних моделей. Ця функція додає інформацію про висоту до звичайної двовимірної карти, що створює ефект 3D та глибини і дозволяє краще візуалізувати рельєф.  
-
-*Щоб почати використовувати 3D-рельєф*:  
-Вам потрібно придбати [тарифний план OsmAnd Pro](../plugins/index.md#purchase), увімкнути [плагін "Топографія"](../plugins/topography.md) та увімкнути пункт [3D-рельєф](../plugins/topography.md#3d-relief) у *Меню → Налаштувати карту*.
-
-
-*Як працює функція 3D-рельєф*:  
-*1.* Для створення 3D-рельєфу OsmAnd отримує інформацію про висоту місцевості.  
-*2.* На основі даних про висоту створюється 3D-модель для відображення гір, пагорбів, долин та інших елементів рельєфу на карті.  
-*3.* Потім OsmAnd відображає ці тривимірні моделі на плоскій карті. Карту можна збільшувати, зменшувати та обертати для перегляду рельєфу з різних кутів та ракурсів.  
-*4.* Відображення ліній контуру на карті не залежить від того, чи є джерело карти онлайн чи офлайн.
--->
 
 
 ## Підготовка/Копіювання карт {#preparecopy-maps}
@@ -399,13 +322,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     </tr>
 </table>  
 
-<!--
-
-![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
-
--->
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -447,8 +363,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 ## Схожі статті {#related-articles}
 
 - [Імпорт / Експорт](../personal/import-export.md)
-- [Схеми колірних палітр](../personal/color-palette-schemes.md)
 - [Швидка дія (Кнопка користувача)](../widgets/quick-action.md)
 - [Онлайн-карти](../plugins/online-map.md)
 - [Топографія](../plugins/topography.md)
-- [Створення офлайн-растрових та векторних карт](technical/map-creation/create-offline-maps-yourself.md)
+- [Створення офлайн-растрових та векторних карт](../../technical/map-creation/create-offline-maps-yourself.md)

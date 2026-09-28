@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 04bb8eb2b1c8b30b97b5016c68f2b0de688c38c44449e4ebb8b695d258cad44b
 sidebar_position: 2
 title:  Відстеження суден AIS
 ---
@@ -15,11 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoAndroidOnly />
-
 ## Огляд {#overview}
 
 Плагін **Відстеження суден AIS** відображає позиції [Automatic Identification System (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) та детальну інформацію про судна поблизу. Дані АІС отримуються через мережеве з'єднання від зовнішнього приймача АІС.
+
+Плагін може отримувати дані NMEA через мережеве з'єднання за допомогою TCP або UDP. Позиції GPS, отримані з повідомлень NMEA RMC/GGA, також можна використовувати як Моє місцезнаходження в OsmAnd.
 
 :::caution DISCLAIMER
 **Цей плагін є хобі-проєктом і не призначений для забезпечення надійності чи точності. НЕ покладайтеся на це програмне забезпечення для навігації чи безпеки життя.**
@@ -28,12 +28,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Необхідні параметри налаштування {#required-setup-parameters}
 
-Можливість використання онлайн-карт автоматично ввімкнена у версії OsmAnd для iOS. Щоб відображати онлайн-карти в Android, вам потрібно виконати наступні налаштування:
+Щоб використовувати плагін **Відстеження суден AIS**, потрібно ввімкнути плагін і налаштувати мережеве з'єднання з зовнішнім джерелом даних AIS/NMEA:
 
 1. [Увімкніть](../plugins/index.md#enable--disable) плагін **Відстеження суден AIS** у *Головне меню → Плагіни → Відстеження суден AIS*.
 2. Налаштуйте [параметри AIS](../map/raster-maps.md#layers)
-3. Налаштуйте **з'єднання з сервером AIS** або підключіть **зовнішній приймач AIS**.
+3. Налаштуйте з'єднання з джерелом даних **AIS/NMEA** за допомогою **TCP** або **UDP**.
 4. Перевірте, чи відображаються судна на карті OsmAnd.
+
+На iOS ви можете додатково ввімкнути *Використовувати NMEA як джерело місцезнаходження*, щоб використовувати позиції GPS з повідомлень NMEA RMC/GGA як ваше поточне місцезнаходження в OsmAnd.
 
 ## Судна на карті {#vessels-on-the-map}
 
@@ -54,6 +56,12 @@ AIS працює на *частотах УКХ* (161.975 МГц та 162.025 М�
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+![Відстеження суден AIS](@site/static/img/plugins/ais/ais.webp)
+
+</TabItem>
+
 </Tabs>
 
 При правильному налаштуванні позиції суден з'являться на карті. Ключові особливості:
@@ -69,8 +77,13 @@ AIS працює на *частотах УКХ* (161.975 МГц та 162.025 М�
 
 <TabItem value="android" label="Android">
 
-![Відстеження суден AIS](@site/static/img/plugins/ais/ais_menu.png)  
-![Відстеження суден AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+![Відстеження суден AIS](@site/static/img/plugins/ais/ais_menu.png) ![Відстеження суден AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Відстеження суден AIS](@site/static/img/plugins/ais/ais_menu.webp)
 
 </TabItem>
 
@@ -155,7 +168,15 @@ AIS працює на *частотах УКХ* (161.975 МГц та 162.025 М�
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![Налаштування AIS](@site/static/img/plugins/ais/ais_settings_2.png)  
+![Налаштування AIS](@site/static/img/plugins/ais/ais_settings_2.webp)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *Відстеження суден AIS* → *<Translate ios="true" ids="shared_string_settings"/>* 
+
+![Відстеження суден AIS](@site/static/img/plugins/ais/ais_settings_ios.webp)
 
 </TabItem>
 
@@ -171,10 +192,12 @@ AIS працює на *частотах УКХ* (161.975 МГц та 162.025 М�
 | IP-адреса | Вкажіть IP-адресу джерела даних AIS (якщо використовується TCP) | `192.168.200.16` |
 | TCP-порт   | Вкажіть номер TCP-порту для даних AIS | `4001` |
 | UDP-порт   | Вкажіть UDP-порт для прийому AIS в OsmAnd  | `10110` |
+| Отримувати дані AIS, навіть якщо OsmAnd призупинено (*лише Android*)   | Зберігати слухач повідомлень AIS активним, якщо OsmAnd призупинено або працює у фоновому режимі. Якщо вимкнено, повідомлення AIS не отримуються, коли OsmAnd у фоновому режимі  | `Так/Ні` |
+| Використовувати NMEA як джерело місцезнаходження (*лише iOS*)   | Використовувати позиції GPS з повідомлень NMEA RMC/GGA як Моє місцезнаходження  | `Увімкнено/Вимкнено` |
 | | | |
 | **Тайм-аут прийому сигналу AIS** | |  |
-| Тайм-аут для втрачених об'єктів AIS     | Судна зникають, якщо сигнал не надходить протягом встановленого часу | `3 - 20 хв` |
-| Тайм-аут видимості судна      | Іконки суден змінять стан, якщо сигнал не надходить | `2 - 15 хв / Вимкнено` |
+| Тайм-аут застарілих суден      | Встановіть тайм-аут для застарілої видимості судна: після цього часу без прийому сигналу символ судна буде перекреслено | `2 - 15 хв / Вимкнено` |
+| Тайм-аут видимості при втраті судна     | Встановіть тайм-аут видимості об'єкта AIS: якщо сигнал не надходить протягом зазначеного часу, об'єкт буде автоматично видалено з дисплея | `3 - 20 хв` |
 | | | |
 | **Сповіщення про найближчу точку зближення (CPA)** | | |
 | Час попередження CPA | Судно позначається червоним, якщо час до CPA менший за цей ліміт | `1 - 60 хв / Вимкнено` |

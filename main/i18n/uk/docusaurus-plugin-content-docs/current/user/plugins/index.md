@@ -1,5 +1,5 @@
 ---
-source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
+source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
 sidebar_position: 18
 title:  Плагіни
 ---
@@ -74,7 +74,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | [Онлайн-карти](#online-maps) |[Шар карти](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Запис поїздки](#trip-recording) | [Віджет](../plugins/trip-recording.md#widgets), [Профіль](../plugins/trip-recording.md#recording-settings) |
 | [Топографія](#topography) | [Шар карти](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [3D-рельєф](#topography) 🤖  | [Шар карти](../plugins/topography.md#3d-relief) |
+| [3D-рельєф](#topography) | [Шар карти](../plugins/topography.md#3d-relief) |
 | [Погода](../plugins/weather.md) | [Шар карти](../plugins/weather.md#display-weather-on-the-map), [Віджет](../plugins/weather#weather-widgets), [Екран](../plugins/weather.md#weather-forecast-screen) |
 | [Вигляд морської карти](#nautical-map-view) | [Стиль карти](../plugins/nautical-charts.md#nautical-map-style), [Профіль](../plugins/nautical-charts.md#nautical-profile)  |
 | [Вигляд лижної карти](#ski-map-view) | [Стиль карти](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Профіль](../plugins/ski-maps.md#skiing-profile) |
@@ -82,13 +82,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |[Місце паркування](#parking-position) | [Контекстне меню](../plugins/parking.md#set-a-spot), [Віджет](../plugins/parking.md#parking-widget) |
 |[Редагування OpenStreetMap](#openstreetmap-editing)| [Шар карти](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Шар карти](../plugins/mapillary.md#map-layer), [Контекстне меню](../plugins/mapillary.md#map-context-menu) , [Віджет](../plugins/mapillary.md#mapillary-widget)|
-|[Зовнішні датчики](#external-sensors) 🤖  | [Віджет](../plugins/external-sensors.md#widgets) |
+|[Зовнішні датчики](#external-sensors) | [Віджет](../plugins/external-sensors.md#widgets) |
 |[Показники автомобіля](#vehicle-metrics)  | [Користувацькі налаштування](../plugins/vehicle-metrics#scanner-settings), [Віджет](../plugins/vehicle-metrics#widgets) |
 |[Астрономія](#astronomy)  | [Екран](../plugins/astronomy.md#star-map-screen), [Контекстне меню](../plugins/astronomy.md#context-menu) |
 |[Доступність](#accessibility) 🤖  | [Користувацькі налаштування](../plugins/accessibility.md#plugin-settings) |
 |[Розробка OsmAnd](#osmand-development) | [Користувацькі налаштування](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Шар карти](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Віджет](../plugins/osmand-tracker.md#tracker-widget), [Контекстне меню](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[Трекер суден AIS](#ais-vessel-tracker) 🤖  |  [Користувацькі налаштування](../plugins/ais-tracker.md#plugin-settings) |
+|[Трекер суден AIS](#ais-vessel-tracker) |  [Користувацькі налаштування](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Налаштування плагіна {#plugin-settings}
