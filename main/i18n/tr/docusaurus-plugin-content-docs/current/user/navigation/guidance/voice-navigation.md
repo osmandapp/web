@@ -1,5 +1,5 @@
 ---
-source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
+source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
 sidebar_position: 3
 title:  Sesli Komutlar / Bildirimler
 ---
@@ -99,7 +99,7 @@ Sesli komutların nasıl ve ne zaman tetiklendiği hakkında daha fazla bilgi i�
 
 - *Navigasyon talimatlarını tekrarla*. Navigasyon talimatlarını 1 dakikadan 30 dakikaya kadar düzenli aralıklarla tekrarlamanıza olanak tanır. Veya manuel olarak - bir sesli komutu kaçırırsanız, uygulama ekranındaki [mevcut dönüş okuna](../../widgets/nav-widgets.md#next-turn) dokunarak tekrar dinleyebilirsiniz.
 - *[Duyuru zamanı](#announcement-time)*.
-- *Konuşma sesini duraklat* (*Yalnızca iOS*). Etkinleştirildiğinde, sesli komutlar çalınırken podcast'ler, sesli kitaplar ve diğer konuşma sesleri duraklatılır. Müzik çalma azaltılmış ses düzeyinde devam eder. Devre dışı bırakıldığında, hem konuşma sesi hem de müzik azaltılmış ses düzeyinde çalmaya devam eder.
+- *Konuşma sesini duraklat* (*Yalnızca iOS, CarPlay dahil*). Etkinleştirildiğinde, sesli komutlar çalınırken podcast'ler, sesli kitaplar ve diğer konuşma sesleri duraklatılır (cihaz veya CarPlay üzerinden çalınırken). Müzik çalma azaltılmış ses düzeyinde devam eder. Devre dışı bırakıldığında, hem konuşma sesi hem de müzik azaltılmış ses düzeyinde çalmaya devam eder.
 
 **Çıkış** (*Yalnızca Android*):
 
