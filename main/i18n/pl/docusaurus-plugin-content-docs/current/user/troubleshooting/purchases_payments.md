@@ -1,8 +1,9 @@
 ---
-source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
+source-hash: 3e8ac9992e039c617c093a24702772bc6cdb0c520e1dcadb77013d26c7264441
 sidebar_position: 2
 title:  Zakupy i płatności
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,10 +13,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
 
-
 ## Zakupy międzyplatformowe {#cross-platform-purchases}
 
-**OsmAnd Pro** i **Maps+** (*Wszystkie mapy świata* dla iOS) to **subskrypcje międzyplatformowe** dostępne na Androida i iOS od wersji OsmAnd 5.0. Międzyplatformowość oznacza, że jeśli kupisz subskrypcję, na przykład w jednym ze sklepów na Androida (Google Play, Huawei AppGallery), możesz z niej korzystać również na iOS i w wersji internetowej.
+**OsmAnd Pro** i **Maps+** (*All World Maps* dla iOS) to **subskrypcje międzyplatformowe** dostępne na Androida i iOS od wersji OsmAnd 5.0. Międzyplatformowość oznacza, że jeśli kupisz subskrypcję, na przykład w jednym ze sklepów na Androida (Google Play, Huawei AppGallery), możesz z niej korzystać również na iOS i w wersji internetowej.
 
 - Z subskrypcji międzyplatformowej można korzystać na wielu urządzeniach i platformach, **jeśli jest ona połączona z tym samym kontem OsmAnd Cloud**.
 
@@ -54,7 +54,7 @@ import Translate from '@site/src/components/Translate.js';
 
 Zakup międzyplatformowy, taki jak _Maps+_ i _Pro_, jest powiązany z kontem OsmAnd Cloud, które zostało ostatnio aktywowane na urządzeniu posiadającym oryginalny dowód zakupu (z App Store lub Google Play). Jeśli użytkownik na tym urządzeniu wyloguje się ze swojego głównego konta (`konto OsmAnd Cloud A`) i zaloguje się na nowe (`konto OsmAnd Cloud B`), system OsmAnd automatycznie przeniesie licencję na nowe `konto OsmAnd Cloud B`. W rezultacie Twoje oryginalne konto OsmAnd Cloud traci status zakupów na innych platformach, ponieważ licencja może być aktywna tylko na jednym koncie OsmAnd Cloud w danym momencie.
 
-Technicznie działa to w następujący sposób: sam zakup należy do Twojego Apple ID lub konta Google, a nie do konta OsmAnd. Aplikacja OsmAnd na urządzeniu z zakupem po prostu informuje nasz serwer, które konto OsmAnd Cloud jest aktualnie aktywne. Serwer z kolei przyznaje temu kontu dostęp międzyplatformowy. Dlatego ostatnie konto, które zaloguje się na "głównym" urządzeniu, zawsze staje się posiadaczem licencji.
+Technicznie działa to w następujący sposób: sam zakup należy do Twojego Apple ID lub konta Google, a nie do konta OsmAnd. Aplikacja OsmAnd na urządzeniu z zakupem po prostu informuje nasz serwer, które konto OsmAnd Cloud jest aktualnie aktywne. Serwer z kolei przyznaje temu kontowi dostęp międzyplatformowy. Dlatego ostatnie konto, które zaloguje się na "głównym" urządzeniu, zawsze staje się posiadaczem licencji.
 
 Aby przywrócić zakup na właściwe konto (`konto OsmAnd Cloud A`), musisz wykonać odwrotną czynność. Na tym samym urządzeniu, na którym dokonano zakupu, musisz wylogować się z nieprawidłowego `konta OsmAnd Cloud B` i zalogować się ponownie na `konto OsmAnd Cloud A`. Ten proces zmusi system do ponownej weryfikacji dowodu zakupu i ponownego powiązania licencji z właściwym `kontem OsmAnd Cloud A`, przywracając jego status międzyplatformowy.
 
@@ -90,6 +90,10 @@ Jeśli dokonałeś zakupów przez Amazon, będziesz musiał **przenieść swoje 
 
 ➡️ Obecnie [przeniesienie międzyplatformowe jest możliwe w przypadku subskrypcji i zakupów w aplikacji](../purchases/cross.md).  
 ❗ **OsmAnd+** (samodzielna aplikacja) nie może być przenoszona między platformami za pośrednictwem konta OsmAnd Cloud. Aby uzyskać pomoc, skontaktuj się z **support@osmand.net**.
+
+Jeśli zakup z Amazon nie może zostać automatycznie aktywowany przez OsmAnd Cloud, skontaktuj się z pomocą techniczną OsmAnd — **support@osmand.net** — w celu ręcznego przeniesienia. Podaj numer transakcji Amazon zaczynający się od D01-. Zalecane jest również zrzut ekranu pokazujący zakupiony produkt.
+
+Zakupów dokonanych ponad 10 lat temu nie można przenieść.
 
 ## Jak przywrócić zakup wtyczki Topografia (dawniej Linie konturowe) {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 

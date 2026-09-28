@@ -1,5 +1,5 @@
 ---
-source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
 sidebar_position: 7
 title:  Mapy rastrowe (Online / Offline)
 ---
@@ -13,10 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Przegląd {#overview}
 
@@ -88,9 +84,11 @@ Możesz także zmienić [główne źródło](#main) map z map wektorowych na kaf
 
 W OsmAnd mapy rastrowe mogą służyć jako dodatkowe źródło map obok domyślnych map wektorowych, które są zoptymalizowane do użytku offline.  
 
-Masz możliwość dodania jednej lub dwóch warstw kafelków online, aby uzupełnić swoją mapę bazową. Pozwala to na jednoczesne wyświetlanie do trzech warstw map na ekranie (plus Teren). Pomyśl o nich jak o cieście: [**Podkład**](#underlay) (rastrowa baza poniżej), [**Główna**](#main) (wektorowa* lub rastrowa rdzeń), [**Nakładka**](#overlay) (rastrowa na wierzchu), z [**Terenem**](#terrain) cieniowaniem nad wszystkim. Na przykład możesz mieć mapę wektorową offline OsmAnd jako główną bazę, nałożyć na nią widok satelitarny i umieścić mapę ścieżek rowerowych jako podkład dla dodatkowych szczegółów.
+Masz możliwość dodania jednej lub dwóch warstw kafelków online, aby uzupełnić swoją mapę bazową. Pozwala to na jednoczesne wyświetlanie do trzech warstw map na ekranie (plus Teren). Pomyśl o nich jak o cieście: [**Podkład**](#underlay) (rastrowa baza poniżej), [**Główna**](#main) (wektorowa lub rastrowa rdzeń), [**Nakładka**](#overlay) (rastrowa na wierzchu), z [**Terenem**](#terrain) cieniowaniem nad wszystkim. Na przykład możesz mieć zdjęcie satelitarne jako podkład, offline’ową mapę wektorową OsmAnd jako warstwę główną ze zwiększoną przezroczystością oraz mapę ścieżek rowerowych jako nakładkę na wierzchu.
 
 >[Mapy wektorowe](./vector-maps.md) są dostępne **tylko** w warstwie [Głównej](#main) (i są tam domyślne). Mapy rastrowe mogą być używane we wszystkich trzech warstwach: Głównej, Podkładu i Nakładki.
+
+
 
 Jeśli chcesz szybciej przełączać te warstwy ([Główne źródło mapy](#main), [Nakładka](#overlay), [Podkład](#underlay) i [Teren](#terrain)), możesz dodać [Szybką akcję (Niestandardowy przycisk)](../widgets/quick-action.md) na ekran mapy i przypisać do niej odpowiednie akcje map.
 
@@ -196,84 +194,11 @@ Aby używać warstwy Teren, musisz:
 2. Włączyć [wtyczkę Topografia](../plugins/topography.md):  
     *Menu → Wtyczki → ︙ → Włącz*
 3. Wybrać wymagany region i pobrać Cieniowanie lub Nachylenie (dla Maps+) lub Mapę terenu 3D (dla Pro).
-4. Proces pobierania może zająć trochę czasu, w zależności od wielkości wybranego regionu i prędkości połączenia internetowego.
+4. Proces pobierania może zająć trochę czasu, w zależności na wielkości wybranego regionu i prędkości połączenia internetowego.
 
 Wizualizacja terenu może być łączona z innymi warstwami rastrowymi oraz z domyślną mapą wektorową.
 
 Bardziej zaawansowane funkcje terenu, w tym rzeźba 3D (tylko Pro) i dodatkowe opcje związane z terenem, są opisane w artykule [Topografia](../plugins/topography.md).
-
-<!--
-## Hillshade / Slope {#hillshade--slope}
-
-![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
-
-**Hillshade** and **Slope** are offline raster maps that show terrain relief. They are displayed as a special map layer, a second overlay on the base map. The maps contain additional elevation information to help you more accurately understand the slope and shadows of the landscape. *Hillshade* and *Slope* information is based on data from a single source, the *Global planet file*, and is divided into regions.  
-
-You don't need to switch between Hillshade and Slope layers, as they are merged automatically. You can select only one of these layers to display on the map, but you also have the option to combine them both [as an underlay or overlay](#layers) on other layers for a more visual representation of the terrain.
-
-To get started with Hillshade and Slope you need to:
-
-1. Purchase the Topography plugin:
-    - [Android purchases](../purchases/android.md)
-    - [iOS purchases](../purchases/ios.md)
-2. Enable the [Topography plugin](../plugins/topography.md):  
-    *Menu → Plugins → ︙ → Enable*
-3. Select your required region, and download **Terrain map (3D)**.
-4. The download process may take some time, depending on the size of the selected region and the speed of your Internet connection.
-
-
-### Hillshade and 3D Relief {#hillshade-and-3d-relief}
-
-| Hillshade | 3D Relief |
-|--------|---------|
-| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
-
-The difference of relief display on the map when applying these settings is described in the **Topography** article in the corresponding section [Hillshade and 3D Relief](../plugins/topography.md#hillshade-and-3d-relief).
-
-
-### Configure Display Options {#configure-display-options}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
-
-You can customize the zoom level to display and the transparency for Hillshade and Slope. You can read more in the [Topography article](../plugins/topography.md#hillshade-slope-and-altitude-layers).
-
-
-## 3D Relief {#3d-relief}
-
-:::note
-[3D Relief](../plugins/topography.md#3d-relief) is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
-:::
-
-![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
-
-The [**3D Relief** feature](../plugins/topography.md#3d-relief) is a mapping technology that allows the visualization of terrain on a map using three-dimensional models. This feature adds elevation information to a normal two-dimensional map, which creates a 3D and depth effect and allows you to better visualize the terrain.  
-
-*To start using 3D Relief*:  
-You need to purchase [OsmAnd Pro purchase plan](../plugins/index.md#purchase), enable the [Topography plugin](../plugins/topography.md), and switch on the [3D Relief](../plugins/topography.md#3d-relief) item in *Menu →  Configure map*.
-
-
-*How the 3D Relief feature works*:  
-*1.* To create a 3D relief, OsmAnd receives information about the terrain elevation.  
-*2.* Based on the elevation data, a 3D model is created to display mountains, hills, valleys, and other terrain elements on the map.  
-*3.* OsmAnd then displays these three-dimensional models on a flat map. The map can be zoomed in, zoomed out, and rotated to view the terrain from different angles and perspectives.  
-*4.* The display of contour lines on the map does not depend on whether the map source is online or offline.
--->
 
 
 ## Przygotuj/Kopiuj mapy {#preparecopy-maps}
@@ -398,13 +323,6 @@ Aby mapy automatycznie aktualizowały kafelki po pewnym czasie, możesz ustawić
     </tr>
 </table>  
 
-<!--
-
-![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
-
--->
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -446,8 +364,7 @@ Mapy rastrowe mogą być używane w takiej postaci, w jakiej już istnieją, je�
 ## Powiązane artykuły {#related-articles}
 
 - [Import / Eksport](../personal/import-export.md)
-- [Schematy palet kolorów](../personal/color-palette-schemes.md)
 - [Szybka akcja (Niestandardowy przycisk)](../widgets/quick-action.md)
 - [Mapy online](../plugins/online-map.md)
 - [Topografia](../plugins/topography.md)
-- [Tworzenie map rastrowych i wektorowych offline](technical/map-creation/create-offline-maps-yourself.md)
+- [Tworzenie map rastrowych i wektorowych offline](../../technical/map-creation/create-offline-maps-yourself.md)

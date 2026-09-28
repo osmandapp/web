@@ -1,5 +1,5 @@
 ---
-source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
+source-hash: 09518f7c9f30ff95cf4ee3c22d11fc8d1867a10a1fa6a3ea3d7b5c046dd047c7
 sidebar_position: 9
 title: Zasoby i dostosowania
 ---
@@ -55,6 +55,7 @@ Poniższa lista zawiera konwertery dla różnych typów danych obsługiwanych pr
 | Topo map into printable| Jest to [narzędzie](https://github.com/acui/osmand_topo_map_generator) do generowania drukowalnej mapy topograficznej za pomocą zrzutów ekranu z OsmAnd (https://osmand.net). Mapa wykorzystuje siatkę UTM i zawiera informacje o deklinacji. Należy jej używać z kompasem lub urządzeniem GPS ze współrzędnymi UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 | lidar2map | A self-contained tool that downloads public LiDAR data from national portals across 22 countries| [lidar2map](https://github.com/nico579/lidar2map)|
+| GPX slope colours | Koloruje ślad GPX według nachylenia: wzniesienia, zjazdy i odcinki płaskie stają się oddzielnymi śladami z własnym kolorem zapisanym w pliku, dzięki czemu OsmAnd je wyświetla. Gradient jest ze znakiem, więc podąża za kierunkiem jazdy. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Niestandardowe zasoby {#custom-resources}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
+source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
 sidebar_position: 3
 title:  Komunikaty głosowe / Powiadomienia
 ---
@@ -99,7 +99,7 @@ Więcej informacji o tym, jak i kiedy wyzwalane są komunikaty głosowe, można 
 
 - *Powtarzaj instrukcje nawigacyjne*. Umożliwia powtarzanie instrukcji nawigacyjnych w regularnych odstępach czasu od 1 min do 30 min. Lub ręcznie - jeśli przegapisz komunikat głosowy, możesz go ponownie odsłuchać, dotykając [strzałkę bieżącego zakrętu](../../widgets/nav-widgets.md#next-turn) na ekranie aplikacji.
 - *[Czas ogłoszenia](#announcement-time)*.
-- *Wstrzymaj odtwarzany dźwięk* (*tylko iOS*). Po włączeniu podcasty, audiobooki i inne odtwarzane dźwięki są wstrzymywane podczas odtwarzania komunikatów głosowych. Odtwarzanie muzyki jest kontynuowane z zmniejszoną głośnością. Po wyłączeniu zarówno dźwięk, jak i muzyka są odtwarzane z zmniejszoną głośnością.
+- *Wstrzymaj odtwarzany dźwięk* (*tylko iOS, w tym CarPlay*). Po włączeniu podcasty, audiobooki i inne odtwarzane dźwięki są wstrzymywane podczas odtwarzania komunikatów głosowych, niezależnie od tego, czy są odtwarzane przez urządzenie, czy przez CarPlay. Odtwarzanie muzyki jest kontynuowane z zmniejszoną głośnością. Po wyłączeniu zarówno dźwięk, jak i muzyka są odtwarzane z zmniejszoną głośnością.
 
 **Wyjście** (*Tylko Android*):
 

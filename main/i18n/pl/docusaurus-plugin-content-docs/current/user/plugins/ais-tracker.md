@@ -1,5 +1,5 @@
 ---
-source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
+source-hash: 04bb8eb2b1c8b30b97b5016c68f2b0de688c38c44449e4ebb8b695d258cad44b
 sidebar_position: 2
 title:  Śledzenie statków AIS
 ---
@@ -15,11 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoAndroidOnly />
-
 ## Przegląd {#overview}
 
 Wtyczka **Śledzenie statków AIS** wyświetla pozycje [Systemu Automatycznej Identyfikacji (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) oraz szczegółowe informacje o pobliskich jednostkach pływających. Dane AIS są odbierane przez połączenie sieciowe z zewnętrznego odbiornika AIS.
+
+Wtyczka może odbierać dane NMEA przez połączenie sieciowe przy użyciu protokołu TCP lub UDP. Pozycje GPS otrzymane z komunikatów NMEA RMC/GGA mogą być również wykorzystywane jako „Moja lokalizacja” w OsmAnd.
 
 :::caution WYŁĄCZENIE ODPOWIEDZIALNOŚCI
 **Ta wtyczka jest projektem hobbystycznym i nie została zaprojektowana z myślą o niezawodności ani dokładności. NIE NALEŻY polegać na tym oprogramowaniu w kwestiach nawigacji lub bezpieczeństwa życia.**
@@ -28,12 +28,14 @@ Wtyczka **Śledzenie statków AIS** wyświetla pozycje [Systemu Automatycznej Id
 
 ## Wymagane parametry konfiguracyjne {#required-setup-parameters}
 
-Możliwość korzystania z map online jest automatycznie włączona w wersji OsmAnd na iOS. Aby wyświetlić mapy online w systemie Android, należy dokonać następujących ustawień:
+Aby korzystać z wtyczki **Śledzenie statków AIS**, należy włączyć wtyczkę i skonfigurować połączenie sieciowe ze źródłem danych AIS/NMEA:
 
 1. [Włącz](../plugins/index.md#enable--disable) wtyczkę **Śledzenie statków AIS** w *Menu główne → Wtyczki → Śledzenie statków AIS*.
 2. Skonfiguruj [ustawienia AIS](../map/raster-maps.md#layers).
-3. Skonfiguruj **połączenie z serwerem AIS** lub podłącz **zewnętrzny odbiornik AIS**.
+3. Skonfiguruj połączenie ze **źródłem danych AIS/NMEA** przy użyciu protokołu **TCP** lub **UDP**.
 4. Sprawdź, czy statki są wyświetlane na mapie OsmAnd.
+
+Na iOS możesz dodatkowo włączyć opcję *Użyj NMEA jako źródła lokalizacji*, aby korzystać z pozycji GPS z komunikatów NMEA RMC/GGA jako bieżącej lokalizacji w OsmAnd.
 
 ## Statki na mapie {#vessels-on-the-map}
 
@@ -54,6 +56,12 @@ AIS działa na *częstotliwościach VHF* (161,975 MHz i 162,025 MHz) i ma ograni
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+![Śledzenie statków AIS](@site/static/img/plugins/ais/ais.webp)
+
+</TabItem>
+
 </Tabs>
 
 Po prawidłowej konfiguracji pozycje statków pojawią się na mapie. Kluczowe cechy:
@@ -69,8 +77,13 @@ Po prawidłowej konfiguracji pozycje statków pojawią się na mapie. Kluczowe c
 
 <TabItem value="android" label="Android">
 
-![Śledzenie statków AIS](@site/static/img/plugins/ais/ais_menu.png)  
-![Śledzenie statków AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+![Śledzenie statków AIS](@site/static/img/plugins/ais/ais_menu.png) ![Śledzenie statków AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Śledzenie statków AIS](@site/static/img/plugins/ais/ais_menu.webp)
 
 </TabItem>
 
@@ -111,7 +124,7 @@ Statki AIS przesyłają trzy rodzaje danych:
 
 ### Symbole i legendy AIS {#ais-symbols-and-legends}
 
-[Wytyczne dotyczące prezentacji symboli związanych z nawigacją](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
+[Wytyczne dotyczące prezentacji symboli AIS](https://www.e-navigation.nl/sites/default/files/sn_circ243-rev.2_-_guidelines_for_the_presentation_of_navigation-related_symbols_terms_and_abbreviations.pdf)
 
 | Symbole             | Opis   |
 |---------------------|---------------|
@@ -159,6 +172,14 @@ Statki AIS przesyłają trzy rodzaje danych:
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *Śledzenie statków AIS* → *<Translate ios="true" ids="shared_string_settings"/>* 
+
+![Śledzenie statków AIS](@site/static/img/plugins/ais/ais_settings_ios.webp)
+
+</TabItem>
+
 </Tabs>
 
 Wtyczka *Śledzenie statków AIS* oferuje różne ustawienia do personalizacji nawigacji i interakcji dla użytkowników z niepełnosprawnościami. Te ustawienia są stosowane dla wszystkich [profili](../personal/profiles.md) w OsmAnd.
@@ -171,11 +192,12 @@ Wtyczka *Śledzenie statków AIS* oferuje różne ustawienia do personalizacji n
 | Adres IP | Zdefiniuj adres IP źródła danych AIS (jeśli używany jest TCP) | `192.168.200.16` |
 | Port TCP   | Zdefiniuj numer portu TCP dla danych AIS | `4001` |
 | Port UDP   | Zdefiniuj port UDP dla odbioru AIS przez OsmAnd  | `10110` |
-| Odbieraj dane AIS nawet gdy OsmAnd jest wstrzymany   | Utrzymuj nasłuchiwanie komunikatów AIS, gdy OsmAnd jest wstrzymany lub w tle. Jeśli wyłączone, nie są odbierane komunikaty AIS, gdy OsmAnd jest w tle  | `Tak/Nie` |
+| Odbieraj dane AIS nawet gdy OsmAnd jest wstrzymany (*tylko Android*)   | Utrzymuj nasłuchiwanie komunikatów AIS, gdy OsmAnd jest wstrzymany lub w tle. Jeśli wyłączone, nie są odbierane komunikaty AIS, gdy OsmAnd jest w tle  | `Tak/Nie` |
+| Użyj NMEA jako źródła lokalizacji (*tylko iOS*)   | Używaj pozycji GPS z komunikatów NMEA RMC/GGA jako „Moja lokalizacja”  | `Włącz/Wyłącz` |
 | | | |
 | **Limit czasu odbioru sygnału AIS** | |  |
-| Limit czasu dla utraconych obiektów AIS     | Statki znikają, jeśli sygnał nie zostanie odebrany przez określony czas | `3 - 20 min` |
-| Limit czasu widoczności statku      | Ikony statków zmienią stan, gdy sygnał nie zostanie odebrany | `2 - 15 min / Wyłączone` |
+| Limit czasu dla nieaktualnych statków      | Ustaw limit czasu widoczności nieaktualnych statków: po upływie tego czasu bez odbioru sygnału symbol statku zostanie przekreślony | `2 - 15 min / Wyłączone` |
+| Limit czasu widoczności statku     | Ustaw limit czasu widoczności obiektów AIS: jeśli w określonym czasie nie zostanie odebrany sygnał, obiekt zostanie automatycznie usunięty z wyświetlacza | `3 - 20 min` |
 | | | |
 | **Alerty najbliższego punktu podejścia (CPA)** | | |
 | Czas ostrzeżenia CPA | Statek jest oznaczony na czerwono, jeśli czas do CPA jest poniżej tego limitu | `1 - 60 min / Wyłączone` |

@@ -1,5 +1,5 @@
 ---
-source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
+source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -101,7 +101,7 @@ Nie można wybrać profilu bezpośrednio w *CarPlay* z ekranu pojazdu. Najpierw 
 
 **Dlaczego ważne jest, aby wybrać odpowiedni profil dla Twojego typu pojazdu.**
 
-- **Bezpieczeństwo jazdy.** Różne rodzaje transportu wymagają różnych informacji i ustawień podczas jazdy. Na przykład kierowcy ciężarówek mogą być ograniczeni co do wysokości, wagi i szerokości swoich pojazdów, więc profil *Ciężarówka* zapewnia im odpowiednie ograniczenia i wskazówki. Natomiast rowerzyści i motocykliści potrzebują informacji o ścieżkach i trasach rowerowych, bez danych dla ciężarówek.
+- **Bezpieczeństwo jazdy.** Różne rodzaje transportu wymagają różnych informacji i ustawień podczas jazdy. Na przykład kierowcy ciężarówek mogą być ograniczeni co do wysokości, wagi i szerokości swoich pojazdów, więc profil *Ciężarka* zapewnia im odpowiednie ograniczenia i wskazówki. Natomiast rowerzyści i motocykliści potrzebują informacji o ścieżkach i trasach rowerowych, bez danych dla ciężarówek.
 - **Użyteczność i wydajność.** Nawigacja powinna być dostosowana do potrzeb danego środka transportu. Pozwala to użytkownikom skrócić czas potrzebny na znalezienie optymalnych tras i uniknięcie niepotrzebnych ograniczeń w ruchu.
 
 
@@ -227,7 +227,7 @@ Wskazówki głosowe dla *CarPlay* to jedna z najbardziej użytecznych funkcji na
 
 Gdy odtwarzane są komunikaty głosowe, OsmAnd dostosowuje dźwięk tła w zależności od jego typu. Dzięki włączonej opcji *<Translate ios="true" ids="pause_spoken_audio"/>* treści audio mówione, takie jak podcasty i audiobooki, są wstrzymywane podczas instrukcji nawigacyjnych, a odtwarzanie muzyki jest kontynuowane z obniżoną głośnością. Gdy opcja *<Translate ios="true" ids="pause_spoken_audio"/>* jest wyłączona, zarówno treści mówione, jak i muzyka są odtwarzane z obniżoną głośnością.  
 
-Aby skonfigurować komunikaty głosowe zgodnie z wybranym profilem, należy to zrobić przed rozpoczęciem trasy w aplikacji OsmAnd na urządzeniu. Aby zobaczyć zalecane ustawienia dla *CarPlay*, przejdź do artykułu [Komunikaty głosowe / Powiadomienia](../navigation/guidance/voice-navigation.md).  
+Aby skonfigurować komunikaty głosowe zgodnie z wybranym profilem, należy to zrobić przed rozpoczęciem trasy w aplikacji OsmAnd na urządzeniu. Aby zobaczyć zalecane ustawienia dla *CarPlay*, przejdź do artykułu [Komunikaty głosowe / Powiadomienia](../navigation/guidance/voice-navigation.md#voice-settings). Na przykład, aby włączyć wstrzymanie odtwarzania audio mówionego, przejdź do: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*  
 
 
 ### Alerty nawigacyjne {#navigation-alerts}
@@ -321,16 +321,19 @@ Możesz zmienić ustawienia powiadomień dla aplikacji OsmAnd w ustawieniach sys
 
 Możesz również włączyć lub wyłączyć ogłaszanie wiadomości bezpośrednio w *CarPlay*. Przeczytaj o tym, jak zarządzanie powiadomieniami jest zaimplementowane w [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) i [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
 
-### Motyw mapy {#map-theme}
+### Tryb mapy {#map-mode}
 
-![Motyw mapy](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+![Tryb mapy](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Tryb mapy](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-CarPlay umożliwia skonfigurowanie wyglądu mapy dla lepszej widoczności w różnych warunkach jazdy. Możesz wybrać jeden z następujących trybów wyglądu:
+OsmAnd umożliwia niezależne skonfigurowanie wyglądu mapy dla CarPlay w stosunku do trybu mapy na telefonie. Aby otworzyć to ustawienie, dotknij przycisku *Ustawienia* na pasku nawigacji CarPlay, a następnie wybierz *Tryb mapy*. Bieżący tryb jest wyświetlany jako tekst szczegółowy wiersza.
 
-- *Automatyczny*. Wygląd mapy zmienia się automatycznie w zależności od ustawień systemowych, pory dnia lub warunków pojazdu.
-- *Zawsze ciemny*. CarPlay używa ciemnego motywu mapy.
+Możesz wybrać jeden z następujących trybów wyglądu:
+- **Wygląd pojazdu** — Wygląd mapy jest zgodny ze stylem wyświetlacza pojazdu, na podstawie ustawienia Wygląd CarPlay na iPhonie (*Automatyczny* lub *Zawsze ciemny*) oraz pory dnia. Gdy w tym ustawieniu włączona jest opcja *Zawsze pokazuj ciemne mapy*, mapa zawsze pozostaje w trybie ciemnym niezależnie od stanu świateł pojazdu lub pory dnia.
+- **Dzień** — Mapa zawsze używa jasnego motywu w CarPlay, niezależnie od ustawień wyglądu pojazdu.
+- **Noc** — Mapa zawsze używa ciemnego motywu w CarPlay, niezależnie od ustawień wyglądu pojazdu.
+- **Wschód/zachód słońca** — Mapa automatycznie przełącza się między jasnym a ciemnym motywem na podstawie obliczonych czasów wschodu i zachodu słońca dla bieżącej lokalizacji.
 
-Gdy opcja *Zawsze pokazuj ciemne mapy* jest włączona, mapa zawsze pozostaje w trybie ciemnym niezależnie od stanu świateł pojazdu lub pory dnia.
+**Uwaga:** Ustawienie Tryb mapy w CarPlay dotyczy tylko wyglądu mapy w CarPlay. Nie zmienia trybu mapy na ekranie telefonu.
 
 ### Pozycja lokalizacji w CarPlay {#location-position-in-carplay}
 
