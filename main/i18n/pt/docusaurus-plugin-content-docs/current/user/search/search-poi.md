@@ -1,5 +1,5 @@
 ---
-source-hash: 378b728b8f4da00ce0f97163606943632a814e68e9325b5662ee4bf6f3c01dd5
+source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
 sidebar_position: 4
 title: Pesquisar POI
 ---
@@ -198,10 +198,10 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 Com a função **Filtro**, pode selecionar as características necessárias e, como resultado, obter uma lista contendo apenas objetos relevantes. Para usar o filtro:
 
 - Selecione a categoria em que está interessado na lista de categorias.
-- No ecrã que se abre, toque no ícone que exibe o filtro. Ele está localizado abaixo do campo de entrada, ao lado de *Mostrar no mapa*.
+- No ecrã que se abre, toque no ícone que exibe o filtro. Ele está localizado abaixo do campo de entrada, ao lado do chip *Ordenar por* no Android e ao lado de *Mostrar no mapa* no iOS.
 - No filtro, selecione o tipo de características.
 
-![Pesquisar POI Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![Pesquisar POI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 Um filtro pode consistir em um número considerável de itens, cuja presença depende da categoria selecionada. Cada categoria tem um número de filtros específicos para ela, organizados em pastas por tipo. Existem um total de *21 categorias padrão*. Elas estão listadas aqui:
 
@@ -325,8 +325,6 @@ Utilização da Pesquisa Online:
 - Útil em cidades e em autoestradas com boa cobertura de Internet.
 - A pesquisa online é conveniente de usar se não houver mapas da região e se for impossível descarregá-los.
 - *Requer uma ligação à Internet constante e estável.*  
-
-![Pesquisar POI Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
 
 Para melhorar os resultados, antes de usar a ferramenta de Pesquisa, amplie o mapa para se aproximar do local onde precisa de encontrar uma localização específica. E durante a pesquisa, pode **aumentar o raio de pesquisa** para encontrar locais que estão mais longe da sua localização. Ao pesquisar offline, se os resultados necessários não estiverem disponíveis, o OsmAnd sugere usar a pesquisa online.  
 

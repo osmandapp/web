@@ -1,5 +1,5 @@
 ---
-source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
+source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
 sidebar_position: 2
 title: Guias de Viagem
 ---
@@ -36,7 +36,7 @@ As informações do Wikivoyage incluem os principais fatos sobre um local, trans
 
 <TabItem value="ios" label="iOS">
 
-![Menu de mapas iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
+![Maps menu iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_trave
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
-![Menu de mapas iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
+![Maps menu iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
 
 </TabItem>
 
@@ -106,7 +106,7 @@ Ao abrir *Guias de Viagem* (*<Translate android="true" ids="shared_string_menu,s
 
 <TabItem value="ios" label="iOS">
 
-![Tela principal de guias de viagem](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Tela principal de guias de viagem 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Tela principal de guias de viagem](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Tela principal de guias de viagem 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -131,7 +131,7 @@ Se você tocar no *botão Marcar*, o artigo será salvo para leitura posterior e
 
 <TabItem value="ios" label="iOS">
 
-![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 
@@ -161,7 +161,7 @@ Ao lado de cada resultado de pesquisa, são listados os 3 idiomas mais comumente
 
 <TabItem value="ios" label="iOS">
 
-![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_options_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_options_ios.png)
 
 </TabItem>
 
@@ -186,7 +186,7 @@ No menu Opções, você pode escolher se deseja salvar imagens nos artigos visua
 
 <TabItem value="ios" label="iOS">
 
-![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_article_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_article_ios.png)
 
 </TabItem>
 
@@ -219,7 +219,7 @@ Na parte inferior da tela estão botões como:
 
 <TabItem value="ios" label="iOS">
 
-![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
 
 </TabItem>
 
@@ -241,7 +241,7 @@ Se você tocar na seta no canto superior esquerdo da tela, você irá diretament
 
 <TabItem value="ios" label="iOS">
 
-![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_contents_menu_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_contents_menu_ios.png)
 
 </TabItem>
 
@@ -271,7 +271,7 @@ A maioria dos *artigos de guias de viagem* tem a mesma estrutura de conteúdo: *
 
 <TabItem value="ios" label="iOS">
 
-![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
 
 </TabItem>
 
@@ -293,14 +293,14 @@ Você também pode *[adicionar pontos ao mapa](#travel-routes)* no menu *Configu
 
 Uma forma alternativa de navegar pelos *Guias de Viagem* é exibi-los no mapa usando o menu *Configurar mapa*. Este recurso não se aplica à capacidade fornecida pelo OsmAnd de usar o Wikivoyage, ele se aplica apenas a trilhas. Você pode ler mais em nosso [blog](https://osmand.net/blog/routes#generated-travel-routes).
 
-![Menu de pontos de guias de viagem](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Menu de pontos de guias de viagem](@site/static/img/guides/travel_guides_travel_routes_view.png)
+![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
 ### Rotas de viagem e artigos no mapa {#travel-routes-and-articles-on-the-map}
 
-![Menu de pontos de guias de viagem](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Menu de pontos de guias de viagem](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
+![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
-Depois de ativar a exibição de *Rotas de viagem* no menu *Configurar mapa*, círculos de cores diferentes aparecerão no mapa. Os laranjas representam trilhas de rota, artigos de rota e alguns waypoints. Toque em uma rota, artigo ou ponto específico e, em seguida, toque no botão *Baixar* (&#9047;), e você poderá [gerenciá-los como uma trilha](#manage-as-gpx-track).
+Depois de ativar a exibição de *Rotas de viagem* no menu *Configurar mapa*, círculos de diferentes cores aparecerão no mapa. Os laranjas representam trilhas de rota, artigos de rota e alguns waypoints. Toque em uma rota, artigo ou ponto específico e, em seguida, toque no botão *Baixar* (&#9047;), e você poderá [gerenciá-los como uma trilha](#manage-as-gpx-track).
 
 ### Guias de Viagem Personalizados {#custom-travel-guides}
 
@@ -315,7 +315,7 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 ## Gerenciar como Trilha GPX {#manage-as-gpx-track}
 
-![Menu de pontos de guias de viagem 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Menu de pontos de guias de viagem 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
+![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
 
 Depois de adicionar *Guias de Viagem* ao mapa, os *Artigos de Viagem* podem ser salvos como uma trilha GPX e gerenciados através do menu *[Meus lugares](../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). Eles podem ser exibidos no mapa, compartilhados, renomeados, colocados em outra pasta, exportados ou excluídos.  
 
@@ -341,7 +341,7 @@ No *[menu de contexto da trilha](../map/tracks/track-context-menu.md)* do arquiv
 
 <TabItem value="ios" label="iOS">
 
-![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Menu de pesquisa de guias de viagem](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
 
 </TabItem>
 
@@ -351,7 +351,7 @@ Nos *artigos do Guia de Viagem*, você pode encontrar informações úteis sobre
 
 Em alguns casos, a *[aba Marcadores](#explore-and-bookmark)* do OsmAnd solicitará que você baixe a [camada de mapa da Wikipédia](../plugins/wikipedia.md#download-wikipedia-packages) para navegar por artigos relacionados offline.
 
-![Guias de viagem baixam a Wikipédia](@site/static/img/guides/travel_guides_wikipedia_download.png)
+![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
 :::info NOTA
 O [plugin da Wikipédia](../plugins/wikipedia.md) é um [recurso pago](../purchases/index.md) do aplicativo OsmAnd.

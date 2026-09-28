@@ -1,5 +1,5 @@
 ---
-source-hash: 29661a55b3a0d02cb50e4ac44dbe74fce5ef3f7e1cc1c0e9c36c067816155c46
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title: Primeiros Passos
 ---
@@ -502,7 +502,7 @@ Toque em um ícone de ação para iniciar imediatamente o aplicativo com a açã
 
 No *menu Ajuda*, você pode encontrar artigos do nosso site [www.osmand.net/docs](https://osmand.net/docs/intro/). Após o download inicial (conexão com a Internet necessária), os artigos de ajuda estão disponíveis offline.  
 A primeira subseção, *Ajuda Offline*, contém os artigos **Mais vistos** (ou populares) entre nossos usuários. Esses artigos são exibidos no idioma definido para o aplicativo, se esse idioma for suportado em nosso site de documentação. Os idiomas suportados atualmente incluem: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, e *<Translate android="true" ids="lang_uk"/>*. Se você alterar o idioma do aplicativo, reinicie o OsmAnd para que a documentação seja aberta no idioma selecionado. Quando uma tradução não estiver disponível, a versão em inglês da página será exibida automaticamente. As seções **Guia do usuário** e **Solução de problemas** têm a mesma estrutura que no site.  
-No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais do OsmAnd, informações de versão sobre seu aplicativo, notas de lançamento e contatos de suporte. Através da Ajuda, você também pode enviar [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
+No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais do OsmAnd, informações de versão sobre seu aplicativo, notas de lançamento e contatos de suporte. Através da Ajuda, você também pode enviar [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-app-logs).  
 
 ### Menu {#menu}
 
@@ -510,21 +510,20 @@ No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais
 
 <TabItem value="android" label="Android">
 
-![Captura de tela da ajuda offline Android](@site/static/img/steps/offline_help_menu_andr.png)
+![Captura de tela da ajuda offline Android](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de mapas iOS](@site/static/img/steps/offline_help_menu_ios.png)
+![Menu de mapas iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Enviar log de falha** (*para Android*). Permite que os usuários enviem relatórios de falhas do aplicativo aos desenvolvedores, auxiliando na identificação e resolução de problemas.
-- **Enviar logcat log** (*para Android*). Fornece aos usuários a capacidade de enviar logs detalhados de falhas do aplicativo aos desenvolvedores, facilitando uma análise e solução de problemas mais aprofundadas.
-- **Enviar log** (*para iOS*). Executa uma função semelhante ao recurso *Enviar log de falha* para Android, permitindo que os usuários em dispositivos iOS relatem falhas do aplicativo aos desenvolvedores para fins de depuração.
+- **Enviar log de falha do aplicativo**. Permite que os usuários enviem relatórios de falhas registradas de falhas anteriores do aplicativo aos desenvolvedores para análise e solução de problemas. 
+- **Enviar logs da sessão atual** (Android)/**Enviar log atual do aplicativo** (iOS). Permite que os usuários enviem o log atual do aplicativo, contendo informações registradas desde o início do aplicativo, aos desenvolvedores para solução de problemas.
 - **Copiar versão da compilação**. Permite que os usuários comuniquem de forma rápida e precisa a versão atual do aplicativo aos desenvolvedores ao relatar problemas, simplificando o processo de diagnóstico e resolução.
 
 
@@ -624,21 +623,21 @@ Permite que você faça perguntas ou sugestões.
 
 <TabItem value="android" label="Android">
 
-![Captura de tela da ajuda offline Android](@site/static/img/steps/offline_help_report_andr.png)
+![Captura de tela da ajuda offline Android](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Menu de mapas iOS](@site/static/img/steps/offline_help_report_ios.png)
+![Menu de mapas iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 - **Abrir problema no GitHub**. [Android version GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS version GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): ask questions, write about bugs and propose features.
-- **Enviar log de falha** (*para Android*). Contains only information about crashes.
-- [Enviar logcat log](../../user/troubleshooting/crash-logs.md#send-logs-from-osmand-app-android) (*Android*) / [Enviar log](../../user/troubleshooting/crash-logs.md#send-logs-from-ios-devices) (*iOS*). Detailed log file.
+- **Enviar log de falha do aplicativo**. Contém relatórios de falhas anteriores do aplicativo.
+- **Enviar logs da sessão atual** (Android)/**Enviar log atual do aplicativo** (iOS). Contém o log do aplicativo registrado desde o início do aplicativo.
 
 ### Sobre o OsmAnd {#about-osmand}
 

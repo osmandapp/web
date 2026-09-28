@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
 sidebar_position: 2
 title: Mapas e Recursos
 ---
@@ -142,7 +142,7 @@ A aba **Download** permite baixar vários tipos de mapas dos servidores OsmAnd, 
 
 No menu Baixar Mapas, há uma seção **Mapas Mundiais** que fornece acesso para baixar vários mapas do mundo, complementando a funcionalidade do aplicativo.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*somente Android*). Este arquivo contém correções de altitude para compensar a curvatura planetária.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*somente Android*). Este arquivo contém correções de altitude usadas para melhorar a precisão da altitude em dispositivos que não fornecem altitude acima do nível médio do mar (MSL), inclusive quando a API do Android é usada como [fonte de localização](../personal/global-settings.md#location-source) em vez dos Serviços do Google Play.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Fornece uma visão geral extensa da superfície da Terra, útil para planejamento de rotas de longo prazo e exploração casual.
 - **Mapa meteorológico mundial**. Permite baixar um mapa com informações meteorológicas.
 
@@ -326,13 +326,15 @@ As **Ações** disponíveis dependem do tipo de dados:
 
 Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.png) ![Maps menu Update tab Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
+![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Maps menu Update tab Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
 
 A aba **Atualizações** permite atualizar mapas e recursos do OsmAnd. Mapas padrão e somente estradas são lançados uma vez por mês, geralmente entre o dia 2 e o dia 5, e incluem dados do OpenStreetMap até o último dia do mês anterior (por exemplo, o lançamento de outubro contém dados até 30 de setembro). Outros dados, como Wikipedia, terreno ou mapas náuticos, podem seguir cronogramas de atualização diferentes e não regulares. A previsão do tempo tem seu próprio ciclo de atualização regular. Para detalhes, consulte a [Previsão de Download](../plugins/weather.md#download-forecast). 
 
 Se vários mapas do mesmo país precisarem de atualização, o OsmAnd os agrupa em um único item na lista de Atualizações. O item agrupado mostra o nome do país e o número de mapas incluídos. Ao tocá-lo, uma folha inferior *Atualizar mapas* é aberta, mostrando todos os mapas que precisam ser atualizados. 
 
 Use o botão *Atualizar tudo* para atualizar todos os mapas simultaneamente, ou atualize mapas individuais conforme necessário. Para atualizações por hora, verifique o status da sua assinatura de [Atualizações ao vivo](#live-updates). Se ativado, a seção **Atualizações ao vivo** aparecerá na parte superior da aba, abaixo do indicador de Memória do Dispositivo.
+
+A aba **Atualizações** também pode exibir um item **<Translate android="true" ids="unsupported_maps"/>**. Ele aparece quando você tem mapas que não são mais suportados e foram substituídos por regiões menores. Toque em Mapas não suportados para revisar a lista, remover mapas desatualizados e baixar as novas versões de região em vez disso. Na tela de Mapas não suportados, você pode visualizar todos os mapas não suportados e usar Excluir tudo para removê-los de uma vez (um prompt de confirmação é exibido antes da exclusão).
 
 Você também pode gerenciar mapas diretamente da aba Atualizações usando um gesto de pressão longa em qualquer mapa listado. Isso abre um menu de contexto que fornece várias opções:
 - **Informações** — visualize detalhes sobre o mapa selecionado
