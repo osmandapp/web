@@ -95,6 +95,13 @@ export default async function test() {
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
     await validateGroupOrder(favGroupsOldDateAfterRename);
 
+    // check item sort is kept after the group is renamed
+    await clickBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
+    await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}${suffix}`));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await waitBy(By.id('se-sort-button-oldDate-favorites'));
+
     // check save sort order after change hidden
     await waitBy(By.id('se-folder-actions-button-shops'));
     await clickBy(By.id('se-folder-actions-button-shops'));

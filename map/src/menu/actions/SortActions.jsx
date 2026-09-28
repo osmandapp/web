@@ -15,7 +15,7 @@ import { ReactComponent as LongDurationIcon } from '../../assets/icons/ic_action
 import { ReactComponent as ShortDurationIcon } from '../../assets/icons/ic_action_sort_duration_short_to_long.svg';
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
-import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
+import FavoritesManager, { getFavoriteSortKey } from '../../manager/FavoritesManager';
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
 import { getSelectedSort } from '../components/buttons/SortFilesButton';
@@ -251,6 +251,7 @@ const SortActions = forwardRef(
                 favoriteGroup,
                 customGroup,
                 customGroupType,
+                smartf,
                 ctx,
                 defaultMethod: defaultMethod(),
             }) || defaultMethod()
@@ -331,9 +332,7 @@ const SortActions = forwardRef(
                 if (!updatedSelectedSort.favorites) {
                     updatedSelectedSort.favorites = {};
                 }
-                updatedSelectedSort.favorites[
-                    favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
-                ] = method;
+                updatedSelectedSort.favorites[getFavoriteSortKey(favoriteGroup, smartf)] = method;
             } else if (customGroup) {
                 if (!updatedSelectedSort.custom) {
                     updatedSelectedSort.custom = {};

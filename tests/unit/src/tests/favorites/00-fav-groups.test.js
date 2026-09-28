@@ -3,8 +3,10 @@ import FavoritesManager, {
     addLocDist,
     createFavGroupFreeName,
     decodeGroupNameFromFile,
+    DEFAULT_FAV_GROUP_NAME,
     extractBaseFavFileName,
     getFavGroupKey,
+    getFavoriteSortKey,
     getFavMenuListByLayers,
     getSize,
     isCurrentLocation,
@@ -14,6 +16,7 @@ import FavoritesManager, {
     normalizeGroupNameForFile,
 } from '@map/manager/FavoritesManager';
 import { fakeIndexedDbStore } from '../../util/indexedDb';
+import { SHARE_TYPE } from '@map/menu/share/shareConstants';
 
 const t = (key) => key;
 
@@ -128,6 +131,25 @@ describe('the favorites of a group in the menu', () => {
         expect(isCurrentLocation(LOCATION_UNAVAILABLE)).toBe(false);
         expect(isCurrentLocation(MAP_CENTER_LOCATION)).toBe(false);
         expect(isCurrentLocation(null)).toBe(false);
+    });
+});
+
+describe('the saved sort of favorites', () => {
+    test('the list of groups, the shared folder and every group keep their own sort', () => {
+        const defaultGroup = FavoritesManager.createGroup({ name: 'favorites.gpx', userid: 1 });
+        const ownGroup = FavoritesManager.createGroup(favFile('food'));
+        const sharedGroup = FavoritesManager.createGroup({ ...favFile('food'), userid: 2, sharedWithMe: true });
+        const keys = [
+            getFavoriteSortKey(DEFAULT_FAV_GROUP_NAME),
+            getFavoriteSortKey(DEFAULT_FAV_GROUP_NAME, { type: SHARE_TYPE }),
+            getFavoriteSortKey(defaultGroup),
+            getFavoriteSortKey(ownGroup),
+            getFavoriteSortKey(sharedGroup, { type: SHARE_TYPE }),
+        ];
+
+        expect(defaultGroup.name).toBe(DEFAULT_FAV_GROUP_NAME);
+        expect(new Set(keys).size).toBe(keys.length);
+        expect(getFavoriteSortKey(ownGroup)).toBe(ownGroup.id);
     });
 });
 

@@ -18,6 +18,7 @@ import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from 
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
 import { getUniqFileId, MAIN_URL_WITH_SLASH, FAVORITES_URL } from './GlobalManager';
 import { getFavoriteFromDB, saveFavoriteToDB } from '../context/FavoriteStorage';
+import { SHARE_TYPE } from '../menu/share/shareConstants';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
@@ -35,6 +36,14 @@ export const HIDDEN_FALSE = 'false';
 
 export function normalizeFavoritePointsGroupName(groupName) {
     return groupName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : groupName;
+}
+
+export function getFavoriteSortKey(favoriteGroup, smartf = null) {
+    if (favoriteGroup === DEFAULT_FAV_GROUP_NAME) {
+        return smartf?.type === SHARE_TYPE ? SHARE_TYPE : DEFAULT_FAV_GROUP_NAME;
+    }
+
+    return favoriteGroup.id;
 }
 
 const colors = [
