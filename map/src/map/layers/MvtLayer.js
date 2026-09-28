@@ -6,10 +6,16 @@ import '@maplibre/maplibre-gl-leaflet';
 import AppContext, { OBJECT_TYPE_POI, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { osmandTileURL } from '../baseTileURL';
-import { isWebGLAvailable } from './MvtLayerConfig';
+import { isOsmAndTileURL, isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
-import { getMvtTileStats, setMapStyleDetailShift, watchMvtZoom } from '../../menu/configuremap/MvtTweaks';
+import {
+    getMvtDataTileUrl,
+    getMvtTileStats,
+    setMapDataZoomShift,
+    setMapStyleDetailShift,
+    watchMvtZoom,
+} from '../../menu/configuremap/MvtTweaks';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,
@@ -103,6 +109,7 @@ export default function MvtLayer({ config }) {
     const hybridUnderlayUrl = useHybridUnderlayUrl();
     const hybridUnderlayUrlRef = useRef(hybridUnderlayUrl);
     const maplibreMapRef = useRef(null);
+    const dataZoomShift = ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) ? mtx.mvtTweaks.dataZoomShift : 0;
 
     hybridUnderlayUrlRef.current = hybridUnderlayUrl;
 
@@ -132,8 +139,9 @@ export default function MvtLayer({ config }) {
             ensureLeafletPane(map, paneName, paneZIndex);
         }
 
+        const shiftedTileUrl = getMvtDataTileUrl(tileUrl, dataZoomShift);
         const glLayer = L.maplibreGL({
-            style: createStyle(style, tileUrl, {
+            style: createStyle(style, shiftedTileUrl, {
                 hideHybridLayers: Boolean(hybridUnderlayUrlRef.current),
             }),
             interactive: false,
@@ -145,7 +153,7 @@ export default function MvtLayer({ config }) {
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES && ctx.develFeatures === true;
 
         const sourceOwner = Symbol(config.tileUrl);
-        const sources = getMvtSources(config).map((source) => ({
+        const sources = getMvtSources({ ...config, tileUrl: shiftedTileUrl }).map((source) => ({
             ...source,
             sourceOwner,
             layerKey: mtx.tileURL?.key,
@@ -247,6 +255,24 @@ export default function MvtLayer({ config }) {
             map.removeLayer(glLayer);
         };
     }, [map, mtx.tileURL, config, ctx.develFeatures]);
+
+    useEffect(() => {
+        const maplibreMap = maplibreMapRef.current;
+        if (!maplibreMap || !config.isActive(mtx.tileURL) || !isOsmAndTileURL(mtx.tileURL)) {
+            return undefined;
+        }
+        const applyShift = () => {
+            const sources = (map[TILE_SOURCES_KEY] || []).filter((source) => source.layerKey === mtx.tileURL.key);
+            setMapDataZoomShift(maplibreMap, sources, config.tileUrl, dataZoomShift);
+        };
+        if (maplibreMap.isStyleLoaded()) {
+            applyShift();
+        } else {
+            maplibreMap.once('idle', applyShift);
+        }
+
+        return () => maplibreMap.off('idle', applyShift);
+    }, [map, config, mtx.tileURL, ctx.develFeatures, dataZoomShift]);
 
     useEffect(() => {
         const maplibreMap = maplibreMapRef.current;

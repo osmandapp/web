@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CircularProgress, Link, Stack, TextField, Typography } from '@mui/material';
 import L from 'leaflet';
 import MapContext from '../../context/MapContext';
-import { isMvtTileURL } from '../../map/layers/MvtLayerConfig';
+import { isMvtTileURL, isOsmAndTileURL } from '../../map/layers/MvtLayerConfig';
 import SimpleText from '../../frame/components/other/SimpleText';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -12,6 +12,23 @@ import { ReactComponent as AddActiveIcon } from '../../assets/icons/ic_action_ad
 import { ReactComponent as RemoveActiveIcon } from '../../assets/icons/ic_action_remove_filled.svg';
 
 const MIN_ZOOM_ID_PLACEHOLDER = '^(admin_level_[24]|place-city-capital)';
+
+export function getMvtDataTileUrl(tileUrl, shift) {
+    return shift ? `${tileUrl}${tileUrl.includes('?') ? '&' : '?'}shift=${shift}` : tileUrl;
+}
+
+export function setMapDataZoomShift(maplibreMap, sources, tileUrl, shift) {
+    const url = getMvtDataTileUrl(tileUrl, shift);
+    const source = maplibreMap.getSource('osm');
+    if (source && source.tiles?.[0] !== url) {
+        source.setTiles([url]);
+    }
+    sources.forEach((source) => {
+        if (source.id === 'osm') {
+            source.url = url;
+        }
+    });
+}
 
 export function setMapStyleDetailShift(maplibreMap, style, shift, minZoomIdFilter = '') {
     const filter = parseMinZoomIdFilter(minZoomIdFilter);
@@ -108,7 +125,18 @@ export default function MvtTweaks() {
         mtx.setMvtTweaks((prev) => ({ ...prev, minZoomIdFilter }));
     };
     const zoomShifts = [
-        { id: 'data-zoom-shift', name: 'Data zoom shift', value: 0 },
+        {
+            id: 'data-zoom-shift',
+            name: 'Data zoom shift',
+            value: isOsmAndTileURL(mtx.tileURL) ? mtx.mvtTweaks.dataZoomShift : 0,
+            disabled: !isOsmAndTileURL(mtx.tileURL),
+            loading: mtx.mvtTileStats?.count == null,
+            onChange: (delta) =>
+                mtx.setMvtTweaks((prev) => ({
+                    ...prev,
+                    dataZoomShift: Math.max(-3, Math.min(3, prev.dataZoomShift + delta)),
+                })),
+        },
         {
             id: 'style-detail-shift',
             name: 'Style details (minZoom)',
@@ -136,7 +164,7 @@ export default function MvtTweaks() {
                 }
                 maxLines={1}
             />
-            {zoomShifts.map(({ id, name, value, loading, onChange }) => (
+            {zoomShifts.map(({ id, name, value, disabled, loading, onChange }) => (
                 <SimpleText
                     key={id}
                     id={`se-mvt-${id}`}
@@ -144,12 +172,12 @@ export default function MvtTweaks() {
                         <Stack direction="row" alignItems="center" justifyContent="space-between">
                             <Stack direction="row" alignItems="center" spacing={1}>
                                 <Typography>{name}</Typography>
-                                {loading && <CircularProgress size={16} aria-label="Redrawing style" />}
+                                {loading && <CircularProgress size={16} aria-label={`Loading: ${name}`} />}
                             </Stack>
                             <Stack direction="row" alignItems="center" spacing={1}>
                                 <ActionIconBtn
                                     aria-label={`Decrease ${name}`}
-                                    disabled={value <= -3}
+                                    disabled={disabled || value <= -3}
                                     onClick={onChange ? () => onChange(-1) : undefined}
                                     icon={<RemoveIcon />}
                                     activeIcon={<RemoveActiveIcon />}
@@ -157,7 +185,7 @@ export default function MvtTweaks() {
                                 <Typography>{value}</Typography>
                                 <ActionIconBtn
                                     aria-label={`Increase ${name}`}
-                                    disabled={value >= 3}
+                                    disabled={disabled || value >= 3}
                                     onClick={onChange ? () => onChange(1) : undefined}
                                     icon={<AddIcon />}
                                     activeIcon={<AddActiveIcon />}
@@ -206,7 +234,7 @@ export default function MvtTweaks() {
             />
             <SimpleItemWithSwitch
                 id="se-mvt-fractional-zoom"
-                text="Enable fractional zoom"
+                text="Enable fractional map zoom"
                 checked={mtx.mvtTweaks.fractionalZoom}
                 onChange={() => mtx.setMvtTweaks((prev) => ({ ...prev, fractionalZoom: !prev.fractionalZoom }))}
             />
