@@ -81,7 +81,7 @@ If the issue persists, contact **support@osmand.net** and include:
 
 ### Manual Transfer {#manual-transfer}
 
-If your purchase cannot be activated automatically through OsmAnd Cloud, Support may be able to transfer it manually.
+If your purchase cannot be activated automatically through OsmAnd Cloud, Support — **support@osmand.net** — may be able to transfer it manually.
 
 To request a manual transfer, provide:
 - Your OsmAnd Cloud email.

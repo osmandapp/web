@@ -90,7 +90,7 @@ If you have made purchases via Amazon, you will need to **transfer your subscrip
 ➡️ Currently, [cross-platform transfer is possible for subscriptions and in-app purchases](../purchases/cross.md).  
 ❗ **OsmAnd+** (standalone app) cannot be transferred between platforms via OsmAnd Cloud account. For assistance, please contact **support@osmand.net**.
 
-If your Amazon purchase cannot be activated automatically through OsmAnd Cloud, contact OsmAnd Support for manual transfer. Provide the Amazon transaction number starting with D01-. A screenshot showing the purchased product is also recommended.
+If your Amazon purchase cannot be activated automatically through OsmAnd Cloud, contact OsmAnd Support — **support@osmand.net** — for manual transfer. Provide the Amazon transaction number starting with D01-. A screenshot showing the purchased product is also recommended.
 
 Purchases made more than 10 years ago cannot be transferred.
 
