@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
 title:  Треки
 sidebar_position: 2
 ---
@@ -22,7 +22,7 @@ OsmAnd має багато потужних функцій для відобра
 
 ## Типи треків {#types-of-tracks}
 
-[Треки (GPX)](#display-tracks-on-the-map) - записана або запланована поїздка, збережена у [GPX-форматі](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Цей тип маршруту можна імпортувати із зовнішнього джерела, створити в додатку або записати самостійно. GPX може містити один з 3 різних типів даних або всі з них:
+[Треки (GPX)](#display-tracks-on-the-map) - записана або запланована поїздка, збережена у [GPX-форматі](https://en.wikipedia.org/wiki/GPS_Exchange_Format). Цей тип маршруту можна імпортувати із зовнішнього джерега, створити в додатку або записати самостійно. GPX може містити один з 3 різних типів даних або всі з них:
 
 - Трек у вигляді лінії (***Геометрія***). Файл містить масив точок ```<trkpt>```, кожна точка має місцезнаходження та, опціонально, час, швидкість, висоту та інші атрибути. Ці треки відображаються на мапі суцільними лініями.
 - Трек у вигляді маршруту (***Маршрут***). Файл містить масив точок ```<rtept>```, кожна точка описана як проміжна точка маршруту. Спосіб з'єднання точок у маршруті залежить від налаштувань: це можуть бути невеликі сегменти маршруту або прямі лінії. Ці треки відображаються на мапі пунктирними лініями.
@@ -43,7 +43,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Налаштування мапи треків Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Налаштування мапи треків Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Налаштування мапи треків iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Налаштування мапи треків iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
-![Мої місця з треками в Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → довге натискання на обраний GPX трек → Показати на мапі*
 
-![Контекстне меню треку в iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
@@ -93,13 +93,13 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 <TabItem value="android" label="Android">
 
-![Огляд контекстного меню треку Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Огляд контекстного меню треку iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
@@ -116,7 +116,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *Натисніть на трек → вкладка Трек → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Меню треку аналіз на мапі Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Меню треку аналіз на мапі відстань Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -124,7 +124,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *Натисніть на трек → вкладка Трек → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Меню треку аналіз на мапі](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Меню треку аналіз на мапі ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -145,13 +145,13 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 <TabItem value="android" label="Android">
 
-![Меню треку аналіз на мапі 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Меню треку аналіз на мапі 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню треку аналіз на мапі](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Меню треку аналіз на мапі ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 

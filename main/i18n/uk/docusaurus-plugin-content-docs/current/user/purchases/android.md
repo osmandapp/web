@@ -1,5 +1,5 @@
 ---
-source-hash: d59e8bc87f2d0d21d935f57b9e5c55437ca555db0435ff83d6015d99406dca9b
+source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
 sidebar_position: 1
 title:  Покупки в Android
 ---
@@ -77,24 +77,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 У списку є інформація про ціни продуктів OsmAnd для регіону США та Європи. Для інших регіонів ціни еквівалентні в місцевих валютах.
 
 
-:::danger 🏖️ Літній розпродаж
-
-*Поспішайте! Ця пропозиція доступна лише до* **17 червня (23:00 CET)**.
-
-:::
-
-
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
-| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
-|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
-
-<!--
-
-
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
@@ -102,7 +84,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
+
 
 ### Безкоштовні та платні функції {#free-and-paid-features}
 
@@ -133,6 +115,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [Плагін астрономії](../plugins/astronomy.md) — [Планування спостережень](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Плагін астрономії](../plugins/astronomy.md) — [Інтерактивний режим AR](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Плагін астрономії](../plugins/astronomy.md) — [Офлайн карта неба](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Плагін астрономії](../plugins/astronomy.md) — [Дослідник затемнень](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
+| [Користувацькі кольори віджетів](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Офлайн та онлайн навігація](../navigation/index.md)<br/>з поворот-за-поротом напрямками | ✔ | ✔ | ✔ |
 | [Офлайн миттєвий пошук](../search/index.md) | ✔ | ✔ | ✔ |
 | [Запис поїздки](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
