@@ -1,9 +1,8 @@
-import { AppBar, Box, IconButton, ListItemIcon, ListItemText, MenuItem, Toolbar, Typography } from '@mui/material';
+import { Box, ListItemIcon, ListItemText, MenuItem } from '@mui/material';
 import CustomInput from './CustomInput';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import headerStyles from '../../trackfavmenu.module.css';
-import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
+import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
@@ -28,31 +27,20 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
         return collator.compare(nameA, nameB);
     });
 
+    function backToSearch() {
+        ctx.setPoiCatMenu(false);
+        ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
+        navigateToSearchMenu();
+    }
+
     return (
         <Box className={gStyles.scrollMainBlock}>
-            <AppBar
-                id={'se-search-categories-list'}
-                position="static"
-                className={headerStyles.appbar}
-                sx={{ boxShadow: 'none !important' }}
-            >
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconButton
-                        variant="contained"
-                        className={gStyles.icon}
-                        onClick={() => {
-                            ctx.setPoiCatMenu(false);
-                            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
-                            navigateToSearchMenu();
-                        }}
-                    >
-                        <BackIcon />
-                    </IconButton>
-                    <Typography component="div" className={headerStyles.title}>
-                        {t('search_categories')}
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+            <HeaderNoUnderline
+                title={t('search_categories')}
+                onClose={backToSearch}
+                showBackButton
+                appBarProps={{ id: 'se-search-categories-list' }}
+            />
             <CustomInput setSearchValue={setSearchValue} type={SEARCH_TYPE_CATEGORY} />
             {sortedCategories?.length === 0 && <EmptySearch />}
             {loadingIcons ? (

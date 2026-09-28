@@ -1,5 +1,5 @@
 ---
-source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
+source-hash: 968394db45647827e95cb32f776ef7f818433675c6fb40f6ba7071f88e7d270d
 sidebar_position: 2
 title: Map Screen During Navigation
 ---
@@ -15,7 +15,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
 ## Overview {#overview}
 
 У цій статті описано, як налаштувати вигляд карти під час навігації. Це включає такі функції, як відображення [POI вздовж маршруту](#show-points-along-the-route), використання [екранних сповіщень](#screen-alerts), [вигляд лінії маршруту](#route-line-appearance) включаючи колір, ширину та стрілки поворотів. Ці функції тісно пов'язані з [налаштуваннями навігації маршрутом](../setup/route-navigation.md#settings).
@@ -29,7 +28,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Екран карти під час навігації](@site/static/img/navigation/map_during_navigation_android.png)
+![Map screen during navigation](@site/static/img/navigation/map_during_navigation_android.png)
 
 </TabItem>
 
@@ -37,7 +36,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  
 
-![Екран карти під час навігації](@site/static/img/navigation/map_during_navigation_2_ios.png)
+![Map screen during navigation](@site/static/img/navigation/map_during_navigation_2_ios.png)
 
 </TabItem>
 
@@ -49,9 +48,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Параметр | Опис | Примітка |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | Час, протягом якого вигляд карти синхронізується з поточним положенням після переміщення.  | *Значення:* <br /> Ніколи, 5 сек, 10 сек, 15 сек, 20 сек, 25 сек, 30 сек, 45 сек, 60 сек, 50 сек. |
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | Час, протягом якого вигляд карти синхронізується з поточним положенням після переміщення.  | *Значення:* <br /> Ніколи, 5 сек, 10 сек, 15 сек, 20 сек, 25 сек, 30 сек, 45 сек, 60 сек, 90 сек. |
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Автоматично масштабувати карту відповідно до вашої швидкості, доки карта синхронізована з вашим поточним положенням. | *Значення:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - масштабування вручну. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - масштаб 200 м. <br /> *<Translate android="true" ids="auto_zoom_far"/>* - масштаб 100 м. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - масштаб 5 м. <br /> Зміни автомасштабування можуть бути анімованими (Плавні) або ступеневими (Дискретні), залежно від [налаштувань розробки](navigation-settings.md#development-settings). У режимі Плавний зміни масштабу використовують контрольовану анімацію (близько 0,1 масштабу/секунду). Автомасштабування не регулює масштаб на дуже низьких швидкостях (нижче ~7 км/год). Якщо необхідна зміна масштабу триватиме менше ~1,5 секунди, анімація не запускається. <br /> Автомасштабування спрямоване на утримання майбутнього маневру в стабільній зоні фокусу на екрані, тому видимість відстані вперед залишається стабільною під час руху. |
-| *Автомасштабування кут 3D* | Встановлює нахил карти під час перемикання на 3D-режим під час навігації. Більший кут робить горизонт видимішим далі, забезпечуючи кращу видимість вперед. | Застосовується лише тоді, коли увімкнено автомасштабування. Значення: 20°, 25°, 30°, 35°, 40°. За замовчуванням: 25°. <br /> Під час наближення до маневру/перехрестя додаток може поступово зменшувати нахил 3D у бік 2D-вигляду, щоб наступний поворот залишався читабельним. |
+| *Автомасштабування кут 3D* | Встановлює нахил карти під час перемикання на 3D-режим під час навігації. Більший кут робить горизонт видимішим далі, забезпечуючи кращу видимість вперед. | Застосовується лише тоді, коли увімкнено автомасштабування. Значення: 20°, 25°, 30°, 35°, 40°. За замовчуванням: 25°. <br /> Під час наближення до маневру/перехрестя додаток може поступово зменшувати нахил 3D у бік 2D-вигляду, щоб наступній поворот залишався читабельним. |
 | *Попередній перегляд наступного повороту* | Автоматично повертає карту трохи заздалегідь, щоб показати наступний поворот або маневр під час навігації. Допомагає передбачити майбутні дії.  | Увімкнено за замовчуванням. Якщо ви експортуєте та повторно імпортуєте профіль, переконайтеся, що це налаштування перевірено, оскільки в деяких попередніх версіях воно могло скинутися на «увімкнено».  <br /> Поворот/попередній перегляд запускається, щойно точка наступного маневру потрапляє в зону фокусу (тобто карта починає «дивитися» на поворот, коли він стає актуальним). |
 | *<Translate android="true" ids="snap_to_road"/>*  | Іконка поточного місцезнаходження буде прив'язана до поточного навігаційного маршруту.  | Ви можете вимкнути цю опцію, але всі пов'язані з дорогою опції, такі як відображення смуг руху, також не будуть видимі під час навігації.  |
 
@@ -78,7 +77,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,show_along_the_route"/>*
 
-![точки вздовж маршруту](@site/static/img/navigation/show-points-along-4-andr.png)
+![points along the route](@site/static/img/navigation/show-points-along-4-andr.png)
 
 </TabItem>
 
@@ -86,7 +85,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings"/>* *→ Показувати вздовж маршруту*
 
-![точки вздовж маршруту](@site/static/img/navigation/show-points-along-4-ios.png)  
+![points along the route](@site/static/img/navigation/show-points-along-4-ios.png)  
 
 </TabItem>
 
@@ -97,7 +96,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Points of Interest (POIs) {#points-of-interest-pois}
 
-![Шар POI Android](@site/static/img/map/poi_overlay_android.png) ![Шар POI iOS](@site/static/img/map/poi_overlay_ios.png)
+![POI overlay Android](@site/static/img/map/poi_overlay_android.png) ![POI overlay iOS](@site/static/img/map/poi_overlay_ios.png)
 
 Налаштування POI в [*<Translate android="true" ids="shared_string_menu,configure_map,shared_string_shows,layer_poi"/>*](../../map/point-layers-on-map.md#points-of-interest-pois) пов'язані з налаштуванням **Показувати вздовж маршруту**. 
 
@@ -171,7 +170,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,customize_route_line"/>*  
 
-![Навігаційний маршрут Android](@site/static/img/navigation/route/route_line_appearance_andr.png)  
+![Navigation route Android](@site/static/img/navigation/route/route_line_appearance_andr.png)  
 
 </TabItem>
 
@@ -179,7 +178,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,customize_route_line"/>*
 
-![Навігаційний маршрут iOS](@site/static/img/navigation/route/RLApp_iOS.png)
+![Navigation route Android](@site/static/img/navigation/route/RLApp_iOS.png)
 
 </TabItem>
 
@@ -195,34 +194,34 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Налаштування **Колір** змінює колірні тони ліній маршруту. Їх загальний колір змінюється залежно від обраного типу з колекції OsmAnd та відповідно до **Легенди карти**. Крім того, їх колір стає таким, який ви встановите вручну, включаючи прозорість.
 
 - ***<Translate android="true" id="map_widget_renderer"/>***. Використовується з кольорами за замовчуванням. Повний опис кольорів дивіться у статті [Стилі карти за замовчуванням](../../map/map-styles.md#default-map-styles).  
-    ![стиль карти](@site/static/img/navigation/route/map_st_2.png)
+    ![map stule](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Користувацький***. Дозволяє вибрати лінію будь-якого бажаного кольору та прозорості. Ви можете вибрати різні налаштування для денної та нічної карти окремо. Палітра кольорів включає кольори швидкого доступу, опцію додавання користувацького кольору (*+*), та повний список доступних кольорів (*Всі кольори*).            
-    ![користувацький](@site/static/img/navigation/route/custom_new.png)   ![користувацький](@site/static/img/navigation/route/custom_ios_new.png)
+    ![custom](@site/static/img/navigation/route/custom_new.png)   ![custom](@site/static/img/navigation/route/custom_ios_new.png)
 
 - ***<Translate android="true" id="altitude"/>***. Показує висоту точки маршруту у вигляді **зелено-жовто-червоного** градієнта. **Зелений** колір позначає найнижчу точку маршруту, **жовтий** - середню висоту точки, а **червоний** - найвищу. Якщо різниця висот на маршруті < 100 метрів, градієнт застосовується частково або не застосовується, наприклад, для простого підйому з 100 до 150 метрів - градієнт буде **зелено-жовтим**. Зауважте, що колір не відображає абсолютне значення висоти.  
-    ![Висота](@site/static/img/navigation/route/Altitude_rl.png)
+    ![Altitude](@site/static/img/navigation/route/Altitude_rl.png)
 
 - ***<ProFeature/> &nbsp; <Translate android="true" id="shared_string_slope"/>***. Лінія маршруту забарвлюється в різні кольори залежно від профілю висот маршруту. Детальний опис наведено у статті *Плагін "Топографія"*, розділ [Ухил](../../plugins/topography.md#hillshade-slope-and-altitude-layers).  
-    ![Ухил](@site/static/img/navigation/route/Slope.png)   ![Ухил](@site/static/img/navigation/route/Slope4.png)
+    ![Altitude](@site/static/img/navigation/route/Slope.png)   ![Altitude](@site/static/img/navigation/route/Slope4.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_roadClass_name"/>***. Забарвлює лінію маршруту або треку відповідно до *класифікації доріг*. Детальний опис наведено в розділі *Векторні карти - [Стиль доріг](../../map/vector-maps.md#road-style)*.  
-    ![Тип дороги](@site/static/img/navigation/route/Roud_type.png)
+    ![Altitude](@site/static/img/navigation/route/Roud_type.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />***. Надає інформацію про фізичне покриття дороги або стежки. Детальний опис можна знайти у статті *Стиль карти OsmAnd - [Поверхня](../../map-legend/osmand.md#surface-smoothness)* у розділі *Легенда карти*.  
-    ![Поверхня](@site/static/img/navigation/route/Surface.png)
+    ![Altitude](@site/static/img/navigation/route/Surface.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Класифікація прохідності доріг або стежок для колісних транспортних засобів, особливо щодо рівності та гладкості поверхні. Детальний опис можна знайти у статті *Стиль карти OsmAnd - [Гладкість](../../map-legend/osmand.md#surface-smoothness)* у розділі *Легенда карти*.  
-    ![Гладкість](@site/static/img/navigation/route/Smoothness.png)
+    ![Altitude](@site/static/img/navigation/route/Smoothness.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Забарвлює лінію маршруту або треку відповідно до *класифікації зимових доріг*. Детальний опис можна знайти у статті *Стилі карти*, розділ [Зимові та льодові дороги](../../map/map-styles.md#winter-and-ski).  
-    ![Зима](@site/static/img/navigation/route/Winter.png)
+    ![Altitude](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Забарвлення лінії маршруту або стежки за складом покриття. Зазвичай використовується, коли дорожня мережа переважно не асфальтована. Детальний опис можна знайти у статті *Стиль карти OsmAnd - [Твердість поверхні](../../map-legend/osmand.md#surface-smoothness)* у розділі *Легенда карти*.  
-    ![Твердість](@site/static/img/navigation/route/firmness.png)
+    ![Altitude](@site/static/img/navigation/route/firmness.png)
 
 - ***<ProFeature/> &nbsp;Складність кінних стежок***. Відображення стежок відповідно до складності кінних маршрутів.  
-    ![Твердість](@site/static/img/navigation/route/firmness.png)
+    ![Altitude](@site/static/img/navigation/route/firmness.png)
 
 
 ### Width {#width}
@@ -230,13 +229,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Ви можете налаштувати ширину лінії маршруту, щоб вона відповідала дорозі або стежці, що відображається на карті. Для більш чіткої візуальної ідентифікації ви можете вручну збільшити або зменшити ширину лінії за потреби. Для отримання додаткової інформації зверніться до статті *Треки та маршрути — [Зовнішній вигляд](../../map/tracks/appearance.md)*.
 
 - ***<Translate android="true" id="map_widget_renderer"/>***. Використовується з шириною за замовчуванням, встановленою OsmAnd. Повний опис можна знайти у статті *[Стилі карти](../../map/map-styles.md)*.  
-    ![стиль карти](@site/static/img/navigation/route/map_st_2.png)
+    ![map stule](@site/static/img/navigation/route/map_st_2.png)
 
 - ***Тонка, середня та жирна ширина***. Ви можете вибрати ширину лінії, щоб вона відповідала ширині дороги, або сильніше виділити лінію маршруту на карті.  
-    ![ширина](@site/static/img/navigation/route/width_med.png)
+    ![width](@site/static/img/navigation/route/width_med.png)
 
 - ***Користувацька***. Дозволяє відображати лінію потрібної вам ширини. Використовуйте повзунок для вибору ширини.  
-    ![користувацька](@site/static/img/navigation/route/custom_2.png)  
+    ![custom](@site/static/img/navigation/route/custom_2.png)  
 
 
 ### Turn Arrows {#turn-arrows}
@@ -244,10 +243,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Налаштування "Стрілки поворотів" дозволяє вибрати, чи відображатимуться стрілки поворотів на лінії маршруту.  
 
 - ***На карті***  
-    ![Стрілки на карті Android](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![Стрілки на карті iOS](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
+    ![Altitude](@site/static/img/navigation/route/turn_arr_on_map_and.png)   ![turn_arr_ios_map](@site/static/img/navigation/route/turn_arr_ios_on_map.png)  
 
 - ***У додатку***  
-    ![Стрілки в додатку Android](@site/static/img/navigation/route/turn_arr.png)   ![Стрілки в додатку iOS](@site/static/img/navigation/route/turn_arr_ios.png)
+    ![Altitude](@site/static/img/navigation/route/turn_arr.png)   ![turn_arr_ios](@site/static/img/navigation/route/turn_arr_ios.png)
 
 
 ## Related Articles {#related-articles}

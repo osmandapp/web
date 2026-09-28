@@ -22,7 +22,7 @@ import IconBtn from '../../frame/components/btns/IconBtn';
 import styles from '../configuremap/configuremap.module.css';
 import { ReactComponent as StarIcon } from '../../assets/icons/ic_action_favorite.svg';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as TerrainIcon } from '../../assets/icons/ic_action_terrain.svg';

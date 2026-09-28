@@ -1,5 +1,5 @@
 ---
-source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
+source-hash: 09518f7c9f30ff95cf4ee3c22d11fc8d1867a10a1fa6a3ea3d7b5c046dd047c7
 sidebar_position: 9
 title: Ресурси та налаштування
 ---
@@ -55,6 +55,7 @@ OsmAnd — це потужний застосунок із широкою баз
 | Топографічна карта для друку| Це [інструмент](https://github.com/acui/osmand_topo_map_generator) для створення топографічної карти для друку за допомогою знімків екрана з OsmAnd (https://osmand.net). Карта використовує сітку UTM і містить інформацію про схилення. Її слід використовувати з компасом або GPS-пристроєм з координатами UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar проєктує промінь до сонця з кожної точки треку GPX і перевіряє його відносно рельєфу та рослинності (0,5 м HD LiDAR / IGN) для заданої дати й часу. Він показує вам метр за метром — сонце чи тінь. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 | lidar2map | Автономний інструмент, який завантажує публічні дані LiDAR з національних порталів у 22 країнах | [lidar2map](https://github.com/nico579/lidar2map)|
+| GPX slope colours | Colours a GPX track by slope: climbs, descents and flat sections become separate tracks with their own colour, written into the file so OsmAnd displays them. The gradient is signed, so it follows the direction of travel. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Користувацькі ресурси {#custom-resources}
 
@@ -85,7 +86,7 @@ OsmAnd — це потужний застосунок із широкою баз
 
 | Назва | Опис | Посилання на плагін |
 |--|--|--|
-| Advanced Profiles & Maps  | Дані з [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). Плагін додає стилі карт Enduro, CycloRoute та Hiking (більше інформації [тут](../map/map-styles.md#default-map-styles)) та 5 нових [профілів](https://osmand.net/docs/user/personal/profiles) (пішохідний, велосипедний та три мотоциклетних). Він також надає онлайн-карти для Іспанії, Франції, Норвегії, Швейцарії, Австрії, Бельгії та Аргентини через меню [Карти та ресурси](../personal/maps-resources.md#extra-maps) у папці *Advanced Online Maps*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
+| Advanced Profiles & Maps  | Дані з [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). Плагін додає стилі карт Enduro, CycloRoute та Hiking (більше інформації [тут](../map/map-styles.md#default-map-styles)) та 5 нових [профілів](https://osmand.net/docs/user/personal/profiles) (пішохідний, велосипедний та три мотоциклетних). Він також надає онлайн-карти для Іспанії, Франції, Норвегії, Suisse, Австрії, Бельгії та Аргентини через меню [Карти та ресурси](../personal/maps-resources.md#extra-maps) у папці *Advanced Online Maps*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Saudi Arabia Desert Maps by Rahal Team  | Професійна офлайн-карта Королівства Саудівська Аравія, що включає топографічні об'єкти, дороги, міста, села та джерела води. Ідеально підходить для подорожей пустелею. Відвідайте [Rahal Maps](https://rahalteam.com) для отримання додаткової інформації. | [🇸🇦 Saudi Arabia Desert Maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
 | 3D Position Icons  | Цей пакет додає опцію 3D-моделі для профілів (Це приклад, як додати власну 3D-іконку до OsmAnd). Налаштуйте зовнішній вигляд через меню: [*Меню OsmAnd → Налаштування → Профіль → Зовнішній вигляд профілю → виберіть 4-5-ту іконку іконки місцезнаходження*](../personal/profiles.md#profile-appearance). | [3D Position Icons](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS Online Maps Collection | Дані з [вебсторінки AnyGIS](https://anygis.ru/index_en). Колекція різноманітних джерел онлайн-карт, включаючи супутникові, туристичні та історичні карти тощо.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
@@ -117,7 +118,7 @@ OsmAnd — це потужний застосунок із широкою баз
 
 Стандартний файл `routing.xml` можна налаштувати для коригування алгоритмів маршрутизації та параметрів для конкретних умов.
 
-| Назва джерела | Опис | Посилання |
+| Назва джереса | Опис | Посилання |
 | -- | -- | --|
 | Weather-aware Routing (Gh0stz0x) | Кастомна модифікація `routing.xml`, яка коригує розрахунок маршруту для дощових умов, враховуючи тип поверхні (наприклад, гола скеля), нахил та офіційні рейтинги складності стежок (шкали CAI/SAC), а також покращену логіку "Уникати тунелів". | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
 
@@ -126,7 +127,7 @@ OsmAnd — це потужний застосунок із широкою баз
 
 Користувацькі векторні карти (файли OBF), створені користувачами.
 
-| Назва джерела | Опис | Посилання|
+| Назва джереса | Опис | Посилання|
 | -- | -- | --|
 | OpenSuperMaps | Карти, створені [pnoll1](https://github.com/pnoll1), що пропонують детальні векторні карти. |[OpenSuperMap](https://opensupermaps.com/)|
 | UMP PL | [UMP-pcPL](https://ump.waw.pl/) - альтернативна карта Польщі. |[UMP-PL plugin](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|

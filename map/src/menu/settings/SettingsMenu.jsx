@@ -16,7 +16,7 @@ import AppContext, { collator } from '../../context/AppContext';
 import React, { useContext, useMemo, useRef, useState, useCallback } from 'react';
 import langList from '../../resources/translations/supportedLanguages.json';
 import enList from '../../resources/translations/en/translation.json';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import { ReactComponent as DisplayLanguageIcon } from '../../assets/icons/ic_action_map_language.svg';
 import { ReactComponent as ChangesIcon } from '../../assets/icons/ic_action_history.svg';
 import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete_outlined.svg';

@@ -249,7 +249,8 @@ export function openPoiObj(ctx, object) {
         ctx.setSelectedWpt((prev) => ({ ...prev, ...object, id: object.wikidata?.properties?.id }));
         ctx.setCurrentObjectType(null);
     } else {
-        const id = object?.properties?.[POI_ID] ?? (object?.geometry ? getObjIdSearch(object) : undefined);
+        const { options, latlng } = object;
+        const id = options?.[POI_ID] ?? `${latlng.lat},${latlng.lng}`;
         ctx.setSelectedWpt((prev) => ({ ...prev, poi: object, id }));
         ctx.setCurrentObjectType(OBJECT_TYPE_POI);
     }
@@ -287,6 +288,30 @@ export function navigateBackToSearchResults(navigate, ctx, location) {
         hash: liveHash(),
     });
     return true;
+}
+
+export function clearSearchQuery(ctx) {
+    ctx.setSearchResult(null);
+    ctx.setSearchFavoriteGroupIds(null);
+    ctx.setSearchQuery(null);
+}
+
+export function closeExploreMenu(ctx) {
+    ctx.setLoadingContextMenu(false);
+    ctx.setExploreMenu(false);
+}
+
+export function closeWikiPoi(ctx) {
+    ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
+    ctx.setSelectedPoiObj(null);
+}
+
+export function resetSearchMenu(ctx) {
+    clearSearchQuery(ctx);
+    ctx.setSelectedSearchObj(null);
+    ctx.setPoiCatMenu(false);
+    closeExploreMenu(ctx);
+    closeWikiPoi(ctx);
 }
 
 // open waypoint details of an opened track from search results (like a favorite from search)

@@ -1,9 +1,7 @@
-import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 import CloudGpxUploader from '../../frame/util/CloudGpxUploader';
 import React, { useContext, useEffect, useState } from 'react';
 import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
-import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as ImportIcon } from '../../assets/icons/ic_action_folder_import_outlined.svg';
 import { ReactComponent as AddFolderIcon } from '../../assets/icons/ic_action_folder_add_outlined.svg';
 import { ReactComponent as AddTrackIcon } from '../../assets/icons/ic_action_track_add.svg';
@@ -26,6 +24,7 @@ import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useZoomToFit } from '../../util/hooks/map/useZoomToFit';
 import { useFocusMode } from '../../util/hooks/map/useFocusMode';
+import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
 
 export default function GroupHeader({
     type,
@@ -100,166 +99,153 @@ export default function GroupHeader({
 
     function getTitle() {
         if (smartf?.type === SHARE_TYPE) {
-            return (
-                <Typography component="div" className={styles.title}>
-                    {t('web:shared_with_me')}
-                </Typography>
-            );
+            return t('web:shared_with_me');
         }
         if (type === TRACKS_TYPE) {
-            return (
-                <Typography id="se-cloud-name-track" component="div" className={styles.title}>
-                    {trackGroup?.name === DEFAULT_GROUP_NAME || !trackGroup
-                        ? t('shared_string_tracks')
-                        : trackGroup?.name}
-                </Typography>
-            );
-        } else if (type === FAVORITES_TYPE) {
-            return (
-                <Typography id="se-fav-group-name" component="div" className={styles.title}>
-                    {favoriteGroup === DEFAULT_FAV_GROUP_NAME || !favoriteGroup
-                        ? t('shared_string_favorites')
-                        : favoriteGroup?.name}
-                </Typography>
-            );
+            return trackGroup?.name === DEFAULT_GROUP_NAME || !trackGroup
+                ? t('shared_string_tracks')
+                : trackGroup?.name;
+        }
+        if (type === FAVORITES_TYPE) {
+            return favoriteGroup === DEFAULT_FAV_GROUP_NAME || !favoriteGroup
+                ? t('shared_string_favorites')
+                : favoriteGroup?.name;
         }
     }
 
+    function getTitleId() {
+        if (smartf?.type === SHARE_TYPE) return undefined;
+        if (type === TRACKS_TYPE) return 'se-cloud-name-track';
+        if (type === FAVORITES_TYPE) return 'se-fav-group-name';
+        return undefined;
+    }
+
+    function closeGroups() {
+        if (type === TRACKS_TYPE) {
+            ctx.setOpenGroups([]);
+        } else if (type === FAVORITES_TYPE) {
+            if (onClose) {
+                onClose();
+            } else {
+                updateQueryParam({
+                    key: FAVORITES_URL_PARAM_FOLDER,
+                    value: null,
+                    expectedLocation: MAIN_URL_WITH_SLASH + FAVORITES_URL,
+                    replace: false,
+                });
+            }
+        }
+        closeHeader({ ctx });
+        restoreMapView();
+        clearSelectionFocus();
+    }
+
+    const showBackButton = getGroupsCount() > 0;
+
     return (
         <>
-            <AppBar position="static" className={styles.appbar}>
-                <Toolbar className={styles.toolbar}>
-                    {getGroupsCount() > 0 ? (
-                        <IconButton
-                            variant="contained"
-                            id={`se-back-folder-button-${type}`}
-                            type="button"
-                            className={styles.appBarIcon}
-                            onClick={prevTrackMenu}
-                        >
-                            <BackIcon />
-                        </IconButton>
-                    ) : (
-                        <IconButton
-                            variant="contained"
-                            id={`se-close-folder-button-${type}`}
-                            type="button"
-                            className={styles.appBarIcon}
-                            onClick={() => {
-                                if (type === TRACKS_TYPE) {
-                                    ctx.setOpenGroups([]);
-                                } else if (type === FAVORITES_TYPE) {
-                                    if (onClose) {
-                                        onClose();
-                                    } else {
-                                        updateQueryParam({
-                                            key: FAVORITES_URL_PARAM_FOLDER,
-                                            value: null,
-                                            expectedLocation: MAIN_URL_WITH_SLASH + FAVORITES_URL,
-                                            replace: false,
-                                        });
-                                    }
-                                }
-                                closeHeader({ ctx });
-                                restoreMapView();
-                                clearSelectionFocus();
-                            }}
-                        >
-                            <CloseIcon />
-                        </IconButton>
-                    )}
-                    {getTitle()}
-                    <SortFilesButton
-                        type={type}
-                        trackGroup={trackGroup}
-                        favoriteGroup={favoriteGroup}
-                        setSortGroups={setSortGroups}
-                        setSortFiles={setSortFiles}
-                        markers={markers}
-                        smartf={smartf}
-                    />
-                    {type === TRACKS_TYPE && !hiddenBtn && (
-                        <Tooltip key={'add_folder'} title={t('add_new_folder')} arrow placement="bottom-end">
-                            <span>
-                                <IconButtonWithPermissions
-                                    id="se-add-folder"
-                                    variant="contained"
-                                    type="button"
-                                    disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
-                                    className={styles.appBarIcon}
-                                    onClick={() => setOpenAddFolderDialog(true)}
-                                >
-                                    <AddFolderIcon />
-                                </IconButtonWithPermissions>
-                            </span>
-                        </Tooltip>
-                    )}
-                    {type === TRACKS_TYPE && !hiddenBtn && (
-                        <Tooltip key={'import_track'} title={t('import_tracks')} arrow placement="bottom-end">
-                            <span>
-                                <CloudGpxUploader folder={trackGroup ? trackGroup?.fullName : DEFAULT_GROUP_NAME}>
+            <HeaderWithUnderline
+                title={getTitle()}
+                titleId={getTitleId()}
+                onClose={showBackButton ? prevTrackMenu : closeGroups}
+                showBackButton={showBackButton}
+                appBarProps={{
+                    id: showBackButton ? `se-back-folder-button-${type}` : `se-close-folder-button-${type}`,
+                }}
+                rightContent={
+                    <>
+                        <SortFilesButton
+                            type={type}
+                            trackGroup={trackGroup}
+                            favoriteGroup={favoriteGroup}
+                            setSortGroups={setSortGroups}
+                            setSortFiles={setSortFiles}
+                            markers={markers}
+                            smartf={smartf}
+                        />
+                        {type === TRACKS_TYPE && !hiddenBtn && (
+                            <Tooltip key={'add_folder'} title={t('add_new_folder')} arrow placement="bottom-end">
+                                <span>
                                     <IconButtonWithPermissions
-                                        id="se-import-cloud-track"
-                                        component="span"
+                                        id="se-add-folder"
                                         variant="contained"
                                         type="button"
                                         disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
                                         className={styles.appBarIcon}
+                                        onClick={() => setOpenAddFolderDialog(true)}
                                     >
-                                        <ImportIcon />
+                                        <AddFolderIcon />
                                     </IconButtonWithPermissions>
-                                </CloudGpxUploader>
-                            </span>
-                        </Tooltip>
-                    )}
-                    {type === TRACKS_TYPE && !hiddenBtn && (
-                        <Tooltip
-                            key={'create_new_route'}
-                            title={t('plan_route_create_new_route')}
-                            arrow
-                            placement="bottom-end"
-                        >
-                            <span>
-                                <ActionIconBtn
-                                    id={'se-create-new-route'}
-                                    onClick={() =>
-                                        confirm({
-                                            ctx,
-                                            title: 'Plan Route: new track',
-                                            text: 'Stop editing the current track?',
-                                            skip: ctx.createTrack?.enable !== true,
-                                            callback: () => TracksManager.createTrack(ctx),
-                                        })
-                                    }
-                                    icon={<AddTrackIcon />}
-                                />
-                            </span>
-                        </Tooltip>
-                    )}
-                    {type === FAVORITES_TYPE && !hiddenBtn && (
-                        <Tooltip
-                            key={'import_fav_group'}
-                            title={t('web:import_favorite_groups')}
-                            arrow
-                            placement="bottom-end"
-                        >
-                            <span>
-                                <FavoriteGroupUploader>
-                                    <IconButton
-                                        id="se-import-fav-group"
-                                        component="span"
-                                        variant="contained"
-                                        type="button"
-                                        className={styles.appBarIcon}
-                                    >
-                                        <ImportIcon />
-                                    </IconButton>
-                                </FavoriteGroupUploader>
-                            </span>
-                        </Tooltip>
-                    )}
-                </Toolbar>
-            </AppBar>
+                                </span>
+                            </Tooltip>
+                        )}
+                        {type === TRACKS_TYPE && !hiddenBtn && (
+                            <Tooltip key={'import_track'} title={t('import_tracks')} arrow placement="bottom-end">
+                                <span>
+                                    <CloudGpxUploader folder={trackGroup ? trackGroup?.fullName : DEFAULT_GROUP_NAME}>
+                                        <IconButtonWithPermissions
+                                            id="se-import-cloud-track"
+                                            component="span"
+                                            variant="contained"
+                                            type="button"
+                                            disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
+                                            className={styles.appBarIcon}
+                                        >
+                                            <ImportIcon />
+                                        </IconButtonWithPermissions>
+                                    </CloudGpxUploader>
+                                </span>
+                            </Tooltip>
+                        )}
+                        {type === TRACKS_TYPE && !hiddenBtn && (
+                            <Tooltip
+                                key={'create_new_route'}
+                                title={t('plan_route_create_new_route')}
+                                arrow
+                                placement="bottom-end"
+                            >
+                                <span>
+                                    <ActionIconBtn
+                                        id={'se-create-new-route'}
+                                        onClick={() =>
+                                            confirm({
+                                                ctx,
+                                                title: 'Plan Route: new track',
+                                                text: 'Stop editing the current track?',
+                                                skip: ctx.createTrack?.enable !== true,
+                                                callback: () => TracksManager.createTrack(ctx),
+                                            })
+                                        }
+                                        icon={<AddTrackIcon />}
+                                    />
+                                </span>
+                            </Tooltip>
+                        )}
+                        {type === FAVORITES_TYPE && !hiddenBtn && (
+                            <Tooltip
+                                key={'import_fav_group'}
+                                title={t('web:import_favorite_groups')}
+                                arrow
+                                placement="bottom-end"
+                            >
+                                <span>
+                                    <FavoriteGroupUploader>
+                                        <IconButton
+                                            id="se-import-fav-group"
+                                            component="span"
+                                            variant="contained"
+                                            type="button"
+                                            className={styles.appBarIcon}
+                                        >
+                                            <ImportIcon />
+                                        </IconButton>
+                                    </FavoriteGroupUploader>
+                                </span>
+                            </Tooltip>
+                        )}
+                    </>
+                }
+            />
             {openAddFolderDialog && (
                 <AddFolderDialog trackGroup={trackGroup} setOpenAddFolderDialog={setOpenAddFolderDialog} />
             )}

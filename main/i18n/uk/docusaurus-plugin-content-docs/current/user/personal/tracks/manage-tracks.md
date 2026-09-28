@@ -1,5 +1,5 @@
 ---
-source-hash: 0463e77d7c7b16b32597e8b58ed5f0f3ab503d8948f900849329bfebf320df08
+source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
 sidebar_position: 2
 title:  Керування треками
 ---
@@ -70,7 +70,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *вкладка <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
 ![Мої місця з треками в Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
@@ -78,15 +78,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *вкладка <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Мої місця з треками в iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.png)
+![Мої місця з треками в iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 Усі коли-небудь записані, створені або імпортовані треки автоматично відображаються в теці [Мої місця](../../personal/myplaces.md) на вкладці *Треки*. Вони впорядковані за теками або відображаються у списку під ними.
+
+Кожен трек у списку відображає назву батьківської теки на другому рядку, розділену символом `|` (наприклад, `Hiking | Tracks`), що полегшує визначення місця зберігання треку. Це стосується [Пошуку](#search), [Розумних тек](../../personal/tracks/smart-folder.md) та [Налаштувати карту → Треки](../../map/tracks/index.md#configure-map).
 
 
 ### Меню треку {#track-menu}
@@ -103,9 +105,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *вкладка <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Контекстне меню треку в iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Контекстне меню треку в iOS](@site/static/img/personal/tracks/one_track_menu_ios.webp)
 
 </TabItem>
 
@@ -157,7 +159,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Функція пошуку треків у Моїх місцях iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.png)
+![Функція пошуку треків у Моїх місцях iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -169,7 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - Пошук за назвою треку.
 - [Сортувати за](#sort-by) для кращого пошуку, якщо ви не пам'ятаєте назву.
-- [Фільтр](./smart-folder.md#search-filter) (*лише для Android*), якщо вам потрібні певні характеристики треку.
+- [Фільтр](./smart-folder.md#search-filter) якщо вам потрібні певні характеристики треку.
 
 
 ### Режим вибору {#selection-mode}
@@ -184,7 +186,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Треки в Моїх місцях iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.png)
+![Треки в Моїх місцях iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -221,7 +223,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![Функція сортування треків у Моїх місцях iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.png)
+![Функція сортування треків у Моїх місцях iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
 
 </TabItem>
 
@@ -254,7 +256,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 <TabItem value="ios" label="iOS">
 
-![Функція сортування треків у Моїх місцях iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.png)
+![Функція сортування треків у Моїх місцях iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -281,7 +283,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 > Довгий дотик до поля теки, щоб **відкрити** меню теки.
 
-![Контекстне меню треку в iOS](@site/static/img/personal/tracks/folder_menu_2_ios.png)
+![Контекстне меню треку в iOS](@site/static/img/personal/tracks/folder_menu_2_ios.webp)
 
 </TabItem>
 
@@ -295,7 +297,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 - **Назва** — Відображає назву теки, дату створення та кількість треків, які вона містить.
 - **Показати всі треки на карті** (*лише для Android*) — Відображає всі треки з теки на карті. Якщо треків багато, це може призвести до зависання пристрою.
 - **Редагувати назву** (*Android*) / **Перейменувати** (*iOS*) — Дозволяє перейменувати теку.
-- [Змінити вигляд за замовчуванням](../../map/tracks/appearance.md) (*Android*) / **Вигляд** (*iOS*) — Змінює вигляд відображення всіх треків у теці.
+- [Змінити вигляд за замовчуванням](../../map/tracks/appearance.md) (*Android*) / **Вигляд за замовчуванням** (*iOS*) — Змінює вигляд відображення всіх треків у теці.
 - [Експорт](../../personal/import-export.md) — Відкриває вкладку *Меню → Налаштування → Дії* для експорту всіх треків у теці як [файл `.osf`](../../personal/import-export.md#export).
 - [Перемістити](#track-folder) — Дозволяє перемістити теку в іншу існуючу теку або створити нову.
 - [Видалити теку](#delete-folder) — Видаляє теку після підтвердження. ***Ця дія є незворотною.***
@@ -317,7 +319,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 Перейдіть до: *вкладка <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Мої місця з треками в iOS](@site/static/img/personal/tracks/dashboard_2_ios.png)
+![Мої місця з треками в iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
@@ -349,7 +351,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Треки в Моїх місцях iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.png)
+![Треки в Моїх місцях iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -388,7 +390,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 Перейдіть до: *вкладка <Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![Контекстне меню треку в iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.png)
+![Контекстне меню треку в iOS](@site/static/img/personal/tracks/tracks_delete_folder_ios.webp)
 
 </TabItem>
 

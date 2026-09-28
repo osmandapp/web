@@ -1,7 +1,7 @@
 import { AppBar, Box, CircularProgress, Grid, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import { ReactComponent as FilterIcon } from '../../assets/icons/ic_action_filter.svg';
 import { ReactComponent as DesertIcon } from '../../assets/icons/ic_action_desert.svg';
 import { ReactComponent as ChangePointsIcon } from '../../assets/icons/ic_action_change_navigation_points.svg';

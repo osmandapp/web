@@ -1833,3 +1833,12 @@ const TracksManager = {
 };
 
 export default TracksManager;
+
+export function resetCloudTracksMenu(ctx) {
+    if (ctx.openGroups?.length) {
+        ctx.setOpenGroups([]);
+    }
+    if (ctx.selectedCloudTrackObj) {
+        ctx.setSelectedCloudTrackObj(null);
+    }
+}

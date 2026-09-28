@@ -1,11 +1,12 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, expectInputExactBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
+import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -33,6 +34,16 @@ export default async function test() {
     await waitByRemoved(By.id('se-add-fav-dialog'));
     await waitBy(By.id('se-wpt-details'));
     await waitBy(By.id('se-add-poi-to-fav-item'));
+
+    // right-click elsewhere while the POI is open: the new favorite must not take the POI's name (#2030)
+    await actionOpenContextMenu();
+    await clickBy(By.id('se-add-favorite-action'));
+    await waitBy(By.id('se-add-fav-dialog'));
+    await expectInputExactBy(By.id('se-fav-name-input'), '');
+    await clickBy(By.id('se-close-add-wpt-panel'));
+    await waitByRemoved(By.id('se-add-fav-dialog'));
+    await waitBy(By.id('se-wpt-details'));
+    await waitBy(By.css('[id^="se-selected-marker-"]')); // the POI pin is back once the panel is closed
 
     // add POI to favorites
     await clickBy(By.id('se-add-poi-to-fav-item'));

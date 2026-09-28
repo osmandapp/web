@@ -1,3 +1,8 @@
+import { generateHTML, generateJSON } from '@tiptap/core';
+import StarterKit from '@tiptap/starter-kit';
+
+const EXTENSIONS = [StarterKit];
+
 /**
  * Converts legacy plain text to HTML for loading into the rich text editor.
  * Used only for backward compatibility with descriptions saved before rich text was introduced.
@@ -41,4 +46,14 @@ export function htmlToText(html) {
  */
 export function stripHtml(html) {
     return htmlToText(html).replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Keeps only the HTML the rich text editor itself produces (paragraphs, marks, lists, safe links);
+ * every other tag, attribute and script is dropped.
+ */
+export function sanitizeHtml(html) {
+    if (!html) return '';
+
+    return generateHTML(generateJSON(html, EXTENSIONS), EXTENSIONS);
 }

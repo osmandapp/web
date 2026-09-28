@@ -18,6 +18,21 @@ Direct links to free OsmAnd versions.
 
 ## Version 5 {#version-5}
 
+### Version 5.4 {#version-54}
+
+Release date 09/2026:
+
+- Refreshed search UI: sorting, category filters, cleaner look.
+- Attach photos and media to Favorites.
+- Favorites: subgroups support and pinnable folders.
+- Coordinates: search, map grid, and POI display now support EPSG and Maidenhead locator.
+- Fixed navigation interruptions; switch between Standard and Fast routing.
+- Set Android Auto map scale separately from your phone.
+- New spatial search — find places and search around a place.
+- Astronomy: added solar and lunar eclipse explorers.
+
+<DownloadRelease blog="osmand-android-5-4-released" release="net.osmand-5.4.7-5407.apk" />
+
 ### Version 5.3 {#version-53}
 
 Release date 04/2026:

@@ -139,6 +139,11 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
+        // the add-favorite preview owns the pin until the panel closes
+        if (isAddFavoritePreviewActive(ctx)) {
+            return;
+        }
+
         // Skip if the correct pin is already on the map
         const existingPin = ctx.selectedCreatedLayerRef?.current;
         if (existingPin && map.hasLayer(existingPin) && existingPin.options?.idObj === selectedObjId) {

@@ -1,5 +1,5 @@
 ---
-source-hash: f422e59349d6388e9755105387f9fd8b3e2224360d149f88388d21027f9554c1
+source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
 sidebar_position: 1
 title:  Планування маршруту
 ---
@@ -25,13 +25,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_overview_andr.png)
+![Планування маршруту android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Планування маршруту iOS](@site/static/img/plan-route/plan_route_overview_ios.png)
+![Планування маршруту ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
 
 </TabItem>
 
@@ -46,7 +46,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
-![Планування маршруту Android](@site/static/img/plan-route/plan-route-menu-andr.png)
+![Планування маршруту android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
@@ -54,7 +54,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
-![Планування маршруту iOS](@site/static/img/plan-route/plan-route-menu-ios.png)
+![Планування маршруту ios](@site/static/img/plan-route/plan-route-menu-ios.png)
 
 </TabItem>
 
@@ -63,7 +63,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Створення нового маршруту {#create-new-route}
 
-Щоб створити новий трек у форматі GPX, використовуйте основну функцію інструмента *Планування маршруту*. Попереднє створення маршруту має багато переваг, на відміну від запису поточного треку за допомогою *[плагіна Запис поїздки](../plugins/trip-recording.md)*. Ви можете [додавати](#adding-points) скільки завгодно точок до маршруту, [видаляти та переміщувати їх](#point-context-menu), змінювати типи маршрутів за [сегментами](#route-between-points) та отримувати [детальну інформацію про маршрут](#graph).  
+Щоб створити новий трек у форматі GPX, використовуйте основну функцію інструмента *Планування маршруту*. Попереднє створення маршруту має багато переваг, на відміну від запису поточного треку за допомогою *[плагіна Запис поїздки](../plugins/trip-recording.md)*. Ви можете [додавати](#adding-points) скільки завгодно точок до маршруту, [видаляти та переміщувати їх](#point-context-menu), змінювати типи маршрутів за [сегментами](#route-between-points) та отримувати [детальну інформацію про маршрут](#graph--analyze).  
 
 За замовчуванням тип маршрутизації відповідатиме раніше вибраному профілю. Торкніться значка маршрутизації, щоб вибрати, як програма має розраховувати сегмент для з'єднання точок. Доступний профіль слід налаштувати [окремо](../navigation/routing/osmand-routing.md#routing-types).  
 
@@ -93,7 +93,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Вимірювання відстані {#distance-measurement}
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_lines_andr.png)  
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Планування маршруту android](@site/static/img/plan-route/plan_route_lines_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Планування маршруту iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
+
+</TabItem>
+
+</Tabs>  
 
 *Планування маршруту* — це швидкий і простий спосіб виміряти відстань між точками.
 
@@ -108,11 +122,23 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Отримання даних про висоту {#get-elevation-data}
 
-<InfoAndroidOnly />
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_graph_4_andr.png)  
+<TabItem value="android" label="Android">
 
-Якщо в існуючому треку відсутні [дані про висоту](../map/tracks/track-context-menu.md#calculate-missing-elevation), їх можна додати за допомогою наступних інструментів:
+![Планування маршруту android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Планування маршруту iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
+
+</TabItem>
+
+</Tabs> 
+
+Якщо [дані про висоту](../map/tracks/track-context-menu.md#calculate-missing-elevation) відсутні в існуючому треку, їх можна додати за допомогою таких інструментів:
 
 - [Використовувати прилеглі дороги](#attach-track-to-roads). Цей режим використовує офлайн-карти для пошуку найближчих доріг для побудови треку, тому дані про висоту будуть отримані з прив'язаних доріг. Геометрію треку можна коригувати.  
 - [Використовувати карти рельєфу](../map/tracks/track-context-menu.md#calculate-missing-elevation). ([OsmAnd Pro](../purchases/android.md#pro-features)) Режим розраховує висоту на основі даних карти рельєфу (3D). Різниця між висотами, записаними вашим пристроєм, може бути використана для корекції висоти.  Геометрія треку залишається незмінною.
@@ -131,13 +157,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту прив'язка до дороги Android](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Plan a route snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Планування маршруту прив'язка до дороги iOS](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -184,7 +210,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Планування маршруту обрані Android](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Планування маршруту android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Планування маршруту Favorites android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Щоб виміряти відстань або спланувати поїздку, додавайте точки в місці розташування *Вказівника* одну за одною і натискайте кнопку *Додати*. Перейшовши до **списку точок** нижче, ви можете змінювати порядок точок, видаляти їх або отримати доступ до контекстного меню конкретної [точки](#point-context-menu).
 
@@ -194,9 +220,9 @@ To generate navigation instructions:
 
 <TabItem value="ios" label="iOS">
 
-![Планування маршруту iOS](@site/static/img/plan-route/plan_route_points_list_ios.png)
+![Планування маршруту ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-Щоб виміряти відстань або спланувати поїздку, додавайте точки в місці розташування *Вказівника* одну за одною і натискайте кнопку *Додати точку*. Перейшовши до **списку точок** нижче, ви можете змінювати порядок точок, видаляти їх або отримати доступ до контекстного меню конкретної [точки](#point-context-menu).
+Щоб виміряти відстань або спланувати поїздку, додавайте точки в місці розташування *Вказівника* одну за одною і натискайте кнопку *Route +*. Перейшовши до **списку точок** нижче, ви можете змінювати порядок точок, видаляти їх або отримати доступ до контекстного меню конкретної [точки](#point-context-menu).
 
 </TabItem>
 
@@ -205,30 +231,40 @@ To generate navigation instructions:
 :::note
 Ви також можете **Скасувати**/**Повторити** кожну дію, зроблену під час планування маршруту.
 :::
+
+### Додавання точок маршруту (лише iOS) {#adding-waypoints}
+
+![Планування маршруту ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Планування маршруту ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
+
+Вкладка POI дозволяє додавати та керувати точками маршруту під час планування маршруту.
+
+Щоб додати точку маршруту, виберіть місце на карті та торкніться кнопки *+ POI*. Відкриється екран точки маршруту, де можна ввести назву, опис, адресу, вибрати групу та налаштувати значок, колір і форму. Можна вибрати наявну групу або торкнутися *Додати групу*, щоб створити нову.
+
+На вкладці POI відображаються додані точки, згруповані за папками. Кожна група показує свою назву та кількість точок, які вона містить. Для кожної групи торкніться меню з трьома крапками, щоб отримати доступ до дій групи:
+- **Перейменувати** — змінити назву групи.
+- **Змінити вигляд** — змінити вигляд групи.
+- **Сортувати** — змінити порядок точок у групі.
+- **Видалити** — видалити групу.
+
+Меню сортування містить такі параметри: *Останні зміни*, *Назва А–Я*, *Назва Я–А*, *Спочатку найновіші*, *Спочатку найстаріші*.
+
+Торкніться точки в групі, щоб відкрити її контекстне меню. Можна:
+- **Редагувати** — відкрити екран редагування точки маршруту.
+- **Видалити** — видалити точку з групи.
   
 ### Маршрут між точками {#route-between-points}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Планування маршруту android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Планування маршруту android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
 Додані в редакторі точки можна з'єднати прямою лінією або маршрутом між точками вибраного профілю. Доступ до *Маршруту між точками* можна отримати кількома способами:
 
 1. З меню *Опції* *→* *Маршрут між точками*.
 2. Торкніться *значка профілю* в лівому нижньому куті екрана карти. Не верхнього значка, який відкриває меню Налаштувати карту.
 3. У *[Контекстному меню точки](#point-context-menu) → Змінити тип маршруту до/після*.  
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Планування маршруту Android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Планування маршруту iOS](@site/static/img/plan-route/plan_route_between_points_ios.png) ![Планування маршруту iOS](@site/static/img/plan-route/plan_route_change-route-type_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 Ви можете змінити маршрут між 2 конкретними точками або між кількома точками:
 
@@ -237,12 +273,72 @@ To generate navigation instructions:
 - *Змінити тип маршруту до/після точки*. У *контекстному меню точки* ви можете змінити спосіб розрахунку маршруту для ділянки від цієї точки до найближчої або до крайньої точки. Налаштування надає інформацію про відстань від цієї точки до початку або кінця маршруту, або до наступної/попередньої точки.
 - *Перерахувати маршрути*. Ви можете використовувати перерахунок маршруту без зміни типу профілю. Значок профілю, що відображається на запланованому маршруті в інструменті, не зміниться, але тип маршруту буде відповідати вибраному. Це може знадобитися для пошуку альтернативних маршрутів.  
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Планування маршруту ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Планування маршруту ios](@site/static/img/plan-route/settings_tab_ios.webp)
+
+Додані точки можна з'єднати прямою лінією або маршрутом, розрахованим за допомогою вибраного профілю маршрутизації. Меню «Маршрут між точками» дозволяє переглядати та змінювати тип маршрутизації та налаштування для сегментів і ділянок маршруту.
+
+Відкрити «Маршрут між точками» можна, торкнувшись кнопки *Маршрут між точками*, на якій відображається значок поточного вибраного профілю маршрутизації, або з меню [Сегмент](#segments) чи Розділ.
+
+На вкладці «Тип маршруту» можна вибрати профіль маршрутизації для вибраного сегмента чи ділянки. Пряма лінія доступна як перший варіант, а потім — доступні профілі маршрутизації.
+
+Коли маршрут містить лише один тип маршрутизації, відображається простий вигляд «Маршрут між точками». Коли маршрут містить кілька типів маршрутизації, у складному вигляді показуються всі сегменти та ділянки, що дозволяє вибрати, яку частину маршруту змінити.
+
+Також можна:
+- **Почати новий сегмент** — створити новий сегмент і продовжити додавання точок маршруту. Новий сегмент використовує той самий тип маршруту, що й поточний.
+- **Змінити для всього треку** — вибрати тип маршрутизації для застосування до всього треку.
+
+На вкладці «Налаштування» можна вибрати попередньо визначені налаштування маршрутизації для вибраного типу маршруту.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Сегменти {#segments}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Сегмент треку — це набір точок, з'єднаних без **розривів**. В інструменті планування маршруту можливо:
 
 - Об'єднувати сегменти: опція [Об'єднати сегменти](#point-context-menu) усуває розрив до раніше розділених сегментів.
 - Розділяти або створювати нові, нез'єднані ділянки треку. Щоб створити таку ділянку, використовуйте опцію [Почати новий сегмент](#point-context-menu) або виберіть функцію [Розділити](#point-context-menu) з контекстного меню точки.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Планування маршруту ios](@site/static/img/plan-route/segment_menu.webp) ![Планування маршруту ios](@site/static/img/plan-route/section_menu.webp)
+
+Маршрут може містити один або кілька сегментів. Сегмент може використовувати один тип маршруту або містити кілька ділянок з різними типами маршруту.
+
+На вкладці «Маршрут» кожен сегмент відображається з його типом маршруту та відстанню. Коли сегмент містить кілька ділянок, кожна ділянка показує свій тип маршруту та відстань.
+
+Керувати сегментом можна за допомогою меню з трьома крапками:
+- **Змінити тип маршруту** — доступно для сегмента з одним типом маршруту. Відкриває «Маршрут між точками», де можна вибрати інший тип маршруту.
+- **Встановити один тип маршруту** — доступно, коли сегмент містить кілька ділянок з різними типами маршруту. Відкриває «Маршрут між точками», де можна застосувати один тип маршруту до сегмента.
+- **Сортувати** — змінити порядок точок маршруту вручну або використати «Сортувати door-to-door», щоб змінити їхній порядок для мінімізації загальної відстані подорожі.
+- **Зберегти як…** — зберегти сегмент як окремий файл.
+- **Видалити сегмент** — видалити сегмент.
+
+Щоб створити новий нез'єднаний сегмент, торкніться *Почати новий сегмент* у нижній частині вкладки «Маршрут».
+
+Сегмент можна розділити на [ділянки](#multimodal-routes), коли для різних частин сегмента використовуються різні типи маршруту. Кожна ділянка відображає свій тип маршруту та відстань.
+
+Торкніться меню з трьома крапками для ділянки, щоб:
+- **Змінити тип маршруту** — відкрити «Маршрут між точками» та вибрати інший тип маршруту.
+- **Сортувати** — отримати доступ до доступних параметрів сортування.
+- **Видалити ділянку** — видалити ділянку.
+
+</TabItem>
+
+</Tabs>
+
 
 ### Контекстне меню точки {#point-context-menu}
 
@@ -250,13 +346,13 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
+![Планування маршруту android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Планування маршруту iOS](@site/static/img/plan-route/plan_route_points_menu_ios.png)
+![Планування маршруту ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
 
 </TabItem>
 
@@ -294,13 +390,13 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Лінія маршруту Android](@site/static/img/plan-route/plan-route-routeline-android.png)
+![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Екран iOS](@site/static/img/plan-route/plan-route-routeline-ios.png)
+![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -317,24 +413,13 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Планування маршруту iOS](@site/static/img/plan-route/plan_route_save_changes_ios.png)
-
-</TabItem>
-
-</Tabs>  
-
+![Планування маршруту android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
 Після того, як ви [додали](#adding-points) принаймні одну точку на карту, ви можете скористатися опцією збереження. Усі треки, збережені в *Плануванні маршруту*, можна знайти в головному *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
 Існує чотири способи збереження:
 
-- ***Швидке збереження***. Кнопка ***Готово*** / ***Зберегти*** (для існуючих треків) у верхньому правому куті дозволяє швидко зберегти зміни та вийти з інструмента *Планування маршруту*. Назва генерується на основі поточної дати.
+- ***Швидке збереження***. Кнопка ***Готово*** (для існуючих треків) у верхньому правому куті дозволяє швидко зберегти зміни та вийти з інструмента *Планування маршруту*. Назва генерується на основі поточної дати.
 - ***Зберегти зміни*** в [меню Опції](#options) дозволяє зберегти зміни у файл і продовжити планування маршруту.
 - ***Зберегти як новий трек*** в [меню Опції](#options) відкриває діалогове вікно, де ви вказуєте назву треку та папку, в яку буде збережено маршрут.
 - ***Додати зміни до треку***. Приєднує створений трек як [окремий сегмент](#segments) до іншого існуючого треку. Зміни до вибраного треку *не можна скасувати*.
@@ -345,23 +430,35 @@ To generate navigation instructions:
 При збереженні нового треку ви можете вибрати опцію ***Спрощений*** трек, щоб зробити його сумісним з іншими сторонніми програмами. Технічно трек буде збережено без інструкцій маршруту як суто геометричний трек.
 :::
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Планування маршруту ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
+
+Після того, як ви [додали](#adding-points) принаймні одну точку на карту, ви можете скористатися опцією збереження. Усі треки, збережені в *Плануванні маршруту*, можна знайти в головному *<Translate ios="true" ids="shared_string_menu"/> → <Translate ios="true" ids="shared_string_my_places"/> →* *[<Translate ios="true" ids="shared_string_gpx_tracks"/>](../personal/tracks/manage-tracks.md)*.
+
+Для нового маршруту торкніться *Зберегти* на верхній панелі інструментів, щоб зберегти поточний трек. Також можна використати *Зберегти як…* з меню Опції, щоб ввести ім'я файлу та зберегти маршрут.
+
+Під час редагування наявного треку *Зберегти* зберігає поточні зміни. Також можна скористатися такими опціями:
+- **Зберегти як…** — зберегти трек з новим іменем файлу.
+- **Зберегти як копію** — зберегти дублікат треку.
+- **Додати до наявного треку** — додати запланований трек як окремий сегмент до наявного треку.
+
+При збереженні трек успадковує тип активності профілю маршрутизації, використаного для планування. Активність зберігається в метаданих треку та зберігається після експорту або імпорту файлу GPX.
+
+</TabItem>
+
+</Tabs>  
+
+
 ### Опції {#options}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Опції меню планування маршруту Android](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Опції меню планування маршруту iOS](@site/static/img/plan-route/plan_route_menu_options_ios.png)
-
-</TabItem>
-
-</Tabs>
+![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Показує вибраний профіль програми (за замовчуванням — пряма лінія). Натискання цієї дії аналогічне натисканню кнопки *Профіль*, що відкриває [меню профілів](../personal/profiles.md) програми.
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) або **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Малює нові сегменти маршруту, які не з'єднуються з попереднім сегментом.
@@ -375,30 +472,56 @@ To generate navigation instructions:
 - [<Translate android="true" ids="get_altitude_data"/>](#get-elevation-data) (*лише для Android*). Ця опція відображається в меню, лише якщо дані про висоту недоступні. За допомогою цієї [опції](#get-elevation-data) ви можете розрахувати висоту, використовуючи *дані карти рельєфу*, або використовувати дані із завантажених карт для пошуку *прилеглих доріг*.
 - ***<Translate android="true" ids="shared_string_clear_all"/>***. Ця дія повністю архівує всі ваші дії. На карті залишається "артефакт" - пунктирні лінії щойно очищеного маршруту. Він зникає при наступному додаванні нових точок. Ви можете скасувати функцію "Очистити все" за допомогою кнопки "Повернути дію". Ця функція не впливає на незмінені частини маршрутів, відкритих в інструменті.
 
-### Графік {#graph}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Планування маршруту Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Планування маршруту прив'язка до дороги iOS](@site/static/img/plan-route/plan_route-snap_ios.png)
+![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+
+Торкніться меню з трьома крапками на верхній панелі інструментів, щоб відкрити меню *Опції*. Доступні дії залежать від того, чи створюєте ви новий маршрут, чи редагуєте наявний трек.
+
+- **Зберегти як…** — зберегти маршрут з новим іменем файлу. Доступно як для нових маршрутів, так і для редагованих треків.
+- **Зберегти як копію** — зберегти дублікат наявного треку. Доступно під час редагування наявного треку.
+- **Додати до наявного треку** — додати запланований маршрут як окремий сегмент до наявного треку.
+- **Змінити порядок сегментів** — змінити порядок сегментів маршруту.
+- **Реверсувати маршрут** — змінити напрямок маршруту.
+- **Навігація** — закрити «Планування маршруту» та почати навігацію за запланованим маршрутом.
+- **Очистити всі точки** — видалити всі точки із запланованого маршруту.
 
 </TabItem>
 
 </Tabs>
 
+
+### Графік / Аналіз {#graph--analyze}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Планування маршруту android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
+
 Під час планування маршруту [графік](../navigation/setup/route-details.md#elevation-graph) відображає інформацію про висоту маршруту та відсоток нахилу, крім того, ви можете торкнутися будь-де на графіку, щоб відобразити вказівник з конкретними даними.  
 
-- Для **Android** графік відображається на вкладці *Графік* під час створення або відкриття треку, а також під час [навігації](../navigation/setup/gpx-navigation.md) за допомогою *Планування маршруту*.
-- Для **iOS** графік доступний лише через меню *[Опції](#options) → Навігація*.
+Графік відображається на вкладці *Графік*, коли створюєте або відкриваєте трек, а також під час [навігації](../navigation/setup/gpx-navigation.md) за допомогою *Планування маршруту*.
 
 При розрахунку маршруту для навігації в *Плануванні маршруту* ви можете дізнатися додаткову інформацію про трек, таку як [інформація про висоту](../navigation/setup/route-details.md#elevation-info) та [атрибути доріг](../navigation/setup/route-details.md#road-attributes), а також використовувати інструмент [Аналіз на карті](../navigation/setup/route-details.md#analyze-on-map). Натисніть кнопку *Деталі* під графіком.  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+
+У розділі «Огляд» відображається графік на основі вибраної осі. Використовуйте елементи керування вибором осі, щоб вибрати дані, що відображаються на графіку. *Перерахувати висоту* дозволяє перерахувати дані про висоту за потреби. Якщо дані про висоту недоступні, на вкладці «Аналіз» відображається повідомлення «Немає даних про висоту». У повідомленні пояснюється, що OsmAnd може отримати дані про висоту з прилеглих доріг або карт рельєфу. Торкніться *Отримати дані про висоту*, щоб розрахувати дані про висоту. Докладніше див. у розділі [Отримання даних про висоту](#get-elevation-data).
+
+У розділі «Статистика огляду» відображаються *Підйом*, *Спуск*, *Діапазон висот*, *Середня швидкість*, *Макс. швидкість* та *Час у русі*. Якщо дані недоступні, відображається тире `–`. Наприклад, швидкість і час у русі можуть бути недоступні для запланованих маршрутів.
+
+Розділи «Типи доріг», «Крутизна», «Покриття» та «Рівність» показують відповідні характеристики маршруту. Торкніться розділу, щоб розгорнути його та переглянути детальну інформацію в легенді.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Пов'язані статті {#related-articles}

@@ -4,6 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import headerStyles from '../../../menu/trackfavmenu.module.css';
 import styles from './header.module.css';
+import CloseMenuBtn from '../btns/CloseMenuBtn';
 
 export default function HeaderNoUnderline({
     title,
@@ -38,6 +39,7 @@ export default function HeaderNoUnderline({
                     {title}
                 </Typography>
                 {rightContent}
+                {showBackButton && <CloseMenuBtn />}
             </Toolbar>
         </AppBar>
     );

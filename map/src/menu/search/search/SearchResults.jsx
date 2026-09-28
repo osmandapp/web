@@ -32,7 +32,7 @@ import {
     FINAL_POI_ICON_NAME,
     WEB_VISIBLE_LEVEL,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getIconByType } from '../../../manager/SearchManager';
+import { clearSearchQuery, getIconByType } from '../../../manager/SearchManager';
 import { SEARCH_BRAND } from '../../../manager/searchConstants';
 import { parseTagWithLang } from '../../../manager/PoiManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
@@ -305,9 +305,7 @@ export default function SearchResults() {
             requestMapViewPop(MAP_VIEW_SEARCH_RESULT);
         }
         ctx.setCurrentObjectType(null);
-        ctx.setSearchResult(null);
-        ctx.setSearchFavoriteGroupIds(null);
-        ctx.setSearchQuery(null);
+        clearSearchQuery(ctx);
         ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
         navigateToSearchMenu();
     }

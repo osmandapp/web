@@ -1,5 +1,5 @@
 ---
-source-hash: 935cab06de14f7d40135dc91b1f1ba4ea6e4f6419796e6398db2850a17971af3
+source-hash: 2df72c626622b22fd3530cff57499e3d1ce1f4de8b9b8d21dcc1dc00aeaa6583
 sidebar_position: 12
 title: Типи маршрутів
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Велосипедні {#cycle}
 
-[Велосипедні маршрути](https://wiki.openstreetmap.org/wiki/Cycle_routes) представлені трьома типами: *локальні* (`lcn`), *регіональні* (`rcn`), *національні* (`ncn`), *міжнародні* (`icn`). Також велосипедні маршрути можуть бути частиною [мережевих вузлів](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Ви можете вибрати, як призначати колір сегментам маршруту:
+[Велосипедні маршрути](https://wiki.openstreetmap.org/wiki/Cycle_routes) представлені такими типами: *локальні* (`lcn`), *регіональні* (`rcn`), *національні* (`ncn`), *міжнародні* (`icn`) та *некласифіковані*. Також велосипедні маршрути можуть бути частиною [мережевих вузлів](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). Ви можете вибрати, як призначати колір сегментам маршруту:
 
 - ***<Translate android="true" ids="layer_route"/>***.  
 ![Маршрути на карті - велосипедні маршрути](@site/static/img/map/map-routes-cycle-routes.png)
@@ -47,7 +47,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Пішохідні / Прогулянкові {#hiking--walking}
 
-[Пішохідні маршрути](https://wiki.openstreetmap.org/wiki/Walking_Routes) представлені трьома типами: *локальні* (`lwn`), *регіональні* (`rwn`), *національні* (`nwn`), *міжнародні* (`iwn`). Також пішохідні маршрути можуть бути частиною [мережевих вузлів](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd не розділяє прогулянкові та пішохідні маршрути й об’єднує їх в одну групу. Ви можете вибрати, як призначати колір сегментам маршруту:
+[Пішохідні маршрути](https://wiki.openstreetmap.org/wiki/Walking_Routes) представлені такими типами: *локальні* (`lwn`), *регіональні* (`rwn`), *національні* (`nwn`), *міжнародні* (`iwn`) та *некласифіковані*. Також пішохідні маршрути можуть бути частиною [мережевих вузлів](https://wiki.openstreetmap.org/wiki/Tag:network:type%3Dnode_network). OsmAnd не розділяє прогулянкові та пішохідні маршрути й об’єднує їх в одну групу. Ви можете вибрати, як призначати колір сегментам маршруту:
 
 - ***<Translate android="true" ids="rendering_value_walkingRoutesOSMC_name"/>***.  Кольори маршрутів відповідно до їхнього індивідуального [локального кольору](https://wiki.openstreetmap.org/wiki/Key:osmc:symbol#Maps_that_show_osmc:symbol) (якщо доступний у OpenStreetMap) та туристичного щита.  
 ![Маршрути на карті - пішохідні osmc](@site/static/img/map/map-routes-hiking-osmc.png)

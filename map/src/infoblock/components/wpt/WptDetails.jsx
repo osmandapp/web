@@ -120,11 +120,14 @@ import {
     isFavoriteFromSearch,
     isWptFromSearch,
     navigateBackToSearchResults,
+    closeWikiPoi,
 } from '../../../manager/SearchManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 import { getPoiApi, getPoiByMapObjectApi, getTransportStopApi } from '../../../manager/SearchApi';
+import LoginContext from '../../../context/LoginContext';
+import PhotoLibraryOutlinedIcon from '@mui/icons-material/PhotoLibraryOutlined';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -211,6 +214,8 @@ export async function getAddressByLatLon(lat, lon) {
 
 export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
+    const isAdmin = ltx.loginRoles?.includes('ROLE_ADMIN');
     const { t } = useTranslation();
 
     const navigate = useNavigate();
@@ -661,11 +666,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 });
             }
             setShowInfoBlock(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
             if (wpt.mapObj) {
+                ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
                 closeObjectFromMap();
             } else {
-                ctx.setSelectedPoiObj(null);
+                closeWikiPoi(ctx);
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + (ctx.exploreMenu ? EXPLORE_URL : ''),
                     hash: liveHash(),
@@ -906,11 +911,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     };
 
     const Header = () => {
+        // newWpt knows the origin at once, wpt only after the details are loaded
+        const mapObj = newWpt?.mapObj;
+
         return (
             <HeaderWithUnderline
                 onClose={() => closeDetails()}
-                showBackButton={!wpt?.mapObj}
-                appBarProps={{ id: wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
+                showBackButton={!mapObj}
+                appBarProps={{ id: mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
                 rightContent={<MapObjectsNav />}
             />
         );
@@ -1213,6 +1221,36 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                                 }}
                                             />
                                         )}
+                                    </>
+                                )}
+                                {wpt.wikidata && isAdmin && (
+                                    <>
+                                        <Divider />
+                                        <MenuItem className={styles.descTitle}>
+                                            <ListItemText>
+                                                <Typography className={styles.descTitleText}>
+                                                    {t('web:developer')}
+                                                </Typography>
+                                            </ListItemText>
+                                        </MenuItem>
+                                        <WptTagInfo
+                                            key={'top-photos'}
+                                            baseTag={{
+                                                icon: (
+                                                    <PhotoLibraryOutlinedIcon sx={{ color: 'var(--svg-icon-color)' }} />
+                                                ),
+                                                name: t('web:dev_top_photos'),
+                                                link: (
+                                                    <Link
+                                                        href={`${window.location.origin}/admin/top-photos/per-place?placeId=${wpt.wikidata}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        {wpt.wikidata}
+                                                    </Link>
+                                                ),
+                                            }}
+                                        />
                                     </>
                                 )}
                             </ListItemText>
