@@ -1,5 +1,5 @@
 ---
-source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
+source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
 sidebar_position: 2
 title: Pesquisar Endereço
 ---
@@ -87,6 +87,7 @@ O OsmAnd suporta vários formatos comuns de endereço. Você pode inserir endere
 | Formato de endereço | Consultas de exemplo |
 |---|---|
 | Número da casa + rua | 221B Baker Street<br />10 Downing Street |
+| Número da casa duplo + rua | 243/11 Husova |
 | Rua + número da casa | Baker Street 221B<br />Main Street 101 |
 | Cidade + rua + número da casa | London Baker Street 221B<br />Paris Rue de Rivoli 10 |
 | Interseções de ruas | Broadway & Wall Street<br />Main Street and High Street |
@@ -162,7 +163,7 @@ Essa forma de pesquisa facilita a localização de locais específicos dentro de
 
 <TabItem value="ios" label="iOS">
 
-![Pesquisar Rua iOS](@site/static/img/search/address_street_search_3_ios.png) ![Pesquisar Rua iOS](@site/static/img/search/address_street_search_4_ios.png)
+![Pesquisar Rua iOS](@site/static/img/search/address_street_search_3_ios.png) ![Pesquisar Rua Android](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 

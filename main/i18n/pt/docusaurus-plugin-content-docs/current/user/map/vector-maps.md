@@ -1,5 +1,5 @@
 ---
-source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
+source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
 sidebar_position: 5
 title:  Mapas Vetoriais
 ---
@@ -498,17 +498,38 @@ Ir para: *Menu → Configurar Mapa → Mostrar → Grelha de Coordenadas*
 
 <TabItem value="android" label="Android">  
 
-![Menu da grelha de coordenadas](@site/static/img/map/coordinates_grid_settings_andr.png)
+![Menu da grelha de coordenadas](@site/static/img/map/coordinates_grid_settings_andr.png) ![Menu da grelha de coordenadas](@site/static/img/map/coordinates_grid_format_andr.webp)
+
+A **Grelha de Coordenadas** sobrepõe uma grelha de referência no mapa, permitindo visualizar linhas de latitude e longitude com base em diferentes sistemas de coordenadas. Esta funcionalidade é útil para referência de localização precisa e navegação geoespacial. 
+
+Pode configurar as seguintes opções:
+- **Níveis de zoom:** defina os níveis de zoom mínimo e máximo (2 - 22) nos quais a grelha é visível.
+- **Posição das etiquetas:** escolha entre *Arestas* (predefinição) ou *Centro* para as etiquetas da grelha.
+- **Cor da grelha:** disponível separadamente para o modo Dia/Noite. 
+- **Formato de coordenadas:** selecione entre vários formatos disponíveis (ver lista abaixo).
+
+***Formatos de coordenadas disponíveis:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Graus, Minutos, Segundos)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Graus Decimais - formato predefinido WGS84)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Graus, Minutos Decimais)
+- **UTM** (EPSG:6387, Universal Transverse Mercator - sistema de grelha baseado em zonas). O nível de zoom mínimo é 9, apenas uma zona UTM é exibida de cada vez, pois as zonas são separadas por meridianos a cada 6°
+- **OLC** (Open Location Code, também conhecido como Plus Code)
+- **MGRS** (Military Grid Reference System)
+- **Sistema de coordenadas suíço** - Swiss Grid (CH1903) e Swiss Grid (CH1903+)
+- **Maidenhead** (Maidenhead Locator System)
+
+A secção **Recente** mostra os sistemas de coordenadas utilizados recentemente. Para adicionar outro sistema de coordenadas suportado, toque em *Selecionar outro formato*. Pode pesquisar pelo nome do sistema de coordenadas ou pelo código EPSG e, em seguida, tocar em *+* para adicioná-lo à lista.
+
+Por predefinição, a aplicação utiliza o formato de coordenadas selecionado em [Definições gerais](../personal/profiles.md#units--formats), mas pode alterá-lo diretamente neste menu.
+
+[Ação rápida](../widgets/quick-action.md#overview): Também pode adicionar um atalho rápido *Mostrar/Ocultar Grelha de Coordenadas* ao grupo [Configurar Mapa](../widgets/quick-action.md#configure-map) para acesso rápido.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menu da grelha de coordenadas](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
+![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 A **Grelha de Coordenadas** sobrepõe uma grelha de referência no mapa, permitindo visualizar linhas de latitude e longitude com base em diferentes sistemas de coordenadas. Esta funcionalidade é útil para referência de localização precisa e navegação geoespacial. 
 
@@ -529,6 +550,10 @@ Pode configurar as seguintes opções:
 Por predefinição, a aplicação utiliza o formato de coordenadas selecionado em [Definições gerais](../personal/profiles.md#units--formats), mas pode alterá-lo diretamente neste menu.
 
 [Ação rápida](../widgets/quick-action.md#overview): Também pode adicionar um atalho rápido *Mostrar/Ocultar Grelha de Coordenadas* ao grupo [Configurar Mapa](../widgets/quick-action.md#configure-map) para acesso rápido.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Rotas {#routes}

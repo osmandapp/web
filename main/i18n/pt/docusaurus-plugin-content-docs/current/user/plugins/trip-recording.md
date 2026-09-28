@@ -1,5 +1,5 @@
 ---
-source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
+source-hash: bc6d5ba96cb9e583b36cbcf01a41444d6f79cda06c1a7921fa913f30e6f428a8
 sidebar_position: 17
 title: Gravação de Viagem
 ---
@@ -296,7 +296,7 @@ Antes de começar a rastrear suas viagens, você precisa configurar corretamente
 | **Sensores externos** <br/> *Precisa de plugin ativado* | Dados de [sensores externos](../plugins/external-sensors.md#trip-recording) como *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, ou *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* são registrados no arquivo GPX. Dados de *Distância* não são registrados no Android ou iOS. Exibido apenas quando o [plugin de Sensores Externos](../plugins/external-sensors.md) está ativado. |
 | **Métricas do Veículo** <br/> *Precisa de plugin ativado* | Dados do [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) são registrados no arquivo GPX. Exibido apenas quando o [plugin de Métricas do Veículo](../plugins/vehicle-metrics.md) está ativado.<br />*Nota*: Você pode adicionar quais métricas registrar no arquivo GPX da lista: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Pasta de armazenamento de trilhas** (*Android*) | Define onde, na guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*, as trilhas gravadas são armazenadas. As opções incluem armazenar todas as trilhas na pasta Rec ou organizá-las por mês, como Rec/aaaa-mm. |
-| **Notificação** | Controla a exibição de uma [notificação de gravação de viagem](#notifications) do sistema na área de notificação do dispositivo que permite iniciar a gravação de viagens. |
+| **Mostrar botão 'Gravar' nas Notificações** | Controla a exibição de uma [notificação de gravação de viagem](#notifications) do sistema na área de notificação do dispositivo que permite iniciar a gravação de viagens. |
 | **Rastreamento online** (*Android*) | Permite o rastreamento em tempo real de sua localização enviando pontos registrados para uma URL especificada. O intervalo de rastreamento determina a frequência com que os pontos são enviados, e o buffer de tempo armazena pontos quando não há conexão com a Internet.<details><summary>*Observação*</summary>Se esta opção estiver ativada e a gravação da trilha estiver em andamento, o widget Distância/Iniciar-Parar (REC) fica **verde** em vez de **vermelho**, indicando que cada ponto registrado está sendo transmitido para uma URL especificada. O campo **Endereço da Web** permite que você insira a URL usando o seguinte formato de parâmetro:<ul><li>`lat={0}`: Latitude</li><li>`lon={1}`: Longitude</li><li>`timestamp={2}`: Carimbo de data/hora (tempo Unix)</li><li>`hdop={3}`: Diluição horizontal da precisão</li><li>`altitude={4}`: Altitude</li><li>`speed={5}`: Velocidade</li><li>`bearing={6}`: Rumos (direção do movimento)</li><li>`eta={7}`: Tempo estimado de chegada (tempo Unix)</li><li>`etfa={8}`: Tempo estimado para o primeiro ponto intermediário ou ponto final (tempo Unix)</li><li>`eda={9}`: Distância estimada até a chegada ou um marcador (em metros)</li><li>`edfa={10}`: Distância estimada até o primeiro ponto intermediário ou ponto final (em metros)</li><li>`batproc={11}`: Nível de bateria do dispositivo (porcentagem)</li></ul>Você pode definir o **Intervalo de Rastreamento** para especificar a frequência com que os pontos de localização são enviados, com opções que variam de 0 segundos a 5 minutos. Além disso, o parâmetro **Buffer de Tempo** determina por quanto tempo os pontos de localização são armazenados se não houver conexão com a Internet, garantindo que os dados sejam salvos e transmitidos quando a conexão for restaurada.</details><br />O OsmAnd armazena os pontos de localização não enviados apenas na memória temporária do aplicativo enquanto o aplicativo está em execução. Isso significa que o buffer não é gravado em armazenamento permanente. Se o aplicativo for fechado, forçado a parar ou o dispositivo reiniciado, todos os pontos em buffer são perdidos.<br />A configuração de Buffer de Tempo não define por quanto tempo os pontos são mantidos na memória — ela funciona apenas como um filtro no momento do upload. Quando o OsmAnd tenta enviar pontos em buffer, cada ponto é verificado contra o limite de Buffer de Tempo. Pontos mais antigos que o limite selecionado (por exemplo, 24 horas) são removidos em vez de serem enviados. Como resultado, o buffer pode temporariamente conter pontos mais antigos que o valor de Buffer de Tempo escolhido, mas esses pontos serão descartados durante o processo de upload. |
 | **Trilhas** | Uma referência rápida à pasta onde as trilhas são salvas na guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Redefinir configurações do plugin para o padrão** | Redefine todas as configurações de gravação de viagem para o perfil atual para seus padrões. |
@@ -320,7 +320,7 @@ Este recurso permite gerenciar as configurações de otimização de bateria par
 
 ![Notificação de Gravação de Viagem](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
-Se a [Notificação](#recording-settings) estiver ativada nas configurações do plugin, as notificações de gravação de viagem sempre serão exibidas na área de notificação do sistema quando a gravação estiver ativa. Esta notificação garante que o processo de gravação não seja interrompido pelo sistema, e não pode ser desativada durante uma gravação ativa.
+Se a opção [Mostrar botão 'Gravar' nas Notificações](#recording-settings) estiver ativada nas configurações do plugin, as notificações de gravação de viagem sempre serão exibidas na área de notificação do sistema quando a gravação estiver ativa. Esta notificação garante que o processo de gravação não seja interrompido pelo sistema, e não pode ser desativada durante uma gravação ativa.
 
 - A área de notificação é aberta quando você desliza para baixo a partir do topo da tela e fecha ao deslizar para cima. Essas mensagens notificam você sobre ações como iniciar/parar a gravação de viagem, especialmente quando a gravação automática está ativada durante a navegação.
 - As notificações permanecem visíveis independentemente de o aplicativo estar em primeiro plano, em segundo plano ou fechado. Você pode limpar manualmente a notificação antiga se ela não for mais necessária, mas isso não interromperá a gravação em andamento.
@@ -330,7 +330,7 @@ Se a [Notificação](#recording-settings) estiver ativada nas configurações do
 Este comportamento é exigido pelo Android para que qualquer serviço em primeiro plano, como a gravação de viagem, permaneça visível para você.
 
 - Se a notificação for removida, o Android interromperá automaticamente a gravação. Você pode usar a configuração [Prevenir registro autônomo](#recording-settings).
-- A configuração **Notificação** no OsmAnd afeta se a barra de notificação mostra um atalho para iniciar uma gravação quando nenhuma gravação está ativa. Ela **não** controla a visibilidade da notificação durante uma gravação ativa.
+- A configuração **Mostrar botão 'Gravar' nas Notificações** no OsmAnd afeta se a barra de notificação mostra um atalho para iniciar uma gravação quando nenhuma gravação está ativa. Ela **não** controla a visibilidade da notificação durante uma gravação ativa.
 
 **Opções adicionais do Android**.
 
@@ -422,7 +422,7 @@ Alguns widgets de Gravação de Viagem suportam múltiplos modos de exibição. 
 | Tempo em Movimento | Total (padrão); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
 | Subida | Total (padrão); <Translate android="true" ids="shared_string_last_uphill"/> |
 
-A alternância de modo depende do widget:
+A alternação de modo depende do widget:
 - Subida / Descida / Velocidade Máxima / Inclinação Média / Tempo em Movimento / Velocidade Média — toque no widget no mapa para alternar seu modo.
 - Distância (Iniciar-Parar) — o widget Distância suporta múltiplos modos de exibição (selecione-os nas configurações do widget), mas tocá-lo sempre abre o diálogo de Gravação de Viagem, onde você pode iniciar, parar e visualizar informações detalhadas sobre sua trilha. 
 
