@@ -6,7 +6,7 @@ import AppContext from '../../../context/AppContext';
 import LoginContext from '../../../context/LoginContext';
 import { INIT_LOGIN_STATE } from '../../../manager/LoginManager';
 import { apiGet, apiPost } from '../../../util/HttpApi';
-import { OSM_GPX_ABORT_KEYS } from '../../../menu/travel/TravelMenu';
+import { OSM_GPX_ABORT_KEYS, TRAVEL_REVIEWS_URL } from '../../../menu/travel/TravelMenu';
 import activities from '../../../resources/activities.json';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
@@ -22,7 +22,6 @@ import { ReactComponent as NoteIcon } from '../../../assets/icons/ic_action_note
 import { ReactComponent as InfoIcon } from '../../../assets/icons/ic_action_info_outlined.svg';
 import styles from '../../infoblock.module.css';
 
-const REVIEWS_URL = `${process.env.REACT_APP_OSM_GPX_URL}/api/pubtracks`;
 const VERDICTS = ['ok', 'wrong_activity', 'bad_quality', 'bad_line', 'simulated', 'garbage'];
 const MAX_OTHER_COMMENTS = 3;
 const ACTIVITY_LABELS = Object.fromEntries(activities.groups.flatMap((g) => g.activities).map((a) => [a.id, a.label]));
@@ -46,7 +45,7 @@ export default function TravelTrackReview() {
         if (id == null || ltx.loginUser === INIT_LOGIN_STATE) {
             return;
         }
-        apiGet(`${REVIEWS_URL}/reviews`, {
+        apiGet(`${TRAVEL_REVIEWS_URL}/reviews`, {
             params: { ids: id },
             abortControllerKey: OSM_GPX_ABORT_KEYS.reviews,
         }).then((response) => {
@@ -72,7 +71,7 @@ export default function TravelTrackReview() {
     async function saveReview(sentVerdict) {
         const id = ctx.selectedGpxFile.id;
         setSaving(true);
-        const response = await apiPost(`${REVIEWS_URL}/review`, {
+        const response = await apiPost(`${TRAVEL_REVIEWS_URL}/review`, {
             id,
             verdict: sentVerdict,
             activity: sentVerdict ? activity : '',

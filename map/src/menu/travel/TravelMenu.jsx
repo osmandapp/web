@@ -37,6 +37,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
+import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 import { convertMeters, getSmallLengthUnit, SMALL_UNIT } from '../settings/units/UnitsConverter';
 
 export const ALL_YEARS = 'all';
@@ -57,6 +58,15 @@ export const OSM_GPX_ABORT_KEYS = {
     tags: 'osmgpx-tags',
     reviews: 'osmgpx-reviews',
 };
+
+export const TRAVEL_REVIEWS_URL = `${process.env.REACT_APP_OSM_GPX_URL}/api/pubtracks`;
+
+// since: ISO time, only the tracks reviewed from then on; all reviewed tracks without it
+export function downloadTravelReviews(since = null) {
+    const link = document.createElement('a');
+    link.href = `${TRAVEL_REVIEWS_URL}/reviews.csv.gz${since ? `?since=${encodeURIComponent(since)}` : ''}`;
+    link.click();
+}
 
 const OTHER_GROUP = 'other';
 // as heat_build.py counts "All": activities plus the groups given by speed
@@ -534,6 +544,14 @@ export default function TravelMenu() {
                                 <TextWithLeftIcon icon={<SearchIcon />} text={t('web:travel_click_map_hint')} />
                                 <DividerWithMargin dashed={true} />
                                 <TextWithLeftIcon icon={<ReviewIcon />} text={t('web:travel_review_hint')} />
+                                {ltx.isAdmin() && (
+                                    <GrayBtnWithBlueHover
+                                        id="se-travel-reviews-download"
+                                        action={() => downloadTravelReviews()}
+                                        text={t('web:travel_reviews_download')}
+                                        additionalStyle={{ ml: '48px', mr: 2, mb: 2, maxWidth: '280px' }}
+                                    />
+                                )}
                                 <ThickDivider mt={0} mb={0} />
                                 <ColorBlock color={'#f0f0f0'} />
                             </>
