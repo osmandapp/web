@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
-import { CircularProgress, Link, Stack, TextField, Typography } from '@mui/material';
+import { Box, CircularProgress, Link, ListItemText, MenuItem, Stack, TextField, Typography } from '@mui/material';
 import MapContext from '../../context/MapContext';
 import MvtContext from '../../context/MvtContext';
 import { isMvtTileURL, isOsmAndTileURL } from '../../map/layers/MvtLayerConfig';
 import { parseMinZoomIdFilter } from '../../map/util/MvtMapUtils';
-import SimpleText from '../../frame/components/other/SimpleText';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
+import itemStyles from '../../frame/components/items/items.module.css';
+import styles from './configuremap.module.css';
 import { ReactComponent as AddIcon } from '../../assets/icons/ic_action_add_outlined.svg';
 import { ReactComponent as RemoveIcon } from '../../assets/icons/ic_action_remove_outlined.svg';
 import { ReactComponent as AddActiveIcon } from '../../assets/icons/ic_action_add_filled.svg';
@@ -65,53 +67,54 @@ export default function MvtTweaks() {
     ];
 
     return (
-        <>
-            <SimpleText
-                id="se-mvt-tile-stats"
-                text={
-                    <Typography component="div" align="center">
+        <Box className={styles.mvtTweaks}>
+            <MenuItem id="se-mvt-tile-stats" className={itemStyles.item} disableRipple>
+                <ListItemText disableTypography>
+                    <Typography>
                         Size <strong>{size} MB</strong>
+                    </Typography>
+                    <Typography variant="body2" className={`${itemStyles.addInfo} ${styles.mvtLabel}`}>
                         {` (${vtx.mvtTileStats?.count ?? '—'} tiles, map z${vtx.mvtTileStats?.mapZoom ?? '—'}, mvt z${vtx.mvtTileStats?.zoom ?? '—'})`}
                     </Typography>
-                }
-                maxLines={1}
-            />
+                </ListItemText>
+            </MenuItem>
+            <DividerWithMargin margin="16px" />
             {zoomShifts.map(({ id, name, value, disabled, loading, onChange }) => (
-                <SimpleText
-                    key={id}
-                    id={`se-mvt-${id}`}
-                    text={
-                        <Stack direction="row" alignItems="center" justifyContent="space-between">
-                            <Stack direction="row" alignItems="center" spacing={1}>
-                                <Typography>{name}</Typography>
-                                {loading && <CircularProgress size={16} aria-label={`Loading: ${name}`} />}
+                <React.Fragment key={id}>
+                    <MenuItem id={`se-mvt-${id}`} className={itemStyles.item} disableRipple>
+                        <ListItemText disableTypography>
+                            <Stack direction="row" alignItems="center" justifyContent="space-between" spacing={1}>
+                                <Stack direction="row" alignItems="center" spacing={1} className={styles.mvtLabel}>
+                                    <Typography>{name}</Typography>
+                                    {loading && <CircularProgress size={16} aria-label={`Loading: ${name}`} />}
+                                </Stack>
+                                <Stack direction="row" alignItems="center" spacing={1} className={styles.mvtStepper}>
+                                    <ActionIconBtn
+                                        aria-label={`Decrease ${name}`}
+                                        disabled={disabled || value <= -MAX_MVT_ZOOM_SHIFT}
+                                        onClick={onChange ? () => onChange(-1) : undefined}
+                                        icon={<RemoveIcon />}
+                                        activeIcon={<RemoveActiveIcon />}
+                                    />
+                                    <Typography className={styles.mvtShiftValue}>{value}</Typography>
+                                    <ActionIconBtn
+                                        aria-label={`Increase ${name}`}
+                                        disabled={disabled || value >= MAX_MVT_ZOOM_SHIFT}
+                                        onClick={onChange ? () => onChange(1) : undefined}
+                                        icon={<AddIcon />}
+                                        activeIcon={<AddActiveIcon />}
+                                    />
+                                </Stack>
                             </Stack>
-                            <Stack direction="row" alignItems="center" spacing={1}>
-                                <ActionIconBtn
-                                    aria-label={`Decrease ${name}`}
-                                    disabled={disabled || value <= -MAX_MVT_ZOOM_SHIFT}
-                                    onClick={onChange ? () => onChange(-1) : undefined}
-                                    icon={<RemoveIcon />}
-                                    activeIcon={<RemoveActiveIcon />}
-                                />
-                                <Typography>{value}</Typography>
-                                <ActionIconBtn
-                                    aria-label={`Increase ${name}`}
-                                    disabled={disabled || value >= MAX_MVT_ZOOM_SHIFT}
-                                    onClick={onChange ? () => onChange(1) : undefined}
-                                    icon={<AddIcon />}
-                                    activeIcon={<AddActiveIcon />}
-                                />
-                            </Stack>
-                        </Stack>
-                    }
-                />
+                        </ListItemText>
+                    </MenuItem>
+                    <DividerWithMargin margin="16px" />
+                </React.Fragment>
             ))}
-            <SimpleText
-                maxLines={null}
-                text={
+            <MenuItem className={itemStyles.item} disableRipple>
+                <ListItemText disableTypography>
                     <Stack spacing={1}>
-                        <Typography component="div">
+                        <Typography component="div" className={styles.mvtLabel}>
                             <label htmlFor="se-mvt-minzoom-id-filter">Limit minZoom shift by id</label> (
                             <Link
                                 component="button"
@@ -142,14 +145,15 @@ export default function MvtTweaks() {
                             onChange={(event) => changeMinZoomIdFilter(event.target.value)}
                         />
                     </Stack>
-                }
-            />
+                </ListItemText>
+            </MenuItem>
+            <DividerWithMargin margin="16px" />
             <SimpleItemWithSwitch
                 id="se-mvt-fractional-zoom"
                 text="Enable fractional map zoom"
                 checked={vtx.mvtTweaks.fractionalZoom}
                 onChange={() => vtx.setMvtTweaks((prev) => ({ ...prev, fractionalZoom: !prev.fractionalZoom }))}
             />
-        </>
+        </Box>
     );
 }

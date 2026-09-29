@@ -79,3 +79,21 @@
     font-style: normal !important;
     font-weight: 400 !important;
 }
+.mvtTweaks {
+    padding: 8px 0;
+}
+.mvtTweaks :global(.MuiListItemText-root) {
+    margin: 0;
+}
+.mvtLabel {
+    min-width: 0;
+    white-space: normal;
+}
+.mvtStepper {
+    flex-shrink: 0;
+}
+.mvtShiftValue {
+    min-width: 24px;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
