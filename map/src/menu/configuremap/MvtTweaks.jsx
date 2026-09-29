@@ -84,7 +84,10 @@ export default function MvtTweaks() {
                         Size <strong>{size} MB</strong>
                     </Typography>
                     <Typography variant="body2" className={`${itemStyles.addInfo} ${styles.mvtLabel}`}>
-                        {` (${vtx.mvtTileStats?.count ?? '—'} tiles, map z${vtx.mvtTileStats?.mapZoom ?? '—'}, mvt z${vtx.mvtTileStats?.zoom ?? '—'})`}
+                        {`${vtx.mvtTileStats?.count ?? '—'} tiles · map z${vtx.mvtTileStats?.mapZoom ?? '—'} · mvt z${vtx.mvtTileStats?.zoom ?? '—'}`}
+                    </Typography>
+                    <Typography variant="body2" className={`${itemStyles.addInfo} ${styles.mvtLabel}`}>
+                        {`${formatCount(vtx.mvtTileStats?.features)} features · ${formatCount(vtx.mvtTileStats?.vertices)} vertices`}
                     </Typography>
                 </ListItemText>
             </MenuItem>
@@ -166,4 +169,8 @@ export default function MvtTweaks() {
             />
         </Box>
     );
+}
+
+function formatCount(value) {
+    return Number.isFinite(value) ? value.toLocaleString('en-US') : '—';
 }

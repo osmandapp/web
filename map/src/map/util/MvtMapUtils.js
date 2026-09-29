@@ -47,7 +47,7 @@ export function watchMvtZoom(map, sources, setStats) {
     return () => map.off('zoomend', update);
 }
 
-export function getMvtTileStats(maplibreMap, map) {
+export function getMvtTileStats(maplibreMap, map, tileStatsCache) {
     const viewport = map.getPixelBounds();
     const worldSize = map.options.crs.scale(map.getZoom());
     const tiles = new Map();
@@ -66,14 +66,18 @@ export function getMvtTileStats(maplibreMap, map) {
             if (viewport.overlaps(L.bounds(min, min.add([size, size])))) {
                 zoom = Math.max(zoom ?? z, z);
                 // World copies share the same payload; missing data must not appear as zero bytes.
-                tiles.set(`${source}/${z}/${x}/${y}`, tile.latestRawTileData?.byteLength ?? NaN);
+                tiles.set(`${source}/${z}/${x}/${y}`, tile);
             }
         }
     }
 
+    const stats = [...tiles.values()].map((tile) => getMvtTileDataStats(tile, tileStatsCache));
+
     return {
         count: tiles.size,
-        bytes: [...tiles.values()].reduce((sum, size) => sum + size, 0),
+        bytes: stats.reduce((sum, tile) => sum + tile.bytes, 0),
+        features: stats.reduce((sum, tile) => sum + tile.features, 0),
+        vertices: stats.reduce((sum, tile) => sum + tile.vertices, 0),
         zoom,
         mapZoom: Number(map.getZoom().toFixed(2)),
     };
@@ -85,4 +89,40 @@ export function parseMinZoomIdFilter(pattern) {
     } catch {
         return null;
     }
+}
+
+function getMvtTileDataStats(tile, cache) {
+    const data = tile.latestRawTileData;
+    const cached = data && cache.get(data);
+    if (cached) {
+        return cached;
+    }
+    const stats = { bytes: data?.byteLength ?? NaN, features: NaN, vertices: NaN };
+    const layers = data && tile.latestFeatureIndex?.loadVTLayers();
+    if (!layers) {
+        return stats;
+    }
+    stats.features = 0;
+    stats.vertices = 0;
+    for (const layer of Object.values(layers)) {
+        stats.features += layer.length;
+        for (let i = 0; i < layer.length; i++) {
+            const feature = layer.feature(i);
+            for (const line of feature.loadGeometry()) {
+                stats.vertices += line.length;
+                // ClosePath repeats the first point; it does not add a vertex to the MVT payload.
+                if (
+                    feature.type === 3 &&
+                    line.length > 1 &&
+                    line[0].x === line[line.length - 1].x &&
+                    line[0].y === line[line.length - 1].y
+                ) {
+                    stats.vertices--;
+                }
+            }
+        }
+    }
+    cache.set(data, stats);
+
+    return stats;
 }

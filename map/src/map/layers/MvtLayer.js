@@ -164,12 +164,15 @@ export default function MvtLayer({ config }) {
         }));
         map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
         const stopZoomStats = ctx.develFeatures ? watchMvtZoom(map, sources, vtx.setMvtTileStats) : null;
+        const tileStatsCache = ctx.develFeatures ? new WeakMap() : null;
 
         const handleLoading = () => {
             window.seIsTilesLoaded = false;
             if (ctx.develFeatures) {
                 vtx.setMvtTileStats((stats) =>
-                    stats?.count == null && stats?.bytes == null ? stats : { ...stats, bytes: null, count: null }
+                    stats?.count == null && stats?.bytes == null
+                        ? stats
+                        : { ...stats, bytes: null, features: null, vertices: null, count: null }
                 );
             }
         };
@@ -179,7 +182,7 @@ export default function MvtLayer({ config }) {
             if (maplibreMap.loaded() && maplibreMap.areTilesLoaded()) {
                 window.seIsTilesLoaded = true;
                 if (ctx.develFeatures) {
-                    const nextStats = getMvtTileStats(maplibreMap, map);
+                    const nextStats = getMvtTileStats(maplibreMap, map, tileStatsCache);
                     vtx.setMvtTileStats((stats) => (isEqual(stats, nextStats) ? stats : nextStats));
                 }
             }
