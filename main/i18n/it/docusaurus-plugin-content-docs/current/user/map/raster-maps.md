@@ -1,5 +1,5 @@
 ---
-source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
 sidebar_position: 7
 title:  Mappe Raster (Online / Offline)
 ---
@@ -13,10 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Panoramica {#overview}
 
@@ -88,7 +84,7 @@ Le mappe raster hanno una vasta gamma di utilizzi. Ecco alcuni dei più popolari
 
 In OsmAnd, le mappe raster possono fungere da fonte di mappa aggiuntiva accanto alle mappe vettoriali predefinite, ottimizzate per l'uso offline.  
 
-Si ha la flessibilità di aggiungere uno o due livelli di tile online per completare la mappa di base. Ciò consente di visualizzare fino a tre livelli di mappa contemporaneamente sullo schermo (più Terreno). Pensateli come una torta: [**Underlay**](#underlay) (base raster sottostante), [**Principale**](#main) (vettoriale* o raster core), [**Overlay**](#overlay) (raster sovrapposto), con l'ombreggiatura del [**Terreno**](#terrain) su tutto. Ad esempio, è possibile avere la mappa vettoriale offline di OsmAnd come base Principale, sovrapporvi una vista satellitare e posizionare una mappa delle piste ciclabili come Underlay per maggiori dettagli.
+Si ha la flessibilità di aggiungere uno o due livelli di tile online per completare la mappa di base. Ciò consente di visualizzare fino a tre livelli di mappa contemporaneamente sullo schermo (più Terreno). Pensateli come una torta: [**Underlay**](#underlay) (base raster sottostante), [**Principale**](#main) (vettoriale o raster core), [**Overlay**](#overlay) (raster sovrapposto), con l'ombreggiatura del [**Terreno**](#terrain) su tutto. Ad esempio, è possibile utilizzare immagini satellitari come Underlay, la mappa vettoriale offline di OsmAnd come livello Principale con maggiore trasparenza e una mappa dei percorsi ciclabili come Overlay in cima.
 
 >[Le mappe vettoriali](./vector-maps.md) sono disponibili **solo** nel livello [Principale](#main) (e sono quelle predefinite lì). Le mappe raster possono essere utilizzate in tutti e tre i livelli: Principale, Underlay e Overlay.
 
@@ -144,7 +140,7 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 </Tabs>
 
-1. *Attiva/disattiva* il livello mappa Underlay.
+1. *Attiva/disattiva* il livello mappa Overlay.
 2. *Trasparenza overlay* (*Android*)/ *Trasparenza* della mappa Overlay (*iOS*).
 3. *Mostra cursore trasparenza* (*Android*) / *Mostra cursore sulla mappa* (*iOS*). Accesso rapido all'impostazione della trasparenza.
 4. *Fonte mappa overlay* (*Android*) / *Livelli disponibili* (*iOS*). Selezionare una mappa a tile online dall'elenco per aggiungerla direttamente come livello Overlay.
@@ -202,79 +198,6 @@ Per utilizzare il livello Terreno è necessario:
 La visualizzazione del terreno può essere combinata con altri livelli raster e con la mappa vettoriale predefinita.
 
 Funzionalità più avanzate del terreno, inclusi il rilievo 3D (solo Pro) e opzioni aggiuntive relative al terreno, sono descritte nell'articolo [Topografia](../plugins/topography.md).
-
-<!--
-## Ombreggiatura / Pendenza {#hillshade--slope}
-
-![Livelli del terreno](@site/static/img/plugins/online-maps/terrain_two_layers.png)
-
-**Ombreggiatura** e **Pendenza** sono mappe raster offline che mostrano il rilievo del terreno. Vengono visualizzate come un livello di mappa speciale, una seconda sovrapposizione sulla mappa di base. Le mappe contengono informazioni aggiuntive sull'elevazione per aiutare a comprendere più accuratamente la pendenza e le ombre del paesaggio. Le informazioni di *Ombreggiatura* e *Pendenza* si basano su dati provenienti da un'unica fonte, il *file Global planet*, e sono suddivise per regioni.  
-
-Non è necessario passare da un livello all'altro di Ombreggiatura e Pendenza, poiché vengono uniti automaticamente. È possibile selezionare solo uno di questi livelli da visualizzare sulla mappa, ma si ha anche la possibilità di combinarli entrambi [come underlay o overlay](#layers) su altri livelli per una rappresentazione più visiva del terreno.
-
-Per iniziare a usare Ombreggiatura e Pendenza è necessario:
-
-1. Acquistare il plugin Topografia:
-    - [Acquisti Android](../purchases/android.md)
-    - [Acquisti iOS](../purchases/ios.md)
-2. Abilitare il [plugin Topografia](../plugins/topography.md):  
-    *Menu → Plugin → ︙ → Abilita*
-3. Selezionare la regione richiesta e scaricare **Mappa del terreno (3D)**.
-4. Il processo di download potrebbe richiedere del tempo, a seconda delle dimensioni della regione selezionata e della velocità della connessione Internet.
-
-
-### Ombreggiatura e Rilievo 3D {#hillshade-and-3d-relief}
-
-| Ombreggiatura | Rilievo 3D |
-|--------|---------|
-| ![Livelli del terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Livelli del terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
-
-La differenza di visualizzazione del rilievo sulla mappa quando si applicano queste impostazioni è descritta nell'articolo **Topografia** nella sezione corrispondente [Ombreggiatura e Rilievo 3D](../plugins/topography.md#hillshade-and-3d-relief).
-
-
-### Configurare le opzioni di visualizzazione {#configure-display-options}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Andare a: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Andare a: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Livelli del terreno](@site/static/img/plugins/online-maps/terrain_layers.png)
-
-È possibile personalizzare il livello di zoom per la visualizzazione e la trasparenza per Ombreggiatura e Pendenza. Per maggiori dettagli, consultare l'[articolo Topografia](../plugins/topography.md#hillshade-slope-and-altitude-layers).
-
-
-## Rilievo 3D {#3d-relief}
-
-:::note
-Il [Rilievo 3D](../plugins/topography.md#3d-relief) è una funzione a pagamento di [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-:::
-
-![Livelli del terreno](@site/static/img/plugins/online-maps/raster_maps_3d.png)
-
-La funzione [**Rilievo 3D**](../plugins/topography.md#3d-relief) è una tecnologia di mappatura che consente la visualizzazione del terreno su una mappa utilizzando modelli tridimensionali. Questa funzione aggiunge informazioni sull'elevazione a una normale mappa bidimensionale, creando un effetto 3D e di profondità che permette di visualizzare meglio il terreno.  
-
-*Per iniziare a usare il Rilievo 3D*:  
-È necessario acquistare il [piano di acquisto OsmAnd Pro](../plugins/index.md#purchase), abilitare il [plugin Topografia](../plugins/topography.md), e attivare la voce [Rilievo 3D](../plugins/topography.md#3d-relief) in *Menu →  Configura mappa*.
-
-
-*Come funziona la funzione Rilievo 3D*:  
-*1.* Per creare un rilievo 3D, OsmAnd riceve informazioni sull'elevazione del terreno.  
-*2.* Sulla base dei dati di elevazione, viene creato un modello 3D per visualizzare montagne, colline, valli e altri elementi del terreno sulla mappa.  
-*3.* OsmAnd visualizza quindi questi modelli tridimensionali su una mappa piana. La mappa può essere ingrandita, rimpicciolita e ruotata per visualizzare il terreno da diverse angolazioni e prospettive.  
-*4.* La visualizzazione delle linee di contorno sulla mappa non dipende dal fatto che la fonte della mappa sia online o offline.
--->
 
 
 ## Preparare/Copiare le mappe {#preparecopy-maps}
@@ -399,13 +322,6 @@ Affinché le mappe aggiornino automaticamente le tile dopo un po' di tempo, è p
     </tr>
 </table>  
 
-<!--
-
-![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
-
--->
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -447,8 +363,7 @@ Le mappe raster possono essere utilizzate così come sono se le tile sono già m
 ## Articoli correlati {#related-articles}
 
 - [Importa / Esporta](../personal/import-export.md)
-- [Schemi di tavolozze di colori](../personal/color-palette-schemes.md)
 - [Quick Action (Pulsante personalizzato)](../widgets/quick-action.md)
 - [Mappe online](../plugins/online-map.md)
 - [Topografia](../plugins/topography.md)
-- [Crea Mappe Raster & Vettoriali Offline](technical/map-creation/create-offline-maps-yourself.md)
+- [Crea Mappe Raster & Vettoriali Offline](../../technical/map-creation/create-offline-maps-yourself.md)

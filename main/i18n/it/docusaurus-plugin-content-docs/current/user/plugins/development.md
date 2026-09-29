@@ -1,5 +1,5 @@
 ---
-source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
+source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
 sidebar_position: 11
 title:  Sviluppo OsmAnd
 ---
@@ -83,16 +83,13 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 ### Test dell'applicazione {#application-testing}
 
-:::caution Solo Android
-:::
-
-- **Simula il primo avvio dell'app**. Imposta il flag che indica il primo avvio dell'app, mantenendo invariate tutte le altre impostazioni.  
-- **Testa le istruzioni vocali**. Seleziona una voce e testala riproducendo gli annunci.  
+- **Simula il primo avvio dell'app** (*Android*). Imposta il flag che indica il primo avvio dell'app, mantenendo invariate tutte le altre impostazioni.  
+- **Testa le istruzioni vocali** (*Android*). Seleziona una voce e testala riproducendo gli annunci.
 - **<Translate ios="true" ids="show_touches"/>** (*iOS*). Evidenzia i tocchi sullo schermo con indicatori visivi.
-- **Barra di stato trasparente**. La mappa diventa visibile sotto la barra di stato.  
-- **Mostra il banner della versione gratuita**. Visualizza il banner della versione gratuita anche nella versione a pagamento.  
-- **Mostra informazioni di debug**. Visualizza informazioni grafiche sul posizionamento di ogni testo sulla mappa.
-- **Consenti la visualizzazione in primo piano**. Permette ai testi della mappa di essere visualizzati uno sopra l'altro.
+- **Barra di stato trasparente** (*Android*). La mappa diventa visibile sotto la barra di stato.  
+- **Mostra il banner della versione gratuita** (*Android*). Visualizza il banner della versione gratuita anche nella versione a pagamento.  
+- **Mostra informazioni di debug** (*Android*). Visualizza informazioni grafiche sul posizionamento di ogni testo sulla mappa.
+- **Consenti la visualizzazione in primo piano** (*Android*). Permette ai testi della mappa di essere visualizzati uno sopra l'altro.
 
 
 ### Algoritmi interni {#internal-algorithms}
@@ -100,7 +97,8 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 :::caution Solo Android
 :::
 
-- **Modalità provvisoria**. Esegue OsmAnd senza la libreria C++ nativa, utilizzando implementazioni Java per il rendering della mappa e il calcolo del percorso. L'app passa automaticamente a questa modalità se la libreria nativa non si avvia correttamente, consentendo comunque l'avvio e l'uso dell'applicazione. Il rendering della mappa e il calcolo del percorso risultano notevolmente più lenti mentre la modalità provvisoria è attiva.  
+- **Modalità provvisoria**. Esegue OsmAnd senza la libreria C++ nativa, utilizzando implementazioni Java per il rendering della mappa e il calcolo del percorso. L'app passa automaticamente a questa modalità se la libreria nativa non si avvia correttamente, consentendo comunque l'avvio e l'uso dell'applicazione. Il rendering della mappa e il calcolo del percorso risultano notevolmente più lenti mentre la modalità provvisoria è attiva. 
+- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
 
 
 ### Impostazioni di memoria {#memory-settings}
@@ -114,6 +112,8 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 - Un'allocazione di memoria maggiore potrebbe influire sulle prestazioni di altre app.
 - [Calcolo di percorsi di 50 km per pedoni](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
+
+- **Memoria Java** mostra quanta memoria Java utilizza l'app e apre gli strumenti dell'istogramma dell'heap: *Raccogli e analizza ora*, *Condividi report* e *Raccogli in caso di utilizzo elevato* (disattivato per impostazione predefinita). Vedi [Istogramma dell'heap per problemi di memoria](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android) per quando utilizzarli.
 
 
 ### Informazioni e statistiche {#info-and-statistics}

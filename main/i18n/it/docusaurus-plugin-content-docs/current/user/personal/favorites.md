@@ -1,5 +1,5 @@
 ---
-source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
+source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
 sidebar_position: 7
 title:  Preferiti
 ---
@@ -131,7 +131,7 @@ Per modificare un punto preferito:
 
 <TabItem value="android" label="Android">
 
-Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Scegli preferito* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
 ![I miei luoghi preferiti Android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -139,7 +139,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 <TabItem value="ios" label="iOS">
 
-Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
+Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Scegli preferito* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
 ![i_miei_luoghi_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -147,10 +147,10 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 </Tabs>
 
-In OsmAnd è disponibile un'ampia gamma di icone per PDI e waypoint. È possibile:
+La schermata **Seleziona icona** raggruppa le icone per [categoria](../search/search-poi.md#categories-and-their-filters). Una riga di chip delle categorie in alto consente di passare direttamente alla sezione di una categoria nell'elenco sottostante. Toccare l'icona della lente d'ingrandimento per trovare un'icona per nome o parola chiave.
 
-- Selezionare un'icona dall'elenco delle [categorie di PDI](../search/search-poi.md#categories-and-their-filters).
-- Trovare un'icona adatta utilizzando l'[opzione di ricerca](../search/search-all.md#how-to-use).
+- *Ultime usate* — Le icone selezionate di recente appaiono in una sezione dedicata per un riutilizzo rapido.
+- *Speciali* — Un insieme di icone generiche (stella, bandiera, marcatore, cuore, fotocamera e altre) non associate a una categoria specifica.
 
 
 ### Preferiti Speciali (Personali) {#special-favorites-personal}
@@ -221,7 +221,8 @@ La sezione **Preferiti** consente di:
 </Tabs>
 
 - **Ordinamento** — Le cartelle e i punti preferiti possono essere ordinati utilizzando le opzioni di ordinamento disponibili nel menu dell'elenco. Per i punti preferiti, sono disponibili le seguenti opzioni: *Nome A – Z*, *Nome Z – A*, *Ultima modifica*, *Più vicini alla posizione attuale*, *Più vicini al centro della mappa*, *Data più recente prima* e *Data più antica prima*. Per le cartelle preferite, sono disponibili le seguenti opzioni: *Nome A – Z*, *Nome Z – A*, *Ultima modifica*, *Data più recente prima* e *Data più antica prima*. Per impostazione predefinita, gli elementi sono ordinati per Nome A – Z. Le cartelle pinnate sono sempre visualizzate in cima all'elenco. Sono visivamente separate dal resto delle cartelle da un divisore. 
-- **Ricerca** — Utilizzare la [Ricerca globale](../search/search-all.md) per trovare i preferiti per nome. I preferiti sono ordinati per distanza dal centro della mappa. Per cercare punti preferiti dall'elenco Preferiti nella scheda I miei luoghi, toccare l'icona *Ricerca* (lente di ingrandimento).
+- **Ricerca** — È possibile utilizzare la [Ricerca globale](../search/search-all.md) per trovare i preferiti per nome. Per cercare solo all'interno dell'elenco Preferiti nella scheda I miei luoghi, toccare l'icona *Ricerca* (lente di ingrandimento).
+
 
 ### Modifica / Eliminazione massiva {#bulk-edit--delete}
 
@@ -274,21 +275,6 @@ Per le cartelle selezionate, sono disponibili le stesse azioni, con le seguenti 
 </TabItem>
 
 </Tabs>
-
-<!--
-### Add Favorites to Map Markers {#add-favorites-to-map-markers}
-
-<InfoAndroidOnly/>
-
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-You can add to or remove your favorites from [Map markers list](../personal/markers.md).
-Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
-
-**Functions for Favorite folder:**
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
-- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
--->
 
 
 ### Azioni Gruppo Preferiti {#favorite-group-actions}
@@ -429,30 +415,6 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 - *[Pacchetto OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Selezionare questa opzione per accedere alla funzione di backup gratuito delle impostazioni.
 - *Creare un backup* delle proprie impostazioni.
 
-<!--
-### All Favorites {#all-favorites}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
-
-- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
-- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
--->
 
 ### Gruppo di preferiti {#favorite-group}
 
@@ -471,8 +433,8 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-- Per condividere più cartelle di preferiti, attivare la [Modalità Selezione](#bulk-edit--delete), selezionare le cartelle richieste e toccare *Condividi*.
-- Per condividere una singola cartella di preferiti, toccare il menu a tre punti (*Android*) o toccare a lungo la cartella (*iOS*), selezionare *Condividi* per inviare il file Favorites.gpx alla memoria del dispositivo o condividerlo tramite le app di messaggistica. Su Android, se la cartella contiene media allegati, viene visualizzato un foglio inferiore di condivisione. È possibile scegliere:
+- Per condividere più cartelle di preferiti, vedere la sezione [Modifica / Eliminazione massiva](#bulk-edit--delete).
+- Per condividere una singola cartella di preferiti, vedere la sezione [Azioni Gruppo Preferiti](#favorite-group-actions). Su Android, se la cartella contiene media allegati, viene visualizzato un foglio inferiore di condivisione. È possibile scegliere:
     - *Solo punti* — Condividi i punti preferiti della cartella come file GPX.
     - *Punti e media* — Condividi i punti preferiti e i media allegati come archivio OSF.
 
@@ -499,7 +461,7 @@ Andare su: *File → Sul mio iPhone → OsmAnd Maps → favourites_backup*
 
 </Tabs>
 
-OsmAnd crea un **file di backup** ogni volta che i preferiti vengono modificati.
+OsmAnd crea automaticamente un **file di backup** ogni volta che i preferiti vengono modificati, conservando fino a 10 file di backup in totale, con non più di 2 nuovi backup al giorno.
 
 - **Android**: I backup sono memorizzati in *Android → data → net.osmand → files → backup*. Utilizzare un file manager di terze parti per accedervi.
 

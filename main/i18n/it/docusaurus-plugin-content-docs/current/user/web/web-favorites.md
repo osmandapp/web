@@ -1,5 +1,5 @@
 ---
-source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
+source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -24,9 +24,9 @@ I Preferiti nel Pianificatore Web ti permettono di salvare e gestire luoghi impo
 
 ## Gestire i Preferiti {#manage-favorites}
 
-![Modifica Preferiti cloud Web OsmAnd](@site/static/img/web/favorites_1_new.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
-Dopo aver registrato un [**OsmAnd Pro**](../personal/osmand-cloud.md#login) e per [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), i tuoi Preferiti nel Pianificatore Web sono organizzati in cartelle. Ogni cartella raggruppa i luoghi salvati e fornisce un set di azioni disponibili dal menu Preferiti. 
+Dopo aver effettuato l'accesso a un account [**OsmAnd Pro**](../personal/osmand-cloud.md#login) o [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), i tuoi Preferiti nel Pianificatore Web sono organizzati in cartelle. Ogni cartella raggruppa i luoghi salvati e fornisce un set di azioni disponibili dal menu Preferiti. 
 Le seguenti azioni sono disponibili:
 
 - *Mostra sulla mappa* - mostra i punti preferiti dalla cartella scelta sulla mappa.
@@ -58,7 +58,7 @@ Durante la configurazione dell'accesso, potrebbero apparire i seguenti dialoghi:
 - *Cambia accesso*. Visualizzato quando si passa la cartella a Privato. Il dialogo avverte che tutto l'accesso utente esistente verrà revocato prima di confermare il cambiamento.
 - *Richieste di accesso*. Visualizzato quando si gestiscono gli utenti nell'elenco In sospeso, permettendo di approvare o negare le richieste di accesso.
 
-![Modifica Preferiti cloud Web OsmAnd](@site/static/img/web/favorites_share.png) ![Modifica Preferiti cloud Web OsmAnd](@site/static/img/web/favorites_share_2.png)
+![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
 
 
 ## Dettagli Preferiti {#favorites-details} 
@@ -67,7 +67,7 @@ Selezionando un preferito si apre il pannello **Dettagli**. Questo pannello appa
 
 La vista Dettagli fornisce le informazioni associate al luogo selezionato e dipende dai dati disponibili per quel preferito specifico. Al minimo, include la posizione sulla mappa e le sue coordinate geografiche. Per i luoghi collegati a oggetti OpenStreetMap o fonti arricchite, potrebbero essere mostrate metadati aggiuntive, come nomi, categorie, identificatori o link di riferimento (ad esempio, Wikipedia o link Wikidata). 
 
-![Dettagli Preferiti Web](@site/static/img/web/favorites_details.png)
+![Web Favorites Details](@site/static/img/web/favorites_details.png)
 
 
 ## Azioni Preferiti {#favorites-actions}
@@ -96,11 +96,11 @@ I preferiti possono essere organizzati in cartelle per una gestione più semplic
 
 La finestra di dialogo include anche una sezione Avanzate, in cui è possibile configurare le impostazioni di aspetto predefinite per la cartella. Queste impostazioni includono il colore, l'icona e la forma predefiniti che verranno applicati automaticamente ai punti preferiti aggiunti a questa cartella.
 
-![Modifica cartella Web](@site/static/img/web/edit_folder.png)
+![Web Edit Folder](@site/static/img/web/edit_folder.png)
 
 ### Aspetto {#appearance}
 
-La sezione **Aspetto** consente di personalizzare la visualizzazione del preferito sulla mappa. Sono disponibili le seguenti proprietà: icona, colore, forma e icona. 
+La sezione **Aspetto** consente di personalizzare la visualizzazione del preferito sulla mappa. Sono disponibili le seguenti proprietà: icona, colore e forma. 
 
 Selezionando **Icona** si apre un pannello secondario con gruppi di icone categorizzati.
 
@@ -120,7 +120,7 @@ L'opzione **Forma** definisce la forma di sfondo utilizzata per il marcatore del
 
 L'anteprima dell'aspetto si aggiorna immediatamente sia nel pannello di modifica che sulla mappa quando si modifica l'icona, il colore o la forma.
 
-![Modifica aspetto Web](@site/static/img/web/edit_icon.png)
+![Web Edit Appearance](@site/static/img/web/edit_icon.png)
 
 ### Altre Azioni {#other-actions}
 

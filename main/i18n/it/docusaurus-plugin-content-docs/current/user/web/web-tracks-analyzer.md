@@ -1,5 +1,5 @@
 ---
-source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
+source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,13 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-**Tracks Analyzer** è uno strumento web che aiuta ad analizzare i segmenti di traccia ripetuti tra punti selezionati sulla mappa. Per utilizzare questa funzionalità con i tuoi dati, è necessario un account OsmAnd Pro con tracce sincronizzate su OsmAnd Cloud — altrimenti, le tue tracce non saranno disponibili sul Web Planner. Scansiona le tue tracce e trova tutti i segmenti che passano attraverso la posizione(i) scelta, permettendoti di confrontare velocità, elevazione, distanza e tempo attraverso più attività.
+**Tracks Analyzer** è uno strumento web che aiuta ad analizzare i segmenti di traccia ripetuti tra punti selezionati sulla mappa. Ad esempio, puoi usarlo per confrontare le tue uscite sulla stessa salita o i tuoi spostamenti quotidiani. Per utilizzare questa funzionalità con i tuoi dati, è necessario un account OsmAnd Pro con tracce sincronizzate su OsmAnd Cloud — altrimenti, le tue tracce non saranno disponibili sul Web Planner. Scansiona le tue tracce e trova tutti i segmenti che passano attraverso la posizione(i) scelta, permettendoti di confrontare velocità, elevazione, distanza e tempo attraverso più attività.
 
 ## Come usare {#how-to-use}
 
 Dopo aver aperto il Tracks Analyzer (mostrato come una chiave inglese), lo strumento si apre con una vista mappa e uno stato vuoto. Da qui, puoi scegliere quali tracce verranno incluse nell'analisi usando il pannello **Seleziona tracce**. L'analizzatore permette di lavorare con tutte le tracce disponibili o di limitare l'analisi a cartelle specifiche.
 
-Per iniziare l'analisi, imposta uno o due punti direttamente sulla mappa. Fai clic destro sulla posizione desiderata e seleziona **Punto A / Punto B** dal menu contestuale. L'analizzatore quindi cerca segmenti di traccia che passano attraverso il punto selezionato o tra i due punti.
+Per iniziare l'analisi, imposta uno o due punti direttamente sulla mappa. Fai clic destro sulla posizione desiderata e seleziona **Punto A / Punto B** dal menu contestuale. Con un solo punto, l'analizzatore trova i segmenti di traccia che passano attraverso la posizione selezionata. Con due punti, trova e analizza i segmenti tra Punto A e Punto B.
 
 ![Analizzatore di tracce](@site/static/img/web/web_analyzer_select.png) ![Analizzatore di tracce](@site/static/img/web/web_analyzer_points_new.png)
 
@@ -33,29 +33,14 @@ Per iniziare l'analisi, imposta uno o due punti direttamente sulla mappa. Fai cl
 ## Ordinamento e parametri visibili {#sorting-and-visible-parameters}
 Dopo che l'analizzatore trova i segmenti corrispondenti, i risultati vengono mostrati come un elenco. L'elenco può essere riordinato usando l'opzione **Ordina**, che cambia come i segmenti sono elencati. Inoltre, il pulsante **Campi** apre il pannello Parametri visibili, dove puoi controllare quali parametri di analisi sono mostrati per ciascun segmento. Puoi visualizzare tutti i parametri disponibili o selezionare solo quelli rilevanti per la tua analisi.
 
-I parametri disponibili sono raggruppati per tipo:
+I parametri disponibili includono:
 
-**Velocità**
-- Vel. max.
-- Vel. media
-- Vel. min.
-
-**Altitudine**
-- Alt. max.
-- Alt. media
-- Alt. min.
-
-**Salita / Discesa**
-
-**Data e ora**
-- Data
-- Ora di inizio
-- Ora di fine
-- Intervallo di tempo
-- Durata
-- Tempo in movimento
-
-**Lunghezza**
+- Vel. max., Vel. media e Vel. min.
+- Alt. max., Alt. media e Alt. min.
+- Salita e Discesa.
+- Data.
+- Intervallo di tempo, Ora di inizio, Ora di fine, Durata e Tempo in movimento.
+- Lunghezza.
 
 ![Analizzatore di tracce](@site/static/img/web/web_analyzer_sort.png) ![Analizzatore di tracce](@site/static/img/web/web_analyzer_fields.png)
 

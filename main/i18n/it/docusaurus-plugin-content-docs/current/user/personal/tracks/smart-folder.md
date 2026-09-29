@@ -1,5 +1,5 @@
 ---
-source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
+source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
 title: Cartella Smart (Filtro)
 ---
@@ -99,7 +99,7 @@ Vai a: *scheda <Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 - **Altitudine media** e **Altitudine massima** — Trova tracce con dati specifici di altitudine media o massima.
 - **Data di creazione** — Filtra le tracce create entro un particolare intervallo di date.
 - **Città più vicine** — Visualizza le tracce che passano vicino a città o località selezionate.
-- **Tipo di attività** — Filtra le tracce in base al tipo di [attività](../../map/tracks/track-context-menu.md#ttrack-activity-type) registrata nel file GPX (ad es. ciclismo, escursionismo).
+- **Tipo di attività** — Filtra le tracce in base al tipo di [attività](../../map/tracks/track-context-menu.md#track-activity-type) registrata nel file GPX (ad es. ciclismo, escursionismo).
 - **Paese** — Filtra le tracce per paese o regione in cui sono state registrate.
 - **Colore** e **Larghezza** — Seleziona le tracce in base al colore o alla larghezza della linea assegnati.
 - **Altro** — Filtri aggiuntivi per caratteristiche speciali:
@@ -210,7 +210,7 @@ Puoi anche aprire la cartella e toccare l'icona nell'*angolo in alto a destra* p
 - **<Translate ios="true" ids="shared_string_select"/>** — Utilizza la [Modalità di selezione](./manage-tracks.md#selection-mode) per azioni specifiche sulle tracce all'interno della cartella.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Aggiorna manualmente il contenuto della cartella per assicurarti che includa le tracce più recenti.
 - **<Translate ios="true" ids="edit_filter"/>** — Modifica le impostazioni del filtro delle tracce per la Cartella Smart corrente. Vedi [Filtro di ricerca](#search-filter) per i dettagli.
-- **Organize by** — Organizza automaticamente le tracce nella Cartella Smart in gruppi in base a un parametro selezionato. Seleziona *None* per visualizzare tutte le tracce come un elenco singolo, corrispondente alla visualizzazione predefinita della Cartella Smart. I tipi di raggruppamento disponibili includono *Generale*, *Data e ora*, *Posizione*, *Velocità*, *Altitudine e dislivello* e *Dati sensore*. 
+- **<Translate ios="true" ids="organize_by"/>** — Organizza automaticamente le tracce nella Cartella Smart in gruppi in base a un parametro selezionato. Seleziona *None* per visualizzare tutte le tracce come un elenco singolo, corrispondente alla visualizzazione predefinita della Cartella Smart. I tipi di raggruppamento disponibili includono *Generale*, *Data e ora*, *Posizione*, *Velocità*, *Altitudine e dislivello* e *Dati sensore*. 
 
 Alcuni parametri di raggruppamento sono disponibili solo con un abbonamento OsmAnd Pro. I parametri gratuiti includono *Attività*, *Anno di creazione* e *Città più vicina*. Tutti gli altri parametri sono contrassegnati con l'etichetta <ProFeature/>.
 
