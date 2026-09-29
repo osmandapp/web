@@ -1,5 +1,5 @@
 ---
-source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
+source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
 sidebar_position: 4
 title:  Menu Contestuale Traccia
 ---
@@ -42,9 +42,6 @@ Il *Menu contestuale della traccia* fornisce informazioni sulla *[Traccia](../..
 
 Quando si tocca una traccia, si apre la prima schermata del *Menu contestuale della traccia* - la scheda *Panoramica*. In questa scheda è possibile trovare un riepilogo della traccia scelta (*[Pannello informazioni](#info-panel)*) ed eseguire le azioni più comuni con la traccia utilizzando il *[Menu azioni traccia](#track-actions)*. È possibile visualizzare la [descrizione e le informazioni di servizio](#description-and-info) sulla traccia tirando verso l'alto la scheda Panoramica.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Pannello Informazioni {#info-panel}
 
@@ -227,7 +224,7 @@ Questa sezione della scheda *Panoramica* visualizza i ***dati dei tag*** e ***tu
 </details>
 
 
-### Tipo di Attività della Traccia {#ttrack-activity-type}
+### Tipo di Attività della Traccia {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

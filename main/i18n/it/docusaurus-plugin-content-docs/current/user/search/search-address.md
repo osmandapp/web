@@ -1,5 +1,5 @@
 ---
-source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
+source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
 sidebar_position: 2
 title:  Ricerca Indirizzo
 ---
@@ -87,6 +87,7 @@ OsmAnd supporta diversi formati di indirizzo comuni. È possibile inserire gli i
 | Formato indirizzo | Esempi di query |
 |---|---|
 | Numero civico + via | 221B Baker Street<br />10 Downing Street |
+| Numero civico doppio + via | 243/11 Husova |
 | Via + numero civico | Baker Street 221B<br />Main Street 101 |
 | Città + via + numero civico | London Baker Street 221B<br />Paris Rue de Rivoli 10 |
 | Intersezioni di vie | Broadway & Wall Street<br />Main Street and High Street |

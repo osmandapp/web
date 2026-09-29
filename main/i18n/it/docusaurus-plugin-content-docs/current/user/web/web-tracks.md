@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -28,7 +28,7 @@ Tutte le modifiche vengono sincronizzate automaticamente tramite [OsmAnd Cloud](
 
 Si tratta di una funzionalità a pagamento <ProFeature/>. Per utilizzarla, accedi al tuo account OsmAnd Pro.
 
-![Accesso traccia](@site/static/img/web/track_login.png) ![Accesso traccia](@site/static/img/web/track_login_2.png)
+![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
 
 La sezione Tracce contiene tutti gli strumenti e le azioni relativi alle tracce. Sono disponibili le seguenti opzioni:
 
@@ -54,7 +54,7 @@ Quando un file viene trascinato sulla mappa, l'area di rilascio disponibile vien
 
 Al termine dell'importazione, la traccia appare nell'elenco delle tracce, viene sincronizzata con [OsmAnd Cloud](../personal/osmand-cloud.md) e diventa disponibile su tutti i dispositivi collegati allo stesso account.
 
-![Trascina e rilascia](@site/static/img/web/drag_and_drop.png)
+![Drag and drop](@site/static/img/web/drag_and_drop.png)
 
 
 ## Visibile sulla mappa {#visible-on-the-map}
@@ -65,12 +65,12 @@ Le tracce visibili sulla mappa sono evidenziate in blu, mentre le tracce attualm
 
 Sotto l'elenco principale, la sezione **Recently visible** mostra le tracce che erano visualizzate sulla mappa in precedenza. Questo rende facile riattivare una traccia senza doverla cercare di nuovo nelle tue cartelle o in OsmAnd Cloud.
 
-![Visibile sulla mappa](@site/static/img/web/visible_new.png) ![Visibile sulla mappa](@site/static/img/web/visible_new_2.png)
+![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
 
 
 ## Menu cartella traccia {#track-folder-menu}
 
-![Menu cartella traccia](@site/static/img/web/collection_new.png)
+![Track folder menu](@site/static/img/web/collection_new.png)
 
 Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Track Folder*. Da qui, puoi:
 
@@ -81,7 +81,7 @@ Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Track Folder*. Da qu
  - Rinomina. Apre una finestra di dialogo in cui puoi inserire un nuovo nome per la cartella selezionata. La modifica viene sincronizzata con OsmAnd Cloud e apparirà su tutti i dispositivi connessi.
  - Elimina. Apre una finestra di conferma. L'eliminazione di una cartella la rimuove permanentemente insieme a tutte le tracce che contiene. Questa azione viene anche sincronizzata tramite OsmAnd Cloud.
 
-![Menu cartella traccia](@site/static/img/web/collection_rename.png) ![Menu cartella traccia](@site/static/img/web/collection_delete.png)
+![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
 
 ### Smart Folders {#smart-folders}
 
@@ -119,7 +119,7 @@ Le seguenti funzionalità sono disponibili dopo aver selezionato una traccia clo
 - *Surface* - mostra i tipi di superfici della traccia lungo il percorso.
 - *Smoothness* - visualizza la fluidità del segmento basata sui tag OSM.
 
-![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Modifica GPX cloud OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
+![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Articoli correlati {#related-articles}

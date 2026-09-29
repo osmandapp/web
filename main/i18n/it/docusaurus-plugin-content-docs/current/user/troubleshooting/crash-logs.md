@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
 sidebar_position: 5
 title:  Log dei crash
 ---
@@ -74,6 +74,39 @@ Fai attenzione quando invii i log dell'app, poiché potrebbero contenere informa
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+## Istogramma dell'heap per problemi di memoria (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Solo Android
+:::
+
+Un *istogramma dell'heap* è una tabella che mostra cosa occupa la memoria Java dell'app: nomi delle classi con conteggi e dimensioni degli oggetti. Aiuta gli sviluppatori a individuare cosa consuma memoria quando l'app diventa lenta, si blocca o si chiude dopo un po'. Non contiene le tue posizioni, i nomi delle tracce o le query di ricerca. OsmAnd esegue un dump completo della memoria sul dispositivo, lo trasforma in istogramma ed elimina subito il dump.
+
+L'esecuzione del dump **blocca l'app per 5–10 secondi**. Se tocchi lo schermo durante quel tempo, Android potrebbe mostrare *OsmAnd non risponde*. Per questo motivo la raccolta automatica è **disattivata per impostazione predefinita**.
+
+**Quando attivarla:**
+
+- OsmAnd si chiude da solo o mostra ripetutamente *non risponde*, soprattutto dopo un certo tempo di utilizzo o quando apri la ricerca, la mappa con molti POI o *I miei luoghi* con molte tracce.
+- L'app diventa più lenta più a lungo rimane in esecuzione e il riavvio la migliora.
+- Il report di crash indica che l'app ha esaurito la memoria (`OutOfMemoryError`).
+- Il supporto di OsmAnd ti ha chiesto di raccogliere un istogramma dell'heap.
+
+**Quando lasciarla disattivata:**
+
+- Uso quotidiano e navigazione, quando l'app funziona correttamente.
+- Crash che si verificano subito a ogni avvio o con un'azione specifica come l'apertura di un file. In questi casi è sufficiente un normale [log dei crash](#send-logs-from-osmand-app).
+
+**Come raccogliere e inviare:**
+
+1. Attiva il [plugin di sviluppo OsmAnd](../plugins/development.md) e vai su *Menu principale → Plugin → Sviluppo OsmAnd → Impostazioni → Memoria → Memoria Java*.
+2. Nel pannello *Heap dump*, scegli una delle seguenti opzioni:
+    - **Raccogli su utilizzo elevato**. L'istogramma viene raccolto automaticamente quando la memoria Java è quasi piena, al massimo una volta ogni 30 minuti, e viene allegato al successivo report di crash. Continua a usare l'app normalmente finché il problema non si ripresenta.
+    - **Raccogli e analizza ora**. Raccoglie subito l'istogramma e mostra il risultato. Usalo quando l'app è già lenta e *Memoria Java* mostra un utilizzo elevato.
+3. Tocca **Condividi report** per inviare l'ultimo report agli sviluppatori, oppure invialo dalla finestra di dialogo del crash al prossimo avvio dell'app.
+4. Disattiva *Raccogli su utilizzo elevato* una volta inviato il report.
+
+![Java memory Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Heap dump panel Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Invia file Tombstone (Android) {#send-tombstone-files-android}
 
