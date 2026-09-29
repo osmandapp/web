@@ -90,15 +90,11 @@ export default function PricingPage() {
                         item.newPrice = info.newPrice;
                         item.oldPriceDisplay = info.oldPriceDisplay;
                         item.display = info.display;
-                        if (
-                            allPurchases.find((p) => {
-                                p.type = p.type ?? 'one-time';
-                                const isValid = p.valid === true || p.valid === 'true';
-                                return isValid && p.name === item.name && p.type === type;
-                            })
-                        ) {
-                            item.show = false;
-                        }
+                        item.show = !allPurchases.find((p) => {
+                            p.type = p.type ?? 'one-time';
+                            const isValid = p.valid === true || p.valid === 'true';
+                            return isValid && p.name === item.name && p.type === type;
+                        });
                     }
                 });
             });
