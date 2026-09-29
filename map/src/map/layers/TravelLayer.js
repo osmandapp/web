@@ -341,7 +341,7 @@ export default function TravelLayer() {
             map.dragging.enable();
             if (moved) {
                 swallowNextClick(container);
-                setSearchPoint(circle.getLatLng());
+                setSearchPoint(circle.getLatLng(), point.radius);
             }
         };
         const onDown = (e) => {
@@ -367,8 +367,8 @@ export default function TravelLayer() {
         };
     }, [ctx.searchTravelRoutes?.point, ctx.openTravel]);
 
-    function setSearchPoint(latlng) {
-        const point = { lat: latlng.lat, lng: latlng.lng, radius: searchRadiusM(map, latlng) };
+    function setSearchPoint(latlng, radius = searchRadiusM(map, latlng)) {
+        const point = { lat: latlng.lat, lng: latlng.lng, radius };
         ctx.setSearchTravelRoutes((prev) => (prev && !prev.clear ? { ...prev, point, res: undefined } : prev));
     }
 
