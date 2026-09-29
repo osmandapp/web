@@ -16,6 +16,7 @@ import {
     getMvtTileStats,
     setMapDataZoomShift,
     setMapStyleDetailShift,
+    watchMvtTileTimings,
     watchMvtZoom,
 } from '../util/MvtMapUtils';
 import {
@@ -148,6 +149,7 @@ export default function MvtLayer({ config }) {
                 hideHybridLayers: Boolean(hybridUnderlayUrlRef.current),
             }),
             interactive: false,
+            collectResourceTiming: ctx.develFeatures === true,
             ...(paneName ? { pane: paneName } : {}),
         }).addTo(map);
 
@@ -164,12 +166,13 @@ export default function MvtLayer({ config }) {
         }));
         map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
         const stopZoomStats = ctx.develFeatures ? watchMvtZoom(map, sources, vtx.setMvtTileStats) : null;
+        const tileTimings = ctx.develFeatures ? watchMvtTileTimings(maplibreMap) : null;
 
         const handleLoading = () => {
             window.seIsTilesLoaded = false;
             if (ctx.develFeatures) {
                 vtx.setMvtTileStats((stats) =>
-                    stats?.count == null && stats?.bytes == null ? stats : { ...stats, bytes: null, count: null }
+                    stats?.count == null ? stats : { ...stats, transferSize: null, decodedBodySize: null, count: null }
                 );
             }
         };
@@ -179,7 +182,7 @@ export default function MvtLayer({ config }) {
             if (maplibreMap.loaded() && maplibreMap.areTilesLoaded()) {
                 window.seIsTilesLoaded = true;
                 if (ctx.develFeatures) {
-                    const nextStats = getMvtTileStats(maplibreMap, map);
+                    const nextStats = getMvtTileStats(maplibreMap, map, sources, tileTimings.timings);
                     vtx.setMvtTileStats((stats) => (isEqual(stats, nextStats) ? stats : nextStats));
                 }
             }
@@ -250,6 +253,7 @@ export default function MvtLayer({ config }) {
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
             stopZoomStats?.();
+            tileTimings?.stop();
             if (ctx.develFeatures) {
                 vtx.setMvtTileStats(null);
                 vtx.setMvtStyleUpdating(false);

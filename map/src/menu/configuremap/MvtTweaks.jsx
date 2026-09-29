@@ -23,7 +23,6 @@ export default function MvtTweaks() {
     if (!isMvtTileURL(mtx.tileURL)) {
         return null;
     }
-    const size = Number.isFinite(vtx.mvtTileStats?.bytes) ? (vtx.mvtTileStats.bytes / 1024 ** 2).toFixed(2) : '—';
     const invalidFilter = !parseMinZoomIdFilter(vtx.mvtTweaks.minZoomIdFilter);
     const changeMinZoomIdFilter = (minZoomIdFilter) => {
         if (minZoomIdFilter === vtx.mvtTweaks.minZoomIdFilter) {
@@ -81,7 +80,9 @@ export default function MvtTweaks() {
             <MenuItem id="se-mvt-tile-stats" className={itemStyles.item} disableRipple>
                 <ListItemText disableTypography>
                     <Typography>
-                        Size <strong>{size} MB</strong>
+                        Net <strong>{formatSize(vtx.mvtTileStats?.transferSize)} MB</strong>
+                        {' · '}
+                        Raw <strong>{formatSize(vtx.mvtTileStats?.decodedBodySize)} MB</strong>
                     </Typography>
                     <Typography variant="body2" className={`${itemStyles.addInfo} ${styles.mvtLabel}`}>
                         {` (${vtx.mvtTileStats?.count ?? '—'} tiles, map z${vtx.mvtTileStats?.mapZoom ?? '—'}, mvt z${vtx.mvtTileStats?.zoom ?? '—'})`}
@@ -166,4 +167,8 @@ export default function MvtTweaks() {
             />
         </Box>
     );
+}
+
+function formatSize(bytes) {
+    return Number.isFinite(bytes) ? (bytes / 1024 ** 2).toFixed(2) : '—';
 }
