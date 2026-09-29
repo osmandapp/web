@@ -159,6 +159,12 @@
     font-weight: 400 !important;
 }
 
+.matchCount {
+    margin: 8px 16px 0 !important;
+    color: var(--text-secondary) !important;
+    font-size: 13px !important;
+}
+
 .sliderValue {
     color: var(--text-secondary) !important;
     font-size: 13px !important;

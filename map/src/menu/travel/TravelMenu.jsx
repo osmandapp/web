@@ -1,4 +1,13 @@
-import { Box, CircularProgress, IconButton, SvgIcon, ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
+import {
+    Box,
+    CircularProgress,
+    IconButton,
+    SvgIcon,
+    ToggleButton,
+    ToggleButtonGroup,
+    Tooltip,
+    Typography,
+} from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -532,6 +541,14 @@ export default function TravelMenu() {
                             my={'0px'}
                             marginLeft={'250px'}
                         />
+                        {ctx.develFeatures && ctx.travelHeatmapMatch && (
+                            <Typography className={styles.matchCount}>
+                                {t('web:travel_tracks_match', {
+                                    matched: ctx.travelHeatmapMatch.matched.toLocaleString(),
+                                    total: ctx.travelHeatmapMatch.total.toLocaleString(),
+                                })}
+                            </Typography>
+                        )}
                         <ThickDivider mt={16} />
                         {ctx.searchTravelRoutes?.point ? (
                             <>

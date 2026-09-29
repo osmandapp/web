@@ -327,6 +327,7 @@ export const AppContextProvider = (props) => {
     const [processingTravelRouteByUrl, setProcessingTravelRouteByUrl] = useState(false);
     const [travelRoutesHidden, setTravelRoutesHidden] = useState(false); // hide other travel routes on the map
     const [travelShowStartFinish, setTravelShowStartFinish] = useState(false);
+    const [travelHeatmapMatch, setTravelHeatmapMatch] = useState(null); // { matched, total } tracks of the heatmap filter
     const [travelHeatmapAppearance, setTravelHeatmapAppearance] = useState(() => {
         try {
             const s = localStorage.getItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
@@ -765,6 +766,8 @@ export const AppContextProvider = (props) => {
                 setTravelRoutesHidden,
                 travelShowStartFinish,
                 setTravelShowStartFinish,
+                travelHeatmapMatch,
+                setTravelHeatmapMatch,
                 travelHeatmapAppearance,
                 setTravelHeatmapAppearance,
                 processingAnalytics,

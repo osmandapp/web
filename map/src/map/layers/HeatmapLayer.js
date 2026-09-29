@@ -72,12 +72,11 @@ export default function HeatmapLayer() {
         const acts = meta.acts.map((a) =>
             activity === ACTIVITY_ALL ? a.group !== HEATMAP_IGNORED_GROUP : activity.includes(storedActivity(a))
         );
-        if (year === ALL_YEARS) {
-            layer.setFilter(acts, meta.monthMin, meta.monthMax);
-        } else {
-            const from = (year - meta.monthsBase) * 12;
-            layer.setFilter(acts, from, from + 11);
-        }
+        const from = year === ALL_YEARS ? meta.monthMin : (year - meta.monthsBase) * 12;
+        const to = year === ALL_YEARS ? meta.monthMax : from + 11;
+        layer.setFilter(acts, from, to);
+        const matched = meta.hist.reduce((n, [a, m, count]) => (acts[a] && m >= from && m <= to ? n + count : n), 0);
+        ctx.setTravelHeatmapMatch({ matched, total: meta.tracks });
     }, [layer, activity, year]);
 
     useEffect(() => {

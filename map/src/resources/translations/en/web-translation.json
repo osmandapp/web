@@ -229,6 +229,7 @@
     "travel_remove_point": "Remove point",
     "travel_tracks_attribution": "Tracks: only public GPS traces from {{link}}",
     "classified_by_speed_only": "Classified by speed only",
+    "travel_tracks_match": "{{matched}} of {{total}} tracks in the database match the filter",
     "travel_review_hint": "Open a track to review it: mark whether its activity and line are correct.",
     "travel_review": "Review",
     "travel_reviews": "Reviews",
