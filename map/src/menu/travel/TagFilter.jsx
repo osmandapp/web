@@ -5,10 +5,10 @@ import AppContext from '../../context/AppContext';
 import { MAIN_URL_WITH_SLASH, TRAVEL_URL } from '../../manager/GlobalManager';
 import { apiGet } from '../../util/HttpApi';
 import styles from './travel.module.css';
-import { ACTIVITY_ALL, ALL_YEARS, OSM_GPX_ABORT_KEYS } from './TravelMenu';
+import { ACTIVITY_ALL, OSM_GPX_ABORT_KEYS } from './TravelMenu';
 import { useTranslation } from 'react-i18next';
 
-export default function TagFilter({ selectedTags, onChangeTags, selectedYear, selectedActivity }) {
+export default function TagFilter({ selectedTags, onChangeTags, selectedActivity }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const location = useLocation();
@@ -51,8 +51,9 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
                 maxLon,
             };
 
-            if (selectedYear && selectedYear !== ALL_YEARS) {
-                params.year = selectedYear;
+            if (ctx.searchTravelRoutes?.dateFrom) {
+                params.dateFrom = ctx.searchTravelRoutes.dateFrom;
+                params.dateTo = ctx.searchTravelRoutes.dateTo;
             }
             if (selectedActivity && selectedActivity !== ACTIVITY_ALL) {
                 params.activityArr = selectedActivity;
@@ -81,7 +82,7 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedYear, se
         };
 
         fetchTags().then();
-    }, [ctx.visibleBounds, selectedYear, selectedActivity]);
+    }, [ctx.visibleBounds, ctx.searchTravelRoutes?.dateFrom, ctx.searchTravelRoutes?.dateTo, selectedActivity]);
 
     function generatePastelColor() {
         const hue = Math.floor(Math.random() * 360);

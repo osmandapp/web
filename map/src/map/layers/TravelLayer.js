@@ -6,13 +6,7 @@ import { useMap } from 'react-leaflet';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import L from 'leaflet';
-import {
-    ACTIVITY_ALL,
-    ALL_ACTIVITY_IDS,
-    ALL_YEARS,
-    OSM_GPX_ABORT_KEYS,
-    TAG_MATCH_MODES,
-} from '../../menu/travel/TravelMenu';
+import { ACTIVITY_ALL, ALL_ACTIVITY_IDS, OSM_GPX_ABORT_KEYS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
 import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/TracksManager';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -646,7 +640,8 @@ export default function TravelLayer() {
 
         const {
             activity,
-            year,
+            dateFrom,
+            dateTo,
             tags,
             tagMatchMode = TAG_MATCH_MODES.OR,
             distanceRange,
@@ -661,7 +656,8 @@ export default function TravelLayer() {
 
         const body = {
             activityArr,
-            year: year === ALL_YEARS ? undefined : year,
+            dateFrom,
+            dateTo,
             minLat,
             maxLat,
             minLon,

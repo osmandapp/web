@@ -146,6 +146,12 @@
     overflow: visible;
 }
 
+/* between the Activity select and the divider, which keep their own margins */
+.dateSliderContainer {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .sliderHeader {
     display: flex;
     align-items: center;

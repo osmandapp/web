@@ -2,6 +2,7 @@ import {
     Box,
     CircularProgress,
     IconButton,
+    Slider,
     SvgIcon,
     ToggleButton,
     ToggleButtonGroup,
@@ -13,7 +14,6 @@ import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
 import { ReactComponent as AppearanceIcon } from '../../assets/icons/ic_action_appearance.svg';
-import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
 import { ReactComponent as ReviewIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
@@ -23,7 +23,6 @@ import AppContext from '../../context/AppContext';
 import activities from '../../resources/activities.json';
 import { getActivityIcon } from '../../infoblock/components/common/ActivityType';
 import styles from './travel.module.css';
-import CustomSelect from './CustomSelect';
 import ActivitySelect from './ActivitySelect';
 import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
@@ -35,7 +34,6 @@ import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import headerStyles from '../trackfavmenu.module.css';
 import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
 import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
-import capitalize from 'lodash-es/capitalize';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
@@ -49,7 +47,6 @@ import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
 import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 import { convertMeters, getSmallLengthUnit, SMALL_UNIT } from '../settings/units/UnitsConverter';
 
-export const ALL_YEARS = 'all';
 export const ACTIVITY_ALL = 'all';
 export const ACTIVITY_GARBAGE = 'garbage';
 export const ACTIVITY_ERROR = 'error';
@@ -78,6 +75,21 @@ export function downloadTravelReviews(since = null) {
 }
 
 const OTHER_GROUP = 'other';
+// months are counted from 2004-01, as heat_build.py counts them
+const MONTHS_BASE_YEAR = 2004;
+const LAST_MONTH = monthIndex(new Date().toISOString().slice(0, 7));
+const MONTH_KEY = /^\d{4}-\d{2}$/;
+
+// 'YYYY-MM' of a month index
+export function monthKey(index) {
+    return `${MONTHS_BASE_YEAR + Math.floor(index / 12)}-${String((index % 12) + 1).padStart(2, '0')}`;
+}
+
+export function monthIndex(key, baseYear = MONTHS_BASE_YEAR) {
+    const [year, month] = key.split('-').map(Number);
+
+    return (year - baseYear) * 12 + month - 1;
+}
 
 // tracks without a label that the speed puts in a group are stored with the group id, as heat_build.py counts them
 export function hasSpeedOnlyTracks(group) {
@@ -101,8 +113,6 @@ export default function TravelMenu() {
     const { t } = useTranslation();
 
     const DEFAULT_ACTIVITY = ACTIVITY_ALL;
-    const DEFAULT_YEAR = ALL_YEARS;
-    const MIN_YEAR = 2005;
 
     const [, height] = useWindowSize();
 
@@ -122,7 +132,7 @@ export default function TravelMenu() {
     const WAYPOINTS_DEFAULT = 10000;
     const DEFAULT_FILTERS = {
         activity: DEFAULT_ACTIVITY,
-        year: DEFAULT_YEAR,
+        months: null,
         tags: [],
         tagMatchMode: TAG_MATCH_MODES.OR,
         distance: null,
@@ -216,7 +226,7 @@ export default function TravelMenu() {
     }, [ctx.searchTravelRoutes?.point]);
 
     const debouncedFetchRanges = useRef(
-        debounce(async ({ mapBounds, year, activity }) => {
+        debounce(async ({ mapBounds, months, activity }) => {
             const params = {
                 minLat: mapBounds.getSouth(),
                 maxLat: mapBounds.getNorth(),
@@ -224,8 +234,9 @@ export default function TravelMenu() {
                 maxLon: mapBounds.getEast(),
             };
 
-            if (year && year !== ALL_YEARS) {
-                params.year = year;
+            if (months) {
+                params.dateFrom = monthKey(months[0]);
+                params.dateTo = monthKey(months[1]);
             }
 
             const paramsActivities = { ...params };
@@ -296,19 +307,10 @@ export default function TravelMenu() {
 
         debouncedFetchRanges({
             mapBounds: ctx.visibleBounds,
-            year: filters.year,
+            months: filters.months,
             activity: filters.activity,
         });
-    }, [ctx.visibleBounds, filters.year, filters.activity]);
-
-    const years = useMemo(() => {
-        const currentYear = new Date().getFullYear();
-        const items = [];
-        for (let year = currentYear; year >= MIN_YEAR; year--) {
-            items.push({ id: year, label: `${year}` });
-        }
-        return [{ id: ALL_YEARS, label: capitalize(ALL_YEARS) }, ...items];
-    }, []);
+    }, [ctx.visibleBounds, filters.months, filters.activity]);
 
     // Create activities array
     const activitiesArr = useMemo(() => {
@@ -385,7 +387,13 @@ export default function TravelMenu() {
         setLoadingResult(true);
         setTravelResult(null);
 
-        const body = { activity: f.activity, year: f.year, tags: f.tags, tagMatchMode: f.tagMatchMode };
+        const body = {
+            activity: f.activity,
+            dateFrom: f.months ? monthKey(f.months[0]) : undefined,
+            dateTo: f.months ? monthKey(f.months[1]) : undefined,
+            tags: f.tags,
+            tagMatchMode: f.tagMatchMode,
+        };
         RANGE_FILTER_KEYS.forEach((key) => {
             body[`${key}Range`] = f[key] ?? undefined;
         });
@@ -429,6 +437,8 @@ export default function TravelMenu() {
         navigateToFilters(next);
         runSearch(next);
     }
+
+    const uploadMonths = filters.months ?? [0, LAST_MONTH];
 
     const hasActiveFilters =
         filters.tags.length > 0 || RANGE_FILTER_KEYS.some((key) => filters[key] != null) || ctx.travelShowStartFinish;
@@ -529,18 +539,23 @@ export default function TravelMenu() {
                                 showInvalid={ctx.develFeatures}
                             />
                         )}
-                        <CustomSelect
-                            name={t('web:shared_string_year')}
-                            value={filters.year}
-                            onChange={(value) => setFilter('year', value)}
-                            options={years}
-                            renderLabel={(option) => option?.label}
-                            menuWidth={'auto'}
-                            hasIcons={false}
-                            defaultIcon={SortDateIcon}
-                            my={'0px'}
-                            marginLeft={'250px'}
-                        />
+                        <Box className={`${styles.sliderContainer} ${styles.dateSliderContainer}`}>
+                            <div className={styles.sliderHeader}>
+                                <Typography className={styles.sliderTitle}>{t('shared_string_date')}</Typography>
+                                <Typography className={styles.sliderValue}>
+                                    {monthKey(uploadMonths[0])} - {monthKey(uploadMonths[1])}
+                                </Typography>
+                            </div>
+                            <Slider
+                                value={uploadMonths}
+                                min={0}
+                                max={LAST_MONTH}
+                                step={1}
+                                onChange={(e, value) => previewFilter('months', toMonthsFilter(value))}
+                                onChangeCommitted={(e, value) => setFilter('months', toMonthsFilter(value))}
+                                valueLabelDisplay="off"
+                            />
+                        </Box>
                         {ctx.develFeatures && ctx.travelHeatmapMatch && (
                             <Typography className={styles.matchCount}>
                                 {t('web:travel_tracks_match', {
@@ -640,12 +655,20 @@ export default function TravelMenu() {
     );
 }
 
+// the whole range is no filter
+function toMonthsFilter([from, to]) {
+    return from === 0 && to === LAST_MONTH ? null : [from, to];
+}
+
 // Serialize the current filters into URL query params
 function filtersToParams(filters) {
     const params = {
         activity: Array.isArray(filters.activity) ? filters.activity.join(',') : filters.activity,
-        year: String(filters.year),
     };
+    if (filters.months) {
+        params.dateFrom = monthKey(filters.months[0]);
+        params.dateTo = monthKey(filters.months[1]);
+    }
     if (filters.tags.length > 0) {
         params.tags = filters.tags.join(',');
         params.tagMatchMode = filters.tagMatchMode;
@@ -665,11 +688,10 @@ function paramsToFilters(searchParams) {
     if (activity) {
         parsed.activity = activity === ACTIVITY_ALL ? ACTIVITY_ALL : activity.split(',');
     }
-    const year = searchParams.get('year');
-    if (year === ALL_YEARS) {
-        parsed.year = ALL_YEARS;
-    } else if (year && Number.isFinite(Number(year))) {
-        parsed.year = Number(year);
+    const dateFrom = searchParams.get('dateFrom');
+    const dateTo = searchParams.get('dateTo');
+    if (MONTH_KEY.test(dateFrom) && MONTH_KEY.test(dateTo)) {
+        parsed.months = [monthIndex(dateFrom), monthIndex(dateTo)];
     }
     const tags = searchParams.get('tags');
     if (tags) {

@@ -149,7 +149,6 @@ export default function TravelFilters({
                         <TagFilter
                             selectedTags={filters.tags}
                             onChangeTags={(tags) => setFilter('tags', tags)}
-                            selectedYear={filters.year}
                             selectedActivity={filters.activity}
                         />
                         <Box className={styles.tagMatchBox}>

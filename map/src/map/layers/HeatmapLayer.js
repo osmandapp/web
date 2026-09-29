@@ -4,7 +4,7 @@ import { PMTiles } from 'pmtiles';
 import { useMap } from 'react-leaflet';
 import { useTranslation } from 'react-i18next';
 import AppContext, { isTravelTrack } from '../../context/AppContext';
-import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE, ALL_YEARS } from '../../menu/travel/TravelMenu';
+import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE, monthIndex } from '../../menu/travel/TravelMenu';
 import { UNIDENTIFIED_TRACKS_KEY } from '../../menu/travel/ActivitySelect';
 import { HEATMAP_PALETTES, HEATMAP_SCALE_LOG } from '../../menu/travel/HeatmapAppearance';
 import { apiGet } from '../../util/HttpApi';
@@ -36,7 +36,6 @@ export default function HeatmapLayer() {
     const [meta, setMeta] = useState(null);
 
     const activity = ctx.searchTravelRoutes?.activity ?? ACTIVITY_ALL;
-    const year = ctx.searchTravelRoutes?.year ?? ALL_YEARS;
     const isDimmed = !!ctx.searchTravelRoutes?.point || (isTravelTrack(ctx) && ctx.selectedGpxFile?.id != null);
 
     useEffect(() => {
@@ -72,12 +71,16 @@ export default function HeatmapLayer() {
         const acts = meta.acts.map((a) =>
             activity === ACTIVITY_ALL ? a.group !== HEATMAP_IGNORED_GROUP : activity.includes(storedActivity(a))
         );
-        const from = year === ALL_YEARS ? meta.monthMin : (year - meta.monthsBase) * 12;
-        const to = year === ALL_YEARS ? meta.monthMax : from + 11;
+        const from = ctx.searchTravelRoutes?.dateFrom
+            ? monthIndex(ctx.searchTravelRoutes.dateFrom, meta.monthsBase)
+            : meta.monthMin;
+        const to = ctx.searchTravelRoutes?.dateTo
+            ? monthIndex(ctx.searchTravelRoutes.dateTo, meta.monthsBase)
+            : meta.monthMax;
         layer.setFilter(acts, from, to);
         const matched = meta.hist.reduce((n, [a, m, count]) => (acts[a] && m >= from && m <= to ? n + count : n), 0);
         ctx.setTravelHeatmapMatch({ matched, total: meta.tracks });
-    }, [layer, activity, year]);
+    }, [layer, activity, ctx.searchTravelRoutes?.dateFrom, ctx.searchTravelRoutes?.dateTo]);
 
     useEffect(() => {
         layer?.setOpacity(ctx.travelHeatmapAppearance.opacity * (isDimmed ? HEATMAP_DIMMED_FACTOR : 1));

@@ -218,7 +218,6 @@
     "unidentified_tracks": "Unidentified tracks",
     "shared_string_select": "Select",
     "shared_string_selected": "selected",
-    "shared_string_year": "Year",
     "shared_string_travel": "Travel",
     "shared_string_results": "Results",
     "travel_tracks_nearby": "{{count}} tracks (radius {{radius}})",
