@@ -32,6 +32,16 @@ export default function MvtTweaks() {
         vtx.setMvtStyleUpdating(true);
         vtx.setMvtTweaks((prev) => ({ ...prev, minZoomIdFilter }));
     };
+    const toggleFractionalZoom = () => {
+        if (vtx.mvtTweaks.fractionalZoom && !Number.isInteger(vtx.mvtTweaks.styleDetailShift)) {
+            vtx.setMvtStyleUpdating(true);
+        }
+        vtx.setMvtTweaks((prev) => ({
+            ...prev,
+            fractionalZoom: !prev.fractionalZoom,
+            styleDetailShift: prev.fractionalZoom ? Math.trunc(prev.styleDetailShift) : prev.styleDetailShift,
+        }));
+    };
     const zoomShifts = [
         {
             id: 'data-zoom-shift',
@@ -59,7 +69,7 @@ export default function MvtTweaks() {
                     ...prev,
                     styleDetailShift: Math.max(
                         -MAX_MVT_ZOOM_SHIFT,
-                        Math.min(MAX_MVT_ZOOM_SHIFT, prev.styleDetailShift + delta)
+                        Math.min(MAX_MVT_ZOOM_SHIFT, prev.styleDetailShift + delta * (prev.fractionalZoom ? 0.5 : 1))
                     ),
                 }));
             },
@@ -92,7 +102,7 @@ export default function MvtTweaks() {
                                     <ActionIconBtn
                                         aria-label={`Decrease ${name}`}
                                         disabled={disabled || value <= -MAX_MVT_ZOOM_SHIFT}
-                                        onClick={onChange ? () => onChange(-1) : undefined}
+                                        onClick={() => onChange(-1)}
                                         icon={<RemoveIcon />}
                                         activeIcon={<RemoveActiveIcon />}
                                     />
@@ -100,7 +110,7 @@ export default function MvtTweaks() {
                                     <ActionIconBtn
                                         aria-label={`Increase ${name}`}
                                         disabled={disabled || value >= MAX_MVT_ZOOM_SHIFT}
-                                        onClick={onChange ? () => onChange(1) : undefined}
+                                        onClick={() => onChange(1)}
                                         icon={<AddIcon />}
                                         activeIcon={<AddActiveIcon />}
                                     />
@@ -150,9 +160,9 @@ export default function MvtTweaks() {
             <DividerWithMargin margin="16px" />
             <SimpleItemWithSwitch
                 id="se-mvt-fractional-zoom"
-                text="Enable fractional map zoom"
+                text="Enable fractional map/style zoom"
                 checked={vtx.mvtTweaks.fractionalZoom}
-                onChange={() => vtx.setMvtTweaks((prev) => ({ ...prev, fractionalZoom: !prev.fractionalZoom }))}
+                onChange={toggleFractionalZoom}
             />
         </Box>
     );
