@@ -29,6 +29,7 @@ export default function ProductCard({
     setSelectedCardId,
     updateCardPrices,
     setUpdateCardPrices,
+    purchasesReady,
 }) {
     const ltx = useContext(LoginContext);
 
@@ -39,24 +40,13 @@ export default function ProductCard({
     const product = products.find((p) => p.id === productId);
 
     const [btnText, setBtnText] = useState('web:action_complete_purchase');
-    const [purchaseAfterLogin, setPurchaseAfterLogin] = useState(false);
 
     useEffect(() => {
-        if (ltx.completePurchase) {
-            if (type) {
-                setPurchaseAfterLogin(true);
-            }
+        if (ltx.completePurchase && purchasesReady) {
+            processingPurchase();
             ltx.setCompletePurchase(false);
         }
-    }, [ltx.completePurchase]);
-
-    // wait until the account purchases are applied to the cards
-    useEffect(() => {
-        if (purchaseAfterLogin && updateCardPrices) {
-            setPurchaseAfterLogin(false);
-            processingPurchase();
-        }
-    }, [updateCardPrices]);
+    }, [ltx.completePurchase, purchasesReady]);
 
     useEffect(() => {
         if (product?.btnText) {
