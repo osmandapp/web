@@ -54,7 +54,9 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
         return true;
     }
 
-    ctx.setProcessRouting(false); // all done but a few Promises might still be active
+    if (startedRouterJobs === 0) {
+        ctx.setProcessRouting(false); // all done but a few Promises might still be active
+    }
     return false;
 }
 
