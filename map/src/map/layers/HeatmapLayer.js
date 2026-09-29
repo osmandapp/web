@@ -19,6 +19,7 @@ import { HEATMAP_PANE_Z_INDEX } from '../util/ZIndexes';
 const HEATMAP_PANE = 'heatmapPane';
 const OSM_TRACES_URL = 'https://www.openstreetmap.org/traces';
 const HEATMAP_DIMMED_FACTOR = 0.4;
+const HEATMAP_GREY_MAP_CLASS = 'travel-grey-map';
 const HEATMAP_SPEED_SUFFIX = '~speed';
 const HEATMAP_UNKNOWN = 'unknown';
 const HEATMAP_IGNORED_ERROR = 'ignored_error';
@@ -88,6 +89,13 @@ export default function HeatmapLayer() {
         const matched = meta.hist.reduce((n, [a, m, count]) => (acts[a] && m >= from && m <= to ? n + count : n), 0);
         ctx.setTravelHeatmapMatch({ matched, total: meta.tracks });
     }, [layer, activity, ctx.searchTravelRoutes?.dateFrom, ctx.searchTravelRoutes?.dateTo]);
+
+    useEffect(() => {
+        map.getContainer().classList.toggle(
+            HEATMAP_GREY_MAP_CLASS,
+            ctx.openTravel && ctx.travelHeatmapAppearance.greyMap
+        );
+    }, [ctx.openTravel, ctx.travelHeatmapAppearance.greyMap]);
 
     useEffect(() => {
         layer?.setOpacity(ctx.travelHeatmapAppearance.opacity * (isDimmed ? HEATMAP_DIMMED_FACTOR : 1));

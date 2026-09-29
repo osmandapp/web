@@ -63,6 +63,14 @@ code {
     transition: none !important;
 }
 
+/* the base map behind the Travel heatmap, as the grey map of public/prototypes/heatmap.html */
+.leaflet-container.travel-grey-map .leaflet-tile-pane,
+.leaflet-container.travel-grey-map .leaflet-mvtDemo-pane,
+.leaflet-container.travel-grey-map .leaflet-mvtOsm-pane,
+.leaflet-container.travel-grey-map .leaflet-mvtHybridUnderlay-pane {
+    filter: grayscale(1) contrast(0.85) brightness(1.08);
+}
+
 .leaflet-container.travel-search-cursor {
     cursor: crosshair;
 }

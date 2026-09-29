@@ -8,6 +8,7 @@ import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderli
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import SelectItem from '../../frame/components/items/SelectItem';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import styles from './travel.module.css';
 
@@ -63,6 +64,7 @@ export const DEFAULT_HEATMAP_APPEARANCE = {
     glow: 0.6,
     opacity: 0.9,
     minTracks: 1,
+    greyMap: false,
 };
 
 const HEATMAP_SCALES = {
@@ -162,6 +164,12 @@ export default function HeatmapAppearance({ onClose }) {
                         getOptionValue={(option) => option.key}
                         onSelect={(key) => setAppearance('scale', key)}
                         showDivider={false}
+                    />
+                    <SimpleItemWithSwitch
+                        id="se-travel-grey-map"
+                        text={t('web:travel_heatmap_grey_map')}
+                        checked={ctx.travelHeatmapAppearance.greyMap}
+                        onChange={() => setAppearance('greyMap', !ctx.travelHeatmapAppearance.greyMap)}
                     />
                     <ThickDivider mt={0} />
                     {slider({
