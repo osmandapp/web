@@ -4,8 +4,13 @@ import { PMTiles } from 'pmtiles';
 import { useMap } from 'react-leaflet';
 import { useTranslation } from 'react-i18next';
 import AppContext, { isTravelTrack } from '../../context/AppContext';
-import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE, monthIndex } from '../../menu/travel/TravelMenu';
-import { UNIDENTIFIED_TRACKS_KEY } from '../../menu/travel/ActivitySelect';
+import { ACTIVITY_ALL, monthIndex } from '../../menu/travel/TravelMenu';
+import {
+    ACTIVITY_ERROR,
+    ACTIVITY_GARBAGE_SHORT,
+    ACTIVITY_GARBAGE_SPARSE,
+    UNIDENTIFIED_TRACKS_KEY,
+} from '../../menu/travel/ActivitySelect';
 import { HEATMAP_PALETTES, HEATMAP_SCALE_LOG } from '../../menu/travel/HeatmapAppearance';
 import { apiGet } from '../../util/HttpApi';
 import { ensureLeafletPane } from './MvtHybridDemo';
@@ -17,6 +22,8 @@ const HEATMAP_DIMMED_FACTOR = 0.4;
 const HEATMAP_SPEED_SUFFIX = '~speed';
 const HEATMAP_UNKNOWN = 'unknown';
 const HEATMAP_IGNORED_ERROR = 'ignored_error';
+const HEATMAP_IGNORED_SHORT = 'ignored_short';
+const HEATMAP_IGNORED_SPARSE = 'ignored_sparse';
 const HEATMAP_IGNORED_GROUP = 'ignored';
 const TILE_SIZE = 256;
 const TILE_PIXELS = TILE_SIZE * TILE_SIZE;
@@ -120,8 +127,11 @@ function storedActivity(act) {
     if (act.key === HEATMAP_IGNORED_ERROR) {
         return ACTIVITY_ERROR;
     }
-    if (act.group === HEATMAP_IGNORED_GROUP) {
-        return ACTIVITY_GARBAGE;
+    if (act.key === HEATMAP_IGNORED_SHORT) {
+        return ACTIVITY_GARBAGE_SHORT;
+    }
+    if (act.key === HEATMAP_IGNORED_SPARSE) {
+        return ACTIVITY_GARBAGE_SPARSE;
     }
 
     return act.key;

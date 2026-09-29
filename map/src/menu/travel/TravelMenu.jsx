@@ -48,8 +48,7 @@ import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHov
 import { convertMeters, getSmallLengthUnit, SMALL_UNIT } from '../settings/units/UnitsConverter';
 
 export const ACTIVITY_ALL = 'all';
-export const ACTIVITY_GARBAGE = 'garbage';
-export const ACTIVITY_ERROR = 'error';
+export const IGNORED_GROUP = 'ignored';
 export const TAG_MATCH_MODES = {
     OR: 'OR',
     AND: 'AND',
@@ -93,7 +92,7 @@ export function monthIndex(key, baseYear = MONTHS_BASE_YEAR) {
 
 // tracks without a label that the speed puts in a group are stored with the group id, as heat_build.py counts them
 export function hasSpeedOnlyTracks(group) {
-    return group.id !== OTHER_GROUP;
+    return group.id !== OTHER_GROUP && group.id !== IGNORED_GROUP;
 }
 
 // as heat_build.py counts "All": activities plus the groups given by speed
@@ -536,7 +535,6 @@ export default function TravelMenu() {
                                 updatedActivities={updatedActivities}
                                 activityCounts={activityCounts}
                                 defaultIcon={ActivityAllIcon}
-                                showInvalid={ctx.develFeatures}
                             />
                         )}
                         <Box className={`${styles.sliderContainer} ${styles.dateSliderContainer}`}>
