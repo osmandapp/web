@@ -13,7 +13,6 @@ import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManag
 import { applySubpixelMarkerPosition } from '../markers/subpixelMarkerPosition';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 import { isMvtTileURL } from './MvtLayerConfig';
-import { enableMvtIntegerZoom } from '../util/MvtMapUtils';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {
@@ -190,8 +189,11 @@ export default function MapStateLayer() {
     // Leaflet's zoom animation CSS-scales the MapLibre canvas as a bitmap for 250 ms, then MapLibre redraws: the map
     // and its markers jump. Moving the map by a fraction of a zoom level per frame lets MapLibre render every step.
     useEffect(() => {
+        const originalZoomSnap = map.options.zoomSnap;
         if (!fractionalZoom) {
-            return enableMvtIntegerZoom(map);
+            map.stop();
+            map.options.zoomSnap = 1;
+            map.setZoom(Math.trunc(map.getZoom()), { animate: false });
         }
         const container = map.getContainer();
         const originalStop = map._stop;
@@ -214,7 +216,7 @@ export default function MapStateLayer() {
         function step() {
             const zoom = map.getZoom();
             const snappedTarget = map._limitZoom(targetZoom);
-            if (Math.abs(snappedTarget - zoom) < 0.005) {
+            if (!fractionalZoom || Math.abs(snappedTarget - zoom) < 0.005) {
                 frame = null;
                 // no setView: its viewreset drops the GridLayer tiles
                 map._move(zoomAroundAnchor(snappedTarget), snappedTarget);
@@ -304,7 +306,8 @@ export default function MapStateLayer() {
                     : TRACKPAD_PX_PER_ZOOM;
             // sigmoid as MapLibre: small deltas zoom linearly, a fast flick is compressed to a level per event
             const scale = 2 / (1 + Math.exp(-Math.abs(value) / pxPerZoom));
-            zoomBy(-Math.sign(value) * Math.log2(scale), map.mouseEventToContainerPoint(event));
+            const delta = -Math.sign(value) * (fractionalZoom ? Math.log2(scale) : 1);
+            zoomBy(delta, map.mouseEventToContainerPoint(event));
         }
 
         // the +/- buttons zoom around the center of the map part not covered by the side panel
@@ -344,6 +347,7 @@ export default function MapStateLayer() {
             map.setZoom = originalSetZoom;
             map.setZoomAround = originalSetZoomAround;
             stopZoom();
+            map.options.zoomSnap = originalZoomSnap;
         };
     }, [ctx.infoBlockWidth, fractionalZoom]);
 

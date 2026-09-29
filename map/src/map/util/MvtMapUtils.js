@@ -27,29 +27,6 @@ export function setMapStyleDetailShift(maplibreMap, style, shift, minZoomIdFilte
     });
 }
 
-export function enableMvtIntegerZoom(map) {
-    const zoomSnap = map.options.zoomSnap;
-    map.stop();
-    map.options.zoomSnap = 1;
-    map.setZoom(Math.trunc(map.getZoom()), { animate: false });
-
-    const onWheel = (event) => {
-        L.DomEvent.stop(event);
-        const delta = L.DomEvent.getWheelDelta(event);
-        if (delta) {
-            map.setZoomAround(map.mouseEventToContainerPoint(event), map.getZoom() + Math.sign(delta), {
-                animate: false,
-            });
-        }
-    };
-    L.DomEvent.on(map.getContainer(), 'wheel', onWheel);
-
-    return () => {
-        L.DomEvent.off(map.getContainer(), 'wheel', onWheel);
-        map.options.zoomSnap = zoomSnap;
-    };
-}
-
 export function watchMvtZoom(map, sources, setStats) {
     const update = () => {
         const mapZoom = Number(map.getZoom().toFixed(2));
