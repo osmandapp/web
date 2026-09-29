@@ -175,12 +175,6 @@ export default function TravelLayer() {
                             id: route.properties.id,
                             baseColor: color,
                         });
-                        const html = buildOsmPopupHtml({
-                            id: route.properties.id,
-                            name: route.properties.name || '',
-                            user: route.properties.user,
-                        });
-                        attachAutoClosePopup(polyline, html, [0, 0]);
                         polyline.on('click', (e) => {
                             L.DomEvent.stopPropagation(e);
                             ctx.setSelectedTravelRoute({ route, show: true });
