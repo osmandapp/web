@@ -13,6 +13,7 @@ import { ReactComponent as AddActiveIcon } from '../../assets/icons/ic_action_ad
 import { ReactComponent as RemoveActiveIcon } from '../../assets/icons/ic_action_remove_filled.svg';
 
 const MIN_ZOOM_ID_PLACEHOLDER = '^(admin_level_[24]|place-city-capital)';
+const MAX_MVT_ZOOM_SHIFT = 3;
 
 export default function MvtTweaks() {
     const mtx = useContext(MapContext);
@@ -39,7 +40,10 @@ export default function MvtTweaks() {
             onChange: (delta) =>
                 vtx.setMvtTweaks((prev) => ({
                     ...prev,
-                    dataZoomShift: Math.max(-3, Math.min(3, prev.dataZoomShift + delta)),
+                    dataZoomShift: Math.max(
+                        -MAX_MVT_ZOOM_SHIFT,
+                        Math.min(MAX_MVT_ZOOM_SHIFT, prev.dataZoomShift + delta)
+                    ),
                 })),
         },
         {
@@ -51,7 +55,10 @@ export default function MvtTweaks() {
                 vtx.setMvtStyleUpdating(true);
                 vtx.setMvtTweaks((prev) => ({
                     ...prev,
-                    styleDetailShift: Math.max(-3, Math.min(3, prev.styleDetailShift + delta)),
+                    styleDetailShift: Math.max(
+                        -MAX_MVT_ZOOM_SHIFT,
+                        Math.min(MAX_MVT_ZOOM_SHIFT, prev.styleDetailShift + delta)
+                    ),
                 }));
             },
         },
@@ -82,7 +89,7 @@ export default function MvtTweaks() {
                             <Stack direction="row" alignItems="center" spacing={1}>
                                 <ActionIconBtn
                                     aria-label={`Decrease ${name}`}
-                                    disabled={disabled || value <= -3}
+                                    disabled={disabled || value <= -MAX_MVT_ZOOM_SHIFT}
                                     onClick={onChange ? () => onChange(-1) : undefined}
                                     icon={<RemoveIcon />}
                                     activeIcon={<RemoveActiveIcon />}
@@ -90,7 +97,7 @@ export default function MvtTweaks() {
                                 <Typography>{value}</Typography>
                                 <ActionIconBtn
                                     aria-label={`Increase ${name}`}
-                                    disabled={disabled || value >= 3}
+                                    disabled={disabled || value >= MAX_MVT_ZOOM_SHIFT}
                                     onClick={onChange ? () => onChange(1) : undefined}
                                     icon={<AddIcon />}
                                     activeIcon={<AddActiveIcon />}
