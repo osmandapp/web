@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
+import isEqual from 'lodash-es/isEqual';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import '@maplibre/maplibre-gl-leaflet';
 import AppContext, { OBJECT_TYPE_POI, updateConfigureMapCache } from '../../context/AppContext';
@@ -165,7 +166,9 @@ export default function MvtLayer({ config }) {
         const handleLoading = () => {
             window.seIsTilesLoaded = false;
             if (ctx.develFeatures) {
-                mtx.setMvtTileStats((stats) => (stats ? { ...stats, bytes: null, count: null } : null));
+                mtx.setMvtTileStats((stats) =>
+                    stats?.count == null && stats?.bytes == null ? stats : { ...stats, bytes: null, count: null }
+                );
             }
         };
 
@@ -174,7 +177,8 @@ export default function MvtLayer({ config }) {
             if (maplibreMap.loaded() && maplibreMap.areTilesLoaded()) {
                 window.seIsTilesLoaded = true;
                 if (ctx.develFeatures) {
-                    mtx.setMvtTileStats(getMvtTileStats(maplibreMap, map));
+                    const nextStats = getMvtTileStats(maplibreMap, map);
+                    mtx.setMvtTileStats((stats) => (isEqual(stats, nextStats) ? stats : nextStats));
                 }
             }
         };

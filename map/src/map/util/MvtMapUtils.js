@@ -36,10 +36,10 @@ export function watchMvtZoom(map, sources, setStats) {
         const zoom = zooms.length ? Math.max(...zooms) : null;
         setStats((stats) => (stats?.mapZoom === mapZoom && stats?.zoom === zoom ? stats : { ...stats, mapZoom, zoom }));
     };
-    map.on('zoom', update);
+    map.on('zoomend', update);
     update();
 
-    return () => map.off('zoom', update);
+    return () => map.off('zoomend', update);
 }
 
 export function getMvtTileStats(maplibreMap, map) {
