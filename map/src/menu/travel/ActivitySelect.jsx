@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE } from './TravelMenu';
+import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE, hasSpeedOnlyTracks } from './TravelMenu';
 
 export const UNIDENTIFIED_TRACKS_KEY = 'nospeed';
 
@@ -63,9 +63,14 @@ export default function ActivitySelect({
         return { count, hasCount, disabled, label };
     })();
 
+    const getGroupItems = (group) =>
+        hasSpeedOnlyTracks(group)
+            ? [...group.activities, { id: group.id, label: t('web:classified_by_speed_only') }]
+            : group.activities;
+
     const getGroupActivityIds = (groupId) => {
         const group = activities?.groups?.find((g) => g.id === groupId);
-        return group?.activities?.map((a) => a.id) || [];
+        return group ? getGroupItems(group).map((a) => a.id) : [];
     };
 
     const isGroupSelected = (groupId) => {
@@ -127,7 +132,7 @@ export default function ActivitySelect({
 
         // Check if all selected activities belong to a single group
         for (const group of activities?.groups || []) {
-            const groupActivityIds = group.activities.map((a) => a.id);
+            const groupActivityIds = getGroupActivityIds(group.id);
             if (
                 groupActivityIds.length === selectedActivities.length &&
                 groupActivityIds.every((id) => selectedActivities.includes(id))
@@ -141,6 +146,10 @@ export default function ActivitySelect({
             const activityId = selectedActivities[0];
             if (activityId === UNIDENTIFIED_TRACKS_KEY) {
                 return t('web:unidentified_tracks');
+            }
+            const speedGroup = activities?.groups?.find((g) => g.id === activityId);
+            if (speedGroup) {
+                return `${speedGroup.label}: ${t('web:classified_by_speed_only')}`;
             }
             const activity = getUpdatedActivity(activityId);
             if (activity) {
@@ -220,7 +229,7 @@ export default function ActivitySelect({
                         // When activityCounts exists: disable group only if it has no tracks in view (sum null or 0).
                         const groupSum =
                             activityCounts != null && group.activities?.length
-                                ? group.activities.reduce((sum, a) => sum + (getActivityCount(a.id) ?? 0), 0)
+                                ? getGroupItems(group).reduce((sum, a) => sum + (getActivityCount(a.id) ?? 0), 0)
                                 : null;
                         const groupLabelWithCount =
                             groupSum != null && groupSum > 0 ? `${group.label} (${groupSum})` : group.label;
@@ -251,7 +260,7 @@ export default function ActivitySelect({
                                 </MenuItem>
 
                                 <Collapse in={expandedGroups[group.id]} timeout="auto">
-                                    {group.activities.map((activity) => {
+                                    {getGroupItems(group).map((activity) => {
                                         const count = getActivityCount(activity.id);
                                         const hasCount = count != null && count > 0;
                                         const disabled = activityCounts != null && !hasCount;

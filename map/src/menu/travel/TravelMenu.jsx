@@ -69,10 +69,16 @@ export function downloadTravelReviews(since = null) {
 }
 
 const OTHER_GROUP = 'other';
+
+// tracks without a label that the speed puts in a group are stored with the group id, as heat_build.py counts them
+export function hasSpeedOnlyTracks(group) {
+    return group.id !== OTHER_GROUP;
+}
+
 // as heat_build.py counts "All": activities plus the groups given by speed
 export const ALL_ACTIVITY_IDS = activities.groups.flatMap((g) => [
     ...g.activities.map((a) => a.id),
-    ...(g.id === OTHER_GROUP ? [] : [g.id]),
+    ...(hasSpeedOnlyTracks(g) ? [g.id] : []),
 ]);
 
 const RANGE_FILTER_KEYS = ['distance', 'speed', 'maxSpeed', 'maxDistBetweenPoints', 'timeMinutes', 'waypoints'];
