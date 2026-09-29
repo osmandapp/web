@@ -7,6 +7,7 @@ import { ReactComponent as AppearanceIcon } from '../../assets/icons/ic_action_a
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
+import { ReactComponent as ReviewIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import debounce from 'lodash-es/debounce';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_INFO_CLOSE_SIZE, TRAVEL_URL } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
@@ -32,6 +33,7 @@ import gStyles from '../gstylesmenu.module.css';
 import { apiGet } from '../../util/HttpApi';
 import { createUrlParams } from '../../util/Utils';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
@@ -53,6 +55,7 @@ export const OSM_GPX_ABORT_KEYS = {
     activities: 'osmgpx-activities',
     ranges: 'osmgpx-ranges',
     tags: 'osmgpx-tags',
+    reviews: 'osmgpx-reviews',
 };
 
 const OTHER_GROUP = 'other';
@@ -529,6 +532,8 @@ export default function TravelMenu() {
                         ) : (
                             <>
                                 <TextWithLeftIcon icon={<SearchIcon />} text={t('web:travel_click_map_hint')} />
+                                <DividerWithMargin dashed={true} />
+                                <TextWithLeftIcon icon={<ReviewIcon />} text={t('web:travel_review_hint')} />
                                 <ThickDivider mt={0} mb={0} />
                                 <ColorBlock color={'#f0f0f0'} />
                             </>

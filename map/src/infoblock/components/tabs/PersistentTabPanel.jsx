@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
+import styles from './tabpanels.module.css';
 
-export default function PersistentTabPanel({ tabId, selectedTabId, children }) {
+export default function PersistentTabPanel({ tabId, selectedTabId, fillHeight = false, children }) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -17,8 +18,13 @@ export default function PersistentTabPanel({ tabId, selectedTabId, children }) {
     const hidden = tabId !== selectedTabId;
 
     return (
-        <Typography hidden={hidden} component="span">
-            <Box sx={{ px: 3, pt: 3, pb: 8 }}>{children}</Box>
+        <Typography hidden={hidden} component="span" className={fillHeight && !hidden ? styles.fillHeight : undefined}>
+            <Box
+                className={fillHeight ? `${styles.fillHeight} ${styles.tabPanelContentFill}` : undefined}
+                sx={{ px: 3, pt: 3, pb: fillHeight ? 0 : 8 }}
+            >
+                {children}
+            </Box>
         </Typography>
     );
 }

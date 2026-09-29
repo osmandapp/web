@@ -12,6 +12,23 @@
     overflow-x: hidden;
 }
 
+/* the last grey block of a tab stretches to the bottom, the scroll padding stays grey */
+.contentScrollerFill {
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+.fillHeight {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.tabPanelContentFill {
+    background-color: var(--background-color-menu);
+}
+
 .mainTabs {
     margin-left: 16px;
     margin-right: 16px;

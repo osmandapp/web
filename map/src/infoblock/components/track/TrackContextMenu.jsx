@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useLayoutEffect, useRef, useState } from 
 import { Box } from '@mui/material';
 import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderline';
 import TabPanels from '../tabs/TabPanels';
+import { TRACK_TAB_IDS } from '../tabs/TrackTabList';
 import { ReactComponent as TracksIcon } from '../../../assets/icons/ic_action_polygom_dark.svg';
 import styles from './trackcontextmenu.module.css';
 import AppContext, {
@@ -120,6 +121,7 @@ export default function TrackContextMenu({ track, onClose, tabsObj, showBackButt
                     tabsObj={tabsObj}
                     scrollAreaHandlers={scrollAreaHandlers}
                     scrollPaddingBottom={compact ? collapseReserve : 0}
+                    fillTabId={isTravelTrack(ctx) ? TRACK_TAB_IDS.GENERAL : null}
                 />
             </Box>
             <ActionsMenu
