@@ -15,7 +15,7 @@ import {
     setMapDataZoomShift,
     setMapStyleDetailShift,
     watchMvtZoom,
-} from '../../menu/configuremap/MvtTweaks';
+} from '../util/MvtMapUtils';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,

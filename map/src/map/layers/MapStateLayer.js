@@ -13,7 +13,7 @@ import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManag
 import { applySubpixelMarkerPosition } from '../markers/subpixelMarkerPosition';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
 import { isMvtTileURL } from './MvtLayerConfig';
-import { enableMvtIntegerZoom } from '../../menu/configuremap/MvtTweaks';
+import { enableMvtIntegerZoom } from '../util/MvtMapUtils';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {

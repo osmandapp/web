@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { CircularProgress, Link, Stack, TextField, Typography } from '@mui/material';
-import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import { isMvtTileURL, isOsmAndTileURL } from '../../map/layers/MvtLayerConfig';
+import { parseMinZoomIdFilter } from '../../map/util/MvtMapUtils';
 import SimpleText from '../../frame/components/other/SimpleText';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -12,103 +12,6 @@ import { ReactComponent as AddActiveIcon } from '../../assets/icons/ic_action_ad
 import { ReactComponent as RemoveActiveIcon } from '../../assets/icons/ic_action_remove_filled.svg';
 
 const MIN_ZOOM_ID_PLACEHOLDER = '^(admin_level_[24]|place-city-capital)';
-
-export function getMvtDataTileUrl(tileUrl, shift) {
-    return shift ? `${tileUrl}${tileUrl.includes('?') ? '&' : '?'}shift=${shift}` : tileUrl;
-}
-
-export function setMapDataZoomShift(maplibreMap, sources, tileUrl, shift) {
-    const url = getMvtDataTileUrl(tileUrl, shift);
-    const source = maplibreMap.getSource('osm');
-    if (source && source.tiles?.[0] !== url) {
-        source.setTiles([url]);
-    }
-    sources.forEach((source) => {
-        if (source.id === 'osm') {
-            source.url = url;
-        }
-    });
-}
-
-export function setMapStyleDetailShift(maplibreMap, style, shift, minZoomIdFilter = '') {
-    const filter = parseMinZoomIdFilter(minZoomIdFilter);
-    style.layers.forEach((layer) => {
-        if (layer.minzoom !== undefined && maplibreMap.getLayer(layer.id)) {
-            const minzoom = Math.max(0, Math.min(24, layer.minzoom - (filter?.test(layer.id) ? shift : 0)));
-            maplibreMap.setLayerZoomRange(layer.id, minzoom, layer.maxzoom);
-        }
-    });
-}
-
-export function enableMvtIntegerZoom(map) {
-    const zoomSnap = map.options.zoomSnap;
-    map.stop();
-    map.options.zoomSnap = 1;
-    map.setZoom(Math.trunc(map.getZoom()), { animate: false });
-
-    const onWheel = (event) => {
-        L.DomEvent.stop(event);
-        const delta = L.DomEvent.getWheelDelta(event);
-        if (delta) {
-            map.setZoomAround(map.mouseEventToContainerPoint(event), map.getZoom() + Math.sign(delta), {
-                animate: false,
-            });
-        }
-    };
-    L.DomEvent.on(map.getContainer(), 'wheel', onWheel);
-
-    return () => {
-        L.DomEvent.off(map.getContainer(), 'wheel', onWheel);
-        map.options.zoomSnap = zoomSnap;
-    };
-}
-
-export function watchMvtZoom(map, sources, setStats) {
-    const update = () => {
-        const mapZoom = Number(map.getZoom().toFixed(2));
-        const zooms = sources.map((source) =>
-            Math.max(source.minzoom, Math.min(source.maxzoom, Math.floor(source.getZoom())))
-        );
-        const zoom = zooms.length ? Math.max(...zooms) : null;
-        setStats((stats) => (stats?.mapZoom === mapZoom && stats?.zoom === zoom ? stats : { ...stats, mapZoom, zoom }));
-    };
-    map.on('zoom', update);
-    update();
-
-    return () => map.off('zoom', update);
-}
-
-export function getMvtTileStats(maplibreMap, map) {
-    const viewport = map.getPixelBounds();
-    const worldSize = map.options.crs.scale(map.getZoom());
-    const tiles = new Map();
-    let zoom = null;
-    // MapLibre 5.24 internals: exclude canvas padding and count full, HTTP-decompressed MVT buffers.
-    for (const [source, manager] of Object.entries(maplibreMap.style.tileManagers)) {
-        if (!manager.used || manager.getSource().type !== 'vector') {
-            continue;
-        }
-        for (const id of manager.getIds()) {
-            const tile = manager.getTileByID(id);
-            const { canonical, wrap } = tile.tileID;
-            const { z, x, y } = canonical;
-            const size = worldSize / 2 ** z;
-            const min = L.point((x + wrap * 2 ** z) * size, y * size);
-            if (viewport.overlaps(L.bounds(min, min.add([size, size])))) {
-                zoom = Math.max(zoom ?? z, z);
-                // World copies share the same payload; missing data must not appear as zero bytes.
-                tiles.set(`${source}/${z}/${x}/${y}`, tile.latestRawTileData?.byteLength ?? NaN);
-            }
-        }
-    }
-
-    return {
-        count: tiles.size,
-        bytes: [...tiles.values()].reduce((sum, size) => sum + size, 0),
-        zoom,
-        mapZoom: Number(map.getZoom().toFixed(2)),
-    };
-}
 
 export default function MvtTweaks() {
     const mtx = useContext(MapContext);
@@ -240,12 +143,4 @@ export default function MvtTweaks() {
             />
         </>
     );
-}
-
-function parseMinZoomIdFilter(pattern) {
-    try {
-        return new RegExp(pattern);
-    } catch {
-        return null;
-    }
 }
