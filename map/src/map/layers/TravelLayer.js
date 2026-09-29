@@ -6,7 +6,13 @@ import { useMap } from 'react-leaflet';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import L from 'leaflet';
-import { ACTIVITY_ALL, ALL_YEARS, OSM_GPX_ABORT_KEYS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
+import {
+    ACTIVITY_ALL,
+    ALL_ACTIVITY_IDS,
+    ALL_YEARS,
+    OSM_GPX_ABORT_KEYS,
+    TAG_MATCH_MODES,
+} from '../../menu/travel/TravelMenu';
 import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/TracksManager';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -16,8 +22,15 @@ import MarkerOptions from '../markers/MarkerOptions';
 import { getActivityColor } from '../util/activityColors';
 import isEmpty from 'lodash-es/isEmpty';
 import { GPX } from '../../manager/GlobalManager';
+import { ensureLeafletPane } from './MvtHybridDemo';
+import { TRAVEL_SEARCH_PANE_Z_INDEX } from '../util/ZIndexes';
 
 const ROUTE_GPX_DATA = 'gpx_data';
+const SEARCH_RADIUS_PX = 20;
+const SEARCH_MAX_RADIUS_M = 1000;
+const SEARCH_CURSOR_CLASS = 'travel-search-cursor';
+const SEARCH_CIRCLE_CLASS = 'travel-search-circle';
+const SEARCH_PANE = 'travelSearchPane';
 
 function buildOsmPopupHtml({ id, name, user }) {
     let html = '';
@@ -96,7 +109,10 @@ function decodeRoutesGeometry(featureCollection) {
             }
         }
     });
-    features.sort((a, b) => (b.properties?.date ?? '').localeCompare(a.properties?.date ?? ''));
+}
+
+export function isTravelSearchOn(map) {
+    return L.DomUtil.hasClass(map.getContainer(), SEARCH_CURSOR_CLASS);
 }
 
 export default function TravelLayer() {
@@ -109,11 +125,13 @@ export default function TravelLayer() {
     const [travelRoutes, setTravelRoutes] = useState(null);
     const [travelPoints, setTravelPoints] = useState(null);
     const [travelStartFinish, setTravelStartFinish] = useState(null);
-    const [selectedRouteId, setSelectedRouteId] = useState(null);
     const selectedRouteLayerRef = useRef(null);
 
     const SELECTED_ROUTE_COLOR = '#f8931d';
+    const HOVER_HALO_COLOR = '#ffffff';
     const ROUTE_WIDTH = 3;
+    const HOVER_ROUTE_WIDTH = 5;
+    const HOVER_HALO_WIDTH = 11;
     const OPENED_TRACK_WIDTH = 6;
     const POINT_RADIUS = 6;
 
@@ -122,15 +140,7 @@ export default function TravelLayer() {
             return;
         }
         if (ctx.searchTravelRoutes.clear) {
-            if (travelRoutes) {
-                map.removeLayer(travelRoutes);
-            }
-            if (travelPoints) {
-                map.removeLayer(travelPoints);
-            }
-            if (travelStartFinish) {
-                map.removeLayer(travelStartFinish);
-            }
+            removeRouteLayers();
             return;
         }
         if (ctx.searchTravelRoutes.res) {
@@ -139,18 +149,7 @@ export default function TravelLayer() {
                 return;
             }
 
-            if (travelRoutes) {
-                map.removeLayer(travelRoutes);
-                setTravelRoutes(null);
-            }
-            if (travelPoints) {
-                map.removeLayer(travelPoints);
-                setTravelPoints(null);
-            }
-            if (travelStartFinish) {
-                map.removeLayer(travelStartFinish);
-                setTravelStartFinish(null);
-            }
+            removeRouteLayers();
 
             const routeLayers = [];
             const startFinishLayers = [];
@@ -182,7 +181,8 @@ export default function TravelLayer() {
                             user: route.properties.user,
                         });
                         attachAutoClosePopup(polyline, html, [0, 0]);
-                        polyline.on('click', () => {
+                        polyline.on('click', (e) => {
+                            L.DomEvent.stopPropagation(e);
                             ctx.setSelectedTravelRoute({ route, show: true });
                             updateQueryParam({
                                 key: TRAVEL_ROUTE_ID_PARAM,
@@ -281,16 +281,104 @@ export default function TravelLayer() {
             }
         } else {
             if (ctx.searchTravelRoutes.res !== null) {
-                getRoutesList().then();
+                loadRoutes();
             }
-            if (travelRoutes) {
-                map.removeLayer(travelRoutes);
-            }
-            if (travelPoints) {
-                map.removeLayer(travelPoints);
-            }
+            removeRouteLayers();
         }
     }, [ctx.searchTravelRoutes]);
+
+    function removeRouteLayers() {
+        [travelRoutes, travelPoints, travelStartFinish].filter(Boolean).forEach((group) => map.removeLayer(group));
+        setTravelRoutes(null);
+        setTravelPoints(null);
+        setTravelStartFinish(null);
+    }
+
+    useEffect(() => {
+        if (!ctx.openTravel) {
+            return;
+        }
+        const container = map.getContainer();
+        const searchHere = (e) => setSearchPoint(e.latlng);
+        L.DomUtil.addClass(container, SEARCH_CURSOR_CLASS);
+        map.on('click', searchHere);
+
+        return () => {
+            map.off('click', searchHere);
+            L.DomUtil.removeClass(container, SEARCH_CURSOR_CLASS);
+        };
+    }, [ctx.openTravel]);
+
+    useEffect(() => {
+        const { point } = ctx.searchTravelRoutes ?? {};
+        if (!point || !ctx.openTravel) {
+            return;
+        }
+        ensureLeafletPane(map, SEARCH_PANE, TRAVEL_SEARCH_PANE_Z_INDEX);
+        const circle = L.circle([point.lat, point.lng], {
+            pane: SEARCH_PANE,
+            radius: point.radius,
+            color: SELECTED_ROUTE_COLOR,
+            weight: 2,
+            dashArray: '4 4',
+            fillOpacity: 0.3,
+            interactive: false,
+        }).addTo(map);
+
+        const container = map.getContainer();
+        const isInside = (latlng) => map.distance(latlng, circle.getLatLng()) <= point.radius;
+        // over the circle the tracks ignore the mouse: it belongs to the circle
+        const onHover = (e) => container.classList.toggle(SEARCH_CIRCLE_CLASS, isInside(e.latlng));
+        // pressed inside the circle and moved: the circle follows the mouse instead of the map
+        let moved = false;
+        const onMove = (e) => {
+            moved = true;
+            circle.setLatLng(e.latlng);
+        };
+        const onUp = () => {
+            map.off('mousemove', onMove);
+            L.DomEvent.off(document, 'mouseup', onUp);
+            map.dragging.enable();
+            if (moved) {
+                swallowNextClick(container);
+                setSearchPoint(circle.getLatLng());
+            }
+        };
+        const onDown = (e) => {
+            if (!isInside(e.latlng)) {
+                return;
+            }
+            moved = false;
+            map.dragging.disable();
+            map.on('mousemove', onMove);
+            L.DomEvent.on(document, 'mouseup', onUp);
+        };
+        map.on('mousemove', onHover);
+        map.on('mousedown', onDown);
+
+        return () => {
+            map.off('mousemove', onHover);
+            map.off('mousedown', onDown);
+            map.off('mousemove', onMove);
+            L.DomEvent.off(document, 'mouseup', onUp);
+            L.DomUtil.removeClass(container, SEARCH_CIRCLE_CLASS);
+            map.dragging.enable();
+            map.removeLayer(circle);
+        };
+    }, [ctx.searchTravelRoutes?.point, ctx.openTravel]);
+
+    function setSearchPoint(latlng) {
+        const point = { lat: latlng.lat, lng: latlng.lng, radius: searchRadiusM(map, latlng) };
+        ctx.setSearchTravelRoutes((prev) => (prev && !prev.clear ? { ...prev, point, res: undefined } : prev));
+    }
+
+    function loadRoutes() {
+        if (ctx.searchTravelRoutes.point) {
+            getRoutesList().then();
+        } else {
+            ctx.setSearchTravelRoutes((prev) => (prev.res === null ? prev : { ...prev, res: null }));
+        }
+    }
 
     // remove the opened track's detailed overlay (line + waypoints) from the map
     function removeSelectedRouteLayers() {
@@ -325,17 +413,26 @@ export default function TravelLayer() {
                     geo.push(currentSegment);
                 }
                 route.properties.geo = geo;
-                const color = getActivityColor(route.properties.activity);
-                const polylines = geo.map(
+                const segments = geo.map((segment) => segment.map((point) => [point.latitude, point.longitude]));
+                const halos = segments.map(
                     (segment) =>
-                        new L.Polyline(
-                            segment.map((point) => [point.latitude, point.longitude]),
-                            { color, weight: OPENED_TRACK_WIDTH, id: route.properties.id }
-                        )
+                        new L.Polyline(segment, {
+                            color: HOVER_HALO_COLOR,
+                            weight: HOVER_HALO_WIDTH,
+                            opacity: 0.9,
+                            interactive: false,
+                        })
+                );
+                const polylines = segments.map((segment) =>
+                    new L.Polyline(segment, {
+                        color: SELECTED_ROUTE_COLOR,
+                        weight: OPENED_TRACK_WIDTH,
+                        id: route.properties.id,
+                    }).on('click', L.DomEvent.stopPropagation)
                 );
 
                 // the detailed line, its start/finish and waypoints live in one group, added/removed together
-                const layers = [...polylines, ...startFinishMarkers(coords)];
+                const layers = [...halos, ...polylines, ...startFinishMarkers(coords)];
                 if (track.wpts?.length > 0) {
                     // waypoints as interactive markers, same as cloud tracks
                     TrackLayerProvider.parseWpt({ points: track.wpts, layers, ctx, data: track, map });
@@ -468,12 +565,14 @@ export default function TravelLayer() {
             const detailedReady = !!selectedRouteLayerRef.current;
             travelRoutes.getLayers().forEach((layer) => {
                 if (String(layer.options.id) === trackId) {
-                    layer.setStyle(detailedReady ? { opacity: 0 } : { weight: OPENED_TRACK_WIDTH });
+                    layer.setStyle(
+                        detailedReady ? { opacity: 0 } : { color: SELECTED_ROUTE_COLOR, weight: OPENED_TRACK_WIDTH }
+                    );
                     if (!detailedReady) {
                         layer.bringToFront();
                     }
                 } else {
-                    layer.setStyle({ color: layer.options.baseColor, weight: ROUTE_WIDTH, opacity: 1 });
+                    layer.setStyle({ color: layer.options.baseColor, weight: ROUTE_WIDTH, opacity: 0.35 });
                 }
             });
         }
@@ -489,41 +588,63 @@ export default function TravelLayer() {
                 map.removeLayer(group);
             }
         };
-        const showOthers = !ctx.travelRoutesHidden;
+        const showOthers = ctx.openTravel && !ctx.travelRoutesHidden;
         setVisible(travelRoutes, showOthers);
         setVisible(travelPoints, showOthers);
         setVisible(travelStartFinish, showOthers && ctx.travelShowStartFinish);
-    }, [ctx.travelRoutesHidden, ctx.travelShowStartFinish, travelRoutes, travelPoints, travelStartFinish]);
+    }, [
+        ctx.openTravel,
+        ctx.travelRoutesHidden,
+        ctx.travelShowStartFinish,
+        travelRoutes,
+        travelPoints,
+        travelStartFinish,
+    ]);
 
     // manage selected route layer
     useEffect(() => {
         if (ctx.selectedTravelRoute?.show) {
             // the map is fitted to the whole track after it loads (see createRoutePolyline)
-        } else if (ctx.selectedTravelRoute?.hover !== undefined) {
-            const id = ctx.selectedTravelRoute.route.properties.id;
-            travelRoutes?.getLayers().forEach((layer) => {
-                if (layer.options.id === id) {
-                    layer.setStyle({
-                        color: ctx.selectedTravelRoute.hover ? SELECTED_ROUTE_COLOR : layer.options.baseColor,
-                        weight: ROUTE_WIDTH,
-                    });
-                    if (id !== selectedRouteId) {
-                        layer.bringToFront();
-                        const prevLayer = travelRoutes?.getLayers().find((l) => l.options.id === selectedRouteId);
-                        if (prevLayer) {
-                            prevLayer.setStyle({ color: prevLayer.options.baseColor, weight: ROUTE_WIDTH });
-                        }
-                        setSelectedRouteId(id);
-                    }
-                }
-            });
-        } else if (selectedRouteLayerRef.current) {
+        } else if (ctx.selectedTravelRoute?.hover === undefined && selectedRouteLayerRef.current) {
             removeSelectedRouteLayers();
         }
     }, [ctx.selectedTravelRoute]);
 
+    useEffect(() => {
+        const { route, hover } = ctx.selectedTravelRoute ?? {};
+        if (!hover || !route?.properties?.geo) {
+            return;
+        }
+        const segments = route.properties.geo.map((segment) => segment.map((p) => [p.latitude, p.longitude]));
+        const highlight = new L.FeatureGroup([
+            ...segments.map(
+                (segment) =>
+                    new L.Polyline(segment, {
+                        color: HOVER_HALO_COLOR,
+                        weight: HOVER_HALO_WIDTH,
+                        opacity: 0.9,
+                        interactive: false,
+                    })
+            ),
+            ...segments.map(
+                (segment) =>
+                    new L.Polyline(segment, {
+                        color: SELECTED_ROUTE_COLOR,
+                        weight: HOVER_ROUTE_WIDTH,
+                        interactive: false,
+                    })
+            ),
+            ...startFinishMarkers(segments.flat()),
+        ]).addTo(map);
+
+        return () => {
+            map.removeLayer(highlight);
+        };
+    }, [ctx.selectedTravelRoute]);
+
     async function getRoutesList() {
-        const bounds = map.getBounds();
+        const { point } = ctx.searchTravelRoutes;
+        const bounds = L.latLng(point.lat, point.lng).toBounds(point.radius * 2);
         const minLat = bounds.getSouth();
         const maxLat = bounds.getNorth();
         const minLon = bounds.getWest();
@@ -542,7 +663,7 @@ export default function TravelLayer() {
             waypointsRange,
         } = ctx.searchTravelRoutes;
 
-        const activityArr = activity === ACTIVITY_ALL ? undefined : activity;
+        const activityArr = activity === ACTIVITY_ALL ? ALL_ACTIVITY_IDS : activity;
 
         const body = {
             activityArr,
@@ -559,6 +680,9 @@ export default function TravelLayer() {
             maxDistBetweenPointsRange,
             timeMinutesRange,
             waypointsRange,
+            lat: point.lat,
+            lon: point.lng,
+            radius: point.radius,
         };
 
         const response = await apiPost(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/get-routes-list`, body, {
@@ -571,9 +695,28 @@ export default function TravelLayer() {
         }
         if (response?.data) {
             decodeRoutesGeometry(response.data);
-            ctx.setSearchTravelRoutes((prev) => ({ ...prev, res: response.data }));
-        } else {
-            ctx.setSearchTravelRoutes((prev) => (prev.res === null ? prev : { ...prev, res: null }));
         }
+        // the point may have been removed or moved while the tracks were loading
+        ctx.setSearchTravelRoutes((prev) => (prev.point === point ? { ...prev, res: response?.data ?? null } : prev));
     }
+}
+
+function searchRadiusM(map, latlng) {
+    const edge = map.containerPointToLatLng(map.latLngToContainerPoint(latlng).add([SEARCH_RADIUS_PX, 0]));
+
+    return Math.min(SEARCH_MAX_RADIUS_M, map.distance(latlng, edge));
+}
+
+// the click that ends a drag must not open the track under the mouse; dropped on that click or the next press
+function swallowNextClick(container) {
+    const stop = (e) => {
+        e.stopPropagation();
+        release();
+    };
+    const release = () => {
+        container.removeEventListener('click', stop, true);
+        container.removeEventListener('mousedown', release, true);
+    };
+    container.addEventListener('click', stop, true);
+    container.addEventListener('mousedown', release, true);
 }

@@ -63,6 +63,14 @@ code {
     transition: none !important;
 }
 
+.leaflet-container.travel-search-cursor {
+    cursor: crosshair;
+}
+
+.leaflet-container.travel-search-circle .leaflet-interactive {
+    pointer-events: none;
+}
+
 .leaflet-control-zoom {
     background-color: transparent !important;
     border: none !important;
