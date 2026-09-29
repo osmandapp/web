@@ -190,15 +190,10 @@
     font-size: 12px !important;
 }
 
-.showButtonBox {
-    margin: 16px;
-    flex-shrink: 0;
-}
-
 .resultsHeader {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin: 16px 16px 0;
     flex-shrink: 0;
 }

@@ -1,19 +1,11 @@
-import {
-    Box,
-    CircularProgress,
-    IconButton,
-    SvgIcon,
-    ToggleButton,
-    ToggleButtonGroup,
-    Tooltip,
-    Typography,
-} from '@mui/material';
+import { Box, CircularProgress, IconButton, SvgIcon, ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
+import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
 import debounce from 'lodash-es/debounce';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_INFO_CLOSE_SIZE, TRAVEL_URL } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
@@ -32,13 +24,16 @@ import headerStyles from '../trackfavmenu.module.css';
 import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
 import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
 import capitalize from 'lodash-es/capitalize';
-import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import { apiGet } from '../../util/HttpApi';
 import { createUrlParams } from '../../util/Utils';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
+import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
+import ColorBlock from '../../frame/components/other/ColorBlock';
+import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
+import { convertMeters, getSmallLengthUnit, SMALL_UNIT } from '../settings/units/UnitsConverter';
 
 export const ALL_YEARS = 'all';
 export const ACTIVITY_ALL = 'all';
@@ -58,6 +53,13 @@ export const OSM_GPX_ABORT_KEYS = {
     tags: 'osmgpx-tags',
 };
 
+const OTHER_GROUP = 'other';
+// as heat_build.py counts "All": activities plus the groups given by speed
+export const ALL_ACTIVITY_IDS = activities.groups.flatMap((g) => [
+    ...g.activities.map((a) => a.id),
+    ...(g.id === OTHER_GROUP ? [] : [g.id]),
+]);
+
 const RANGE_FILTER_KEYS = ['distance', 'speed', 'maxSpeed', 'maxDistBetweenPoints', 'timeMinutes', 'waypoints'];
 
 export default function TravelMenu() {
@@ -69,7 +71,7 @@ export default function TravelMenu() {
     const { t } = useTranslation();
 
     const DEFAULT_ACTIVITY = ACTIVITY_ALL;
-    const DEFAULT_YEAR = new Date().getFullYear();
+    const DEFAULT_YEAR = ALL_YEARS;
     const MIN_YEAR = 2005;
 
     const [, height] = useWindowSize();
@@ -104,7 +106,13 @@ export default function TravelMenu() {
         ...DEFAULT_FILTERS,
         ...paramsToFilters(new URLSearchParams(globalThis.location.search)),
     }));
-    const setFilter = (key, value) => setFilters((prev) => ({ ...prev, [key]: value }));
+    const setFilter = (key, value) => {
+        const next = { ...filters, [key]: value };
+        setFilters(next);
+        navigateToFilters(next);
+        runSearch(next);
+    };
+    const previewFilter = (key, value) => setFilters((prev) => ({ ...prev, [key]: value }));
 
     // Slider bounds (min/max) fetched from /ranges
     const [bounds, setBounds] = useState({
@@ -142,9 +150,14 @@ export default function TravelMenu() {
         }
         if (Object.keys(paramsToFilters(searchParams)).length > 0) {
             ctx.setOpenTravel(true);
-            runSearch(filters);
         }
     }, []);
+
+    useEffect(() => {
+        if (ctx.openTravel) {
+            runSearch(filters);
+        }
+    }, [ctx.openTravel]);
 
     useEffect(() => {
         ctx.setOpenTravelFilters(openFilters);
@@ -155,6 +168,15 @@ export default function TravelMenu() {
             setOpenFilters(false);
         }
     }, [ctx.openTravelFilters]);
+
+    useEffect(() => {
+        if (ctx.searchTravelRoutes?.point) {
+            setLoadingResult(true);
+            setTravelResult(null);
+        } else {
+            setOpenFilters(false);
+        }
+    }, [ctx.searchTravelRoutes?.point]);
 
     const debouncedFetchRanges = useRef(
         debounce(async ({ mapBounds, year, activity }) => {
@@ -181,8 +203,8 @@ export default function TravelMenu() {
                     return;
                 }
 
-                if (activity && activity !== ACTIVITY_ALL) {
-                    params.activityArr = activity;
+                if (activity) {
+                    params.activityArr = activity === ACTIVITY_ALL ? ALL_ACTIVITY_IDS : activity;
                 }
 
                 const rangesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/ranges`, {
@@ -322,10 +344,6 @@ export default function TravelMenu() {
         ctx.setOpenTravel(false);
     }
 
-    function handleYearSelect(year) {
-        setFilter('year', year);
-    }
-
     function runSearch(f) {
         setLoadingResult(true);
         setTravelResult(null);
@@ -334,29 +352,45 @@ export default function TravelMenu() {
         RANGE_FILTER_KEYS.forEach((key) => {
             body[`${key}Range`] = f[key] ?? undefined;
         });
-        ctx.setSearchTravelRoutes(body);
+        ctx.setSearchTravelRoutes((prev) => ({ ...body, point: prev?.point }));
     }
 
-    function showRoutes() {
-        navigateToFilters(filters);
-        runSearch(filters);
+    function clearSearchPoint() {
+        ctx.setSearchTravelRoutes((prev) => ({ ...prev, point: null, res: null }));
+    }
+
+    function searchPointTitle() {
+        const { point, res } = ctx.searchTravelRoutes;
+        const radius = `${Math.round(convertMeters(point.radius, ctx.unitsSettings.len, SMALL_UNIT))} ${t(getSmallLengthUnit(ctx))}`;
+        if (res === undefined) {
+            return t('web:travel_tracks_searching', { radius });
+        }
+        if (res === null) {
+            return t('web:travel_tracks_error');
+        }
+
+        return t('web:travel_tracks_nearby', { count: res.features.length, radius });
     }
 
     function resetSearch() {
-        setTravelResult(null);
         setSortByDistance(null);
         setFilters(DEFAULT_FILTERS);
         ctx.setTravelShowStartFinish(false);
+        navigateToFilters(DEFAULT_FILTERS);
+        runSearch(DEFAULT_FILTERS);
     }
 
     function resetFilters() {
-        setFilters((prev) => ({
-            ...prev,
+        const next = {
+            ...filters,
             tags: [],
             tagMatchMode: TAG_MATCH_MODES.OR,
             ...Object.fromEntries(RANGE_FILTER_KEYS.map((key) => [key, null])),
-        }));
+        };
+        setFilters(next);
         ctx.setTravelShowStartFinish(false);
+        navigateToFilters(next);
+        runSearch(next);
     }
 
     const hasActiveFilters =
@@ -413,6 +447,7 @@ export default function TravelMenu() {
                                             variant="contained"
                                             type="button"
                                             className={headerStyles.appBarIcon}
+                                            disabled={!ctx.searchTravelRoutes?.point}
                                             onClick={() => setOpenFilters((prev) => !prev)}
                                         >
                                             <SettingsIcon />
@@ -441,7 +476,6 @@ export default function TravelMenu() {
                             onChange={(value) => setFilter('year', value)}
                             options={years}
                             renderLabel={(option) => option?.label}
-                            handleSelect={(year) => handleYearSelect(year)}
                             menuWidth={'auto'}
                             hasIcons={false}
                             defaultIcon={SortDateIcon}
@@ -449,22 +483,31 @@ export default function TravelMenu() {
                             marginLeft={'250px'}
                         />
                         <ThickDivider mt={16} />
-                        <Box className={styles.showButtonBox}>
-                            <PrimaryBtn
-                                action={showRoutes}
-                                id={'se-submit-show-travel'}
-                                text={t('shared_string_show')}
-                            />
-                        </Box>
+                        {ctx.searchTravelRoutes?.point ? (
+                            <>
+                                <TextLeftIconBtn
+                                    id="se-travel-remove-point"
+                                    icon={<SearchIcon />}
+                                    text={searchPointTitle()}
+                                    desc={t('web:travel_search_point_desc')}
+                                    btnText={t('web:travel_remove_point')}
+                                    onClick={clearSearchPoint}
+                                />
+                                <ThickDivider mt={0} mb={0} />
+                            </>
+                        ) : (
+                            <>
+                                <TextWithLeftIcon icon={<SearchIcon />} text={t('web:travel_click_map_hint')} />
+                                <ThickDivider mt={0} mb={0} />
+                                <ColorBlock color={'#f0f0f0'} />
+                            </>
+                        )}
                         {loadingResult && <CircularProgress className={styles.resultsSpinner} size={36} />}
                         {travelResult &&
-                            (travelResult?.features?.length > 0 ? (
+                            (travelResult.features.length > 0 ? (
                                 <>
-                                    <Box className={styles.resultsHeader}>
-                                        <Typography variant="body2">
-                                            {t('web:shared_string_results')}: {travelResult?.features?.length || 0}
-                                        </Typography>
-                                        {travelResult.features.some((r) => Number.isFinite(r.properties?.dist)) && (
+                                    {travelResult.features.some((r) => Number.isFinite(r.properties?.dist)) && (
+                                        <Box className={styles.resultsHeader}>
                                             <ToggleButtonGroup
                                                 size="small"
                                                 exclusive
@@ -492,8 +535,8 @@ export default function TravelMenu() {
                                                     />
                                                 </ToggleButton>
                                             </ToggleButtonGroup>
-                                        )}
-                                    </Box>
+                                        </Box>
+                                    )}
                                     <TravelRoutesResult routes={sortedRoutes} />
                                 </>
                             ) : (
@@ -508,6 +551,7 @@ export default function TravelMenu() {
                             filters={filters}
                             bounds={bounds}
                             setFilter={setFilter}
+                            previewFilter={previewFilter}
                         />
                     )}
                 </>

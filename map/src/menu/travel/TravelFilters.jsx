@@ -23,7 +23,15 @@ import {
     LARGE_UNIT,
 } from '../settings/units/UnitsConverter';
 
-export default function TravelFilters({ onClose, onReset, hasActiveFilters, filters, bounds, setFilter }) {
+export default function TravelFilters({
+    onClose,
+    onReset,
+    hasActiveFilters,
+    filters,
+    bounds,
+    setFilter,
+    previewFilter,
+}) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
@@ -35,6 +43,7 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
         const [lo, hi] = bounds[key];
         const range = filters[key] ?? bounds[key];
         const active = filters[key] != null;
+        const toFilter = (value) => (value[0] === lo && value[1] === hi ? null : value);
 
         return (
             <Box className={styles.sliderContainer} key={key}>
@@ -46,7 +55,8 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
                 </div>
                 <Slider
                     value={range}
-                    onChange={(e, value) => setFilter(key, value[0] === lo && value[1] === hi ? null : value)}
+                    onChange={(e, value) => previewFilter(key, toFilter(value))}
+                    onChangeCommitted={(e, value) => setFilter(key, toFilter(value))}
                     min={lo}
                     max={hi}
                     step={step}
