@@ -37,14 +37,6 @@ export const MapContextProvider = ({ children }) => {
     // map tile — seeded from the single source of truth (configureMap in AppContext)
     const { configureMapState } = useContext(AppContext);
     const [tileURL, setTileURL] = useState(() => configureMapState.mapStyle?.tileURL ?? osmandTileURL);
-    const [mvtTileStats, setMvtTileStats] = useState(null);
-    const [mvtTweaks, setMvtTweaks] = useState({
-        fractionalZoom: true,
-        dataZoomShift: 0,
-        styleDetailShift: 0,
-        minZoomIdFilter: '',
-    });
-    const [mvtStyleUpdating, setMvtStyleUpdating] = useState(false);
 
     const [heightmap, setHeightmap] = useState(getInitialHeightmap);
     const [processHeightmaps, setProcessHeightmaps] = useState(false);
@@ -69,12 +61,6 @@ export const MapContextProvider = ({ children }) => {
                 setFocusModeOn,
                 tileURL,
                 setTileURL,
-                mvtTileStats,
-                setMvtTileStats,
-                mvtTweaks,
-                setMvtTweaks,
-                mvtStyleUpdating,
-                setMvtStyleUpdating,
                 heightmap,
                 setHeightmap,
                 processHeightmaps,

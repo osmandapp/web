@@ -4,6 +4,7 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import MvtContext from '../../context/MvtContext';
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { MAP_CENTER_ICON_Z_INDEX } from '../util/ZIndexes';
@@ -132,9 +133,10 @@ export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {
 export default function MapStateLayer() {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const vtx = useContext(MvtContext);
     const map = useMap();
     const { pathname } = useLocation();
-    const fractionalZoom = !ctx.develFeatures || !isMvtTileURL(mtx.tileURL) || mtx.mvtTweaks?.fractionalZoom !== false;
+    const fractionalZoom = !ctx.develFeatures || !isMvtTileURL(mtx.tileURL) || vtx.mvtTweaks?.fractionalZoom !== false;
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);

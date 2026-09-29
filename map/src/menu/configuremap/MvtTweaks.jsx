@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CircularProgress, Link, Stack, TextField, Typography } from '@mui/material';
 import MapContext from '../../context/MapContext';
+import MvtContext from '../../context/MvtContext';
 import { isMvtTileURL, isOsmAndTileURL } from '../../map/layers/MvtLayerConfig';
 import { parseMinZoomIdFilter } from '../../map/util/MvtMapUtils';
 import SimpleText from '../../frame/components/other/SimpleText';
@@ -15,27 +16,28 @@ const MIN_ZOOM_ID_PLACEHOLDER = '^(admin_level_[24]|place-city-capital)';
 
 export default function MvtTweaks() {
     const mtx = useContext(MapContext);
+    const vtx = useContext(MvtContext);
     if (!isMvtTileURL(mtx.tileURL)) {
         return null;
     }
-    const size = Number.isFinite(mtx.mvtTileStats?.bytes) ? (mtx.mvtTileStats.bytes / 1024 ** 2).toFixed(2) : '—';
-    const invalidFilter = !parseMinZoomIdFilter(mtx.mvtTweaks.minZoomIdFilter);
+    const size = Number.isFinite(vtx.mvtTileStats?.bytes) ? (vtx.mvtTileStats.bytes / 1024 ** 2).toFixed(2) : '—';
+    const invalidFilter = !parseMinZoomIdFilter(vtx.mvtTweaks.minZoomIdFilter);
     const changeMinZoomIdFilter = (minZoomIdFilter) => {
-        if (minZoomIdFilter === mtx.mvtTweaks.minZoomIdFilter) {
+        if (minZoomIdFilter === vtx.mvtTweaks.minZoomIdFilter) {
             return;
         }
-        mtx.setMvtStyleUpdating(true);
-        mtx.setMvtTweaks((prev) => ({ ...prev, minZoomIdFilter }));
+        vtx.setMvtStyleUpdating(true);
+        vtx.setMvtTweaks((prev) => ({ ...prev, minZoomIdFilter }));
     };
     const zoomShifts = [
         {
             id: 'data-zoom-shift',
             name: 'Data zoom shift',
-            value: isOsmAndTileURL(mtx.tileURL) ? mtx.mvtTweaks.dataZoomShift : 0,
+            value: isOsmAndTileURL(mtx.tileURL) ? vtx.mvtTweaks.dataZoomShift : 0,
             disabled: !isOsmAndTileURL(mtx.tileURL),
-            loading: mtx.mvtTileStats?.count == null,
+            loading: vtx.mvtTileStats?.count == null,
             onChange: (delta) =>
-                mtx.setMvtTweaks((prev) => ({
+                vtx.setMvtTweaks((prev) => ({
                     ...prev,
                     dataZoomShift: Math.max(-3, Math.min(3, prev.dataZoomShift + delta)),
                 })),
@@ -43,11 +45,11 @@ export default function MvtTweaks() {
         {
             id: 'style-detail-shift',
             name: 'Style details (minZoom)',
-            value: mtx.mvtTweaks.styleDetailShift,
-            loading: mtx.mvtStyleUpdating,
+            value: vtx.mvtTweaks.styleDetailShift,
+            loading: vtx.mvtStyleUpdating,
             onChange: (delta) => {
-                mtx.setMvtStyleUpdating(true);
-                mtx.setMvtTweaks((prev) => ({
+                vtx.setMvtStyleUpdating(true);
+                vtx.setMvtTweaks((prev) => ({
                     ...prev,
                     styleDetailShift: Math.max(-3, Math.min(3, prev.styleDetailShift + delta)),
                 }));
@@ -62,7 +64,7 @@ export default function MvtTweaks() {
                 text={
                     <Typography component="div" align="center">
                         Size <strong>{size} MB</strong>
-                        {` (${mtx.mvtTileStats?.count ?? '—'} tiles, map z${mtx.mvtTileStats?.mapZoom ?? '—'}, mvt z${mtx.mvtTileStats?.zoom ?? '—'})`}
+                        {` (${vtx.mvtTileStats?.count ?? '—'} tiles, map z${vtx.mvtTileStats?.mapZoom ?? '—'}, mvt z${vtx.mvtTileStats?.zoom ?? '—'})`}
                     </Typography>
                 }
                 maxLines={1}
@@ -112,7 +114,7 @@ export default function MvtTweaks() {
                                 underline="always"
                                 onClick={() =>
                                     changeMinZoomIdFilter(
-                                        mtx.mvtTweaks.minZoomIdFilter === MIN_ZOOM_ID_PLACEHOLDER
+                                        vtx.mvtTweaks.minZoomIdFilter === MIN_ZOOM_ID_PLACEHOLDER
                                             ? ''
                                             : MIN_ZOOM_ID_PLACEHOLDER
                                     )
@@ -127,7 +129,7 @@ export default function MvtTweaks() {
                             fullWidth
                             size="small"
                             placeholder={MIN_ZOOM_ID_PLACEHOLDER}
-                            value={mtx.mvtTweaks.minZoomIdFilter}
+                            value={vtx.mvtTweaks.minZoomIdFilter}
                             error={invalidFilter}
                             helperText={invalidFilter ? 'Invalid regular expression' : null}
                             onChange={(event) => changeMinZoomIdFilter(event.target.value)}
@@ -138,8 +140,8 @@ export default function MvtTweaks() {
             <SimpleItemWithSwitch
                 id="se-mvt-fractional-zoom"
                 text="Enable fractional map zoom"
-                checked={mtx.mvtTweaks.fractionalZoom}
-                onChange={() => mtx.setMvtTweaks((prev) => ({ ...prev, fractionalZoom: !prev.fractionalZoom }))}
+                checked={vtx.mvtTweaks.fractionalZoom}
+                onChange={() => vtx.setMvtTweaks((prev) => ({ ...prev, fractionalZoom: !prev.fractionalZoom }))}
             />
         </>
     );

@@ -6,6 +6,7 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import '@maplibre/maplibre-gl-leaflet';
 import AppContext, { OBJECT_TYPE_POI, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import MvtContext from '../../context/MvtContext';
 import { osmandTileURL } from '../baseTileURL';
 import { isOsmAndTileURL, isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
@@ -107,10 +108,11 @@ export default function MvtLayer({ config }) {
     const map = useMap();
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const vtx = useContext(MvtContext);
     const hybridUnderlayUrl = useHybridUnderlayUrl();
     const hybridUnderlayUrlRef = useRef(hybridUnderlayUrl);
     const maplibreMapRef = useRef(null);
-    const dataZoomShift = ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) ? mtx.mvtTweaks.dataZoomShift : 0;
+    const dataZoomShift = ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) ? vtx.mvtTweaks.dataZoomShift : 0;
 
     hybridUnderlayUrlRef.current = hybridUnderlayUrl;
 
@@ -161,12 +163,12 @@ export default function MvtLayer({ config }) {
             getZoom: () => maplibreMap.getZoom(),
         }));
         map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
-        const stopZoomStats = ctx.develFeatures ? watchMvtZoom(map, sources, mtx.setMvtTileStats) : null;
+        const stopZoomStats = ctx.develFeatures ? watchMvtZoom(map, sources, vtx.setMvtTileStats) : null;
 
         const handleLoading = () => {
             window.seIsTilesLoaded = false;
             if (ctx.develFeatures) {
-                mtx.setMvtTileStats((stats) =>
+                vtx.setMvtTileStats((stats) =>
                     stats?.count == null && stats?.bytes == null ? stats : { ...stats, bytes: null, count: null }
                 );
             }
@@ -178,7 +180,7 @@ export default function MvtLayer({ config }) {
                 window.seIsTilesLoaded = true;
                 if (ctx.develFeatures) {
                     const nextStats = getMvtTileStats(maplibreMap, map);
-                    mtx.setMvtTileStats((stats) => (isEqual(stats, nextStats) ? stats : nextStats));
+                    vtx.setMvtTileStats((stats) => (isEqual(stats, nextStats) ? stats : nextStats));
                 }
             }
         };
@@ -249,8 +251,8 @@ export default function MvtLayer({ config }) {
             maplibreMap.off('error', handleError);
             stopZoomStats?.();
             if (ctx.develFeatures) {
-                mtx.setMvtTileStats(null);
-                mtx.setMvtStyleUpdating(false);
+                vtx.setMvtTileStats(null);
+                vtx.setMvtStyleUpdating(false);
             }
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
@@ -284,14 +286,14 @@ export default function MvtLayer({ config }) {
             return undefined;
         }
 
-        const finishStyle = () => mtx.setMvtStyleUpdating(false);
+        const finishStyle = () => vtx.setMvtStyleUpdating(false);
         const applyStyle = () => {
             setMapHybridVisibility(maplibreMap, config.style, Boolean(hybridUnderlayUrl));
             setMapStyleDetailShift(
                 maplibreMap,
                 config.style,
-                ctx.develFeatures ? mtx.mvtTweaks.styleDetailShift : 0,
-                mtx.mvtTweaks.minZoomIdFilter
+                ctx.develFeatures ? vtx.mvtTweaks.styleDetailShift : 0,
+                vtx.mvtTweaks.minZoomIdFilter
             );
             maplibreMap.once('idle', finishStyle);
         };
@@ -311,8 +313,8 @@ export default function MvtLayer({ config }) {
         mtx.tileURL,
         hybridUnderlayUrl,
         ctx.develFeatures,
-        mtx.mvtTweaks.styleDetailShift,
-        mtx.mvtTweaks.minZoomIdFilter,
+        vtx.mvtTweaks.styleDetailShift,
+        vtx.mvtTweaks.minZoomIdFilter,
     ]);
 
     return null;
