@@ -412,6 +412,9 @@ export default function TravelMenu() {
         if (res === null) {
             return t('web:travel_tracks_error');
         }
+        if (res.tooMany) {
+            return t('web:travel_tracks_too_many', { count: res.maxRoutes, radius });
+        }
 
         return t('web:travel_tracks_nearby', { count: res.features.length, radius });
     }
@@ -569,7 +572,11 @@ export default function TravelMenu() {
                                     id="se-travel-remove-point"
                                     icon={<SearchIcon />}
                                     text={searchPointTitle()}
-                                    desc={t('web:travel_search_point_desc')}
+                                    desc={
+                                        ctx.searchTravelRoutes.res?.tooMany
+                                            ? t('web:travel_tracks_too_many_desc')
+                                            : t('web:travel_search_point_desc')
+                                    }
                                     btnText={t('web:travel_remove_point')}
                                     onClick={clearSearchPoint}
                                 />
@@ -594,6 +601,7 @@ export default function TravelMenu() {
                         )}
                         {loadingResult && <CircularProgress className={styles.resultsSpinner} size={36} />}
                         {travelResult &&
+                            !travelResult.tooMany &&
                             (travelResult.features.length > 0 ? (
                                 <>
                                     {travelResult.features.some((r) => Number.isFinite(r.properties?.dist)) && (
