@@ -23,6 +23,16 @@ import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE, hasSpeedOnlyTracks } fr
 
 export const UNIDENTIFIED_TRACKS_KEY = 'nospeed';
 
+// quick sets of activity groups, as in public/prototypes/heatmap.html
+const PRESETS = [
+    { id: 'foot_cycling', name: 'web:activities_foot_cycling', groups: (id) => id === 'foot' || id === 'cycling' },
+    {
+        id: 'no_motor',
+        name: 'web:activities_no_motor',
+        groups: (id) => !['driving', 'motorcycling', 'air_sports'].includes(id),
+    },
+];
+
 export default function ActivitySelect({
     name = null,
     value,
@@ -71,6 +81,22 @@ export default function ActivitySelect({
     const getGroupActivityIds = (groupId) => {
         const group = activities?.groups?.find((g) => g.id === groupId);
         return group ? getGroupItems(group).map((a) => a.id) : [];
+    };
+
+    const getPresetIds = (preset) =>
+        (activities?.groups ?? []).filter((g) => preset.groups(g.id)).flatMap((g) => getGroupActivityIds(g.id));
+
+    const isPresetSelected = (preset) => {
+        const presetIds = getPresetIds(preset);
+
+        return (
+            presetIds.length === selectedActivities.length && presetIds.every((id) => selectedActivities.includes(id))
+        );
+    };
+
+    const selectPreset = (preset, event) => {
+        event.stopPropagation();
+        onChange(getPresetIds(preset));
     };
 
     const isGroupSelected = (groupId) => {
@@ -129,6 +155,8 @@ export default function ActivitySelect({
         const invalidOption = invalidOptions.find((o) => isInvalidSelected(o.id));
         if (invalidOption) return invalidOption.label;
         if (isAllSelected) return t('web:all_activities');
+        const preset = PRESETS.find(isPresetSelected);
+        if (preset) return t(preset.name);
 
         // Check if all selected activities belong to a single group
         for (const group of activities?.groups || []) {
@@ -223,6 +251,19 @@ export default function ActivitySelect({
                             <MenuItemWithLines name={t('web:all_activities')} maxLines={1} />
                         </ListItemText>
                     </MenuItem>
+                    {PRESETS.map((preset) => (
+                        <MenuItem
+                            key={preset.id}
+                            className={styles.optionItem}
+                            value={preset.id}
+                            onClick={(e) => selectPreset(preset, e)}
+                        >
+                            <Radio checked={isPresetSelected(preset)} />
+                            <ListItemText>
+                                <MenuItemWithLines name={t(preset.name)} maxLines={1} />
+                            </ListItemText>
+                        </MenuItem>
+                    ))}
                     <Divider sx={{ my: '0px !important' }} />
                     {activities?.groups?.map((group) => {
                         // When activityCounts is null (no data loaded or error), groups stay enabled.
