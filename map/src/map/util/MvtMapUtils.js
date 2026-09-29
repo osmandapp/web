@@ -1,5 +1,7 @@
 import L from 'leaflet';
 
+const MAX_MVT_ZOOM = 24;
+
 export function getMvtDataTileUrl(tileUrl, shift) {
     return shift ? `${tileUrl}${tileUrl.includes('?') ? '&' : '?'}shift=${shift}` : tileUrl;
 }
@@ -20,9 +22,12 @@ export function setMapDataZoomShift(maplibreMap, sources, tileUrl, shift) {
 export function setMapStyleDetailShift(maplibreMap, style, shift, minZoomIdFilter = '') {
     const filter = parseMinZoomIdFilter(minZoomIdFilter);
     style.layers.forEach((layer) => {
-        if (layer.minzoom !== undefined && maplibreMap.getLayer(layer.id)) {
-            const minzoom = Math.max(0, Math.min(24, layer.minzoom - (filter?.test(layer.id) ? shift : 0)));
-            maplibreMap.setLayerZoomRange(layer.id, minzoom, layer.maxzoom);
+        if ((layer.minzoom !== undefined || layer.maxzoom !== undefined) && maplibreMap.getLayer(layer.id)) {
+            const layerShift = filter?.test(layer.id) ? shift : 0;
+            const [minzoom, maxzoom] = [layer.minzoom, layer.maxzoom].map((zoom) =>
+                zoom === undefined ? undefined : Math.max(0, Math.min(MAX_MVT_ZOOM, zoom - layerShift))
+            );
+            maplibreMap.setLayerZoomRange(layer.id, minzoom, maxzoom);
         }
     });
 }
