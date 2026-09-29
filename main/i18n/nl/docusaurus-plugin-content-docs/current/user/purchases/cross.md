@@ -1,8 +1,9 @@
 ---
-source-hash: 803b22736228c5b37a1814163faeb441138781434f1ba2a3069b7668f1ffe213
+source-hash: 856b27defd24e63764e7fed8d4ebb2d645fd0d1b4aec10804b2f835f0c0ec2e0
 sidebar_position: 4
 title:  Cross-Platform Aankopen
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,26 +15,25 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-
 ## Ondersteunde Cross-Platform Aankopen {#supported-cross-platform-purchases}
 
 De volgende OsmAnd-producten ondersteunen momenteel gebruik op meerdere platforms (Android, iOS en web):
 
-- **OsmAnd Pro** abonnement
-- **Maps+** abonnement
+- **OsmAnd Pro** abonnement  
+- **Maps+** abonnement  
 - **Maps+** eenmalige in-app aankoop
 
-Vanaf **OsmAnd versie 5.1**, uitgebracht ter ere van ons **15-jarig jubileum**, is de cross-platform toegang uitgebreid naar **Maps+** (voorheen bekend als *Unlimited*). Voorheen was alleen het [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) abonnement cross-platform.
+Vanaf **OsmAnd versie 5.1**, uitgebracht ter ere van ons **15-jarig jubileum**, is de cross-platform toegang uitgebreid naar **Maps+** (voorheen bekend als *Unlimited*). Voorheen was alleen het [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) abonnement cross-platform.  
 
-Om cross-platform toegang te activeren, moeten aankopen gekoppeld zijn aan uw [OsmAnd Cloud](../personal/osmand-cloud.md#login) account.
+Om cross-platform toegang te activeren, moeten aankopen gekoppeld zijn aan uw [OsmAnd Cloud](../personal/osmand-cloud.md#login) account.  
 U kunt hier alle OsmAnd-producten vergelijken: [verschil tussen aankopen](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
 
-| **Producttype** | **Cross-Platform** | **Opmerkingen** |
+| **Producttype**               | **Cross-Platform** | **Opmerkingen**                                                                 |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|
-| **OsmAnd Pro** (abonnement) | ✔ | Werkt na inloggen op OsmAnd Cloud op Android, iOS en web wanneer gekoppeld aan de Cloud. |
-| **Maps+** (abonnement) | ✔ | Bruikbaar op alle platforms, maar moet geactiveerd worden via OsmAnd Cloud **op het aankoopapparaat**. |
-| **Maps+** (eenmalige aankoop) | ✔ | Bruikbaar op alle platforms, maar moet geactiveerd worden via OsmAnd Cloud **op het aankoopapparaat**. |
-| **OsmAnd+** (zelfstandige app) | ✘ | Standaard niet overdraagbaar tussen platforms, vereist handmatige registratie van de aankoop in het OsmAnd Cloud-account. Neem voor hulp contact op met support@osmand.net. |
+| **OsmAnd Pro** (abonnement) | ✔                  | Werkt na inloggen op OsmAnd Cloud op Android, iOS en web wanneer gekoppeld aan de Cloud. |
+| **Maps+** (abonnement)      | ✔                  | Bruikbaar op alle platforms, maar moet geactiveerd worden via OsmAnd Cloud **op het aankoopapparaat**.     |
+| **Maps+** (eenmalige aankoop) | ✔                  | Bruikbaar op alle platforms, maar moet geactiveerd worden via OsmAnd Cloud **op het aankoopapparaat**. |
+| **OsmAnd+** (zelfstandige app)  | ✘                  | Standaard niet overdraagbaar tussen platforms, vereist handmatige registratie van de aankoop in het OsmAnd Cloud-account. Neem voor hulp contact op met support@osmand.net. |
 
 
 ## Hoe het werkt {#how-it-works}
@@ -46,7 +46,7 @@ Om uw **OsmAnd Pro**, **Maps+** aankoop op verschillende platforms (Android, iOS
 
 Voer deze stap uit op het **apparaat waarop u de aankoop heeft gedaan** (Android of iOS, versie 5.0 of later):
 
-1. Ga naar uw [OsmAnd Cloud-account](../personal/osmand-cloud.md#login):
+1. Ga naar uw [OsmAnd Cloud-account](../personal/osmand-cloud.md#login):  
    _Menu → Instellingen → OsmAnd Cloud → Nieuw account aanmaken / Ik heb al een account_
 
 2. Eenmaal ingelogd, wordt uw **Pro** of **Maps+** aankoop automatisch gekoppeld aan uw **Cloud-account** en gemarkeerd als **cross-platform**, *als deze niet eerder aan een ander account was gekoppeld.*
@@ -58,11 +58,11 @@ Voer deze stap uit op het **apparaat waarop u de aankoop heeft gedaan** (Android
 ![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
 ![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
 
-1. Ga naar uw [OsmAnd Cloud-account](../personal/osmand-cloud.md#login):
+1. Ga naar uw [OsmAnd Cloud-account](../personal/osmand-cloud.md#login):  
    *Menu → Instellingen → OsmAnd Cloud →* ***Log in met hetzelfde account***
 
-2. Ga dan naar:
-   *Menu → Instellingen → Aankopen*
+2. Ga dan naar:  
+   *Menu → Instellingen → Aankopen*  
    Uw gekoppelde **Pro of Maps+** aankoop zou nu beschikbaar moeten zijn.
 
 
@@ -70,7 +70,7 @@ Voer deze stap uit op het **apparaat waarop u de aankoop heeft gedaan** (Android
 
 Als u uw aankoop niet in de lijst ziet:
 
-1. Tik op *Menu → Instellingen → Aankopen → Aankopen herstellen*
+1. Tik op *Menu → Instellingen → Aankopen → Aankopen herstellen*  
 2. Zorg ervoor dat u bent ingelogd op **hetzelfde OsmAnd Cloud-account** dat u op het oorspronkelijke apparaat heeft gebruikt.
 
 Als het probleem aanhoudt, neem dan contact op met **support@osmand.net** en vermeld:
@@ -80,6 +80,20 @@ Als het probleem aanhoudt, neem dan contact op met **support@osmand.net** en ver
 - Type aankoop (Pro / Maps+ eenmalig / Maps+ abonnement).
 
 
+### Handmatige overdracht {#manual-transfer}
+
+Als uw aankoop niet automatisch via OsmAnd Cloud kan worden geactiveerd, kan Support — **support@osmand.net** — deze mogelijk handmatig overdragen.
+
+Om een handmatige overdracht aan te vragen, geef het volgende op:
+- Uw OsmAnd Cloud e-mailadres.
+- Het transactienummer of bestelnummer van de aankoop.
+- Een screenshot van het gekochte product wordt ook aanbevolen.
+
+Zonder het transactienummer of bestelnummer van de aankoop en een geregistreerd OsmAnd Cloud-account kan Support de aankoop normaal gesproken niet overdragen.
+
+Aankopen die meer dan 10 jaar geleden zijn gedaan, kunnen niet worden overgedragen.
+
+
 ### Aankopen en meerdere accounts {#purchases-and-multiple-accounts}
 
 Een cross-platform aankoop is gekoppeld aan het OsmAnd Cloud-account dat als laatste is geactiveerd op het apparaat met het originele aankoopbewijs (van de App Store of Google Play). Als u uitlogt van uw primaire account en inlogt op een nieuw account op dit apparaat, draagt het systeem de licentie automatisch over naar het nieuwe account. Als gevolg hiervan verliest uw oorspronkelijke OsmAnd Cloud-account zijn aankoopstatus op andere platforms, aangezien de licentie slechts op één OsmAnd Cloud-account tegelijk actief kan zijn. Meer informatie vindt u [hier](../troubleshooting/purchases_payments.md#purchase-association-with-multiple-osmand-cloud-accounts).
@@ -87,13 +101,13 @@ Een cross-platform aankoop is gekoppeld aan het OsmAnd Cloud-account dat als laa
 
 ## Voorbeeld {#example}
 
-U heeft **Maps+** gekocht als een eenmalige in-app aankoop in de gratis versie van OsmAnd via de [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
+U heeft **Maps+** gekocht als een eenmalige in-app aankoop in de gratis versie van OsmAnd via de [Google Play](https://play.google.com/store/apps/details?id=net.osmand).  
 Later besluit u over te stappen op een iPhone en wilt u **Maps+** gebruiken met de [OsmAnd iOS-versie](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 Om uw Maps+ aankoop op iOS te activeren:
 
-1. Open de **Amazon-versie** van de OsmAnd-app op uw oorspronkelijke apparaat.
-2. Log in op uw [OsmAnd Cloud-account](../personal/osmand-cloud.md#login):
+1. Open OsmAnd op uw oorspronkelijke Android-apparaat.
+2. Log in op uw [OsmAnd Cloud-account](../personal/osmand-cloud.md#login):  
    *Menu → Instellingen → OsmAnd Cloud → Nieuw account aanmaken / Ik heb al een account*
 3. Installeer OsmAnd op uw iPhone vanuit de [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
 4. Log in op **hetzelfde OsmAnd Cloud-account** op uw iPhone.
@@ -106,7 +120,7 @@ Veel plezier met het gebruik van Maps+/Pro op verschillende platforms!
 
 ## Gerelateerde artikelen {#related-articles}
 
-- [OsmAnd Cloud](../personal/osmand-cloud.md)
-- [Probleemoplossing bij aankopen](../troubleshooting/purchases_payments.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)  
+- [Probleemoplossing bij aankopen](../troubleshooting/purchases_payments.md)  
 - [Verschil tussen aankopen Android](./android.md#difference-between-purchases-android)
 - [Verschil tussen aankopen iOS](./ios.md#difference-between-purchases-ios)

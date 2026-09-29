@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -103,7 +103,7 @@ Het drie-puntenmenu (⋮) biedt extra acties voor de Slimme map. U kunt de map *
 
 ## Cloud-tracks {#cloud-tracks}
 
-GPX-tracks die u hebt in [OsmAnd Cloud](../personal/osmand-cloud.md) zijn na inloggen beschikbaar voor weergave en bewerking. Alleen voor **Pro-gebruikers** <ProFeature/> en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) gebruikers (die hun gegevens kunnen downloaden zelfs nadat hun Pro-abonnement is verlopen).
+GPX-tracks die u hebt in [OsmAnd Cloud](../personal/osmand-cloud.md) zijn na inloggen beschikbaar voor weergave en bewerking. Alleen **Pro-gebruikers** <ProFeature/> kunnen ze openen. [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) gebruikers kunnen hun Cloud-gegevens downloaden zelfs nadat hun Pro-abonnement is verlopen.
 
 Wanneer u een track selecteert, centreert de kaart automatisch en past het zoomniveau aan om de volledige track binnen het zichtbare kaartgebied weer te geven.
 

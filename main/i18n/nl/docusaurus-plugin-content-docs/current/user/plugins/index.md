@@ -1,5 +1,5 @@
 ---
-source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
+source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
 sidebar_position: 18
 title:  Plugins
 ---
@@ -74,7 +74,7 @@ OsmAnd Plugins kunnen deze functiegroepen uitbreiden: **Lagen**, **Widgets**, **
 | [Online kaarten](#online-maps) |[Kaartlaag](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Ritregistratie](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profiel](../plugins/trip-recording.md#recording-settings) |
 | [Topografie](#topography) | [Kaartlaag](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [3D-reliëf](#topography) 🤖  | [Kaartlaag](../plugins/topography.md#3d-relief) |
+| [3D-reliëf](#topography) | [Kaartlaag](../plugins/topography.md#3d-relief) |
 | [Weer](../plugins/weather.md) | [Kaartlaag](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Scherm](../plugins/weather.md#weather-forecast-screen) |
 | [Nautische kaartweergave](#nautical-map-view) | [Kaartstijl](../plugins/nautical-charts.md#nautical-map-style), [Profiel](../plugins/nautical-charts.md#nautical-profile)  |
 | [Skikaartweergave](#ski-map-view) | [Kaartstijl](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profiel](../plugins/ski-maps.md#skiing-profile) |
@@ -82,13 +82,13 @@ OsmAnd Plugins kunnen deze functiegroepen uitbreiden: **Lagen**, **Widgets**, **
 |[Parkeerpositie](#parking-position) | [Contextmenu](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[OpenStreetMap bewerken](#openstreetmap-editing)| [Kaartlaag](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Kaartlaag](../plugins/mapillary.md#map-layer), [Contextmenu](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|[Externe sensoren](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Externe sensoren](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
 |[Voertuigstatistieken](#vehicle-metrics)  | [Aangepaste instellingen](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
 |[Astronomie](#astronomy)  | [Scherm](../plugins/astronomy.md#star-map-screen), [Contextmenu](../plugins/astronomy.md#context-menu) |
 |[Toegankelijkheid](#accessibility) 🤖  | [Aangepaste instellingen](../plugins/accessibility.md#plugin-settings) |
 |[OsmAnd ontwikkeling](#osmand-development) | [Aangepaste instellingen](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Kaartlaag](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Contextmenu](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[AIS vaartuigtracker](#ais-vessel-tracker) 🤖  |  [Aangepaste instellingen](../plugins/ais-tracker.md#plugin-settings) |
+|[AIS vaartuigtracker](#ais-vessel-tracker) |  [Aangepaste instellingen](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Plugin-instellingen {#plugin-settings}
@@ -196,7 +196,7 @@ Verbind een OBD-II-scanner om voertuiggegevens in OsmAnd weer te geven en de inf
 
 ### [Astronomie](./astronomy.md) {#astronomy}
 
-De Astronomie-plugin toont een interactieve sterrenhemel-overlay met sterren, sterrenbeelden, de zon, de maan en planeten. Het helpt u hemellichamen boven uw huidige locatie te identificeren, hun banen te previewen voor een geselecteerde datum en tijd, en sterrenkijk-sessies te plannen met behulp van ingebouwde tijdregelaars en weergave-opties.
+De Astronomie-plugin toont een interactieve sterrenhemel-overlay met sterren, sterrenbeelden, de zon, de maan en planeten. Het helpt u hemellichanden boven uw huidige locatie te identificeren, hun banen te previewen voor een geselecteerde datum en tijd, en sterrenkijk-sessies te plannen met behulp van ingebouwde tijdregelaars en weergave-opties.
 
 ### [Toegankelijkheid](./accessibility.md) {#accessibility}
 

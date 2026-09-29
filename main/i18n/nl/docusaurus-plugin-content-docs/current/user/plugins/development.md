@@ -1,5 +1,5 @@
 ---
-source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
+source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
 sidebar_position: 11
 title:  OsmAnd Ontwikkeling
 ---
@@ -83,16 +83,13 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Applicatietesten {#application-testing}
 
-:::caution Android only
-:::
-
-- **Simuleer eerste app-start**. Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.  
-- **Test gesproken aanwijzingen**. Selecteer een stem en test door aankondigingen af te spelen.
+- **Simuleer eerste app-start** (*Android*). Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.  
+- **Test gesproken aanwijzingen** (*Android*). Selecteer een stem en test door aankondigingen af te spelen.
 - **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
-- **Transparante statusbalk**. De kaart wordt zichtbaar onder de statusbalk.  
-- **Toon banner gratis versie**. Toon de banner van de gratis versie, zelfs in de betaalde versie.  
-- **Toon debug-informatie**. Toon grafische informatie over de plaatsing van elke tekst op de kaart.
-- **Sta weergave bovenaan toe**. Staat toe dat kaartteksten over elkaar heen worden weergegeven.
+- **Transparante statusbalk** (*Android*). De kaart wordt zichtbaar onder de statusbalk.  
+- **Toon banner gratis versie** (*Android*). Toon de banner van de gratis versie, zelfs in de betaalde versie.  
+- **Toon debug-informatie** (*Android*). Toon grafische informatie over de plaatsing van elke tekst op de kaart.
+- **Sta weergave bovenaan toe** (*Android*). Staat toe dat kaartteksten over elkaar heen worden weergegeven.
 
 
 ### Interne Algoritmen {#internal-algorithms}
@@ -101,6 +98,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 :::
 
 - **Safe mode**. Voert OsmAnd uit zonder de native C++-bibliotheek, met Java-implementaties voor kaartweergave en routeberekening in plaats daarvan. De app schakelt automatisch over naar deze modus als de native bibliotheek tijdens het opstarten faalt, zodat de app kan starten en bruikbaar blijft. Kaartweergave en routeberekening zijn merkbaar langzamer terwijl de veilige modus actief is.  
+- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
 
 
 ### Geheugeninstellingen {#memory-settings}
@@ -114,6 +112,8 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 - Een hogere geheugentoewijzing kan de prestaties van andere apps beïnvloeden.
 - [Berekening van 50 km routes voor voetgangers](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
+
+- **Java memory** toont hoeveel Java-geheugen de app gebruikt en opent de heap-histogramhulpmiddelen: *Collect & analyze now*, *Share report* en *Collect on high usage* (standaard uitgeschakeld). Zie [Heap Histogram for Memory Problems](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android) voor wanneer u deze moet gebruiken.
 
 
 ### Info en Statistieken {#info-and-statistics}
@@ -302,20 +302,20 @@ Een vergelijking van de OsmAnd-kaart en het aardoppervlak onthult de volgende pa
 
 De onderstaande tabel bevat informatie over de kanteling van de camera en de afstand tot het doel en het zoomniveau waarop de vervormingen van de OsmAnd-kaart zichtbaar worden. Als de camera verder van het doel af beweegt, zal de waargenomen vervorming van de OsmAnd-kaart toenemen.  
 
-|Kanteling (90) |Breedtegraad |Max Zoom |Hoogte, km |Vervorming|  
+|Incline (90) |Breedtegraad |Max Zoom |Hoogte, km |Vervorming|  
 |-----|-----|-----|-----|-----|
 |90|26|6|5500|5%|
 |90|50|6|2500|5%|
 |90|66|7|1300|5%|
-|**Kanteling (60)** |**Breedtegraad** |**Max Zoom** |**Hoogte, km** |**Vervorming**|
+|**Incline (60)** |**Breedtegraad** |**Max Zoom** |**Hoogte, km** |**Vervorming**|
 |65|26|8|1100|6.5%|
 |65|50|8|800|6.5%|
 |65|66|9|630|6.5%|
-|**Kanteling (45)** |**Breedtegraad** |**Max Zoom** |**Hoogte, km** |**Vervorming**|
+|**Incline (45)** |**Breedtegraad** |**Max Zoom** |**Hoogte, km** |**Vervorming**|
 |45|26|9|350|7.5%|
 |45|50|9|320|7.5%|
 |45|66|8|210|7.5%|
-|**Kanteling (20)** |**Breedtegraad** |**Max Zoom** |**Hoogte, km** |**Vervorming**|
+|**Incline (20)** |**Breedtegraad** |**Max Zoom** |**Hoogte, km** |**Vervorming**|
 |20| 26|12|30|10%|
 |20| 50|11|30|10%|
 |20| 66|11|30|10%|

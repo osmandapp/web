@@ -1,5 +1,5 @@
 ---
-source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title: Routes
 sidebar_position: 11
 ---
@@ -32,7 +32,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,render
 
 - Om de gewenste routes op de kaart weer te geven, schakelt u ze in in de *Routes-lijst* van het menu [Kaart configureren](../../map/configure-map-menu.md).
 - OsmAnd kan [routes die aanwezig zijn op OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route) markeren. Ze kunnen worden geselecteerd door op [het symbool op de route](#save-as-a-track) te tikken, en als de zichtbare set routes correct is geconfigureerd, kunt u de kleur en pictogrammen volgen.
-- De belangrijkste routetypen kunnen ook worden gefilterd op klassen en subklassen, zodat u alleen specifieke groepen binnen elk type kunt weergeven. U kunt bijvoorbeeld wandelroutes weergeven op **OSMC-symbolen** als klassen en op *internationale, nationale, regionale* of *lokale netwerken*, evenals *niet-geclassificeerde routes*, als subklassen. Vergelijkbare netwerkclassificatiefilters zijn beschikbaar voor fietsroutes. Deze opties zijn momenteel beschikbaar wanneer de plug-in [OsmAnd Development](../../plugins/development.md) is ingeschakeld. Wanneer meerdere routenetwerken overlappen, kunnen individuele classificaties worden in- of uitgeschakeld om alleen de gewenste routeniveaus weer te geven.
+- De belangrijkste routetypen kunnen ook worden gefilterd op klassen en subklassen, zodat u alleen specifieke groepen binnen elk type kunt weergeven. Voorbeeld: u kunt wandelroutes weergeven op **OSMC-symbolen** als klassen en op *internationale, nationale, regionale* of *lokale netwerken*, evenals *niet-geclassificeerde routes*, als subklassen. Vergelijkbare netwerkclassificatiefilters zijn beschikbaar voor fietsroutes. Deze opties zijn momenteel beschikbaar wanneer de plug-in [OsmAnd Development](../../plugins/development.md) is ingeschakeld. Wanneer meerdere routenetwerken overlappen, kunnen individuele classificaties worden in- of uitgeschakeld om alleen de gewenste routeniveaus weer te geven.
 - U kunt een track boven op de routes maken met de tool [Plan een route](../../plan-route/create-route.md).
 - Wanneer meerdere routes over dezelfde weg lopen, wordt elke route weergegeven als een afzonderlijke semi-transparante lijn die boven de andere ligt.
 - Wanneer u op een locatie tikt waar meerdere routes elkaar overlappen, wordt een contextmenu met alle routes die door dit punt lopen weergegeven.
@@ -219,7 +219,7 @@ Navigeer naar *<Translate android="true" ids="search_button,search_categories,po
 
 </Tabs>
 
-Tik in de zoekresultaten voor routes op de knop **Filters** rechtsboven om de lijst te beperken. Het Filterscherm bevat een veld **Filteren op naam**, een blok **Type** met *Bureau*, *Postfiliaal* en *Postpartner*, en **extra criteria** die afhankelijk zijn van de geselecteerde routecategorie of activiteit, aangezien elke categorie zijn eigen kenmerken en filterwaarden kan weergeven.
+Tik in de zoekresultaten voor routes op de knop **Filters** rechtsboven om de lijst te beperken. Het Filterscherm bevat een veld **Filteren op naam** en **extra criteria** die afhankelijk zijn van de geselecteerde routecategorie of activiteit, aangezien elke categorie zijn eigen kenmerken en filterwaarden kan weergeven.
 
 U kunt filters in- of uitschakelen met de schakelaars, en sommige secties bevatten *Alles weergeven* om extra waarden te tonen.
 
@@ -231,5 +231,5 @@ U kunt filters in- of uitschakelen met de schakelaars, en sommige secties bevatt
 - [Trackcontextmenu](../../map/tracks/track-context-menu.md)
 - [Openbaar vervoer](../public-transport.md)
 - [Uiterlijk van navigatieroute](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [POI zoeken](../../search/search-poi.md#)
+- [POI zoeken](../../search/search-poi.md)
 - [Soorten routes](./types-of-routes.md)

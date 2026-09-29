@@ -1,5 +1,5 @@
 ---
-source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
+source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
 sidebar_position: 2
 title:  Adres zoeken
 ---
@@ -46,28 +46,6 @@ OsmAnd biedt verschillende manieren om naar de *Zoektool* te gaan waar de sectie
 
 </Tabs>
 
-<!--
-Search by Address simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
-
-- **To use the Search Address function,** you have to [download a map](../start-with/download-maps.md) of the required area first.
-- **The search is based on the data located in the visible area of the map** on the device screen. If you do not find anything, OsmAnd offers to increase the search radius.
-- The address information in OsmAnd contains all [OSM tag keys](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
-
-
-Search query list:
-
-**1.** The **order** of items in the list:
-
-- **Ordered by name**. Selecting *First specify city/town/locality* (Android) or *Select city* (iOS) will display a list that starts with unnamed items, if any, then numeric names followed by the names by letters.
-- **Ascending numerical order**. In the next search list, the house numbers are displayed in ascending order, after entering the city and street.
-
-**2.** Each field in the Address Search list contains **information** such as:
-
-- An icon that identifies the type of locality.
-- Part of an address, postal number, or coordinate area.
-- Distance from your current location or from the city center.
-- Additional information, such as the city's district.
--->
 OsmAnd ondersteunt volledige tekst adres zoeken. Dit betekent dat u een adres direct in het zoekveld kunt typen in plaats van stad → straat → huisnummer stap voor stap te selecteren. De zoekmachine probeert adrescomponenten te herkennen zoals:
 - stad;
 - straat;
@@ -109,6 +87,7 @@ OsmAnd ondersteunt verschillende veelvoorkomende adresformaten. U kunt adressen 
 | Adresformaat | Voorbeeldquery's |
 |---|---|
 | Huisnummer + straat | 221B Baker Street<br />10 Downing Street |
+| Dubbel huisnummer + straat | 243/11 Husova |
 | Straat + huisnummer | Baker Street 221B<br />Main Street 101 |
 | Stad + straat + huisnummer | London Baker Street 221B<br />Paris Rue de Rivoli 10 |
 | Straat kruisingen | Broadway & Wall Street<br />Main Street and High Street |
@@ -135,29 +114,6 @@ De zoekmachine tolereert ook veelvoorkomende variaties in adresformattering zoal
 | Volledig adres vs vereenvoudigd adres | [221B Baker Street London United Kingdom](https://osmand.net/map/poi/?name=221B+Baker+Street&type=Tourist+attraction&pin=51.52339,-0.1582396) <br /> 221B Baker Street <br /> Baker Street 221B | [Discussie](https://github.com/osmandapp/OsmAnd/issues/19004) |
 | VS adresformaat | [1500 North Main Avenue, Springfield](https://osmand.net/map?pin=37.226315,-93.296524#11/37.1799/-93.3522) <br /> [4600 Sugar Maple Lane, Nashville](https://osmand.net/map?pin=36.051846,-86.95705#18/36.0516/-86.9561) | [Discussie](https://github.com/osmandapp/OsmAnd/issues/6824) |
 | VS staat afkortingen | [Springfield, VA 22150](https://osmand.net/map?pin=36.51995,-86.86385#18/36.5199/-86.8635) <br /> [Manhattan Beach, CA 90266](https://osmand.net/map?pin=33.883938,-118.41048#20/33.8839/-118.4105) | [Discussie](https://github.com/osmandapp/OsmAnd/issues/6824) |
-
-<!--
-**Examples**: Instead of `221B Baker Street London United Kingdom` try `221B Baker Street` or `Baker Street 221B`.
-
-OsmAnd may also ignore additional information such as country or region if the address can already be identified.
-
-Postal addresses copied from websites may include additional information such as company names, ZIP codes, or apartment numbers. If search does not return results, try entering only the street name, house number, and city.
-
-Search is also tolerant to minor differences in spelling, such as spaces, hyphens, or common abbreviations in street names. **For example**:
-
-`Weberstrasse`  
-`Weber strasse`  
-`Weber-strasse`
-
-House numbers with letter suffixes can also be written in different formats:
-
-`30B`  
-`30b`  
-`30-B`  
-`30-b`
-
-These variations may still return the same address.
--->
 
 
 ## Stad selecteren {#select-city}
@@ -186,16 +142,8 @@ Deze manier van zoeken maakt het gemakkelijk om specifieke locaties binnen een g
 - Tik hiervoor op **Eerst stad/plaats/localiteit opgeven** (Android) of **Stad selecteren** (iOS).
 - Selecteer in de lijst die wordt geopend de gewenste plaats. [Hier](#full-text-search) wordt de volgorde beschreven waarin zoekopdrachten worden weergegeven en welke informatie over elk item beschikbaar is.
 - Op het volgende scherm kunt u het adres verder verfijnen of de knop *Toon op de kaart* onder het zoekinvoerveld selecteren.
-- Om uw zoekopdracht te specificeren, kunt u de volledige of slechts een deel van de naam van de stad, het dorp of de gemeente invoeren waar het adres dat u zoekt zich bevindt. Hiermee kunt u uw zoekopdracht verfijnen en een nauwkeurigere lijst krijgen.
+- Om uw zoekopdracht te specificeren, kunt u de volledige of slechts een deel van de naam van de stad, het dorp of de gemeente invoeren waar het adres dat u zoekt zich bevindt. Hiermee kunt u uw zoekopdracht verfijnen en een nauwkeuriger lijst krijgen.
 - Als u op het laatste item in het adres, huisnummer of de naam van de kruising tikt, wordt het [contextmenu van de kaart](../map/map-context-menu.md#select-an-object-single-tap) van het object geopend.  
-
-<!--
-**Searching by city offers the following benefits:**
-
-- *Convenience*. Allows you to quickly select the required city from the list, and specify a certain street, house or intersection in the selected city without having to enter the full address. This saves time and simplifies the process of finding the right place.
-- *Precision.* You can select a city and street from the available options, avoiding errors when manually entering an address.
-- *Filtering.* The ability to select a specific house from the list makes it easier to accurately navigate to the required location, especially when the exact address is unknown.
---> 
 
 :::note Sleutel & Waarde
 *Zoeken op stad / dorp / gehucht* via [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  
