@@ -1,5 +1,5 @@
 ---
-source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
+source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
 sidebar_position: 3
 title:  Indicaciones de voz / Notificaciones
 ---
@@ -99,7 +99,7 @@ Para obtener más información sobre cómo y cuándo se activan las indicaciones
 
 - *Repetir instrucciones de navegación*. Le permite repetir las instrucciones de navegación a intervalos regulares de 1 a 30 minutos. O manualmente: si se pierde una indicación de voz, puede volver a escucharla simplemente tocando [la flecha de giro actual](../../widgets/nav-widgets.md#next-turn) en la pantalla de la aplicación.
 - *[Tiempo de anuncio](#announcement-time)*.
-- *Pausar audio hablado* (*solo iOS*). Cuando está activado, los podcasts, audiolibros y otros audios hablados se pausan mientras se reproducen las indicaciones de voz. La reproducción de música continúa a volumen reducido. Cuando está desactivado, tanto el audio hablado como la música continúan reproduciéndose a volumen reducido.
+- *Pausar audio hablado* (*solo iOS, incluido CarPlay*). Cuando está activado, los podcasts, audiolibros y otros audios hablados se pausan mientras se reproducen las indicaciones de voz, ya sea a través del dispositivo o de CarPlay. La reproducción de música continúa a volumen reducido. Cuando está desactivado, tanto el audio hablado como la música continúan reproduciéndose a volumen reducido.
 
 **Salida** (*solo Android*):
 

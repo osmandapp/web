@@ -1,5 +1,5 @@
 ---
-source-hash: 37966c34f2ca7cf0b51174feba09ac86bc8ff2c9dbcc286058b56a245ebf5aff
+source-hash: 6d86091f99fcc3a40ed293334c95361fd6142d9eab867812422962bbd0783539
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd Account
@@ -15,10 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Resumen {#overview}
 
@@ -40,7 +36,7 @@ Para acceder a las funciones de OsmAnd Web, necesita crear una cuenta. Utilice e
 
 Después de verificar el código, se crea su cuenta web y se inicia sesión automáticamente.
 
-![Registro Web](@site/static/img/web/web_sign_up.png) ![Registro Web](@site/static/img/web/web_ver_code.png)
+![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
 
 
 ### Inicio de sesión {#login}
@@ -71,7 +67,7 @@ Si desea guardar una copia de todos sus datos, utilice **Descargar todo**. Esto 
 
 Haga clic en **Descargar copia de seguridad** para iniciar la exportación y guardar el archivo en su computadora.
 
-![Cuenta Web](@site/static/img/web/web_download_all.png)
+![Web Account](@site/static/img/web/web_download_all.png)
 
 ### Pagos y compras {#payments-and-purchases}
 
@@ -95,7 +91,7 @@ Si no hay compras vinculadas a su cuenta todavía, esta sección muestra un esta
 
 Para más detalles sobre el uso de sus compras en diferentes plataformas, lea sobre el [acceso multiplataforma](../purchases/cross.md).
 
-![Cuenta Web](@site/static/img/web/web_purchases.png)
+![Web Account](@site/static/img/web/web_purchases.png)
 
 ### Sincronización en la nube {#cloud-sync}
 
@@ -107,7 +103,7 @@ La disponibilidad de Sincronización en la nube depende del tipo de cuenta:
 - [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start): sincroniza [Favoritos](../web/web-favorites.md) y los muestra en la web.
 - OsmAnd Pro: sincroniza [Pistas](../web/web-tracks.md), Favoritos y [Copias de seguridad](#my-data), y desbloquea el acceso completo en la web a los datos en la nube.
 
-![Pista Web](@site/static/img/web/web_track_start.png) ![Pista Web](@site/static/img/web/web_track_pro.png)
+![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
 
 ### OsmAnd Cloud {#osmand-cloud}
 
@@ -117,7 +113,7 @@ La opción **Cambios** muestra una lista cronológica de archivos almacenados en
 
 La opción **Papelera** contiene archivos que se eliminaron de OsmAnd Cloud. La lista también está agrupada por mes y muestra cuándo se eliminó cada archivo y desde qué dispositivo. Utilice el menú de tres puntos junto a un archivo para *Descargar* una copia, *Restaurar de la papelera* (devolver el archivo a OsmAnd Cloud para que vuelva a estar disponible en sus datos) o *Eliminar inmediatamente* para quitarlo permanentemente. Esto ayuda a prevenir la pérdida accidental de datos mientras aún le permite liberar espacio de almacenamiento en la nube cuando está seguro de que un archivo ya no se necesita. También puede eliminar todos los elementos eliminados a la vez haciendo clic en el icono de Papelera en el encabezado del panel de Papelera. Esto abre el diálogo **Vaciar papelera**, donde confirma la eliminación para quitar permanentemente todos los archivos de la Papelera.
 
-![Nube Web](@site/static/img/web/web_changes.png) ![Nube Web](@site/static/img/web/web_trash.png)
+![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
 
 ### Aplicaciones conectadas {#connected-apps}
 
@@ -144,7 +140,7 @@ Para desconectar su cuenta de Garmin Connect™, vaya a *Configuración → Desc
 
 Si no recuerda su contraseña, utilice el enlace **No tengo contraseña o la he olvidado** en el diálogo de inicio de sesión. Esto abre el panel **Cambiar o restablecer contraseña**. Introduzca la dirección de correo electrónico que utilizó para crear su cuenta y haga clic en **Continuar**. Se envía un mensaje con un código de verificación a este correo electrónico. En la siguiente pantalla, escriba el código de verificación y su nueva contraseña, luego seleccione **Continuar** para confirmar. Cuando se acepta el código, se actualiza su contraseña y puede iniciar sesión en OsmAnd Web con las nuevas credenciales.
 
-![Cuenta Web](@site/static/img/web/web_password.png)
+![Web Account](@site/static/img/web/web_password.png)
 
 ### Cambiar dirección de correo electrónico {#change-email-address}
 
@@ -153,11 +149,11 @@ Vaya a *Menú General → Cuenta → Correo electrónico → ⋮ → Cambiar cor
 
 Aparece el diálogo Cambiar correo electrónico. Se envía un código de verificación a la dirección de correo electrónico actual. Introduzca este código en el campo **Código del correo electrónico antiguo**, especifique la nueva dirección en **Nuevo correo electrónico**, luego seleccione **Siguiente**. Por razones de seguridad, se envía un mensaje de confirmación a su nueva dirección de correo electrónico informándole de que se ha actualizado el correo electrónico de la cuenta.
 
-![Cuenta Web](@site/static/img/web/web_email_new.png)
+![Web Account](@site/static/img/web/web_email_new.png)
 
 ### Cerrar sesión y eliminar cuenta {#logout-and-delete}
 
-![Cuenta Web](@site/static/img/web/web_logout_new.png)
+![Web Account](@site/static/img/web/web_logout_new.png)
 
 El panel de Cuenta de OsmAnd contiene controles para finalizar la sesión web actual y eliminar permanentemente la cuenta.
 
@@ -165,62 +161,8 @@ Para cerrar sesión, abra Cuenta de OsmAnd y utilice el botón **Cerrar sesión*
 
 Para eliminar una cuenta, seleccione **Eliminar cuenta** en la parte inferior del panel de Cuenta de OsmAnd. Aparece un diálogo de confirmación con el mensaje *“¿Está seguro de que desea hacer esto?”* y una breve explicación de que todos los datos y detalles de la cuenta se eliminarán de OsmAnd Cloud y los dispositivos secundarios perderán el acceso a las funciones de pago. Se envía un código de verificación a la dirección de correo electrónico de la cuenta. Introduzca el código en el campo Código del correo electrónico y elija **ELIMINAR ESTA CUENTA** para completar el proceso. Esta operación es permanente e irreversible.
 
-![Cuenta Web](@site/static/img/web/web_delete.png)
+![Web Account](@site/static/img/web/web_delete.png)
 
-<!--
-## OsmAnd Pro and OsmAnd Start Sync {#osmand-pro-and-osmand-start-sync}
-
-- **OsmAnd Pro** is a [cross-platform](../troubleshooting/setup.md#initial-setup) paid subscription. 
-- **OsmAnd Start** is a [free OsmAnd Cloud registration](https://osmand.net/blog/start).
-
-The cross-platform capability allows you to use OsmAnd Pro on all platforms *([Android](../purchases/android.md)  ← →  [iOS](../purchases/ios.md)  →  [Web](https://www.osmand.net/map))*. To do this you need to:
-
-1. Subscribe to **OsmAnd Pro**. Read more about how to do this for [Android here](../purchases/android.md#how-to-buy), and for [iOS here](../purchases/ios.md#how-to-buy).
-2. How to create **OsmAnd Start** account read more [here](https://osmand.net/blog/start#how-to-create-an-account).
-3. Register your [Pro or Start account](/docs/user/personal/osmand-cloud/#cross-platform) on the OsmAnd server inside OsmAnd app.
-4. The registered email will be your login to activate OsmAnd Pro on the web platform. At first, time needed to choose a password for future entering the web portal (please, use the instruction on the web portal).
-
-
-- Enter your *email* and *password* for [osmand.net/map](https://osmand.net/map/).
-
-![View OsmAnd Web activation](@site/static/img/web/web_pro_activation.png)  
-
-- Your data, such as tracks (OsmAnd Pro) and favorites(OsmAnd Pro and OsmAnd Start), will appear in the menu after you log in. They are available for display on the map. But you need [to sync this data](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) from your devices.
-
-![View OsmAnd Web data](@site/static/img/web/web_data.png)  
-
-- To *DOWNLOAD BACKUP* from [OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud), click the login field. On the login field you can see files info (total files number, total files size, cloud storage used) and account info (subscription type, start time and expire time of your subscription).
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file.png)  
-
-Choose needed files for downloading, `.zip` or `.osf` format of downloaded files and click *DOWNLOAD BACKUP* button:
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_1.png)  
-
-There is also a button to *logout* of the account.  
-
-- *LOGOUT*, *DELETE YOUR ACCOUNT* or *Change email* you find on the login field too. For opening *DELETE YOUR ACCOUNT* or *Change email* you need to click *Dangerous area*.
-
-![View OsmAnd Web backup file](@site/static/img/web/web_backup_file_2.png)  
-
-
-## Cloud data {#cloud-data}
-
-[Tracks and Favorites](web-map.md#tracks).
-
-## Map style {#map-style}
-
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
-**Some examples:**
-
-- Nautical map style
-
-![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
-
-- Topo map style
-
-![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
--->
 
 ## Artículos relacionados {#related-articles}
 

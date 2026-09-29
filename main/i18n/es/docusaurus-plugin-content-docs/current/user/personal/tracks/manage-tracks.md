@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title:  Gestionar Tracks
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Resumen {#overview}
 
@@ -204,7 +203,7 @@ Una vez que haya hecho su elección, se proporcionan los siguientes pasos:
 
 - **Mover** — Puede organizar sus datos moviendo los tracks y carpetas seleccionados a otras carpetas.
 
-- [Cambiar actividad](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Esta acción le permite cambiar el tipo de actividad, por ejemplo a *Coche*, *Deporte de motor de aventura*, *Mochilero* u otros, para el track seleccionado.
+- [Cambiar actividad](../../map/tracks/track-context-menu.md#track-activity-type) — Esta acción le permite cambiar el tipo de actividad, por ejemplo a *Coche*, *Deporte de motor de aventura*, *Mochilero* u otros, para el track seleccionado.
 
 - [Cambiar apariencia](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Esta opción le permite personalizar la apariencia de los tracks seleccionados, haciéndolos más visibles y reconocibles en el mapa.
 

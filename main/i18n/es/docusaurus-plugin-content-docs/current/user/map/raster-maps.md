@@ -1,5 +1,5 @@
 ---
-source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
 sidebar_position: 7
 title:  Mapas ráster (en línea / sin conexión)
 ---
@@ -13,10 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Visión general {#overview}
 
@@ -88,7 +84,7 @@ También puede cambiar [la fuente principal](#main) de mapas de mapas vectoriale
 
 En OsmAnd, los mapas ráster pueden servir como una fuente de mapa adicional junto con los mapas vectoriales predeterminados, que están optimizados para su uso sin conexión.  
 
-Tiene la flexibilidad de agregar una o dos capas de teselas en línea para complementar su mapa base. Esto le permite ver hasta tres capas de mapa simultáneamente en su pantalla (más Terreno). Piense en ellas como un pastel: [**Subcapa**](#underlay) (base ráster debajo), [**Principal**](#main) (núcleo vectorial* o ráster), [**Superposición**](#overlay) (ráster encima), con sombreado de [**Terreno**](#terrain) sobre todo. Por ejemplo, puede tener el mapa vectorial sin conexión de OsmAnd como base Principal, superponerlo con una vista de satélite y colocar un mapa de carriles bici como Subcapa para mayor detalle.
+Tiene la flexibilidad de agregar una o dos capas de teselas en línea para complementar su mapa base. Esto le permite ver hasta tres capas de mapa simultáneamente en su pantalla (más Terreno). Piense en ellas como un pastel: [**Subcapa**](#underlay) (base ráster debajo), [**Principal**](#main) (núcleo vectorial o ráster), [**Superposición**](#overlay) (ráster encima), con sombreado de [**Terreno**](#terrain) sobre todo. Por ejemplo, puede usar imágenes de satélite como Subcapa, el mapa vectorial sin conexión de OsmAnd como capa Principal con mayor transparencia y un mapa de carriles bici como Superposición.
 
 >[Los mapas vectoriales](./vector-maps.md) están disponibles **solo** en la capa [Principal](#main) (y son los predeterminados allí). Los mapas ráster se pueden usar en las tres capas: Principal, Subcapa y Superposición.
 
@@ -202,79 +198,6 @@ Para usar la capa de Terreno necesita:
 La visualización de terreno se puede combinar con otras capas ráster y con el mapa vectorial predeterminado.
 
 Funciones de terreno más avanzadas, incluyendo relieve 3D (solo Pro) y opciones adicionales relacionadas con el terreno, se describen en el artículo de [Topografía](../plugins/topography.md).
-
-<!--
-## Sombreado de relieve / Pendiente {#hillshade--slope}
-
-![Capas de terreno](@site/static/img/plugins/online-maps/terrain_two_layers.png)
-
-**Sombreado de relieve** y **Pendiente** son mapas ráster sin conexión que muestran el relieve del terreno. Se muestran como una capa de mapa especial, una segunda superposición en el mapa base. Los mapas contienen información de elevación adicional para ayudarle a comprender con mayor precisión la pendiente y las sombras del paisaje. La información de *Sombreado de relieve* y *Pendiente* se basa en datos de una única fuente, el *archivo Global planet*, y se divide en regiones.  
-
-No necesita cambiar entre las capas de Sombreado de relieve y Pendiente, ya que se fusionan automáticamente. Puede seleccionar solo una de estas capas para mostrar en el mapa, pero también tiene la opción de combinarlas ambas [como subcapa o superposición](#layers) en otras capas para una representación más visual del terreno.
-
-Para comenzar con Sombreado de relieve y Pendiente necesita:
-
-1. Comprar el plugin de Topografía:
-    - [Compras en Android](../purchases/android.md)
-    - [Compras en iOS](../purchases/ios.md)
-2. Activar el [plugin de Topografía](../plugins/topography.md):  
-    *Menú → Plugins → ︙ → Activar*
-3. Seleccione su región requerida y descargue **Mapa de terreno (3D)**.
-4. El proceso de descarga puede llevar algún tiempo, dependiendo del tamaño de la región seleccionada y la velocidad de su conexión a Internet.
-
-
-### Sombreado de relieve y Relieve 3D {#hillshade-and-3d-relief}
-
-| Sombreado de relieve | Relieve 3D |
-|--------|---------|
-| ![Capas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Capas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
-
-La diferencia de visualización del relieve en el mapa al aplicar estas configuraciones se describe en el artículo de **Topografía** en la sección correspondiente [Sombreado de relieve y Relieve 3D](../plugins/topography.md#hillshade-and-3d-relief).
-
-
-### Configurar opciones de visualización {#configure-display-options}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Vaya a: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Vaya a: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Capas de terreno](@site/static/img/plugins/online-maps/terrain_layers.png)
-
-Puede personalizar el nivel de zoom para mostrar y la transparencia para Sombreado de relieve y Pendiente. Puede leer más en el [artículo de Topografía](../plugins/topography.md#hillshade-slope-and-altitude-layers).
-
-
-## Relieve 3D {#3d-relief}
-
-:::note
-[Relieve 3D](../plugins/topography.md#3d-relief) es una función de pago de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-:::
-
-![Capas de terreno](@site/static/img/plugins/online-maps/raster_maps_3d.png)
-
-La [**función de Relieve 3D**](../plugins/topography.md#3d-relief) es una tecnología de mapeo que permite la visualización del terreno en un mapa utilizando modelos tridimensionales. Esta función agrega información de elevación a un mapa bidimensional normal, lo que crea un efecto 3D y de profundidad y le permite visualizar mejor el terreno.  
-
-*Para comenzar a usar el Relieve 3D*:  
-Necesita comprar el [plan de compra de OsmAnd Pro](../plugins/index.md#purchase), activar el [plugin de Topografía](../plugins/topography.md) y activar el elemento [Relieve 3D](../plugins/topography.md#3d-relief) en *Menú → Configurar mapa*.
-
-
-*Cómo funciona la función de Relieve 3D*:  
-*1.* Para crear un relieve 3D, OsmAnd recibe información sobre la elevación del terreno.  
-*2.* Basado en los datos de elevación, se crea un modelo 3D para mostrar montañas, colinas, valles y otros elementos del terreno en el mapa.  
-*3.* OsmAnd luego muestra estos modelos tridimensionales en un mapa plano. El mapa se puede acercar, alejar y rotar para ver el terreno desde diferentes ángulos y perspectivas.  
-*4.* La visualización de las curvas de nivel en el mapa no depende de si la fuente del mapa es en línea o sin conexión.
--->
 
 
 ## Preparar/Copiar mapas {#preparecopy-maps}
@@ -399,13 +322,6 @@ Para que los mapas actualicen automáticamente las teselas después de un tiempo
     </tr>
 </table>  
 
-<!--
-
-![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
-
--->
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -447,8 +363,7 @@ Los mapas ráster se pueden usar tal como existen si las teselas ya están mapea
 ## Artículos relacionados {#related-articles}
 
 - [Importar / Exportar](../personal/import-export.md)
-- [Esquemas de paleta de colores](../personal/color-palette-schemes.md)
 - [Acción rápida (Botón personalizado)](../widgets/quick-action.md)
 - [Mapas en línea](../plugins/online-map.md)
 - [Topografía](../plugins/topography.md)
-- [Crear mapas ráster y vectoriales sin conexión](technical/map-creation/create-offline-maps-yourself.md)
+- [Crear mapas ráster y vectoriales sin conexión](../../technical/map-creation/create-offline-maps-yourself.md)
