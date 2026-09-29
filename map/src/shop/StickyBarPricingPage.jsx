@@ -44,9 +44,13 @@ export default function StickyBarPricingPage({ visible, testMode, updateCardPric
         setPurchaseObjs(objs);
     }
 
+    const availableProducts = STICKY_PRODUCTS.filter(
+        (product) => testMode || purchaseObjs[product.purchaseId]?.show !== false
+    );
+
     return (
-        <StickyBarContainer visible={visible}>
-            {STICKY_PRODUCTS.map((product) => (
+        <StickyBarContainer visible={visible && availableProducts.length > 0}>
+            {availableProducts.map((product) => (
                 <StickyBarItem
                     key={product.purchaseId}
                     product={product}

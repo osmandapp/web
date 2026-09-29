@@ -29,6 +29,7 @@ export default function ProductCard({
     setSelectedCardId,
     updateCardPrices,
     setUpdateCardPrices,
+    purchasesReady,
 }) {
     const ltx = useContext(LoginContext);
 
@@ -41,11 +42,11 @@ export default function ProductCard({
     const [btnText, setBtnText] = useState('web:action_complete_purchase');
 
     useEffect(() => {
-        if (ltx.completePurchase) {
+        if (ltx.completePurchase && purchasesReady) {
             processingPurchase();
             ltx.setCompletePurchase(false);
         }
-    }, [ltx.completePurchase]);
+    }, [ltx.completePurchase, purchasesReady]);
 
     useEffect(() => {
         if (product?.btnText) {
@@ -79,7 +80,7 @@ export default function ProductCard({
 
     function processingPurchase() {
         const selectedProduct = purchase[type]?.find((p) => p.id === productId);
-        if (selectedProduct) {
+        if (selectedProduct && (selectedProduct.show || testMode)) {
             createFastSpringPurchase({ testMode, ltx, selectedProduct: selectedProduct.fsName, navigate });
         }
     }

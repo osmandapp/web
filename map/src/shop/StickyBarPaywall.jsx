@@ -105,9 +105,11 @@ export default function StickyBarPaywall({
                     </Box>
                 </Box>
                 <Box className={styles.stickyBarPaywallBtns}>
-                    <Box className={styles.stickyBarBtnWrap}>
-                        <PrimaryBtn text={t('web:action_subscribe_annual')} span={true} action={subscribeAnnual} />
-                    </Box>
+                    {(testMode || annualPurchase?.show !== false) && (
+                        <Box className={styles.stickyBarBtnWrap}>
+                            <PrimaryBtn text={t('web:action_subscribe_annual')} span={true} action={subscribeAnnual} />
+                        </Box>
+                    )}
                     <Box className={styles.stickyBarBtnWrap}>
                         <GrayBtnWithBlueHover text={t('web:action_see_all_plans')} span={true} action={onSeeAllPlans} />
                     </Box>

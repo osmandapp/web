@@ -26,6 +26,7 @@ export default function PricingPage() {
     const [selectedProductType, setSelectedProductType] = useState('');
     const [purchasePriceMap, setPurchasePriceMap] = useState([]);
     const [currentPurchases, setCurrentPurchases] = useState(null);
+    const [purchasesLoginUser, setPurchasesLoginUser] = useState(undefined);
 
     const [useTestMode, setUseTestMode] = useState(false);
     const [selectedCardId, setSelectedCardId] = useState(null);
@@ -55,11 +56,11 @@ export default function PricingPage() {
             getAccountInfo(ltx.setAccountInfo).then((info) => {
                 const subscriptions = info?.subscriptions && JSON.parse(info.subscriptions);
                 const inAppPurchases = info?.inAppPurchases && JSON.parse(info.inAppPurchases);
-                setCurrentPurchases({ subscriptions, inAppPurchases });
+                setCurrentPurchases({ subscriptions, inAppPurchases, loginUser: ltx.loginUser });
                 updatePrices(setPurchasePriceMap, useTestMode);
             });
         } else {
-            setCurrentPurchases({ subscriptions: [], inAppPurchases: [] });
+            setCurrentPurchases({ subscriptions: [], inAppPurchases: [], loginUser: ltx.loginUser });
             updatePrices(setPurchasePriceMap, useTestMode);
         }
     }, [useTestMode, ltx.loginUser]);
@@ -90,18 +91,15 @@ export default function PricingPage() {
                         item.newPrice = info.newPrice;
                         item.oldPriceDisplay = info.oldPriceDisplay;
                         item.display = info.display;
-                        if (
-                            allPurchases.find((p) => {
-                                p.type = p.type ?? 'one-time';
-                                const isValid = p.valid === true || p.valid === 'true';
-                                return isValid && p.name === item.name && p.type === type;
-                            })
-                        ) {
-                            item.show = false;
-                        }
+                        item.show = !allPurchases.find((p) => {
+                            p.type = p.type ?? 'one-time';
+                            const isValid = p.valid === true || p.valid === 'true';
+                            return isValid && p.name === item.name && p.type === type;
+                        });
                     }
                 });
             });
+            setPurchasesLoginUser(currentPurchases.loginUser);
             setShow(true);
             setUpdateCardPrices(true);
         }
@@ -152,6 +150,7 @@ export default function PricingPage() {
                                     setSelectedCardId={setSelectedCardId}
                                     updateCardPrices={updateCardPrices}
                                     setUpdateCardPrices={setUpdateCardPrices}
+                                    purchasesReady={purchasesLoginUser === ltx.loginUser}
                                 />
                             ))}
                         </Box>
