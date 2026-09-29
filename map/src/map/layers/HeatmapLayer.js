@@ -2,6 +2,7 @@ import { useContext, useEffect, useMemo, useState } from 'react';
 import L from 'leaflet';
 import { PMTiles } from 'pmtiles';
 import { useMap } from 'react-leaflet';
+import { useTranslation } from 'react-i18next';
 import AppContext, { isTravelTrack } from '../../context/AppContext';
 import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE, ALL_YEARS } from '../../menu/travel/TravelMenu';
 import { UNIDENTIFIED_TRACKS_KEY } from '../../menu/travel/ActivitySelect';
@@ -10,6 +11,7 @@ import { ensureLeafletPane } from './MvtHybridDemo';
 import { HEATMAP_PANE_Z_INDEX } from '../util/ZIndexes';
 
 const HEATMAP_PANE = 'heatmapPane';
+const OSM_TRACES_URL = 'https://www.openstreetmap.org/traces';
 const HEATMAP_OPACITY = 0.9;
 const HEATMAP_DIMMED_OPACITY = 0.35;
 const HEATMAP_SPEED_SUFFIX = '~speed';
@@ -34,6 +36,8 @@ const kernels = new Map();
 
 export default function HeatmapLayer() {
     const ctx = useContext(AppContext);
+
+    const { t } = useTranslation();
 
     const map = useMap();
 
@@ -63,6 +67,9 @@ export default function HeatmapLayer() {
                 maxZoom: 20,
                 updateWhenZooming: false,
                 keepBuffer: 2,
+                attribution: t('web:travel_tracks_attribution', {
+                    link: `<a href="${OSM_TRACES_URL}" target="_blank">OpenStreetMap</a>`,
+                }),
             }),
         [meta]
     );
