@@ -1,5 +1,5 @@
 ---
-source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
+source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
 title: Smart Folder (Filter)
 ---
@@ -99,7 +99,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 - **Gemiddelde hoogte** en **Max hoogte** — Vind tracks met specifieke gemiddelde of maximale hoogtegegevens.
 - **Aanmaakdatum** — Filter tracks die binnen een bepaald datumbereik zijn gemaakt.
 - **Dichtstbijzijnde steden** — Toon tracks die in de buurt van geselecteerde steden of plaatsen passeren.
-- **Type activiteit** — Filter tracks op basis van het [activities](../../map/tracks/track-context-menu.md#ttrack-activity-type) type dat in het GPX-bestand is opgenomen (bijv. fietsen, wandelen).
+- **Type activiteit** — Filter tracks op basis van het [activities](../../map/tracks/track-context-menu.md#track-activity-type) type dat in het GPX-bestand is opgenomen (bijv. fietsen, wandelen).
 - **Land** — Filter tracks op het land of de regio waar ze zijn opgenomen.
 - **Kleur** en **Breedte** — Selecteer tracks op toegewezen kleur of lijnbreedte.
 - **Overig** — Extra filters voor speciale kenmerken:

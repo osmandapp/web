@@ -1,5 +1,5 @@
 ---
-source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
+source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
 sidebar_position: 3
 title:  Stembediening / Meldingen
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Overzicht {#overview}
 
@@ -99,7 +98,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 
 - *Navigatie-instructies herhalen*. Hiermee kunt u de navigatie-instructies met regelmatige tussenpozen van 1 min tot 30 min herhalen. Of handmatig - als u een stembericht mist, kunt u het opnieuw beluisteren door simpelweg op [de pijl voor de huidige afslag](../../widgets/nav-widgets.md#next-turn) op het applicatiescherm te tikken.
 - *[Aankondigingstijd](#announcement-time)*.
-- *Gesproken audio pauzeren* (*alleen iOS*). Indien ingeschakeld, worden podcasts, audioboeken en andere gesproken audio gepauzeerd terwijl stemberichten worden afgespeeld. Muziekafspelen gaat door op een lager volume. Indien uitgeschakeld, blijven zowel gesproken audio als muziek op een lager volume afspelen.
+- *Gesproken audio pauzeren* (*alleen iOS, inclusief CarPlay*). Indien ingeschakeld, worden podcasts, audioboeken en andere gesproken audio gepauzeerd terwijl stemberichten worden afgespeeld, of dat nu via het apparaat of via CarPlay gebeurt. Muziekafspelen gaat door op een lager volume. Indien uitgeschakeld, blijven zowel gesproken audio als muziek op een lager volume afspelen.
 
 **Uitvoer** (*alleen Android*):
 
