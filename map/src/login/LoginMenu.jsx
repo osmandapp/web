@@ -15,6 +15,7 @@ import EmptyLogin from './EmptyLogin';
 import Login from './Login';
 import { closeLoginMenu, FREE_ACCOUNT, FREE_ACCOUNT_SUB_TYPE } from '../manager/LoginManager';
 import ChangeResetPwd from './ChangeResetPwd';
+import CancelLoginLinkDialog from './dialogs/CancelLoginLinkDialog';
 import CreateAccount from './CreateAccount';
 import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH, PURCHASES_URL } from '../manager/GlobalManager';
@@ -80,6 +81,17 @@ export default function LoginMenu() {
             setShowDeveloperArea(false);
         }
     }, [ltx.loginRoles]);
+
+    // links from order-mgmt (login link) and from the owner's email (cancel it)
+    const linkParams = new URLSearchParams(location.search);
+    const cancelLinkCode = linkParams.get('cancel-link');
+    const [cancelLinkOpen, setCancelLinkOpen] = useState(!!cancelLinkCode);
+
+    useEffect(() => {
+        if (linkParams.get('link') && linkParams.get('email') && !ltx.loginUser) {
+            ltx.setLoginState({ changePwd: true });
+        }
+    }, [location.search, ltx.loginUser]);
 
     useEffect(() => {
         if (location.hash === '#logout' && ltx.loginUser) {
@@ -227,6 +239,13 @@ export default function LoginMenu() {
             )}
             {ltx.loginState.login && <Login />}
             {ltx.loginState.changePwd && <ChangeResetPwd />}
+            {cancelLinkOpen && (
+                <CancelLoginLinkDialog
+                    email={linkParams.get('email')}
+                    code={cancelLinkCode}
+                    onClose={() => setCancelLinkOpen(false)}
+                />
+            )}
             {ltx.loginState.create && <CreateAccount />}
             {ltx.openChangeEmailDialog && <ChangeEmailDialog setOpenChangeEmailDialog={ltx.setOpenChangeEmailDialog} />}
             {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}

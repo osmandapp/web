@@ -42,6 +42,15 @@ export async function userActivate({ username, pwd, token, setError, lang = DEFA
     return true;
 }
 
+export async function cancelLoginLink({ username, token }) {
+    const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/cancel-link`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: username.toLowerCase(), token }),
+    });
+    return response?.ok === true;
+}
+
 export async function userLogin({ ltx, username, pwd, setError, handleClose, lang = DEFAULT_AUTH_API_LANG }) {
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
         method: 'POST',
