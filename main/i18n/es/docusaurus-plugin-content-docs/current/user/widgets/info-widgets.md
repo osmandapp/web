@@ -1,5 +1,5 @@
 ---
-source-hash: 2f452a1d8b316f905b1ea409998af97c7fd5afd3e4e38098246912c444d71c63
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title:  Widgets informativos
 ---
@@ -254,11 +254,15 @@ Los widgets [simples](../widgets/configure-screen.md#widget-panels) de *Ratio de
 
 <TabItem value="android" label="Android">
 
-**Ratio de planeo al objetivo** muestra el ratio de planeo exacto requerido para alcanzar el punto objetivo.
+- **Ratio de planeo al objetivo** muestra el ratio de planeo exacto requerido para alcanzar el punto objetivo.
+- **Elevación del objetivo** muestra la elevación del punto objetivo. El [Marcador de mapa](../personal/markers.md) debe utilizarse como punto objetivo.
+
+Para cambiar entre estos modos, toque directamente el widget. La opción de cambio no está disponible en el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu). 
 
 | | |
 |:------------|:------------|
 | Activar | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → Ratio de planeo* |
+| Al tocar | Cambia *Ratio de planeo al objetivo* o *Elevación del objetivo*  |
 | Pulsación larga | Abre el [Menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>

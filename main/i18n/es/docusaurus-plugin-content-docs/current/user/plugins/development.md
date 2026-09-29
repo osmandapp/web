@@ -1,5 +1,5 @@
 ---
-source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
+source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
 sidebar_position: 11
 title:  Desarrollo de OsmAnd
 ---
@@ -81,16 +81,13 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 ### Pruebas de aplicación {#application-testing}
 
-:::caution Android only
-:::
-
-- **Simular el primer inicio de la aplicación**. Establece el indicador que señala el primer inicio de la aplicación, manteniendo todos los demás ajustes sin cambios.  
-- **Probar indicaciones de voz**. Seleccione una voz y pruébela reproduciendo anuncios.  
+- **Simular el primer inicio de la aplicación** (*Android*). Establece el indicador que señala el primer inicio de la aplicación, manteniendo todos los demás ajustes sin cambios.  
+- **Probar indicaciones de voz** (*Android*). Seleccione una voz y pruébela reproduciendo anuncios.  
 - **<Translate ios="true" ids="show_touches"/>** (*iOS*). Resalta los toques en pantalla con indicadores visuales.
-- **Barra de estado transparente**. El mapa se vuelve visible debajo de la barra de estado.  
-- **Mostrar banner de la versión gratuita**. Muestra el banner de la versión gratuita incluso en la versión de pago.  
-- **Mostrar información de depuración**. Muestra información gráfica sobre la ubicación de cada texto en el mapa.
-- **Permitir visualización superpuesta**. Permite que los textos del mapa se muestren uno encima del otro.
+- **Barra de estado transparente** (*Android*). El mapa se vuelve visible debajo de la barra de estado.  
+- **Mostrar banner de la versión gratuita** (*Android*). Muestra el banner de la versión gratuita incluso en la versión de pago.  
+- **Mostrar información de depuración** (*Android*). Muestra información gráfica sobre la ubicación de cada texto en el mapa.
+- **Permitir visualización superpuesta** (*Android*). Permite que los textos del mapa se muestren uno encima del otro.
 
 
 ### Algoritmos internos {#internal-algorithms}
@@ -99,6 +96,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 :::
 
 - **Modo seguro**. Ejecuta OsmAnd sin la biblioteca nativa de C++, utilizando implementaciones en Java para el renderizado del mapa y el cálculo de rutas. La aplicación cambia automáticamente a este modo si la biblioteca nativa falla durante el inicio, permitiendo que se inicie y siga siendo utilizable. El renderizado del mapa y el cálculo de rutas son notablemente más lentos mientras el modo seguro está activo.  
+- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
 
 
 ### Ajustes de memoria {#memory-settings}
@@ -112,6 +110,8 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 - Una mayor asignación de memoria puede afectar el rendimiento de otras aplicaciones.
 - [Cálculo de rutas de 50 km para peatones](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
+
+- **Memoria Java** muestra cuánta memoria Java utiliza la aplicación y abre las herramientas de histograma de montón: *Recopilar y analizar ahora*, *Compartir informe* y *Recopilar en uso elevado* (desactivado de forma predeterminada). Consulte [Histograma de montón para problemas de memoria](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android) para saber cuándo usarlas.
 
 
 ### Información y estadísticas {#info-and-statistics}

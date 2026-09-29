@@ -1,5 +1,5 @@
 ---
-source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
+source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
 sidebar_position: 2
 title:  Interactuar con el mapa
 ---
@@ -26,7 +26,7 @@ Este artículo explica cómo personalizar e interactuar con el mapa utilizando v
 
 Los gestos son esenciales para navegar por el mapa de forma fácil e intuitiva.
 
-| Acción en el mapa  | Gesto  |
+| Map Action  | Gesture  |
 |:------------|:-------------|
 | **Mover**    | Toque y mantenga pulsado el mapa con **un** dedo, luego arrastre para moverse. |
 | **Deslizar**   | Deslice el mapa con **un** dedo. |
@@ -216,8 +216,6 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_pl
 La **Vista de globo** permite mostrar el mapa como una Tierra esférica en lugar de una proyección plana. Este modo cambia la geometría de la superficie del mapa y adapta la interacción del mapa a la navegación esférica.  
 
 La Vista de globo está disponible actualmente solo cuando:
-- El [plugin de Desarrollo](../plugins/development.md) está habilitado.  
-Vaya a: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - El [plugin de Topografía](../plugins/topography.md) está habilitado.  
 Vaya a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - El [Motor de renderizado de mapa](../personal/global-settings.md#map-rendering-engine) está configurado en Versión 2 (OpenGL).  
