@@ -39,13 +39,24 @@ export default function ProductCard({
     const product = products.find((p) => p.id === productId);
 
     const [btnText, setBtnText] = useState('web:action_complete_purchase');
+    const [purchaseAfterLogin, setPurchaseAfterLogin] = useState(false);
 
     useEffect(() => {
         if (ltx.completePurchase) {
-            processingPurchase();
+            if (type) {
+                setPurchaseAfterLogin(true);
+            }
             ltx.setCompletePurchase(false);
         }
     }, [ltx.completePurchase]);
+
+    // wait until the account purchases are applied to the cards
+    useEffect(() => {
+        if (purchaseAfterLogin && updateCardPrices) {
+            setPurchaseAfterLogin(false);
+            processingPurchase();
+        }
+    }, [updateCardPrices]);
 
     useEffect(() => {
         if (product?.btnText) {
@@ -79,7 +90,7 @@ export default function ProductCard({
 
     function processingPurchase() {
         const selectedProduct = purchase[type]?.find((p) => p.id === productId);
-        if (selectedProduct) {
+        if (selectedProduct && (selectedProduct.show || testMode)) {
             createFastSpringPurchase({ testMode, ltx, selectedProduct: selectedProduct.fsName, navigate });
         }
     }
