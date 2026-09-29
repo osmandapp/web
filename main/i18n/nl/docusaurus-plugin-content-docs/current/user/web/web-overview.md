@@ -1,5 +1,5 @@
 ---
-source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
+source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
 sidebar_position: 1
 sidebar_label: Introductie
 title: Introductie tot de Web Planner
@@ -16,31 +16,24 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
-
 ## Overzicht {#overview}
 
 De **Web Planner**, ook wel de [**OsmAnd Kaartportaal**](https://osmand.net/map) genoemd, is een browsergebaseerde uitbreiding van de OsmAnd mobiele app. Hiermee kunnen gebruikers wereldwijde kaarten bekijken, routes plannen, navigatie simuleren, persoonlijke gegevens beheren en toegang krijgen tot gesynchroniseerde inhoud van hun apparaten via de cloud.
 
-Ontworpen als een cross-platform metgezel voor OsmAnd voor Android en iOS, helpt de Web Planner gebruikers bij het plannen van reizen, analyseren van tracks, bekijken van terrein en beheren van bestanden met elke desktop- of tabletbrowser — zonder een app te installeren.
+Ontworpen als een cross-platform metgezel voor OsmAnd voor Android en iOS, helpt de Web Portal gebruikers bij het plannen van reizen, analyseren van tracks, bekijken van terrein en beheren van bestanden met elke desktop- of tabletbrowser — zonder een app te installeren.
 
 OsmAnd Web is nauw geïntegreerd met de **OsmAnd Cloud**-dienst, die het synchroniseren van favorieten, tracks en back-ups over apparaten en platforms mogelijk maakt. Gebruikers met een **OsmAnd Start** (gratis) of **OsmAnd Pro** (betaald) account kunnen volledig profiteren van dit ecosysteem door gegevens te synchroniseren tussen mobiel en web. U vindt een gedetailleerde vergelijking van *Start* en *Pro* functies in het [Abonnements Toegang](#subscription-accesses) gedeelte hieronder.
 
-> **Opmerking:** Zelfs zonder inloggen of het verifiëren van uw account, kunt u nog steeds verschillende kernfuncties van de Web Kaartportaal gebruiken, waaronder: [Navigatie Route](./web-navigation.md), [Routeplanner](./planner.md), [Weer-overlays](./web-weather.md#), en [Instellingen](./web-map.md#settings).
+> **Opmerking:** Zelfs zonder inloggen of het verifiëren van uw account, kunt u nog steeds verschillende kernfuncties van de Web Kaartportaal gebruiken, waaronder: [Navigatie Route](./web-navigation.md), [Routeplanner](./planner.md), [Weer-overlays](./web-weather.md), en [Instellingen](./web-map.md#settings).
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 ## Belangrijkste Functies {#key-features}
 
-De Web Planner biedt de volgende belangrijkste mogelijkheden voor werken met kaarten en persoonlijke gegevens in de browser: 
+De Web Portal biedt de volgende belangrijkste mogelijkheden voor werken met kaarten en persoonlijke gegevens in de browser: 
 
 - [Kaart](./web-map.md) met wereldwijde dekking en hoogwaardige vectorgegevens.
 - [Routeplanning](./planner.md) met voetganger, auto, fiets en andere profielen.
-- [Navigatie](./planner.md) voorbeeld met stapsgewijze instructies.
+- [Navigatie](./web-navigation.md) voorbeeld met stapsgewijze instructies.
 - [Zoeken](./web-search.md) en [verkennen](./web-search.md#explore) van populaire plaatsen in de buurt.
 - Weergave van [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks), en [POI's](./web-map.md#poi-overlay) op de kaart.
 - [Weer-overlays](./web-weather.md): wind, temperatuur en druk.
@@ -50,11 +43,6 @@ De Web Planner biedt de volgende belangrijkste mogelijkheden voor werken met kaa
 - Ondersteuning voor import/export van bestanden (GPX: tracks, favorieten).
 - Naadloze integratie met **OsmAnd Pro** en **OsmAnd Start**.
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
-
-
 ### Abonnements Toegang {#subscription-accesses}
 
 ![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
@@ -63,24 +51,20 @@ De Web Kaartportaal ondersteunt verschillende toegangsniveaus: zonder inloggen, 
 
 | Functie | Beschikbaar In |
 |--------|--------------|
-| [Navigatie Route](./planner.md) | Zonder Inloggen |
+| [Navigatie Route](./web-navigation.md) | Zonder Inloggen |
 | [Routeplanner](./planner.md) | Zonder Inloggen |
 | [Weer-overlays](./web-weather.md) | Zonder Inloggen |
 | [Instellingen](./web-map.md#settings) | Zonder Inloggen |
-| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([POI's](./web-map.md#poi-overlay), [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([POI's](./web-map.md#poi-overlay), [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 | [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([Terrein](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Webzoekopdracht, Populaire Plaatsen](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Webzoekopdracht, Populaire Plaatsen](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 | [Tracks-mappen en -laag](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 
 ## Hoe te Beginnen {#how-to-start}
 
-Om toegang te krijgen tot de volledige functies van de OsmAnd Web Planner, moet u inloggen met een OsmAnd Cloud-account.
+Om toegang te krijgen tot de volledige functies van de OsmAnd Web Portal, moet u inloggen met een OsmAnd Cloud-account.
 
 - Als u al een [**OsmAnd Pro**](../personal/osmand-cloud.md#login)-abonnement heeft of een gratis [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-account wilt aanmaken, volg dan deze stappen:
 
@@ -90,61 +74,6 @@ Om toegang te krijgen tot de volledige functies van de OsmAnd Web Planner, moet 
    - **Account aanmaken**: Registreer voor een gratis OsmAnd Start-account. Voor een gedetailleerde stapsgewijze handleiding voor het aanmaken van een nieuw account, zie het [OsmAnd Account](./web-cloud) artikel.
 
 ![Web Account](@site/static/img/web/web_account.png)
-
-<!--
-
-## Settings {#settings}
-
-### Language {#language}
-
-To switch the interface language:
-
-*Go to: Menu → ⚙ Settings → Display language*
-
-![Web Language](@site/static/img/web/web_language.png)
-
-### Units {#units}
-
-*Go to: Menu → ⚙ Settings → Units of length*  
-*Go to: Menu → ⚙ Settings → Unit of speed*
-
-You can choose which units are used to display distance, elevation and speed on the map, in route details and in measurement tools. This helps you keep OsmAnd consistent with your usual habits or regional standards.
-
-The **Units of length** option defines how horizontal distance and elevation are shown:
-- Kilometers/meters.
-- Miles/feet.
-- Miles/meters.
-- Miles/yards.
-- Nautical miles/meters.
-- Nautical miles/feet. 
-
-For example, a distance of 10 km will be shown as about 6.21 mi if you choose one of the Miles/... options, or as about 5.40 nmi when Nautical miles/... is selected.
-
-The **Unit of speed** option controls how current speed and speed limits are displayed:
-- Kilometers per hour.
-- Miles per hour.
-- Meters per second.
-- Minutes per mile.
-- Minutes per kilometer.
-- Nautical miles per hour (knots). 
-
-For example, a speed of 90 km/h corresponds to 25 m/s or about 55.92 mph.
-
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
-
-### OsmAnd Cloud {#osmand-cloud}
-
-![Web Cloud](@site/static/img/web/web_without_acc.png) ![Web Cloud](@site/static/img/web/web_with_acc.png)
-
-In the Web Map Portal, the *General settings* (Display language, Units of length, Unit of speed) are available for all users, whether you are signed in or not. Once you log in with your OsmAnd account, an additional OsmAnd Cloud section appears in the Settings panel. [OsmAnd Cloud](./web-cloud) connects the web map with your cloud backups so that you can manage data synchronized from your Android or iOS devices directly in the browser.
-
-**Changes** option shows a chronological list of files stored in your OsmAnd Cloud account. Items are grouped by month and include the file name, the type of change (for example, added, modified or deleted), the time of the last update and the device that created it. For each entry, you can open the three-dot menu and choose *Download* to save the selected file to your computer, or *Delete*.
-
-**Trash** option contains files that were deleted from OsmAnd Cloud. The list is also grouped by month and shows when each file was removed and from which device. Use the three-dot menu next to a file to *Download* a copy, *Restore from trash* (return the file to OsmAnd Cloud so it becomes available again in your data), or *Delete immediately* to remove it permanently. This helps prevent accidental data loss while still letting you free up cloud storage when you are sure a file is no longer needed. You can also clear all deleted items at once by clicking the Trash icon in the Trash panel header. This opens the **Empty trash** dialog, where you confirm deletion to permanently remove all files from Trash.
-
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
-
--->
 
 
 ## Gerelateerde Artikelen {#related-articles}

@@ -1,8 +1,9 @@
 ---
-source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
+source-hash: 3e8ac9992e039c617c093a24702772bc6cdb0c520e1dcadb77013d26c7264441
 sidebar_position: 2
 title:  Acquisti e Pagamenti
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Acquisti Multipiattaforma {#cross-platform-purchases}
@@ -40,7 +40,7 @@ import Translate from '@site/src/components/Translate.js';
 
 2. Se **si dispone già** di un account OsmAnd Cloud:
 
-    - Assicurarsi di aver effettuato l'accesso all'account OsmAnd Cloud sul dispositivo in cui è stato effettuato l'acquisto.
+    - Assicurarsi di aver effettuato l'accesso all'account OsmAnd Cloud sul dispositivo in cui è stato effettuato l'acquisto.  
     - Navigare su *Menu OsmAnd → Impostazioni → OsmAnd Cloud → Ho già un account*
     - Dopo aver effettuato l'accesso al proprio account, andare su *Menu OsmAnd → Impostazioni → Acquisti*.
     - Toccare **Ripristina acquisti** per sincronizzare l'acquisto con il proprio account.
@@ -88,8 +88,12 @@ Il **20 agosto 2025**, Amazon chiuderà l'Amazon Appstore per i dispositivi Andr
 
 Se avete effettuato acquisti tramite Amazon, dovrete **trasferire i vostri abbonamenti (Pro, Maps+) o acquisti in-app (Maps+)** su un'altra piattaforma.
 
-➡️ Attualmente, [il trasferimento multipiattaforma è possibile per abbonamenti e acquisti in-app](../purchases/cross.md).
+➡️ Attualmente, [il trasferimento multipiattaforma è possibile per abbonamenti e acquisti in-app](../purchases/cross.md).  
 ❗ **OsmAnd+** (app standalone) non può essere trasferito tra piattaforme tramite l'account OsmAnd Cloud. Per assistenza, si prega di contattare **support@osmand.net**.
+
+Se l'acquisto Amazon non può essere attivato automaticamente tramite OsmAnd Cloud, contattare il supporto di OsmAnd — **support@osmand.net** — per il trasferimento manuale. Fornire il numero di transazione Amazon che inizia con D01-. Si consiglia anche uno screenshot che mostri il prodotto acquistato.
+
+Gli acquisti effettuati più di 10 anni fa non possono essere trasferiti.
 
 ## Come ripristinare l'acquisto del plugin Topografia (precedentemente Curve di livello) {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 
@@ -122,21 +126,21 @@ Se avete utilizzato tutti i 5 (iOS) o 7 (Android) download gratuiti, potete rice
 
 ## Codice di verifica per OsmAnd Cloud non ricevuto {#verification-code-for-osmand-cloud-not-received}
 
-Se non si riceve il **codice di verifica** durante la creazione di un account **OsmAnd Cloud**, seguire questi passaggi per risolvere il problema:
+Se non si riceve il **codice di verifica** durante la creazione di un account **OsmAnd Cloud**, seguire questi passaggi per risolvere il problema:  
 
-1. Controllare il proprio indirizzo email.
-    Assicurarsi di aver inserito l'**indirizzo email corretto**. L'email dovrebbe corrispondere a quella utilizzata per l'acquisto di **OsmAnd Pro** o per la registrazione del proprio account **OsmAnd Cloud**.
+1. Controllare il proprio indirizzo email.  
+    Assicurarsi di aver inserito l'**indirizzo email corretto**. L'email dovrebbe corrispondere a quella utilizzata per l'acquisto di **OsmAnd Pro** o per la registrazione del proprio account **OsmAnd Cloud**.  
 
-2. Controllare le cartelle spam.
-    A volte, l'email di verifica potrebbe essere filtrata come spam. Cercare un'email da **OsmAnd** nelle cartelle **Spam**, **Posta indesiderata** o **Promozioni**.
+2. Controllare le cartelle spam.  
+    A volte, l'email di verifica potrebbe essere filtrata come spam. Cercare un'email da **OsmAnd** nelle cartelle **Spam**, **Posta indesiderata** o **Promozioni**.  
 
-3. Attendere l'arrivo del codice.
-    In alcuni casi, l'email con il codice di attivazione potrebbe subire un **ritardo**. Evitare **tentativi di attivazione multipli** in un breve periodo, poiché ciò può causare ulteriori ritardi.
+3. Attendere l'arrivo del codice.  
+    In alcuni casi, l'email con il codice di attivazione potrebbe subire un **ritardo**. Evitare **tentativi di attivazione multipli** in un breve periodo, poiché ciò può causare ulteriori ritardi.  
 
-4. Provare a inviare nuovamente il codice.
-    Tornare alla **schermata di accesso di OsmAnd Cloud** e selezionare **Invia di nuovo il codice**, se disponibile. Attendere qualche minuto prima di richiedere un altro codice.
+4. Provare a inviare nuovamente il codice.  
+    Tornare alla **schermata di accesso di OsmAnd Cloud** e selezionare **Invia di nuovo il codice**, se disponibile. Attendere qualche minuto prima di richiedere un altro codice.  
 
-5. Verificare le restrizioni del server di posta elettronica.
+5. Verificare le restrizioni del server di posta elettronica.  
     Se si utilizza un **dominio email aziendale o personalizzato**, verificare con il proprio **provider di posta elettronica** che l'email non venga bloccata. Considerare l'utilizzo di un altro servizio di posta elettronica (ad es. Gmail, Outlook) se i problemi persistono.
 
 <!--

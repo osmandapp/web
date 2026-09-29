@@ -1,5 +1,5 @@
 ---
-source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
+source-hash: 334708e5a8593c3a9d8ad26cd8d035221ee3dbfa4929c3dd8a3cbfc49b55fc2d
 sidebar_position: 2
 title:  Navigazione tramite traccia
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 L'opzione *Navigazione tramite traccia* (GPX) consente di seguire un percorso o una traccia predefinita su una mappa. Può essere particolarmente utile per attività all'aperto come escursionismo, ciclismo o guida fuoristrada, dove avere un percorso pianificato migliora la sicurezza e l'efficienza. Se si viaggia in un gruppo organizzato, questa funzione aiuta voi e ogni membro del gruppo ad avere le stesse informazioni sul percorso degli altri.  
 
-L'opzione *Navigazione tramite traccia* può essere utilizzata anche nella vita di tutti i giorni. È possibile utilizzare una [traccia registrata](../../plugins/trip-recording.md) in precedenza o [creare una traccia](../../personal/tracks/manage-tracks.md#create-a-track) e condividerla con la famiglia o gli amici invece di spiegare loro il percorso. È anche possibile utilizzare i [percorsi sulla mappa di OsmAnd](../../../../blog/routes/) per la navigazione. Come evidenziarli sulla mappa e cosa significano i loro colori è descritto nella sezione [Percorsi](../../map/vector-maps.md#routes) dell'articolo *Mappe vettoriali*.  
+L'opzione *Navigazione tramite traccia* può essere utilizzata anche nella vita di tutti i giorni. È possibile utilizzare una [traccia registrata](../../plugins/trip-recording.md) in precedenza o [creare una traccia](../../personal/tracks/manage-tracks.md#create-a-track) e condividerla con la famiglia o gli amici invece di spiegare loro il percorso. È anche possibile utilizzare i [percorsi sulla mappa di OsmAnd](https://osmand.net/blog/routes/) per la navigazione. Come evidenziarli sulla mappa e cosa significano i loro colori è descritto nella sezione [Percorsi](../../map/vector-maps.md#routes) dell'articolo *Mappe vettoriali*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

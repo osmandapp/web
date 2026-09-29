@@ -1,5 +1,5 @@
 ---
-source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title: Itinerari
 sidebar_position: 11
 ---
@@ -197,7 +197,7 @@ Verrà avviata la modalità [**Navigazione per traccia**](../../navigation/setup
 
 </Tabs>  
 
-Trova gli itinerari utilizzando la [funzione di ricerca](../../search/index.md) per nome o selezionando "Itinerari" nella [sezione Categorie](../../search/search-poi.md#).
+Trova gli itinerari utilizzando la [funzione di ricerca](../../search/index.md) per nome o selezionando "Itinerari" nella [sezione Categorie](../../search/search-poi.md#poi-search-by-categories).
 
 Per cercare, vai al menu *<Translate android="true" ids="search_button"/>* o a *<Translate android="true" ids="search_button,search_categories"/>* e inserisci la tua attività.
 
@@ -221,7 +221,7 @@ Vai a *<Translate android="true" ids="search_button,search_categories,poi_routes
 
 </Tabs>
 
-Nei risultati della ricerca degli itinerari, tocca il pulsante **Filtri** nell'angolo in alto a destra per restringere l'elenco. La schermata Filtri include un campo **Filtra per nome**; un blocco **Tipo** con *Ufficio*, *Aggiunta postale* e *Partner postale*; e **criteri aggiuntivi** che dipendono dalla categoria o dall'attività dell'itinerario selezionato, poiché ciascuna categoria può esporre le proprie caratteristiche e valori di filtro.
+Nei risultati della ricerca degli itinerari, tocca il pulsante **Filtri** nell'angolo in alto a destra per restringere l'elenco. La schermata Filtri include un campo **Filtra per nome** e **criteri aggiuntivi** che dipendono dalla categoria o dall'attività dell'itinerario selezionato, poiché ciascuna categoria può esporre le proprie caratteristiche e valori di filtro.
 
 È possibile attivare o disattivare i filtri tramite gli interruttori e alcune sezioni includono *Mostra tutto* per visualizzare valori aggiuntivi.
 
@@ -234,5 +234,5 @@ Nei risultati della ricerca degli itinerari, tocca il pulsante **Filtri** nell'a
 - [Menu contestuale tracce](../../map/tracks/track-context-menu.md)
 - [Trasporto pubblico](../public-transport.md)
 - [Aspetto della linea del percorso di navigazione](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [Ricerca POI](../../search/search-poi.md#)
+- [Ricerca POI](../../search/search-poi.md)
 - [Tipi di itinerari](./types-of-routes.md)

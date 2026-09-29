@@ -1,5 +1,5 @@
 ---
-source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
+source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -113,7 +113,7 @@ Non è possibile selezionare un profilo direttamente in *CarPlay* dalla schermat
   
     - Tutte le categorie non possono contenere più elementi di quelli previsti dal sistema multimediale del veicolo. Ciò significa che l'elenco in *CarPlay* potrebbe essere incompleto e tutte le altre cartelle sono disponibili solo nell'app OsmAnd sul dispositivo.
     - La cartella [Ultima modifica](#folder-last-modified) contiene un elenco delle destinazioni recenti, ordinate per data di aggiunta o modifica.
-    - L'elenco di tutte le altre cartelle è ordinato in base all'aggiornamento più recente; le nuove cartelle si trovano in cima all'elenco. Non è possibile modificare manualmente il loro ordine.
+    - L'elenco di tutte le altre cartole è ordinato in base all'aggiornamento più recente; le nuove cartelle si trovano in cima all'elenco. Non è possibile modificare manualmente il loro ordine.
     - L'elenco dei punti all'interno delle cartelle è ordinato in base alla distanza da essi, a partire dal più vicino. Ogni punto ha un nome o delle coordinate, un'icona sagomata (colore e icona impostati per default o scelti dall'utente nell'applicazione OsmAnd) e la distanza dal punto della posizione corrente ad esso.
 2. Selezionare la categoria [Cronologia](#history) per trovare una delle destinazioni recenti memorizzate nella memoria del dispositivo.
 3. Selezionare [Ricerca](#search) per inserire una destinazione dalle categorie di ricerca disponibili.
@@ -227,7 +227,7 @@ La guida vocale per *CarPlay* è una delle funzioni di navigazione più utili di
 
 Quando vengono riprodotte le istruzioni vocali, OsmAnd regola l'audio di sottofondo in base al suo tipo. Con l'opzione *<Translate ios="true" ids="pause_spoken_audio"/>* abilitata, i contenuti audio parlati, come podcast e audiolibri, vengono messi in pausa durante le istruzioni di navigazione, mentre la riproduzione musicale continua a volume ridotto. Quando *<Translate ios="true" ids="pause_spoken_audio"/>* è disabilitata, sia l'audio parlato che la musica continuano a essere riprodotti a volume ridotto.  
 
-Per configurare le istruzioni vocali in base al profilo selezionato, è necessario farlo prima di avviare un percorso nell'app OsmAnd sul dispositivo. Per visualizzare le impostazioni consigliate per *CarPlay*, consultare l'articolo [Istruzioni vocali / Notifiche](../navigation/guidance/voice-navigation.md).  
+Per configurare le istruzioni vocali in base al profilo selezionato, è necessario farlo prima di avviare un percorso nell'app OsmAnd sul dispositivo. Per visualizzare le impostazioni consigliate per *CarPlay*, consultare l'articolo [Istruzioni vocali / Notifiche](../navigation/guidance/voice-navigation.md#voice-settings). Ad esempio, per abilitare l'opzione Pausa audio parlato, andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 
 ### Avvisi di navigazione {#navigation-alerts}
@@ -321,16 +321,19 @@ Se CarPlay viene disconnesso mentre la navigazione è attiva, OsmAnd applica una
 
 È anche possibile abilitare o disabilitare l'annuncio dei messaggi direttamente in *CarPlay*. Leggere come viene implementata la gestione delle notifiche su [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) e [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
 
-### Tema della mappa {#map-theme}
+### Modalità mappa {#map-mode}
 
-![Tema della mappa](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+![Modalità mappa](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Modalità mappa](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-CarPlay consente di configurare l'aspetto della mappa per una migliore visibilità in diverse condizioni di guida. È possibile scegliere una delle seguenti modalità di aspetto:
+OsmAnd consente di configurare l'aspetto della mappa per CarPlay indipendentemente dalla modalità mappa sul telefono. Per aprire questa impostazione, toccare il pulsante *Impostazioni* nella barra di navigazione di CarPlay, quindi selezionare *Modalità mappa*. La modalità corrente viene mostrata come testo di dettaglio della riga.
 
-- *Automatico*. L'aspetto della mappa cambia automaticamente in base alle impostazioni di sistema, all'ora del giorno o alle condizioni del veicolo.
-- *Sempre scuro*. CarPlay utilizza il tema della mappa scuro.
+È possibile scegliere una delle seguenti modalità di aspetto:
+- **Aspetto veicolo** — L'aspetto della mappa segue lo stile di visualizzazione del veicolo, in base all'impostazione Aspetto CarPlay sull'iPhone (*Automatico* o *Sempre scuro*) e all'ora del giorno. Quando *Mostra sempre mappe scure* è abilitato in tale impostazione, la mappa rimane sempre in modalità scura indipendentemente dallo stato dei fari del veicolo o dall'ora del giorno.
+- **Giorno** — La mappa utilizza sempre il tema chiaro in CarPlay, indipendentemente dalle impostazioni di aspetto del veicolo.
+- **Notte** — La mappa utilizza sempre il tema scuro in CarPlay, indipendentemente dalle impostazioni di aspetto del veicolo.
+- **Alba/tramonto** — La mappa passa automaticamente tra i temi chiaro e scuro in base agli orari calcolati di alba e tramonto per la posizione corrente.
 
-Quando l'opzione *Mostra sempre mappe scure* è abilitata, la mappa rimane sempre in modalità scura indipendentemente dallo stato dei fari del veicolo o dall'ora del giorno.
+**Nota:** L'impostazione Modalità mappa in CarPlay influisce solo sull'aspetto della mappa in CarPlay. Non modifica la modalità mappa sullo schermo del telefono.
 
 ### Posizione in CarPlay {#location-position-in-carplay}
 
@@ -358,7 +361,7 @@ A volte *CarPlay* non si connette, o semplicemente non si sente nulla anche se �
 5. Controllare il cavo USB.
 6. Aggiornare regolarmente il sistema operativo.
 7. Verificare che *CarPlay* sia supportato nella propria [regione](https://www.apple.com/uk/ios/feature-availability/#applecarplay-applecarplay).
-8. Se si utilizza una VPN sull'iPhone, potrebbe impedere il funzionamento di *CarPlay*. Provare a disabilitare la VPN e vedere se questo aiuta *CarPlay* a funzionare.
+8. Se si utilizza una VPN sull'iPhone, potrebbe impedire il funzionamento di *CarPlay*. Provare a disabilitare la VPN e vedere se questo aiuta *CarPlay* a funzionare.
 
 
 ## Articoli correlati {#related-articles}

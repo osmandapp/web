@@ -1,8 +1,9 @@
 ---
-source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
+source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
 sidebar_position: 3
 title:  Coördinaten Invoeren
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,22 +15,19 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-
 <InfoAndroidOnly />
 
 ## Overzicht {#overview}
 
 *Coördinaten Invoeren* is een eenvoudige en gebruiksvriendelijke tool voor het aanmaken van routepunten door hun geografische locatie op te geven. Deze functie kan handig zijn voor het navigeren naar bepaalde plaatsen waarvan u alleen de coördinaten kent: toegevoegde punten kunnen worden [opgeslagen](#save-as-track) als een GPX-track en later worden gebruikt voor [GPX-navigatie](../navigation/setup/gpx-navigation.md) of [navigatie via markeringen](../navigation/setup/markers-navigation.md#overview).
 
-![Overzicht coördinaten invoeren](@site/static/img/plan-route/coordinates_input/coordinates_input_overview.png)
+![Coördinaten invoeren overzicht](@site/static/img/plan-route/coordinates_input/coordinates_input_overview.png)
 
 ## Hoe te gebruiken {#how-to-use}
 
-U kunt routepunten aanmaken vanuit het menu *[Kaartmarkeringen](../personal/markers.md#actions)* of vanuit [Mijn plaatsen](../personal/myplaces.md) (zie schermafbeeldingen). Volg deze paden om de optie voor het invoeren van coördinaten te bereiken:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Aardbol-knop onderaan het scherm*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+U kunt routepunten aanmaken vanuit het menu *[Kaartmarkeringen](../personal/markers.md#actions)*. Ga naar: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Hoe coördinaten invoeren te vinden](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Hoe coördinaten invoeren te vinden](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
+![Coördinaten invoeren hoe te vinden](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png)
 
 Nadat u het scherm voor het invoeren van coördinaten hebt geopend:
 
@@ -102,7 +100,7 @@ Wanneer u op een punt tikt, wordt het mogelijk om de coördinaten ervan te wijzi
 
 Om uw punten als een track op te slaan, tikt u op de knop *Terug* ( &#8592; ) of gebruikt u het menu *[Opties](#options)*.
 
-![Punt opslaan coördinaten invoeren Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Punt opslaan coördinaten invoeren Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![Punt opslaan coördinaten invoeren Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Punt opslaan coördinaten invoeren Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
 
 In het pop-upmenu kunt u uw eigen tracknaam invoeren of deze standaard opslaan. Tik op <Translate android="true" ids="shared_string_save"/> om de toegevoegde punten als een nieuwe track op te slaan.
 U vindt uw track in het menu [Mijn plaatsen](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

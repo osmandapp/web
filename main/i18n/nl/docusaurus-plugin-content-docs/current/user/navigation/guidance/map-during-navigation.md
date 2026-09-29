@@ -1,5 +1,5 @@
 ---
-source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
+source-hash: 968394db45647827e95cb32f776ef7f818433675c6fb40f6ba7071f88e7d270d
 sidebar_position: 2
 title: Kaartscherm tijdens navigatie
 ---
@@ -49,7 +49,7 @@ Tijdens de navigatie past het uiterlijk van de kaart zich aan op basis van het g
 
 | Parameter | Beschrijving | Opmerking |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | De tijd waarvoor de kaartweergave wordt gesynchroniseerd met de huidige positie na verplaatsing.  | *Waarde:* <br /> Nooit, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | De tijd waarvoor de kaartweergave wordt gesynchroniseerd met de huidige positie na verplaatsing.  | *Waarde:* <br /> Nooit, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 90 sec.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Schaal de kaart automatisch op basis van uw snelheid, zolang de kaart is gesynchroniseerd met uw huidige positie. | *Waarde:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - handmatig zoomen. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom is 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom is 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom is 5 m. <br /> Autozoom-veranderingen kunnen geanimeerd (Vloeiend) of stapsgewijs (Discreet) zijn, afhankelijk van [Ontwikkelinstellingen](navigation-settings.md#development-settings). In de Vloeiende modus gebruiken zoomveranderingen een gecontroleerde animatie (ongeveer 0,1 zoom/seconde). Autozoom past de zoom niet aan bij zeer lage snelheden (onder ~7 km/u). Als de vereiste zoomverandering minder dan ~1,5 seconden zou duren, wordt de animatie niet gestart. <br /> Autozoom probeert de aankomende manoeuvre binnen een stabiel schermfocusgebied te houden, zodat de zichtbare afstand vooruit consistent blijft tijdens het rijden.|
 | *Auto zoom 3D-hoek* | Stelt de helling van de kaart in bij overschakelen naar de 3D-weergave tijdens de navigatie. Een hogere hoek maakt de horizon verder weg, wat meer zicht naar voren geeft. |Het wordt alleen toegepast wanneer Auto zoom is ingeschakeld. Waarden: 20°, 25°, 30°, 35°, 40°. Standaard: 25°. <br /> Bij het naderen van een manoeuvre/kruising kan de app de 3D-helling geleidelijk verminderen naar een 2D-weergave om de volgende bocht leesbaar te houden. |
 | *Volgende bocht voorspellen* | Draait de kaart automatisch iets vooruit om de volgende bocht of manoeuvre tijdens de navigatie te tonen. Helpt om aankomende acties te anticiperen.  | Standaard ingeschakeld. Als u een profiel exporteert en opnieuw importeert, controleer dan deze instelling, omdat deze in sommige eerdere versies kon terugvallen op “ingeschakeld”.   <br /> De rotatie/voorvertoning wordt geactiveerd zodra het volgende manoeuvrepunt in het focusgebied valt (zodat de kaart begint te “kijken” naar de bocht wanneer deze relevant wordt). |
@@ -62,7 +62,7 @@ De instelling *Langs de route tonen* stelt u in staat om aanvullende routeparame
 
 - De mogelijkheid om verschillende afstanden in te stellen (tot 5 km, of 3,11 mijl, afhankelijk van de ingestelde [lengte-eenheid](../../personal/profiles.md#units--formats)) vanaf de route tot nabijgelegen punten is handig bij het gebruik van routeringstypes zoals [Rechte lijn](../routing/straight-line-routing.md) of [Direct-naar-punt](../routing/direct-to-point-routing.md).
 - Voor de instelling *Langs de route tonen* wordt aanbevolen om [Spraakinstructies](../guidance/voice-navigation.md) voor navigatie te gebruiken.
-- *POI's, Favorieten en Verkeerswaarschuwingen* worden niet weergegeven in de lijst voor een route die u al hebt afgelegd.
+- *POI's, Favorieten en Verkeerswaarschuwingen* worden niet weergeven in de lijst voor een route die u al hebt afgelegd.
 
 :::info note
 De optie **Langs de route tonen** beïnvloedt alleen de lijsten met POI's en Mijn Favorieten, niet de kaart zelf. Pictogrammen van POI's en Favorieten worden overal op de kaart weergegeven, ongeacht de afstand tot de route.
