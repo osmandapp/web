@@ -59,7 +59,8 @@ export default async function test() {
 }
 
 async function saveLocalToCloud({ name = null, overwrite = false } = {}) {
-    await clickBy(By.id('se-local-track-actions-save-to-cloud'));
+    // disabled while a segment is being routed
+    await clickBy(By.css('#se-local-track-actions-save-to-cloud:not([disabled])'));
     if (name) {
         const input = await waitBy(By.id('se-save-track-name'));
         await driver.actions().click(input).click(input).click(input).perform();
