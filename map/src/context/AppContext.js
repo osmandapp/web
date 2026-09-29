@@ -7,6 +7,7 @@ import { geoRouter } from '../store/geoRouter/geoRouter.js';
 import { geoObject } from '../store/geoObject/geoObject.js';
 import isEmpty from 'lodash-es/isEmpty';
 import { NO_HEIGHTMAP } from '../menu/configuremap/TerrainConfig';
+import { DEFAULT_HEATMAP_APPEARANCE } from '../menu/travel/HeatmapAppearance';
 import { GLOBAL_GRAPH_HEIGHT_SIZE } from '../manager/GlobalManager';
 import { loadLocalTracksFromStorage } from './LocalTrackStorage';
 import { units } from '../menu/settings/units/UnitsMenu';
@@ -50,6 +51,7 @@ export const OBJECT_TRACK_ANALYZER = 'track_analyzer';
 export const LOCAL_STORAGE_CONFIGURE_MAP = 'configureMap';
 export const LOCAL_STORAGE_UNITS_SETTINGS = 'unitsSettings';
 export const PREVIOUS_ROUTE_STORAGE_KEY = 'previousRoute';
+export const TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY = 'travelHeatmapAppearance';
 export const SEARCH_ENGINE_CLASSIC = 'classic';
 export const SEARCH_ENGINE_SPATIAL = 'spatial';
 export const OBJECT_TYPE_TRAVEL = 'travel';
@@ -325,6 +327,14 @@ export const AppContextProvider = (props) => {
     const [processingTravelRouteByUrl, setProcessingTravelRouteByUrl] = useState(false);
     const [travelRoutesHidden, setTravelRoutesHidden] = useState(false); // hide other travel routes on the map
     const [travelShowStartFinish, setTravelShowStartFinish] = useState(false);
+    const [travelHeatmapAppearance, setTravelHeatmapAppearance] = useState(() => {
+        try {
+            const s = localStorage.getItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
+            return s ? { ...DEFAULT_HEATMAP_APPEARANCE, ...JSON.parse(s) } : DEFAULT_HEATMAP_APPEARANCE;
+        } catch {
+            return DEFAULT_HEATMAP_APPEARANCE;
+        }
+    });
 
     const [closeMapObj, setCloseMapObj] = useState(false);
     const [closeSelectedMenu, setCloseSelectedMenu] = useState(false);
@@ -755,6 +765,8 @@ export const AppContextProvider = (props) => {
                 setTravelRoutesHidden,
                 travelShowStartFinish,
                 setTravelShowStartFinish,
+                travelHeatmapAppearance,
+                setTravelHeatmapAppearance,
                 processingAnalytics,
                 setProcessingAnalytics,
                 openNavigationSettings,

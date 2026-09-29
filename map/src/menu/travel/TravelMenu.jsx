@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
+import { ReactComponent as AppearanceIcon } from '../../assets/icons/ic_action_appearance.svg';
 import { ReactComponent as SortDateIcon } from '../../assets/icons/ic_action_sort_by_date.svg';
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
@@ -19,6 +20,7 @@ import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
 import TravelFilters from './TravelFilters';
+import HeatmapAppearance, { resetHeatmapAppearance } from './HeatmapAppearance';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import headerStyles from '../trackfavmenu.module.css';
 import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
@@ -82,6 +84,7 @@ export default function TravelMenu() {
     const [sortByDistance, setSortByDistance] = useState(null); // 'asc' | 'desc' | null
     const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
     const [openFilters, setOpenFilters] = useState(false); // secondary filters drawer
+    const [openAppearance, setOpenAppearance] = useState(false);
 
     const DEFAULT_MAX_DISTANCE = 500000; // 500 km in meters
     const DEFAULT_MAX_SPEED = 100; // 100 km/h
@@ -162,6 +165,12 @@ export default function TravelMenu() {
     useEffect(() => {
         ctx.setOpenTravelFilters(openFilters);
     }, [openFilters]);
+
+    useEffect(() => {
+        if (!ctx.openTravel) {
+            setOpenAppearance(false);
+        }
+    }, [ctx.openTravel]);
 
     useEffect(() => {
         if (!ctx.openTravelFilters) {
@@ -434,9 +443,28 @@ export default function TravelMenu() {
                                             variant="contained"
                                             type="button"
                                             className={headerStyles.appBarIcon}
-                                            onClick={resetSearch}
+                                            onClick={() => {
+                                                resetSearch();
+                                                resetHeatmapAppearance(ctx);
+                                            }}
                                         >
                                             <ResetIcon />
+                                        </IconButton>
+                                    </span>
+                                </Tooltip>
+                                <Tooltip title={t('shared_string_appearance')} arrow placement="bottom-end">
+                                    <span>
+                                        <IconButton
+                                            id="se-travel-appearance"
+                                            variant="contained"
+                                            type="button"
+                                            className={headerStyles.appBarIcon}
+                                            onClick={() => {
+                                                setOpenFilters(false);
+                                                setOpenAppearance((prev) => !prev);
+                                            }}
+                                        >
+                                            <AppearanceIcon />
                                         </IconButton>
                                     </span>
                                 </Tooltip>
@@ -448,7 +476,10 @@ export default function TravelMenu() {
                                             type="button"
                                             className={headerStyles.appBarIcon}
                                             disabled={!ctx.searchTravelRoutes?.point}
-                                            onClick={() => setOpenFilters((prev) => !prev)}
+                                            onClick={() => {
+                                                setOpenAppearance(false);
+                                                setOpenFilters((prev) => !prev);
+                                            }}
                                         >
                                             <SettingsIcon />
                                         </IconButton>
@@ -554,6 +585,7 @@ export default function TravelMenu() {
                             previewFilter={previewFilter}
                         />
                     )}
+                    {openAppearance && <HeatmapAppearance onClose={() => setOpenAppearance(false)} />}
                 </>
             ) : (
                 <EmptyLogin />

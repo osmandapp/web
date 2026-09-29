@@ -134,6 +134,12 @@
     margin: 12px 16px 0 16px !important;
 }
 
+.heatmapPalette {
+    height: 8px;
+    margin: 0 16px 8px;
+    border-radius: 4px;
+}
+
 .sliderContainer {
     margin: 8px 16px;
     padding-top: 12px;

@@ -6,14 +6,14 @@ import { useTranslation } from 'react-i18next';
 import AppContext, { isTravelTrack } from '../../context/AppContext';
 import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE, ALL_YEARS } from '../../menu/travel/TravelMenu';
 import { UNIDENTIFIED_TRACKS_KEY } from '../../menu/travel/ActivitySelect';
+import { HEATMAP_PALETTES, HEATMAP_SCALE_LOG } from '../../menu/travel/HeatmapAppearance';
 import { apiGet } from '../../util/HttpApi';
 import { ensureLeafletPane } from './MvtHybridDemo';
 import { HEATMAP_PANE_Z_INDEX } from '../util/ZIndexes';
 
 const HEATMAP_PANE = 'heatmapPane';
 const OSM_TRACES_URL = 'https://www.openstreetmap.org/traces';
-const HEATMAP_OPACITY = 0.9;
-const HEATMAP_DIMMED_OPACITY = 0.35;
+const HEATMAP_DIMMED_FACTOR = 0.4;
 const HEATMAP_SPEED_SUFFIX = '~speed';
 const HEATMAP_UNKNOWN = 'unknown';
 const HEATMAP_IGNORED_ERROR = 'ignored_error';
@@ -22,16 +22,8 @@ const TILE_SIZE = 256;
 const TILE_PIXELS = TILE_SIZE * TILE_SIZE;
 const CACHE_FILES = 320;
 const CDF_MAX = 1024;
-const LINE_WIDTH = 3;
-const GLOW = 0.6;
-const PALETTE = [
-    [0, '#2b6cff'],
-    [0.35, '#9b30d9'],
-    [0.7, '#e8114a'],
-    [1, '#6e0016'],
-];
+const KERNELS_CACHE = 24;
 
-const LUT = buildLut(PALETTE);
 const kernels = new Map();
 
 export default function HeatmapLayer() {
@@ -63,7 +55,6 @@ export default function HeatmapLayer() {
             meta &&
             new HeatmapGridLayer(meta, process.env.REACT_APP_HEATMAP_URL, {
                 pane: HEATMAP_PANE,
-                opacity: HEATMAP_OPACITY,
                 maxZoom: 20,
                 updateWhenZooming: false,
                 keepBuffer: 2,
@@ -90,8 +81,18 @@ export default function HeatmapLayer() {
     }, [layer, activity, year]);
 
     useEffect(() => {
-        layer?.setOpacity(isDimmed ? HEATMAP_DIMMED_OPACITY : HEATMAP_OPACITY);
-    }, [layer, isDimmed]);
+        layer?.setOpacity(ctx.travelHeatmapAppearance.opacity * (isDimmed ? HEATMAP_DIMMED_FACTOR : 1));
+    }, [layer, isDimmed, ctx.travelHeatmapAppearance.opacity]);
+
+    useEffect(() => {
+        layer?.setAppearance(ctx.travelHeatmapAppearance);
+    }, [
+        layer,
+        ctx.travelHeatmapAppearance.palette,
+        ctx.travelHeatmapAppearance.scale,
+        ctx.travelHeatmapAppearance.width,
+        ctx.travelHeatmapAppearance.glow,
+    ]);
 
     useEffect(() => {
         if (!layer || !ctx.openTravel) {
@@ -181,6 +182,16 @@ const HeatmapGridLayer = L.GridLayer.extend({
         }
     },
 
+    setAppearance({ palette, scale, width, glow }) {
+        this._lut = buildLut(HEATMAP_PALETTES[palette].stops);
+        this._scale = scale;
+        this._width = width;
+        this._glow = glow;
+        if (this._map) {
+            this._repaint();
+        }
+    },
+
     _levelFor(z) {
         return this._levelsDesc.find((level) => level <= z + 8) ?? null;
     },
@@ -237,7 +248,7 @@ const HeatmapGridLayer = L.GridLayer.extend({
         const span = TILE_SIZE >> dz;
         const cx0 = coords.x * span;
         const cy0 = coords.y * span;
-        const m = Math.ceil(kernelFor(cellPx).R / cellPx);
+        const m = Math.ceil(kernelFor(cellPx, this._width, this._glow).R / cellPx);
 
         return {
             level,
@@ -302,7 +313,7 @@ const HeatmapGridLayer = L.GridLayer.extend({
             ctx.clearRect(0, 0, TILE_SIZE, TILE_SIZE);
             return;
         }
-        const key = `${g.level}|${g.dz}|${g.cx0}|${g.cy0}|${this._filterEpoch}|${this._loadedFiles(g)}`;
+        const key = `${g.level}|${g.dz}|${g.cx0}|${g.cy0}|${this._width}|${this._glow > 0}|${this._filterEpoch}|${this._loadedFiles(g)}`;
         let F = canvas._heatSplat;
         if (F?.key !== key) {
             F = canvas._heatSplat = this._splat(g, key);
@@ -317,7 +328,7 @@ const HeatmapGridLayer = L.GridLayer.extend({
         for (let p = 0; p < TILE_PIXELS; p++) {
             const w = F.W[p];
             if (w < 0.004) continue;
-            const a = Math.max(smoothstep(0.12, 0.42, w), GLOW * 0.55 * smoothstep(0.004, 0.12, w));
+            const a = Math.max(smoothstep(0.12, 0.42, w), this._glow * 0.55 * smoothstep(0.004, 0.12, w));
             if (a <= 0) continue;
             const n = Math.min(CDF_MAX + 1, Math.max(1, Math.round(F.V[p] / w)));
             let c = colour[n];
@@ -325,16 +336,16 @@ const HeatmapGridLayer = L.GridLayer.extend({
                 c = colour[n] = Math.round(tf(n) * 255) * 3;
             }
             const k = p * 4;
-            px[k] = LUT[c];
-            px[k + 1] = LUT[c + 1];
-            px[k + 2] = LUT[c + 2];
+            px[k] = this._lut[c];
+            px[k + 1] = this._lut[c + 1];
+            px[k + 2] = this._lut[c + 2];
             px[k + 3] = a * 255;
         }
         ctx.putImageData(img, 0, 0);
     },
 
     _splat(g, key) {
-        const K = kernelFor(g.cellPx);
+        const K = kernelFor(g.cellPx, this._width, this._glow);
         const W = new Float32Array(TILE_PIXELS);
         const V = new Float32Array(TILE_PIXELS);
         let any = false;
@@ -384,7 +395,7 @@ const HeatmapGridLayer = L.GridLayer.extend({
     // count -> 0..1: half mid-rank CDF of the visible cells (1, 2, 3 tracks get distinct colours), half log
     _normFor(level) {
         const n = this._norms[level];
-        if (n) {
+        if (n && this._scale !== HEATMAP_SCALE_LOG) {
             const lo = n.cdf[n.vmin];
             const span = n.cdf[Math.min(n.top, CDF_MAX)] - lo;
             const lt = Math.log(n.top / n.vmin);
@@ -398,7 +409,7 @@ const HeatmapGridLayer = L.GridLayer.extend({
                     Math.max(0, (0.5 * ((v <= CDF_MAX ? n.cdf[v] : 1) - lo)) / span + (0.5 * Math.log(v / n.vmin)) / lt)
                 );
         }
-        const lt = Math.log(Math.max(2, this._meta.levelStats[level]?.p995 || 10));
+        const lt = Math.log(Math.max(2, n?.top ?? (this._meta.levelStats[level]?.p995 || 10)));
 
         return (v) => Math.min(1, Math.log(v) / lt);
     },
@@ -492,11 +503,12 @@ function parseTile(buf) {
 }
 
 // sigma >= half a cell hides the staircase of neighbouring cells; a straight run of cells peaks at ~1
-function kernelFor(cellPx) {
-    let k = kernels.get(cellPx);
+function kernelFor(cellPx, width, glow) {
+    const key = `${cellPx}|${width}|${glow > 0}`;
+    let k = kernels.get(key);
     if (k) return k;
-    const sigma = Math.max(LINE_WIDTH / 3.2, cellPx * 0.55);
-    const R = Math.min(160, Math.ceil(sigma * 3));
+    const sigma = Math.max(width / 3.2, cellPx * 0.55);
+    const R = Math.min(160, Math.ceil(sigma * (glow > 0 ? 3 : 2)));
     const size = 2 * R + 1;
     const w = new Float32Array(size * size);
     const shift = cellPx === 1 ? 0 : 0.5;
@@ -509,7 +521,10 @@ function kernelFor(cellPx) {
         }
     }
     k = { R, size, w, half: cellPx >> 1 };
-    kernels.set(cellPx, k);
+    kernels.set(key, k);
+    if (kernels.size > KERNELS_CACHE) {
+        kernels.delete(kernels.keys().next().value);
+    }
 
     return k;
 }
