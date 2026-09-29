@@ -89,7 +89,10 @@ export default function LoginMenu() {
 
     useEffect(() => {
         if (linkParams.get('link') && linkParams.get('email') && !ltx.loginUser) {
-            ltx.setLoginState({ changePwd: true });
+            ltx.setLoginState({
+                changePwd: true,
+                loginLink: { email: linkParams.get('email'), token: linkParams.get('link') },
+            });
         }
     }, [location.search, ltx.loginUser]);
 

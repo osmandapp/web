@@ -1,6 +1,7 @@
 import headerStyles from '../menu/trackfavmenu.module.css';
 import IconBtn from '../frame/components/btns/IconBtn';
 import {
+    Alert,
     AppBar,
     Box,
     Button,
@@ -24,7 +25,7 @@ import { useTranslation } from 'react-i18next';
 import { userActivate, userRegisterAndSendCode } from '../manager/AccountManager';
 import i18n from 'i18next';
 import loginStyles from './login.module.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import { usePasswordValidation } from '../util/hooks/usePasswordValidation';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
@@ -36,20 +37,14 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
 
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const location = useLocation();
     const lang = i18n.language;
 
-    // login link created by support in order-mgmt: ?email=...&link=...
-    const linkParams = new URLSearchParams(location.search);
-    const linkToken = linkParams.get('link');
-    const linkEmail = linkToken ? linkParams.get('email') : null;
-
-    const [userEmail, setUserEmail] = useState(linkEmail ?? EMPTY_INPUT);
+    const [userEmail, setUserEmail] = useState(ltx.loginState.loginLink?.email ?? EMPTY_INPUT);
     const [emailError, setEmailError] = useState(EMPTY_INPUT);
     const [userPassword1, setUserPassword1] = useState(EMPTY_INPUT);
     const [userPassword2, setUserPassword2] = useState(EMPTY_INPUT);
-    const [openCodeInput, setOpenCodeInput] = useState(!!linkEmail);
-    const [code, setCode] = useState(linkEmail ? linkToken : EMPTY_INPUT);
+    const [openCodeInput, setOpenCodeInput] = useState(!!ltx.loginState.loginLink);
+    const [code, setCode] = useState(ltx.loginState.loginLink?.token ?? EMPTY_INPUT);
     const [resetPasswordError, setResetPasswordError] = useState(EMPTY_INPUT);
     const [openResetStatus, setOpenResetStatus] = useState(false);
     const [showPassword1, setShowPassword1] = useState(false);
@@ -106,7 +101,7 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
     useEffect(() => {
         if (checkReset) {
             if (resetPasswordError === ERROR_TOKEN) {
-                setCodeError(t(linkEmail ? 'web:login_link_not_active' : 'web:expired_code'));
+                setCodeError(t(ltx.loginState.loginLink ? 'web:login_link_not_active' : 'web:expired_code'));
                 setCheckReset(false);
             } else {
                 setOpenCodeInput(false);
@@ -194,30 +189,32 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
                 )}
                 {openCodeInput && !emailError && (
                     <>
-                        {linkEmail ? (
-                            <Typography className={styles.loginText}>{userEmail}</Typography>
+                        {ltx.loginState.loginLink ? (
+                            <>
+                                <Typography className={styles.loginText}>{userEmail}</Typography>
+                                {codeError && <Alert severity="error">{codeError}</Alert>}
+                            </>
                         ) : (
-                            <Typography className={styles.loginText}>
-                                {t('web:send_code_desc').split('%1$s')[0]}
-                                <span style={{ color: '#212121' }}>{userEmail}</span>
-                                {t('web:send_code_desc').split('%1$s')[1]}
-                            </Typography>
+                            <>
+                                <Typography className={styles.loginText}>
+                                    {t('web:send_code_desc').split('%1$s')[0]}
+                                    <span style={{ color: '#212121' }}>{userEmail}</span>
+                                    {t('web:send_code_desc').split('%1$s')[1]}
+                                </Typography>
+                                <Box className={codeError && styles.errorBack}>
+                                    <TextField
+                                        margin="dense"
+                                        onChange={handleCodeChange}
+                                        id="code"
+                                        label={t('web:verification_code')}
+                                        fullWidth
+                                        variant="filled"
+                                        value={code ? code : EMPTY_INPUT}
+                                        helperText={codeError ? codeError : EMPTY_INPUT}
+                                    />
+                                </Box>
+                            </>
                         )}
-                        <Box
-                            className={codeError && styles.errorBack}
-                            sx={linkEmail && !codeError ? { display: 'none' } : {}}
-                        >
-                            <TextField
-                                margin="dense"
-                                onChange={handleCodeChange}
-                                id="code"
-                                label={t('web:verification_code')}
-                                fullWidth
-                                variant="filled"
-                                value={code ? code : EMPTY_INPUT}
-                                helperText={codeError ? codeError : EMPTY_INPUT}
-                            />
-                        </Box>
                         <Box sx={{ mt: '12px' }}>
                             <Typography className={styles.title} noWrap>
                                 {t('user_password')}
