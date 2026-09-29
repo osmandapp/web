@@ -62,6 +62,7 @@ export const DEFAULT_HEATMAP_APPEARANCE = {
     width: 3,
     glow: 0.6,
     opacity: 0.9,
+    minTracks: 1,
 };
 
 const HEATMAP_SCALES = {
@@ -187,6 +188,14 @@ export default function HeatmapAppearance({ onClose }) {
                         step: 0.05,
                         format: percent,
                         live: true,
+                    })}
+                    {slider({
+                        key: 'minTracks',
+                        title: t('web:travel_heatmap_min_tracks'),
+                        min: 1,
+                        max: 50,
+                        step: 1,
+                        format: String,
                     })}
                 </Box>
             </Box>

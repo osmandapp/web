@@ -274,6 +274,7 @@
     "travel_heatmap_scale_log": "Logarithmic",
     "travel_heatmap_glow": "Glow",
     "travel_heatmap_opacity": "Opacity",
+    "travel_heatmap_min_tracks": "Min tracks per cell",
     "travel_no_tracks_title": "No tracks found",
     "travel_no_tracks_desc": "No matching tracks pass through the selected point. Click on the map in another place or change your filters.",
     "tag_filters": "Tag filters",

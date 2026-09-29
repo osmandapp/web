@@ -101,6 +101,7 @@ export default function HeatmapLayer() {
         ctx.travelHeatmapAppearance.scale,
         ctx.travelHeatmapAppearance.width,
         ctx.travelHeatmapAppearance.glow,
+        ctx.travelHeatmapAppearance.minTracks,
     ]);
 
     useEffect(() => {
@@ -194,14 +195,24 @@ const HeatmapGridLayer = L.GridLayer.extend({
         }
     },
 
-    setAppearance({ palette, scale, width, glow }) {
+    // minTracks: cells with fewer tracks are not drawn and not counted in the colour scale
+    setAppearance({ palette, scale, width, glow, minTracks }) {
         this._lut = buildLut(HEATMAP_PALETTES[palette].stops);
         this._scale = scale;
         this._width = width;
         this._glow = glow;
-        if (this._map) {
-            this._repaint();
+        const minTracksChanged = minTracks !== this._minTracks;
+        this._minTracks = minTracks;
+        if (!this._map) {
+            return;
         }
+        if (minTracksChanged) {
+            this._norms = {};
+            if (this._updateAutoScale()) {
+                return;
+            }
+        }
+        this._repaint();
     },
 
     _levelFor(z) {
@@ -325,7 +336,7 @@ const HeatmapGridLayer = L.GridLayer.extend({
             ctx.clearRect(0, 0, TILE_SIZE, TILE_SIZE);
             return;
         }
-        const key = `${g.level}|${g.dz}|${g.cx0}|${g.cy0}|${this._width}|${this._glow > 0}|${this._filterEpoch}|${this._loadedFiles(g)}`;
+        const key = `${g.level}|${g.dz}|${g.cx0}|${g.cy0}|${this._width}|${this._glow > 0}|${this._minTracks}|${this._filterEpoch}|${this._loadedFiles(g)}`;
         let F = canvas._heatSplat;
         if (F?.key !== key) {
             F = canvas._heatSplat = this._splat(g, key);
@@ -376,7 +387,7 @@ const HeatmapGridLayer = L.GridLayer.extend({
                 const i1 = lowerBound(f.cell, f.nc, (ly1 + 1) * TILE_SIZE);
                 for (let i = lowerBound(f.cell, f.nc, ly0 * TILE_SIZE); i < i1; i++) {
                     const v = s[i];
-                    if (v < 1) continue;
+                    if (v < this._minTracks) continue;
                     const cx = f.cell[i] & 255;
                     if (cx < lx0 || cx > lx1) {
                         continue;
@@ -444,7 +455,7 @@ const HeatmapGridLayer = L.GridLayer.extend({
                 if (!f) continue;
                 const v = this._sums(f);
                 for (const element of v) {
-                    if (element >= 1) {
+                    if (element >= this._minTracks) {
                         hist[Math.min(CDF_MAX + 1, element)]++;
                         n++;
                     }
