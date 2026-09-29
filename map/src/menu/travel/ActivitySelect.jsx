@@ -21,7 +21,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { ACTIVITY_ALL, ACTIVITY_ERROR, ACTIVITY_GARBAGE } from './TravelMenu';
 
-const UNIDENTIFIED_TRACKS_KEY = 'nospeed';
+export const UNIDENTIFIED_TRACKS_KEY = 'nospeed';
 
 export default function ActivitySelect({
     name = null,

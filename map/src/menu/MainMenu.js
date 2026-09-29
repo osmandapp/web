@@ -589,6 +589,10 @@ export default function MainMenu({
     }, [ctx.closeSelectedMenu]);
 
     useEffect(() => {
+        ctx.setOpenTravel(selectedType === OBJECT_TYPE_TRAVEL && ltx.isLoggedIn());
+    }, [selectedType, ltx.loginUser]);
+
+    useEffect(() => {
         openMenuObject();
 
         if (openVisibleTracksPage()) {
@@ -613,7 +617,6 @@ export default function MainMenu({
         }
 
         if (selectedType === OBJECT_TYPE_TRAVEL) {
-            ctx.setOpenTravel(true);
             const savedTravelUrl = lastMenuUrlsRef.current[OBJECT_TYPE_TRAVEL];
             if (savedTravelUrl?.includes(TRAVEL_ROUTE_ID_PARAM)) {
                 navigate(savedTravelUrl);
