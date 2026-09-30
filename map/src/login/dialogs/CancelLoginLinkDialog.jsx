@@ -10,8 +10,10 @@ import styles from '../login.module.css';
 export default function CancelLoginLinkDialog({ email, code, onClose }) {
     const { t } = useTranslation();
     const [result, setResult] = useState(null);
+    const [cancelling, setCancelling] = useState(false);
 
     async function cancel() {
+        setCancelling(true);
         const ok = await cancelLoginLink({ username: email, token: code });
         setResult(ok ? t('web:login_link_cancelled') : t('web:login_link_cancel_error'));
     }
@@ -23,7 +25,7 @@ export default function CancelLoginLinkDialog({ email, code, onClose }) {
             </Typography>
             {!result && (
                 <Box sx={{ mt: 2 }}>
-                    <PrimaryBtn action={cancel} text={t('web:cancel_login_link')} />
+                    <PrimaryBtn action={cancel} disabled={cancelling} text={t('web:cancel_login_link')} />
                 </Box>
             )}
         </BaseLoginDialog>
