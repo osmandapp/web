@@ -1,8 +1,8 @@
 ---
-source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
+source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
 sidebar_position: 6
-sidebar_label: Favorites
-title: Favorites
+sidebar_label: المفضلات
+title: المفضلات
 ---
 
 import Tabs from '@theme/Tabs';
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![تحرير المفضلات في سحابة OsmAnd Web](@site/static/img/web/favorites_1_new.png)
 
-بعد التسجيل في [**OsmAnd Pro**](../personal/osmand-cloud.md#login) وفي [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)، يتم تنظيم المفضلات في مخطط الويب داخل مجلدات. يجمع كل مجلد الأماكن المحفوظة ويوفر مجموعة من الإجراءات المتاحة من قائمة المفضلات. 
+بعد تسجيل الدخول إلى حساب [**OsmAnd Pro**](../personal/osmand-cloud.md#login) أو [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)، يتم تنظيم المفضلات في مخطط الويب داخل مجلدات. يجمع كل مجلد الأماكن المحفوظة ويوفر مجموعة من الإجراءات المتاحة من قائمة المفضلات. 
 الإجراءات التالية متاحة:
 
 - *عرض على الخريطة* - عرض نقاط المفضلات من المجلد المختار على الخريطة.
@@ -100,7 +100,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### المظهر {#appearance}
 
-يسمح قسم **المظهر** بتخصيص كيفية عرض المفضلة على الخريطة. الخصائص التالية متاحة: الأيقونة، اللون، الشكل، والأيقونة. 
+يسمح قسم **المظهر** بتخصيص كيفية عرض المفضلة على الخريطة. الخصائص التالية متاحة: الأيقونة، اللون، والشكل. 
 
 يؤدي تحديد **الأيقونة** إلى فتح لوحة ثانوية تحتوي على مجموعات أيقونات مصنفة.
 

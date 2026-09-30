@@ -1,5 +1,5 @@
 ---
-source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
+source-hash: 017b6a72cbf0f60229dc7fab079567518d145a48e704c1e7dce283c4a5f6df9b
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -89,7 +89,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 |    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) داخل التطبيق | اشتراك [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 Months) | **اشتراك** (1 Month / 12 Months) |
+| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 شهرًا) | **اشتراك** (شهر واحد / 12 شهرًا) |
 | **السعر (يورو)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **السعر (دولار أمريكي)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
@@ -197,7 +197,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → المتابعة مع OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
+![خطة Pro](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### شراء Maps+ {#maps-purchase}
 
@@ -205,7 +205,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → انقر على قائمة ميزات Maps+ → المتابعة مع Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
+![خطة Maps+](@site/static/img/purchases/maps_android_new.png)
 
 
 ## الاشتراكات القديمة (قبل الإصدار ٤.٠) {#legacy-subscriptions-prior-40}
@@ -243,7 +243,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - *لفتح استعادة المشتريات*، اتبع الخطوات التالية: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* ويجب أن يظهر في أعلى الشاشة أن Maps+(Pro) قد تم تفعيله.
 - *سجّل ميزات Pro* باشتراك OsmAnd Pro لجميع المنصات (أندرويد و iOS). إذا كان لديك حساب OsmAnd Pro، فأنت بحاجة إلى استخدامه [لتفعيل OsmAnd Pro](../personal/osmand-cloud.md) على جهازك.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases.png)
+![خطة Pro](@site/static/img/purchases/maps_purchases.png)
 
 ### حالات أخرى {#other-cases}
 

@@ -1,7 +1,7 @@
 ---
-source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
+source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
 sidebar_position: 2
-title:  Maps & Resources
+title: الخرائط والموارد
 ---
 
 import Tabs from '@theme/Tabs';
@@ -129,7 +129,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **عداد الخرائط** (***الإصدار المجاني***). يعرض كمية الخرائط المتبقية للتنزيل.
 - [الخرائط الإضافية](#extra-maps). يعرض بيانات الخريطة للحزمة [المخصصة](../plugins/custom.md).
 - **المناطق**. قائمة حسب القارة والمنطقة العالمية: *أفريقيا، أنتاركتيكا، آسيا، أستراليا وأوقيانوسيا، أمريكا الوسطى، أوروبا، أمريكا الشمالية، روسيا، وأمريكا الجنوبية.*
-- [الخرائط العالمية](#world-maps). قائمة بالخرائط للعالم بأكمله: *<Translate android="true" ids="index_item_world_altitude_correction"/> (أندرويد فقط)*، *<Translate android="true" ids="index_item_world_basemap"/>*، *خريطة الطقس العالمية*
+- [الخرائط العالمية](#world-maps). قائمة بالخرائط للعالم بأكمله: *تصحيح الارتفاع العالمي (أندرويد فقط)*، *خريطة نظرة عامة على العالم*، *كل العالم (توقعات الطقس)*
 - [الخرائط البحرية](../plugins/nautical-charts.md) ([*ميزة مدفوعة*](../purchases/index.md)). خرائط متجهة مع ارتفاعات كنقاط أو خطوط.
 - [دليل السفر (ويكي فوياج)](../plan-route/travel-guides.md) ([*ميزة مدفوعة*](../purchases/index.md)). خرائط متجهة مع مجموعة من المقالات بتنسيق HTML وبالإضافة إلى ملفات GPX.
 - **خرائط أخرى**. خرائط لا يمكن تخصيصها للهيكل الحالي للخرائط لأنها غير مدعومة أو ستكون متاحة في إصدارات مستقبلية.
@@ -317,90 +317,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-<!--
-The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
-
-- ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
-
-- ***My Places*** (*yellow*).  
-    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
-
-- ***Settings*** (*green*).  
-    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
-
-
-#### Viewing Data {#viewing-data}
-
-![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
-
-
-Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
-
-***Available actions:***
-
-- **Search**. Find specific data by name within the selected folder.
-- **Three-dot menu**:  
-    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
-    ***Import***. Access the device's storage to import files.
-- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
-
-
-#### Menu for Items from the List {#menu-for-items-from-the-list}
-
-![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
-
-Each item in the list offers a *three-dot menu* with options:
-
-- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
-- **Export**. Save data to a file via *Settings → Export to File*.
-
-***Additional options for maps:***
-
-- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
-- **Update**. Download the latest version of the map.
-- **Rename**. Customize the map’s name for better identification.
-- **Remove**. Delete the map from your device.
-- **Edit** (for Online Maps). Modify the online map configuration.
-
-#### Map source items menu {#map-source-items-menu}
-
-![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
-
-Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
-
-- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
-- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
-- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
-- **Export**. Saves the selected map source configuration for backup or sharing.  
-- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
-
-
-#### Local Data Item Overview {#local-data-item-overview}
-
-![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
-
-When viewing a local data item, you see:
-
-- **Type**. The data type from the **Local** list.
-- **Created**. The date the item was added.
-- **Size**. The item’s size is in MB.
-
-Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
-
-#### Sorting Options {#sorting-options}
-
-![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
-
-Use sorting options to organize map data:
-
-- **Name (A - Z / Z - A)**. Locate items alphabetically.
-- **Country name (A - Z / Z - A)**. Organize maps geographically.
-- **Newest date first** / **Oldest date first**. See updates or older versions.
-- **Large size first** / **Small size first**. Identify large maps to free storage space.
-
--->
-
 ## قائمة التحديثات {#updates-menu}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -409,13 +325,15 @@ Use sorting options to organize map data:
 
 انتقل إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![قائمة الخرائط تحديث الخرائط أندرويد](@site/static/img/personal/maps/maps_update_andr.png) ![تبويب تحديث قائمة الخرائط أندرويد](@site/static/img/personal/maps/maps_update_tab_andr.png)
+![قائمة الخرائط تحديث الخرائط أندرويد](@site/static/img/personal/maps/maps_update_andr.webp) ![تبويب تحديث قائمة الخرائط أندرويد](@site/static/img/personal/maps/maps_update_tab_andr.webp)
 
 يسمح تبويب **التحديثات** بتحديث خرائط وموارد OsmAnd. تُصدر الخرائط القياسية والطرق فقط مرة واحدة شهريًا، عادةً بين اليوم الثاني والخامس، وتشمل بيانات OpenStreetMap حتى اليوم الأخير من الشهر السابق (على سبيل المثال، إصدار أكتوبر يحتوي على بيانات حتى 30 سبتمبر). قد تتبع بيانات أخرى مثل ويكيبيديا، أو التضاريس، أو الخرائط البحرية جداول تحديث مختلفة، غير منتظمة. لدى توقعات الطقس دورة تحديث منتظمة خاصة بها. للتفاصيل، انظر [تنزيل التوقعات](../plugins/weather.md#download-forecast). 
 
 إذا كانت هناك عدة خرائط لنفس البلد تحتاج إلى تحديث، يقوم OsmAnd بتجميعها في عنصر واحد في قائمة التحديثات. يعرض العنصر المجمع اسم البلد وعدد الخرائط المضمنة. عند الضغط عليه، يفتح ورقة سفلية *تحديث الخرائط*، تعرض جميع الخرائط التي تحتاج إلى التحديث. 
 
 استخدم زر *تحديث الكل* لتحديث جميع الخرائط في وقت واحد، أو حدث الخرائط الفردية حسب الحاجة. للتحديثات الساعية، تحقق من حالة اشتراك [التحديثات الحية](#live-updates). إذا تم تمكينها، سيظهر قسم **التحديثات الحية** في أعلى التبويب، تحت مؤشر ذاكرة الجهاز.
+
+قد يظهر تبويب **التحديثات** أيضًا عنصر **<Translate android="true" ids="unsupported_maps"/>**. يظهر عندما تكون لديك خرائط لم تعد مدعومة وتم استبدالها بمناطق أصغر. اضغط على الخرائط غير المدعومة لمراجعة القائمة، وإزالة الخرائط القديمة، وتنزيل إصدارات المناطق الجديدة بدلاً من ذلك. في شاشة الخرائط غير المدعومة، يمكنك عرض جميع الخرائط غير المدعومة واستخدام حذف الكل لإزالتها دفعة واحدة (يظهر تنبيه تأكيد قبل الحذف).
 
 يمكنك أيضًا إدارة الخرائط مباشرة من تبويب التحديثات باستخدام إيماءة الضغط الطويل على أي خريطة مدرجة. يفتح هذا قائمة سياقية توفر عدة خيارات:
 - **معلومات** — عرض تفاصيل حول الخريطة المحددة
@@ -478,10 +396,6 @@ Use sorting options to organize map data:
 توفر **التحديثات الحية** تحديثات خرائط تدريجية متكررة من خلال [الاشتراك](../purchases/index.md) أو مجانًا ل[مساهمي OSM](#free-for-osm-mappers). تحدث التحديثات كل 15 دقيقة على خوادم OsmAnd ويمكن تنزيلها ساعيًا، أو يوميًا، أو أسبوعيًا. تستهلك هذه التحديثات تخزينًا ضئيلًا — حوالي 2-4% من حجم الخريطة الكامل شهريًا.
 
 يتم تطبيق التحديثات الحية فوق الخريطة المُنزّلة ولا تستبدل ملف الخريطة الكامل. ونتيجة لذلك، لا يعكس التاريخ المعروض للخريطة في تبويب المحلي التحديثات الحية وقد يظل دون تغيير بعد تطبيقها. لتنزيل إصدار أحدث من الخريطة الكاملة، استخدم تحديث الخريطة أو تحديث الكل في [قائمة التحديثات](#updates-menu).
-
-<!--
-Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
--->
 
 الميزات الرئيسية:
 

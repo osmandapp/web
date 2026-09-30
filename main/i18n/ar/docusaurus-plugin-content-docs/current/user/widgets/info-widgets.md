@@ -1,5 +1,5 @@
 ---
-source-hash: 8b764b414310b00cc5eccec89e793a6549d6474b7c4951c1fb9b878f3569306f
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title: الأدوات الإعلامية
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 توفر الأدوات الإعلامية وصولاً سريعاً إلى بيانات مهمة. يمكن أن تكون هذه البيانات حول السرعة، والطقس، وموقع الوقوف، وبيانات من أجهزة استشعار خارجية، وغير ذلك الكثير. يمكن تكوين الأدوات وفقاً لمتطلباتك الخاصة، مما يمكن من إظهارها على شاشة التطبيق أو تعطيلها إذا لزم الأمر.
 
-![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
+![أدوات المعلومات](@site/static/img/widgets/informational_widgets_all.png)
 
 
 ## أدوات الارتفاع   {#altitude-widgets}
@@ -45,13 +45,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)  
+![أداة الارتفاع على أندرويد](@site/static/img/widgets/altitude_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
+![أداة الارتفاع على آي أو إس](@site/static/img/widgets/altitude_widget_ios.png)  
 
 </TabItem>
 
@@ -76,13 +76,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
+![أداة التضاريس على أندرويد](@site/static/img/widgets/elevation_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Elevation widget iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
+![أداة التضاريس على آي أو إس](@site/static/img/widgets/elevation_widget_2_ios.png)
 
 </TabItem>
 
@@ -101,7 +101,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## الوقت الحالي {#current-time}
 
-![Current time widget](@site/static/img/widgets/current_time_widget.png)
+![أداة الوقت الحالي](@site/static/img/widgets/current_time_widget.png)
 
 تعرض هذه الأداة الوقت الحالي المأخوذ من جهازك.  
 
@@ -116,7 +116,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## السرعة الحالية {#current-speed}
 
-![Speed widget](@site/static/img/widgets/current_speed_widget.png)  
+![أداة السرعة](@site/static/img/widgets/current_speed_widget.png)  
 
 تعرض الأداة السرعة الحالية المكتشفة بواسطة مستشعر GPS.  
 
@@ -135,13 +135,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Average speed widget Android](@site/static/img/widgets/average_speed_widget.png)
+![أداة متوسط السرعة على أندرويد](@site/static/img/widgets/average_speed_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Average speed widget iOS](@site/static/img/widgets/average_speed_widget_ios_2.png)
+![أداة متوسط السرعة على آي أو إس](@site/static/img/widgets/average_speed_widget_ios_2.png)
 
 </TabItem>
 
@@ -177,13 +177,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Average speed](@site/static/img/widgets/average_speed_widget_4.png)  
+![متوسط السرعة](@site/static/img/widgets/average_speed_widget_4.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_3.png)
+![أدوات متوسط السرعة](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![أدوات متوسط السرعة](@site/static/img/widgets/average_speed_widget_ios_3.png)
 
 </TabItem>
 
@@ -203,17 +203,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-|Widgets| Widgets on the screen|
+|الأدوات| الأدوات على الشاشة|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/blog/2023-12-22-android-4-6/img/glide_ratio_2.png)|
+|![نسبة الانزلاق](@site/static/img/widgets/glide_ratio_3.png)|![نسبة الانزلاق](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-|Widgets| Widgets on the screen|
+|الأدوات| الأدوات على الشاشة|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_widget_ios.png)|
+|![نسبة الانزلاق](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![نسبة الانزلاق](@site/static/img/widgets/glide_ratio_widget_ios.png)|
 
 
 </TabItem>
@@ -250,33 +250,73 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### نسبة الانزلاق إلى الهدف {#glide-ratio-to-target}
 
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+- **نسبة الانزلاق إلى الهدف** تعرض النسبة الدقيقة للانزلاق المطلوبة للوصول إلى نقطة الهدف.
+- **ارتفاع الهدف** يعرض ارتفاع نقطة الهدف. يجب استخدام [علامة الخريطة](../personal/markers.md) كنقطة هدف.
+
+للتبديل بين هذين الوضعين، انقر مباشرة على الأداة. خيار التبديل غير متاح في [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu). 
+
+| | |
+|:------------|:------------|
+| تمكين | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
+| بالنقر | يغير *نسبة الانزلاق إلى الهدف* أو *ارتفاع الهدف*  |
+| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
 - **نسبة الانزلاق إلى الهدف** تعرض النسبة الدقيقة للانزلاق المطلوبة للوصول إلى نقطة الهدف.
 - **ارتفاع الهدف** يعرض ارتفاع نقطة الهدف. يجب استخدام [علامة الخريطة](../personal/markers.md) كنقطة هدف.
 
 | | |
 |:------------|:------------|
-| تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
-|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
+| تمكين | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
 | بالنقر | يغير *نسبة الانزلاق إلى الهدف* أو *ارتفاع الهدف*  |
 | النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
+</TabItem>
+
+</Tabs>  
+
 
 ### نسبة الانزلاق المتوسطة {#average-glide-ratio}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+**نسبة الانزلاق المتوسطة** تعرض النسبة المتوسطة للانزلاق على مدار فترة زمنية محددة.
+
+| | |
+|:------------|:------------|
+| تمكين | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
+| النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **نسبة الانزلاق المتوسطة** تعرض النسبة المتوسطة للانزلاق على مدار فترة زمنية محددة.
 - **السرعة العمودية المتوسطة** تشير إلى معدل الصعود أو الهبوط لكائن على مدار فترة زمنية. يتم النظر في النقطتين الأولى والأخيرة فقط من الفترة الزمنية للتقييم. يمكنك تعيين الفترة الزمنية لهذه الأداة من 15 ثانية إلى 60 دقيقة. يجب استخدام [علامة الخريطة](../personal/markers.md) كنقطة هدف.
 
 | | |
 |:------------|:------------|
-| تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
-|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
+| تمكين | *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → نسبة الانزلاق* |
 | بالنقر | يغير *نسبة الانزلاق المتوسطة* أو *السرعة العمودية المتوسطة*  |
 | النقر الطويل | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+
+</TabItem>
+
+</Tabs>  
 
 
 ## مستوى البطارية {#battery-level}
 
-![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
+![أداة مستوى البطارية](@site/static/img/widgets/battery_level_widget.png)  
 
 تعرض أداة **مستوى البطارية** نسبة بطارية جهازك مباشرة على شاشة الخريطة وتحديثها تلقائياً على الأقل مرة واحدة في الدقيقة.
 
@@ -298,13 +338,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_2.png)  
+![أداة الإحداثيات](@site/static/img/widgets/coordinates_widget_1.png) ![أداة الإحداثيات](@site/static/img/widgets/coordinates_widget_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![أداة الإحداثيات](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -329,7 +369,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
+![أداة معلومات GPS على أندرويد](@site/static/img/widgets/gps_info_widget.png)
 
 تعرض أداة معلومات GPS (نظام تحديد المواقع العالمي) عدد الأقمار الصناعية التي يكتشفها الجهاز ويستخدمها حالياً. يمكنك استخدامها للتحقق من حالة GPS في حالة إشارة ضعيفة.  
 
@@ -349,13 +389,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Sunset and sunrise widgets](@site/static/img/widgets/sun_position.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_1.png)
+![أدوات الغروب والشروق](@site/static/img/widgets/sun_position.png) ![أدوات الغروب والشروق](@site/static/img/widgets/sun_position_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_4_ios.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_3_ios.png)
+![أدوات الغروب والشروق](@site/static/img/widgets/sun_position_4_ios.png) ![أدوات الغروب والشروق](@site/static/img/widgets/sun_position_3_ios.png)
 
 </TabItem>
 
@@ -385,7 +425,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
+![شاشة مسطرة نصف القطر](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -420,13 +460,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr_new.png)
+![عداد السرعة](@site/static/img/widgets/speedometer_1_andr_new.png)   ![عداد السرعة](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios_new.png)
+![عداد السرعة](@site/static/img/widgets/speedometer_1_ios.png)   ![عداد السرعة](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -436,7 +476,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 عندما تقترب سرعتك الحالية من تحمل حد السرعة المكون، تغير الأداة مظهرها لتقديم تحذير مبكر. عند تجاوز حد السرعة (مع الأخذ في الاعتبار التحمل)، تحول الأداة إلى إشارة "تجاوز" أكثر وضوحاً. يتم عرض التحذير/التجاوز من خلال تغيير ألوان الأداة (الخلفية، وقيمة السرعة، والوحدات). قد يكون تغيير المظهر متحركاً لجذب الانتباه عند عبور عتبة التحمل أو الحد.
 
-![Speedometer](@site/static/img/widgets/speed_alert.gif)
+![عداد السرعة](@site/static/img/widgets/speed_alert.gif)
 
 - في *إعدادات عداد السرعة*، يمكنك اختيار حجم (**الارتفاع**) للأداة على شاشة التطبيق كـ *صغير*، *متوسط* أو *كبير*.
 - يمكنك تحديد متى تتلقى **تحذير حد السرعة**، باختيار *دائماً* أو *عند التجاوز*. إذا تم تعيين تحذير حد السرعة إلى دائماً، يمكن للأداة عرض كل من الإشارة "الاقتراب/التحمل" و"التجاوز". إذا تم تعيين تحذير حد السرعة إلى عند التجاوز، يتم عرض الإشارة فقط بعد تجاوزك لحد السرعة.
@@ -470,13 +510,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png)
+![أداة تسجيل الرحلة](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![أداة تسجيل الرحلة](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
@@ -502,13 +542,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png)
+![أدوات المستشعرات الخارجية على أندرويد](@site/static/img/widgets/external-sensors-widgets_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![أداة تسجيل الرحلة](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -550,13 +590,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
+![أدوات مقاييس المركبة](@site/static/img/widgets/vehicle_metrics_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_ios.png)
+![أدوات مقاييس المركبة](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
@@ -568,6 +608,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - لإضافة أدوات مقاييس المركبة إلى شاشة الخريطة، [تمكين](../plugins/index.md#enable--disable) **إضافة مقاييس المركبة**.
 - يمكنك إضافة الأدوات حتى لو لم يكن ماسح OBD-II متصلاً.
 - جميع الأدوات المضافة مرئية سواء كان ماسح OBD-II متصلاً أم لا.
+- للحصول على قيم دقيقة لـ **استهلاك الوقود**، حدد _[سعة خزان الوقود](../navigation/guidance/vehicle-parameters.md#overview)_ للمركبة في إعدادات الملف الشخصي. تتطلب أوضاع الاستهلاك المعتمدة على المسافة أيضًا بيانات GPS.
 - لتحرير أداة، انقر على الأداة المضافة إلى اللوحة، ثم انقر على *الإعدادات*، أو انقر مباشرة على *أيقونة الإعدادات* في حقل الأداة.
 
 | | |
@@ -588,13 +629,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Weather widget Android](@site/static/img/widgets/weather_widgets_andr.png)
+![أداة الطقس على أندرويد](@site/static/img/widgets/weather_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Weather widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
+![أداة الطقس على آي أو إس](@site/static/img/widgets/weather_widgets_ios.png)
 
 </TabItem>
 
@@ -623,7 +664,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لإضافة أدوات الوقوف إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [إضافة موقع الوقوف](../plugins/parking.md).
 :::  
 
-![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
+![أداة موقف السيارات](@site/static/img/plugins/parking/parking_widget.png)  
 
 تعرض أداة إضافة الوقوف المسافة من مركز الشاشة إلى موقع الوقوف. لتعيين مكان وقوف على الخريطة، قم بالتكبير إلى المستوى المطلوب، ثم النقر الطويل على المكان على الخريطة لفتح قائمة السياق. اتبع [هذه الإعدادات](../plugins/parking.md#set-a-spot).  
 
@@ -644,7 +685,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لإضافة أداة Mapillary إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [Mapillary](../plugins/mapillary.md).  
 :::  
 
-![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)
+![أداة Mapillary](@site/static/img/widgets/mapillary_widget.png)
 
 هذه أداة إضافة Mapillary التي توفر وصولاً سريعاً إلى تطبيق Mapillary، الذي يمكنك من إضافة [*صور مستوى الشارع*](../plugins/mapillary.md#enable-layer). تُضاف الأداة إلى الخريطة تلقائياً عند تمكين الإضافة.
 
@@ -664,7 +705,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 لإضافة أدوات الملاحظات الصوتية/المرئية إلى شاشة الخريطة، قم بتمكين إضافة OsmAnd [الملاحظات الصوتية/المرئية](../plugins/audio-video-notes.md).
 :::
 
-![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![أداة الملاحظات الصوتية والمرئية](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 هذه أدوات إضافة الملاحظات الصوتية/المرئية التي توفر وصولاً سريعاً لبدء/إيقاف أخذ الملاحظات الصوتية أو المرئية أو التصوير الفوتوغرافي.  
 
@@ -694,7 +735,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تُستخدم أداة إضافة تتبع OsmAnd للوصول السريع إلى تطبيق تتبع OsmAnd ومشاركة معلومات موقعك مع مستخدمين آخرين. يرسل التطبيق رسائل *الموقع الحي* إلى الدردشات المحددة خلال فترة زمنية معينة، يعرض قائمة بالجهات الاتصال والمجموعات، ويتحقق من الدردشات بحثاً عن رسائل تحتوي على موقعك، والتي يتم عرضها ثم على خريطة في OsmAnd.  
 
-![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
+![أداة المتتبع](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
 |:------------|:------------|
@@ -716,13 +757,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![FPS widget Android](@site/static/img/widgets/fps_widgets_andr.png)  
+![أداة FPS على أندرويد](@site/static/img/widgets/fps_widgets_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![FPS widget iOS](@site/static/img/widgets/fps_widget_ios.png)
+![أداة FPS على آي أو إس](@site/static/img/widgets/fps_widget_ios.png)
 
 </TabItem>
 
@@ -744,13 +785,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Camera position widgets](@site/static/img/widgets/camera_position_widgets_andr.png)
+![أدوات موضع الكاميرا](@site/static/img/widgets/camera_position_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Camera position Widgets 2](@site/static/img/widgets/camera_position_widgets_2_ios.png)
+![أدوات موضع الكاميرا](@site/static/img/widgets/camera_position_widgets_2_ios.png)
 
 </TabItem>
 
@@ -775,7 +816,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly />
 
-![Memory info widgets](@site/static/img/widgets/memory_info.png)
+![أدوات معلومات الذاكرة](@site/static/img/widgets/memory_info.png)
 
 أداة **معلومات الذاكرة** هي أداة للمطورين لمراقبة كيفية استخدام OsmAnd لذاكرة الجهاز. توفر معلومات حول أنواع مختلفة من الذاكرة المستخدمة بواسطة التطبيق.
 

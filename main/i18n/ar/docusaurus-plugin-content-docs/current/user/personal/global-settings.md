@@ -1,7 +1,7 @@
 ---
-source-hash: bd81c2321c74c63107dfc284a099f5a70651f4b9ec53164117f0449dcf5774a9
+source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
 sidebar_position: 3
-title:  Global Settings
+title: الإعدادات العامة
 ---
 
 import Tabs from '@theme/Tabs';
@@ -42,7 +42,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## عام {#general}
 
-يحتوي هذا القسم على الإعدادات الأساسية لـ OsmAnd، مثل اختيار [الملف الشخصي الافتراضي](#default-profile) عند تحميل التطبيق، واختيار [محرك العرض](#map-rendering-engine) و[مجلد التخزين](#data-storage-folder) حيث سيتم حفظ البيانات.  
+يحتوي هذا القسم على الإعدادات الأساسية لـ OsmAnd، مثل اختيار [الملف الشخصي الافتراضي](#default-profile) عند تحميل التطبيق، واختيار [محرك العرض](#map-rendering-engine) و[مجلد التخزين](#data-storage) حيث سيتم حفظ البيانات.  
 
 
 ### الملف الشخصي الافتراضي {#default-profile}
@@ -102,7 +102,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - *التخزين متعدد المستخدمين*. فقط تطبيق OsmAnd واحد لديه الوصول، لكنه مشترك بين عدة مستخدمين أندرويد.
     - *محدد يدويًا*. يعتمد على المسار.
 
-:::note Android 12+ (change storage folder)
+:::note أندرويد 12+ (تغيير مجلد التخزين)
 تم تنفيذ إرشادات وصول جديدة للتخزين في إصدارات أندرويد 11-12. راجع قسم [**استكشاف الأخطاء وإصلاحها**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) للحصول على التفاصيل.
 :::
 

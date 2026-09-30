@@ -1,5 +1,5 @@
 ---
-source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
+source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
 sidebar_position: 1
 sidebar_label: مقدمة
 title: مقدمة عن مخطط الويب
@@ -16,9 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## نظرة عامة {#overview}
 
@@ -28,11 +25,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يتكامل OsmAnd Web بشكل وثيق مع خدمة **OsmAnd Cloud**، التي تتيح مزامنة المفضلة والمسارات والنسخ الاحتياطية عبر الأجهزة والمنصات. يمكن للمستخدمين الذين لديهم حسابات **OsmAnd Start** (مجاني) أو **OsmAnd Pro** (مدفوع) الاستفادة الكاملة من هذا النظام البيئي عن طريق مزامنة البيانات بين الهاتف المحمول والويب. يمكنك العثور على مقارنة مفصلة بين ميزات *Start* و *Pro* في قسم [الوصول حسب الاشتراك](#subscription-accesses) أدناه.
 
-> **ملاحظة:** حتى بدون تسجيل الدخول أو التحقق من حسابك، يمكنك لا تزال استخدام العديد من الميزات الأساسية لبوابة خرائط الويب، بما في ذلك: [مسار الملاحة](./web-navigation.md)، [مخطط المسارات](./planner.md)، [طبقات الطقس](./web-weather.md#)، و [الإعدادات](./web-map.md#settings).
+> **ملاحظة:** حتى بدون تسجيل الدخول أو التحقق من حسابك، يمكنك لا تزال استخدام العديد من الميزات الأساسية لبوابة خرائط الويب، بما في ذلك: [مسار الملاحة](./web-navigation.md)، [مخطط المسارات](./planner.md)، [طبقات الطقس](./web-weather.md)، و [الإعدادات](./web-map.md#settings).
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 ## الميزات الرئيسية {#key-features}
 
@@ -40,7 +34,7 @@ After the structure of this section is approved, some links should be updated.
 
 - [الخريطة](./web-map.md) بتغطية عالمية وبيانات متجهة عالية الجودة.
 - [تخطيط المسارات](./planner.md) باستخدام ملفات تعريف المشي والسيارة والدراجة وغيرها.
-- [الملاحة](./planner.md) معاينة مع تعليمات منعطف بمنعطف.
+- [الملاحة](./web-navigation.md) معاينة مع تعليمات منعطف بمنعطف.
 - [البحث](./web-search.md) و [استكشاف](./web-search.md#explore) الأماكن الشهيرة القريبة.
 - عرض [المفضلة](./web-map.md#favorites)، [المسارات](./web-map.md#tracks)، و [النقاط المهمة](./web-map.md#poi-overlay) على الخريطة.
 - [طبقات الطقس](./web-weather.md): الرياح ودرجة الحرارة والضغط.
@@ -49,10 +43,6 @@ After the structure of this section is approved, some links should be updated.
 - وصول كامل إلى البيانات المتزامنة عبر [OsmAnd Cloud](./web-cloud#cloud-sync).
 - دعم استيراد/تصدير الملفات (GPX: المسارات، المفضلة).
 - تكامل سلس مع **OsmAnd Pro** و **OsmAnd Start**.
-
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 
 ### الوصول حسب الاشتراك {#subscription-accesses}
@@ -63,7 +53,7 @@ After the structure of this section is approved, some links should be updated.
 
 | الميزة | متوفرة في |
 |--------|--------------|
-| [مسار الملاحة](./planner.md) | بدون تسجيل الدخول |
+| [مسار الملاحة](./web-navigation.md) | بدون تسجيل الدخول |
 | [مخطط المسارات](./planner.md) | بدون تسجيل الدخول |
 | [طبقات الطقس](./web-weather.md) | بدون تسجيل الدخول |
 | [الإعدادات](./web-map.md#settings) | بدون تسجيل الدخول |
@@ -72,10 +62,6 @@ After the structure of this section is approved, some links should be updated.
 | [مزامنة OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 | [بحث الويب، الأماكن الشهيرة](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
 | [مجلدات المسارات وطبقتها](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 
 ## كيف تبدأ {#how-to-start}
@@ -90,61 +76,6 @@ After the structure of this section is approved, some links should be updated.
    - **إنشاء حساب**: سجل للحصول على حساب OsmAnd Start مجاني. للحصول على دليل خطوة بخطوة مفصل لإنشاء حساب جديد، انظر مقالة [حساب OsmAnd](./web-cloud).
 
 ![حساب الويب](@site/static/img/web/web_account.png)
-
-<!--
-
-## Settings {#settings}
-
-### Language {#language}
-
-To switch the interface language:
-
-*Go to: Menu → ⚙ Settings → Display language*
-
-![Web Language](@site/static/img/web/web_language.png)
-
-### Units {#units}
-
-*Go to: Menu → ⚙ Settings → Units of length*  
-*Go to: Menu → ⚙ Settings → Unit of speed*
-
-You can choose which units are used to display distance, elevation and speed on the map, in route details and in measurement tools. This helps you keep OsmAnd consistent with your usual habits or regional standards.
-
-The **Units of length** option defines how horizontal distance and elevation are shown:
-- Kilometers/meters.
-- Miles/feet.
-- Miles/meters.
-- Miles/yards.
-- Nautical miles/meters.
-- Nautical miles/feet. 
-
-For example, a distance of 10 km will be shown as about 6.21 mi if you choose one of the Miles/... options, or as about 5.40 nmi when Nautical miles/... is selected.
-
-The **Unit of speed** option controls how current speed and speed limits are displayed:
-- Kilometers per hour.
-- Miles per hour.
-- Meters per second.
-- Minutes per mile.
-- Minutes per kilometer.
-- Nautical miles per hour (knots). 
-
-For example, a speed of 90 km/h corresponds to 25 m/s or about 55.92 mph.
-
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
-
-### OsmAnd Cloud {#osmand-cloud}
-
-![Web Cloud](@site/static/img/web/web_without_acc.png) ![Web Cloud](@site/static/img/web/web_with_acc.png)
-
-In the Web Map Portal, the *General settings* (Display language, Units of length, Unit of speed) are available for all users, whether you are signed in or not. Once you log in with your OsmAnd account, an additional OsmAnd Cloud section appears in the Settings panel. [OsmAnd Cloud](./web-cloud) connects the web map with your cloud backups so that you can manage data synchronized from your Android or iOS devices directly in the browser.
-
-**Changes** option shows a chronological list of files stored in your OsmAnd Cloud account. Items are grouped by month and include the file name, the type of change (for example, added, modified or deleted), the time of the last update and the device that created it. For each entry, you can open the three-dot menu and choose *Download* to save the selected file to your computer, or *Delete*.
-
-**Trash** option contains files that were deleted from OsmAnd Cloud. The list is also grouped by month and shows when each file was removed and from which device. Use the three-dot menu next to a file to *Download* a copy, *Restore from trash* (return the file to OsmAnd Cloud so it becomes available again in your data), or *Delete immediately* to remove it permanently. This helps prevent accidental data loss while still letting you free up cloud storage when you are sure a file is no longer needed. You can also clear all deleted items at once by clicking the Trash icon in the Trash panel header. This opens the **Empty trash** dialog, where you confirm deletion to permanently remove all files from Trash.
-
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
-
--->
 
 
 ## المقالات ذات الصلة {#related-articles}
