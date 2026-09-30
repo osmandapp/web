@@ -632,12 +632,6 @@ export default function TravelLayer() {
 
     async function getRoutesList() {
         const { point } = ctx.searchTravelRoutes;
-        const bounds = L.latLng(point.lat, point.lng).toBounds(point.radius * 2);
-        const minLat = bounds.getSouth();
-        const maxLat = bounds.getNorth();
-        const minLon = bounds.getWest();
-        const maxLon = bounds.getEast();
-
         const {
             activity,
             dateFrom,
@@ -658,10 +652,6 @@ export default function TravelLayer() {
             activityArr,
             dateFrom,
             dateTo,
-            minLat,
-            maxLat,
-            minLon,
-            maxLon,
             tags: tags.length ? tags : undefined,
             tagMatchMode,
             distanceRange,

@@ -10,7 +10,7 @@ import {
     Typography,
 } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import { ReactComponent as SettingsIcon } from '../../assets/icons/ic_action_settings_outlined.svg';
 import { ReactComponent as AppearanceIcon } from '../../assets/icons/ic_action_appearance.svg';
@@ -108,7 +108,6 @@ export default function TravelMenu() {
     const ltx = useContext(LoginContext);
     const location = useLocation();
     const navigate = useNavigate();
-    const [searchParams] = useSearchParams();
     const { t } = useTranslation();
 
     const DEFAULT_ACTIVITY = ACTIVITY_ALL;
@@ -182,16 +181,6 @@ export default function TravelMenu() {
             { replace: true, preventScrollReset: true }
         );
     }
-
-    // On load with filter params in the URL, open Travel and run the search automatically.
-    useEffect(() => {
-        if (!location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) {
-            return;
-        }
-        if (Object.keys(paramsToFilters(searchParams)).length > 0) {
-            ctx.setOpenTravel(true);
-        }
-    }, []);
 
     useEffect(() => {
         if (ctx.openTravel) {
