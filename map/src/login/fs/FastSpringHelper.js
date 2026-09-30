@@ -117,13 +117,17 @@ export async function fetchSinglePrice(productId, type, onPrice, testMode = fals
     }
 }
 
-export async function updatePrices(setPurchasePriceMap, testMode = false) {
+// isActive: the caller may have moved on (another test mode or account) while the products were loading
+export async function updatePrices(setPurchasePriceMap, testMode = false, isActive = () => true) {
     const products = await loadProducts(testMode);
-    if (products.length === 0) {
+    if (!isActive() || products.length === 0) {
         return;
     }
     const productsList = products.map((p) => ({ path: p.path, quantity: 1 }));
     fetchPrices(productsList, testMode, (priceMap) => {
+        if (!isActive()) {
+            return;
+        }
         const prices = {};
         products.forEach((p) => (prices[priceKey(p.id, p.type)] = priceMap[p.path]));
         setPurchasePriceMap(prices);

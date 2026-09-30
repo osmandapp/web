@@ -59,17 +59,26 @@ export default function PricingPage() {
     };
 
     useEffect(() => {
+        let active = true;
+        const isActive = () => active;
         if (ltx.isLoggedIn()) {
             getAccountInfo(ltx.setAccountInfo).then((info) => {
+                if (!active) {
+                    return;
+                }
                 const subscriptions = info?.subscriptions && JSON.parse(info.subscriptions);
                 const inAppPurchases = info?.inAppPurchases && JSON.parse(info.inAppPurchases);
                 setCurrentPurchases({ subscriptions, inAppPurchases, loginUser: ltx.loginUser });
-                updatePrices(setPurchasePriceMap, useTestMode);
+                updatePrices(setPurchasePriceMap, useTestMode, isActive);
             });
         } else {
             setCurrentPurchases({ subscriptions: [], inAppPurchases: [], loginUser: ltx.loginUser });
-            updatePrices(setPurchasePriceMap, useTestMode);
+            updatePrices(setPurchasePriceMap, useTestMode, isActive);
         }
+
+        return () => {
+            active = false;
+        };
     }, [useTestMode, ltx.loginUser]);
 
     useEffect(() => {
