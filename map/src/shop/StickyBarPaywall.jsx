@@ -9,7 +9,7 @@ import LoginContext from '../context/LoginContext';
 import AppContext from '../context/AppContext';
 import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
-import { findPurchase } from './products/ProductManager';
+import { findPurchase, PRODUCT_ID_PRO, PURCHASE_TYPE_ANNUAL, PURCHASE_TYPE_MONTHLY } from './products/ProductManager';
 import { findFeature } from './features/FeaturesManager';
 import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
 import StickyBarContainer from './StickyBarContainer';
@@ -39,8 +39,8 @@ export default function StickyBarPaywall({
     useCardPriceRefresh(updateCardPrices, setUpdateCardPrices, loadPrices);
 
     function loadPrices() {
-        const monthly = findPurchase('monthly', 'osmand-pro');
-        const annual = findPurchase('annual', 'osmand-pro');
+        const monthly = findPurchase(PURCHASE_TYPE_MONTHLY, PRODUCT_ID_PRO);
+        const annual = findPurchase(PURCHASE_TYPE_ANNUAL, PRODUCT_ID_PRO);
         setMonthlyPurchase(monthly && { ...monthly });
         setAnnualPurchase(annual && { ...annual });
     }
@@ -51,7 +51,14 @@ export default function StickyBarPaywall({
         if (!ltx.loginUser) {
             ltx.setOpenLoginDialog(true);
         } else if (annualPurchase) {
-            createFastSpringPurchase({ testMode, ltx, ctx, productId: 'osmand-pro', type: 'annual', navigate });
+            createFastSpringPurchase({
+                testMode,
+                ltx,
+                ctx,
+                productId: PRODUCT_ID_PRO,
+                type: PURCHASE_TYPE_ANNUAL,
+                navigate,
+            });
         }
     }
 

@@ -5,7 +5,14 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation, Trans } from 'react-i18next';
-import { purchase } from './products/ProductManager';
+import {
+    purchase,
+    PRODUCT_ID_MAPS_PLUS,
+    PRODUCT_ID_PRO,
+    PRODUCT_ID_START,
+    PRODUCT_ID_XV,
+    PURCHASE_TYPE_ONE_TIME,
+} from './products/ProductManager';
 import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
 import { priceKey, updatePrices } from '../login/fs/FastSpringHelper';
 import { getAccountInfo } from '../manager/LoginManager';
@@ -92,7 +99,7 @@ export default function PricingPage() {
                         item.oldPriceDisplay = info.oldPriceDisplay;
                         item.display = info.display;
                         item.show = !allPurchases.find((p) => {
-                            p.type = p.type ?? 'one-time';
+                            p.type = p.type ?? PURCHASE_TYPE_ONE_TIME;
                             const isValid = p.valid === true || p.valid === 'true';
                             return isValid && p.name === item.name && p.type === type;
                         });
@@ -136,7 +143,7 @@ export default function PricingPage() {
                     {!show && <CircularProgress />}
                     {show && (
                         <Box ref={cardBoxRef} className={styles.productCardBox}>
-                            {['osmand-start', 'osmand-maps-plus', 'osmand-pro', 'osmand-15-years'].map((id) => (
+                            {[PRODUCT_ID_START, PRODUCT_ID_MAPS_PLUS, PRODUCT_ID_PRO, PRODUCT_ID_XV].map((id) => (
                                 <ProductCard
                                     key={id}
                                     productId={id}

@@ -9,7 +9,13 @@ import LoginContext from '../context/LoginContext';
 import AppContext from '../context/AppContext';
 import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
-import { findPurchase, hasOldPrice } from './products/ProductManager';
+import {
+    findPurchase,
+    hasOldPrice,
+    PRODUCT_ID_MAPS_PLUS,
+    PRODUCT_ID_PRO,
+    PURCHASE_TYPE_ANNUAL,
+} from './products/ProductManager';
 import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
 import StickyBarContainer from './StickyBarContainer';
 const STICKY_PRODUCTS = [
@@ -17,13 +23,13 @@ const STICKY_PRODUCTS = [
         name: 'Maps+',
         icon: <MapsIcon />,
         iconBg: 'rgba(255, 136, 0, 0.2)',
-        purchaseId: 'osmand-maps-plus',
+        purchaseId: PRODUCT_ID_MAPS_PLUS,
     },
     {
         name: 'OsmAnd Pro',
         icon: <ProIcon />,
         iconBg: 'rgba(87, 20, 204, 0.2)',
-        purchaseId: 'osmand-pro',
+        purchaseId: PRODUCT_ID_PRO,
     },
 ];
 
@@ -39,7 +45,7 @@ export default function StickyBarPricingPage({ visible, testMode, updateCardPric
     function loadPrices() {
         const objs = {};
         STICKY_PRODUCTS.forEach((p) => {
-            const item = findPurchase('annual', p.purchaseId);
+            const item = findPurchase(PURCHASE_TYPE_ANNUAL, p.purchaseId);
             if (item) objs[p.purchaseId] = { ...item };
         });
         setPurchaseObjs(objs);
@@ -73,7 +79,14 @@ function StickyBarItem({ product, testMode, purchaseObj }) {
         if (!ltx.loginUser) {
             ltx.setOpenLoginDialog(true);
         } else {
-            createFastSpringPurchase({ testMode, ltx, ctx, productId: product.purchaseId, type: 'annual', navigate });
+            createFastSpringPurchase({
+                testMode,
+                ltx,
+                ctx,
+                productId: product.purchaseId,
+                type: PURCHASE_TYPE_ANNUAL,
+                navigate,
+            });
         }
     }
 

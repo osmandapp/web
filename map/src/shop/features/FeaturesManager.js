@@ -25,6 +25,7 @@ import { ReactComponent as NauticalDepthIcon } from '../../assets/features/ic_ac
 import { ReactComponent as TelescopeIcon } from '../../assets/features/ic_action_telescope_colored.svg';
 import { ReactComponent as InteractiveArIcon } from '../../assets/features/ic_action_view_in_ar_colored.svg';
 import { ReactComponent as OfflineSkyMapIcon } from '../../assets/features/ic_action_sky_map_download.svg';
+import { PRODUCT_ID_MAPS_PLUS, PRODUCT_ID_PRO, PRODUCT_ID_START } from '../products/ProductManager';
 
 export const featureCategories = [
     {
@@ -262,14 +263,14 @@ export function findFeature(id) {
 }
 
 export const planFeatures = {
-    'osmand-start': [
+    [PRODUCT_ID_START]: [
         'offline_navigation',
         'navigation_by_planned_tracks',
         'cross_platform',
         'settings_favorites_sync',
         'wikimedia_photos',
     ],
-    'osmand-maps-plus': [
+    [PRODUCT_ID_MAPS_PLUS]: [
         'offline_navigation',
         'navigation_by_planned_tracks',
         'cross_platform',
@@ -290,7 +291,7 @@ export const planFeatures = {
         'interactive_ar_mode',
         'offline_sky_map',
     ],
-    'osmand-pro': [
+    [PRODUCT_ID_PRO]: [
         'offline_navigation',
         'navigation_by_planned_tracks',
         'cross_platform',

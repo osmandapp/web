@@ -5,18 +5,25 @@ import BlueButtonWithIcon from '../../frame/components/btns/BlueButtonWithIcon';
 import styles from '../trackfavmenu.module.css';
 import { useTranslation } from 'react-i18next';
 import { openPricingPage } from '../../manager/GlobalManager';
-import { findPurchase, getDiscountPercent } from '../../shop/products/ProductManager';
+import {
+    findPurchase,
+    getDiscountPercent,
+    PRODUCT_ID_PRO,
+    PURCHASE_TYPE_ANNUAL,
+} from '../../shop/products/ProductManager';
 import { fetchSinglePrice } from '../../login/fs/FastSpringHelper';
 
 export default function TracksProBanner() {
     const { t } = useTranslation();
 
-    const annualPurchase = findPurchase('annual', 'osmand-pro');
+    const annualPurchase = findPurchase(PURCHASE_TYPE_ANNUAL, PRODUCT_ID_PRO);
 
     const [discountPercent, setDiscountPercent] = useState(getDiscountPercent(annualPurchase));
 
     useEffect(() => {
-        fetchSinglePrice('osmand-pro', 'annual', (purchaseObj) => setDiscountPercent(getDiscountPercent(purchaseObj)));
+        fetchSinglePrice(PRODUCT_ID_PRO, PURCHASE_TYPE_ANNUAL, (purchaseObj) =>
+            setDiscountPercent(getDiscountPercent(purchaseObj))
+        );
     }, []);
 
     return (

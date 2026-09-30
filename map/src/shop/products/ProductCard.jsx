@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { products, purchase } from './ProductManager';
+import {
+    products,
+    purchase,
+    PRODUCT_ID_START,
+    PURCHASE_TYPE_ANNUAL,
+    PURCHASE_TYPE_MONTHLY,
+    PURCHASE_TYPE_ONE_TIME,
+} from './ProductManager';
 import {
     Box,
     Card,
@@ -53,11 +60,11 @@ export default function ProductCard({
     useEffect(() => {
         if (product?.btnText) {
             setBtnText(product.btnText);
-        } else if (type === 'monthly') {
+        } else if (type === PURCHASE_TYPE_MONTHLY) {
             setBtnText('web:action_subscribe_monthly');
-        } else if (type === 'annual') {
+        } else if (type === PURCHASE_TYPE_ANNUAL) {
             setBtnText('web:action_subscribe_annual');
-        } else if (type === 'one-time') {
+        } else if (type === PURCHASE_TYPE_ONE_TIME) {
             setBtnText('web:action_complete_purchase');
         } else {
             setBtnText('web:action_complete_purchase');
@@ -65,7 +72,7 @@ export default function ProductCard({
     }, [type]);
 
     function onClick() {
-        if (productId === 'osmand-start') {
+        if (productId === PRODUCT_ID_START) {
             ltx.setOpenLoginDialog(true);
         } else {
             purchaseProduct();
