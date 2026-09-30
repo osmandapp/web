@@ -1,5 +1,5 @@
 ---
-source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
+source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -318,89 +318,6 @@ Verfügbare **Aktionen** hängen vom Datentyp ab:
 
 </Tabs>
 
-<!--
-The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
-
-- ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
-
-- ***My Places*** (*yellow*).  
-    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
-
-- ***Settings*** (*green*).  
-    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
-
-
-#### Viewing Data {#viewing-data}
-
-![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
-
-
-Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
-
-***Available actions:***
-
-- **Search**. Find specific data by name within the selected folder.
-- **Three-dot menu**:  
-    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
-    ***Import***. Access the device's storage to import files.
-- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
-
-
-#### Menu for Items from the List {#menu-for-items-from-the-list}
-
-![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
-
-Each item in the list offers a *three-dot menu* with options:
-
-- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
-- **Export**. Save data to a file via *Settings → Export to File*.
-
-***Additional options for maps:***
-
-- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
-- **Update**. Download the latest version of the map.
-- **Rename**. Customize the map’s name for better identification.
-- **Remove**. Delete the map from your device.
-- **Edit** (for Online Maps). Modify the online map configuration.
-
-#### Map source items menu {#map-source-items-menu}
-
-![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
-
-Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
-
-- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
-- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
-- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
-- **Export**. Saves the selected map source configuration for backup or sharing.  
-- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
-
-
-#### Local Data Item Overview {#local-data-item-overview}
-
-![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
-
-When viewing a local data item, you see:
-
-- **Type**. The data type from the **Local** list.
-- **Created**. The date the item was added.
-- **Size**. The item’s size is in MB.
-
-Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
-
-#### Sorting Options {#sorting-options}
-
-![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
-
-Use sorting options to organize map data:
-
-- **Name (A - Z / Z - A)**. Locate items alphabetically.
-- **Country name (A - Z / Z - A)**. Organize maps geographically.
-- **Newest date first** / **Oldest date first**. See updates or older versions.
-- **Large size first** / **Small size first**. Identify large maps to free storage space.
-
--->
 
 ## Aktualisierungsmenü {#updates-menu}
 
@@ -410,13 +327,15 @@ Use sorting options to organize map data:
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Kartenmenü Karten aktualisieren Android](@site/static/img/personal/maps/maps_update_andr.png) ![Kartenmenü Aktualisierungsreiter Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
+![Kartenmenü Karten aktualisieren Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Kartenmenü Aktualisierungsreiter Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
 
 Der Reiter **Aktualisierungen** ermöglicht es Ihnen, OsmAnd-Karten und -Ressourcen zu aktualisieren. Standard- und Nur-Straßen-Karten werden einmal im Monat veröffentlicht, normalerweise zwischen dem 2. und 5. Tag, und enthalten OpenStreetMap-Daten bis zum letzten Tag des Vormonats (zum Beispiel enthält die Oktober-Version Daten bis zum 30. September). Andere Daten wie Wikipedia, Gelände- oder Seekarten können unterschiedlichen, unregelmäßigen Aktualisierungsplänen folgen. Die Wettervorhersage hat ihren eigenen regelmäßigen Aktualisierungszyklus. Details finden Sie unter [Vorhersage herunterladen](../plugins/weather.md#download-forecast). 
 
 Wenn mehrere Karten desselben Landes aktualisiert werden müssen, gruppiert OsmAnd sie zu einem einzigen Element in der Aktualisierungsliste. Das gruppierte Element zeigt den Ländernamen und die Anzahl der enthaltenen Karten an. Wenn Sie darauf tippen, öffnet sich ein *Karten aktualisieren*-Bottom-Sheet, der alle Karten anzeigt, die aktualisiert werden müssen. 
 
 Verwenden Sie die Schaltfläche *Alle aktualisieren*, um alle Karten gleichzeitig zu aktualisieren, oder aktualisieren Sie einzelne Karten nach Bedarf. Für stündliche Updates überprüfen Sie Ihren [Live-Updates](#live-updates)-Abonnementstatus. Wenn aktiviert, erscheint der Abschnitt **Live-Updates** oben im Reiter unter der Gerätespeicheranzeige.
+
+Der Reiter **Aktualisierungen** kann auch einen Eintrag **<Translate android="true" ids="unsupported_maps"/>** anzeigen. Er erscheint, wenn Sie Karten besitzen, die nicht mehr unterstützt werden und durch kleinere Regionen ersetzt wurden. Tippen Sie auf „Nicht unterstützte Karten“, um die Liste zu prüfen, veraltete Karten zu entfernen und stattdessen die neuen Regionsversionen herunterzuladen. Auf dem Bildschirm „Nicht unterstützte Karten“ können Sie alle nicht unterstützten Karten anzeigen und mit „Alle löschen“ gemeinsam entfernen (vor dem Löschen erscheint eine Bestätigungsabfrage).
 
 Sie können Karten auch direkt aus dem Aktualisierungsreiter über eine Langdruck-Geste auf einer beliebigen aufgelisteten Karte verwalten. Dies öffnet ein Kontextmenü, das mehrere Optionen bietet:
 - **Info** — Details zur ausgewählten Karte anzeigen
@@ -438,7 +357,7 @@ Der Reiter **Aktualisierungen** ermöglicht es Ihnen, OsmAnd-Karten und -Ressour
 
 Verwenden Sie die Schaltfläche *Alle aktualisieren*, um alle Karten gleichzeitig zu aktualisieren, oder aktualisieren Sie einzelne Karten nach Bedarf. Für stündliche Updates überprüfen Sie Ihren [Live-Updates](#live-updates)-Abonnementstatus. Wenn aktiviert, erscheint der Abschnitt **Live-Updates** oben im Reiter unter der Gerätespeicheranzeige.
 
-Der Reiter **Aktualisierungen** kann auch ein Element **<Translate ios="true" ids="unsupported_maps"/>** anzeigen. Es erscheint, wenn Sie Karten haben, die nicht mehr unterstützt werden und durch kleinere Regionen ersetzt wurden. Tippen Sie auf <Translate ios="true" ids="unsupported_maps"/>, um die Liste zu überprüfen, veraltete Karten zu entfernen und stattdessen die neuen Regionalversionen herunterzuladen. Auf dem Bildschirm <Translate ios="true" ids="unsupported_maps"/> können Sie alle nicht unterstützten Karten anzeigen und Alle löschen verwenden, um sie auf einmal zu entfernen (vor dem Löschen wird eine Bestätigungsaufforderung angezeigt).
+Der Reiter **Aktualisierungen** kann auch ein Element **<Translate ios="true" ids="unsupported_maps"/>** anzeigen. Es erscheint, wenn Sie Karten haben, die nicht mehr unterstützt werden und durch kleinere Regionen ersetzt wurden. Tippen Sie auf „Nicht unterstützte Karten“, um die Liste zu überprüfen, veraltete Karten zu entfernen und stattdessen die neuen Regionalversionen herunterzuladen. Auf dem Bildschirm „Nicht unterstützte Karten“ können Sie alle nicht unterstützten Karten anzeigen und „Alle löschen“ verwenden, um sie auf einmal zu entfernen (vor dem Löschen wird eine Bestätigungsaufforderung angezeigt).
 
 Der Reiter **Aktualisierungen** enthält auch einen Abschnitt zur Wettervorhersage. Er dient zur Verwaltung Ihrer Offline-Vorhersagen für ausgewählte Länder:
 
@@ -479,10 +398,6 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab
 **Live-Updates** bieten häufige, inkrementelle Kartenaktualisierungen durch ein [Abonnement](../purchases/index.md) oder sind für [OSM-Mitwirkende](#free-for-osm-mappers) kostenlos. Updates erfolgen alle 15 Minuten auf den OsmAnd-Servern und können stündlich, täglich oder wöchentlich heruntergeladen werden. Diese Updates verbrauchen minimalen Speicherplatz – etwa 2-4% der vollen Kartengröße pro Monat.
 
 Live-Updates werden auf die heruntergeladene Karte angewendet und ersetzen nicht die vollständige Kartendatei. Daher spiegelt das Datum, das für eine Karte im Reiter Lokal angezeigt wird, keine Live-Updates wider und bleibt möglicherweise nach deren Anwendung unverändert. Um eine neuere Version der vollständigen Karte herunterzuladen, verwenden Sie *Karte aktualisieren* oder *Alle aktualisieren* im [Aktualisierungsmenü](#updates-menu).
-
-<!--
-Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
--->
 
 Hauptmerkmale:
 

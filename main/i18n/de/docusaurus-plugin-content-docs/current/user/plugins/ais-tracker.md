@@ -1,5 +1,5 @@
 ---
-source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
+source-hash: 04bb8eb2b1c8b30b97b5016c68f2b0de688c38c44449e4ebb8b695d258cad44b
 sidebar_position: 2
 title:  AIS-Schiffs-Tracker
 ---
@@ -15,11 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoAndroidOnly />
-
 ## Übersicht {#overview}
 
 Das Plugin **AIS-Schiffs-Tracker** zeigt Positionen des [Automatischen Identifikationssystems (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) und detaillierte Informationen über Schiffe in der Nähe an. Die AIS-Daten werden über eine Netzwerkverbindung von einem externen AIS-Empfänger empfangen.
+
+Das Plugin kann NMEA-Daten über eine Netzwerkverbindung per TCP oder UDP empfangen. GPS-Positionen aus RMC/GGA-NMEA-Nachrichten können in OsmAnd auch als Mein Standort verwendet werden.
 
 :::caution DISCLAIMER
 **Dieses Plugin ist ein Hobbyprojekt und nicht auf Zuverlässigkeit oder Genauigkeit ausgelegt. VERLASSEN SIE SICH NICHT auf diese Software für die Navigation oder die Sicherheit von Menschenleben.**
@@ -28,12 +28,14 @@ Das Plugin **AIS-Schiffs-Tracker** zeigt Positionen des [Automatischen Identifik
 
 ## Erforderliche Einrichtungsparameter {#required-setup-parameters}
 
-Die Möglichkeit, Online-Karten zu verwenden, ist in der iOS-Version von OsmAnd automatisch aktiviert. Um Online-Karten in Android anzuzeigen, müssen Sie die folgenden Einstellungen vornehmen:
+Um das Plugin AIS-Schiffs-Tracker zu verwenden, müssen Sie das Plugin aktivieren und eine Netzwerkverbindung zu einer externen AIS/NMEA-Datenquelle konfigurieren:
 
 1. [Aktivieren](../plugins/index.md#enable--disable) Sie das Plugin **AIS-Schiffs-Tracker** im *Hauptmenü → Plugins → AIS-Schiffs-Tracker*.
 2. Konfigurieren Sie die [AIS-Einstellungen](../map/raster-maps.md#layers)
-3. Konfigurieren Sie eine **AIS-Serververbindung** oder schließen Sie einen **externen AIS-Empfänger** an.
+3. Konfigurieren Sie die Verbindung zu Ihrer **AIS/NMEA-Datenquelle** über **TCP** oder **UDP**.
 4. Überprüfen Sie, ob die Schiffe auf der OsmAnd-Karte angezeigt werden.
+
+Unter iOS können Sie zusätzlich *NMEA als Standortquelle verwenden* aktivieren, um GPS-Positionen aus RMC/GGA-NMEA-Nachrichten als Ihren aktuellen Standort in OsmAnd zu nutzen.
 
 ## Schiffe auf der Karte {#vessels-on-the-map}
 
@@ -54,6 +56,12 @@ AIS arbeitet auf *VHF-Frequenzen* (161,975 MHz und 162,025 MHz) und hat aufgrund
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+![AIS-Schiffs-Tracker](@site/static/img/plugins/ais/ais.webp)
+
+</TabItem>
+
 </Tabs>
 
 Bei korrekter Einrichtung werden die Schiffspositionen auf der Karte angezeigt. Hauptmerkmale:
@@ -69,8 +77,13 @@ Bei korrekter Einrichtung werden die Schiffspositionen auf der Karte angezeigt. 
 
 <TabItem value="android" label="Android">
 
-![AIS-Schiffs-Tracker](@site/static/img/plugins/ais/ais_menu.png)  
-![AIS-Schiffs-Tracker](@site/static/img/plugins/ais/ais_menu_2.png)
+![AIS-Schiffs-Tracker](@site/static/img/plugins/ais/ais_menu.png) ![AIS-Schiffs-Tracker](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![AIS-Schiffs-Tracker](@site/static/img/plugins/ais/ais_menu.webp)
 
 </TabItem>
 
@@ -159,6 +172,14 @@ AIS-Schiffe senden drei Arten von Daten:
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *AIS-Schiffs-Tracker* → *<Translate ios="true" ids="shared_string_settings"/>* 
+
+![AIS-Schiffs-Tracker](@site/static/img/plugins/ais/ais_settings_ios.webp)
+
+</TabItem>
+
 </Tabs>
 
 Das Plugin *AIS-Schiffs-Tracker* bietet verschiedene Einstellungen zur Personalisierung der Navigation und Interaktion für Benutzer mit Behinderungen. Diese Einstellungen gelten für alle [Profile](../personal/profiles.md) in OsmAnd.
@@ -171,11 +192,12 @@ Das Plugin *AIS-Schiffs-Tracker* bietet verschiedene Einstellungen zur Personali
 | IP-Adresse | Definieren Sie die IP der AIS-Datenquelle (wenn TCP verwendet wird) | `192.168.200.16` |
 | TCP-Port   | Definieren Sie die TCP-Portnummer für AIS-Daten | `4001` |
 | UDP-Port   | Definieren Sie den UDP-Port für den OsmAnd-AIS-Empfang  | `10110` |
-| AIS-Daten auch bei pausiertem OsmAnd empfangen   | Den AIS-Nachrichten-Listener weiterlaufen lassen, wenn OsmAnd pausiert oder im Hintergrund ist. Wenn deaktiviert, werden keine AIS-Nachrichten empfangen, wenn OsmAnd im Hintergrund ist  | `Ja/Nein` |
+| AIS-Daten auch bei pausiertem OsmAnd empfangen (*nur Android*)   | Den AIS-Nachrichten-Listener weiterlaufen lassen, wenn OsmAnd pausiert oder im Hintergrund ist. Wenn deaktiviert, werden keine AIS-Nachrichten empfangen, wenn OsmAnd im Hintergrund ist  | `Ja/Nein` |
+| NMEA als Standortquelle verwenden (*nur iOS*)   | GPS-Positionen aus RMC/GGA-NMEA-Nachrichten als Mein Standort verwenden  | `Ein/Aus` |
 | | | |
 | **Zeitüberschreitung für AIS-Signalempfang** | |  |
-| Zeitüberschreitung für verlorene AIS-Objekte     | Schiffe verschwinden, wenn für eine festgelegte Zeit kein Signal empfangen wird | `3 - 20 min` |
-| Zeitüberschreitung für die Sichtbarkeit von Schiffen      | Schiffssymbole ändern ihren Zustand, wenn kein Signal empfangen wird | `2 - 15 min / Deaktiviert` |
+| Zeitüberschreitung für veraltete Schiffe      | Legen Sie die Zeitüberschreitung für veraltete Schiffe fest: Nach dieser Zeit ohne Signalempfang wird das Schiffssymbol durchgestrichen | `2 - 15 min / Deaktiviert` |
+| Zeitüberschreitung für die Sichtbarkeit bei verlorenem Schiff     | Legen Sie eine Zeitüberschreitung für die Sichtbarkeit von AIS-Objekten fest: Wird innerhalb der angegebenen Dauer kein Signal empfangen, wird das Objekt automatisch von der Anzeige entfernt | `3 - 20 min` |
 | | | |
 | **Warnungen zum nächstgelegenen Annäherungspunkt (CPA)** | | |
 | CPA-Warnzeit | Das Schiff wird rot markiert, wenn die Zeit bis zum CPA unter diesem Grenzwert liegt | `1 - 60 min / Deaktiviert` |

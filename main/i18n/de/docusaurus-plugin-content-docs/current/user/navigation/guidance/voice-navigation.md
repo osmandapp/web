@@ -1,5 +1,5 @@
 ---
-source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
+source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
 sidebar_position: 3
 title:  Sprachansagen / Benachrichtigungen
 ---
@@ -99,7 +99,7 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 
 - *Navigationsanweisungen wiederholen*. Ermöglicht die Wiederholung der Navigationsanweisungen in regelmäßigen Abständen von 1 Minute bis 30 Minuten. Oder manuell - wenn Sie eine Sprachansage verpasst haben, können Sie sie erneut anhören, indem Sie einfach auf den [aktuellen Abbiegepfeil](../../widgets/nav-widgets.md#next-turn) auf dem Anwendungsbildschirm tippen.
 - *[Zeitpunkt der Ansagen](#announcement-time)*.
-- *Gesprochene Audioinhalte pausieren* (*nur iOS*). Bei Aktivierung werden Podcasts, Hörbücher und andere gesprochene Inhalte während der Sprachansagen pausiert. Die Musikwiedergabe läuft mit reduzierter Lautstärke weiter. Bei Deaktivierung werden sowohl gesprochene Inhalte als auch Musik mit reduzierter Lautstärke wiedergegeben.
+- *Gesprochene Audioinhalte pausieren* (*nur iOS, einschließlich CarPlay*). Bei Aktivierung werden Podcasts, Hörbücher und andere gesprochene Inhalte während der Sprachansagen pausiert, unabhängig davon, ob die Wiedergabe über das Gerät oder über CarPlay erfolgt. Die Musikwiedergabe läuft mit reduzierter Lautstärke weiter. Bei Deaktivierung werden sowohl gesprochene Inhalte als auch Musik mit reduzierter Lautstärke wiedergegeben.
 
 **Ausgabe** (*nur Android*):
 

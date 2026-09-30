@@ -249,7 +249,7 @@ Das Widget zeigt die *Ankunftszeit* oder die *Fahrzeit* bis zum ersten Zwischenz
 | | |
 |:------------|:------------|
 | Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Eine Leiste auswählen → Widget hinzufügen → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Eine Leiste auswählen → Widget hinzufügen →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Eine Leiste auswählen → Widget hinzufügen →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | Durch Tippen | Wechselt zwischen *Ankunftszeit* und *Fahrzeit* und umgekehrt. |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -277,7 +277,7 @@ Das Widget zeigt die *Ankunftszeit* oder die *Fahrzeit* bis zum letzten Zielpunk
 | | |
 |:------------|:------------|
 | Aktivieren |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Eine Leiste auswählen → Widget hinzufügen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Eine Leiste auswählen → Widget hinzufügen → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Eine Leiste auswählen → Widget hinzufügen → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | Durch Tippen | Wechselt zwischen *Ankunftszeit* und *Fahrzeit* und umgekehrt. |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -451,7 +451,7 @@ In den **Einstellungen** des Widgets können Sie auswählen, dass immer **der ak
 | | |
 |:------------|:------------|
 | Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,map_widget_config"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate ios="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget hinzufügen → <Translate android="true" ids="map_widget_top_text"/>* |
 | Einstellungen | Wählen Sie aus, um immer **den aktuellen Straßennamen** anzuzeigen oder **den nächsten Straßennamen** anzuzeigen, wenn Sie sich dem Manöver nähern |
 | Durch Tippen | Öffnet ein Kontextmenü mit Einstellungen (Schalten Sie Informationen zur nächsten Abbiegung EIN/AUS) und Löschen |
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 428826bae8ed862f0461ecab49ef7797e89e0c65221f36bbe3483a582b457628
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title:  Erste Schritte
 ---
@@ -502,7 +502,7 @@ Tippen Sie auf ein Aktionssymbol, um die Anwendung sofort mit der ausgewählten 
 
 Im *Hilfemenü* finden Sie Artikel von unserer Website [www.osmand.net/docs](https://osmand.net/docs/intro/). Nach dem ersten Download (Internetverbindung erforderlich) sind die Hilfeartikel offline verfügbar.  
 Der erste Unterabschnitt, *Offline-Hilfe*, enthält die **Am häufigsten angesehenen** (oder beliebtesten) Artikel unter unseren Benutzern. Diese Artikel werden in der für die Anwendung eingestellten Sprache angezeigt, wenn diese Sprache auf unserer Dokumentationswebsite unterstützt wird. Derzeit unterstützte Sprachen umfassen: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, und *<Translate android="true" ids="lang_uk"/>*. Wenn Sie die Sprache der Anwendung ändern, starten Sie OsmAnd bitte neu, damit die Dokumentation in der ausgewählten Sprache geöffnet wird. Wenn keine Übersetzung verfügbar ist, wird automatisch die englische Version der Seite angezeigt. Die Abschnitte **Benutzerhandbuch** und **Fehlerbehebung** haben die gleiche Struktur wie auf der Website.  
-Im *Hilfemenü* finden Sie auch nützliche Links zu den sozialen Netzwerken von OsmAnd, Versionsinformationen zu Ihrer Anwendung, Versionshinweise und Support-Kontakte. Über die Hilfe können Sie auch [Logcat- und Absturzprotokolle](../troubleshooting/crash-logs.md#crash-and-logcat-logs) senden.  
+Im *Hilfemenü* finden Sie auch nützliche Links zu den sozialen Netzwerken von OsmAnd, Versionsinformationen zu Ihrer Anwendung, Versionshinweise und Support-Kontakte. Über die Hilfe können Sie auch [Logcat- und Absturzprotokolle](../troubleshooting/crash-logs.md#crash-and-app-logs) senden.  
 
 ### Menü {#menu}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 1db45c1f6b8d7c62529fc428344254e283462139415f4deb115beb03e1e39b28
 sidebar_position: 2
 title:  iOS-Käufe
 ---

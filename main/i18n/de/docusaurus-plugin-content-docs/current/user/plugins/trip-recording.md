@@ -1,5 +1,5 @@
 ---
-source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
+source-hash: 0908961f227fa1a892804774f35b6e16c127cf8034093323cc379c362624f911
 sidebar_position: 17
 title:  Reiseaufzeichnung
 ---
@@ -292,11 +292,11 @@ Bevor Sie mit der Aufzeichnung Ihrer Reisen beginnen, müssen Sie das **Reiseauf
 | **Aufzeichnungen nach Lücke automatisch teilen** | Teilt Tracks automatisch basierend auf Zeitlücken zwischen aufgezeichneten Punkten. <ul><li>Ein neues Segment beginnt nach einer Lücke von 6 Minuten.</li><li>Ein neuer Track beginnt nach einer Lücke von 2 Stunden.</li><li>Eine neue Datei beginnt, wenn sich das Datum ändert.</li><li>Lücken können durch GPS-Signalverlust, niedrige Geschwindigkeit oder Konfigurationseinstellungen entstehen.</li></ul><details><summary>*Anmerkung*</summary>Eine Lücke wird identifiziert, wenn keine Punkte aufgezeichnet werden. Dies kann entweder daran liegen, dass der Standort nicht erkannt wird oder dass er zwar erkannt, aber nicht aufgezeichnet wird. Mehrere Faktoren können dies verursachen, einschließlich schwacher GPS-Signale aufgrund schlechter Wetterbedingungen oder wenn die Bewegungsgeschwindigkeit unter den konfigurierten Schwellenwert fällt. In solchen Fällen zeichnet das Gerät den Standort nicht auf, obwohl er möglicherweise erkannt wird.<br/><br/>Diese Lücken in den aufgezeichneten Daten können die Erstellung eines neuen Segments innerhalb desselben Tracks, eines neuen Tracks in derselben Datei oder einer neuen GPX-Datei innerhalb einer Aufzeichnung auslösen. Dies wird innerhalb einer einzigen Start/Stopp-Aufzeichnungssitzung verwaltet.</details> |
 | **Eigenständige Aufzeichnung verhindern** (*Android*) | Pausiert die Track-Aufzeichnung, wenn die OsmAnd-App beendet wird (über *letzte Apps*). Die Hintergrundanzeige wird nicht im Android-Benachrichtigungsfeld angezeigt. |
 | **Kurs einbeziehen** | Zeichnet den Kurs (Bewegungsrichtung) für jeden Punkt in der GPX-Datei auf. Der Kurs ist die Richtung, in die das Gerät zeigt, was sich aufgrund externer Faktoren wie Wind oder Schleudern von der Bewegungsrichtung unterscheiden kann. |
-| **Aktivität**  | Die Option ermöglicht es Ihnen, einen [Aktivitätstyp](../map/tracks/track-context-menu.md#ttrack-activity-type) für ein Profil vorab auszuwählen, der dann automatisch auf alle aufgezeichneten Tracks angewendet wird. |
+| **Aktivität**  | Die Option ermöglicht es Ihnen, einen [Aktivitätstyp](../map/tracks/track-context-menu.md#track-activity-type) für ein Profil vorab auszuwählen, der dann automatisch auf alle aufgezeichneten Tracks angewendet wird. |
 | **Externe Sensoren** <br/> *Plugin muss aktiviert sein* | Daten von [externen Sensoren](../plugins/external-sensors.md#trip-recording) wie *<Translate android="true" ids="map_widget_ant_heart_rate"/>* oder *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* werden in der GPX-Datei protokolliert. *Distanz*-Daten werden weder auf Android noch auf iOS aufgezeichnet. Wird nur angezeigt, wenn das [Plugin für externe Sensoren](../plugins/external-sensors.md) aktiviert ist. |
 | **Fahrzeugmetriken** <br/> *Plugin muss aktiviert sein* | Daten von einem [OBD-II-Scanner](../plugins/vehicle-metrics.md#trip-recording) werden in der GPX-Datei protokolliert. Wird nur angezeigt, wenn das [Plugin für Fahrzeugmetriken](../plugins/vehicle-metrics.md) aktiviert ist.<br />*Hinweis*: Sie können aus der Liste auswählen, welche Metriken in der GPX-Datei aufgezeichnet werden sollen: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Speicherordner für Tracks** (*Android*) | Definiert, wo im Tab *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* aufgezeichnete Tracks gespeichert werden. Optionen umfassen das Speichern aller Tracks im Ordner "Rec" oder die Organisation nach Monat, wie z. B. "Rec/yyyyy-mm". |
-| **Benachrichtigung** | Steuert die Anzeige einer Systembenachrichtigung zur [Reiseaufzeichnung](#notifications) im Benachrichtigungsbereich des Geräts, mit der Sie die Aufzeichnung von Reisen starten können. |
+| **Schaltfläche „Aufzeichnen“ in Benachrichtigungen anzeigen** | Steuert die Anzeige einer Systembenachrichtigung zur [Reiseaufzeichnung](#notifications) im Benachrichtigungsbereich des Geräts, mit der Sie die Aufzeichnung von Reisen starten können. |
 | **Online-Tracking** (*Android*) | Ermöglicht die Echtzeitverfolgung Ihres Standorts durch Senden aufgezeichneter Punkte an eine angegebene URL. Das Tracking-Intervall bestimmt, wie oft Punkte gesendet werden, und der Zeitpuffer speichert Punkte, wenn keine Internetverbindung besteht.<details><summary>*Anmerkung*</summary>Wenn diese Option aktiviert ist und die Track-Aufzeichnung läuft, wird das Distanz/Start-Stopp (REC)-Widget **grün** statt **rot**, was anzeigt, dass jeder aufgezeichnete Punkt an eine angegebene URL übertragen wird. Das Feld **Webadresse** ermöglicht die Eingabe der URL im folgenden Parameterformat:<ul><li>`lat={0}`: Breitengrad</li><li>`lon={1}`: Längengrad</li><li>`timestamp={2}`: Zeitstempel (Unix-Zeit)</li><li>`hdop={3}`: Horizontale Genauigkeitsverdünnung</li><li>`altitude={4}`: Höhe</li><li>`speed={5}`: Geschwindigkeit</li><li>`bearing={6}`: Peilung (Bewegungsrichtung)</li><li>`eta={7}`: Geschätzte Ankunftszeit (Unix-Zeit)</li><li>`etfa={8}`: Geschätzte Zeit bis zum ersten Zwischenpunkt oder Zielpunkt (Unix-Zeit)</li><li>`eda={9}`: Geschätzte Entfernung bis zur Ankunft oder einer Markierung (in Metern)</li><li>`edfa={10}`: Geschätzte Entfernung bis zum ersten Zwischenpunkt oder Zielpunkt (in Metern)</li><li>`batproc={11}`: Geräte-Akkustand (Prozentsatz)</li></ul>Sie können das **Tracking-Intervall** festlegen, um anzugeben, wie oft Standortpunkte gesendet werden, mit Optionen von 0 Sekunden bis 5 Minuten. Zusätzlich bestimmt der Parameter **Zeitpuffer**, wie lange Standortpunkte gespeichert werden, wenn keine Internetverbindung besteht, um sicherzustellen, dass die Daten gespeichert und übertragen werden, wenn die Verbindung wiederhergestellt ist.<br />OsmAnd speichert die nicht gesendeten Standortpunkte nur im temporären Speicher der App, solange die Anwendung läuft. Das bedeutet, dass der Puffer nicht auf permanenten Speicher geschrieben wird. Wenn die App geschlossen, zwangsbeendet oder das Gerät neu gestartet wird, gehen alle gepufferten Punkte verloren.<br />Die Einstellung Zeitpuffer definiert nicht, wie lange Punkte im Speicher gehalten werden – sie wirkt nur als Filter zum Zeitpunkt des Hochladens. Wenn OsmAnd versucht, gepufferte Punkte zu senden, wird jeder Punkt gegen die Grenze des Zeitpuffers geprüft. Punkte, die älter als die ausgewählte Grenze (z. B. 24 Stunden) sind, werden entfernt, anstatt hochgeladen zu werden. Infolgedessen kann der Puffer vorübergehend Punkte älter als der gewählte Zeitpufferwert enthalten, aber diese Punkte werden während des Upload-Prozesses verworfen.</details> |
 | **Tracks** | Ein schneller Verweis auf den Ordner, in dem Tracks im Tab *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* gespeichert werden. |
 | **Plugin-Einstellungen auf Standard zurücksetzen** | Setzt alle Einstellungen für die Reiseaufzeichnung für das aktuelle Profil auf die Standardwerte zurück. |
@@ -320,7 +320,7 @@ Diese Funktion ermöglicht es Ihnen, die Akkuoptimierungseinstellungen für OsmA
 
 ![Reiseaufzeichnungs-Benachrichtigung](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
-Wenn [Benachrichtigung](#recording-settings) in den Plugin-Einstellungen aktiviert ist, werden Benachrichtigungen zur Reiseaufzeichnung immer im Systembenachrichtigungsbereich angezeigt, wenn die Aufzeichnung aktiv ist. Diese Benachrichtigung stellt sicher, dass der Aufzeichnungsprozess nicht vom System unterbrochen wird, und sie kann während einer aktiven Aufzeichnung nicht deaktiviert werden.
+Eine Benachrichtigung zur Reiseaufzeichnung wird im Systembenachrichtigungsbereich angezeigt, solange die Aufzeichnung aktiv ist. Diese Benachrichtigung stellt sicher, dass der Aufzeichnungsprozess nicht vom System unterbrochen wird, und sie kann während einer aktiven Aufzeichnung nicht deaktiviert werden. Wenn [Schaltfläche „Aufzeichnen“ in Benachrichtigungen anzeigen](#recording-settings) in den Plugin-Einstellungen aktiviert ist, ist die Benachrichtigung immer sichtbar und erleichtert so das Starten einer Aufzeichnung daraus.
 
 - Der Benachrichtigungsbereich öffnet sich, wenn Sie vom oberen Bildschirmrand nach unten wischen, und schließt sich, wenn Sie nach oben wischen. Diese Nachrichten informieren Sie über Aktionen wie das Starten/Stoppen der Reiseaufzeichnung, insbesondere wenn die automatische Aufzeichnung während der Navigation aktiviert ist.
 - Benachrichtigungen bleiben sichtbar, unabhängig davon, ob die App im Vordergrund, im Hintergrund läuft oder geschlossen ist. Sie können die alte Benachrichtigung manuell löschen, wenn sie nicht mehr benötigt wird, aber dies stoppt die laufende Aufzeichnung nicht.
@@ -330,7 +330,7 @@ Wenn [Benachrichtigung](#recording-settings) in den Plugin-Einstellungen aktivie
 Dieses Verhalten wird von Android für jeden Vordergrunddienst, wie die Reiseaufzeichnung, verlangt, um für Sie sichtbar zu bleiben.
 
 - Wenn die Benachrichtigung entfernt wird, stoppt Android automatisch die Aufzeichnung. Sie können die Einstellung [Eigenständige Aufzeichnung verhindern](#recording-settings) verwenden.
-- Die Einstellung **Benachrichtigung** in OsmAnd beeinflusst, ob die Benachrichtigungsleiste eine Verknüpfung zum Starten einer Aufzeichnung anzeigt, wenn keine Aufzeichnung aktiv ist. Sie steuert **nicht** die Sichtbarkeit der Benachrichtigung während einer aktiven Aufzeichnung.
+- Die Einstellung **Schaltfläche „Aufzeichnen“ in Benachrichtigungen anzeigen** beeinflusst, ob die Benachrichtigungsleiste eine Verknüpfung zum Starten einer Aufzeichnung anzeigt, wenn keine Aufzeichnung aktiv ist. Sie steuert **nicht** die Sichtbarkeit der Benachrichtigung während einer aktiven Aufzeichnung.
 
 **Zusätzliche Android-Optionen**.
 
@@ -389,7 +389,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 Das [Reiseaufzeichnungs-Widget](../widgets/info-widgets.md#trip-recording-widgets) bietet eine einfache Möglichkeit, Ihren Aufzeichnungsstatus zu überwachen und schnell auf Aufzeichnungseinstellungen und -details zuzugreifen. Dieses Widget wird automatisch zu Ihrem Bildschirm hinzugefügt, wenn das Reiseaufzeichnungs-Plugin aktiviert ist.
 
-Um Ihre Benutzeroberfläche anzupassen, können Sie das Reiseaufzeichnungs-Widget und [andere Widgets](#additional-widgets) über das Menü "Bildschirm konfigurieren" hinzufügen oder entfernen.
+Um Ihre Benutzeroberfläche anzupassen, können Sie das Reiseaufzeichnungs-Widget und [andere Widgets](../plugins/trip-recording#additional-widgets) über das Menü "Bildschirm konfigurieren" hinzufügen oder entfernen.
 
 
 ### Anzeigemodi {#display-modes}
@@ -414,13 +414,13 @@ Einige Reiseaufzeichnungs-Widgets unterstützen mehrere Anzeigemodi. Modi ermög
 
 | **Widget** | **Verfügbare Modi**  |
 |-------|-------------|
-| Durchschnittssteigung | Letzter Bergab; Letzter Bergauf |
-| Durchschnittsgeschwindigkeit *(Nur Android)* | Reise-Durchschnitt (Standard); Letzter Bergab; Letzter Bergauf |
-| Distanz (Start-Stopp) | Reise-Durchschnitt (Standard); Letzter Bergab; Letzter Bergauf |
-| Bergab | Gesamt (Standard); Letzter Bergab |
-| Max. Geschwindigkeit | Gesamt (Standard); Letzter Bergab; Letzter Bergauf |
-| Bewegungszeit | Gesamt (Standard); Letzter Bergab; Letzter Bergauf |
-| Bergauf | Gesamt (Standard); Letzter Bergauf |
+| Durchschnittssteigung | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Durchschnittsgeschwindigkeit *(Nur Android)* | Reise-Durchschnitt (Standard); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Distanz (Start-Stopp) | Gesamtdistanz (Standard); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Bergab | Gesamt (Standard); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Max. Geschwindigkeit | Gesamt (Standard); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Bewegungszeit | Gesamt (Standard); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Bergauf | Gesamt (Standard); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 Der Moduswechsel hängt vom Widget ab:
 - Bergauf / Bergab / Max. Geschwindigkeit / Durchschnittssteigung / Bewegungszeit / Durchschnittsgeschwindigkeit — Tippen Sie auf das Widget auf der Karte, um seinen Modus zu wechseln.
@@ -432,6 +432,33 @@ Wenn die aktuelle Aufzeichnung noch keinen Bergauf- oder Bergababschnitt enthäl
 
 
 ### Distanz (Start-Stopp) {#distance-start-stop}
+
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
 
 | |
 |-----------|
@@ -465,6 +492,31 @@ Unter Android unterstützt das Distanz-Widget mehrere Anzeigemodi:
 |![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Wenn Sie mehrere Widgets ausgewählt haben – *Dauer*, *Bergauf* oder *Bergab* – können Sie für jedes auf dasselbe Dialogfeld zugreifen, ohne es wechseln oder schließen zu müssen. Diese einheitliche Benutzeroberfläche erleichtert die nahtlose Anzeige und Verwaltung aller zugehörigen Informationen.
+
+
+<!--
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+-->
 
 
 ## Verwandte Artikel {#related-articles}
