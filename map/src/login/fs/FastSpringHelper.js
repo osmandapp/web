@@ -1,9 +1,16 @@
 import { getAccountInfo } from '../../manager/LoginManager';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH, PURCHASES_URL } from '../../manager/GlobalManager';
-import { purchase } from '../../shop/products/ProductManager';
+import { apiGet, apiPost } from '../../util/HttpApi';
+import i18n from 'i18next';
 
-export function testPath(fsName, testMode) {
-    return testMode ? `test-${fsName}` : fsName;
+export function priceKey(productId, type) {
+    return `${productId}/${type}`;
+}
+
+async function loadProducts(testMode) {
+    const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/fs/products`, { params: { test: testMode } });
+
+    return Array.isArray(resp?.data) ? resp.data : [];
 }
 
 function createFastSpringBuilder(testMode) {
@@ -26,31 +33,27 @@ function createFastSpringBuilder(testMode) {
     return script;
 }
 
-export const createFastSpringPurchase = ({ testMode, selectedProduct, ltx, navigate }) => {
+export const createFastSpringPurchase = async ({ testMode, productId, type, ltx, ctx, navigate }) => {
+    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fastspring-session`, '', {
+        params: { id: productId, type, test: testMode },
+    });
+    if (resp?.status === 409) {
+        ctx.setNotification({ text: i18n.t('web:purchase_already_active'), severity: 'info' });
+        navigate({
+            pathname: MAIN_URL_WITH_SLASH + LOGIN_URL + PURCHASES_URL,
+        });
+        return;
+    }
+    const sessionId = resp?.data?.id;
+    if (!sessionId) {
+        return;
+    }
+
     const script = createFastSpringBuilder(testMode);
-
-    const products = [
-        {
-            path: testPath(selectedProduct, testMode),
-            quantity: 1,
-        },
-    ];
-
-    const s = {
-        reset: true,
-        products,
-        checkout: true,
-        tags: {
-            userEmail: ltx.loginUser,
-        },
-        paymentContact: {
-            email: ltx.loginUser,
-        },
-    };
 
     script.onload = () => {
         window.fastspring.builder.reset();
-        window.fastspring.builder.push(s);
+        window.fastspring.builder.checkout(sessionId);
         window.onFSPopupClosed = function (orderReference) {
             if (window.fastspring && window.fastspring.builder) {
                 window.fastspring.builder.reset();
@@ -107,16 +110,22 @@ function fetchPrices(productsList, testMode, onPriceMap) {
     document.head.appendChild(script);
 }
 
-export function fetchSinglePrice(fsName, onPrice, testMode = false) {
-    const path = testPath(fsName, testMode);
-    fetchPrices([{ path, quantity: 1 }], testMode, (priceMap) => onPrice(priceMap[path]));
+export async function fetchSinglePrice(productId, type, onPrice, testMode = false) {
+    const product = (await loadProducts(testMode)).find((p) => p.id === productId && p.type === type);
+    if (product) {
+        fetchPrices([{ path: product.path, quantity: 1 }], testMode, (priceMap) => onPrice(priceMap[product.path]));
+    }
 }
 
-export function updatePrices(setPurchasePriceMap, testMode = false) {
-    const productsList = Object.values(purchase)
-        .flat()
-        .filter((item) => !testMode || item.hasTestMode)
-        .map((item) => ({ path: testPath(item.fsName, testMode), quantity: 1 }));
-
-    fetchPrices(productsList, testMode, setPurchasePriceMap);
+export async function updatePrices(setPurchasePriceMap, testMode = false) {
+    const products = await loadProducts(testMode);
+    if (products.length === 0) {
+        return;
+    }
+    const productsList = products.map((p) => ({ path: p.path, quantity: 1 }));
+    fetchPrices(productsList, testMode, (priceMap) => {
+        const prices = {};
+        products.forEach((p) => (prices[priceKey(p.id, p.type)] = priceMap[p.path]));
+        setPurchasePriceMap(prices);
+    });
 }

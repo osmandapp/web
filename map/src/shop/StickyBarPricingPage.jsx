@@ -6,6 +6,7 @@ import { ReactComponent as MapsIcon } from '../assets/icons/ic_action_osmand_map
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../context/LoginContext';
+import AppContext from '../context/AppContext';
 import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
 import { findPurchase, hasOldPrice } from './products/ProductManager';
@@ -63,6 +64,7 @@ export default function StickyBarPricingPage({ visible, testMode, updateCardPric
 }
 
 function StickyBarItem({ product, testMode, purchaseObj }) {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
     const navigate = useNavigate();
@@ -71,10 +73,7 @@ function StickyBarItem({ product, testMode, purchaseObj }) {
         if (!ltx.loginUser) {
             ltx.setOpenLoginDialog(true);
         } else {
-            const selectedProduct = findPurchase('annual', product.purchaseId);
-            if (selectedProduct) {
-                createFastSpringPurchase({ testMode, ltx, selectedProduct: selectedProduct.fsName, navigate });
-            }
+            createFastSpringPurchase({ testMode, ltx, ctx, productId: product.purchaseId, type: 'annual', navigate });
         }
     }
 

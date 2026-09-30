@@ -16,7 +16,7 @@ export default function TracksProBanner() {
     const [discountPercent, setDiscountPercent] = useState(getDiscountPercent(annualPurchase));
 
     useEffect(() => {
-        fetchSinglePrice(annualPurchase?.fsName, (purchaseObj) => setDiscountPercent(getDiscountPercent(purchaseObj)));
+        fetchSinglePrice('osmand-pro', 'annual', (purchaseObj) => setDiscountPercent(getDiscountPercent(purchaseObj)));
     }, []);
 
     return (

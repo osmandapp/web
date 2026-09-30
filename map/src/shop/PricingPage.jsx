@@ -7,7 +7,7 @@ import styles from './shop.module.css';
 import { useTranslation, Trans } from 'react-i18next';
 import { purchase } from './products/ProductManager';
 import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
-import { testPath, updatePrices } from '../login/fs/FastSpringHelper';
+import { priceKey, updatePrices } from '../login/fs/FastSpringHelper';
 import { getAccountInfo } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
 import StickyBarPricingPage from './StickyBarPricingPage';
@@ -85,7 +85,7 @@ export default function PricingPage() {
 
             Object.keys(purchase).forEach((type) => {
                 purchase[type].forEach((item) => {
-                    const info = purchasePriceMap[testPath(item.fsName, useTestMode)];
+                    const info = purchasePriceMap[priceKey(item.id, type)];
                     if (info) {
                         item.oldPrice = info.oldPrice;
                         item.newPrice = info.newPrice;

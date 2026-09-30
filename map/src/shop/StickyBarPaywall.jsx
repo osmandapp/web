@@ -6,6 +6,7 @@ import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../context/LoginContext';
+import AppContext from '../context/AppContext';
 import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
 import { findPurchase } from './products/ProductManager';
@@ -21,6 +22,7 @@ export default function StickyBarPaywall({
     featureId,
     onSeeAllPlans,
 }) {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
@@ -49,7 +51,7 @@ export default function StickyBarPaywall({
         if (!ltx.loginUser) {
             ltx.setOpenLoginDialog(true);
         } else if (annualPurchase) {
-            createFastSpringPurchase({ testMode, ltx, selectedProduct: annualPurchase.fsName, navigate });
+            createFastSpringPurchase({ testMode, ltx, ctx, productId: 'osmand-pro', type: 'annual', navigate });
         }
     }
 
