@@ -13,7 +13,14 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
 import Login from './Login';
-import { closeLoginMenu, FREE_ACCOUNT, FREE_ACCOUNT_SUB_TYPE } from '../manager/LoginManager';
+import {
+    CANCEL_LOGIN_LINK_PARAM,
+    closeLoginMenu,
+    FREE_ACCOUNT,
+    FREE_ACCOUNT_SUB_TYPE,
+    getLoginLink,
+    LOGIN_LINK_EMAIL_PARAM,
+} from '../manager/LoginManager';
 import ChangeResetPwd from './ChangeResetPwd';
 import CancelLoginLinkDialog from './dialogs/CancelLoginLinkDialog';
 import CreateAccount from './CreateAccount';
@@ -66,6 +73,9 @@ export default function LoginMenu() {
     const [openCloudInfo, setOpenCloudInfo] = useState(false);
     const [showDeveloperArea, setShowDeveloperArea] = useState(false);
     const [showGift, setShowGift] = useState(false);
+    const [cancelLinkOpen, setCancelLinkOpen] = useState(
+        !!new URLSearchParams(location.search).get(CANCEL_LOGIN_LINK_PARAM)
+    );
     const [, height] = useWindowSize();
 
     const clickHandler = (event) => {
@@ -84,11 +94,10 @@ export default function LoginMenu() {
 
     // links from order-mgmt (login link) and from the owner's email (cancel it)
     const linkParams = new URLSearchParams(location.search);
-    const cancelLinkCode = linkParams.get('cancel-link');
-    const [cancelLinkOpen, setCancelLinkOpen] = useState(!!cancelLinkCode);
+    const cancelLinkCode = linkParams.get(CANCEL_LOGIN_LINK_PARAM);
 
     useEffect(() => {
-        if (linkParams.get('link') && linkParams.get('email') && !ltx.loginUser) {
+        if (getLoginLink(location.search) && !ltx.loginUser) {
             ltx.setLoginState({ changePwd: true });
         }
     }, [location.search, ltx.loginUser]);
@@ -241,7 +250,7 @@ export default function LoginMenu() {
             {ltx.loginState.changePwd && <ChangeResetPwd />}
             {cancelLinkOpen && (
                 <CancelLoginLinkDialog
-                    email={linkParams.get('email')}
+                    email={linkParams.get(LOGIN_LINK_EMAIL_PARAM)}
                     code={cancelLinkCode}
                     onClose={() => setCancelLinkOpen(false)}
                 />

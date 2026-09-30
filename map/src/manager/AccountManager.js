@@ -48,6 +48,7 @@ export async function cancelLoginLink({ username, token }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username.toLowerCase(), token }),
     });
+
     return response?.ok === true;
 }
 
