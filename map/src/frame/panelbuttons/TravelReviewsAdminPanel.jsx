@@ -18,7 +18,6 @@ const PERIODS = [
     { hours: 0, name: 'web:travel_reviews_period_all' },
 ];
 
-// the admin download of the reviewed tracks, as the Admin panel of public/prototypes/heatmap.html
 export default function TravelReviewsAdminPanel() {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);

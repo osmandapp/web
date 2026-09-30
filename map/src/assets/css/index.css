@@ -63,7 +63,7 @@ code {
     transition: none !important;
 }
 
-/* the base map behind the Travel heatmap, as the grey map of public/prototypes/heatmap.html */
+/* the base map behind the Travel heatmap */
 .leaflet-container.travel-grey-map .leaflet-tile-pane,
 .leaflet-container.travel-grey-map .leaflet-mvtDemo-pane,
 .leaflet-container.travel-grey-map .leaflet-mvtOsm-pane,

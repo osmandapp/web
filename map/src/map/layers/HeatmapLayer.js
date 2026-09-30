@@ -152,7 +152,7 @@ function storedActivity(act) {
     return act.key;
 }
 
-// Gaussian drawing from public/prototypes/heatmap.html over tiles built by web-server-config/test/heat_build.py
+// heatmap over the tiles built by web-server-config/test/heat_build.py
 const HeatmapGridLayer = L.GridLayer.extend({
     initialize(meta, baseUrl, options) {
         this._meta = meta;

@@ -57,7 +57,6 @@ export const HEATMAP_PALETTES = {
 export const HEATMAP_SCALE_EQUALIZED = 'equalized';
 export const HEATMAP_SCALE_LOG = 'log';
 
-// as the Algorithm select of public/prototypes/heatmap.html
 const HEATMAP_STYLE_GAUSS = 'gauss';
 export const HEATMAP_STYLE_HYBRID = 'hybrid';
 export const HEATMAP_STYLE_CELLS = 'cells';

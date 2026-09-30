@@ -26,7 +26,7 @@ export const ACTIVITY_GARBAGE_SHORT = 'garbage_short';
 export const ACTIVITY_GARBAGE_SPARSE = 'garbage_sparse';
 export const ACTIVITY_ERROR = 'error';
 
-// tracks the classifier leaves out, off by default, as the Ignored group of public/prototypes/heatmap.html
+// tracks the classifier leaves out, off by default
 const IGNORED_ACTIVITIES = [
     { id: ACTIVITY_GARBAGE_SHORT, name: 'web:ignored_short' },
     { id: ACTIVITY_GARBAGE_SPARSE, name: 'web:ignored_sparse' },
@@ -34,7 +34,6 @@ const IGNORED_ACTIVITIES = [
     { id: UNIDENTIFIED_TRACKS_KEY, name: 'web:ignored_no_timing' },
 ];
 
-// quick sets of activity groups, as in public/prototypes/heatmap.html
 const PRESETS = [
     { id: 'foot_cycling', name: 'web:activities_foot_cycling', groups: (id) => id === 'foot' || id === 'cycling' },
     {
