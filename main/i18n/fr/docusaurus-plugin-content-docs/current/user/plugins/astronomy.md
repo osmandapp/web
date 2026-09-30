@@ -1,5 +1,5 @@
 ---
-source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
+source-hash: 18bdcf0d20caf5aabbea26b8ec6fcda7bc035763be0d7facfcec6e68cdb29d7d
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -16,12 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-:::info 
-
-**Astronomy** est actuellement en **bêta** sur **Android**. 
-
-Sur **iOS**, le plugin est disponible via le programme **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
-:::
 
 ## Aperçu {#overview}
 

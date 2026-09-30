@@ -1,5 +1,5 @@
 ---
-source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
+source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
 title: Dossier intelligent (Filtre)
 ---
@@ -99,7 +99,7 @@ Allez à : onglet *<Translate ios="true" ids="shared_string_menu,shared_string_m
 - **Altitude moyenne** et **Altitude maximale** — Trouvez des traces avec des données d'altitude moyenne ou maximale spécifiques.
 - **Date de création** — Filtrez les traces créées dans une plage de dates particulière.
 - **Villes les plus proches** — Affichez les traces passant à proximité de villes ou de localités sélectionnées.
-- **Type d'activité** — Filtrez les traces en fonction du type d'[activités](../../map/tracks/track-context-menu.md#ttrack-activity-type) enregistré dans le fichier GPX (par exemple, vélo, randonnée).
+- **Type d'activité** — Filtrez les traces en fonction du type d'[activités](../../map/tracks/track-context-menu.md#track-activity-type) enregistré dans le fichier GPX (par exemple, vélo, randonnée).
 - **Pays** — Filtrez les traces par le pays ou la région où elles ont été enregistrées.
 - **Couleur** et **Largeur** — Sélectionnez les traces par couleur ou largeur de ligne attribuée.
 - **Autre** — Filtres supplémentaires pour des caractéristiques spéciales :

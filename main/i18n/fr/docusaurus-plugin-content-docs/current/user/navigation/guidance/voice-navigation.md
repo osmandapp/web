@@ -1,5 +1,5 @@
 ---
-source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
+source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
 sidebar_position: 3
 title:  Guidage vocal / Notifications
 ---
@@ -99,7 +99,7 @@ Pour plus d'informations sur comment et quand les invites vocales sont déclench
 
 - *Répéter les instructions de navigation*. Permet de répéter les instructions de navigation à des intervalles réguliers de 1 min à 30 min. Ou manuellement - si vous manquez une invite vocale, vous pouvez l'écouter à nouveau en appuyant simplement sur [la flèche du virage actuel](../../widgets/nav-widgets.md#next-turn) sur l'écran de l'application.
 - *[Temps d'annonce](#announcement-time)*.
-- *Mettre en pause l'audio parlé* (*iOS uniquement*). Lorsqu'elle est activée, les podcasts, les livres audio et autres contenus audio parlés sont mis en pause pendant la lecture des invites vocales. La lecture de musique se poursuit à volume réduit. Lorsqu'elle est désactivée, l'audio parlé et la musique continuent de jouer à volume réduit.
+- *Mettre en pause l'audio parlé* (*iOS uniquement, y compris CarPlay*). Lorsqu'elle est activée, les podcasts, les livres audio et autres contenus audio parlés sont mis en pause pendant la lecture des invites vocales, que ce soit via l'appareil ou via CarPlay. La lecture de musique se poursuit à volume réduit. Lorsqu'elle est désactivée, l'audio parlé et la musique continuent de jouer à volume réduit.
 
 **Sortie** (*Android uniquement*) :
 

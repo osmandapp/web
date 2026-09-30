@@ -1,5 +1,5 @@
 ---
-source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
+source-hash: cd041547a7f80045d462bbc7c5a375476089c6105d35475b185588517c4f7162
 sidebar_position: 2
 ---
 
@@ -18,6 +18,21 @@ Vous pouvez obtenir la dernière version d'OsmAnd gratuitement dans les boutique
 Liens directs vers les versions gratuites d'OsmAnd.
 
 ## Version 5 {#version-5}
+
+### Version 5.4 {#version-54}
+
+Date de publication 09/2026 :
+
+- Interface de recherche repensée : tri, filtres par catégorie, aspect plus épuré.
+- Joignez des photos et des médias aux Favoris.
+- Favoris : prise en charge des sous-groupes et des dossiers épinglables.
+- Coordonnées : la recherche, la grille de la carte et l'affichage des POI prennent désormais en charge EPSG et le localisateur Maidenhead.
+- Correction des interruptions de navigation ; basculement entre le routage Standard et Rapide.
+- Réglez l'échelle de la carte d'Android Auto séparément de celle de votre téléphone.
+- Nouvelle recherche spatiale — trouvez des lieux et recherchez autour d'un lieu.
+- Astronomie : ajout des explorateurs d'éclipses solaires et lunaires.
+
+<DownloadRelease blog="osmand-android-5-4-released" release="net.osmand-5.4.7-5407.apk" />
 
 ### Version 5.3 {#version-53}
 

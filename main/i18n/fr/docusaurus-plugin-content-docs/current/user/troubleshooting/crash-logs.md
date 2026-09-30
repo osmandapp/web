@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
 sidebar_position: 5
 title:  Journaux de plantage
 ---
@@ -74,6 +74,39 @@ Soyez prudent lorsque vous envoyez des journaux d'application, car ils peuvent c
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+## Histogramme de tas pour les problèmes de mémoire (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Android uniquement
+:::
+
+Un *histogramme de tas* est un tableau de ce qui remplit la mémoire Java de l'application : noms de classes avec le nombre d'objets et leurs tailles. Il aide les développeurs à trouver ce qui consomme la mémoire lorsque l'application devient lente, se fige ou se ferme après un certain temps. Il ne contient pas vos positions, les noms de vos traces ni vos requêtes de recherche. OsmAnd effectue un vidage complet de la mémoire sur l'appareil, le transforme en histogramme, puis supprime immédiatement le vidage.
+
+La réalisation du vidage **fige l'application pendant 5 à 10 secondes**. Si vous touchez l'écran pendant ce temps, Android peut afficher *OsmAnd ne répond pas*. C'est pourquoi la collecte automatique est **désactivée par défaut**.
+
+**Quand l'activer :**
+
+- OsmAnd se ferme tout seul ou affiche *ne répond pas* de façon répétée, surtout après un certain temps d'utilisation ou lorsque vous ouvrez la recherche, la carte avec beaucoup de POI, ou *Mes lieux* avec beaucoup de traces.
+- L'application devient plus lente au fil du temps et un redémarrage aide.
+- Le rapport de plantage indique que l'application a manqué de mémoire (`OutOfMemoryError`).
+- Le support d'OsmAnd vous a demandé de collecter un histogramme de tas.
+
+**Quand le laisser désactivé :**
+
+- L'utilisation quotidienne et la navigation, lorsque l'application fonctionne bien.
+- Les plantages qui se produisent immédiatement à chaque démarrage, ou avec une action précise comme l'ouverture d'un fichier. Un [journal de plantage](#send-logs-from-osmand-app) ordinaire suffit dans ce cas.
+
+**Comment le collecter et l'envoyer :**
+
+1. Activez le [plugin de développement OsmAnd](../plugins/development.md) et allez à *Menu principal → Plugins → Développement OsmAnd → Paramètres → Mémoire → Mémoire Java*.
+2. Dans le panneau *Vidage du tas*, choisissez l'une des options suivantes :
+    - **Collecter en cas d'utilisation élevée**. L'histogramme est collecté automatiquement lorsque la mémoire Java est presque pleine, au maximum une fois toutes les 30 minutes, et il est joint au prochain rapport de plantage. Continuez à utiliser l'application normalement jusqu'à ce que le problème se reproduise.
+    - **Collecter et analyser maintenant**. Collecte l'histogramme immédiatement et affiche le résultat. Utilisez-le lorsque l'application est déjà lente et que *Mémoire Java* indique une utilisation élevée.
+3. Appuyez sur **Partager le rapport** pour envoyer le dernier rapport aux développeurs, ou envoyez-le depuis la boîte de dialogue de plantage au prochain démarrage de l'application.
+4. Désactivez *Collecter en cas d'utilisation élevée* une fois le rapport envoyé.
+
+![Mémoire Java Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Panneau de vidage du tas Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Envoyer des fichiers Tombstone (Android) {#send-tombstone-files-android}
 

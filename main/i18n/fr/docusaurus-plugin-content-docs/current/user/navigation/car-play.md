@@ -1,5 +1,5 @@
 ---
-source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
+source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -227,7 +227,7 @@ Le guidage vocal pour *CarPlay* est l'une des fonctionnalités de navigation les
 
 Lorsque les instructions vocales sont diffusées, OsmAnd ajuste l'audio de fond en fonction de son type. Avec l'option *<Translate ios="true" ids="pause_spoken_audio"/>* activée, le contenu audio parlé, tel que les podcasts et les livres audio, est mis en pause pendant les instructions de navigation, tandis que la lecture de musique se poursuit avec un volume réduit. Lorsque l'option *<Translate ios="true" ids="pause_spoken_audio"/>* est désactivée, le contenu audio parlé et la musique continuent de jouer avec un volume réduit.  
 
-Pour configurer les instructions vocales selon le profil sélectionné, vous devez le faire avant de commencer un itinéraire dans l'application OsmAnd sur votre appareil. Pour voir les paramètres recommandés pour *CarPlay*, consultez l'article [Instructions vocales / Notifications](../navigation/guidance/voice-navigation.md).  
+Pour configurer les instructions vocales selon le profil sélectionné, vous devez le faire avant de commencer un itinéraire dans l'application OsmAnd sur votre appareil, voir l'article [Instructions vocales / Notifications](../navigation/guidance/voice-navigation.md#voice-settings). Par exemple, pour activer Mettre en pause l'audio parlé, allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 
 ### Alertes de navigation {#navigation-alerts}
@@ -321,16 +321,19 @@ Vous pouvez modifier les paramètres de notification pour l'application OsmAnd d
 
 Vous pouvez également activer ou désactiver l'annonce des messages directement dans *CarPlay*. Lisez comment la gestion des notifications est implémentée sur [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) et [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
 
-### Thème de la carte {#map-theme}
+### Mode de la carte {#map-mode}
 
-![Thème de la carte](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+![Mode de la carte](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Mode de la carte](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-*CarPlay* vous permet de configurer l'apparence de la carte pour une meilleure visibilité dans différentes conditions de conduite. Vous pouvez choisir l'un des modes d'apparence suivants :
+OsmAnd vous permet de configurer l'apparence de la carte pour *CarPlay* indépendamment du mode de la carte sur votre téléphone. Pour ouvrir ce paramètre, appuyez sur le bouton *Paramètres* dans la barre de navigation de *CarPlay*, puis sélectionnez *Mode de la carte*. Le mode actuel est affiché dans le texte de détail de la ligne.
 
-- *Automatique*. L'apparence de la carte change automatiquement en fonction des paramètres du système, de l'heure de la journée ou des conditions du véhicule.
-- *Toujours sombre*. *CarPlay* utilise le thème de carte sombre.
+Vous pouvez choisir l'un des modes d'apparence suivants :
+- **Apparence du véhicule** — L'apparence de la carte suit le style d'affichage propre au véhicule, selon le réglage Apparence de *CarPlay* sur votre iPhone (*Automatique* ou *Toujours sombre*) et l'heure de la journée. Lorsque *Toujours afficher les cartes sombres* est activé dans ce réglage, la carte reste toujours en mode sombre, quel que soit l'état des phares du véhicule ou l'heure de la journée.
+- **Jour** — La carte utilise toujours le thème clair dans *CarPlay*, quels que soient les réglages d'apparence du véhicule.
+- **Nuit** — La carte utilise toujours le thème sombre dans *CarPlay*, quels que soient les réglages d'apparence du véhicule.
+- **Lever/coucher du soleil** — La carte bascule automatiquement entre les thèmes clair et sombre selon les heures calculées de lever et de coucher du soleil pour votre position actuelle.
 
-Lorsque l'option *Toujours afficher les cartes sombres* est activée, la carte reste toujours en mode sombre, quel que soit l'état des phares du véhicule ou l'heure de la journée.
+**Note :** Le paramètre Mode de la carte dans *CarPlay* n'affecte que l'apparence de la carte dans *CarPlay*. Il ne modifie pas le Mode de la carte sur l'écran de votre téléphone.
 
 ### Position de la localisation dans CarPlay {#location-position-in-carplay}
 
