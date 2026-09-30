@@ -1,5 +1,5 @@
 ---
-source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
+source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
 sidebar_position: 5
 title:  Vektorkarten 
 ---
@@ -451,14 +451,6 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 **Globusansicht** ermöglicht es Ihnen, die Karte als sphärische Erde anstelle einer flachen Projektion anzuzeigen. Dieser Modus ändert die Geometrie der Kartenoberfläche und passt die Karteninteraktion an die sphärische Navigation an. Für weitere Informationen siehe den [Globusansicht-Abschnitt](../map/interact-with-map.md#globe-view) im Artikel Mit der Karte interagieren.
 
-<!--
-## Kartenlegende {#map-legend}
-
-Die Kartenlegende dient als Schlüssel zum Verständnis der in OsmAnd-Karten verwendeten Symbole. Sie erklärt die Bedeutung verschiedener Kartensymbole, einschließlich Punkte, Linien und Flächen. Zum Beispiel deuten blaue wellenförmige Linien Flüsse an, während verschiedene Farben und Formen Gebäude, Pfade und Routen darstellen können.  
-
-Die Legende hilft Benutzern, zu interpretieren, was sie auf der Karte sehen. Sie können die vollständige OsmAnd-Kartenlegende [hier](../map-legend/index.md) aufrufen.
--->
-
 
 ## Weitere Einstellungen {#additional-settings}
 
@@ -506,17 +498,38 @@ Gehe zu: *Menü → Karte konfigurieren → Anzeigen → Koordinatengitter*
 
 <TabItem value="android" label="Android">  
 
-![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_settings_andr.png)
+![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_settings_andr.png) ![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_format_andr.webp)
+
+Die Funktion **Koordinatengitter** überlagert die Karte mit einem Referenzgitter, mit dem Sie Breiten- und Längengrade basierend auf verschiedenen Koordinatensystemen visualisieren können. Diese Funktion ist nützlich für eine präzise Standortreferenz und geospatiale Navigation. 
+
+Sie können die folgenden Optionen konfigurieren:
+- **Zoomstufen:** Stellen Sie die minimale und maximale Zoomstufe (2 - 22) ein, bei der das Gitter sichtbar ist.
+- **Beschriftungsposition:** Wählen Sie zwischen *Ränder* (Standard) oder *Mitte* für Gitterbeschriftungen.
+- **Gitterfarbe:** Getrennt für Tag-/Nachtmodus verfügbar. 
+- **Koordinatenformat:** Wählen Sie aus mehreren verfügbaren Formaten (siehe Liste unten).
+
+***Verfügbare Koordinatenformate:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Grade, Minuten, Sekunden)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Dezimalgrade - WGS84-Standardformat)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Grade, Dezimalminuten)
+- **UTM** (EPSG:6387, Universale Transversale Mercator - zonenbasiertes Gittersystem). Die minimale Zoomstufe ist 9, es wird immer nur eine UTM-Zone angezeigt, da die Zonen alle 6° durch Meridiane getrennt sind
+- **OLC** (Open Location Code, auch bekannt als Plus Code)
+- **MGRS** (Military Grid Reference System)
+- **Schweizer Koordinatensystem** - Swiss Grid (CH1903) und Swiss Grid (CH1903+)
+- **Maidenhead** (Maidenhead-Locator-System)
+
+Der Bereich **Zuletzt verwendet** zeigt kürzlich verwendete Koordinatensysteme an. Um ein weiteres unterstütztes Koordinatensystem hinzuzufügen, tippen Sie auf *Anderes Format auswählen*. Sie können nach dem Namen des Koordinatensystems oder nach dem EPSG-Code suchen und dann auf *+* tippen, um es der Liste hinzuzufügen.
+
+Standardmäßig verwendet die App das in den [Allgemeinen Einstellungen](../personal/profiles.md#units--formats) ausgewählte Koordinatenformat, aber Sie können es direkt in diesem Menü ändern.
+
+[Schnelle Aktion](../widgets/quick-action.md#overview): Sie können auch einen schnellen Schalter *Koordinatengitter anzeigen/ausblenden* zur [Karte konfigurieren](../widgets/quick-action.md#configure-map)-Gruppe für schnellen Zugriff hinzufügen.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 Die Funktion **Koordinatengitter** überlagert die Karte mit einem Referenzgitter, mit dem Sie Breiten- und Längengrade basierend auf verschiedenen Koordinatensystemen visualisieren können. Diese Funktion ist nützlich für eine präzise Standortreferenz und geospatiale Navigation. 
 
@@ -537,6 +550,10 @@ Sie können die folgenden Optionen konfigurieren:
 Standardmäßig verwendet die App das in den [Allgemeinen Einstellungen](../personal/profiles.md#units--formats) ausgewählte Koordinatenformat, aber Sie können es direkt in diesem Menü ändern.
 
 [Schnelle Aktion](../widgets/quick-action.md#overview): Sie können auch einen schnellen Schalter *Koordinatengitter anzeigen/ausblenden* zur [Karte konfigurieren](../widgets/quick-action.md#configure-map)-Gruppe für schnellen Zugriff hinzufügen.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Routen {#routes}

@@ -1,5 +1,5 @@
 ---
-source-hash: bd81c2321c74c63107dfc284a099f5a70651f4b9ec53164117f0449dcf5774a9
+source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
 sidebar_position: 3
 title:  Globale Einstellungen
 ---
@@ -44,7 +44,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 ## Allgemein {#general}
 
-Dieser Abschnitt enthält die grundlegenden OsmAnd-Einstellungen, wie die Auswahl eines [Profils](#default-profile) beim Laden der Anwendung, die Auswahl der [Rendering-Engine](#map-rendering-engine) und des [Ordners](#data-storage-folder), in dem die Daten gespeichert werden.  
+Dieser Abschnitt enthält die grundlegenden OsmAnd-Einstellungen, wie die Auswahl eines [Profils](#default-profile) beim Laden der Anwendung, die Auswahl der [Rendering-Engine](#map-rendering-engine) und des [Ordners](#data-storage), in dem die Daten gespeichert werden.  
 
 
 ### Standardprofil {#default-profile}

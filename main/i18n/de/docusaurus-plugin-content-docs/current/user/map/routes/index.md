@@ -1,5 +1,5 @@
 ---
-source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title: Routen
 sidebar_position: 11
 ---
@@ -194,7 +194,7 @@ Sie können anpassen, ob Routen ein- oder ausgeschaltet werden, indem Sie das Wi
 
 </Tabs>
 
-Suchen Sie Routen mithilfe der [Suchfunktion](../../search/index.md) nach Namen oder indem Sie „Routen“ im [Kategorienabschnitt](../../search/search-poi.md#) auswählen.
+Suchen Sie Routen mithilfe der [Suchfunktion](../../search/index.md) nach Namen oder indem Sie „Routen“ im [Kategorienabschnitt](../../search/search-poi.md#poi-search-by-categories) auswählen.
 
 Um zu suchen, gehen Sie zum Menü *<Translate android="true" ids="search_button"/>* oder *<Translate android="true" ids="search_button,search_categories"/>* und geben Sie Ihre Aktivität ein.
 
@@ -218,7 +218,7 @@ Navigieren Sie zu *<Translate android="true" ids="search_button,search_categorie
 
 </Tabs>
 
-Tippen Sie in den Routensuchergebnissen in der oberen rechten Ecke auf die Schaltfläche **Filter**, um die Liste einzugrenzen. Der Filterbildschirm enthält ein Feld **Nach Namen filtern**; einen Block **Typ** mit *Bureau*, *Postfiliale* und *Postpartner*; und **zusätzliche Kriterien**, die von der ausgewählten Routenkategorie oder Aktivität abhängen, da jede Kategorie ihre eigenen Merkmale und Filterwerte anzeigen kann.
+Tippen Sie in den Routensuchergebnissen in der oberen rechten Ecke auf die Schaltfläche **Filter**, um die Liste einzugrenzen. Der Filterbildschirm enthält ein Feld **Nach Namen filtern** und **zusätzliche Kriterien**, die von der ausgewählten Routenkategorie oder Aktivität abhängen, da jede Kategorie ihre eigenen Merkmale und Filterwerte anzeigen kann.
 
 Sie können Filter mithilfe der Schalter aktivieren oder deaktivieren, und einige Abschnitte enthalten *Alle anzeigen*, um zusätzliche Werte anzuzeigen.
 
@@ -230,5 +230,5 @@ Sie können Filter mithilfe der Schalter aktivieren oder deaktivieren, und einig
 - [Track-Kontextmenü](../../map/tracks/track-context-menu.md)
 - [Öffentlicher Verkehr](../public-transport.md)
 - [Aussehen der Navigationsroutenlinie](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [POI suchen](../../search/search-poi.md#)
+- [POI suchen](../../search/search-poi.md)
 - [Routentypen](./types-of-routes.md)

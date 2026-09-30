@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
 sidebar_position: 5
 title:  Crash Logs
 ---
@@ -74,6 +74,39 @@ Seien Sie vorsichtig beim Senden von App-Protokollen, da diese private Informati
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+## Heap-Histogramm bei Speicherproblemen (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Nur Android
+:::
+
+Ein *Heap-Histogramm* ist eine Tabelle darüber, was den Java-Speicher der App füllt: Klassennamen mit Objektanzahl und Größe. Es hilft Entwicklern herauszufinden, was Speicher verbraucht, wenn die App langsam wird, hängt oder nach einer Weile geschlossen wird. Es enthält weder Ihre Standorte noch Tracknamen oder Suchanfragen. OsmAnd erstellt auf dem Gerät einen vollständigen Speicherauszug, wandelt ihn in das Histogramm um und löscht den Speicherauszug sofort.
+
+Das Erstellen des Speicherauszugs **friert die App für 5–10 Sekunden ein**. Wenn Sie in dieser Zeit den Bildschirm berühren, zeigt Android möglicherweise *OsmAnd reagiert nicht* an. Deshalb ist die automatische Erfassung **standardmäßig ausgeschaltet**.
+
+**Wann Sie sie einschalten sollten:**
+
+- OsmAnd schließt sich von selbst oder zeigt immer wieder *reagiert nicht* an, besonders nach einiger Nutzungsdauer oder wenn Sie die Suche, die Karte mit vielen POIs oder *Meine Orte* mit vielen Tracks öffnen.
+- Die App wird langsamer, je länger sie läuft, und ein Neustart hilft.
+- Der Absturzbericht besagt, dass der App der Speicher ausgegangen ist (`OutOfMemoryError`).
+- Der OsmAnd-Support hat Sie gebeten, ein Heap-Histogramm zu erfassen.
+
+**Wann Sie sie ausgeschaltet lassen sollten:**
+
+- Alltägliche Nutzung und Navigation, wenn die App einwandfrei funktioniert.
+- Abstürze, die sofort bei jedem Start oder bei einer bestimmten Aktion wie dem Öffnen einer Datei auftreten. Dort reicht ein normales [Absturzprotokoll](#send-logs-from-osmand-app) aus.
+
+**So erfassen und senden Sie es:**
+
+1. Aktivieren Sie das [OsmAnd-Entwicklungs-Plugin](../plugins/development.md) und gehen Sie zu *Hauptmenü → Plugins → OsmAnd-Entwicklung → Einstellungen → Speicher → Java-Speicher*.
+2. Wählen Sie im Bereich *Heap-Dump* eine der folgenden Optionen:
+    - **Bei hoher Auslastung erfassen**. Das Histogramm wird automatisch erfasst, wenn der Java-Speicher fast voll ist, höchstens einmal alle 30 Minuten, und es wird dem nächsten Absturzbericht beigefügt. Verwenden Sie die App wie gewohnt weiter, bis das Problem erneut auftritt.
+    - **Jetzt erfassen & analysieren**. Erfasst das Histogramm sofort und zeigt das Ergebnis an. Verwenden Sie dies, wenn die App bereits langsam ist und *Java-Speicher* eine hohe Auslastung anzeigt.
+3. Tippen Sie auf **Bericht teilen**, um den neuesten Bericht an die Entwickler zu senden, oder senden Sie ihn beim nächsten Start der App über den Absturzdialog.
+4. Schalten Sie *Bei hoher Auslastung erfassen* aus, sobald der Bericht gesendet wurde.
+
+![Java-Speicher Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Heap-Dump-Bereich Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Tombstone-Dateien senden (Android) {#send-tombstone-files-android}
 
