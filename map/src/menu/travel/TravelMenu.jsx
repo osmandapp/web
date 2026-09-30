@@ -29,7 +29,7 @@ import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
 import TravelFilters from './TravelFilters';
-import HeatmapAppearance, { resetHeatmapAppearance } from './HeatmapAppearance';
+import HeatmapAppearance from './HeatmapAppearance';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import headerStyles from '../trackfavmenu.module.css';
 import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
@@ -472,10 +472,7 @@ export default function TravelMenu() {
                                             variant="contained"
                                             type="button"
                                             className={headerStyles.appBarIcon}
-                                            onClick={() => {
-                                                resetSearch();
-                                                resetHeatmapAppearance(ctx);
-                                            }}
+                                            onClick={resetSearch}
                                         >
                                             <ResetIcon />
                                         </IconButton>

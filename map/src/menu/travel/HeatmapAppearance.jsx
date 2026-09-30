@@ -72,7 +72,7 @@ const HEATMAP_SCALES = {
     [HEATMAP_SCALE_LOG]: 'web:travel_heatmap_scale_log',
 };
 
-export function resetHeatmapAppearance(ctx) {
+function resetHeatmapAppearance(ctx) {
     ctx.setTravelHeatmapAppearance(DEFAULT_HEATMAP_APPEARANCE);
     localStorage.removeItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
 }
