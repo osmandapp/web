@@ -11,7 +11,12 @@ import {
     ACTIVITY_GARBAGE_SPARSE,
     UNIDENTIFIED_TRACKS_KEY,
 } from '../../menu/travel/ActivitySelect';
-import { HEATMAP_PALETTES, HEATMAP_SCALE_LOG } from '../../menu/travel/HeatmapAppearance';
+import {
+    HEATMAP_PALETTES,
+    HEATMAP_SCALE_LOG,
+    HEATMAP_STYLE_CELLS,
+    HEATMAP_STYLE_HYBRID,
+} from '../../menu/travel/HeatmapAppearance';
 import { apiGet } from '../../util/HttpApi';
 import { ensureLeafletPane } from './MvtHybridDemo';
 import { HEATMAP_PANE_Z_INDEX } from '../util/ZIndexes';
@@ -105,6 +110,7 @@ export default function HeatmapLayer() {
         layer?.setAppearance(ctx.travelHeatmapAppearance);
     }, [
         layer,
+        ctx.travelHeatmapAppearance.style,
         ctx.travelHeatmapAppearance.palette,
         ctx.travelHeatmapAppearance.scale,
         ctx.travelHeatmapAppearance.width,
@@ -204,7 +210,8 @@ const HeatmapGridLayer = L.GridLayer.extend({
     },
 
     // minTracks: cells with fewer tracks are not drawn and not counted in the colour scale
-    setAppearance({ palette, scale, width, glow, minTracks }) {
+    setAppearance({ style, palette, scale, width, glow, minTracks }) {
+        this._style = style;
         this._lut = buildLut(HEATMAP_PALETTES[palette].stops);
         this._scale = scale;
         this._width = width;
@@ -279,7 +286,8 @@ const HeatmapGridLayer = L.GridLayer.extend({
         const span = TILE_SIZE >> dz;
         const cx0 = coords.x * span;
         const cy0 = coords.y * span;
-        const m = Math.ceil(kernelFor(cellPx, this._width, this._glow).R / cellPx);
+        const m =
+            this._style === HEATMAP_STYLE_CELLS ? 0 : Math.ceil(kernelFor(cellPx, this._width, this._glow).R / cellPx);
 
         return {
             level,
@@ -344,10 +352,17 @@ const HeatmapGridLayer = L.GridLayer.extend({
             ctx.clearRect(0, 0, TILE_SIZE, TILE_SIZE);
             return;
         }
-        const key = `${g.level}|${g.dz}|${g.cx0}|${g.cy0}|${this._width}|${this._glow > 0}|${this._minTracks}|${this._filterEpoch}|${this._loadedFiles(g)}`;
+        if (this._style === HEATMAP_STYLE_CELLS) {
+            ctx.clearRect(0, 0, TILE_SIZE, TILE_SIZE);
+            this._paintCells(ctx, g);
+            return;
+        }
+        // sharp lines take the line core from a tent while a cell is at most 2 px, glow and colour still from the Gaussian
+        const tent = this._style === HEATMAP_STYLE_HYBRID && g.cellPx <= 2;
+        const key = `${g.level}|${g.dz}|${g.cx0}|${g.cy0}|${this._width}|${this._glow > 0}|${this._minTracks}|${this._filterEpoch}|${this._loadedFiles(g)}|${tent}`;
         let F = canvas._heatSplat;
         if (F?.key !== key) {
-            F = canvas._heatSplat = this._splat(g, key);
+            F = canvas._heatSplat = this._splat(g, key, tent);
         }
         ctx.clearRect(0, 0, TILE_SIZE, TILE_SIZE);
         if (!F.any) return;
@@ -356,10 +371,12 @@ const HeatmapGridLayer = L.GridLayer.extend({
         const colour = new Int32Array(CDF_MAX + 2).fill(-1);
         const img = ctx.createImageData(TILE_SIZE, TILE_SIZE);
         const px = img.data;
+        const e = F.T ? Math.min(0.15, 0.75 / F.h) : 0;
         for (let p = 0; p < TILE_PIXELS; p++) {
             const w = F.W[p];
             if (w < 0.004) continue;
-            const a = Math.max(smoothstep(0.12, 0.42, w), this._glow * 0.55 * smoothstep(0.004, 0.12, w));
+            const core = F.T ? smoothstep(0.5 - e, 0.5 + e, F.T[p]) : smoothstep(0.12, 0.42, w);
+            const a = Math.max(core, this._glow * 0.55 * smoothstep(0.004, 0.12, w));
             if (a <= 0) continue;
             const n = Math.min(CDF_MAX + 1, Math.max(1, Math.round(F.V[p] / w)));
             let c = colour[n];
@@ -375,10 +392,52 @@ const HeatmapGridLayer = L.GridLayer.extend({
         ctx.putImageData(img, 0, 0);
     },
 
-    _splat(g, key) {
+    // the raw cells of the tile's own file, scaled to the tile
+    _paintCells(ctx, g) {
+        const fx = Math.floor(g.cx0 / TILE_SIZE);
+        const fy = Math.floor(g.cy0 / TILE_SIZE);
+        const f = this._files.get(`${g.level}/${fx}/${fy}`)?.data;
+        if (!f) return;
+        if (!this._cellsCanvas) {
+            this._cellsCanvas = document.createElement('canvas');
+            this._cellsCanvas.width = this._cellsCanvas.height = TILE_SIZE;
+        }
+        const cells = this._cellsCanvas.getContext('2d');
+        const img = cells.createImageData(TILE_SIZE, TILE_SIZE);
+        const px = img.data;
+        const s = this._sums(f);
+        const tf = this._normFor(g.level);
+        for (let i = 0; i < f.nc; i++) {
+            const v = s[i];
+            if (v < this._minTracks) continue;
+            const c = Math.round(tf(v) * 255) * 3;
+            const k = f.cell[i] * 4;
+            px[k] = this._lut[c];
+            px[k + 1] = this._lut[c + 1];
+            px[k + 2] = this._lut[c + 2];
+            px[k + 3] = 255;
+        }
+        cells.putImageData(img, 0, 0);
+        ctx.imageSmoothingEnabled = g.dz > 0;
+        ctx.drawImage(
+            this._cellsCanvas,
+            g.cx0 - fx * TILE_SIZE,
+            g.cy0 - fy * TILE_SIZE,
+            g.span,
+            g.span,
+            0,
+            0,
+            TILE_SIZE,
+            TILE_SIZE
+        );
+    },
+
+    _splat(g, key, tent) {
         const K = kernelFor(g.cellPx, this._width, this._glow);
+        const KT = tent ? tentFor(g.cellPx, this._width) : null;
         const W = new Float32Array(TILE_PIXELS);
         const V = new Float32Array(TILE_PIXELS);
+        const T = KT ? new Float32Array(TILE_PIXELS) : null;
         let any = false;
         for (let fx = g.fx0; fx <= g.fx1; fx++) {
             for (let fy = g.fy0; fy <= g.fy1; fy++) {
@@ -415,12 +474,25 @@ const HeatmapGridLayer = L.GridLayer.extend({
                             V[row + kx] += w * v;
                         }
                     }
+                    if (KT) {
+                        const ty0 = Math.max(-KT.R, -by);
+                        const ty1 = Math.min(KT.R, TILE_SIZE - 1 - by);
+                        const tx0 = Math.max(-KT.R, -bx);
+                        const tx1 = Math.min(KT.R, TILE_SIZE - 1 - bx);
+                        for (let ky = ty0; ky <= ty1; ky++) {
+                            const row = (by + ky) * TILE_SIZE + bx;
+                            const krow = (ky + KT.R) * KT.size + KT.R;
+                            for (let kx = tx0; kx <= tx1; kx++) {
+                                T[row + kx] += KT.w[krow + kx];
+                            }
+                        }
+                    }
                     any = true;
                 }
             }
         }
 
-        return { key, W, V, any };
+        return { key, W, V, T, h: KT?.h ?? 0, any };
     },
 
     // count -> 0..1: half mid-rank CDF of the visible cells (1, 2, 3 tracks get distinct colours), half log
@@ -552,6 +624,32 @@ function kernelFor(cellPx, width, glow) {
         }
     }
     k = { R, size, w, half: cellPx >> 1 };
+    kernels.set(key, k);
+    if (kernels.size > KERNELS_CACHE) {
+        kernels.delete(kernels.keys().next().value);
+    }
+
+    return k;
+}
+
+// tent of half-width h >= one cell: neighbouring tents add up to bilinear occupancy, so at low zoom a line of cells is
+// a crisp band `width` px wide and an empty cell stays empty
+function tentFor(cellPx, width) {
+    const h = Math.max(cellPx, (width + cellPx) / 2);
+    const key = `t|${cellPx}|${h}`;
+    let k = kernels.get(key);
+    if (k) return k;
+    const R = Math.ceil(h);
+    const size = 2 * R + 1;
+    const w = new Float32Array(size * size);
+    const shift = cellPx === 1 ? 0 : 0.5;
+    for (let ky = -R; ky <= R; ky++) {
+        for (let kx = -R; kx <= R; kx++) {
+            w[(ky + R) * size + kx + R] =
+                Math.max(0, 1 - Math.abs(kx + shift) / h) * Math.max(0, 1 - Math.abs(ky + shift) / h);
+        }
+    }
+    k = { R, size, w, half: cellPx >> 1, h };
     kernels.set(key, k);
     if (kernels.size > KERNELS_CACHE) {
         kernels.delete(kernels.keys().next().value);

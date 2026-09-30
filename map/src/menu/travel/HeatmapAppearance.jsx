@@ -57,7 +57,13 @@ export const HEATMAP_PALETTES = {
 export const HEATMAP_SCALE_EQUALIZED = 'equalized';
 export const HEATMAP_SCALE_LOG = 'log';
 
+// as the Algorithm select of public/prototypes/heatmap.html
+const HEATMAP_STYLE_GAUSS = 'gauss';
+export const HEATMAP_STYLE_HYBRID = 'hybrid';
+export const HEATMAP_STYLE_CELLS = 'cells';
+
 export const DEFAULT_HEATMAP_APPEARANCE = {
+    style: HEATMAP_STYLE_GAUSS,
     palette: 'vivid',
     scale: HEATMAP_SCALE_EQUALIZED,
     width: 3,
@@ -70,6 +76,12 @@ export const DEFAULT_HEATMAP_APPEARANCE = {
 const HEATMAP_SCALES = {
     [HEATMAP_SCALE_EQUALIZED]: 'web:travel_heatmap_scale_equalized',
     [HEATMAP_SCALE_LOG]: 'web:travel_heatmap_scale_log',
+};
+
+const HEATMAP_STYLES = {
+    [HEATMAP_STYLE_GAUSS]: 'web:travel_heatmap_style_gauss',
+    [HEATMAP_STYLE_HYBRID]: 'web:travel_heatmap_style_hybrid',
+    [HEATMAP_STYLE_CELLS]: 'web:travel_heatmap_style_cells',
 };
 
 function resetHeatmapAppearance(ctx) {
@@ -117,6 +129,7 @@ export default function HeatmapAppearance({ onClose }) {
     };
 
     const percent = (v) => `${Math.round(v * 100)}%`;
+    const hasLines = ctx.travelHeatmapAppearance.style !== HEATMAP_STYLE_CELLS;
 
     return (
         <SecondaryMenuDrawer onClose={onClose}>
@@ -140,6 +153,15 @@ export default function HeatmapAppearance({ onClose }) {
             />
             <Box className={styles.filtersBody}>
                 <Box className={styles.filtersScroll}>
+                    <SelectItem
+                        title={t('web:travel_heatmap_style')}
+                        value={ctx.travelHeatmapAppearance.style}
+                        options={Object.entries(HEATMAP_STYLES).map(([key, name]) => ({ key, name: t(name) }))}
+                        getOptionLabel={(option) => option.name}
+                        getOptionValue={(option) => option.key}
+                        onSelect={(key) => setAppearance('style', key)}
+                        showDivider={false}
+                    />
                     <SelectItem
                         title={t('web:travel_heatmap_colors')}
                         value={ctx.travelHeatmapAppearance.palette}
@@ -172,22 +194,24 @@ export default function HeatmapAppearance({ onClose }) {
                         onChange={() => setAppearance('greyMap', !ctx.travelHeatmapAppearance.greyMap)}
                     />
                     <ThickDivider mt={0} />
-                    {slider({
-                        key: 'width',
-                        title: t('shared_string_width'),
-                        min: 0.5,
-                        max: 10,
-                        step: 0.25,
-                        format: String,
-                    })}
-                    {slider({
-                        key: 'glow',
-                        title: t('web:travel_heatmap_glow'),
-                        min: 0,
-                        max: 1,
-                        step: 0.05,
-                        format: percent,
-                    })}
+                    {hasLines &&
+                        slider({
+                            key: 'width',
+                            title: t('shared_string_width'),
+                            min: 0.5,
+                            max: 10,
+                            step: 0.25,
+                            format: String,
+                        })}
+                    {hasLines &&
+                        slider({
+                            key: 'glow',
+                            title: t('web:travel_heatmap_glow'),
+                            min: 0,
+                            max: 1,
+                            step: 0.05,
+                            format: percent,
+                        })}
                     {slider({
                         key: 'opacity',
                         title: t('web:travel_heatmap_opacity'),
