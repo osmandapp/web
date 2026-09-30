@@ -76,25 +76,24 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 في القائمة، توجد معلومات حول أسعار منتجات OsmAnd لمنطقة الولايات المتحدة وأوروبا. بالنسبة للمناطق الأخرى، تكون الأسعار معادلة بالعملات المحلية.
 
-<!--
 
-:::danger 🏖️ Summer Sale
+:::danger 🍂 تخفيضات الخريف
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+*أسرع! هذا العرض متاح فقط حتى* **4 أكتوبر (23:59 UTC)**.
+
+*بالنسبة للاشتراكات، يسري السعر المخفض على السنة الأولى.*
 
 :::
 
 
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) داخل التطبيق | اشتراك [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 Months) | **اشتراك** (1 Month / 12 Months) |
+| **السعر (يورو)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **السعر (دولار أمريكي)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-
--->
+<!--
 
 |    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) داخل التطبيق | اشتراك [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -102,6 +101,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 Months) | **اشتراك** (1 Month / 12 Months) |
 | **السعر (يورو)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **السعر (دولار أمريكي)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
 
 
 

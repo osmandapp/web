@@ -53,26 +53,25 @@ import Translate from '@site/src/components/Translate.js';
 
 Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le regioni USA ed Europa. Per le altre regioni, i prezzi sono equivalenti nelle valute locali.
 
-<!--
 
-:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+:::danger 🍂 Saldi d'autunno
+
+*Affrettati! Questa offerta è valida solo fino al* **4 ottobre (23:59 UTC)**.
+
+*Per gli abbonamenti, il prezzo scontato vale per il primo anno.*
 
 :::
 
 
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abbonamento | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Tipo di acquisto** | **Gratuito** | **Acquisto una tantum** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |
+| **Prezzo (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Prezzo (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-
--->
-
+<!--
 
 |    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abbonamento | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -80,6 +79,8 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | **Tipo di acquisto** | **Gratuito** | **Acquisto una tantum** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |
 | **Prezzo (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Prezzo (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
 
 
 
