@@ -1,5 +1,5 @@
 ---
-source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
+source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -26,7 +26,7 @@ Les Favoris dans le Planificateur Web vous permettent d'enregistrer et de gérer
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
-Après s'être inscrit à un [**OsmAnd Pro**](../personal/osmand-cloud.md#login) et pour [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), vos Favoris dans le Planificateur Web sont organisés en dossiers. Chaque dossier regroupe les lieux enregistrés et propose un ensemble d'actions disponibles depuis le menu des Favoris. 
+Après vous être connecté à un compte [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), vos Favoris dans le Planificateur Web sont organisés en dossiers. Chaque dossier regroupe les lieux enregistrés et propose un ensemble d'actions disponibles depuis le menu des Favoris. 
 Les actions suivantes sont disponibles :
 
 - *Afficher sur la carte* - afficher les points de favoris du dossier choisi sur la carte.
@@ -100,7 +100,7 @@ La boîte de dialogue inclut également une section Avancé, où les paramètres
 
 ### Apparence {#appearance}
 
-La section **Apparence** permet de personnaliser l'affichage du favori sur la carte. Les propriétés suivantes sont disponibles : icône, couleur, forme et icône. 
+La section **Apparence** permet de personnaliser l'affichage du favori sur la carte. Les propriétés suivantes sont disponibles : icône, couleur et forme. 
 
 La sélection de **Icône** ouvre un panneau secondaire avec des groupes d'icônes classés par catégories.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
+source-hash: 3e8ac9992e039c617c093a24702772bc6cdb0c520e1dcadb77013d26c7264441
 sidebar_position: 2
 title:  Achats et paiements
 ---
@@ -90,6 +90,10 @@ Si vous avez effectué des achats via Amazon, vous devrez **transférer vos abon
 
 ➡️ Actuellement, [le transfert multiplateforme est possible pour les abonnements et les achats intégrés](../purchases/cross.md).  
 ❗ **OsmAnd+** (application autonome) ne peut pas être transféré entre les plateformes via le compte OsmAnd Cloud. Pour obtenir de l'aide, veuillez contacter **support@osmand.net**.
+
+Si votre achat Amazon ne peut pas être activé automatiquement via OsmAnd Cloud, contactez le support d'OsmAnd — **support@osmand.net** — pour un transfert manuel. Indiquez le numéro de transaction Amazon commençant par D01-. Une capture d'écran montrant le produit acheté est également recommandée.
+
+Les achats effectués il y a plus de 10 ans ne peuvent pas être transférés.
 
 ## Comment restaurer l'achat du plugin Topographie (anciennement Lignes de niveau) {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 

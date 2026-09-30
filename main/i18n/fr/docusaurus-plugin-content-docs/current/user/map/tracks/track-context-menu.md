@@ -1,5 +1,5 @@
 ---
-source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
+source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
 sidebar_position: 4
 title:  Menu contextuel de la trace
 ---
@@ -42,9 +42,6 @@ Le *menu contextuel de la trace* fournit des informations sur la *[Trace](../../
 
 Lorsque vous appuyez sur une trace, le premier écran du *menu contextuel de la trace* s'ouvre - l'onglet *Aperçu*. Dans cet onglet, vous pouvez trouver un résumé de la trace choisie (*[Panneau d'information](#info-panel)*) et effectuer les actions les plus courantes avec la trace en utilisant le *[menu des actions de la trace](#track-actions)*. Vous pouvez voir la [description et les informations de service](#description-and-info) de votre trace si vous faites glisser l'onglet Aperçu vers le haut.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Panneau d'information {#info-panel}
 
@@ -130,7 +127,7 @@ Le menu **Options** vous permet de gérer et de modifier la trace sélectionnée
 
 - **<Translate android="true" ids="join_segments"/>** (*Android uniquement*) – Fusionne les segments de trace pour combler les lacunes.
 - **<Translate android="true" ids="analyze_on_map"/>**. Ouvre l'outil [Analyser sur la carte](../tracks/index.md#analyze-track-on-map) pour inspecter l'altitude, la vitesse, la distance et toute donnée supplémentaire contenue dans la trace (telles que les données de capteurs externes ou de métriques de véhicule) de la trace.
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android uniquement*) - Analyse la trace par [intervalles](./track-context-menu.md#analyze-by-intervals).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Android uniquement*) - Analyse la trace par [intervalles](./track-context-menu.md#analyze-by-intervals) de temps, de distance ou de montée/descente.
 
 <br/>
 
@@ -227,7 +224,7 @@ Cette section de l'onglet *Aperçu* affiche les ***données des balises*** et **
 </details>
 
 
-### Type d'activité de la trace {#ttrack-activity-type}
+### Type d'activité de la trace {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -248,7 +245,7 @@ Cette section de l'onglet *Aperçu* affiche les ***données des balises*** et **
 
 La fonction *Activité* dans OsmAnd vous permet de marquer les traces GPX enregistrées avec des activités spécifiques pour une analyse plus approfondie et une organisation dans des dossiers.
 
-- [Balises d'activité pour les traces GPX](#description-and-info). Les traces enregistrées et les traces enregistrées via [Planifier un itinéraire](../../plan-route/create-route.md) reçoivent automatiquement un type d'activité basé sur le profil utilisé pour les créer. Cela aide à les catégoriser et à les filtrer ultérieurement. Vous pouvez modifier l'activité manuellement si nécessaire.
+- [Balises d'activité pour les traces GPX](#description-and-info). Les [traces enregistrées](../../plugins/trip-recording.md#recording-settings) et les traces sauvegardées via [Planifier un itinéraire](../../plan-route/create-route.md) reçoivent automatiquement un type d'activité basé sur le profil utilisé pour les créer. Cela aide à les catégoriser et à les filtrer ultérieurement. Vous pouvez modifier l'activité manuellement si nécessaire.
 - [Filtre d'activité](../../personal/tracks/smart-folder.md#search-filter). Vous pouvez filtrer les traces GPX enregistrées par activité, ce qui vous permet de vous concentrer sur la recherche de types d'enregistrements spécifiques, comme toutes les traces de vélo ou de randonnée.
 - [Gérer les types d'activité](../../personal/tracks/manage-tracks.md#selection-mode). Vous pouvez modifier le type d'activité pour les dossiers ou les traces sélectionnés en utilisant le mode de sélection dans l'onglet Traces du menu Mes lieux.
 - **Liste d'activités**. Les catégories et groupes d'activités sont définis dans les ressources d'OsmAnd. Pour les développeurs et les contributeurs, la liste des activités est maintenue dans un format structuré à l'adresse [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), qui détaille les groupes et types d'activités disponibles.
@@ -693,8 +690,8 @@ L'option **Diviser par temps** divise une trace en intervalles de durée égale.
 Cette option divise une trace en segments basés sur les changements d'altitude. Chaque intervalle est classé comme ***montée***, ***descente*** ou ***plat***. Les intervalles sont affichés dans l'ordre dans lequel ils apparaissent le long de la trace, et chaque section de montée, de descente ou plate se voit attribuer son propre numéro d'index. La liste des intervalles fournit les mêmes statistiques de base que dans la section [Diviser par distance](#split-by-distance).
 
 Sur la carte, les segments sont marqués avec des étiquettes colorées au début de chaque intervalle :
-- **Segments en montée** (étiquettes rouges) montrent une flèche vers le haut, l'index du segment et la pente moyenne en pourcentage (par exemple, ↑ 11. 2 %).
-- **Segments en descente** (étiquettes vertes) montrent une flèche vers le bas, l'index du segment et la pente moyenne en pourcentage (par exemple, ↓ 12. -2 %).
+- **Segments en montée** (étiquettes rouges) montrent une flèche vers le haut, l'index du segment et la pente moyenne en pourcentage (par exemple, ↑ index 11, pente 2 %).
+- **Segments en descente** (étiquettes vertes) montrent une flèche vers le bas, l'index du segment et la pente moyenne en pourcentage (par exemple, ↓ index 12, pente −2 %).
 - **Segments plats** (étiquettes bleues) montrent la distance de la section plate (par exemple, 616 m, 411 m).
 
 Appuyez sur une étiquette pour ouvrir le panneau de détails du segment de montée, de descente ou plat sélectionné. Le panneau de détails affiche les statistiques du segment sélectionné, telles que la distance, la durée, la montée et la descente, l'altitude, la vitesse et les données liées au temps.
@@ -720,12 +717,6 @@ Cette option vous permet de visualiser les valeurs moyennes, minimales et maxima
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
 Ce filtre vous permet d'améliorer les statistiques de votre trace en excluant les données inutiles ou incorrectes. Vous pouvez filtrer les points de trace qui ne correspondent pas aux paramètres de votre trace et, par conséquent, obtenir un graphique et une ligne d'itinéraire visuelle plus précis, sans distorsion ni bruit d'enregistrement. Vous pouvez apporter des modifications avec des filtres tels que *Lissage*, *Vitesse*, *Altitude* et *Précision GPS*, qui masquent les points filtrés de la trace actuelle. De plus, dans le menu *Statistiques*, vous pouvez vérifier comment vos modifications sont affichées sur le graphique avant de les enregistrer. Vous pouvez également *Réinitialiser à l'original* et *Enregistrer comme une copie* de votre trace dans ce filtre sans enregistrer l'original.
-
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
-
-- "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
-- "&#8634;" button allows you to reset the track to the original.
-- "My track location" button allows you to move the map to your track.-->
 
 La page de l'application Filtre GPS sur Android comprend les éléments suivants :  
 

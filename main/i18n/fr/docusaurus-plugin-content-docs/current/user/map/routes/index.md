@@ -1,5 +1,5 @@
 ---
-source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title:  Itinéraires
 sidebar_position: 11
 ---
@@ -18,10 +18,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-OsmAnd propose de nombreuses fonctionnalités puissantes pour afficher différents [itinéraires](./types-of-routes.md) sur la carte. Par défaut, ces itinéraires font partie des [cartes vectorielles](../../map/vector-maps.md#routes) (données OpenStreetMap), mais une fonctionnalité similaire est fournie par les [traces](../../map/tracks/index.md) qui peuvent être créées avec [Planifier un itinéraire](../../plan-route/create-route.md), importées en tant que [traces GPX](#enregistrer-comme-une-trace), ou enregistrées avec le [plugin Enregistrement de trajet](../../plugins/trip-recording.md). La légende des itinéraires sur la carte se trouve [ici](../../map-legend/osmand.md#routes).
+OsmAnd propose de nombreuses fonctionnalités puissantes pour afficher différents [itinéraires](./types-of-routes.md) sur la carte. Par défaut, ces itinéraires font partie des [cartes vectorielles](../../map/vector-maps.md#routes) (données OpenStreetMap), mais une fonctionnalité similaire est fournie par les [traces](../../map/tracks/index.md) qui peuvent être créées avec [Planifier un itinéraire](../../plan-route/create-route.md), importées en tant que [traces GPX](#save-as-a-track), ou enregistrées avec le [plugin Enregistrement de trajet](../../plugins/trip-recording.md). La légende des itinéraires sur la carte se trouve [ici](../../map-legend/osmand.md#routes).
 
 
-## Afficher les itinéraires sur la carte {#afficher-les-itineraires-sur-la-carte}
+## Afficher les itinéraires sur la carte {#display-routes-on-the-map}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -32,7 +32,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,rend
 ![Section Itinéraires du menu Configurer la carte](@site/static/img/map/configure_map_routes_android.png) ![Classes d'itinéraires](@site/static/img/map/routes_classes_android.webp)
 
 - Pour afficher les itinéraires souhaités sur la carte, activez-les dans la *liste Itinéraires* du menu [Configurer la carte](../../map/configure-map-menu.md).
-- OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#enregistrer-comme-une-trace), et si l'ensemble visible des itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
+- OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#save-as-a-track), et si l'ensemble visible des itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
 - Les principaux types d'itinéraires peuvent également être filtrés par classes et sous-classes, ce qui permet d'afficher uniquement des groupes spécifiques au sein de chaque type. Par exemple, vous pouvez afficher les itinéraires de randonnée par **symboles OSMC** en tant que classes, et par réseaux *international, national, régional* ou *local*, ainsi que les *itinéraires non classés* en tant que sous-classes. Des filtres de classification de réseau similaires sont disponibles pour les itinéraires cyclables. Ces options sont actuellement disponibles lorsque le plugin [Développement OsmAnd](../../plugins/development.md) est activé. Lorsque plusieurs réseaux d'itinéraires se chevauchent, les classifications individuelles peuvent être activées ou désactivées pour n'afficher que les niveaux d'itinéraires souhaités.
 - Vous pouvez créer une trace au-dessus des itinéraires à l'aide de l'outil [Planifier un itinéraire](../../plan-route/create-route.md). 
 - Lorsque plusieurs itinéraires empruntent la même route, chaque itinéraire est affiché sous forme d'une ligne semi-transparente distincte placée au-dessus des autres. 
@@ -50,7 +50,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,renderin
 ![Menu Trace iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 - Pour afficher les itinéraires souhaités sur la carte, activez-les dans la *liste Itinéraires* du menu [Configurer la carte](../../map/configure-map-menu.md).
-- OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#enregistrer-comme-une-trace), et si l'ensemble visible des itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
+- OsmAnd peut mettre en évidence les [itinéraires présents sur OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). Ils peuvent être sélectionnés en appuyant sur [le symbole sur l'itinéraire](#save-as-a-track), et si l'ensemble visible des itinéraires est correctement configuré, vous pouvez suivre la couleur et les icônes.
 - Vous pouvez créer une trace au-dessus des itinéraires à l'aide de l'outil [Planifier un itinéraire](../../plan-route/create-route.md). 
 - Lorsque plusieurs itinéraires empruntent la même route, chaque itinéraire est affiché sous forme d'une ligne semi-transparente distincte placée au-dessus des autres.   
 
@@ -61,7 +61,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,renderin
 </Tabs>
 
 
-## Actions sur les itinéraires {#actions-sur-les-itineraires}
+## Actions sur les itinéraires {#actions-with-routes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -89,17 +89,17 @@ Lorsque vous appuyez sur un **symbole d'itinéraire** sur la carte :
 
 Dans le **menu contextuel**, vous pouvez :
 
-- Afficher des [informations supplémentaires](#infos-itineraire-et-denivele) sur l'itinéraire sélectionné.
-- [Enregistrer l'itinéraire](#enregistrer-comme-une-trace) en tant que **trace GPX**.
-- [Démarrer la navigation](#demarrer-la-navigation) le long de l'itinéraire.
+- Afficher des [informations supplémentaires](#route-info-and-elevation) sur l'itinéraire sélectionné.
+- [Enregistrer l'itinéraire](#save-as-a-track) en tant que **trace GPX**.
+- [Démarrer la navigation](#start-navigation) le long de l'itinéraire.
 
-### Détails des zones et des rochers d'escalade {#details-des-zones-et-des-rochers-d-escalade}
+### Détails des zones et des rochers d'escalade {#climbing-area-and-crag-details}
 
 ![Détails escalade](@site/static/img/map/climbing_andr.png)
 
-Lorsque vous sélectionnez une [zone ou un rocher d'escalade](./types-of-routes.md#itinaires-d-escalade), OsmAnd fournit un résumé détaillé du site d'escalade, incluant : nom et localisation, cotation de difficulté d'escalade (UIAA, Français, YDS, etc.), type de roche, hauteur et longueur de l'itinéraire, qualité d'escalade et conditions de surface.
+Lorsque vous sélectionnez une [zone ou un rocher d'escalade](./types-of-routes.md#climbing-routes), OsmAnd fournit un résumé détaillé du site d'escalade, incluant : nom et localisation, cotation de difficulté d'escalade (UIAA, Français, YDS, etc.), type de roche, hauteur et longueur de l'itinéraire, qualité d'escalade et conditions de surface.
 
-### Infos itinéraire et dénivelé {#infos-itineraire-et-denivele}
+### Infos itinéraire et dénivelé {#route-info-and-elevation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -122,7 +122,7 @@ Les informations suivantes seront visibles dans le menu contextuel :
 - **Infos itinéraire** : Nom de l'itinéraire, lien OSM (plugin Édition OSM requis), Type, Description, Distance, Direction, Montée/Descente, Plage d'altitude, Réseau, Opérateur, État, Couleur, Aller-retour, Points de départ/d'arrivée, et plus.
 - **Général** : Taille, Emplacement, Date de création.
 - **Infos supplémentaires**. Affiche le type d'activité.
-- Boutons d'action : [Enregistrer sous](#enregistrer-comme-une-trace) et [Démarrer la navigation](#demarrer-la-navigation).
+- Boutons d'action : [Enregistrer sous](#save-as-a-track) et [Démarrer la navigation](#start-navigation).
 - [Infos sur le dénivelé](../../navigation/setup/route-details.md#elevation-info). Affiche des informations sur les données d'altitude de l'itinéraire.
 - [Analyser la trace sur la carte](../../map/tracks/index.md#analyze-track-on-map). Affiche une analyse détaillée des données de la trace à l'aide de graphiques et de cartes.
 
@@ -132,7 +132,7 @@ Vous pouvez également ouvrir l'onglet *Trace* et passer à la vue *Altitude* po
 
 **Remarque :** Les données d'altitude sont générées automatiquement et peuvent légèrement varier selon les données disponibles.
 
-### Enregistrer comme une trace {#enregistrer-comme-une-trace}
+### Enregistrer comme une trace {#save-as-a-track}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -153,7 +153,7 @@ Vous pouvez également ouvrir l'onglet *Trace* et passer à la vue *Altitude* po
 
 Pour enregistrer l'itinéraire en tant que *fichier GPX*, appuyez sur le bouton **Enregistrer (Télécharger)** sous le [panneau Infos](../../map/tracks/track-context-menu.md#info-panel). Cela ouvrira le panneau de boutons [Actions rapides](../../map/tracks/track-context-menu.md#track-actions) où vous aurez accès aux actions de trace telles que la modification de l'[Apparence](../../map/tracks/appearance.md), la [Navigation](../../navigation/setup/route-navigation.md), ou la modification via [Planifier un itinéraire](../../plan-route/create-route.md). Les itinéraires enregistrés se comportent de la même manière que les autres traces et sont disponibles dans votre collection de traces.
 
-### Démarrer la navigation {#demarrer-la-navigation}
+### Démarrer la navigation {#start-navigation}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -175,12 +175,12 @@ Pour démarrer la navigation le long de l'itinéraire OSM sélectionné, appuyez
 
 Cela lancera le mode [**Navigation par trace**](../../navigation/setup/gpx-navigation.md), vous permettant de suivre l'itinéraire avec des instructions vocales et des fonctionnalités de navigation.
 
-### Actions rapides {#actions-rapides}
+### Actions rapides {#quick-actions}
 
 Vous pouvez personnaliser l'activation ou la désactivation des itinéraires à l'aide du widget [Action rapide](../../widgets/quick-action.md#configure-map).
 
 
-## Recherche d'itinéraires {#recherche-d-itineraires}
+## Recherche d'itinéraires {#routes-search}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -198,13 +198,13 @@ Vous pouvez personnaliser l'activation ou la désactivation des itinéraires à 
 
 </Tabs>  
 
-Recherchez des itinéraires à l'aide de la [fonction Recherche](../../search/index.md) par nom ou en sélectionnant « Itinéraires » dans la [section Catégories](../../search/search-poi.md#).
+Recherchez des itinéraires à l'aide de la [fonction Recherche](../../search/index.md) par nom ou en sélectionnant « Itinéraires » dans la [section Catégories](../../search/search-poi.md#poi-search-by-categories).
 
 Pour rechercher, allez dans le menu *<Translate android="true" ids="search_button"/>* ou *<Translate android="true" ids="search_button,search_categories"/>* et saisissez votre activité.
 
 Naviguez vers *<Translate android="true" ids="search_button,search_categories,poi_routes"/>* pour trouver les itinéraires souhaités. Les résultats de recherche d'itinéraires affichent le nom de l'itinéraire, le type d'activité, la longueur, la localisation, la montée/descente (sur Android) et la distance jusqu'au point le plus proche. 
 
-### Filtres d'itinéraires {#filtres-d-itineraires}
+### Filtres d'itinéraires {#routes-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -222,12 +222,12 @@ Naviguez vers *<Translate android="true" ids="search_button,search_categories,po
 
 </Tabs>
 
-Dans les résultats de recherche d'itinéraires, appuyez sur le bouton **Filtres** en haut à droite pour affiner la liste. L'écran Filtres comprend un champ **Filtrer par nom** ; un bloc **Type** avec *Bureau*, *Annexe postale* et *Partenaire postal* ; et des **critères supplémentaires** qui dépendent de la catégorie d'itinéraire ou de l'activité sélectionnée, car chaque catégorie peut exposer ses propres caractéristiques et valeurs de filtre.
+Dans les résultats de recherche d'itinéraires, appuyez sur le bouton **Filtres** en haut à droite pour affiner la liste. L'écran Filtres comprend un champ **Filtrer par nom** et des **critères supplémentaires** qui dépendent de la catégorie d'itinéraire ou de l'activité sélectionnée, car chaque catégorie peut exposer ses propres caractéristiques et valeurs de filtre.
 
 Vous pouvez activer ou désactiver les filtres à l'aide des interrupteurs, et certaines sections incluent *Afficher tout* pour afficher des valeurs supplémentaires.
 
 
-## Articles connexes {#articles-connexes}
+## Articles connexes {#related-articles}
 
 - [Menu contextuel de la carte](../../map/map-context-menu.md)
 - [Configurer la carte](../../map/configure-map-menu.md)
@@ -235,5 +235,5 @@ Vous pouvez activer ou désactiver les filtres à l'aide des interrupteurs, et c
 - [Menu contextuel des traces](../../map/tracks/track-context-menu.md)
 - [Transports en commun](../public-transport.md)
 - [Apparence de la ligne d'itinéraire de navigation](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [Rechercher un POI](../../search/search-poi.md#)
+- [Rechercher un POI](../../search/search-poi.md)
 - [Types d'itinéraires](./types-of-routes.md)

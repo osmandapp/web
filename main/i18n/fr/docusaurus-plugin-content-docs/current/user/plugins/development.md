@@ -1,5 +1,5 @@
 ---
-source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
+source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
 sidebar_position: 11
 title:  Développement OsmAnd
 ---
@@ -83,16 +83,13 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 ### Test de l'application {#application-testing}
 
-:::caution Android uniquement
-:::
-
-- **Simuler le premier démarrage de l'application**. Définit l'indicateur signalant le premier démarrage de l'application, tout en conservant tous les autres paramètres inchangés.  
-- **Tester les invites vocales**. Sélectionnez une voix et testez en lisant des annonces.
+- **Simuler le premier démarrage de l'application** (*Android*). Définit l'indicateur signalant le premier démarrage de l'application, tout en conservant tous les autres paramètres inchangés.  
+- **Tester les invites vocales** (*Android*). Sélectionnez une voix et testez en lisant des annonces.
 - **<Translate ios="true" ids="show_touches"/>** (*iOS*). Met en évidence les touches de l'écran avec des indicateurs visuels.
-- **Barre d'état transparente**. La carte devient visible sous la barre d'état.  
-- **Afficher la bannière de la version gratuite**. Affiche la bannière de la version gratuite même dans la version payante.  
-- **Afficher les informations de débogage**. Affiche des informations graphiques sur l'emplacement de chaque texte sur la carte.
-- **Autoriser l'affichage au-dessus**. Permet aux textes de la carte de s'afficher les uns sur les autres.
+- **Barre d'état transparente** (*Android*). La carte devient visible sous la barre d'état.  
+- **Afficher la bannière de la version gratuite** (*Android*). Affiche la bannière de la version gratuite même dans la version payante.  
+- **Afficher les informations de débogage** (*Android*). Affiche des informations graphiques sur l'emplacement de chaque texte sur la carte.
+- **Autoriser l'affichage au-dessus** (*Android*). Permet aux textes de la carte de s'afficher les uns sur les autres.
 
 
 ### Algorithmes internes {#internal-algorithms}
@@ -100,7 +97,8 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 :::caution Android uniquement
 :::
 
-- **Mode sans échec**. Exécute OsmAnd sans la bibliothèque C++ native, en utilisant des implémentations Java pour le rendu de la carte et le calcul d'itinéraire à la place. L'application passe automatiquement en mode sans échec si la bibliothèque native échoue au démarrage, ce qui lui permet de démarrer et de rester utilisable. Le rendu de la carte et le calcul d'itinéraire sont nettement plus lents lorsque le mode sans échec est actif.  
+- **Mode sans échec**. Exécute OsmAnd sans la bibliothèque C++ native, en utilisant des implémentations Java pour le rendu de la carte et le calcul d'itinéraire à la place. L'application passe automatiquement en mode sans échec si la bibliothèque native échoue au démarrage, ce qui lui permet de démarrer et de rester utilisable. Le rendu de la carte et le calcul d'itinéraire sont nettement plus lents lorsque le mode sans échec est actif. 
+- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
 
 
 ### Paramètres de mémoire {#memory-settings}
@@ -114,6 +112,8 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 
 - Une allocation de mémoire plus élevée peut avoir un impact sur les performances d'autres applications.
 - [Calcul d'itinéraires de 50 km pour les piétons](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
+
+- **Mémoire Java** indique la quantité de mémoire Java utilisée par l'application et ouvre les outils d'histogramme de tas : *Collecter et analyser maintenant*, *Partager le rapport* et *Collecter en cas d'utilisation élevée* (désactivé par défaut). Voir [Histogramme de tas pour les problèmes de mémoire](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android) pour savoir quand les utiliser.
 
 
 ### Informations et statistiques {#info-and-statistics}
@@ -351,7 +351,7 @@ OsmAnd offre la possibilité de simuler la position et le mouvement de votre app
 
 </Tabs>  
 
-Après avoir lancé la simulation, vous verrez sur l'écran principal de l'application que le marqueur de navigation se déplace selon la trace GPX. Appuyez sur le [bouton ma position](../map/interact-with-map.md#my-location-and-zoom) pour synchroniser *Ma position* (géolocalisation simulée de l'appareil) avec le centre de la carte.  
+Après avoir lancé la simulation, vous verrez sur l'écran principal de l'application que le marqueur de navigation se déplace selon la trace GPX. Appuyez sur le [bouton ma position](../map/interact-with-map.md#my-position-and-zoom) pour synchroniser *Ma position* (géolocalisation simulée de l'appareil) avec le centre de la carte.  
 Pour arrêter la simulation du mouvement de votre appareil, retournez aux [paramètres](#plugin-settings) de développement d'OsmAnd et appuyez sur **arrêter** dans l'option **simuler votre position**.
 
 - *<Translate android="true" ids="simulate_location_by_gpx"/>* peut également être accessible via le **[menu d'action rapide](../widgets/quick-action.md#navigation)**.
