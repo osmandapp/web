@@ -5,6 +5,7 @@ import GlobalFrame from './frame/GlobalFrame';
 import { AppContextProvider } from './context/AppContext';
 import { WeatherContextProvider } from './context/WeatherContext';
 import { MapContextProvider } from './context/MapContext';
+import { MvtContextProvider } from './context/MvtContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
 import './variables.css';
@@ -212,7 +213,9 @@ const App = () => {
                     <AppContextProvider key={'app-' + resetKey}>
                         <WeatherContextProvider>
                             <MapContextProvider>
-                                <RouterProvider router={router} future={{ v7_startTransition: true }} />
+                                <MvtContextProvider>
+                                    <RouterProvider router={router} future={{ v7_startTransition: true }} />
+                                </MvtContextProvider>
                             </MapContextProvider>
                         </WeatherContextProvider>
                     </AppContextProvider>

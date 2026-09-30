@@ -1,14 +1,24 @@
 import { useContext, useEffect, useRef } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
+import isEqual from 'lodash-es/isEqual';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import '@maplibre/maplibre-gl-leaflet';
 import AppContext, { OBJECT_TYPE_POI, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import MvtContext from '../../context/MvtContext';
 import { osmandTileURL } from '../baseTileURL';
-import { isWebGLAvailable } from './MvtLayerConfig';
+import { isOsmAndTileURL, isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
+import {
+    getMvtDataTileUrl,
+    getMvtTileStats,
+    getMvtTileZoom,
+    setMapDataZoomShift,
+    setMapStyleDetailShift,
+    watchMvtZoom,
+} from '../util/MvtMapUtils';
 import {
     ensureLeafletPane,
     setMapHybridVisibility,
@@ -66,7 +76,7 @@ function getMvtSources(config) {
 }
 
 function getTileCoord({ lat, lng }, source, zoom) {
-    const z = Math.max(source.minzoom, Math.min(source.maxzoom, Math.floor(zoom)));
+    const z = getMvtTileZoom(source, zoom);
     const n = 2 ** z;
     const sin = Math.sin((Math.max(-85.05112878, Math.min(85.05112878, lat)) * Math.PI) / 180);
     const x = Math.floor((((L.Util.wrapNum(lng, [-180, 180], true) + 180) / 360) * n) % n);
@@ -99,9 +109,11 @@ export default function MvtLayer({ config }) {
     const map = useMap();
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const vtx = useContext(MvtContext);
     const hybridUnderlayUrl = useHybridUnderlayUrl();
     const hybridUnderlayUrlRef = useRef(hybridUnderlayUrl);
     const maplibreMapRef = useRef(null);
+    const dataZoomShift = ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) ? vtx.mvtTweaks.dataZoomShift : 0;
 
     hybridUnderlayUrlRef.current = hybridUnderlayUrl;
 
@@ -131,8 +143,9 @@ export default function MvtLayer({ config }) {
             ensureLeafletPane(map, paneName, paneZIndex);
         }
 
+        const shiftedTileUrl = getMvtDataTileUrl(tileUrl, dataZoomShift);
         const glLayer = L.maplibreGL({
-            style: createStyle(style, tileUrl, {
+            style: createStyle(style, shiftedTileUrl, {
                 hideHybridLayers: Boolean(hybridUnderlayUrlRef.current),
             }),
             interactive: false,
@@ -144,22 +157,35 @@ export default function MvtLayer({ config }) {
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES && ctx.develFeatures === true;
 
         const sourceOwner = Symbol(config.tileUrl);
-        const sources = getMvtSources(config).map((source) => ({
+        const sources = getMvtSources({ ...config, tileUrl: shiftedTileUrl }).map((source) => ({
             ...source,
             sourceOwner,
             layerKey: mtx.tileURL?.key,
             getZoom: () => maplibreMap.getZoom(),
         }));
         map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
+        const stopZoomStats = ctx.develFeatures ? watchMvtZoom(map, sources, vtx.setMvtTileStats) : null;
+        const tileStatsCache = ctx.develFeatures ? new WeakMap() : null;
 
         const handleLoading = () => {
             window.seIsTilesLoaded = false;
+            if (ctx.develFeatures) {
+                vtx.setMvtTileStats((stats) =>
+                    stats?.count == null && stats?.bytes == null
+                        ? stats
+                        : { ...stats, bytes: null, features: null, vertices: null, count: null }
+                );
+            }
         };
 
         const handleIdle = () => {
             // the first idle comes before the tiles of the view are loaded
             if (maplibreMap.loaded() && maplibreMap.areTilesLoaded()) {
                 window.seIsTilesLoaded = true;
+                if (ctx.develFeatures) {
+                    const nextStats = getMvtTileStats(maplibreMap, map, tileStatsCache);
+                    vtx.setMvtTileStats((stats) => (isEqual(stats, nextStats) ? stats : nextStats));
+                }
             }
         };
 
@@ -227,6 +253,11 @@ export default function MvtLayer({ config }) {
             maplibreMap.off('dataloading', handleLoading);
             maplibreMap.off('idle', handleIdle);
             maplibreMap.off('error', handleError);
+            stopZoomStats?.();
+            if (ctx.develFeatures) {
+                vtx.setMvtTileStats(null);
+                vtx.setMvtStyleUpdating(false);
+            }
             map[TILE_SOURCES_KEY] = (map[TILE_SOURCES_KEY] || []).filter(
                 (source) => source.sourceOwner !== sourceOwner
             );
@@ -237,24 +268,58 @@ export default function MvtLayer({ config }) {
 
     useEffect(() => {
         const maplibreMap = maplibreMapRef.current;
+        if (!maplibreMap || !config.isActive(mtx.tileURL) || !isOsmAndTileURL(mtx.tileURL)) {
+            return undefined;
+        }
+        const applyShift = () => {
+            const sources = (map[TILE_SOURCES_KEY] || []).filter((source) => source.layerKey === mtx.tileURL.key);
+            setMapDataZoomShift(maplibreMap, sources, config.tileUrl, dataZoomShift);
+        };
+        if (maplibreMap.isStyleLoaded()) {
+            applyShift();
+        } else {
+            maplibreMap.once('idle', applyShift);
+        }
+
+        return () => maplibreMap.off('idle', applyShift);
+    }, [config, mtx.tileURL, ctx.develFeatures, dataZoomShift]);
+
+    useEffect(() => {
+        const maplibreMap = maplibreMapRef.current;
         if (!maplibreMap || !config.isActive(mtx.tileURL)) {
             return undefined;
         }
 
-        const applyVisibility = () => {
+        const finishStyle = () => vtx.setMvtStyleUpdating(false);
+        const applyStyle = () => {
             setMapHybridVisibility(maplibreMap, config.style, Boolean(hybridUnderlayUrl));
+            setMapStyleDetailShift(
+                maplibreMap,
+                config.style,
+                ctx.develFeatures ? vtx.mvtTweaks.styleDetailShift : 0,
+                vtx.mvtTweaks.minZoomIdFilter
+            );
+            maplibreMap.once('idle', finishStyle);
         };
 
         if (maplibreMap.isStyleLoaded()) {
-            applyVisibility();
-            return undefined;
+            applyStyle();
+        } else {
+            maplibreMap.once('idle', applyStyle);
         }
 
-        maplibreMap.once('idle', applyVisibility);
         return () => {
-            maplibreMap.off('idle', applyVisibility);
+            maplibreMap.off('idle', applyStyle);
+            maplibreMap.off('idle', finishStyle);
         };
-    }, [config, mtx.tileURL, hybridUnderlayUrl]);
+    }, [
+        config,
+        mtx.tileURL,
+        hybridUnderlayUrl,
+        ctx.develFeatures,
+        vtx.mvtTweaks.styleDetailShift,
+        vtx.mvtTweaks.minZoomIdFilter,
+    ]);
 
     return null;
 }

@@ -39,6 +39,7 @@ import ButtonPro from '../../frame/pro/ButtonPro';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import MvtTweaks from './MvtTweaks';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import ActionsMenu from '../actions/ActionsMenu';
 import LoginContext from '../../context/LoginContext';
@@ -329,6 +330,7 @@ export default function ConfigureMap() {
                                         </Button>
                                     </Box>
                                 )}
+                                <MvtTweaks />
                                 {isMvtTileURL(mtx.tileURL) && (
                                     <Box sx={{ ml: 1, mr: 2, mt: 1 }}>
                                         <Button variant="outlined" fullWidth onClick={toggleHybridUnderlayUrl}>
