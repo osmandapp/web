@@ -6,6 +6,10 @@ export function getMvtDataTileUrl(tileUrl, shift) {
     return shift ? `${tileUrl}${tileUrl.includes('?') ? '&' : '?'}shift=${shift}` : tileUrl;
 }
 
+export function getMvtTileZoom(source, zoom) {
+    return Math.max(source.minzoom, Math.min(source.maxzoom, Math.floor(zoom)));
+}
+
 export function setMapDataZoomShift(maplibreMap, sources, tileUrl, shift) {
     const url = getMvtDataTileUrl(tileUrl, shift);
     const source = maplibreMap.getSource('osm');
@@ -35,9 +39,7 @@ export function setMapStyleDetailShift(maplibreMap, style, shift, minZoomIdFilte
 export function watchMvtZoom(map, sources, setStats) {
     const update = () => {
         const mapZoom = Number(map.getZoom().toFixed(2));
-        const zooms = sources.map((source) =>
-            Math.max(source.minzoom, Math.min(source.maxzoom, Math.floor(source.getZoom())))
-        );
+        const zooms = sources.map((source) => getMvtTileZoom(source, source.getZoom()));
         const zoom = zooms.length ? Math.max(...zooms) : null;
         setStats((stats) => (stats?.mapZoom === mapZoom && stats?.zoom === zoom ? stats : { ...stats, mapZoom, zoom }));
     };

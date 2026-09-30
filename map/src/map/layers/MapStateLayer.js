@@ -188,15 +188,23 @@ export default function MapStateLayer() {
         };
     }, []);
 
+    useEffect(() => {
+        if (fractionalZoom) {
+            return undefined;
+        }
+        const originalZoomSnap = map.options.zoomSnap;
+        map.stop();
+        map.options.zoomSnap = 1;
+        map.setZoom(Math.trunc(map.getZoom()), { animate: false });
+
+        return () => {
+            map.options.zoomSnap = originalZoomSnap;
+        };
+    }, [fractionalZoom]);
+
     // Leaflet's zoom animation CSS-scales the MapLibre canvas as a bitmap for 250 ms, then MapLibre redraws: the map
     // and its markers jump. Moving the map by a fraction of a zoom level per frame lets MapLibre render every step.
     useEffect(() => {
-        const originalZoomSnap = map.options.zoomSnap;
-        if (!fractionalZoom) {
-            map.stop();
-            map.options.zoomSnap = 1;
-            map.setZoom(Math.trunc(map.getZoom()), { animate: false });
-        }
         const container = map.getContainer();
         const originalStop = map._stop;
         const originalZoomIn = map.zoomIn;
@@ -349,7 +357,6 @@ export default function MapStateLayer() {
             map.setZoom = originalSetZoom;
             map.setZoomAround = originalSetZoomAround;
             stopZoom();
-            map.options.zoomSnap = originalZoomSnap;
         };
     }, [ctx.infoBlockWidth, fractionalZoom]);
 

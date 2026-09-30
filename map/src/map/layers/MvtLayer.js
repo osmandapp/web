@@ -14,6 +14,7 @@ import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelecti
 import {
     getMvtDataTileUrl,
     getMvtTileStats,
+    getMvtTileZoom,
     setMapDataZoomShift,
     setMapStyleDetailShift,
     watchMvtZoom,
@@ -75,7 +76,7 @@ function getMvtSources(config) {
 }
 
 function getTileCoord({ lat, lng }, source, zoom) {
-    const z = Math.max(source.minzoom, Math.min(source.maxzoom, Math.floor(zoom)));
+    const z = getMvtTileZoom(source, zoom);
     const n = 2 ** z;
     const sin = Math.sin((Math.max(-85.05112878, Math.min(85.05112878, lat)) * Math.PI) / 180);
     const x = Math.floor((((L.Util.wrapNum(lng, [-180, 180], true) + 180) / 360) * n) % n);
@@ -281,7 +282,7 @@ export default function MvtLayer({ config }) {
         }
 
         return () => maplibreMap.off('idle', applyShift);
-    }, [map, config, mtx.tileURL, ctx.develFeatures, dataZoomShift]);
+    }, [config, mtx.tileURL, ctx.develFeatures, dataZoomShift]);
 
     useEffect(() => {
         const maplibreMap = maplibreMapRef.current;
