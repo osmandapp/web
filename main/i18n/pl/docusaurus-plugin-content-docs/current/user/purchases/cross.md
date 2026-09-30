@@ -1,8 +1,9 @@
 ---
-source-hash: 803b22736228c5b37a1814163faeb441138781434f1ba2a3069b7668f1ffe213
+source-hash: 856b27defd24e63764e7fed8d4ebb2d645fd0d1b4aec10804b2f835f0c0ec2e0
 sidebar_position: 4
 title:  Zakupy międzyplatformowe
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
 
 
 ## Obsługiwane zakupy międzyplatformowe {#supported-cross-platform-purchases}
@@ -80,6 +80,20 @@ Jeśli problem nadal występuje, skontaktuj się z **support@osmand.net** i poda
 - Rodzaj zakupu (Pro / Maps+ jednorazowy / subskrypcja Maps+).
 
 
+### Ręczny transfer {#manual-transfer}
+
+Jeśli zakupu nie można aktywować automatycznie przez OsmAnd Cloud, zespół Wsparcia — **support@osmand.net** — może dokonać ręcznego transferu.
+
+Aby poprosić o ręczny transfer, podaj:
+- Swój e-mail konta OsmAnd Cloud.
+- Numer transakcji lub zamówienia zakupu.
+- Zalecane jest również zrzut ekranu pokazujący zakupiony produkt.
+
+Bez numeru transakcji lub zamówienia zakupu oraz zarejestrowanego konta OsmAnd Cloud Wsparcie zwykle nie może przenieść zakupu.
+
+Zakupów dokonanych ponad 10 lat temu nie można przenieść.
+
+
 ### Zakupy i wiele kont {#purchases-and-multiple-accounts}
 
 Zakup międzyplatformowy jest powiązany z kontem OsmAnd Cloud, które zostało ostatnio aktywowane na urządzeniu posiadającym oryginalny dowód zakupu (z App Store lub Google Play). Jeśli wylogujesz się z głównego konta i zalogujesz na nowe na tym urządzeniu, system automatycznie przeniesie licencję na nowe konto. W rezultacie Twoje pierwotne konto OsmAnd Cloud traci status zakupów na innych platformach, ponieważ licencja może być aktywna tylko na jednym koncie OsmAnd Cloud w danym momencie. Więcej informacji znajdziesz [tutaj](../troubleshooting/purchases_payments.md#purchase-association-with-multiple-osmand-cloud-accounts).
@@ -87,12 +101,12 @@ Zakup międzyplatformowy jest powiązany z kontem OsmAnd Cloud, które zostało 
 
 ## Przykład {#example}
 
-Kupiłeś **Maps+** jako jednorazowy zakup w aplikacji w darmowej wersji OsmAnd ze sklepu [Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).  
+Kupiłeś **Maps+** jako jednorazowy zakup w aplikacji w darmowej wersji OsmAnd ze sklepu [Google Play](https://play.google.com/store/apps/details?id=net.osmand).  
 Później decydujesz się przejść na iPhone'a i chcesz używać **Maps+** z [wersją OsmAnd na iOS](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 Aby aktywować zakup Maps+ na iOS:
 
-1. Otwórz **wersję Amazon** aplikacji OsmAnd na swoim oryginalnym urządzeniu.
+1. Otwórz OsmAnd na oryginalnym urządzeniu z Androidem.
 2. Zaloguj się na swoje konto [OsmAnd Cloud](../personal/osmand-cloud.md#login):  
    *Menu → Ustawienia → OsmAnd Cloud → Utwórz nowe konto / Mam już konto*
 3. Zainstaluj OsmAnd na swoim iPhonie ze sklepu [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)

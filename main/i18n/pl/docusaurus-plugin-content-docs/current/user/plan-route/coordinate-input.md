@@ -1,8 +1,9 @@
 ---
-source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
+source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
 sidebar_position: 3
 title:  Wprowadzanie współrzędnych
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -23,11 +24,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Jak używać {#how-to-use}
 
-Możesz tworzyć punkty trasy z menu *[Znaczniki na mapie](../personal/markers.md#actions)* lub z [Moje miejsca](../personal/myplaces.md) (zobacz zrzuty ekranu). Aby dotrzeć do opcji wprowadzania współrzędnych, postępuj zgodnie z poniższymi ścieżkami:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Przycisk Ziemi na dole ekranu*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+Punkty trasy można tworzyć z menu *[Znaczniki na mapie](../personal/markers.md#actions)*. Przejdź do: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Jak znaleźć wprowadzanie współrzędnych](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Jak znaleźć wprowadzanie współrzędnych](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
+![Jak znaleźć wprowadzanie współrzędnych](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png)
 
 Po otwarciu ekranu wprowadzania współrzędnych:
 
@@ -99,7 +98,7 @@ Po dotknięciu punktu staje się możliwe zmienienie jego współrzędnych. Dotk
 
 Aby zapisać swoje punkty jako trasę, dotknij przycisku *Wstecz* ( &#8592; ) lub użyj menu *[Opcje](#options)*.
 
-![Zapisywanie punktu przez wprowadzanie współrzędnych na Androidzie 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Zapisywanie punktu przez wprowadzanie współrzędnych na Androidzie 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![Zapisywanie punktu przez wprowadzanie współrzędnych na Androidzie 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Zapisywanie punktu przez wprowadzanie współrzędnych na Androidzie 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
 
 W wyskakującym menu możesz wprowadzić własną nazwę trasy lub zapisać ją jako domyślną. Dotknij <Translate android="true" ids="shared_string_save"/>, aby zapisać dodane punkty jako nową trasę.
 Swoją trasę znajdziesz w menu [Moje miejsca](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

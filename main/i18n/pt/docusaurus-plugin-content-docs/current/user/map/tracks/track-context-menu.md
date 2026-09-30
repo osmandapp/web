@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
@@ -42,9 +42,6 @@ O *menu de contexto da trilha* fornece informações sobre a *[Trilha](../../per
 
 Ao tocar em uma trilha, a primeira tela do *Menu de contexto da trilha* é aberta - a *aba Visão Geral*. Nesta aba, você pode encontrar um resumo sobre a trilha escolhida (*[Painel de informações](#info-panel)*) e realizar as ações mais comuns com a trilha usando o *[Menu de ações da trilha](#track-actions)*. Você pode ver [descrição e informações de serviço](#description-and-info) sobre sua trilha se você puxar a aba Visão Geral para cima.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Painel de Informações {#info-panel}
 
@@ -227,7 +224,7 @@ Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as infor
 </details>
 
 
-### Tipo de Atividade da Trilha {#ttrack-activity-type}
+### Tipo de Atividade da Trilha {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -248,7 +245,7 @@ Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as infor
 
 O recurso *Atividade* no OsmAnd permite que você marque trilhas GPX gravadas com atividades específicas para análise e organização futuras em pastas.
 
-- [Tags de atividade para trilhas GPX](#description-and-info). Trilhas gravadas e trilhas salvas via [Planejar uma rota](../../plan-route/create-route.md) recebem automaticamente um tipo de atividade com base no perfil usado para criá-las. Isso ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
+- [Tags de atividade para trilhas GPX](#description-and-info). [Trilhas gravadas](../../plugins/trip-recording.md#recording-settings) e trilhas salvas via [Planejar uma rota](../../plan-route/create-route.md) recebem automaticamente um tipo de atividade com base no perfil usado para criá-las. Isso ajuda a categorizá-las e filtrá-las posteriormente. Você pode alterar a atividade manualmente, se necessário.
 - [Filtro de atividade](../../personal/tracks/smart-folder.md#search-filter). Você pode filtrar as trilhas GPX gravadas por atividade, o que permite focar na localização de tipos específicos de gravações, como todas as trilhas de ciclismo ou caminhada.
 - [Gerenciar tipos de atividade](../../personal/tracks/manage-tracks.md#selection-mode). Você pode alterar o tipo de atividade para pastas ou trilhas selecionadas usando o modo de seleção na aba Trilhas do menu Meus Locais.
 - **Lista de atividades**. As categorias e grupos de atividades são definidos nos recursos do OsmAnd. Para desenvolvedores e colaboradores, a lista de atividades é mantida em um formato estruturado em [activities.json](https://github.com/osmandapp/OsmAnd-resources/blob/master/poi/activities.json), que detalha os grupos e tipos de atividades disponíveis.
@@ -364,11 +361,13 @@ Se não houver *informações de elevação* na rota, você pode adicioná-las d
 
 ### Calcular Elevação Faltante {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Recurso Pro
 [Calcular elevação offline](../../plan-route/create-route.md#get-elevation-data) é um recurso pago do [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Este recurso](../../plan-route/create-route.md#get-elevation-data) permite calcular o perfil de elevação para trilhas GPX offline para qualquer terreno entre 70 graus de latitude norte e 70 graus de latitude sul, com base nos [dados do mapa de terreno](../../plugins/topography.md#download-maps). *Os mapas de terreno (3D) devem ter sido baixados previamente*.
 
@@ -377,11 +376,27 @@ Se não houver *informações de elevação* na rota, você pode adicioná-las d
 
     ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Se você estiver criando uma rota com a ferramenta [Planejar uma rota](../../plan-route/create-route.md#graph) usando o método *Linha reta* e não houver dados de elevação no gráfico, você precisa:
+3. Se você estiver criando uma rota com a ferramenta [Planejar uma rota](../../plan-route/create-route.md#graph--analyze) usando o método *Linha reta* e não houver dados de elevação no gráfico, você precisa:
     - Tocar em *Obter dados de elevação* e, em seguida, selecionar *Usar mapas de terreno*.
     - Após o cálculo, você obterá o gráfico completo de Altitude/Inclinação da sua rota com base nos dados de terreno.  
 
   ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Gráfico de altitude da trilha Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Dados de elevação iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Dados de elevação iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Este recurso](../../plan-route/create-route.md#get-elevation-data) permite calcular dados de elevação ausentes para uma [rota planejada](../../plan-route/create-route.md#create-new-route) ou uma [trilha GPX existente](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+Se você criar uma rota usando o método Linha reta e os dados de elevação não estiverem disponíveis, toque em *Obter dados de elevação* na aba Analisar e selecione *Usar mapas de terreno*. Os [Mapas de terreno (3D)](../../plugins/topography.md#download-maps) baixados previamente são necessários. O perfil de elevação é então calculado com base nos dados do terreno, enquanto a geometria da rota permanece inalterada.
+
+Para uma trilha GPX existente, você pode selecionar *Usar estradas próximas*. O OsmAnd anexa a trilha às estradas permitidas mais próximas usando um perfil de navegação selecionado e recupera os dados de elevação das estradas anexadas. Esta opção pode ajustar a geometria da trilha. Se necessário, você também pode selecionar *Usar mapas de terreno* para calcular a elevação mantendo a geometria da trilha inalterada.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Pontos / Waypoints {#points--waypoints}
@@ -392,13 +407,13 @@ Waypoints são um dos tipos de pontos disponíveis no mapa. Em geral, eles podem
 
 <TabItem value="android" label="Android">
 
-![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Pontos do menu de contexto da trilha Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Pontos do menu de contexto da trilha iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +423,7 @@ Nesta aba *Pontos*:
 
 - [Mostrar dados de pontos da trilha](#display-custom-gpx-tags) e modificar seus pontos da trilha (waypoints e pontos de rota), [excluí-los e adicionar](#points--waypoints) waypoints a uma trilha.
 - Criar e modificar [Grupo (pasta) de pontos](#waypoint-groups).
-- Centralizar o mapa em um waypoint usando o ícone de alfinete na lista de waypoints (*somente Android*) sem fechar a lista, permitindo que você visualize os waypoints um por um.
+- Mostrar um waypoint no mapa usando o ícone de alfinete na lista de waypoints. O mapa centraliza no waypoint sem fechar a lista ou alterar o nível de zoom atual.
 
 
 ### Adicionar Waypoint a uma Trilha {#add-waypoint-to-a-track}
@@ -702,12 +717,6 @@ Esta opção permite visualizar os valores de frequência cardíaca média, mín
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
 Este filtro permite melhorar as estatísticas da sua trilha, excluindo dados desnecessários ou incorretos. Você pode filtrar pontos da trilha que não se encaixam nos parâmetros da sua trilha e, como resultado, obter um gráfico e uma linha de rota visual mais precisos, sem distorção ou ruído de gravação. Você pode fazer alterações com filtros como *Suavização*, *Velocidade*, *Altitude* e *Precisão GPS*, que ocultam os pontos filtrados da trilha atual. Além disso, no menu *Estatísticas*, você pode verificar como suas alterações são exibidas no gráfico antes de salvá-las. Você também pode *Redefinir para o original* e *Salvar como cópia* da sua trilha neste filtro sem salvar o original.  
-
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
-
-- "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
-- "&#8634;" button allows you to reset the track to the original.
-- "My track location" button allows you to move the map to your track.-->
 
 A página do aplicativo Filtro GPS para Android inclui o seguinte:  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
 sidebar_position: 5
 title: Crash Logs
 ---
@@ -73,6 +73,39 @@ Wees voorzichtig bij het verzenden van app-logs, aangezien deze privé-informati
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+## Heap-histogram voor geheugenproblemen (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Alleen Android
+:::
+
+Een *heap-histogram* is een tabel met wat het Java-geheugen van de app vult: klassennamen met objectaantallen en -groottes. Het helpt ontwikkelaars te achterhalen wat geheugen gebruikt wanneer de app traag wordt, vastloopt of na een tijdje sluit. Het bevat uw locaties, tracknamen of zoekopdrachten niet. OsmAnd maakt een volledige geheugendump op het apparaat, zet deze om in het histogram en verwijdert de dump direct.
+
+Het maken van de dump **bevriest de app 5–10 seconden**. Als u het scherm aanraakt tijdens die tijd, kan Android *OsmAnd reageert niet* tonen. Daarom is automatische verzameling **standaard uitgeschakeld**.
+
+**Wanneer inschakelen:**
+
+- OsmAnd sluit zichzelf of toont herhaaldelijk *reageert niet*, vooral na enige tijd gebruik of wanneer u zoeken opent, de kaart met veel POI's of *Mijn plaatsen* met veel tracks.
+- De app wordt trager naarmate hij langer draait en opnieuw starten helpt.
+- Het crashrapport meldt dat de app geen geheugen meer heeft (`OutOfMemoryError`).
+- OsmAnd-ondersteuning heeft u gevraagd een heap-histogram te verzamelen.
+
+**Wanneer uitlaten:**
+
+- Dagelijks gebruik en navigatie, wanneer de app goed werkt.
+- Crashes die direct bij elke start optreden of bij een specifieke actie zoals het openen van één bestand. Een normaal [crashlog](#send-logs-from-osmand-app) is daar voldoende.
+
+**Hoe verzamelen en verzenden:**
+
+1. Schakel de [OsmAnd-ontwikkelplugin](../plugins/development.md) in en ga naar *Hoofdmenu → Plugins → OsmAnd-ontwikkeling → Instellingen → Geheugen → Java-geheugen*.
+2. Kies in het paneel *Heap-dump* een van de volgende opties:
+    - **Verzamel bij hoog gebruik**. Het histogram wordt automatisch verzameld wanneer Java-geheugen bijna vol is, maximaal één keer per 30 minuten, en wordt bijgevoegd bij het volgende crashrapport. Blijf de app normaal gebruiken totdat het probleem zich opnieuw voordoet.
+    - **Nu verzamelen & analyseren**. Verzamelt het histogram direct en toont het resultaat. Gebruik dit wanneer de app al traag is en *Java-geheugen* hoog gebruik toont.
+3. Tik op **Rapport delen** om het laatste rapport naar de ontwikkelaars te sturen, of verstuur het vanuit het crashdialoogvenster de volgende keer dat de app start.
+4. Schakel *Verzamel bij hoog gebruik* uit zodra het rapport is verzonden.
+
+![Java memory Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Heap dump panel Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Tombstone-bestanden verzenden (Android) {#send-tombstone-files-android}
 

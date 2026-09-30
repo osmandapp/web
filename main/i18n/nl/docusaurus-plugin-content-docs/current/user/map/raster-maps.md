@@ -1,5 +1,5 @@
 ---
-source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
 sidebar_position: 7
 title:  Rasterkaarten (Online / Offline)
 ---
@@ -13,10 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Overzicht {#overview}
 
@@ -88,7 +84,7 @@ U kunt ook de [hoofdbron](#main) van kaarten wijzigen van vectorkaarten naar onl
 
 In OsmAnd kunnen rasterkaarten dienen als een extra kaartbron naast de standaard vectorkaarten, die zijn geoptimaliseerd voor offline gebruik.  
 
-U heeft de flexibiliteit om één of twee online tegel lagen toe te voegen als aanvulling op uw basiskaart. Hiermee kunt u maximaal drie kaartlagen tegelijk op uw scherm bekijken (plus Terrein). Denk eraan als een taart: [**Onderlaag**](#underlay) (rasterbasis eronder), [**Hoofd**](#main) (vector* of raster kern), [**Overlay**](#overlay) (raster erbovenop), met [**Terrein**](#terrain) arcering over alles heen. U kunt bijvoorbeeld de offline vectorkaart van OsmAnd als Hoofd-basis gebruiken, er een satellietweergave overheen leggen en een fietspadenkaart als Onderlaag plaatsen voor extra detail.
+U heeft de flexibiliteit om één of twee online tegel lagen toe te voegen als aanvulling op uw basiskaart. Hiermee kunt u maximaal drie kaartlagen tegelijk op uw scherm bekijken (plus Terrein). Denk eraan als een taart: [**Onderlaag**](#underlay) (rasterbasis eronder), [**Hoofd**](#main) (vector of raster kern), [**Overlay**](#overlay) (raster erbovenop), met [**Terrein**](#terrain) arcering over alles heen. U kunt bijvoorbeeld satellietbeelden als Onderlaag gebruiken, de offline vectorkaart van OsmAnd als Hoofdlaag met verhoogde transparantie en een fietspadenkaart als Overlay erbovenop.
 
 >[Vectorkaarten](./vector-maps.md) zijn **alleen** beschikbaar in de [Hoofd](#main) laag (en zijn daar de standaard). Rasterkaarten kunnen worden gebruikt in alle drie de lagen: Hoofd, Onderlaag en Overlay.
 
@@ -188,7 +184,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 In de context van rasterkaarten verwijst [Terrein](../plugins/topography.md#terrain) naar een reliëfarceringslaag die helpt om de vorm van het landschap op een platte kaart te visualiseren. Deze laag is gebaseerd op rasterterreingegevens en wordt bovenop de basiskaart weergegeven om de perceptie van hellingen en terreinvormen te verbeteren.
 
-Terrein arcering is een van de rasterlagen die beschikbaar zijn in OsmAnd en vertegenwoordigt een gekleurde reliëfvisualisatie afgeleid van hoogtegegevens. 
+Terrein arcering is een van de rasterlagen die beschikbaar in OsmAnd en vertegenwoordigt een gekleurde reliëfvisualisatie afgeleid van hoogtegegevens. 
 
 Om de Terreinlaag te gebruiken, moet u:
 
@@ -327,13 +323,6 @@ Om de kaarten de tegels na een tijdje automatisch te laten bijwerken, kunt u een
     </tr>
 </table>  
 
-<!--
-
-![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
-
--->
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -375,8 +364,7 @@ Rasterkaarten kunnen worden gebruikt zoals ze al bestaan als de tegels al in kaa
 ## Gerelateerde artikelen {#related-articles}
 
 - [Importeren / Exporteren](../personal/import-export.md)
-- [Kleurenpaletschema's](../personal/color-palette-schemes.md)
 - [Snelle actie (Aangepaste knop)](../widgets/quick-action.md)
 - [Online kaarten](../plugins/online-map.md)
 - [Topografie](../plugins/topography.md)
-- [Offline raster- en vectorkaarten maken](technical/map-creation/create-offline-maps-yourself.md)
+- [Offline raster- en vectorkaarten maken](../../technical/map-creation/create-offline-maps-yourself.md)

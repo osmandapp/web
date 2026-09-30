@@ -55,26 +55,25 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-<!--
 
-:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+:::danger 🍂 تخفيضات الخريف
+
+*أسرع! هذا العرض متاح فقط حتى* **4 أكتوبر (23:59 UTC)**.
+
+*بالنسبة للاشتراكات، يسري السعر المخفض على السنة الأولى.*
 
 :::
 
 
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd مجاني   | [Maps+](#install-osmand-ios) داخل التطبيق | [Maps+](#install-osmand-ios) اشتراك | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 شهرًا) | **اشتراك** (شهر واحد / 12 شهرًا) |
+| **السعر (يورو)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **السعر (دولار أمريكي)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-
--->
-
+<!--
 
 |    | OsmAnd مجاني   | [Maps+](#install-osmand-ios) داخل التطبيق | [Maps+](#install-osmand-ios) اشتراك | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -82,6 +81,8 @@ import Translate from '@site/src/components/Translate.js';
 | **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 شهرًا) | **اشتراك** (شهر واحد / 12 شهرًا) |
 | **السعر (يورو)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **السعر (دولار أمريكي)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
 
 
 

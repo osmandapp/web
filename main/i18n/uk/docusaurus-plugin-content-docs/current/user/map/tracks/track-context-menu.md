@@ -1,5 +1,5 @@
 ---
-source-hash: 25a698d390d37a3f3dde97400798c122e2ab0df51cf10ae9ecabdb17ecf6980a
+source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
 sidebar_position: 4
 title:  Контекстне меню треку
 ---
@@ -42,9 +42,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Коли ви торкаєтеся треку, відкривається перший екран *Контекстного меню треку* - вкладка *Огляд*. На цій вкладці ви можете знайти зведену інформацію про обраний трек (*[Інформаційна панель](#info-panel)*) та виконати найпоширеніші дії з треком за допомогою *[меню дій з треком](#track-actions)*. Ви можете побачити [опис та службову інформацію](#description-and-info) про ваш трек, якщо потягнете вкладку "Огляд" вгору.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Інформаційна панель {#info-panel}
 
@@ -227,7 +224,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 </details>
 
 
-### Тип активності треку {#ttrack-activity-type}
+### Тип активності треку {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -364,11 +361,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 ### Розрахунок відсутньої висоти {#calculate-missing-elevation}
 
-<InfoAndroidOnly />
-
 :::info Функція Pro
 [Розрахунок висоти офлайн](../../plan-route/create-route.md#get-elevation-data) є платною функцією [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
 :::
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 [Ця функція](../../plan-route/create-route.md#get-elevation-data) дозволяє розрахувати профіль висот для GPX-треку в автономному режимі для будь-якої місцевості між 70 градусами північної широти та 70 градусами південної широти на основі [даних Карти рельєфу](../../plugins/topography.md#download-maps). *Карти рельєфу (3D) повинні бути попередньо завантажені*.
 
@@ -377,11 +376,27 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
     ![Графік висоти треку Android](@site/static/img/personal/tracks/calculate_elevation_2.png)   ![Графік висоти треку Android](@site/static/img/personal/tracks/calculate_elevation_10.png)   <!--![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_4.png)  ![Track graph altitude Android](@site/static/img/personal/tracks/calculate_elevation_3.png) -->  
 
-3. Якщо ви створюєте маршрут за допомогою інструмента [Планування маршруту](../../plan-route/create-route.md#graph) методом *Пряма лінія* і на графіку немає даних про висоту, вам потрібно:
+3. Якщо ви створюєте маршрут за допомогою інструмента [Планування маршруту](../../plan-route/create-route.md#graph--analyze) методом *Пряма лінія* і на графіку немає даних про висоту, вам потрібно:
     - Натиснути *Отримати дані про висоту*, потім вибрати *Використовувати Карти рельєфу*.
     - Після розрахунку ви отримаєте повний графік висоти/нахилу вашого маршруту на основі даних рельєфу.  
 
   ![Графік висоти треку Android](@site/static/img/personal/tracks/calculate_elevation_9.png)   ![Графік висоти треку Android](@site/static/img/personal/tracks/calculate_elevation_5.png)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Дані висоти iOS](@site/static/img/personal/tracks/elevation_data_ios.webp) ![Дані висоти iOS](@site/static/img/personal/tracks/elevation_data_2_ios.webp)
+
+[Ця функція](../../plan-route/create-route.md#get-elevation-data) дозволяє розрахувати відсутні дані про висоту для [запланованого маршруту](../../plan-route/create-route.md#create-new-route) або [існуючого GPX-треку](../../plan-route/create-route.md#modify-existing-gpx-track).
+
+Якщо ви створюєте маршрут методом Пряма лінія і дані про висоту недоступні, натисніть *Отримати дані про висоту* на вкладці Аналіз і виберіть *Використовувати Карти рельєфу*. Потрібні попередньо завантажені [Карти рельєфу (3D)](../../plugins/topography.md#download-maps). Профіль висоти потім розраховується на основі даних рельєфу, а геометрія маршруту залишається незмінною.
+
+Для існуючого GPX-треку ви можете вибрати *Використовувати прилеглі дороги*. OsmAnd прив’язує трек до найближчих дозволених доріг за допомогою вибраного профілю навігації та отримує дані про висоту з прив’язаних доріг. Ця опція може змінити геометрію треку. За потреби ви також можете вибрати *Використовувати Карти рельєфу*, щоб розрахувати висоту без зміни геометрії треку.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Точки / Шляхові точки {#points--waypoints}
@@ -392,13 +407,13 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 <TabItem value="android" label="Android">
 
-![Контекстне меню треку Точки Android](@site/static/img/personal/tracks/track_context_points_android_new.png)
+![Контекстне меню треку Точки Android](@site/static/img/personal/tracks/track_context_points_android.webp) ![Контекстне меню треку Точки Android](@site/static/img/personal/tracks/track_context_points_android_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Контекстне меню треку Точки iOS](@site/static/img/personal/tracks/track_context_points_ios_new.png)
+![Контекстне меню треку Точки iOS](@site/static/img/personal/tracks/track_context_points_ios.webp) ![Контекстне меню треку Точки iOS](@site/static/img/personal/tracks/track_context_points_ios_2.webp)
 
 </TabItem>
 
@@ -408,7 +423,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 - [Показувати дані точок треку](#display-custom-gpx-tags) та змінювати точки вашого треку (шляхові точки та точки маршруту), [видаляти їх та додавати](#points--waypoints) шляхові точки до треку.
 - Створювати та змінювати [Групу (папку) точок](#waypoint-groups).
-- Центрувати мапу на шляховий точці за допомогою значка шпильки в списку шляхів точок (*лише для Android*), не закриваючи список, що дозволяє переглядати шляхові точки по одній.
+- Показувати шляхову точку на мапі за допомогою піктограми шпильки в списку шляхів точок. Мапа центрується на шляховий точці без закриття списку або зміни поточного масштабу.
 
 
 ### Додати шляхову точку до треку {#add-waypoint-to-a-track}
@@ -702,12 +717,6 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 Цей фільтр дозволяє покращити статистику вашого треку, виключаючи непотрібні або невірні дані. Ви можете відфільтрувати точки треку, які не відповідають параметрам вашого треку, і в результаті отримати більш точний графік та візуальну лінію маршруту без спотворень або шуму запису. Ви можете вносити зміни за допомогою таких фільтрів, як *Згладжування*, *Швидкість*, *Висота* та *Точність GPS*, які приховують відфільтровані точки з поточного треку. Крім того, в меню *Статистика* ви можете перевірити, як ваші зміни відображаються на графіку, перш ніж зберігати їх. Ви також можете *Скинути до оригіналу* та *Зберегти як копію* вашого треку в цьому фільтрі, не зберігаючи оригінал.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
-
-- "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
-- "&#8634;" button allows you to reset the track to the original.
-- "My track location" button allows you to move the map to your track.-->
-
 Сторінка додатка GPS-фільтр для Android включає наступне:  
 
 - Мапа зі збереженим треком та додатковою кнопкою *Моє місцезнаходження треку* (вона вирівнює трек по центру мапи).
@@ -740,7 +749,7 @@ You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-and
 
 Вкладка "Статистика" відображає інформацію про **змінений** трек, тобто трек без відфільтрованих значень. Вона відображається в блоках статистики та даних графіка.
   
-- Частина *Дані* показує статистику, подібну до [меню Фільтр](#filter-menu).  
+- Частина *Дані* показує статистику, подібно до [меню Фільтр](#filter-menu).  
 - Частина *Графік* відображає три типи графіків за параметрами: Огляд, Висота та Швидкість. Цей функціонал є копією [Графіка треку](#altitude--speed-graphs).
 
 ### Дії {#actions}

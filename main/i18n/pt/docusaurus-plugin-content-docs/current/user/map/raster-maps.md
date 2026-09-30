@@ -1,5 +1,5 @@
 ---
-source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
 sidebar_position: 7
 title: Mapas Raster (Online / Offline)
 ---
@@ -13,10 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Visão geral {#overview}
 
@@ -88,7 +84,7 @@ Você também pode alterar [a fonte principal](#main) dos mapas de mapas vetoria
 
 No OsmAnd, os mapas raster podem servir como uma fonte de mapa adicional ao lado dos mapas vetoriais padrão, que são otimizados para uso offline.  
 
-Você tem a flexibilidade de adicionar uma ou duas camadas de blocos online para complementar seu mapa base. Isso permite que você visualize até três camadas de mapa simultaneamente em sua tela (mais Terreno). Pense nelas como um bolo: [**Base**](#underlay) (base raster abaixo), [**Principal**](#main) (vetorial* ou raster central), [**Sobreposição**](#overlay) (raster acima), com [**Terreno**](#terrain) sombreando tudo. Por exemplo, você pode ter o mapa vetorial offline do OsmAnd como base Principal, sobrepô-lo com uma vista de satélite e colocar um mapa de ciclovias como Base para detalhes adicionais.
+Você tem a flexibilidade de adicionar uma ou duas camadas de blocos online para complementar seu mapa base. Isso permite que você visualize até três camadas de mapa simultaneamente em sua tela (mais Terreno). Pense nelas como um bolo: [**Base**](#underlay) (base raster abaixo), [**Principal**](#main) (vetorial ou raster central), [**Sobreposição**](#overlay) (raster acima), com [**Terreno**](#terrain) sombreando tudo. Por exemplo, você pode usar imagens de satélite como Base, o mapa vetorial offline do OsmAnd como camada Principal com transparência aumentada e um mapa de ciclovias como Sobreposição no topo.
 
 >[Mapas vetoriais](./vector-maps.md) estão disponíveis **apenas** na camada [Principal](#main) (e são o padrão lá). Mapas raster podem ser usados em todas as três camadas: Principal, Base e Sobreposição.
 
@@ -202,79 +198,6 @@ Para usar a camada de Terreno, você precisa:
 A visualização de terreno pode ser combinada com outras camadas raster e com o mapa vetorial padrão.
 
 Recursos de terreno mais avançados, incluindo relevo 3D (apenas Pro) e opções adicionais relacionadas ao terreno, são descritos no artigo [Topografia](../plugins/topography.md).
-
-<!--
-## Relevo / Inclinação {#hillshade--slope}
-
-![Camadas de terreno](@site/static/img/plugins/online-maps/terrain_two_layers.png)
-
-**Relevo** e **Inclinação** são mapas raster offline que mostram o relevo do terreno. Eles são exibidos como uma camada de mapa especial, uma segunda sobreposição no mapa base. Os mapas contêm informações adicionais de elevação para ajudar você a entender com mais precisão a inclinação e as sombras da paisagem. As informações de *Relevo* e *Inclinação* são baseadas em dados de uma única fonte, o *arquivo Global planet*, e são divididas em regiões.  
-
-Você não precisa alternar entre as camadas de Relevo e Inclinação, pois elas são mescladas automaticamente. Você pode selecionar apenas uma dessas camadas para exibir no mapa, mas também tem a opção de combiná-las [como uma base ou sobreposição](#layers) em outras camadas para uma representação mais visual do terreno.
-
-Para começar a usar Relevo e Inclinação, você precisa:
-
-1. Adquirir o plugin Topografia:
-    - [Compras Android](../purchases/android.md)
-    - [Compras iOS](../purchases/ios.md)
-2. Ativar o [plugin Topografia](../plugins/topography.md):  
-    *Menu → Plugins → ︙ → Ativar*
-3. Selecione a região desejada e baixe o **Mapa de terreno (3D)**.
-4. O processo de download pode levar algum tempo, dependendo do tamanho da região selecionada e da velocidade da sua conexão com a Internet.
-
-
-### Relevo e Relevo 3D {#hillshade-and-3d-relief}
-
-| Relevo | Relevo 3D |
-|--------|---------|
-| ![Camadas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Camadas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
-
-A diferença da exibição do relevo no mapa ao aplicar essas configurações é descrita no artigo **Topografia** na seção correspondente [Relevo e Relevo 3D](../plugins/topography.md#hillshade-and-3d-relief).
-
-
-### Configurar opções de exibição {#configure-display-options}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Vá para: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Vá para: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Camadas de terreno](@site/static/img/plugins/online-maps/terrain_layers.png)
-
-Você pode personalizar o nível de zoom para exibir e a transparência para Relevo e Inclinação. Você pode ler mais no artigo [Topografia](../plugins/topography.md#hillshade-slope-and-altitude-layers).
-
-
-## Relevo 3D {#3d-relief}
-
-:::note
-[Relevo 3D](../plugins/topography.md#3d-relief) é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-:::
-
-![Camadas de terreno](@site/static/img/plugins/online-maps/raster_maps_3d.png)
-
-O recurso [**Relevo 3D**](../plugins/topography.md#3d-relief) é uma tecnologia de mapeamento que permite a visualização do terreno em um mapa usando modelos tridimensionais. Este recurso adiciona informações de elevação a um mapa bidimensional normal, o que cria um efeito 3D e de profundidade e permite visualizar melhor o terreno.  
-
-*Para começar a usar o Relevo 3D*:  
-Você precisa adquirir o [plano de compra OsmAnd Pro](../plugins/index.md#purchase), ativar o [plugin Topografia](../plugins/topography.md) e ativar o item [Relevo 3D](../plugins/topography.md#3d-relief) em *Menu → Configurar mapa*.
-
-
-*Como funciona o recurso Relevo 3D*:  
-*1.* Para criar um relevo 3D, o OsmAnd recebe informações sobre a elevação do terreno.  
-*2.* Com base nos dados de elevação, um modelo 3D é criado para exibir montanhas, colinas, vales e outros elementos do terreno no mapa.  
-*3.* O OsmAnd então exibe esses modelos tridimensionais em um mapa plano. O mapa pode ser ampliado, reduzido e girado para visualizar o terreno de diferentes ângulos e perspectivas.  
-*4.* A exibição das linhas de contorno no mapa não depende se a fonte do mapa é online ou offline.
--->
 
 
 ## Preparar/Copiar Mapas {#preparecopy-maps}
@@ -399,13 +322,6 @@ Para que os mapas atualizem automaticamente os blocos após um tempo, você pode
     </tr>
 </table>  
 
-<!--
-
-![Baixar blocos Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Baixar blocos Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Baixar blocos Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Baixar blocos Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
-
--->
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
@@ -447,8 +363,7 @@ Os mapas raster podem ser usados como já existem se os blocos já estiverem map
 ## Artigos relacionados {#related-articles}
 
 - [Importar / Exportar](../personal/import-export.md)
-- [Esquemas de paleta de cores](../personal/color-palette-schemes.md)
 - [Ação Rápida (botão personalizado)](../widgets/quick-action.md)
 - [Mapas Online](../plugins/online-map.md)
 - [Topografia](../plugins/topography.md)
-- [Criar Mapas Raster & Vetoriais Offline](technical/map-creation/create-offline-maps-yourself.md)
+- [Criar Mapas Raster & Vetoriais Offline](../../technical/map-creation/create-offline-maps-yourself.md)

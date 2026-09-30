@@ -1,5 +1,5 @@
 ---
-source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
+source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -26,7 +26,7 @@ Favoritos no Planejador Web permitem que você salve e gerencie lugares importan
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
-Após registrar um [**OsmAnd Pro**](../personal/osmand-cloud.md#login) e para [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), seus Favoritos no Planejador Web são organizados em pastas. Cada pasta agrupa lugares salvos e fornece um conjunto de ações disponíveis no menu de Favoritos. 
+Após fazer login em uma conta [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), seus Favoritos no Planejador Web são organizados em pastas. Cada pasta agrupa lugares salvos e fornece um conjunto de ações disponíveis no menu de Favoritos. 
 As seguintes ações estão disponíveis:
 
 - *Mostrar no mapa* - mostra os pontos de favoritos da pasta escolhida no mapa.
@@ -100,7 +100,7 @@ O diálogo também inclui uma seção Avançado, onde as configurações de apar
 
 ### Aparência {#appearance}
 
-A seção **Aparência** permite personalizar como o favorito é exibido no mapa. As seguintes propriedades estão disponíveis: ícone, cor, forma e ícone. 
+A seção **Aparência** permite personalizar como o favorito é exibido no mapa. As seguintes propriedades estão disponíveis: ícone, cor e forma. 
 
 Selecionar **Ícone** abre um painel secundário com grupos de ícones categorizados.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
+source-hash: bcf6b575b3a4fda9b746badca4cfc8f28d464d5066f682b25d3bd4be49dceab0
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -227,7 +227,7 @@ CarPlay arama özelliği, **adres ararken** sokaklara ve bina numaralarına önc
 
 Sesli komutlar çalındığında OsmAnd, arka plan sesini türüne göre ayarlar. *<Translate ios="true" ids="pause_spoken_audio"/>* etkinleştirildiğinde podcast'ler ve sesli kitaplar gibi konuşma içeren ses içerikleri, navigasyon talimatları sırasında otomatik olarak duraklatılırken müzik çalma sesi kısık olarak devam eder. *<Translate ios="true" ids="pause_spoken_audio"/>* devre dışı bırakıldığında hem konuşma sesi hem de müzik azaltılmış ses seviyesinde çalmaya devam eder.  
 
-Sesli komutları seçilen profile göre yapılandırmak için, cihazınızdaki OsmAnd uygulamasında bir rota başlatmadan önce bunu yapmanız gerekir. *CarPlay* için önerilen ayarları görmek için [Sesli komutlar / Bildirimler](../navigation/guidance/voice-navigation.md) makalesine gidin.  
+Sesli komutları seçilen profile göre yapılandırmak için, cihazınızdaki OsmAnd uygulamasında bir rota başlatmadan önce bunu yapmanız gerekir. *CarPlay* için önerilen ayarları görmek için [Sesli komutlar / Bildirimler](../navigation/guidance/voice-navigation.md) makalesine gidin. Örneğin, Konuşma sesini duraklat seçeneğini etkinleştirmek için şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 
 ### Navigasyon Uyarıları {#navigation-alerts}
@@ -321,16 +321,19 @@ OsmAnd uygulaması için bildirim ayarlarını cihazınızın sistem ayarlarınd
 
 Ayrıca *CarPlay*'de doğrudan Mesajları Duyur özelliğini etkinleştirebilir veya devre dışı bırakabilirsiniz. Bildirim yönetiminin [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) ve [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios) üzerinde nasıl uygulandığını okuyun.
 
-### Harita Teması {#map-theme}
+### Harita Modu {#map-mode}
 
-![Map Theme](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+![Harita Modu](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Harita Modu](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-CarPlay, farklı sürüş koşullarında daha iyi görünürlük için harita görünümünü yapılandırmanıza olanak tanır. Aşağıdaki görünüm modlarından birini seçebilirsiniz:
+OsmAnd, CarPlay için harita görünümünü telefonunuzdaki harita modundan bağımsız olarak yapılandırmanıza olanak tanır. Bu ayarı açmak için, CarPlay navigasyon çubuğundaki *Ayarlar* düğmesine dokunun, ardından *Harita modu*'nu seçin. Geçerli mod, satırın ayrıntı metni olarak gösterilir.
 
-- *Otomatik*. Harita görünümü sistem ayarlarına, günün saatine veya araç koşullarına bağlı olarak otomatik olarak değişir.
-- *Her Zaman Koyu*. CarPlay koyu harita temasını kullanır.
+Aşağıdaki görünüm modlarından birini seçebilirsiniz:
+- **Araç görünümü** — Harita görünümü, iPhone'unuzdaki CarPlay Görünüm ayarına (*Otomatik* veya *Her Zaman Koyu*) ve günün saatine göre aracınızın kendi ekran stiline uyar. *Her Zaman Koyu Haritaları Göster* bu ayarda etkinleştirildiğinde, harita araç far durumu veya günün saatinden bağımsız olarak her zaman Koyu Modda kalır.
+- **Gündüz** — Harita, araç görünüm ayarlarından bağımsız olarak CarPlay'de her zaman açık temayı kullanır.
+- **Gece** — Harita, araç görünüm ayarlarından bağımsız olarak CarPlay'de her zaman koyu temayı kullanır.
+- **Gün doğumu/gün batımı** — Harita, mevcut konumunuz için hesaplanan gün doğumu ve gün batımı saatlerine göre otomatik olarak açık ve koyu temalar arasında geçiş yapar.
 
-*Her Zaman Koyu Haritaları Göster* seçeneği etkinleştirildiğinde, araç far durumu veya günün saatinden bağımsız olarak harita her zaman Koyu Modda kalır.
+**Not:** CarPlay'deki Harita modu ayarı yalnızca CarPlay'deki harita görünümünü etkiler. Telefon ekranındaki Harita modunu değiştirmez.
 
 ### CarPlay'de Konum Pozisyonu {#location-position-in-carplay}
 

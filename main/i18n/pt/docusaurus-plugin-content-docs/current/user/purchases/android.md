@@ -1,5 +1,5 @@
 ---
-source-hash: d59e8bc87f2d0d21d935f57b9e5c55437ca555db0435ff83d6015d99406dca9b
+source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
 sidebar_position: 1
 title: Compras Android
 ---
@@ -78,12 +78,13 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 
 
 
-:::danger 🏖️ Promoção de Verão
+:::danger 🍂 Promoção de outono
 
-*Apresse-se! Esta oferta está disponível apenas até* **17 de junho (23:00 CET)**.
+*Aproveite! Esta oferta está disponível apenas até* **4 de outubro (23:59 UTC)**.
+
+*Nas assinaturas, o preço com desconto vale para o primeiro ano.*
 
 :::
-
 
 
 |    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) na Aplicação | [Maps+](#install-osmand-android) Assinatura | [OsmAnd Pro](#install-osmand-android) |
@@ -91,10 +92,9 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Assinatura** (12 Meses) | **Assinatura** (1 Mês / 12 Meses) |
 | **Preço (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Preço (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Preço (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
 <!--
-
 
 |    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) na Aplicação | [Maps+](#install-osmand-android) Assinatura | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -104,6 +104,8 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | **Preço (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 -->
+
+
 
 ### Funcionalidades Gratuitas e Pagas {#free-and-paid-features}
 
@@ -134,6 +136,8 @@ A tabela abaixo detalha as funcionalidades incluídas nos pacotes gratuito e pag
 | [Plugin de Astronomia](../plugins/astronomy.md) — [Planeamento de Observação](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Plugin de Astronomia](../plugins/astronomy.md) — [Modo AR Interativo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin de Astronomia](../plugins/astronomy.md) — [Mapa do Céu Offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Plugin de Astronomia](../plugins/astronomy.md) — [Explorador de Eclipses](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
+| [Cores personalizadas de widgets](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navegação offline e online](../navigation/index.md)<br/>com instruções passo a passo | ✔ | ✔ | ✔ |
 | [Pesquisa instantânea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Gravação de viagem](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |

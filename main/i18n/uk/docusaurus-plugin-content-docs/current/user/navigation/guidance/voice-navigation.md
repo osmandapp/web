@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
 sidebar_position: 3
 title:  Голосові підказки / Сповіщення
 ---
@@ -52,16 +52,16 @@ OsmAnd надає різноманітні опції для керування 
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Налаштування голосової навігації Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Налаштування голосової навігації Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Налаштування голосової навігації Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
-- *кнопка <Translate ios="true" ids="routing_settings"/>* *(або <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Виберіть профіль → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
+- *<Translate ios="true" ids="routing_settings"/> button* *(or <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Виберіть профіль → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Налаштування голосової навігації iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Налаштування голосової навігації iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Налаштування голосової навігації iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ OsmAnd надає різноманітні опції для керування 
 
 - *Повторювати навігаційні інструкції*. Дозволяє повторювати навігаційні інструкції через регулярні проміжки часу від 1 хв до 30 хв. Або вручну - якщо ви пропустили голосову підказку, ви можете прослухати її знову, просто торкнувшись [стрілки поточного повороту](../../widgets/nav-widgets.md#next-turn) на екрані програми.
 - *[Час оголошення](#announcement-time)*.
+- *Призупинити мовленнєве аудіо* (*лише iOS, включно з CarPlay*). Якщо ввімкнено, подкасти, аудіокниги та інше мовленнєве аудіо призупиняються під час відтворення голосових підказок, незалежно від того, чи відтворюється через пристрій, чи через CarPlay. Відтворення музики продовжується зі зменшеною гучністю. Якщо вимкнено, мовленнєве аудіо та музика продовжують відтворюватися зі зменшеною гучністю.
 
 **Вивід** (*лише для Android*):
 
@@ -112,7 +113,7 @@ OsmAnd надає різноманітні опції для керування 
 
 [Сповіщення про камери контролю швидкості](../../personal/global-settings.md#uninstall-speed-cameras) дозволяють активувати або деактивувати POI з камерами контролю швидкості. Вам потрібно буде перезапустити програму OsmAnd, щоб застосувати зміни.
   
-У деяких країнах або регіонах використання програм для попередження про камери контролю швидкості є незаконним. Ви повинні зробити вибір залежно від законів вашої країни. Виберіть **Залишити активними**, і ви будете отримувати сповіщення та повідомлення про камери контролю швидкості. Виберіть **Видалити**, і всі дані, пов'язані з камерами контролю швидкості, такі як попередження, сповіщення та POI, будуть видалені, доки ви повністю не перевстановите OsmAnd.  
+У деяких країнах або регіонах використання програм для попередження про камери контролю швидкості є незаконним. Ви повинні зробити вибір залежно від законів вашої країни. Виберіть **Залишити активними**, і ви будете отримувати сповіщення та повідомлення про камери контролю швидкості. Виберіть **Видалити**, і всі дані, пов'язані з камерами контролю швидкості, такі як попередження, сповіщення та POI, будуть видалені, доки ви повністю перевстановите OsmAnd.  
 
 
 ### Обмеження швидкості {#speed-limit}
@@ -261,10 +262,10 @@ OsmAnd підтримує голоси **Text-to-Speech (TTS)**, які забе
 
 </Tabs>
 
-OsmAnd надає два типи голосових підкаzок:
+OsmAnd надає два типи голосових підказок:
 
 - **<Translate android="true" ids="tts_title"/>**
-    - Використовує механізм TTS пристрою для динамічного генерування голосових підказок.
+    - Використовує механізм TTS пристрої для динамічного генерування голосових підказок.
     - Читає назви вулиць, інструкції щодо поворотів, назви POI та інші деталі.
     - Підтримує кілька мов та налаштування вимови.
     - Можна налаштувати швидкість мовлення, висоту тону та налаштування вимови.
@@ -297,7 +298,7 @@ OsmAnd надає два типи голосових підкаzок:
 
 ### Доступні мови TTS {#available-tts-languages}
 
-Наразі існує загалом 45 мов. Не всі мови, перелічені нижче, можуть підтримуватися кожним механізмом TTS. Див. [тут](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
+Наразі існує загалом 45 мов. Не всі мови, перелічені нижче, можуть підтримуватися кожним механізм TTS. Див. [тут](https://accessibleandroid.com/list-of-languages-with-available-tts-engines-on-android/).
 
 | | |
 | :--- | :--- |

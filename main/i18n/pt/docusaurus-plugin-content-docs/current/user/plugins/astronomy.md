@@ -1,5 +1,5 @@
 ---
-source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
+source-hash: 18bdcf0d20caf5aabbea26b8ec6fcda7bc035763be0d7facfcec6e68cdb29d7d
 sidebar_position: 3
 title:  Astronomy
 unlistead: true
@@ -15,13 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-:::info 
-
-**Astronomia** está atualmente em **beta** no **Android**. 
-
-No **iOS**, o plugin está disponível através do programa **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
-:::
 
 ## Overview {#overview}
 
@@ -412,7 +405,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -430,9 +423,52 @@ O recurso **Pesquisa** (**Explorar** no iOS) no plugin de Astronomia permite que
 
 A seção Observar agora destaca objetos celestes que são visíveis agora ou esta noite. Esta seção atua como uma ferramenta de recomendação, mostrando objetos que são mais adequados para observação com base na sua localização e horário atuais.
 
-**2. Categorias**
+**2. Eclipse Solar e Lunar** (*somente Android*)
+
+As ferramentas [Eclipse Solar](#solar-eclipse) e [Eclipse Lunar](#lunar-eclipse) permitem que você explore eventos de eclipse em todo o mundo, visualize sua progressão ao longo do tempo e verifique a visibilidade do eclipse no mapa.
+
+**3. Categorias**
 
 A seção Categorias permite que você navegue por objetos por tipo: Sistema solar, Constelações, Estrelas, Nébulas, Aglomerados de estrelas e Céu profundo. Cada categoria abre uma lista de objetos com informações principais: nome do objeto, tipo ou constelação, magnitude (brilho) e horário de nascer ou pôr (se aplicável).
+
+### Solar Eclipse (Android only) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+O **Explorador de Eclipse Solar** permite que você explore eclipses solares passados e futuros em todo o mundo. Ele combina o Mapa Estelar com uma linha do tempo interativa e visualização de mapa para mostrar como um eclipse se desenvolve em diferentes locais.
+
+O Explorador de Eclipse Solar inclui os seguintes recursos:
+
+- **Navegação de eclipse**. Use os botões Anterior e Próximo para alternar entre eclipses solares disponíveis.
+- **Linha do tempo**. A linha do tempo exibe o início, o máximo e o fim do eclipse. Mova o controle deslizante para ver o eclipse em qualquer momento durante o evento. Todas as informações do eclipse são atualizadas automaticamente para o horário selecionado.
+- **Informações do eclipse**. O painel de informações exibe: tipo de eclipse, data e hora atuais, obscurecimento do eclipse, altitude do Sol e coordenadas do centro do mapa. As informações exibidas são calculadas para o centro atual do mapa.
+- **Caminho do eclipse**. Toque em Ajustar caminho do eclipse para centralizar o mapa no caminho do eclipse. Toque em *Mostrar mapa* ou *Ocultar mapa* para exibir ou ocultar o caminho do eclipse no mapa. O caminho do eclipse mostra onde o eclipse é visível e como a sombra da Lua se move pela superfície da Terra.
+
+:::warning
+
+Nunca olhe diretamente para o Sol sem proteção adequada para visualização solar. Os horários dos eclipses são estimativas.
+
+:::
+
+### Lunar Eclipse (Android only) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+O **Explorador de Eclipse Lunar** permite que você explore eclipses lunares em todo o mundo e observe como a Lua passa pela sombra da Terra.
+
+O Explorador de Eclipse Lunar inclui o seguinte recurso:
+
+- **Navegação de eclipse**. Use os botões Anterior e Próximo para alternar entre eclipses lunares disponíveis.
+- **Tipos de eclipse**. O explorador suporta: Eclipses penumbrais, Eclipses parciais e Eclipses totais
+- **Linha do tempo**. A linha do tempo exibe o início, o máximo e o fim do eclipse. Marcadores na linha do tempo indicam os diferentes estágios do eclipse. Mova o controle deslizante para observar o eclipse em qualquer ponto durante o evento.
+- **Informações do eclipse**. O painel de informações exibe: fase do eclipse, obscurecimento do eclipse, altitude da Lua e coordenadas do centro do mapa. As informações exibidas são calculadas para o centro atual do mapa.
+- **Mapa de visibilidade**. Toque em *Ajustar visibilidade* para centralizar o mapa na área de visibilidade do eclipse. Toque em *Mostrar mapa* ou *Ocultar mapa* para exibir ou ocultar a camada de visibilidade. A camada de visibilidade destaca as regiões onde a Lua está acima do horizonte durante o eclipse.
+
+:::warning
+
+As cores e o brilho das sombras são esquemáticos e destinados apenas à visualização.
+
+:::
 
 ### Sorting and Filters {#sorting-and-filters}
 

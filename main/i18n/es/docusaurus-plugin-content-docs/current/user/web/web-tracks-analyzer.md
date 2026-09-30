@@ -1,5 +1,5 @@
 ---
-source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
+source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,13 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-**Analizador de pistas** es una herramienta web que ayuda a analizar segmentos de pistas repetidos entre puntos seleccionados en el mapa. Para usar esta función con tus propios datos, necesitas una cuenta de OsmAnd Pro con pistas sincronizadas a OsmAnd Cloud; de lo contrario, tus pistas no estarán disponibles en el Planificador Web. Escanea tus pistas y encuentra todos los segmentos que pasan por la(s) ubicación(es) elegida(s), permitiéndote comparar velocidad, elevación, distancia y tiempo en múltiples actividades.
+**Analizador de pistas** es una herramienta web que ayuda a analizar segmentos de pistas repetidos entre puntos seleccionados en el mapa. Por ejemplo, puedes usarla para comparar tus recorridos en la misma subida o tus desplazamientos diarios. Para usar esta función con tus propios datos, necesitas una cuenta de OsmAnd Pro con pistas sincronizadas a OsmAnd Cloud; de lo contrario, tus pistas no estarán disponibles en el Planificador Web. Escanea tus pistas y encuentra todos los segmentos que pasan por la(s) ubicación(es) elegida(s), permitiéndote comparar velocidad, elevación, distancia y tiempo en múltiples actividades.
 
 ## Cómo usar {#how-to-use}
 
 Después de abrir el Analizador de pistas (mostrado como una llave inglesa), la herramienta se abre con una vista de mapa y un estado vacío. Desde aquí, puedes elegir qué pistas se incluirán en el análisis usando el panel **Seleccionar pistas**. El analizador permite trabajar con todas las pistas disponibles o limitar el análisis a carpetas específicas.
 
-Para iniciar el análisis, establece uno o dos puntos directamente en el mapa. Haz clic derecho en la ubicación deseada y selecciona **Punto A / Punto B** del menú contextual. El analizador luego busca segmentos de pistas que pasen por el punto seleccionado o entre los dos puntos.
+Para iniciar el análisis, establece uno o dos puntos directamente en el mapa. Haz clic derecho en la ubicación deseada y selecciona **Punto A / Punto B** del menú contextual. Con un punto, el analizador encuentra segmentos de pistas que pasan por la ubicación seleccionada. Con dos puntos, encuentra y analiza segmentos entre el Punto A y el Punto B.
 
 ![Analizador de pistas](@site/static/img/web/web_analyzer_select.png) ![Analizador de pistas](@site/static/img/web/web_analyzer_points_new.png)
 
@@ -33,29 +33,14 @@ Para iniciar el análisis, establece uno o dos puntos directamente en el mapa. H
 ## Ordenación y parámetros visibles {#sorting-and-visible-parameters}
 Después de que el analizador encuentre segmentos coincidentes, los resultados se muestran como una lista. La lista se puede reordenar usando la opción **Ordenar**, que cambia cómo se listan los segmentos. Además, el botón **Campos** abre el panel de Parámetros visibles, donde puedes controlar qué parámetros de análisis se muestran para cada segmento. Puedes mostrar todos los parámetros disponibles o seleccionar solo aquellos relevantes para tu análisis.
 
-Los parámetros disponibles están agrupados por tipo:
+Los parámetros disponibles incluyen:
 
-**Velocidad**
-- Vel. máx.
-- Vel. media
-- Vel. mín.
-
-**Altitud**
-- Alt. máx.
-- Alt. media
-- Alt. mín.
-
-**Subida / Bajada**
-
-**Fecha y hora**
-- Fecha
-- Hora de inicio
-- Hora de fin
-- Período de tiempo
-- Duración
-- Tiempo en movimiento
-
-**Longitud**
+- Vel. máx., Vel. media y Vel. mín.
+- Alt. máx., Alt. media y Alt. mín.
+- Subida y Bajada.
+- Fecha.
+- Período de tiempo, Hora de inicio, Hora de fin, Duración y Tiempo en movimiento.
+- Longitud.
 
 ![Analizador de pistas](@site/static/img/web/web_analyzer_sort.png) ![Analizador de pistas](@site/static/img/web/web_analyzer_fields.png)
 

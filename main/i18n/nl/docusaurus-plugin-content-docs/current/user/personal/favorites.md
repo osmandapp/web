@@ -1,5 +1,5 @@
 ---
-source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
+source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
 sidebar_position: 7
 title:  Favorieten
 ---
@@ -23,13 +23,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favorieten introductie android](@site/static/img/personal/favorites_intro_android.png)
+![Favorites introduction android](@site/static/img/personal/favorites_intro_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorieten introductie ios](@site/static/img/personal/favorites_intro_ios.png)
+![Favorites introduction ios](@site/static/img/personal/favorites_intro_ios.png)
 
 </TabItem>
 
@@ -63,13 +63,13 @@ Favorieten maken deel uit van een speciale kaartlaag, en u kunt ze [tonen of ver
 
 <TabItem value="android" label="Android">
 
-![Favoriet beschrijving toevoegen Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorietengroep Android](@site/static/img/personal/favorite_group_android.png)
+![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoriet beschrijving toevoegen iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorietengroep iOS](@site/static/img/personal/favorite_group_ios.png)
+![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -106,7 +106,7 @@ Bij het toevoegen van een punt uit OSM-gegevens wordt de relevante POI-informati
 
 <TabItem value="ios" label="iOS">
 
-![Favoriet bewerken iOS](@site/static/img/personal/favorite_edit_ios.png)
+![Favorite edit iOS](@site/static/img/personal/favorite_edit_ios.png)
 
 </TabItem>
 
@@ -130,26 +130,26 @@ Om een favorietenpunt te wijzigen:
 
 <TabItem value="android" label="Android">
 
-Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Kies favoriet* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
-![Mijn plaatsen favorieten android](@site/static/img/personal/favorite_icon_andr.png)
+![My places favorites android](@site/static/img/personal/favorite_icon_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Kies favoriet* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
-![mijn_plaatsen_ios](@site/static/img/personal/favorite_icon_3_ios.png)
+![my_places_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Er is een breed scala aan pictogrammen voor POI's en waypoints beschikbaar in OsmAnd. U kunt:
+Het scherm **Pictogram selecteren** groepeert pictogrammen per [categorie](../search/search-poi.md#categories-and-their-filters). Een rij categorietags bovenaan laat u direct naar een categorie-sectie in de lijst hieronder springen. Tik op het vergrootglaspictogram om een pictogram op naam of trefwoord te zoeken.
 
-- Een pictogram selecteren uit de lijst met [POI-categorieën](../search/search-poi.md#categories-and-their-filters).
-- Een geschikt pictogram zoeken met de [zoekoptie](../search/search-all.md#how-to-use).
+- *Laatst gebruikt* — Recent geselecteerde pictogrammen verschijnen in hun eigen sectie voor snel hergebruik.
+- *Speciaal* — Een set algemene pictogrammen (ster, vlag, markering, hart, camera en andere) die niet aan een specifieke categorie zijn gekoppeld.
 
 
 ### Speciale Favorieten (Persoonlijk) {#special-favorites-personal}
@@ -183,7 +183,7 @@ Tik op een item om het in volledig scherm te bekijken. Foto’s en video’s kun
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Mijn plaatsen favorieten android](@site/static/img/personal/my_places_android_new.png)
+![My places favorites android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -191,7 +191,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![mijn_plaatsen_ios](@site/static/img/personal/my_places_ios_new.png)
+![my_places_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -220,7 +220,7 @@ De sectie **Favorieten** stelt u in staat om:
 </Tabs>
 
 - **Sorteren** — Favorietenmappen en -punten kunnen worden gesorteerd met behulp van de beschikbare sorteeropties in het lijstmenu. Voor favorietenpunten zijn de volgende opties beschikbaar: *Naam A – Z*, *Naam Z – A*, *Laatst gewijzigd*, *Dichtst bij huidige locatie*, *Dichtst bij kaartcentrum*, *Nieuwste datum eerst* en *Oudste datum eerst*. Voor favorietenmappen zijn de volgende opties beschikbaar: *Naam A – Z*, *Naam Z – A*, *Laatst gewijzigd*, *Nieuwste datum eerst* en *Oudste datum eerst*. Standaard worden items gesorteerd op Naam A – Z. Vastgezette mappen worden altijd bovenaan de lijst weergegeven. Ze zijn visueel gescheiden van de rest van de mappen door een scheidingslijn. 
-- **Zoeken** — Gebruik [Globaal zoeken](../search/search-all.md) om favorieten op naam te vinden. Favorieten worden gesorteerd op afstand tot het midden van de kaart. Om favorietenpunten uit de Favorietenlijst in het tabblad Mijn plaatsen te zoeken, tikt u op het pictogram *Zoeken* (vergrootglas).
+- **Zoeken** — Gebruik [Globaal zoeken](../search/search-all.md) om favorieten op naam te vinden. Om favorietenpunten uit de Favorietenlijst in het tabblad Mijn plaatsen te zoeken, tikt u op het pictogram *Zoeken* (vergrootglas).
 
 ### Bulk Bewerken / Verwijderen {#bulk-edit--delete}
 
@@ -228,7 +228,7 @@ De sectie **Favorieten** stelt u in staat om:
 
 <TabItem value="android" label="Android">
 
-![Favorietenacties android](@site/static/img/personal/favorites_group_actions.png) ![Favorietenactie verwijderen android](@site/static/img/personal/favorites_actions.png)
+![Favorites actions android](@site/static/img/personal/favorites_group_actions.png) ![Favorites action delete android](@site/static/img/personal/favorites_actions.png)
 
 Om meerdere favorieten of mappen te beheren, activeer de *Selectiemodus*. U kunt Selectiemodus op twee manieren openen:
 - Tik op het *drie-puntmenu* in de rechterbovenhoek en kies *Selecteren*.
@@ -274,21 +274,6 @@ Voor geselecteerde mappen zijn dezelfde acties beschikbaar, met de volgende extr
 
 </Tabs>
 
-<!--
-### Add Favorites to Map Markers {#add-favorites-to-map-markers}
-
-<InfoAndroidOnly/>
-
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-You can add to or remove your favorites from [Map markers list](../personal/markers.md).
-Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
-
-**Functions for Favorite folder:**
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
-- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
--->
-
 
 ### Acties voor Favorietengroepen {#favorite-group-actions}
 
@@ -329,7 +314,7 @@ Op Android gebruikt u het ***Drie-puntmenu*** naast elke map om groepen favoriet
 
 Ga naar: *Drie-puntmenu → Standaard uiterlijk wijzigen*
 
-![Favorietenmap functies android](@site/static/img/personal/favorite_change_appearance_new.png)
+![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
@@ -375,7 +360,7 @@ OsmAnd biedt verschillende methoden om favorieten te [back-uppen](./import-expor
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Favorietenmap functies android](@site/static/img/personal/favorites_free_backup_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_andr.png)
 
 </TabItem>
 
@@ -406,7 +391,7 @@ De [Gratis Favorietenback-up](../personal/osmand-cloud.md#osmand-start) is een s
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Favorietenmap functies android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
 </TabItem>
 
@@ -428,30 +413,6 @@ U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Instellingenback-up
 - *[OsmAnd Start-pakket](../personal/osmand-cloud.md#osmand-start)*. Selecteer deze optie om toegang tot de functie Gratis Instellingenback-up te krijgen.
 - *Maak een back-up* van uw instellingen.
 
-<!--
-### All Favorites {#all-favorites}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
-
-- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
-- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
--->
 
 ### Favorietengroep {#favorite-group}
 
@@ -484,7 +445,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 Ga naar: *Android → data → net.osmand → files → backup*
 
-![Favorieten back-up exporteren Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Favorieten automatische back-up android](@site/static/img/personal/favorites_autobackup_andr.png)  
+![Favorites backup export Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
 
 </TabItem>
 
@@ -492,13 +453,13 @@ Ga naar: *Android → data → net.osmand → files → backup*
 
 Ga naar: *Bestanden → Op mijn iPhone → OsmAnd Maps → favourites_backup*
 
-![Favorieten automatische back-up ios](@site/static/img/personal/favorites_autobackup.png)  
+![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd maakt een **back-upbestand** telkens wanneer favorieten worden bewerkt.
+OsmAnd maakt automatisch een **back-upbestand** telkens wanneer favorieten worden bewerkt, met in totaal maximaal 10 back-upbestanden en maximaal 2 nieuwe back-ups per dag.
 
 - **Android**: Back-ups worden opgeslagen in *Android → data → net.osmand → files → backup*. Gebruik een bestandsbeheerder van derden om er toegang toe te krijgen.
 

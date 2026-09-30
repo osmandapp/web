@@ -1,8 +1,9 @@
 ---
-source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
+source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
 sidebar_position: 3
 title:  Inserimento Coordinate
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 <InfoAndroidOnly />
@@ -25,11 +25,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Come usare {#how-to-use}
 
-È possibile creare waypoint dal menu *[Marcatori mappa](../personal/markers.md#actions)* o da [I miei luoghi](../personal/myplaces.md) (vedi screenshot). Per raggiungere l'opzione di inserimento coordinate, seguire questi percorsi:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Pulsante Terra in fondo allo schermo*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+È possibile creare waypoint dal menu *[Marcatori mappa](../personal/markers.md#actions)*. Andare su: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Come trovare l'inserimento coordinate](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Come trovare l'inserimento coordinate](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png) 
+![Come trovare l'inserimento coordinate](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) 
 
 Dopo aver aperto la schermata di inserimento delle coordinate:
 
@@ -102,7 +100,7 @@ Quando si tocca un punto, è possibile modificarne le coordinate. Toccare il pul
 
 Per salvare i punti come traccia, toccare il pulsante *Indietro* ( &#8592; ) o utilizzare il menu *[Opzioni](#options)*.
 
-![Salva punto inserimento coordinate Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Elenco I miei luoghi inserimento coordinate Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![Salva punto inserimento coordinate Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Elenco I miei luoghi inserimento coordinate Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
 
 Nel menu a comparsa, è possibile inserire un nome personalizzato per la traccia o salvarla con il nome predefinito. Toccare <Translate android="true" ids="shared_string_save"/> per salvare i punti aggiunti come nuova traccia.  
 La traccia si troverà nel menu [I miei luoghi](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

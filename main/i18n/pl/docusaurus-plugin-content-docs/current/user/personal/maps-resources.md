@@ -1,5 +1,5 @@
 ---
-source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
+source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
 sidebar_position: 2
 title:  Mapy i zasoby
 ---
@@ -235,7 +235,7 @@ Poniżej paska pamięci wyświetlana jest lista wszystkich pobranych map i zasob
 ![Przegląd kategorii lokalnych Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Opcje kategorii lokalnych Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
 
 
-Dotknij dowolnego elementu w zakładce **Lokalne**, aby otworzyć jego szczegółową listę. Na górze tej listy panel wizualny pokazuje, ile miejsca zajmuje wybrany typ danych w stosunku do całkowitej pamięci OsmAnd.
+Dotknij dowolnego elementu w zakładce **Lokalne**, aby otworzyć jego szczegółową listę. Na górze tej listy panel wizualny pokazuje, ile miejsca zajmuje wybrony typ danych w stosunku do całkowitej pamięci OsmAnd.
 
 ***Dostępne akcje:***
 
@@ -318,89 +318,6 @@ Dostępne **Akcje** zależą od typu danych:
 
 </Tabs>
 
-<!--
-The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
-
-- ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
-
-- ***My Places*** (*yellow*).  
-    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
-
-- ***Settings*** (*green*).  
-    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
-
-
-#### Viewing Data {#viewing-data}
-
-![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
-
-
-Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
-
-***Available actions:***
-
-- **Search**. Find specific data by name within the selected folder.
-- **Three-dot menu**:  
-    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
-    ***Import***. Access the device's storage to import files.
-- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
-
-
-#### Menu for Items from the List {#menu-for-items-from-the-list}
-
-![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
-
-Each item in the list offers a *three-dot menu* with options:
-
-- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
-- **Export**. Save data to a file via *Settings → Export to File*.
-
-***Additional options for maps:***
-
-- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
-- **Update**. Download the latest version of the map.
-- **Rename**. Customize the map’s name for better identification.
-- **Remove**. Delete the map from your device.
-- **Edit** (for Online Maps). Modify the online map configuration.
-
-#### Map source items menu {#map-source-items-menu}
-
-![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
-
-Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
-
-- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
-- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
-- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
-- **Export**. Saves the selected map source configuration for backup or sharing.  
-- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
-
-
-#### Local Data Item Overview {#local-data-item-overview}
-
-![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
-
-When viewing a local data item, you see:
-
-- **Type**. The data type from the **Local** list.
-- **Created**. The date the item was added.
-- **Size**. The item’s size is in MB.
-
-Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
-
-#### Sorting Options {#sorting-options}
-
-![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
-
-Use sorting options to organize map data:
-
-- **Name (A - Z / Z - A)**. Locate items alphabetically.
-- **Country name (A - Z / Z - A)**. Organize maps geographically.
-- **Newest date first** / **Oldest date first**. See updates or older versions.
-- **Large size first** / **Small size first**. Identify large maps to free storage space.
-
--->
 
 ## Menu Aktualizacje {#updates-menu}
 
@@ -410,13 +327,15 @@ Use sorting options to organize map data:
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Menu map Aktualizuj mapy Android](@site/static/img/personal/maps/maps_update_andr.png) ![Zakładka Aktualizuj mapy Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
+![Menu map Aktualizuj mapy Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Zakładka Aktualizuj mapy Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
 
 Zakładka **Aktualizacje** umożliwia odświeżenie map i zasobów OsmAnd. Mapy standardowe i tylko z drogami są wydawane raz w miesiącu, zwykle między 2 a 5 dniem, i zawierają dane OpenStreetMap do ostatniego dnia poprzedniego miesiąca (na przykład wydanie październikowe zawiera dane do 30 września). Inne dane, takie jak Wikipedia, mapy terenu lub mapy morskie, mogą mieć inne, nieregularne harmonogramy aktualizacji. Prognoza pogody ma swój własny regularny cykl aktualizacji. Aby uzyskać szczegółowe informacje, zobacz [Pobierz prognozę](../plugins/weather.md#download-forecast). 
 
 Jeśli kilka map tego samego kraju wymaga aktualizacji, OsmAnd grupuje je w pojedynczy element na liście Aktualizacje. Zgrupowany element pokazuje nazwę kraju i liczbę zawartych map. Po dotknięciu otwiera się arkusz dolny *Aktualizuj mapy*, wyświetlający wszystkie mapy wymagujące aktualizacji. 
 
 Użyj przycisku *Aktualizuj wszystko*, aby zaktualizować wszystkie mapy jednocześnie, lub aktualizuj poszczególne mapy w razie potrzeby. Aby uzyskać cogodzinne aktualizacje, sprawdź status subskrypcji [Aktualizacji na żywo](#live-updates). Jeśli jest włączona, sekcja **Aktualizacje na żywo** pojawi się na górze zakładki, pod wskaźnikiem pamięci urządzenia.
+
+Zakładka **Aktualizacje** może również wyświetlać element **<Translate android="true" ids="unsupported_maps"/>**. Pojawia się on, gdy masz mapy, które nie są już obsługiwane i zostały zastąpione mniejszymi regionami. Dotknij Nieobsługiwane mapy, aby przejrzeć listę, usunąć przestarzałe mapy i pobrać nowe wersje regionów. Na ekranie Nieobsługiwane mapy możesz wyświetlić wszystkie nieobsługiwane mapy i użyć Usuń wszystko, aby usunąć je wszystkie naraz (przed usunięciem pojawi się monit potwierdzający).
 
 Można również zarządzać mapami bezpośrednio z zakładki Aktualizacje za pomocą gestu długiego naciśnięcia na dowolną mapę z listy. Otwiera to menu kontekstowe z kilkoma opcjami:
 - **Informacje** — wyświetl szczegóły wybranej mapy

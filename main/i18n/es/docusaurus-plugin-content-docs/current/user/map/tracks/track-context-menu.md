@@ -1,5 +1,5 @@
 ---
-source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
+source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -14,8 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## Vista general {#overview}
 
@@ -42,9 +40,6 @@ El *Menú contextual del track* proporciona información sobre el *[Track](../..
 
 Cuando tocas un track, se abre la primera pantalla del *Menú contextual del track*: la pestaña *Vista general*. En esta pestaña, puedes encontrar un resumen sobre el track elegido (*[Panel de información](#info-panel)*) y realizar las acciones más comunes con el track utilizando el *[Menú de acciones del track](#track-actions)*. Puedes ver la [descripción e información de servicio](#description-and-info) sobre tu track si deslizas la pestaña Vista general hacia arriba.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Panel de información {#info-panel}
 
@@ -227,7 +222,7 @@ Esta sección de la pestaña *Vista general* muestra ***datos de etiquetas*** y 
 </details>
 
 
-### Tipo de actividad del track {#ttrack-activity-type}
+### Tipo de actividad del track {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

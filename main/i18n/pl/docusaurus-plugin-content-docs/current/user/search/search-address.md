@@ -1,5 +1,5 @@
 ---
-source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
+source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
 sidebar_position: 2
 title:  Wyszukiwanie adresu
 ---
@@ -46,28 +46,6 @@ OsmAnd zapewnia kilka sposobów dotarcia do *narzędzia Wyszukiwania*, w którym
 
 </Tabs>
 
-<!--
-Search by Address simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
-
-- **To use the Search Address function,** you have to [download a map](../start-with/download-maps.md) of the required area first.
-- **The search is based on the data located in the visible area of the map** on the device screen. If you do not find anything, OsmAnd offers to increase the search radius.
-- The address information in OsmAnd contains all [OSM tag keys](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
-
-
-Search query list:
-
-**1.** The **order** of items in the list:
-
-- **Ordered by name**. Selecting *First specify city/town/locality* (Android) or *Select city* (iOS) will display a list that starts with unnamed items, if any, then numeric names followed by the names by letters.
-- **Ascending numerical order**. In the next search list, the house numbers are displayed in ascending order, after entering the city and street.
-
-**2.** Each field in the Address Search list contains **information** such as:
-
-- An icon that identifies the type of locality.
-- Part of an address, postal number, or coordinate area.
-- Distance from your current location or from the city center.
-- Additional information, such as the city's district.
--->
 OsmAnd obsługuje wyszukiwanie pełnotekstowe adresów. Oznacza to, że możesz wpisać adres bezpośrednio w polu wyszukiwania zamiast wybierać krok po kroku miasto → ulicę → numer domu. Silnik wyszukiwania próbuje rozpoznać komponenty adresu, takie jak:
 - miasto;
 - ulica;
@@ -109,6 +87,7 @@ OsmAnd obsługuje kilka powszechnych formatów adresów. Możesz wprowadzać adr
 | Format adresu | Przykładowe zapytania |
 |---|---|
 | Numer domu + ulica | 221B Baker Street<br />10 Downing Street |
+| Podwójny numer domu + ulica | 243/11 Husova |
 | Ulica + numer domu | Baker Street 221B<br />Main Street 101 |
 | Miasto + ulica + numer domu | London Baker Street 221B<br />Paris Rue de Rivoli 10 |
 | Skrzyżowania ulic | Broadway & Wall Street<br />Main Street and High Street |
@@ -135,29 +114,6 @@ Silnik wyszukiwania toleruje również powszechne wariacje w formatowaniu adres�
 | Pełny adres vs uproszczony adres | [221B Baker Street London United Kingdom](https://osmand.net/map/poi/?name=221B+Baker+Street&type=Tourist+attraction&pin=51.52339,-0.1582396) <br /> 221B Baker Street <br /> Baker Street 221B | [Dyskusja](https://github.com/osmandapp/OsmAnd/issues/19004) |
 | Format adresu USA | [1500 North Main Avenue, Springfield](https://osmand.net/map?pin=37.226315,-93.296524#11/37.1799/-93.3522) <br /> [4600 Sugar Maple Lane, Nashville](https://osmand.net/map?pin=36.051846,-86.95705#18/36.0516/-86.9561) | [Dyskusja](https://github.com/osmandapp/OsmAnd/issues/6824) |
 | Skróty stanów USA | [Springfield, VA 22150](https://osmand.net/map?pin=36.51995,-86.86385#18/36.5199/-86.8635) <br /> [Manhattan Beach, CA 90266](https://osmand.net/map?pin=33.883938,-118.41048#20/33.8839/-118.4105) | [Dyskusja](https://github.com/osmandapp/OsmAnd/issues/6824) |
-
-<!--
-**Examples**: Instead of `221B Baker Street London United Kingdom` try `221B Baker Street` or `Baker Street 221B`.
-
-OsmAnd may also ignore additional information such as country or region if the address can already be identified.
-
-Postal addresses copied from websites may include additional information such as company names, ZIP codes, or apartment numbers. If search does not return results, try entering only the street name, house number, and city.
-
-Search is also tolerant to minor differences in spelling, such as spaces, hyphens, or common abbreviations in street names. **For example**:
-
-`Weberstrasse`  
-`Weber strasse`  
-`Weber-strasse`
-
-House numbers with letter suffixes can also be written in different formats:
-
-`30B`  
-`30b`  
-`30-B`  
-`30-b`
-
-These variations may still return the same address.
--->
 
 
 ## Wybierz miasto {#select-city}
@@ -188,14 +144,6 @@ Ten sposób wyszukiwania ułatwia znajdowanie określonych lokalizacji w wybrane
 - Na następnym ekranie można kontynuować zawężanie adresu lub wybrać przycisk *Pokaż na mapie* pod polem wyszukiwania.
 - Aby sprecyzować wyszukiwanie, można wprowadzić całą lub tylko część nazwy miasta, miasteczka lub wsi, w której znajduje się szukany adres. Pozwala to zawęzić wyszukiwanie i uzyskać dokładniejszą listę.
 - Dotknięcie ostatniego elementu adresu, numeru domu lub nazwy skrzyżowania otwiera [menu kontekstowe mapy](../map/map-context-menu.md#select-an-object-single-tap) obiektu.  
-
-<!--
-**Searching by city offers the following benefits:**
-
-- *Convenience*. Allows you to quickly select the required city from the list, and specify a certain street, house or intersection in the selected city without having to enter the full address. This saves time and simplifies the process of finding the right place.
-- *Precision.* You can select a city and street from the available options, avoiding errors when manually entering an address.
-- *Filtering.* The ability to select a specific house from the list makes it easier to accurately navigate to the required location, especially when the exact address is unknown.
---> 
 
 :::note Klucz i wartość
 *Wyszukiwanie miasta / miasteczka / wsi* według [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  

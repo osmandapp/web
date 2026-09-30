@@ -37,11 +37,10 @@ All purchases made through any of these platforms support [**cross-platform acce
 Below are the prices for OsmAnd products in the US and EU. Prices in other regions are automatically converted to local currency by the payment platform.
 
 
-<!--
 
-:::danger 🏖️ Summer Sale
+:::danger 🍂 Autumn Sale
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+*Hurry up! This offer is only available until* **October 4 (23:59 UTC)**.
 
 :::
 
@@ -61,7 +60,7 @@ Starting from the third year, the full price will apply.
 :::
 
 
--->
+<!--
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -69,6 +68,8 @@ Starting from the third year, the full price will apply.
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
+
+-->
 
 
 

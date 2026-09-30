@@ -1,5 +1,5 @@
 ---
-source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
+source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
 sidebar_position: 5
 title:  Mapas vectoriales 
 ---
@@ -451,14 +451,6 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_n
 
 La **Vista de Globo** te permite mostrar el mapa como una Tierra esférica en lugar de una proyección plana. Este modo cambia la geometría de la superficie del mapa y adapta la interacción del mapa a la navegación esférica. Para obtener más información, consulta la [sección de Vista de Globo](../map/interact-with-map.md#globe-view) en el artículo Interactuar con el mapa.
 
-<!--
-## Map Legend {#map-legend}
-
-The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
-
-The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
--->
-
 
 ## Configuraciones adicionales {#additional-settings}
 
@@ -506,17 +498,38 @@ Ir a: *Menú → Configurar mapa → Mostrar → Cuadrícula de coordenadas*
 
 <TabItem value="android" label="Android">  
 
-![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_settings_andr.png)
+![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_settings_andr.png) ![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_format_andr.webp)
+
+La función **Cuadrícula de coordenadas** superpone una cuadrícula de referencia en el mapa, permitiéndote visualizar las líneas de latitud y longitud basadas en diferentes sistemas de coordenadas. Esta función es útil para la referencia de ubicación precisa y la navegación geoespacial. 
+
+Puedes configurar las siguientes opciones:
+- **Niveles de zoom:** establece los niveles de zoom mínimo y máximo (2 - 22) en los que se muestra la cuadrícula.
+- **Posición de las etiquetas:** elige entre *Bordes* (predeterminado) o *Centro* para las etiquetas de la cuadrícula.
+- **Color de la cuadrícula:** disponible por separado para el modo Día/Noche. 
+- **Formato de coordenadas:** selecciona de varios formatos disponibles (ver lista a continuación).
+
+***Formatos de coordenadas disponibles:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Grados, Minutos, Segundos)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Grados Decimales - formato por defecto de WGS84)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Grados, Minutos Decimales)
+- **UTM** (EPSG:6387, Universal Transverse Mercator - sistema de cuadrícula basado en zonas). El nivel de zoom mínimo es 9, solo se muestra una zona UTM a la vez, ya que las zonas están separadas por meridianos cada 6°
+- **OLC** (Código de ubicación abierto, también conocido como Código Plus)
+- **MGRS** (Sistema de Referencia de Cuadrícula Militar)
+- **Sistema de coordenadas suizo** - Swiss Grid (CH1903) y Swiss Grid (CH1903+)
+- **Maidenhead** (Sistema localizador Maidenhead)
+
+La sección **Recientes** muestra los sistemas de coordenadas utilizados recientemente. Para añadir otro sistema de coordenadas compatible, toca *Seleccionar otro formato*. Puedes buscar por nombre del sistema de coordenadas o código EPSG y luego tocar *+* para añadirlo a la lista.
+
+Por defecto, la aplicación utiliza el formato de coordenadas seleccionado en los [Ajustes generales](../personal/profiles.md#units--formats), pero puedes cambiarlo directamente en este menú.
+
+[Acción rápida](../widgets/quick-action.md#overview): También puedes agregar un interruptor rápido *Mostrar/Ocultar Cuadrícula de coordenadas* al grupo [Configurar mapa](../widgets/quick-action.md#configure-map) para un acceso rápido.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
+![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
 
 La función **Cuadrícula de coordenadas** superpone una cuadrícula de referencia en el mapa, permitiéndote visualizar las líneas de latitud y longitud basadas en diferentes sistemas de coordenadas. Esta función es útil para la referencia de ubicación precisa y la navegación geoespacial. 
 
@@ -537,6 +550,10 @@ Puedes configurar las siguientes opciones:
 Por defecto, la aplicación utiliza el formato de coordenadas seleccionado en los [Ajustes generales](../personal/profiles.md#units--formats), pero puedes cambiarlo directamente en este menú.
 
 [Acción rápida](../widgets/quick-action.md#overview): También puedes agregar un interruptor rápido *Mostrar/Ocultar Cuadrícula de coordenadas* al grupo [Configurar mapa](../widgets/quick-action.md#configure-map) para un acceso rápido.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Rutas {#routes}
@@ -570,18 +587,3 @@ Una ruta es un camino predeterminado que debe seguirse para llegar a un destino 
 - [Rutas](../map/routes/index.md)
 - [Importar / Exportar](../personal/import-export.md)
 - [Esquemas de paleta de colores](../personal/color-palette-schemes.md)
-
-<!--
-| | | |
-|--------|--------|--------|
-|**<Translate ios="true" ids="rendering_attr_moreDetailed_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | Shows polygons, trails, points, and signs on the map at low zoom. This means that you can see more details on the map at low magnification. Note that rendering on your device may not be fast.| ![Map parameter - More detailed](@site/static/img/map/map-parameter-more-details.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaces_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Shows the type of road surface. The color of the road helps you understand what the road surface is, such as asphalt, grass, or sand. See the [Map legend](../map-legend/index.md).| ![Map parameter - Road surface](@site/static/img/map/map-parameter-road-surface.png) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showSurfaceGrade_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| Indicates the quality of the road. Indicates the smoothness (slope) of the road. How smooth your roads are: good, bad, possibly terrible, etc. Look at the [Map Legend](../map-legend/index.md) to determine the smoothness of your road.| ![Map parameter - Road smoothness](@site/static/img/map/map-parameter-road-smoothness.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showAccess_name"/>**. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|  Shows the accessibility of the road: private or permitted, emergency only, or toll road. View the [Map Legend](../map-legend/index.md) to find available roads. | ![Map parameter - Road access](@site/static/img/map/map-parameter-road-access.png)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-|**<Translate ios="true" ids="rendering_attr_showLez_name"/>**. <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | The [Low Emission Zones (LEZ)](https://wiki.openstreetmap.org/wiki/Tag:boundary%3Dlow_emission_zone) feature displays green borders and "LEZ" labels on maps for areas in cities where access is restricted for certain polluting vehicles. LEZs aim to improve air quality by limiting entry to vehicles that meet specific emissions standards. Using this feature helps users avoid penalties by identifying and navigating around these green zones, ensuring compliance with local environmental regulations while traveling through city centers.| ![Map parameter - Low emission zones](@site/static/img/map/map-parameter-low-emission-zones.png)|
-|**<Translate ios="true" ids="rendering_attr_coloredBuildings_name"/>**. | Different building categories, such as residential, industrial, and commercial, are color-coded. Refer to the [Map legend](../map-legend/index.md) for details. | ![Map parameter - Coloured buildings](@site/static/img/map/map-parameter-coloured-buildings.png)|
-|**<Translate ios="true" ids="rendering_attr_streetLighting_name"/>**. | Displays illuminated and non-illuminated streets, as well as underground and temporarily illuminated ways. Check the [Map legend](../map-legend/index.md) for specifics. | ![Map parameter - Street lightning](@site/static/img/map/map-parameter-street-lighting.png)|
-|**<Translate ios="true" ids="rendering_attr_OSMMapperAssistant_name"/>**. | Designed for mappers, this feature shows references, remarks, and comments from other users on the map. | ![Map parameter - Map assistant](@site/static/img/map/map-parameter-map-assistant.png)|
-|**<Translate ios="true" ids="rendering_attr_depthContours_name"/>**. | Shows sea depth contours. You need to install the [Nautical plugin](../plugins/nautical-charts) and download Nautical maps.| ![Map parameter - Depth contours](@site/static/img/map/map-parameter-depth-contours.png)|
-|**<Translate android="true" ids="rendering_attr_natureReserves_name"/>**. | Showing green board and labels "NR" for [Nature reserve territory](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dnature_reserve). Highlights protected areas with a green border and "NR" label for wildlife conservation zones.| ![Map parameter - Nature reserve](@site/static/img/map/nature-reserve.png)|  
--->

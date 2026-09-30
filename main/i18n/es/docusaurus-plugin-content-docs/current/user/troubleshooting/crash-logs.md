@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
 sidebar_position: 5
 title: Registros de fallos
 ---
@@ -74,6 +74,39 @@ Tenga cuidado al enviar registros de la aplicación, ya que pueden contener info
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+## Histograma de montón para problemas de memoria (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Solo Android
+:::
+
+Un *histograma de montón* es una tabla que muestra qué ocupa la memoria Java de la aplicación: nombres de clases con recuentos y tamaños de objetos. Ayuda a los desarrolladores a identificar qué consume memoria cuando la aplicación se ralentiza, se bloquea o se cierra después de un tiempo. No contiene sus ubicaciones, nombres de pistas ni consultas de búsqueda. OsmAnd realiza un volcado completo de memoria en el dispositivo, lo convierte en el histograma y elimina el volcado de inmediato.
+
+Realizar el volcado **congela la aplicación durante 5–10 segundos**. Si toca la pantalla durante ese tiempo, Android puede mostrar *OsmAnd no responde*. Por eso, la recopilación automática está **desactivada por defecto**.
+
+**Cuándo activarlo:**
+
+- OsmAnd se cierra solo o muestra *no responde* repetidamente, especialmente después de un tiempo de uso o al abrir la búsqueda, el mapa con muchos PDI o *Mis lugares* con muchas pistas.
+- La aplicación se ralentiza cuanto más tiempo lleva ejecutándose y reiniciarla ayuda.
+- El informe de fallos indica que la aplicación se quedó sin memoria (`OutOfMemoryError`).
+- El soporte de OsmAnd le pidió que recopilara un histograma de montón.
+
+**Cuándo dejarlo desactivado:**
+
+- Uso diario y navegación, cuando la aplicación funciona correctamente.
+- Fallos que ocurren inmediatamente al iniciar o con una acción específica como abrir un archivo. En ese caso, basta con un [registro de fallos](#send-logs-from-osmand-app) normal.
+
+**Cómo recopilarlo y enviarlo:**
+
+1. Active el [complemento de desarrollo de OsmAnd](../plugins/development.md) y vaya a *Menú principal → Complementos → Desarrollo de OsmAnd → Ajustes → Memoria → Memoria Java*.
+2. En el panel *Volcado de montón*, elija una de las siguientes opciones:
+    - **Recopilar en uso alto**. El histograma se recopila automáticamente cuando la memoria Java está casi llena, como máximo una vez cada 30 minutos, y se adjunta al siguiente informe de fallos. Siga usando la aplicación con normalidad hasta que vuelva a ocurrir el problema.
+    - **Recopilar y analizar ahora**. Recopila el histograma de inmediato y muestra el resultado. Úselo cuando la aplicación ya esté lenta y *Memoria Java* muestre un uso alto.
+3. Toque **Compartir informe** para enviar el último informe a los desarrolladores, o envíelo desde el cuadro de diálogo de fallos la próxima vez que se inicie la aplicación.
+4. Desactive *Recopilar en uso alto* una vez enviado el informe.
+
+![Memoria Java Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Panel de volcado de montón Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Enviar archivos Tombstone (Android) {#send-tombstone-files-android}
 

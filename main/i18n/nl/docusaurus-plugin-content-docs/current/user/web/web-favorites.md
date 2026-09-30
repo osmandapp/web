@@ -1,5 +1,5 @@
 ---
-source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
+source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -26,7 +26,7 @@ Favorieten in de Web Planner laten je belangrijke plaatsen direct op de kaart op
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
-Na registratie voor een [**OsmAnd Pro**](../personal/osmand-cloud.md#login) en voor [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) zijn je Favorieten in de Web Planner georganiseerd in mappen. Elke map groepeert opgeslagen plaatsen en biedt een reeks acties die beschikbaar zijn via het Favorietenmenu. 
+Na aanmelden bij een [**OsmAnd Pro**](../personal/osmand-cloud.md#login) of [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) account zijn je Favorieten in de Web Planner georganiseerd in mappen. Elke map groepeert opgeslagen plaatsen en biedt een reeks acties die beschikbaar zijn via het Favorietenmenu. 
 De volgende acties zijn beschikbaar:
 
 - *Op kaart tonen* - toon favorietenpunten uit de gekozen map op de kaart.
@@ -50,7 +50,7 @@ Afhankelijk van de geselecteerde toegangsmode wordt de knop **Link kopiëren** b
 
 Het deelscherm bevat drie gebruikerslijsten:
 - Goedgekeurd — gebruikers die momenteel toegang hebben tot de map.
-- In afwachting — gebruikers die toegang hebben aangevraagd en wachten op goedkeuring of afwijzing.
+- In afwachtend — gebruikers die toegang hebben aangevraagd en wachten op goedkeuring of afwijzing.
 - Geblokkeerd — gebruikers die geen toegang mogen hebben of aanvragen.  
 Elke gebruikersvermelding bevat een menu waarmee hun status kan worden gewijzigd of de toegang kan worden verwijderd.
 
@@ -100,7 +100,7 @@ Het dialoogvenster bevat ook een Geavanceerd-gedeelte, waarin standaardweergave-
 
 ### Uiterlijk {#appearance}
 
-De sectie **Uiterlijk** laat je aanpassen hoe de favoriet op de kaart wordt weergegeven. De volgende eigenschappen zijn beschikbaar: pictogram, kleur, vorm en pictogram. 
+De sectie **Uiterlijk** laat je aanpassen hoe de favoriet op de kaart wordt weergegeven. De volgende eigenschappen zijn beschikbaar: pictogram, kleur en vorm. 
 
 Als je **Pictogram** selecteert, wordt een secundair paneel geopend met gegroepeerde pictogramcategorieën.
 

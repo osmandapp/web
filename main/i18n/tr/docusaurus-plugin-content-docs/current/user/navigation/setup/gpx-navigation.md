@@ -1,5 +1,5 @@
 ---
-source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
+source-hash: 334708e5a8593c3a9d8ad26cd8d035221ee3dbfa4929c3dd8a3cbfc49b55fc2d
 sidebar_position: 2
 title:  Rota ile Navigasyon
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *Rota ile Navigasyon* (GPX) seçeneği, harita üzerinde önceden tanımlanmış bir rotayı veya izi takip etmenizi sağlar. Özellikle yürüyüş, bisiklet veya arazi sürüşü gibi açık hava etkinlikleri için, planlanmış bir rotaya sahip olmak güvenliği ve verimliliği artırdığı için faydalı olabilir. Organize bir grupla seyahat ediyorsanız, bu özellik sizin ve grubun her üyesinin diğerleriyle aynı rota bilgilerine sahip olmasına yardımcı olur.  
 
-*Rota ile Navigasyon* seçeneği günlük hayatta da kullanılabilir. Daha önce [kaydedilmiş bir izi](../../plugins/trip-recording.md) kullanabilir veya [bir iz oluşturup](../../personal/tracks/manage-tracks.md#create-a-track) onlara rotayı açıklamak yerine aileniz veya arkadaşlarınızla paylaşabilirsiniz. Navigasyon için [OsmAnd haritasındaki rotaları](../../../../blog/routes/) da kullanabilirsiniz. Bunları haritada nasıl vurgulayacağınız ve renklerinin ne anlama geldiği, *Vektör haritaları* makalesinin [Rotalar bölümünde](../../map/vector-maps.md#routes) açıklanmıştır.  
+*Rota ile Navigasyon* seçeneği günlük hayatta da kullanılabilir. Daha önce [kaydedilmiş bir izi](../../plugins/trip-recording.md) kullanabilir veya [bir iz oluşturup](../../personal/tracks/manage-tracks.md#create-a-track) onlara rotayı açıklamak yerine aileniz veya arkadaşlarınızla paylaşabilirsiniz. Navigasyon için [OsmAnd haritasındaki rotaları](https://osmand.net/blog/routes/) da kullanabilirsiniz. Bunları haritada nasıl vurgulayacağınız ve renklerinin ne anlama geldiği, *Vektör haritaları* makalesinin [Rotalar bölümünde](../../map/vector-maps.md#routes) açıklanmıştır.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

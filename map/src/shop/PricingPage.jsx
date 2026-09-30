@@ -5,9 +5,16 @@ import { useLocation, useSearchParams } from 'react-router-dom';
 import ProductCard from './products/ProductCard';
 import styles from './shop.module.css';
 import { useTranslation, Trans } from 'react-i18next';
-import { purchase } from './products/ProductManager';
+import {
+    purchase,
+    PRODUCT_ID_MAPS_PLUS,
+    PRODUCT_ID_PRO,
+    PRODUCT_ID_START,
+    PRODUCT_ID_XV,
+    PURCHASE_TYPE_ONE_TIME,
+} from './products/ProductManager';
 import EmptyLoginDialog from '../login/dialogs/EmptyLoginDialog';
-import { testPath, updatePrices } from '../login/fs/FastSpringHelper';
+import { priceKey, updatePrices } from '../login/fs/FastSpringHelper';
 import { getAccountInfo } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
 import StickyBarPricingPage from './StickyBarPricingPage';
@@ -26,10 +33,12 @@ export default function PricingPage() {
     const [selectedProductType, setSelectedProductType] = useState('');
     const [purchasePriceMap, setPurchasePriceMap] = useState([]);
     const [currentPurchases, setCurrentPurchases] = useState(null);
+    const [purchasesLoginUser, setPurchasesLoginUser] = useState(undefined);
 
     const [useTestMode, setUseTestMode] = useState(false);
     const [selectedCardId, setSelectedCardId] = useState(null);
     const [show, setShow] = useState(false);
+    const [priceError, setPriceError] = useState(false);
     const [updateCardPrices, setUpdateCardPrices] = useState(false);
     const [stickyVisible, setStickyVisible] = useState(false);
 
@@ -51,17 +60,34 @@ export default function PricingPage() {
     };
 
     useEffect(() => {
+        let active = true;
+        const isActive = () => active;
+        const loadPrices = () =>
+            updatePrices(setPurchasePriceMap, useTestMode, isActive).then((loaded) => {
+                if (active && !loaded) {
+                    setShow(false);
+                    setPriceError(true);
+                }
+            });
+        setPriceError(false);
         if (ltx.isLoggedIn()) {
             getAccountInfo(ltx.setAccountInfo).then((info) => {
+                if (!active) {
+                    return;
+                }
                 const subscriptions = info?.subscriptions && JSON.parse(info.subscriptions);
                 const inAppPurchases = info?.inAppPurchases && JSON.parse(info.inAppPurchases);
-                setCurrentPurchases({ subscriptions, inAppPurchases });
-                updatePrices(setPurchasePriceMap, useTestMode);
+                setCurrentPurchases({ subscriptions, inAppPurchases, loginUser: ltx.loginUser });
+                loadPrices();
             });
         } else {
-            setCurrentPurchases({ subscriptions: [], inAppPurchases: [] });
-            updatePrices(setPurchasePriceMap, useTestMode);
+            setCurrentPurchases({ subscriptions: [], inAppPurchases: [], loginUser: ltx.loginUser });
+            loadPrices();
         }
+
+        return () => {
+            active = false;
+        };
     }, [useTestMode, ltx.loginUser]);
 
     useEffect(() => {
@@ -84,24 +110,21 @@ export default function PricingPage() {
 
             Object.keys(purchase).forEach((type) => {
                 purchase[type].forEach((item) => {
-                    const info = purchasePriceMap[testPath(item.fsName, useTestMode)];
+                    const info = purchasePriceMap[priceKey(item.id, type)];
                     if (info) {
                         item.oldPrice = info.oldPrice;
                         item.newPrice = info.newPrice;
                         item.oldPriceDisplay = info.oldPriceDisplay;
                         item.display = info.display;
-                        if (
-                            allPurchases.find((p) => {
-                                p.type = p.type ?? 'one-time';
-                                const isValid = p.valid === true || p.valid === 'true';
-                                return isValid && p.name === item.name && p.type === type;
-                            })
-                        ) {
-                            item.show = false;
-                        }
+                        item.show = !allPurchases.find((p) => {
+                            p.type = p.type ?? PURCHASE_TYPE_ONE_TIME;
+                            const isValid = p.valid === true || p.valid === 'true';
+                            return isValid && p.name === item.name && p.type === type;
+                        });
                     }
                 });
             });
+            setPurchasesLoginUser(currentPurchases.loginUser);
             setShow(true);
             setUpdateCardPrices(true);
         }
@@ -135,10 +158,13 @@ export default function PricingPage() {
                     <Typography className={styles.pricingDesc}>
                         {t('web:subtitle_choose_your_ideal_osmand_plan')}
                     </Typography>
-                    {!show && <CircularProgress />}
+                    {!show && priceError && (
+                        <Typography className={styles.pricingDesc}>{t('web:pricing_load_error')}</Typography>
+                    )}
+                    {!show && !priceError && <CircularProgress />}
                     {show && (
                         <Box ref={cardBoxRef} className={styles.productCardBox}>
-                            {['osmand-start', 'osmand-maps-plus', 'osmand-pro', 'osmand-15-years'].map((id) => (
+                            {[PRODUCT_ID_START, PRODUCT_ID_MAPS_PLUS, PRODUCT_ID_PRO, PRODUCT_ID_XV].map((id) => (
                                 <ProductCard
                                     key={id}
                                     productId={id}
@@ -152,6 +178,7 @@ export default function PricingPage() {
                                     setSelectedCardId={setSelectedCardId}
                                     updateCardPrices={updateCardPrices}
                                     setUpdateCardPrices={setUpdateCardPrices}
+                                    purchasesReady={purchasesLoginUser === ltx.loginUser}
                                 />
                             ))}
                         </Box>

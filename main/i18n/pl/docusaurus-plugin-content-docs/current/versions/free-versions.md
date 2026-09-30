@@ -1,5 +1,5 @@
 ---
-source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
+source-hash: cd041547a7f80045d462bbc7c5a375476089c6105d35475b185588517c4f7162
 sidebar_position: 2
 ---
 
@@ -18,6 +18,21 @@ Najnowszą bezpłatną wersję OsmAnd można pobrać z wymienionych sklepów z a
 Bezpośrednie linki do bezpłatnych wersji OsmAnd.
 
 ## Wersja 5 {#version-5}
+
+### Wersja 5.4 {#version-54}
+
+Data wydania 09/2026:
+
+- Odświeżony interfejs wyszukiwania: sortowanie, filtry kategorii, czystszy wygląd.
+- Dołączaj zdjęcia i multimedia do Ulubionych.
+- Ulubione: obsługa podgrup i przypinane foldery.
+- Współrzędne: wyszukiwanie, siatka mapy i wyświetlanie POI obsługują teraz EPSG i lokalizator Maidenhead.
+- Naprawiono przerwy w nawigacji; przełączanie między routingiem Standardowym a Szybkim.
+- Ustaw skalę mapy Android Auto niezależnie od telefonu.
+- Nowe wyszukiwanie przestrzenne — znajdź miejsca i wyszukaj wokół miejsca.
+- Astronomia: dodano eksploratory zaćmień Słońca i Księżyca.
+
+<DownloadRelease blog="osmand-android-5-4-released" release="net.osmand-5.4.7-5407.apk" />
 
 ### Wersja 5.3 {#version-53}
 
@@ -473,7 +488,7 @@ Data wydania: 02/2018
 
 ### Wersja 2.8 {#version-28}
 
-Data wydania 10/2017:
+Release date 10/2017:
 
 - Całkowicie przebudowane znaczniki mapy z wytycznymi i planowaniem trasy
 - Narzędzie do pomiaru odległości, oferujące funkcję przyciągania do drogi i zapisywania punktów jako ścieżkę
@@ -486,7 +501,7 @@ Data wydania 10/2017:
 
 ### Wersja 2.7 {#version-27}
 
-Data wydania 07/2017:
+Release date 07/2017:
   
 - Obrazy na poziomie ulicy w wtyczce Mapillary
 - Narzędzie linijki do pomiaru bezpośrednich odległości na mapie
@@ -499,7 +514,7 @@ Data wydania 07/2017:
 
 ### Wersja 2.6 {#version-26}
 
-Data wydania: 04/2017
+Release date: 04/2017
 
 - Przycisk szybkiej akcji. Dodaj wybrane funkcje do jednego paska narzędzi
 - Ulepszone menu wyszukiwania. Tradycyjne wyszukiwanie krok po kroku połącz z nowoczesnym
@@ -515,7 +530,7 @@ Data wydania: 04/2017
 
 ### Wersja 2.5 {#version-25}
 
-Data wydania: 11/2016
+Release date: 11/2016
   
 - Klikalne ikony na mapie. Uzyskaj informacje bez warstwy POI
 - Bardzo szczegółowe wyszukiwanie POI. Znajdź lokalizacje według wielu funkcji
@@ -529,7 +544,7 @@ Data wydania: 11/2016
 
 ### Wersja 2.4 {#version-24}
 
-Data wydania: 08/2016
+Release date: 08/2016
   
 - Szybkie wyszukiwanie. Wszystkie typy zapytań w jednym polu wyszukiwania
 - Integracja z systemem audio samochodu. Użyj systemu audio samochodu do nawigacji głosowej
@@ -542,11 +557,11 @@ Data wydania: 08/2016
 
 ### Wersja 2.3 {#version-23}
 
-Data wydania: 03/2016
+Release date: 03/2016
 
 - OSM Live beta. Nowy system zachęcający mapowiczów i zapewniający stałe aktualizacje
 - Całkowicie nowy interfejs znaczników mapy
-- Przebudowane menu przygotowania trasy
+- Przebudane menu przygotowania trasy
 - Tarcze autostradowe zaprojektowane według kraju
 - Odwrotne geokodowanie pokazujące adres lokalizacji po dotknięciu mapy
 - Lepsze informacje o transporcie
@@ -669,7 +684,7 @@ Ulubione (Moje miejsca):
 Nawigacja:
 
 - Oblicz trasę między punktami trasy ścieżki GPX
-- Więcej konfiguracji nawigacji (automatyczne ukrywanie przycisków, mówienie z wyprzedzeniem)
+- Więcej konfiguracji nawigacji (automatyczne ukrywanie przycisków, mówienie z wyprzedaniem)
 - Automatyczne uruchamianie nawigacji po opóźnieniu
 
 <DownloadRelease blog="osmand-1-8" release="net.osmand-1.8.3-183.apk" />

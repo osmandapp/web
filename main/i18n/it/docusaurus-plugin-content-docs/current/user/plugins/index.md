@@ -1,5 +1,5 @@
 ---
-source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
+source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
 sidebar_position: 18
 title:  Plugin
 ---
@@ -74,7 +74,7 @@ I plugin di OsmAnd possono arricchire questi gruppi di funzionalità: **Livelli*
 | [Mappe online](#online-maps) |[Livello mappa](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Registrazione viaggio](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profilo](../plugins/trip-recording.md#recording-settings) |
 | [Topografia](#topography) | [Livello mappa](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [Rilievo 3D](#topography) 🤖  | [Livello mappa](../plugins/topography.md#3d-relief) |
+| [Rilievo 3D](#topography)  | [Livello mappa](../plugins/topography.md#3d-relief) |
 | [Meteo](../plugins/weather.md) | [Livello mappa](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Schermata](../plugins/weather.md#weather-forecast-screen) |
 | [Vista mappa nautica](#nautical-map-view) | [Stile mappa](../plugins/nautical-charts.md#nautical-map-style), [Profilo](../plugins/nautical-charts.md#nautical-profile)  |
 | [Vista mappa sci](#ski-map-view) | [Stile mappa](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profilo](../plugins/ski-maps.md#skiing-profile) |
@@ -82,13 +82,13 @@ I plugin di OsmAnd possono arricchire questi gruppi di funzionalità: **Livelli*
 |[Posizione parcheggio](#parking-position) | [Menu contestuale](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Modifica OpenStreetMap](#openstreetmap-editing)| [Livello mappa](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Livello mappa](../plugins/mapillary.md#map-layer), [Menu contestuale](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|[Sensori esterni](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Sensori esterni](#external-sensors)  | [Widget](../plugins/external-sensors.md#widgets) |
 |[Metriche del veicolo](#vehicle-metrics)  | [Impostazioni personalizzate](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
 |[Astronomia](#astronomy)  | [Schermata](../plugins/astronomy.md#star-map-screen), [Menu contestuale](../plugins/astronomy.md#context-menu) |
 |[Accessibilità](#accessibility) 🤖  | [Impostazioni personalizzate](../plugins/accessibility.md#plugin-settings) |
 |[Sviluppo OsmAnd](#osmand-development) | [Impostazioni personalizzate](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Livello mappa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu contestuale](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[Tracciatore di navi AIS](#ais-vessel-tracker) 🤖  |  [Impostazioni personalizzate](../plugins/ais-tracker.md#plugin-settings) |
+|[Tracciatore di navi AIS](#ais-vessel-tracker)  |  [Impostazioni personalizzate](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Impostazioni dei plugin {#plugin-settings}
@@ -217,6 +217,3 @@ Visualizza le posizioni AIS e le informazioni sulle navi circostanti. I dati AIS
 ## [Crea un plugin personalizzato](./custom.md) {#create-a-custom-plugin}
 
 È possibile creare il proprio plugin seguendo l'articolo *Pacchetto personalizzato*.
-
-
-_______

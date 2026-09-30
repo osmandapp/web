@@ -36,10 +36,11 @@ const pages = ({ t, develFeatures }) => [
         url: '/blog',
     },
     {
-        name: `💳 ${t('web:header_pricing')}`,
+        //   name: `💳 ${t('web:header_pricing')}`,
         //   name: `🏖️ ${t('web:header_sale_and_pricing')}`,
         //   name: `🌱 ${t('web:header_spring_sale')}`,
         //   name: `🏖️ ${t('web:header_summer_sale')}`,
+        name: `🍂 ${t('web:header_autumn_sale')}`,
         url: '/pricing',
     },
     {

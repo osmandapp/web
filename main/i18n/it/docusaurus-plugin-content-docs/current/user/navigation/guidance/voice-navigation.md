@@ -1,5 +1,5 @@
 ---
-source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
+source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
 sidebar_position: 3
 title:  Istruzioni vocali / Notifiche
 ---
@@ -99,7 +99,7 @@ Per ulteriori informazioni su come e quando vengono attivate le istruzioni vocal
 
 - *Ripeti istruzioni di navigazione*. Consente di ripetere le istruzioni di navigazione a intervalli regolari da 1 a 30 minuti. Oppure manualmente: se si perde un'istruzione vocale, è possibile riascoltarla semplicemente toccando [la freccia della svolta corrente](../../widgets/nav-widgets.md#next-turn) sulla schermata dell'applicazione.
 - *[Tempo di annuncio](#announcement-time)*.
-- *Metti in pausa l'audio parlato* (*solo iOS*). Se abilitato, podcast, audiolibri e altri audio parlati vengono messi in pausa durante la riproduzione delle istruzioni vocali. La riproduzione musicale continua a volume ridotto. Se disabilitato, sia l'audio parlato che la musica continuano a un volume ridotto.
+- *Metti in pausa l'audio parlato* (*solo iOS, inclusi CarPlay*). Se abilitato, podcast, audiolibri e altri audio parlati vengono messi in pausa durante la riproduzione delle istruzioni vocali, sia sul dispositivo che tramite CarPlay. La riproduzione musicale continua a volume ridotto. Se disabilitato, sia l'audio parlato che la musica continuano a un volume ridotto.
 
 **Uscita** (*solo Android*):
 
@@ -354,7 +354,7 @@ L'uso di voci registrate in OsmAnd dovrebbe essere solo una soluzione di ripiego
 - **Minimo**. Adatto per seguire un percorso noto a piedi con distrazioni minime, questo modello avviserà quando si superano destinazioni intermedie, preferiti e PDI, e quando si è deviato o si è tornati al percorso. Non fornirà alcun avviso audio per le svolte.
 - **Semplice**. Oltre agli avvisi per destinazioni, preferiti, PDI e altro, il modello semplice avvisa con un segnale acustico più lungo quando è necessario svoltare.
 - **Complesso**. Adatto al ciclismo su strada, il modello complesso utilizza segnali acustici di diversa lunghezza e tonalità per informare sulle svolte imminenti.
-    - Un segnale acustico basso significa svolta a sinistra, mentre un segnale acustico alto significa svolta a destra. Una serie di segnali acustici a tonalità media rappresenta l'uscita da prendere in una rotatoria. Tutte e tre le tonalità in sequenza rappresentano un'inversione a U. In tutti questi casi, i segnali acustici brevi significano prepararsi a fare qualcosa, mentre i segnali acustici lunghi significano fare qualcosa ora.
+    - Un segnale acustico basso significa svolta a sinistra, mentre un segnale acustico alto significa svolta a destra. Una serie di segnali acustici a tonalità media rappresenta l'uscita da prendere in rotatoria. Tutte e tre le tonalità in sequenza rappresentano un'inversione a U. In tutti questi casi, i segnali acustici brevi significano prepararsi a fare qualcosa, mentre i segnali acustici lunghi significano fare qualcosa ora.
 
 
 ## Notifiche di testo {#text-notifications}

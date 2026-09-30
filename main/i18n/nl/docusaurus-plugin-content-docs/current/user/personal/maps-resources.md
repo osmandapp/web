@@ -1,5 +1,5 @@
 ---
-source-hash: aa2176b85388e96e6504dc2c310618eed30a5b75e6ba2b134cbefa822b1be781
+source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Overzicht {#overview}
 
@@ -194,7 +193,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,d
 
 ![Tabblad Lokaal Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Tabblad Lokaal Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
 
-Het tabblad Lokaal geeft een overzicht van het opslaggebruik voor alle OsmAnd-gegevens op uw apparaat. De gegevens zijn voor de duidelijkheid verdeeld in drie kleurgecodeerde secties, met items gesorteerd op grootte van groot naar klein. Elke sectie toont alleen items met gedownloade gegevens:
+Het tabblad Lokaal geeft een overzicht van het opslaggebruik voor alle OsmAnd-gegevens op uw apparaat. De gegevens zijn voor de duidelijkheid verdeeld in drie kleurgecodeerde secties, met items gesorteerd op grootte van groot naar klein. Elke sectie toont alleen items met gedownloede gegevens:
 
 - ***Bronnen*** (*blauw*).  
     Bevat kaarten ([Standaard](../map/vector-maps.md), &nbsp;[Nautisch](../plugins/nautical-charts.md), &nbsp;[Topografie](../plugins/topography.md), &nbsp;[Weer](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) en [Reisgidsen](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Alleen wegen**,  &nbsp;[Kaartbronnen](../map/raster-maps.md), &nbsp;[Weergavestijlen](../map/map-styles.md#default-map-styles), &nbsp;**Kaartlettertypen, &nbsp;Steminstructies (opgenomen en TTS), &nbsp;Cache**.  
@@ -318,89 +317,6 @@ Beschikbare **Acties** zijn afhankelijk van het gegevenstype:
 
 </Tabs>
 
-<!--
-The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
-
-- ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
-
-- ***My Places*** (*yellow*).  
-    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
-
-- ***Settings*** (*green*).  
-    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
-
-
-#### Viewing Data {#viewing-data}
-
-![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
-
-
-Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
-
-***Available actions:***
-
-- **Search**. Find specific data by name within the selected folder.
-- **Three-dot menu**:  
-    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
-    ***Import***. Access the device's storage to import files.
-- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
-
-
-#### Menu for Items from the List {#menu-for-items-from-the-list}
-
-![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
-
-Each item in the list offers a *three-dot menu* with options:
-
-- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
-- **Export**. Save data to a file via *Settings → Export to File*.
-
-***Additional options for maps:***
-
-- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
-- **Update**. Download the latest version of the map.
-- **Rename**. Customize the map’s name for better identification.
-- **Remove**. Delete the map from your device.
-- **Edit** (for Online Maps). Modify the online map configuration.
-
-#### Map source items menu {#map-source-items-menu}
-
-![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
-
-Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
-
-- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
-- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
-- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
-- **Export**. Saves the selected map source configuration for backup or sharing.  
-- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
-
-
-#### Local Data Item Overview {#local-data-item-overview}
-
-![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
-
-When viewing a local data item, you see:
-
-- **Type**. The data type from the **Local** list.
-- **Created**. The date the item was added.
-- **Size**. The item’s size is in MB.
-
-Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
-
-#### Sorting Options {#sorting-options}
-
-![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
-
-Use sorting options to organize map data:
-
-- **Name (A - Z / Z - A)**. Locate items alphabetically.
-- **Country name (A - Z / Z - A)**. Organize maps geographically.
-- **Newest date first** / **Oldest date first**. See updates or older versions.
-- **Large size first** / **Small size first**. Identify large maps to free storage space.
-
--->
 
 ## Updatemenu {#updates-menu}
 
@@ -410,13 +326,15 @@ Use sorting options to organize map data:
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Kaartenmenu Kaarten bijwerken Android](@site/static/img/personal/maps/maps_update_andr.png) ![Kaartenmenu Update-tabblad Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
+![Kaartenmenu Kaarten bijwerken Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Kaartenmenu Update-tabblad Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
 
 Het tabblad **Updates** stelt u in staat om OsmAnd-kaarten en -bronnen te vernieuwen. Standaard- en 'alleen wegen'-kaarten worden één keer per maand uitgebracht, meestal tussen de 2e en 5e dag, en bevatten OpenStreetMap-gegevens tot de laatste dag van de voorgaande maand (bijvoorbeeld, de oktober-release bevat gegevens tot 30 september). Andere gegevens zoals Wikipedia, terrein- of nautische kaarten kunnen verschillende, niet-regelmatige updateschema's volgen. Weersvoorspellingen hebben hun eigen regelmatige updatecyclus. Voor details, zie [Voorspelling downloaden](../plugins/weather.md#download-forecast). 
 
 Als meerdere kaarten van hetzelfde land een update vereisen, groepeert OsmAnd ze in één item in de Updates-lijst. Het gegroepeerde item toont de landnaam en het aantal opgenomen kaarten. Wanneer u erop tikt, opent een *Kaarten bijwerken*-bodemsheet met alle kaarten die een update nodig hebben. 
 
 Gebruik de knop *Alles bijwerken* om alle kaarten tegelijk bij te werken, of werk individuele kaarten naar behoefte bij. Voor uurlijkse updates, controleer de status van uw [Live Updates](#live-updates)-abonnement. Indien ingeschakeld, verschijnt de sectie **Live Updates** bovenaan het tabblad, onder de indicator voor het apparaatgeheugen.
+
+Het tabblad **Updates** kan ook een item **<Translate android="true" ids="unsupported_maps"/>** tonen. Dit verschijnt wanneer u kaarten hebt die niet langer worden ondersteund en zijn vervangen door kleinere regio's. Tik op Niet-ondersteunde kaarten om de lijst te bekijken, verouderde kaarten te verwijderen en in plaats daarvan de nieuwe regioversies te downloaden. Op het scherm Niet-ondersteunde kaarten kunt u alle niet-ondersteunde kaarten bekijken en Alles verwijderen gebruiken om ze in één keer te verwijderen (een bevestigingsaanvraag wordt getoond vóór verwijdering).
 
 U kunt ook kaarten rechtstreeks vanuit het Updates-tabblad beheren met een lang-drukgebaar op een willekeurige vermelde kaart. Dit opent een contextmenu met verschillende opties:
 - **Info** — bekijk details over de geselecteerde kaart

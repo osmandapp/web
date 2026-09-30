@@ -1,5 +1,5 @@
 ---
-source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
+source-hash: 0908961f227fa1a892804774f35b6e16c127cf8034093323cc379c362624f911
 sidebar_position: 17
 title:  Nagrywanie trasy
 ---
@@ -25,13 +25,13 @@ Dzięki *wtyczce Nagrywanie trasy* można tworzyć nowe trasy, wyświetlać nagr
 
 <TabItem value="android" label="Android">
 
-![Nagrana trasa w systemie Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_3.png)
+![Recorded trip in Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Nagrana trasa w systemie iOS](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_ios_2.png)
+![Recorded trip in iOS](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_ios_2.png)
 
 </TabItem>
 
@@ -50,7 +50,7 @@ Aby rozpocząć nagrywanie tras, należy dokonać następujących ustawień:
 
 ## Nagrywanie nowej trasy {#new-track-recording}
 
-![Widżet Dystans/Start-Stop w Android](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Widżet Dystans/Start-Stop w iOS](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
+![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
 
 Dzięki wtyczce Nagrywanie trasy w OsmAnd można łatwo rozpocząć nagrywanie trasy, korzystając z różnych wygodnych opcji. Oto jak możesz rozpocząć swoją podróż:
 
@@ -58,7 +58,7 @@ Dzięki wtyczce Nagrywanie trasy w OsmAnd można łatwo rozpocząć nagrywanie t
 
 - [<Translate android="true" ids="start_recording"/>](../personal/myplaces.md#tracks) — Stuknij przycisk w zakładce *Główne <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*.
 
-- Przyciski [Szybkiej akcji](../widgets/quick-action.md#add-and-delete-actions) — Aby rozpocząć nagrywanie podróży, przejdź do *Menu → Konfiguruj ekran → Przyciski niestandardowe → Szybka akcja → Dodaj akcję → Moje miejsca* i wybierz [Start / Pauza: Nagrywanie trasy](../widgets/quick-action.md#my-places).
+- Przyciski [Szybkiej akcji](../widgets/quick-action.md#add-and-delete-actions) — Aby rozpocząć nagrywanie podróży, przejdź do *Menu → Konfiguruj ekran → Przycuty niestandardowe → Szybka akcja → Dodaj akcję → Moje miejsca* i wybierz [Start / Pauza: Nagrywanie trasy](../widgets/quick-action.md#my-places).
 
 - *Tylko Android*:
     - Przejdź do *Główne <Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.
@@ -84,7 +84,7 @@ Dzięki wtyczce Nagrywanie trasy w OsmAnd można łatwo rozpocząć nagrywanie t
 
 Okno dialogowe Start otwiera się, jeśli opcja **<Translate android="true" ids="show_start_dialog"/>** jest włączona w sekcji ustawień okna dialogowego Start.
 
-![Rozpocznij nagrywanie w systemie Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
+![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
 </TabItem>
 
@@ -92,7 +92,7 @@ Okno dialogowe Start otwiera się, jeśli opcja **<Translate android="true" ids=
 
 Okno dialogowe Start otwiera się, jeśli opcja **<Translate ios="true" ids="track_interval_remember"/>** nie jest włączona.
 
-![Rozpocznij nagrywanie w systemie iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png)
+![Start recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png)
 
 </TabItem>
 
@@ -109,7 +109,7 @@ Okno dialogowe Start otwiera się, jeśli opcja **<Translate ios="true" ids="tra
 
 ### Launcher (Android) {#launcher-android}
 
-![Menu kontekstowe ikony](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Ikona Rozpocznij nagrywanie](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
+![Icon's context menu](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
 Możesz szybko rozpocząć nowe nagrywanie trasy bezpośrednio z ekranu urządzenia z systemem Android, korzystając z menu kontekstowego ikony aplikacji OsmAnd.
 
@@ -132,9 +132,9 @@ Dla *Zatrzymaj / Zapisz / Wstrzymaj*:
 
 - Aby **zatrzymać** lub **zapisać** nagrywaną trasę, przejdź do *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>* *→* [zakładka *<Translate android="true" ids="shared_string_gpx_files"/>*](../personal/myplaces.md#tracks) i stuknij odpowiedni przycisk w polu *Aktualnie nagrywana trasa*.
 
-- Aby **zapisać, wstrzymać, rozpocząć** nowy segment lub **zakończyć** nagrywanie, użyj przycisków [Szybkiej akcji](../widgets/quick-action.md#add-and-delete-actions). Przejdź do *Menu → Konfiguruj ekran → Przyciski niestandardowe → Szybka akcja → Dodaj akcję → [Moje miejsca](../widgets/quick-action.md#my-places)* i dodaj jeden lub więcej przycisków szybkiej akcji.
+- Aby **zapisać, wstrzymać, rozpocząć** nowy segment lub **zakończyć** nagrywanie, użyj przycisków [Szybkiej akcji](../widgets/quick-action.md#add-and-delete-actions). Przejdź do *Menu → Konfiguruj ekran → Przycuty niestandardowe → Szybka akcja → Dodaj akcję → [Moje miejsca](../widgets/quick-action.md#my-places)* i dodaj jeden lub więcej przycisków szybkiej akcji.
 
-- (*Tylko Android*) Aby **wstrzymać** lub **zapisać** nagrywaną trasę, użyj [powiadomienia](#notifications) systemowego w obszarze powiadomień urządzenia.<br/><br/> ![zatrzymaj-zapisz-wstrzymaj](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Tylko Android*) Aby **wstrzymać** lub **zapisać** nagrywaną trasę, użyj [powiadomienia](#notifications) systemowego w obszarze powiadomień urządzenia.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Ekran przeglądu {#overview-screen}
@@ -143,13 +143,13 @@ Dla *Zatrzymaj / Zapisz / Wstrzymaj*:
 
 <TabItem value="android" label="Android">
 
-![przegląd](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![przegląd](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Zakończ nagrywanie w iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Zakończ nagrywanie w iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
+![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finish recording in iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -176,13 +176,13 @@ Aby uzyskać bardziej szczegółowy widok, można **skalować wykres**:
 | |  
 | ------------- |
 |**Zakładka Przegląd** w iOS (dla Androida parametry osi Y to *Wysokość*, *Prędkość*, a parametr osi X to *Dystans*). Ta zakładka wyświetla wykres pokazujący zmiany prędkości i wysokości na całej długości trasy oraz kluczowe szczegóły trasy. Dane trasy dla iOS: *Dystans*, *Czas trwania*, *Czas rozpoczęcia* i *Czas zakończenia*. Wyświetlone. Poniżej można zobaczyć, jak jest to wyświetlane w wersjach na Androida i iOS. |
-| ![dane](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
+| ![data](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Zakładka Wysokość** w iOS (dla Androida parametry osi Y to *Wysokość*, *Nachylenie*, a parametr osi X to *Dystans*). Ta zakładka koncentruje się na profilu wysokościowym zarejestrowanej trasy, dostarczając informacji o zmianach wysokości i nachyleniu terenu. Kluczowe wskaźniki dla systemu iOS obejmują: *Średnia wysokość*, *Zakres wysokości*, *W górę* i *W dół*. Poniższe wykresy ilustrują różnice między interfejsami Androida i iOS. |
-| ![dane](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
+| ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Zakładka Prędkość** w iOS (dla Androida parametr osi Y to *Prędkość*, a parametr osi X to *Dystans*). Zakładka Prędkość podświetla dane związane z prędkością na całej trasie. W systemie iOS zawiera takie informacje, jak *Średnia prędkość*, *Maksymalna prędkość*, *Czas w ruchu* i *Skorygowany dystans*. Poniższe zrzuty ekranu pokazują, jak te dane są wyświetlane na obu platformach. |
-| ![dane](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
+| ![data](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | W systemie **Android** można tworzyć więcej kombinacji dostępnych danych osi Y i wartości osi X. |
-| ![dane](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
+| ![data](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
 Więcej szczegółów można znaleźć w [**Menu kontekstowym tras**](../map/tracks/track-context-menu.md#options), gdzie można zarządzać różnymi opcjami związanymi z trasami, takimi jak zmiana nazwy, usuwanie lub dodawanie punktów trasy. Aby dostosować wygląd tras na mapie, odwiedź sekcję [**Wygląd**](../map/tracks/appearance.md). Jeśli chcesz dodać określone punkty trasy do bieżącej trasy, zapoznaj się z przewodnikiem [**Punkty trasy**](../map/tracks/track-context-menu.md#points--waypoints). W celu wprowadzenia jakichkolwiek modyfikacji, takich jak zmiana nazwy trasy, użyj zakładki [**Opcje**](https://osmand.net/docs/user/map/track-context-menu#options) w menu kontekstowym tras.
@@ -195,13 +195,13 @@ Więcej szczegółów można znaleźć w [**Menu kontekstowym tras**](../map/tra
 
 <TabItem value="android" label="Android">
 
-![pokaż_tr_na_mapie_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Konfiguruj trasy na mapie Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![pokaż_tr_na_mapie_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Konfiguruj trasy na mapie iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -268,13 +268,13 @@ Przed rozpoczęciem śledzenia podróży należy odpowiednio skonfigurować **wt
 
 <TabItem value="android" label="Android">  
 
-![Konfiguracja nagrywania trasy w systemie Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Konfiguracja nagrywania trasy w systemie Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
+![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Konfiguracja nagrywania trasy w systemie iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![Konfiguracja nagrywania trasy w systemie iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
+![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
 
 </TabItem>
 
@@ -286,18 +286,18 @@ Przed rozpoczęciem śledzenia podróży należy odpowiednio skonfigurować **wt
 | **Pokaż okno dialogowe startu** (*Android*) | Włącza okno dialogowe, w którym można skonfigurować ustawienia przed rozpoczęciem nagrywania. Jeśli opcja jest wyłączona, nagrywanie rozpocznie się automatycznie. |
 | **Automatyczne nagrywanie trasy podczas nawigacji** | Automatycznie nagrywa trasę podczas nawigacji i zapisuje ją w zakładce *<Translate android="true" ids="shared_string_menu,shared_string_trip_recording"/>*.<br />*Uwaga*: Nagrywanie trasy zużywa baterię i działa w tle, nawet jeśli ekran jest wyłączony. |
 | **Ogólny interwał rejestrowania** | Określa, jak często rejestrowane są punkty lokalizacji. Domyślna wartość to 5 sekund. Jest włączany za pomocą *widżetu Nagrywanie trasy*. |
-| **Minimalne przemieszczenie** | Filtr zapobiegający rejestrowaniu punktów, gdy ruch jest niewielki lub nie ma go wcale. Pomaga zredukować szum danych.<ul><li>*Skutki uboczne*: Okresy odpoczynku mogą nie być rejestrowane, a małe ruchy mogą być ignorowane. Może to zredukować dane po przetworzeniu, ale może również uniemożliwić rejestrowanie błędów GPS.</li><li>*Zalecenie*: Ustaw przemieszczenie na 5 metrów, jeśli chcesz mieć mniej drobnych szczegółów w nagraniach.</li></ul> |
-| **Minimalna dokładność** | Odfiltrowuje punkty lokalizacji poniżej minimalnego progu dokładności, zgodnie z raportem urządzenia.<ul><li>*Skutki uboczne*: Może brakować punktów w obszarach o słabym sygnale (pod mostami, drzewami, między budynkami lub w niektórych warunkach pogodowych).</li><li>*Zalecenie*: W razie wątpliwości lepiej wyłączyć ten filtr, aby uniknąć utraty danych.</li></ul><details><summary>*Uwaga*</summary>Załóżmy, że GPS został wyłączony tuż przed nagrywaniem. W takim przypadku pierwszy zmierzony punkt może mieć zmniejszoną dokładność, więc lepiej jest odczekać chwilę przed zarejestrowaniem punktu lub zarejestrować najlepszy z 3 kolejnych punktów.</details> |
+| **Minimalne przemieszczenie** | Filtr zapobiegający rejestrowaniu punktów, gdy ruch jest niewielki lub nie ma go wcale. Pomaga zredukować szum danych.<ul><li>*Skutki uboczne*: Okresy odpoczynku mogą nie być rejestrowane, a małe ruchy mogą być ignorowane. Może to zredukować dane po przetworzeniu, ale może również uniemożliwić rejestrowanie błędów GPS.</li><li>*Zalecenie*: Ustaw przemieszczenie na 5 metrów, jeśli chcesz mieć mniej drobnych szczegółów w nagrzeniach.</li></ul> |
+| **Minimalna dokładność** | Odfiltrowuje punkty lokalizacji poniżej minimalnego progu dokładności, zgodnie z raportem urządzenia.<ul><li>*Skutki uboczne*: Może brakować punktów w obszarach o słabym sygnale (pod mostami, drzewami, między budyniami lub w niektórych warunkach pogodowych).</li><li>*Zalecenie*: W razie wątpliwości lepiej wyłączyć ten filtr, aby uniknąć utraty danych.</li></ul><details><summary>*Uwaga*</summary>Załóżmy, że GPS został wyłączony tuż przed nagrywaniem. W takim przypadku pierwszy zmierzony punkt może mieć zmniejszoną dokładność, więc lepiej jest odczekać chwilę przed zarejestrowaniem punktu lub zarejestrować najlepszy z 3 kolejnych punktów.</details> |
 | **Minimalna prędkość** | Ustawia próg ignorowania punktów zarejestrowanych poniżej określonej prędkości.<ul><li>*Skutki uboczne*: Odcinki, na których prędkość spada poniżej określonego progu, nie będą rejestrowane.</li><li>*Zalecenie*: Zamiast tego użyj filtra *Minimalne przemieszczenie*, ponieważ może on dać lepsze wyniki bez utraty ważnych danych.</li></ul><details><summary>*Uwaga*</summary>Najpierw spróbuj użyć wykrywania ruchu za pomocą filtra minimalnego przemieszczenia (B), może to dać lepsze wyniki i stracisz mniej danych. Jeśli trasy pozostają zaszumione przy niskich prędkościach, spróbuj tutaj wartości niezerowych. Należy pamiętać, że niektóre pomiary mogą w ogóle nie zgłaszać żadnej wartości prędkości (niektóre metody oparte na sieci), w którym to przypadku nic nie zostanie zarejestrowane.<br/><br/>Sprawdzanie prędkości > 0: Większość chipsetów GPS podaje wartość prędkości tylko wtedy, gdy algorytm ustali, że jesteś w ruchu, a żadnej, jeśli nie jesteś. Stąd użycie ustawienia > 0 w tym filtrze w pewnym sensie wykorzystuje wykrywanie ruchu przez chipset GPS. Ale nawet jeśli nie jest to filtrowane tutaj w czasie nagrywania, nadal używamy tej funkcji w naszej analizie GPX do określenia skorygowanego dystansu, tj. wartość wyświetlana w tym polu to odległość zarejestrowana podczas ruchu.</details> |
 | **Automatyczne dzielenie nagrań po przerwie** | Automatycznie dzieli trasy na podstawie przerw czasowych między zarejestrowanymi punktami. <ul><li>Nowy segment rozpoczyna się po 6-minutowej przerwie.</li><li>Nowa trasa rozpoczyna się po 2-godzinnej przerwie.</li><li>Nowy plik rozpoczyna się po zmianie daty.</li><li>Przerwy mogą wynikać z utraty sygnału GPS, niskiej prędkości lub ustawień konfiguracyjnych.</li></ul><details><summary>*Uwaga*</summary>Przerwa jest identyfikowana, gdy nie są rejestrowane żadne punkty. Może się to zdarzyć, ponieważ lokalizacja nie jest wykrywana lub jest wykrywana, ale nie jest rejestrowana. Może to być spowodowane kilkoma czynnikami, w tym słabym sygnałem GPS z powodu złych warunków pogodowych lub prędkością ruchu spadającą poniżej skonfigurowanego progu. W takich przypadkach, mimo że urządzenie może wykryć lokalizację, nie rejestruje jej.<br/><br/>Te przerwy w zarejestrowanych danych mogą wywołać utworzenie nowego segmentu w tej samej trasie, nowej trasy w tym samym pliku lub nowego pliku GPX w ramach jednego nagrania. Jest to zarządzane w ramach jednej sesji nagrywania start/stop.</details> |
 | **Zapobiegaj samodzielnemu rejestrowaniu** (*Android*) | Wstrzymuje nagrywanie trasy, gdy aplikacja OsmAnd zostanie zamknięta (za pomocą *ostatnich aplikacji*). Wskaźnik działania w tle nie jest wyświetlany w panelu powiadomień systemu Android. |
 | **Dołącz kurs** | Rejestruje kurs (kierunek ruchu) dla każdego punktu w pliku GPX. Kurs to kierunek, w którym skierowane jest urządzenie, który może różnić się od kierunku ruchu z powodu czynników zewnętrznych, takich jak wiatr lub poślizg. |
-| **Aktywność**  | Opcja pozwala na wstępne wybranie [typu aktywności](../map/tracks/track-context-menu.md#ttrack-activity-type) dla profilu, który jest następnie automatycznie stosowany do wszystkich zarejestrowanych tras. |
+| **Aktywność**  | Opcja pozwala na wstępne wybranie [typu aktywności](../map/tracks/track-context-menu.md#track-activity-type) dla profilu, który jest następnie automatycznie stosowany do wszystkich zarejestrowanych tras. |
 | **Czujniki zewnętrzne** <br/> *Wymaga włączonej wtyczki* | Dane z [czujników zewnętrznych](../plugins/external-sensors.md#trip-recording), takie jak *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, lub *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* są zapisywane w pliku GPX. Dane *Dystans* nie są rejestrowane w systemie Android ani iOS. Wyświetlane tylko wtedy, gdy włączona jest [wtyczka Czujniki zewnętrzne](../plugins/external-sensors.md). |
 | **Metryki pojazdu** <br/> *Wymaga włączonej wtyczki* | Dane ze [skanera OBD-II](../plugins/vehicle-metrics.md#trip-recording) są zapisywane w pliku GPX. Wyświetlane tylko wtedy, gdy włączona jest [wtyczka Metryki pojazdu](../plugins/vehicle-metrics.md).<br />*Uwaga*: Możesz dodać, które metryki mają być rejestrowane w pliku GPX z listy: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Folder przechowywania tras** (*Android*) | Określa, gdzie w zakładce *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* przechowywane są zarejestrowane trasy. Opcje obejmują przechowywanie wszystkich tras w folderze Rec lub organizowanie ich według miesięcy, np. Rec/rrrr-mm. |
 | **Powiadomienie** | Kontroluje wyświetlanie powiadomienia systemowego [nagrywania trasy](#notifications) w obszarze powiadomień urządzenia, które pozwala na rozpoczęcie nagrywania podróży. |
-| **Śledzenie online** (*Android*) | Umożliwia śledzenie lokalizacji w czasie rzeczywistym poprzez wysyłanie zarejestrowanych punktów na określony adres URL. Interwał śledzenia określa, jak często wysyłane są punkty, a bufor czasowy przechowuje punkty, gdy nie ma połączenia z Internetem.<details><summary>*Uwaga*</summary>Jeśli ta opcja jest włączona, a nagrywanie trasy jest w toku, widżet Dystans/Start-Stop (REC) zmienia kolor na **zielony** zamiast **czerwonego**, wskazując, że każdy zarejestrowany punkt jest przesyłany na określony adres URL. Pole **Adres internetowy** umożliwia wprowadzenie adresu URL przy użyciu następującego formatu parametrów:<ul><li>`lat={0}`: Szerokość geograficzna</li><li>`lon={1}`: Długość geograficzna</li><li>`timestamp={2}`: Znacznik czasu (czas uniksowy)</li><li>`hdop={3}`: Horyzontalne rozmycie precyzji</li><li>`altitude={4}`: Wysokość</li><li>`speed={5}`: Prędkość</li><li>`bearing={6}`: Namiar (kierunek ruchu)</li><li>`eta={7}`: Szacowany czas przybycia (czas uniksowy)</li><li>`etfa={8}`: Szacowany czas do pierwszego punktu pośredniego lub punktu końcowego (czas uniksowy)</li><li>`eda={9}`: Szacowana odległość do przybycia lub znacznika (w metrach)</li><li>`edfa={10}`: Szacowana odległość do pierwszego punktu pośredniego lub punktu końcowego (w metrach)</li><li>`batproc={11}`: Poziom baterii urządzenia (w procentach)</li></ul>Można ustawić **Interwał śledzenia**, aby określić, jak często wysyłane są punkty lokalizacji, z opcjami od 0 sekund do 5 minut. Dodatkowo parametr **Bufor czasu** określa, jak długo punkty lokalizacji są przechowywane w przypadku braku połączenia z Internetem, zapewniając zapisanie i przesłanie danych po przywróceniu połączenia.<br />OsmAnd przechowuje niesłane punkty lokalizacji tylko w tymczasowej pamięci aplikacji podczas działania aplikacji. Oznacza to, że bufor nie jest zapisywany na stałym nośniku. Jeśli aplikacja zostanie zamknięta, wymuszona do zatrzymania lub urządzenie zrestartowane, wszystkie buforowane punkty zostaną utracone.<br />Ustawienie Bufor czasu nie określa, jak długo punkty są przechowywane w pamięci — działa tylko jako filtr w momencie przesyłania. Gdy OsmAnd próbuje wysłać buforowane punkty, każdy punkt jest sprawdzany pod kątem limitu Buforu czasu. Punkty starsze niż wybrany limit (np. 24 godziny) są usuwane zamiast być przesłane. W rezultacie bufor może tymczasowo zawierać punkty starsze niż wybrana wartość Buforu czasu, ale te punkty zostaną odrzucone podczas procesu przesyłania.</details> |
+| **Śledzenie online** (*Android*) | Umożliwia śledzenie lokalizacji w czasie rzeczywistym poprzez wysyłanie zarejestrowanych punktów na określony adres URL. Interwał śledzenia określa, jak często wysyłane są punkty, a bufor czasowy przechowuje punkty, gdy nie ma połączenia z Internetem.<details><summary>*Uwaga*</summary>Jeśli ta opcja jest włączona, a nagrywanie trasy jest w toku, widżet Dystans/Start-Stop (REC) zmienia kolor na **zielony** zamiast **czerwony**, wskazując, że każdy zarejestrowany punkt jest przesyłany na określony adres URL. Pole **Adres internetowy** umożliwia wprowadzenie adresu URL przy użyciu następującego formatu parametrów:<ul><li>`lat={0}`: Szerokość geograficzna</li><li>`lon={1}`: Długość geograficzna</li><li>`timestamp={2}`: Znacznik czasu (czas uniksowy)</li><li>`hdop={3}`: Horyzontalne rozmycie precyzji</li><li>`altitude={4}`: Wysokość</li><li>`speed={5}`: Prędkość</li><li>`bearing={6}`: Namiar (kierunek ruchu)</li><li>`eta={7}`: Szacowany czas przybycia (czas uniksowy)</li><li>`etfa={8}`: Szacowany czas do pierwszego punktu pośredniego lub punktu końcowego (czas uniksowy)</li><li>`eda={9}`: Szacowana odległość do przybycia lub znacznika (w metrach)</li><li>`edfa={10}`: Szacowana odległość do pierwszego punktu pośredniego lub punktu końcowego (w metrach)</li><li>`batproc={11}`: Poziom baterii urządzenia (w procentach)</li></ul>Można ustawić **Interwał śledzenia**, aby określić, jak często wysyłane są punkty lokalizacji, z opcjami od 0 sekund do 5 minut. Dodatkowo parametr **Bufor czasu** określa, jak długo punkty lokalizacji są przechowywane w przypadku braku połączenia z Internetem, zapewniając zapisanie i przesłanie danych po przywróceniu połączenia.<br />OsmAnd przechowuje niesłane punkty lokalizacji tylko w tymczasowej pamięci aplikacji podczas działania aplikacji. Oznacza to, że bufor nie jest zapisywany na stałym nośniku. Jeśli aplikacja zostanie zamknięta, wymuszona do zatrzymania lub urządzenie zrestartowane, wszystkie buforowane punkty zostaną utracone.<br />Ustawienie Bufor czasu nie określa, jak długo punkty są przechowywane w pamięci — działa tylko jako filtr w momencie przesyłania. Gdy OsmAnd próbuje wysłać buforowane punkty, każdy punkt jest sprawdzany pod kątem limitu Buforu czasu. Punkty starsze niż wybrany limit (np. 24 godziny) są usuwane zamiast być przesłane. W rezultacie bufor może tymczasowo zawierać punkty starsze niż wybrana wartość Buforu czasu, ale te punkty zostaną odrzucone podczas procesu przesyłania.</details> |
 | **Trasy** | Szybkie odniesienie do folderu, w którym zapisywane są trasy w zakładce *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Zresetuj ustawienia wtyczki do domyślnych** | Resetuje wszystkie ustawienia nagrywania trasy dla bieżącego profilu do wartości domyślnych. |
 | **Kopiuj z innego profilu** (*Android*) | Kopiuje ustawienia nagrywania trasy z jednego profilu do drugiego. |
@@ -307,7 +307,7 @@ Przed rozpoczęciem śledzenia podróży należy odpowiednio skonfigurować **wt
 
 <InfoAndroidOnly />
 
-![Trasa na mapie Android](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Trasa na mapie Android](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
+![Track on the map iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Track on the map iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
 
 Ta funkcja pozwala zarządzać ustawieniami optymalizacji baterii dla OsmAnd, aby zapewnić nieprzerwany dostęp do lokalizacji, nawet gdy aplikacja działa w tle podczas nawigacji lub nagrywania trasy.
 
@@ -318,7 +318,7 @@ Ta funkcja pozwala zarządzać ustawieniami optymalizacji baterii dla OsmAnd, ab
 
 ### Powiadomienia {#notifications}
 
-![Powiadomienie o nagrywaniu trasy](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
+![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
 Jeśli w ustawieniach wtyczki włączona jest opcja [Powiadomienie](#recording-settings), powiadomienia o nagrywaniu trasy będą zawsze wyświetlane w obszarze powiadomień systemowych, gdy nagrywanie jest aktywne. To powiadomienie zapewnia, że proces nagrywania nie zostanie przerwany przez system i nie można go wyłączyć podczas aktywnego nagrywania.
 
@@ -334,7 +334,7 @@ To zachowanie jest wymagane przez system Android dla każdej usługi działając
 
 **Dodatkowe opcje Androida**.
 
-![Powiadomienie o nagrywaniu trasy](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
+![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
 
 - W ***Ustawienia Androida → Powiadomienia i pasek stanu → Powiadomienia na ekranie blokady*** można usunąć OsmAnd z listy aplikacji, aby zapobiec pojawianiu się powiadomień na ekranie blokady, unikając przypadkowej aktywacji ekranu. Nie wpłynie to na nagrywanie trasy. Powiadomienia będą nadal pojawiać się w zwykłym obszarze powiadomień.
 - **OsmAnd** może również pojawić się w sekcji ***Prywatność → Specjalne uprawnienia → Włącz ekran***. Jeśli chcesz zapobiec włączaniu się ekranu po pojawieniu się powiadomienia, spróbuj usunąć OsmAnd z tej listy.
@@ -345,7 +345,7 @@ To zachowanie jest wymagane przez system Android dla każdej usługi działając
 
 **Powiadomienie w formie plakietki**.
 
-![Powiadomienie o nagrywaniu trasy](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
+![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
 
 Plakietka ikony aplikacji pojawia się obok ikony OsmAnd, gdy nagrywanie trasy jest aktywne.
 
@@ -373,7 +373,7 @@ Aby rozpocząć korzystanie z *widżetów Nagrywanie trasy*, należy dokonać ws
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Dodawanie widżetu Dystans/Start-Stop w systemie Android](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
+![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
 
 </TabItem>
 
@@ -381,7 +381,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Dodawanie widżetu Dystans/Start-Stop w systemie iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
+![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -398,13 +398,13 @@ Aby dostosować interfejs, można dodać lub usunąć widżet Nagrywanie trasy i
 
 <TabItem value="android" label="Android">
 
-![Tryby wyświetlania](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Tryby wyświetlania](@site/static/img/plugins/trip-recording/average_slope_mode.png)
+![Display Modes](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Display Modes](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Tryby wyświetlania](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Tryby wyświetlania](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
+![Display Modes](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Display Modes](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
@@ -436,7 +436,7 @@ Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, wid
 | |
 |-----------|
 | **Dystans/Start-Stop**. Ten widżet wyświetla dystans trwającego nagrywania podróży. Jest on dodawany automatycznie po włączeniu wtyczki Nagrywanie trasy, ale można go ukryć za pomocą menu Konfiguruj ekran. Widżet ma trzy różne stany: *Nagrywanie*, *Wstrzymano* i *Nieaktywny*, z których każdy wskazuje bieżący stan nagrywania podróży. |
-| ![Widżet nagrywania trasy (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
+| ![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Aby otworzyć [okno dialogowe Nagrywanie trasy](#start-a-dialog) po stuknięciu nieaktywnego widżetu, włącz opcję *Pokaż okno dialogowe uruchamiania* w ustawieniach wtyczki Nagrywanie trasy. Jeśli opcja jest wyłączona, nagrywanie rozpocznie się natychmiast po stuknięciu widżetu bez otwierania okna dialogowego.| 
 
 
@@ -445,19 +445,19 @@ Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, wid
 | |
 |------------|
 |**Średnie nachylenie**. Wyświetla średnie nachylenie dla ostatniego odcinka podjazdu lub zjazdu aktualnej trasy, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 |**Średnia prędkość** *(Tylko Android)*. Pokazuje średnią prędkość dla aktualnie nagrywanego wyjazdu lub średnią prędkość podczas ostatniego podjazdu lub zjazdu, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**W dół**. Wskazuje całkowity spadek lub ostatni odcinek zejścia, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Czas trwania**. Wyświetla całkowity czas bieżącego nagrania podróży w godzinach i minutach. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Maks. prędkość**. Pokazuje maksymalną prędkość dla aktualnie nagrywanego wyjazdu w wybranym trybie. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Czas w ruchu**. Pokazuje czas w ruchu dla aktualnie nagrywanego wyjazdu lub czas dla ostatniego podjazdu i zjazdu, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**W górę**. Pokazuje całkowity wzrost lub ostatni odcinek wzniesienia, w zależności od wybranego trybu. |
-|![widżety](@site/static/img/widgets/tr_rec_wid_up_new.png)|
+|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Jeśli wybrano wiele widżetów, można uzyskać dostęp do tego samego okna dialogowego dla każdego z nich bez konieczności przełączania lub zamykania go. Ten ujednolicony interfejs ułatwia płynne przeglądanie i zarządzanie wszystkimi powiązanymi informacjami.
 

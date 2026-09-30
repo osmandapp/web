@@ -38,31 +38,27 @@ Alle aankopen die via een van deze platforms worden gedaan, ondersteunen [**cros
 Hieronder staan de prijzen voor OsmAnd-producten in de VS en de EU. Prijzen in andere regio's worden automatisch door het betalingsplatform omgerekend naar de lokale valuta.
 
 
-<!--
 
-:::danger 🏖️ Summer Sale
+:::danger 🍂 Herfstuitverkoop
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+*Schiet op! Deze aanbieding is alleen beschikbaar tot* **4 oktober (23:59 UTC)**.
 
 :::
 
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
-| :------------- | :------------- | :----------------------- | :------------------- | :-------------------  |:----------- |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0| <s>€69,99</s> **€34.99**| <s>€14.99</s> **€7.49**| €2.99 / <s>€39.99</s> **€19.99**|<s>€450</s> **€299.00**|
-| **Price (USD)** | $0| <s>$69,99</s> **$34.99**| <s>$14.99</s> **$7.49**| $2.99 / <s>$39.99</s> **$19.99**|<s>$450</s> **$299.00**|
-
+| **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
+| **Prijs (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** | <s>€450</s> **€299.00** |
+| **Prijs (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** | <s>$450</s> **$299.00** |
 
 :::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
+Als je een abonnement met korting afsluit via onze [website](https://osmand.net/pricing), krijg je een tarief met korting voor 2 jaar.  
+Vanaf het derde jaar geldt de volledige prijs.
 :::
 
-
--->
+<!--
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -70,6 +66,8 @@ Starting from the third year, the full price will apply.
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |**Eenmalige aankoop** (15 jaar Pro / Maps+ Levenslang) |
 | **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
+
+-->
 
 
 

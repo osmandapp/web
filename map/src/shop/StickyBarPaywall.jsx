@@ -6,9 +6,10 @@ import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../context/LoginContext';
+import AppContext from '../context/AppContext';
 import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
-import { findPurchase } from './products/ProductManager';
+import { findPurchase, PRODUCT_ID_PRO, PURCHASE_TYPE_ANNUAL, PURCHASE_TYPE_MONTHLY } from './products/ProductManager';
 import { findFeature } from './features/FeaturesManager';
 import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
 import StickyBarContainer from './StickyBarContainer';
@@ -21,6 +22,7 @@ export default function StickyBarPaywall({
     featureId,
     onSeeAllPlans,
 }) {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
@@ -37,8 +39,8 @@ export default function StickyBarPaywall({
     useCardPriceRefresh(updateCardPrices, setUpdateCardPrices, loadPrices);
 
     function loadPrices() {
-        const monthly = findPurchase('monthly', 'osmand-pro');
-        const annual = findPurchase('annual', 'osmand-pro');
+        const monthly = findPurchase(PURCHASE_TYPE_MONTHLY, PRODUCT_ID_PRO);
+        const annual = findPurchase(PURCHASE_TYPE_ANNUAL, PRODUCT_ID_PRO);
         setMonthlyPurchase(monthly && { ...monthly });
         setAnnualPurchase(annual && { ...annual });
     }
@@ -49,7 +51,14 @@ export default function StickyBarPaywall({
         if (!ltx.loginUser) {
             ltx.setOpenLoginDialog(true);
         } else if (annualPurchase) {
-            createFastSpringPurchase({ testMode, ltx, selectedProduct: annualPurchase.fsName, navigate });
+            createFastSpringPurchase({
+                testMode,
+                ltx,
+                ctx,
+                productId: PRODUCT_ID_PRO,
+                type: PURCHASE_TYPE_ANNUAL,
+                navigate,
+            });
         }
     }
 
@@ -105,9 +114,11 @@ export default function StickyBarPaywall({
                     </Box>
                 </Box>
                 <Box className={styles.stickyBarPaywallBtns}>
-                    <Box className={styles.stickyBarBtnWrap}>
-                        <PrimaryBtn text={t('web:action_subscribe_annual')} span={true} action={subscribeAnnual} />
-                    </Box>
+                    {(testMode || annualPurchase?.show !== false) && (
+                        <Box className={styles.stickyBarBtnWrap}>
+                            <PrimaryBtn text={t('web:action_subscribe_annual')} span={true} action={subscribeAnnual} />
+                        </Box>
+                    )}
                     <Box className={styles.stickyBarBtnWrap}>
                         <GrayBtnWithBlueHover text={t('web:action_see_all_plans')} span={true} action={onSeeAllPlans} />
                     </Box>

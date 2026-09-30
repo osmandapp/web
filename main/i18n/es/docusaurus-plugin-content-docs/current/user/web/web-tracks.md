@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
 sidebar_position: 5
 sidebar_label: Pistas
 title: Pistas
@@ -103,7 +103,7 @@ En el menú de tres puntos (⋮) puedes realizar acciones adicionales para la Sm
 
 ## Pistas en la nube {#cloud-tracks}
 
-Las pistas GPX que tienes en [OsmAnd Cloud](../personal/osmand-cloud.md) estarán disponibles para mostrar y editar después de iniciar sesión. Solo para usuarios **Pro** <ProFeature/> y para usuarios de [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (que pueden descargar sus datos incluso después de que su suscripción Pro haya expirado).
+Las pistas GPX que tienes en [OsmAnd Cloud](../personal/osmand-cloud.md) estarán disponibles para mostrar y editar después de iniciar sesión. Solo los **usuarios Pro** <ProFeature/> pueden acceder a ellas. Los usuarios de [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) pueden descargar sus datos de la Nube incluso después de que expire su suscripción Pro.
 
 Al seleccionar una pista, el mapa centra automáticamente y ajusta el nivel de zoom para mostrar toda la pista dentro del área visible del mapa.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -34,7 +34,7 @@ Sekcja Trasy zawiera wszystkie narzędzia i akcje związane z trasami. Dostępne
 
 - Wyświetlanie tras z [OsmAnd Cloud](#cloud-tracks).
 - Dodawanie tras na mapie (folder **Widoczne na mapie**).
-- Przeglądanie informacji o wszystkich trasach i wykresach
+- Przeglądanie informacji o trasach i wykresów.
 - Modyfikowanie tras i dodawanie ich do chmury.
 - Pobieranie i usuwanie tras.
 - Tworzenie nowych folderów lub usuwanie ich.
@@ -103,7 +103,7 @@ W menu z trzema kropkami (⋮) dostępne są dodatkowe działania dla folderu in
 
 ## Trasy w chmurze {#cloud-tracks}
 
-Trasy GPX, które masz w [OsmAnd Cloud](../personal/osmand-cloud.md), będą dostępne do wyświetlania i edycji po zalogowaniu. Tylko dla użytkowników **Pro** <ProFeature/> oraz dla użytkowników [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (którzy mogą pobrać swoje dane nawet po wygaśnięciu subskrypcji Pro).
+Trasy GPX, które masz w [OsmAnd Cloud](../personal/osmand-cloud.md), będą dostępne do wyświetlania i edycji po zalogowaniu. Tylko użytkownicy **Pro** <ProFeature/> mają do nich dostęp. Użytkownicy [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) mogą pobrać swoje dane z Chmury nawet po wygaśnięciu subskrypcji Pro.
 
 Po wybraniu trasy mapa automatycznie centruje się i dostosowuje poziom powiększenia, aby wyświetlić całą trasę w obszarze widocznym na mapie.
 

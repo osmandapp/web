@@ -1,5 +1,5 @@
 ---
-source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
+source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,13 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-**Tracks Analyzer** é uma ferramenta web que ajuda a analisar segmentos de trilhas repetidos entre pontos selecionados no mapa. Para usar este recurso com seus próprios dados, você precisa de uma conta OsmAnd Pro com trilhas sincronizadas no OsmAnd Cloud — caso contrário, suas trilhas não estarão disponíveis no Web Planner. Ela escaneia suas trilhas e encontra todos os segmentos que passam pelos locais escolhidos, permitindo que você compare velocidade, elevação, distância e tempo em várias atividades.
+**Tracks Analyzer** é uma ferramenta web que ajuda a analisar segmentos de trilhas repetidos entre pontos selecionados no mapa. Por exemplo, você pode usá-la para comparar suas pedaladas na mesma subida ou seus trajetos diários. Para usar este recurso com seus próprios dados, você precisa de uma conta OsmAnd Pro com trilhas sincronizadas no OsmAnd Cloud — caso contrário, suas trilhas não estarão disponíveis no Web Planner. Ela escaneia suas trilhas e encontra todos os segmentos que passam pelos locais escolhidos, permitindo que você compare velocidade, elevação, distância e tempo em várias atividades.
 
 ## Como Usar {#how-to-use}
 
 Após abrir o Tracks Analyzer (mostrado como uma chave inglesa), a ferramenta abre com uma visão do mapa e um estado vazio. A partir daqui, você pode escolher quais trilhas serão incluídas na análise usando o painel **Selecionar trilhas**. O analisador permite trabalhar com todas as trilhas disponíveis ou limitar a análise a pastas específicas.
 
-Para iniciar a análise, defina um ou dois pontos diretamente no mapa. Clique com o botão direito no local desejado e selecione **Ponto A / Ponto B** do menu de contexto. O analisador então procura por segmentos de trilha que passem pelo ponto selecionado ou entre os dois pontos.
+Para iniciar a análise, defina um ou dois pontos diretamente no mapa. Clique com o botão direito no local desejado e selecione **Ponto A / Ponto B** do menu de contexto. Com um ponto, o analisador encontra segmentos de trilha que passam pelo local selecionado. Com dois pontos, ele encontra e analisa segmentos entre o Ponto A e o Ponto B.
 
 ![Analisador de Trilhas](@site/static/img/web/web_analyzer_select.png) ![Analisador de Trilhas](@site/static/img/web/web_analyzer_points_new.png)
 
@@ -33,29 +33,14 @@ Para iniciar a análise, defina um ou dois pontos diretamente no mapa. Clique co
 ## Classificação e Parâmetros Visíveis {#sorting-and-visible-parameters}
 Após o analisador encontrar segmentos correspondentes, os resultados são mostrados como uma lista. A lista pode ser reordenada usando a opção **Classificar**, que altera como os segmentos são listados. Além disso, o botão **Campos** abre o painel Parâmetros Visíveis, onde você pode controlar quais parâmetros de análise são mostrados para cada segmento. Você pode exibir todos os parâmetros disponíveis ou selecionar apenas aqueles relevantes para sua análise.
 
-Os parâmetros disponíveis são agrupados por tipo:
+Os parâmetros disponíveis incluem:
 
-**Velocidade**
-- Vel. máx.
-- Vel. média
-- Vel. mín.
-
-**Altitude**
-- Alt. máx.
-- Alt. média
-- Alt. mín.
-
-**Subida / Descida**
-
-**Data e hora**
-- Data
-- Hora de início
-- Hora de fim
-- Período de tempo
-- Duração
-- Tempo em movimento
-
-**Comprimento**
+- Vel. máx., Vel. média e Vel. mín.
+- Alt. máx., Alt. média e Alt. mín.
+- Subida e Descida.
+- Data.
+- Período de tempo, Hora de início, Hora de fim, Duração e Tempo em movimento.
+- Comprimento.
 
 ![Analisador de Trilhas](@site/static/img/web/web_analyzer_sort.png) ![Analisador de Trilhas](@site/static/img/web/web_analyzer_fields.png)
 

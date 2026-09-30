@@ -1,5 +1,5 @@
 ---
-source-hash: 004b4b8d94eaf093dcc696c34a008dc61bd0e4e803c5402b096e6f3105ac6e4d
+source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
 sidebar_position: 8
 title: Popularne miejsca
 ---
@@ -13,10 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Przegląd {#overview}
 
@@ -53,7 +49,7 @@ Wyświetlane są tylko POI z połączonym **identyfikatorem Wikidata**. Te ident
 
 Możesz wyświetlić link do Wikidata bezpośrednio w [Menu kontekstowym mapy](../map/map-context-menu.md). Dotknięcie tagu Wikidata otwiera pełną stronę obiektu w witrynie Wikidata.
 
-Obrazy i inne treści oparte na Wikidata w Popularnych miejscach są odświeżane według harmonogramu i mogą nie pojawić się natychmiast po zmianach w Wikidata lub Wikimedia Commons. Aktualna częstotliwość odświeżania: dwa razy w miesiącu — **10.** i **20.** dnia.
+Obrazy i inne treści oparte na Wikidata w Popularnych miejscach są odświeżane według harmonizmu i mogą nie pojawić się natychmiast po zmianach w Wikidata lub Wikimedia Commons. Aktualna częstotliwość odświeżania: dwa razy w miesiącu — **10.** i **20.** dnia.
 
 Dowiedz się, jak znaleźć identyfikator Wikidata: [Wikipedia: Finding a Wikidata ID](https://en.wikipedia.org/wiki/Wikipedia:Finding_a_Wikidata_ID)
 
@@ -66,13 +62,13 @@ Istnieją dwa główne sposoby dostępu do tej funkcji:
 
 - **Wersja bezpłatna**  
   Dostęp przez [Wyszukiwanie](#explore-in-search) w celu przeglądania pobliskich miejsc w widoku listy.  
-  *<Translate android="true" ids="android_button_seq"/> tylko*. Przejdź do: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
+  *<Translate android="true" ids="android_button_seq"/> only*. Przejdź do: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
   
   Ta lista Eksploruj pokazuje miejsca z Wikipedii/Wikidata uszeregowane według popularności w pobliżu i działa online. Wyświetla do 50 miejsc. Ponieważ wyniki Eksploruj/Wikipedia są uszeregowane według ocen, kolejność w tych wynikach może różnić się od zwykłego wyszukiwania POI.
 
 - **Wersje płatne** *(Maps+ i OsmAnd Pro)*  
   Włącz nakładkę wizualną w [Konfiguracji mapy](#enable-layer).  
-  *<Translate android="true" ids="android_button_seq"/> i iOS*. Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
+  *<Translate android="true" ids="android_button_seq"/> & iOS*. Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*  
 
   W tym trybie popularne POI pojawiają się bezpośrednio na mapie z miniaturkami podglądu i treściami z Wikipedii.
 
@@ -89,8 +85,7 @@ Istnieją dwa główne sposoby dostępu do tej funkcji:
 
 Przejdź do: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.png)  
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.png)
+![Explore Mode](@site/static/img/map/popular_places/popular_places_search.webp) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.webp)
 
 </TabItem>
 
@@ -184,29 +179,6 @@ Jest to sekcja w [menu kontekstowym POI](./map-context-menu.md), która wyświet
 
 Obrazy przeglądane online są automatycznie buforowane dla dostępu offline. Buforowane zdjęcia wyświetlają mały znacznik offline w rogu. Siatka podglądu dostosowuje się do rozmiaru ekranu na iPadOS i macOS, zapewniając wygodne rozmieszczenie obrazów na większych wyświetlaczach. OsmAnd unika również wyzwalania powtarzających się żądań sieciowych po zamknięciu sekcji Zdjęcia online oraz anuluje poprzednie żądania podczas szybkiego przełączania między różnymi POI.
 
-<!-- 
-Learn more about additional options in the [Actions](#actions) section and [Gallery](#gallery).
-
-
-When you tap a Popular Place on the map or from the list, the [POI context menu](./map-context-menu.md) includes an **Online Photos** section with a horizontal preview of images.
-
-- Tap any photo to view it in fullscreen.  
-- Swipe to browse more images.
-
-For more actions like sharing, viewing metadata, or downloading — see [Gallery](#gallery).
-
-
-### Actions {#actions}
-
-In the Map Context menu How to access:
-
-- Tap the **Show All** (Android) / **View All** (iOS) button to open the [gallery](#gallery) in full screen mode, where you can swipe through all available photos for the selected location.
-
-- Tap any photo to view it in [full screen](#gallery) and access the available actions:  
-  **Share**, **Details**, **Open in browser**, and **Download**.
-
--->
-
 ### Galeria {#gallery}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -249,54 +221,6 @@ Możesz także wykonać następujące czynności na każdym zdjęciu:
 
 **Uwaga:** Pobieranie zapisuje obraz w pamięci urządzenia na stałe do użytku offline, podczas gdy buforowane zdjęcia są przechowywane automatycznie i dostępne offline tylko w aplikacji.
 
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-The Android version does not include an additional menu for photo actions.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![iOS - Context Menu Options](@site/static/img/map/gallery_menu_ios_3.png)
-
-On **iOS**, long-pressing a photo opens a context menu with additional actions:
-
-- **Details**  
-- **Open in browser**  
-- **Download**
-
-**Buttons**:
-
-- The **Share** button lets you quickly share the selected image.  
-- The **three-dot menu** provides access to extra actions, including viewing details, opening the source in a browser, or downloading the image.
-
-</TabItem>
-
-</Tabs>
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Android – Details View](@site/static/img/map/gallery_menu_android_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![iOS – Details View](@site/static/img/map/gallery_menu_ios_2.png)
-
-</TabItem>
-
-</Tabs>
-
-The **Details** screen provides full metadata for the selected photo, including: *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
--->
-
 
 ## Powiązane artykuły {#related-articles}
 
@@ -304,104 +228,3 @@ The **Details** screen provides full metadata for the selected photo, including:
 - [Konfiguracja mapy](./configure-map-menu.md)
 - [Wyszukiwanie POI](../search/search-poi.md)
 - [Wtyczka Wikipedia](../plugins/wikipedia.md)
-
-
-
-
-
-<!--
-### Online Photos 2
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)   ![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/online_photo_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
-
-</TabItem>
-
-</Tabs>
-
-#### Actions With Photos
-
-How to access:
-
-- Tap the **Show All**(Android) / **View All**(iOS) button to open [the gallery](#gallery-menu) in full screen mode. There you can swipe through all the images related to the selected location.
-
-- Tap a photo to access actions such as *Share*, *Details*, *Open in browser*, and *Download*.
-
-- You can also [browse](../map/point-layers-on-map.md#-street-level-imagery) street-level images on the map.  
-
-In the **Online photos** section of the map context menu, you can access photos of objects from the [Wikimedia](https://www.wikimedia.org/), which offers media files tagged with `image` or `wikimedia` from OpenStreetMap.
-
-#### Gallery Menu 2
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android.png)   ![Street-Level Imagery Android](@site/static/img/map/gallery_menu_android_1.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios.png)   ![Street-Level Imagery iOS](@site/static/img/map/gallery_menu_ios_1.png)
-
-</TabItem>
-
-</Tabs>
-
-
-The gallery can display up to 100 items. You can browse through all the photos, and short tapping on any photo will open it to view additional details (*Name*, *Date*, *Author*, *License*) and perform various actions (*Share*, *Details*, *Open in browser*, and *Download* options).
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_3.png) 
-
-</TabItem>
-
-</Tabs>
-
-
-
-On iOS, long tapping on any photo opens an additional menu with actions such as *Details*, *Open in browser*, and *Download*.
-
-Buttons:
-
-- The **Share** button allows you to share the selected item.  
-- The **Three dots** button opens a menu with options like *Details*, *Open in browser*, and *Download*.
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_android_2.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_ios_2.png) 
-
-</TabItem>
-
-</Tabs>
-
-
-The Details screen provides information such as the *Name*, *Added Date*, *Author*, *License*, *Source*, and *Link* of the selected item.
-
--->

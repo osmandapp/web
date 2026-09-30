@@ -1,5 +1,5 @@
 ---
-source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
+source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
 sidebar_position: 18
 title:  Wtyczki
 ---
@@ -74,7 +74,7 @@ Wtyczki OsmAnd mogą rozszerzać następujące grupy funkcji: **Warstwy**, **Wid
 | [Mapy online](#online-maps) |[Warstwa mapy](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Nagrywanie trasy](#trip-recording) | [Widżet](../plugins/trip-recording.md#widgets), [Profil](../plugins/trip-recording.md#recording-settings) |
 | [Topografia](#topography) | [Warstwa mapy](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [Rzeźba terenu 3D](#topography) 🤖  | [Warstwa mapy](../plugins/topography.md#3d-relief) |
+| [Rzeźba terenu 3D](#topography) | [Warstwa mapy](../plugins/topography.md#3d-relief) |
 | [Pogoda](../plugins/weather.md) | [Warstwa mapy](../plugins/weather.md#display-weather-on-the-map), [Widżet](../plugins/weather#weather-widgets), [Ekran](../plugins/weather.md#weather-forecast-screen) |
 | [Widok mapy morskiej](#nautical-map-view) | [Styl mapy](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Widok mapy narciarskiej](#ski-map-view) | [Styl mapy](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
@@ -82,19 +82,19 @@ Wtyczki OsmAnd mogą rozszerzać następujące grupy funkcji: **Warstwy**, **Wid
 |[Pozycja parkowania](#parking-position) | [Menu kontekstowe](../plugins/parking.md#set-a-spot), [Widżet](../plugins/parking.md#parking-widget) |
 |[Edycja OpenStreetMap](#openstreetmap-editing)| [Warstwa mapy](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Warstwa mapy](../plugins/mapillary.md#map-layer), [Menu kontekstowe](../plugins/mapillary.md#map-context-menu) , [Widżet](../plugins/mapillary.md#mapillary-widget)|
-|[Czujniki zewnętrzne](#external-sensors) 🤖  | [Widżet](../plugins/external-sensors.md#widgets) |
+|[Czujniki zewnętrzne](#external-sensors) | [Widżet](../plugins/external-sensors.md#widgets) |
 |[Metryki pojazdu](#vehicle-metrics)  | [Ustawienia niestandardowe](../plugins/vehicle-metrics#scanner-settings), [Widżet](../plugins/vehicle-metrics#widgets) |
 |[Astronomia](#astronomy)  | [Ekran](../plugins/astronomy.md#star-map-screen), [Menu kontekstowe](../plugins/astronomy.md#context-menu) |
 |[Dostępność](#accessibility) 🤖  | [Ustawienia niestandardowe](../plugins/accessibility.md#plugin-settings) |
 |[Rozwój OsmAnd](#osmand-development) | [Ustawienia niestandardowe](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Warstwa mapy](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widżet](../plugins/osmand-tracker.md#tracker-widget), [Menu kontekstowe](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[Śledzenie statków AIS](#ais-vessel-tracker) 🤖  |  [Ustawienia niestandardowe](../plugins/ais-tracker.md#plugin-settings) |
+|[Śledzenie statków AIS](#ais-vessel-tracker) |  [Ustawienia niestandardowe](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Ustawienia wtyczki {#plugin-settings}
 
 :::caution UWAGA
-Tylko wtyczka deweloperska OsmAnd i wtyczka do edycji OSM zmieniają ustawienia dla wszystkich profili. Pozostałe wtyczki są konfigurowane dla każdego profilu osobno.  
+Tylko wtyczka deweloperska OsmAnd i wtyczka do edycji OSM zmieniają ustawienia dla wszystkich profili. Pozostałe wtyczki są konfigurowane dla każdego profil osobno.  
 :::
 
 Większość wtyczek zapewnia określone ustawienia profilu lub ustawienia globalne, do których można uzyskać dostęp poprzez:
@@ -192,7 +192,7 @@ Podłącz czujniki zewnętrzne, aby wyświetlać ich dane w OsmAnd i przechowywa
 
 ### [Metryki pojazdu](./vehicle-metrics.md) {#vehicle-metrics}
 
-Podłącz skaner OBD-II, aby wyświetlać dane pojazdu w OsmAnd i przechowywać informacje w nagraniach tras.  
+Podłącz skaner OBD-II, aby wyświetlać dane pojazdu w OsmAnd i przechowywać informacje w nagrzeniach tras.  
 
 ### [Astronomia](./astronomy.md) {#astronomy}
 
@@ -217,6 +217,3 @@ Wyświetlaj pozycje AIS i informacje o otaczających statkach. Dane AIS są odbi
 ## [Utwórz własną wtyczkę](./custom.md) {#create-a-custom-plugin}
 
 Możesz stworzyć własną wtyczkę, postępując zgodnie z artykułem *Pakiet niestandardowy*.
-
-
-_______

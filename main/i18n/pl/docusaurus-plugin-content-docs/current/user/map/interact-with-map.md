@@ -1,5 +1,5 @@
 ---
-source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
+source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
 sidebar_position: 2
 title:  Interakcja z mapą
 ---
@@ -217,8 +217,6 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 **Widok globu** pozwala wyświetlać mapę jako sferyczną Ziemię zamiast płaskiej projekcji. Ten tryb zmienia geometrię powierzchni mapy i dostosowuje interakcję mapy do nawigacji sferycznej.  
 
 Widok globu jest obecnie dostępny tylko wtedy, gdy:
-- Wtyczka [Development](../plugins/development.md) jest włączona.  
-Przejdź do: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - Wtyczka [Topography](../plugins/topography.md) jest włączona.  
 Przejdź do: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - [Silnik renderowania mapy](../personal/global-settings.md#map-rendering-engine) jest ustawiony na Wersję 2 (OpenGL).  
@@ -330,7 +328,7 @@ Jeśli chcesz przypisać klawisze dla zewnętrznego urządzenia wejściowego (ta
 
 ![Zewnętrzne urządzenia](@site/static/img/map/external_mypilot_ios.png)  ![Zewnętrzne urządzenia](@site/static/img/map/external_mypilot2_ios.png)
 
-Jeśli chcesz przypisać klawisze dla zewnętrznego urządzenia wejściowego (takiego jak klawiatura, joystick lub kontroler), musisz utworzyć typ urządzenia: przejdź do ustawienia [Zewnętrzne urządzenie wejściowe](#external-input-devices), wybierz **Device** z listy, dotknij&nbsp; "**Add**" &nbsp; i wprowadź nazwę. Każdy typ ma menu z następującymi opcjami: ***Zmień nazwę, Duplikuj*** i ***Usuń***.
+Jeśli chcesz przypisać klawisze dla zewnętrznego urządzenia wejściowego (takiego jak klawiatura, joystick lub kontroler), musisz utworzyć typ urządzenia: przejdź do ustawienia [Zewnętrzne urządzenie wejściowe](#external-input-devices), wybierz **Device** z listy, dotknij&nbsp;  "**Add**" &nbsp; i wprowadź nazwę. Każdy typ ma menu z następującymi opcjami: ***Zmień nazwę, Duplikuj*** i ***Usuń***.
 
 </TabItem>
 
@@ -386,7 +384,7 @@ Po utworzeniu niestandardowego typu wejściowego możesz przypisać wymagane akc
 
 </Tabs> 
 
-Możesz usunąć wiele niepotrzebnych akcji za pomocą przycisku **Edytuj** (*w kształcie ołówka* na Androidzie) na raz:
+Możesz usunąć wiele niepotrzebanych akcji za pomocą przycisku **Edytuj** (*w kształcie ołówka* na Androidzie) na raz:
 
 - ***Usuń jedną akcję*** na akcję, za pomocą przycisku&nbsp;  "**−**"  &nbsp; w polu elementu. Przypisanie klawisza można również usunąć za pomocą menu kontekstowego (długie naciśnięcie na element) przez dotknięcie **Usuń**.
 - ***Usuń wszystkie przypisania klawiszy*** dla wybranego typu, dotykając przycisku w prawym górnym rogu ekranu obok *Edytuj nazwę* na Androidzie; dotykając przycisku **Wyczyść wszystko** na iOS.
