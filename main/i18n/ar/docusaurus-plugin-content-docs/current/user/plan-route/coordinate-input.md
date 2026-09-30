@@ -1,5 +1,5 @@
 ---
-source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
+source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
 sidebar_position: 3
 title:  إدخال الإحداثيات
 ---
@@ -25,11 +25,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## كيفية الاستخدام {#how-to-use}
 
-يمكنك إنشاء نقاط الطريق من قائمة *[علامات الخريطة](../personal/markers.md#actions)* أو من [أماكني](../personal/myplaces.md) (انظر لقطات الشاشة). يرجى اتباع هذه المسارات للوصول إلى خيار إدخال الإحداثيات:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> ← زر الكرة الأرضية في أسفل الشاشة*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+يمكنك إنشاء نقاط الطريق من قائمة *[علامات الخريطة](../personal/markers.md#actions)*. انتقل إلى: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![كيفية العثور على إدخال الإحداثيات](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![كيفية العثور على إدخال الإحداثيات](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
+![كيفية العثور على إدخال الإحداثيات](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) 
 
 بعد فتح شاشة إدخال الإحداثيات:
 
@@ -102,7 +100,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 لحفظ نقاطك كمسار، انقر على زر *رجوع* ( &#8592; ) أو استخدم قائمة *[الخيارات](#options)*.
 
-![حفظ نقطة في إدخال الإحداثيات في أندرويد 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![قائمة أماكني في إدخال الإحداثيات في أندرويد 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![حفظ نقطة في إدخال الإحداثيات في أندرويد 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![قائمة أماكني في إدخال الإحداثيات في أندرويد 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
 
 في القائمة المنبثقة، يمكنك إدخال اسم المسار الخاص بك أو حفظه بالاسم الافتراضي. انقر على <Translate android="true" ids="shared_string_save"/> لحفظ النقاط المضافة كمسار جديد.
 ستجد مسارك في [قائمة أماكني](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

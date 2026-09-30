@@ -1,5 +1,5 @@
 ---
-source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
 sidebar_position: 7
 title:  الخرائط النقطية (عبر الإنترنت / دون اتصال)
 ---
@@ -14,13 +14,10 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## نظرة عامة {#overview}
 
-تعد الخرائط النقطية إضافات مهمة ومفيدة لخرائط OsmAnd المتجهية. فهي تتيح لك دمج مصادر خرائط متنوعة مع الخرائط المتجهية. على سبيل المثال، يتم عرض المعلومات حول التلال والمنحدرات كطبقة نقطية. يمكنك عرض طبقة علوية من مسارات المشي لمسافات طويلة، وخرائط الأمطار، وبيانات حركة المرور في الوقت الفعلي، وطبقة علوية من صور الأقمار الصناعية على خريطة متجهية أساسية شبه شفافة. يمكنك أيضًا تبديل الخرائط الافتراضية إلى مربعات نقطية على الويب.
+تعد الخرائط النقطية إضافات مهمة ومفيدة لخرائط OsmAnd المتجهية. فهي تتيح لك دمج مصادر خرائط متنوعة مع الخرائط المتجهية. على سبيل المثال، يتم عرض المعلومات حول التلال والمنحدرات كطبقة نقطية. يمكنك عرض طبقة علوية من مسارات المشي لمسافات طويلة، وخرائط الأمطار، وبيانات حركة المرور في الوقت الفعلي، وطبقة علوية من صور الأقمار الصناعية على خريطة متجهية أساسية شبه شفافة. يمكنك أيضًا تبديل مصدر الخريطة الافتراضي من الخرائط المتجهية دون اتصال إلى المربعات النقطية عبر الإنترنت.
 
 تُقدم الخرائط النقطية في OsmAnd عادةً كمجموعة من الصور الصغيرة (المربعات) المرتبة في شبكة. على عكس الخرائط المتجهية، التي تخزن الكائنات مثل الطرق والنقاط والمضلعات كبيانات، فإن مربعات الخرائط النقطية هي صور مُعالجة مسبقًا ويمكن أن تظهر منقطة عند مستويات التكبير العالية لأن كل بكسل له قيمة ثابتة.
 
@@ -51,7 +48,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - معلومات السفن في الوقت الفعلي.
 - مربعات OpenStreetMap عبر الإنترنت لتحرير OSM.
 
-![Online maps overview](@site/static/img/plugins/online-maps/online-maps-overview.png)
+![نظرة عامة على الخرائط عبر الإنترنت](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
 :::tip
 يمكنك أيضًا تغيير [المصدر الرئيسي](#main) للخرائط من الخرائط المتجهية إلى المربعات عبر الإنترنت.
@@ -74,13 +71,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 <TabItem value="android" label="أندرويد">  
 
-![Show maps](@site/static/img/plugins/online-maps/show-maps-andr_new.png)  
+![عرض الخرائط](@site/static/img/plugins/online-maps/show-maps-andr_new.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Show maps](@site/static/img/plugins/online-maps/show-maps-ios_new.png)  
+![عرض الخرائط](@site/static/img/plugins/online-maps/show-maps-ios_new.png)  
 
 </TabItem>
 
@@ -88,7 +85,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 في OsmAnd، يمكن أن تعمل الخرائط النقطية كمصدر خريطة إضافي إلى جانب الخرائط المتجهية الافتراضية، والتي تم تحسينها للاستخدام دون اتصال بالإنترنت.  
 
-لديك المرونة لإضافة طبقة أو طبقتين من المربعات عبر الإنترنت لتكملة خريطتك الأساسية. يتيح لك هذا عرض ما يصل إلى ثلاث طبقات من الخرائط في وقت واحد على شاشتك (بالإضافة إلى التضاريس). فكر فيها مثل فطيرة: [**الطبقة السفلية**](#underlay) (قاعدة نقطية أسفل)، [**الرئيسية**](#main) (متجهية* أو نقطية أساسية)، [**الطبقة العلوية**](#overlay) (نقطية فوق)، مع تظليل [**التضاريس**](#terrain) فوق الجميع. على سبيل المثال، يمكنك الحصول على خريطة OsmAnd المتجهية غير المتصلة بالإنترنت كقاعدة رئيسية، وتغطيتها بعرض القمر الصناعي، ووضع خريطة مسار الدراجات كطبقة سفلية لمزيد من التفاصيل.
+لديك المرونة لإضافة طبقة أو طبقتين من المربعات عبر الإنترنت لتكملة خريطتك الأساسية. يتيح لك هذا عرض ما يصل إلى ثلاث طبقات من الخرائط في وقت واحد على شاشتك (بالإضافة إلى التضاريس). فكر فيها مثل فطيرة: [**الطبقة السفلية**](#underlay) (قاعدة نقطية أسفل)، [**الرئيسية**](#main) (متجهية أو نقطية أساسية)، [**الطبقة العلوية**](#overlay) (نقطية فوق)، مع تظليل [**التضاريس**](#terrain) فوق الجميع. على سبيل المثال، يمكنك استخدام صور الأقمار الصناعية كطبقة سفلية، وخريطة OsmAnd المتجهية دون اتصال كطبقة رئيسية مع شفافية متزايدة، وخريطة مسار الدراجات كطبقة علوية فوقها.
 
 >[الخرائط المتجهية](./vector-maps.md) متوفرة **فقط** في [الطبقة الرئيسية](#main) (وهي الافتراضية هناك). يمكن استخدام الخرائط النقطية في جميع الطبقات الثلاث: الرئيسية، والسفلية، والعلوية.
 
@@ -106,7 +103,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,gpx_add_track"/>*  
 
-![Show maps](@site/static/img/plugins/online-maps/map_source_1.png) ![Show maps](@site/static/img/plugins/online-maps/map_source_2.png)
+![عرض الخرائط](@site/static/img/plugins/online-maps/map_source_1.png) ![عرض الخرائط](@site/static/img/plugins/online-maps/map_source_2.png)
 
 </TabItem>
 
@@ -114,13 +111,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,shared_string_online_maps,map_settings_install_more"/>*  
 
-![Show maps](@site/static/img/plugins/online-maps/map_type_new.png)
+![عرض الخرائط](@site/static/img/plugins/online-maps/map_type_new.png)
 
 </TabItem>
 
 </Tabs>
 
-افتراضيًا، يتم تعيين الخريطة الرئيسية إلى [الخرائط المتجهية دون اتصال](./vector-maps.md) (خرائط OsmAnd)، المحسّنة للاستخدام دون اتصال. يمكنك اختيار مصدر خريطة مختلف من القائمة (_إضافة المزيد_(أندرويد) أو _تثبيت المزيد_ (iOS)) أو [إضافة](#add-new-online-source) خاص بك.
+افتراضيًا، يتم تعيين الخريطة الرئيسية إلى [الخرائط المتجهية دون اتصال](./vector-maps.md) (خرائط OsmAnd)، المحسّنة للاستخدام دون اتصال. يمكنك اختيار مصدر خريطة مختلف من القائمة (_إضافة المزيد_ (أندرويد) أو _تثبيت المزيد_ (iOS)) أو [إضافة](#add-new-online-source) خاص بك.
 
 ### الطبقة العلوية {#overlay}
 
@@ -130,7 +127,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/overlay-andr.png)  
 
 </TabItem>
 
@@ -138,13 +135,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-١. *تشغيل/إيقاف* طبقة الطبقة السفلية.
+١. *تشغيل/إيقاف* الطبقة العلوية.
 ٢. *شفافية الطبقة العلوية* (*أندرويد*)/ *شفافية* خريطة الطبقة العلوية (*iOS*).
 ٣. *إظهار شريط تمرير الشفافية* (*أندرويد*) / *إظهار شريط التمرير على الخريطة* (*iOS*). وصول سريع إلى إعداد الشفافية.
 ٤. *مصدر خريطة الطبقة العلوية* (*أندرويد*) / *الطبقات المتاحة* (*iOS*). اختر خريطة مربعات عبر الإنترنت من القائمة لإضافتها مباشرة كطبقة علوية.
@@ -160,7 +157,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
+![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/underlay-andr.png)
 
 </TabItem>
 
@@ -168,7 +165,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
 
 </TabItem>
 
@@ -184,7 +181,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### التضاريس {#terrain}
 
-![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
+![طبقات التضاريس](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
 في سياق الخرائط النقطية، يشير [التضاريس](../plugins/topography.md#terrain) إلى طبقة تظليل الارتفاع تساعد في تصور شكل المناظر الطبيعية على خريطة مسطحة. تعتمد هذه الطبقة على بيانات تضاريس نقطية وتُعرض فوق الخريطة الأساسية لتحسين إدراك المنحدرات، وأشكال التضاريس.
 
@@ -202,79 +199,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 يمكن دمج تصور التضاريس مع طبقات رستر أخرى ومع الخريطة المتجهية الافتراضية.
 
 الميزات المتقدمة للتضاريس، بما في ذلك الارتفاع ثلاثي الأبعاد (فقط Pro) وخيارات إضافية متعلقة بالتضاريس، موصوفة في مقالة [الطبوغرافيا](../plugins/topography.md).
-
-<!--
-## تظليل التلال / الانحدار {#hillshade--slope}
-
-![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
-
-**تظليل التلال (Hillshade)** و **الانحدار (Slope)** هما خرائط نقطية غير متصلة بالإنترنت تعرض تضاريس الأرض. يتم عرضهما كطبقة خريطة خاصة، وهي طبقة علوية ثانية على الخريطة الأساسية. تحتوي الخرائط على معلومات ارتفاع إضافية لمساعدتك على فهم انحدار وظلال المناظر الطبيعية بشكل أكثر دقة. تستند معلومات *تظليل التلال* و *الانحدار* إلى بيانات من مصدر واحد، وهو *ملف الكوكب العالمي*، وهي مقسمة إلى مناطق.  
-
-لا تحتاج إلى التبديل بين طبقات تظليل التلال والانحدار، حيث يتم دمجهما تلقائيًا. يمكنك تحديد إحدى هاتين الطبقتين فقط لعرضها على الخريطة، ولكن لديك أيضًا خيار دمجهما معًا [كطبقة سفلية أو علوية](#layers) على طبقات أخرى للحصول على تمثيل مرئي أفضل للتضاريس.
-
-للبدء في استخدام تظليل التلال والانحدار، تحتاج إلى:
-
-١. شراء إضافة الطبوغرافيا:
-    - [مشتريات أندرويد](../purchases/android.md)
-    - [مشتريات iOS](../purchases/ios.md)
-٢. تفعيل [إضافة الطبوغرافيا](../plugins/topography.md):  
-    *القائمة ← الإضافات ← ︙ ← تفعيل*
-٣. حدد منطقتك المطلوبة، وقم بتنزيل **خريطة التضاريس (ثلاثية الأبعاد)**.
-٤. قد تستغرق عملية التنزيل بعض الوقت، اعتمادًا على حجم المنطقة المحددة وسرعة اتصالك بالإنترنت.
-
-
-### تظليل التلال والتضاريس ثلاثية الأبعاد {#hillshade-and-3d-relief}
-
-| تظليل التلال | التضاريس ثلاثية الأبعاد |
-|--------|---------|
-| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
-
-تم وصف الفرق في عرض التضاريس على الخريطة عند تطبيق هذه الإعدادات في مقالة **الطبوغرافيا** في القسم المقابل [تظليل التلال والتضاريس ثلاثية الأبعاد](../plugins/topography.md#hillshade-and-3d-relief).
-
-
-### تكوين خيارات العرض {#configure-display-options}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="أندرويد">  
-
-اذهب إلى: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-اذهب إلى: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Terrain layers](@site/static/img/plugins/online-maps/terrain_layers.png)
-
-يمكنك تخصيص مستوى التكبير للعرض والشفافية لتظليل التلال والانحدار. يمكنك قراءة المزيد في [مقالة الطبوغرافيا](../plugins/topography.md#hillshade-slope-and-altitude-layers).
-
-
-## التضاريس ثلاثية الأبعاد {#3d-relief}
-
-:::note
-[التضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) هي ميزة مدفوعة في [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-:::
-
-![Terrain layers](@site/static/img/plugins/online-maps/raster_maps_3d.png)
-
-ميزة [**التضاريس ثلاثية الأبعاد**](../plugins/topography.md#3d-relief) هي تقنية رسم خرائط تتيح تصور التضاريس على الخريطة باستخدام نماذج ثلاثية الأبعاد. تضيف هذه الميزة معلومات الارتفاع إلى خريطة ثنائية الأبعاد عادية، مما يخلق تأثيرًا ثلاثي الأبعاد وعمقًا ويسمح لك بتصور التضاريس بشكل أفضل.  
-
-*لبدء استخدام التضاريس ثلاثية الأبعاد*:  
-تحتاج إلى شراء [خطة شراء OsmAnd Pro](../plugins/index.md#purchase)، وتفعيل [إضافة الطبوغرافيا](../plugins/topography.md)، وتشغيل عنصر [التضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) في *القائمة → تكوين الخريطة*.
-
-
-*كيف تعمل ميزة التضاريس ثلاثية الأبعاد*:  
-*١.* لإنشاء تضاريس ثلاثية الأبعاد، يتلقى OsmAnd معلومات حول ارتفاع التضاريس.  
-*٢.* بناءً على بيانات الارتفاع، يتم إنشاء نموذج ثلاثي الأبعاد لعرض الجبال والتلال والوديان وعناصر التضاريس الأخرى على الخريطة.  
-*٣.* يعرض OsmAnd بعد ذلك هذه النماذج ثلاثية الأبعاد على خريطة مسطحة. يمكن تكبير الخريطة وتصغيرها وتدويرها لعرض التضاريس من زوايا ووجهات نظر مختلفة.  
-*٤.* لا يعتمد عرض خطوط الكنتور على الخريطة على ما إذا كان مصدر الخريطة عبر الإنترنت أو دون اتصال.
--->
 
 
 ## إعداد/نسخ الخرائط {#preparecopy-maps}
@@ -297,7 +221,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add_manually"/>*
 
-![Add online source](@site/static/img/plugins/online-maps/add-online-source-2.png)
+![إضافة مصدر عبر الإنترنت](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 </TabItem>
 
@@ -305,13 +229,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
 
-![Add online source](@site/static/img/plugins/online-maps/add-online-source-2_ios.png)
+![إضافة مصدر عبر الإنترنت](@site/static/img/plugins/online-maps/add-online-source-2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-لإنشاء مصدر خريطة نقطية، تحتاج إلى معرفة **عنوان URL للمربع**، وهو عنوان URL محدد يوزع مربعات الخرائط في إسقاط مركاتور. على سبيل المثال، قد يبدو عنوان URL للمربع كما يلي: `https://tile.osmand.net/hd/6/55/25.png`، حيث يكون `https://tile.osmand.net/hd/` هو عنوان URL الأساسي.
+لإنشاء مصدر خريطة نقطية، تحتاج إلى معرفة **عنوان URL للمربع**، وهو عنوان URL محدد يوزع مربعات الخرائط في إسقاط مركاتور. على سبيل المثال، قد يبدو عنوان URL للمربع كما يلي: `https://tile.osmand.net/hd/6/55/25.png`، حيث يكون `tile.osmand.net/hd/` هو عنوان URL الأساسي.
 
 فيما يلي المعلمات الرئيسية التي يجب تكوينها عند إعداد مصدر خريطة جديد عبر الإنترنت:
 
@@ -346,7 +270,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 يمكن أن تشغل الخرائط النقطية قدرًا كبيرًا من مساحة القرص، لذلك قد تحتاج إلى التحقق منها بانتظام. بالنسبة لمجموعات البيانات الكبيرة، يوصى باستخدام *مصدر SQLite النقطي* لأنه سيخزن جميع المربعات في ملف واحد كبير (قاعدة بيانات SQLite).
 
-- [**تنسيق SQ Lite**](../../technical/osmand-file-formats/osmand-sqlite.md)
+- [**تنسيق SQLite**](../../technical/osmand-file-formats/osmand-sqlite.md)
 - [**تنسيق Metainfo**](../../technical/osmand-file-formats/osmand-metainfo.md)
 
 لتغيير تنسيق المربعات، يمكنك اختيار <Translate android="true" ids="storage_format"/> في قائمة تحرير الخرائط عبر الإنترنت:
@@ -365,7 +289,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,quick_action_map_source_title"/> → اختر الخرائط عبر الإنترنت →  
 &#8942; → <Translate android="true" ids="clear_tile_data"/>*
 
-![Online sources list](@site/static/img/plugins/online-maps/clear_cache_android.png)
+![قائمة المصادر عبر الإنترنت](@site/static/img/plugins/online-maps/clear_cache_android.png)
 
 </TabItem>
 
@@ -373,12 +297,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
 
-![Online sources list](@site/static/img/plugins/online-maps/clear_cache_ios.png)
+![قائمة المصادر عبر الإنترنت](@site/static/img/plugins/online-maps/clear_cache_ios.png)
 </TabItem>
 
 </Tabs>
 
-يتم تخزين المربعات في ذاكرة التخزين المؤقت عند استخدام الخرائط النقطية عبر الإنترنت كطبقة رئيسية / علوية / سفلية. يمكنك رؤية حجم ملف SQ Lite الخاص بك تحت اسم الخريطة عبر الإنترنت في القائمة. في بعض الأحيان، يكون التنظيف المنتظم مطلوبًا لتسريع عرض المربعات أو لتحديث البيانات.  
+يتم تخزين المربعات في ذاكرة التخزين المؤقت عند استخدام الخرائط النقطية عبر الإنترنت كطبقة رئيسية / علوية / سفلية. يمكنك رؤية حجم ملف SQLite الخاص بك تحت اسم الخريطة عبر الإنترنت في القائمة. في بعض الأحيان، يكون التنظيف المنتظم مطلوبًا لتسريع عرض المربعات أو لتحديث البيانات.  
 
 ### تنزيل / تحديث المربعات {#download--update-tiles}
 
@@ -399,18 +323,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
     </tr>
 </table>  
 
-<!--
-
-![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Download tiles Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
-
--->
-
-
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Download tiles iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
+![تنزيل المربعات في iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
 
 </TabItem>
 
@@ -441,14 +358,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 </Tabs>
 
-يمكن استخدام الخرائط النقطية كما هي موجودة بالفعل إذا كانت المربعات قد تم تعيينها بالفعل. إذا تم توفير الخرائط النقطية عبر الإنترنت، فهناك دائمًا عنوان URL أساسي يجب تكوينه. هناك عدد قليل من المعلمات الأساسية الأخرى التي يمكن تغييرها للخرائط النقطية، يمكنك قراءة المزيد عن ذلك في [هذا القسم](#add-new-online-source) من المقالة. يتم ترميز المعلمات الأكثر تعقيدًا في المكونات الداخلية لـ [تنسيق SQ Lite](../../technical/osmand-file-formats/osmand-sqlite.md).
+يمكن استخدام الخرائط النقطية كما هي موجودة بالفعل إذا كانت المربعات قد تم تعيينها بالفعل. إذا تم توفير الخرائط النقطية عبر الإنترنت، فهناك دائمًا عنوان URL أساسي يجب تكوينه. هناك عدد قليل من المعلمات الأساسية الأخرى التي يمكن تغييرها للخرائط النقطية، يمكنك قراءة المزيد عن ذلك في [هذا القسم](#add-new-online-source) من المقالة. يتم ترميز المعلمات الأكثر تعقيدًا في المكونات الداخلية لـ [تنسيق SQLite](../../technical/osmand-file-formats/osmand-sqlite.md).
 
 
 ## مقالات ذات صلة {#related-articles}
 
 - [استيراد / تصدير](../personal/import-export.md)
-- [مخططات لوحة الألوان](../personal/color-palette-schemes.md)
 - [إجراء سريع (زر مخصص)](../widgets/quick-action.md)
 - [الخرائط عبر الإنترنت](../plugins/online-map.md)
 - [الطبوغرافيا](../plugins/topography.md)
-- [إنشاء خرائط نقطية ومتجهية دون اتصال](technical/map-creation/create-offline-maps-yourself.md)
+- [إنشاء خرائط نقطية ومتجهية دون اتصال](../../technical/map-creation/create-offline-maps-yourself.md)

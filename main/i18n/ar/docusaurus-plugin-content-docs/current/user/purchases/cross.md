@@ -1,5 +1,5 @@
 ---
-source-hash: 803b22736228c5b37a1814163faeb441138781434f1ba2a3069b7668f1ffe213
+source-hash: 856b27defd24e63764e7fed8d4ebb2d645fd0d1b4aec10804b2f835f0c0ec2e0
 sidebar_position: 4
 title:  عمليات الشراء عبر المنصات
 ---
@@ -80,6 +80,20 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - نوع الشراء (Pro / Maps+ لمرة واحدة / اشتراك Maps+).
 
 
+### النقل اليدوي {#manual-transfer}
+
+إذا تعذر تفعيل عملية الشراء الخاصة بك تلقائيًا عبر OsmAnd Cloud، فقد يتمكن الدعم — **support@osmand.net** — من نقلها يدويًا.
+
+لطلب النقل اليدوي، قدّم ما يلي:
+- بريدك الإلكتروني لحساب OsmAnd Cloud.
+- رقم معاملة الشراء أو رقم الطلب.
+- يوصى أيضًا بإرفاق لقطة شاشة توضح المنتج الذي تم شراؤه.
+
+بدون رقم معاملة الشراء أو رقم الطلب وحساب OsmAnd Cloud مسجّل، لا يمكن للدعم عادةً نقل عملية الشراء.
+
+لا يمكن نقل عمليات الشراء التي تمت منذ أكثر من ١٠ سنوات.
+
+
 ### عمليات الشراء والحسابات المتعددة {#purchases-and-multiple-accounts}
 
 يتم ربط عملية الشراء عبر المنصات بحساب OsmAnd Cloud الذي تم تفعيله آخر مرة على الجهاز الذي يحمل إيصال الشراء الأصلي (من App Store أو Google Play). إذا قمت بتسجيل الخروج من حسابك الأساسي وسجلت الدخول إلى حساب جديد على هذا الجهاز، يقوم النظام تلقائيًا بنقل الترخيص إلى الحساب الجديد. نتيجة لذلك، يفقد حساب OsmAnd Cloud الأصلي حالة الشراء على المنصات الأخرى، حيث لا يمكن أن يكون الترخيص نشطًا إلا على حساب OsmAnd Cloud واحد في كل مرة. مزيد من المعلومات [هنا](../troubleshooting/purchases_payments.md#purchase-association-with-multiple-osmand-cloud-accounts).
@@ -87,12 +101,26 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## مثال {#example}
 
-لقد اشتريت **Maps+** كعملية شراء لمرة واحدة داخل التطبيق في الإصدار المجاني من OsmAnd من [متجر تطبيقات أمازون](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).
+لقد اشتريت **Maps+** كعملية شراء لمرة واحدة داخل التطبيق في الإصدار المجاني من OsmAnd من [Google Play](https://play.google.com/store/apps/details?id=net.osmand).
 لاحقًا، قررت التبديل إلى جهاز iPhone وترغب في استخدام **Maps+** مع [إصدار OsmAnd لنظام iOS](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 لتفعيل عملية شراء Maps+ على نظام iOS:
 
-١. افتح **إصدار أمازون** من تطبيق OsmAnd على جهازك الأصلي.
+١. افتح OsmAnd على جهاز أندرويد الأصلي الخاص بك.
 ٢. سجل الدخول إلى حسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login):
    *القائمة ← الإعدادات ← OsmAnd Cloud ← إنشاء حساب جديد / لدي حساب بالفعل*
-٣. قم بتثبيت OsmAnd على جهاز iPhone الخاص بك من [متجر التطبيقات](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850
+٣. قم بتثبيت OsmAnd على جهاز iPhone الخاص بك من [متجر التطبيقات](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
+٤. سجل الدخول إلى **نفس حساب OsmAnd Cloud** على جهاز iPhone الخاص بك.
+٥. انتقل إلى *القائمة ← الإعدادات ← عمليات الشراء* وتأكد من أن **Maps+** مدرج كنشط.
+
+بهذا يكتمل التفعيل عبر المنصات لعملية الشراء الخاصة بك. يمكنك الآن متابعة استخدام **Maps+** على جهازك الجديد.
+
+استمتع باستخدام Maps+/Pro عبر المنصات!
+
+
+## مقالات ذات صلة {#related-articles}
+
+- [OsmAnd Cloud](../personal/osmand-cloud.md)
+- [استكشاف أخطاء عمليات الشراء وإصلاحها](../troubleshooting/purchases_payments.md)
+- [الفرق بين عمليات الشراء على أندرويد](./android.md#difference-between-purchases-android)
+- [الفرق بين عمليات الشراء على iOS](./ios.md#difference-between-purchases-ios)

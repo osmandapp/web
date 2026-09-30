@@ -1,5 +1,5 @@
 ---
-source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
+source-hash: 0908961f227fa1a892804774f35b6e16c127cf8034093323cc379c362624f911
 sidebar_position: 17
 title:  تسجيل الرحلة
 ---
@@ -292,11 +292,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | **تقسيم التسجيلات تلقائيًا بعد فجوة** | يقسم المسارات تلقائيًا بناءً على الفجوات الزمنية بين النقاط المسجلة. <ul><li>يبدأ مقطع جديد بعد فجوة مدتها 6 دقائق.</li><li>يبدأ مسار جديد بعد فجوة مدتها ساعتان.</li><li>يبدأ ملف جديد عند تغيير التاريخ.</li><li>يمكن أن تنتج الفجوات عن فقدان إشارة GPS أو انخفاض السرعة أو إعدادات التكوين.</li></ul><details><summary>*ملاحظة*</summary>يتم تحديد الفجوة عند عدم تسجيل أي نقاط. قد يحدث هذا إما لأن الموقع لم يتم اكتشافه أو لأنه تم اكتشافه ولكن لم يتم تسجيله. يمكن أن تسبب عدة عوامل هذا، بما في ذلك إشارات GPS الضعيفة بسبب سوء الأحوال الجوية، أو انخفاض سرعة الحركة عن العتبة المكونة. في مثل هذه الحالات، على الرغم من أن الجهاز قد يكتشف الموقع، إلا أنه لا يسجله.<br/><br/>يمكن أن تؤدي هذه الفجوات في البيانات المسجلة إلى إنشاء مقطع جديد داخل نفس المسار، أو مسار جديد في نفس الملف، أو ملف GPX جديد ضمن تسجيل واحد. تتم إدارة ذلك ضمن جلسة تسجيل بدء/إيقاف واحدة.</details> |
 | **منع التسجيل المستقل** (*أندرويد*) | يوقف تسجيل المسار مؤقتًا عند إغلاق تطبيق OsmAnd (عبر *التطبيقات الحديثة*). لا يتم عرض مؤشر الخلفية في لوحة إشعارات أندرويد. |
 | **تضمين الاتجاه** | يسجل الاتجاه (اتجاه الحركة) لكل نقطة في ملف GPX. الاتجاه هو الاتجاه الذي يواجهه الجهاز، والذي يمكن أن يختلف عن اتجاه الحركة بسبب عوامل خارجية مثل الرياح أو الانزلاق. |
-| **النشاط**  | يتيح لك الخيار تحديد [نوع النشاط](../map/tracks/track-context-menu.md#ttrack-activity-type) مسبقًا لملف شخصي، والذي يتم تطبيقه بعد ذلك تلقائيًا على جميع المسارات المسجلة. |
+| **النشاط**  | يتيح لك الخيار تحديد [نوع النشاط](../map/tracks/track-context-menu.md#track-activity-type) مسبقًا لملف شخصي، والذي يتم تطبيقه بعد ذلك تلقائيًا على جميع المسارات المسجلة. |
 | **أجهزة الاستشعار الخارجية** <br/> *تحتاج إلى تفعيل الملحق* | يتم تسجيل البيانات من [أجهزة الاستشعار الخارجية](../plugins/external-sensors.md#trip-recording) مثل *<Translate android="true" ids="map_widget_ant_heart_rate"/>*، أو *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* في ملف GPX. لا يتم تسجيل بيانات *المسافة* على أندرويد أو iOS. يتم عرضه فقط عند تمكين [ملحق أجهزة الاستشعار الخارجية](../plugins/external-sensors.md). |
 | **مقاييس المركبة** <br/> *تحتاج إلى تفعيل الملحق* | يتم تسجيل البيانات من [ماسح OBD-II](../plugins/vehicle-metrics.md#trip-recording) في ملف GPX. يتم عرضه فقط عند تمكين [ملحق مقاييس المركبة](../plugins/vehicle-metrics.md).<br />*ملاحظة*: يمكنك إضافة المقاييس التي سيتم تسجيلها في ملف GPX من القائمة: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **مجلد تخزين المسارات** (*أندرويد*) | يحدد مكان تخزين المسارات المسجلة في تبويب *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. تشمل الخيارات تخزين جميع المسارات في مجلد Rec أو تنظيمها حسب الشهر، مثل Rec/yyyyy-mm. |
-| **الإشعارات** | يتحكم في عرض إشعار نظام [تسجيل الرحلة](#notifications) في منطقة الإشعارات بالجهاز والذي يسمح لك ببدء تسجيل الرحلات. |
+| **عرض زر 'تسجيل' في الإشعارات** | يتحكم في عرض إشعار نظام [تسجيل الرحلة](#notifications) في منطقة الإشعارات بالجهاز والذي يسمح لك ببدء تسجيل الرحلات. |
 | **التتبع عبر الإنترنت** (*أندرويد*) | يسمح بتتبع موقعك في الوقت الفعلي عن طريق إرسال النقاط المسجلة إلى عنوان URL محدد. يحدد الفاصل الزمني للتتبع عدد المرات التي يتم فيها إرسال النقاط، ويخزن المخزن المؤقت للوقت النقاط عند عدم وجود اتصال بالإنترنت.<details><summary>*ملاحظة*</summary>إذا تم تمكين هذا الخيار، وكان تسجيل المسار قيد التقدم، تتحول ودجة المسافة/بدء-إيقاف (REC) إلى اللون **الأخضر** بدلاً من **الأحمر**، مما يشير إلى أن كل نقطة مسجلة يتم إرسالها إلى عنوان URL محدد. يسمح لك حقل **عنوان الويب** بإدخال عنوان URL باستخدام تنسيق المعلمات التالي:<ul><li>`lat={0}`: خط العرض</li><li>`lon={1}`: خط الطول</li><li>`timestamp={2}`: الطابع الزمني (وقت يونكس)</li><li>`hdop={3}`: التخفيف الأفقي للدقة</li><li>`altitude={4}`: الارتفاع</li><li>`speed={5}`: السرعة</li><li>`bearing={6}`: الاتجاه (اتجاه الحركة)</li><li>`eta={7}`: الوقت المقدر للوصول (وقت يونكس)</li><li>`etfa={8}`: الوقت المقدر للوصول إلى النقطة المتوسطة الأولى أو نقطة النهاية (وقت يونكس)</li><li>`eda={9}`: المسافة المقدرة للوصول أو علامة (بالأمتار)</li><li>`edfa={10}`: المسافة المقدرة إلى النقطة المتوسطة الأولى أو نقطة النهاية (بالأمتار)</li><li>`batproc={11}`: مستوى بطارية الجهاز (بالنسبة المئوية)</li></ul>يمكنك ضبط **الفاصل الزمني للتتبع** لتحديد عدد المرات التي يتم فيها إرسال نقاط الموقع، مع خيارات تتراوح من 0 ثانية إلى 5 دقائق. بالإضافة إلى ذلك، يحدد معلم **المخزن المؤقت للوقت** المدة التي يتم فيها تخزين نقاط الموقع إذا لم يكن هناك اتصال بالإنترنت، مما يضمن حفظ البيانات وإرسالها عند استعادة الاتصال.</details><br />يخزن OsmAnd النقاط غير المرسلة فقط في الذاكرة المؤقتة للتطبيق أثناء تشغيل التطبيق. هذا يعني أن المخزن المؤقت لا يتم كتابته إلى التخزين الدائم. إذا تم إغلاق التطبيق، أو إيقافه قسرًا، أو إعادة تشغيل الجهاز، فسيتم فقدان جميع النقاط المخزنة مؤقتًا.<br />إعداد المخزن المؤقت للوقت لا يحدد مدة الاحتفاظ بالنقاط في الذاكرة — إنه يعمل فقط كمرشح في لحظة الرفع. عندما يحاول OsmAnd إرسال النقاط المخزنة، يتم فحص كل نقطة مقابل حد المخزن المؤقت للوقت. يتم إزالة النقاط الأقدم من الحد المحدد (مثل 24 ساعة) بدلاً من رفعها. ونتيجة لذلك، قد يحتوي المخزن المؤقت مؤقتًا على نقاط أقدم من قيمة المخزن المؤقت للوقت المختارة، لكن هذه النقاط سيتم التخلص منها أثناء عملية الرفع. |
 | **المسارات** | مرجع سريع إلى المجلد حيث يتم حفظ المسارات في تبويب *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **إعادة تعيين إعدادات الملحق إلى الافتراضي** | يعيد تعيين جميع إعدادات تسجيل الرحلة للملف الشخصي الحالي إلى قيمها الافتراضية. |
@@ -320,7 +320,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![إشعار تسجيل الرحلة](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
-إذا تم تمكين [الإشعارات](#recording-settings) في إعدادات الملحق، فسيتم دائمًا عرض إشعارات تسجيل الرحلة في منطقة إشعارات النظام عندما يكون التسجيل نشطًا. يضمن هذا الإشعار عدم مقاطعة عملية التسجيل من قبل النظام، ولا يمكن تعطيله أثناء التسجيل النشط.
+يُعرض إشعار تسجيل الرحلة في منطقة إشعارات النظام عندما يكون التسجيل نشطًا. يضمن هذا الإشعار عدم مقاطعة عملية التسجيل من قبل النظام، ولا يمكن تعطيله أثناء التسجيل النشط. إذا تم تمكين [عرض زر 'تسجيل' في الإشعارات](#recording-settings) في إعدادات الملحق، فسيكون الإشعار مرئيًا دائمًا وبالتالي يسهّل بدء التسجيل منه.
 
 - تفتح منطقة الإشعارات عند التمرير لأسفل من أعلى الشاشة وتغلق عند التمرير لأعلى. تخطرك هذه الرسائل بإجراءات مثل بدء/إيقاف تسجيل الرحلة، خاصة عند تمكين التسجيل التلقائي أثناء الملاحة.
 - تظل الإشعارات مرئية بغض النظر عما إذا كان التطبيق يعمل في المقدمة أو الخلفية أو مغلقًا. يمكنك مسح الإشعار القديم يدويًا إذا لم تعد هناك حاجة إليه، لكن هذا لن يوقف التسجيل الجاري.
@@ -330,7 +330,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 هذا السلوك مطلوب من قبل أندرويد لأي خدمة تعمل في المقدمة، مثل تسجيل الرحلة، لتظل مرئية لك.
 
 - إذا تمت إزالة الإشعار، فسيقوم أندرويد بإيقاف التسجيل تلقائيًا. يمكنك استخدام إعداد [منع التسجيل المستقل](#recording-settings).
-- يؤثر إعداد **الإشعارات** في OsmAnd على ما إذا كان شريط الإشعارات يعرض اختصارًا لبدء التسجيل عندما لا يكون هناك تسجيل نشط. إنه **لا** يتحكم في رؤية الإشعار أثناء التسجيل النشط.
+- يؤثر إعداد **عرض زر 'تسجيل' في الإشعارات** على ما إذا كان شريط الإشعارات يعرض اختصارًا لبدء التسجيل عندما لا يكون هناك تسجيل نشط. إنه **لا** يتحكم في رؤية الإشعار أثناء التسجيل النشط.
 
 **خيارات أندرويد إضافية**.
 
@@ -416,7 +416,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |-------|-------------|
 | متوسط الميل | <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
 | متوسط السرعة *(أندرويد فقط)* | متوسط الرحلة (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
-| المسافة (بدء-إيقاف) | متوسط الرحلة (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
+| المسافة (بدء-إيقاف) | المسافة الإجمالية (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
 | النزول | الإجمالي (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/> |
 | السرعة القصوى | الإجمالي (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
 | وقت الحركة | الإجمالي (افتراضي)؛ <Translate android="true" ids="shared_string_last_downhill"/>؛ <Translate android="true" ids="shared_string_last_uphill"/> |
@@ -432,6 +432,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ### المسافة (بدء-إيقاف) {#distance-start-stop}
+
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
 
 | |
 |-----------|
@@ -460,6 +487,30 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |![ودجات](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 إذا كان لديك عدة ودجات محددة، يمكنك الوصول إلى نفس مربع الحوار لكل منها دون الحاجة إلى التبديل أو إغلاقه. تجعل هذه الواجهة الموحدة من السهل عرض وإدارة جميع المعلومات ذات الصلة بسلاسة.
+
+<!--
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+-->
 
 
 ## مقالات ذات صلة {#related-articles}

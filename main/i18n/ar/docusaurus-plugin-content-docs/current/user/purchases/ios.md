@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 1db45c1f6b8d7c62529fc428344254e283462139415f4deb115beb03e1e39b28
 sidebar_position: 2
 title: عمليات الشراء على iOS
 ---
@@ -163,7 +163,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → متابعة مع OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro_new.png)
+![خطة Pro](@site/static/img/purchases/pro_new.png)
 
 ### شراء Maps+ {#maps-purchase}
 
@@ -171,7 +171,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → انقر على قائمة ميزات Maps+ → متابعة مع Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_new.png)
+![خطة Maps+](@site/static/img/purchases/maps_new.png)
 
 
 ## الاشتراكات القديمة (قبل 4.0) {#legacy-subscriptions-prior-40}
@@ -190,7 +190,7 @@ import Translate from '@site/src/components/Translate.js';
 - افتح خرائط OsmAnd مع اتصال إنترنت نشط.
 - لاستعادة المشتريات، اتبع هذه الخطوات: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* وفي الجزء العلوي من الشاشة يجب أن يظهر أن Maps+(Pro, Live) قد تم تفعيله.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
+![خطة Pro](@site/static/img/purchases/maps_purchases_ios.png)
 
 **إذا لم تنجح أي من الطرق:**
 

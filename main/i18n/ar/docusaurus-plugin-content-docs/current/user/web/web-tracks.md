@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
 sidebar_position: 5
 sidebar_label: المسارات
 title: المسارات
@@ -28,13 +28,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 إنها ميزة مدفوعة <ProFeature/>. لاستخدامها، قم بتسجيل الدخول إلى حساب OsmAnd Pro الخاص بك.
 
-![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
+![تسجيل الدخول إلى المسارات](@site/static/img/web/track_login.png) ![تسجيل الدخول إلى المسارات](@site/static/img/web/track_login_2.png)
 
 تحتوي قسم المسارات على جميع الأدوات والإجراءات المتعلقة بالمسارات. الخيارات التالية متاحة:
 
 - عرض المسارات من [OsmAnd Cloud](#cloud-tracks).
 - إضافة المسارات على الخريطة (مجلد **مرئي على الخريطة**).
-- عرض معلومات جميع المسارات والرسم البياني
+- عرض معلومات المسارات والرسوم البيانية.
 - تعديل المسارات وإضافتها إلى السحابة.
 - تنزيل وحذف المسارات.
 - إنشاء مجلدات جديدة أو حذفها.
@@ -54,7 +54,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 بعد اكتمال الاستيراد، يظهر المسار في قائمة المسارات، ويتم مزامنته مع [OsmAnd Cloud](../personal/osmand-cloud.md)، ويصبح متاحًا على جميع الأجهزة المتصلة بنفس الحساب.
 
-![Drag and drop](@site/static/img/web/drag_and_drop.png)
+![السحب والإفلات](@site/static/img/web/drag_and_drop.png)
 
 
 ## مرئي على الخريطة {#visible-on-the-map}
@@ -65,12 +65,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تحت القائمة الرئيسية، يعرض قسم **المرئي مؤخرًا** المسارات التي تم عرضها على الخريطة سابقًا. هذا يجعل من السهل إعادة إظهار مسار دون البحث عنه مرة أخرى في مجلداتك أو في OsmAnd Cloud.
 
-![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
+![مرئي على الخريطة](@site/static/img/web/visible_new.png) ![مرئي على الخريطة](@site/static/img/web/visible_new_2.png)
 
 
 ## قائمة مجلد المسار {#track-folder-menu}
 
-![Track folder menu](@site/static/img/web/collection_new.png)
+![قائمة مجلد المسارات](@site/static/img/web/collection_new.png)
 
 انقر على زر النقاط الثلاث (⋮) لفتح قائمة *مجلد المسار*. من هنا، يمكنك:
 
@@ -81,7 +81,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
  - إعادة التسمية. يفتح حوارًا حيث يمكنك إدخال اسم جديد للمجلد المحدد. يتم مزامنة التغيير إلى OsmAnd Cloud وسيظهر على جميع الأجهزة المتصلة.
  - الحذف. يفتح حوار تأكيد. حذف مجلد يزيله نهائيًا مع جميع المسارات التي يحتويها. يتم مزامنة هذا الإجراء أيضًا عبر OsmAnd Cloud.
 
-![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+![قائمة مجلد المسارات](@site/static/img/web/collection_rename.png) ![قائمة مجلد المسارات](@site/static/img/web/collection_delete.png)
 
 ### المجلدات الذكية {#smart-folders}
 
@@ -98,12 +98,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 توفر قائمة النقاط الثلاث (⋮) إجراءات إضافية للمجلد الذكي. يمكنك *تنزيل كـ OSF*، أو *تنزيل كمجموعة OBF*، أو *إعادة التسمية*، أو *حذف* المجلد.
 
-![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
+![المجلدات الذكية](@site/static/img/web/smart_folder_new.png) ![المجلدات الذكية](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## مسارات السحابة {#cloud-tracks}
 
-ستكون مسارات GPX التي لديك في [OsmAnd Cloud](../personal/osmand-cloud.md) متاحة للعرض والتحرير بعد تسجيل الدخول. فقط لمستخدمي **Pro** <ProFeature/> وللمستخدمين في [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (الذين يمكنهم تنزيل بياناتهم حتى بعد انتهاء اشتراكهم في Pro).
+ستكون مسارات GPX التي لديك في [OsmAnd Cloud](../personal/osmand-cloud.md) متاحة للعرض والتحرير بعد تسجيل الدخول. الوصول إليها متاح فقط لمستخدمي **Pro** <ProFeature/>. يمكن لمستخدمي [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) تنزيل بياناتهم في السحابة حتى بعد انتهاء اشتراكهم في Pro.
 
 عند تحديد مسار، يقوم الخريطة تلقائيًا بتوسيط وتعديل مستوى التكبير لعرض المسار بالكامل ضمن منطقة الخريطة المرئية.
 
@@ -119,7 +119,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *السطح* - عرض أنواع أسطح المسار على طول الطريق.
 - *السلاسة* - عرض سلاسة الشريحة بناءً على علامات OSM.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
+![تحرير مسار GPX في سحابة OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![تحرير مسار GPX في سحابة OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## المقالات ذات الصلة {#related-articles}

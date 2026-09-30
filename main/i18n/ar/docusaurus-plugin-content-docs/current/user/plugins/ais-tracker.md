@@ -1,5 +1,5 @@
 ---
-source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
+source-hash: 04bb8eb2b1c8b30b97b5016c68f2b0de688c38c44449e4ebb8b695d258cad44b
 sidebar_position: 2
 title:  متتبع سفن AIS
 ---
@@ -15,11 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoAndroidOnly />
-
 ## نظرة عامة {#overview}
 
 يعرض ملحق **متتبع سفن AIS** مواقع [نظام التعرف الآلي (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) ومعلومات مفصلة عن السفن القريبة. يتم استقبال بيانات AIS عبر اتصال شبكي من جهاز استقبال AIS خارجي.
+
+يمكن للملحق استقبال بيانات NMEA عبر اتصال شبكي باستخدام TCP أو UDP. كما يمكن استخدام مواقع GPS المستقبلة من رسائل NMEA من نوع RMC/GGA كموقعي في OsmAnd.
 
 :::caution إخلاء مسؤولية
 **هذا الملحق هو مشروع هواية وغير مصمم للموثوقية أو الدقة. لا تعتمد على هذا البرنامج للملاحة أو لسلامة الحياة.**
@@ -28,12 +28,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## معلمات الإعداد المطلوبة {#required-setup-parameters}
 
-تُفعّل إمكانية استخدام الخرائط عبر الإنترنت تلقائيًا في إصدار iOS من OsmAnd. لعرض الخرائط عبر الإنترنت في أندرويد، تحتاج إلى إجراء الإعدادات التالية:
+لاستخدام ملحق متتبع سفن AIS، تحتاج إلى تفعيل الملحق وتكوين اتصال شبكي بمصدر بيانات AIS/NMEA خارجي:
 
 1. [تفعيل](../plugins/index.md#enable--disable) ملحق **متتبع سفن AIS** في *القائمة الرئيسية ← الملحقات ← متتبع سفن AIS*.
 2. تكوين [إعدادات AIS](../map/raster-maps.md#layers)
-3. تكوين **اتصال خادم AIS** أو توصيل **جهاز استقبال AIS خارجي**.
+3. تكوين الاتصال بـ**مصدر بيانات AIS/NMEA** باستخدام **TCP** أو **UDP**.
 4. التحقق من عرض السفن على خريطة OsmAnd.
+
+في iOS، يمكنك أيضًا تفعيل *استخدام NMEA كمصدر للموقع* لاستخدام مواقع GPS من رسائل NMEA من نوع RMC/GGA كموقعك الحالي في OsmAnd.
 
 ## السفن على الخريطة {#vessels-on-the-map}
 
@@ -54,6 +56,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+![متتبع سفن AIS](@site/static/img/plugins/ais/ais.webp)
+
+</TabItem>
+
 </Tabs>
 
 عند الإعداد بشكل صحيح، ستظهر مواقع السفن على الخريطة. الميزات الرئيسية:
@@ -69,8 +77,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![متتبع سفن AIS](@site/static/img/plugins/ais/ais_menu.png)  
-![متتبع سفن AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+![متتبع سفن AIS](@site/static/img/plugins/ais/ais_menu.png) ![متتبع سفن AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![متتبع سفن AIS](@site/static/img/plugins/ais/ais_menu.webp)
 
 </TabItem>
 
@@ -159,6 +172,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *AIS vessel tracker* → *<Translate ios="true" ids="shared_string_settings"/>* 
+
+![إعدادات AIS](@site/static/img/plugins/ais/ais_settings_ios.webp)
+
+</TabItem>
+
 </Tabs>
 
 يقدم ملحق *متتبع سفن AIS* إعدادات متنوعة لتخصيص الملاحة والتفاعل للمستخدمين ذوي الإعاقة. يتم تطبيق هذه الإعدادات على جميع [الملفات الشخصية](../personal/profiles.md) في OsmAnd.
@@ -171,11 +192,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | عنوان IP | حدد عنوان IP لمصدر بيانات AIS (إذا تم استخدام TCP) | `192.168.200.16` |
 | منفذ TCP   | حدد رقم منفذ TCP لبيانات AIS | `4001` |
 | منفذ UDP   | حدد منفذ UDP لاستقبال AIS في OsmAnd  | `10110` |
-| استقبال بيانات AIS حتى لو كان OsmAnd متوقفًا مؤقتًا   | استمر في تشغيل مستمع رسائل AIS إذا كان OsmAnd متوقفًا مؤقتًا أو في الخلفية. إذا تم تعطيله، فلن يتم استقبال رسائل AIS عندما يكون OsmAnd في الخلفية  | `نعم/لا` |
+| استقبال بيانات AIS حتى لو كان OsmAnd متوقفًا مؤقتًا (*أندرويد فقط*)   | استمر في تشغيل مستمع رسائل AIS إذا كان OsmAnd متوقفًا مؤقتًا أو في الخلفية. إذا تم تعطيله، فلن يتم استقبال رسائل AIS عندما يكون OsmAnd في الخلفية  | `Yes/No` |
+| استخدام NMEA كمصدر للموقع (*iOS فقط*)   | استخدام مواقع GPS من رسائل NMEA من نوع RMC/GGA كموقعي  | `On/Off` |
 | | | |
 | **مهلة استقبال إشارة AIS** | |  |
-| مهلة فقدان كائنات AIS     | تختفي السفن إذا لم يتم استقبال أي إشارة لفترة محددة | `3 - 20 min` |
-| مهلة رؤية السفينة      | ستغير أيقونات السفن حالتها عند عدم استقبال أي إشارة | `2 - 15 min / Disabled` |
+| مهلة قِدَم بيانات السفينة      | حدد مهلة لظهور السفينة كقديمة البيانات: بعد مرور هذا الوقت دون استقبال إشارة، سيتم شطب رمز السفينة | `2 - 15 min / Disabled` |
+| مهلة الظهور عند فقدان السفينة     | حدد مهلة لظهور كائن AIS: إذا لم يتم استقبال إشارة خلال المدة المحددة، ستتم إزالة الكائن تلقائيًا من العرض | `3 - 20 min` |
 | | | |
 | **تنبيهات أقرب نقطة اقتراب (CPA)** | | |
 | وقت تحذير CPA | يتم تمييز السفينة باللون الأحمر إذا كان الوقت المتبقي لـ CPA أقل من هذا الحد | `1 - 60 min / Disabled` |

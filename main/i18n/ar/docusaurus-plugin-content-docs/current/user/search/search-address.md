@@ -1,5 +1,5 @@
 ---
-source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
+source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
 sidebar_position: 2
 title:  البحث عن عنوان
 ---
@@ -87,6 +87,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 | تنسيق العنوان | أمثلة على الاستعلامات |
 |---|---|
 | رقم المنزل + الشارع | 221B Baker Street<br />10 Downing Street |
+| رقم منزل مزدوج + الشارع | 243/11 Husova |
 | الشارع + رقم المنزل | Baker Street 221B<br />Main Street 101 |
 | المدينة + الشارع + رقم المنزل | London Baker Street 221B<br />Paris Rue de Rivoli 10 |
 | تقاطعات الشوارع | Broadway & Wall Street<br />Main Street and High Street |
