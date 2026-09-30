@@ -128,7 +128,7 @@ export default function GeneralInfoTab() {
                 )}
                 {hasSegments(ctx.selectedGpxFile) && <GpxGraphProvider width={ctx.infoBlockWidth} />}
                 {isTravelTrack(ctx) && (
-                    <Box sx={{ mx: -3 }} className={styles.fillHeight}>
+                    <Box className={styles.travelBlock}>
                         <ThickDivider mt={'8px'} mb={'0px'} />
                         <TravelTrackInfo />
                         <TravelTrackReview />
