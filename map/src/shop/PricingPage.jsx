@@ -38,6 +38,7 @@ export default function PricingPage() {
     const [useTestMode, setUseTestMode] = useState(false);
     const [selectedCardId, setSelectedCardId] = useState(null);
     const [show, setShow] = useState(false);
+    const [priceError, setPriceError] = useState(false);
     const [updateCardPrices, setUpdateCardPrices] = useState(false);
     const [stickyVisible, setStickyVisible] = useState(false);
 
@@ -61,6 +62,14 @@ export default function PricingPage() {
     useEffect(() => {
         let active = true;
         const isActive = () => active;
+        const loadPrices = () =>
+            updatePrices(setPurchasePriceMap, useTestMode, isActive).then((loaded) => {
+                if (active && !loaded) {
+                    setShow(false);
+                    setPriceError(true);
+                }
+            });
+        setPriceError(false);
         if (ltx.isLoggedIn()) {
             getAccountInfo(ltx.setAccountInfo).then((info) => {
                 if (!active) {
@@ -69,11 +78,11 @@ export default function PricingPage() {
                 const subscriptions = info?.subscriptions && JSON.parse(info.subscriptions);
                 const inAppPurchases = info?.inAppPurchases && JSON.parse(info.inAppPurchases);
                 setCurrentPurchases({ subscriptions, inAppPurchases, loginUser: ltx.loginUser });
-                updatePrices(setPurchasePriceMap, useTestMode, isActive);
+                loadPrices();
             });
         } else {
             setCurrentPurchases({ subscriptions: [], inAppPurchases: [], loginUser: ltx.loginUser });
-            updatePrices(setPurchasePriceMap, useTestMode, isActive);
+            loadPrices();
         }
 
         return () => {
@@ -149,7 +158,10 @@ export default function PricingPage() {
                     <Typography className={styles.pricingDesc}>
                         {t('web:subtitle_choose_your_ideal_osmand_plan')}
                     </Typography>
-                    {!show && <CircularProgress />}
+                    {!show && priceError && (
+                        <Typography className={styles.pricingDesc}>{t('web:pricing_load_error')}</Typography>
+                    )}
+                    {!show && !priceError && <CircularProgress />}
                     {show && (
                         <Box ref={cardBoxRef} className={styles.productCardBox}>
                             {[PRODUCT_ID_START, PRODUCT_ID_MAPS_PLUS, PRODUCT_ID_PRO, PRODUCT_ID_XV].map((id) => (

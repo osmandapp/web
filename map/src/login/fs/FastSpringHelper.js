@@ -33,10 +33,21 @@ function createFastSpringBuilder(testMode) {
     return script;
 }
 
+let checkoutSessionPending = false;
+
 export const createFastSpringPurchase = async ({ testMode, productId, type, ltx, ctx, navigate }) => {
-    const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fastspring-session`, '', {
-        params: { id: productId, type, test: testMode },
-    });
+    if (checkoutSessionPending) {
+        return;
+    }
+    checkoutSessionPending = true;
+    let resp;
+    try {
+        resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fastspring-session`, '', {
+            params: { id: productId, type, test: testMode },
+        });
+    } finally {
+        checkoutSessionPending = false;
+    }
     if (resp?.status === 409) {
         ctx.setNotification({ text: i18n.t('web:purchase_already_active'), severity: 'info' });
         navigate({
@@ -121,7 +132,7 @@ export async function fetchSinglePrice(productId, type, onPrice, testMode = fals
 export async function updatePrices(setPurchasePriceMap, testMode = false, isActive = () => true) {
     const products = await loadProducts(testMode);
     if (!isActive() || products.length === 0) {
-        return;
+        return false;
     }
     const productsList = products.map((p) => ({ path: p.path, quantity: 1 }));
     fetchPrices(productsList, testMode, (priceMap) => {
@@ -132,4 +143,6 @@ export async function updatePrices(setPurchasePriceMap, testMode = false, isActi
         products.forEach((p) => (prices[priceKey(p.id, p.type)] = priceMap[p.path]));
         setPurchasePriceMap(prices);
     });
+
+    return true;
 }
