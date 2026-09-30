@@ -8,6 +8,9 @@ export const ERROR_EMAIL = 'error_email';
 export const ERROR_PASSWORD = 'error_password';
 export const ERROR_TOKEN = 'error_token';
 export const EMPTY_INPUT = '';
+export const LOGIN_LINK_PARAM = 'link';
+export const CANCEL_LOGIN_LINK_PARAM = 'cancel-link';
+export const LOGIN_LINK_EMAIL_PARAM = 'email';
 
 export async function getAccountInfo(setAccountInfo) {
     const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
@@ -15,6 +18,26 @@ export async function getAccountInfo(setAccountInfo) {
         setAccountInfo(resp.data.info);
         return resp.data.info;
     }
+}
+
+// login link created by support in order-mgmt: ?email=...&link=...
+export function getLoginLink(search) {
+    const params = new URLSearchParams(search);
+    const token = params.get(LOGIN_LINK_PARAM);
+    const email = params.get(LOGIN_LINK_EMAIL_PARAM);
+
+    return token && email ? { token, email } : null;
+}
+
+function getSearchWithoutLoginLink() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has(LOGIN_LINK_PARAM)) {
+        params.delete(LOGIN_LINK_PARAM);
+        params.delete(LOGIN_LINK_EMAIL_PARAM);
+    }
+    const search = params.toString();
+
+    return search ? `?${search}` : '';
 }
 
 // saves the page the login was opened from, to return there after login
@@ -49,7 +72,7 @@ export const openLogin = ({ ctx, ltx, navigate, reopenLoginDialog = null }) => {
         return;
     }
     savePrevPageUrl(ctx);
-    navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + window.location.search + window.location.hash);
+    navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + getSearchWithoutLoginLink() + window.location.hash);
     ltx.setLoginState({ login: true });
 };
 

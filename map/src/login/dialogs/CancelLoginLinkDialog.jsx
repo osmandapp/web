@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import BaseLoginDialog from './BaseLoginDialog';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import { cancelLoginLink } from '../../manager/AccountManager';
+import { formatString } from '../../manager/SettingsManager';
 import styles from '../login.module.css';
 
 // opened from the owner's email: ?email=...&cancel-link=...
@@ -21,7 +22,7 @@ export default function CancelLoginLinkDialog({ email, code, onClose }) {
     return (
         <BaseLoginDialog open={true} title={t('web:cancel_login_link')} onClick={onClose}>
             <Typography className={styles.loginText}>
-                {result ?? t('web:cancel_login_link_desc').replace('%1$s', email)}
+                {result ?? formatString(t('web:cancel_login_link_desc'), [email])}
             </Typography>
             {!result && (
                 <Box sx={{ mt: 2 }}>
