@@ -383,6 +383,10 @@ function buildSuggestionQuery({ name, info, type, city }, categoryType) {
     if (categoryType === searchTypeMap.POI_TYPE) {
         return cleanName;
     }
+    if ([searchTypeMap.CITY, searchTypeMap.TOWN, searchTypeMap.VILLAGE].includes(categoryType)) {
+        // the label of a place ("Area", "City") is not a part of its name: "Kyiv Area" finds protected areas
+        return [cleanName, info === type ? null : info, city].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+    }
     const parts = [cleanName, info, city];
     if (
         type &&
