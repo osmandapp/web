@@ -22,6 +22,9 @@ import { getPropsFromSearchResultItem } from './SearchResultItem';
 const SPATIAL_SEARCH_DEBOUNCE_MS = 500;
 const SUGGESTIONS_LIMIT = 8;
 const SUGGESTIONS_ABORT_KEY = 'spatialAutocomplete';
+// timings of the typing search under the suggestions: the dev server or ?searchStats in the url
+const SHOW_SEARCH_STATS =
+    process.env.NODE_ENV === 'development' || new URLSearchParams(globalThis.location.search).has('searchStats');
 
 export default function CustomInput({
     menuButton = null,
@@ -46,6 +49,7 @@ export default function CustomInput({
     const [isInitialRender, setIsInitialRender] = useState(true);
     const [suggestions, setSuggestions] = useState([]);
     const [highlightedIndex, setHighlightedIndex] = useState(-1);
+    const [searchStats, setSearchStats] = useState(null);
 
     const EMPTY_SEARCH = '';
     const MIN_SIZE_SEARCH_VALUE = 1;
@@ -93,6 +97,7 @@ export default function CustomInput({
     }, [autoFocus]);
 
     function clearSuggestions() {
+        setSearchStats(null);
         setSuggestions([]);
         setHighlightedIndex(-1);
     }
@@ -131,7 +136,11 @@ export default function CustomInput({
         });
         if (response?.ok) {
             const data = await response.json();
-            setSuggestions(buildSuggestions(data?.features, ctx, t));
+            setSearchStats(data?.info ? { ...data.info, query, rows: data.features?.length ?? 0 } : null);
+            setSuggestions([
+                ...buildWordSuggestions(data?.info?.suggestions, query),
+                ...buildSuggestions(data?.features, ctx, t),
+            ]);
             setHighlightedIndex(-1);
         } else if (!response?.aborted) {
             clearSuggestions();
@@ -157,6 +166,13 @@ export default function CustomInput({
     }
 
     function applySuggestion(suggestion) {
+        if (suggestion.word) {
+            // a word that continues the typed one: complete it and keep typing, the list follows the new text
+            setValue(suggestion.query);
+            setHighlightedIndex(-1);
+            inputRef.current?.focus();
+            return;
+        }
         setValue(suggestion.query);
         search(suggestion.query);
         inputRef.current?.blur();
@@ -272,14 +288,19 @@ export default function CustomInput({
                         ),
                 }}
             />
-            {isFocused && suggestions.length > 0 && (
+            {isFocused && (suggestions.length > 0 || (SHOW_SEARCH_STATS && searchStats)) && (
                 <Paper className={styles.autocompleteSelect} elevation={4} id={'se-search-suggestions'}>
+                    {SHOW_SEARCH_STATS && searchStats && (
+                        <Typography className={styles.autocompleteSelectStats} id={'se-search-stats'}>
+                            {formatSearchStats(searchStats)}
+                        </Typography>
+                    )}
                     <List dense disablePadding>
                         {suggestions.map((suggestion, index) => (
                             <ListItemButton
                                 key={`${suggestion.name}-${suggestion.info}`}
                                 selected={index === highlightedIndex}
-                                className={styles.autocompleteSelectItem}
+                                className={`${styles.autocompleteSelectItem} ${suggestion.word ? styles.autocompleteSelectWord : ''}`}
                                 onMouseDown={(e) => e.preventDefault()}
                                 onClick={() => applySuggestion(suggestion)}
                             >
@@ -299,6 +320,33 @@ export default function CustomInput({
             )}
         </Box>
     );
+}
+
+// words that continue the word still being typed, the most frequent first: a click completes the word
+function buildWordSuggestions(words, query) {
+    const typed = query.slice(0, query.lastIndexOf(' ') + 1);
+
+    return (words ?? []).map(({ word, count }) => ({
+        name: typed + word,
+        info: Number(count).toLocaleString(),
+        query: `${typed}${word} `,
+        word: true,
+    }));
+}
+
+function formatSearchStats(stats) {
+    const parts = [`"${stats.query}"`, `${stats.rows} rows`];
+    if (stats.timeAll != null) {
+        parts.push(`${stats.timeAll} s (atoms ${stats.atoms}, compute ${stats.compute}, objects ${stats.readObj})`);
+    }
+    if (stats.heapMb != null) {
+        parts.push(`heap ${stats.heapMb} MB`);
+    }
+    if (stats.timeout) {
+        parts.push('timeout');
+    }
+
+    return parts.join(' · ');
 }
 
 function buildSuggestions(features, ctx, t) {
