@@ -239,6 +239,7 @@ export default function CustomInput({
                 }}
                 placeholder={t('shared_string_search')}
                 type="text"
+                autoComplete="off"
                 fullWidth
                 id={'se-search-input'}
                 onFocus={() => setIsFocused(true)}
