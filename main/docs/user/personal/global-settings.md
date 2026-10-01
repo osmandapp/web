@@ -114,6 +114,11 @@ The **Media storage** setting determines where photos, videos, and audio files a
 - **Camera folder** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Manually specified** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
 
+When you select a different media storage, OsmAnd asks whether to move existing media files:
+- **Move to the new destination** — Move existing media files to the selected storage.
+- **Don't move** — Change the storage without moving existing files.
+- **Cancel** — Keep the current storage.
+
 There is also an *Always keep a local copy* switch. When enabled, OsmAnd copies media imported from the Gallery or Files into its own storage, so the attached media remains available even if the original file is deleted from the Gallery or file system.
 
 </TabItem>

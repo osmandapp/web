@@ -304,7 +304,7 @@ In this menu, you can select which data and folders to upload to the Cloud:
 
 1. **Settings**. This tab includes all your settings, such as general preferences, specific profiles, quick actions, POIs, and road avoidance settings.
 
-2. **My Places**. This tab lists data from the [My Places menu](../personal/myplaces), including favorites, tracks, OSM notes, markers, and other items.
+2. **My Places**. This tab lists data from the [My Places menu](../personal/myplaces), including favorites, attached media (Android only), tracks, OSM notes, markers, and other items.
 
 3. **Resources**. Here, you can choose to back up resources such as favorites, routing information, voice prompts, and additional items.
 
