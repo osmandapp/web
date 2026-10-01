@@ -151,6 +151,41 @@ function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
 
+// opens a search result with coordinates: the context menu of the object, the map moves to it
+export async function openSearchResultObject({ item, typeItem, ctx, navigate, recentSaver, ctrlKey = false }) {
+    const itemId = getObjIdSearch(item);
+    const type = item.properties[WEB_PREFIX + TYPE];
+    let options;
+    if (type === searchTypeMap.CITY || type === searchTypeMap.TOWN || type === searchTypeMap.VILLAGE) {
+        const respPoi = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-name`, {
+            apiCache: true,
+            params: {
+                lat: item.geometry.coordinates[1],
+                lon: item.geometry.coordinates[0],
+                enName: item.properties[WEB_PREFIX + EN_NAME],
+            },
+        });
+        if (respPoi?.data) {
+            options = respPoi.data.properties;
+        }
+    }
+    const poi = {
+        key: itemId ?? `${typeItem}-${item.geometry.coordinates[0]}-${item.geometry.coordinates[1]}`,
+        options: options ?? item.properties,
+        latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
+    };
+    // click on item — navigation is handled by MainMenu via selectedType change
+    ctx.setCurrentObjectType(typeItem === POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
+    ctx.setSelectedPoiObj({ ...poi });
+    ctx.setSelectedWpt({ poi, id: itemId });
+    recentSaver(POI_OBJECTS_KEY, poi);
+    const pushMapViewWithCtrlClick = Boolean(ctrlKey);
+    ctx.setMoveToMapObj({ ...item, pushMapViewWithCtrlClick });
+    if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
+        navigateToPoi({ poi }, navigate);
+    }
+}
+
 export default function SearchResultItem({ item, typeItem, index, currentLoc, loc = null, isUser = false }) {
     const ctx = useContext(AppContext);
 
@@ -260,36 +295,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             return;
         }
         if (item.geometry.coordinates[0] !== 0 && item.geometry.coordinates[1] !== 0) {
-            const type = item.properties[WEB_PREFIX + TYPE];
-            let options;
-            if (type === searchTypeMap.CITY || type === searchTypeMap.TOWN || type === searchTypeMap.VILLAGE) {
-                const respPoi = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-name`, {
-                    apiCache: true,
-                    params: {
-                        lat: item.geometry.coordinates[1],
-                        lon: item.geometry.coordinates[0],
-                        enName: item.properties[WEB_PREFIX + EN_NAME],
-                    },
-                });
-                if (respPoi?.data) {
-                    options = respPoi.data.properties;
-                }
-            }
-            const poi = {
-                key: itemId ?? `${typeItem}-${item.geometry.coordinates[0]}-${item.geometry.coordinates[1]}`,
-                options: options ?? item.properties,
-                latlng: new LatLng(item.geometry.coordinates[1], item.geometry.coordinates[0]),
-            };
-            // click on item — navigation is handled by MainMenu via selectedType change
-            ctx.setCurrentObjectType(typeItem === POI_LAYER_ID ? OBJECT_TYPE_POI : OBJECT_SEARCH);
-            ctx.setSelectedPoiObj({ ...poi });
-            ctx.setSelectedWpt({ poi, id: itemId });
-            recentSaver(POI_OBJECTS_KEY, poi);
-            const pushMapViewWithCtrlClick = Boolean(event?.ctrlKey);
-            ctx.setMoveToMapObj({ ...item, pushMapViewWithCtrlClick });
-            if (poi.options[CATEGORY_TYPE] === searchTypeMap.POI) {
-                navigateToPoi({ poi }, navigate);
-            }
+            await openSearchResultObject({ item, typeItem, ctx, navigate, recentSaver, ctrlKey: event?.ctrlKey });
         } else {
             // click on category: both engines provide the canonical key (incl. brands)
             const category = item.properties[CATEGORY_KEY_NAME];

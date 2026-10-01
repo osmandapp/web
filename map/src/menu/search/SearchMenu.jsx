@@ -156,8 +156,11 @@ export default function SearchMenu() {
         }
     }, [searchValue]);
 
+    // the dev build searches without an account: the local stand has no login
+    const searchAllowed = ltx.isLoggedIn() || process.env.NODE_ENV === 'development';
+
     useEffect(() => {
-        if (ltx.isLoggedIn()) {
+        if (searchAllowed) {
             // for search categories
             if (mainCategories) {
                 setSearchCategories(mainCategories);
@@ -247,7 +250,7 @@ export default function SearchMenu() {
 
     return (
         <>
-            {ltx.isLoggedIn() ? (
+            {searchAllowed ? (
                 <>
                     {showExploreOutlet ? (
                         <ExploreMenu />
