@@ -166,13 +166,7 @@ export default function CustomInput({
     }
 
     function applySuggestion(suggestion) {
-        if (suggestion.word) {
-            // a word that continues the typed one: complete it and keep typing, the list follows the new text
-            setValue(suggestion.query);
-            setHighlightedIndex(-1);
-            inputRef.current?.focus();
-            return;
-        }
+        // a word suggestion completes the typed word with a space and is searched at once, like a place
         setValue(suggestion.query);
         search(suggestion.query);
         inputRef.current?.blur();
@@ -323,7 +317,7 @@ export default function CustomInput({
     );
 }
 
-// words that continue the word still being typed, the most frequent first: a click completes the word
+// words that continue the word still being typed, the most frequent first: a click completes the word and searches
 function buildWordSuggestions(words, query) {
     const typed = query.slice(0, query.lastIndexOf(' ') + 1);
 
