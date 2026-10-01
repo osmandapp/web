@@ -17,10 +17,14 @@ import { SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../manager/searchCons
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { abortApiRequest } from '../../../util/HttpApi';
 import { debouncer } from '../../../context/TracksRoutingCache';
-import { getPropsFromSearchResultItem } from './SearchResultItem';
+import { getPropsFromSearchResultItem, openSearchResultObject } from './SearchResultItem';
+import { useNavigate } from 'react-router-dom';
+import { SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
+import { useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 
 const SPATIAL_SEARCH_DEBOUNCE_MS = 500;
-const SUGGESTIONS_LIMIT = 8;
+const SUGGESTIONS_LIMIT = 15;
+const WORD_SUGGESTIONS_LIMIT = 7;
 const SUGGESTIONS_ABORT_KEY = 'spatialAutocomplete';
 // timings of the typing search under the suggestions: the dev server or ?searchStats in the url
 const SHOW_SEARCH_STATS =
@@ -40,6 +44,8 @@ export default function CustomInput({
 
     const { navigateToSearchResults, params } = useSearchNav();
     const currentLoc = useGeoLocation(ctx);
+    const navigate = useNavigate();
+    const recentSaver = useRecentDataSaver();
 
     const inputRef = useRef();
     const suggestionsTimerRef = useRef(null);
@@ -137,9 +143,10 @@ export default function CustomInput({
         if (response?.ok) {
             const data = await response.json();
             setSearchStats(data?.info ? { ...data.info, query, rows: data.features?.length ?? 0 } : null);
+            const words = buildWordSuggestions(data?.info?.suggestions, query).slice(0, WORD_SUGGESTIONS_LIMIT);
             setSuggestions([
-                ...buildWordSuggestions(data?.info?.suggestions, query),
-                ...buildSuggestions(data?.features, ctx, t),
+                ...words,
+                ...buildSuggestions(data?.features, ctx, t).slice(0, SUGGESTIONS_LIMIT - words.length),
             ]);
             setHighlightedIndex(-1);
         } else if (!response?.aborted) {
@@ -166,7 +173,16 @@ export default function CustomInput({
     }
 
     function applySuggestion(suggestion) {
-        // a word suggestion completes the typed word with a space and is searched at once, like a place
+        if (suggestion.feature) {
+            // an object found while typing opens at once, the typed text stays
+            cancelPendingSuggestions();
+            clearSuggestions();
+            inputRef.current?.blur();
+            setIsFocused(false);
+            openSearchResultObject({ item: suggestion.feature, typeItem: SEARCH_LAYER_ID, ctx, navigate, recentSaver });
+            return;
+        }
+        // a word suggestion completes the typed word with a space and is searched at once
         setValue(suggestion.query);
         search(suggestion.query);
         inputRef.current?.blur();
@@ -357,6 +373,7 @@ function buildSuggestions(features, ctx, t) {
                 name,
                 info: props.info ?? props.type,
                 query: buildSuggestionQuery(props, feature.properties?.[CATEGORY_TYPE]) || name,
+                feature: hasLocation(feature) ? feature : null,
             };
         })
         .filter((suggestion) => {
@@ -369,6 +386,13 @@ function buildSuggestions(features, ctx, t) {
             return true;
         })
         .slice(0, SUGGESTIONS_LIMIT);
+}
+
+// a POI category has no location: its click searches the category
+function hasLocation(feature) {
+    const [lon, lat] = feature?.geometry?.coordinates ?? [];
+
+    return lon != null && lat != null && lon !== 0 && lat !== 0;
 }
 
 // a suggestion click runs the full search: rebuild a query specific enough to hit the picked object
