@@ -1,5 +1,5 @@
 ---
-source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
+source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -42,9 +42,6 @@ Das *Track-Kontextmenü* bietet Informationen über den *[Track](../../personal/
 
 Wenn Sie auf einen Track tippen, öffnet sich der erste Bildschirm des *Track-Kontextmenüs* - der *Tab Übersicht*. Auf diesem Tab finden Sie eine Zusammenfassung des ausgewählten Tracks (*[Infobereich](#info-panel)*) und können die häufigsten Aktionen mit dem Track über das *[Track-Aktionen-Menü](#track-actions)* ausführen. Sie können [Beschreibung und Serviceinformationen](#description-and-info) zu Ihrem Track sehen, wenn Sie den Tab "Übersicht" nach oben ziehen.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Infobereich {#info-panel}
 
@@ -130,7 +127,7 @@ Das Menü **Optionen** ermöglicht es Ihnen, den ausgewählten Track mit verschi
 
 - **<Translate android="true" ids="join_segments"/>** (*Nur Android*) – Führt Track-Segmente zusammen, um Lücken zu füllen.
 - **<Translate android="true" ids="analyze_on_map"/>**. Öffnet das Werkzeug [Auf Karte analysieren](../tracks/index.md#analyze-track-on-map), um Höhe, Geschwindigkeit, Entfernung und alle zusätzlichen Daten im Track zu überprüfen (wie z. B. Daten von externen Sensoren oder Fahrzeugmetriken).
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Nur Android*) - Analysiert den Track nach Zeit- oder Distanz-[Intervallen](./track-context-menu.md#analyze-by-intervals).
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Nur Android*) - Analysiert den Track nach Zeit-, Distanz- oder Bergauf-/Bergab-[Intervallen](./track-context-menu.md#analyze-by-intervals).
 
 <br/>
 
@@ -227,7 +224,7 @@ Dieser Abschnitt des *Übersicht*-Tabs zeigt ***Tag-Daten*** und ***alle allgeme
 </details>
 
 
-### Track-Aktivitätstyp {#ttrack-activity-type}
+### Track-Aktivitätstyp {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -246,7 +243,7 @@ Dieser Abschnitt des *Übersicht*-Tabs zeigt ***Tag-Daten*** und ***alle allgeme
 </Tabs>
 
 
-Die *Aktivitäts*-Funktion in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX-Tracks und über [Route planen](../../plan-route/create-route.md) gespeicherte Tracks mit bestimmten Aktivitäten zu versehen, um sie später zu analysieren und in Ordnern zu organisieren.
+Die *Aktivitäts*-Funktion in OsmAnd ermöglicht es Ihnen, aufgezeichnete GPX-Tracks mit bestimmten Aktivitäten zu versehen, um sie später zu analysieren und in Ordnern zu organisieren.
 
 - [Aktivitäts-Tags für GPX-Tracks](#description-and-info). [Aufgezeichnete Tracks](../../plugins/trip-recording.md#recording-settings) und über [Route planen](../../plan-route/create-route.md) gespeicherte Tracks erhalten automatisch einen Aktivitätstyp basierend auf dem verwendeten Profil, was die Kategorisierung und Filterung erleichtert. Sie können die Aktivität bei Bedarf manuell ändern.
 - [Aktivitätsfilter](../../personal/tracks/smart-folder.md#search-filter). Sie können die aufgezeichneten GPX-Tracks nach Aktivität filtern, was es Ihnen ermöglicht, sich auf die Suche nach bestimmten Arten von Aufzeichnungen zu konzentrieren, wie z. B. alle Rad- oder Wandertracks.
@@ -658,7 +655,7 @@ Um die Wegpunktbeschreibung zu ändern, können Sie einen der folgenden Wege geh
 Die Option **Nach Intervallen analysieren** ermöglicht es Ihnen, einen Track in Abschnitte zu unterteilen und detaillierte Statistiken für jeden Teil der Route anzuzeigen. Tracks können nach ***Entfernung***, ***Zeit*** oder ***Bergauf/-ab***-Parametern aufgeteilt werden. 
 
 Um diese Option zu öffnen:  
-*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → wählen Sie den gewünschten Aufteilungmodus 
+*<Translate android="true" ids="shared_string_options,analyze_by_intervals"/>* → wählen Sie den gewünschten Aufteilungsmodus 
 
 
 ### Nach Entfernung aufteilen {#split-by-distance}
@@ -692,8 +689,8 @@ Die Option **Nach Zeit aufteilen** teilt einen Track in Intervalle gleicher Daue
 Diese Option teilt einen Track in Segmente basierend auf Höhenänderungen auf. Jedes Intervall wird als ***Bergauf***, ***Bergab*** oder ***Ebene*** klassifiziert. Die Intervalle werden in der Reihenfolge ihres Auftretens entlang des Tracks angezeigt, und jedem Bergauf-, Bergab- oder ebenen Abschnitt wird eine eigene Indexnummer zugewiesen. Die Intervallliste liefert dieselben Kernstatistiken wie [Nach Entfernung aufteilen](#split-by-distance).
 
 Auf der Karte werden die Segmente mit farbigen Beschriftungen am Anfang jedes Intervalls markiert:
-- **Bergauf-Segmente** (rote Beschriftungen) zeigen einen Pfeil nach oben, den Segmentindex und die durchschnittliche Steigung in Prozent (z. B. ↑ 11. 2 %).
-- **Bergab-Segmente** (grüne Beschriftungen) zeigen einen Pfeil nach unten, den Segmentindex und die durchschnittliche Steigung in Prozent (z. B. ↓ 12. -2 %).
+- **Bergauf-Segmente** (rote Beschriftungen) zeigen einen Pfeil nach oben, den Segmentindex und die durchschnittliche Steigung in Prozent (z. B. ↑ Index 11, Steigung 2 %).
+- **Bergab-Segmente** (grüne Beschriftungen) zeigen einen Pfeil nach unten, den Segmentindex und die durchschnittliche Steigung in Prozent (z. B. ↓ Index 12, Steigung −2 %).
 - **Ebene Segmente** (blaue Beschriftungen) zeigen die Distanz des ebenen Abschnitts (z. B. 616 m, 411 m).
 
 Tippen Sie auf eine Beschriftung, um das Detailfenster für das ausgewählte Bergauf-, Bergab- oder ebene Segment zu öffnen. Das Detailfenster zeigt Statistiken für das ausgewählte Segment an, z. B. Entfernung, Dauer, Auf- und Abstieg, Höhe, Geschwindigkeit und zeitbezogene Daten.
@@ -719,12 +716,6 @@ Diese Option ermöglicht es Ihnen, durchschnittliche, minimale und maximale Herz
 <!-- A user can filter points of a GPX track by Smoothing, Speed, Altitude, and Min GPS Precision for saving new track without excluded points. -->
 
 Dieser Filter ermöglicht es Ihnen, Ihre Track-Statistiken zu verbessern, indem Sie unnötige oder falsche Daten ausschließen. Sie können Trackpunkte herausfiltern, die nicht zu Ihren Track-Parametern passen, und erhalten so ein genaueres Diagramm und eine visuelle Routenlinie ohne Verzerrungen oder Aufzeichnungsrauschen. Sie können Änderungen mit Filtern wie *Glättung*, *Geschwindigkeit*, *Höhe* und *GPS-Genauigkeit* vornehmen, die gefilterte Punkte aus dem aktuellen Track ausblenden. Außerdem können Sie im Menü *Statistik* überprüfen, wie Ihre Änderungen im Diagramm angezeigt werden, bevor Sie sie speichern. Sie können Ihren Track in diesem Filter auch *Auf Original zurücksetzen* und *Als Kopie speichern*, ohne das Original zu speichern.  
-
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
-
-- "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
-- "&#8634;" button allows you to reset the track to the original.
-- "My track location" button allows you to move the map to your track.-->
 
 Die Android-GPS-Filter-App-Seite enthält Folgendes:  
 

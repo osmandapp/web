@@ -1,5 +1,5 @@
 ---
-source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
+source-hash: 428829e4bf5bfc220fb31ec7caf467681e639802c43b002e79bd8ece1a7750e4
 sidebar_position: 3
 title: عمليات الشراء عبر الويب
 ---
@@ -46,7 +46,7 @@ import Translate from '@site/src/components/Translate.js';
 :::
 
 
-|    | OsmAnd Free   | **خرائط+** لمرة واحدة | اشتراك **خرائط+** | **OsmAnd Pro** |**OsmAnd XV** |
+|    | OsmAnd مجاني   | **خرائط+** لمرة واحدة | اشتراك **خرائط+** | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (١٢ شهرًا) | **اشتراك** (شهر واحد / ١٢ شهرًا) |**شراء لمرة واحدة** (١٥ عامًا من Pro / خرائط+ مدى الحياة) |

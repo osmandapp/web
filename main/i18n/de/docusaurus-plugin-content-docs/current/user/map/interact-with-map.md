@@ -1,5 +1,5 @@
 ---
-source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
+source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
 sidebar_position: 2
 title:  Mit der Karte interagieren
 ---
@@ -222,8 +222,6 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,s
 **Globusansicht** ermöglicht es Ihnen, die Karte als sphärische Erde anstelle einer flachen Projektion anzuzeigen. Dieser Modus ändert die Geometrie der Kartenoberfläche und passt die Karteninteraktion an die sphärische Navigation an.  
 
 Die Globusansicht ist derzeit nur verfügbar, wenn:
-- Das [Development-Plugin](../plugins/development.md) aktiviert ist.  
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - Das [Topographie-Plugin](../plugins/topography.md) aktiviert ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - Die [Karten-Rendering-Engine](../personal/global-settings.md#map-rendering-engine) auf Version 2 (OpenGL) eingestellt ist.  

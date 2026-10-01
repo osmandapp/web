@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title:  إدارة المسارات
 ---
@@ -204,7 +204,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **نقل** — يمكنك تنظيم بياناتك عن طريق نقل المسارات والمجلدات المحددة إلى مجلدات أخرى.
 
-- [تغيير النشاط](../../map/tracks/track-context-menu.md#ttrack-activity-type) — يسمح لك هذا الإجراء بتغيير نوع النشاط، على سبيل المثال إلى *سيارة*، *رياضة المغامرات بالدراجات النارية*، *رحلات الظهر* أو غيرها، للمسار المحدد.
+- [تغيير النشاط](../../map/tracks/track-context-menu.md#track-activity-type) — يسمح لك هذا الإجراء بتغيير نوع النشاط، على سبيل المثال إلى *سيارة*، *رياضة المغامرات بالدراجات النارية*، *رحلات الظهر* أو غيرها، للمسار المحدد.
 
 - [تغيير المظهر](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — يتيح لك هذا الخيار تخصيص مظهر المسارات المحددة، مما يجعلها أكثر وضوحًا وتمييزًا على الخريطة.
 

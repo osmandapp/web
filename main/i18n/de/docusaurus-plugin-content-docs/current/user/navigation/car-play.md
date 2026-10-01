@@ -1,5 +1,5 @@
 ---
-source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
+source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -227,7 +227,7 @@ Die Sprachführung für *CarPlay* ist eine der nützlichsten Navigationsfunktion
 
 Wenn Sprachanweisungen wiedergegeben werden, passt OsmAnd den Hintergrundton je nach Typ an. Mit aktiviertem *<Translate ios="true" ids="pause_spoken_audio"/>* wird gesprochener Audioinhalt wie Podcasts und Hörbücher während Navigationsanweisungen pausiert, während die Musikwiedergabe mit reduzierter Lautstärke fortgesetzt wird. Wenn *<Translate ios="true" ids="pause_spoken_audio"/>* deaktiviert ist, werden sowohl gesprochener Audioinhalt als auch Musik mit reduzierter Lautstärke fortgesetzt.  
 
-Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren, müssen Sie dies vor dem Start einer Route in der OsmAnd-App auf Ihrem Gerät tun. Empfohlene Einstellungen für *CarPlay* finden Sie im Artikel [Sprachanweisungen / Benachrichtigungen](../navigation/guidance/voice-navigation.md).  
+Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren, müssen Sie dies vor dem Start einer Route in der OsmAnd-App auf Ihrem Gerät tun, siehe den Artikel [Sprachanweisungen / Benachrichtigungen](../navigation/guidance/voice-navigation.md#voice-settings). Um beispielsweise die Pause von gesprochenem Audio zu aktivieren, gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 
 ### Navigationswarnungen {#navigation-alerts}
@@ -321,16 +321,19 @@ Sie können die Benachrichtigungseinstellungen für die OsmAnd-App in den System
 
 Sie können das Ansagen von Nachrichten auch direkt in *CarPlay* aktivieren oder deaktivieren. Lesen Sie, wie die Benachrichtigungsverwaltung auf [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) und [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios) implementiert ist.
 
-### Kartenthema {#map-theme}
+### Kartenmodus {#map-mode}
 
-![Kartenthema](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+![Kartenmodus](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Kartenmodus](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-CarPlay ermöglicht es Ihnen, das Kartenerscheinungsbild für eine bessere Sichtbarkeit unter verschiedenen Fahrbedingungen zu konfigurieren. Sie können einen der folgenden Erscheinungsmodi wählen:
+OsmAnd ermöglicht es Ihnen, das Kartenerscheinungsbild für CarPlay unabhängig vom Kartenmodus auf Ihrem Telefon zu konfigurieren. Um diese Einstellung zu öffnen, tippen Sie in der CarPlay-Navigationsleiste auf die Schaltfläche *Einstellungen* und wählen Sie dann *Kartenmodus*. Der aktuelle Modus wird als Detailtext der Zeile angezeigt.
 
-- *Automatisch*. Das Kartenerscheinungsbild ändert sich automatisch je nach Systemeinstellungen, Tageszeit oder Fahrzeugzustand.
-- *Immer dunkel*. CarPlay verwendet das dunkle Kartenthema.
+Sie können einen der folgenden Erscheinungsmodi wählen:
+- **Fahrzeugdarstellung** — Das Kartenerscheinungsbild folgt dem Anzeigestil des Fahrzeugs, basierend auf der CarPlay-Darstellungseinstellung auf Ihrem iPhone (*Automatisch* oder *Immer dunkel*) und der Tageszeit. Wenn in dieser Einstellung *Immer dunkle Karten anzeigen* aktiviert ist, bleibt die Karte unabhängig vom Scheinwerferstatus des Fahrzeugs oder der Tageszeit immer im Dunkelmodus.
+- **Tag** — Die Karte verwendet in CarPlay immer das helle Thema, unabhängig von den Darstellungseinstellungen des Fahrzeugs.
+- **Nacht** — Die Karte verwendet in CarPlay immer das dunkle Thema, unabhängig von den Darstellungseinstellungen des Fahrzeugs.
+- **Sonnenaufgang/Sonnenuntergang** — Die Karte wechselt automatisch zwischen hellem und dunklem Thema, basierend auf den berechneten Sonnenauf- und -untergangszeiten für Ihren aktuellen Standort.
 
-Wenn die Option *Immer dunkle Karten anzeigen* aktiviert ist, bleibt die Karte unabhängig vom Scheinwerferstatus des Fahrzeugs oder der Tageszeit immer im Dunkelmodus.
+**Hinweis:** Die Einstellung Kartenmodus in CarPlay wirkt sich nur auf das Kartenerscheinungsbild in CarPlay aus. Sie ändert nicht den Kartenmodus auf dem Bildschirm Ihres Telefons.
 
 ### Position des Standorts in CarPlay {#location-position-in-carplay}
 

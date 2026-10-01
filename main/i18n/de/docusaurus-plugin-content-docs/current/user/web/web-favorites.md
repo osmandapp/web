@@ -1,5 +1,5 @@
 ---
-source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
+source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -26,7 +26,7 @@ Favoriten im Web-Planer ermöglichen es Ihnen, wichtige Orte direkt auf der Kart
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
-Nach der Registrierung für [**OsmAnd Pro**](../personal/osmand-cloud.md#login) und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) sind Ihre Favoriten im Web-Planer in Ordnern organisiert. Jeder Ordner gruppiert gespeicherte Orte und bietet eine Reihe von Aktionen, die über das Favoriten-Menü verfügbar sind. 
+Nach der Anmeldung bei einem [**OsmAnd Pro**](../personal/osmand-cloud.md#login)- oder [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Konto sind Ihre Favoriten im Web-Planer in Ordnern organisiert. Jeder Ordner gruppiert gespeicherte Orte und bietet eine Reihe von Aktionen, die über das Favoriten-Menü verfügbar sind. 
 Die folgenden Aktionen sind verfügbar:
 
 - *Auf Karte anzeigen* - Zeigt Favoritenpunkte aus dem ausgewählten Ordner auf der Karte an.
@@ -100,7 +100,7 @@ Der Dialog enthält auch einen Erweitert-Abschnitt, in dem Standarddarstellungse
 
 ### Darstellung {#appearance}
 
-Der Abschnitt **Darstellung** ermöglicht die Anpassung der Anzeige des Favoriten auf der Karte. Die folgenden Eigenschaften sind verfügbar: Symbol, Farbe, Form und Symbol. 
+Der Abschnitt **Darstellung** ermöglicht die Anpassung der Anzeige des Favoriten auf der Karte. Die folgenden Eigenschaften sind verfügbar: Symbol, Farbe und Form. 
 
 Durch Auswahl von **Symbol** wird ein sekundäres Panel mit kategorisierten Symbolgruppen geöffnet.
 

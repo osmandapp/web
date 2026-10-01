@@ -1,5 +1,5 @@
 ---
-source-hash: 2f452a1d8b316f905b1ea409998af97c7fd5afd3e4e38098246912c444d71c63
+source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -254,11 +254,15 @@ Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*
 
 <TabItem value="android" label="Android">
 
-**Gleitverhältnis zum Ziel** zeigt das genaue Gleitverhältnis an, das erforderlich ist, um den Zielpunkt zu erreichen.
+- **Gleitverhältnis zum Ziel** zeigt das genaue Gleitverhältnis an, das erforderlich ist, um den Zielpunkt zu erreichen.
+- **Zielhöhe** zeigt die Höhe des Zielpunkts an. Der [Kartenmarker](../personal/markers.md) sollte als Zielpunkt verwendet werden.
+
+Um zwischen diesen Modi zu wechseln, tippen Sie direkt auf das Widget. Die Wechseloption ist im [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) nicht verfügbar. 
 
 | | |
 |:------------|:------------|
 | Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
+| Durch Tippen | Wechselt zwischen *Gleitverhältnis zum Ziel* und *Zielhöhe*  |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>

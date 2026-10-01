@@ -1,5 +1,5 @@
 ---
-source-hash: 428826bae8ed862f0461ecab49ef7797e89e0c65221f36bbe3483a582b457628
+source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
 sidebar_position: 1
 title:  الخطوات الأولى
 ---
@@ -502,7 +502,7 @@ OsmAnd هو تطبيق محمول للخرائط والملاحة متاح لن�
 
 في *قائمة المساعدة* يمكنك العثور على مقالات من موقعنا [www.osmand.net/docs](https://osmand.net/docs/intro/). بعد التنزيل الأولي (يتطلب اتصالاً بالإنترنت)، تكون مقالات المساعدة متاحة دون اتصال بالإنترنت.  
 القسم الفرعي الأول، *المساعدة دون اتصال بالإنترنت* يحتوي على المقالات **الأكثر مشاهدة** (أو الشائعة) بين مستخدمينا. تُعرض هذه المقالات بلغة التطبيق المحددة، إذا كانت هذه اللغة مدعومة على موقع التوثيق الخاص بنا. تشمل اللغات المدعومة حاليًا: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, و *<Translate android="true" ids="lang_uk"/>*. إذا قمت بتغيير لغة التطبيق، يرجى إعادة تشغيل OsmAnd لفتح التوثيق باللغة المحددة. عندما لا تكون الترجمة متاحة، سيتم عرض النسخة الإنجليزية من الصفحة تلقائيًا. قسمي **دليل المستخدم** و **استكشاف الأخطاء وإصلاحها** لهما نفس بنية الموقع الإلكتروني.  
-في *قائمة المساعدة*، يمكنك أيضًا العثور على روابط مفيدة لشبكات OsmAnd الاجتماعية، ومعلومات الإصدار حول تطبيقك، وملاحظات الإصدار، وجهات اتصال الدعم. من خلال المساعدة، يمكنك أيضًا إرسال [سجلات logcat والأعطال](../troubleshooting/crash-logs.md#crash-and-logcat-logs).  
+في *قائمة المساعدة*، يمكنك أيضًا العثور على روابط مفيدة لشبكات OsmAnd الاجتماعية، ومعلومات الإصدار حول تطبيقك، وملاحظات الإصدار، وجهات اتصال الدعم. من خلال المساعدة، يمكنك أيضًا إرسال [سجلات logcat والأعطال](../troubleshooting/crash-logs.md#crash-and-app-logs).  
 
 ### القائمة {#menu}
 

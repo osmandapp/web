@@ -1,5 +1,5 @@
 ---
-source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title: المسارات
 sidebar_position: 11
 ---
@@ -26,9 +26,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Configure Map Routes section](@site/static/img/map/configure_map_routes_android.png) ![Routes Classes](@site/static/img/map/routes_classes_android.webp)
+![قسم المسارات في تهيئة الخريطة](@site/static/img/map/configure_map_routes_android.png) ![فئات المسارات](@site/static/img/map/routes_classes_android.webp)
 
 - لعرض المسارات المطلوبة على الخريطة، قم بتمكينها في *قائمة المسارات* ضمن قائمة [تهيئة الخريطة](../../map/configure-map-menu.md).
 - يمكن لـ OsmAnd تمييز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها بالنقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك متابعة الألوان والأيقونات.
@@ -38,22 +38,22 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,renderin
 - عند النقر على موقع تتداخل فيه عدة مسارات، تظهر قائمة سياقية تحتوي على جميع المسارات التي تمر عبر هذه النقطة. 
 - يلزم تحديث الخرائط المتجهة لعرض جميع عناصر مخطط عرض المسارات الجديد. 
 
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+![مسارات الخريطة - مسارات المشي OSMC](@site/static/img/map/map-routes-hiking-osmc.png)![مسارات الخريطة - شبكات عقد الدراجات](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_category_routes"/>*
 
-![Track menu iOS](@site/static/img/map/configure_map_routes_ios.png)
+![قائمة المسار في iOS](@site/static/img/map/configure_map_routes_ios.png)
 
 - لعرض المسارات المطلوبة على الخريطة، قم بتمكينها في *قائمة المسارات* ضمن قائمة [تهيئة الخريطة](../../map/configure-map-menu.md).
 - يمكن لـ OsmAnd تمييز [المسارات الموجودة على OpenStreetMap](https://wiki.openstreetmap.org/wiki/Relation:route). يمكن تحديدها بالنقر على [الرمز الموجود على المسار](#save-as-a-track)، وإذا تم تكوين مجموعة المسارات المرئية بشكل صحيح، يمكنك متابعة الألوان والأيقونات.
 - يمكنك إنشاء مسار فوق المسارات باستخدام أداة [خطط مسار](../../plan-route/create-route.md). 
 - عندما تمر عدة مسارات على نفس الطريق، يُعرض كل مسار كخط شبه شفاف منفصل موضوع فوق الآخرين.   
 
-![Map routes - hiking osmc](@site/static/img/map/map-routes-hiking-osmc.png)![Map routes - cycle-node-networks](@site/static/img/map/map-routes-cycle-node-networks.png)
+![مسارات الخريطة - مسارات المشي OSMC](@site/static/img/map/map-routes-hiking-osmc.png)![مسارات الخريطة - شبكات عقد الدراجات](@site/static/img/map/map-routes-cycle-node-networks.png)
 
 </TabItem>
 
@@ -66,13 +66,13 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 <TabItem value="android" label="Android">
 
-![Route info](@site/static/img/map/routes_osm.png) ![Route info](@site/static/img/map/routes_osm_1.png)
+![معلومات المسار](@site/static/img/map/routes_osm.png) ![معلومات المسار](@site/static/img/map/routes_osm_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/routes_osm_ios_new.png) ![Route info](@site/static/img/map/routes_osm_ios_new_2.png)
+![معلومات المسار](@site/static/img/map/routes_osm_ios_new.png) ![معلومات المسار](@site/static/img/map/routes_osm_ios_new_2.png)
 
 </TabItem>
 
@@ -94,7 +94,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 ### تفاصيل منطقة التسلق والصخرة {#climbing-area-and-crag-details}
 
-![Climbing details](@site/static/img/map/climbing_andr.png)
+![تفاصيل التسلق](@site/static/img/map/climbing_andr.png)
 
 عند تحديد [منطقة تسلق أو صخرة](./types-of-routes.md#climbing-routes)، يوفر OsmAnd ملخصًا مفصلاً لموقع التسلق، بما في ذلك: الاسم والموقع، ودرجة صعوبة التسلق (UIAA، French، YDS، إلخ)، ونوع الصخر، والارتفاع وطول المسار، وجودة التسلق وظروف السطح.
 
@@ -104,13 +104,13 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 <TabItem value="android" label="Android">
 
-![Route info](@site/static/img/map/route_info_1_andr_new.png) ![Route info](@site/static/img/map/route_info_2_andr_new.png)
+![معلومات المسار](@site/static/img/map/route_info_1_andr_new.png) ![معلومات المسار](@site/static/img/map/route_info_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route info](@site/static/img/map/route_info_1_ios_new.png) ![Route info](@site/static/img/map/route_info_2_ios_new.png)
+![معلومات المسار](@site/static/img/map/route_info_1_ios_new.png) ![معلومات المسار](@site/static/img/map/route_info_2_ios_new.png)
 
 </TabItem>
 
@@ -137,13 +137,13 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes-4.png)   ![Routes on the ground](@site/static/img/map/routes-5.png)
+![المسارات على الأرض](@site/static/img/map/routes-4.png)   ![المسارات على الأرض](@site/static/img/map/routes-5.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/hiking.png)   ![Routes on the ground](@site/static/img/map/hiking_1.png)
+![المسارات على الأرض](@site/static/img/map/hiking.png)   ![المسارات على الأرض](@site/static/img/map/hiking_1.png)
 
 </TabItem>
 
@@ -158,13 +158,13 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/routes_osm_3.png)
+![المسارات على الأرض](@site/static/img/map/routes_osm_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/routes_osm_ios_3.png)
+![المسارات على الأرض](@site/static/img/map/routes_osm_ios_3.png)
 
 </TabItem>
 
@@ -185,19 +185,19 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search.png) ![Routes on the ground](@site/static/img/map/route_search_1_new.png)
+![المسارات على الأرض](@site/static/img/map/route_search.png) ![المسارات على الأرض](@site/static/img/map/route_search_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_ios.png) ![Routes on the ground](@site/static/img/map/route_search_1_ios.png)
+![المسارات على الأرض](@site/static/img/map/route_search_ios.png) ![المسارات على الأرض](@site/static/img/map/route_search_1_ios.png)
 
 </TabItem>
 
 </Tabs>  
 
-ابحث عن المسارات باستخدام [وظيفة البحث](../../search/index.md) بالاسم أو عن طريق تحديد "المسارات" في [قسم الفئات](../../search/search-poi.md#).
+ابحث عن المسارات باستخدام [وظيفة البحث](../../search/index.md) بالاسم أو عن طريق تحديد "المسارات" في [قسم الفئات](../../search/search-poi.md#poi-search-by-categories).
 
 للبحث، انتقل إلى قائمة *<Translate android="true" ids="search_button"/>* أو *<Translate android="true" ids="search_button,search_categories"/>* وأدخل نشاطك.
 
@@ -209,19 +209,19 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 
 <TabItem value="android" label="Android">
 
-![Routes on the ground](@site/static/img/map/route_search_2_new.png) ![Routes on the ground](@site/static/img/map/route_search_3_new.png)
+![المسارات على الأرض](@site/static/img/map/route_search_2_new.png) ![المسارات على الأرض](@site/static/img/map/route_search_3_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Routes on the ground](@site/static/img/map/route_search_2_ios.png) ![Routes on the ground](@site/static/img/map/route_search_3_ios.png)
+![المسارات على الأرض](@site/static/img/map/route_search_2_ios.png) ![المسارات على الأرض](@site/static/img/map/route_search_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-في نتائج البحث عن المسارات، انقر على زر **عوامل التصفية** في الزاوية العلوية اليمنى لتضييق القائمة. تتضمن شاشة عوامل التصفية حقل **تصفية حسب الاسم**؛ وكتلة **النوع** مع *مكتب*، *ملحق بريد*، و*شريك بريد*؛ و**معايير إضافية** تعتمد على فئة المسار أو النشاط المحدد، حيث يمكن لكل فئة عرض خصائصها وقيم التصفية الخاصة بها.
+في نتائج البحث عن المسارات، انقر على زر **عوامل التصفية** في الزاوية العلوية اليمنى لتضييق القائمة. تتضمن شاشة عوامل التصفية حقل **تصفية حسب الاسم** و**معايير إضافية** تعتمد على فئة المسار أو النشاط المحدد، حيث يمكن لكل فئة عرض خصائصها وقيم التصفية الخاصة بها.
 
 يمكنك تمكين أو تعطيل عوامل التصفية باستخدام المفاتيح، وتتضمن بعض الأقسام *عرض الكل* لعرض قيم إضافية.
 
@@ -234,5 +234,5 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_ca
 - [قائمة سياق المسارات](../../map/tracks/track-context-menu.md)
 - [النقل العام](../public-transport.md)
 - [مظهر خط مسار التنقل](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [البحث عن نقاط الاهتمام](../../search/search-poi.md#)
+- [البحث عن نقاط الاهتمام](../../search/search-poi.md)
 - [أنواع المسارات](./types-of-routes.md)

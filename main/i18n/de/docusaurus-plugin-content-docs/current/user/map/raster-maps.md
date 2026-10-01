@@ -1,5 +1,5 @@
 ---
-source-hash: 83d4ecf6d84f9f5018413830b5bf57a59206a20ae29a9582bf53a3d68c72d1e2
+source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
 sidebar_position: 7
 title:  Rasterkarten (Online / Offline)
 ---
@@ -14,13 +14,10 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Übersicht {#overview}
 
-Rasterkarten sind bedeutende und nützliche Ergänzungen zu den Vektorkarten von OsmAnd. Sie ermöglichen es Ihnen, verschiedene Kartenquellen mit Vektorkarten zu kombinieren. Zum Beispiel werden Informationen über Hügel und Hänge als Rasterebene dargestellt. Sie können eine Überlagerung von Wanderwegen, Regenkarten, Echtzeit-Verkehrsdaten und eine Überlagerung von Satellitenbildern auf einer durchscheinenden Vektor-Basiskarte anzeigen. Sie können auch die Standardkarten auf Rasterkacheln im Web umstellen.
+Rasterkarten sind bedeutende und nützliche Ergänzungen zu den Vektorkarten von OsmAnd. Sie ermöglichen es Ihnen, verschiedene Kartenquellen mit Vektorkarten zu kombinieren. Zum Beispiel werden Informationen über Hügel und Hänge als Rasterebene dargestellt. Sie können eine Überlagerung von Wanderwegen, Regenkarten, Echtzeit-Verkehrsdaten und eine Überlagerung von Satellitenbildern auf einer durchscheinenden Vektor-Basiskarte anzeigen. Sie können auch die Standardkartenquelle von Offline-Vektorkarten auf Online-Rasterkacheln umstellen.
 
 Rasterkarten in OsmAnd werden typischerweise als Satz kleiner Bilder (Kacheln) geliefert, die in einem Gitter angeordnet sind. Im Gegensatz zu Vektorkarten, die Objekte wie Straßen, Punkte und Polygone als Daten speichern, sind Rasterkacheln vorgerenderte Bilder und können bei hohen Zoomstufen verpixelt erscheinen, da jedes Pixel einen festen Wert hat.
 
@@ -88,7 +85,7 @@ Sie können auch [die Hauptkartenquelle](#main) von Vektorkarten auf Online-Kach
 
 In OsmAnd können Rasterkarten als zusätzliche Kartenquelle neben den standardmäßigen Vektorkarten dienen, die für die Offline-Nutzung optimiert sind.  
 
-Sie haben die Flexibilität, eine oder zwei Online-Kachelebenen hinzuzufügen, um Ihre Basiskarte zu ergänzen. Dies ermöglicht es Ihnen, bis zu drei Kartenebenen gleichzeitig auf Ihrem Bildschirm anzuzeigen (plus Gelände). Stellen Sie sie sich wie einen Kuchen vor: [**Untere Ebene**](#underlay) (Rasterbasis darunter), [**Hauptkarte**](#main) (Vektor* oder Rasterkern), [**Überlagerung**](#overlay) (Raster obenauf), mit [**Gelände**](#terrain) Schattierung darüber. Zum Beispiel können Sie die Offline-Vektorkarte von OsmAnd als Hauptbasis haben, sie mit einer Satellitenansicht überlagern und eine Radwegkarte als Untere Ebene für zusätzliche Details platzieren.
+Sie haben die Flexibilität, eine oder zwei Online-Kachelebenen hinzuzufügen, um Ihre Basiskarte zu ergänzen. Dies ermöglicht es Ihnen, bis zu drei Kartenebenen gleichzeitig auf Ihrem Bildschirm anzuzeigen (plus Gelände). Stellen Sie sie sich wie einen Kuchen vor: [**Untere Ebene**](#underlay) (Rasterbasis darunter), [**Hauptkarte**](#main) (Vektor oder Rasterkern), [**Überlagerung**](#overlay) (Raster obenauf), mit [**Gelände**](#terrain) Schattierung darüber. Zum Beispiel können Sie Satellitenbilder als Untere Ebene verwenden, die Offline-Vektorkarte von OsmAnd als Hauptebene mit erhöhter Transparenz und eine Radwegkarte als Überlagerung darüber.
 
 >[Vektorkarten](./vector-maps.md) sind **nur** in der [Hauptebene](#main) verfügbar (und sind dort standardmäßig). Rasterkarten können in allen drei Ebenen verwendet werden: Haupt, Untere Ebene und Überlagerung.
 
@@ -120,7 +117,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_s
 
 </Tabs>
 
-Standardmäßig ist die Hauptkarte auf [Offline-Vektorkarten](./vector-maps.md) (OsmAnd-Karten) eingestellt, die für die Offline-Nutzung optimiert sind. Sie können eine andere Kartenquelle aus der Liste auswählen (_Mehr hinzufügen_(Android) oder _Mehr installieren_ (iOS)) oder [Ihre eigene hinzufügen](#add-new-online-source).
+Standardmäßig ist die Hauptkarte auf [Offline-Vektorkarten](./vector-maps.md) (OsmAnd-Karten) eingestellt, die für die Offline-Nutzung optimiert sind. Sie können eine andere Kartenquelle aus der Liste auswählen (_Mehr hinzufügen_ (Android) oder _Mehr installieren_ (iOS)) oder [Ihre eigene hinzufügen](#add-new-online-source).
 
 ### Überlagerung {#overlay}
 
@@ -204,85 +201,12 @@ Die Geländevisualisierung kann mit anderen Rasterebenen und der standardmäßig
 
 Fortgeschrittenere Geländefunktionen, einschließlich 3D-Relief (nur Pro) und zusätzlicher geländebezogener Optionen, werden im [Topographie-Artikel](../plugins/topography.md) beschrieben.
 
-<!--
-## Höhenschattierung / Neigung {#hillshade--slope}
-
-![Geländeebenen](@site/static/img/plugins/online-maps/terrain_two_layers.png)
-
-**Höhenschattierung** und **Neigung** sind Offline-Rasterkarten, die das Geländerelief zeigen. Sie werden als spezielle Kartenebene angezeigt, eine zweite Überlagerung auf der Basiskarte. Die Karten enthalten zusätzliche Höheninformationen, um Ihnen zu helfen, die Neigung und die Schatten der Landschaft genauer zu verstehen. Die Informationen zu *Höhenschattierung* und *Neigung* basieren auf Daten aus einer einzigen Quelle, der *Global Planet File*, und sind in Regionen unterteilt.  
-
-Sie müssen nicht zwischen den Ebenen Höhenschattierung und Neigung wechseln, da sie automatisch zusammengeführt werden. Sie können nur eine dieser Ebenen zur Anzeige auf der Karte auswählen, haben aber auch die Möglichkeit, beide [als untere Ebene oder Überlagerung](#layers) auf anderen Ebenen zu kombinieren, um eine visuellere Darstellung des Geländes zu erhalten.
-
-Um mit Höhenschattierung und Neigung zu beginnen, müssen Sie:
-
-1. Das Topography-Plugin erwerben:
-    - [Android-Käufe](../purchases/android.md)
-    - [iOS-Käufe](../purchases/ios.md)
-2. Das [Topography-Plugin](../plugins/topography.md) aktivieren:  
-    *Menü → Plugins → ︙ → Aktivieren*
-3. Wählen Sie Ihre gewünschte Region aus und laden Sie **Geländekarte (3D)** herunter.
-4. Der Download-Vorgang kann je nach Größe der ausgewählten Region und der Geschwindigkeit Ihrer Internetverbindung einige Zeit dauern.
-
-
-### Höhenschattierung und 3D-Relief {#hillshade-and-3d-relief}
-
-| Höhenschattierung | 3D-Relief |
-|--------|---------|
-| ![Geländeebenen](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Geländeebenen](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
-
-Der Unterschied in der Reliefdarstellung auf der Karte bei Anwendung dieser Einstellungen wird im Artikel **Topographie** im entsprechenden Abschnitt [Höhenschattierung und 3D-Relief](../plugins/topography.md#hillshade-and-3d-relief) beschrieben.
-
-
-### Anzeigeoptionen konfigurieren {#configure-display-options}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Gehen Sie zu: *<Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Gehen Sie zu: *<Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,configure_map,shared_string_terrain"/>*
-
-</TabItem>
-
-</Tabs>
-
-![Geländeebenen](@site/static/img/plugins/online-maps/terrain_layers.png)
-
-Sie können die Zoomstufe für die Anzeige und die Transparenz für Höhenschattierung und Neigung anpassen. Mehr dazu können Sie im [Topographie-Artikel](../plugins/topography.md#hillshade-slope-and-altitude-layers) lesen.
-
-
-## 3D-Relief {#3d-relief}
-
-:::note
-[3D-Relief](../plugins/topography.md#3d-relief) ist eine kostenpflichtige Funktion von [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-:::
-
-![Geländeebenen](@site/static/img/plugins/online-maps/raster_maps_3d.png)
-
-Die Funktion [**3D-Relief**](../plugins/topography.md#3d-relief) ist eine Kartentechnologie, die die Visualisierung von Gelände auf einer Karte mithilfe von dreidimensionalen Modellen ermöglicht. Diese Funktion fügt einer normalen zweidimensionalen Karte Höheninformationen hinzu, was einen 3D- und Tiefeneffekt erzeugt und es Ihnen ermöglicht, das Gelände besser zu visualisieren.  
-
-*Um 3D-Relief zu verwenden*:  
-Sie müssen den [OsmAnd Pro-Kaufplan](../plugins/index.md#purchase) erwerben, das [Topography-Plugin](../plugins/topography.md) aktivieren und den Punkt [3D-Relief](../plugins/topography.md#3d-relief) im *Menü → Karte konfigurieren* einschalten.
-
-
-*Wie die 3D-Relief-Funktion funktioniert*:  
-*1.* Um ein 3D-Relief zu erstellen, empfängt OsmAnd Informationen über die Geländehöhe.  
-*2.* Basierend auf den Höhendaten wird ein 3D-Modell erstellt, um Berge, Hügel, Täler und andere Geländeelemente auf der Karte darzustellen.  
-*3.* OsmAnd zeigt diese dreidimensionalen Modelle dann auf einer flachen Karte an. Die Karte kann vergrößert, verkleinert und gedreht werden, um das Gelände aus verschiedenen Winkeln und Perspektiven zu betrachten.  
-*4.* Die Anzeige von Höhenlinien auf der Karte hängt nicht davon ab, ob die Kartenquelle online oder offline ist.
--->
-
 
 ## Rasterkarten vorbereiten/auf das Gerät kopieren {#preparecopy-maps}
 
 Es gibt mehrere Möglichkeiten, eine neue Rasterkarte hinzuzufügen, sie von einem anderen Gerät zu kopieren, sie auf einem PC vorzubereiten und Kacheln für die Offline-Nutzung vorab herunterzuladen. Sie können zum Beispiel Ihr eigenes Kartenpaket auf einem PC mit spezieller Software wie [MOBAC, OsmAndMapCreator usw.](../../technical/map-creation/index.md) erstellen. Typischerweise werden Rasterkarten als Dateien mit der Erweiterung `.sqlitedb` verteilt.
 
-Hier sind die wichtigsten Methoden, um eine neue Rasterkartenquelle hinzuzufügen, die noch nicht in OsmAnd definiert ist:
+Hier sind die wichtigsten Methoden zum Hinzufügen einer neuen Rasterkartenquelle, die noch nicht in OsmAnd definiert ist:
 
 - Öffnen Sie eine fertige `.sqlitedb`-Datei mit OsmAnd.
 - Importieren Sie ein Paket mit vorbereiteten Online-Karten aus einer anderen OsmAnd-Anwendung als spezielles `.osf` **Paket** über die [Import-/Export-Funktionalität](../personal/import-export.md).
@@ -347,7 +271,7 @@ Sie finden eine hinzugefügte Online-Karte in der Liste des Menüs [Hauptkarte /
 
 Rasterkarten können eine erhebliche Menge an Speicherplatz beanspruchen, daher müssen Sie dies möglicherweise regelmäßig überprüfen. Für große Datensätze wird empfohlen, eine *SQLite-Rasterquelle* zu verwenden, da diese alle Kacheln in einer großen Datei (SQLite-Datenbank) speichert.
 
-- [**SQ Lite-Format**](../../technical/osmand-file-formats/osmand-sqlite.md)
+- [**SQLite-Format**](../../technical/osmand-file-formats/osmand-sqlite.md)
 - [**Metainfo-Format**](../../technical/osmand-file-formats/osmand-metainfo.md)
 
 Um das Kachelformat zu ändern, können Sie <Translate android="true" ids="storage_format"/> im Bearbeitungsmenü der Online-Karten auswählen:
@@ -379,7 +303,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,downloa
 
 </Tabs>
 
-Kacheln werden im Cache gespeichert, wenn Online-Rasterkarten als Haupt-, Überlagerungs- oder untere Ebene verwendet werden. Sie können die Größe Ihrer SQ Lite-Datei unter dem Namen Ihrer Online-Karte in der Liste sehen. Manchmal ist eine regelmäßige Reinigung erforderlich, um die Anzeige der Kacheln zu beschleunigen oder die Daten zu aktualisieren.  
+Kacheln werden im Cache gespeichert, wenn Online-Rasterkarten als Haupt-, Überlagerungs- oder untere Ebene verwendet werden. Sie können die Größe Ihrer SQLite-Datei unter dem Namen Ihrer Online-Karte in der Liste sehen. Manchmal ist eine regelmäßige Reinigung erforderlich, um die Anzeige der Kacheln zu beschleunigen oder die Daten zu aktualisieren.  
 
 ### Kacheln herunterladen / aktualisieren {#download--update-tiles}
 
@@ -399,12 +323,6 @@ Damit die Karten die Kacheln nach einer Weile automatisch aktualisieren, können
         <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-4.png').default} alt="Rasterkarten"/></td>
     </tr>
 </table>  
-
-<!--
-
-![Kacheln herunterladen Android](@site/static/img/plugins/online-maps/download-online-maps-1.png) ![Kacheln herunterladen Android](@site/static/img/plugins/online-maps/download-online-maps-2.png) ![Kacheln herunterladen Android](@site/static/img/plugins/online-maps/download-online-maps-3.png) ![Kacheln herunterladen Android](@site/static/img/plugins/online-maps/download-online-maps-4.png)
-
--->
 
 
 </TabItem>
@@ -442,14 +360,13 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,res_mapsres,downloa
 
 </Tabs>
 
-Rasterkarten können so verwendet werden, wie sie bereits existieren, wenn die Kacheln bereits zugeordnet sind. Wenn die Rasterkarten online bereitgestellt werden, gibt es immer eine Basis-URL, die konfiguriert werden muss. Es gibt noch einige weitere grundlegende Parameter, die für Rasterkarten geändert werden können, darüber können Sie in [diesem Abschnitt](#add-new-online-source) des Artikels lesen. Komplexere Parameter sind in den internen Komponenten des [SQ Lite-Formats](../../technical/osmand-file-formats/osmand-sqlite.md) kodiert.
+Rasterkarten können so verwendet werden, wie sie bereits existieren, wenn die Kacheln bereits zugeordnet sind. Wenn die Rasterkarten online bereitgestellt werden, gibt es immer eine Basis-URL, die konfiguriert werden muss. Es gibt noch einige weitere grundlegende Parameter, die für Rasterkarten geändert werden können, darüber können Sie in [diesem Abschnitt](#add-new-online-source) des Artikels lesen. Komplexere Parameter sind in den internen Komponenten des [SQLite-Formats](../../technical/osmand-file-formats/osmand-sqlite.md) kodiert.
 
 
 ## Verwandte Artikel {#related-articles}
 
 - [Importieren / Exportieren](../personal/import-export.md)
-- [Farbschemata](../personal/color-palette-schemes.md)
 - [Schnelle Aktion (Benutzerdefinierter Button)](../widgets/quick-action.md)
 - [Online-Karten](../plugins/online-map.md)
 - [Topographie](../plugins/topography.md)
-- [Offline-Raster- & Vektorkarten selbst erstellen](technical/map-creation/create-offline-maps-yourself.md)
+- [Offline-Raster- & Vektorkarten selbst erstellen](../../technical/map-creation/create-offline-maps-yourself.md)

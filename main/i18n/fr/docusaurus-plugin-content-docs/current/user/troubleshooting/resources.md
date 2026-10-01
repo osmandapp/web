@@ -1,5 +1,5 @@
 ---
-source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
+source-hash: 09518f7c9f30ff95cf4ee3c22d11fc8d1867a10a1fa6a3ea3d7b5c046dd047c7
 sidebar_position: 9
 title: Ressources et personnalisations
 ---
@@ -55,6 +55,7 @@ La liste ci-dessous fournit des convertisseurs pour divers types de données pri
 | Topo map into printable| Ceci est [un outil](https://github.com/acui/osmand_topo_map_generator) pour générer une carte topographique imprimable en utilisant des captures d'écran d'OsmAnd (https://osmand.net). La carte utilise la grille UTM et contient des informations sur la déclinaison. Elle est destinée à être utilisée avec une boussole ou un appareil GPS avec des coordonnées UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar projette un rayon vers le soleil depuis chaque point d'une trace GPX et le compare au terrain et à la végétation (LiDAR HD 0,5 m / IGN), pour une date et une heure données. Il indique, mètre par mètre, le soleil ou l'ombre. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 | lidar2map | Un outil autonome qui télécharge des données LiDAR publiques depuis les portails nationaux de 22 pays | [lidar2map](https://github.com/nico579/lidar2map)|
+| Couleurs de pente GPX | Colore une trace GPX selon la pente : les montées, les descentes et les sections plates deviennent des traces distinctes avec leur propre couleur, écrites dans le fichier afin qu'OsmAnd les affiche. Le gradient est signé, il suit donc le sens du déplacement. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Ressources personnalisées {#custom-resources}
 

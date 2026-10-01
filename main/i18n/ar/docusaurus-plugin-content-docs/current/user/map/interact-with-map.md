@@ -1,5 +1,5 @@
 ---
-source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
+source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
 sidebar_position: 2
 title: التفاعل مع الخريطة
 ---
@@ -219,8 +219,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **عرض الكرة الأرضية** يسمح لك بعرض الخريطة ككرة أرضية كروية بدلاً من إسقاط مسطح. يغير هذا الوضع هندسة سطح الخريطة ويعدل التفاعل مع الخريطة للتنقل الكروي.  
 
 عرض الكرة الأرضية متاح حاليًا فقط عندما:
-- تم تمكين [إضافة التطوير](../plugins/development.md).  
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - تم تمكين [إضافة الطبوغرافيا](../plugins/topography.md).  
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - تم تعيين [محرك عرض الخرائط](../personal/global-settings.md#map-rendering-engine) إلى الإصدار ٢ (OpenGL).  

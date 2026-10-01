@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -34,7 +34,7 @@ Der Tracks-Bereich enthält alle trackbezogenen Tools und Aktionen. Die folgende
 
 - Tracks aus [OsmAnd Cloud](#cloud-tracks) anzeigen.
 - Tracks auf der Karte hinzufügen (Ordner **Auf Karte sichtbar**).
-- Alle Track-Informationen und Diagramme anzeigen
+- Track-Informationen und Diagramme anzeigen.
 - Tracks bearbeiten und zur Cloud hinzufügen.
 - Tracks herunterladen und löschen.
 - Neue Ordner erstellen oder löschen.
@@ -103,7 +103,7 @@ Das Drei-Punkte-Menü (⋮) bietet zusätzliche Aktionen für den Smart Folder. 
 
 ## Cloud-Tracks {#cloud-tracks}
 
-GPX-Tracks, die Sie in [OsmAnd Cloud](../personal/osmand-cloud.md) haben, sind nach der Anmeldung zur Anzeige und Bearbeitung verfügbar. Nur für **Pro-Nutzer** <ProFeature/> und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Nutzer (die ihre Daten auch nach Ablauf ihres Pro-Abonnements herunterladen können).
+GPX-Tracks, die Sie in [OsmAnd Cloud](../personal/osmand-cloud.md) haben, sind nach der Anmeldung zur Anzeige und Bearbeitung verfügbar. Nur **Pro-Nutzer** <ProFeature/> können darauf zugreifen. [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Nutzer können ihre Cloud-Daten auch nach Ablauf ihres Pro-Abonnements herunterladen.
 
 Wenn Sie einen Track auswählen, zentriert die Karte automatisch und passt die Zoomstufe an, um den gesamten Track im sichtbaren Kartenbereich anzuzeigen.
 

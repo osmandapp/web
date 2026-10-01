@@ -1,5 +1,5 @@
 ---
-source-hash: 803b22736228c5b37a1814163faeb441138781434f1ba2a3069b7668f1ffe213
+source-hash: 856b27defd24e63764e7fed8d4ebb2d645fd0d1b4aec10804b2f835f0c0ec2e0
 sidebar_position: 4
 title:  Achats multiplateformes
 ---
@@ -80,6 +80,20 @@ Si le problème persiste, contactez **support@osmand.net** et incluez :
 - Le type d'achat (Pro / Maps+ achat unique / Maps+ abonnement).
 
 
+### Transfert manuel {#manual-transfer}
+
+Si votre achat ne peut pas être activé automatiquement via OsmAnd Cloud, le support — **support@osmand.net** — peut être en mesure de le transférer manuellement.
+
+Pour demander un transfert manuel, fournissez :
+- Votre e-mail de compte OsmAnd Cloud.
+- Le numéro de transaction ou de commande de l'achat.
+- Une capture d'écran montrant le produit acheté est également recommandée.
+
+Sans le numéro de transaction ou de commande de l'achat et un compte OsmAnd Cloud enregistré, le support ne peut normalement pas transférer l'achat.
+
+Les achats effectués il y a plus de 10 ans ne peuvent pas être transférés.
+
+
 ### Achats et comptes multiples {#purchases-and-multiple-accounts}
 
 Un achat multiplateforme est lié au compte OsmAnd Cloud qui a été activé en dernier sur l'appareil détenant le reçu d'achat original (de l'App Store ou de Google Play). Si vous vous déconnectez de votre compte principal et vous connectez à un nouveau compte sur cet appareil, le système transfère automatiquement la licence au nouveau compte. Par conséquent, votre compte OsmAnd Cloud original perd son statut d'achat sur les autres plateformes, car la licence ne peut être active que sur un seul compte OsmAnd Cloud à la fois. Plus d'informations sont disponibles [ici](../troubleshooting/purchases_payments.md#purchase-association-with-multiple-osmand-cloud-accounts).
@@ -87,12 +101,12 @@ Un achat multiplateforme est lié au compte OsmAnd Cloud qui a été activé en 
 
 ## Exemple {#example}
 
-Vous avez acheté **Maps+** en tant qu'achat unique intégré dans la version gratuite d'OsmAnd depuis l'[Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8).  
+Vous avez acheté **Maps+** en tant qu'achat unique intégré dans la version gratuite d'OsmAnd depuis [Google Play](https://play.google.com/store/apps/details?id=net.osmand).  
 Plus tard, vous décidez de passer à un iPhone et souhaitez utiliser **Maps+** avec la [version iOS d'OsmAnd](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 Pour activer votre achat Maps+ sur iOS :
 
-1. Ouvrez la **version Amazon** de l'application OsmAnd sur votre appareil d'origine.
+1. Ouvrez OsmAnd sur votre appareil Android d'origine.
 2. Connectez-vous à votre [compte OsmAnd Cloud](../personal/osmand-cloud.md#login) :  
    *Menu → Paramètres → OsmAnd Cloud → Créer un nouveau compte / J'ai déjà un compte*
 3. Installez OsmAnd sur votre iPhone depuis l'[App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)

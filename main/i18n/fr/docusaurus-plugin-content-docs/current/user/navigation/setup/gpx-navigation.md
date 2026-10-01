@@ -1,5 +1,5 @@
 ---
-source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
+source-hash: 334708e5a8593c3a9d8ad26cd8d035221ee3dbfa4929c3dd8a3cbfc49b55fc2d
 sidebar_position: 2
 title:  Naviguer par trace
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 L'option *Navigation par trace* (GPX) vous permet de suivre un itinéraire ou une trace prédéfinie sur une carte. Elle peut être particulièrement utile pour les activités de plein air telles que la randonnée, le cyclisme ou la conduite tout-terrain, où un itinéraire planifié améliore la sécurité et l'efficacité. Si vous voyagez en groupe organisé, cette fonctionnalité vous aide, ainsi que chaque membre du groupe, à disposer des mêmes informations d'itinéraire que les autres.  
 
-L'option *Navigation par trace* peut également être utilisée dans la vie de tous les jours. Vous pouvez utiliser une [trace enregistrée](../../plugins/trip-recording.md) précédemment ou [créer une trace](../../personal/tracks/manage-tracks.md#create-a-track) et la partager avec votre famille ou vos amis au lieu de leur expliquer l'itinéraire. Vous pouvez également utiliser les [itinéraires sur la carte OsmAnd](../../../../blog/routes/) pour la navigation. La manière de les mettre en évidence sur la carte et la signification de leurs couleurs sont décrites dans la [section Itinéraires](../../map/vector-maps.md#routes) de l'article *Cartes vectorielles*.  
+L'option *Navigation par trace* peut également être utilisée dans la vie de tous les jours. Vous pouvez utiliser une [trace enregistrée](../../plugins/trip-recording.md) précédemment ou [créer une trace](../../personal/tracks/manage-tracks.md#create-a-track) et la partager avec votre famille ou vos amis au lieu de leur expliquer l'itinéraire. Vous pouvez également utiliser les [itinéraires sur la carte OsmAnd](https://osmand.net/blog/routes/) pour la navigation. La manière de les mettre en évidence sur la carte et la signification de leurs couleurs sont décrites dans la [section Itinéraires](../../map/vector-maps.md#routes) de l'article *Cartes vectorielles*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

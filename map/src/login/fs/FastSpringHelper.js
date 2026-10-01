@@ -34,6 +34,8 @@ function createFastSpringBuilder(testMode) {
 }
 
 let checkoutSessionPending = false;
+let pricingCountry;
+let pricingLanguage;
 
 export const createFastSpringPurchase = async ({ testMode, productId, type, ltx, ctx, navigate }) => {
     if (checkoutSessionPending) {
@@ -43,7 +45,7 @@ export const createFastSpringPurchase = async ({ testMode, productId, type, ltx,
     let resp;
     try {
         resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fastspring-session`, '', {
-            params: { id: productId, type, test: testMode },
+            params: { id: productId, type, test: testMode, country: pricingCountry, language: pricingLanguage },
         });
     } finally {
         checkoutSessionPending = false;
@@ -103,6 +105,8 @@ function fetchPrices(productsList, testMode, onPriceMap) {
                 products: productsList,
             },
             (pricingData) => {
+                pricingCountry = pricingData.country;
+                pricingLanguage = pricingData.language;
                 const priceMap = {};
                 pricingData.groups[0].items.forEach((item) => {
                     const name = item.product;

@@ -104,7 +104,8 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
         } else {
             type = props[CATEGORY_TYPE]?.toLowerCase();
             if (type) {
-                type = capitalize(t(`search_address_${type}`, formattingPoiType(type)));
+                const typeKey = type === 'postcode' ? 'postcode' : `city_type_${type}`;
+                type = capitalize(t([typeKey, `search_address_${type}`], formattingPoiType(type)));
             }
         }
     }
