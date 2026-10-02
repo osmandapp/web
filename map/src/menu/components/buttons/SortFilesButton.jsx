@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SortActions, { allMethods } from '../../actions/SortActions';
 import AppContext from '../../../context/AppContext';
-import { DEFAULT_FAV_GROUP_NAME } from '../../../manager/FavoritesManager';
+import { getFavoriteSortKey } from '../../../manager/FavoritesManager';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
 import SortMenu from '../../actions/SortMenu';
 import LoginContext from '../../../context/LoginContext';
@@ -17,15 +17,14 @@ export function getSelectedSort({
     favoriteGroup = null,
     customGroup = null,
     customGroupType = null,
+    smartf = null,
     ctx,
     defaultMethod = null,
 }) {
     if (trackGroup && ctx.selectedSort?.tracks) {
         return ctx.selectedSort.tracks[trackGroup.fullName];
     } else if (favoriteGroup && ctx.selectedSort?.favorites) {
-        return ctx.selectedSort.favorites[
-            favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
-        ];
+        return ctx.selectedSort.favorites[getFavoriteSortKey(favoriteGroup, smartf)];
     } else if (customGroup && ctx.selectedSort?.custom) {
         return ctx.selectedSort.custom[customGroupType];
     }
@@ -54,7 +53,7 @@ export default function SortFilesButton({
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
 
     // get selected sort method from cache
-    const sortType = getSelectedSort({ trackGroup, favoriteGroup, customGroup, customGroupType, ctx });
+    const sortType = getSelectedSort({ trackGroup, favoriteGroup, customGroup, customGroupType, smartf, ctx });
     const currentSortType = sortType ? sortType : 'time';
 
     useEffect(() => {

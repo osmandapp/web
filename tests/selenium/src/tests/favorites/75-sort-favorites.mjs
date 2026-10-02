@@ -1,8 +1,9 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import { getFiles } from '../../util.mjs';
-import { clickBy, enclose, enumerateIds, waitBy } from '../../lib.mjs';
+import { clickBy, enclose, enumerateIds, setMapCenter, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
+import { driver } from '../../options.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../../actions/favorites/actionRenameFavGroup.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -62,6 +63,28 @@ export default async function test() {
     await waitBy(By.id('se-opened-fav-group-food'));
     await validateItemOrder(favItemsFood);
 
+    // check item sort by nearest to map center
+    // the resulting order depends on the current map view, so check the selected mode, not the order
+    await clickBy(By.id('se-sort-button-time-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await clickBy(By.id('se-sort-nearestMapCenter'));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+
+    // check opening the sort menu keeps the order after the map is moved
+    const favItemsNearestMapCenter = await enumerateIds('se-fav-item-name-');
+    await setMapCenter(50.4719142, 30.5059648);
+    await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await driver.executeScript('document.body.click();');
+    await waitByRemoved(By.id('se-sort-menu'));
+    await validateItemOrder(favItemsNearestMapCenter);
+
+    // check item sort is restored after the group is reopened
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await clickBy(By.id('se-menu-fav-food'));
+    await waitBy(By.id('se-opened-fav-group-food'));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+
     // check save prev groups sort
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id('se-sort-button-oldDate-favorites'));
@@ -71,6 +94,13 @@ export default async function test() {
     await waitBy(By.id('se-sort-button-oldDate-favorites'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
     await validateGroupOrder(favGroupsOldDateAfterRename);
+
+    // check item sort is kept after the group is renamed
+    await clickBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
+    await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}${suffix}`));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await waitBy(By.id('se-sort-button-oldDate-favorites'));
 
     // check save sort order after change hidden
     await waitBy(By.id('se-folder-actions-button-shops'));

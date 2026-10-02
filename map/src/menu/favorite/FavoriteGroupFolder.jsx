@@ -13,11 +13,13 @@ import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     getFavMenuListByLayers,
     LOCATION_UNAVAILABLE,
+    MAP_CENTER_LOCATION,
 } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
 import Loading from '../errors/Loading';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
-import { byTime, doSort } from '../actions/SortActions';
+import { byTime, doSort, isNearestSort, NEAREST_MAP_CENTER_SORT } from '../actions/SortActions';
+import { getSelectedSort } from '../components/buttons/SortFilesButton';
 import { getMapCenter } from '../../map/layers/MapStateLayer';
 import { FixedSizeList } from 'react-window';
 import FavoriteGroup from './FavoriteGroup';
@@ -39,9 +41,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     const [, height] = useWindowSize();
     const [listContainerRef, listHeight] = useElementHeight();
     const [markers, setMarkers] = useState([]);
-    const [mapMoveTick, setMapMoveTick] = useState(0);
     const currentLoc = useGeoLocation(ctx);
-    const debouncerTimer = useRef(0);
 
     const refMarkers = useRef(null);
 
@@ -49,18 +49,10 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
     const hash = location.hash;
 
-    // debounce map move/scroll
-    useEffect(() => {
-        debouncerTimer.current > 0 && clearTimeout(debouncerTimer.current);
-        debouncerTimer.current = setTimeout(() => {
-            debouncerTimer.current = 0;
-            setMapMoveTick((n) => n + 1);
-        }, 5000);
-
-        return () => {
-            clearTimeout(debouncerTimer.current);
-        };
-    }, [hash]);
+    const sortMethod = getSelectedSort({ favoriteGroup: group, ctx });
+    const useMapCenter = sortMethod === NEAREST_MAP_CENTER_SORT || currentLoc === LOCATION_UNAVAILABLE;
+    const distanceLoc = useMapCenter ? MAP_CENTER_LOCATION : currentLoc;
+    const mapCenter = useMapCenter ? getMapCenter(mtx, hash) : null;
 
     // get markers
     useEffect(() => {
@@ -73,19 +65,12 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             markerList = getFavMenuListByLayers({
                 layers,
                 wpts: ctx.favorites.mapObjs[group.id].wpts,
-                currentLoc,
+                currentLoc: getDistanceLocation(),
                 pointsGroups: ctx.favorites.mapObjs[group.id].pointsGroups,
             });
         }
-        markerList = addLocDist({ location: currentLoc, markers: markerList });
-        if (ctx.selectedSort?.favorites?.[group.id]) {
-            doSort({
-                method: ctx.selectedSort.favorites[group.id],
-                setSortFiles,
-                markers: markerList,
-                files: ctx.favorites.mapObjs[group.id]?.wpts,
-                favoriteGroup: group,
-            });
+        if (sortMethod && !isNearestSort(sortMethod)) {
+            sortMarkers(markerList);
         }
         setMarkers([...markerList]);
         refMarkers.current = markerList;
@@ -117,22 +102,24 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     }, [smartf, sortGroups]);
 
     useEffect(() => {
-        if (!currentLoc) return;
+        if (!useMapCenter && !currentLoc) {
+            return;
+        }
         if (ctx.openedPopper) return;
-        if (currentLoc !== LOCATION_UNAVAILABLE) {
+        const updatedMarkers = getMarkersWithDistance();
+        if (updatedMarkers) {
             // update markers location
-            if (refMarkers.current?.length > 0) {
-                const updatedMarkers = addLocDist({ location: currentLoc, markers: refMarkers.current });
-                setMarkers(updatedMarkers);
-            }
-        } else if (refMarkers.current?.length > 0) {
-            const updatedMarkers = addLocDist({
-                location: getMapCenter(mtx, hash),
-                markers: refMarkers.current,
-            });
             setMarkers(updatedMarkers);
         }
-    }, [currentLoc?.lat, currentLoc?.lng, refMarkers.current, mapMoveTick]);
+    }, [currentLoc?.lat, currentLoc?.lng, useMapCenter, mapCenter?.lat, mapCenter?.lng]);
+
+    useEffect(() => {
+        if (!isNearestSort(sortMethod)) return;
+        const updatedMarkers = getMarkersWithDistance();
+        if (updatedMarkers) {
+            sortMarkers(updatedMarkers);
+        }
+    }, [sortMethod, useMapCenter, currentLoc?.lat, currentLoc?.lng, group, ctx.favorites]);
 
     useEffect(() => {
         if (folder) {
@@ -173,7 +160,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                                 key={visibleMarkers[index].name + index}
                                 marker={visibleMarkers[index]}
                                 group={group}
-                                currentLoc={currentLoc}
+                                currentLoc={distanceLoc}
                                 smartf={smartf}
                             />
                         </div>
@@ -183,7 +170,30 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         }
 
         return null;
-    }, [markers, sortFiles, ctx.favorites, listHeight]);
+    }, [markers, sortFiles, ctx.favorites, listHeight, distanceLoc]);
+
+    function getDistanceLocation() {
+        return useMapCenter ? mapCenter : currentLoc;
+    }
+
+    function getMarkersWithDistance() {
+        const loc = getDistanceLocation();
+        if (!loc || !refMarkers.current?.length) {
+            return null;
+        }
+
+        return addLocDist({ location: loc, markers: refMarkers.current });
+    }
+
+    function sortMarkers(markerList) {
+        doSort({
+            method: sortMethod,
+            setSortFiles,
+            markers: markerList,
+            files: ctx.favorites.mapObjs[group.id]?.wpts,
+            favoriteGroup: group,
+        });
+    }
 
     function isWpts(files) {
         return files?.length > 0 && !files[0].layer;
