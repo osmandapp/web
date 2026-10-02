@@ -73,7 +73,7 @@ export function downloadTravelReviews(since = null) {
 }
 
 const OTHER_GROUP = 'other';
-// months are counted from 2004-01, as heat_build.py counts them
+// months are counted from 2004-01, the same way the tiles count them
 const MONTHS_BASE_YEAR = 2004;
 const LAST_MONTH = monthIndex(new Date().toISOString().slice(0, 7));
 const MONTH_KEY = /^\d{4}-\d{2}$/;
@@ -89,12 +89,12 @@ export function monthIndex(key, baseYear = MONTHS_BASE_YEAR) {
     return (year - baseYear) * 12 + month - 1;
 }
 
-// tracks without a label that the speed puts in a group are stored with the group id, as heat_build.py counts them
+// tracks without a label that the speed puts in a group are stored with the group id, the same way the tiles count them
 export function hasSpeedOnlyTracks(group) {
     return group.id !== OTHER_GROUP && group.id !== IGNORED_GROUP;
 }
 
-// as heat_build.py counts "All": activities plus the groups given by speed
+// "All" as the tiles count it: activities plus the groups given by speed
 export const ALL_ACTIVITY_IDS = activities.groups.flatMap((g) => [
     ...g.activities.map((a) => a.id),
     ...(hasSpeedOnlyTracks(g) ? [g.id] : []),

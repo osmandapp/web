@@ -136,7 +136,7 @@ export default function HeatmapLayer() {
     }, [layer, ctx.openTravel]);
 }
 
-// heat_build.py activity key -> the id the Activity filter sends
+// stored activity key -> the id the Activity filter sends
 function storedActivity(act) {
     if (act.key.endsWith(HEATMAP_SPEED_SUFFIX)) {
         return act.group;
@@ -157,7 +157,7 @@ function storedActivity(act) {
     return act.key;
 }
 
-// heatmap over the tiles built by web-server-config/test/heat_build.py
+// heatmap over the prebuilt track-density tiles
 const HeatmapGridLayer = L.GridLayer.extend({
     initialize(meta, baseUrl, options) {
         this._meta = meta;
