@@ -83,11 +83,6 @@ const HEATMAP_STYLES = {
     [HEATMAP_STYLE_CELLS]: 'web:travel_heatmap_style_cells',
 };
 
-function resetHeatmapAppearance(ttx) {
-    ttx.setTravelHeatmapAppearance(DEFAULT_HEATMAP_APPEARANCE);
-    localStorage.removeItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
-}
-
 export default function HeatmapAppearance({ onClose }) {
     const ttx = useContext(TravelContext);
 
@@ -232,6 +227,11 @@ export default function HeatmapAppearance({ onClose }) {
             </Box>
         </SecondaryMenuDrawer>
     );
+}
+
+function resetHeatmapAppearance(ttx) {
+    ttx.setTravelHeatmapAppearance(DEFAULT_HEATMAP_APPEARANCE);
+    localStorage.removeItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
 }
 
 function paletteGradient(palette) {

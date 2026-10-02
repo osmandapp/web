@@ -122,9 +122,9 @@ export default function TravelMenu() {
     const ctx = useContext(AppContext);
     const ttx = useContext(TravelContext);
     const ltx = useContext(LoginContext);
+    const { t } = useTranslation();
     const location = useLocation();
     const navigate = useNavigate();
-    const { t } = useTranslation();
 
     const DEFAULT_ACTIVITY = ACTIVITY_ALL;
 
@@ -283,7 +283,9 @@ export default function TravelMenu() {
 
     // Create activities array
     const activitiesArr = useMemo(() => {
-        if (!ttx.openTravel && !location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) return [];
+        if (!ttx.openTravel && !location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) {
+            return [];
+        }
 
         return activities?.groups.reduce((act, group) => {
             if (act.length === 0) {

@@ -515,7 +515,9 @@ export default function TravelLayer() {
     // Open route by URL param
     useEffect(() => {
         const id = ttx.travelRouteIdByUrl;
-        if (!id || !ttx.processingTravelRouteByUrl) return;
+        if (!id || !ttx.processingTravelRouteByUrl) {
+            return;
+        }
 
         if (String(ctx.selectedGpxFile?.id) === String(id)) {
             ttx.setProcessingTravelRouteByUrl(false);
