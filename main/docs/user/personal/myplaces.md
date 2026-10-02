@@ -130,7 +130,7 @@ Refer to the [OSM Editing plugin](../plugins/osm-editing.md) for step-by-step in
 
 ![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-The **Audio/Video Notes plugin** allows you to create multimedia notes linked to specific map locations. These notes are stored in **My Places** under the **A/V Notes Tab**.
+The **Audio/Video Notes plugin** allows you to create multimedia notes linked to specific map locations. These notes are stored in **My Places** under the **A/V Notes Tab**. Each note is also saved as a favorite in the **media** folder in the [Favorites](#favorites) tab.
 
 For more information, visit the [Audio/Video Notes plugin](../plugins/audio-video-notes.md) page.
 
