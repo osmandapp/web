@@ -1,22 +1,29 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import { Autocomplete, Box, Chip, TextField } from '@mui/material';
 import AppContext from '../../context/AppContext';
-import { MAIN_URL_WITH_SLASH, TRAVEL_URL } from '../../manager/GlobalManager';
-import { apiGet } from '../../util/HttpApi';
 import styles from './travel.module.css';
-import { ACTIVITY_ALL, OSM_GPX_ABORT_KEYS } from './TravelMenu';
 import { useTranslation } from 'react-i18next';
 
-export default function TagFilter({ selectedTags, onChangeTags, selectedActivity }) {
+export default function TagFilter({ selectedTags, onChangeTags }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
-    const location = useLocation();
 
-    const [availableTags, setAvailableTags] = useState([]);
     const [tagInput, setTagInput] = useState('');
-    const [loadingTags, setLoadingTags] = useState(false);
     const [tagColors, setTagColors] = useState({});
+
+    // the tags of the tracks around the point, most used first
+    const availableTags = useMemo(() => {
+        const counts = {};
+        ctx.searchTravelRoutes?.res?.features?.forEach((route) =>
+            route.properties.tags?.forEach((tag) => {
+                counts[tag] = (counts[tag] ?? 0) + 1;
+            })
+        );
+
+        return Object.entries(counts)
+            .sort((a, b) => b[1] - a[1])
+            .map(([tag, cnt]) => ({ tag, cnt }));
+    }, [ctx.searchTravelRoutes?.res]);
 
     useEffect(() => {
         if (selectedTags?.length > 0) {
@@ -31,58 +38,6 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedActivity
             });
         }
     }, [selectedTags]);
-
-    useEffect(() => {
-        const fetchTags = async () => {
-            if (!ctx.visibleBounds || !location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) {
-                setAvailableTags([]);
-                return;
-            }
-            const bounds = ctx.visibleBounds;
-            const minLat = bounds.getSouth();
-            const maxLat = bounds.getNorth();
-            const minLon = bounds.getWest();
-            const maxLon = bounds.getEast();
-
-            const params = {
-                minLat,
-                maxLat,
-                minLon,
-                maxLon,
-            };
-
-            if (ctx.searchTravelRoutes?.dateFrom) {
-                params.dateFrom = ctx.searchTravelRoutes.dateFrom;
-                params.dateTo = ctx.searchTravelRoutes.dateTo;
-            }
-            if (selectedActivity && selectedActivity !== ACTIVITY_ALL) {
-                params.activityArr = selectedActivity;
-            }
-
-            setLoadingTags(true);
-            try {
-                const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/tags`, {
-                    apiCache: true,
-                    params,
-                    abortControllerKey: OSM_GPX_ABORT_KEYS.tags,
-                });
-                if (response?.aborted) {
-                    return;
-                }
-                if (response?.data) {
-                    const data = response.data;
-                    const tagsArray = Array.isArray(data) ? data : data.tags || [];
-                    setAvailableTags(tagsArray);
-                } else {
-                    setAvailableTags([]);
-                }
-            } finally {
-                setLoadingTags(false);
-            }
-        };
-
-        fetchTags().then();
-    }, [ctx.visibleBounds, ctx.searchTravelRoutes?.dateFrom, ctx.searchTravelRoutes?.dateTo, selectedActivity]);
 
     function generatePastelColor() {
         const hue = Math.floor(Math.random() * 360);
@@ -129,12 +84,9 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedActivity
         return base;
     }, [availableTags, selectedTags, tagInput]);
 
-    const noTagsAvailable = !loadingTags && availableTags.length === 0;
+    const noTagsAvailable = availableTags.length === 0;
 
     const getNoOptionsText = () => {
-        if (loadingTags) {
-            return t('web:loading_tags');
-        }
         if (availableTags.length === 0) {
             return t('web:no_tags_for_filters');
         }
@@ -177,7 +129,6 @@ export default function TagFilter({ selectedTags, onChangeTags, selectedActivity
                     addTag(value);
                     setTagInput('');
                 }}
-                loading={loadingTags}
                 noOptionsText={getNoOptionsText()}
                 disabled={noTagsAvailable}
                 renderInput={(params) => (

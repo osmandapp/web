@@ -6,7 +6,7 @@ import { useMap } from 'react-leaflet';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import L from 'leaflet';
-import { ACTIVITY_ALL, ALL_ACTIVITY_IDS, OSM_GPX_ABORT_KEYS, TAG_MATCH_MODES } from '../../menu/travel/TravelMenu';
+import { ACTIVITY_ALL, ALL_ACTIVITY_IDS, OSM_GPX_ABORT_KEYS, routeMatchesFilters } from '../../menu/travel/TravelMenu';
 import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/TracksManager';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -149,7 +149,8 @@ export default function TravelLayer() {
             const startFinishLayers = [];
             const pointFeatures = [];
 
-            features.forEach((route) => {
+            const shown = features.filter((route) => routeMatchesFilters(route, ctx.searchTravelRoutes));
+            shown.forEach((route) => {
                 if (route.properties.geo) {
                     const segments = route.properties.geo.map((segment) =>
                         segment.map((point) => [point.latitude, point.longitude])
@@ -632,19 +633,7 @@ export default function TravelLayer() {
 
     async function getRoutesList() {
         const { point } = ctx.searchTravelRoutes;
-        const {
-            activity,
-            dateFrom,
-            dateTo,
-            tags,
-            tagMatchMode = TAG_MATCH_MODES.OR,
-            distanceRange,
-            speedRange,
-            maxSpeedRange,
-            maxDistBetweenPointsRange,
-            timeMinutesRange,
-            waypointsRange,
-        } = ctx.searchTravelRoutes;
+        const { activity, dateFrom, dateTo } = ctx.searchTravelRoutes;
 
         const activityArr = activity === ACTIVITY_ALL ? ALL_ACTIVITY_IDS : activity;
 
@@ -652,14 +641,6 @@ export default function TravelLayer() {
             activityArr,
             dateFrom,
             dateTo,
-            tags: tags.length ? tags : undefined,
-            tagMatchMode,
-            distanceRange,
-            speedRange,
-            maxSpeedRange,
-            maxDistBetweenPointsRange,
-            timeMinutesRange,
-            waypointsRange,
             lat: point.lat,
             lon: point.lng,
             radius: point.radius,

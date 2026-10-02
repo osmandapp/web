@@ -18,6 +18,7 @@ import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
 import { ReactComponent as ReviewIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import debounce from 'lodash-es/debounce';
+import isEqual from 'lodash-es/isEqual';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_INFO_CLOSE_SIZE, TRAVEL_URL } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
 import activities from '../../resources/activities.json';
@@ -59,8 +60,6 @@ export const OSM_GPX_ABORT_KEYS = {
     routeInfo: 'osmgpx-get-route-info',
     osmRoute: 'osmgpx-get-osm-route',
     activities: 'osmgpx-activities',
-    ranges: 'osmgpx-ranges',
-    tags: 'osmgpx-tags',
     reviews: 'osmgpx-reviews',
 };
 
@@ -102,6 +101,34 @@ export const ALL_ACTIVITY_IDS = activities.groups.flatMap((g) => [
 ]);
 
 const RANGE_FILTER_KEYS = ['distance', 'speed', 'maxSpeed', 'maxDistBetweenPoints', 'timeMinutes', 'waypoints'];
+const RANGE_PROPERTIES = {
+    distance: 'dist',
+    speed: 'speed',
+    maxSpeed: 'maxSpeed',
+    maxDistBetweenPoints: 'maxDistBetweenPoints',
+    timeMinutes: 'timeMinutes',
+    waypoints: 'waypoints',
+};
+// the part of the search the server answers; the ranges and the tags apply to the tracks it returned
+const SERVER_QUERY_KEYS = ['activity', 'dateFrom', 'dateTo'];
+
+export function routeMatchesFilters(route, search) {
+    const props = route.properties;
+    const inRanges = RANGE_FILTER_KEYS.every((key) => {
+        const range = search[`${key}Range`];
+        const value = props[RANGE_PROPERTIES[key]] ?? 0;
+
+        return !range || (value >= range[0] && value <= range[1]);
+    });
+    if (!inRanges || !search.tags?.length) {
+        return inRanges;
+    }
+    const tags = props.tags ?? [];
+
+    return search.tagMatchMode === TAG_MATCH_MODES.AND
+        ? search.tags.every((tag) => tags.includes(tag))
+        : search.tags.some((tag) => tags.includes(tag));
+}
 
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
@@ -153,15 +180,27 @@ export default function TravelMenu() {
     };
     const previewFilter = (key, value) => setFilters((prev) => ({ ...prev, [key]: value }));
 
-    // Slider bounds (min/max) fetched from /ranges
-    const [bounds, setBounds] = useState({
+    const DEFAULT_BOUNDS = {
         distance: [0, DEFAULT_MAX_DISTANCE],
         speed: [0, DEFAULT_MAX_SPEED],
         maxSpeed: [0, MAX_SPEED_DEFAULT],
         maxDistBetweenPoints: [0, MAX_DIST_BETWEEN_POINTS_DEFAULT],
         timeMinutes: [0, TIME_MINUTES_DEFAULT],
         waypoints: [0, WAYPOINTS_DEFAULT],
-    });
+    };
+    // slider bounds: min and max over the tracks around the point
+    const bounds = useMemo(() => boundsOf(travelResult?.features, DEFAULT_BOUNDS), [travelResult]);
+
+    useEffect(() => {
+        const clamp = (range, [lo, hi]) => [Math.max(lo, Math.min(range[0], hi)), Math.max(lo, Math.min(range[1], hi))];
+        setFilters((prev) => {
+            const clamped = { ...prev };
+            RANGE_FILTER_KEYS.forEach((key) => {
+                clamped[key] = prev[key] ? clamp(prev[key], bounds[key]) : null;
+            });
+            return clamped;
+        });
+    }, [bounds]);
 
     useEffect(() => {
         const res = ctx.searchTravelRoutes?.res;
@@ -205,16 +244,17 @@ export default function TravelMenu() {
     }, [ctx.openTravelFilters]);
 
     useEffect(() => {
-        if (ctx.searchTravelRoutes?.point) {
+        const { point, res } = ctx.searchTravelRoutes ?? {};
+        if (!point) {
+            setOpenFilters(false);
+        } else if (res === undefined) {
             setLoadingResult(true);
             setTravelResult(null);
-        } else {
-            setOpenFilters(false);
         }
     }, [ctx.searchTravelRoutes?.point]);
 
-    const debouncedFetchRanges = useRef(
-        debounce(async ({ mapBounds, months, activity }) => {
+    const debouncedFetchActivityCounts = useRef(
+        debounce(async ({ mapBounds, months }) => {
             const params = {
                 minLat: mapBounds.getSouth(),
                 maxLat: mapBounds.getNorth(),
@@ -227,62 +267,18 @@ export default function TravelMenu() {
                 params.dateTo = monthKey(months[1]);
             }
 
-            const paramsActivities = { ...params };
-
             try {
-                const activitiesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
-                    apiCache: true,
-                    params: paramsActivities,
-                    abortControllerKey: OSM_GPX_ABORT_KEYS.activities,
-                });
-                if (activitiesResponse?.aborted) {
-                    return;
-                }
-
-                if (activity) {
-                    params.activityArr = activity === ACTIVITY_ALL ? ALL_ACTIVITY_IDS : activity;
-                }
-
-                const rangesResponse = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/ranges`, {
+                const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
                     apiCache: true,
                     params,
-                    abortControllerKey: OSM_GPX_ABORT_KEYS.ranges,
+                    abortControllerKey: OSM_GPX_ABORT_KEYS.activities,
                 });
-                if (rangesResponse?.aborted) {
+                if (response?.aborted) {
                     return;
                 }
-
-                setActivityCounts(activitiesResponse?.data || null);
-
-                if (rangesResponse?.data) {
-                    const data = rangesResponse.data;
-                    const newBounds = {
-                        distance: [data.minDist || 0, data.maxDist || DEFAULT_MAX_DISTANCE],
-                        speed: [data.minSpeed || 0, data.maxSpeed || DEFAULT_MAX_SPEED],
-                        maxSpeed: [data.maxSpeedMin || 0, data.maxSpeedMax || MAX_SPEED_DEFAULT],
-                        maxDistBetweenPoints: [
-                            data.maxDistBetweenPointsMin || 0,
-                            data.maxDistBetweenPointsMax || MAX_DIST_BETWEEN_POINTS_DEFAULT,
-                        ],
-                        timeMinutes: [data.timeMinutesMin || 0, data.timeMinutesMax || TIME_MINUTES_DEFAULT],
-                        waypoints: [data.waypointsMin || 0, data.waypointsMax || WAYPOINTS_DEFAULT],
-                    };
-                    setBounds(newBounds);
-
-                    const clamp = (range, [lo, hi]) => [
-                        Math.max(lo, Math.min(range[0], hi)),
-                        Math.max(lo, Math.min(range[1], hi)),
-                    ];
-                    setFilters((prev) => {
-                        const clamped = { ...prev };
-                        RANGE_FILTER_KEYS.forEach((key) => {
-                            clamped[key] = prev[key] ? clamp(prev[key], newBounds[key]) : null;
-                        });
-                        return clamped;
-                    });
-                }
+                setActivityCounts(response?.data || null);
             } catch (error) {
-                console.error('Error fetching ranges/activities:', error);
+                console.error('Error fetching activities:', error);
                 setActivityCounts(null);
             }
         }, 500)
@@ -293,12 +289,8 @@ export default function TravelMenu() {
             return;
         }
 
-        debouncedFetchRanges({
-            mapBounds: ctx.visibleBounds,
-            months: filters.months,
-            activity: filters.activity,
-        });
-    }, [ctx.visibleBounds, filters.months, filters.activity]);
+        debouncedFetchActivityCounts({ mapBounds: ctx.visibleBounds, months: filters.months });
+    }, [ctx.visibleBounds, filters.months]);
 
     // Create activities array
     const activitiesArr = useMemo(() => {
@@ -372,9 +364,6 @@ export default function TravelMenu() {
     }
 
     function runSearch(f) {
-        setLoadingResult(true);
-        setTravelResult(null);
-
         const body = {
             activity: f.activity,
             dateFrom: f.months ? monthKey(f.months[0]) : undefined,
@@ -385,7 +374,13 @@ export default function TravelMenu() {
         RANGE_FILTER_KEYS.forEach((key) => {
             body[`${key}Range`] = f[key] ?? undefined;
         });
-        ctx.setSearchTravelRoutes((prev) => ({ ...body, point: prev?.point }));
+        const prev = ctx.searchTravelRoutes;
+        const sameTracks = !!prev?.res && isEqual(serverQuery(prev), serverQuery(body));
+        if (!sameTracks) {
+            setLoadingResult(true);
+            setTravelResult(null);
+        }
+        ctx.setSearchTravelRoutes({ ...body, point: prev?.point, ...(sameTracks ? { res: prev.res } : {}) });
     }
 
     function clearSearchPoint() {
@@ -405,7 +400,7 @@ export default function TravelMenu() {
             return t('web:travel_tracks_too_many', { count: res.maxRoutes, radius });
         }
 
-        return t('web:travel_tracks_nearby', { count: res.features.length, radius });
+        return t('web:travel_tracks_nearby', { count: visibleRoutes.length, radius });
     }
 
     function resetSearch() {
@@ -434,9 +429,14 @@ export default function TravelMenu() {
     const hasActiveFilters =
         filters.tags.length > 0 || RANGE_FILTER_KEYS.some((key) => filters[key] != null) || ctx.travelShowStartFinish;
 
+    const visibleRoutes = useMemo(
+        () => travelResult?.features?.filter((route) => routeMatchesFilters(route, ctx.searchTravelRoutes)) ?? [],
+        [travelResult, ctx.searchTravelRoutes]
+    );
+
     const sortedRoutes = useMemo(() => {
-        const features = travelResult?.features;
-        if (!features?.length) {
+        const features = visibleRoutes;
+        if (!features.length) {
             return [];
         }
         if (!sortByDistance) {
@@ -453,7 +453,7 @@ export default function TravelMenu() {
             return sortByDistance === 'asc' ? da - db : db - da;
         });
         return copy;
-    }, [travelResult, sortByDistance]);
+    }, [visibleRoutes, sortByDistance]);
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
@@ -588,9 +588,9 @@ export default function TravelMenu() {
                         {loadingResult && <CircularProgress className={styles.resultsSpinner} size={36} />}
                         {travelResult &&
                             !travelResult.tooMany &&
-                            (travelResult.features.length > 0 ? (
+                            (visibleRoutes.length > 0 ? (
                                 <>
-                                    {travelResult.features.some((r) => Number.isFinite(r.properties?.dist)) && (
+                                    {visibleRoutes.some((r) => Number.isFinite(r.properties?.dist)) && (
                                         <Box className={styles.resultsHeader}>
                                             <ToggleButtonGroup
                                                 size="small"
@@ -644,6 +644,24 @@ export default function TravelMenu() {
                 <EmptyLogin />
             )}
         </Box>
+    );
+}
+
+function serverQuery(search) {
+    return SERVER_QUERY_KEYS.map((key) => search[key]);
+}
+
+function boundsOf(features, defaults) {
+    if (!features?.length) {
+        return defaults;
+    }
+
+    return Object.fromEntries(
+        RANGE_FILTER_KEYS.map((key) => {
+            const values = features.map((route) => route.properties[RANGE_PROPERTIES[key]] ?? 0);
+
+            return [key, [Math.min(...values), Math.max(...values) || defaults[key][1]]];
+        })
     );
 }
 

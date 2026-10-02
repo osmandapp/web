@@ -146,11 +146,7 @@ export default function TravelFilters({
                         showValue={false}
                     />
                     <Collapse in={showTagFilters}>
-                        <TagFilter
-                            selectedTags={filters.tags}
-                            onChangeTags={(tags) => setFilter('tags', tags)}
-                            selectedActivity={filters.activity}
-                        />
+                        <TagFilter selectedTags={filters.tags} onChangeTags={(tags) => setFilter('tags', tags)} />
                         <Box className={styles.tagMatchBox}>
                             <ToggleButtonGroup
                                 fullWidth
