@@ -26,7 +26,7 @@ This article describes the main features and available options of the Search too
 The Search tool has options such as sequential search by address, with already prepared data for quick selection and search by postcode. These options are described in this article.
 
 
-### [Search History](./search-history.md) {#search-history}
+### [Search Explore](./search-history.md) {##search-explore}
 
 This article discusses the search capabilities of query history in detail.
 
