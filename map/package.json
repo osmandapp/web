@@ -38,6 +38,7 @@
         "maplibre-gl": "5.24.0",
         "pako": "^2.0.4",
         "patch-package": "^6.4.7",
+        "pmtiles": "4.5.0",
         "postinstall-postinstall": "^2.1.0",
         "prop-types": "^15.8.1",
         "react": "^18.1.0",

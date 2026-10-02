@@ -2,7 +2,7 @@ import { IconButton, Tooltip } from '@mui/material';
 import styles from '../../trackfavmenu.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import SortActions, { allMethods } from '../../actions/SortActions';
+import SortActions, { allMethods, defaultSortMethod } from '../../actions/SortActions';
 import AppContext from '../../../context/AppContext';
 import { DEFAULT_FAV_GROUP_NAME } from '../../../manager/FavoritesManager';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
@@ -11,6 +11,7 @@ import LoginContext from '../../../context/LoginContext';
 
 export const TRACK_FILE_TYPE = 'tracks';
 export const FAVORITE_FILE_TYPE = 'favorites';
+export const TRAVEL_CUSTOM_GROUP = 'travel';
 
 export function getSelectedSort({
     trackGroup = null,
@@ -55,17 +56,12 @@ export default function SortFilesButton({
 
     // get selected sort method from cache
     const sortType = getSelectedSort({ trackGroup, favoriteGroup, customGroup, customGroupType, ctx });
-    const currentSortType = sortType ? sortType : 'time';
+    const currentSortType = sortType ? sortType : defaultSortMethod(customGroupType);
 
     useEffect(() => {
-        if (sortType) {
-            setSortIcon(allMethods[sortType].icon);
-            setSortName(allMethods[sortType].name());
-        } else {
-            setSortIcon(allMethods['time'].icon);
-            setSortName(allMethods['time'].name());
-        }
-    }, [ctx.selectedSort, trackGroup, sortType]);
+        setSortIcon(allMethods[currentSortType].icon);
+        setSortName(allMethods[currentSortType].name());
+    }, [ctx.selectedSort, trackGroup, currentSortType]);
 
     function disableSort() {
         if (ltx.loginUser) {

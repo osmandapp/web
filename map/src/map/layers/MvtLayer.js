@@ -10,6 +10,7 @@ import MvtContext from '../../context/MvtContext';
 import { osmandTileURL } from '../baseTileURL';
 import { isOsmAndTileURL, isWebGLAvailable } from './MvtLayerConfig';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
+import { isTravelSearchOn } from './TravelLayer';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
 import {
     getMvtDataTileUrl,
@@ -212,7 +213,7 @@ export default function MvtLayer({ config }) {
         // DOM listener runs after Leaflet map handlers (NavigationLayer resets the cursor on map mousemove)
         const handleMouseMove = (mouseEvent) => {
             const container = map.getContainer();
-            if (getClickableFeatures(mouseEvent).length > 0) {
+            if (!isTravelSearchOn(map) && getClickableFeatures(mouseEvent).length > 0) {
                 container.style.cursor = POINTER_CURSOR;
             } else {
                 resetPointerCursor(container);
@@ -220,6 +221,9 @@ export default function MvtLayer({ config }) {
         };
 
         const handleMapClick = (event) => {
+            if (isTravelSearchOn(map)) {
+                return;
+            }
             const features = getClickableFeatures(event.originalEvent);
             if (features.length === 0) {
                 return;

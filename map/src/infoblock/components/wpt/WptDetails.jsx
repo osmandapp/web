@@ -215,7 +215,6 @@ export async function getAddressByLatLon(lat, lon) {
 export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
-    const isAdmin = ltx.loginRoles?.includes('ROLE_ADMIN');
     const { t } = useTranslation();
 
     const navigate = useNavigate();
@@ -1223,7 +1222,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         )}
                                     </>
                                 )}
-                                {wpt.wikidata && isAdmin && (
+                                {wpt.wikidata && ltx.isAdmin() && (
                                     <>
                                         <Divider />
                                         <MenuItem className={styles.descTitle}>
