@@ -47,10 +47,11 @@ const pages = ({ t, develFeatures }) => [
         name: `🌍 ${t('web:header_map')}`,
         url: '/map',
     },
-    {
-        name: `🚵‍ ${t('web:header_join_us')}`,
-        url: '/docs/hiring',
-    },
+    // hiring is hidden for now
+    // {
+    //     name: `🚵‍ ${t('web:header_join_us')}`,
+    //     url: '/docs/hiring',
+    // },
     ...(develFeatures
         ? [
               {

@@ -33,7 +33,3 @@ Notas de la versión y enlaces a versiones anteriores de OsmAnd. Versiones Beta 
 ### [Legal](/docs/legal/) {#legal}
 
 Licencia. Política de privacidad. Términos de uso.
-
-### [Únete a nuestro equipo](/docs/hiring/) {#join-our-team}
-
-Siempre estamos buscando nuevos colaboradores que puedan unirse a nuestro equipo internacional.
