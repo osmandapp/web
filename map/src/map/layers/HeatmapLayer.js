@@ -56,7 +56,7 @@ export default function HeatmapLayer() {
             return;
         }
         apiGet(`${process.env.REACT_APP_HEATMAP_URL}meta.json`).then((response) => {
-            if (response?.data) {
+            if (response?.data?.archives) {
                 setMeta(response.data);
             }
         });
