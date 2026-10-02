@@ -248,7 +248,6 @@
     "travel_reviews": "Reviews",
     "travel_no_reviews": "No reviews yet",
     "travel_reviews_error": "Could not load the reviews",
-    "travel_reviews_download": "Download reviewed tracks (.csv.gz)",
     "travel_reviews_admin": "Admin",
     "travel_reviews_admin_download": "Download (.csv.gz)",
     "travel_reviews_period_day": "Last 24 hours",

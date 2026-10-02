@@ -46,7 +46,6 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
-import GrayBtnWithBlueHover from '../../frame/components/btns/GrayBtnWithBlueHover';
 import { convertMeters, getSmallLengthUnit, SMALL_UNIT } from '../settings/units/UnitsConverter';
 
 export const ACTIVITY_ALL = 'all';
@@ -575,14 +574,6 @@ export default function TravelMenu() {
                                 <TextWithLeftIcon icon={<SearchIcon />} text={t('web:travel_click_map_hint')} />
                                 <DividerWithMargin dashed={true} />
                                 <TextWithLeftIcon icon={<ReviewIcon />} text={t('web:travel_review_hint')} />
-                                {ltx.isAdmin() && (
-                                    <GrayBtnWithBlueHover
-                                        id="se-travel-reviews-download"
-                                        action={() => downloadTravelReviews()}
-                                        text={t('web:travel_reviews_download')}
-                                        additionalStyle={{ ml: '48px', mr: 2, mb: 2, maxWidth: '280px' }}
-                                    />
-                                )}
                                 <ThickDivider mt={0} mb={0} />
                                 <ColorBlock color={'#f0f0f0'} />
                             </>
