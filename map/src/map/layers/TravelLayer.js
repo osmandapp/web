@@ -1,5 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { OBJECT_TYPE_TRAVEL, TRAVEL_ROUTE_ID_PARAM } from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import MapContext from '../../context/MapContext';
 import { applyZoomToFit } from '../util/MapManager';
 import { useMap } from 'react-leaflet';
@@ -111,6 +112,7 @@ export function isTravelSearchOn(map) {
 
 export default function TravelLayer() {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const mtx = useContext(MapContext);
     const map = useMap();
 
@@ -130,15 +132,15 @@ export default function TravelLayer() {
     const POINT_RADIUS = 6;
 
     useEffect(() => {
-        if (!ctx.searchTravelRoutes) {
+        if (!ttx.searchTravelRoutes) {
             return;
         }
-        if (ctx.searchTravelRoutes.clear) {
+        if (ttx.searchTravelRoutes.clear) {
             removeRouteLayers();
             return;
         }
-        if (ctx.searchTravelRoutes.res) {
-            const features = ctx.searchTravelRoutes.res.features;
+        if (ttx.searchTravelRoutes.res) {
+            const features = ttx.searchTravelRoutes.res.features;
             if (!features) {
                 return;
             }
@@ -149,7 +151,7 @@ export default function TravelLayer() {
             const startFinishLayers = [];
             const pointFeatures = [];
 
-            const shown = features.filter((route) => routeMatchesFilters(route, ctx.searchTravelRoutes));
+            const shown = features.filter((route) => routeMatchesFilters(route, ttx.searchTravelRoutes));
             shown.forEach((route) => {
                 if (route.properties.geo) {
                     const segments = route.properties.geo.map((segment) =>
@@ -172,7 +174,7 @@ export default function TravelLayer() {
                         });
                         polyline.on('click', (e) => {
                             L.DomEvent.stopPropagation(e);
-                            ctx.setSelectedTravelRoute({ route, show: true });
+                            ttx.setSelectedTravelRoute({ route, show: true });
                             updateQueryParam({
                                 key: TRAVEL_ROUTE_ID_PARAM,
                                 value: String(route.properties.id),
@@ -180,10 +182,10 @@ export default function TravelLayer() {
                             });
                         });
                         polyline.on('mouseover', () => {
-                            ctx.setSelectedTravelRoute({ route, hover: true });
+                            ttx.setSelectedTravelRoute({ route, hover: true });
                         });
                         polyline.on('mouseout', () => {
-                            ctx.setSelectedTravelRoute({ route, hover: false });
+                            ttx.setSelectedTravelRoute({ route, hover: false });
                         });
                         routeLayers.push(polyline);
                     });
@@ -250,7 +252,7 @@ export default function TravelLayer() {
                     });
                     attachAutoClosePopup(marker, html, [0, -POINT_RADIUS]);
                     marker.on('click', () => {
-                        ctx.setSelectedTravelRoute({ route: { properties: place.properties }, show: true });
+                        ttx.setSelectedTravelRoute({ route: { properties: place.properties }, show: true });
                         updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(id), replace: false });
                     });
                     markers.push(marker);
@@ -269,12 +271,12 @@ export default function TravelLayer() {
                 setTravelPoints(null);
             }
         } else {
-            if (ctx.searchTravelRoutes.res !== null) {
+            if (ttx.searchTravelRoutes.res !== null) {
                 loadRoutes();
             }
             removeRouteLayers();
         }
-    }, [ctx.searchTravelRoutes]);
+    }, [ttx.searchTravelRoutes]);
 
     function removeRouteLayers() {
         [travelRoutes, travelPoints, travelStartFinish].filter(Boolean).forEach((group) => map.removeLayer(group));
@@ -284,7 +286,7 @@ export default function TravelLayer() {
     }
 
     useEffect(() => {
-        if (!ctx.openTravel) {
+        if (!ttx.openTravel) {
             return;
         }
         const container = map.getContainer();
@@ -296,11 +298,11 @@ export default function TravelLayer() {
             map.off('click', searchHere);
             L.DomUtil.removeClass(container, SEARCH_CURSOR_CLASS);
         };
-    }, [ctx.openTravel]);
+    }, [ttx.openTravel]);
 
     useEffect(() => {
-        const { point } = ctx.searchTravelRoutes ?? {};
-        if (!point || !ctx.openTravel) {
+        const { point } = ttx.searchTravelRoutes ?? {};
+        if (!point || !ttx.openTravel) {
             return;
         }
         ensureLeafletPane(map, SEARCH_PANE, TRAVEL_SEARCH_PANE_Z_INDEX);
@@ -354,18 +356,18 @@ export default function TravelLayer() {
             map.dragging.enable();
             map.removeLayer(circle);
         };
-    }, [ctx.searchTravelRoutes?.point, ctx.openTravel]);
+    }, [ttx.searchTravelRoutes?.point, ttx.openTravel]);
 
     function setSearchPoint(latlng, radius = searchRadiusM(map, latlng)) {
         const point = { lat: latlng.lat, lng: latlng.lng, radius };
-        ctx.setSearchTravelRoutes((prev) => (prev && !prev.clear ? { ...prev, point, res: undefined } : prev));
+        ttx.setSearchTravelRoutes((prev) => (prev && !prev.clear ? { ...prev, point, res: undefined } : prev));
     }
 
     function loadRoutes() {
-        if (ctx.searchTravelRoutes.point) {
+        if (ttx.searchTravelRoutes.point) {
             getRoutesList().then();
         } else {
-            ctx.setSearchTravelRoutes((prev) => (prev.res === null ? prev : { ...prev, res: null }));
+            ttx.setSearchTravelRoutes((prev) => (prev.res === null ? prev : { ...prev, res: null }));
         }
     }
 
@@ -512,18 +514,18 @@ export default function TravelLayer() {
 
     // Open route by URL param
     useEffect(() => {
-        const id = ctx.travelRouteIdByUrl;
-        if (!id || !ctx.processingTravelRouteByUrl) return;
+        const id = ttx.travelRouteIdByUrl;
+        if (!id || !ttx.processingTravelRouteByUrl) return;
 
         if (String(ctx.selectedGpxFile?.id) === String(id)) {
-            ctx.setProcessingTravelRouteByUrl(false);
+            ttx.setProcessingTravelRouteByUrl(false);
             return;
         }
 
-        openInfoBlock(id, ctx.selectedTravelRoute?.route?.properties)
+        openInfoBlock(id, ttx.selectedTravelRoute?.route?.properties)
             .catch((e) => console.error('Failed to open travel route', e))
-            .finally(() => ctx.setProcessingTravelRouteByUrl(false));
-    }, [ctx.processingTravelRouteByUrl, ctx.travelRouteIdByUrl]);
+            .finally(() => ttx.setProcessingTravelRouteByUrl(false));
+    }, [ttx.processingTravelRouteByUrl, ttx.travelRouteIdByUrl]);
 
     function createRoute(data) {
         if (!data?.[ROUTE_GPX_DATA]) {
@@ -545,7 +547,7 @@ export default function TravelLayer() {
     useEffect(() => {
         if (isEmpty(ctx.selectedGpxFile)) {
             removeSelectedRouteLayers();
-            ctx.setTravelRoutesHidden(false);
+            ttx.setTravelRoutesHidden(false);
             travelRoutes?.getLayers().forEach((layer) => {
                 layer.setStyle({ color: layer.options.baseColor, weight: ROUTE_WIDTH, opacity: 1 });
             });
@@ -577,14 +579,14 @@ export default function TravelLayer() {
                 map.removeLayer(group);
             }
         };
-        const showOthers = ctx.openTravel && !ctx.travelRoutesHidden;
+        const showOthers = ttx.openTravel && !ttx.travelRoutesHidden;
         setVisible(travelRoutes, showOthers);
         setVisible(travelPoints, showOthers);
-        setVisible(travelStartFinish, showOthers && ctx.travelShowStartFinish);
+        setVisible(travelStartFinish, showOthers && ttx.travelShowStartFinish);
     }, [
-        ctx.openTravel,
-        ctx.travelRoutesHidden,
-        ctx.travelShowStartFinish,
+        ttx.openTravel,
+        ttx.travelRoutesHidden,
+        ttx.travelShowStartFinish,
         travelRoutes,
         travelPoints,
         travelStartFinish,
@@ -592,15 +594,15 @@ export default function TravelLayer() {
 
     // manage selected route layer
     useEffect(() => {
-        if (ctx.selectedTravelRoute?.show) {
+        if (ttx.selectedTravelRoute?.show) {
             // the map is fitted to the whole track after it loads (see createRoutePolyline)
-        } else if (ctx.selectedTravelRoute?.hover === undefined && selectedRouteLayerRef.current) {
+        } else if (ttx.selectedTravelRoute?.hover === undefined && selectedRouteLayerRef.current) {
             removeSelectedRouteLayers();
         }
-    }, [ctx.selectedTravelRoute]);
+    }, [ttx.selectedTravelRoute]);
 
     useEffect(() => {
-        const { route, hover } = ctx.selectedTravelRoute ?? {};
+        const { route, hover } = ttx.selectedTravelRoute ?? {};
         if (!hover || !route?.properties?.geo) {
             return;
         }
@@ -629,11 +631,11 @@ export default function TravelLayer() {
         return () => {
             map.removeLayer(highlight);
         };
-    }, [ctx.selectedTravelRoute]);
+    }, [ttx.selectedTravelRoute]);
 
     async function getRoutesList() {
-        const { point } = ctx.searchTravelRoutes;
-        const { activity, dateFrom, dateTo } = ctx.searchTravelRoutes;
+        const { point } = ttx.searchTravelRoutes;
+        const { activity, dateFrom, dateTo } = ttx.searchTravelRoutes;
 
         const activityArr = activity === ACTIVITY_ALL ? ALL_ACTIVITY_IDS : activity;
 
@@ -658,7 +660,7 @@ export default function TravelLayer() {
             decodeRoutesGeometry(response.data);
         }
         // the point may have been removed or moved while the tracks were loading
-        ctx.setSearchTravelRoutes((prev) => (prev.point === point ? { ...prev, res: response?.data ?? null } : prev));
+        ttx.setSearchTravelRoutes((prev) => (prev.point === point ? { ...prev, res: response?.data ?? null } : prev));
     }
 }
 

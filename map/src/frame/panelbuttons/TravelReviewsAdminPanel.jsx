@@ -3,7 +3,7 @@ import { Box, Button, Collapse, Paper } from '@mui/material';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
-import AppContext from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import LoginContext from '../../context/LoginContext';
 import { downloadTravelReviews } from '../../menu/travel/TravelMenu';
 import SelectItem from '../components/items/SelectItem';
@@ -19,7 +19,7 @@ const PERIODS = [
 ];
 
 export default function TravelReviewsAdminPanel() {
-    const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
@@ -27,7 +27,7 @@ export default function TravelReviewsAdminPanel() {
     const [open, setOpen] = useState(false);
     const [hours, setHours] = useState(PERIODS[0].hours);
 
-    if (!ctx.openTravel || !ltx.isAdmin()) {
+    if (!ttx.openTravel || !ltx.isAdmin()) {
         return null;
     }
 

@@ -4,6 +4,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import SecondaryMenuDrawer from '../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -33,6 +34,7 @@ export default function TravelFilters({
     previewFilter,
 }) {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const { t } = useTranslation();
 
     const [showTagFilters, setShowTagFilters] = useState(true);
@@ -190,8 +192,8 @@ export default function TravelFilters({
                     <SimpleItemWithSwitch
                         id="se-travel-show-start-finish"
                         text={t('web:show_start_finish_icons')}
-                        checked={ctx.travelShowStartFinish}
-                        onChange={() => ctx.setTravelShowStartFinish((v) => !v)}
+                        checked={ttx.travelShowStartFinish}
+                        onChange={() => ttx.setTravelShowStartFinish((v) => !v)}
                     />
                 </Box>
                 <ColorBlock color={'#f0f0f0'} />

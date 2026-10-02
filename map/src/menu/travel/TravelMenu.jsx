@@ -21,6 +21,7 @@ import debounce from 'lodash-es/debounce';
 import isEqual from 'lodash-es/isEqual';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_INFO_CLOSE_SIZE, TRAVEL_URL } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import activities from '../../resources/activities.json';
 import { getActivityIcon } from '../../infoblock/components/common/ActivityType';
 import styles from './travel.module.css';
@@ -132,6 +133,7 @@ export function routeMatchesFilters(route, search) {
 
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const ltx = useContext(LoginContext);
     const location = useLocation();
     const navigate = useNavigate();
@@ -203,12 +205,12 @@ export default function TravelMenu() {
     }, [bounds]);
 
     useEffect(() => {
-        const res = ctx.searchTravelRoutes?.res;
+        const res = ttx.searchTravelRoutes?.res;
         if (res !== undefined) {
             setTravelResult(res ?? null);
             setLoadingResult(false);
         }
-    }, [ctx.searchTravelRoutes?.res]);
+    }, [ttx.searchTravelRoutes?.res]);
 
     function navigateToFilters(f) {
         const search = createUrlParams(filtersToParams(f));
@@ -222,36 +224,36 @@ export default function TravelMenu() {
     }
 
     useEffect(() => {
-        if (ctx.openTravel) {
+        if (ttx.openTravel) {
             runSearch(filters);
         }
-    }, [ctx.openTravel]);
+    }, [ttx.openTravel]);
 
     useEffect(() => {
-        ctx.setOpenTravelFilters(openFilters);
+        ttx.setOpenTravelFilters(openFilters);
     }, [openFilters]);
 
     useEffect(() => {
-        if (!ctx.openTravel) {
+        if (!ttx.openTravel) {
             setOpenAppearance(false);
         }
-    }, [ctx.openTravel]);
+    }, [ttx.openTravel]);
 
     useEffect(() => {
-        if (!ctx.openTravelFilters) {
+        if (!ttx.openTravelFilters) {
             setOpenFilters(false);
         }
-    }, [ctx.openTravelFilters]);
+    }, [ttx.openTravelFilters]);
 
     useEffect(() => {
-        const { point, res } = ctx.searchTravelRoutes ?? {};
+        const { point, res } = ttx.searchTravelRoutes ?? {};
         if (!point) {
             setOpenFilters(false);
         } else if (res === undefined) {
             setLoadingResult(true);
             setTravelResult(null);
         }
-    }, [ctx.searchTravelRoutes?.point]);
+    }, [ttx.searchTravelRoutes?.point]);
 
     const debouncedFetchActivityCounts = useRef(
         debounce(async ({ mapBounds, months }) => {
@@ -294,7 +296,7 @@ export default function TravelMenu() {
 
     // Create activities array
     const activitiesArr = useMemo(() => {
-        if (!ctx.openTravel && !location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) return [];
+        if (!ttx.openTravel && !location.pathname.startsWith(MAIN_URL_WITH_SLASH + TRAVEL_URL)) return [];
 
         return activities?.groups.reduce((act, group) => {
             if (act.length === 0) {
@@ -326,7 +328,7 @@ export default function TravelMenu() {
             });
             return act;
         }, []);
-    }, [activities, ctx.openTravel]);
+    }, [activities, ttx.openTravel]);
 
     // Fetch icons for activities
     useEffect(() => {
@@ -351,7 +353,7 @@ export default function TravelMenu() {
     function close() {
         ctx.setInfoBlockWidth(`${MENU_INFO_CLOSE_SIZE}px`);
         ctx.setCurrentObjectType(null);
-        ctx.setSearchTravelRoutes({
+        ttx.setSearchTravelRoutes({
             clear: true,
         });
         setDefaultState();
@@ -360,7 +362,7 @@ export default function TravelMenu() {
     function setDefaultState() {
         setTravelResult(null);
         setFilters(DEFAULT_FILTERS);
-        ctx.setOpenTravel(false);
+        ttx.setOpenTravel(false);
     }
 
     function runSearch(f) {
@@ -374,21 +376,21 @@ export default function TravelMenu() {
         RANGE_FILTER_KEYS.forEach((key) => {
             body[`${key}Range`] = f[key] ?? undefined;
         });
-        const prev = ctx.searchTravelRoutes;
+        const prev = ttx.searchTravelRoutes;
         const sameTracks = !!prev?.res && isEqual(serverQuery(prev), serverQuery(body));
         if (!sameTracks) {
             setLoadingResult(true);
             setTravelResult(null);
         }
-        ctx.setSearchTravelRoutes({ ...body, point: prev?.point, ...(sameTracks ? { res: prev.res } : {}) });
+        ttx.setSearchTravelRoutes({ ...body, point: prev?.point, ...(sameTracks ? { res: prev.res } : {}) });
     }
 
     function clearSearchPoint() {
-        ctx.setSearchTravelRoutes((prev) => ({ ...prev, point: null, res: null }));
+        ttx.setSearchTravelRoutes((prev) => ({ ...prev, point: null, res: null }));
     }
 
     function searchPointTitle() {
-        const { point, res } = ctx.searchTravelRoutes;
+        const { point, res } = ttx.searchTravelRoutes;
         const radius = `${Math.round(convertMeters(point.radius, ctx.unitsSettings.len, SMALL_UNIT))} ${t(getSmallLengthUnit(ctx))}`;
         if (res === undefined) {
             return t('web:travel_tracks_searching', { radius });
@@ -406,7 +408,7 @@ export default function TravelMenu() {
     function resetSearch() {
         setSortByDistance(null);
         setFilters(DEFAULT_FILTERS);
-        ctx.setTravelShowStartFinish(false);
+        ttx.setTravelShowStartFinish(false);
         navigateToFilters(DEFAULT_FILTERS);
         runSearch(DEFAULT_FILTERS);
     }
@@ -419,7 +421,7 @@ export default function TravelMenu() {
             ...Object.fromEntries(RANGE_FILTER_KEYS.map((key) => [key, null])),
         };
         setFilters(next);
-        ctx.setTravelShowStartFinish(false);
+        ttx.setTravelShowStartFinish(false);
         navigateToFilters(next);
         runSearch(next);
     }
@@ -427,11 +429,11 @@ export default function TravelMenu() {
     const uploadMonths = filters.months ?? [0, LAST_MONTH];
 
     const hasActiveFilters =
-        filters.tags.length > 0 || RANGE_FILTER_KEYS.some((key) => filters[key] != null) || ctx.travelShowStartFinish;
+        filters.tags.length > 0 || RANGE_FILTER_KEYS.some((key) => filters[key] != null) || ttx.travelShowStartFinish;
 
     const visibleRoutes = useMemo(
-        () => travelResult?.features?.filter((route) => routeMatchesFilters(route, ctx.searchTravelRoutes)) ?? [],
-        [travelResult, ctx.searchTravelRoutes]
+        () => travelResult?.features?.filter((route) => routeMatchesFilters(route, ttx.searchTravelRoutes)) ?? [],
+        [travelResult, ttx.searchTravelRoutes]
     );
 
     const sortedRoutes = useMemo(() => {
@@ -501,7 +503,7 @@ export default function TravelMenu() {
                                             variant="contained"
                                             type="button"
                                             className={headerStyles.appBarIcon}
-                                            disabled={!ctx.searchTravelRoutes?.point}
+                                            disabled={!ttx.searchTravelRoutes?.point}
                                             onClick={() => {
                                                 setOpenAppearance(false);
                                                 setOpenFilters((prev) => !prev);
@@ -543,23 +545,23 @@ export default function TravelMenu() {
                                 valueLabelDisplay="off"
                             />
                         </Box>
-                        {ctx.develFeatures && ctx.travelHeatmapMatch && (
+                        {ctx.develFeatures && ttx.travelHeatmapMatch && (
                             <Typography className={styles.matchCount}>
                                 {t('web:travel_tracks_match', {
-                                    matched: ctx.travelHeatmapMatch.matched.toLocaleString(),
-                                    total: ctx.travelHeatmapMatch.total.toLocaleString(),
+                                    matched: ttx.travelHeatmapMatch.matched.toLocaleString(),
+                                    total: ttx.travelHeatmapMatch.total.toLocaleString(),
                                 })}
                             </Typography>
                         )}
                         <ThickDivider mt={16} />
-                        {ctx.searchTravelRoutes?.point ? (
+                        {ttx.searchTravelRoutes?.point ? (
                             <>
                                 <TextLeftIconBtn
                                     id="se-travel-remove-point"
                                     icon={<SearchIcon />}
                                     text={searchPointTitle()}
                                     desc={
-                                        ctx.searchTravelRoutes.res?.tooMany
+                                        ttx.searchTravelRoutes.res?.tooMany
                                             ? t('web:travel_tracks_too_many_desc')
                                             : t('web:travel_search_point_desc')
                                     }

@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Autocomplete, Box, Chip, TextField } from '@mui/material';
-import AppContext from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import styles from './travel.module.css';
 import { useTranslation } from 'react-i18next';
 
 export default function TagFilter({ selectedTags, onChangeTags }) {
-    const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const { t } = useTranslation();
 
     const [tagInput, setTagInput] = useState('');
@@ -14,7 +14,7 @@ export default function TagFilter({ selectedTags, onChangeTags }) {
     // the tags of the tracks around the point, most used first
     const availableTags = useMemo(() => {
         const counts = {};
-        ctx.searchTravelRoutes?.res?.features?.forEach((route) =>
+        ttx.searchTravelRoutes?.res?.features?.forEach((route) =>
             route.properties.tags?.forEach((tag) => {
                 counts[tag] = (counts[tag] ?? 0) + 1;
             })
@@ -23,7 +23,7 @@ export default function TagFilter({ selectedTags, onChangeTags }) {
         return Object.entries(counts)
             .sort((a, b) => b[1] - a[1])
             .map(([tag, cnt]) => ({ tag, cnt }));
-    }, [ctx.searchTravelRoutes?.res]);
+    }, [ttx.searchTravelRoutes?.res]);
 
     useEffect(() => {
         if (selectedTags?.length > 0) {

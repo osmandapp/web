@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Box, Slider, Tooltip, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import isEqual from 'lodash-es/isEqual';
-import AppContext, { TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY } from '../../context/AppContext';
+import TravelContext, { TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY } from '../../context/TravelContext';
 import SecondaryMenuDrawer from '../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -84,26 +84,26 @@ const HEATMAP_STYLES = {
 };
 
 function resetHeatmapAppearance(ctx) {
-    ctx.setTravelHeatmapAppearance(DEFAULT_HEATMAP_APPEARANCE);
+    ttx.setTravelHeatmapAppearance(DEFAULT_HEATMAP_APPEARANCE);
     localStorage.removeItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
 }
 
 export default function HeatmapAppearance({ onClose }) {
-    const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
 
     const { t } = useTranslation();
 
     const [draft, setDraft] = useState(null);
 
     function setAppearance(key, value) {
-        const appearance = { ...ctx.travelHeatmapAppearance, [key]: value };
-        ctx.setTravelHeatmapAppearance(appearance);
+        const appearance = { ...ttx.travelHeatmapAppearance, [key]: value };
+        ttx.setTravelHeatmapAppearance(appearance);
         localStorage.setItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY, JSON.stringify(appearance));
     }
 
     // width and glow repaint every tile, so they apply on release; opacity is cheap and follows the thumb
     const slider = ({ key, title, min, max, step, format, live = false }) => {
-        const value = draft?.key === key ? draft.value : ctx.travelHeatmapAppearance[key];
+        const value = draft?.key === key ? draft.value : ttx.travelHeatmapAppearance[key];
 
         return (
             <Box className={styles.sliderContainer} key={key}>
@@ -128,7 +128,7 @@ export default function HeatmapAppearance({ onClose }) {
     };
 
     const percent = (v) => `${Math.round(v * 100)}%`;
-    const hasLines = ctx.travelHeatmapAppearance.style !== HEATMAP_STYLE_CELLS;
+    const hasLines = ttx.travelHeatmapAppearance.style !== HEATMAP_STYLE_CELLS;
 
     return (
         <SecondaryMenuDrawer onClose={onClose}>
@@ -144,7 +144,7 @@ export default function HeatmapAppearance({ onClose }) {
                                 id="se-travel-appearance-reset"
                                 icon={<ResetIcon />}
                                 onClick={() => resetHeatmapAppearance(ctx)}
-                                disabled={isEqual(ctx.travelHeatmapAppearance, DEFAULT_HEATMAP_APPEARANCE)}
+                                disabled={isEqual(ttx.travelHeatmapAppearance, DEFAULT_HEATMAP_APPEARANCE)}
                             />
                         </span>
                     </Tooltip>
@@ -154,7 +154,7 @@ export default function HeatmapAppearance({ onClose }) {
                 <Box className={styles.filtersScroll}>
                     <SelectItem
                         title={t('web:travel_heatmap_style')}
-                        value={ctx.travelHeatmapAppearance.style}
+                        value={ttx.travelHeatmapAppearance.style}
                         options={Object.entries(HEATMAP_STYLES).map(([key, name]) => ({ key, name: t(name) }))}
                         getOptionLabel={(option) => option.name}
                         getOptionValue={(option) => option.key}
@@ -163,7 +163,7 @@ export default function HeatmapAppearance({ onClose }) {
                     />
                     <SelectItem
                         title={t('web:travel_heatmap_colors')}
-                        value={ctx.travelHeatmapAppearance.palette}
+                        value={ttx.travelHeatmapAppearance.palette}
                         options={Object.entries(HEATMAP_PALETTES).map(([key, palette]) => ({
                             key,
                             name: t(palette.name),
@@ -175,11 +175,11 @@ export default function HeatmapAppearance({ onClose }) {
                     />
                     <Box
                         className={styles.heatmapPalette}
-                        style={{ background: paletteGradient(ctx.travelHeatmapAppearance.palette) }}
+                        style={{ background: paletteGradient(ttx.travelHeatmapAppearance.palette) }}
                     />
                     <SelectItem
                         title={t('web:travel_heatmap_scale')}
-                        value={ctx.travelHeatmapAppearance.scale}
+                        value={ttx.travelHeatmapAppearance.scale}
                         options={Object.entries(HEATMAP_SCALES).map(([key, name]) => ({ key, name: t(name) }))}
                         getOptionLabel={(option) => option.name}
                         getOptionValue={(option) => option.key}
@@ -189,8 +189,8 @@ export default function HeatmapAppearance({ onClose }) {
                     <SimpleItemWithSwitch
                         id="se-travel-grey-map"
                         text={t('web:travel_heatmap_grey_map')}
-                        checked={ctx.travelHeatmapAppearance.greyMap}
-                        onChange={() => setAppearance('greyMap', !ctx.travelHeatmapAppearance.greyMap)}
+                        checked={ttx.travelHeatmapAppearance.greyMap}
+                        onChange={() => setAppearance('greyMap', !ttx.travelHeatmapAppearance.greyMap)}
                     />
                     <ThickDivider mt={0} />
                     {hasLines &&

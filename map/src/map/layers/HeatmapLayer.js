@@ -4,6 +4,7 @@ import { PMTiles } from 'pmtiles';
 import { useMap } from 'react-leaflet';
 import { useTranslation } from 'react-i18next';
 import AppContext, { isTravelTrack } from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import { ACTIVITY_ALL, monthIndex } from '../../menu/travel/TravelMenu';
 import {
     ACTIVITY_ERROR,
@@ -46,6 +47,7 @@ const CACHE_FILES = 320;
 
 export default function HeatmapLayer() {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
 
     const { t } = useTranslation();
 
@@ -53,11 +55,11 @@ export default function HeatmapLayer() {
 
     const [meta, setMeta] = useState(null);
 
-    const activity = ctx.searchTravelRoutes?.activity ?? ACTIVITY_ALL;
-    const isDimmed = !!ctx.searchTravelRoutes?.point || (isTravelTrack(ctx) && ctx.selectedGpxFile?.id != null);
+    const activity = ttx.searchTravelRoutes?.activity ?? ACTIVITY_ALL;
+    const isDimmed = !!ttx.searchTravelRoutes?.point || (isTravelTrack(ctx) && ctx.selectedGpxFile?.id != null);
 
     useEffect(() => {
-        if (!ctx.openTravel || meta) {
+        if (!ttx.openTravel || meta) {
             return;
         }
         apiGet(`${process.env.REACT_APP_HEATMAP_URL}meta.json`).then((response) => {
@@ -65,7 +67,7 @@ export default function HeatmapLayer() {
                 setMeta(response.data);
             }
         });
-    }, [ctx.openTravel]);
+    }, [ttx.openTravel]);
 
     const layer = useMemo(
         () =>
@@ -89,42 +91,42 @@ export default function HeatmapLayer() {
         const acts = meta.acts.map((a) =>
             activity === ACTIVITY_ALL ? a.group !== HEATMAP_IGNORED_GROUP : activity.includes(storedActivity(a))
         );
-        const from = ctx.searchTravelRoutes?.dateFrom
-            ? monthIndex(ctx.searchTravelRoutes.dateFrom, meta.monthsBase)
+        const from = ttx.searchTravelRoutes?.dateFrom
+            ? monthIndex(ttx.searchTravelRoutes.dateFrom, meta.monthsBase)
             : meta.monthMin;
-        const to = ctx.searchTravelRoutes?.dateTo
-            ? monthIndex(ctx.searchTravelRoutes.dateTo, meta.monthsBase)
+        const to = ttx.searchTravelRoutes?.dateTo
+            ? monthIndex(ttx.searchTravelRoutes.dateTo, meta.monthsBase)
             : meta.monthMax;
         layer.setFilter(acts, from, to);
         const matched = meta.hist.reduce((n, [a, m, count]) => (acts[a] && m >= from && m <= to ? n + count : n), 0);
-        ctx.setTravelHeatmapMatch({ matched, total: meta.tracks });
-    }, [layer, activity, ctx.searchTravelRoutes?.dateFrom, ctx.searchTravelRoutes?.dateTo]);
+        ttx.setTravelHeatmapMatch({ matched, total: meta.tracks });
+    }, [layer, activity, ttx.searchTravelRoutes?.dateFrom, ttx.searchTravelRoutes?.dateTo]);
 
     useEffect(() => {
         map.getContainer().classList.toggle(
             HEATMAP_GREY_MAP_CLASS,
-            ctx.openTravel && ctx.travelHeatmapAppearance.greyMap
+            ttx.openTravel && ttx.travelHeatmapAppearance.greyMap
         );
-    }, [ctx.openTravel, ctx.travelHeatmapAppearance.greyMap]);
+    }, [ttx.openTravel, ttx.travelHeatmapAppearance.greyMap]);
 
     useEffect(() => {
-        layer?.setOpacity(ctx.travelHeatmapAppearance.opacity * (isDimmed ? HEATMAP_DIMMED_FACTOR : 1));
-    }, [layer, isDimmed, ctx.travelHeatmapAppearance.opacity]);
+        layer?.setOpacity(ttx.travelHeatmapAppearance.opacity * (isDimmed ? HEATMAP_DIMMED_FACTOR : 1));
+    }, [layer, isDimmed, ttx.travelHeatmapAppearance.opacity]);
 
     useEffect(() => {
-        layer?.setAppearance(ctx.travelHeatmapAppearance);
+        layer?.setAppearance(ttx.travelHeatmapAppearance);
     }, [
         layer,
-        ctx.travelHeatmapAppearance.style,
-        ctx.travelHeatmapAppearance.palette,
-        ctx.travelHeatmapAppearance.scale,
-        ctx.travelHeatmapAppearance.width,
-        ctx.travelHeatmapAppearance.glow,
-        ctx.travelHeatmapAppearance.minTracks,
+        ttx.travelHeatmapAppearance.style,
+        ttx.travelHeatmapAppearance.palette,
+        ttx.travelHeatmapAppearance.scale,
+        ttx.travelHeatmapAppearance.width,
+        ttx.travelHeatmapAppearance.glow,
+        ttx.travelHeatmapAppearance.minTracks,
     ]);
 
     useEffect(() => {
-        if (!layer || !ctx.openTravel) {
+        if (!layer || !ttx.openTravel) {
             return;
         }
         ensureLeafletPane(map, HEATMAP_PANE, HEATMAP_PANE_Z_INDEX);
@@ -133,7 +135,7 @@ export default function HeatmapLayer() {
         return () => {
             map.removeLayer(layer);
         };
-    }, [layer, ctx.openTravel]);
+    }, [layer, ttx.openTravel]);
 }
 
 // stored activity key -> the id the Activity filter sends
