@@ -414,7 +414,8 @@ export default function SearchResults() {
             {ctx.develFeatures && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
-                        .map(([k, v]) => `${k}: ${formatInfoValue(v)}`)
+                        .filter(([k]) => k !== 'suggestions')
+                        .map(([k, v]) => `${k}: ${v}`)
                         .join(' · ')}
                 </Typography>
             )}
@@ -438,13 +439,4 @@ export default function SearchResults() {
                 ))}
         </>
     );
-}
-
-// word suggestions come as {word, count}: "hauptstraße 2,415, hauptbahnhof 312"
-function formatInfoValue(value) {
-    if (Array.isArray(value)) {
-        return value.map((v) => (v?.word ? `${v.word} ${Number(v.count).toLocaleString()}` : String(v))).join(', ');
-    }
-
-    return value;
 }
