@@ -1,14 +1,4 @@
-import {
-    Box,
-    CircularProgress,
-    IconButton,
-    Slider,
-    SvgIcon,
-    ToggleButton,
-    ToggleButtonGroup,
-    Tooltip,
-    Typography,
-} from '@mui/material';
+import { Box, CircularProgress, IconButton, Slider, Tooltip, Typography } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -29,13 +19,17 @@ import ActivitySelect from './ActivitySelect';
 import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
-import TravelRoutesResult from './TravelRoutesResult';
+import TravelRoutesResult, { formatActivity } from './TravelRoutesResult';
 import TravelFilters from './TravelFilters';
 import HeatmapAppearance from './HeatmapAppearance';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import headerStyles from '../trackfavmenu.module.css';
-import { ReactComponent as LongToShortIcon } from '../../assets/icons/ic_action_sort_long_to_short.svg';
-import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_sort_short_to_long.svg';
+import SortFilesButton, {
+    getSelectedSort,
+    TRACK_FILE_TYPE,
+    TRAVEL_CUSTOM_GROUP,
+} from '../components/buttons/SortFilesButton';
+import { defaultSortMethod, doSort } from '../actions/SortActions';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
@@ -138,10 +132,10 @@ export default function TravelMenu() {
     const [updatedActivities, setUpdatedActivities] = useState([]);
     const [travelResult, setTravelResult] = useState(null);
     const [loadingResult, setLoadingResult] = useState(false);
-    const [sortByDistance, setSortByDistance] = useState(null); // 'asc' | 'desc' | null
     const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
     const [openFilters, setOpenFilters] = useState(false); // secondary filters drawer
     const [openAppearance, setOpenAppearance] = useState(false);
+    const [pinnedActivity, setPinnedActivity] = useState(null); // its tracks go first in the list
 
     const DEFAULT_MAX_DISTANCE = 500000; // 500 km in meters
     const DEFAULT_MAX_SPEED = 100; // 100 km/h
@@ -428,26 +422,49 @@ export default function TravelMenu() {
         [travelResult, ttx.searchTravelRoutes]
     );
 
-    const sortedRoutes = useMemo(() => {
-        const features = visibleRoutes;
-        if (!features.length) {
-            return [];
-        }
-        if (!sortByDistance) {
-            return features;
-        }
-        const hasDistance = features.some((r) => Number.isFinite(r.properties?.dist));
-        if (!hasDistance) {
-            return features;
-        }
-        const copy = [...features];
-        copy.sort((a, b) => {
-            const da = Number.isFinite(a.properties?.dist) ? a.properties.dist : Infinity;
-            const db = Number.isFinite(b.properties?.dist) ? b.properties.dist : Infinity;
-            return sortByDistance === 'asc' ? da - db : db - da;
+    // the tracks in the shape the shared sort methods read: the shown title as the name, analysis and a creation time
+    const sortGroup = useMemo(
+        () => ({
+            files: visibleRoutes.map((route) => ({
+                route,
+                name: route.properties.description ?? '',
+                analysis: { totalDistance: route.properties.dist ?? 0, duration: route.properties.timeMinutes ?? 0 },
+                clienttimems: route.properties.date ? new Date(route.properties.date.replace(' ', 'T')).getTime() : 0,
+            })),
+        }),
+        [visibleRoutes]
+    );
+
+    // how many of the found tracks each activity has, the biggest first
+    const activityBreakdown = useMemo(() => {
+        const counts = new Map();
+        visibleRoutes.forEach((route) => {
+            const label = formatActivity(route);
+            if (label) {
+                const id = route.properties.activity;
+                counts.set(id, { id, label, count: (counts.get(id)?.count ?? 0) + 1 });
+            }
         });
-        return copy;
-    }, [visibleRoutes, sortByDistance]);
+
+        return [...counts.values()].sort((a, b) => b.count - a.count);
+    }, [visibleRoutes]);
+
+    const sortedRoutes = useMemo(() => {
+        const method = getSelectedSort({
+            customGroup: sortGroup,
+            customGroupType: TRAVEL_CUSTOM_GROUP,
+            ctx,
+            defaultMethod: defaultSortMethod(TRAVEL_CUSTOM_GROUP),
+        });
+
+        const routes = (doSort({ method, files: sortGroup.files }).files ?? []).map((file) => file.route);
+        if (!pinnedActivity) {
+            return routes;
+        }
+        const pinned = (route) => route.properties.activity === pinnedActivity;
+
+        return [...routes.filter(pinned), ...routes.filter((route) => !pinned(route))];
+    }, [sortGroup, ctx.selectedSort, pinnedActivity]);
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
@@ -576,37 +593,34 @@ export default function TravelMenu() {
                             !travelResult.tooMany &&
                             (visibleRoutes.length > 0 ? (
                                 <>
-                                    {visibleRoutes.some((r) => Number.isFinite(r.properties?.dist)) && (
-                                        <Box className={styles.resultsHeader}>
-                                            <ToggleButtonGroup
-                                                size="small"
-                                                exclusive
-                                                value={sortByDistance}
-                                                className={styles.distanceSortToggleGroup}
-                                                onChange={(event, value) => {
-                                                    if (!value) {
-                                                        return;
-                                                    }
-                                                    setSortByDistance(value);
-                                                }}
-                                            >
-                                                <ToggleButton value="asc">
-                                                    <SvgIcon
-                                                        className={styles.distanceSortIcon}
-                                                        component={ShortToLongIcon}
-                                                        inheritViewBox
-                                                    />
-                                                </ToggleButton>
-                                                <ToggleButton value="desc">
-                                                    <SvgIcon
-                                                        className={styles.distanceSortIcon}
-                                                        component={LongToShortIcon}
-                                                        inheritViewBox
-                                                    />
-                                                </ToggleButton>
-                                            </ToggleButtonGroup>
-                                        </Box>
-                                    )}
+                                    <Box className={styles.resultsHeader}>
+                                        <Typography
+                                            variant="body2"
+                                            className={`${headerStyles.groupInfo} ${styles.activityBreakdown}`}
+                                            noWrap
+                                        >
+                                            {activityBreakdown.map(({ id, label, count }, i) => (
+                                                <React.Fragment key={id}>
+                                                    {i > 0 && ' · '}
+                                                    <span
+                                                        id={`se-travel-activity-${id}`}
+                                                        className={`${styles.activityType} ${id === pinnedActivity ? styles.activityPinned : ''}`}
+                                                        onClick={() =>
+                                                            setPinnedActivity(id === pinnedActivity ? null : id)
+                                                        }
+                                                    >
+                                                        {label}
+                                                    </span>
+                                                    {` ${count}`}
+                                                </React.Fragment>
+                                            ))}
+                                        </Typography>
+                                        <SortFilesButton
+                                            type={TRACK_FILE_TYPE}
+                                            customGroup={sortGroup}
+                                            customGroupType={TRAVEL_CUSTOM_GROUP}
+                                        />
+                                    </Box>
                                     <TravelRoutesResult routes={sortedRoutes} />
                                 </>
                             ) : (

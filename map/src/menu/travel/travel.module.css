@@ -93,32 +93,6 @@
     color: #212121 !important;
 }
 
-.distanceSortToggleGroup {
-    margin-left: 8px;
-    height: 36px !important;
-}
-
-.distanceSortToggleGroup :global(.MuiToggleButton-root) {
-    text-transform: none !important;
-    min-width: 32px !important;
-    padding: 4px !important;
-}
-
-.distanceSortToggleGroup :global(.Mui-selected) {
-    color: inherit !important;
-}
-
-.distanceSortIcon {
-    fill: var(--svg-icon-color) !important;
-    width: 20px !important;
-    height: 20px !important;
-}
-
-.distanceSortToggleGroup :global(.MuiToggleButton-root:hover) .distanceSortIcon,
-.distanceSortToggleGroup :global(.Mui-selected) .distanceSortIcon {
-    fill: var(--selected-color) !important;
-}
-
 .osmIdLink {
     color: var(--text-secondary) !important;
     cursor: pointer;
@@ -211,9 +185,24 @@
 .resultsHeader {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 8px;
     margin: 16px 16px 0;
     flex-shrink: 0;
+}
+
+.activityBreakdown {
+    flex: 1;
+    min-width: 0;
+    font-size: 13px !important;
+}
+
+.activityBreakdown .activityType {
+    cursor: pointer;
+}
+
+.activityBreakdown .activityPinned {
+    color: var(--text-primary);
 }
 
 .filtersBody {

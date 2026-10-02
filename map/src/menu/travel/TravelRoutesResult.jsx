@@ -24,7 +24,7 @@ import { useTranslation } from 'react-i18next';
 
 const ACTIVITY_IDS_HIDDEN = new Set(['nospeed']);
 
-function formatActivity(route) {
+export function formatActivity(route) {
     const activity = route?.properties?.activity;
     if (!activity) return null;
     if (ACTIVITY_IDS_HIDDEN.has(activity)) return null;
