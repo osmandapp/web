@@ -62,6 +62,7 @@ export default function TravelFilters({
                     min={lo}
                     max={hi}
                     step={step}
+                    disabled={lo === hi}
                     valueLabelDisplay="off"
                     sx={{
                         '& .MuiSlider-thumb': { opacity: active ? 1 : 0.5 },

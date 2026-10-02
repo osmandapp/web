@@ -24,6 +24,7 @@ import TravelFilters from './TravelFilters';
 import HeatmapAppearance from './HeatmapAppearance';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import headerStyles from '../trackfavmenu.module.css';
+import mainMenuStyles from '../mainmenu.module.css';
 import SortFilesButton, {
     getSelectedSort,
     TRACK_FILE_TYPE,
@@ -519,6 +520,9 @@ export default function TravelMenu() {
                                             }}
                                         >
                                             <SettingsIcon />
+                                            {hasActiveFilters && ttx.searchTravelRoutes?.point && (
+                                                <span className={mainMenuStyles.dotMenu} />
+                                            )}
                                         </IconButton>
                                     </span>
                                 </Tooltip>
@@ -660,7 +664,7 @@ function boundsOf(features, defaults) {
         RANGE_FILTER_KEYS.map((key) => {
             const values = features.map((route) => route.properties[RANGE_PROPERTIES[key]] ?? 0);
 
-            return [key, [Math.min(...values), Math.max(...values) || defaults[key][1]]];
+            return [key, [Math.min(...values), Math.max(...values)]];
         })
     );
 }

@@ -83,7 +83,7 @@ const HEATMAP_STYLES = {
     [HEATMAP_STYLE_CELLS]: 'web:travel_heatmap_style_cells',
 };
 
-function resetHeatmapAppearance(ctx) {
+function resetHeatmapAppearance(ttx) {
     ttx.setTravelHeatmapAppearance(DEFAULT_HEATMAP_APPEARANCE);
     localStorage.removeItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
 }
@@ -143,7 +143,7 @@ export default function HeatmapAppearance({ onClose }) {
                             <ActionIconBtn
                                 id="se-travel-appearance-reset"
                                 icon={<ResetIcon />}
-                                onClick={() => resetHeatmapAppearance(ctx)}
+                                onClick={() => resetHeatmapAppearance(ttx)}
                                 disabled={isEqual(ttx.travelHeatmapAppearance, DEFAULT_HEATMAP_APPEARANCE)}
                             />
                         </span>
