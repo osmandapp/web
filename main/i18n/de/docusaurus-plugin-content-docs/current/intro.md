@@ -33,7 +33,3 @@ Versionshinweise und Links zu früheren OsmAnd-Versionen. Beta- und Nightly-Buil
 ### [Rechtliches](/docs/legal/) {#legal}
 
 Lizenz. Datenschutzrichtlinie. Nutzungsbedingungen.
-
-### [Werden Sie Teil unseres Teams](/docs/hiring/) {#join-our-team}
-
-Wir sind immer auf der Suche nach neuen Mitwirkenden, die unser internationales Team verstärken können.

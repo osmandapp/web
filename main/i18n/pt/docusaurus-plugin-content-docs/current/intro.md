@@ -33,7 +33,3 @@ Notas de lançamento e links para versões anteriores do OsmAnd. Compilações B
 ### [Jurídico](/docs/legal/) {#legal}
 
 Licença. Política de Privacidade. Termos de Uso.
-
-### [Junte-se à nossa equipe](/docs/hiring/) {#join-our-team}
-
-Estamos sempre em busca de novos colaboradores que possam se juntar à nossa equipe internacional.
