@@ -170,7 +170,7 @@ The Media section allows you to attach photos, videos, audio recordings, and ima
 
 After media is attached, it appears in the Media card in the favorite context menu. If no media is attached, the card shows *No media* and an *Add* button. The same Media card is also available for [Waypoints](../map/tracks/track-context-menu.md#points--waypoints).
 
-Audio, video, and photo notes created with the [Audio/Video Notes plugin](../plugins/tracks/audio-video-notes.md). are also saved as favorites with attached media.
+Audio, video, and photo notes created with the [Audio/Video Notes plugin](../plugins/audio-video-notes.md) are also saved as favorites with attached media.
 
 The Media card displays previews of attached items. The displayed items follow the selected sorting order. Tap *Show all* to open the complete gallery. The gallery displays all media attached to the selected favorite.
 
@@ -179,7 +179,7 @@ Tap any item to open it in full-screen view. Photos and videos can be viewed dir
 The gallery includes the following options:
 - **Sorting** — Tap the sorting bar at the top to choose the order: Nearest, Last modified, Name A - Z, Name Z - A, Newest date first, Oldest date first, Longest duration first, or Shortest duration first.
 - **Summary** — Below the items, the gallery shows the number of photos, videos, and audio notes and their total size.
-- **+** — Add new media.
+- **+ button** — Add new media.
 - **Edit** (pencil icon) — Enter selection mode. You can also long tap any item.
 
 In selection mode, tap items to select them or use Select all. The three-dot menu offers:
