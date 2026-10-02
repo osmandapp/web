@@ -65,13 +65,6 @@ export const OSM_GPX_ABORT_KEYS = {
 
 export const TRAVEL_REVIEWS_URL = `${process.env.REACT_APP_OSM_GPX_URL}/api/pubtracks`;
 
-// since: ISO time, only the tracks reviewed from then on; all reviewed tracks without it
-export function downloadTravelReviews(since = null) {
-    const link = document.createElement('a');
-    link.href = `${TRAVEL_REVIEWS_URL}/reviews.csv.gz${since ? `?since=${encodeURIComponent(since)}` : ''}`;
-    link.click();
-}
-
 const OTHER_GROUP = 'other';
 // months are counted from 2004-01, the same way the tiles count them
 const MONTHS_BASE_YEAR = 2004;

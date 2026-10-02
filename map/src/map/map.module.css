@@ -122,22 +122,5 @@
     pointer-events: none !important;
 }
 
-.travelReviewsAdmin {
-    border-radius: 20px !important;
-    z-index: 1000 !important;
-    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.35) !important;
-    overflow: hidden;
-}
 
-.travelReviewsAdminHead {
-    width: 100%;
-    justify-content: space-between !important;
-    padding: 8px 16px !important;
-    color: var(--text-primary) !important;
-    text-transform: none !important;
-    font-weight: 500 !important;
-}
 
-.travelReviewsAdminDownload {
-    padding: 0 16px 16px;
-}

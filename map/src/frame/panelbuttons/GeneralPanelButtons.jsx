@@ -10,7 +10,6 @@ import styles from '../../map/map.module.css';
 import { ReactComponent as ConfigureMapIcon } from '../../assets/icons/ic_map_configure_map.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
 import FocusToggleBtn from '../../frame/components/btns/FocusToggleBtn';
-import TravelReviewsAdminPanel from './TravelReviewsAdminPanel';
 import ConfigureMap from '../../menu/configuremap/ConfigureMap';
 import { HEADER_SIZE, INSTALL_BANNER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import SearchMenu from '../../menu/search/SearchMenu';
@@ -116,7 +115,6 @@ export default function GeneralPanelButtons({
             </div>
             <div className={styles.focusToggleWrapper} style={{ marginLeft: getMarginFromMenu() }}>
                 <FocusToggleBtn />
-                <TravelReviewsAdminPanel />
             </div>
             <div
                 style={{
