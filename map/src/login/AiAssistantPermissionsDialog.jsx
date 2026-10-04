@@ -1,0 +1,113 @@
+import React, { useEffect, useState } from 'react';
+import {
+    Button,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogTitle,
+    Switch,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow,
+    Typography,
+} from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import dialogStyles from '../dialogs/dialog.module.css';
+
+const READ = ':read';
+const WRITE = ':write';
+
+// Permissions of one connected AI assistant: View / Edit per OsmAnd Cloud group (groups come from the server).
+export default function AiAssistantPermissionsDialog({ connection, groups, onClose, onSave, onDisconnect }) {
+    const { t } = useTranslation();
+    const [scopes, setScopes] = useState(new Set());
+
+    useEffect(() => {
+        setScopes(new Set(connection?.scope?.split(' ') ?? []));
+    }, [connection]);
+
+    // edit includes view
+    const toggle = (key, write) => {
+        const next = new Set(scopes);
+        if (write) {
+            if (next.has(key + WRITE)) {
+                next.delete(key + WRITE);
+            } else {
+                next.add(key + WRITE);
+                next.add(key + READ);
+            }
+        } else if (next.has(key + READ)) {
+            next.delete(key + READ);
+            next.delete(key + WRITE);
+        } else {
+            next.add(key + READ);
+        }
+        setScopes(next);
+    };
+
+    return (
+        <Dialog open={!!connection} onClose={onClose} fullWidth PaperProps={{ sx: { maxWidth: 480 } }}>
+            <DialogTitle className={dialogStyles.title}>{connection?.client}</DialogTitle>
+            <DialogContent className={dialogStyles.content}>
+                <Typography variant="body2" color="text.secondary">
+                    {t('web:ai_assistant_permissions_desc')}
+                </Typography>
+                <Table size="small">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell />
+                            <TableCell align="center">{t('web:ai_assistant_view')}</TableCell>
+                            <TableCell align="center">{t('shared_string_edit')}</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {groups?.map((g) => (
+                            <TableRow key={g.key}>
+                                <TableCell>
+                                    <Typography variant="body2">{g.title}</Typography>
+                                    <Typography variant="caption" color="text.secondary">
+                                        {g.description}
+                                    </Typography>
+                                </TableCell>
+                                <TableCell align="center">
+                                    <Switch
+                                        id={`se-ai-scope-${g.key}-read`}
+                                        checked={scopes.has(g.key + READ)}
+                                        onChange={() => toggle(g.key, false)}
+                                    />
+                                </TableCell>
+                                <TableCell align="center">
+                                    {g.write && (
+                                        <Switch
+                                            id={`se-ai-scope-${g.key}-write`}
+                                            checked={scopes.has(g.key + WRITE)}
+                                            onChange={() => toggle(g.key, true)}
+                                        />
+                                    )}
+                                </TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </DialogContent>
+            <DialogActions>
+                <Button className={dialogStyles.button} color="error" onClick={() => onDisconnect(connection.id)}>
+                    {t('web:shared_string_disconnect')}
+                </Button>
+                <Button className={dialogStyles.button} onClick={onClose}>
+                    {t('shared_string_cancel')}
+                </Button>
+                <Button
+                    id="se-ai-scope-save"
+                    className={dialogStyles.button}
+                    disabled={scopes.size === 0}
+                    onClick={() => onSave(connection.id, [...scopes])}
+                >
+                    {t('web:shared_string_save')}
+                </Button>
+            </DialogActions>
+        </Dialog>
+    );
+}
