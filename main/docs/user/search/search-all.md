@@ -163,12 +163,7 @@ You can find the required location on the map from the list of points that appea
 
 1. Start typing the name or address in the search bar.
 
-2. As you type, the list displays the points closest to the query, in roughly this order:
-    - POI Categories
-    - Favorites, POI, Routes, and Waypoints
-    - Tracks
-    - Addresses
-    - Maps to download
+2. As you type, the list displays the results that match your query. The results are sorted as described in the [Sorting Search Results](#sorting-search-results) section.
 
 3. When searching by name on Android, OsmAnd displays POI type chips based on the types represented in the search results. Tap a chip to filter the results by the selected POI type. You can select multiple POI types. Once selected, a chip moves to the first position in the list. Tap a selected chip again to deselect it and return to the full search results.
 
@@ -180,7 +175,7 @@ You can find the required location on the map from the list of points that appea
 OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) into the US maps to provide information about US addresses. TIGER dataset is **range-based** and does not contain precise house numbers, so some addresses may be missing or inaccurate.
 :::
 
-### Spatial Search {#search-search}
+### Spatial Search {#spatial-search}
 
 <InfoAndroidOnly/>
 
