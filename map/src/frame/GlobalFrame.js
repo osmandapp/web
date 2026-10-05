@@ -40,6 +40,7 @@ import {
 import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../menu/search/explore/PhotosModal';
 import InstallBanner from './components/InstallBanner';
+import OfflineNotification from './components/OfflineNotification';
 import { hideAllTracks } from '../manager/track/DeleteTrackManager';
 import GlobalGraph from '../graph/mapGraph/GlobalGraph';
 import TracksFileDragController from './TracksFileDragController';
@@ -449,6 +450,7 @@ const GlobalFrame = () => {
                 >
                     <Alert severity={ctx.notification?.severity}>{ctx.notification?.text}</Alert>
                 </Snackbar>
+                <OfflineNotification />
                 <GeneralPanelButtons
                     mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'}
                     menuInfoWidth={`${TOTAL_MENU_INFO_WIDTH}px`}
