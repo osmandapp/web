@@ -4,6 +4,7 @@ import OsmAndMap from '../map/OsmAndMap';
 import MainMenu from '../menu/MainMenu';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../context/AppContext';
+import TravelContext from '../context/TravelContext';
 import MapContext from '../context/MapContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../dialogs/GlobalConfirmationDialog';
@@ -53,6 +54,7 @@ const ENCODED_SEMICOLON = '%3B';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const ltx = useContext(LoginContext);
     const mtx = useContext(MapContext);
 
@@ -253,13 +255,13 @@ const GlobalFrame = () => {
         const routeId = searchParams.get(TRAVEL_ROUTE_ID_PARAM);
         if (isTravelPath(location.pathname)) {
             if (routeId) {
-                ctx.setTravelRouteIdByUrl(routeId);
-                ctx.setProcessingTravelRouteByUrl(true);
+                ttx.setTravelRouteIdByUrl(routeId);
+                ttx.setProcessingTravelRouteByUrl(true);
                 setShowInfoBlock(true);
                 ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             } else {
-                ctx.setTravelRouteIdByUrl(null);
-                ctx.setProcessingTravelRouteByUrl(false);
+                ttx.setTravelRouteIdByUrl(null);
+                ttx.setProcessingTravelRouteByUrl(false);
             }
         }
     }, [location.pathname, location.search]);

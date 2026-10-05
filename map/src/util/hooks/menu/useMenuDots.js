@@ -12,11 +12,13 @@ import {
     OBJECT_TYPE_WEATHER,
     FAVORITES_URL_PARAM_FOLDER,
 } from '../../../context/AppContext';
+import TravelContext from '../../../context/TravelContext';
 import { selectedForecastDetails } from '../../../menu/weather/Weather';
 import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../../../store/geoRouter/profileConstants';
 
 export default function useMenuDots(ctx) {
     const wtx = useContext(WeatherContext);
+    const ttx = useContext(TravelContext);
     const [menuDots, setMenuDots] = useState({});
     const [searchParams] = useSearchParams();
 
@@ -47,10 +49,10 @@ export default function useMenuDots(ctx) {
     }, [wtx?.weatherDate, wtx?.weatherLayers, wtx?.weatherType]);
 
     useEffect(() => {
-        const hasSearchResults = ctx.searchTravelRoutes && !ctx.searchTravelRoutes.clear;
+        const hasSearchResults = ttx.searchTravelRoutes && !ttx.searchTravelRoutes.clear;
 
-        setActiveMenu(OBJECT_TYPE_TRAVEL, hasSearchResults || ctx.selectedTravelRoute);
-    }, [ctx.searchTravelRoutes, ctx.selectedTravelRoute]);
+        setActiveMenu(OBJECT_TYPE_TRAVEL, hasSearchResults || ttx.selectedTravelRoute);
+    }, [ttx.searchTravelRoutes, ttx.selectedTravelRoute]);
 
     useEffect(() => {
         setActiveMenu(

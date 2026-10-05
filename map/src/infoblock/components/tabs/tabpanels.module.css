@@ -5,11 +5,46 @@
     min-height: 0;
 }
 
+/* the grey shows in the compact scroll reserve under a tab that ends with a grey block */
 .contentScroller {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
+    background-color: #f0f0f0;
+}
+
+.tabPanel {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+.tabPanel[hidden] {
+    display: none;
+}
+
+.tabPanelContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+    background-color: var(--background-color-menu);
+}
+
+.fillHeight {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* out of the tab padding on the sides and at the bottom, so the grey block reaches the edges */
+.travelBlock {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 0 -24px -64px;
 }
 
 .mainTabs {

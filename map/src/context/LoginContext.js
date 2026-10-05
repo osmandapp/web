@@ -47,6 +47,7 @@ export const LoginContextProvider = ({ children }) => {
 
     const isLoggedIn = () => Boolean(loginUser && loginUser !== INIT_LOGIN_STATE);
     const isProAccount = () => isLoggedIn() && accountInfo?.account !== FREE_ACCOUNT;
+    const isAdmin = () => Boolean(loginRoles?.includes('ROLE_ADMIN'));
 
     useEffect(() => {
         syncSessionFromServer({
@@ -102,6 +103,7 @@ export const LoginContextProvider = ({ children }) => {
                 setCompletePurchase,
                 isLoggedIn,
                 isProAccount,
+                isAdmin,
             }}
         >
             {children}

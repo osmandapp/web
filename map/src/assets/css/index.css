@@ -63,6 +63,22 @@ code {
     transition: none !important;
 }
 
+/* the base map behind the Travel heatmap */
+.leaflet-container.travel-grey-map .leaflet-tile-pane,
+.leaflet-container.travel-grey-map .leaflet-mvtDemo-pane,
+.leaflet-container.travel-grey-map .leaflet-mvtOsm-pane,
+.leaflet-container.travel-grey-map .leaflet-mvtHybridUnderlay-pane {
+    filter: grayscale(1) contrast(0.85) brightness(1.08);
+}
+
+.leaflet-container.travel-search-cursor {
+    cursor: crosshair;
+}
+
+.leaflet-container.travel-search-circle .leaflet-interactive {
+    pointer-events: none;
+}
+
 .leaflet-control-zoom {
     background-color: transparent !important;
     border: none !important;

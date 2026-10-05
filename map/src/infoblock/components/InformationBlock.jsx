@@ -13,6 +13,7 @@ import AppContext, {
     TRAVEL_ROUTE_ID_PARAM,
     FAVORITES_URL_PARAM_FOLDER,
 } from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import React, { useState, useContext, useEffect, useCallback } from 'react';
 import TrackTabList, { TRACK_TAB_IDS } from './tabs/TrackTabList';
 import TrackContextMenu from './track/TrackContextMenu';
@@ -57,6 +58,7 @@ export default function InformationBlock({
     const DRAWER_SIZE = 360;
 
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const ltx = useContext(LoginContext);
     const mtx = useContext(MapContext);
 
@@ -79,7 +81,7 @@ export default function InformationBlock({
     const showWptEditPanel = !!ctx.addFavorite?.location || !!ctx.addFavorite?.editWpt;
     const showTrackContextMenu = ctx.selectedGpxFile && (isTrack(ctx) || isTrackAnalyzer(ctx)) && !openShareFileItem;
     // first load of a travel route (get-osm-route): track not ready yet, show the loading page
-    const showTravelLoading = ctx.processingTravelRouteByUrl && !showTrackContextMenu;
+    const showTravelLoading = ttx.processingTravelRouteByUrl && !showTrackContextMenu;
 
     /**
      * Handle Escape key to close PointContextMenu.
@@ -235,7 +237,7 @@ export default function InformationBlock({
     }, [hasSegmentTurns({ track: ctx.selectedGpxFile })]);
 
     useEffect(() => {
-        const keepOpen = ctx.processingTravelRouteByUrl;
+        const keepOpen = ttx.processingTravelRouteByUrl;
         if (
             (!ctx.selectedGpxFile || isEmpty(ctx.selectedGpxFile)) &&
             ctx.currentObjectType !== OBJECT_TYPE_WEATHER &&
@@ -424,7 +426,7 @@ export default function InformationBlock({
             ctx.setSelectedTransportRoute(null);
         }
         if (ctx.currentObjectType === OBJECT_TYPE_TRAVEL) {
-            ctx.setSelectedTravelRoute(null);
+            ttx.setSelectedTravelRoute(null);
             updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: null });
         }
         ctx.setCurrentObjectType(null);
@@ -506,7 +508,7 @@ export default function InformationBlock({
                     <ShareFile />
                 ) : (
                     <>
-                        {(ctx.loadingContextMenu || ctx.gpxLoading || ctx.processingTravelRouteByUrl) && (
+                        {(ctx.loadingContextMenu || ctx.gpxLoading || ttx.processingTravelRouteByUrl) && (
                             <OverlayLinearProgress />
                         )}
                         {ctx.updateFiles && <OverlayLinearProgress id="se-info-files-loading" />}

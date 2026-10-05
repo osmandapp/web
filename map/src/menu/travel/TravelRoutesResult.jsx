@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { FixedSizeList } from 'react-window';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
@@ -23,7 +24,7 @@ import { useTranslation } from 'react-i18next';
 
 const ACTIVITY_IDS_HIDDEN = new Set(['nospeed']);
 
-function formatActivity(route) {
+export function formatActivity(route) {
     const activity = route?.properties?.activity;
     if (!activity) return null;
     if (ACTIVITY_IDS_HIDDEN.has(activity)) return null;
@@ -34,12 +35,13 @@ function formatActivity(route) {
 const TravelRoute = ({ route }) => {
     const { ref, inView } = useInView();
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const { t } = useTranslation();
 
     const { updateQueryParam } = useUpdateQueryParam();
 
     function openRouteInfo(route) {
-        ctx.setSelectedTravelRoute({ route, show: true });
+        ttx.setSelectedTravelRoute({ route, show: true });
         if (route?.properties?.id != null) {
             updateQueryParam({ key: TRAVEL_ROUTE_ID_PARAM, value: String(route.properties.id), replace: false });
         }
@@ -59,10 +61,10 @@ const TravelRoute = ({ route }) => {
                         openRouteInfo(route);
                     }}
                     onMouseEnter={() => {
-                        ctx.setSelectedTravelRoute({ route, hover: true });
+                        ttx.setSelectedTravelRoute({ route, hover: true });
                     }}
                     onMouseLeave={() => {
-                        ctx.setSelectedTravelRoute({ route, hover: false });
+                        ttx.setSelectedTravelRoute({ route, hover: false });
                     }}
                 >
                     <ListItemIcon className={styles.icon}>
