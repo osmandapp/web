@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. The [Explore](#search-explore) tab highlights popular places nearby and provides quick access to recently visited locations. Search [History](#search-history) saves past searches. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
+**Search** is a useful tool for quickly finding locations. You can use Search to find a location by address, coordinates, points of interest (POI), or previous searches. Search [Address](#search-address) allows you to enter the address you want to get an exact location. [Coordinates](#search-coordinates) search works with geographic coordinates such as latitude and longitude. With [POI](#search-poi) search you can search for nearby places in specific categories, such as cafés, hotels, or filling stations. The [Explore](#search-explore) tab highlights popular places nearby and provides quick access to recently visited locations. The search feature makes it easy to plan trips, navigate unknown terrain, and find POIs nearby.
 
 
 ## How to Use {#how-to-use}
@@ -163,12 +163,7 @@ You can find the required location on the map from the list of points that appea
 
 1. Start typing the name or address in the search bar.
 
-2. As you type, the list displays the points closest to the query, in roughly this order:
-    - POI Categories
-    - Favorites, POI, Routes, and Waypoints
-    - Tracks
-    - Addresses
-    - Maps to download
+2. As you type, the list displays the results that match your query. The results are sorted as described in the [Sorting Search Results](#sorting-search-results) section.
 
 3. When searching by name on Android, OsmAnd displays POI type chips based on the types represented in the search results. Tap a chip to filter the results by the selected POI type. You can select multiple POI types. Once selected, a chip moves to the first position in the list. Tap a selected chip again to deselect it and return to the full search results.
 
@@ -180,13 +175,33 @@ You can find the required location on the map from the list of points that appea
 OsmAnd has integrated [**TIGER data**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) into the US maps to provide information about US addresses. TIGER dataset is **range-based** and does not contain precise house numbers, so some addresses may be missing or inaccurate.
 :::
 
-### Search Around (Android only) {#search-around}
+### Spatial Search {#spatial-search}
 
-![Search Around](@site/static/img/search/search_around.webp)
+<InfoAndroidOnly/>
+
+![Spatial Search](@site/static/img/search/spatial_search.webp)
+
+Spatial Search is an experimental search engine that takes into account where objects are located relative to each other, not only how their names match your query. It helps OsmAnd correctly interpret queries that combine several parts, such as a place name and a POI category.
+
+Spatial Search is disabled by default. To enable it, go to the [OsmAnd Development plugin](../plugins/development.md#internal-algorithms) settings and turn on *Use spatial text search*. When enabled, Spatial Search replaces the standard search engine for POI and address queries.
+
+With Spatial Search, you can:
+- Search for a POI in a specific place. Enter a category and a place name in one query, for example, Hotel Berlin. The place name is used as the search area, and the category is searched within it.
+- Search for places that match two conditions. Enter two categories or a category and a property, for example, Fuel Diesel or Cafe Vegan, to find places that match both. A query such as Fuel McDonald's finds fuel stations located near a McDonald's.
+- Search around a found place. Enter a category and a place name, for example, *Hotel Berlin*, then tap *Hotel near Berlin* at the top of the search results. The name of this place is added to the [Search around](#search-around) chip.
+- Use different formats of street names and translated category names in your queries.
+- Get faster results when searching by popular POI categories, such as pharmacy, parking, or restaurant.
+
+### Search Around {#search-around}
+
+<InfoAndroidOnly/>
+
+![Search Around](@site/static/img/search/search_around_berlin.webp)
 
 When the search is opened significantly away from your current location, the *Search around* chip allows you to choose the area used for the search. Tap the chip and select one of the following options:
 - **Map center** — Searches around the current center of the map. This option is selected by default.
-- **My location** — Searches around your current location. 
+- **My location** — Searches around your current location.
+- **Place name** — Searches around a place you found with [Spatial Search](#spatial-search). For example, enter *Hotel Berlin*, then tap *Hotel near Berlin* at the top of the search results. *Berlin* appears on the chip, and hotels around Berlin are shown. This option is available only when Spatial Search is enabled. 
 
 ### Search on the Map {#search-on-the-map}
 
@@ -245,46 +260,23 @@ You can use the search in the vicinity of a specific location. To do this, selec
 
 ## Search Explore {#search-explore}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Explore search](@site/static/img/search/explore_search_android.webp)
 
-The **Explore** tab in the Search tool helps you quickly discover places near your current location and access recently opened items. It contains two main sections: [Popular places nearby](#popular-places-nearby)
- and [History](#history).
+</TabItem>
 
-### Popular Places Nearby {#popular-places-nearby}
-
-The **Popular places nearby** section displays a scrollable list of well-known landmarks and attractions near your location. Each item may include the name of the place, its category, distance and direction, and a preview image if available. Tap *Show all* to open the full list or *Show on map* to display these places on the map.
-
-For more details, see [here](../map/popular_places.md#explore-in-search).
-
-### History {#history}
-
-![History section](@site/static/img/search/history_section_android.webp) ![History section](@site/static/img/search/history_section_2_android.webp)
-
-The **History** section provides quick access to your recent history items. It displays up to 25 most recent items and can be expanded or collapsed. Tap *View all* to open the full History screen.
-
-On the full History screen, you can sort and filter your history items using the following options:
-
-1. **Sort by**:
-- Recent — displays the most recently added items first. When this option is selected, items are grouped by time, such as Today, Last week, and earlier periods.
-- Nearest — sorts items by their distance from your current location.
-- Nearest to map center — sorts items by their distance from the current center of the map. When either of the distance-based sorting options is selected, the time-based groups are not displayed.
-
-2. **Type** — filters history items by:
-- All — displays all available history items.
-- Search — displays items from your search history.
-- Navigation — displays items from your navigation history.
-
-3. **Category filters** — filter history items by category. The available category filters depend on the types of items available in your History. For example, you may see categories such as POI, Track, Location, Favorite, or Address.
-
-4. **Settings** — tap the gear icon in the upper-right corner to open the History settings, where you can enable or disable Search history, Navigation history, and Map markers history, back up history as a file, or clear all history.
-
-## Search History {#search-history}
+<TabItem value="ios" label="iOS">
 
 ![History search](@site/static/img/search/history_search_ios.png)
 
-On iOS, you can access your Search History from the dedicated **History** tab in the Search tool. It allows you to search again for previously found places, addresses, or frequently visited places without entering the query again. For more information, see the iOS section of the [Search History](./search-history.md) article.
+</TabItem>
+
+</Tabs>
+
+On Android, the **Explore** tab in the Search tool helps you quickly discover places near your current location and access your history. On iOS, the **History** tab allows you to search again for previously found places, addresses, or frequently visited places without entering the query again. For more information, see the [Search Explore](./search-history.md) article.
 
 
 ## Search POI {#search-poi}
@@ -340,7 +332,7 @@ Coordinate search provides an accurate location. You can enter precise coordinat
 ## Related Articles {#related-articles}
 
 - [Search Address](./search-address.md)
-- [Search History](./search-history.md)
+- [Search Explore](./search-history.md)
 - [Search POI](./search-poi.md)
 - [Search Coordinates](./search-coordinates.md)
 - [Popular Places](../map/popular_places.md)
