@@ -78,6 +78,8 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 
 
 
+<!--
+
 :::danger 🍂 Saldi d'autunno
 
 *Affrettati! Questa offerta è valida solo fino al* **4 ottobre (23:59 UTC)**.
@@ -94,7 +96,8 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | **Prezzo (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Prezzo (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-<!--
+-->
+
 
 |    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | Abbonamento [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -103,7 +106,6 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | **Prezzo (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Prezzo (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
 
 
 

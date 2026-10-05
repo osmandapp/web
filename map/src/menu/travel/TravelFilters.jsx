@@ -4,6 +4,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
+import TravelContext from '../../context/TravelContext';
 import SecondaryMenuDrawer from '../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -23,8 +24,17 @@ import {
     LARGE_UNIT,
 } from '../settings/units/UnitsConverter';
 
-export default function TravelFilters({ onClose, onReset, hasActiveFilters, filters, bounds, setFilter }) {
+export default function TravelFilters({
+    onClose,
+    onReset,
+    hasActiveFilters,
+    filters,
+    bounds,
+    setFilter,
+    previewFilter,
+}) {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const { t } = useTranslation();
 
     const [showTagFilters, setShowTagFilters] = useState(true);
@@ -35,6 +45,7 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
         const [lo, hi] = bounds[key];
         const range = filters[key] ?? bounds[key];
         const active = filters[key] != null;
+        const toFilter = (value) => (value[0] === lo && value[1] === hi ? null : value);
 
         return (
             <Box className={styles.sliderContainer} key={key}>
@@ -46,10 +57,12 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
                 </div>
                 <Slider
                     value={range}
-                    onChange={(e, value) => setFilter(key, value[0] === lo && value[1] === hi ? null : value)}
+                    onChange={(e, value) => previewFilter(key, toFilter(value))}
+                    onChangeCommitted={(e, value) => setFilter(key, toFilter(value))}
                     min={lo}
                     max={hi}
                     step={step}
+                    disabled={lo === hi}
                     valueLabelDisplay="off"
                     sx={{
                         '& .MuiSlider-thumb': { opacity: active ? 1 : 0.5 },
@@ -136,12 +149,7 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
                         showValue={false}
                     />
                     <Collapse in={showTagFilters}>
-                        <TagFilter
-                            selectedTags={filters.tags}
-                            onChangeTags={(tags) => setFilter('tags', tags)}
-                            selectedYear={filters.year}
-                            selectedActivity={filters.activity}
-                        />
+                        <TagFilter selectedTags={filters.tags} onChangeTags={(tags) => setFilter('tags', tags)} />
                         <Box className={styles.tagMatchBox}>
                             <ToggleButtonGroup
                                 fullWidth
@@ -185,8 +193,8 @@ export default function TravelFilters({ onClose, onReset, hasActiveFilters, filt
                     <SimpleItemWithSwitch
                         id="se-travel-show-start-finish"
                         text={t('web:show_start_finish_icons')}
-                        checked={ctx.travelShowStartFinish}
-                        onChange={() => ctx.setTravelShowStartFinish((v) => !v)}
+                        checked={ttx.travelShowStartFinish}
+                        onChange={() => ttx.setTravelShowStartFinish((v) => !v)}
                     />
                 </Box>
                 <ColorBlock color={'#f0f0f0'} />

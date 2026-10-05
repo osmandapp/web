@@ -55,6 +55,8 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
+<!--
+
 :::danger 🍂 Осінній розпродаж
 
 *Поспішайте! Ця пропозиція діє лише до* **4 жовтня (23:59 UTC)**.
@@ -71,7 +73,8 @@ import Translate from '@site/src/components/Translate.js';
 | **Ціна (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Ціна (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-<!--
+-->
+
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) Внутрішня покупка | [Maps+](#install-osmand-ios) Підписка | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -80,7 +83,6 @@ import Translate from '@site/src/components/Translate.js';
 | **Ціна (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Ціна (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
 
 
 

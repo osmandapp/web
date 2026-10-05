@@ -39,6 +39,8 @@ Vous trouverez ci-dessous les prix des produits OsmAnd aux États-Unis et dans l
 
 
 
+<!--
+
 :::danger 🍂 Soldes d'automne
 
 *Dépêchez-vous ! Cette offre n'est valable que jusqu'au* **4 octobre (23:59 UTC)**.
@@ -58,7 +60,8 @@ En souscrivant un abonnement à prix réduit sur notre [site web](https://osmand
 À partir de la troisième année, le prix normal s'applique.
 :::
 
-<!--
+-->
+
 
 |    | OsmAnd Gratuit   | **Maps+** Achat unique | **Maps+** Abonnement | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -67,7 +70,6 @@ En souscrivant un abonnement à prix réduit sur notre [site web](https://osmand
 | **Prix (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Prix (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
--->
 
 
 

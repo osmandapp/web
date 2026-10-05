@@ -38,6 +38,8 @@ Below are the prices for OsmAnd products in the US and EU. Prices in other regio
 
 
 
+<!--
+
 :::danger 🍂 Autumn Sale
 
 *Hurry up! This offer is only available until* **October 4 (23:59 UTC)**.
@@ -59,8 +61,8 @@ you receive a 2-year discounted plan.
 Starting from the third year, the full price will apply.
 :::
 
+-->
 
-<!--
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -69,7 +71,6 @@ Starting from the third year, the full price will apply.
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
--->
 
 
 

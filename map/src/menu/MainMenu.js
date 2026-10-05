@@ -31,6 +31,7 @@ import AppContext, {
     FAVORITES_URL_PARAM_FOLDER,
     TRAVEL_ROUTE_ID_PARAM,
 } from '../context/AppContext';
+import TravelContext from '../context/TravelContext';
 import TracksMenu from './tracks/TracksMenu';
 import VisibleTracks from './visibletracks/VisibleTracks';
 import ConfigureMap from './configuremap/ConfigureMap';
@@ -154,6 +155,7 @@ export default function MainMenu({
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const wtx = useContext(WeatherContext);
     const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
@@ -503,7 +505,7 @@ export default function MainMenu({
             url: MAIN_URL_WITH_SLASH + PLANROUTE_URL,
         },
         {
-            name: 'Travel',
+            name: t('web:shared_string_travel'),
             icon: TravelIcon,
             component: <TravelMenu />,
             type: OBJECT_TYPE_TRAVEL,
@@ -591,6 +593,10 @@ export default function MainMenu({
     }, [ctx.closeSelectedMenu]);
 
     useEffect(() => {
+        ttx.setOpenTravel(selectedType === OBJECT_TYPE_TRAVEL && ltx.isLoggedIn());
+    }, [selectedType, ltx.loginUser]);
+
+    useEffect(() => {
         openMenuObject();
 
         if (openVisibleTracksPage()) {
@@ -615,7 +621,6 @@ export default function MainMenu({
         }
 
         if (selectedType === OBJECT_TYPE_TRAVEL) {
-            ctx.setOpenTravel(true);
             const savedTravelUrl = lastMenuUrlsRef.current[OBJECT_TYPE_TRAVEL];
             if (savedTravelUrl?.includes(TRAVEL_ROUTE_ID_PARAM)) {
                 navigate(savedTravelUrl);
@@ -726,7 +731,7 @@ export default function MainMenu({
 
     useEffect(() => {
         if (selectedType !== OBJECT_TYPE_TRAVEL && ctx.currentObjectType !== OBJECT_TYPE_TRAVEL) {
-            ctx.setOpenTravelFilters(false);
+            ttx.setOpenTravelFilters(false);
         }
     }, [ctx.currentObjectType, selectedType]);
 

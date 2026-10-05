@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { Box, Icon, ListItemText } from '@mui/material';
 import styles from './errors.module.css';
@@ -21,11 +20,10 @@ export default function EmptyTravel({ reset }) {
                     </Icon>
                     <Box className={styles.info}>
                         <ListItemText disableTypography={true} className={styles.title}>
-                            No tracks found
+                            {t('web:travel_no_tracks_title')}
                         </ListItemText>
                         <ListItemText disableTypography={true} className={styles.text}>
-                            No matching tracks were found in the current map view area. Try moving the map or changing
-                            your filters.
+                            {t('web:travel_no_tracks_desc')}
                         </ListItemText>
                     </Box>
                     <GrayBtnWithBlueHover action={reset} text={t('shared_string_reset')} span={true} />

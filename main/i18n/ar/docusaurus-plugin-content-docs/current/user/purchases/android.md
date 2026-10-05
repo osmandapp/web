@@ -77,6 +77,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 في القائمة، توجد معلومات حول أسعار منتجات OsmAnd لمنطقة الولايات المتحدة وأوروبا. بالنسبة للمناطق الأخرى، تكون الأسعار معادلة بالعملات المحلية.
 
 
+<!--
+
 :::danger 🍂 تخفيضات الخريف
 
 *أسرع! هذا العرض متاح فقط حتى* **4 أكتوبر (23:59 UTC)**.
@@ -93,7 +95,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **السعر (يورو)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **السعر (دولار أمريكي)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-<!--
+-->
+
 
 |    | OsmAnd مجاني   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) داخل التطبيق | اشتراك [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -102,7 +105,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **السعر (يورو)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **السعر (دولار أمريكي)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
 
 
 
