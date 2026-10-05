@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import dialogStyles from '../dialogs/dialog.module.css';
+import styles from './login.module.css';
 
 export const READ = ':read';
 export const WRITE = ':write';
@@ -62,7 +63,7 @@ export default function AiAssistantPermissionsDialog({ connection, groups, onClo
     };
 
     return (
-        <Dialog open onClose={onClose} fullWidth PaperProps={{ sx: { maxWidth: 480 } }}>
+        <Dialog open onClose={onClose} fullWidth PaperProps={{ className: styles.aiPermissionsPaper }}>
             <DialogTitle className={dialogStyles.title}>{connection.client}</DialogTitle>
             <DialogContent className={dialogStyles.content}>
                 <Typography variant="body2" color="text.secondary">
