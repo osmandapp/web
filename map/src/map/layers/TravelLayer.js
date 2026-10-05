@@ -4,10 +4,17 @@ import TravelContext from '../../context/TravelContext';
 import MapContext from '../../context/MapContext';
 import { applyZoomToFit } from '../util/MapManager';
 import { useMap } from 'react-leaflet';
+import { useTranslation } from 'react-i18next';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import L from 'leaflet';
-import { ACTIVITY_ALL, ALL_ACTIVITY_IDS, OSM_GPX_ABORT_KEYS, routeMatchesFilters } from '../../menu/travel/TravelMenu';
+import {
+    ACTIVITY_ALL,
+    ALL_ACTIVITY_IDS,
+    formatRadius,
+    OSM_GPX_ABORT_KEYS,
+    routeMatchesFilters,
+} from '../../menu/travel/TravelMenu';
 import TracksManager, { addDistance, getTrackPoints } from '../../manager/track/TracksManager';
 import TrackLayerProvider from '../util/TrackLayerProvider';
 import { clusterMarkers } from '../util/Clusterizer';
@@ -26,6 +33,9 @@ const SEARCH_MAX_RADIUS_M = 1000;
 const SEARCH_CURSOR_CLASS = 'travel-search-cursor';
 const SEARCH_CIRCLE_CLASS = 'travel-search-circle';
 const SEARCH_PANE = 'travelSearchPane';
+const SEARCH_HANDLE_CLASS = 'travel-search-handle';
+const SEARCH_MIN_RADIUS_M = 10;
+const SEARCH_MAX_DRAG_RADIUS_M = 500000;
 
 function buildOsmPopupHtml({ id, name, user }) {
     let html = '';
@@ -115,6 +125,9 @@ export default function TravelLayer() {
     const ctx = useContext(AppContext);
     const ttx = useContext(TravelContext);
     const mtx = useContext(MapContext);
+
+    const { t } = useTranslation();
+
     const map = useMap();
 
     const { updateQueryParam } = useUpdateQueryParam();
@@ -316,6 +329,27 @@ export default function TravelLayer() {
             fillOpacity: 0.3,
             interactive: false,
         }).addTo(map);
+        const handle = L.marker(circleEdge(circle.getLatLng(), point.radius), {
+            pane: SEARCH_PANE,
+            draggable: true,
+            icon: L.divIcon({ className: SEARCH_HANDLE_CLASS, iconSize: [14, 14] }),
+        }).addTo(map);
+        const draggedRadius = () =>
+            Math.min(
+                SEARCH_MAX_DRAG_RADIUS_M,
+                Math.max(SEARCH_MIN_RADIUS_M, map.distance(circle.getLatLng(), handle.getLatLng()))
+            );
+        handle.bindTooltip(formatRadius(point.radius, ctx, t), { direction: 'right', offset: [10, 0] });
+        handle.on('drag', () => {
+            circle.setRadius(draggedRadius());
+            handle.setTooltipContent(formatRadius(roundRadius(draggedRadius()), ctx, t)).openTooltip();
+        });
+        handle.on('dragend', () => {
+            const radius = roundRadius(draggedRadius());
+            swallowNextClick(map.getContainer());
+            setSearchPoint(circle.getLatLng(), radius);
+            ttx.setTravelSearchRadius(radius);
+        });
 
         const container = map.getContainer();
         const isInside = (latlng) => map.distance(latlng, circle.getLatLng()) <= point.radius;
@@ -326,6 +360,7 @@ export default function TravelLayer() {
         const onMove = (e) => {
             moved = true;
             circle.setLatLng(e.latlng);
+            handle.setLatLng(circleEdge(e.latlng, point.radius));
         };
         const onUp = () => {
             map.off('mousemove', onMove);
@@ -337,7 +372,7 @@ export default function TravelLayer() {
             }
         };
         const onDown = (e) => {
-            if (!isInside(e.latlng)) {
+            if (!isInside(e.latlng) || handle.getElement()?.contains(e.originalEvent.target)) {
                 return;
             }
             moved = false;
@@ -356,6 +391,7 @@ export default function TravelLayer() {
             L.DomUtil.removeClass(container, SEARCH_CIRCLE_CLASS);
             map.dragging.enable();
             map.removeLayer(circle);
+            map.removeLayer(handle);
         };
     }, [ttx.searchTravelRoutes?.point, ttx.openTravel]);
 
@@ -367,7 +403,7 @@ export default function TravelLayer() {
     // a radius picked in the Filters applies to the current point at once, and the map shows the whole circle
     useEffect(() => {
         const point = ttx.searchTravelRoutes?.point;
-        if (!point) {
+        if (!point || point.radius === ttx.travelSearchRadius) {
             return;
         }
         const latlng = L.latLng(point.lat, point.lng);
@@ -678,6 +714,28 @@ export default function TravelLayer() {
         // the point may have been removed or moved while the tracks were loading
         ttx.setSearchTravelRoutes((prev) => (prev.point === point ? { ...prev, res: response?.data ?? null } : prev));
     }
+}
+
+// the point on the east edge of the circle, where its handle sits
+function circleEdge(center, radius) {
+    return L.latLng(
+        center.lat,
+        L.latLng(center)
+            .toBounds(radius * 2)
+            .getEast()
+    );
+}
+
+// 10 m steps below a kilometre, 100 m below 10 km, then whole kilometres
+function roundRadius(meters) {
+    let step = 1000;
+    if (meters < 1000) {
+        step = 10;
+    } else if (meters < 10000) {
+        step = 100;
+    }
+
+    return Math.round(meters / step) * step;
 }
 
 function searchRadiusM(map, latlng) {
