@@ -4,17 +4,18 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
-import TravelContext from '../../context/TravelContext';
+import TravelContext, { AUTO_SEARCH_RADIUS } from '../../context/TravelContext';
 import SecondaryMenuDrawer from '../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
 import SelectItemWithoutOptions from '../../frame/components/items/SelectItemWithoutOptions';
+import SelectItem from '../../frame/components/items/SelectItem';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import TagFilter from './TagFilter';
-import { TAG_MATCH_MODES } from './TravelMenu';
+import { formatRadius, TAG_MATCH_MODES } from './TravelMenu';
 import styles from './travel.module.css';
 import {
     convertMeters,
@@ -23,6 +24,23 @@ import {
     getSpeedUnit,
     LARGE_UNIT,
 } from '../settings/units/UnitsConverter';
+
+// metres, as the dropped-pin radius of Komoot, up to 500 km
+const SEARCH_RADIUS_OPTIONS = [
+    AUTO_SEARCH_RADIUS,
+    100,
+    250,
+    500,
+    1000,
+    5000,
+    10000,
+    20000,
+    30000,
+    50000,
+    100000,
+    200000,
+    500000,
+];
 
 export default function TravelFilters({
     onClose,
@@ -136,6 +154,20 @@ export default function TravelFilters({
             />
             <Box className={styles.filtersBody}>
                 <Box className={styles.filtersScroll}>
+                    <SelectItem
+                        title={t('web:travel_search_radius')}
+                        value={ttx.travelSearchRadius}
+                        options={SEARCH_RADIUS_OPTIONS}
+                        getOptionLabel={(meters) =>
+                            meters === AUTO_SEARCH_RADIUS
+                                ? t('web:travel_search_radius_auto')
+                                : formatRadius(meters, ctx, t)
+                        }
+                        getOptionValue={(meters) => meters}
+                        onSelect={ttx.setTravelSearchRadius}
+                        showDivider={false}
+                    />
+                    <ThickDivider mt={0} />
                     <SelectItemWithoutOptions
                         title={t('web:tag_filters')}
                         onClick={() => setShowTagFilters(!showTagFilters)}

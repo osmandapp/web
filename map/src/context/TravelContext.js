@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { DEFAULT_HEATMAP_APPEARANCE } from '../menu/travel/HeatmapAppearance';
 
 export const TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY = 'travelHeatmapAppearance';
+// the search radius follows the zoom
+export const AUTO_SEARCH_RADIUS = 0;
 
 const TravelContext = React.createContext();
 
@@ -14,6 +16,7 @@ export const TravelContextProvider = ({ children }) => {
     const [processingTravelRouteByUrl, setProcessingTravelRouteByUrl] = useState(false);
     const [travelRoutesHidden, setTravelRoutesHidden] = useState(false); // hide other travel routes on the map
     const [travelShowStartFinish, setTravelShowStartFinish] = useState(false);
+    const [travelSearchRadius, setTravelSearchRadius] = useState(AUTO_SEARCH_RADIUS); // metres
     const [travelHeatmapMatch, setTravelHeatmapMatch] = useState(null); // { matched, total } tracks of the heatmap filter
     const [travelHeatmapAppearance, setTravelHeatmapAppearance] = useState(() => {
         try {
@@ -43,6 +46,8 @@ export const TravelContextProvider = ({ children }) => {
                 setTravelRoutesHidden,
                 travelShowStartFinish,
                 setTravelShowStartFinish,
+                travelSearchRadius,
+                setTravelSearchRadius,
                 travelHeatmapMatch,
                 setTravelHeatmapMatch,
                 travelHeatmapAppearance,

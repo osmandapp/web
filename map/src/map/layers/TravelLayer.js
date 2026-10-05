@@ -359,10 +359,23 @@ export default function TravelLayer() {
         };
     }, [ttx.searchTravelRoutes?.point, ttx.openTravel]);
 
-    function setSearchPoint(latlng, radius = searchRadiusM(map, latlng)) {
+    function setSearchPoint(latlng, radius = ttx.travelSearchRadius || searchRadiusM(map, latlng)) {
         const point = { lat: latlng.lat, lng: latlng.lng, radius };
         ttx.setSearchTravelRoutes((prev) => (prev && !prev.clear ? { ...prev, point, res: undefined } : prev));
     }
+
+    // a radius picked in the Filters applies to the current point at once, and the map shows the whole circle
+    useEffect(() => {
+        const point = ttx.searchTravelRoutes?.point;
+        if (!point) {
+            return;
+        }
+        const latlng = L.latLng(point.lat, point.lng);
+        if (ttx.travelSearchRadius) {
+            applyZoomToFit({ map, mtx, bounds: latlng.toBounds(ttx.travelSearchRadius * 2) });
+        }
+        setSearchPoint(latlng);
+    }, [ttx.travelSearchRadius]);
 
     function loadRoutes() {
         if (ttx.searchTravelRoutes.point) {
