@@ -24,8 +24,6 @@ export default function AiAssistantsItem() {
     const [editing, setEditing] = useState(null);
     const [saving, setSaving] = useState(false);
 
-    const isProUser = ltx.isProAccount();
-
     const load = useCallback(async () => {
         const res = await apiGet(`${OAUTH_API}/connections`);
         setState(res.ok && res.data ? res.data : null);
@@ -35,12 +33,15 @@ export default function AiAssistantsItem() {
         load().then();
     }, [load]);
 
+    const isProUser = ltx.isProAccount();
+
     if (!state) {
         return null;
     }
 
     if (!isProUser) {
         const openPricing = () => openPricingPage('external_integrations');
+
         return (
             <DefaultItem
                 id="se-login-menu-ai-assistants"
@@ -102,6 +103,7 @@ export default function AiAssistantsItem() {
     // "Favorites, Tracks (edit)": groups the assistant can view, (edit) where it can also change
     const summary = (scope) => {
         const granted = new Set(scope?.split(' ') ?? []);
+
         return state.groups
             ?.filter((g) => granted.has(g.key + READ))
             .map((g) =>
