@@ -115,13 +115,15 @@ export default function AiAssistantsItem() {
                         }
                     />
                 ))}
-            <AiAssistantPermissionsDialog
-                connection={editing}
-                groups={state.groups}
-                onClose={() => setEditing(null)}
-                onSave={saveScope}
-                onDisconnect={disconnect}
-            />
+            {editing && (
+                <AiAssistantPermissionsDialog
+                    connection={editing}
+                    groups={state.groups}
+                    onClose={() => setEditing(null)}
+                    onSave={saveScope}
+                    onDisconnect={disconnect}
+                />
+            )}
         </>
     );
 }

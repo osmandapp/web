@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
     Button,
     Dialog,
@@ -40,11 +40,7 @@ export function getScopeGroupTitle(t, group) {
 // Permissions of one connected AI assistant: View / Edit per OsmAnd Cloud group (groups come from the server).
 export default function AiAssistantPermissionsDialog({ connection, groups, onClose, onSave, onDisconnect }) {
     const { t } = useTranslation();
-    const [scopes, setScopes] = useState(new Set());
-
-    useEffect(() => {
-        setScopes(new Set(connection?.scope?.split(' ') ?? []));
-    }, [connection]);
+    const [scopes, setScopes] = useState(() => new Set(connection.scope?.split(' ') ?? []));
 
     // edit includes view
     const toggle = (key, write) => {
@@ -66,8 +62,8 @@ export default function AiAssistantPermissionsDialog({ connection, groups, onClo
     };
 
     return (
-        <Dialog open={!!connection} onClose={onClose} fullWidth PaperProps={{ sx: { maxWidth: 480 } }}>
-            <DialogTitle className={dialogStyles.title}>{connection?.client}</DialogTitle>
+        <Dialog open onClose={onClose} fullWidth PaperProps={{ sx: { maxWidth: 480 } }}>
+            <DialogTitle className={dialogStyles.title}>{connection.client}</DialogTitle>
             <DialogContent className={dialogStyles.content}>
                 <Typography variant="body2" color="text.secondary">
                     {t('web:ai_assistant_permissions_desc')}
