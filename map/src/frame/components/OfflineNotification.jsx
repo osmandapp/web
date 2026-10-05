@@ -24,10 +24,10 @@ export default function OfflineNotification() {
         <Snackbar
             id="se-offline-notification"
             open={offline}
-            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             sx={{ mt: `${HEADER_SIZE}px` }}
         >
-            <Alert severity="warning">{t('web:no_internet_connection')}</Alert>
+            <Alert severity="warning">{t('shared_string_no_internet_connection')}</Alert>
         </Snackbar>
     );
 }
