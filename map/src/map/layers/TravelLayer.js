@@ -628,7 +628,6 @@ export default function TravelLayer() {
                         interactive: false,
                     })
             ),
-            // the 60 px icon box would take the mouse from the track and hide the highlight again and again
             ...startFinishMarkers(segments.flat(), { interactive: false }),
         ]).addTo(map);
 
