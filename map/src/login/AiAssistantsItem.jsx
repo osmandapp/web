@@ -6,6 +6,7 @@ import SimpleItemWithSwitch from '../frame/components/items/SimpleItemWithSwitch
 import DefaultItem from '../frame/components/items/DefaultItem';
 import { apiGet, apiPost } from '../util/HttpApi';
 import LoginContext from '../context/LoginContext';
+import AppContext from '../context/AppContext';
 import ButtonPro from '../frame/pro/ButtonPro';
 import { openPricingPage } from '../manager/GlobalManager';
 import AiAssistantPermissionsDialog, { getScopeGroupTitle, READ, WRITE } from './AiAssistantPermissionsDialog';
@@ -16,6 +17,7 @@ const OAUTH_API = `${process.env.REACT_APP_USER_API_SITE}/mapapi/oauth`;
 // OsmAnd Pro feature like Garmin Connect. Hidden when the server runs without OAuth (the endpoint is missing).
 export default function AiAssistantsItem() {
     const ltx = useContext(LoginContext);
+    const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const [state, setState] = useState(null);
     const [editing, setEditing] = useState(null);
@@ -62,6 +64,7 @@ export default function AiAssistantsItem() {
         const res = await apiPost(url, '');
         setSaving(false);
         if (!res.ok || !res.data) {
+            ctx.setNotification({ text: t('web:ai_assistants_not_saved'), severity: 'error' });
             return false;
         }
         setState(res.data);
