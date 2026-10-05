@@ -55,6 +55,8 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 
 
 
+<!--
+
 :::danger 🍂 Sonbahar İndirimi
 
 *Acele edin! Bu teklif yalnızca* **4 Ekim (23:59 UTC)** *tarihine kadar geçerlidir.*
@@ -71,7 +73,8 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | **Fiyat (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Fiyat (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-<!--
+-->
+
 
 |    | OsmAnd Ücretsiz   | [Maps+](#install-osmand-ios) Uygulama İçi | [Maps+](#install-osmand-ios) Abonelik | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -80,7 +83,6 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | **Fiyat (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Fiyat (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
 
 
 

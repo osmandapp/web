@@ -55,6 +55,8 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 
 
+<!--
+
 :::danger 🍂 Rebajas de otoño
 
 *¡Date prisa! Esta oferta solo está disponible hasta el* **4 de octubre (23:59 UTC)**.
@@ -71,7 +73,8 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | **Precio (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Precio (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-<!--
+-->
+
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -80,7 +83,6 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | **Precio (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Precio (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
--->
 
 
 

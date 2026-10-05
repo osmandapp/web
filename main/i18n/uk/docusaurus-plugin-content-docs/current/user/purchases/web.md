@@ -39,6 +39,8 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
+<!--
+
 :::danger 🍂 Осінній розпродаж
 
 *Поспішайте! Ця пропозиція діє лише до* **4 жовтня (23:59 UTC)**.
@@ -58,7 +60,8 @@ import Translate from '@site/src/components/Translate.js';
 З третього року діє повна ціна.
 :::
 
-<!--
+-->
+
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -67,7 +70,6 @@ import Translate from '@site/src/components/Translate.js';
 | **Ціна (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Ціна (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
 
--->
 
 
 
