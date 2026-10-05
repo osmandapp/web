@@ -1,6 +1,21 @@
 import capitalize from 'lodash-es/capitalize';
 import activities from '../../resources/activities.json';
 
+export const UNIDENTIFIED_TRACKS_KEY = 'nospeed';
+export const ACTIVITY_SHORT = 'garbage_short';
+export const ACTIVITY_SPARSE = 'garbage_sparse';
+export const ACTIVITY_ERROR = 'error';
+const ACTIVITY_REJECTED = 'garbage';
+const ACTIVITY_TELEPORT = 'garbage_teleport';
+
+// tracks the classifier leaves out, off by default
+export const IGNORED_ACTIVITIES = [
+    { id: ACTIVITY_SHORT, name: 'web:ignored_short' },
+    { id: ACTIVITY_SPARSE, name: 'web:ignored_sparse' },
+    { id: ACTIVITY_ERROR, name: 'web:ignored_error' },
+    { id: UNIDENTIFIED_TRACKS_KEY, name: 'web:ignored_no_timing' },
+];
+
 const DEFAULT_ACTIVITY_COLOR = '#666666';
 
 const GROUP_COLORS = {
@@ -29,6 +44,10 @@ export function getActivityColor(activity) {
 const ACTIVITY_KEYS = Object.fromEntries([
     ...activities.groups.map((g) => [g.id, `web:activity_group_${g.id}`]),
     ...activities.groups.flatMap((g) => g.activities.map((a) => [a.id, `web:activity_${a.id}`])),
+    ...IGNORED_ACTIVITIES.map((a) => [a.id, a.name]),
+    // the server returns these with the No timing tracks
+    [ACTIVITY_REJECTED, 'web:ignored_no_timing'],
+    [ACTIVITY_TELEPORT, 'web:ignored_no_timing'],
 ]);
 
 // the shown name of a stored activity or group: its translation, or the id as words for one the list does not know

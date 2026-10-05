@@ -6,12 +6,7 @@ import { useTranslation } from 'react-i18next';
 import AppContext, { isTravelTrack } from '../../context/AppContext';
 import TravelContext from '../../context/TravelContext';
 import { ACTIVITY_ALL, monthIndex } from '../../menu/travel/TravelMenu';
-import {
-    ACTIVITY_ERROR,
-    ACTIVITY_GARBAGE_SHORT,
-    ACTIVITY_GARBAGE_SPARSE,
-    UNIDENTIFIED_TRACKS_KEY,
-} from '../../menu/travel/ActivitySelect';
+import { ACTIVITY_ERROR, ACTIVITY_SHORT, ACTIVITY_SPARSE, UNIDENTIFIED_TRACKS_KEY } from '../util/activities';
 import {
     HEATMAP_PALETTES,
     HEATMAP_SCALE_LOG,
@@ -150,10 +145,10 @@ function storedActivity(act) {
         return ACTIVITY_ERROR;
     }
     if (act.key === HEATMAP_IGNORED_SHORT) {
-        return ACTIVITY_GARBAGE_SHORT;
+        return ACTIVITY_SHORT;
     }
     if (act.key === HEATMAP_IGNORED_SPARSE) {
-        return ACTIVITY_GARBAGE_SPARSE;
+        return ACTIVITY_SPARSE;
     }
 
     return act.key;

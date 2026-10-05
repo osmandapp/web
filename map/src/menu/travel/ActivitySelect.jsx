@@ -20,20 +20,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { ACTIVITY_ALL, hasSpeedOnlyTracks, IGNORED_GROUP } from './TravelMenu';
-import { activityLabel } from '../../map/util/activities';
-
-export const UNIDENTIFIED_TRACKS_KEY = 'nospeed';
-export const ACTIVITY_GARBAGE_SHORT = 'garbage_short';
-export const ACTIVITY_GARBAGE_SPARSE = 'garbage_sparse';
-export const ACTIVITY_ERROR = 'error';
-
-// tracks the classifier leaves out, off by default
-const IGNORED_ACTIVITIES = [
-    { id: ACTIVITY_GARBAGE_SHORT, name: 'web:ignored_short' },
-    { id: ACTIVITY_GARBAGE_SPARSE, name: 'web:ignored_sparse' },
-    { id: ACTIVITY_ERROR, name: 'web:ignored_error' },
-    { id: UNIDENTIFIED_TRACKS_KEY, name: 'web:ignored_no_timing' },
-];
+import { activityLabel, IGNORED_ACTIVITIES } from '../../map/util/activities';
 
 const PRESETS = [
     { id: 'foot_cycling', name: 'web:activities_foot_cycling', groups: (id) => id === 'foot' || id === 'cycling' },
