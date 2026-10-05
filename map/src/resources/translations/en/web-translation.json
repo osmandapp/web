@@ -387,6 +387,8 @@
     "ai_assistant_view": "View",
     "ai_assistant_group_edit": "{{group}} (edit)",
     "ai_assistants_not_saved": "AI assistant settings not saved",
+    "ai_assistants_turn_off_confirm": "Turn off AI assistants? All connected assistants lose access to your OsmAnd Cloud data.",
+    "ai_assistant_disconnect_confirm": "Disconnect {{client}}? It loses access to your OsmAnd Cloud data.",
     "ai_scope_account_desc": "Email and OsmAnd Pro status",
     "ai_scope_favorites_desc": "Saved places and their groups",
     "ai_scope_tracks_desc": "GPX tracks and track folders",

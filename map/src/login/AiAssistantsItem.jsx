@@ -9,6 +9,7 @@ import LoginContext from '../context/LoginContext';
 import AppContext from '../context/AppContext';
 import ButtonPro from '../frame/pro/ButtonPro';
 import { openPricingPage } from '../manager/GlobalManager';
+import { confirm } from '../dialogs/GlobalConfirmationDialog';
 import AiAssistantPermissionsDialog, { getScopeGroupTitle, READ, WRITE } from './AiAssistantPermissionsDialog';
 
 const OAUTH_API = `${process.env.REACT_APP_USER_API_SITE}/mapapi/oauth`;
@@ -72,13 +73,24 @@ export default function AiAssistantsItem() {
         return true;
     };
 
-    const toggle = () => update(`${OAUTH_API}/enabled?enabled=${!state.enabled}`);
+    const toggle = () =>
+        confirm({
+            ctx,
+            skip: !state.enabled || !state.connections?.length,
+            text: t('web:ai_assistants_turn_off_confirm'),
+            callback: () => update(`${OAUTH_API}/enabled?enabled=${!state.enabled}`),
+        });
 
-    const disconnect = async (id) => {
-        if (await update(`${OAUTH_API}/revoke?id=${id}`)) {
-            setEditing(null);
-        }
-    };
+    const disconnect = (id) =>
+        confirm({
+            ctx,
+            text: t('web:ai_assistant_disconnect_confirm', { client: editing.client }),
+            callback: async () => {
+                if (await update(`${OAUTH_API}/revoke?id=${id}`)) {
+                    setEditing(null);
+                }
+            },
+        });
 
     const saveScope = async (id, scopes) => {
         const params = scopes.map((s) => `&scope=${encodeURIComponent(s)}`).join('');
