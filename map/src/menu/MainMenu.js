@@ -98,7 +98,7 @@ import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack, resetCloudTracksMenu } from '../manager/track/TracksManager';
-import { getLoginRedirect, INIT_LOGIN_STATE, openLoginMenu } from '../manager/LoginManager';
+import { getLoginRedirect, openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import {
     getFavMenuListByLayers,
@@ -247,7 +247,7 @@ export default function MainMenu({
     }, [location.pathname]);
 
     useEffect(() => {
-        if (ltx.loginUser && ltx.loginUser !== INIT_LOGIN_STATE && redirectUrl) {
+        if (ltx.isLoggedIn() && redirectUrl) {
             globalThis.location.href = redirectUrl;
         }
     }, [ltx.loginUser, redirectUrl]);
