@@ -16,8 +16,8 @@ import {
 import { useTranslation } from 'react-i18next';
 import dialogStyles from '../dialogs/dialog.module.css';
 
-const READ = ':read';
-const WRITE = ':write';
+export const READ = ':read';
+export const WRITE = ':write';
 
 // Permissions of one connected AI assistant: View / Edit per OsmAnd Cloud group (groups come from the server).
 export default function AiAssistantPermissionsDialog({ connection, groups, onClose, onSave, onDisconnect }) {

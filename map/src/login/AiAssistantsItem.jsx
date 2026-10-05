@@ -8,7 +8,7 @@ import { apiGet, apiPost } from '../util/HttpApi';
 import LoginContext from '../context/LoginContext';
 import ButtonPro from '../frame/pro/ButtonPro';
 import { openPricingPage } from '../manager/GlobalManager';
-import AiAssistantPermissionsDialog from './AiAssistantPermissionsDialog';
+import AiAssistantPermissionsDialog, { READ, WRITE } from './AiAssistantPermissionsDialog';
 
 const OAUTH_API = `${process.env.REACT_APP_USER_API_SITE}/mapapi/oauth`;
 
@@ -81,8 +81,8 @@ export default function AiAssistantsItem() {
     const summary = (scope) => {
         const granted = new Set(scope?.split(' ') ?? []);
         return state.groups
-            ?.filter((g) => granted.has(g.key + ':read'))
-            .map((g) => g.title + (granted.has(g.key + ':write') ? ` (${t('shared_string_edit').toLowerCase()})` : ''))
+            ?.filter((g) => granted.has(g.key + READ))
+            .map((g) => g.title + (granted.has(g.key + WRITE) ? ` (${t('shared_string_edit').toLowerCase()})` : ''))
             .join(', ');
     };
 
