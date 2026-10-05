@@ -33,7 +33,3 @@ Informacje o wydaniach i linki do poprzednich wydań OsmAnd. Wersje beta i nocne
 ### [Prawne](/docs/legal/) {#legal}
 
 Licencja. Polityka prywatności. Warunki użytkowania.
-
-### [Dołącz do naszego zespołu](/docs/hiring/) {#join-our-team}
-
-Zawsze szukamy nowych współpracowników, którzy mogą dołączyć do naszego międzynarodowego zespołu.

@@ -82,6 +82,10 @@ async function createConfig(){
       {
         redirects: [
           {
+            from: '/docs/hiring/mission', // hiring is hidden for now
+            to: '/help-online/mission',
+          },
+          {
             from: '/docs/user/map/track-context-menu', // old
             to: '/docs/user/map/tracks/track-context-menu', // new
           },

@@ -147,7 +147,7 @@ For *audio and video notes*, the audio or video recorder is displayed respective
 It is possible to stop the recording with a tap of the <Translate android="true" ids="map_widget_av_notes"/> widget, regardless of whether the Context menu or the widget started the recording. For *a photo note*, the camera functionality shows up, and you can take a photo, view the result, accept and save it, or take a new photo.
 
 :::info note
-Automatically, all photo, audio, and video records are saved to: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tab.
+Automatically, all photo, audio, and video records are saved to: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tab. Each note is also saved as a favorite in the **media** folder. See [A/V Notes as Favorites](#av-notes-as-favorites).
 :::
 
 
@@ -341,6 +341,14 @@ Use the [Recording](../map/point-layers-on-map#-audio--video-points-android) map
 ![No notes on the map](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notes are on the map](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
+## A/V Notes as Favorites {#av-notes-as-favorites}
+
+Audio, video, and photo notes are linked to Favorites. Each note has a matching favorite point in the **media** folder in *My Places → Favorites*, placed at the note's location and named after the note type and creation time, for example *Photo Oct 1, 2026 09:45*. The note file is attached to this favorite and appears in its [Media card](../personal/favorites.md#media). The note itself also remains available in the *A/V notes* tab.
+
+- When OsmAnd is updated to version 5.4 from an earlier version, a favorite is created automatically for each existing note.
+- New notes recorded with the widget or the map context menu are added to the **media** folder automatically.
+
+
 ## Waypoints Created from Notes {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -420,11 +428,7 @@ If viewing the GPX file of the track added with a waypoint from an audio/video/p
 
 ### File Name Details {#file-name-details}
 
-The <Translate android="true" ids="audionotes_plugin_name"/> plugin generates audio/video/photo files in the following format:
-
-    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
-
-where `SHORTLINK_LOCATION` specifies the latitude and longitude of the location to which the file is bound. The `SHORTLINK_LOCATION` is encoded, according to the specification of the [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
+The <Translate android="true" ids="audionotes_plugin_name"/> plugin names audio, video, and photo files using the pattern `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, for example `Photo_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. The `location` part contains the latitude and longitude of the note, encoded according to the [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink) specification.
 
 
 ### Export to JOSM {#export-to-josm}

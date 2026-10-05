@@ -33,7 +33,3 @@ Release-opmerkingen en links naar eerdere OsmAnd-releases. Bèta- en nachtelijke
 ### [Juridisch](/docs/legal/) {#legal}
 
 Licentie. Privacybeleid. Gebruiksvoorwaarden.
-
-### [Word lid van ons team](/docs/hiring/) {#join-our-team}
-
-We zijn altijd op zoek naar nieuwe medewerkers die ons internationale team kunnen versterken.

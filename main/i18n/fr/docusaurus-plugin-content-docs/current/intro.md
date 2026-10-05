@@ -33,7 +33,3 @@ Notes de publication et liens vers les versions précédentes d'OsmAnd. Versions
 ### [Mentions légales](/docs/legal/) {#legal}
 
 Licence. Politique de confidentialité. Conditions d'utilisation.
-
-### [Rejoignez notre équipe](/docs/hiring/) {#join-our-team}
-
-Nous recherchons toujours de nouveaux contributeurs qui peuvent rejoindre notre équipe internationale.

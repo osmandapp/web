@@ -35,7 +35,7 @@ export default function Render() {
         'Curling' : {poiName:'curling', poiName2:null, folderName:'sport/sport_sport_curling'},
         'Cycle polo' : {poiName:'cycle_polo', poiName2:null, folderName:'sport/sport_sport_cycle_polo'},
         'Cycling' : {poiName:'cycling', poiName2:null, folderName:'sport/sport_sport_cycling'},
-        'Disc golf' : {poiName:'disc_golf', poiName2:null, folderName:'sport/sport_sport_disc_golf'},
+        'Disc golf course' : {poiName:'disc_golf_course', poiName2:null, folderName:'sport/sport_leisure_disc_golf_course'},
         'Diving' : {poiName:'diving', poiName2:null, folderName:'sport/sport_sport_diving'},
         'Dog agility' : {poiName:'dog_agility', poiName2:null, folderName:'sport/sport_sport_dog_agility'},
         'Dog racing' : {poiName:'dog_racing', poiName2:null, folderName:'sport/sport_sport_dog_racing'},

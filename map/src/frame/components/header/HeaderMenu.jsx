@@ -47,10 +47,11 @@ const pages = ({ t }) => [
         name: `🌍 ${t('web:header_map')}`,
         url: '/map',
     },
-    {
-        name: `🚵‍ ${t('web:header_join_us')}`,
-        url: '/docs/hiring',
-    },
+    // hiring is hidden for now
+    // {
+    //     name: `🚵‍ ${t('web:header_join_us')}`,
+    //     url: '/docs/hiring',
+    // },
 ];
 
 export const DEFAULT_LANG = 'en';
