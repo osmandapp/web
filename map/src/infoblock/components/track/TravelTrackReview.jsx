@@ -191,7 +191,7 @@ export default function TravelTrackReview() {
     );
 }
 
-// "Admin: wrong line · Users (3): bad quality 2, correct 1"
+// "Moderator: Line is off the real route · Users (3): Poor GPS recording 2, Track is correct 1"
 function reviewSummary(view, t) {
     const label = (r) => {
         const verdict = t(`web:travel_review_verdict_${r.verdict}`);
