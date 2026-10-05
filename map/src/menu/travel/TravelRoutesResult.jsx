@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import capitalize from 'lodash-es/capitalize';
 import { Box, ListItemIcon, ListItemText, MenuItem, Skeleton, Typography } from '@mui/material';
 import { useInView } from 'react-intersection-observer';
 import { FixedSizeList } from 'react-window';
@@ -10,7 +9,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
 import { useElementHeight } from '../../util/hooks/useElementHeight';
-import { getActivityColor } from '../../map/util/activityColors';
+import { activityLabel, getActivityColor } from '../../map/util/activities';
 import styles from '../trackfavmenu.module.css';
 import travelStyles from './travel.module.css';
 import {
@@ -23,13 +22,12 @@ import {
 import { useTranslation } from 'react-i18next';
 
 const ACTIVITY_IDS_HIDDEN = new Set(['nospeed']);
-
-export function formatActivity(route) {
+export function formatActivity(route, t) {
     const activity = route?.properties?.activity;
     if (!activity) return null;
     if (ACTIVITY_IDS_HIDDEN.has(activity)) return null;
 
-    return capitalize(activity.replace(/_/g, ' '));
+    return activityLabel(activity, t);
 }
 
 const TravelRoute = ({ route }) => {
@@ -47,7 +45,7 @@ const TravelRoute = ({ route }) => {
         }
     }
 
-    const activity = formatActivity(route);
+    const activity = formatActivity(route, t);
 
     return (
         <div ref={ref}>

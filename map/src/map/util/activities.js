@@ -1,3 +1,4 @@
+import capitalize from 'lodash-es/capitalize';
 import activities from '../../resources/activities.json';
 
 const DEFAULT_ACTIVITY_COLOR = '#666666';
@@ -23,4 +24,16 @@ activities.groups.forEach((group) => {
 export function getActivityColor(activity) {
     const group = GROUP_COLORS[activity] ? activity : ACTIVITY_TO_GROUP[activity];
     return GROUP_COLORS[group] || DEFAULT_ACTIVITY_COLOR;
+}
+
+const ACTIVITY_KEYS = Object.fromEntries([
+    ...activities.groups.map((g) => [g.id, `web:activity_group_${g.id}`]),
+    ...activities.groups.flatMap((g) => g.activities.map((a) => [a.id, `web:activity_${a.id}`])),
+]);
+
+// the shown name of a stored activity or group: its translation, or the id as words for one the list does not know
+export function activityLabel(id, t) {
+    const key = ACTIVITY_KEYS[id];
+
+    return key ? t(key) : capitalize(id.replace(/_/g, ' '));
 }

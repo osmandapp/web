@@ -20,6 +20,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { ACTIVITY_ALL, hasSpeedOnlyTracks, IGNORED_GROUP } from './TravelMenu';
+import { activityLabel } from '../../map/util/activities';
 
 export const UNIDENTIFIED_TRACKS_KEY = 'nospeed';
 export const ACTIVITY_GARBAGE_SHORT = 'garbage_short';
@@ -67,7 +68,7 @@ export default function ActivitySelect({
     const isAllSelected = value === ACTIVITY_ALL || (Array.isArray(value) && value.length === 0);
 
     const groups = [
-        ...(activities?.groups ?? []),
+        ...(activities?.groups ?? []).map((group) => ({ ...group, label: activityLabel(group.id, t) })),
         {
             id: IGNORED_GROUP,
             label: t('web:ignored_tracks'),
@@ -75,10 +76,13 @@ export default function ActivitySelect({
         },
     ];
 
-    const getGroupItems = (group) =>
-        hasSpeedOnlyTracks(group)
-            ? [...group.activities, { id: group.id, label: t('web:classified_by_speed_only') }]
-            : group.activities;
+    const getGroupItems = (group) => {
+        const items = group.activities.map((activity) => ({ ...activity, label: activityLabel(activity.id, t) }));
+
+        return hasSpeedOnlyTracks(group)
+            ? [...items, { id: group.id, label: t('web:classified_by_speed_only') }]
+            : items;
+    };
 
     const getGroupActivityIds = (groupId) => {
         const group = groups.find((g) => g.id === groupId);
@@ -178,7 +182,7 @@ export default function ActivitySelect({
             }
             const speedGroup = activities?.groups?.find((g) => g.id === activityId);
             if (speedGroup) {
-                return `${speedGroup.label}: ${t('web:classified_by_speed_only')}`;
+                return `${activityLabel(speedGroup.id, t)}: ${t('web:classified_by_speed_only')}`;
             }
             const activity = getUpdatedActivity(activityId);
             if (activity) {

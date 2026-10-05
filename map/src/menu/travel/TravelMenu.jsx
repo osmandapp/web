@@ -20,6 +20,7 @@ import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult, { formatActivity } from './TravelRoutesResult';
+import { activityLabel } from '../../map/util/activities';
 import TravelFilters from './TravelFilters';
 import HeatmapAppearance from './HeatmapAppearance';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
@@ -303,14 +304,14 @@ export default function TravelMenu() {
             }
             act.push({
                 id: group.id,
-                label: group.label,
+                label: activityLabel(group.id, t),
                 type: 'group',
                 icon: null,
             });
             group?.activities.forEach((activity) => {
                 act.push({
                     id: activity.id,
-                    label: activity.label,
+                    label: activityLabel(activity.id, t),
                     type: 'activity',
                     iconName: activity?.icon_name,
                 });
@@ -442,7 +443,7 @@ export default function TravelMenu() {
     const activityBreakdown = useMemo(() => {
         const counts = new Map();
         visibleRoutes.forEach((route) => {
-            const label = formatActivity(route);
+            const label = formatActivity(route, t);
             if (label) {
                 const id = route.properties.activity;
                 counts.set(id, { id, label, count: (counts.get(id)?.count ?? 0) + 1 });

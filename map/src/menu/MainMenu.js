@@ -503,7 +503,7 @@ export default function MainMenu({
             url: MAIN_URL_WITH_SLASH + PLANROUTE_URL,
         },
         {
-            name: 'Travel',
+            name: t('web:shared_string_travel'),
             icon: TravelIcon,
             component: <TravelMenu />,
             type: OBJECT_TYPE_TRAVEL,

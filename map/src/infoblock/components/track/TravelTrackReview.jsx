@@ -7,6 +7,7 @@ import LoginContext from '../../../context/LoginContext';
 import { INIT_LOGIN_STATE } from '../../../manager/LoginManager';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import { OSM_GPX_ABORT_KEYS, TRAVEL_REVIEWS_URL } from '../../../menu/travel/TravelMenu';
+import { activityLabel } from '../../../map/util/activities';
 import activities from '../../../resources/activities.json';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
@@ -24,7 +25,7 @@ import styles from '../../infoblock.module.css';
 
 const VERDICTS = ['ok', 'wrong_activity', 'bad_quality', 'bad_line', 'simulated', 'garbage'];
 const MAX_OTHER_COMMENTS = 3;
-const ACTIVITY_LABELS = Object.fromEntries(activities.groups.flatMap((g) => g.activities).map((a) => [a.id, a.label]));
+const ACTIVITY_IDS = activities.groups.flatMap((g) => g.activities.map((a) => a.id));
 
 export default function TravelTrackReview() {
     const ctx = useContext(AppContext);
@@ -103,7 +104,7 @@ export default function TravelTrackReview() {
         .map((r) => `“${r.comment}”`);
     const activityOptions = [
         { key: '', name: t('web:travel_review_activity_not_set'), divider: true },
-        ...Object.entries(ACTIVITY_LABELS).map(([key, name]) => ({ key, name })),
+        ...ACTIVITY_IDS.map((key) => ({ key, name: activityLabel(key, t) })),
     ];
 
     return (
@@ -195,7 +196,7 @@ function reviewSummary(view, t) {
     const label = (r) => {
         const verdict = t(`web:travel_review_verdict_${r.verdict}`);
 
-        return r.activity ? `${verdict} → ${ACTIVITY_LABELS[r.activity] ?? r.activity}` : verdict;
+        return r.activity ? `${verdict} → ${activityLabel(r.activity, t)}` : verdict;
     };
     const parts = [];
     if (view?.admin) {

@@ -14,7 +14,7 @@ import { clusterMarkers } from '../util/Clusterizer';
 import { decodeSimplifiedGeometry } from '../../util/decodeSimplifiedGeometry';
 import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import MarkerOptions from '../markers/MarkerOptions';
-import { getActivityColor } from '../util/activityColors';
+import { getActivityColor } from '../util/activities';
 import isEmpty from 'lodash-es/isEmpty';
 import { GPX } from '../../manager/GlobalManager';
 import { ensureLeafletPane } from './MvtHybridDemo';
