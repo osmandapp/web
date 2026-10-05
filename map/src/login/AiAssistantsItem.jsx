@@ -19,6 +19,7 @@ export default function AiAssistantsItem() {
     const { t } = useTranslation();
     const [state, setState] = useState(null);
     const [editing, setEditing] = useState(null);
+    const [saving, setSaving] = useState(false);
 
     const isProUser = ltx.isProAccount();
 
@@ -53,26 +54,32 @@ export default function AiAssistantsItem() {
         );
     }
 
-    const toggle = async () => {
-        const res = await apiPost(`${OAUTH_API}/enabled?enabled=${!state.enabled}`, '');
-        if (res.ok && res.data) {
-            setState(res.data);
+    const update = async (url) => {
+        if (saving) {
+            return false;
         }
+        setSaving(true);
+        const res = await apiPost(url, '');
+        setSaving(false);
+        if (!res.ok || !res.data) {
+            return false;
+        }
+        setState(res.data);
+
+        return true;
     };
 
+    const toggle = () => update(`${OAUTH_API}/enabled?enabled=${!state.enabled}`);
+
     const disconnect = async (id) => {
-        const res = await apiPost(`${OAUTH_API}/revoke?id=${id}`, '');
-        if (res.ok && res.data) {
-            setState(res.data);
+        if (await update(`${OAUTH_API}/revoke?id=${id}`)) {
             setEditing(null);
         }
     };
 
     const saveScope = async (id, scopes) => {
         const params = scopes.map((s) => `&scope=${encodeURIComponent(s)}`).join('');
-        const res = await apiPost(`${OAUTH_API}/scope?id=${id}${params}`, '');
-        if (res.ok && res.data) {
-            setState(res.data);
+        if (await update(`${OAUTH_API}/scope?id=${id}${params}`)) {
             setEditing(null);
         }
     };
