@@ -71,14 +71,15 @@ function attachAutoClosePopup(layer, html, offset) {
     });
 }
 
-function startFinishMarkers(coords) {
+function startFinishMarkers(coords, options = {}) {
     if (!coords || coords.length === 0) {
         return [];
     }
-    const markers = [new L.Marker(coords[0], { icon: MarkerOptions.options.trackStart })];
+    const markers = [new L.Marker(coords[0], { ...options, icon: MarkerOptions.options.trackStart })];
     if (coords.length > 1) {
-        markers.push(new L.Marker(coords[coords.length - 1], { icon: MarkerOptions.options.trackEnd }));
+        markers.push(new L.Marker(coords[coords.length - 1], { ...options, icon: MarkerOptions.options.trackEnd }));
     }
+
     return markers;
 }
 
@@ -627,7 +628,7 @@ export default function TravelLayer() {
                         interactive: false,
                     })
             ),
-            ...startFinishMarkers(segments.flat()),
+            ...startFinishMarkers(segments.flat(), { interactive: false }),
         ]).addTo(map);
 
         return () => {
