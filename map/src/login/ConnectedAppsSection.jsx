@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import ThickDivider from '../frame/components/dividers/ThickDivider';
 import SubTitleMenu from '../frame/components/titles/SubTitleMenu';
 import GarminConnectItem from './garmin/GarminConnectItem';
+import AiAssistantsItem from './AiAssistantsItem';
 import LoginContext from '../context/LoginContext';
 import { INIT_LOGIN_STATE } from '../manager/LoginManager';
 
@@ -20,6 +21,7 @@ export default function ConnectedAppsSection() {
             <ThickDivider mt={'0px'} mb={'0px'} />
             <SubTitleMenu text={t('web:connected_apps')} />
             <GarminConnectItem />
+            <AiAssistantsItem />
             <ThickDivider mt={'0px'} mb={'0px'} />
         </>
     );

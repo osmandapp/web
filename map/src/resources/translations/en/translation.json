@@ -6048,5 +6048,6 @@
     "shared_string_overview": "Overview",
     "shared_string_gpx_track": "Track",
     "shared_string_gpx_points": "Points",
-    "shared_string_no_internet_connection": "No internet connection"
+    "shared_string_no_internet_connection": "No internet connection",
+    "shared_string_ok": "OK"
 }

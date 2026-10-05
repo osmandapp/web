@@ -124,3 +124,6 @@
 .loginDialogContent {
     padding: 0px 4px 20px 4px !important;
 }
+.aiPermissionsPaper:global(.MuiPaper-root) {
+    max-width: 480px;
+}
