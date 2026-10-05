@@ -562,6 +562,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             category: currentWpt.category,
             address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
+            osmUrl: currentWpt.ext?.metadata?.links?.find((l) => l?.href?.includes('openstreetmap.org/'))?.href,
             tags: null,
             mapObj: selectedWpt.mapObj,
         };
