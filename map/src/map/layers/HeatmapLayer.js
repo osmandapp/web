@@ -31,7 +31,7 @@ import {
     tentFor,
     TILE_PIXELS,
     TILE_SIZE,
-} from './HeatmapAlgorithms';
+} from '../util/HeatmapAlgorithms';
 
 const HEATMAP_PANE = 'heatmapPane';
 const OSM_TRACES_URL = 'https://www.openstreetmap.org/traces';
