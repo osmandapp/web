@@ -98,7 +98,7 @@ import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack, resetCloudTracksMenu } from '../manager/track/TracksManager';
-import { INIT_LOGIN_STATE, openLoginMenu } from '../manager/LoginManager';
+import { getLoginRedirect, INIT_LOGIN_STATE, openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import {
     getFavMenuListByLayers,
@@ -235,8 +235,8 @@ export default function MainMenu({
     useEffect(() => {
         if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL)) {
             // keep the redirect even while the login state is still INIT; same-site paths only
-            const to = new URLSearchParams(location.search).get('redirect');
-            if (to?.startsWith('/') && !to.startsWith('//')) {
+            const to = getLoginRedirect(location.search);
+            if (to) {
                 setRedirectUrl(to);
             }
             if (!ltx.openLoginMenu && !ltx.loginUser) {
