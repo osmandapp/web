@@ -82,10 +82,10 @@ export default function AiAssistantsItem() {
         const granted = new Set(scope?.split(' ') ?? []);
         return state.groups
             ?.filter((g) => granted.has(g.key + READ))
-            .map(
-                (g) =>
-                    getScopeGroupTitle(t, g) +
-                    (granted.has(g.key + WRITE) ? ` (${t('shared_string_edit').toLowerCase()})` : '')
+            .map((g) =>
+                granted.has(g.key + WRITE)
+                    ? t('web:ai_assistant_group_edit', { group: getScopeGroupTitle(t, g) })
+                    : getScopeGroupTitle(t, g)
             )
             .join(', ');
     };

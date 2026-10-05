@@ -385,6 +385,7 @@
     "ai_assistant_permissions": "Permissions",
     "ai_assistant_permissions_desc": "What this assistant can do with your OsmAnd Cloud data. Changes apply to its next request.",
     "ai_assistant_view": "View",
+    "ai_assistant_group_edit": "{{group}} (edit)",
     "ai_scope_account_desc": "Email and OsmAnd Pro status",
     "ai_scope_favorites_desc": "Saved places and their groups",
     "ai_scope_tracks_desc": "GPX tracks and track folders",
