@@ -17,11 +17,18 @@ import { SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../manager/searchCons
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { abortApiRequest } from '../../../util/HttpApi';
 import { debouncer } from '../../../context/TracksRoutingCache';
-import { getPropsFromSearchResultItem } from './SearchResultItem';
+import { getPropsFromSearchResultItem, openSearchResultObject } from './SearchResultItem';
+import { useNavigate } from 'react-router-dom';
+import { SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
+import { useRecentDataSaver } from '../../../util/hooks/menu/useRecentDataSaver';
 
 const SPATIAL_SEARCH_DEBOUNCE_MS = 500;
-const SUGGESTIONS_LIMIT = 8;
+const SUGGESTIONS_LIMIT = 15;
+const WORD_SUGGESTIONS_LIMIT = 7;
 const SUGGESTIONS_ABORT_KEY = 'spatialAutocomplete';
+// timings of the typing search under the suggestions: the dev server or ?searchStats in the url
+const SHOW_SEARCH_STATS =
+    process.env.NODE_ENV === 'development' || new URLSearchParams(globalThis.location.search).has('searchStats');
 
 export default function CustomInput({
     menuButton = null,
@@ -37,6 +44,8 @@ export default function CustomInput({
 
     const { navigateToSearchResults, params } = useSearchNav();
     const currentLoc = useGeoLocation(ctx);
+    const navigate = useNavigate();
+    const recentSaver = useRecentDataSaver();
 
     const inputRef = useRef();
     const suggestionsTimerRef = useRef(null);
@@ -46,6 +55,7 @@ export default function CustomInput({
     const [isInitialRender, setIsInitialRender] = useState(true);
     const [suggestions, setSuggestions] = useState([]);
     const [highlightedIndex, setHighlightedIndex] = useState(-1);
+    const [searchStats, setSearchStats] = useState(null);
 
     const EMPTY_SEARCH = '';
     const MIN_SIZE_SEARCH_VALUE = 1;
@@ -93,6 +103,7 @@ export default function CustomInput({
     }, [autoFocus]);
 
     function clearSuggestions() {
+        setSearchStats(null);
         setSuggestions([]);
         setHighlightedIndex(-1);
     }
@@ -131,7 +142,12 @@ export default function CustomInput({
         });
         if (response?.ok) {
             const data = await response.json();
-            setSuggestions(buildSuggestions(data?.features, ctx, t));
+            setSearchStats(data?.info ? { ...data.info, query, rows: data.features?.length ?? 0 } : null);
+            const words = buildWordSuggestions(data?.info?.suggestions, query).slice(0, WORD_SUGGESTIONS_LIMIT);
+            setSuggestions([
+                ...words,
+                ...buildSuggestions(data?.features, ctx, t).slice(0, SUGGESTIONS_LIMIT - words.length),
+            ]);
             setHighlightedIndex(-1);
         } else if (!response?.aborted) {
             clearSuggestions();
@@ -157,6 +173,16 @@ export default function CustomInput({
     }
 
     function applySuggestion(suggestion) {
+        if (suggestion.feature) {
+            // an object found while typing opens at once, the typed text stays
+            cancelPendingSuggestions();
+            clearSuggestions();
+            inputRef.current?.blur();
+            setIsFocused(false);
+            openSearchResultObject({ item: suggestion.feature, typeItem: SEARCH_LAYER_ID, ctx, navigate, recentSaver });
+            return;
+        }
+        // a word suggestion completes the typed word with a space and is searched at once
         setValue(suggestion.query);
         search(suggestion.query);
         inputRef.current?.blur();
@@ -223,6 +249,7 @@ export default function CustomInput({
                 }}
                 placeholder={t('shared_string_search')}
                 type="text"
+                autoComplete="off"
                 fullWidth
                 id={'se-search-input'}
                 onFocus={() => setIsFocused(true)}
@@ -272,14 +299,19 @@ export default function CustomInput({
                         ),
                 }}
             />
-            {isFocused && suggestions.length > 0 && (
+            {isFocused && (suggestions.length > 0 || (SHOW_SEARCH_STATS && searchStats)) && (
                 <Paper className={styles.autocompleteSelect} elevation={4} id={'se-search-suggestions'}>
+                    {SHOW_SEARCH_STATS && searchStats && (
+                        <Typography className={styles.autocompleteSelectStats} id={'se-search-stats'}>
+                            {formatSearchStats(searchStats)}
+                        </Typography>
+                    )}
                     <List dense disablePadding>
                         {suggestions.map((suggestion, index) => (
                             <ListItemButton
                                 key={`${suggestion.name}-${suggestion.info}`}
                                 selected={index === highlightedIndex}
-                                className={styles.autocompleteSelectItem}
+                                className={`${styles.autocompleteSelectItem} ${suggestion.word ? styles.autocompleteSelectWord : ''}`}
                                 onMouseDown={(e) => e.preventDefault()}
                                 onClick={() => applySuggestion(suggestion)}
                             >
@@ -301,6 +333,33 @@ export default function CustomInput({
     );
 }
 
+// words that continue the word still being typed, the most frequent first: a click completes the word and searches
+function buildWordSuggestions(words, query) {
+    const typed = query.slice(0, query.lastIndexOf(' ') + 1);
+
+    return (words ?? []).map(({ word, count }) => ({
+        name: typed + word,
+        info: Number(count).toLocaleString(),
+        query: `${typed}${word} `,
+        word: true,
+    }));
+}
+
+function formatSearchStats(stats) {
+    const parts = [`"${stats.query}"`, `${stats.rows} rows`];
+    if (stats.timeAll != null) {
+        parts.push(`${stats.timeAll} s (atoms ${stats.atoms}, compute ${stats.compute}, objects ${stats.readObj})`);
+    }
+    if (stats.heapMb != null) {
+        parts.push(`heap ${stats.heapMb} MB`);
+    }
+    if (stats.timeout) {
+        parts.push('timeout');
+    }
+
+    return parts.join(' · ');
+}
+
 function buildSuggestions(features, ctx, t) {
     const seen = new Set();
 
@@ -314,6 +373,7 @@ function buildSuggestions(features, ctx, t) {
                 name,
                 info: props.info ?? props.type,
                 query: buildSuggestionQuery(props, feature.properties?.[CATEGORY_TYPE]) || name,
+                feature: hasLocation(feature) ? feature : null,
             };
         })
         .filter((suggestion) => {
@@ -328,11 +388,22 @@ function buildSuggestions(features, ctx, t) {
         .slice(0, SUGGESTIONS_LIMIT);
 }
 
+// a POI category has no location: its click searches the category
+function hasLocation(feature) {
+    const [lon, lat] = feature?.geometry?.coordinates ?? [];
+
+    return lon != null && lat != null && lon !== 0 && lat !== 0;
+}
+
 // a suggestion click runs the full search: rebuild a query specific enough to hit the picked object
 function buildSuggestionQuery({ name, info, type, city }, categoryType) {
     const cleanName = name?.trim();
     if (categoryType === searchTypeMap.POI_TYPE) {
         return cleanName;
+    }
+    if ([searchTypeMap.CITY, searchTypeMap.TOWN, searchTypeMap.VILLAGE].includes(categoryType)) {
+        // the label of a place ("Area", "City") is not a part of its name: "Kyiv Area" finds protected areas
+        return [cleanName, info === type ? null : info, city].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
     }
     const parts = [cleanName, info, city];
     if (

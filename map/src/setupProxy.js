@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 module.exports = function (app) {
     const prepare = (target) => ({ target, hostRewrite: 'localhost:3000', changeOrigin: true, logLevel: 'debug' });
 
-    const localProxy = createProxyMiddleware(prepare('http://localhost:8080'));
+    const localProxy = createProxyMiddleware(prepare(`http://localhost:${process.env.LOCAL_API_PORT || 8080}`));
 
     const testProxy = createProxyMiddleware(prepare('https://test.osmand.net'));
 
@@ -42,6 +42,11 @@ module.exports = function (app) {
     // (handy when only the router is being changed and the tiles are wanted as usual)
     if (process.env.USE_LOCAL_ROUTING) {
         routing = localProxy;
+    }
+
+    // USE_LOCAL_SEARCH=yes yarn start - everything from test.osmand.net, search from the local server
+    if (process.env.USE_LOCAL_SEARCH) {
+        search = localProxy;
     }
 
     // yarn start:fallback (prod)

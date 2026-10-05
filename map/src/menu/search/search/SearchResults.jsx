@@ -414,6 +414,7 @@ export default function SearchResults() {
             {ctx.develFeatures && ctx.searchResult?.info && (
                 <Typography className={styles.spatialInfo} id={'se-spatial-search-info'}>
                     {Object.entries(ctx.searchResult.info)
+                        .filter(([k]) => k !== 'suggestions')
                         .map(([k, v]) => `${k}: ${v}`)
                         .join(' · ')}
                 </Typography>
