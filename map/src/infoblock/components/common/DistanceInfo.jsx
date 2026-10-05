@@ -29,13 +29,13 @@ export default function DistanceInfo({ distance, bearing, isUserLocation }) {
                 className={styles.directionIcon}
                 style={{
                     transform: `rotate(${bearing ?? 0}deg)`,
-                    fill: isUserLocation ? '#237bff' : '#727272',
+                    fill: isUserLocation ? '#237bff' : '#ff8800',
                 }}
             />
             <span
                 className={styles.placeDistance}
                 style={{
-                    color: isUserLocation ? '#237bff' : '#727272',
+                    color: isUserLocation ? '#237bff' : '#ff8800',
                     whiteSpace: 'nowrap',
                 }}
             >
