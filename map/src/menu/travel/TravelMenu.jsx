@@ -318,7 +318,7 @@ export default function TravelMenu() {
             });
             return act;
         }, []);
-    }, [activities, ttx.openTravel, t]);
+    }, [activities, ttx.openTravel]);
 
     // Fetch icons for activities
     useEffect(() => {
@@ -451,7 +451,7 @@ export default function TravelMenu() {
         });
 
         return [...counts.values()].sort((a, b) => b.count - a.count);
-    }, [visibleRoutes, t]);
+    }, [visibleRoutes]);
 
     const sortedRoutes = useMemo(() => {
         const method = getSelectedSort({
