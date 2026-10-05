@@ -71,7 +71,7 @@ function formatElevation(value, ctx, t) {
     return `${Math.round(converted)} ${t(getSmallLengthUnit(ctx))}`;
 }
 
-export default function RouteSummaryCard({ routeProps, onDetails }) {
+export default function RouteSummaryCard({ routeProps, onDetails, header = null, compact = false }) {
     const ctx = useContext(AppContext);
     const { t, i18n } = useTranslation();
     const previousSummary = useRef(null);
@@ -102,7 +102,8 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
 
     return (
         <Box className={styles.routeSummary}>
-            <Box className={styles.routeSummaryInfo} id="se-route-summary-info">
+            {header}
+            <Box className={styles.routeSummaryInfo} id={compact ? undefined : 'se-route-summary-info'}>
                 {summary.distance && (
                     <Typography className={styles.routeSummaryValue}>
                         {summary.distance.value}
@@ -144,14 +145,16 @@ export default function RouteSummaryCard({ routeProps, onDetails }) {
                     </>
                 )}
             </Box>
-            {route && <NavigationSummaryGraph route={route} totalDistanceMeters={overall?.distance} />}
-            <Box sx={{ mt: '20px' }}>
-                <GrayBtnWithBlueHover
-                    id="se-route-more-information"
-                    action={onDetails}
-                    text={t('shared_string_details')}
-                />
-            </Box>
+            {!compact && route && <NavigationSummaryGraph route={route} totalDistanceMeters={overall?.distance} />}
+            {!compact && (
+                <Box sx={{ mt: '20px' }}>
+                    <GrayBtnWithBlueHover
+                        id="se-route-more-information"
+                        action={onDetails}
+                        text={t('shared_string_details')}
+                    />
+                </Box>
+            )}
         </Box>
     );
 }

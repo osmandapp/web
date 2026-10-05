@@ -13,6 +13,7 @@ import { navigationObject } from '../../store/navigationObject/navigationObject'
 import { WptIcon } from '../../infoblock/components/wpt/WptDetails';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 import { ReactComponent as HistoryIcon } from '../../assets/icons/ic_action_history.svg';
+import { ReactComponent as RoundTripIcon } from '../../assets/icons/ic_action_round_trip.svg';
 
 const HISTORY_LIMIT = 5;
 
@@ -26,6 +27,7 @@ export default function NavigationHistoryDropdown({
     onClearHistory,
     inputId,
     inputRef,
+    onRoundTrip = null,
 }) {
     const { t } = useTranslation();
     const ctx = useContext(AppContext);
@@ -72,7 +74,8 @@ export default function NavigationHistoryDropdown({
     // even if browser/location permission is disabled.
     const shouldShowCurrentLocation = isInputEmpty;
 
-    const shouldShow = isFocused && (shouldShowCurrentLocation || filteredHistory.length > 0) && !hasExactMatch;
+    const shouldShow =
+        isFocused && (shouldShowCurrentLocation || filteredHistory.length > 0 || !!onRoundTrip) && !hasExactMatch;
 
     const handleHistoryItemClick = (item, e) => {
         e.preventDefault();
@@ -145,6 +148,29 @@ export default function NavigationHistoryDropdown({
                 horizontal: 'left',
             }}
         >
+            {onRoundTrip && (
+                <>
+                    <DefaultItem
+                        key="round-trip"
+                        id={`${inputId}-round-trip`}
+                        icon={<RoundTripIcon />}
+                        name={t('web:round_trip')}
+                        className={styles.historyItem}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setShowHistory?.(false);
+                            inputRef?.current?.blur();
+                            onRoundTrip();
+                        }}
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }}
+                    />
+                    {(shouldShowCurrentLocation || filteredHistory.length > 0) && <Divider />}
+                </>
+            )}
             {shouldShowCurrentLocation && (
                 <>
                     <DefaultItem

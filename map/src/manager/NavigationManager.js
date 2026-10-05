@@ -1,4 +1,9 @@
-import { ROUTE_POINTS_FINISH, ROUTE_POINTS_START, ROUTE_POINTS_VIA } from '../store/geoRouter/profileConstants';
+import {
+    ROUTE_POINTS_FINISH,
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_VIA,
+    ROUTE_ROUND_TRIP_ENABLED,
+} from '../store/geoRouter/profileConstants';
 
 export const NAVIGATION_OBJECT_TYPE_LOCATION = 'location';
 export const NAVIGATION_OBJECT_TYPE_SEARCH = 'search';
@@ -11,6 +16,11 @@ export function pickNextRoutePoint(navObject, viaInputsCount = 0) {
     const startPoint = navObject.getOption(ROUTE_POINTS_START);
     if (!startPoint) {
         return ROUTE_POINTS_START;
+    }
+
+    // a round trip comes back to its start, a map click has nothing more to place
+    if (navObject.getOption(ROUTE_ROUND_TRIP_ENABLED)) {
+        return null;
     }
 
     const viaPoints = navObject.getOption(ROUTE_POINTS_VIA) || [];
