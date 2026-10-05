@@ -11,7 +11,7 @@ import debounce from 'lodash-es/debounce';
 import isEqual from 'lodash-es/isEqual';
 import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_INFO_CLOSE_SIZE, TRAVEL_URL } from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
-import TravelContext from '../../context/TravelContext';
+import TravelContext, { AUTO_SEARCH_RADIUS } from '../../context/TravelContext';
 import activities from '../../resources/activities.json';
 import { getActivityIcon } from '../../infoblock/components/common/ActivityType';
 import styles from './travel.module.css';
@@ -42,7 +42,13 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
 import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
-import { convertMeters, getSmallLengthUnit, SMALL_UNIT } from '../settings/units/UnitsConverter';
+import {
+    convertMeters,
+    getLargeLengthUnit,
+    getSmallLengthUnit,
+    LARGE_UNIT,
+    SMALL_UNIT,
+} from '../settings/units/UnitsConverter';
 
 export const ACTIVITY_ALL = 'all';
 export const IGNORED_GROUP = 'ignored';
@@ -100,6 +106,16 @@ const RANGE_PROPERTIES = {
 };
 // the part of the search the server answers; the ranges and the tags apply to the tracks it returned
 const SERVER_QUERY_KEYS = ['activity', 'dateFrom', 'dateTo'];
+
+// metres or feet below a kilometre, kilometres or miles from it
+export function formatRadius(meters, ctx, t) {
+    if (meters < 1000) {
+        return `${Math.round(convertMeters(meters, ctx.unitsSettings.len, SMALL_UNIT))} ${t(getSmallLengthUnit(ctx))}`;
+    }
+    const large = convertMeters(meters, ctx.unitsSettings.len, LARGE_UNIT);
+
+    return `${Number(large.toFixed(large < 10 ? 1 : 0))} ${t(getLargeLengthUnit(ctx))}`;
+}
 
 export function routeMatchesFilters(route, search) {
     const props = route.properties;
@@ -381,7 +397,7 @@ export default function TravelMenu() {
 
     function searchPointTitle() {
         const { point, res } = ttx.searchTravelRoutes;
-        const radius = `${Math.round(convertMeters(point.radius, ctx.unitsSettings.len, SMALL_UNIT))} ${t(getSmallLengthUnit(ctx))}`;
+        const radius = formatRadius(point.radius, ctx, t);
         if (res === undefined) {
             return t('web:travel_tracks_searching', { radius });
         }
@@ -391,14 +407,26 @@ export default function TravelMenu() {
         if (res.tooMany) {
             return t('web:travel_tracks_too_many', { count: res.maxRoutes, radius });
         }
+        if (res.limited) {
+            return t('web:travel_tracks_nearest', { count: visibleRoutes.length, radius });
+        }
 
         return t('web:travel_tracks_nearby', { count: visibleRoutes.length, radius });
     }
 
+    function searchPointDesc() {
+        const { res } = ttx.searchTravelRoutes;
+        if (res?.tooMany) {
+            return t('web:travel_tracks_too_many_desc');
+        }
+
+        return res?.limited ? t('web:travel_tracks_nearest_desc') : t('web:travel_search_point_desc');
+    }
+
     function resetSearch() {
-        setSortByDistance(null);
         setFilters(DEFAULT_FILTERS);
         ttx.setTravelShowStartFinish(false);
+        ttx.setTravelSearchRadius(AUTO_SEARCH_RADIUS);
         navigateToFilters(DEFAULT_FILTERS);
         runSearch(DEFAULT_FILTERS);
     }
@@ -412,6 +440,7 @@ export default function TravelMenu() {
         };
         setFilters(next);
         ttx.setTravelShowStartFinish(false);
+        ttx.setTravelSearchRadius(AUTO_SEARCH_RADIUS);
         navigateToFilters(next);
         runSearch(next);
     }
@@ -419,7 +448,10 @@ export default function TravelMenu() {
     const uploadMonths = filters.months ?? [0, LAST_MONTH];
 
     const hasActiveFilters =
-        filters.tags.length > 0 || RANGE_FILTER_KEYS.some((key) => filters[key] != null) || ttx.travelShowStartFinish;
+        filters.tags.length > 0 ||
+        RANGE_FILTER_KEYS.some((key) => filters[key] != null) ||
+        ttx.travelShowStartFinish ||
+        ttx.travelSearchRadius !== AUTO_SEARCH_RADIUS;
 
     const visibleRoutes = useMemo(
         () => travelResult?.features?.filter((route) => routeMatchesFilters(route, ttx.searchTravelRoutes)) ?? [],
@@ -576,11 +608,7 @@ export default function TravelMenu() {
                                     id="se-travel-remove-point"
                                     icon={<SearchIcon />}
                                     text={searchPointTitle()}
-                                    desc={
-                                        ttx.searchTravelRoutes.res?.tooMany
-                                            ? t('web:travel_tracks_too_many_desc')
-                                            : t('web:travel_search_point_desc')
-                                    }
+                                    desc={searchPointDesc()}
                                     btnText={t('web:travel_remove_point')}
                                     onClick={clearSearchPoint}
                                 />
