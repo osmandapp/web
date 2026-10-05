@@ -11,7 +11,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
-import { seleniumUpdateActivity } from '../../util/Utils';
+import { getPointExtensions, seleniumUpdateActivity } from '../../util/Utils';
 import {
     calculateSlopes,
     checkShowData,
@@ -77,7 +77,11 @@ export const getGraphData = ({
             }
             if (hasSpeed) {
                 speed = cloneDeep(
-                    point.speed ? point.speed : point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed
+                    point.speed
+                        ? point.speed
+                        : point.ext?.speed
+                          ? point.ext?.speed
+                          : getPointExtensions(point.ext)?.speed
                 );
                 if (speed) {
                     speed = ((Math.round(speed * 10) / 10) * 3.6).toFixed(2);

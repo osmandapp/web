@@ -27,6 +27,7 @@ import {
     LARGE_UNIT,
     SMALL_UNIT,
 } from '../../../menu/settings/units/UnitsConverter';
+import { getPointExtensions } from '../../../util/Utils';
 
 export const DEFAULT_TAG_ICON_SIZE = 24;
 export const DEFAULT_TAG_ICON_COLOR = '#727272';
@@ -188,7 +189,7 @@ async function getWptTags(obj, type, ctx) {
     let subtypeTag = null;
     let id = null;
     if (type.isFav || type.isWpt) {
-        tags = obj.ext?.extensions;
+        tags = getPointExtensions(obj.ext);
     } else if ((type.isPoi || type.isSearch) && obj.options) {
         Object.entries(obj.options).forEach(([key, value]) => {
             if (value === undefined) {

@@ -7,7 +7,7 @@ import MarkerOptions, {
     getBackground,
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
-import Utils, { getDistance, quickNaNfix } from '../util/Utils';
+import Utils, { getDistance, getPointExtensions, quickNaNfix } from '../util/Utils';
 import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
@@ -416,7 +416,7 @@ function isHidden(pointsGroups, name) {
     let group = pointsGroups[name];
     if (group?.points) {
         for (let point of group.points) {
-            if (point.ext?.extensions?.hidden === 'true') {
+            if (getPointExtensions(point.ext)?.hidden === 'true') {
                 return true;
             }
         }

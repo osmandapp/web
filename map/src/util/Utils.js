@@ -85,6 +85,25 @@ async function getFileData(file) {
     return trackData;
 }
 
+// extensions of a GPX point from the server: ext.extensions, or ext.extensionsArray ([key, value, ...])
+// since OsmAnd-shared keeps them in a flat array
+export function getPointExtensions(ext) {
+    if (ext?.extensions) {
+        return ext.extensions;
+    }
+    const arr = ext?.extensionsArray;
+    if (!Array.isArray(arr)) {
+        return undefined;
+    }
+    const res = {};
+    for (let i = 0; i + 1 < arr.length; i += 2) {
+        if (arr[i] != null) {
+            res[arr[i]] = arr[i + 1];
+        }
+    }
+    return res;
+}
+
 export const LINE_STRING = 'LineString'; // GeoJSON geometry type
 
 export const getDistance = (lat1, lon1, lat2, lon2) => {
