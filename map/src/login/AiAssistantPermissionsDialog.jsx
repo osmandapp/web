@@ -19,6 +19,24 @@ import dialogStyles from '../dialogs/dialog.module.css';
 export const READ = ':read';
 export const WRITE = ':write';
 
+// group keys come from the server; an unknown group falls back to the server text
+const SCOPE_GROUP_TEXTS = {
+    account: { title: 'login_account', description: 'web:ai_scope_account_desc' },
+    favorites: { title: 'shared_string_favorites', description: 'web:ai_scope_favorites_desc' },
+    tracks: { title: 'shared_string_tracks', description: 'web:ai_scope_tracks_desc' },
+    markers: { title: 'web:ai_scope_markers', description: 'web:ai_scope_markers_desc' },
+    osm: { title: 'web:ai_scope_osm', description: 'web:ai_scope_osm_desc' },
+    history: { title: 'web:ai_scope_history', description: 'web:ai_scope_history_desc' },
+    settings: { title: 'shared_string_settings', description: 'web:ai_scope_settings_desc' },
+    files: { title: 'web:ai_scope_files', description: 'web:ai_scope_files_desc' },
+};
+
+export function getScopeGroupTitle(t, group) {
+    const key = SCOPE_GROUP_TEXTS[group.key]?.title;
+
+    return key ? t(key) : group.title;
+}
+
 // Permissions of one connected AI assistant: View / Edit per OsmAnd Cloud group (groups come from the server).
 export default function AiAssistantPermissionsDialog({ connection, groups, onClose, onSave, onDisconnect }) {
     const { t } = useTranslation();
@@ -66,9 +84,9 @@ export default function AiAssistantPermissionsDialog({ connection, groups, onClo
                         {groups?.map((g) => (
                             <TableRow key={g.key}>
                                 <TableCell>
-                                    <Typography variant="body2">{g.title}</Typography>
+                                    <Typography variant="body2">{getScopeGroupTitle(t, g)}</Typography>
                                     <Typography variant="caption" color="text.secondary">
-                                        {g.description}
+                                        {getScopeGroupDescription(t, g)}
                                     </Typography>
                                 </TableCell>
                                 <TableCell align="center">
@@ -110,4 +128,10 @@ export default function AiAssistantPermissionsDialog({ connection, groups, onClo
             </DialogActions>
         </Dialog>
     );
+}
+
+function getScopeGroupDescription(t, group) {
+    const key = SCOPE_GROUP_TEXTS[group.key]?.description;
+
+    return key ? t(key) : group.description;
 }
