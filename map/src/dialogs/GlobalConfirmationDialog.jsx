@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import { Button, Dialog, DialogActions, DialogTitle, DialogContent } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 /*
     Example:
@@ -26,6 +27,7 @@ export function confirm({ ctx, skip, title = null, text, callback }) {
 
 export function GlobalConfirmationDialog() {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
     const confirmation = ctx.globalConfirmation;
     const setConfirmation = ctx.setGlobalConfirmation;
 
@@ -42,7 +44,7 @@ export function GlobalConfirmationDialog() {
                             sx={{ backgroundColor: '#bdbdbd' }}
                             onClick={() => setConfirmation(null)}
                         >
-                            Cancel
+                            {t('shared_string_cancel')}
                         </Button>
                         <Button
                             id="se-global-confirmation-ok"
@@ -53,7 +55,7 @@ export function GlobalConfirmationDialog() {
                                 confirmation.callback();
                             }}
                         >
-                            OK
+                            {t('shared_string_ok')}
                         </Button>
                     </DialogActions>
                 </Dialog>

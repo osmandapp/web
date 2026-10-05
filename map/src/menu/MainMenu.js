@@ -98,7 +98,7 @@ import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
 import { processDisplayTrack, resetCloudTracksMenu } from '../manager/track/TracksManager';
-import { openLoginMenu } from '../manager/LoginManager';
+import { getLoginRedirect, openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
 import {
     getFavMenuListByLayers,
@@ -233,22 +233,24 @@ export default function MainMenu({
     };
 
     useEffect(() => {
-        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ltx.openLoginMenu && !ltx.loginUser) {
-            setMenuInfo(null);
-            const params = new URLSearchParams(location.search);
-            const to = params.get('redirect');
+        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL)) {
+            // keep the redirect even while the login state is still INIT; same-site paths only
+            const to = getLoginRedirect(location.search);
             if (to) {
                 setRedirectUrl(to);
             }
-            openLoginMenu({ ctx, ltx, navigate, location });
+            if (!ltx.openLoginMenu && !ltx.loginUser) {
+                setMenuInfo(null);
+                openLoginMenu({ ctx, ltx, navigate, location });
+            }
         }
     }, [location.pathname]);
 
     useEffect(() => {
-        if (ltx.loginUser && redirectUrl) {
+        if (ltx.isLoggedIn() && redirectUrl) {
             globalThis.location.href = redirectUrl;
         }
-    }, [ltx.loginUser]);
+    }, [ltx.loginUser, redirectUrl]);
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {

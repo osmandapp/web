@@ -11,6 +11,7 @@ export const EMPTY_INPUT = '';
 export const LOGIN_LINK_PARAM = 'link';
 export const CANCEL_LOGIN_LINK_PARAM = 'cancel-link';
 export const LOGIN_LINK_EMAIL_PARAM = 'email';
+export const LOGIN_REDIRECT_PARAM = 'redirect';
 
 export async function getAccountInfo(setAccountInfo) {
     const resp = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/get-account-info`);
@@ -27,6 +28,20 @@ export function getLoginLink(search) {
     const email = params.get(LOGIN_LINK_EMAIL_PARAM);
 
     return token && email ? { token, email } : null;
+}
+
+// page to open after login (?redirect=...), this site only
+export function getLoginRedirect(search) {
+    const to = new URLSearchParams(search).get(LOGIN_REDIRECT_PARAM);
+    if (!to) {
+        return null;
+    }
+    try {
+        const url = new URL(to, globalThis.location.origin);
+        return url.origin === globalThis.location.origin ? url.href : null;
+    } catch {
+        return null;
+    }
 }
 
 function getSearchWithoutLoginLink() {
