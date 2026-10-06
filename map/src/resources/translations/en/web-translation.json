@@ -482,6 +482,8 @@
     "router_error_title": "Router error",
     "router_error_message": "Please try again or apply fewer route parameters.",
     "alt_route_label": "Route {{n}}",
+    "alt_route_fastest": "Fastest",
+    "alt_route_shortest": "Shortest",
     "alt_route_longer": "{{value}} {{unit}} longer",
     "alt_route_shorter": "{{value}} {{unit}} shorter",
     "selected_track": "Selected track",

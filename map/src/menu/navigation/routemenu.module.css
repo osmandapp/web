@@ -269,3 +269,24 @@
 .navigationSettingsItem {
     max-height: 48px !important;
 }
+
+.routeVariant {
+    cursor: pointer;
+}
+.routeVariant:hover {
+    background-color: #f5f5f5;
+}
+.routeVariantShown {
+    cursor: default;
+    /* an inset shadow marks the shown route without moving its text like a border would */
+    box-shadow: inset 3px 0 0 var(--active-color-primary-light);
+}
+.routeVariantShown:hover {
+    background-color: transparent;
+}
+.routeVariantHeader {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
