@@ -1,5 +1,4 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as LinkIcon } from '../assets/icons/ic_action_link.svg';
 import SimpleItemWithSwitch from '../frame/components/items/SimpleItemWithSwitch';
@@ -132,11 +131,7 @@ export default function AiAssistantsItem() {
                         additionalInfo={summary(c.scope)}
                         component="div"
                         onClick={() => setEditing(c)}
-                        rightSlot={
-                            <Button size="small" onClick={() => setEditing(c)}>
-                                {t('web:ai_assistant_permissions')}
-                            </Button>
-                        }
+                        rightText={t('web:ai_assistant_permissions')}
                     />
                 ))}
             {editing && (
