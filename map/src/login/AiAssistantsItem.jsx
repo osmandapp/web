@@ -1,4 +1,5 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
+import { Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as LinkIcon } from '../assets/icons/ic_action_link.svg';
 import SimpleItemWithSwitch from '../frame/components/items/SimpleItemWithSwitch';
@@ -10,6 +11,7 @@ import ButtonPro from '../frame/pro/ButtonPro';
 import { openPricingPage } from '../manager/GlobalManager';
 import { confirm } from '../dialogs/GlobalConfirmationDialog';
 import AiAssistantPermissionsDialog, { getScopeGroupTitle, READ, WRITE } from './AiAssistantPermissionsDialog';
+import configureMapStyles from '../menu/configuremap/configuremap.module.css';
 
 const OAUTH_API = `${process.env.REACT_APP_USER_API_SITE}/mapapi/oauth`;
 
@@ -121,6 +123,7 @@ export default function AiAssistantsItem() {
                 text={t('web:ai_assistants_access')}
                 checked={!!state.enabled}
                 onChange={toggle}
+                className={configureMapStyles.item}
             />
             {state.enabled &&
                 state.connections?.map((c) => (
@@ -131,7 +134,11 @@ export default function AiAssistantsItem() {
                         additionalInfo={summary(c.scope)}
                         component="div"
                         onClick={() => setEditing(c)}
-                        rightText={t('web:ai_assistant_permissions')}
+                        rightSlot={
+                            <Typography variant="body2" color="text.secondary">
+                                {t('web:ai_assistant_permissions')}
+                            </Typography>
+                        }
                     />
                 ))}
             {editing && (
