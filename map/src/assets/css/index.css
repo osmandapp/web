@@ -71,11 +71,19 @@ code {
     filter: grayscale(1) contrast(0.85) brightness(1.08);
 }
 
+.travel-search-handle {
+    box-sizing: border-box;
+    border: 2px solid #f8931d;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: ew-resize;
+}
+
 .leaflet-container.travel-search-cursor {
     cursor: crosshair;
 }
 
-.leaflet-container.travel-search-circle .leaflet-interactive {
+.leaflet-container.travel-search-circle .leaflet-interactive:not(.travel-search-handle) {
     pointer-events: none;
 }
 

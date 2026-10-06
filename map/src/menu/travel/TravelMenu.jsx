@@ -398,7 +398,7 @@ export default function TravelMenu() {
     function searchPointTitle() {
         const { point, res } = ttx.searchTravelRoutes;
         const radius = formatRadius(point.radius, ctx, t);
-        if (res === undefined) {
+        if (res === undefined || loadingResult) {
             return t('web:travel_tracks_searching', { radius });
         }
         if (res === null) {

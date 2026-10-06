@@ -157,7 +157,7 @@ export default function TravelFilters({
                     <SelectItem
                         title={t('web:travel_search_radius')}
                         value={ttx.travelSearchRadius}
-                        options={SEARCH_RADIUS_OPTIONS}
+                        options={radiusOptions(ttx.travelSearchRadius)}
                         getOptionLabel={(meters) =>
                             meters === AUTO_SEARCH_RADIUS
                                 ? t('web:travel_search_radius_auto')
@@ -233,4 +233,11 @@ export default function TravelFilters({
             </Box>
         </SecondaryMenuDrawer>
     );
+}
+
+// the menu scale plus a radius dragged on the map to a value off the scale
+function radiusOptions(radius) {
+    return SEARCH_RADIUS_OPTIONS.includes(radius)
+        ? SEARCH_RADIUS_OPTIONS
+        : [...SEARCH_RADIUS_OPTIONS, radius].sort((a, b) => a - b);
 }
