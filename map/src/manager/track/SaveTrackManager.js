@@ -167,7 +167,7 @@ export async function saveTrackToCloud({
 // nginx answers some errors with its own html page instead of the server text
 function getServerErrorMessage(res) {
     if (!res?.data || res.headers?.get('Content-Type')?.includes('text/html')) {
-        return res?.status ? `HTTP ${res.status}` : null;
+        return null;
     }
     try {
         const error = JSON.parse(res.data).error;
