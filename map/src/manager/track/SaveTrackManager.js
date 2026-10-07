@@ -112,6 +112,7 @@ export async function saveTrackToCloud({
     }
 
     if (ltx.loginUser) {
+        let serverError = null;
         if (currentFile) {
             let convertedData;
             if (currentFile.originalName.toLowerCase().endsWith(KMZ_FILE_EXT)) {
@@ -135,7 +136,10 @@ export async function saveTrackToCloud({
 
             // close possibly loaded Cloud track (clean up layers)
             ctx.mutateGpxFiles((o) => o[params.name] && (o[params.name].url = null));
-            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
+            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, {
+                params,
+                dataOnErrors: true,
+            });
             if (res?.data?.status === 'ok') {
                 if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
                     await syncCloudTrackInfo(ctx, params.name);
@@ -149,13 +153,28 @@ export async function saveTrackToCloud({
                 refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
                 return true;
             }
+            serverError = getServerErrorMessage(res);
         }
+        const msg = i18n.t('web:save_error_msg', { name: fileName });
         ctx.setTrackErrorMsg({
-            title: 'Save error',
-            msg: `Unable to save ${gpxFile?.name}`,
+            title: i18n.t('web:save_error_title'),
+            msg: serverError ? `${msg}: ${serverError}` : msg,
         });
     }
     return false;
+}
+
+// nginx answers some errors with its own html page instead of the server text
+function getServerErrorMessage(res) {
+    if (!res?.data || res.headers?.get('Content-Type')?.includes('text/html')) {
+        return res?.status ? `HTTP ${res.status}` : null;
+    }
+    try {
+        const error = JSON.parse(res.data).error;
+        return error.message ?? error;
+    } catch {
+        return res.data;
+    }
 }
 
 export function removeFileExtension(filename) {
