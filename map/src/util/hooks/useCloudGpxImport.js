@@ -14,7 +14,16 @@ export default function useCloudGpxImport() {
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
-    const canImport = useCallback(() => ltx.isProAccount(), [ltx]);
+    const canImport = useCallback(() => {
+        if (ltx.isProAccount()) {
+            return true;
+        }
+        ctx.setTrackErrorMsg({
+            title: t('web:empty_cloud_tracks'),
+            msg: t('web:empty_cloud_tracks_description'),
+        });
+        return false;
+    }, [ctx, ltx, t]);
 
     const onFilesSelected = useCallback(
         (files, folder) => {

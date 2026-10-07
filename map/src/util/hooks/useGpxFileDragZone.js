@@ -67,12 +67,13 @@ export function useGpxFileDragRootZone() {
 
 function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const { importGpxFiles } = useCloudGpxImport();
-    const guard = useGpxFileDragGuard();
+    const guard = useGpxFileDragGuard(hoverFolder !== null || overMap);
 
     const onDragEnter = useCallback(
         (e) => {
-            if (disabled || !guard(e)) {
+            if (disabled || !guard(e) || !ltx.isProAccount()) {
                 return;
             }
             ctx.setGpxFileDrag((prev) => {
@@ -83,7 +84,7 @@ function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
                 return { active: true, hoverFolder, overMap };
             });
         },
-        [ctx, guard, hoverFolder, overMap, disabled]
+        [ctx, ltx, guard, hoverFolder, overMap, disabled]
     );
 
     const onDrop = useCallback(
@@ -112,12 +113,14 @@ function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
     );
 }
 
-function useGpxFileDragGuard() {
+// a drop from a free account is accepted to show that OsmAnd Pro is needed
+function useGpxFileDragGuard(acceptFreeAccount = false) {
     const ltx = useContext(LoginContext);
 
     return useCallback(
         (e) => {
-            if (!hasFiles(e) || !ltx.isProAccount()) {
+            const allowed = acceptFreeAccount ? ltx.isLoggedIn() : ltx.isProAccount();
+            if (!hasFiles(e) || !allowed) {
                 return false;
             }
             e.preventDefault();
@@ -128,6 +131,6 @@ function useGpxFileDragGuard() {
 
             return true;
         },
-        [ltx]
+        [ltx, acceptFreeAccount]
     );
 }
