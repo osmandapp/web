@@ -49,7 +49,12 @@ import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRe
 import { useNavigate } from 'react-router-dom';
 import { searchByWordApi, getMapsFromUrl, searchUserDataApi } from '../../manager/SearchApi';
 import { fitBoundsOptions } from '../../manager/track/TracksManager';
-import { FAVORITE_HIT_GROUP_ID, searchTypeMap, USER_OBJECT_TYPES } from '../../manager/searchConstants';
+import {
+    FAVORITE_HIT_GROUP_ID,
+    searchTypeMap,
+    splitTypoSuggestion,
+    USER_OBJECT_TYPES,
+} from '../../manager/searchConstants';
 import {
     getAdditionalMatchedAmenityObjects,
     getMatchedAmenityProperties,
@@ -300,8 +305,9 @@ export default function SearchLayer() {
             return;
         }
         const { features, favoriteGroupIds } = buildUserDataFeatures(result.userData);
+        const { typoSuggestion, objects } = splitTypoSuggestion(result.data?.features);
         ctx.setSearchFavoriteGroupIds(favoriteGroupIds);
-        ctx.setSearchResult({ ...result.data, features: [...features, ...(result.data?.features ?? [])] });
+        ctx.setSearchResult({ ...result.data, typoSuggestion, features: [...features, ...objects] });
     }
 
     // Server matches, ranks and limits tracks, favorites and waypoints of opened tracks
