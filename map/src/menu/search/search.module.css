@@ -456,3 +456,16 @@
     color: var(--text-secondary);
     font-weight: 400;
 }
+
+.typoSuggestion {
+    flex: none !important;
+    min-height: 48px;
+    padding: 8px 16px !important;
+}
+
+.typoSuggestionIcon {
+    min-width: 40px !important;
+    fill: var(--selected-color) !important;
+    vertical-align: middle;
+    margin-right: 8px;
+}

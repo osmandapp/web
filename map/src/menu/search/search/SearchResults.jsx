@@ -11,7 +11,8 @@ import PoiManager, {
 } from '../../../manager/PoiManager';
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, ListItemButton, ListItemIcon, Typography } from '@mui/material';
+import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
 import SelectItemBoolean from '../../../frame/components/items/SelectItemBoolean';
 import VirtualizedList from '../../../frame/components/VirtualizedList';
 import styles from '../search.module.css';
@@ -111,7 +112,8 @@ export default function SearchResults() {
     const { classicSearch, setClassicSearch } = useSpatialSearch();
     const navigate = useNavigate();
 
-    const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute, location } = useSearchNav();
+    const { params, navigateToSearchMenu, navigateToSearchResults, isSearchEqualToUrl, isSearchResultRoute, location } =
+        useSearchNav();
     const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
     const useSpatialSearchResults = !params.type && ctx.spatialSearch;
     const { hasMapView, requestMapViewPop } = useZoomToFit();
@@ -419,6 +421,18 @@ export default function SearchResults() {
                 </Typography>
             )}
             {(ctx.processingSearch || resulNotPrepared() || staleResult) && <Loading />}
+            {ctx.searchResult?.typoSuggestion && !ctx.processingSearch && !staleResult && (
+                <ListItemButton
+                    id={'se-search-typo-suggestion'}
+                    className={styles.typoSuggestion}
+                    onClick={() => navigateToSearchResults({ query: ctx.searchResult.typoSuggestion })}
+                >
+                    <ListItemIcon className={styles.typoSuggestionIcon}>
+                        <SearchIcon />
+                    </ListItemIcon>
+                    <Typography noWrap>{ctx.searchResult.typoSuggestion}</Typography>
+                </ListItemButton>
+            )}
             {(hasSearchParams || result === EMPTY_SEARCH_RESULT) &&
                 !ctx.processingSearch &&
                 !reopenSearchResult() &&
