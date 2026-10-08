@@ -407,6 +407,8 @@
   "all_changes_will_be_lost": "Toutes les modifications seront perdues.",
   "keep_editing": "Continuer l'édition",
   "shared_string_exit": "Quitter",
+  "coming_soon": "Bientôt disponible",
+  "coming_soon_description": "Cette section est encore en cours de développement. Suivez l'actualité d'OsmAnd pour être le premier à l'essayer.",
   "sourceHash": {
     "message": "8e3da29f0bfd6ae448f09d0c89b04acdddd251ba4cc371057d559392eb5828f1"
   }

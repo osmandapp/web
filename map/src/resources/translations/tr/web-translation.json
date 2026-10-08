@@ -407,6 +407,8 @@
   "all_changes_will_be_lost": "Tüm değişiklikler kaybolacak.",
   "keep_editing": "Düzenlemeye devam et",
   "shared_string_exit": "Çık",
+  "coming_soon": "Çok yakında",
+  "coming_soon_description": "Bu bölüm hâlâ geliştirme aşamasında. İlk deneyenlerden olmak için OsmAnd haberlerini takip edin.",
   "sourceHash": {
     "message": "8e3da29f0bfd6ae448f09d0c89b04acdddd251ba4cc371057d559392eb5828f1"
   }
