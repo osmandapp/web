@@ -407,8 +407,6 @@
   "all_changes_will_be_lost": "Усі зміни буде втрачено.",
   "keep_editing": "Продовжити редагування",
   "shared_string_exit": "Вийти",
-  "coming_soon": "Незабаром",
-  "coming_soon_description": "Цей розділ ще в розробці. Стежте за новинами OsmAnd, щоб спробувати його першими.",
   "sourceHash": {
     "message": "8e3da29f0bfd6ae448f09d0c89b04acdddd251ba4cc371057d559392eb5828f1"
   }
