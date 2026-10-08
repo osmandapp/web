@@ -14,16 +14,7 @@ export default function useCloudGpxImport() {
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
-    const canImport = useCallback(() => {
-        if (ltx.isProAccount()) {
-            return true;
-        }
-        ctx.setTrackErrorMsg({
-            title: t('web:empty_cloud_tracks'),
-            msg: t('web:empty_cloud_tracks_description'),
-        });
-        return false;
-    }, [ctx, ltx, t]);
+    const canImport = useCallback(() => ltx.isProAccount(), [ltx]);
 
     const onFilesSelected = useCallback(
         (files, folder) => {
@@ -124,7 +115,7 @@ export default function useCloudGpxImport() {
     });
 }
 
-function isCloudTrackFile(file) {
+export function isCloudTrackFile(file) {
     const name = file?.name?.toLowerCase() ?? '';
 
     return CLOUD_TRACK_EXTENSIONS.some((ext) => name.endsWith(ext));
