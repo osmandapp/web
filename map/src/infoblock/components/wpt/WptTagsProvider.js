@@ -51,6 +51,7 @@ const MOBILE = 'mobile';
 const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
+export const SOCKET = 'socket';
 export const CUISINE_PREFIX = 'cuisine_';
 export const IMAGE_OSM_TAG = 'image';
 export const MAPILLARY_OSM_TAG = 'mapillary';
@@ -244,6 +245,9 @@ async function getWptTags(obj, type, ctx) {
             if (entry.otherLangs?.length) {
                 tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag, entry.key);
             }
+            if (entry.entries?.length) {
+                tagObj.entries = entry.entries;
+            }
 
             res.push(tagObj);
         }
@@ -302,6 +306,10 @@ async function getTagIconProps({ key, value, lang, ctx }) {
             return { icon: <WikipediaIcon /> };
         case CUISINE:
             return { icon: <CuisineIcon /> };
+        case SOCKET: {
+            const svgData = await getSvgIcon({ key: SOCKET, value: 'charging_station', ctx });
+            return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
+        }
         case SERVICE_TIMES:
         case COLLECTION_TIMES:
             return { icon: <TimeIcon />, needLinks: false, textPrefix: value };
