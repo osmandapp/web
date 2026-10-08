@@ -178,7 +178,9 @@ export async function apiGet(url, options = null) {
 
     // got blocked redirect
     if (response.type === 'opaqueredirect') {
-        globalNavigate(LOGIN_LOGOUT_URL);
+        if (process.env.REACT_APP_SKIP_LOGIN !== 'yes') {
+            globalNavigate(LOGIN_LOGOUT_URL);
+        }
         console.error('fetch-redirect-stop', url);
         const ret = Object.assign(response, { text: () => null, json: () => null, blob: () => null, data: null });
         if (options?.throwErrors) {
