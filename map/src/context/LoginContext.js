@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getAccountInfo, INIT_LOGIN_STATE, FREE_ACCOUNT } from '../manager/LoginManager';
+import { getAccountInfo, INIT_LOGIN_STATE, FREE_ACCOUNT, SKIP_LOGIN, SKIP_LOGIN_USER } from '../manager/LoginManager';
 import { apiGet } from '../util/HttpApi';
 import useCookie from 'react-use-cookie';
 
@@ -32,11 +32,11 @@ async function syncSessionFromServer({ setLoginUser, setLoginRoles, setEmailCook
 }
 
 export const LoginContextProvider = ({ children }) => {
-    const [loginUser, setLoginUser] = useState(INIT_LOGIN_STATE);
+    const [loginUser, setLoginUser] = useState(SKIP_LOGIN ? SKIP_LOGIN_USER : INIT_LOGIN_STATE);
     const [loginRoles, setLoginRoles] = useState(null);
     const [openLoginMenu, setOpenLoginMenu] = useState(false);
     const [loginState, setLoginState] = useState({ default: true });
-    const [accountInfo, setAccountInfo] = useState(null);
+    const [accountInfo, setAccountInfo] = useState(SKIP_LOGIN ? { account: FREE_ACCOUNT } : null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [loginError, setLoginError] = useState(null);
     const [openChangeEmailDialog, setOpenChangeEmailDialog] = useState(false);
@@ -50,6 +50,9 @@ export const LoginContextProvider = ({ children }) => {
     const isAdmin = () => Boolean(loginRoles?.includes('ROLE_ADMIN'));
 
     useEffect(() => {
+        if (SKIP_LOGIN) {
+            return;
+        }
         syncSessionFromServer({
             setLoginUser,
             setLoginRoles,
