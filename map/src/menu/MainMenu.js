@@ -34,6 +34,7 @@ import AppContext, {
 import TravelContext from '../context/TravelContext';
 import TracksMenu from './tracks/TracksMenu';
 import VisibleTracks from './visibletracks/VisibleTracks';
+import Empty from './errors/Empty';
 import ConfigureMap from './configuremap/ConfigureMap';
 import NavigationMenu from './navigation/NavigationMenu';
 import { matchPath, useLocation, useNavigate, useOutlet, useParams, useSearchParams } from 'react-router-dom';
@@ -593,8 +594,8 @@ export default function MainMenu({
     }, [ctx.closeSelectedMenu]);
 
     useEffect(() => {
-        ttx.setOpenTravel(selectedType === OBJECT_TYPE_TRAVEL && ltx.isLoggedIn());
-    }, [selectedType, ltx.loginUser]);
+        ttx.setOpenTravel(ctx.develFeatures && selectedType === OBJECT_TYPE_TRAVEL && ltx.isLoggedIn());
+    }, [ctx.develFeatures, selectedType, ltx.loginUser]);
 
     useEffect(() => {
         openMenuObject();
@@ -1158,8 +1159,18 @@ export default function MainMenu({
                             }}
                         >
                             {items.map((item) => {
-                                if (!item.show) return null;
-                                const display = selectedType === item.type ? 'block' : 'none';
+                                const selected = selectedType === item.type;
+                                if (!item.show) {
+                                    return selected ? (
+                                        <Empty
+                                            key={item.type}
+                                            title={t('web:coming_soon')}
+                                            text={t('web:coming_soon_description')}
+                                            checkLogin={false}
+                                        />
+                                    ) : null;
+                                }
+                                const display = selected ? 'block' : 'none';
                                 const id = `se-menu-component-${item.type}-${display}`;
 
                                 return (

@@ -407,6 +407,8 @@
   "all_changes_will_be_lost": "ستفقد جميع التغييرات.",
   "keep_editing": "متابعة التعديل",
   "shared_string_exit": "خروج",
+  "coming_soon": "قريبًا",
+  "coming_soon_description": "هذا القسم لا يزال قيد التطوير. تابع أخبار OsmAnd لتكون أول من يجرّبه.",
   "sourceHash": {
     "message": "8e3da29f0bfd6ae448f09d0c89b04acdddd251ba4cc371057d559392eb5828f1"
   }
