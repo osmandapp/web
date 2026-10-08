@@ -80,7 +80,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     function wrapValueInLink(tag, value) {
         if (tag.isPhoneNumber) {
             return (
-                <Link href={`tel:${value}`} target="_blank" rel="noopener noreferrer">
+                <Link href={`tel:${value.replace(/\s/g, '')}`} target="_blank" rel="noopener noreferrer">
                     {value}
                 </Link>
             );
