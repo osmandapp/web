@@ -115,7 +115,7 @@ export default function useCloudGpxImport() {
     });
 }
 
-function isCloudTrackFile(file) {
+export function isCloudTrackFile(file) {
     const name = file?.name?.toLowerCase() ?? '';
 
     return CLOUD_TRACK_EXTENSIONS.some((ext) => name.endsWith(ext));
