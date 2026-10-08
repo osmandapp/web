@@ -10,7 +10,6 @@ import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
 import capitalize from 'lodash-es/capitalize';
-import { formatPhoneNumber } from '../../../util/phoneFmt';
 import { translateWithSplit } from '../../../manager/PoiManager';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
 import { sanitizeHtml, stripHtml, textToHTML } from '../../../frame/components/editor/htmlUtils';
@@ -81,8 +80,8 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     function wrapValueInLink(tag, value) {
         if (tag.isPhoneNumber) {
             return (
-                <Link href={`tel:${value}`} target="_blank" rel="noopener noreferrer">
-                    {formatPhoneNumber(value)}
+                <Link href={`tel:${value.replace(/\s/g, '')}`} target="_blank" rel="noopener noreferrer">
+                    {value}
                 </Link>
             );
         }
