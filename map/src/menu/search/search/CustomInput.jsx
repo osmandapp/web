@@ -131,7 +131,7 @@ export default function CustomInput({
         });
         if (response?.ok) {
             const data = await response.json();
-            setSuggestions(buildSuggestions(data?.features, ctx, t));
+            setSuggestions(buildSuggestions(data, ctx, t));
             setHighlightedIndex(-1);
         } else if (!response?.aborted) {
             clearSuggestions();
@@ -287,6 +287,7 @@ export default function CustomInput({
                                     className={styles.autocompleteSelectText}
                                     title={`${suggestion.name}${suggestion.info ? ` · ${suggestion.info}` : ''}`}
                                 >
+                                    {suggestion.typo && <SearchIcon className={styles.typoSuggestionIcon} />}
                                     <span className={styles.autocompleteSelectName}>{suggestion.name}</span>
                                     {suggestion.info && (
                                         <span className={styles.autocompleteSelectInfo}> · {suggestion.info}</span>
@@ -301,10 +302,10 @@ export default function CustomInput({
     );
 }
 
-function buildSuggestions(features, ctx, t) {
+function buildSuggestions(data, ctx, t) {
     const seen = new Set();
 
-    return (features ?? [])
+    const suggestions = (data?.features ?? [])
         .filter((feature) => feature?.properties?.[WEB_VISIBLE_LEVEL] === 0)
         .map((feature) => {
             const props = getPropsFromSearchResultItem(feature.properties, t, null, ctx.listFiles, ctx.unitsSettings);
@@ -326,6 +327,9 @@ function buildSuggestions(features, ctx, t) {
             return true;
         })
         .slice(0, SUGGESTIONS_LIMIT);
+    // "did you mean": the corrected query first, with a search icon
+    const typo = data?.typoSuggestion;
+    return typo ? [{ name: typo, query: typo, typo: true }, ...suggestions] : suggestions;
 }
 
 // a suggestion click runs the full search: rebuild a query specific enough to hit the picked object
