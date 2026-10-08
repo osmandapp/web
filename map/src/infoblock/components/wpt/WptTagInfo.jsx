@@ -12,7 +12,7 @@ import AppContext from '../../../context/AppContext';
 import capitalize from 'lodash-es/capitalize';
 import { translateWithSplit } from '../../../manager/PoiManager';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
-import { sanitizeHtml, stripHtml, textToHTML } from '../../../frame/components/editor/htmlUtils';
+import { sanitizeHtml, htmlToText, textToHTML } from '../../../frame/components/editor/htmlUtils';
 
 export default function WptTagInfo({ tag = null, baseTag = null, copy = false, setDevWikiContent = null }) {
     const ctx = useContext(AppContext);
@@ -318,11 +318,11 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                                     placement="bottom"
                                     open={hover && copy}
                                     onClick={() =>
-                                        handleCopy(baseTag.isDesc ? stripHtml(baseTag.value) : baseTag.value)
+                                        handleCopy(baseTag.isDesc ? htmlToText(baseTag.value) : baseTag.value)
                                     }
                                 >
                                     <MenuItemWithLines
-                                        name={baseTag.isDesc ? stripHtml(baseTag.value) : baseTag.value}
+                                        name={baseTag.isDesc ? htmlToText(baseTag.value) : baseTag.value}
                                         maxLines={3}
                                         className={styles.tagName}
                                     />
