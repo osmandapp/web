@@ -205,7 +205,34 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         return capitalize(key);
     }
 
+    // a group of tags with values, e.g. socket: one row per socket type ("Type 2", "4 × 22 kW")
+    function getGroupValue(tag) {
+        const entryName = (entry) => translateWithSplit(t, `${POI_PREFIX}${entry.key}`);
+        const single = tag.entries.length === 1 ? tag.entries[0] : null;
+        const value = single
+            ? [entryName(single), single.value].filter(Boolean).join(': ')
+            : tag.entries.map(entryName).join(' • ');
+        return (
+            <>
+                <ListItemText onClick={() => setOpen(!open)}>
+                    <MenuItemWithLines
+                        name={getTranslation({ key: tag.key })}
+                        maxLines={2}
+                        className={styles.tagPrefix}
+                    />
+                    <MenuItemWithLines name={value} maxLines={2} className={styles.tagName} />
+                </ListItemText>
+                {!single && (
+                    <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
+                )}
+            </>
+        );
+    }
+
     function getValue(tag) {
+        if (tag.entries) {
+            return getGroupValue(tag);
+        }
         let value = prepareValueFromList(tag);
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
@@ -332,6 +359,24 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         </ListItemText>
                     </MenuItem>
                 </div>
+            )}
+            {tag?.entries?.length > 1 && (
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                    {tag.entries.map((entry) => (
+                        <MenuItem key={entry.key} disableRipple divider className={styles.tagItem}>
+                            <ListItemText>
+                                <MenuItemWithLines
+                                    name={translateWithSplit(t, `${POI_PREFIX}${entry.key}`)}
+                                    maxLines={1}
+                                    className={styles.tagPrefix}
+                                />
+                                {entry.value && (
+                                    <MenuItemWithLines name={entry.value} maxLines={2} className={styles.tagName} />
+                                )}
+                            </ListItemText>
+                        </MenuItem>
+                    ))}
+                </Collapse>
             )}
             {tagList && (
                 <Collapse in={open} timeout="auto" unmountOnExit>
