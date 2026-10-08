@@ -3,7 +3,10 @@ import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
 import { GPX_FILE_DRAG_IDLE, hasFiles } from '../../frame/TracksFileDragController';
 import { IMPORT_FOLDER_NAME } from '../../manager/track/TracksManager';
-import useCloudGpxImport from './useCloudGpxImport';
+import useCloudGpxImport, { isCloudTrackFile } from './useCloudGpxImport';
+import i18n from '../../i18n';
+
+const DROP_NEEDS_PRO = 'needs-pro';
 
 export function useGpxFileDragZone(hoverFolder) {
     return useGpxFileDragStateHandler(hoverFolder, false, hoverFolder == null);
@@ -67,13 +70,12 @@ export function useGpxFileDragRootZone() {
 
 function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
     const ctx = useContext(AppContext);
-    const ltx = useContext(LoginContext);
     const { importGpxFiles } = useCloudGpxImport();
     const guard = useGpxFileDragGuard(hoverFolder !== null || overMap);
 
     const onDragEnter = useCallback(
         (e) => {
-            if (disabled || !guard(e) || !ltx.isProAccount()) {
+            if (disabled || guard(e) !== true) {
                 return;
             }
             ctx.setGpxFileDrag((prev) => {
@@ -84,15 +86,25 @@ function useGpxFileDragStateHandler(hoverFolder, overMap, disabled = false) {
                 return { active: true, hoverFolder, overMap };
             });
         },
-        [ctx, ltx, guard, hoverFolder, overMap, disabled]
+        [ctx, guard, hoverFolder, overMap, disabled]
     );
 
     const onDrop = useCallback(
         (e) => {
-            if (disabled || !guard(e)) {
+            const drop = !disabled && guard(e);
+            if (!drop) {
                 return;
             }
             const files = Array.from(e.dataTransfer?.files || []);
+            if (drop === DROP_NEEDS_PRO) {
+                if (files.some(isCloudTrackFile)) {
+                    ctx.setTrackErrorMsg({
+                        title: i18n.t('web:empty_cloud_tracks'),
+                        msg: i18n.t('web:empty_cloud_tracks_description'),
+                    });
+                }
+                return;
+            }
             if (hoverFolder !== null) {
                 importGpxFiles(files, hoverFolder);
             } else if (overMap) {
@@ -119,8 +131,8 @@ function useGpxFileDragGuard(acceptFreeAccount = false) {
 
     return useCallback(
         (e) => {
-            const allowed = acceptFreeAccount ? ltx.isLoggedIn() : ltx.isProAccount();
-            if (!hasFiles(e) || !allowed) {
+            const isPro = ltx.isProAccount();
+            if (!hasFiles(e) || !(isPro || (acceptFreeAccount && ltx.isLoggedIn()))) {
                 return false;
             }
             e.preventDefault();
@@ -129,7 +141,7 @@ function useGpxFileDragGuard(acceptFreeAccount = false) {
                 e.dataTransfer.dropEffect = 'copy';
             }
 
-            return true;
+            return isPro || DROP_NEEDS_PRO;
         },
         [ltx, acceptFreeAccount]
     );
