@@ -23,8 +23,6 @@ export const searchTypeMap = {
     GPX_TRACK: 'GPX_TRACK',
     FAVORITE: 'FAVORITE',
     WPT: 'WPT',
-    // "did you mean": the query with a misspelled word corrected, not an object on the map
-    SUGGESTION: 'SUGGESTION',
 };
 
 export const typeIconMap = {
@@ -41,17 +39,3 @@ export const USER_OBJECT_TYPES = new Set([searchTypeMap.FAVORITE, searchTypeMap.
 export const WPT_TRACK_FILE = 'wptTrackFile';
 export const WPT_TRACK_SHARED = 'wptTrackShared';
 export const FAVORITE_HIT_GROUP_ID = 'favoriteHitGroupId';
-
-// the server puts the corrected query among the features: it is kept apart from the objects of the list and the map
-export function splitTypoSuggestion(features, typeKey = 'web_type', nameKey = 'web_name') {
-    const objects = [];
-    let typoSuggestion = null;
-    for (const f of features ?? []) {
-        if (f?.properties?.[typeKey] === searchTypeMap.SUGGESTION) {
-            typoSuggestion = typoSuggestion ?? f.properties[nameKey];
-        } else {
-            objects.push(f);
-        }
-    }
-    return { typoSuggestion, objects };
-}

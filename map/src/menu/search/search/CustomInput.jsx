@@ -13,7 +13,7 @@ import { LOCATION_UNAVAILABLE } from '../../../manager/FavoritesManager';
 import { searchByWordApi, getMapsFromUrl } from '../../../manager/SearchApi';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
 import { useGeoLocation } from '../../../util/hooks/useGeoLocation';
-import { SEARCH_TYPE_CATEGORY, searchTypeMap, splitTypoSuggestion } from '../../../manager/searchConstants';
+import { SEARCH_TYPE_CATEGORY, searchTypeMap } from '../../../manager/searchConstants';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
 import { abortApiRequest } from '../../../util/HttpApi';
 import { debouncer } from '../../../context/TracksRoutingCache';
@@ -131,7 +131,7 @@ export default function CustomInput({
         });
         if (response?.ok) {
             const data = await response.json();
-            setSuggestions(buildSuggestions(data?.features, ctx, t));
+            setSuggestions(buildSuggestions(data, ctx, t));
             setHighlightedIndex(-1);
         } else if (!response?.aborted) {
             clearSuggestions();
@@ -302,11 +302,10 @@ export default function CustomInput({
     );
 }
 
-function buildSuggestions(features, ctx, t) {
+function buildSuggestions(data, ctx, t) {
     const seen = new Set();
-    const { typoSuggestion, objects } = splitTypoSuggestion(features);
 
-    const suggestions = objects
+    const suggestions = (data?.features ?? [])
         .filter((feature) => feature?.properties?.[WEB_VISIBLE_LEVEL] === 0)
         .map((feature) => {
             const props = getPropsFromSearchResultItem(feature.properties, t, null, ctx.listFiles, ctx.unitsSettings);
@@ -329,7 +328,8 @@ function buildSuggestions(features, ctx, t) {
         })
         .slice(0, SUGGESTIONS_LIMIT);
     // "did you mean": the corrected query first, with a search icon
-    return typoSuggestion ? [{ name: typoSuggestion, query: typoSuggestion, typo: true }, ...suggestions] : suggestions;
+    const typo = data?.typoSuggestion;
+    return typo ? [{ name: typo, query: typo, typo: true }, ...suggestions] : suggestions;
 }
 
 // a suggestion click runs the full search: rebuild a query specific enough to hit the picked object
