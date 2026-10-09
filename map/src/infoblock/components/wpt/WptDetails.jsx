@@ -555,6 +555,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             sharedWithMe: selectedWpt.file?.sharedWithMe,
             name: currentWpt.name,
             desc: currentWpt.desc,
+            comment: currentWpt.ext?.metadata?.comment,
             hidden: currentWpt.hidden,
             latlon: getCoordsFromWpt(currentWpt),
             marker: currentWpt.marker,
@@ -1136,6 +1137,16 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                             name: t('shared_string_description'),
                                             value: wpt.desc,
                                             isDesc: true,
+                                        }}
+                                    />
+                                )}
+                                {wpt.comment && (
+                                    <WptTagInfo
+                                        key={'comment'}
+                                        baseTag={{
+                                            icon: <DescriptionIcon />,
+                                            name: t('poi_dialog_comment'),
+                                            value: wpt.comment,
                                         }}
                                     />
                                 )}
