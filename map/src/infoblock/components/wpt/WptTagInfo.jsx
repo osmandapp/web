@@ -202,7 +202,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             }
             return capitalize(translateWithSplit(i18n.t, 'web:lang_local'));
         }
-        return capitalize(key);
+        return capitalize(key.replaceAll('_', ' '));
     }
 
     function getValue(tag) {
