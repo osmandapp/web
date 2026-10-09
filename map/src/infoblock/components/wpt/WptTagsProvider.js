@@ -15,7 +15,7 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, getIconNameForPoiType, parseTagWithLang, updatePoiCache } from '../../../manager/PoiManager';
+import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
@@ -325,35 +325,22 @@ async function getTagIconProps({ key, value, lang, ctx }) {
         case 'internet_access_fee_yes':
             return { icon: <InternetIcon /> };
         default:
-            if (isCustomNamespaceTag(key)) {
+            if (isCustomNamespaceTag(key, lang)) {
                 return getCustomNamespaceTagProps(key);
             }
             return await getOtherTagIconProps({ key, value, lang, ctx });
     }
 }
 
-// a tag of an external GPX namespace ("test:country", "gpxx:city")
-function isCustomNamespaceTag(key) {
-    const colon = key.indexOf(':');
-    if (colon <= 0) {
-        return false;
-    }
-    return (
-        !i18n.exists(`${POI_PREFIX}${key.slice(0, colon)}`) && !i18n.exists(`${POI_PREFIX}${key.replaceAll(':', '_')}`)
-    );
+// the server splits "type:lang" keys, so a key that still has a colon belongs to an external GPX namespace
+function isCustomNamespaceTag(key, lang) {
+    return !lang && key.indexOf(':') > 0;
 }
 
-// the local name is the label, the value is shown as stored
 function getCustomNamespaceTagProps(key) {
-    const localName = key.slice(key.indexOf(':') + 1);
-    const textPrefix = i18n.exists(`${POI_PREFIX}${localName}`) ? localName : localName.replaceAll('_', ' ');
     return {
-        icon: (
-            <InfoIcon
-                style={{ width: DEFAULT_TAG_ICON_SIZE, height: DEFAULT_TAG_ICON_SIZE, fill: DEFAULT_TAG_ICON_COLOR }}
-            />
-        ),
-        textPrefix,
+        icon: getIcon(null, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR),
+        textPrefix: key.slice(key.indexOf(':') + 1),
     };
 }
 
@@ -366,7 +353,7 @@ async function getOtherTagIconProps({ key, value, lang, ctx }) {
         const svgData = await getSvgIcon({ value: prepValue, ctx });
         return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
     }
-    if (lang || parseTagWithLang(key).lang) {
+    if (lang) {
         return { icon: <DisplayLanguageIcon /> };
     }
     const svgData = await getSvgIcon({ key, value, ctx });
