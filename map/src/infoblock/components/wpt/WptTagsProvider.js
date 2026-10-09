@@ -325,8 +325,36 @@ async function getTagIconProps({ key, value, lang, ctx }) {
         case 'internet_access_fee_yes':
             return { icon: <InternetIcon /> };
         default:
+            if (isCustomNamespaceTag(key)) {
+                return getCustomNamespaceTagProps(key);
+            }
             return await getOtherTagIconProps({ key, value, lang, ctx });
     }
+}
+
+// a tag of an external GPX namespace ("test:country", "gpxx:city")
+function isCustomNamespaceTag(key) {
+    const colon = key.indexOf(':');
+    if (colon <= 0) {
+        return false;
+    }
+    return (
+        !i18n.exists(`${POI_PREFIX}${key.slice(0, colon)}`) && !i18n.exists(`${POI_PREFIX}${key.replaceAll(':', '_')}`)
+    );
+}
+
+// the local name is the label, the value is shown as stored
+function getCustomNamespaceTagProps(key) {
+    const localName = key.slice(key.indexOf(':') + 1);
+    const textPrefix = i18n.exists(`${POI_PREFIX}${localName}`) ? localName : localName.replaceAll('_', ' ');
+    return {
+        icon: (
+            <InfoIcon
+                style={{ width: DEFAULT_TAG_ICON_SIZE, height: DEFAULT_TAG_ICON_SIZE, fill: DEFAULT_TAG_ICON_COLOR }}
+            />
+        ),
+        textPrefix,
+    };
 }
 
 async function getOtherTagIconProps({ key, value, lang, ctx }) {
