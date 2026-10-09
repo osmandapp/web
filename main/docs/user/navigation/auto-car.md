@@ -330,19 +330,26 @@ To enable or disable [**Route info** for an intermediate point (next stop)](#nex
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* and OsmAnd offer the ability to adjust the map to match lighting conditions. In *Day map mode*, the color scheme remains bright and contrasting, making it easier to read even in bright sunlight. In *Night mode*, the maps become darker, which helps the driver navigate better in the dark.  
 
-OsmAnd has [map mode](../map/vector-maps.md#map-mode) options, but when you use the app in *Android Auto*, these options are ignored. Instead, the mode you selected in the *Android Auto* system settings for maps is used.
+OsmAnd in *Android Auto* has its own map mode setting, separate from the [map mode](../map/vector-maps.md#map-mode) options in the OsmAnd app on your device. To change it, go to *Android Auto (OsmAnd) → Setting button → Map mode*, select an option, and tap *Apply*. The map switches to the selected mode after you tap *Apply*. If you leave the screen with the back arrow without tapping *Apply*, the previous mode remains selected.
 
-- Select Day mode or Night mode to keep the map display unchanged.
-- If you want the map display mode to switch depending on the time of day, select Automatic mode.  
+- Select *Day* or *Night* to keep the map display unchanged, regardless of signals from your vehicle.
+- If you want the map display mode to switch automatically based on signals from your vehicle, select *Automatic* (default).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Map Magnifier {#map-magnifier}
+
+![Android Auto Map Magnifier](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+*Map magnifier* changes the magnification of the map on the *Android Auto* screen. To change it, go to *Android Auto (OsmAnd) → Setting button → Map magnifier*, select a value from 50% to 125%, and tap *Apply*. The current value is shown under *Map magnifier* in the settings list.  
+
+To learn how magnification affects the map display, see [Map magnifier](../map/vector-maps.md#map-magnifier).
 
 
 ### Split-Screen {#split-screen}
@@ -356,8 +363,6 @@ The OsmAnd app can be opened and used to navigate in *Android Auto* on the vehic
 3. Find Multi window and choose switch.
 4. Return to the home screen.  
 
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 In Android Auto settings, you can change the position of the taskbar and the layout of the home screen:
