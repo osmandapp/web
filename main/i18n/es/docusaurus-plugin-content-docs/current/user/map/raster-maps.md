@@ -252,11 +252,11 @@ Aquí están los parámetros clave para configurar al establecer una nueva fuent
 
 Los mapas en línea se pueden agregar con un enlace especial a la lista de mapas ráster de OsmAnd. Haga clic en este enlace y elija OsmAnd para abrirlo:
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |Parámetro del enlace|Ejemplo|
 |:--------|:---------------|
-| [Parte constante]| `http://osmand.net/add-tile-source` |
+| [Parte constante]| `https://osmand.net/add-tile-source` |
 |[Separadores]| ?   & |
 |[Nombre]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|

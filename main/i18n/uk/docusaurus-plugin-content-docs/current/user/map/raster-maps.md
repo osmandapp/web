@@ -252,11 +252,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Онлайн-карти можна додати за допомогою спеціального посилання до списку растрових карт OsmAnd. Натисніть на це посилання та виберіть OsmAnd для відкриття:
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |Параметр посилання|Приклад|
 |:--------|:---------------|
-| [Постійна частина]| `http://osmand.net/add-tile-source` |
+| [Постійна частина]| `https://osmand.net/add-tile-source` |
 |[Розділювачі]| ?   & |
 |[Назва]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|
