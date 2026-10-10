@@ -96,7 +96,7 @@ In 2021 we’ve implemented the possibility to use custom Online Routing and swi
 
 ## 2021 Achievements
 
-Let’s first take a look at what was in the original 2021 resolutions list which nearly doesn’t cover all features implemented in 2021 by 3 major releases * <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a>, <a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> (iOS); <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a>, <a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> (Android).
+Let’s first take a look at what was in the original 2021 resolutions list which nearly doesn’t cover all features implemented in 2021 by 3 major releases * <a href="https://osmand.net/blog/osmand-ios-3-90-released">3.9</a>, <a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> (iOS); <a href="https://osmand.net/blog/osmand-android-3-9-released">3.9</a>, <a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a>, <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> (Android).
 
 <a href="https://osmand.net/blog/ny-resolutions-2021">Resolutions 2021:</a>
 
@@ -119,10 +119,10 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 ![3-9-ios](./3-9-ios.png) 
 
 
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#plan_route">Plan Route</a>
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#compass">Compass & Radius-Ruler widget</a>
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#poi_text">Text labels for POI’s, markers & gpx waypoints</a>
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#type_snow">Snowmobile map type</a>
+* <a href="https://osmand.net/blog/osmand-ios-3-90-released#introduced-plan-a-route-tool">Plan Route</a>
+* <a href="https://osmand.net/blog/osmand-ios-3-90-released#compass-for-the-radius-ruler-tool">Compass & Radius-Ruler widget</a>
+* <a href="https://osmand.net/blog/osmand-ios-3-90-released#added-text-labels-for-favorites-gpx-waypoints-markers">Text labels for POI’s, markers & gpx waypoints</a>
+* <a href="https://osmand.net/blog/osmand-ios-3-90-released#added-snowmobile-map-type">Snowmobile map type</a>
 
 
 <a href="https://osmand.net/blog/osmand-ios-4-0-released">4.0</a> * July 19, 2021
@@ -130,14 +130,14 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 
 ![4-0-ios](./4-0-ios.png)  
     
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#carplay">Car Play!</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#favorite">Add favorites with custom icons & shape</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#widget">Coordinates widget</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#import_export">Full Import / Export</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#approximate_track">Attach track to the roads</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#custom_plugin">3rd party plugins</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#by_tap">Distance by tap</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-0-released#routing_rendering">Custom routing & rendering files</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-0-released#car-play">Car Play!</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-0-released#new-add-favorite-screen">Add favorites with custom icons & shape</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-0-released#coordinates-widget">Coordinates widget</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-0-released#extended-the-importexport-functionality">Full Import / Export</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-0-released#attach-track-to-the-roads">Attach track to the roads</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-0-released#custom-plugin">3rd party plugins</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-0-released#distance-by-tap-tool-moved-from-the-radius-ruler">Distance by tap</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-0-released#added-support-for-custom-routing-and-rendering-files">Custom routing & rendering files</a>
 
 
 <a href="https://osmand.net/blog/osmand-ios-4-1-released">4.1</a> * December 28, 2021
@@ -146,36 +146,36 @@ OsmAnd iOS got 3 major releases with more than <a href="https://github.com/osman
 ![4-1-ios](./4-1-ios.png)         
       
         
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#tracks">Track context menu, configure track appearance & new interactions</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#srtm">Contour lines in feet</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#olc">Improved Coordinates search</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#route">Improved OSM Routes visibility</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#download">Download maps by clicking on the map</a>
-* <a href="https://osmand.net/blog/osmand-ios-4-1-released#srtm">Wikipedia by language * layer control</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-1-released#completely-redesigned-interaction-with-tracks">Track context menu, configure track appearance & new interactions</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-1-released#added-contour-lines-in-feet-you-need-to-re-download-files">Contour lines in feet</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-1-released#improved-coordinate-search-in-olc-format">Improved Coordinates search</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-1-released#route-visibility-control-is-moved-to-a-higher-level-in-the-configure-map-menu-with-the-option-of-flexible-settings">Improved OSM Routes visibility</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-1-released#added-ability-to-easily-load-maps-of-all-regions-of-the-country-with-a-couple-of-clicks">Download maps by clicking on the map</a>
+* <a href="https://osmand.net/blog/osmand-ios-4-1-released#added-contour-lines-in-feet-you-need-to-re-download-files">Wikipedia by language * layer control</a>
 
 
 ## Android
 
 OsmAnd Android got 3 major releases (3.9, 4.0, 4.1) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">800 public features and issues</a> closed on Github.
         
-* <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a> * February 4, 2021
+* <a href="https://osmand.net/blog/osmand-android-3-9-released">3.9</a> * February 4, 2021
        
 ![3-9-android](./3-9-android.png)          
       
-* <a href="https://osmand.net/blog/osmand-3-9-released#export_import">Export / Import all data</a>
-* <a href="https://osmand.net/blog/osmand-3-9-released#plan_route">Plan route with graphs</a>
-* <a href="https://osmand.net/blog/osmand-3-9-released#custom_color">Custom colors for favourites and waypoints</a>
+* <a href="https://osmand.net/blog/osmand-android-3-9-released#option-exportimport">Export / Import all data</a>
+* <a href="https://osmand.net/blog/osmand-android-3-9-released#improved-plan-a-route-tool">Plan route with graphs</a>
+* <a href="https://osmand.net/blog/osmand-android-3-9-released#favorites-and-track-waypoints-custom-color">Custom colors for favourites and waypoints</a>
 <a href="https://osmand.net/blog/osmand-android-4-0-released">4.0</a> * August 7, 2021
         
 ![4-0-android](./4-0-android.png)
           
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#cloud">Cloud backup and restore</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#live">OsmAnd Live free for contributors</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#online">Online routing as navigation type</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#tracks">Tracks can be colored by distance / slope / altitude</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#routeline">Route line can be colored as well</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#feet">Contour lines in feet</a>
-* <a href="https://osmand.net/blog/osmand-android-4-0-released#dialog">Trip recording dialog with graphs and extra information</a>
+* <a href="https://osmand.net/blog/osmand-android-4-0-released#cloud-backup-and-restore">Cloud backup and restore</a>
+* <a href="https://osmand.net/blog/osmand-android-4-0-released#moved-osmand-live-updates-menu">OsmAnd Live free for contributors</a>
+* <a href="https://osmand.net/blog/osmand-android-4-0-released#added-online-routing-for-navigation-type">Online routing as navigation type</a>
+* <a href="https://osmand.net/blog/osmand-android-4-0-released#tracks-can-now-be-colored-by-altitude-speed-or-slope">Tracks can be colored by distance / slope / altitude</a>
+* <a href="https://osmand.net/blog/osmand-android-4-0-released#added-option-to-change-the-route-line-appearance">Route line can be colored as well</a>
+* <a href="https://osmand.net/blog/osmand-android-4-0-released#added-option-to-download-contour-lines-in-feet">Contour lines in feet</a>
+* <a href="https://osmand.net/blog/osmand-android-4-0-released#updated-trip-recording-dialog">Trip recording dialog with graphs and extra information</a>
 
 
 * <a href="https://osmand.net/blog/osmand-android-4-1-released">4.1</a> * December 10, 2021
@@ -183,12 +183,12 @@ OsmAnd Android got 3 major releases (3.9, 4.0, 4.1) with more than <a href="http
 ![4-1-android](./4-1-android.png)
        
         
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#androidauto">Android Auto</a>
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#elevation">Elevation widget during navigation</a>
- * <a href="https://osmand.net/blog/osmand-android-4-1-released#gps_filter">Easily configurable GPS Filter for tracks</a>
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#favorites">Favorites: easy to use recent icons</a>
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#shortcut">App shortcuts</a>
-* <a href="https://osmand.net/blog/osmand-android-4-1-released#historyscreen">Manage search, navigation, and other history</a>
+* <a href="https://osmand.net/blog/osmand-android-4-1-released#added-initial-support-for-android-auto">Android Auto</a>
+* <a href="https://osmand.net/blog/osmand-android-4-1-released#added-elevation-widget-for-trip">Elevation widget during navigation</a>
+ * <a href="https://osmand.net/blog/osmand-android-4-1-released#gps-filter">Easily configurable GPS Filter for tracks</a>
+* <a href="https://osmand.net/blog/osmand-android-4-1-released#favorites-added-ability-to-view-recently-used-icons">Favorites: easy to use recent icons</a>
+* <a href="https://osmand.net/blog/osmand-android-4-1-released#app-shortcuts">App shortcuts</a>
+* <a href="https://osmand.net/blog/osmand-android-4-1-released#added-screen-to-manage-all-the-history-in-the-app">Manage search, navigation, and other history</a>
 
         
 

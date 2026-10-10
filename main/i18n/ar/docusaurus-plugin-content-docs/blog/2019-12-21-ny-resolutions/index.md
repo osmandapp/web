@@ -24,7 +24,7 @@ First of all, we would like to congratulate our CEO **Victor Shcherb** who recei
 
 ### Android
 
-OsmAnd Android got 3 major releases this year (<a href="https://osmand.net/blog/osmand-3-3-released">3.3</a>, <a href="https://osmand.net/blog/osmand-3-4-released">3.4</a>, <a href="https://osmand.net/blog/osmand-3-5-released">3.5</a>) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">300 public features and issues closed on Github</a>. Among all these features we’ve selected 3 major features which were in the Resolutions list for 2019.
+OsmAnd Android got 3 major releases this year (<a href="https://osmand.net/blog/osmand-android-3-3-released">3.3</a>, <a href="https://osmand.net/blog/osmand-android-3-4-released">3.4</a>, <a href="https://osmand.net/blog/osmand-android-3-5-released">3.5</a>) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">300 public features and issues closed on Github</a>. Among all these features we’ve selected 3 major features which were in the Resolutions list for 2019.
 
 * **Public transport**
 
@@ -35,7 +35,7 @@ OsmAnd Android got 3 major releases this year (<a href="https://osmand.net/blog/
       </tr>
 </table> 
 
-We’ve introduced Navigation for public transport in early <a href="https://osmand.net/blog/osmand-3-3-released">version 3.3</a> and did multiple fixes in <a href="https://osmand.net/blog/osmand-3-4-released">3.4</a> as well. You can also watch the presentation on Youtube.
+We’ve introduced Navigation for public transport in early <a href="https://osmand.net/blog/osmand-android-3-3-released">version 3.3</a> and did multiple fixes in <a href="https://osmand.net/blog/osmand-android-3-4-released">3.4</a> as well. You can also watch the presentation on Youtube.
 
 [Video presentation](https://www.youtube.com/embed/SPab09kaWPc)
 
@@ -45,7 +45,7 @@ We know that many users are waiting for the schedule support or at least [openin
 
 * **Application profiles**
 
-<a href="https://osmand.net/blog/osmand-3-5-released">New application profiles</a> is our long term goal and we’ve started working on it this year. There is a lot of work left for 2020, though we try to bring something new each release to give an impression of the end goal and get necessary feedback from our users. So far, all settings are profile-dependent, so you can customize the application for multiple purposes.
+<a href="https://osmand.net/blog/osmand-android-3-5-released">New application profiles</a> is our long term goal and we’ve started working on it this year. There is a lot of work left for 2020, though we try to bring something new each release to give an impression of the end goal and get necessary feedback from our users. So far, all settings are profile-dependent, so you can customize the application for multiple purposes.
 
 <table class="blogimage">
   <tr>
@@ -65,7 +65,7 @@ The most important update was the ability to create custom profiles and import a
       </tr>
 </table> 
 
-As of <a href="https://osmand.net/blog/osmand-3-3-released">3.3</a>, route details screen has important information about road types, surface conditions, steepness displayed in a nice visual way. It is our top priority to migrate that functionality to iOS. This mechanism is quite advanced and everybody can contribute and create their own metrics by simply modifying the rendering style on the device. In this regard, we want to thank <a href="https://www.reddit.com/r/OsmAnd/comments/dndhsg/pieter_with_osmand_from_2011/">Peter</a>, who contributed road information for Ski Pistes this way.
+As of <a href="https://osmand.net/blog/osmand-android-3-3-released">3.3</a>, route details screen has important information about road types, surface conditions, steepness displayed in a nice visual way. It is our top priority to migrate that functionality to iOS. This mechanism is quite advanced and everybody can contribute and create their own metrics by simply modifying the rendering style on the device. In this regard, we want to thank <a href="https://www.reddit.com/r/OsmAnd/comments/dndhsg/pieter_with_osmand_from_2011/">Peter</a>, who contributed road information for Ski Pistes this way.
 
 <table class="blogimage">
   <tr>
@@ -89,7 +89,7 @@ We’ve redesigned **Directions screens**, improved **Quick action**, added a **
 
 ### iOS
 
-We’ve managed to release **7 new versions** of OsmAnd for iOS this year (<a href="https://osmand.net/blog/osmand-ios-2-5-released">2.5</a>, <a href="https://osmand.net/blog/osmand-ios-2-7-released">2.7</a>, <a href="https://osmand.net/blog/osmand-ios-2-8-released">2.8</a>, <a href="https://osmand.net/blog/osmand-ios-2-9-released">2.9</a>, <a href="https://osmand.net/blog/osmand-ios-3-0-released">3.0</a>, <a href="https://osmand.net/blog/osmand-ios-3-10-released">3.10</a>, <a href="https://osmand.net/blog/osmand-ios-3-11-released">3.11</a>)! All this was possible due to the commitment and hard work of our iOS team to catch up with Android. We hope 2020 to be a year in which almost all features present in OsmAnd will be equal for both Android and iOS version. Here the list of main features released this year for the iPhones and iPads.
+We’ve managed to release **7 new versions** of OsmAnd for iOS this year (<a href="https://osmand.net/blog/osmand-ios-2-50-released">2.5</a>, <a href="https://osmand.net/blog/osmand-ios-2-70-released">2.7</a>, <a href="https://osmand.net/blog/osmand-ios-2-80-released">2.8</a>, <a href="https://osmand.net/blog/osmand-ios-2-90-released">2.9</a>, <a href="https://osmand.net/blog/osmand-ios-3-00-released">3.0</a>, <a href="https://osmand.net/blog/osmand-ios-3-10-released">3.10</a>, <a href="https://osmand.net/blog/osmand-ios-3-11-released">3.11</a>)! All this was possible due to the commitment and hard work of our iOS team to catch up with Android. We hope 2020 to be a year in which almost all features present in OsmAnd will be equal for both Android and iOS version. Here the list of main features released this year for the iPhones and iPads.
 
 * **OsmAnd Live**
 
@@ -182,7 +182,7 @@ Our list is growing every year and, as of today, we have around 1500 requests wa
 * **Public Transport**
  This feature was completed for Android in 2019 and we plan to migrate all the implemented solutions to the iOS version in 2020. So OSM-ers with iPhones will get a new motivation to map public transport in OSM (<a href="https://osmand.net/blog/guideline-pt">check out our guideline</a>).
 * **Measure Distance**
- We’ve got a lot of requests for <a href="https://osmand.net/docs/user/widgets/radius-ruler#distance-by-tap-tool">this tool</a> and for sure it is number 1 priority to get it for iOS in 2020.
+ We’ve got a lot of requests for <a href="https://osmand.net/docs/user/widgets/radius-ruler#distance-by-tap">this tool</a> and for sure it is number 1 priority to get it for iOS in 2020.
 * **GPX**
  While the Android version has more advanced GPX-related features, the iOS version still lacks some base route graphs and stats. Of course it is very important for us not to miss those next year.
 
