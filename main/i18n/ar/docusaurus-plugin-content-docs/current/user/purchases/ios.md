@@ -139,7 +139,7 @@ import Translate from '@site/src/components/Translate.js';
 
 |  ميزة Pro  | الوصف   |
 | :------------- | :------------- |
-| [سحابة OsmAnd](../personal/osmand-cloud.md) | نسخ احتياطي واستعادة بياناتك، ومزامنة البيانات مع [بوابة ويب OsmAnd](https://www.osmand.net/map). |
+| [سحابة OsmAnd](../personal/osmand-cloud.md) | نسخ احتياطي واستعادة بياناتك، ومزامنة البيانات مع [بوابة ويب OsmAnd](https://osmand.net/map). |
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | يسمح لك بالحصول على نموذج مصغر لمحيطك أو قارة بأكملها ومراقبته. |
 | [ودجات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يسمح لك بمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر.  |
 | [Live](../personal/maps-resources.md#live-updates) | يتم تحديث خرائط OsmAnd كل ١٥ دقيقة بعد تحسينات [OpenStreetMap](https://www.openstreetmap.org/). |

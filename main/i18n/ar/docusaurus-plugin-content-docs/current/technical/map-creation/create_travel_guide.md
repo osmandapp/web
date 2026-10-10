@@ -19,7 +19,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### تشغيل الأداة {#launch-the-tool}
 
-قم بتنزيل أحدث إصدار من [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) واستخرج الملفات من الأرشيف.
+قم بتنزيل أحدث إصدار من [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) واستخرج الملفات من الأرشيف.
 
 :::note
 يتم وصف كيفية استخدام هذه الأداة في مقالة [إنشاء خرائط نقطية ومتجهة غير متصلة بالإنترنت](./create-offline-maps-yourself.md#osmandmapcreator).

@@ -15,4 +15,4 @@ sidebar_position: 3
 * obstacle (штраф у секундах) - визначає штраф, який додається до часу маршрутизації
 * obstacle_time (штраф у секундах) - визначає штраф, який відображається користувачеві, але не враховується рушієм маршрутизації, тобто obstacle_time - 2 години, obstacle - 1 хвилина, на найкоротшому маршруті рушій знайде маршрут, використовуючи 1 хвилину перешкоди, але користувач побачить, що час маршруту становить 2 години.
 
-Щоб протестувати [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), ви можете використовувати [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Щоб протестувати routing.xml на пристрої, ви можете просто замінити стандартний routing.xml у кореневій папці OsmAnd на SD-карті.
+Щоб протестувати [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), ви можете використовувати [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Щоб протестувати routing.xml на пристрої, ви можете просто замінити стандартний routing.xml у кореневій папці OsmAnd на SD-карті.

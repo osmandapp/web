@@ -41,7 +41,7 @@ La forma más típica y potente de crear mapas utilizada por los desarrolladores
 
 Ejemplo de script:
 ```
-wget -N http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip
+wget -N https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip
 wget  https://creator.osmand.net/osm-extract/albania_europe/albania_europe.pbf
 unzip OsmAndMapCreator-main.zip -d OsmAndMapCreator
 OsmAndMapCreator/utilities.sh generate-poi albania_europe.pbf --chars-build-poi-nameindex=3

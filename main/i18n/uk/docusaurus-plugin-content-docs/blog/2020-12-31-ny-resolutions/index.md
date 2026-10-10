@@ -24,7 +24,7 @@ In June 2020 our company <a href="https://osmand.net/blog/ten-years">celebrated 
 
 ## Android
 
-OsmAnd Android got 4 major releases this year: <a href="https://osmand.net/blog/osmand-3-6-released">3.6</a>, <a href="https://osmand.net/blog/osmand-3-7-released">3.7</a>, <a href="https://osmand.net/blog/osmand-3-8-released">3.8</a> and <a href="https://osmand.net/blog/osmand-3-9-released">3.9</a> (already available for Beta Test) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">300 public features and issues closed on Github</a>. Here are the most prominent features of 2020.
+OsmAnd Android got 4 major releases this year: <a href="https://osmand.net/blog/osmand-android-3-6-released">3.6</a>, <a href="https://osmand.net/blog/osmand-android-3-7-released">3.7</a>, <a href="https://osmand.net/blog/osmand-android-3-8-released">3.8</a> and <a href="https://osmand.net/blog/osmand-android-3-9-released">3.9</a> (already available for Beta Test) with more than <a href="https://github.com/osmandapp/Osmand/milestones?state=closed">300 public features and issues closed on Github</a>. Here are the most prominent features of 2020.
 
 <a href="https://osmand.net/blog/ny-resolutions-2020">#2020 NYR</a> * features we committed last year
 
@@ -32,12 +32,12 @@ OsmAnd Android got 4 major releases this year: <a href="https://osmand.net/blog/
 
 ![OsmAnd Pro](./user_settings.png)
 
-* <a href="https://osmand.net/blog/osmand-3-6-released#36_profiles">Profiles * fully customizable</a> (#2020 NYR)
+* <a href="https://osmand.net/blog/osmand-android-3-6-released#profiles">Profiles * fully customizable</a> (#2020 NYR)
 * UI customization (#2020 NYR):
-    * <a href="https://osmand.net/blog/osmand-3-7-released#wiki">Wikipedia on the Map</a>
-    * <a href="https://osmand.net/blog/osmand-3-7-released#customization">User-customized Drawer customization</a>
-    * <a href="https://osmand.net/blog/osmand-3-7-released#poifilter">User-customized POI Categories</a>
-* <a href="https://osmand.net/blog/osmand-3-7-released#package">Plugins</a> & <a href="https://osmand.net/blog/osmand-3-9-released#export_import">Export/import</a> all settings and data
+    * <a href="https://osmand.net/blog/osmand-android-3-7-released#wikipedia-as-separate-layer-in-configure-map-select-only-needed-languages">Wikipedia on the Map</a>
+    * <a href="https://osmand.net/blog/osmand-android-3-7-released#customize-items-order-in-context-menu-configure-map-drawer">User-customized Drawer customization</a>
+    * <a href="https://osmand.net/blog/osmand-android-3-7-released#create-your-own-poi-filter--maps-with-total-flexibility">User-customized POI Categories</a>
+* <a href="https://osmand.net/blog/osmand-android-3-7-released#custom-package">Plugins</a> & <a href="https://osmand.net/blog/osmand-android-3-9-released#option-exportimport">Export/import</a> all settings and data
 
 
 ### Maps
@@ -46,10 +46,10 @@ OsmAnd Android got 4 major releases this year: <a href="https://osmand.net/blog/
 
 
 
-* <a href="https://osmand.net/blog/osmand-3-7-released#slopes">New slopes / hillshade maps</a> (#2020 NYR)
-* <a href="https://osmand.net/blog/osmand-3-7-released#favorites">User-selected icons for Favorites</a>
-* <a href="https://osmand.net/blog/osmand-3-8-released#nodes">Bicycle cycle network nodes & routes</a>
-* <a href="https://osmand.net/blog/osmand-3-6-released#36_others">Antarctica map</a>
+* <a href="https://osmand.net/blog/osmand-android-3-7-released#new-offline-slope-maps-see-slopes--directly-on-the-maps">New slopes / hillshade maps</a> (#2020 NYR)
+* <a href="https://osmand.net/blog/osmand-android-3-7-released#full-customization-of-favorites-and-gpx-waypoints--custom-colors-icons-shapes">User-selected icons for Favorites</a>
+* <a href="https://osmand.net/blog/osmand-android-3-8-released#improved-bicycle-nodes-visibility">Bicycle cycle network nodes & routes</a>
+* <a href="https://osmand.net/blog/osmand-android-3-6-released#what-else-is-in-this-release">Antarctica map</a>
 
 
 ### Route Planning & navigation
@@ -57,11 +57,11 @@ OsmAnd Android got 4 major releases this year: <a href="https://osmand.net/blog/
 ![OsmAnd Pro](./route_planning.png)
 
 Route Creation tool:
-* <a href="https://osmand.net/blog/osmand-3-8-released#plan_route">*Multiprofile and multisegment tracks*</a>
-* <a href="https://osmand.net/blog/osmand-3-9-released#plan_route">*Graphs*</a>
-* <a href="https://osmand.net/blog/osmand-3-8-released#plan_route">*Recorded track approximation*</a>
-* New navigation type: <a href="https://osmand.net/blog/osmand-3-6-released#36_dtp">**Direct-to-point**</a>
-* Navigation UI: <a href="https://osmand.net/blog/osmand-3-6-released#36_exit_number">**Exit number & Road shields**</a>
+* <a href="https://osmand.net/blog/osmand-android-3-8-released#updated-plan-route-mode">*Multiprofile and multisegment tracks*</a>
+* <a href="https://osmand.net/blog/osmand-android-3-9-released#improved-plan-a-route-tool">*Graphs*</a>
+* <a href="https://osmand.net/blog/osmand-android-3-8-released#updated-plan-route-mode">*Recorded track approximation*</a>
+* New navigation type: <a href="https://osmand.net/blog/osmand-android-3-6-released#new-navigation-type-direct-to-point">**Direct-to-point**</a>
+* Navigation UI: <a href="https://osmand.net/blog/osmand-android-3-6-released#exit-number-in-the-navigation-voice--ui">**Exit number & Road shields**</a>
 
 ## iOS
 
@@ -71,10 +71,10 @@ We’ve managed to release **4 new versions** of OsmAnd for iOS this year: <a hr
 
 <a href="https://osmand.net/blog/ny-resolutions-2020">#2020 NYR</a> * features we committed last year
 
-* <a href="https://osmand.net/blog/osmand-ios-3-14-released#pt">Public Transport</a> and <a href="https://osmand.net/blog/osmand-ios-3-12-released">Route details</a> (2020 NYR)
-* <a href="https://osmand.net/blog/osmand-ios-3-14-released#slope">New slopes / hillshade maps</a> (2020 NYR)
-* <a href="https://osmand.net/blog/osmand-ios-3-80-released#profiles">Profiles</a> (2020 NYR) 
-* <a href="https://osmand.net/blog/osmand-ios-3-90-released#plan_route">Plan a route</a> (2020 NYR)
+* <a href="https://osmand.net/blog/osmand-ios-3-14-released#beta-of-public-transport-navigation">Public Transport</a> and <a href="https://osmand.net/blog/osmand-ios-3-12-released">Route details</a> (2020 NYR)
+* <a href="https://osmand.net/blog/osmand-ios-3-14-released#new-offline-slope-maps">New slopes / hillshade maps</a> (2020 NYR)
+* <a href="https://osmand.net/blog/osmand-ios-3-80-released#introduced-application-profiles-with-independent-settings">Profiles</a> (2020 NYR)
+* <a href="https://osmand.net/blog/osmand-ios-3-90-released#introduced-plan-a-route-tool">Plan a route</a> (2020 NYR)
 
   
 ## New Year Resolutions 2021

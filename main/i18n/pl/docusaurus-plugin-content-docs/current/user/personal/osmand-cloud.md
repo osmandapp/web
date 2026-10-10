@@ -34,7 +34,7 @@ Chmura OsmAnd pozwala na **przechowywanie i synchronizację osobistych ustawień
 
 Chmura OsmAnd umożliwia tworzenie kopii zapasowych, przywracanie i synchronizowanie danych między systemami Android, iOS i [wersją internetową](../web/index.md). Dzięki możliwościom wieloplatformowym możesz przenosić **ustawienia profilu**, **ścieżki**, **ulubione**, **edycje/notatki OSM** i wiele więcej między urządzeniami. Dodatkowo **wersja internetowa** umożliwia planowanie tras i zapisywanie ich do późniejszego wykorzystania na połączonych urządzeniach.  
 
-OsmAnd obsługuje **użycie wieloplatformowe** na *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* w następujących krokach:
+OsmAnd obsługuje **użycie wieloplatformowe** na *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://osmand.net/map))* w następujących krokach:
 
 1. **Zarejestruj [konto](#login) w Chmurze OsmAnd**:
  

@@ -68,10 +68,10 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 ## How to Prepare Raster Maps {#how-to-prepare-raster-maps}
 
 :::info
-Main article to prepare maps [read here](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Main article to prepare maps [read here](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Despite the plugin being called *Online Maps*, you can use the maps without internet connection as well. You just need to save the parts of maps (often called tiles) to use them later. To do that, download a specific [Map Creator tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) developed by OsmAnd team.
+Despite the plugin being called *Online Maps*, you can use the maps without internet connection as well. You just need to save the parts of maps (often called tiles) to use them later. To do that, download a specific [Map Creator tool](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) developed by OsmAnd team.
 
 Select the area you need to download, click on the Preload area, then set the smallest and the largest zoom levels you want to display and download the tiles.
 For <b>Android version</b> you can copy them to your phone's <i>osmand/tiles/*tile type*</i> folder. You'll also need to open the <i>Configure map-. Overlay map</i> and choose OsmAnd online tiles.

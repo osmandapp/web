@@ -26,7 +26,7 @@ Die folgenden OsmAnd-Produkte unterstützen derzeit die Nutzung auf mehreren Pla
 Ab **OsmAnd Version 5.1**, die anlässlich unseres **15-jährigen Jubiläums** veröffentlicht wurde, wurde der plattformübergreifende Zugriff auf **Maps+** (früher bekannt als *Unbegrenzt*) erweitert. Zuvor war nur das [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform)-Abonnement plattformübergreifend.
 
 Um den plattformübergreifenden Zugriff zu aktivieren, müssen Käufe mit Ihrem [OsmAnd Cloud](../personal/osmand-cloud.md#login)-Konto verknüpft werden.
-Sie können alle OsmAnd-Produkte hier vergleichen: [Unterschiede zwischen den Käufen](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+Sie können alle OsmAnd-Produkte hier vergleichen: [Unterschiede zwischen den Käufen](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)
 
 | **Produkttyp** | **Plattformübergreifend** | **Anmerkungen** |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|

@@ -57,11 +57,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | [مخطط المسارات](./planner.md) | بدون تسجيل الدخول |
 | [طبقات الطقس](./web-weather.md) | بدون تسجيل الدخول |
 | [الإعدادات](./web-map.md#settings) | بدون تسجيل الدخول |
-| [تكوين قائمة الخريطة](./web-map.md#configure-map-menu) ([النقاط المهمة](./web-map.md#poi-overlay)، [المفضلة](./web-map.md#favorites)، [المسارات](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [تكوين قائمة الخريطة](./web-map.md#configure-map-menu) ([التضاريس](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [مزامنة OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [بحث الويب، الأماكن الشهيرة](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [مجلدات المسارات وطبقتها](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [تكوين قائمة الخريطة](./web-map.md#configure-map-menu) ([النقاط المهمة](./web-map.md#poi-overlay)، [المفضلة](./web-map.md#favorites)، [المسارات](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [تكوين قائمة الخريطة](./web-map.md#configure-map-menu) ([التضاريس](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [مزامنة OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [بحث الويب، الأماكن الشهيرة](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) أو [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [مجلدات المسارات وطبقتها](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## كيف تبدأ {#how-to-start}

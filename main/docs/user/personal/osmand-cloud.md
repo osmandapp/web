@@ -33,7 +33,7 @@ OsmAnd Cloud allows you to **store and synchronize personal settings and applica
 
 OsmAnd Cloud allows you to back up, restore, and sync your data across Android, iOS, and the [web version](../web/index.md). With cross-platform capabilities, you can transfer **profile settings**, **tracks**, **favorites**, **OSM edits/notes**, and more between devices. Additionally, the **web version** enables you to plan routes and save them for later use on connected devices.  
 
-OsmAnd supports **cross-platform usage** across *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* with the following steps:
+OsmAnd supports **cross-platform usage** across *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://osmand.net/map))* with the following steps:
 
 1. **Register an [account](#login) on the OsmAnd Cloud**:
  

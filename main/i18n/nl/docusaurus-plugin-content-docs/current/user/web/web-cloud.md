@@ -119,7 +119,7 @@ De optie **Prullenbak** bevat bestanden die uit OsmAnd Cloud zijn verwijderd. De
 
 De sectie **Gekoppelde apps** stelt u in staat externe services te koppelen aan uw OsmAnd-account. Momenteel ondersteunt het integratie met [Garmin Connect™](https://connect.garmin.com/app/), waardoor automatische synchronisatie van Garmin-activiteiten mogelijk is. Om deze te openen, gaat u naar: *OsmAnd Web Kaart → Account → Gekoppelde apps*.
 
-De integratie met Garmin Connect is alleen beschikbaar voor [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) gebruikers. Als u geen actief Pro-abonnement hebt, opent het selecteren van het Garmin Connect-item de Prijzen-pagina.
+De integratie met Garmin Connect is alleen beschikbaar voor [OsmAnd Pro](https://osmand.net/docs/user/purchases/) gebruikers. Als u geen actief Pro-abonnement hebt, opent het selecteren van het Garmin Connect-item de Prijzen-pagina.
 
 Om uw Garmin Connect™-account te koppelen, klikt u op **Verbinden**. U wordt doorgestuurd naar de Garmin-autorisatiepagina, waar u moet inloggen en toegang moet verlenen tot uw Garmin Connect™-gegevens. Tijdens de autorisatie kunt u synchronisatie van recente activiteiten inschakelen om gegevens uit de afgelopen 30 dagen te importeren. Activiteiten ouder dan 30 dagen kunnen niet automatisch worden geïmporteerd.
 

@@ -253,11 +253,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 يمكن إضافة الخرائط عبر الإنترنت باستخدام رابط خاص إلى قائمة الخرائط النقطية في OsmAnd. انقر على هذا الرابط واختر OsmAnd لفتحه:
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |معلمة الرابط|مثال|
 |:--------|:---------------|
-| [الجزء الثابت]| `http://osmand.net/add-tile-source` |
+| [الجزء الثابت]| `https://osmand.net/add-tile-source` |
 |[الفواصل]| ?   & |
 |[الاسم]|name=TEST|
 |[عنوان URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|

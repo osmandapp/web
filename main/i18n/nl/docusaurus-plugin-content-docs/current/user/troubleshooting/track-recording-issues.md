@@ -94,7 +94,7 @@ Sommige van deze instellingen werken op elkaar in, dus wees nauwkeurig. Zoek het
 
 ### Het gedrag van achtergrondapps in iOS beheren {#control-the-behavior-of-ios-background-apps}
 
-iOS kan achtergrondapps automatisch onderbreken of stoppen wanneer systeembronnen opnieuw worden toegewezen. OsmAnd kan dit gedrag niet overrulen. Als de trackopname wordt onderbroken wanneer het apparaat is vergrendeld, kan dit hiaten in de opname veroorzaken. U kunt deze hiaten bewerken met de [Route plannen](https://docs.osmand.net/docs/user/plan-route/create-route) tool.
+iOS kan achtergrondapps automatisch onderbreken of stoppen wanneer systeembronnen opnieuw worden toegewezen. OsmAnd kan dit gedrag niet overrulen. Als de trackopname wordt onderbroken wanneer het apparaat is vergrendeld, kan dit hiaten in de opname veroorzaken. U kunt deze hiaten bewerken met de [Route plannen](https://osmand.net/docs/user/plan-route/create-route) tool.
 
 Voor meer details over hoe iOS omgaat met locatietracking, bekijk de documentatie van Apple [hier](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

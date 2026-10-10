@@ -94,7 +94,7 @@ Einige dieser Einstellungen interagieren miteinander, seien Sie also genau. Such
 
 ### Verhalten von iOS-Hintergrund-Apps steuern {#control-the-behavior-of-ios-background-apps}
 
-iOS kann Hintergrund-Apps automatisch anhalten oder beenden, wenn Systemressourcen neu zugewiesen werden. OsmAnd kann dieses Verhalten nicht außer Kraft setzen. Wenn die Trackaufzeichnung unterbrochen wird, während das Gerät gesperrt ist, kann dies zu Lücken in der Aufzeichnung führen. Sie können diese Lücken mit dem Werkzeug [Route planen](https://docs.osmand.net/docs/user/plan-route/create-route) bearbeiten.
+iOS kann Hintergrund-Apps automatisch anhalten oder beenden, wenn Systemressourcen neu zugewiesen werden. OsmAnd kann dieses Verhalten nicht außer Kraft setzen. Wenn die Trackaufzeichnung unterbrochen wird, während das Gerät gesperrt ist, kann dies zu Lücken in der Aufzeichnung führen. Sie können diese Lücken mit dem Werkzeug [Route planen](https://osmand.net/docs/user/plan-route/create-route) bearbeiten.
 
 Weitere Details zur Handhabung der Standortverfolgung durch iOS finden Sie in der Apple-Dokumentation [hier](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

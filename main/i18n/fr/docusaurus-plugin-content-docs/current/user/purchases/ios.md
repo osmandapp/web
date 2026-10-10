@@ -137,7 +137,7 @@ Pour le moment, l'abonnement Pro inclut les fonctionnalités suivantes :
 
 |  Fonctionnalité Pro  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Sauvegardez et restaurez vos données, synchronisez les données avec le [portail web OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Sauvegardez et restaurez vos données, synchronisez les données avec le [portail web OsmAnd](https://osmand.net/map). |
 | [Relief 3D](../plugins/topography.md#3d-relief) | Vous permet d'avoir et d'observer un modèle réduit de votre quartier ou d'un continent entier. |
 | [Widgets d'altitude - Élévation : Centre de la carte](../widgets/info-widgets.md#elevation-map-center) | Vous permet de connaître l'altitude du centre actuel de la carte par rapport au niveau de la mer.  |
 | [Mises à jour en direct](../personal/maps-resources.md#live-updates) | Les cartes OsmAnd sont mises à jour toutes les 15 minutes après une amélioration sur [OpenStreetMap](https://www.openstreetmap.org/). |

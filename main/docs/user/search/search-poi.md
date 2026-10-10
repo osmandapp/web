@@ -392,7 +392,7 @@ To create custom filters for finding places on the map, select relevant categori
 
 6. **Food**. Includes 12 types of filters.  
 
-7. **Hazard**. Includes 5 types: *Avalanche hazard, Erosion hazard, Flood hazard, Nuclear hazard, Slippery road*. The Hazard category includes both POI with hazard=* tags on nodes and road or path segments (ways) marked with the same tag, if they are exported as searchable objects. For a visual overview of all hazard icons used on the map, see the [Hazard](https://osmand.net/docs/user/map-legend/osmand/#hazard) section.
+7. **Hazard**. Includes 5 types: *Avalanche hazard, Erosion hazard, Flood hazard, Nuclear hazard, Slippery road*. The Hazard category includes both POI with hazard=* tags on nodes and road or path segments (ways) marked with the same tag, if they are exported as searchable objects. For a visual overview of all hazard icons used on the map, see the [Hazard](https://osmand.net/docs/user/map-legend/osmand/#hazard1) section.
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Includes 31 types of filters.
 

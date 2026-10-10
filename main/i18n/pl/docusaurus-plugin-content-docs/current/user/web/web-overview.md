@@ -55,11 +55,11 @@ Portal map internetowych obsługuje kilka poziomów dostępu: bez logowania, z O
 | [Planer trasy](./planner.md) | Bez logowania |
 | [Nakładki pogodowe](./web-weather.md) | Bez logowania |
 | [Ustawienia](./web-map.md#settings) | Bez logowania |
-| [Konfiguracja menu mapy](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Ulubione](./web-map.md#favorites), [Ślady](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Konfiguracja menu mapy](./web-map.md#configure-map-menu) ([Teren](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Synchronizacja OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Wyszukiwanie w sieci, popularne miejsca](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Foldery śladów i warstwa](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Konfiguracja menu mapy](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Ulubione](./web-map.md#favorites), [Ślady](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Konfiguracja menu mapy](./web-map.md#configure-map-menu) ([Teren](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Synchronizacja OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Wyszukiwanie w sieci, popularne miejsca](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) lub [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Foldery śladów i warstwa](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Jak zacząć {#how-to-start}

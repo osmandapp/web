@@ -93,14 +93,14 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 - *Neustart*. Nach dem Importieren der Dateien muss die Anwendung neu gestartet werden.
 
 Unterstützte Import-Dateitypen:
-- [Tracks, Routen](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [Favoriten](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML- und KMZ-Dateien werden mit Konvertierung in das GPX-Format importiert.
+- [Tracks, Routen](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [Favoriten](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML- und KMZ-Dateien werden mit Konvertierung in das GPX-Format importiert.
 - [OsmAnd-Vektorkarten](https://osmand.net/docs/user/map/vector-maps): `.obf`.
-- [Online-Kartenkacheln](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Online-Kartenkacheln](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [Backups & Profile](#export): `.osf`.
-- [Höhenkarten / 3D-Daten](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Höhenkarten / 3D-Daten](https://osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [Andere](color-palette-schemes.md): `.txt`.
 
-Für einen technischen Überblick über alle unterstützten Formate siehe [OsmAnd Dateiformate](https://www.osmand.net/docs/technical/osmand-file-formats/).
+Für einen technischen Überblick über alle unterstützten Formate siehe [OsmAnd Dateiformate](https://osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

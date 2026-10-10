@@ -26,7 +26,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 بدءًا من **إصدار OsmAnd 5.1**، الذي تم إصداره احتفالًا بالذكرى **السنوية الخامسة عشرة** لتأسيسنا، تم توسيع الوصول عبر المنصات ليشمل **Maps+** (المعروف سابقًا باسم *Unlimited*). في السابق، كان اشتراك [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) فقط هو الذي يدعم الاستخدام عبر المنصات.
 
 لتفعيل الوصول عبر المنصات، يجب ربط عمليات الشراء بحسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login).
-يمكنك مقارنة جميع منتجات OsmAnd هنا: [الفرق بين عمليات الشراء](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+يمكنك مقارنة جميع منتجات OsmAnd هنا: [الفرق بين عمليات الشراء](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)
 
 | **نوع المنتج** | **عبر المنصات** | **ملاحظات** |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|

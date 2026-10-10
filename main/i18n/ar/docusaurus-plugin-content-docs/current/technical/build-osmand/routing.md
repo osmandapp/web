@@ -15,4 +15,4 @@ sidebar_position: 3
 * obstacle (عقوبة بالثواني) - تحدد العقوبة التي تضاف إلى وقت التوجيه
 * obstacle_time (عقوبة بالثواني) - تحدد العقوبة التي تظهر للمستخدم ولكنها لا تؤخذ في الاعتبار من قبل محرك التوجيه، أي obstacle_time - ساعتان، obstacle - دقيقة واحدة، في أقصر مسار سيجد المحرك مسارًا باستخدام عقبة دقيقة واحدة ولكن المستخدم سيرى أن وقت المسار هو ساعتان.
 
-لاختبار [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)، يمكنك استخدام [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). لاختبار routing.xml على الجهاز، يمكنك ببساطة استبدال routing.xml الافتراضي في المجلد الجذر لـ OsmAnd ببطاقة SD.
+لاختبار [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)، يمكنك استخدام [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). لاختبار routing.xml على الجهاز، يمكنك ببساطة استبدال routing.xml الافتراضي في المجلد الجذر لـ OsmAnd ببطاقة SD.

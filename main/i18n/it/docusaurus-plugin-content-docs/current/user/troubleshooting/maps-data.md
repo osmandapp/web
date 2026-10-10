@@ -119,7 +119,7 @@ Per risolvere il problema del rendering lento delle mappe, specialmente quando s
 
 6. **Usare solo mappe offline.** Le mappe online, specialmente se non scaricate in anticipo, possono rallentare il caricamento della mappa. Passare all'uso esclusivo di mappe offline per prestazioni più fluide.
 
-Queste modifiche dovrebbero ridurre il tempo necessario per il rendering delle mappe, specialmente durante la navigazione. Per opzioni di configurazione più dettagliate, fare riferimento alla [Guida alle Impostazioni della Mappa](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+Queste modifiche dovrebbero ridurre il tempo necessario per il rendering delle mappe, specialmente durante la navigazione. Per opzioni di configurazione più dettagliate, fare riferimento alla [Guida alle Impostazioni della Mappa](https://osmand.net/docs/user/map/configure-map-menu).
 
 ### Cosa significa “Aggiornamenti gratuiti (emergenza)”? {#what-does-free-updates-emergency-mean}
 

@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Налагодження маршрутизації OBF на ПК {#debug-obf-routing-on-a-pc}
 
-- перейдіть на [https://osmand.net](https://osmand.net "https://osmand.net") та завантажте [OsmandMapCreator.zip](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") за посиланням праворуч на екрані, та розпакуйте його,
+- перейдіть на [https://osmand.net](https://osmand.net "https://osmand.net") та завантажте [OsmandMapCreator.zip](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") за посиланням праворуч на екрані, та розпакуйте його,
 - скопіюйте файл OBF з телефону або планшета до цієї папки,
 - запустіть OsmandMapCreator за допомогою файлу bat або sh,
 - переконайтеся, що у вас є підключення до Інтернету, щоб mapcreator міг завантажити тайли мапи, перевірте всі меню та налаштування в mapcreator,

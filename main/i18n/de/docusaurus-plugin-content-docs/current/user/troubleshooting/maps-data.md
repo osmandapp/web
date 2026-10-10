@@ -119,7 +119,7 @@ Um das Problem des langsamen Karten-Renderings zu beheben, insbesondere bei der 
 
 6. **Verwenden Sie nur Offline-Karten.** Online-Karten, insbesondere wenn sie nicht im Voraus heruntergeladen wurden, können das Laden der Karte verlangsamen. Wechseln Sie zur Verwendung von nur Offline-Karten für eine reibungslosere Leistung.
 
-Diese Änderungen sollten die Zeit, die zum Rendern von Karten benötigt wird, insbesondere während der Navigation, reduzieren. Weitere detaillierte Konfigurationsoptionen finden Sie im [Leitfaden zu den Karteneinstellungen](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+Diese Änderungen sollten die Zeit, die zum Rendern von Karten benötigt wird, insbesondere während der Navigation, reduzieren. Weitere detaillierte Konfigurationsoptionen finden Sie im [Leitfaden zu den Karteneinstellungen](https://osmand.net/docs/user/map/configure-map-menu).
 
 ### Was bedeutet „Kostenlose Updates (Notfall)“? {#what-does-free-updates-emergency-mean}
 

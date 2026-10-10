@@ -119,7 +119,7 @@ Para resolver o problema de renderização lenta do mapa, especialmente ao usar 
 
 6. **Use apenas mapas offline.** Mapas online, especialmente quando não baixados com antecedência, podem atrasar o carregamento do mapa. Mude para usar apenas mapas offline para um desempenho mais suave.
 
-Essas alterações devem reduzir o tempo necessário para renderizar mapas, especialmente durante a navegação. Para opções de configuração mais detalhadas, consulte o [Guia de Configurações do Mapa](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+Essas alterações devem reduzir o tempo necessário para renderizar mapas, especialmente durante a navegação. Para opções de configuração mais detalhadas, consulte o [Guia de Configurações do Mapa](https://osmand.net/docs/user/map/configure-map-menu).
 
 ### O que significa “Atualizações gratuitas (emergência)”? {#what-does-free-updates-emergency-mean}
 

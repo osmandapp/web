@@ -119,7 +119,7 @@ Oturum açtığınızda, OsmAnd Cloud bölümü Menü → Ayarlar'da görünür 
 
 **Bağlı Uygulamalar** bölümü, harici hizmetleri OsmAnd hesabınıza bağlamanıza olanak tanır. Şu anda [Garmin Connect™](https://connect.garmin.com/app/) entegrasyonunu destekler ve Garmin aktivitelerinin otomatik senkronizasyonunu sağlar. Açmak için şuraya gidin: *OsmAnd Web Harita → Hesap → Bağlı uygulamalar*.
 
-Garmin Connect entegrasyonu yalnızca [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) kullanıcıları için kullanılabilir. Etkin bir Pro aboneliğiniz yoksa, Garmin Connect öğesini seçmek Fiyatlandırma sayfasını açar.
+Garmin Connect entegrasyonu yalnızca [OsmAnd Pro](https://osmand.net/docs/user/purchases/) kullanıcıları için kullanılabilir. Etkin bir Pro aboneliğiniz yoksa, Garmin Connect öğesini seçmek Fiyatlandırma sayfasını açar.
 
 Garmin Connect™ hesabınızı bağlamak için **Bağla**'ya tıklayın. Garmin yetkilendirme sayfasına yönlendirileceksiniz; burada oturum açmanız ve Garmin Connect™ verilerinize erişim izni vermeniz gerekir. Yetkilendirme sırasında, son 30 günden veri içe aktarmak için son etkinliklerin senkronizasyonunu etkinleştirebilirsiniz. 30 günden eski etkinlikler otomatik olarak içe aktarılamaz.
 

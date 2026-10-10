@@ -252,11 +252,11 @@ Aqui estão os principais parâmetros a serem configurados ao configurar uma nov
 
 Mapas online podem ser adicionados com um link especial à lista de mapas Raster do OsmAnd. Clique neste link e escolha OsmAnd para abrir:
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |Parâmetro do link|Exemplo|
 |:--------|:---------------|
-| [Parte constante]| `http://osmand.net/add-tile-source` |
+| [Parte constante]| `https://osmand.net/add-tile-source` |
 |[Separadores]| ?   & |
 |[Nome]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|

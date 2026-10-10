@@ -119,7 +119,7 @@ Para resolver el problema de la renderización lenta de mapas, especialmente al 
 
 6. **Usar solo mapas sin conexión.** Los mapas en línea, especialmente cuando no se descargan con antelación, pueden ralentizar la carga del mapa. Cambie a usar solo mapas sin conexión para un rendimiento más fluido.
 
-Estos cambios deberían reducir el tiempo que se tarda en renderizar los mapas, especialmente durante la navegación. Para opciones de configuración más detalladas, consulte la [Guía de Ajustes del Mapa](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+Estos cambios deberían reducir el tiempo que se tarda en renderizar los mapas, especialmente durante la navegación. Para opciones de configuración más detalladas, consulte la [Guía de Ajustes del Mapa](https://osmand.net/docs/user/map/configure-map-menu).
 
 ### ¿Qué significa “Actualizaciones gratuitas (emergencia)”? {#what-does-free-updates-emergency-mean}
 

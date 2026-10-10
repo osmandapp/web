@@ -6,7 +6,7 @@ sidebar_position: 5
 # Déboguer le routage OBF sur un PC {#debug-obf-routing-on-a-pc}
 
 
-- allez sur [https://osmand.net](https://osmand.net "https://osmand.net") et téléchargez [OsmandMapCreator.zip](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") à partir du lien sur le côté droit de l'écran, puis décompressez-le,
+- allez sur [https://osmand.net](https://osmand.net "https://osmand.net") et téléchargez [OsmandMapCreator.zip](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") à partir du lien sur le côté droit de l'écran, puis décompressez-le,
 - copiez le fichier OBF de votre téléphone ou tablette dans ce dossier,
 - démarrez OsmandMapCreator via le fichier bat ou sh,
 - assurez-vous d'avoir une connexion Internet afin que mapcreator puisse télécharger les tuiles de carte, vérifiez tous les menus et paramètres dans mapcreator,

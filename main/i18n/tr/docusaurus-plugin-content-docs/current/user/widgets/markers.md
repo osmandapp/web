@@ -76,7 +76,7 @@ Ayrıca bir veya iki işaretleyici görüntülemeyi de seçebilirsiniz. Widget a
 Bu, aracın veya kişinin hedefe varması gereken zamandır (ss:dd). İşaretleyiciye olan mesafenin ortalama hıza bölünmesiyle hesaplanır.
 Ortalama hız, 15 saniyeden 60 dakikaya kadar seçtiğiniz zaman aralığı için konum noktalarından alınan tüm hız değerlerinin ortalaması olarak hesaplanır.
 
-Ayrıca bir veya iki işaretleyici görüntülemeyi de seçebilirsiniz. Widget ayarları hakkında daha fazla bilgiyi bu [makalede](https://osmand.net/docs/user/personal/markers#map-markers-widgets) okuyun.
+Ayrıca bir veya iki işaretleyici görüntülemeyi de seçebilirsiniz. Widget ayarları hakkında daha fazla bilgiyi bu [makalede](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets) okuyun.
 :::info
 *İşaretleyiciye olan mesafe*, konumunuz (veya haritadaki belirli bir nokta) ile işaretleyici arasındaki düz çizginin uzunluğudur.
 :::

@@ -170,7 +170,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 - [Вигляд треку](./appearance.md)
 - [Контекстне меню треку](./track-context-menu.md)
 - [Навігація по треку](../../navigation/setup/gpx-navigation.md)
-- [Маршрути на мапі](https://docs.osmand.net/blog/routes) (стаття в блозі)
+- [Маршрути на мапі](https://osmand.net/blog/routes) (стаття в блозі)
 - [Налаштувати мапу](../../map/configure-map-menu.md)  
 - [GPX-треки](../../personal/tracks/index.md)  
 - [Планування маршруту](../../plan-route/index.md)  

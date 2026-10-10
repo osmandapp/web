@@ -75,7 +75,7 @@ The **Map markers** *(for Android)* widget and **Distance indication - Widgets**
 This is the time (hh:mm) when the vehicle or person should arrive at the destination. It is calculated as the distance to the marker divided by the average speed.
 The average speed is calculated as the mean of all speed values received from location points for the time interval you selected from 15 seconds to 60 minutes.
 
-You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+You can also select to display one or two markers. Read more about widget settings in this [article](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets).
 :::info
 *The distance to the marker* is the length of the straight line between your position (or a particular point on the map) and the marker.
 :::  

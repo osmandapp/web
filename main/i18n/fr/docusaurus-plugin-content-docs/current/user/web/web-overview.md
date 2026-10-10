@@ -56,11 +56,11 @@ Le Portail de Carte Web prend en charge plusieurs niveaux d'accès : sans connex
 | [Planificateur d'itinéraire](./planner.md) | Sans connexion |
 | [Superpositions météo](./web-weather.md) | Sans connexion |
 | [Paramètres](./web-map.md#settings) | Sans connexion |
-| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Favoris](./web-map.md#favorites), [Traces](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Synchronisation OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Recherche web, Lieux populaires](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Dossiers de traces et couche](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Favoris](./web-map.md#favorites), [Traces](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Synchronisation OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Recherche web, Lieux populaires](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Dossiers de traces et couche](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Comment commencer {#how-to-start}

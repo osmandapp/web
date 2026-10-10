@@ -69,10 +69,10 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_s
 ## Wie man Rasterkarten vorbereitet {#how-to-prepare-raster-maps}
 
 :::info
-Hauptartikel zur Vorbereitung von Karten [lesen Sie hier](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Hauptartikel zur Vorbereitung von Karten [lesen Sie hier](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Obwohl das Plugin *Online Maps* heißt, können Sie die Karten auch ohne Internetverbindung verwenden. Sie müssen nur die Teile der Karten (oft Kacheln genannt) speichern, um sie später zu verwenden. Laden Sie dazu ein spezielles [Map Creator Tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunter, das vom OsmAnd-Team entwickelt wurde.
+Obwohl das Plugin *Online Maps* heißt, können Sie die Karten auch ohne Internetverbindung verwenden. Sie müssen nur die Teile der Karten (oft Kacheln genannt) speichern, um sie später zu verwenden. Laden Sie dazu ein spezielles [Map Creator Tool](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunter, das vom OsmAnd-Team entwickelt wurde.
 
 Wählen Sie den Bereich aus, den Sie herunterladen möchten, klicken Sie auf "Preload area", stellen Sie dann die kleinsten und größten Zoomstufen ein, die Sie anzeigen möchten, und laden Sie die Kacheln herunter.
 Für die <b>Android-Version</b> können Sie sie in den Ordner <i>osmand/tiles/*tile type*</i> Ihres Telefons kopieren. Sie müssen auch <i>Karte konfigurieren → Überlagerungskarte</i> öffnen und OsmAnd-Online-Kacheln auswählen.

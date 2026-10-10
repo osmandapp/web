@@ -34,7 +34,7 @@ OsmAnd Cloud, **kişisel ayarları ve uygulama verilerini birden fazla cihazda d
 
 OsmAnd Cloud, verilerinizi Android, iOS ve [web sürümü](../web/index.md) arasında yedeklemenize, geri yüklemenize ve senkronize etmenize olanak tanır. Çapraz platform yetenekleri sayesinde, **profil ayarlarını**, **izleri**, **favorileri**, **OSM düzenlemelerini/notlarını** ve daha fazlasını cihazlar arasında aktarabilirsiniz. Ek olarak, **web sürümü**, rotaları planlamanıza ve bağlı cihazlarda daha sonra kullanmak üzere kaydetmenize olanak tanır.  
 
-OsmAnd, aşağıdaki adımlarla *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* arasında **çapraz platform kullanımını** destekler:
+OsmAnd, aşağıdaki adımlarla *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://osmand.net/map))* arasında **çapraz platform kullanımını** destekler:
 
 1. **OsmAnd Cloud'da bir [hesap](#login) kaydedin**:
  

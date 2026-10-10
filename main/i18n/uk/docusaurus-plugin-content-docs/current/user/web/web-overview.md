@@ -55,11 +55,11 @@ OsmAnd Web тісно інтегрований із сервісом **OsmAnd Cl
 | [Планувальник маршрутів](./planner.md) | Без входу |
 | [Шари погоди](./web-weather.md) | Без входу |
 | [Налаштування](./web-map.md#settings) | Без входу |
-| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Улюблені місця](./web-map.md#favorites), [Треки](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([Рельєф](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Синхронізація OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Веб-пошук, популярні місця](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Папки треків та шар](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Улюблені місця](./web-map.md#favorites), [Треки](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([Рельєф](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Синхронізація OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Веб-пошук, популярні місця](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Папки треків та шар](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Як почати {#how-to-start}

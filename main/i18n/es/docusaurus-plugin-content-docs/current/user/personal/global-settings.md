@@ -151,7 +151,7 @@ Ir a: *Archivos → En mi iPhone → OsmAnd Maps*
 | Características | Versión 1 | Versión 2 (OpenGL) |
 |:---|:--- |:--- |
 | Multiplataforma | No se utiliza en la versión de iOS. | Se adapta a ambas versiones. |
-| Dependiente de GPU / CPU | Recomendado para dispositivos de bajo rendimiento u obsoletos. | Potente motor de renderizado. <br /> Solo disponible para [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) y versiones posteriores, y en modo de prueba para [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Dependiente de GPU / CPU | Recomendado para dispositivos de bajo rendimiento u obsoletos. | Potente motor de renderizado. <br /> Solo disponible para [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) y versiones posteriores, y en modo de prueba para [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | Modo 3D | Es posible ver el mapa en 2D, y puede cambiar el ángulo de visión para obtener una [vista 3D](../widgets/map-buttons.md#3d-mode). | Puede ver el mapa en 2D y [3D](../widgets/map-buttons.md#3d-mode). |
 | Visualización del mapa | Todo el mapa se renderiza como un conjunto de teselas, y los marcadores, líneas y texto ya están dentro de estas teselas. | Primero, se renderiza todo el paquete de teselas, y luego los símbolos disponibles se aplican al mapa, [capa por capa](../../technical/algorithms/map-rendering-layers.md). |
 | Superposición / subyacencia de símbolos transparentes | Admite todos los ajustes. | No admite una capa ráster sobre texto vectorial. |

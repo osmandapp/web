@@ -394,7 +394,7 @@ Para criar filtros personalizados para encontrar locais no mapa, selecione categ
 
 6. **Comida**. Inclui 12 tipos de filtros.  
 
-7. **Perigo**. Inclui 5 tipos: *Perigo de avalanche, Perigo de erosão, Perigo de inundação, Perigo nuclear, Estrada escorregadia*. A categoria Perigo inclui tanto POIs com etiquetas hazard=* em nós como segmentos de estrada ou caminho (ways) marcados com a mesma etiqueta, se forem exportados como objetos pesquisáveis. Para uma visão geral visual de todos os ícones de perigo utilizados no mapa, consulte a secção [Perigo](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+7. **Perigo**. Inclui 5 tipos: *Perigo de avalanche, Perigo de erosão, Perigo de inundação, Perigo nuclear, Estrada escorregadia*. A categoria Perigo inclui tanto POIs com etiquetas hazard=* em nós como segmentos de estrada ou caminho (ways) marcados com a mesma etiqueta, se forem exportados como objetos pesquisáveis. Para uma visão geral visual de todos os ícones de perigo utilizados no mapa, consulte a secção [Perigo](https://osmand.net/docs/user/map-legend/osmand/#hazard1).
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Inclui 31 tipos de filtros.
 

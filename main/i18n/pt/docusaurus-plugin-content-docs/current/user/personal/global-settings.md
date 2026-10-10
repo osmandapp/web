@@ -151,7 +151,7 @@ Vá para: *Arquivos → No Meu Telefone → OsmAnd Maps*
 | Recursos | Versão 1 | Versão 2 (OpenGL) |
 |:---|:--- |:--- |
 | Multiplataforma | Não usado na versão iOS. | Serve para ambas as versões. |
-| Dependente de GPU / CPU | Recomendado para dispositivos de baixo desempenho ou desatualizados. | Motor de renderização poderoso. <br /> Disponível apenas para [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) e versões posteriores, e em modo de teste para [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Dependente de GPU / CPU | Recomendado para dispositivos de baixo desempenho ou desatualizados. | Motor de renderização poderoso. <br /> Disponível apenas para [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) e versões posteriores, e em modo de teste para [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | Modo 3D | É possível visualizar o mapa em 2D, e você pode alterar o ângulo de visão para obter uma [visualização 3D](../widgets/map-buttons.md#3d-mode). | Você pode visualizar o mapa em 2D e [3D](../widgets/map-buttons.md#3d-mode). |
 | Exibição do mapa | O mapa inteiro é renderizado como um conjunto de blocos, e marcadores, linhas e texto já estão dentro desses blocos. | Primeiro, todo o pacote de blocos é renderizado, e então os símbolos disponíveis são aplicados ao mapa, [camada por camada](../../technical/algorithms/map-rendering-layers.md). |
 | Sobreposição / subposição de símbolos transparentes | Suporta todas as configurações. | Não suporta uma camada raster sobre texto vetorial. |

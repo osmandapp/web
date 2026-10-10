@@ -40,4 +40,4 @@ Istnieje kilka sposobów, aby to zrobić:
 
 - OsmAnd+ w [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - OsmAnd w [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon nie jest już dostępny. Szczegółowe informacje można znaleźć [tutaj](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon nie jest już dostępny. Szczegółowe informacje można znaleźć [tutaj](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).

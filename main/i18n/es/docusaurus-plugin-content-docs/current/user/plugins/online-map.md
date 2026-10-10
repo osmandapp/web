@@ -69,10 +69,10 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setting
 ## Cómo preparar mapas ráster {#how-to-prepare-raster-maps}
 
 :::info
-Artículo principal para preparar mapas [lea aquí](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Artículo principal para preparar mapas [lea aquí](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-A pesar de que el complemento se llama *Mapas en línea*, también puede usar los mapas sin conexión a Internet. Solo necesita guardar las partes de los mapas (a menudo llamadas teselas) para usarlas más tarde. Para hacerlo, descargue una herramienta específica [Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) desarrollada por el equipo de OsmAnd.
+A pesar de que el complemento se llama *Mapas en línea*, también puede usar los mapas sin conexión a Internet. Solo necesita guardar las partes de los mapas (a menudo llamadas teselas) para usarlas más tarde. Para hacerlo, descargue una herramienta específica [Map Creator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) desarrollada por el equipo de OsmAnd.
 
 Seleccione el área que necesita descargar, haga clic en el área de precarga, luego establezca los niveles de zoom más pequeños y más grandes que desea mostrar y descargue las teselas.
 Para la <b>versión de Android</b>, puede copiarlos en la carpeta <i>osmand/tiles/*tipo_de_tesela*</i> de su teléfono. También deberá abrir <i>Configurar mapa-. Superposición</i> y elegir las teselas en línea de OsmAnd.
