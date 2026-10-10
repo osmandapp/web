@@ -89,6 +89,19 @@ If you want to manually adjust the size of map buttons, use the [Default Appeara
 
 If the interface still appears larger than expected, check *Android System Settings → Display → Display size and text* and adjust the display settings as needed.
 
+### OsmAnd does not fill the screen in landscape on iPad (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+OsmAnd supports both portrait and landscape orientations on iPad and follows the system rotation. If the app fills the screen in portrait but shows up as a smaller window in landscape, this is caused by the windowing mode of iPadOS 26, not by OsmAnd.
+
+In the *Windowed Apps* mode, iPadOS remembers the size of each app window. Once the OsmAnd window has been resized in landscape, the app keeps that window size in landscape while still filling the screen in portrait.
+
+To make OsmAnd fill the screen again, use one of the following options:
+
+- **Expand the window.** With OsmAnd open in landscape, tap the small pill at the top of the window. Three buttons appear: *Close*, *Minimize*, and *Zoom*. Tap *Zoom* to expand the app to the whole screen. The app keeps the full-screen size after rotating the iPad.
+- **Turn off windowing for all apps.** Go to *iPad Settings → Multitasking & Gestures* and select *Full Screen Apps* instead of *Windowed Apps*. All apps, including OsmAnd, will always open full screen.
+
+Also make sure that OsmAnd is not opened in *Split View* or *Slide Over* next to another app.
+
 
 ## Other {#other}
 
