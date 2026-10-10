@@ -76,7 +76,7 @@ Das Widget **Kartenmarkierungen** *(für Android)* und **Entfernungsanzeige - Wi
 Dies ist die Zeit (hh:mm), zu der das Fahrzeug oder die Person am Ziel ankommen sollte. Sie wird berechnet als die Entfernung zur Markierung geteilt durch die Durchschnittsgeschwindigkeit.
 Die Durchschnittsgeschwindigkeit wird als Mittelwert aller Geschwindigkeitswerte berechnet, die von den Standortpunkten für das von Ihnen gewählte Zeitintervall von 15 Sekunden bis 60 Minuten empfangen wurden.
 
-Sie können auch auswählen, ob eine oder zwei Markierungen angezeigt werden sollen. Lesen Sie mehr über die Widget-Einstellungen in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Sie können auch auswählen, ob eine oder zwei Markierungen angezeigt werden sollen. Lesen Sie mehr über die Widget-Einstellungen in diesem [Artikel](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets).
 :::info
 *Die Entfernung zur Markierung* ist die Länge der geraden Linie zwischen Ihrer Position (oder einem bestimmten Punkt auf der Karte) und der Markierung.
 :::  

@@ -39,4 +39,4 @@ sidebar_position: 9
 
 - OsmAnd+ على [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - OsmAnd على [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon لم يعد متاحًا. يمكن العثور على معلومات مفصلة [هنا](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon لم يعد متاحًا. يمكن العثور على معلومات مفصلة [هنا](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).

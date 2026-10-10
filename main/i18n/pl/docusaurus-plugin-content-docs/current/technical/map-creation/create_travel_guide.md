@@ -21,7 +21,7 @@ Wybór źródła tekstu do przewodnika zależy wyłącznie od Ciebie. Może to b
 
 ### Uruchom narzędzie {#launch-the-tool}
 
-Pobierz najnowszą wersję [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) i rozpakuj pliki z archiwum.
+Pobierz najnowszą wersję [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) i rozpakuj pliki z archiwum.
 
 :::note
 Sposób użycia tego narzędzia opisano w artykule [Tworzenie własnych map rastrowych i wektorowych offline](./create-offline-maps-yourself.md#osmandmapcreator).

@@ -169,7 +169,7 @@ Tap the [My Position](../../map/interact-with-map.md#my-position-and-zoom) butto
 - [Track appearance](./appearance.md)
 - [Track Context menu](./track-context-menu.md)
 - [Navigate by track](../../navigation/setup/gpx-navigation.md)
-- [Routes on the map](https://docs.osmand.net/blog/routes) blog article
+- [Routes on the map](https://osmand.net/blog/routes) blog article
 - [Configure map](../../map/configure-map-menu.md)  
 - [GPX tracks](../../personal/tracks/index.md)  
 - [Plan route](../../plan-route/index.md)  

@@ -69,10 +69,10 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,map_se
 ## Jak przygotować mapy rastrowe {#how-to-prepare-raster-maps}
 
 :::info
-Główny artykuł na temat przygotowywania map [przeczytaj tutaj](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Główny artykuł na temat przygotowywania map [przeczytaj tutaj](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Mimo że wtyczka nazywa się *Mapy online*, można z nich korzystać również bez połączenia z internetem. Wystarczy zapisać fragmenty map (często nazywane kafelkami), aby użyć ich później. Aby to zrobić, pobierz specjalne narzędzie [Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) opracowane przez zespół OsmAnd.
+Mimo że wtyczka nazywa się *Mapy online*, można z nich korzystać również bez połączenia z internetem. Wystarczy zapisać fragmenty map (często nazywane kafelkami), aby użyć ich później. Aby to zrobić, pobierz specjalne narzędzie [Map Creator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) opracowane przez zespół OsmAnd.
 
 Wybierz obszar, który chcesz pobrać, kliknij Preload area, a następnie ustaw najmniejszy i największy poziom powiększenia, który chcesz wyświetlić, i pobierz kafelki.
 W przypadku <b>wersji na Androida</b> możesz skopiować je do folderu <i>osmand/tiles/*typ_kafelka*</i> w telefonie. Będziesz także musiał otworzyć <i>Konfiguruj mapę → Nakładka mapy</i> i wybrać kafelki online OsmAnd.

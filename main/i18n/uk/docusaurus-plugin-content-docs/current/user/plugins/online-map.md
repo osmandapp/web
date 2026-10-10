@@ -69,10 +69,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## Як підготувати растрові карти {#how-to-prepare-raster-maps}
 
 :::info
-Основну статтю про підготовку карт читайте [тут](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Основну статтю про підготовку карт читайте [тут](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Незважаючи на те, що плагін називається *Онлайн-карти*, ви також можете використовувати карти без підключення до інтернету. Вам просто потрібно зберегти частини карт (часто називаються тайлами), щоб використовувати їх пізніше. Для цього завантажте спеціальний [інструмент Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip), розроблений командою OsmAnd.
+Незважаючи на те, що плагін називається *Онлайн-карти*, ви також можете використовувати карти без підключення до інтернету. Вам просто потрібно зберегти частини карт (часто називаються тайлами), щоб використовувати їх пізніше. Для цього завантажте спеціальний [інструмент Map Creator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip), розроблений командою OsmAnd.
 
 Виберіть область, яку потрібно завантажити, натисніть Preload area, потім встановіть найменший і найбільший рівні наближення, які ви хочете відображати, і завантажте тайли.
 Для <b>версії Android</b> ви можете скопіювати їх у папку <i>osmand/tiles/*тип тайлу*</i> на вашому телефоні. Вам також потрібно відкрити <i>Налаштувати карту → Накладна карта</i> і вибрати онлайн-тайли OsmAnd.

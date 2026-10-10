@@ -170,7 +170,7 @@ Toque no botão [Minha Posição](../../map/interact-with-map.md#my-position-and
 - [Aparência da trilha](./appearance.md)
 - [Menu de Contexto da Trilha](./track-context-menu.md)
 - [Navegar por trilha](../../navigation/setup/gpx-navigation.md)
-- Artigo do blog [Rotas no mapa](https://docs.osmand.net/blog/routes)
+- Artigo do blog [Rotas no mapa](https://osmand.net/blog/routes)
 - [Configurar mapa](../../map/configure-map-menu.md)  
 - [Trilhas GPX](../../personal/tracks/index.md)  
 - [Planejar rota](../../plan-route/index.md)  

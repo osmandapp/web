@@ -94,7 +94,7 @@ Niektóre z tych ustawień oddziałują na siebie, więc bądź dokładny. Najle
 
 ### Kontrola zachowania aplikacji działających w tle w iOS {#control-the-behavior-of-ios-background-apps}
 
-iOS może automatycznie zawieszać lub zatrzymywać aplikacje działające w tle, gdy zasoby systemowe są realokowane. OsmAnd nie może obejść tego zachowania. Jeśli nagrywanie śladu zostanie przerwane, gdy urządzenie jest zablokowane, może to pozostawić luki w nagraniu. Możesz edytować te luki za pomocą narzędzia [Planowanie trasy](https://docs.osmand.net/docs/user/plan-route/create-route).
+iOS może automatycznie zawieszać lub zatrzymywać aplikacje działające w tle, gdy zasoby systemowe są realokowane. OsmAnd nie może obejść tego zachowania. Jeśli nagrywanie śladu zostanie przerwane, gdy urządzenie jest zablokowane, może to pozostawić luki w nagraniu. Możesz edytować te luki za pomocą narzędzia [Planowanie trasy](https://osmand.net/docs/user/plan-route/create-route).
 
 Więcej szczegółów na temat tego, jak iOS obsługuje śledzenie lokalizacji, można znaleźć w dokumentacji Apple [tutaj](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

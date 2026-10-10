@@ -151,7 +151,7 @@ Gehe zu: *Dateien → Auf meinem iPhone → OsmAnd Maps*
 | Funktionen | Version 1 | Version 2 (OpenGL) |
 |:---|:--- |:--- |
 | Plattformübergreifend | Wird in der iOS-Version nicht verwendet. | Passt für beide Versionen. |
-| GPU-/CPU-abhängig | Empfohlen für leistungsschwache oder veraltete Geräte. | Leistungsstarke Rendering-Engine. <br /> Nur verfügbar für [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) und spätere Versionen sowie im Testmodus für [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| GPU-/CPU-abhängig | Empfohlen für leistungsschwache oder veraltete Geräte. | Leistungsstarke Rendering-Engine. <br /> Nur verfügbar für [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) und spätere Versionen sowie im Testmodus für [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | 3D-Modus | Es ist möglich, die Karte in 2D anzuhaften, und Sie können den Betrachtungswinkel ändern, um eine [3D-Ansicht](../widgets/map-buttons.md#3d-mode) zu erhalten. | Sie können die Karte in 2D und [3D](../widgets/map-buttons.md#3d-mode) anzeigen. |
 | Kartenanzeige | Die gesamte Karte wird als Satz von Kacheln gerendert, und Markierungen, Linien und Text befinden sich bereits innerhalb dieser Kacheln. | Zuerst wird das gesamte Kachelpaket gerendert, und dann werden die verfügbaren Symbole [Schicht für Schicht](../../technical/algorithms/map-rendering-layers.md) auf die Karte angewendet. |
 | Transparente Symbole über/unterlagern | Unterstützt alle Einstellungen. | Unterstützt keine Rasterebene über Vektortext. |

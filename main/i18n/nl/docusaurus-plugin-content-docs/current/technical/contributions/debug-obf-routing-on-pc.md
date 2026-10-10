@@ -6,7 +6,7 @@ sidebar_position: 5
 # OBF-routering debuggen op een pc {#debug-obf-routing-on-a-pc}
 
 
-- ga naar [https://osmand.net](https://osmand.net "https://osmand.net") en download [OsmandMapCreator.zip](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") via de link aan de rechterkant van het scherm, en pak het uit,
+- ga naar [https://osmand.net](https://osmand.net "https://osmand.net") en download [OsmandMapCreator.zip](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") via de link aan de rechterkant van het scherm, en pak het uit,
 - kopieer het OBF-bestand van je telefoon of tablet naar die map,
 - start OsmandMapCreator via een bat-bestand of sh-bestand,
 - zorg voor een internetverbinding zodat mapcreator kaarttegels kan downloaden, controleer alle menu's en instellingen in mapcreator,

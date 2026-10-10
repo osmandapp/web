@@ -120,7 +120,7 @@ Die Option **Papierkorb** enthält Dateien, die aus **OsmAnd Cloud** gelöscht w
 
 Der Abschnitt **Verbundene Apps** ermöglicht es Ihnen, externe Dienste mit Ihrem OsmAnd-Konto zu verknüpfen. Derzeit unterstützt er die Integration mit [Garmin Connect™](https://connect.garmin.com/app/), die eine automatische Synchronisierung von Garmin-Aktivitäten ermöglicht. Um ihn zu öffnen, gehen Sie zu: *OsmAnd Web Map → Konto → Verbundene Apps*.
 
-Die Garmin Connect-Integration ist nur für [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) Benutzer verfügbar. Wenn Sie kein aktives Pro-Abonnement haben, öffnet die Auswahl des Garmin Connect-Elements die Preisseite.
+Die Garmin Connect-Integration ist nur für [OsmAnd Pro](https://osmand.net/docs/user/purchases/) Benutzer verfügbar. Wenn Sie kein aktives Pro-Abonnement haben, öffnet die Auswahl des Garmin Connect-Elements die Preisseite.
 
 Um Ihr Garmin Connect™-Konto zu verbinden, klicken Sie auf **Verbinden**. Sie werden zur Garmin-Autorisierungsseite weitergeleitet, wo Sie sich anmelden und den Zugriff auf Ihre Garmin Connect™-Daten gewähren müssen. Während der Autorisierung können Sie die Synchronisierung kürzlicher Aktivitäten aktivieren, um Daten aus den letzten 30 Tagen zu importieren. Aktivitäten, die älter als 30 Tage sind, können nicht automatisch importiert werden.
 

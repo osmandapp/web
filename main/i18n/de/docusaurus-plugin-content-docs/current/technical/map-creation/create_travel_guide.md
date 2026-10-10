@@ -21,7 +21,7 @@ Die Wahl der Quelle für den Text Ihres Reiseführers liegt ganz bei Ihnen. Es k
 
 ### Tool starten {#launch-the-tool}
 
-Laden Sie die neueste Version von [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunter und extrahieren Sie die Dateien aus dem Archiv.
+Laden Sie die neueste Version von [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunter und extrahieren Sie die Dateien aus dem Archiv.
 
 :::note
 Die Verwendung dieses Tools wird im Artikel [Offline Raster- & Vektorkarten selbst erstellen](./create-offline-maps-yourself.md#osmandmapcreator) beschrieben.

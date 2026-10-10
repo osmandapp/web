@@ -21,7 +21,7 @@ Na urządzenia z systemem Android można pobrać **darmową** i **płatną** wer
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon nie jest już dostępny. Szczegółowe informacje można znaleźć [tutaj](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon nie jest już dostępny. Szczegółowe informacje można znaleźć [tutaj](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).
 
 **Wersje aplikacji OsmAnd:**
 
@@ -172,7 +172,7 @@ Subskrypcja **Pro** obejmuje obecnie następujące funkcje:
 
 |  Funkcja Pro  | Opis   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://osmand.net/map). |
 | [Rzeźba terenu 3D](../plugins/topography.md#3d-relief) | Pozwala na posiadanie i obserwowanie modelu w skali Twojej okolicy lub całego kontynentu. |
 | [Aktualizacje na żywo](../personal/maps-resources.md#live-updates) | Mapy OsmAnd aktualizują się co 15 minut po ulepszeniu [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Wtyczka Pogoda](../plugins/weather.md) | 24-godzinna prognoza godzinowa na 7 dni naprzód na mapie. |

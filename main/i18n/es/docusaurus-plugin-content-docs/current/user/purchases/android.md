@@ -21,7 +21,7 @@ Para dispositivos Android, puedes descargar las versiones **Gratuita** y de **Pa
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon ya no está disponible. Información detallada se puede encontrar [aquí](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon ya no está disponible. Información detallada se puede encontrar [aquí](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).
 
 **Versiones de la aplicación OsmAnd:**
 
@@ -171,7 +171,7 @@ La suscripción **Pro** tiene actualmente las siguientes características:
 
 |  Función Pro  | Descripción   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Haz una copia de seguridad y restaura tus datos, sincroniza los datos con el [portal web de OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Haz una copia de seguridad y restaura tus datos, sincroniza los datos con el [portal web de OsmAnd](https://osmand.net/map). |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | Te permite tener y observar un modelo a escala de tu vecindario o de un continente entero. |
 | [Actualizaciones en vivo](../personal/maps-resources.md#live-updates) | Los mapas de OsmAnd se actualizan cada 15 minutos después de la mejora de [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Plugin del tiempo](../plugins/weather.md) | Previsión horaria de 24h con 7 días de antelación en el mapa. |

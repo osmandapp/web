@@ -137,7 +137,7 @@ Atualmente, a subscrição Pro tem as seguintes funcionalidades:
 
 |  Funcionalidade Pro  | Descrição   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Faça cópias de segurança e restaure os seus dados, sincronize dados com o [portal web OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Faça cópias de segurança e restaure os seus dados, sincronize dados com o [portal web OsmAnd](https://osmand.net/map). |
 | [Relevo 3D](../plugins/topography.md#3d-relief) | Permite ter e observar um modelo em escala da sua vizinhança ou de um continente inteiro. |
 | [Widgets de Altitude - Elevação: Centro do Mapa](../widgets/info-widgets.md#elevation-map-center) | Permite saber a elevação do centro do mapa atual acima do nível do mar.  |
 | [Ao Vivo](../personal/maps-resources.md#live-updates) | As atualizações dos mapas OsmAnd a cada 15 minutos após a melhoria do [OpenStreetMap](https://www.openstreetmap.org/). |

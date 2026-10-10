@@ -64,10 +64,10 @@ Raster haritaları görselleştirme ve özelleştirme hakkında ayrıntılı bil
 ## Raster Haritalar Nasıl Hazırlanır {#how-to-prepare-raster-maps}
 
 :::info
-Haritaları hazırlamak için ana makaleyi [buradan okuyun](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Haritaları hazırlamak için ana makaleyi [buradan okuyun](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Eklentinin *Çevrimiçi Haritalar* olarak adlandırılmasına rağmen, haritaları internet bağlantısı olmadan da kullanabilirsiniz. Sadece haritaların bölümlerini (genellikle döşemeler olarak adlandırılır) daha sonra kullanmak üzere kaydetmeniz gerekir. Bunu yapmak için, OsmAnd ekibi tarafından geliştirilen belirli bir [Harita Oluşturucu aracını](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) indirin.
+Eklentinin *Çevrimiçi Haritalar* olarak adlandırılmasına rağmen, haritaları internet bağlantısı olmadan da kullanabilirsiniz. Sadece haritaların bölümlerini (genellikle döşemeler olarak adlandırılır) daha sonra kullanmak üzere kaydetmeniz gerekir. Bunu yapmak için, OsmAnd ekibi tarafından geliştirilen belirli bir [Harita Oluşturucu aracını](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) indirin.
 
 İndirmeniz gereken alanı seçin, Ön Yükleme alanına tıklayın, ardından görüntülemek istediğiniz en küçük ve en büyük yakınlaştırma seviyelerini ayarlayın ve döşemeleri indirin.
 <b>Android sürümü</b> için bunları telefonunuzun <i>osmand/tiles/*döşeme türü*</i> klasörüne kopyalayabilirsiniz. Ayrıca <i>Haritayı Yapılandır - Üst Katman haritasını</i> açmanız ve OsmAnd çevrimiçi döşemelerini seçmeniz gerekir.

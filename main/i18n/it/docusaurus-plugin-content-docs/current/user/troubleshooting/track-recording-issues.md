@@ -94,7 +94,7 @@ Alcune di queste impostazioni interagiscono tra loro, quindi siate precisi. La m
 
 ### Controllare il comportamento delle app in background di iOS {#control-the-behavior-of-ios-background-apps}
 
-iOS può sospendere o arrestare automaticamente le app in background quando le risorse di sistema vengono riallocate. OsmAnd non può sovrascrivere questo comportamento. Se la registrazione della traccia viene interrotta quando il dispositivo è bloccato, ciò può lasciare delle lacune nella registrazione. È possibile modificare queste lacune utilizzando lo strumento [Pianifica un percorso](https://docs.osmand.net/docs/user/plan-route/create-route).
+iOS può sospendere o arrestare automaticamente le app in background quando le risorse di sistema vengono riallocate. OsmAnd non può sovrascrivere questo comportamento. Se la registrazione della traccia viene interrotta quando il dispositivo è bloccato, ciò può lasciare delle lacune nella registrazione. È possibile modificare queste lacune utilizzando lo strumento [Pianifica un percorso](https://osmand.net/docs/user/plan-route/create-route).
 
 Per maggiori dettagli su come iOS gestisce il tracciamento della posizione, consulta la documentazione di Apple [qui](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

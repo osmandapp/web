@@ -137,7 +137,7 @@ import Translate from '@site/src/components/Translate.js';
 
 |  Pro-функція  | Опис   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [вебпорталом OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [вебпорталом OsmAnd](https://osmand.net/map). |
 | [3D-рельєф](../plugins/topography.md#3d-relief) | Дозволяє мати та спостерігати масштабну модель вашого району або цілого континенту. |
 | [Віджети висоти - Висота: Центр мапи](../widgets/info-widgets.md#elevation-map-center) | Дозволяє дізнатися висоту поточного центру мапи над рівнем моря.  |
 | [Live-оновлення](../personal/maps-resources.md#live-updates) | Мапи OsmAnd оновлюються кожні 15 хвилин після покращень в [OpenStreetMap](https://www.openstreetmap.org/). |

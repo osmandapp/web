@@ -14,7 +14,7 @@ versions: '*'
 تتبع Geofabrik.de استراتيجية تقديم خرائط للدول التي يطلبها عدد كبير من المستخدمين أو من قبل عملائها. هذا يعني أن بعض الخرائط لا تظهر أبدًا على geofabrik لأنه ببساطة لا توجد طلبات كافية (أو لا توجد على الإطلاق)، مثل بعض الدول الغريبة مثل سيشيل أو بوروندي، إلخ.
 
 ## عملية الخادم {#server-process}
-بسبب هذا القرار الاستراتيجي لـ geofabrik، يمتلك OsmAnd خيارًا لإنشاء خرائط لهذه الدول، وتُستخدم الأدوات [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) و [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) لهذا الغرض. بالنسبة لـ OsmAndMapCreator، هذه عملية من ثلاث خطوات:
+بسبب هذا القرار الاستراتيجي لـ geofabrik، يمتلك OsmAnd خيارًا لإنشاء خرائط لهذه الدول، وتُستخدم الأدوات [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) و [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) لهذا الغرض. بالنسبة لـ OsmAndMapCreator، هذه عملية من ثلاث خطوات:
 - يحتاج OsmAndMapCreator إلى مضلع يحيط بالحدود الخارجية للدولة.
 - يحتاج OsmAndMapCreator إلى "خريطة البيانات الخام" من المستوى الأعلى التالي الذي يضم هذه الدولة. بالنسبة لبوروندي، هذا يعني أن OsmAndMapCreator يحتاج إلى خريطة إفريقيا. بالنسبة لـ Nordrhein-Westfalen، هذا يعني أن OsmAndMapCreator يحتاج إلى خريطة ألمانيا.
 - سيقوم [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) بإنشاء خريطة "بيانات خام" من المضلع عن طريق استخراج بيانات الخريطة من الخريطة "الأصل".
@@ -86,5 +86,5 @@ versions: '*'
 <pre>
 $ osmconvert ile-de-france.osm.pbf -B=paris.poly --out-pbf > Paris.osm.pbf
 </pre>
-- قم بتنزيل تطبيق OsmAndMapCreator من [download.osmand.net/latest-night-build/](http://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/")
+- قم بتنزيل تطبيق OsmAndMapCreator من [download.osmand.net/latest-night-build/](https://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/")
 - قم بإنشاء خريطة OsmAnd obf الخاصة بك من خريطة بيانات Paris.osm.pbf باستخدام OsmAndMapCreator.

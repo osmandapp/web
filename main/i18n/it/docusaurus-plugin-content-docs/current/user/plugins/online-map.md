@@ -69,10 +69,10 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 ## Come Preparare le Mappe Raster {#how-to-prepare-raster-maps}
 
 :::info
-Articolo principale per preparare le mappe [leggilo qui](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Articolo principale per preparare le mappe [leggilo qui](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Nonostante il plugin si chiami *Mappe Online*, è possibile utilizzare le mappe anche senza connessione a internet. È sufficiente salvare le parti delle mappe (spesso chiamate tasselli) per utilizzarle in seguito. Per farlo, scarica uno specifico [strumento per la creazione di mappe](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) sviluppato dal team di OsmAnd.
+Nonostante il plugin si chiami *Mappe Online*, è possibile utilizzare le mappe anche senza connessione a internet. È sufficiente salvare le parti delle mappe (spesso chiamate tasselli) per utilizzarle in seguito. Per farlo, scarica uno specifico [strumento per la creazione di mappe](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) sviluppato dal team di OsmAnd.
 
 Seleziona l'area che devi scaricare, clicca su Preload area, quindi imposta i livelli di zoom più piccolo e più grande che vuoi visualizzare e scarica i tasselli.
 Per la <b>versione Android</b> puoi copiarli nella cartella <i>osmand/tiles/*tipo_tassello*</i> del tuo telefono. Dovrai anche aprire <i>Configura mappa → Mappa sovrapposta</i> e scegliere i tasselli online di OsmAnd.

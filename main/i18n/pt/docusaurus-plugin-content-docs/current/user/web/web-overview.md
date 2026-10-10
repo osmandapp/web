@@ -55,11 +55,11 @@ O Portal de Mapas Web suporta vários níveis de acesso: sem login, com OsmAnd S
 | [Planejador de Rotas](./planner.md) | Sem Login |
 | [Sobreposições de Clima](./web-weather.md) | Sem Login |
 | [Configurações](./web-map.md#settings) | Sem Login |
-| [Menu Configurar Mapa](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Trilhas](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Menu Configurar Mapa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Sincronização OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Pesquisa Web, Lugares Populares](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Pastas de Trilhas e Camada](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Menu Configurar Mapa](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Trilhas](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Menu Configurar Mapa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Sincronização OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Pesquisa Web, Lugares Populares](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Pastas de Trilhas e Camada](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Como Começar {#how-to-start}

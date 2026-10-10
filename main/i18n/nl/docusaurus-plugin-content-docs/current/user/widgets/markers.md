@@ -72,7 +72,7 @@ De widget **Kaartmarkeringen** *(voor Android)* en **Afstandsindicatie - Widgets
 Dit is de tijd (uu:mm) waarop het voertuig of de persoon op de bestemming zou moeten aankomen. Het wordt berekend als de afstand tot de markering gedeeld door de gemiddelde snelheid.
 De gemiddelde snelheid wordt berekend als het gemiddelde van alle snelheidswaarden die zijn ontvangen van locatiepunten voor het door u geselecteerde tijdsinterval van 15 seconden tot 60 minuten.
 
-U kunt ook kiezen om één of twee markeringen weer te geven. Lees meer over widgetinstellingen in dit [artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+U kunt ook kiezen om één of twee markeringen weer te geven. Lees meer over widgetinstellingen in dit [artikel](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets).
 :::info
 *De afstand tot de markering* is de lengte van de rechte lijn tussen uw positie (of een bepaald punt op de kaart) en de markering.
 :::

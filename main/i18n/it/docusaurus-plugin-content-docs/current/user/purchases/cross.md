@@ -25,7 +25,7 @@ I seguenti prodotti OsmAnd supportano attualmente l'uso su più piattaforme (And
 A partire dalla **versione 5.1 di OsmAnd**, rilasciata in occasione del nostro **15° anniversario**, l'accesso multipiattaforma è stato esteso a **Maps+** (precedentemente noto come *Unlimited*). In precedenza, solo l'abbonamento [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) era multipiattaforma.  
 
 Per attivare l'accesso multipiattaforma, gli acquisti devono essere collegati al tuo account [OsmAnd Cloud](../personal/osmand-cloud.md#login).  
-Puoi confrontare tutti i prodotti OsmAnd qui: [differenza tra gli acquisti](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+Puoi confrontare tutti i prodotti OsmAnd qui: [differenza tra gli acquisti](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)
 
 | **Tipo di prodotto**               | **Multipiattaforma** | **Note**                                                                 |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|
