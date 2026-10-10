@@ -3,7 +3,7 @@ import WptTagsProvider, {
     openWikipediaContent,
     WIKIPEDIA,
 } from '@map/infoblock/components/wpt/WptTagsProvider';
-import { apiGet } from '@map/util/HttpApi';
+import { apiGet, apiPost } from '@map/util/HttpApi';
 import { findRequest } from '../../util/requests';
 
 describe('openWikipediaContent', () => {
@@ -136,6 +136,27 @@ describe('getWptTags: the tags of a poi', () => {
         const tags = await tagsOf({ web_poi_iconName: 'cafe', osm_tag_alt_name: 'Cafe', phone: '+380 44 000' });
 
         expect(Object.keys(tags)).toEqual(['phone']);
+    });
+
+    test('a tag of an external namespace keeps its local name and its stored value', async () => {
+        apiPost.mockResolvedValueOnce({
+            data: [
+                { key: 'test:country', value: 'US' },
+                { key: 'test:status', value: 'air_conditioning_yes' },
+                { key: 'test:telephone', value: '+1 804 828 0100' },
+                { key: 'brand', value: 'Blau', lang: 'de' },
+            ],
+        });
+
+        const tags = await tagsOf({ 'test:country': 'US' });
+
+        expect(tags['test:country']).toMatchObject({ textPrefix: 'country', value: 'US', isRawValue: true });
+        expect(tags['test:status']).toMatchObject({ value: 'air_conditioning_yes', isRawValue: true });
+        expect(tags['test:telephone'].isPhoneNumber).toBeFalsy();
+        expect(tags['test:telephone'].isUrl).toBe(false);
+        // a language entry of the server is a language tag, not a namespace
+        expect(tags.brand.lang).toBe('de');
+        expect(tags.brand.isRawValue).toBeUndefined();
     });
 
     test('the tags of a favorite are read from its extensions', async () => {

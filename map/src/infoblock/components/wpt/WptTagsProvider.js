@@ -15,7 +15,7 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, getIconNameForPoiType, parseTagWithLang, updatePoiCache } from '../../../manager/PoiManager';
+import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
@@ -325,8 +325,24 @@ async function getTagIconProps({ key, value, lang, ctx }) {
         case 'internet_access_fee_yes':
             return { icon: <InternetIcon /> };
         default:
+            if (isCustomNamespaceTag(key, lang)) {
+                return getCustomNamespaceTagProps(key);
+            }
             return await getOtherTagIconProps({ key, value, lang, ctx });
     }
+}
+
+// the server splits "type:lang" keys, so a key that still has a colon belongs to an external GPX namespace
+function isCustomNamespaceTag(key, lang) {
+    return !lang && key.indexOf(':') > 0;
+}
+
+function getCustomNamespaceTagProps(key) {
+    return {
+        icon: getIcon(null, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR),
+        textPrefix: key.slice(key.indexOf(':') + 1),
+        isRawValue: true,
+    };
 }
 
 async function getOtherTagIconProps({ key, value, lang, ctx }) {
@@ -338,7 +354,7 @@ async function getOtherTagIconProps({ key, value, lang, ctx }) {
         const svgData = await getSvgIcon({ value: prepValue, ctx });
         return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
     }
-    if (lang || parseTagWithLang(key).lang) {
+    if (lang) {
         return { icon: <DisplayLanguageIcon /> };
     }
     const svgData = await getSvgIcon({ key, value, ctx });
