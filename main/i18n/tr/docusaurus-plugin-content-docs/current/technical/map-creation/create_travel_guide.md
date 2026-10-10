@@ -21,7 +21,7 @@ Rehberinizin metin kaynağını seçmek tamamen size kalmıştır. Bir seyahat b
 
 ### Aracı başlatma {#launch-the-tool}
 
-[OsmAnd MapCreator'ın](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) en son sürümünü indirin ve dosyaları arşivden çıkarın.
+[OsmAnd MapCreator'ın](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) en son sürümünü indirin ve dosyaları arşivden çıkarın.
 
 :::note
 Bu aracın nasıl kullanılacağı [Çevrimdışı Raster ve Vektör Haritaları Oluşturma](./create-offline-maps-yourself.md#osmandmapcreator) makalesinde açıklanmıştır.

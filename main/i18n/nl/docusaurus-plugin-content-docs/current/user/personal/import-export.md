@@ -93,14 +93,14 @@ Opent en herstelt `.osf`-bestanden. Tik op het bestand in de bestandsbeheerder v
 - *Herstarten*. Na het importeren van de bestanden moet de applicatie opnieuw worden opgestart.
 
 Ondersteunde importbestandstypen:
-- [Tracks, routes](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favorieten](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML- en KMZ-bestanden worden geïmporteerd met conversie naar GPX-formaat.
+- [Tracks, routes](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [favorieten](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML- en KMZ-bestanden worden geïmporteerd met conversie naar GPX-formaat.
 - [OsmAnd vectorkaarten](https://osmand.net/docs/user/map/vector-maps): `.obf`.
-- [Online kaarttegels](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Online kaarttegels](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [Back-ups & profielen](#export): `.osf`.
-- [Hoogtekaarten / 3D-gegevens](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Hoogtekaarten / 3D-gegevens](https://osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [Andere](color-palette-schemes.md): `.txt`.
 
-Voor een technisch overzicht van alle ondersteunde formaten, zie [OsmAnd Bestandsformaten](https://www.osmand.net/docs/technical/osmand-file-formats/).
+Voor een technisch overzicht van alle ondersteunde formaten, zie [OsmAnd Bestandsformaten](https://osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

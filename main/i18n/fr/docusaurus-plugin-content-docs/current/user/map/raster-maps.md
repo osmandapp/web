@@ -255,11 +255,11 @@ Voici les paramètres clés à configurer lors de la mise en place d'une nouvell
 
 Les cartes en ligne peuvent être ajoutées avec un lien spécial vers la liste des cartes raster d'OsmAnd. Cliquez sur ce lien et choisissez OsmAnd pour l'ouvrir :
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |Paramètre du lien|Exemple|
 |:--------|:---------------|
-| [Partie constante]| `http://osmand.net/add-tile-source` |
+| [Partie constante]| `https://osmand.net/add-tile-source` |
 |[Séparateurs]| ?   & |
 |[Nom]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|

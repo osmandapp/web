@@ -149,7 +149,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | الميزات | الإصدار 1 | الإصدار 2 (OpenGL) |
 |:---|:--- |:--- |
 | متعدد المنصات | غير مستخدم في إصدار iOS. | يناسب كلا الإصدارين. |
-| يعتمد على GPU / CPU | موصى به للأجهزة ذات الأداء المنخفض أو القديمة. | محرك عرض قوي. <br /> متاح فقط لـ [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) وإصدارات لاحقة، وفي وضع الاختبار لـ [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| يعتمد على GPU / CPU | موصى به للأجهزة ذات الأداء المنخفض أو القديمة. | محرك عرض قوي. <br /> متاح فقط لـ [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) وإصدارات لاحقة، وفي وضع الاختبار لـ [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | وضع 3D | من الممكن عرض الخريطة في 2D، ويمكنك تغيير زاوية العرض للحصول على [عرض ثلاثي الأبعاد](../widgets/map-buttons.md#3d-mode). | يمكنك عرض الخريطة في 2D و[3D](../widgets/map-buttons.md#3d-mode). |
 | عرض الخريطة | يتم عرض الخريطة بأكملها كمجموعة من البلاطات، والعلامات والخطوط والنصوص موجودة بالفعل داخل هذه البلاطات. | أولاً، يتم عرض حزمة البلاط بأكملها، ثم يتم تطبيق الرموز المتاحة على الخريطة، [طبقة بطبقة](../../technical/algorithms/map-rendering-layers.md). |
 | تراكب / تحت الرموز الشفافة | يدعم جميع الإعدادات. | لا يدعم طبقة رستر على النص المتجهي. |

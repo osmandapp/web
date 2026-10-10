@@ -137,7 +137,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 
 |  Pro Özelliği  | Açıklama   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Verilerinizi yedekleyin ve geri yükleyin, verileri [OsmAnd web portalı](https://www.osmand.net/map) ile senkronize edin. |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Verilerinizi yedekleyin ve geri yükleyin, verileri [OsmAnd web portalı](https://osmand.net/map) ile senkronize edin. |
 | [3D Rölyef](../plugins/topography.md#3d-relief) | Mahallenizin veya tüm bir kıtanın ölçekli bir modeline sahip olmanızı ve gözlemlemenizi sağlar. |
 | [Yükseklik Widget'ları - Yükseklik: Harita Merkezi](../widgets/info-widgets.md#elevation-map-center) | Mevcut harita merkezinin deniz seviyesinden yüksekliğini öğrenmenizi sağlar.  |
 | [Canlı Güncellemeler](../personal/maps-resources.md#live-updates) | OsmAnd haritaları, [OpenStreetMap](https://www.openstreetmap.org/) iyileştirmesinden sonra her 15 dakikada bir güncellenir. |

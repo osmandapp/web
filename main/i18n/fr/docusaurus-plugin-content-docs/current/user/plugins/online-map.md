@@ -69,10 +69,10 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_sett
 ## Comment préparer les cartes raster {#how-to-prepare-raster-maps}
 
 :::info
-Article principal sur la préparation des cartes [à lire ici](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Article principal sur la préparation des cartes [à lire ici](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Bien que le plugin s'appelle *Cartes en ligne*, vous pouvez également utiliser les cartes sans connexion Internet. Il vous suffit d'enregistrer les parties des cartes (souvent appelées tuiles) pour les utiliser plus tard. Pour ce faire, téléchargez un outil spécifique de [création de cartes](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) développé par l'équipe OsmAnd.
+Bien que le plugin s'appelle *Cartes en ligne*, vous pouvez également utiliser les cartes sans connexion Internet. Il vous suffit d'enregistrer les parties des cartes (souvent appelées tuiles) pour les utiliser plus tard. Pour ce faire, téléchargez un outil spécifique de [création de cartes](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) développé par l'équipe OsmAnd.
 
 Sélectionnez la zone que vous devez télécharger, cliquez sur Précharger la zone, puis définissez les niveaux de zoom le plus petit et le plus grand que vous souhaitez afficher et téléchargez les tuiles.
 Pour la <b>version Android</b>, vous pouvez les copier dans le dossier <i>osmand/tiles/*type de tuile*</i> de votre téléphone. Vous devrez également ouvrir <i>Configurer la carte → Sur-couche</i> et choisir les tuiles en ligne OsmAnd.

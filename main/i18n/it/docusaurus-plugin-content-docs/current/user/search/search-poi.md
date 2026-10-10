@@ -396,7 +396,7 @@ Per creare filtri personalizzati per la ricerca di luoghi sulla mappa, seleziona
 
 6. **Cibo**. Include 12 tipi di filtri.  
 
-7. **Pericolo**. Include 5 tipi: *Pericolo valanghe, Pericolo erosione, Pericolo inondazioni, Pericolo nucleare, Strada sdrucciolevole*. La categoria Pericolo include sia i PDI con tag hazard=* sui nodi sia i segmenti di strada o sentiero (ways) contrassegnati con lo stesso tag, se esportati come oggetti ricercabili. Per una panoramica visiva di tutte le icone di pericolo utilizzate sulla mappa, vedere la sezione [Pericolo](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+7. **Pericolo**. Include 5 tipi: *Pericolo valanghe, Pericolo erosione, Pericolo inondazioni, Pericolo nucleare, Strada sdrucciolevole*. La categoria Pericolo include sia i PDI con tag hazard=* sui nodi sia i segmenti di strada o sentiero (ways) contrassegnati con lo stesso tag, se esportati come oggetti ricercabili. Per una panoramica visiva di tutte le icone di pericolo utilizzate sulla mappa, vedere la sezione [Pericolo](https://osmand.net/docs/user/map-legend/osmand/#hazard1).
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Include 31 tipi di filtri.
 

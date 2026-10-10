@@ -14,7 +14,7 @@ OsmAnd, birçok ülke için birçok harita ile birlikte gelir. Çoğu harita, [g
 Geofabrik.de, daha fazla sayıda kullanıcı veya müşterileri tarafından talep edilen ülkeler için harita sunma stratejisine sahiptir. Bu, Seyşeller veya Burundi gibi bazı egzotik ülkeler gibi bazı haritaların geofabrik'e asla ulaşmadığı anlamına gelir, çünkü yeterli talep yoktur (veya hiç yoktur).
 
 ## Sunucu süreci {#server-process}
-Geofabrik'in bu stratejik kararı nedeniyle, OsmAnd'ın bu ülkeler için harita oluşturma seçeneği vardır ve bunun için [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) ve [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) araçları kullanılır. OsmAndMapCreator için bu üç adımlı bir süreçtir:
+Geofabrik'in bu stratejik kararı nedeniyle, OsmAnd'ın bu ülkeler için harita oluşturma seçeneği vardır ve bunun için [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) ve [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) araçları kullanılır. OsmAndMapCreator için bu üç adımlı bir süreçtir:
 - OsmAndMapCreator, ülkenin dış sınırını çevreleyen bir poligona ihtiyaç duyar.
 - OsmAndMapCreator, bu ülkeyi içeren bir sonraki daha yüksek seviyeden "ham veri haritasına" ihtiyaç duyar. Burundi için bu, OsmAndMapCreator'ın Afrika haritasına ihtiyaç duyduğu anlamına gelir. Kuzey Ren-Vestfalya için bu, OsmAndMapCreator'ın Almanya haritasına ihtiyaç duyduğu anlamına gelir.
 - [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert), "üst" haritadan harita verilerini çıkararak poligon'dan bir "ham veri" haritası oluşturacaktır.
@@ -86,5 +86,5 @@ Diyelim ki kızınız bir arkadaşıyla birkaç günlüğüne Paris'e gidiyor. N
 <pre>
 $ osmconvert ile-de-france.osm.pbf -B=paris.poly --out-pbf > Paris.osm.pbf
 </pre>
-- OsmAndMapCreator uygulamasını [download.osmand.net/latest-night-build/](http://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/") adresinden indirin.
+- OsmAndMapCreator uygulamasını [download.osmand.net/latest-night-build/](https://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/") adresinden indirin.
 - Paris.osm.pbf veri haritasından OsmAndMapCreator kullanarak OsmAnd obf haritanızı oluşturun.

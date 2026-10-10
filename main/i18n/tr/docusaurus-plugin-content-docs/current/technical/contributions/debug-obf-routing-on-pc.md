@@ -6,7 +6,7 @@ sidebar_position: 5
 # Bir PC'de OBF Yönlendirmesinde Hata Ayıklama {#debug-obf-routing-on-a-pc}
 
 
-- [https://osmand.net](https://osmand.net "https://osmand.net") adresine gidin ve sağ ekran tarafındaki bağlantıdan [OsmandMapCreator.zip](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") dosyasını indirin ve sıkıştırmayı açın,
+- [https://osmand.net](https://osmand.net "https://osmand.net") adresine gidin ve sağ ekran tarafındaki bağlantıdan [OsmandMapCreator.zip](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") dosyasını indirin ve sıkıştırmayı açın,
 - OBF dosyasını telefonunuzdan veya tabletinizden bu klasöre kopyalayın,
 - OsmandMapCreator'ı bat dosyası veya sh dosyası aracılığıyla başlatın,
 - mapcreator'ın harita döşemelerini indirebilmesi için bir internet bağlantınız olduğundan emin olun, mapcreator içindeki tüm menüleri ve ayarları kontrol edin,

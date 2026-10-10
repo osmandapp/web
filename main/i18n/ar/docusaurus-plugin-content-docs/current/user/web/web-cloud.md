@@ -120,7 +120,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يسمح قسم **التطبيقات المتصلة** بربط خدمات خارجية بحساب OsmAnd الخاص بك. يدعم حاليًا التكامل مع [Garmin Connect™](https://connect.garmin.com/app/)، مما يتيح مزامنة تلقائية لأنشطة Garmin. لفتحه، اذهب إلى: *خريطة OsmAnd على الويب → الحساب → التطبيقات المتصلة*.
 
-تتوفر ميزة Garmin Connect فقط لمستخدمي [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). إذا لم يكن لديك اشتراك Pro نشط، فسيؤدي تحديد عنصر Garmin Connect إلى فتح صفحة الأسعار.
+تتوفر ميزة Garmin Connect فقط لمستخدمي [OsmAnd Pro](https://osmand.net/docs/user/purchases/). إذا لم يكن لديك اشتراك Pro نشط، فسيؤدي تحديد عنصر Garmin Connect إلى فتح صفحة الأسعار.
 
 لربط حساب Garmin Connect™ الخاص بك، انقر على **ربط**. ستتم إعادة توجيهك إلى صفحة تفويض Garmin، حيث يجب عليك تسجيل الدخول ومنح الوصول إلى بيانات Garmin Connect™ الخاصة بك. أثناء التفويض، يمكنك تمكين مزامنة الأنشطة الأخيرة لاستيراد البيانات من آخر 30 يومًا. لا يمكن استيراد الأنشطة الأقدم من 30 يومًا تلقائيًا.
 

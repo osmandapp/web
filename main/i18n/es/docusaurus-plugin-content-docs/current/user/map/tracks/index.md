@@ -170,7 +170,7 @@ Toque el botón [Mi Posición](../../map/interact-with-map.md#my-position-and-zo
 - [Apariencia de la pista](./appearance.md)
 - [Menú contextual de la pista](./track-context-menu.md)
 - [Navegar por pista](../../navigation/setup/gpx-navigation.md)
-- [Rutas en el mapa](https://docs.osmand.net/blog/routes) artículo del blog
+- [Rutas en el mapa](https://osmand.net/blog/routes) artículo del blog
 - [Configurar mapa](../../map/configure-map-menu.md)  
 - [Pistas GPX](../../personal/tracks/index.md)  
 - [Planificar ruta](../../plan-route/index.md)  

@@ -41,4 +41,4 @@ sidebar_position: 9
 
 - OsmAnd+ у [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - OsmAnd у [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon більше не доступний. Детальну інформацію можна знайти [тут](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon більше не доступний. Детальну інформацію можна знайти [тут](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).

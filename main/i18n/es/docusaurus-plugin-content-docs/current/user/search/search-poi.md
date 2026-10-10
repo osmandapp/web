@@ -396,7 +396,7 @@ Para crear filtros personalizados para encontrar lugares en el mapa, seleccione 
 
 6. **Comida**. Incluye 12 tipos de filtros.  
 
-7. **Peligro**. Incluye 5 tipos: *Peligro de avalancha, Peligro de erosión, Peligro de inundación, Peligro nuclear, Carretera resbaladiza*. La categoría Peligro incluye tanto PDI con etiquetas hazard=* en nodos como segmentos de carretera o sendero (ways) marcados con la misma etiqueta, si se exportan como objetos buscables. Para una visión general visual de todos los iconos de peligro utilizados en el mapa, consulte la sección [Peligro](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+7. **Peligro**. Incluye 5 tipos: *Peligro de avalancha, Peligro de erosión, Peligro de inundación, Peligro nuclear, Carretera resbaladiza*. La categoría Peligro incluye tanto PDI con etiquetas hazard=* en nodos como segmentos de carretera o sendero (ways) marcados con la misma etiqueta, si se exportan como objetos buscables. Para una visión general visual de todos los iconos de peligro utilizados en el mapa, consulte la sección [Peligro](https://osmand.net/docs/user/map-legend/osmand/#hazard1).
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Incluye 31 tipos de filtros.
 

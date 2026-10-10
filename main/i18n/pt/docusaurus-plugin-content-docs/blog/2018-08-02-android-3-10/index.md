@@ -66,7 +66,7 @@ Furthermore, the problems with the size of Additional options on screens with a 
 ## Boat navigation
 
 We have included support for waterway fairway as well as added navigation by polygons in the test mode.
-    Boat mode for navigation can be enabled together with the <a href="http://osmand.net/features?id=nautical-charts"> Nautical plugin.</a>
+    Boat mode for navigation can be enabled together with the <a href="https://osmand.net/docs/user/plugins/nautical-charts"> Nautical plugin.</a>
 
 <table class="blogimage">
   <tr>

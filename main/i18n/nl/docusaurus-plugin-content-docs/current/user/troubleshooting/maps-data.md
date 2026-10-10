@@ -119,7 +119,7 @@ Om het probleem van trage kaartweergave op te lossen, vooral bij het gebruik van
 
 6. **Gebruik alleen offline kaarten.** Online kaarten, vooral wanneer ze niet van tevoren zijn gedownload, kunnen het laden van de kaart vertragen. Schakel over naar het gebruik van alleen offline kaarten voor een soepelere prestatie.
 
-Deze wijzigingen zouden de tijd die nodig is om kaarten weer te geven moeten verminderen, vooral tijdens de navigatie. Voor meer gedetailleerde configuratie-opties, raadpleeg de [Gids voor Kaartinstellingen](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+Deze wijzigingen zouden de tijd die nodig is om kaarten weer te geven moeten verminderen, vooral tijdens de navigatie. Voor meer gedetailleerde configuratie-opties, raadpleeg de [Gids voor Kaartinstellingen](https://osmand.net/docs/user/map/configure-map-menu).
 
 ### Wat betekent “Gratis updates (noodgeval)”? {#what-does-free-updates-emergency-mean}
 

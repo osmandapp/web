@@ -94,14 +94,14 @@ Ouvre et restaure les fichiers `.osf`. Appuyez sur le fichier dans le gestionnai
 - *Redémarrer*. Après l'importation des fichiers, l'application doit être redémarrée.
 
 Types de fichiers d'importation pris en charge :
-- [Traces, itinéraires](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favoris](https://osmand.net/docs/user/personal/favorites/) : `.gpx`, `.kml`, `.kmz`. Les fichiers KML et KMZ sont importés avec conversion au format GPX.
+- [Traces, itinéraires](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [favoris](https://osmand.net/docs/user/personal/favorites/) : `.gpx`, `.kml`, `.kmz`. Les fichiers KML et KMZ sont importés avec conversion au format GPX.
 - [Cartes vectorielles OsmAnd](https://osmand.net/docs/user/map/vector-maps) : `.obf`.
-- [Tuiles de cartes en ligne](https://www.osmand.net/docs/user/map/raster-maps/) : `.sqlitedb`. 
+- [Tuiles de cartes en ligne](https://osmand.net/docs/user/map/raster-maps/) : `.sqlitedb`.
 - [Sauvegardes & profils](#export) : `.osf`.
-- [Cartes de hauteur / données 3D](https://www.osmand.net/docs/user/plugins/topography/) : `.geotif`.
+- [Cartes de hauteur / données 3D](https://osmand.net/docs/user/plugins/topography/) : `.geotif`.
 - [Autres](color-palette-schemes.md) : `.txt`.
 
-Pour un aperçu technique de tous les formats pris en charge, voir [Formats de fichiers OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
+Pour un aperçu technique de tous les formats pris en charge, voir [Formats de fichiers OsmAnd](https://osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

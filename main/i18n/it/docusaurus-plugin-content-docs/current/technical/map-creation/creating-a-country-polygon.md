@@ -14,7 +14,7 @@ OsmAnd viene fornito con molte mappe per molti paesi. La maggior parte delle map
 Geofabrik.de ha la strategia di fornire mappe per i paesi richiesti da un numero maggiore di utenti o dai loro clienti. Ciò significa che alcune mappe non arrivano mai su geofabrik perché semplicemente non ci sono abbastanza richieste (o nessuna), come alcuni paesi esotici come le Seychelles o il Burundi, ecc.
 
 ## Processo del server {#server-process}
-A causa di questa decisione strategica di geofabrik, OsmAnd ha un'opzione per generare mappe per questi paesi e vengono utilizzati gli strumenti [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) e [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Per OsmAndMapCreator si tratta di un processo in tre fasi:
+A causa di questa decisione strategica di geofabrik, OsmAnd ha un'opzione per generare mappe per questi paesi e vengono utilizzati gli strumenti [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) e [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Per OsmAndMapCreator si tratta di un processo in tre fasi:
 - OsmAndMapCreator necessita di un poligono che circondi il confine esterno del paese.
 - OsmAndMapCreator necessita della "mappa di dati grezzi" del livello superiore successivo che incorpora questo paese. Per il Burundi significa che OsmAndMapCreator necessita della mappa dell'Africa. Per la Renania Settentrionale-Vestfalia significa che OsmAndMapCreator necessita della mappa della Germania.
 - [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) creerà una mappa di "dati grezzi" dal poligono estraendo i dati della mappa dalla mappa "genitore".
@@ -86,5 +86,5 @@ Supponiamo che tua figlia vada a Parigi per un paio di giorni con un'amica. Non 
 <pre>
 $ osmconvert ile-de-france.osm.pbf -B=paris.poly --out-pbf > Paris.osm.pbf
 </pre>
-- Scarica l'applicazione OsmAndMapCreator da [download.osmand.net/latest-night-build/](http://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/")
+- Scarica l'applicazione OsmAndMapCreator da [download.osmand.net/latest-night-build/](https://download.osmand.net/latest-night-build/ "https://download.osmand.net/latest-night-build/")
 - Crea la tua mappa obf di OsmAnd dai dati della mappa Paris.osm.pbf utilizzando OsmAndMapCreator.

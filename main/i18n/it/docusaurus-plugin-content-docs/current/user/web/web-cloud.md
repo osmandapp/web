@@ -119,7 +119,7 @@ L'opzione **Trash** contiene i file che sono stati eliminati da OsmAnd Cloud. L'
 
 La sezione **Connected Apps** consente di collegare servizi esterni al tuo account OsmAnd. Attualmente supporta l'integrazione con [Garmin Connect™](https://connect.garmin.com/app/), che permette la sincronizzazione automatica delle attività Garmin. Per aprirla, andare a: *OsmAnd Web Map → Account → Connected apps*.
 
-L'integrazione con Garmin Connect è disponibile solo per gli utenti [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). Se non hai un abbonamento Pro attivo, selezionando l'elemento Garmin Connect si apre la pagina dei prezzi.
+L'integrazione con Garmin Connect è disponibile solo per gli utenti [OsmAnd Pro](https://osmand.net/docs/user/purchases/). Se non hai un abbonamento Pro attivo, selezionando l'elemento Garmin Connect si apre la pagina dei prezzi.
 
 Per collegare il tuo account Garmin Connect™, fai clic su **Connect**. Verrai reindirizzato alla pagina di autorizzazione Garmin, dove dovrai accedere e concedere l'accesso ai tuoi dati Garmin Connect™. Durante l'autorizzazione, puoi abilitare la sincronizzazione delle attività recenti per importare i dati degli ultimi 30 giorni. Le attività più vecchie di 30 giorni non possono essere importate automaticamente.
 

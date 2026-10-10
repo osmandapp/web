@@ -14,4 +14,4 @@ In some cases you might want to extend or adjust routing experience of OsmAnd, s
 * obstacle (penalty in seconds) - defines penalty which is to the routing time
 * obstacle_time (penalty in seconds) - defines penalty which is displayed to the user but it is not considered by routing engine i.e. obstacle_time - 2 hours, obstacle - 1 minute, on the shortest route engine will find a route using 1 minute obstacle but user will see that route time is 2 hours.
 
-To test [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), you can use [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). To test routing.xml on the device, you can simply replace the default routing.xml in the root folder of OsmAnd with the sd-card.
+To test [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), you can use [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). To test routing.xml on the device, you can simply replace the default routing.xml in the root folder of OsmAnd with the sd-card.

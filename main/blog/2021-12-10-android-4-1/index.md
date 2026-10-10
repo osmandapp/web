@@ -72,9 +72,9 @@ Pro feature is available for <a href="https://osmand.net/docs/user/purchases/and
 
 ## GPS filter
 
-We added new <a href="https://osmand.net/docs/user/map/track-context-menu#options">Options</a> for GPX tracks * "GPS filter". Now, you can filter points of your GPX track by Smoothing, Speed, Altitude, Min GPS Precision:
+We added new <a href="https://osmand.net/docs/user/map/tracks/track-context-menu#options">Options</a> for GPX tracks * "GPS filter". Now, you can filter points of your GPX track by Smoothing, Speed, Altitude, Min GPS Precision:
 
-Open <a href="https://osmand.net/docs/user/map/track-context-menu">Tracks Context menu</a> → Options → GPS filter
+Open <a href="https://osmand.net/docs/user/map/tracks/track-context-menu">Tracks Context menu</a> → Options → GPS filter
 
 <table class="blogimage">
   <tr>

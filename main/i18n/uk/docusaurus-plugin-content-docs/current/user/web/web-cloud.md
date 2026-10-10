@@ -119,7 +119,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Розділ **Connected Apps** дозволяє зв’язувати зовнішні сервіси з вашим обліковим записом OsmAnd. Наразі підтримується інтеграція з [Garmin Connect™](https://connect.garmin.com/app/), яка забезпечує автоматичну синхронізацію активностей Garmin. Щоб відкрити його, перейдіть до: *OsmAnd Web Map → Обліковий запис → Connected apps*.
 
-Інтеграція Garmin Connect доступна лише для користувачів [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/). Якщо у вас немає активної підписки Pro, вибір елемента Garmin Connect відкриває сторінку з цінами.
+Інтеграція Garmin Connect доступна лише для користувачів [OsmAnd Pro](https://osmand.net/docs/user/purchases/). Якщо у вас немає активної підписки Pro, вибір елемента Garmin Connect відкриває сторінку з цінами.
 
 Щоб підключити обліковий запис Garmin Connect™, натисніть **Connect**. Вас буде перенаправлено на сторінку авторизації Garmin, де потрібно увійти та надати доступ до ваших даних Garmin Connect™. Під час авторизації можна увімкнути синхронізацію останніх активностей для імпорту даних за останні 30 днів. Активності старше 30 днів не можуть бути імпортовані автоматично.
 

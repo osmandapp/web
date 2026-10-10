@@ -395,7 +395,7 @@ Pour créer des filtres personnalisés pour trouver des lieux sur la carte, sél
 
 6. **Alimentation**. Comprend 12 types de filtres.  
 
-7. **Danger**. Comprend 5 types : *Risque d'avalanche, Risque d'érosion, Risque d'inondage, Risque nucléaire, Route glissante*. La catégorie Danger inclut à la fois les POI avec des étiquettes hazard=* sur les nœuds et les segments de route ou de chemin (ways) marqués avec la même étiquette, s'ils sont exportés en tant qu'objets recherchables. Pour un aperçu visuel de toutes les icônes de danger utilisées sur la carte, consultez la section [Danger](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+7. **Danger**. Comprend 5 types : *Risque d'avalanche, Risque d'érosion, Risque d'inondage, Risque nucléaire, Route glissante*. La catégorie Danger inclut à la fois les POI avec des étiquettes hazard=* sur les nœuds et les segments de route ou de chemin (ways) marqués avec la même étiquette, s'ils sont exportés en tant qu'objets recherchables. Pour un aperçu visuel de toutes les icônes de danger utilisées sur la carte, consultez la section [Danger](https://osmand.net/docs/user/map-legend/osmand/#hazard1).
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Comprend 31 types de filtres.
 

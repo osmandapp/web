@@ -252,11 +252,11 @@ Yeni bir çevrimiçi harita kaynağı kurarken yapılandırılacak temel paramet
 
 Çevrimiçi haritalar, OsmAnd Raster harita listesine özel bir bağlantı ile eklenebilir. Bu bağlantıya tıklayın ve açmak için OsmAnd'ı seçin:
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |Bağlantı parametresi|Örnek|
 |:--------|:---------------|
-| [Sabit kısım]| `http://osmand.net/add-tile-source` |
+| [Sabit kısım]| `https://osmand.net/add-tile-source` |
 |[Ayırıcılar]| ?   & |
 |[Ad]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|

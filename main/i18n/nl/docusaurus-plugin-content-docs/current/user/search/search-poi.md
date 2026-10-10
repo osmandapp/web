@@ -395,7 +395,7 @@ Om aangepaste filters te maken voor het vinden van plaatsen op de kaart, selecte
 
 6. **Eten**. Bevat 12 soorten filters.  
 
-7. **Gevaar**. Bevat 5 types: *Lawinegevaar, Erosiegevaar, Overstromingsgevaar, Nucleair gevaar, Gladde weg*. De Gevaar-categorie omvat zowel POI's met hazard=* tags op knooppunten als weg- of padsegmenten (ways) die met dezelfde tag zijn gemarkeerd, als ze worden geëxporteerd als doorzoekbare objecten. Voor een visueel overzicht van alle gevaar-pictogrammen die op de kaart worden gebruikt, zie de sectie [Gevaar](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+7. **Gevaar**. Bevat 5 types: *Lawinegevaar, Erosiegevaar, Overstromingsgevaar, Nucleair gevaar, Gladde weg*. De Gevaar-categorie omvat zowel POI's met hazard=* tags op knooppunten als weg- of padsegmenten (ways) die met dezelfde tag zijn gemarkeerd, als ze worden geëxporteerd als doorzoekbare objecten. Voor een visueel overzicht van alle gevaar-pictogrammen die op de kaart worden gebruikt, zie de sectie [Gevaar](https://osmand.net/docs/user/map-legend/osmand/#hazard1).
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Bevat 31 soorten filters.
 

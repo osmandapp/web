@@ -21,7 +21,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- لم يعد متجر أمازون متاحًا. يمكن العثور على معلومات مفصلة [هنا](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- لم يعد متجر أمازون متاحًا. يمكن العثور على معلومات مفصلة [هنا](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).
 
 **إصدارات تطبيق OsmAnd:**
 
@@ -171,7 +171,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 |  ميزة Pro  | الوصف   |
 | :------------- | :------------- |
-| [سحابة OsmAnd](../personal/osmand-cloud.md) | نسخ احتياطي واستعادة بياناتك، ومزامنة البيانات مع [بوابة OsmAnd على الويب](https://www.osmand.net/map). |
+| [سحابة OsmAnd](../personal/osmand-cloud.md) | نسخ احتياطي واستعادة بياناتك، ومزامنة البيانات مع [بوابة OsmAnd على الويب](https://osmand.net/map). |
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | يسمح لك بالحصول على نموذج مصغر لمنطقتك أو قارة بأكملها ومراقبته. |
 | [تحديثات حية](../personal/maps-resources.md#live-updates) | تتحدث خرائط OsmAnd كل ١٥ دقيقة بعد تحسينات [OpenStreetMap](https://www.openstreetmap.org/). |
 | [ملحق الطقس](../plugins/weather.md) | توقعات جوية كل ساعة لمدة ٢٤ ساعة قادمة ولمدة ٧ أيام على الخريطة. |

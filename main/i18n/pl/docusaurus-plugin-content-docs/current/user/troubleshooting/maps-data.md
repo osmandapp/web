@@ -119,7 +119,7 @@ Aby rozwiązać problem powolnego renderowania map, zwłaszcza podczas korzystan
 
 6. **Używaj tylko map offline.** Mapy online, zwłaszcza gdy nie są pobrane z wyprzedzeniem, mogą spowolnić ładowanie mapy. Przełącz się na używanie tylko map offline, aby uzyskać płynniejszą wydajność.
 
-Zmiany te powinny skrócić czas potrzebny na renderowanie map, zwłaszcza podczas nawigacji. Aby uzyskać bardziej szczegółowe opcje konfiguracji, zapoznaj się z [Przewodnikiem po ustawieniach mapy](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+Zmiany te powinny skrócić czas potrzebny na renderowanie map, zwłaszcza podczas nawigacji. Aby uzyskać bardziej szczegółowe opcje konfiguracji, zapoznaj się z [Przewodnikiem po ustawieniach mapy](https://osmand.net/docs/user/map/configure-map-menu).
 
 ### Co oznacza „Darmowe aktualizacje (awaryjne)”? {#what-does-free-updates-emergency-mean}
 

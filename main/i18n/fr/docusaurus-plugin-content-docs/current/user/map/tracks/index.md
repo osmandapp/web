@@ -170,7 +170,7 @@ Appuyez sur le bouton [Ma position](../../map/interact-with-map.md#my-position-a
 - [Apparence de la trace](./appearance.md)
 - [Menu contextuel de la trace](./track-context-menu.md)
 - [Naviguer en suivant une trace](../../navigation/setup/gpx-navigation.md)
-- Article de blog [Itinéraires sur la carte](https://docs.osmand.net/blog/routes)
+- Article de blog [Itinéraires sur la carte](https://osmand.net/blog/routes)
 - [Configurer la carte](../../map/configure-map-menu.md)  
 - [Traces GPX](../../personal/tracks/index.md)  
 - [Planifier un itinéraire](../../plan-route/index.md)  

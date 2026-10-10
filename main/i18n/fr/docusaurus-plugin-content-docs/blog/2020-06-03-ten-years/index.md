@@ -49,4 +49,4 @@ Wir werden unsere Projekte weiterentwickeln, neue aktive Nutzer engagieren und f
 
 
 * You can order T-shirt and any merch <a href="https://www.redbubble.com/shop/ap/49558113?ref=studio-promote">here</a>  
-** You can find first releases <a href="https://osmand.net/releases/">here</a>  
+** You can find first releases <a href="https://download.osmand.net/releases/">here</a>

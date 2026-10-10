@@ -151,7 +151,7 @@ Ga naar: *Bestanden → Op mijn iPhone → OsmAnd Kaarten*
 | Functies | Versie 1 | Versie 2 (OpenGL) |
 |:---|:--- |:--- |
 | Cross-platform | Niet gebruikt in de iOS-versie. | Geschikt voor beide versies. |
-| GPU / CPU afhankelijk | Aanbevolen voor apparaten met lage prestaties of verouderde apparaten. | Krachtige weergave-engine. <br /> Alleen beschikbaar voor [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) en latere versies, en in testmodus voor [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| GPU / CPU afhankelijk | Aanbevolen voor apparaten met lage prestaties of verouderde apparaten. | Krachtige weergave-engine. <br /> Alleen beschikbaar voor [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) en latere versies, en in testmodus voor [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | 3D-modus | Het is mogelijk om de kaart in 2D te bekijken, en u kunt de kijkhoek wijzigen om een [3D-weergave](../widgets/map-buttons.md#3d-mode) te krijgen. | U kunt de kaart in 2D en [3D](../widgets/map-buttons.md#3d-mode) bekijken. |
 | Kaartweergave | De hele kaart wordt weergegeven als een set tegels, en markeringen, lijnen en tekst bevinden zich al in deze tegels. | Eerst wordt het hele tegelpakket weergegeven, en vervolgens worden de beschikbare symbolen [laag voor laag](../../technical/algorithms/map-rendering-layers.md) op de kaart toegepast. |
 | Transparante symbolen overlay / underlay | Ondersteunt alle instellingen. | Ondersteunt geen rasterlaag bovenop vectortekst. |

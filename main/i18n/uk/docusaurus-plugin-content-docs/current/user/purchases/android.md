@@ -21,7 +21,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon більше не доступний. Детальну інформацію можна знайти [тут](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon більше не доступний. Детальну інформацію можна знайти [тут](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).
 
 **Версії програми OsmAnd:**
 
@@ -171,7 +171,7 @@ Pro функції доступні для [підписки OsmAnd Pro](#prices
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [веб-порталом OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [веб-порталом OsmAnd](https://osmand.net/map). |
 | [3D рельєф](../plugins/topography.md#3d-relief) | Дозволяє вам мати та спостерігати за масштабованою моделлю вашого району або цілого континенту. |
 | [Живі оновлення](../personal/maps-resources.md#live-updates) | Карти OsmAnd оновлюються кожні 15 хвилин після покращення [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Плагін погоди](../plugins/weather.md) | Прогноз на 24 годині кожну годину на 7 днів вперед на карті. |

@@ -253,11 +253,11 @@ Hier zijn de belangrijkste parameters om te configureren bij het instellen van e
 
 Online kaarten kunnen worden toegevoegd met een speciale link naar de OsmAnd Rasterkaartlijst. Klik op deze link en kies OsmAnd om te openen:
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |Parameter van link|Voorbeeld|
 |:--------|:---------------|
-| [Constant deel]| `http://osmand.net/add-tile-source` |
+| [Constant deel]| `https://osmand.net/add-tile-source` |
 |[Scheidingstekens]| ?   & |
 |[Naam]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|

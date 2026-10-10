@@ -21,7 +21,7 @@ Para dispositivos Android, pode descarregar as versões **Gratuita** e **Paga** 
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- A Amazon já não está disponível. Informações detalhadas podem ser encontradas [aqui](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- A Amazon já não está disponível. Informações detalhadas podem ser encontradas [aqui](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).
 
 **Versões da aplicação OsmAnd:**
 
@@ -172,7 +172,7 @@ A assinatura **Pro** atualmente tem as seguintes funcionalidades:
 
 |  Funcionalidade Pro  | Descrição   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Faça backup e restaure os seus dados, sincronize dados com o [portal web OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Faça backup e restaure os seus dados, sincronize dados com o [portal web OsmAnd](https://osmand.net/map). |
 | [Relevo 3D](../plugins/topography.md#3d-relief) | Permite ter e observar um modelo em escala da sua vizinhança ou de um continente inteiro. |
 | [Atualizações em Tempo Real](../personal/maps-resources.md#live-updates) | Os mapas OsmAnd são atualizados a cada 15 minutos após melhorias no [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Plugin Meteorológico](../plugins/weather.md) | Previsão horária de 24h para 7 dias no mapa. |

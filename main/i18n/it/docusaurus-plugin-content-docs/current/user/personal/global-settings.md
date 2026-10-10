@@ -151,7 +151,7 @@ Vai a: *File → Sul mio iPhone → OsmAnd Maps*
 | Caratteristiche | Versione 1 | Versione 2 (OpenGL) |
 |:---|:--- |:--- |
 | Multipiattaforma | Non utilizzato nella versione iOS. | Adatto a entrambe le versioni. |
-| Dipendente da GPU / CPU | Consigliato per dispositivi a basse prestazioni o obsoleti. | Potente motore di rendering. <br /> Disponibile solo per [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) e versioni successive, e in modalità di test per [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Dipendente da GPU / CPU | Consigliato per dispositivi a basse prestazioni o obsoleti. | Potente motore di rendering. <br /> Disponibile solo per [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) e versioni successive, e in modalità di test per [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | Modalità 3D | È possibile visualizzare la mappa in 2D e modificare l'angolo di visualizzazione per ottenere una [vista 3D](../widgets/map-buttons.md#3d-mode). | È possibile visualizzare la mappa in 2D e [3D](../widgets/map-buttons.md#3d-mode). |
 | Visualizzazione mappa | L'intera mappa viene renderizzata come un insieme di tasselli e i marcatori, le linee e il testo sono già all'interno di questi tasselli. | Innanzitutto, viene renderizzato l'intero pacchetto di tasselli, quindi i simboli disponibili vengono applicati alla mappa, [strato per strato](../../technical/algorithms/map-rendering-layers.md). |
 | Sovrapposizione / Sottoposizione di simboli trasparenti | Supporta tutte le impostazioni. | Non supporta un livello raster sopra il testo vettoriale. |

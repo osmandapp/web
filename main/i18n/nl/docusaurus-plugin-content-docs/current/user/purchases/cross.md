@@ -26,7 +26,7 @@ De volgende OsmAnd-producten ondersteunen momenteel gebruik op meerdere platform
 Vanaf **OsmAnd versie 5.1**, uitgebracht ter ere van ons **15-jarig jubileum**, is de cross-platform toegang uitgebreid naar **Maps+** (voorheen bekend als *Unlimited*). Voorheen was alleen het [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) abonnement cross-platform.  
 
 Om cross-platform toegang te activeren, moeten aankopen gekoppeld zijn aan uw [OsmAnd Cloud](../personal/osmand-cloud.md#login) account.  
-U kunt hier alle OsmAnd-producten vergelijken: [verschil tussen aankopen](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+U kunt hier alle OsmAnd-producten vergelijken: [verschil tussen aankopen](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)
 
 | **Producttype**               | **Cross-Platform** | **Opmerkingen**                                                                 |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|

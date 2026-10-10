@@ -76,7 +76,7 @@ Widżet **Znaczniki mapy** *(dla Androida)* i **Wskazanie odległości - Widżet
 Jest to czas (gg:mm), o którym pojazd lub osoba powinna dotrzeć do celu. Oblicza się go jako odległość do znacznika podzieloną przez średnią prędkość.
 Średnia prędkość jest obliczana jako średnia wszystkich wartości prędkości otrzymanych z punktów lokalizacji dla wybranego przedziału czasowego od 15 sekund do 60 minut.
 
-Można również wybrać wyświetlanie jednego lub dwóch znaczników. Więcej o ustawieniach widżetu można przeczytać w tym [artykule](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Można również wybrać wyświetlanie jednego lub dwóch znaczników. Więcej o ustawieniach widżetu można przeczytać w tym [artykule](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets).
 :::info
 *Odległość do znacznika* to długość prostej linii między Twoją pozycją (lub określonym punktem na mapie) a znacznikiem.
 :::  

@@ -34,7 +34,7 @@ OsmAnd Cloud ti permette di **archiviare e sincronizzare le impostazioni persona
 
 OsmAnd Cloud ti permette di eseguire il backup, il ripristino e la sincronizzazione dei tuoi dati su Android, iOS e la [versione web](../web/index.md). Con le funzionalità multipiattaforma, puoi trasferire **impostazioni del profilo**, **tracce**, **preferiti**, **modifiche/note OSM** e altro ancora tra i dispositivi. Inoltre, la **versione web** ti consente di pianificare percorsi e salvarli per un uso successivo sui dispositivi collegati.  
 
-OsmAnd supporta l'**uso multipiattaforma** su *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* con i seguenti passaggi:
+OsmAnd supporta l'**uso multipiattaforma** su *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://osmand.net/map))* con i seguenti passaggi:
 
 1. **Registra un [account](#login) su OsmAnd Cloud**:
  

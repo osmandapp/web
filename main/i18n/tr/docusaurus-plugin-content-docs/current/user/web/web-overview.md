@@ -55,11 +55,11 @@ Web Harita Portalı, giriş yapmadan, OsmAnd Start ile ve OsmAnd Pro ile olmak �
 | [Rota Planlayıcı](./planner.md) | Giriş Yapmadan |
 | [Hava Durumu Katmanları](./web-weather.md) | Giriş Yapmadan |
 | [Ayarlar](./web-map.md#settings) | Giriş Yapmadan |
-| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([POI'ler](./web-map.md#poi-overlay), [Favoriler](./web-map.md#favorites), [Parkurlar](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([Arazi](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [OsmAnd Cloud Senkronizasyonu](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Web Arama, Popüler Yerler](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Parkur klasörleri ve Katman](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([POI'ler](./web-map.md#poi-overlay), [Favoriler](./web-map.md#favorites), [Parkurlar](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Harita Menüsünü Yapılandırma](./web-map.md#configure-map-menu) ([Arazi](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Senkronizasyonu](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Web Arama, Popüler Yerler](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Parkur klasörleri ve Katman](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Nasıl Başlanır {#how-to-start}

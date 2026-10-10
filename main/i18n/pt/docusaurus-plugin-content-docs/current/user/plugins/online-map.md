@@ -69,10 +69,10 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 ## Como Preparar Mapas Raster {#how-to-prepare-raster-maps}
 
 :::info
-Artigo principal para preparar mapas [leia aqui](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Artigo principal para preparar mapas [leia aqui](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Apesar de o plugin ser chamado de *Mapas Online*, você também pode usar os mapas sem conexão com a internet. Você só precisa salvar as partes dos mapas (muitas vezes chamadas de blocos) para usá-las mais tarde. Para fazer isso, baixe uma [ferramenta específica de Criação de Mapas](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) desenvolvida pela equipe do OsmAnd.
+Apesar de o plugin ser chamado de *Mapas Online*, você também pode usar os mapas sem conexão com a internet. Você só precisa salvar as partes dos mapas (muitas vezes chamadas de blocos) para usá-las mais tarde. Para fazer isso, baixe uma [ferramenta específica de Criação de Mapas](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) desenvolvida pela equipe do OsmAnd.
 
 Selecione a área que você precisa baixar, clique em Pré-carregar área, então defina os níveis de zoom menor e maior que você deseja exibir e baixe os blocos.
 Para a <b>versão Android</b>, você pode copiá-los para a pasta <i>osmand/tiles/*tipo de bloco*</i> do seu telefone. Você também precisará abrir o <i>Configurar mapa-. Mapa de sobreposição</i> e escolher os blocos online do OsmAnd.

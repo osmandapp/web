@@ -55,11 +55,11 @@ Il Portale Mappe Web supporta diversi livelli di accesso: senza accesso, con Osm
 | [Pianificatore di percorso](./planner.md) | Senza accesso |
 | [Sovrapposizioni meteo](./web-weather.md) | Senza accesso |
 | [Impostazioni](./web-map.md#settings) | Senza accesso |
-| [Configura menu mappa](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Preferiti](./web-map.md#favorites), [Tracce](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Configura menu mappa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Sincronizzazione OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Ricerca web, Luoghi popolari](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Cartelle e Livello Tracce](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Configura menu mappa](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Preferiti](./web-map.md#favorites), [Tracce](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Configura menu mappa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Sincronizzazione OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Ricerca web, Luoghi popolari](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Cartelle e Livello Tracce](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Come iniziare {#how-to-start}

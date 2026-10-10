@@ -170,7 +170,7 @@ Dotknij przycisku [Moja pozycja](../../map/interact-with-map.md#my-position-and-
 - [Wygląd śladu](./appearance.md)
 - [Menu kontekstowe śladu](./track-context-menu.md)
 - [Nawiguj po śladzie](../../navigation/setup/gpx-navigation.md)
-- [Trasy na mapie](https://docs.osmand.net/blog/routes) artykuł na blogu
+- [Trasy na mapie](https://osmand.net/blog/routes) artykuł na blogu
 - [Konfiguruj mapę](../../map/configure-map-menu.md)  
 - [Ślady GPX](../../personal/tracks/index.md)  
 - [Planowanie trasy](../../plan-route/index.md)  

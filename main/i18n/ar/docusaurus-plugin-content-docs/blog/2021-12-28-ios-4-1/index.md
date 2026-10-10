@@ -36,7 +36,7 @@ This is a short list of many changes happened in 4.1 release:
 
 Completely redesigned interaction with tracks: a new menu with charts, statistics, ability to change the appearance, coloring by speed, height and slope, and track selection on the map.
 
-Just click on chosen track on the map or open it by <a href="https://osmand.net/docs/user/personal/myplaces">"My Places"</a> menu to enable<a href="https://osmand.net/docs/user/map/track-context-menu">"Track context menu"</a>.
+Just click on chosen track on the map or open it by <a href="https://osmand.net/docs/user/personal/myplaces">"My Places"</a> menu to enable<a href="https://osmand.net/docs/user/map/tracks/track-context-menu">"Track context menu"</a>.
 
 
 <table class="blogimage">
@@ -102,7 +102,7 @@ We added <a href="https://osmand.net/docs/user/plugins/topography">contour lines
 
 ## Downloading maps by clicking to the map
 
-Added ability <a href="https://osmand.net/docs/user/start-with/download-maps#download--manage---world-map">to download maps by selecting</a> the desired region or country on the map, as well as adding a dialog box with the suggestion to load the map if the region is viewed without a map.
+Added ability <a href="https://osmand.net/docs/user/start-with/download-maps#select-on-the-map">to download maps by selecting</a> the desired region or country on the map, as well as adding a dialog box with the suggestion to load the map if the region is viewed without a map.
 
 <table class="blogimage">
   <tr>

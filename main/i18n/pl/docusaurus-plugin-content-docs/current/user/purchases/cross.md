@@ -26,7 +26,7 @@ Następujące produkty OsmAnd obsługują obecnie korzystanie na wielu platforma
 Począwszy od **wersji 5.1 OsmAnd**, wydanej z okazji naszych **15. urodzin**, dostęp międzyplatformowy został rozszerzony na **Maps+** (wcześniej znane jako *Unlimited*). Wcześniej tylko subskrypcja [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) była międzyplatformowa.  
 
 Aby aktywować dostęp międzyplatformowy, zakupy muszą być powiązane z kontem [OsmAnd Cloud](../personal/osmand-cloud.md#login).  
-Możesz porównać wszystkie produkty OsmAnd tutaj: [różnice między zakupami](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+Możesz porównać wszystkie produkty OsmAnd tutaj: [różnice między zakupami](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)
 
 | **Typ produktu**               | **Międzyplatformowy** | **Uwagi**                                                                 |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|

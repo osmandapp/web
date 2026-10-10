@@ -94,7 +94,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ### التحكم في سلوك تطبيقات الخلفية في iOS {#control-the-behavior-of-ios-background-apps}
 
-يمكن لنظام iOS تعليق أو إيقاف تطبيقات الخلفية تلقائيًا عند إعادة تخصيص موارد النظام. لا يمكن لـ OsmAnd تجاوز هذا السلوك. إذا توقف تسجيل المسار عند قفل الجهاز، فقد يترك هذا فجوات في التسجيل. يمكنك تعديل هذه الفجوات باستخدام أداة [تخطيط مسار](https://docs.osmand.net/docs/user/plan-route/create-route).
+يمكن لنظام iOS تعليق أو إيقاف تطبيقات الخلفية تلقائيًا عند إعادة تخصيص موارد النظام. لا يمكن لـ OsmAnd تجاوز هذا السلوك. إذا توقف تسجيل المسار عند قفل الجهاز، فقد يترك هذا فجوات في التسجيل. يمكنك تعديل هذه الفجوات باستخدام أداة [تخطيط مسار](https://osmand.net/docs/user/plan-route/create-route).
 
 لمزيد من التفاصيل حول كيفية تعامل iOS مع تتبع الموقع، راجع وثائق Apple [هنا](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

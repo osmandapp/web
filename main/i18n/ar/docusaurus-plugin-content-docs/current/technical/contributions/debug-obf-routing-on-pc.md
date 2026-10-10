@@ -6,7 +6,7 @@ sidebar_position: 5
 # تصحيح أخطاء توجيه OBF على جهاز كمبيوتر {#debug-obf-routing-on-a-pc}
 
 
-- انتقل إلى [https://osmand.net](https://osmand.net "https://osmand.net") وقم بتنزيل [OsmandMapCreator.zip](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") من الرابط الموجود على الجانب الأيمن من الشاشة، ثم قم بفك ضغطه.
+- انتقل إلى [https://osmand.net](https://osmand.net "https://osmand.net") وقم بتنزيل [OsmandMapCreator.zip](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") من الرابط الموجود على الجانب الأيمن من الشاشة، ثم قم بفك ضغطه.
 - انسخ ملف OBF من هاتفك أو جهازك اللوحي إلى هذا المجلد.
 - ابدأ OsmandMapCreator عبر ملف bat أو ملف sh.
 - تأكد من وجود اتصال بالإنترنت حتى يتمكن MapCreator من تنزيل مربعات الخرائط، وتحقق من جميع القوائم والإعدادات داخل MapCreator.

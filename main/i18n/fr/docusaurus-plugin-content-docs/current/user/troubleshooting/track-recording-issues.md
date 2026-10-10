@@ -96,7 +96,7 @@ Certains de ces paramètres interagissent, alors soyez précis. Le mieux est de 
 
 ### Contrôler le comportement des applications en arrière-plan sur iOS {#control-the-behavior-of-ios-background-apps}
 
-iOS peut suspendre ou arrêter automatiquement les applications en arrière-plan lorsque les ressources système sont réallouées. OsmAnd ne peut pas outrepasser ce comportement. Si l'enregistrement de la trace est interrompu lorsque l'appareil est verrouillé, cela peut laisser des interruptions dans l'enregistrement. Vous pouvez modifier ces interruptions à l'aide de l'outil [Planifier un itinéraire](https://docs.osmand.net/docs/user/plan-route/create-route).
+iOS peut suspendre ou arrêter automatiquement les applications en arrière-plan lorsque les ressources système sont réallouées. OsmAnd ne peut pas outrepasser ce comportement. Si l'enregistrement de la trace est interrompu lorsque l'appareil est verrouillé, cela peut laisser des interruptions dans l'enregistrement. Vous pouvez modifier ces interruptions à l'aide de l'outil [Planifier un itinéraire](https://osmand.net/docs/user/plan-route/create-route).
 
 Pour plus de détails sur la manière dont iOS gère le suivi de la localisation, consultez la documentation d'Apple [ici](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 
