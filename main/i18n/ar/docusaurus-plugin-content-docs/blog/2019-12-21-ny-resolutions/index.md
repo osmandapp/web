@@ -93,7 +93,7 @@ We’ve managed to release **7 new versions** of OsmAnd for iOS this year (<a hr
 
 * **OsmAnd Live**
 
-<a href="https://osmand.net/features/subscription">OsmAnd Live</a> is a subscription that provides you numerous benefits, including unlimited map downloads, access to all paid features and hourly map updates.
+<a href="https://osmand.net/docs/user/purchases/ios#legacy-subscriptions-prior-40">OsmAnd Live</a> is a subscription that provides you numerous benefits, including unlimited map downloads, access to all paid features and hourly map updates.
 
 * **OpenStreetMap (OSM) Editing**
 

@@ -21,7 +21,7 @@ In a nutshell * you can access OsmAnd Live from an IPhone now. Do you remember o
 
 ## Subscription options
 
-Even though, the subscription for OsmAnd Live is inexpensive, it gives you numerous benefits, such as unlimited downloads, the access to contour lines, and hourly updates. In fact, by subscribing to the app you help to support our developers and <a href="https://osmand.net/osm_live">the contributors that edit the info on OpenStreetMap</a>. Just choose your subscription plan and you no longer need to update the map data on the device, it will be done automatically every hour or so. There are three options to choose from: a monthly, trimester, and annual. The subscribed users have all the downloads and plugins available. You can also manage the subscription and payment details using App Store or IPhone Settings.
+Even though, the subscription for OsmAnd Live is inexpensive, it gives you numerous benefits, such as unlimited downloads, the access to contour lines, and hourly updates. In fact, by subscribing to the app you help to support our developers and <a href="https://osmand.net/docs/user/personal/maps-resources#free-for-osm-mappers">the contributors that edit the info on OpenStreetMap</a>. Just choose your subscription plan and you no longer need to update the map data on the device, it will be done automatically every hour or so. There are three options to choose from: a monthly, trimester, and annual. The subscribed users have all the downloads and plugins available. You can also manage the subscription and payment details using App Store or IPhone Settings.
 
 ![OsmAnd iOS 2.50](./ios-2-5.png)
 
