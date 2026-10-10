@@ -252,11 +252,11 @@ Here are the key parameters to configure when setting up a new online map source
 
 Online maps can be added with a special link to the OsmAnd Raster map list. Click on this link and choose OsmAnd for opening:
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |Parameter of link|Example|
 |:--------|:---------------|
-| [Constant part]| `http://osmand.net/add-tile-source` |
+| [Constant part]| `https://osmand.net/add-tile-source` |
 |[Separators]| ?   & |
 |[Name]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|

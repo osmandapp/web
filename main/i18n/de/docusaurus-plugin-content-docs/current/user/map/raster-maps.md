@@ -254,11 +254,11 @@ Hier sind die wichtigsten Parameter, die beim Einrichten einer neuen Online-Kart
 
 Online-Karten können mit einem speziellen Link zur OsmAnd-Rasterkartenliste hinzugefügt werden. Klicken Sie auf diesen Link und wählen Sie OsmAnd zum Öffnen:
 
-`http://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
+`https://osmand.net/add-tile-source?name=TEST&min_zoom=9&max_zoom=15&url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png`
 
 |Parameter des Links|Beispiel|
 |:--------|:---------------|
-| [Konstanter Teil]| `http://osmand.net/add-tile-source` |
+| [Konstanter Teil]| `https://osmand.net/add-tile-source` |
 |[Trennzeichen]| ?   & |
 |[Name]|name=TEST|
 |[URL]|url_template=https://a.tile.opentopomap.org/{0}/{1}/{2}.png|
