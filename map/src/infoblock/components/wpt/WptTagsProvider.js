@@ -341,6 +341,7 @@ function getCustomNamespaceTagProps(key) {
     return {
         icon: getIcon(null, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR),
         textPrefix: key.slice(key.indexOf(':') + 1),
+        isRawValue: true,
     };
 }
 
