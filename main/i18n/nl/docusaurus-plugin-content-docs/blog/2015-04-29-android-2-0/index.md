@@ -73,7 +73,7 @@ So now it has standard management functions share/export/delete. We also made a 
 
 ## Nautical plugin
 
-There was already an article about <a href="http://osmand.net/blog?id=nautical-charts">Nautical Charts</a>, what is important to mention that this plugin will work only with OsmAnd 2.0 version.
+There was already an article about <a href="https://osmand.net/blog?id=nautical-charts">Nautical Charts</a>, what is important to mention that this plugin will work only with OsmAnd 2.0 version.
 
 <table class="blogimage">
   <tr>

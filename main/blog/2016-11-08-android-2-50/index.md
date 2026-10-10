@@ -54,7 +54,7 @@ OsmAnd has become way friendlier towards the Android Wear. Now you can get a ful
 
 ## Topo map style
 
-As you may have already noticed, we added a whole new map style especially helpful for cyclists and hikers. Please read the  <a href="http://osmand.net/blog?id=topo_style">detailed guide</a> to it.
+As you may have already noticed, we added a whole new map style especially helpful for cyclists and hikers. Please read the  <a href="https://osmand.net/blog?id=topo_style">detailed guide</a> to it.
 
 <table class="blogimage">
   <tr>
@@ -70,7 +70,7 @@ To control the quality of your tracks, you can now apply filters before recordin
 ## And more ...
 
 We have also made multiple improvements around turn lanes, the Configure Map menu (now a button in the top left corner of the map screen), as well as the Main menu.
-We also prepared a small surprise for the Christmas season: <a href="http://osmand.net/blog?id=christmas_map">Read more about it.</a> Let's add more holiday-related points to the map &ndash; Christmas is coming!
+We also prepared a small surprise for the Christmas season: <a href="https://osmand.net/blog?id=christmas_map">Read more about it.</a> Let's add more holiday-related points to the map &ndash; Christmas is coming!
 
 
 And remember that only together we can achieve the best results!
