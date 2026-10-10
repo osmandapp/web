@@ -18,7 +18,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Address search works offline using downloaded maps. Make sure the map for the region you are searching in is installed. Results depend on the address data available in OpenStreetMap.
 
-Search results are automatically ordered by relevance and distance, so nearby and more relevant results appear higher in the list.
+OsmAnd sorts search results automatically, so nearby and more relevant results appear higher in the list. On Android, you can change the order with the Sort by chip at the top of the results list:
+- *Relevance* — Sorts the results by how closely they match your query.
+- *Nearest* — Sorts the results by distance, with the closest results shown first.
+
+Also on Android, chips with object types, such as *Town, City, Street*, or *Postcode*, appear above the results. Tap a chip to show only results of that type. 
+
+When the search is opened significantly away from your current location, the *Search around* chip appears next to *Sort by* on Android. Use it to choose the area used for the search, such as *Map center* or *My location*. 
 
 OsmAnd provides several ways to get to the *Search tool* where the **Search Address** section is located.
 
@@ -27,23 +33,34 @@ OsmAnd provides several ways to get to the *Search tool* where the **Search Addr
 - When preparing to start a route, tap *Navigation → Set destination → Search field*.  
 
 
-## Full Text Search {#full-text-search}
+## Address Tab {#address-tab}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_address_2_andr.png)
+![Search Android](@site/static/img/search/search_address_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search iOS](@site/static/img/search/street_search_ios.png)  
+![Search iOS](@site/static/img/search/street_search_ios.webp)  
 
 </TabItem>
 
 </Tabs>
+
+The *Address* tab contains buttons for different ways of searching by address. Each button opens a list of suggested options to choose from:
+
+- [**Search street in &lt;city&gt;**](#select-street) (*Android*) / **Select street in &lt;city&gt;** (*iOS*) — Appears if you have searched for a city before. The last searched city is already set, so you only need to type the street name and choose it from the suggested streets.
+- [**First specify city/town/locality**](#select-city) (*Android*) / **Select city** (*iOS*) — Always available. Opens a list of cities, towns, and villages right away, sorted by name. The list narrows as you type.
+- [**Postcode search**](#postcode-search) — Always available. Switches the search field to postcode input. The list stays empty until you type at least one character, then matching results appear.
+- [**Coordinates search**](#coordinates-search) — Always available. Opens the coordinates input screen.
+
+The **Nearest cities** list is displayed below the buttons and shows up to 15 localities around you. Each item shows the locality name, its type, such as *City* or *Town*, and the distance and direction from your location. On Android, the region is also shown.
+
+## Full Text Search {#full-text-search}
 
 OsmAnd supports full-text address search. This means you can type an address directly in the search field instead of selecting city → street → house number step by step. The search engine tries to recognise address components such as:
 - city;
@@ -121,7 +138,7 @@ The search engine also tolerates common variations in address formatting such as
 
 <TabItem value="android" label="Android">
 
-![Search Street Android](@site/static/img/search/town_search_android.png)
+![Search Street Android](@site/static/img/search/town_search_android.webp)
 
 </TabItem>
 
@@ -133,14 +150,12 @@ The search engine also tolerates common variations in address formatting such as
 
 </Tabs>
 
-**Nearest cities**  
-    This **displays a small list of cities around your location** or the locality you specified for *Select street* or *Select city*. Each field contains an icon corresponding to the size of the city, the name of the city, the distance from you to its center, and for Android the compass direction.
-
 This way of searching makes it easy to find specific locations within a selected locality, providing a convenient way to find addresses accurately and quickly. You can start searching for the needed address by determining the locality.
 
 - To do this, tap **First specify city/town/locality** (Android) or **Select city** (iOS).
 - In the list that opens, select the required locality. [Here](#full-text-search) describes the order in which search queries are displayed and what information is available about each item.
-- On the next screen, you can either continue to refine the address or select the *Show on the map* button below the search entry field.
+- On Android, you can change the order with the *Sort by* chip: *Relevance* or *Nearest*. If the search is opened far from your current location, use the *Search around* chip to choose whether to search around the *Map center* or *My location*. Chips with object types found in the results, such as *City*, *Museum*, or *Mountain peak*, appear above the list. Tap a chip to show only results of that type.
+- On the next screen, you can either continue to refine the address or select the *Show on the map* button below the search entry field. On Android, the *Show on the map* Floating Action Button (FAB) appears at the bottom of the search results screen.
 - To specify your search, you can enter all or only part of the name of the city, town, or village where the address you are looking for is located. This allows you to narrow your search and get a more accurate list.
 - Tapping the last item in the address, house number, or intersection name, opens the [map context menu](../map/map-context-menu.md#select-an-object-single-tap) of the object.  
 
@@ -156,7 +171,7 @@ This way of searching makes it easy to find specific locations within a selected
 
 <TabItem value="android" label="Android">
 
-![Search Street Android](@site/static/img/search/street_search.png) ![Search Street Android](@site/static/img/search/street_search_1.png)
+![Search Street Android](@site/static/img/search/street_search.webp) ![Search Street Android](@site/static/img/search/street_search_1.webp)
 
 </TabItem>
 
@@ -168,10 +183,12 @@ This way of searching makes it easy to find specific locations within a selected
 
 </Tabs>
 
-Street search is performed in the locality where you are, or where you searched before, or which is in the center of the visible map on the application screen.
+Street search is performed in the last city you searched for. Its name is shown on the button, so you can start with the street right away.
 
-- To use this type of search, tap **Search Street** (*Android*) or **Select Street** (*iOS*).
-- In the search field next to the city name, you can start typing the street name and the list will refine, giving you the most appropriate results.
+- To use this type of search, tap **Search street in &lt;city&gt;** (*Android*) or **Select street in &lt;city&gt;** (*iOS*).
+- The city name is already entered in the search field, and the list of its streets opens right away. In the search field next to the city name, you can start typing the street name and the list will refine, giving you the most appropriate results.
+- On Android, you can change the order with the *Sort by* chip: *Relevance* or *Nearest*. If the search is opened far from your current location, use the *Search around* chip to choose whether to search around the *Map center* or *My location*. Chips with object types found in the results, such as *Street* or *Building*, appear above the list.
+- Select a street to open the list of its buildings. Select the required house number to open the [map context menu](../map/map-context-menu.md#select-an-object-single-tap) of the address.
 - In other items, the street search is the same as in [Select City](#select-city).
 
 :::note Key & Value
@@ -186,7 +203,7 @@ Street search is performed in the locality where you are, or where you searched 
 
 <TabItem value="android" label="Android">
 
-![Search Postcode Android](@site/static/img/search/postcode_android.png)
+![Search Postcode Android](@site/static/img/search/postcode_android.webp)
 
 </TabItem>
 
@@ -198,7 +215,7 @@ Street search is performed in the locality where you are, or where you searched 
 
 </Tabs>
 
-**To use the *Postcode search*, you just need to enter the number**, which can consist even of a single digit, and the application offers a list of available relevant postcodes.
+The list stays empty until you start typing. **To use the *Postcode search*, you just need to enter the number**, which can consist even of a single digit, and the application offers a list of available relevant postcodes.
 
 - Select the required code and tap it.
 - You can use the *Show *postcode number* on the map* feature. This opens a [map context menu](../map/map-context-menu.md#select-an-object-single-tap) with the selected postcode without any additional information about the location.
