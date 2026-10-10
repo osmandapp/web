@@ -77,20 +77,6 @@ async function createConfig(){
       ],
     ],
     plugins: [
-      function staticNotFoundPage() {
-        return {
-          name: 'static-not-found-page',
-          async postBuild({outDir}) {
-            const fs = require('fs/promises');
-            const file = require('path').join(outDir, '404.html');
-            const html = await fs.readFile(file, 'utf8');
-            await fs.writeFile(file, html
-              .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
-              .replace(/<link\b[^>]*\brel="alternate"[^>]*>/gi, '')
-              .replace(/(<a\b[^>]*\bhref=")([^"]*\/)404(?:\.html)?\/?"/gi, '$1$2"'));
-          },
-        };
-      },
       [
       '@docusaurus/plugin-client-redirects',
       {
