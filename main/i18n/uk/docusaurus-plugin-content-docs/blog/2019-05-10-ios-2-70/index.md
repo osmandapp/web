@@ -18,7 +18,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## OpenStreetMap (OSM) Editing
 
-We continue to follow our <a href="https://osmand.net/blog/2019-ny-resolutions">New Year’s resolutions</a>, where we have promised to catch the iOS version of OsmAnd up with the one on Android, and we are getting there. 
+We continue to follow our <a href="https://osmand.net/blog/ny-resolutions-2019">New Year’s resolutions</a>, where we have promised to catch the iOS version of OsmAnd up with the one on Android, and we are getting there.
 OSM Editing allows you to make contributions to <a href="https://www.openstreetmap.org">OpenStreetMap</a>, a global community aimed at creating a comprehensive map of the world and providing up-to-date open-source data to every user.
 The feature lets you create new objects, so-called <a href="https://wiki.openstreetmap.org/wiki/Points_of_interest">points of interest or POI</a> on the map and <a href="https://wiki.openstreetmap.org/wiki/Notes">OSM notes</a>.
 

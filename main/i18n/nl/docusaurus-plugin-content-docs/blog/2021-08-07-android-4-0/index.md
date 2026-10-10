@@ -51,7 +51,7 @@ Full information you can find [here](https://osmand.net/docs/user/purchases/).
 
 ## Cloud backup and restore
 
-New paid function for <a href="https://osmand.net/blog/osmand-android-4-0-released#monetization">'OsmAnd Pro'</a> subscription.
+New paid function for <a href="https://osmand.net/blog/osmand-android-4-0-released#new-type-of-subscriptions">'OsmAnd Pro'</a> subscription.
 
 This function allows to make backup and restore all your OsmAnd data: settings, my places, resources. The size of storage is 3 * 50 * 1000 Gb.
 
@@ -78,7 +78,7 @@ Go to **<Translate android="yes" id="shared_string_menu" /> → Settings → Bac
 
 ## Added night mode for Topo / Offroad rendering styles
 
-We added <a href="https://osmand.net/docs/user/map/vector-maps#map-mode">night mode</a> for <a href="https://osmand.net/docs/user/map/vector-maps#topo">Topo</a> and <a href="https://osmand.net/docs/user/map/vector-maps#offroad">Offroad</a> rendering styles.
+We added <a href="https://osmand.net/docs/user/map/vector-maps#map-mode">night mode</a> for <a href="https://osmand.net/docs/user/map/vector-maps#map-styles">Topo</a> and <a href="https://osmand.net/docs/user/map/vector-maps#map-styles">Offroad</a> rendering styles.
 
 <table class="blogimage">
   <tr>
@@ -89,7 +89,7 @@ We added <a href="https://osmand.net/docs/user/map/vector-maps#map-mode">night m
 
 ## Added option to download Contour lines in feet
 
-Now, there is an opportunity to download <a href="https://osmand.net/docs/user/plugins/topography#downloading-files">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.
+Now, there is an opportunity to download <a href="https://osmand.net/docs/user/plugins/topography#download-maps">Contour lines</a> data in <a href="https://en.wikipedia.org/wiki/United_States_customary_units">feet</a>.
 
 <table class="blogimage">
   <tr>
