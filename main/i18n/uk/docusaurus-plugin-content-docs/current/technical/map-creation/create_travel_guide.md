@@ -21,7 +21,7 @@ GPX-треки можна завантажити з Інтернету або с
 
 ### Запустіть інструмент {#launch-the-tool}
 
-Завантажте останню версію [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) та розпакуйте файли з архіву.
+Завантажте останню версію [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) та розпакуйте файли з архіву.
 
 :::note
 Як використовувати цей інструмент, описано в статті [Створення офлайн-растрових та векторних карт](./create-offline-maps-yourself.md#osmandmapcreator).

@@ -76,7 +76,7 @@ Le widget **Marqueurs de carte** *(pour Android)* et **Indication de distance - 
 C'est l'heure (hh:mm) à laquelle le véhicule ou la personne devrait arriver à destination. Elle est calculée comme la distance jusqu'au marqueur divisée par la vitesse moyenne.
 La vitesse moyenne est calculée comme la moyenne de toutes les valeurs de vitesse reçues des points de localisation pour l'intervalle de temps que vous avez sélectionné, de 15 secondes à 60 minutes.
 
-Vous pouvez également choisir d'afficher un ou deux marqueurs. Pour en savoir plus sur les paramètres des widgets, consultez cet [article](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Vous pouvez également choisir d'afficher un ou deux marqueurs. Pour en savoir plus sur les paramètres des widgets, consultez cet [article](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets).
 :::info
 *La distance jusqu'au marqueur* est la longueur de la ligne droite entre votre position (ou un point particulier sur la carte) et le marqueur.
 :::  

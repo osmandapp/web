@@ -19,7 +19,7 @@ Elegir la fuente para el texto de tu guía depende completamente de ti. Puede se
 
 ### Iniciar la herramienta {#launch-the-tool}
 
-Descarga la última versión de [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) y extrae los archivos del archivo.
+Descarga la última versión de [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) y extrae los archivos del archivo.
 
 :::note
 Cómo usar esta herramienta se describe en el artículo [Crear mapas ráster y vectoriales sin conexión](./create-offline-maps-yourself.md#osmandmapcreator).

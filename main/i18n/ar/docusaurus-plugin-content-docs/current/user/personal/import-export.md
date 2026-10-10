@@ -93,14 +93,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - *إعادة التشغيل*. بعد استيراد الملفات، يجب إعادة تشغيل التطبيق.
 
 أنواع ملفات الاستيراد المدعومة:
-- [المسارات، الطرق](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) و [المفضلات](https://osmand.net/docs/user/personal/favorites/): `.gpx`، `.kml`، `.kmz`. يتم استيراد ملفات KML و KMZ مع التحويل إلى تنسيق GPX.
+- [المسارات، الطرق](https://osmand.net/docs/user/personal/tracks/manage-tracks/) و [المفضلات](https://osmand.net/docs/user/personal/favorites/): `.gpx`، `.kml`، `.kmz`. يتم استيراد ملفات KML و KMZ مع التحويل إلى تنسيق GPX.
 - [خرائط OsmAnd المتجهة](https://osmand.net/docs/user/map/vector-maps): `.obf`.
-- [بلاط خرائط عبر الإنترنت](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [بلاط خرائط عبر الإنترنت](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [النسخ الاحتياطي والملفات الشخصية](#export): `.osf`.
-- [خرائط الارتفاع / بيانات 3D](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [خرائط الارتفاع / بيانات 3D](https://osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [أخرى](color-palette-schemes.md): `.txt`.
 
-للحصول على نظرة عامة فنية على جميع التنسيقات المدعومة، انظر [تنسيقات ملفات OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
+للحصول على نظرة عامة فنية على جميع التنسيقات المدعومة، انظر [تنسيقات ملفات OsmAnd](https://osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

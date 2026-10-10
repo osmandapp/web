@@ -170,7 +170,7 @@ Tik op de knop [Mijn Positie](../../map/interact-with-map.md#my-position-and-zoo
 - [Uiterlijk van de track](./appearance.md)
 - [Track Contextmenu](./track-context-menu.md)
 - [Navigeren op basis van een track](../../navigation/setup/gpx-navigation.md)
-- [Routes op de kaart](https://docs.osmand.net/blog/routes) blogartikel
+- [Routes op de kaart](https://osmand.net/blog/routes) blogartikel
 - [Kaart configureren](../../map/configure-map-menu.md)  
 - [GPX-tracks](../../personal/tracks/index.md)  
 - [Route plannen](../../plan-route/index.md)  

@@ -40,4 +40,4 @@ Bunu yapmanın birkaç yolu vardır:
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) üzerinde OsmAnd+
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545) üzerinde OsmAnd
-- Amazon artık mevcut değil. Ayrıntılı bilgi [burada](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do) bulunabilir.
+- Amazon artık mevcut değil. Ayrıntılı bilgi [burada](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do) bulunabilir.

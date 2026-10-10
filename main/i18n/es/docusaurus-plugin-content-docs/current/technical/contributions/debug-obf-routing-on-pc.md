@@ -6,7 +6,7 @@ sidebar_position: 5
 # Depurar el enrutamiento OBF en una PC {#debug-obf-routing-on-a-pc}
 
 
-- Ve a [https://osmand.net](https://osmand.net "https://osmand.net") y descarga [OsmandMapCreator.zip](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") desde el enlace en el lado derecho de la pantalla, y descomprímelo.
+- Ve a [https://osmand.net](https://osmand.net "https://osmand.net") y descarga [OsmandMapCreator.zip](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") desde el enlace en el lado derecho de la pantalla, y descomprímelo.
 - Copia el archivo OBF de tu teléfono o tableta a esa carpeta.
 - Inicia OsmandMapCreator a través del archivo .bat o .sh.
 - Asegúrate de tener conexión a Internet para que mapcreator pueda descargar los mosaicos del mapa, revisa todos los menús y configuraciones dentro de mapcreator.

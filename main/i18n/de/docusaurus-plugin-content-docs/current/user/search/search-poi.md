@@ -395,7 +395,7 @@ Um benutzerdefinierte Filter für die Suche nach Orten auf der Karte zu erstelle
 
 6. **Essen**. Enthält 12 Filtertypen.  
 
-7. **Gefahr**. Enthält 5 Typen: *Lawinengefahr, Erosionsgefahr, Hochwassergefahr, Nukleare Gefahr, Rutschige Straße*. Die Gefahr-Kategorie umfasst sowohl POIs mit hazard=* -Tags an Knoten als auch Straßensegmente oder Pfadsegmente (Ways), die mit demselben Tag markiert sind, sofern sie als durchsuchbare Objekte exportiert werden. Für einen visuellen Überblick über alle auf der Karte verwendeten Gefahrsymbole siehe den Abschnitt [Gefahr](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+7. **Gefahr**. Enthält 5 Typen: *Lawinengefahr, Erosionsgefahr, Hochwassergefahr, Nukleare Gefahr, Rutschige Straße*. Die Gefahr-Kategorie umfasst sowohl POIs mit hazard=* -Tags an Knoten als auch Straßensegmente oder Pfadsegmente (Ways), die mit demselben Tag markiert sind, sofern sie als durchsuchbare Objekte exportiert werden. Für einen visuellen Überblick über alle auf der Karte verwendeten Gefahrsymbole siehe den Abschnitt [Gefahr](https://osmand.net/docs/user/map-legend/osmand/#hazard1).
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Enthält 31 Filtertypen.
 

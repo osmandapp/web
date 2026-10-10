@@ -149,7 +149,7 @@ Allez à : *Fichiers → Sur mon iPhone → OsmAnd Maps*
 | Fonctionnalités | Version 1 | Version 2 (OpenGL) |
 |:---|:--- |:--- |
 | Multiplateforme | Non utilisé dans la version iOS. | Convient aux deux versions. |
-| Dépendant du GPU / CPU | Recommandé pour les appareils peu performants ou obsolètes. | Moteur de rendu puissant. <br /> Uniquement disponible pour [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) et les versions ultérieures, et en mode test pour [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Dépendant du GPU / CPU | Recommandé pour les appareils peu performants ou obsolètes. | Moteur de rendu puissant. <br /> Uniquement disponible pour [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) et les versions ultérieures, et en mode test pour [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | Mode 3D | Il est possible de visualiser la carte en 2D, et vous pouvez modifier l'angle de vue pour obtenir une [vue 3D](../widgets/map-buttons.md#3d-mode). | Vous pouvez visualiser la carte en 2D et en [3D](../widgets/map-buttons.md#3d-mode). |
 | Affichage de la carte | La carte entière est rendue comme un ensemble de tuiles, et les marqueurs, les lignes et le texte sont déjà à l'intérieur de ces tuiles. | D'abord, l'ensemble du paquet de tuiles est rendu, puis les symboles disponibles sont appliqués à la carte, [couche par couche](../../technical/algorithms/map-rendering-layers.md). |
 | Superposition / sous-couche de symboles transparents | Prend en charge tous les paramètres. | Ne prend pas en charge une couche raster au-dessus du texte vectoriel. |

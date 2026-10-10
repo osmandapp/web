@@ -137,7 +137,7 @@ W chwili obecnej subskrypcja Pro obejmuje następujące funkcje:
 
 |  Funkcja Pro  | Opis   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://osmand.net/map). |
 | [Rzeźba terenu 3D](../plugins/topography.md#3d-relief) | Pozwala na posiadanie i obserwowanie modelu w skali Twojej okolicy lub całego kontynentu. |
 | [Widżety wysokości - Wysokość: Środek mapy](../widgets/info-widgets.md#elevation-map-center) | Pozwala sprawdzić wysokość nad poziomem morza dla bieżącego środka mapy.  |
 | [Aktualizacje na żywo](../personal/maps-resources.md#live-updates) | Mapy OsmAnd aktualizują się co 15 minut po wprowadzeniu ulepszeń w [OpenStreetMap](https://www.openstreetmap.org/). |

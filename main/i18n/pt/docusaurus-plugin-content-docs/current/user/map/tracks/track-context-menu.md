@@ -202,7 +202,7 @@ Esta seção da aba *Visão Geral* exibe ***dados de tags*** e ***todas as infor
       <year>2023</year>
       <license>https://github.com/osmandapp/OsmAnd/blob/master/LICENSE</license>
     </copyright>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <time>2023-12-13T12:00:00Z</time>
     <keywords>gpx, osmand, hiking</keywords>
     <extensions>
@@ -558,7 +558,7 @@ Você pode ativar ou desativar os waypoints do grupo no mapa usando o botão no 
     <time>2024-04-04T13:12:11Z</time>
     <name>Waypoint 1</name>
     <desc>Long description</desc>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <type></type>
     <cmt>Short comment for the waypoint.</cmt>
     <extensions>

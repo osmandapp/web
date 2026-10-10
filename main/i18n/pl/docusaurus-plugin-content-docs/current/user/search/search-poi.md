@@ -390,7 +390,7 @@ Aby utworzyć niestandardowe filtry do znajdowania miejsc na mapie, wybierz odpo
 
 6. **Żywność**. Obejmuje 12 typów filtrów.  
 
-7. **Zagrożenie**. Obejmuje 5 typów: *Zagrożenie lawinowe, Zagrożenie erozją, Zagrożenie powodziowe, Zagrożenie jądrowe, Śliska droga*. Kategoria Zagrożenie obejmuje zarówno POI z tagami hazard=*, jak i segmenty dróg lub ścieżek (ways) oznaczone tym samym tagiem, jeśli są eksportowane jako wyszukiwalne obiekty. Dla wizualnego przeglądu wszystkich ikon zagrożeń używanych na mapie, zobacz sekcję [Zagrożenie](https://osmand.net/docs/user/map-legend/osmand/#hazard).
+7. **Zagrożenie**. Obejmuje 5 typów: *Zagrożenie lawinowe, Zagrożenie erozją, Zagrożenie powodziowe, Zagrożenie jądrowe, Śliska droga*. Kategoria Zagrożenie obejmuje zarówno POI z tagami hazard=*, jak i segmenty dróg lub ścieżek (ways) oznaczone tym samym tagiem, jeśli są eksportowane jako wyszukiwalne obiekty. Dla wizualnego przeglądu wszystkich ikon zagrożeń używanych na mapie, zobacz sekcję [Zagrożenie](https://osmand.net/docs/user/map-legend/osmand/#hazard1).
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. Obejmuje 31 typów filtrów.
 

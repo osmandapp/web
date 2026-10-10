@@ -34,7 +34,7 @@ Met OsmAnd Cloud kunt u **persoonlijke instellingen en applicatiegegevens opslaa
 
 Met OsmAnd Cloud kunt u uw gegevens back-uppen, herstellen en synchroniseren tussen Android, iOS en de [webversie](../web/index.md). Met cross-platformmogelijkheden kunt u **profielinstellingen**, **tracks**, **favorieten**, **OSM-bewerkingen/notities** en meer overzetten tussen apparaten. Bovendien stelt de **webversie** u in staat om routes te plannen en op te slaan voor later gebruik op verbonden apparaten.  
 
-OsmAnd ondersteunt **cross-platformgebruik** tussen *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* met de volgende stappen:
+OsmAnd ondersteunt **cross-platformgebruik** tussen *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://osmand.net/map))* met de volgende stappen:
 
 1. **Registreer een [account](#login) op de OsmAnd Cloud**:
  

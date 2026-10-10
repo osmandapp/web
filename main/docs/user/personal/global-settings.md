@@ -153,7 +153,7 @@ Go to: *Files → On My Phone → OsmAnd Maps*
 | Features | Version 1 | Version 2 (OpenGL) |
 |:---|:--- |:--- |
 | Cross-platform | Not used in the iOS version. | Fits both versions. |
-| GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) and later versions, and in test mode for [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) and later versions, and in test mode for [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | 3D mode | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). | You can view the map in 2D and [3D](../widgets/map-buttons.md#3d-mode). |
 | Map display | The whole map is rendered as a set of tiles, and markers, lines, and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
 | Transparent symbols overlay / underlay | Supports all settings. | It does not support a raster layer on top of vector text. |

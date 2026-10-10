@@ -76,7 +76,7 @@ O widget **Marcadores do mapa** *(para Android)* e **Indicação de distância -
 Este é o tempo (hh:mm) em que o veículo ou pessoa deve chegar ao destino. É calculado como a distância até o marcador dividida pela velocidade média.
 A velocidade média é calculada como a média de todos os valores de velocidade recebidos dos pontos de localização para o intervalo de tempo selecionado de 15 segundos a 60 minutos.
 
-Você também pode optar por exibir um ou dois marcadores. Leia mais sobre as configurações do widget neste [artigo](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Você também pode optar por exibir um ou dois marcadores. Leia mais sobre as configurações do widget neste [artigo](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets).
 :::info
 *A distância até o marcador* é o comprimento da linha reta entre sua posição (ou um ponto específico no mapa) e o marcador.
 :::

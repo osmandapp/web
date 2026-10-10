@@ -151,7 +151,7 @@ Przejdź do: *Pliki → Na moim iPhonie → OsmAnd Maps*
 | Funkcje | Wersja 1 | Wersja 2 (OpenGL) |
 |:---|:--- |:--- |
 | Wieloplatformowość | Nieużywana w wersji na iOS. | Pasuje do obu wersji. |
-| Zależność od GPU / CPU | Zalecana dla urządzeń o niskiej wydajności lub przestarzałych. | Potężny silnik renderujący. <br /> Dostępny tylko dla [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) i nowszych wersji oraz w trybie testowym dla [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Zależność od GPU / CPU | Zalecana dla urządzeń o niskiej wydajności lub przestarzałych. | Potężny silnik renderujący. <br /> Dostępny tylko dla [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) i nowszych wersji oraz w trybie testowym dla [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | Tryb 3D | Możliwe jest przeglądanie mapy w 2D, a także zmiana kąta widzenia w celu uzyskania [widoku 3D](../widgets/map-buttons.md#3d-mode). | Możesz przeglądać mapę w 2D i [3D](../widgets/map-buttons.md#3d-mode). |
 | Wyświetlanie mapy | Cała mapa jest renderowana jako zestaw kafelków, a znaczniki, linie i tekst znajdują się już w tych kafelkach. | Najpierw renderowany jest cały pakiet kafelków, a następnie dostępne symbole są nakładane na mapę, [warstwa po warstwie](../../technical/algorithms/map-rendering-layers.md). |
 | Przezroczyste symbole nakładki / podkładu | Obsługuje wszystkie ustawienia. | Nie obsługuje warstwy rastrowej na wierzchu tekstu wektorowego. |

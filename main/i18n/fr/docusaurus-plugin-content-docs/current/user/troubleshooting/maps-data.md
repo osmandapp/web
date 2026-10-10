@@ -119,7 +119,7 @@ Pour résoudre le problème de rendu lent des cartes, en particulier lors de l'u
 
 6. **Utilisez uniquement les cartes hors ligne.** Les cartes en ligne, surtout lorsqu'elles ne sont pas téléchargées à l'avance, peuvent ralentir le chargement de la carte. Passez à l'utilisation exclusive de cartes hors ligne pour des performances plus fluides.
 
-Ces changements devraient réduire le temps nécessaire pour rendre les cartes, en particulier pendant la navigation. Pour des options de configuration plus détaillées, consultez le [Guide des paramètres de la carte](https://osmand.net/docs/user/map/interact-with-map.md#settings).
+Ces changements devraient réduire le temps nécessaire pour rendre les cartes, en particulier pendant la navigation. Pour des options de configuration plus détaillées, consultez le [Guide des paramètres de la carte](https://osmand.net/docs/user/map/configure-map-menu).
 
 ### Que signifie « Mises à jour gratuites (urgence) » ? {#what-does-free-updates-emergency-mean}
 

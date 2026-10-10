@@ -69,10 +69,10 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 ## Hoe Rasterkaarten Voor te Bereiden {#how-to-prepare-raster-maps}
 
 :::info
-Hoofdartikel over het voorbereiden van kaarten [lees hier](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Hoofdartikel over het voorbereiden van kaarten [lees hier](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Ondanks dat de plugin *Online Maps* heet, kunt u de kaarten ook zonder internetverbinding gebruiken. U hoeft alleen de delen van de kaarten (vaak tegels genoemd) op te slaan om ze later te gebruiken. Om dat te doen, downloadt u een specifieke [Map Creator tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) ontwikkeld door het OsmAnd-team.
+Ondanks dat de plugin *Online Maps* heet, kunt u de kaarten ook zonder internetverbinding gebruiken. U hoeft alleen de delen van de kaarten (vaak tegels genoemd) op te slaan om ze later te gebruiken. Om dat te doen, downloadt u een specifieke [Map Creator tool](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) ontwikkeld door het OsmAnd-team.
 
 Selecteer het gebied dat u wilt downloaden, klik op het Preload-gebied, stel vervolgens de kleinste en de grootste zoomniveaus in die u wilt weergeven en download de tegels.
 Voor de <b>Android-versie</b> kunt u ze kopiëren naar de map <i>osmand/tiles/*tile type*</i> van uw telefoon. U moet ook <i>Configure map-. Overlay map</i> openen en OsmAnd online tegels kiezen.

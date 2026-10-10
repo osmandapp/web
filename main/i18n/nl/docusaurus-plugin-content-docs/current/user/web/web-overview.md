@@ -55,11 +55,11 @@ De Web Kaartportaal ondersteunt verschillende toegangsniveaus: zonder inloggen, 
 | [Routeplanner](./planner.md) | Zonder Inloggen |
 | [Weer-overlays](./web-weather.md) | Zonder Inloggen |
 | [Instellingen](./web-map.md#settings) | Zonder Inloggen |
-| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([POI's](./web-map.md#poi-overlay), [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([Terrein](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Webzoekopdracht, Populaire Plaatsen](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Tracks-mappen en -laag](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
+| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([POI's](./web-map.md#poi-overlay), [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([Terrein](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Webzoekopdracht, Populaire Plaatsen](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Tracks-mappen en -laag](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Hoe te Beginnen {#how-to-start}

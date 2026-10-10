@@ -170,7 +170,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [مظهر المسار](./appearance.md)
 - [قائمة سياق المسار](./track-context-menu.md)
 - [الملاحة حسب المسار](../../navigation/setup/gpx-navigation.md)
-- [المسارات على الخريطة](https://docs.osmand.net/blog/routes) مقالة مدونة
+- [المسارات على الخريطة](https://osmand.net/blog/routes) مقالة مدونة
 - [تخصيص الخريطة](../../map/configure-map-menu.md)  
 - [مسارات GPX](../../personal/tracks/index.md)  
 - [تخطيط مسار](../../plan-route/index.md)  

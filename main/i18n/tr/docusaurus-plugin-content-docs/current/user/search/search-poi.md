@@ -395,7 +395,7 @@ Haritada yerleri bulmak için özel filtreler oluşturmak üzere, ilgili kategor
 
 6. **Yiyecek**. 12 tür filtre içerir.  
 
-7. **Tehlike**. 5 tür içerir: *Çığ tehlikesi, Erozyon tehlikesi, Sel tehlikesi, Nükleer tehlike, Kaygan yol*. Tehlike kategorisi, düğümlerde hazard=* etiketli POI'leri ve aynı etiketle işaretlenmiş yol veya yol segmentlerini (ways) içerir, eğer bunlar aranabilir nesneler olarak dışa aktarılırsa. Haritada kullanılan tüm tehlike simgelerinin görsel bir genel bakışını görmek için [Tehlike](https://osmand.net/docs/user/map-legend/osmand/#hazard) bölümüne bakın.
+7. **Tehlike**. 5 tür içerir: *Çığ tehlikesi, Erozyon tehlikesi, Sel tehlikesi, Nükleer tehlike, Kaygan yol*. Tehlike kategorisi, düğümlerde hazard=* etiketli POI'leri ve aynı etiketle işaretlenmiş yol veya yol segmentlerini (ways) içerir, eğer bunlar aranabilir nesneler olarak dışa aktarılırsa. Haritada kullanılan tüm tehlike simgelerinin görsel bir genel bakışını görmek için [Tehlike](https://osmand.net/docs/user/map-legend/osmand/#hazard1) bölümüne bakın.
 
 8. **<Translate android="true" ids="amenity_type_healthcare"/>**. 31 tür filtre içerir.
 
