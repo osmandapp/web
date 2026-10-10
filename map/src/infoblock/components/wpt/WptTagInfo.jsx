@@ -163,7 +163,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
 
     function prepareValueFromList(tag) {
         const addPrefix = tag.key === 'cuisine';
-        if (tag.isUrl) {
+        if (tag.isUrl || tag.isRawValue) {
             return tag.value;
         }
         if (prefixContainsValue(tag)) {
