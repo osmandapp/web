@@ -4,6 +4,13 @@ import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import { isMvtTileURL } from './MvtLayerConfig';
 
+const RasterTileLayer = L.TileLayer.extend({
+    _clampZoom(zoom) {
+        // Leaflet's redraw() passes the map zoom without rounding it for the tile grid.
+        return L.TileLayer.prototype._clampZoom.call(this, Math.round(zoom));
+    },
+});
+
 const CustomTileLayer = forwardRef((props, ref) => {
     const map = useMap();
     const mtx = useContext(MapContext);
@@ -23,7 +30,7 @@ const CustomTileLayer = forwardRef((props, ref) => {
         }
 
         if (!rasterTileLayerRef.current) {
-            rasterTileLayerRef.current = L.tileLayer(mtx.tileURL.url, props).addTo(map);
+            rasterTileLayerRef.current = new RasterTileLayer(mtx.tileURL.url, props).addTo(map);
         } else {
             rasterTileLayerRef.current.setUrl(mtx.tileURL.url);
             if (!map.hasLayer(rasterTileLayerRef.current)) {
