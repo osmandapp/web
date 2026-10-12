@@ -96,11 +96,14 @@ export function hasSpeedOnlyTracks(group) {
     return group.id !== OTHER_GROUP && group.id !== IGNORED_GROUP;
 }
 
+function groupActivityIds(group) {
+    return [...group.activities.map((a) => a.id), ...(hasSpeedOnlyTracks(group) ? [group.id] : [])];
+}
+
 // "All" as the tiles count it: activities plus the groups given by speed
-export const ALL_ACTIVITY_IDS = activities.groups.flatMap((g) => [
-    ...g.activities.map((a) => a.id),
-    ...(hasSpeedOnlyTracks(g) ? [g.id] : []),
-]);
+export const ALL_ACTIVITY_IDS = activities.groups.flatMap(groupActivityIds);
+export const FOOT_CYCLING_GROUPS = ['foot', 'cycling'];
+const DEFAULT_ACTIVITY = activities.groups.filter((g) => FOOT_CYCLING_GROUPS.includes(g.id)).flatMap(groupActivityIds);
 
 const RANGE_FILTER_KEYS = ['distance', 'speed', 'maxSpeed', 'maxDistBetweenPoints', 'timeMinutes', 'waypoints'];
 const RANGE_PROPERTIES = {
@@ -149,8 +152,6 @@ export default function TravelMenu() {
     const { t } = useTranslation();
     const location = useLocation();
     const navigate = useNavigate();
-
-    const DEFAULT_ACTIVITY = ACTIVITY_ALL;
 
     const [, height] = useWindowSize();
 
