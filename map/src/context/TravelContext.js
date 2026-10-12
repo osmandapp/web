@@ -25,6 +25,7 @@ export const TravelContextProvider = ({ children }) => {
     const [travelShowStartFinish, setTravelShowStartFinish] = useState(false);
     const [travelSearchRadius, setTravelSearchRadius] = useState(AUTO_SEARCH_RADIUS); // metres
     const [travelHeatmapMatch, setTravelHeatmapMatch] = useState(null); // { matched, total } tracks of the heatmap filter
+    const [travelPreviewDates, setTravelPreviewDates] = useState(null); // { dateFrom, dateTo } while the date slider is dragged
     const [travelHeatmapAppearance, setTravelHeatmapAppearance] = useState(loadHeatmapAppearance);
 
     return (
@@ -50,6 +51,8 @@ export const TravelContextProvider = ({ children }) => {
                 setTravelSearchRadius,
                 travelHeatmapMatch,
                 setTravelHeatmapMatch,
+                travelPreviewDates,
+                setTravelPreviewDates,
                 travelHeatmapAppearance,
                 setTravelHeatmapAppearance,
             }}
