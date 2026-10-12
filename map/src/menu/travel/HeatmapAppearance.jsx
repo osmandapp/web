@@ -2,7 +2,10 @@ import React, { useContext, useState } from 'react';
 import { Box, Slider, Tooltip, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import isEqual from 'lodash-es/isEqual';
-import TravelContext, { TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY } from '../../context/TravelContext';
+import TravelContext, {
+    TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY,
+    saveHeatmapAppearance,
+} from '../../context/TravelContext';
 import SecondaryMenuDrawer from '../../frame/components/other/SecondaryMenuDrawer';
 import HeaderWithUnderline from '../../frame/components/header/HeaderWithUnderline';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -63,7 +66,7 @@ export const HEATMAP_STYLE_CELLS = 'cells';
 
 export const DEFAULT_HEATMAP_APPEARANCE = {
     style: HEATMAP_STYLE_GAUSS,
-    palette: 'vivid',
+    palette: 'turbo',
     scale: HEATMAP_SCALE_EQUALIZED,
     width: 3,
     glow: 0.6,
@@ -93,7 +96,7 @@ export default function HeatmapAppearance({ onClose }) {
     function setAppearance(key, value) {
         const appearance = { ...ttx.travelHeatmapAppearance, [key]: value };
         ttx.setTravelHeatmapAppearance(appearance);
-        localStorage.setItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY, JSON.stringify(appearance));
+        saveHeatmapAppearance(appearance);
     }
 
     // width and glow repaint every tile, so they apply on release; opacity is cheap and follows the thumb

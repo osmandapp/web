@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import { DEFAULT_HEATMAP_APPEARANCE } from '../menu/travel/HeatmapAppearance';
 
 export const TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY = 'travelHeatmapAppearance';
+const HEATMAP_APPEARANCE_VERSION = 1;
+export function saveHeatmapAppearance(appearance) {
+    localStorage.setItem(
+        TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY,
+        JSON.stringify({ ...appearance, version: HEATMAP_APPEARANCE_VERSION })
+    );
+}
 // the search radius follows the zoom
 export const AUTO_SEARCH_RADIUS = 0;
 
@@ -18,14 +25,7 @@ export const TravelContextProvider = ({ children }) => {
     const [travelShowStartFinish, setTravelShowStartFinish] = useState(false);
     const [travelSearchRadius, setTravelSearchRadius] = useState(AUTO_SEARCH_RADIUS); // metres
     const [travelHeatmapMatch, setTravelHeatmapMatch] = useState(null); // { matched, total } tracks of the heatmap filter
-    const [travelHeatmapAppearance, setTravelHeatmapAppearance] = useState(() => {
-        try {
-            const s = localStorage.getItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
-            return s ? { ...DEFAULT_HEATMAP_APPEARANCE, ...JSON.parse(s) } : DEFAULT_HEATMAP_APPEARANCE;
-        } catch {
-            return DEFAULT_HEATMAP_APPEARANCE;
-        }
-    });
+    const [travelHeatmapAppearance, setTravelHeatmapAppearance] = useState(loadHeatmapAppearance);
 
     return (
         <TravelContext.Provider
@@ -58,5 +58,19 @@ export const TravelContextProvider = ({ children }) => {
         </TravelContext.Provider>
     );
 };
+
+function loadHeatmapAppearance() {
+    try {
+        const saved = JSON.parse(localStorage.getItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY));
+        if (saved?.version === HEATMAP_APPEARANCE_VERSION) {
+            const { version, ...appearance } = saved;
+
+            return { ...DEFAULT_HEATMAP_APPEARANCE, ...appearance };
+        }
+    } catch {}
+    localStorage.removeItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
+
+    return DEFAULT_HEATMAP_APPEARANCE;
+}
 
 export default TravelContext;
