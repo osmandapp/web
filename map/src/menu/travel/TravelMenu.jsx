@@ -9,7 +9,13 @@ import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_searc
 import { ReactComponent as ReviewIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import debounce from 'lodash-es/debounce';
 import isEqual from 'lodash-es/isEqual';
-import { HEADER_SIZE, MAIN_URL_WITH_SLASH, MENU_INFO_CLOSE_SIZE, TRAVEL_URL } from '../../manager/GlobalManager';
+import {
+    HEADER_SIZE,
+    isTravelPath,
+    MAIN_URL_WITH_SLASH,
+    MENU_INFO_CLOSE_SIZE,
+    TRAVEL_URL,
+} from '../../manager/GlobalManager';
 import AppContext from '../../context/AppContext';
 import TravelContext, { AUTO_SEARCH_RADIUS } from '../../context/TravelContext';
 import activities from '../../resources/activities.json';
@@ -71,6 +77,7 @@ const OTHER_GROUP = 'other';
 // months are counted from 2004-01, the same way the tiles count them
 const MONTHS_BASE_YEAR = 2004;
 const LAST_MONTH = monthIndex(new Date().toISOString().slice(0, 7));
+const DEFAULT_MONTHS = [LAST_MONTH - 10 * 12, LAST_MONTH];
 const MONTH_KEY = /^\d{4}-\d{2}$/;
 
 // 'YYYY-MM' of a month index
@@ -163,7 +170,7 @@ export default function TravelMenu() {
     const WAYPOINTS_DEFAULT = 10000;
     const DEFAULT_FILTERS = {
         activity: DEFAULT_ACTIVITY,
-        months: null,
+        months: DEFAULT_MONTHS,
         tags: [],
         tagMatchMode: TAG_MATCH_MODES.OR,
         distance: null,
@@ -174,10 +181,11 @@ export default function TravelMenu() {
         waypoints: null,
     };
     // Initial filters come from the URL query
-    const [filters, setFilters] = useState(() => ({
-        ...DEFAULT_FILTERS,
-        ...paramsToFilters(new URLSearchParams(globalThis.location.search)),
-    }));
+    const [filters, setFilters] = useState(() =>
+        isTravelPath(globalThis.location.pathname)
+            ? { ...DEFAULT_FILTERS, months: null, ...paramsToFilters(new URLSearchParams(globalThis.location.search)) }
+            : DEFAULT_FILTERS
+    );
     const setFilter = (key, value) => {
         const next = { ...filters, [key]: value };
         setFilters(next);
@@ -232,6 +240,13 @@ export default function TravelMenu() {
             runSearch(filters);
         }
     }, [ttx.openTravel]);
+
+    // an empty Travel URL gets the current filters, so the default date range is in it from the start
+    useEffect(() => {
+        if (ttx.openTravel && isTravelPath(location.pathname) && !location.search) {
+            navigateToFilters(filters);
+        }
+    }, [ttx.openTravel, location.pathname, location.search]);
 
     useEffect(() => {
         ttx.setOpenTravelFilters(openFilters);
@@ -445,6 +460,16 @@ export default function TravelMenu() {
         runSearch(next);
     }
 
+    function previewMonths(value) {
+        previewFilter('months', toMonthsFilter(value));
+        ttx.setTravelPreviewDates({ dateFrom: monthKey(value[0]), dateTo: monthKey(value[1]) });
+    }
+
+    function commitMonths(value) {
+        ttx.setTravelPreviewDates(null);
+        setFilter('months', toMonthsFilter(value));
+    }
+
     const uploadMonths = filters.months ?? [0, LAST_MONTH];
 
     const hasActiveFilters =
@@ -588,8 +613,8 @@ export default function TravelMenu() {
                                 min={0}
                                 max={LAST_MONTH}
                                 step={1}
-                                onChange={(e, value) => previewFilter('months', toMonthsFilter(value))}
-                                onChangeCommitted={(e, value) => setFilter('months', toMonthsFilter(value))}
+                                onChange={(e, value) => previewMonths(value)}
+                                onChangeCommitted={(e, value) => commitMonths(value)}
                                 valueLabelDisplay="off"
                             />
                         </Box>

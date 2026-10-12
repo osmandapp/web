@@ -86,16 +86,13 @@ export default function HeatmapLayer() {
         const acts = meta.acts.map((a) =>
             activity === ACTIVITY_ALL ? a.group !== HEATMAP_IGNORED_GROUP : activity.includes(storedActivity(a))
         );
-        const from = ttx.searchTravelRoutes?.dateFrom
-            ? monthIndex(ttx.searchTravelRoutes.dateFrom, meta.monthsBase)
-            : meta.monthMin;
-        const to = ttx.searchTravelRoutes?.dateTo
-            ? monthIndex(ttx.searchTravelRoutes.dateTo, meta.monthsBase)
-            : meta.monthMax;
+        const dates = ttx.travelPreviewDates ?? ttx.searchTravelRoutes;
+        const from = dates?.dateFrom ? monthIndex(dates.dateFrom, meta.monthsBase) : meta.monthMin;
+        const to = dates?.dateTo ? monthIndex(dates.dateTo, meta.monthsBase) : meta.monthMax;
         layer.setFilter(acts, from, to);
         const matched = meta.hist.reduce((n, [a, m, count]) => (acts[a] && m >= from && m <= to ? n + count : n), 0);
         ttx.setTravelHeatmapMatch({ matched, total: meta.tracks });
-    }, [layer, activity, ttx.searchTravelRoutes?.dateFrom, ttx.searchTravelRoutes?.dateTo]);
+    }, [layer, activity, ttx.travelPreviewDates, ttx.searchTravelRoutes?.dateFrom, ttx.searchTravelRoutes?.dateTo]);
 
     useEffect(() => {
         map.getContainer().classList.toggle(
