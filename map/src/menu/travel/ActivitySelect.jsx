@@ -19,11 +19,11 @@ import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { ACTIVITY_ALL, hasSpeedOnlyTracks, IGNORED_GROUP } from './TravelMenu';
+import { ACTIVITY_ALL, FOOT_CYCLING_GROUPS, hasSpeedOnlyTracks, IGNORED_GROUP } from './TravelMenu';
 import { activityLabel, IGNORED_ACTIVITIES } from '../../map/util/activities';
 
 const PRESETS = [
-    { id: 'foot_cycling', name: 'web:activities_foot_cycling', groups: (id) => id === 'foot' || id === 'cycling' },
+    { id: 'foot_cycling', name: 'web:activities_foot_cycling', groups: (id) => FOOT_CYCLING_GROUPS.includes(id) },
     {
         id: 'no_motor',
         name: 'web:activities_no_motor',
