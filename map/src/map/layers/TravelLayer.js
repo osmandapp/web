@@ -137,7 +137,8 @@ export default function TravelLayer() {
     const [travelStartFinish, setTravelStartFinish] = useState(null);
     const selectedRouteLayerRef = useRef(null);
 
-    const SELECTED_ROUTE_COLOR = '#f8931d';
+    const SELECTED_ROUTE_COLOR = '#212121';
+    const SEARCH_CIRCLE_FILL_COLOR = '#f8931d';
     const HOVER_HALO_COLOR = '#ffffff';
     const ROUTE_WIDTH = 3;
     const HOVER_ROUTE_WIDTH = 5;
@@ -326,6 +327,7 @@ export default function TravelLayer() {
             color: SELECTED_ROUTE_COLOR,
             weight: 2,
             dashArray: '4 4',
+            fillColor: SEARCH_CIRCLE_FILL_COLOR,
             fillOpacity: 0.3,
             interactive: false,
         }).addTo(map);
