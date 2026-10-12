@@ -353,18 +353,19 @@ export default function TravelLayer() {
 
         const container = map.getContainer();
         const isInside = (latlng) => map.distance(latlng, circle.getLatLng()) <= point.radius;
-        // over the circle the tracks ignore the mouse: it belongs to the circle
-        const onHover = (e) => container.classList.toggle(SEARCH_CIRCLE_CLASS, isInside(e.latlng));
         // pressed inside the circle and moved: the circle follows the mouse instead of the map
+        // while it moves the tracks ignore the mouse: it belongs to the circle
         let moved = false;
         const onMove = (e) => {
             moved = true;
+            L.DomUtil.addClass(container, SEARCH_CIRCLE_CLASS);
             circle.setLatLng(e.latlng);
             handle.setLatLng(circleEdge(e.latlng, point.radius));
         };
         const onUp = () => {
             map.off('mousemove', onMove);
             L.DomEvent.off(document, 'mouseup', onUp);
+            L.DomUtil.removeClass(container, SEARCH_CIRCLE_CLASS);
             map.dragging.enable();
             if (moved) {
                 swallowNextClick(container);
@@ -380,11 +381,9 @@ export default function TravelLayer() {
             map.on('mousemove', onMove);
             L.DomEvent.on(document, 'mouseup', onUp);
         };
-        map.on('mousemove', onHover);
         map.on('mousedown', onDown);
 
         return () => {
-            map.off('mousemove', onHover);
             map.off('mousedown', onDown);
             map.off('mousemove', onMove);
             L.DomEvent.off(document, 'mouseup', onUp);
