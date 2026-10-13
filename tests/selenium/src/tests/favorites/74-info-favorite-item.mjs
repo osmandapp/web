@@ -90,8 +90,13 @@ export default async function test() {
     await waitByRemoved(By.id(`se-fav-item-info-${wptName}${suffix}`));
     await waitBy(By.id(`se-fav-item-name-${wptName}${suffix}`));
 
-    // the second of two favorites with the same name opens, is edited and deleted on its own
+    // the second of two favorites with the same name opens, is edited and deleted on its own,
+    // with the list sorted Z-A, so its row is not at its position in the file
     const sameNameItems = By.id(`se-fav-item-name-${sameNameWpt}`);
+    await clickBy(By.id('se-sort-button-time-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await clickBy(By.id('se-sort-za'));
+    await waitBy(By.id('se-sort-button-za-favorites'));
     await clickBy(By.xpath("//*[@id='se-fav-item-address' and starts-with(., 'Oost second')]"));
     await waitBy(By.id(`se-fav-item-info-${sameNameWpt}`));
     await matchTextBy(By.id('se-wpt-address'), 'Oost second');
@@ -120,6 +125,10 @@ export default async function test() {
     await clickBy(By.id('se-back-wpt-details'));
     await waitByRemoved(By.id(`se-fav-item-info-${sameNameWpt}`));
     await waitBy(By.id(`se-fav-item-name-${wptName}${suffix}`));
+    await clickBy(By.id('se-sort-button-za-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await clickBy(By.id('se-sort-time'));
+    await waitBy(By.id('se-sort-button-time-favorites'));
 
     // a new favorite with a name the group already has is not saved
     await actionOpenContextMenu();

@@ -111,7 +111,8 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
         const result = await FavoritesManager.deleteFavorite(
             currentWpt,
             groupFullName,
-            selectedGroup.file.updatetimems
+            selectedGroup.file.updatetimems,
+            arrWpt.indexOf(currentWpt)
         );
         //update favorites groups
         if (result) {
