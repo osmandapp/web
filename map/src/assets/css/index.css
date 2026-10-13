@@ -73,7 +73,7 @@ code {
 
 .travel-search-handle {
     box-sizing: border-box;
-    border: 2px solid #f8931d;
+    border: 2px solid var(--text-primary);
     border-radius: 50%;
     background: #ffffff;
     cursor: ew-resize;

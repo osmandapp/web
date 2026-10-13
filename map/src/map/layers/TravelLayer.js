@@ -26,6 +26,8 @@ import isEmpty from 'lodash-es/isEmpty';
 import { GPX } from '../../manager/GlobalManager';
 import { ensureLeafletPane } from './MvtHybridDemo';
 import { TRAVEL_SEARCH_PANE_Z_INDEX } from '../util/ZIndexes';
+import { formatActivity } from '../../menu/travel/TravelRoutesResult';
+import styles from '../map.module.css';
 
 const ROUTE_GPX_DATA = 'gpx_data';
 const SEARCH_RADIUS_PX = 20;
@@ -36,6 +38,7 @@ const SEARCH_PANE = 'travelSearchPane';
 const SEARCH_HANDLE_CLASS = 'travel-search-handle';
 const SEARCH_MIN_RADIUS_M = 10;
 const SEARCH_MAX_DRAG_RADIUS_M = 500000;
+const MAX_TOOLTIP_TRACKS = 20;
 
 function buildOsmPopupHtml({ id, name, user }) {
     let html = '';
@@ -137,7 +140,8 @@ export default function TravelLayer() {
     const [travelStartFinish, setTravelStartFinish] = useState(null);
     const selectedRouteLayerRef = useRef(null);
 
-    const SELECTED_ROUTE_COLOR = '#f8931d';
+    const SELECTED_ROUTE_COLOR = '#212121';
+    const SEARCH_CIRCLE_FILL_COLOR = '#237bff';
     const HOVER_HALO_COLOR = '#ffffff';
     const ROUTE_WIDTH = 3;
     const HOVER_ROUTE_WIDTH = 5;
@@ -166,6 +170,7 @@ export default function TravelLayer() {
             const pointFeatures = [];
 
             const shown = features.filter((route) => routeMatchesFilters(route, ttx.searchTravelRoutes));
+            const withTooltip = shown.filter((route) => route.properties.geo).length <= MAX_TOOLTIP_TRACKS;
             shown.forEach((route) => {
                 if (route.properties.geo) {
                     const segments = route.properties.geo.map((segment) =>
@@ -201,6 +206,14 @@ export default function TravelLayer() {
                         polyline.on('mouseout', () => {
                             ttx.setSelectedTravelRoute({ route, hover: false });
                         });
+                        if (withTooltip) {
+                            polyline.bindTooltip(routeTooltip(route, t), {
+                                sticky: true,
+                                className: styles.routeTooltip,
+                            });
+                            // the tooltip makes the path focusable and a click would draw the browser focus frame
+                            polyline.on('add', () => polyline.getElement()?.removeAttribute('tabindex'));
+                        }
                         routeLayers.push(polyline);
                     });
                     if (!isOpened) {
@@ -326,7 +339,8 @@ export default function TravelLayer() {
             color: SELECTED_ROUTE_COLOR,
             weight: 2,
             dashArray: '4 4',
-            fillOpacity: 0.3,
+            fillColor: SEARCH_CIRCLE_FILL_COLOR,
+            fillOpacity: 0.12,
             interactive: false,
         }).addTo(map);
         const handle = L.marker(circleEdge(circle.getLatLng(), point.radius), {
@@ -353,18 +367,19 @@ export default function TravelLayer() {
 
         const container = map.getContainer();
         const isInside = (latlng) => map.distance(latlng, circle.getLatLng()) <= point.radius;
-        // over the circle the tracks ignore the mouse: it belongs to the circle
-        const onHover = (e) => container.classList.toggle(SEARCH_CIRCLE_CLASS, isInside(e.latlng));
         // pressed inside the circle and moved: the circle follows the mouse instead of the map
+        // while it moves the tracks ignore the mouse: it belongs to the circle
         let moved = false;
         const onMove = (e) => {
             moved = true;
+            L.DomUtil.addClass(container, SEARCH_CIRCLE_CLASS);
             circle.setLatLng(e.latlng);
             handle.setLatLng(circleEdge(e.latlng, point.radius));
         };
         const onUp = () => {
             map.off('mousemove', onMove);
             L.DomEvent.off(document, 'mouseup', onUp);
+            L.DomUtil.removeClass(container, SEARCH_CIRCLE_CLASS);
             map.dragging.enable();
             if (moved) {
                 swallowNextClick(container);
@@ -380,11 +395,9 @@ export default function TravelLayer() {
             map.on('mousemove', onMove);
             L.DomEvent.on(document, 'mouseup', onUp);
         };
-        map.on('mousemove', onHover);
         map.on('mousedown', onDown);
 
         return () => {
-            map.off('mousemove', onHover);
             map.off('mousedown', onDown);
             map.off('mousemove', onMove);
             L.DomEvent.off(document, 'mouseup', onUp);
@@ -742,6 +755,33 @@ function searchRadiusM(map, latlng) {
     const edge = map.containerPointToLatLng(map.latLngToContainerPoint(latlng).add([SEARCH_RADIUS_PX, 0]));
 
     return Math.min(SEARCH_MAX_RADIUS_M, map.distance(latlng, edge));
+}
+
+function routeTooltip(route, t) {
+    const { description, name, timeMinutes } = route.properties;
+    const info = [formatMinutes(timeMinutes, t), formatActivity(route, t)].filter(Boolean).join(' \u00b7 ');
+    const tooltip = L.DomUtil.create('div');
+    const title = description || name;
+    if (title) {
+        L.DomUtil.create('div', styles.routeTooltipTitle, tooltip).textContent = title;
+    }
+    if (info) {
+        L.DomUtil.create('div', '', tooltip).textContent = info;
+    }
+
+    return tooltip;
+}
+
+function formatMinutes(minutes, t) {
+    const total = Math.round(minutes);
+    if (!(total > 0)) return null;
+    const hours = Math.floor(total / 60);
+    const rest = total % 60;
+    const parts = [];
+    if (hours) parts.push(`${hours} ${t('web:hours')}`);
+    if (rest || !hours) parts.push(`${rest} ${t('shared_string_minute_lowercase')}`);
+
+    return parts.join(' ');
 }
 
 // the click that ends a drag must not open the track under the mouse; dropped on that click or the next press

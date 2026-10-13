@@ -122,5 +122,36 @@
     pointer-events: none !important;
 }
 
+.routeTooltip {
+    background: var(--text-primary) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 6px 10px !important;
+    font-size: 13px;
+    line-height: 18px;
+    width: max-content !important;
+    max-width: 240px;
+    white-space: normal !important;
+    pointer-events: none !important;
+}
 
+.routeTooltip:global(.leaflet-tooltip-top)::before {
+    border-top-color: var(--text-primary);
+}
 
+.routeTooltip:global(.leaflet-tooltip-bottom)::before {
+    border-bottom-color: var(--text-primary);
+}
+
+.routeTooltip:global(.leaflet-tooltip-left)::before {
+    border-left-color: var(--text-primary);
+}
+
+.routeTooltip:global(.leaflet-tooltip-right)::before {
+    border-right-color: var(--text-primary);
+}
+
+.routeTooltipTitle {
+    font-weight: 500;
+}
