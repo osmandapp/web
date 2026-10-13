@@ -170,7 +170,7 @@ export default function TravelLayer() {
             const pointFeatures = [];
 
             const shown = features.filter((route) => routeMatchesFilters(route, ttx.searchTravelRoutes));
-            const withTooltip = shown.length <= MAX_TOOLTIP_TRACKS;
+            const withTooltip = shown.filter((route) => route.properties.geo).length <= MAX_TOOLTIP_TRACKS;
             shown.forEach((route) => {
                 if (route.properties.geo) {
                     const segments = route.properties.geo.map((segment) =>
@@ -761,7 +761,10 @@ function routeTooltip(route, t) {
     const { description, name, timeMinutes } = route.properties;
     const info = [formatMinutes(timeMinutes, t), formatActivity(route, t)].filter(Boolean).join(' \u00b7 ');
     const tooltip = L.DomUtil.create('div');
-    L.DomUtil.create('div', styles.routeTooltipTitle, tooltip).textContent = description || name || '';
+    const title = description || name;
+    if (title) {
+        L.DomUtil.create('div', styles.routeTooltipTitle, tooltip).textContent = title;
+    }
     if (info) {
         L.DomUtil.create('div', '', tooltip).textContent = info;
     }
@@ -770,9 +773,10 @@ function routeTooltip(route, t) {
 }
 
 function formatMinutes(minutes, t) {
-    if (!(minutes > 0)) return null;
-    const hours = Math.floor(minutes / 60);
-    const rest = Math.round(minutes % 60);
+    const total = Math.round(minutes);
+    if (!(total > 0)) return null;
+    const hours = Math.floor(total / 60);
+    const rest = total % 60;
     const parts = [];
     if (hours) parts.push(`${hours} ${t('web:hours')}`);
     if (rest || !hours) parts.push(`${rest} ${t('shared_string_minute_lowercase')}`);
