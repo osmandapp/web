@@ -370,8 +370,15 @@ export function translatePoi({ key = null, value = null, ctx, t }) {
 // obf top-index keys ("top_index_brand_okko") are agreed with the server: SpatialPoiSearch.byKey format
 export const TOP_INDEX_PREFIX = 'top_index_';
 
+// top-index tags with "_" in the name: the value starts after the whole tag
+const TOP_INDEX_TAGS_WITH_UNDERSCORE = ['service_abbreviation'];
+
 export function getTopIndexValueName(key) {
     const rest = key.substring(TOP_INDEX_PREFIX.length);
+    const tag = TOP_INDEX_TAGS_WITH_UNDERSCORE.find((t) => rest.startsWith(t + '_'));
+    if (tag) {
+        return rest.substring(tag.length + 1);
+    }
     const valueStart = rest.indexOf('_');
 
     return valueStart === -1 ? rest : rest.substring(valueStart + 1);
