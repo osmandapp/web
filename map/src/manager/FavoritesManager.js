@@ -118,12 +118,13 @@ async function addFavorite(data, group, ctx) {
     }
 }
 
-async function deleteFavorite(data, fileName, updatetime) {
+async function deleteFavorite(data, fileName, updatetime, ind) {
     fileName = normalizeGroupNameForFile(fileName);
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data, {
         params: {
             fileName,
             updatetime,
+            ind,
         },
     });
     if (resp.data) {
