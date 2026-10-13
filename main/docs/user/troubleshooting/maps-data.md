@@ -66,10 +66,11 @@ Android has become stricter with storage permissions, often limiting access to a
 However, OsmAnd doesn’t have the *All files access* permission (due to Google’s restrictions), limiting the choice of folders. One workaround is using the "Media" storage folder, which Android typically grants broader read/write access. To do this:
 
 - Go to *OsmAnd’s Settings → OsmAnd settings → Data storage folder* and review the available storage areas. Use the free space indicator to identify the target storage, often labeled *External storage 2*.
+- If available, select *Visible external storage* for your SD card and move your data when prompted. Otherwise, follow the manual steps below.
 - Note the current folder path, which might look like */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Switch to the *Manually specified* option, and modify the path to a media-accessible folder. On many systems, changing */Android/data/* to */media/* (e.g., ***/storage/xxxx-xxxx/media***) works. Some systems may require different path modifications.
+- Switch to the *Manually specified* option, and modify the path to a media-accessible folder. On many systems, changing */Android/data/* to */Android/media/* (e.g., ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***) works. Some systems may require different path modifications.
 
-A correct path will not prompt OsmAnd with any write permission errors. Before making these changes, ensure that OsmAnd has the appropriate storage permissions, including "Media" storage permission, under Android’s **Apps** settings. In newer Android versions, these permissions may be located in advanced or hidden menus.
+A correct path will not prompt OsmAnd with any write permission errors. No additional storage permissions are required for this folder.
 
 ### Deleting map data after the app update (if “Multiuser Storage 1” is selected) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
