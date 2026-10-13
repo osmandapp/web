@@ -207,7 +207,7 @@ export default function NavigationMenu() {
         ) {
             return navObject.getRoute() && !navObject.preview && !ctx.navigationRoutingInProgress;
         }
-        return (
+        return !!(
             navObject.getRoute() &&
             navObject.getRouteProps()?.overall?.routingTime &&
             !navObject.preview &&
