@@ -210,7 +210,7 @@ export default async function test() {
     await enclose(async () => (await driver.findElements(By.id(`se-fav-item-name-${wptName}`))).length === 1, {
         tag: 'moved-favorite-not-duplicated',
     });
-    await matchTextBy(By.id('se-fav-item-address'), suffix);
+    await matchTextBy(By.xpath(`//*[@id='se-fav-item-name-${wptName}']//*[@id='se-fav-item-address']`), suffix);
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
 
