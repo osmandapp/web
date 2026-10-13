@@ -108,7 +108,7 @@ OsmAnd automatically sorts search results by several criteria:
 
 5. **Importance** — Well-known landmarks or frequently referenced places may appear higher in the results when they closely match the search query.
 
-You can also manually change the sorting order of search results using the Sort by chip at the top of the search results list. Tap *Sort by* and select one of the following options:
+You can also manually change the sorting order of search results using the sorting chip at the top of the search results list. The chip shows the selected option. Tap it and choose one of the following in the *Sort by* menu:
 - **Relevance** — Sorts the search results by relevance to the search query.
 - **Nearest** — Sorts the search results by distance, with the closest results shown first.
 
@@ -198,7 +198,7 @@ With Spatial Search, you can:
 
 ![Search Around](@site/static/img/search/search_around_berlin.webp)
 
-When the search is opened significantly away from your current location, the *Search around* chip allows you to choose the area used for the search. Tap the chip and select one of the following options:
+When the map center is more than 50 m from your location and the map does not follow your position, the search runs around the map center, and the search field shows *Search N km away*. When the map center is more than 70 km from your location, a chip with the search area appears next to the sorting chip. The chip shows the selected option. Tap it and choose one of the following in the *Search around* menu:
 - **Map center** — Searches around the current center of the map. This option is selected by default.
 - **My location** — Searches around your current location.
 - **Place name** — Searches around a place you found with [Spatial Search](#spatial-search). For example, enter *Hotel Berlin*, then tap *Hotel near Berlin* at the top of the search results. *Berlin* appears on the chip, and hotels around Berlin are shown. This option is available only when Spatial Search is enabled. 

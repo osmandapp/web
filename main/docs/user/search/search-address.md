@@ -18,13 +18,25 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Address search works offline using downloaded maps. Make sure the map for the region you are searching in is installed. Results depend on the address data available in OpenStreetMap.
 
-OsmAnd sorts search results automatically, so nearby and more relevant results appear higher in the list. On Android, you can change the order with the Sort by chip at the top of the results list:
+## Overview {#overview}
+
+*OsmAnd Search by Address* is based on OpenStreetMap data and allows you to find location and directions to a specific address from a ready sorted list, as well as search by postal code or coordinates. This tool allows you to find the required addresses in a few taps, which reduces the search time and helps in case you don't remember the exact address.
+
+Address search works offline using downloaded maps. Make sure the map for the region you are searching in is installed. Results depend on the address data available in OpenStreetMap.
+
+OsmAnd sorts search results automatically, so nearby and more relevant results appear higher in the list. On Android, you can change the order with the sorting chip at the top of the results list. The chip shows the selected option. Tap it and choose one of the following in the *Sort by* menu:
 - *Relevance* — Sorts the results by how closely they match your query.
 - *Nearest* — Sorts the results by distance, with the closest results shown first.
 
-Also on Android, chips with object types, such as *Town, City, Street*, or *Postcode*, appear above the results. Tap a chip to show only results of that type. 
+Also on Android, chips with object types, such as *Town*, *City*, *Street*, or *Postcode*, appear above the results. Tap a chip to show only results of that type. Read more in [Sorting Search Results](./search-all.md#sorting-search-results).
 
-When the search is opened significantly away from your current location, the *Search around* chip appears next to *Sort by* on Android. Use it to choose the area used for the search, such as *Map center* or *My location*. 
+On Android, when the map center is more than 50 m from your location and the map does not follow your position, the search runs around the map center, and the search field shows *Search N km away*. When the map center is more than 70 km from your location, a chip with the search area, *Map center* or *My location*, appears next to the sorting chip. Tap it to choose where to search. Read more in [Search Around](./search-all.md#search-around).
+
+OsmAnd provides several ways to get to the *Search tool* where the **Search Address** section is located.
+
+- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#full-text-search), where you can find the *Address* tab.
+- Go to the main Android *Menu → Search → Address tab*.
+- When preparing to start a route, tap *Navigation → Set destination → Search field*.  
 
 OsmAnd provides several ways to get to the *Search tool* where the **Search Address** section is located.
 
@@ -58,7 +70,7 @@ The *Address* tab contains buttons for different ways of searching by address. E
 - [**Postcode search**](#postcode-search) — Always available. Switches the search field to postcode input. The list stays empty until you type at least one character, then matching results appear.
 - [**Coordinates search**](#coordinates-search) — Always available. Opens the coordinates input screen.
 
-The **Nearest cities** list is displayed below the buttons and shows up to 15 localities around you. Each item shows the locality name, its type, such as *City* or *Town*, and the distance and direction from your location. On Android, the region is also shown.
+The **Nearest cities** list is displayed below the buttons and shows up to 15 cities and towns around the search location, your position or the map center. Each item shows the name, its type, *City* or *Town*, and the distance and direction from the search location. On Android, the region is also shown.
 
 ## Full Text Search {#full-text-search}
 
@@ -154,8 +166,8 @@ This way of searching makes it easy to find specific locations within a selected
 
 - To do this, tap **First specify city/town/locality** (Android) or **Select city** (iOS).
 - In the list that opens, select the required locality. [Here](#full-text-search) describes the order in which search queries are displayed and what information is available about each item.
-- On Android, you can change the order with the *Sort by* chip: *Relevance* or *Nearest*. If the search is opened far from your current location, use the *Search around* chip to choose whether to search around the *Map center* or *My location*. Chips with object types found in the results, such as *City*, *Museum*, or *Mountain peak*, appear above the list. Tap a chip to show only results of that type.
-- On the next screen, you can either continue to refine the address or select the *Show on the map* button below the search entry field. On Android, the *Show on the map* Floating Action Button (FAB) appears at the bottom of the search results screen.
+- On Android, tap the sorting chip to choose *Relevance* or *Nearest*. When the map center is more than 70 km from your location, use the search area chip to choose between *Map center* and *My location*. Chips with object types found in the results, such as *City*, *Museum*, or *Mountain peak*, appear above the list. Tap a chip to show only results of that type.
+- On the next screen, you can either continue to refine the address or show the locality on the map. On iOS, tap *Show on the map* below the search field. On Android, tap the *Show on map* button, the floating button in the bottom right corner.
 - To specify your search, you can enter all or only part of the name of the city, town, or village where the address you are looking for is located. This allows you to narrow your search and get a more accurate list.
 - Tapping the last item in the address, house number, or intersection name, opens the [map context menu](../map/map-context-menu.md#select-an-object-single-tap) of the object.  
 
@@ -187,7 +199,7 @@ Street search is performed in the last city you searched for. Its name is shown 
 
 - To use this type of search, tap **Search street in &lt;city&gt;** (*Android*) or **Select street in &lt;city&gt;** (*iOS*).
 - The city name is already entered in the search field, and the list of its streets opens right away. In the search field next to the city name, you can start typing the street name and the list will refine, giving you the most appropriate results.
-- On Android, you can change the order with the *Sort by* chip: *Relevance* or *Nearest*. If the search is opened far from your current location, use the *Search around* chip to choose whether to search around the *Map center* or *My location*. Chips with object types found in the results, such as *Street* or *Building*, appear above the list.
+- On Android, tap the sorting chip to choose *Relevance* or *Nearest*. When the map center is more than 70 km from your location, use the search area chip to choose between *Map center* and *My location*. Chips with object types found in the results, such as *Street* or *Building*, appear above the list. Tap a chip to show only results of that type.
 - Select a street to open the list of its buildings. Select the required house number to open the [map context menu](../map/map-context-menu.md#select-an-object-single-tap) of the address.
 - In other items, the street search is the same as in [Select City](#select-city).
 
@@ -205,21 +217,28 @@ Street search is performed in the last city you searched for. Its name is shown 
 
 ![Search Postcode Android](@site/static/img/search/postcode_android.webp)
 
+Tap **Postcode search** on the *Address* tab. The list stays empty until you start typing. Enter the postcode, even a single digit, and the app offers a list of matching postcodes.
+
+- Tap the sorting chip to choose *Relevance* or *Nearest*. When the map center is more than 70 km from your location, use the search area chip to choose between *Map center* and *My location*. Tap the *Postcode* chip to show only postcodes in the list.
+- Select the required postcode. The list of streets with this postcode opens, and the postcode stays in the search field.
+- To refine the address, select a street and then the house number. This opens the [map context menu](../map/map-context-menu.md#select-an-object-single-tap) of the address.
+- To see the postcode itself on the map, tap the *Show on map* button, the floating button in the bottom right corner. The map opens with the [context menu](../map/map-context-menu.md#select-an-object-single-tap) of the postcode.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Search Postcode iOS](@site/static/img/search/postcode_ios.png)
 
-</TabItem>
-
-</Tabs>
-
-The list stays empty until you start typing. **To use the *Postcode search*, you just need to enter the number**, which can consist even of a single digit, and the application offers a list of available relevant postcodes.
+**To use the *Postcode search*, you just need to enter the number**, which can consist even of a single digit, and the application offers a list of available relevant postcodes.
 
 - Select the required code and tap it.
 - You can use the *Show *postcode number* on the map* feature. This opens a [map context menu](../map/map-context-menu.md#select-an-object-single-tap) with the selected postcode without any additional information about the location.
 - You can refine your search by this code by first selecting the required street from the list and then the number.
+
+</TabItem>
+
+</Tabs>
 
 **Searching by postcode can be useful when:**
 
