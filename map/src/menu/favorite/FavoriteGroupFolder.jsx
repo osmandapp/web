@@ -78,9 +78,9 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             });
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
-        if (ctx.selectedSort?.favorites?.[group.id]) {
+        if (ctx.selectedSort?.favorites?.[group.name]) {
             doSort({
-                method: ctx.selectedSort.favorites[group.id],
+                method: ctx.selectedSort.favorites[group.name],
                 setSortFiles,
                 markers: markerList,
                 files: ctx.favorites.mapObjs[group.id]?.wpts,
@@ -164,13 +164,12 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                     itemCount={visibleMarkers.length}
                     itemSize={FAV_ITEM_HEIGHT}
                     width={ctx.infoBlockWidth}
-                    itemKey={(index) => visibleMarkers[index]?.name ?? index}
                 >
                     {({ index, style }) => (
                         <div style={style}>
                             <FavoriteItem
                                 insideVirtualizedList
-                                key={visibleMarkers[index].name + index}
+                                key={index}
                                 marker={visibleMarkers[index]}
                                 group={group}
                                 currentLoc={currentLoc}
@@ -192,7 +191,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     function getMarkersBySortFiles(wpts, markers) {
         let arr = [];
         for (const wpt of wpts) {
-            const marker = markers.find((m) => m.name === wpt.name);
+            const marker = markers.find((m) => m.point === wpt);
             if (marker) {
                 arr.push(marker);
             } else {

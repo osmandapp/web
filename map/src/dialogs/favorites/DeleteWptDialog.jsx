@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import { Button, Dialog, LinearProgress } from '@mui/material';
 import React, { useContext, useState } from 'react';
 import AppContext, { OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext';
-import FavoritesManager from '../../manager/FavoritesManager';
+import FavoritesManager, { findSelectedWpt } from '../../manager/FavoritesManager';
 import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
 import PointManager from '../../manager/PointManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -103,38 +103,37 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
         const groupName = useSelected ? ctx.selectedGpxFile.nameGroup : wpt.category;
         const id = useSelected ? ctx.selectedGpxFile.id : wpt.groupId;
         const groupFullName = useSelected ? ctx.selectedGpxFile.file.name : wpt.group.file.name;
-        const currentWptName = useSelected ? ctx.selectedGpxFile.markerCurrent.name : wpt.name;
         const selectedGroup = ctx.favorites.groups.find((g) => g.id === id);
-        for (let i = 0; i < arrWpt.length; i++) {
-            if (arrWpt[i].name === currentWptName) {
-                const result = await FavoritesManager.deleteFavorite(
-                    arrWpt[i],
-                    groupFullName,
-                    selectedGroup.file.updatetimems
-                );
-                //update favorites groups
-                if (result) {
-                    ctx.favorites.mapObjs[id] = FavoriteHelper.updateGroupObj(ctx.favorites.mapObjs[id], result);
-                    const updatedFavorites = FavoriteHelper.updateSelectedGroup({
-                        favorites: ctx.favorites,
-                        selectedGroupName: groupName,
-                        result,
-                        id,
-                    });
-                    useSelected &&
-                        FavoriteHelper.updateSelectedFile({
-                            ctx,
-                            result,
-                            favoriteName: ctx.selectedGpxFile.markerCurrent.name,
-                            selectedGroup,
-                            deleted: true,
-                        });
-                    ctx.setFavorites(updatedFavorites);
-                    ctx.setUpdateMarkers({ ...updatedFavorites });
-                    closeContextMenu();
-                    break;
-                }
-            }
+        const currentWpt = findSelectedWpt(useSelected ? ctx.selectedGpxFile.markerCurrent : wpt, arrWpt);
+        if (!currentWpt) {
+            return;
+        }
+        const result = await FavoritesManager.deleteFavorite(
+            currentWpt,
+            groupFullName,
+            selectedGroup.file.updatetimems,
+            arrWpt.indexOf(currentWpt)
+        );
+        //update favorites groups
+        if (result) {
+            ctx.favorites.mapObjs[id] = FavoriteHelper.updateGroupObj(ctx.favorites.mapObjs[id], result);
+            const updatedFavorites = FavoriteHelper.updateSelectedGroup({
+                favorites: ctx.favorites,
+                selectedGroupName: groupName,
+                result,
+                id,
+            });
+            useSelected &&
+                FavoriteHelper.updateSelectedFile({
+                    ctx,
+                    result,
+                    favoriteName: ctx.selectedGpxFile.markerCurrent.name,
+                    selectedGroup,
+                    deleted: true,
+                });
+            ctx.setFavorites(updatedFavorites);
+            ctx.setUpdateMarkers({ ...updatedFavorites });
+            closeContextMenu();
         }
     }
 

@@ -62,6 +62,36 @@ test('a favorite moved to another group updates both groups and leaves the rest 
     expect(ctx.setUpdateMarkers).toHaveBeenCalled();
 });
 
+test('the open card of a moved favorite gets the data of its new group', () => {
+    const groups = [group('Trips'), group('Alps')];
+    const ctx = {
+        ...ctxWith(groups),
+        selectedGpxFile: { id: groups[0].id, file: groups[0].file, markerCurrent: { name: 'Hut', pointIndex: 0 } },
+        setSelectedGpxFile: jest.fn(),
+        setSelectedWpt: jest.fn(),
+    };
+    const alpsWpts = [{ name: 'Peak' }, { name: 'Hut' }];
+    const result = {
+        newGroupResp: { clienttimems: 2000, updatetimems: 3000, data: { pointsGroups: {}, wpts: alpsWpts } },
+        oldGroupResp: { clienttimems: 2500, updatetimems: 3500, data: { pointsGroups: {}, wpts: [] } },
+    };
+
+    updateFavoriteGroups({
+        result,
+        selectedGroupId: groups[1].id,
+        oldGroupId: groups[0].id,
+        ctx,
+        useSelected: true,
+        favoriteName: 'Hut',
+    });
+
+    const selected = ctx.setSelectedGpxFile.mock.calls[0][0];
+    expect(selected.id).toBe(groups[1].id);
+    expect(selected.trackData.wpts).toBe(alpsWpts); // the next edit sends the index in the new group
+    expect(selected.trackData.updatetimems).toBe(3000);
+    expect(selected.markerCurrent.point).toBe(alpsWpts[1]);
+});
+
 test('the map object of a group is updated, and created when the group was never on the map', () => {
     const groups = [group('Trips')];
     const markers = { layers: 1 };
@@ -106,4 +136,49 @@ test('a group missing from the list is added by the response', () => {
     });
     expect(known.groups).toHaveLength(2);
     expect(known.groups[0].updatetimems).toBe(3000);
+});
+
+describe('the selected favorite after its group was saved', () => {
+    const groups = [group('Trips'), group('Alps')];
+    const tripsWpts = [{ name: 'Hut' }, { name: 'Hut', address: 'second' }];
+    const alpsWpts = [{ name: 'Peak' }, { name: 'Hut', address: 'second' }];
+
+    function ctxSelecting(groupId, markerCurrent) {
+        return {
+            favorites: { groups, mapObjs: { [groups[0].id]: { wpts: tripsWpts }, [groups[1].id]: { wpts: alpsWpts } } },
+            selectedGpxFile: { id: groupId, file: groups[0].file, markerCurrent },
+            setSelectedGpxFile: jest.fn(),
+            setSelectedWpt: jest.fn(),
+        };
+    }
+
+    test('an edited favorite keeps its index, a moved one becomes the last of the new group', () => {
+        const edited = ctxSelecting(groups[0].id, { name: 'Hut', point: {}, pointIndex: 1 });
+        FavoriteHelper.updateSelectedFile({ ctx: edited, result: null, favoriteName: 'Hut', selectedGroup: groups[0] });
+
+        const afterEdit = edited.setSelectedGpxFile.mock.calls[0][0];
+        expect(afterEdit.markerCurrent.point).toBe(tripsWpts[1]);
+        expect(afterEdit.markerCurrent.pointIndex).toBe(1);
+
+        const moved = ctxSelecting(groups[0].id, { name: 'Hut', point: tripsWpts[1], pointIndex: 1 });
+        FavoriteHelper.updateSelectedFile({ ctx: moved, result: null, favoriteName: 'Hut', selectedGroup: groups[1] });
+
+        const afterMove = moved.setSelectedGpxFile.mock.calls[0][0];
+        expect(afterMove.id).toBe(groups[1].id);
+        expect(afterMove.markerCurrent.point).toBe(alpsWpts[1]);
+        expect(afterMove.markerCurrent.pointIndex).toBe(1);
+    });
+
+    test('a deleted favorite is no longer selected', () => {
+        const ctx = ctxSelecting(groups[0].id, { name: 'Hut', point: tripsWpts[1], pointIndex: 1 });
+        FavoriteHelper.updateSelectedFile({
+            ctx,
+            result: null,
+            favoriteName: 'Hut',
+            selectedGroup: groups[0],
+            deleted: true,
+        });
+
+        expect(ctx.setSelectedGpxFile.mock.calls[0][0].markerCurrent).toBeUndefined();
+    });
 });
