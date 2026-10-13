@@ -92,10 +92,7 @@ export default async function test() {
 
     // the second of two favorites with the same name opens, is edited and deleted on its own
     const sameNameItems = By.id(`se-fav-item-name-${sameNameWpt}`);
-    const second = await enclose(async () => (await driver.findElements(sameNameItems))[1], {
-        tag: 'second-same-name',
-    });
-    await second.click();
+    await clickBy(By.xpath("//*[@id='se-fav-item-address' and starts-with(., 'Oost second')]"));
     await waitBy(By.id(`se-fav-item-info-${sameNameWpt}`));
     await matchTextBy(By.id('se-wpt-address'), 'Oost second');
     await clickBy(By.id('se-edit-fav-item'));

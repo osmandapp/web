@@ -16,7 +16,7 @@ import IconButtonWithPermissions from '../../frame/components/IconButtonWithPerm
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import SortFilesButton from '../components/buttons/SortFilesButton';
+import SortFilesButton, { getSelectedSort } from '../components/buttons/SortFilesButton';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -53,7 +53,7 @@ export default function GroupHeader({
     const hiddenBtn = smartf?.type === SHARE_TYPE || trackGroup?.type === SMART_TYPE;
 
     useEffect(() => {
-        if (favoriteGroup && !ctx.selectedSort) {
+        if (favoriteGroup && !getSelectedSort({ favoriteGroup, ctx })) {
             if (setSortFiles) {
                 const files = ctx.favorites.mapObjs[favoriteGroup.id]?.wpts;
                 if (files) {

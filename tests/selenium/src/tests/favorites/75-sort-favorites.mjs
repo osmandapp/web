@@ -1,7 +1,7 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import { getFiles } from '../../util.mjs';
-import { clickBy, enclose, enumerateIds, waitBy } from '../../lib.mjs';
+import { clickBy, enclose, enumerateIds, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../../actions/favorites/actionRenameFavGroup.mjs';
@@ -61,6 +61,22 @@ export default async function test() {
     await clickBy(By.id('se-menu-fav-food'));
     await waitBy(By.id('se-opened-fav-group-food'));
     await validateItemOrder(favItemsFood);
+
+    // check item sort is kept after a point was opened and closed, and after a reload
+    await clickBy(By.id('se-sort-button-time-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await clickBy(By.id('se-sort-za'));
+    await validateItemOrder(favItemsFoodZA);
+    await clickBy(By.id('se-fav-item-name-111test'));
+    await waitBy(By.id('se-fav-item-info-111test'));
+    await clickBy(By.id('se-back-wpt-details'));
+    await waitByRemoved(By.id('se-fav-item-info-111test'));
+    await validateItemOrder(favItemsFoodZA);
+    await actionOpenMap();
+    await actionOpenFavorites();
+    await clickBy(By.id('se-menu-fav-food'));
+    await waitBy(By.id('se-opened-fav-group-food'));
+    await validateItemOrder(favItemsFoodZA);
 
     // check save prev groups sort
     await clickBy(By.id('se-back-folder-button-favorites'));
@@ -150,15 +166,27 @@ const favGroupsOldDateWithPinnedHidden = ['se-menu-fav-ozoo', 'se-menu-fav-shops
 
 const favGroupsOldDateWithOnlyPinnedHidden = ['se-menu-fav-shops', 'se-menu-fav-ozoo', 'se-menu-fav-food-renamed'];
 
+// last modified first; the points without a time go last in name order
 const favItemsFood = [
-    'se-fav-item-name-111test',
-    'se-fav-item-name-Józefa (Kraków) 14',
     'se-fav-item-name-Parkingtest',
     'se-fav-item-name-Plac Szczepański (Stare Miasto) 7',
+    'se-fav-item-name-Józefa (Kraków) 14',
     'se-fav-item-name-Świętej Katarzyny (Stare Miasto) 2',
     'se-fav-item-name-Крива Липа',
+    'se-fav-item-name-111test',
     'se-fav-item-name-ssssарарар',
     'se-fav-item-name-ывывыв',
+];
+
+const favItemsFoodZA = [
+    'se-fav-item-name-ывывыв',
+    'se-fav-item-name-Крива Липа',
+    'se-fav-item-name-Świętej Katarzyny (Stare Miasto) 2',
+    'se-fav-item-name-ssssарарар',
+    'se-fav-item-name-Plac Szczepański (Stare Miasto) 7',
+    'se-fav-item-name-Parkingtest',
+    'se-fav-item-name-Józefa (Kraków) 14',
+    'se-fav-item-name-111test',
 ];
 
 async function validateGroupOrder(ids) {

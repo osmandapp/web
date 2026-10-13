@@ -78,9 +78,9 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             });
         }
         markerList = addLocDist({ location: currentLoc, markers: markerList });
-        if (ctx.selectedSort?.favorites?.[group.id]) {
+        if (ctx.selectedSort?.favorites?.[group.name]) {
             doSort({
-                method: ctx.selectedSort.favorites[group.id],
+                method: ctx.selectedSort.favorites[group.name],
                 setSortFiles,
                 markers: markerList,
                 files: ctx.favorites.mapObjs[group.id]?.wpts,
