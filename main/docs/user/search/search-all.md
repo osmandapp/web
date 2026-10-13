@@ -187,7 +187,7 @@ Spatial Search is disabled by default. To enable it, go to the [OsmAnd Developme
 
 With Spatial Search, you can:
 - Search for a POI in a specific place. Enter a category and a place name in one query, for example, Hotel Berlin. The place name is used as the search area, and the category is searched within it.
-- Search for places that match two conditions. Enter two categories or a category and a property, for example, Fuel Diesel or Cafe Vegan, to find places that match both. A query such as Fuel McDonald's finds fuel stations located near a McDonald's.
+- Search for places that match two conditions. Enter two categories or a category and a property, for example, Fuel Diesel or Cafe Vegan, to find places that match both. A query such as Fuel McDonald's finds fuel stations located near a McDonald's. The order of words matters. The first word sets what you are looking for, and the second sets what it should be near. For example, McDonald’s Fuel finds McDonald’s restaurants located near fuel stations.
 - Search around a found place. Enter a category and a place name, for example, *Hotel Berlin*, then tap *Hotel near Berlin* at the top of the search results. The name of this place is added to the [Search around](#search-around) chip.
 - Use different formats of street names and translated category names in your queries.
 - Get faster results when searching by popular POI categories, such as pharmacy, parking, or restaurant.
