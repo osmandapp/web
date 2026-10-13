@@ -53,17 +53,10 @@ export default function GroupHeader({
     const hiddenBtn = smartf?.type === SHARE_TYPE || trackGroup?.type === SMART_TYPE;
 
     useEffect(() => {
-        if (favoriteGroup && !getSelectedSort({ favoriteGroup, ctx })) {
-            if (setSortFiles) {
-                const files = ctx.favorites.mapObjs[favoriteGroup.id]?.wpts;
-                if (files) {
-                    setSortFiles(byTime(files, true));
-                }
-            } else if (setSortGroups) {
-                const files = ctx.favorites.groups;
-                if (files) {
-                    setSortGroups(byTime(files, true));
-                }
+        if (favoriteGroup && setSortFiles && !getSelectedSort({ favoriteGroup, ctx })) {
+            const files = ctx.favorites.mapObjs[favoriteGroup.id]?.wpts;
+            if (files) {
+                setSortFiles(byTime(files, true));
             }
         }
     }, [favoriteGroup, ctx.favorites]);
