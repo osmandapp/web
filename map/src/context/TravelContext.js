@@ -70,8 +70,8 @@ function loadHeatmapAppearance() {
 
             return { ...DEFAULT_HEATMAP_APPEARANCE, ...appearance };
         }
+        localStorage.removeItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
     } catch {}
-    localStorage.removeItem(TRAVEL_HEATMAP_APPEARANCE_STORAGE_KEY);
 
     return DEFAULT_HEATMAP_APPEARANCE;
 }

@@ -184,7 +184,12 @@ export default function TravelMenu() {
     // Initial filters come from the URL query
     const [filters, setFilters] = useState(() =>
         isTravelPath(globalThis.location.pathname)
-            ? { ...DEFAULT_FILTERS, months: null, ...paramsToFilters(new URLSearchParams(globalThis.location.search)) }
+            ? {
+                  ...DEFAULT_FILTERS,
+                  activity: ACTIVITY_ALL,
+                  months: null,
+                  ...paramsToFilters(new URLSearchParams(globalThis.location.search)),
+              }
             : DEFAULT_FILTERS
     );
     const setFilter = (key, value) => {
