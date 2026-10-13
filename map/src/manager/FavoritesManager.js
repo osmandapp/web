@@ -682,7 +682,7 @@ export function updateFavoriteGroups({
     if (useSelected && favoriteName) {
         FavoriteHelper.updateSelectedFile({
             ctx,
-            result: null,
+            result: result.newGroupResp,
             favoriteName,
             selectedGroup,
             deleted: false,
