@@ -4,7 +4,12 @@ import { useSearchParams } from 'react-router-dom';
 import '../../assets/css/gpx.css';
 import { useMap } from 'react-leaflet';
 import TrackLayerProvider from '../util/TrackLayerProvider';
-import FavoritesManager, { FAVORITE_FILE_TYPE, HIDDEN_TRUE, openFavoriteObj } from '../../manager/FavoritesManager';
+import FavoritesManager, {
+    FAVORITE_FILE_TYPE,
+    HIDDEN_TRUE,
+    findSelectedWpt,
+    openFavoriteObj,
+} from '../../manager/FavoritesManager';
 import { isFavoriteFromSearch } from '../../manager/SearchManager';
 import { isMarkerLayer } from '../util/LayerUtils';
 import isEmpty from 'lodash-es/isEmpty';
@@ -465,6 +470,8 @@ const FavoriteLayer = () => {
             ctx.selectedGpxFile.prevState = selectedGpxFileRef.current;
             ctx.selectedGpxFile.markerCurrent = {
                 name: e.sourceTarget.options.name,
+                point: e.sourceTarget.options.point,
+                pointIndex: ctx.selectedGpxFile.trackData.wpts?.indexOf(e.sourceTarget.options.point),
                 iconHtml: e.sourceTarget.options.originalIcon?.options?.html,
                 iconName: e.sourceTarget.options.iconName,
                 color: e.sourceTarget.options.color,
@@ -497,9 +504,8 @@ const FavoriteLayer = () => {
     );
 
     function updateSelectedFavoriteOnMap(file) {
-        const layer = Object.values(file?.markers?._layers ?? {}).find(
-            (m) => m.options?.name === ctx.selectedGpxFile.markerCurrent?.name
-        );
+        const point = findSelectedWpt(ctx.selectedGpxFile.markerCurrent, file?.wpts);
+        const layer = Object.values(file?.markers?._layers ?? {}).find((m) => m.options?.point === point);
         if (!layer) return;
 
         // Update the selected pin icon in-place with the new saved appearance.
@@ -526,6 +532,8 @@ const FavoriteLayer = () => {
         ctx.selectedGpxFile.markerCurrent = {
             ...ctx.selectedGpxFile.markerCurrent,
             layer,
+            point,
+            pointIndex: file.wpts.indexOf(point),
             icon: iconOpts?.html,
             color: opts.color,
             background: opts.background,

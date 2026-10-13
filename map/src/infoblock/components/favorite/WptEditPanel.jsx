@@ -16,6 +16,7 @@ import WptIconPreview, { getShapeSvg } from './structure/WptIconPreview';
 import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
+    findSelectedWpt,
     openFavoriteObj,
     updateFavoriteGroups,
 } from '../../../manager/FavoritesManager';
@@ -355,7 +356,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             newGroup.file.name,
             oldGroup.updatetimems,
             newGroup.updatetimems,
-            arrWpt.findIndex((w) => w.name === currentWpt.name)
+            arrWpt.indexOf(currentWpt)
         );
 
         if (result) {
@@ -403,23 +404,18 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     function getCurrentWpt(selectedGroupName) {
         const group = useSelected ? ctx.selectedGpxFile.trackData : ctx.favorites.mapObjs[editWpt.group?.id];
         const wpts = group?.wpts ?? ctx.selectedGpxFile.wpts;
-        let res = null;
-        if (wpts) {
-            wpts.forEach((w) => {
-                if (w.name === editWpt.name) {
-                    w.name = favoriteName;
-                    w.address = favoriteAddress === '' ? null : favoriteAddress;
-                    w.desc = favoriteDescription === '' ? null : favoriteDescription;
-                    w.color = favoriteColor;
-                    w.background = favoriteShape;
-                    w.icon = favoriteIcon;
-                    w.category = selectedGroupName !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroupName : null;
-                    res = w;
-                }
-            });
+        const w = findSelectedWpt(editWpt, wpts);
+        if (w) {
+            w.name = favoriteName;
+            w.address = favoriteAddress === '' ? null : favoriteAddress;
+            w.desc = favoriteDescription === '' ? null : favoriteDescription;
+            w.color = favoriteColor;
+            w.background = favoriteShape;
+            w.icon = favoriteIcon;
+            w.category = selectedGroupName !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroupName : null;
         }
 
-        return res;
+        return w ?? null;
     }
 
     function getCategoryName(selectedGroupName) {
@@ -473,12 +469,15 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
         // The preview pin is already on the map — use it as the layer.
         const previewLayer = ctx.selectedCreatedLayerRef?.current;
+        const wpts = ctx.favorites.mapObjs[key]?.wpts ?? [];
 
         const newGpxFile = {
             trackData: { ...ctx.favorites.mapObjs[key] },
             file: selectedGroup.file,
             markerCurrent: {
                 name: favoriteName,
+                point: wpts.at(-1),
+                pointIndex: wpts.length - 1,
                 iconName: favoriteIcon,
                 color: favoriteColor,
                 background: favoriteShape,

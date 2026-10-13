@@ -504,6 +504,7 @@ function parseWpt({
         if (point.name) {
             opt.name = point.name;
         }
+        opt.point = point;
         opt.category = point.category ?? '';
         opt.groupId = groupId;
         if (point.desc) {

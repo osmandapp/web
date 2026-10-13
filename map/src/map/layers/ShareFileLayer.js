@@ -98,6 +98,7 @@ export default function ShareFileLayer() {
     const onClick = (e) => {
         const marker = {
             name: e.sourceTarget.options.name,
+            point: e.sourceTarget.options.point,
             icon: e.sourceTarget.options.icon.options.html,
             layer: e.sourceTarget,
         };

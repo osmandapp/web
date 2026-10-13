@@ -49,6 +49,17 @@
       <osmand:color>#b300ff</osmand:color>
     </extensions>
   </wpt>
+  <wpt lat="52.3631791" lon="4.9280337">
+    <time>2023-04-01T08:15:51Z</time>
+    <name>Dapperstraat 40-1</name>
+    <type>shops</type>
+    <extensions>
+      <osmand:address>Oost second</osmand:address>
+      <osmand:icon>shop_department_store</osmand:icon>
+      <osmand:background>circle</osmand:background>
+      <osmand:color>#b300ff</osmand:color>
+    </extensions>
+  </wpt>
   <wpt lat="52.3837158" lon="4.8851363">
     <time>2023-03-16T19:10:15Z</time>
     <name>Haarlemmerdijk 143</name>

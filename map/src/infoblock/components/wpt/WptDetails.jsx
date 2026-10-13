@@ -47,7 +47,11 @@ import {
     navigateToPoi,
 } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
-import FavoritesManager, { navigateToFavoritesMenu, resolveWptAppearance } from '../../../manager/FavoritesManager';
+import FavoritesManager, {
+    findSelectedWpt,
+    navigateToFavoritesMenu,
+    resolveWptAppearance,
+} from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
@@ -309,11 +313,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             newWpt.trackWpt = true;
             return newWpt;
         } else if (type?.isFav || type?.isShareFav) {
-            const markerName = ctx.selectedWpt.markerCurrent.name;
             const wpts = ctx.selectedWpt.trackData?.wpts ?? ctx.selectedWpt.wpts;
-            const currentWpt = wpts.find((p) => p.name === markerName);
+            const currentWpt = findSelectedWpt(ctx.selectedWpt.markerCurrent, wpts);
             if (currentWpt) {
                 const newWpt = getDataFromWpt(type, ctx.selectedWpt, currentWpt);
+                newWpt.point = currentWpt;
                 newWpt.id = ctx.selectedWpt.groupId;
                 newWpt.group = ctx.favorites?.groups?.find((g) => g.id === ctx.selectedWpt.groupId);
                 return newWpt;
@@ -439,9 +443,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             if (type?.isWpt) {
                 tags = await WptTagsProvider.getWptTags(ctx.selectedWpt, type, ctx);
             } else if (type?.isFav || type?.isShareFav) {
-                const markerName = ctx.selectedWpt.markerCurrent.name;
                 const wpts = ctx.selectedWpt.trackData?.wpts ?? ctx.selectedWpt.wpts;
-                const currentWpt = wpts.find((p) => p.name === markerName);
+                const currentWpt = findSelectedWpt(ctx.selectedWpt.markerCurrent, wpts);
                 if (currentWpt) {
                     tags = await WptTagsProvider.getWptTags(currentWpt, type, ctx);
                 }

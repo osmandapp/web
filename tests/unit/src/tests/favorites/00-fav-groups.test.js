@@ -4,6 +4,7 @@ import FavoritesManager, {
     createFavGroupFreeName,
     decodeGroupNameFromFile,
     extractBaseFavFileName,
+    findSelectedWpt,
     getFavGroupKey,
     getFavMenuListByLayers,
     getSize,
@@ -105,6 +106,44 @@ describe('the favorites of a group in the menu', () => {
 
         expect(list.map((m) => m.locDist)).toEqual([undefined, undefined]);
         expect(addLocDist({ location: null, wpts })).toBe(wpts);
+    });
+
+    test('two waypoints with the same name are listed with their own points', () => {
+        const twins = [
+            { name: 'Hut', category: 'Trips' },
+            { name: 'Hut', category: 'Trips', address: 'second' },
+        ];
+        const twinLayers = {
+            1: { options: { name: 'Hut', point: twins[0] }, _latlng: { lat: 50, lng: 30 } },
+            2: { options: { name: 'Hut', point: twins[1] }, _latlng: { lat: 50, lng: 30 } },
+        };
+
+        const list = getFavMenuListByLayers({ layers: twinLayers, wpts: twins, currentLoc: null, pointsGroups });
+
+        expect(list.map((m) => m.point)).toEqual([twins[0], twins[1]]);
+        expect(list[1].point).toBe(twins[1]);
+    });
+});
+
+describe('the selected favorite among the waypoints of its group', () => {
+    const wpts = [
+        { name: 'Hut', category: 'Trips' },
+        { name: 'Hut', category: 'Trips', address: 'second' },
+        { name: 'Peak', category: 'Trips' },
+    ];
+
+    test('the point itself wins, then the point at the remembered index with the same name, then the name', () => {
+        expect(findSelectedWpt({ name: 'Hut', point: wpts[1], pointIndex: 1 }, wpts)).toBe(wpts[1]);
+
+        // the group was reloaded from the server: the same points as new objects
+        const reloaded = wpts.map((w) => ({ ...w }));
+        expect(findSelectedWpt({ name: 'Hut', point: wpts[1], pointIndex: 1 }, reloaded)).toBe(reloaded[1]);
+        // the remembered index points to another name: the first one with the name is taken
+        expect(findSelectedWpt({ name: 'Hut', point: wpts[1], pointIndex: 2 }, reloaded)).toBe(reloaded[0]);
+        expect(findSelectedWpt({ name: 'Peak' }, reloaded)).toBe(reloaded[2]);
+        expect(findSelectedWpt({ name: 'Lake' }, reloaded)).toBeUndefined();
+        expect(findSelectedWpt(null, reloaded)).toBeUndefined();
+        expect(findSelectedWpt({ name: 'Hut' }, null)).toBeUndefined();
     });
 });
 

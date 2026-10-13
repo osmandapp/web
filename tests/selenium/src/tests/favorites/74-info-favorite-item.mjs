@@ -6,15 +6,19 @@ import {
     countMapItemsByOpacity,
     enclose,
     getMapHash,
+    getTextBy,
     matchTextBy,
     sendKeysBy,
     waitBy,
     waitByRemoved,
 } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
+import { driver } from '../../options.mjs';
 import { getFiles } from '../../util.mjs';
+import actionCheckDisabled from '../../actions/actionCheckDisabled.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
+import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
@@ -28,6 +32,7 @@ export default async function test() {
     const favGroupName = 'favorites-shops';
     const shortFavGroupName = 'shops';
     const wptName = 'Test wpt';
+    const sameNameWpt = 'Dapperstraat 40-1'; // two favorites of the group share this name
     const suffix = '-edited';
 
     const favorites = getFiles({ folder: 'favorites' });
@@ -83,6 +88,58 @@ export default async function test() {
     await matchTextBy(By.id('se-wpt-address'), `test address${suffix}`);
     await clickBy(By.id('se-back-wpt-details'));
     await waitByRemoved(By.id(`se-fav-item-info-${wptName}${suffix}`));
+    await waitBy(By.id(`se-fav-item-name-${wptName}${suffix}`));
+
+    // the second of two favorites with the same name opens, is edited and deleted on its own
+    const sameNameItems = By.id(`se-fav-item-name-${sameNameWpt}`);
+    const second = await enclose(async () => (await driver.findElements(sameNameItems))[1], {
+        tag: 'second-same-name',
+    });
+    await second.click();
+    await waitBy(By.id(`se-fav-item-info-${sameNameWpt}`));
+    await matchTextBy(By.id('se-wpt-address'), 'Oost second');
+    await clickBy(By.id('se-edit-fav-item'));
+    await waitBy(By.id('se-edit-fav-dialog'));
+    await enclose(
+        async () => {
+            const input = await waitBy(By.id('se-edit-fav-dialog-address'));
+            await input.sendKeys(suffix);
+            return true;
+        },
+        { tag: 'edit-address-same-name-item' }
+    );
+    await clickBy(By.id('se-edit-fav-item-submit'));
+    await matchTextBy(By.id('se-wpt-address'), `Oost second${suffix}`);
+    await clickBy(By.id('se-delete-fav-item'));
+    await waitBy(By.id('se-delete-fav-dialog'));
+    await clickBy(By.id('se-delete-fav-dialog-submit'));
+    await waitByRemoved(By.id(`se-fav-item-info-${sameNameWpt}`));
+    await enclose(async () => (await driver.findElements(sameNameItems)).length === 1, { tag: 'first-same-name-left' });
+    // the first one is untouched
+    await clickBy(sameNameItems);
+    await waitBy(By.id(`se-fav-item-info-${sameNameWpt}`));
+    const firstAddress = await getTextBy(By.id('se-wpt-address'));
+    await assert(!firstAddress.includes('second'), `First favorite should keep its address, got: ${firstAddress}`);
+    await clickBy(By.id('se-back-wpt-details'));
+    await waitByRemoved(By.id(`se-fav-item-info-${sameNameWpt}`));
+    await waitBy(By.id(`se-fav-item-name-${wptName}${suffix}`));
+
+    // a new favorite with a name the group already has is not saved
+    await actionOpenContextMenu();
+    await clickBy(By.id('se-add-favorite-action'));
+    await waitBy(By.id('se-add-fav-dialog'));
+    await sendKeysBy(By.id('se-fav-name-input'), sameNameWpt);
+    await clickBy(By.id('se-fav-group-selector'));
+    await waitBy(By.id('se-back-folder-selection-panel'));
+    await clickBy(By.id(`se-fav-group-item-${shortFavGroupName}`));
+    await clickBy(By.id('se-back-folder-selection-panel'));
+    await waitByRemoved(By.id('se-back-folder-selection-panel'));
+    await waitBy(By.xpath("//*[text()='This name already exists.']"));
+    await enclose(async () => actionCheckDisabled('se-add-fav-btn'), { tag: 'same-name-save-disabled' });
+    await clickBy(By.id('se-close-add-wpt-panel'));
+    await waitBy(By.id('se-exit-dialog-exit'));
+    await clickBy(By.id('se-exit-dialog-exit'));
+    await waitByRemoved(By.id('se-add-fav-dialog'));
     await waitBy(By.id(`se-fav-item-name-${wptName}${suffix}`));
 
     // delete favorite item
