@@ -721,13 +721,14 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
         if (!value?.options?.name) {
             return;
         }
-        const wpt = getWptByTitle(value.options.name, wpts);
+        const wpt = value.options.point ?? getWptByTitle(value.options.name, wpts);
         if (!wpt) {
             return;
         }
         const appearance = resolveWptAppearance(wpt, pointsGroups);
         const marker = {
             name: value.options.name,
+            point: wpt,
             icon: getFavoriteMenuIconHtml({ wpt, ...appearance }),
             layer: value,
             color: appearance.color,
@@ -740,6 +741,21 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
 
 export function getWptByTitle(title, wpts) {
     return wpts.find((wpt) => wpt.name === title);
+}
+
+// same rule as the server: the point at the remembered index if its name still matches
+export function findSelectedWpt(markerCurrent, wpts) {
+    if (!markerCurrent || !wpts) {
+        return undefined;
+    }
+    const { point, pointIndex, name } = markerCurrent;
+    if (point && wpts.includes(point)) {
+        return point;
+    }
+    if (wpts[pointIndex]?.name === name) {
+        return wpts[pointIndex];
+    }
+    return getWptByTitle(name, wpts);
 }
 
 /** Build menu marker + group for opening a favorite from search (requires map markers loaded). */
@@ -760,6 +776,7 @@ export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
     const appearance = resolveWptAppearance(wpt, mapObj.pointsGroups);
     const marker = {
         name: wptName,
+        point: wpt,
         icon: getFavoriteMenuIconHtml({
             wpt,
             icon: appearance.icon,
@@ -854,6 +871,7 @@ export function getSelectedFavoriteObj({
             });
         }
     });
+    favObj.markerCurrent.pointIndex = trackData?.wpts?.indexOf(marker.point);
     favObj.id = group.id;
     favObj.key = `${group.id}:${marker.name}`;
     favObj.trackData = trackData;

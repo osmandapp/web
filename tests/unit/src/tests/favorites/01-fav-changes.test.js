@@ -107,3 +107,48 @@ test('a group missing from the list is added by the response', () => {
     expect(known.groups).toHaveLength(2);
     expect(known.groups[0].updatetimems).toBe(3000);
 });
+
+describe('the selected favorite after its group was saved', () => {
+    const groups = [group('Trips'), group('Alps')];
+    const tripsWpts = [{ name: 'Hut' }, { name: 'Hut', address: 'second' }];
+    const alpsWpts = [{ name: 'Peak' }, { name: 'Hut', address: 'second' }];
+
+    function ctxSelecting(groupId, markerCurrent) {
+        return {
+            favorites: { groups, mapObjs: { [groups[0].id]: { wpts: tripsWpts }, [groups[1].id]: { wpts: alpsWpts } } },
+            selectedGpxFile: { id: groupId, file: groups[0].file, markerCurrent },
+            setSelectedGpxFile: jest.fn(),
+            setSelectedWpt: jest.fn(),
+        };
+    }
+
+    test('an edited favorite keeps its index, a moved one becomes the last of the new group', () => {
+        const edited = ctxSelecting(groups[0].id, { name: 'Hut', point: {}, pointIndex: 1 });
+        FavoriteHelper.updateSelectedFile({ ctx: edited, result: null, favoriteName: 'Hut', selectedGroup: groups[0] });
+
+        const afterEdit = edited.setSelectedGpxFile.mock.calls[0][0];
+        expect(afterEdit.markerCurrent.point).toBe(tripsWpts[1]);
+        expect(afterEdit.markerCurrent.pointIndex).toBe(1);
+
+        const moved = ctxSelecting(groups[0].id, { name: 'Hut', point: tripsWpts[1], pointIndex: 1 });
+        FavoriteHelper.updateSelectedFile({ ctx: moved, result: null, favoriteName: 'Hut', selectedGroup: groups[1] });
+
+        const afterMove = moved.setSelectedGpxFile.mock.calls[0][0];
+        expect(afterMove.id).toBe(groups[1].id);
+        expect(afterMove.markerCurrent.point).toBe(alpsWpts[1]);
+        expect(afterMove.markerCurrent.pointIndex).toBe(1);
+    });
+
+    test('a deleted favorite is no longer selected', () => {
+        const ctx = ctxSelecting(groups[0].id, { name: 'Hut', point: tripsWpts[1], pointIndex: 1 });
+        FavoriteHelper.updateSelectedFile({
+            ctx,
+            result: null,
+            favoriteName: 'Hut',
+            selectedGroup: groups[0],
+            deleted: true,
+        });
+
+        expect(ctx.setSelectedGpxFile.mock.calls[0][0].markerCurrent).toBeUndefined();
+    });
+});
