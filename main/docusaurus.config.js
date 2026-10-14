@@ -37,6 +37,7 @@ async function createConfig(){
     organizationName: 'osmandapp', // Usually your GitHub org/user name.
     projectName: 'web', // Usually your repo name.
     staticDirectories: ['static', 'legacy-image-static'],
+    clientModules: [require.resolve('./src/clientModules/storeLinksUtm.js')],
     i18n: {
       defaultLocale: 'en',
       locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'tr', 'uk'],
