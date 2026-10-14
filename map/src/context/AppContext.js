@@ -149,7 +149,7 @@ export const AppContextProvider = (props) => {
 
     const selectedUpdatedLayerRef = useRef(null); // layer whose icon we replaced — restore on cleanup
     const selectedCreatedLayerRef = useRef(null); // layer we created — remove on cleanup
-    const selectedHiddenLayersRef = useRef([]); // layers hidden near selected marker — restore when selection changes
+    const selectedHiddenLayersRef = useRef([]); // layers hidden under selected marker — restore when selection changes
 
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);

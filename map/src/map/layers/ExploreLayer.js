@@ -20,7 +20,7 @@ import {
     EXPLORE_BIG_REAL_ICON_SIZE,
 } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
-import { hideMarkersNearPin } from '../util/MarkerSelectionService';
+import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { WIKI_PLACE_PHOTO_SIZE } from '../../menu/search/explore/WikiPlacesItem';
 import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
@@ -93,7 +93,7 @@ export default function ExploreLayer() {
             ctx.setWikiPlaces(null);
             removeLayers();
         }
-        hideMarkersNearPin(map, ctx);
+        hideMarkersUnderPin(map, ctx);
     }, [zoom]);
 
     const getExploreLayers = useCallback(() => {
@@ -371,7 +371,7 @@ export default function ExploreLayer() {
         }
         newLayers.options = { ...newLayers.options, id: EXPLORE_LAYER_ID };
         map.addLayer(newLayers);
-        hideMarkersNearPin(map, ctx);
+        hideMarkersUnderPin(map, ctx);
         return newLayers;
     }
 

@@ -8,7 +8,6 @@ import MapStateLayer from '@map/map/layers/MapStateLayer';
 import { createPoiLayer } from '@map/map/layers/PoiLayer';
 import { addMarkerTooltip, clusterMarkers } from '@map/map/util/Clusterizer';
 import { createTooltip } from '@map/map/util/MapManager';
-import { getSelectedMarkerHideRadiusM } from '@map/map/util/MarkerSelectionService';
 import { DEFAULT_POI_ICON } from '@map/manager/PoiManager';
 import { FINAL_POI_ICON_NAME, POI_ELO, POI_ID, POI_NAME } from '@map/infoblock/components/wpt/WptTagsProvider';
 
@@ -537,12 +536,5 @@ describe('marker geometry at fractional zoom', () => {
 
         expect(clusterAt(10.01).mainMarkers).toEqual([places[0]]);
         expect(clusterAt(10.01).secondaryMarkers).toEqual([]);
-    });
-
-    test('the selected pin hide radius does not collapse just below zoom 16', () => {
-        const minimum = getSelectedMarkerHideRadiusM(16);
-        expect(minimum).toBe(50);
-
-        expect(getSelectedMarkerHideRadiusM(15.99)).toBeGreaterThanOrEqual(minimum);
     });
 });
