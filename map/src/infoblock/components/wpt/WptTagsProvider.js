@@ -15,7 +15,7 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, getIconNameForPoiType, parseTagWithLang, updatePoiCache } from '../../../manager/PoiManager';
+import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
@@ -239,7 +239,14 @@ async function getWptTags(obj, type, ctx) {
         const tagList = await fetchVisibleTags(mainTags);
 
         for (const entry of tagList) {
-            let tagObj = await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag });
+            let tagObj = await buildTagObj({
+                key: entry.key,
+                value: entry.value,
+                lang: entry.lang,
+                generic: entry.generic,
+                ctx,
+                subtypeTag,
+            });
 
             if (entry.otherLangs?.length) {
                 tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag, entry.key);
@@ -257,7 +264,7 @@ async function getWptTags(obj, type, ctx) {
     return { res, rawTags, id, type: typeTag, subtype: subtypeTag };
 }
 
-async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
+async function buildTagObj({ key, value, lang, generic, ctx, subtypeTag }) {
     let tagObj = { key };
     tagObj.value = value;
     tagObj.isUrl = isUrl(value);
@@ -271,7 +278,7 @@ async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
         }
     }
 
-    Object.assign(tagObj, await getTagIconProps({ key, value, lang, ctx }));
+    Object.assign(tagObj, await getTagIconProps({ key, value, lang, generic, ctx }));
 
     const [formattedPrefix, formattedValue] = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag, ctx);
     tagObj.textPrefix = formattedPrefix;
@@ -296,7 +303,7 @@ async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
     return tagObj;
 }
 
-async function getTagIconProps({ key, value, lang, ctx }) {
+async function getTagIconProps({ key, value, lang, generic, ctx }) {
     switch (key) {
         case WIKIPEDIA:
             return { icon: <WikipediaIcon /> };
@@ -325,8 +332,19 @@ async function getTagIconProps({ key, value, lang, ctx }) {
         case 'internet_access_fee_yes':
             return { icon: <InternetIcon /> };
         default:
+            if (generic) {
+                return getGenericTagProps(key);
+            }
             return await getOtherTagIconProps({ key, value, lang, ctx });
     }
+}
+
+function getGenericTagProps(key) {
+    return {
+        icon: getIcon(null, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR),
+        textPrefix: key.slice(key.indexOf(':') + 1),
+        isRawValue: true,
+    };
 }
 
 async function getOtherTagIconProps({ key, value, lang, ctx }) {
@@ -338,7 +356,7 @@ async function getOtherTagIconProps({ key, value, lang, ctx }) {
         const svgData = await getSvgIcon({ value: prepValue, ctx });
         return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
     }
-    if (lang || parseTagWithLang(key).lang) {
+    if (lang) {
         return { icon: <DisplayLanguageIcon /> };
     }
     const svgData = await getSvgIcon({ key, value, ctx });
