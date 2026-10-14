@@ -26,6 +26,7 @@
 - For installs from Google Play, the app reads the Google Play Install Referrer once after installation: the campaign source, medium and name (UTM parameters) and whether the install came from an ad click.
 - For installs from the App Store (iOS), the app requests an attribution token from Apple (AdServices framework) once after installation. Our server exchanges it with Apple for the Apple Ads campaign, ad group, keyword and country that led to the install. No advertising identifier (IDFA) is used, and no App Tracking Transparency permission is required.
 - This data is tied to the UUID (Unique User Identifier), is used only for campaign statistics, and is not shared with advertising networks or other third parties.
+- This data is read and sent only while sending the UUID is enabled; turning it off in [the General settings](https://osmand.net/docs/user/personal/global-settings#privacy-and-security) stops it as well.
 
 **3.1.4** You can always control what data to share in [the General settings](https://osmand.net/docs/user/personal/global-settings#privacy-and-security) of the OsmAnd app.
 
