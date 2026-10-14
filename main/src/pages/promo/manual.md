@@ -32,7 +32,7 @@ You've inputted your e-mail into one of the Promo forms. Now you need to activat
 2. **Next step**, you should activate **OsmAnd Pro** on your device.
 
 2a. Install OsmAnd app:
-- Android version: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Android version: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - iOS version: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Activate OsmAnd Pro on your device:
@@ -95,7 +95,7 @@ Vous avez saisi votre e-mail dans l’un des formulaires Promo. Vous devez maint
 2. **Prochaine étape** : vous devez activer **OsmAnd Pro** sur votre appareil.
 
 2a. Installez l’application OsmAnd :  
-- Version Android : [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).  
+- Version Android : Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).  
 - Version iOS : [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Activez OsmAnd Pro sur votre appareil :
@@ -156,7 +156,7 @@ Sie haben Ihre E-Mail in eines der Promo-Formulare eingegeben. Nun müssen Sie O
 2. **Nächster Schritt**: Aktivieren Sie **OsmAnd Pro** auf Ihrem Gerät.
 
 2a. Installieren Sie die OsmAnd-App:  
-- Android-Version: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).  
+- Android-Version: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).  
 - iOS-Version: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. OsmAnd Pro auf dem Gerät aktivieren:
@@ -217,7 +217,7 @@ Has introducido tu correo electrónico en uno de los formularios de promoción. 
 2. **Ahora debes** activar OsmAnd Pro en tu dispositivo:
 
 2a. Instala la aplicación OsmAnd:
-- Versión para Android: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Versión para Android: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - Versión para iOS: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Activa OsmAnd Pro en tu dispositivo:
@@ -282,7 +282,7 @@ Avete inserito la vostra e-mail in uno dei moduli Promo. Ora dovete attivare Osm
 2. **Il passo successivo** è l'attivazione di **OsmAnd Pro** sul dispositivo.
 
 2a. Installare l'applicazione OsmAnd:
-- Versione Android: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Versione Android: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - Versione iOS: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Attivare OsmAnd Pro sul dispositivo:    
@@ -348,7 +348,7 @@ Wprowadziłeś swój e-mail do jednego z formularzy Promo. Sekarang musisz aktyw
 2. **W następnym kroku** należy aktywować **OsmAnd Pro** na swoim urządzeniu.
 
 2a. Zainstaluj aplikację OsmAnd:
-- Wersja na Androida: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Wersja na Androida: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - Wersja iOS: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Aktywuj OsmAnd Pro na swoim urządzeniu:
@@ -410,7 +410,7 @@ ______________________________
 2. **Следующий шаг**, необходимо активировать **OsmAnd Pro** на вашем устройстве:
 
 2a. Установите приложение OsmAnd:
-- Версия Android: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Версия Android: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - Версия для iOS: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Активируйте OsmAnd Pro на своем устройстве:
@@ -476,7 +476,7 @@ U hebt uw e-mailadres ingevoerd in een van de Promo-formulieren. Nu moet u OsmAn
 2. **Volgende stap**: activeer **OsmAnd Pro** op uw apparaat.
 
 2a. Installeer de OsmAnd-app:
-- Android-versie: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Android-versie: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - iOS-versie: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Activeer OsmAnd Pro op uw apparaat:
@@ -542,7 +542,7 @@ Introduziu o seu e-mail num dos formulários Promo. Agora precisa de ativar o Os
 2. **Próximo passo**: deve ativar o **OsmAnd Pro** no seu dispositivo.
 
 2a. Instale a aplicação OsmAnd:
-- Versão Android: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Versão Android: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - Versão iOS: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Ative o OsmAnd Pro no seu dispositivo:
@@ -607,7 +607,7 @@ E-posta adresinizi Promo formlarından birine girdiniz. Şimdi cihazlarınızda 
 2. **Sonraki adım**: cihazınızda **OsmAnd Pro**’yu etkinleştirin.
 
 2a. OsmAnd uygulamasını yükleyin:
-- Android sürümü: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Android sürümü: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - iOS sürümü: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Cihazınızda OsmAnd Pro’yu etkinleştirin:
@@ -672,7 +672,7 @@ _________________________________
 2. **Наступний крок**: активуйте **OsmAnd Pro** на своєму пристрої.
 
 2a. Встановіть застосунок OsmAnd:
-- Версія Android: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Версія Android: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - Версія iOS: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. Активуйте OsmAnd Pro на своєму пристрої:
@@ -737,7 +737,7 @@ _________________________________
 2. **الخطوة التالية**: يجب تفعيل **OsmAnd Pro** على جهازك.
 
 2a. ثبّت تطبيق OsmAnd:
-- إصدار Android: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)، [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- إصدار Android: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand)، [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus))، [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - إصدار iOS: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 2b. فعّل OsmAnd Pro على جهازك:

@@ -182,7 +182,7 @@ describe('fractional wheel zoom', () => {
         finishZoom();
         const trackpadZoom = map.getZoom() - 10;
 
-        map.setZoom(10, { animate: false });
+        act(() => map.setZoom(10, { animate: false }));
         // 50 ms * 100 px > 200: a mouse
         for (let i = 0; i < 4; i++) {
             wheel(-100, undefined, 3000 + 50 * i);
