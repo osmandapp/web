@@ -900,7 +900,9 @@ export function addFavoriteToMapFromSearch(ctx, { group, marker }) {
 
 export function openFavoriteObj({ ctx, favoriteObj, options = {} }) {
     ctx.setCurrentObjectType(options.fromSearch === true ? OBJECT_SEARCH : OBJECT_TYPE_FAVORITE);
-    const selectionId = getFavoriteId(favoriteObj.markerCurrent?.layer);
+    const { layer, point } = favoriteObj.markerCurrent ?? {};
+    // a just-saved favorite has no marker yet: its id must match the one the marker gets on rebuild
+    const selectionId = layer ? getFavoriteId(layer) : favoriteIdFromLatLng(point.lat, point.lon);
     ctx.setSelectedWpt({ ...favoriteObj, selectionId, id: selectionId, groupId: favoriteObj.id });
     ctx.setSelectedGpxFile({ ...favoriteObj });
 }

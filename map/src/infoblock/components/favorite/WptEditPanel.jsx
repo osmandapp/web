@@ -466,9 +466,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 
     function openSavedFavoriteDetails({ selectedGroup }) {
         const key = selectedGroup.id ?? getUniqFileId(selectedGroup.file);
-
-        // The preview pin is already on the map — use it as the layer.
-        const previewLayer = ctx.selectedCreatedLayerRef?.current;
         const wpts = ctx.favorites.mapObjs[key]?.wpts ?? [];
 
         const newGpxFile = {
@@ -482,7 +479,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 color: favoriteColor,
                 background: favoriteShape,
                 groupId: key,
-                layer: previewLayer,
             },
             name: favoriteName,
             nameGroup: selectedGroup.name,
