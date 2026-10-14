@@ -99,4 +99,5 @@ if (ExecutionEnvironment.canUseDOM) {
     // capture phase: the href is updated before the browser follows the link
     document.addEventListener('click', onLinkClick, true);
     document.addEventListener('auxclick', onLinkClick, true);
+    document.addEventListener('contextmenu', onLinkClick, true);
 }
