@@ -157,7 +157,9 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
 
         if (type === SEARCH_LAYER_ID) {
-            const latlng = extractLatlng(ctx.selectedWptId) ?? ctx.selectedWpt?.poi?.latlng ?? null;
+            // the hover state may still point at a previous search result (its row never got mouseleave)
+            const hoverLatlng = ctx.selectedWptId?.id === selectedObjId ? extractLatlng(ctx.selectedWptId) : null;
+            const latlng = hoverLatlng ?? ctx.selectedWpt?.poi?.latlng ?? null;
             if (latlng) {
                 const pin = applySelectedPin({
                     ctx,
