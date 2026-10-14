@@ -38,7 +38,7 @@ Como participante del **State of the Map Colombia 2026**, eres elegible para una
 <SotmScreenshots />
 
 **Descargas:**
-- **Android:** [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
+- **Android:** Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
 - **iOS:** [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
 
 **OsmAnd no recopila información personal.**  
@@ -67,7 +67,7 @@ To claim your subscription:
 
 <SotmScreenshots />
 
-- Android version: [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+- Android version: Google Play ([OsmAnd](https://play.google.com/store/apps/details?id=net.osmand), [OsmAnd+](https://play.google.com/store/apps/details?id=net.osmand.plus)), [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 - iOS version: [AppStore](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 OsmAnd doesn't collect any info, please, read [OsmAnd Privacy Policy](https://osmand.net/docs/legal/privacy-policy) and [Terms of Use](https://osmand.net/docs/legal/terms-of-use).
