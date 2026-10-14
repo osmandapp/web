@@ -43,6 +43,8 @@ module.exports = {
         // modules pulling map layers / routing / i18n - not exercised by unit tests
         // leaflet itself works in jsdom, the map layers around it do not
         '^leaflet$': path.join(MAP_DIR, 'node_modules/leaflet/dist/leaflet-src.js'),
+        // react-leaflet is ESM and only used by the layer components, the marker selection helpers need plain leaflet
+        '^react-leaflet$': `${STUBS}/reactLeaflet.js`,
         // sorting is plain logic that createTrackGroups depends on, keep it real
         'menu/actions/SortActions$': path.join(MAP_DIR, 'src/menu/actions/SortActions.jsx'),
         // the visible-tracks cache is plain localStorage logic used by the managers

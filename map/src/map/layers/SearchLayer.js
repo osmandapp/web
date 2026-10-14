@@ -44,7 +44,7 @@ import {
     panToIfNeeded,
     pushMapView,
 } from '../util/MapManager';
-import { hideMarkersNearPin } from '../util/MarkerSelectionService';
+import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { searchByWordApi, getMapsFromUrl, searchUserDataApi } from '../../manager/SearchApi';
@@ -207,7 +207,7 @@ export default function SearchLayer() {
             newLayers.eachLayer((l) => {
                 layers.addLayer(l);
             });
-            hideMarkersNearPin(map, ctx);
+            hideMarkersUnderPin(map, ctx);
         };
 
         if (ctx.searchResult?.features && ctx.searchQuery && !ctx.searchQuery.type) {

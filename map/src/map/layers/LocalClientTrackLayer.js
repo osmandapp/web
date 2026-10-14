@@ -35,7 +35,7 @@ import {
     deleteOldLayers,
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
-import { hideMarkersNearPin } from '../util/MarkerSelectionService';
+import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -513,9 +513,9 @@ export default function LocalClientTrackLayer() {
                 trackLayers: ctxTrack.layers,
             });
             saveChanges(ctxTrack.points, ctxTrack.wpts, ctxTrack.layers);
-            // After layer rebuild, re-hide markers near the selected pin (new marker instances were created)
+            // After layer rebuild, re-hide markers under the selected pin (new marker instances were created)
             if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
-                hideMarkersNearPin(map, ctx);
+                hideMarkersUnderPin(map, ctx);
             }
         }
     }

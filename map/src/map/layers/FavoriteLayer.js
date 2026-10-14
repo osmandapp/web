@@ -16,7 +16,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { clusterMarkers, addMarkerTooltip } from '../util/Clusterizer';
 import {
     restoreOriginalIcon,
-    hideMarkersNearPin,
+    hideMarkersUnderPin,
     toShape,
     SELECTED_PIN_SIZE,
     SELECTED_ICON_SIZE,
@@ -390,9 +390,9 @@ const FavoriteLayer = () => {
                 }
                 updateMarkerZIndex(mainLayersGroup, MARKER_Z_INDEX_MAIN);
                 file.markersOnMap = res;
-                // Re-hide markers near the selected pin after new markers are placed on the map
+                // Re-hide markers under the selected pin after new markers are placed on the map
                 if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
-                    hideMarkersNearPin(map, ctx);
+                    hideMarkersUnderPin(map, ctx);
                 }
             }
         } else {

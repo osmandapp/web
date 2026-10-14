@@ -5,7 +5,7 @@ import debounce from 'lodash-es/debounce';
 import isEmpty from 'lodash-es/isEmpty';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
-import { applySelectedPin, hideMarkersNearPin } from '../util/MarkerSelectionService';
+import { applySelectedPin, hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -415,7 +415,7 @@ export default function PoiLayer() {
                 return;
             }
             if (map.hasLayer(layer)) {
-                hideMarkersNearPin(map, ctx);
+                hideMarkersUnderPin(map, ctx);
                 return;
             }
             if (existing) {
@@ -423,7 +423,7 @@ export default function PoiLayer() {
             }
             layer.addTo(map);
             layer.on('click', onClick);
-            hideMarkersNearPin(map, ctx);
+            hideMarkersUnderPin(map, ctx);
         }
 
         const getPoiTask = async ({
@@ -490,7 +490,7 @@ export default function PoiLayer() {
         };
         const debouncedGetPoi = debounce(getPoiTask, GET_POI_DEBOUNCE_MS);
 
-        hideMarkersNearPin(map, ctx);
+        hideMarkersUnderPin(map, ctx);
 
         async function getPoiList() {
             if (isEmpty(ctx.showPoiCategories)) {
