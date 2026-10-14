@@ -138,12 +138,14 @@ describe('getWptTags: the tags of a poi', () => {
         expect(Object.keys(tags)).toEqual(['phone']);
     });
 
-    test('a tag of an external namespace keeps its local name and its stored value', async () => {
+    test('a generic row of the server keeps its local name and its stored value', async () => {
         apiPost.mockResolvedValueOnce({
             data: [
-                { key: 'test:country', value: 'US' },
-                { key: 'test:status', value: 'air_conditioning_yes' },
-                { key: 'test:telephone', value: '+1 804 828 0100' },
+                { key: 'test:country', value: 'US', generic: true },
+                { key: 'test:status', value: 'air_conditioning_yes', generic: true },
+                { key: 'test:telephone', value: '+1 804 828 0100', generic: true },
+                { key: 'my_note', value: 'yes', generic: true },
+                { key: 'internet_access:fee', value: 'no' },
                 { key: 'brand', value: 'Blau', lang: 'de' },
             ],
         });
@@ -154,7 +156,8 @@ describe('getWptTags: the tags of a poi', () => {
         expect(tags['test:status']).toMatchObject({ value: 'air_conditioning_yes', isRawValue: true });
         expect(tags['test:telephone'].isPhoneNumber).toBeFalsy();
         expect(tags['test:telephone'].isUrl).toBe(false);
-        // a language entry of the server is a language tag, not a namespace
+        expect(tags.my_note).toMatchObject({ textPrefix: 'my_note', value: 'yes', isRawValue: true });
+        expect(tags['internet_access:fee'].isRawValue).toBeUndefined();
         expect(tags.brand.lang).toBe('de');
         expect(tags.brand.isRawValue).toBeUndefined();
     });
