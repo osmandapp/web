@@ -10,7 +10,7 @@ import { WEATHER_COORDS_DECIMALS } from './GlobalManager';
 import { apiGet } from '../util/HttpApi';
 
 export const GFS_WEATHER_TYPE = 'gfs'; // step 1 hour, after 24 hours after the current time - 3 hours
-export const ECWMF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
+export const ECMWF_WEATHER_TYPE = 'ecmwf'; // step 3 hour, after 5 days after the current day - 6 hours
 
 export const LOCAL_STORAGE_WEATHER_LOC = 'weatherLoc';
 export const LOCAL_STORAGE_WEATHER_FORECAST_DAY = 'weatherForecastDay';
@@ -38,7 +38,7 @@ export function getSavedWeekForecast() {
 function getLayers() {
     let allLayers = {};
     allLayers[GFS_WEATHER_TYPE] = getWeatherLayers(GFS_WEATHER_TYPE);
-    allLayers[ECWMF_WEATHER_TYPE] = getWeatherLayers(ECWMF_WEATHER_TYPE);
+    allLayers[ECMWF_WEATHER_TYPE] = getWeatherLayers(ECMWF_WEATHER_TYPE);
     return allLayers;
 }
 
@@ -115,7 +115,7 @@ export function getWeatherLayers(type) {
 }
 
 export function disableLayers(item, wtx) {
-    return (item.key === 'wind' || item.key === 'cloud') && wtx.weatherType === ECWMF_WEATHER_TYPE;
+    return (item.key === 'wind' || item.key === 'cloud') && wtx.weatherType === ECMWF_WEATHER_TYPE;
 }
 
 function getWeatherUrl(layer, type) {
@@ -143,7 +143,7 @@ export const currentDiffHours = (ctx, weatherDate) =>
     Math.trunc(weatherDate.getTime() / (3600 * 1000)) - Math.trunc(new Date().getTime() / (3600 * 1000));
 
 export function getBaseStep(diffHours, wtx) {
-    if (wtx.weatherType === ECWMF_WEATHER_TYPE) {
+    if (wtx.weatherType === ECMWF_WEATHER_TYPE) {
         return Math.abs(diffHours) + new Date().getUTCHours() >= 120 ? 6 : 3;
     }
     if (wtx.weatherType === GFS_WEATHER_TYPE) {
