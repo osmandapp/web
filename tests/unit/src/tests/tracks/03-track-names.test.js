@@ -158,12 +158,21 @@ describe('createTrackFreeName', () => {
         expect(free).not.toContain('�');
         expect(bytes(free + '.gpx.info')).toBeLessThanOrEqual(255);
     });
+
+    test('a cut on a space does not leave it before the number', () => {
+        const name = 'a'.repeat(241) + ' bbbbbbbb';
+        expect(createTrackFreeName(name, [{ name: 'a'.repeat(241) + ' bbbb' }])).toBe('a'.repeat(241) + ' - 1');
+    });
 });
 
 describe('sanitizedTrackName', () => {
     test('a long name with ".gpx.info" fits 255 bytes', () => {
         expect(sanitizedTrackName('a'.repeat(300))).toBe('a'.repeat(246));
         expect(bytes(sanitizedTrackName('я'.repeat(200)) + '.gpx.info')).toBeLessThanOrEqual(255);
+    });
+
+    test('a cut on a space does not leave it at the end', () => {
+        expect(sanitizedTrackName('a'.repeat(245) + ' bbb')).toBe('a'.repeat(245));
     });
 });
 

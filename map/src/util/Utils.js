@@ -201,8 +201,8 @@ export function truncateToBytes(str, maxBytes) {
     while (end > 0 && (bytes[end] & 0xc0) === 0x80) {
         end--;
     }
-
-    return new TextDecoder().decode(bytes.slice(0, end));
+    // a cut on a space would leave it at the end of the file name
+    return new TextDecoder().decode(bytes.slice(0, end)).trimEnd();
 }
 
 // Used ONLY when creating a new file
