@@ -200,6 +200,14 @@ export default function InformationBlock({
         }
     }, [trackName]);
 
+    // a renamed track keeps its menu open, so the URL follows its new name
+    useEffect(() => {
+        const name = ctx.selectedGpxFile?.name;
+        if (trackName && name && name !== trackName && !ctx.shareFile && isCloudTrack(ctx)) {
+            setTrackName(name);
+        }
+    }, [ctx.selectedGpxFile?.name]);
+
     // open favorite info menu when marker is selected
     useEffect(() => {
         if (

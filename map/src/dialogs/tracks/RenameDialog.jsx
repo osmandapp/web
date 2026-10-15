@@ -6,7 +6,7 @@ import DialogActions from '@mui/material/DialogActions';
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import { DEFAULT_GROUP_NAME, findGroupByName, GPX_FILE_EXT, prepareName } from '../../manager/track/TracksManager';
-import { renameFolder, renameLocalTrack, renameTrack } from '../../manager/track/SaveTrackManager';
+import { renameFolder, renameLocalTrack, renameTrack, sanitizedTrackName } from '../../manager/track/SaveTrackManager';
 import { renameSmartFolder } from '../../manager/SmartFoldersManager';
 import { sanitizedFileName } from '../../util/Utils';
 import { useTranslation } from 'react-i18next';
@@ -55,7 +55,7 @@ export default function RenameDialog({
     }
 
     async function rename() {
-        const sanitized = sanitizedFileName(name);
+        const sanitized = track ? sanitizedTrackName(name) : sanitizedFileName(name);
         if (!validateName(sanitized)) return;
 
         setLoading(true);
@@ -154,7 +154,7 @@ export default function RenameDialog({
 // --- Local track rename ---
 function validateLocalTrackName(name, track, ctx, t) {
     if (!name?.trim()) return t('web:rename_empty_track_name');
-    const candidate = prepareName(sanitizedFileName(name), true);
+    const candidate = prepareName(sanitizedTrackName(name), true);
     if (ctx.localTracks.some((tr) => tr?.name && tr.name !== track.name && tr.name === candidate)) {
         return t('web:rename_track_already_exists');
     }
@@ -189,8 +189,8 @@ function validateCloudTrackName(name, groupByTrack, t) {
 async function performRenameCloud(ctx, track, rawNewName, groupByTrack) {
     const folder = groupByTrack.fullName === DEFAULT_GROUP_NAME ? '' : groupByTrack.fullName + '/';
     const newFileName = folder + rawNewName + GPX_FILE_EXT;
-    await renameTrack(track.name, folder, rawNewName, ctx);
-    if (ctx.selectedGpxFile?.name === track.name) {
+    const renamed = await renameTrack(track.name, folder, rawNewName, ctx);
+    if (renamed && ctx.selectedGpxFile?.name === track.name) {
         ctx.setSelectedGpxFile((prev) => ({ ...prev, name: newFileName }));
     }
 }
