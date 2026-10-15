@@ -7,7 +7,7 @@ import {
     timeFormatter,
     PRECIP_LAYER_KEY,
     TEMP_LAYER_KEY,
-    ECWMF_WEATHER_TYPE,
+    ECMWF_WEATHER_TYPE,
 } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import { useTranslation } from 'react-i18next';
@@ -43,7 +43,7 @@ export default function ForecastTable({ dayForecast, weekForecast, currentTimeFo
             const currentF = useDayForecast ? currentTimeForecast?.day : currentTimeForecast?.week;
             const res = currentF ?? forecast?.filter((f) => f.time === timeKey);
             if (res?.length > 0) {
-                if ((wtx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS) || res[0][item.key] === undefined) {
+                if ((wtx.weatherType === ECMWF_WEATHER_TYPE && item.onlyGFS) || res[0][item.key] === undefined) {
                     return NOT_AVAILABLE;
                 }
 

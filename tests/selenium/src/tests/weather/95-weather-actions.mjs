@@ -11,7 +11,7 @@ export default async function test() {
     await waitBy(By.id('se-forecast_source'));
     await clickBy(By.id('se-forecast_source'));
     await waitBy(By.id('se-weather-source-actions'));
-    await clickBy(By.id('se-ECWMF'));
+    await clickBy(By.id('se-ECMWF'));
     await waitByRemoved(By.id('se-loading-weather-data'));
     await waitBy(By.id('se-weather-forecast-data-Wind-not-available'));
     await waitBy(By.id('se-weather-forecast-data-Cloud-not-available'));
