@@ -11,6 +11,7 @@
     flex-direction: column !important;
     align-items: flex-start !important;
     align-self: stretch !important;
+    word-break: break-word;
 }
 .input {
     display: flex !important;

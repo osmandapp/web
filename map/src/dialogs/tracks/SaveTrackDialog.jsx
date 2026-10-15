@@ -11,8 +11,7 @@ import TracksManager, {
 } from '../../manager/track/TracksManager';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContentText from '@mui/material/DialogContentText';
-import { sanitizedFileName } from '../../util/Utils';
-import { saveTrackToCloud } from '../../manager/track/SaveTrackManager';
+import { sanitizedTrackName, saveTrackToCloud } from '../../manager/track/SaveTrackManager';
 import Dialog from '@mui/material/Dialog';
 import LoginContext from '../../context/LoginContext';
 
@@ -79,7 +78,7 @@ export default function SaveTrackDialog({ track: externalTrack = null }) {
     const filter = createFilterOptions();
 
     async function saveTrack() {
-        const preparedName = sanitizedFileName(fileName);
+        const preparedName = sanitizedTrackName(fileName);
         if (preparedName !== fileName) {
             setFileName(preparedName);
         }
@@ -98,7 +97,7 @@ export default function SaveTrackDialog({ track: externalTrack = null }) {
     }
 
     async function confirmedSaveTrack() {
-        const preparedName = sanitizedFileName(fileName);
+        const preparedName = sanitizedTrackName(fileName);
         if (preparedName !== fileName) {
             setFileName(preparedName);
         }

@@ -52,10 +52,31 @@ describe('renameTrack', () => {
         apiGet.mockResolvedValue({ data: 'name is occupied' });
         const ctx = cloudCtx();
 
+        const renamed = await renameTrack('Folder/Old.gpx', 'Folder/', 'New', ctx);
+
+        expect(renamed).toBe(false);
+        expect(ctx.setTrackErrorMsg).toHaveBeenCalledWith({
+            title: 'web:rename_error_title',
+            msg: expect.stringContaining('name is occupied'),
+        });
+        expect(apiGet).toHaveBeenCalledTimes(1);
+    });
+
+    test('the html page of nginx is not shown as the error text', async () => {
+        apiGet.mockResolvedValue({
+            data: '<html><head><title>404 Not Found</title></head></html>',
+            headers: new Headers({ 'Content-Type': 'text/html' }),
+        });
+        const ctx = cloudCtx();
+
         await renameTrack('Folder/Old.gpx', 'Folder/', 'New', ctx);
 
-        expect(ctx.setTrackErrorMsg).toHaveBeenCalledWith({ title: 'Rename error', msg: 'name is occupied' });
-        expect(apiGet).toHaveBeenCalledTimes(1);
+        const { msg } = ctx.setTrackErrorMsg.mock.calls[0][0];
+        expect(msg).not.toContain('<html');
+    });
+
+    test('a successful rename reports it', async () => {
+        expect(await renameTrack('Folder/Old.gpx', 'Folder/', 'New', cloudCtx())).toBe(true);
     });
 });
 

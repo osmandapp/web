@@ -189,22 +189,24 @@ export function cloneTrackObject(track) {
     return cloneDeepWith(track, (value, key) => (key === 'layers' || key === 'gpx' ? value : undefined));
 }
 
+export const FILE_NAME_MAX_BYTES = 255;
+
+export function truncateToBytes(str, maxBytes) {
+    const bytes = new TextEncoder().encode(str);
+    if (bytes.length <= maxBytes) {
+        return str;
+    }
+    // step back over the continuation bytes, so a multi-byte character is never cut in half
+    let end = maxBytes;
+    while (end > 0 && (bytes[end] & 0xc0) === 0x80) {
+        end--;
+    }
+
+    return new TextDecoder().decode(bytes.slice(0, end));
+}
+
 // Used ONLY when creating a new file
-export function sanitizedFileName(filename, isFavoriteGroup = false) {
-    const truncate = (sanitized, length) => {
-        const bytes = new TextEncoder().encode(sanitized);
-        if (bytes.length <= length) {
-            return sanitized;
-        }
-        // step back over the continuation bytes, so a multi-byte character is never cut in half
-        let end = length;
-        while (end > 0 && (bytes[end] & 0xc0) === 0x80) {
-            end--;
-        }
-
-        return new TextDecoder().decode(bytes.slice(0, end));
-    };
-
+export function sanitizedFileName(filename, isFavoriteGroup = false, maxBytes = FILE_NAME_MAX_BYTES) {
     const newlineRe = /\n/g;
     // Note: It is allowed to use / in favorite file names
     const illegalRe = isFavoriteGroup ? /[\?<>\\\*\|"]/g : /[\/\?<>\\:\*\|"]/g;
@@ -217,7 +219,7 @@ export function sanitizedFileName(filename, isFavoriteGroup = false) {
     const empty = '';
     const space = ' ';
 
-    return truncate(
+    return truncateToBytes(
         filename
             .replace(newlineRe, empty) // newline -> empty (better handle Enter key in inputs)
             .replace(illegalRe, space) // illegal chars in filename such as: / ? < > : * | "
@@ -227,7 +229,7 @@ export function sanitizedFileName(filename, isFavoriteGroup = false) {
             .replace(windowsReservedRe, space) // Windows reserved filenames
             .replace(spacesRe, space) // finally, remove double-spaces
             .trim(), // drop start/finish spaces
-        255
+        maxBytes
     );
 }
 

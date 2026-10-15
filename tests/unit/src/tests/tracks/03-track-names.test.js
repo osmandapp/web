@@ -1,4 +1,4 @@
-import { createTrackFreeName, removeFileExtension } from '@map/manager/track/SaveTrackManager';
+import { createTrackFreeName, removeFileExtension, sanitizedTrackName } from '@map/manager/track/SaveTrackManager';
 import { getFileName, isTrackExists, prepareName, validName } from '@map/manager/track/TracksManager';
 
 // groups as createTrackGroups builds them: fullName is the path, groupFiles are the cloud names
@@ -150,4 +150,23 @@ describe('createTrackFreeName', () => {
     test('no tracks to compare with', () => {
         expect(createTrackFreeName('Track', null)).toBe('Track');
     });
+
+    test('a long name with ".gpx.info" fits 255 bytes, a number included', () => {
+        const name = 'я'.repeat(150); // 300 bytes
+        const free = createTrackFreeName(name, [{ name: 'я'.repeat(123) }]);
+        expect(free.endsWith(' - 1')).toBe(true);
+        expect(free).not.toContain('�');
+        expect(bytes(free + '.gpx.info')).toBeLessThanOrEqual(255);
+    });
 });
+
+describe('sanitizedTrackName', () => {
+    test('a long name with ".gpx.info" fits 255 bytes', () => {
+        expect(sanitizedTrackName('a'.repeat(300))).toBe('a'.repeat(246));
+        expect(bytes(sanitizedTrackName('я'.repeat(200)) + '.gpx.info')).toBeLessThanOrEqual(255);
+    });
+});
+
+function bytes(str) {
+    return new TextEncoder().encode(str).length;
+}
