@@ -27,6 +27,7 @@ import {
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialogs/dialog.module.css';
+import styles from './frame.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import isEmpty from 'lodash-es/isEmpty';
@@ -448,7 +449,9 @@ const GlobalFrame = () => {
                     sx={{ mt: `${HEADER_SIZE}px` }}
                     onClose={handleCloseNotification}
                 >
-                    <Alert severity={ctx.notification?.severity}>{ctx.notification?.text}</Alert>
+                    <Alert className={styles.notification} severity={ctx.notification?.severity}>
+                        {ctx.notification?.text}
+                    </Alert>
                 </Snackbar>
                 <OfflineNotification />
                 <GeneralPanelButtons

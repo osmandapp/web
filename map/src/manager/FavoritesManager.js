@@ -13,7 +13,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import i18n from '../i18n';
 import TracksManager from './track/TracksManager';
-import { refreshGlobalFiles } from './track/SaveTrackManager';
+import { getServerErrorMessage, refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
 import { getUniqFileId, MAIN_URL_WITH_SLASH, FAVORITES_URL } from './GlobalManager';
@@ -79,6 +79,7 @@ async function addFavorite(data, group, ctx) {
         throw new Error('File name is required to add a favorite');
     }
 
+    let serverError = null;
     const postAdd = async (updatetime) => {
         try {
             return await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
@@ -86,7 +87,8 @@ async function addFavorite(data, group, ctx) {
                 dataOnErrors: true,
                 throwErrors: true,
             });
-        } catch {
+        } catch (e) {
+            serverError = getServerErrorMessage(e.response);
             return { data: null };
         }
     };
@@ -110,12 +112,15 @@ async function addFavorite(data, group, ctx) {
         resp = await postAdd(freshGroup?.updatetimems);
 
         if (resp?.data) return toResult(resp.data);
-
-        return null;
     } catch (err) {
         console.error('[addFavorite] failed:', err);
-        return null;
     }
+    ctx.setNotification({
+        text: serverError ? `${i18n.t('web:save_favorite_error')}: ${serverError}` : i18n.t('web:save_favorite_error'),
+        severity: 'error',
+    });
+
+    return null;
 }
 
 async function deleteFavorite(data, fileName, updatetime, ind) {
