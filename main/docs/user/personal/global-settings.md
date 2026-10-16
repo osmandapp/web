@@ -99,6 +99,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
     - *Internal app memory*. Only the OsmAnd app has access to its data and none of the external apps.
     - *Shared memory*. No longer available.
     - *External storage 1*. Only 1 OsmAnd app has access and Admin apps and USB.
+    - *Visible external storage 1*. Data is stored in the Android/media folder, which is open to file managers and USB. No additional storage permissions are required.
     - *Multiuser storage*. Only 1 OsmAnd app has access, but it's shared between multiple Android users.
     - *Manually specified*. Depends on the path.
 
