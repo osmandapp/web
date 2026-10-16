@@ -185,21 +185,6 @@ You can select a [threshold value](../navigation/setup/gpx-navigation.md#attach-
 If you select a track and the ***unspecified*** profile icon ("?") is displayed next to the *Settings* icon, tap on it to choose whether to attach the track to roads or just connect the points with a straight line and treat it as a recorded track.
 :::
 
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
-
 
 ## Points & Segments {#points--segments}
 
@@ -276,19 +261,20 @@ You can change route between 2 specific points or between multiple points:
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Plan a route ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Plan a route ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Plan a route ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Added points can be connected with a straight line or a route calculated using a selected routing profile. The Route between points menu allows you to view and change the routing type and settings for route segments and sections.
 
 You can open Route between points by tapping the *Route between points* button, which displays the icon of the currently selected routing profile, or from a [Segment](#segments) or Section menu.
 
-In the Route type tab, you can select a routing profile for the selected segment or section. Straight line is available as the first option, followed by the available routing profiles.
+In the Route tab, you can select a routing profile for the selected segment or section. Straight line is available as the first option, followed by the available routing profiles.
 
-When a route contains only one routing type, the simple Route between points view is displayed. When a route contains multiple routing types, the complex view shows all segments and sections, allowing you to select which part of the route to modify.
+When the route has a single segment with one routing type, the simple Route between points view is displayed. When the route has several segments or a segment with multiple routing types, the complex view shows all segments and sections, allowing you to select which part of the route to modify.
 
 You can also:
-- **Start new segment** — create a new segment and continue adding route points. The new segment uses the same route type as the current one.
-- **Change for whole track** — select a routing type to apply to the entire track.
+- **Continue with a different route type** — select a routing type for the next section of the current segment, then continue adding points on the map. In the complex view, this option is called Continue with a different type and is displayed under the last segment.
+- **Start new segment** — create a new segment that is not connected to the previous part of the track. Select a routing type for the new segment, then continue adding points on the map.
+- **Change type for whole track** — available in the complex view. Select a routing type to apply to the entire track.
 
 In the Settings tab, you can select predefined routing settings for the selected route type.
 
@@ -312,7 +298,7 @@ A track segment is a collection of points connected without **gaps**. In a plan 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/segment_menu.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
+![Plan a route ios](@site/static/img/plan-route/segment_menu_1.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
 
 A route can contain one or more segments. A segment can use a single route type or contain multiple sections with different route types.
 
@@ -320,12 +306,12 @@ In the Route tab, each segment is displayed with its route type and distance. Wh
 
 You can manage a segment using its three-dot menu:
 - **Change route type** — available for a segment with a single route type. Opens Route between points, where you can select a different route type.
-- **Set single route type** — available when a segment contains multiple sections with different route types. Opens Route between points, where you can apply one route type to the segment.
+- **Set single route type** — available when a segment contains multiple sections with different route types. Opens Route between points, where you can apply one route type to the segment. The whole segment is recalculated using the selected routing type.
 - **Sort** — reorder route points manually or use Sort door-to-door to reorder them to minimize the total travel distance.
 - **Save as…** — save the segment as a separate file.
 - **Delete segment** — delete the segment.
 
-To create a new unconnected segment, tap *Start new segment* at the bottom of the Route tab.
+To create a new unconnected segment, tap *Start new segment* at the bottom of the Route tab. To continue the current segment with a different routing type, tap *Continue with a different type* under the last segment, then select a routing type for the next section.
 
 A segment can be divided into [sections](#multimodal-routes) when different route types are used for different parts of the segment. Each section displays its route type and distance.
 
