@@ -474,6 +474,7 @@
     "download_error_msg": "Unable to download {{name}}",
     "save_error_title": "Save error",
     "save_error_msg": "Unable to save {{name}}",
+    "save_favorite_error": "Error saving favorite",
     "rename_error_msg": "Unable to rename {{name}}",
     "duplicate_error_title": "Duplicate error",
     "duplicate_error_msg": "Unable to duplicate {{name}}",

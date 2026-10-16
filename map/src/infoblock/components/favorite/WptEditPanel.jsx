@@ -250,7 +250,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         const res = await FavoritesManager.addFavorite(favorite, selectedGroup, ctx);
         if (!res) {
             setProcess(false);
-            ctx.setNotification({ text: 'Error saving favorite', severity: 'error' });
             return null;
         }
 
