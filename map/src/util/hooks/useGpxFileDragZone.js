@@ -28,6 +28,7 @@ export function useGpxFileDragRootZone() {
     const onDragEnter = useCallback(
         (e) => {
             if (!guard(e)) {
+                rejectFileDrop(e);
                 return;
             }
             ctx.setGpxFileDrag((prev) => (prev.active ? prev : { ...GPX_FILE_DRAG_IDLE, active: true }));
@@ -50,6 +51,7 @@ export function useGpxFileDragRootZone() {
     const onDrop = useCallback(
         (e) => {
             if (!guard(e)) {
+                rejectFileDrop(e);
                 return;
             }
             ctx.setGpxFileDrag(GPX_FILE_DRAG_IDLE);
@@ -145,4 +147,13 @@ function useGpxFileDragGuard(acceptFreeAccount = false) {
         },
         [ltx, acceptFreeAccount]
     );
+}
+
+// otherwise the browser opens a file dropped outside the drop zones
+function rejectFileDrop(e) {
+    if (!hasFiles(e)) {
+        return;
+    }
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'none';
 }
