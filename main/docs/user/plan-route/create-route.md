@@ -269,12 +269,12 @@ You can open Route between points by tapping the *Route between points* button, 
 
 In the Route tab, you can select a routing profile for the selected segment or section. Straight line is available as the first option, followed by the available routing profiles.
 
-When a route contains only one routing type, the simple Route between points view is displayed. When a route contains multiple routing types, the complex view shows all segments and sections, allowing you to select which part of the route to modify.
+When the route has a single segment with one routing type, the simple Route between points view is displayed. When the route has several segments or a segment with multiple routing types, the complex view shows all segments and sections, allowing you to select which part of the route to modify.
 
 You can also:
 - **Continue with a different route type** — select a routing type for the next section of the current segment, then continue adding points on the map. In the complex view, this option is called Continue with a different type and is displayed under the last segment.
 - **Start new segment** — create a new segment that is not connected to the previous part of the track. Select a routing type for the new segment, then continue adding points on the map.
-- **Change type for whole track** — select a routing type to apply to the entire track.
+- **Change type for whole track** — available in the complex view. Select a routing type to apply to the entire track.
 
 In the Settings tab, you can select predefined routing settings for the selected route type.
 
