@@ -37,7 +37,7 @@ At this moment, the following solutions are available:
 
 #### 1. Migrate the OsmAnd data storage folder to “Internal app memory” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- You can change the storage folder by selecting the ***Internal app memory*** option in *Menu → Settings → OsmAnd settings → Data storage folder*.
+- You can change the storage folder by selecting the ***Internal app memory*** option in *Menu → Settings → OsmAnd settings → Data storage → Main storage*.
 
 - However, be aware that internal memory is often limited. As a workaround, you can move important files to internal memory while keeping rarely used maps on the SD card. Use a file manager to manually transfer these files when necessary.
 
@@ -45,7 +45,7 @@ The development team is actively looking for more efficient solutions to improve
 
 #### 2. Use the SD card's “Download” Folder {#2-use-the-sd-cards-download-folder}
 
-You can try resolving the slow map loading issue by specifying the SD card’s **Download** folder for OsmAnd storage under *Menu → Settings → OsmAnd settings → Data storage folder → Manually specified*. The following paths are possible:
+You can try resolving the slow map loading issue by specifying the SD card’s **Download** folder for OsmAnd storage under *Menu → Settings → OsmAnd settings → Data storage → Main storage → Manually specified*. The following paths are possible:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    This path might cause errors when accessing multiple files. For example, you may be able to download the World Overview map, but other regions might not appear.
@@ -65,7 +65,7 @@ Android has become stricter with storage permissions, often limiting access to a
 
 However, OsmAnd doesn’t have the *All files access* permission (due to Google’s restrictions), limiting the choice of folders. One workaround is using the "Media" storage folder, which Android typically grants broader read/write access. To do this:
 
-- Go to *OsmAnd’s Settings → OsmAnd settings → Data storage folder* and review the available storage areas. Use the free space indicator to identify the target storage, often labeled *External storage 2*.
+- Go to *OsmAnd’s Settings → OsmAnd settings → Data storage → Main storage* and review the available storage areas. Use the free space indicator to identify the target storage, often labeled *External storage 2*.
 - If available, select *Visible external storage* for your SD card and move your data when prompted. Otherwise, follow the manual steps below.
 - Note the current folder path, which might look like */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
 - Switch to the *Manually specified* option, and modify the path to a media-accessible folder. On many systems, changing */Android/data/* to */Android/media/* (e.g., ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***) works. Some systems may require different path modifications.
