@@ -419,7 +419,9 @@ export function getCategoryName(category, t) {
         const preparedCategory = category.replace(':', '_');
         return getFirstSubstring(t(`poi_${preparedCategory}`));
     }
-    return getFirstSubstring(t(`poi_${category}`));
+    // an additional value as a category: its name, "Takeaway", not "Takeaway: yes"
+    const name = getFirstSubstring(t(`poi_${category}`));
+    return splitNameValue(name)?.[0] ?? name;
 }
 
 export async function getCategoryIcon(category) {
@@ -474,6 +476,37 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
             }}
         />
     );
+}
+
+// a POI additional value is translated "Name: value" ("Fridge: yes", "Kayaks: limited"), see the header of
+// android OsmAnd/res/values/phrases.xml; null for a translation without it ("Cash", "1:25 fuel")
+export function splitNameValue(translation) {
+    const index = translation?.indexOf(':') ?? -1;
+    if (index < 0) {
+        return null;
+    }
+    const name = translation.substring(0, index).trim();
+    const value = translation.substring(index + 1).trim();
+    return /\p{L}/u.test(name) && value ? [name, value] : null;
+}
+
+// a value inside a group: "Kayaks" for yes, "Kayaks: limited" otherwise, "Cash" as it is
+export function getGroupValueLabel(translation, osmValue) {
+    const nameValue = splitNameValue(translation);
+    return nameValue && osmValue === 'yes' ? nameValue[0] : translation;
+}
+
+// a group row as the apps show it: "Smoking" over "No" for values of one tag, else the group over its values
+export function getGroupRowLabels(translations, osmValues, oneTag, groupName) {
+    const nameValues = translations.map(splitNameValue);
+    const name = nameValues[0]?.[0];
+    if (oneTag && name && nameValues.every((nv) => nv && nv[0].toLowerCase() === name.toLowerCase())) {
+        return { prefix: name, values: nameValues.map((nv) => nv[1].charAt(0).toUpperCase() + nv[1].slice(1)) };
+    }
+    return {
+        prefix: groupName,
+        values: translations.map((translation, i) => getGroupValueLabel(translation, osmValues?.[i])),
+    };
 }
 
 export function translateWithSplit(t, string) {
