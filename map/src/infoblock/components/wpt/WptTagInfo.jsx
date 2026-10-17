@@ -10,7 +10,7 @@ import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
 import capitalize from 'lodash-es/capitalize';
-import { translateWithSplit } from '../../../manager/PoiManager';
+import { getGroupRowLabels, getGroupValueLabel, splitNameValue, translateWithSplit } from '../../../manager/PoiManager';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
 import { sanitizeHtml, htmlToText, textToHTML } from '../../../frame/components/editor/htmlUtils';
 
@@ -205,19 +205,45 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         return capitalize(key.replaceAll('_', ' '));
     }
 
+    // a value written "Name: value" outside a group: "Takeaway" over "Yes"
+    function getNameValue(tag) {
+        if (tag.collapsable || !tag.textPrefix?.endsWith(`_${tag.value}`)) {
+            return null;
+        }
+        return splitNameValue(translateWithSplit(t, `${POI_PREFIX}${tag.textPrefix}`));
+    }
+
     function getValue(tag) {
         let value = prepareValueFromList(tag);
+        const nameValue = getNameValue(tag);
+        if (nameValue) {
+            return (
+                <ListItemText>
+                    <Typography className={styles.tagPrefix} noWrap>
+                        {nameValue[0]}
+                    </Typography>
+                    <MenuItemWithLines
+                        name={nameValue[1].charAt(0).toUpperCase() + nameValue[1].slice(1)}
+                        maxLines={2}
+                        className={styles.tagName}
+                    />
+                </ListItemText>
+            );
+        }
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
+            let prefix = getTranslation({ key: tag.textPrefix });
+            if (tag.osmValues) {
+                const translations = items.map((item) => translateWithSplit(t, `${POI_PREFIX}${item}`));
+                const labels = getGroupRowLabels(translations, tag.osmValues, tag.oneTag, prefix);
+                prefix = labels.prefix;
+                value = labels.values.join(' • ');
+            }
 
             return (
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
-                        <MenuItemWithLines
-                            name={getTranslation({ key: tag.textPrefix })}
-                            maxLines={2}
-                            className={styles.tagPrefix}
-                        />
+                        <MenuItemWithLines name={prefix} maxLines={2} className={styles.tagPrefix} />
                         <MenuItemWithLines name={value} maxLines={1} className={styles.tagName} />
                     </ListItemText>
                     {items.length > 1 && (
@@ -339,7 +365,10 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         typeof item === 'string' ? (
                             <MenuItem disableRipple key={index} divider className={styles.tagList}>
                                 <Typography key={index} className={styles.tagName}>
-                                    {translateWithSplit(t, `${POI_PREFIX}${item}`)}
+                                    {getGroupValueLabel(
+                                        translateWithSplit(t, `${POI_PREFIX}${item}`),
+                                        tag.osmValues?.[index]
+                                    )}
                                 </Typography>
                             </MenuItem>
                         ) : (
