@@ -32,7 +32,6 @@ export const GPX_FILE_EXT = '.gpx';
 export const INFO_FILE_EXT = '.info';
 export const KMZ_FILE_EXT = '.kmz';
 
-// a bigger gpx or kml track takes more than 10 s to open on the web
 const MAX_TEXT_TRACK_FILE_MB = 20;
 const MAX_KMZ_FILE_MB = 2;
 

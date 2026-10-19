@@ -272,7 +272,6 @@ function getSlopes(result, ctx, sumDist) {
     if (STEP > 5) {
         res = smoothSlopes(res, 0.3);
     }
-    // not Math.min(...array): a long track has more slopes than a call can take arguments
     res.min = Math.trunc(calculatedSlope.reduce((a, b) => Math.min(a, b), Infinity) * 100) / 100;
     res.max = Math.trunc(calculatedSlope.reduce((a, b) => Math.max(a, b), -Infinity) * 100) / 100;
     return res;
@@ -282,7 +281,6 @@ export function isSrtmAppeared(trackData, ctx) {
     return !trackData.srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis;
 }
 
-// slopeDist is sorted, so the first value past the lower bound is the first one in the range
 function findSlopeIndex(slopeDist, dist, step) {
     let lo = 0;
     let hi = slopeDist.length;
