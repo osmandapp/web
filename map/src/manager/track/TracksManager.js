@@ -320,7 +320,7 @@ export function getTrackPoints(track) {
     if (track.tracks) {
         track.tracks.forEach((subTrack) => {
             if (Array.isArray(subTrack.points) && subTrack.points.length > 0) {
-                points.push(...processTrackPoints(subTrack.points));
+                points = points.concat(processTrackPoints(subTrack.points));
             }
         });
     } else if (track.points) {

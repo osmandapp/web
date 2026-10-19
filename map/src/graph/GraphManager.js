@@ -272,8 +272,9 @@ function getSlopes(result, ctx, sumDist) {
     if (STEP > 5) {
         res = smoothSlopes(res, 0.3);
     }
-    res.min = Math.trunc(Math.min(...calculatedSlope) * 100) / 100;
-    res.max = Math.trunc(Math.max(...calculatedSlope) * 100) / 100;
+    // not Math.min(...array): a long track has more slopes than a call can take arguments
+    res.min = Math.trunc(calculatedSlope.reduce((a, b) => Math.min(a, b), Infinity) * 100) / 100;
+    res.max = Math.trunc(calculatedSlope.reduce((a, b) => Math.max(a, b), -Infinity) * 100) / 100;
     return res;
 }
 
