@@ -2,7 +2,6 @@ import Utils, { cloneTrackObject, quickNaNfix, toHHMMSS } from '../../util/Utils
 import FavoritesManager from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
-import indexOf from 'lodash-es/indexOf';
 import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     isCloudTrack,
@@ -444,7 +443,8 @@ export function addDistanceToPoints(points) {
     let distanceTotal = 0;
     let distanceSegment = 0;
     let prevGapInd = 0;
-    for (let point of points) {
+    for (let ind = 0; ind < points.length; ind++) {
+        const point = points[ind];
         if (point.distance) {
             point.distance = parseFloat(point.distance.toFixed(2));
         }
@@ -478,7 +478,6 @@ export function addDistanceToPoints(points) {
                 distanceSegment = 0;
             }
         } else {
-            let ind = indexOf(points, point);
             if (ind !== 0) {
                 let prevPoint = points[ind - 1];
                 if (prevGapInd !== ind) {
@@ -874,9 +873,9 @@ function updateGapProfileOneSegment(routePoint, points) {
     return false;
 }
 
-function getEle(point, elevation, array) {
+function getEle(point, elevation, array, pointInd) {
     let ele = point[elevation];
-    let ind = array.indexOf(point);
+    let ind = pointInd;
     //value smoothing
     while (isNaN(ele) || ele === NAN_MARKER || ele === null || ele === undefined) {
         if (array && ind !== 0) {
@@ -884,7 +883,7 @@ function getEle(point, elevation, array) {
             if (prevP && prevP[elevation] && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
                 return Number(prevP[elevation]);
             } else {
-                if (ind - array.indexOf(point) > 2) {
+                if (ind - pointInd > 2) {
                     return undefined;
                 } else {
                     ind++;

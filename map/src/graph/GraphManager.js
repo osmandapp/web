@@ -253,9 +253,7 @@ function getSlopes(result, ctx, sumDist) {
         let current = result[i];
         if (current) {
             let dist = current[DISTANCE];
-            let ind = calculatedSlopeDist.findIndex(
-                (d) => d / 1000 > dist - STEP / 1000 && d / 1000 < dist + STEP / 1000
-            );
+            let ind = findSlopeIndex(calculatedSlopeDist, dist, STEP);
             if (ind !== -1 && ind >= 0) {
                 result[i][SLOPE] = Math.trunc(calculatedSlope[ind] * 100) / 100;
             }
@@ -281,6 +279,22 @@ function getSlopes(result, ctx, sumDist) {
 
 export function isSrtmAppeared(trackData, ctx) {
     return !trackData.srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis;
+}
+
+// slopeDist is sorted, so the first value past the lower bound is the first one in the range
+function findSlopeIndex(slopeDist, dist, step) {
+    let lo = 0;
+    let hi = slopeDist.length;
+    while (lo < hi) {
+        const mid = (lo + hi) >> 1;
+        if (slopeDist[mid] / 1000 > dist - step / 1000) {
+            hi = mid;
+        } else {
+            lo = mid + 1;
+        }
+    }
+
+    return lo < slopeDist.length && slopeDist[lo] / 1000 < dist + step / 1000 ? lo : -1;
 }
 
 function interpolate(totalLength, step, result) {
