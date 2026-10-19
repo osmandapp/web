@@ -1,0 +1,72 @@
+---
+slug: north-america-terrain
+title: High-Resolution Terrain for North America
+authors: 
+ - tina 
+ - eugene
+tags: [marketing,map,android,ios]
+unlisted: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+The mountains, canyons, and valleys of North America now look sharper in OsmAnd. We have updated the terrain data for the United States (including Alaska), Canada, and Mexico, so relief and contour lines across the continent now carry noticeably more detail.
+
+{/*truncate*/}
+
+## What Changed
+
+The terrain maps for North America are now built from high-resolution national elevation data. Depending on the area, the data resolution ranges from 10 to 30 meters. In practice, that means smaller ridges, narrower gorges, and steeper cliffs show up where the map used to smooth them out.
+
+The update covers two map types:
+
+- [Terrain maps (3D)](https://osmand.net/docs/user/plugins/topography#3d-relief-maps) — the base for [3D relief](https://osmand.net/docs/user/plugins/topography#3d-relief), [Hillshade, and Slope](https://osmand.net/docs/user/plugins/topography#hillshade-slope-and-altitude-layers) layers.
+- [Contour lines](https://osmand.net/docs/user/plugins/topography#contour-lines) — regenerated from the same new data, so they match the relief exactly.
+
+More detail takes a bit more space: updated maps are up to one and a half times larger than before.
+
+## Updated Regions
+
+- United States, including Alaska
+- Canada
+- Mexico
+
+## See It in the Grand Canyon
+
+|| |
+|:--------|:---------|
+|![Grand Canyon from Above](./img/grand_canyon_above.webp)| ![Grand Canyon in 3D](./img/grand_canyon_3d.webp) |
+
+Few places test a terrain map like the Grand Canyon. Seen from above, the side canyons branch out in fine detail, and the contour lines follow every bend of the walls down to the Colorado River.
+
+Tilt the map into 3D, and the canyon rises off the screen: Plateau Point, Skeleton Point, and the trail down to Phantom Ranch sit right where the terrain says they should.
+
+<iframe
+  width="315"
+  height="560"
+  src="https://www.youtube.com/embed/anoHS_9k-U4"
+  title="Grand Canyon in 3D in OsmAnd"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowFullScreen
+></iframe>
+
+## Works Offline
+
+Terrain maps are stored on your device, just like the rest of your OsmAnd maps. Once downloaded, the relief, contour lines, and 3D view keep working without an internet connection, which is handy at the bottom of a canyon, where signal is rarely part of the scenery.
+
+## How to Get the Update
+
+If you already have terrain or contour line maps for these regions, simply update them in the [Updates tab](https://osmand.net/docs/user/personal/maps-resources#updates-menu) of Maps & Resources. There is no need to delete the old files first. If you do not have them yet, download the [Terrain map (3D)](https://osmand.net/docs/user/plugins/topography#3d-relief-maps) and [Contour lines](https://osmand.net/docs/user/plugins/topography#contour-lines-meters-or-feet) for the regions you need.
+
+## Questions or Issues
+
+If something looks off or you have questions, contact OsmAnd support at support@osmand.net, or visit the [Support page](https://osmand.net/help-online/support/) for more help options.
