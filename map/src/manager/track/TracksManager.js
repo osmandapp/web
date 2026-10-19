@@ -526,17 +526,28 @@ function showDownloadError(ctx, name) {
     });
 }
 
-export function rejectTooLargeFile(file, ctx) {
-    const maxSizeMb = file.name.toLowerCase().endsWith(KMZ_FILE_EXT) ? MAX_KMZ_FILE_MB : MAX_TEXT_TRACK_FILE_MB;
-    if (file.size <= maxSizeMb * 1024 * 1024) {
-        return false;
+export function rejectTooLargeFiles(files, ctx) {
+    const tooLarge = files.filter((file) => file.size > getMaxImportSizeMb(file) * 1024 * 1024);
+    if (tooLarge.length === 0) {
+        return files;
     }
+    const reasons = [MAX_TEXT_TRACK_FILE_MB, MAX_KMZ_FILE_MB]
+        .map((size) => ({
+            size,
+            names: tooLarge.filter((file) => getMaxImportSizeMb(file) === size).map((file) => file.name),
+        }))
+        .filter(({ names }) => names.length > 0)
+        .map(({ size, names }) => i18n.t('web:import_too_large_msg', { name: names.join(', '), size }));
     ctx.setTrackErrorMsg({
         title: i18n.t('web:import_error_title'),
-        msg: i18n.t('web:import_too_large_msg', { name: file.name, size: maxSizeMb }),
+        msg: [...reasons, i18n.t('web:import_too_large_hint')].join(' '),
     });
 
-    return true;
+    return files.filter((file) => !tooLarge.includes(file));
+}
+
+function getMaxImportSizeMb(file) {
+    return file.name.toLowerCase().endsWith(KMZ_FILE_EXT) ? MAX_KMZ_FILE_MB : MAX_TEXT_TRACK_FILE_MB;
 }
 
 export function isTooLargeToOpen(file) {
