@@ -1,7 +1,10 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
+import AppContext from '../../context/AppContext';
+import { rejectTooLargeFile } from '../../manager/track/TracksManager';
 import { useMutator } from '../Utils';
 
 export default function useGpxImport({ canImport, isTrackFile, onFilesSelected, readFile, saveFile }) {
+    const ctx = useContext(AppContext);
     const [uploadedFiles, mutateUploadedFiles] = useMutator({});
 
     const importGpxFiles = useCallback(
@@ -10,7 +13,9 @@ export default function useGpxImport({ canImport, isTrackFile, onFilesSelected, 
                 return;
             }
 
-            const files = Array.from(fileList || []).filter(isTrackFile);
+            const files = Array.from(fileList || [])
+                .filter((element) => isTrackFile(element))
+                .filter((file) => !rejectTooLargeFile(file, ctx));
             if (files.length === 0) {
                 return;
             }

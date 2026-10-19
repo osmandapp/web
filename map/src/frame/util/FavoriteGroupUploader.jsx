@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import LoginContext from '../../context/LoginContext';
 import { cloneTrackObject, useMutator } from '../../util/Utils';
-import TracksManager, { isEmptyTrack } from '../../manager/track/TracksManager';
+import TracksManager, { isEmptyTrack, rejectTooLargeFile } from '../../manager/track/TracksManager';
 import { styled } from '@mui/material/styles';
 import {
     createFavGroupFreeName,
@@ -83,6 +83,10 @@ export default function FavoriteGroupUploader({ children }) {
         ctx.setFavLoading(true);
         const selected = e.target.files.length === 1;
         Array.from(e.target.files).forEach((file) => {
+            if (rejectTooLargeFile(file, ctx)) {
+                ctx.setFavLoading(false);
+                return;
+            }
             const reader = new FileReader();
             reader.addEventListener('load', async () => {
                 const track = await TracksManager.getTrackData(file);

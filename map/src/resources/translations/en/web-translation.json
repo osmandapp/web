@@ -463,6 +463,7 @@
     "drop_gpx_to_import": "Drop GPX file to import",
     "import_error_title": "Import error",
     "import_error_msg": "Unable to import {{name}}",
+    "import_too_large_msg": "Unable to import {{name}}: the file is larger than {{size}} MB",
     "open_error_title": "Open error",
     "open_error_msg": "{{name}} is saved but could not be opened",
     "open_track_error_msg": "Unable to open {{name}}",

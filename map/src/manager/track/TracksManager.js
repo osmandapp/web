@@ -3,7 +3,7 @@ import FavoritesManager from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
-import { apiGet, apiPost, digest } from '../../util/HttpApi';
+import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     isCloudTrack,
     isRouteTrack,
@@ -32,6 +32,11 @@ export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
 export const INFO_FILE_EXT = '.info';
 export const KMZ_FILE_EXT = '.kmz';
+
+// the browser reads a gpx or kml file into one string (up to 512 MB) and a kmz file into one buffer
+const MAX_TEXT_TRACK_FILE_MB = 500;
+const MAX_KMZ_FILE_MB = 1000;
+
 export const EMPTY_FILE_NAME = `__folder__${INFO_FILE_EXT}`;
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
@@ -520,6 +525,19 @@ function showDownloadError(ctx, name) {
         title: i18n.t('web:download_error_title'),
         msg: i18n.t('web:download_error_msg', { name }),
     });
+}
+
+export function rejectTooLargeFile(file, ctx) {
+    const maxSizeMb = file.name.toLowerCase().endsWith(KMZ_FILE_EXT) ? MAX_KMZ_FILE_MB : MAX_TEXT_TRACK_FILE_MB;
+    if (file.size <= maxSizeMb * 1024 * 1024) {
+        return false;
+    }
+    ctx.setTrackErrorMsg({
+        title: i18n.t('web:import_error_title'),
+        msg: i18n.t('web:import_too_large_msg', { name: file.name, size: maxSizeMb }),
+    });
+
+    return true;
 }
 
 export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, simplified, ctx }) => {
