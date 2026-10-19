@@ -319,7 +319,7 @@ The *Route Guidance* widgets contain information about:
 |:------------|:------------|
 | Enable      | **Android:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*  |
 |      | **iOS:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*   |
-| By tapping  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lane**: No changes. |
+| By tapping  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lanes**: No changes. |
 | Long tap    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lanes**: No changes. |
 
 
@@ -327,7 +327,9 @@ The *Route Guidance* widgets contain information about:
 
 ![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
 
-The **Lanes** widget highlights the current lane when navigation is active and displays the lane layout for the actual road when navigation is passive. A distance indicator is also shown below the lane diagram, representing how far remains until the maneuver where the lane guidance applies. This widget is available only for Top and Bottom panels. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn).
+The **Lanes** widget highlights the current lane when navigation is active and displays the lane layout for the actual road when navigation is passive. A distance indicator is also shown below the lane diagram, representing how far remains until the maneuver where the lane guidance applies. This widget is available only for Top and Bottom panels. The data is taken from [OpenStreetMap project](https://wiki.openstreetmap.org/wiki/Key:turn). If the map data does not specify a direction for every lane, OsmAnd completes the missing directions based on the layout of the intersection.
+
+On Android, the widget settings include the *Display on minor intersections when navigating straight* option, which is enabled by default. With this option, the widget shows lanes at every intersection you pass while driving straight, even when there is no voice prompt for that intersection.
 
 
 ### Next Turn {#next-turn}
