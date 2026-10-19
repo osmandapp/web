@@ -124,6 +124,8 @@ async function createConfig(){
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
+        // Default preview image for links shared in social networks (og:image, twitter:image)
+        image: 'img/social-card.png',
         navbar: {
           title: 'OsmAnd',
           logo: {
