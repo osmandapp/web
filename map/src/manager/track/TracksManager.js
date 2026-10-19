@@ -32,9 +32,9 @@ export const GPX_FILE_EXT = '.gpx';
 export const INFO_FILE_EXT = '.info';
 export const KMZ_FILE_EXT = '.kmz';
 
-// the browser reads a gpx or kml file into one string (up to 512 MB) and a kmz file into one buffer
-const MAX_TEXT_TRACK_FILE_MB = 500;
-const MAX_KMZ_FILE_MB = 1000;
+// a bigger gpx or kml track takes more than 10 s to open on the web
+const MAX_TEXT_TRACK_FILE_MB = 20;
+const MAX_KMZ_FILE_MB = 2;
 
 export const EMPTY_FILE_NAME = `__folder__${INFO_FILE_EXT}`;
 const GET_SRTM_DATA = 'get-srtm-data';
@@ -537,6 +537,10 @@ export function rejectTooLargeFile(file, ctx) {
     });
 
     return true;
+}
+
+export function isTooLargeToOpen(file) {
+    return file.filesize > MAX_TEXT_TRACK_FILE_MB * 1024 * 1024;
 }
 
 export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, simplified, ctx }) => {
@@ -1590,6 +1594,11 @@ export async function openTrackOnMap({
                 [file.name]: newGpxFiles[file.name],
             };
         }
+    } else if (isTooLargeToOpen(file)) {
+        ctx.setNotification({
+            text: i18n.t('web:track_too_large_to_open', { name: file.name, size: MAX_TEXT_TRACK_FILE_MB }),
+            severity: 'warning',
+        });
     } else {
         // load file
         if (setProgressVisible) {
