@@ -24,7 +24,7 @@ import { SHARE_TYPE, SMART_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
-import { compressJSONToBlob } from '../../util/GzipCompression';
+import { compressFileToBlob, compressJSONToBlob } from '../../util/GzipCompression';
 import { findInfoFile } from './TrackAppearanceManager';
 import i18n from '../../i18n';
 
@@ -196,7 +196,7 @@ async function loadTrackData(file) {
 
 async function getTrackData(file) {
     let formData = new FormData();
-    formData.append('file', file);
+    formData.append('file', await compressFileToBlob(file), file.name);
     const response = await apiGet(`${process.env.REACT_APP_GPX_API}/gpx/process-track-data`, {
         params: {
             name: file.name,
