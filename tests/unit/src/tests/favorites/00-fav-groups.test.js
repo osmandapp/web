@@ -4,6 +4,7 @@ import FavoritesManager, {
     createFavGroupFreeName,
     decodeGroupNameFromFile,
     extractBaseFavFileName,
+    findFavGroupByFileName,
     findSelectedWpt,
     getFavGroupKey,
     getFavMenuListByLayers,
@@ -158,5 +159,21 @@ describe('the size of a group', () => {
 
         expect(getSize(group('Trips', { groupSize: '5' }), t)).toBe('5 shared_string_gpx_points');
         expect(getSize(group('Trips', {}), t)).toBe('empty');
+    });
+});
+
+describe('the group of a file in the Share menu', () => {
+    test('the group is found by the file name, before and after the groups are loaded', () => {
+        const listFile = favFile('Trips_%_Alps');
+        // the Share menu opened by URL keeps a copy of the list-files entry made before createGroup sets folder
+        const sharedFile = { ...listFile, mapObj: true };
+
+        expect(findFavGroupByFileName(undefined, sharedFile.name)).toBeUndefined();
+
+        const groups = [FavoritesManager.createGroup(favFile('Hikes')), FavoritesManager.createGroup(listFile)];
+
+        expect(sharedFile.folder).toBeUndefined();
+        expect(findFavGroupByFileName(groups, sharedFile.name)).toBe(groups[1]);
+        expect(findFavGroupByFileName(groups, favFile('Lakes').name)).toBeUndefined();
     });
 });
