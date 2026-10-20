@@ -10,6 +10,7 @@ import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
 import capitalize from 'lodash-es/capitalize';
+import upperFirst from 'lodash-es/upperFirst';
 import { getGroupRowLabels, getGroupValueLabel, splitNameValue, translateWithSplit } from '../../../manager/PoiManager';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
 import { sanitizeHtml, htmlToText, textToHTML } from '../../../frame/components/editor/htmlUtils';
@@ -124,7 +125,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     }
 
     function showPrefix(tag) {
-        return tag.value !== tag.textPrefix;
+        return !prefixContainsValue(tag) && tag.value !== tag.textPrefix;
     }
 
     function prefixContainsValue(tag) {
@@ -166,17 +167,15 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         if (tag.isUrl || tag.isRawValue) {
             return tag.value;
         }
-        if (prefixContainsValue(tag)) {
-            tag.value = tag.textPrefix;
-        }
-        const items = tag.value.split(SEPARATOR);
+        const value = prefixContainsValue(tag) ? tag.textPrefix : tag.value;
+        const items = value.split(SEPARATOR);
         if (items.length > 1) {
             const values = items.map((item) => {
                 return prepareValue(item, addPrefix, POI_PREFIX);
             });
             return values.join(' • ');
         }
-        return prepareValue(tag.value, addPrefix, POI_PREFIX);
+        return prepareValue(value, addPrefix, POI_PREFIX);
     }
 
     function openMoreInfoDialog(tag) {
@@ -214,30 +213,17 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     }
 
     function getValue(tag) {
-        let value = prepareValueFromList(tag);
-        const nameValue = getNameValue(tag);
-        if (nameValue) {
-            return (
-                <ListItemText>
-                    <Typography className={styles.tagPrefix} noWrap>
-                        {nameValue[0]}
-                    </Typography>
-                    <MenuItemWithLines
-                        name={nameValue[1].charAt(0).toUpperCase() + nameValue[1].slice(1)}
-                        maxLines={2}
-                        className={styles.tagName}
-                    />
-                </ListItemText>
-            );
-        }
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
             let prefix = getTranslation({ key: tag.textPrefix });
+            let value;
             if (tag.osmValues) {
-                const translations = items.map((item) => translateWithSplit(t, `${POI_PREFIX}${item}`));
+                const translations = items.map((item) => prepareValue(item, false, POI_PREFIX));
                 const labels = getGroupRowLabels(translations, tag.osmValues, tag.oneTag, prefix);
                 prefix = labels.prefix;
                 value = labels.values.join(' • ');
+            } else {
+                value = prepareValueFromList(tag);
             }
 
             return (
@@ -254,7 +240,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         } else if (tag.otherLangs) {
             const mainTag = newTag ?? tag;
             const listTags = tagList ?? mainTag.otherLangs;
-            value = prepareValueFromList(mainTag);
+            const value = prepareValueFromList(mainTag);
             return (
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
@@ -273,18 +259,17 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 </>
             );
         } else {
+            const nameValue = getNameValue(tag);
+            const prefix = nameValue?.[0] ?? (showPrefix(tag) ? getTranslation({ key: tag.textPrefix }) : null);
+            const text = nameValue ? upperFirst(nameValue[1]) : getText(tag, prepareValueFromList(tag));
             return (
                 <ListItemText onClick={() => openMoreInfoDialog(tag)}>
-                    {showPrefix(tag) && (
+                    {prefix && (
                         <Typography className={styles.tagPrefix} noWrap>
-                            {getTranslation({ key: tag.textPrefix })}
+                            {prefix}
                         </Typography>
                     )}
-                    <MenuItemWithLines
-                        name={getText(tag, value)}
-                        maxLines={tag.desc ? 5 : 2}
-                        className={styles.tagName}
-                    />
+                    <MenuItemWithLines name={text} maxLines={tag.desc ? 5 : 2} className={styles.tagName} />
                 </ListItemText>
             );
         }

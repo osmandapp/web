@@ -1,6 +1,7 @@
 import { apiGet } from '../util/HttpApi';
 import iconsRaw from '../resources/generated/poiicons.json';
 import capitalize from 'lodash-es/capitalize';
+import upperFirst from 'lodash-es/upperFirst';
 import isEmpty from 'lodash-es/isEmpty';
 import {
     CATEGORY_ICON,
@@ -478,8 +479,7 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
     );
 }
 
-// a POI additional value is translated "Name: value" ("Fridge: yes", "Kayaks: limited"), see the header of
-// android OsmAnd/res/values/phrases.xml; null for a translation without it ("Cash", "1:25 fuel")
+// "Fridge: yes" -> ["Fridge", "yes"] (android phrases.xml format), null for "Cash" or "1:25 fuel"
 export function splitNameValue(translation) {
     const index = translation?.indexOf(':') ?? -1;
     if (index < 0) {
@@ -501,7 +501,7 @@ export function getGroupRowLabels(translations, osmValues, oneTag, groupName) {
     const nameValues = translations.map(splitNameValue);
     const name = nameValues[0]?.[0];
     if (oneTag && name && nameValues.every((nv) => nv && nv[0].toLowerCase() === name.toLowerCase())) {
-        return { prefix: name, values: nameValues.map((nv) => nv[1].charAt(0).toUpperCase() + nv[1].slice(1)) };
+        return { prefix: name, values: nameValues.map((nv) => upperFirst(nv[1])) };
     }
     return {
         prefix: groupName,
