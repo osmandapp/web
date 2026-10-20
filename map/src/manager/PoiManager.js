@@ -490,23 +490,18 @@ export function splitNameValue(translation) {
     return /\p{L}/u.test(name) && value ? [name, value] : null;
 }
 
-// a value inside a group: "Kayaks" for yes, "Kayaks: limited" otherwise, "Cash" as it is
-export function getGroupValueLabel(translation, osmValue) {
-    const nameValue = splitNameValue(translation);
-    return nameValue && osmValue === 'yes' ? nameValue[0] : translation;
-}
+// how /search/visible-tags says to show a value (AmenityTagEntriesBuilder.ValueLabel of OsmAnd-shared)
+const VALUE_LABEL_NAME = 'NAME';
+const VALUE_LABEL_WHOLE = 'WHOLE';
 
-// a group row as the apps show it: "Smoking" over "No" for values of one tag, else the group over its values
-export function getGroupRowLabels(translations, osmValues, oneTag, groupName) {
-    const nameValues = translations.map(splitNameValue);
-    const name = nameValues[0]?.[0];
-    if (oneTag && name && nameValues.every((nv) => nv && nv[0].toLowerCase() === name.toLowerCase())) {
-        return { prefix: name, values: nameValues.map((nv) => upperFirst(nv[1])) };
+export function getValueLabelParts(translation, label) {
+    const nameValue = label && label !== VALUE_LABEL_WHOLE ? splitNameValue(translation) : null;
+    if (!nameValue) {
+        return { tagName: null, tagValue: translation };
     }
-    return {
-        prefix: groupName,
-        values: translations.map((translation, i) => getGroupValueLabel(translation, osmValues?.[i])),
-    };
+    return label === VALUE_LABEL_NAME
+        ? { tagName: null, tagValue: nameValue[0] }
+        : { tagName: nameValue[0], tagValue: upperFirst(nameValue[1]) };
 }
 
 export function translateWithSplit(t, string) {

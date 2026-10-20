@@ -1,4 +1,4 @@
-import { getGroupRowLabels, getGroupValueLabel, splitNameValue } from '@map/manager/PoiManager';
+import { getValueLabelParts, splitNameValue } from '@map/manager/PoiManager';
 
 // POI additional values are translated "Name: value" (android OsmAnd/res/values/phrases.xml)
 describe('splitNameValue', () => {
@@ -16,31 +16,29 @@ describe('splitNameValue', () => {
     });
 });
 
-describe('group labels', () => {
-    test('values of one tag: the name over the values', () => {
-        expect(getGroupRowLabels(['Smoking: no'], ['no'], true, 'Smoking')).toEqual({
-            prefix: 'Smoking',
-            values: ['No'],
+describe('getValueLabelParts', () => {
+    test('a value outside a group or of one tag: the tag name over the value', () => {
+        expect(getValueLabelParts('Smoking: not allowed', 'NAME_OVER_VALUE')).toEqual({
+            tagName: 'Smoking',
+            tagValue: 'Not allowed',
         });
-        expect(
-            getGroupRowLabels(['Smoking: allowed', 'Smoking: outside only'], ['yes', 'outside'], true, 'Smoking')
-        ).toEqual({ prefix: 'Smoking', values: ['Allowed', 'Outside only'] });
+        expect(getValueLabelParts('Takeaway: yes', 'NAME_OVER_VALUE')).toEqual({
+            tagName: 'Takeaway',
+            tagValue: 'Yes',
+        });
     });
 
-    test('options of a list: the group over the names, other values whole', () => {
-        expect(getGroupRowLabels(['Kayaks: yes'], ['yes'], false, 'Rented boats')).toEqual({
-            prefix: 'Rented boats',
-            values: ['Kayaks'],
-        });
-        expect(
-            getGroupRowLabels(['Kayaks: yes', 'Canoe: limited', 'Cash'], ['yes', 'limited', 'yes'], false, 'Group')
-        ).toEqual({ prefix: 'Group', values: ['Kayaks', 'Canoe: limited', 'Cash'] });
+    test('an option of a list: its name for yes, other values whole', () => {
+        expect(getValueLabelParts('Kayaks: yes', 'NAME')).toEqual({ tagName: null, tagValue: 'Kayaks' });
+        expect(getValueLabelParts('Kayaks: limited', 'WHOLE')).toEqual({ tagName: null, tagValue: 'Kayaks: limited' });
     });
 
-    test('older translations without a name are shown as before', () => {
-        expect(getGroupRowLabels(['Yes'], ['yes'], true, 'Fridge')).toEqual({ prefix: 'Fridge', values: ['Yes'] });
-        expect(getGroupValueLabel('Yes', 'yes')).toBe('Yes');
-        expect(getGroupValueLabel('Toilets: yes', 'yes')).toBe('Toilets');
-        expect(getGroupValueLabel('Toilets: no', 'no')).toBe('Toilets: no');
+    test('a translation without a name or no label from an older server: as it is', () => {
+        expect(getValueLabelParts('Not allowed', 'NAME_OVER_VALUE')).toEqual({
+            tagName: null,
+            tagValue: 'Not allowed',
+        });
+        expect(getValueLabelParts('Cash', 'NAME')).toEqual({ tagName: null, tagValue: 'Cash' });
+        expect(getValueLabelParts('Toilets: yes', undefined)).toEqual({ tagName: null, tagValue: 'Toilets: yes' });
     });
 });

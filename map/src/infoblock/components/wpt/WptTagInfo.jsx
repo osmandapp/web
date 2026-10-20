@@ -10,8 +10,7 @@ import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
 import capitalize from 'lodash-es/capitalize';
-import upperFirst from 'lodash-es/upperFirst';
-import { getGroupRowLabels, getGroupValueLabel, splitNameValue, translateWithSplit } from '../../../manager/PoiManager';
+import { getValueLabelParts, translateWithSplit } from '../../../manager/PoiManager';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
 import { sanitizeHtml, htmlToText, textToHTML } from '../../../frame/components/editor/htmlUtils';
 
@@ -204,24 +203,17 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         return capitalize(key.replaceAll('_', ' '));
     }
 
-    // a value written "Name: value" outside a group: "Takeaway" over "Yes"
-    function getNameValue(tag) {
-        if (tag.collapsable || !tag.textPrefix?.endsWith(`_${tag.value}`)) {
-            return null;
-        }
-        return splitNameValue(translateWithSplit(t, `${POI_PREFIX}${tag.textPrefix}`));
-    }
-
     function getValue(tag) {
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
             let prefix = getTranslation({ key: tag.textPrefix });
             let value;
-            if (tag.osmValues) {
-                const translations = items.map((item) => prepareValue(item, false, POI_PREFIX));
-                const labels = getGroupRowLabels(translations, tag.osmValues, tag.oneTag, prefix);
-                prefix = labels.prefix;
-                value = labels.values.join(' • ');
+            if (tag.labels) {
+                const parts = items.map((item, i) =>
+                    getValueLabelParts(prepareValue(item, false, POI_PREFIX), tag.labels[i])
+                );
+                prefix = parts.find((part) => part.tagName)?.tagName ?? prefix;
+                value = parts.map((part) => part.tagValue).join(' • ');
             } else {
                 value = prepareValueFromList(tag);
             }
@@ -259,9 +251,11 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 </>
             );
         } else {
-            const nameValue = getNameValue(tag);
-            const prefix = nameValue?.[0] ?? (showPrefix(tag) ? getTranslation({ key: tag.textPrefix }) : null);
-            const text = nameValue ? upperFirst(nameValue[1]) : getText(tag, prepareValueFromList(tag));
+            const { tagName, tagValue } = tag.labels
+                ? getValueLabelParts(translateWithSplit(t, `${POI_PREFIX}${tag.textPrefix}`), tag.labels[0])
+                : {};
+            const prefix = tagName ?? (showPrefix(tag) ? getTranslation({ key: tag.textPrefix }) : null);
+            const text = tagName ? tagValue : getText(tag, prepareValueFromList(tag));
             return (
                 <ListItemText onClick={() => openMoreInfoDialog(tag)}>
                     {prefix && (
@@ -350,10 +344,12 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         typeof item === 'string' ? (
                             <MenuItem disableRipple key={index} divider className={styles.tagList}>
                                 <Typography key={index} className={styles.tagName}>
-                                    {getGroupValueLabel(
-                                        translateWithSplit(t, `${POI_PREFIX}${item}`),
-                                        tag.osmValues?.[index]
-                                    )}
+                                    {
+                                        getValueLabelParts(
+                                            translateWithSplit(t, `${POI_PREFIX}${item}`),
+                                            tag.labels?.[index]
+                                        ).tagValue
+                                    }
                                 </Typography>
                             </MenuItem>
                         ) : (
