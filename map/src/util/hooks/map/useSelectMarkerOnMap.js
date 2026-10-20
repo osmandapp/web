@@ -3,6 +3,7 @@ import {
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ID,
+    RELATED_RESULT_IDS,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
@@ -92,7 +93,7 @@ function layerHasIdentity(layer, id) {
 }
 
 function layerHasRelatedResultId(layer, id) {
-    return (layer?.options?.relatedResultIds ?? []).includes(id);
+    return (layer?.options?.[RELATED_RESULT_IDS] ?? []).includes(id);
 }
 
 // hover on an offscreen point shows a direction pin at the map edge for these list types

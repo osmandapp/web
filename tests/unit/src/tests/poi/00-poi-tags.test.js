@@ -133,7 +133,13 @@ describe('getWptTags: the tags of a poi', () => {
     });
 
     test('the tags of the web itself are not shown', async () => {
-        const tags = await tagsOf({ web_poi_iconName: 'cafe', osm_tag_alt_name: 'Cafe', phone: '+380 44 000' });
+        const tags = await tagsOf({
+            web_poi_iconName: 'cafe',
+            osm_tag_alt_name: 'Cafe',
+            idObj: 7,
+            relatedResultIds: [1, 2],
+            phone: '+380 44 000',
+        });
 
         expect(Object.keys(tags)).toEqual(['phone']);
     });

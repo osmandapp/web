@@ -68,6 +68,8 @@ export const ALT_NAME = 'osm_tag_alt_name';
 const ORIGINAL_ICON = 'originalIcon';
 const MARKER_ICON_SVG = 'svg';
 const MARKER_OBJ_ID = 'idObj';
+export const RELATED_RESULT_IDS = 'relatedResultIds';
+export const MARKER_INTERNAL_KEYS = [MARKER_ICON_SVG, MARKER_OBJ_ID, ICON_NAME_EXTENSION, RELATED_RESULT_IDS];
 
 // from Amenity object
 export const POI_NAME = WEB_POI_PREFIX + 'name';
@@ -118,7 +120,6 @@ const WEB_TAGS_TO_SKIP = [
     POI_NAME,
     POI_ID,
     POI_OSM_URL,
-    MARKER_OBJ_ID,
 ];
 export const SEPARATOR = ';';
 
@@ -492,8 +493,7 @@ function filterWebKeys(tags) {
             key.startsWith(ALT_NAME) ||
             WEB_TAGS_TO_SKIP.includes(key) ||
             key.startsWith(ORIGINAL_ICON) ||
-            key === MARKER_ICON_SVG ||
-            key === ICON_NAME_EXTENSION
+            MARKER_INTERNAL_KEYS.includes(key)
         ) {
             continue;
         }

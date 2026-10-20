@@ -3,7 +3,12 @@ import Utils from '../../util/Utils';
 import { createTooltip, TOOLTIP_MAX_LENGTH } from './MapManager';
 import { getObjIdSearch, getIconByType } from '../../manager/SearchManager';
 import { searchTypeMap } from '../../manager/searchConstants';
-import { CATEGORY_TYPE, FINAL_POI_ICON_NAME, POI_ELO } from '../../infoblock/components/wpt/WptTagsProvider';
+import {
+    CATEGORY_TYPE,
+    FINAL_POI_ICON_NAME,
+    POI_ELO,
+    RELATED_RESULT_IDS,
+} from '../../infoblock/components/wpt/WptTagsProvider';
 import PoiManager from '../../manager/PoiManager';
 import { processMarkers } from '../layers/FavoriteLayer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
@@ -434,7 +439,7 @@ export function addMarkerTooltip({
         // markers move under the cursor while zooming, those events are spurious
         if (state.zooming || state.hovered?.marker === marker) return;
         removeTooltip(map, tooltipRef);
-        const relatedResultIds = (marker.options.relatedResultIds ?? []).filter((id) => id != null);
+        const relatedResultIds = (marker.options[RELATED_RESULT_IDS] ?? []).filter((id) => id != null);
         setSelectedId?.({
             id: marker.options.idObj,
             relatedResultIds,
