@@ -640,5 +640,6 @@
     "tracks_empty_folder": "Empty folder",
     "tracks_empty_folder_description": "This folder doesn't have any track yet.",
     "coming_soon": "Coming soon",
-    "coming_soon_description": "This section is still in development. Follow OsmAnd news to be the first to try it."
+    "coming_soon_description": "This section is still in development. Follow OsmAnd news to be the first to try it.",
+    "explore_wikimedia_images": "Explore Wikimedia Images"
 }
