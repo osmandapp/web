@@ -33,6 +33,9 @@ async function importWebTranslation(folder) {
             return (await import(`./resources/translations/${candidate}/web-translation.json`)).default;
         } catch {}
     }
+    if (process.env.NODE_ENV === 'development') {
+        console.error(`Could not load web-translation.json for language: ${folder}`);
+    }
 
     return enWebTranslation;
 }
