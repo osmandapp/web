@@ -370,6 +370,11 @@ export function extractBaseFavFileName(name) {
     return name.replace(new RegExp(`^${FavoritesManager.FAV_FILE_PREFIX}`), '').replace(/\.gpx$/, '');
 }
 
+export function findFavGroupByFileName(groups, fileName) {
+    const folder = extractBaseFavFileName(fileName);
+    return groups?.find((g) => g.file.folder === folder);
+}
+
 export async function saveFavoriteGroup(data, groupName, ctx) {
     if (data.pointsGroups[groupName]) {
         groupName = normalizeGroupNameForFile(groupName);
