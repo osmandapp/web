@@ -22,6 +22,11 @@ export function getPinPointFromUrl() {
     return null;
 }
 
+export function hasRouteInUrl() {
+    const searchParams = new URLSearchParams(globalThis.location.search);
+    return !!searchParams.get('start') && !!(searchParams.get('finish') || searchParams.get('end'));
+}
+
 export function getInitialView() {
     const fromHash = getInitialViewFromHash();
     const pin = getPinPointFromUrl();
