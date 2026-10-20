@@ -1,6 +1,7 @@
 import {
     getInitialView,
     getPinPointFromUrl,
+    hasRouteInUrl,
     flyZoom,
     initialPosition,
     initialZoom,
@@ -52,5 +53,18 @@ test('a pin which is not a coordinate pair is ignored', () => {
         openUrl(search, hashView);
         expect(getPinPointFromUrl()).toBeNull();
         expectView([50.4584, 30.531], 12);
+    }
+});
+
+test('a route in the url needs both the start and the finish', () => {
+    openUrl('?start=50.759047,25.279541&end=50.590212,25.545959&profile=car');
+    expect(hasRouteInUrl()).toBe(true);
+
+    openUrl('?start=50.759047,25.279541&finish=50.590212,25.545959');
+    expect(hasRouteInUrl()).toBe(true);
+
+    for (const search of ['?start=50.759047,25.279541', '?end=50.590212,25.545959', '?pin=35.3,138.7', '']) {
+        openUrl(search, hashView);
+        expect(hasRouteInUrl()).toBe(false);
     }
 });
