@@ -202,6 +202,10 @@ Select the map type item in the Configure Map menu to choose one of the followin
 - **Raster (tiles)** — the default map type. On this map type, you can select only markers displayed over the map, such as [Search](web-search.md) results, [POI overlay](#poi-overlay) markers, [favorites](#favorites), and [transport stops](#transport-stops).
 - **OsmAnd vector (beta)** — the vector map. On this map type, you can [select objects directly on the map](#selected-object).
 
+The selected map type is saved and applied the next time you open the map. **Reset to default** in the Configure Map header switches the map back to **Raster (tiles)**.
+
+The vector map requires a browser with WebGL support. If WebGL is not available, the map automatically switches to **Raster (tiles)**.
+
 
 ## Settings {#settings}
 
