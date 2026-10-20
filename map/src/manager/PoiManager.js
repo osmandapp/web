@@ -482,17 +482,12 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
     );
 }
 
-// a POI additional value is translated "Name: value" ("Fridge: yes", "Kayaks: limited"), see the header of
-// android OsmAnd/res/values/phrases.xml; null for a translation without it ("Cash", "1:25 fuel")
 export function splitNameValue(translation) {
     const index = translation?.indexOf(':') ?? -1;
-    if (index < 0) {
-        return null;
-    }
-    const name = translation.substring(0, index).trim();
-    const value = translation.substring(index + 1).trim();
+    const name = translation?.slice(0, index).trim();
+    const value = translation?.slice(index + 1).trim();
 
-    return /\p{L}/u.test(name) && value ? [name, value] : null;
+    return index > 0 && /\p{L}/u.test(name) && value ? [name, value] : null;
 }
 
 export function getValueLabelParts(translation, label) {
