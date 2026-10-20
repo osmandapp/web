@@ -161,7 +161,7 @@ export default function SettingsMenu() {
                 {process.env.REACT_APP_DEVEL_FEATURES === 'yes' && ctx.develFeatures && ltx.loginUser && (
                     <>
                         <Typography component="div" sx={{ ml: 2 }}>
-                            Explore Wikimedia Images
+                            {t('web:explore_wikimedia_images')}
                             <Switch
                                 checked={ctx.searchSettings.useWikiImages ?? false}
                                 onChange={(event) => ctx.setSearchSettings({ useWikiImages: event.target.checked })}

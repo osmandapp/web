@@ -1,7 +1,24 @@
+import supportedLanguages from '../resources/translations/supportedLanguages.json';
+
 const LANG_TRANSFORM_MAP = {
     yue: 'zhyue',
     'b+be+Latn': 'be-BY',
 };
+
+// folders use Android qualifiers (es-rAR, b+sr+Latn), the browser and i18next use BCP 47 (es-AR, sr-Latn)
+export function findTranslationFolder(lang) {
+    if (supportedLanguages.includes(lang)) {
+        return lang;
+    }
+    const normalized = normalizeLang(lang);
+    const baseLang = normalized.split(/[-_]/)[0];
+
+    return (
+        supportedLanguages.find((folder) => normalizeLang(folder) === normalized) ??
+        supportedLanguages.find((folder) => folder === baseLang) ??
+        'en'
+    );
+}
 
 /**
  * Normalizes a given Android resource qualifiers code string into a standardized format,

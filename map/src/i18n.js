@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from './resources/translations/en/translation.json';
 import enWebTranslation from './resources/translations/en/web-translation.json';
+import { findTranslationFolder, normalizeLang } from './util/lang';
 
 const resources = {
     en: {
@@ -23,6 +24,22 @@ const translationParsePlugin = {
     },
 };
 
+// the regional folders (es-rAR, en-rGB) carry only the shared strings, the web strings come from the base language
+async function importWebTranslation(folder) {
+    const baseFolder = findTranslationFolder(normalizeLang(folder).split(/[-_]/)[0]);
+    const candidates = baseFolder === folder ? [folder] : [folder, baseFolder];
+    for (const candidate of candidates) {
+        try {
+            return (await import(`./resources/translations/${candidate}/web-translation.json`)).default;
+        } catch {}
+    }
+    if (process.env.NODE_ENV === 'development') {
+        console.error(`Could not load web-translation.json for language: ${folder}`);
+    }
+
+    return enWebTranslation;
+}
+
 export async function handleLanguageChange({ lng, folderLng = null }) {
     const folder = folderLng ?? lng;
     try {
@@ -36,16 +53,7 @@ export async function handleLanguageChange({ lng, folderLng = null }) {
         }
     }
 
-    try {
-        const webTranslation = await import(`./resources/translations/${folder}/web-translation.json`);
-        if (webTranslation) {
-            i18n.addResourceBundle(lng, 'web', webTranslation.default, true, true);
-        }
-    } catch (error) {
-        if (process.env.NODE_ENV === 'development') {
-            console.error(`Could not load web-translation.json for language: ${lng}`);
-        }
-    }
+    i18n.addResourceBundle(lng, 'web', await importWebTranslation(folder), true, true);
     await i18n.changeLanguage(lng);
     localStorage.setItem('i18nextLng', lng);
 }
@@ -56,31 +64,17 @@ i18n.use(translationParsePlugin)
         async: true,
         detect: (callback) => {
             const detector = new LanguageDetector();
-            const detectedLanguage = detector.detect();
+            const folder = findTranslationFolder([].concat(detector.detect())[0]);
+            const detectedLanguage = normalizeLang(folder);
 
-            return import(`./resources/translations/${detectedLanguage}/translation.json`)
+            return import(`./resources/translations/${folder}/translation.json`)
                 .then((translation) => {
                     resources[detectedLanguage] = {
                         translation: translation.default,
                     };
-                    return import(`./resources/translations/${detectedLanguage}/web-translation.json`)
-                        .then((webTranslation) => {
-                            resources[detectedLanguage].web = webTranslation.default;
-                        })
-                        .catch((error) => {
-                            if (i18n.options.debug) {
-                                console.error('Failed to load web translation file for', detectedLanguage, error);
-                            }
-                            return import(`./resources/translations/en/web-translation.json`)
-                                .then((defaultWebTranslation) => {
-                                    resources[detectedLanguage].web = defaultWebTranslation.default;
-                                })
-                                .catch((error) => {
-                                    if (i18n.options.debug) {
-                                        console.error('Failed to load default web translation file', error);
-                                    }
-                                });
-                        });
+                    return importWebTranslation(folder).then((webTranslation) => {
+                        resources[detectedLanguage].web = webTranslation;
+                    });
                 })
                 .then(() => {
                     callback(detectedLanguage);
