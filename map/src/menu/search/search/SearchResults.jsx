@@ -73,7 +73,7 @@ export function performBaseSearch(searchParams, ctx, loc) {
     searchByWord(searchParams, ctx, loc, true);
 }
 
-export function searchByCategory(searchParams, ctx, t) {
+export function searchByCategory(searchParams, ctx, t, name) {
     // Brand format: type:lang, Category format: just type
     let categoryName = '';
     let lang = null;
@@ -85,7 +85,7 @@ export function searchByCategory(searchParams, ctx, t) {
             lang = brandInfo.lang;
         } else {
             // Category search: translate category name
-            categoryName = getCategoryName(searchParams.type, t);
+            categoryName = name ?? getCategoryName(searchParams.type, t);
         }
     }
 
@@ -115,6 +115,7 @@ export default function SearchResults() {
     const { params, navigateToSearchMenu, navigateToSearchResults, isSearchEqualToUrl, isSearchResultRoute, location } =
         useSearchNav();
     const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
+    const categoryName = location.state?.categoryName ?? getCategoryName(params.type, t);
     const useSpatialSearchResults = !params.type && ctx.spatialSearch;
     const { hasMapView, requestMapViewPop } = useZoomToFit();
 
@@ -145,11 +146,11 @@ export default function SearchResults() {
             if (brandInfo) {
                 return brandInfo.brandName;
             } else {
-                return getCategoryName(params.type, t);
+                return categoryName;
             }
         }
         return null;
-    }, [params.engine, params.query, params.type]);
+    }, [params.engine, params.query, params.type, categoryName]);
 
     usePageTitle(pageTitle);
 
@@ -249,7 +250,7 @@ export default function SearchResults() {
                     ctx.setForceSearch(false);
                 }
                 if (params.type) {
-                    searchByCategory(params, ctx, t);
+                    searchByCategory(params, ctx, t, location.state?.categoryName);
                 } else {
                     const { loc } = getLoc();
                     if (!loc) return;
@@ -400,7 +401,7 @@ export default function SearchResults() {
                     (params?.type
                         ? (() => {
                               const brandInfo = parseBrandType(params.type);
-                              return brandInfo ? brandInfo.brandName : getCategoryName(params.type, t);
+                              return brandInfo ? brandInfo.brandName : categoryName;
                           })()
                         : params?.query || '')
                 }

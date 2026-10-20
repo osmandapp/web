@@ -422,10 +422,7 @@ export function getCategoryName(category, t) {
         const preparedCategory = category.replace(':', '_');
         return getFirstSubstring(t(`poi_${preparedCategory}`));
     }
-    // an additional value as a category: its name, "Takeaway", not "Takeaway: yes"
-    const name = getFirstSubstring(t(`poi_${category}`));
-
-    return splitNameValue(name)?.[0] ?? name;
+    return getFirstSubstring(t(`poi_${category}`));
 }
 
 export async function getCategoryIcon(category) {

@@ -50,6 +50,11 @@ describe('getCategoryName', () => {
     test('no category gives an empty name', () => {
         expect(getCategoryName(null, t)).toBe('');
     });
+
+    test('a translation with a colon is shown whole', () => {
+        const translate = (key) => ({ poi_enforcement_maxspeed: 'Enforcement: maxspeed' })[key] ?? key;
+        expect(getCategoryName('enforcement_maxspeed', translate)).toBe('Enforcement: maxspeed');
+    });
 });
 
 describe('formattingPoiType', () => {

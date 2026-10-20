@@ -1,6 +1,5 @@
 import { getValueLabelParts, splitNameValue } from '@map/manager/PoiManager';
 
-// POI additional values are translated "Name: value" (android OsmAnd/res/values/phrases.xml)
 describe('splitNameValue', () => {
     test('a value is split at the first colon', () => {
         expect(splitNameValue('Fridge: yes')).toEqual(['Fridge', 'yes']);

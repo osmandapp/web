@@ -6,7 +6,7 @@ import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderlin
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
-import PoiManager, { getCategoryName, TOP_INDEX_PREFIX } from '../../../manager/PoiManager';
+import PoiManager, { getCategoryName } from '../../../manager/PoiManager';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { CATEGORY_KEY_NAME, CATEGORY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
 import EmptySearch from '../../errors/EmptySearch';
@@ -49,10 +49,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                 <Box id={'se-search-categories-box'} className={gStyles.scrollActiveBlock}>
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
-                        const catName =
-                            category?.startsWith(TOP_INDEX_PREFIX) && item[CATEGORY_NAME]
-                                ? item[CATEGORY_NAME]
-                                : getCategoryName(category, t);
+                        const catName = item[CATEGORY_NAME] ?? getCategoryName(category, t);
                         const mainCatName = getPoiParentCategory(item, t);
 
                         return (
@@ -62,9 +59,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                                 key={key + catName}
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    navigateToSearchResults({
-                                        type: category,
-                                    });
+                                    navigateToSearchResults({ type: category }, { state: { categoryName: catName } });
                                     ctx.setPoiCatMenu(false);
                                 }}
                             >
