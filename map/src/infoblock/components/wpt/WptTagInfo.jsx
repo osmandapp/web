@@ -174,6 +174,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             });
             return values.join(' • ');
         }
+
         return prepareValue(value, addPrefix, POI_PREFIX);
     }
 
@@ -233,6 +234,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             const mainTag = newTag ?? tag;
             const listTags = tagList ?? mainTag.otherLangs;
             const value = prepareValueFromList(mainTag);
+
             return (
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
@@ -256,6 +258,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 : {};
             const prefix = tagName ?? (showPrefix(tag) ? getTranslation({ key: tag.textPrefix }) : null);
             const text = tagName ? tagValue : getText(tag, prepareValueFromList(tag));
+
             return (
                 <ListItemText onClick={() => openMoreInfoDialog(tag)}>
                     {prefix && (

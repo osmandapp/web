@@ -35,6 +35,8 @@ const icons = new Set(iconsRaw);
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
+const VALUE_LABEL_NAME = 'NAME';
+const VALUE_LABEL_WHOLE = 'WHOLE';
 export const DEFAULT_POI_ICON = 'craft_default';
 export const DEFAULT_POI_COLOR = '#f8931d';
 export const DEFAULT_ICON_COLOR = '#ffffff';
@@ -422,6 +424,7 @@ export function getCategoryName(category, t) {
     }
     // an additional value as a category: its name, "Takeaway", not "Takeaway: yes"
     const name = getFirstSubstring(t(`poi_${category}`));
+
     return splitNameValue(name)?.[0] ?? name;
 }
 
@@ -479,7 +482,8 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
     );
 }
 
-// "Fridge: yes" -> ["Fridge", "yes"] (android phrases.xml format), null for "Cash" or "1:25 fuel"
+// a POI additional value is translated "Name: value" ("Fridge: yes", "Kayaks: limited"), see the header of
+// android OsmAnd/res/values/phrases.xml; null for a translation without it ("Cash", "1:25 fuel")
 export function splitNameValue(translation) {
     const index = translation?.indexOf(':') ?? -1;
     if (index < 0) {
@@ -487,18 +491,16 @@ export function splitNameValue(translation) {
     }
     const name = translation.substring(0, index).trim();
     const value = translation.substring(index + 1).trim();
+
     return /\p{L}/u.test(name) && value ? [name, value] : null;
 }
-
-// how /search/visible-tags says to show a value (AmenityTagEntriesBuilder.ValueLabel of OsmAnd-shared)
-const VALUE_LABEL_NAME = 'NAME';
-const VALUE_LABEL_WHOLE = 'WHOLE';
 
 export function getValueLabelParts(translation, label) {
     const nameValue = label && label !== VALUE_LABEL_WHOLE ? splitNameValue(translation) : null;
     if (!nameValue) {
         return { tagName: null, tagValue: translation };
     }
+
     return label === VALUE_LABEL_NAME
         ? { tagName: null, tagValue: nameValue[0] }
         : { tagName: nameValue[0], tagValue: upperFirst(nameValue[1]) };
