@@ -42,6 +42,7 @@ export default function CustomInput({
     const suggestionsTimerRef = useRef(null);
 
     const [value, setValue] = useState(defaultSearchValue);
+    const [typedBeforeDefault, setTypedBeforeDefault] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
     const [isInitialRender, setIsInitialRender] = useState(true);
     const [suggestions, setSuggestions] = useState([]);
@@ -61,6 +62,10 @@ export default function CustomInput({
     }, [value]);
 
     useEffect(() => {
+        if (typedBeforeDefault && defaultSearchValue !== EMPTY_SEARCH) {
+            setTypedBeforeDefault(false);
+            return;
+        }
         setValue((prev) => (defaultSearchValue !== EMPTY_SEARCH || prev === EMPTY_SEARCH ? defaultSearchValue : prev));
     }, [defaultSearchValue]);
 
@@ -234,6 +239,7 @@ export default function CustomInput({
                 onChange={(e) => {
                     const nextValue = e.target.value;
                     setValue(nextValue);
+                    setTypedBeforeDefault(defaultSearchValue === EMPTY_SEARCH);
                     setHighlightedIndex(-1);
                     if (type === SEARCH_TYPE_CATEGORY && nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
                         search(formattingPoiType(nextValue));

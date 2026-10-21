@@ -5,6 +5,8 @@ import upperFirst from 'lodash-es/upperFirst';
 import isEmpty from 'lodash-es/isEmpty';
 import {
     CATEGORY_ICON,
+    CATEGORY_KEY_NAME,
+    CATEGORY_NAME,
     MAIN_CATEGORY_KEY_NAME,
     getSvgIcon,
     ICON_KEY_NAME,
@@ -119,6 +121,7 @@ async function searchPoiCategories(search, center) {
             search: search,
             lat: center.lat,
             lon: center.lng,
+            locale: getApiLang(i18n.language),
         },
     });
     if (!isEmpty(response?.data)) {
@@ -424,6 +427,10 @@ export function getCategoryName(category, t) {
         return getFirstSubstring(t(`poi_${preparedCategory}`));
     }
     return getFirstSubstring(t(`poi_${category}`));
+}
+
+export function getCategoryItemName(item, t) {
+    return item[CATEGORY_NAME] ?? getCategoryName(item[CATEGORY_KEY_NAME], t);
 }
 
 export async function getCategoryIcon(category) {

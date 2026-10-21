@@ -6,9 +6,9 @@ import HeaderNoUnderline from '../../../frame/components/header/HeaderNoUnderlin
 import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import Loading from '../../errors/Loading';
-import PoiManager, { getCategoryName } from '../../../manager/PoiManager';
+import { getCategoryItemName } from '../../../manager/PoiManager';
 import MenuItemWithLines from '../../components/MenuItemWithLines';
-import { CATEGORY_KEY_NAME, CATEGORY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
+import { CATEGORY_KEY_NAME } from '../../../infoblock/components/wpt/WptTagsProvider';
 import EmptySearch from '../../errors/EmptySearch';
 import { getPoiParentCategory } from '../../../manager/SearchManager';
 import AppContext, { collator } from '../../../context/AppContext';
@@ -21,11 +21,9 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
 
     const { navigateToSearchMenu, navigateToSearchResults } = useSearchNav();
 
-    const sortedCategories = categories?.sort((a, b) => {
-        const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`));
-        const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`));
-        return collator.compare(nameA, nameB);
-    });
+    const sortedCategories = categories?.sort((a, b) =>
+        collator.compare(getCategoryItemName(a, t), getCategoryItemName(b, t))
+    );
 
     function backToSearch() {
         ctx.setPoiCatMenu(false);
@@ -49,7 +47,7 @@ export default function PoiCategoriesList({ categories, setSearchValue, categori
                 <Box id={'se-search-categories-box'} className={gStyles.scrollActiveBlock}>
                     {sortedCategories?.map((item, key) => {
                         const category = item[CATEGORY_KEY_NAME];
-                        const catName = item[CATEGORY_NAME] ?? getCategoryName(category, t);
+                        const catName = getCategoryItemName(item, t);
                         const mainCatName = getPoiParentCategory(item, t);
 
                         return (

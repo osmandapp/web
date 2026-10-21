@@ -115,7 +115,9 @@ export default function SearchResults() {
     const { params, navigateToSearchMenu, navigateToSearchResults, isSearchEqualToUrl, isSearchResultRoute, location } =
         useSearchNav();
     const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
-    const categoryName = location.state?.categoryName ?? getCategoryName(params.type, t);
+    const categoryName =
+        location.state?.categoryName ??
+        (result ? (ctx.searchResult?.categoryNames?.[params.type] ?? getCategoryName(params.type, t)) : '');
     const useSpatialSearchResults = !params.type && ctx.spatialSearch;
     const { hasMapView, requestMapViewPop } = useZoomToFit();
 
@@ -397,13 +399,7 @@ export default function SearchResults() {
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
                 defaultSearchValue={
-                    ctx.searchQuery?.query ??
-                    (params?.type
-                        ? (() => {
-                              const brandInfo = parseBrandType(params.type);
-                              return brandInfo ? brandInfo.brandName : categoryName;
-                          })()
-                        : params?.query || '')
+                    params?.type ? formattingPoiType(pageTitle) : (ctx.searchQuery?.query ?? (params?.query || ''))
                 }
             />
             {ctx.develFeatures && !params.type && (
