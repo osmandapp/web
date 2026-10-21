@@ -209,7 +209,7 @@ You can also perform the following actions on each photo:
   Share the selected image using any compatible app installed on your device (e.g., messaging, email, or social media). The shared content includes the image and its source link (if available).
 
 - **Details**  
-  Open a detailed view showing metadata about the image, including: *Description (full text, Android only)*, *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*
+  Open a detailed view showing metadata about the image, including: *Description (full text)*, *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*.
 
   **Note:** The description language depends on the display language of the application. If the description in the selected language is not available, OsmAnd shows the English version or the first available translation.
 
