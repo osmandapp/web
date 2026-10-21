@@ -3,7 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from './resources/translations/en/translation.json';
 import enWebTranslation from './resources/translations/en/web-translation.json';
-import { findTranslationFolder, normalizeLang } from './util/lang';
+import { findTranslationFolder, getBaseLang, normalizeLang } from './util/lang';
 
 const resources = {
     en: {
@@ -26,7 +26,7 @@ const translationParsePlugin = {
 
 // the regional folders (es-rAR, en-rGB) carry only the shared strings, the web strings come from the base language
 async function importWebTranslation(folder) {
-    const baseFolder = findTranslationFolder(normalizeLang(folder).split(/[-_]/)[0]);
+    const baseFolder = findTranslationFolder(getBaseLang(folder));
     const candidates = baseFolder === folder ? [folder] : [folder, baseFolder];
     for (const candidate of candidates) {
         try {

@@ -11,13 +11,23 @@ export function findTranslationFolder(lang) {
         return lang;
     }
     const normalized = normalizeLang(lang);
-    const baseLang = normalized.split(/[-_]/)[0];
+    const baseLang = getBaseLang(lang);
 
     return (
         supportedLanguages.find((folder) => normalizeLang(folder) === normalized) ??
         supportedLanguages.find((folder) => folder === baseLang) ??
         'en'
     );
+}
+
+export function getBaseLang(lang) {
+    return normalizeLang(lang).split(/[-_]/)[0];
+}
+
+export function getApiLang(lang) {
+    const baseLang = getBaseLang(lang);
+
+    return supportedLanguages.includes(baseLang) ? baseLang : 'en';
 }
 
 /**

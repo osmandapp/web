@@ -10,6 +10,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
+import { getApiLang } from '../../util/lang';
 import { debouncer } from '../../context/TracksRoutingCache';
 import {
     clusterMarkers,
@@ -260,7 +261,7 @@ export default function ExploreLayer() {
                 params: {
                     northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
                     southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-                    lang: settings?.useWikiImages ? null : i18n.language,
+                    lang: settings?.useWikiImages ? null : getApiLang(i18n.language),
                     filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                 },
                 signal: controller.signal,
