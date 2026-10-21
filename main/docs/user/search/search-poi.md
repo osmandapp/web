@@ -81,7 +81,7 @@ Search results may include additional location information such as the city wher
 
 
 :::note
-To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the visible area of the device screen. If you find nothing, OsmAnd proposes to increase the search radius.
+To accomplish some of these tasks (locate addresses, POI) you will need to have the offline vector map file. Initially, the search is based on data located on the map in the [visible area of the device screen](./search-all.md#how-to-use).
 :::  
 
 ### Search Tips {#search-tips}
@@ -325,7 +325,7 @@ Use of Online Search:
 - Online search is convenient to use if there are no maps of the region and if it is impossible to download them.
 - *Requires a constant and stable Internet connection.*  
 
-To improve results, before using the Search tool, zoom in on the map to get closer to where you need to find a specific location. And while searching, you can **increase the search radius** to find places that are farther away from your location. When searching offline, if the required results are not available, OsmAnd suggests using the online search.  
+To improve results, before using the Search tool, zoom in on the map to get closer to where you need to find a specific location. If nothing is found nearby, you can [increase the search radius](./search-all.md#how-to-use). When searching offline, if the required results are not available, OsmAnd suggests using the online search.  
 
 You can find out information about Online Navigation in [Online routing](../navigation/routing/online-routing.md) article.
 
