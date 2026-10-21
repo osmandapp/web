@@ -2,8 +2,7 @@ import Utils, { cloneTrackObject, quickNaNfix, toHHMMSS } from '../../util/Utils
 import FavoritesManager from '../FavoritesManager';
 import isEmpty from 'lodash-es/isEmpty';
 import cloneDeep from 'lodash-es/cloneDeep';
-import indexOf from 'lodash-es/indexOf';
-import { apiGet, apiPost, digest } from '../../util/HttpApi';
+import { apiGet, apiPost } from '../../util/HttpApi';
 import {
     isCloudTrack,
     isRouteTrack,
@@ -24,7 +23,7 @@ import { SHARE_TYPE, SMART_TYPE } from '../../menu/share/shareConstants';
 import { doSort } from '../../menu/actions/SortActions';
 import { DEFAULT_SORT_METHOD } from '../../menu/tracks/TracksMenu';
 import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
-import { compressJSONToBlob } from '../../util/GzipCompression';
+import { compressFileToBlob, compressJSONToBlob } from '../../util/GzipCompression';
 import { findInfoFile } from './TrackAppearanceManager';
 import i18n from '../../i18n';
 
@@ -32,6 +31,10 @@ export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
 export const INFO_FILE_EXT = '.info';
 export const KMZ_FILE_EXT = '.kmz';
+
+const MAX_TEXT_TRACK_FILE_MB = 20;
+const MAX_KMZ_FILE_MB = 2;
+
 export const EMPTY_FILE_NAME = `__folder__${INFO_FILE_EXT}`;
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
@@ -191,7 +194,7 @@ async function loadTrackData(file) {
 
 async function getTrackData(file) {
     let formData = new FormData();
-    formData.append('file', file);
+    formData.append('file', await compressFileToBlob(file), file.name);
     const response = await apiGet(`${process.env.REACT_APP_GPX_API}/gpx/process-track-data`, {
         params: {
             name: file.name,
@@ -316,7 +319,7 @@ export function getTrackPoints(track) {
     if (track.tracks) {
         track.tracks.forEach((subTrack) => {
             if (Array.isArray(subTrack.points) && subTrack.points.length > 0) {
-                points.push(...processTrackPoints(subTrack.points));
+                points = points.concat(processTrackPoints(subTrack.points));
             }
         });
     } else if (track.points) {
@@ -439,7 +442,8 @@ export function addDistanceToPoints(points) {
     let distanceTotal = 0;
     let distanceSegment = 0;
     let prevGapInd = 0;
-    for (let point of points) {
+    for (let ind = 0; ind < points.length; ind++) {
+        const point = points[ind];
         if (point.distance) {
             point.distance = parseFloat(point.distance.toFixed(2));
         }
@@ -473,7 +477,6 @@ export function addDistanceToPoints(points) {
                 distanceSegment = 0;
             }
         } else {
-            let ind = indexOf(points, point);
             if (ind !== 0) {
                 let prevPoint = points[ind - 1];
                 if (prevGapInd !== ind) {
@@ -520,6 +523,34 @@ function showDownloadError(ctx, name) {
         title: i18n.t('web:download_error_title'),
         msg: i18n.t('web:download_error_msg', { name }),
     });
+}
+
+export function rejectTooLargeFiles(files, ctx) {
+    const tooLarge = files.filter((file) => file.size > getMaxImportSizeMb(file) * 1024 * 1024);
+    if (tooLarge.length === 0) {
+        return files;
+    }
+    const reasons = [MAX_TEXT_TRACK_FILE_MB, MAX_KMZ_FILE_MB]
+        .map((size) => ({
+            size,
+            names: tooLarge.filter((file) => getMaxImportSizeMb(file) === size).map((file) => file.name),
+        }))
+        .filter(({ names }) => names.length > 0)
+        .map(({ size, names }) => i18n.t('web:import_too_large_msg', { name: names.join(', '), size }));
+    ctx.setTrackErrorMsg({
+        title: i18n.t('web:import_error_title'),
+        msg: [...reasons, i18n.t('web:import_too_large_hint')].join(' '),
+    });
+
+    return files.filter((file) => !tooLarge.includes(file));
+}
+
+function getMaxImportSizeMb(file) {
+    return file.name.toLowerCase().endsWith(KMZ_FILE_EXT) ? MAX_KMZ_FILE_MB : MAX_TEXT_TRACK_FILE_MB;
+}
+
+export function isTooLargeToOpen(file) {
+    return file.filesize > MAX_TEXT_TRACK_FILE_MB * 1024 * 1024;
 }
 
 export const downloadOriginalGpxFromCloud = async ({ track, sharedFile = null, simplified, ctx }) => {
@@ -856,9 +887,9 @@ function updateGapProfileOneSegment(routePoint, points) {
     return false;
 }
 
-function getEle(point, elevation, array) {
+function getEle(point, elevation, array, pointInd) {
     let ele = point[elevation];
-    let ind = array.indexOf(point);
+    let ind = pointInd;
     //value smoothing
     while (isNaN(ele) || ele === NAN_MARKER || ele === null || ele === undefined) {
         if (array && ind !== 0) {
@@ -866,7 +897,7 @@ function getEle(point, elevation, array) {
             if (prevP && prevP[elevation] && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
                 return Number(prevP[elevation]);
             } else {
-                if (ind - array.indexOf(point) > 2) {
+                if (ind - pointInd > 2) {
                     return undefined;
                 } else {
                     ind++;
@@ -1573,6 +1604,11 @@ export async function openTrackOnMap({
                 [file.name]: newGpxFiles[file.name],
             };
         }
+    } else if (isTooLargeToOpen(file)) {
+        ctx.setNotification({
+            text: i18n.t('web:track_too_large_to_open', { name: file.name, size: MAX_TEXT_TRACK_FILE_MB }),
+            severity: 'warning',
+        });
     } else {
         // load file
         if (setProgressVisible) {

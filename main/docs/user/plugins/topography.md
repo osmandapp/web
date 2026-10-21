@@ -57,6 +57,7 @@ The Topography plugin provides access to the following map types:
 ### License for DEM data used by OsmAnd for terrain detection {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 The altitude data on the map (between 70 degrees north latitude and 70 degrees south latitude) were obtained from measurements made as a part of the *Shuttle Radar Topography Mission (SRTM)*. It utilized the *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, the primary imaging tool in *NASA's Earth Observation System*.  
+For North America, terrain maps and contour lines use high-resolution national elevation data: about 10 m in the mainland United States and about 30 m in Alaska and most of Canada and Mexico.  
 For complete information, see the [License](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -65,7 +66,8 @@ For complete information, see the [License](https://github.com/osmandapp/OsmAnd/
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program (3DEP)</a> via <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> (United States, Alaska) and the <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">USGS 1 arc-second DEM</a> on <a href="https://opentopography.org/">OpenTopography</a> (Canada, Mexico), including data from <a href="https://natural-resources.canada.ca/">Natural Resources Canada (NRCan)</a> and <a href="https://www.inegi.org.mx/">INEGI</a>.
 
 </details>
 

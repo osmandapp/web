@@ -26,7 +26,7 @@ import ExitWithoutSavingDialog from '../../../dialogs/favorites/ExitWithoutSavin
 import useExitGuard from '../../../util/hooks/useExitGuard';
 import { useBlocker } from 'react-router-dom';
 import { ADDRESS_NOT_FOUND } from '../wpt/WptDetails';
-import { FINAL_POI_ICON_NAME, WEB_POI_PREFIX, WEB_PREFIX } from '../wpt/WptTagsProvider';
+import { FINAL_POI_ICON_NAME, MARKER_INTERNAL_KEYS, WEB_POI_PREFIX, WEB_PREFIX } from '../wpt/WptTagsProvider';
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import { getUniqFileId, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
@@ -195,10 +195,8 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         return (
             tag.startsWith(WEB_PREFIX) ||
             tag.startsWith(WEB_POI_PREFIX) ||
-            tag === 'svg' ||
-            tag === 'idObj' ||
+            MARKER_INTERNAL_KEYS.includes(tag) ||
             tag === 'name' ||
-            tag === 'icon' ||
             tag === 'color' ||
             tag === 'background' ||
             tag === 'category' ||

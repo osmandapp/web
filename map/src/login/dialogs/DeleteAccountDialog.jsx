@@ -30,6 +30,8 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
         if (accountDeleted) {
             ltx.setEmailCookie('');
             ltx.setLoginUser(null);
+            ltx.setWantDeleteAcc(false);
+            setDeleteAccountFlag?.(false);
             navigate(MAIN_URL_WITH_SLASH + LOGIN_URL + location.search + location.hash);
         }
     }, [accountDeleted]);
@@ -47,6 +49,9 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     }
 
     useEffect(() => {
+        if (accountDeleted) {
+            return;
+        }
         const loggedIn = checkLogin();
         if (loggedIn) {
             if (ltx.loginUser !== INIT_LOGIN_STATE) {

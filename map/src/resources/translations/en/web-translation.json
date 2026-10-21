@@ -19,7 +19,7 @@
     "login_btn": "Log in",
     "login_desc": "Please enter the email you used to create your account.",
     "user_email": "Email",
-    "email_is_not_registered": "This email has not been registered of OsmAnd Cloud.",
+    "email_is_not_registered": "This email has not been registered in OsmAnd Cloud.",
     "incorrect_password": "Incorrect password.",
     "change_password": "I don’t have or forgot password",
     "change_reset_password": "Change or reset password",
@@ -463,6 +463,9 @@
     "drop_gpx_to_import": "Drop GPX file to import",
     "import_error_title": "Import error",
     "import_error_msg": "Unable to import {{name}}",
+    "import_too_large_msg": "Unable to import {{name}}: larger than {{size}} MB.",
+    "import_too_large_hint": "Files up to 500 MB can be imported and used in the OsmAnd app.",
+    "track_too_large_to_open": "{{name}} is larger than {{size}} MB and can't be opened on the web. Use it in the OsmAnd app.",
     "open_error_title": "Open error",
     "open_error_msg": "{{name}} is saved but could not be opened",
     "open_track_error_msg": "Unable to open {{name}}",
@@ -637,5 +640,6 @@
     "tracks_empty_folder": "Empty folder",
     "tracks_empty_folder_description": "This folder doesn't have any track yet.",
     "coming_soon": "Coming soon",
-    "coming_soon_description": "This section is still in development. Follow OsmAnd news to be the first to try it."
+    "coming_soon_description": "This section is still in development. Follow OsmAnd news to be the first to try it.",
+    "explore_wikimedia_images": "Explore Wikimedia Images"
 }

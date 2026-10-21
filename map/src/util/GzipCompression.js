@@ -7,6 +7,7 @@ import { gzip } from 'pako';
     
         compressJSONToBlob(input: Object) -- return: Blob -- compress JSON-object to gzipped binary blob
         compressStringToBlob(input: String) -- return: Blob -- compress string to gzipped binary blob
+        compressFileToBlob(input: File) -- return: Promise<Blob> -- compress file contents to gzipped binary blob
 */
 
 /**
@@ -28,8 +29,17 @@ export function compressStringToBlob(str) {
 }
 
 /**
- * Internal function to compress string data to a Blob
- * @param {string} input - String data to compress
+ * Compress the contents of a file to a gzipped Blob
+ * @param {File} file - File to compress
+ * @returns {Promise<Blob>} - Compressed binary blob with type 'application/gzip'
+ */
+export async function compressFileToBlob(file) {
+    return compressToBlob(new Uint8Array(await file.arrayBuffer()));
+}
+
+/**
+ * Internal function to compress string or binary data to a Blob
+ * @param {string|Uint8Array} input - Data to compress
  * @returns {Blob} - Compressed binary blob
  */
 function compressToBlob(input) {

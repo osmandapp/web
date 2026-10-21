@@ -55,12 +55,12 @@ export const getGraphData = ({
         let minSpeed = hasSpeed ? 0 : null;
         let maxSpeed = hasSpeed ? 0 : null;
         let sumDist = 0;
-        points.forEach((point) => {
+        points.forEach((point, ind) => {
             let ele;
             let eleSRTM;
             let speed;
             if (elevation) {
-                ele = TracksManager.getEle(point, elevation, points)?.toFixed(2);
+                ele = TracksManager.getEle(point, elevation, points, ind)?.toFixed(2);
                 if (ele !== undefined) {
                     ele = Math.round(ele * 10) / 10;
                     minEle = minEle === TracksManager.NAN_MARKER ? ele : Math.min(ele, minEle);
@@ -68,7 +68,7 @@ export const getGraphData = ({
                 }
             }
             if (elevationSRTM) {
-                eleSRTM = TracksManager.getEle(point, elevationSRTM, points)?.toFixed(2);
+                eleSRTM = TracksManager.getEle(point, elevationSRTM, points, ind)?.toFixed(2);
                 if (eleSRTM && !elevation) {
                     eleSRTM = Math.round(eleSRTM * 10) / 10;
                     minEle = Math.min(eleSRTM, minEle);

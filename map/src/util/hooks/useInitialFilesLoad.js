@@ -5,6 +5,7 @@ import TracksManager, {
     getGpxFiles,
     GPX_FILE_EXT,
     INFO_FILE_EXT,
+    isTooLargeToOpen,
     preparedGpxFile,
     TRACK_VISIBLE_FLAG,
     EMPTY_FILE_NAME,
@@ -242,6 +243,9 @@ async function addOpenedTracks(files, gpxFiles, setGpxFiles, setVisibleTracks, l
 
     for (let ind of newSelectedFiles) {
         const file = files[ind];
+        if (isTooLargeToOpen(file)) {
+            continue;
+        }
         let oneGpxFile = preparedGpxFile({ file });
         oneGpxFile.showOnMap = true;
         newGpxFiles[file.name] = oneGpxFile;
