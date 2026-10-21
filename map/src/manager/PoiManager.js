@@ -27,6 +27,7 @@ import {
 import { CategoryIcon } from '../menu/configuremap/PoiCategoriesConfig';
 import React from 'react';
 import i18n from '../i18n';
+import { getApiLang } from '../util/lang';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './searchConstants';
 import { MAIN_URL_WITH_SLASH, MAP_OBJ_URL, POI_URL } from './GlobalManager';
@@ -85,7 +86,7 @@ async function getPoiCategories() {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-categories`, {
             apiCache: true,
             params: {
-                locale: i18n.language,
+                locale: getApiLang(i18n.language),
             },
         });
         if (response.data) {

@@ -1,5 +1,6 @@
 import { apiGet, apiPost } from '../util/HttpApi';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from './GlobalManager';
+import { getApiLang } from '../util/lang';
 
 export const LOGIN_LOGOUT_URL = MAIN_URL_WITH_SLASH + LOGIN_URL + '#logout'; // lose window.location.search/window.location.hash
 
@@ -12,7 +13,7 @@ export async function userRegisterAndSendCode({ username, setError, lang = DEFAU
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username.toLowerCase() }),
-        params: { lang, isNew },
+        params: { lang: getApiLang(lang), isNew },
     });
     if (await isRequestOk(response, setError)) {
         setError('');
@@ -34,7 +35,7 @@ export async function userActivate({ username, pwd, token, setError, lang = DEFA
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/activate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.toLowerCase(), password: pwd, token: token, lang }),
+        body: JSON.stringify({ username: username.toLowerCase(), password: pwd, token: token, lang: getApiLang(lang) }),
     });
     if (await isRequestOk(response, setError)) {
         setError('');
@@ -56,7 +57,7 @@ export async function userLogin({ ltx, username, pwd, setError, handleClose, lan
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.toLowerCase(), password: pwd, lang }),
+        body: JSON.stringify({ username: username.toLowerCase(), password: pwd, lang: getApiLang(lang) }),
     });
     if (await isRequestOk(response, setError)) {
         setError('');
@@ -86,7 +87,7 @@ export async function userLogout({ ltx, username, handleClose, lang = DEFAULT_AU
     const response = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/logout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.toLowerCase(), lang }),
+        body: JSON.stringify({ username: username.toLowerCase(), lang: getApiLang(lang) }),
     });
     if (await isRequestOk(response)) {
         ltx.setLoginUser('');
@@ -145,7 +146,7 @@ export async function sendCode({ action, setError = null, lang = DEFAULT_AUTH_AP
             'Content-Type': 'application/json',
         },
         params: {
-            lang,
+            lang: getApiLang(lang),
             action,
         },
     }).catch((error) => {
@@ -167,7 +168,7 @@ async function sendCodeToNewEmail({ email, action, setError = null, lang = DEFAU
             email: email.toLowerCase(),
             code,
             action,
-            lang,
+            lang: getApiLang(lang),
         },
     }).catch((error) => {
         setError && setError(error.response.data);
@@ -182,7 +183,7 @@ async function changeEmail({ email, token, setError, lang = DEFAULT_AUTH_API_LAN
         username: email.toLowerCase(),
         password: null,
         token: token,
-        lang,
+        lang: getApiLang(lang),
     };
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/change-email`, data, {
         throwErrors: true,
