@@ -35,7 +35,7 @@ You can download the app via this link - [OsmAnd Maps on Apple App Store](https:
 
 | Plan | Description | Availability | Notes |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, and *OSM editing/notes*. | Available for all users of the free version of OsmAnd. | Limited to basic cloud features and **5MB** storage. |
+| **OsmAnd Start** | A **free plan** that provides access to [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) for *Favorites*, *Settings*, *OSM edits/notes*, *search and navigation history*, *active markers and marker history*, and *Quick Actions*. | Available for all users of the free version of OsmAnd. | **5 MB** of shared storage; **2 MB** per compressed file. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | An **in-app purchase** or **subscription** that unlocks advanced features for the free OsmAnd app. | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Can be added to the [Apple Family Sharing](https://support.apple.com/en-us/HT201088). |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | A **subscription plan** that unlocks additional advanced and [pro features](#pro-features). | Available on [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | It provides full access to OsmAnd Cloud features. |
 
