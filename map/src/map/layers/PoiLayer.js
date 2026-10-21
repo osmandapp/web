@@ -22,6 +22,7 @@ import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLaye
 import { createMapObject, createSearchObjectOptions, getObjIdSearch } from '../../manager/SearchManager';
 import { SEARCH_ICON_MAP_LOCATION, searchTypeMap } from '../../manager/searchConstants';
 import i18n from '../../i18n';
+import { getApiLang } from '../../util/lang';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { escapeHtmlAttr, useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import {
@@ -359,7 +360,7 @@ export default function PoiLayer() {
         };
         const response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi`, searchData, {
             params: {
-                locale: i18n.language,
+                locale: getApiLang(i18n.language),
                 lat: center.lat,
                 lon: center.lng,
                 zoom: Math.round(map.getZoom()),
