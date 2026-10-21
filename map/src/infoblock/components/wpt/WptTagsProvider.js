@@ -253,6 +253,9 @@ async function getWptTags(obj, type, ctx) {
             if (entry.otherLangs?.length) {
                 tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag, entry.key);
             }
+            if (entry.labels) {
+                tagObj.labels = entry.labels;
+            }
 
             res.push(tagObj);
         }

@@ -139,6 +139,19 @@ describe('searchByCategory', () => {
         expect(c.searchQuery).toEqual({ engine: 'classic', query: 'Shop food', type: 'shop_food', lang: null });
     });
 
+    test('a category is searched by the name the server gave it', () => {
+        const c = ctx();
+
+        searchByCategory({ engine: 'classic', type: 'subway_station' }, c, t, 'Станція метро');
+
+        expect(c.searchQuery).toEqual({
+            engine: 'classic',
+            query: 'Станція метро',
+            type: 'subway_station',
+            lang: null,
+        });
+    });
+
     test('a brand is searched by its own name and language', () => {
         const c = ctx();
 

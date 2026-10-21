@@ -175,6 +175,7 @@ export default function PoiLayer() {
 
     const [prevController, setPrevController] = useState(false);
     const [prevCategories, setPrevCategories] = useState(null);
+    const [categoryNames, setCategoryNames] = useState(null);
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
 
@@ -447,6 +448,7 @@ export default function PoiLayer() {
             try {
                 const res = await getPoi(controller, showPoiCategories, visibleBboxInfo);
                 if (reqId !== reqIdRef.current || ignore) return;
+                setCategoryNames(res?.categoryNames ?? null);
                 if (res?.zoomInHint) {
                     // category too common for this zoom
                     updateLayerOnMap(null);
@@ -581,6 +583,7 @@ export default function PoiLayer() {
                     features: poiList && !poiList.tooMany ? poiList.listFeatures?.features : [],
                     info: poiList?.info,
                     tooMany: poiList?.tooMany ?? false,
+                    categoryNames,
                 };
             });
         }
