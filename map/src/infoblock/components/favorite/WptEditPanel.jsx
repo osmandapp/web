@@ -32,7 +32,6 @@ import {
     OSM_PREFIX,
     WEB_POI_PREFIX,
     WEB_PREFIX,
-    WIKIDATA,
 } from '../wpt/WptTagsProvider';
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
@@ -49,7 +48,6 @@ import DividerWithMargin from '../../../frame/components/dividers/DividerWithMar
 import ColorBlock from '../../../frame/components/other/ColorBlock';
 import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
 import { getIconNameForPoiType } from '../../../manager/PoiManager';
-import { getWikiShortDescriptionsApi } from '../../../manager/SearchApi';
 
 const PANEL_CONTENT_WIDTH = 320;
 const APPEARANCE_PREVIEW_SIZE = 36;
@@ -235,8 +233,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 const filteredOptions = Object.entries(poiData)
                     .filter(([key]) => !excludePoiTags(key))
                     .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
-                const shortDescriptions = await getWikiShortDescriptions(filteredOptions[OSM_PREFIX + WIKIDATA]);
-                ext = { extensions: { ...shortDescriptions, ...filteredOptions } };
+                ext = {
+                    extensions: { ...getShortDescriptionTags(ctx.addFavorite?.shortDescriptions), ...filteredOptions },
+                };
             }
         }
         const favorite = selectedGroup
@@ -365,9 +364,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             arrWpt.indexOf(currentWpt)
         );
 
-        setProcess(false);
         if (result) {
             updateFavoriteGroups({ result, selectedGroupId, oldGroupId, ctx, useSelected, favoriteName });
+            setProcess(false);
             closePanel();
         }
     }
@@ -607,7 +606,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                             <PrimaryBtn
                                 id={isEditMode ? 'se-edit-fav-item-submit' : 'se-add-fav-btn'}
                                 text={t('web:shared_string_save')}
-                                disabled={process || errorName || groupHasSameWpt()}
+                                disabled={errorName || groupHasSameWpt()}
                                 action={save}
                             />
                         </Box>
@@ -713,9 +712,6 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     );
 }
 
-async function getWikiShortDescriptions(wikidata) {
-    if (!wikidata) return {};
-    const response = await getWikiShortDescriptionsApi({ wikidata });
-
-    return Object.fromEntries(Object.entries(response?.data ?? {}).map(([key, value]) => [OSM_PREFIX + key, value]));
+function getShortDescriptionTags(shortDescriptions) {
+    return Object.fromEntries(Object.entries(shortDescriptions ?? {}).map(([key, value]) => [OSM_PREFIX + key, value]));
 }

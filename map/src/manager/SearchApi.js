@@ -2,7 +2,6 @@ import i18n from '../i18n';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { BBOX_COORDS_DECIMALS } from './GlobalManager';
 import { getCurrentTimeParams } from '../util/Utils';
-import { normalizeLang } from '../util/lang';
 
 function formatBboxCorner(corner) {
     return `${Number(corner.lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(corner.lng).toFixed(BBOX_COORDS_DECIMALS)}`;
@@ -73,13 +72,6 @@ export function getTransportStopApi({ lat, lon, stopId, signal }) {
         apiCache: true,
         signal,
         params: { lat, lon, stopId },
-    });
-}
-
-export function getWikiShortDescriptionsApi({ wikidata }) {
-    return apiGet(`${process.env.REACT_APP_USER_API_SITE}/search/get-wiki-short-descriptions`, {
-        apiCache: true,
-        params: { wikidata, lang: normalizeLang(i18n.language) },
     });
 }
 

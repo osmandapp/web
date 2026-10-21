@@ -35,6 +35,7 @@ export default function PoiActionsButtons({ wpt }) {
                 new LatLng(ctx.selectedWpt?.poi.geometry.coordinates[1], ctx.selectedWpt?.poi.geometry.coordinates[0]);
             ctx.setAddFavorite({
                 poi: ctx.selectedWpt?.poi,
+                shortDescriptions: wpt.photos?.shortDescriptions,
                 address: wpt.address,
                 location: loc,
                 openKey: Date.now(),

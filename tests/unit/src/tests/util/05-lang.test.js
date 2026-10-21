@@ -1,5 +1,5 @@
 import { getLanguageName } from '@map/util/LanguageDisplayName';
-import { findTranslationFolder, normalizeLang } from '@map/util/lang';
+import { findTranslationFolder, getWikiLang, normalizeLang } from '@map/util/lang';
 
 describe('findTranslationFolder', () => {
     test('a folder name is used as is', () => {
@@ -57,6 +57,29 @@ describe('normalizeLang', () => {
         expect(normalizeLang(undefined)).toBe('en-US');
         expect(normalizeLang('')).toBe('en-US');
         expect(normalizeLang(42)).toBe('en-US');
+    });
+});
+
+describe('getWikiLang', () => {
+    test('a region or script is dropped', () => {
+        expect(getWikiLang('ru')).toBe('ru');
+        expect(getWikiLang('es-rAR')).toBe('es');
+        expect(getWikiLang('pt-BR')).toBe('pt');
+        expect(getWikiLang('b+sr+Latn')).toBe('sr');
+        expect(getWikiLang('b+be+Latn')).toBe('be');
+        expect(getWikiLang('zh-rTW')).toBe('zh');
+    });
+
+    test('android codes become wikipedia codes', () => {
+        expect(getWikiLang('iw')).toBe('he');
+        expect(getWikiLang('in')).toBe('id');
+        expect(getWikiLang('nb')).toBe('no');
+        expect(getWikiLang('yue')).toBe('zh');
+    });
+
+    test('empty input falls back to english', () => {
+        expect(getWikiLang(null)).toBe('en');
+        expect(getWikiLang(undefined)).toBe('en');
     });
 });
 

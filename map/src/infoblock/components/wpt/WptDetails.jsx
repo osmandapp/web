@@ -67,6 +67,7 @@ import WptTagsProvider, {
     PARAM_ACCESS_TOKEN,
     PARAM_FIELDS,
     POI_OSM_URL,
+    SHORT_DESCRIPTION,
     WIKIDATA,
     WIKIPEDIA,
     addWikidataTags,
@@ -87,6 +88,8 @@ import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
+import { getWikiLang } from '../../../util/lang';
+import { sanitizeHtml } from '../../../frame/components/editor/htmlUtils';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
@@ -567,6 +570,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
             osmUrl: currentWpt.ext?.metadata?.links?.find((l) => l?.href?.includes('openstreetmap.org/'))?.href,
+            extensions: currentWpt.ext?.extensions,
             tags: null,
             mapObj: selectedWpt.mapObj,
         };
@@ -610,6 +614,15 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             });
         });
     }, [wpt?.id]);
+
+    const wikiDescHtml = useMemo(() => {
+        const desc =
+            wpt?.wikiDesc ||
+            getShortDescription(wpt?.extensions, OSM_PREFIX) ||
+            getShortDescription(wpt?.photos?.shortDescriptions);
+
+        return desc ? sanitizeHtml(cleanHtml(desc)) : null;
+    }, [wpt?.wikiDesc, wpt?.extensions, wpt?.photos, i18n.language]);
 
     function getWptType(wpt) {
         return {
@@ -794,6 +807,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
         const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-poi-photos`, tags, {
             apiCache: true,
+            params: { lang: getWikiLang(i18n.language) },
         });
 
         let result;
@@ -1091,7 +1105,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                                 {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
                                 {(wpt?.type?.isStop || wpt?.stopId) && <TransportStopsRoutes wpt={wpt} />}
-                                {wpt?.wikiDesc && (
+                                {wikiDescHtml && (
                                     <>
                                         <Divider />
                                         <MenuItem className={styles.descTitle}>
@@ -1102,21 +1116,23 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                             </ListItemText>
                                         </MenuItem>
                                         <div className={styles.descTextBlock}>
-                                            <Typography id={'se-wpt-desc'} className={styles.descText}>
-                                                {parse(cleanHtml(wpt?.wikiDesc || EMPTY_STRING))}
+                                            <Typography id={'se-wpt-desc'} component="div" className={styles.descText}>
+                                                {parse(wikiDescHtml)}
                                             </Typography>
                                         </div>
-                                        <Button
-                                            sx={{ ml: 1 }}
-                                            onClick={() =>
-                                                window.open(
-                                                    'https://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
-                                                    '_blank'
-                                                )
-                                            }
-                                        >
-                                            {t('shared_string_read_more')}
-                                        </Button>
+                                        {wpt?.wikiDesc && (
+                                            <Button
+                                                sx={{ ml: 1 }}
+                                                onClick={() =>
+                                                    window.open(
+                                                        'https://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
+                                                        '_blank'
+                                                    )
+                                                }
+                                            >
+                                                {t('shared_string_read_more')}
+                                            </Button>
+                                        )}
                                     </>
                                 )}
                                 <Divider />
@@ -1342,4 +1358,12 @@ function createPoiObject(feature, tags) {
     props[FINAL_POI_ICON_NAME] = getFinalPoiIconName(props);
 
     return createMapObject(feature);
+}
+
+function getShortDescription(tags, prefix = EMPTY_STRING) {
+    if (!tags) return null;
+    const key = prefix + SHORT_DESCRIPTION;
+    const anyLangKey = Object.keys(tags).find((tagKey) => tagKey.startsWith(`${key}:`));
+
+    return tags[`${key}:${getWikiLang(i18n.language)}`] ?? tags[key] ?? tags[anyLangKey];
 }

@@ -29,6 +29,7 @@ import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { getIconNameForPoiType, navigateToPoi } from '../../manager/PoiManager';
 import { getPoiByOsmIdApi } from '../../manager/SearchApi';
+import { getWikiLang } from '../../util/lang';
 import {
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
@@ -260,7 +261,7 @@ export default function ExploreLayer() {
                 params: {
                     northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
                     southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-                    lang: settings?.useWikiImages ? null : i18n.language,
+                    lang: settings?.useWikiImages ? null : getWikiLang(i18n.language),
                     filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                 },
                 signal: controller.signal,
