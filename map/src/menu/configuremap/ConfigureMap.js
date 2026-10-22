@@ -293,7 +293,11 @@ export default function ConfigureMap() {
                                         }
                                     }}
                                 >
-                                    <ListItemIcon className={setIconStyles(ctx.configureMapState.terrain?.key)}>
+                                    <ListItemIcon
+                                        className={setIconStyles(
+                                            ltx.accountInfo && !showProButton() && ctx.configureMapState.terrain?.key
+                                        )}
+                                    >
                                         <TerrainIcon />
                                     </ListItemIcon>
                                     <ListItemText>
