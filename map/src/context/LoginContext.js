@@ -62,7 +62,11 @@ export const LoginContextProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        if (!loginUser || loginUser === INIT_LOGIN_STATE) {
+        if (!loginUser) {
+            setAccountInfo(null);
+            return;
+        }
+        if (loginUser === INIT_LOGIN_STATE) {
             return;
         }
         if (accountInfo) {

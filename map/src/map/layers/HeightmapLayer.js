@@ -3,7 +3,6 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import MapContext from '../../context/MapContext';
 import L from 'leaflet';
 import { NO_HEIGHTMAP } from '../../menu/configuremap/TerrainConfig';
-import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
 
 export default function HeightmapLayer() {
@@ -17,9 +16,9 @@ export default function HeightmapLayer() {
     const tileLayerRef = useRef(null);
 
     useEffect(() => {
-        if (!map || !ltx.loginUser || ltx.loginUser === INIT_LOGIN_STATE) return;
+        if (!map) return;
 
-        if (mtx.heightmap === NO_HEIGHTMAP.key) {
+        if (mtx.heightmap === NO_HEIGHTMAP.key || !ltx.accountInfo || !ltx.isProAccount()) {
             if (tileLayerRef.current) {
                 map.removeLayer(tileLayerRef.current);
                 tileLayerRef.current = null;
@@ -70,7 +69,7 @@ export default function HeightmapLayer() {
                 tileLayerRef.current.off('tileerror');
             }
         };
-    }, [mtx.heightmap, ltx.loginUser]);
+    }, [mtx.heightmap, Boolean(ltx.accountInfo), ltx.isProAccount()]);
 
     useEffect(() => {
         mtx.setProcessHeightmaps(loadingTiles);
