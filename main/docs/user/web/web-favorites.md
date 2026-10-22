@@ -71,7 +71,7 @@ The Details view provides information associated with the selected place and dep
 
 ## Favorites Actions {#favorites-actions}
 
-[To add](../personal/favorites.md#manage-favorites) a new favorite point, right-click on the screen. 
+[To add](../personal/favorites.md#manage-favorites) a new favorite point, right-click on the screen. If the favorite cannot be saved, the error message includes the reason reported by the server, for example, that there is not enough space in [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 To edit an existing favorite, click the favorite point either directly on the map or select it from a favorites folder. This opens the Details panel, where the Edit action is available. Editing can also be started from the three-dot menu (⋮) next to the favorite in the Favorites list.
 
