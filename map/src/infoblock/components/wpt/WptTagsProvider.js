@@ -89,6 +89,8 @@ export const CITY = WEB_PREFIX + 'city';
 export const ADDRESS_1 = WEB_PREFIX + 'address1';
 export const ADDRESS_2 = WEB_PREFIX + 'address2';
 export const MATCHED_OBJECTS = WEB_PREFIX + 'matched_objects';
+// the other name (synonym, another language) the query matched, e.g. "Schule" for the category "Школа"
+export const MATCHED_ALT_NAME = WEB_PREFIX + 'alt_name';
 export const BBOX_LAT_LON = WEB_PREFIX + 'bbox_lat_lon';
 export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
 export const ICON_KEY_NAME = WEB_PREFIX + 'iconKeyName';

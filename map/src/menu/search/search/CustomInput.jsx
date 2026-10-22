@@ -291,10 +291,12 @@ export default function CustomInput({
                             >
                                 <Typography
                                     className={styles.autocompleteSelectText}
-                                    title={`${suggestion.name}${suggestion.info ? ` · ${suggestion.info}` : ''}`}
+                                    title={`${getSuggestionTitle(suggestion)}${suggestion.info ? ` · ${suggestion.info}` : ''}`}
                                 >
                                     {suggestion.typo && <SearchIcon className={styles.typoSuggestionIcon} />}
-                                    <span className={styles.autocompleteSelectName}>{suggestion.name}</span>
+                                    <span className={styles.autocompleteSelectName}>
+                                        {getSuggestionTitle(suggestion)}
+                                    </span>
                                     {suggestion.info && (
                                         <span className={styles.autocompleteSelectInfo}> · {suggestion.info}</span>
                                     )}
@@ -319,6 +321,7 @@ function buildSuggestions(data, ctx, t) {
 
             return {
                 name,
+                altName: props.altName,
                 info: props.info ?? props.type,
                 query: buildSuggestionQuery(props, feature.properties?.[CATEGORY_TYPE]) || name,
             };
@@ -336,6 +339,11 @@ function buildSuggestions(data, ctx, t) {
     // "did you mean": the corrected query first, with a search icon
     const typo = data?.typoSuggestion;
     return typo ? [{ name: typo, query: typo, typo: true }, ...suggestions] : suggestions;
+}
+
+// show which other name matched the query, as Android does: "Школа (Schule)"
+function getSuggestionTitle({ name, altName }) {
+    return altName ? `${name} (${altName})` : name;
 }
 
 // a suggestion click runs the full search: rebuild a query specific enough to hit the picked object
