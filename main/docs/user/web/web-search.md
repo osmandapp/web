@@ -32,7 +32,9 @@ The **Search menu** can be accessed from the side panel or from the Search icon 
 
 Use the **Search Bar** to find specific places, points of interest, [favorites](../web/web-favorites.md), and [tracks](../web/web-tracks.md) by name. Click the Search icon, enter your query, and select a result from the list. Selecting a POI opens the [POI Context Menu](#poi-context-menu), while selecting a favorite or track opens its details, where you can view information and use quick actions.
 
-If you search by a category name, the first result may show the corresponding POI category. Click the category to open the [Categories search](#categories) view.
+You can also combine several parts in one query. Enter a category or a brand together with a place name, for example, `Hotel Berlin` or `Billa Bratislava`, to find matching POIs in that place. Enter two categories or a category and a property, for example, `Fuel Diesel` or `Cafe Vegan`, to find places that match both.
+
+If you search by a category name, the first result may show the corresponding POI category. Category names can be entered in different languages, for example, `bank` or `банк`. Click the category to open the [Categories search](#categories) view.
 
 ![Search Options](@site/static/img/web/search_bar.png)
 
