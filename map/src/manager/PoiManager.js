@@ -1,9 +1,12 @@
 import { apiGet } from '../util/HttpApi';
 import iconsRaw from '../resources/generated/poiicons.json';
 import capitalize from 'lodash-es/capitalize';
+import upperFirst from 'lodash-es/upperFirst';
 import isEmpty from 'lodash-es/isEmpty';
 import {
     CATEGORY_ICON,
+    CATEGORY_KEY_NAME,
+    CATEGORY_NAME,
     MAIN_CATEGORY_KEY_NAME,
     getSvgIcon,
     ICON_KEY_NAME,
@@ -26,6 +29,7 @@ import {
 import { CategoryIcon } from '../menu/configuremap/PoiCategoriesConfig';
 import React from 'react';
 import i18n from '../i18n';
+import { getApiLang } from '../util/lang';
 import SEARCH_ICON_BRAND_URL from '../assets/icons/ic_action_poi_brand.svg';
 import { SEARCH_BRAND } from './searchConstants';
 import { MAIN_URL_WITH_SLASH, MAP_OBJ_URL, POI_URL } from './GlobalManager';
@@ -34,6 +38,8 @@ const icons = new Set(iconsRaw);
 
 const POI_CATEGORIES = 'poiCategories';
 const TOP_POI_FILTERS = 'topPoiFilters';
+const VALUE_LABEL_NAME = 'NAME';
+const VALUE_LABEL_WHOLE = 'WHOLE';
 export const DEFAULT_POI_ICON = 'craft_default';
 export const DEFAULT_POI_COLOR = '#f8931d';
 export const DEFAULT_ICON_COLOR = '#ffffff';
@@ -82,7 +88,7 @@ async function getPoiCategories() {
         let response = await apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-categories`, {
             apiCache: true,
             params: {
-                locale: i18n.language,
+                locale: getApiLang(i18n.language),
             },
         });
         if (response.data) {
@@ -115,6 +121,7 @@ async function searchPoiCategories(search, center) {
             search: search,
             lat: center.lat,
             lon: center.lng,
+            locale: getApiLang(i18n.language),
         },
     });
     if (!isEmpty(response?.data)) {
@@ -422,6 +429,10 @@ export function getCategoryName(category, t) {
     return getFirstSubstring(t(`poi_${category}`));
 }
 
+export function getCategoryItemName(item, t) {
+    return item[CATEGORY_NAME] ?? getCategoryName(item[CATEGORY_KEY_NAME], t);
+}
+
 export async function getCategoryIcon(category) {
     const name = PoiManager.preparePoiFilterIcon(category);
     return (
@@ -474,6 +485,25 @@ export async function getSearchResultIcon({ result, ctx, isCategory = false, ico
             }}
         />
     );
+}
+
+export function splitNameValue(translation) {
+    const index = translation?.indexOf(':') ?? -1;
+    const name = translation?.slice(0, index).trim();
+    const value = translation?.slice(index + 1).trim();
+
+    return index > 0 && /\p{L}/u.test(name) && value ? [name, value] : null;
+}
+
+export function getValueLabelParts(translation, label) {
+    const nameValue = label && label !== VALUE_LABEL_WHOLE ? splitNameValue(translation) : null;
+    if (!nameValue) {
+        return { tagName: null, tagValue: translation };
+    }
+
+    return label === VALUE_LABEL_NAME
+        ? { tagName: null, tagValue: nameValue[0] }
+        : { tagName: nameValue[0], tagValue: upperFirst(nameValue[1]) };
 }
 
 export function translateWithSplit(t, string) {

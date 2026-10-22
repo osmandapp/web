@@ -295,7 +295,10 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             const category = item.properties[CATEGORY_KEY_NAME];
             if (category) {
                 moveToMatchedPoiTypeLocation();
-                return navigateToSearchResults({ type: category }, backToSearchResultsState);
+                return navigateToSearchResults(
+                    { type: category },
+                    { state: { ...backToSearchResultsState.state, categoryName: item.properties[CATEGORY_NAME] } }
+                );
             }
         }
     }

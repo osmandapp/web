@@ -39,8 +39,7 @@ OsmAnd provides several ways to view your history.
 
 OsmAnd provides several ways to view your search history.  
 
-- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map, and tapping it will take you to the tool's [general screen](#how-to-use).
-- Go to the main Android *Menu → Search → History tab*.
+- The [Search button](../widgets/map-buttons.md#search) is always displayed on the map. Tap it to open the tool's [general screen](#how-to-use), and then select the *History* tab.
 - When preparing to start a route, tap *Navigation → Set destination → Search field*.
 - Information block in the navigation menu of [route preparation](../navigation/setup/route-navigation.md#navigation-menu) displays a list of recent destination points, which are also part of the search history.
 - Search history is available in [CarPlay](../navigation/car-play.md#search).
@@ -78,7 +77,7 @@ The search history serves to provide relevant information about your previous ac
 - *Re-search*. You can use the search history to search again for previously searched places or addresses without having to re-enter the query.
 - *Quick access to frequently visited places*. If you visit certain places frequently, such as your home, work, or favorite places, Search History saves those places, providing quick access to them.  
 - *Track previous trips*. The search history can be useful for tracking previous trips and routes. You can track routes you have taken before, or [plan your next route](../plan-route/create-route.md) based on previous ones.  
-- *Search for places over a certain period of time*. For the Android app, you need to use a long tap, then find the month in which you made the trip, exit the delete menu and set the name in the search field. For the iOS app, the search history list is already divided into blocks by month.
+- *Search for places over a certain period of time*. The search history list is already divided into blocks by month.
 - *Delete entries*. Search History provides the ability to [delete](#delete) previous entries, which can be useful for confidentiality or to keep your history organized.
 
 </TabItem>

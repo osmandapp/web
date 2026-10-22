@@ -95,10 +95,8 @@ When a query may refer to both an address and a POI, OsmAnd automatically priori
 
 **NOTE:** Address search works only within downloaded maps. Search results are based on:
 - maps installed on your device;
-- the visible map area;
+- [the visible map area](./search-all.md#how-to-use);
 - your current location. 
-
-If nothing is found, OsmAnd may suggest increasing the search radius.
 
 ### US Address Search and TIGER Data {#us-address-search-and-tiger-data}
 

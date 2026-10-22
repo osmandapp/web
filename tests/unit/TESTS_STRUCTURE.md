@@ -23,6 +23,7 @@ selenium tests. The number is what `yarn test 01` matches.
 | `stubs/` | module stubs wired through `moduleNameMapper` in `jest.config.js` |
 | `requests.js` | finds the request the app has sent to a given endpoint |
 | `infoFile.js` | reads the `.info` payload the app uploaded (FormData → gunzip → JSON) |
+| `login.js` | renders inside the real `LoginContextProvider` with a Pro session; holds `get-account-info` to switch accounts |
 | `setup.js` | jsdom polyfills (`TextEncoder`) and `REACT_APP_*` env |
 
 ## Stubs

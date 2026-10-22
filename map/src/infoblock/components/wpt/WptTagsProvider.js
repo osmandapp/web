@@ -21,6 +21,7 @@ import { apiGet, apiPost } from '../../../util/HttpApi';
 
 import { localizeWeekTokens } from '../../../util/dateFmt';
 import { WIKI_DEFAULT_LANG } from '../../../util/lang';
+import { getApiLang } from '../../../util/lang';
 import {
     convertMeters,
     getSmallLengthUnit,
@@ -254,6 +255,9 @@ async function getWptTags(obj, type, ctx) {
             if (entry.otherLangs?.length) {
                 tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag, entry.key);
             }
+            if (entry.labels) {
+                tagObj.labels = entry.labels;
+            }
 
             res.push(tagObj);
         }
@@ -455,7 +459,7 @@ async function fetchVisibleTags(tags) {
     tags = stringifyTagValues(tags);
     const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/visible-tags`, tags, {
         apiCache: true,
-        params: { lang: i18n.language },
+        params: { lang: getApiLang(i18n.language) },
     });
 
     return Array.isArray(response?.data) ? response.data : Object.entries(tags).map(([key, value]) => ({ key, value }));
