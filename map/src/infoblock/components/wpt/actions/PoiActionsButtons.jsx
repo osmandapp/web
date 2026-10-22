@@ -14,6 +14,7 @@ import { LatLng } from 'leaflet';
 import { POI_URL } from '../../../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import BlueBtn from '../../../../frame/components/btns/BlueBtn';
+import { getShortDescriptionKey } from '../WptTagsProvider';
 import LoginContext from '../../../../context/LoginContext';
 
 export default function PoiActionsButtons({ wpt }) {
@@ -35,7 +36,7 @@ export default function PoiActionsButtons({ wpt }) {
                 new LatLng(ctx.selectedWpt?.poi.geometry.coordinates[1], ctx.selectedWpt?.poi.geometry.coordinates[0]);
             ctx.setAddFavorite({
                 poi: ctx.selectedWpt?.poi,
-                shortDescriptions: wpt.photos?.shortDescriptions,
+                shortDescriptions: wpt.wikiDesc ? { [getShortDescriptionKey(wpt.lang)]: wpt.wikiDesc } : undefined,
                 address: wpt.address,
                 location: loc,
                 openKey: Date.now(),

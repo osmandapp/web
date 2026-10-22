@@ -1,5 +1,5 @@
 import { getLanguageName } from '@map/util/LanguageDisplayName';
-import { findTranslationFolder, getWikiLang, normalizeLang } from '@map/util/lang';
+import { findTranslationFolder, getWikiLang, getWikiLangs, normalizeLang } from '@map/util/lang';
 
 describe('findTranslationFolder', () => {
     test('a folder name is used as is', () => {
@@ -80,6 +80,20 @@ describe('getWikiLang', () => {
     test('empty input falls back to english', () => {
         expect(getWikiLang(null)).toBe('en');
         expect(getWikiLang(undefined)).toBe('en');
+    });
+});
+
+describe('getWikiLangs', () => {
+    test('english follows the wiki language', () => {
+        expect(getWikiLangs('ru')).toBe('ru,en');
+        expect(getWikiLangs('iw')).toBe('he,en');
+        expect(getWikiLangs('es-rAR')).toBe('es,en');
+    });
+
+    test('english is not repeated', () => {
+        expect(getWikiLangs('en')).toBe('en');
+        expect(getWikiLangs('en-rGB')).toBe('en');
+        expect(getWikiLangs(null)).toBe('en');
     });
 });
 

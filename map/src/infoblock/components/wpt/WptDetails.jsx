@@ -72,6 +72,8 @@ import WptTagsProvider, {
     WIKIPEDIA,
     addWikidataTags,
     getOsmIdFromOsmUrl,
+    getShortDescriptionKey,
+    getShortDescriptions,
     ICON_KEY_NAME,
     POI_FROM_TAGS,
     POI_ID,
@@ -89,7 +91,6 @@ import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
 import { getWikiLang } from '../../../util/lang';
-import { sanitizeHtml } from '../../../frame/components/editor/htmlUtils';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
@@ -615,15 +616,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         });
     }, [wpt?.id]);
 
-    const wikiDescHtml = useMemo(() => {
-        const desc =
-            wpt?.wikiDesc ||
-            getShortDescription(wpt?.extensions, OSM_PREFIX) ||
-            getShortDescription(wpt?.photos?.shortDescriptions);
-
-        return desc ? sanitizeHtml(cleanHtml(desc)) : null;
-    }, [wpt?.wikiDesc, wpt?.extensions, wpt?.photos, i18n.language]);
-
     function getWptType(wpt) {
         return {
             isPoi: ctx.currentObjectType === OBJECT_TYPE_POI && wpt?.poi,
@@ -807,7 +799,6 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
         const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/get-poi-photos`, tags, {
             apiCache: true,
-            params: { lang: getWikiLang(i18n.language) },
         });
 
         let result;
@@ -1056,6 +1047,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
     };
 
+    const shortDescription = getShortDescription(getShortDescriptions(wpt?.extensions));
+
     return (
         <>
             {showLoading ? (
@@ -1105,7 +1098,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                 {showPoiActions() && <PoiActionsButtons wpt={wpt} />}
                                 {showTransportStopActions() && <TransportStopActionsButtons wpt={wpt} />}
                                 {(wpt?.type?.isStop || wpt?.stopId) && <TransportStopsRoutes wpt={wpt} />}
-                                {wikiDescHtml && (
+                                {wpt?.wikiDesc && (
                                     <>
                                         <Divider />
                                         <MenuItem className={styles.descTitle}>
@@ -1116,23 +1109,21 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                             </ListItemText>
                                         </MenuItem>
                                         <div className={styles.descTextBlock}>
-                                            <Typography id={'se-wpt-desc'} component="div" className={styles.descText}>
-                                                {parse(wikiDescHtml)}
+                                            <Typography id={'se-wpt-desc'} className={styles.descText}>
+                                                {parse(cleanHtml(wpt?.wikiDesc || EMPTY_STRING))}
                                             </Typography>
                                         </div>
-                                        {wpt?.wikiDesc && (
-                                            <Button
-                                                sx={{ ml: 1 }}
-                                                onClick={() =>
-                                                    window.open(
-                                                        'https://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
-                                                        '_blank'
-                                                    )
-                                                }
-                                            >
-                                                {t('shared_string_read_more')}
-                                            </Button>
-                                        )}
+                                        <Button
+                                            sx={{ ml: 1 }}
+                                            onClick={() =>
+                                                window.open(
+                                                    'https://' + wpt.lang + '.wikipedia.org/wiki/' + wpt.name,
+                                                    '_blank'
+                                                )
+                                            }
+                                        >
+                                            {t('shared_string_read_more')}
+                                        </Button>
                                     </>
                                 )}
                                 <Divider />
@@ -1155,6 +1146,17 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                             icon: <DescriptionIcon />,
                                             name: t('shared_string_description'),
                                             value: wpt.desc,
+                                            isDesc: true,
+                                        }}
+                                    />
+                                )}
+                                {shortDescription && (
+                                    <WptTagInfo
+                                        key={'short-desc'}
+                                        baseTag={{
+                                            icon: <WikiIcon />,
+                                            name: t('shared_string_wikipedia'),
+                                            value: shortDescription,
                                             isDesc: true,
                                         }}
                                     />
@@ -1360,10 +1362,10 @@ function createPoiObject(feature, tags) {
     return createMapObject(feature);
 }
 
-function getShortDescription(tags, prefix = EMPTY_STRING) {
-    if (!tags) return null;
-    const key = prefix + SHORT_DESCRIPTION;
-    const anyLangKey = Object.keys(tags).find((tagKey) => tagKey.startsWith(`${key}:`));
-
-    return tags[`${key}:${getWikiLang(i18n.language)}`] ?? tags[key] ?? tags[anyLangKey];
+function getShortDescription(shortDescriptions) {
+    return (
+        shortDescriptions[getShortDescriptionKey(getWikiLang(i18n.language))] ??
+        shortDescriptions[SHORT_DESCRIPTION] ??
+        Object.values(shortDescriptions)[0]
+    );
 }

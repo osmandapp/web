@@ -11,6 +11,7 @@ const WIKI_LANG_MAP = {
     nb: 'no',
     zhyue: 'zh',
 };
+export const WIKI_DEFAULT_LANG = 'en';
 
 // folders use Android qualifiers (es-rAR, b+sr+Latn), the browser and i18next use BCP 47 (es-AR, sr-Latn)
 export function findTranslationFolder(lang) {
@@ -58,4 +59,8 @@ export function getWikiLang(lang) {
     const baseLang = normalizeLang(lang).split(/[-_]/)[0];
 
     return WIKI_LANG_MAP[baseLang] ?? baseLang;
+}
+
+export function getWikiLangs(lang) {
+    return [...new Set([getWikiLang(lang), WIKI_DEFAULT_LANG])].join(',');
 }

@@ -52,9 +52,6 @@
     font-style: normal !important;
     font-weight: 400 !important;
 }
-.descText p {
-    margin: 0;
-}
 
 .wptCategory {
     display: flex !important;

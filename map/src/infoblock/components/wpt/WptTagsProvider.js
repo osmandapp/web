@@ -20,6 +20,7 @@ import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
 import { localizeWeekTokens } from '../../../util/dateFmt';
+import { WIKI_DEFAULT_LANG } from '../../../util/lang';
 import {
     convertMeters,
     getSmallLengthUnit,
@@ -766,6 +767,24 @@ export const otherImgTags = (tag) => {
 
 export function getOsmIdFromOsmUrl(url) {
     return url ? url.split('/').pop() : null;
+}
+
+export function getShortDescriptionKey(lang) {
+    return lang && lang !== WIKI_DEFAULT_LANG ? `${SHORT_DESCRIPTION}:${lang}` : SHORT_DESCRIPTION;
+}
+
+export function isShortDescriptionTag(key) {
+    const tag = OSM_PREFIX + SHORT_DESCRIPTION;
+
+    return key === tag || key.startsWith(`${tag}:`);
+}
+
+export function getShortDescriptions(extensions) {
+    return Object.fromEntries(
+        Object.entries(extensions ?? {})
+            .filter(([key]) => isShortDescriptionTag(key))
+            .map(([key, value]) => [key.substring(OSM_PREFIX.length), value])
+    );
 }
 
 const WptTagsProvider = {
