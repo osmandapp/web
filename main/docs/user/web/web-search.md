@@ -56,6 +56,8 @@ Open the Search tab to access Explore — the Explore results are displayed on t
 
 No matter which search option you use (Search Bar, Categories, or Explore), selecting a POI on the map or in the results list opens the POI Context Menu. The context menu is the main place to view POI information and perform common actions. It combines POI details (such as location and related data) with quick actions (for example, saving, sharing, or starting navigation).
 
+To return to the results list, click *Back*. To close the menu, click *Close* or press Esc. Closing the menu clears the search, so Search opens without previous results the next time. The map stays at its current position.
+
 ### POI Details {#poi-details}
 
 The **POI Context Menu** displays key information about the selected place and provides links based on the available OSM and Wikimedia/Wikidata data:
