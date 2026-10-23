@@ -493,6 +493,8 @@ In the latest versions of ***Android***, access to system directories is limited
 
 All information about a Favourite is stored and described using tags. When creating a Favourite point, you can write your own [description](#favorite-point) or use information from the OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) data from which your point was created. Favorite points, POIs, and Waypoints use the same **tags** to store information and are saved in **GPX file format**.
 
+If the [OSM Editing plugin](../plugins/osm-editing.md) is enabled, a Favorite created from an OpenStreetMap object also stores a link to that object in the `osm_url` tag, for example `https://www.openstreetmap.org/node/7235345886`. The link is kept in exported and shared Favorites files and in backups.
+
 Favorites can also contain references to attached media using standard GPX `<link>` elements. 
 
 
@@ -507,6 +509,7 @@ Favorites can also contain references to attached media using standard GPX `<lin
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>
