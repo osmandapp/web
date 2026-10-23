@@ -51,7 +51,7 @@ To import a track using drag and drop:
 
 When a file is dragged over the map, the available drop area is highlighted. If you drop the file directly onto the map, it is imported into the Import folder. If you drop it onto an existing folder, it is imported into that folder instead. Without an active [OsmAnd Pro](../purchases/index.md) subscription, dropping a file opens a dialog explaining that track import requires OsmAnd Pro.
 
-The maximum file size is 20 MB for GPX and KML files and 2 MB for KMZ files. Larger files are not imported, and a warning appears instead. When you import several files at once, all rejected files are listed in one message.
+The maximum file size is 20 MB for GPX and KML files and 2 MB for KMZ files. Larger files are not imported, and a warning appears instead. When you import several files at once, all rejected files are listed in one message. Tracks larger than 20 MB that are already stored in OsmAnd Cloud cannot be opened on the web either, and a notification suggests opening them in the OsmAnd app.
 
 After the import is complete, the track appears in the track list, is synchronized with [OsmAnd Cloud](../personal/osmand-cloud.md), and becomes available on all devices connected to the same account.
 
