@@ -32,7 +32,9 @@ The **Search menu** can be accessed from the side panel or from the Search icon 
 
 Use the **Search Bar** to find specific places, points of interest, [favorites](../web/web-favorites.md), and [tracks](../web/web-tracks.md) by name. Click the Search icon, enter your query, and select a result from the list. Selecting a POI opens the [POI Context Menu](#poi-context-menu), while selecting a favorite or track opens its details, where you can view information and use quick actions.
 
-If you search by a category name, the first result may show the corresponding POI category. Click the category to open the [Categories search](#categories) view.
+You can also combine several parts in one query. Enter a category or a brand together with a place name, for example, `Hotel Berlin` or `Billa Bratislava`, to find matching POIs in that place. Enter two categories or a category and a property, for example, `Fuel Diesel` or `Cafe Vegan`, to find places that match both.
+
+If you search by a category name, the first result may show the corresponding POI category. Category names can be entered in different languages, for example, `bank` or `банк`. Click the category to open the [Categories search](#categories) view.
 
 ![Search Options](@site/static/img/web/search_bar.png)
 
@@ -53,6 +55,8 @@ Open the Search tab to access Explore — the Explore results are displayed on t
 ## POI Context Menu {#poi-context-menu}
 
 No matter which search option you use (Search Bar, Categories, or Explore), selecting a POI on the map or in the results list opens the POI Context Menu. The context menu is the main place to view POI information and perform common actions. It combines POI details (such as location and related data) with quick actions (for example, saving, sharing, or starting navigation).
+
+To return to the results list, click *Back*. To close the menu, click *Close* or press Esc. Closing the menu clears the search, so Search opens without previous results the next time. The map stays at its current position.
 
 ### POI Details {#poi-details}
 
