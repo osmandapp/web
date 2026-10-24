@@ -26,6 +26,8 @@ const NavigationInput = forwardRef(function NavigationInput(
         setShowHistory,
         containerRef,
         isDraggable = false,
+        readOnly = false,
+        emptyAction = null,
     },
     ref
 ) {
@@ -149,11 +151,14 @@ const NavigationInput = forwardRef(function NavigationInput(
                     onKeyDown={handleKeyDown}
                     autoFocus={focused}
                     fullWidth
+                    // the browser's own suggestions cover the app's list of places and round trip
+                    autoComplete="off"
                     InputProps={{
                         startAdornment: icon && <InputAdornment position="start">{icon}</InputAdornment>,
                         endAdornment: (
                             <InputAdornment position="end">
                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: '1px' }}>
+                                    {!inputValue && emptyAction}
                                     {inputValue && (
                                         <Box className={styles.clearIconWrapper}>
                                             <ActionIconBtn
@@ -177,6 +182,7 @@ const NavigationInput = forwardRef(function NavigationInput(
                             </InputAdornment>
                         ),
                         className: styles.inputField,
+                        readOnly,
                     }}
                 />
             </Box>

@@ -38,9 +38,12 @@ import {
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
+    ROUTE_ROUND_TRIP_ENABLED,
     PROFILE_LINE,
     PROFILE_RESCUETRACK,
 } from '../../store/geoRouter/profileConstants';
+import RoundTripSettings from './RoundTripSettings';
+import RoundTripVariants from './RoundTripVariants';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
@@ -76,6 +79,7 @@ export default function NavigationMenu() {
     const btnFile = useRef();
 
     const avoidRoads = navObject.getOption(ROUTE_POINTS_AVOID_ROADS);
+    const roundTrip = navObject.getOption(ROUTE_ROUND_TRIP_ENABLED);
 
     useEffect(() => {
         ctx.setOpenNavigationSettings(openSettings);
@@ -349,9 +353,10 @@ export default function NavigationMenu() {
                     </Tooltip>
                 </Box>
                 <NavigationPointsManager />
+                {roundTrip && <RoundTripSettings />}
                 {ctx.routingErrorMsg &&
                     navObject.getOption(ROUTE_POINTS_START) &&
-                    navObject.getOption(ROUTE_POINTS_FINISH) && (
+                    (roundTrip || navObject.getOption(ROUTE_POINTS_FINISH)) && (
                         <>
                             <ThickDivider mt={0} mb={0} />
                             <TextLeftIconBtn
@@ -361,13 +366,19 @@ export default function NavigationMenu() {
                             />
                         </>
                     )}
-                {(!navObject.getOption(ROUTE_POINTS_START) || !navObject.getOption(ROUTE_POINTS_FINISH)) && (
+                {(!navObject.getOption(ROUTE_POINTS_START) ||
+                    (!roundTrip && !navObject.getOption(ROUTE_POINTS_FINISH))) && (
                     <>
                         <ThickDivider />
                         <PreviousRouteCard />
                         <TextWithLeftIcon
                             icon={<InfoIcon />}
-                            text={<Trans i18nKey="web:navigation_tips" components={{ strong: <strong /> }} />}
+                            text={
+                                <Trans
+                                    i18nKey={roundTrip ? 'web:round_trip_tips' : 'web:navigation_tips'}
+                                    components={{ strong: <strong /> }}
+                                />
+                            }
                         />
                         <ThickDivider mt={0} mb={0} />
                         <TextLeftIconBtn
@@ -391,11 +402,15 @@ export default function NavigationMenu() {
                 {showRouteSummary() && (
                     <>
                         <ThickDivider />
-                        <RouteSummaryCard
-                            key={navObject.getProfile()?.profile}
-                            routeProps={navObject.getRouteProps()}
-                            onDetails={openInfoBlock}
-                        />
+                        {roundTrip ? (
+                            <RoundTripVariants onDetails={openInfoBlock} />
+                        ) : (
+                            <RouteSummaryCard
+                                key={navObject.getProfile()?.profile}
+                                routeProps={navObject.getRouteProps()}
+                                onDetails={openInfoBlock}
+                            />
+                        )}
                         <ThickDivider />
                     </>
                 )}

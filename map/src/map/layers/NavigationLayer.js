@@ -15,7 +15,10 @@ import {
     ROUTE_POINTS_FINISH,
     ROUTE_POINTS_VIA,
     ROUTE_POINTS_AVOID_ROADS,
+    ROUTE_ROUND_TRIP,
+    ROUTE_ROUND_TRIP_ENABLED,
 } from '../../store/geoRouter/profileConstants';
+import { selectAlternativeRoute } from '../../store/geoRouter/legacy/selectAlternativeRoute';
 import { NAVIGATE_URL } from '../../manager/GlobalManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { pickNextRoutePoint } from '../../manager/NavigationManager';
@@ -30,6 +33,89 @@ import { LINE_STRING } from '../../util/Utils';
 const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
 const TURN_DOT_Z_INDEX_OFFSET = 1100;
+const LOOP_ARROW_CLASS = 'nav-loop-arrow';
+const LOOP_ARROW_STEP_PX = 160; // the line stays thin, so arrows are sparse and sit in a circle
+const LOOP_ARROW_RADIUS_PX = 8;
+
+// Direction of a round trip loop: a circle in the line color with a white chevron, like in the app.
+// An arrow is only put on a straight stretch - on a bend its direction reads wrong - so a position that
+// falls on a corner is moved along the line to the nearest straight piece.
+const LOOP_ARROW_WINDOW_PX = 10; // the direction is taken over this distance on both sides
+const LOOP_ARROW_MAX_TURN_DEG = 30;
+const LOOP_ARROW_MAX_SHIFT_PX = 50;
+
+function drawLoopArrows(polyline, map) {
+    const svg = polyline._renderer?._container;
+    if (!svg) {
+        return;
+    }
+    svg.querySelectorAll('.' + LOOP_ARROW_CLASS).forEach((el) => el.remove());
+    const points = polyline
+        .getLatLngs()
+        .flat()
+        .map((ll) => map.latLngToLayerPoint(ll));
+    const cumulative = [0];
+    for (let i = 1; i < points.length; i++) {
+        cumulative.push(cumulative[i - 1] + points[i].distanceTo(points[i - 1]));
+    }
+    const total = cumulative.at(-1) ?? 0;
+    const pointAt = (d) => {
+        const dist = Math.max(0, Math.min(total, d));
+        let k = 1;
+        while (k < cumulative.length - 1 && cumulative[k] < dist) {
+            k++;
+        }
+        const seg = cumulative[k] - cumulative[k - 1];
+        const t = seg > 0 ? (dist - cumulative[k - 1]) / seg : 0;
+        return L.point(
+            points[k - 1].x + (points[k].x - points[k - 1].x) * t,
+            points[k - 1].y + (points[k].y - points[k - 1].y) * t
+        );
+    };
+    const angleOf = (a, b) => Math.atan2(b.y - a.y, b.x - a.x);
+    const turnAt = (d) => {
+        const before = angleOf(pointAt(d - LOOP_ARROW_WINDOW_PX), pointAt(d));
+        const after = angleOf(pointAt(d), pointAt(d + LOOP_ARROW_WINDOW_PX));
+        const diff = Math.abs(((after - before + 3 * Math.PI) % (2 * Math.PI)) - Math.PI);
+
+        return (diff * 180) / Math.PI;
+    };
+    for (let d = LOOP_ARROW_STEP_PX / 2; d < total - LOOP_ARROW_WINDOW_PX; d += LOOP_ARROW_STEP_PX) {
+        let best = d;
+        let bestTurn = turnAt(d);
+        for (let shift = 4; bestTurn > LOOP_ARROW_MAX_TURN_DEG && shift <= LOOP_ARROW_MAX_SHIFT_PX; shift += 4) {
+            for (const candidate of [d + shift, d - shift]) {
+                const turn = turnAt(candidate);
+                if (turn < bestTurn) {
+                    best = candidate;
+                    bestTurn = turn;
+                }
+            }
+        }
+        const center = pointAt(best);
+        const angle =
+            (angleOf(pointAt(best - LOOP_ARROW_WINDOW_PX), pointAt(best + LOOP_ARROW_WINDOW_PX)) * 180) / Math.PI;
+        const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        g.setAttribute('class', LOOP_ARROW_CLASS);
+        g.setAttribute('pointer-events', 'none');
+        g.setAttribute('transform', `translate(${center.x}, ${center.y}) rotate(${angle})`);
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', LOOP_ARROW_RADIUS_PX);
+        circle.setAttribute('fill', polyline.options.color);
+        circle.setAttribute('stroke', 'white');
+        circle.setAttribute('stroke-width', '1.5');
+        const chevron = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        chevron.setAttribute('d', 'M -2.5 -4 L 2 0 L -2.5 4');
+        chevron.setAttribute('fill', 'none');
+        chevron.setAttribute('stroke', 'white');
+        chevron.setAttribute('stroke-width', '2');
+        chevron.setAttribute('stroke-linecap', 'round');
+        chevron.setAttribute('stroke-linejoin', 'round');
+        g.appendChild(circle);
+        g.appendChild(chevron);
+        svg.appendChild(g);
+    }
+}
 
 function setMarkerIconHtml(marker, html) {
     const el = marker?.getElement();
@@ -105,15 +191,22 @@ const NavigationLayer = ({ geocodingData, region }) => {
         viaInputsCountRef.current = ctx.viaInputsCount;
     }, [routeObject, ctx.viaInputsCount]);
 
+    // points of the loop on the map, read by the click handler which is bound once
+    const loopPointsRef = useRef([]);
+
     const updateCursor = useCallback(() => {
         const container = map.getContainer();
         if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
             container.style.cursor = '';
             return;
         }
-        container.style.cursor = pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0)
-            ? 'crosshair'
-            : '';
+        const addsLoopPoint =
+            routeObjectRef.current.getOption(ROUTE_ROUND_TRIP_ENABLED) &&
+            routeObjectRef.current.getOption(ROUTE_POINTS_START);
+        container.style.cursor =
+            addsLoopPoint || pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0)
+                ? 'crosshair'
+                : '';
     }, []);
 
     const handleMapClick = useCallback(
@@ -129,6 +222,35 @@ const NavigationLayer = ({ geocodingData, region }) => {
                 return;
             }
             const wpt = event.detail?.wpt;
+
+            // A click on a round trip adds a point to the loop, where it makes the smallest detour
+            const routeObj = routeObjectRef.current;
+            const loopStart = routeObj.getOption(ROUTE_POINTS_START);
+            if (routeObj.getOption(ROUTE_ROUND_TRIP_ENABLED) && loopStart && loopPointsRef.current.length > 0) {
+                if (event.preventDefault) {
+                    event.preventDefault();
+                }
+                const start = L.latLng(loopStart.lat, loopStart.lng);
+                const added = L.latLng(coords.lat, coords.lng);
+                const stops = [start, ...loopPointsRef.current, start];
+                let bestIndex = 0;
+                let bestDetour = Infinity;
+                for (let i = 0; i < stops.length - 1; i++) {
+                    const detour =
+                        stops[i].distanceTo(added) + added.distanceTo(stops[i + 1]) - stops[i].distanceTo(stops[i + 1]);
+                    if (detour < bestDetour) {
+                        bestDetour = detour;
+                        bestIndex = i;
+                    }
+                }
+                const points = loopPointsRef.current.map((p) => [p.lat, p.lng]);
+                points.splice(bestIndex, 0, [added.lat, added.lng]);
+                routeObj.setOption(ROUTE_ROUND_TRIP + '.waypoints', points);
+                if (event?.originalEvent) {
+                    event.originalEvent.navigationHandled = true;
+                }
+                return;
+            }
 
             // Find first empty input from top to bottom (start -> intermediates -> finish)
             const target = pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0);
@@ -398,38 +520,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
     };
 
     // the picked route moves to the front and the two routes swap the "alternative" number (lines and turns)
-    const selectAlternative = (feature) => {
-        const route = routeObject.getRoute();
-        const number = feature.properties?.alternative;
-        // matched by the number rather than by object identity - the layer may hold a copy
-        const index = (route?.features ?? []).findIndex(
-            (f) => f.geometry?.type === LINE_STRING && f.properties?.alternative === number
-        );
-        if (index <= 0) {
-            return;
-        }
-        const color = route.mainRouteStyle?.color ?? routeObject.getColor();
-        const features = route.features.map((f) => {
-            const properties = { ...f.properties };
-            if (f.properties?.alternative === number) {
-                delete properties.alternative;
-            } else if (!isAlternativeFeature(f)) {
-                properties.alternative = number;
-            } else {
-                return f;
-            }
-            let style = f.style;
-            if (f.geometry?.type === LINE_STRING) {
-                style = properties.alternative ? alternativeRouteStyle(color) : (route.mainRouteStyle ?? { color });
-            }
-
-            return { ...f, properties, style };
-        });
-        const picked = features[index];
-        features[index] = features[0];
-        features[0] = picked;
-        routeObject.putRoute({ route: { ...route, features } });
-    };
+    const selectAlternative = (feature) => selectAlternativeRoute(routeObject, feature.properties?.alternative);
 
     const onEachAlternative = (feature, layer) => {
         // translucent so the shown route stays readable, but thick enough to click
@@ -482,7 +573,14 @@ const NavigationLayer = ({ geocodingData, region }) => {
 
     // filter features for GeoJSON
     const routeFilter = (feature /*, layer*/) => {
-        return !(feature?.geometry?.type === 'Point' && routeObject.getOption('route.map.hidePoints') === true);
+        if (feature?.geometry?.type !== 'Point') {
+            return true;
+        }
+        // a round trip is a loop to look at, not a list of instructions - its turn dots only hide the line
+        if (routeObject.getOption(ROUTE_ROUND_TRIP_ENABLED)) {
+            return false;
+        }
+        return routeObject.getOption('route.map.hidePoints') !== true;
     };
 
     const pointToLayer = (feature, latlng) => {
@@ -531,7 +629,80 @@ const NavigationLayer = ({ geocodingData, region }) => {
     // own layer mounted before the route: the route stays on top, and zoom-to-route ignores alternatives
     const routeFeatures = routeObject.getRoute()?.features ?? [];
     const shownRoute = routeFeatures.filter((f) => !isAlternativeFeature(f));
-    const alternativeRoutes = routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === LINE_STRING);
+    // round trip loops start at the same point and overlap, which is unreadable even translucent -
+    // only the picked one is drawn, the others are picked from their cards in the menu
+    const roundTrip = routeObject.getOption(ROUTE_ROUND_TRIP_ENABLED);
+    const editedLoopPoints = routeObject.getOption(ROUTE_ROUND_TRIP + '.waypoints');
+
+    // The points a loop was built through, shown like intermediate points so they can be moved.
+    // A generated loop reports its circle points, which may lie in a river or a park: each one is shown
+    // at the nearest point of the loop itself. Once moved, the points are kept as the user left them.
+    const loopPoints = useMemo(() => {
+        if (!roundTrip) {
+            return [];
+        }
+        if (editedLoopPoints?.length > 0) {
+            return editedLoopPoints.map(([lat, lon]) => L.latLng(lat, lon));
+        }
+        const shown = routeFeatures.find(
+            (f) => f.geometry?.type === LINE_STRING && f.properties?.roundTrip && !isAlternativeFeature(f)
+        );
+        const coords = shown?.geometry?.coordinates ?? [];
+        if (coords.length === 0) {
+            return [];
+        }
+        return (shown.properties.roundTrip.waypoints ?? []).map(([lat, lon]) => {
+            const target = L.latLng(lat, lon);
+            let best = coords[0];
+            let bestDist = Infinity;
+            for (const c of coords) {
+                const d = target.distanceTo(L.latLng(c[1], c[0]));
+                if (d < bestDist) {
+                    bestDist = d;
+                    best = c;
+                }
+            }
+            return L.latLng(best[1], best[0]);
+        });
+    }, [roundTrip, editedLoopPoints, routeObject.getRoute()]);
+
+    useEffect(() => {
+        loopPointsRef.current = loopPoints;
+    }, [loopPoints]);
+
+    const loopPointHandlers = (ind) => ({
+        dragend(e) {
+            const moved = e.target.getLatLng();
+            const points = loopPoints.map((p, i) => (i === ind ? [moved.lat, moved.lng] : [p.lat, p.lng]));
+            routeObject.setOption(ROUTE_ROUND_TRIP + '.waypoints', points);
+        },
+    });
+    const alternativeRoutes = roundTrip
+        ? []
+        : routeFeatures.filter((f) => isAlternativeFeature(f) && f.geometry?.type === LINE_STRING);
+
+    // a loop has no destination that tells which way it goes, so its direction is drawn on the line
+    useEffect(() => {
+        if (!routeLayer || !roundTrip) {
+            return;
+        }
+        const lines = [];
+        routeLayer.eachLayer((layer) => {
+            if (layer instanceof L.Polyline && !(layer instanceof L.Polygon)) {
+                lines.push(layer);
+            }
+        });
+        const draw = () => lines.forEach((polyline) => drawLoopArrows(polyline, map));
+        draw();
+        map.on('zoomend moveend', draw);
+
+        return () => {
+            map.off('zoomend moveend', draw);
+            lines.forEach((polyline) =>
+                polyline._renderer?._container?.querySelectorAll('.' + LOOP_ARROW_CLASS).forEach((el) => el.remove())
+            );
+        };
+    }, [routeLayer, roundTrip, routeDataKey]);
 
     const viaLayersRef = useRef([]);
 
@@ -639,6 +810,17 @@ const NavigationLayer = ({ geocodingData, region }) => {
                     />
                 ) : null
             )}
+            {loopPoints.map((it, ind) => (
+                <Marker
+                    ref={(m) => m && viaLayersRef.current.push(m)}
+                    key={'mark-loop' + ind + refreshKey}
+                    position={it}
+                    icon={getIntermediatePointIcon(ind)}
+                    draggable={true}
+                    eventHandlers={loopPointHandlers(ind)}
+                    zIndexOffset={POINT_MARKER_Z_INDEX_OFFSET}
+                />
+            ))}
             {finishPoint && (
                 <Marker
                     key={'mark-finish' + refreshKey}
