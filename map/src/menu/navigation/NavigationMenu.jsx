@@ -24,7 +24,7 @@ import SquareIconBtn from '../../frame/components/btns/SquareIconBtn';
 import ProfilesMenu from './ProfilesMenu';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
 import NavigationPointsManager from './NavigationPointsManager';
-import RouteSummaryCard from './RouteSummaryCard';
+import RouteVariants from './RouteVariants';
 import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
 import { abortApiRequest } from '../../util/HttpApi';
 import { NAVIGATION_ROUTE_ABORT_KEY } from '../../store/geoRouter/legacy/calculateRoute';
@@ -391,7 +391,7 @@ export default function NavigationMenu() {
                 {showRouteSummary() && (
                     <>
                         <ThickDivider />
-                        <RouteSummaryCard
+                        <RouteVariants
                             key={navObject.getProfile()?.profile}
                             routeProps={navObject.getRouteProps()}
                             onDetails={openInfoBlock}
