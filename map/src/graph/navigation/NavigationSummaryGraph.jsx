@@ -23,6 +23,35 @@ import { createMouseLinePlugin } from '../plugins/mouseLinePlugin';
 // ~60 FPS (16ms) for smooth performance
 const MOUSE_MOVE_THROTTLE_MS = 16;
 
+const DEPTH_COLOR = '#1e6fd9';
+const DEPTH_FILL_COLOR = 'rgba(30, 111, 217, 0.18)';
+const MAX_DEPTH_POINTS = 400;
+
+/**
+ * Boat routes carry depthProfile: [[distance m, depth m or null, lat, lon], ...] from the depth OBFs.
+ * Depth is drawn downwards from the surface, with gaps where the files have no data.
+ */
+function getDepthGraphData(route, unitsSettings) {
+    const profile = route.features.find((f) => f.properties?.depthProfile)?.properties.depthProfile;
+    if (!profile?.length) {
+        return null;
+    }
+    const step = Math.max(1, Math.floor(profile.length / MAX_DEPTH_POINTS));
+    const points = [];
+    const coordinates = [];
+    profile.forEach(([dist, depth, lat, lng], i) => {
+        const distance = convertMeters(dist, unitsSettings.len, LARGE_UNIT);
+        coordinates.push({ lat, lng, distance });
+        if (i % step === 0 || i === profile.length - 1) {
+            points.push({
+                distance,
+                depth: depth === null ? null : convertMeters(depth, unitsSettings.len, SMALL_UNIT),
+            });
+        }
+    });
+    return points.some((p) => p.depth !== null) ? { depthPoints: points, coordinates } : null;
+}
+
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend, zoomPlugin);
 
 /**
@@ -42,6 +71,11 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
     const graphData = useMemo(() => {
         if (!route?.features?.length) {
             return null;
+        }
+
+        const depthData = getDepthGraphData(route, unitsSettings);
+        if (depthData) {
+            return depthData;
         }
 
         // Extract all coordinates from route features
@@ -109,7 +143,8 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
 
     const totalDistance = totalDistanceMeters
         ? (convertMeters(totalDistanceMeters, unitsSettings.len, LARGE_UNIT) ?? 0)
-        : graphData?.points[graphData.points.length - 1]?.distance || 0;
+        : (graphData?.points ?? graphData?.depthPoints)?.at(-1)?.distance || 0;
+    const isDepth = !!graphData?.depthPoints;
 
     const mouseLinePlugin = useMemo(() => createMouseLinePlugin('#f8931d'), []);
 
@@ -120,13 +155,15 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
                 distanceUnit,
                 smallDistanceUnit,
                 totalDistance,
-                mainParams: [
-                    { id: 'y', label: 'altitude', unit: elevationUnit },
-                    { id: 'y1', label: 'shared_string_slope', unit: '%' },
-                ],
+                mainParams: isDepth
+                    ? [{ id: 'y', label: 'Depth', unit: elevationUnit }]
+                    : [
+                          { id: 'y', label: 'altitude', unit: elevationUnit },
+                          { id: 'y1', label: 'shared_string_slope', unit: '%' },
+                      ],
                 attributes: null,
             }),
-        [distanceUnit, smallDistanceUnit, totalDistance, elevationUnit]
+        [distanceUnit, smallDistanceUnit, totalDistance, elevationUnit, isDepth]
     );
 
     const options = useMemo(
@@ -183,6 +220,9 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
                 y: {
                     type: 'linear',
                     position: 'right',
+                    // depth grows downwards from the surface
+                    reverse: isDepth,
+                    min: isDepth ? 0 : undefined,
                     border: {
                         display: false,
                     },
@@ -208,7 +248,7 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
                 },
             },
         }),
-        [totalDistance, distanceUnit, smallDistanceUnit, elevationUnit]
+        [totalDistance, distanceUnit, smallDistanceUnit, elevationUnit, isDepth]
     );
 
     const handleMouseMove = useCallback(
@@ -222,6 +262,44 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
 
     if (!graphData) {
         return null;
+    }
+
+    if (isDepth) {
+        const depthChartData = {
+            datasets: [
+                {
+                    label: 'Depth',
+                    data: graphData.depthPoints.map((p) => ({ x: p.distance, y: p.depth })),
+                    borderColor: DEPTH_COLOR,
+                    backgroundColor: DEPTH_FILL_COLOR,
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    tension: 0.3,
+                    fill: 'start',
+                    spanGaps: false,
+                    yAxisID: 'y',
+                },
+            ],
+        };
+        const depthLabelsPlugin = createCombinedYAxisLabelsPlugin([
+            { id: 'y', color: DEPTH_COLOR, unit: elevationUnit },
+        ]);
+        const depthXAxisPlugin = createDistanceXAxisPlugin({ unitsSettings, totalDistance, t });
+        return (
+            <div className={styles.routeSummaryGraph}>
+                <div className={styles.routeSummaryGraphCanvas}>
+                    <Chart
+                        ref={chartRef}
+                        type="line"
+                        data={depthChartData}
+                        options={options}
+                        plugins={[depthLabelsPlugin, depthXAxisPlugin, mouseLinePlugin]}
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={() => GraphManager.hideGraphMarker(ctx)}
+                    />
+                </div>
+            </div>
+        );
     }
 
     const elevationData = graphData.points.map((p) => ({ x: p.distance, y: p.elevation }));
