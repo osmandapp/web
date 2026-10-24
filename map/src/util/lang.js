@@ -5,6 +5,14 @@ const LANG_TRANSFORM_MAP = {
     'b+be+Latn': 'be-BY',
 };
 
+const WIKI_LANG_MAP = {
+    iw: 'he',
+    in: 'id',
+    nb: 'no',
+    zhyue: 'zh',
+};
+export const WIKI_DEFAULT_LANG = 'en';
+
 // folders use Android qualifiers (es-rAR, b+sr+Latn), the browser and i18next use BCP 47 (es-AR, sr-Latn)
 export function findTranslationFolder(lang) {
     if (supportedLanguages.includes(lang)) {
@@ -55,4 +63,14 @@ export function normalizeLang(lang) {
     normalized = normalized.replace(pattern, (match, rPrefix, regionCode) => '-' + regionCode);
 
     return normalized;
+}
+
+export function getWikiLang(lang) {
+    const baseLang = normalizeLang(lang).split(/[-_]/)[0];
+
+    return WIKI_LANG_MAP[baseLang] ?? baseLang;
+}
+
+export function getWikiLangs(lang) {
+    return [...new Set([getWikiLang(lang), WIKI_DEFAULT_LANG])].join(',');
 }

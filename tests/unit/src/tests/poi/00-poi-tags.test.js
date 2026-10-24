@@ -1,5 +1,8 @@
 import WptTagsProvider, {
     getOsmIdFromOsmUrl,
+    getShortDescriptionKey,
+    getShortDescriptions,
+    isShortDescriptionTag,
     openWikipediaContent,
     WIKIPEDIA,
 } from '@map/infoblock/components/wpt/WptTagsProvider';
@@ -191,4 +194,35 @@ describe('getWptTags: the tags of a poi', () => {
 test('the osm id of a poi is the last part of its link', () => {
     expect(getOsmIdFromOsmUrl('https://www.openstreetmap.org/node/123')).toBe('123');
     expect(getOsmIdFromOsmUrl(null)).toBeNull();
+});
+
+describe('short descriptions of a favorite', () => {
+    test('english has no language suffix, other languages have one', () => {
+        expect(getShortDescriptionKey('en')).toBe('short_description');
+        expect(getShortDescriptionKey('ru')).toBe('short_description:ru');
+        expect(getShortDescriptionKey(undefined)).toBe('short_description');
+    });
+
+    test('only short description tags are recognized', () => {
+        expect(isShortDescriptionTag('osm_tag_short_description')).toBe(true);
+        expect(isShortDescriptionTag('osm_tag_short_description:de')).toBe(true);
+        expect(isShortDescriptionTag('osm_tag_short_description_extra')).toBe(false);
+        expect(isShortDescriptionTag('osm_tag_description')).toBe(false);
+        expect(isShortDescriptionTag('short_description')).toBe(false);
+    });
+
+    test('the descriptions are taken from the extensions without the osm prefix', () => {
+        const extensions = {
+            osm_tag_short_description: 'river',
+            'osm_tag_short_description:de': 'Fluss',
+            osm_tag_wikidata: 'Q1',
+            color: '#ff0000',
+        };
+
+        expect(getShortDescriptions(extensions)).toEqual({
+            short_description: 'river',
+            'short_description:de': 'Fluss',
+        });
+        expect(getShortDescriptions(undefined)).toEqual({});
+    });
 });
