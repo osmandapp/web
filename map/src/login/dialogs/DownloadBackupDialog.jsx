@@ -36,7 +36,7 @@ export default function DownloadBackupDialog({ openDownloadBackupDialog, setOpen
         'OSM_EDITS',
         'ACTIVE_MARKERS',
         'HISTORY_MARKERS',
-        'SEARCH_HISTORY',
+        'NAVIGATION_HISTORY',
         'ITINERARY_GROUPS',
     ];
     const settings = ['PROFILE', 'GLOBAL', 'QUICK_ACTIONS', 'AVOID_ROADS', 'POI_UI_FILTERS', 'COLOR_DATA'];
