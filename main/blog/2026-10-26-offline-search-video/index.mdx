@@ -3,7 +3,6 @@ slug: offline-search-video
 title: Why Offline Search Is So Hard
 authors: victor
 tags: [marketing,android,ios]
-unlisted: true
 description: "Search was the feature you complained about most. Here is how we rebuilt it from scratch for OsmAnd 5.5 — with a video and interactive demos of the new engine."
 image: ./img/cover.webp
 ---
@@ -29,7 +28,7 @@ import AddressExamples from '@site/src/components/OfflineSearch/AddressExamples'
   ></iframe>
 </div>
 
-If you have ever typed an address into OsmAnd and got a street in another town — or nothing at all — you are not alone. Search has been the most common complaint we hear, and in our 2026 survey it came up again and again in every language. So this year we did not patch it once more. We built a new search engine from scratch, and **it comes to everyone with OsmAnd 5.5**. If you don't want to wait, it is already in our [nightly builds](https://osmand.net/docs/versions/nightly_versions).
+If you have ever typed an address into OsmAnd and got a street in another town — or nothing at all — you are not alone. Search has been the most common complaint we hear, and in our [2026 survey](https://osmand.net/blog/survey-26) it came up again and again in every language. So this year we did not patch it once more. We built a new search engine from scratch, and **it comes to everyone with OsmAnd 5.5**. If you don't want to wait, it is already in our [nightly builds](https://osmand.net/docs/versions/nightly_versions).
 
 The video above tells the whole story in 23 minutes. Below is the short version, with a few interactive demos so you can play with the same ideas the new engine uses.
 
@@ -37,12 +36,12 @@ The video above tells the whole story in 23 minutes. Below is the short version,
 
 ## What Changes for You
 
-- **Addresses typed your way.** «Unter den Linden 10» or «10 Unter den Linden», «S Mountain Blvd» for South Mountain Boulevard, a postcode or a state instead of a town.
-- **Typos corrected.** Misspell a word and search offers the right one: «leopoldstrase 10» → *Leopoldstraße 10*, «mnuc» → *München*.
+- **Addresses typed your way.** `Unter den Linden 10` or `10 Unter den Linden`, `S Mountain Blvd` for South Mountain Boulevard, a postcode or a state instead of a town.
+- **Typos corrected.** Misspell a word and search offers the right one: `leopoldstrase 10` → *Leopoldstraße 10*, `mnuc` → *München*.
 - **Suggestions as you type.** Start a word and search offers the most common words that continue it — tap one instead of typing the rest.
-- **Public services by the name people use.** «DMV» finds motor vehicle offices and «NHS» finds NHS clinics, even when the map lists the organisation only as the operator.
-- **Categories in more words and languages.** Categories match common synonyms and work in your language, in English, and in the local language: with the app in English, both «school» and «Schule» find schools in Germany.
-- **Places next to places.** «Fuel McDonald's» finds gas stations with a McDonald's nearby; «Shell» on a named street; two streets that cross.
+- **Public services by the name people use.** `DMV` finds motor vehicle offices and `NHS` finds NHS clinics, even when the map lists the organisation only as the operator.
+- **Categories in more words and languages.** Categories match common synonyms and work in your language, in English, and in the local language: with the app in English, both `school` and `Schule` find schools in Germany.
+- **Places next to places.** `Fuel McDonald's` finds gas stations with a McDonald's nearby; `Shell` on a named street; two streets that cross.
 - **Faster and measured.** The search itself is about five times faster, and every change now runs against 137,000 real searches in 28 test sets — 99.5% of them are found.
 
 ## Why Is This So Hard Offline?
@@ -93,7 +92,7 @@ An advanced version of the zipper jumps between tile levels — a town is a big 
 
 Long queries, like a crossing of two streets, add one more twist. Each object covers only some of the words, so the answer is a set of pieces that covers every word exactly once — and also meets on the map. It is a classic hard problem, the same family as Sudoku. The engine plays it like Tetris: pieces dock into a row, every docking is checked on the map, and a row that drops to zero disappears together with everything that could have been built on it.
 
-This is the engine's real trace for «Travessa de Santo António, Rua Joaquim Ribeiro de Carvalho, Portugal»:
+This is the engine's real trace for `Travessa de Santo António, Rua Joaquim Ribeiro de Carvalho, Portugal`:
 
 <Tetris/>
 
@@ -109,9 +108,9 @@ Not everything is solved. Havana's *Calle L, between 23 and 25* has no house num
 
 ## Try It and Help
 
-The new search comes with **OsmAnd 5.5**. You can try it today in our [nightly builds](https://osmand.net/docs/versions/nightly_versions), and as always the code is on [GitHub](https://github.com/osmandapp/OsmAnd).
+The new search comes with **OsmAnd 5.5**. You can try it today in our [nightly builds](https://osmand.net/docs/versions/nightly_versions), and as always the code is on [GitHub](https://github.com/osmandapp/OsmAnd). How to use search is described in the [Search documentation](https://osmand.net/docs/user/search/).
 
-- **Tell us what you typed.** When search can't find something, send us the exact query — every miss becomes a test.
+- **Tell us what you typed.** When search can't find something, send us the exact query to support@osmand.net or open an issue on [GitHub](https://github.com/osmandapp/OsmAnd/issues) — every miss becomes a test.
 - **Help the map.** A street without a name can't be found, and streets inside a town without a boundary may be missed. Add names and draw boundaries in OpenStreetMap.
 
 The video has subtitles in 7 languages and dubbed audio in German, French, Italian, and Spanish.
