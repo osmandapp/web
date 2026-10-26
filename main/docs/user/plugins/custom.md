@@ -331,6 +331,7 @@ You can take a look at some of the plugins that OsmAnd users have made on their 
  - [UMP-PL](https://ump.waw.pl/) Poland [map custom plugin](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf).
  - [OsmAnd Rendering plugin](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf) custopm plugin.
  - [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf) custom plugin.
+ - [UK 1 m LiDAR Monument Survey](https://glassontin.github.io/megalith-lidar/docs/megalith-lidar.osf) ([source](https://github.com/GlassOnTin/megalith-lidar)) custom plugin (unrecorded Prehistoric, Iron Age, and Roman earthworks across England, Roman road network, and UK 1 m LiDAR / 1888 OS map overlays).
 
 
 ## Related Articles {#related-articles}
