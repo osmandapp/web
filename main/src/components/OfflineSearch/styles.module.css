@@ -296,3 +296,12 @@
     opacity: 1;
   }
 }
+
+.code {
+  background: #1b2230;
+  color: #e8eaee;
+  border: 1px solid #2c3546;
+  border-radius: 5px;
+  padding: 0 5px;
+  font-size: 0.9em;
+}
