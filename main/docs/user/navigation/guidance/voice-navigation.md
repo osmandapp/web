@@ -393,9 +393,11 @@ You can control the screen of your device to save power. This mode has two gener
 
     ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. If *Keep Screen On* is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
+2. **<Translate android="true" ids="wake_time"/>**. If *Keep Screen On* is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.
 
     ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+
+3. **<Translate android="true" ids="keep_screen_on_during_turns**. When enabled, the screen stays on longer when approaching a navigation turn and for the entire duration of the maneuver (for example, while navigating a large roundabout or during a traffic jam). This does not wake up the screen if it is already off.  
 
 ### Turn Screen On {#turn-screen-on}
 
