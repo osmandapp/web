@@ -39,7 +39,7 @@ export function htmlToText(html) {
         .replaceAll(/<\/li>/gi, '\n')
         .replaceAll(/<\/blockquote>/gi, '\n')
         .replaceAll(/<br\s*\/?>/gi, '\n')
-        .replaceAll(/<[^>]+>/g, '')
+        .replaceAll(/<\/?[a-z][^>]*>/gi, '')
         .replace(/\n+$/, '')
         .trim();
 

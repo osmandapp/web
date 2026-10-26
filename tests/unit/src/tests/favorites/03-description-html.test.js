@@ -31,6 +31,7 @@ test('a plain text description from the phone keeps its paragraphs and line brea
 
 test('a description preview shows characters, not their html entities', () => {
     expect(htmlToText('<p>Tom &amp; Jerry</p><p>a &lt;b&gt; tag</p>')).toBe('Tom & Jerry\na <b> tag');
+    expect(htmlToText('depth < 5 m and > 2 m')).toBe('depth < 5 m and > 2 m');
     expect(htmlToText('<p>a&nbsp;b &quot;c&quot;</p>')).toBe('a b "c"');
 });
 

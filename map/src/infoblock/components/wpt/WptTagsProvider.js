@@ -15,7 +15,8 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
+import { cleanHtml, createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
+import { htmlToText, plainTextToHTML } from '../../../frame/components/editor/htmlUtils';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
@@ -792,6 +793,10 @@ export function getShortDescriptions(extensions) {
             .filter(([key]) => isShortDescriptionTag(key))
             .map(([key, value]) => [key.substring(OSM_PREFIX.length), value])
     );
+}
+
+export function shortDescriptionToHTML(text) {
+    return plainTextToHTML(htmlToText(cleanHtml(text ?? '')));
 }
 
 const WptTagsProvider = {

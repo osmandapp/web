@@ -33,6 +33,7 @@ import {
     isShortDescriptionTag,
     MARKER_INTERNAL_KEYS,
     OSM_PREFIX,
+    shortDescriptionToHTML,
     WEB_POI_PREFIX,
     WEB_PREFIX,
 } from '../wpt/WptTagsProvider';
@@ -565,22 +566,25 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         guardAction(closePanel);
     }
 
+    const shortDescriptionPanelKey = activePanel?.startsWith(SHORT_DESCRIPTION_PANEL)
+        ? activePanel.substring(SHORT_DESCRIPTION_PANEL.length)
+        : null;
+    const visibleShortDescriptions = Object.entries(shortDescriptions).filter(
+        ([key, value]) => value || key === shortDescriptionPanelKey
+    );
+
     function updateShortDescription(key, html) {
         setShortDescriptions((prev) => ({ ...prev, [key]: htmlToPlainText(html) }));
     }
 
     function getShortDescriptionTitle(key) {
-        if (Object.keys(shortDescriptions).length < 2) return t('web:wiki_description');
+        if (visibleShortDescriptions.length < 2) return t('web:wiki_description');
         const lang = getShortDescriptionLang(key);
 
         return t('web:wiki_description_lang', {
             lang: t(`lang_${lang}`, { defaultValue: getLanguageName(lang) }),
         });
     }
-
-    const shortDescriptionPanelKey = activePanel?.startsWith(SHORT_DESCRIPTION_PANEL)
-        ? activePanel.substring(SHORT_DESCRIPTION_PANEL.length)
-        : null;
 
     const groups = isTrackWpt ? ctx.selectedGpxFile?.pointsGroups : ctx.favorites.groups;
     const defaultGroup = isAddTrackWpt
@@ -623,6 +627,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     description={plainTextToHTML(shortDescriptions[shortDescriptionPanelKey])}
                     setDescription={(html) => updateShortDescription(shortDescriptionPanelKey, html)}
                     onClose={closeActivePanel}
+                    plainText
                 />
             )}
             {activePanel === 'icon' && (
@@ -698,13 +703,13 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         onClick={() => togglePanel('description')}
                     />
                     {!isTrackWpt &&
-                        Object.entries(shortDescriptions).map(([key, value]) => (
+                        visibleShortDescriptions.map(([key, value]) => (
                             <Fragment key={key}>
                                 <ThickDivider />
                                 <FavoriteDescription
                                     id={`se-edit-fav-short-desc-${getShortDescriptionLang(key)}`}
                                     title={getShortDescriptionTitle(key)}
-                                    favoriteDescription={plainTextToHTML(value)}
+                                    favoriteDescription={shortDescriptionToHTML(value)}
                                     onClick={() => togglePanel(SHORT_DESCRIPTION_PANEL + key)}
                                 />
                             </Fragment>
