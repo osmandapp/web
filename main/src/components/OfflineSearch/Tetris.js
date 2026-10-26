@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import s from './styles.module.css';
 import TRACE from './data/tetris';
 import { WORDS, fmt, maskName, portugalView, setupCanvas, drawPortugal, useWidth } from './common';
+import Player from './Player';
 
 // Rows from the engine's real search for the Leiria crossing (the same rows as in the video): pieces (objects grouped
 // by the words they cover) dock into one row of 8 word columns; every docking is checked on the map and leaves only
@@ -103,6 +104,7 @@ export default function Tetris() {
         8 words, 8 columns. A piece is a group of objects that cover the same words; its number is how many places stand behind it.
         Pieces dock into a row until every word is covered — or until no places are left.
       </div>
+      <Player value={t} max={STEPS.length} playing={play} onPlay={setPlay} onSeek={setT} label={`piece ${t} of ${STEPS.length}`} />
       <div className={s.split}>
       <div style={{ flex: '1 1 340px', minWidth: 0 }}>
       <div style={{ display: 'flex', gap: 10 }}>
@@ -143,13 +145,6 @@ export default function Tetris() {
           ))}
         </div>
       )}
-      <div className={s.row}>
-        <button type="button" className={s.btn} onClick={() => setPlay(!play)} disabled={end}>{play ? 'Pause' : t === 0 ? 'Play' : 'Continue'}</button>
-        <button type="button" className={s.btn} onClick={() => { setPlay(false); setT(Math.min(STEPS.length, t + 1)); }} disabled={end}>Next piece</button>
-        <button type="button" className={s.btn} onClick={() => { setPlay(false); setT(Math.max(0, t - 1)); }} disabled={t === 0}>Back</button>
-        <button type="button" className={s.btn} onClick={() => { setPlay(false); setT(STEPS.length); }} disabled={end}>Skip to answers</button>
-        <button type="button" className={s.btn} onClick={() => { setPlay(false); setT(0); }} disabled={t === 0}>Restart</button>
-      </div>
       </div>
       <div style={{ flex: '0 1 220px', minWidth: 0 }}>
         <div className={s.dim} style={{ fontSize: 13, marginBottom: 6 }}>Next pieces</div>

@@ -4,6 +4,7 @@ import s from './styles.module.css';
 import LIB from './data/librarian';
 import ryeMap from './data/rye_map.webp';
 import { fmt, setupCanvas, useWidth } from './common';
+import Player from './Player';
 
 // The old search as a librarian, step by step as in the video: the key word on the map of Portugal, which word is the key,
 // the shelf of a small town, London's one shelf, one word with five kinds of objects. Drawn at 1920×1080 and scaled down.
@@ -362,7 +363,7 @@ const DRAW = { key: drawKey, which: drawWhich, shelf: drawShelf, london: drawLon
 
 export default function Librarian() {
   const [step, setStep] = useState(0), [play, setPlay] = useState(false);
-  const wrap = useRef(null), cv = useRef(null), t0 = useRef(0), seen = useRef(false), ctx = useRef(null);
+  const wrap = useRef(null), cv = useRef(null), t0 = useRef(0), seen = useRef(false), vis = useRef(false), ctx = useRef(null);
   const w = useWidth(wrap, 1000), h = Math.round((w * H) / W);
   const cur = STEPS[step], k = step - FIRST[cur.sc];
 
@@ -374,7 +375,10 @@ export default function Librarian() {
   useEffect(() => { ctx.current = setupCanvas(cv.current, w, h); }, [w, h]);
   useEffect(() => { t0.current = performance.now(); }, [step]);
   useEffect(() => {  // the first step starts when the demo scrolls into view
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting && !seen.current) { seen.current = true; t0.current = performance.now(); } });
+    const io = new IntersectionObserver(([e]) => {
+      vis.current = e.isIntersecting;
+      if (e.isIntersecting && !seen.current) { seen.current = true; t0.current = performance.now(); }
+    });
     io.observe(wrap.current);
     return () => io.disconnect();
   }, []);
@@ -383,18 +387,23 @@ export default function Librarian() {
     const frame = (now) => {
       const p = seen.current ? (now - t0.current) / 1000 : 0;
       g = ctx.current; NOW = now / 1000;
-      if (g) {
+      if (g && vis.current) {
         const r = window.devicePixelRatio || 1;
         g.setTransform(r * (w / W), 0, 0, r * (w / W), 0, 0);
         g.fillStyle = '#0b0d12'; g.fillRect(0, 0, W, H);
         DRAW[cur.sc](k, p);
       }
-      if (play && p * 1000 > cur.ms) { if (step < STEPS.length - 1) setStep(step + 1); else setPlay(false); return; }
       id = requestAnimationFrame(frame);
     };
     id = requestAnimationFrame(frame);
     return () => cancelAnimationFrame(id);
-  }, [step, play, w, h]);  // eslint-disable-line
+  }, [step, w, h]);  // eslint-disable-line
+  useEffect(() => {  // autoplay: each step stays for its own time
+    if (!play) return undefined;
+    if (step >= STEPS.length - 1) { setPlay(false); return undefined; }
+    const id = setTimeout(() => setStep(step + 1), cur.ms);
+    return () => clearTimeout(id);
+  }, [play, step]);  // eslint-disable-line
 
   const go = (n) => { setPlay(false); setStep(Math.max(0, Math.min(STEPS.length - 1, n))); };
   return (
@@ -406,16 +415,11 @@ export default function Librarian() {
           <button key={id} type="button" className={clsx(s.chip, cur.sc === id && s.chipOn)} style={cur.sc === id ? { background: '#ffd166', borderColor: '#ffd166' } : undefined} onClick={() => go(FIRST[id])}>{name}</button>
         ))}
       </div>
+      <Player value={step} max={STEPS.length - 1} playing={play} onPlay={setPlay} onSeek={setStep} label={`step ${step + 1} of ${STEPS.length}`} />
       <div ref={wrap} style={{ width: '100%' }}>
         <canvas ref={cv} className={s.canvas} style={{ width: w, height: h }} />
       </div>
-      <div className={s.say}>{cur.say}</div>
-      <div className={s.row}>
-        <button type="button" className={s.btn} onClick={() => { if (!play && step === STEPS.length - 1) setStep(0); setPlay(!play); }}>{play ? 'Pause' : step === STEPS.length - 1 ? 'Play again' : 'Play'}</button>
-        <button type="button" className={s.btn} onClick={() => go(step - 1)} disabled={step === 0}>Back</button>
-        <button type="button" className={s.btn} onClick={() => go(step + 1)} disabled={step === STEPS.length - 1}>Next</button>
-        <span className={s.dim} style={{ fontSize: 13 }}>{step + 1} / {STEPS.length}</span>
-      </div>
+      <div className={s.say} style={{ minHeight: '4.4em' }}>{cur.say}</div>
     </div>
   );
 }

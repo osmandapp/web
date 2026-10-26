@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import clsx from 'clsx';
 import s from './styles.module.css';
 import { WORDS, WORD_COLORS, fmt, getPoints, portugalView, setupCanvas, drawPortugal, useWidth, tileXY, zNumber, tileBounds } from './common';
+import Player from './Player';
 
 // Two words become two sorted lists of tile numbers; one pass over both finds every tile they share
 function tilesOf(b, z) {
@@ -93,7 +94,7 @@ export default function Zipper() {
   }, [data, hits, k, w, a, b, z]);
 
   const opts = (other) => WORDS.map((word, i) => <option key={word} value={i} disabled={i === other}>{word}</option>);
-  let say = 'Press Step: compare the two current numbers.';
+  let say = 'Press Next or Autoplay: compare the two current numbers.';
   if (data && k > 0) {
     const [i, j, hit] = data.steps[k - 1], x = data.A.nums[i], y = data.B.nums[j];
     say = hit ? `${fmt(x)} = ${fmt(y)}: the same tile. Only here do we compare the objects themselves.`
@@ -117,6 +118,7 @@ export default function Zipper() {
           <input type="range" min={7} max={14} value={z} onChange={(e) => setZ(+e.target.value)} style={{ verticalAlign: 'middle' }} />
         </label>
       </div>
+      {data && <Player value={k} max={data.steps.length} playing={play} onPlay={setPlay} onSeek={setK} label={`${fmt(k)} of ${fmt(data.steps.length)} steps`} />}
       {data && (
         <div className={s.split}>
           <div ref={wrap} style={{ flex: '0 1 280px', maxWidth: 280, width: '100%' }}>
@@ -127,12 +129,6 @@ export default function Zipper() {
             <TileList nums={data.A.nums} cur={cur[0]} hits={hits} done={cur[0]} color={WORD_COLORS[a]} />
             <div style={{ color: WORD_COLORS[b] }}>{WORDS[b]} · {fmt(data.B.nums.length)} tiles</div>
             <TileList nums={data.B.nums} cur={cur[1]} hits={hits} done={cur[1]} color={WORD_COLORS[b]} />
-            <div className={s.row}>
-              <button type="button" className={s.btn} onClick={() => setK(Math.min(k + 1, data.steps.length))} disabled={k >= data.steps.length}>Step</button>
-              <button type="button" className={s.btn} onClick={() => setPlay(!play)} disabled={k >= data.steps.length}>{play ? 'Pause' : 'Play'}</button>
-              <button type="button" className={s.btn} onClick={() => { setPlay(false); setK(data.steps.length); }}>Finish</button>
-              <button type="button" className={s.btn} onClick={() => { setPlay(false); setK(0); }}>Reset</button>
-            </div>
             <div className={s.say}>{say}</div>
             <div className={s.stats}>
               <span className={s.dim}>Steps</span><span className={s.num}>{fmt(k)} of at most {fmt(data.A.nums.length + data.B.nums.length)}</span>

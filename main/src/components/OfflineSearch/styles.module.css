@@ -305,3 +305,88 @@
   padding: 0 5px;
   font-size: 0.9em;
 }
+
+.player {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin: 10px 0 12px;
+  padding: 8px 10px;
+  background: #121821;
+  border: 1px solid #1f2735;
+  border-radius: 10px;
+}
+
+.pbtns {
+  display: flex;
+  gap: 6px;
+}
+
+.pbtn,
+.pmain {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 34px;
+  border: 1px solid #2c3546;
+  background: #1b2230;
+  color: #e8eaee;
+  border-radius: 8px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pbtn[aria-label] {
+  width: 34px;
+  padding: 0;
+}
+
+.pmain {
+  min-width: 112px;
+  background: #ffd166;
+  border-color: #ffd166;
+  color: #0b0d12;
+  font-weight: 600;
+}
+
+.pbtn:hover:not(:disabled) {
+  background: #253045;
+}
+
+.pmain:hover {
+  background: #ffdb85;
+}
+
+.pbtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.ptrack {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.prange {
+  flex: 1 1 auto;
+  min-width: 0;
+  accent-color: #ffd166;
+  cursor: pointer;
+}
+
+.plabel {
+  flex: 0 0 auto;
+  min-width: 7.5em;
+  text-align: right;
+  font-size: 13px;
+  color: #9aa3b2;
+  font-variant-numeric: tabular-nums;
+}
