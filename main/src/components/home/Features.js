@@ -39,7 +39,7 @@ const FeatureList = [
         <li>Search for places by address, by type (e.g.: restaurant, hotel, gas station, museum), or by geographical coordinates</li>
         <li>Profiles for car, truck, motorcycle, bicycle, walking, horse riding, skiing, boat, train, and more</li>
         <li>Create your own profiles with custom routing, map style, widgets, and settings</li>
-        <li>Fine-tune routing: avoid specific roads, prefer or avoid unpaved roads, and set vehicle size, weight, and fuel type</li>
+        <li>Fine-tune routing: avoid specific roads, prefer or avoid unpaved roads, and set vehicle size and weight</li>
         <li>Route details: distance, time, elevation graph, road surface and other road attributes, turn-by-turn instructions</li>
         <li>Plan a route: draw your own route by points, following roads or straight lines, save it as a GPX track, and navigate along it</li>
         <li>Routing modes: offline OsmAnd routing, BRouter, online routing, direct-to-point, and straight line</li>

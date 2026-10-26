@@ -18,7 +18,7 @@ const ImpressionsList = [
     showOnHomepage: true,
   },
   {
-    url: 'https://tech.yahoo.com/apps/articles/switched-google-maps-open-source-124516835.html',
+    url: 'https://www.howtogeek.com/switched-from-google-maps-to-open-source-alternative/',
     source: 'How-To Geek',
     name: 'Nick Lewis',
     date: 'April 13, 2026',
