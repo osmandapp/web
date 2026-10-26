@@ -1,4 +1,4 @@
-import { fmt, localizeWeekTokens } from '@map/util/dateFmt';
+import { fmt, localizeOpeningHours } from '@map/util/dateFmt';
 
 // i18next is not initialised in tests, so the module falls back to navigator.language
 function withLanguage(language, run) {
@@ -13,37 +13,50 @@ function withLanguage(language, run) {
 
 const SEP_4_2025 = new Date(2025, 8, 4); // Thursday
 
-describe('localizeWeekTokens', () => {
+describe('localizeOpeningHours', () => {
     test('empty input is returned as is', () => {
-        expect(localizeWeekTokens('')).toBe('');
-        expect(localizeWeekTokens(null)).toBeNull();
-        expect(localizeWeekTokens(undefined)).toBeUndefined();
+        expect(localizeOpeningHours('')).toBe('');
+        expect(localizeOpeningHours(null)).toBeNull();
+        expect(localizeOpeningHours(undefined)).toBeUndefined();
     });
 
     test('two-letter tokens become weekday names', () => {
         withLanguage('en-US', () => {
-            expect(localizeWeekTokens('Mo-Fr')).toBe('Mon-Fri');
-            expect(localizeWeekTokens('Sa,Su')).toBe('Sat,Sun');
+            expect(localizeOpeningHours('Mo-Fr')).toBe('Mon-Fri');
+            expect(localizeOpeningHours('Sa,Su')).toBe('Sat,Sun');
         });
     });
 
     test('the rest of the schedule is untouched', () => {
         withLanguage('en-US', () => {
-            expect(localizeWeekTokens('Mo-Fr 09:00-18:00; Sa 10:00-14:00')).toBe(
+            expect(localizeOpeningHours('Mo-Fr 09:00-18:00; Sa 10:00-14:00')).toBe(
                 'Mon-Fri 09:00-18:00; Sat 10:00-14:00'
+            );
+            // the parser writes the comment of a rule after " - ", the apps show it as it is
+            expect(localizeOpeningHours('Mo 10:00-12:00 - off on Mo; Sa 10:00-14:00')).toBe(
+                'Mon 10:00-12:00 - off on Mo; Sat 10:00-14:00'
+            );
+            // a raw value may write a range with spaces, that dash starts no comment
+            expect(localizeOpeningHours('Mo - Fr 08:00 - 18:00; Jan - Mar Sa')).toBe(
+                'Mon - Fri 08:00 - 18:00; Jan - Mar Sat'
             );
         });
     });
 
     test('a token inside a word is not a token', () => {
         withLanguage('en-US', () => {
-            expect(localizeWeekTokens('Mode Sunny Wet')).toBe('Mode Sunny Wet');
+            expect(localizeOpeningHours('Mode Sunny Wet')).toBe('Mode Sunny Wet');
         });
     });
 
-    test('localized weekdays', () => {
+    test('localized weekdays and months', () => {
         withLanguage('uk', () => {
-            expect(localizeWeekTokens('Mo-Fr')).toBe('Пн-Пт');
+            expect(localizeOpeningHours('Mo-Fr')).toBe('Пн-Пт');
+            expect(localizeOpeningHours('Apr-Oct')).toBe('квіт.-жовт.');
+        });
+        // the es Tuesday is "Mar", it must not be taken for March once more
+        withLanguage('es', () => {
+            expect(localizeOpeningHours('Tu; Mar')).toBe('Mar; mar');
         });
     });
 });

@@ -1,9 +1,12 @@
 import WptTagsProvider, {
     getOsmIdFromOsmUrl,
+    OPENING_HOURS,
     openWikipediaContent,
     WIKIPEDIA,
 } from '@map/infoblock/components/wpt/WptTagsProvider';
 import { apiGet, apiPost } from '@map/util/HttpApi';
+import enTranslation from '@map/resources/translations/en/translation.json';
+import i18next from 'i18next';
 import { findRequest } from '../../util/requests';
 
 describe('openWikipediaContent', () => {
@@ -65,6 +68,10 @@ describe('openWikipediaContent', () => {
 describe('getWptTags: the tags of a poi', () => {
     const CTX = { poiIconCache: {}, setPoiIconCache: jest.fn(), unitsSettings: { len: 'si_km_m' } };
 
+    beforeAll(async () => {
+        await i18next.init({ lng: 'en', resources: { en: { translation: enTranslation } } });
+    });
+
     beforeEach(() => {
         apiGet.mockResolvedValue({ data: '' });
         // icons are loaded with a plain fetch, no unit test is allowed to reach the network
@@ -106,10 +113,21 @@ describe('getWptTags: the tags of a poi', () => {
         expect(tags.shared_string_name.value).toBe('Blue Cafe');
     });
 
-    test('the days of the opening hours are localized', async () => {
-        const tags = await tagsOf({ opening_hours: 'Mo-Fr 09:00-18:00' });
+    test('the opening hours are shown as the app shows them', async () => {
+        // the server sends the rules of the shared parser: "PH,SH,easter" becomes "PH, SH, Easter"
+        apiPost.mockResolvedValueOnce({
+            data: [{ key: OPENING_HOURS, value: 'Mo-Fr 09:00-18:00; Apr-Oct Sa 10:00-14:00; PH, SH, Easter off' }],
+        });
+        const normalized = await tagsOf({
+            opening_hours: 'Mo-Fr 09:00-18:00; Apr-Oct Sa 10:00-14:00; PH,SH,easter off',
+        });
+        // without the server rules the raw value is shown, its words are translated all the same
+        const raw = await tagsOf({ opening_hours: 'Su,PH closed; easter off' });
 
-        expect(tags.opening_hours.value).toBe('Mon-Fri 09:00-18:00');
+        expect(normalized[OPENING_HOURS].value).toBe(
+            'Mon-Fri 09:00-18:00; Apr-Oct Sat 10:00-14:00; Public holidays, School holidays, Easter closed'
+        );
+        expect(raw[OPENING_HOURS].value).toBe('Sun,Public holidays closed; Easter closed');
     });
 
     test('a measure is shown in the units of the user', async () => {

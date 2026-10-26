@@ -6,6 +6,19 @@ const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
 const normAbbr = (s) => capFirst(String(s).replace(/\.$/, ''));
 
+const MONTH_TOKENS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+const OPENING_HOURS_COMMENT = ` - (?!(?:Mo|Tu|We|Th|Fr|Sa|Su|${MONTH_TOKENS.join('|')})\\b|\\d)[^;]*`;
+
+const OPENING_HOURS_STRING_KEYS = {
+    PH: 'opening_hours_public_holiday',
+    SH: 'opening_hours_school_holiday',
+    Easter: 'opening_hours_easter',
+    easter: 'opening_hours_easter',
+    off: 'day_off_label',
+    closed: 'day_off_label',
+};
+
 export const fmt = {
     // "MMM d, yyyy" (e.g., "Sep 4, 2025")
     MMMdY: (d) =>
@@ -90,8 +103,8 @@ export const fmt = {
         )}`,
 };
 
-// Replace "Mo/Tu/We/Th/Fr/Sa/Su" tokens with localized short weekday names
-export function localizeWeekTokens(scheduleStr) {
+// Replace "Mo/Tu/We/Th/Fr/Sa/Su", month, holiday and "off" tokens with localized names
+export function localizeOpeningHours(scheduleStr) {
     if (!scheduleStr) return scheduleStr;
 
     const now = new Date();
@@ -115,6 +128,15 @@ export function localizeWeekTokens(scheduleStr) {
         Sa: dayName(5),
         Su: dayName(6),
     };
+    MONTH_TOKENS.forEach((month, index) => {
+        map[month] = new Date(now.getFullYear(), index).toLocaleDateString(lang(), { month: 'short' });
+    });
+    Object.entries(OPENING_HOURS_STRING_KEYS).forEach(([token, key]) => {
+        map[token] = i18n.t(key);
+    });
 
-    return scheduleStr.replace(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun|Mo|Tu|We|Th|Fr|Sa|Su)\b/g, (m) => map[m.slice(0, 2)]);
+    return scheduleStr.replace(
+        new RegExp(`${OPENING_HOURS_COMMENT}|\\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun|${Object.keys(map).join('|')})\\b`, 'g'),
+        (m, token) => (token ? (map[token] ?? map[token.slice(0, 2)]) : m)
+    );
 }

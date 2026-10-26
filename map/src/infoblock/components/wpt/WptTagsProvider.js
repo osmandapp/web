@@ -19,7 +19,7 @@ import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
-import { localizeWeekTokens } from '../../../util/dateFmt';
+import { localizeOpeningHours } from '../../../util/dateFmt';
 import { getApiLang } from '../../../util/lang';
 import {
     convertMeters,
@@ -295,7 +295,7 @@ async function buildTagObj({ key, value, lang, generic, ctx, subtypeTag }) {
     applySharedNameTag(tagObj);
 
     if (tagObj.key === OPENING_HOURS) {
-        tagObj.value = localizeWeekTokens(tagObj.value);
+        tagObj.value = localizeOpeningHours(tagObj.value);
     }
 
     if (key.includes(WIKIDATA)) {
