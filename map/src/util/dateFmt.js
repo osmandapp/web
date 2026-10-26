@@ -6,9 +6,7 @@ const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
 const normAbbr = (s) => capFirst(String(s).replace(/\.$/, ''));
 
-const MONTH_TOKENS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-const OPENING_HOURS_COMMENT = ` - (?!(?:Mo|Tu|We|Th|Fr|Sa|Su|${MONTH_TOKENS.join('|')})\\b|\\d)[^;]*`;
+const OSM_TOKENS_LOCALE = 'en-US';
 
 const OPENING_HOURS_STRING_KEYS = {
     PH: 'opening_hours_public_holiday',
@@ -113,30 +111,31 @@ export function localizeOpeningHours(scheduleStr) {
     base.setHours(0, 0, 0, 0);
     base.setDate(now.getDate() - day);
 
-    const dayName = (offset) => {
+    const dayName = (offset, locale) => {
         const d = new Date(base);
         d.setDate(base.getDate() + offset);
-        return normAbbr(d.toLocaleDateString(lang(), { weekday: 'short' }));
+        return normAbbr(d.toLocaleDateString(locale, { weekday: 'short' }));
     };
+    const monthName = (month, locale) =>
+        new Date(now.getFullYear(), month).toLocaleDateString(locale, { month: 'short' });
 
-    const map = {
-        Mo: dayName(0),
-        Tu: dayName(1),
-        We: dayName(2),
-        Th: dayName(3),
-        Fr: dayName(4),
-        Sa: dayName(5),
-        Su: dayName(6),
-    };
-    MONTH_TOKENS.forEach((month, index) => {
-        map[month] = new Date(now.getFullYear(), index).toLocaleDateString(lang(), { month: 'short' });
-    });
+    const map = {};
+    for (let offset = 0; offset < 7; offset++) {
+        const token = dayName(offset, OSM_TOKENS_LOCALE);
+        const name = dayName(offset, lang());
+        map[token] = name;
+        map[token.slice(0, 2)] = name;
+    }
+    for (let month = 0; month < 12; month++) {
+        map[monthName(month, OSM_TOKENS_LOCALE)] = monthName(month, lang());
+    }
+    const dateTokens = Object.keys(map).join('|');
     Object.entries(OPENING_HOURS_STRING_KEYS).forEach(([token, key]) => {
         map[token] = i18n.t(key);
     });
 
     return scheduleStr.replace(
-        new RegExp(`${OPENING_HOURS_COMMENT}|\\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun|${Object.keys(map).join('|')})\\b`, 'g'),
-        (m, token) => (token ? (map[token] ?? map[token.slice(0, 2)]) : m)
+        new RegExp(` - (?!(?:${dateTokens})\\b|\\d)[^;]*|\\b(${Object.keys(map).join('|')})\\b`, 'g'),
+        (m, token) => (token ? map[token] : m)
     );
 }
