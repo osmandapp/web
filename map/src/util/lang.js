@@ -66,7 +66,7 @@ export function normalizeLang(lang) {
 }
 
 export function getWikiLang(lang) {
-    const baseLang = normalizeLang(lang).split(/[-_]/)[0];
+    const baseLang = getBaseLang(lang);
 
     return WIKI_LANG_MAP[baseLang] ?? baseLang;
 }

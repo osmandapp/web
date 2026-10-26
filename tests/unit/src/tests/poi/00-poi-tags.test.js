@@ -1,6 +1,7 @@
 import WptTagsProvider, {
     getOsmIdFromOsmUrl,
     getShortDescriptionKey,
+    getShortDescriptionLang,
     getShortDescriptions,
     isShortDescriptionTag,
     openWikipediaContent,
@@ -201,6 +202,12 @@ describe('short descriptions of a favorite', () => {
         expect(getShortDescriptionKey('en')).toBe('short_description');
         expect(getShortDescriptionKey('ru')).toBe('short_description:ru');
         expect(getShortDescriptionKey(undefined)).toBe('short_description');
+    });
+
+    test('the language is read back from the key', () => {
+        expect(getShortDescriptionLang('short_description')).toBe('en');
+        expect(getShortDescriptionLang('short_description:ru')).toBe('ru');
+        expect(getShortDescriptionLang('short_description:zh-yue')).toBe('zh-yue');
     });
 
     test('only short description tags are recognized', () => {

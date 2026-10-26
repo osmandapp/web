@@ -1,4 +1,10 @@
-import { sanitizeHtml, textToHTML } from '@map/frame/components/editor/htmlUtils';
+import {
+    htmlToPlainText,
+    htmlToText,
+    plainTextToHTML,
+    sanitizeHtml,
+    textToHTML,
+} from '@map/frame/components/editor/htmlUtils';
 
 const LINK = '<a target="_blank" rel="noopener noreferrer nofollow" href="http://www.google.com">';
 
@@ -21,4 +27,27 @@ test('a plain text description from the phone keeps its paragraphs and line brea
         '<p>first line<br>second line</p><p>next paragraph</p>'
     );
     expect(sanitizeHtml(textToHTML(''))).toBe('');
+});
+
+test('a description preview shows characters, not their html entities', () => {
+    expect(htmlToText('<p>Tom &amp; Jerry</p><p>a &lt;b&gt; tag</p>')).toBe('Tom & Jerry\na <b> tag');
+    expect(htmlToText('<p>a&nbsp;b &quot;c&quot;</p>')).toBe('a b "c"');
+});
+
+test('an edited wiki description is saved as plain text', () => {
+    expect(htmlToPlainText('<p>Tom &amp; Jerry</p><p>a &lt; b<br>next line</p>')).toBe(
+        'Tom & Jerry\n\na < b\nnext line'
+    );
+    expect(htmlToPlainText('<p>Rhine <strong>river</strong></p>')).toBe('Rhine river');
+    expect(htmlToPlainText('<p></p>')).toBe('');
+    expect(htmlToPlainText('')).toBe('');
+});
+
+test('a plain wiki description survives a round trip through the editor', () => {
+    const roundTrip = (text) => htmlToPlainText(sanitizeHtml(plainTextToHTML(text)));
+
+    expect(roundTrip('Cafe <Old Town> & bar')).toBe('Cafe <Old Town> & bar');
+    expect(roundTrip('<3 km from the center')).toBe('<3 km from the center');
+    expect(roundTrip('Para one\n\nPara two\nnext line')).toBe('Para one\n\nPara two\nnext line');
+    expect(plainTextToHTML('')).toBe('');
 });

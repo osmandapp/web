@@ -3,6 +3,8 @@ import StarterKit from '@tiptap/starter-kit';
 
 const EXTENSIONS = [StarterKit];
 
+let textElement = null;
+
 /**
  * Converts legacy plain text to HTML for loading into the rich text editor.
  * Used only for backward compatibility with descriptions saved before rich text was introduced.
@@ -30,7 +32,8 @@ export function textToHTML(text) {
 export function htmlToText(html) {
     if (!html) return '';
 
-    return html
+    const element = getTextElement();
+    element.innerHTML = html
         .replaceAll(/<\/p>/gi, '\n')
         .replaceAll(/<\/h[1-6]>/gi, '\n')
         .replaceAll(/<\/li>/gi, '\n')
@@ -39,6 +42,8 @@ export function htmlToText(html) {
         .replaceAll(/<[^>]+>/g, '')
         .replace(/\n+$/, '')
         .trim();
+
+    return element.value;
 }
 
 /**
@@ -56,4 +61,21 @@ export function sanitizeHtml(html) {
     if (!html) return '';
 
     return generateHTML(generateJSON(html, EXTENSIONS), EXTENSIONS);
+}
+
+export function htmlToPlainText(html) {
+    return htmlToText(html?.replaceAll(/<\/p>\s*<p>/gi, '</p>\n<p>'));
+}
+
+export function plainTextToHTML(text) {
+    const element = getTextElement();
+    element.textContent = text ?? '';
+
+    return textToHTML(element.innerHTML);
+}
+
+function getTextElement() {
+    if (!textElement) textElement = document.createElement('textarea');
+
+    return textElement;
 }

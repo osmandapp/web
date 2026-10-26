@@ -1,5 +1,5 @@
 import { Box, IconButton, ListItemText } from '@mui/material';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppContext, { isTrack } from '../../../context/AppContext';
 import { Add, Delete } from '@mui/icons-material';
@@ -7,7 +7,6 @@ import MarkerOptions from '../../../map/markers/MarkerOptions';
 import FavoriteName from './structure/FavoriteName';
 import FavoriteAddress from './structure/FavoriteAddress';
 import FavoriteDescription from './structure/FavoriteDescription';
-import FavoriteShortDescriptions from './structure/FavoriteShortDescriptions';
 import DescriptionPanel from './structure/DescriptionPanel';
 import FavoriteGroup from './structure/FavoriteGroup';
 import FavoriteShape from './structure/FavoriteShape';
@@ -29,6 +28,7 @@ import { useBlocker } from 'react-router-dom';
 import { ADDRESS_NOT_FOUND } from '../wpt/WptDetails';
 import {
     FINAL_POI_ICON_NAME,
+    getShortDescriptionLang,
     getShortDescriptions,
     isShortDescriptionTag,
     MARKER_INTERNAL_KEYS,
@@ -47,6 +47,8 @@ import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
 import styles from './wptEditPanel.module.css';
 import isEmpty from 'lodash-es/isEmpty';
 import isEqual from 'lodash-es/isEqual';
+import { htmlToPlainText, plainTextToHTML } from '../../../frame/components/editor/htmlUtils';
+import { getLanguageName } from '../../../util/LanguageDisplayName';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import ColorBlock from '../../../frame/components/other/ColorBlock';
@@ -54,6 +56,7 @@ import OverlayLinearProgress from '../../../frame/components/progress/OverlayLin
 import { getIconNameForPoiType } from '../../../manager/PoiManager';
 
 const PANEL_CONTENT_WIDTH = 320;
+const SHORT_DESCRIPTION_PANEL = 'shortDescription:';
 const APPEARANCE_PREVIEW_SIZE = 36;
 
 export default function WptEditPanel({ setShowInfoBlock }) {
@@ -90,7 +93,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     );
     const [shortDescriptions, setShortDescriptions] = useState(initialShortDescriptions);
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
-    const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color'
+    const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color' | 'shortDescription:<key>'
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     // search icons (house, location) have no mx_*.svg for a favorite marker
     const [favoriteIcon, setFavoriteIcon] = useState(
@@ -562,6 +565,23 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         guardAction(closePanel);
     }
 
+    function updateShortDescription(key, html) {
+        setShortDescriptions((prev) => ({ ...prev, [key]: htmlToPlainText(html) }));
+    }
+
+    function getShortDescriptionTitle(key) {
+        if (Object.keys(shortDescriptions).length < 2) return t('web:wiki_description');
+        const lang = getShortDescriptionLang(key);
+
+        return t('web:wiki_description_lang', {
+            lang: t(`lang_${lang}`, { defaultValue: getLanguageName(lang) }),
+        });
+    }
+
+    const shortDescriptionPanelKey = activePanel?.startsWith(SHORT_DESCRIPTION_PANEL)
+        ? activePanel.substring(SHORT_DESCRIPTION_PANEL.length)
+        : null;
+
     const groups = isTrackWpt ? ctx.selectedGpxFile?.pointsGroups : ctx.favorites.groups;
     const defaultGroup = isAddTrackWpt
         ? DEFAULT_GROUP_NAME_POINTS_GROUPS
@@ -593,6 +613,15 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 <DescriptionPanel
                     description={favoriteDescription}
                     setDescription={setFavoriteDescription}
+                    onClose={closeActivePanel}
+                />
+            )}
+            {shortDescriptionPanelKey && (
+                <DescriptionPanel
+                    key={shortDescriptionPanelKey}
+                    title={getShortDescriptionTitle(shortDescriptionPanelKey)}
+                    description={plainTextToHTML(shortDescriptions[shortDescriptionPanelKey])}
+                    setDescription={(html) => updateShortDescription(shortDescriptionPanelKey, html)}
                     onClose={closeActivePanel}
                 />
             )}
@@ -668,15 +697,18 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         favoriteDescription={favoriteDescription}
                         onClick={() => togglePanel('description')}
                     />
-                    {!isTrackWpt && !isEmpty(shortDescriptions) && (
-                        <>
-                            <ThickDivider />
-                            <FavoriteShortDescriptions
-                                shortDescriptions={shortDescriptions}
-                                setShortDescriptions={setShortDescriptions}
-                            />
-                        </>
-                    )}
+                    {!isTrackWpt &&
+                        Object.entries(shortDescriptions).map(([key, value]) => (
+                            <Fragment key={key}>
+                                <ThickDivider />
+                                <FavoriteDescription
+                                    id={`se-edit-fav-short-desc-${getShortDescriptionLang(key)}`}
+                                    title={getShortDescriptionTitle(key)}
+                                    favoriteDescription={plainTextToHTML(value)}
+                                    onClick={() => togglePanel(SHORT_DESCRIPTION_PANEL + key)}
+                                />
+                            </Fragment>
+                        ))}
                     <ThickDivider />
                     <FavoriteGroup
                         favoriteGroup={favoriteGroup}

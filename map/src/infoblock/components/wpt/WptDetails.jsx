@@ -91,6 +91,7 @@ import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
 import { getWikiLang } from '../../../util/lang';
+import { plainTextToHTML } from '../../../frame/components/editor/htmlUtils';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
@@ -1047,7 +1048,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
     };
 
-    const shortDescription = getShortDescription(getShortDescriptions(wpt?.extensions));
+    const shortDescription = !wpt?.type?.isWpt && getShortDescription(getShortDescriptions(wpt?.extensions));
 
     return (
         <>
@@ -1155,8 +1156,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         key={'short-desc'}
                                         baseTag={{
                                             icon: <WikiIcon />,
-                                            name: t('shared_string_wikipedia'),
-                                            value: shortDescription,
+                                            name: t('web:wiki_description'),
+                                            value: plainTextToHTML(shortDescription),
                                             isDesc: true,
                                         }}
                                     />

@@ -20,8 +20,7 @@ import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
 import { localizeWeekTokens } from '../../../util/dateFmt';
-import { WIKI_DEFAULT_LANG } from '../../../util/lang';
-import { getApiLang } from '../../../util/lang';
+import { getApiLang, WIKI_DEFAULT_LANG } from '../../../util/lang';
 import {
     convertMeters,
     getSmallLengthUnit,
@@ -775,6 +774,10 @@ export function getOsmIdFromOsmUrl(url) {
 
 export function getShortDescriptionKey(lang) {
     return lang && lang !== WIKI_DEFAULT_LANG ? `${SHORT_DESCRIPTION}:${lang}` : SHORT_DESCRIPTION;
+}
+
+export function getShortDescriptionLang(key) {
+    return key.split(':')[1] ?? WIKI_DEFAULT_LANG;
 }
 
 export function isShortDescriptionTag(key) {
