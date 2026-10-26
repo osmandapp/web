@@ -237,11 +237,11 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering
 
 </Tabs>
 
-Per scoprire su quali piste al di fuori della stazione sciistica è possibile navigare, è necessario abilitare l'opzione **Piste da sci e percorsi** nell'elenco [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), aperto dal menu [Configura mappa](../map/configure-map-menu.md).  
+Per scoprire su quali piste al di fuori della stazione sciistica è possibile navigare, è necessario abilitare l'opzione **Piste da sci e percorsi** nell'elenco [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes/types-of-routes.md), aperto dal menu [Configura mappa](../map/configure-map-menu.md).  
 
-Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/map-styles.md#winter-and-ski) abilitati, le [Piste da sci e percorsi](../map/routes.md#ski-slopes-and-routes) mostrano tutti i tipi di piste che la navigazione Sci può utilizzare per costruire percorsi di navigazione. Tali percorsi delle piste da sci, se abilitati, sono delineati con il colore viola principalmente al di fuori dei confini della stazione sciistica.  
-Quando si abilita l'opzione [Piste da sci e percorsi](../map/routes.md#ski-slopes-and-routes) per uno stile mappa diverso da Inverno e Sci, vengono visualizzate solo le piste. Altre funzionalità relative allo sci potrebbero non essere mostrate in questo livello di stile.  
-_Le piste da sci e i percorsi_ [sono cliccabili](../map/routes.md#actions-with-routes).
+Con il profilo Sci, la navigazione sci e lo [stile mappa Inverno e Sci](../map/map-styles.md#winter-and-ski) abilitati, le [Piste da sci e percorsi](../map/routes/types-of-routes.md#ski-slopes-and-routes) mostrano tutti i tipi di piste che la navigazione Sci può utilizzare per costruire percorsi di navigazione. Tali percorsi delle piste da sci, se abilitati, sono delineati con il colore viola principalmente al di fuori dei confini della stazione sciistica.  
+Quando si abilita l'opzione [Piste da sci e percorsi](../map/routes/types-of-routes.md#ski-slopes-and-routes) per uno stile mappa diverso da Inverno e Sci, vengono visualizzate solo le piste. Altre funzionalità relative allo sci potrebbero non essere mostrate in questo livello di stile.  
+_Le piste da sci e i percorsi_ [sono cliccabili](../map/routes/index.md#actions-with-routes).
 
 
 ### Notte e illuminazione {#night-and-lighting}
