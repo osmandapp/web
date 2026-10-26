@@ -6,7 +6,7 @@ const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
 const normAbbr = (s) => capFirst(String(s).replace(/\.$/, ''));
 
-const OSM_TOKENS_LOCALE = 'en-US';
+const OPENING_HOURS_TAG_LOCALE = 'en-US';
 
 const OPENING_HOURS_STRING_KEYS = {
     PH: 'opening_hours_public_holiday',
@@ -121,21 +121,19 @@ export function localizeOpeningHours(scheduleStr) {
 
     const map = {};
     for (let offset = 0; offset < 7; offset++) {
-        const token = dayName(offset, OSM_TOKENS_LOCALE);
+        const token = dayName(offset, OPENING_HOURS_TAG_LOCALE);
         const name = dayName(offset, lang());
         map[token] = name;
         map[token.slice(0, 2)] = name;
     }
     for (let month = 0; month < 12; month++) {
-        map[monthName(month, OSM_TOKENS_LOCALE)] = monthName(month, lang());
+        map[monthName(month, OPENING_HOURS_TAG_LOCALE)] = monthName(month, lang());
     }
-    const dateTokens = Object.keys(map).join('|');
+    const comment = ` - (?!(?:${Object.keys(map).join('|')})\\b|\\d)[^;]*`;
     Object.entries(OPENING_HOURS_STRING_KEYS).forEach(([token, key]) => {
         map[token] = i18n.t(key);
     });
+    const word = `\\b(${Object.keys(map).join('|')})\\b`;
 
-    return scheduleStr.replace(
-        new RegExp(` - (?!(?:${dateTokens})\\b|\\d)[^;]*|\\b(${Object.keys(map).join('|')})\\b`, 'g'),
-        (m, token) => (token ? map[token] : m)
-    );
+    return scheduleStr.replace(new RegExp(`${comment}|${word}`, 'g'), (match, token) => (token ? map[token] : match));
 }
