@@ -68,3 +68,18 @@ test('a route in the url needs both the start and the finish', () => {
         expect(hasRouteInUrl()).toBe(false);
     }
 });
+
+test('a route with a point which is not a coordinate pair is not a route', () => {
+    const broken = [
+        '?start=abc&end=xyz&profile=car',
+        '?start=50.759047,25.279541&end=50.590212',
+        '?start=lat,lng&end=50.590212,25.545959',
+        '?start=200,30&end=50.590212,25.545959',
+        '?start=Infinity,0&end=50.590212,25.545959',
+    ];
+
+    for (const search of broken) {
+        openUrl(search, hashView);
+        expect(hasRouteInUrl()).toBe(false);
+    }
+});
