@@ -26,3 +26,15 @@
 .impressionMeta strong {
   color: var(--ifm-font-color-base);
 }
+
+.avatarInitials {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-darkest);
+  font-weight: 600;
+}
