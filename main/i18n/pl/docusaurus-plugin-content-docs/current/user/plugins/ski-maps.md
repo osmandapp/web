@@ -237,11 +237,11 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,render
 
 </Tabs>
 
-Aby dowiedzieć się, po których trasach poza ośrodkiem narciarskim można nawigować, należy włączyć opcję **Stoki i trasy narciarskie** na liście [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).  
+Aby dowiedzieć się, po których trasach poza ośrodkiem narciarskim można nawigować, należy włączyć opcję **Stoki i trasy narciarskie** na liście [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes/types-of-routes.md), otwartej z menu [Konfiguruj mapę](../map/configure-map-menu.md).  
 
-Przy włączonym profilu Narciarstwo, nawigacji narciarskiej i [stylu mapy Zimowy i narciarski](../map/map-styles.md#winter-and-ski), [stoki i trasy narciarskie](../map/routes.md#ski-slopes-and-routes) pokazują wszystkie typy tras, których nawigacja narciarska może użyć do budowania tras nawigacyjnych. Takie trasy narciarskie, jeśli są włączone, są zaznaczone fioletowym kolorem, głównie poza granicami ośrodka narciarskiego.  
-Gdy włączysz opcję [Stoki i trasy narciarskie](../map/routes.md#ski-slopes-and-routes) dla stylu mapy innego niż Zimowy i narciarski, wyświetlane są tylko stoki. Inne funkcje związane z narciarstwem mogą nie być pokazywane w tej warstwie stylizacji.  
-_Stoki i trasy narciarskie_ [są klikalne](../map/routes.md#actions-with-routes).
+Przy włączonym profilu Narciarstwo, nawigacji narciarskiej i [stylu mapy Zimowy i narciarski](../map/map-styles.md#winter-and-ski), [stoki i trasy narciarskie](../map/routes/types-of-routes.md#ski-slopes-and-routes) pokazują wszystkie typy tras, których nawigacja narciarska może użyć do budowania tras nawigacyjnych. Takie trasy narciarskie, jeśli są włączone, są zaznaczone fioletowym kolorem, głównie poza granicami ośrodka narciarskiego.  
+Gdy włączysz opcję [Stoki i trasy narciarskie](../map/routes/types-of-routes.md#ski-slopes-and-routes) dla stylu mapy innego niż Zimowy i narciarski, wyświetlane są tylko stoki. Inne funkcje związane z narciarstwem mogą nie być pokazywane w tej warstwie stylizacji.  
+_Stoki i trasy narciarskie_ [są klikalne](../map/routes/index.md#actions-with-routes).
 
 
 ### Noc i oświetlenie {#night-and-lighting}
