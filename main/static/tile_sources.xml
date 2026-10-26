@@ -294,6 +294,8 @@
 
    <!-- UK maps-->
 <!--   <tile_source name="🇬🇧 UK Topo" url_template="https://ecn.t1.tiles.virtualearth.net/tiles/r{q}?g=15027&amp;lbl=l1&amp;productSet=mmOS&amp;key=AmHj4RMhOs0a4O3uk3m144GJik4Y-SIuy1bheg8rGeLFQA3N-Gqs0fJPLRFnuJSd" ext=".png" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>-->
+   <tile_source name="🇬🇧 ⛰ England LiDAR Terrain 1m (EA)" url_template="https://environment.data.gov.uk/spatialdata/lidar-composite-digital-terrain-model-dtm-1m/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;LAYERS=Lidar_Composite_Hillshade_DTM_1m&amp;STYLES=&amp;SRS=EPSG:4326&amp;BBOX={bbox}&amp;WIDTH=256&amp;HEIGHT=256&amp;FORMAT=image/png" ext=".png" min_zoom="11" max_zoom="19" tile_size="256" img_density="16" avg_img_size="32000"/>
+   <tile_source name="🇬🇧 ⛰ England LiDAR Surface 1m (EA)" url_template="https://environment.data.gov.uk/spatialdata/lidar-composite-digital-surface-model-last-return-dsm-1m/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;LAYERS=Lidar_Composite_Hillshade_LZ_DSM_1m&amp;STYLES=&amp;SRS=EPSG:4326&amp;BBOX={bbox}&amp;WIDTH=256&amp;HEIGHT=256&amp;FORMAT=image/png" ext=".png" min_zoom="11" max_zoom="19" tile_size="256" img_density="16" avg_img_size="32000"/>
    
 
 
