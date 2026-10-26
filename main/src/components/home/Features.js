@@ -9,13 +9,19 @@ const FeatureList = [
     description: (
       <ul>
         <li>Carry highly detailed, fully offline maps of any region world wide on your device!</li>
+        <li>Offline 3D terrain maps: 3D relief, hillshade, and slope</li>
+        <li>Map styles for every activity: Touring, Topo, Offroad, Winter and Ski, Nautical, Desert, and more</li>
         <li>Display your position and orientation on the map</li>
         <li>Optionally align the map according to compass or your direction of motion</li>
         <li>Save your most important places as Favorites</li>
         <li>Display POIs (points of interest) around you</li>
-        <li>Can also display specialized online tile maps</li>
-        <li>Can display different overlays like touring/navigation GPX tracks and additional maps with customizable transparency</li>
+        <li>Popular Places: top landmarks and attractions with photos from Wikipedia and Wikimedia Commons</li>
+        <li>Offline Wikipedia articles for POIs and travel guides based on Wikivoyage, great for sightseeing</li>
+        <li>Use raster maps (satellite, topo, online or offline tiles) as the main map, overlay, or underlay with adjustable transparency</li>
+        <li>Display GPX tracks on the map</li>
         <li>Optionally display place names in English, local, or phonetic spelling</li>
+        <li>Weather forecast layers: temperature, precipitation, wind, clouds, and pressure</li>
+        <li>Customizable screen: choose your widgets, Quick Action buttons, and map markers</li>
       </ul>
     ),
   },
@@ -31,6 +37,14 @@ const FeatureList = [
         <li>Supports intermediate points on your itinerary</li>
         <li>Automatic re-routing whenever you deviate from the route</li>
         <li>Search for places by address, by type (e.g.: restaurant, hotel, gas station, museum), or by geographical coordinates</li>
+        <li>Profiles for car, truck, motorcycle, bicycle, walking, horse riding, skiing, boat, train, and more</li>
+        <li>Create your own profiles with custom routing, map style, widgets, and settings</li>
+        <li>Fine-tune routing: avoid specific roads, prefer or avoid unpaved roads, and set vehicle size, weight, and fuel type</li>
+        <li>Route details: distance, time, elevation graph, road surface and other road attributes, turn-by-turn instructions</li>
+        <li>Plan a route: draw your own route by points, following roads or straight lines, save it as a GPX track, and navigate along it</li>
+        <li>Routing modes: offline OsmAnd routing, BRouter, online routing, direct-to-point, and straight line</li>
+        <li>Public transport navigation</li>
+        <li>Android Auto and CarPlay support</li>
       </ul>
     ),
   },
@@ -44,9 +58,11 @@ const FeatureList = [
         <li>The offline maps include foot, hiking, and bike paths, great for outdoor activities</li>
         <li>Map display and navigation mode for bicycle and pedestrian</li>
         <li>Optionally display public transport stops (bus, tram, train) including line names</li>
-        <li>Optional trip recording to local GPX file or online service</li>
-        <li>Optional speed and altitude display</li>
-        <li>Display of contour lines and hill-shading (via additional plugin)</li>
+        <li>Trip recording to GPX or online tracking, with on-map widgets for distance, time, speed, altitude, and slope</li>
+        <li>Track analysis: speed, altitude, and slope graphs; color tracks by speed, altitude, or slope</li>
+        <li>Contour lines, hillshade, and slope maps for outdoor planning</li>
+        <li>Hiking, cycling, and MTB routes on the map: tap a route to see its details and elevation profile, and navigate along it</li>
+        <li>Connect external sensors: heart rate, bike speed, cadence, and power</li>
       </ul>
     ),
   },
@@ -55,13 +71,15 @@ const FeatureList = [
     Svg: require('../../../static/img/svg/logo.svg').default,
     description: (
       <ul>
-        <li>High quality information from the 2 best collaborative projects of the world</li>
-        <li>Compact offline vector maps</li>
-        <li>Global maps from OpenStreetMap, available per country or region</li>
-        <li>Wikipedia POIs, great for sightseeing</li>
-        <li>Always up-to-date maps (updated once a month)</li>
-        <li>Hourly map updates (OsmAnd Live)</li>
-        <li>Online or cached raster tile maps</li>
+        <li>Privacy first: no account required, your data stays on your device</li>
+        <li>No ads, even in the free version</li>
+        <li>Open source code on GitHub; extend the app with custom plugins</li>
+        <li>Map data from OpenStreetMap and Wikipedia, the world's largest collaborative projects</li>
+        <li>Edit OpenStreetMap right from the app: add and change POIs, create OSM notes</li>
+        <li>Compact offline vector maps, available per country or region</li>
+        <li>Monthly map updates, plus hourly Live updates</li>
+        <li>Optional OsmAnd Cloud: back up and sync favorites, tracks, profiles, and settings across Android, iOS, and the web</li>
+        <li>Web version at osmand.net/map: plan routes and view your tracks and favorites synced with OsmAnd Cloud</li>
       </ul>
     ),
   },
