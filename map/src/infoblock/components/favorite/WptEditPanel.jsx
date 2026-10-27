@@ -27,13 +27,13 @@ import useExitGuard from '../../../util/hooks/useExitGuard';
 import { useBlocker } from 'react-router-dom';
 import { ADDRESS_NOT_FOUND } from '../wpt/WptDetails';
 import {
+    cleanShortDescriptions,
     FINAL_POI_ICON_NAME,
     getShortDescriptionLang,
     getShortDescriptions,
     isShortDescriptionTag,
     MARKER_INTERNAL_KEYS,
     OSM_PREFIX,
-    shortDescriptionToHTML,
     WEB_POI_PREFIX,
     WEB_PREFIX,
 } from '../wpt/WptTagsProvider';
@@ -87,10 +87,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [initialShortDescriptions] = useState(() =>
         isEditMode
             ? getShortDescriptions(editWpt.point?.ext?.extensions)
-            : {
+            : cleanShortDescriptions({
                   ...getShortDescriptions(poi?.options ?? poi?.properties),
                   ...ctx.addFavorite?.shortDescriptions,
-              }
+              })
     );
     const [shortDescriptions, setShortDescriptions] = useState(initialShortDescriptions);
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
@@ -709,7 +709,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                                 <FavoriteDescription
                                     id={`se-edit-fav-short-desc-${getShortDescriptionLang(key)}`}
                                     title={getShortDescriptionTitle(key)}
-                                    favoriteDescription={shortDescriptionToHTML(value)}
+                                    favoriteDescription={plainTextToHTML(value)}
                                     onClick={() => togglePanel(SHORT_DESCRIPTION_PANEL + key)}
                                 />
                             </Fragment>

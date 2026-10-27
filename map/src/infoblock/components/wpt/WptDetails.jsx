@@ -74,7 +74,6 @@ import WptTagsProvider, {
     getOsmIdFromOsmUrl,
     getShortDescriptionKey,
     getShortDescriptions,
-    shortDescriptionToHTML,
     ICON_KEY_NAME,
     POI_FROM_TAGS,
     POI_ID,
@@ -92,6 +91,7 @@ import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
 import { getWikiLang } from '../../../util/lang';
+import { plainTextToHTML } from '../../../frame/components/editor/htmlUtils';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
@@ -1048,8 +1048,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
     };
 
-    const shortDescriptionHTML =
-        !wpt?.type?.isWpt && shortDescriptionToHTML(getShortDescription(getShortDescriptions(wpt?.extensions)));
+    const shortDescription = !wpt?.type?.isWpt && getShortDescription(getShortDescriptions(wpt?.extensions));
 
     return (
         <>
@@ -1152,13 +1151,13 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         }}
                                     />
                                 )}
-                                {shortDescriptionHTML && (
+                                {shortDescription && (
                                     <WptTagInfo
                                         key={'short-desc'}
                                         baseTag={{
                                             icon: <WikiIcon />,
                                             name: t('web:wiki_description'),
-                                            value: shortDescriptionHTML,
+                                            value: plainTextToHTML(shortDescription),
                                             isDesc: true,
                                         }}
                                     />

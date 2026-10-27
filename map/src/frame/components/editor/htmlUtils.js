@@ -39,11 +39,9 @@ export function htmlToText(html) {
         .replaceAll(/<\/li>/gi, '\n')
         .replaceAll(/<\/blockquote>/gi, '\n')
         .replaceAll(/<br\s*\/?>/gi, '\n')
-        .replaceAll(/<\/?[a-z][^>]*>/gi, '')
-        .replace(/\n+$/, '')
-        .trim();
+        .replaceAll(/<\/?[a-z][^>]*>/gi, '');
 
-    return element.value;
+    return element.value.replace(/\n+$/, '').trim();
 }
 
 /**
@@ -64,7 +62,7 @@ export function sanitizeHtml(html) {
 }
 
 export function htmlToPlainText(html) {
-    return htmlToText(html?.replaceAll(/<\/p>\s*<p>/gi, '</p>\n<p>'));
+    return htmlToText(html?.replaceAll(/<\/p>\s*<p>/gi, '</p>\n<p>')).replaceAll(/\u00a0/g, ' ');
 }
 
 export function plainTextToHTML(text) {

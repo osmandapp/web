@@ -1,11 +1,11 @@
 import WptTagsProvider, {
+    cleanShortDescriptions,
     getOsmIdFromOsmUrl,
     getShortDescriptionKey,
     getShortDescriptionLang,
     getShortDescriptions,
     isShortDescriptionTag,
     openWikipediaContent,
-    shortDescriptionToHTML,
     WIKIPEDIA,
 } from '@map/infoblock/components/wpt/WptTagsProvider';
 import { apiGet, apiPost } from '@map/util/HttpApi';
@@ -234,18 +234,23 @@ describe('short descriptions of a favorite', () => {
         expect(getShortDescriptions(undefined)).toEqual({});
     });
 
-    test('a saved description is shown the way explore shows it', () => {
-        expect(shortDescriptionToHTML('Офис прокурора (uk = Офіс прокурора, до 2020 года) — орган власти[1].')).toBe(
-            '<p>Офис прокурора  — орган власти.</p>'
-        );
+    test('wiki descriptions are saved the way explore shows them', () => {
         expect(
-            shortDescriptionToHTML(
-                '<mapframe latitude="50.4" zoom="12" />Kyiv, see https://en.wikipedia.org/wiki/Kyiv here'
-            )
-        ).toBe('<p>Kyiv, see here</p>');
-        expect(shortDescriptionToHTML('Tom & Jerry\n\nnext')).toBe('<p>Tom &amp; Jerry</p><p>next</p>');
-        expect(shortDescriptionToHTML('depth < 5 m and > 2 m')).toBe('<p>depth &lt; 5 m and &gt; 2 m</p>');
-        expect(shortDescriptionToHTML('(uk = Київ)[1]')).toBe('');
-        expect(shortDescriptionToHTML('')).toBe('');
+            cleanShortDescriptions({
+                short_description: 'Berlin Cathedral (German: Berliner Dom, built in 1905) is a church[1].',
+                'short_description:uk':
+                    '<mapframe latitude="52.5" zoom="12" />Berlin, see https://en.wikipedia.org/wiki/Berlin here',
+                'short_description:de': 'Tom &amp; Jerry, depth < 5 m',
+                'short_description:fr': '(de = Berlin)[1]',
+                'short_description:it': '<p>Berlin</p><p>Germany</p>',
+                'short_description:es': '&nbsp;',
+            })
+        ).toEqual({
+            short_description: 'Berlin Cathedral  is a church.',
+            'short_description:uk': 'Berlin, see here',
+            'short_description:de': 'Tom & Jerry, depth < 5 m',
+            'short_description:it': 'Berlin\n\nGermany',
+        });
+        expect(cleanShortDescriptions({})).toEqual({});
     });
 });

@@ -16,7 +16,7 @@ import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
 import { cleanHtml, createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
-import { htmlToText, plainTextToHTML } from '../../../frame/components/editor/htmlUtils';
+import { htmlToPlainText } from '../../../frame/components/editor/htmlUtils';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
@@ -795,8 +795,12 @@ export function getShortDescriptions(extensions) {
     );
 }
 
-export function shortDescriptionToHTML(text) {
-    return plainTextToHTML(htmlToText(cleanHtml(text ?? '')));
+export function cleanShortDescriptions(shortDescriptions) {
+    return Object.fromEntries(
+        Object.entries(shortDescriptions)
+            .map(([key, value]) => [key, htmlToPlainText(cleanHtml(value ?? ''))])
+            .filter(([, value]) => value)
+    );
 }
 
 const WptTagsProvider = {
