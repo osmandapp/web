@@ -5,6 +5,9 @@ const path = require('node:path');
 const MAP_DIR = path.resolve(__dirname, '../../map');
 const STUBS = '<rootDir>/src/util/stubs';
 
+// west of UTC a date without a time falls on the previous day; a test can't switch the zone, the workers inherit it
+process.env.TZ = 'America/New_York';
+
 // tests import the app sources directly from ../../map/src (alias @map), so they are transformed too.
 // moduleNameMapper is matched against the import string as it is written, so patterns are suffix-based;
 // stubs come before the @map alias - the first match wins.
@@ -71,6 +74,8 @@ module.exports = {
         '^@map/map/util/MarkerSelectionService$': path.join(MAP_DIR, 'src/map/util/MarkerSelectionService.js'),
         // the initial map view is plain url logic over leaflet, no map is involved
         'map/util/initialMapView$': path.join(MAP_DIR, 'src/map/util/initialMapView.js'),
+        // the route points of the url are checked by the coordinate parser of the navigation menu
+        'analyzer/util/PointsManager$': path.join(MAP_DIR, 'src/menu/analyzer/util/PointsManager.js'),
         // the url hash format is plain logic over leaflet-hash, no map is involved
         'map/util/mapHash$': path.join(MAP_DIR, 'src/map/util/mapHash.js'),
         // which vector tile feature a click opens is plain logic over the rendered features
