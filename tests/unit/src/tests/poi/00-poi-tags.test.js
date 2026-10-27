@@ -200,15 +200,15 @@ test('the osm id of a poi is the last part of its link', () => {
 
 describe('short descriptions of a favorite', () => {
     test('english has no language suffix, other languages have one', () => {
-        expect(getShortDescriptionKey('en')).toBe('short_description');
-        expect(getShortDescriptionKey('ru')).toBe('short_description:ru');
-        expect(getShortDescriptionKey(undefined)).toBe('short_description');
+        expect(getShortDescriptionKey('en')).toBe('osm_tag_short_description');
+        expect(getShortDescriptionKey('ru')).toBe('osm_tag_short_description:ru');
+        expect(getShortDescriptionKey(undefined)).toBe('osm_tag_short_description');
     });
 
     test('the language is read back from the key', () => {
-        expect(getShortDescriptionLang('short_description')).toBe('en');
-        expect(getShortDescriptionLang('short_description:ru')).toBe('ru');
-        expect(getShortDescriptionLang('short_description:zh-yue')).toBe('zh-yue');
+        expect(getShortDescriptionLang('osm_tag_short_description')).toBe('en');
+        expect(getShortDescriptionLang('osm_tag_short_description:ru')).toBe('ru');
+        expect(getShortDescriptionLang('osm_tag_short_description:zh-yue')).toBe('zh-yue');
     });
 
     test('only short description tags are recognized', () => {
@@ -219,7 +219,7 @@ describe('short descriptions of a favorite', () => {
         expect(isShortDescriptionTag('short_description')).toBe(false);
     });
 
-    test('the descriptions are taken from the extensions without the osm prefix', () => {
+    test('only the short descriptions are taken from the extensions', () => {
         const extensions = {
             osm_tag_short_description: 'river',
             'osm_tag_short_description:de': 'Fluss',
@@ -228,8 +228,8 @@ describe('short descriptions of a favorite', () => {
         };
 
         expect(getShortDescriptions(extensions)).toEqual({
-            short_description: 'river',
-            'short_description:de': 'Fluss',
+            osm_tag_short_description: 'river',
+            'osm_tag_short_description:de': 'Fluss',
         });
         expect(getShortDescriptions(undefined)).toEqual({});
     });
@@ -237,22 +237,22 @@ describe('short descriptions of a favorite', () => {
     test('wiki descriptions are saved the way explore shows them', () => {
         expect(
             cleanShortDescriptions({
-                short_description: 'Berlin Cathedral (German: Berliner Dom, built in 1905) is a church[1].',
-                'short_description:uk':
+                osm_tag_short_description: 'Berlin Cathedral (German: Berliner Dom, built in 1905) is a church[1].',
+                'osm_tag_short_description:uk':
                     '<mapframe latitude="52.5" zoom="12" />Berlin, see https://en.wikipedia.org/wiki/Berlin here',
-                'short_description:de': 'Tom & Jerry, depth < 5 m',
-                'short_description:fr': '(de = Berlin)[1]',
-                'short_description:it': '<p>Berlin</p><p>Germany</p>',
-                'short_description:pl': 'Berlin Cathedral (1905)\u00a0— a church',
-                'short_description:nl': 'Berlin\u00a0(Germany) is a city',
+                'osm_tag_short_description:de': 'Tom & Jerry, depth < 5 m',
+                'osm_tag_short_description:fr': '(de = Berlin)[1]',
+                'osm_tag_short_description:it': '<p>Berlin</p><p>Germany</p>',
+                'osm_tag_short_description:pl': 'Berlin Cathedral (1905)\u00a0— a church',
+                'osm_tag_short_description:nl': 'Berlin\u00a0(Germany) is a city',
             })
         ).toEqual({
-            short_description: 'Berlin Cathedral is a church.',
-            'short_description:uk': 'Berlin, see here',
-            'short_description:de': 'Tom & Jerry, depth < 5 m',
-            'short_description:it': 'Berlin\nGermany',
-            'short_description:pl': 'Berlin Cathedral\u00a0— a church',
-            'short_description:nl': 'Berlin\u00a0is a city',
+            osm_tag_short_description: 'Berlin Cathedral is a church.',
+            'osm_tag_short_description:uk': 'Berlin, see here',
+            'osm_tag_short_description:de': 'Tom & Jerry, depth < 5 m',
+            'osm_tag_short_description:it': 'Berlin\nGermany',
+            'osm_tag_short_description:pl': 'Berlin Cathedral\u00a0— a church',
+            'osm_tag_short_description:nl': 'Berlin is a city',
         });
         expect(cleanShortDescriptions({})).toEqual({});
     });

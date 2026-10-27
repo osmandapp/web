@@ -67,7 +67,6 @@ import WptTagsProvider, {
     PARAM_ACCESS_TOKEN,
     PARAM_FIELDS,
     POI_OSM_URL,
-    SHORT_DESCRIPTION,
     WIKIDATA,
     WIKIPEDIA,
     addWikidataTags,
@@ -1365,7 +1364,7 @@ function createPoiObject(feature, tags) {
 function getShortDescription(shortDescriptions) {
     return (
         shortDescriptions[getShortDescriptionKey(getWikiLang(i18n.language))] ??
-        shortDescriptions[SHORT_DESCRIPTION] ??
+        shortDescriptions[getShortDescriptionKey()] ??
         Object.values(shortDescriptions)[0]
     );
 }

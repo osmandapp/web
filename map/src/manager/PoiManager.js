@@ -356,8 +356,8 @@ export function updatePoiCache(ctx, newData) {
 export const cleanHtml = (html) => {
     return html
         .replace('div class="content"', '')
-        .replace(/\([^)]*\)/g, '')
-        .replace(/\[[^\]]*\]/g, '')
+        .replace(/[ \u00a0]*\([^)]*\)/g, '')
+        .replace(/[ \u00a0]*\[[^\]]*\]/g, '')
         .replace(/[})]/g, '')
         .replace(/http\S*\s/g, '');
 };

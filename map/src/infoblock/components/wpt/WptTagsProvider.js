@@ -46,7 +46,7 @@ const SUBTYPE_POI = WEB_POI_PREFIX + 'subType';
 const SERVICE_TIMES = 'service_times';
 const COLLECTION_TIMES = 'collection_times';
 export const DESCRIPTION = 'description';
-export const SHORT_DESCRIPTION = 'short_description';
+const SHORT_DESCRIPTION = 'short_description';
 export const OPENING_HOURS = 'opening_hours';
 export const OPENING_HOURS_INFO = 'opening_hours_info';
 const PHONE = 'phone';
@@ -61,6 +61,7 @@ export const WIKIDATA = 'wikidata';
 export const WIKIMEDIA_COMMONS = 'wikimedia_commons';
 const INSTAGRAM = 'instagram';
 export const OSM_PREFIX = 'osm_tag_';
+const SHORT_DESCRIPTION_TAG = OSM_PREFIX + SHORT_DESCRIPTION;
 const COLLAPSABLE_PREFIX = 'collapsable_';
 export const COLOR_NAME_EXTENSION = 'color';
 const ICON_NAME_EXTENSION = 'icon';
@@ -776,7 +777,7 @@ export function getOsmIdFromOsmUrl(url) {
 }
 
 export function getShortDescriptionKey(lang) {
-    return lang && lang !== WIKI_DEFAULT_LANG ? `${SHORT_DESCRIPTION}:${lang}` : SHORT_DESCRIPTION;
+    return lang && lang !== WIKI_DEFAULT_LANG ? `${SHORT_DESCRIPTION_TAG}:${lang}` : SHORT_DESCRIPTION_TAG;
 }
 
 export function getShortDescriptionLang(key) {
@@ -784,29 +785,19 @@ export function getShortDescriptionLang(key) {
 }
 
 export function isShortDescriptionTag(key) {
-    const tag = OSM_PREFIX + SHORT_DESCRIPTION;
-
-    return key === tag || key.startsWith(`${tag}:`);
+    return key === SHORT_DESCRIPTION_TAG || key.startsWith(`${SHORT_DESCRIPTION_TAG}:`);
 }
 
 export function getShortDescriptions(extensions) {
-    return Object.fromEntries(
-        Object.entries(extensions ?? {})
-            .filter(([key]) => isShortDescriptionTag(key))
-            .map(([key, value]) => [key.substring(OSM_PREFIX.length), value])
-    );
+    return Object.fromEntries(Object.entries(extensions ?? {}).filter(([key]) => isShortDescriptionTag(key)));
 }
 
 export function cleanShortDescriptions(shortDescriptions) {
     return Object.fromEntries(
         Object.entries(shortDescriptions)
-            .map(([key, value]) => [key, collapseSpaces(htmlToText(cleanHtml(value ?? '')))])
+            .map(([key, value]) => [key, htmlToText(cleanHtml(value ?? ''))])
             .filter(([, value]) => value)
     );
-}
-
-function collapseSpaces(text) {
-    return text.replaceAll(/[ \u00a0]{2,}/g, (spaces) => (spaces.includes('\u00a0') ? '\u00a0' : ' '));
 }
 
 const WptTagsProvider = {

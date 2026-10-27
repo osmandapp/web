@@ -33,7 +33,6 @@ import {
     getShortDescriptions,
     isShortDescriptionTag,
     MARKER_INTERNAL_KEYS,
-    OSM_PREFIX,
     WEB_POI_PREFIX,
     WEB_PREFIX,
 } from '../wpt/WptTagsProvider';
@@ -57,7 +56,6 @@ import OverlayLinearProgress from '../../../frame/components/progress/OverlayLin
 import { getIconNameForPoiType } from '../../../manager/PoiManager';
 
 const PANEL_CONTENT_WIDTH = 320;
-const SHORT_DESCRIPTION_PANEL = 'shortDescription:';
 const APPEARANCE_PREVIEW_SIZE = 36;
 
 export default function WptEditPanel({ setShowInfoBlock }) {
@@ -94,7 +92,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     );
     const [shortDescriptions, setShortDescriptions] = useState(initialShortDescriptions);
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
-    const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color' | 'shortDescription:<key>'
+    const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color' | short description tag
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     // search icons (house, location) have no mx_*.svg for a favorite marker
     const [favoriteIcon, setFavoriteIcon] = useState(
@@ -113,6 +111,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [deleteWptDialogOpen, setDeleteWptDialogOpen] = useState(false);
 
     const shortDescriptionsChanged = !isEqual(shortDescriptions, initialShortDescriptions);
+    const filledShortDescriptions = Object.fromEntries(
+        Object.entries(shortDescriptions).filter(([, value]) => htmlToText(value))
+    );
 
     const hasEditChanges =
         favoriteName !== (editWpt?.name ?? '') ||
@@ -255,7 +256,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 const filteredOptions = Object.entries(poiData)
                     .filter(([key]) => !excludePoiTags(key))
                     .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
-                ext = { extensions: { ...filteredOptions, ...getShortDescriptionTags(shortDescriptions) } };
+                ext = { extensions: { ...filteredOptions, ...filledShortDescriptions } };
             }
         }
         const favorite = selectedGroup
@@ -439,7 +440,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             w.icon = favoriteIcon;
             w.category = selectedGroupName !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroupName : null;
             if (shortDescriptionsChanged) {
-                w.ext = { ...w.ext, extensions: replaceShortDescriptions(w.ext?.extensions, shortDescriptions) };
+                w.ext = { ...w.ext, extensions: replaceShortDescriptions(w.ext?.extensions, filledShortDescriptions) };
             }
         }
 
@@ -566,11 +567,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         guardAction(closePanel);
     }
 
-    const shortDescriptionPanelKey = activePanel?.startsWith(SHORT_DESCRIPTION_PANEL)
-        ? activePanel.substring(SHORT_DESCRIPTION_PANEL.length)
-        : null;
+    const activeShortDescriptionKey = activePanel && isShortDescriptionTag(activePanel) ? activePanel : null;
     const visibleShortDescriptions = Object.entries(shortDescriptions).filter(
-        ([key, value]) => htmlToText(value) || key === shortDescriptionPanelKey
+        ([key]) => key in filledShortDescriptions || key === activeShortDescriptionKey
     );
 
     function updateShortDescription(key, html) {
@@ -620,12 +619,12 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                     onClose={closeActivePanel}
                 />
             )}
-            {shortDescriptionPanelKey && (
+            {activeShortDescriptionKey && (
                 <DescriptionPanel
-                    key={shortDescriptionPanelKey}
-                    title={getShortDescriptionTitle(shortDescriptionPanelKey)}
-                    description={shortDescriptions[shortDescriptionPanelKey]}
-                    setDescription={(html) => updateShortDescription(shortDescriptionPanelKey, html)}
+                    key={activeShortDescriptionKey}
+                    title={getShortDescriptionTitle(activeShortDescriptionKey)}
+                    description={shortDescriptions[activeShortDescriptionKey]}
+                    setDescription={(html) => updateShortDescription(activeShortDescriptionKey, html)}
                     onClose={closeActivePanel}
                 />
             )}
@@ -709,7 +708,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                                     id={`se-edit-fav-short-desc-${getShortDescriptionLang(key)}`}
                                     title={getShortDescriptionTitle(key)}
                                     favoriteDescription={value}
-                                    onClick={() => togglePanel(SHORT_DESCRIPTION_PANEL + key)}
+                                    onClick={() => togglePanel(key)}
                                 />
                             </Fragment>
                         ))}
@@ -776,16 +775,8 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     );
 }
 
-function getShortDescriptionTags(shortDescriptions) {
-    return Object.fromEntries(
-        Object.entries(shortDescriptions)
-            .filter(([, value]) => htmlToText(value))
-            .map(([key, value]) => [OSM_PREFIX + key, value])
-    );
-}
-
 function replaceShortDescriptions(extensions, shortDescriptions) {
     const otherTags = Object.entries(extensions ?? {}).filter(([key]) => !isShortDescriptionTag(key));
 
-    return { ...Object.fromEntries(otherTags), ...getShortDescriptionTags(shortDescriptions) };
+    return { ...Object.fromEntries(otherTags), ...shortDescriptions };
 }
