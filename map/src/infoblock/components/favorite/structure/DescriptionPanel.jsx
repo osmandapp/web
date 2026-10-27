@@ -8,7 +8,7 @@ import ActionIconBtn from '../../../../frame/components/btns/ActionIconBtn';
 import RichTextEditor from '../../../../frame/components/editor/RichTextEditor';
 import { textToHTML } from '../../../../frame/components/editor/htmlUtils';
 
-export default function DescriptionPanel({ description, setDescription, onClose, title, plainText }) {
+export default function DescriptionPanel({ description, setDescription, onClose, title }) {
     const { t } = useTranslation();
 
     const [initialContent] = useState(() => textToHTML(description));
@@ -37,12 +37,7 @@ export default function DescriptionPanel({ description, setDescription, onClose,
                     </Tooltip>
                 }
             />
-            <RichTextEditor
-                content={initialContent}
-                onChange={setDescription}
-                editorId="se-edit-fav-dialog-desc"
-                plainText={plainText}
-            />
+            <RichTextEditor content={initialContent} onChange={setDescription} editorId="se-edit-fav-dialog-desc" />
         </SecondaryMenuDrawer>
     );
 }

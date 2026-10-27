@@ -5,26 +5,9 @@ import StarterKit from '@tiptap/starter-kit';
 import EditorToolbar from './EditorToolbar';
 import styles from './editor.module.css';
 
-const PLAIN_TEXT_OPTIONS = {
-    blockquote: false,
-    bold: false,
-    bulletList: false,
-    code: false,
-    codeBlock: false,
-    heading: false,
-    horizontalRule: false,
-    italic: false,
-    link: false,
-    listItem: false,
-    listKeymap: false,
-    orderedList: false,
-    strike: false,
-    underline: false,
-};
-
-export default function RichTextEditor({ content, onChange, autofocus = true, editorId, plainText = false }) {
+export default function RichTextEditor({ content, onChange, autofocus = true, editorId }) {
     const editor = useEditor({
-        extensions: [StarterKit.configure(plainText ? PLAIN_TEXT_OPTIONS : { link: { openOnClick: false } })],
+        extensions: [StarterKit.configure({ link: { openOnClick: false } })],
         content,
         autofocus,
         onUpdate: ({ editor }) => onChange?.(editor.getHTML()),
@@ -33,7 +16,7 @@ export default function RichTextEditor({ content, onChange, autofocus = true, ed
 
     return (
         <>
-            {!plainText && <EditorToolbar editor={editor} />}
+            <EditorToolbar editor={editor} />
             <Box className={styles.editorContent}>
                 <EditorContent editor={editor} className={styles.prosemirror} />
             </Box>

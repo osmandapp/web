@@ -3,8 +3,6 @@ import StarterKit from '@tiptap/starter-kit';
 
 const EXTENSIONS = [StarterKit];
 
-let textElement = null;
-
 /**
  * Converts legacy plain text to HTML for loading into the rich text editor.
  * Used only for backward compatibility with descriptions saved before rich text was introduced.
@@ -32,16 +30,17 @@ export function textToHTML(text) {
 export function htmlToText(html) {
     if (!html) return '';
 
-    const element = getTextElement();
-    element.innerHTML = html
+    // a textarea decodes entities (&amp;, &nbsp;) without parsing the rest as tags
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = html
         .replaceAll(/<\/p>/gi, '\n')
         .replaceAll(/<\/h[1-6]>/gi, '\n')
         .replaceAll(/<\/li>/gi, '\n')
         .replaceAll(/<\/blockquote>/gi, '\n')
         .replaceAll(/<br\s*\/?>/gi, '\n')
-        .replaceAll(/<\/?[a-z][^>]*>/gi, '');
+        .replaceAll(/<[^>]+>/g, '');
 
-    return element.value.replace(/\n+$/, '').trim();
+    return textarea.value.replace(/\n+$/, '').trim();
 }
 
 /**
@@ -59,21 +58,4 @@ export function sanitizeHtml(html) {
     if (!html) return '';
 
     return generateHTML(generateJSON(html, EXTENSIONS), EXTENSIONS);
-}
-
-export function htmlToPlainText(html) {
-    return htmlToText(html?.replaceAll(/<\/p>\s*<p>/gi, '</p>\n<p>'));
-}
-
-export function plainTextToHTML(text) {
-    const element = getTextElement();
-    element.textContent = text ?? '';
-
-    return textToHTML(element.innerHTML);
-}
-
-function getTextElement() {
-    if (!textElement) textElement = document.createElement('textarea');
-
-    return textElement;
 }

@@ -48,7 +48,7 @@ import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
 import styles from './wptEditPanel.module.css';
 import isEmpty from 'lodash-es/isEmpty';
 import isEqual from 'lodash-es/isEqual';
-import { htmlToPlainText, plainTextToHTML } from '../../../frame/components/editor/htmlUtils';
+import { htmlToText } from '../../../frame/components/editor/htmlUtils';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
@@ -570,11 +570,11 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         ? activePanel.substring(SHORT_DESCRIPTION_PANEL.length)
         : null;
     const visibleShortDescriptions = Object.entries(shortDescriptions).filter(
-        ([key, value]) => value || key === shortDescriptionPanelKey
+        ([key, value]) => htmlToText(value) || key === shortDescriptionPanelKey
     );
 
     function updateShortDescription(key, html) {
-        setShortDescriptions((prev) => ({ ...prev, [key]: htmlToPlainText(html) }));
+        setShortDescriptions((prev) => ({ ...prev, [key]: html }));
     }
 
     function getShortDescriptionTitle(key) {
@@ -624,10 +624,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 <DescriptionPanel
                     key={shortDescriptionPanelKey}
                     title={getShortDescriptionTitle(shortDescriptionPanelKey)}
-                    description={plainTextToHTML(shortDescriptions[shortDescriptionPanelKey])}
+                    description={shortDescriptions[shortDescriptionPanelKey]}
                     setDescription={(html) => updateShortDescription(shortDescriptionPanelKey, html)}
                     onClose={closeActivePanel}
-                    plainText
                 />
             )}
             {activePanel === 'icon' && (
@@ -709,7 +708,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                                 <FavoriteDescription
                                     id={`se-edit-fav-short-desc-${getShortDescriptionLang(key)}`}
                                     title={getShortDescriptionTitle(key)}
-                                    favoriteDescription={plainTextToHTML(value)}
+                                    favoriteDescription={value}
                                     onClick={() => togglePanel(SHORT_DESCRIPTION_PANEL + key)}
                                 />
                             </Fragment>
@@ -780,8 +779,8 @@ export default function WptEditPanel({ setShowInfoBlock }) {
 function getShortDescriptionTags(shortDescriptions) {
     return Object.fromEntries(
         Object.entries(shortDescriptions)
-            .filter(([, value]) => value.trim())
-            .map(([key, value]) => [OSM_PREFIX + key, value.trim()])
+            .filter(([, value]) => htmlToText(value))
+            .map(([key, value]) => [OSM_PREFIX + key, value])
     );
 }
 
