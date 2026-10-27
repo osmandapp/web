@@ -244,12 +244,16 @@ describe('short descriptions of a favorite', () => {
                 'short_description:fr': '(de = Berlin)[1]',
                 'short_description:it': '<p>Berlin</p><p>Germany</p>',
                 'short_description:es': '&nbsp;',
+                'short_description:pl': 'Berlin Cathedral (1905)\u00a0— a church',
+                'short_description:nl': 'Berlin\u00a0(Germany) is a city',
             })
         ).toEqual({
             short_description: 'Berlin Cathedral is a church.',
             'short_description:uk': 'Berlin, see here',
             'short_description:de': 'Tom & Jerry, depth < 5 m',
             'short_description:it': 'Berlin\n\nGermany',
+            'short_description:pl': 'Berlin Cathedral\u00a0— a church',
+            'short_description:nl': 'Berlin\u00a0is a city',
         });
         expect(cleanShortDescriptions({})).toEqual({});
     });

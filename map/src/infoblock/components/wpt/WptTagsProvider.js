@@ -798,9 +798,13 @@ export function getShortDescriptions(extensions) {
 export function cleanShortDescriptions(shortDescriptions) {
     return Object.fromEntries(
         Object.entries(shortDescriptions)
-            .map(([key, value]) => [key, htmlToPlainText(cleanHtml(value ?? '')).replaceAll(/ {2,}/g, ' ')])
+            .map(([key, value]) => [key, collapseSpaces(htmlToPlainText(cleanHtml(value ?? '')))])
             .filter(([, value]) => value)
     );
+}
+
+function collapseSpaces(text) {
+    return text.replaceAll(/[ \u00a0]{2,}/g, (spaces) => (spaces.includes('\u00a0') ? '\u00a0' : ' '));
 }
 
 const WptTagsProvider = {
