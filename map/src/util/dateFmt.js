@@ -6,6 +6,7 @@ const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
 const normAbbr = (s) => capFirst(String(s).replace(/\.$/, ''));
 
+// wiki photo dates come without a time: with it they are parsed as local time, not as UTC midnight
 const PARSE_AS_LOCAL_TIME = 'T00:00';
 
 export const fmt = {
