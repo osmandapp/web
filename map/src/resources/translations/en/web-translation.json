@@ -376,6 +376,8 @@
     "add_favorite": "Add favorite",
     "add_notes": "Add notes",
     "clear_description": "Clear description",
+    "wiki_description": "Wiki description",
+    "wiki_description_lang": "Wiki description ({{lang}})",
     "save_to_cloud": "Save to Cloud",
     "order_management": "Order Management",
     "indexes": "Indexes",

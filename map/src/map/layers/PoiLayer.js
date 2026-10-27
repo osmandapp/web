@@ -22,7 +22,7 @@ import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLaye
 import { createMapObject, createSearchObjectOptions, getObjIdSearch } from '../../manager/SearchManager';
 import { SEARCH_ICON_MAP_LOCATION, searchTypeMap } from '../../manager/searchConstants';
 import i18n from '../../i18n';
-import { getApiLang } from '../../util/lang';
+import { getApiLang, getWikiLangs } from '../../util/lang';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { escapeHtmlAttr, useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import {
@@ -270,9 +270,11 @@ export default function PoiLayer() {
     }, [ctx.configureMapState.pois]);
 
     async function openPoiByUrl() {
-        const { pin, name, type, osmId, wikidataId, lang } = ctx.poiByUrl.params;
+        const { pin, name, type, osmId, wikidataId } = ctx.poiByUrl.params;
 
-        const response = type ? await getPoiApi({ pin, name, type, osmId, wikidataId, lang }) : null;
+        const response = type
+            ? await getPoiApi({ pin, name, type, osmId, wikidataId, lang: getWikiLangs(i18n.language) })
+            : null;
         if (response?.data) {
             const data = response.data;
 

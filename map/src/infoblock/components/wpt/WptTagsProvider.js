@@ -15,12 +15,13 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
+import { cleanHtml, createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
+import { htmlToText } from '../../../frame/components/editor/htmlUtils';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
 import { localizeWeekTokens } from '../../../util/dateFmt';
-import { getApiLang } from '../../../util/lang';
+import { getApiLang, WIKI_DEFAULT_LANG } from '../../../util/lang';
 import {
     convertMeters,
     getSmallLengthUnit,
@@ -45,6 +46,7 @@ const SUBTYPE_POI = WEB_POI_PREFIX + 'subType';
 const SERVICE_TIMES = 'service_times';
 const COLLECTION_TIMES = 'collection_times';
 export const DESCRIPTION = 'description';
+const SHORT_DESCRIPTION = 'short_description';
 export const OPENING_HOURS = 'opening_hours';
 export const OPENING_HOURS_INFO = 'opening_hours_info';
 const PHONE = 'phone';
@@ -59,6 +61,7 @@ export const WIKIDATA = 'wikidata';
 export const WIKIMEDIA_COMMONS = 'wikimedia_commons';
 const INSTAGRAM = 'instagram';
 export const OSM_PREFIX = 'osm_tag_';
+const SHORT_DESCRIPTION_TAG = OSM_PREFIX + SHORT_DESCRIPTION;
 const COLLAPSABLE_PREFIX = 'collapsable_';
 export const COLOR_NAME_EXTENSION = 'color';
 const ICON_NAME_EXTENSION = 'icon';
@@ -771,6 +774,30 @@ export const otherImgTags = (tag) => {
 
 export function getOsmIdFromOsmUrl(url) {
     return url ? url.split('/').pop() : null;
+}
+
+export function getShortDescriptionKey(lang) {
+    return lang && lang !== WIKI_DEFAULT_LANG ? `${SHORT_DESCRIPTION_TAG}:${lang}` : SHORT_DESCRIPTION_TAG;
+}
+
+export function getShortDescriptionLang(key) {
+    return key.split(':')[1] ?? WIKI_DEFAULT_LANG;
+}
+
+export function isShortDescriptionTag(key) {
+    return key === SHORT_DESCRIPTION_TAG || key.startsWith(`${SHORT_DESCRIPTION_TAG}:`);
+}
+
+export function getShortDescriptions(extensions) {
+    return Object.fromEntries(Object.entries(extensions ?? {}).filter(([key]) => isShortDescriptionTag(key)));
+}
+
+export function cleanShortDescriptions(shortDescriptions) {
+    return Object.fromEntries(
+        Object.entries(shortDescriptions)
+            .map(([key, value]) => [key, htmlToText(cleanHtml(value ?? ''))])
+            .filter(([, value]) => value)
+    );
 }
 
 const WptTagsProvider = {
