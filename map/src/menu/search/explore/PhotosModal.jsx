@@ -16,7 +16,7 @@ import MenuItemWithLines from '../../components/MenuItemWithLines';
 import { useTranslation } from 'react-i18next';
 import { otherImgTags } from '../../../infoblock/components/wpt/WptTagsProvider';
 import PropTypes from 'prop-types';
-import { fmt } from '../../../util/dateFmt';
+import { formatPhotoDate } from '../../../util/dateFmt';
 import { getPhotoTitle } from '../../../manager/SearchManager';
 
 const HEADER_HEIGHT = 60;
@@ -172,7 +172,7 @@ export default function PhotosModal({ photos }) {
                                 {activePhoto.properties.date ? (
                                     (() => {
                                         const label = t('shared_string_date');
-                                        const text = `${label}: ${formatDate(activePhoto.properties.date)}`;
+                                        const text = `${label}: ${formatPhotoDate(activePhoto.properties.date)}`;
 
                                         return (
                                             <MenuItemWithLines
@@ -333,26 +333,6 @@ function hasFooterInfo(photo) {
         photo?.properties?.license ||
         photo?.properties?.description
     );
-}
-
-function formatDate(dateStr) {
-    if (!dateStr) {
-        return '';
-    }
-    const clean = dateStr.startsWith('+') ? dateStr.slice(1) : dateStr;
-    // Format YYYY 2025 -> 2025
-    if (/^\d{4}$/.test(clean)) {
-        return clean;
-    }
-    // Format YYYY-MM 2025-09 -> September 2025
-    if (/^\d{4}-\d{2}$/.test(clean)) {
-        const d = new Date(clean + '-01'); // Add the first day of the month for browser compatibility
-        return isNaN(d) ? dateStr : fmt.monthYearLong(d);
-    }
-    // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025
-    const d = new Date(clean);
-
-    return isNaN(d) ? dateStr : fmt.dMMMMY(d);
 }
 
 function parseDescription(descriptionStr, language) {

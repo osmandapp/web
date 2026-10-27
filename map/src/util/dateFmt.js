@@ -6,6 +6,9 @@ const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
 const normAbbr = (s) => capFirst(String(s).replace(/\.$/, ''));
 
+// wiki photo dates come without a time: with it they are parsed as local time, not as UTC midnight
+const PARSE_AS_LOCAL_TIME = 'T00:00';
+
 export const fmt = {
     // "MMM d, yyyy" (e.g., "Sep 4, 2025")
     MMMdY: (d) =>
@@ -89,6 +92,26 @@ export const fmt = {
             { hour: '2-digit', minute: '2-digit', hour12: false }
         )}`,
 };
+
+export function formatPhotoDate(dateStr) {
+    if (!dateStr) {
+        return '';
+    }
+    const clean = dateStr.startsWith('+') ? dateStr.slice(1) : dateStr;
+    // Format YYYY 2025 -> 2025
+    if (/^\d{4}$/.test(clean)) {
+        return clean;
+    }
+    // Format YYYY-MM 2025-09 -> September 2025
+    if (/^\d{4}-\d{2}$/.test(clean)) {
+        const d = new Date(clean + '-01' + PARSE_AS_LOCAL_TIME); // Add the first day of the month for browser compatibility
+        return isNaN(d) ? dateStr : fmt.monthYearLong(d);
+    }
+    // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025
+    const d = new Date(/^\d{4}-\d{2}-\d{2}$/.test(clean) ? clean + PARSE_AS_LOCAL_TIME : clean);
+
+    return isNaN(d) ? dateStr : fmt.dMMMMY(d);
+}
 
 // Replace "Mo/Tu/We/Th/Fr/Sa/Su" tokens with localized short weekday names
 export function localizeWeekTokens(scheduleStr) {
