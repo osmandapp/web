@@ -6,7 +6,7 @@ const capFirst = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 
 const normAbbr = (s) => capFirst(String(s).replace(/\.$/, ''));
 
-const LOCAL_MIDNIGHT = 'T00:00';
+const PARSE_AS_LOCAL_TIME = 'T00:00';
 
 export const fmt = {
     // "MMM d, yyyy" (e.g., "Sep 4, 2025")
@@ -103,11 +103,11 @@ export function formatPhotoDate(dateStr) {
     }
     // Format YYYY-MM 2025-09 -> September 2025
     if (/^\d{4}-\d{2}$/.test(clean)) {
-        const d = new Date(clean + '-01' + LOCAL_MIDNIGHT); // Add the first day of the month for browser compatibility
+        const d = new Date(clean + '-01' + PARSE_AS_LOCAL_TIME); // Add the first day of the month for browser compatibility
         return isNaN(d) ? dateStr : fmt.monthYearLong(d);
     }
     // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025
-    const d = new Date(/^\d{4}-\d{2}-\d{2}$/.test(clean) ? clean + LOCAL_MIDNIGHT : clean);
+    const d = new Date(/^\d{4}-\d{2}-\d{2}$/.test(clean) ? clean + PARSE_AS_LOCAL_TIME : clean);
 
     return isNaN(d) ? dateStr : fmt.dMMMMY(d);
 }
