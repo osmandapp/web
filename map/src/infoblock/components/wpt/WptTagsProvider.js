@@ -798,7 +798,7 @@ export function getShortDescriptions(extensions) {
 export function cleanShortDescriptions(shortDescriptions) {
     return Object.fromEntries(
         Object.entries(shortDescriptions)
-            .map(([key, value]) => [key, htmlToPlainText(cleanHtml(value ?? ''))])
+            .map(([key, value]) => [key, htmlToPlainText(cleanHtml(value ?? '')).replaceAll(/ {2,}/g, ' ')])
             .filter(([, value]) => value)
     );
 }

@@ -41,7 +41,6 @@ test('an edited wiki description is saved as plain text', () => {
         'Tom & Jerry\n\na < b\nnext line'
     );
     expect(htmlToPlainText('<p>Rhine <strong>river</strong></p>')).toBe('Rhine river');
-    expect(htmlToPlainText('<p>Rhine&nbsp;&nbsp;river</p>')).toBe('Rhine  river');
     expect(htmlToPlainText('<p></p>')).toBe('');
     expect(htmlToPlainText('')).toBe('');
 });

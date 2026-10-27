@@ -62,7 +62,7 @@ export function sanitizeHtml(html) {
 }
 
 export function htmlToPlainText(html) {
-    return htmlToText(html?.replaceAll(/<\/p>\s*<p>/gi, '</p>\n<p>')).replaceAll(/\u00a0/g, ' ');
+    return htmlToText(html?.replaceAll(/<\/p>\s*<p>/gi, '</p>\n<p>'));
 }
 
 export function plainTextToHTML(text) {

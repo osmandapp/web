@@ -246,7 +246,7 @@ describe('short descriptions of a favorite', () => {
                 'short_description:es': '&nbsp;',
             })
         ).toEqual({
-            short_description: 'Berlin Cathedral  is a church.',
+            short_description: 'Berlin Cathedral is a church.',
             'short_description:uk': 'Berlin, see here',
             'short_description:de': 'Tom & Jerry, depth < 5 m',
             'short_description:it': 'Berlin\n\nGermany',
