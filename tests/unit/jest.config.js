@@ -5,6 +5,9 @@ const path = require('node:path');
 const MAP_DIR = path.resolve(__dirname, '../../map');
 const STUBS = '<rootDir>/src/util/stubs';
 
+// west of UTC a date without a time falls on the previous day; a test can't switch the zone, the workers inherit it
+process.env.TZ = 'America/New_York';
+
 // tests import the app sources directly from ../../map/src (alias @map), so they are transformed too.
 // moduleNameMapper is matched against the import string as it is written, so patterns are suffix-based;
 // stubs come before the @map alias - the first match wins.
