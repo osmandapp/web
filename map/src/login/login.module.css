@@ -127,3 +127,6 @@
 .aiPermissionsPaper:global(.MuiPaper-root) {
     max-width: 480px;
 }
+.codeDialogDescription {
+    margin-bottom: 12px !important;
+}

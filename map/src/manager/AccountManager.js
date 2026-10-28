@@ -95,29 +95,23 @@ export async function userLogout({ ltx, username, handleClose, lang = DEFAULT_AU
     }
 }
 
-async function deleteAccount({ userEmail, code, setError, setAccountDeleted }) {
-    if (isValidEmail(userEmail)) {
-        const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`, '', {
+async function deleteAccount({ code, setError, setAccountDeleted }) {
+    // in the body, so that a password typed into the code field stays out of the url and server logs
+    const resp = await apiPost(
+        `${process.env.REACT_APP_USER_API_SITE}/mapapi/auth/delete-account`,
+        new URLSearchParams({ token: code }).toString(),
+        {
             throwErrors: true,
             dataOnErrors: true,
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded',
             },
-            params: {
-                token: code,
-            },
-        }).catch((error) => setError(error.response.data));
-
-        if (resp?.status === 200) {
-            setAccountDeleted(true);
         }
-    } else {
-        setError('Please enter valid email');
-    }
-}
+    ).catch((error) => setError(error.response.data));
 
-function isValidEmail(email) {
-    return email !== null && email.length >= 3 && email.length < 320;
+    if (resp?.status === 200) {
+        setAccountDeleted(true);
+    }
 }
 
 async function isRequestOk(response, setError) {

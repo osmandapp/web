@@ -11,6 +11,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
+import styles from '../login.module.css';
 
 export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
     const ltx = useContext(LoginContext);
@@ -96,7 +97,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                     </Grid>
                 </Grid>
                 <DialogContent>
-                    <DialogContentText>{getMsg()}</DialogContentText>
+                    <DialogContentText className={styles.codeDialogDescription}>{getMsg()}</DialogContentText>
                     {newEmail && oldCodeConfirmed && (
                         <Typography variant="body2" noWrap>
                             {`New email: ${newEmail}`}

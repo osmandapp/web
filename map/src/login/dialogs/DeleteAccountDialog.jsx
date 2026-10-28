@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
+import styles from '../login.module.css';
 
 export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const ltx = useContext(LoginContext);
@@ -24,6 +25,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
     const [userEmail, setUserEmail] = useState(null);
     const [code, setCode] = useState(null);
     const [emailError, setEmailError] = useState('');
+    const [codeError, setCodeError] = useState('');
     const [accountDeleted, setAccountDeleted] = useState(false);
 
     useEffect(() => {
@@ -94,7 +96,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                     </Grid>
                 </Grid>
                 <DialogContent>
-                    <DialogContentText>
+                    <DialogContentText className={styles.codeDialogDescription}>
                         Deletes all your data and account details from OsmAnd Cloud. Secondary devices will lose access
                         to paid features.
                     </DialogContentText>
@@ -119,7 +121,7 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                     <TextField
                         margin="dense"
                         onChange={(e) => {
-                            setEmailError('');
+                            setCodeError('');
                             setCode(e.target.value);
                         }}
                         id="code"
@@ -127,6 +129,8 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                         type="text"
                         fullWidth
                         variant="standard"
+                        helperText={codeError}
+                        error={codeError.length > 0}
                         value={code ?? ''}
                     ></TextField>
                 </DialogContent>
@@ -141,11 +145,9 @@ export default function DeleteAccountDialog({ setDeleteAccountFlag }) {
                                     setEmailError('Email does not match');
                                 } else {
                                     AccountManager.deleteAccount({
-                                        userEmail,
                                         code,
-                                        setError: setEmailError,
+                                        setError: setCodeError,
                                         setAccountDeleted,
-                                        lang,
                                     }).then();
                                 }
                             }
