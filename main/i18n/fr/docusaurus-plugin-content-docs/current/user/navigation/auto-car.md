@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -331,19 +331,26 @@ Pour activer ou désactiver les [**Informations sur l'itinéraire** pour un poin
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* et OsmAnd offrent la possibilité d'ajuster la carte en fonction des conditions d'éclairage. En *mode carte Jour*, le schéma de couleurs reste lumineux et contrasté, ce qui facilite la lecture même en plein soleil. En *mode Nuit*, les cartes deviennent plus sombres, ce qui aide le conducteur à mieux naviguer dans l'obscurité.  
 
-OsmAnd a des options de [mode carte](../map/vector-maps.md#map-mode), mais lorsque vous utilisez l'application dans *Android Auto*, ces options sont ignorées. À la place, le mode que vous avez sélectionné dans les paramètres système d'*Android Auto* pour les cartes est utilisé.
+OsmAnd dans *Android Auto* dispose de son propre paramètre de mode carte, distinct des options de [mode carte](../map/vector-maps.md#map-mode) dans l'application OsmAnd sur votre appareil. Pour le modifier, allez dans *Android Auto (OsmAnd) → Bouton Paramètres → Mode carte*, sélectionnez une option, puis appuyez sur *Appliquer*. La carte passe au mode sélectionné après avoir appuyé sur *Appliquer*. Si vous quittez l'écran avec la flèche de retour sans appuyer sur *Appliquer*, le mode précédent reste sélectionné.
 
-- Sélectionnez le mode Jour ou le mode Nuit pour que l'affichage de la carte reste inchangé.
-- Si vous souhaitez que le mode d'affichage de la carte change en fonction de l'heure de la journée, sélectionnez le mode Automatique.  
+- Sélectionnez *Jour* ou *Nuit* pour conserver l'affichage de la carte inchangé, indépendamment des signaux de votre véhicule.
+- Si vous souhaitez que le mode d'affichage de la carte change automatiquement en fonction des signaux de votre véhicule, sélectionnez *Automatique* (par défaut).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Loupe de carte {#map-magnifier}
+
+![Loupe de carte Android Auto](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+La *loupe de carte* modifie le grossissement de la carte sur l'écran *Android Auto*. Pour la modifier, allez dans *Android Auto (OsmAnd) → Bouton Paramètres → Loupe de carte*, sélectionnez une valeur de 50 % à 125 %, puis appuyez sur *Appliquer*. La valeur actuelle est affichée sous *Loupe de carte* dans la liste des paramètres.  
+
+Pour savoir comment le grossissement affecte l'affichage de la carte, consultez [Loupe de carte](../map/vector-maps.md#map-magnifier).
 
 
 ### Écran partagé {#split-screen}
@@ -357,8 +364,6 @@ L'application OsmAnd peut être ouverte et utilisée pour naviguer dans *Android
 3. Trouvez Multi-fenêtres et choisissez l'interrupteur.
 4. Retournez à l'écran d'accueil.  
 
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 Dans les paramètres d'Android Auto, vous pouvez modifier la position de la barre des tâches et la disposition de l'écran d'accueil :

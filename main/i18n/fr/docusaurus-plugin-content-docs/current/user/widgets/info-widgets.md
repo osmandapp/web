@@ -1,5 +1,5 @@
 ---
-source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -70,7 +70,7 @@ Si vous utilisez la source de localisation de l'API Android ou si l'altitude MSL
 
 :::info Fonctionnalité payante
 Le widget *Élévation : centre de la carte* est une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-:::
+::;
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -289,11 +289,13 @@ Pour basculer entre ces modes, appuyez directement sur le widget. L'option de ba
 
 <TabItem value="android" label="Android">
 
-**Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
+- **Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
+- **Vitesse verticale moyenne** indique la vitesse à laquelle un objet monte ou descend sur une période donnée. Seuls les premier et dernier points de l'intervalle de temps sont pris en compte pour l'évaluation. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes. Vous devez utiliser le [marqueur de carte](../personal/markers.md) comme point cible.
 
 | | |
 |:------------|:------------|
 | Activer | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
+| Par appui | Change *Finesse moyenne* ou *Vitesse verticale moyenne*  |
 | Appui long | Ouvre le [Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>

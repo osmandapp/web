@@ -1,7 +1,7 @@
 ---
-source-hash: b0e4660605b0cdfdfcfc653e1f8929974cb654b66c0c55fbc588b89e37d05091
+source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
 sidebar_position: 3
-title:  Historique de recherche
+title:  Exploration de recherche
 ---
 
 import Tabs from '@theme/Tabs';
@@ -12,18 +12,42 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+L'onglet **Exploration** de l'outil Recherche vous aide à découvrir des lieux populaires autour de vous et à revenir rapidement aux endroits que vous avez déjà recherchés ou vers lesquels vous avez navigué. Il contient deux sections : [Lieux populaires à proximité](#popular-places-nearby) et [Historique](#history-items).
+
+*L'historique* est un enregistrement de toutes les recherches et destinations de navigation que vous avez saisies ou recherchées dans l'application au cours de la période d'utilisation. Cet outil vous permet de retrouver et d'accéder facilement aux lieux précédemment recherchés, ce qui facilite la navigation et vous fait gagner du temps.
+
+OsmAnd offre plusieurs moyens de consulter votre historique.
+
+- Le [bouton Rechercher](../widgets/map-buttons.md#search) est toujours affiché sur la carte, et un appui dessus vous amènera à l'[écran général](#how-to-use) de l'outil.
+- Allez dans le menu principal *Menu → Rechercher → Onglet Exploration*.
+- Lors de la préparation d'un itinéraire, appuyez sur *Navigation → Définir la destination → Champ de recherche*.
+- Le bloc d'information dans le menu de navigation de la [préparation d'itinéraire](../navigation/setup/route-navigation.md#navigation-menu) affiche une liste des points de destination récents, qui font également partie de l'historique de recherche.
+- L'historique de recherche est disponible dans [Android Auto](../navigation/auto-car.md#search).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 *L'historique de recherche* est un enregistrement de toutes les recherches et de tous les lieux que vous avez saisis ou recherchés dans l'application au cours de la période d'utilisation. Cet outil vous permet de retrouver et d'accéder facilement aux lieux précédemment recherchés, ce qui facilite la navigation et vous fait gagner du temps.
 
 OsmAnd offre plusieurs moyens de consulter votre historique de recherche.  
 
-- Le [bouton Rechercher](../widgets/map-buttons.md#search) est toujours affiché sur la carte, et un appui dessus vous amènera à l'[écran général](#how-to-use) de l'outil.
-- Allez dans le *Menu principal d'Android → Rechercher → Onglet Historique*.
+- Le [bouton Rechercher](../widgets/map-buttons.md#search) est toujours affiché sur la carte. Appuyez dessus pour ouvrir l'[écran général](#how-to-use) de l'outil, puis sélectionnez l'onglet *Historique*.
 - Lors de la préparation d'un itinéraire, appuyez sur *Navigation → Définir la destination → Champ de recherche*.
 - Le bloc d'information dans le menu de navigation de la [préparation d'itinéraire](../navigation/setup/route-navigation.md#navigation-menu) affiche une liste des points de destination récents, qui font également partie de l'historique de recherche.
-- L'historique de recherche est disponible dans [Android Auto](../navigation/auto-car.md#search) et [CarPlay](../navigation/car-play.md#search).
+- L'historique de recherche est disponible dans [CarPlay](../navigation/car-play.md#search).
+
+</TabItem>
+
+</Tabs>
 
 
 ## Comment utiliser {#how-to-use}
@@ -32,7 +56,16 @@ OsmAnd offre plusieurs moyens de consulter votre historique de recherche.
 
 <TabItem value="android" label="Android">
 
-![Historique de recherche](@site/static/img/search/history_search_android.png)
+![Exploration de recherche](@site/static/img/search/explore_search_android.webp)
+
+L'onglet **Exploration** s'ouvre lorsque vous ouvrez l'outil Recherche. L'onglet Exploration sert à fournir des informations pertinentes sur les lieux autour de vous et sur vos actions précédentes.
+
+- *Découvrir des lieux à proximité*. La section [Lieux populaires à proximité](#popular-places-nearby) affiche des points de repère et des attractions connus autour de vous, afin que vous puissiez trouver des endroits intéressants sans saisir de requête.
+- *Re-rechercher*. Vous pouvez utiliser l'historique de recherche pour rechercher à nouveau des lieux ou des adresses précédemment recherchés sans avoir à saisir de nouveau la requête.
+- *Accès rapide aux lieux fréquemment visités*. Si vous visitez fréquemment certains lieux, comme votre domicile, votre travail ou vos endroits préférés, l'historique de recherche enregistre ces lieux, offrant un accès rapide à ceux-ci.
+- *Suivre les trajets précédents*. L'historique de recherche peut être utile pour suivre les trajets et les itinéraires précédents. Vous pouvez suivre les itinéraires que vous avez déjà empruntés, ou [planifier votre prochain itinéraire](../plan-route/create-route.md) en vous basant sur les précédents.
+- *Rechercher des lieux sur une certaine période*. Sur l'écran Historique, les éléments triés par *Récents* sont regroupés par période : *Aujourd'hui*, *Hier*, *La semaine dernière*, puis par mois. Pour trouver un élément spécifique, appuyez sur le titre *Historique* en haut de l'écran et saisissez son nom.
+- *Supprimer des entrées*. L'historique de recherche offre la possibilité de [supprimer](#delete) les entrées précédentes, ce qui peut être utile pour la confidentialité ou pour garder votre historique organisé.
 
 </TabItem>
 
@@ -40,21 +73,28 @@ OsmAnd offre plusieurs moyens de consulter votre historique de recherche.
 
 ![Historique de recherche](@site/static/img/search/history_search_ios.png)
 
+L'historique de recherche sert à fournir des informations pertinentes sur vos actions précédentes.
+
+- *Re-rechercher*. Vous pouvez utiliser l'historique de recherche pour rechercher à nouveau des lieux ou des adresses précédemment recherchés sans avoir à saisir de nouveau la requête.
+- *Accès rapide aux lieux fréquemment visités*. Si vous visitez fréquemment certains lieux, comme votre domicile, votre travail ou vos endroits préférés, l'historique de recherche enregistre ces lieux, offrant un accès rapide à ceux-ci.  
+- *Suivre les trajets précédents*. L'historique de recherche peut être utile pour suivre les trajets et les itinéraires précédents. Vous pouvez suivre les itinéraires que vous avez déjà empruntés, ou [planifier votre prochain itinéraire](../plan-route/create-route.md) en vous basant sur les précédents.  
+- *Rechercher des lieux sur une certaine période*. La liste de l'historique de recherche est déjà divisée en blocs par mois.
+- *Supprimer des entrées*. L'historique de recherche offre la possibilité de [supprimer](#delete) les entrées précédentes, ce qui peut être utile pour la confidentialité ou pour garder votre historique organisé.
+
 </TabItem>
 
 </Tabs>
 
-L'historique de recherche sert à fournir des informations pertinentes sur vos actions précédentes.
 
-- *Re-rechercher*. Vous pouvez utiliser l'historique de recherche pour rechercher à nouveau des lieux ou des adresses précédemment recherchés sans avoir à saisir de nouveau la requête.  
+## Lieux populaires à proximité {#popular-places-nearby}
 
-- *Accès rapide aux lieux fréquemment visités*. Si vous visitez fréquemment certains lieux, comme votre domicile, votre travail ou vos endroits préférés, l'historique de recherche enregistre ces lieux, offrant un accès rapide à ceux-ci.  
+<InfoAndroidOnly/>
 
-- *Suivre les trajets précédents*. L'historique de recherche peut être utile pour suivre les trajets et les itinéraires précédents. Vous pouvez suivre les itinéraires que vous avez déjà empruntés, ou [planifier votre prochain itinéraire](../plan-route/create-route.md) en vous basant sur les précédents.  
+![Lieux populaires à proximité](@site/static/img/search/popular_places_nearby.webp)
 
-- *Rechercher des lieux sur une certaine période*. Pour l'application Android, vous devez effectuer un appui long, puis trouver le mois au cours duquel vous avez effectué le trajet, quitter le menu de suppression et saisir le nom dans le champ de recherche. Pour l'application iOS, la liste de l'historique de recherche est déjà divisée en blocs par mois.
+La section **Lieux populaires à proximité** affiche une liste déroulante de points de repère et d'attractions connus près de votre position. Chaque élément peut inclure le nom du lieu, sa catégorie, la distance et la direction, ainsi qu'une image d'aperçu si disponible. Appuyez sur *Afficher tout* pour ouvrir la liste complète ou sur *Afficher sur la carte* pour afficher ces lieux sur la carte.
 
-- *Supprimer des entrées*. L'historique de recherche offre la possibilité de [supprimer](#delete) les entrées précédentes, ce qui peut être utile pour la confidentialité ou pour garder votre historique organisé.
+Pour plus de détails, consultez l'article [Lieux populaires](../map/popular_places.md#explore-in-search).
 
 
 ## Éléments de l'historique {#history-items}
@@ -63,7 +103,16 @@ L'historique de recherche sert à fournir des informations pertinentes sur vos a
 
 <TabItem value="android" label="Android">
 
-![Historique de recherche](@site/static/img/search/history_search_android.png)
+![Section Historique](@site/static/img/search/history_section_list.webp)
+
+La section **Historique** de l'onglet Exploration affiche jusqu'à 25 éléments les plus récents. Appuyez sur le titre de la section pour la réduire ou l'agrandir. Appuyez sur *Afficher tout* pour ouvrir l'écran *Historique* complet.
+
+Si les options *Historique de recherche* et *Historique de navigation* sont toutes deux désactivées, la section affiche la carte *L'historique est désactivé*. Appuyez sur *Ouvrir les paramètres de l'historique* pour les activer.
+
+Chaque champ de la liste de l'historique contient certaines des **informations** disponibles pour l'application.
+
+- Une icône qui identifie le type ou la catégorie de l'objet trouvé.
+- Le nom de l'objet, le lieu, l'adresse ou la requête de type. Pour les traces, des informations sur la distance, le nombre de points de cheminement et le temps sont affichées.
 
 </TabItem>
 
@@ -71,36 +120,87 @@ L'historique de recherche sert à fournir des informations pertinentes sur vos a
 
 ![Historique de recherche](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 Chaque champ de la liste de l'historique de recherche contient certaines des **informations** disponibles pour l'application.
 
 - Une icône qui identifie le type ou la catégorie de l'objet trouvé.
 - Le nom de l'objet, le lieu, l'adresse ou la requête de type. Pour les traces, des informations sur la distance, le nombre de points de cheminement et le temps sont affichées.
 - Distance de votre position actuelle au point et direction par boussole.
 
+</TabItem>
 
-### Ordre des éléments {#order-of-items}
+</Tabs>
+
+
+### Trier et filtrer {#sort-and-filter}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Section Historique](@site/static/img/search/history_section_android.webp) ![Section Historique](@site/static/img/search/history_section_2_android.webp)
+
+Sur l'écran *Historique* complet, vous pouvez trier et filtrer vos éléments d'historique à l'aide des options suivantes :
+
+1. **Trier par** :
+    - *Récents* — affiche d'abord les éléments ajoutés le plus récemment. Lorsque cette option est sélectionnée, les éléments sont regroupés par période, comme Aujourd'hui, Hier, La semaine dernière et les périodes antérieures.
+    - *Les plus proches* — trie les éléments par leur distance par rapport à votre position actuelle.
+    - *Les plus proches du centre de la carte* — trie les éléments par leur distance par rapport au centre actuel de la carte. Lorsque l'une des options de tri par distance est sélectionnée, les groupes temporels ne sont pas affichés.
+
+2. **Type** — filtre les éléments d'historique par :
+    - *Tous* — affiche tous les éléments d'historique disponibles.
+    - *Recherche* — affiche les éléments de votre historique de recherche.
+    - *Navigation* — affiche les éléments de votre historique de navigation.
+
+Si l'*Historique de recherche* ou l'*Historique de navigation* est désactivé dans les paramètres de l'historique, le filtre *Type* n'est pas disponible.
+
+3. **Filtres de catégorie** — filtre les éléments d'historique par catégorie. Les filtres de catégorie disponibles dépendent des types d'éléments présents dans votre historique. Par exemple, vous pouvez voir des catégories telles que POI, Trace, Lieu, Favori ou Adresse. Vous pouvez sélectionner plusieurs catégories à la fois.
+
+4. **Paramètres** — appuyez sur l'icône d'engrenage dans le coin supérieur droit pour ouvrir les paramètres de l'historique, où vous pouvez activer ou désactiver *Historique de recherche*, *Historique de navigation* et *Historique des marqueurs de carte*, sauvegarder l'historique sous forme de fichier ou effacer tout l'historique.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Éléments récents**. Les requêtes ou les lieux les plus récents sont affichés en haut de la liste. Cela permet un accès rapide aux éléments récemment utilisés.
 - **Ordre chronologique**. Les éléments de la liste de l'historique de recherche sont classés par ordre chronologique, en commençant par les entrées les plus anciennes ou les premières et en terminant par les plus récentes ou les dernières. Les anciens éléments descendent progressivement dans la liste à mesure que de nouvelles entrées sont ajoutées, à moins que les anciens éléments de l'historique de recherche n'aient été utilisés, auquel cas ils seront déplacés en haut de la liste.
-- Sous iOS, la liste est triée par mois.
+- La liste est triée par mois.
+
+</TabItem>
+
+</Tabs>
 
 ### Type d'objets {#type-of-objects}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Les **types d'objets** suivants entrent dans la liste de l'historique de recherche :
+
+- **Lieux**. Il peut s'agir d'une adresse, d'un nom d'entreprise, d'un numéro de route, de coordonnées, de marqueurs, de points d'intérêt, de notes OSM ou de lieux sur lesquels vous avez appuyé sur la carte.
+- **Traces et points de cheminement**. La liste comprend les traces que vous avez créées, enregistrées ou téléchargées et que vous avez utilisées dans des itinéraires précédents, ainsi que les points de cheminement si vous y avez navigué séparément.
+- **Favoris et photos**. Points favoris et notes photo que vous avez ouverts.
+- **Destinations**. Points vers lesquels vous avez navigué.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 Les **types d'objets** suivants entrent dans la liste de l'historique de recherche :
 
 - **Lieux**. Il peut s'agir d'une adresse, d'un nom d'entreprise, d'un numéro de route, de coordonnées, de marqueurs, de points d'intérêt, de notes OSM ou de lieux sur lesquels vous avez appuyé sur la carte.
 - **Traces et points de cheminement**. La liste comprend les traces que vous avez créées, enregistrées ou téléchargées et que vous avez utilisées dans des itinéraires précédents, ainsi que les points de cheminement si vous y avez navigué séparément.
 
+</TabItem>
+
+</Tabs>
+
 
 ## Actions {#actions}
 
 Dans l'outil Historique de recherche, vous pouvez [supprimer](#delete) les requêtes inutiles, toutes à la fois ou par éléments individuels. Vous pouvez utiliser l'[exportation](#export-and-share) de l'historique. L'application Android offre une action supplémentaire de [partage](#share-android) des éléments de recherche sous forme de fichier [GPX](../../technical/osmand-file-formats/osmand-gpx.md).  
 
-Vous pouvez **désactiver ou activer** l'affichage de l'ensemble de l'historique de recherche. Dans ce cas, les requêtes ne sont pas supprimées de l'appareil. Sous Android, le commutateur se trouve sur l'écran principal de l'outil dans l'[onglet Historique](#overview). Sous iOS, il se trouve dans *Menu → Paramètres → Paramètres OsmAnd → Historique → Historique de recherche*.
+Vous pouvez **désactiver ou activer** l'affichage de l'ensemble de l'historique de recherche. Dans ce cas, les requêtes ne sont pas supprimées de l'appareil. Sous Android, le commutateur se trouve en haut de l'écran de [suppression](#delete) et dans les paramètres de l'historique, accessibles via l'icône d'engrenage sur l'écran [Historique](#sort-and-filter). Sous iOS, il se trouve dans *Menu → Paramètres → Paramètres OsmAnd → Historique → Historique de recherche*.
 
 
 ### Supprimer {#delete}
@@ -109,13 +209,13 @@ Vous pouvez **désactiver ou activer** l'affichage de l'ensemble de l'historique
 
 <TabItem value="android" label="Android">
 
-![Suppression de l'historique de recherche](@site/static/img/search/history_search_delete_andr.png)
+![Historique de recherche](@site/static/img/search/history_search_delete_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Suppression de l'historique de recherche](@site/static/img/search/history_search_delete_ios.png)
+![Historique de recherche](@site/static/img/search/history_search_delete_ios.png)
 
 </TabItem>
 
@@ -128,7 +228,7 @@ Vous devez **appuyer longuement sur l'un des éléments de la requête dans la l
 - *Sélectionner ou désélectionner des éléments au hasard* - appuyez sur l'élément requis dans la liste.
 - *Sélectionner la période disponible pour la suppression*, comme le jour, les 7 derniers jours ou le mois - cochez la case avec le sous-titre dans la liste.
 - *Vous pouvez supprimer tout l'historique* en une seule fois en appuyant sur le bouton *Tout sélectionner* en bas de l'écran.
-- *Menu → Paramètres → Paramètres OsmAnd → Historique → Actions*. Cette section contient le bouton **Supprimer tout l'historique**.
+- *Menu → Paramètres → Paramètres OsmAnd → Historique → Actions*. Cette section contient le bouton **Effacer tout l'historique** (*Android*)/**Supprimer tout l'historique** (*iOS*).
 
 
 ### Exporter et Partager {#export-and-share}

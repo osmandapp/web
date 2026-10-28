@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Paramètres généraux
 ---
@@ -100,6 +100,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
     - *Mémoire interne de l'application*. Seule l'application OsmAnd a accès à ses données et aucune des applications externes.
     - *Mémoire partagée*. N'est plus disponible.
     - *Stockage externe 1*. Seule l'application OsmAnd y a accès, ainsi que les applications d'administration et l'USB.
+    - *Stockage externe visible 1*. Les données sont stockées dans le dossier Android/media, accessible aux gestionnaires de fichiers et à l'USB. Aucune autorisation de stockage supplémentaire n'est requise.
     - *Stockage multi-utilisateurs*. Seule l'application OsmAnd y a accès, mais il est partagé entre plusieurs utilisateurs Android.
     - *Spécifié manuellement*. Dépend du chemin d'accès.
 
@@ -114,6 +115,11 @@ Le paramètre **Stockage des médias** détermine où sont stockées les photos,
 - **Stockage partagé** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Dossier de l'appareil photo** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Spécifié manuellement** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Lorsque vous sélectionnez un autre stockage multimédia, OsmAnd vous demande si vous souhaitez déplacer les fichiers multimédias existants :
+- **Déplacer vers la nouvelle destination** — Déplacer les fichiers multimédias existants vers le stockage sélectionné.
+- **Ne pas déplacer** — Modifier le stockage sans déplacer les fichiers existants.
+- **Annuler** — Conserver le stockage actuel.
 
 Il existe également un commutateur *Toujours conserver une copie locale*. Lorsqu'il est activé, OsmAnd copie les médias importés depuis la Galerie ou les Fichiers dans son propre stockage, afin que les médias joints restent disponibles même si le fichier d'origine est supprimé de la Galerie ou du système de fichiers.
 

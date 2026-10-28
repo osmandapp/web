@@ -1,5 +1,5 @@
 ---
-source-hash: e0173be6fa81b710afb1b4b52c4268f63865918a50d504364df4f0d772bf2d39
+source-hash: a4ab003fa68f8ff7c393f79dced64ce22df0b72bda332626935257db71197cb1
 title: Créer un polygone de pays
 versions: '*'
 ---
@@ -14,7 +14,7 @@ OsmAnd est livré avec de nombreuses cartes pour de nombreux pays. La plupart de
 Geofabrik.de a pour stratégie de fournir des cartes pour les pays qui sont demandés par un grand nombre d'utilisateurs ou par leurs clients. Cela signifie que certaines cartes n'apparaissent jamais sur geofabrik car il n'y a tout simplement pas assez de demandes (ou pas du tout), comme certains pays exotiques tels que les Seychelles ou le Burundi, etc.
 
 ## Processus serveur {#server-process}
-En raison de cette décision stratégique de geofabrik, OsmAnd a une option pour générer des cartes pour ces pays et les outils [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) et [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) sont utilisés à cette fin. Pour OsmAndMapCreator, il s'agit d'un processus en trois étapes :
+En raison de cette décision stratégique de geofabrik, OsmAnd a une option pour générer des cartes pour ces pays et les outils [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) et [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) sont utilisés à cette fin. Pour OsmAndMapCreator, il s'agit d'un processus en trois étapes :
 - OsmAndMapCreator a besoin d'un polygone qui entoure la frontière extérieure du pays.
 - OsmAndMapCreator a besoin de la *"carte de données brutes"* du niveau supérieur suivant incorporant ce pays. Pour le Burundi, cela signifie qu'OsmAndMapCreator a besoin de la carte de l'Afrique. Pour la Rhénanie-du-Nord-Westphalie, cela signifie qu'OsmAndMapCreator a besoin de la carte de l'Allemagne.
 - [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) créera une carte de *"données brutes"* à partir du poly en extrayant les données de la carte de la carte *"parente"*.

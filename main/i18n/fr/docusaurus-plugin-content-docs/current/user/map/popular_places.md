@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Lieux populaires
 ---
@@ -28,7 +28,7 @@ Chaque lieu inclus dans cette fonctionnalité est lié à un **ID Wikidata**, ce
 Actuellement, la base de données organisée comprend environ **50 000 à 150 000 lieux les mieux notés** dans le monde, sélectionnés parmi plus de **1 million** d'objets Wikidata + OSM.
 
 :::note
-*This is the first version of the Popular Places feature. Feedback is welcome on [GitHub](https://github.com/osmandapp/OsmAnd)*.
+*Ceci est la première version de la fonctionnalité Lieux populaires. Vos commentaires sont les bienvenus sur [GitHub](https://github.com/osmandapp/OsmAnd)*.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -210,7 +210,7 @@ Vous pouvez également effectuer les actions suivantes sur chaque photo :
   Partagez l'image sélectionnée en utilisant n'importe quelle application compatible installée sur votre appareil (par ex., messagerie, e-mail ou réseaux sociaux). Le contenu partagé inclut l'image et son lien source (si disponible).
 
 - **Détails**  
-  Ouvrez une vue détaillée affichant les métadonnées de l'image, y compris : *Description (texte complet, Android uniquement)*, *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source*, et *Lien direct*
+  Ouvrez une vue détaillée affichant les métadonnées de l'image, y compris : *Description (texte complet)*, *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source*, et *Lien direct*
 
   **Note :** La langue de la description dépend de la langue d'affichage de l'application. Si la description dans la langue sélectionnée n'est pas disponible, OsmAnd affiche la version anglaise ou la première traduction disponible.
 
@@ -229,7 +229,3 @@ Vous pouvez également effectuer les actions suivantes sur chaque photo :
 - [Configurer la carte](./configure-map-menu.md)
 - [Rechercher un POI](../search/search-poi.md)
 - [Plugin Wikipedia](../plugins/wikipedia.md)
-
-
-
-

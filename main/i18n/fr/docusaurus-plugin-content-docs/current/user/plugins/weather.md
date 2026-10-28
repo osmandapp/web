@@ -1,5 +1,5 @@
 ---
-source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
 sidebar_position: 19
 title:  Météo
 ---
@@ -151,21 +151,21 @@ Dans ce menu, vous pouvez modifier la **visibilité** et les [paramètres](#weat
 - *Menu principal → Plugins → Météo → Paramètres*
 - *Menu principal → Paramètres → Profil → Paramètres des plugins → Météo*
 
-![Paramètres Météo Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Paramètres Météo 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Paramètres Météo Android](@site/static/img/plugins/weather/weather_settings_andr_1.webp) ![Paramètres Météo 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Menu principal → Paramètres → Profil → Plugins → Météo*
+*Menu principal → Paramètres → Profil → Plugins → Météo*
 
-![Paramètres Météo iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Paramètres Météo iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Paramètres Météo iOS](@site/static/img/plugins/weather/weather_settings_ios.webp) ![Paramètres Météo iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.webp)
 
 </TabItem>
 
 </Tabs>  
 
-Il est important de décider dans quelles unités de mesure il vous est pratique de voir les [données météo](#weather-layers) sur la carte et dans la section [Widgets météo](#weather-widgets) de l'écran. Vous pouvez choisir les unités de mesure appropriées pour chaque paramètre ou utiliser les valeurs par défaut (*iOS uniquement*). Dans la version iOS de l'application OsmAnd, vous pouvez également activer l'option de prévisions hors ligne pour éviter d'utiliser le trafic mobile lors de vos déplacements.  
+Il est important de décider dans quelles unités de mesure il vous est pratique de voir les [données météo](#weather-layers) sur la carte et dans la section [Widgets météo](#weather-widgets) de l'écran. Vous pouvez choisir les unités de mesure appropriées pour chaque paramètre. Vous pouvez également utiliser les valeurs par défaut — sur iOS pour tous les paramètres, sur Android uniquement pour la température. L'unité de température est sélectionnée dans : *Menu → Profil → Paramètres généraux → Unités et formats → Température*. Dans la version iOS de l'application OsmAnd, vous pouvez également activer l'option de prévisions hors ligne pour éviter d'utiliser le trafic mobile lors de vos déplacements.  
 
 :::note
 Dans la version iOS d'OsmAnd, vous pouvez modifier les unités de mesure et le niveau de transparence dans le menu qui s'ouvre après un appui long sur l'icône de la couche de carte requise.  

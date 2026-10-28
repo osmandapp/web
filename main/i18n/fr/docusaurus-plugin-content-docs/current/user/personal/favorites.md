@@ -1,5 +1,5 @@
 ---
-source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Favoris
 ---
@@ -162,19 +162,32 @@ Le *dossier Personnel* contient des points spéciaux comme **<Translate android=
 
 ![Médias](@site/static/img/personal/media_actions.webp) ![Médias](@site/static/img/personal/media_menu.webp)
 
-La section Médias vous permet de joindre des photos, des vidéos, des enregistrements audio et des images à un point favori. Les médias peuvent être ajoutés lors de la création d'un favori ou ultérieurement depuis l'écran Modifier le favori. Pour joindre des médias, appuyez sur *Ajouter* dans la section Médias et choisissez l'une des options disponibles :
+La section Médias vous permet de joindre des photos, des vidéos, des enregistrements audio et des images à un point favori. Les médias peuvent être ajoutés lors de la création d'un favori ou ultérieurement depuis l'écran Modifier le favori, ou directement depuis le menu contextuel du favori. Pour joindre des médias, appuyez sur le bouton *+* sur l'écran Modifier le favori ou sur *Ajouter* dans le menu contextuel et choisissez l'une des options disponibles :
 - **Prendre une photo** — Capturez une nouvelle photo avec l'appareil photo de l'appareil.
 - **Prendre une note vidéo** — Enregistrez une nouvelle vidéo.
-- **Prendre une note audio** — Enregistrez une note audio.
+- **Prendre une note audio** — Enregistrez une note audio. Si OsmAnd n'a pas l'autorisation d'enregistrer de l'audio, votre appareil vous demande de l'autoriser.
 - **Choisir dans la Galerie** — Sélectionnez une image existante sur votre appareil.
 - **Choisir dans les Fichiers** — Sélectionnez une image dans le système de fichiers.
 
-Une fois le média joint, il apparaît dans la carte Médias du menu contextuel du favori. La même carte Médias est également disponible pour les [Points de cheminement](../map/tracks/track-context-menu.md#points--waypoints).
+Une fois le média joint, il apparaît dans la carte Médias du menu contextuel du favori. Si aucun média n'est joint, la carte affiche *Aucun média* et un bouton *Ajouter*. La même carte Médias est également disponible pour les [Points de cheminement](../map/tracks/track-context-menu.md#points--waypoints).
+
+Les notes audio, vidéo et photo créées avec le [plugin Audio/Vidéo Notes](../plugins/audio-video-notes.md) sont également enregistrées comme favoris avec des médias joints.
 
 La carte Médias affiche les aperçus des éléments joints. Les éléments affichés suivent l'ordre de tri sélectionné. Appuyez sur *Afficher tout* pour ouvrir la galerie complète. La galerie affiche tous les médias joints au favori sélectionné.
 
 Appuyez sur n'importe quel élément pour l'ouvrir en vue plein écran. Les photos et vidéos peuvent être visualisées directement, tandis que les enregistrements audio incluent des commandes de lecture.
 
+La galerie comprend les options suivantes :
+- **Tri** — Appuyez sur la barre de tri en haut pour choisir l'ordre : Le plus proche, Dernière modification, Nom A - Z, Nom Z - A, Date la plus récente en premier, Date la plus ancienne en premier, Durée la plus longue en premier ou Durée la plus courte en premier.
+- **Résumé** — Sous les éléments, la galerie affiche le nombre de photos, de vidéos et de notes audio ainsi que leur taille totale.
+- **Bouton +** — Ajouter un nouveau média.
+- **Modifier** (icône crayon) — Entrer en mode sélection. Vous pouvez également appuyer longuement sur n'importe quel élément.
+
+En mode sélection, appuyez sur les éléments pour les sélectionner ou utilisez Sélectionner tout. Le menu à trois points propose :
+- **Exporter** — Exporter les fichiers médias sélectionnés.
+- **Supprimer** — Supprimer les médias sélectionnés du favori. Les médias stockés par OsmAnd et non joints à un autre élément sont également supprimés de l'appareil.
+
+Les médias capturés dans OsmAnd sont nommés selon le modèle `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, par exemple `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. Le nom contient le type de média, la date et l'heure de création, ainsi que l'emplacement où le média a été capturé, encodé sous forme de [lien court OSM](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 ## Gérer les favoris {#manage-favorites}
 
@@ -481,6 +494,8 @@ Dans les dernières versions d'***Android***, l'accès aux répertoires système
 
 Toutes les informations sur un favori sont stockées et décrites à l'aide de balises. Lors de la création d'un point favori, vous pouvez écrire votre propre [description](#favorite-point) ou utiliser les informations des données du [point d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-pois) OSM à partir duquel votre point a été créé. Les points favoris, les POI et les points de cheminement utilisent les mêmes **balises** pour stocker les informations et sont enregistrés au **format de fichier GPX**.  
 
+Si le [plugin Édition OSM](../plugins/osm-editing.md) est activé, un favori créé à partir d'un objet OpenStreetMap stocke également un lien vers cet objet dans la balise `osm_url`, par exemple `https://www.openstreetmap.org/node/7235345886`. Le lien est conservé dans les fichiers de favoris exportés et partagés ainsi que dans les sauvegardes.
+
 Les favoris peuvent également contenir des références aux médias joints à l'aide d'éléments GPX `<link>` standard. 
 
 
@@ -495,6 +510,7 @@ Les favoris peuvent également contenir des références aux médias joints à l
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

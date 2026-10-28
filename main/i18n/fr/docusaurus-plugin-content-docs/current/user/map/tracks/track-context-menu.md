@@ -1,5 +1,5 @@
 ---
-source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title:  Menu contextuel de la trace
 ---
@@ -424,6 +424,7 @@ Dans cet onglet *Points* :
 - [Afficher les données des points de la trace](#display-custom-gpx-tags) et modifier vos points de trace (waypoints et points d'itinéraire), les [supprimer et ajouter](#points--waypoints) des waypoints à une trace.
 - Créer et modifier un [Groupe (dossier) de points](#waypoint-groups).
 - Centrer la carte sur un waypoint en utilisant l'icône de goupille dans la liste des waypoints sans fermer la liste, ce qui vous permet de prévisualiser les waypoints un par un.
+- Joindre des photos, des vidéos et des notes audio à un waypoint à l'aide de la carte *Média* dans son menu contextuel (*Android uniquement*). Voir l'article sur les [Favoris](../../personal/favorites.md#media).
 
 
 ### Ajouter un waypoint à une trace {#add-waypoint-to-a-track}

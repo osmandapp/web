@@ -1,5 +1,5 @@
 ---
-source-hash: cd5ee4063d6f696a2707a1c3427de7ad82005454c2015da463bd27c2e760db67
+source-hash: 67e24e2d76639e1ba3e1dbe3fc8cff417ee3ff06770c41d09f400cac219c9cdf
 sidebar_position: 10
 sidebar_label: Recherche
 title: Recherche sur le site web
@@ -33,7 +33,9 @@ Le **menu Recherche** est accessible depuis le panneau latéral ou depuis l'icô
 
 Utilisez la **Barre de recherche** pour trouver des lieux spécifiques, des points d'intérêt, des [favoris](../web/web-favorites.md) et des [traces](../web/web-tracks.md) par nom. Cliquez sur l'icône de recherche, saisissez votre requête et sélectionnez un résultat dans la liste. Sélectionner un POI ouvre le [Menu contextuel du POI](#poi-context-menu), tandis que la sélection d'un favori ou d'une trace ouvre ses détails, où vous pouvez consulter les informations et utiliser des actions rapides.
 
-Si vous recherchez par nom de catégorie, le premier résultat peut afficher la catégorie de POI correspondante. Cliquez sur la catégorie pour ouvrir la vue [Recherche par catégories](#categories).
+Vous pouvez également combiner plusieurs parties dans une même requête. Saisissez une catégorie ou une marque avec un nom de lieu, par exemple `Hotel Berlin` ou `Billa Bratislava`, pour trouver les POI correspondants à cet endroit. Saisissez deux catégories ou une catégorie et une propriété, par exemple `Fuel Diesel` ou `Cafe Vegan`, pour trouver des lieux correspondant aux deux.
+
+Si vous recherchez par nom de catégorie, le premier résultat peut afficher la catégorie de POI correspondante. Les noms de catégories peuvent être saisis dans différentes langues, par exemple `bank` ou `банк`. Cliquez sur la catégorie pour ouvrir la vue [Recherche par catégories](#categories).
 
 ![Options de recherche](@site/static/img/web/search_bar.png)
 
@@ -54,6 +56,8 @@ Ouvrez l'onglet Recherche pour accéder à Explorer — les résultats Explorer 
 ## Menu contextuel du POI {#poi-context-menu}
 
 Peu importe l'option de recherche utilisée (Barre de recherche, Catégories ou Explorer), sélectionner un POI sur la carte ou dans la liste de résultats ouvre le Menu contextuel du POI. Le menu contextuel est l'endroit principal pour consulter les informations POI et effectuer des actions courantes. Il combine les détails POI (tels que l'emplacement et les données associées) avec des actions rapides (par exemple, sauvegarder, partager ou démarrer la navigation).
+
+Pour revenir à la liste de résultats, cliquez sur *Retour*. Pour fermer le menu, cliquez sur *Fermer* ou appuyez sur Échap. La fermeture du menu efface la recherche, donc la prochaine fois que vous ouvrirez Recherche, il n'y aura pas de résultats précédents. La carte reste à sa position actuelle.
 
 ### Détails du POI {#poi-details}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
 sidebar_label: Traces
 title: Traces
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Le Planificateur Web vous offre un moyen simple de travailler avec vos données personnelles directement dans le navigateur. Après vous être connecté, vous pouvez ouvrir vos traces, les ajuster, en créer de nouvelles ou importer des fichiers depuis votre ordinateur. 
 
-Toutes les modifications sont automatiquement synchronisées via [OsmAnd Cloud](../personal/osmand-cloud.md) : tout ce que vous mettez à jour sur le web apparaît sur vos appareils, et tout ce que vous créez sur votre téléphone s'affiche également ici. Cela facilite le passage d'une plateforme à l'autre et garde vos données cohérentes partout où vous utilisez OsmAnd.
+All changes are automatically synced through [OsmAnd Cloud](../personal/osmand-cloud.md), so anything you update on the web appears on your devices, and anything you create on your phone shows up here as well. This makes it easy to move between platforms and keep your data consistent wherever you use OsmAnd.
 
 
 ## Comment l'utiliser {#how-to-use}
@@ -50,9 +50,13 @@ Pour importer une trace par glisser-déposer :
 - Faites glisser un ou plusieurs fichiers GPX depuis votre ordinateur.
 - Déposez les fichiers sur la carte ou sur un dossier de traces spécifique.
 
-Lorsqu'un fichier est glissé au-dessus de la carte, la zone de dépôt disponible est mise en surbrillance. Si vous déposez le fichier directement sur la carte, il est importé dans le dossier Import. Si vous le déposez sur un dossier existant, il est importé dans ce dossier à la place.
+Lorsqu'un fichier est glissé au-dessus de la carte, la zone de dépôt disponible est mise en surbrillance. Si vous déposez le fichier directement sur la carte, il est importé dans le dossier Import. Si vous le déposez sur un dossier existant, il est importé dans ce dossier à la place. Sans abonnement actif [OsmAnd Pro](../purchases/index.md), le dépôt d'un fichier ouvre une boîte de dialogue indiquant que l'importation de traces nécessite OsmAnd Pro.
+
+La taille maximale des fichiers est de 20 Mo pour les fichiers GPX et KML et de 2 Mo pour les fichiers KMZ. Les fichiers plus volumineux ne sont pas importés et un avertissement s'affiche à la place. Lorsque vous importez plusieurs fichiers à la fois, tous les fichiers rejetés sont listés dans un seul message. Les traces de plus de 20 Mo déjà stockées dans OsmAnd Cloud ne peuvent pas non plus être ouvertes sur le web, et une notification suggère de les ouvrir dans l'application OsmAnd.
 
 Une fois l'importation terminée, la trace apparaît dans la liste des traces, est synchronisée avec [OsmAnd Cloud](../personal/osmand-cloud.md) et devient disponible sur tous les appareils connectés au même compte.
+
+Si une trace ne peut pas être importée ou enregistrée dans OsmAnd Cloud, une boîte de dialogue d'erreur affiche le nom du fichier et, si disponible, la raison signalée par le serveur.
 
 ![Glisser-déposer](@site/static/img/web/drag_and_drop.png)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
+source-hash: b2b4863468543cee690b0a3568b81ee3415698752aaf50fecc63c1797c031476
 sidebar_position: 4
 title:  Cartes & Données
 ---
@@ -38,7 +38,7 @@ Pour le moment, les solutions suivantes sont disponibles :
 
 #### 1. Migrer le dossier de stockage des données OsmAnd vers la « Mémoire interne de l'application » {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- Vous pouvez changer le dossier de stockage en sélectionnant l'option ***Mémoire interne de l'application*** dans *Menu → Paramètres → Paramètres OsmAnd → Dossier de stockage des données*.
+- Vous pouvez changer le dossier de stockage en sélectionnant l'option ***Mémoire interne de l'application*** dans *Menu → Paramètres → Paramètres OsmAnd → Dossier de stockage des données → Stockage principal*.
 
 - Cependant, sachez que la mémoire interne est souvent limitée. Pour contourner ce problème, vous pouvez déplacer les fichiers importants vers la mémoire interne tout en conservant les cartes rarement utilisées sur la carte SD. Utilisez un gestionnaire de fichiers pour transférer manuellement ces fichiers si nécessaire.
 
@@ -46,7 +46,7 @@ L'équipe de développement recherche activement des solutions plus efficaces po
 
 #### 2. Utiliser le dossier « Download » de la carte SD {#2-use-the-sd-cards-download-folder}
 
-Vous pouvez essayer de résoudre le problème de chargement lent des cartes en spécifiant le dossier **Download** de la carte SD pour le stockage OsmAnd sous *Menu → Paramètres → Paramètres OsmAnd → Dossier de stockage des données → Spécifié manuellement*. Les chemins suivants sont possibles :
+Vous pouvez essayer de résoudre le problème de chargement lent des cartes en spécifiant le dossier **Download** de la carte SD pour le stockage OsmAnd sous *Menu → Paramètres → Paramètres OsmAnd → Dossier de stockage des données → Stockage principal → Spécifié manuellement*. Les chemins suivants sont possibles :
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Ce chemin peut provoquer des erreurs lors de l'accès à plusieurs fichiers. Par exemple, vous pourrez peut-être télécharger la carte du monde, mais d'autres régions pourraient ne pas apparaître.
@@ -66,11 +66,12 @@ Android est devenu plus strict avec les autorisations de stockage, limitant souv
 
 Cependant, OsmAnd n'a pas l'autorisation *Accès à tous les fichiers* (en raison des restrictions de Google), ce qui limite le choix des dossiers. Une solution de contournement consiste à utiliser le dossier de stockage « Média », auquel Android accorde généralement un accès en lecture/écriture plus large. Pour ce faire :
 
-- Allez dans *Paramètres d'OsmAnd → Paramètres OsmAnd → Dossier de stockage des données* et examinez les zones de stockage disponibles. Utilisez l'indicateur d'espace libre pour identifier le stockage cible, souvent étiqueté *Stockage externe 2*.
+- Allez dans *Paramètres d'OsmAnd → Paramètres OsmAnd → Dossier de stockage des données → Stockage principal* et examinez les zones de stockage disponibles. Utilisez l'indicateur d'espace libre pour identifier le stockage cible, souvent étiqueté *Stockage externe 2*.
+- Si disponible, sélectionnez *Stockage externe visible* pour votre carte SD et déplacez vos données lorsque vous y êtes invité. Sinon, suivez les étapes manuelles ci-dessous.
 - Notez le chemin d'accès actuel du dossier, qui pourrait ressembler à */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Passez à l'option *Spécifié manuellement* et modifiez le chemin vers un dossier accessible aux médias. Sur de nombreux systèmes, changer */Android/data/* en */media/* (par exemple, ***/storage/xxxx-xxxx/media***) fonctionne. Certains systèmes peuvent nécessiter des modifications de chemin différentes.
+- Passez à l'option *Spécifié manuellement* et modifiez le chemin vers un dossier accessible aux médias. Sur de nombreux systèmes, changer */Android/data/* en */Android/media/* (par exemple, ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***) fonctionne. Certains systèmes peuvent nécessiter des modifications de chemin différentes.
 
-Un chemin correct ne provoquera aucune erreur d'autorisation d'écriture de la part d'OsmAnd. Avant d'effectuer ces modifications, assurez-vous qu'OsmAnd dispose des autorisations de stockage appropriées, y compris l'autorisation de stockage « Média », dans les paramètres **Applications** d'Android. Dans les versions plus récentes d'Android, ces autorisations peuvent se trouver dans des menus avancés ou cachés.
+Un chemin correct ne provoquera aucune erreur d'autorisation d'écriture de la part d'OsmAnd. Aucune autorisation de stockage supplémentaire n'est requise pour ce dossier.
 
 ### Suppression des données cartographiques après la mise à jour de l'application (si « Stockage multi-utilisateurs 1 » est sélectionné) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
@@ -111,7 +112,7 @@ Pour résoudre le problème de rendu lent des cartes, en particulier lors de l'u
 
 2. **Simplifiez les détails de la carte.** Masquez les éléments moins critiques comme les frontières, les POI, les notes OSM, les couches météo, les détails supplémentaires (*Menu → Configurer la carte → Rendu de la carte*) pour rationaliser l'affichage de la carte et améliorer la vitesse.
 
-3. **Limitez le nombre de POI affichés.** N'affichez que les POI principaux ou limitez les catégories affichées pendant la navigation, ce qui peut aider à accélérer le rendu de la carte. Accédez à ces paramètres dans *Menu → Navigation → Paramètres*.
+3. **Limitez le nombre de POI affichés.** N'affichez que les principaux POI ou limitez les catégories affichées pendant la navigation, ce qui peut aider à accélérer le rendu de la carte. Accédez à ces paramètres dans *Menu → Navigation → Paramètres*.
 
 4. **Ajustez le grossissement de la carte.** Le paramètre de grossissement de la carte pourrait être un facteur clé du ralentissement de la carte. Réglez le grossissement à 100% en appuyant longuement sur le bouton **"+"** ou **"-"** sur l'écran de la carte pour optimiser l'affichage.
 

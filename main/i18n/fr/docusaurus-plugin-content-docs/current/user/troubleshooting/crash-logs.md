@@ -1,5 +1,5 @@
 ---
-source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
 title:  Journaux de plantage
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Aperçu {#overview}
 
-Les journaux de plantage sont des outils de diagnostic précieux qui aident les développeurs à identifier et à corriger les problèmes et les bogues qui provoquent le plantage ou le comportement inattendu de l'application. Il est possible de partager les journaux de votre appareil Android avec l'équipe de développement d'OsmAnd. Actuellement, les utilisateurs iOS n'ont qu'un seul type de journal de plantage à envoyer.
+Les journaux de plantage sont des outils de diagnostic précieux qui aident les développeurs à identifier et à corriger les problèmes et les bogues qui provoquent le plantage ou le comportement inattendu de l'application. Il est possible de partager les journaux de votre appareil Android avec l'équipe de développement d'OsmAnd. Si OsmAnd se ferme de manière inattendue, l'application propose également d'envoyer un rapport de plantage au prochain démarrage.
 
 
 ## Journaux de plantage et journaux d'application {#crash-and-app-logs}
@@ -49,7 +49,7 @@ Soyez prudent lorsque vous envoyez des journaux d'application, car ils peuvent c
 
 </Tabs>
 
-1. Allez dans *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* ou *<Translate android="true" ids="send_logcat_log"/>* (*Envoyer le journal d'application en cours* sur iOS). Selon votre situation, sélectionnez le type de journal approprié. Vous pouvez vous référer à la section [Journaux de plantage et journaux d'application](#crash-and-app-logs) pour plus de détails sur les différences entre les types de journaux.
+1. Allez dans *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* ou *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Envoyer le journal d'application en cours* (iOS). Selon votre situation, sélectionnez le type de journal approprié. Vous pouvez vous référer à la section [Journaux de plantage et journaux d'application](#crash-and-app-logs) pour plus de détails sur les différences entre les types de journaux.
 2. Dans le menu contextuel, choisissez Gmail ou votre application de messagerie préférée. Nous vous recommandons d'envoyer les journaux à `support@osmand.net`.
 3. Appuyez sur le bouton *Envoyer*.
 
@@ -74,6 +74,34 @@ Soyez prudent lorsque vous envoyez des journaux d'application, car ils peuvent c
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Envoyer un rapport de plantage après un plantage {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Si OsmAnd s'est fermé de manière inattendue lors de la précédente exécution, la boîte de dialogue de plantage apparaît au prochain démarrage de l'application. Elle apparaît après le plantage de l'application, après qu'elle ne répond plus (Android 11 et versions ultérieures), ou après un plantage dans le code natif de l'application (Android 12 et versions ultérieures). La boîte de dialogue n'apparaît pas pendant la navigation active.
+
+- *Envoyer* — envoie le rapport de plantage directement à l'équipe de développement d'OsmAnd, sans utiliser d'application de messagerie. Un message confirme si le rapport a été envoyé.
+- *Ignorer* — ferme la boîte de dialogue sans envoyer le rapport.
+
+Le rapport contient des informations techniques sur l'état de l'application et l'utilisation de la mémoire avant le plantage, ainsi que le journal récent de l'application.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Si OsmAnd s'est fermé de manière inattendue lors de la précédente exécution, la boîte de dialogue Partager le journal de plantage apparaît au prochain démarrage de l'application. Elle apparaît après le plantage de l'application ou après sa fermeture inattendue par le système.
+
+- *Envoyer* — envoie le rapport de plantage directement à l'équipe de développement d'OsmAnd, sans utiliser d'application de messagerie. Un message confirme si le rapport a été envoyé.
+- *Annuler* — ferme la boîte de dialogue sans envoyer le rapport.
+
+Le rapport contient des informations techniques sur l'état de l'application et l'utilisation de la mémoire avant le plantage, ainsi que le journal récent de l'application.
+
+</TabItem>
+
+</Tabs>
 
 ## Histogramme de tas pour les problèmes de mémoire (Android) {#heap-histogram-for-memory-problems-android}
 

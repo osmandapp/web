@@ -1,5 +1,5 @@
 ---
-source-hash: 0ece8e7a1a25127672614cdf13cd0688a67a4cbb64515cc18d60c278f7999862
+source-hash: 6cd58289fa863d41e34b91d4957c55fa523752c06e24588537decc922b41bdaa
 title: Créer des cartes raster et vectorielles hors ligne
 versions: '*'
 intro: Avec OsmAndMapCreator, il existe de nombreuses façons de créer et de personnaliser des cartes raster et vectorielles selon vos besoins. 

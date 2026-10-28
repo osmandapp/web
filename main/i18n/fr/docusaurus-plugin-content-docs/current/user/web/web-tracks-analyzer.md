@@ -1,5 +1,5 @@
 ---
-source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
+source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -23,9 +23,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Comment utiliser {#how-to-use}
 
-Après avoir ouvert l'Analyseur de traces (représenté par une clé à molette), l'outil s'ouvre avec une vue carte et un état vide. À partir de là, vous pouvez choisir quelles traces seront incluses dans l'analyse en utilisant le panneau **Sélectionner les traces**. L'analyseur permet de travailler avec toutes les traces disponibles ou de limiter l'analyse à des dossiers spécifiques.
+1. [Connectez-vous](./web-cloud.md#login) à votre compte OsmAnd Pro sur le portail de la carte Web. Vos traces doivent être synchronisées avec [OsmAnd Cloud](./web-cloud.md#cloud-sync).
+2. Ouvrez *Menu → Analyseur de traces* (l'icône clé à molette).
+3. Dans le panneau **Sélectionner les traces**, choisissez **Toutes les traces** ou uniquement les dossiers dont vous avez besoin.
+4. Faites un clic droit sur la carte et sélectionnez **Point A**. Pour analyser un segment entre deux points, définissez également **Point B**.
+5. Consultez la liste des segments trouvés, [triez-la et choisissez les paramètres à afficher](#sorting-and-visible-parameters).
 
-Pour démarrer l'analyse, définissez un ou deux points directement sur la carte. Faites un clic droit à l'emplacement souhaité et sélectionnez **Point A / Point B** dans le menu contextuel. Avec un seul point, l'analyseur trouve les segments de traces qui passent par l'emplacement sélectionné. Avec deux points, il trouve et analyse les segments entre le Point A et le Point B.
+Avec un seul point, l'analyseur trouve les segments de traces qui passent par l'emplacement sélectionné. Avec deux points, il trouve et analyse les segments entre le Point A et le Point B.
 
 ![Analyseur de traces](@site/static/img/web/web_analyzer_select.png) ![Analyseur de traces](@site/static/img/web/web_analyzer_points_new.png)
 
