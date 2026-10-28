@@ -58,7 +58,7 @@ Dieser Abschnitt zeigt an:
 - Das insgesamt genutzte Speichervolumen.
 - Verfügbarer Cloud-Speicherplatz.
 
-> 💡 Only backups created on devices where **OsmAnd Cloud** is enabled will appear here.
+>💡 Hier werden nur Backups angezeigt, die auf Geräten erstellt wurden, auf denen **OsmAnd Cloud** aktiviert ist.
 
 Wenn Sie eine Kopie all Ihrer Daten speichern möchten, verwenden Sie **Download all**. Dies öffnet ein Dialogfeld, in dem Sie:
 

@@ -82,8 +82,8 @@ Suchergebnisse können zusätzliche Standortinformationen wie die Stadt, in der 
 
 
 :::note
-Um einige dieser Aufgaben zu erledigen (Adressen, POIs finden), benötigen Sie die Offline-Vektorkartendatei. Zunächst basiert die Suche auf Daten, die sich auf der Karte im sichtbaren Bereich des Gerätebildschirms befinden. Wenn Sie nichts finden, schlägt OsmAnd vor, den Suchradius zu vergrößern.
-:::  
+Um einige dieser Aufgaben zu erledigen (Adressen, POIs finden), benötigen Sie die Offline-Vektorkartendatei. Zunächst basiert die Suche auf Daten, die sich auf der Karte im [sichtbaren Bereich des Gerätebildschirms](./search-all.md#how-to-use) befinden.
+:::
 
 ### Suchtipps {#search-tips}
 
