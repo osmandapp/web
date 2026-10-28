@@ -10,11 +10,8 @@ const normAbbr = (s) => capFirst(String(s).replace(/\.$/, ''));
 const PARSE_AS_LOCAL_TIME = 'T00:00';
 
 const OPENING_HOURS_TAG_LOCALE = 'en-US';
-
 const OPENING_HOURS_RULE_SEPARATOR = ';';
-
 const OPENING_HOURS_COMMENT_SEPARATOR = ' - ';
-
 const WORD_SEPARATORS = /([^A-Za-z]+)/;
 
 const OPENING_HOURS_STRING_KEYS = {
