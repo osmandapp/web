@@ -109,8 +109,8 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
 
     useEffect(() => {
         if (checkReset) {
-            if (resetPasswordError === ERROR_TOKEN) {
-                setCodeError(t(loginLink ? 'web:login_link_not_active' : 'web:expired_code'));
+            if (resetPasswordError === ERROR_TOKEN && !loginLink) {
+                setCodeError(t('web:expired_code'));
                 setCheckReset(false);
             } else {
                 setOpenCodeInput(false);
@@ -144,6 +144,9 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
             setCheckReset(true);
         });
     }
+
+    const resetErrorDesc =
+        resetPasswordError === ERROR_TOKEN ? 'web:login_link_not_active' : 'web:password_change_error_desc';
 
     return (
         <>
@@ -207,7 +210,7 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
                                 {t('web:send_code_desc').split('%1$s')[1]}
                             </Typography>
                         )}
-                        {(!loginLink || codeError) && (
+                        {!loginLink && (
                             <Box className={codeError && styles.errorBack}>
                                 <TextField
                                     margin="dense"
@@ -302,9 +305,7 @@ export default function ChangeResetPwd({ dialog, reopenLoginDialog }) {
                                         : t('web:password_changed_successfully')}
                                 </ListItemText>
                                 <ListItemText disableTypography={true} className={errorStyles.text}>
-                                    {resetPasswordError
-                                        ? t('web:password_change_error_desc')
-                                        : t('web:password_change_success_desc')}
+                                    {resetPasswordError ? t(resetErrorDesc) : t('web:password_change_success_desc')}
                                 </ListItemText>
                             </Box>
                             <Button

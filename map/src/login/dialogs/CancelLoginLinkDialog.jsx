@@ -21,14 +21,16 @@ export default function CancelLoginLinkDialog({ email, code, onClose }) {
 
     return (
         <BaseLoginDialog open={true} title={t('web:cancel_login_link')} onClick={onClose}>
-            <Typography className={styles.loginText}>
-                {result ?? formatString(t('web:cancel_login_link_desc'), [email])}
-            </Typography>
-            {!result && (
-                <Box sx={{ mt: 2 }}>
-                    <PrimaryBtn action={cancel} disabled={cancelling} text={t('web:cancel_login_link')} />
-                </Box>
-            )}
+            <Box sx={{ mx: 2, my: 1 }}>
+                <Typography className={styles.loginText}>
+                    {result ?? formatString(t('web:cancel_login_link_desc'), [email])}
+                </Typography>
+                {!result && (
+                    <Box sx={{ mt: 2 }}>
+                        <PrimaryBtn action={cancel} disabled={cancelling} text={t('web:cancel_login_link')} />
+                    </Box>
+                )}
+            </Box>
         </BaseLoginDialog>
     );
 }
