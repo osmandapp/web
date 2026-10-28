@@ -593,6 +593,27 @@ export const downloadTravelGpx = async (track, ctx) => {
     }
 };
 
+export const downloadObfCollection = (options) => downloadFolderFile('download-obf', options);
+
+export const downloadOsfBackup = ({ params, ...options }) =>
+    downloadFolderFile('download-backup-folder', { ...options, params: { format: '.osf', type: GPX, ...params } });
+
+async function downloadFolderFile(api, { names = [], params, fileName, displayName, ctx, setProcessDownload }) {
+    setProcessDownload(true);
+    const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/${api}`, names, {
+        params,
+        responseType: 'blob',
+        throwErrors: true,
+    }).catch(() => showDownloadError(ctx, displayName));
+    setProcessDownload(false);
+    if (res) {
+        const url = document.createElement('a');
+        url.href = URL.createObjectURL(res.data);
+        url.download = fileName ?? res.headers['content-disposition'].split('filename=')[1];
+        url.click();
+    }
+}
+
 export const downloadCurrentLocalGpx = async ({ selectedGpxFile, routeTypes, isLocal, simplified }) => {
     const gpx = await getGpxFileFromTrackData(selectedGpxFile, routeTypes, simplified);
     if (gpx) {

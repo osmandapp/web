@@ -22,8 +22,10 @@ export default function ThreeDotsButton({ name, tip, id, setOpenActions, anchorE
                     onMouseEnter={() => setHoverIconInfo(true)}
                     onMouseLeave={() => setHoverIconInfo(false)}
                     onClick={(e) => {
-                        setOpenActions(true);
-                        ctx.setOpenedPopper(anchorEl);
+                        if (!processDownload) {
+                            setOpenActions(true);
+                            ctx.setOpenedPopper(anchorEl);
+                        }
                         e.stopPropagation();
                     }}
                     ref={anchorEl}

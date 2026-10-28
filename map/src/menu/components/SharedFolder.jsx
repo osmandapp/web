@@ -1,16 +1,16 @@
-import { CircularProgress, IconButton, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
+import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import MenuItemWithLines from './MenuItemWithLines';
 import ActionsMenu from '../actions/ActionsMenu';
 import React, { useContext, useRef, useState } from 'react';
 import { ReactComponent as ShareIcon } from '../../assets/icons/ic_action_folder_share.svg';
-import { ReactComponent as MenuIcon } from '../../assets/icons/ic_overflow_menu_white.svg';
-import { ReactComponent as MenuIconHover } from '../../assets/icons/ic_overflow_menu_with_background.svg';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import SharedFolderActions from '../actions/SharedFolderActions';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { SHARE_TYPE } from '../share/shareConstants';
+import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
+import { useProcessDownload } from '../../util/hooks/menu/useProcessDownload';
 
 const subtypes = {
     track: {
@@ -25,8 +25,8 @@ export default function SharedFolder({ subtype, files, onOpenFolder = null }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const [hoverIconInfo, setHoverIconInfo] = useState(false);
-    const [processDownload, setProcessDownload] = useState(false);
+    const [processDownload, setProcessDownload] = useProcessDownload(SHARE_TYPE, subtype);
+
     const [openActions, setOpenActions] = useState(false);
     const [showAllTracks, setShowAllTracks] = useState(false);
 
@@ -61,27 +61,13 @@ export default function SharedFolder({ subtype, files, onOpenFolder = null }) {
                         {`${Object.entries(files).length} ${t(folderType.substring).toLowerCase()}`}
                     </Typography>
                 </ListItemText>
-                <Tooltip key={'action_menu_group'} title={'Menu'} arrow placement="bottom-end">
-                    <IconButton
-                        className={styles.sortIcon}
-                        onMouseEnter={() => setHoverIconInfo(true)}
-                        onMouseLeave={() => setHoverIconInfo(false)}
-                        onClick={(e) => {
-                            setOpenActions(true);
-                            ctx.setOpenedPopper(anchorEl);
-                            e.stopPropagation();
-                        }}
-                        ref={anchorEl}
-                    >
-                        {processDownload ? (
-                            <CircularProgress size={24} />
-                        ) : hoverIconInfo ? (
-                            <MenuIconHover />
-                        ) : (
-                            <MenuIcon />
-                        )}
-                    </IconButton>
-                </Tooltip>
+                <ThreeDotsButton
+                    name={'action_menu_group'}
+                    tip={'shared_string_menu'}
+                    setOpenActions={setOpenActions}
+                    anchorEl={anchorEl}
+                    processDownload={processDownload}
+                />
             </MenuItem>
             <DividerWithMargin margin={'64px'} />
             <ActionsMenu

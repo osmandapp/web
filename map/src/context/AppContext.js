@@ -194,6 +194,7 @@ export const AppContextProvider = (props) => {
     const [exitGuards, setExitGuards] = useState({});
 
     const [processingGroups, setProcessingGroups] = useState(false);
+    const [processingDownloads, setProcessingDownloads] = useState([]);
     const [favLoading, setFavLoading] = useState(false);
     const [removeFavGroup, setRemoveFavGroup] = useState(null);
     const [wptRecents, setWptRecents] = useState({
@@ -603,6 +604,8 @@ export const AppContextProvider = (props) => {
                 setUpdateMarkers,
                 processingGroups,
                 setProcessingGroups,
+                processingDownloads,
+                setProcessingDownloads,
                 selectedSort,
                 setSelectedSort,
                 visibleTracks,
