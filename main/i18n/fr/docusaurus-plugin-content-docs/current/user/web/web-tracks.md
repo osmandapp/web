@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Le Planificateur Web vous offre un moyen simple de travailler avec vos données personnelles directement dans le navigateur. Après vous être connecté, vous pouvez ouvrir vos traces, les ajuster, en créer de nouvelles ou importer des fichiers depuis votre ordinateur. 
 
-All changes are automatically synced through [OsmAnd Cloud](../personal/osmand-cloud.md), so anything you update on the web appears on your devices, and anything you create on your phone shows up here as well. This makes it easy to move between platforms and keep your data consistent wherever you use OsmAnd.
+Toutes les modifications sont automatiquement synchronisées via [OsmAnd Cloud](../personal/osmand-cloud.md) : tout ce que vous mettez à jour sur le web apparaît sur vos appareils, et tout ce que vous créez sur votre téléphone s'affiche également ici. Cela facilite le passage d'une plateforme à l'autre et garde vos données cohérentes partout où vous utilisez OsmAnd.
 
 
 ## Comment l'utiliser {#how-to-use}

@@ -70,7 +70,7 @@ Si vous utilisez la source de localisation de l'API Android ou si l'altitude MSL
 
 :::info Fonctionnalité payante
 Le widget *Élévation : centre de la carte* est une fonctionnalité payante [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -290,7 +290,7 @@ Pour basculer entre ces modes, appuyez directement sur le widget. L'option de ba
 <TabItem value="android" label="Android">
 
 - **Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
-- **Vitesse verticale moyenne** indique la vitesse à laquelle un objet monte ou descend sur une période donnée. Seuls les premier et dernier points de l'intervalle de temps sont pris en compte pour l'évaluation. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes. Vous devez utiliser le [marqueur de carte](../personal/markers.md) comme point cible.
+- **Vitesse verticale moyenne** indique à quelle vitesse vous montez ou descendez sur l'intervalle de temps : la différence d'altitude entre le premier et le dernier point de l'intervalle, divisée par le temps écoulé entre eux. Les valeurs positives indiquent une montée, les valeurs négatives une descente. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes.
 
 | | |
 |:------------|:------------|
@@ -303,7 +303,7 @@ Pour basculer entre ces modes, appuyez directement sur le widget. L'option de ba
 <TabItem value="ios" label="iOS">
 
 - **Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
-- **Vitesse verticale moyenne** indique la vitesse à laquelle un objet monte ou descend sur une période donnée. Seuls les premier et dernier points de l'intervalle de temps sont pris en compte pour l'évaluation. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes. Vous devez utiliser le [marqueur de carte](../personal/markers.md) comme point cible.
+- **Vitesse verticale moyenne** indique à quelle vitesse vous montez ou descendez sur l'intervalle de temps : la différence d'altitude entre le premier et le dernier point de l'intervalle, divisée par le temps écoulé entre eux. Les valeurs positives indiquent une montée, les valeurs négatives une descente. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes.
 
 | | |
 |:------------|:------------|
@@ -313,7 +313,7 @@ Pour basculer entre ces modes, appuyez directement sur le widget. L'option de ba
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
 
 ## Niveau de la batterie {#battery-level}
