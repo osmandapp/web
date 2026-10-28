@@ -333,6 +333,20 @@ You can choose one of the following appearance modes:
 
 **Note:** The Map mode setting in CarPlay only affects the map appearance in CarPlay. It does not change the Map mode on your phone screen.
 
+### Map Orientation {#map-orientation}
+
+![Map Orientation](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+The *Map orientation* setting defines how the map rotates on the CarPlay screen. To open this setting, tap the *Settings* button in the CarPlay navigation bar, then select *Map orientation*. The current orientation is shown as the row's detail text.
+
+You can choose one of the following orientation modes:
+- **Manually rotated** — The map does not rotate automatically.
+- **Movement direction** — The map rotates to follow your direction of travel.
+- **Compass direction** — The map rotates to follow the iPhone compass, so the map's north matches the real north.
+- **North is up** — The north always stays at the top of the screen.
+
+**Note:** Map orientation is a profile setting shared between CarPlay and the OsmAnd app on your iPhone. A change made on one screen applies to the other. For more details, see the [Map Orientation Modes](../widgets/map-buttons.md#map-orientation-modes) article.
+
 ### Location Position in CarPlay {#location-position-in-carplay}
 
 The OsmAnd app for *CarPlay* allows you to adjust the position of the current location indicator on the screen to avoid overlapping the route and other important map details.
