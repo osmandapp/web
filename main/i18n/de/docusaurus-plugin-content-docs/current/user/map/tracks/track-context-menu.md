@@ -1,5 +1,5 @@
 ---
-source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title:  Track-Kontextmenü
 ---
@@ -424,6 +424,7 @@ In diesem *Punkte*-Tab:
 - [Trackpunktdaten anzeigen](#display-custom-gpx-tags) und Ihre Trackpunkte (Wegpunkte und Routenpunkte) ändern, [löschen und Wegpunkte](#points--waypoints) zu einem Track hinzufügen.
 - [Gruppe (Ordner) von Punkten](#waypoint-groups) erstellen und ändern.
 - Die Karte auf einen Wegpunkt zentrieren, indem Sie das Pin-Symbol in der Wegpunktliste verwenden, ohne die Liste zu schließen oder die aktuelle Zoomstufe zu ändern.
+- Fügen Sie Fotos, Videos und Audioaufnahmen mit der Karte *Medien* im Kontextmenü eines Wegpunkts hinzu (*nur Android*). Siehe [Artikel Favoriten](../../personal/favorites.md#media).
 
 
 ### Wegpunkt zu einem Track hinzufügen {#add-waypoint-to-a-track}

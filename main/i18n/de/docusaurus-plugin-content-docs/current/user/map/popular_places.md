@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Beliebte Orte
 ---
@@ -229,7 +229,3 @@ Sie können auch die folgenden Aktionen für jedes Foto durchführen:
 - [Karte konfigurieren](./configure-map-menu.md)
 - [POI suchen](../search/search-poi.md)
 - [Wikipedia-Plugin](../plugins/wikipedia.md)
-
-
-
-

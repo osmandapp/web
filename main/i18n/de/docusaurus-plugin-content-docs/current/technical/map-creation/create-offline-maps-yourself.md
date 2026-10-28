@@ -1,5 +1,5 @@
 ---
-source-hash: 0ece8e7a1a25127672614cdf13cd0688a67a4cbb64515cc18d60c278f7999862
+source-hash: 6cd58289fa863d41e34b91d4957c55fa523752c06e24588537decc922b41bdaa
 title: Offline-Raster- und Vektorkarten erstellen
 versions: '*'
 intro: Mit OsmAndMapCreator gibt es viele Möglichkeiten, Raster- und Vektorkarten für Ihre Bedürfnisse zu erstellen und anzupassen.
@@ -111,7 +111,7 @@ Das Rendering und die POI-Suche von OsmAnd basieren auf Informationen, die in [O
 - Weitergabe von Relationstags. OsmAnd indiziert keine Relationsobjekte (außer Multipolygone - als Flächenobjekte gespeichert), ermöglicht aber die Weitergabe von Tags von Relationen an Mitglieder. Offensichtlich kann ein Mitglied mehrere übergeordnete Relationen haben und Tag-Konflikte sind möglich. OsmAnd unterstützt 3 Möglichkeiten, mit Konflikten umzugehen:
   - Kombinieren Sie alle Tags als lange, kommagetrennte Zeile (gut zum Rendern von Buslinienschildern als lange Zeichenfolge auf dem Weg - `nameTags`, `namePrefix`).
   - Sortieren Sie die Werte und behalten Sie den höchsten Wert bei (gut zum Rendern von Routen lokal vs. international - `relationGroupSort`, `additionalTags`, `additionalNamePrefix`).
-  - Generiert eindeutige Tags für jede Relation (wird derzeit nicht verwendet, speichert aber Informationen ohne Verlust - `relationGroupNameTags`, `relationGroupAdditionalTags`, `relationGroupPrefix`). **Weitere Informationen** finden Sie unter [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml).
+  - Generiert eindeutige Tags für jede Relation (wird derzeit nicht verwendet, speichert Informationen ohne Verlust - `relationGroupNameTags`, `relationGroupAdditionalTags`, `relationGroupPrefix`). **Weitere Informationen** finden Sie unter [Rendering types](https://github.com/osmandapp/OsmAnd-resources/blob/master/obf_creation/rendering_types.xml).
 
 **Mehr lesen**: In der Regel werden benutzerdefinierte Vektorkarten mit einem [benutzerdefinierten Rendering-Stil](../osmand-file-formats/osmand-rendering-style.md) kombiniert.
 

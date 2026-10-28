@@ -1,5 +1,5 @@
 ---
-source-hash: 425f511859172593fe5402cce5c44974144e585dac7b77bd26c1c5e68a22a8f0
+source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
 sidebar_position: 1
 title:  Alles durchsuchen
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Die **Suche** ist ein nützliches Werkzeug, um Orte schnell zu finden. Sie können die Suche verwenden, um einen Ort nach Adresse, Koordinaten, Points of Interest (POI) oder früheren Suchen zu finden. Die [Adresssuche](#search-address) ermöglicht es Ihnen, die gewünschte Adresse einzugeben, um einen genauen Standort zu erhalten. Die [Koordinatensuche](#search-coordinates) funktioniert mit geografischen Koordinaten wie Breiten- und Längengrad. Mit der [POI-Suche](#search-poi) können Sie nach Orten in der Nähe in bestimmten Kategorien suchen, wie z. B. Cafés, Hotels oder Tankstellen. Der Reiter [Erkunden](#search-explore) hebt beliebte Orte in der Nähe hervor und bietet schnellen Zugriff auf kürzlich besuchte Standorte. Die [Suchverlauf](#search-history) speichert vergangene Suchen. Die Suchfunktion erleichtert die Planung von Reisen, die Navigation in unbekanntem Gelände und das Finden von POIs in der Nähe.
+Die **Suche** ist ein nützliches Werkzeug, um Orte schnell zu finden. Sie können die Suche verwenden, um einen Ort nach Adresse, Koordinaten, Points of Interest (POI) oder früheren Suchen zu finden. Die [Adresssuche](#search-address) ermöglicht es Ihnen, die gewünschte Adresse einzugeben, um einen genauen Standort zu erhalten. Die [Koordinatensuche](#search-coordinates) funktioniert mit geografischen Koordinaten wie Breiten- und Längengrad. Mit der [POI-Suche](#search-poi) können Sie nach Orten in der Nähe in bestimmten Kategorien suchen, wie z. B. Cafés, Hotels oder Tankstellen. Der Reiter [Erkunden](#search-explore) hebt beliebte Orte in der Nähe hervor und bietet schnellen Zugriff auf kürzlich besuchte Standorte. Die Suchfunktion erleichtert die Planung von Reisen, die Navigation in unbekanntem Gelände und das Finden von POIs in der Nähe.
 
 
 ## Wie zu verwenden {#how-to-use}
@@ -164,12 +164,7 @@ Sie können den gewünschten Ort auf der Karte aus der Liste der Punkte finden, 
 
 1. Beginnen Sie, den Namen oder die Adresse in die Suchleiste einzugeben.
 
-2. Während Sie tippen, zeigt die Liste die Punkte an, die der Anfrage am nächsten kommen, in etwa dieser Reihenfolge:
-    - POI-Kategorien
-    - Favoriten, POI, Routen und Wegpunkte
-    - Tracks
-    - Adressen
-    - Karten zum Herunterladen
+2. Während Sie tippen, zeigt die Liste die Ergebnisse an, die mit Ihrer Anfrage übereinstimmen. Die Ergebnisse werden wie im Abschnitt [Sortieren der Suchergebnisse](#sorting-search-results) beschrieben sortiert.
 
 3. Bei der Suche nach Namen auf Android zeigt OsmAnd Chips für POI-Typen basierend auf den in den Suchergebnissen vertretenen Typen an. Tippen Sie auf einen Chip, um die Ergebnisse nach dem ausgewählten POI-Typ zu filtern. Sie können mehrere POI-Typen auswählen. Sobald ein Chip ausgewählt ist, wird er an die erste Position in der Liste verschoben. Tippen Sie erneut auf einen ausgewählten Chip, um die Auswahl aufzuheben und zu den vollständigen Suchergebnissen zurückzukehren.
 
@@ -181,13 +176,33 @@ Sie können den gewünschten Ort auf der Karte aus der Liste der Punkte finden, 
 OsmAnd hat [**TIGER-Daten**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) in die US-Karten integriert, um Informationen über US-Adressen bereitzustellen. Der TIGER-Datensatz ist **bereichsbasiert** und enthält keine genauen Hausnummern, sodass einige Adressen fehlen oder ungenau sein können.
 :::
 
-### Umgebungssuche (nur Android) {#search-around}
+### Räumliche Suche {#spatial-search}
 
-![Umgebungssuche](@site/static/img/search/search_around.webp)
+<InfoAndroidOnly/>
 
-Wenn die Suche deutlich entfernt von Ihrem aktuellen Standort geöffnet wird, ermöglicht der Chip *Umgebungssuche* die Auswahl des für die Suche verwendeten Bereichs. Tippen Sie auf den Chip und wählen Sie eine der folgenden Optionen:
+![Räumliche Suche](@site/static/img/search/spatial_search.webp)
+
+Die räumliche Suche ist eine experimentelle Suchmaschine, die berücksichtigt, wo sich Objekte relativ zueinander befinden, und nicht nur, wie ihre Namen mit Ihrer Anfrage übereinstimmen. Sie hilft OsmAnd, Abfragen, die aus mehreren Teilen bestehen, wie z. B. einem Ortsnamen und einer POI-Kategorie, korrekt zu interpretieren.
+
+Die räumliche Suche ist standardmäßig deaktiviert. Um sie zu aktivieren, gehen Sie zu den Einstellungen des [OsmAnd-Entwicklungs-Plugins](../plugins/development.md#internal-algorithms) und aktivieren Sie *Räumliche Textsuche verwenden*. Wenn aktiviert, ersetzt die räumliche Suche die Standardsuchmaschine für POI- und Adressabfragen.
+
+Mit der räumlichen Suche können Sie:
+- Nach einem POI an einem bestimmten Ort suchen. Geben Sie eine Kategorie und einen Ortsnamen in einer Abfrage ein, z. B. Hotel Berlin. Der Ortsname wird als Suchbereich verwendet, und die Kategorie wird darin gesucht.
+- Nach Orten suchen, die zwei Bedingungen erfüllen. Geben Sie zwei Kategorien oder eine Kategorie und eine Eigenschaft ein, z. B. Kraftstoff Diesel oder Café Vegan, um Orte zu finden, die beide Bedingungen erfüllen. Eine Abfrage wie Kraftstoff McDonald's findet Tankstellen in der Nähe eines McDonald's. Die Reihenfolge der Wörter ist wichtig. Das erste Wort legt fest, was Sie suchen, und das zweite, was in der Nähe sein soll. Zum Beispiel findet McDonald’s Kraftstoff McDonald’s-Restaurants in der Nähe von Tankstellen.
+- Um einen gefundenen Ort herum suchen. Geben Sie eine Kategorie und einen Ortsnamen ein, z. B. *Hotel Berlin*, und tippen Sie dann oben in den Suchergebnissen auf *Hotel in der Nähe von Berlin*. Der Name dieses Ortes wird zum Chip [Umgebungssuche](#search-around) hinzugefügt.
+- Verwenden Sie verschiedene Formate von Straßennamen und übersetzte Kategorienamen in Ihren Abfragen.
+- Erhalten Sie schnellere Ergebnisse bei der Suche nach beliebten POI-Kategorien wie Apotheke, Parkplatz oder Restaurant.
+
+### Umgebungssuche {#search-around}
+
+<InfoAndroidOnly/>
+
+![Umgebungssuche](@site/static/img/search/search_around_berlin.webp)
+
+Wenn die Kartenmitte mehr als 50 m von Ihrem Standort entfernt ist und die Karte Ihrer Position nicht folgt, wird die Suche um die Kartenmitte durchgeführt, und das Suchfeld zeigt *Suche N km entfernt*. Wenn die Kartenmitte mehr als 70 km von Ihrem Standort entfernt ist, erscheint neben dem Sortier-Chip ein Chip mit dem Suchbereich. Der Chip zeigt die ausgewählte Option an. Tippen Sie darauf und wählen Sie eine der folgenden Optionen im Menü *Umgebungssuche*:
 - **Kartenmitte** — Sucht um die aktuelle Mitte der Karte. Diese Option ist standardmäßig ausgewählt.
 - **Mein Standort** — Sucht um Ihren aktuellen Standort.
+- **Ortsname** — Sucht um einen Ort, den Sie mit der [räumlichen Suche](#spatial-search) gefunden haben. Geben Sie z. B. *Hotel Berlin* ein und tippen Sie dann oben in den Suchergebnissen auf *Hotel in der Nähe von Berlin*. *Berlin* erscheint auf dem Chip, und Hotels um Berlin werden angezeigt. Diese Option ist nur verfügbar, wenn die räumliche Suche aktiviert ist.
 
 ### Auf der Karte suchen {#search-on-the-map}
 
@@ -246,46 +261,23 @@ Die **Adresssuche** verwendet OpenStreetMap-Daten. Diese Art der Suche ermöglic
 
 ## Erkunden-Suche {#search-explore}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Erkunden-Suche](@site/static/img/search/explore_search_android.webp)
 
-Der Reiter **Erkunden** im Suchwerkzeug hilft Ihnen, Orte in der Nähe Ihres aktuellen Standorts schnell zu entdecken und auf kürzlich geöffnete Elemente zuzugreifen. Er enthält zwei Hauptbereiche: [Beliebte Orte in der Nähe](#popular-places-nearby)
- und [Verlauf](#history).
+</TabItem>
 
-### Beliebte Orte in der Nähe {#popular-places-nearby}
-
-Der Abschnitt **Beliebte Orte in der Nähe** zeigt eine scrollbare Liste bekannter Wahrzeichen und Attraktionen in der Nähe Ihres Standorts an. Jedes Element kann den Namen des Ortes, seine Kategorie, Entfernung und Richtung sowie ein Vorschau-Bild enthalten, falls verfügbar. Tippen Sie auf *Alle anzeigen*, um die vollständige Liste zu öffnen, oder auf *Auf Karte anzeigen*, um diese Orte auf der Karte darzustellen.
-
-Weitere Details finden Sie [hier](../map/popular_places.md#explore-in-search).
-
-### Verlauf {#history}
-
-![Verlaufsabschnitt](@site/static/img/search/history_section_android.webp) ![Verlaufsabschnitt](@site/static/img/search/history_section_2_android.webp)
-
-Der Abschnitt **Verlauf** bietet schnellen Zugriff auf Ihre letzten Verlaufselemente. Er zeigt bis zu 25 der neuesten Elemente an und kann erweitert oder reduziert werden. Tippen Sie auf *Alle anzeigen*, um den vollständigen Verlaufsbildschirm zu öffnen.
-
-Auf dem vollständigen Verlaufsbildschirm können Sie Ihre Verlaufselemente mit den folgenden Optionen sortieren und filtern:
-
-1. **Sortieren nach**:
-- Kürzlich — zeigt zuerst die zuletzt hinzugefügten Elemente an. Wenn diese Option ausgewählt ist, werden die Elemente nach Zeit gruppiert, z. B. Heute, Letzte Woche und frühere Zeiträume.
-- Nächste — sortiert Elemente nach ihrer Entfernung von Ihrem aktuellen Standort.
-- Nächste zur Kartenmitte — sortiert Elemente nach ihrer Entfernung von der aktuellen Mitte der Karte. Wenn eine der entfernungsbasierten Sortieroptionen ausgewählt ist, werden die zeitbasierten Gruppen nicht angezeigt.
-
-2. **Typ** — filtert Verlaufselemente nach:
-- Alle — zeigt alle verfügbaren Verlaufselemente an.
-- Suche — zeigt Elemente aus Ihrem Suchverlauf an.
-- Navigation — zeigt Elemente aus Ihrem Navigationsverlauf an.
-
-3. **Kategoriefilter** — filtert Verlaufselemente nach Kategorie. Die verfügbaren Kategoriefilter hängen von den Typen der in Ihrem Verlauf verfügbaren Elemente ab. Sie können beispielsweise Kategorien wie POI, Track, Standort, Favorit oder Adresse sehen.
-
-4. **Einstellungen** — tippen Sie auf das Zahnradsymbol in der oberen rechten Ecke, um die Verlaufseinstellungen zu öffnen, in denen Sie den Suchverlauf, den Navigationsverlauf und den Kartenmarkierungsverlauf aktivieren oder deaktivieren, den Verlauf als Datei sichern oder den gesamten Verlauf löschen können.
-
-## Suchverlauf {#search-history}
+<TabItem value="ios" label="iOS">
 
 ![Verlaufssuche](@site/static/img/search/history_search_ios.png)
 
-Auf iOS können Sie über den dedizierten Reiter **Verlauf** im Suchwerkzeug auf Ihren Suchverlauf zugreifen. So können Sie erneut nach zuvor gefundenen Orten, Adressen oder häufig besuchten Orten suchen, ohne die Anfrage erneut eingeben zu müssen. Weitere Informationen finden Sie im iOS-Abschnitt des Artikels [Suchverlauf](./search-history.md).
+</TabItem>
+
+</Tabs>
+
+Auf Android hilft Ihnen der Reiter **Erkunden** im Suchwerkzeug, Orte in der Nähe Ihres aktuellen Standorts schnell zu entdecken und auf Ihren Verlauf zuzugreifen. Auf iOS ermöglicht Ihnen der Reiter **Verlauf**, erneut nach zuvor gefundenen Orten, Adressen oder häufig besuchten Orten zu suchen, ohne die Anfrage erneut einzugeben. Weitere Informationen finden Sie im Artikel [Erkunden-Suche](./search-history.md).
 
 
 ## POI-Suche {#search-poi}
@@ -341,7 +333,7 @@ Die Koordinatensuche liefert einen genauen Standort. Sie können präzise Koordi
 ## Verwandte Artikel {#related-articles}
 
 - [Adresssuche](./search-address.md)
-- [Suchverlauf](./search-history.md)
+- [Erkunden-Suche](./search-history.md)
 - [POI-Suche](./search-poi.md)
 - [Koordinatensuche](./search-coordinates.md)
 - [Beliebte Orte](../map/popular_places.md)

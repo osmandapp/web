@@ -1,5 +1,5 @@
 ---
-source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
+source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -66,7 +66,7 @@ Das Herunterladen von Karten in die OsmAnd-Anwendung ist ein wichtiger Schritt, 
 ### Kostenlose Karteninhalte {#free-map-content}
 
 - **Standardkarte**. Bietet eine Übersicht über das Gebiet basierend auf der Quelle [OpenStreetMap](https://www.openstreetmap.org/) und enthält eine Karte, Routen, Adressen, POIs und Informationen zum öffentlichen Nahverkehr. Durch Antippen öffnet sich ein Bildschirm mit einer Liste der Regionen des ausgewählten Landes und Informationen darüber, wie viel Speicherplatz diese Karten auf Ihrem Gerät belegen werden.  
-- **Nur Straßen**. Die Karte enthält nur Informationen zum Straßennetz, um sich auf Routen und die Straßeninfrastruktur zu konzentrieren. Durch das Entfernen von Details wie Gebäuden und Sonderzielen ist sie kleiner als eine Standardkarte. Durch Antippen öffnet sich ein Bildschirm mit einer Liste der Regionen des ausgewählten Landes und Informationen darüber, wie viel Speicherplatz diese Karten auf Ihrem Gerät belegen werden.
+- **Nur Straßen**. Eine kleinere Alternative zur Standardkarte, die sich auf Routen und Straßeninfrastruktur konzentriert. Sie enthält das Straßennetz mit Straßennamen sowie größere Flächen wie Wasser, Wälder und Parks, während Details wie Gebäude und Sonderziele weggelassen werden. Durch Antippen öffnet sich ein Bildschirm mit einer Liste der Regionen des ausgewählten Landes und Informationen darüber, wie viel Speicherplatz diese Karten auf Ihrem Gerät belegen werden.
 - **Weltübersichtskarte**. Versionen von OsmAnd bis 3.8 bieten den Download einer Weltkarte an, damit Sie sie im globalen Maßstab betrachten können. In neueren Versionen von OsmAnd ist eine leichtgewichtige *Mini-Weltkarte* in der Anwendung enthalten. Die App ermöglicht es Ihnen, eine größere Übersichtsweltkarte mit detaillierteren Informationen herunterzuladen. 
 
 :::info monatliche Kartenaktualisierungen

@@ -1,5 +1,5 @@
 ---
-source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
+source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
 sidebar_position: 7
 title:  Rasterkarten (Online / Offline)
 ---
@@ -307,7 +307,7 @@ Kacheln werden im Cache gespeichert, wenn Online-Rasterkarten als Haupt-, Überl
 
 ### Kacheln herunterladen / aktualisieren {#download--update-tiles}
 
-Wenn Sie offline auf Rasterkarten zugreifen möchten, müssen Sie möglicherweise Kacheln vorladen. Dies kann auf Ihrem mobilen Gerät erfolgen, aber beachten Sie, dass einige Dienste große Paket-Downloads blockieren können. Sie können dieselbe Funktion auch verwenden, um bereits heruntergeladene Kacheln für ausgewählte Bereiche zu aktualisieren, andernfalls zeigt OsmAnd weiterhin Kacheln an, die bereits im Cache gespeichert sind.  
+Wenn Sie offline auf Rasterkarten zugreifen möchten, müssen Sie möglicherweise Kacheln vorladen. Dies kann auf Ihrem mobilen Gerät erfolben, aber beachten Sie, dass einige Dienste große Paket-Downloads blockieren können. Sie können dieselbe Funktion auch verwenden, um bereits heruntergeladene Kacheln für ausgewählte Bereiche zu aktualisieren, andernfalls zeigt OsmAnd weiterhin Kacheln an, die bereits im Cache gespeichert sind.  
 
 Damit die Karten die Kacheln nach einer Weile automatisch aktualisieren, können Sie eine [Ablaufzeit](#add-new-online-source) festlegen, dann lädt OsmAnd die Kacheln neu, sobald sie angezeigt werden.  
 

@@ -1,7 +1,7 @@
 ---
-source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
-title:  Crash Logs
+title:  Absturzprotokolle
 ---
 
 import Tabs from '@theme/Tabs';
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Überblick {#overview}
 
-Absturzprotokolle sind wertvolle Diagnosewerkzeuge, die Entwicklern helfen, Probleme und Fehler zu identifizieren und zu beheben, die dazu führen, dass die Anwendung abstürzt oder sich unerwartet verhält. Es ist möglich, Protokolle von Ihrem Android-Gerät mit dem OsmAnd-Entwicklungsteam zu teilen. Derzeit haben iOS-Benutzer nur eine Art von Absturzprotokolloption zum Senden.
+Absturzprotokolle sind wertvolle Diagnosewerkzeuge, die Entwicklern helfen, Probleme und Fehler zu identifizieren und zu beheben, die dazu führen, dass die Anwendung abstürzt oder sich unerwartet verhält. Es ist möglich, Protokolle von Ihrem Android-Gerät mit dem OsmAnd-Entwicklungsteam zu teilen. Wenn OsmAnd unerwartet geschlossen wird, bietet die App auch an, beim nächsten Start einen Absturzbericht zu senden.
 
 
 ## Absturz- und App-Protokolle {#crash-and-app-logs}
@@ -49,7 +49,7 @@ Seien Sie vorsichtig beim Senden von App-Protokollen, da diese private Informati
 
 </Tabs>
 
-1. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* oder *<Translate android="true" ids="send_logcat_log"/>* (*Send current app log* auf iOS). Wählen Sie je nach Situation den geeigneten Protokolltyp aus. Sie können sich auf den Abschnitt [Absturz- und App-Protokolle](#crash-and-app-logs) für Details zu den Unterschieden zwischen den Protokolltypen beziehen.
+1. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* oder *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Send current app log* (iOS). Wählen Sie je nach Situation den geeigneten Protokolltyp aus. Sie können sich auf den Abschnitt [Absturz- und App-Protokolle](#crash-and-app-logs) für Details zu den Unterschieden zwischen den Protokolltypen beziehen.
 2. Wählen Sie im Pop-up-Menü Gmail oder Ihre bevorzugte E-Mail-App aus. Wir empfehlen, die Protokolle an `support@osmand.net` zu senden.
 3. Tippen Sie auf die Schaltfläche *Senden*.
 
@@ -74,6 +74,34 @@ Seien Sie vorsichtig beim Senden von App-Protokollen, da diese private Informati
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Absturzbericht nach einem Absturz senden {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Wenn OsmAnd beim vorherigen Lauf unerwartet geschlossen wurde, erscheint beim nächsten Start der App der Absturz-Dialog. Er erscheint nach einem App-Absturz, nachdem die App nicht mehr reagiert (Android 11 und höher) oder nach einem Absturz im nativen Code der App (Android 12 und höher). Der Dialog erscheint nicht, während die Navigation aktiv ist.
+
+- *Senden* — sendet den Absturzbericht direkt an das OsmAnd-Entwicklungsteam, ohne eine E-Mail-App zu verwenden. Eine Meldung bestätigt, ob der Bericht gesendet wurde.
+- *Verwerfen* — schließt den Dialog, ohne den Bericht zu senden.
+
+Der Bericht enthält technische Informationen über den Zustand und die Speichernutzung der App vor dem Absturz sowie das aktuelle Protokoll der App.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Wenn OsmAnd beim vorherigen Lauf unerwartet geschlossen wurde, erscheint beim nächsten Start der App der Dialog zum Teilen des Absturzprotokolls. Er erscheint nach einem App-Absturz oder nachdem das System die App unerwartet geschlossen hat.
+
+- *Senden* — sendet den Absturzbericht direkt an das OsmAnd-Entwicklungsteam, ohne eine E-Mail-App zu verwenden. Eine Meldung bestätigt, ob der Bericht gesendet wurde.
+- *Abbrechen* — schließt den Dialog, ohne den Bericht zu senden.
+
+Der Bericht enthält technische Informationen über den Zustand und die Speichernutzung der App vor dem Absturz sowie das aktuelle Protokoll der App.
+
+</TabItem>
+
+</Tabs>
 
 ## Heap-Histogramm bei Speicherproblemen (Android) {#heap-histogram-for-memory-problems-android}
 
@@ -101,7 +129,7 @@ Das Erstellen des Speicherauszugs **friert die App für 5–10 Sekunden ein**. W
 1. Aktivieren Sie das [OsmAnd-Entwicklungs-Plugin](../plugins/development.md) und gehen Sie zu *Hauptmenü → Plugins → OsmAnd-Entwicklung → Einstellungen → Speicher → Java-Speicher*.
 2. Wählen Sie im Bereich *Heap-Dump* eine der folgenden Optionen:
     - **Bei hoher Auslastung erfassen**. Das Histogramm wird automatisch erfasst, wenn der Java-Speicher fast voll ist, höchstens einmal alle 30 Minuten, und es wird dem nächsten Absturzbericht beigefügt. Verwenden Sie die App wie gewohnt weiter, bis das Problem erneut auftritt.
-    - **Jetzt erfassen & analysieren**. Erfasst das Histogramm sofort und zeigt das Ergebnis an. Verwenden Sie dies, wenn die App bereits langsam ist und *Java-Speicher* eine hohe Auslastung anzeigt.
+    - **Jetzt erfassen & analysieren**. Erfasst das Histogramm sofort und zeigt das Ergebnis. Verwenden Sie dies, wenn die App bereits langsam ist und *Java-Speicher* eine hohe Auslastung anzeigt.
 3. Tippen Sie auf **Bericht teilen**, um den neuesten Bericht an die Entwickler zu senden, oder senden Sie ihn beim nächsten Start der App über den Absturzdialog.
 4. Schalten Sie *Bei hoher Auslastung erfassen* aus, sobald der Bericht gesendet wurde.
 

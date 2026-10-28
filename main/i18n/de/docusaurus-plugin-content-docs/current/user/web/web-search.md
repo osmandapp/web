@@ -1,5 +1,5 @@
 ---
-source-hash: cd5ee4063d6f696a2707a1c3427de7ad82005454c2015da463bd27c2e760db67
+source-hash: 67e24e2d76639e1ba3e1dbe3fc8cff417ee3ff06770c41d09f400cac219c9cdf
 sidebar_position: 10
 sidebar_label:  Suche
 title: Suche auf der Webseite
@@ -33,7 +33,9 @@ Das **Suchmenü** kann über das Seitenpanel oder das **Suchsymbol 🔍** auf de
 
 Verwenden Sie die **Suchleiste**, um bestimmte Orte, POI, [Favoriten](../web/web-favorites.md) und [Tracks](../web/web-tracks.md) nach Namen zu finden. Klicken Sie auf das Suchsymbol, geben Sie Ihre Abfrage ein und wählen Sie ein Ergebnis aus der Liste aus. Das Auswählen eines POI öffnet das [POI-Kontextmenü](#poi-context-menu), während das Auswählen eines Favoriten oder Tracks dessen Details öffnet, in denen Sie Informationen anzeigen und Schnellaktionen verwenden können.
 
-Wenn Sie nach einem Kategoriennamen suchen, zeigt das erste Ergebnis möglicherweise die entsprechende POI-Kategorie an. Klicken Sie auf die Kategorie, um die Ansicht [Kategoriensuche](#categories) zu öffnen.
+Sie können auch mehrere Teile in einer Abfrage kombinieren. Geben Sie eine Kategorie oder eine Marke zusammen mit einem Ortsnamen ein, zum Beispiel `Hotel Berlin` oder `Billa Bratislava`, um passende POIs an diesem Ort zu finden. Geben Sie zwei Kategorien oder eine Kategorie und eine Eigenschaft ein, zum Beispiel `Fuel Diesel` oder `Cafe Vegan`, um Orte zu finden, die beide Kriterien erfüllen.
+
+Wenn Sie nach einem Kategorienamen suchen, zeigt das erste Ergebnis möglicherweise die entsprechende POI-Kategorie an. Kategorienamen können in verschiedenen Sprachen eingegeben werden, zum Beispiel `bank` oder `банк`. Klicken Sie auf die Kategorie, um die Ansicht [Kategoriensuche](#categories) zu öffnen.
 
 ![Suchoptionen](@site/static/img/web/search_bar.png)
 
@@ -54,6 +56,8 @@ Der **Erkunden**-Bereich zeigt [beliebte Orte](https://osmand.net/docs/user/map/
 ## POI-Kontextmenü {#poi-context-menu}
 
 Egal welche Suchoption Sie verwenden (Suchleiste, Kategorien oder Erkunden), das Auswählen eines POI auf der Karte oder in der Ergebnisliste öffnet das POI-Kontextmenü. Das Kontextmenü ist der Hauptort, um POI-Informationen anzuzeigen und gängige Aktionen auszuführen. Es kombiniert POI-Details (wie Standort und verwandte Daten) mit Schnellaktionen (z. B. Speichern, Teilen oder Starten der Navigation).
+
+Um zur Ergebnisliste zurückzukehren, klicken Sie auf *Zurück*. Um das Menü zu schließen, klicken Sie auf *Schließen* oder drücken Sie Esc. Durch das Schließen des Menüs wird die Suche gelöscht, sodass die Suche beim nächsten Öffnen ohne vorherige Ergebnisse geöffnet wird. Die Karte bleibt an ihrer aktuellen Position.
 
 ### POI-Details {#poi-details}
 

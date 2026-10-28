@@ -1,5 +1,5 @@
 ---
-source-hash: d5de9c3084442f355b9b6536f2e73e330ece35ee360363e944195eaf5ddfe9fb
+source-hash: 941d8e8096800d75da224d6bdd577697326daf17319375cb9b22749166c80554
 sidebar_position: 6
 title:  My Places
 ---
@@ -131,7 +131,7 @@ Schritt-für-Schritt-Anleitungen finden Sie im Artikel zum [OSM-Bearbeitungs-Plu
 
 ![Audio-Video-Plugin Menü Meine Orte Drei Aktionen](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-Das **Audio-/Videonotizen-Plugin** ermöglicht es Ihnen, Multimedianotizen zu erstellen, die mit bestimmten Kartenstandorten verknüpft sind. Diese Notizen werden in **Meine Orte** unter dem **A/V-Notizen-Tab** gespeichert.
+Das **Audio-/Videonotizen-Plugin** ermöglicht es Ihnen, Multimedianotizen zu erstellen, die mit bestimmten Kartenstandorten verknüpft sind. Diese Notizen werden in **Meine Orte** unter dem **A/V-Notizen-Tab** gespeichert. Jede Notiz wird außerdem als Favorit im Ordner **Medien** im Tab [Favoriten](#favorites) gespeichert.
 
 Weitere Informationen finden Sie auf der Seite des [Audio-/Videonotizen-Plugins](../plugins/audio-video-notes.md).
 
@@ -141,7 +141,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 
 ![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
-Der Abschnitt **Reiseführer** enthält gespeicherte Reiseführer und Artikel, die für den Offline-Zugriff gespeichert wurden. Sie können Ihre gespeicherten Reiseinhalte über Meine Orte schnell öffnen, organisieren und verwalten. Der Abschnitt Reiseführer wird nur angezeigt, wenn mehr als ein Reiseführer gespeichert wurde.
+Der Abschnitt **Reisen** enthält gespeicherte Reiseführer und Artikel, die für den Offline-Zugriff gespeichert wurden. Sie können Ihre gespeicherten Reiseinhalte über Meine Orte schnell öffnen, organisieren und verwalten. Der Abschnitt Reisen wird nur angezeigt, wenn mehr als ein Reiseführer gespeichert wurde.
 
 Detaillierte Informationen finden Sie im Artikel [Reiseführer](../plan-route/travel-guides.md).
 

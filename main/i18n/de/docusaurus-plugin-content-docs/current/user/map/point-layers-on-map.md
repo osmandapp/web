@@ -1,5 +1,5 @@
 ---
-source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+source-hash: bfe0420d8b7fdb1fb6c341554dbe5327adde2d1beb05e5eeb3114c2d541b823c
 sidebar_position: 8
 title:  Punkte auf der Karte
 ---
@@ -11,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 ## Übersicht {#overview}
 
@@ -133,6 +132,8 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,confi
 </Tabs>
 
 Jedem POI-Typ in OsmAnd ist ein spezifisches Symbol und eine Farbe zugewiesen. Die [Zoomstufe](../map/vector-maps.md#details) und das Design von POIs können in einigen [Kartenstilen](../map/map-styles.md) unterschiedlich sein.  
+
+Im OsmAnd-[Kartenstil](../map/map-styles.md) werden Sakralbauten (Kirchen, Moscheen, Synagogen, Tempel und andere) selektiv angezeigt. Auf niedrigeren Zoomstufen werden nur die markantesten angezeigt, die übrigen erscheinen beim Heranzoomen. Bei aktivierter Einstellung [*<Translate android="true" ids="rendering_attr_moreDetailed_name"/>*](../map/vector-maps.md#details) erscheinen alle Sakralbauten bereits auf einer niedrigeren Zoomstufe. Im [Nachtmodus](../map/vector-maps.md#map-mode) werden ihre Symbole ohne Hintergrundkreis angezeigt, wie im Tagmodus.
 
 [Lesen Sie mehr](../map/vector-maps.md#hide).
 

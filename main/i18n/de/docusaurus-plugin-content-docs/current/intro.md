@@ -1,5 +1,5 @@
 ---
-source-hash: 493d0f4bb5654e0183f24ee23ee49f36be8431ec2466fa554bd47c6ad8ab3813
+source-hash: b0856a5094b1d215f8e6507452fbd1d83a9df996a95ba8afef203917b669a88f
 sidebar_position: 1
 label: Introduction
 title: Dokumentation
@@ -20,7 +20,7 @@ Verwenden Sie den OsmAnd-Routenplaner, sehen Sie sich die Wettervorhersage an, f
 
 ### [Technische Dokumentation](/docs/technical/) {#technical-documentation}
 
-Technische Dokumentation.
+Zugehörige technische Dokumentation.
 
 ### [Erstellen](/docs/build-it/) {#build-it}
 

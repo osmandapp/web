@@ -1,5 +1,5 @@
 ---
-source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -289,11 +289,13 @@ Um zwischen diesen Modi zu wechseln, tippen Sie direkt auf das Widget. Die Wechs
 
 <TabItem value="android" label="Android">
 
-**Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
+- **Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
+- **Durchschnittliche Vertikalgeschwindigkeit** zeigt an, wie schnell Sie innerhalb des Zeitintervalls steigen oder sinken: die Höhendifferenz zwischen dem ersten und letzten Punkt des Intervalls, geteilt durch die Zeit zwischen ihnen. Positive Werte bedeuten Steigen, negative Werte bedeuten Sinken. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen.
 
 | | |
 |:------------|:------------|
 | Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
+| Durch Tippen | Wechselt zwischen *Durchschnittliches Gleitverhältnis* und *Durchschnittliche Vertikalgeschwindigkeit*  |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -301,7 +303,7 @@ Um zwischen diesen Modi zu wechseln, tippen Sie direkt auf das Widget. Die Wechs
 <TabItem value="ios" label="iOS">
 
 - **Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
-- **Durchschnittliche Vertikalgeschwindigkeit** gibt die Rate an, mit der ein Objekt über eine Weile auf- oder absteigt. Nur der erste und letzte Punkt des Zeitintervalls werden zur Bewertung herangezogen. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen. Sie sollten den [Kartenmarker](../personal/markers.md) als Zielpunkt verwenden.
+- **Durchschnittliche Vertikalgeschwindigkeit** zeigt an, wie schnell Sie innerhalb des Zeitintervalls steigen oder sinken: die Höhendifferenz zwischen dem ersten und letzten Punkt des Intervalls, geteilt durch die Zeit zwischen ihnen. Positive Werte bedeuten Steigen, negative Werte bedeuten Sinken. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen.
 
 | | |
 |:------------|:------------|

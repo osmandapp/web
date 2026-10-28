@@ -1,10 +1,10 @@
 ---
-source-hash: 257260cc6f5df1e2457058808df69ed24a8aea6a73cb5b7dee08308979c295ac
+source-hash: d93d14b34275dc0a5e7f262f8293ed65af222ec0a7a2866d48f085cdca840627
 title: Benutzerdefinierten Reiseführer erstellen
 versions: '*'
 ---
-import Translate from '@site/src/components/Translate.js';
 
+import Translate from '@site/src/components/Translate.js';
 
 
 **_Dieser Artikel muss überarbeitet werden_**
@@ -13,8 +13,8 @@ Mit dem OsmAnd [MapCreator](../../versions/map-creator.md) können Sie Ihren eig
 
 ### Dateien vorbereiten {#prepare-the-files}
 
-Speichern Sie Ihre Strecke mit der Erweiterung *[.GPX](../osmand-file-formats/osmand-gpx.md)* und die Textdatei als *.html*. Damit Ihr benutzerdefinierter *Reiseführer* erfolgreich erstellt werden kann, müssen die Namen der GPX-Datei und der HTML-Datei identisch sein. Zum Beispiel *Mailand.gpx* und *Mailand.html*.
-Die GPX-Strecken können aus dem Internet heruntergeladen werden, oder Sie können eine [mit OsmAnd erstellen](../../user/plan-route/create-route.md) oder mit einem anderen GPX-Erstellungstool (Brouter oder ein ähnliches).
+Speichern Sie Ihre Strecke mit der Erweiterung *[.GPX](../osmand-file-formats/osmand-gpx.md)* und die Textdatei als *.html*. Damit Ihr benutzerdefinierter *Reiseführer* erfolgreich erstellt werden kann, müssen die Namen der GPX-Datei und der HTML-Datei identisch sein. Zum Beispiel *Mailand.gpx* und *Mailand.html*.  
+Die GPX-Strecken können aus dem Internet heruntergeladen werden, oder Sie können eine [mit OsmAnd erstellen](../../user/plan-route/create-route.md) oder mit einem anderen GPX-Erstellungstool (Brouter oder ein ähnliches).  
 Fügen Sie die Punkte, die Sie besuchen möchten, zu Ihrer Route hinzu und speichern Sie diese Route dann als GPX-Strecke.
 
 Die Wahl der Quelle für den Text Ihres Reiseführers liegt ganz bei Ihnen. Es kann ein Artikel in einem Reiseblog, eine Wikipedia-Seite usw. sein. Kopieren Sie einfach den Text, fügen Sie ihn dann in einen Texteditor ein und speichern Sie ihn mit der Erweiterung *.html*. Stellen Sie sicher, dass der Name der GPX-Strecke und der HTML-Datei identisch sind.

@@ -1,5 +1,5 @@
 ---
-source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
 sidebar_position: 19
 title:  Wetter
 ---
@@ -151,21 +151,21 @@ In diesem Menü können Sie die **Sichtbarkeit** und die [Einstellungen](#weathe
 - *Main Menu → Plugins → Weather → Settings*
 - *Main Menu → Settings → Profile → Plugin settings → Weather*
 
-![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.webp) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Main Menu → Settings → Profile → Plugins → Weather*
+*Main Menu → Settings → Profile → Plugins → Weather*
 
-![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.webp) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.webp)
 
 </TabItem>
 
 </Tabs>  
 
-It is important to decide in which units of measurement it is convenient for you to see the [Weather data](#weather-layers) on the map and in the [Weather widgets](#weather-widgets) section of the screen. You can choose appropriate units of measurement for each parameter or use default values (*iOS only*). In the iOS version of the OsmAnd app, you can also enable the offline forecast option to avoid using mobile traffic while traveling.  
+It is important to decide in which units of measurement it is convenient for you to see the [Weather data](#weather-layers) on the map and in the [Weather widgets](#weather-widgets) section of the screen. You can choose appropriate units of measurement for each parameter. You can also use default values — on iOS for all parameters, on Android only for temperature. The temperature unit is selected in: *Menu → Profile → General settings → Units & formats → Temperature*. In the iOS version of the OsmAnd app, you can also enable the offline forecast option to avoid using mobile traffic while traveling.  
 
 :::note
 In the iOS version of OsmAnd, you can change measurement units and transparency level in the menu that opens after a long tap of the icon of the required map layer.  

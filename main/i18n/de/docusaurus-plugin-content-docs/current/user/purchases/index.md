@@ -1,5 +1,5 @@
 ---
-source-hash: be440c1569e9bfbe942ce6274154063e4405eb3f2127ea1a15070e5680537c7c
+source-hash: 446dc6fb8862e87b5c5410884e5d855a41f55489f8f416fdb6d8004a6d595853
 sidebar_position: 9
 ---
 
@@ -17,7 +17,7 @@ Detaillierte Informationen zu Käufen auf iOS: Abonnements vs. In-App-Käufe, Pr
 
 ### [Web Käufe](./web.md) {#web-purchases}
 
-In diesem Abschnitt können Sie OsmAnd-Abonnements und In-App-Funktionen erwerben,
+In diesem Abschnitt können Sie OsmAnd-Abonnements und In-App-Funktionen erwerben,  
 sowie die Unterschiede zwischen den verfügbaren Plänen vergleichen.
 
 ### [Plattformübergreifende Käufe](./cross.md) {#cross-platform-purchases}
