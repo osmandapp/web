@@ -329,4 +329,3 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [المسارات](./web-tracks.md)
 - [المفضلات](./web-favorites.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
-```

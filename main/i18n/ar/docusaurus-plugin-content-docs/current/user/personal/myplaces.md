@@ -14,6 +14,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
+
 ## نظرة عامة {#overview}
 
 **أماكني** هو المركز الرئيسي في تطبيق OsmAnd لإدارة وتخصيص جميع البيانات الشخصية. يمكنك استخدام هذا القسم لتنظيم [النقاط المفضلة](#favorites) التي تم تمييزها على أنها مهمة أو يتم زيارتها بشكل متكرر. تتيح علامة التبويب [المسارات](#tracks) عرض ملفات GPX واستيرادها وتسجيلها وإنشائها لمساعدتك في الاحتفاظ بسجل مفصل لمساراتك ورحلاتك. يمكنك أيضًا إدارة [تعديلات OpenStreetMap](#openstreetmap-edits) الخاصة بك، مما يسهل المساهمة في تحسينات الخريطة وتحديثاتها. يتيح ملحق [الملاحظات الصوتية/المرئية](#audiovideo-notes) والأدوات المصغرة لمستخدمي أندرويد إنشاء وحفظ ملاحظات الوسائط المتعددة المتعلقة بمواقع محددة، مما يضيف سياقًا لرحلاتهم. على iOS، يوفر أماكني أيضًا إمكانية الوصول إلى [أدلة السفر](#travel-guides) المحفوظة، مما يتيح لك تنظيم محتوى السفر المحفوظ وفتحه بسرعة.
@@ -24,25 +25,25 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
+![أماكني أندرويد](@site/static/img/personal/my_places_android_new.png) ![قائمة أماكني أندرويد](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
+![أماكني iOS](@site/static/img/personal/my_places_ios_2.png)  ![قائمة أماكني iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-My Places is organized by categories. Select a tab to manage the corresponding data.
+يتم تنظيم أماكني حسب الفئات. حدد علامة تبويب لإدارة البيانات المقابلة.
 
-**Note:** All data stored in the *My Places* menu can be moved using a special `.osf` format through applications on your device. This process simplifies saving and transferring data between devices and allows you to share it with other OsmAnd users. 
+**ملاحظة:** يمكن نقل جميع البيانات المخزنة في قائمة *أماكني* باستخدام تنسيق خاص `.osf` من خلال التطبيقات الموجودة على جهازك. تبسط هذه العملية حفظ البيانات ونقلها بين الأجهزة وتسمح لك بمشاركتها مع مستخدمي OsmAnd الآخرين. 
 
 ### المفضلة {#favorites}
 
@@ -50,25 +51,25 @@ My Places is organized by categories. Select a tab to manage the corresponding d
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
+![قائمة المفضلة أندرويد](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
+![قائمة المفضلة iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-**Favorites** allow you to bookmark important or frequently visited locations. These favorite points are organized in folders and can be customized with different colors, shapes, and icons. You can quickly navigate to any favorite place through the **My Places** menu without needing to search for it repeatedly.
+تتيح لك **المفضلة** وضع إشارة مرجعية على المواقع المهمة أو التي تتم زيارتها بشكل متكرر. يتم تنظيم هذه النقاط المفضلة في مجلدات ويمكن تخصيصها بألوان وأشكال وأيقونات مختلفة. يمكنك الانتقال بسرعة إلى أي مكان مفضل من خلال قائمة **أماكني** دون الحاجة إلى البحث عنه بشكل متكرر.
 
-For full instructions, refer to the [Favorites](../personal/favorites.md) article.
+للحصول على إرشادات كاملة، راجع مقالة [المفضلة](../personal/favorites.md).
 
 ### المسارات {#tracks}
 
@@ -76,25 +77,25 @@ For full instructions, refer to the [Favorites](../personal/favorites.md) articl
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
+![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-**Tracks** offer powerful tools for recording, creating, and managing routes within OsmAnd. They can be used for [navigation](../navigation/setup/gpx-navigation.md), [trip recording](../plugins/trip-recording.md), or [integrating](../personal/tracks/manage-tracks.md#import) external GPX files.
+توفر **المسارات** أدوات قوية لتسجيل وإنشاء وإدارة المسارات داخل OsmAnd. يمكن استخدامها في [الملاحة](../navigation/setup/gpx-navigation.md)، أو [تسجيل الرحلة](../plugins/trip-recording.md)، أو [دمج](../personal/tracks/manage-tracks.md#import) ملفات GPX الخارجية.
 
-For comprehensive guidance, see the [Manage Tracks](../personal/tracks/manage-tracks.md) article.
+للحصول على إرشادات شاملة، راجع مقالة [إدارة المسارات](../personal/tracks/manage-tracks.md).
 
 ### تعديلات OpenStreetMap {#openstreetmap-edits}
 
@@ -102,25 +103,25 @@ For comprehensive guidance, see the [Manage Tracks](../personal/tracks/manage-tr
 
 <TabItem value="android" label="Android">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![مشاركة](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
+![مشاركة](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd's **OpenStreetMap Edits** feature enables you to contribute to the global mapping community by adding, modifying, or commenting on map data.
+تتيح لك ميزة **تعديلات OpenStreetMap** في OsmAnd المساهمة في مجتمع رسم الخرائط العالمي عن طريق إضافة بيانات الخريطة أو تعديلها أو التعليق عليها.
 
-Refer to the [OSM Editing plugin](../plugins/osm-editing.md) for step-by-step instructions.
+راجع [ملحق تحرير OSM](../plugins/osm-editing.md) للحصول على إرشادات خطوة بخطوة.
 
 ### الملاحظات الصوتية/المرئية {#audiovideo-notes}
 
@@ -128,28 +129,28 @@ Refer to the [OSM Editing plugin](../plugins/osm-editing.md) for step-by-step in
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![قائمة أماكني لملحق الصوت/الفيديو ثلاثة إجراءات](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-The **Audio/Video Notes plugin** allows you to create multimedia notes linked to specific map locations. These notes are stored in **My Places** under the **A/V Notes Tab**. Each note is also saved as a favorite in the **media** folder in the [Favorites](#favorites) tab.
+يتيح لك **ملحق الملاحظات الصوتية/المرئية** إنشاء ملاحظات وسائط متعددة مرتبطة بمواقع محددة على الخريطة. يتم تخزين هذه الملاحظات في **أماكني** ضمن **تبويب الملاحظات الصوتية/المرئية**. يتم أيضًا حفظ كل ملاحظة كنقطة مفضلة في مجلد **media** في علامة التبويب [المفضلة](#favorites).
 
-For more information, visit the [Audio/Video Notes plugin](../plugins/audio-video-notes.md) page.
+لمزيد من المعلومات، قم بزيارة صفحة [ملحق الملاحظات الصوتية/المرئية](../plugins/audio-video-notes.md).
 
 ### أدلة السفر (iOS) {#travel-guides}
 
-Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
+![أدلة السفر iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
-The **Travel** section contains bookmarked travel guides and articles saved for offline access. You can quickly open, organize, and manage your saved travel content from My Places. The Travel section is displayed only when more than one travel guide has been bookmarked.
+يحتوي قسم **السفر** على أدلة السفر ومقالاتها المحفوظة للوصول دون اتصال بالإنترنت. يمكنك فتح محتوى السفر المحفوظ وتنظيمه وإدارته بسرعة من أماكني. يظهر قسم السفر فقط عند حفظ أكثر من دليل سفر واحد.
 
-For detailed information, refer to the [Travel Guides](../plan-route/travel-guides.md) article.
+لمزيد من المعلومات التفصيلية، راجع مقالة [أدلة السفر](../plan-route/travel-guides.md).
 
 ## مقالات ذات صلة {#related-articles}
 
-- [Manage Tracks](../personal/tracks/manage-tracks.md#import--export-track)
-- [Favorites](../personal/favorites.md)
-- [OpenStreetMap Editing](../plugins/osm-editing.md)
-- [Audio/Video Notes](../plugins/audio-video-notes.md)
-- [Travel Guides](../plan-route/travel-guides.md)
-- [Search History](../search/search-history.md#export-and-share)
-- [Color Palette Schemes](../personal/color-palette-schemes.md)
+- [إدارة المسارات](../personal/tracks/manage-tracks.md#import--export-track)
+- [المفضلة](../personal/favorites.md)
+- [تحرير OpenStreetMap](../plugins/osm-editing.md)
+- [الملاحظات الصوتية/المرئية](../plugins/audio-video-notes.md)
+- [أدلة السفر](../plan-route/travel-guides.md)
+- [سجل البحث](../search/search-history.md#export-and-share)
+- [مخططات لوحة الألوان](../personal/color-palette-schemes.md)
