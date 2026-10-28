@@ -17,14 +17,16 @@ import { fmt } from '../../util/dateFmt';
 import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
 import { useGpxFileDragZone } from '../../util/hooks/useGpxFileDragZone';
+import { useProcessDownload } from '../../util/hooks/menu/useProcessDownload';
+import { GPX } from '../../manager/GlobalManager';
 
 export default function CloudTrackGroup({ index, group }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const folderDragHandlers = useGpxFileDragZone(group.type !== SMART_TYPE ? group.fullName : null);
+    const [processDownload, setProcessDownload] = useProcessDownload(GPX, group.type, group.fullName);
 
     const [openActions, setOpenActions] = useState(false);
-    const [processDownload, setProcessDownload] = useState(false);
     const anchorEl = useRef(null);
 
     useEffect(() => {
