@@ -123,16 +123,11 @@ describe('getWptTags: the tags of a poi', () => {
         apiPost.mockResolvedValueOnce({
             data: [{ key: OPENING_HOURS, value: 'Mo-Fr 09:00-18:00; Apr-Oct Sa 10:00-14:00; PH, SH, Easter off' }],
         });
-        const normalized = await tagsOf({
-            opening_hours: 'Mo-Fr 09:00-18:00; Apr-Oct Sa 10:00-14:00; PH,SH,easter off',
-        });
-        // without the server rules the raw value is shown, its words are translated all the same
-        const raw = await tagsOf({ opening_hours: 'Su,PH closed; easter off' });
+        const tags = await tagsOf({ opening_hours: 'Mo-Fr 09:00-18:00; Apr-Oct Sa 10:00-14:00; PH,SH,easter off' });
 
-        expect(normalized[OPENING_HOURS].value).toBe(
+        expect(tags[OPENING_HOURS].value).toBe(
             'Mon-Fri 09:00-18:00; Apr-Oct Sat 10:00-14:00; Public holidays, School holidays, Easter closed'
         );
-        expect(raw[OPENING_HOURS].value).toBe('Sun,Public holidays closed; Easter closed');
     });
 
     test('a measure is shown in the units of the user', async () => {

@@ -11,13 +11,17 @@ const PARSE_AS_LOCAL_TIME = 'T00:00';
 
 const OPENING_HOURS_TAG_LOCALE = 'en-US';
 
+const OPENING_HOURS_RULE_SEPARATOR = ';';
+
+const OPENING_HOURS_COMMENT_SEPARATOR = ' - ';
+
+const WORD_SEPARATORS = /([^A-Za-z]+)/;
+
 const OPENING_HOURS_STRING_KEYS = {
     PH: 'opening_hours_public_holiday',
     SH: 'opening_hours_school_holiday',
     Easter: 'opening_hours_easter',
-    easter: 'opening_hours_easter',
     off: 'day_off_label',
-    closed: 'day_off_label',
 };
 
 export const fmt = {
@@ -142,21 +146,31 @@ export function localizeOpeningHours(scheduleStr) {
     const monthName = (month, locale) =>
         new Date(now.getFullYear(), month).toLocaleDateString(locale, { month: 'short' });
 
-    const map = {};
+    const names = new Map();
     for (let offset = 0; offset < 7; offset++) {
         const token = dayName(offset, OPENING_HOURS_TAG_LOCALE);
         const name = dayName(offset, lang());
-        map[token] = name;
-        map[token.slice(0, 2)] = name;
+        names.set(token, name);
+        names.set(token.slice(0, 2), name);
     }
     for (let month = 0; month < 12; month++) {
-        map[monthName(month, OPENING_HOURS_TAG_LOCALE)] = monthName(month, lang());
+        names.set(monthName(month, OPENING_HOURS_TAG_LOCALE), monthName(month, lang()));
     }
-    const comment = ` - (?!(?:${Object.keys(map).join('|')})\\b|\\d)[^;]*`;
-    Object.entries(OPENING_HOURS_STRING_KEYS).forEach(([token, key]) => {
-        map[token] = i18n.t(key);
-    });
-    const word = `\\b(${Object.keys(map).join('|')})\\b`;
+    Object.entries(OPENING_HOURS_STRING_KEYS).forEach(([token, key]) => names.set(token, i18n.t(key)));
 
-    return scheduleStr.replace(new RegExp(`${comment}|${word}`, 'g'), (match, token) => (token ? map[token] : match));
+    const localizeWords = (text) =>
+        text
+            .split(WORD_SEPARATORS)
+            .map((word) => names.get(word) ?? word)
+            .join('');
+
+    return scheduleStr
+        .split(OPENING_HOURS_RULE_SEPARATOR)
+        .map((rule) => {
+            const commentStart = rule.indexOf(OPENING_HOURS_COMMENT_SEPARATOR);
+            const scheduleEnd = commentStart < 0 ? rule.length : commentStart;
+
+            return localizeWords(rule.slice(0, scheduleEnd)) + rule.slice(scheduleEnd);
+        })
+        .join(OPENING_HOURS_RULE_SEPARATOR);
 }

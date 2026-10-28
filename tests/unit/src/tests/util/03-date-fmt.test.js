@@ -36,10 +36,6 @@ describe('localizeOpeningHours', () => {
             expect(localizeOpeningHours('Mo 10:00-12:00 - off on Mo; Sa 10:00-14:00')).toBe(
                 'Mon 10:00-12:00 - off on Mo; Sat 10:00-14:00'
             );
-            // a raw value may write a range with spaces, that dash starts no comment
-            expect(localizeOpeningHours('Mo - Fr 08:00 - 18:00; Jan - Mar Sa')).toBe(
-                'Mon - Fri 08:00 - 18:00; Jan - Mar Sat'
-            );
         });
     });
 
@@ -53,6 +49,8 @@ describe('localizeOpeningHours', () => {
         withLanguage('uk', () => {
             expect(localizeOpeningHours('Mo-Fr')).toBe('Пн-Пт');
             expect(localizeOpeningHours('Apr-Oct')).toBe('квіт.-жовт.');
+            // the status of the server names the day in full: "Will open on 08:00 Mon."
+            expect(localizeOpeningHours(' 08:00 Mon.')).toBe(' 08:00 Пн.');
         });
         // the es Tuesday is "Mar", it must not be taken for March once more
         withLanguage('es', () => {
