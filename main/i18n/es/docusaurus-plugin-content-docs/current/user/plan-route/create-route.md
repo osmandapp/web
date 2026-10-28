@@ -183,7 +183,7 @@ Cuando un track se adjunta a carreteras, los siguientes parámetros pueden cambi
 Puede seleccionar un [valor umbral](../navigation/setup/gpx-navigation.md#attach-to-the-roads) para la distancia a la que los puntos simplificados del track pueden estar de los puntos originales del track.
 
 :::note Icono de perfil no especificado
-If you select a track and the ***unspecified*** profile icon ("?") is displayed next to the *Settings* icon, tap on it to choose whether to attach the track to roads or just connect the points with a straight line and treat it as a recorded track.
+Si selecciona un track y el icono de perfil ***no especificado*** ("?") aparece junto al icono de *Ajustes*, púlselo para elegir si desea adjuntar el track a las carreteras o simplemente conectar los puntos con una línea recta y tratarlo como un track grabado.
 :::
 
 

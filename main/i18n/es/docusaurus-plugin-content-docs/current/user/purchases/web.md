@@ -57,9 +57,8 @@ A continuación se muestran los precios de los productos OsmAnd en EE. UU. y la 
 
 
 :::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
+Al comprar una suscripción con descuento en nuestro [sitio web](https://osmand.net/pricing), obtienes un plan con descuento de 2 años.  
+A partir del tercer año se aplicará el precio completo.
 :::
 
 -->
