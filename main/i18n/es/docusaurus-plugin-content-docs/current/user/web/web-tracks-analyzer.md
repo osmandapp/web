@@ -1,5 +1,5 @@
 ---
-source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
+source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -23,9 +23,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Cómo usar {#how-to-use}
 
-Después de abrir el Analizador de pistas (mostrado como una llave inglesa), la herramienta se abre con una vista de mapa y un estado vacío. Desde aquí, puedes elegir qué pistas se incluirán en el análisis usando el panel **Seleccionar pistas**. El analizador permite trabajar con todas las pistas disponibles o limitar el análisis a carpetas específicas.
+1. [Inicia sesión](./web-cloud.md#login) en tu cuenta de OsmAnd Pro en el Portal de mapas web. Tus pistas deben estar sincronizadas con [OsmAnd Cloud](./web-cloud.md#cloud-sync).
+2. Abre *Menú → Analizador de pistas* (el icono de llave inglesa).
+3. En el panel **Seleccionar pistas**, elige **Todas las pistas** o solo las carpetas que necesites.
+4. Haz clic derecho en el mapa y selecciona **Punto A**. Para analizar un segmento entre dos puntos, también establece **Punto B**.
+5. Revisa la lista de segmentos encontrados, [ordénala y elige qué parámetros mostrar](#sorting-and-visible-parameters).
 
-Para iniciar el análisis, establece uno o dos puntos directamente en el mapa. Haz clic derecho en la ubicación deseada y selecciona **Punto A / Punto B** del menú contextual. Con un punto, el analizador encuentra segmentos de pistas que pasan por la ubicación seleccionada. Con dos puntos, encuentra y analiza segmentos entre el Punto A y el Punto B.
+Con un punto, el analizador encuentra segmentos de pistas que pasan por la ubicación seleccionada. Con dos puntos, encuentra y analiza segmentos entre el Punto A y el Punto B.
 
 ![Analizador de pistas](@site/static/img/web/web_analyzer_select.png) ![Analizador de pistas](@site/static/img/web/web_analyzer_points_new.png)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
+source-hash: d6a31c4940f73f3e1b07d66705ee71fb7de3941616a4621cd534af1b863917ad
 sidebar_position: 1
 title:  Primeros Pasos
 ---
@@ -134,7 +134,7 @@ La opción *Idioma de visualización* se utiliza para cambiar el idioma de toda 
 
 En dispositivos Android, OsmAnd le permite personalizar el idioma de visualización directamente en la aplicación en todas las versiones compatibles. Por defecto, la aplicación utiliza el idioma del sistema, pero puede seleccionar manualmente un idioma diferente si es necesario.
 
-En Android 13 y versiones posteriores, puede cambiar el idioma de la aplicación tanto en los ajustes de OsmAnd como en los ajustes del sistema de su dispositivo. El idioma seleccionado se sincroniza entre la aplicación y el sistema. Algunos cambios pueden requerir reiniciar la aplicación para aplicar completamente el idioma seleccionado.
+En Android 13 y versiones posteriores, puede cambiar el idioma de la aplicación tanto en los ajustes de OsmAnd como en los ajustes del sistema de su dispositivo. El idioma seleccionado se sincroniza entre la aplicación y la sistema. Algunos cambios pueden requerir reiniciar la aplicación para aplicar completamente el idioma seleccionado.
 
 En dispositivos iOS, el idioma de visualización solo se puede cambiar en los ajustes del sistema (vea cómo cambiar las preferencias de idioma por aplicación en [iOS](https://developer.apple.com/news/?id=u2cfuj88)).  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: Introducción
 title: Introducción al Planificador Web
@@ -22,7 +22,7 @@ El **Planificador Web**, también conocido como el [**Portal de Mapas de OsmAnd*
 
 Diseñado como un complemento multiplataforma para OsmAnd en Android e iOS, el Portal Web ayuda a los usuarios a planificar viajes, analizar tracks, ver el terreno y gestionar archivos utilizando cualquier navegador de escritorio o tableta — sin necesidad de instalar una aplicación.
 
-OsmAnd Web se integra estrechamente con el servicio **OsmAnd Cloud**, que permite sincronizar favoritos、tracks y copias de seguridad entre dispositivos y plataformas. Los usuarios con cuentas **OsmAnd Start** (gratuita) o **OsmAnd Pro** (de pago) pueden aprovechar al máximo este ecosistema sincronizando datos entre el móvil y la web. Puede encontrar una comparación detallada de las funciones de *Start* y *Pro* en la sección [Acceso por suscripción](#subscription-accesses) a continuación.
+OsmAnd Web se integra estrechamente con el servicio **OsmAnd Cloud**, que permite sincronizar favoritos, tracks y copias de seguridad entre dispositivos y plataformas. Los usuarios con cuentas **OsmAnd Start** (gratuita) o **OsmAnd Pro** (de pago) pueden aprovechar al máximo este ecosistema sincronizando datos entre el móvil y la web. Puede encontrar una comparación detallada de las funciones de *Start* y *Pro* en la sección [Acceso por suscripción](#subscription-accesses) a continuación.
 
 > **Nota:** Incluso sin iniciar sesión o verificar su cuenta, aún puede usar varias funciones principales del Portal de Mapas Web, incluyendo: [Ruta de navegación](./web-navigation.md), [Planificador de rutas](./planner.md), [Capas meteorológicas](./web-weather.md) y [Ajustes](./web-map.md#settings).
 
@@ -55,10 +55,10 @@ El Portal de Mapas Web admite varios niveles de acceso: sin inicio de sesión, c
 | [Planificador de rutas](./planner.md) | Sin inicio de sesión |
 | [Capas meteorológicas](./web-weather.md) | Sin inicio de sesión |
 | [Ajustes](./web-map.md#settings) | Sin inicio de sesión |
-| [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([PDI](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([PDI](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 | [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [Sincronización con OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [Búsqueda web, Lugares populares](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Sincronización con OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Búsqueda web, Lugares populares](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 | [Carpetas y capa de Tracks](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 

@@ -1,5 +1,5 @@
 ---
-source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
+source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
 sidebar_position: 16
 title: Topografía
 ---
@@ -58,6 +58,7 @@ El complemento Topografía proporciona acceso a los siguientes tipos de mapas:
 ### Licencia para los datos DEM utilizados por OsmAnd para la detección del terreno {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 Los datos de altitud en el mapa (entre 70 grados de latitud norte y 70 grados de latitud sur) se obtuvieron de mediciones realizadas como parte de la *Shuttle Radar Topography Mission (SRTM)*. Utilizó el *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, la principal herramienta de imágenes del *Sistema de Observación de la Tierra de la NASA*.  
+Para Norteamérica, los mapas de terreno y las curvas de nivel utilizan datos nacionales de elevación de alta resolución: aproximadamente 10 m en los Estados Unidos continentales y aproximadamente 30 m en Alaska y la mayor parte de Canadá y México.  
 Para obtener información completa, consulte la [Licencia](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -66,7 +67,8 @@ Para obtener información completa, consulte la [Licencia](https://github.com/os
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Los datos originales utilizados para este producto fueron suministrados por AW3D de JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Modelos Digitales de Terreno (DTM) LiDAR de Europa de Sonny</a>.
+	- <a href="https://sonny.4lima.de">Modelos Digitales de Terreno (DTM) LiDAR de Europa de Sonny</a>.<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">Programa de Elevación 3D del USGS (3DEP)</a> a través de <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> (Estados Unidos, Alaska) y el <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">DEM de 1 arco-segundo del USGS</a> en <a href="https://opentopography.org/">OpenTopography</a> (Canadá, México), incluidos datos de <a href="https://natural-resources.canada.ca/">Recursos Naturales de Canadá (NRCan)</a> y <a href="https://www.inegi.org.mx/">INEGI</a>.
 
 </details>
 

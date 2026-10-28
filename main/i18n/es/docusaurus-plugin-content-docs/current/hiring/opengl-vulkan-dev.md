@@ -1,6 +1,6 @@
 ---
+source-hash: 9a29333c8bd31f59e268fb240cf3781f148fe4e7c38a7c3fccdd415c3086d974
 draft: true
-source-hash: 390eaa4c21a76034248b2840ebeeb3be58aeb2f5ad1ed25d17f98dc0327c8ae7
 sidebar_position: 1
 title: Desarrollador OpenGL / Vulkan
 ---
@@ -8,7 +8,7 @@ title: Desarrollador OpenGL / Vulkan
 Buscamos un desarrollador entusiasta que nos ayude a llevar nuestro motor de mapas a un nuevo nivel.
 
 ## Descripción del puesto {#job-description}
-OsmAnd busca un desarrollador de software de código abierto apasionado y entusiasta, con buenos conocimientos de al menos uno de los motores OpenGL o Vulkan, para unirse a nuestro creciente equipo.
+OsmAnd busca un desarrollador de software de código abierto apasionado y entusiasta, con buenos conocimientos de al menos uno de OpenGL o Vulkan, para unirse a nuestro creciente equipo.
 
 ## Cualificaciones {#qualifications}
 
@@ -21,7 +21,7 @@ OsmAnd busca un desarrollador de software de código abierto apasionado y entusi
 ### Deseable {#nice-to-have}
 - Experiencia con Git + Github
 - Experiencia en GIS, especialmente con librerías como Gdal / GeographicLib
-- Conocimientos de OpenStreetMap para mapeadores
+- Conocimientos de mapeador de OpenStreetMap
 
 ## La empresa ofrece {#company-offers}
 

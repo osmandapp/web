@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Lugares populares
 ---
@@ -199,7 +199,7 @@ Las imágenes vistas en línea se almacenan en caché automáticamente para acce
 
 </Tabs>
 
-El **Menú de la galería** puede mostrar hasta **100 imágenes** relacionadas con el punto de interés seleccionado. Para ver estas imágenes, toque **Mostrar todo** (Android) / **Ver todo** (iOS). Puede deslizar a través de todas las fotos disponibles. Al tocar una foto se abre brevemente una vista detallada que muestra: *Descripción (hasta dos líneas, solo Android)*, *Nombre*, *Fecha de adición*, *Autor*, *Licencia*.  
+El **Menú de la galería** puede mostrar hasta **100 imágenes** relacionadas con el punto de interés seleccionado. Para ver estas imágenes, toque **Mostrar todo** (Android) / **Ver todo** (iOS). Puede deslizar a través de todas las fotos disponibles. Al tocar una foto se abre brevemente una vista detallada que muestra: *Descripción (texto completo)*, *Nombre*, *Fecha de adición*, *Autor*, *Licencia*.  
 
 En iOS, iPadOS y macOS, puede navegar por las fotos utilizando las teclas del teclado (←/→ para moverse entre imágenes, Enter/Space para abrir).
 
@@ -209,7 +209,7 @@ También puede realizar las siguientes acciones en cada foto:
   Comparta la imagen seleccionada utilizando cualquier aplicación compatible instalada en su dispositivo (por ejemplo, mensajería, correo electrónico o redes sociales). El contenido compartido incluye la imagen y su enlace de origen (si está disponible).
 
 - **Detalles**  
-  Abre una vista detallada que muestra metadatos sobre la imagen, incluyendo: *Descripción (texto completo, solo Android)*, *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*
+  Abre una vista detallada que muestra metadatos sobre la imagen, incluyendo: *Descripción (texto completo)*, *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*
 
   **Nota:** El idioma de la descripción depende del idioma de visualización de la aplicación. Si la descripción en el idioma seleccionado no está disponible, OsmAnd muestra la versión en inglés o la primera traducción disponible.
 

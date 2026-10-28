@@ -1,5 +1,5 @@
 ---
-source-hash: e0173be6fa81b710afb1b4b52c4268f63865918a50d504364df4f0d772bf2d39
+source-hash: a4ab003fa68f8ff7c393f79dced64ce22df0b72bda332626935257db71197cb1
 title: Creación de un polígono de país
 versions: '*'
 ---
@@ -9,16 +9,16 @@ Este artículo describe cómo crear un polígono para un país que falta en geof
 
 ## Introducción {#introduction}
 
-OsmAnd viene con muchos mapas para muchos países. La mayoría de los mapas se crean a partir de mapas de "datos brutos" descargados de [geofabrik.de](http://download.geofabrik.de). Geofabrik suministra estos mapas de datos brutos de forma gratuita a todo el mundo y ofrecen servicios y productos (comerciales) basados en estos mapas.
+OsmAnd viene con muchos mapas para muchos países. La mayoría de los mapas se crean a partir de mapas de *"datos brutos"* descargados de [geofabrik.de](http://download.geofabrik.de). Geofabrik suministra estos mapas de datos brutos de forma gratuita a todo el mundo y ofrecen servicios y productos (comerciales) basados en estos mapas.
 
 Geofabrik.de tiene la estrategia de entregar mapas para los países que son solicitados por un mayor número de usuarios o por sus clientes. Esto significa que algunos mapas nunca llegan a geofabrik porque simplemente no hay suficientes solicitudes (o ninguna), como algunos países exóticos como las Seychelles o Burundi, etc.
 
 ## Proceso del servidor {#server-process}
-Debido a esta decisión estratégica de geofabrik, OsmAnd tiene una opción para generar mapas para estos países y para ello se utilizan las herramientas [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) y [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Para OsmAndMapCreator, este es un proceso de tres pasos:
+Debido a esta decisión estratégica de geofabrik, OsmAnd tiene una opción para generar mapas para estos países y para ello se utilizan las herramientas [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) y [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Para OsmAndMapCreator, este es un proceso de tres pasos:
 - OsmAndMapCreator necesita un polígono que rodee el límite exterior del país.
-- OsmAndMapCreator necesita el "mapa de datos brutos" del siguiente nivel superior que incorpore este país. Para Burundi, significa que OsmAndMapCreator necesita el mapa de África. Para Nordrhein-Westfalen, significa que OsmAndMapCreator necesita el mapa de Alemania.
-- [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) creará un mapa de "datos brutos" a partir del polígono extrayendo los datos del mapa del mapa "padre".
-- OsmAndMapCreator creará un mapa obf de OsmAnd basado en el mapa intermedio de "datos brutos" generado por osmconvert.
+- OsmAndMapCreator necesita el mapa de *"datos brutos"* del siguiente nivel superior que incorpore este país. Para Burundi, significa que OsmAndMapCreator necesita el mapa de África. Para Nordrhein-Westfalen, significa que OsmAndMapCreator necesita el mapa de Alemania.
+- [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) creará un mapa de *"datos brutos"* a partir del polígono extrayendo los datos del mapa del mapa *"padre"*.
+- OsmAndMapCreator creará un mapa obf de OsmAnd basado en el mapa intermedio de *"datos brutos"* generado por osmconvert.
 
 ## Acciones necesarias {#necessary-actions}
 Dependiendo de la complejidad del polígono (generado), esta cadena completa de acciones puede tardar de 10 minutos a 2 horas en total.

@@ -1,5 +1,5 @@
 ---
-source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title:  Indicaciones de voz / Notificaciones
 ---
@@ -396,7 +396,7 @@ Puede controlar la pantalla de su dispositivo para ahorrar energía. Este modo t
 
     ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Si *Mantener pantalla encendida* está activado, la pantalla del dispositivo no aplica un tiempo de espera después de activarse. Si está desactivado, puede establecer el tiempo después del cual la pantalla del dispositivo se apagará si no interactúa con ella, de 5 a 60 segundos.  
+2. **<Translate android="true" ids="wake_time"/>**. Si *Mantener pantalla encendida* está activado, la pantalla del dispositivo no aplica un tiempo de espera después de activarse. Si está desactivado, puede establecer el tiempo después del cual la pantalla del dispositivo se apagará si no interactúa con ella, de 5 a 60 segundos. El tiempo de espera se cuenta desde la última interacción con el mapa y cada toque lo reinicia. Cuando finaliza, la pantalla se apaga según el tiempo de espera de pantalla del sistema del dispositivo, por lo que OsmAnd puede mantener la pantalla encendida más tiempo que el ajuste del sistema, pero nunca menos.   
 
     ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -404,11 +404,15 @@ Puede controlar la pantalla de su dispositivo para ahorrar energía. Este modo t
 
 ![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Seleccione las opciones de activación de la pantalla y asegúrese de que OsmAnd permanezca en primer plano cuando el dispositivo esté bloqueado.
+Seleccione las opciones de activación de la pantalla y asegúrese de que OsmAnd permanezca en primer plano cuando el dispositivo esté bloqueado. Cuando una opción de activación enciende la pantalla, el mapa aparece sobre la pantalla de bloqueo y el dispositivo permanece bloqueado. Si no hay ninguna opción de activación habilitada, se muestra la pantalla de bloqueo habitual.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> El sensor responde de forma fiable durante la navegación o la grabación de un viaje. En otros casos, Android deja de enviar eventos del sensor a OsmAnd aproximadamente un minuto después de que la aplicación pase a segundo plano.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> Si *Usar tiempo de espera de pantalla del sistema* está desactivado, esta opción requiere que *Tiempo de espera tras activación* esté configurado en *Mantener pantalla encendida*.
+
+Tras una activación por el sensor de proximidad o una instrucción de navegación, el mapa permanece sobre la pantalla de bloqueo durante el tiempo establecido en *Tiempo de espera tras activación*, y luego el dispositivo se bloquea de nuevo. Con *Mantener pantalla encendida*, el mapa permanece visible hasta que pulse el botón de encendido.
+
+**Nota:** En los dispositivos Xiaomi, permita el permiso *Mostrar en pantalla de bloqueo* para OsmAnd (*Información de la aplicación → Otros permisos*). Sin él, la pantalla se enciende, pero el mapa no aparece sobre la pantalla de bloqueo. OsmAnd no puede conceder este permiso por sí mismo.
 
 
 ## Artículos relacionados {#related-articles}

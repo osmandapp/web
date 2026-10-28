@@ -1,8 +1,9 @@
 ---
-source-hash: 2e10650d0eee32138985228898ac7ac712a0a70a1f315f227a751d0c2f14ae10
+source-hash: 7b765aa07ea22d947a58624f6293200d6f6198cc047b028220974be3afc62756
 sidebar_position: 6
 title:  Widgets de Marcador
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,10 +13,9 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
-
 ## Resumen {#overview}
 
-Los marcadores son puntos temporales indicados en el mapa en forma de banderas. Los widgets muestran la *Dirección*, la *Distancia*, la *Dirección postal* y la *Hora estimada de llegada* al marcador. Permiten encontrar rápidamente los marcadores en el mapa, así como cambiar su posición. Puede leer más sobre los marcadores en este [artículo](../personal/markers).  
+Los marcadores son puntos temporales indicados en el mapa en forma de banderas. Los widgets muestran la *Dirección*, la *Distancia*, la *Dirección* y la *Hora estimada de llegada* al marcador. Permiten encontrar rápidamente los marcadores en el mapa, así como cambiar su posición. Puede leer más sobre los marcadores en este [artículo](../personal/markers).  
 
 
 ## Widget de la Barra Superior {#top-bar-widget}

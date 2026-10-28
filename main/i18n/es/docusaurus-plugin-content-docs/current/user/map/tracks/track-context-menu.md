@@ -1,5 +1,5 @@
 ---
-source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -422,6 +422,7 @@ En esta pestaña *Puntos*:
 - [Mostrar datos de los puntos del track](#display-custom-gpx-tags) y modificar los puntos de tu track (waypoints y puntos de ruta), [eliminarlos y añadir](#points--waypoints) waypoints a un track.
 - Crear y modificar [Grupo (carpeta) de puntos](#waypoint-groups).
 - Mostrar un waypoint en el mapa usando el icono de pin en la lista de waypoints. El mapa se centra en el waypoint sin cerrar la lista ni cambiar el nivel de zoom actual.
+- Adjuntar fotos, vídeos y notas de audio a un waypoint mediante la tarjeta *Medios* en su menú contextual (*solo Android*). Consulta el [artículo de Favoritos](../../personal/favorites.md#media).
 
 
 ### Añadir Waypoint a un Track {#add-waypoint-to-a-track}

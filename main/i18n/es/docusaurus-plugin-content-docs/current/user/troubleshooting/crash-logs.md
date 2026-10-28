@@ -1,5 +1,5 @@
 ---
-source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
 title: Registros de fallos
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Descripción general {#overview}
 
-Los registros de fallos son herramientas de diagnóstico valiosas que ayudan a los desarrolladores a identificar y solucionar problemas y errores que causan que la aplicación se bloquee o se comporte de forma inesperada. Es posible compartir los registros de su dispositivo Android con el equipo de desarrollo de OsmAnd. Actualmente, los usuarios de iOS solo tienen un tipo de opción de registro de fallos para enviar.
+Los registros de fallos son herramientas de diagnóstico valiosas que ayudan a los desarrolladores a identificar y solucionar problemas y errores que causan que la aplicación se bloquee o se comporte de forma inesperada. Es posible compartir los registros de su dispositivo con el equipo de desarrollo de OsmAnd. Si OsmAnd se cierra de forma inesperada, la aplicación también ofrece enviar un informe de fallos la próxima vez que se inicie.
 
 
 ## Registros de fallos y registros de la aplicación {#crash-and-app-logs}
@@ -49,7 +49,7 @@ Tenga cuidado al enviar registros de la aplicación, ya que pueden contener info
 
 </Tabs>
 
-1. Vaya a *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* o *<Translate android="true" ids="send_logcat_log"/>* (*Enviar registro de aplicación actual* en iOS). Dependiendo de su situación, seleccione el tipo de registro apropiado. Puede consultar la sección [Registros de fallos y registros de la aplicación](#crash-and-app-logs) para obtener detalles sobre las diferencias entre los tipos de registro.
+1. Vaya a *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* o *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Enviar registro de aplicación actual* (iOS). Dependiendo de su situación, seleccione el tipo de registro apropiado. Puede consultar la sección [Registros de fallos y registros de la aplicación](#crash-and-app-logs) para obtener detalles sobre las diferencias entre los tipos de registro.
 2. En el menú emergente, elija Gmail o su aplicación de correo electrónico preferida. Le recomendamos enviar los registros a `support@osmand.net`.
 3. Toque el botón *Enviar*.
 
@@ -74,6 +74,34 @@ Tenga cuidado al enviar registros de la aplicación, ya que pueden contener info
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Enviar informe de fallos después de un fallo {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Si OsmAnd se cerró de forma inesperada durante la ejecución anterior, el cuadro de diálogo de fallos aparece la próxima vez que inicie la aplicación. Aparece después de que la aplicación se bloquee, después de que deje de responder (Android 11 y versiones posteriores) o después de un fallo en el código nativo de la aplicación (Android 12 y versiones posteriores). El cuadro de diálogo no aparece mientras la navegación está activa.
+
+- *Enviar* — envía el informe de fallos directamente al equipo de desarrollo de OsmAnd, sin usar una aplicación de correo electrónico. Un mensaje confirma si el informe se envió.
+- *Descartar* — cierra el cuadro de diálogo sin enviar el informe.
+
+El informe contiene información técnica sobre el estado de la aplicación y el uso de memoria antes del fallo, junto con el registro reciente de la aplicación.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Si OsmAnd se cerró de forma inesperada durante la ejecución anterior, el cuadro de diálogo para compartir el registro de fallos aparece la próxima vez que inicie la aplicación. Aparece después de que la aplicación se bloquee o después de que el sistema la cierre de forma inesperada.
+
+- *Enviar* — envía el informe de fallos directamente al equipo de desarrollo de OsmAnd, sin usar una aplicación de correo electrónico. Un mensaje confirma si el informe se envió.
+- *Cancelar* — cierra el cuadro de diálogo sin enviar el informe.
+
+El informe contiene información técnica sobre el estado de la aplicación y el uso de memoria antes del fallo, junto con el registro reciente de la aplicación.
+
+</TabItem>
+
+</Tabs>
 
 ## Histograma de montón para problemas de memoria (Android) {#heap-histogram-for-memory-problems-android}
 

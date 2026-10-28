@@ -1,8 +1,9 @@
 ---
-source-hash: 892c634b7bf81dafb9296c6e2b65ee7f15f7bf8b1d0e766e4ed35dfd9df8901e
+source-hash: bf407399cdc5546133d08abd4e5c9fb3226abf61b6a07f922fcb5088bb047056
 sidebar_position: 5
 title: Búsqueda
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,32 +12,30 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 
-
 ### Descripción general {#overview}
 
-La **Búsqueda** es una herramienta importante de OsmAnd que le permite encontrar los lugares, objetos o direcciones requeridos. Las opciones de búsqueda disponibles proporcionan diferentes formas de encontrar objetos. Puede usar la búsqueda por dirección para una navegación precisa, la búsqueda por categorías de PDI para encontrar los objetos más cercanos, la búsqueda por historial para un acceso rápido a solicitudes anteriores y la búsqueda por coordenadas para una ubicación precisa.
+**Búsqueda** es una herramienta importante de OsmAnd que le permite encontrar los lugares, objetos o direcciones requeridos. Las opciones de búsqueda disponibles proporcionan diferentes formas de encontrar objetos. Puede usar la búsqueda por dirección para una navegación precisa, la búsqueda por categorías de PDI para encontrar los objetos más cercanos, la pestaña Explorar para descubrir lugares populares cercanos y volver a lugares de su historial, y la búsqueda por coordenadas para una ubicación precisa.
 
 
 ### [Buscar todo](./search-all.md) {#search-all}
 
-Este artículo describe las principales características y opciones disponibles de la herramienta de Búsqueda.
+La herramienta de Búsqueda encuentra direcciones, puntos de interés, coordenadas y nombres de lugares ingresados en un solo campo de búsqueda. El artículo también cubre la clasificación de los resultados de búsqueda, Buscar alrededor y Buscar en el mapa.
 
 
 ### [Buscar dirección](./search-address.md) {#search-address}
 
-La herramienta de Búsqueda tiene opciones como la búsqueda secuencial por dirección, con datos ya preparados para una selección rápida y la búsqueda por código postal. Estas opciones se describen en este artículo.
+La búsqueda de direcciones le ayuda a encontrar una dirección exacta escribiéndola completa, seleccionando la ciudad, la calle y el número de casa uno tras otro, o por código postal.
 
 
-### [Historial de búsqueda](./search-history.md) {#search-history}
+### [Explorar búsqueda](./search-history.md) {#search-explore}
 
-Este artículo analiza en detalle las capacidades de búsqueda del historial de consultas.
+La pestaña Explorar le ayuda a descubrir lugares populares a su alrededor y volver a lugares de su historial. En Android, la pestaña tiene dos secciones. Lugares populares cercanos muestra puntos de referencia y atracciones conocidos cerca de su ubicación, e Historial enumera sus búsquedas anteriores y destinos de navegación. En iOS, solo está disponible el historial de búsqueda, en la pestaña Historial.
 
 
 ### [Buscar PDI](./search-poi.md) {#search-poi}
 
-En este artículo se describe la búsqueda en todas las categorías de PDI y la configuración de una búsqueda de PDI personalizada.
-
+La búsqueda de PDI encuentra puntos de interés por categoría, nombre o marca. Los filtros de PDI personalizados le permiten combinar varias categorías y guardarlas para uso posterior.
 
 ### [Buscar coordenadas](./search-coordinates.md) {#search-coordinates}
 
-En este artículo, aprenderá cómo buscar las ubicaciones correctas usando coordenadas.
+La búsqueda por coordenadas encuentra una ubicación exacta a partir de sus coordenadas geográficas.

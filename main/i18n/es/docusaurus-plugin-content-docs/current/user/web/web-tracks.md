@@ -1,5 +1,5 @@
 ---
-source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
 sidebar_label: Pistas
 title: Pistas
@@ -50,9 +50,13 @@ Para importar una pista mediante arrastrar y soltar:
 - Arrastra uno o más archivos GPX desde tu computadora.
 - Suelta los archivos sobre el mapa o sobre una carpeta de pistas específica.
 
-Cuando se arrastra un archivo sobre el mapa, se resalta el área disponible para soltarlo. Si sueltas el archivo directamente sobre el mapa, se importa en la carpeta Importar. Si lo sueltas sobre una carpeta existente, se importa en esa carpeta.
+Cuando se arrastra un archivo sobre el mapa, se resalta el área disponible para soltarlo. Si sueltas el archivo directamente sobre el mapa, se importa en la carpeta Importar. Si lo sueltas sobre una carpeta existente, se importa en esa carpeta. Sin una suscripción activa de [OsmAnd Pro](../purchases/index.md), al soltar un archivo se abre un diálogo que explica que la importación de pistas requiere OsmAnd Pro.
+
+El tamaño máximo de archivo es de 20 MB para archivos GPX y KML y de 2 MB para archivos KMZ. Los archivos más grandes no se importan y, en su lugar, aparece una advertencia. Cuando importas varios archivos a la vez, todos los archivos rechazados se enumeran en un solo mensaje. Las pistas de más de 20 MB que ya están almacenadas en OsmAnd Cloud tampoco se pueden abrir en la web, y aparece una notificación que sugiere abrirlas en la aplicación OsmAnd.
 
 Una vez completada la importación, la pista aparece en la lista de pistas, se sincroniza con [OsmAnd Cloud](../personal/osmand-cloud.md) y queda disponible en todos los dispositivos conectados a la misma cuenta.
+
+Si una pista no se puede importar o guardar en OsmAnd Cloud, un diálogo de error muestra el nombre del archivo y, cuando esté disponible, el motivo informado por el servidor.
 
 ![Drag and drop](@site/static/img/web/drag_and_drop.png)
 

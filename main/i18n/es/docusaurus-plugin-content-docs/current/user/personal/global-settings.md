@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Ajustes globales
 ---
@@ -101,6 +101,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
     - *Memoria interna de la aplicación*. Solo la aplicación OsmAnd tiene acceso a sus datos y ninguna de las aplicaciones externas.
     - *Memoria compartida*. Ya no está disponible.
     - *Almacenamiento externo 1*. Solo 1 aplicación OsmAnd tiene acceso y las aplicaciones de administrador y USB.
+    - *Almacenamiento externo visible 1*. Los datos se almacenan en la carpeta Android/media, que está abierta a los gestores de archivos y USB. No se requieren permisos de almacenamiento adicionales.
     - *Almacenamiento multiusuario*. Solo 1 aplicación OsmAnd tiene acceso, pero se comparte entre múltiples usuarios de Android.
     - *Especificado manualmente*. Depende de la ruta.
 
@@ -115,6 +116,11 @@ El ajuste **Almacenamiento multimedia** determina dónde se almacenan las fotos,
 - **Almacenamiento compartido** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Carpeta de cámara** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Especificado manualmente** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Al seleccionar un almacenamiento multimedia diferente, OsmAnd pregunta si desea mover los archivos multimedia existentes:
+- **Mover al nuevo destino** — Mover los archivos multimedia existentes al almacenamiento seleccionado.
+- **No mover** — Cambiar el almacenamiento sin mover los archivos existentes.
+- **Cancelar** — Mantener el almacenamiento actual.
 
 También existe un interruptor *Mantener siempre una copia local*. Cuando está activado, OsmAnd copia los medios importados de la Galería o Archivos en su propio almacenamiento, para que los medios adjuntos sigan disponibles incluso si se elimina el archivo original de la Galería o del sistema de archivos.
 

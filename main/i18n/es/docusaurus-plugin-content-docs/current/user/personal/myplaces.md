@@ -1,5 +1,5 @@
 ---
-source-hash: d5de9c3084442f355b9b6536f2e73e330ece35ee360363e944195eaf5ddfe9fb
+source-hash: 941d8e8096800d75da224d6bdd577697326daf17319375cb9b22749166c80554
 sidebar_position: 6
 title:  Mis lugares
 ---
@@ -130,7 +130,7 @@ Consulte el [plugin de edición OSM](../plugins/osm-editing.md) para obtener ins
 
 ![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-El **plugin de Notas de audio/vídeo** le permite crear notas multimedia vinculadas a ubicaciones específicas del mapa. Estas notas se almacenan en **Mis lugares** en la **Pestaña Notas A/V**.
+El **plugin de Notas de audio/vídeo** le permite crear notas multimedia vinculadas a ubicaciones específicas del mapa. Estas notas se almacenan en **Mis lugares** en la **Pestaña Notas A/V**. Cada nota también se guarda como favorito en la carpeta **media** de la pestaña [Favoritos](#favorites).
 
 Para obtener más información, visite la página del [plugin de Notas de audio/vídeo](../plugins/audio-video-notes.md).
 

@@ -1,5 +1,5 @@
 ---
-source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
+source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
 sidebar_position: 1
 title:  Planificar una ruta
 ---
@@ -183,23 +183,8 @@ Cuando un track se adjunta a carreteras, los siguientes parámetros pueden cambi
 Puede seleccionar un [valor umbral](../navigation/setup/gpx-navigation.md#attach-to-the-roads) para la distancia a la que los puntos simplificados del track pueden estar de los puntos originales del track.
 
 :::note Icono de perfil no especificado
-Si selecciona un track y el icono de perfil ***no especificado*** ("?") aparece junto al icono de *Ajustes*, púlselo para elegir si desea adjuntar el track a las carreteras o simplemente conectar los puntos con una línea recta y tratarlo como un track grabado.
+If you select a track and the ***unspecified*** profile icon ("?") is displayed next to the *Settings* icon, tap on it to choose whether to attach the track to roads or just connect the points with a straight line and treat it as a recorded track.
 :::
-
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
 
 
 ## Puntos y segmentos {#points--segments}
@@ -277,19 +262,20 @@ Puede cambiar la ruta entre 2 puntos específicos o entre varios puntos:
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Plan a route ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Plan a route ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Plan a route ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Los puntos añadidos pueden conectarse con una línea recta o una ruta calculada utilizando un perfil de enrutamiento seleccionado. El menú Ruta entre puntos permite ver y cambiar el tipo de enrutamiento y la configuración de los segmentos y secciones de la ruta.
 
 Puede abrir Ruta entre puntos tocando el botón *Ruta entre puntos*, que muestra el icono del perfil de enrutamiento seleccionado actualmente, o desde un menú [Segmento](#segments) o Sección.
 
-En la pestaña Tipo de ruta, puede seleccionar un perfil de enrutamiento para el segmento o sección seleccionado. La línea recta está disponible como primera opción, seguida de los perfiles de enrutamiento disponibles.
+En la pestaña Ruta, puede seleccionar un perfil de enrutamiento para el segmento o sección seleccionado. La línea recta está disponible como primera opción, seguida de los perfiles de enrutamiento disponibles.
 
 Cuando una ruta contiene solo un tipo de enrutamiento, se muestra la vista simple de Ruta entre puntos. Cuando una ruta contiene varios tipos de enrutamiento, la vista compleja muestra todos los segmentos y secciones, lo que le permite seleccionar qué parte de la ruta modificar.
 
 También puede:
-- **Iniciar nuevo segmento** — crear un nuevo segmento y continuar añadiendo puntos de ruta. El nuevo segmento utiliza el mismo tipo de ruta que el actual.
-- **Cambiar para todo el track** — seleccionar un tipo de enrutamiento para aplicarlo a todo el track.
+- **Continuar con un tipo de ruta diferente** — seleccionar un tipo de enrutamiento para la siguiente sección del segmento actual y luego continuar añadiendo puntos en el mapa. En la vista compleja, esta opción se llama Continuar con un tipo diferente y se muestra bajo el último segmento.
+- **Iniciar nuevo segmento** — crear un nuevo segmento que no está conectado a la parte anterior del track. Seleccione un tipo de enrutamiento para el nuevo segmento y luego continúe añadiendo puntos en el mapa.
+- **Cambiar tipo para todo el track** — disponible en la vista compleja. Seleccione un tipo de enrutamiento para aplicarlo a todo el track.
 
 En la pestaña Ajustes, puede seleccionar ajustes de enrutamiento predefinidos para el tipo de ruta seleccionado.
 
@@ -313,7 +299,7 @@ Un segmento de track es una colección de puntos conectados sin **huecos**. En u
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/segment_menu.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
+![Plan a route ios](@site/static/img/plan-route/segment_menu_1.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
 
 Una ruta puede contener uno o más segmentos. Un segmento puede utilizar un único tipo de ruta o contener varias secciones con diferentes tipos de ruta.
 
@@ -321,12 +307,12 @@ En la pestaña Ruta, cada segmento se muestra con su tipo de ruta y distancia. C
 
 Puede gestionar un segmento mediante su menú de tres puntos:
 - **Cambiar tipo de ruta** — disponible para un segmento con un único tipo de ruta. Abre Ruta entre puntos, donde puede seleccionar un tipo de ruta diferente.
-- **Establecer un único tipo de ruta** — disponible cuando un segmento contiene varias secciones con diferentes tipos de ruta. Abre Ruta entre puntos, donde puede aplicar un tipo de ruta al segmento.
+- **Establecer un único tipo de ruta** — disponible cuando un segmento contiene varias secciones con diferentes tipos de ruta. Abre Ruta entre puntos, donde puede aplicar un tipo de ruta al segmento. Todo el segmento se recalcula utilizando el tipo de enrutamiento seleccionado.
 - **Ordenar** — reordenar los puntos de ruta manualmente o utilizar Ordenar puerta a puerta para reordenarlos minimizando la distancia total de viaje.
 - **Guardar como…** — guardar el segmento como un archivo independiente.
 - **Eliminar segmento** — eliminar el segmento.
 
-Para crear un nuevo segmento no conectado, toque *Iniciar nuevo segmento* en la parte inferior de la pestaña Ruta.
+Para crear un nuevo segmento no conectado, toque *Iniciar nuevo segmento* en la parte inferior de la pestaña Ruta. Para continuar el segmento actual con un tipo de enrutamiento diferente, toque *Continuar con un tipo diferente* bajo el último segmento y luego seleccione un tipo de enrutamiento para la siguiente sección.
 
 Un segmento puede dividirse en [secciones](#multimodal-routes) cuando se utilizan diferentes tipos de ruta para distintas partes del segmento. Cada sección muestra su tipo de ruta y distancia.
 
