@@ -9,6 +9,18 @@ const normAbbr = (s) => capFirst(String(s).replace(/\.$/, ''));
 // wiki photo dates come without a time: with it they are parsed as local time, not as UTC midnight
 const PARSE_AS_LOCAL_TIME = 'T00:00';
 
+const OPENING_HOURS_TAG_LOCALE = 'en-US';
+const OPENING_HOURS_RULE_SEPARATOR = ';';
+const OPENING_HOURS_COMMENT_SEPARATOR = ' - ';
+const WORD_SEPARATORS = /([^A-Za-z]+)/;
+
+const OPENING_HOURS_STRING_KEYS = {
+    PH: 'opening_hours_public_holiday',
+    SH: 'opening_hours_school_holiday',
+    Easter: 'opening_hours_easter',
+    off: 'day_off_label',
+};
+
 export const fmt = {
     // "MMM d, yyyy" (e.g., "Sep 4, 2025")
     MMMdY: (d) =>
@@ -113,8 +125,8 @@ export function formatPhotoDate(dateStr) {
     return isNaN(d) ? dateStr : fmt.dMMMMY(d);
 }
 
-// Replace "Mo/Tu/We/Th/Fr/Sa/Su" tokens with localized short weekday names
-export function localizeWeekTokens(scheduleStr) {
+// Replace "Mo/Tu/We/Th/Fr/Sa/Su", month, holiday and "off" tokens with localized names
+export function localizeOpeningHours(scheduleStr) {
     if (!scheduleStr) return scheduleStr;
 
     const now = new Date();
@@ -123,21 +135,39 @@ export function localizeWeekTokens(scheduleStr) {
     base.setHours(0, 0, 0, 0);
     base.setDate(now.getDate() - day);
 
-    const dayName = (offset) => {
+    const dayName = (offset, locale) => {
         const d = new Date(base);
         d.setDate(base.getDate() + offset);
-        return normAbbr(d.toLocaleDateString(lang(), { weekday: 'short' }));
+        return normAbbr(d.toLocaleDateString(locale, { weekday: 'short' }));
     };
+    const monthName = (month, locale) =>
+        new Date(now.getFullYear(), month).toLocaleDateString(locale, { month: 'short' });
 
-    const map = {
-        Mo: dayName(0),
-        Tu: dayName(1),
-        We: dayName(2),
-        Th: dayName(3),
-        Fr: dayName(4),
-        Sa: dayName(5),
-        Su: dayName(6),
-    };
+    const names = new Map();
+    for (let offset = 0; offset < 7; offset++) {
+        const token = dayName(offset, OPENING_HOURS_TAG_LOCALE);
+        const name = dayName(offset, lang());
+        names.set(token, name);
+        names.set(token.slice(0, 2), name);
+    }
+    for (let month = 0; month < 12; month++) {
+        names.set(monthName(month, OPENING_HOURS_TAG_LOCALE), monthName(month, lang()));
+    }
+    Object.entries(OPENING_HOURS_STRING_KEYS).forEach(([token, key]) => names.set(token, i18n.t(key)));
 
-    return scheduleStr.replace(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun|Mo|Tu|We|Th|Fr|Sa|Su)\b/g, (m) => map[m.slice(0, 2)]);
+    const localizeWords = (text) =>
+        text
+            .split(WORD_SEPARATORS)
+            .map((word) => names.get(word) ?? word)
+            .join('');
+
+    return scheduleStr
+        .split(OPENING_HOURS_RULE_SEPARATOR)
+        .map((rule) => {
+            const commentStart = rule.indexOf(OPENING_HOURS_COMMENT_SEPARATOR);
+            const scheduleEnd = commentStart < 0 ? rule.length : commentStart;
+
+            return localizeWords(rule.slice(0, scheduleEnd)) + rule.slice(scheduleEnd);
+        })
+        .join(OPENING_HOURS_RULE_SEPARATOR);
 }
