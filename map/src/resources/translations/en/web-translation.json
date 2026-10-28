@@ -44,7 +44,7 @@
     "expired_code": "Invalid or expired code.",
     "login_link_not_active": "The link is not active. It works from 6 to 72 hours after it was created, until it is used or cancelled.",
     "cancel_login_link": "Cancel login link",
-    "cancel_login_link_desc": "OsmAnd support created a link to log in to the account %1$s. If you didn't ask support for help, cancel it.",
+    "cancel_login_link_desc": "OsmAnd support created a link to log in to the account <strong>{{email}}</strong>. If you didn't ask support for help, cancel it.",
     "login_link_cancelled": "The login link has been cancelled.",
     "login_link_cancel_error": "The link is not valid or has already been cancelled.",
     "login_link_logout_title": "Use the login link?",
