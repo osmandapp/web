@@ -393,7 +393,7 @@ You can control the screen of your device to save power. This mode has two gener
 
     ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. If *Keep Screen On* is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds.  
+2. **<Translate android="true" ids="wake_time"/>**. If *Keep Screen On* is turned on, the device's screen does not apply a timeout after waking up. If it is disabled, you can set the time after which the device's screen will turn off if you do not interact with it, from 5 to 60 seconds. The timeout counts from your last interaction with the map, and each touch restarts it. When it ends, the screen turns off according to the system screen timeout of your device, so OsmAnd can keep the screen on longer than the system setting, but never shorter.   
 
     ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -401,11 +401,15 @@ You can control the screen of your device to save power. This mode has two gener
 
 ![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Select screen wake-up options and ensure OsmAnd remains in the foreground when the device is locked.
+Select screen wake-up options and ensure OsmAnd remains in the foreground when the device is locked. When a wake-up option turns the screen on, the map appears on top of the lock screen, and the device stays locked. If no wake-up option is enabled, the regular lock screen is shown.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> The sensor responds reliably during navigation or trip recording. In other cases, Android stops sending sensor events to OsmAnd about a minute after the app goes to the background.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> If *Use system screen timeout* is turned off, this option requires *Timeout after wake-up* set to *Keep Screen On*.
+
+After a wake-up by the proximity sensor or a navigation instruction, the map stays on top of the lock screen for the time set in *Timeout after wake-up*, and then the device locks again. With *Keep Screen On*, the map stays visible until you press the power button.
+
+**Note:** On Xiaomi devices, allow the *Show on Lock screen* permission for OsmAnd (*App info → Other permissions*). Without it, the screen turns on, but the map does not appear on top of the lock screen. OsmAnd cannot grant this permission itself.
 
 
 ## Related Articles {#related-articles}

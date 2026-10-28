@@ -7,7 +7,7 @@ import styles from '../wptEditPanel.module.css';
 
 const ROW_MULTILINE_THRESHOLD = 50;
 
-export default function FavoriteDescription({ favoriteDescription, onClick }) {
+export default function FavoriteDescription({ favoriteDescription, onClick, title, id = 'se-add-fav-add-desc-btn' }) {
     const { t } = useTranslation();
     const ref = useRef(null);
     const [isMultiline, setIsMultiline] = useState(false);
@@ -29,8 +29,8 @@ export default function FavoriteDescription({ favoriteDescription, onClick }) {
 
     return (
         <div ref={ref} className={isMultiline ? styles.descriptionSection : undefined}>
-            <SubTitleMenu text={t('shared_string_description')} />
-            <SectionRow id="se-add-fav-add-desc-btn" name={preview} maxLines={2} onClick={onClick} />
+            <SubTitleMenu text={title ?? t('shared_string_description')} />
+            <SectionRow id={id} name={preview} maxLines={2} onClick={onClick} />
         </div>
     );
 }

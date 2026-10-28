@@ -24,8 +24,8 @@
 **3.1.3** Info about how the app was installed helps us understand which of our advertising campaigns work.
 
 - For installs from Google Play, the app reads the Google Play Install Referrer once after installation: the campaign source, medium and name (UTM parameters) and whether the install came from an ad click.
-- For installs from the App Store (iOS), the app requests an attribution token from Apple (AdServices framework) once after installation. Our server exchanges it with Apple for the Apple Ads campaign, ad group, keyword and country that led to the install. No advertising identifier (IDFA) is used, and no App Tracking Transparency permission is required.
-- This data is tied to the UUID (Unique User Identifier), is used only for campaign statistics, and is not shared with advertising networks or other third parties.
+- For installs from the App Store (iOS), the app requests an attribution token from the system (AdServices framework) once after installation and sends it to Apple, which returns identifiers of the Apple Ads campaign, ad group and keyword that led to the install, and the type of the interaction (click or view) and conversion. The app then sends these identifiers to our server. No advertising identifier (IDFA) is used, and no App Tracking Transparency permission is required.
+- This data is tied to the UUID (Unique User Identifier), is sent with update-check and purchase requests, is used only for campaign statistics, and is not shared with advertising networks or other third parties.
 - This data is read and sent only while sending the UUID is enabled; turning it off in [the General settings](https://osmand.net/docs/user/personal/global-settings#privacy-and-security) stops it as well.
 
 **3.1.4** You can always control what data to share in [the General settings](https://osmand.net/docs/user/personal/global-settings#privacy-and-security) of the OsmAnd app.
@@ -67,4 +67,4 @@ For more information, please review [FastSpring’s Privacy Policy](https://fast
 ## 7. Contact Us
 **7.1** In case of any issues or concerns related to this Privacy Policy or its fulfillment, please contact us at contactus@osmand.net. So we can deal with your inquiry effectively, please quote this Privacy Policy. We will aim to respond to you within 30 days of receiving your request.  
 
-**Last updated: October 14, 2026**
+**Last updated: October 27, 2026**

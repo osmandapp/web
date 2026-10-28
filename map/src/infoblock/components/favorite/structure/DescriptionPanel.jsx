@@ -8,7 +8,7 @@ import ActionIconBtn from '../../../../frame/components/btns/ActionIconBtn';
 import RichTextEditor from '../../../../frame/components/editor/RichTextEditor';
 import { textToHTML } from '../../../../frame/components/editor/htmlUtils';
 
-export default function DescriptionPanel({ description, setDescription, onClose }) {
+export default function DescriptionPanel({ description, setDescription, onClose, title }) {
     const { t } = useTranslation();
 
     const [initialContent] = useState(() => textToHTML(description));
@@ -21,7 +21,7 @@ export default function DescriptionPanel({ description, setDescription, onClose 
     return (
         <SecondaryMenuDrawer onClose={onClose}>
             <HeaderWithUnderline
-                title={t('shared_string_description')}
+                title={title ?? t('shared_string_description')}
                 onClose={onClose}
                 showBackButton
                 appBarProps={{ id: 'se-back-description-panel' }}

@@ -376,6 +376,8 @@
     "add_favorite": "Add favorite",
     "add_notes": "Add notes",
     "clear_description": "Clear description",
+    "wiki_description": "Wiki description",
+    "wiki_description_lang": "Wiki description ({{lang}})",
     "save_to_cloud": "Save to Cloud",
     "order_management": "Order Management",
     "indexes": "Indexes",
@@ -641,5 +643,11 @@
     "tracks_empty_folder_description": "This folder doesn't have any track yet.",
     "coming_soon": "Coming soon",
     "coming_soon_description": "This section is still in development. Follow OsmAnd news to be the first to try it.",
-    "explore_wikimedia_images": "Explore Wikimedia Images"
+    "explore_wikimedia_images": "Explore Wikimedia Images",
+    "delete_account_confirm": "Are you sure you want to do this?",
+    "delete_account_desc": "Deletes all your data and account details from OsmAnd Cloud. Secondary devices will lose access to paid features.",
+    "your_email_address": "Your email address",
+    "code_from_email": "Code from Email",
+    "enter_valid_email": "Please enter valid email",
+    "email_does_not_match": "Email does not match"
 }

@@ -71,6 +71,8 @@ import WptTagsProvider, {
     WIKIPEDIA,
     addWikidataTags,
     getOsmIdFromOsmUrl,
+    getShortDescriptionKey,
+    getShortDescriptions,
     ICON_KEY_NAME,
     POI_FROM_TAGS,
     POI_ID,
@@ -87,6 +89,7 @@ import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
+import { getWikiLang } from '../../../util/lang';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
@@ -567,6 +570,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
             osmUrl: currentWpt.ext?.metadata?.links?.find((l) => l?.href?.includes('openstreetmap.org/'))?.href,
+            extensions: currentWpt.ext?.extensions,
             tags: null,
             mapObj: selectedWpt.mapObj,
         };
@@ -1042,6 +1046,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
     };
 
+    const shortDescription = !wpt?.type?.isWpt && getShortDescription(getShortDescriptions(wpt?.extensions));
+
     return (
         <>
             {showLoading ? (
@@ -1139,6 +1145,17 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                             icon: <DescriptionIcon />,
                                             name: t('shared_string_description'),
                                             value: wpt.desc,
+                                            isDesc: true,
+                                        }}
+                                    />
+                                )}
+                                {shortDescription && (
+                                    <WptTagInfo
+                                        key={'short-desc'}
+                                        baseTag={{
+                                            icon: <WikiIcon />,
+                                            name: t('web:wiki_description'),
+                                            value: shortDescription,
                                             isDesc: true,
                                         }}
                                     />
@@ -1342,4 +1359,12 @@ function createPoiObject(feature, tags) {
     props[FINAL_POI_ICON_NAME] = getFinalPoiIconName(props);
 
     return createMapObject(feature);
+}
+
+function getShortDescription(shortDescriptions) {
+    return (
+        shortDescriptions[getShortDescriptionKey(getWikiLang(i18n.language))] ??
+        shortDescriptions[getShortDescriptionKey()] ??
+        Object.values(shortDescriptions)[0]
+    );
 }

@@ -1,5 +1,5 @@
 import { Box, IconButton, ListItemText } from '@mui/material';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppContext, { isTrack } from '../../../context/AppContext';
 import { Add, Delete } from '@mui/icons-material';
@@ -26,7 +26,16 @@ import ExitWithoutSavingDialog from '../../../dialogs/favorites/ExitWithoutSavin
 import useExitGuard from '../../../util/hooks/useExitGuard';
 import { useBlocker } from 'react-router-dom';
 import { ADDRESS_NOT_FOUND } from '../wpt/WptDetails';
-import { FINAL_POI_ICON_NAME, MARKER_INTERNAL_KEYS, WEB_POI_PREFIX, WEB_PREFIX } from '../wpt/WptTagsProvider';
+import {
+    cleanShortDescriptions,
+    FINAL_POI_ICON_NAME,
+    getShortDescriptionLang,
+    getShortDescriptions,
+    isShortDescriptionTag,
+    MARKER_INTERNAL_KEYS,
+    WEB_POI_PREFIX,
+    WEB_PREFIX,
+} from '../wpt/WptTagsProvider';
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import { getUniqFileId, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
@@ -37,6 +46,9 @@ import SimpleItemWithRightIcon from '../../../frame/components/items/SimpleItemW
 import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
 import styles from './wptEditPanel.module.css';
 import isEmpty from 'lodash-es/isEmpty';
+import isEqual from 'lodash-es/isEqual';
+import { htmlToText } from '../../../frame/components/editor/htmlUtils';
+import { getLanguageName } from '../../../util/LanguageDisplayName';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
 import ColorBlock from '../../../frame/components/other/ColorBlock';
@@ -70,8 +82,17 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [initialAddress, setInitialAddress] = useState(editWpt?.address ?? ctx.addFavorite?.address ?? '');
     const [favoriteDescription, setFavoriteDescription] = useState(editWpt?.desc ?? '');
     const [initialDescription] = useState(editWpt?.desc ?? '');
+    const [initialShortDescriptions] = useState(() =>
+        isEditMode
+            ? getShortDescriptions(editWpt.point?.ext?.extensions)
+            : cleanShortDescriptions({
+                  ...getShortDescriptions(poi?.options ?? poi?.properties),
+                  ...ctx.addFavorite?.shortDescriptions,
+              })
+    );
+    const [shortDescriptions, setShortDescriptions] = useState(initialShortDescriptions);
     const [addAddress, setAddAddress] = useState(isEditMode || isPoi || (isAddMode && !isAddTrackWpt));
-    const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color'
+    const [activePanel, setActivePanel] = useState(null); // null | 'description' | 'icon' | 'color' | short description tag
     const [favoriteGroup, setFavoriteGroup] = useState(null);
     // search icons (house, location) have no mx_*.svg for a favorite marker
     const [favoriteIcon, setFavoriteIcon] = useState(
@@ -89,6 +110,11 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     const [latLon, setLatLon] = useState(null);
     const [deleteWptDialogOpen, setDeleteWptDialogOpen] = useState(false);
 
+    const shortDescriptionsChanged = !isEqual(shortDescriptions, initialShortDescriptions);
+    const filledShortDescriptions = Object.fromEntries(
+        Object.entries(shortDescriptions).filter(([, value]) => htmlToText(value))
+    );
+
     const hasEditChanges =
         favoriteName !== (editWpt?.name ?? '') ||
         favoriteDescription !== (editWpt?.desc ?? '') ||
@@ -96,12 +122,14 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         (favoriteGroup !== null && favoriteGroup.id !== editWpt?.groupId) ||
         favoriteIcon !== (editWpt?.icon ?? MarkerOptions.DEFAULT_WPT_ICON) ||
         favoriteColor !== (editWpt?.color ?? MarkerOptions.DEFAULT_WPT_COLOR) ||
-        favoriteShape !== (editWpt?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE);
+        favoriteShape !== (editWpt?.background ?? MarkerOptions.BACKGROUND_WPT_SHAPE_CIRCLE) ||
+        shortDescriptionsChanged;
 
     const hasAddChanges =
         favoriteName !== initialName ||
         favoriteDescription !== initialDescription ||
-        favoriteAddress !== initialAddress;
+        favoriteAddress !== initialAddress ||
+        shortDescriptionsChanged;
 
     const hasChanges = isEditMode ? hasEditChanges : hasAddChanges;
 
@@ -203,7 +231,8 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             tag === 'lat' ||
             tag === 'lon' ||
             tag === 'desc' ||
-            tag === 'address'
+            tag === 'address' ||
+            isShortDescriptionTag(tag)
         );
     }
 
@@ -227,7 +256,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 const filteredOptions = Object.entries(poiData)
                     .filter(([key]) => !excludePoiTags(key))
                     .reduce((obj, [key, value]) => ({ ...obj, [key]: value }), {});
-                ext = { extensions: filteredOptions };
+                ext = { extensions: { ...filteredOptions, ...filledShortDescriptions } };
             }
         }
         const favorite = selectedGroup
@@ -410,6 +439,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             w.background = favoriteShape;
             w.icon = favoriteIcon;
             w.category = selectedGroupName !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroupName : null;
+            if (shortDescriptionsChanged) {
+                w.ext = { ...w.ext, extensions: replaceShortDescriptions(w.ext?.extensions, filledShortDescriptions) };
+            }
         }
 
         return w ?? null;
@@ -535,6 +567,24 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         guardAction(closePanel);
     }
 
+    const activeShortDescriptionKey = activePanel && isShortDescriptionTag(activePanel) ? activePanel : null;
+    const visibleShortDescriptions = Object.entries(shortDescriptions).filter(
+        ([key]) => key in filledShortDescriptions || key === activeShortDescriptionKey
+    );
+
+    function updateShortDescription(key, html) {
+        setShortDescriptions((prev) => ({ ...prev, [key]: html }));
+    }
+
+    function getShortDescriptionTitle(key) {
+        if (visibleShortDescriptions.length < 2) return t('web:wiki_description');
+        const lang = getShortDescriptionLang(key);
+
+        return t('web:wiki_description_lang', {
+            lang: t(`lang_${lang}`, { defaultValue: getLanguageName(lang) }),
+        });
+    }
+
     const groups = isTrackWpt ? ctx.selectedGpxFile?.pointsGroups : ctx.favorites.groups;
     const defaultGroup = isAddTrackWpt
         ? DEFAULT_GROUP_NAME_POINTS_GROUPS
@@ -566,6 +616,15 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 <DescriptionPanel
                     description={favoriteDescription}
                     setDescription={setFavoriteDescription}
+                    onClose={closeActivePanel}
+                />
+            )}
+            {activeShortDescriptionKey && (
+                <DescriptionPanel
+                    key={activeShortDescriptionKey}
+                    title={getShortDescriptionTitle(activeShortDescriptionKey)}
+                    description={shortDescriptions[activeShortDescriptionKey]}
+                    setDescription={(html) => updateShortDescription(activeShortDescriptionKey, html)}
                     onClose={closeActivePanel}
                 />
             )}
@@ -641,6 +700,18 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                         favoriteDescription={favoriteDescription}
                         onClick={() => togglePanel('description')}
                     />
+                    {!isTrackWpt &&
+                        visibleShortDescriptions.map(([key, value]) => (
+                            <Fragment key={key}>
+                                <ThickDivider />
+                                <FavoriteDescription
+                                    id={`se-edit-fav-short-desc-${getShortDescriptionLang(key)}`}
+                                    title={getShortDescriptionTitle(key)}
+                                    favoriteDescription={value}
+                                    onClick={() => togglePanel(key)}
+                                />
+                            </Fragment>
+                        ))}
                     <ThickDivider />
                     <FavoriteGroup
                         favoriteGroup={favoriteGroup}
@@ -702,4 +773,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             </Box>
         </>
     );
+}
+
+function replaceShortDescriptions(extensions, shortDescriptions) {
+    const otherTags = Object.entries(extensions ?? {}).filter(([key]) => !isShortDescriptionTag(key));
+
+    return { ...Object.fromEntries(otherTags), ...shortDescriptions };
 }

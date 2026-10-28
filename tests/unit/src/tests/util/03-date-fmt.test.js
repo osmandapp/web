@@ -1,4 +1,4 @@
-import { fmt, localizeOpeningHours } from '@map/util/dateFmt';
+import { fmt, formatPhotoDate, localizeOpeningHours } from '@map/util/dateFmt';
 
 // i18next is not initialised in tests, so the module falls back to navigator.language
 function withLanguage(language, run) {
@@ -125,5 +125,31 @@ describe('fmt', () => {
         withLanguage('uk', () => {
             expect(fmt.monthShortDay(SEP_4_2025)).toBe('вер. 4');
         });
+    });
+});
+
+describe('formatPhotoDate', () => {
+    test('empty date is an empty string', () => {
+        expect(formatPhotoDate('')).toBe('');
+        expect(formatPhotoDate(null)).toBe('');
+        expect(formatPhotoDate(undefined)).toBe('');
+    });
+
+    test('a year is shown as is, with or without the plus sign', () => {
+        expect(formatPhotoDate('2025')).toBe('2025');
+        expect(formatPhotoDate('+2025')).toBe('2025');
+    });
+
+    // the suite runs in America/New_York (jest.config.js)
+    test('the day and the month stay the same west of UTC', () => {
+        withLanguage('en-GB', () => {
+            expect(formatPhotoDate('2024-08-19')).toBe('19 August 2024');
+            expect(formatPhotoDate('+2024-08-19')).toBe('19 August 2024');
+            expect(formatPhotoDate('2025-09')).toBe('September 2025');
+        });
+    });
+
+    test('a text which is not a date is shown as is', () => {
+        expect(formatPhotoDate('unknown')).toBe('unknown');
     });
 });

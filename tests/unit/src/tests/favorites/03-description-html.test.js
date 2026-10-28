@@ -1,4 +1,4 @@
-import { sanitizeHtml, textToHTML } from '@map/frame/components/editor/htmlUtils';
+import { htmlToText, sanitizeHtml, textToHTML } from '@map/frame/components/editor/htmlUtils';
 
 const LINK = '<a target="_blank" rel="noopener noreferrer nofollow" href="http://www.google.com">';
 
@@ -21,4 +21,10 @@ test('a plain text description from the phone keeps its paragraphs and line brea
         '<p>first line<br>second line</p><p>next paragraph</p>'
     );
     expect(sanitizeHtml(textToHTML(''))).toBe('');
+});
+
+test('a description preview shows characters, not their html entities', () => {
+    expect(htmlToText('<p>Tom &amp; Jerry  &lt;3 end</p>')).toBe('Tom & Jerry  <3 end');
+    expect(htmlToText('<p>Офис прокурора&nbsp;— орган</p><p>next</p>')).toBe('Офис прокурора\u00a0— орган\nnext');
+    expect(htmlToText('<p>&nbsp;</p>')).toBe('');
 });
