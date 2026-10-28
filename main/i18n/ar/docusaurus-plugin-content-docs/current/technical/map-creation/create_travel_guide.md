@@ -1,8 +1,9 @@
 ---
-source-hash: 257260cc6f5df1e2457058808df69ed24a8aea6a73cb5b7dee08308979c295ac
+source-hash: d93d14b34275dc0a5e7f262f8293ed65af222ec0a7a2866d48f085cdca840627
 title: إنشاء دليل سفر مخصص
 versions: '*'
 ---
+
 import Translate from '@site/src/components/Translate.js';
 
 **_هذه المقالة بحاجة إلى مراجعة_**
@@ -11,8 +12,8 @@ import Translate from '@site/src/components/Translate.js';
 
 ### إعداد الملفات {#prepare-the-files}
 
-احفظ مسارك بامتداد *[.GPX](../osmand-file-formats/osmand-gpx.md)* والملف النصي بامتداد *.html*. لإنشاء *دليل السفر* المخصص الخاص بك بنجاح، يجب أن تكون أسماء ملف GPX وملف html متطابقة. على سبيل المثال، *Milan.gpx* و *Milan.html*.
-يمكن تنزيل مسارات GPX من الإنترنت أو يمكنك إنشاء واحد [باستخدام OsmAnd](../../user/plan-route/create-route.md) أو أي أداة أخرى لإنشاء GPX (مثل Brouter أو ما شابهها).
+احفظ مسارك بامتداد *[.GPX](../osmand-file-formats/osmand-gpx.md)* والملف النصي بامتداد *.html*. لإنشاء *دليل السفر* المخصص الخاص بك بنجاح، يجب أن تكون أسماء ملف GPX وملف html متطابقة. على سبيل المثال، *Milan.gpx* و *Milan.html*.  
+يمكن تنزيل مسارات GPX من الإنترنت أو يمكنك إنشاء واحد [باستخدام OsmAnd](../../user/plan-route/create-route.md) أو أي أداة أخرى لإنشاء GPX (مثل Brouter أو ما شابهها).  
 أضف النقاط التي ترغب في زيارتها إلى مسارك ثم احفظ هذا المسار كمسار GPX.
 
 اختيار مصدر نص دليلك يعود إليك تمامًا. يمكن أن يكون مقالًا في مدونة سفر، صفحة ويكيبيديا، إلخ. ما عليك سوى نسخ النص، ثم لصقه في محرر نصوص وحفظه بامتداد *.html*. تأكد من أن اسم مسار GPX وملف HTML متطابقان.

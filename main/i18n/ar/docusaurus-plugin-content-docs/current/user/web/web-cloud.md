@@ -1,5 +1,5 @@
 ---
-source-hash: 6d86091f99fcc3a40ed293334c95361fd6142d9eab867812422962bbd0783539
+source-hash: 3d7c0440f81fe7d7c68aa8cdc03f7757d017ff3c9522e4e2e9666eb2f8516db1
 sidebar_position: 2
 sidebar_label:  الحساب
 title: حساب OsmAnd

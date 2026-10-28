@@ -1,8 +1,9 @@
 ---
-source-hash: 856b27defd24e63764e7fed8d4ebb2d645fd0d1b4aec10804b2f835f0c0ec2e0
+source-hash: 6ec692ef2d49e44b3cbbd765dc588f2913d7072ca92f833de726302514647064
 sidebar_position: 4
 title:  عمليات الشراء عبر المنصات
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -14,26 +15,25 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
-
 ## عمليات الشراء المدعومة عبر المنصات {#supported-cross-platform-purchases}
 
 تدعم منتجات OsmAnd التالية حاليًا الاستخدام عبر منصات متعددة (Android، وiOS، والويب):
 
-- اشتراك **OsmAnd Pro**
-- اشتراك **Maps+**
+- اشتراك **OsmAnd Pro**  
+- اشتراك **Maps+**  
 - عملية شراء **Maps+** لمرة واحدة داخل التطبيق
 
-بدءًا من **إصدار OsmAnd 5.1**، الذي تم إصداره احتفالًا بالذكرى **السنوية الخامسة عشرة** لتأسيسنا، تم توسيع الوصول عبر المنصات ليشمل **Maps+** (المعروف سابقًا باسم *Unlimited*). في السابق، كان اشتراك [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) فقط هو الذي يدعم الاستخدام عبر المنصات.
+بدءًا من **إصدار OsmAnd 5.1**، الذي تم إصداره احتفالًا بالذكرى **السنوية الخامسة عشرة** لتأسيسنا، تم توسيع الوصول عبر المنصات ليشمل **Maps+** (المعروف سابقًا باسم *Unlimited*). في السابق، كان اشتراك [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) فقط هو الذي يدعم الاستخدام عبر المنصات.  
 
-لتفعيل الوصول عبر المنصات، يجب ربط عمليات الشراء بحسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login).
-يمكنك مقارنة جميع منتجات OsmAnd هنا: [الفرق بين عمليات الشراء](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)
+لتنشيط الوصول عبر المنصات، يجب ربط عمليات الشراء بحسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login).  
+يمكنك مقارنة جميع منتجات OsmAnd هنا: [difference between purchases](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)
 
-| **نوع المنتج** | **عبر المنصات** | **ملاحظات** |
+| **نوع المنتج**               | **عبر المنصات** | **ملاحظات**                                                                 |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|
-| **OsmAnd Pro** (اشتراك) | ✔ | يعمل بعد تسجيل الدخول إلى OsmAnd Cloud على Android و iOS والويب عند ربطه بالسحابة. |
-| **Maps+** (اشتراك) | ✔ | يمكن استخدامه على جميع المنصات، ولكن يجب تفعيله عبر OsmAnd Cloud **على جهاز الشراء**. |
-| **Maps+** (شراء لمرة واحدة) | ✔ | يمكن استخدامه على جميع المنصات، ولكن يجب تفعيله عبر OsmAnd Cloud **على جهاز الشراء**. |
-| **OsmAnd+** (تطبيق مستقل) | ✘ | غير قابل للنقل افتراضيًا بين المنصات، ويتطلب تسجيل الشراء يدويًا في حساب OsmAnd Cloud. للمساعدة، اتصل بـ support@osmand.net. |
+| **OsmAnd Pro** (اشتراك) | ✔                  | يعمل بعد تسجيل الدخول إلى OsmAnd Cloud على Android و iOS والويب عند ربطه بالسحابة. |
+| **Maps+** (اشتراك)      | ✔                  | يمكن استخدامه على جميع المنصات، ولكن يجب تفعيله عبر OsmAnd Cloud **على جهاز الشراء**.     |
+| **Maps+** (شراء لمرة واحدة) | ✔                  | يمكن استخدامه على جميع المنصات، ولكن يجب تفعيله عبر OsmAnd Cloud **على جهاز الشراء**. |
+| **OsmAnd+** (تطبيق مستقل)  | ✘                  | غير قابل للنقل افتراضيًا بين المنصات، ويتطلب تسجيل الشراء يدويًا في حساب OsmAnd Cloud. للمساعدة، اتصل بـ support@osmand.net. |
 
 
 ## كيف يعمل {#how-it-works}
@@ -46,10 +46,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 قم بتنفيذ هذه الخطوة على **الجهاز الذي أجريت عليه عملية الشراء** (Android أو iOS، الإصدار 5.0 أو أحدث):
 
-١. اذهب إلى حسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login):
+1. اذهب إلى حسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login):  
    _القائمة ← الإعدادات ← OsmAnd Cloud ← إنشاء حساب جديد / لدي حساب بالفعل_
 
-٢. بمجرد تسجيل الدخول، سيتم ربط عملية الشراء الخاصة بك لـ **Pro** أو **Maps+** تلقائيًا **بحسابك السحابي** وستُعلَّم بأنها **عبر المنصات**، *إذا لم تكن مرتبطة مسبقًا بحساب آخر.*
+2. بمجرد تسجيل الدخول، سيتم ربط عملية الشراء الخاصة بك لـ **Pro** أو **Maps+** تلقائيًا **بحسابك السحابي** وستُعلَّم بأنها **عبر المنصات**، *إذا لم تكن مرتبطة مسبقًا بحساب آخر.*
 
 
 
@@ -58,11 +58,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 ![Maps+ عبر المنصات](@site/static/img/purchases/cross_purchase.png)
 ![Maps+ عبر المنصات](@site/static/img/purchases/cross_purchase_1.png)
 
-١. اذهب إلى حسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login):
+1. اذهب إلى حسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login):  
    *القائمة ← الإعدادات ← OsmAnd Cloud ←* ***تسجيل الدخول بنفس الحساب***
 
-٢. ثم اذهب إلى:
-   *القائمة ← الإعدادات ← عمليات الشراء*
+2. ثم اذهب إلى:  
+   *القائمة ← الإعدادات ← عمليات الشراء*  
    يجب أن تكون عملية الشراء المرتبطة لـ **Pro أو Maps+** متاحة الآن.
 
 
@@ -70,8 +70,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 إذا لم تجد عملية الشراء الخاصة بك مدرجة:
 
-١. انقر على *القائمة ← الإعدادات ← عمليات الشراء ← استعادة عمليات الشراء*
-٢. تأكد من أنك قمت بتسجيل الدخول إلى **نفس حساب OsmAnd Cloud** المستخدم على الجهاز الأصلي.
+1. انقر على *القائمة ← الإعدادات ← عمليات الشراء ← استعادة عمليات الشراء*  
+2. تأكد من أنك قمت بتسجيل الدخول إلى **نفس حساب OsmAnd Cloud** المستخدم على الجهاز الأصلي.
 
 إذا استمرت المشكلة، اتصل بـ **support@osmand.net** وقم بتضمين ما يلي:
 
@@ -101,17 +101,17 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## مثال {#example}
 
-لقد اشتريت **Maps+** كعملية شراء لمرة واحدة داخل التطبيق في الإصدار المجاني من OsmAnd من [Google Play](https://play.google.com/store/apps/details?id=net.osmand).
+لقد اشتريت **Maps+** كعملية شراء لمرة واحدة داخل التطبيق في الإصدار المجاني من OsmAnd من [Google Play](https://play.google.com/store/apps/details?id=net.osmand).  
 لاحقًا، قررت التبديل إلى جهاز iPhone وترغب في استخدام **Maps+** مع [إصدار OsmAnd لنظام iOS](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257).
 
 لتفعيل عملية شراء Maps+ على نظام iOS:
 
-١. افتح OsmAnd على جهاز أندرويد الأصلي الخاص بك.
-٢. سجل الدخول إلى حسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login):
+1. افتح OsmAnd على جهاز أندرويد الأصلي الخاص بك.
+2. سجل الدخول إلى حسابك على [OsmAnd Cloud](../personal/osmand-cloud.md#login):  
    *القائمة ← الإعدادات ← OsmAnd Cloud ← إنشاء حساب جديد / لدي حساب بالفعل*
-٣. قم بتثبيت OsmAnd على جهاز iPhone الخاص بك من [متجر التطبيقات](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
-٤. سجل الدخول إلى **نفس حساب OsmAnd Cloud** على جهاز iPhone الخاص بك.
-٥. انتقل إلى *القائمة ← الإعدادات ← عمليات الشراء* وتأكد من أن **Maps+** مدرج كنشط.
+3. قم بتثبيت OsmAnd على جهاز iPhone الخاص بك من [متجر التطبيقات](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)
+4. سجل الدخول إلى **نفس حساب OsmAnd Cloud** على جهاز iPhone الخاص بك.
+5. انتقل إلى *القائمة ← الإعدادات ← عمليات الشراء* وتأكد من أن **Maps+** مدرج كنشط.
 
 بهذا يكتمل التفعيل عبر المنصات لعملية الشراء الخاصة بك. يمكنك الآن متابعة استخدام **Maps+** على جهازك الجديد.
 
@@ -120,7 +120,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## مقالات ذات صلة {#related-articles}
 
-- [OsmAnd Cloud](../personal/osmand-cloud.md)
-- [استكشاف أخطاء عمليات الشراء وإصلاحها](../troubleshooting/purchases_payments.md)
+- [OsmAnd Cloud](../personal/osmand-cloud.md)  
+- [استكشاف أخطاء عمليات الشراء وإصلاحها](../troubleshooting/purchases_payments.md)  
 - [الفرق بين عمليات الشراء على أندرويد](./android.md#difference-between-purchases-android)
 - [الفرق بين عمليات الشراء على iOS](./ios.md#difference-between-purchases-ios)

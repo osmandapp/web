@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  أندرويد أوتو
 ios: false
@@ -252,7 +252,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **تحذير الوصول الخاص**
 
 إذا كانت وجهتك في منطقة خاصة أو ذات وصول مقيد، يتم عرض تحذير ويمكنك الاختيار:
-- **السماح**. تستمر الملاحة باستخدام الطرق الخاصة إذا سُمح بها أو إذا كان لديك وصول.
+- **السماح**. تستمر الملاحة باستخدام الطرق الخاصة إذا سُمِح بها أو إذا كان لديك وصول.
 - **إلغاء**. يتم إنهاء طلب الملاحة واستعادة الشاشة السابقة.
 
 
@@ -331,19 +331,26 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 يوفر *أندرويد أوتو* و OsmAnd القدرة على ضبط الخريطة لتتناسب مع ظروف الإضاءة. في *وضع الخريطة النهاري*، يظل نظام الألوان ساطعًا ومتباينًا، مما يسهل قراءته حتى في ضوء الشمس الساطع. في *الوضع الليلي*، تصبح الخرائط أغمق، مما يساعد السائق على التنقل بشكل أفضل في الظلام.  
 
-يحتوي OsmAnd على خيارات [وضع الخريطة](../map/vector-maps.md#map-mode)، ولكن عند استخدام التطبيق في *أندرويد أوتو*، يتم تجاهل هذه الخيارات. بدلاً من ذلك، يتم استخدام الوضع الذي حددته في إعدادات نظام *أندرويد أوتو* للخرائط.
+يحتوي OsmAnd على خيارات [وضع الخريطة](../map/vector-maps.md#map-mode) الخاصة به في *أندرويد أوتو*، منفصلة عن خيارات التطبيق على جهازك. لتغييرها، انتقل إلى *أندرويد أوتو (OsmAnd) ← زر الإعدادات ← وضع الخريطة*، اختر خيارًا، ثم اضغط *تطبيق*. ينتقل الخريطة إلى الوضع المحدد بعد الضغط على *تطبيق*. إذا غادرت الشاشة باستخدام سهم الرجوع دون الضغط على *تطبيق*، يبقى الوضع السابق محددًا.
 
-- حدد الوضع النهاري أو الوضع الليلي للحفاظ على عرض الخريطة دون تغيير.
-- إذا كنت تريد أن يتغير وضع عرض الخريطة حسب الوقت من اليوم، فحدد الوضع التلقائي.  
+- حدد *نهاري* أو *ليلي* للحفاظ على عرض الخريطة دون تغيير، بغض النظر عن إشارات سيارتك.
+- إذا كنت تريد أن يتغير وضع عرض الخريطة تلقائيًا بناءً على إشارات سيارتك، فحدد *تلقائي* (الافتراضي).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### مكبر الخريطة {#map-magnifier}
+
+![مكبر خريطة أندرويد أوتو](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+يغير *مكبر الخريطة* تكبير الخريطة على شاشة *أندرويد أوتو*. لتغييره، انتقل إلى *أندرويد أوتو (OsmAnd) ← زر الإعدادات ← مكبر الخريطة*، اختر قيمة من 50% إلى 125%، ثم اضغط *تطبيق*. تظهر القيمة الحالية تحت *مكبر الخريطة* في قائمة الإعدادات.  
+
+لمعرفة كيفية تأثير التكبير على عرض الخريطة، راجع [مكبر الخريطة](../map/vector-maps.md#map-magnifier).
 
 
 ### تقسيم الشاشة {#split-screen}
@@ -357,8 +364,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ٣. ابحث عن النوافذ المتعددة واختر التبديل.
 ٤. عد إلى الشاشة الرئيسية.  
 
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 في إعدادات أندرويد أوتو، يمكنك تغيير موضع شريط المهام وتخطيط الشاشة الرئيسية:
