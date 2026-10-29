@@ -1,5 +1,5 @@
 ---
-source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -28,7 +28,7 @@ Alle wijzigingen worden automatisch gesynchroniseerd via [OsmAnd Cloud](../perso
 
 Het is een betaalde functie <ProFeature/>. Om het te gebruiken, log in op uw OsmAnd Pro-account.
 
-![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
+![Track-aanmelding](@site/static/img/web/track_login.png) ![Track-aanmelding](@site/static/img/web/track_login_2.png)
 
 De Tracks-sectie bevat alle track-gerelateerde tools en acties. De volgende opties zijn beschikbaar:
 
@@ -50,11 +50,15 @@ Een track importeren met slepen en neerzetten:
 - Sleep een of meer GPX-bestanden vanaf uw computer.
 - Zet de bestanden neer op de kaart of in een specifieke trackmap.
 
-Wanneer een bestand over de kaart wordt gesleept, wordt het beschikbare neerzetgebied gemarkeerd. Als u het bestand rechtstreeks op de kaart neerzet, wordt het geïmporteerd in de Import-map. Als u het op een bestaande map neerzet, wordt het in die map geïmporteerd.
+Wanneer een bestand over de kaart wordt gesleept, wordt het beschikbare neerzetgebied gemarkeerd. Als u het bestand rechtstreeks op de kaart neerzet, wordt het geïmporteerd in de Import-map. Als u het op een bestaande map neerzet, wordt het in die map geïmporteerd. Zonder actief [OsmAnd Pro](../purchases/index.md)-abonnement opent het neerzetten van een bestand een dialoogvenster waarin wordt uitgelegd dat het importeren van tracks OsmAnd Pro vereist.
+
+De maximale bestandsgrootte is 20 MB voor GPX- en KML-bestanden en 2 MB voor KMZ-bestanden. Grotere bestanden worden niet geïmporteerd en er verschijnt een waarschuwing. Wanneer u meerdere bestanden tegelijk importeert, worden alle geweigerde bestanden in één bericht vermeld. Tracks groter dan 20 MB die al in OsmAnd Cloud zijn opgeslagen, kunnen ook niet op het web worden geopend, en een melding stelt voor ze in de OsmAnd-app te openen.
 
 Na het importeren verschijnt de track in de tracklijst, wordt deze gesynchroniseerd met [OsmAnd Cloud](../personal/osmand-cloud.md) en beschikbaar op alle apparaten die verbonden zijn met hetzelfde account.
 
-![Drag and drop](@site/static/img/web/drag_and_drop.png)
+Als een track niet kan worden geïmporteerd of opgeslagen in OsmAnd Cloud, toont een foutdialoog de bestandsnaam en, indien beschikbaar, de reden die door de server is gemeld.
+
+![Slepen en neerzetten](@site/static/img/web/drag_and_drop.png)
 
 
 ## Zichtbaar op de kaart {#visible-on-the-map}
@@ -65,12 +69,12 @@ Tracks die zichtbaar zijn op de kaart worden blauw gemarkeerd, terwijl tracks di
 
 Onder de hoofdlijst toont de sectie **Recent zichtbaar** tracks die eerder op de kaart zijn getoond. Dit maakt het gemakkelijk om een track weer in te schakelen zonder deze opnieuw te zoeken in uw mappen of in OsmAnd Cloud.
 
-![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
+![Zichtbaar op de kaart](@site/static/img/web/visible_new.png) ![Zichtbaar op de kaart](@site/static/img/web/visible_new_2.png)
 
 
 ## Menu van de track-map {#track-folder-menu}
 
-![Track folder menu](@site/static/img/web/collection_new.png)
+![Trackmapmenu](@site/static/img/web/collection_new.png)
 
 Klik op de driepunt-knop (⋮) om het menu *Track-map* te openen. Van hieruit kunt u:
 
@@ -81,7 +85,7 @@ Klik op de driepunt-knop (⋮) om het menu *Track-map* te openen. Van hieruit ku
  - Hernoemen. Opent een dialoog waarin u een nieuwe naam voor de geselecteerde map kunt invoeren. De wijziging wordt gesynchroniseerd met OsmAnd Cloud en verschijnt op alle verbonden apparaten.
  - Verwijderen. Opent een bevestigingsdialoog. Het verwijderen van een map verwijdert deze permanent samen met alle tracks die het bevat. Deze actie wordt ook gesynchroniseerd via OsmAnd Cloud.
 
-![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+![Trackmapmenu](@site/static/img/web/collection_rename.png) ![Trackmapmenu](@site/static/img/web/collection_delete.png)
 
 ### Slimme mappen {#smart-folders}
 
@@ -98,7 +102,7 @@ De synchronisatie van Slimme mappen kan variëren afhankelijk van het platform e
 
 Het drie-puntenmenu (⋮) biedt extra acties voor de Slimme map. U kunt de map *Downloaden als OSF*, *Downloaden als OBF-verzameling*, *Hernoemen* of *Verwijderen*.
 
-![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
+![Slimme mappen](@site/static/img/web/smart_folder_new.png) ![Slimme mappen](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Cloud-tracks {#cloud-tracks}
@@ -119,11 +123,11 @@ De volgende functies zijn beschikbaar na het kiezen van een cloud-track:
 - *Oppervlak* - toont de typen track-oppervlakken langs de route.
 - *Gladheid* - toont segmentgladheid op basis van OSM-tags.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
+![OsmAnd Web-cloud GPX bewerken](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web-cloud GPX bewerken](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Gerelateerde artikelen {#related-articles}
 
 - [Manage Tracks](../personal/tracks/manage-tracks.md)
-- [Tracks Analyzer](../web/web-tracks-analyzer.md)
+- [Tracks-analysator](../web/web-tracks-analyzer.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)

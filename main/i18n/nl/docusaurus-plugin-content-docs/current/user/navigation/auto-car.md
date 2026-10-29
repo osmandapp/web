@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -331,19 +331,26 @@ Om [**Route-informatie** voor een tussenliggend punt (volgende stop)](#next-turn
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* en OsmAnd bieden de mogelijkheid om de kaart aan te passen aan de lichtomstandigheden. In de *Dagkaartmodus* blijft het kleurenschema helder en contrastrijk, waardoor het zelfs in fel zonlicht gemakkelijker te lezen is. In de *Nachtmodus* worden de kaarten donkerder, wat de bestuurder helpt om beter te navigeren in het donker.  
 
-OsmAnd heeft [kaartmodus](../map/vector-maps.md#map-mode)-opties, maar wanneer u de app in *Android Auto* gebruikt, worden deze opties genegeerd. In plaats daarvan wordt de modus gebruikt die u hebt geselecteerd in de systeeminstellingen van *Android Auto* voor kaarten.
+OsmAnd in *Android Auto* heeft een eigen instelling voor de kaartmodus, los van de [kaartmodus](../map/vector-maps.md#map-mode)-opties in de OsmAnd-app op uw apparaat. Om deze te wijzigen, gaat u naar *Android Auto (OsmAnd) → Instellingenknop → Kaartmodus*, selecteert u een optie en tikt u op *Toepassen*. De kaart schakelt over naar de geselecteerde modus nadat u op *Toepassen* hebt getikt. Als u het scherm verlaat met de terugpijl zonder op *Toepassen* te tikken, blijft de vorige modus geselecteerd.
 
-- Selecteer de Dagmodus of Nachtmodus om de kaartweergave ongewijzigd te houden.
-- Als u wilt dat de kaartweergavemodus schakelt afhankelijk van het tijdstip van de dag, selecteer dan de Automatische modus.  
+- Selecteer *Dag* of *Nacht* om de kaartweergave ongewijzigd te houden, ongeacht de signalen van uw voertuig.
+- Als u wilt dat de kaartweergavemodus automatisch schakelt op basis van signalen van uw voertuig, selecteer dan *Automatisch* (standaard).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Kaartvergroting {#map-magnifier}
+
+![Android Auto-kaartvergroting](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+*Kaartvergroting* wijzigt de vergroting van de kaart op het *Android Auto*-scherm. Om deze te wijzigen, gaat u naar *Android Auto (OsmAnd) → Instellingenknop → Kaartvergroting*, selecteert u een waarde van 50% tot 125% en tikt u op *Toepassen*. De huidige waarde wordt weergegeven onder *Kaartvergroting* in de lijst met instellingen.  
+
+Zie [Kaartvergroting](../map/vector-maps.md#map-magnifier) voor meer informatie over hoe vergroting de kaartweergave beïnvloedt.
 
 
 ### Gesplitst scherm {#split-screen}
@@ -356,9 +363,6 @@ De OsmAnd-app kan worden geopend en gebruikt om te navigeren in *Android Auto* o
 2. Tik op Instellingen.
 3. Zoek Multi-venster en kies de schakelaar.
 4. Keer terug naar het startscherm.  
-
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 In de instellingen van Android Auto kunt u de positie van de taakbalk en de indeling van het startscherm wijzigen:

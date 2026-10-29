@@ -1,5 +1,5 @@
 ---
-source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
+source-hash: 40444298714f3efdf33ba91bcf4a1ae66aa667d887d5d943cfe77e1fa53575ee
 title:  Tracks
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ U kunt de zichtbaarheid van tracks beheren door te kiezen welke u wilt weergeven
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
+![Maptracks configureren Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Maptracks configureren Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,shared
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
+![Maptracks configureren iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Maptracks configureren iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ De optie *Kaart configureren* stelt u in staat om snel de weergave van alle rece
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![Mijn Plaatsen met tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → tik lang op de gekozen GPX-track → Toon op kaart*
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Contextmenu van een track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
@@ -93,13 +93,13 @@ In [Mijn Plaatsen *→* tabblad Tracks](../../personal/tracks/manage-tracks.md#m
 
 <TabItem value="android" label="Android">
 
-![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![Overzicht trackcontextmenu Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![Overzicht trackcontextmenu iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
@@ -116,7 +116,7 @@ Wanneer u een track op de kaart selecteert of het [track contextmenu](./track-co
 
 Ga naar: *Tik op de track → Tabblad Track → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Trackmenu analyseren op kaart Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Trackmenu analyseren op kaart afstand Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -124,7 +124,7 @@ Ga naar: *Tik op de track → Tabblad Track → <Translate android="true" ids="a
 
 Ga naar: *Tik op de track → Tabblad Track → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Trackmenu analyseren op kaart](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Trackmenu analyseren op kaart ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -145,13 +145,13 @@ Deze tool biedt een gedetailleerde analyse van [track](../../map/tracks/track-co
 
 <TabItem value="android" label="Android">
 
-![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+![Trackmenu analyseren op kaart 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Trackmenu analyseren op kaart 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+![Trackmenu analyseren op kaart](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Trackmenu analyseren op kaart ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 

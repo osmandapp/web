@@ -1,8 +1,8 @@
 ---
-source-hash: 6d86091f99fcc3a40ed293334c95361fd6142d9eab867812422962bbd0783539
+source-hash: 3d7c0440f81fe7d7c68aa8cdc03f7757d017ff3c9522e4e2e9666eb2f8516db1
 sidebar_position: 2
 sidebar_label:  Account
-title: OsmAnd Account
+title: OsmAnd-account
 ---
 
 import Tabs from '@theme/Tabs';
@@ -32,11 +32,11 @@ Om toegang te krijgen tot de OsmAnd Web-functies, moet u een account aanmaken. G
 - Selecteer **Nieuw account aanmaken**. Het dialoogvenster Nieuw account aanmaken opent.
 - In het veld **E-mail** voert u het e-mailadres in dat u voor uw OsmAnd-account wilt gebruiken en klikt u op **Doorgaan**.
 - Er wordt een verificatiecode naar dit e-mailadres gestuurd. Controleer uw inbox (en de map Ongewenst e-mail indien nodig).
-- In het volgende dialoogvenster voert u de verificatiecode in en klikt u op **Doorgaan** om uw e-mail te bevestigen. Als u de code niet hebt ontvangen, gebruikt u de koppeling **Ik heb de verificatiecode niet ontvangen** en volgt u de instructies.
+- In het volgende dialoogvenster voert u de verificatiecode in en klikt u op **Doorgaan** om uw e-mail te bevestigen. Als u de code niet hebt ontvangen, gebruikt u de koppeling **Ik heb geen verificatiecode ontvangen** en volgt u de instructies.
 
 Nadat de code is geverifieerd, is uw webaccount aangemaakt en bent u automatisch ingelogd.
 
-![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
+![Web-aanmelding](@site/static/img/web/web_sign_up.png) ![Web-aanmelding](@site/static/img/web/web_ver_code.png)
 
 
 ### Inloggen {#login}
@@ -67,7 +67,7 @@ Als u een kopie van al uw gegevens wilt opslaan, gebruikt u **Alles downloaden**
 
 Klik op **Back-up downloaden** om de export te starten en het archief op uw computer op te slaan.
 
-![Web Account](@site/static/img/web/web_download_all.png)
+![Web-account](@site/static/img/web/web_download_all.png)
 
 ### Betalingen en aankopen {#payments-and-purchases}
 
@@ -91,7 +91,7 @@ Als er nog geen aankopen aan uw account zijn gekoppeld, toont deze sectie een le
 
 Voor meer details over het gebruik van uw aankopen op verschillende platforms, leest u over [cross-platform toegang](../purchases/cross.md).
 
-![Web Account](@site/static/img/web/web_purchases.png)
+![Web-account](@site/static/img/web/web_purchases.png)
 
 ### Cloud-synchronisatie {#cloud-sync}
 
@@ -103,7 +103,7 @@ De beschikbaarheid van Cloud-synchronisatie hangt af van uw accounttype:
 - [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – synchroniseert [Favorieten](../web/web-favorites.md) en toont ze op het web.
 - OsmAnd Pro – synchroniseert [Tracks](../web/web-tracks.md), Favorieten en [Back-ups](#my-data), en ontgrendelt volledige webtoegang tot cloud-gegevens.
 
-![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+![Web-track](@site/static/img/web/web_track_start.png) ![Web-track](@site/static/img/web/web_track_pro.png)
 
 ### OsmAnd Cloud {#osmand-cloud}
 
@@ -113,11 +113,11 @@ De optie **Wijzigingen** toont een chronologische lijst van bestanden die in uw 
 
 De optie **Prullenbak** bevat bestanden die uit OsmAnd Cloud zijn verwijderd. De lijst is ook gegroepeerd per maand en toont wanneer elk bestand is verwijderd en vanaf welk apparaat. Gebruik het driepuntmenu naast een bestand om een kopie te *Downloaden*, *Herstellen uit prullenbak* (het bestand terugzetten naar OsmAnd Cloud zodat het weer beschikbaar wordt in uw gegevens), of *Onmiddellijk verwijderen* om het permanent te verwijderen. Dit helpt ongelukken met gegevensverlies te voorkomen, terwijl u nog steeds cloudopslag kunt vrijmaken wanneer u zeker weet dat een bestand niet meer nodig is. U kunt ook alle verwijderde items tegelijk wissen door op het Prullenbak-icoon in de kop van het Prullenbak-paneel te klikken. Dit opent het dialoogvenster **Prullenbak legen**, waarin u de verwijdering bevestigt om alle bestanden permanent uit de Prullenbak te verwijderen.
 
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+![Web-cloud](@site/static/img/web/web_changes.png) ![Web-cloud](@site/static/img/web/web_trash.png)
 
-### Gekoppelde apps {#connected-apps}
+### Verbonden apps {#connected-apps}
 
-De sectie **Gekoppelde apps** stelt u in staat externe services te koppelen aan uw OsmAnd-account. Momenteel ondersteunt het integratie met [Garmin Connect™](https://connect.garmin.com/app/), waardoor automatische synchronisatie van Garmin-activiteiten mogelijk is. Om deze te openen, gaat u naar: *OsmAnd Web Kaart → Account → Gekoppelde apps*.
+De sectie **Verbonden apps** stelt u in staat externe services te koppelen aan uw OsmAnd-account. Momenteel ondersteunt het integratie met [Garmin Connect™](https://connect.garmin.com/app/), waardoor automatische synchronisatie van Garmin-activiteiten mogelijk is. Om deze te openen, gaat u naar: *OsmAnd Web Kaart → Account → Verbonden apps*.
 
 De integratie met Garmin Connect is alleen beschikbaar voor [OsmAnd Pro](https://osmand.net/docs/user/purchases/) gebruikers. Als u geen actief Pro-abonnement hebt, opent het selecteren van het Garmin Connect-item de Prijzen-pagina.
 
@@ -138,9 +138,9 @@ Om uw Garmin Connect™-account te ontkoppelen, gaat u naar *Instellingen → On
 
 ### Wachtwoord opnieuw instellen {#reset-password}
 
-Als u uw wachtwoord niet meer weet, gebruikt u de koppeling **Ik heb geen of ben mijn wachtwoord vergeten** in het inlogdialoogvenster. Dit opent het paneel **Wachtwoord wijzigen of opnieuw instellen**. Voer het e-mailadres in dat u hebt gebruikt om uw account aan te maken en klik op **Doorgaan**. Er wordt een bericht met een verificatiecode naar dit e-mailadres gestuurd. Op het volgende scherm typt u de verificatiecode en uw nieuwe wachtwoord, en selecteert u vervolgens **Doorgaan** om te bevestigen. Wanneer de code is geaccepteerd, is uw wachtwoord bijgewerkt en kunt u inloggen op OsmAnd Web met de nieuwe inloggegevens.
+Als u uw wachtwoord niet meer weet, gebruikt u de koppeling **Ik heb geen wachtwoord of ben het vergeten** in het inlogdialoogvenster. Dit opent het paneel **Wachtwoord wijzigen of opnieuw instellen**. Voer het e-mailadres in dat u hebt gebruikt om uw account aan te maken en klik op **Doorgaan**. Er wordt een bericht met een verificatiecode naar dit e-mailadres gestuurd. Op het volgende scherm typt u de verificatiecode en uw nieuwe wachtwoord, en selecteert u vervolgens **Doorgaan** om te bevestigen. Wanneer de code is geaccepteerd, is uw wachtwoord bijgewerkt en kunt u inloggen op OsmAnd Web met de nieuwe inloggegevens.
 
-![Web Account](@site/static/img/web/web_password.png)
+![Web-account](@site/static/img/web/web_password.png)
 
 ### E-mailadres wijzigen {#change-email-address}
 
@@ -149,11 +149,11 @@ Ga naar *Algemeen Menu → Account → E-mail → ⋮ → E-mail wijzigen*
 
 Het dialoogvenster E-mail wijzigen verschijnt. Er wordt een verificatiecode naar het huidige e-mailadres gestuurd. Voer deze code in het veld **Code van Oude E-mail** in, specificeer het nieuwe adres in **Nieuwe E-mail**, en selecteer vervolgens **Volgende**. Om veiligheidsredenen wordt een bevestigingsbericht naar uw nieuwe e-mailadres gestuurd waarin u wordt geïnformeerd dat het account-e-mailadres is bijgewerkt.
 
-![Web Account](@site/static/img/web/web_email_new.png)
+![Web-account](@site/static/img/web/web_email_new.png)
 
 ### Uitloggen en account verwijderen {#logout-and-delete}
 
-![Web Account](@site/static/img/web/web_logout_new.png)
+![Web-account](@site/static/img/web/web_logout_new.png)
 
 Het OsmAnd Account-paneel bevat bedieningselementen voor het beëindigen van de huidige websessie en het permanent verwijderen van het account.
 
@@ -161,7 +161,7 @@ Om uit te loggen, opent u OsmAnd Account en gebruikt u de knop **Uitloggen** in 
 
 Om een account te verwijderen, selecteert u **Account verwijderen** onderaan het OsmAnd Account-paneel. Er verschijnt een bevestigingsdialoogvenster met de boodschap *“Weet u zeker dat u dit wilt doen?”* en een korte uitleg dat alle gegevens en accountdetails worden verwijderd uit OsmAnd Cloud en dat secundaire apparaten de toegang tot betaalde functies verliezen. Er wordt een verificatiecode naar het account-e-mailadres gestuurd. Voer de code in het veld Code van E-mail in en kies **DIT ACCOUNT VERWIJDEREN** om het proces te voltooien. Deze bewerking is permanent en kan niet worden ongedaan gemaakt.
 
-![Web Account](@site/static/img/web/web_delete.png)
+![Web-account](@site/static/img/web/web_delete.png)
 
 
 ## Gerelateerde artikelen {#related-articles}

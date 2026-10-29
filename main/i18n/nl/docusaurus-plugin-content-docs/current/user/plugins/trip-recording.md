@@ -1,5 +1,5 @@
 ---
-source-hash: 0908961f227fa1a892804774f35b6e16c127cf8034093323cc379c362624f911
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title:  Ritten Registreren
 ---
@@ -107,7 +107,7 @@ Het startdialoogvenster wordt geopend als de optie **<Translate ios="true" ids="
 - **Onthoud mijn keuze** (*iOS*). Indien ingeschakeld, start de trackregistratie automatisch, zonder te vragen om extra instellingen of bevestiging. Als u de opname-instellingen wilt wijzigen voordat u een nieuwe track start, start dan de plug-in Ritten Registreren opnieuw om het instellingenmenu weer te laten verschijnen.
 
 
-### Launcher (Android) {#launcher-android}
+### Startscherm (Android) {#launcher-android}
 
 ![Contextmenu van pictogram](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Pictogram Opname Starten](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
@@ -134,7 +134,7 @@ Voor *Stoppen / Opslaan / Pauzeren*:
 
 - Om **Opslaan, Pauzeren, een nieuw segment Starten** of de opname **Voltooien**, gebruik de [Snelle Actie](../widgets/quick-action.md#add-and-delete-actions) knoppen. Ga naar *Menu → Scherm configureren → Aangepaste knoppen → Snelle actie → Actie toevoegen → [Mijn Plaatsen](../widgets/quick-action.md#my-places)* en voeg een of meer snelle actieknoppen toe.
 
-- (*Alleen Android*) Om een opnametrack te **Pauzeren** of **Opslaan**, gebruik de systeem[melding](#notifications) in het meldingengebied van uw apparaat.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Alleen Android*) Om een opnametrack te **Pauzeren** of **Opslaan**, gebruik de systeem[melding](#notifications) in het meldingengebied van uw apparaat.<br/><br/> ![stoppen-opslaan-pauzeren](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Overzichtsscherm {#overview-screen}
@@ -292,7 +292,7 @@ Voordat u begint met het volgen van uw ritten, moet u de **plug-in Ritten Regist
 | **Opnames automatisch splitsen na onderbreking** | Splitst tracks automatisch op basis van tijdsonderbrekingen tussen opgenomen punten. <ul><li>Een nieuw segment begint na een onderbreking van 6 minuten.</li><li>Een nieuwe track begint na een onderbreking van 2 uur.</li><li>Een nieuw bestand begint wanneer de datum verandert.</li><li>Onderbrekingen kunnen het gevolg zijn van GPS-signaalverlies, lage snelheid of configuratie-instellingen.</li></ul><details><summary>*Opmerking*</summary>Een onderbreking wordt geïdentificeerd wanneer er geen punten worden opgenomen. Dit kan gebeuren omdat de locatie niet wordt gedetecteerd of omdat deze wordt gedetecteerd maar niet wordt opgenomen. Verschillende factoren kunnen dit veroorzaken, waaronder zwakke GPS-signalen door slechte weersomstandigheden, of de bewegingssnelheid die onder de geconfigureerde drempel valt. In dergelijke gevallen, hoewel het apparaat de locatie kan detecteren, wordt deze niet opgenomen.<br/><br/>Deze onderbrekingen in opgenomen gegevens kunnen leiden tot de aanmaak van een nieuw segment binnen dezelfde track, een nieuwe track in hetzelfde bestand, of een nieuw GPX-bestand binnen één opname. Dit wordt beheerd binnen één start/stop opnamesessie.</details> |
 | **Voorkom standalone logging** (*Android*) | Pauzeert de trackregistratie wanneer de OsmAnd-app wordt afgesloten (via *recente apps*). De achtergrondindicatie wordt niet weergegeven in het Android-meldingspaneel. |
 | **Inclusief koers** | Registreert de koers (bewegingsrichting) voor elk punt in het GPX-bestand. De koers is de richting waarin het apparaat wijst, wat kan verschillen van de bewegingsrichting door externe factoren zoals wind of slippen. |
-| **Activiteit**  | De optie stelt u in staat om een [activiteitstype](../map/tracks/track-context-menu.md#ttrack-activity-type) voor een profiel vooraf te selecteren, dat vervolgens automatisch wordt toegepast op alle opgenomen tracks. |
+| **Activiteit**  | De optie stelt u in staat om een [activiteitstype](../map/tracks/track-context-menu.md#track-activity-type) voor een profiel vooraf te selecteren, dat vervolgens automatisch wordt toegepast op alle opgenomen tracks. |
 | **Externe sensoren** <br/> *Plug-in moet ingeschakeld zijn* | Gegevens van [externe sensoren](../plugins/external-sensors.md#trip-recording) zoals *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, of *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* worden gelogd in het GPX-bestand. *Afstands*gegevens worden niet opgenomen op Android of iOS. Alleen weergegeven wanneer de [plug-in Externe Sensoren](../plugins/external-sensors.md) is ingeschakeld. |
 | **Voertuigmetrieken** <br/> *Plug-in moet ingeschakeld zijn* | Gegevens van een [OBD-II scanner](../plugins/vehicle-metrics.md#trip-recording) worden gelogd in het GPX-bestand. Alleen weergegeven wanneer de [plug-in Voertuigmetrieken](../plugins/vehicle-metrics.md) is ingeschakeld.<br />*Opmerking*: U kunt toevoegen welke metrieken u wilt opnemen in het GPX-bestand uit de lijst: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Opslagmap voor tracks** (*Android*) | Bepaalt waar in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* opgenomen tracks worden opgeslagen. Opties zijn onder meer het opslaan van alle tracks in de map Rec of het organiseren ervan per maand, zoals Rec/jjjjj-mm. |
@@ -432,6 +432,33 @@ Als de huidige opname nog geen stijgings- of dalingssegment bevat, tonen widgets
 
 
 ### Afstand (Start-Stop) {#distance-start-stop}
+
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
 
 | |
 |-----------|

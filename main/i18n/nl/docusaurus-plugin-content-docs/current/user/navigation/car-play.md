@@ -1,5 +1,5 @@
 ---
-source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
+source-hash: 9f605668d58af560cd42ef64d15f56577a03661cd8b6c24cb599d9fe82542af1
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -232,7 +232,7 @@ Om gesproken aanwijzingen te configureren volgens het geselecteerde profiel, moe
 
 ### Navigatie-waarschuwingen {#navigation-alerts}
 
-![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+![Ontbrekende waarschuwing](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Privé-waarschuwing](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
 
 Handige waarschuwingen worden automatisch weergegeven voordat de navigatie begint wanneer extra actie nodig is om de route te berekenen. Deze waarschuwingen helpen u routeringsproblemen op te lossen voordat de navigatie begint.
 
@@ -333,6 +333,20 @@ U kunt kiezen uit de volgende weergavemodi:
 - **Zonsopgang/zonsondergang** — De kaart schakelt automatisch tussen lichte en donkere thema's op basis van de berekende zonsopgang- en zonsondergangstijden voor uw huidige locatie.
 
 **Opmerking:** De instelling Kaartmodus in CarPlay heeft alleen invloed op de kaartweergave in CarPlay. Het verandert de Kaartmodus niet op uw telefoonscherm.
+
+### Kaartoriëntatie {#map-orientation}
+
+![Kaartoriëntatie](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+De instelling *Kaartoriëntatie* bepaalt hoe de kaart draait op het CarPlay-scherm. Om deze instelling te openen, tikt u op de knop *Instellingen* in de CarPlay-navigatiebalk en selecteert u vervolgens *Kaartoriëntatie*. De huidige oriëntatie wordt weergegeven als de detailtekst van de rij.
+
+U kunt kiezen uit de volgende oriëntatiemodi:
+- **Handmatig gedraaid** — De kaart draait niet automatisch.
+- **Bewegingsrichting** — De kaart draait mee met uw rijrichting.
+- **Kompasrichting** — De kaart draait mee met het kompas van de iPhone, zodat het noorden van de kaart overeenkomt met het echte noorden.
+- **Noord boven** — Het noorden blijft altijd bovenaan het scherm.
+
+**Opmerking:** Kaartoriëntatie is een profielinstelling die wordt gedeeld tussen CarPlay en de OsmAnd-app op uw iPhone. Een wijziging op het ene scherm wordt ook op het andere toegepast. Voor meer informatie raadpleegt u het artikel [Kaartoriëntatiemodi](../widgets/map-buttons.md#map-orientation-modes).
 
 ### Locatiepositie in CarPlay {#location-position-in-carplay}
 

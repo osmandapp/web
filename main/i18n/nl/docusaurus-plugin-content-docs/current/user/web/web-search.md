@@ -1,5 +1,5 @@
 ---
-source-hash: cd5ee4063d6f696a2707a1c3427de7ad82005454c2015da463bd27c2e760db67
+source-hash: 67e24e2d76639e1ba3e1dbe3fc8cff417ee3ff06770c41d09f400cac219c9cdf
 sidebar_position: 10
 sidebar_label:  Zoeken
 title: Zoeken op de Website
@@ -24,7 +24,7 @@ Het **Zoekmenu** is toegankelijk via het zijpaneel of via het zoekpictogram 🔍
 - [Categorieënsectie](#categories). Blader door gecategoriseerde opties voor eenvoudigere POI-zoekopdrachten.  
 - [Verkennen sectie](#explore). Bekijk populaire POI's voor het huidige kaartcentrum en verken plaatsen met foto's op de kaart.
 
-![Search menu](@site/static/img/web/search.png)
+![Zoekmenu](@site/static/img/web/search.png)
 
 ## Zoekopties {#search-options}
 
@@ -32,15 +32,17 @@ Het **Zoekmenu** is toegankelijk via het zijpaneel of via het zoekpictogram 🔍
 
 Gebruik de **Zoekbalk** om specifieke plaatsen, punten van interesse, [favorieten](../web/web-favorites.md) en [tracks](../web/web-tracks.md) op naam te vinden. Klik op het zoekpictogram, voer uw query in en selecteer een resultaat uit de lijst. Het selecteren van een POI opent het [POI-contextmenu](#poi-context-menu), terwijl het selecteren van een favoriet of track de bijbehorende details opent, waar u informatie kunt bekijken en snelle acties kunt uitvoeren.
 
-Als u zoekt op een categorienaam, toont het eerste resultaat mogelijk de bijbehorende POI-categorie. Klik op de categorie om het [Categorieën zoeken](#categories)-venster te openen.
+U kunt ook meerdere delen in één zoekopdracht combineren. Voer een categorie of een merk in samen met een plaatsnaam, bijvoorbeeld `Hotel Berlin` of `Billa Bratislava`, om overeenkomende POI's op die plaats te vinden. Voer twee categorieën of een categorie en een eigenschap in, bijvoorbeeld `Fuel Diesel` of `Cafe Vegan`, om plaatsen te vinden die aan beide voldoen.
 
-![Search Options](@site/static/img/web/search_bar.png)
+Als u zoekt op een categorienaam, toont het eerste resultaat mogelijk de bijbehorende POI-categorie. Categorienamen kunnen in verschillende talen worden ingevoerd, bijvoorbeeld `bank` of `банк`. Klik op de categorie om het [Categorieën zoeken](#categories)-venster te openen.
+
+![Zoekopties](@site/static/img/web/search_bar.png)
 
 ### Categorieën {#categories}
 
 Gebruik **Categorieën** om POI's op type te doorzoeken en ze op de kaart weer te geven. Het menu toont zes populaire categorieën voor snelle toegang. Als u meer opties nodig hebt, klikt u op Alles weergeven om de volledige lijst met 18 beschikbare categorieën te openen. Het selecteren van een categorie geeft overeenkomende POI's weer op de kaart; het selecteren van een POI opent het [POI-contextmenu](#poi-context-menu).
 
-![Search Options](@site/static/img/web/search_categories.png)
+![Zoekopties](@site/static/img/web/search_categories.png)
 
 ### Verkennen {#explore}
 
@@ -48,11 +50,13 @@ De sectie **Verkennen** toont [populaire plaatsen](https://osmand.net/docs/user/
 
 Open het zoektabblad om Verkennen te openen — de Verkennen-resultaten worden automatisch op de kaart weergegeven. Gebruik Alles weergeven om de volledige lijst met Verkennen-categorieën te openen. U kunt verfijnen wat in de lijst en op de kaart verschijnt met behulp van Filter, wat het Verkennen-categorieënmenu opent. Het selecteren van een POI uit de lijst of op de kaart opent het [POI-contextmenu](#poi-context-menu).
 
-![Search Options](@site/static/img/web/search_explore.png) ![Search Options](@site/static/img/web/explore_filters.png)
+![Zoekopties](@site/static/img/web/search_explore.png) ![Zoekopties](@site/static/img/web/explore_filters.png)
 
 ## POI-contextmenu {#poi-context-menu}
 
 Ongeacht welke zoekoptie u gebruikt (Zoekbalk, Categorieën of Verkennen), opent het selecteren van een POI op de kaart of in de resultatenlijst het POI-contextmenu. Het contextmenu is de belangrijkste plek om POI-informatie te bekijken en veelvoorkomende acties uit te voeren. Het combineert POI-details (zoals locatie en gerelateerde gegevens) met snelle acties (bijvoorbeeld opslaan, delen of navigatie starten).
+
+Om terug te keren naar de resultatenlijst klikt u op *Terug*. Om het menu te sluiten klikt u op *Sluiten* of drukt u op Esc. Als u het menu sluit, wordt de zoekopdracht gewist, zodat Zoeken de volgende keer zonder eerdere resultaten opent. De kaart blijft op de huidige positie staan.
 
 ### POI-details {#poi-details}
 
@@ -67,7 +71,7 @@ Het **POI-contextmenu** toont belangrijke informatie over de geselecteerde plaat
 - **OSM ID** — de OpenStreetMap-identifier van de POI.
 - **Coördinaten** — selecteer de coördinaten om ze te kopiëren.
 
-![POI Context Menu](@site/static/img/web/poi_context_menu_new.png)
+![POI-contextmenu](@site/static/img/web/poi_context_menu_new.png)
 
 ### POI-acties {#poi-actions}
 
@@ -87,7 +91,7 @@ Fotodetails omvatten:
 - **Licentie-informatie**. Details over de gebruiksrechten van de foto.  
 - **Beschrijving**. Aanvullende informatie over de foto.
 
-![Photo Gallery](@site/static/img/web/poi_photo.png)
+![Fotogalerij](@site/static/img/web/poi_photo.png)
 
 
 ## Gerelateerde artikelen {#related-articles}

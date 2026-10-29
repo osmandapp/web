@@ -1,7 +1,7 @@
 ---
 source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
-title: Smart Folder (Filter)
+title: Slimme map (Filter)
 ---
 
 import Tabs from '@theme/Tabs';
@@ -166,59 +166,59 @@ De nieuw aangemaakte **Slimme Map** zal zijn inhoud automatisch bijwerken met tr
 
 ![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![Mijn plaatsen Slimme Mappen Beheren Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
-The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, tap the *three-dot menu* next to it to access the available actions:
+De **Slimme map** wordt weergegeven met een uniek icoon in de maplijst op het Tracks-tabblad. Om de map te beheren, tikt u op het *drie-puntjes menu* ernaast om de beschikbare acties te openen:
 
-- **<Translate android="true" ids="shared_string_details"/>** — View the complete list of tracks contained in the folder.
-- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Display all folder tracks on the map.  
-    *NOTE: Loading many tracks may affect performance.*
-- **<Translate android="true" ids="shared_string_rename"/>** — Change the folder name for easier identification.
-- **<Translate android="true" ids="shared_string_refresh"/>** — Manually update the folder's content to ensure it includes the latest tracks.
-- **<Translate android="true" ids="edit_filter"/>** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
-- **<Translate android="true" ids="shared_string_export"/>** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
-- **<Translate android="true" ids="delete_folder"/>** — Remove the Smart Folder without deleting its tracks.  
-    *WARNING: This action is irreversible and will prompt a confirmation message.*
+- **<Translate android="true" ids="shared_string_details"/>** — Bekijk de volledige lijst met tracks in de map.
+- **<Translate android="true" ids="show_all_tracks_on_the_map"/>** — Toon alle tracks van de map op de kaart.  
+    *OPMERKING: Het laden van veel tracks kan de prestaties beïnvloeden.*
+- **<Translate android="true" ids="shared_string_rename"/>** — Wijzig de mapnaam voor eenvoudigere herkenning.
+- **<Translate android="true" ids="shared_string_refresh"/>** — Werk de inhoud van de map handmatig bij, zodat de nieuwste tracks erin staan.
+- **<Translate android="true" ids="edit_filter"/>** — Wijzig de trackfilterinstellingen van de huidige Slimme map. Zie [Zoekfilter](#search-filter) voor details.
+- **<Translate android="true" ids="shared_string_export"/>** — Exporteer alle tracks in de Slimme map via de functie [Importeren / Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties*.
+- **<Translate android="true" ids="delete_folder"/>** — Verwijder de Slimme map zonder de tracks te verwijderen.  
+    *WAARSCHUWING: Deze actie is onomkeerbaar en vraagt om bevestiging.*
 
-You can also open the folder and tap the *three-dot menu* in the *top-right corner* to access additional actions:
+U kunt de map ook openen en op het *drie-puntjes menu* in de *rechterbovenhoek* tikken om extra acties te openen:
 
-- **<Translate android="true" ids="shared_string_select"/>** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
-- **<Translate android="true" ids="organize_by"/>** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Select *None* to display all tracks as a single list, matching the default Smart Folder view. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
+- **<Translate android="true" ids="shared_string_select"/>** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
+- **<Translate android="true" ids="organize_by"/>** — Organiseer de tracks in de Slimme map automatisch in groepen op basis van een geselecteerde parameter. Selecteer *Geen* om alle tracks als één lijst weer te geven, overeenkomstig de standaardweergave van de Slimme map. Beschikbare groeperingstypen zijn onder meer *Algemeen*, *Datum en tijd*, *Locatie*, *Snelheid*, *Hoogte en stijging* en *Sensorgegevens*. 
 
-Some grouping parameters are available only with an OsmAnd Pro subscription. Free parameters include *Activity*, *Year of creation*, and *Nearest city*. All other parameters are marked with a <ProFeature/> label.
+Sommige groeperingsparameters zijn alleen beschikbaar met een OsmAnd Pro-abonnement. Gratis parameters zijn onder meer *Activiteit*, *Jaar van aanmaak* en *Dichtstbijzijnde stad*. Alle andere parameters zijn gemarkeerd met een <ProFeature/>-label.
 
-For numeric parameters (such as distance, duration, speed, or altitude), a *Set step size* dialog is available. Use the slider to define value ranges for grouping.
+Voor numerieke parameters (zoals afstand, duur, snelheid of hoogte) is een dialoogvenster *Stapgrootte instellen* beschikbaar. Gebruik de schuifregelaar om waardebereiken voor de groepering te definiëren.
 
-For PRO parameters, you can preview the grouping setup (for example, open the step size selector and see how tracks are grouped), but applying these changes requires an active subscription. If you select a PRO parameter or tap the Unlock button, the Choose plan screen will open. Previously applied grouping remains visible even if the subscription expires, but editing or applying new PRO-based grouping requires an active subscription.
+Voor PRO-parameters kunt u een voorbeeld van de groepering bekijken (open bijvoorbeeld de stapgrootte-selector en zie hoe tracks worden gegroepeerd), maar voor het toepassen van deze wijzigingen is een actief abonnement vereist. Als u een PRO-parameter selecteert of op de knop Ontgrendelen tikt, wordt het scherm Abonnement kiezen geopend. Eerder toegepaste groepering blijft zichtbaar, ook als het abonnement verloopt, maar voor het bewerken of toepassen van nieuwe PRO-groepering is een actief abonnement vereist.
 
-After a grouping parameter is selected, tracks are displayed as groups. Each group shows its name, icon, and the number of tracks it contains. Tap a group to open the list of tracks in that group. Empty groups are not displayed. Grouped results can be sorted alphabetically (A–Z or Z–A) or, for numeric parameters, by highest or lowest values. Long-press a group to show all tracks in the group on the map or export all tracks in the group.
+Nadat een groeperingsparameter is geselecteerd, worden tracks als groepen weergegeven. Elke groep toont zijn naam, icoon en het aantal tracks dat hij bevat. Tik op een groep om de lijst met tracks in die groep te openen. Lege groepen worden niet weergegeven. Gegroepeerde resultaten kunnen alfabetisch (A–Z of Z–A) of, voor numerieke parameters, op hoogste of laagste waarden worden gesorteerd. Houd een groep lang ingedrukt om alle tracks in de groep op de kaart te tonen of alle tracks in de groep te exporteren.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
+![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![Mijn plaatsen Slimme Mappen Beheren iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
-The **Smart folder** is displayed with a unique icon in the folder list in the Tracks tab. To manage the folder, *long tap* the folder name to access the available actions:
+De **Slimme map** wordt weergegeven met een uniek icoon in de maplijst op het Tracks-tabblad. Om de map te beheren, houdt u de mapnaam *lang ingedrukt* om de beschikbare acties te openen:
 
-- **<Translate ios="true" ids="shared_string_rename"/>**— Change the folder name for easier identification.
-- **<Translate ios="true" ids="shared_string_export"/>** — Export all tracks in the Smart Folder via the [Import/Export](../../personal/import-export.md) feature. You will be redirected to *Menu → Settings → Actions tab*.
-- **<Translate ios="true" ids="shared_string_move"/>** — Allows you to move the folder to another existing folder or create a new one.
-- **<Translate ios="true" ids="shared_string_delete"/>** — Remove the Smart Folder without deleting its tracks.  
-    *WARNING: This action is irreversible and will prompt a confirmation message.*
+- **<Translate ios="true" ids="shared_string_rename"/>**— Wijzig de mapnaam voor eenvoudigere herkenning.
+- **<Translate ios="true" ids="shared_string_export"/>** — Exporteer alle tracks in de Slimme map via de functie [Importeren / Exporteren](../../personal/import-export.md). U wordt doorgestuurd naar *Menu → Instellingen → Acties*.
+- **<Translate ios="true" ids="shared_string_move"/>** — Hiermee kunt u de map naar een andere bestaande map verplaatsen of een nieuwe map maken.
+- **<Translate ios="true" ids="shared_string_delete"/>** — Verwijder de Slimme map zonder de tracks te verwijderen.  
+    *WAARSCHUWING: Deze actie is onomkeerbaar en vraagt om bevestiging.*
 
-You can also open the folder and tap the icon in the *top-right corner* to access additional actions:
+U kunt de map ook openen en op het icoon in de *rechterbovenhoek* tikken om extra acties te openen:
 
-- **<Translate ios="true" ids="shared_string_select"/>** — Use [Selection Mode](./manage-tracks.md#selection-mode) for specific track actions within the folder.
-- **<Translate ios="true" ids="shared_string_refresh"/>** — Manually update the folder's content to ensure it includes the latest tracks.
-- **<Translate ios="true" ids="edit_filter"/>** — Modify the track filter settings for the current Smart Folder. See [Search Filter](#search-filter) for details.
-- **<Translate ios="true" ids="organize_by"/>** — Automatically organize tracks in the Smart Folder into groups based on a selected parameter. Select *None* to display all tracks as a single list, matching the default Smart Folder view. Available grouping types include *General*, *Date & time*, *Location*, *Speed*, *Altitude & elevation*, and *Sensor data*. 
+- **<Translate ios="true" ids="shared_string_select"/>** — Gebruik de [Selectiemodus](./manage-tracks.md#selection-mode) voor specifieke trackacties binnen de map.
+- **<Translate ios="true" ids="shared_string_refresh"/>** — Werk de inhoud van de map handmatig bij, zodat de nieuwste tracks erin staan.
+- **<Translate ios="true" ids="edit_filter"/>** — Wijzig de trackfilterinstellingen van de huidige Slimme map. Zie [Zoekfilter](#search-filter) voor details.
+- **<Translate ios="true" ids="organize_by"/>** — Organiseer de tracks in de Slimme map automatisch in groepen op basis van een geselecteerde parameter. Selecteer *Geen* om alle tracks als één lijst weer te geven, overeenkomstig de standaardweergave van de Slimme map. Beschikbare groeperingstypen zijn onder meer *Algemeen*, *Datum en tijd*, *Locatie*, *Snelheid*, *Hoogte en stijging* en *Sensorgegevens*. 
 
-Some grouping parameters are available only with an OsmAnd Pro subscription. Free parameters include *Activity*, *Year of creation*, and *Nearest city*. All other parameters are marked with a <ProFeature/> label.
+Sommige groeperingsparameters zijn alleen beschikbaar met een OsmAnd Pro-abonnement. Gratis parameters zijn onder meer *Activiteit*, *Jaar van aanmaak* en *Dichtstbijzijnde stad*. Alle andere parameters zijn gemarkeerd met een <ProFeature/>-label.
 
-For numeric parameters (such as distance, duration, speed, or altitude), a *Set step size* dialog is available. Use the slider to define value ranges for grouping.
+Voor numerieke parameters (zoals afstand, duur, snelheid of hoogte) is een dialoogvenster *Stapgrootte instellen* beschikbaar. Gebruik de schuifregelaar om waardebereiken voor de groepering te definiëren.
 
-For PRO parameters, you can preview the grouping setup (for example, open the step size selector and see how tracks are grouped), but applying these changes requires an active subscription. If you select a PRO parameter or tap the Unlock button, the Choose plan screen will open. Previously applied grouping remains visible even if the subscription expires, but editing or applying new PRO-based grouping requires an active subscription.
+Voor PRO-parameters kunt u een voorbeeld van de groepering bekijken (open bijvoorbeeld de stapgrootte-selector en zie hoe tracks worden gegroepeerd), maar voor het toepassen van deze wijzigingen is een actief abonnement vereist. Als u een PRO-parameter selecteert of op de knop Ontgrendelen tikt, wordt het scherm Abonnement kiezen geopend. Eerder toegepaste groepering blijft zichtbaar, ook als het abonnement verloopt, maar voor het bewerken of toepassen van nieuwe PRO-groepering is een actief abonnement vereist.
 
-After a grouping parameter is selected, tracks are displayed as groups. Each group shows its name, icon, and the number of tracks it contains. Tap a group to open the list of tracks in that group. Empty groups are not displayed. Grouped results can be sorted alphabetically (A–Z or Z–A) or, for numeric parameters, by highest or lowest values. Long-press a group to show all tracks in the group on the map or export all tracks in the group.
+Nadat een groeperingsparameter is geselecteerd, worden tracks als groepen weergegeven. Elke groep toont zijn naam, icoon en het aantal tracks dat hij bevat. Tik op een groep om de lijst met tracks in die groep te openen. Lege groepen worden niet weergegeven. Gegroepeerde resultaten kunnen alfabetisch (A–Z of Z–A) of, voor numerieke parameters, op hoogste of laagste waarden worden gesorteerd. Houd een groep lang ingedrukt om alle tracks in de groep op de kaart te tonen of alle tracks in de groep te exporteren.
 
 </TabItem>
 

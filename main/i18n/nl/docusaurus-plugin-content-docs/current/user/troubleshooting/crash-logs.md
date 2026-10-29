@@ -1,7 +1,7 @@
 ---
-source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
-title: Crash Logs
+title: Crashlogs
 ---
 
 import Tabs from '@theme/Tabs';
@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overzicht {#overview}
 
-Crash logs zijn waardevolle diagnostische hulpmiddelen die ontwikkelaars helpen bij het identificeren en oplossen van problemen en bugs die ervoor zorgen dat de applicatie crasht of zich onverwacht gedraagt. Het is mogelijk om logs van uw Android-apparaat te delen met het OsmAnd-ontwikkelteam. Momenteel hebben iOS-gebruikers slechts één type crashlog-optie om te verzenden.
+Crash logs zijn waardevolle diagnostische hulpmiddelen die ontwikkelaars helpen bij het identificeren en oplossen van problemen en bugs die ervoor zorgen dat de applicatie crasht of zich onverwacht gedraagt. Het is mogelijk om logs van uw apparaat te delen met het OsmAnd-ontwikkelteam. Als OsmAnd onverwacht wordt afgesloten, biedt de app ook aan om bij de volgende start een crashrapport te verzenden.
 
 
 ## Crash- en App-logs {#crash-and-app-logs}
@@ -36,19 +36,19 @@ Wees voorzichtig bij het verzenden van app-logs, aangezien deze privé-informati
 
 <TabItem value="android" label="Android">
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+![Crashlogs verzenden vanaf Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Crashlogs verzenden vanaf Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Send crash logs from iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+![Crashlogs verzenden vanaf iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-1. Ga naar *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* of *<Translate android="true" ids="send_logcat_log"/>* (*Send current app log* op iOS). Afhankelijk van uw situatie, selecteert u het juiste type log. U kunt de sectie [Crash and App Logs](#crash-and-app-logs) raadplegen voor details over de verschillen tussen de logtypen.
+1. Ga naar *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* of *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Send current app log* (iOS). Afhankelijk van uw situatie, selecteert u het juiste type log. U kunt de sectie [Crash and App Logs](#crash-and-app-logs) raadplegen voor details over de verschillen tussen de logtypen.
 2. Kies in het pop-upmenu Gmail of uw favoriete e-mailapp. We raden aan de logs naar `support@osmand.net` te verzenden.
 3. Tik op de knop *Verzenden*.
 
@@ -73,6 +73,34 @@ Wees voorzichtig bij het verzenden van app-logs, aangezien deze privé-informati
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Crashrapport verzenden na een crash {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Als OsmAnd tijdens de vorige keer onverwacht is afgesloten, verschijnt het Crash-dialoogvenster de volgende keer dat u de app start. Het verschijnt nadat de app is gecrasht, nadat deze niet meer reageert (Android 11 en later), of na een crash in de native code van de app (Android 12 en later). Het dialoogvenster verschijnt niet terwijl navigatie actief is.
+
+- *Verzenden* — verstuurt het crashrapport rechtstreeks naar het OsmAnd-ontwikkelteam, zonder een e-mailapp te gebruiken. Een bericht bevestigt of het rapport is verzonden.
+- *Negeren* — sluit het dialoogvenster zonder het rapport te verzenden.
+
+Het rapport bevat technische informatie over de status van de app en het geheugengebruik vóór de crash, samen met het recente log van de app.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Als OsmAnd tijdens de vorige keer onverwacht is afgesloten, verschijnt het dialoogvenster Crashlog delen de volgende keer dat u de app start. Het verschijnt nadat de app is gecrasht of nadat het systeem de app onverwacht heeft afgesloten.
+
+- *Verzenden* — verstuurt het crashrapport rechtstreeks naar het OsmAnd-ontwikkelteam, zonder een e-mailapp te gebruiken. Een bericht bevestigt of het rapport is verzonden.
+- *Annuleren* — sluit het dialoogvenster zonder het rapport te verzenden.
+
+Het rapport bevat technische informatie over de status van de app en het geheugengebruik vóór de crash, samen met het recente log van de app.
+
+</TabItem>
+
+</Tabs>
 
 ## Heap-histogram voor geheugenproblemen (Android) {#heap-histogram-for-memory-problems-android}
 
@@ -104,7 +132,7 @@ Het maken van de dump **bevriest de app 5–10 seconden**. Als u het scherm aanr
 3. Tik op **Rapport delen** om het laatste rapport naar de ontwikkelaars te sturen, of verstuur het vanuit het crashdialoogvenster de volgende keer dat de app start.
 4. Schakel *Verzamel bij hoog gebruik* uit zodra het rapport is verzonden.
 
-![Java memory Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Heap dump panel Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+![Java-geheugen Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Heap-dumppaneel Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
 
 
 ## Tombstone-bestanden verzenden (Android) {#send-tombstone-files-android}
@@ -130,7 +158,7 @@ Om tombstone-bestanden te exporteren, moet u een bugrapport genereren met behulp
   
 Nadat het bugrapport klaar is, ontvangt u een melding. Tik op het meldingsvak om het rapport naar uw apparaat te downloaden. Pak het bestand uit en stuur de tombstone-bestanden naar het OsmAnd-ontwikkelaarsteam (e-mail: `support@osmand.net`).
 
-![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Crashlogs verzenden vanaf Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Crashlogs verzenden vanaf Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Houd er rekening mee dat bugrapporten privé-gegevens kunnen bevatten, inclusief app-gebruik of locatie.

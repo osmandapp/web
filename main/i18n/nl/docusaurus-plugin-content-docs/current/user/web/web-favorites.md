@@ -1,8 +1,8 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
-sidebar_label: Favorites
-title: Favorites
+sidebar_label: Favorieten
+title: Favorieten
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,13 +24,13 @@ Favorieten in de Web Planner laten je belangrijke plaatsen direct op de kaart op
 
 ## Favorieten beheren {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
+![OsmAnd Web-cloud Favorieten bewerken](@site/static/img/web/favorites_1_new.png)
 
 Na aanmelden bij een [**OsmAnd Pro**](../personal/osmand-cloud.md#login) of [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) account zijn je Favorieten in de Web Planner georganiseerd in mappen. Elke map groepeert opgeslagen plaatsen en biedt een reeks acties die beschikbaar zijn via het Favorietenmenu. 
 De volgende acties zijn beschikbaar:
 
 - *Op kaart tonen* - toon favorietenpunten uit de gekozen map op de kaart.
-- *Map vastmaken* - zet een map bovenaan de Favorietenlijst voor snelle toegang. Vastgemaakte mappen worden gescheiden van andere mappen. Om een map uit de bovenste sectie te verwijderen, selecteer je *Map losmaken*. De Persoonlijke map is standaard vastgemaakt.
+- *Map vastpinnen* - zet een map bovenaan de Favorietenlijst voor snelle toegang. Vastgepinde mappen worden gescheiden van andere mappen. Om een map uit de bovenste sectie te verwijderen, selecteer je *Map ontpinnen*. De Persoonlijke map is standaard vastgepind.
 - *Naam wijzigen* - naam en beschrijving van favorietenmap.
 - *Delen* - opent deelopties. Je kunt kiezen wie toegang heeft tot deze map.
 - *Downloaden* - download de gekozen favorietenmap.
@@ -44,7 +44,7 @@ Je kunt ook de knop **Focus** gebruiken om alle andere favorieten en tracks op d
 
 Het selecteren van **Delen** opent het deelscherm, waar toegang tot een Favorietenmap kan worden geconfigureerd. Een van de volgende toegangsmodi kan worden geselecteerd:
 - *Privé*. Alleen jij kunt de map bekijken. Overschakelen naar Privé trekt de toegang in voor alle eerder goedgekeurde gebruikers. Er wordt een bevestigingsdialoog weergegeven voordat de wijziging wordt toegepast.
-- *Alleen aanvraag*. Iedereen met de link kan toegang aanvragen. Aanvragen verschijnen in de Lijst in afwachting, waar ze kunnen worden goedgekeurd, geweigerd of geblokkeerd.
+- *Alleen op aanvraag*. Iedereen met de link kan toegang aanvragen. Aanvragen verschijnen in de Lijst in afwachting, waar ze kunnen worden goedgekeurd, geweigerd of geblokkeerd.
 - *Iedereen*. Iedereen met de link kan de map onmiddellijk bekijken, zonder goedkeuring.  
 Afhankelijk van de geselecteerde toegangsmode wordt de knop **Link kopiëren** beschikbaar. De link kan worden gedeeld om te bekijken of om toegang aan te vragen.
 
@@ -58,7 +58,7 @@ Tijdens de toegangconfiguratie kunnen de volgende dialogen verschijnen:
 - *Toegang wijzigen*. Wordt weergegeven bij het overschakelen van de map naar Privé. De dialoog waarschuwt dat alle bestaande gebruikers toegang wordt ingetrokken voordat de wijziging wordt bevestigd.
 - *Toegangsaanvragen*. Wordt weergegeven bij het beheren van gebruikers in de Lijst in afwachting, waarmee toegangsaanvragen kunnen worden goedgekeurd of geweigerd.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
+![OsmAnd Web-cloud Favorieten bewerken](@site/static/img/web/favorites_share.png) ![OsmAnd Web-cloud Favorieten bewerken](@site/static/img/web/favorites_share_2.png)
 
 
 ## Favorietendetails {#favorites-details} 
@@ -67,12 +67,12 @@ Het selecteren van een favoriet opent het **Details**-paneel. Dit paneel verschi
 
 De Details-weergave biedt informatie die is gekoppeld aan de geselecteerde plaats en hangt af van de beschikbare gegevens voor die specifieke favoriet. Op zijn minst bevat het de locatie op de kaart en de geografische coördinaten. Voor plaatsen die zijn gekoppeld aan OpenStreetMap-objecten of verrijkte bronnen, kunnen aanvullende metadata worden weergegeven, zoals namen, categorieën, identificatoren of referentielinks (bijvoorbeeld Wikipedia- of Wikidata-links). 
 
-![Web Favorites Details](@site/static/img/web/favorites_details.png)
+![Web Favorietendetails](@site/static/img/web/favorites_details.png)
 
 
 ## Favorietenacties {#favorites-actions}
 
-[Om toe te voegen](../personal/favorites.md#manage-favorites) een nieuw favorietpunt, klik je met de rechtermuisknop op het scherm. 
+[Om toe te voegen](../personal/favorites.md#manage-favorites) een nieuw favorietpunt, klik je met de rechtermuisknop op het scherm. Als het favorietpunt niet kan worden opgeslagen, bevat de foutmelding de reden die door de server is gemeld, bijvoorbeeld dat er onvoldoende ruimte is in [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Om een bestaande favoriet te bewerken, klik je op het favorietpunt direct op de kaart of selecteer je het uit een favorietenmap. Dit opent het Details-paneel, waar de Bewerk-actie beschikbaar is. Bewerken kan ook worden gestart vanuit het driepuntmenu (⋮) naast de favoriet in de Favorietenlijst.
 
@@ -96,7 +96,7 @@ Nieuwe mappen kunnen direct vanuit het mappenselectiepaneel worden gemaakt. Als 
 
 Het dialoogvenster bevat ook een Geavanceerd-gedeelte, waarin standaardweergave-instellingen voor de map kunnen worden geconfigureerd. Deze instellingen omvatten de standaardkleur, het pictogram en de vorm die automatisch worden toegepast op favorietpunten die aan deze map worden toegevoegd.
 
-![Web Edit Folder](@site/static/img/web/edit_folder.png)
+![Web Map bewerken](@site/static/img/web/edit_folder.png)
 
 ### Uiterlijk {#appearance}
 
@@ -120,7 +120,7 @@ De optie **Vorm** definieert de achtergrondvorm die voor de favorietmarkering wo
 
 De voorvertoning van het uiterlijk wordt direct bijgewerkt in het bewerkingspaneel en op de kaart bij het wijzigen van het pictogram, de kleur of de vorm.
 
-![Web Edit Appearance](@site/static/img/web/edit_icon.png)
+![Web Uiterlijk bewerken](@site/static/img/web/edit_icon.png)
 
 ### Andere acties {#other-actions}
 

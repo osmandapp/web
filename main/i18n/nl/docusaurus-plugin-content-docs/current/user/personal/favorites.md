@@ -1,5 +1,5 @@
 ---
-source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Favorieten
 ---
@@ -23,13 +23,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favorites introduction android](@site/static/img/personal/favorites_intro_android.png)
+![Introductie favorieten Android](@site/static/img/personal/favorites_intro_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites introduction ios](@site/static/img/personal/favorites_intro_ios.png)
+![Introductie favorieten iOS](@site/static/img/personal/favorites_intro_ios.png)
 
 </TabItem>
 
@@ -42,13 +42,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favotires layer Android](@site/static/img/map/favorites_layer.png)
+![Favorietenlaag Android](@site/static/img/map/favorites_layer.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)
+![Favorietenlaag iOS](@site/static/img/map/favorites_layer_ios.png)
 
 </TabItem>
 
@@ -63,13 +63,13 @@ Favorieten maken deel uit van een speciale kaartlaag, en u kunt ze [tonen of ver
 
 <TabItem value="android" label="Android">
 
-![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
+![Favoriet beschrijving toevoegen Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorietengroep Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
+![Favoriet beschrijving toevoegen iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorietengroep iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -100,13 +100,13 @@ Bij het toevoegen van een punt uit OSM-gegevens wordt de relevante POI-informati
 
 <TabItem value="android" label="Android">
 
-![Favorite edit Android](@site/static/img/personal/favorite_edit_android.webp)
+![Favoriet bewerken Android](@site/static/img/personal/favorite_edit_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorite edit iOS](@site/static/img/personal/favorite_edit_ios.png)
+![Favoriet bewerken iOS](@site/static/img/personal/favorite_edit_ios.png)
 
 </TabItem>
 
@@ -132,7 +132,7 @@ Om een favorietenpunt te wijzigen:
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Kies favoriet* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
-![My places favorites android](@site/static/img/personal/favorite_icon_andr.png)
+![Mijn Plaatsen favorieten Android](@site/static/img/personal/favorite_icon_andr.png)
 
 </TabItem>
 
@@ -140,7 +140,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Kies favoriet* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
-![my_places_ios](@site/static/img/personal/favorite_icon_3_ios.png)
+![Mijn Plaatsen iOS](@site/static/img/personal/favorite_icon_3_ios.png)
 
 </TabItem>
 
@@ -161,19 +161,32 @@ De map *Persoonlijk* bevat speciale punten zoals **<Translate android="true" ids
 
 ![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_menu.webp)
 
-De Media-sectie stelt u in staat om foto’s, video’s, audio-opnames en afbeeldingen aan een favorietenpunt toe te voegen. Media kan worden toegevoegd tijdens het aanmaken van een favoriet of later via het scherm Favoriet bewerken. Tik op *Toevoegen* in de Media-sectie en kies een van de beschikbare opties:
+De Media-sectie stelt u in staat om foto’s, video’s, audio-opnames en afbeeldingen aan een favorietenpunt toe te voegen. Media kan worden toegevoegd tijdens het aanmaken van een favoriet of later via het scherm Favoriet bewerken, of rechtstreeks via het contextmenu van de favoriet. Tik op de knop *+* op het scherm Favoriet bewerken of op *Toevoegen* in het contextmenu en kies een van de beschikbare opties:
 - **Foto maken** — Maak een nieuwe foto met de camera van het apparaat.
 - **Video-opname maken** — Neem een nieuwe video op.
-- **Audio-opname maken** — Neem een audio-opname op.
+- **Audio-opname maken** — Neem een audio-opname op. Als OsmAnd geen toestemming heeft om audio op te nemen, vraagt uw apparaat u om dit toe te staan.
 - **Kiezen uit Galerij** — Selecteer een bestaande afbeelding van uw apparaat.
 - **Kiezen uit Bestanden** — Selecteer een afbeelding uit het bestandssysteem.
 
-Nadat media is toegevoegd, verschijnt het in de Media-kaart in het contextmenu van de favoriet. Dezelfde Media-kaart is ook beschikbaar voor [Waypoints](../map/tracks/track-context-menu.md#points--waypoints).
+Nadat media is toegevoegd, verschijnt het in de Media-kaart in het contextmenu van de favoriet. Als er geen media is toegevoegd, toont de kaart *Geen media* en een knop *Toevoegen*. Dezelfde Media-kaart is ook beschikbaar voor [Waypoints](../map/tracks/track-context-menu.md#points--waypoints).
+
+Audio-, video- en fotonotities die zijn gemaakt met de [Audio- / Videonotities-plugin](../plugins/audio-video-notes.md) worden ook opgeslagen als favorieten met bijgevoegde media.
 
 De Media-kaart toont voorbeelden van bijgevoegde items. De weergegeven items volgen de geselecteerde sorteervolgorde. Tik op *Alles weergeven* om de volledige galerij te openen. De galerij toont alle media die aan de geselecteerde favoriet zijn gekoppeld.
 
 Tik op een item om het in volledig scherm te bekijken. Foto’s en video’s kunnen direct worden bekeken, terwijl audio-opnames afspeelbediening bevatten.
 
+De galerij bevat de volgende opties:
+- **Sorteren** — Tik op de sorteerbalk bovenaan om de volgorde te kiezen: Dichtstbijzijnde, Laatst gewijzigd, Naam A - Z, Naam Z - A, Nieuwste datum eerst, Oudste datum eerst, Langste duur eerst of Kortste duur eerst.
+- **Samenvatting** — Onder de items toont de galerij het aantal foto's, video's en audionotities en hun totale grootte.
+- **+ knop** — Nieuwe media toevoegen.
+- **Bewerken** (potloodpictogram) — Selectiemodus openen. U kunt ook lang op een item tikken.
+
+Tik in de selectiemodus op items om ze te selecteren of gebruik Alles selecteren. Het drie-puntmenu biedt:
+- **Exporteren** — De geselecteerde mediabestanden exporteren.
+- **Verwijderen** — De geselecteerde media van de favoriet verwijderen. Media die door OsmAnd is opgeslagen en niet aan een ander item is gekoppeld, wordt ook van het apparaat verwijderd.
+
+Media die in OsmAnd is vastgelegd, krijgt een naam volgens het patroon `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, bijvoorbeeld `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. De naam bevat het mediatype, de datum en tijd van aanmaak en de locatie waar de media is vastgelegd, gecodeerd als [OSM Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 ## Favorieten Beheren {#manage-favorites}
 
@@ -183,7 +196,7 @@ Tik op een item om het in volledig scherm te bekijken. Foto’s en video’s kun
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![My places favorites android](@site/static/img/personal/my_places_android_new.png)
+![Mijn Plaatsen favorieten Android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -191,7 +204,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![my_places_ios](@site/static/img/personal/my_places_ios_new.png)
+![Mijn Plaatsen iOS](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -208,13 +221,13 @@ De sectie **Favorieten** stelt u in staat om:
 
 <TabItem value="android" label="Android">
 
-![Favorites android](@site/static/img/personal/favorites_points_sorting.webp) ![Favorites android](@site/static/img/personal/favorites_folders_sorting.png)
+![Favorieten Android](@site/static/img/personal/favorites_points_sorting.webp) ![Favorieten Android](@site/static/img/personal/favorites_folders_sorting.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Favorites iOS](@site/static/img/personal/favorites_folders_sorting.webp)
+![Favorieten iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Favorieten iOS](@site/static/img/personal/favorites_folders_sorting.webp)
 </TabItem>
 
 </Tabs>
@@ -228,7 +241,7 @@ De sectie **Favorieten** stelt u in staat om:
 
 <TabItem value="android" label="Android">
 
-![Favorites actions android](@site/static/img/personal/favorites_group_actions.png) ![Favorites action delete android](@site/static/img/personal/favorites_actions.png)
+![Favorietenacties Android](@site/static/img/personal/favorites_group_actions.png) ![Favorieten actie verwijderen Android](@site/static/img/personal/favorites_actions.png)
 
 Om meerdere favorieten of mappen te beheren, activeer de *Selectiemodus*. U kunt Selectiemodus op twee manieren openen:
 - Tik op het *drie-puntmenu* in de rechterbovenhoek en kies *Selecteren*.
@@ -251,7 +264,7 @@ Wanneer favorietenpunten zijn geselecteerd, zijn de volgende acties beschikbaar:
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorites_actions_folders.webp) ![Favorites actions ios](@site/static/img/personal/favorites_actions_points.webp)
+![Favorietenacties iOS](@site/static/img/personal/favorites_actions_folders.webp) ![Favorietenacties iOS](@site/static/img/personal/favorites_actions_points.webp)
 
 Om meerdere favorietenpunten of mappen te beheren, activeert u de *Selectiemodus* door op het *drie-puntmenu* in de rechterbovenhoek te tikken en *Selecteren* te kiezen. Wanneer Selectiemodus is ingeschakeld, verschijnen er selectievakjes naast de items in de lijst. Selecteer de vereiste favorietenpunten of mappen door op de selectievakjes te tikken. Om alle items in de lijst te selecteren, tik op het Selecteer alles-pictogram in de rechterbovenhoek.
 
@@ -281,13 +294,13 @@ Voor geselecteerde mappen zijn dezelfde acties beschikbaar, met de volgende extr
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions.webp)
+![Functies voor favorietenmappen Android](@site/static/img/personal/favorites_folder_functions.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
+![Favorietenacties iOS](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
 
 </TabItem>
 
@@ -314,7 +327,7 @@ Op Android gebruikt u het ***Drie-puntmenu*** naast elke map om groepen favoriet
 
 Ga naar: *Drie-puntmenu → Standaard uiterlijk wijzigen*
 
-![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_new.png)
+![Functies voor favorietenmappen Android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
@@ -322,7 +335,7 @@ Ga naar: *Drie-puntmenu → Standaard uiterlijk wijzigen*
 
 Ga naar: *Lang tikken op map → Standaard uiterlijk*
 
-![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_3_ios.webp)
+![Favorietenacties iOS](@site/static/img/personal/favorite_add_new_group_3_ios.webp)
 
 </TabItem>
 
@@ -360,7 +373,7 @@ OsmAnd biedt verschillende methoden om favorieten te [back-uppen](./import-expor
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_andr.png)
+![Functies voor favorietenmappen Android](@site/static/img/personal/favorites_free_backup_andr.png)
 
 </TabItem>
 
@@ -368,7 +381,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![Favorites actions ios](@site/static/img/personal/favorites_free_backup_2_ios.webp)
+![Favorietenacties iOS](@site/static/img/personal/favorites_free_backup_2_ios.webp)
 
 </TabItem>
 
@@ -391,7 +404,7 @@ De [Gratis Favorietenback-up](../personal/osmand-cloud.md#osmand-start) is een s
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+![Functies voor favorietenmappen Android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
 </TabItem>
 
@@ -399,7 +412,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![Favorites actions ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![Favorietenacties iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 
@@ -420,21 +433,21 @@ U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Instellingenback-up
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.webp)
+![Functies voor favorietenmappen Android](@site/static/img/personal/favorites_folder_functions_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorites_actions_1_ios.webp) 
+![Favorietenacties iOS](@site/static/img/personal/favorites_actions_1_ios.webp) 
 </TabItem>
 
 </Tabs>
 
-- Om meerdere favorietenmappen te delen, activeert u de [Selectiemodus](#bulk-edit--delete), selecteert u de gewenste mappen en tikt u op *Delen*.
-- Om een enkele favorietenmap te delen, tikt u op het Drie-puntmenu (*Android*) of tikt u lang op de map (*iOS*) en kiest u *Delen* om het Favorites.gpx-bestand naar het geheugen van uw apparaat te sturen of te delen via messaging-apps. Op Android verschijnt, als de map bijgevoegde media bevat, een Deel-bladscherm. U kunt kiezen:
+- Om meerdere favorietenmappen te delen, zie de sectie [Bulk Bewerken / Verwijderen](#bulk-edit--delete).
+- Om een enkele favorietenmap te delen, zie de sectie [Acties voor Favorietengroepen](#favorite-group-actions). Op Android verschijnt, als de map bijgevoegde media bevat, een Deel-bladscherm. U kunt kiezen:
     - *Alleen punten* — Deel de favorietenpunten uit de map als een GPX-bestand.
-    - *Punten en media* — Deel de favorietenpunten en bijgevoegde media als een OSF-archief.
+    - *Punten en media* — Deel de favorietenpunten en bijgevoegde media als een archief.
 
 
 ### Automatische Favorietenback-up {#automatic-favorites-backup}
@@ -445,7 +458,7 @@ U heeft een OsmAnd Cloud-account nodig om de functie *Gratis Instellingenback-up
 
 Ga naar: *Android → data → net.osmand → files → backup*
 
-![Favorites backup export Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
+![Back-up-export van favorieten Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Automatische back-up van favorieten Android](@site/static/img/personal/favorites_autobackup_andr.png)  
 
 </TabItem>
 
@@ -453,7 +466,7 @@ Ga naar: *Android → data → net.osmand → files → backup*
 
 Ga naar: *Bestanden → Op mijn iPhone → OsmAnd Maps → favourites_backup*
 
-![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
+![Automatische back-up van favorieten iOS](@site/static/img/personal/favorites_autobackup.png)  
 
 </TabItem>
 
@@ -479,6 +492,8 @@ In de nieuwste versies van ***Android*** is de toegang tot systeemmappen beperkt
 
 Alle informatie over een Favoriet wordt opgeslagen en beschreven met behulp van tags. Bij het aanmaken van een Favorietenpunt kunt u uw eigen [beschrijving](#favorite-point) schrijven of informatie gebruiken uit de OSM [point of interest (POI)](../map/point-layers-on-map.md#points-of-interest-pois) gegevens waaruit uw punt is gemaakt. Favorietenpunten, POI's en Waypoints gebruiken dezelfde **tags** om informatie op te slaan en worden opgeslagen in **GPX-bestandsformaat**.
 
+Als de [OSM Bewerken-plugin](../plugins/osm-editing.md) is ingeschakeld, slaat een Favoriet die is gemaakt vanuit een OpenStreetMap-object ook een link naar dat object op in de tag `osm_url`, bijvoorbeeld `https://www.openstreetmap.org/node/7235345886`. De link blijft behouden in geëxporteerde en gedeelde Favorietenbestanden en in back-ups.
+
 Favorieten kunnen ook verwijzingen naar bijgevoegde media bevatten met behulp van standaard GPX `<link>`-elementen. 
 
 
@@ -493,6 +508,7 @@ Favorieten kunnen ook verwijzingen naar bijgevoegde media bevatten met behulp va
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

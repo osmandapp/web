@@ -1,5 +1,5 @@
 ---
-source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: Introductie
 title: Introductie tot de Web Planner
@@ -45,7 +45,7 @@ De Web Portal biedt de volgende belangrijkste mogelijkheden voor werken met kaar
 
 ### Abonnements Toegang {#subscription-accesses}
 
-![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
+![Web-account](@site/static/img/web/web_start.png) ![Web-account](@site/static/img/web/web_pro.png)
 
 De Web Kaartportaal ondersteunt verschillende toegangsniveaus: zonder inloggen, met OsmAnd Start, en met OsmAnd Pro. De onderstaande tabel vat samen welke functies beschikbaar zijn op elk niveau, zodat u snel kunt zien wat u al heeft en wat beschikbaar wordt met een account of een upgrade. Dit overzicht is bedoeld om u te helpen beslissen of u een account nodig heeft en, zo ja, welke optie het beste past bij hoe u OsmAnd gebruikt.
 
@@ -73,7 +73,7 @@ Om toegang te krijgen tot de volledige functies van de OsmAnd Web Portal, moet u
    - **Inloggen**: Voer het e-mailadres in dat gekoppeld is aan uw Pro- of Start-abonnement, of
    - **Account aanmaken**: Registreer voor een gratis OsmAnd Start-account. Voor een gedetailleerde stapsgewijze handleiding voor het aanmaken van een nieuw account, zie het [OsmAnd Account](./web-cloud) artikel.
 
-![Web Account](@site/static/img/web/web_account.png)
+![Web-account](@site/static/img/web/web_account.png)
 
 
 ## Gerelateerde Artikelen {#related-articles}

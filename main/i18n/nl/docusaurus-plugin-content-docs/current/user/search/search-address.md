@@ -1,5 +1,5 @@
 ---
-source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
+source-hash: e36caad58f36cfd88f8d8bd575e69fdf2d3e8f63a1d4a934dba6e473f1b95388
 sidebar_position: 2
 title:  Adres zoeken
 ---
@@ -13,13 +13,20 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Overzicht {#overview}
 
 *OsmAnd Adres zoeken* is gebaseerd op OpenStreetMap-gegevens en stelt u in staat om de locatie en routebeschrijving naar een specifiek adres te vinden uit een reeds gesorteerde lijst, evenals te zoeken op postcode of coördinaten. Deze tool stelt u in staat om de vereiste adressen in een paar tikken te vinden, wat de zoektijd verkort en helpt als u het exacte adres niet meer weet.
 
 Adres zoeken werkt offline met gedownloade kaarten. Zorg ervoor dat de kaart voor de regio waarin u zoekt is geïnstalleerd. Resultaten hangen af van de adresgegevens die beschikbaar zijn in OpenStreetMap.
 
-Zoekresultaten worden automatisch gesorteerd op relevantie en afstand, zodat nabijgelegen en relevantere resultaten hoger in de lijst verschijnen.
+OsmAnd sorteert zoekresultaten automatisch, zodat nabijgelegen en relevantere resultaten hoger in de lijst verschijnen. Op Android kunt u de volgorde wijzigen met de sorteerchip bovenaan de resultatenlijst. De chip toont de geselecteerde optie. Tik erop en kies in het menu *Sorteren op* een van de volgende opties:
+- *Relevantie* — Sorteert de resultaten op hoe goed ze overeenkomen met uw zoekopdracht.
+- *Dichtstbijzijnde* — Sorteert de resultaten op afstand, waarbij de dichtstbijzijnde resultaten als eerste worden getoond.
+
+Ook op Android verschijnen boven de resultaten chips met objecttypen, zoals *Stad*, *Plaats*, *Straat* of *Postcode*. Tik op een chip om alleen resultaten van dat type te tonen. Lees meer in [Zoekresultaten sorteren](./search-all.md#sorting-search-results).
+
+Op Android wordt, wanneer het kaartcentrum meer dan 50 m van uw locatie verwijderd is en de kaart uw positie niet volgt, rond het kaartcentrum gezocht en toont het zoekveld *Zoek N km verderop*. Wanneer het kaartcentrum meer dan 70 km van uw locatie verwijderd is, verschijnt naast de sorteerchip een chip met het zoekgebied, *Kaartcentrum* of *Mijn locatie*. Tik erop om te kiezen waar u wilt zoeken. Lees meer in [Zoeken in de omgeving](./search-all.md#search-around).
 
 OsmAnd biedt verschillende manieren om naar de *Zoektool* te gaan waar de sectie **Adres zoeken** zich bevindt.
 
@@ -28,23 +35,34 @@ OsmAnd biedt verschillende manieren om naar de *Zoektool* te gaan waar de sectie
 - Tik bij het voorbereiden van een route op *Navigatie → Bestemming instellen → Zoekveld*.
 
 
-## Volledige tekst zoeken {#full-text-search}
+## Adrestabblad {#address-tab}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Adres zoeken Android](@site/static/img/search/search_address_2_andr.png)
+![Adres zoeken Android](@site/static/img/search/search_address_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Adres zoeken iOS](@site/static/img/search/street_search_ios.png)  
+![Adres zoeken iOS](@site/static/img/search/street_search_ios.webp)  
 
 </TabItem>
 
 </Tabs>
+
+Het tabblad *Adres* bevat knoppen voor verschillende manieren om op adres te zoeken. Elke knop opent een lijst met voorgestelde opties om uit te kiezen:
+
+- [**Straat zoeken in &lt;stad&gt;**](#select-street) (*Android*) / **Straat selecteren in &lt;stad&gt;** (*iOS*) — Verschijnt als u eerder naar een stad hebt gezocht. De laatst gezochte stad is al ingesteld, dus u hoeft alleen de straatnaam te typen en deze te kiezen uit de voorgestelde straten.
+- [**Eerst stad/plaats/localiteit opgeven**](#select-city) (*Android*) / **Stad selecteren** (*iOS*) — Altijd beschikbaar. Opent direct een lijst met steden, plaatsen en dorpen, gesorteerd op naam. De lijst wordt korter naarmate u typt.
+- [**Zoeken op postcode**](#postcode-search) — Altijd beschikbaar. Schakelt het zoekveld over naar postcode-invoer. De lijst blijft leeg totdat u minstens één teken typt, daarna verschijnen overeenkomende resultaten.
+- [**Coördinaten zoeken**](#coordinates-search) — Altijd beschikbaar. Opent het invoerscherm voor coördinaten.
+
+De lijst **Dichtstbijzijnde steden** wordt onder de knoppen weergegeven en toont maximaal 15 steden en plaatsen rond de zoeklocatie, uw positie of het kaartcentrum. Elk item toont de naam, het type, *Stad* of *Plaats*, en de afstand en richting vanaf de zoeklocatie. Op Android wordt ook de regio getoond.
+
+## Volledige tekst zoeken {#full-text-search}
 
 OsmAnd ondersteunt volledige tekst adres zoeken. Dit betekent dat u een adres direct in het zoekveld kunt typen in plaats van stad → straat → huisnummer stap voor stap te selecteren. De zoekmachine probeert adrescomponenten te herkennen zoals:
 - stad;
@@ -67,10 +85,8 @@ Wanneer een query naar zowel een adres als een POI kan verwijzen, geeft OsmAnd a
 
 **OPMERKING:** Adres zoeken werkt alleen binnen gedownloade kaarten. Zoekresultaten zijn gebaseerd op:
 - kaarten geïnstalleerd op uw apparaat;
-- het zichtbare kaartgebied;
+- [het zichtbare kaartgebied](./search-all.md#how-to-use);
 - uw huidige locatie. 
-
-Als er niets wordt gevonden, kan OsmAnd voorstellen om de zoekradius te vergroten.
 
 ### Adres zoeken in de VS en TIGER-gegevens {#us-address-search-and-tiger-data}
 
@@ -122,7 +138,7 @@ De zoekmachine tolereert ook veelvoorkomende variaties in adresformattering zoal
 
 <TabItem value="android" label="Android">
 
-![Stad zoeken Android](@site/static/img/search/town_search_android.png)
+![Stad zoeken Android](@site/static/img/search/town_search_android.webp)
 
 </TabItem>
 
@@ -134,14 +150,12 @@ De zoekmachine tolereert ook veelvoorkomende variaties in adresformattering zoal
 
 </Tabs>
 
-**Dichtstbijzijnde steden**  
-    Dit **toont een kleine lijst van steden rond uw locatie** of de plaats die u hebt opgegeven voor *Straat selecteren* of *Stad selecteren*. Elk veld bevat een pictogram dat overeenkomt met de grootte van de stad, de naam van de stad, de afstand van u tot het centrum, en voor Android de kompasrichting.
-
 Deze manier van zoeken maakt het gemakkelijk om specifieke locaties binnen een geselecteerde plaats te vinden, wat een handige manier is om adressen nauwkeurig en snel te vinden. U kunt beginnen met het zoeken naar het benodigde adres door de plaats te bepalen.
 
 - Tik hiervoor op **Eerst stad/plaats/localiteit opgeven** (Android) of **Stad selecteren** (iOS).
 - Selecteer in de lijst die wordt geopend de gewenste plaats. [Hier](#full-text-search) wordt de volgorde beschreven waarin zoekopdrachten worden weergegeven en welke informatie over elk item beschikbaar is.
-- Op het volgende scherm kunt u het adres verder verfijnen of de knop *Toon op de kaart* onder het zoekinvoerveld selecteren.
+- Tik op Android op de sorteerchip om *Relevantie* of *Dichtstbijzijnde* te kiezen. Wanneer het kaartcentrum meer dan 70 km van uw locatie verwijderd is, gebruikt u de chip voor het zoekgebied om te kiezen tussen *Kaartcentrum* en *Mijn locatie*. Boven de lijst verschijnen chips met de plaatstypen die in de resultaten zijn gevonden, zoals *Stad*, *Plaats* of *Dorp*. Tik op een chip om alleen resultaten van dat type te tonen.
+- Op het volgende scherm kunt u het adres verder verfijnen of de plaats op de kaart tonen. Tik op iOS op *Toon op de kaart* onder het zoekveld. Tik op Android op de knop *Toon op kaart*, de zwevende knop rechtsonder.
 - Om uw zoekopdracht te specificeren, kunt u de volledige of slechts een deel van de naam van de stad, het dorp of de gemeente invoeren waar het adres dat u zoekt zich bevindt. Hiermee kunt u uw zoekopdracht verfijnen en een nauwkeuriger lijst krijgen.
 - Als u op het laatste item in het adres, huisnummer of de naam van de kruising tikt, wordt het [contextmenu van de kaart](../map/map-context-menu.md#select-an-object-single-tap) van het object geopend.  
 
@@ -157,7 +171,7 @@ Deze manier van zoeken maakt het gemakkelijk om specifieke locaties binnen een g
 
 <TabItem value="android" label="Android">
 
-![Straat zoeken Android](@site/static/img/search/street_search.png) ![Straat zoeken Android](@site/static/img/search/street_search_1.png)
+![Straat zoeken Android](@site/static/img/search/street_search.webp) ![Straat zoeken Android](@site/static/img/search/street_search_1.webp)
 
 </TabItem>
 
@@ -169,10 +183,12 @@ Deze manier van zoeken maakt het gemakkelijk om specifieke locaties binnen een g
 
 </Tabs>
 
-Het zoeken naar straten wordt uitgevoerd in de plaats waar u zich bevindt, of waar u eerder hebt gezocht, of die zich in het midden van de zichtbare kaart op het applicatiescherm bevindt.
+Het zoeken naar straten wordt uitgevoerd in de laatste stad waarnaar u hebt gezocht. De naam ervan wordt op de knop getoond, zodat u direct met de straat kunt beginnen.
 
-- Om dit type zoekopdracht te gebruiken, tikt u op **Straat zoeken** (*Android*) of **Straat selecteren** (*iOS*).
-- In het zoekveld naast de stadsnaam kunt u beginnen met het typen van de straatnaam en de lijst zal zich verfijnen, waardoor u de meest geschikte resultaten krijgt.
+- Om dit type zoekopdracht te gebruiken, tikt u op **Straat zoeken in &lt;stad&gt;** (*Android*) of **Straat selecteren in &lt;stad&gt;** (*iOS*).
+- De stadsnaam is al ingevoerd in het zoekveld en de lijst met straten wordt direct geopend. In het zoekveld naast de stadsnaam kunt u beginnen met het typen van de straatnaam en de lijst zal zich verfijnen, waardoor u de meest geschikte resultaten krijgt.
+- Tik op Android op de sorteerchip om *Relevantie* of *Dichtstbijzijnde* te kiezen. Wanneer het kaartcentrum meer dan 70 km van uw locatie verwijderd is, gebruikt u de chip voor het zoekgebied om te kiezen tussen *Kaartcentrum* en *Mijn locatie*. Boven de lijst verschijnen chips met de objecttypen die in de resultaten zijn gevonden, zoals *Straat* of *Gebouw*. Tik op een chip om alleen resultaten van dat type te tonen.
+- Selecteer een straat om de lijst met gebouwen te openen. Selecteer het gewenste huisnummer om het [contextmenu van de kaart](../map/map-context-menu.md#select-an-object-single-tap) van het adres te openen.
 - Bij andere items is het zoeken naar straten hetzelfde als in [Stad selecteren](#select-city).
 
 :::note Sleutel & Waarde
@@ -187,7 +203,14 @@ Het zoeken naar straten wordt uitgevoerd in de plaats waar u zich bevindt, of wa
 
 <TabItem value="android" label="Android">
 
-![Postcode zoeken Android](@site/static/img/search/postcode_android.png)
+![Postcode zoeken Android](@site/static/img/search/postcode_android.webp)
+
+Tik op het tabblad *Adres* op **Zoeken op postcode**. De lijst blijft leeg totdat u begint te typen. Voer de postcode in, zelfs een enkel cijfer, en de app biedt een lijst met overeenkomende postcodes.
+
+- Tik op de sorteerchip om *Relevantie* of *Dichtstbijzijnde* te kiezen. Wanneer het kaartcentrum meer dan 70 km van uw locatie verwijderd is, gebruikt u de chip voor het zoekgebied om te kiezen tussen *Kaartcentrum* en *Mijn locatie*. Tik op de chip *Postcode* om alleen postcodes in de lijst te tonen.
+- Selecteer de gewenste postcode. De lijst met straten met deze postcode wordt geopend en de postcode blijft in het zoekveld staan.
+- Om het adres te verfijnen, selecteert u een straat en vervolgens het huisnummer. Dit opent het [contextmenu van de kaart](../map/map-context-menu.md#select-an-object-single-tap) van het adres.
+- Om de postcode zelf op de kaart te zien, tikt u op de knop *Toon op kaart*, de zwevende knop rechtsonder. De kaart wordt geopend met het [contextmenu](../map/map-context-menu.md#select-an-object-single-tap) van de postcode.
 
 </TabItem>
 
@@ -195,15 +218,15 @@ Het zoeken naar straten wordt uitgevoerd in de plaats waar u zich bevindt, of wa
 
 ![Postcode zoeken iOS](@site/static/img/search/postcode_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 **Om de *Postcode zoeken* te gebruiken, hoeft u alleen maar het nummer in te voeren**, dat zelfs uit een enkel cijfer kan bestaan, en de applicatie biedt een lijst met beschikbare relevante postcodes.
 
 - Selecteer de gewenste code en tik erop.
-- U kunt de functie *Toon *postcodenummer* op de kaart* gebruiken. Dit opent een [contextmenu van de kaart](../map/map-context-menu.md#select-an-object-single-tap) met de geselecteerde postcode zonder enige aanvullende informatie over de locatie.
+- U kunt de functie *Toon &lt;postcode&gt; op de kaart* gebruiken. Dit opent een [contextmenu van de kaart](../map/map-context-menu.md#select-an-object-single-tap) met de geselecteerde postcode zonder enige aanvullende informatie over de locatie.
 - U kunt uw zoekopdracht verfijnen op basis van deze code door eerst de gewenste straat uit de lijst te selecteren en vervolgens het nummer.
+
+</TabItem>
+
+</Tabs>
 
 **Zoeken op postcode kan nuttig zijn wanneer:**
 
@@ -239,6 +262,6 @@ Lees voor meer informatie de **[Postcodegegevens van het Verenigd Koninkrijk](ht
 ## Gerelateerde artikelen {#related-articles}
 
 - [Alles zoeken](./search-all.md)
-- [Zoekgeschiedenis](./search-history.md)
+- [Zoeken verkennen](./search-history.md)
 - [POI zoeken](./search-poi.md)
 - [Coördinaten zoeken](./search-coordinates.md)

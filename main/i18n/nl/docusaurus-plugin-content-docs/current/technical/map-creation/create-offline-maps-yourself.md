@@ -1,5 +1,5 @@
 ---
-source-hash: 0ece8e7a1a25127672614cdf13cd0688a67a4cbb64515cc18d60c278f7999862
+source-hash: 6cd58289fa863d41e34b91d4957c55fa523752c06e24588537decc922b41bdaa
 title: Offline raster- & vectorkaarten maken
 versions: '*'
 intro: Met OsmAndMapCreator zijn er veel manieren om raster- & vectorkaarten te maken en aan te passen voor uw behoeften.
@@ -7,7 +7,7 @@ intro: Met OsmAndMapCreator zijn er veel manieren om raster- & vectorkaarten te 
 
 ## OsmAndMapCreator {#osmandmapcreator}
 
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) kan worden gebruikt om zelf kaarten te maken die door OsmAnd worden ondersteund. U kunt de nieuwste versie downloaden van de [website](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator heeft UI-mogelijkheden om raster- & vectorkaarten te maken. *Om een vectorkaart te maken heeft u een OSM-bestand (`*.pbf, *.osm.gz, *.osm.bz2`)* nodig en *om een online sqlite-kaartbestand te maken heeft u een `basis tegel-URL` nodig*.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) kan worden gebruikt om zelf kaarten te maken die door OsmAnd worden ondersteund. U kunt de nieuwste versie downloaden van de [website](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator heeft UI-mogelijkheden om raster- & vectorkaarten te maken. *Om een vectorkaart te maken heeft u een OSM-bestand (`*.pbf, *.osm.gz, *.osm.bz2`)* nodig en *om een online sqlite-kaartbestand te maken heeft u een `base tile url` nodig*.
 
 ### Rasterkaarten (eenvoudig) {#raster-maps-simple}
 
@@ -33,7 +33,7 @@ Stappen om een vectorkaart te maken via de OsmAndMapCreator UI:
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Vectorkaarten maken" />
 
-Meer parameters voor het genereren van vectorkaarten kunnen worden gespecificeerd in het shell-script `utilities.sh`.
+Meer parameters voor het genereren van vectorkaarten kunnen worden gespecificeerd in het shell-script `utilities.sh `.
 
 ## Vectorkaarten (shellscript) {#vector-maps-shell-script}
 
@@ -141,7 +141,7 @@ Daarna kunt u uw SQLite-bestand maken: 'Atlas' -> 'Atlas maken'.
 
 U kunt bijvoorbeeld elk afbeeldingsformaat en pdf-kaarten converteren en kalibreren naar een OsmAnd online kaart.
 
-[Video-tutorial](https://www.youtube.com/watch?v=Y_fekLfcOc) over het gebruik van het programma.
+[Video-tutorial](https://www.youtube.com/watch?v=Y_fekLfcUOc) over het gebruik van het programma.
 
 ### SASPlanet {#sasplanet}
 
@@ -250,8 +250,8 @@ Als u om welke reden dan ook een enkele _geopdf_ naar _geotiff_ wilt converteren
 
 **Gebruik:**
 
-&nbsp;<i>gdal_translate ```<GeoPDF bestandsnaam> <Output Geotiff Bestandsnaam>``` -of gtiff --config
-gdal_pdf_layers_off “```<pdf laagnaam 1>,<pdf laagnaam 2>,<pdf laagnaam 3>```” --config gdal_pdf_dpi ```<output dpi>``` </i>&nbsp;
+&nbsp;<i>gdal_translate ```<GeoPDF filename> <Output Geotiff Filename>``` -of gtiff --config
+gdal_pdf_layers_off “```<pdf layername 1>,<pdf layername 2>,<pdf layername 3>```” --config gdal_pdf_dpi ```<output dpi>``` </i>&nbsp;
 
 **Voorbeelden:**
 

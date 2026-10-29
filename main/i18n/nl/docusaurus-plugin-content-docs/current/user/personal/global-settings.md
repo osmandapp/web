@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Algemene instellingen
 ---
@@ -101,6 +101,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settin
     - *Intern app-geheugen*. Alleen de OsmAnd-app heeft toegang tot zijn gegevens en geen van de externe apps.
     - *Gedeeld geheugen*. Niet langer beschikbaar.
     - *Externe opslag 1*. Alleen 1 OsmAnd-app heeft toegang en Admin-apps en USB.
+    - *Zichtbare externe opslag 1*. Gegevens worden opgeslagen in de map Android/media, die toegankelijk is voor bestandsbeheerders en USB. Er zijn geen extra opslagmachtigingen vereist.
     - *Opslag voor meerdere gebruikers*. Slechts 1 OsmAnd-app heeft toegang, maar deze wordt gedeeld tussen meerdere Android-gebruikers.
     - *Handmatig opgegeven*. Hangt af van het pad.
 
@@ -115,6 +116,11 @@ De instelling **Media-opslag** bepaalt waar foto's, video's en audiobestanden di
 - **Gedeelde opslag** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Cameramap** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Handmatig opgegeven** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Wanneer u een andere mediaopslag selecteert, vraagt OsmAnd of bestaande mediabestanden moeten worden verplaatst:
+- **Verplaatsen naar de nieuwe bestemming** — Verplaats bestaande mediabestanden naar de geselecteerde opslag.
+- **Niet verplaatsen** — Wijzig de opslag zonder bestaande bestanden te verplaatsen.
+- **Annuleren** — Behoud de huidige opslag.
 
 Er is ook een schakelaar *Altijd een lokale kopie bewaren*. Wanneer ingeschakeld, kopieert OsmAnd media die uit de Galerij of Bestanden zijn geïmporteerd naar zijn eigen opslag, zodat de gekoppelde media beschikbaar blijft, zelfs als het originele bestand uit de Galerij of het bestandssysteem wordt verwijderd.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
+source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -65,7 +65,7 @@ Het downloaden van kaarten in de OsmAnd-applicatie is een belangrijke stap die d
 ### Gratis kaartinhoud {#free-map-content}
 
 - **Standaardkaart**. Biedt een overzicht van het gebied op basis van de [OpenStreetMap](https://www.openstreetmap.org/)-bron en bevat een kaart, routes, adressen, POI en informatie over openbaar vervoer. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's van het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.  
-- **Alleen wegen**. De kaart bevat alleen informatie over het wegennet om te focussen op routes en wegeninfrastructuur. Door details zoals gebouwen en nuttige plaatsen te verwijderen, is deze kleiner dan een standaardkaart. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's in het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.
+- **Alleen wegen**. Een kleiner alternatief voor de Standaardkaart, gericht op routes en wegeninfrastructuur. Het bevat het wegennet met straatnamen, samen met grotere gebieden zoals water, bossen en parken, terwijl details zoals gebouwen en nuttige plaatsen zijn weggelaten. Als u hierop tikt, wordt een scherm geopend met een lijst van regio's in het geselecteerde land en informatie over hoeveel ruimte deze kaarten op uw apparaat in beslag zullen nemen.
 - **Wereldoverzichtskaart**. Versies van OsmAnd tot 3.8 bieden de mogelijkheid om een wereldkaart te downloaden zodat u deze op planetaire schaal kunt bekijken. In nieuwere versies van OsmAnd is een lichtgewicht *Mini Wereldkaart* gebundeld met de applicatie. De app laat u een grotere overzichtswereldkaart downloaden met meer gedetailleerde informatie. 
 
 :::info maandelijkse kaartupdates
@@ -141,7 +141,7 @@ Via het tabblad **Downloaden** kunt u verschillende kaarttypes downloaden van de
 
 In het menu Kaarten downloaden is er een sectie **Wereldkaarten** die toegang biedt tot het downloaden van verschillende wereldkaarten, wat de functionaliteit van de app aanvult.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*alleen Android*). Dit bestand bevat hoogtecorrecties om de kromming van de planeet te compenseren.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*alleen Android*). Dit bestand bevat hoogtecorrecties die worden gebruikt om de hoogtenauwkeurigheid te verbeteren op apparaten die geen hoogte boven gemiddeld zeeniveau (MSL) leveren, ook wanneer de Android-API wordt gebruikt als [locatiebron](../personal/global-settings.md#location-source) in plaats van Google Play Services.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Biedt een uitgebreid overzicht van het aardoppervlak, handig voor lange-termijn routeplanning en vrijblijvende verkenning.
 - **Wereldweerkaart**. Hiermee kunt u een kaart met weersinformatie downloaden.
 
@@ -369,9 +369,9 @@ Het tabblad **Updates** bevat ook een sectie Weersvoorspelling. Deze is ontworpe
 
 </Tabs>
 
-## Live Updates {#live-updates}
+## Live-updates {#live-updates}
 
-:::info Pro feature
+:::info Pro-functie
 Live Updates is een [**OsmAnd Pro**](../purchases/index.md) betaalde functie <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">

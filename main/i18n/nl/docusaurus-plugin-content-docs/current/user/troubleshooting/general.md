@@ -1,5 +1,5 @@
 ---
-source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
+source-hash: 7a4ec38811965699d4bf8be48f33fcce4e1e12973b13ab13ffa374909cfef793
 sidebar_position: 2
 title:  Algemeen
 ---
@@ -89,6 +89,19 @@ Recente OsmAnd-versies passen geen extra automatische schaling meer toe voor app
 Als u de grootte van kaartknoppen handmatig wilt aanpassen, gebruikt u de instellingen [Standaardweergave](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Menu → Scherm configureren → Knoppen → Standaardknoppen → menu met drie puntjes → Weergave*. Daar kunt u een aangepaste Grootte, Hoekradius en Achtergronddekking instellen voor alle standaardknoppen tegelijk.
 
 Als de interface nog steeds groter lijkt dan verwacht, controleer dan *Android-systeeminstellingen → Weergave → Weergavegrootte en tekst* en pas de weergave-instellingen indien nodig aan.
+
+### OsmAnd vult het scherm niet in liggende stand op iPad (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+OsmAnd ondersteunt zowel de staande als de liggende stand op iPad en volgt de systeemrotatie. Als de app het scherm in staande stand vult maar in liggende stand als een kleiner venster verschijnt, wordt dit veroorzaakt door de vensterweergave van iPadOS 26, niet door OsmAnd.
+
+In de modus *Apps in vensters* onthoudt iPadOS de grootte van elk appvenster. Zodra het OsmAnd-venster in liggende stand is aangepast, behoudt de app die venstergrootte in liggende stand, terwijl het scherm in staande stand nog steeds wordt gevuld.
+
+Om OsmAnd het scherm weer te laten vullen, gebruikt u een van de volgende opties:
+
+- **Vergroot het venster.** Tik met OsmAnd geopend in liggende stand op het kleine pilvormige element boven aan het venster. Er verschijnen drie knoppen: *Sluiten*, *Minimaliseren* en *Zoomen*. Tik op *Zoomen* om de app naar het hele scherm uit te vouwen. De app behoudt de schermvullende grootte na het roteren van de iPad.
+- **Schakel vensters voor alle apps uit.** Ga naar *iPad-instellingen → Multitasking en gebaren* en selecteer *Apps op volledig scherm* in plaats van *Apps in vensters*. Alle apps, inclusief OsmAnd, worden dan altijd op volledig scherm geopend.
+
+Zorg er ook voor dat OsmAnd niet naast een andere app wordt geopend in *Split View* of *Slide Over*.
 
 
 ## Overig {#other}

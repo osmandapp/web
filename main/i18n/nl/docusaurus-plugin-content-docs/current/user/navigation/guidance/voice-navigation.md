@@ -1,5 +1,5 @@
 ---
-source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title:  Stembediening / Meldingen
 ---
@@ -51,7 +51,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Voice Navigation settings Android](@site/static/img/navigation/voice/voice_promt_android.webp)
+![Instellingen voor gesproken aanwijzingen Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Instellingen voor gesproken aanwijzingen Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -60,7 +60,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> knop* *(of <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Kies profiel → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
+![Instellingen voor gesproken aanwijzingen iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Instellingen voor gesproken aanwijzingen iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -108,7 +108,7 @@ Voor meer informatie over hoe en wanneer stemberichten worden geactiveerd, raadp
 
 ### Flitsers {#speed-cameras}
 
-![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
+![Aankondigingstiming gesproken aanwijzingen Android](@site/static/img/navigation/voice/voice_promt-speed-cameras.png)
 
 [Waarschuwingen voor flitsers](../../personal/global-settings.md#uninstall-speed-cameras) stellen u in staat om POI's met flitsers te activeren of deactiveren. U moet de OsmAnd-applicatie opnieuw opstarten om de wijzigingen toe te passen.
   
@@ -121,13 +121,13 @@ In sommige landen of regio's is het gebruik van applicaties die waarschuwen voor
 
 <TabItem value="android" label="Android">
 
-![Voice Navigation](@site/static/img/navigation/voice/voice_promt_speed_limit_andr.png)
+![Gesproken aanwijzingen](@site/static/img/navigation/voice/voice_promt_speed_limit_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Voice Navigation](@site/static/img/navigation/voice/voice_promt_speed_limit_ios.png)
+![Gesproken aanwijzingen](@site/static/img/navigation/voice/voice_promt_speed_limit_ios.png)
 
 </TabItem>
 
@@ -149,7 +149,7 @@ Deze instelling voor **Tolerantie snelheidslimiet** beïnvloedt de snelheid die 
 
 ### Aankondigingstijd {#announcement-time}
 
-![Voice Navigation announcement timing Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
+![Aankondigingstiming gesproken aanwijzingen Android](@site/static/img/navigation/voice/voice_promt-announ-time.png)  
 
 De aankondigingstijd van de verschillende stemberichten is afhankelijk van het geselecteerde profiel, het type melding, de huidige navigatiesnelheid en de standaard navigatiesnelheid. Met deze instelling kunt u de afstand wijzigen voordat de stemberichten worden geactiveerd door een afstandsvermenigvuldiger toe te passen: *<Translate android="true" ids="arrival_distance_factor_normally" />* - 1.0, *<Translate android="true" ids="arrival_distance_factor_early" />* - 1.5, *<Translate android="true" ids="arrival_distance_factor_late" />* - 0.5, *<Translate android="true" ids="arrival_distance_factor_at_last" />* - 0.25.  
 
@@ -160,7 +160,7 @@ In de vervolgkeuzelijst *Tijd- en Afstandsintervallen* kunt u gedetailleerde inf
 
 <InfoAndroidOnly/>
 
-![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-1.png)
+![Gesproken aanwijzingen Android](@site/static/img/navigation/voice/voice_promt-1.png)
 
 Om te voorkomen dat audio tegelijkertijd in dezelfde uitvoerstroom wordt afgespeeld, is de audiofocus geïmplementeerd in Android. OsmAnd zal de luidspreker gebruiken die in deze instelling uit de lijst is geselecteerd voor de audio-uitvoer. Andere applicaties zullen het afspelen pauzeren of het volume verlagen om het voor u gemakkelijker te maken de stemberichten van OsmAnd te horen.  
 
@@ -247,7 +247,7 @@ Voor probleemoplossing, raadpleeg:
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Voice Navigation Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
+![Gesproken aanwijzingen Android](@site/static/img/navigation/voice/voice_promt-tts.png)  ![Gesproken aanwijzingen Android](@site/static/img/navigation/voice/voice_promt-recorded.png)  
 
 </TabItem>
 
@@ -255,7 +255,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,ro
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,shared_string_language"/>*
 
-![Voice Navigation settings iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
+![Instellingen voor gesproken aanwijzingen iOS](@site/static/img/navigation/voice/voice_promt-tts-ios.png)
 
 </TabItem>
 
@@ -335,13 +335,13 @@ Het gebruik van opgenomen stemmen in OsmAnd zou alleen een noodoplossing moeten 
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,other_location,index_name_tts_voice"/>*
 
-    ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
+    ![Instellingen voor gesproken aanwijzingen Android](@site/static/img/navigation/voice/TTS-preferred-1.png)  ![Instellingen voor gesproken aanwijzingen Android](@site/static/img/navigation/voice/TTS-preferred-2.png)  
 
 - Het tweede type zijn opgenomen stemberichten, met een onvolledige set functies:
 
     *<Translate android="true" ids="shared_string_menu,maps_and_resources,index_name_voice"/>*  
 
-    ![Voice Navigation settings Android](@site/static/img/navigation/voice/TTS-recorded.png)  
+    ![Instellingen voor gesproken aanwijzingen Android](@site/static/img/navigation/voice/TTS-recorded.png)  
 
 ### Piepmodi {#beep-modes}
 
@@ -363,7 +363,7 @@ U kunt een OsmAnd-profiel configureren om te piepen in plaats van te spreken, op
 
 Zodra u een route start, kunt u de informatie bekijken in het uitklapbare systeemmenu in de meldingslijst. De stille meldingen van OsmAnd bevatten informatie zoals stapsgewijze instructies, pijlen voor afslagen, aankomsttijd en resterende tijd, huidige snelheid en afstand tot de bestemming.  
 
-![Navigation route Notification Android](@site/static/img/navigation/route/navigation_notifications_android.png)
+![Navigatieroutemelding Android](@site/static/img/navigation/route/navigation_notifications_android.png)
 
 Actieve knoppen in het uitklapbare systeemmenu voor uw navigatie:
 
@@ -384,7 +384,7 @@ Lees hoe meldingsbeheer op Android is geïmplementeerd in dit [artikel](https://
 
 *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,screen_control"/>*
 
-![Screen control menu Android](@site/static/img/navigation/route/screen_control_android.png)
+![Schermbedieningsmenu Android](@site/static/img/navigation/route/screen_control_android.png)
 
 U kunt het scherm van uw apparaat beheren om energie te besparen. Deze modus heeft twee algemene instellingen: *<Translate android="true" ids="screen_timeout"/>* en *<Translate android="true" ids="turn_screen_on"/>*.
 
@@ -392,21 +392,25 @@ U kunt het scherm van uw apparaat beheren om energie te besparen. Deze modus hee
 
 1. **<Translate android="true" ids="system_screen_timeout"/>**. Het scherm wordt uitgeschakeld afhankelijk van de systeeminstellingen van uw apparaat. De knop *Instellingen wijzigen* biedt snelle toegang tot het systeemmenu zoals *Scherm en helderheid* waar u de scherm-timeout kunt aanpassen.
 
-    ![System timeout screen control Android](@site/static/img/navigation/route/system_timeout_android.png)
+    ![Systeem-scherm-timeout Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Als *Houd scherm aan* is ingeschakeld, past het scherm van het apparaat geen time-out toe na het ontwaken. Als het is uitgeschakeld, kunt u de tijd instellen waarna het scherm van het apparaat wordt uitgeschakeld als u er niet mee interageert, van 5 tot 60 seconden.  
+2. **<Translate android="true" ids="wake_time"/>**. Als *Houd scherm aan* is ingeschakeld, past het scherm van het apparaat geen time-out toe na het ontwaken. Als het is uitgeschakeld, kunt u de tijd instellen waarna het scherm van het apparaat wordt uitgeschakeld als u er niet mee interageert, van 5 tot 60 seconden. De time-out telt vanaf uw laatste interactie met de kaart en elke aanraking start deze opnieuw. Wanneer de time-out afloopt, wordt het scherm uitgeschakeld volgens de systeem-scherm-timeout van uw apparaat, dus OsmAnd kan het scherm langer aan houden dan de systeeminstelling, maar nooit korter.   
 
-    ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout after wakeup Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
+    ![Time-out na ontwaken Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Time-out na ontwaken Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
 ### Scherm inschakelen {#turn-screen-on}
 
-![turn screen on Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
+![Scherm inschakelen Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Selecteer opties voor het ontwaken van het scherm en zorg ervoor dat OsmAnd op de voorgrond blijft wanneer het apparaat is vergrendeld.
+Selecteer opties voor het ontwaken van het scherm en zorg ervoor dat OsmAnd op de voorgrond blijft wanneer het apparaat is vergrendeld. Wanneer een ontwaakoptie het scherm inschakelt, verschijnt de kaart boven het vergrendelscherm en blijft het apparaat vergrendeld. Als er geen ontwaakoptie is ingeschakeld, wordt het gewone vergrendelscherm weergegeven.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> De sensor reageert betrouwbaar tijdens navigatie of trackopname. In andere gevallen stopt Android ongeveer een minuut nadat de app naar de achtergrond gaat met het verzenden van sensorgebeurtenissen naar OsmAnd.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> Als *Systeem-scherm-timeout gebruiken* is uitgeschakeld, vereist deze optie dat *Time-out na ontwaken* is ingesteld op *Houd scherm aan*.
+
+Na een ontwaking door de nabijheidssensor of een navigatie-instructie blijft de kaart boven het vergrendelscherm staan gedurende de tijd die is ingesteld in *Time-out na ontwaken*, waarna het apparaat opnieuw wordt vergrendeld. Met *Houd scherm aan* blijft de kaart zichtbaar totdat u op de aan/uit-knop drukt.
+
+**Opmerking:** Sta op Xiaomi-apparaten de machtiging *Weergeven op vergrendelscherm* toe voor OsmAnd (*App-info → Overige machtigingen*). Zonder deze machtiging wordt het scherm ingeschakeld, maar verschijnt de kaart niet boven het vergrendelscherm. OsmAnd kan deze machtiging zelf niet verlenen.
 
 
 ## Gerelateerde artikelen {#related-articles}
