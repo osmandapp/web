@@ -1,5 +1,5 @@
 ---
-source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
+source-hash: 7ab1b7c975524abc4cbcb3957975026e9c46aff353e0f442c1228dc360748218
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -305,7 +305,7 @@ Dans ce menu, vous pouvez sélectionner les données et les dossiers à téléve
 
 1. **Paramètres**. Cet onglet inclut tous vos paramètres, tels que les préférences générales, les profils spécifiques, les actions rapides, les POI et les paramètres d'évitement de route.
 
-2. **Mes lieux**. Cet onglet liste les données du menu [Mes lieux](../personal/myplaces), y compris les favoris, les traces, les notes OSM, les marqueurs et d'autres éléments.
+2. **Mes lieux**. Cet onglet liste les données du menu [Mes lieux](../personal/myplaces), y compris les favoris, les médias joints (Android uniquement), les traces, les notes OSM, les marqueurs et d'autres éléments.
 
 3. **Ressources**. Ici, vous pouvez choisir de sauvegarder des ressources telles que les favoris, les informations de routage, les invites vocales et des éléments supplémentaires.
 
@@ -330,7 +330,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
 
-![Écran de gestion du stockage iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
+![Écran de sauvegarde des données iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
 
 </TabItem>
 

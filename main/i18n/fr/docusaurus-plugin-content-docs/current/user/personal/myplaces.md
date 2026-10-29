@@ -1,5 +1,5 @@
 ---
-source-hash: d5de9c3084442f355b9b6536f2e73e330ece35ee360363e944195eaf5ddfe9fb
+source-hash: 941d8e8096800d75da224d6bdd577697326daf17319375cb9b22749166c80554
 sidebar_position: 6
 title:  Mes Lieux
 ---
@@ -131,7 +131,7 @@ Consultez le [plugin d'édition OSM](../plugins/osm-editing.md) pour des instruc
 
 ![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-Le **plugin Notes Audio/Vidéo** vous permet de créer des notes multimédias liées à des emplacements spécifiques sur la carte. Ces notes sont stockées dans **Mes Lieux** sous l'**onglet Notes A/V**.
+Le **plugin Notes Audio/Vidéo** vous permet de créer des notes multimédias liées à des emplacements spécifiques sur la carte. Ces notes sont stockées dans **Mes Lieux** sous l'**onglet Notes A/V**. Chaque note est également enregistrée en tant que favori dans le dossier **media** de l'onglet [Favoris](#favorites).
 
 Pour plus d'informations, visitez la page du [plugin Notes Audio/Vidéo](../plugins/audio-video-notes.md).
 
@@ -149,7 +149,7 @@ Pour des informations détaillées, consultez l'article [Guides de voyage](../pl
 
 - [Gérer les traces](../personal/tracks/manage-tracks.md#import--export-track)
 - [Favoris](../personal/favorites.md)
-- [Édition OpenStreetMap](../plugins/osm-editing.md)
+- [Modification OpenStreetMap](../plugins/osm-editing.md)
 - [Notes Audio/Vidéo](../plugins/audio-video-notes.md)
 - [Guides de voyage](../plan-route/travel-guides.md)
 - [Historique de recherche](../search/search-history.md#export-and-share)

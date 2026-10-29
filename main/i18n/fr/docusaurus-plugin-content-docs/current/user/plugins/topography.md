@@ -1,5 +1,5 @@
 ---
-source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
+source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
 sidebar_position: 16
 title: Topographie
 ---
@@ -58,6 +58,7 @@ Le plugin Topographie donne accès aux types de cartes suivants :
 ### Licence pour les données MNE utilisées par OsmAnd pour la détection du terrain {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 Les données d'altitude sur la carte (entre 70 degrés de latitude nord et 70 degrés de latitude sud) ont été obtenues à partir de mesures effectuées dans le cadre de la *Shuttle Radar Topography Mission (SRTM)*. Elle a utilisé l'instrument *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, l'outil d'imagerie principal du *Système d'Observation de la Terre de la NASA*.  
+Pour l'Amérique du Nord, les cartes de terrain et les lignes de niveau utilisent des données d'altitude nationales haute résolution : environ 10 m dans les États-Unis continentaux et environ 30 m en Alaska et dans la majeure partie du Canada et du Mexique.  
 Pour des informations complètes, consultez la [Licence](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -66,7 +67,8 @@ Pour des informations complètes, consultez la [Licence](https://github.com/osma
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Les données originales utilisées pour ce produit ont été fournies par AW3D de la JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program (3DEP)</a> via <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> (États-Unis, Alaska) et <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">USGS 1 arc-second DEM</a> sur <a href="https://opentopography.org/">OpenTopography</a> (Canada, Mexique), y compris les données de <a href="https://natural-resources.canada.ca/">Natural Resources Canada (NRCan)</a> et <a href="https://www.inegi.org.mx/">INEGI</a>.
 
 </details>
 
@@ -331,7 +333,7 @@ Les Niveaux de zoom ne sont pas disponibles pour les Ombres de terrain car cette
 1. Si vous utilisez le **Moteur de rendu de la carte Version 1**, vous devez utiliser le [téléchargement](../start-with/download-maps.md) normal des cartes raster d'Estompage et de Pente.
 
 2. Si vous utilisez le **Moteur de rendu de la carte Version 2 (OpenGL)** :
-    - Vous pouvez continuer à utiliser le type de téléchargement normal des cartes raster d'Estompage et de Pente. Cependant, pour ce faire, vous devrez activer le [plugin de développement OsmAnd](../plugins/development.md) et activer le paramètre [Utiliser le format SQLite raster pour l'estompage et la pente](../plugins/development.md#terrain).
+    - Vous pouvez continuer à utiliser le type de téléchargement normal des cartes raster d'Estompage et de Pente. Cependant, pour ce faire, vous devez activer le [plugin de développement OsmAnd](../plugins/development.md) et activer le paramètre [Utiliser le format SQLite raster pour l'estompage et la pente](../plugins/development.md#terrain).
 
     - Alternativement, vous pouvez utiliser le téléchargement de la [Carte de terrain (3D)](../personal/maps-resources.md#paid-map-content). Cela économise de l'espace mémoire sur votre appareil, et les effets d'Estompage, de Pente et de Relief 3D seront générés à partir de celles-ci en utilisant votre appareil.
 
@@ -544,7 +546,7 @@ L'*Exagération verticale* est un coefficient spécial pour le *Relief 3D*. Vous
 **L'estompage** est un type de carte qui affiche le terrain en utilisant des ombres, créant une représentation visuelle de la pente et de la forme de la surface terrestre.  
 **Le Relief 3D** est une fonctionnalité qui ajoute des effets tridimensionnels à la carte.  
 
-Si vous **désactivez** l'*Estompage* et **activez** le *Relief 3D*, les ombres du relief seront toujours visibles car l'*Estompage* et le *Relief 3D* sont deux manières différentes de visualiser une carte. L'*Estompage* crée des ombres basées sur le terrain et les ajoute à la carte, tandis que le *Relief 3D* modélise des éléments 3D pour montrer la profondeur et la forme du terrain, et les ombres font partie de la visualisation. Ces fonctionnalités peuvent fonctionner en parallèle, et la désactivation de l'*Estompage* n'affecte pas la manière dont les effets 3D sont affichés.  
+Si vous **désactivez** l'*Estompage* et **activez** le *Relief 3D*, les ombres du relief seront toujours visibles car l'*Estompage* et le *Relief 3D* sont deux manières différentes de visualiser une carte. L'*Estompage* crée des ombres basées sur le terrain et ajoute ces ombres à la carte, tandis que le *Relief 3D* modélise des éléments 3D pour montrer la profondeur et la forme du terrain, et les ombres font partie de la visualisation. Ces fonctionnalités peuvent fonctionner en parallèle, et la désactivation de l'*Estompage* n'affecte pas la manière dont les effets 3D sont affichés.  
 
 Lorsque l'**Estompage** est **activé**, une image avec des ombres de relief apparaît plus détaillée, plus sombre et plus étagée qu'une image de *Relief 3D*. L'explication est que l'*Estompage* accentue les gradients et les contrastes du terrain, créant une image plus nette et plus détaillée. La fonction *Relief 3D* donne à la carte une apparence plus fluide et lissée, adoucissant le terrain et réduisant potentiellement la visibilité de certains détails plus fins.
 

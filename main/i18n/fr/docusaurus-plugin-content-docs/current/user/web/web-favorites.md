@@ -1,5 +1,5 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -72,7 +72,7 @@ La vue Détails fournit les informations associées au lieu sélectionné et dé
 
 ## Actions des Favoris {#favorites-actions}
 
-[Pour ajouter](../personal/favorites.md#manage-favorites) un nouveau point de favori, cliquez avec le bouton droit sur l'écran. 
+[Pour ajouter](../personal/favorites.md#manage-favorites) un nouveau point de favori, cliquez avec le bouton droit sur l'écran. Si le favori ne peut pas être enregistré, le message d'erreur inclut la raison signalée par le serveur, par exemple qu'il n'y a pas assez d'espace dans [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Pour modifier un favori existant, cliquez sur le point de favori soit directement sur la carte, soit sélectionnez-le depuis un dossier de favoris. Cela ouvre le panneau Détails, où l'action Modifier est disponible. La modification peut également être démarrée depuis le menu à trois points (⋮) à côté du favori dans la liste des Favoris.
 

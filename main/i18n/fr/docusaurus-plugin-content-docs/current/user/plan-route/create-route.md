@@ -1,5 +1,5 @@
 ---
-source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
+source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
 sidebar_position: 1
 title:  Planifier un itinéraire
 ---
@@ -186,21 +186,6 @@ Vous pouvez sélectionner une [valeur de seuil](../navigation/setup/gpx-navigati
 Si vous sélectionnez une trace et que l'icône de profil ***non spécifié*** ("?") s'affiche à côté de l'icône *Paramètres*, appuyez dessus pour choisir d'attacher la trace aux routes ou de simplement connecter les points avec une ligne droite et de la traiter comme une trace enregistrée.
 :::
 
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
-
 
 ## Points et segments {#points--segments}
 
@@ -277,19 +262,20 @@ Vous pouvez changer l'itinéraire entre 2 points spécifiques ou entre plusieurs
 
 <TabItem value="ios" label="iOS">
 
-![Planifier un itinéraire ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Planifier un itinéraire ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Planifier un itinéraire ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Planifier un itinéraire ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Les points ajoutés peuvent être connectés par une ligne droite ou un itinéraire calculé à l'aide d'un profil de routage sélectionné. Le menu Itinéraire entre les points permet d'afficher et de modifier le type de routage et les paramètres des segments et sections d'itinéraire.
 
 Vous pouvez ouvrir Itinéraire entre les points en appuyant sur le bouton *Itinéraire entre les points*, qui affiche l'icône du profil de routage actuellement sélectionné, ou depuis un menu [Segment](#segments) ou Section.
 
-Dans l'onglet Type d'itinéraire, vous pouvez sélectionner un profil de routage pour le segment ou la section sélectionné. La ligne droite est disponible comme première option, suivie des profils de routage disponibles.
+Dans l'onglet Itinéraire, vous pouvez sélectionner un profil de routage pour le segment ou la section sélectionné. La ligne droite est disponible comme première option, suivie des profils de routage disponibles.
 
-Lorsqu'un itinéraire ne contient qu'un seul type de routage, la vue simple Itinéraire entre les points est affichée. Lorsqu'un itinéraire contient plusieurs types de routage, la vue complexe affiche tous les segments et sections, vous permettant de sélectionner la partie de l'itinéraire à modifier.
+Lorsqu'un itinéraire ne contient qu'un seul segment avec un seul type de routage, la vue simple Itinéraire entre les points est affichée. Lorsqu'un itinéraire contient plusieurs segments ou un segment avec plusieurs types de routage, la vue complexe affiche tous les segments et sections, vous permettant de sélectionner la partie de l'itinéraire à modifier.
 
 Vous pouvez également :
-- **Démarrer un nouveau segment** — créer un nouveau segment et continuer à ajouter des points d'itinéraire. Le nouveau segment utilise le même type d'itinéraire que l'actuel.
-- **Modifier pour toute la trace** — sélectionner un type de routage à appliquer à l'ensemble de la trace.
+- **Continuer avec un type d'itinéraire différent** — sélectionner un type de routage pour la section suivante du segment actuel, puis continuer à ajouter des points sur la carte. Dans la vue complexe, cette option est appelée Continuer avec un type différent et est affichée sous le dernier segment.
+- **Démarrer un nouveau segment** — créer un nouveau segment qui n'est pas connecté à la partie précédente de la trace. Sélectionner un type de routage pour le nouveau segment, puis continuer à ajouter des points sur la carte.
+- **Changer le type pour toute la trace** — disponible dans la vue complexe. Sélectionner un type de routage à appliquer à l'ensemble de la trace.
 
 Dans l'onglet Paramètres, vous pouvez sélectionner des paramètres de routage prédéfinis pour le type d'itinéraire sélectionné.
 
@@ -313,7 +299,7 @@ Un segment de trace est un ensemble de points connectés sans **interruption**. 
 
 <TabItem value="ios" label="iOS">
 
-![Planifier un itinéraire ios](@site/static/img/plan-route/segment_menu.webp) ![Planifier un itinéraire ios](@site/static/img/plan-route/section_menu.webp)
+![Planifier un itinéraire ios](@site/static/img/plan-route/segment_menu_1.webp) ![Planifier un itinéraire ios](@site/static/img/plan-route/section_menu.webp)
 
 Un itinéraire peut contenir un ou plusieurs segments. Un segment peut utiliser un seul type d'itinéraire ou contenir plusieurs sections avec différents types d'itinéraire.
 
@@ -321,12 +307,12 @@ Dans l'onglet Itinéraire, chaque segment est affiché avec son type d'itinérai
 
 Vous pouvez gérer un segment à l'aide de son menu à trois points :
 - **Modifier le type d'itinéraire** — disponible pour un segment avec un seul type d'itinéraire. Ouvre Itinéraire entre les points, où vous pouvez sélectionner un type d'itinéraire différent.
-- **Définir un seul type d'itinéraire** — disponible lorsqu'un segment contient plusieurs sections avec différents types d'itinéraire. Ouvre Itinéraire entre les points, où vous pouvez appliquer un seul type d'itinéraire au segment.
+- **Définir un seul type d'itinéraire** — disponible lorsqu'un segment contient plusieurs sections avec différents types d'itinéraire. Ouvre Itinéraire entre les points, où vous pouvez appliquer un seul type d'itinéraire au segment. L'ensemble du segment est recalculé en utilisant le type de routage sélectionné.
 - **Trier** — réorganiser manuellement les points d'itinéraire ou utiliser Trier porte-à-porte pour les réorganiser afin de minimiser la distance totale de déplacement.
 - **Enregistrer sous…** — enregistrer le segment comme un fichier séparé.
 - **Supprimer le segment** — supprimer le segment.
 
-Pour créer un nouveau segment non connecté, appuyez sur *Démarrer un nouveau segment* en bas de l'onglet Itinéraire.
+Pour créer un nouveau segment non connecté, appuyez sur *Démarrer un nouveau segment* en bas de l'onglet Itinéraire. Pour continuer le segment actuel avec un type de routage différent, appuyez sur *Continuer avec un type différent* sous le dernier segment, puis sélectionnez un type de routage pour la section suivante.
 
 Un segment peut être divisé en [sections](#multimodal-routes) lorsque différents types d'itinéraire sont utilisés pour différentes parties du segment. Chaque section affiche son type d'itinéraire et sa distance.
 

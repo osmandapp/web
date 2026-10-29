@@ -1,11 +1,11 @@
 ---
+source-hash: 007e11a861c2a9ce2f0754125c4f6b15fbd23716e19483ccac7d84cc259b9c23
 draft: true
-source-hash: 504d37c63818c1fd91f4825bfefd95d097c561b6b3c39e9d5773e16606a55a9f
 sidebar_position: 2
 title: Android Developer
 ---
 
-Nous développons un grand projet open source Android (https://www.openhub.net/p/Osmand) - Top 10 parmi les applications Android basées sur https://www.openstreetmap.org/ (le Wikipédia des cartes). Notre objectif est de créer un outil cartographique universel qui peut être utilisé dans presque toutes les situations. Actuellement, environ 2 000 000 de personnes dans le monde l'utilisent activement.
+Nous développons un grand projet open source Android (https://www.openhub.net/p/Osmand) - Top 10 parmi les applications Android basées sur https://www.openstreetmap.org/ (le Wikipédia des cartes). Notre objectif est de créer un outil cartographique universel qui peut être utilisé dans presque toutes les situations. À l'heure actuelle, environ 2 000 000 de personnes dans le monde l'utilisent activement.
 
 ## Description du poste {#job-description}
 OsmAnd recherche un développeur de logiciels open source passionné et enthousiaste avec une bonne connaissance de la plateforme et des technologies Android.

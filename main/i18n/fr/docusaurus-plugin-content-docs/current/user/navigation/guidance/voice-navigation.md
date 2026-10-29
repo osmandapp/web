@@ -1,5 +1,5 @@
 ---
-source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title:  Guidage vocal / Notifications
 ---
@@ -394,7 +394,7 @@ Vous pouvez contrôler l'écran de votre appareil pour économiser de l'énergie
 
     ![Contrôle de l'écran avec délai système Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Si *Garder l'écran allumé* est activé, l'écran de l'appareil n'applique pas de délai d'extinction après s'être rallumé. S'il est désactivé, vous pouvez définir le temps après lequel l'écran de l'appareil s'éteindra si vous n'interagissez pas avec lui, de 5 à 60 secondes.  
+2. **<Translate android="true" ids="wake_time"/>**. Si *Garder l'écran allumé* est activé, l'écran de l'appareil n'applique pas de délai d'extinction après s'être rallumé. S'il est désactivé, vous pouvez définir le temps après lequel l'écran de l'appareil s'éteindra si vous n'interagissez pas avec lui, de 5 à 60 secondes. Le délai est compté à partir de votre dernière interaction avec la carte, et chaque toucher le réinitialise. À l'expiration, l'écran s'éteint selon le délai système de l'appareil, de sorte qu'OsmAnd peut maintenir l'écran allumé plus longtemps que le paramètre système, mais jamais moins longtemps.  
 
     ![Délai après réveil Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Délai après réveil Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -402,11 +402,15 @@ Vous pouvez contrôler l'écran de votre appareil pour économiser de l'énergie
 
 ![Allumer l'écran Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Sélectionnez les options de réveil de l'écran et assurez-vous qu'OsmAnd reste au premier plan lorsque l'appareil est verrouillé.
+Sélectionnez les options de réveil de l'écran et assurez-vous qu'OsmAnd reste au premier plan lorsque l'appareil est verrouillé. Lorsqu'une option de réveil allume l'écran, la carte apparaît au-dessus de l'écran de verrouillage et l'appareil reste verrouillé. Si aucune option de réveil n'est activée, l'écran de verrouillage habituel s'affiche.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> Le capteur répond de manière fiable pendant la navigation ou l'enregistrement d'un trajet. Dans les autres cas, Android cesse d'envoyer des événements du capteur à OsmAnd environ une minute après le passage de l'application en arrière-plan.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> Si *Utiliser le délai d'extinction système* est désactivé, cette option nécessite que *Délai après réveil* soit défini sur *Garder l'écran allumé*.
+
+Après un réveil par le capteur de proximité ou une instruction de navigation, la carte reste au-dessus de l'écran de verrouillage pendant la durée définie dans *Délai après réveil*, puis l'appareil se verrouille à nouveau. Avec *Garder l'écran allumé*, la carte reste visible jusqu'à ce que vous appuyiez sur le bouton d'alimentation.
+
+**Remarque :** Sur les appareils Xiaomi, autorisez la permission *Afficher sur l'écran de verrouillage* pour OsmAnd (*Informations sur l'application → Autres autorisations*). Sans cela, l'écran s'allume, mais la carte n'apparaît pas au-dessus de l'écran de verrouillage. OsmAnd ne peut pas accorder lui-même cette autorisation.
 
 
 ## Articles connexes {#related-articles}

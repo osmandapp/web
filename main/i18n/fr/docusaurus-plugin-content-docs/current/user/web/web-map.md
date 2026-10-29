@@ -1,5 +1,5 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
 sidebar_label: Carte
 title: Carte globale sur le site web
@@ -73,21 +73,32 @@ Le marqueur sélectionné reste visible lors du zoom sur la carte.
 
 Les marqueurs à proximité peuvent être masqués pour rendre l'objet sélectionné plus facile à voir.
 
-![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+Lorsque le type de carte [OsmAnd vector (beta)](#map-type) est activé, vous pouvez sélectionner des objets directement sur la carte, y compris les POI, les bâtiments, les numéros de maison et les arrêts de transport public. Lorsque vous passez la souris sur un objet sélectionnable, le pointeur se transforme en main pointée. Les objets sans nom ni icône, tels que les routes et les sentiers sans nom, ne peuvent pas être sélectionnés.
+
+La sélection d'un objet ouvre son panneau de détails :
+
+- **POI** — le panneau affiche les mêmes informations et actions rapides que dans les résultats de [Recherche](web-search.md) et la [superposition de POI](#poi-overlay).
+- **Objet sans données POI** — par exemple, un bâtiment ou un numéro de maison. Le panneau affiche le type d'objet, l'adresse et les coordonnées.
+- **Arrêt de transport public** — le panneau peut également inclure la section Itinéraires avec le filtre de type de transport, comme décrit dans [Arrêts de transport](#transport-stops).
+
+Si plusieurs objets sont situés au point sélectionné, le panneau les affiche un par un. Utilisez les flèches à côté du bouton de fermeture pour basculer entre eux. La flèche de retour apparaît à partir du deuxième objet, et la flèche avant est inactive sur le dernier.
+
+![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/several_objects.webp)
 
 
 
 ## Menu Configurer la carte {#configure-map-menu}
 
-Le menu Configurer la carte vous permet de gérer les paramètres d'affichage des données cartographiques, telles que les couches de POI, les favoris, les traces et le terrain. Ce menu est disponible après vous être connecté à votre compte OsmAnd. Pour l'ouvrir, cliquez sur le bouton dans le **coin supérieur gauche** ou accédez-y via le **Menu**.
+Le menu Configurer la carte vous permet de gérer les paramètres d'affichage des données cartographiques, telles que les couches de POI, les favoris, les traces, le terrain et le type de carte. Ce menu est disponible après vous être connecté à votre compte OsmAnd. Pour l'ouvrir, cliquez sur le bouton dans le **coin supérieur gauche** ou accédez-y via le **Menu**.
 
 - [Superposition de POI...](#poi-overlay). Permet de choisir et d'afficher les catégories de POI nécessaires sur la carte.
 - [Favoris](#favorites). Active ou désactive l'affichage des favoris sur la carte.
 - [Traces](#tracks). Contient les traces GPX visibles sur la carte.
 - [Arrêts de transport](#transport-stops). Active ou désactive l'affichage des arrêts de transport public sur la carte. 
 - [Terrain](#terrain). Active ou désactive le schéma de couleurs du terrain sur la carte.
+- [Raster (tuiles) / OsmAnd vector (beta)](#map-type). Affiche le type de carte actuellement utilisé et permet de basculer entre la carte raster et vectorielle.
 
-![POIs menu](@site/static/img/web/configure_map_web_new.png)
+![POIs menu](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### Superposition de POI {#poi-overlay}
@@ -184,6 +195,17 @@ Dans cette section, vous pouvez :
 - Ajuster la visibilité de la couche de terrain sélectionnée de **0 % à 100 %**.
 
 ![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+
+### Type de carte {#map-type}
+
+Sélectionnez l'élément Type de carte dans le menu Configurer la carte pour choisir l'une des options suivantes :
+
+- **Raster (tuiles)** — le type de carte par défaut. Sur ce type de carte, vous ne pouvez sélectionner que les marqueurs affichés sur la carte, tels que les résultats de [Recherche](web-search.md), les marqueurs de [superposition de POI](#poi-overlay), les [favoris](#favorites) et les [arrêts de transport](#transport-stops).
+- **OsmAnd vector (beta)** — la carte vectorielle. Sur ce type de carte, vous pouvez [sélectionner des objets directement sur la carte](#selected-object).
+
+Le type de carte sélectionné est enregistré et appliqué la prochaine fois que vous ouvrez la carte. **Réinitialiser par défaut** dans l'en-tête Configurer la carte ramène la carte à **Raster (tuiles)**.
+
+La carte vectorielle nécessite un navigateur prenant en charge WebGL. Si WebGL n'est pas disponible, la carte passe automatiquement à **Raster (tuiles)**.
 
 
 ## Paramètres {#settings}
@@ -294,6 +316,10 @@ Selon les paramètres spécifiés, les chaînes d'URL peuvent contenir :
 10. **Planifier un itinéraire**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Lien direct vers la page [**Explorer**](https://osmand.net/docs/user/web/web-search#explore) actuelle&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **Détails POI**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Objet cartographique sans données POI** (par exemple, un bâtiment)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## Articles associés {#related-articles}

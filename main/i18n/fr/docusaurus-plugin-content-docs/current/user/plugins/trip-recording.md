@@ -1,5 +1,5 @@
 ---
-source-hash: 0908961f227fa1a892804774f35b6e16c127cf8034093323cc379c362624f911
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title:  Enregistrement de trajet
 ---
@@ -237,7 +237,7 @@ OsmAnd capture votre parcours dans un [fichier GPX](https://en.wikipedia.org/wik
 |-----------------|----------------|
 | `trkpt` | **Point de trace** représente un emplacement géographique spécifique détecté pendant votre activité. Chaque point de trace inclut des coordonnées de latitude et de longitude, formant la base de votre parcours enregistré. |
 | `trkseg`  | **Segment de trace** regroupe des points de trace consécutifs, séparés par des interruptions d'activité, telles que des pauses ou des arrêts. Cela aide à distinguer le mouvement continu des périodes d'inactivité au sein d'un même enregistrement.  |
-| `lat` | **Latitude** indique la position nord-sud d'un point sur la surface de la Terre. C'est la moitié de la paire de coordonnées utilisée pour localiser votre position exacte.   |
+| `lat` | **Latitude** indique la position nord-sud d'un point sur la surface de la Terre. C'est la moitié de la paire de coordonnées utilisées pour localiser votre position exacte.   |
 | `lon` | **Longitude** spécifie la position est-ouest, complétant la latitude, pour localiser précisément un point sur le globe. Ensemble, la latitude et la longitude définissent votre position géographique précise.    |
 | `ele` | **Élévation** mesure la hauteur d'un point de trace au-dessus du niveau de la mer, enregistrée en mètres. Cela peut être utile pour suivre les changements d'altitude lors de vos activités, comme les randonnées ou les balades à vélo.    |
 | `time` | **Horodatage** enregistre la date et l'heure exactes auxquelles un point de trace est enregistré. Cela vous permet de suivre la durée et le moment de votre activité avec précision.    |
@@ -347,9 +347,9 @@ Ce comportement est requis par Android pour que tout service de premier plan, co
 
 ![Notification d'enregistrement de trajet](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
 
-Le badge de l'icône de l'application apparaît à côté de l'icône OsmAnd lorsque l'enregistrement de la trace est actif.
+Le badge de l'icône de l'application apparaît à côté de l'icône OsmAnd lorsque l'enregistrement de la trace est active.
 
-- Cette icône disparaît lorsque l'enregistrement de la trace est terminé. Pour vérifier si un enregistrement est actif, vous pouvez aller dans *Menu → Mes lieux → Onglet Traces* ou appuyer sur le widget pour gérer l'enregistrement.  
+- Cette icône disparaît lorsque l'enregistrement de la trace est terminée. Pour vérifier si un enregistrement est actif, vous pouvez aller dans *Menu → Mes lieux → Onglet Traces* ou appuyer sur le widget pour gérer l'enregistrement.  
 - S'il n'y a pas d'enregistrement en cours et que le badge est toujours affiché, cela peut signifier qu'un message d'OsmAnd a été laissé dans le panneau de notification de l'appareil.  
 - Pour désactiver les badges dans les paramètres Android, allez dans *Paramètres de l'appareil → Applications → OsmAnd → Notifications* et désactivez l'option d'affichage du badge pour cette application.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
+source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -66,7 +66,7 @@ Le téléchargement de cartes dans l'application OsmAnd est une étape important
 ### Contenu cartographique gratuit {#free-map-content}
 
 - **Carte standard**. Fournit un aperçu de la zone basé sur la source [OpenStreetMap](https://www.openstreetmap.org/) et contient une carte, des itinéraires, des adresses, des POI et des informations sur les transports en commun. En appuyant dessus, un écran s'ouvre avec une liste des régions du pays sélectionné et des informations sur l'espace que ces cartes occuperont sur votre appareil.  
-- **Routes seules**. La carte ne contient que les informations du réseau routier pour se concentrer sur les itinéraires et l'infrastructure routière. En supprimant des détails tels que les bâtiments et les points d'intérêt, elle est plus petite qu'une carte standard. En appuyant dessus, un écran s'ouvre avec une liste des régions du pays sélectionné et des informations sur l'espace que ces cartes occuperont sur votre appareil.
+- **Routes seules**. Une alternative plus petite à la carte standard, axée sur les itinéraires et l'infrastructure routière. Elle contient le réseau routier avec les noms de rues, ainsi que des zones plus vastes telles que l'eau, les forêts et les parcs, tandis que des détails tels que les bâtiments et les points d'intérêt sont omis. En appuyant dessus, un écran s'ouvre avec une liste des régions du pays sélectionné et des informations sur l'espace que ces cartes occuperont sur votre appareil.
 - **Carte générale du monde**. Les versions d'OsmAnd jusqu'à la 3.8 proposent de télécharger une carte du monde pour pouvoir la visualiser à l'échelle planétaire. Dans les versions plus récentes d'OsmAnd, une *mini-carte du monde* légère est intégrée à l'application. L'application vous permet de télécharger une carte générale du monde plus grande avec des informations plus détaillées. 
 
 :::info mises à jour mensuelles des cartes
