@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Impostazioni globali
 ---
@@ -101,6 +101,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings
     - *Memoria interna dell'app*. Solo l'app OsmAnd ha accesso ai suoi dati e nessuna delle app esterne.
     - *Memoria condivisa*. Non più disponibile.
     - *Archiviazione esterna 1*. Solo 1 app OsmAnd ha accesso, oltre alle app di amministrazione e USB.
+    - *Archiviazione esterna 1 visibile*. I dati sono archiviati nella cartella Android/media, accessibile ai file manager e tramite USB. Non sono necessarie autorizzazioni di archiviazione aggiuntive.
     - *Archiviazione multiutente*. Solo 1 app OsmAnd ha accesso, ma è condivisa tra più utenti Android.
     - *Specificata manualmente*. Dipende dal percorso.
 
@@ -115,6 +116,11 @@ L'impostazione **Archiviazione media** determina dove vengono archiviate foto, v
 - **Archiviazione condivisa** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Cartella fotocamera** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Specificata manualmente** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Quando si seleziona un'archiviazione media diversa, OsmAnd chiede se spostare i file multimediali esistenti:
+- **Sposta nella nuova destinazione** — Sposta i file multimediali esistenti nell'archiviazione selezionata.
+- **Non spostare** — Cambia l'archiviazione senza spostare i file esistenti.
+- **Annulla** — Mantieni l'archiviazione corrente.
 
 È inoltre presente l'interruttore *Mantieni sempre una copia locale*. Se abilitato, OsmAnd copia i media importati dalla Galleria o dai File nella propria archiviazione, in modo che i media allegati rimangano disponibili anche se il file originale viene eliminato dalla Galleria o dal file system.
 
@@ -165,9 +171,9 @@ L'immagine per la visualizzazione 3D della mappa viene caricata tassello per tas
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="Rendering OpenGL, schermata 1"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="Rendering OpenGL, schermata 2"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="Rendering OpenGL, schermata 3"/></td>
     </tr>
 </table>
 
@@ -214,7 +220,7 @@ I dati sulla vostra posizione o sui luoghi visualizzati sulla mappa non vengono 
 
 *Menu → Impostazioni → Impostazioni OsmAnd → Privacy e sicurezza → Identificatori*  
 
-![UUID Android](@site/static/img/personal/profiles/uuid_android.png)  
+![UUID Android, identificatore univoco](@site/static/img/personal/profiles/uuid_android.png)  
 
 Un **UUID** (*Unique User Identifier* - Identificatore Unico Utente) viene generato per ogni installazione dell'applicazione OsmAnd e inviato ai server durante il caricamento della mappa.
 

@@ -1,8 +1,8 @@
 ---
-source-hash: 6d86091f99fcc3a40ed293334c95361fd6142d9eab867812422962bbd0783539
+source-hash: 3d7c0440f81fe7d7c68aa8cdc03f7757d017ff3c9522e4e2e9666eb2f8516db1
 sidebar_position: 2
 sidebar_label:  Account
-title: OsmAnd Account
+title: Account OsmAnd
 ---
 
 import Tabs from '@theme/Tabs';
@@ -36,7 +36,7 @@ Per accedere alle funzionalità di OsmAnd Web, è necessario creare un account. 
 
 Dopo la verifica del codice, il tuo account web viene creato e accedi automaticamente.
 
-![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
+![Registrazione su OsmAnd Web](@site/static/img/web/web_sign_up.png) ![Registrazione su OsmAnd Web](@site/static/img/web/web_ver_code.png)
 
 
 ### Accesso {#login}
@@ -67,7 +67,7 @@ Se desideri salvare una copia di tutti i tuoi dati, utilizzare **Download all**.
 
 Fare clic su **Download Backup** per avviare l'esportazione e salvare l'archivio sul tuo computer.
 
-![Web Account](@site/static/img/web/web_download_all.png)
+![Account OsmAnd Web](@site/static/img/web/web_download_all.png)
 
 ### Pagamenti e acquisti {#payments-and-purchases}
 
@@ -91,7 +91,7 @@ Se non ci sono ancora acquisti collegati al tuo account, questa sezione mostra u
 
 Per maggiori dettagli sull'utilizzo dei tuoi acquisti su diverse piattaforme, leggere su [accesso multipiattaforma](../purchases/cross.md).
 
-![Web Account](@site/static/img/web/web_purchases.png)
+![Account OsmAnd Web](@site/static/img/web/web_purchases.png)
 
 ### Sincronizzazione cloud {#cloud-sync}
 
@@ -103,7 +103,7 @@ La disponibilità della Sincronizzazione cloud dipende dal tipo di account:
 - [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – sincronizza [Preferiti](../web/web-favorites.md) e li visualizza sul web.
 - OsmAnd Pro – sincronizza [Tracce](../web/web-tracks.md), Preferiti e [Backups](#my-data), e sblocca l'accesso completo al web ai dati cloud.
 
-![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+![Traccia in OsmAnd Web](@site/static/img/web/web_track_start.png) ![Traccia in OsmAnd Web](@site/static/img/web/web_track_pro.png)
 
 ### OsmAnd Cloud {#osmand-cloud}
 
@@ -113,7 +113,7 @@ L'opzione **Changes** mostra un elenco cronologico dei file memorizzati nel tuo 
 
 L'opzione **Trash** contiene i file che sono stati eliminati da OsmAnd Cloud. L'elenco è anch'esso raggruppato per mese e mostra quando ogni file è stato rimosso e da quale dispositivo. Utilizzare il menu a tre punti accanto a un file per *Download* una copia, *Restore from trash* (restituire il file a OsmAnd Cloud in modo che diventi disponibile nuovamente nei tuoi dati), o *Delete immediately* per rimuoverlo permanentemente. Questo aiuta a prevenire la perdita accidentale di dati pur consentendo di liberare lo spazio di archiviazione cloud quando sei sicuro che un file non è più necessario. È anche possibile eliminare tutti gli elementi cancellati in una volta sola facendo clic sull'icona del Cestino nell'intestazione del pannello Cestino. Questo apre la finestra di dialogo **Empty trash**, dove confermi l'eliminazione per rimuovere permanentemente tutti i file dal Cestino.
 
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+![Cloud di OsmAnd Web](@site/static/img/web/web_changes.png) ![Cloud di OsmAnd Web](@site/static/img/web/web_trash.png)
 
 ### App collegate {#connected-apps}
 
@@ -140,7 +140,7 @@ Per disconnettere il tuo account Garmin Connect™, vai su *Settings → Disconn
 
 Se non ricordi la tua password, utilizzare il collegamento **I don’t have or forgot password** nella finestra di dialogo di accesso. Questo apre il pannello **Change or reset password**. Inserire l'indirizzo email utilizzato per creare il tuo account e fare clic su **Continua**. Un messaggio con un codice di verifica viene inviato a questa email. Nella schermata successiva, digitare il codice di verifica e la tua nuova password, quindi selezionare **Continua** per confermare. Quando il codice è accettato, la tua password viene aggiornata e puoi accedere a OsmAnd Web con le nuove credenziali.
 
-![Web Account](@site/static/img/web/web_password.png)
+![Account OsmAnd Web](@site/static/img/web/web_password.png)
 
 ### Cambia indirizzo email {#change-email-address}
 
@@ -149,11 +149,11 @@ Andare a *Menu Generale → Account → Email → ⋮ → Change email*
 
 Appare la finestra di dialogo Cambia email. Un codice di verifica viene inviato all'indirizzo email corrente. Inserire questo codice nel campo **Code from Old Email**, specificare il nuovo indirizzo in **New Email**, quindi selezionare **Next**. Per motivi di sicurezza, un messaggio di conferma viene inviato al tuo nuovo indirizzo email informandoti che l'email dell'account è stata aggiornata.
 
-![Web Account](@site/static/img/web/web_email_new.png)
+![Account OsmAnd Web](@site/static/img/web/web_email_new.png)
 
 ### Disconnessione ed eliminazione dell'account {#logout-and-delete}
 
-![Web Account](@site/static/img/web/web_logout_new.png)
+![Account OsmAnd Web](@site/static/img/web/web_logout_new.png)
 
 Il pannello Account OsmAnd contiene i controlli per terminare la sessione web corrente e rimuovere permanentemente l'account.
 
@@ -161,7 +161,7 @@ Per disconnettersi, aprire Account OsmAnd e utilizzare il pulsante **Logout** ne
 
 Per eliminare un account, selezionare **Delete account** in fondo al pannello Account OsmAnd. Appare una finestra di dialogo di conferma con il messaggio *“Are you sure you want to do this?”* e una breve spiegazione che tutti i dati e i dettagli dell'account verranno rimossi da OsmAnd Cloud e i dispositivi secondari perderanno l'accesso alle funzionalità a pagamento. Un codice di verifica viene inviato all'indirizzo email dell'account. Inserire il codice nel campo Code from Email e scegliere **DELETE THIS ACCOUNT** per completare il processo. Questa operazione è permanente e non può essere annullata.
 
-![Web Account](@site/static/img/web/web_delete.png)
+![Account OsmAnd Web](@site/static/img/web/web_delete.png)
 
 
 ## Articoli correlati {#related-articles}

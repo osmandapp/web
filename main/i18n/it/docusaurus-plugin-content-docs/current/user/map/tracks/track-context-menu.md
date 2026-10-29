@@ -1,5 +1,5 @@
 ---
-source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title:  Menu Contestuale Traccia
 ---
@@ -243,7 +243,7 @@ Questa sezione della scheda *Panoramica* visualizza i ***dati dei tag*** e ***tu
 </Tabs>
 
 
-La funzione *Attività* in OsmAnd consente di etichettare le tracce GPX registrate e le tracce salvate tramite [Pianifica un percorso](../../plan-route/create-route.md) con attività specifiche per ulteriori analisi e organizzazione in cartelle.
+La funzione *Attività* in OsmAnd consente di etichettare le tracce GPX registrate con attività specifiche per ulteriori analisi e organizzazione in cartelle.
 
 - [Tag di attività per tracce GPX](#description-and-info). Le [tracce registrate](../../plugins/trip-recording.md#recording-settings) e le tracce salvate tramite [Pianifica un percorso](../../plan-route/create-route.md) ricevono automaticamente un tipo di attività in base al profilo utilizzato per crearle. Ciò aiuta a categorizzarle e filtrarle in seguito. È possibile modificare l'attività manualmente se necessario.
 - [Filtro attività](../../personal/tracks/smart-folder.md#search-filter). È possibile filtrare le tracce GPX registrate per attività, il che consente di concentrarsi sulla ricerca di tipi specifici di registrazioni, come tutte le tracce di ciclismo o escursionismo.
@@ -424,6 +424,7 @@ In questa scheda *Punti*:
 - [Mostra i dati dei punti della traccia](#display-custom-gpx-tags) e modifica i punti della traccia (waypoint e punti del percorso), [eliminali e aggiungi](#points--waypoints) waypoint a una traccia.
 - Crea e modifica [Gruppo (cartella) di punti](#waypoint-groups).
 - Mostra un waypoint sulla mappa utilizzando l'icona della spilla nell'elenco dei waypoint. La mappa si centra sul waypoint senza chiudere l'elenco o modificare il livello di zoom corrente.
+- Allega foto, video e note audio a un waypoint tramite la scheda *Media* nel suo menu contestuale (*solo Android*). Consulta l'[articolo sui Preferiti](../../personal/favorites.md#media).
 
 
 ### Aggiungi Waypoint a una Traccia {#add-waypoint-to-a-track}
@@ -717,11 +718,7 @@ Questa opzione consente di visualizzare i valori medi, minimi e massimi della fr
 
 Questo filtro consente di migliorare le statistiche della traccia escludendo dati non necessari o errati. È possibile filtrare i punti della traccia che non corrispondono ai parametri della traccia e, di conseguenza, ottenere un grafico più preciso e una linea del percorso visiva senza distorsioni o rumore di registrazione. È possibile apportare modifiche con filtri come *Smussatura*, *Velocità*, *Altitudine* e *Precisione GPS*, che nascondono i punti filtrati dalla traccia corrente. Inoltre, nel menu *Statistiche*, è possibile verificare come le modifiche vengono visualizzate sul grafico prima di salvarle. È anche possibile *Ripristinare l'originale* e *Salvare come copia* della traccia in questo filtro senza salvare quella originale.  
 
-<!-- In the screen you see the map (with [zoom buttons](../../map/interact-with-map.md#my-position-and-zoom), [my location button](../../map/interact-with-map.md#my-position-and-zoom), my track location button), buttons "Reset" and "&#8285;"(Actions), part with two menus: **Filter** and **Statistics**.
 
-- "&#8285;"(Actions) button opens the "Actions" part of the "Filter" or "Statistics" menu.
-- "&#8634;" button allows you to reset the track to the original.
-- "My track location" button allows you to move the map to your track.-->
 
 La pagina dell'app Filtro GPS di Android include quanto segue:  
 

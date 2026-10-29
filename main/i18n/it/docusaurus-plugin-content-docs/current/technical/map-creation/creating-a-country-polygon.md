@@ -1,5 +1,5 @@
 ---
-source-hash: e0173be6fa81b710afb1b4b52c4268f63865918a50d504364df4f0d772bf2d39
+source-hash: a4ab003fa68f8ff7c393f79dced64ce22df0b72bda332626935257db71197cb1
 title: Creazione di un poligono di paese
 versions: '*'
 ---
@@ -14,7 +14,7 @@ OsmAnd viene fornito con molte mappe per molti paesi. La maggior parte delle map
 Geofabrik.de ha la strategia di fornire mappe per i paesi richiesti da un numero maggiore di utenti o dai loro clienti. Ciò significa che alcune mappe non arrivano mai su geofabrik perché semplicemente non ci sono abbastanza richieste (o nessuna), come alcuni paesi esotici come le Seychelles o il Burundi, ecc.
 
 ## Processo del server {#server-process}
-A causa di questa decisione strategica di geofabrik, OsmAnd ha un'opzione per generare mappe per questi paesi e vengono utilizzati gli strumenti [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) e [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Per OsmAndMapCreator si tratta di un processo in tre fasi:
+A causa di questa decisione strategica di geofabrik, OsmAnd ha un'opzione per generare mappe per questi paesi e vengono utilizzati gli strumenti [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) e [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Per OsmAndMapCreator si tratta di un processo in tre fasi:
 - OsmAndMapCreator necessita di un poligono che circondi il confine esterno del paese.
 - OsmAndMapCreator necessita della "mappa di dati grezzi" del livello superiore successivo che incorpora questo paese. Per il Burundi significa che OsmAndMapCreator necessita della mappa dell'Africa. Per la Renania Settentrionale-Vestfalia significa che OsmAndMapCreator necessita della mappa della Germania.
 - [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) creerà una mappa di "dati grezzi" dal poligono estraendo i dati della mappa dalla mappa "genitore".

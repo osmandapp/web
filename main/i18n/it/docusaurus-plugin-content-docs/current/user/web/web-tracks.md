@@ -1,8 +1,8 @@
 ---
-source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
-sidebar_label: Tracks
-title: Tracks
+sidebar_label: Tracce
+title: Tracce
 ---
 
 import Tabs from '@theme/Tabs';
@@ -28,7 +28,7 @@ Tutte le modifiche vengono sincronizzate automaticamente tramite [OsmAnd Cloud](
 
 Si tratta di una funzionalità a pagamento <ProFeature/>. Per utilizzarla, accedi al tuo account OsmAnd Pro.
 
-![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
+![Accesso alle tracce](@site/static/img/web/track_login.png) ![Accesso alle tracce](@site/static/img/web/track_login_2.png)
 
 La sezione Tracce contiene tutti gli strumenti e le azioni relativi alle tracce. Sono disponibili le seguenti opzioni:
 
@@ -50,11 +50,15 @@ Per importare una traccia tramite trascinamento:
 - Trascina uno o più file GPX dal tuo computer.
 - Rilascia i file sulla mappa o su una cartella traccia specifica.
 
-Quando un file viene trascinato sulla mappa, l'area di rilascio disponibile viene evidenziata. Se rilasci il file direttamente sulla mappa, viene importato nella cartella Import. Se lo rilasci su una cartella esistente, viene importato in quella cartella.
+Quando un file viene trascinato sulla mappa, l'area di rilascio disponibile viene evidenziata. Se rilasci il file direttamente sulla mappa, viene importato nella cartella Import. Se lo rilasci su una cartella esistente, viene importato in quella cartella. Senza un abbonamento [OsmAnd Pro](../purchases/index.md) attivo, il rilascio di un file apre una finestra di dialogo che spiega che l'importazione delle tracce richiede OsmAnd Pro.
+
+La dimensione massima del file è 20 MB per i file GPX e KML e 2 MB per i file KMZ. I file più grandi non vengono importati e viene mostrato un avviso. Quando importi più file contemporaneamente, tutti i file rifiutati sono elencati in un unico messaggio. Anche le tracce più grandi di 20 MB già archiviate in OsmAnd Cloud non possono essere aperte sul web e una notifica suggerisce di aprirle nell'app OsmAnd.
 
 Al termine dell'importazione, la traccia appare nell'elenco delle tracce, viene sincronizzata con [OsmAnd Cloud](../personal/osmand-cloud.md) e diventa disponibile su tutti i dispositivi collegati allo stesso account.
 
-![Drag and drop](@site/static/img/web/drag_and_drop.png)
+Se non è possibile importare o salvare una traccia in OsmAnd Cloud, una finestra di dialogo di errore mostra il nome del file e, quando disponibile, il motivo segnalato dal server.
+
+![Trascinamento](@site/static/img/web/drag_and_drop.png)
 
 
 ## Visibile sulla mappa {#visible-on-the-map}
@@ -65,12 +69,12 @@ Le tracce visibili sulla mappa sono evidenziate in blu, mentre le tracce attualm
 
 Sotto l'elenco principale, la sezione **Recently visible** mostra le tracce che erano visualizzate sulla mappa in precedenza. Questo rende facile riattivare una traccia senza doverla cercare di nuovo nelle tue cartelle o in OsmAnd Cloud.
 
-![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
+![Visibile sulla mappa](@site/static/img/web/visible_new.png) ![Visibile sulla mappa](@site/static/img/web/visible_new_2.png)
 
 
 ## Menu cartella traccia {#track-folder-menu}
 
-![Track folder menu](@site/static/img/web/collection_new.png)
+![Menu cartella traccia](@site/static/img/web/collection_new.png)
 
 Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Track Folder*. Da qui, puoi:
 
@@ -81,9 +85,9 @@ Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Track Folder*. Da qu
  - Rinomina. Apre una finestra di dialogo in cui puoi inserire un nuovo nome per la cartella selezionata. La modifica viene sincronizzata con OsmAnd Cloud e apparirà su tutti i dispositivi connessi.
  - Elimina. Apre una finestra di conferma. L'eliminazione di una cartella la rimuove permanentemente insieme a tutte le tracce che contiene. Questa azione viene anche sincronizzata tramite OsmAnd Cloud.
 
-![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+![Menu cartella traccia](@site/static/img/web/collection_rename.png) ![Menu cartella traccia](@site/static/img/web/collection_delete.png)
 
-### Smart Folders {#smart-folders}
+### Cartelle intelligenti {#smart-folders}
 
 **Smart Folders** creati sui dispositivi mobili possono essere sincronizzati e visualizzati nella versione web tramite OsmAnd Cloud. Per assicurarne la visualizzazione sul web, la sincronizzazione di [OsmAnd Settings](../personal/osmand-cloud.md#select-data-to-back-up) deve essere abilitata nelle impostazioni di Cloud.  
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
@@ -98,7 +102,7 @@ La sincronizzazione degli Smart Folder può variare a seconda della piattaforma 
 
 Il menu a tre punti (⋮) fornisce azioni aggiuntive per lo Smart Folder. Puoi *Download as OSF*, *Download as OBF collection*, *Rename* o *Delete* la cartella.
 
-![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
+![Cartelle intelligenti](@site/static/img/web/smart_folder_new.png) ![Cartelle intelligenti](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Tracce Cloud {#cloud-tracks}
@@ -119,7 +123,7 @@ Le seguenti funzionalità sono disponibili dopo aver selezionato una traccia clo
 - *Surface* - mostra i tipi di superfici della traccia lungo il percorso.
 - *Smoothness* - visualizza la fluidità del segmento basata sui tag OSM.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
+![Modifica GPX nel cloud di OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Modifica GPX nel cloud di OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Articoli correlati {#related-articles}

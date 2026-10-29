@@ -1,5 +1,5 @@
 ---
-source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
+source-hash: 0d78b54592f6e7bfbd495c20bbe33ec368ff22532c171a00e0b3b2a5a27c431f
 sidebar_position: 6
 title:  Registrazione Traccia
 ---

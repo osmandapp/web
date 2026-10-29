@@ -1,5 +1,5 @@
 ---
-source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
+source-hash: 9f605668d58af560cd42ef64d15f56577a03661cd8b6c24cb599d9fe82542af1
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -38,7 +38,7 @@ La posizione dei pulsanti e del widget di navigazione in *CarPlay* corrisponde a
 
 ### Schermata di connessione {#connection-screen}
 
-![CarPlay](@site/static/img/navigation/auto-car/car_play_connect_screen.png)
+![Schermata di connessione di CarPlay](@site/static/img/navigation/auto-car/car_play_connect_screen.png)
 
 Mentre il dispositivo è connesso a *CarPlay*, la mappa sulla schermata dell'app è bloccata. Si tratta di una funzione di sicurezza intenzionale per garantire che la navigazione sia controllata esclusivamente dal display dell'auto, riducendo al minimo le distrazioni durante la guida. Controllare le [domande comuni](#common-issues-and-solutions) sulla schermata di connessione.
 
@@ -275,7 +275,7 @@ Il widget **Tachimetro** è un elemento di interfaccia integrato che visualizza 
 
 ### Aspetto della mappa (3D) {#map-appearance-3d}
 
-![CarPlay](@site/static/img/navigation/auto-car/car_play_3.png)
+![Schermata CarPlay](@site/static/img/navigation/auto-car/car_play_3.png)
 
 L'app OsmAnd consente di utilizzare la visualizzazione della mappa 3D sulla *schermata di CarPlay* per visualizzare il percorso e la navigazione.
 
@@ -285,7 +285,7 @@ L'app OsmAnd consente di utilizzare la visualizzazione della mappa 3D sulla *sch
 
 ### Cruscotto multifunzione {#multifunction-dashboard}
 
-![CarPlay](@site/static/img/navigation/auto-car/car_play_4.png)
+![Schermata CarPlay](@site/static/img/navigation/auto-car/car_play_4.png)
 
 L'app OsmAnd può essere aperta e utilizzata per navigare in *CarPlay* sullo schermo del sistema multimediale del veicolo contemporaneamente alle app di musica, messaggi o altre notifiche.
 
@@ -334,6 +334,20 @@ OsmAnd consente di configurare l'aspetto della mappa per CarPlay indipendentemen
 - **Alba/tramonto** — La mappa passa automaticamente tra i temi chiaro e scuro in base agli orari calcolati di alba e tramonto per la posizione corrente.
 
 **Nota:** L'impostazione Modalità mappa in CarPlay influisce solo sull'aspetto della mappa in CarPlay. Non modifica la modalità mappa sullo schermo del telefono.
+
+### Orientamento della mappa {#map-orientation}
+
+![Orientamento della mappa](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+L'impostazione *Orientamento della mappa* definisce come la mappa ruota sullo schermo di CarPlay. Per aprire questa impostazione, toccare il pulsante *Impostazioni* nella barra di navigazione di CarPlay, quindi selezionare *Orientamento della mappa*. L'orientamento corrente viene mostrato come testo di dettaglio della riga.
+
+È possibile scegliere una delle seguenti modalità di orientamento:
+- **Ruotata manualmente** — La mappa non ruota automaticamente.
+- **Direzione di movimento** — La mappa ruota seguendo la direzione di marcia.
+- **Direzione della bussola** — La mappa ruota seguendo la bussola dell'iPhone, in modo che il nord della mappa corrisponda al nord reale.
+- **Nord in alto** — Il nord rimane sempre nella parte superiore dello schermo.
+
+**Nota:** L'orientamento della mappa è un'impostazione del profilo condivisa tra CarPlay e l'app OsmAnd sull'iPhone. Una modifica effettuata su una schermata si applica anche all'altra. Per maggiori dettagli, consultare l'articolo [Modalità di orientamento della mappa](../widgets/map-buttons.md#map-orientation-modes).
 
 ### Posizione in CarPlay {#location-position-in-carplay}
 

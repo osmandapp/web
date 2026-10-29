@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
 sidebar_position: 2
 title:  Acquisti iOS
 ---
@@ -163,7 +163,7 @@ o
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continua con OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro_new.png)
+![Piano Pro](@site/static/img/purchases/pro_new.png)
 
 ### Acquisto di Maps+ {#maps-purchase}
 
@@ -171,7 +171,7 @@ o
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tocca l'elenco delle funzionalità di Maps+ → Continua con Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_new.png)
+![Piano Maps+](@site/static/img/purchases/maps_new.png)
 
 
 ## Abbonamenti legacy (precedenti alla 4.0) {#legacy-subscriptions-prior-40}
@@ -190,7 +190,7 @@ Utilizza lo stesso ID Apple per ripristinare i tuoi acquisti.
 - Apri OsmAnd Maps con una connessione Internet attiva.
 - Per ripristinare gli acquisti, segui questi passaggi: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e nella parte superiore dello schermo dovrebbe apparire che Maps+(Pro, Live) è attivato.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
+![Piano Pro](@site/static/img/purchases/maps_purchases_ios.png)
 
 **Se nessuno dei metodi ha funzionato:**
 

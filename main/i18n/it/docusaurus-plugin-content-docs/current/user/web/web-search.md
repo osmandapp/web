@@ -1,5 +1,5 @@
 ---
-source-hash: cd5ee4063d6f696a2707a1c3427de7ad82005454c2015da463bd27c2e760db67
+source-hash: 67e24e2d76639e1ba3e1dbe3fc8cff417ee3ff06770c41d09f400cac219c9cdf
 sidebar_position: 10
 sidebar_label:  Cerca
 title: Cerca sul sito web
@@ -32,7 +32,9 @@ Il **menu Cerca** è accessibile dal pannello laterale o dall'icona di ricerca �
 
 Usa la **Barra di ricerca** per trovare luoghi specifici, punti di interesse, [preferiti](../web/web-favorites.md) e [tracce](../web/web-tracks.md) per nome. Fai clic sull'icona di ricerca, inserisci la tua query e seleziona un risultato dall'elenco. Selezionando un PDI si apre il [Menu contestuale PDI](#poi-context-menu), mentre selezionando un preferito o una traccia si aprono i relativi dettagli, dove puoi visualizzare le informazioni e utilizzare azioni rapide.
 
-Se cerchi per nome di categoria, il primo risultato potrebbe mostrare la categoria PDI corrispondente. Fai clic sulla categoria per aprire la vista [Ricerca per categorie](#categories).
+Puoi anche combinare più parti in una sola query. Inserisci una categoria o un marchio insieme al nome di un luogo, ad esempio `Hotel Berlin` o `Billa Bratislava`, per trovare i PDI corrispondenti in quel luogo. Inserisci due categorie oppure una categoria e una proprietà, ad esempio `Fuel Diesel` o `Cafe Vegan`, per trovare i luoghi che corrispondono a entrambe.
+
+Se cerchi per nome di categoria, il primo risultato potrebbe mostrare la categoria PDI corrispondente. I nomi delle categorie possono essere inseriti in lingue diverse, ad esempio `bank` o `банк`. Fai clic sulla categoria per aprire la vista [Ricerca per categorie](#categories).
 
 ![Opzioni di ricerca](@site/static/img/web/search_bar.png)
 
@@ -53,6 +55,8 @@ Apri la scheda di ricerca per accedere a Esplora — i risultati di Esplora veng
 ## Menu contestuale PDI {#poi-context-menu}
 
 Indipendentemente dall'opzione di ricerca che usi (Barra di ricerca, Categorie o Esplora), selezionando un PDI sulla mappa o nell'elenco dei risultati si apre il Menu contestuale PDI. Il menu contestuale è il luogo principale per visualizzare le informazioni sui PDI ed eseguire azioni comuni. Combina i dettagli sui PDI (come posizione e dati correlati) con azioni rapide (ad esempio, salvare, condividere o avviare la pianificazione del percorso e la navigazione).
+
+Per tornare all'elenco dei risultati, fai clic su *Indietro*. Per chiudere il menu, fai clic su *Chiudi* o premi Esc. La chiusura del menu cancella la ricerca, quindi la volta successiva Cerca si aprirà senza i risultati precedenti. La mappa rimane nella posizione corrente.
 
 ### Dettagli PDI {#poi-details}
 

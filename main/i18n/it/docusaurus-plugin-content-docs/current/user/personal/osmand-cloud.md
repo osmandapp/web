@@ -1,5 +1,5 @@
 ---
-source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
+source-hash: 7ab1b7c975524abc4cbcb3957975026e9c46aff353e0f442c1228dc360748218
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -19,11 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-:::info Pro feature
+:::info Funzionalità Pro
 OsmAnd Cloud è una funzionalità a pagamento di [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-:::note cross-platform  
+:::note multipiattaforma  
 OsmAnd Cloud è un servizio di archiviazione cloud indipendente e *non è legato* a una specifica versione della piattaforma Android, iOS o web.  
 :::  
 
@@ -105,7 +105,7 @@ Se riscontri problemi durante la registrazione:
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases"/>*  
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_andr.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_andr.png)
+![OsmAnd Cloud Android, schermata OsmAnd Start 1](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_andr.png)   ![OsmAnd Cloud Android, schermata OsmAnd Start 2](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_andr.png)
 
 </TabItem>
 
@@ -113,7 +113,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases"/>*
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_ios.png)   ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_ios.png)  
+![OsmAnd Cloud iOS, schermata OsmAnd Start 1](@site/static/img/personal/osmand-cloud/cloud_osmand_start_1_ios.png)   ![OsmAnd Cloud iOS, schermata OsmAnd Start 2](@site/static/img/personal/osmand-cloud/cloud_osmand_start_2_ios.png)  
 
 </TabItem>
 
@@ -305,7 +305,7 @@ In questo menu, puoi selezionare quali dati e cartelle caricare sul Cloud:
 
 1. **Impostazioni**. Questa scheda include tutte le tue impostazioni, come preferenze generali, profili specifici, azioni rapide, POI e impostazioni per evitare le strade.
 
-2. **I miei luoghi**. Questa scheda elenca i dati dal menu [I miei luoghi](../personal/myplaces), inclusi preferiti, tracce, note OSM, marcatori e altri elementi.
+2. **I miei luoghi**. Questa scheda elenca i dati dal menu [I miei luoghi](../personal/myplaces), inclusi preferiti, media allegati (solo Android), tracce, note OSM, marcatori e altri elementi.
 
 3. **Risorse**. Qui puoi scegliere di eseguire il backup di risorse come preferiti, informazioni di routing, istruzioni vocali e altri elementi aggiuntivi.
 
@@ -374,7 +374,7 @@ Questa sezione contiene informazioni su quale dei tuoi account è connesso a Osm
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Modifiche OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
+![Schermata OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Modifiche OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
 
 </TabItem>
 
@@ -399,7 +399,7 @@ Le azioni che puoi compiere nella sezione **Zona di pericolo** del menu Impostaz
     - Il tuo account e tutti i dettagli dell'account verranno eliminati.
     - I dispositivi secondari verranno disconnessi da OsmAnd Cloud e perderanno l'accesso alle funzionalità a pagamento.  
 
-    ![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_deletion_2_andr.png)
+    ![Eliminazione dati OsmAnd Cloud su Android](@site/static/img/personal/osmand-cloud/cloud_deletion_2_andr.png)
 
 
 ## Elenco delle modifiche {#list-of-changes}

@@ -1,5 +1,5 @@
 ---
-source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
+source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
 sidebar_position: 2
 title:  Mappe e Risorse
 ---
@@ -66,7 +66,7 @@ Il download delle mappe nell'applicazione OsmAnd è un passo importante che dete
 ### Contenuti Mappa Gratuiti {#free-map-content}
 
 - **Mappa standard**. Fornisce una panoramica dell'area basata sulla fonte [OpenStreetMap](https://www.openstreetmap.org/) e contiene una mappa, percorsi, indirizzi, PDI e informazioni sul trasporto pubblico. Toccando si apre una schermata con un elenco di regioni del paese selezionato e informazioni su quanto spazio queste mappe occuperanno sul dispositivo.  
-- **Solo strade**. La mappa contiene solo informazioni sulla rete stradale per concentrarsi su percorsi e infrastrutture stradali. Rimuovendo dettagli come edifici e punti di interesse, è più piccola di una mappa standard. Toccando si apre una schermata con un elenco di regioni del paese selezionato e informazioni su quanto spazio queste mappe occuperanno sul dispositivo.
+- **Solo strade**. Un'alternativa più piccola alla mappa Standard, focalizzata su percorsi e infrastrutture stradali. Contiene la rete stradale con i nomi delle vie, insieme ad aree più estese come specchi d'acqua, foreste e parchi, mentre dettagli come edifici e punti di interesse sono omessi. Toccando si apre una schermata con un elenco di regioni del paese selezionato e informazioni su quanto spazio queste mappe occuperanno sul dispositivo.
 - **Mappa di panoramica mondiale**. Le versioni di OsmAnd fino alla 3.8 offrono il download di una mappa mondiale per poterla visualizzare su scala planetaria. Nelle versioni più recenti di OsmAnd, una leggera *Mini Mappa Mondiale* è inclusa nell'applicazione. L'app consente di scaricare una mappa mondiale di panoramica più grande con informazioni più dettagliate. 
 
 :::info aggiornamenti mensili delle mappe
@@ -142,7 +142,7 @@ La scheda **Download** consente di scaricare vari tipi di mappe dai server di Os
 
 Nel menu Scarica Mappe, c'è una sezione **Mappe Mondiali** che fornisce l'accesso al download di varie mappe del mondo, completando la funzionalità dell'app.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*solo Android*). Questo file contiene correzioni di altitudine per compensare la curvura planetaria.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*solo Android*). Questo file contiene correzioni di altitudine utilizzate per migliorare la precisione dell'altitudine sui dispositivi che non forniscono l'altitudine sul livello medio del mare (MSL), anche quando come [fonte di posizione](../personal/global-settings.md#location-source) viene utilizzata l'API Android anziché Google Play Services.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Fornisce una panoramica estesa della superficie terrestre, utile per la pianificazione di percorsi a lungo termine e l'esplorazione casuale.
 - **Mappa meteo mondiale**. Consente di scaricare una mappa con informazioni meteorologiche.
 

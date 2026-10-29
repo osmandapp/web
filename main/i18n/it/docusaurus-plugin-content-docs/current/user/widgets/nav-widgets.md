@@ -1,5 +1,5 @@
 ---
-source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
+source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
 sidebar_position: 4
 title:  Widget di navigazione
 ---
@@ -249,7 +249,7 @@ Il widget mostra l'*Orario di arrivo* o il *Tempo rimanente* fino al primo punto
 | | |
 |:------------|:------------|
 | Abilita | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Scegli un pannello → Aggiungi widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Scegli un pannello → Aggiungi widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Scegli un pannello → Aggiungi widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | Con un tocco | Passa da *Orario di arrivo* a *Tempo rimanente* e viceversa. |
 | Tocco lungo | Apre il [Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -320,7 +320,7 @@ I widget *Guida al percorso* contengono informazioni su:
 |:------------|:------------|
 | Abilita      | **Android:** *Menu → Configura schermo →  Pannello Sinistro / Destro / Superiore / Inferiore → Guida al percorso → Aggiungi widget → Corsia, Prossima svolta, Seconda prossima svolta*  |
 |      | **iOS:** *Menu → Configura schermo →  Pannello Sinistro / Destro / Superiore / Inferiore → Guida al percorso → Aggiungi widget → Corsia, Prossima svolta, Seconda prossima svolta*   |
-| Con un tocco  | **Prossima svolta**: se le [istruzioni vocali](../navigation/guidance/voice-navigation.md) sono abilitate, vengono pronunciate la manovra successiva e la distanza da essa. <br/> **Corsia**: Nessuna modifica. |
+| Con un tocco  | **Prossima svolta**: se le [istruzioni vocali](../navigation/guidance/voice-navigation.md) sono abilitate, vengono pronunciate la manovra successiva e la distanza da essa. <br/> **Corsie**: Nessuna modifica. |
 | Tocco lungo    | **Prossima svolta**: Apre il [Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Corsie**: Nessuna modifica. |
 
 
@@ -328,7 +328,9 @@ I widget *Guida al percorso* contengono informazioni su:
 
 ![Widget corsie](@site/static/img/widgets/lanes_widget.png)
 
-Il widget **Corsie** evidenzia la corsia corrente quando la navigazione è attiva e visualizza la disposizione delle corsie per la strada effettiva quando la navigazione è passiva. Un indicatore di distanza è mostrato anche sotto il diagramma delle corsie, che rappresenta la distanza rimanente fino alla manovra in cui si applica la guida sulle corsie. Questo widget è disponibile solo per i pannelli Superiore e Inferiore. I dati sono presi dal [progetto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+Il widget **Corsie** evidenzia la corsia corrente quando la navigazione è attiva e visualizza la disposizione delle corsie per la strada effettiva quando la navigazione è passiva. Un indicatore di distanza è mostrato anche sotto il diagramma delle corsie, che rappresenta la distanza rimanente fino alla manovra in cui si applica la guida sulle corsie. Questo widget è disponibile solo per i pannelli Superiore e Inferiore. I dati sono presi dal [progetto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn). Se i dati della mappa non specificano una direzione per ogni corsia, OsmAnd completa le direzioni mancanti in base alla disposizione dell'incrocio.
+
+Su Android, le impostazioni del widget includono l'opzione *Visualizza sulle intersezioni minori quando si procede dritto*, abilitata per impostazione predefinita. Con questa opzione, il widget mostra le corsie a ogni intersezione che superi procedendo dritto, anche quando per quell'intersezione non c'è alcuna istruzione vocale.
 
 
 ### Prossima svolta {#next-turn}

@@ -1,5 +1,5 @@
 ---
-source-hash: 856b27defd24e63764e7fed8d4ebb2d645fd0d1b4aec10804b2f835f0c0ec2e0
+source-hash: 6ec692ef2d49e44b3cbbd765dc588f2913d7072ca92f833de726302514647064
 sidebar_position: 4
 title:  Acquisti multipiattaforma
 ---
