@@ -1,5 +1,5 @@
 ---
-source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
+source-hash: d6a31c4940f73f3e1b07d66705ee71fb7de3941616a4621cd534af1b863917ad
 sidebar_position: 1
 title: Primeiros Passos
 ---
@@ -42,7 +42,7 @@ Explore como baixar mapas, como configurar o aplicativo, como usar o mapa e cons
 
 OsmAnd é um aplicativo móvel para Mapas e Navegação disponível para **Android** e **iOS**. Você pode baixá-lo nos mercados mais populares.
 
-**Android markets**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) and [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
+**Mercados Android**: [Google play store](https://play.google.com/store/apps/details?id=net.osmand) e [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545).
 
 <AndroidStore/>
 
@@ -502,7 +502,7 @@ Toque em um ícone de ação para iniciar imediatamente o aplicativo com a açã
 
 No *menu Ajuda*, você pode encontrar artigos do nosso site [www.osmand.net/docs](https://osmand.net/docs/intro/). Após o download inicial (conexão com a Internet necessária), os artigos de ajuda estão disponíveis offline.  
 A primeira subseção, *Ajuda Offline*, contém os artigos **Mais vistos** (ou populares) entre nossos usuários. Esses artigos são exibidos no idioma definido para o aplicativo, se esse idioma for suportado em nosso site de documentação. Os idiomas suportados atualmente incluem: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, e *<Translate android="true" ids="lang_uk"/>*. Se você alterar o idioma do aplicativo, reinicie o OsmAnd para que a documentação seja aberta no idioma selecionado. Quando uma tradução não estiver disponível, a versão em inglês da página será exibida automaticamente. As seções **Guia do usuário** e **Solução de problemas** têm a mesma estrutura que no site.  
-No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais do OsmAnd, informações de versão sobre seu aplicativo, notas de lançamento e contatos de suporte. Através da Ajuda, você também pode enviar [logcat and crash logs](../troubleshooting/crash-logs.md#crash-and-app-logs).  
+No *menu Ajuda*, você também pode encontrar links úteis para as redes sociais do OsmAnd, informações de versão sobre seu aplicativo, notas de lançamento e contatos de suporte. Através da Ajuda, você também pode enviar [logs do aplicativo e de falhas](../troubleshooting/crash-logs.md#crash-and-app-logs).  
 
 ### Menu {#menu}
 

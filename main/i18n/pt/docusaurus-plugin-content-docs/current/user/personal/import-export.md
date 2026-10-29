@@ -1,5 +1,5 @@
 ---
-source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
+source-hash: 15444c168df6f3554637066910aa28d6eb9b1c274618b9570845570e8988b856
 sidebar_position: 10
 title:  Importar / Exportar
 ---
@@ -31,7 +31,7 @@ A *Importação* e *Exportação* permitem salvar dados de **arquivos** `.osf` g
 - **Configurações:**  
         [Perfis](../personal/profiles.md#actions), &nbsp;[OsmAnd/Configurações Gerais](../personal/global-settings.md), &nbsp;[Cores](../personal/color-palette-schemes.md), &nbsp;[Ação rápida](../widgets/quick-action.md), &nbsp;[Tipo de POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Evitar estrada](../map/map-context-menu.md#avoid-road).
 - **Meus Lugares:**  
-        [Favoritos](../personal/favorites.md#export--import), &nbsp;[Trilhas](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notas OSM*, *Edições OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Histórico de marcadores*, *Histórico de pesquisa*, *Histórico de navegação](../personal/global-settings.md#history), &nbsp;*Itinerário*.
+        [Favoritos](../personal/favorites.md#export--import), &nbsp;[Mídia anexada](../personal/favorites.md#media), &nbsp;[Trilhas](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notas OSM*, *Edições OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Histórico de marcadores*, *Histórico de pesquisa*, *Histórico de navegação](../personal/global-settings.md#history), &nbsp;*Itinerário*.
 - **Recursos:**  
         [Estilo de renderização](../map/map-styles.md#custom-map-style), &nbsp;[Roteamento](../navigation/routing/osmand-routing.md), &nbsp;[Mecanismos de roteamento online](../navigation/routing/online-routing.md), &nbsp;[Fontes de mapa*, *Mapas padrão/offline](../map/raster-maps.md), &nbsp;[Mapas da Wikipédia e de Viagem](../plan-route/travel-guides.md), &nbsp;[Mapas náuticos](../plugins/nautical-charts.md), &nbsp;[Mapas rodoviários](../map/vector-maps.md#road-style), &nbsp;[Mapas de topografia](../plugins/topography.md), &nbsp;[Comandos de voz (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Comandos de voz (gravados)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Backup de favoritos](../personal/favorites.md#automatic-favorites-backup).
 

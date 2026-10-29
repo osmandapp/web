@@ -1,5 +1,5 @@
 ---
-source-hash: e0173be6fa81b710afb1b4b52c4268f63865918a50d504364df4f0d772bf2d39
+source-hash: a4ab003fa68f8ff7c393f79dced64ce22df0b72bda332626935257db71197cb1
 title: Criando um Polígono de País
 versions: '*'
 ---
@@ -14,7 +14,7 @@ O OsmAnd vem com muitos mapas para muitos países. A maioria dos mapas é criada
 A Geofabrik.de tem a estratégia de entregar mapas para os países que são solicitados por um grande número de usuários ou por seus clientes. Isso significa que alguns mapas nunca chegam à Geofabrik, pois simplesmente não há solicitações suficientes (ou nenhuma), como alguns países exóticos como as Seychelles ou o Burundi, etc.
 
 ## Processo do servidor {#server-process}
-Devido a essa decisão estratégica da Geofabrik, o OsmAnd tem uma opção para gerar mapas para esses países e as ferramentas [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) e [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) são usadas para isso. Para o OsmAndMapCreator, este é um processo de três etapas:
+Devido a essa decisão estratégica da Geofabrik, o OsmAnd tem uma opção para gerar mapas para esses países e as ferramentas [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) e [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) são usadas para isso. Para o OsmAndMapCreator, este é um processo de três etapas:
 - O OsmAndMapCreator precisa de um polígono que envolva a fronteira externa do país.
 - O OsmAndMapCreator precisa do "mapa de dados brutos" do próximo nível superior que incorpora este país. Para o Burundi, isso significa que o OsmAndMapCreator precisa do mapa da África. Para a Renânia do Norte-Vestfália, isso significa que o OsmAndMapCreator precisa do mapa da Alemanha.
 - O [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) criará um mapa de "dados brutos" a partir do polígono, extraindo os dados do mapa do mapa "pai".

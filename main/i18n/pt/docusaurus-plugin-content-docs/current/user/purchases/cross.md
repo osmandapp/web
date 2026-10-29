@@ -1,5 +1,5 @@
 ---
-source-hash: 856b27defd24e63764e7fed8d4ebb2d645fd0d1b4aec10804b2f835f0c0ec2e0
+source-hash: 6ec692ef2d49e44b3cbbd765dc588f2913d7072ca92f833de726302514647064
 sidebar_position: 4
 title: Compras entre plataformas
 ---
@@ -42,7 +42,7 @@ Para usar sua compra **OsmAnd Pro**, **Maps+** em diferentes plataformas (Androi
 
 ### Vincule sua compra {#link-your-purchase}
 
-![Cloud link](@site/static/img/purchases/cloud_activation.png)
+![Link do Cloud](@site/static/img/purchases/cloud_activation.png)
 
 Execute esta etapa no **dispositivo onde você fez a compra** (Android ou iOS, versão 5.0 ou posterior):
 
@@ -55,8 +55,8 @@ Execute esta etapa no **dispositivo onde você fez a compra** (Android ou iOS, v
 
 ### Ativar em outro dispositivo ou plataforma {#activate-on-another-device-or-platform}
 
-![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
-![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
+![Compra cruzada Maps+](@site/static/img/purchases/cross_purchase.png)
+![Compra cruzada Maps+](@site/static/img/purchases/cross_purchase_1.png)
 
 1. Vá para sua conta [OsmAnd Cloud](../personal/osmand-cloud.md#login):  
    *Menu → Configurações → OsmAnd Cloud →* ***Entrar com a mesma conta***

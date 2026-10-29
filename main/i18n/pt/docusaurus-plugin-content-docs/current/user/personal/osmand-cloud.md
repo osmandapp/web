@@ -1,5 +1,5 @@
 ---
-source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
+source-hash: 7ab1b7c975524abc4cbcb3957975026e9c46aff353e0f442c1228dc360748218
 sidebar_position: 11
 title: OsmAnd Cloud
 ---
@@ -19,11 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-:::info Pro feature
+:::info Recurso Pro
 O OsmAnd Cloud é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-:::note cross-platform  
+:::note multiplataforma  
 O OsmAnd Cloud é um serviço de armazenamento em nuvem independente e *não está vinculado* a uma versão específica da plataforma Android, iOS ou web.  
 :::  
 
@@ -119,7 +119,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 </Tabs>  
 
-O plano **OsmAnd Start** oferece acesso gratuito ao **OsmAnd Cloud** com recursos básicos limitados e 5 MB de armazenamento para guardar e sincronizar seus **Favoritos, Configurações e edições e notas do OpenStreetMap (OSM)**. Este plano está disponível para usuários do [OsmAnd Gratuito ou Maps+](../purchases/index.md).  
+O plano **OsmAnd Start** oferece acesso gratuito ao **OsmAnd Cloud** com recursos básicos limitados e 5 MB de armazenamento para salvar e sincronizar seus **Favoritos, Configurações e edições e notas do OpenStreetMap (OSM)**. Este plano está disponível para usuários do [OsmAnd Gratuito ou Maps+](../purchases/index.md).  
 
 Recursos incluídos no OsmAnd Start:
 
@@ -305,7 +305,7 @@ Neste menu, você pode selecionar quais dados e pastas carregar para a Nuvem:
 
 1. **Configurações**. Esta aba inclui todas as suas configurações, como preferências gerais, perfis específicos, ações rápidas, POIs e configurações de desvio de rota.
 
-2. **Meus Lugares**. Esta aba lista dados do [menu Meus Lugares](../personal/myplaces), incluindo favoritos, trilhas, notas OSM, marcadores e outros itens.
+2. **Meus Lugares**. Esta aba lista dados do [menu Meus Lugares](../personal/myplaces), incluindo favoritos, mídia anexada (somente Android), trilhas, notas OSM, marcadores e outros itens.
 
 3. **Recursos**. Aqui, você pode optar por fazer backup de recursos como favoritos, informações de roteamento, avisos de voz e itens adicionais.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 128c6a3c0461bcc75584d56b095a0ae9e2c8bab17befa8ebaf8ed344af899b90
 sidebar_position: 2
 title: Compras iOS
 ---
@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Instalar OsmAnd (iOS) {#install-osmand-ios}
 
-Pode descarregar a aplicação através deste link - [OsmAnd Maps na Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
+Você pode baixar a aplicação através deste link - [OsmAnd Maps na Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
 
 
 <!--
@@ -36,17 +36,17 @@ Pode descarregar a aplicação através deste link - [OsmAnd Maps na Apple App S
 
 | Plano | Descrição | Disponibilidade | Notas |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | Um **plano gratuito** que dá acesso ao [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) para *Favoritos*, *Definições* e *edição/notas OSM*. | Disponível para todos os utilizadores da versão gratuita do OsmAnd. | Limitado a funcionalidades básicas da nuvem e **5MB** de armazenamento. |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Uma **compra na aplicação** ou **subscrição** que desbloqueia funcionalidades avançadas para a aplicação gratuita OsmAnd. | Disponível na [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Pode ser adicionado à [Partilha Familiar da Apple](https://support.apple.com/en-us/HT201088). |
-| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Um **plano de subscrição** que desbloqueia funcionalidades adicionais avançadas e [funcionalidades pro](#pro-features). | Disponível na [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Fornece acesso total às funcionalidades do OsmAnd Cloud. |
+| **OsmAnd Start** | Um **plano gratuito** que dá acesso ao [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) para *Favoritos*, *Configurações* e *edição/notas OSM*. | Disponível para todos os usuários da versão gratuita do OsmAnd. | Limitado a funcionalidades básicas da nuvem e **5MB** de armazenamento. |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | Uma **compra na aplicação** ou **assinatura** que desbloqueia funcionalidades avançadas para a aplicação gratuita OsmAnd. | Disponível na [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Pode ser adicionado ao [Compartilhamento Familiar da Apple](https://support.apple.com/en-us/HT201088). |
+| ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | Um **plano de assinatura** que desbloqueia funcionalidades adicionais avançadas e [funcionalidades pro](#pro-features). | Disponível na [App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257). | Fornece acesso total às funcionalidades do OsmAnd Cloud. |
 
 ### Notas Importantes {#important-notes}
 
 1. O **Maps+** é uma *atualização* para a versão gratuita do OsmAnd, desbloqueando a maioria das funcionalidades.
 
-2. O **OsmAnd Pro**,  **OsmAnd+** e **Maps+** são compras *multiplataforma*. Isto significa que pode comprá-lo numa loja (por exemplo, *Google Play, Huawei AppGallery, AppStore* e *osmand.net*) e restaurá-lo noutra [associando a sua compra à conta OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
+2. O **OsmAnd Pro**,  **OsmAnd+** e **Maps+** são compras *multiplataforma*. Isto significa que você pode comprá-lo em uma loja (por exemplo, *Google Play, Huawei AppGallery, AppStore* e *osmand.net*) e restaurá-lo em outra [associando a sua compra à conta OsmAnd Cloud](../personal/osmand-cloud.md#cross-platform).
 
-3. Pode adicionar o **Maps+** à [Partilha Familiar da Apple](https://support.apple.com/en-us/HT201088) para partilhar a compra com membros da família.  
+3. Você pode adicionar o **Maps+** ao [Compartilhamento Familiar da Apple](https://support.apple.com/en-us/HT201088) para compartilhar a compra com membros da família.  
 
 
 ## Preços {#prices}
@@ -64,10 +64,10 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 :::
 
 
-|    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) Na Aplicação | [Maps+](#install-osmand-ios) Subscrição | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) Na Aplicação | [Maps+](#install-osmand-ios) Assinatura | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Subscrição** (12 Meses) | **Subscrição** (1 Mês / 12 Meses) |
+| **Tipo de Compra** | **Gratuito** | **Compra Única** (Vitalícia) | **Assinatura** (12 Meses) | **Assinatura** (1 Mês / 12 Meses) |
 | **Preço (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Preço (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
@@ -88,7 +88,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 
 ### Funcionalidades Gratuitas e Pagas {#free-and-paid-features}
 
-|  | OsmAnd Gratuito | [OsmAnd Maps+](#install-osmand-ios)<br/>(na&#8209;aplicação & subscrição) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Gratuito | [OsmAnd Maps+](#install-osmand-ios)<br/>(na&#8209;aplicação & assinatura) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -107,7 +107,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | [Profundidades náuticas](../plugins/nautical-charts.md) | **-** | ✔ | ✔ |
 | [Guias de viagem (Wikipedia)](../plugins/wikipedia.md) | **-** | ✔ | ✔ |
 | [Suporte a sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
-| [Plugin de Astronomia](../plugins/astronomy.md) — [Planeamento de Observação](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
+| [Plugin de Astronomia](../plugins/astronomy.md) — [Planejamento de Observação](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Plugin de Astronomia](../plugins/astronomy.md) — [Modo AR Interativo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin de Astronomia](../plugins/astronomy.md) — [Mapa do Céu Offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Navegação offline e online](../navigation/index.md)<br/>com direções passo a passo | ✔ | ✔ | ✔ |
@@ -115,7 +115,7 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 | [Gravação de viagem](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Exportar trilhos GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
 | [Importar trilhos GPX/KML](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
-| [Ferramenta de planeamento de rotas](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
+| [Ferramenta de planejamento de rotas](../plan-route/create-route.md) | ✔ | ✔ | ✔ |
 | [Widgets de Métricas do Veículo](../plugins/vehicle-metrics.md#widgets) | <details><summary>**2 widgets gratuitos**</summary><ul><li>*Velocidade do veículo*</li><li>*Velocidade do motor*</li></ul></details> | <details><summary>**2 widgets gratuitos**</summary><ul><li>*Velocidade do veículo*</li><li>*Velocidade do motor*</li></ul></details> | ✔ |
 | [Ferramenta de marcadores de mapa](../personal/markers.md) | ✔ | ✔ | ✔ |
 | [Fontes de mapa online](../plugins/online-map.md) | ✔ | ✔ | ✔ |
@@ -131,9 +131,9 @@ Na lista, há informações sobre os preços do produto OsmAnd para as regiões 
 
 ### Funcionalidades Pro {#pro-features}
 
-![Pro](@site/static/img/svg/pro_icon.svg) As *Funcionalidades Pro* estão disponíveis para a [subscrição OsmAnd Pro](#prices). Isso significa que precisa de ter a [subscrição OsmAnd Pro](#install-osmand-ios).
+![Pro](@site/static/img/svg/pro_icon.svg) As *Funcionalidades Pro* estão disponíveis para a [assinatura OsmAnd Pro](#prices). Isso significa que você precisa ter a [assinatura OsmAnd Pro](#install-osmand-ios).
 
-Atualmente, a subscrição Pro tem as seguintes funcionalidades:
+Atualmente, a assinatura Pro tem as seguintes funcionalidades:
 
 |  Funcionalidade Pro  | Descrição   |
 | :------------- | :------------- |
@@ -142,10 +142,10 @@ Atualmente, a subscrição Pro tem as seguintes funcionalidades:
 | [Widgets de Altitude - Elevação: Centro do Mapa](../widgets/info-widgets.md#elevation-map-center) | Permite saber a elevação do centro do mapa atual acima do nível do mar.  |
 | [Ao Vivo](../personal/maps-resources.md#live-updates) | As atualizações dos mapas OsmAnd a cada 15 minutos após a melhoria do [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Plugin Meteorológico](../plugins/weather.md) | Previsão horária de 24h para 7 dias no mapa. |
-| [Plugin de Métricas do Veículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar um scanner OBD-II para exibir dados detalhados do veículo na aplicação OsmAnd e armazenar as informações em registos de trilhos. As informações de velocidade do veículo e velocidade do motor estão disponíveis para o OsmAnd gratuito.  |
+| [Plugin de Métricas do Veículo (OBD-II)](../plugins/vehicle-metrics.md) | Permite conectar um scanner OBD-II para exibir dados detalhados do veículo na aplicação OsmAnd e armazenar as informações em registros de trilhos. As informações de velocidade do veículo e velocidade do motor estão disponíveis para o OsmAnd gratuito.  |
 | [Personalizar linha de rota](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Alterar a cor e a largura da linha de rota durante a navegação. |
-| [Modificar Esquema de Cores](../../user/plugins/topography.md#modify-color-scheme) | Permite personalizar a aparência do mapa selecionando ou importando paletas de cores. Pode editar esquemas incorporados ou usar os seus próprios ficheiros de paleta para personalizar as cores do mapa e da rota. |
-| [Criar paletas personalizadas](../../user/map/tracks/appearance.md#color-palette-editor) | Permite criar e editar paletas de gradiente para colorir trilhos usando valores Relativos ou Fixos. Pode definir passos de cor, atribuir valores e personalizar como os dados (como velocidade ou altitude) são exibidos ao longo do trilho. |
+| [Modificar Esquema de Cores](../../user/plugins/topography.md#modify-color-scheme) | Permite personalizar a aparência do mapa selecionando ou importando paletas de cores. Você pode editar esquemas incorporados ou usar os seus próprios arquivos de paleta para personalizar as cores do mapa e da rota. |
+| [Criar paletas personalizadas](../../user/map/tracks/appearance.md#color-palette-editor) | Permite criar e editar paletas de gradiente para colorir trilhos usando valores Relativos ou Fixos. Você pode definir passos de cor, atribuir valores e personalizar como os dados (como velocidade ou altitude) são exibidos ao longo do trilho. |
 | [Pastas Inteligentes – Organizar por](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Permite organizar trilhos em Pastas Inteligentes usando parâmetros avançados de agrupamento, como data e hora, distância, duração, velocidade, altitude e elevação, e dados de sensores. Estas opções permitem uma categorização mais detalhada dos trilhos e uma análise flexível. |
 
 
@@ -155,7 +155,7 @@ Maneira fácil de escolher e comprar o plano necessário através do menu **Comp
 
 ### Compra do OsmAnd Pro {#osmand-pro-purchase}
 
-![Pro](@site/static/img/svg/pro_icon.svg) Plano de subscrição *OsmAnd Pro*. Aqui pode escolher [subscrição mensal ou anual](#prices):
+![Pro](@site/static/img/svg/pro_icon.svg) Plano de assinatura *OsmAnd Pro*. Aqui você pode escolher [assinatura mensal ou anual](#prices):
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_get"/> → Continuar com OsmAnd Pro*
 
@@ -167,28 +167,28 @@ or
 
 ### Compra do Maps+ {#maps-purchase}
 
-![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Plano de subscrição / na aplicação *Maps+*. Aqui pode escolher [subscrição anual](#prices) ou [pagamento único](#prices):
+![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Plano de assinatura / na aplicação *Maps+*. Aqui você pode escolher [assinatura anual](#prices) ou [pagamento único](#prices):
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tocar na lista de funcionalidades do Maps+ → Continuar com Maps+*
 
 ![Plano Maps+](@site/static/img/purchases/maps_new.png)
 
 
-## Subscrições Legadas (anteriores a 4.0) {#legacy-subscriptions-prior-40}
+## Assinaturas Legadas (anteriores a 4.0) {#legacy-subscriptions-prior-40}
 
-As novas subscrições tornaram-se ativas a partir do OsmAnd 4.3 (dezembro de 2022). Todas as subscrições anteriores são legadas e tecnicamente equivalentes à "subscrição de Mapas", embora as subscrições legadas tenham direito a atualizações de Mapas Horárias. Os utilizadores não podem comprar subscrições legadas, mas as subscrições antigas são renovadas automaticamente até que cancele a subscrição (o preço das mesmas pode mudar no futuro).
+As novas assinaturas se tornaram ativas a partir do OsmAnd 4.3 (dezembro de 2022). Todas as assinaturas anteriores são legadas e tecnicamente equivalentes à "assinatura de Mapas", embora as assinaturas legadas tenham direito a atualizações de Mapas Horárias. Os usuários não podem comprar assinaturas legadas, mas as assinaturas antigas são renovadas automaticamente até que cancele a assinatura (o preço das mesmas pode mudar no futuro).
 
 
 ## Restaurar Compras {#restore-purchases}
 
-O utilizador pode controlar todas as compras e subscrições a partir da [conta Apple](https://appleid.apple.com/).  
+O usuário pode controlar todas as compras e assinaturas a partir da [conta Apple](https://appleid.apple.com/).  
 
 Use o mesmo ID Apple para restaurar as suas compras.
 
-- Inicie sessão na mesma conta da Apple App Store que usou para comprar as compras na aplicação (subscrições) do OsmAnd Maps.
+- Faça login na mesma conta da Apple App Store que usou para comprar as compras na aplicação (assinaturas) do OsmAnd Maps.
 - Instale o [OsmAnd Maps na Apple App Store](https://apps.apple.com/us/app/osmand-maps-travel-navigate/id934850257).
-- Abra o OsmAnd Maps com uma ligação ativa à Internet.
-- Para restaurar as compras, siga estes passos: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e no topo do ecrã deverá aparecer que o Maps+(Pro, Live) está ativado.
+- Abra o OsmAnd Maps com uma conexão ativa à Internet.
+- Para restaurar as compras, siga estes passos: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e no topo da tela deverá aparecer que o Maps+(Pro, Live) está ativado.
 
 ![Plano Pro](@site/static/img/purchases/maps_purchases_ios.png)
 
@@ -210,7 +210,7 @@ Use o mesmo ID Apple para restaurar as suas compras.
 
 ## Cartões de Oferta {#giftcards}
 
-Pode comprar o OsmAnd usando um cartão de oferta da App Store. Este método permite-lhe evitar partilhar informações de cartão de crédito diretamente com o serviço. Basta comprar um cartão de oferta de um retalhista à sua escolha e resgatar o código na App Store.
+Você pode comprar o OsmAnd usando um cartão-presente da App Store. Este método permite que você evite compartilhar informações de cartão de crédito diretamente com o serviço. Basta comprar um cartão-presente de um varejista à sua escolha e resgatar o código na App Store.
 
-- [Guia detalhado sobre a compra de cartões de oferta da App Store](https://www.apple.com/shop/gift-cards).
-- [Instruções para resgatar o seu cartão de oferta da App Store](https://support.apple.com/en-gb/HT201209).
+- [Guia detalhado sobre a compra de cartões-presente da App Store](https://www.apple.com/shop/gift-cards).
+- [Instruções para resgatar o seu cartão-presente da App Store](https://support.apple.com/en-gb/HT201209).

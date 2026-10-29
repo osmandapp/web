@@ -1,8 +1,8 @@
 ---
-source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
+source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
 sidebar_position: 7
-sidebar_label: Tracks Analyzer
-title: Tracks Analyzer
+sidebar_label: Analisador de Trilhas
+title: Analisador de Trilhas
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,13 +19,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-**Tracks Analyzer** é uma ferramenta web que ajuda a analisar segmentos de trilhas repetidos entre pontos selecionados no mapa. Por exemplo, você pode usá-la para comparar suas pedaladas na mesma subida ou seus trajetos diários. Para usar este recurso com seus próprios dados, você precisa de uma conta OsmAnd Pro com trilhas sincronizadas no OsmAnd Cloud — caso contrário, suas trilhas não estarão disponíveis no Web Planner. Ela escaneia suas trilhas e encontra todos os segmentos que passam pelos locais escolhidos, permitindo que você compare velocidade, elevação, distância e tempo em várias atividades.
+O **Analisador de trilhas** é uma ferramenta web que ajuda a analisar segmentos de trilhas repetidos entre pontos selecionados no mapa. Por exemplo, você pode usá-la para comparar suas pedaladas na mesma subida ou seus trajetos diários. Para usar este recurso com seus próprios dados, você precisa de uma conta OsmAnd Pro com trilhas sincronizadas no OsmAnd Cloud — caso contrário, suas trilhas não estarão disponíveis no Web Planner. Ela escaneia suas trilhas e encontra todos os segmentos que passam pelos locais escolhidos, permitindo que você compare velocidade, elevação, distância e tempo em várias atividades.
 
 ## Como Usar {#how-to-use}
 
-Após abrir o Tracks Analyzer (mostrado como uma chave inglesa), a ferramenta abre com uma visão do mapa e um estado vazio. A partir daqui, você pode escolher quais trilhas serão incluídas na análise usando o painel **Selecionar trilhas**. O analisador permite trabalhar com todas as trilhas disponíveis ou limitar a análise a pastas específicas.
+1. Faça [login](./web-cloud.md#login) na sua conta OsmAnd Pro no Web Map Portal. Suas trilhas devem estar sincronizadas com o [OsmAnd Cloud](./web-cloud.md#cloud-sync).
+2. Abra *Menu → Analisador de trilhas* (o ícone de chave inglesa).
+3. No painel **Selecionar trilhas**, escolha **Todas as trilhas** ou apenas as pastas de que você precisa.
+4. Clique com o botão direito no mapa e selecione **Ponto A**. Para analisar um segmento entre dois pontos, defina também o **Ponto B**.
+5. Revise a lista de segmentos encontrados, [classifique-a e escolha quais parâmetros exibir](#sorting-and-visible-parameters).
 
-Para iniciar a análise, defina um ou dois pontos diretamente no mapa. Clique com o botão direito no local desejado e selecione **Ponto A / Ponto B** do menu de contexto. Com um ponto, o analisador encontra segmentos de trilha que passam pelo local selecionado. Com dois pontos, ele encontra e analisa segmentos entre o Ponto A e o Ponto B.
+Com um ponto, o analisador encontra segmentos de trilha que passam pelo local selecionado. Com dois pontos, ele encontra e analisa segmentos entre o Ponto A e o Ponto B.
 
 ![Analisador de Trilhas](@site/static/img/web/web_analyzer_select.png) ![Analisador de Trilhas](@site/static/img/web/web_analyzer_points_new.png)
 

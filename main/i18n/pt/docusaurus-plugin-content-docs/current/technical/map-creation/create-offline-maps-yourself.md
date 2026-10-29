@@ -1,5 +1,5 @@
 ---
-source-hash: 0ece8e7a1a25127672614cdf13cd0688a67a4cbb64515cc18d60c278f7999862
+source-hash: 6cd58289fa863d41e34b91d4957c55fa523752c06e24588537decc922b41bdaa
 title: Criar Mapas Raster e Vetoriais Offline
 versions: '*'
 intro: Com o OsmAndMapCreator, há muitas maneiras de criar e personalizar mapas Raster e Vetoriais para suas necessidades.
@@ -7,7 +7,7 @@ intro: Com o OsmAndMapCreator, há muitas maneiras de criar e personalizar mapas
 
 ## OsmAndMapCreator {#osmandmapcreator}
 
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) pode ser usado para criar qualquer mapa suportado pelo OsmAnd. Você pode baixar a versão mais recente no [site](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). O OsmAndMapCreator possui recursos de interface do usuário para criar mapas raster e vetoriais. *Para criar um mapa vetorial, você precisará de um arquivo OSM (`*.pbf, *.osm.gz, *.osm.bz2`)* e *para criar um arquivo de mapa sqlite online, você precisará de uma `URL de bloco base`*.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) pode ser usado para criar qualquer mapa suportado pelo OsmAnd. Você pode baixar a versão mais recente no [site](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). O OsmAndMapCreator possui recursos de interface do usuário para criar mapas raster e vetoriais. *Para criar um mapa vetorial, você precisará de um arquivo OSM (`*.pbf, *.osm.gz, *.osm.bz2`)* e *para criar um arquivo de mapa sqlite online, você precisará de uma `base tile url`*.
 
 ### Mapas Raster (simples) {#raster-maps-simple}
 
@@ -33,7 +33,7 @@ Etapas para criar um mapa vetorial via interface do usuário do OsmAndMapCreator
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Criar mapas vetoriais" />
 
-Mais parâmetros sobre como gerar mapas vetoriais podem ser especificados no shell `utilities.sh`.
+Mais parâmetros sobre como gerar mapas vetoriais podem ser especificados no shell `utilities.sh `.
 
 ## Mapas vetoriais (script shell) {#vector-maps-shell-script}
 
@@ -137,7 +137,7 @@ Depois disso, você pode criar seu arquivo SQLite: 'Atlas' -> 'Criar Atlas'.
 
 ### MAPC2MAPC {#mapc2mapc}
 
-[MAPC2MAPC](https://www.the-thorns.org/mapping/) é um programa para Windows para manipular mapas digitais e convertê-los entre diferentes plataformas e softwares.
+[MAPC2MAPC](https://www.the-thorns.org.uk/mapping/) é um programa para Windows para manipular mapas digitais e convertê-los entre diferentes plataformas e softwares.
 
 Por exemplo, você pode converter e calibrar qualquer formato de imagem e mapas PDF para o mapa online do OsmAnd.
 

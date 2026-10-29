@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title: Gerenciar Trilhas
 ---
@@ -88,7 +88,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 
 Todas as trilhas já gravadas, criadas ou importadas são exibidas automaticamente na pasta [Meus Lugares](../../personal/myplaces.md) na aba *Trilhas*. Elas são organizadas por pasta ou exibidas em uma lista abaixo delas.
 
-Cada trilha na lista exibe o nome da pasta pai na segunda linha, separado por `|` (por exemplo, `Caminhada | Trilhas`), facilitando a identificação de onde uma trilha está armazenada. Isso se aplica em [Pesquisar](#search), [Pastas inteligentes](../../personal/tracks/smart-folder.md) e [Configurar mapa → Trilhas](../../map/tracks/index.md#configure-map).
+Cada trilha na lista exibe o nome da pasta pai na segunda linha, separado por `|` (por exemplo, `Hiking | Tracks`), facilitando a identificação de onde uma trilha está armazenada. Isso se aplica em [Pesquisar](#search), [Pastas inteligentes](../../personal/tracks/smart-folder.md) e [Configurar mapa → Trilhas](../../map/tracks/index.md#configure-map).
 
 
 ### Menu de Trilhas {#track-menu}
@@ -204,7 +204,7 @@ Depois de fazer sua escolha, as seguintes etapas são fornecidas:
 
 - **Mover** — Você pode organizar seus dados movendo trilhas e pastas selecionadas para outras pastas.
 
-- [Alterar atividade](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Esta ação permite alterar o tipo de atividade, por exemplo, para *Carro*, *Esporte a Motor de Aventura*, *Mochilão* ou outros, para a trilha selecionada.
+- [Alterar atividade](../../map/tracks/track-context-menu.md#track-activity-type) — Esta ação permite alterar o tipo de atividade, por exemplo, para *Carro*, *Esporte a Motor de Aventura*, *Mochilão* ou outros, para a trilha selecionada.
 
 - [Alterar aparência](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Esta opção permite personalizar a aparência das trilhas selecionadas, tornando-as mais visíveis e reconhecíveis no mapa.
 
@@ -275,7 +275,7 @@ A opção de classificação selecionada é aplicada não apenas à subpasta atu
 
 Toque no *menu de três pontos* no campo da pasta para **abrir** o menu da pasta.
 
-![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
+![importar multitrilha](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
 </TabItem>
 
@@ -436,7 +436,7 @@ A ferramenta de importação permite adicionar trilhas de arquivos externos para
 
 <TabItem value="android" label="Android">
 
-![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
+![importar multitrilha](@site/static/img/personal/tracks/import_multitrack.png) ![importar multitrilha](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
@@ -444,7 +444,7 @@ A ferramenta de importação permite adicionar trilhas de arquivos externos para
 
 | Exportar | Importar |
 |:------------|:---------------|
-| ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Exportar </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Exportar </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
+| ![importar multitrilha](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Exportar </summary> ![importar multitrilha](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![importar multitrilha](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Exportar </summary> ![importar multitrilha](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
 
 <!--
 <table class="blogimage">

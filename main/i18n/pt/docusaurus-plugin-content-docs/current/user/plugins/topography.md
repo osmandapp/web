@@ -1,5 +1,5 @@
 ---
-source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
+source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
 sidebar_position: 16
 title: Topografia
 ---
@@ -41,7 +41,7 @@ O plugin Topografia fornece acesso aos seguintes tipos de mapa:
 
 | Curvas de Nível | Hillshade | Declive |
 |:---|:---|:---|
-| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Curvas_de_nível_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Sombreamento_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Declives_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ O plugin Topografia fornece acesso aos seguintes tipos de mapa:
 
 | Curvas de Nível | Hillshade | Declive |
 |:---|:---|:---|
-| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Curvas_de_nível_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Sombreamento_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Declives_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -58,6 +58,7 @@ O plugin Topografia fornece acesso aos seguintes tipos de mapa:
 ### Licença para dados DEM usados pelo OsmAnd para detecção de terreno {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 Os dados de altitude no mapa (entre 70 graus de latitude norte e 70 graus de latitude sul) foram obtidos de medições realizadas como parte da *Shuttle Radar Topography Mission (SRTM)*. Ele utilizou o *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, a principal ferramenta de imagem no *Earth Observation System da NASA*.  
+Para a América do Norte, os mapas de terreno e as curvas de nível usam dados nacionais de elevação de alta resolução: cerca de 10 m nos Estados Unidos continental e cerca de 30 m no Alasca e na maior parte do Canadá e do México.  
 Para informações completas, consulte a [Licença](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -66,7 +67,8 @@ Para informações completas, consulte a [Licença](https://github.com/osmandapp
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Os dados originais usados para este produto foram fornecidos pela AW3D da JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program (3DEP)</a> via <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> (Estados Unidos, Alasca) e o <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">USGS 1 arc-second DEM</a> no <a href="https://opentopography.org/">OpenTopography</a> (Canadá, México), incluindo dados do <a href="https://natural-resources.canada.ca/">Natural Resources Canada (NRCan)</a> e do <a href="https://www.inegi.org.mx/">INEGI</a>.
 
 </details>
 
@@ -99,7 +101,7 @@ Para um trabalho estável e para economizar recursos, você pode baixar um mapa 
 
 Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Download de curvas de nível Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Download de curvas de nível Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +109,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Download de curvas de nível iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Download de curvas de nível iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -124,13 +126,13 @@ Se o mapa exibido na tela não for baixado, então em *Menu → Configurar mapa 
 
 <TabItem value="android" label="Android">
 
-![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Diálogo de download de curvas de nível Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Diálogo de download de curvas de nível iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
@@ -153,7 +155,7 @@ Curvas de nível é um [recurso pago](../purchases/index.md).
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Menu de curvas de nível Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -161,7 +163,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Curvas de Nível*
 
-![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Menu de curvas de nível iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
@@ -196,7 +198,7 @@ Terreno é um [recurso pago](../purchases/index.md).
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Menu de terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Menu de terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -204,7 +206,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
+![Menu de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menu de terreno iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
@@ -223,7 +225,7 @@ O menu **Terreno** inclui a seleção de [esquema de cores](#default-color-schem
 
 | Hillshade | Declive | Altitude |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Sombreamento](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Declive](../../../blog/2023-08-28-terrain/img/slope.png) | ![Declive](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Hillshade** é baseado na simulação da iluminação da superfície usando dados de terreno. Este método envolve a criação de sombras e realces com base no ângulo da superfície em relação à fonte de luz. Como resultado, você vê colinas, vales e outros detalhes naturais do terreno no mapa.  
 
@@ -242,7 +244,7 @@ Os mapas raster de **Hillshade**, **Declive** e **Altitude** são criados com ba
 
 ### Sombras do Terreno (iOS) {#terrain-shadows}
 
-![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+![Sombras do terreno iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
 
 **Sombras do Terreno** fornece sombreamento dinâmico em tempo real baseado na geometria 3D do terreno. Diferente dos mapas raster Hillshade, o efeito de sombreamento é gerado diretamente no dispositivo usando dados de terreno e segue automaticamente a perspectiva atual do mapa.
 
@@ -253,7 +255,7 @@ Sombras do Terreno requer Relevo 3D e o ativa automaticamente quando selecionado
 
 | Hillshade | Declive | Altitude |
 | ------ | ------- | ------- |
-|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Sombreamento](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Declive](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Hillshade* usa tons escuros para mostrar declives, picos e terras baixas. O Sol Virtual tem um azimute (direção) fixo de 315 graus.
 
@@ -272,13 +274,13 @@ Sombras do Terreno requer Relevo 3D e o ativa automaticamente quando selecionado
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Modificar esquema de cores](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modificar esquema de cores](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+![Modificar esquema de cores](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modificar esquema de cores](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
 
 </TabItem>
 
@@ -305,7 +307,7 @@ Para personalização avançada de paleta usando arquivos de paleta, consulte o 
 
 | Visibilidade 31% | Visibilidade 74% |
 | ------ | ------- |
-| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
+| ![Visibilidade](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibilidade](../../../blog/2023-08-28-terrain/img/74.png) |
 
 A função *Visibilidade* é usada para ajustar a transparência das sombras para Hillshade e as cores usadas para representar o ângulo no parâmetro Declive. Para Sombras do Terreno, Visibilidade controla a intensidade do efeito de sombreamento do terreno.
 
@@ -338,7 +340,7 @@ Os Níveis de Zoom não estão disponíveis para Sombras do Terreno porque esta 
 
 ### Ações Rápidas {#quick-actions}
 
-![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![Perguntas e respostas sobre Terreno](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 Você pode usar os botões de *Ação Rápida* na tela do mapa para alternar a visibilidade das camadas de [Curvas de Nível](#contour-lines), [Terreno](#terrain) e o [esquema de cores do Terreno](../../user/personal/color-palette-schemes.md#quick-actions). Dependendo da camada selecionada no menu Configurar mapa, atribuir uma ação de *Terreno* ao botão exibirá *Hillshade*, *Declive* ou *Altitude*.  
 
@@ -355,7 +357,7 @@ As principais configurações para *Mostrar ou Ocultar tipos de mapa* estão na 
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
+![Edifícios 3D](@site/static/img/map/3d_buildings_4_new.png) ![Edifícios 3D](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -363,7 +365,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
+![Edifícios 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Edifícios 3D](@site/static/img/map/3d_buildings_highlight_ios.png)
 
 </TabItem>
 
@@ -392,13 +394,13 @@ As configurações de edifícios 3D são divididas em dois grupos: **Aparência*
 
 <TabItem value="android" label="Android">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_color.png)
+![Edifícios 3D](@site/static/img/map/3d_buildings_color.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
+![Edifícios 3D](@site/static/img/map/3d_buildings_color_ios.png)
 
 </TabItem>
 
@@ -463,7 +465,7 @@ Relevo 3D é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeat
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![Relevo 3D](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
@@ -471,7 +473,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
+![Relevo 3D](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
@@ -495,7 +497,7 @@ O recurso Relevo 3D produz um relevo elevado e fornece uma representação tridi
 
 | Camada de mapa vetorial | Camada de mapa raster |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
+| ![Relevo 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![Relevo 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
@@ -503,7 +505,7 @@ O recurso Relevo 3D produz um relevo elevado e fornece uma representação tridi
 
 | Camada de mapa vetorial | Camada de mapa raster |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![Relevo 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![Relevo 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -517,7 +519,7 @@ O recurso Relevo 3D produz um relevo elevado e fornece uma representação tridi
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Exagero vertical*
 
-![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
+![Exagero vertical Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
@@ -525,7 +527,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Exagero vertical*
 
-![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Exagero vertical iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
 
@@ -538,7 +540,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plug
 
 | Hillshade | Relevo 3D |
 |--------|---------|
-| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Camadas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Camadas de terreno](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 **Hillshade** é um tipo de mapa que exibe o terreno usando sombras, criando uma representação visual da inclinação e forma da superfície da terra.  
 **Relevo 3D** é um recurso que adiciona efeitos tridimensionais ao mapa.  
@@ -554,13 +556,13 @@ Quando **Hillshade** está **ativado**, uma imagem com sombras de relevo aparece
 
 <TabItem value="android" label="Android">
 
-![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
+![Curvas de nível combinadas com Sombreamento](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Curvas de nível combinadas com Declive](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
+![Curvas de nível combinadas com Sombreamento no iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Curvas de nível combinadas com Declive no iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title: Prompts de Voz / Notificações
 ---
@@ -397,7 +397,7 @@ Você pode controlar a tela do seu dispositivo para economizar energia. Este mod
 
     ![Controle de tela de tempo limite do sistema Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Se *Manter Tela Ligada* estiver ativado, a tela do dispositivo não aplica um tempo limite após acordar. Se estiver desativado, você pode definir o tempo após o qual a tela do dispositivo será desligada se você não interagir com ela, de 5 a 60 segundos.
+2. **<Translate android="true" ids="wake_time"/>**. Se *Manter Tela Ligada* estiver ativado, a tela do dispositivo não aplica um tempo limite após acordar. Se estiver desativado, você pode definir o tempo após o qual a tela do dispositivo será desligada se você não interagir com ela, de 5 a 60 segundos. O tempo limite é contado a partir da sua última interação com o mapa, e cada toque o reinicia. Quando ele termina, a tela desliga de acordo com o tempo limite de tela do sistema do seu dispositivo, de modo que o OsmAnd pode manter a tela ligada por mais tempo do que a configuração do sistema, mas nunca por menos.   
 
     ![Tempo limite após despertar Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Tempo limite após despertar Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -405,11 +405,15 @@ Você pode controlar a tela do seu dispositivo para economizar energia. Este mod
 
 ![ligar tela Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Selecione as opções de ativação da tela e garanta que o OsmAnd permaneça em primeiro plano quando o dispositivo estiver bloqueado.
+Selecione as opções de ativação da tela e garanta que o OsmAnd permaneça em primeiro plano quando o dispositivo estiver bloqueado. Quando uma opção de ativação da tela liga a tela, o mapa aparece sobre a tela de bloqueio e o dispositivo permanece bloqueado. Se nenhuma opção de ativação estiver habilitada, a tela de bloqueio normal é exibida.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> O sensor responde de forma confiável durante a navegação ou a gravação de trilha. Em outros casos, o Android deixa de enviar eventos do sensor ao OsmAnd cerca de um minuto depois que o aplicativo vai para segundo plano.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> Se *Usar tempo limite de tela do sistema* estiver desativado, esta opção requer que *Tempo limite após despertar* esteja definido como *Manter Tela Ligada*.
+
+Após o despertar pelo sensor de proximidade ou por uma instrução de navegação, o mapa permanece sobre a tela de bloqueio pelo tempo definido em *Tempo limite após despertar*, e depois o dispositivo bloqueia novamente. Com *Manter Tela Ligada*, o mapa permanece visível até você pressionar o botão liga/desliga.
+
+**Nota:** Em dispositivos Xiaomi, permita a permissão *Exibir na tela de bloqueio* para o OsmAnd (*Informações do app → Outras permissões*). Sem ela, a tela liga, mas o mapa não aparece sobre a tela de bloqueio. O OsmAnd não pode conceder essa permissão por conta própria.
 
 
 ## Artigos Relacionados {#related-articles}

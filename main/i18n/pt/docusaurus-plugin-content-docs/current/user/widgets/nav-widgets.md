@@ -1,5 +1,5 @@
 ---
-source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
+source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
 sidebar_position: 4
 title: Widgets de Navegação
 ---
@@ -70,7 +70,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::info Pro feature
+:::info Recurso Pro
 O Widget de Elevação é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
@@ -249,7 +249,7 @@ O widget mostra o *Tempo de chegada* ou *Tempo para ir* até o primeiro ponto in
 | | |
 |:------------|:------------|
 | Habilitar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | Ao tocar | Alterna entre *Tempo de chegada* e *Tempo para ir* e vice-versa. |
 | Toque longo | Abre o [menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -277,7 +277,7 @@ O widget exibe o *Tempo de chegada* ou *Tempo para ir* até o último ponto de d
 | | |
 |:------------|:------------|
 | Habilitar |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Escolha um painel → Adicionar widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | Ao tocar | Alterna entre *Tempo de chegada* e *Tempo para ir* e vice-versa. |
 | Toque longo | Abre o [menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -320,7 +320,7 @@ Os widgets de *Orientação de Rota* contêm informações sobre:
 |:------------|:------------|
 | Habilitar      | **Android:** *Menu → Configurar tela →  Painel Esquerdo / Direito / Superior / Inferior → Orientação de Rota → Adicionar widget → Faixa, Próxima curva, Segunda próxima curva*  |
 |      | **iOS:** *Menu → Configurar tela →  Painel Esquerdo / Direito / Superior / Inferior → Orientação de Rota → Adicionar widget → Faixa, Próxima curva, Segunda próxima curva*   |
-| Ao tocar  | **Próxima curva**: Se os [avisos de voz](../navigation/guidance/voice-navigation.md) estiverem ativados, a próxima manobra e a distância até ela são pronunciadas. <br/> **Faixa**: Nenhuma alteração. |
+| Ao tocar  | **Próxima curva**: Se os [avisos de voz](../navigation/guidance/voice-navigation.md) estiverem ativados, a próxima manobra e a distância até ela são pronunciadas. <br/> **Faixas**: Nenhuma alteração. |
 | Toque longo    | **Próxima curva**: Abre o [menu de contexto do widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Faixas**: Nenhuma alteração. |
 
 
@@ -328,7 +328,9 @@ Os widgets de *Orientação de Rota* contêm informações sobre:
 
 ![Widgets de faixas](@site/static/img/widgets/lanes_widget.png)
 
-O widget **Faixas** destaca a faixa atual quando a navegação está ativa e exibe o layout da faixa para a estrada real quando a navegação é passiva. Um indicador de distância também é mostrado abaixo do diagrama da faixa, representando o quanto resta até a manobra onde a orientação da faixa se aplica. Este widget está disponível apenas para os painéis Superior e Inferior. Os dados são obtidos do [projeto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+O widget **Faixas** destaca a faixa atual quando a navegação está ativa e exibe o layout da faixa para a estrada real quando a navegação é passiva. Um indicador de distância também é mostrado abaixo do diagrama da faixa, representando o quanto resta até a manobra onde a orientação da faixa se aplica. Este widget está disponível apenas para os painéis Superior e Inferior. Os dados são obtidos do [projeto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn). Se os dados do mapa não especificarem uma direção para cada faixa, o OsmAnd completa as direções ausentes com base no layout do cruzamento.
+
+No Android, as configurações do widget incluem a opção *Exibir em interseções secundárias ao seguir em frente*, que vem ativada por padrão. Com essa opção, o widget mostra as faixas em cada interseção pela qual você passa ao dirigir em frente, mesmo quando não há aviso de voz para essa interseção.
 
 
 ### Próxima Curva {#next-turn}

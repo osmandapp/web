@@ -16,14 +16,14 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Explorar o OsmAnd {#explore-osmand}
 
-O OsmAnd é uma aplicação poderosa com uma vasta base de utilizadores e, para além da sua documentação oficial, existem inúmeros recursos criados pela comunidade.  
+O OsmAnd é uma aplicação poderosa com uma vasta base de usuários e, para além da sua documentação oficial, existem inúmeros recursos criados pela comunidade.  
 
-Este artigo reúne links para manuais de utilizador personalizados, grupos de redes sociais, plugins, estilos de mapa e muito mais. Explore estes recursos para expandir o seu conhecimento, personalizar a sua experiência OsmAnd e conectar-se com outros utilizadores.
+Este artigo reúne links para manuais de usuário personalizados, grupos de redes sociais, plugins, estilos de mapa e muito mais. Explore estes recursos para expandir o seu conhecimento, personalizar a sua experiência OsmAnd e conectar-se com outros usuários.
 
 
 ## Grupos de Redes Sociais {#social-media-groups}
 
-Para se conectar com outros utilizadores do OsmAnd, fazer perguntas e partilhar a sua experiência, junte-se a um dos muitos grupos de redes sociais dedicados à aplicação. Estes grupos são comunidades vibrantes onde os utilizadores podem trocar dicas, discutir funcionalidades e procurar aconselhamento.
+Para se conectar com outros usuários do OsmAnd, fazer perguntas e compartilhar a sua experiência, junte-se a um dos muitos grupos de redes sociais dedicados à aplicação. Estes grupos são comunidades vibrantes onde os usuários podem trocar dicas, discutir funcionalidades e procurar aconselhamento.
 
 | Plataforma | Nome do Grupo | Descrição | Link |
 | :-- | :-- | :-- | :-- |
@@ -41,29 +41,29 @@ Para se conectar com outros utilizadores do OsmAnd, fazer perguntas e partilhar 
 
 ## Conversores {#converters}
 
-A lista abaixo fornece conversores para vários tipos de dados suportados pelo OsmAnd, permitindo aos utilizadores transferir, modificar e integrar diferentes formatos de dados.
+A lista abaixo fornece conversores para vários tipos de dados suportados pelo OsmAnd, permitindo aos usuários transferir, modificar e integrar diferentes formatos de dados.
 
 | Tipo | Descrição | Link |
 |-- | -- | --|
-| GoogleMap To OSMAnd GPX | Cria uma pasta de ficheiros GPX no estilo OsmAnd a partir de um mapa do Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
-| KML to OsmAnd GPX | Script Python para converter ficheiros *KML* para o formato *GPX* do OsmAnd com ícones. Outras ferramentas disponíveis. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
-| KMZ to GPX | Script Python para converter ficheiros *KMZ* para o formato *GPX*, incluindo ícones. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| Garmin | Ferramenta para converter ficheiros Garmin Basecamp para OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
+| GoogleMap To OSMAnd GPX | Cria uma pasta de arquivos GPX no estilo OsmAnd a partir de um mapa do Google My Maps (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML to OsmAnd GPX | Script Python para converter arquivos *KML* para o formato *GPX* do OsmAnd com ícones. Outras ferramentas disponíveis. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| KMZ to GPX | Script Python para converter arquivos *KMZ* para o formato *GPX*, incluindo ícones. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
+| Garmin | Ferramenta para converter arquivos Garmin Basecamp para OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
 | GeoPDF/Tiff, ozi to OsmAnd | Conversão de formatos de mapa geoPDF, geoTiff e ozi para OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
-| GPX to KML | Ferramenta para converter ficheiros *GPX* do OsmAnd para o formato *KML*, preservando os ícones. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| iOverlander GPX to OsmAnd | Script Python para converter ficheiros *GPX* do iOverlander exportados para OsmAnd com ícones. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| Topo map into printable| Esta é [uma ferramenta](https://github.com/acui/osmand_topo_map_generator) para gerar um mapa topográfico imprimível usando capturas de ecrã do OsmAnd (https://osmand.net). O mapa usa a grade UTM e tem informações de declinação. Deve ser usado com uma bússola ou um dispositivo GPS com coordenadas UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
-| GPX Solar | O GPXsolar projeta um raio em direção ao sol a partir de cada ponto de um trilho GPX e testa-o contra o terreno e a vegetação (0,5 m HD LiDAR / IGN), para uma data e hora específicas. Ele informa, metro a metro, se é sol ou sombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
-| lidar2map | Uma ferramenta autónoma que descarrega dados LiDAR públicos de portais nacionais em 22 países | [lidar2map](https://github.com/nico579/lidar2map)|
+| GPX to KML | Ferramenta para converter arquivos *GPX* do OsmAnd para o formato *KML*, preservando os ícones. | [GitHub](https://github.com/mariush444/osmand2kml) |
+| iOverlander GPX to OsmAnd | Script Python para converter arquivos *GPX* do iOverlander exportados para OsmAnd com ícones. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| Topo map into printable| Esta é [uma ferramenta](https://github.com/acui/osmand_topo_map_generator) para gerar um mapa topográfico imprimível usando capturas de tela do OsmAnd (https://osmand.net). O mapa usa a grade UTM e tem informações de declinação. Deve ser usado com uma bússola ou um dispositivo GPS com coordenadas UTM.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | O GPXsolar projeta um raio em direção ao sol a partir de cada ponto de uma trilha GPX e testa-o contra o terreno e a vegetação (0,5 m HD LiDAR / IGN), para uma data e hora específicas. Ele informa, metro a metro, se é sol ou sombra. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | Uma ferramenta autônoma que baixa dados LiDAR públicos de portais nacionais em 22 países | [lidar2map](https://github.com/nico579/lidar2map)|
 | GPX slope colours | Colors a GPX track by slope: climbs, descents and flat sections become separate tracks with their own colour, written into the file so OsmAnd displays them. The gradient is signed, so it follows the direction of travel. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Recursos Personalizados {#custom-resources}
 
 ### Manuais {#manuals}
 
-A documentação oficial do OsmAnd é completa, mas a comunidade também produziu uma série de manuais personalizados para ajudar os utilizadores com funcionalidades e casos de uso específicos.  
+A documentação oficial do OsmAnd é completa, mas a comunidade também produziu uma série de manuais personalizados para ajudar os usuários com funcionalidades e casos de uso específicos.  
 
-Estes manuais, disponíveis em vários idiomas, muitas vezes fornecem informações únicas, dicas e truques que podem não estar cobertos nos guias oficiais. Estes recursos são adições convenientes ao [Guia do Utilizador do OsmAnd](https://osmand.net/docs/user/), oferecendo mais informações sobre as funcionalidades da aplicação.
+Estes manuais, disponíveis em vários idiomas, muitas vezes fornecem informações únicas, dicas e truques que podem não estar cobertos nos guias oficiais. Estes recursos são adições convenientes ao [Guia do Usuário do OsmAnd](https://osmand.net/docs/user/), oferecendo mais informações sobre as funcionalidades da aplicação.
 
 | Idioma | Descrição | Link |
 | :-- | :-- | :-- |
@@ -82,30 +82,30 @@ Estes manuais, disponíveis em vários idiomas, muitas vezes fornecem informaç�
 
 ### Plugins {#plugins}
 
-A seguir, uma lista de [plugins personalizados](../plugins/custom.md) desenvolvidos pela equipa OsmAnd e pela sua comunidade de utilizadores, oferecendo funcionalidades aprimoradas para casos de uso específicos.
+A seguir, uma lista de [plugins personalizados](../plugins/custom.md) desenvolvidos pela equipe OsmAnd e pela sua comunidade de usuários, oferecendo funcionalidades aprimoradas para casos de uso específicos.
 
 | Nome | Descrição | Link do Plugin |
 |--|--|--|
 | Advanced Profiles & Maps  | Dados do [OsmAnd Rendering Github](https://github.com/OsmAnd-Rendering). O plugin adiciona estilos de mapa Enduro, CycloRoute e Caminhada (mais informações [aqui](../map/map-styles.md#default-map-styles)) e 5 novos [perfis](https://osmand.net/docs/user/personal/profiles) (Pedestre, Bicicleta e três perfis de Motocicleta). Também fornece mapas online para Espanha, França, Noruega, Suíça, Áustria, Bélgica e Argentina através do menu [Mapas e Recursos](../personal/maps-resources.md#extra-maps) na pasta *Advanced Online Maps*. | [Advanced Profiles & Maps](https://osmand.net/uploads/plugins/osmand.rendering.plugin/1/osmand.rendering.plugin-1.osf)  |
 | Saudi Arabia Desert Maps by Rahal Team  | Um mapa offline profissional do Reino da Arábia Saudita, incluindo características topográficas, estradas, cidades, aldeias e fontes de água. Perfeito para viagens no deserto. Visite [Rahal Maps](https://rahalteam.com) para mais informações. | [🇸🇦 Saudi Arabia Desert Maps by Rahal Team](https://osmand.net/uploads/plugins/desert.saudi.plugin/1/desert.saudi.plugin-1.osf)  |
-| 3D Position Icons  | Este pacote adiciona uma opção de modelo 3D para perfis (É um exemplo de como adicionar o seu próprio ícone 3D ao OsmAnd). Personalize a aparência através do menu: [*Menu OsmAnd → Definições → Perfil → Aparência do perfil → escolha o 4º-5º ícone do ícone de Posição*](../personal/profiles.md#profile-appearance). | [3D Position Icons](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
+| 3D Position Icons  | Este pacote adiciona uma opção de modelo 3D para perfis (É um exemplo de como adicionar o seu próprio ícone 3D ao OsmAnd). Personalize a aparência através do menu: [*Menu OsmAnd → Configurações → Perfil → Aparência do perfil → escolha o 4º-5º ícone do ícone de Posição*](../personal/profiles.md#profile-appearance). | [3D Position Icons](https://osmand.net/uploads/plugins/model.plugin/1/model.plugin-1.osf)  |
 | AnyGIS Online Maps Collection | Dados da [página web AnyGIS](https://anygis.ru/index_en). Uma coleção de várias fontes de mapas online, incluindo mapas de satélite, turísticos e históricos, entre outros.  | [AnyGIS Online Maps Collection](https://osmand.net/uploads/plugins/ru.anygis.plugin/2/ru.anygis.plugin-2.osf)  |
 | Offline Map Legend | Este pacote adiciona uma legenda de mapa offline (versão 1.01; 03-04-2024), acessível via *Menu → Meus Locais → Favoritos → Legenda do mapa*. A legenda do mapa também está disponível [neste local](https://osmand.net/map/?pin=45.738777,36.493324#12/45.7340/36.5059)  | [Offline Map Legend](https://osmand.net/uploads/plugins/legend.plugin/1/legend.plugin-1.osf)  |
-| 🇺🇸US Lands & Trails | Uma coleção de mapas especializados dos EUA, convertidos para o formato OBF do OsmAnd, apresentando<ul><li>[Terras públicas e áreas protegidas do USGS (PAD-US 3.0), por estado](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Trilhos e Estradas do USFS, em todo o país](https://www.fs.usda.gov/visit/maps),</li><li>[Estradas e Trilhos do BLM, em todo o país](https://www.blm.gov/maps),</li><li>[POIs de Atividades Recreativas do BLM, em todo o país](https://www.blm.gov/maps),</li><li>[Terras privadas (dados de parcelas), para alguns estados](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Mais informações no [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸US Lands & Trails](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
-| 🇵🇱Poland UMP Map | [UMP](https://ump.waw.pl/) cobre a maior parte da Polónia com um esforço de desenvolvimento contínuo. Por muito tempo, o nome UMP-pcPL (mapą prawie toda a Polónia) foi usado. | [🇵🇱Poland UMP Map](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
-| Outdoor Explorer  |  Este plugin inclui um estilo de mapa leve que melhora a visibilidade de estradas e trilhos não pavimentados no OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
+| 🇺🇸US Lands & Trails | Uma coleção de mapas especializados dos EUA, convertidos para o formato OBF do OsmAnd, apresentando<ul><li>[Terras públicas e áreas protegidas do USGS (PAD-US 3.0), por estado](https://www.usgs.gov/programs/gap-analysis-project/science/pad-us-data-overview),</li><li>[Trilhas e Estradas do USFS, em todo o país](https://www.fs.usda.gov/visit/maps),</li><li>[Estradas e Trilhas do BLM, em todo o país](https://www.blm.gov/maps),</li><li>[POIs de Atividades Recreativas do BLM, em todo o país](https://www.blm.gov/maps),</li><li>[Terras privadas (dados de parcelas), para alguns estados](https://www.usgs.gov/core-science-systems/ngp/tnm-corps/authoritative-source-parcel-viewer)</li></ul>Mais informações no [Reddit](https://www.reddit.com/r/OsmAnd/comments/19erp5z/padus_usgs_topo_usgs_national_map_arcgis_world/). | [🇺🇸US Lands & Trails](https://osmand.net/uploads/plugins/us.maps/2/us.maps-2.osf)  |
+| 🇵🇱Poland UMP Map | [UMP](https://ump.waw.pl/) cobre a maior parte da Polônia com um esforço de desenvolvimento contínuo. Por muito tempo, o nome UMP-pcPL (mapą prawie toda a Polônia) foi usado. | [🇵🇱Poland UMP Map](https://osmand.net/uploads/plugins/UMP_map.plugin/1/UMP_map.plugin-1.osf)  |
+| Outdoor Explorer  |  Este plugin inclui um estilo de mapa leve que melhora a visibilidade de estradas e trilhas não pavimentadas no OsmAnd.  | [Outdoor Explorer](https://osmand.net/uploads/plugins/outdoor-explorer.plugin/1/outdoor-explorer.plugin-1.osf)  |
 
 
 ### Estilos de Mapa {#map-styles}
 
-O ficheiro [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml) (Estilo de Mapa) padrão [pode ser modificado](../../technical/osmand-file-formats/osmand-rendering-style.md) para se adequar às preferências individuais. A seguir, uma tabela de estilos de mapa sugeridos pelos utilizadores.
+O arquivo [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/rendering_styles/default.render.xml) (Estilo de Mapa) padrão [pode ser modificado](../../technical/osmand-file-formats/osmand-rendering-style.md) para se adequar às preferências individuais. A seguir, uma tabela de estilos de mapa sugeridos pelos usuários.
 
 | Nome da Fonte | Descrição | Link |
 | -- | -- | --|
 | Gravel Roads Seeker | Estilo de mapa que oferece uma melhor visualização da superfície da estrada, distinguindo entre estradas pavimentadas e não pavimentadas (página web em *Francês*). | [Gravel Roads Seeker](https://sites.google.com/view/gravel-roads-seeker/planification-navigation/osmand) |
-| OsmAnd Rendering GitHUB | Uma coleção de acesso a mapas online, mapas topográficos, ortofotos e outros recursos geográficos disponíveis em algumas das principais instituições geográficas de diferentes países. As atualizações são contínuas, mas se algum ficheiro estiver desatualizado, os utilizadores são encorajados a notificar. | [Online Maps: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
+| OsmAnd Rendering GitHUB | Uma coleção de acesso a mapas online, mapas topográficos, ortofotos e outros recursos geográficos disponíveis em algumas das principais instituições geográficas de diferentes países. As atualizações são contínuas, mas se algum arquivo estiver desatualizado, os usuários são encorajados a notificar. | [Online Maps: ARG, AT, BE, CH, ES, FR, NO](https://github.com/OsmAnd-Rendering/Online-Maps) |
 | TopoHAWater | Um mapa topográfico com uma opção *Ocultar Toda a Água*, contribuído por [mariush444](https://github.com/mariush444/Osmand-tools). |[TopoHAWater.osf](https://github.com/mariush444/Osmand-tools/raw/main/TopoHAWater.osf)|
-| UniMap | O repositório foi concebido para fornecer estilos de mapa personalizados criados por utilizadores para outros utilizadores. |[UniMap from GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
+| UniMap | O repositório foi projetado para fornecer estilos de mapa personalizados criados por usuários para outros usuários. |[UniMap from GitHub](https://github.com/basings/OsmAnd-custom-map-styles)|
 | OsmAndRailwayStyles | Estilos de mapa offline focados em ferrovias, usando um esquema de cores semelhante ao [OpenRailwayMap](https://www.openrailwaymap.org/). |[OsmAndRailwayStyles GitHub](https://github.com/fuzzysolutions/OsmAndRailwayStyles)|
 | Highlighted Admin Boundaries | O estilo de renderização do mapa é baseado no padrão do OsmAnd, com Limites Administrativos mais destacados para melhor visibilidade. |[Highlighted Admin Boundaries](https://github.com/Max1234-Ita/GuidaOsmand/blob/main/risorse/rendering/en_highlighted_boundaries.md)|
 | Open Fiets map | [The Openfietsmap](https://sites.google.com/site/openfietsmap/home?authuser=0) é um estilo de mapa focado em ciclismo, destacando ciclovias (em vermelho), rotas de ciclismo (tracejado azul), ciclovias (tracejado vermelho) e estradas com tráfego de veículos limitado, como ruas de bicicletas (bordas vermelhas sólidas).  |[OpenFietsMap-style GitHub](https://github.com/ligfietser/OFM_Osmand)|
@@ -116,26 +116,26 @@ O ficheiro [render.xml](https://github.com/osmandapp/OsmAnd-resources/blob/maste
 
 ### Roteamento
 
-O ficheiro `routing.xml` predefinido pode ser personalizado para ajustar algoritmos e parâmetros de roteamento para condições específicas.
+O arquivo `routing.xml` predefinido pode ser personalizado para ajustar algoritmos e parâmetros de roteamento para condições específicas.
 
 | Nome da Fonte | Descrição | Link |
 | -- | -- | --|
-| Weather-aware Routing (Gh0stz0x) | Modificação personalizada de `routing.xml` que ajusta o cálculo de rotas para condições de chuva, tendo em conta o tipo de superfície (por exemplo, rocha nua), inclinação e classificações oficiais de dificuldade de trilhos (escalas CAI/SAC), além de uma lógica melhorada de "Evitar Túneis". | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
+| Weather-aware Routing (Gh0stz0x) | Modificação personalizada de `routing.xml` que ajusta o cálculo de rotas para condições de chuva, tendo em conta o tipo de superfície (por exemplo, rocha nua), inclinação e classificações oficiais de dificuldade de trilhas (escalas CAI/SAC), além de uma lógica melhorada de "Evitar Túneis". | [Gh0stz0x/OsmAnd-resources](https://github.com/Gh0stz0x/OsmAnd-resources) |
 
 
 ### Mapas Offline {#offline-maps}
 
-Mapas vetoriais personalizados (ficheiros OBF) gerados por utilizadores.
+Mapas vetoriais personalizados (arquivos OBF) gerados por usuários.
 
 | Nome da Fonte | Descrição | Link|
 | -- | -- | --|
 | OpenSuperMaps | Mapas gerados por [pnoll1](https://github.com/pnoll1), oferecendo mapas vetoriais detalhados. |[OpenSuperMap](https://opensupermaps.com/)|
-| UMP PL | [UMP-pcPL](https://ump.waw.pl/) - um mapa alternativo da Polónia. |[UMP-PL plugin](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
+| UMP PL | [UMP-pcPL](https://ump.waw.pl/) - um mapa alternativo da Polônia. |[UMP-PL plugin](https://github.com/mariush444/Osmand-tools/blob/main/UMP-PL-OsmAnd_v4_plugin.osf)|
 
 
 ### Coleção de Mapas Online {#online-maps-collection}
 
-A tabela a seguir lista várias fontes de mapas online preparadas por utilizadores, oferecendo acesso a dados de mapas especializados de diferentes regiões geográficas e serviços.
+A tabela a seguir lista várias fontes de mapas online preparadas por usuários, oferecendo acesso a dados de mapas especializados de diferentes regiões geográficas e serviços.
 
 | Nome | Descrição | Link|
 | -- | -- | --|
@@ -159,9 +159,9 @@ A tabela a seguir lista várias fontes de mapas online preparadas por utilizador
 
 -->
 
-## Envolva-se com o OsmAnd: Partilhe, Sugira e Conecte-se {#engage-with-osmand-share-suggest-and-connect}
+## Envolva-se com o OsmAnd: Compartilhe, Sugira e Conecte-se {#engage-with-osmand-share-suggest-and-connect}
 
-Se tiver alguma sugestão para novos estilos de mapa, plugins, ou talvez queira contribuir com as suas próprias criações para expandir os recursos da comunidade OsmAnd, por favor contacte-nos. Agradecemos e damos as boas-vindas às suas contribuições para desenvolver ainda mais a base de dados do OsmAnd.
+Se tiver alguma sugestão para novos estilos de mapa, plugins, ou talvez queira contribuir com as suas próprias criações para expandir os recursos da comunidade OsmAnd, por favor entre em contato conosco. Agradecemos e damos as boas-vindas às suas contribuições para desenvolver ainda mais a base de dados do OsmAnd.
 
 - **Siga**: <LinksSocial/>  
 

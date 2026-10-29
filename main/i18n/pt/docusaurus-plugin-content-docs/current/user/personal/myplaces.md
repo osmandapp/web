@@ -1,5 +1,5 @@
 ---
-source-hash: d5de9c3084442f355b9b6536f2e73e330ece35ee360363e944195eaf5ddfe9fb
+source-hash: 941d8e8096800d75da224d6bdd577697326daf17319375cb9b22749166c80554
 sidebar_position: 6
 title: Meus Lugares
 ---
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
+![Meus Lugares no Android](@site/static/img/personal/my_places_android_new.png) ![Menu Meus Lugares no Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
@@ -34,7 +34,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pl
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
+![Meus Lugares no iOS](@site/static/img/personal/my_places_ios_2.png)  ![Menu Meus Lugares no iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
@@ -52,7 +52,7 @@ Meus Lugares é organizado por categorias. Selecione uma aba para gerenciar os d
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
+![Menu Favoritos no Android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
@@ -60,7 +60,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pl
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
+![Menu Favoritos no iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
@@ -78,7 +78,7 @@ Para instruções completas, consulte o artigo [Favoritos](../personal/favorites
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![Meus Lugares com trilhas no Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
@@ -86,7 +86,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pl
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
+![Meus Lugares com trilhas no iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
@@ -104,7 +104,7 @@ Para orientação abrangente, consulte o artigo [Gerenciar Rotas](../personal/tr
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Compartilhar](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -112,7 +112,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_pl
 
 Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
+![Compartilhar](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
@@ -128,9 +128,9 @@ Consulte o [plugin de Edição OSM](../plugins/osm-editing.md) para obter instru
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Menu Meus Lugares do plugin de áudio e vídeo, três ações](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-O **plugin de Notas de Áudio/Vídeo** permite que você crie notas multimídia vinculadas a locais específicos do mapa. Essas notas são armazenadas em **Meus Lugares** na **Aba Notas A/V**.
+O **plugin de Notas de Áudio/Vídeo** permite que você crie notas multimídia vinculadas a locais específicos do mapa. Essas notas são armazenadas em **Meus Lugares** na **Aba Notas A/V**. Cada nota também é salva como favorito na pasta **media** na aba [Favoritos](#favorites).
 
 Para obter mais informações, visite a página do [plugin de Notas de Áudio/Vídeo](../plugins/audio-video-notes.md).
 
@@ -138,7 +138,7 @@ Para obter mais informações, visite a página do [plugin de Notas de Áudio/V�
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
+![Guias de Viagem no iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
 A seção **Viagem** contém guias de viagem e artigos marcados como favoritos salvos para acesso offline. Você pode abrir, organizar e gerenciar rapidamente seu conteúdo de viagem salvo a partir de Meus Lugares. A seção Viagem é exibida apenas quando mais de um guia de viagem foi marcado como favorito.
 

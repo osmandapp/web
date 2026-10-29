@@ -1,7 +1,7 @@
 ---
-source-hash: cd5ee4063d6f696a2707a1c3427de7ad82005454c2015da463bd27c2e760db67
+source-hash: 67e24e2d76639e1ba3e1dbe3fc8cff417ee3ff06770c41d09f400cac219c9cdf
 sidebar_position: 10
-sidebar_label:  Search
+sidebar_label: Pesquisar
 title: Pesquisar no Website
 ---
 
@@ -32,7 +32,9 @@ O **menu Pesquisar** pode ser acessado no painel lateral ou no ícone de Pesquis
 
 Use a **Barra de pesquisa** para encontrar lugares específicos, pontos de interesse, [favoritos](../web/web-favorites.md) e [trilhas](../web/web-tracks.md) pelo nome. Clique no ícone de Pesquisa, insira sua consulta e selecione um resultado da lista. Selecionar um POI abre o [Menu de contexto do POI](#poi-context-menu), enquanto selecionar um favorito ou trilha abre seus detalhes, onde você pode visualizar informações e usar ações rápidas.
 
-Se você pesquisar por um nome de categoria, o primeiro resultado pode mostrar a categoria de POI correspondente. Clique na categoria para abrir a visualização de [Pesquisa de categorias](#categories).
+Você também pode combinar várias partes em uma única consulta. Insira uma categoria ou uma marca junto com o nome de um lugar, por exemplo, `Hotel Berlin` ou `Billa Bratislava`, para encontrar POIs correspondentes nesse lugar. Insira duas categorias ou uma categoria e uma propriedade, por exemplo, `Fuel Diesel` ou `Cafe Vegan`, para encontrar lugares que correspondam a ambas.
+
+Se você pesquisar por um nome de categoria, o primeiro resultado pode mostrar a categoria de POI correspondente. Os nomes de categoria podem ser inseridos em diferentes idiomas, por exemplo, `bank` ou `банк`. Clique na categoria para abrir a visualização de [Pesquisa de categorias](#categories).
 
 ![Opções de pesquisa](@site/static/img/web/search_bar.png)
 
@@ -53,6 +55,8 @@ Abra a aba Pesquisar para acessar Explorar — os resultados de Explorar são ex
 ## Menu de contexto do POI {#poi-context-menu}
 
 Independentemente da opção de pesquisa que você usar (Barra de pesquisa, Categorias ou Explorar), selecionar um POI no mapa ou na lista de resultados abre o Menu de contexto do POI. O menu de contexto é o principal lugar para visualizar informações do POI e realizar ações comuns. Ele combina detalhes do POI (como localização e dados relacionados) com ações rápidas (por exemplo, salvar, compartilhar ou iniciar planejamento de rota e navegação).
+
+Para voltar à lista de resultados, clique em *Voltar*. Para fechar o menu, clique em *Fechar* ou pressione Esc. Fechar o menu limpa a pesquisa, então a Pesquisa abre sem resultados anteriores na próxima vez. O mapa permanece na posição atual.
 
 ### Detalhes do POI {#poi-details}
 

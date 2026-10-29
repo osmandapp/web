@@ -1,5 +1,5 @@
 ---
-source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
+source-hash: 7a4ec38811965699d4bf8be48f33fcce4e1e12973b13ab13ffa374909cfef793
 sidebar_position: 2
 title: Geral
 ---
@@ -86,6 +86,20 @@ As versões recentes do OsmAnd não aplicam mais dimensionamento automático adi
 Se você quiser ajustar manualmente o tamanho dos botões do mapa, use as configurações de [Aparência Padrão](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Menu → Configurar tela → Botões → Botões padrão → menu de três pontos → Aparência*. Lá você pode definir um Tamanho personalizado, Raio do canto e Opacidade do plano de fundo para todos os botões padrão de uma só vez.
 
 Se a interface ainda parecer maior do que o esperado, verifique *Configurações do Sistema Android → Exibição → Tamanho da exibição e texto* e ajuste as configurações de exibição conforme necessário.
+
+### O OsmAnd não preenche a tela no modo paisagem no iPad (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+O OsmAnd suporta as orientações retrato e paisagem no iPad e segue a rotação do sistema. Se o aplicativo preenche a tela no modo retrato, mas aparece como uma janela menor no modo paisagem, isso é causado pelo modo de janelas do iPadOS 26, e não pelo OsmAnd.
+
+No modo *Apps em janelas*, o iPadOS lembra o tamanho da janela de cada aplicativo. Depois que a janela do OsmAnd é redimensionada no modo paisagem, o aplicativo mantém esse tamanho de janela no modo paisagem, enquanto continua preenchendo a tela no modo retrato.
+
+Para que o OsmAnd volte a preencher a tela, use uma das seguintes opções:
+
+- **Expanda a janela.** Com o OsmAnd aberto no modo paisagem, toque na pequena pílula na parte superior da janela. Três botões aparecem: *Fechar*, *Minimizar* e *Zoom*. Toque em *Zoom* para expandir o aplicativo para a tela inteira. O aplicativo mantém o tamanho de tela cheia após girar o iPad.
+- **Desative as janelas para todos os apps.** Vá para *Ajustes do iPad → Multitarefa e Gestos* e selecione *Apps em tela cheia* em vez de *Apps em janelas*. Todos os apps, incluindo o OsmAnd, sempre abrirão em tela cheia.
+
+Certifique-se também de que o OsmAnd não esteja aberto em *Split View* ou *Slide Over* ao lado de outro aplicativo.
+
 
 ## Outros {#other}
 

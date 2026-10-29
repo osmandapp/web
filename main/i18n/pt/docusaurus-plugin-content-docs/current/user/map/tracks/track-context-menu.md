@@ -1,5 +1,5 @@
 ---
-source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title: Menu de Contexto da Trilha
 ---
@@ -69,7 +69,7 @@ O painel de informações também fornece informações sobre o seguinte:
 - *<Translate android="true" ids="altitude_ascent"/>* / *<Translate android="true" ids="altitude_descent"/>*. Exibe a soma total de subidas e descidas durante a viagem.
 - *<Translate android="true" ids="altitude_range"/>*. Indica a altitude mínima e máxima em uma trilha.  
 
-Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de rastreamento (portanto, seus pontos possuem tags de [`tempo` e `velocidade`](../../plugins/trip-recording#recorded-gpx-file)), o painel informativo também conterá informações sobre *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (o tempo total entre os pontos inicial e final da trilha) e *<Translate android="true" ids="shared_string_time_moving"/>* (a soma do tempo em movimento).
+Caso sua trilha tenha sido criada no OsmAnd ou em qualquer outro aplicativo de rastreamento (portanto, seus pontos possuem tags de [`time` e `speed`](../../plugins/trip-recording#recorded-gpx-file)), o painel informativo também conterá informações sobre *<Translate android="true" ids="average_speed"/>*, *<Translate android="true" ids="max_speed"/>*, *<Translate android="true" ids="map_widget_trip_recording_duration"/>* (o tempo total entre os pontos inicial e final da trilha) e *<Translate android="true" ids="shared_string_time_moving"/>* (a soma do tempo em movimento).
 
 **Nota:** Para trilhas gravadas, Duração mostra o tempo real de viagem com base nos carimbos de data/hora. Para trilhas planejadas, Duração mostra o tempo estimado calculado a partir do comprimento da rota e da velocidade média do perfil de navegação selecionado, se toda a rota usar um perfil e não contiver segmentos em linha reta.
 
@@ -300,7 +300,7 @@ Os **botões** ativos dão acesso a ações como:
 ### Velocidade {#speed}
 
 :::note Somente trilhas gravadas
-Esta aba só pode ser visível em trilhas gravadas. Os pontos neste tipo de trilha possuem tags de **[`velocidade`](../../plugins/trip-recording#recorded-gpx-file)**.
+Esta aba só pode ser visível em trilhas gravadas. Os pontos neste tipo de trilha possuem tags de **[`speed`](../../plugins/trip-recording#recorded-gpx-file)**.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -424,6 +424,7 @@ Nesta aba *Pontos*:
 - [Mostrar dados de pontos da trilha](#display-custom-gpx-tags) e modificar seus pontos da trilha (waypoints e pontos de rota), [excluí-los e adicionar](#points--waypoints) waypoints a uma trilha.
 - Criar e modificar [Grupo (pasta) de pontos](#waypoint-groups).
 - Mostrar um waypoint no mapa usando o ícone de alfinete na lista de waypoints. O mapa centraliza no waypoint sem fechar a lista ou alterar o nível de zoom atual.
+- Anexar fotos, vídeos e notas de áudio a um waypoint usando o cartão *Mídia* no seu menu de contexto (*somente Android*). Veja o [artigo Favoritos](../../personal/favorites.md#media).
 
 
 ### Adicionar Waypoint a uma Trilha {#add-waypoint-to-a-track}
