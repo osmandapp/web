@@ -1,5 +1,5 @@
 ---
-source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
+source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
 sidebar_position: 4
 title:  Widżety nawigacyjne
 ---
@@ -249,7 +249,7 @@ Widżet pokazuje *Czas przybycia* lub *Pozostały czas* do pierwszego punktu po�
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | Po dotknięciu | Przełącza między *Czasem przybycia* a *Pozostałym czasem* i odwrotnie. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -277,7 +277,7 @@ Widżet wyświetla *Czas przybycia* lub *Pozostały czas* do ostatniego punktu d
 | | |
 |:------------|:------------|
 | Włącz |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Wybierz panel → Dodaj widżet → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | Po dotknięciu | Przełącza między *Czasem przybycia* a *Pozostałym czasem* i odwrotnie. |
 | Długie naciśnięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -328,7 +328,9 @@ Widżety *Wskazówki dotyczące trasy* zawierają informacje o:
 
 ![Widżet pasów ruchu](@site/static/img/widgets/lanes_widget.png)
 
-Widżet **Pasy ruchu** podświetla bieżący pas, gdy nawigacja jest aktywna, i wyświetla układ pasów dla rzeczywistej drogi, gdy nawigacja jest pasywna. Wskaznik odległości jest również wyświetlany poniżej schematu pasów, wskazujący, jak daleko pozostało do manewru, w którym stosuje się wskazówki dotyczące pasów. Ten widżet jest dostępny tylko dla paneli górnych i dolnych. Dane pochodzą z projektu [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+Widżet **Pasy ruchu** podświetla bieżący pas, gdy nawigacja jest aktywna, i wyświetla układ pasów dla rzeczywistej drogi, gdy nawigacja jest pasywna. Wskaznik odległości jest również wyświetlany poniżej schematu pasów, wskazujący, jak daleko pozostało do manewru, w którym stosuje się wskazówki dotyczące pasów. Ten widżet jest dostępny tylko dla paneli górnych i dolnych. Dane pochodzą z projektu [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn). Jeśli dane mapy nie określają kierunku dla każdego pasa, OsmAnd uzupełnia brakujące kierunki na podstawie układu skrzyżowania.
+
+Na Androidzie ustawienia widżetu zawierają opcję *Wyświetlaj na mniejszych skrzyżowaniach podczas jazdy prosto*, która jest domyślnie włączona. Dzięki tej opcji widżet pokazuje pasy na każdym skrzyżowaniu, które mijasz, jadąc prosto, nawet jeśli dla tego skrzyżowania nie ma komunikatu głosowego.
 
 
 ### Następny zakręt {#next-turn}
@@ -452,7 +454,7 @@ W **Ustawieniach** widżetu możesz wybrać, aby zawsze wyświetlać **nazwę bi
 | | |
 |:------------|:------------|
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate ios="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Dodaj widżet → <Translate android="true" ids="map_widget_top_text"/>* |
 | Ustawienia | Wybierz, aby zawsze wyświetlać **nazwę bieżącej ulicy** lub wyświetlać **nazwę następnej ulicy** podczas zbliżania się do manewru |
 | Po dotknięciu | Otwiera menu kontekstowe z ustawieniami (przełącz Informacje o następnym zakręcie WŁĄCZONE/WYŁĄCZONE) i Usuń |
 

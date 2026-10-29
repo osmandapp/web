@@ -1,5 +1,5 @@
 ---
-source-hash: e0173be6fa81b710afb1b4b52c4268f63865918a50d504364df4f0d772bf2d39
+source-hash: a4ab003fa68f8ff7c393f79dced64ce22df0b72bda332626935257db71197cb1
 title: Tworzenie wielokąta kraju
 versions: '*'
 ---
@@ -14,7 +14,7 @@ OsmAnd zawiera wiele map dla wielu krajów. Większość map jest tworzona z „
 Geofabrik.de ma strategię dostarczania map dla krajów, które są żądane przez większą liczbę użytkowników lub przez ich klientów. Oznacza to, że niektóre mapy nigdy nie trafiają do geofabrik, ponieważ po prostu nie ma wystarczającej liczby żądań (lub wcale), jak niektóre egzotyczne kraje, takie jak Seszele czy Burundi itp.
 
 ## Proces serwerowy {#server-process}
-Ze względu na tę strategiczną decyzję geofabrik, OsmAnd ma opcję generowania map dla tych krajów, a do tego celu używane są narzędzia [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) i [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Dla OsmAndMapCreator jest to proces trzystopniowy:
+Ze względu na tę strategiczną decyzję geofabrik, OsmAnd ma opcję generowania map dla tych krajów, a do tego celu używane są narzędzia [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) i [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Dla OsmAndMapCreator jest to proces trzystopniowy:
 - OsmAndMapCreator potrzebuje wielokąta, który otacza zewnętrzną granicę kraju.
 - OsmAndMapCreator potrzebuje „mapy surowych danych” z następnego wyższego poziomu, zawierającej ten kraj. Dla Burundi oznacza to, że OsmAndMapCreator potrzebuje mapy Afryki. Dla Nadrenii Północnej-Westfalii oznacza to, że OsmAndMapCreator potrzebuje mapy Niemiec.
 - [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) utworzy mapę „surowych danych” z wielokąta, wyodrębniając dane mapy z mapy „rodzicielskiej”.

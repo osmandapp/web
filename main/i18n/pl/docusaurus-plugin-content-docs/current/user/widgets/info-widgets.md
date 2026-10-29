@@ -1,5 +1,5 @@
 ---
-source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title:  Widżety informacyjne
 ---
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Widżety informacyjne zapewniają szybki dostęp do ważnych danych. Mogą to być dane o prędkości, pogodzie, pozycji parkowania, dane z czujników zewnętrznych i wiele innych. Widżety można skonfigurować zgodnie z własnymi wymaganiami, włączając ich widoczność na ekranie aplikacji lub wyłączając je w razie potrzeby.
 
-![Informational widgets](@site/static/img/widgets/informational_widgets_all.png)
+![Widżety informacyjne](@site/static/img/widgets/informational_widgets_all.png)
 
 
 ## Widżety wysokości   {#altitude-widgets}
@@ -45,13 +45,13 @@ Jeśli korzystasz ze źródła lokalizacji Android API lub wysokość MSL jest n
 
 <TabItem value="android" label="Android">
 
-![Altitude widget Android](@site/static/img/widgets/altitude_widget_andr.png)  
+![Widżet wysokości Android](@site/static/img/widgets/altitude_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Altitude widget iOS](@site/static/img/widgets/altitude_widget_ios.png)  
+![Widżet wysokości iOS](@site/static/img/widgets/altitude_widget_ios.png)  
 
 </TabItem>
 
@@ -76,13 +76,13 @@ Widżet *Wysokość: środek mapy* to płatna funkcja [**OsmAnd Pro**](../purcha
 
 <TabItem value="android" label="Android">
 
-![Elevation widget Android](@site/static/img/widgets/elevation_widget_andr.png)  
+![Widżet wysokości (środek mapy) Android](@site/static/img/widgets/elevation_widget_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Elevation widget iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
+![Widżet wysokości (środek mapy) iOS](@site/static/img/widgets/elevation_widget_2_ios.png)
 
 </TabItem>
 
@@ -101,7 +101,7 @@ Możesz użyć widżetu, aby dowiedzieć się, jaka jest wysokość bieżącego 
 
 ## Aktualny czas {#current-time}
 
-![Current time widget](@site/static/img/widgets/current_time_widget.png)
+![Widżet bieżącego czasu](@site/static/img/widgets/current_time_widget.png)
 
 Ten widżet wyświetla aktualny czas pobrany z urządzenia.  
 
@@ -116,7 +116,7 @@ Ten widżet wyświetla aktualny czas pobrany z urządzenia.
 
 ## Aktualna prędkość {#current-speed}
 
-![Speed widget](@site/static/img/widgets/current_speed_widget.png)  
+![Widżet prędkości](@site/static/img/widgets/current_speed_widget.png)  
 
 Widżet pokazuje aktualną prędkość wykrytą przez czujnik GPS.  
 
@@ -135,13 +135,13 @@ Widżet pokazuje aktualną prędkość wykrytą przez czujnik GPS.
 
 <TabItem value="android" label="Android">
 
-![Average speed widget Android](@site/static/img/widgets/average_speed_widget.png)
+![Widżet średniej prędkości Android](@site/static/img/widgets/average_speed_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Average speed widget iOS](@site/static/img/widgets/average_speed_widget_ios_2.png)
+![Widżet średniej prędkości iOS](@site/static/img/widgets/average_speed_widget_ios_2.png)
 
 </TabItem>
 
@@ -177,13 +177,13 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 
 <TabItem value="android" label="Android">
 
-![Average speed](@site/static/img/widgets/average_speed_widget_4.png)  
+![Średnia prędkość](@site/static/img/widgets/average_speed_widget_4.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Average speed widgets](@site/static/img/widgets/average_speed_widget_ios_3.png)
+![Widżety średniej prędkości](@site/static/img/widgets/average_speed_widget_ios_1.png)  ![Widżety średniej prędkości](@site/static/img/widgets/average_speed_widget_ios_3.png)
 
 </TabItem>
 
@@ -203,17 +203,17 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 
 <TabItem value="android" label="Android">
 
-|Widgets| Widgets on the screen|
+|Widżety| Widżety na ekranie|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_3.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_2.webp)|
+|![Współczynnik schodzenia](@site/static/img/widgets/glide_ratio_3.png)|![Współczynnik schodzenia](@site/static/img/widgets/glide_ratio_2.webp)|
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-|Widgets| Widgets on the screen|
+|Widżety| Widżety na ekranie|
 |:--------|:---------|
-|![Glide ratio](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Glide ratio](@site/static/img/widgets/glide_ratio_widget_ios.png)|
+|![Współczynnik schodzenia](@site/static/img/widgets/glide_ratio_1_widget_ios.png)|![Współczynnik schodzenia](@site/static/img/widgets/glide_ratio_widget_ios.png)|
 
 
 </TabItem>
@@ -257,7 +257,7 @@ Po zresetowaniu średnia prędkość jest ponownie obliczana na podstawie nowych
 - **Współczynnik schodzenia do celu** pokazuje dokładny współczynnik schodzenia wymagany do osiągnięcia punktu docelowego.
 - **Wysokość celu** pokazuje wysokość punktu docelowego. Jako punkt docelowy należy użyć [znacznika mapy](../personal/markers.md).
 
-Aby przełączać między tymi trybami, dotknij bezpośrednio widżetu. Opcja przełączania nie jest dostępna w [menu kontekstowym widżetu](../widgets/configure-screen.md#widget-context-menu). 
+Aby przełączać między tymi trybami, dotknij bezpośrednio widżetu. 
 
 | | |
 |:------------|:------------|
@@ -289,11 +289,13 @@ Aby przełączać między tymi trybami, dotknij bezpośrednio widżetu. Opcja pr
 
 <TabItem value="android" label="Android">
 
-**Średni współczynnik schodzenia** pokazuje średni współczynnik schodzenia dla określonego przedziału czasowego.
+- **Średni współczynnik schodzenia** pokazuje średni współczynnik schodzenia dla określonego przedziału czasowego.
+- **Średnia prędkość pionowa** pokazuje, jak szybko się wznosisz lub opadasz w danym przedziale czasowym: różnicę wysokości między pierwszym i ostatnim punktem przedziału, podzieloną przez czas między nimi. Wartości dodatnie oznaczają wznoszenie, ujemne — opadanie. Można ustawić przedział czasowy dla tego widżetu od 15 sekund do 60 minut.
 
 | | |
 |:------------|:------------|
 | Włącz | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wybierz panel → Dodaj widżet → Glide ratio* |
+| Poprzez dotknięcie | Zmienia *Średni współczynnik schodzenia* lub *Średnią prędkość pionową*  |
 | Długie dotknięcie | Otwiera [menu kontekstowe widżetu](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -301,7 +303,7 @@ Aby przełączać między tymi trybami, dotknij bezpośrednio widżetu. Opcja pr
 <TabItem value="ios" label="iOS">
 
 - **Średni współczynnik schodzenia** pokazuje średni współczynnik schodzenia dla określonego przedziału czasowego.
-- **Średnia prędkość pionowa** wskazuje tempo, w jakim obiekt wznosi się lub opada w określonym czasie. Do oceny brane są pod uwagę tylko pierwszy i ostatni punkt przedziału czasowego. Można ustawić przedział czasowy dla tego widżetu od 15 sekund do 60 minut. Jako punkt docelowy należy użyć [znacznika mapy](../personal/markers.md).
+- **Średnia prędkość pionowa** pokazuje, jak szybko się wznosisz lub opadasz w danym przedziale czasowym: różnicę wysokości między pierwszym i ostatnim punktem przedziału, podzieloną przez czas między nimi. Wartości dodatnie oznaczają wznoszenie, ujemne — opadanie. Można ustawić przedział czasowy dla tego widżetu od 15 sekund do 60 minut.
 
 | | |
 |:------------|:------------|
@@ -316,7 +318,7 @@ Aby przełączać między tymi trybami, dotknij bezpośrednio widżetu. Opcja pr
 
 ## Poziom baterii {#battery-level}
 
-![Battery level widget](@site/static/img/widgets/battery_level_widget.png)  
+![Widżet poziomu baterii](@site/static/img/widgets/battery_level_widget.png)  
 
 Widżet **Poziem baterii** wyświetla procent naładowania baterii urządzenia bezpośrednio na ekranie mapy i aktualizuje się automatycznie co najmniej raz na minutę.
 
@@ -338,13 +340,13 @@ Widżet **Poziem baterii** wyświetla procent naładowania baterii urządzenia b
 
 <TabItem value="android" label="Android">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_1.png) ![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_2.png)  
+![Widżet współrzędnych Android](@site/static/img/widgets/coordinates_widget_1.png) ![Widżet współrzędnych Android](@site/static/img/widgets/coordinates_widget_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Widżet współrzędnych Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -362,14 +364,14 @@ Widżety współrzędnych są wyświetlane u góry ekranu. Ikony z zielonym tłe
 | Włącz | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | Poprzez dotknięcie | Kopiuje współrzędne do schowka. |
-| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) lub <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
 ## Informacje GPS   {#gps-info}
 
 <InfoAndroidOnly />
 
-![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
+![Widżet informacji GPS Android](@site/static/img/widgets/gps_info_widget.png)
 
 Widżet informacji GPS (Global Positioning System) pokazuje liczbę satelitów, które urządzenie aktualnie wykrywa i wykorzystuje. Można go użyć do sprawdzenia stanu GPS w przypadku słabego sygnału.  
 
@@ -389,13 +391,13 @@ Możesz zresetować bieżącą pamięć podręczną GPS poprzez:
 
 <TabItem value="android" label="Android">
 
-![Sunset and sunrise widgets](@site/static/img/widgets/sun_position.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_1.png)
+![Widżety zachodu i wschodu słońca](@site/static/img/widgets/sun_position.png) ![Widżety zachodu i wschodu słońca](@site/static/img/widgets/sun_position_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_4_ios.png) ![Sunset and sunrise widgets](@site/static/img/widgets/sun_position_3_ios.png)
+![Widżety zachodu i wschodu słońca](@site/static/img/widgets/sun_position_4_ios.png) ![Widżety zachodu i wschodu słońca](@site/static/img/widgets/sun_position_3_ios.png)
 
 </TabItem>
 
@@ -425,7 +427,7 @@ Bardziej szczegółowy opis można przeczytać tutaj: **[Linijka promienia i lin
 
 <TabItem value="android" label="Android">
 
-![Radius-ruler screen](@site/static/img/widgets/radius_ruler_widget.png)
+![Ekran linijki promienia](@site/static/img/widgets/radius_ruler_widget.png)
 
 </TabItem>
 
@@ -460,13 +462,13 @@ Widżet Linijka promienia pokazuje odległość między Twoją lokalizacją a pu
 
 <TabItem value="android" label="Android">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_andr_new.png)
+![Prędkościomierz](@site/static/img/widgets/speedometer_1_andr_new.png)   ![Prędkościomierz](@site/static/img/widgets/speedometer_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Speedometer](@site/static/img/widgets/speedometer_1_ios.png)   ![Speedometer](@site/static/img/widgets/speedometer_2_ios_new.png)
+![Prędkościomierz](@site/static/img/widgets/speedometer_1_ios.png)   ![Prędkościomierz](@site/static/img/widgets/speedometer_2_ios_new.png)
 
 </TabItem>
 
@@ -476,7 +478,7 @@ Widżet Linijka promienia pokazuje odległość między Twoją lokalizacją a pu
 
 Gdy Twoja aktualna prędkość zbliża się do skonfigurowanej tolerancji limitu prędkości, widżet zmienia swój wygląd, aby zapewnić wczesne ostrzeżenie. Gdy limit prędkości zostanie przekroczony (z uwzględnieniem tolerancji), widżet przełącza się na bardziej wyraźne wskazanie „przekroczenia”. Wskazanie ostrzeżenia/przekroczenia jest pokazywane przez zmianę kolorów widżetu (tło, wartość prędkości i jednostki). Zmiana wyglądu może być animowana, aby przyciągnąć uwagę podczas przekraczania progu tolerancji lub limitu.
 
-![Speedometer](@site/static/img/widgets/speed_alert.gif)
+![Prędkościomierz](@site/static/img/widgets/speed_alert.gif)
 
 - W *ustawieniach prędkościomierza* można wybrać rozmiar (**Wysokość**) widżetu na ekranie aplikacji jako *Mały*, *Średni* lub *Duży*.
 - Można określić, kiedy otrzymywać **Ostrzeżenie o przekroczeniu prędkości**, wybierając *Zawsze* lub *Po przekroczeniu*. Jeśli ostrzeżenie o limicie prędkości jest ustawione na Zawsze, widżet może pokazywać zarówno wskazanie „zbliżanie się/tolerancja”, jak i „przekroczenie”. Jeśli ostrzeżenie o limicie prędkości jest ustawione na Po przekroczeniu, wskazanie jest pokazywane tylko po przekroczeniu limitu prędkości.
@@ -510,13 +512,13 @@ Bardziej szczegółowy opis można przeczytać tutaj: **[<Translate android="tru
 
 <TabItem value="android" label="Android">  
 
-![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png)
+![Widżet nagrywania podróży](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![Widżet nagrywania podróży](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
@@ -542,13 +544,13 @@ Aby dodać widżety czujników zewnętrznych do ekranu mapy, włącz wtyczkę Os
 
 <TabItem value="android" label="Android">  
 
-![External sensor widgets Android](@site/static/img/widgets/external-sensors-widgets_1.png)
+![Widżety czujników zewnętrznych Android](@site/static/img/widgets/external-sensors-widgets_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Widżet nagrywania podróży](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -590,13 +592,13 @@ Aby dodać widżety metryk pojazdu do ekranu mapy, włącz wtyczkę OsmAnd [Metr
 
 <TabItem value="android" label="Android">  
 
-![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_1.png)
+![Widżety metryk pojazdu Android](@site/static/img/widgets/vehicle_metrics_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Vehicle metrics widgets Android](@site/static/img/widgets/vehicle_metrics_ios.png)
+![Widżety metryk pojazdu Android](@site/static/img/widgets/vehicle_metrics_ios.png)
 
 </TabItem>
 
@@ -608,7 +610,7 @@ Widżety należą do [wtyczki Metryki pojazdu](../plugins/vehicle-metrics.md#wid
 - Aby dodać widżety metryk pojazdu do ekranu mapy, [włącz](../plugins/index.md#enable--disable) **wtyczkę Metryki pojazdu**.
 - Możesz dodawać widżety, nawet jeśli nie jest podłączony żaden skanera OBD-II.
 - Wszystkie dodane widżety są widoczne, niezależnie od tego, czy skaner OBD-II jest podłączony, czy nie.
-- Aby uzyskać dokładne wartości **Zużycia paliwa**, określ pojemność zbiornika paliwa pojazdu w ustawieniach profilu. Tryby zużycia na odległość wymagają również danych GPS.
+- Aby uzyskać dokładne wartości **Zużycia paliwa**, określ _[pojemność zbiornika paliwa](../navigation/guidance/vehicle-parameters.md#overview)_ pojazdu w ustawieniach profilu. Tryby zużycia na odległość wymagają również danych GPS.
 - Aby edytować widżet, dotknij widżetu dodanego do panelu, a następnie dotknij *Ustawienia* lub bezpośrednio dotknij *ikony Ustawienia* w polu widżetu.
 
 | | |
@@ -629,13 +631,13 @@ Aby dodać widżety pogodowe do ekranu mapy, włącz wtyczkę OsmAnd [Pogoda](..
 
 <TabItem value="android" label="Android">
 
-![Weather widget Android](@site/static/img/widgets/weather_widgets_andr.png)
+![Widżet pogody Android](@site/static/img/widgets/weather_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Weather widget iOS](@site/static/img/widgets/weather_widgets_ios.png)
+![Widżet pogody iOS](@site/static/img/widgets/weather_widgets_ios.png)
 
 </TabItem>
 
@@ -664,7 +666,7 @@ Widżety pogodowe wyświetlają aktualne informacje o pogodzie dla centralnego p
 Aby dodać widżety parkowania do ekranu mapy, włącz wtyczkę OsmAnd [wtyczka pozycji parkowania](../plugins/parking.md).
 :::  
 
-![Parking widget](@site/static/img/plugins/parking/parking_widget.png)  
+![Widżet parkingu](@site/static/img/plugins/parking/parking_widget.png)  
 
 Widżet wtyczki Parkowanie pokazuje odległość od środka ekranu do miejsca parkingowego. Aby ustawić miejsce parkingowe na mapie, powiększ do wymaganego poziomu, a następnie długo dotknij miejsca na mapie, aby otworzyć menu kontekstowe. Postępuj zgodnie z [tymi ustawieniami](../plugins/parking.md#set-a-spot).  
 
@@ -685,7 +687,7 @@ Widżet wtyczki Parkowanie pokazuje odległość od środka ekranu do miejsca pa
 Aby dodać widżet Mapillary do ekranu mapy, włącz wtyczkę OsmAnd [Mapillary](../plugins/mapillary.md).  
 :::  
 
-![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)
+![Widżet Mapillary](@site/static/img/widgets/mapillary_widget.png)
 
 Jest to widżet wtyczki Mapillary, który zapewnia szybki dostęp do aplikacji Mapillary, która umożliwia dodawanie [*zdjęć na poziomie ulicy*](../plugins/mapillary.md#enable-layer). Widżet jest dodawany do mapy automatycznie po włączeniu wtyczki.
 
@@ -705,7 +707,7 @@ Jest to widżet wtyczki Mapillary, który zapewnia szybki dostęp do aplikacji M
 Aby dodać widżety notatek audio/wideo do ekranu mapy, włącz wtyczkę OsmAnd [Notatki audio/wideo](../plugins/audio-video-notes.md).
 ::;
 
-![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
+![Widżet notatek audio/wideo](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
 Są to widżety wtyczki Notatki audio/wideo, które zapewniają szybki dostęp do rozpoczynania/zatrzymywania nagrywania notatek audio, wideo lub zdjęć.  
 
@@ -735,7 +737,7 @@ Aby wtyczka i widżet działały, należy zainstalować [OsmAnd Online GPS Track
 
 Ten widżet wtyczki OsmAnd Tracker służy do szybkiego dostępu do aplikacji OsmAnd Tracker i udostępniania informacji o lokalizacji innym użytkownikom. Aplikacja wysyła wiadomości *Lokalizacja na żywo* do wybranych czatów w określonym czasie, wyświetla listę kontaktów i grup oraz sprawdza czaty pod kątem wiadomości z Twoją lokalizacją, które są następnie wyświetlane na mapie w OsmAnd.  
 
-![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
+![Widżet trackera](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
 |:------------|:------------|
@@ -757,13 +759,13 @@ Aby dodać widżety deweloperskie do ekranu mapy, włącz wtyczkę OsmAnd [wtycz
 
 <TabItem value="android" label="Android">
 
-![FPS widget Android](@site/static/img/widgets/fps_widgets_andr.png)  
+![Widżet FPS Android](@site/static/img/widgets/fps_widgets_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![FPS widget iOS](@site/static/img/widgets/fps_widget_ios.png)
+![Widżet FPS iOS](@site/static/img/widgets/fps_widget_ios.png)
 
 </TabItem>
 
@@ -785,13 +787,13 @@ Aby dodać widżety deweloperskie do ekranu mapy, włącz wtyczkę OsmAnd [wtycz
 
 <TabItem value="android" label="Android">
 
-![Camera position widgets](@site/static/img/widgets/camera_position_widgets_andr.png)
+![Widżety pozycji kamery](@site/static/img/widgets/camera_position_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Camera position Widgets 2](@site/static/img/widgets/camera_position_widgets_2_ios.png)
+![Widżety pozycji kamery 2](@site/static/img/widgets/camera_position_widgets_2_ios.png)
 
 </TabItem>
 
@@ -816,7 +818,7 @@ Aby dodać widżety deweloperskie do ekranu mapy, włącz wtyczkę OsmAnd [wtycz
 
 <InfoAndroidOnly />
 
-![Memory info widgets](@site/static/img/widgets/memory_info.png)
+![Widżety informacji o pamięci](@site/static/img/widgets/memory_info.png)
 
 Widżet **Informacje o pamięci** to narzędzie deweloperskie do monitorowania, jak OsmAnd wykorzystuje pamięć urządzenia. Dostarcza informacji o różnych typach pamięci używanych przez aplikację.
 

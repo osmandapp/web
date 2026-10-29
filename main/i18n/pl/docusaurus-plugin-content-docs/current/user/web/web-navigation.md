@@ -1,8 +1,8 @@
 ---
 source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
-sidebar_label:  Navigation
-title: Navigation on the Web
+sidebar_label:  Nawigacja
+title: Nawigacja na stronie internetowej
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-Użyj **Navigation on the Web**, aby utworzyć trasę na mapie i podglądać wskazówki skręt po skręcie. Oblicza trasę dla wybranego trybu podróży, pokazuje oczekiwaną odległość i czas oraz umożliwia sprawdzenie zmian wysokości i nadchodzących skrętów. Możesz dostosować trasę w ustawieniach nawigacji (na przykład, zezwalając lub unikając określonych typów dróg lub używając parametrów pojazdu) i używać wielu punktów trasy, gdy jest to potrzebne.
+Użyj **Nawigacji na stronie internetowej**, aby utworzyć trasę na mapie i podglądać wskazówki skręt po skręcie. Oblicza trasę dla wybranego trybu podróży, pokazuje oczekiwaną odległość i czas oraz umożliwia sprawdzenie zmian wysokości i nadchodzących skrętów. Możesz dostosować trasę w ustawieniach nawigacji (na przykład, zezwalając lub unikając określonych typów dróg lub używając parametrów pojazdu) i używać wielu punktów trasy, gdy jest to potrzebne.
 
 
 ## Rozpoczęcie trasy {#start-a-route}

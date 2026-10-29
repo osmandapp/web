@@ -1,5 +1,5 @@
 ---
-source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
+source-hash: 7dd018034f91c3c379a76d03258772b0e506136d147238424b5ac05df4862680
 sidebar_position: 3
 title:  Zakupy przez stronę internetową
 ---

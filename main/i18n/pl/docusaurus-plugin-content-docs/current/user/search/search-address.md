@@ -1,5 +1,5 @@
 ---
-source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
+source-hash: e36caad58f36cfd88f8d8bd575e69fdf2d3e8f63a1d4a934dba6e473f1b95388
 sidebar_position: 2
 title:  Wyszukiwanie adresu
 ---
@@ -19,7 +19,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Wyszukiwanie adresu działa offline przy użyciu pobranych map. Upewnij się, że mapa dla regionu, w którym wyszukujesz, jest zainstalowana. Wyniki zależą od danych adresowych dostępnych w OpenStreetMap.
 
-Wyniki wyszukiwania są automatycznie sortowane według istotności i odległości, dzięki czemu pobliskie i bardziej istotne wyniki pojawiają się wyżej na liście.
+OsmAnd automatycznie sortuje wyniki wyszukiwania, dzięki czemu pobliskie i bardziej istotne wyniki pojawiają się wyżej na liście. W systemie Android możesz zmienić kolejność za pomocą chipa sortowania u góry listy wyników. Chip pokazuje wybraną opcję. Dotknij go i wybierz jedną z poniższych opcji w menu *Sortuj według*:
+- *Trafność* — Sortuje wyniki według tego, jak dokładnie pasują do zapytania.
+- *Najbliższe* — Sortuje wyniki według odległości, najpierw wyświetlając najbliższe.
+
+Również w systemie Android nad wynikami pojawiają się chipy z typami obiektów, takimi jak *Miasteczko*, *Miasto*, *Ulica* lub *Kod pocztowy*. Dotknij chipa, aby wyświetlić tylko wyniki danego typu. Więcej informacji w [Sortowanie wyników wyszukiwania](./search-all.md#sorting-search-results).
+
+W systemie Android, gdy środek mapy jest oddalony o więcej niż 50 m od Twojej lokalizacji, a mapa nie śledzi Twojej pozycji, wyszukiwanie odbywa się wokół środka mapy, a pole wyszukiwania pokazuje *Szukaj N km stąd*. Gdy środek mapy jest oddalony o więcej niż 70 km od Twojej lokalizacji, obok chipa sortowania pojawia się chip z obszarem wyszukiwania, *Środek mapy* lub *Moja lokalizacja*. Dotknij go, aby wybrać, gdzie szukać. Więcej informacji w [Wyszukiwanie w pobliżu](./search-all.md#search-around).
 
 OsmAnd zapewnia kilka sposobów dotarcia do *narzędzia Wyszukiwania*, w którym znajduje się sekcja **Wyszukiwanie adresu**.
 
@@ -28,23 +34,34 @@ OsmAnd zapewnia kilka sposobów dotarcia do *narzędzia Wyszukiwania*, w którym
 - Przygotowując się do rozpoczęcia trasy, dotknij *Nawigacja → Ustaw cel → Pole wyszukiwania*.  
 
 
-## Wyszukiwanie pełnotekstowe {#full-text-search}
+## Karta Adres {#address-tab}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Wyszukiwanie Android](@site/static/img/search/search_address_2_andr.png)
+![Wyszukiwanie Android](@site/static/img/search/search_address_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wyszukiwanie iOS](@site/static/img/search/street_search_ios.png)  
+![Wyszukiwanie iOS](@site/static/img/search/street_search_ios.webp)  
 
 </TabItem>
 
 </Tabs>
+
+Karta *Adres* zawiera przyciski dla różnych sposobów wyszukiwania według adresu. Każdy przycisk otwiera listę proponowanych opcji do wyboru:
+
+- [**Wyszukaj ulicę w &lt;city&gt;**](#select-street) (*Android*) / **Wybierz ulicę w &lt;city&gt;** (*iOS*) — Pojawia się, jeśli wcześniej szukano miasta. Ostatnio wyszukiwane miasto jest już ustawione, więc wystarczy wpisać nazwę ulicy i wybrać ją z proponowanych ulic.
+- [**Najpierw określ miasto/miejscowość**](#select-city) (*Android*) / **Wybierz miasto** (*iOS*) — Zawsze dostępne. Od razu otwiera listę miast, miasteczek i wsi, posortowaną według nazwy. Lista zawęża się podczas wpisywania.
+- [**Wyszukiwanie według kodu pocztowego**](#postcode-search) — Zawsze dostępne. Przełącza pole wyszukiwania na wprowadzanie kodu pocztowego. Lista pozostaje pusta, dopóki nie wpiszesz co najmniej jednego znaku, po czym pojawiają się pasujące wyniki.
+- [**Wyszukiwanie według współrzędnych**](#coordinates-search) — Zawsze dostępne. Otwiera ekran wprowadzania współrzędnych.
+
+Lista **Najbliższe miasta** jest wyświetlana pod przyciskami i pokazuje do 15 miast i miasteczek wokół lokalizacji wyszukiwania, Twojej pozycji lub środka mapy. Każdy element pokazuje nazwę, jej typ, *Miasto* lub *Miasteczko*, oraz odległość i kierunek od lokalizacji wyszukiwania. W systemie Android wyświetlany jest także region.
+
+## Wyszukiwanie pełnotekstowe {#full-text-search}
 
 OsmAnd obsługuje wyszukiwanie pełnotekstowe adresów. Oznacza to, że możesz wpisać adres bezpośrednio w polu wyszukiwania zamiast wybierać krok po kroku miasto → ulicę → numer domu. Silnik wyszukiwania próbuje rozpoznać komponenty adresu, takie jak:
 - miasto;
@@ -67,10 +84,8 @@ Gdy zapytanie może odnosić się zarówno do adresu, jak i POI, OsmAnd automaty
 
 **UWAGA:** Wyszukiwanie adresów działa tylko w ramach pobranych map. Wyniki wyszukiwania opierają się na:
 - mapach zainstalowanych na urządzeniu;
-- widocznym obszarze mapy;
+- [widocznym obszarze mapy](./search-all.md#how-to-use);
 - bieżącej lokalizacji. 
-
-Jeśli nic nie zostanie znalezione, OsmAnd może zasugerować zwiększenie promienia wyszukiwania.
 
 ### Wyszukiwanie adresów w USA i dane TIGER {#us-address-search-and-tiger-data}
 
@@ -122,7 +137,7 @@ Silnik wyszukiwania toleruje również powszechne wariacje w formatowaniu adres�
 
 <TabItem value="android" label="Android">
 
-![Wyszukiwanie miasta Android](@site/static/img/search/town_search_android.png)
+![Wyszukiwanie miasta Android](@site/static/img/search/town_search_android.webp)
 
 </TabItem>
 
@@ -134,14 +149,12 @@ Silnik wyszukiwania toleruje również powszechne wariacje w formatowaniu adres�
 
 </Tabs>
 
-**Najbliższe miasta**  
-    **Wyświetla małą listę miast wokół Twojej lokalizacji** lub miejscowości określonej dla opcji *Wybierz ulicę* lub *Wybierz miasto*. Każde pole zawiera ikonę odpowiadającą wielkości miasta, nazwę miasta, odległość od Ciebie do jego centrum, a dla Androida kierunek kompasu.
-
 Ten sposób wyszukiwania ułatwia znajdowanie określonych lokalizacji w wybranej miejscowości, zapewniając wygodny sposób na dokładne i szybkie znajdowanie adresów. Możesz rozpocząć wyszukiwanie potrzebnego adresu, określając miejscowość.
 
 - Aby to zrobić, dotknij **Najpierw określ miasto/miejscowość** (Android) lub **Wybierz miasto** (iOS).
 - Na liście, która się otworzy, wybierz wymaganą miejscowość. [Tutaj](#full-text-search) opisano kolejność wyświetlania zapytań wyszukiwania i informacje dostępne dla każdego elementu.
-- Na następnym ekranie można kontynuować zawężanie adresu lub wybrać przycisk *Pokaż na mapie* pod polem wyszukiwania.
+- W systemie Android dotknij chipa sortowania, aby wybrać *Trafność* lub *Najbliższe*. Gdy środek mapy jest oddalony o więcej niż 70 km od Twojej lokalizacji, użyj chipa obszaru wyszukiwania, aby wybrać między *Środek mapy* a *Moja lokalizacja*. Nad listą pojawiają się chipy z typami miejscowości znalezionych w wynikach, takimi jak *Miasto*, *Miasteczko* lub *Wieś*. Dotknij chipa, aby wyświetlić tylko wyniki danego typu.
+- Na następnym ekranie można kontynuować zawężanie adresu lub pokazać miejscowość na mapie. W systemie iOS dotknij *Pokaż na mapie* pod polem wyszukiwania. W systemie Android dotknij przycisku *Pokaż na mapie*, czyli pływającego przycisku w prawym dolnym rogu.
 - Aby sprecyzować wyszukiwanie, można wprowadzić całą lub tylko część nazwy miasta, miasteczka lub wsi, w której znajduje się szukany adres. Pozwala to zawęzić wyszukiwanie i uzyskać dokładniejszą listę.
 - Dotknięcie ostatniego elementu adresu, numeru domu lub nazwy skrzyżowania otwiera [menu kontekstowe mapy](../map/map-context-menu.md#select-an-object-single-tap) obiektu.  
 
@@ -157,7 +170,7 @@ Ten sposób wyszukiwania ułatwia znajdowanie określonych lokalizacji w wybrane
 
 <TabItem value="android" label="Android">
 
-![Wyszukiwanie ulicy Android](@site/static/img/search/street_search.png) ![Wyszukiwanie ulicy Android](@site/static/img/search/street_search_1.png)
+![Wyszukiwanie ulicy Android](@site/static/img/search/street_search.webp) ![Wyszukiwanie ulicy Android](@site/static/img/search/street_search_1.webp)
 
 </TabItem>
 
@@ -169,10 +182,12 @@ Ten sposób wyszukiwania ułatwia znajdowanie określonych lokalizacji w wybrane
 
 </Tabs>
 
-Wyszukiwanie ulic odbywa się w miejscowości, w której się znajdujesz, lub w której szukałeś wcześniej, lub która znajduje się w centrum widocznej mapy na ekranie aplikacji.
+Wyszukiwanie ulic odbywa się w ostatnim wyszukiwanym mieście. Jego nazwa jest wyświetlana na przycisku, więc możesz od razu zacząć od ulicy.
 
-- Aby skorzystać z tego typu wyszukiwania, dotknij **Wyszukaj ulicę** (*Android*) lub **Wybierz ulicę** (*iOS*).
-- W polu wyszukiwania obok nazwy miasta możesz zacząć wpisywać nazwę ulicy, a lista zawęzi się, podając najbardziej odpowiednie wyniki.
+- Aby skorzystać z tego typu wyszukiwania, dotknij **Wyszukaj ulicę w &lt;city&gt;** (*Android*) lub **Wybierz ulicę w &lt;city&gt;** (*iOS*).
+- Nazwa miasta jest już wpisana w polu wyszukiwania, a lista jego ulic otwiera się od razu. W polu wyszukiwania obok nazwy miasta możesz zacząć wpisywać nazwę ulicy, a lista zawęzi się, podając najbardziej odpowiednie wyniki.
+- W systemie Android dotknij chipa sortowania, aby wybrać *Trafność* lub *Najbliższe*. Gdy środek mapy jest oddalony o więcej niż 70 km od Twojej lokalizacji, użyj chipa obszaru wyszukiwania, aby wybrać między *Środek mapy* a *Moja lokalizacja*. Nad listą pojawiają się chipy z typami obiektów znalezionych w wynikach, takimi jak *Ulica* lub *Budynek*. Dotknij chipa, aby wyświetlić tylko wyniki danego typu.
+- Wybierz ulicę, aby otworzyć listę jej budynków. Wybierz wymagany numer domu, aby otworzyć [menu kontekstowe mapy](../map/map-context-menu.md#select-an-object-single-tap) adresu.
 - W pozostałych elementach wyszukiwanie ulic jest takie samo jak w [Wybierz miasto](#select-city).
 
 :::note Klucz i wartość
@@ -187,7 +202,14 @@ Wyszukiwanie ulic odbywa się w miejscowości, w której się znajdujesz, lub w 
 
 <TabItem value="android" label="Android">
 
-![Wyszukiwanie kodu pocztowego Android](@site/static/img/search/postcode_android.png)
+![Wyszukiwanie kodu pocztowego Android](@site/static/img/search/postcode_android.webp)
+
+Dotknij **Wyszukiwanie według kodu pocztowego** na karcie *Adres*. Lista pozostaje pusta, dopóki nie zaczniesz pisać. Wpisz kod pocztowy, nawet jedną cyfrę, a aplikacja zaproponuje listę pasujących kodów pocztowych.
+
+- Dotknij chipa sortowania, aby wybrać *Trafność* lub *Najbliższe*. Gdy środek mapy jest oddalony o więcej niż 70 km od Twojej lokalizacji, użyj chipa obszaru wyszukiwania, aby wybrać między *Środek mapy* a *Moja lokalizacja*. Dotknij chipa *Kod pocztowy*, aby na liście wyświetlić tylko kody pocztowe.
+- Wybierz wymagany kod pocztowy. Otworzy się lista ulic z tym kodem pocztowym, a kod pozostanie w polu wyszukiwania.
+- Aby zawęzić adres, wybierz ulicę, a następnie numer domu. Otworzy to [menu kontekstowe mapy](../map/map-context-menu.md#select-an-object-single-tap) adresu.
+- Aby zobaczyć sam kod pocztowy na mapie, dotknij przycisku *Pokaż na mapie*, czyli pływającego przycisku w prawym dolnym rogu. Mapa otworzy się z [menu kontekstowym](../map/map-context-menu.md#select-an-object-single-tap) kodu pocztowego.
 
 </TabItem>
 
@@ -195,15 +217,15 @@ Wyszukiwanie ulic odbywa się w miejscowości, w której się znajdujesz, lub w 
 
 ![Wyszukiwanie kodu pocztowego iOS](@site/static/img/search/postcode_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 **Aby skorzystać z *Wyszukiwania według kodu pocztowego*, wystarczy wpisać numer**, który może składać się nawet z jednej cyfry, a aplikacja zaproponuje listę dostępnych odpowiednich kodów pocztowych.
 
 - Wybierz wymagany kod i dotknij go.
-- Możesz użyć funkcji *Pokaż *numer kodu pocztowego* na mapie*. Otworzy to [menu kontekstowe mapy](../map/map-context-menu.md#select-an-object-single-tap) z wybranym kodem pocztowym bez żadnych dodatkowych informacji o lokalizacji.
+- Możesz użyć funkcji *Pokaż &lt;postcode&gt; na mapie*. Otworzy to [menu kontekstowe mapy](../map/map-context-menu.md#select-an-object-single-tap) z wybranym kodem pocztowym bez żadnych dodatkowych informacji o lokalizacji.
 - Możesz zawęzić wyszukiwanie według tego kodu, wybierając najpierw wymaganą ulicę z listy, a następnie numer.
+
+</TabItem>
+
+</Tabs>
 
 **Wyszukiwanie według kodu pocztowego może być przydatne, gdy:**
 
@@ -239,6 +261,6 @@ Więcej informacji można znaleźć w **[Dane kodów pocztowych Wielkiej Brytani
 ## Powiązane artykuły {#related-articles}
 
 - [Wyszukaj wszystko](./search-all.md)
-- [Historia wyszukiwania](./search-history.md)
+- [Eksploruj w wyszukiwaniu](./search-history.md)
 - [Wyszukaj POI](./search-poi.md)
 - [Wyszukiwanie według współrzędnych](./search-coordinates.md)

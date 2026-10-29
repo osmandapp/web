@@ -1,5 +1,5 @@
 ---
-source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Ulubione
 ---
@@ -162,18 +162,32 @@ Folder *Osobiste* zawiera specjalne punkty, takie jak **<Translate android="true
 
 ![Multimedia](@site/static/img/personal/media_actions.webp) ![Multimedia](@site/static/img/personal/media_menu.webp)
 
-Sekcja Multimedia umożliwia dołączanie zdjęć, filmów, nagrania audio i obrazów do punktu ulubionego. Multimedia można dodać podczas tworzenia ulubionego lub później z ekranu Edytuj ulubiony. Aby dołączyć multimedia, dotknij *Dodaj* w sekcji Multimedia i wybierz jedną z dostępnych opcji:
+Sekcja Multimedia umożliwia dołączanie zdjęć, filmów, nagrania audio i obrazów do punktu ulubionego. Multimedia można dodać podczas tworzenia ulubionego, później z ekranu Edytuj ulubiony lub bezpośrednio z menu kontekstowego ulubionego. Aby dołączyć multimedia, dotknij przycisku *+* na ekranie Edytuj ulubiony lub *Dodaj* w menu kontekstowym i wybierz jedną z dostępnych opcji:
 - **Zrób zdjęcie** — Zrób nowe zdjęcie aparatem urządzenia.
 - **Zrób notatkę wideo** — Nagraj nowy film.
-- **Zrób notatkę audio** — Nagraj notatkę audio.
+- **Zrób notatkę audio** — Nagraj notatkę audio. Jeśli OsmAnd nie ma uprawnienia do nagrywania dźwięku, urządzenie poprosi o jego udzielenie.
 - **Wybierz z Galerii** — Wybierz istniejący obraz z urządzenia.
 - **Wybierz z Plików** — Wybierz obraz z systemu plików.
 
-Po dołączeniu multimediów pojawiają się one w karcie Multimedia w menu kontekstowym ulubionego. Ta sama karta Multimedia jest również dostępna dla [Punktów trasy](../map/tracks/track-context-menu.md#points--waypoints).
+Po dołączeniu multimediów pojawiają się one w karcie Multimedia w menu kontekstowym ulubionego. Jeśli nie dołączono żadnych multimediów, karta pokazuje *Brak multimediów* oraz przycisk *Dodaj*. Ta sama karta Multimedia jest również dostępna dla [Punktów trasy](../map/tracks/track-context-menu.md#points--waypoints).
+
+Notatki audio, wideo i zdjęciowe utworzone za pomocą [wtyczki Notatki audio/wideo](../plugins/audio-video-notes.md) są również zapisywane jako ulubione z dołączonymi multimediami.
 
 Karta Multimedia wyświetla podglądy dołączonych elementów. Wyświetlane elementy są zgodne z wybranym porządkiem sortowania. Dotknij *Pokaż wszystko*, aby otworzyć pełną galerię. Galeria wyświetla wszystkie multimedia dołączone do wybranego ulubionego.
 
 Dotknij dowolnego elementu, aby otworzyć go w widoku pełnoekranowym. Zdjęcia i filmy można przeglądać bezpośrednio, a nagrania audio zawierają elementy sterujące odtwarzaniem.
+
+Galeria zawiera następujące opcje:
+- **Sortowanie** — Dotknij paska sortowania u góry, aby wybrać kolejność: Najbliższe, Ostatnio zmodyfikowane, Nazwa A - Z, Nazwa Z - A, Najnowsze najpierw, Najstarsze najpierw, Najdłuższe najpierw lub Najkrótsze najpierw.
+- **Podsumowanie** — Pod elementami galeria pokazuje liczbę zdjęć, filmów i notatek audio oraz ich łączny rozmiar.
+- **Przycisk +** — Dodaj nowe multimedia.
+- **Edytuj** (ikona ołówka) — Przejdź do trybu zaznaczania. Możesz też długo dotknąć dowolnego elementu.
+
+W trybie zaznaczania dotykaj elementów, aby je zaznaczyć, lub użyj opcji Zaznacz wszystko. Menu z trzema kropkami oferuje:
+- **Eksportuj** — Wyeksportuj zaznaczone pliki multimedialne.
+- **Usuń** — Usuń zaznaczone multimedia z ulubionego. Multimedia przechowywane przez OsmAnd i niedołączone do żadnego innego elementu są również usuwane z urządzenia.
+
+Multimedia zarejestrowane w OsmAnd są nazywane według wzorca `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, na przykład `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. Nazwa zawiera typ multimediów, datę i godzinę utworzenia oraz lokalizację, w której zostały zarejestrowane, zakodowaną jako [OSM Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ## Zarządzaj ulubionymi {#manage-favorites}
@@ -435,7 +449,7 @@ Do korzystania z funkcji *Darmowa kopia zapasowa ulubionych* potrzebne jest kont
 - Aby udostępnić wiele folderów ulubionych, zobacz sekcję [Edycja zbiorcza / Usuwanie](#bulk-edit--delete).
 - Aby udostępnić pojedynczy folder ulubionych, zobacz sekcję [Akcje grupy ulubionych](#favorite-group-actions). Na Androidzie, jeśli folder zawiera dołączone multimedia, pojawia się dolny panel Udostępnij. Możesz wybrać:
     - *Tylko punkty* — Udostępnij punkty ulubione z folderu jako plik GPX.
-    - *Punkty i multimedia* — Udostępnij punkty ulubione i dołączone multimedia jako archiwum OSF.
+    - *Punkty i multimedia* — Udostępnij punkty ulubione i dołączone multimedia jako archiwum.
 
 
 ### Automatyczna kopia zapasowa ulubionych {#automatic-favorites-backup}
@@ -480,6 +494,8 @@ W najnowszych wersjach systemu ***Android*** dostęp do katalogów systemowych j
 
 Wszystkie informacje o ulubionym są przechowywane i opisywane za pomocą tagów. Tworząc punkt ulubiony, możesz napisać własny [opis](#favorite-point) lub skorzystać z informacji z danych [użytecznego miejsca (POI)](../map/point-layers-on-map.md#points-of-interest-pois) OSM, z których został utworzony Twój punkt. Ulubione punkty, POI i punkty trasy używają tych samych **tagów** do przechowywania informacji i są zapisywane w **formacie pliku GPX**.
 
+Jeśli włączona jest [wtyczka Edycja OpenStreetMap](../plugins/osm-editing.md), ulubiony utworzony z obiektu OpenStreetMap zapisuje również odnośnik do tego obiektu w tagu `osm_url`, na przykład `https://www.openstreetmap.org/node/7235345886`. Odnośnik jest zachowywany w wyeksportowanych i udostępnionych plikach ulubionych oraz w kopiach zapasowych.
+
 Ulubione mogą również zawierać odnośniki do dołączonych multimediów za pomocą standardowych elementów GPX `<link>`. 
 
 
@@ -494,6 +510,7 @@ Ulubione mogą również zawierać odnośniki do dołączonych multimediów za p
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

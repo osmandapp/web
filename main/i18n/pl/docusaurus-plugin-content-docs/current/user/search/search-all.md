@@ -1,5 +1,5 @@
 ---
-source-hash: 425f511859172593fe5402cce5c44974144e585dac7b77bd26c1c5e68a22a8f0
+source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
 sidebar_position: 1
 title:  Wyszukaj wszystko
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-**Wyszukiwanie** to przydatne narzędzie do szybkiego znajdowania lokalizacji. Możesz użyć wyszukiwania, aby znaleźć lokalizację według adresu, współrzędnych, punktów użyteczności publicznej (POI) lub poprzednich wyszukiwań. Wyszukiwanie [adresu](#search-address) pozwala wprowadzić adres, aby uzyskać dokładną lokalizację. Wyszukiwanie [współrzędnych](#search-coordinates) działa z współrzędnymi geograficznymi, takimi jak szerokość i długość geograficzna. Dzięki wyszukiwaniu [POI](#search-poi) możesz szukać pobliskich miejsc w określonych kategoriach, takich jak kawiarnie, hotele czy stacje benzynowe. Zakładka [Eksploruj](#search-explore) podkreśla popularne miejsca w pobliżu i zapewnia szybki dostęp do niedawno odwiedzanych lokalizacji. Wyszukiwanie w [historii](#search-history) zapisuje poprzednie wyszukiwania. Funkcja wyszukiwania ułatwia planowanie podróży, nawigację w nieznanym terenie i znajdowanie POI w pobliżu.
+**Wyszukiwanie** to przydatne narzędzie do szybkiego znajdowania lokalizacji. Możesz użyć wyszukiwania, aby znaleźć lokalizację według adresu, współrzędnych, punktów użyteczności publicznej (POI) lub poprzednich wyszukiwań. Wyszukiwanie [adresu](#search-address) pozwala wprowadzić adres, aby uzyskać dokładną lokalizację. Wyszukiwanie [współrzędnych](#search-coordinates) działa z współrzędnymi geograficznymi, takimi jak szerokość i długość geograficzna. Dzięki wyszukiwaniu [POI](#search-poi) możesz szukać pobliskich miejsc w określonych kategoriach, takich jak kawiarnie, hotele czy stacje benzynowe. Zakładka [Eksploruj](#search-explore) podkreśla popularne miejsca w pobliżu i zapewnia szybki dostęp do niedawno odwiedzanych lokalizacji. Funkcja wyszukiwania ułatwia planowanie podróży, nawigację w nieznanym terenie i znajdowanie POI w pobliżu.
 
 
 ## Jak używać {#how-to-use}
@@ -109,7 +109,7 @@ OsmAnd automatycznie sortuje wyniki wyszukiwania według kilku kryteriów:
 
 5. **Ważność** — Dobrze znane punkty orientacyjne lub często referencyjne miejsca mogą pojawiać się wyżej w wynikach, gdy blisko pasują do zapytania wyszukiwania.
 
-Możesz również ręcznie zmienić kolejność sortowania wyników wyszukiwania za pomocą chipa *Sortuj według* u góry listy wyników wyszukiwania. Dotknij *Sortuj według* i wybierz jedną z następujących opcji:
+Możesz również ręcznie zmienić kolejność sortowania wyników wyszukiwania za pomocą chipa sortowania u góry listy wyników wyszukiwania. Chip pokazuje wybraną opcję. Dotknij go i wybierz jedną z następujących opcji w menu *Sortuj według*:
 - **Zgodność** — Sortuje wyniki wyszukiwania według zgodności z zapytaniem wyszukiwania.
 - **Najbliższe** — Sortuje wyniki wyszukiwania według odległości, z najbliższymi wynikami wyświetlanymi jako pierwsze.
 
@@ -164,12 +164,7 @@ Możesz znaleźć wymaganą lokalizację na mapie z listy punktów, które pojaw
 
 1. Zacznij wpisywać nazwę lub adres w pasku wyszukiwania.
 
-2. W miarę pisania na liście wyświetlane są punkty najbliższe zapytaniu, w przybliżeniu w następującej kolejności:
-    - Kategorie POI
-    - Ulubione, POI, Trasy i Punkty trasy
-    - Ślady
-    - Adresy
-    - Mapy do pobrania
+2. W miarę pisania na liście wyświetlane są wyniki pasujące do zapytania. Wyniki są sortowane zgodnie z opisem w sekcji [Sortowanie wyników wyszukiwania](#sorting-search-results).
 
 3. Podczas wyszukiwania według nazwy na Androidzie OsmAnd wyświetla chipy typu POI na podstawie typów reprezentowanych w wynikach wyszukiwania. Dotknij chipa, aby filtrować wyniki według wybranego typu POI. Możesz wybrać wiele typów POI. Po wybraniu chip przenosi się na pierwsze miejsce na liście. Dotknij wybranego chipa ponownie, aby go odznaczyć i powrócić do pełnych wyników wyszukiwania.
 
@@ -181,13 +176,33 @@ Możesz znaleźć wymaganą lokalizację na mapie z listy punktów, które pojaw
 OsmAnd zintegrował [**dane TIGER**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) z mapami USA w celu dostarczania informacji o adresach w USA. Zestaw danych TIGER jest **oparty na zakresach** i nie zawiera dokładnych numerów domów, więc niektóre adresy mogą być brakujące lub niedokładne.
 :::
 
-### Wyszukiwanie w pobliżu (tylko Android) {#search-around}
+### Wyszukiwanie przestrzenne {#spatial-search}
 
-![Wyszukiwanie w pobliżu](@site/static/img/search/search_around.webp)
+<InfoAndroidOnly/>
 
-Gdy wyszukiwanie jest otwarte znacznie dalej od bieżącej lokalizacji, chip *Wyszukiwanie w pobliżu* umożliwia wybór obszaru używanego do wyszukiwania. Dotknij chipa i wybierz jedną z następujących opcji:
+![Wyszukiwanie przestrzenne](@site/static/img/search/spatial_search.webp)
+
+Wyszukiwanie przestrzenne to eksperymentalny silnik wyszukiwania, który uwzględnia nie tylko zgodność nazw z zapytaniem, ale także wzajemne położenie obiektów. Pomaga OsmAnd poprawnie interpretować zapytania składające się z kilku części, takie jak nazwa miejsca i kategoria POI.
+
+Wyszukiwanie przestrzenne jest domyślnie wyłączone. Aby je włączyć, przejdź do ustawień [wtyczki OsmAnd Development](../plugins/development.md#internal-algorithms) i włącz opcję *Użyj przestrzennego wyszukiwania tekstowego*. Po włączeniu wyszukiwanie przestrzenne zastępuje standardowy silnik wyszukiwania w zapytaniach o POI i adresy.
+
+Dzięki wyszukiwaniu przestrzennemu możesz:
+- Wyszukiwać POI w określonym miejscu. Wprowadź kategorię i nazwę miejsca w jednym zapytaniu, na przykład Hotel Berlin. Nazwa miejsca jest używana jako obszar wyszukiwania, a kategoria jest wyszukiwana w jego obrębie.
+- Wyszukiwać miejsca spełniające dwa warunki. Wprowadź dwie kategorie lub kategorię i właściwość, na przykład Fuel Diesel lub Cafe Vegan, aby znaleźć miejsca spełniające oba warunki. Zapytanie takie jak Fuel McDonald's znajduje stacje paliw położone w pobliżu McDonald's. Kolejność słów ma znaczenie. Pierwsze słowo określa, czego szukasz, a drugie – w pobliżu czego to ma się znajdować. Na przykład McDonald’s Fuel znajduje restauracje McDonald’s położone w pobliżu stacji paliw.
+- Wyszukiwać wokół znalezionego miejsca. Wprowadź kategorię i nazwę miejsca, na przykład *Hotel Berlin*, a następnie dotknij *Hotel w pobliżu Berlin* u góry wyników wyszukiwania. Nazwa tego miejsca zostanie dodana do chipa [Wyszukiwanie w pobliżu](#search-around).
+- Używać w zapytaniach różnych formatów nazw ulic i przetłumaczonych nazw kategorii.
+- Uzyskiwać szybsze wyniki podczas wyszukiwania według popularnych kategorii POI, takich jak apteka, parking lub restauracja.
+
+### Wyszukiwanie w pobliżu {#search-around}
+
+<InfoAndroidOnly/>
+
+![Wyszukiwanie w pobliżu](@site/static/img/search/search_around_berlin.webp)
+
+Gdy środek mapy znajduje się dalej niż 50 m od Twojej lokalizacji, a mapa nie podąża za Twoją pozycją, wyszukiwanie jest wykonywane wokół środka mapy, a w polu wyszukiwania wyświetlany jest komunikat *Szukaj N km stąd*. Gdy środek mapy znajduje się dalej niż 70 km od Twojej lokalizacji, obok chipa sortowania pojawia się chip z obszarem wyszukiwania. Chip pokazuje wybraną opcję. Dotknij go i wybierz jedną z następujących opcji w menu *Search around*:
 - **Centrum mapy** — Wyszukuje wokół bieżącego centrum mapy. Ta opcja jest domyślnie zaznaczona.
-- **Moja lokalizacja** — Wyszukuje wokół bieżącej lokalizacji. 
+- **Moja lokalizacja** — Wyszukuje wokół bieżącej lokalizacji.
+- **Nazwa miejsca** — Wyszukuje wokół miejsca znalezionego za pomocą [wyszukiwania przestrzennego](#spatial-search). Na przykład wprowadź *Hotel Berlin*, a następnie dotknij *Hotel w pobliżu Berlin* u góry wyników wyszukiwania. Na chipie pojawi się *Berlin* i zostaną wyświetlone hotele wokół Berlina. Ta opcja jest dostępna tylko wtedy, gdy włączone jest wyszukiwanie przestrzenne. 
 
 ### Wyszukiwanie na mapie {#search-on-the-map}
 
@@ -244,48 +259,25 @@ Możesz użyć wyszukiwania w pobliżu określonej lokalizacji. Aby to zrobić, 
 **Wyszukiwanie adresu** wykorzystuje dane OpenStreetMap. Ten typ wyszukiwania pozwala znaleźć lokalizację i kierunek do określonego adresu z gotowej, posortowanej listy. Przeczytaj więcej w artykule [Wyszukaj adres](./search-address.md).
 
 
-## Wyszukaj Eksploruj {#search-explore}
+## Eksploruj w wyszukiwaniu {#search-explore}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Wyszukiwanie Eksploruj](@site/static/img/search/explore_search_android.webp)
+<TabItem value="android" label="Android">
 
-Zakładka **Eksploruj** w narzędziu Wyszukaj pomaga szybko odkrywać miejsca w pobliżu bieżącej lokalizacji i uzyskiwać dostęp do niedawno otwartych elementów. Zawiera dwie główne sekcje: [Popularne miejsca w pobliżu](#popular-places-nearby)
- i [Historia](#history).
+![Eksploruj w wyszukiwaniu](@site/static/img/search/explore_search_android.webp)
 
-### Popularne miejsca w pobliżu {#popular-places-nearby}
+</TabItem>
 
-Sekcja **Popularne miejsca w pobliżu** wyświetla przewijaną listę dobrze znanych punktów orientacyjnych i atrakcji w pobliżu lokalizacji. Każdy element może zawierać nazwę miejsca, jego kategorię, odległość i kierunek oraz obrazek podglądu, jeśli jest dostępny. Dotknij *Pokaż wszystko*, aby otworzyć pełną listę lub *Pokaż na mapie*, aby wyświetlić te miejsca na mapie.
-
-Więcej szczegółów znajdziesz [tutaj](../map/popular_places.md#explore-in-search).
-
-### Historia {#history}
-
-![Sekcja historii](@site/static/img/search/history_section_android.webp) ![Sekcja historii](@site/static/img/search/history_section_2_android.webp)
-
-Sekcja **Historia** zapewnia szybki dostęp do ostatnich elementów historii. Wyświetla do 25 najnowszych elementów i można ją rozwijać lub zwijać. Dotknij *Zobacz wszystko*, aby otworzyć pełny ekran Historii.
-
-Na pełnym ekranie Historii możesz sortować i filtrować elementy historii za pomocą następujących opcji:
-
-1. **Sortuj według**:
-- Ostatnie — wyświetla najpierw ostatnio dodane elementy. Po wybraniu tej opcji elementy są grupowane według czasu, np. Dziś, Ostatni tydzień i wcześniejsze okresy.
-- Najbliższe — sortuje elementy według odległości od bieżącej lokalizacji.
-- Najbliższe do centrum mapy — sortuje elementy według odległości od bieżącego centrum mapy. Gdy wybrana jest jedna z opcji sortowania według odległości, grupy czasowe nie są wyświetlane.
-
-2. **Typ** — filtruje elementy historii według:
-- Wszystkie — wyświetla wszystkie dostępne elementy historii.
-- Wyszukiwanie — wyświetla elementy z historii wyszukiwania.
-- Nawigacja — wyświetla elementy z historii nawigacji.
-
-3. **Filtry kategorii** — filtrują elementy historii według kategorii. Dostępne filtry kategorii zależą od typów elementów dostępnych w Historii. Na przykład możesz zobaczyć kategorie takie jak POI, Ślad, Lokalizacja, Ulubione lub Adres.
-
-4. **Ustawienia** — dotknij ikony koła zębatego w prawym górnym rogu, aby otworzyć ustawienia Historii, gdzie możesz włączyć lub wyłączyć historię wyszukiwania, historię nawigacji i historię znaczników mapy, wykonać kopię zapasową historii jako plik lub wyczyścić całą historię.
-
-## Historia wyszukiwania {#search-history}
+<TabItem value="ios" label="iOS">
 
 ![Historia wyszukiwania](@site/static/img/search/history_search_ios.png)
 
-Na iOS możesz uzyskać dostęp do Historii wyszukiwania z dedykowanej zakładki **Historia** w narzędziu Wyszukaj. Umożliwia to ponowne wyszukiwanie wcześniej znalezionych miejsc, adresów lub często odwiedzanych miejsc bez ponownego wprowadzania zapytania. Więcej informacji znajdziesz w sekcji iOS artykułu [Historia wyszukiwania](./search-history.md).
+</TabItem>
+
+</Tabs>
+
+Na Androidzie zakładka **Eksploruj** w narzędziu Wyszukaj pomaga szybko odkrywać miejsca w pobliżu bieżącej lokalizacji i uzyskiwać dostęp do historii. Na iOS zakładka **Historia** umożliwia ponowne wyszukiwanie wcześniej znalezionych miejsc, adresów lub często odwiedzanych miejsc bez ponownego wprowadzania zapytania. Więcej informacji znajdziesz w artykule [Eksploruj w wyszukiwaniu](./search-history.md).
 
 
 ## Wyszukaj POI {#search-poi}
@@ -341,7 +333,7 @@ Wyszukiwanie współrzędnych zapewnia dokładną lokalizację. Możesz wprowadz
 ## Powiązane artykuły {#related-articles}
 
 - [Wyszukaj adres](./search-address.md)
-- [Historia wyszukiwania](./search-history.md)
+- [Eksploruj w wyszukiwaniu](./search-history.md)
 - [Wyszukaj POI](./search-poi.md)
 - [Wyszukaj współrzędne](./search-coordinates.md)
 - [Popularne miejsca](../map/popular_places.md)

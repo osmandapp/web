@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 
-## Overview {#overview}
+## Przegląd {#overview}
 
 Narzędzie do planowania tras OsmAnd Web pozwala tworzyć trasy nawigacyjne, planować ślady i zarządzać lokalnymi plikami bezpośrednio z przeglądarki. To narzędzie internetowe jest przydatne do tworzenia szczegółowych tras podróży, które można zsynchronizować z aplikacją lub udostępnić innym.
 
@@ -59,7 +59,7 @@ To create a navigation route, follow these steps:
 -->
 
 
-## Create New Route {#create-new-route}
+## Tworzenie nowej trasy {#create-new-route}
 
 Istnieją dwa sposoby na rozpoczęcie nowej trasy w narzędziu Planuj trasę. Pierwsza opcja to bezpośrednio z mapy: kliknij prawym przyciskiem myszy w dowolnym miejscu na mapie i wybierz **Utwórz nową trasę**. Druga opcja to z panelu po lewej stronie: kliknij przycisk **Utwórz ślad**.
 
@@ -67,11 +67,11 @@ Po utworzeniu trasy dodawaj punkty bezpośrednio na mapie. Każdy klik umieszcza
 
 ![Tworzenie nowej trasy w OsmAnd Web](@site/static/img/web/create_new_route_1.png)
 
-### Import Track {#import-track}
+### Importowanie śladu {#import-track}
 
 Jeśli masz już plik śladu, możesz zaimportować go do narzędzia Planuj trasę i kontynuować pracę z nim w Planerze internetowym. Kliknij przycisk **Importuj ślad** i wybierz plik GPX z komputera. Po przesłaniu ślad pojawia się na liście lokalnej i otwiera się w planiście, dzięki czemu możesz przejrzeć go na mapie i kontynuować edycję oraz zarządzanie w panelach śladu.
 
-### Local Files {#local-files}
+### Pliki lokalne {#local-files}
 
 Wszystkie trasy i ślady, które utworzysz lub zaimportujesz w narzędziu Planuj trasę, są dodawane do listy Lokalne w panelu po lewej stronie. Ułatwia to przechowywanie wielu plików GPX w jednym miejscu i przełączanie między nimi podczas planowania.
 
@@ -80,7 +80,7 @@ Każdy element na liście ma przełącznik, który pozwala szybko pokazywać lub
 ![Tworzenie nowej trasy w OsmAnd Web](@site/static/img/web/local_files.png)
 
 
-## Manage Track {#manage-track}
+## Zarządzanie śladem {#manage-track}
 
 Po utworzeniu lub zaimportowaniu trasy w narzędziu Planuj trasę otwiera się pionowy panel śladu. Ten panel pozwala zmienić profil routingu i zarządzać trasą.
 
@@ -88,16 +88,16 @@ Kliknij kontrolkę profilu, aby otworzyć okno dialogowe **Zmień profil**. Wybi
 
 Z panelu śladu możesz również **Usunąć** ślad z listy lokalnej.
 
-W [panelu Przegląd](#overview-panel) możesz **Zapisać w chmurze**, aby zachować trasę do późniejszego użytku, oraz **Pobrać** ją jako plik GPX.
+W [panelu Przegląd](#overview-panel) możesz użyć opcji **Zapisz w chmurze**, aby zachować trasę do późniejszego użytku, oraz **Pobierz**, aby pobrać ją jako plik GPX.
 
 ![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/manage_track_2_new.png) ![Zarządzanie śladem w OsmAnd Web](@site/static/img/web/change_profile.png)
 
 
-## Track Details Panels {#track-details-panels}
+## Panele szczegółów śladu {#track-details-panels}
 
 Menu lokalnego śladu zawiera trzy panele: **Przegląd**, **Ślad** i **Punkty**. Użyj ich do wyświetlania informacji o śladzie i zarządzania punktami trasy oraz punktami orientacyjnymi.
 
-### Overview Panel {#overview-panel}
+### Panel Przegląd {#overview-panel}
 
 Panel Przegląd podsumowuje wybrany ślad i pokazuje kluczowe dane trasy oraz wysokości. Zawiera szybki przegląd statystyk trasy, a także wykresy i dodatkową analizę śladu na podstawie dostępnych danych mapy.
 
@@ -128,13 +128,13 @@ Aby uzyskać dodatkowe szczegóły śladu, otwórz sekcje analizy:
 
 ![Panel Przegląd w OsmAnd Web](@site/static/img/web/overview_panel.png) 
 
-### Track Panel {#track-panel}
+### Panel Ślad {#track-panel}
 
 Panel Ślad pokazuje listę punktów trasy użytych do zbudowania śladu. Użyj go do przeglądu i edycji struktury trasy: przeciągaj punkty, aby zmienić ich kolejność, usuwaj punkty za pomocą ikony usuń lub użyj Wyczyść punkty, aby usunąć wszystkie punkty i zacząć od nowa.
 
 ![Panel Ślad w OsmAnd Web](@site/static/img/web/track_panel_new.png)
 
-### Points Panel {#points-panel}
+### Panel Punkty {#points-panel}
 
 Panel Punkty służy do wyświetlania i zarządzania punktami orientacyjnymi dla wybranego śladu. Punkty orientacyjne można dodać z menu kontekstowego mapy — kliknij prawym przyciskiem myszy na mapie i wybierz opcję **Dodaj punkt orientacyjny**, a następnie wypełnij szczegóły punktu orientacyjnego (takie jak nazwa, ikona i kolor) i zapisz go.
 
@@ -145,7 +145,7 @@ Na liście Punkty orientacyjne możesz kontrolować, czy punkty orientacyjne są
 ![Panel Punkty w OsmAnd Web](@site/static/img/web/points_panel_new.png)
 
 
-## Related Articles {#related-articles}
+## Powiązane artykuły {#related-articles}
 
 - [Planuj trasę](../plan-route/create-route.md)
 - [Przewodniki podróżnicze](../plan-route/travel-guides.md)

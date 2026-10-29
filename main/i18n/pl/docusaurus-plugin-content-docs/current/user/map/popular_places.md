@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Popularne miejsca
 ---
@@ -34,7 +34,7 @@ Obecnie wyselekcjonowana baza danych zawiera około **50 000 do 150 000 najwyże
 
 <TabItem value="android" label="Android">
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
+![Popularne miejsca](@site/static/img/map/popular_places/popular_places.png) ![Popularne miejsca](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -85,7 +85,7 @@ Istnieją dwa główne sposoby dostępu do tej funkcji:
 
 Przejdź do: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.webp) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.webp)
+![Tryb Odkrywaj](@site/static/img/map/popular_places/popular_places_search.webp) ![Tryb Odkrywaj](@site/static/img/map/popular_places/popular_places_search_2.webp)
 
 </TabItem>
 
@@ -117,7 +117,7 @@ Aby korzystać z niego **offline**, potrzebujesz subskrypcji [Maps+ lub OsmAnd P
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+![Menu popularnych miejsc](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
@@ -125,7 +125,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,po
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Popularne miejsca (Wikipedia)*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu_ios.png)
+![Menu popularnych miejsc](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -163,13 +163,13 @@ Dotknięcie POI na mapie otwiera [menu kontekstowe POI](./map-context-menu.md), 
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Menu kontekstowe zdjęć online Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Menu kontekstowe zdjęć online iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
@@ -185,15 +185,15 @@ Obrazy przeglądane online są automatycznie buforowane dla dostępu offline. Bu
 
 <TabItem value="android" label="Android">  
 
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
+![Menu galerii – Android](@site/static/img/map/gallery_menu_android.png)
+![Menu galerii – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Menu galerii – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Menu galerii – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
@@ -209,7 +209,7 @@ Możesz także wykonać następujące czynności na każdym zdjęciu:
   Udostępnij wybrane zdjęcie za pomocą dowolnej kompatybilnej aplikacji zainstalowanej na urządzeniu (np. komunikatora, e-maila lub mediów społecznościowych). Udostępniona treść zawiera obraz i link do jego źródła (jeśli jest dostępny).
 
 - **Szczegóły**  
-  Otwórz szczegółowy widok pokazujący metadane obrazu, w tym: *Opis (pełny tekst, tylko Android)*, *Nazwa*, *Data dodania*, *Autor*, *Licencja*, *Źródło* i *Link bezpośredni*
+  Otwórz szczegółowy widok pokazujący metadane obrazu, w tym: *Opis (pełny tekst)*, *Nazwa*, *Data dodania*, *Autor*, *Licencja*, *Źródło* i *Link bezpośredni*.
 
   **Uwaga:** Język opisu zależy od języka wyświetlania aplikacji. Jeśli opis w wybranym języku nie jest dostępny, OsmAnd pokazuje wersję angielską lub pierwszą dostępną tłumaczenie.
 

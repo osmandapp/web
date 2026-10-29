@@ -1,5 +1,5 @@
 ---
-source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
+source-hash: 7ab1b7c975524abc4cbcb3957975026e9c46aff353e0f442c1228dc360748218
 sidebar_position: 11
 title:  Chmura OsmAnd
 ---
@@ -19,11 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-:::info Pro feature
+:::info Funkcja Pro
 Chmura OsmAnd to płatna funkcja [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
-:::note cross-platform  
+:::note wieloplatformowość  
 Chmura OsmAnd to niezależna usługa przechowywania w chmurze, która *nie jest powiązana* z konkretną wersją platformy Android, iOS ani internetową.  
 :::  
 
@@ -305,7 +305,7 @@ W tym menu możesz wybrać, które dane i foldery mają być przesyłane do Chmu
 
 1. **Ustawienia**. Ta zakładka obejmuje wszystkie Twoje ustawienia, takie jak ogólne preferencje, określone profile, szybkie akcje, POI i ustawienia unikania dróg.
 
-2. **Moje miejsca**. Ta zakładka zawiera dane z menu [Moje miejsca](../personal/myplaces), w tym ulubione, ścieżki, notatki OSM, znaczniki i inne elementy.
+2. **Moje miejsca**. Ta zakładka zawiera dane z menu [Moje miejsca](../personal/myplaces), w tym ulubione, dołączone multimedia (tylko Android), ścieżki, notatki OSM, znaczniki i inne elementy.
 
 3. **Zasoby**. Tutaj możesz wybrać tworzenie kopii zapasowych zasobów, takich jak ulubione, informacje o trasach, komunikaty głosowe i dodatkowe elementy.
 

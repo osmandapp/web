@@ -1,5 +1,5 @@
 ---
-source-hash: 0ece8e7a1a25127672614cdf13cd0688a67a4cbb64515cc18d60c278f7999862
+source-hash: 6cd58289fa863d41e34b91d4957c55fa523752c06e24588537decc922b41bdaa
 title: Tworzenie map rastrowych i wektorowych offline
 versions: '*'
 intro: Dzięki OsmAndMapCreator istnieje wiele sposobów tworzenia i dostosowywania map rastrowych i wektorowych do własnych potrzeb.
@@ -7,7 +7,7 @@ intro: Dzięki OsmAndMapCreator istnieje wiele sposobów tworzenia i dostosowywa
 
 ## OsmAndMapCreator {#osmandmapcreator}
 
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) może być używany do samodzielnego tworzenia dowolnych map obsługiwanych przez OsmAnd. Najnowszą wersję można pobrać ze [strony internetowej](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator posiada interfejs użytkownika do tworzenia map rastrowych i wektorowych. *Aby utworzyć mapę wektorową, potrzebny będzie plik OSM (`*.pbf, *.osm.gz, *.osm.bz2`)*, a *aby utworzyć plik mapy sqlite online, potrzebny będzie `podstawowy adres URL kafelka`*.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) może być używany do samodzielnego tworzenia dowolnych map obsługiwanych przez OsmAnd. Najnowszą wersję można pobrać ze [strony internetowej](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator posiada interfejs użytkownika do tworzenia map rastrowych i wektorowych. *Aby utworzyć mapę wektorową, potrzebny będzie plik OSM (`*.pbf, *.osm.gz, *.osm.bz2`)*, a *aby utworzyć plik mapy sqlite online, potrzebny będzie `base tile url`*.
 
 ### Mapy rastrowe (proste) {#raster-maps-simple}
 
@@ -33,7 +33,7 @@ Kroki tworzenia mapy wektorowej za pomocą interfejsu użytkownika OsmAndMapCrea
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Utwórz mapy wektorowe" />
 
-Więcej parametrów dotyczących generowania map wektorowych można określić w powłoce `utilities.sh`.
+Więcej parametrów dotyczących generowania map wektorowych można określić w powłoce `utilities.sh `.
 
 ## Mapy wektorowe (skrypt powłoki) {#vector-maps-shell-script}
 
@@ -250,8 +250,8 @@ Jeśli z jakiegokolwiek powodu chcesz przekonwertować pojedynczy _geopdf_ na _g
 
 **Użycie:**
 
-&nbsp;<i>gdal_translate ```<nazwa pliku GeoPDF> <Nazwa pliku wyjściowego Geotiff>``` -of gtiff --config
-gdal_pdf_layers_off “```<nazwa warstwy pdf 1>,<nazwa warstwy pdf 2>,<nazwa warstwy pdf 3>```” --config gdal_pdf_dpi ```<wyjściowe dpi>```</i>&nbsp;
+&nbsp;<i>gdal_translate ```<GeoPDF filename> <Output Geotiff Filename>``` -of gtiff --config
+gdal_pdf_layers_off “```<pdf layername 1>,<pdf layername 2>,<pdf layername 3>```” --config gdal_pdf_dpi ```<output dpi>```</i>&nbsp;
 
 **Przykłady:**
 

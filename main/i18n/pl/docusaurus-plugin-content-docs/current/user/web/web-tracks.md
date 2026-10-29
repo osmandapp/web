@@ -1,8 +1,8 @@
 ---
-source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
-sidebar_label: Tracks
-title: Tracks
+sidebar_label: Trasy
+title: Trasy
 ---
 
 import Tabs from '@theme/Tabs';
@@ -28,7 +28,7 @@ Wszystkie zmiany są automatycznie synchronizowane za pośrednictwem [OsmAnd Clo
 
 To funkcja płatna <ProFeature/>. Aby z niej skorzystać, zaloguj się na konto OsmAnd Pro.
 
-![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
+![Logowanie do tras](@site/static/img/web/track_login.png) ![Logowanie do tras](@site/static/img/web/track_login_2.png)
 
 Sekcja Trasy zawiera wszystkie narzędzia i akcje związane z trasami. Dostępne są następujące opcje:
 
@@ -50,38 +50,42 @@ Aby zaimportować trasę metodą przeciągnij i upuść:
 - Przeciągnij jeden lub więcej plików GPX z komputera.
 - Upuść pliki na mapę lub do określonego folderu tras.
 
-Gdy plik jest przeciągany nad mapę, dostępny obszar upuszczania jest podświetlony. Jeśli upuścisz plik bezpośrednio na mapę, zostanie zaimportowany do folderu Import. Jeśli upuścisz go do istniejącego folderu, zostanie zaimportowany do tego folderu.
+Gdy plik jest przeciągany nad mapę, dostępny obszar upuszczania jest podświetlony. Jeśli upuścisz plik bezpośrednio na mapę, zostanie zaimportowany do folderu Import. Jeśli upuścisz go do istniejącego folderu, zostanie zaimportowany do tego folderu. Bez aktywnej subskrypcji [OsmAnd Pro](../purchases/index.md) upuszczenie pliku otwiera okno z informacją, że import tras wymaga OsmAnd Pro.
+
+Maksymalny rozmiar pliku to 20 MB dla plików GPX i KML oraz 2 MB dla plików KMZ. Większe pliki nie są importowane, zamiast tego pojawia się ostrzeżenie. Podczas importu kilku plików naraz wszystkie odrzucone pliki są wymienione w jednym komunikacie. Tras większych niż 20 MB, które są już przechowywane w OsmAnd Cloud, również nie można otworzyć w wersji internetowej, a powiadomienie sugeruje otwarcie ich w aplikacji OsmAnd.
 
 Po zakończeniu importu trasa pojawia się na liście tras, jest synchronizowana z [OsmAnd Cloud](../personal/osmand-cloud.md) i staje się dostępna na wszystkich urządzeniach podłączonych do tego samego konta.
 
-![Drag and drop](@site/static/img/web/drag_and_drop.png)
+Jeśli trasy nie można zaimportować lub zapisać w OsmAnd Cloud, okno błędu pokazuje nazwę pliku oraz, jeśli jest dostępny, powód zgłoszony przez serwer.
+
+![Przeciągnij i upuść](@site/static/img/web/drag_and_drop.png)
 
 
 ## Widoczne na mapie {#visible-on-the-map}
 
-Widok **Widoczne na mapie** zawiera listę wszystkich tras, które są obecnie wyświetlane na mapie. Dowolną trasę można dodać do tej listy z głównego panelu Tras, korzystając z opcji **⋮ → Uczyń trasę widoczną**.
+Widok **Widoczne na mapie** zawiera listę wszystkich tras, które są obecnie wyświetlane na mapie. Dowolną trasę można dodać do tej listy z głównego panelu Tras, korzystając z opcji **⋮ → Uczyń ślad widocznym**.
 
 Trasy widoczne na mapie są podświetlone na niebiesko, natomiast trasy obecnie ukryte pojawiają się na szaro. Przełącznik obok każdej trasy pozwala szybko ją pokazać lub ukryć. Przycisk **Ukryj wszystkie** wyłącza wszystkie widoczne trasy naraz.
 
 Pod główną listą sekcja **Ostatnio widoczne** wyświetla trasy, które były wcześniej pokazywane na mapie. Ułatwia to ponowne włączenie trasy bez ponownego wyszukiwania jej w folderach lub w OsmAnd Cloud.
 
-![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
+![Widoczne na mapie](@site/static/img/web/visible_new.png) ![Widoczne na mapie](@site/static/img/web/visible_new_2.png)
 
 
 ## Menu folderu tras {#track-folder-menu}
 
-![Track folder menu](@site/static/img/web/collection_new.png)
+![Menu folderu tras](@site/static/img/web/collection_new.png)
 
 Kliknij przycisk z trzema kropkami (⋮), aby otworzyć menu *Folder tras*. Stąd możesz:
 
- - Pobrać jako OSF.
- - Pobrać jako kolekcję OBF. Eksportuj folder w formacie binarnym OsmAnd, wybierając plik [OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) lub [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+ - Pobierz jako OSF.
+ - Pobierz jako kolekcję OBF. Eksportuj folder w formacie binarnym OsmAnd, wybierając plik [OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) lub [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
       -  **Plik OBF**. Możesz pobrać mapę offline OBF i otworzyć ją w OsmAnd na urządzeniu. Jest odpowiednia do wyświetlania dużej liczby tras na mapie.
       -  **Travel OBF**. Możesz również zaimportować mapę tras jako książkę podróży, co pozwala na wybór indywidualnych tras na mapie i używanie ich jak zwykłych plików GPX. Książka podróży obsługuje również funkcje takie jak wyświetlanie tras jako punktów, filtrowanie tras według typu aktywności oraz filtrowanie punktów trasy.
  - Zmień nazwę. Otwiera okno dialogowe, w którym możesz wprowadzić nową nazwę dla wybranego folderu. Zmiana jest synchronizowana z OsmAnd Cloud i pojawi się na wszystkich podłączonych urządzeniach.
  - Usuń. Otwiera okno dialogowe z potwierdzeniem. Usunięcie folderu usuwa go na stałe wraz ze wszystkimi zawartymi w nim trasami. Ta akcja jest również synchronizowana za pośrednictwem OsmAnd Cloud.
 
-![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+![Menu folderu tras](@site/static/img/web/collection_rename.png) ![Menu folderu tras](@site/static/img/web/collection_delete.png)
 
 ### Foldery inteligentne {#smart-folders}
 
@@ -96,9 +100,9 @@ Trasy są wyświetlane tylko wtedy, gdy konfiguracja folderu inteligentnego jest
 
 Synchronizacja folderów inteligentnych może się różnić w zależności od platformy i konfiguracji synchronizacji. Aby uzyskać najbardziej spójne wyniki, upewnij się, że synchronizacja Chmury jest włączona i aktualna na wszystkich urządzeniach.
 
-W menu z trzema kropkami (⋮) dostępne są dodatkowe działania dla folderu inteligentnego. Możesz *Pobrać jako OSF*, *Pobrać jako kolekcję OBF*, *Zmień nazwę* lub *Usuń* folder.
+W menu z trzema kropkami (⋮) dostępne są dodatkowe działania dla folderu inteligentnego. Możesz użyć opcji *Pobierz jako OSF*, *Pobierz jako kolekcję OBF*, *Zmień nazwę* lub *Usuń*.
 
-![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
+![Inteligentne foldery](@site/static/img/web/smart_folder_new.png) ![Inteligentne foldery](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Trasy w chmurze {#cloud-tracks}
@@ -119,7 +123,7 @@ Po wybraniu trasy z chmury dostępne są następujące funkcje:
 - *Nawierzchnia* - pokazuje typy nawierzchni trasy wzdłuż trasy.
 - *Gładkość* - wyświetla gładność segmentów na podstawie tagów OSM.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
+![OsmAnd Web — edycja GPX w chmurze](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web — edycja GPX w chmurze](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Powiązane artykuły {#related-articles}

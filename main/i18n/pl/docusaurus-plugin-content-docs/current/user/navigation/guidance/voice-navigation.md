@@ -1,5 +1,5 @@
 ---
-source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title:  Komunikaty głosowe / Powiadomienia
 ---
@@ -396,7 +396,7 @@ Możesz kontrolować ekran swojego urządzenia, aby oszczędzać energię. Ten t
 
     ![Systemowe wygaszanie ekranu Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Jeśli opcja *Utrzymaj ekran włączony* jest włączona, ekran urządzenia nie stosuje limitu czasu po wybudzeniu. Jeśli jest wyłączona, możesz ustawić czas, po którym ekran urządzenia wyłączy się, jeśli nie będziesz z nim wchodzić w interakcję, od 5 do 60 sekund.  
+2. **<Translate android="true" ids="wake_time"/>**. Jeśli opcja *Utrzymaj ekran włączony* jest włączona, ekran urządzenia nie stosuje limitu czasu po wybudzeniu. Jeśli jest wyłączona, możesz ustawić czas, po którym ekran urządzenia wyłączy się, jeśli nie będziesz z nim wchodzić w interakcję, od 5 do 60 sekund. Limit czasu liczy się od ostatniej interakcji z mapą, a każde dotknięcie uruchamia go od nowa. Po jego upływie ekran wyłącza się zgodnie z systemowym limitem czasu ekranu urządzenia, więc OsmAnd może utrzymać ekran włączony dłużej niż ustawienie systemowe, ale nigdy krócej.   
 
     ![Wygaszanie po wybudzeniu Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Wygaszanie po wybudzeniu Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -404,11 +404,15 @@ Możesz kontrolować ekran swojego urządzenia, aby oszczędzać energię. Ten t
 
 ![Włączanie ekranu Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Wybierz opcje wybudzania ekranu i upewnij się, że OsmAnd pozostaje na pierwszym planie, gdy urządzenie jest zablokowane.
+Wybierz opcje wybudzania ekranu i upewnij się, że OsmAnd pozostaje na pierwszym planie, gdy urządzenie jest zablokowane. Gdy opcja wybudzania włącza ekran, mapa pojawia się na wierzchu ekranu blokady, a urządzenie pozostaje zablokowane. Jeśli żadna opcja wybudzania nie jest włączona, wyświetlany jest zwykły ekran blokady.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> Czujnik reaguje niezawodnie podczas nawigacji lub nagrywania trasy. W innych przypadkach Android przestaje wysyłać do OsmAnd zdarzenia czujnika około minuty po przejściu aplikacji w tło.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> Jeśli opcja *Systemowe wygaszanie ekranu* jest wyłączona, ta opcja wymaga ustawienia *Wygaszanie po wybudzeniu* na *Utrzymaj ekran włączony*.
+
+Po wybudzeniu przez czujnik zbliżeniowy lub instrukcję nawigacji mapa pozostaje na wierzchu ekranu blokady przez czas ustawiony w *Wygaszanie po wybudzeniu*, a następnie urządzenie ponownie się blokuje. Przy *Utrzymaj ekran włączony* mapa pozostaje widoczna, dopóki nie naciśniesz przycisku zasilania.
+
+**Uwaga:** Na urządzeniach Xiaomi zezwól OsmAnd na uprawnienie *Pokaż na ekranie blokady* (*Informacje o aplikacji → Inne uprawnienia*). Bez niego ekran się włączy, ale mapa nie pojawi się na wierzchu ekranu blokady. OsmAnd nie może samodzielnie nadać tego uprawnienia.
 
 
 ## Powiązane artykuły {#related-articles}
