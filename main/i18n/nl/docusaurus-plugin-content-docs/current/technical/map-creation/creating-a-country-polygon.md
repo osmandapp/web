@@ -1,5 +1,5 @@
 ---
-source-hash: e0173be6fa81b710afb1b4b52c4268f63865918a50d504364df4f0d772bf2d39
+source-hash: a4ab003fa68f8ff7c393f79dced64ce22df0b72bda332626935257db71197cb1
 title: Een landpolygoon maken
 versions: '*'
 ---
@@ -14,7 +14,7 @@ OsmAnd wordt geleverd met veel kaarten voor veel landen. De meeste kaarten worde
 Geofabrik.de heeft de strategie om kaarten te leveren voor landen die door een groter aantal gebruikers of door hun klanten worden aangevraagd. Dit betekent dat sommige kaarten nooit op geofabrik terechtkomen, omdat er simpelweg niet genoeg aanvragen voor zijn (of helemaal geen), zoals sommige exotische landen zoals de Seychellen of Burundi, enz.
 
 ## Serverproces {#server-process}
-Vanwege deze strategische beslissing van geofabrik heeft OsmAnd een optie om kaarten voor deze landen te genereren en de tools [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) en [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) worden hiervoor gebruikt. Voor OsmAndMapCreator is dit een proces in drie stappen:
+Vanwege deze strategische beslissing van geofabrik heeft OsmAnd een optie om kaarten voor deze landen te genereren en de tools [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) en [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) worden hiervoor gebruikt. Voor OsmAndMapCreator is dit een proces in drie stappen:
 - OsmAndMapCreator heeft een polygoon nodig die de buitenste grens van het land omringt.
 - OsmAndMapCreator heeft de "ruwe data kaart" nodig van het volgende hogere niveau dat dit land omvat. Voor Burundi betekent dit dat OsmAndMapCreator de Afrika-kaart nodig heeft. Voor Noordrijn-Westfalen betekent dit dat OsmAndMapCreator de Duitsland-kaart nodig heeft.
 - [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) maakt een "ruwe data" kaart van de polygoon door de kaartgegevens uit de "ouder" kaart te extraheren.

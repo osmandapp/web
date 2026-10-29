@@ -1,5 +1,5 @@
 ---
-source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+source-hash: bfe0420d8b7fdb1fb6c341554dbe5327adde2d1beb05e5eeb3114c2d541b823c
 sidebar_position: 8
 title:  Punten op de Kaart
 ---
@@ -133,6 +133,8 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_
 </Tabs>
 
 Elk POI-type in OsmAnd heeft een specifiek icoon en kleur toegewezen gekregen. Het [zoomniveau](../map/vector-maps.md#details) en het ontwerp van POI's kunnen verschillen in sommige [kaartstijlen](../map/map-styles.md).  
+
+In de OsmAnd-[kaartstijl](../map/map-styles.md) worden gebedshuizen (kerken, moskeeën, synagogen, tempels en andere) selectief weergegeven. Bij lagere zoomniveaus worden alleen de meest opvallende getoond en de overige verschijnen naarmate u inzoomt. Wanneer de instelling [*<Translate android="true" ids="rendering_attr_moreDetailed_name"/>*](../map/vector-maps.md#details) is ingeschakeld, verschijnen alle gebedshuizen bij een lager zoomniveau. In de [nachtmodus](../map/vector-maps.md#map-mode) worden hun pictogrammen zonder achtergrondcirkel weergegeven, net als in de dagmodus.
 
 [Lees meer](../map/vector-maps.md#hide).
 

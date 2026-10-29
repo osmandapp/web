@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Populaire Plaatsen
 ---
@@ -209,7 +209,7 @@ U kunt ook de volgende acties uitvoeren op elke foto:
   Deel de geselecteerde afbeelding via een compatibele app die op uw apparaat is geïnstalleerd (bijv. berichten, e-mail of sociale media). De gedeelde inhoud bevat de afbeelding en de bronlink (indien beschikbaar).
 
 - **Details**  
-  Open een gedetailleerde weergave met metadata over de afbeelding, waaronder: *Beschrijving (volledige tekst, alleen Android)*, *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*
+  Open een gedetailleerde weergave met metadata over de afbeelding, waaronder: *Beschrijving (volledige tekst)*, *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*.
 
   **Opmerking:** De beschrijvingstaal hangt af van de weergavetaal van de toepassing. Als de beschrijving in de geselecteerde taal niet beschikbaar is, toont OsmAnd de Engelse versie of de eerste beschikbare vertaling.
 

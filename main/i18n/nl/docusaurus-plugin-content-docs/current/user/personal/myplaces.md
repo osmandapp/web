@@ -1,5 +1,5 @@
 ---
-source-hash: d5de9c3084442f355b9b6536f2e73e330ece35ee360363e944195eaf5ddfe9fb
+source-hash: 941d8e8096800d75da224d6bdd577697326daf17319375cb9b22749166c80554
 sidebar_position: 6
 title:  Mijn Plaatsen
 ---
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
+![Mijn Plaatsen Android](@site/static/img/personal/my_places_android_new.png) ![Mijn Plaatsen-menu Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
@@ -34,7 +34,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
+![Mijn Plaatsen iOS](@site/static/img/personal/my_places_ios_2.png)  ![Mijn Plaatsen-menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
@@ -52,7 +52,7 @@ Mijn Plaatsen is georganiseerd per categorieën. Selecteer een tabblad om de bij
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
+![Favorietenmenu Android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
@@ -60,7 +60,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
+![Favorietenmenu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
@@ -78,7 +78,7 @@ Voor volledige instructies, raadpleeg het artikel [Favorieten](../personal/favor
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![Mijn Plaatsen met tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
@@ -86,7 +86,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
+![Mijn Plaatsen met tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
@@ -104,7 +104,7 @@ Voor uitgebreide begeleiding, zie het artikel [Tracks beheren](../personal/track
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Delen](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -112,7 +112,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
+![Delen](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
@@ -128,9 +128,9 @@ Raadpleeg de [OSM-bewerkingsplugin](../plugins/osm-editing.md) voor stapsgewijze
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Audio-/videonotities-plugin Mijn Plaatsen-menu drie acties](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-De **Audio-/videonotities-plugin** stelt u in staat multimedianotities te maken die gekoppeld zijn aan specifieke kaartlocaties. Deze notities worden opgeslagen in **Mijn Plaatsen** onder het **Tabblad A/V-notities**.
+De **Audio-/videonotities-plugin** stelt u in staat multimedianotities te maken die gekoppeld zijn aan specifieke kaartlocaties. Deze notities worden opgeslagen in **Mijn Plaatsen** onder het **Tabblad A/V-notities**. Elke notitie wordt ook opgeslagen als favoriet in de map **media** op het tabblad [Favorieten](#favorites).
 
 Voor meer informatie, bezoek de pagina van de [Audio-/videonotities-plugin](../plugins/audio-video-notes.md).
 
@@ -138,7 +138,7 @@ Voor meer informatie, bezoek de pagina van de [Audio-/videonotities-plugin](../p
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
+![Reisgidsen iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
 De sectie **Reis** bevat bladwijzers van reisgidsen en artikelen die zijn opgeslagen voor offline toegang. U kunt uw opgeslagen reisinformatie vanuit Mijn Plaatsen snel openen, organiseren en beheren. De sectie Reis wordt alleen weergegeven wanneer meer dan één reisgids als bladwijzer is opgeslagen.
 

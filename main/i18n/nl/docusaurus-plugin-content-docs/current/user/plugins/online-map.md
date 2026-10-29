@@ -1,7 +1,7 @@
 ---
-source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
 sidebar_position: 9
-title:  Online Maps
+title:  Online Kaarten
 ---
 
 import Tabs from '@theme/Tabs';
@@ -51,7 +51,7 @@ U kunt gedetailleerde informatie over het visualiseren en aanpassen van rasterka
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Underlay / Overlay configureren Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Underlay / Overlay configureren iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
@@ -84,9 +84,9 @@ Hoe u een SQ Lite-bestand toevoegt in de Android- en iOS-versie van OsmAnd kunt 
 
 Online tegels kunnen handig zijn wanneer u slechts een klein deel van de kaart of een specifiek type ervan nodig heeft om in een beperkt gebied te gebruiken, maar niet de hele regio wilt downloaden. Ze kunnen in eindeloze situaties van pas komen.
 
-![Online Maps](@site/static/img/plugins/online-maps/map_creator.jpg)
+![Online kaarten](@site/static/img/plugins/online-maps/map_creator.jpg)
 
-![Online Maps](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
+![Online kaarten](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
 
 ## Gerelateerde Artikelen {#related-articles}
@@ -95,7 +95,7 @@ Online tegels kunnen handig zijn wanneer u slechts een klein deel van de kaart o
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-### Common Issues and Solutions {#common-issues-and-solutions}
+### Veelvoorkomende Problemen en Oplossingen {#common-issues-and-solutions}
 
 1. Online Maps verschijnen niet in het Kaartbron-menu:  
   

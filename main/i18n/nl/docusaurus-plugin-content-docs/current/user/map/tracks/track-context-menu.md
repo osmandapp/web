@@ -1,5 +1,5 @@
 ---
-source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
@@ -243,7 +243,7 @@ Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle alge
 </Tabs>
 
 
-De functie *Activiteit* in OsmAnd stelt u in staat om opgenomen GPX-sporen en sporen opgeslagen via [Route plannen](../../plan-route/create-route.md) te taggen met specifieke activiteiten voor verdere analyse en organisatie in mappen.
+De functie *Activiteit* in OsmAnd stelt u in staat om opgenomen GPX-sporen en sporen opgeslagen via Route plannen te taggen met specifieke activiteiten voor verdere analyse en organisatie in mappen.
 
 - [Activiteitstags voor GPX-sporen](#description-and-info). [Opgenomen sporen](../../plugins/trip-recording.md#recording-settings) en sporen opgeslagen via [Route plannen](../../plan-route/create-route.md) ontvangen automatisch een activiteitstype op basis van het gebruikte profiel. Dit helpt bij het categoriseren en filteren later. U kunt de activiteit handmatig wijzigen indien nodig.
 - [Activiteitenfilter](../../personal/tracks/smart-folder.md#search-filter). U kunt de opgenomen GPX-sporen filteren op activiteit, waardoor u zich kunt concentreren op het vinden van specifieke soorten opnames, zoals alle fiets- of wandelsporen.
@@ -424,6 +424,7 @@ In dit *Punten* tabblad:
 - [Toon spoorpuntgegevens](#display-custom-gpx-tags) en wijzig uw spoorpunten (waypoints en routepunten), [verwijder ze en voeg](#points--waypoints) waypoints toe aan een spoor.
 - Maak en wijzig [Groep (map) van punten](#waypoint-groups).
 - Toon een waypoint op de kaart met behulp van het pin-icoon in de waypointlijst. De kaart centreert op het waypoint zonder de lijst te sluiten of het huidige zoomniveau te wijzigen.
+- Voeg foto's, video's en audionotities toe aan een waypoint met behulp van de kaart *Media* in het contextmenu (*alleen Android*). Zie het [artikel Favorieten](../../personal/favorites.md#media).
 
 
 ### Waypoint toevoegen aan een spoor {#add-waypoint-to-a-track}

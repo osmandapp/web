@@ -1,5 +1,5 @@
 ---
-source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
+source-hash: 7ab1b7c975524abc4cbcb3957975026e9c46aff353e0f442c1228dc360748218
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -23,14 +23,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 OsmAnd Cloud is een betaalde [**OsmAnd Pro**](../purchases/index.md)-functie <ProFeature />.
 :::
 
-:::note cross-platform  
+:::note platformonafhankelijk  
 OsmAnd Cloud is een onafhankelijke cloudopslagdienst en is *niet gebonden* aan een specifieke Android-, iOS- of webplatformversie.  
 :::  
 
 Met OsmAnd Cloud kunt u **persoonlijke instellingen en applicatiegegevens opslaan en synchroniseren** op meerdere apparaten. U kunt deze gegevens openen op elk apparaat waarop OsmAnd is geïnstalleerd, inclusief de desktop-app. Alle wijzigingen die in de app worden aangebracht, kunnen **gesynchroniseerd worden tussen platforms**, wat zorgt voor naadloze toegang tot uw opgeslagen gegevens.
 
 
-## Cross-Platform {#cross-platform}
+## Platformonafhankelijk {#cross-platform}
 
 Met OsmAnd Cloud kunt u uw gegevens back-uppen, herstellen en synchroniseren tussen Android, iOS en de [webversie](../web/index.md). Met cross-platformmogelijkheden kunt u **profielinstellingen**, **tracks**, **favorieten**, **OSM-bewerkingen/notities** en meer overzetten tussen apparaten. Bovendien stelt de **webversie** u in staat om routes te plannen en op te slaan voor later gebruik op verbonden apparaten.  
 
@@ -305,7 +305,7 @@ In dit menu kunt u selecteren welke gegevens en mappen u naar de Cloud wilt uplo
 
 1. **Instellingen**. Dit tabblad bevat al uw instellingen, zoals algemene voorkeuren, specifieke profielen, snelle acties, POI's en instellingen voor het vermijden van wegen.
 
-2. **Mijn Plaatsen**. Dit tabblad toont gegevens uit het [Mijn Plaatsen-menu](../personal/myplaces), inclusief favorieten, tracks, OSM-notities, markeringen en andere items.
+2. **Mijn Plaatsen**. Dit tabblad toont gegevens uit het [Mijn Plaatsen-menu](../personal/myplaces), inclusief favorieten, bijgevoegde media (alleen Android), tracks, OSM-notities, markeringen en andere items.
 
 3. **Bronnen**. Hier kunt u kiezen om bronnen zoals favorieten, route-informatie, gesproken aanwijzingen en extra items te back-uppen.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
+source-hash: b2b4863468543cee690b0a3568b81ee3415698752aaf50fecc63c1797c031476
 sidebar_position: 4
 title:  Kaarten & Gegevens
 ---
@@ -38,7 +38,7 @@ Op dit moment zijn de volgende oplossingen beschikbaar:
 
 #### 1. Migreer de OsmAnd-gegevensopslagmap naar “Intern app-geheugen” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- U kunt de opslagmap wijzigen door de optie ***Intern app-geheugen*** te selecteren in *Menu → Instellingen → OsmAnd-instellingen → Gegevensopslagmap*.
+- U kunt de opslagmap wijzigen door de optie ***Intern app-geheugen*** te selecteren in *Menu → Instellingen → OsmAnd-instellingen → Gegevensopslag → Hoofdopslag*.
 
 - Houd er echter rekening mee dat het interne geheugen vaak beperkt is. Als tijdelijke oplossing kunt u belangrijke bestanden naar het interne geheugen verplaatsen en zelden gebruikte kaarten op de SD-kaart bewaren. Gebruik een bestandsbeheerder om deze bestanden handmatig over te zetten wanneer dat nodig is.
 
@@ -46,7 +46,7 @@ Het ontwikkelingsteam is actief op zoek naar efficiëntere oplossingen om de pre
 
 #### 2. Gebruik de "Download"-map van de SD-kaart {#2-use-the-sd-cards-download-folder}
 
-U kunt proberen het probleem van het traag laden van kaarten op te lossen door de **Download**-map van de SD-kaart op te geven voor OsmAnd-opslag onder *Menu → Instellingen → OsmAnd-instellingen → Gegevensopslagmap → Handmatig opgegeven*. De volgende paden zijn mogelijk:
+U kunt proberen het probleem van het traag laden van kaarten op te lossen door de **Download**-map van de SD-kaart op te geven voor OsmAnd-opslag onder *Menu → Instellingen → OsmAnd-instellingen → Gegevensopslag → Hoofdopslag → Handmatig opgegeven*. De volgende paden zijn mogelijk:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Dit pad kan fouten veroorzaken bij het openen van meerdere bestanden. U kunt bijvoorbeeld de Wereldoverzichtskaart downloaden, maar andere regio's verschijnen mogelijk niet.
@@ -66,11 +66,12 @@ Android is strenger geworden met opslagrechten, waardoor de toegang tot app-spec
 
 OsmAnd heeft echter niet de *Toegang tot alle bestanden*-machtiging (vanwege de beperkingen van Google), wat de keuze van mappen beperkt. Een oplossing is het gebruik van de "Media"-opslagmap, waaraan Android doorgaans bredere lees-/schrijftoegang verleent. Om dit te doen:
 
-- Ga naar *OsmAnd’s Instellingen → OsmAnd-instellingen → Gegevensopslagmap* en bekijk de beschikbare opslagruimtes. Gebruik de indicator voor vrije ruimte om de doelopslag te identificeren, vaak aangeduid als *Externe opslag 2*.
+- Ga naar *OsmAnd’s Instellingen → OsmAnd-instellingen → Gegevensopslag → Hoofdopslag* en bekijk de beschikbare opslagruimtes. Gebruik de indicator voor vrije ruimte om de doelopslag te identificeren, vaak aangeduid als *Externe opslag 2*.
+- Indien beschikbaar, selecteer *Zichtbare externe opslag* voor uw SD-kaart en verplaats uw gegevens wanneer daarom wordt gevraagd. Volg anders de onderstaande handmatige stappen.
 - Noteer het huidige mappad, dat eruit kan kijken als */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Schakel over naar de optie *Handmatig opgegeven* en wijzig het pad naar een voor media toegankelijke map. Op veel systemen werkt het wijzigen van */Android/data/* naar */media/* (bijv. ***/storage/xxxx-xxxx/media***). Sommige systemen vereisen mogelijk andere padaanpassingen.
+- Schakel over naar de optie *Handmatig opgegeven* en wijzig het pad naar een voor media toegankelijke map. Op veel systemen werkt het wijzigen van */Android/data/* naar */Android/media/* (bijv. ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***). Sommige systemen vereisen mogelijk andere padaanpassingen.
 
-Een correct pad zal OsmAnd niet vragen om schrijfrechtenfouten. Voordat u deze wijzigingen aanbrengt, moet u ervoor zorgen dat OsmAnd de juiste opslagrechten heeft, inclusief de "Media"-opslagmachtiging, onder de **Apps**-instellingen van Android. In nieuwere Android-versies kunnen deze machtigingen zich in geavanceerde of verborgen menu's bevinden.
+Een correct pad zal OsmAnd niet vragen om schrijfrechtenfouten. Voor deze map zijn geen extra opslagrechten vereist.
 
 ### Kaartgegevens verwijderen na de app-update (als “Multiuser Storage 1” is geselecteerd) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 

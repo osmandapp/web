@@ -1,5 +1,5 @@
 ---
-source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
+source-hash: d6a31c4940f73f3e1b07d66705ee71fb7de3941616a4621cd534af1b863917ad
 sidebar_position: 1
 title:  Eerste Stappen
 ---
@@ -482,13 +482,13 @@ Tik op een actie-icoon om de applicatie onmiddellijk te starten met de geselecte
 ![Snelkoppelingen](@site/static/img/steps/shortcuts_3_andr.png) ![Snelkoppelingen](@site/static/img/steps/shortcuts_4_andr.png)
 
 
-## Offline Help {#offline-help}
+## Offline hulp {#offline-help}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_screen_andr.png)
+![Offline hulp Android schermafbeelding](@site/static/img/steps/offline_help_screen_andr.png)
 
 </TabItem>
 
@@ -501,8 +501,8 @@ Tik op een actie-icoon om de applicatie onmiddellijk te starten met de geselecte
 </Tabs>
 
 In het *Help-menu* vindt u artikelen van onze site [www.osmand.net/docs](https://osmand.net/docs/intro/). Na de eerste download (internetverbinding vereist) zijn de helpartikelen offline beschikbaar.  
-Het eerste subonderwerp, *Offline Help*, bevat de **Meest bekeken** (of populaire) artikelen onder onze gebruikers. Deze artikelen worden weergegeven in de taal die is ingesteld voor de applicatie, als deze taal wordt ondersteund op onze documentatiewebsite. Momenteel ondersteunde talen zijn: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, en *<Translate android="true" ids="lang_uk"/>*. Als u de applicatietaal wijzigt, start dan OsmAnd opnieuw om de documentatie in de geselecteerde taal te openen. Als een vertaling niet beschikbaar is, wordt automatisch de Engelse versie van de pagina weergegeven. De secties **Gebruikershandleiding** en **Probleemoplossing** hebben dezelfde structuur als op de website.  
-In het *Help-menu* vindt u ook nuttige links naar de sociale netwerken van OsmAnd, versie-informatie over uw applicatie, release-opmerkingen en contactgegevens voor ondersteuning. Via Help kunt u ook [logcat- en crashlogs](../troubleshooting/crash-logs.md#crash-and-logcat-logs) verzenden.  
+Het eerste subonderwerp, *Offline hulp*, bevat de **Meest bekeken** (of populaire) artikelen onder onze gebruikers. Deze artikelen worden weergegeven in de taal die is ingesteld voor de applicatie, als deze taal wordt ondersteund op onze documentatiewebsite. Momenteel ondersteunde talen zijn: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, en *<Translate android="true" ids="lang_uk"/>*. Als u de applicatietaal wijzigt, start dan OsmAnd opnieuw om de documentatie in de geselecteerde taal te openen. Als een vertaling niet beschikbaar is, wordt automatisch de Engelse versie van de pagina weergegeven. De secties **Gebruikershandleiding** en **Probleemoplossing** hebben dezelfde structuur als op de website.  
+In het *Help-menu* vindt u ook nuttige links naar de sociale netwerken van OsmAnd, versie-informatie over uw applicatie, release-opmerkingen en contactgegevens voor ondersteuning. Via Help kunt u ook [app- en crashlogs](../troubleshooting/crash-logs.md#crash-and-app-logs) verzenden.  
 
 ### Menu {#menu}
 
@@ -510,7 +510,7 @@ In het *Help-menu* vindt u ook nuttige links naar de sociale netwerken van OsmAn
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_menu_andr.webp)
+![Offline hulp Android schermafbeelding](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
@@ -533,7 +533,7 @@ In het *Help-menu* vindt u ook nuttige links naar de sociale netwerken van OsmAn
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
+![Offline hulp Android schermafbeelding](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
 
 </TabItem>
 
@@ -554,7 +554,7 @@ De meest bekeken artikelen onder onze gebruikers verwijzen naar de artikelen in 
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/guide_andr.png)
+![Offline hulp Android schermafbeelding](@site/static/img/steps/guide_andr.png)
 
 </TabItem>
 
@@ -575,7 +575,7 @@ De sectie **Gebruikershandleiding** van het Help-menu is een complete handleidin
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_troubleshooting_andr.png)
+![Offline hulp Android schermafbeelding](@site/static/img/steps/offline_help_troubleshooting_andr.png)
 
 </TabItem>
 
@@ -603,7 +603,7 @@ Oplossingen en tips voor het oplossen van veelvoorkomende problemen. Als u een s
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_contact_us_andr.png)
+![Offline hulp Android schermafbeelding](@site/static/img/steps/offline_help_contact_us_andr.png)
 
 </TabItem>
 
@@ -623,7 +623,7 @@ Hiermee kunt u vragen stellen of suggesties doen.
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_help_report_andr.webp)
+![Offline hulp Android schermafbeelding](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
@@ -645,7 +645,7 @@ Hiermee kunt u vragen stellen of suggesties doen.
 
 <TabItem value="android" label="Android">
 
-![Offline help Android schermafbeelding](@site/static/img/steps/offline_about_1_andr.png)
+![Offline hulp Android schermafbeelding](@site/static/img/steps/offline_about_1_andr.png)
 
 </TabItem>
 
