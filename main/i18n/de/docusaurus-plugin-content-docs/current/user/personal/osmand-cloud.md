@@ -1,5 +1,5 @@
 ---
-source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
+source-hash: 7ab1b7c975524abc4cbcb3957975026e9c46aff353e0f442c1228dc360748218
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Übersicht {#overview}
 
 :::info Pro-Funktion
-OsmAnd Cloud ist eine kostenpflichtige Funktion von [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
+OsmAnd Cloud ist eine [**OsmAnd Pro**](../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
 :::
 
 :::note cross-platform  
@@ -260,7 +260,7 @@ Die Funktion **Papierkorb** ermöglicht es Ihnen, Dateien anzuzeigen und zu verw
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
+Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
 ![Änderungen in OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
@@ -268,7 +268,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_s
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
+Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
 ![Änderungen in OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)  
 
@@ -305,7 +305,7 @@ In diesem Menü können Sie auswählen, welche Daten und Ordner in die Cloud hoc
 
 1. **Einstellungen**. Dieser Tab enthält alle Ihre Einstellungen, wie allgemeine Präferenzen, spezifische Profile, Schnellaktionen, POIs und Einstellungen zur Straßenvermeidung.
 
-2. **Meine Orte**. Dieser Tab listet Daten aus dem Menü [Meine Orte](../personal/myplaces) auf, einschließlich Favoriten, Tracks, OSM-Notizen, Markierungen und anderer Elemente.
+2. **Meine Orte**. Dieser Tab listet Daten aus dem Menü [Meine Orte](../personal/myplaces) auf, einschließlich Favoriten, angehängte Medien (nur Android), Tracks, OSM-Notizen, Markierungen und anderer Elemente.
 
 3. **Ressourcen**. Hier können Sie wählen, ob Sie Ressourcen wie Favoriten, Routing-Informationen, Sprachansagen und zusätzliche Elemente sichern möchten.
 

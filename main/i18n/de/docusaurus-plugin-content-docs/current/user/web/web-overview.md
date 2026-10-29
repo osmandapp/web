@@ -1,5 +1,5 @@
 ---
-source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: Einführung
 title: Einführung in den Web-Planer
@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Der **Web-Planer**, auch bekannt als das [**OsmAnd Kartenportal**](https://osmand.net/map), ist eine browserbasierte Erweiterung der OsmAnd-Mobil-App. Es ermöglicht Benutzern, globale Karten anzuzeigen, Routen zu planen, die Navigation zu simulieren, persönliche Daten zu verwalten und über die Cloud auf synchronisierte Inhalte von ihren Geräten zuzugreifen.
 
-Entwickelt als plattformübergreifender Begleiter zu OsmAnd für Android und iOS, hilft das Web-Portal Benutzern, Reisen zu planen, Tracks zu analysieren, Gelände anzuzeigen und Dateien mit jedem Desktop- oder Tablet-Browser zu verwalten – ohne eine App installieren zu müssen.
+Entwickelt als plattformübergreifender Begleiter zu OsmAnd for Android und iOS, hilft das Web-Portal Benutzern, Reisen zu planen, Tracks zu analysieren, Gelände anzuzeigen und Dateien mit jedem Desktop- oder Tablet-Browser zu verwalten – ohne eine App installieren zu müssen.
 
 OsmAnd Web ist eng mit dem **OsmAnd Cloud**-Dienst integriert, der die Synchronisierung von Favoriten, Tracks und Backups über Geräte und Plattformen hinweg ermöglicht. Benutzer mit **OsmAnd Start** (kostenlos) oder **OsmAnd Pro** (kostenpflichtig) Konten können dieses Ökosystem voll ausnutzen, indem sie Daten zwischen Mobilgeräten und dem Web synchronisieren. Eine detaillierte Vergleich der *Start*- und *Pro*-Funktionen finden Sie im Abschnitt [Abonnement-Zugang](#subscription-accesses) unten.
 

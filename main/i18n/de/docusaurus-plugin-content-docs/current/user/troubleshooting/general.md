@@ -1,5 +1,5 @@
 ---
-source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
+source-hash: 7a4ec38811965699d4bf8be48f33fcce4e1e12973b13ab13ffa374909cfef793
 sidebar_position: 2
 title:  Allgemein
 ---
@@ -91,6 +91,20 @@ Wenn Sie die Größe von Kartenbuttons manuell anpassen möchten, verwenden Sie 
 Wenn die Benutzeroberfläche weiterhin größer als erwartet erscheint, überprüfen Sie *Android-Systemeinstellungen → Anzeige → Anzeigegröße und Text* und passen Sie die Anzeigeeinstellungen nach Bedarf an.
 
 
+### OsmAnd füllt den Bildschirm im Querformat auf dem iPad nicht aus (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+OsmAnd unterstützt sowohl Hoch- als auch Querformat auf dem iPad und folgt der Systemrotation. Wenn die App im Hochformat den Bildschirm füllt, aber im Querformat als kleineres Fenster angezeigt wird, liegt dies am Fenster-Modus von iPadOS 26, nicht an OsmAnd.
+
+Im *Fenster-Apps*-Modus merkt sich iPadOS die Größe jedes App-Fensters. Sobald das OsmAnd-Fenster im Querformat angepasst wurde, behält die App diese Fenstergröße im Querformat bei, während sie im Hochformat weiterhin den Bildschirm füllt.
+
+Um OsmAnd wieder den Bildschirm füllen zu lassen, verwenden Sie eine der folgenden Optionen:
+
+- **Fenster erweitern.** Mit OsmAnd im Querformat geöffnet, tippen Sie auf die kleine Pille oben im Fenster. Drei Schaltflächen erscheinen: *Schließen*, *Minimieren* und *Zoom*. Tippen Sie auf *Zoom*, um die App auf den gesamten Bildschirm zu erweitern. Die App behält die Vollbildgröße nach dem Drehen des iPads bei.
+- **Fenster-Modus für alle Apps deaktivieren.** Gehen Sie zu *iPad-Einstellungen → Multitasking & Gesten* und wählen Sie *Vollbild-Apps* anstelle von *Fenster-Apps*. Alle Apps, einschließlich OsmAnd, werden immer im Vollbildmodus geöffnet.
+
+Stellen Sie außerdem sicher, dass OsmAnd nicht im *Split View* oder *Slide Over* neben einer anderen App geöffnet ist.
+
+
 ## Sonstiges {#other}
 
 ### Problem mit der GPS-Verbindung (Android) {#problem-with-the-gps-connection-android}
@@ -121,7 +135,7 @@ Wenn Sie auf ein Problem stoßen, bei dem die mit Ihrem OsmAnd Pro-Kauf verknüp
 
 2. **E-Mail der OsmAnd-App überprüfen**. Überprüfen Sie die E-Mail-Adresse in Ihrer OsmAnd-App erneut, um sicherzustellen, dass sie mit Ihrer aktuellen Google Play-E-Mail übereinstimmt. Dies kann durch Öffnen der App und Navigieren zu den Kontoeinstellungen erfolgen.
 
-3. **Käufe wiederherstellen**. Überprüfen Sie die Verfügbarkeit und Angemessenheit Ihres Kaufs. Gehen Sie dazu zu OsmAnd *Menü → Einstellungen → Käufe*. Wenn die angezeigten Daten nicht Ihren Erwartungen entsprechen, versuchen Sie, [Käufe wiederherzustellen](./purchases_payments.md#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services).
+3. **Käufe wiederherstellen**. Überprüfen Sie die Verfügbarkeit und Angemessenheit Ihres Kaufs. Gehen Sie dazu zu OsmAnd *Menü → Einstellungen → Käufe*. Wenn die angezeigten Daten nicht Ihren Erwartungen entsprechen, versuchen Sie, [Käufe wiederherstellen](./purchases_payments.md#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services).
 
 4. **App-Cache und -Daten löschen**. Leeren Sie den Cache und die Daten der OsmAnd-App, indem Sie zu den *Einstellungen → Apps → OsmAnd → Speicher → Cache leeren und Daten löschen* Ihres Geräts gehen. Dies aktualisiert die App und entfernt alle verbleibenden Probleme des alten Kontos.
 

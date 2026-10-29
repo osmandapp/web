@@ -1,5 +1,5 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -72,7 +72,7 @@ Die Detailansicht bietet Informationen, die mit dem ausgewählten Ort verbunden 
 
 ## Favoritenaktionen {#favorites-actions}
 
-[Um hinzuzufügen](../personal/favorites.md#manage-favorites) einen neuen Favoritenpunkt, klicken Sie mit der rechten Maustaste auf den Bildschirm. 
+[Um hinzuzufügen](../personal/favorites.md#manage-favorites) einen neuen Favoritenpunkt, klicken Sie mit der rechten Maustaste auf den Bildschirm. Wenn der Favorit nicht gespeichert werden kann, enthält die Fehlermeldung den vom Server gemeldeten Grund, zum Beispiel, dass nicht genügend Speicherplatz in [OsmAnd Cloud](../personal/osmand-cloud.md) vorhanden ist.
 
 Um einen bestehenden Favoriten zu bearbeiten, klicken Sie auf den Favoritenpunkt entweder direkt auf der Karte oder wählen Sie ihn aus einem Favoritenordner aus. Dies öffnet das Details-Panel, in dem die Bearbeitungsaktion verfügbar ist. Die Bearbeitung kann auch aus dem Drei-Punkte-Menü (⋮) neben dem Favoriten in der Favoritenliste gestartet werden.
 

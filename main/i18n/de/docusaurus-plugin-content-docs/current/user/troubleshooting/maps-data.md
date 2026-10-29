@@ -1,5 +1,5 @@
 ---
-source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
+source-hash: b2b4863468543cee690b0a3568b81ee3415698752aaf50fecc63c1797c031476
 sidebar_position: 4
 title:  Karten & Daten
 ---
@@ -32,13 +32,13 @@ Je nach den in der freigegebenen Google Maps-URL verfügbaren Informationen kann
 
 ### Langsames Laden von Karten auf Android 11, 12 (SD-Karte) {#maps-slowly-loading-on-android-11-12-sd-card}
 
-Aufgrund der neuen [Regeln für den Speicherzugriff, die in Android 11 und 12 eingeführt wurden](https://www.androidauthority.com/android-12-privacy-features-1225859/), können Benutzer eine langsamere Leistung beim Zugriff auf Karten feststellen, die auf SD-Karten gespeichert sind. Diese Änderungen können auch zu Sichtbarkeits- und Zugriffsbeschränkungen für Dateien in SD-Kartenordnern führen. Weitere Diskussionen und technische Einblicke finden Sie unter den folgenden Links: [Reddit-Diskussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
+Aufgrund der neuen [Regeln für den Speicherzugriff, die in Android 11 und 12 eingeführt wurden](https://www.androidauthority.com/android-12-privacy-features-1225859/), können Benutzer eine langsamere Leistung beim Zugriff auf Karten feststellen, die auf SD-Karten gespeichert sind. Diese Änderungen können auch zu Sichtbarkeits- und Zugriffsbeschränkungen für Dateien in SD-Kartenordnen führen. Weitere Diskussionen und technische Einblicke finden Sie unter den folgenden Links: [Reddit-Diskussion](https://www.reddit.com/r/androiddev/comments/kpn68k/android_11_very_slow_file_access_performance/), [Github #1](https://github.com/osmandapp/OsmAnd/issues/10453), [Github #2](https://github.com/osmandapp/OsmAnd/issues/12046), [Github #3](https://github.com/osmandapp/OsmAnd/issues/13943).
 
 Im Moment sind die folgenden Lösungen verfügbar:
 
 #### 1. Migrieren Sie den OsmAnd-Datenspeicherordner in den „Internen App-Speicher“ {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- Sie können den Speicherordner ändern, indem Sie die Option ***Interner App-Speicher*** unter *Menü → Einstellungen → OsmAnd-Einstellungen → Datenspeicherordner* auswählen.
+- Sie können den Speicherordner ändern, indem Sie die Option ***Interner App-Speicher*** unter *Menü → Einstellungen → OsmAnd-Einstellungen → Datenspeicher → Hauptspeicher* auswählen.
 
 - Beachten Sie jedoch, dass der interne Speicher oft begrenzt ist. Als Workaround können Sie wichtige Dateien in den internen Speicher verschieben, während selten genutzte Karten auf der SD-Karte verbleiben. Verwenden Sie einen Dateimanager, um diese Dateien bei Bedarf manuell zu übertragen.
 
@@ -46,7 +46,7 @@ Das Entwicklungsteam sucht aktiv nach effizienteren Lösungen, um die Leistung v
 
 #### 2. Verwenden Sie den „Download“-Ordner der SD-Karte {#2-use-the-sd-cards-download-folder}
 
-Sie können versuchen, das Problem des langsamen Ladens von Karten zu beheben, indem Sie den **Download**-Ordner der SD-Karte für den OsmAnd-Speicher unter *Menü → Einstellungen → OsmAnd-Einstellungen → Datenspeicherordner → Manuell festgelegt* angeben. Die folgenden Pfade sind möglich:
+Sie können versuchen, das Problem des langsamen Ladens von Karten zu beheben, indem Sie den **Download**-Ordner der SD-Karte für den OsmAnd-Speicher unter *Menü → Einstellungen → OsmAnd-Einstellungen → Datenspeicher → Hauptspeicher → Manuell festgelegt* angeben. Die folgenden Pfade sind möglich:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Dieser Pfad kann Fehler verursachen, wenn auf mehrere Dateien zugegriffen wird. Zum Beispiel können Sie möglicherweise die Weltübersichtskarte herunterladen, aber andere Regionen werden möglicherweise nicht angezeigt.
@@ -66,11 +66,12 @@ Android ist strenger mit den Speicherberechtigungen geworden und beschränkt oft
 
 OsmAnd hat jedoch nicht die Berechtigung *Zugriff auf alle Dateien* (aufgrund von Googles Einschränkungen), was die Auswahl der Ordner einschränkt. Ein Workaround ist die Verwendung des "Medien"-Speicherordners, dem Android normalerweise einen breiteren Lese-/Schreibzugriff gewährt. Um dies zu tun:
 
-- Gehen Sie zu *OsmAnd-Einstellungen → OsmAnd-Einstellungen → Datenspeicherordner* und überprüfen Sie die verfügbaren Speicherbereiche. Verwenden Sie die Anzeige für den freien Speicherplatz, um den Zielspeicher zu identifizieren, der oft als *Externer Speicher 2* bezeichnet wird.
+- Gehen Sie zu *OsmAnd-Einstellungen → OsmAnd-Einstellungen → Datenspeicher → Hauptspeicher* und überprüfen Sie die verfügbaren Speicherbereiche. Verwenden Sie die Anzeige für den freien Speicherplatz, um den Zielspeicher zu identifizieren, der oft als *Externer Speicher 2* bezeichnet wird.
+- Falls verfügbar, wählen Sie *Sichtbarer externer Speicher* für Ihre SD-Karte aus und verschieben Sie Ihre Daten bei Aufforderung. Andernfalls folgen Sie den manuellen Schritten unten.
 - Notieren Sie sich den aktuellen Ordnerpfad, der etwa so aussehen könnte: */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Wechseln Sie zur Option *Manuell festgelegt* und ändern Sie den Pfad zu einem für Medien zugänglichen Ordner. Auf vielen Systemen funktioniert die Änderung von */Android/data/* zu */media/* (z. B. ***/storage/xxxx-xxxx/media***). Einige Systeme erfordern möglicherweise andere Pfadänderungen.
+- Wechseln Sie zur Option *Manuell festgelegt* und ändern Sie den Pfad zu einem für Medien zugänglichen Ordner. Auf vielen Systemen funktioniert die Änderung von */Android/data/* zu */Android/media/* (z. B. ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***). Einige Systeme erfordern möglicherweise andere Pfadänderungen.
 
-Ein korrekter Pfad wird OsmAnd nicht mit Schreibberechtigungsfehlern konfrontieren. Bevor Sie diese Änderungen vornehmen, stellen Sie sicher, dass OsmAnd die entsprechenden Speicherberechtigungen hat, einschließlich der "Medien"-Speicherberechtigung, unter den **Apps**-Einstellungen von Android. In neueren Android-Versionen können sich diese Berechtigungen in erweiterten oder versteckten Menüs befinden.
+Ein korrekter Pfad wird OsmAnd nicht mit Schreibberechtigungsfehlern konfrontieren. Für diesen Ordner sind keine zusätzlichen Speicherberechtigungen erforderlich.
 
 ### Löschen von Kartendaten nach dem App-Update (wenn „Multiuser Storage 1“ ausgewählt ist) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 

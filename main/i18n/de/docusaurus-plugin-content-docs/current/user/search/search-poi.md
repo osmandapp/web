@@ -1,5 +1,5 @@
 ---
-source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
+source-hash: 97f2c33a4074c4cc756ff122bf583a92e9a6275e2f47dd97dda9ca19c19cf16f
 sidebar_position: 4
 title:  POI-Suche
 ---
@@ -82,8 +82,8 @@ Suchergebnisse können zusätzliche Standortinformationen wie die Stadt, in der 
 
 
 :::note
-Um einige dieser Aufgaben zu erledigen (Adressen, POIs finden), benötigen Sie die Offline-Vektorkartendatei. Zunächst basiert die Suche auf Daten, die sich auf der Karte im sichtbaren Bereich des Gerätebildschirms befinden. Wenn Sie nichts finden, schlägt OsmAnd vor, den Suchradius zu vergrößern.
-:::  
+Um einige dieser Aufgaben zu erledigen (Adressen, POIs finden), benötigen Sie die Offline-Vektorkartendatei. Zunächst basiert die Suche auf Daten, die sich auf der Karte im [sichtbaren Bereich des Gerätebildschirms](./search-all.md#how-to-use) befinden.
+:::
 
 ### Suchtipps {#search-tips}
 
@@ -198,30 +198,30 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 Mit der **Filter**-Funktion können Sie die notwendigen Merkmale auswählen und erhalten als Ergebnis eine Liste, die nur relevante Objekte enthält. Um den Filter zu verwenden:
 
 - Wählen Sie die gewünschte Kategorie aus der Kategorienliste aus.
-- Tippen Sie auf dem sich öffnenden Bildschirm auf das Symbol, das den Filter anzeigt. Es befindet sich unter dem Eingabefeld, neben *Auf der Karte anzeigen*.
+- Tippen Sie auf dem sich öffnenden Bildschirm auf das Symbol, das den Filter anzeigt. Es befindet sich unter dem Eingabefeld, neben dem Chip *Sortieren nach* auf Android und neben *Auf der Karte anzeigen* auf iOS.
 - Wählen Sie im Filter die Art der Merkmale aus.
 
-![POI-Suche Android](@site/static/img/search/search_poi_filter_icon_andr.png)  
+![POI-Suche Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
 Ein Filter kann aus einer ganzen Reihe von Elementen bestehen, deren Vorhandensein von der ausgewählten Kategorie abhängt. Jede Kategorie hat eine Reihe von spezifischen Filtern, die in Ordnern nach Typ geordnet sind. Es gibt insgesamt *21 Standardkategorien*. Einige davon sind hier aufgeführt:
 
  1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Unterkunft](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) umfasst Einrichtungen, die eine vorübergehende Unterkunft bieten, wie Hotels, Motels, Hostels, Pensionen und Campingplätze. Diese Orte bieten Annehmlichkeiten und Dienstleistungen für einen komfortablen Aufenthalt auf Reisen.  
-        Enthält *9* Filtertypen: **Kühlschrank** (hat *2* Werte), **Heizung** (hat *7* Werte), **Internetzugangstyp** (hat *3* Werte), **Matratze** (hat *2* Werte), **Zahlungsart** (mehr als *10* Werte), **Dusche** (hat *1* Wert), **Rauchen** (hat *6* Werte), **Sternebewertung** (hat *10* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.
+        Enthält *10* Filtertypen: **Kühlschrank** (hat *2* Werte), **Heizung** (hat *7* Werte), **Internetzugangstyp** (hat *3* Werte), **Internetzugangstyp** (hat *3* Werte), **Matratze** (hat *2* Werte), **Zahlungsart** (mehr als *10* Werte), **Dusche** (hat *1* Wert), **Rauchen** (hat *6* Werte), **Sternebewertung** (hat *10* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.
 
  2. **Café und Restaurant**. [Café](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) und [Restaurants](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) repräsentieren Orte der Gastronomie.  
-        Enthält *16* Filtertypen: **Wickeltisch** (hat *3* Werte), **Kaffee** (hat *2* Werte), **Küche** (mehr als *10* Werte), **Lieferung** (hat *1* Wert), **Diät** (hat *8* Werte), **Gericht** (mehr als *10* Werte), **Trinkwasser nachfüllen** (hat *1* Wert), **Drive-in** (hat *1* Werte), **Internetzugangstyp** (hat *3* Werte), **Hausbrauerei** (hat *1* Wert), **Bio-Produkte** (hat *2* Werte), **Außenbestuhlung** (hat *1* Wert), **Zahlungsart** (mehr als *10* Werte), **Rauchen** (hat *6* Werte), **Zum Mitnehmen** (hat *1* Wert), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.
+        Enthält *23* Filtertypen: **Klimaanlage** (hat *2* Werte), **Café** (hat *1* Wert), **Wickeltisch** (hat *3* Werte), **Kaffee** (hat *2* Werte), **Küche** (mehr als *10* Werte), **Lieferung** (hat *1* Wert), **Diät** (hat *7* Werte), **Gericht** (mehr als *10* Werte), **Trinkwasser nachfüllen** (hat *1* Wert), **Drive-in** (hat *1* Wert), **Internetzugangstyp** (hat *3* Werte), **Internetzugangstyp** (hat *3* Werte), **Live-Musik** (hat *1* Wert), **Hausbrauerei** (hat *1* Wert), **Bio-Produkte** (hat *2* Werte), **Außenbestuhlung** (hat *1* Wert), **Zahlungsart** (mehr als *10* Werte), **Reservierung** (hat *5* Werte), **Rauchen** (hat *6* Werte), **Zum Mitnehmen** (hat *1* Wert), **Thema** (mehr als *20* Werte), **Typ** (hat *3* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.
 
  3. **Ladestation**. Eine [Ladestation](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) ist eine Infrastruktureinrichtung, an der Besitzer von Elektrofahrzeugen ihre Autos, Motorräder oder andere Elektrofahrzeuge aufladen können. Diese Punkte bieten Ladegeräte und entsprechende Anschlüsse, um die Fahrzeugbatterien mit Energie zu versorgen.
-        Enthält *35* Filtertypen: **Fahrradzugang** (hat *1* Wert), **Buszugang** (hat *1* Wert), **LKW-Zugang** (hat *5* Werte), **PKW-Zugang** (hat *1* Wert), **Rollerzugang** (hat *1* Wert), **Authentifizierung per App** (hat *1* Wert), **Authentifizierung per Chipkarte** (hat *1* Wert), **Kontaktlose Authentifizierung** (hat *1* Wert), **Authentifizierung per Schlüssel** (hat *1* Wert), **Authentifizierung erforderlich** (hat *1* Wert), **Authentifizierung per Telefonanruf** (hat *1* Wert) **Authentifizierung per Kurznachricht** (hat *1* Wert), **Gebühr** (hat *2* Werte), **Internetzugangstyp** (hat *3* Werte), **Internetzugangstyp** (hat *3* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet und andere.  
+        Enthält *36* Filtertypen: **Authentifizierung per App** (hat *1* Wert), **Authentifizierung per Chipkarte** (hat *1* Wert), **Authentifizierung per Schlüssel** (hat *1* Wert), **Authentifizierung per Telefonanruf** (hat *1* Wert), **Authentifizierung per Kurznachricht** (hat *1* Wert), **Authentifizierung nicht erforderlich** (hat *1* Wert), **Fahrradzugang** (hat *1* Wert), **Buszugang** (hat *2* Werte), **Kontaktlose Authentifizierung** (hat *1* Wert), **Gebühr** (hat *2* Werte), **LKW-Zugang** (hat *5* Werte), **Internetzugangstyp** (hat *3* Werte), **Internetzugangstyp** (hat *3* Werte), **PKW-Zugang** (hat *1* Wert), **Parkgebühr** (hat *2* Werte), **Zahlungsart** (mehr als *10* Werte), **Rollerzugang** (hat *1* Wert), **Steckdose** (mehr als *20* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), **Steckerausgangs- und Spannungsfilter für einzelne Steckertypen** (*17* Filter, jeweils *3* Werte), Jetzt geöffnet / 24/7 geöffnet und andere.  
 
  4. **Gemischtwarenladen und Supermarkt**. [Gemischtwarenladen](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) und [Supermarkt](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) repräsentieren Einzelhandelseinrichtungen.
-        Enthält *13* Filtertypen: **Großeinkauf** (hat *2* Werte), **Bargeldabhebung** (hat *5* Werte), **Wickeltisch** (hat *3* Werte), **Kaffee** (hat *2* Werte), **Lieferung** (hat *1* Wert), **Diät** (hat *8* Werte), **Eiscreme** (hat *1* Wert), **Bio-Produkte** (hat *2* Werte), **Zahlungsart** (mehr als *10* Werte), **Second-Hand-Filter** (hat *2* Werte), **Selbstbedienungskasse** (hat *2* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.
+        Enthält *17* Filtertypen: **Großeinkauf** (hat *2* Werte), **Café** (hat *1* Wert), **Bargeldabhebung** (hat *4* Werte), **Wickeltisch** (hat *3* Werte), **Kaffee** (hat *2* Werte), **Lieferung** (hat *1* Wert), **Diät** (hat *7* Werte), **Drive-in** (hat *1* Wert), **Eiscreme** (hat *1* Wert), **Internetzugangstyp** (hat *3* Werte), **Mitgliedschaft erforderlich** (hat *2* Werte), **Bio-Produkte** (hat *2* Werte), **Zahlungsart** (mehr als *10* Werte), **Second-Hand-Filter** (hat *2* Werte), **Selbstbedienungskasse** (hat *2* Werte), **Typ** (hat *3* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.
 
  5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Notfall](https://wiki.openstreetmap.org/wiki/Key:emergency) umfasst Einrichtungen und Orte, die mit Notdiensten wie Krankenhäusern, Polizeistationen, Feuerwachen und Erste-Hilfe-Zentren verbunden sind.  
         Enthält keine Filter.
 
  6. **Tankstelle**. Eine [Tankstelle](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), auch bekannt als Tankstelle, Benzinstation, Tankstelle und Tankgarage. Es ist die Einzelhandelseinrichtung, in der Kraftfahrzeuge betankt werden können.  
-        Enthält *13* Filtertypen: **Autowaschanlage** (hat *2* Werte), **Bargeldabhebung** (hat *5* Werte), **Druckluft** (hat *1* Werte), **Kraftstoffart (Luftfahrt)** (hat mehr als *20* Werte), **Tankkarten** (hat *5* Werte), **Zahlungsart** (hat mehr als *20* Werte), **Selbstbedienungskasse** (hat *2* Werte), **Schneemobilzugang** (hat *3* Werte), **Toilette** (mehr als *1* Werte), **Staubsauger** (hat *1* Werte), **Automatische Zapfsäule** (hat *1* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.  
+        Enthält *17* Filtertypen: **Automatische Zapfsäule** (hat *1* Wert), **Café** (hat *1* Wert), **Autowaschanlage** (hat *2* Werte), **Bargeldabhebung** (hat *4* Werte), **Druckluft** (hat *1* Wert), **Tankkarten** (hat *6* Werte), **Kraftstoffart** (mehr als *20* Werte), **Kraftstoffart (Luftfahrt)** (hat *4* Werte), **Internetzugangstyp** (hat *3* Werte), **Zahlungsart** (hat mehr als *20* Werte), **Toilette** (hat *1* Wert), **Selbstbedienungskasse** (hat *2* Werte), **Selbstbedienung** (hat *2* Werte), **Schneemobilzugang** (hat *3* Werte), **Typ** (hat *3* Werte), **Staubsauger** (hat *1* Wert), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.  
 
  7. **Finanzen**. [Finanzen](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) wird für Büros von Unternehmen im Finanzsektor verwendet.  
         Enthält *5* Filtertypen.  
@@ -326,9 +326,7 @@ Nutzung der Online-Suche:
 - Die Online-Suche ist praktisch, wenn keine Karten der Region vorhanden sind und es nicht möglich ist, sie herunterzuladen.
 - *Erfordert eine konstante und stabile Internetverbindung.*  
 
-![POI-Suche Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
-
-Um die Ergebnisse zu verbessern, zoomen Sie vor der Verwendung des Suchwerkzeugs auf der Karte näher an den Ort heran, an dem Sie einen bestimmten Standort finden müssen. Während der Suche können Sie den **Suchradius vergrößern**, um Orte zu finden, die weiter von Ihrem Standort entfernt sind. Bei der Offline-Suche schlägt OsmAnd vor, die Online-Suche zu verwenden, wenn die erforderlichen Ergebnisse nicht verfügbar sind.  
+Um die Ergebnisse zu verbessern, zoomen Sie vor der Verwendung des Suchwerkzeugs auf der Karte näher an den Ort heran, an dem Sie einen bestimmten Standort finden müssen. Wenn Sie in der Nähe nichts finden, können Sie den [Suchradius vergrößern](./search-all.md#how-to-use). Bei der Offline-Suche schlägt OsmAnd vor, die Online-Suche zu verwenden, wenn die erforderlichen Ergebnisse nicht verfügbar sind.  
 
 Informationen zur Online-Navigation finden Sie im Artikel [Online-Routing](../navigation/routing/online-routing.md).
 
@@ -378,12 +376,12 @@ Um benutzerdefinierte Filter für die Suche nach Orten auf der Karte zu erstelle
 
 ### Kategorien und ihre Filter {#categories-and-their-filters}
 
-1. **<Translate android="true" ids="amenity_type_administrative"/>**. Enthält 25 Typen: *Kleingärten, Atoll, Stadtbezirk, Stadt, Stadtblock, Land, Gerichtsgebäude, Zoll, Diplomatische Vertretung, Bauernhof, Regierung, Weiler, Insel, Eiland, Einzelgehöft, Ort, Nachbarschaft, Polizei, Gefängnis, Viertel, Wohngebiet, Vorort, Kleinstadt, Rathaus, Dorf*.  
+1. **<Translate android="true" ids="amenity_type_administrative"/>**. Enthält 25 Typen: *Kleingärten, Atoll, Stadtbezirk, Stadt, Stadtblock, Land, Gerichtsgebäude, Zoll, Diplomatische Vertretung, Bauernhof, Regierung, Weiler, Insel, Eiland, Einzelgehörm, Ort, Nachbarschaft, Polizei, Gefängnis, Viertel, Wohngebiet, Vorort, Kleinstadt, Rathaus, Dorf*.  
 
 2. **Weihnachten**. Enthält 5 Filtertypen:  
     *Weihnachtsveranstaltung, Weihnachtsmarkt, Weihnachtspyramide, Weihnachtsgeschäft, Weihnachtsbaum*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Enthält 16 Typen: *Kleingärten, Atoll, Stadtbezirk, Stadt, Stadtblock, Land, Gerichtsgebäude, Zoll, Diplomatische Vertretung, Bauernhof, Regierung, Weiler, Insel, Eiland, Einzelgehöft, Ort, Nachbarschaft, Polizei, Gefängnis, Viertel, Wohngebiet, Vorort, Kleinstadt, Rathaus, Dorf*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Enthält 16 Typen: *Kleingärten, Atoll, Stadtbezirk, Stadt, Stadtblock, Land, Gerichtsgebäude, Zoll, Diplomatische Vertretung, Bauernhof, Regierung, Weiler, Insel, Eiland, Einzelgehörm, Ort, Nachbarschaft, Polizei, Gefängnis, Viertel, Wohngebiet, Vorort, Kleinstadt, Rathaus, Dorf*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Enthält 26 Filtertypen.  
 

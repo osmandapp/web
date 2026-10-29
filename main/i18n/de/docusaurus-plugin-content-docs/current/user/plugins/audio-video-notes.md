@@ -1,5 +1,5 @@
 ---
-source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+source-hash: 2c0a6908a74d63cbb4449e258729df822d9ac3927942ad52a8271ce7c951c29c
 sidebar_position: 4
 title:  Audio-/Videonotizen
 ---
@@ -148,7 +148,7 @@ Für *Audio- und Videonotizen* wird jeweils der Audio- oder Videorekorder angeze
 Es ist möglich, die Aufnahme durch Tippen auf das <Translate android="true" ids="map_widget_av_notes"/>-Widget zu stoppen, unabhängig davon, ob das Kontextmenü oder das Widget die Aufnahme gestartet hat. Für *eine Fotonotiz* wird die Kamerafunktionalität angezeigt, und Sie können ein Foto aufnehmen, das Ergebnis ansehen, es akzeptieren und speichern oder ein neues Foto aufnehmen.
 
 :::info note
-Automatisch werden alle Foto-, Audio- und Videoaufnahmen im Tab <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> gespeichert.
+Automatisch werden alle Foto-, Audio- und Videoaufnahmen im Tab <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> gespeichert. Jede Notiz wird außerdem als Favorit im Ordner **Medien** gespeichert. Siehe [A/V-Notizen als Favoriten](#av-notes-as-favorites).
 :::
 
 
@@ -342,7 +342,15 @@ Verwenden Sie die Kartenebene [Aufnahme](../map/point-layers-on-map#-audio--vide
 ![No notes on the map](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notes are on the map](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
-## Aus Notizen erstellte Wegpunkte {#waypoints-created-from-notes}
+## A/V-Notizen als Favoriten {#av-notes-as-favorites}
+
+Audio-, Video- und Fotonotizen sind mit Favoriten verknüpft. Jede Notiz hat einen passenden Favoritenpunkt im Ordner **Medien** unter *Meine Orte → Favoriten*, der an der Position der Notiz platziert und nach Notiztyp und Erstellungszeit benannt ist, z. B. *Foto 1. Okt. 2026 09:45*. Die Notizdatei ist an diesen Favoriten angehängt und erscheint in seiner [Medienkarte](../personal/favorites.md#media). Die Notiz selbst bleibt auch im Tab *A/V-Notizen* verfügbar.
+
+- Wenn OsmAnd auf Version 5.4 von einer früheren Version aktualisiert wird, wird für jede bestehende Notiz automatisch ein Favorit erstellt.
+- Neue Notizen, die mit dem Widget oder dem Kartenkontextmenü aufgezeichnet werden, werden automatisch zum Ordner **Medien** hinzugefügt.
+
+
+## Wegpunkte aus Notizen erstellt {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -421,11 +429,7 @@ Wenn Sie die GPX-Datei des Tracks mit einem Wegpunkt aus einer Audio-/Video-/Fot
 
 ### Details zum Dateinamen {#file-name-details}
 
-Das <Translate android="true" ids="audionotes_plugin_name"/>-Plugin generiert Audio-/Video-/Fotodateien im folgenden Format:
-
-    `{SHORTLINK_LOCATION}_Beschreibung.{avi,mp3,jpg}`
-
-wobei `SHORTLINK_LOCATION` den Breiten- und Längengrad des Ortes angibt, an den die Datei gebunden ist. Der `SHORTLINK_LOCATION` wird gemäß der Spezifikation des [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink) kodiert.
+Das <Translate android="true" ids="audionotes_plugin_name"/>-Plugin benennt Audio-, Video- und Fotodateien nach dem Muster `Typ_YYYY-MM-DD_HH-mm-ss_Ort.ext`, zum Beispiel `Foto_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. Der Teil `Ort` enthält den Breiten- und Längengrad der Notiz, kodiert gemäß der [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink)-Spezifikation.
 
 
 ### Export nach JOSM {#export-to-josm}

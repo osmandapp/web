@@ -1,5 +1,5 @@
 ---
-source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
+source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,13 +19,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-**Tracks Analyzer** ist ein Web-Tool, das hilft, wiederkehrende Track-Segmente zwischen ausgewählten Punkten auf der Karte zu analysieren. Sie können es zum Beispiel nutzen, um Ihre Fahrten auf demselben Anstieg oder Ihre täglichen Arbeitswege zu vergleichen. Um diese Funktion mit Ihren eigenen Daten zu nutzen, benötigen Sie ein OsmAnd Pro-Konto mit Tracks, die mit OsmAnd Cloud synchronisiert sind – andernfalls sind Ihre Tracks im Web Planner nicht verfügbar. Es scannt Ihre Tracks und findet alle Segmente, die durch die gewählten Ort(e) verlaufen, sodass Sie Geschwindigkeit, Höhe, Distanz und Zeit über mehrere Aktivitäten hinweg vergleichen können.
+**Tracks Analyzer** ist ein Web-Tool, das hilft, wiederkehrende Track-Segmente zwischen ausgewählten Punkten auf der Karte zu analysieren. Zum Beispiel können Sie es nutzen, um Ihre Fahrten auf demselben Anstieg oder Ihre täglichen Arbeitswege zu vergleichen. Um diese Funktion mit Ihren eigenen Daten zu nutzen, benötigen Sie ein OsmAnd Pro-Konto mit Tracks, die mit OsmAnd Cloud synchronisiert sind – andernfalls sind Ihre Tracks im Web Planner nicht verfügbar. Es scannt Ihre Tracks und findet alle Segmente, die durch die gewählten Ort(e) verlaufen, sodass Sie Geschwindigkeit, Höhe, Distanz und Zeit über mehrere Aktivitäten hinweg vergleichen können.
 
 ## Verwendung {#how-to-use}
 
-Nach dem Öffnen des Tracks Analyzer (dargestellt als Schraubenschlüssel) öffnet sich das Tool mit einer Kartenansicht und einem leeren Zustand. Von hier aus können Sie mit dem Panel **Tracks auswählen** festlegen, welche Tracks in die Analyse einbezogen werden. Der Analyzer ermöglicht die Arbeit mit allen verfügbaren Tracks oder die Begrenzung der Analyse auf bestimmte Ordner.
+1. [Melden Sie sich](./web-cloud.md#login) mit Ihrem OsmAnd Pro-Konto beim Web Map Portal an. Ihre Tracks müssen mit [OsmAnd Cloud](./web-cloud.md#cloud-sync) synchronisiert sein.
+2. Öffnen Sie *Menü → Tracks analyzer* (Schraubenschlüssel-Symbol).
+3. Wählen Sie im Panel **Tracks auswählen** entweder **Alle Tracks** oder nur die benötigten Ordner aus.
+4. Klicken Sie mit der rechten Maustaste auf die Karte und wählen Sie **Punkt A**. Um ein Segment zwischen zwei Punkten zu analysieren, legen Sie auch **Punkt B** fest.
+5. Überprüfen Sie die Liste der gefundenen Segmente, [sortieren Sie sie und wählen Sie aus, welche Parameter angezeigt werden sollen](#sorting-and-visible-parameters).
 
-Um die Analyse zu starten, legen Sie einen oder zwei Punkte direkt auf der Karte fest. Klicken Sie mit der rechten Maustaste auf den gewünschten Ort und wählen Sie **Punkt A / Punkt B** aus dem Kontextmenü aus. Bei einem Punkt findet der Analyzer Track-Segmente, die durch den ausgewählten Ort verlaufen. Bei zwei Punkten findet und analysiert er Segmente zwischen Punkt A und Punkt B.
+Bei einem Punkt findet der Analyzer Track-Segmente, die durch den ausgewählten Ort verlaufen. Bei zwei Punkten findet und analysiert er Segmente zwischen Punkt A und Punkt B.
 
 ![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points_new.png)
 

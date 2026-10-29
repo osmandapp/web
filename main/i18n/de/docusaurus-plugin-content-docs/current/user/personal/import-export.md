@@ -1,5 +1,5 @@
 ---
-source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
+source-hash: 15444c168df6f3554637066910aa28d6eb9b1c274618b9570845570e8988b856
 sidebar_position: 10
 title:  Import / Export
 ---
@@ -31,7 +31,7 @@ Der *Import* und *Export* ermöglichen es Ihnen, Daten aus generierten `.osf`-**
 - **Einstellungen:**  
         [Profile](../personal/profiles.md#actions), &nbsp;[OsmAnd/Allgemeine Einstellungen](../personal/global-settings.md), &nbsp;[Farben](../personal/color-palette-schemes.md), &nbsp;[Schnellaktion](../widgets/quick-action.md), &nbsp;[POI-Typ](../map/point-layers-on-map.md#poi-types), &nbsp;[Straße meiden](../map/map-context-menu.md#avoid-road).
 - **Meine Orte:**  
-        [Favoriten](../personal/favorites.md#export--import), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM-Notizen*, *OSM-Bearbeitungen](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V-Notizen](../plugins/audio-video-notes.md), &nbsp;[Kartenmarkierungen](../personal/markers.md), &nbsp;[Markierungsverlauf*, *Suchverlauf*, *Navigationsverlauf](../personal/global-settings.md#history), &nbsp;*Reiseroute*.
+        [Favoriten](../personal/favorites.md#export--import), &nbsp;[Angehängte Medien](../personal/favorites.md#media), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM-Notizen*, *OSM-Bearbeitungen](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V-Notizen](../plugins/audio-video-notes.md), &nbsp;[Kartenmarkierungen](../personal/markers.md), &nbsp;[Markierungsverlauf*, *Suchverlauf*, *Navigationsverlauf](../personal/global-settings.md#history), &nbsp;*Reiseroute*.
 - **Ressourcen:**  
         [Renderstil](../map/map-styles.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online-Routing-Engines](../navigation/routing/online-routing.md), &nbsp;[Kartenquellen*, *Standard-/Offline-Karten](../map/raster-maps.md), &nbsp;[Wikipedia- und Reisekarten](../plan-route/travel-guides.md), &nbsp;[Seekarten](../plugins/nautical-charts.md), &nbsp;[Straßenkarten](../map/vector-maps.md#road-style), &nbsp;[Topografische Karten](../plugins/topography.md), &nbsp;[Sprachansagen (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Sprachansagen (aufgezeichnet)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favoriten-Backup](../personal/favorites.md#automatic-favorites-backup).
 

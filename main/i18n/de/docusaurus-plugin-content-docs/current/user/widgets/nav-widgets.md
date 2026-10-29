@@ -1,5 +1,5 @@
 ---
-source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
+source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
 sidebar_position: 4
 title:  Navigations-Widgets
 ---
@@ -328,7 +328,9 @@ Die *Routenführungs*-Widgets enthalten Informationen über:
 
 ![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
 
-Das **Fahrspur**-Widget hebt die aktuelle Fahrspur bei aktiver Navigation hervor und zeigt das Fahrspurlayout für die tatsächliche Straße bei passiver Navigation an. Unter dem Fahrspurdiagramm wird auch ein Entfernungsindikator angezeigt, der angibt, wie weit es noch bis zum Manöver ist, auf das sich die Fahrspurführung bezieht. Dieses Widget ist nur für die oberen und unteren Leisten verfügbar. Die Daten stammen aus dem [OpenStreetMap-Projekt](https://wiki.openstreetmap.org/wiki/Key:turn).
+Das **Fahrspur**-Widget hebt die aktuelle Fahrspur bei aktiver Navigation hervor und zeigt das Fahrspurlayout für die tatsächliche Straße bei passiver Navigation an. Unter dem Fahrspurdiagramm wird auch ein Entfernungsindikator angezeigt, der angibt, wie weit es noch bis zum Manöver ist, auf das sich die Fahrspurführung bezieht. Dieses Widget ist nur für die oberen und unteren Leisten verfügbar. Die Daten stammen aus dem [OpenStreetMap-Projekt](https://wiki.openstreetmap.org/wiki/Key:turn). Wenn die Kartendaten keine Richtung für jede Fahrspur angeben, ergänzt OsmAnd die fehlenden Richtungen basierend auf dem Layout der Kreuzung.
+
+Auf Android enthält die Widget-Einstellung die Option *Anzeige an kleineren Kreuzungen bei Geradeausfahrt*, die standardmäßig aktiviert ist. Mit dieser Option zeigt das Widget Fahrspuren an jeder Kreuzung an, die Sie bei Geradeausfahrt passieren, auch wenn es für diese Kreuzung keine Sprachansage gibt.
 
 
 ### Nächste Abbiegung {#next-turn}

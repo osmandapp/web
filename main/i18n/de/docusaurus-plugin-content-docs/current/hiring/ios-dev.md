@@ -1,6 +1,6 @@
 ---
+source-hash: ff934e5de7e6a832b6b4c39e95c6bbcf7cb9eb49d0e8ac3707d1e165f1f7a197
 draft: true
-source-hash: 6a5a97de97f4b209880efb8ea14c50e55c5e5a9f100fa063156a3e3e842373d7
 sidebar_position: 3
 title: iOS-Entwickler
 ---
@@ -32,7 +32,7 @@ Wir suchen einen erfahrenen und begeisterten Entwickler, der unsere Open-Source-
 
 ### Was Sie von uns erwarten können {#what-you-can-expect-from-us}
 - Arbeit in einer spannenden und wachsenden Branche
-- Eine Gelegenheit, Arbeit und Hobbys zu verbinden (wenn Sie eine reisende Person sind)
+- Eine Gelegenheit, Arbeit und Hobbys zu verbinden (wenn Sie leidenschaftlich am Reisen interessiert sind)
 - Lernen durch Tun – Sie arbeiten mit Branchenexperten zusammen, die bereit sind, ihr Wissen und ihre Erfahrung zu teilen
 - Möglichkeiten, Ihre Fähigkeiten durch Trainings- und Mentoringprogramme zu verbessern
 - Ein freundliches und unterstützendes Arbeitsumfeld

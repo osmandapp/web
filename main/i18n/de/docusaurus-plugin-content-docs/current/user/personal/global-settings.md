@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Globale Einstellungen
 ---
@@ -98,9 +98,10 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 2. Im **<Translate android="true" ids="change_data_storage_folder"/>** können Sie einen Ordner zum Speichern von OsmAnd-Daten auf Ihrem Gerät auswählen.  
 
-    - *Interner App-Speicher*. Nur die OsmAnd-App hat Zugriff auf ihre Daten und keine der externen Apps.
+    - *Interner App-Speicher*. Nur die OsmAnd-App haben Zugriff auf ihre Daten und keine der externen Apps.
     - *Gemeinsamer Speicher*. Nicht mehr verfügbar.
     - *Externer Speicher 1*. Nur 1 OsmAnd-App hat Zugriff sowie Admin-Apps und USB.
+    - *Sichtbarer externer Speicher 1*. Daten werden im Android/media-Ordner gespeichert, der für Dateimanager und USB offen ist. Es sind keine zusätzlichen Speicherberechtigungen erforderlich.
     - *Mehrbenutzerspeicher*. Nur 1 OsmAnd-App hat Zugriff, aber er wird von mehreren Android-Benutzern gemeinsam genutzt.
     - *Manuell angegeben*. Hängt vom Pfad ab.
 
@@ -115,6 +116,11 @@ Die Einstellung **Medienspeicher** bestimmt, wo Fotos, Videos und Audiodateien g
 - **Gemeinsamer Speicher** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Kameraordner** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Manuell angegeben** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Wenn Sie einen anderen Medienspeicher auswählen, fragt OsmAnd, ob vorhandene Mediendateien verschoben werden sollen:
+- **An den neuen Speicherort verschieben** — Verschieben Sie vorhandene Mediendateien an den ausgewählten Speicherort.
+- **Nicht verschieben** — Ändern Sie den Speicherort, ohne vorhandene Dateien zu verschieben.
+- **Abbrechen** — Behalten Sie den aktuellen Speicherort bei.
 
 Es gibt auch den Schalter *Immer eine lokale Kopie behalten*. Wenn er aktiviert ist, kopiert OsmAnd Medien, die aus der Galerie oder Dateien importiert wurden, in seinen eigenen Speicher, sodass die angehängten Medien auch dann verfügbar bleiben, wenn die Originaldatei aus der Galerie oder dem Dateisystem gelöscht wird.
 

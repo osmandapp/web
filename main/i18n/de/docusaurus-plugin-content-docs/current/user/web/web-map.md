@@ -1,5 +1,5 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
 sidebar_label: Karte
 title: Globale Karte auf der Webseite
@@ -73,21 +73,32 @@ Der ausgewählte Marker bleibt beim Zoomen der Karte sichtbar.
 
 Nahegelegene Marker können ausgeblendet werden, um das ausgewählte Objekt leichter sichtbar zu machen.
 
-![Ausgewähltes Objekt](@site/static/img/web/selected_object_favorite.png) ![Ausgewähltes Objekt](@site/static/img/web/selected_object_explore.png)
+Wenn der Kartentyp [OsmAnd Vektor (Beta)](#map-type) aktiviert ist, können Sie Objekte direkt auf der Karte auswählen, einschließlich POIs, Gebäuden, Hausnummern und Haltestellen des öffentlichen Verkehrs. Wenn Sie den Mauszeiger über ein auswählbares Objekt bewegen, ändert sich der Zeiger in eine Hand. Objekte ohne Namen oder Symbol, wie unbenannte Straßen und Fußwege, können nicht ausgewählt werden.
+
+Durch die Auswahl eines Objekts wird sein Detailfenster geöffnet:
+
+- **POI** — das Fenster zeigt dieselben Informationen und Schnellaktionen wie in den Ergebnissen der [Suche](web-search.md) und im [POI-Overlay](#poi-overlay).
+- **Objekt ohne POI-Daten** — zum Beispiel ein Gebäude oder eine Hausnummer. Das Fenster zeigt den Objekttyp, die Adresse und die Koordinaten.
+- **Haltestelle des öffentlichen Verkehrs** — das Fenster kann auch den Abschnitt Routen mit dem Filter für den Verkehrstyp enthalten, wie unter [Haltestellen](#transport-stops) beschrieben.
+
+Befinden sich mehrere Objekte an der ausgewählten Stelle, werden sie im Fenster nacheinander angezeigt. Verwenden Sie die Pfeile neben der Schaltfläche zum Schließen, um zwischen ihnen zu wechseln. Der Pfeil „Zurück“ erscheint ab dem zweiten Objekt, und der Pfeil „Vorwärts“ ist beim letzten Objekt inaktiv.
+
+![Ausgewähltes Objekt](@site/static/img/web/selected_object_favorite.png) ![Ausgewähltes Objekt](@site/static/img/web/several_objects.webp)
 
 
 
 ## Menü "Karte konfigurieren" {#configure-map-menu}
 
-Das Menü "Karte konfigurieren" ermöglicht es Ihnen, die Anzeigeeinstellungen für Kartendaten wie POI-Ebenen, Favoriten, Tracks und Gelände zu verwalten. Dieses Menü ist verfügbar, nachdem Sie sich bei Ihrem OsmAnd-Konto angemeldet haben. Um es zu öffnen, klicken Sie auf die Schaltfläche in der **oberen linken Ecke** oder greifen Sie über das **Menü** darauf zu.
+Das Menü "Karte konfigurieren" ermöglicht es Ihnen, die Anzeigeeinstellungen für Kartendaten wie POI-Ebenen, Favoriten, Tracks, Gelände und Kartentyp zu verwalten. Dieses Menü ist verfügbar, nachdem Sie sich bei Ihrem OsmAnd-Konto angemeldet haben. Um es zu öffnen, klicken Sie auf die Schaltfläche in der **oberen linken Ecke** oder greifen Sie über das **Menü** darauf zu.
 
 - [POI-Overlay...](#poi-overlay). Ermöglicht es Ihnen, die benötigten POI-Kategorien auszuwählen und auf der Karte anzuzeigen.
 - [Favoriten](#favorites). Schaltet die Anzeige von Favoriten auf der Karte um.
 - [Tracks](#tracks). Enthält GPX-Tracks, die auf der Karte sichtbar sind.
 - [Haltestellen](#transport-stops). Schaltet die Anzeige von öffentlichen Verkehrshaltestellen auf der Karte um. 
 - [Gelände](#terrain). Aktiviert oder deaktiviert das Geländefarbschema auf der Karte.
+- [Raster (Kacheln) / OsmAnd Vektor (Beta)](#map-type). Zeigt den aktuell verwendeten Kartentyp an und ermöglicht den Wechsel zwischen Raster- und Vektorkarte.
 
-![POIs-Menü](@site/static/img/web/configure_map_web_new.png)
+![POIs-Menü](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### POI-Overlay {#poi-overlay}
@@ -184,6 +195,17 @@ In diesem Abschnitt können Sie:
 - Die Sichtbarkeit der ausgewählten Geländeschicht von **0% bis 100%** anpassen.
 
 ![Menü "Karte konfigurieren" Gelände](@site/static/img/web/configure_map_terrain.png)
+
+### Kartentyp {#map-type}
+
+Wählen Sie den Eintrag Kartentyp im Menü „Karte konfigurieren“, um einen der folgenden Typen auszuwählen:
+
+- **Raster (Kacheln)** — der Standard-Kartentyp. Bei diesem Kartentyp können Sie nur Marker auswählen, die über der Karte angezeigt werden, z. B. Ergebnisse der [Suche](web-search.md), Marker des [POI-Overlays](#poi-overlay), [Favoriten](#favorites) und [Haltestellen](#transport-stops).
+- **OsmAnd Vektor (Beta)** — die Vektorkarte. Bei diesem Kartentyp können Sie [Objekte direkt auf der Karte auswählen](#selected-object).
+
+Der ausgewählte Kartentyp wird gespeichert und beim nächsten Öffnen der Karte angewendet. **Auf Standard zurücksetzen** in der Kopfzeile von „Karte konfigurieren“ schaltet die Karte wieder auf **Raster (Kacheln)** zurück.
+
+Die Vektorkarte erfordert einen Browser mit WebGL-Unterstützung. Wenn WebGL nicht verfügbar ist, wechselt die Karte automatisch zu **Raster (Kacheln)**.
 
 
 ## Einstellungen {#settings}
@@ -294,6 +316,10 @@ Abhängig von den angegebenen Parametern können URL-Zeichenfolgen enthalten:
 10. **Route planen**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Direkter Link zur aktuellen [**Erkunden-Seite**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **POI-Details**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Kartenobjekt ohne POI-Daten** (zum Beispiel ein Gebäude)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## Verwandte Artikel {#related-articles}

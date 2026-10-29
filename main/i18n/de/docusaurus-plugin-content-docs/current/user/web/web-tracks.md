@@ -1,5 +1,5 @@
 ---
-source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -50,9 +50,13 @@ So importieren Sie einen Track per Drag-and-Drop:
 - Ziehen Sie eine oder mehrere GPX-Dateien von Ihrem Computer.
 - Legen Sie die Dateien auf der Karte oder in einem bestimmten Track-Ordner ab.
 
-Wenn eine Datei über die Karte gezogen wird, wird der verfügbare Ablagebereich hervorgehoben. Wird die Datei direkt auf die Karte abgelegt, wird sie in den Import-Ordner importiert. Wird sie in einen bestehenden Ordner abgelegt, erfolgt der Import in diesen Ordner.
+Wenn eine Datei über die Karte gezogen wird, wird der verfügbare Ablagebereich hervorgehoben. Wird die Datei direkt auf die Karte abgelegt, wird sie in den Import-Ordner importiert. Wird sie in einen bestehenden Ordner abgelegt, erfolgt der Import in diesen Ordner. Ohne ein aktives [OsmAnd Pro](../purchases/index.md)-Abonnement öffnet das Ablegen einer Datei einen Dialog, der erklärt, dass der Track-Import OsmAnd Pro erfordert.
+
+Die maximale Dateigröße beträgt 20 MB für GPX- und KML-Dateien und 2 MB für KMZ-Dateien. Größere Dateien werden nicht importiert, stattdessen erscheint eine Warnung. Werden mehrere Dateien gleichzeitig importiert, werden alle abgelehnten Dateien in einer Nachricht aufgelistet. Tracks, die größer als 20 MB sind und bereits in OsmAnd Cloud gespeichert sind, können ebenfalls nicht im Web geöffnet werden; eine Benachrichtigung empfiehlt, sie in der OsmAnd-App zu öffnen.
 
 Nach Abschluss des Imports erscheint der Track in der Track-Liste, wird mit [OsmAnd Cloud](../personal/osmand-cloud.md) synchronisiert und steht auf allen mit demselben Konto verbundenen Geräten zur Verfügung.
+
+Wenn ein Track nicht importiert oder in OsmAnd Cloud gespeichert werden kann, zeigt ein Fehlerdialog den Dateinamen und, falls verfügbar, den vom Server gemeldeten Grund an.
 
 ![Drag and drop](@site/static/img/web/drag_and_drop.png)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -331,19 +331,26 @@ Um die [**Routeninformationen** für einen Zwischenpunkt (nächster Halt)](#next
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* und OsmAnd bieten die Möglichkeit, die Karte an die Lichtverhältnisse anzupassen. Im *Tag-Kartenmodus* bleibt das Farbschema hell und kontrastreich, was das Ablesen auch bei hellem Sonnenlicht erleichtert. Im *Nachtmodus* werden die Karten dunkler, was dem Fahrer hilft, sich bei Dunkelheit besser zu orientieren.  
 
-OsmAnd verfügt über [Kartenmodus](../map/vector-maps.md#map-mode)-Optionen, aber wenn Sie die App in *Android Auto* verwenden, werden diese Optionen ignoriert. Stattdessen wird der Modus verwendet, den Sie in den *Android Auto*-Systemeinstellungen für Karten ausgewählt haben.
+OsmAnd verfügt in *Android Auto* über eine eigene Kartenmodus-Einstellung, die von den [Kartenmodus](../map/vector-maps.md#map-mode)-Optionen in der OsmAnd-App auf Ihrem Gerät getrennt ist. Um sie zu ändern, gehen Sie zu *Android Auto (OsmAnd) → Einstellungsschaltfläche → Kartenmodus*, wählen Sie eine Option aus und tippen Sie auf *Übernehmen*. Die Karte wechselt nach dem Tippen auf *Übernehmen* in den ausgewählten Modus. Wenn Sie den Bildschirm mit dem Pfeil zurück verlassen, ohne auf *Übernehmen* zu tippen, bleibt der vorherige Modus ausgewählt.
 
-- Wählen Sie den Tag-Modus oder den Nacht-Modus, um die Kartendarstellung unverändert zu lassen.
-- Wenn Sie möchten, dass der Kartenanzeigemodus je nach Tageszeit wechselt, wählen Sie den Automatikmodus.  
+- Wählen Sie *Tag* oder *Nacht*, um die Kartendarstellung unverändert zu lassen, unabhängig von Signalen Ihres Fahrzeugs.
+- Wenn Sie möchten, dass der Kartenanzeigemodus automatisch basierend auf Signalen Ihres Fahrzeugs wechselt, wählen Sie *Automatisch* (Standard).  
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+
+### Kartenvergrößerung {#map-magnifier}
+
+![Android Auto Kartenvergrößerung](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+*Kartenvergrößerung* ändert die Vergrößerung der Karte auf dem *Android Auto*-Bildschirm. Um sie zu ändern, gehen Sie zu *Android Auto (OsmAnd) → Einstellungsschaltfläche → Kartenvergrößerung*, wählen Sie einen Wert von 50 % bis 125 % und tippen Sie auf *Übernehmen*. Der aktuelle Wert wird unter *Kartenvergrößerung* in der Einstellungsliste angezeigt.  
+
+Informationen dazu, wie sich die Vergrößerung auf die Kartendarstellung auswirkt, finden Sie unter [Kartenvergrößerung](../map/vector-maps.md#map-magnifier).
 
 
 ### Geteilter Bildschirm {#split-screen}
@@ -357,8 +364,6 @@ Die OsmAnd-App kann in *Android Auto* auf dem Multimediabildschirm des Fahrzeugs
 3. Suchen Sie nach Multi-Window und wählen Sie den Schalter.
 4. Kehren Sie zum Startbildschirm zurück.  
 
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 In den Android Auto-Einstellungen können Sie die Position der Taskleiste und das Layout des Startbildschirms ändern:

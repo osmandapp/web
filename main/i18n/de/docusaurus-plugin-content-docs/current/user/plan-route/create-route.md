@@ -1,5 +1,5 @@
 ---
-source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
+source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
 sidebar_position: 1
 title:  Eine Route planen
 ---
@@ -186,21 +186,6 @@ Sie können einen [Schwellenwert](../navigation/setup/gpx-navigation.md#attach-t
 Wenn Sie einen Track auswählen und das ***unspezifizierte*** Profilsymbol ("?") neben dem *Einstellungen*-Symbol angezeigt wird, tippen Sie darauf, um auszuwählen, ob der Track an Straßen angeheftet oder die Punkte nur mit einer geraden Linie verbunden und als aufgezeichneter Track behandelt werden sollen.
 :::
 
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
-
 
 ## Punkte & Segmente {#points--segments}
 
@@ -277,19 +262,20 @@ Sie können die Route zwischen 2 bestimmten Punkten oder zwischen mehreren Punkt
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Plan a route ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Plan a route ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Plan a route ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Hinzugefügte Punkte können mit einer geraden Linie oder einer Route verbunden werden, die mit einem ausgewählten Routing-Profil berechnet wird. Das Menü *Route zwischen Punkten* ermöglicht es Ihnen, den Routing-Typ und die Einstellungen für Routensegmente und Abschnitte anzuzeigen und zu ändern.
 
 Sie können *Route zwischen Punkten* öffnen, indem Sie auf die Schaltfläche *Route zwischen Punkten* tippen, die das Symbol des aktuell ausgewählten Routing-Profils anzeigt, oder über ein [Segment](#segments) oder Abschnittsmenü.
 
-Im Tab *Routentyp* können Sie ein Routing-Profil für das ausgewählte Segment oder den Abschnitt auswählen. Gerade Linie ist als erste Option verfügbar, gefolgt von den verfügbaren Routing-Profilen.
+Im Tab *Route* können Sie ein Routing-Profil für das ausgewählte Segment oder den Abschnitt auswählen. Gerade Linie ist als erste Option verfügbar, gefolgt von den verfügbaren Routing-Profilen.
 
-Wenn eine Route nur einen Routing-Typ enthält, wird die einfache Ansicht *Route zwischen Punkten* angezeigt. Wenn eine Route mehrere Routing-Typen enthält, zeigt die komplexe Ansicht alle Segmente und Abschnitte an, sodass Sie auswählen können, welchen Teil der Route Sie ändern möchten.
+Wenn die Route nur ein Segment mit einem Routing-Typ enthält, wird die einfache Ansicht *Route zwischen Punkten* angezeigt. Wenn die Route mehrere Segmente oder ein Segment mit mehreren Routing-Typen enthält, zeigt die komplexe Ansicht alle Segmente und Abschnitte an, sodass Sie auswählen können, welchen Teil der Route Sie ändern möchten.
 
 Sie können auch:
-- **Neues Segment starten** — erstellen Sie ein neues Segment und fahren Sie mit dem Hinzufügen von Routenpunkten fort. Das neue Segment verwendet denselben Routentyp wie das aktuelle.
-- **Für gesamten Track ändern** — wählen Sie einen Routing-Typ aus, der auf den gesamten Track angewendet werden soll.
+- **Mit anderem Routentyp fortsetzen** — wählen Sie einen Routing-Typ für den nächsten Abschnitt des aktuellen Segments aus und fahren Sie dann mit dem Hinzufügen von Punkten auf der Karte fort. In der komplexen Ansicht heißt diese Option Mit anderem Typ fortsetzen und wird unter dem letzten Segment angezeigt.
+- **Neues Segment starten** — erstellen Sie ein neues Segment, das nicht mit dem vorherigen Teil des Tracks verbunden ist. Wählen Sie einen Routing-Typ für das neue Segment aus und fahren Sie dann mit dem Hinzufügen von Punkten auf der Karte fort.
+- **Typ für gesamten Track ändern** — in der komplexen Ansicht verfügbar. Wählen Sie einen Routing-Typ aus, der auf den gesamten Track angewendet werden soll.
 
 Im Tab *Einstellungen* können Sie vordefinierte Routing-Einstellungen für den ausgewählten Routentyp auswählen.
 
@@ -313,7 +299,7 @@ Ein Track-Segment ist eine Sammlung von Punkten, die ohne **Lücken** verbunden 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/segment_menu.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
+![Plan a route ios](@site/static/img/plan-route/segment_menu_1.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
 
 Eine Route kann ein oder mehrere Segmente enthalten. Ein Segment kann einen einzelnen Routentyp verwenden oder mehrere Abschnitte mit unterschiedlichen Routentypen enthalten.
 
@@ -321,12 +307,12 @@ Im Tab *Route* wird jedes Segment mit seinem Routentyp und seiner Entfernung ang
 
 Sie können ein Segment über sein Drei-Punkte-Menü verwalten:
 - **Routentyp ändern** — verfügbar für ein Segment mit einem einzelnen Routentyp. Öffnet *Route zwischen Punkten*, wo Sie einen anderen Routentyp auswählen können.
-- **Einzelnen Routentyp festlegen** — verfügbar, wenn ein Segment mehrere Abschnitte mit unterschiedlichen Routentypen enthält. Öffnet *Route zwischen Punkten*, wo Sie einen Routentyp auf das Segment anwenden können.
+- **Einzelnen Routentyp festlegen** — verfügbar, wenn ein Segment mehrere Abschnitte mit unterschiedlichen Routentypen enthält. Öffnet *Route zwischen Punkten*, wo Sie einen Routentyp auf das Segment anwenden können. Das gesamte Segment wird mit dem ausgewählten Routing-Typ neu berechnet.
 - **Sortieren** — ordnen Sie Routenpunkte manuell neu oder verwenden Sie *Sortieren Tür-zu-Tür*, um sie so neu anzuordnen, dass die Gesamtentfernung minimiert wird.
 - **Speichern unter…** — speichern Sie das Segment als separate Datei.
 - **Segment löschen** — löschen Sie das Segment.
 
-Um ein neues unverbundenes Segment zu erstellen, tippen Sie unten im Tab *Route* auf *Neues Segment starten*.
+Um ein neues unverbundenes Segment zu erstellen, tippen Sie unten im Tab *Route* auf *Neues Segment starten*. Um das aktuelle Segment mit einem anderen Routing-Typ fortzusetzen, tippen Sie unter dem letzten Segment auf *Mit anderem Typ fortsetzen* und wählen Sie dann einen Routing-Typ für den nächsten Abschnitt aus.
 
 Ein Segment kann in [Abschnitte](#multimodal-routes) unterteilt werden, wenn für verschiedene Teile des Segments unterschiedliche Routentypen verwendet werden. Jeder Abschnitt zeigt seinen Routentyp und seine Entfernung an.
 
@@ -364,7 +350,7 @@ Jeder Punkt auf Ihrer Route hat sein eigenes Kontextmenü. Es zeigt die *Sequenz
 
 - ***<Translate ios="true" ids="move_point"/>***. Ermöglicht es Ihnen, die Position eines Punktes auf der Karte zu ändern. Verschieben Sie die Karte mit Gesten, um die Position des Punktes zu ändern. Der Punktindikator befindet sich in der Mitte des sichtbaren Teils der Karte.  
 
-- ***<Translate ios="true" ids="add_point_after"/>***. Verschieben Sie die Karte, um einen Punkt nach dem ausgewählten Punkt hinzuzufügen. Sie können so viele Punkte wie nötig hinzufügen, bis Sie auf Abbrechen oder Anwenden tippen.  
+- ***<Translate ios="true" ids="add_point_after"/>***. Verschieben Sie die Karte, um einen Punkt nach dem ausgewählten Punkt hinzufügen. Sie können so viele Punkte wie nötig hinzufügen, bis Sie auf Abbrechen oder Anwenden tippen.  
 
 - ***<Translate ios="true" ids="add_point_before"/>***. Verschieben Sie die Karte, um so viele Punkte wie nötig nach dem ausgewählten Punkt auf dem Segment zwischen diesem Punkt und dem nächsten hinzuzufügen.  
 

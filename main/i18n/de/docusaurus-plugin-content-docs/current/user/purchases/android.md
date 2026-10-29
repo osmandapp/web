@@ -1,5 +1,5 @@
 ---
-source-hash: 017b6a72cbf0f60229dc7fab079567518d145a48e704c1e7dce283c4a5f6df9b
+source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
 sidebar_position: 1
 title:  Android-Käufe
 ---
