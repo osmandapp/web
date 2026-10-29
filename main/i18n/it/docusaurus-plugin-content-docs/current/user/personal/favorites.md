@@ -1,5 +1,5 @@
 ---
-source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Preferiti
 ---
@@ -160,20 +160,34 @@ La *cartella Personale* contiene punti speciali come **<Translate android="true"
 
 ### Media (solo Android) {#media}
 
-![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_menu.webp)
+![Azioni media](@site/static/img/personal/media_actions.webp) ![Menu media](@site/static/img/personal/media_menu.webp)
 
-La sezione Media consente di allegare foto, video, registrazioni audio e immagini a un punto preferito. I media possono essere aggiunti durante la creazione di un preferito o successivamente dalla schermata Modifica preferito. Per allegare media, toccare *Aggiungi* nella sezione Media e scegliere una delle opzioni disponibili:
+La sezione Media consente di allegare foto, video, registrazioni audio e immagini a un punto preferito. I media possono essere aggiunti durante la creazione di un preferito, successivamente dalla schermata Modifica preferito o direttamente dal menu contestuale del preferito. Per allegare media, toccare il pulsante *+* nella schermata Modifica preferito o *Aggiungi* nel menu contestuale e scegliere una delle opzioni disponibili:
 - **Scatta una foto** — Scatta una nuova foto con la fotocamera del dispositivo.
 - **Registra una nota video** — Registra un nuovo video.
-- **Registra una nota audio** — Registra una nota audio.
+- **Registra una nota audio** — Registra una nota audio. Se OsmAnd non dispone dell'autorizzazione per registrare l'audio, il dispositivo chiede di concederla.
 - **Scegli dalla Galleria** — Seleziona un'immagine esistente dal dispositivo.
 - **Scegli dai File** — Seleziona un'immagine dal file system.
 
-Dopo aver allegato i media, questi vengono visualizzati nella scheda Media nel menu contestuale del preferito. La stessa scheda Media è disponibile anche per i [Waypoint](../map/tracks/track-context-menu.md#points--waypoints).
+Dopo aver allegato i media, questi vengono visualizzati nella scheda Media nel menu contestuale del preferito. Se non è allegato alcun media, la scheda mostra *Nessun media* e un pulsante *Aggiungi*. La stessa scheda Media è disponibile anche per i [Waypoint](../map/tracks/track-context-menu.md#points--waypoints).
+
+Le note audio, video e foto create con il [plugin Note audio/video](../plugins/audio-video-notes.md) vengono salvate anche come preferiti con media allegati.
 
 La scheda Media mostra le anteprime degli elementi allegati. Gli elementi visualizzati seguono l'ordine di ordinamento selezionato. Toccare *Mostra tutto* per aprire la galleria completa. La galleria mostra tutti i media allegati al preferito selezionato.
 
 Toccare un elemento qualsiasi per aprirlo a schermo intero. Foto e video possono essere visualizzati direttamente, mentre le registrazioni audio includono i controlli di riproduzione.
+
+La galleria include le seguenti opzioni:
+- **Ordinamento** — Toccare la barra di ordinamento in alto per scegliere l'ordine: Più vicini, Ultima modifica, Nome A - Z, Nome Z - A, Data più recente, Data meno recente, Durata più lunga, o Durata più breve.
+- **Riepilogo** — Sotto gli elementi, la galleria mostra il numero di foto, video e note audio e la loro dimensione totale.
+- **Pulsante +** — Aggiungi nuovi media.
+- **Modifica** (icona matita) — Entra nella modalità di selezione. È possibile anche toccare e tenere premuto un elemento qualsiasi.
+
+Nella modalità di selezione, toccare gli elementi per selezionarli o usare Seleziona tutto. Il menu a tre punti offre:
+- **Esporta** — Esporta i file multimediali selezionati.
+- **Elimina** — Rimuovi i media selezionati dal preferito. I media memorizzati da OsmAnd e non allegati a nessun altro elemento vengono eliminati anche dal dispositivo.
+
+I media acquisiti in OsmAnd sono denominati con il formato `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, ad esempio `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. Il nome contiene il tipo di media, la data e l'ora di creazione e la posizione in cui il media è stato acquisito, codificata come [OSM Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ## Gestire i Preferiti {#manage-favorites}
@@ -436,7 +450,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 - Per condividere più cartelle di preferiti, vedere la sezione [Modifica / Eliminazione massiva](#bulk-edit--delete).
 - Per condividere una singola cartella di preferiti, vedere la sezione [Azioni Gruppo Preferiti](#favorite-group-actions). Su Android, se la cartella contiene media allegati, viene visualizzato un foglio inferiore di condivisione. È possibile scegliere:
     - *Solo punti* — Condividi i punti preferiti della cartella come file GPX.
-    - *Punti e media* — Condividi i punti preferiti e i media allegati come archivio OSF.
+    - *Punti e media* — Condividi i punti preferiti e i media allegati come archivio.
 
 
 ### Backup automatico dei preferiti {#automatic-favorites-backup}
@@ -481,6 +495,8 @@ Nelle ultime versioni di ***Android***, l'accesso alle directory di sistema è l
 
 Tutte le informazioni su un Preferito sono memorizzate e descritte tramite tag. Quando si crea un punto Preferito, è possibile scrivere la propria [descrizione](#favorite-point) o utilizzare le informazioni dei dati del [punto di interesse (PDI)](../map/point-layers-on-map.md#points-of-interest-pois) di OSM da cui è stato creato il punto. I punti preferiti, i PDI e i Waypoint utilizzano gli stessi **tag** per memorizzare le informazioni e vengono salvati in **formato file GPX**.
 
+Se il [plugin Modifica di OpenStreetMap](../plugins/osm-editing.md) è abilitato, un Preferito creato da un oggetto OpenStreetMap memorizza anche un collegamento a quell'oggetto nel tag `osm_url`, ad esempio `https://www.openstreetmap.org/node/7235345886`. Il collegamento viene conservato nei file dei Preferiti esportati e condivisi e nei backup.
+
 I preferiti possono anche contenere riferimenti ai media allegati utilizzando gli elementi GPX standard `<link>`. 
 
 
@@ -495,6 +511,7 @@ I preferiti possono anche contenere riferimenti ai media allegati utilizzando gl
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

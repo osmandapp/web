@@ -1,5 +1,5 @@
 ---
-source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
+source-hash: b2b4863468543cee690b0a3568b81ee3415698752aaf50fecc63c1797c031476
 sidebar_position: 4
 title:  Mappe e Dati
 ---
@@ -38,7 +38,7 @@ Al momento, sono disponibili le seguenti soluzioni:
 
 #### 1. Migrare la cartella di archiviazione dati di OsmAnd nella "Memoria interna dell'app" {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- È possibile cambiare la cartella di archiviazione selezionando l'opzione ***Memoria interna dell'app*** in *Menu → Impostazioni → Impostazioni OsmAnd → Cartella di archiviazione dati*.
+- È possibile cambiare la cartella di archiviazione selezionando l'opzione ***Memoria interna dell'app*** in *Menu → Impostazioni → Impostazioni OsmAnd → Archiviazione dati → Archiviazione principale*.
 
 - Tuttavia, bisogna essere consapevoli che la memoria interna è spesso limitata. Come soluzione alternativa, è possibile spostare i file importanti nella memoria interna mantenendo le mappe usate raramente sulla scheda SD. Utilizzare un gestore di file per trasferire manualmente questi file quando necessario.
 
@@ -46,7 +46,7 @@ Il team di sviluppo sta attivamente cercando soluzioni più efficienti per migli
 
 #### 2. Usare la cartella "Download" della scheda SD {#2-use-the-sd-cards-download-folder}
 
-È possibile provare a risolvere il problema del caricamento lento delle mappe specificando la cartella **Download** della scheda SD per l'archiviazione di OsmAnd in *Menu → Impostazioni → Impostazioni OsmAnd → Cartella di archiviazione dati → Specificata manualmente*. I seguenti percorsi sono possibili:
+È possibile provare a risolvere il problema del caricamento lento delle mappe specificando la cartella **Download** della scheda SD per l'archiviazione di OsmAnd in *Menu → Impostazioni → Impostazioni OsmAnd → Archiviazione dati → Archiviazione principale → Specificata manualmente*. I seguenti percorsi sono possibili:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Questo percorso potrebbe causare errori durante l'accesso a più file. Ad esempio, potreste essere in grado di scaricare la mappa Panoramica del mondo, ma altre regioni potrebbero non apparire.
@@ -66,11 +66,12 @@ Android è diventato più restrittivo con i permessi di archiviazione, limitando
 
 Tuttavia, OsmAnd non ha il permesso di *Accesso a tutti i file* (a causa delle restrizioni di Google), limitando la scelta delle cartelle. Una soluzione alternativa è usare la cartella di archiviazione "Media", alla quale Android concede tipicamente un accesso in lettura/scrittura più ampio. Per fare ciò:
 
-- Andare su *Impostazioni di OsmAnd → Impostazioni OsmAnd → Cartella di archiviazione dati* e rivedere le aree di archiviazione disponibili. Usare l'indicatore di spazio libero per identificare l'archiviazione di destinazione, spesso etichettata come *Archiviazione esterna 2*.
+- Andare su *Impostazioni di OsmAnd → Impostazioni OsmAnd → Archiviazione dati → Archiviazione principale* e rivedere le aree di archiviazione disponibili. Usare l'indicatore di spazio libero per identificare l'archiviazione di destinazione, spesso etichettata come *Archiviazione esterna 2*.
+- Se disponibile, selezionare *Archiviazione esterna visibile* per la scheda SD e spostare i dati quando richiesto. In caso contrario, seguire i passaggi manuali riportati di seguito.
 - Prendere nota del percorso della cartella corrente, che potrebbe assomigliare a */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Passare all'opzione *Specificata manualmente* e modificare il percorso in una cartella accessibile ai media. Su molti sistemi, cambiare */Android/data/* in */media/* (ad es., ***/storage/xxxx-xxxx/media***) funziona. Alcuni sistemi potrebbero richiedere modifiche diverse del percorso.
+- Passare all'opzione *Specificata manualmente* e modificare il percorso in una cartella accessibile ai media. Su molti sistemi, cambiare */Android/data/* in */Android/media/* (ad es., ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***) funziona. Alcuni sistemi potrebbero richiedere modifiche diverse del percorso.
 
-Un percorso corretto non genererà alcun errore di permesso di scrittura da parte di OsmAnd. Prima di apportare queste modifiche, assicurarsi che OsmAnd abbia i permessi di archiviazione appropriati, incluso il permesso di archiviazione "Media", nelle impostazioni **App** di Android. Nelle versioni più recenti di Android, questi permessi potrebbero trovarsi in menu avanzati o nascosti.
+Un percorso corretto non genererà alcun errore di permesso di scrittura da parte di OsmAnd. Per questa cartella non sono necessari permessi di archiviazione aggiuntivi.
 
 ### Cancellazione dei dati delle mappe dopo l'aggiornamento dell'app (se è selezionata "Archiviazione multiutente 1") {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
@@ -127,13 +128,13 @@ Queste modifiche dovrebbero ridurre il tempo necessario per il rendering delle m
 
 <TabItem value="android" label="Android">
 
-![Emergency Access Android](@site/static/img/troubleshooting/emergency_access_android.png)
+![Accesso di emergenza Android](@site/static/img/troubleshooting/emergency_access_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Emergency Access iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+![Accesso di emergenza iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
 
 </TabItem>
 

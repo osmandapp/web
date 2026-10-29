@@ -1,5 +1,5 @@
 ---
-source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
+source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
 sidebar_position: 1
 title:  Pianifica un percorso
 ---
@@ -25,13 +25,13 @@ Un percorso è costituito da un insieme di segmenti tra punti specificati. I seg
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_overview_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_overview_ios.webp)
 
 </TabItem>
 
@@ -46,7 +46,7 @@ Un percorso è costituito da un insieme di segmenti tra punti specificati. I seg
 
 Andare a: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
-![Plan a route android](@site/static/img/plan-route/plan-route-menu-andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
@@ -54,7 +54,7 @@ Andare a: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
-![Plan a route ios](@site/static/img/plan-route/plan-route-menu-ios.png)
+![Pianifica un percorso iOS](@site/static/img/plan-route/plan-route-menu-ios.png)
 
 </TabItem>
 
@@ -97,13 +97,13 @@ Lo strumento *Pianifica un percorso* consente di modificare una traccia GPX esis
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_lines_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_lines_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
 
 </TabItem>
 
@@ -126,13 +126,13 @@ La *Linea retta* è necessaria e verrà utilizzata per le aree non coperte dai d
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
 
 </TabItem>
 
@@ -157,13 +157,13 @@ Usa invece le opzioni offline: aggancia alle strade o Mappe del terreno (Pro).
 
 <TabItem value="android" label="Android">
 
-![Plan a route snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Pianifica un percorso aggancio alle strade Android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
+![Pianifica un percorso aggancio alle strade iOS](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Pianifica un percorso aggancio alle strade iOS 2](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -186,20 +186,6 @@ Quando una traccia viene agganciata alle strade, i seguenti parametri potrebbero
 Se si seleziona una traccia e accanto all'icona *Impostazioni* viene visualizzata l'icona del profilo ***non specificato*** ("?"), toccarla per scegliere se agganciare la traccia alle strade o semplicemente collegare i punti con una linea retta e trattarla come una traccia registrata.
 :::
 
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
 
 
 ## Punti e Segmenti {#points--segments}
@@ -210,7 +196,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Plan a route Favorites android](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Pianifica un percorso Preferiti Android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella posizione del *Puntatore* uno per uno e toccare il pulsante *Aggiungi*. Accedendo all'**elenco dei punti** sottostante, è possibile riordinare i punti, eliminarli o accedere a un [menu contestuale del punto](#point-context-menu) specifico.
 
@@ -220,7 +206,7 @@ Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella pos
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
 Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella posizione del *Puntatore* uno per uno e toccare il pulsante *Route +*. Accedendo all'**elenco dei punti** sottostante, è possibile riordinare i punti, eliminarli o accedere a un [menu contestuale del punto](#point-context-menu) specifico.
 
@@ -234,7 +220,7 @@ Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella pos
 
 ### Aggiungere waypoint (solo iOS) {#adding-waypoints}
 
-![Plan a route ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Plan a route ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/adding_poi_ios.webp) ![Pianifica un percorso iOS](@site/static/img/plan-route/adding_poi_2_ios.webp)
 
 La scheda POI consente di aggiungere e gestire waypoint durante la pianificazione di un percorso.
 
@@ -258,7 +244,7 @@ Toccare un punto in un gruppo per aprire il suo menu contestuale. È possibile:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Plan a route android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
 I punti aggiunti nell'editor possono essere collegati come una linea retta o come un percorso tra punti di un profilo selezionato. È possibile accedere a *Percorso tra i punti* in diversi modi:
 
@@ -277,19 +263,20 @@ I punti aggiunti nell'editor possono essere collegati come una linea retta o com
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Plan a route ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Pianifica un percorso iOS](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 I punti aggiunti possono essere collegati con una linea retta o con un percorso calcolato utilizzando un profilo di routing selezionato. Il menu Percorso tra i punti consente di visualizzare e modificare il tipo di routing e le impostazioni per i segmenti e le sezioni del percorso.
 
 È possibile aprire Percorso tra i punti toccando il pulsante *Percorso tra i punti*, che mostra l'icona del profilo di routing attualmente selezionato, oppure da un menu [Segmento](#segments) o Sezione.
 
-Nella scheda Tipo di percorso, è possibile selezionare un profilo di routing per il segmento o la sezione selezionati. La linea retta è disponibile come prima opzione, seguita dai profili di routing disponibili.
+Nella scheda Percorso, è possibile selezionare un profilo di routing per il segmento o la sezione selezionati. La linea retta è disponibile come prima opzione, seguita dai profili di routing disponibili.
 
-Quando un percorso contiene un solo tipo di routing, viene visualizzata la vista semplice di Percorso tra i punti. Quando un percorso contiene più tipi di routing, la vista complessa mostra tutti i segmenti e le sezioni, consentendo di selezionare quale parte del percorso modificare.
+Quando il percorso ha un solo segmento con un solo tipo di routing, viene visualizzata la vista semplice di Percorso tra i punti. Quando il percorso ha più segmenti o un segmento con più tipi di routing, la vista complessa mostra tutti i segmenti e le sezioni, consentendo di selezionare quale parte del percorso modificare.
 
 È anche possibile:
-- **Avvia nuovo segmento** — creare un nuovo segmento e continuare ad aggiungere punti del percorso. Il nuovo segmento utilizza lo stesso tipo di percorso di quello corrente.
-- **Cambia per l'intera traccia** — selezionare un tipo di routing da applicare all'intera traccia.
+- **Continua con un tipo di percorso diverso** — selezionare un tipo di routing per la sezione successiva del segmento corrente, quindi continuare ad aggiungere punti sulla mappa. Nella vista complessa, questa opzione si chiama Continua con un tipo diverso e viene visualizzata sotto l'ultimo segmento.
+- **Avvia nuovo segmento** — creare un nuovo segmento non collegato alla parte precedente della traccia. Selezionare un tipo di routing per il nuovo segmento, quindi continuare ad aggiungere punti sulla mappa.
+- **Cambia tipo per l'intera traccia** — disponibile nella vista complessa. Selezionare un tipo di routing da applicare all'intera traccia.
 
 Nella scheda Impostazioni, è possibile selezionare le impostazioni di routing predefinite per il tipo di percorso selezionato.
 
@@ -313,7 +300,7 @@ Un segmento di traccia è un insieme di punti collegati senza **interruzioni**. 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/segment_menu.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/segment_menu_1.webp) ![Pianifica un percorso iOS](@site/static/img/plan-route/section_menu.webp)
 
 Un percorso può contenere uno o più segmenti. Un segmento può utilizzare un singolo tipo di percorso o contenere più sezioni con tipi di percorso diversi.
 
@@ -321,12 +308,12 @@ Nella scheda Percorso, ogni segmento viene visualizzato con il suo tipo di perco
 
 È possibile gestire un segmento utilizzando il relativo menu a tre punti:
 - **Cambia tipo di percorso** — disponibile per un segmento con un singolo tipo di percorso. Apre Percorso tra i punti, dove è possibile selezionare un tipo di percorso diverso.
-- **Imposta tipo di percorso singolo** — disponibile quando un segmento contiene più sezioni con tipi di percorso diversi. Apre Percorso tra i punti, dove è possibile applicare un tipo di percorso al segmento.
+- **Imposta tipo di percorso singolo** — disponibile quando un segmento contiene più sezioni con tipi di percorso diversi. Apre Percorso tra i punti, dove è possibile applicare un tipo di percorso al segmento. L'intero segmento viene ricalcolato utilizzando il tipo di routing selezionato.
 - **Ordina** — riordinare manualmente i punti del percorso o utilizzare Ordina porta a porta per riordinarli in modo da ridurre al minimo la distanza totale di viaggio.
 - **Salva come…** — salvare il segmento come file separato.
 - **Elimina segmento** — eliminare il segmento.
 
-Per creare un nuovo segmento non collegato, toccare *Avvia nuovo segmento* in fondo alla scheda Percorso.
+Per creare un nuovo segmento non collegato, toccare *Avvia nuovo segmento* in fondo alla scheda Percorso. Per continuare il segmento corrente con un tipo di routing diverso, toccare *Continua con un tipo diverso* sotto l'ultimo segmento, quindi selezionare un tipo di routing per la sezione successiva.
 
 Un segmento può essere suddiviso in [sezioni](#multimodal-routes) quando per diverse parti del segmento vengono utilizzati tipi di percorso diversi. Ogni sezione mostra il tipo di percorso e la distanza.
 
@@ -346,13 +333,13 @@ Toccare il menu a tre punti di una sezione per:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
 
 </TabItem>
 
@@ -390,13 +377,13 @@ Ogni punto del percorso ha il suo menu contestuale. Mostra il *numero di sequenz
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
+![Pianifica un percorso Android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
+![Pianifica un percorso iOS-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -413,7 +400,7 @@ Utilizzando lo strumento *Pianifica un percorso* e l'opzione [Percorso tra i pun
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
 Dopo aver [aggiunto](#adding-points) almeno un punto alla mappa, è possibile utilizzare l'opzione di salvataggio. Tutte le tracce salvate in *Pianifica un percorso* si trovano nel menu principale *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
@@ -434,7 +421,7 @@ Quando si salva una nuova traccia, è possibile selezionare l'opzione traccia **
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
+![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
 
 Dopo aver [aggiunto](#adding-points) almeno un punto alla mappa, è possibile utilizzare l'opzione di salvataggio. Tutte le tracce salvate in *Pianifica un percorso* si trovano nel menu principale *<Translate ios="true" ids="shared_string_menu"/> → <Translate ios="true" ids="shared_string_my_places"/> →* *[<Translate ios="true" ids="shared_string_gpx_tracks"/>](../personal/tracks/manage-tracks.md)*.
 
@@ -458,7 +445,7 @@ Durante il salvataggio, la traccia eredita il tipo di attività del profilo di r
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
+![Pianifica un percorso Android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Mostra il profilo dell'applicazione selezionato (l'impostazione predefinita è una linea retta). Toccando questa azione si ottiene lo stesso risultato che toccando il pulsante *Profilo*, che apre il [menu dei profili](../personal/profiles.md) dell'applicazione.
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) o **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Disegna nuovi segmenti di percorso che non si collegano al segmento precedente.
@@ -476,7 +463,7 @@ Durante il salvataggio, la traccia eredita il tipo di attività del profilo di r
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+![Pianifica un percorso iOS-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
 
 Toccare il menu a tre punti nella barra degli strumenti in alto per aprire il menu *Opzioni*. Le azioni disponibili dipendono dal fatto che si stia creando un nuovo percorso o modificando una traccia esistente.
 
@@ -499,7 +486,7 @@ Toccare il menu a tre punti nella barra degli strumenti in alto per aprire il me
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
+![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 Durante la pianificazione del percorso, il [grafico](../navigation/setup/route-details.md#elevation-graph) mostra le informazioni sull'altitudine del percorso e sulla percentuale di pendenza; inoltre, è possibile toccare un punto qualsiasi del grafico per visualizzare un puntatore con dati particolari.  
 
@@ -511,7 +498,7 @@ Quando si calcola un percorso per la navigazione in *Pianifica un percorso*, è 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+![Pianifica un percorso aggancio alle strade iOS](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Pianifica un percorso aggancio alle strade iOS 2](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
 
 La sezione Panoramica visualizza un grafico basato sull'asse selezionato. Utilizzare i controlli di selezione dell'asse per scegliere i dati visualizzati sul grafico. *Ricalcola altitudine* consente di ricalcolare i dati di altitudine quando necessario. Se i dati di altitudine non sono disponibili, la scheda Analizza visualizza Nessun dato di altitudine. Il messaggio spiega che OsmAnd può recuperare i dati di altitudine dalle strade vicine o dalle mappe del terreno. Toccare *Ottieni dati di altitudine* per calcolare i dati di altitudine. Per ulteriori informazioni, vedere la sezione [Ottenere i dati di altitudine](#get-elevation-data).
 

@@ -1,5 +1,5 @@
 ---
-source-hash: d5de9c3084442f355b9b6536f2e73e330ece35ee360363e944195eaf5ddfe9fb
+source-hash: 941d8e8096800d75da224d6bdd577697326daf17319375cb9b22749166c80554
 sidebar_position: 6
 title:  I miei luoghi
 ---
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
+![I miei luoghi Android](@site/static/img/personal/my_places_android_new.png) ![Menu I miei luoghi Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
@@ -34,7 +34,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
+![I miei luoghi iOS](@site/static/img/personal/my_places_ios_2.png)  ![Menu I miei luoghi iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
@@ -52,7 +52,7 @@ I miei luoghi è organizzato per categorie. Seleziona una scheda per gestire i d
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
+![Menu Preferiti Android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
@@ -60,7 +60,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
+![Menu Preferiti iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
@@ -78,7 +78,7 @@ Per istruzioni complete, consultare l'articolo [Preferiti](../personal/favorites
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![I miei luoghi con tracce su Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
@@ -86,7 +86,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
+![I miei luoghi con tracce su iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
@@ -104,7 +104,7 @@ Per una guida completa, consultare l'articolo [Gestisci Tracce](../personal/trac
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Note OSM in I miei luoghi Android](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -112,7 +112,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 Vai a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
+![Note OSM in I miei luoghi iOS](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
@@ -128,9 +128,9 @@ Consultare il [plugin Modifica OSM](../plugins/osm-editing.md) per istruzioni pa
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Menu I miei luoghi del plugin Note audio/video, tre azioni](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-Il **plugin Note Audio/Video** consente di creare note multimediali collegate a posizioni specifiche della mappa. Queste note sono memorizzate in **I miei luoghi** nella **Scheda Note A/V**.
+Il **plugin Note Audio/Video** consente di creare note multimediali collegate a posizioni specifiche della mappa. Queste note sono memorizzate in **I miei luoghi** nella **Scheda Note A/V**. Ogni nota viene inoltre salvata come preferito nella cartella **media** della scheda [Preferiti](#favorites).
 
 Per ulteriori informazioni, visitare la pagina del [plugin Note Audio/Video](../plugins/audio-video-notes.md).
 
@@ -138,7 +138,7 @@ Per ulteriori informazioni, visitare la pagina del [plugin Note Audio/Video](../
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
+![Guide di viaggio iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
 La sezione **Viaggi** contiene le guide di viaggio e gli articoli salvati nei segnalibri per l'accesso offline. È possibile aprire, organizzare e gestire rapidamente i contenuti di viaggio salvati da I miei luoghi. La sezione Viaggi viene visualizzata solo quando è stato salvato nei segnalibri più di una guida di viaggio.
 

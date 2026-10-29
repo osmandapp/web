@@ -1,5 +1,5 @@
 ---
-source-hash: 0ece8e7a1a25127672614cdf13cd0688a67a4cbb64515cc18d60c278f7999862
+source-hash: 6cd58289fa863d41e34b91d4957c55fa523752c06e24588537decc922b41bdaa
 title: Creare mappe raster e vettoriali offline
 versions: '*'
 intro: Con OsmAndMapCreator ci sono molti modi per creare e personalizzare mappe raster e vettoriali per le tue esigenze.
@@ -7,7 +7,7 @@ intro: Con OsmAndMapCreator ci sono molti modi per creare e personalizzare mappe
 
 ## OsmAndMapCreator {#osmandmapcreator}
 
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) può essere utilizzato per creare autonomamente qualsiasi mappa supportata da OsmAnd. Puoi scaricare l'ultima versione dal [sito web](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator ha funzionalità UI per creare mappe raster e vettoriali. *Per creare una mappa vettoriale avrai bisogno di un file OSM (`*.pbf, *.osm.gz, *.osm.bz2`)* e *per creare un file mappa sqlite online avrai bisogno di un `url base tile`*.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) può essere utilizzato per creare autonomamente qualsiasi mappa supportata da OsmAnd. Puoi scaricare l'ultima versione dal [sito web](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator ha funzionalità UI per creare mappe raster e vettoriali. *Per creare una mappa vettoriale avrai bisogno di un file OSM (`*.pbf, *.osm.gz, *.osm.bz2`)* e *per creare un file mappa sqlite online avrai bisogno di un `base tile url`*.
 
 ### Mappe raster (semplice) {#raster-maps-simple}
 
@@ -33,7 +33,7 @@ Passaggi per creare una mappa vettoriale tramite l'interfaccia utente di OsmAndM
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Crea mappe vettoriali" />
 
-Ulteriori parametri su come generare mappe vettoriali possono essere specificati nello script shell `utilities.sh`.
+Ulteriori parametri su come generare mappe vettoriali possono essere specificati nello script shell `utilities.sh `.
 
 ## Mappe vettoriali (script shell) {#vector-maps-shell-script}
 
@@ -65,7 +65,7 @@ Tutti i parametri extra possono essere trovati nel codice nel caso in cui non si
 | `--add-region-tags` | Rallenta il processo di creazione della mappa aggiungendo a ogni via un tag con il nome della regione in cui è stata elaborata. È necessario solo per la mappa base mondiale o quando si elaborano regioni multinazionali, in tutti gli altri casi è più facile avere un nome appropriato per il proprio file, ad esempio germany_..., us_.... Se non si dispone di questo parametro e non lo si specifica, è probabile che si vedano badge di percorsi stradali / di trasporto pubblico non localizzati in OsmAnd. |
 | `--keep-only-sea-objects` | Rimuove gli oggetti che non fanno parte dell'oceano / mare, viene utilizzato per produrre mappe nautiche |
 | `--ram-process` | Specifica che la creazione utilizzerà un database SQlite in RAM invece che su disco - [maggiori informazioni](#ram-to-process-maps). |
-| `--srtm=<CARTELLA>` | Specifica la cartella con le immagini TIF-DEM, in modo che le informazioni su altezza e pendenza vengano codificate nelle strade |
+| `--srtm=<FOLDER>` | Specifica la cartella con le immagini TIF-DEM, in modo che le informazioni su altezza e pendenza vengano codificate nelle strade |
 | `--rendering-types=<FILE>` | Posizione di rendering_types.xml con regole e tag OSM che devono essere codificati in OBF - [maggiori informazioni](#custom-vector-map-tags). |
 | `--poi-types=<FILE>` | Posizione di poi_types.xml con regole e tag OSM che devono essere codificati in OBF per i POI - [maggiori informazioni](#custom-vector-map-tags). |
 | `--extra-relations=<FILE>` | File OSM con poligoni come le Zone a Bassa Emissione i cui tag dovrebbero essere propagati alle vie. |
@@ -250,8 +250,8 @@ Se, per qualsiasi motivo, desideri convertire un singolo _geopdf_ in _geotiff_, 
 
 **Utilizzo:**
 
-&nbsp;<i>gdal_translate ```<Nome file GeoPDF> <Nome file Geotiff di output>``` -of gtiff --config
-gdal_pdf_layers_off “```<nome livello pdf 1>,<nome livello pdf 2>,<nome livello pdf 3>```” --config gdal_pdf_dpi ```<dpi di output>```</i>&nbsp;
+&nbsp;<i>gdal_translate ```<GeoPDF filename> <Output Geotiff Filename>``` -of gtiff --config
+gdal_pdf_layers_off “```<pdf layername 1>,<pdf layername 2>,<pdf layername 3>```” --config gdal_pdf_dpi ```<output dpi>```</i>&nbsp;
 
 **Esempi:**
 

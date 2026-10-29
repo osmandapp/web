@@ -1,8 +1,8 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
-sidebar_label: Favorites
-title: Favorites
+sidebar_label: Preferiti
+title: Preferiti
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,7 +24,7 @@ I Preferiti nel Pianificatore Web ti permettono di salvare e gestire luoghi impo
 
 ## Gestire i Preferiti {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
+![Modifica dei preferiti nel cloud di OsmAnd Web](@site/static/img/web/favorites_1_new.png)
 
 Dopo aver effettuato l'accesso a un account [**OsmAnd Pro**](../personal/osmand-cloud.md#login) o [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), i tuoi Preferiti nel Pianificatore Web sono organizzati in cartelle. Ogni cartella raggruppa i luoghi salvati e fornisce un set di azioni disponibili dal menu Preferiti. 
 Le seguenti azioni sono disponibili:
@@ -58,7 +58,7 @@ Durante la configurazione dell'accesso, potrebbero apparire i seguenti dialoghi:
 - *Cambia accesso*. Visualizzato quando si passa la cartella a Privato. Il dialogo avverte che tutto l'accesso utente esistente verrà revocato prima di confermare il cambiamento.
 - *Richieste di accesso*. Visualizzato quando si gestiscono gli utenti nell'elenco In sospeso, permettendo di approvare o negare le richieste di accesso.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
+![Modifica dei preferiti nel cloud di OsmAnd Web](@site/static/img/web/favorites_share.png) ![Modifica dei preferiti nel cloud di OsmAnd Web](@site/static/img/web/favorites_share_2.png)
 
 
 ## Dettagli Preferiti {#favorites-details} 
@@ -67,12 +67,12 @@ Selezionando un preferito si apre il pannello **Dettagli**. Questo pannello appa
 
 La vista Dettagli fornisce le informazioni associate al luogo selezionato e dipende dai dati disponibili per quel preferito specifico. Al minimo, include la posizione sulla mappa e le sue coordinate geografiche. Per i luoghi collegati a oggetti OpenStreetMap o fonti arricchite, potrebbero essere mostrate metadati aggiuntive, come nomi, categorie, identificatori o link di riferimento (ad esempio, Wikipedia o link Wikidata). 
 
-![Web Favorites Details](@site/static/img/web/favorites_details.png)
+![Dettagli dei preferiti in OsmAnd Web](@site/static/img/web/favorites_details.png)
 
 
 ## Azioni Preferiti {#favorites-actions}
 
-[Per aggiungere](../personal/favorites.md#manage-favorites) un nuovo punto preferito, fai clic destro sullo schermo. 
+[Per aggiungere](../personal/favorites.md#manage-favorites) un nuovo punto preferito, fai clic destro sullo schermo. Se il preferito non può essere salvato, il messaggio di errore include il motivo segnalato dal server, ad esempio che non c'è spazio sufficiente in [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Per modificare un preferito esistente, fai clic sul punto preferito direttamente sulla mappa o selezionalo da una cartella preferiti. Questo apre il pannello Dettagli, dove è disponibile l'azione Modifica. La modifica può anche essere avviata dal menu a tre punti (⋮) accanto al preferito nell'elenco Preferiti.
 
@@ -96,7 +96,7 @@ I preferiti possono essere organizzati in cartelle per una gestione più semplic
 
 La finestra di dialogo include anche una sezione Avanzate, in cui è possibile configurare le impostazioni di aspetto predefinite per la cartella. Queste impostazioni includono il colore, l'icona e la forma predefiniti che verranno applicati automaticamente ai punti preferiti aggiunti a questa cartella.
 
-![Web Edit Folder](@site/static/img/web/edit_folder.png)
+![Modifica cartella in OsmAnd Web](@site/static/img/web/edit_folder.png)
 
 ### Aspetto {#appearance}
 
@@ -120,7 +120,7 @@ L'opzione **Forma** definisce la forma di sfondo utilizzata per il marcatore del
 
 L'anteprima dell'aspetto si aggiorna immediatamente sia nel pannello di modifica che sulla mappa quando si modifica l'icona, il colore o la forma.
 
-![Web Edit Appearance](@site/static/img/web/edit_icon.png)
+![Modifica aspetto in OsmAnd Web](@site/static/img/web/edit_icon.png)
 
 ### Altre Azioni {#other-actions}
 

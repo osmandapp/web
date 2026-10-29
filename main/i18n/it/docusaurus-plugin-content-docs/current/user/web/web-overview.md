@@ -1,5 +1,5 @@
 ---
-source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: Introduzione
 title: Introduzione al Pianificatore Web
@@ -38,14 +38,14 @@ Il Portale Web offre le seguenti capacità principali per lavorare con mappe e d
 - Visualizzazione di [Preferiti](./web-map.md#favorites), [Tracce](./web-map.md#tracks), e [POI](./web-map.md#poi-overlay) sulla mappa.
 - [Sovrapposizioni meteo](./web-weather.md): vento, temperatura e pressione.
 - [Livelli del terreno](./web-map.md#terrain): ombreggiatura, pendenze e vista altimetrica.
-- [Analizzatore di tracce](./web-tracks-analyzer.md) per profili di altitudine e velocità.
+- [Analizzatore percorsi](./web-tracks-analyzer.md) per profili di altitudine e velocità.
 - Accesso completo ai dati sincronizzati tramite [OsmAnd Cloud](./web-cloud#cloud-sync).
 - Supporto per l'importazione/esportazione di file (GPX: tracce, preferiti).
 - Integrazione perfetta con **OsmAnd Pro** e **OsmAnd Start**.
 
 ### Accesso tramite abbonamento {#subscription-accesses}
 
-![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
+![Account OsmAnd Web](@site/static/img/web/web_start.png) ![Account OsmAnd Web](@site/static/img/web/web_pro.png)
 
 Il Portale Mappe Web supporta diversi livelli di accesso: senza accesso, con OsmAnd Start e con OsmAnd Pro. La tabella qui sotto riassume quali funzionalità sono disponibili a ciascun livello, in modo da poter vedere rapidamente cosa hai già e cosa diventa disponibile con un account o un upgrade. Questa panoramica è pensata per aiutarti a decidere se hai bisogno di un account e, in caso affermativo, quale opzione si adatta meglio al tuo utilizzo di OsmAnd.
 
@@ -73,7 +73,7 @@ Per accedere a tutte le funzionalità del Portale Web OsmAnd, è necessario acce
    - **Accedi**: Inserisci l'indirizzo email collegato al tuo abbonamento Pro o Start, o
    - **Crea account**: Registrati per un account gratuito OsmAnd Start. Per una guida dettagliata passo-passo alla creazione di un nuovo account, consulta l'articolo [Account OsmAnd](./web-cloud).
 
-![Web Account](@site/static/img/web/web_account.png)
+![Account OsmAnd Web](@site/static/img/web/web_account.png)
 
 
 ## Articoli correlati {#related-articles}

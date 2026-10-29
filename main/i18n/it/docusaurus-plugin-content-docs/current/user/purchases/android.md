@@ -1,5 +1,5 @@
 ---
-source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
+source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
 sidebar_position: 1
 title:  Acquisti Android
 ---
@@ -200,7 +200,7 @@ or
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continua con OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
+![Piano Pro](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Acquisto di Maps+ {#maps-purchase}
 
@@ -208,7 +208,7 @@ or
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tocca l'elenco delle funzionalità di Maps+ → Continua con Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
+![Piano Maps+](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Abbonamenti precedenti (prima della 4.0) {#legacy-subscriptions-prior-40}
@@ -246,7 +246,7 @@ Per ripristinare l'acquisto, controlla quale piano OsmAnd hai acquistato.
 - *Per aprire Ripristina acquisti*, segui questi passaggi: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e nella parte superiore dello schermo dovrebbe apparire che Maps+(Pro) è attivato.
 - *Registra le funzionalità Pro* con l'abbonamento OsmAnd Pro per tutte le piattaforme (Android e iOS). Se hai un account OsmAnd Pro, devi usarlo [per attivare OsmAnd Pro](../personal/osmand-cloud.md) per il tuo dispositivo.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases.png)
+![Piano Pro](@site/static/img/purchases/maps_purchases.png)
 
 ### Altri casi {#other-cases}
 

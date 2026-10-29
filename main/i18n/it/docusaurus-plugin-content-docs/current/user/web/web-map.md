@@ -1,5 +1,5 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
 sidebar_label: Mappa
 title: Mappa Globale sul Sito Web
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 La mappa web di OsmAnd è una mappa globale basata sui dati di [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Permette agli utenti di visualizzare i propri dati, come tracce e preferiti, creare percorsi di navigazione per qualsiasi profilo e accedere a funzionalità aggiuntive come meteo, tracce GPX pubbliche, POI e immagini di Wikimedia. Esplora e personalizza la tua esperienza con i dati direttamente nel tuo browser.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![OsmAnd Web, panoramica](@site/static/img/web/web_map_all.png)
 
 
 ## Menu Contestuale della Mappa {#map-context-menu}
@@ -60,7 +60,7 @@ Per aprirlo, fare clic con il pulsante destro del mouse in un punto qualsiasi de
 Add pin option will be added back once it becomes available again.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+![Menu contestuale della mappa](@site/static/img/web/map_context_menu_2_new.png)
 
 
 ## Oggetto Selezionato {#selected-object}
@@ -73,21 +73,32 @@ Il marker selezionato rimane visibile durante lo zoom della mappa.
 
 I marker vicini potrebbero essere nascosti per rendere l'oggetto selezionato più facile da vedere.
 
-![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+Quando il tipo di mappa [OsmAnd vettoriale (beta)](#map-type) è abilitato, è possibile selezionare gli oggetti direttamente sulla mappa, inclusi PDI, edifici, numeri civici e fermate del trasporto pubblico. Quando si passa il cursore su un oggetto selezionabile, il puntatore diventa una mano che indica. Gli oggetti senza nome o icona, come strade e sentieri senza nome, non possono essere selezionati.
+
+Selezionando un oggetto si apre il suo pannello di dettagli:
+
+- **PDI** — il pannello mostra le stesse informazioni e azioni rapide dei risultati della [Ricerca](web-search.md) e della [sovrapposizione PDI](#poi-overlay).
+- **Oggetto senza dati PDI** — ad esempio un edificio o un numero civico. Il pannello mostra il tipo di oggetto, l'indirizzo e le coordinate.
+- **Fermata del trasporto pubblico** — il pannello può includere anche la sezione Percorsi con il filtro del tipo di trasporto, come descritto in [Fermate di trasporto](#transport-stops).
+
+Se nel punto selezionato si trovano più oggetti, il pannello li mostra uno alla volta. Usa le frecce accanto al pulsante di chiusura per passare dall'uno all'altro. La freccia indietro appare a partire dal secondo oggetto e la freccia avanti è inattiva sull'ultimo.
+
+![Oggetto selezionato](@site/static/img/web/selected_object_favorite.png) ![Oggetto selezionato](@site/static/img/web/several_objects.webp)
 
 
 
 ## Menu Configura Mappa {#configure-map-menu}
 
-Il menu Configura Mappa consente di gestire le impostazioni di visualizzazione dei dati della mappa, come i livelli POI, i Preferiti, le tracce e il terreno. Questo menu è disponibile dopo aver effettuato l'accesso al proprio account OsmAnd. Per aprirlo, fare clic sul pulsante nell'**angolo in alto a sinistra** o accedervi tramite il **Menu**.
+Il menu Configura Mappa consente di gestire le impostazioni di visualizzazione dei dati della mappa, come i livelli POI, i Preferiti, le tracce, il terreno e il tipo di mappa. Questo menu è disponibile dopo aver effettuato l'accesso al proprio account OsmAnd. Per aprirlo, fare clic sul pulsante nell'**angolo in alto a sinistra** o accedervi tramite il **Menu**.
 
 - [Sovrapposizione POI...](#poi-overlay). Consente di scegliere e mostrare le categorie di POI necessarie sulla mappa.
 - [Preferiti](#favorites). Attiva o disattiva la visualizzazione dei preferiti sulla mappa.
 - [Tracce](#tracks). Contiene le tracce GPX visibili sulla mappa.
 - [Fermate di trasporto](#transport-stops). Attiva o disattiva la visualizzazione delle fermate di trasporto pubblico sulla mappa. 
 - [Terreno](#terrain). Abilita o disabilita la combinazione di colori del terreno sulla mappa.
+- [Raster (tiles) / OsmAnd vettoriale (beta)](#map-type). Mostra il tipo di mappa attualmente in uso e consente di passare dalla mappa raster a quella vettoriale.
 
-![POIs menu](@site/static/img/web/configure_map_web_new.png)
+![Menu PDI](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### Sovrapposizione POI {#poi-overlay}
@@ -108,7 +119,7 @@ Nel pannello di dettagli POI, sono disponibili azioni rapide dai pulsanti di azi
 - *Indicazioni da* — imposta il POI selezionato come punto di partenza e apre il pannello Percorso in modo da poter scegliere una destinazione e un profilo.
 - *Navigazione* — imposta il POI selezionato come punto di destinazione per la navigazione.
 
-![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
+![Menu PDI](@site/static/img/web/poi_categories.png) ![Menu PDI](@site/static/img/web/poi_photo_new.png)
 
 
 ### Preferiti {#favorites}
@@ -141,7 +152,7 @@ Il pannello della traccia include le seguenti schede:
 - Traccia — attualmente non implementata.
 - Punti — mostra i waypoint e i punti di rotta raggruppati per tipo.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
+![Menu Configura Mappa, Tracce](@site/static/img/web/configure_map_track_new.png) ![Menu Configura Mappa, Tracce](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Fermate di trasporto {#transport-stops}
 
@@ -169,7 +180,7 @@ Un filtro per tipo di trasporto consente di filtrare le rotte mostrate nell'elen
 
 La sezione Rotte vicine potrebbe mostrare rotte aggiuntive situate vicino alla fermata selezionata. Questo ti aiuta a scoprire rapidamente opzioni di trasporto alternative nell'area circostante.
 
-![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
+![Fermate di trasporto](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terreno {#terrain}
 
@@ -183,7 +194,18 @@ In questa sezione è possibile:
   - **Altezza**
 - Regolare la visibilità del livello di terreno selezionato da **0% a 100%**.
 
-![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+![Menu Configura Mappa, Terreno](@site/static/img/web/configure_map_terrain.png)
+
+### Tipo di mappa {#map-type}
+
+Seleziona la voce del tipo di mappa nel menu Configura Mappa per scegliere una delle seguenti opzioni:
+
+- **Raster (tiles)** — il tipo di mappa predefinito. Con questo tipo di mappa è possibile selezionare solo i marker visualizzati sulla mappa, come i risultati della [Ricerca](web-search.md), i marker della [sovrapposizione PDI](#poi-overlay), i [Preferiti](#favorites) e le [fermate di trasporto](#transport-stops).
+- **OsmAnd vettoriale (beta)** — la mappa vettoriale. Con questo tipo di mappa è possibile [selezionare gli oggetti direttamente sulla mappa](#selected-object).
+
+Il tipo di mappa selezionato viene salvato e applicato alla successiva apertura della mappa. **Ripristina predefiniti** nell'intestazione di Configura Mappa riporta la mappa su **Raster (tiles)**.
+
+La mappa vettoriale richiede un browser con supporto WebGL. Se WebGL non è disponibile, la mappa passa automaticamente a **Raster (tiles)**.
 
 
 ## Impostazioni {#settings}
@@ -196,7 +218,7 @@ Per cambiare la lingua dell'interfaccia:
 
 *Vai a: Menu → ⚙ Impostazioni → Lingua di visualizzazione*
 
-![Web Language](@site/static/img/web/web_language.png)
+![Lingua di OsmAnd Web](@site/static/img/web/web_language.png)
 
 ### Unità {#units}
 
@@ -225,7 +247,7 @@ L'opzione **Unità di velocità** controlla come vengono visualizzate la velocit
 
 Ad esempio, una velocità di 90 km/h corrisponde a 25 m/s o circa 55,92 mph.
 
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
+![Unità di OsmAnd Web](@site/static/img/web/web_units_len.png) ![Unità di OsmAnd Web](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -254,19 +276,19 @@ Questi URL possono essere copiati e condivisi utilizzando qualsiasi mezzo suppor
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+  ![OsmAnd Web, URL](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL senza segnaposto sulla mappa:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+  ![OsmAnd Web, URL](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL con navigazione:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+  ![OsmAnd Web, URL](@site/static/img/plan-route/web_url_track.png)
 
 A seconda dei parametri specificati, le stringhe URL possono contenere:
 
@@ -295,6 +317,10 @@ A seconda dei parametri specificati, le stringhe URL possono contenere:
 
 11. Link diretto alla pagina [**Esplora**](https://osmand.net/docs/user/web/web-search#explore) attuale&nbsp; - &nbsp;`osmand.net/map/search`
 
+12. **Dettagli PDI**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Oggetto della mappa senza dati PDI** (ad esempio un edificio)&nbsp; – &nbsp;`osmand.net/map/obj/`
+
 
 ## Articoli Correlati {#related-articles}
 
@@ -303,4 +329,3 @@ A seconda dei parametri specificati, le stringhe URL possono contenere:
 - [Tracce](./web-tracks.md)
 - [Preferiti](./web-favorites.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
-```

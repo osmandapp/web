@@ -1,5 +1,5 @@
 ---
-source-hash: 0908961f227fa1a892804774f35b6e16c127cf8034093323cc379c362624f911
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title:  Registrazione tracce
 ---
@@ -134,7 +134,7 @@ Per *Interrompi / Salva / Pausa*:
 
 - Per **Salvare, Mettere in pausa, Avviare** un nuovo segmento o **Terminare** la registrazione, utilizzare i pulsanti [Azione rapida](../widgets/quick-action.md#add-and-delete-actions). Andare su *Menu → Configura schermo → Pulsanti personalizzati → Azione rapida → Aggiungi azione → [Miei luoghi](../widgets/quick-action.md#my-places)* e aggiungere uno o più pulsanti di azione rapida.
 
-- (*Solo Android*) Per **Mettere in pausa** o **Salvare** una traccia in registrazione, utilizzare la [notifica](#notifications) di sistema nell'area di notifica del dispositivo.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Solo Android*) Per **Mettere in pausa** o **Salvare** una traccia in registrazione, utilizzare la [notifica](#notifications) di sistema nell'area di notifica del dispositivo.<br/><br/> ![Mettere in pausa o salvare la registrazione dalla notifica](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Schermata di panoramica {#overview-screen}
@@ -195,13 +195,13 @@ Per maggiori dettagli, potete esplorare il [**Menu contestuale delle tracce**](.
 
 <TabItem value="android" label="Android">
 
-![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configura tracce mappa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![Mostra la traccia registrata sulla mappa Android](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configura tracce mappa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configura tracce mappa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![Mostra la traccia registrata sulla mappa iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configura tracce mappa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -433,6 +433,33 @@ Se la registrazione corrente non contiene ancora una sezione di salita o discesa
 
 ### Distanza (Avvio-Stop) {#distance-start-stop}
 
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
+
 | |
 |-----------|
 | **Distanza/Avvio-Stop**. Questo widget visualizza la distanza della registrazione del viaggio in corso. Viene aggiunto automaticamente quando il plugin Registrazione tracce è abilitato, ma è possibile nasconderlo tramite il menu Configura schermo. Il widget presenta tre stati distinti: *Registrazione*, *In pausa* e *Inattivo*, ognuno dei quali indica lo stato attuale della registrazione del viaggio. |
@@ -460,6 +487,30 @@ Se la registrazione corrente non contiene ancora una sezione di salita o discesa
 |![widget](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Se avete selezionato più widget — *Durata*, *Salita* o *Discesa* — potete accedere alla stessa finestra di dialogo per ciascuno senza doverla cambiare o chiudere. Questa interfaccia unificata facilita la visualizzazione e la gestione di tutte le informazioni correlate in modo fluido.
+
+<!--
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+-->
 
 
 ## Articoli correlati {#related-articles}

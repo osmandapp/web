@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Luoghi Popolari
 ---
@@ -209,7 +209,7 @@ Su iOS, iPadOS e macOS, è possibile navigare tra le foto utilizzando i tasti de
   Condividi l'immagine selezionata utilizzando qualsiasi app compatibile installata sul tuo dispositivo (ad es. messaggistica, e-mail o social media). Il contenuto condiviso include l'immagine e il link alla sua fonte (se disponibile).
 
 - **Dettagli**  
-  Apre una vista dettagliata che mostra i metadati dell'immagine, tra cui: *Descrizione (testo completo, solo Android)*, *Nome*, *Data di aggiunta*, *Autore*, *Licenza*, *Fonte* e *Link diretto*
+  Apre una vista dettagliata che mostra i metadati dell'immagine, tra cui: *Descrizione (testo completo)*, *Nome*, *Data di aggiunta*, *Autore*, *Licenza*, *Fonte* e *Link diretto*.
 
   **Nota:** La lingua della descrizione dipende dalla lingua di visualizzazione dell'applicazione. Se la descrizione nella lingua selezionata non è disponibile, OsmAnd mostra la versione in inglese o la prima traduzione disponibile.
 
