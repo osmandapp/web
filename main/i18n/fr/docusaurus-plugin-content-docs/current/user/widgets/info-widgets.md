@@ -538,7 +538,7 @@ Les widgets d'enregistrement de trajet se réfèrent à l'[extension <Translate 
 
 :::note
 Pour ajouter des widgets de capteurs externes à l'écran de la carte, activez l'extension [Capteurs externes](../plugins/external-sensors.md) d'OsmAnd.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -585,7 +585,7 @@ Les widgets se réfèrent à l'[extension Capteurs externes](../plugins/external
 
 :::note
 Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, activez l'extension [Métrique du véhicule](../plugins/vehicle-metrics.md) d'OsmAnd.
-::;
+:::
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -625,7 +625,7 @@ Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/ve
 
 :::note
 Pour ajouter des widgets Météo à l'écran de la carte, activez l'extension [Météo](../plugins/weather.md) d'OsmAnd.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -705,7 +705,7 @@ Il s'agit d'un widget de l'extension Mapillary qui offre un accès rapide à l'a
 
 :::note
 Pour ajouter des widgets de notes audio/vidéo à l'écran de la carte, activez l'extension [Notes audio/vidéo](../plugins/audio-video-notes.md) d'OsmAnd.
-::;
+:::
 
 ![Widget de notes audio-vidéo](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -749,7 +749,7 @@ Ce widget de l'extension OsmAnd Tracker est utilisé pour accéder rapidement à
 
 :::note
 Pour ajouter des widgets pour développeurs à l'écran de la carte, activez l'extension [Développement OsmAnd](../plugins/development.md).
-::;
+:::
 
 Les **widgets pour développeurs** fournissent des informations sur la [vitesse de rendu de la carte](../plugins/development.md#map-rendering-fps-widget) et les paramètres de position de la caméra virtuelle, y compris le [niveau de zoom](../plugins/development.md#zoom-level), la [distance](../plugins/development.md#distance-to-target) au centre de la carte, l'[élévation de la caméra](../plugins/development.md#camera-elevation) et l'[angle d'inclinaison](../plugins/development.md#camera-tilt).  
 
