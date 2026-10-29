@@ -1,5 +1,5 @@
 ---
-source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title:  Widgets informativos
 ---
@@ -289,11 +289,13 @@ Para cambiar entre estos modos, toque directamente el widget. La opción de camb
 
 <TabItem value="android" label="Android">
 
-**Ratio de planeo medio** muestra el ratio de planeo medio para un intervalo de tiempo especificado.
+- **Ratio de planeo medio** muestra el ratio de planeo medio para un intervalo de tiempo especificado.
+- **Velocidad vertical media** muestra la velocidad a la que asciende o desciende durante un intervalo de tiempo: la diferencia de altitud entre el primer y el último punto del intervalo, dividida por el tiempo transcurrido entre ellos. Los valores positivos indican ascenso y los negativos descenso. Puede establecer el intervalo de tiempo para este widget de 15 segundos a 60 minutos.
 
 | | |
 |:------------|:------------|
 | Activar | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → Ratio de planeo* |
+| Al tocar | Cambia *Ratio de planeo medio* o *Velocidad vertical media*  |
 | Pulsación larga | Abre el [Menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -301,7 +303,7 @@ Para cambiar entre estos modos, toque directamente el widget. La opción de camb
 <TabItem value="ios" label="iOS">
 
 - **Ratio de planeo medio** muestra el ratio de planeo medio para un intervalo de tiempo especificado.
-- **Velocidad vertical media** indica la velocidad a la que un objeto asciende o desciende durante un tiempo. Para la evaluación sólo se consideran el primer y el último punto del intervalo de tiempo. Puede establecer el intervalo de tiempo para este widget de 15 segundos a 60 minutos. Debe utilizar el [Marcador de mapa](../personal/markers.md) como punto objetivo.
+- **Velocidad vertical media** muestra la velocidad a la que asciende o desciende durante un intervalo de tiempo: la diferencia de altitud entre el primer y el último punto del intervalo, dividida por el tiempo transcurrido entre ellos. Los valores positivos indican ascenso y los negativos descenso. Puede establecer el intervalo de tiempo para este widget de 15 segundos a 60 minutos.
 
 | | |
 |:------------|:------------|
@@ -702,7 +704,7 @@ Este es un widget del complemento Mapillary que proporciona acceso rápido a la 
 <InfoAndroidOnly />
 
 :::note
-Para añadir widgets de Notes de audio/vídeo a la pantalla del mapa, active el [complemento Notas de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
+Para añadir widgets de Notes de audio/vídeo a la pantalla del mapa, active el [complemento Notes de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
 ::;
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  

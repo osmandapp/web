@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -61,7 +61,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 *¡Date prisa! Esta oferta solo está disponible hasta el* **4 de octubre (23:59 UTC)**.
 
-*En las suscripciones, el precio con descuento se aplica durante el primer año.*
+*En las suscripciones, el precio con descuento se aplica durante el primer año*.
 
 :::
 

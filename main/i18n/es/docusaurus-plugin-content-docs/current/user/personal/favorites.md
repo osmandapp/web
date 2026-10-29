@@ -1,5 +1,5 @@
 ---
-source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Favoritos
 ---
@@ -162,19 +162,32 @@ La *carpeta Personal* contiene puntos especiales como **<Translate android="true
 
 ![Multimedia](@site/static/img/personal/media_actions.webp) ![Multimedia](@site/static/img/personal/media_menu.webp)
 
-La sección Multimedia le permite adjuntar fotos, vídeos, grabaciones de audio e imágenes a un punto favorito. Puede añadir multimedia al crear un favorito o más tarde desde la pantalla Editar favorito. Para adjuntar multimedia, toque *Añadir* en la sección Multimedia y elija una de las opciones disponibles:
+La sección Multimedia le permite adjuntar fotos, vídeos, grabaciones de audio e imágenes a un punto favorito. Puede añadir multimedia al crear un favorito o más tarde desde la pantalla Editar favorito, o directamente desde el menú contextual del favorito. Para adjuntar multimedia, toque el botón *+* en la pantalla Editar favorito o *Añadir* en el menú contextual y elija una de las opciones disponibles:
 - **Tomar una foto** — Capture una nueva foto con la cámara del dispositivo.
 - **Tomar una nota de vídeo** — Grabe un nuevo vídeo.
-- **Tomar una nota de audio** — Grabe una nota de audio.
+- **Tomar una nota de audio** — Grabe una nota de audio. Si OsmAnd no tiene permiso para grabar audio, su dispositivo le pedirá que lo permita.
 - **Elegir de la Galería** — Seleccione una imagen existente de su dispositivo.
 - **Elegir de Archivos** — Seleccione una imagen del sistema de archivos.
 
-Una vez adjuntado el multimedia, aparece en la tarjeta Multimedia del menú contextual del favorito. La misma tarjeta Multimedia también está disponible para [Puntos de ruta](../map/tracks/track-context-menu.md#points--waypoints).
+Una vez adjuntado el multimedia, aparece en la tarjeta Multimedia del menú contextual del favorito. Si no hay multimedia adjunto, la tarjeta muestra *Sin multimedia* y un botón *Añadir*. La misma tarjeta Multimedia también está disponible para [Puntos de ruta](../map/tracks/track-context-menu.md#points--waypoints).
+
+Las notas de audio, vídeo y foto creadas con el [complemento Notas de audio/vídeo](../plugins/audio-video-notes.md) también se guardan como favoritos con multimedia adjunto.
 
 La tarjeta Multimedia muestra vistas previas de los elementos adjuntos. Los elementos mostrados siguen el orden de clasificación seleccionado. Toque *Mostrar todo* para abrir la galería completa. La galería muestra todo el multimedia adjunto al favorito seleccionado.
 
 Toque cualquier elemento para abrirlo a pantalla completa. Las fotos y vídeos se pueden ver directamente, mientras que las grabaciones de audio incluyen controles de reproducción.
 
+La galería incluye las siguientes opciones:
+- **Clasificación** — Toque la barra de clasificación en la parte superior para elegir el orden: Más cercano, Última modificación, Nombre A - Z, Nombre Z - A, Fecha más reciente primero, Fecha más antigua primero, Duración más larga primero o Duración más corta primero.
+- **Resumen** — Debajo de los elementos, la galería muestra el número de fotos, vídeos y notas de audio y su tamaño total.
+- **Botón +** — Añadir nuevo multimedia.
+- **Editar** (icono de lápiz) — Entrar en modo de selección. También puede mantener pulsado cualquier elemento.
+
+En el modo de selección, toque los elementos para seleccionarlos o use Seleccionar todo. El menú de tres puntos ofrece:
+- **Exportar** — Exportar los archivos multimedia seleccionados.
+- **Eliminar** — Eliminar el multimedia seleccionado del favorito. El multimedia almacenado por OsmAnd y no adjunto a ningún otro elemento también se elimina del dispositivo.
+
+El multimedia capturado en OsmAnd se nombra con el patrón `Tipo_AAAA-MM-DD_HH-mm-ss_ubicación.ext`, por ejemplo `Foto_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. El nombre contiene el tipo de multimedia, la fecha y hora de creación y la ubicación donde se capturó el multimedia, codificada como un [enlace corto de OSM](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 ## Gestionar Favoritos {#manage-favorites}
 
@@ -481,6 +494,8 @@ En las últimas versiones de ***Android***, el acceso a los directorios del sist
 
 Toda la información sobre un Favorito se almacena y describe mediante etiquetas. Al crear un punto Favorito, puede escribir su propia [descripción](#favorite-point) o usar información de los datos del [punto de interés (PDI)](../map/point-layers-on-map.md#points-of-interest-pois) de OSM desde el cual se creó su punto. Los puntos Favoritos, PDI y Waypoints usan las mismas **etiquetas** para almacenar información y se guardan en **formato de archivo GPX**.
 
+Si el [complemento Edición de OSM](../plugins/osm-editing.md) está activado, un Favorito creado a partir de un objeto de OpenStreetMap también almacena un enlace a ese objeto en la etiqueta `osm_url`, por ejemplo `https://www.openstreetmap.org/node/7235345886`. El enlace se conserva en los archivos de Favoritos exportados y compartidos y en las copias de seguridad.
+
 Los favoritos también pueden contener referencias al multimedia adjunto mediante elementos `<link>` estándar de GPX. 
 
 
@@ -495,6 +510,7 @@ Los favoritos también pueden contener referencias al multimedia adjunto mediant
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

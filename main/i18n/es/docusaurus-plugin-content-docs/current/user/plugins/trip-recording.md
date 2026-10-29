@@ -1,5 +1,5 @@
 ---
-source-hash: 0908961f227fa1a892804774f35b6e16c127cf8034093323cc379c362624f911
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title:  Grabación de viaje
 ---
@@ -319,7 +319,7 @@ Esta función le permite gestionar los ajustes de optimización de la batería p
 
 ![Notificación de Grabación de Viaje](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
-Se muestra una notificación de grabación de viaje en el área de notificaciones del sistema mientras la grabación está activa. Esta notificación garantiza que el proceso de grabación no sea interrumpido por el sistema y no se puede desactivar durante una grabación activa. Si [Mostrar el botón 'Grabar' en Notificaciones](#recording-settings) está activado en los ajustes del complemento, la notificación siempre será visible y facilitará el inicio de una grabación desde ella.
+Se muestra una notificación de grabación de viaje en la área de notificaciones del sistema mientras la grabación está activa. Esta notificación garantiza que el proceso de grabación no sea interrumpido por el sistema y no se puede desactivar durante una grabación activa. Si [Mostrar el botón 'Grabar' en Notificaciones](#recording-settings) está activado en los ajustes del complemento, la notificación siempre será visible y facilitará el inicio de una grabación desde ella.
 
 - El área de notificaciones se abre al deslizar hacia abajo desde la parte superior de la pantalla y se cierra al deslizar hacia arriba. Estos mensajes le notifican acciones como iniciar/detener la grabación de viaje, especialmente cuando la grabación automática está activada durante la navegación.
 - Las notificaciones permanecen visibles independientemente de si la aplicación se está ejecutando en primer plano, en segundo plano o está cerrada. Puede borrar manualmente la notificación antigua si ya no es necesaria, pero esto no detendrá la grabación en curso.

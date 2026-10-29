@@ -1,8 +1,9 @@
 ---
-source-hash: b0e4660605b0cdfdfcfc653e1f8929974cb654b66c0c55fbc588b89e37d05091
+source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
 sidebar_position: 3
-title:  Historial de búsqueda
+title:  Explorar búsqueda
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,19 +12,42 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-El *Historial de búsqueda* es un registro de todas las búsquedas y ubicaciones que ha introducido o buscado en la aplicación durante el período de uso. Esta herramienta le permite encontrar y acceder fácilmente a las ubicaciones buscadas anteriormente, lo que facilita la navegación y le ahorra tiempo.
+<Tabs groupId="operating-systems" queryString="current-os">
 
-OsmAnd ofrece varias formas de ver su historial de búsqueda.
+<TabItem value="android" label="Android">
+
+La pestaña **Explorar** de la herramienta de búsqueda le ayuda a descubrir lugares populares a su alrededor y a volver rápidamente a los lugares que ha buscado o navegado anteriormente. Contiene dos secciones: [Lugares populares cercanos](#popular-places-nearby) e [Historial](#history-items).
+
+*Historial* es un registro de todas las búsquedas y destinos de navegación que ha introducido o buscado en la aplicación durante el período de uso. Esta herramienta le permite encontrar y acceder fácilmente a las ubicaciones buscadas anteriormente, lo que facilita la navegación y le ahorra tiempo.
+
+OsmAnd ofrece varias formas de ver su historial.
 
 - El [botón de Búsqueda](../widgets/map-buttons.md#search) se muestra siempre en el mapa, y al pulsarlo accederá a la [pantalla general](#how-to-use) de la herramienta.
-- Vaya al *Menú principal de Android → Buscar → pestaña Historial*.
+- Vaya al menú principal *Menú → Buscar → pestaña Explorar*.
 - Cuando se prepare para iniciar una ruta, pulse *Navegación → Establecer destino → Campo de búsqueda*.
 - El bloque de información en el menú de navegación de [preparación de ruta](../navigation/setup/route-navigation.md#navigation-menu) muestra una lista de puntos de destino recientes, que también forman parte del historial de búsqueda.
-- El historial de búsqueda está disponible en [Android Auto](../navigation/auto-car.md#search) y [CarPlay](../navigation/car-play.md#search).
+- El historial de búsqueda está disponible en [Android Auto](../navigation/auto-car.md#search).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Historial de búsqueda* es un registro de todas las búsquedas y ubicaciones que ha introducido o buscado en la aplicación durante el período de uso. Esta herramienta le permite encontrar y acceder fácilmente a las ubicaciones buscadas anteriormente, lo que facilita la navegación y le ahorra tiempo.
+
+OsmAnd ofrece varias formas de ver su historial de búsqueda.  
+
+- El [botón de Búsqueda](../widgets/map-buttons.md#search) se muestra siempre en el mapa. Púlselo para abrir la [pantalla general](#how-to-use) de la herramienta y, a continuación, seleccione la pestaña *Historial*.
+- Cuando se prepare para iniciar una ruta, pulse *Navegación → Establecer destino → Campo de búsqueda*.
+- El bloque de información en el menú de navegación de [preparación de ruta](../navigation/setup/route-navigation.md#navigation-menu) muestra una lista de puntos de destino recientes, que también forman parte del historial de búsqueda.
+- El historial de búsqueda está disponible en [CarPlay](../navigation/car-play.md#search).
+
+</TabItem>
+
+</Tabs>
 
 
 ## Cómo usar {#how-to-use}
@@ -32,7 +56,19 @@ OsmAnd ofrece varias formas de ver su historial de búsqueda.
 
 <TabItem value="android" label="Android">
 
-![Búsqueda de historial](@site/static/img/search/history_search_android.png)
+![Explorar búsqueda](@site/static/img/search/explore_search_android.webp)
+
+La pestaña **Explorar** se abre al abrir la herramienta de búsqueda. La pestaña Explorar sirve para proporcionar información relevante sobre los lugares cercanos y sus acciones anteriores.
+
+- *Descubrir lugares cercanos*. La sección [Lugares populares cercanos](#popular-places-nearby) muestra lugares de interés y atracciones conocidos a su alrededor, para que pueda encontrar lugares interesantes sin introducir una consulta.
+- *Volver a buscar*. Puede utilizar el historial de búsqueda para volver a buscar lugares o direcciones buscados anteriormente sin tener que volver a introducir la consulta.
+
+- *Acceso rápido a lugares visitados con frecuencia*. Si visita ciertos lugares con frecuencia, como su casa, el trabajo o sus lugares favoritos, el Historial de búsqueda guarda esos lugares, proporcionando un acceso rápido a ellos.
+
+- *Rastrear viajes anteriores*. El historial de búsqueda puede ser útil para rastrear viajes y rutas anteriores. Puede rastrear las rutas que ha realizado antes, o [planificar su próxima ruta](../plan-route/create-route.md) basándose en las anteriores.
+
+- *Buscar lugares durante un determinado período de tiempo*. En la pantalla Historial, los elementos ordenados por *Recientes* se agrupan por período: *Hoy*, *Ayer*, *La semana pasada* y luego por mes. Para encontrar un elemento específico, pulse el título *Historial* en la parte superior de la pantalla e introduzca su nombre.
+- *Eliminar entradas*. El Historial de búsqueda ofrece la posibilidad de [eliminar](#delete) entradas anteriores, lo que puede ser útil para la confidencialidad o para mantener el historial organizado.
 
 </TabItem>
 
@@ -40,21 +76,29 @@ OsmAnd ofrece varias formas de ver su historial de búsqueda.
 
 ![Búsqueda de historial](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 El historial de búsqueda sirve para proporcionar información relevante sobre sus acciones anteriores.
 
 - *Volver a buscar*. Puede utilizar el historial de búsqueda para volver a buscar lugares o direcciones buscados anteriormente sin tener que volver a introducir la consulta.
 
-- *Acceso rápido a lugares visitados con frecuencia*. Si visita ciertos lugares con frecuencia, como su casa, el trabajo o sus lugares favoritos, el Historial de búsqueda guarda esos lugares, proporcionando un acceso rápido a ellos.
-
-- *Rastrear viajes anteriores*. El historial de búsqueda puede ser útil para rastrear viajes y rutas anteriores. Puede rastrear las rutas que ha realizado antes, o [planificar su próxima ruta](../plan-route/create-route.md) basándose en las anteriores.
-
-- *Buscar lugares durante un determinado período de tiempo*. Para la aplicación de Android, debe utilizar una pulsación larga, a continuación, encontrar el mes en el que realizó el viaje, salir del menú de eliminación y establecer el nombre en el campo de búsqueda. Para la aplicación de iOS, la lista del historial de búsqueda ya está dividida en bloques por meses.
-
+- *Acceso rápido a lugares visitados con frecuencia*. Si visita ciertos lugares con frecuencia, como su casa, el trabajo o sus lugares favoritos, el Historial de búsqueda guarda esos lugares, proporcionando un acceso rápido a ellos.  
+- *Rastrear viajes anteriores*. El historial de búsqueda puede ser útil para rastrear viajes y rutas anteriores. Puede rastrear las rutas que ha realizado antes, o [planificar su próxima ruta](../plan-route/create-route.md) basándose en las anteriores.  
+- *Buscar lugares durante un determinado período de tiempo*. La lista del historial de búsqueda ya está dividida en bloques por meses.
 - *Eliminar entradas*. El Historial de búsqueda ofrece la posibilidad de [eliminar](#delete) entradas anteriores, lo que puede ser útil para la confidencialidad o para mantener el historial organizado.
+
+</TabItem>
+
+</Tabs>
+
+
+## Lugares populares cercanos {#popular-places-nearby}
+
+<InfoAndroidOnly/>
+
+![Lugares populares cercanos](@site/static/img/search/popular_places_nearby.webp)
+
+La sección **Lugares populares cercanos** muestra una lista desplazable de lugares de interés y atracciones conocidos cerca de su ubicación. Cada elemento puede incluir el nombre del lugar, su categoría, distancia y dirección, y una imagen de vista previa si está disponible. Pulse *Mostrar todo* para abrir la lista completa o *Mostrar en el mapa* para mostrar estos lugares en el mapa.
+
+Para más detalles, consulte el artículo [Lugares populares](../map/popular_places.md#explore-in-search).
 
 
 ## Elementos del historial {#history-items}
@@ -63,7 +107,16 @@ El historial de búsqueda sirve para proporcionar información relevante sobre s
 
 <TabItem value="android" label="Android">
 
-![Búsqueda de historial](@site/static/img/search/history_search_android.png)
+![Sección de historial](@site/static/img/search/history_section_list.webp)
+
+La sección **Historial** de la pestaña Explorar muestra hasta 25 elementos más recientes. Pulse el título de la sección para contraerla o expandirla. Pulse *Ver todo* para abrir la pantalla completa de *Historial*.
+
+Si tanto el *Historial de búsqueda* como el *Historial de navegación* están desactivados, la sección muestra la tarjeta *El historial está desactivado*. Pulse *Abrir ajustes de historial* para activarlos.
+
+Cada campo de la lista del Historial contiene parte de la **información** disponible para la aplicación.
+
+- Un icono que identifica el tipo o la categoría del objeto encontrado.
+- El nombre del objeto, la ubicación, la dirección o el tipo de consulta. Para los tracks, se muestra información sobre la distancia, el número de waypoints y el tiempo.
 
 </TabItem>
 
@@ -71,36 +124,87 @@ El historial de búsqueda sirve para proporcionar información relevante sobre s
 
 ![Búsqueda de historial](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 Cada campo de la lista del Historial de búsqueda contiene parte de la **información** disponible para la aplicación.
 
 - Un icono que identifica el tipo o la categoría del objeto encontrado.
 - El nombre del objeto, la ubicación, la dirección o el tipo de consulta. Para los tracks, se muestra información sobre la distancia, el número de waypoints y el tiempo.
 - Distancia desde su ubicación actual hasta el punto y dirección por brújula.
 
+</TabItem>
 
-### Orden de los elementos {#order-of-items}
+</Tabs>
+
+
+### Ordenar y filtrar {#sort-and-filter}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Sección de historial](@site/static/img/search/history_section_android.webp) ![Sección de historial](@site/static/img/search/history_section_2_android.webp)
+
+En la pantalla completa de *Historial*, puede ordenar y filtrar los elementos del historial mediante las siguientes opciones:
+
+1. **Ordenar por**:
+    - *Recientes* — muestra primero los elementos añadidos más recientemente. Cuando se selecciona esta opción, los elementos se agrupan por tiempo, como Hoy, Ayer, La semana pasada y períodos anteriores.
+    - *Más cercanos* — ordena los elementos por su distancia desde su ubicación actual.
+    - *Más cercanos al centro del mapa* — ordena los elementos por su distancia desde el centro actual del mapa. Cuando se selecciona cualquiera de las opciones de ordenación basadas en la distancia, no se muestran los grupos basados en el tiempo.
+
+2. **Tipo** — filtra los elementos del historial por:
+    - *Todos* — muestra todos los elementos del historial disponibles.
+    - *Búsqueda* — muestra los elementos de su historial de búsqueda.
+    - *Navegación* — muestra los elementos de su historial de navegación.
+
+Si el *Historial de búsqueda* o el *Historial de navegación* está desactivado en los ajustes de Historial, el filtro *Tipo* no está disponible.
+
+3. **Filtros de categoría** — filtra los elementos del historial por categoría. Los filtros de categoría disponibles dependen de los tipos de elementos disponibles en su Historial. Por ejemplo, puede ver categorías como PDI, Track, Ubicación, Favorito o Dirección. Puede seleccionar varias categorías a la vez.
+
+4. **Ajustes** — pulse el icono de engranaje en la esquina superior derecha para abrir los ajustes de Historial, donde puede activar o desactivar *Historial de búsqueda*, *Historial de navegación* e *Historial de marcadores del mapa*, hacer una copia de seguridad del historial como archivo o borrar todo el historial.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Elementos recientes**. Las solicitudes o ubicaciones más recientes se muestran en la parte superior de la lista. Esto permite un acceso rápido a los elementos utilizados recientemente.
 - **Orden cronológico**. Los elementos de la lista del Historial de búsqueda están ordenados cronológicamente, empezando por las entradas más antiguas o primeras y terminando por las más recientes o últimas. Los elementos antiguos se desplazan gradualmente hacia abajo en la lista a medida que se añaden nuevas entradas, a menos que se hayan utilizado elementos antiguos del historial de búsqueda, en cuyo caso se moverán a la parte superior de la lista.
-- En iOS, la lista está ordenada por meses.
+- La lista está ordenada por meses.
+
+</TabItem>
+
+</Tabs>
 
 ### Tipo de objetos {#type-of-objects}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Los siguientes **tipos de objetos** entran en la lista del Historial de búsqueda:
+
+- **Ubicaciones**. Puede ser una dirección, el nombre de una empresa, el número de una ruta, coordenadas, marcadores, puntos de interés, notas de OSM o lugares que haya pulsado en el mapa.
+- **Tracks y Waypoints**. La lista incluye los tracks que ha creado, grabado o descargado y que ha utilizado en rutas anteriores, y los waypoints si ha navegado hasta ellos por separado.
+- **Favoritos y fotos**. Puntos favoritos y notas de fotos que ha abierto.
+- **Destinos**. Puntos a los que ha navegado.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 Los siguientes **tipos de objetos** entran en la lista del Historial de búsqueda:
 
 - **Ubicaciones**. Puede ser una dirección, el nombre de una empresa, el número de una ruta, coordenadas, marcadores, puntos de interés, notas de OSM o lugares que haya pulsado en el mapa.
 - **Tracks y Waypoints**. La lista incluye los tracks que ha creado, grabado o descargado y que ha utilizado en rutas anteriores, y los waypoints si ha navegado hasta ellos por separado.
 
+</TabItem>
+
+</Tabs>
+
 
 ## Acciones {#actions}
 
-En la herramienta Historial de búsqueda, puede [eliminar](#delete) las consultas innecesarias, todas a la vez o por elementos individuales. Puede utilizar la [exportación](#export-and-share) del Historial. La aplicación de Android proporciona una acción adicional de [compartir](#share-android) elementos de búsqueda como un archivo [GPX](../../technical/osmand-file-formats/osmand-gpx.md).
+En la herramienta Historial de búsqueda, puede [eliminar](#delete) las consultas innecesarias, todas a la vez o por elementos individuales. Puede utilizar el [exportación](#export-and-share) del Historial. La aplicación de Android proporciona una acción adicional de [compartir](#share-android) elementos de búsqueda como un archivo [GPX](../../technical/osmand-file-formats/osmand-gpx.md).  
 
-Puede **desactivar o activar** la visualización de todo el historial de búsqueda. En este caso, las consultas no se eliminan del dispositivo. En Android, el interruptor se encuentra en la pantalla principal de la herramienta en la [pestaña Historial](#overview). En iOS, se encuentra en *Menú → Ajustes → Ajustes de OsmAnd → Historial → Historial de búsqueda*.
+Puede **desactivar o activar** la visualización de todo el historial de búsqueda. En este caso, las consultas no se eliminan del dispositivo. En Android, el interruptor se encuentra en la parte superior de la pantalla [Eliminar](#delete) y en los ajustes de Historial, que puede abrir con el icono de engranaje en la pantalla [Historial](#sort-and-filter). En iOS, se encuentra en *Menú → Ajustes → Ajustes de OsmAnd → Historial → Historial de búsqueda*.
 
 
 ### Eliminar {#delete}
@@ -109,13 +213,13 @@ Puede **desactivar o activar** la visualización de todo el historial de búsque
 
 <TabItem value="android" label="Android">
 
-![Eliminar búsqueda de historial](@site/static/img/search/history_search_delete_andr.png)
+![Búsqueda de historial](@site/static/img/search/history_search_delete_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Eliminar búsqueda de historial](@site/static/img/search/history_search_delete_ios.png)
+![Búsqueda de historial](@site/static/img/search/history_search_delete_ios.png)
 
 </TabItem>
 
@@ -128,7 +232,7 @@ Debe **pulsar prolongadamente cualquiera de los elementos de consulta de la list
 - *Seleccionar o deseleccionar elementos aleatorios* - pulse el elemento deseado en la lista.
 - *Seleccione el período disponible para eliminar*, como día, últimos 7 días o mes - marque la casilla con el subtítulo en la lista.
 - *Puede eliminar todo el historial* de una vez pulsando el botón *Seleccionar todo* en la parte inferior de la pantalla.
-- *Menú → Ajustes → Ajustes de OsmAnd → Historial → Acciones*. Esta sección contiene el botón **Eliminar todo el historial**.
+- *Menú → Ajustes → Ajustes de OsmAnd → Historial → Acciones*. Esta sección contiene el botón **Borrar todo el historial** (*Android*)/**Eliminar todo el historial** (*iOS*).
 
 
 ### Exportar y Compartir {#export-and-share}
@@ -139,43 +243,43 @@ Debe **pulsar prolongadamente cualquiera de los elementos de consulta de la list
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![Ajustes generales Historial Android](@site/static/img/personal/profiles/general_settings_history_android.png)
+![Ajustes generales Historial Android](@site/static/img/personal/profiles/general_settings_history_android.png)  
 
 </TabItem>
 
-<TabItem value="ios" label="iOS">
+<TabItem value="ios" label="iOS">  
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![Ajustes generales Historial IOS](@site/static/img/personal/profiles/history_settings_ios.png)
+![Ajustes generales Historial IOS](@site/static/img/personal/profiles/history_settings_ios.png)  
 
 </TabItem>
 
 </Tabs>
 
-Existen varias opciones disponibles para exportar el historial de búsqueda. Todos los archivos se exportan en formato `.osf` (OsmAnd settings File).
+Existen varias opciones disponibles para exportar el historial de búsqueda. Todos los archivos se exportan en formato `.osf` (OsmAnd settings File).  
 
-1. *Menú → Ajustes → Ajustes de OsmAnd → Historial → Historial de búsqueda*.
+1. *Menú → Ajustes → Ajustes de OsmAnd → Historial → Historial de búsqueda*.  
     La exportación está disponible utilizando el menú de ajustes de OsmAnd. Para Android, seguir esta ruta le lleva a la pantalla de eliminación, donde está disponible [Compartir historial](#share-android). En el caso de iOS, puede seleccionar elementos individuales o todo el historial en la pantalla, y después de pulsar el botón *Exportar*, ir al menú *Copia de seguridad local*.
 
-2. *Menú → Ajustes → Ajustes de OsmAnd → Historial → Acciones → Hacer copia de seguridad como archivo* (Android).
-    *Menú → Ajustes → Ajustes de OsmAnd → Historial → Acciones → Exportar* (iOS).
-    Al pulsar estos elementos se accede al menú *Importar/Exportar* (Android) o *Copia de seguridad local* (iOS). Expanda la lista *Mis lugares* y busque *Historial de búsqueda*. Todas las consultas se exportan en un solo archivo a la vez.
+2. *Menú → Ajustes → Ajustes de OsmAnd → Historial → Acciones → Hacer copia de seguridad como archivo* (Android).  
+    *Menú → Ajustes → Ajustes de OsmAnd → Historial → Acciones → Exportar* (iOS).  
+    Al pulsar estos elementos se accede al menú *Importar/Exportar* (Android) o *Copia de seguridad local* (iOS). Expanda la lista *Mis lugares* y busque *Historial de búsqueda*. Todas las consultas se exportan en un solo archivo a la vez.  
 
-3. *Menú → Ajustes → Importar/Exportar → Exportar a archivo* (Android).
-    *Menú → Ajustes → Copia de seguridad local → Hacer copia de seguridad como archivo* (iOS).
-    Puede leer más detalles en el artículo [Importar/Exportar](../personal/import-export.md#export).
+3. *Menú → Ajustes → Importar/Exportar → Exportar a archivo* (Android).  
+    *Menú → Ajustes → Copia de seguridad local → Hacer copia de seguridad como archivo* (iOS).  
+    Puede leer más detalles en el artículo [Importar/Exportar](../personal/import-export.md#export).  
 
-4. [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)
-    Puede utilizar la Nube para hacer una copia de seguridad de su historial de búsqueda. En el menú *Cambios locales* o *Ajustes → Copia de seguridad de datos → Mis lugares → Historial de búsqueda*.
+4. [OsmAnd Cloud](../personal/osmand-cloud.md#select-data-to-back-up)  
+    Puede utilizar la Nube para hacer una copia de seguridad de su historial de búsqueda. En el menú *Cambios locales* o *Ajustes → Copia de seguridad de datos → Mis lugares → Historial de búsqueda*.  
 
-![Ajustes Historial](@site/static/img/search/history_search_share_andr.png)
+![Ajustes Historial](@site/static/img/search/history_search_share_andr.png)  
 
 Exportar elementos o todo el historial de búsqueda puede ser útil en los siguientes casos:
 
 - *Copia de seguridad*. Puede hacer una copia de seguridad de su historial de búsqueda para guardar la información antes de eliminarla y restaurarla si es necesario.
 - *Transferir a otro dispositivo*. Cuando cambie de dispositivo, puede utilizar la función de exportación o la Nube para transferir su historial de búsqueda a un nuevo dispositivo sin tener que buscar e introducir los datos de nuevo.
-- *Analizar y procesar datos*. Puede exportar su historial de búsqueda para analizar datos o utilizarlo en otras aplicaciones.
+- *Analizar y procesar datos*.  Puede exportar su historial de búsqueda para analizar datos o utilizarlo en otras aplicaciones.
 - [Compartir](#share-android) el historial de búsqueda con otros usuarios de OsmAnd.
 
 
@@ -183,7 +287,7 @@ Exportar elementos o todo el historial de búsqueda puede ser útil en los sigui
 
 ![Ajustes Historial](@site/static/img/search/history_search_share_andr.png)
 
-Los pasos para compartir elementos del historial de búsqueda son similares a los de [exportar](#export-and-share), con la diferencia de que se exporta todo el historial de una vez como un archivo [osf](../../technical/osmand-file-formats/osmand-osf.md), mientras que se pueden compartir archivos individuales seleccionados en formato gpx.
+Los pasos para compartir elementos del historial de búsqueda son similares a los de [exportar](#export-and-share), con la diferencia de que se exporta todo el historial de una vez como un archivo [osf](../../technical/osmand-file-formats/osmand-osf.md), mientras que se pueden compartir archivos individuales seleccionados en formato gpx.  
 
 En la pantalla [eliminar](#delete), seleccione los elementos deseados de la lista del Historial de búsqueda. En la esquina superior derecha de la pantalla, hay un icono que indica compartir. Seleccione una aplicación o acción disponible en la lista para compartir.
 

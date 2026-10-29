@@ -1,5 +1,5 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -72,7 +72,7 @@ La vista de Detalles proporciona información asociada con el lugar seleccionado
 
 ## Acciones de favoritos {#favorites-actions}
 
-[Para agregar](../personal/favorites.md#manage-favorites) un nuevo punto de favorito, haz clic derecho en la pantalla. 
+[Para agregar](../personal/favorites.md#manage-favorites) un nuevo punto de favorito, haz clic derecho en la pantalla. Si el favorito no se puede guardar, el mensaje de error incluye el motivo informado por el servidor, por ejemplo, que no hay suficiente espacio en [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Para editar un favorito existente, haz clic en el punto de favorito ya sea directamente en el mapa o selecciónalo de una carpeta de favoritos. Esto abre el panel de Detalles, donde está disponible la acción de Editar. La edición también se puede iniciar desde el menú de tres puntos (⋮) junto al favorito en la lista de Favoritos.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
+source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
@@ -66,7 +66,7 @@ La descarga de mapas en la aplicación OsmAnd es un paso importante que determin
 ### Contenido de mapa gratuito {#free-map-content}
 
 - **Mapa estándar**. Proporciona una visión general del área basada en la fuente [OpenStreetMap](https://www.openstreetmap.org/) y contiene un mapa, rutas, direcciones, PDI e información de transporte público. Al tocar se abre una pantalla con una lista de regiones del país seleccionado e información sobre cuánto espacio ocuparán estos mapas en su dispositivo.  
-- **Solo carreteras**. El mapa contiene solo información de la red de carreteras para centrarse en las rutas y la infraestructura vial. Al eliminar detalles como edificios y puntos de interés, es más pequeño que un mapa estándar. Al tocar se abre una pantalla con una lista de regiones del país seleccionado e información sobre cuánto espacio ocuparán estos mapas en su dispositivo.
+- **Solo carreteras**. Una alternativa más pequeña al mapa estándar, centrada en rutas e infraestructura vial. Contiene la red de carreteras con nombres de calles, junto con áreas más grandes como agua, bosques y parques, mientras que se omiten detalles como edificios y puntos de interés. Al tocar se abre una pantalla con una lista de regiones del país seleccionado e información sobre cuánto espacio ocuparán estos mapas en su dispositivo.
 - **Mapa general del mundo**. Las versiones de OsmAnd hasta la 3.8 ofrecen descargar un mapa del mundo para que pueda verlo a escala planetaria. En las versiones más nuevas de OsmAnd, se incluye un *Mini mapa del mundo* ligero con la aplicación. La aplicación le permite descargar un mapa general del mundo más grande con información más detallada. 
 
 :::info actualizaciones mensuales de mapas
@@ -142,7 +142,7 @@ La pestaña **Descargar** le permite descargar varios tipos de mapas de los serv
 
 En el menú Descargar mapas, hay una sección de **Mapas del mundo** que proporciona acceso para descargar varios mapas del mundo, complementando la funcionalidad de la aplicación.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*solo Android*). Este archivo contiene correcciones de altitud para compensar la curvatura planetaria.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*solo Android*). Este archivo contiene correcciones de altitud utilizadas para mejorar la precisión de la altitud en dispositivos que no proporcionan la altitud sobre el nivel medio del mar (MSL), incluso cuando se utiliza la API de Android como [fuente de ubicación](../personal/global-settings.md#location-source) en lugar de Google Play Services.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Proporciona una visión general extensa de la superficie terrestre, útil para la planificación de rutas a largo plazo y la exploración casual.
 - **Mapa meteorológico mundial**. Le permite descargar un mapa con información meteorológica.
 

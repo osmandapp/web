@@ -1,18 +1,18 @@
 ---
-source-hash: 07c0ae968b6fbc9eae5d8ad2f409109fd8923c80ddab63d2f07f3c692f96ba59
+source-hash: 300b6d830b565c761cdfbc314a52da222a3dbc6b0c6944bfa536a02cea0a8b3d
 sidebar_position: 5
 ---
 
 # Depurar el enrutamiento OBF en una PC {#debug-obf-routing-on-a-pc}
 
 
-- Ve a [https://osmand.net](https://osmand.net "https://osmand.net") y descarga [OsmandMapCreator.zip](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") desde el enlace en el lado derecho de la pantalla, y descomprímelo.
-- Copia el archivo OBF de tu teléfono o tableta a esa carpeta.
-- Inicia OsmandMapCreator a través del archivo .bat o .sh.
-- Asegúrate de tener conexión a Internet para que mapcreator pueda descargar los mosaicos del mapa, revisa todos los menús y configuraciones dentro de mapcreator.
-- Establece el directorio de trabajo de mapcreator en la carpeta donde se encuentran mapcreator y el archivo OBF.
-- Desplaza y haz zoom en el mapa hasta el lugar donde tienes problemas de enrutamiento y que está cubierto por el archivo OBF mencionado.
-- Haz clic derecho en el mapa para establecer los puntos de inicio y fin y los diferentes motores de enrutamiento.
+- ve a [https://osmand.net](https://osmand.net "https://osmand.net") y descarga [OsmandMapCreator.zip](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip "https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip") desde el enlace en el lado derecho de la pantalla, y descomprímelo,
+- copia el archivo OBF de tu teléfono o tableta en esa carpeta,
+- inicia OsmandMapCreator a través del archivo .bat o .sh,
+- asegúrate de tener conexión a Internet para que mapcreator pueda descargar los mosaicos del mapa, revisa todos los menús y configuraciones dentro de mapcreator,
+- establece el directorio de trabajo de mapcreator en la carpeta donde se encuentran mapcreator y el archivo OBF.
+- desplaza y haz zoom en el mapa hasta el lugar donde tienes problemas de enrutamiento y que está cubierto por el archivo OBF mencionado,
+- haz clic derecho en el mapa para establecer los puntos de inicio y fin y los diferentes motores de enrutamiento.
 
 Encuentra el nombre del lugar al que está asociada una calle en los mapas OBF sin conexión
 - Ten un framework Java instalado en tu computadora de escritorio.

@@ -1,5 +1,5 @@
 ---
-source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
+source-hash: b2b4863468543cee690b0a3568b81ee3415698752aaf50fecc63c1797c031476
 sidebar_position: 4
 title:  Mapas y Datos
 ---
@@ -38,7 +38,7 @@ En este momento, las siguientes soluciones están disponibles:
 
 #### 1. Migrar la carpeta de almacenamiento de datos de OsmAnd a “Memoria interna de la aplicación” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- Puede cambiar la carpeta de almacenamiento seleccionando la opción ***Memoria interna de la aplicación*** en *Menú → Ajustes → Ajustes de OsmAnd → Carpeta de almacenamiento de datos*.
+- Puede cambiar la carpeta de almacenamiento seleccionando la opción ***Memoria interna de la aplicación*** en *Menú → Ajustes → Ajustes de OsmAnd → Carpeta de almacenamiento de datos → Almacenamiento principal*.
 
 - Sin embargo, tenga en cuenta que la memoria interna suele ser limitada. Como solución alternativa, puede mover archivos importantes a la memoria interna mientras mantiene los mapas de uso poco frecuente en la tarjeta SD. Utilice un gestor de archivos para transferir manualmente estos archivos cuando sea necesario.
 
@@ -46,7 +46,7 @@ El equipo de desarrollo está buscando activamente soluciones más eficientes pa
 
 #### 2. Usar la carpeta “Download” de la tarjeta SD {#2-use-the-sd-cards-download-folder}
 
-Puede intentar resolver el problema de la carga lenta de mapas especificando la carpeta **Download** de la tarjeta SD para el almacenamiento de OsmAnd en *Menú → Ajustes → Ajustes de OsmAnd → Carpeta de almacenamiento de datos → Especificada manualmente*. Las siguientes rutas son posibles:
+Puede intentar resolver el problema de la carga lenta de mapas especificando la carpeta **Download** de la tarjeta SD para el almacenamiento de OsmAnd en *Menú → Ajustes → Ajustes de OsmAnd → Carpeta de almacenamiento de datos → Almacenamiento principal → Especificada manualmente*. Las siguientes rutas son posibles:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Esta ruta podría causar errores al acceder a múltiples archivos. Por ejemplo, es posible que pueda descargar el mapa general del mundo, pero otras regiones podrían no aparecer.
@@ -66,11 +66,12 @@ Android se ha vuelto más estricto con los permisos de almacenamiento, limitando
 
 Sin embargo, OsmAnd no tiene el permiso de *Acceso a todos los archivos* (debido a las restricciones de Google), lo que limita la elección de carpetas. Una solución alternativa es usar la carpeta de almacenamiento "Multimedia", a la que Android normalmente concede un acceso de lectura/escritura más amplio. Para hacer esto:
 
-- Vaya a *Ajustes de OsmAnd → Ajustes de OsmAnd → Carpeta de almacenamiento de datos* y revise las áreas de almacenamiento disponibles. Utilice el indicador de espacio libre para identificar el almacenamiento de destino, a menudo etiquetado como *Almacenamiento externo 2*.
+- Vaya a *Ajustes de OsmAnd → Ajustes de OsmAnd → Carpeta de almacenamiento de datos → Almacenamiento principal* y revise las áreas de almacenamiento disponibles. Utilice el indicador de espacio libre para identificar el almacenamiento de destino, a menudo etiquetado como *Almacenamiento externo 2*.
+- Si está disponible, seleccione *Almacenamiento externo visible* para su tarjeta SD y mueva sus datos cuando se le solicite. De lo contrario, siga los pasos manuales a continuación.
 - Anote la ruta de la carpeta actual, que podría ser algo como */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Cambie a la opción *Especificada manualmente* y modifique la ruta a una carpeta accesible para medios. En muchos sistemas, cambiar */Android/data/* a */media/* (p. ej., ***/storage/xxxx-xxxx/media***) funciona. Algunos sistemas pueden requerir modificaciones de ruta diferentes.
+- Cambie a la opción *Especificada manualmente* y modifique la ruta a una carpeta accesible para medios. En muchos sistemas, cambiar */Android/data/* a */Android/media/* (p. ej., ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***) funciona. Algunos sistemas pueden requerir modificaciones de ruta diferentes.
 
-Una ruta correcta no provocará ningún error de permiso de escritura en OsmAnd. Antes de realizar estos cambios, asegúrese de que OsmAnd tenga los permisos de almacenamiento adecuados, incluido el permiso de almacenamiento "Multimedia", en los ajustes de **Aplicaciones** de Android. En versiones más recientes de Android, estos permisos pueden estar ubicados en menús avanzados u ocultos.
+Una ruta correcta no provocará ningún error de permiso de escritura en OsmAnd. No se requieren permisos de almacenamiento adicionales para esta carpeta.
 
 ### Eliminación de datos de mapas después de la actualización de la aplicación (si se selecciona “Almacenamiento multiusuario 1”) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 

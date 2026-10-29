@@ -1,5 +1,5 @@
 ---
-source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
+source-hash: 7a4ec38811965699d4bf8be48f33fcce4e1e12973b13ab13ffa374909cfef793
 sidebar_position: 2
 title:  General
 ---
@@ -90,6 +90,19 @@ Si desea ajustar manualmente el tamaño de los botones del mapa, utilice los aju
 
 Si la interfaz sigue apareciendo más grande de lo esperado, consulte *Ajustes del sistema Android → Pantalla → Tamaño de pantalla y texto* y ajuste los ajustes de visualización según sea necesario.
 
+### OsmAnd no llena la pantalla en modo horizontal en iPad (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+OsmAnd es compatible con las orientaciones vertical y horizontal en iPad y sigue la rotación del sistema. Si la aplicación llena la pantalla en vertical pero aparece como una ventana más pequeña en horizontal, esto se debe al modo de ventanas de iPadOS 26, no a OsmAnd.
+
+En el modo *Aplicaciones en ventana*, iPadOS recuerda el tamaño de cada ventana de aplicación. Una vez que se ha redimensionado la ventana de OsmAnd en horizontal, la aplicación mantiene ese tamaño de ventana en horizontal mientras sigue llenando la pantalla en vertical.
+
+Para que OsmAnd vuelva a llenar la pantalla, utilice una de las siguientes opciones:
+
+- **Expandir la ventana.** Con OsmAnd abierto en horizontal, toque la pequeña píldora en la parte superior de la ventana. Aparecerán tres botones: *Cerrar*, *Minimizar* y *Zoom*. Toque *Zoom* para expandir la aplicación a toda la pantalla. La aplicación mantiene el tamaño de pantalla completa después de rotar el iPad.
+- **Desactivar el modo de ventanas para todas las aplicaciones.** Vaya a *Ajustes del iPad → Multitarea y gestos* y seleccione *Aplicaciones a pantalla completa* en lugar de *Aplicaciones en ventana*. Todas las aplicaciones, incluida OsmAnd, se abrirán siempre a pantalla completa.
+
+Asegúrese también de que OsmAnd no esté abierto en *Vista dividida* o *Deslizar sobre* junto a otra aplicación.
+
 
 ## Otros {#other}
 
@@ -127,6 +140,6 @@ Si encuentra un problema en el que el correo electrónico asociado con su compra
 
 5. **Reinstalar OsmAnd**. Si borrar la caché no resuelve el problema, intente desinstalar y reinstalar la aplicación. Antes de hacer esto, asegúrese de hacer una copia de seguridad de cualquier dato importante (rutas, favoritos) yendo a *Menú → Ajustes → Exportar a archivo*. Reinstalar la aplicación asegurará que todos los detalles de la cuenta se actualicen correctamente.
 
-6. **Desactivar el proxy**. Verifique la configuración de proxy de la aplicación y asegúrese de que el proxy esté desactivado yendo a *Menú → Ajustes → Ajustes de OsmAnd → Proxy*. Un proxy o VPN podría interferir con la sincronización de la cuenta.
+6. **Desactivar el proxy**. Verifique la configuración de proxy de la aplicación y asegúrese de que el proxy esté desactivado yendo a *Menú → Ajustes → Ajustes de OsmAnd → Proxy*. Un proxy o VPN podría interferir con la sincronación de la cuenta.
 
 7. **Volver a iniciar sesión o usar la Web para la gestión de la cuenta**. Si sigue teniendo problemas, intente cerrar sesión y volver a iniciarla para actualizar la conexión de la aplicación a su cuenta actual. Si encuentra algún problema al eliminar la cuenta antigua en la aplicación, considere gestionar su cuenta a través de la versión web de OsmAnd.

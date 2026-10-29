@@ -1,5 +1,5 @@
 ---
-source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
+source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
 sidebar_position: 4
 title:  Widgets de navegación
 ---
@@ -292,7 +292,7 @@ El widget *Límite de velocidad* muestra el límite de velocidad actual basado e
 - El widget funciona en los modos de navegación pasiva y activa.
 - Si los datos de límite de velocidad no están disponibles para una carretera o área específica, *el widget no aparecerá*.
 
-> NOTA: Asegúrese de que sus [mapas estén actualizados](../personal/maps-resources.md#updates-menu) y de que haya descargado todos los datos regionales necesarios para acceder a la información más reciente sobre límites de velocidad.
+> NOTE: Asegúrese de que sus [mapas estén actualizados](../personal/maps-resources.md#updates-menu) y de que haya descargado todos los datos regionales necesarios para acceder a la información más reciente sobre límites de velocidad.
 
 | |  |
 |:------------|:------------|
@@ -328,7 +328,9 @@ Los widgets de *Guía de ruta* contienen información sobre:
 
 ![Widgets de carriles](@site/static/img/widgets/lanes_widget.png)
 
-El widget **Carriles** resalta el carril actual cuando la navegación está activa y muestra la disposición de los carriles de la carretera real cuando la navegación es pasiva. También se muestra un indicador de distancia debajo del diagrama de carriles, que representa qué tan lejos queda hasta la maniobra donde se aplica la guía de carril. Este widget solo está disponible para los paneles Superior e Inferior. Los datos se toman del [proyecto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+El widget **Carriles** resalta el carril actual cuando la navegación está activa y muestra la disposición de los carriles de la carretera real cuando la navegación es pasiva. También se muestra un indicador de distancia debajo del diagrama de carriles, que representa qué tan lejos queda hasta la maniobra donde se aplica la guía de carril. Este widget solo está disponible para los paneles Superior e Inferior. Los datos se toman del [proyecto OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn). Si los datos del mapa no especifican una dirección para cada carril, OsmAnd completa las direcciones que faltan según la disposición de la intersección.
+
+En Android, los ajustes del widget incluyen la opción *Mostrar en intersecciones menores al navegar en línea recta*, que está activada por defecto. Con esta opción, el widget muestra los carriles en cada intersección que se pasa al conducir en línea recta, incluso cuando no hay una indicación de voz para esa intersección.
 
 
 ### Próximo giro {#next-turn}

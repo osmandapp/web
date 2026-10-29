@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -162,7 +162,7 @@ Para construir una ruta a un PDI en *Android Auto*, sigue estos pasos:
     </tr>
 </table>  
 
-*Favoritos* es una de las funciones de OsmAnd que te permite hacer una especie de marcadores (notas) en el mapa. Mientras usas *Android Auto*, no puedes añadir o modificar Favoritos, solo usar los existentes. La lista de [Favoritos](../personal/favorites.md#manage-favorites) se puede encontrar en la aplicación OsmAnd *Menú → Mis lugares → Favoritos*. Si quieres usarlos para la navegación, añade los lugares necesarios en los favoritos antes de conectar el dispositivo al sistema multimedia de tu vehículo.  
+*Favoritos* es una de las funciones de OsmAnd que te permite hacer una especie de marcadores (notas) en el mapa. Mientras usas *Android Auto*, no puedes añadir o modificar Favoritos, solo usar los existentes. La lista de [Favoritos](../personal/favorites.md#manage-favorites) puede ser encontrada en la aplicación OsmAnd *Menú → Mis lugares → Favoritos*. Si quieres usarlos para la navegación, añade los lugares necesarios en los favoritos antes de conectar el dispositivo al sistema multimedia de tu vehículo.  
 
 Para crear una ruta a un punto favorito en *Android Auto*, sigue los pasos a continuación:  
 
@@ -331,19 +331,26 @@ Para activar o desactivar la [**Información de ruta** para un punto intermedio 
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* y OsmAnd ofrecen la posibilidad de ajustar el mapa para que coincida con las condiciones de iluminación. En el *Modo de mapa diurno*, la combinación de colores permanece brillante y contrastada, lo que facilita la lectura incluso con luz solar intensa. En el *Modo nocturno*, los mapas se vuelven más oscuros, lo que ayuda al conductor a navegar mejor en la oscuridad.  
 
-OsmAnd tiene opciones de [modo de mapa](../map/vector-maps.md#map-mode), pero cuando usas la aplicación en *Android Auto*, estas opciones se ignoran. En su lugar, se utiliza el modo que seleccionaste en los ajustes del sistema *Android Auto* para los mapas.
+OsmAnd en *Android Auto* tiene su propia configuración de modo de mapa, independiente de las opciones de [modo de mapa](../map/vector-maps.md#map-mode) en la aplicación OsmAnd de tu dispositivo. Para cambiarla, ve a *Android Auto (OsmAnd) → Botón de Ajustes → Modo de mapa*, selecciona una opción y toca *Aplicar*. El mapa cambia al modo seleccionado después de tocar *Aplicar*. Si sales de la pantalla con la flecha atrás sin tocar *Aplicar*, el modo anterior permanece seleccionado.
 
-- Selecciona el modo Día o el modo Noche para mantener la visualización del mapa sin cambios.
-- Si quieres que el modo de visualización del mapa cambie dependiendo de la hora del día, selecciona el modo Automático.  
+- Selecciona *Día* o *Noche* para mantener la visualización del mapa sin cambios, independientemente de las señales de tu vehículo.
+- Si quieres que el modo de visualización del mapa cambie automáticamente según las señales de tu vehículo, selecciona *Automático* (predeterminado).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Magnificador del mapa {#map-magnifier}
+
+![Magnificador del mapa de Android Auto](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+*Magnificador del mapa* cambia la ampliación del mapa en la pantalla de *Android Auto*. Para cambiarlo, ve a *Android Auto (OsmAnd) → Botón de Ajustes → Magnificador del mapa*, selecciona un valor entre 50% y 125%, y toca *Aplicar*. El valor actual se muestra bajo *Magnificador del mapa* en la lista de ajustes.  
+
+Para saber cómo afecta la ampliación a la visualización del mapa, consulta [Magnificador del mapa](../map/vector-maps.md#map-magnifier).
 
 
 ### Pantalla dividida {#split-screen}
@@ -357,8 +364,6 @@ La aplicación OsmAnd se puede abrir y utilizar para navegar en *Android Auto* e
 3. Busca Multiventana y elige el interruptor.
 4. Vuelve a la pantalla de inicio.  
 
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 En los ajustes de Android Auto, puedes cambiar la posición de la barra de tareas y el diseño de la pantalla de inicio:
