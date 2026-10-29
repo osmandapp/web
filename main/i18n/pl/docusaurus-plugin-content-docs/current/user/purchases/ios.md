@@ -55,11 +55,9 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 
 
-<!--
+:::danger 🎃 Halloweenowa wyprzedaż
 
-:::danger 🍂 Jesienna wyprzedaż
-
-*Pospiesz się! Ta oferta jest dostępna tylko do* **4 października (23:59 UTC)**.
+*Pospiesz się! Ta oferta jest dostępna tylko do* **1 listopada (23:59 UTC)**.
 
 *W przypadku subskrypcji obniżona cena obowiązuje przez pierwszy rok.*
 
@@ -73,7 +71,7 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
--->
+<!--
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
@@ -82,6 +80,8 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
 
 
 

@@ -39,11 +39,9 @@ Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer
 
 
 
-<!--
+:::danger 🎃 Cadılar Bayramı İndirimi
 
-:::danger 🍂 Sonbahar İndirimi
-
-*Acele edin! Bu teklif yalnızca* **4 Ekim (23:59 UTC)** *tarihine kadar geçerlidir.*
+*Acele edin! Bu teklif yalnızca* **1 Kasım (23:59 UTC)** *tarihine kadar geçerlidir.*
 
 :::
 
@@ -60,7 +58,7 @@ Aboneliği [web sitemiz](https://osmand.net/pricing) üzerinden indirimli fiyatl
 Üçüncü yıldan itibaren tam fiyat uygulanır.
 :::
 
--->
+<!--
 
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
@@ -69,6 +67,8 @@ Aboneliği [web sitemiz](https://osmand.net/pricing) üzerinden indirimli fiyatl
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
+
+-->
 
 
 

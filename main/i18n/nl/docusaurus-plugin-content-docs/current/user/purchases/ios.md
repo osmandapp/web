@@ -55,11 +55,9 @@ In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en 
 
 
 
-<!--
+:::danger 🎃 Halloween-uitverkoop
 
-:::danger 🍂 Herfstuitverkoop
-
-*Schiet op! Deze aanbieding is alleen beschikbaar tot* **4 oktober (23:59 UTC)**.
+*Schiet op! Deze aanbieding is alleen beschikbaar tot* **1 november (23:59 UTC)**.
 
 *Voor abonnementen geldt de kortingsprijs voor het eerste jaar.*
 
@@ -73,7 +71,7 @@ In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en 
 | **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
--->
+<!--
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-app | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
@@ -82,6 +80,8 @@ In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en 
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |
 | **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
 
 
 

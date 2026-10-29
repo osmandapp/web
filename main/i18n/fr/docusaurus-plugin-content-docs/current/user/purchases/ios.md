@@ -55,11 +55,9 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 
 
 
-<!--
+:::danger 🎃 Soldes d'Halloween
 
-:::danger 🍂 Soldes d'automne
-
-*Dépêchez-vous ! Cette offre n'est valable que jusqu'au* **4 octobre (23:59 UTC)**.
+*Dépêchez-vous ! Cette offre n'est valable que jusqu'au* **1er novembre (23:59 UTC)**.
 
 *Pour les abonnements, le prix réduit s'applique la première année.*
 
@@ -73,7 +71,7 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | **Prix (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Prix (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
--->
+<!--
 
 
 |    | OsmAnd Gratuit   | [Maps+](#install-osmand-ios) Achat intégré | [Maps+](#install-osmand-ios) Abonnement | [OsmAnd Pro](#install-osmand-ios) |
@@ -82,6 +80,8 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | **Type d'achat** | **Gratuit** | **Achat unique** (À vie) | **Abonnement** (12 mois) | **Abonnement** (1 mois / 12 mois) |
 | **Prix (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Prix (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
 
 
 

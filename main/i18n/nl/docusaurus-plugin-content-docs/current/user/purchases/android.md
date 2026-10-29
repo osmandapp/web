@@ -77,13 +77,13 @@ Op Android-apparaten kunt u de **gratis** en **betaalde** versies van de applica
 In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en Europa. Voor andere regio's zijn de prijzen equivalent in lokale valuta.
 
 
-<!--
+:::danger 🎃 Halloween-uitverkoop
 
-:::danger 🍂 Herfstuitverkoop
-
-*Schiet op! Deze aanbieding is alleen beschikbaar tot* **4 oktober (23:59 UTC)**.
+*Schiet op! Deze aanbieding is alleen beschikbaar tot* **1 november (23:59 UTC)**.
 
 *Voor abonnementen geldt de kortingsprijs voor het eerste jaar.*
+
+*De korting geldt niet voor de app OsmAnd+ in Google Play.*
 
 :::
 
@@ -95,7 +95,7 @@ In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en 
 | **Prijs (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Prijs (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
--->
+<!--
 
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-app | [Maps+](#install-osmand-android) Abonnement | [OsmAnd Pro](#install-osmand-android) |
@@ -104,6 +104,8 @@ In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en 
 | **Aankooptype** | **Gratis** | **Eenmalige aankoop** (Levenslang) | **Abonnement** (12 maanden) | **Abonnement** (1 maand / 12 maanden) |
 | **Prijs (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Prijs (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
 
 
 

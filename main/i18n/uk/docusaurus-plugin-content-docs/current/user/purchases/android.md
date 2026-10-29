@@ -77,13 +77,13 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 У списку є інформація про ціни продуктів OsmAnd для регіону США та Європи. Для інших регіонів ціни еквівалентні в місцевих валютах.
 
 
-<!--
+:::danger 🎃 Розпродаж до Гелловіну
 
-:::danger 🍂 Осінній розпродаж
-
-*Поспішайте! Ця пропозиція діє лише до* **4 жовтня (23:59 UTC)**.
+*Поспішайте! Ця пропозиція діє лише до* **1 листопада (23:59 UTC)**.
 
 *Для підписок знижена ціна діє протягом першого року.*
+
+*Знижка не поширюється на застосунок OsmAnd+ у Google Play.*
 
 :::
 
@@ -95,7 +95,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
 | **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
--->
+<!--
 
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
@@ -104,6 +104,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
 
 
 
