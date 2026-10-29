@@ -705,7 +705,7 @@ Jest to widżet wtyczki Mapillary, który zapewnia szybki dostęp do aplikacji M
 
 :::note
 Aby dodać widżety notatek audio/wideo do ekranu mapy, włącz wtyczkę OsmAnd [Notatki audio/wideo](../plugins/audio-video-notes.md).
-::;
+:::
 
 ![Widżet notatek audio/wideo](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 

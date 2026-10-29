@@ -39,7 +39,7 @@ Wenn Sie die Android-API als Positionsquelle verwenden oder die MSL-Höhe nicht 
 - Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
 - Um die Positionsquelle zu ändern, gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Weitere Details finden Sie unter [Karten & Ressourcen](../personal/maps-resources.md#downloads-menu).
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -70,7 +70,7 @@ Wenn Sie die Android-API als Positionsquelle verwenden oder die MSL-Höhe nicht 
 
 :::info Pro-Funktion
 Das Widget *Höhe: Kartenzentrum* ist eine kostenpflichtige [**OsmAnd Pro**](../purchases/index.md)-Funktion <ProFeature />.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -538,7 +538,7 @@ Reiseaufzeichnungs-Widgets beziehen sich auf das [<Translate android="true" ids=
 
 :::note
 Um Widgets für externe Sensoren zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Plugin für externe Sensoren](../plugins/external-sensors.md).
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -585,7 +585,7 @@ Widgets beziehen sich auf das [Plugin für externe Sensoren](../plugins/external
 
 :::note
 Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md).
-::;
+:::
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -625,7 +625,7 @@ Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#w
 
 :::note
 Um Wetter-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Wetter-Plugin](../plugins/weather.md).
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -705,7 +705,7 @@ Dies ist ein Mapillary-Plugin-Widget, das schnellen Zugriff auf die Mapillary-An
 
 :::note
 Um Audio-/Videonotizen-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Audio-/Videonotizen-Plugin](../plugins/audio-video-notes.md).
-::;
+:::
 
 ![Audio-Videonotizen-Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -749,7 +749,7 @@ Dieses OsmAnd Tracker-Plugin-Widget ist verwendet, um schnell auf die OsmAnd Tra
 
 :::note
 Um Entwickler-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [OsmAnd-Entwicklungs-Plugin](../plugins/development.md).
-::;
+:::
 
 **Entwickler-Widgets** liefern Informationen über die [Rendering-Geschwindigkeit](../plugins/development.md#map-rendering-fps-widget) der Karte und die Parameter der virtuellen Kameraposition, einschließlich [Zoomstufe](../plugins/development.md#zoom-level), [Entfernung](../plugins/development.md#distance-to-target) zum Kartenzentrum, [Kamerahöhe](../plugins/development.md#camera-elevation) und [Neigungswinkel](../plugins/development.md#camera-tilt).  
 

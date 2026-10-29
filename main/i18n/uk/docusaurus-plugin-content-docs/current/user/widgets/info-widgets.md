@@ -703,7 +703,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 :::note
 Щоб додати віджети аудіо/відео нотаток на екран карти, увімкніть плагін OsmAnd [Аудіо/відео нотатки](../plugins/audio-video-notes.md).
-::;
+:::
 
 ![Віджет аудіо-відео нотаток](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -747,7 +747,7 @@ OsmAnd пропонує два типи віджетів координат:
 
 :::note
 Щоб додати віджети розробника на екран карти, увімкніть плагін OsmAnd [Розробка OsmAnd](../plugins/development.md).
-::;
+:::
 
 **Віджети розробника** надають інформацію про [швидкість рендерингу карти](../plugins/development.md#map-rendering-fps-widget) та параметри положення віртуальної камери, включаючи [рівень масштабування](../plugins/development.md#zoom-level), [відстань](../plugins/development.md#distance-to-target) до центру карти, [висоту камери](../plugins/development.md#camera-elevation) та [кут нахилу](../plugins/development.md#camera-tilt).  
 
