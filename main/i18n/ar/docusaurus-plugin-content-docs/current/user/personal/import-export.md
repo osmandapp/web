@@ -1,5 +1,5 @@
 ---
-source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
+source-hash: 15444c168df6f3554637066910aa28d6eb9b1c274618b9570845570e8988b856
 sidebar_position: 10
 title:  استيراد / تصدير
 ---
@@ -29,11 +29,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 **أنواع البيانات** المتاحة للاستيراد/التصدير:
 
 - **الإعدادات:**  
-        [الملفات الشخصية](../personal/profiles.md#actions)، &nbsp;[إعدادات OsmAnd/الإعدادات العامة](../personal/global-settings.md)، &nbsp;[الألوان](../personal/color-palette-schemes.md)، &nbsp;[الإجراء السريع](../widgets/quick-action.md)، &nbsp;[نوع نقاط الاهتمام](../map/point-layers-on-map.md#poi-types)، &nbsp;[تجنب الطريق](../map/map-context-menu.md#avoid-road).
+        [الملفات الشخصية](../personal/profiles.md#actions), &nbsp;[إعدادات OsmAnd/الإعدادات العامة](../personal/global-settings.md), &nbsp;[الألوان](../personal/color-palette-schemes.md), &nbsp;[الإجراء السريع](../widgets/quick-action.md), &nbsp;[نوع نقاط الاهتمام](../map/point-layers-on-map.md#poi-types), &nbsp;[تجنب الطريق](../map/map-context-menu.md#avoid-road).
 - **أماكني:**  
-        [المفضلات](../personal/favorites.md#export--import)، &nbsp;[المسارات](../personal/tracks/manage-tracks.md#import--export-track)، &nbsp;[ملاحظات OSM*، *تعديلات OSM](../plugins/osm-editing.md#create--modify-poi)، &nbsp;[ملاحظات صوتية/مرئية](../plugins/audio-video-notes.md)، &nbsp;[علامات الخريطة](../personal/markers.md)، &nbsp;[سجل العلامات*، *سجل البحث*، *سجل الملاحة](../personal/global-settings.md#history)، &nbsp;*مسار الرحلة*.
+        [المفضلات](../personal/favorites.md#export--import), &nbsp;[الوسائط المرفقة](../personal/favorites.md#media), &nbsp;[المسارات](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[ملاحظات OSM*، *تعديلات OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[ملاحظات صوتية/مرئية](../plugins/audio-video-notes.md), &nbsp;[علامات الخريطة](../personal/markers.md), &nbsp;[سجل العلامات*، *سجل البحث*، *سجل الملاحة](../personal/global-settings.md#history), &nbsp;*مسار الرحلة*.
 - **الموارد:**  
-        [نمط العرض](../map/map-styles.md#custom-map-style)، &nbsp;[التوجيه](../navigation/routing/osmand-routing.md)، &nbsp;[محركات التوجيه عبر الإنترنت](../navigation/routing/online-routing.md)، &nbsp;[مصادر الخرائط*، *الخرائط القياسية/غير المتصلة بالإنترنت](../map/raster-maps.md)، &nbsp;[خرائط ويكيبيديا والسفر](../plan-route/travel-guides.md)، &nbsp;[الخرائط البحرية](../plugins/nautical-charts.md)، &nbsp;[خرائط الطرق](../map/vector-maps.md#road-style)، &nbsp;[الخرائط الطبوغرافية](../plugins/topography.md)، &nbsp;[التوجيهات الصوتية (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech)، [التوجيهات الصوتية (مسجلة)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts)، &nbsp;[النسخ الاحتياطي للمفضلات](../personal/favorites.md#automatic-favorites-backup).
+        [نمط العرض](../map/map-styles.md#custom-map-style), &nbsp;[التوجيه](../navigation/routing/osmand-routing.md), &nbsp;[محركات التوجيه عبر الإنترنت](../navigation/routing/online-routing.md), &nbsp;[مصادر الخرائط*، *الخرائط القياسية/غير المتصلة بالإنترنت](../map/raster-maps.md), &nbsp;[خرائط ويكيبيديا والسفر](../plan-route/travel-guides.md), &nbsp;[الخرائط البحرية](../plugins/nautical-charts.md), &nbsp;[خرائط الطرق](../map/vector-maps.md#road-style), &nbsp;[الخرائط الطبوغرافية](../plugins/topography.md), &nbsp;[التوجيهات الصوتية (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [التوجيهات الصوتية (مسجلة)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[النسخ الاحتياطي للمفضلات](../personal/favorites.md#automatic-favorites-backup).
 
 
 ### تصدير {#export}
@@ -44,7 +44,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![إجراءات الملفات الشخصية تصدير أندرويد](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![نسخ احتياطي محلي أندرويد](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
+![إجراءات تصدير الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![نسخ احتياطي محلي أندرويد](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
 
 </TabItem>
 
@@ -52,7 +52,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![إجراءات الملفات الشخصية تصدير iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![إجراءات الملفات الشخصية تصدير iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
+![إجراءات تصدير الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![إجراءات تصدير الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
 
 </TabItem>
 
@@ -69,7 +69,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
-![إجراءات الملفات الشخصية استيراد أندرويد](@site/static/img/personal/profiles/profile_actions_import_android.png) ![إجراءات الملفات الشخصية استيراد 1 أندرويد](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
+![إجراءات استيراد الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_actions_import_android.png) ![إجراءات استيراد الملفات الشخصية 1 أندرويد](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
 
 <!-- ![Profiles Actions Import 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
 
@@ -80,7 +80,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
 
-![إجراءات الملفات الشخصية استيراد iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![إجراءات الملفات الشخصية استيراد 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
+![إجراءات استيراد الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![إجراءات استيراد الملفات الشخصية 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
 <!--  ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
 
 </TabItem>

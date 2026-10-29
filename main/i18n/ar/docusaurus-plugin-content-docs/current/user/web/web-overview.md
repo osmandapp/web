@@ -1,5 +1,5 @@
 ---
-source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: مقدمة
 title: مقدمة عن مخطط الويب
@@ -70,8 +70,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - إذا كان لديك بالفعل اشتراك [**OsmAnd Pro**](../personal/osmand-cloud.md#login) أو ترغب في إنشاء حساب [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) مجاني، فاتبع هذه الخطوات:
 
-١. اذهب إلى [**بوابة خرائط OsmAnd**](https://osmand.net/map).
-٢. افتح قائمة **الحساب**:
+1. اذهب إلى [**بوابة خرائط OsmAnd**](https://osmand.net/map).
+2. افتح قائمة **الحساب**:
    - **تسجيل الدخول**: أدخل عنوان البريد الإلكتروني المرتبط باشتراكك في Pro أو Start، أو
    - **إنشاء حساب**: سجل للحصول على حساب OsmAnd Start مجاني. للحصول على دليل خطوة بخطوة مفصل لإنشاء حساب جديد، انظر مقالة [حساب OsmAnd](./web-cloud).
 

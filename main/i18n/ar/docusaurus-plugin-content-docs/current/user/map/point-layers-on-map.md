@@ -1,5 +1,5 @@
 ---
-source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+source-hash: bfe0420d8b7fdb1fb6c341554dbe5327adde2d1beb05e5eeb3114c2d541b823c
 sidebar_position: 8
 title:  النقاط على الخريطة
 ---
@@ -134,6 +134,8 @@ import Translate from '@site/src/components/Translate.js';
 
 لكل نوع من نقاط الاهتمام في OsmAnd أيقونة ولون محدد. قد يختلف [مستوى التكبير/التصغير](../map/vector-maps.md#details) وتصميم نقاط الاهتمام في بعض [أنماط الخرائط](../map/map-styles.md).  
 
+في [نمط خريطة](../map/map-styles.md) OsmAnd، تُعرض أماكن العبادة (الكنائس والمساجد والمعابد اليهودية والمعابد وغيرها) بشكل انتقائي. عند مستويات التكبير/التصغير المنخفضة، تظهر أبرزها فقط، وتظهر البقية عند التكبير. مع تمكين إعداد [<Translate android="true" ids="rendering_attr_moreDetailed_name"/>](../map/vector-maps.md#details)، تظهر جميع أماكن العبادة عند مستوى تكبير/تصغير أقل. في [الوضع الليلي](../map/vector-maps.md#map-mode)، تُعرض أيقوناتها بدون دائرة خلفية، كما في الوضع النهاري.
+
 [اقرأ المزيد](../map/vector-maps.md#hide).
 
 
@@ -159,7 +161,7 @@ import Translate from '@site/src/components/Translate.js';
 
 </Tabs>
 
-[علامات الخريطة](../personal/markers.md) هي نقاط مؤقتة معلمة على الخريطة كأعلام. يمكن تخصيص مظهرها باستخدام **الأسهم** (أسهم على الخريطة) و**مؤشر المسافة** (خطوط الاتجاه).  
+[علامات الخريطة](../personal/markers.md) هي نقاط مؤقتة معلمة على الخريطة كأعلام. يمكن تخصيص مظهرها باستخدام **السهام** (السهام على الخريطة) و**مؤشر المسافة** (خطوط الاتجاه).  
 
 يمكنك قراءة المزيد حول مظهر العلامات في هذا [المقال](../personal/markers#appearance-on-the-map).
 

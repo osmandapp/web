@@ -1,5 +1,5 @@
 ---
-source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
+source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
 sidebar_position: 16
 title: التضاريس
 ---
@@ -57,7 +57,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### ترخيص بيانات DEM التي يستخدمها OsmAnd للكشف عن التضاريس {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
-تم الحصول على بيانات الارتفاع على الخريطة (بين خط عرض ٧٠ درجة شمالًا وخط عرض ٧٠ درجة جنوبًا) من قياسات أُجريت كجزء من *مهمة المكوك الفضائي لرسم التضاريس الرادارية (SRTM)*. وقد استخدمت *مقياس الإشعاع الحراري والانعكاس المتقدم المحمول في الفضاء (ASTER)*، وهو أداة التصوير الرئيسية في *نظام مراقبة الأرض التابع لناسا*.
+تم الحصول على بيانات الارتفاع على الخريطة (بين خط عرض ٧٠ درجة شمالًا وخط عرض ٧٠ درجة جنوبًا) من قياسات أُجريت كجزء من *مهمة المكوك الفضائي لرسم التضاريس الرادارية (SRTM)*. وقد استخدمت *مقياس الإشعاع الحراري والانعكاس المتقدم المحمول في الفضاء (ASTER)*، وهو أداة التصوير الرئيسية في *نظام مراقبة الأرض التابع لناسا*.  
+بالنسبة لأمريكا الشمالية، تستخدم خرائط التضاريس وخطوط الكونتور بيانات الارتفاع الوطنية عالية الدقة: حوالي ١٠ أمتار في الولايات المتحدة القارية وحوالي ٣٠ مترًا في ألاسكا ومعظم كندا والمكسيك.  
 للحصول على معلومات كاملة، راجع [الترخيص](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -66,7 +67,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. البيانات الأصلية المستخدمة لهذا المنتج تم توفيرها بواسطة AW3D التابع لـ JAXA.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program (3DEP)</a> via <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> (United States, Alaska) and the <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">USGS 1 arc-second DEM</a> on <a href="https://opentopography.org/">OpenTopography</a> (Canada, Mexico), including data from <a href="https://natural-resources.canada.ca/">Natural Resources Canada (NRCan)</a> and <a href="https://www.inegi.org.mx/">INEGI</a>.
 
 </details>
 
@@ -259,7 +261,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - يستخدم *الميل* الألوان لتصور شدة انحدار التضاريس. يمكنك قراءة المزيد عنها [هنا](https://en.wikipedia.org/wiki/Grade_(slope)). يتوافق كل لون مع زاوية انحراف عن المستوى الأفقي. يتوفر نظام ألوان إضافي لـ *الميل*، ***انهيار ثلجي***، في قائمة **تعديل**.
 
-- *الارتفاع*. تلون خريطة الارتفاع كل بكسل وفقًا لارتفاع الخريطة المحسوب باستخدام التدرج من نظام ألوان محدد. عادةً ما تعتمد أنظمة الارتفاع بشكل كبير على الموقع. في المناطق الجبلية، قد تفضل توزيع الألوان على نطاق ارتفاع أوسع، وفي المناطق المسطحة، ستختار نظام ألوان بنطاق صغير بين الحد الأدنى/الأقصى للارتفاع.
+- *الارتفاع*. تلون خريطة الارتفاع كل بكل وفقًا لارتفاع الخريطة المحسوب باستخدام التدرج من نظام ألوان محدد. عادةً ما تعتمد أنظمة الارتفاع بشكل كبير على الموقع. في المناطق الجبلية، قد تفضل توزيع الألوان على نطاق ارتفاع أوسع، وفي المناطق المسطحة، ستختار نظام ألوان بنطاق صغير بين الحد الأدنى/الأقصى للارتفاع.
 
 
 ### تعديل نظام الألوان {#modify-color-scheme}

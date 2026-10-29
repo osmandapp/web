@@ -1,5 +1,5 @@
 ---
-source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title:  التوجيهات الصوتية / الإشعارات
 ---
@@ -97,7 +97,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **خيارات**:
 
-- *تكرار تعليمات الملاحة*. يسمح لك بتكرار تعليمات الملاحة على فترات منتظمة من دقيقة واحدة إلى ٣٠ دقيقة. أو يدويًا - إذا فاتتك توجيه صوتي، يمكنك الاستماع إليه مرة أخرى بمجرد النقر على [سهم المنعطف الحالي](../../widgets/nav-widgets.md#next-turn) على شاشة التطبيق.
+- *تكرار تعليمات الملاحة*. يسمح لك بتكرار تعليمات الملاحة على فترات منتظمة من دقيقة واحدة إلى ٣٠ دقيقة. أو يدويًا - إذا فاتت توجيه صوتي، يمكنك الاستماع إليه مرة أخرى بمجرد النقر على [سهم المنعطف الحالي](../../widgets/nav-widgets.md#next-turn) على شاشة التطبيق.
 - *[وقت الإعلان](#announcement-time)*.
 - *إيقاف الصوت المنطوق* (*iOS فقط، بما في ذلك CarPlay*). عند التمكين، يتم إيقاف البودكاست والكتب الصوتية وغيرها من الصوت المنطوق أثناء تشغيل التوجيهات الصوتية، سواء عبر الجهاز أو عبر CarPlay. يستمر تشغيل الموسيقى بمستوى صوت منخفض. عند التعطيل، يستمر تشغيل الصوت المنطوق والموسيقى بمستوى صوت منخفض.
 
@@ -305,7 +305,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | **А** | العربية |
 | **B** | البيلاروسية، البلغارية |
 | **C** | الكاتالونية، الصينية، الصينية(هونغ كونغ)، الصينية(التقليدية)، الكرواتية، التشيكية |  
-| **D** | الدنماركية، الهولندية |
+| **D** | الدنمارية، الهولندية |
 | **E** | الإنجليزية، الإنجليزية(المملكة المتحدة)، الإستونية |
 | **F** | الفنلندية، الفرنسية |
 | **G** | الألمانية، الألمانية(غير رسمية)، اليونانية، الغوارانية |
@@ -394,7 +394,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     ![التحكم في مهلة شاشة النظام في أندرويد](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. إذا تم تشغيل *إبقاء الشاشة قيد التشغيل*، فلن تطبق شاشة الجهاز مهلة بعد الاستيقاظ. إذا تم تعطيله، يمكنك ضبط الوقت الذي سيتم بعده إيقاف تشغيل شاشة الجهاز إذا لم تتفاعل معها، من ٥ إلى ٦٠ ثانية.  
+2. **<Translate android="true" ids="wake_time"/>**. إذا تم تشغيل *إبقاء الشاشة قيد التشغيل*، فلن تطبق شاشة الجهاز مهلة بعد الاستيقاظ. إذا تم تعطيله، يمكنك ضبط الوقت الذي سيتم بعده إيقاف تشغيل شاشة الجهاز إذا لم تتفاعل معها، من ٥ إلى ٦٠ ثانية. يتم احتساب المهلة من آخر تفاعل مع الخريطة، وكل لمسة تعيد تشغيلها. عند انتهائها، تنطفئ الشاشة وفقًا لمهلة شاشة النظام في جهازك، لذا يمكن لـ OsmAnd إبقاء الشاشة قيد التشغيل لفترة أطول من إعداد النظام، ولكن ليس أقصر أبدًا.  
 
     ![مهلة بعد الاستيقاظ في أندرويد](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![مهلة بعد الاستيقاظ في أندرويد](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -402,11 +402,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![تشغيل الشاشة في أندرويد](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-حدد خيارات تنشيط الشاشة وتأكد من بقاء OsmAnd في المقدمة عند قفل الجهاز.
+حدد خيارات تنشيط الشاشة وتأكد من بقاء OsmAnd في المقدمة عند قفل الجهاز. عندما يؤدي خيار التنبيه إلى تشغيل الشاشة، تظهر الخريطة فوق شاشة القفل، ويظل الجهاز مقفلاً. إذا لم يتم تمكين أي خيار تنبيه، يتم عرض شاشة القفل العادية.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> يستجيب المستشعر بشكل موثوق أثناء الملاحة أو تسجيل الرحلة. في الحالات الأخرى، يتوقف أندرويد عن إرسال أحداث المستشعر إلى OsmAnd بعد حوالي دقيقة من انتقال التطبيق إلى الخلفية.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> إذا تم إيقاف تشغيل *استخدام مهلة شاشة النظام*، يتطلب هذا الخيار ضبط *المهلة بعد الاستيقاظ* على *إبقاء الشاشة قيد التشغيل*.
+
+بعد التنبيه بواسطة مستشعر القرب أو تعليمات الملاحة، تبقى الخريطة فوق شاشة القفل للمدة المحددة في *المهلة بعد الاستيقاظ*، ثم يُقفل الجهاز مرة أخرى. مع *إبقاء الشاشة قيد التشغيل*، تبقى الخريطة مرئية حتى تضغط على زر الطاقة.
+
+**ملاحظة:** على أجهزة Xiaomi، اسمح بإذن *إظهار على شاشة القفل* لـ OsmAnd (*معلومات التطبيق ← أذونات أخرى*). بدون هذا الإذن، تنطفئ الشاشة، لكن الخريطة لا تظهر فوق شاشة القفل. لا يستطيع OsmAnd منح هذا الإذن بنفسه.
 
 
 ## مقالات ذات صلة {#related-articles}

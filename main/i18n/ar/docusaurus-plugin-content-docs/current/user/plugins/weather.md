@@ -1,5 +1,5 @@
 ---
-source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
 sidebar_position: 19
 title:  الطقس
 ---
@@ -151,7 +151,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *القائمة الرئيسية ← الإضافات ← الطقس ← الإعدادات*
 - *القائمة الرئيسية ← الإعدادات ← الملف الشخصي ← إعدادات الإضافات ← الطقس*
 
-![إعدادات الطقس أندرويد](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![إعدادات الطقس 2 أندرويد](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![إعدادات الطقس أندرويد](@site/static/img/plugins/weather/weather_settings_andr_1.webp) ![إعدادات الطقس 2 أندرويد](@site/static/img/plugins/weather/weather_settings_andr_2.webp)
 
 </TabItem>
 
@@ -159,13 +159,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - *القائمة الرئيسية ← الإعدادات ← الملف الشخصي ← الإضافات ← الطقس*
 
-![إعدادات الطقس iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![إعدادات الطقس iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![إعدادات الطقس iOS](@site/static/img/plugins/weather/weather_settings_ios.webp) ![إعدادات الطقس iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.webp)
 
 </TabItem>
 
 </Tabs>  
 
-من المهم تحديد وحدات القياس التي تناسبك لرؤية [بيانات الطقس](#weather-layers) على الخريطة وفي قسم [أدوات الطقس](#weather-widgets) على الشاشة. يمكنك اختيار وحدات القياس المناسبة لكل معلمة أو استخدام القيم الافتراضية (*iOS فقط*). في إصدار iOS من تطبيق OsmAnd، يمكنك أيضًا تمكين خيار التوقعات دون اتصال بالإنترنت لتجنب استخدام بيانات الجوال أثناء السفر.
+من المهم تحديد وحدات القياس التي تناسبك لرؤية [بيانات الطقس](#weather-layers) على الخريطة和في قسم [أدوات الطقس](#weather-widgets) على الشاشة. يمكنك اختيار وحدات القياس المناسبة لكل معلمة. يمكنك أيضًا استخدام القيم الافتراضية — على iOS لجميع المعلمات، وعلى أندرويد فقط لدرجة الحرارة. يتم تحديد وحدة درجة الحرارة في: *القائمة ← الملف الشخصي ← الإعدادات العامة ← الوحدات والتنسيقات ← درجة الحرارة*. في إصدار iOS من تطبيق OsmAnd، يمكنك أيضًا تمكين خيار التوقعات دون اتصال بالإنترنت لتجنب استخدام بيانات الجوال أثناء السفر.
 
 :::note
 في إصدار iOS من OsmAnd، يمكنك تغيير وحدات القياس ومستوى الشفافية في القائمة التي تفتح بعد النقر المطول على أيقونة طبقة الخريطة المطلوبة.

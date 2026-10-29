@@ -1,5 +1,5 @@
 ---
-source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
+source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
 sidebar_position: 4
 title:  أدوات التنقل
 ---
@@ -149,7 +149,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 - [Relative bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Relative) هو الزاوية بين اتجاه حركتك الأمامية ونقطة الهدف. اتجاه **الحركة الأمامية** هو إما **اتجاه حركتك** المحصل من أجهزة استشعار GPS أو إذا كنت واقفًا **حيث أشرت جهازك** (أي. اتجاه جهازك وفقًا لبوصلته المغناطيسية). مثال: جسم باتجاه نسبي ٠° مباشرة أمامك وجسم باتجاه نسبي ١٨٠° مباشرة خلفك. **الاتجاه النسبي** هو الزاوية بين اتجاهك الأمامي ونقطة الهدف.
 
-- [Magnetic bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) هو الزاوية الساعية (الأفقية) بين الشمال المغناطيسي ونقطة الهدف المرصودة من موقعك. يجب أن تتبع قيمة بوصلة مغناطيسية هذه للوصول إلى هدفك. مثال: إذا تم عرض **الاتجاه المغناطيسي** كـ ٠° M، يجب أن تتحرك بدقة نحو الشمال المغناطيسي للوصول إلى نقطة الهدف.
+- [Magnetic bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Absolute) هو الزاوية الساعية (الأفقية) بين الشمال المغناطيسي ونقطة الهدف المرصودة من موقعك. يجب أن تتبع قيمة بوصلة مغناطيسي هذه للوصول إلى هدفك. مثال: إذا تم عرض **الاتجاه المغناطيسي** كـ ٠° M، يجب أن تتحرك بدقة نحو الشمال المغناطيسي للوصول إلى نقطة الهدف.
 
 - [True bearing](https://en.wikipedia.org/wiki/Bearing_(angle)#Usages) يُعبر عنه كزاوية أفقية بين خط الطول الجغرافي وخط على الأرض. تحديدًا، **true point bearing** هو الزاوية المقاسة بالدرجات ساعية من خط الشمال الحقيقي. سيعرض برنامج OsmAnd لك الاتجاه الحقيقي والتوجه في واجهتنا الودية للمستخدم، مما يجعل من السهل عليك اتخاذ القرار الصحيح مبكرًا.
 
@@ -320,7 +320,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 |:------------|:------------|
 | Enable      | **Android:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*  |
 |      | **iOS:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*   |
-| By tapping  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lane**: No changes. |
+| By tapping  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lanes**: No changes. |
 | Long tap    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lanes**: No changes. |
 
 
@@ -328,7 +328,9 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
 
-تبرز أداة **Lanes** المسار الحالي عندما يكون التنقل نشطًا وتعرض تخطيط المسار للطريق الفعلي عندما يكون التنقل سلبيًا. كما يُعرض مؤشر مسافة أيضًا أسفل رسم المسار، يمثل المسافة المتبقية حتى المناورة التي ينطبق عليها إرشاد المسار. هذه الأداة متاحة فقط لـ Top وBottom panels. يتم أخذ البيانات من [مشروع OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+تبرز أداة **Lanes** المسار الحالي عندما يكون التنقل نشطًا وتعرض تخطيط المسار للطريق الفعلي عندما يكون التنقل سلبيًا. كما يُعرض مؤشر مسافة أيضًا أسفل رسم المسار، يمثل المسافة المتبقية حتى المناورة التي ينطبق عليها إرشاد المسار. هذه الأداة متاحة فقط لـ Top وBottom panels. يتم أخذ البيانات من [مشروع OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn). إذا لم تحدد بيانات الخريطة اتجاهًا لكل مسار، يكمل OsmAnd الاتجاهات المفقودة بناءً على تخطيط التقاطع.
+
+على Android، تتضمن إعدادات الأداة خيار *Display on minor intersections when navigating straight*، وهو مفعّل افتراضيًا. مع هذا الخيار، تعرض الأداة المسارات عند كل تقاطع تمر به أثناء القيادة مباشرة، حتى لو لم يكن هناك إرشاد صوتي لذلك التقاطع.
 
 
 ### المنعطف التالي {#next-turn}

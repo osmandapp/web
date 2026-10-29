@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title: الإعدادات العامة
 ---
@@ -79,7 +79,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![إعدادات ملف CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-يُستخدم [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) عند الاتصال ببرنامج [CarPlay](https://support.apple.com/en-gb/HT205634) في سيارتك، ويساعدك على الاستفادة القصصى من الإصدار المحسّن من تطبيق OsmAnd باستخدام أنظمة الصوت والفيديو لعرض البيانات على هاتفك.
+يُستخدم [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) عند الاتصال ببرنامج [CarPlay](https://support.apple.com/en-gb/HT205634) في سيارتك، ويساعدك على الاستفادة القصوى من الإصدار المحسّن من تطبيق OsmAnd باستخدام أنظمة الصوت والفيديو لعرض البيانات على هاتفك.
 
 
 ### تخزين البيانات {#data-storage}
@@ -99,6 +99,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - *ذاكرة التطبيق الداخلية*. فقط تطبيق OsmAnd لديه الوصول إلى بياناته ولا تطبيقات خارجية.
     - *الذاكرة المشتركة*. غير متاحة بعد الآن.
     - *التخزين الخارجي 1*. فقط تطبيق OsmAnd واحد لديه الوصول وتطبيقات الإدارة وUSB.
+    - *التخزين الخارجي المرئي 1*. يتم تخزين البيانات في مجلد Android/media، وهو مفتوح لمديري الملفات وUSB. لا يلزم أذونات تخزين إضافية.
     - *التخزين متعدد المستخدمين*. فقط تطبيق OsmAnd واحد لديه الوصول، لكنه مشترك بين عدة مستخدمين أندرويد.
     - *محدد يدويًا*. يعتمد على المسار.
 
@@ -113,6 +114,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **التخزين المشترك** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **مجلد الكاميرا** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **محدد يدويًا** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+عند اختيار تخزين وسائط مختلف، يسأل OsmAnd عما إذا كان يجب نقل ملفات الوسائط الموجودة:
+- **النقل إلى الوجهة الجديدة** — انقل ملفات الوسائط الموجودة إلى التخزين المحدد.
+- **لا تنقل** — غيّر التخزين دون نقل الملفات الموجودة.
+- **إلغاء** — احتفظ بالتخزين الحالي.
 
 يوجد أيضًا مفتاح *الاحتفاظ دائمًا بنسخة محلية*. عند تفعيله، ينسخ OsmAnd الوسائط المستوردة من المعرض أو الملفات إلى تخزينه الخاص، بحيث تظل الوسائط المرفقة متاحة حتى لو تم حذف الملف الأصلي من المعرض أو نظام الملفات.
 
@@ -317,7 +323,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*أندرويد فقط*)
 
-![إعدادات مصدر الموقع أندرويد](@site/static/img/personal/profiles/location_source_andr.png)
+![مصدر الموقع أندرويد](@site/static/img/personal/profiles/location_source_andr.png)
 
 يوفر OsmAnd لك خيارًا من الخدمات لتحديد موقعك. يُوصى بقراءة مزيد من المعلومات حول [إذن الموقع](../start-with/first-steps.md#permission-to-access-the-location) و[استكشاف الأخطاء وإصلاحها](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) لهذا القسم.
 

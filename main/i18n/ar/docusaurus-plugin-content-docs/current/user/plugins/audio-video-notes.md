@@ -1,5 +1,5 @@
 ---
-source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+source-hash: 2c0a6908a74d63cbb4449e258729df822d9ac3927942ad52a8271ce7c951c29c
 sidebar_position: 4
 title:  الملاحظات الصوتية / الفيديو
 ---
@@ -148,7 +148,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 من الممكن إيقاف التسجيل بنقرة على ويدجت <Translate android="true" ids="map_widget_av_notes"/>، بغض النظر عما إذا كانت قائمة السياق أو الويدجت هي التي بدأت التسجيل. بالنسبة *لملاحظة الصورة*، تظهر وظيفة الكاميرا، ويمكنك التقاط صورة، وعرض النتيجة، وقبولها وحفظها، أو التقاط صورة جديدة.
 
 :::info note
-تلقائيًا، يتم حفظ جميع سجلات الصور والصوت والفيديو في: علامة تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>.
+تلقائيًا، يتم حفظ جميع سجلات الصور والصوت والفيديو في: علامة تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>. يتم حفظ كل ملاحظة أيضًا كمفضلة في مجلد **media**. راجع [ملاحظات الصوت/الفيديو كمفضلات](#av-notes-as-favorites).
 :::
 
 
@@ -342,6 +342,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ![لا توجد ملاحظات على الخريطة](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![الملاحظات على الخريطة](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
+## ملاحظات الصوت/الفيديو كمفضلات {#av-notes-as-favorites}
+
+ترتبط ملاحظات الصوت والفيديو والصور بالمفضلات. تحتوي كل ملاحظة على نقطة مفضلة مطابقة في مجلد **media** ضمن *أماكني → المفضلات*، موضوعة في موقع الملاحظة ومسماة حسب نوع الملاحظة ووقت إنشائها، على سبيل المثال *Photo Oct 1, 2026 09:45*. يتم إرفاق ملف الملاحظة بهذه المفضلة ويظهر في [بطاقة الوسائط](../personal/favorites.md#media) الخاصة بها. تظل الملاحظة نفسها متاحة أيضًا في علامة تبويب *ملاحظات الصوت/الفيديو*.
+
+- عند تحديث OsmAnd إلى الإصدار 5.4 من إصدار سابق، يتم إنشاء مفضلة تلقائيًا لكل ملاحظة موجودة.
+- تُضاف الملاحظات الجديدة المسجلة باستخدام الويدجت أو قائمة سياق الخريطة تلقائيًا إلى مجلد **media**.
+
+
 ## نقاط الطريق المنشأة من الملاحظات {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -421,11 +429,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### تفاصيل اسم الملف {#file-name-details}
 
-تنشئ إضافة <Translate android="true" ids="audionotes_plugin_name"/> ملفات صوت/فيديو/صورة بالتنسيق التالي:
-
-    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
-
-حيث يحدد `SHORTLINK_LOCATION` خط العرض وخط الطول للموقع الذي يرتبط به الملف. يتم ترميز `SHORTLINK_LOCATION`، وفقًا لمواصفات [الرابط القصير](https://wiki.openstreetmap.org/wiki/Shortlink).
+تنشئ إضافة <Translate android="true" ids="audionotes_plugin_name"/> ملفات صوت/فيديو/صورة باستخدام النمط `Type_YYYY-MM-DD_HH-mm-ss_location.ext`، على سبيل المثال `Photo_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. يحتوي جزء `location` على خط العرض وخط الطول للملاحظة، ويتم ترميزه وفقًا لمواصفات [الرابط القصير](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ### التصدير إلى JOSM {#export-to-josm}

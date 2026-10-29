@@ -1,11 +1,11 @@
 ---
+source-hash: 9a29333c8bd31f59e268fb240cf3781f148fe4e7c38a7c3fccdd415c3086d974
 draft: true
-source-hash: 390eaa4c21a76034248b2840ebeeb3be58aeb2f5ad1ed25d17f98dc0327c8ae7
 sidebar_position: 1
 title: مطور OpenGL / Vulkan
 ---
 
-نحن نبحث عن مطور متحمس يمكنه مساعدتنا في الارتقاء بمحرك الخرائط لدينا إلى مستوى جديد.
+نبحث عن مطور متحمس يمكنه مساعدتنا في الارتقاء بمحرك الخرائط لدينا إلى مستوى جديد.
 
 ## وصف الوظيفة {#job-description}
 تبحث OsmAnd عن مطور برمجيات مفتوحة المصدر متحمس وشغوف، ولديه معرفة جيدة بواحد على الأقل من OpenGL أو Vulkan، للانضمام إلى فريقنا المتنامي.
@@ -21,7 +21,7 @@ title: مطور OpenGL / Vulkan
 ### من الجيد توفرها {#nice-to-have}
 - خبرة في Git + Github
 - خبرة في نظم المعلومات الجغرافية (GIS)، خاصةً مكتبات مثل Gdal / GeographicLib
-- معرفة بمفاهيم OpenStreetMap
+- معرفة كمُخطط خرائط OpenStreetMap
 
 ## عروض الشركة {#company-offers}
 

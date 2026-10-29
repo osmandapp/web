@@ -1,18 +1,18 @@
 ---
-source-hash: 25c29183922ffa0df481d5ee27894c6a7f4653e20a70b824ecbc3791edaafed7
+source-hash: 9fba3febb3976b4f66fedc9a6c2d4e8c305fe11e72aa3f7b02a2f5cf993505aa
 sidebar_position: 3
 ---
 
 # تخصيص محرك التوجيه {#customize-routing-engine}
 
-في بعض الحالات، قد ترغب في توسيع أو تعديل تجربة التوجيه في OsmAnd، بحيث يمكنك إضافة معلمات إضافية، أو إضافة حواجز إضافية، أو تغيير بعض العقوبات. يرجى إلقاء نظرة على [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml). يستخدم توجيه OsmAnd خوارزمية A* ثنائية الاتجاه تعتمد على أسرع وقت (= المسافة / (السرعة * الأولوية) + العقوبات). إنه تنسيق سهل للغاية. وهو مقسم إلى 7 أقسام (مجموعات تقييم):
+في بعض الحالات قد ترغب في توسيع أو تعديل تجربة التوجيه في OsmAnd، بحيث يمكنك إضافة معلمات إضافية، أو إضافة حواجز إضافية أو تغيير بعض العقوبات. يرجى إلقاء نظرة على [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml). يستخدم توجيه OsmAnd خوارزمية A* ثنائية الاتجاه تعتمد على أسرع وقت (= distance/(speed*priority) + penalties). إنه تنسيق سهل للغاية. وهو مقسم إلى 7 أقسام (مجموعات تقييم):
 
-* الوصول (1 سماح، -1 عدم سماح)
-* السرعة (رقم يمثل السرعة بالكيلومتر في الساعة)
-* الأولوية (رقم بين 0 و 1) - مضاعف للسرعة ولا يزال مرتبطًا بالسرعة القصوى، لذلك سيتم استخدام الحد الأدنى (السرعة * المضاعف، السرعة القصوى) لـ A*
-* اتجاه واحد (1، -1 أو 0) - يستخدم لتوضيح الوصول بناءً على اتجاه الحركة
-* penalty_transition (عقوبة بالثواني) - تستخدم لتحديد العقوبة عندما ينتقل المستخدم من طريق عالي الفئة إلى طريق منخفض الفئة. على سبيل المثال، طريق سريع - 10، طريق رئيسي - 15، إذا انتقل المستخدم من طريق سريع إلى طريق رئيسي، فستكون العقوبة 5 ثوانٍ (=10 - 15). سيتم استخدام هذه العقوبة بواسطة خوارزمية A*. لا توجد عقوبة إذا انتقل المستخدم من طريق سريع إلى طريق رئيسي ولا توجد عقوبة إذا استمر المسار من طريق سريع إلى طريق سريع.
-* obstacle (عقوبة بالثواني) - تحدد العقوبة التي تضاف إلى وقت التوجيه
-* obstacle_time (عقوبة بالثواني) - تحدد العقوبة التي تظهر للمستخدم ولكنها لا تؤخذ في الاعتبار من قبل محرك التوجيه، أي obstacle_time - ساعتان، obstacle - دقيقة واحدة، في أقصر مسار سيجد المحرك مسارًا باستخدام عقبة دقيقة واحدة ولكن المستخدم سيرى أن وقت المسار هو ساعتان.
+* access (1 allow, -1 not allow)
+* speed (number that presents speed in kmh)
+* priority (number between 0 and 1) - a multiplier to the speed and it is still bound to maxSpeed, so minimum (speed * multiplier, maxSpeed) will be used for A*
+* oneway (1, -1 or 0) - used to clarify access based on direction of the movement
+* penalty_transition (penalty in seconds) - used to define penalty when user goes from high class road to low class road. For example, motorway - 10, trunk - 15, if user goes from motorway to trunk penalty will be 5 seconds (=10 - 15). This penalty will be used by A* algorithm. There is no penalty if user goes from motorway to trunk and there is no penalty if route continues from motorway to motorway.
+* obstacle (penalty in seconds) - defines penalty which is to the routing time
+* obstacle_time (penalty in seconds) - defines penalty which is displayed to the user but it is not considered by routing engine i.e. obstacle_time - 2 hours, obstacle - 1 minute, on the shortest route engine will find a route using 1 minute obstacle but user will see that route time is 2 hours.
 
 لاختبار [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml)، يمكنك استخدام [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). لاختبار routing.xml على الجهاز، يمكنك ببساطة استبدال routing.xml الافتراضي في المجلد الجذر لـ OsmAnd ببطاقة SD.
