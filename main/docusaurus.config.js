@@ -130,7 +130,7 @@ async function createConfig(){
           title: 'OsmAnd',
           logo: {
             alt: 'OsmAnd Logo',
-            src: 'img/logo.svg',
+            src: 'img/logo-halloween.svg',
           },
           items: [
             {
@@ -144,7 +144,7 @@ async function createConfig(){
               label: 'Docs',
             },
             { to: '/blog', label: 'Blog', position: 'left'},
-            { to: 'pathname:///pricing', label: '💳 Pricing', position: 'left' },
+            { to: 'pathname:///pricing', label: '🎃 -50% Sale', position: 'left' },
             { to: 'pathname:///map', target: '_self', label: '🌍 Map', position: 'left' },
             {
               href: 'https://github.com/osmandapp/',

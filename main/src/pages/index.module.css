@@ -17,5 +17,6 @@
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
+    background-image: url('/static/img/headers/header_image_mobile_halloween.jpg');
   }
 }
