@@ -159,9 +159,9 @@ The OsmAnd Account panel contains controls for ending the current web session an
 
 To log out, open OsmAnd Account and use the **Logout** button in the top-right corner of the panel (icon with an arrow leaving a square). Selecting Logout closes the account panel and ends the active session on the website.
 
-To delete an account, select **Delete account** at the bottom of the OsmAnd Account panel. A confirmation dialog appears with the message *“Are you sure you want to do this?”* and a short explanation that all data and account details will be removed from OsmAnd Cloud and secondary devices will lose access to paid features. A verification code is sent to the account email address. Enter the code in the Code from Email field and choose **DELETE THIS ACCOUNT** to complete the process. This operation is permanent and cannot be undone.
+To delete an account, select **Delete account** at the bottom of the OsmAnd Account panel. A confirmation dialog appears with the message *“Are you sure you want to do this?”* and a short explanation that all data and account details will be removed from OsmAnd Cloud and secondary devices will lose access to paid features. A verification code is sent to the account email address. Enter the code in the Code from Email field and choose **DELETE ACCOUNT** to complete the process. This operation is permanent and cannot be undone.
 
-![Web Account](@site/static/img/web/web_delete.png)
+![Web Account](@site/static/img/web/web_delete.webp)
 
 
 ## Related Articles {#related-articles}
