@@ -495,7 +495,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 :::note Для невикористовуваних плагінів
 Щоб приховати всі параметри керування невикористовуваних [плагінів](../plugins/index.md#configure-plugin), вимкніть їх.
-::;
+:::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
@@ -540,7 +540,7 @@ OsmAnd дозволяє вам [створювати резервні копії
 
 :::caution Доступ до налаштувань плагіна
 Щоб отримати доступ до налаштувань плагіна, ви повинні спочатку [**увімкнути плагін**](../plugins/index.md#enable--disable) у *розділі "Плагіни" головного меню*.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

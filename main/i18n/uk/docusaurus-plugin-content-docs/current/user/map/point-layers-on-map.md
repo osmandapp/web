@@ -1,5 +1,5 @@
 ---
-source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+source-hash: bfe0420d8b7fdb1fb6c341554dbe5327adde2d1beb05e5eeb3114c2d541b823c
 sidebar_position: 8
 title:  Точки на карті
 ---
@@ -134,6 +134,8 @@ import Translate from '@site/src/components/Translate.js';
 
 Кожному типу POI в OsmAnd присвоєно певний значок і колір. [Рівень масштабування](../map/vector-maps.md#details) та дизайн POI можуть відрізнятися в деяких [стилях карти](../map/map-styles.md).  
 
+У [стилі карти](../map/map-styles.md) OsmAnd культові споруди (церкви, мечеті, синагоги, храми тощо) відображаються вибірково. На менших масштабах показано лише найвідоміші з них, а решта з'являється під час наближення. Коли ввімкнено налаштування [*<Translate android="true" ids="rendering_attr_moreDetailed_name"/>*](../map/vector-maps.md#details), усі культові споруди з'являються на меншому масштабі. У [нічному режимі](../map/vector-maps.md#map-mode) їхні піктограми показуються без фонового кола, як і в денному режимі.
+
 [Докладніше](../map/vector-maps.md#hide).
 
 
@@ -255,7 +257,7 @@ OsmAnd має спеціальні цікаві місця, позначені �
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
 
-![AV POI](@site/static/img/map/av_poi.png)
+![Аудіо/відео POI](@site/static/img/map/av_poi.png)
 
 </TabItem>
 

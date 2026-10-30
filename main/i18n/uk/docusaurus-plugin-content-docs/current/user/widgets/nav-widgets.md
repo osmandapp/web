@@ -1,5 +1,5 @@
 ---
-source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
+source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
 sidebar_position: 4
 title:  Віджети навігації
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Віджети навігації вмикаються під час навігації для відображення такої інформації, як відстань, час прибуття або час, що залишився, наступні повороти, азимут, назва поточної вулиці, інформація про смуги руху, максимальна швидкість, сповіщення про наближення, POI та проміжні точки.
 
-![Navigational widgets all](@site/static/img/widgets/navigational_widgets_all.png)
+![Усі навігаційні віджети](@site/static/img/widgets/navigational_widgets_all.png)
 
 
 ## Активна та пасивна навігація {#active-and-passive-navigation}
@@ -78,7 +78,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*
 
-![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
+![Віджет висоти](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
 #### Взаємодія з графіком {#interactions-with-the-graph}
@@ -98,37 +98,37 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 |:------------|
 | ***Позначка місцезнаходження*** |
 | Ваше ***Поточне місцезнаходження*** на графіку включає іконку місцезнаходження, висоту та значення нахилу у відсотках. Права частина віджета містить найвищу висоту та градієнт, їх середнє значення та найнижче значення на вибраній ділянці маршруту, видимій на графіку. |
-| ![point](@site/static/img/widgets/sch_1-1.png)|
+| ![Точка](@site/static/img/widgets/sch_1-1.png)|
 | ***Додаткова інформація*** |
 | Права частина віджета містить дані про найвищу висоту та нахил, середнє значення для обох, а також найнижчу висоту та нахил на вибраній ділянці маршруту, видимій на графіку. |
-|  ![data](@site/static/img/widgets/sch_1-2.png)|
+|  ![Дані](@site/static/img/widgets/sch_1-2.png)|
 |Значення ***Uphill*** та ***Downhill*** є сумою відстаней від вашої точки місцезнаходження до кінця видимого графіка. Якщо на графіку немає точки місцезнаходження, то це сума всього видимого графіка на екрані (це може статися, коли ви змінюєте масштаб і місцезнаходження виходить за межі графіка).|
 | **Uphill** – показує суму всіх відстаней зі збільшенням висоти від вашої точки місцезнаходження до кінця видимого графіка або для вибраної ділянки маршруту без точки місцезнаходження, видимої на екрані. |
-| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|  
+| ![Схема підйому](@site/static/img/widgets/sch_uphill_1.png) ![Схема підйому](@site/static/img/widgets/sch_uphill_2.png)|  
 | **Downhill** – показує суму всіх відстаней зі зменшенням висоти від вашої точки місцезнаходження до кінця видимого графіка або для вибраної ділянки маршруту без точки місцезнаходження, видимої на екрані.|
-| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png) ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)|  
+| ![Схема спуску](@site/static/img/widgets/sch_downhill_1.png) ![Схема спуску](@site/static/img/widgets/sch_downhill_2.png)|  
 |***Grade*** - це відношення шляху до горизонталі, де нуль вказує на горизонтальність, а кількість градусів вказує на більший або крутіший ступінь нахилу.|
 | **Grade** – показує максимальний ухил дороги у відсотках від вашої точки місцезнаходження до кінця видимого графіка або для вибраної ділянки маршруту без точки місцезнаходження, видимої на екрані. |
-|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
+|![Схема ухилу](@site/static/img/widgets/sch_grade_1.png) ![Схема ухилу](@site/static/img/widgets/sch_grade_2.png)|
 
 
 ## Віджет "Азимут"   {#bearing-widget}
   
 Азимут - це напрямок до цілі поза вашим транспортним засобом, наприклад, до пункту призначення або початкової точки. Азимут може бути *Відносним* (відповідно до вашого курсу) або *Магнітним* (відповідно до компаса). Наприклад, магнітний азимут 180° - це напрямок на південь, а відносний азимут 180° - прямо позаду вас. Сторони світу - це чотири основні напрямки компаса. Це Північ (*N* - 0° or 360°), Схід (*E* - 90°), Південь (*S* - 180°) і Захід (*W* - 270°).  
 
-![Trip recording widget](@site/static/img/widgets/bearing.png)
+![Віджет запису поїздки](@site/static/img/widgets/bearing.png)
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)  
+![Віджет запису поїздки](@site/static/img/widgets/bearing_widget.png) ![Віджет запису поїздки](@site/static/img/widgets/bearing_widget_1.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)
+![Віджет запису поїздки](@site/static/img/widgets/bearing_widget_ios_3.png)
 
 </TabItem>
 
@@ -158,7 +158,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 - **Relative bearing**. Якщо ви будете дотримуватися відносного азимута 0 градусів і рухатися вперед, ви прибудете до пункту призначення, але не найкоротшим шляхом ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ).
 - **Magnetic bearing**. Якщо ви вирівняєте компас на вашому човні/транспортному засобі зі значенням віджета і попрямуєте вперед, ви прибудете до пункту призначення, але не найкоротшим шляхом ( [Rhumb line](https://en.wikipedia.org/wiki/Rhumb_line) ).
 
-<!--![Relative Magnetic bearing widget](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
+<!--![Віджет відносного магнітного пеленга](@site/static/img/widgets/relative_magnetic_bearing_widget.png)-->
 
 <!-- By tapping: Changes between  Relative bearing or Magnetic bearing (with "M") -->
 
@@ -174,7 +174,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 ### Інформація про маршрут {#route-information}
 
 
-![Destination widget](@site/static/img/widgets/route_information_widget.png)  
+![Віджет пункту призначення](@site/static/img/widgets/route_information_widget.png)  
 
 Віджет *Інформація про маршрут* надає дані в реальному часі про поточний маршрут навігації та швидкий спосіб [керувати активним маршрутом](../navigation/setup/route-navigation.md#start--stop-navigation). Він допомагає відстежувати ключові деталі маршруту та дозволяє зупиняти або відновлювати поточну сесію навігації з мінімальною взаємодією.
 
@@ -202,7 +202,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ### Відстань до пункту призначення {#distance-to-destination}
 
-![Destination widget](@site/static/img/widgets/destination_widget.png)  
+![Віджет пункту призначення](@site/static/img/widgets/destination_widget.png)  
 
 Віджет відображає відстань, що залишилася до останнього пункту призначення при русі за розрахованим маршрутом.  
 
@@ -215,7 +215,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 ### Відстань до проміжної точки {#distance-to-intermediate}
 
-![Intermediate destination widget](@site/static/img/widgets/intermediate_destination_widget.png)
+![Віджет проміжного пункту призначення](@site/static/img/widgets/intermediate_destination_widget.png)
 
 Віджет показує відстань до першої проміжної точки по розрахованому маршруту. Після проходження проміжних точок, простір буде оновлено до наступної проміжної точки. Якщо проміжних точок немає, віджет не відображається.
 
@@ -232,13 +232,13 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <TabItem value="android" label="Android">  
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_android.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_android.png)  
+![Віджети часу прибуття та часу до прибуття](@site/static/img/widgets/arrival_time_widget_android.png)  ![Віджети часу прибуття та часу до прибуття](@site/static/img/widgets/time_to_go_widget_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_ios.png)  
+![Віджети часу прибуття та часу до прибуття](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Віджети часу прибуття та часу до прибуття](@site/static/img/widgets/time_to_go_widget_ios.png)  
 
 </TabItem>
 
@@ -249,7 +249,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Оберіть панель → Додати віджет →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Оберіть панель → Додати віджет →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | При дотику | Перемикає між *Часом прибуття* та *Часом у дорозі* і навпаки. |
 | Довгий дотик | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -260,13 +260,13 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <TabItem value="android" label="Android">  
 
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Віджети проміжного часу прибуття та часу](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Віджети проміжного часу прибуття та часу](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
@@ -277,14 +277,14 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 | | |
 |:------------|:------------|
 | Увімкнути |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Оберіть панель → Додати віджет → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Оберіть панель → Додати віджет → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | При дотику | Перемикає між *Часом прибуття* та *Часом у дорозі* і навпаки. |
 | Довгий дотик | Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) |  
 
 
 ## Обмеження швидкості {#speed-limit}
 
-![Speed limit widget](@site/static/img/widgets/speed_limit_widget_2.png)
+![Віджет обмеження швидкості](@site/static/img/widgets/speed_limit_widget_2.png)
 
 Віджет *Обмеження швидкості* відображає поточне обмеження швидкості на основі даних карти для вашого маршруту.
 
@@ -305,7 +305,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 ## Вказівки по маршруту {#route-guidance}
 
 
-![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
+![Віджет наступних поворотів](@site/static/img/widgets/next_turns_widget.png)
 
 Надає вказівки по маршруту в реальному часі, включаючи відстань до наступного повороту, назву дороги, назву поточної вулиці та інформацію про смуги руху. Віджети активні під час навігації.
 
@@ -320,15 +320,17 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 |:------------|:------------|
 | Увімкнути      | **Android:** *Меню → Налаштувати екран →  Ліва / Права / Верхня / Нижня панель → Вказівки по маршруту → Додати віджет → Смуга, Наступний поворот, Другий наступний поворот*  |
 |      | **iOS:** *Меню → Налаштувати екран →  Ліва / Права / Верхня / Нижня панель → Вказівки по маршруту → Додати віджет → Смуга, Наступний поворот, Другий наступний поворот*   |
-| При дотику  | **Наступний поворот**: Якщо [голосові підказки](../navigation/guidance/voice-navigation.md) увімкнено, наступний маневр та відстань до нього оголошуються. <br/> **Смуга**: Без змін. |
+| При дотику  | **Наступний поворот**: Якщо [голосові підказки](../navigation/guidance/voice-navigation.md) увімкнено, наступний маневр та відстань до нього оголошуються. <br/> **Смуги**: Без змін. |
 | Довгий дотик    | **Наступний поворот**: Відкриває [Контекстне меню віджета](../widgets/configure-screen.md#widget-context-menu) <br/> **Смуги**: Без змін. |
 
 
 ### Смуги {#lanes}
 
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+![Віджет смуг](@site/static/img/widgets/lanes_widget.png)
 
-Віджет **Смуги** виділяє поточну смугу, коли навігація активна, і відображає схему смуг для фактичної дороги, коли навігація пасивна. Також нижче схеми смуг показується індикатор відстані, що позначає, скільки залишається до маневру, де застосовується вказівка по смугах. Цей віджет доступний лише для верхньої та нижньої панелей. Дані взяті з [проєкту OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn).
+Віджет **Смуги** виділяє поточну смугу, коли навігація активна, і відображає схему смуг для фактичної дороги, коли навігація пасивна. Також нижче схеми смуг показується індикатор відстані, що позначає, скільки залишається до маневру, де застосовується вказівка по смугах. Цей віджет доступний лише для верхньої та нижньої панелей. Дані взяті з [проєкту OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn). Якщо в даних карти не вказано напрямок для кожної смуги, OsmAnd доповнює відсутні напрямки на основі схеми перехрестя.
+
+На Android налаштування віджета містять опцію *Відображати на другорядних перехрестях при русі прямо*, яка ввімкнена за замовчуванням. З цією опцією віджет показує смуги на кожному перехресті, яке ви проїжджаєте прямо, навіть якщо для цього перехрестя немає голосової підказки.
 
 
 ### Наступний поворот {#next-turn}
@@ -337,13 +339,13 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <TabItem value="android" label="Android">  
 
-![route guidence widget](@site/static/img/widgets/route_guidence_widgets_andr.png)
+![Віджет вказівок по маршруту](@site/static/img/widgets/route_guidence_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Approach POIs/Favorites ios](@site/static/img/widgets/route_guidence_widgets_ios.png)
+![Наближення до POI/Обраного iOS](@site/static/img/widgets/route_guidence_widgets_ios.png)
 
 </TabItem>
 
@@ -389,7 +391,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 ## Віджет сповіщень {#alert-widget}
 
-![Alert information widgets](@site/static/img/widgets/alert_information_widget.png)
+![Віджети інформації про сповіщення](@site/static/img/widgets/alert_information_widget.png)
 
 **Віджет сповіщень** поєднує кілька типів сповіщень, які відображаються в нижньому лівому куті під час навігації.  
 
@@ -412,16 +414,16 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 | | | |
 |:------------|:------------|:------------|
 | Назва | Опис | Іконка |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | [Traffic calming](https://en.wikipedia.org/wiki/Traffic_calming) uses physical design and other measures to improve safety for motorists, pedestrians and cyclists. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
-| *<Translate android="true" ids="show_pedestrian_warnings"/>* | [A pedestrian crossing](https://en.wikipedia.org/wiki/Pedestrian_crossing) (primarily British English) or crosswalk is a place designated for pedestrians to cross a road, street, or avenue. OsmAnd shows the alert of the uncontrolled pedestrian crossing.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In most countries, the [Road speed limits](https://en.wikipedia.org/wiki/Speed_limit) set the legal maximum, middle, or minimum speed at which road vehicles may travel on a given stretch of road. In OsmAnd, the alert is shown when you exceed the speed. You can set parameters of speed exceeding (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | A tunnel is an underground passageway, passing under a mountain, river, or a congested urban area. In OsmAnd, the alert *Tunnels* have information about tunnel length. If you are in a tunnel, it shows the distance to the end of the tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | [Traffic enforcement cameras](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) and [speed cameras](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) record traffic offenses, including speeding, running red lights, and other types of illegal behavior. <br />**NOTE:** Speed camera alerts are prohibited or illegal in some countries. To completely [remove speed cameras](../personal/global-settings.md#legal) from OsmAnd, go to main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
-| *<Translate android="true" ids="traffic_warning_stop"/>* | [A stop sign](https://en.wikipedia.org/wiki/Stop_sign) is a traffic sign designed to notify drivers that they must come to a complete stop and make sure the intersection is safely clear of vehicles and pedestrians before continuing past the sign.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
-| *<Translate android="true" ids="show_railway_warnings"/>* |This warning means that there is a [railway crossing](https://en.wikipedia.org/wiki/Crossbuck) ahead. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* |This warning indicates that border control is ahead.| ![Alert border control widgets](@site/static/img/widgets/warnings_border_control.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Hazard symbols or warning symbols](https://en.wikipedia.org/wiki/Hazard_symbol) are recognizable symbols designed to warn about hazardous materials, locations, or objects, including electric currents, poisons, and radioactivity. | ![Alert warnings_hazard widgets](@site/static/img/widgets/warnings_hazard.png)  ![Alert warnings_hazard_us widgets](@site/static/img/widgets/warnings_hazard_us.png) |
-| *<Translate android="true" ids="traffic_warning_payment"/>* | This warning indicates that a toll booth for a toll road is ahead.   ![Alert toll_booth widgets](@site/static/img/widgets/ex_toll_booth.png) | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) |
+| *<Translate android="true" ids="show_traffic_warnings"/>* | [Traffic calming](https://en.wikipedia.org/wiki/Traffic_calming) uses physical design and other measures to improve safety for motorists, pedestrians and cyclists. | ![Сповіщення: заспокоєння руху](@site/static/img/widgets/warnings_traffic_calming.png)  ![Сповіщення: заспокоєння руху (США)](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_pedestrian_warnings"/>* | [A pedestrian crossing](https://en.wikipedia.org/wiki/Pedestrian_crossing) (primarily British English) or crosswalk is a place designated for pedestrians to cross a road, street, or avenue. OsmAnd shows the alert of the uncontrolled pedestrian crossing.  | ![Сповіщення: заспокоєння руху](@site/static/img/widgets/warnings_pedestrian.png)  ![Сповіщення: заспокоєння руху (США)](@site/static/img/widgets/warnings_pedestrian_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In most countries, the [Road speed limits](https://en.wikipedia.org/wiki/Speed_limit) set the legal maximum, middle, or minimum speed at which road vehicles may travel on a given stretch of road. In OsmAnd, the alert is shown when you exceed the speed. You can set parameters of speed exceeding (0, 5, 10.. km/h). ![Сповіщення: перевищення швидкості](@site/static/img/widgets/ex_warning_speed.png)  | ![Сповіщення: обмеження швидкості](@site/static/img/widgets/warnings_limit.png) ![Сповіщення: обмеження швидкості (Канада)](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Сповіщення: обмеження швидкості (США)](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_tunnels"/>* | A tunnel is an underground passageway, passing under a mountain, river, or a congested urban area. In OsmAnd, the alert *Tunnels* have information about tunnel length. If you are in a tunnel, it shows the distance to the end of the tunnel.   ![Сповіщення: тунель (приклад)](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Сповіщення: тунель](@site/static/img/widgets/warnings_tunnel.png)  ![Сповіщення: тунель (США)](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_cameras"/>* | [Traffic enforcement cameras](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) and [speed cameras](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) record traffic offenses, including speeding, running red lights, and other types of illegal behavior. <br />**NOTE:** Speed camera alerts are prohibited or illegal in some countries. To completely [remove speed cameras](../personal/global-settings.md#legal) from OsmAnd, go to main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Сповіщення: заспокоєння руху](@site/static/img/widgets/warnings_speed_camera.png)   |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | [A stop sign](https://en.wikipedia.org/wiki/Stop_sign) is a traffic sign designed to notify drivers that they must come to a complete stop and make sure the intersection is safely clear of vehicles and pedestrians before continuing past the sign.  | ![Сповіщення: знак «Стоп»](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* |This warning means that there is a [railway crossing](https://en.wikipedia.org/wiki/Crossbuck) ahead. | ![Сповіщення: залізничний переїзд](@site/static/img/widgets/warnings_railways.png) ![Сповіщення: залізничний переїзд (Канада)](@site/static/img/widgets/warnings_railways_ca.png)  ![Сповіщення: залізничний переїзд (США)](@site/static/img/widgets/warnings_railways_us.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* |This warning indicates that border control is ahead.| ![Сповіщення: прикордонний контроль](@site/static/img/widgets/warnings_border_control.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Hazard symbols or warning symbols](https://en.wikipedia.org/wiki/Hazard_symbol) are recognizable symbols designed to warn about hazardous materials, locations, or objects, including electric currents, poisons, and radioactivity. | ![Сповіщення: небезпека](@site/static/img/widgets/warnings_hazard.png)  ![Сповіщення: небезпека (США)](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_payment"/>* | This warning indicates that a toll booth for a toll road is ahead.   ![Сповіщення: пункт оплати проїзду](@site/static/img/widgets/ex_toll_booth.png) | ![Сповіщення: обмеження швидкості](@site/static/img/widgets/warnings_limit.png) |
 
 
 ## Назва вулиці {#street-name}
@@ -435,13 +437,13 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 <TabItem value="android" label="Android">  
 
- ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
+ ![Назва вулиці без наступного повороту](@site/static/img/widgets/without_next_turn_and.png) ![Назва вулиці з наступним поворотом](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
+ ![Назва вулиці без наступного повороту iOS](@site/static/img/widgets/without_next_turn_ios.png) ![Назва вулиці з наступним поворотом iOS](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
@@ -451,7 +453,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 | | |
 |:------------|:------------|
 | Увімкнути | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Додати віджет → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,map_widget_config"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Додати віджет → <Translate ios="true" ids="map_widget_top_text"/>* |
+|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Додати віджет → <Translate android="true" ids="map_widget_top_text"/>* |
 | Налаштування | Виберіть, щоб завжди відображати **назву поточної вулиці** або відображати **назву наступної вулиці** при наближенні до маневру |
 | При дотику | Відкриває контекстне меню з Налаштуваннями (перемикання Інформації про наступний поворот УВІМК/ВИМК) та Видалити |
 
@@ -462,13 +464,13 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 <TabItem value="android" label="Android">  
 
-![Approach POIs/Favorites android](@site/static/img/widgets/street_name_poi_widget_android.png)
+![Наближення до POI/Обраного Android](@site/static/img/widgets/street_name_poi_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Approach POIs/Favorites ios](@site/static/img/widgets/street_name_poi_widget_ios.png)
+![Наближення до POI/Обраного iOS](@site/static/img/widgets/street_name_poi_widget_ios.png)
 
 </TabItem>
 

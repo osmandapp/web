@@ -1,7 +1,7 @@
 ---
-source-hash: d5de9c3084442f355b9b6536f2e73e330ece35ee360363e944195eaf5ddfe9fb
+source-hash: 941d8e8096800d75da224d6bdd577697326daf17319375cb9b22749166c80554
 sidebar_position: 6
-title:  My Places
+title:  Мої місця
 ---
 
 import Tabs from '@theme/Tabs';
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
+![Мої місця Android](@site/static/img/personal/my_places_android_new.png) ![Меню Моїх місць Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
@@ -34,7 +34,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
+![Мої місця iOS](@site/static/img/personal/my_places_ios_2.png)  ![Меню Моїх місць iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
@@ -52,7 +52,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
+![Меню Улюблених Android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
@@ -60,7 +60,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
+![Меню Улюблених iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
@@ -78,7 +78,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![Мої місця з треками на Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
@@ -86,7 +86,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
+![Мої місця з треками на iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
@@ -104,7 +104,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Поділитися](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -112,7 +112,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
+![Поділитися](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
@@ -128,9 +128,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Плагін Аудіо/Відео нотатки, меню Моїх місць, три дії](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-**Плагін "Аудіо/Відео нотатки"** дозволяє створювати мультимедійні нотатки, пов'язані з певними місцями на мапі. Ці нотатки зберігаються в **Моїх місцях** на вкладці **А/В нотатки**.
+**Плагін "Аудіо/Відео нотатки"** дозволяє створювати мультимедійні нотатки, пов'язані з певними місцями на мапі. Ці нотатки зберігаються в **Моїх місцях** на вкладці **А/В нотатки**. Кожна нотатка також зберігається як обране в папці **media** на вкладці [Улюблені](#favorites).
 
 Для отримання додаткової інформації відвідайте сторінку [плагіна "Аудіо/Відео нотатки"](../plugins/audio-video-notes.md).
 
@@ -138,7 +138,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
+![Путівники iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
 Розділ **Подорожі** містить збережені дорожні путівники та статті, збережені для офлайн-доступу. Ви можете швидко відкривати, впорядковувати та керувати збереженим туристичним контентом у «Моїх місцях». Розділ «Подорожі» відображається лише тоді, коли збережено більше одного путівника.
 

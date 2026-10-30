@@ -1,5 +1,5 @@
 ---
-source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
 title:  Журнали збоїв
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Огляд {#overview}
 
-Журнали збоїв є цінними діагностичними інструментами, які допомагають розробникам виявляти та виправляти проблеми та помилки, що спричиняють збій програми або її несподівану поведінку. Можна ділитися журналами зі свого пристрою Android з командою розробників OsmAnd. Наразі користувачі iOS мають лише один тип журналу збоїв для надсилання.
+Журнали збоїв є цінними діагностичними інструментами, які допомагають розробникам виявляти та виправляти проблеми та помилки, що спричиняють збій програми або її несподівану поведінку. Можна ділитися журналами зі свого пристрою з командою розробників OsmAnd. Якщо OsmAnd несподівано закривається, застосунок також пропонує надіслати звіт про збій під час наступного запуску.
 
 
 ## Журнали збоїв та журнали застосунку {#crash-and-app-logs}
@@ -37,19 +37,19 @@ OsmAnd дозволяє надсилати розробникам два тип�
 
 <TabItem value="android" label="Android">
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+![Надсилання журналів збоїв з Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Надсилання журналів збоїв з Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Send crash logs from iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+![Надсилання журналів збоїв з iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-1. Перейдіть до *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* або *<Translate android="true" ids="send_logcat_log"/>* (*Надіслати поточний журнал застосунку* на iOS). Залежно від вашої ситуації, виберіть відповідний тип журналу. Ви можете звернутися до розділу [Журнали збоїв та журнали застосунку](#crash-and-app-logs) для отримання детальної інформації про відмінності між типами журналів.
+1. Перейдіть до *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* або *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Надіслати поточний журнал застосунку* (iOS). Залежно від вашої ситуації, виберіть відповідний тип журналу. Ви можете звернутися до розділу [Журнали збоїв та журнали застосунку](#crash-and-app-logs) для отримання детальної інформації про відмінності між типами журналів.
 2. У спливаючому меню виберіть Gmail або бажану програму електронної пошти. Ми рекомендуємо надсилати журнали на адресу `support@osmand.net`.
 3. Натисніть кнопку *Надіслати*.
 
@@ -74,6 +74,34 @@ OsmAnd дозволяє надсилати розробникам два тип�
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Надсилання звіту про збій після збою {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Якщо OsmAnd несподівано закрився під час попереднього запуску, під час наступного запуску застосунку з'явиться діалог збою. Він з'являється після збою застосунку, після того, як застосунок перестав відповідати (Android 11 і новіші), або після збою в рідному коді застосунку (Android 12 і новіші). Діалог не з'являється, поки активна навігація.
+
+- *Надіслати* — надсилає звіт про збій безпосередньо команді розробників OsmAnd без використання поштового застосунку. Повідомлення підтвердить, чи звіт було надіслано.
+- *Закрити* — закриває діалог без надсилання звіту.
+
+Звіт містить технічну інформацію про стан застосунку та використання пам'яті перед збоєм, а також нещодавній журнал застосунку.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Якщо OsmAnd несподівано закрився під час попереднього запуску, під час наступного запуску застосунку з'явиться діалог «Поділитися журналом збою». Він з'являється після збою застосунку або після того, як система несподівано його закрила.
+
+- *Надіслати* — надсилає звіт про збій безпосередньо команді розробників OsmAnd без використання поштового застосунку. Повідомлення підтвердить, чи звіт було надіслано.
+- *Скасувати* — закриває діалог без надсилання звіту.
+
+Звіт містить технічну інформацію про стан застосунку та використання пам'яті перед збоєм, а також нещодавній журнал застосунку.
+
+</TabItem>
+
+</Tabs>
 
 ## Гістограма купи для проблем з пам'яттю (Android) {#heap-histogram-for-memory-problems-android}
 
@@ -105,7 +133,7 @@ OsmAnd дозволяє надсилати розробникам два тип�
 3. Натисніть **Поділитися звітом**, щоб надіслати останній звіт розробникам, або надішліть його з діалогу звіту про збій під час наступного запуску застосунку.
 4. Вимкніть *Збирати при високому використанні* після надсилання звіту.
 
-![Java memory Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Heap dump panel Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+![Java-пам’ять Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Панель дампу купи Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
 
 
 ## Надсилання файлів Tombstone (Android) {#send-tombstone-files-android}
@@ -131,7 +159,7 @@ OsmAnd дозволяє надсилати розробникам два тип�
   
 Після того, як звіт про помилку буде готовий, ви отримаєте сповіщення. Натисніть на поле сповіщення, щоб завантажити звіт на свій пристрій. Розпакуйте файл і надішліть файли tombstone команді розробників OsmAnd (електронна пошта: `support@osmand.net`).
 
-![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Надсилання журналів збоїв з Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Надсилання журналів збоїв з Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Зверніть увагу, що звіти про помилки можуть містити приватні дані, включаючи використання програми або місцезнаходження.

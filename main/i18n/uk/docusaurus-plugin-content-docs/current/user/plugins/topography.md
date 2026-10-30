@@ -1,5 +1,5 @@
 ---
-source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
+source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
 sidebar_position: 16
 title: Топографія
 ---
@@ -41,7 +41,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Лінії контуру | Відтінення пагорбів | Ухил |
 |:---|:---|:---|
-| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Контурні лінії Android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Відтінення пагорбів Android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Ухили Android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Лінії контуру | Відтінення пагорбів | Ухил |
 |:---|:---|:---|
-| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Контурні лінії iOS](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Відтінення пагорбів iOS](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Ухили iOS](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -58,6 +58,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### Ліцензія на дані DEM, що використовуються OsmAnd для визначення рельєфу {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 Дані про висоту на карті (між 70 градусами північної широти та 70 градусами південної широти) були отримані з вимірювань, зроблених у рамках *Shuttle Radar Topography Mission (SRTM)*. Вона використовувала *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, основний інструмент для отримання зображень у *NASA's Earth Observation System*.  
+Для Північної Америки карти рельєфу та контурні лінії використовують національні дані про висоту високої роздільної здатності: приблизно 10 м для материкової частини США та приблизно 30 м для Аляски та більшої частини Канади й Мексики.  
 Для отримання повної інформації дивіться [Ліцензію](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -66,7 +67,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Оригінальні дані, використані для цього продукту, були надані JAXA AW3D.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program (3DEP)</a> через <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> (США, Аляска) та <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">USGS 1 arc-second DEM</a> на <a href="https://opentopography.org/">OpenTopography</a> (Канада, Мексика), зокрема дані від <a href="https://natural-resources.canada.ca/">Natural Resources Canada (NRCan)</a> та <a href="https://www.inegi.org.mx/">INEGI</a>.
 
 </details>
 
@@ -99,7 +101,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Завантаження контурних ліній Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Завантаження контурних ліній Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +109,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Завантаження контурних ліній iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Завантаження контурних ліній iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -124,13 +126,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Діалог завантаження контурних ліній Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Діалог завантаження контурних ліній iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
@@ -153,7 +155,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Меню контурних ліній Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -161,7 +163,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Лінії контуру*
 
-![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Меню контурних ліній iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
@@ -196,7 +198,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Меню рельєфу Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Меню рельєфу Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -204,7 +206,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
+![Меню рельєфу iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Меню рельєфу iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
@@ -223,7 +225,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Відтінення пагорбів | Ухил | Висота |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Відтінення пагорбів](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Ухил](../../../blog/2023-08-28-terrain/img/slope.png) | ![Ухил](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Відтінення пагорбів** базується на симуляції освітлення поверхні з використанням даних про рельєф. Цей метод передбачає створення тіней та відблисків на основі кута нахилу поверхні відносно джерела світла. В результаті ви бачите на карті природні пагорби, долини та інші деталі рельєфу.  
 
@@ -242,7 +244,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Тіні рельєфу (iOS) {#terrain-shadows}
 
-![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+![Тіні рельєфу iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
 
 **Тіні рельєфу** забезпечують динамічне затінення в реальному часі на основі 3D-геометрії рельєфу. На відміну від растрових карт відтінення пагорбів, ефект затінення генерується безпосередньо на пристрої з використанням даних рельєфу та автоматично відповідає поточній перспективі карти.
 
@@ -253,7 +255,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Відтінення пагорбів | Ухил | Висота |
 | ------ | ------- | ------- |
-|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Відтінення пагорбів](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Ухил](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Меню](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Відтінення пагорбів* використовує темні відтінки для показу схилів, вершин та низин. Віртуальне Сонце має фіксований азимут (напрямок) 315 градусів.
 
@@ -272,13 +274,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Зміна кольорової схеми](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Зміна кольорової схеми](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+![Зміна кольорової схеми](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Зміна кольорової схеми](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
 
 </TabItem>
 
@@ -305,13 +307,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Видимість 31% | Видимість 74% |
 | ------ | ------- |
-| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
+| ![Видимість ](../../../blog/2023-08-28-terrain/img/31.png) | ![Видимість ](../../../blog/2023-08-28-terrain/img/74.png) |
 
 Функція *Видимість* використовується для регулювання прозорості тіней для Відтінення пагорбів та кольорів, що використовуються для представлення кута в параметрі Ухил. Для Тіней рельєфу видимість контролює силу ефекту затінення рельєфу.
 
 ### Рівні масштабування {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Масштаб](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 Функція *Рівні масштабування* дозволяє встановити мінімальне та максимальне значення рівнів масштабування карти, від 4 до 19, на яких відображатимуться шари карт Відтінення пагорбів або Ухил.
 
@@ -336,7 +338,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Швидкі дії {#quick-actions}
 
-![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![Запитання та відповіді про рельєф](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 Ви можете використовувати кнопки *Швидка дія* на екрані карті для перемикання видимості шарів [Лінії контуру](#contour-lines), [Рельєф](#terrain) та [Кольорової схеми рельєфу](../../user/personal/color-palette-schemes.md#quick-actions). Залежно від шару, вибраного в меню Налаштувати карту, призначення дії *Рельєф* кнопці відображатиме *Відтінення пагорбів*, *Ухил* або *Висоту*.  
 
@@ -353,7 +355,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
+![3D-будівлі](@site/static/img/map/3d_buildings_4_new.png) ![3D-будівлі](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -361,7 +363,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
+![3D-будівлі](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D-будівлі](@site/static/img/map/3d_buildings_highlight_ios.png)
 
 </TabItem>
 
@@ -390,13 +392,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_color.png)
+![3D-будівлі](@site/static/img/map/3d_buildings_color.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
+![3D-будівлі](@site/static/img/map/3d_buildings_color_ios.png)
 
 </TabItem>
 
@@ -460,7 +462,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
@@ -468,7 +470,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
+![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
@@ -492,7 +494,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Шар векторної карти | Шар растрової карти |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
+| ![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
@@ -500,7 +502,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Шар векторної карти | Шар растрової карти |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D-рельєф](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -514,7 +516,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Vertical exaggeration*
 
-![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
+![Вертикальне перебільшення Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
@@ -522,7 +524,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Vertical exaggeration*
 
-![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Вертикальне перебільшення iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
 
@@ -535,7 +537,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 | Відтінення пагорбів | 3D-рельєф |
 |--------|---------|
-| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Шари рельєфу](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Шари рельєфу](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 **Відтінення пагорбів** — це тип карти, що відображає рельєф за допомогою тіней, створюючи візуальне представлення нахилу та форми земної поверхні.  
 **3D-рельєф** — це функція, яка додає тривимірні ефекти до карті.  
@@ -551,13 +553,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
+![Контурні лінії разом з відтіненням пагорбів](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Контурні лінії разом з ухилом](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
+![Контурні лінії разом із відтіненням пагорбів в iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Контурні лінії разом з ухилом в iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 

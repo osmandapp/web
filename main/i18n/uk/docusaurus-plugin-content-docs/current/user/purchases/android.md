@@ -1,5 +1,5 @@
 ---
-source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
+source-hash: 9204ec2b2a947567e89e1f0eea7048ded8e2787b64954b67c1a97dc1602466ca
 sidebar_position: 1
 title:  Покупки в Android
 ---
@@ -25,18 +25,18 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 **Версії програми OsmAnd:**
 
-|  App  | Google Play | Huawei AppGallery | Free / Paid |
+|  Застосунок  | Google Play | Huawei AppGallery | Безплатно / Платно |
 | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Install](https://appgallery.huawei.com/#/app/C101486545) | Free |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Install](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | Paid |
+| ![Maps+](@site/static/img/svg/osmand_maps.svg) OsmAnd  | ✔ &nbsp;&nbsp;[Встановити](https://play.google.com/store/apps/details?id=net.osmand) | ✔ &nbsp;&nbsp;[Встановити](https://appgallery.huawei.com/#/app/C101486545) | Безплатно |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) OsmAnd+  | ✔  &nbsp;&nbsp;[Встановити](https://play.google.com/store/apps/details?id=net.osmand.plus) | **-** | Платно |
 
 **Типи покупок:**
 
-| Purchase  | Google Play  | Huawei AppGallery | App |
+| Покупка  | Google Play  | Huawei AppGallery | Застосунок |
 | :------------- | :------------- | :------------- | :------------- |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) In-app Maps+ | ✔ | ✔ | OsmAnd |
-| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Subscription Maps+ | ✔ | ✔ | OsmAnd |
-| ![Pro](@site/static/img/svg/pro_icon.svg) Subscription OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Внутрішня покупка Maps+ | ✔ | ✔ | OsmAnd |
+| ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) Підписка Maps+ | ✔ | ✔ | OsmAnd |
+| ![Pro](@site/static/img/svg/pro_icon.svg) Підписка OsmAnd Pro | ✔ | ✔ | OsmAnd / OsmAnd+ |
 
 <!--
 ### Types of subscriptions {#types-of-subscriptions}
@@ -54,9 +54,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### Різниця між покупками (Android) {#difference-between-purchases-android}
 
-| Plan | Description | Availability | Notes |
+| План | Опис | Доступність | Примітки |
 |------------|------------|------------|------------|
-| **OsmAnd Start** | **Безкоштовний план**, який надає доступ до [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) для *Улюблених*, *Налаштувань* та *редагування/notатки OSM*. | Доступний усім користувачам безкоштовної версії OsmAnd. | Обмежено базовими хмарними функціями та сховищем **5MB**. |
+| **OsmAnd Start** | **Безкоштовний план**, який надає доступ до [OsmAnd Cloud](../personal/osmand-cloud.md#osmand-start) для *Улюблених*, *Налаштувань* та *редагування/нотатки OSM*. | Доступний усім користувачам безкоштовної версії OsmAnd. | Обмежено базовими хмарними функціями та сховищем **5MB**. |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **OsmAnd+** | **Окрема платна програма**, яка включає розширені функції. | Доступна в [Google Play](https://play.google.com/store/apps/details?id=net.osmand.plus). | Можна додати до [Google Play Family Library](https://support.google.com/googleplay/answer/7007852?hl=en). |
 | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) **Maps+** | **Внутрішня покупка** або **підписка** для безкоштовної програми OsmAnd, яка розблоковує ті самі функції, що й OsmAnd+. | Доступна в [Google Play](https://play.google.com/store/apps/details?id=net.osmand) та [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Ідентична за функціями та цінами до OsmAnd+. |
 | ![Pro](@site/static/img/svg/pro_icon.svg) **OsmAnd Pro** | **План підписки**, який розблоковує додаткові розширені та [pro-функції](#pro-features). | Доступна в [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023) та [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545). | Надає повний доступ до функцій OsmAnd Cloud. |
@@ -88,12 +88,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 :::
 
 
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) Внутрішня покупка | [Maps+](#install-osmand-android) Підписка | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
+| **Тип покупки** | **Безплатно** | **Одноразова покупка** (Довічна) | **Підписка** (12 місяців) | **Підписка** (1 місяць / 12 місяців) |
+| **Ціна (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Ціна (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
 <!--
 
@@ -116,7 +116,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 Таблиця нижче деталізує функції, включені як у безкоштовні, так і в платні пакети OsmAnd, разом з їх відповідними цінами.
 
-|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (in&#8209;app & subscription) | [OsmAnd Pro](#install-osmand-android) |
+|  | OsmAnd Free | [OsmAnd+](#install-osmand-android) <br/> [Maps+](#install-osmand-android) (внутрішня&#8209;покупка та підписка) | [OsmAnd Pro](#install-osmand-android) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -171,7 +171,7 @@ Pro функції доступні для [підписки OsmAnd Pro](#prices
 
 Підписка **Pro** наразі має такі функції:
 
-|  Pro Feature  | Description   |
+|  Pro-функція  | Опис   |
 | :------------- | :------------- |
 | [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [веб-порталом OsmAnd](https://osmand.net/map). |
 | [3D рельєф](../plugins/topography.md#3d-relief) | Дозволяє вам мати та спостерігати за масштабованою моделлю вашого району або цілого континенту. |
@@ -201,7 +201,7 @@ or
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continue with OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
+![План Pro](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Покупка Maps+ {#maps-purchase}
 
@@ -209,7 +209,7 @@ or
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tap the list of Maps+ features → Continue with Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
+![План Maps+](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Спадкові підписки (до 4.0) {#legacy-subscriptions-prior-40}
@@ -247,7 +247,7 @@ or
 - *Щоб відкрити Restore purchases*, виконайте ці кроки: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* і вгорі екрана повинно з'явитися, що Maps+(Pro) активовано.
 - *Зареєструйте Pro функції* з підпискою OsmAnd Pro для всіх платформ (Android та iOS). Якщо у вас є обліковий запис OsmAnd Pro, вам потрібно використовувати його [для активації OsmAnd Pro](../personal/osmand-cloud.md) для вашого пристрою.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases.png)
+![План Pro](@site/static/img/purchases/maps_purchases.png)
 
 ### Інші випадки {#other-cases}
 

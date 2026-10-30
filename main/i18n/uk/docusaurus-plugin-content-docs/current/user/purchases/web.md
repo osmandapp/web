@@ -1,5 +1,5 @@
 ---
-source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
+source-hash: 4f5964f36ea6b0dd1490891fdde35c556566e85e11c870554eef0d3b298f2317
 sidebar_position: 3
 title:  Веб-покупки
 ---
@@ -15,7 +15,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Як придбати {#how-to-buy}
 
-Вы можете придбати продукти OsmAnd на [нашому офіційному сайті](https://osmand.net/pricing):
+Ви можете придбати продукти OsmAnd на [нашому офіційному сайті](https://osmand.net/pricing):
 
 - [**Веб-сайт**](https://osmand.net/pricing): Платежі безпечно обробляються нашим авторизованим реселером [FastSpring](https://fastspring.com/).  
 

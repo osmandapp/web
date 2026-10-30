@@ -1,8 +1,8 @@
 ---
 draft: true
-source-hash: 504d37c63818c1fd91f4825bfefd95d097c561b6b3c39e9d5773e16606a55a9f
+source-hash: 007e11a861c2a9ce2f0754125c4f6b15fbd23716e19483ccac7d84cc259b9c23
 sidebar_position: 2
-title: Android Developer
+title: Android-розробник
 ---
 
 Ми розробляємо великий Android проєкт з відкритим кодом (https://www.openhub.net/p/Osmand) - Топ 10 серед Android застосунків, що базуються на https://www.openstreetmap.org/ (Вікіпедія для карт). Наша мета - створити універсальний картографічний інструмент, який можна використовувати практично в будь-якій ситуації. Наразі ним активно користуються близько 2 000 000 людей по всьому світу.

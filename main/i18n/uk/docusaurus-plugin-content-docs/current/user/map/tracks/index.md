@@ -1,5 +1,5 @@
 ---
-source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
+source-hash: 40444298714f3efdf33ba91bcf4a1ae66aa667d887d5d943cfe77e1fa53575ee
 title:  Треки
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
+![Налаштування треків на мапі Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Налаштування треків на мапі Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configure map tracks iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
+![Налаштування треків на мапі iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Налаштування треків на мапі iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> → &#8942; → <Translate android="true" ids="shared_string_show_on_map"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![Мої місця з треками в Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → довге натискання на обраний GPX трек → Показати на мапі*
 
-![Context menu of a track in iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
+![Контекстне меню треку в iOS](@site/static/img/personal/tracks/one_track_menu_ios.png)
 
 </TabItem>
 
@@ -93,13 +93,13 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 <TabItem value="android" label="Android">
 
-![Track context menu overview Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
+![Огляд контекстного меню треку Android 3](@site/static/img/personal/tracks/track_context_overview_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track context menu overview iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
+![Огляд контекстного меню треку iOS 3](@site/static/img/personal/tracks/track_context_overview_ios_3.png)
 
 </TabItem>
 
@@ -116,7 +116,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *Натисніть на трек → вкладка Трек → <Translate android="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Track menu analyze on the map distance Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
+![Аналіз треку на мапі Android](@site/static/img/personal/tracks/analyze_track_on_map_andr_new.png)    ![Аналіз відстані треку на мапі Android](@site/static/img/personal/tracks/analyze_track_on_map_distance_andr.png)
 
 </TabItem>
 
@@ -124,7 +124,7 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 Перейдіть до: *Натисніть на трек → вкладка Трек → <Translate ios="true" ids="analyze_on_map"/>*  
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
+![Аналіз треку на мапі](@site/static/img/personal/tracks/track_analyze_ios_new.png)  ![Аналіз треку на мапі ](@site/static/img/personal/tracks/track_analyze_on_map_ios.png)
 
 </TabItem>
 
@@ -145,13 +145,13 @@ OsmAnd може створювати треки з 1–3 комбінаціям�
 
 <TabItem value="android" label="Android">
 
-![Track menu analyze on map 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Track menu analyze on map 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
+![Аналіз треку на мапі 3 Android](@site/static/img/personal/tracks/track_analyze_on_map_3_android.png) ![Аналіз треку на мапі 5 Android](@site/static/img/personal/tracks/track_analyze_on_map_5_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Track menu analyze on map](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Track menu analyze on map ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
+![Аналіз треку на мапі](@site/static/img/personal/tracks/track_follow_my_location_3_ios.png)  ![Аналіз треку на мапі ](@site/static/img/personal/tracks/track_follow_my_location_4_ios.png)
 
 </TabItem>
 
