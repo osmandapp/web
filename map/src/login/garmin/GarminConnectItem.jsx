@@ -14,6 +14,7 @@ import {
 import { fetchGarminStatus } from './garminApi';
 import ButtonPro from '../../frame/pro/ButtonPro';
 import styles from './garmin.module.css';
+import configureMapStyles from '../../menu/configuremap/configuremap.module.css';
 
 export default function GarminConnectItem() {
     const ltx = useContext(LoginContext);
@@ -98,6 +99,7 @@ export default function GarminConnectItem() {
             component="div"
             onClick={handleItemClick}
             rightSlot={rightSlot}
+            className={configureMapStyles.item}
         />
     );
 }
