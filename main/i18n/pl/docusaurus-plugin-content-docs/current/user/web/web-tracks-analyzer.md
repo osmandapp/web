@@ -1,8 +1,8 @@
 ---
-source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
+source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
 sidebar_position: 7
-sidebar_label: Tracks Analyzer
-title: Tracks Analyzer
+sidebar_label: Analizator śladów
+title: Analizator śladów
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,11 +23,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Jak używać {#how-to-use}
 
-Po otwarciu Tracks Analyzer (pokazanego jako ikona klucza), narzędzie otwiera się z widokiem mapy i pustym stanem. Stąd możesz wybrać, które ścieżki będą uwzględnione w analizie za pomocą panelu **Wybierz ścieżki**. Analyzer pozwala pracować ze wszystkimi dostępnymi ścieżkami lub ograniczyć analizę do określonych folderów.
+1. [Zaloguj się](./web-cloud.md#login) na swoje konto OsmAnd Pro w Web Map Portal. Twoje ścieżki muszą być zsynchronizowane z [OsmAnd Cloud](./web-cloud.md#cloud-sync).
+2. Otwórz *Menu → Analizator śladów* (ikona klucza).
+3. W panelu **Wybierz ślady** wybierz **Wszystkie ścieżki** lub tylko potrzebne foldery.
+4. Kliknij prawym przyciskiem myszy na mapie i wybierz **Punkt A**. Aby przeanalizować segment między dwoma punktami, ustaw także **Punkt B**.
+5. Przejrzyj listę znalezionych segmentów, [posortuj ją i wybierz, które parametry mają być wyświetlane](#sorting-and-visible-parameters).
 
-Aby rozpocząć analizę, ustaw jeden lub dwa punkty bezpośrednio na mapie. Kliknij prawym przyciskiem myszy w żądanej lokalizacji i wybierz **Punkt A / Punkt B** z menu kontekstowego. Z jednym punktem analyzer znajduje segmenty ścieżek przechodzące przez wybraną lokalizację. Z dwoma punktami znajduje i analizuje segmenty między Punktem A a Punktem B.
+Z jednym punktem analyzer znajduje segmenty ścieżek przechodzące przez wybraną lokalizację. Z dwoma punktami znajduje i analizuje segmenty między Punktem A a Punktem B.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points_new.png)
+![Analizator ścieżek](@site/static/img/web/web_analyzer_select.png) ![Analizator ścieżek](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Sortowanie i widoczne parametry {#sorting-and-visible-parameters}
@@ -42,7 +46,7 @@ Dostępne parametry obejmują:
 - Zakres czasu, Czas rozpoczęcia, Czas zakończenia, Czas trwania i Czas w ruchu.
 - Długość.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Track Analyzer](@site/static/img/web/web_analyzer_fields.png)
+![Analizator ścieżek](@site/static/img/web/web_analyzer_sort.png) ![Analizator ścieżek](@site/static/img/web/web_analyzer_fields.png)
 
 ## Analiza danych {#data-analysis}
 
@@ -50,10 +54,10 @@ Każdy pasujący segment jest wyświetlany w liście wyników po lewej stronie. 
 
 Każdy segment ma również menu z trzema kropkami (⋮) z następującymi akcjami:
 - Otwórz ścieżkę — otwiera pełną ścieżkę związaną z wybranym segmentem.
-- Ukryj ścieżkę / Pokaż ścieżkę — kontroluje, czy ścieżka jest wyświetlana na mapie.
+- Ukryj ślad / Pokaż ślad — kontroluje, czy ścieżka jest wyświetlana na mapie.
 - Wyklucz — usuwa segment z aktualnych wyników analizy.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_menu.png)
+![Analizator ścieżek](@site/static/img/web/web_analyzer_menu.png)
 
 ### Wykresy {#graphs}
 
@@ -67,7 +71,7 @@ Tylko jeden typ danych jest wyświetlany na raz, a zmiana go natychmiast aktuali
 
 Gdy obecnych jest wiele segmentów, wykres pokazuje dane dla kilku segmentów jednocześnie. Selektor nad wykresem pozwala wybrać, ile wykresów segmentów jest wyświetlanych na raz oraz przełączać między nimi.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_altitude.png) ![Track Analyzer](@site/static/img/web/web_analyzer_tracks.png)
+![Analizator ścieżek](@site/static/img/web/web_analyzer_altitude.png) ![Analizator ścieżek](@site/static/img/web/web_analyzer_tracks.png)
 
 ## Powiązane artykuły {#related-articles}
 

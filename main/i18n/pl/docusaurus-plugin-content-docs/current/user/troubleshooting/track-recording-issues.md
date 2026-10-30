@@ -1,5 +1,5 @@
 ---
-source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
+source-hash: 0d78b54592f6e7bfbd495c20bbe33ec368ff22532c171a00e0b3b2a5a27c431f
 sidebar_position: 6
 title:  Nagrywanie trasy
 ---
@@ -129,7 +129,7 @@ Poprzednia strategia polegająca na używaniu trybu drzemki i okresowego wybudza
 
 Aby osiągnąć wybudzanie GPS, do tej pory używaliśmy Android Alarm Manager do okresowego wybudzania urządzenia (również z trybu drzemki, który został wprowadzony w Androidzie 6). Nowe wersje Androida wprowadziły następujące problemy:
 
-- **(B1) `setRepeating()` Alarm Managera stało się niedokładne począwszy od Androida 4.4:**  
+- **(B1) setRepeating() Alarm Managera stało się niedokładne począwszy od Androida 4.4:**  
 Obejście: Obecnie używamy *setRepeating()* tylko do Androida 4.2, nowej metody *setExact()* od Androida 4.4 i *setExactAndAllowWhileIdle()* dla Androida 8+. ([Problem #5632](https://github.com/osmandapp/Osmand/issues/5632))
 - **(B2) Począwszy od Androida 4.4, systemy ograniczają liczbę powtarzalnych wykonań *setExact()*** do np. raz na 5 lub nawet 15 minut. (Rzeczywista wartość wydaje się być bardzo zależna od urządzenia.)  
 Na razie nie znaleziono dobrego rozwiązania. Obecnym obejściem jest to, że nie używamy wybudzania przez Alarm Manager, zamiast tego utrzymujemy GPS zawsze włączony do logowania śladu w tle na urządzeniach z Androidem 5+ dla wszystkich interwałów nagrywania krótszych niż 5 minut. Daje to niezawodne i precyzyjne ślady kosztem większego zużycia baterii. ([Problem #5632](https://github.com/osmandapp/Osmand/issues/5632))

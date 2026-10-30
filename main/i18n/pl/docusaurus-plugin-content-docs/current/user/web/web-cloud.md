@@ -1,5 +1,5 @@
 ---
-source-hash: 6d86091f99fcc3a40ed293334c95361fd6142d9eab867812422962bbd0783539
+source-hash: 3d7c0440f81fe7d7c68aa8cdc03f7757d017ff3c9522e4e2e9666eb2f8516db1
 sidebar_position: 2
 sidebar_label: Konto
 title: Konto OsmAnd
@@ -36,7 +36,7 @@ Aby uzyskać dostęp do funkcji OsmAnd Web, musisz utworzyć konto. Użyj proces
 
 Po zweryfikowaniu kodu konto internetowe zostanie utworzone i nastąpi automatyczne zalogowanie.
 
-![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
+![Rejestracja w wersji internetowej](@site/static/img/web/web_sign_up.png) ![Rejestracja w wersji internetowej](@site/static/img/web/web_ver_code.png)
 
 
 ### Logowanie {#login}
@@ -67,7 +67,7 @@ Jeśli chcesz zapisać kopię wszystkich swoich danych, użyj **Pobierz wszystko
 
 Kliknij **Pobierz kopię zapasową**, aby rozpocząć eksport i zapisać archiwum na komputerze.
 
-![Web Account](@site/static/img/web/web_download_all.png)
+![Konto w wersji internetowej](@site/static/img/web/web_download_all.png)
 
 ### Płatności i zakupy {#payments-and-purchases}
 
@@ -82,16 +82,16 @@ Tutaj możesz zobaczyć listę wszystkich zakupów powiązanych z Twoim adresem 
 Dla każdego elementu lista pokazuje:
 - Nazwę produktu i ikonę.
 - Typ – subskrypcja miesięczna, subskrypcja roczna lub płatność jednorazowa.
-- Status – *Aktywne, Wygaśnięte lub Anulowane*.
+- Status – *Aktywny, Wygasły lub Anulowany*.
 - Informacje o dacie.
 
-If you click a product in the list, the details page opens. There you can see where the product was purchased (*Google Play, Apple App Store, Huawei AppGallery, Amazon* or *OsmAnd Web*) and find a link or instructions on how to manage or cancel the subscription in the corresponding store. If the product was purchased on OsmAnd Web (FastSpring), the details page shows a **Manage subscription** link that opens the FastSpring account management portal, where you can update your payment method, cancel or re-activate the subscription, change the plan, or download invoices.
+Po kliknięciu produktu na liście otwiera się strona ze szczegółami. Możesz tam zobaczyć, gdzie produkt został zakupiony (*Google Play, Apple App Store, Huawei AppGallery, Amazon* lub *OsmAnd Web*), oraz znaleźć link lub instrukcje, jak zarządzać subskrypcją lub ją anulować w odpowiednim sklepie. Jeśli produkt został zakupiony w OsmAnd Web (FastSpring), strona ze szczegółami zawiera link **Zarządzaj subskrypcją**, który otwiera portal zarządzania kontem FastSpring, gdzie możesz zaktualizować metodę płatności, anulować lub ponownie aktywować subskrypcję, zmienić plan albo pobrać faktury.
 
-If there are no purchases linked to your account yet, this section shows an empty state with the message **You don’t have any purchases** and a **Learn more** button that leads to a page with available OsmAnd plans and upgrade options.
+Jeśli do Twojego konta nie są jeszcze przypisane żadne zakupy, ta sekcja pokazuje pusty stan z komunikatem **Nie masz żadnych zakupów** oraz przyciskiem **Dowiedz się więcej**, który prowadzi do strony z dostępnymi planami OsmAnd i opcjami uaktualnienia.
 
-For more details on using your purchases across different platforms, read about [cross-platform access](../purchases/cross.md).
+Więcej informacji o korzystaniu z zakupów na różnych platformach znajdziesz w artykule o [dostępie wieloplatformowym](../purchases/cross.md).
 
-![Web Account](@site/static/img/web/web_purchases.png)
+![Konto w wersji internetowej](@site/static/img/web/web_purchases.png)
 
 ### Synchronizacja w chmurze {#cloud-sync}
 
@@ -103,7 +103,7 @@ Dostępność synchronizacji w chmurze zależy od typu konta:
 - [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – synchronizuje [Ulubione](../web/web-favorites.md) i wyświetla je w sieci.
 - OsmAnd Pro – synchronizuje [Ścieżki](../web/web-tracks.md), Ulubione i [Kopie zapasowe](#my-data), oraz odblokowuje pełny dostęp w sieci do danych chmurowych.
 
-![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+![Ścieżka w wersji internetowej](@site/static/img/web/web_track_start.png) ![Ścieżka w wersji internetowej](@site/static/img/web/web_track_pro.png)
 
 ### OsmAnd Cloud {#osmand-cloud}
 
@@ -113,7 +113,7 @@ Opcja **Zmiany** pokazuje chronologiczny wykaz plików przechowywanych w koncie 
 
 Opcja **Kosz** zawiera pliki usunięte z OsmAnd Cloud. Lista jest również pogrupowana według miesięcy i pokazuje, kiedy każdy plik został usunięty i z jakiego urządzenia. Użyj menu z trzema kropkami obok pliku, aby *Pobrać* kopię, *Przywrócić z kosza* (zwróć plik do OsmAnd Cloud, aby stał się ponownie dostępny w danych), lub *Usuń natychmiast*, aby usunąć go na stałe. Pomaga to zapobiegać przypadkowej utracie danych, jednocześnie pozwalając na zwolnienie miejsca w chmurze, gdy jesteś pewien, że plik nie jest już potrzebny. Możesz również wyczyścić wszystkie usunięte elementy naraz, klikając ikonę Kosza w nagłówku panelu Kosz. Otworzy się okno dialogowe **Opróżnij kosz**, w którym potwierdzasz usunięcie, aby trwale usunąć wszystkie pliki z Kosza.
 
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+![Chmura w wersji internetowej](@site/static/img/web/web_changes.png) ![Chmura w wersji internetowej](@site/static/img/web/web_trash.png)
 
 ### Połączone aplikacje {#connected-apps}
 
@@ -125,11 +125,11 @@ Aby połączyć konto Garmin Connect™, kliknij **Połącz**. Zostaniesz przeki
 
 Po połączeniu OsmAnd tworzy dedykowany folder Garmin Connect w sekcji [Ścieżki](./web-tracks.md) i rozpoczyna automatyczne importowanie aktywności. Nowe aktywności zarejestrowane w Garmin Connect™ są dodawane do tego folderu bez ręcznego importu. Folder jest również synchronizowany z aplikacjami mobilnymi OsmAnd, gdy włączona jest funkcja [OsmAnd Cloud](../personal/osmand-cloud.md).
 
-Menu Garmin Connect zawiera dwie sekcje: **Moje dane** i **Ustawienia**. W sekcji Moje dane możesz wyświetlić liczbę zsynchronizowanych aktywności, otworzyć ostatnio pobraną aktywność lub otworzyć stronę Aktywności Garmin Connect™ za pomocą przycisku **Wyświetl w Garmin Connect™**. W sekcji Ustawienia możesz skonfigurować, które typy aktywności mają być synchronizowane za pomocą opcji Aktywności do synchronizacji.
+Menu Garmin Connect zawiera dwie sekcje: **Moje dane** i **Ustawienia**. W sekcji Moje dane możesz wyświetlić liczbę zsynchronizowanych aktywności, otworzyć ostatnio pobraną aktywność lub otworzyć stronę Aktywności Garmin Connect™ za pomocą przycisku **Zobacz w Garmin Connect™**. W sekcji Ustawienia możesz skonfigurować, które typy aktywności mają być synchronizowane za pomocą opcji Aktywności do synchronizacji.
 
 Aktywności są pogrupowane w kategorie takie jak Cycling, Walking & Running, Water Sports oraz Winter & Other Sports. Poszczególne typy aktywności można włączać lub wyłączać. Domyślnie po połączeniu wybrane są wszystkie obsługiwane typy aktywności.
 
-Aby odłączyć konto Garmin Connect™, przejdź do *Ustawienia → Odłącz* i potwierdź czynność. Wcześniej zaimportowane ścieżki pozostają w folderze Garmin Connect, ale nowe aktywności nie będą już synchronizowane.
+Aby odłączyć konto Garmin Connect™, przejdź do *Ustawienia → Rozłącz* i potwierdź czynność. Wcześniej zaimportowane ścieżki pozostają w folderze Garmin Connect, ale nowe aktywności nie będą już synchronizowane.
 
 ![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
@@ -138,9 +138,9 @@ Aby odłączyć konto Garmin Connect™, przejdź do *Ustawienia → Odłącz* i
 
 ### Resetowanie hasła {#reset-password}
 
-Jeśli nie pamiętasz hasła, użyj linku **Nie mam hasła lub je zapomniałem** w oknie dialogowym logowania. Otworzy się panel **Zmień lub zresetuj hasło**. Wprowadź adres e-mail użyty do utworzenia konta i kliknij **Kontynuuj**. Wiadomość z kodem weryfikacyjnym zostanie wysłana na ten e-mail. Na następnym ekranie wpisz kod weryfikacyjny i nowe hasło, a następnie wybierz **Kontynuuj**, aby potwierdzić. Po zaakceptowaniu kodu hasło zostanie zaktualizowane i możesz zalogować się do OsmAnd Web za pomocą nowych poświadczeń.
+Jeśli nie pamiętasz hasła, użyj linku **Nie mam lub zapomniałem hasła** w oknie dialogowym logowania. Otworzy się panel **Zmień lub zresetuj hasło**. Wprowadź adres e-mail użyty do utworzenia konta i kliknij **Kontynuuj**. Wiadomość z kodem weryfikacyjnym zostanie wysłana na ten e-mail. Na następnym ekranie wpisz kod weryfikacyjny i nowe hasło, a następnie wybierz **Kontynuuj**, aby potwierdzić. Po zaakceptowaniu kodu hasło zostanie zaktualizowane i możesz zalogować się do OsmAnd Web za pomocą nowych poświadczeń.
 
-![Web Account](@site/static/img/web/web_password.png)
+![Konto w wersji internetowej](@site/static/img/web/web_password.png)
 
 ### Zmiana adresu e-mail {#change-email-address}
 
@@ -149,11 +149,11 @@ Przejdź do *Menu Główne → Konto → E-mail → ⋮ → Zmień e-mail*
 
 Pojawia się okno dialogowe Zmiana e-mail. Kod weryfikacyjny zostanie wysłany na aktualny adres e-mail. Wprowadź ten kod w polu **Kod z starego e-maila**, podaj nowy adres w **Nowy e-mail**, a następnie wybierz **Dalej**. Z powodów bezpieczeństwa wiadomość potwierdzająca zostanie wysłana na nowy adres e-mail z informacją, że e-mail konta został zaktualizowany.
 
-![Web Account](@site/static/img/web/web_email_new.png)
+![Konto w wersji internetowej](@site/static/img/web/web_email_new.png)
 
 ### Wylogowanie i usunięcie konta {#logout-and-delete}
 
-![Web Account](@site/static/img/web/web_logout_new.png)
+![Konto w wersji internetowej](@site/static/img/web/web_logout_new.png)
 
 Panel Konto OsmAnd zawiera elementy sterujące do zakończenia bieżącej sesji internetowej i trwałego usunięcia konta.
 
@@ -161,7 +161,7 @@ Aby się wylogować, otwórz Konto OsmAnd i użyj przycisku **Wyloguj** w prawym
 
 Aby usunąć konto, wybierz **Usuń konto** na dole panelu Konto OsmAnd. Pojawia się okno dialogowe potwierdzające z komunikatem *„Czy na pewno chcesz to zrobić?”* i krótkim wyjaśnieniem, że wszystkie dane i szczegóły konta zostaną usunięte z OsmAnd Cloud, a urządzenia drugorzędne stracą dostęp do płatnych funkcji. Kod weryfikacyjny zostanie wysłany na adres e-mail konta. Wprowadź kod w polu Kod z e-maila i wybierz **USUŃ TO KONTO**, aby ukończyć proces. Ta operacja jest trwała i nie może być cofnięta.
 
-![Web Account](@site/static/img/web/web_delete.png)
+![Konto w wersji internetowej](@site/static/img/web/web_delete.png)
 
 
 ## Powiązane artykuły {#related-articles}

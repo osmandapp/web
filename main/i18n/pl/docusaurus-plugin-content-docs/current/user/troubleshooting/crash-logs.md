@@ -1,5 +1,5 @@
 ---
-source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
 title:  Dzienniki awarii
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-Dzienniki awarii są cennymi narzędziami diagnostycznymi, które pomagają programistom identyfikować i naprawiać problemy oraz błędy powodujące awarię aplikacji lub nieoczekiwane zachowanie. Udostępnianie dzienników z urządzenia z systemem Android zespołowi programistów OsmAnd jest możliwe. Obecnie użytkownicy iOS mają tylko jeden typ opcji dziennika awarii do wysłania.
+Dzienniki awarii są cennymi narzędziami diagnostycznymi, które pomagają programistom identyfikować i naprawiać problemy oraz błędy powodujące awarię aplikacji lub nieoczekiwane zachowanie. Udostępnianie dzienników z urządzenia zespołowi programistów OsmAnd jest możliwe. Jeśli OsmAnd zamknie się nieoczekiwanie, aplikacja oferuje również wysłanie raportu o awarii przy następnym uruchomieniu.
 
 
 ## Dzienniki awarii i dzienniki aplikacji {#crash-and-app-logs}
@@ -49,7 +49,7 @@ Zachowaj ostrożność podczas wysyłania dzienników aplikacji, ponieważ mogą
 
 </Tabs>
 
-1. Przejdź do *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* lub *<Translate android="true" ids="send_logcat_log"/>* (*Wyślij bieżący dziennik aplikacji* na iOS). W zależności od sytuacji wybierz odpowiedni typ dziennika. Szczegóły dotyczące różnic między typami dzienników można znaleźć w sekcji [Dzienniki awarii i dzienniki aplikacji](#crash-and-app-logs).
+1. Przejdź do *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* lub *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Wyślij bieżący dziennik aplikacji* (iOS). W zależności od sytuacji wybierz odpowiedni typ dziennika. Szczegóły dotyczące różnic między typami dzienników można znaleźć w sekcji [Dzienniki awarii i dzienniki aplikacji](#crash-and-app-logs).
 2. W wyskakującym menu wybierz Gmaila lub preferowaną aplikację pocztową. Zalecamy wysłanie dzienników na adres `support@osmand.net`.
 3. Stuknij przycisk *Wyślij*.
 
@@ -74,6 +74,34 @@ Zachowaj ostrożność podczas wysyłania dzienników aplikacji, ponieważ mogą
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Wyślij raport o awarii po awarii {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Jeśli OsmAnd zamknął się nieoczekiwanie podczas poprzedniego uruchomienia, przy następnym starcie aplikacji pojawi się okno Awaria. Pojawia się ono po awarii aplikacji, po jej przestaniu odpowiadać (Android 11 i nowszy) lub po awarii w natywnym kodzie aplikacji (Android 12 i nowszy). Okno nie pojawia się, gdy nawigacja jest aktywna.
+
+- *Wyślij* — wysyła raport o awarii bezpośrednio do zespołu programistów OsmAnd, bez użycia aplikacji pocztowej. Komunikat potwierdza, czy raport został wysłany.
+- *Odrzuć* — zamyka okno bez wysyłania raportu.
+
+Raport zawiera informacje techniczne o stanie aplikacji i użyciu pamięci przed awarią oraz ostatni dziennik aplikacji.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Jeśli OsmAnd zamknął się nieoczekiwanie podczas poprzedniego uruchomienia, przy następnym starcie aplikacji pojawi się okno Udostępnij dziennik awarii. Pojawia się ono po awarii aplikacji lub po nieoczekiwanym zamknięciu jej przez system.
+
+- *Wyślij* — wysyła raport o awarii bezpośrednio do zespołu programistów OsmAnd, bez użycia aplikacji pocztowej. Komunikat potwierdza, czy raport został wysłany.
+- *Anuluj* — zamyka okno bez wysyłania raportu.
+
+Raport zawiera informacje techniczne o stanie aplikacji i użyciu pamięci przed awarią oraz ostatni dziennik aplikacji.
+
+</TabItem>
+
+</Tabs>
 
 ## Histogram sterty dla problemów z pamięcią (Android) {#heap-histogram-for-memory-problems-android}
 

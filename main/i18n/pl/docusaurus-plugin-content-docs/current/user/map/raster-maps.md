@@ -1,5 +1,5 @@
 ---
-source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
+source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
 sidebar_position: 7
 title:  Mapy rastrowe (Online / Offline)
 ---
@@ -316,10 +316,10 @@ Aby mapy automatycznie aktualizowały kafelki po pewnym czasie, możesz ustawić
 
 <table class="images">
     <tr>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-1.png').default} alt="raster-maps"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-2.png').default} alt="raster-maps"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-3.png').default} alt="raster-maps"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-4.png').default} alt="raster-maps"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-1.png').default} alt="mapy rastrowe"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-2.png').default} alt="mapy rastrowe"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-3.png').default} alt="mapy rastrowe"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-4.png').default} alt="mapy rastrowe"/></td>
     </tr>
 </table>  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 0908961f227fa1a892804774f35b6e16c127cf8034093323cc379c362624f911
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title:  Nagrywanie trasy
 ---
@@ -25,13 +25,13 @@ Dzięki *wtyczce Nagrywanie trasy* można tworzyć nowe trasy, wyświetlać nagr
 
 <TabItem value="android" label="Android">
 
-![Recorded trip in Android](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_3.png)
+![Nagrana trasa w Androidzie](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_andr_3.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Recorded trip in iOS](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_ios_2.png)
+![Nagrana trasa w iOS](@site/static/img/plugins/trip-recording/trip_rec_pl_setup_ios_2.png)
 
 </TabItem>
 
@@ -50,7 +50,7 @@ Aby rozpocząć nagrywanie tras, należy dokonać następujących ustawień:
 
 ## Nagrywanie nowej trasy {#new-track-recording}
 
-![Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
+![Widżet Dystans/Start-Stop w iOS](@site/static/img/plugins/trip-recording/create_new_track_and-1.png) ![Widżet Dystans/Start-Stop w Androidzie](@site/static/img/plugins/trip-recording/create_new_track_ios-1.png)
 
 Dzięki wtyczce Nagrywanie trasy w OsmAnd można łatwo rozpocząć nagrywanie trasy, korzystając z różnych wygodnych opcji. Oto jak możesz rozpocząć swoją podróż:
 
@@ -84,7 +84,7 @@ Dzięki wtyczce Nagrywanie trasy w OsmAnd można łatwo rozpocząć nagrywanie t
 
 Okno dialogowe Start otwiera się, jeśli opcja **<Translate android="true" ids="show_start_dialog"/>** jest włączona w sekcji ustawień okna dialogowego Start.
 
-![Start recording in Android](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
+![Rozpoczęcie nagrywania w Androidzie](@site/static/img/plugins/trip-recording/start_rec_andr_1.png)  
 
 </TabItem>
 
@@ -92,7 +92,7 @@ Okno dialogowe Start otwiera się, jeśli opcja **<Translate android="true" ids=
 
 Okno dialogowe Start otwiera się, jeśli opcja **<Translate ios="true" ids="track_interval_remember"/>** nie jest włączona.
 
-![Start recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png)
+![Rozpoczęcie nagrywania w iOS](@site/static/img/plugins/trip-recording/start_rec_ios_1.png)
 
 </TabItem>
 
@@ -109,7 +109,7 @@ Okno dialogowe Start otwiera się, jeśli opcja **<Translate ios="true" ids="tra
 
 ### Launcher (Android) {#launcher-android}
 
-![Icon's context menu](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Start Recording icon](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
+![Menu kontekstowe ikony](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Ikona rozpoczęcia nagrywania](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
 Możesz szybko rozpocząć nowe nagrywanie trasy bezpośrednio z ekranu urządzenia z systemem Android, korzystając z menu kontekstowego ikony aplikacji OsmAnd.
 
@@ -134,7 +134,7 @@ Dla *Zatrzymaj / Zapisz / Wstrzymaj*:
 
 - Aby **zapisać, wstrzymać, rozpocząć** nowy segment lub **zakończyć** nagrywanie, użyj przycisków [Szybkiej akcji](../widgets/quick-action.md#add-and-delete-actions). Przejdź do *Menu → Konfiguruj ekran → Przycuty niestandardowe → Szybka akcja → Dodaj akcję → [Moje miejsca](../widgets/quick-action.md#my-places)* i dodaj jeden lub więcej przycisków szybkiej akcji.
 
-- (*Tylko Android*) Aby **wstrzymać** lub **zapisać** nagrywaną trasę, użyj [powiadomienia](#notifications) systemowego w obszarze powiadomień urządzenia.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Tylko Android*) Aby **wstrzymać** lub **zapisać** nagrywaną trasę, użyj [powiadomienia](#notifications) systemowego w obszarze powiadomień urządzenia.<br/><br/> ![Zatrzymanie, zapisanie, wstrzymanie](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Ekran przeglądu {#overview-screen}
@@ -143,13 +143,13 @@ Dla *Zatrzymaj / Zapisz / Wstrzymaj*:
 
 <TabItem value="android" label="Android">
 
-![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![overview](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
+![przegląd](@site/static/img/plugins/trip-recording/overview_screen_graphs_new_andr.png)  ![przegląd](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Finish recording in iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Finish recording in iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
+![Zakończenie nagrywania w iOS](@site/static/img/plugins/trip-recording/start_rec_ios_3.png)  ![Zakończenie nagrywania w iOS](@site/static/img/plugins/trip-recording/overview_screen_graphs_1_new_ios.png)
 
 </TabItem>
 
@@ -176,13 +176,13 @@ Aby uzyskać bardziej szczegółowy widok, można **skalować wykres**:
 | |  
 | ------------- |
 |**Zakładka Przegląd** w iOS (dla Androida parametry osi Y to *Wysokość*, *Prędkość*, a parametr osi X to *Dystans*). Ta zakładka wyświetla wykres pokazujący zmiany prędkości i wysokości na całej długości trasy oraz kluczowe szczegóły trasy. Dane trasy dla iOS: *Dystans*, *Czas trwania*, *Czas rozpoczęcia* i *Czas zakończenia*. Wyświetlone. Poniżej można zobaczyć, jak jest to wyświetlane w wersjach na Androida i iOS. |
-| ![data](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
+| ![dane](@site/static/img/plugins/trip-recording/graph_overview_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_overview_new_ios.png) |
 | **Zakładka Wysokość** w iOS (dla Androida parametry osi Y to *Wysokość*, *Nachylenie*, a parametr osi X to *Dystans*). Ta zakładka koncentruje się na profilu wysokościowym zarejestrowanej trasy, dostarczając informacji o zmianach wysokości i nachyleniu terenu. Kluczowe wskaźniki dla systemu iOS obejmują: *Średnia wysokość*, *Zakres wysokości*, *W górę* i *W dół*. Poniższe wykresy ilustrują różnice między interfejsami Androida i iOS. |
-| ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
+| ![dane](@site/static/img/plugins/trip-recording/graph_altitude_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_altitude_new_ios.png) |
 | **Zakładka Prędkość** w iOS (dla Androida parametr osi Y to *Prędkość*, a parametr osi X to *Dystans*). Zakładka Prędkość podświetla dane związane z prędkością na całej trasie. W systemie iOS zawiera takie informacje, jak *Średnia prędkość*, *Maksymalna prędkość*, *Czas w ruchu* i *Skorygowany dystans*. Poniższe zrzuty ekranu pokazują, jak te dane są wyświetlane na obu platformach. |
-| ![data](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![data](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
+| ![dane](@site/static/img/plugins/trip-recording/graph_speed_new_andr.png)  ![dane](@site/static/img/plugins/trip-recording/graph_speed_new_ios.png) |
 | W systemie **Android** można tworzyć więcej kombinacji dostępnych danych osi Y i wartości osi X. |
-| ![data](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
+| ![dane](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
 Więcej szczegółów można znaleźć w [**Menu kontekstowym tras**](../map/tracks/track-context-menu.md#options), gdzie można zarządzać różnymi opcjami związanymi z trasami, takimi jak zmiana nazwy, usuwanie lub dodawanie punktów trasy. Aby dostosować wygląd tras na mapie, odwiedź sekcję [**Wygląd**](../map/tracks/appearance.md). Jeśli chcesz dodać określone punkty trasy do bieżącej trasy, zapoznaj się z przewodnikiem [**Punkty trasy**](../map/tracks/track-context-menu.md#points--waypoints). W celu wprowadzenia jakichkolwiek modyfikacji, takich jak zmiana nazwy trasy, użyj zakładki [**Opcje**](https://osmand.net/docs/user/map/tracks/track-context-menu#options) w menu kontekstowym tras.
@@ -195,13 +195,13 @@ Więcej szczegółów można znaleźć w [**Menu kontekstowym tras**](../map/tra
 
 <TabItem value="android" label="Android">
 
-![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configure map tracks Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![Pokazywanie trasy na mapie Android](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Konfiguracja tras na mapie Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configure map tracks iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![Pokazywanie trasy na mapie iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Konfiguracja tras na mapie iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -268,13 +268,13 @@ Przed rozpoczęciem śledzenia podróży należy odpowiednio skonfigurować **wt
 
 <TabItem value="android" label="Android">  
 
-![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Configuring Trip recording in Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
+![Konfiguracja nagrywania trasy w Androidzie](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Konfiguracja nagrywania trasy w Androidzie](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![Configuring Trip recording in iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
+![Konfiguracja nagrywania trasy w iOS](@site/static/img/plugins/trip-recording/recording_sett_1_ios.png)  ![Konfiguracja nagrywania trasy w iOS](@site/static/img/plugins/trip-recording/recording_sett_2_ios.png)
 
 </TabItem>
 
@@ -307,7 +307,7 @@ Przed rozpoczęciem śledzenia podróży należy odpowiednio skonfigurować **wt
 
 <InfoAndroidOnly />
 
-![Track on the map iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Track on the map iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
+![Trasa na mapie iOS](@site/static/img/plugins/trip-recording/battery_2_andr.png)  ![Trasa na mapie iOS](@site/static/img/plugins/trip-recording/battery_1_andr.png)  
 
 Ta funkcja pozwala zarządzać ustawieniami optymalizacji baterii dla OsmAnd, aby zapewnić nieprzerwany dostęp do lokalizacji, nawet gdy aplikacja działa w tle podczas nawigacji lub nagrywania trasy.
 
@@ -318,7 +318,7 @@ Ta funkcja pozwala zarządzać ustawieniami optymalizacji baterii dla OsmAnd, ab
 
 ### Powiadomienia {#notifications}
 
-![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
+![Powiadomienie o nagrywaniu trasy](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
 Jeśli w ustawieniach wtyczki włączona jest opcja [Powiadomienie](#recording-settings), powiadomienia o nagrywaniu trasy będą zawsze wyświetlane w obszarze powiadomień systemowych, gdy nagrywanie jest aktywne. To powiadomienie zapewnia, że proces nagrywania nie zostanie przerwany przez system i nie można go wyłączyć podczas aktywnego nagrywania.
 
@@ -334,7 +334,7 @@ To zachowanie jest wymagane przez system Android dla każdej usługi działając
 
 **Dodatkowe opcje Androida**.
 
-![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
+![Powiadomienie o nagrywaniu trasy](@site/static/img/plugins/trip-recording/trip_rec_notification_andr.png)
 
 - W ***Ustawienia Androida → Powiadomienia i pasek stanu → Powiadomienia na ekranie blokady*** można usunąć OsmAnd z listy aplikacji, aby zapobiec pojawianiu się powiadomień na ekranie blokady, unikając przypadkowej aktywacji ekranu. Nie wpłynie to na nagrywanie trasy. Powiadomienia będą nadal pojawiać się w zwykłym obszarze powiadomień.
 - **OsmAnd** może również pojawić się w sekcji ***Prywatność → Specjalne uprawnienia → Włącz ekran***. Jeśli chcesz zapobiec włączaniu się ekranu po pojawieniu się powiadomienia, spróbuj usunąć OsmAnd z tej listy.
@@ -345,7 +345,7 @@ To zachowanie jest wymagane przez system Android dla każdej usługi działając
 
 **Powiadomienie w formie plakietki**.
 
-![Trip Rec Notification](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
+![Powiadomienie o nagrywaniu trasy](@site/static/img/plugins/trip-recording/trip_rec_notification_badge_andr.png)
 
 Plakietka ikony aplikacji pojawia się obok ikony OsmAnd, gdy nagrywanie trasy jest aktywne.
 
@@ -373,7 +373,7 @@ Aby rozpocząć korzystanie z *widżetów Nagrywanie trasy*, należy dokonać ws
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="map_widget_monitoring"/>*
 
-![Adding Distance/Start-Stop widget in Android](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
+![Dodawanie widżetu Dystans/Start-Stop w Androidzie](@site/static/img/plugins/trip-recording/add_new_widg_andr.png)
 
 </TabItem>
 
@@ -381,7 +381,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,map_widget_confi
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Wybierz panel → <Translate android="true" ids="map_widget_monitoring"/>*  
 
-![Adding Distance/Start-Stop widget in iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
+![Dodawanie widżetu Dystans/Start-Stop w iOS](@site/static/img/plugins/trip-recording/add_recording_widgets_ios_moving_time.png)
 
 </TabItem>
 
@@ -398,13 +398,13 @@ Aby dostosować interfejs, można dodać lub usunąć widżet Nagrywanie trasy i
 
 <TabItem value="android" label="Android">
 
-![Display Modes](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Display Modes](@site/static/img/plugins/trip-recording/average_slope_mode.png)
+![Tryby wyświetlania](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png) ![Tryby wyświetlania](@site/static/img/plugins/trip-recording/average_slope_mode.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Display Modes](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Display Modes](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
+![Tryby wyświetlania](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png) ![Tryby wyświetlania](@site/static/img/plugins/trip-recording/average_slope_mode_ios.png)
 
 </TabItem>
 
@@ -433,10 +433,37 @@ Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, wid
 
 ### Dystans (Start-Stop) {#distance-start-stop}
 
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
+
 | |
 |-----------|
 | **Dystans/Start-Stop**. Ten widżet wyświetla dystans trwającego nagrywania podróży. Jest on dodawany automatycznie po włączeniu wtyczki Nagrywanie trasy, ale można go ukryć za pomocą menu Konfiguruj ekran. Widżet ma trzy różne stany: *Nagrywanie*, *Wstrzymano* i *Nieaktywny*, z których każdy wskazuje bieżący stan nagrywania podróży. |
-| ![Trip recording (REC) widget](@site/static/img/widgets/tr_rec_wid_rec.png) |
+| ![Widżet nagrywania trasy (REC)](@site/static/img/widgets/tr_rec_wid_rec.png) |
 | Aby otworzyć [okno dialogowe Nagrywanie trasy](#start-a-dialog) po stuknięciu nieaktywnego widżetu, włącz opcję *Pokaż okno dialogowe uruchamiania* w ustawieniach wtyczki Nagrywanie trasy. Jeśli opcja jest wyłączona, nagrywanie rozpocznie się natychmiast po stuknięciu widżetu bez otwierania okna dialogowego.| 
 
 
@@ -445,21 +472,45 @@ Jeśli bieżące nagrywanie nie zawiera jeszcze odcinka podjazdu lub zjazdu, wid
 | |
 |------------|
 |**Średnie nachylenie**. Wyświetla średnie nachylenie dla ostatniego odcinka podjazdu lub zjazdu aktualnej trasy, w zależności od wybranego trybu. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|![widżety](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 |**Średnia prędkość** *(Tylko Android)*. Pokazuje średnią prędkość dla aktualnie nagrywanego wyjazdu lub średnią prędkość podczas ostatniego podjazdu lub zjazdu, w zależności od wybranego trybu. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
+|![widżety](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**W dół**. Wskazuje całkowity spadek lub ostatni odcinek zejścia, w zależności od wybranego trybu. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|![widżety](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Czas trwania**. Wyświetla całkowity czas bieżącego nagrania podróży w godzinach i minutach. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|![widżety](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Maks. prędkość**. Pokazuje maksymalną prędkość dla aktualnie nagrywanego wyjazdu w wybranym trybie. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|![widżety](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Czas w ruchu**. Pokazuje czas w ruchu dla aktualnie nagrywanego wyjazdu lub czas dla ostatniego podjazdu i zjazdu, w zależności od wybranego trybu. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|![widżety](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**W górę**. Pokazuje całkowity wzrost lub ostatni odcinek wzniesienia, w zależności od wybranego trybu. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
+|![widżety](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Jeśli wybrano wiele widżetów, można uzyskać dostęp do tego samego okna dialogowego dla każdego z nich bez konieczności przełączania lub zamykania go. Ten ujednolicony interfejs ułatwia płynne przeglądanie i zarządzanie wszystkimi powiązanymi informacjami.
+
+<!--
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+-->
 
 
 ## Powiązane artykuły {#related-articles}

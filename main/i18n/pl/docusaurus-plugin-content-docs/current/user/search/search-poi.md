@@ -1,5 +1,5 @@
 ---
-source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
+source-hash: 97f2c33a4074c4cc756ff122bf583a92e9a6275e2f47dd97dda9ca19c19cf16f
 sidebar_position: 4
 title:  Wyszukiwanie POI
 ---
@@ -82,7 +82,7 @@ Wyniki wyszukiwania mogą zawierać dodatkowe informacje o lokalizacji, takie ja
 
 
 :::note
-Aby wykonać niektóre z tych zadań (zlokalizować adresy, POI), będziesz potrzebować pliku mapy wektorowej offline. Początkowo wyszukiwanie opiera się na danych znajdujących się na mapie w widocznym obszarze ekranu urządzenia. Jeśli nic nie znajdziesz, OsmAnd proponuje zwiększyć promień wyszukiwania.
+Aby wykonać niektóre z tych zadań (zlokalizować adresy, POI), będziesz potrzebować pliku mapy wektorowej offline. Początkowo wyszukiwanie opiera się na danych znajdujących się na mapie w [widocznym obszarze ekranu urządzenia](./search-all.md#how-to-use).
 :::  
 
 ### Wskazówki dotyczące wyszukiwania {#search-tips}
@@ -206,22 +206,22 @@ Dzięki funkcji **Filtruj** możesz wybrać niezbędne cechy i w rezultacie otrz
 Filtr może składać się z dość dużej liczby pozycji, których obecność zależy od wybranej kategorii. Każda kategoria ma szereg specyficznych dla niej filtrów, uporządkowanych w folderach według typu. W sumie istnieją *21 domyślne kategorie*. Są one wymienione tutaj:
 
  1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Zakwaterowanie](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) obejmuje obiekty zapewniające tymczasowe zakwaterowanie, takie jak hotele, motele, hostele, pensjonaty i kempingi. Miejsca te zapewniają udogodnienia i usługi zapewniające komfortowy pobyt podczas podróży.  
-        Obejmuje *9* typów filtrów: **Lodówka** (ma *2* wartości), **Ogrzewanie** (ma *7* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Materac** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Prysznic** (ma *1* wartość), **Palenie** (ma *6* wartości), **Ocena w gwiazdkach** (ma *10* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
+        Obejmuje *10* typów filtrów: **Lodówka** (ma *2* wartości), **Ogrzewanie** (ma *7* wartości), **Opłata za dostęp do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Materac** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Prysznic** (ma *1* wartość), **Palenie** (ma *6* wartości), **Ocena w gwiazdkach** (ma *10* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.  
 
  2. **Kawiarnia i restauracja**. [Kawiarnia](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) i [restauracje](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) reprezentują miejsca świadczące usługi gastronomiczne.  
-        Obejmuje *16* typów filtrów: **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Kuchnia** (ponad *10* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *8* wartości), **Danie** (ponad *10* wartości), **Napełnianie wody pitnej** (ma *1* wartość), **Drive-in** (ma *1* wartość), **Typ dostępu do internetu** (ma *3* wartości), **Minibrowar** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Miejsca na zewnątrz** (ma *1* wartość), **Typ płatności** (ponad *10* wartości), **Palenie** (ma *6* wartości), **Na wynos** (ma *1* wartość), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
+        Obejmuje *23* typów filtrów: **Klimatyzacja** (ma *2* wartości), **Kawiarnia** (ma *1* wartość), **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Kuchnia** (ponad *10* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *7* wartości), **Danie** (ponad *10* wartości), **Napełnianie wody pitnej** (ma *1* wartość), **Drive-in** (ma *1* wartość), **Opłata za dostęp do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Muzyka na żywo** (ma *1* wartość), **Minibrowar** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Miejsca na zewnątrz** (ma *1* wartość), **Typ płatności** (ponad *10* wartości), **Rezerwacja** (ma *5* wartości), **Palenie** (ma *6* wartości), **Na wynos** (ma *1* wartość), **Motyw** (ponad *20* wartości), **Typ** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
 
  3. **Stacja ładowania**. [Stacja ładowania](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station) to obiekt infrastruktury, w którym właściciele pojazdów elektrycznych mogą ładować swoje samochody, motocykle lub inne pojazdy elektryczne. Punkty te zapewniają ładowarki i odpowiednie złącza do dostarczania energii do akumulatorów pojazdów.
-        Obejmuje *35* typów filtrów: **Dostęp dla rowerów** (ma *1* wartość), **Dostęp dla autobusów** (ma *1* wartość), **Dostęp dla pojazdów ciężarowych** (ma *5* wartości), **Dostęp dla samochodów** (ma *1* wartość), **Dostęp dla skuterów** (ma *1* wartość), **Autoryzacja przez aplikację** (ma *1* wartość), **Autoryzacja kartą chipową** (ma *1* wartość), **Autoryzacja zbliżeniowa** (ma *1* wartość), **Autoryzacja kluczem** (ma *1* wartość), **Wymagana autoryzacja** (ma *1* wartość), **Autoryzacja przez połączenie telefoniczne** (ma *1* wartość) **Autoryzacja przez SMS** (ma *1* wartość), **Opłata** (ma *2* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7 i inne.  
+        Obejmuje *36* typów filtrów: **Autoryzacja przez aplikację** (ma *1* wartość), **Autoryzacja kartą chipową** (ma *1* wartość), **Autoryzacja kluczem** (ma *1* wartość), **Autoryzacja przez połączenie telefoniczne** (ma *1* wartość), **Autoryzacja przez SMS** (ma *1* wartość), **Autoryzacja niewymagana** (ma *1* wartość), **Dostęp dla rowerów** (ma *1* wartość), **Dostęp dla autobusów** (ma *2* wartości), **Autoryzacja zbliżeniowa** (ma *1* wartość), **Opłata** (ma *2* wartości), **Dostęp dla pojazdów ciężarowych** (ma *5* wartości), **Opłata za dostęp do internetu** (ma *3* wartości), **Typ dostępu do internetu** (ma *3* wartości), **Dostęp dla samochodów** (ma *1* wartość), **Opłata za parking** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Dostęp dla skuterów** (ma *1* wartość), **Gniazdo** (ponad *20* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), **filtry mocy wyjściowej i napięcia dla poszczególnych typów złączy** (*17* filtrów, każdy ma *3* wartości), Otwarte teraz / Otwarte 24/7.  
 
  4. **Sklep ogólnospożywczy i supermarket**. [Sklep ogólnospożywczy](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) i [supermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) reprezentują obiekty handlu detalicznego.
-        Obejmuje *13* typów filtrów: **Zakup hurtowy** (ma *2* wartości), **Wypłata gotówki** (ma *5* wartości), **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *8* wartości), **Lody** (ma *1* wartość), **Produkty organiczne** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Filtr rzeczy używanych** (ma *2* wartości), **Kasa samoobsługowa** (ma *2* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.
+        Obejmuje *17* typów filtrów: **Zakup hurtowy** (ma *2* wartości), **Kawiarnia** (ma *1* wartość), **Wypłata gotówki** (ma *4* wartości), **Przewijak** (ma *3* wartości), **Kawa** (ma *2* wartości), **Dostawa** (ma *1* wartość), **Dieta** (ma *7* wartości), **Drive-through** (ma *1* wartość), **Lody** (ma *1* wartość), **Opłata za dostęp do internetu** (ma *3* wartości), **Wymagane członkostwo** (ma *2* wartości), **Produkty organiczne** (ma *2* wartości), **Typ płatności** (ponad *10* wartości), **Rzeczy używane** (ma *2* wartości), **Kasa samoobsługowa** (ma *2* wartości), **Typ** (ma *3* wartości), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.  
 
  5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Służby ratunkowe](https://wiki.openstreetmap.org/wiki/Key:emergency) obejmują obiekty i lokalizacje związane z usługami ratunkowymi, takie jak szpitale, posterunki policji, remizy strażackie i ośrodki pierwszej pomocy medycznej.  
         Nie zawiera żadnych filtrów.
 
  6. **Stacja paliw**. [Stacja paliw](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), znana również jako stacja benzynowa. Jest to obiekt handlu detalicznego, w którym można tankować pojazdy silnikowe.  
-        Obejmuje *13* typów filtrów: **Myjnia samochodowa** (ma *2* wartości), **Wypłata gotówki** (ma *5* wartości), **Sprężone powietrze** (ma *1* wartość), **Rodzaj paliwa (lotnicze)** (ponad *20* wartości), **Karty paliwowe** (ma *5* wartości), **Typ płatności** (ponad *20* wartości), **Kasa samoobsługowa** (ma *2* wartość), **Dostęp dla skuterów śnieżnych** (ma *3* wartości), **Toaleta** (ponad *1* wartość), **Odkurzacz** (ma *1* wartość), **Automatyczny dystrybutor paliwa** (ma *1* wartość), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.  
+        Obejmuje *17* typów filtrów: **Automatyczne dystrybutory paliwa** (ma *1* wartość), **Kawiarnia** (ma *1* wartość), **Myjnia samochodowa** (ma *2* wartości), **Wypłata gotówki** (ma *4* wartości), **Sprężone powietrze** (ma *1* wartość), **Karty paliwowe** (ma *6* wartości), **Rodzaj paliwa** (ponad *20* wartości), **Rodzaj paliwa (lotnicze)** (ma *4* wartości), **Opłata za dostęp do internetu** (ma *3* wartości), **Typ płatności** (ponad *20* wartości), **Toaleta** (ma *1* wartość), **Kasa samoobsługowa** (ma *2* wartości), **Samoobsługa** (ma *2* wartości), **Dostęp dla skuterów śnieżnych** (ma *3* wartości), **Typ** (ma *3* wartości), **Odkurzacz** (ma *1* wartość), **Dostępność dla wózków inwalidzkich** (ma *4* wartości), Otwarte teraz / Otwarte 24/7.  
 
  7. **Finanse**. [Finanse](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) używane dla biur firm z sektora finansowego.  
         Obejmuje *5* typów filtrów.  
@@ -326,7 +326,7 @@ Korzystanie z wyszukiwania online:
 - Wyszukiwanie online jest wygodne w użyciu, jeśli nie ma map regionu i nie można ich pobrać.
 - *Wymaga stałego i stabilnego połączenia z internetem.*  
 
-Aby poprawić wyniki, przed użyciem narzędzia Wyszukaj, powiększ mapę, aby zbliżyć się do miejsca, w którym chcesz znaleźć określoną lokalizację. A podczas wyszukiwania możesz **zwiększyć promień wyszukiwania**, aby znaleźć miejsca, które są dalej od Twojej lokalizacji. Podczas wyszukiwania offline, jeśli wymagane wyniki nie są dostępne, OsmAnd sugeruje użycie wyszukiwania online.  
+Aby poprawić wyniki, przed użyciem narzędzia Wyszukaj, powiększ mapę, aby zbliżyć się do miejsca, w którym chcesz znaleźć określoną lokalizację. Jeśli w pobliżu nic nie zostanie znalezione, możesz [zwiększyć promień wyszukiwania](./search-all.md#how-to-use). Podczas wyszukiwania offline, jeśli wymagane wyniki nie są dostępne, OsmAnd sugeruje użycie wyszukiwania online.  
 
 Informacje na temat routingu online można znaleźć w artykule [Routing online](../navigation/routing/online-routing.md).
 
@@ -386,6 +386,10 @@ Aby utworzyć niestandardowe filtry do znajdowania miejsc na mapie, wybierz odpo
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Obejmuje 26 typów filtrów.  
 
+<!--
+5. **Emergency infrastructure**. Includes 12 types of filters.  
+-->
+
 5. **<Translate android="true" ids="amenity_type_finance"/>**. Obejmuje 12 typów filtrów.
 
 6. **Żywność**. Obejmuje 12 typów filtrów.  
@@ -408,6 +412,10 @@ Aby utworzyć niestandardowe filtry do znajdowania miejsc na mapie, wybierz odpo
 
 15. **Popularne miejsca (Wikipedia)**. Obejmuje 1 typ: *Wikipedia*.
 
+<!--
+17. **Private access**. Does not include any filters.
+-->
+
 16. **Trasy**. Obejmuje 15 typów filtrów.  
 
 17. **Usługi**. Obejmuje 111 typów filtrów.
@@ -423,6 +431,15 @@ Aby utworzyć niestandardowe filtry do znajdowania miejsc na mapie, wybierz odpo
 22. **Podróże**. Obejmuje 2 typy filtrów.
 
 23. **Zdefiniowane przez użytkownika**. Obejmuje 1 typ: *Zdefiniowany przez użytkownika Inny kod pocztowy*.
+
+<!--
+:::note since OsmAnd 5.0 for Android
+Available for search:
+
+- Religious POIs based on the `amenity=place_of_worship` tag are divided into religious-specific locations such as churches, mosques, or synagogues.
+- Minor amenities such as “bench”, "youth bench" (`amenity=bench`) are available in the category list.
+:::
+-->
 
 ### Zapisz nowe filtry niestandardowe {#save-new-custom-filters}
 

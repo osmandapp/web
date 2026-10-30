@@ -1,5 +1,5 @@
 ---
-source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
+source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
 sidebar_position: 1
 title:  Planowanie trasy
 ---
@@ -186,21 +186,6 @@ Możesz wybrać [wartość progową](../navigation/setup/gpx-navigation.md#attac
 Jeśli wybierzesz ślad i obok ikony *Ustawienia* wyświetli się ikona ***nieokreślonego*** profilu ("?"), dotknij jej, aby wybrać, czy dołączyć ślad do dróg, czy po prostu połączyć punkty linią prostą i potraktować go jako zarejestrowany ślad.
 :::
 
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
-
 
 ## Punkty i segmenty {#points--segments}
 
@@ -277,19 +262,20 @@ Możesz zmienić trasę między 2 konkretnymi punktami lub między wieloma punkt
 
 <TabItem value="ios" label="iOS">
 
-![Planowanie trasy ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Planowanie trasy ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Planowanie trasy ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Planowanie trasy ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Dodane punkty mogą być połączone linią prostą lub trasą obliczoną przy użyciu wybranego profilu nawigacyjnego. Menu Trasa między punktami umożliwia przeglądanie i zmianę typu nawigacji oraz ustawień dla segmentów i odcinków trasy.
 
 Możesz otworzyć Trasa między punktami, dotykając przycisku *Trasa między punktami*, który wyświetla ikonę aktualnie wybranego profilu nawigacyjnego, lub z menu [Segment](#segments) lub Sekcja.
 
-W zakładce Typ trasy możesz wybrać profil nawigacyjny dla wybranego segmentu lub sekcji. Linia prosta jest dostępna jako pierwsza opcja, a następnie dostępne profile nawigacyjne.
+W zakładce Trasa możesz wybrać profil nawigacyjny dla wybranego segmentu lub sekcji. Linia prosta jest dostępna jako pierwsza opcja, a następnie dostępne profile nawigacyjne.
 
-Gdy trasa zawiera tylko jeden typ nawigacji, wyświetlane jest proste menu Trasa między punktami. Gdy trasa zawiera wiele typów nawigacji, widok złożony pokazuje wszystkie segmenty i sekcje, umożliwiając wybór części trasy do modyfikacji.
+Gdy trasa ma jeden segment z jednym typem nawigacji, wyświetlane jest proste menu Trasa między punktami. Gdy trasa ma kilka segmentów lub segment z wieloma typami nawigacji, widok złożony pokazuje wszystkie segmenty i sekcje, umożliwiając wybór części trasy do modyfikacji.
 
 Możesz także:
-- **Rozpocznij nowy segment** — utwórz nowy segment i kontynuuj dodawanie punktów trasy. Nowy segment używa tego samego typu trasy co bieżący.
-- **Zmień dla całego śladu** — wybierz typ nawigacji do zastosowania dla całego śladu.
+- **Kontynuuj z innym typem trasy** — wybierz typ nawigacji dla następnej sekcji bieżącego segmentu, a następnie kontynuuj dodawanie punktów na mapie. W widoku złożonym ta opcja nazywa się Kontynuuj z innym typem i jest wyświetlana pod ostatnim segmentem.
+- **Rozpocznij nowy segment** — utwórz nowy segment, który nie jest połączony z poprzednią częścią śladu. Wybierz typ nawigacji dla nowego segmentu, a następnie kontynuuj dodawanie punktów na mapie.
+- **Zmień typ dla całego śladu** — dostępne w widoku złożonym. Wybierz typ nawigacji do zastosowania dla całego śladu.
 
 W zakładce Ustawienia możesz wybrać wstępnie zdefiniowane ustawienia nawigacji dla wybranego typu trasy.
 
@@ -313,7 +299,7 @@ Segment śladu to zbiór punktów połączonych bez **przerw**. W narzędziu do 
 
 <TabItem value="ios" label="iOS">
 
-![Planowanie trasy ios](@site/static/img/plan-route/segment_menu.webp) ![Planowanie trasy ios](@site/static/img/plan-route/section_menu.webp)
+![Planowanie trasy ios](@site/static/img/plan-route/segment_menu_1.webp) ![Planowanie trasy ios](@site/static/img/plan-route/section_menu.webp)
 
 Trasa może zawierać jeden lub więcej segmentów. Segment może używać jednego typu trasy lub zawierać wiele sekcji z różnymi typami trasy.
 
@@ -321,12 +307,12 @@ W zakładce Trasa każdy segment jest wyświetlany wraz z jego typem trasy i odl
 
 Możesz zarządzać segmentem za pomocą menu z trzema kropkami:
 - **Zmień typ trasy** — dostępne dla segmentu z jednym typem trasy. Otwiera Trasa między punktami, w którym możesz wybrać inny typ trasy.
-- **Ustaw pojedynczy typ trasy** — dostępne, gdy segment zawiera wiele sekcji z różnymi typami trasy. Otwiera Trasa między punktami, w którym możesz zastosować jeden typ trasy do segmentu.
+- **Ustaw pojedynczy typ trasy** — dostępne, gdy segment zawiera wiele sekcji z różnymi typami trasy. Otwiera Trasa między punktami, w którym możesz zastosować jeden typ trasy do segmentu. Cały segment zostanie przeliczony przy użyciu wybranego typu nawigacji.
 - **Sortuj** — ręcznie zmień kolejność punktów trasy lub użyj Sortuj door-to-door, aby zmienić ich kolejność w celu zminimalizowania całkowitej odległości podróży.
 - **Zapisz jako…** — zapisz segment jako osobny plik.
 - **Usuń segment** — usuń segment.
 
-Aby utworzyć nowy, niepołączony segment, dotknij *Rozpocznij nowy segment* u dołu zakładki Trasa.
+Aby utworzyć nowy, niepołączony segment, dotknij *Rozpocznij nowy segment* u dołu zakładki Trasa. Aby kontynuować bieżący segment z innym typem nawigacji, dotknij *Kontynuuj z innym typem* pod ostatnim segmentem, a następnie wybierz typ nawigacji dla następnej sekcji.
 
 Segment można podzielić na [sekcje](#multimodal-routes), gdy dla różnych części segmentu używane są różne typy trasy. Każda sekcja wyświetla swój typ trasy i odległość.
 

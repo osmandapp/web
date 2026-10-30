@@ -705,7 +705,7 @@ Este es un widget del complemento Mapillary que proporciona acceso rápido a la 
 
 :::note
 Para añadir widgets de Notes de audio/vídeo a la pantalla del mapa, active el [complemento Notes de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
-::;
+:::
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -749,7 +749,7 @@ Este widget del complemento OsmAnd Tracker se utiliza para acceder rápidamente 
 
 :::note
 Para añadir widgets de Desarrollador a la pantalla del mapa, active el [complemento de desarrollo de OsmAnd](../plugins/development.md).
-::;
+:::
 
 Los **widgets de desarrollador** proporcionan información sobre la [velocidad de renderizado del mapa](../plugins/development.md#map-rendering-fps-widget) y los parámetros de posición de la cámara virtual, incluyendo el [nivel de zoom](../plugins/development.md#zoom-level), la [distancia](../plugins/development.md#distance-to-target) al centro del mapa, la [elevación de la cámara](../plugins/development.md#camera-elevation) y el [ángulo de inclinación](../plugins/development.md#camera-tilt).  
 

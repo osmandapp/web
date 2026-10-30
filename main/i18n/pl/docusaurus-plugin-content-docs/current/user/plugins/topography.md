@@ -1,5 +1,5 @@
 ---
-source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
+source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
 sidebar_position: 16
 title: Topografia
 ---
@@ -41,7 +41,7 @@ Wtyczka Topografia zapewnia dostęp do następujących typów map:
 
 | Linie konturowe | Cieniowanie wzgórz | Nachylenie |
 |:---|:---|:---|
-| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Linie konturowe Android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Cieniowanie wzgórz Android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Nachylenie Android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ Wtyczka Topografia zapewnia dostęp do następujących typów map:
 
 | Linie konturowe | Cieniowanie wzgórz | Nachylenie |
 |:---|:---|:---|
-| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Linie konturowe iOS](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Cieniowanie wzgórz iOS](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Nachylenie iOS](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -58,6 +58,7 @@ Wtyczka Topografia zapewnia dostęp do następujących typów map:
 ### Licencja na dane DEM używane przez OsmAnd do wykrywania terenu {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 Dane o wysokości na mapie (między 70 stopniem szerokości geograficznej północnej a 70 stopniem szerokości geograficznej południowej) zostały uzyskane z pomiarów wykonanych w ramach *Shuttle Radar Topography Mission (SRTM)*. Wykorzystano w niej *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, podstawowe narzędzie obrazowania w *Systemie Obserwacji Ziemi NASA*.  
+W Ameryce Północnej mapy terenu i linie konturowe korzystają z krajowych danych wysokościowych o wysokiej rozdzielczości: około 10 m w kontynentalnych Stanach Zjednoczonych i około 30 m na Alasce oraz w większości Kanady i Meksyku.  
 Pełne informacje można znaleźć w [Licencji](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -66,7 +67,8 @@ Pełne informacje można znaleźć w [Licencji](https://github.com/osmandapp/Osm
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program (3DEP)</a> za pośrednictwem <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> (Stany Zjednoczone, Alaska) oraz <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">USGS 1 arc-second DEM</a> w <a href="https://opentopography.org/">OpenTopography</a> (Kanada, Meksyk), w tym dane z <a href="https://natural-resources.canada.ca/">Natural Resources Canada (NRCan)</a> and <a href="https://www.inegi.org.mx/">INEGI</a>.
 
 </details>
 
@@ -99,7 +101,7 @@ W celu zapewnienia stabilnej pracy i oszczędności zasobów można pobrać map�
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Pobieranie linii konturowych Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Pobieranie linii konturowych Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +109,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,maps_and_resourc
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Pobieranie linii konturowych iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Pobieranie linii konturowych iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -124,13 +126,13 @@ Jeśli mapa wyświetlana na ekranie nie została pobrana, to w *Menu → Konfigu
 
 <TabItem value="android" label="Android">
 
-![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Okno pobierania linii konturowych Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Okno pobierania linii konturowych iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
@@ -153,7 +155,7 @@ Linie konturowe to [płatna funkcja](../purchases/index.md).
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Menu linii konturowych Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -161,7 +163,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Linie konturowe*
 
-![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Menu linii konturowych iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
@@ -196,7 +198,7 @@ Teren to [płatna funkcja](../purchases/index.md).
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Menu terenu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Menu terenu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -204,7 +206,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
+![Menu terenu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Menu terenu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
@@ -223,7 +225,7 @@ Menu **Teren** zawiera wybór [schematu kolorów](#default-color-scheme) (**wizu
 
 | Cieniowanie wzgórz | Nachylenie | Wysokość |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Cieniowanie wzgórz](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) | ![Nachylenie](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Cieniowanie wzgórz** opiera się na symulacji oświetlenia powierzchni przy użyciu danych o terenie. Metoda ta polega na tworzeniu cieni i podświetleń w oparciu o kąt nachylenia powierzchni względem źródła światła. W rezultacie na mapie widoczne są naturalne wzgórza, doliny i inne szczegóły terenu.  
 
@@ -242,7 +244,7 @@ Mapy rastrowe **Cieniowanie wzgórz**, **Nachylenie** i **Wysokość** są tworz
 
 ### Cienie terenu (iOS) {#terrain-shadows}
 
-![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+![Cienie terenu iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
 
 **Cienie terenu** zapewniają dynamiczne cieniowanie w czasie rzeczywistym na podstawie geometrii terenu 3D. W przeciwieństwie do rastrowych map Cieniowania wzgórz, efekt cieniowania jest generowany bezpośrednio na urządzeniu przy użyciu danych terenowych i automatycznie dostosowuje się do bieżącej perspektywy mapy.
 
@@ -253,7 +255,7 @@ Cienie terenu wymagają Rzeźby 3D i automatycznie ją włączają po wybraniu. 
 
 | Cieniowanie wzgórz | Nachylenie | Wysokość |
 | ------ | ------- | ------- |
-|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Cieniowanie wzgórz](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Nachylenie](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Cieniowanie wzgórz* wykorzystuje ciemne odcienie do pokazywania zboczy, szczytów i nizin. Wirtualne słońce ma stały azymut (kierunek) 315 stopni.
 
@@ -272,13 +274,13 @@ Cienie terenu wymagają Rzeźby 3D i automatycznie ją włączają po wybraniu. 
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Zmień schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Zmień schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+![Zmień schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Zmień schemat kolorów](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
 
 </TabItem>
 
@@ -305,13 +307,13 @@ Aby uzyskać zaawansowaną personalizację palet za pomocą plików palet, zobac
 
 | Widoczność 31% | Widoczność 74% |
 | ------ | ------- |
-| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
+| ![Widoczność ](../../../blog/2023-08-28-terrain/img/31.png) | ![Widoczność ](../../../blog/2023-08-28-terrain/img/74.png) |
 
 Funkcja *Widoczność* służy do regulacji przezroczystości cieni dla Cieniowania wzgórz oraz kolorów używanych do reprezentowania kąta w parametrze Nachylenie. W przypadku Cieni terenu, Widoczność kontroluje siłę efektu cieniowania terenu.
 
 ### Poziomy powiększenia {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Powiększenie](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 Funkcja *Poziomy powiększenia* pozwala ustawić minimalne i maksymalne wartości poziomów powiększenia mapy, w zakresie od 4 do 19, przy których będą wyświetlane warstwy mapy Cieniowanie wzgórz lub Nachylenie.
 
@@ -331,14 +333,14 @@ Poziomy powiększenia nie są dostępne dla Cieni terenu, ponieważ ta wizualiza
 1. Jeśli używasz **Silnika renderowania mapy w wersji 1**, musisz użyć normalnego [pobierania](../start-with/download-maps.md) map rastrowych Cieniowania wzgórz i Nachylenia.
 
 2. Jeśli używasz **Silnika renderowania mapy w wersji 2 (OpenGL)**:
-    - Możesz nadal używać normalnego [pobierania](../start-with/download-maps.md) map rastrowych Cieniowania wzgórz i Nachylenia. Aby to zrobić, musisz jednak aktywować [wtyczkę deweloperską OsmAnd](../plugins/development.md) i włączyć ustawienie [Użyj formatu rastrowego SQLite dla cieniowania wzgórz i nachylenia](../plugins/development.md#terrain).
+    - Możesz nadal używać normalnego pobierania map rastrowych Cieniowania wzgórz i Nachylenia. Aby to zrobić, musisz jednak aktywować [wtyczkę deweloperską OsmAnd](../plugins/development.md) i włączyć ustawienie [Użyj formatu rastrowego SQLite dla cieniowania wzgórz i nachylenia](../plugins/development.md#terrain).
 
     - Alternatywnie możesz użyć pobierania [Mapy terenu (3D)](../personal/maps-resources.md#paid-map-content). Oszczędza to miejsce w pamięci urządzenia, a efekty Cieniowania wzgórz, Nachylenia i Rzeźby 3D będą generowane na podstawie tych danych przez Twoje urządzenie.
 
 
 ### Szybkie akcje {#quick-actions}
 
-![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![Pytania i odpowiedzi dotyczące terenu](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 Możesz użyć przycisków *Szybkiej akcji* na ekranie mapy, aby przełączać widoczność warstw [Linii konturowych](#contour-lines), [Terenu](#terrain) oraz [schematu kolorów terenu](../../user/personal/color-palette-schemes.md#quick-actions). W zależności od warstwy wybranej w menu Konfiguruj mapę, przypisanie akcji *Teren* do przycisku spowoduje wyświetlenie *Cieniowania wzgórz*, *Nachylenia* lub *Wysokości*.  
 
@@ -356,7 +358,7 @@ Główne ustawienia *Pokaż lub ukryj typy map* znajdują się w sekcji Topograf
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
+![Budynki 3D](@site/static/img/map/3d_buildings_4_new.png) ![Budynki 3D](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -364,7 +366,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
+![Budynki 3D](@site/static/img/map/3d_buildings_1_ios_new.png) ![Budynki 3D](@site/static/img/map/3d_buildings_highlight_ios.png)
 
 </TabItem>
 
@@ -393,13 +395,13 @@ Ustawienia budynków 3D są podzielone na dwie grupy: **Wygląd** i **Wydajnoś�
 
 <TabItem value="android" label="Android">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_color.png)
+![Budynki 3D](@site/static/img/map/3d_buildings_color.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
+![Budynki 3D](@site/static/img/map/3d_buildings_color_ios.png)
 
 </TabItem>
 
@@ -464,7 +466,7 @@ Rzeźba 3D to płatna funkcja [**OsmAnd Pro**](../purchases/index.md) <ProFeatur
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
@@ -472,7 +474,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
+![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
@@ -496,7 +498,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 
 | Warstwa mapy wektorowej | Warstwa mapy rastrowej |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
+| ![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
@@ -504,7 +506,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 
 | Warstwa mapy wektorowej | Warstwa mapy rastrowej |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![Rzeźba 3D](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -518,7 +520,7 @@ Funkcja Rzeźba 3D tworzy wypukłą rzeźbę i zapewnia trójwymiarową reprezen
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Przewyższenie pionowe*
 
-![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
+![Przewyższenie pionowe Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
@@ -526,7 +528,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,sr
 
 Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Przewyższenie pionowe*
 
-![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Przewyższenie pionowe iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
 
@@ -539,7 +541,7 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_p
 
 | Cieniowanie wzgórz | Rzeźba 3D |
 |--------|---------|
-| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Warstwy terenu](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Warstwy terenu](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 **Cieniowanie wzgórz** to typ mapy, który wyświetla teren za pomocą cieni, tworząc wizualną reprezentację nachylenia i kształtu powierzchni ziemi.  
 **Rzeźba 3D** to funkcja, która dodaje do mapy efekty trójwymiarowe.  
@@ -555,13 +557,13 @@ Gdy **Cieniowanie wzgórz** jest **włączone**, obraz z cieniami rzeźby wydaje
 
 <TabItem value="android" label="Android">
 
-![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
+![Linie konturowe połączone z Cieniowaniem wzgórz](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Linie konturowe połączone z Nachyleniem](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
+![Linie konturowe połączone z Cieniowaniem wzgórz w iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Linie konturowe połączone z Nachyleniem w iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 

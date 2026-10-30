@@ -1,5 +1,5 @@
 ---
-source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
+source-hash: b2b4863468543cee690b0a3568b81ee3415698752aaf50fecc63c1797c031476
 sidebar_position: 4
 title:  Mapy i dane
 ---
@@ -38,7 +38,7 @@ W tej chwili dostępne są następujące rozwiązania:
 
 #### 1. Przenieś folder danych OsmAnd do „Wewnętrznej pamięci aplikacji” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- Możesz zmienić folder zapisu danych, wybierając opcję ***Wewnętrzna pamięć aplikacji*** w *Menu → Ustawienia → Ustawienia OsmAnd → Folder zapisu danych*.
+- Możesz zmienić folder zapisu danych, wybierając opcję ***Wewnętrzna pamięć aplikacji*** w *Menu → Ustawienia → Ustawienia OsmAnd → Przechowywanie danych → Główne przechowywanie*.
 
 - Należy jednak pamiętać, że pamięć wewnętrzna jest często ograniczona. Jako obejście problemu można przenieść ważne pliki do pamięci wewnętrznej, pozostawiając rzadko używane mapy na karcie SD. W razie potrzeby użyj menedżera plików, aby ręcznie przenieść te pliki.
 
@@ -46,7 +46,7 @@ Zespół programistów aktywnie poszukuje bardziej wydajnych rozwiązań w celu 
 
 #### 2. Użyj folderu „Pobrane” na karcie SD {#2-use-the-sd-cards-download-folder}
 
-Możesz spróbować rozwiązać problem powolnego ładowania map, określając folder **Pobrane** na karcie SD jako miejsce przechowywania danych OsmAnd w *Menu → Ustawienia → Ustawienia OsmAnd → Folder zapisu danych → Ręcznie określony*. Możliwe są następujące ścieżki:
+Możesz spróbować rozwiązać problem powolnego ładowania map, określając folder **Pobrane** na karcie SD jako miejsce przechowywania danych OsmAnd w *Menu → Ustawienia → Ustawienia OsmAnd → Przechowywanie danych → Główne przechowywanie → Ręcznie określony*. Możliwe są następujące ścieżki:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Ta ścieżka może powodować błędy podczas uzyskiwania dostępu do wielu plików. Na przykład, możesz być w stanie pobrać mapę przeglądową świata, ale inne regiony mogą się nie pojawiać.
@@ -66,11 +66,12 @@ Android stał się bardziej rygorystyczny w kwestii uprawnień do przechowywania
 
 Jednak OsmAnd nie ma uprawnienie *Dostęp do wszystkich plików* (z powodu ograniczeń Google), co ogranicza wybór folderów. Jednym z obejść jest użycie folderu pamięci „Multimedia”, do którego Android zazwyczaj przyznaje szerszy dostęp do odczytu/zapisu. Aby to zrobić:
 
-- Przejdź do *Ustawienia OsmAnd → Ustawienia OsmAnd → Folder zapisu danych* i przejrzyj dostępne obszary pamięci. Użyj wskaźnika wolnego miejsca, aby zidentyfikować docelową pamięć, często oznaczoną jako *Pamięć zewnętrzna 2*.
+- Przejdź do *Ustawienia OsmAnd → Ustawienia OsmAnd → Przechowywanie danych → Główne przechowywanie* i przejrzyj dostępne obszary pamięci. Użyj wskaźnika wolnego miejsca, aby zidentyfikować docelową pamięć, często oznaczoną jako *Pamięć zewnętrzna 2*.
+- Jeśli jest dostępna, wybierz *Widoczna pamięć zewnętrzna* dla swojej karty SD i przenieś dane, gdy zostaniesz o to poproszony. W przeciwnym razie wykonaj poniższe kroki ręczne.
 - Zanotuj bieżącą ścieżkę folderu, która może wyglądać następująco: */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Przełącz się na opcję *Ręcznie określony* i zmodyfikuj ścieżkę do folderu dostępnego dla multimediów. W wielu systemach zmiana */Android/data/* na */media/* (np. ***/storage/xxxx-xxxx/media***) działa. Niektóre systemy mogą wymagać innych modyfikacji ścieżki.
+- Przełącz się na opcję *Ręcznie określony* i zmodyfikuj ścieżkę do folderu dostępnego dla multimediów. W wielu systemach zmiana */Android/data/* na */Android/media/* (np. ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***) działa. Niektóre systemy mogą wymagać innych modyfikacji ścieżki.
 
-Prawidłowa ścieżka nie spowoduje wyświetlenia przez OsmAnd żadnych błędów uprawnień do zapisu. Przed wprowadzeniem tych zmian upewnij się, że OsmAnd ma odpowiednie uprawnienia do przechowywania, w tym uprawnienia do przechowywania „Multimediów”, w ustawieniach **Aplikacje** systemu Android. W nowszych wersjach Androida uprawnienia te mogą znajdować się w menu zaawansowanym lub ukrytym.
+Prawidłowa ścieżka nie spowoduje wyświetlenia przez OsmAnd żadnych błędów uprawnień do zapisu. Dla tego folderu nie są wymagane żadne dodatkowe uprawnienia do pamięci.
 
 ### Usuwanie danych map po aktualizacji aplikacji (jeśli wybrano „Pamięć dla wielu użytkowników 1”) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 

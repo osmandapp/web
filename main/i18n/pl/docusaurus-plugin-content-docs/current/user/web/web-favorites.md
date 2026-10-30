@@ -1,8 +1,8 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
-sidebar_label: Favorites
-title: Favorites
+sidebar_label: Ulubione
+title: Ulubione
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,17 +24,17 @@ Ulubione w Planerze WWW pozwalają zapisywać i zarządzać ważnymi miejscami b
 
 ## Zarządzanie Ulubionymi {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
+![OsmAnd Web — edycja ulubionych w chmurze](@site/static/img/web/favorites_1_new.png)
 
 Po zalogowaniu się na konto [**OsmAnd Pro**](../personal/osmand-cloud.md#login) lub [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), Twoje Ulubione w Planerze WWW są zorganizowane w foldery. Każdy folder grupuje zapisane miejsca i zapewnia zestaw czynności dostępnych z menu Ulubione. 
 Dostępne są następujące czynności:
 
-- *Pokaż na mapie* - show favorites points from the chosen folder on the map.
-- *Przypnij folder* - pin a folder to the top of the Favorites list for quick access. Pinned folders are separated from other folders. To remove a folder from the top section, select *Unpin folder*. The Personal folder is pinned by default.
-- *Zmień nazwę* - name and description of favorite folder.
-- *Udostępnij* - opens sharing options. You can choose who can access this folder.
-- *Pobierz* - download the chosen favorite folder.
-- *Usuń* - delete the chosen favorite folder.
+- *Pokaż na mapie* - pokazuje na mapie ulubione punkty z wybranego folderu.
+- *Przypnij folder* - przypina folder na górze listy Ulubione, aby zapewnić szybki dostęp. Przypięte foldery są oddzielone od pozostałych folderów. Aby usunąć folder z górnej sekcji, wybierz *Odepnij folder*. Folder Osobiste jest domyślnie przypięty.
+- *Zmień nazwę* - nazwa i opis folderu ulubionych.
+- *Udostępnij* - otwiera opcje udostępniania. Możesz wybrać, kto ma dostęp do tego folderu.
+- *Pobierz* - pobiera wybrany folder ulubionych.
+- *Usuń* - usuwa wybrany folder ulubionych.
 
 Po wybraniu folderu ulubionych mapa automatycznie wyśrodkowuje się i dostosowuje poziom powiększenia, aby wyświetlić wszystkie punkty ulubionych z tego folderu w widocznym obszarze mapy.
 
@@ -43,8 +43,8 @@ Możesz również użyć przycisku **Focus**, aby ukryć wszystkie inne ulubione
 ### Udostępnianie {#share}
 
 Wybranie **Udostępnij** otwiera ekran udostępniania, w którym można skonfigurować dostęp do folderu Ulubione. Można wybrać jeden z następujących trybów dostępu:
-- *Prywatny*. Tylko Ty możesz przeglądać folder. Przełączenie na Prywatny cofa dostęp dla wszystkich wcześniej zatwierdzonych użytkowników. Przed zastosowaniem zmiany wyświetlany jest dialog potwierdzający.
-- *Tylko żądanie*. Każdy posiadający link może zażądać dostępu. Żądania pojawiają się na liście Oczekujące, gdzie można je zatwierdzić, odrzucić lub zablokować.
+- *Prywatne*. Tylko Ty możesz przeglądać folder. Przełączenie na Prywatny cofa dostęp dla wszystkich wcześniej zatwierdzonych użytkowników. Przed zastosowaniem zmiany wyświetlany jest dialog potwierdzający.
+- *Tylko na żądanie*. Każdy posiadający link może zażądać dostępu. Żądania pojawiają się na liście Oczekujące, gdzie można je zatwierdzić, odrzucić lub zablokować.
 - *Wszyscy*. Każdy posiadający link może natychmiast przeglądać folder bez zatwierdzania.  
 W zależności od wybranego trybu dostępu przycisk **Kopiuj link** staje się dostępny. Link można udostępnić, aby umożliwić przeglądanie lub zażądać dostępu.
 
@@ -55,10 +55,10 @@ Ekran udostępniania zawiera trzy listy użytkowników:
 Każdy wpis użytkownika zawiera menu, które pozwala na zmianę jego statusu lub usunięcie dostępu.
 
 Podczas konfigurowania dostępu mogą pojawić się następujące okna dialogowe:
-- *Zmiana dostępu*. Wyświetlane podczas przełączania folderu na Prywatny. Dialog ostrzega, że cały istniejący dostęp użytkownika zostanie cofnięty przed potwierdzeniem zmiany.
+- *Zmień dostęp*. Wyświetlane podczas przełączania folderu na Prywatny. Dialog ostrzega, że cały istniejący dostęp użytkownika zostanie cofnięty przed potwierdzeniem zmiany.
 - *Żądania dostępu*. Wyświetlane podczas zarządzania użytkownikami na liście Oczekujące, umożliwia zatwierdzenie lub odrzucenie żądań dostępu.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
+![OsmAnd Web — edycja ulubionych w chmurze](@site/static/img/web/favorites_share.png) ![OsmAnd Web — edycja ulubionych w chmurze](@site/static/img/web/favorites_share_2.png)
 
 
 ## Szczegóły Ulubionych {#favorites-details} 
@@ -67,12 +67,12 @@ Wybranie ulubionego otwiera panel **Szczegóły**. Ten panel pojawia się, gdy k
 
 Widok Szczegóły zapewnia informacje związane z wybranym miejscem i zależy od danych dostępnych dla tego konkretnego ulubionego. Na minimum obejmuje lokalizację na mapie i jej współrzędne geograficzne. Dla miejsc powiązanych z obiektami OpenStreetMap lub wzbogaconymi źródłami mogą być wyświetlane dodatkowe metadane, takie jak nazwy, kategorie, identyfikatory lub linki referencyjne (na przykład Wikipedia lub linki Wikidata). 
 
-![Web Favorites Details](@site/static/img/web/favorites_details.png)
+![Szczegóły ulubionego w wersji internetowej](@site/static/img/web/favorites_details.png)
 
 
 ## Czynności Ulubionych {#favorites-actions}
 
-[Aby dodać](../personal/favorites.md#manage-favorites) nowy punkt ulubionego, kliknij prawym przyciskiem myszy na ekranie. 
+[Aby dodać](../personal/favorites.md#manage-favorites) nowy punkt ulubionego, kliknij prawym przyciskiem myszy na ekranie. Jeśli nie można zapisać ulubionego, komunikat o błędzie zawiera powód zgłoszony przez serwer, na przykład brak wystarczającej ilości miejsca w [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Aby edytować istniejące ulubione, kliknij punkt ulubionego bezpośrednio na mapie lub wybierz je z folderu ulubionych. To otwiera panel Szczegóły, w którym dostępna jest czynność Edytuj. Edycję można również rozpocząć z menu trzech kropek (⋮) obok ulubionego na liście Ulubione.
 
@@ -82,9 +82,9 @@ Panel edycji ulubionego pozwala zmieniać główne właściwości ulubionego, w 
 
 Pole **Adres** obsługuje automatyczne wykrywanie adresu na podstawie wybranej lokalizacji na mapie. Pole może występować w kilku stanach:
 
-- Wyszukiwanie... — displayed while the address is being automatically determined.
-- Puste pole — displayed after clearing the address. In this state, the location button can be used to detect the address again automatically.
-- Wypełnione pole — displays either the automatically detected address or manually entered text.
+- Wyszukiwanie... — wyświetlane podczas automatycznego ustalania adresu.
+- Puste pole — wyświetlane po wyczyszczeniu adresu. W tym stanie można użyć przycisku lokalizacji, aby ponownie automatycznie wykryć adres.
+- Wypełnione pole — wyświetla automatycznie wykryty adres lub ręcznie wprowadzony tekst.
 
 Pole adresu zawiera również szybkie działania umożliwiające wyczyszczenie lub przywrócenie wykrytego adresu.
 
@@ -96,7 +96,7 @@ Nowe foldery można tworzyć bezpośrednio z panelu wyboru folderu. Wybranie prz
 
 Okno dialogowe zawiera również sekcję Zaawansowane, w której można skonfigurować domyślne ustawienia wyglądu folderu. Ustawienia te obejmują domyślny kolor, ikonę i kształt, które będą automatycznie stosowane do punktów ulubionych dodawanych do tego folderu.
 
-![Web Edit Folder](@site/static/img/web/edit_folder.png)
+![Edycja folderu w wersji internetowej](@site/static/img/web/edit_folder.png)
 
 ### Wygląd {#appearance}
 
@@ -120,14 +120,14 @@ Opcja **Kształt** definiuje formę tła używaną dla znacznika ulubionego.  Do
 
 Podgląd wyglądu jest natychmiast aktualizowany zarówno w panelu edycji, jak i na mapie podczas zmiany ikony, koloru lub kształtu.
 
-![Web Edit Appearance](@site/static/img/web/edit_icon.png)
+![Edycja wyglądu w wersji internetowej](@site/static/img/web/edit_icon.png)
 
 ### Inne Czynności {#other-actions}
 
 Oprócz edycji każdy ulubiony zapewnia kilka innych czynności, które można uzyskać z panelu Szczegóły lub z menu trzech kropek (⋮) na liście Ulubione:
-- *Usuń* - removes the selected favorite permanently. This action is available both from the Details panel and from the three-dot menu. Deletion affects the favorite across all devices after synchronization.
-- *Udostępnij* - this action allows you to share a direct link to the place.
-- *Kierunki z* - sets the selected favorite as the start point for route planning. The Route panel opens automatically, allowing you to choose a destination and navigation profile.
+- *Usuń* - trwale usuwa wybrany ulubiony punkt. Ta czynność jest dostępna zarówno w panelu Szczegóły, jak i w menu trzech kropek. Po synchronizacji usunięcie obejmuje ulubiony punkt na wszystkich urządzeniach.
+- *Udostępnij* - ta czynność pozwala udostępnić bezpośredni link do miejsca.
+- *Kierunki z* - ustawia wybrany ulubiony punkt jako punkt początkowy planowania trasy. Panel Trasa otwiera się automatycznie, umożliwiając wybór celu i profilu nawigacji.
 - *Nawigacja* - sets the selected favorite as the destination point. 
 
 
