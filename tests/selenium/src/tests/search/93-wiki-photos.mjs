@@ -3,11 +3,8 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { clickBy, matchInnerTextBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap();
     await actionLogIn();
 
@@ -23,30 +20,25 @@ export default async function test() {
     await waitBy(By.id('se-wpt-details'));
     await waitBy(By.id('se-wpt-photos'));
 
-    await clickBy(By.id('se-photo-27933593'));
-    await waitBy(By.id('se-photo-modal-27933593'));
+    // the photo is hidden until it is loaded
+    await clickBy(By.css('#se-photo-35992817[style*="display: block"]'));
+    await waitBy(By.css('.swiper-slide-active #se-photo-modal-35992817'));
 
-    await matchInnerTextBy(By.id('se-photo-date'), 'Date: 5 August 2013');
-    await matchInnerTextBy(By.id('se-photo-author'), 'Author: Tiia Monto');
-    await matchInnerTextBy(By.id('se-photo-license'), 'License: CC-BY-SA-3.0 - TIIA MONTO');
-    await matchInnerTextBy(
-        By.id('se-photo-description'),
-        'Description: Maidan Nezalezhnosti square in Kyiv. The Independence monument in on the left.'
-    );
+    await matchInnerTextBy(By.id('se-photo-date'), 'Date: 10 November 2013');
+    await matchInnerTextBy(By.id('se-photo-author'), 'Author: Pedro J Pacheco');
+    await matchInnerTextBy(By.id('se-photo-license'), 'License: CC-BY-SA-4.0');
+    await matchInnerTextBy(By.id('se-photo-description'), 'Description: Монумент Незалежності');
 
     await clickBy(By.id('se-next-photo'));
-    await waitBy(By.id('se-photo-modal-62534415'));
+    await waitBy(By.css('.swiper-slide-active #se-photo-modal-43077173'));
 
-    await matchInnerTextBy(By.id('se-photo-date'), '25 September 2014');
-    await matchInnerTextBy(By.id('se-photo-author'), 'Quotsu');
-    await matchInnerTextBy(By.id('se-photo-license'), 'SELF - CC-BY-SA-4.0');
-    await matchInnerTextBy(
-        By.id('se-photo-description'),
-        "Монумент Незалежності України - пам'ятник, присвячений незалежності України."
-    );
+    await matchInnerTextBy(By.id('se-photo-date'), '2 August 2013');
+    await matchInnerTextBy(By.id('se-photo-author'), 'Klymenko Tatyana');
+    await matchInnerTextBy(By.id('se-photo-license'), 'CC-BY-SA-4.0');
+    await matchInnerTextBy(By.id('se-photo-description'), 'Монумент Незалежності, Київ, Незалежності Майдан');
 
     await clickBy(By.id('se-close-photo'));
-    await waitByRemoved(By.id('se-photo-modal-62534415'));
+    await waitByRemoved(By.id('se-photo-modal-43077173'));
 
     await actionFinish();
 }

@@ -1,5 +1,5 @@
 ---
-source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
+source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
 sidebar_position: 1
 title:  Acquisti Android
 ---
@@ -21,7 +21,7 @@ Per i dispositivi Android, è possibile scaricare le versioni **Gratuita** e a *
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon non è più disponibile. Informazioni dettagliate possono essere trovate [qui](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon non è più disponibile. Informazioni dettagliate possono essere trovate [qui](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).
 
 **Versioni dell'applicazione OsmAnd:**
 
@@ -77,25 +77,27 @@ Per i dispositivi Android, è possibile scaricare le versioni **Gratuita** e a *
 Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le regioni USA ed Europa. Per le altre regioni, i prezzi sono equivalenti nelle valute locali.
 
 
-<!--
 
-:::danger 🏖️ Summer Sale
+:::danger 🎃 Saldi di Halloween
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+*Affrettati! Questa offerta è valida solo fino al* **1 novembre (23:59 UTC)**.
+
+*Per gli abbonamenti, il prezzo scontato vale per il primo anno.*
+
+*Lo sconto non si applica all'app OsmAnd+ su Google Play.*
 
 :::
 
 
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | Abbonamento [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Tipo di acquisto** | **Gratuito** | **Acquisto una tantum** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |
+| **Prezzo (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Prezzo (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
+<!--
 
--->
 
 |    | OsmAnd Gratuito   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | Abbonamento [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
@@ -103,6 +105,9 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | **Tipo di acquisto** | **Gratuito** | **Acquisto una tantum** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |
 | **Prezzo (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Prezzo (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
+
 
 
 
@@ -169,7 +174,7 @@ L'abbonamento **Pro** include attualmente le seguenti funzionalità:
 
 |  Funzionalità Pro  | Descrizione   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Esegui il backup e il ripristino dei tuoi dati, sincronizza i dati con il [portale web di OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Esegui il backup e il ripristino dei tuoi dati, sincronizza i dati con il [portale web di OsmAnd](https://osmand.net/map). |
 | [Rilievo 3D](../plugins/topography.md#3d-relief) | Consente di avere e osservare un modello in scala del proprio quartiere o di un intero continente. |
 | [Aggiornamenti live](../personal/maps-resources.md#live-updates) | Le mappe di OsmAnd si aggiornano ogni 15 minuti dopo i miglioramenti di [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Plugin Meteo](../plugins/weather.md) | Previsioni orarie per 24 ore con 7 giorni di anticipo sulla mappa. |
@@ -197,7 +202,7 @@ or
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continua con OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
+![Piano Pro](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Acquisto di Maps+ {#maps-purchase}
 
@@ -205,7 +210,7 @@ or
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tocca l'elenco delle funzionalità di Maps+ → Continua con Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
+![Piano Maps+](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Abbonamenti precedenti (prima della 4.0) {#legacy-subscriptions-prior-40}
@@ -243,7 +248,7 @@ Per ripristinare l'acquisto, controlla quale piano OsmAnd hai acquistato.
 - *Per aprire Ripristina acquisti*, segui questi passaggi: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e nella parte superiore dello schermo dovrebbe apparire che Maps+(Pro) è attivato.
 - *Registra le funzionalità Pro* con l'abbonamento OsmAnd Pro per tutte le piattaforme (Android e iOS). Se hai un account OsmAnd Pro, devi usarlo [per attivare OsmAnd Pro](../personal/osmand-cloud.md) per il tuo dispositivo.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases.png)
+![Piano Pro](@site/static/img/purchases/maps_purchases.png)
 
 ### Altri casi {#other-cases}
 

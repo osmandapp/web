@@ -1,5 +1,5 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
 sidebar_label: Mapa
 title: Globalna mapa na stronie internetowej
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 Mapa internetowa OsmAnd to globalna mapa oparta na danych [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Umożliwia użytkownikom przeglądanie własnych danych, takich jak ścieżki i ulubione, tworzenie tras nawigacyjnych dla dowolnego profilu oraz dostęp do dodatkowych funkcji, takich jak pogoda, publiczne ścieżki GPX, POI i obrazy z Wikimedii. Przeglądaj i dostosowuj doświadczenie ze swoimi danymi bezpośrednio w przeglądarce.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![OsmAnd Web — widok ogólny](@site/static/img/web/web_map_all.png)
 
 
 ## Menu kontekstowe mapy {#map-context-menu}
@@ -60,7 +60,7 @@ Aby je otworzyć, kliknij prawym przyciskiem myszy w dowolnym miejscu na mapie. 
 Add pin option will be added back once it becomes available again.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+![Menu kontekstowe mapy](@site/static/img/web/map_context_menu_2_new.png)
 
 
 ## Wybrany obiekt {#selected-object}
@@ -73,21 +73,32 @@ Wybrany znacznik pozostaje widoczny podczas powiększania mapy.
 
 Pobliskie znaczniki mogą być ukryte, aby ułatwić zobaczenie wybranego obiektu.
 
-![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+Gdy typ mapy [OsmAnd wektorowa (beta)](#map-type) jest włączony, możesz wybierać obiekty bezpośrednio na mapie, w tym POI, budynki, numery domów i przystanki transportu publicznego. Gdy najedziesz kursorem na obiekt, który można wybrać, wskaźnik zmienia się w dłoń ze wskazującym palcem. Obiektów bez nazwy lub ikony, takich jak drogi i ścieżki bez nazw, nie można wybrać.
+
+Wybranie obiektu otwiera panel ze szczegółami:
+
+- **POI** — panel pokazuje te same informacje i szybkie działania, co wyniki [wyszukiwania](web-search.md) oraz [nakładka POI](#poi-overlay).
+- **Obiekt bez danych POI** — na przykład budynek lub numer domu. Panel pokazuje typ obiektu, adres i współrzędne.
+- **Przystanek transportu publicznego** — panel może również zawierać sekcję Trasy z filtrem typu transportu, jak opisano w sekcji [Przystanki transportu](#transport-stops).
+
+Jeśli w wybranym punkcie znajduje się kilka obiektów, panel pokazuje je pojedynczo. Użyj strzałek obok przycisku zamykania, aby przełączać się między nimi. Strzałka wstecz pojawia się od drugiego obiektu, a strzałka do przodu jest nieaktywna przy ostatnim.
+
+![Zaznaczony obiekt](@site/static/img/web/selected_object_favorite.png) ![Zaznaczony obiekt](@site/static/img/web/several_objects.webp)
 
 
 
 ## Menu Konfiguruj mapę {#configure-map-menu}
 
-Menu Konfiguruj mapę umożliwia zarządzanie ustawieniami wyświetlania danych mapy, takich jak warstwy POI, ulubione, ścieżki i rzeźba terenu. To menu jest dostępne po zalogowaniu się na konto OsmAnd. Aby je otworzyć, kliknij przycisk w **lewym górnym rogu** lub uzyskaj dostęp przez **Menu**.
+Menu Konfiguruj mapę umożliwia zarządzanie ustawieniami wyświetlania danych mapy, takich jak warstwy POI, ulubione, ścieżki, rzeźba terenu i typ mapy. To menu jest dostępne po zalogowaniu się na konto OsmAnd. Aby je otworzyć, kliknij przycisk w **lewym górnym rogu** lub uzyskaj dostęp przez **Menu**.
 
 - [Nakładka POI...](#poi-overlay). Umożliwia wybór i wyświetlanie potrzebnych kategorii POI na mapie.
 - [Ulubione](#favorites). Przełączanie wyświetlania ulubionych na mapie.
 - [Ścieżki](#tracks). Zawiera ścieżki GPX widoczne na mapie.
 - [Przystanki transportu](#transport-stops). Przełączanie wyświetlania przystanków transportu publicznego na mapie. 
 - [Teren](#terrain). Włącz lub wyłącz schemat kolorów terenu na mapie.
+- [Raster (kafelki) / OsmAnd wektorowa (beta)](#map-type). Pokazuje aktualnie używany typ mapy i umożliwia przełączanie między mapą rastrową a wektorową.
 
-![POIs menu](@site/static/img/web/configure_map_web_new.png)
+![Menu POI](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### Nakładka POI {#poi-overlay}
@@ -108,7 +119,7 @@ W panelu szczegółów POI dostępne są szybkie działania z przycisków akcji:
 - *Trasa z* — ustawia wybrany POI jako punkt startowy i otwiera panel Trasy, abyś mógł wybrać cel i profil.
 - *Nawigacja* — ustawia wybrany POI jako punkt docelowy nawigacji.
 
-![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
+![Menu POI](@site/static/img/web/poi_categories.png) ![Menu POI](@site/static/img/web/poi_photo_new.png)
 
 
 ### Ulubione {#favorites}
@@ -125,8 +136,8 @@ Ta sekcja zawiera listę twoich [**ścieżek GPX widocznych na mapie**](../web/w
 
 Każda ścieżka ma **Menu** (⋮) z następującymi poleceniami:
 
-- **Ukryj ścieżkę**: Ukrywa aktualnie widoczną ścieżkę na mapie.  
-- **Uczyń ścieżkę widoczną**: Wyświetla ścieżkę z listy Ostatnio widoczne na mapie.  
+- **Ukryj ślad**: Ukrywa aktualnie widoczną ścieżkę na mapie.  
+- **Uczyń ślad widocznym**: Wyświetla ścieżkę z listy Ostatnio widoczne na mapie.  
 - **Zmień nazwę**: Umożliwia zmianę nazwy ścieżki w celu łatwiejszej identyfikacji.  
 - **Duplikuj**: Tworzy kopię ścieżki.
 - **Udostępnij**: Otwiera ekran udostępniania (taki sam jak dla [Ulubionych](../web/web-favorites.md#share)).
@@ -141,7 +152,7 @@ Panel ścieżki zawiera następujące zakładki:
 - Ścieżka — obecnie niezaimplementowane.
 - Punkty — pokazuje punkty trasy i punkty nawigacyjne pogrupowane według typu.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
+![Menu Konfiguruj mapę — Ścieżki](@site/static/img/web/configure_map_track_new.png) ![Menu Konfiguruj mapę — Ścieżki](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Przystanki transportu {#transport-stops}
 
@@ -169,7 +180,7 @@ Filtr typu transportu pozwala na filtrowanie tras wyświetlanych na liście. Dom
 
 Sekcja Pobliskie trasy może wyświetlać dodatkowe trasy zlokalizowane blisko wybranego przystanku. Pomaga to szybko odkryć alternatywne opcje transportu w okolicy.
 
-![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
+![Przystanki transportu](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Teren {#terrain}
 
@@ -183,7 +194,18 @@ W tej sekcji możesz:
   - **Wysokość**
 - Dostosować widoczność wybranej warstwy terenu od **0% do 100%**.
 
-![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+![Menu Konfiguruj mapę — Teren](@site/static/img/web/configure_map_terrain.png)
+
+### Typ mapy {#map-type}
+
+Wybierz element typu mapy w menu Konfiguruj mapę, aby wybrać jedną z następujących opcji:
+
+- **Raster (kafelki)** — domyślny typ mapy. W tym typie mapy możesz wybierać tylko znaczniki wyświetlane nad mapą, takie jak wyniki [wyszukiwania](web-search.md), znaczniki [nakładki POI](#poi-overlay), [ulubione](#favorites) i [przystanki transportu](#transport-stops).
+- **OsmAnd wektorowa (beta)** — mapa wektorowa. W tym typie mapy możesz [wybierać obiekty bezpośrednio na mapie](#selected-object).
+
+Wybrany typ mapy jest zapisywany i stosowany przy następnym otwarciu mapy. **Przywróć domyślne** w nagłówku menu Konfiguruj mapę przełącza mapę z powrotem na **Raster (kafelki)**.
+
+Mapa wektorowa wymaga przeglądarki z obsługą WebGL. Jeśli WebGL jest niedostępny, mapa automatycznie przełącza się na **Raster (kafelki)**.
 
 
 ## Ustawienia {#settings}
@@ -196,7 +218,7 @@ Aby przełączyć język interfejsu:
 
 *Idź do: Menu → ⚙ Ustawienia → Język wyświetlania*
 
-![Web Language](@site/static/img/web/web_language.png)
+![Język w wersji internetowej](@site/static/img/web/web_language.png)
 
 ### Jednostki {#units}
 
@@ -225,7 +247,7 @@ Opcja **Jednostka prędkości** kontroluje, jak wyświetlana jest bieżąca prę
 
 Na przykład, prędkość 90 km/h odpowiada 25 m/s lub około 55,92 mph.
 
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
+![Jednostki w wersji internetowej](@site/static/img/web/web_units_len.png) ![Jednostki w wersji internetowej](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -254,19 +276,19 @@ Te adresy URL można kopiować i udostępniać za pomocą dowolnego nośnika obs
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+  ![OsmAnd Web — tworzenie ścieżki](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL bez pinezki na mapie:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+  ![OsmAnd Web — tworzenie ścieżki](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL z nawigacją:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+  ![OsmAnd Web — tworzenie ścieżki](@site/static/img/plan-route/web_url_track.png)
 
 W zależności od określonych parametrów, ciągi URL mogą zawierać:
 
@@ -294,6 +316,10 @@ W zależności od określonych parametrów, ciągi URL mogą zawierać:
 10. **Planuj trasę**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Bezpośredni link do bieżącej [**strony Eksploruj**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **Szczegóły POI**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Obiekt mapy bez danych POI** (na przykład budynek)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## Powiązane artykuły {#related-articles}

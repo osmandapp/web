@@ -1,8 +1,9 @@
 ---
-source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
+source-hash: 3e8ac9992e039c617c093a24702772bc6cdb0c520e1dcadb77013d26c7264441
 sidebar_position: 2
 title:  Compras y Pagos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Compras Multiplataforma {#cross-platform-purchases}
@@ -40,7 +40,7 @@ import Translate from '@site/src/components/Translate.js';
 
 2. Si **ya tienes** una cuenta de OsmAnd Cloud:
 
-    - Asegúrate de haber iniciado sesión en la cuenta de OsmAnd Cloud en el dispositivo donde realizaste la compra.
+    - Asegúrate de haber iniciado sesión en la cuenta de OsmAnd Cloud en el dispositivo donde realizaste la compra.  
     - Navega a *Menú de OsmAnd → Ajustes → OsmAnd Cloud → Ya tengo una cuenta*
     - Después de iniciar sesión en tu cuenta, ve a *Menú de OsmAnd → Ajustes → Compras*.
     - Toca **Restaurar compras** para sincronizar la compra con tu cuenta.
@@ -88,8 +88,12 @@ El **20 de agosto de 2025**, Amazon cerrará la Amazon Appstore para dispositivo
 
 Si has realizado compras a través de Amazon, necesitarás **transferir tus suscripciones (Pro, Maps+) o compras dentro de la aplicación (Maps+)** a otra plataforma.
 
-➡️ Actualmente, [la transferencia multiplataforma es posible para suscripciones y compras dentro de la aplicación](../purchases/cross.md).
+➡️ Actualmente, [la transferencia multiplataforma es posible para suscripciones y compras dentro de la aplicación](../purchases/cross.md).  
 ❗ **OsmAnd+** (aplicación independiente) no se puede transferir entre plataformas a través de la cuenta de OsmAnd Cloud. Para obtener ayuda, por favor contacta a **support@osmand.net**.
+
+Si tu compra de Amazon no se puede activar automáticamente a través de OsmAnd Cloud, contacta con el Soporte de OsmAnd — **support@osmand.net** — para la transferencia manual. Proporciona el número de transacción de Amazon que comienza con D01-. También se recomienda una captura de pantalla que muestre el producto comprado.
+
+Las compras realizadas hace más de 10 años no se pueden transferir.
 
 ## Cómo restaurar la compra del complemento Topografía (antes Curvas de nivel) {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 

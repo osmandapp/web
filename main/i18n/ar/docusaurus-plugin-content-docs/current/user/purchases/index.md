@@ -1,5 +1,5 @@
 ---
-source-hash: be440c1569e9bfbe942ce6274154063e4405eb3f2127ea1a15070e5680537c7c
+source-hash: 446dc6fb8862e87b5c5410884e5d855a41f55489f8f416fdb6d8004a6d595853
 sidebar_position: 9
 ---
 
@@ -17,7 +17,8 @@ sidebar_position: 9
 
 ### [مشتريات الويب](./web.md) {#web-purchases}
 
-في هذا القسم، يمكنك شراء اشتراكات OsmAnd والميزات داخل التطبيق، بالإضافة إلى مقارنة الاختلافات بين الخطط المتاحة.
+في هذا القسم، يمكنك شراء اشتراكات OsmAnd والميزات داخل التطبيق،  
+بالإضافة إلى مقارنة الاختلافات بين الخطط المتاحة.
 
 ### [مشتريات عبر الأنظمة الأساسية](./cross.md) {#cross-platform-purchases}
 
@@ -33,10 +34,11 @@ sidebar_position: 9
 
 - **iOS.** كل ما عليك فعله هو الذهاب إلى App Store وإعادة تثبيت OsmAnd. يمكنك استخدام التطبيق على أي عدد تريده من الأجهزة دون الحاجة إلى شرائه مرة أخرى. قد ترى زر *شراء*، ولكن لا تحتاج إلى الدفع: فقط اضغط عليه لتنزيل التطبيق دون الدفع مرة أخرى.
 
+
 ### احصل على OsmAnd {#get-osmand}
 
 هناك عدة طرق للقيام بذلك:
 
 - OsmAnd+ على [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - OsmAnd على [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon لم يعد متاحًا. يمكن العثور على معلومات مفصلة [هنا](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon لم يعد متاحًا. يمكن العثور على معلومات مفصلة [هنا](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).

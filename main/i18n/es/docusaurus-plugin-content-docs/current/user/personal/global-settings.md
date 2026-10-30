@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Ajustes globales
 ---
@@ -101,6 +101,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
     - *Memoria interna de la aplicación*. Solo la aplicación OsmAnd tiene acceso a sus datos y ninguna de las aplicaciones externas.
     - *Memoria compartida*. Ya no está disponible.
     - *Almacenamiento externo 1*. Solo 1 aplicación OsmAnd tiene acceso y las aplicaciones de administrador y USB.
+    - *Almacenamiento externo visible 1*. Los datos se almacenan en la carpeta Android/media, que está abierta a los gestores de archivos y USB. No se requieren permisos de almacenamiento adicionales.
     - *Almacenamiento multiusuario*. Solo 1 aplicación OsmAnd tiene acceso, pero se comparte entre múltiples usuarios de Android.
     - *Especificado manualmente*. Depende de la ruta.
 
@@ -115,6 +116,11 @@ El ajuste **Almacenamiento multimedia** determina dónde se almacenan las fotos,
 - **Almacenamiento compartido** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Carpeta de cámara** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Especificado manualmente** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Al seleccionar un almacenamiento multimedia diferente, OsmAnd pregunta si desea mover los archivos multimedia existentes:
+- **Mover al nuevo destino** — Mover los archivos multimedia existentes al almacenamiento seleccionado.
+- **No mover** — Cambiar el almacenamiento sin mover los archivos existentes.
+- **Cancelar** — Mantener el almacenamiento actual.
 
 También existe un interruptor *Mantener siempre una copia local*. Cuando está activado, OsmAnd copia los medios importados de la Galería o Archivos en su propio almacenamiento, para que los medios adjuntos sigan disponibles incluso si se elimina el archivo original de la Galería o del sistema de archivos.
 
@@ -151,7 +157,7 @@ Ir a: *Archivos → En mi iPhone → OsmAnd Maps*
 | Características | Versión 1 | Versión 2 (OpenGL) |
 |:---|:--- |:--- |
 | Multiplataforma | No se utiliza en la versión de iOS. | Se adapta a ambas versiones. |
-| Dependiente de GPU / CPU | Recomendado para dispositivos de bajo rendimiento u obsoletos. | Potente motor de renderizado. <br /> Solo disponible para [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) y versiones posteriores, y en modo de prueba para [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Dependiente de GPU / CPU | Recomendado para dispositivos de bajo rendimiento u obsoletos. | Potente motor de renderizado. <br /> Solo disponible para [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) y versiones posteriores, y en modo de prueba para [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | Modo 3D | Es posible ver el mapa en 2D, y puede cambiar el ángulo de visión para obtener una [vista 3D](../widgets/map-buttons.md#3d-mode). | Puede ver el mapa en 2D y [3D](../widgets/map-buttons.md#3d-mode). |
 | Visualización del mapa | Todo el mapa se renderiza como un conjunto de teselas, y los marcadores, líneas y texto ya están dentro de estas teselas. | Primero, se renderiza todo el paquete de teselas, y luego los símbolos disponibles se aplican al mapa, [capa por capa](../../technical/algorithms/map-rendering-layers.md). |
 | Superposición / subyacencia de símbolos transparentes | Admite todos los ajustes. | No admite una capa ráster sobre texto vectorial. |

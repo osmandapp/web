@@ -20,7 +20,7 @@ Choosing the source for your guide's text is completely up to you. It can be an 
 
 ### Launch the tool {#launch-the-tool}
 
-Download the latest version of [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) and extract the files from the archive.  
+Download the latest version of [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) and extract the files from the archive.
 
 :::note
 How to use this tool is described in the [Create Offline Raster & Vector Maps](./create-offline-maps-yourself.md#osmandmapcreator) article.

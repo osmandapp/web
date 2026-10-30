@@ -105,3 +105,11 @@
     justify-content: space-between !important;
     fill: var(--svg-icon-color) !important;
 }
+.travelReviewForm {
+    margin: 8px 16px 16px;
+}
+.travelReviewButtons {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}

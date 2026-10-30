@@ -1,5 +1,5 @@
 ---
-source-hash: daf25e8f8a33156751f31d9b3a0c492d49318c6be4f22fe024411876d810c635
+source-hash: c1c1afc7811895af9e71536013e3383959e9d3f216f1acb7f58c72daa1c74224
 sidebar_position: 10
 title:  Редагування OpenStreetMap
 ---
@@ -257,13 +257,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 <TabItem value="android" label="Android">
 
-![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.png)
+![OpenStretMap editing plugin GPX to OSM Android](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.png)  
+![OpenStretMap editing plugin GPX to OSM iOS](@site/static/img/plugins/osm-editing/osm_plugin_gpx_to_osm_ios.webp)  
 
 </TabItem>
 
@@ -279,10 +279,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - **<Translate android="true" ids="shared_string_description"/>**. Дозволяє додати опис до треку. Опис застосовується до всіх вибраних треків. Якщо ви нічого не введете в поле, назви треків для кожного окремого треку будуть використовуватися як описи.  
 - **<Translate android="true" ids="gpx_tags_txt"/>**. Цей пункт у розділі налаштувань дозволяє додавати теги для ідентифікації треку. Тег за замовчуванням — "osmand". Якщо трек був записаний з певною активністю на основі вибраного профілю, ця активність також автоматично додається як тег під час завантаження. Для завантажуваних груп треків кожен трек отримує свій тег активності. Для деяких профілів (наприклад, Загальний транспорт) тег активності не додається. Ви можете вводити додаткові теги вручну, розділені комами.  
 - **<Translate android="true" ids="gpx_visibility_txt"/>**. Видимість треку для користувачів OSM:  
-   - *Публічний* означає, що трек є загальнодоступним і відображається в необробленому вигляді у ваших GPS-треках, списках GPS-треків та списках треків з часовими мітками. Дані, що передаються через API, не пов'язані зі сторінкою вашого треку. Часові мітки точок треку недоступні через публічний GPS API, а точки треку не впорядковані хронологічно.
-   - *Ідентифікований* означає, що трек буде публічно відображатися у ваших точках GPS-треків та публічних списках GPS-треків, що означає, що інші користувачі зможуть завантажити необроблений трек та пов'язати його з вашим іменем користувача. Публічні дані точок треку з часовими мітками з GPS API, передані через API точок треку, будуть посилатися на вашу оригінальну сторінку треку.
-   - *Відстежуваний* означає, що трек не відображається в публічних списках, але оброблені точки треку з часовими мітками з нього (які не можуть бути безпосередньо пов'язані з вами) завантажуються з публічного GPS API.
-   - *Приватний* означає, що трек не відображається в публічних списках, але точки треку з нього в нехронологічному порядку доступні через публічний GPS API без часових міток.
+      - *Ідентифікований* означає, що трек буде публічно відображатися у ваших точках GPS-треків та публічних списках GPS-треків, що означає, що інші користувачі зможуть завантажити необроблений трек та пов'язати його з вашим іменем користувача. Публічні дані точок треку з часовими мітками з GPS API, передані через API точок треку, будуть посилатися на вашу оригінальну сторінку треку. Ця опція вибрана за замовчуванням.
+      - *Відстежуваний* означає, що трек не відображається в публічних списках, але оброблені точки треку з часовими мітками з нього (які не можуть бути безпосередньо пов'язані з вами) завантажуються з публічного GPS API.
+      {/* *Private* means that the track is not displayed in public lists, but the track points from it in non-chronological order are available through the public GPS API without timestamps. *Public* means that the track is publicly available and displayed in raw form in your GPS tracks, GPS track lists, and timestamped track lists. The data transmitted through the API is not referenced with your track page. Trace point timestamps are unavailable through the public GPS API and track points are not ordered chronologically.*/}
 - **<Translate android="true" ids="login_account"/>** - [Обліковий запис OSM](https://www.openstreetmap.org/login).
 
 :::info

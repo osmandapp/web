@@ -1,5 +1,5 @@
 ---
-source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
+source-hash: 15444c168df6f3554637066910aa28d6eb9b1c274618b9570845570e8988b856
 sidebar_position: 10
 title:  Importeren / Exporteren
 ---
@@ -31,7 +31,7 @@ Met *Importeren* en *Exporteren* kunt u gegevens opslaan uit gegenereerde `.osf`
 - **Instellingen:**  
         [Profielen](../personal/profiles.md#actions), &nbsp;[OsmAnd/Algemene Instellingen](../personal/global-settings.md), &nbsp;[Kleuren](../personal/color-palette-schemes.md), &nbsp;[Snelle actie](../widgets/quick-action.md), &nbsp;[POI-type](../map/point-layers-on-map.md#poi-types), &nbsp;[Weg vermijden](../map/map-context-menu.md#avoid-road).
 - **Mijn Plaatsen:**  
-        [Favorieten](../personal/favorites.md#export--import), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM-notities*, *OSM-bewerkingen](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V-notities](../plugins/audio-video-notes.md), &nbsp;[Kaartmarkeringen](../personal/markers.md), &nbsp;[Markeringsgeschiedenis*, *Zoekgeschiedenis*, *Navigatiegeschiedenis](../personal/global-settings.md#history), &nbsp;*Reisplan*.
+        [Favorieten](../personal/favorites.md#export--import), &nbsp;[Bijgevoegde media](../personal/favorites.md#media), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM-notities*, *OSM-bewerkingen](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V-notities](../plugins/audio-video-notes.md), &nbsp;[Kaartmarkeringen](../personal/markers.md), &nbsp;[Markeringsgeschiedenis*, *Zoekgeschiedenis*, *Navigatiegeschiedenis](../personal/global-settings.md#history), &nbsp;*Reisplan*.
 - **Bronnen:**  
         [Renderstijl](../map/map-styles.md#custom-map-style), &nbsp;[Routering](../navigation/routing/osmand-routing.md), &nbsp;[Online routeringsengines](../navigation/routing/online-routing.md), &nbsp;[Kaartbronnen*, *Standaard/Offline Kaarten](../map/raster-maps.md), &nbsp;[Wikipedia- en Reiskaarten](../plan-route/travel-guides.md), &nbsp;[Nautische kaarten](../plugins/nautical-charts.md), &nbsp;[Wegenkaarten](../map/vector-maps.md#road-style), &nbsp;[Topografische kaarten](../plugins/topography.md), &nbsp;[Stembegeleiding (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Stembegeleiding (opgenomen)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Back-up van favorieten](../personal/favorites.md#automatic-favorites-backup).
 
@@ -93,14 +93,14 @@ Opent en herstelt `.osf`-bestanden. Tik op het bestand in de bestandsbeheerder v
 - *Herstarten*. Na het importeren van de bestanden moet de applicatie opnieuw worden opgestart.
 
 Ondersteunde importbestandstypen:
-- [Tracks, routes](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favorieten](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML- en KMZ-bestanden worden geïmporteerd met conversie naar GPX-formaat.
+- [Tracks, routes](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [favorieten](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML- en KMZ-bestanden worden geïmporteerd met conversie naar GPX-formaat.
 - [OsmAnd vectorkaarten](https://osmand.net/docs/user/map/vector-maps): `.obf`.
-- [Online kaarttegels](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Online kaarttegels](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [Back-ups & profielen](#export): `.osf`.
-- [Hoogtekaarten / 3D-gegevens](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Hoogtekaarten / 3D-gegevens](https://osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [Andere](color-palette-schemes.md): `.txt`.
 
-Voor een technisch overzicht van alle ondersteunde formaten, zie [OsmAnd Bestandsformaten](https://www.osmand.net/docs/technical/osmand-file-formats/).
+Voor een technisch overzicht van alle ondersteunde formaten, zie [OsmAnd Bestandsformaten](https://osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

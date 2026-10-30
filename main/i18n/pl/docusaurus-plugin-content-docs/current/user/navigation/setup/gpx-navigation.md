@@ -1,5 +1,5 @@
 ---
-source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
+source-hash: 334708e5a8593c3a9d8ad26cd8d035221ee3dbfa4929c3dd8a3cbfc49b55fc2d
 sidebar_position: 2
 title:  Nawiguj po śladzie
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Opcja *Nawigacja po śladzie* (GPX) pozwala na podążanie po predefiniowanej trasie lub śladzie na mapie. Może być to szczególnie przydatne podczas aktywności na świeżym powietrzu, takich jak piesze wędrówki, jazda na rowerze czy jazda terenowa, gdzie zaplanowana trasa poprawia bezpieczeństwo i wydajność. Jeśli podróżujesz w zorganizowanej grupie, ta funkcja pomaga Tobie i każdemu członkowi grupy mieć te same informacje o trasie co pozostali.  
 
-Opcja *Nawigacja po śladzie* może być również używana w życiu codziennym. Możesz użyć wcześniej [zapisanego śladu](../../plugins/trip-recording.md) lub [utworzyć ślad](../../personal/tracks/manage-tracks.md#create-a-track) i udostępnić go rodzinie lub znajomym, zamiast tłumaczyć im trasę. Możesz również używać [tras na mapie OsmAnd](../../../../blog/routes/) do nawigacji. Jak je podświetlić na mapie i co oznaczają ich kolory, opisano w sekcji [Trasy](../../map/vector-maps.md#routes) artykułu *Mapy wektorowe*.  
+Opcja *Nawigacja po śladzie* może być również używana w życiu codziennym. Możesz użyć wcześniej [zapisanego śladu](../../plugins/trip-recording.md) lub [utworzyć ślad](../../personal/tracks/manage-tracks.md#create-a-track) i udostępnić go rodzinie lub znajomym, zamiast tłumaczyć im trasę. Możesz również używać [tras na mapie OsmAnd](https://osmand.net/blog/routes/) do nawigacji. Jak je podświetlić na mapie i co oznaczają ich kolory, opisano w sekcji [Trasy](../../map/vector-maps.md#routes) artykułu *Mapy wektorowe*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -219,7 +219,7 @@ Podczas przygotowywania lub nawigacji po śladzie GPX nie można dodawać punkt�
 
 *Nawigacja po śladzie GPX* zawiera te same [instrukcje głosowe](../guidance/voice-navigation.md) co nawigacja po trasie. Jednak niektóre zakręty lub ronda mogą nie być interpretowane poprawnie, ponieważ w plikach GPX nie ma informacji o skrzyżowaniach dróg, z wyjątkiem plików GPX utworzonych przez OsmAnd. Aby wyeliminować te problemy, należy użyć funkcji [Dopasuj do dróg](#attach-to-the-roads).  
 
-Podczas nawigacji można korzystać z różnych opcji, takich jak powiększanie lub pomniejszanie, przesuwanie mapy lub przełączanie na inny styl mapy. Jeśli zboczysz ze śladu, OsmAnd automatycznie przeliczy trasę, aby sprowadzić Cię z powrotem na ślad. Można również dostosować prędkość śladu i ustawić alerty dźwiękowe o zbliżaniu się do punktów lub odchyleniach od trasy.  
+Podczas nawigacji można korzystać z różnych opcji, takich jak powiększanie lub pomniejsianie, przesuwanie mapy lub przełączanie na inny styl mapy. Jeśli zboczysz ze śladu, OsmAnd automatycznie przeliczy trasę, aby sprowadzić Cię z powrotem na ślad. Można również dostosować prędkość śladu i ustawić alerty dźwiękowe o zbliżaniu się do punktów lub odchyleniach od trasy.  
 
 
 ## Powiązane artykuły {#related-articles}

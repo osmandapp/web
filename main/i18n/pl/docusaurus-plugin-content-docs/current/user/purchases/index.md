@@ -1,9 +1,9 @@
 ---
-source-hash: be440c1569e9bfbe942ce6274154063e4405eb3f2127ea1a15070e5680537c7c
+source-hash: 446dc6fb8862e87b5c5410884e5d855a41f55489f8f416fdb6d8004a6d595853
 sidebar_position: 9
 ---
 
-# Zakupy {#zakupy}
+# Zakupy {#purchases}
 
 Aplikacja OsmAnd jest dostępna dla systemów Android i iOS. OsmAnd oferuje szeroki wachlarz funkcji. Większość z nich jest dostępna w bezpłatnej wersji aplikacji. Płatne usługi OsmAnd zapewniają rozszerzoną funkcjonalność.
 
@@ -40,4 +40,4 @@ Istnieje kilka sposobów, aby to zrobić:
 
 - OsmAnd+ w [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - OsmAnd w [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon nie jest już dostępny. Szczegółowe informacje można znaleźć [tutaj](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon nie jest już dostępny. Szczegółowe informacje można znaleźć [tutaj](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).

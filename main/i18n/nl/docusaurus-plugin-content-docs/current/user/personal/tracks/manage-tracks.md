@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title:  Tracks beheren
 ---
@@ -203,7 +203,7 @@ Nadat u uw keuze heeft gemaakt, zijn de volgende stappen beschikbaar:
 
 - **Verplaatsen** — U kunt uw gegevens organiseren door geselecteerde tracks en mappen naar andere mappen te verplaatsen.
 
-- [Activiteit wijzigen](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Met deze actie kunt u het activiteitstype wijzigen, bijvoorbeeld naar *Auto*, *Avontuurlijke motorsport*, *Backpacken* of andere, voor de geselecteerde track.
+- [Activiteit wijzigen](../../map/tracks/track-context-menu.md#track-activity-type) — Met deze actie kunt u het activiteitstype wijzigen, bijvoorbeeld naar *Auto*, *Avontuurlijke motorsport*, *Backpacken* of andere, voor de geselecteerde track.
 
 - [Uiterlijk wijzigen](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Met deze optie kunt u het uiterlijk van geselecteerde tracks aanpassen, waardoor ze beter zichtbaar en herkenbaar worden op de kaart.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
 sidebar_position: 9
 title:  Online Maps
 ---
@@ -69,10 +69,10 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_s
 ## Wie man Rasterkarten vorbereitet {#how-to-prepare-raster-maps}
 
 :::info
-Hauptartikel zur Vorbereitung von Karten [lesen Sie hier](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Hauptartikel zur Vorbereitung von Karten [lesen Sie hier](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Obwohl das Plugin *Online Maps* heißt, können Sie die Karten auch ohne Internetverbindung verwenden. Sie müssen nur die Teile der Karten (oft Kacheln genannt) speichern, um sie später zu verwenden. Laden Sie dazu ein spezielles [Map Creator Tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunter, das vom OsmAnd-Team entwickelt wurde.
+Obwohl das Plugin *Online Maps* heißt, können Sie die Karten auch ohne Internetverbindung verwenden. Sie müssen nur die Teile der Karten (oft Kacheln genannt) speichern, um sie später zu verwenden. Laden Sie dazu ein spezielles [Map Creator Tool](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) herunter, das vom OsmAnd-Team entwickelt wurde.
 
 Wählen Sie den Bereich aus, den Sie herunterladen möchten, klicken Sie auf "Preload area", stellen Sie dann die kleinsten und größten Zoomstufen ein, die Sie anzeigen möchten, und laden Sie die Kacheln herunter.
 Für die <b>Android-Version</b> können Sie sie in den Ordner <i>osmand/tiles/*tile type*</i> Ihres Telefons kopieren. Sie müssen auch <i>Karte konfigurieren → Überlagerungskarte</i> öffnen und OsmAnd-Online-Kacheln auswählen.
@@ -101,4 +101,4 @@ Online-Kacheln können hilfreich sein, wenn Sie nur einen kleinen Ausschnitt der
   
     - Überprüfen Sie, ob das Plugin "Online Maps" aktiviert ist: *Menü → Plugins → Online Maps*.  
     - Stellen Sie sicher, dass Sie eine aktive Internetverbindung haben, um auf Satellitenbilder zugreifen zu können.  
-    - Prüfen Sie, ob die ausgewählte Online-Karte heruntergeladen ist oder [zusätzliche Einstellungen](../map/raster-maps.md#layers) erfordert.
+    - Prüfen Sie, ob die ausgewählte Online-Karte herunterladen ist oder [zusätzliche Einstellungen](../map/raster-maps.md#layers) erfordert.

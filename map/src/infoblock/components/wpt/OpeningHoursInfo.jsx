@@ -2,7 +2,7 @@ import React from 'react';
 import { List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { ReactComponent as OpeningHoursIcon } from '../../../assets/icons/ic_action_opening_hour_16.svg';
-import { localizeWeekTokens } from '../../../util/dateFmt';
+import { localizeOpeningHours } from '../../../util/dateFmt';
 import styles from '../wpt/wptDetails.module.css';
 
 const IS_OPEN_PREFIX = 'open:';
@@ -41,7 +41,7 @@ export default function OpeningHoursInfo({ openingHours }) {
             { prefix: 'Will close at', stringId: 'will_close_at' },
             { prefix: 'Will open on', stringId: 'will_open_on' },
             { prefix: 'Open from', stringId: 'open_from' },
-            { prefix: 'Open till', stringId: 'open_till' },
+            { prefix: 'Open until', stringId: 'open_till' },
             { prefix: 'Open', stringId: 'poi_dialog_opening_hours' },
             { prefix: 'off', stringId: 'day_off_label' },
         ];
@@ -49,10 +49,10 @@ export default function OpeningHoursInfo({ openingHours }) {
         for (const { prefix, stringId } of patterns) {
             if (text && text.startsWith(prefix)) {
                 const time = text.substring(prefix.length);
-                return t(stringId) + localizeWeekTokens(time);
+                return t(stringId) + localizeOpeningHours(time);
             }
         }
-        return text;
+        return localizeOpeningHours(text);
     }
 
     return (

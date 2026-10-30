@@ -76,6 +76,11 @@ export default async function test() {
     await actionOpenShare(favNameShort, 'favorite-folder');
     linkFav1 = await createShareFile(favNameShort);
 
+    // check owner can open the Share menu of favorites by its url
+    const favShareMenuUrl = (await getUrl()).split('/map/')[1].split('#')[0];
+    await actionOpenMap(favShareMenuUrl);
+    await waitBy(By.id(`se-share-file-item-${favNameShort}`));
+
     await clickBy(By.id('se-close-share-menu'));
 
     await actionOpenShare(favName2Short, 'favorite-folder');

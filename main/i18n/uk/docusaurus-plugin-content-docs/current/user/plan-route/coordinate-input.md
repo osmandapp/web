@@ -1,8 +1,9 @@
 ---
-source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
+source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
 sidebar_position: 3
 title:  Введення координат
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 <InfoAndroidOnly />
@@ -25,11 +25,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Як користуватися {#how-to-use}
 
-Ви можете створювати шляхові точки з меню *[Маркери на карті](../personal/markers.md#actions)* або з [Мої місця](../personal/myplaces.md) (дивіться скріншоти). Будь ласка, дотримуйтесь цих шляхів, щоб перейти до опції введення координат:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → кнопка "Планета" внизу екрана*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+Ви можете створювати шляхові точки з меню *[Маркери на карті](../personal/markers.md#actions)*. Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Як знайти введення координат](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Як знайти введення координат](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
+![Як знайти введення координат](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png)
 
 Після того, як ви відкрили екран введення координат:
 
@@ -98,4 +96,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Коли ви торкаєтеся точки, стає можливим змінити її координати. Натисніть кнопку *Застосувати*, щоб зберегти зміни.
 
 
-## Зберегти як трек {#save-as-
+## Зберегти як трек {#save-as-track}
+
+Щоб зберегти точки як трек, натисніть кнопку *Назад* ( &#8592; ) або скористайтеся меню *[Опції](#options)*.
+
+![Введення координат зберегти точку Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Введення координат зберегти точку Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
+
+У спливаючому меню ви можете ввести власну назву треку або зберегти її за замовчуванням. Натисніть <Translate android="true" ids="shared_string_save"/>, щоб зберегти додані точки як новий трек.
+Ви знайдете свій трек у [меню Мої місця](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

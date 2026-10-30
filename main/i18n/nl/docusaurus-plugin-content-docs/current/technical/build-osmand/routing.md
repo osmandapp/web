@@ -1,5 +1,5 @@
 ---
-source-hash: 25c29183922ffa0df481d5ee27894c6a7f4653e20a70b824ecbc3791edaafed7
+source-hash: 9fba3febb3976b4f66fedc9a6c2d4e8c305fe11e72aa3f7b02a2f5cf993505aa
 sidebar_position: 3
 ---
 
@@ -15,4 +15,4 @@ In sommige gevallen wilt u de routeringservaring van OsmAnd uitbreiden of aanpas
 * obstacle (straf in seconden) - definieert een straf die wordt toegevoegd aan de routeringstijd
 * obstacle_time (straf in seconden) - definieert een straf die aan de gebruiker wordt getoond, maar niet wordt meegenomen door de routeringsengine, d.w.z. obstacle_time - 2 uur, obstacle - 1 minuut, op de kortste route zal de engine een route vinden met een obstakel van 1 minuut, maar de gebruiker zal zien dat de routetijd 2 uur is.
 
-Om [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) te testen, kunt u [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) gebruiken. Om routing.xml op het apparaat te testen, kunt u eenvoudig de standaard routing.xml in de hoofdmap van OsmAnd vervangen door die op de SD-kaart.
+Om [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml) te testen, kunt u [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) gebruiken. Om routing.xml op het apparaat te testen, kunt u eenvoudig de standaard routing.xml in de hoofdmap van OsmAnd vervangen door die op de SD-kaart.

@@ -1,5 +1,5 @@
 ---
-source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
+source-hash: 968394db45647827e95cb32f776ef7f818433675c6fb40f6ba7071f88e7d270d
 sidebar_position: 2
 title: Tela do Mapa Durante a Navegação
 ---
@@ -49,7 +49,7 @@ Durante a navegação, a aparência do mapa se ajusta com base no perfil de nave
 
 | Parâmetro | Descrição | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | O tempo para o qual a visualização do mapa é sincronizada com a posição atual após o movimento. | *Valor:* <br /> Nunca, 5 seg, 10 seg, 15 seg, 20 seg, 25 seg, 30 seg, 45 seg, 60 seg, 50 seg.|
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | O tempo para o qual a visualização do mapa é sincronizada com a posição atual após o movimento. | *Valor:* <br /> Nunca, 5 seg, 10 seg, 15 seg, 20 seg, 25 seg, 30 seg, 45 seg, 60 seg, 90 seg.|
 | *<Translate android="true" ids="auto_zoom_map"/>* | Dimensiona automaticamente o mapa de acordo com sua velocidade, desde que o mapa esteja sincronizado com sua posição atual. | *Valor:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manual. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - zoom é 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - zoom é 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - zoom é 5 m. <br /> As mudanças de auto-zoom podem ser animadas (Suave) ou baseadas em etapas (Discreta), dependendo das [configurações de desenvolvimento](navigation-settings.md#development-settings). No modo Suave, as mudanças de zoom usam uma animação controlada (cerca de 0,1 zoom/segundo). O auto-zoom não ajusta o zoom em velocidades muito baixas (abaixo de ~7 km/h). Se a mudança de zoom necessária levar menos de ~1,5 segundos, a animação não é iniciada. <br /> O auto-zoom visa manter a próxima manobra em uma área de foco estável na tela, para que a distância visível à frente permaneça consistente durante a condução.|
 | *Auto zoom ângulo 3D* | Define a inclinação do mapa ao alternar para a visualização 3D durante a navegação. Um ângulo maior faz o horizonte aparecer mais distante, proporcionando maior visibilidade à frente. |É aplicado apenas quando o Auto zoom está ativado. Valores: 20°, 25°, 30°, 35°, 40°. Padrão: 25°. <br /> Ao se aproximar de uma manobra/interseção, o aplicativo pode reduzir gradualmente a inclinação 3D em direção a uma visualização 2D para manter a próxima curva legível. |
 | *Visualizar próxima curva* | Rotaciona automaticamente o mapa ligeiramente com antecedência para mostrar a próxima curva ou manobra durante a navegação. Ajuda a antecipar ações futuras.  | Ativado por padrão. Se você exportar e reimportar um perfil, verifique esta configuração, pois em algumas versões anteriores ela poderia ser redefinida para “ativado.”  <br /> A rotação/visualização é acionada assim que o próximo ponto de manobra entra na área de foco (para que o mapa comece a “olhar” para a curva quando ela se tornar relevante). |
@@ -154,7 +154,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 </Tabs>
 
-| Parâmetro | Descrição | Nota |
+| Parâmetro | Descrição | Note |
 |:------------|:---------------|:---------------|
 | **<Translate android="true" ids="screen_alerts"/>** | Notificações, como alertas de trânsito ou limites de velocidade, aparecerão na tela como um widget. Elas aparecem no canto inferior esquerdo enquanto você está navegando. | [Tipos de widgets de alerta](../../widgets/nav-widgets.md#alert-widget)   |
 

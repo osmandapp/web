@@ -1,5 +1,5 @@
 ---
-source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
+source-hash: 40444298714f3efdf33ba91bcf4a1ae66aa667d887d5d943cfe77e1fa53575ee
 title:  Tracce
 sidebar_position: 2
 ---
@@ -170,7 +170,7 @@ Tocca il pulsante [La mia posizione](../../map/interact-with-map.md#my-position-
 - [Aspetto della traccia](./appearance.md)
 - [Menu contestuale della traccia](./track-context-menu.md)
 - [Naviga per traccia](../../navigation/setup/gpx-navigation.md)
-- [Routes on the map](https://docs.osmand.net/blog/routes) articolo del blog
+- [Routes on the map](https://osmand.net/blog/routes) articolo del blog
 - [Configura mappa](../../map/configure-map-menu.md)  
 - [Tracce GPX](../../personal/tracks/index.md)  
 - [Pianifica percorso](../../plan-route/index.md)  

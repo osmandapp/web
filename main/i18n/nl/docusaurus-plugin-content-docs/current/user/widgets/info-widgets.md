@@ -1,5 +1,5 @@
 ---
-source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
@@ -255,7 +255,7 @@ De [eenvoudige](../widgets/configure-screen.md#widget-panels) *Glijgetal* widget
 - **Glijgetal naar doel** toont het exacte glijgetal dat nodig is om het doelpunt te bereiken.
 - **Doelverhoging** toont de verhoging van het doelpunt. De [Kaartmarkering](../personal/markers.md) moet als doelpunt worden gebruikt.
 
-Tik rechtstreeks op de widget om tussen deze modi te schakelen. De schakeloptie is niet beschikbaar in het [contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu). 
+Tik rechtstreeks op de widget om tussen deze modi te schakelen. 
 
 | | |
 |:------------|:------------|
@@ -287,11 +287,13 @@ Tik rechtstreeks op de widget om tussen deze modi te schakelen. De schakeloptie 
 
 <TabItem value="android" label="Android">
 
-**Gemiddeld glijgetal** toont het gemiddelde glijgetal voor een gespecificeerd tijdsinterval.
+- **Gemiddeld glijgetal** toont het gemiddelde glijgetal voor een gespecificeerd tijdsinterval.
+- **Gemiddelde verticale snelheid** toont hoe snel u stijgt of daalt over het tijdsinterval: het hoogteverschil tussen het eerste en laatste punt van het interval, gedeeld door de tijd daartussen. Positieve waarden betekenen stijgen, negatieve waarden betekenen dalen. U kunt het tijdsinterval voor deze widget instellen van 15 seconden tot 60 minuten.
 
 | | |
 |:------------|:------------|
 | Inschakelen | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Kies een paneel → Widget toevoegen → Glijgetal* |
+| Door te tikken | Wijzigt *Gemiddeld glijgetal* of *Gemiddelde verticale snelheid*  |
 | Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -299,7 +301,7 @@ Tik rechtstreeks op de widget om tussen deze modi te schakelen. De schakeloptie 
 <TabItem value="ios" label="iOS">
 
 - **Gemiddeld glijgetal** toont het gemiddelde glijgetal voor een gespecificeerd tijdsinterval.
-- **Gemiddelde verticale snelheid** geeft de snelheid aan waarmee een object stijgt of daalt gedurende een bepaalde tijd. Alleen het eerste en laatste punt van het tijdsinterval worden in overweging genomen voor de evaluatie. U kunt het tijdsinterval voor deze widget instellen van 15 seconden tot 60 minuten. U moet de [Kaartmarkering](../personal/markers.md) als doelpunt gebruiken.
+- **Gemiddelde verticale snelheid** toont hoe snel u stijgt of daalt over het tijdsinterval: het hoogteverschil tussen het eerste en laatste punt van het interval, gedeeld door de tijd daartussen. Positieve waarden betekenen stijgen, negatieve waarden betekenen dalen. U kunt het tijdsinterval voor deze widget instellen van 15 seconden tot 60 minuten.
 
 | | |
 |:------------|:------------|
@@ -363,11 +365,11 @@ Coördinatenwidgets worden bovenaan het scherm weergegeven. Pictogrammen met een
 | Formaat | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
 
 
-## GPS Info   {#gps-info}
+## GPS-info   {#gps-info}
 
 <InfoAndroidOnly />
 
-![GPS Info Android widget](@site/static/img/widgets/gps_info_widget.png)
+![GPS-info Android-widget](@site/static/img/widgets/gps_info_widget.png)
 
 De GPS (Global Positioning System) informatie-widget toont het aantal satellieten dat het apparaat momenteel detecteert en gebruikt. U kunt het gebruiken om de GPS-status te controleren in geval van een slecht signaal.  
 
@@ -508,13 +510,13 @@ U kunt hier een meer gedetailleerde beschrijving lezen: **[<Translate android="t
 
 <TabItem value="android" label="Android">  
 
-![trip_recording_widget](@site/static/img/widgets/wid_trip_rec.png)
+![Ritregistratie-widget](@site/static/img/widgets/wid_trip_rec.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
+![Ritregistratie-widget](@site/static/img/widgets/widget_trip_recording-_rec_ios.png)
 
 </TabItem>
 
@@ -546,7 +548,7 @@ Om Externe Sensoren widgets aan het kaartscherm toe te voegen, schakelt u de Osm
 
 <TabItem value="ios" label="iOS">
 
-![trip_recording_widget](@site/static/img/widgets/external-sensors-widgets_ios.png)
+![Externe sensor widgets iOS](@site/static/img/widgets/external-sensors-widgets_ios.png)
 
 </TabItem>
 
@@ -677,13 +679,13 @@ De Parkeer-plugin widget toont de afstand van het midden van het scherm tot de p
 | Formaat | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,unit_of_length"/>* |
 
 
-### Mapillary Widget {#mapillary-widget}
+### Mapillary-widget {#mapillary-widget}
 
 :::note  
 Om de Mapillary-widget aan het kaartscherm toe te voegen, schakelt u de OsmAnd [Mapillary-plugin](../plugins/mapillary.md) in.  
 :::  
 
-![Mapillary widget](@site/static/img/widgets/mapillary_widget.png)
+![Mapillary-widget](@site/static/img/widgets/mapillary_widget.png)
 
 Dit is een Mapillary-plugin widget die snelle toegang biedt tot de Mapillary-applicatie, waarmee u [*straatbeelden*](../plugins/mapillary.md#enable-layer) kunt toevoegen. De widget wordt automatisch aan de kaart toegevoegd wanneer de plugin is ingeschakeld.
 
@@ -721,7 +723,7 @@ U kunt configureren welke actie standaard is geselecteerd:
 | Lang tikken | Opent het [Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) |
 
 
-### Tracker Widget {#tracker-widget}
+### Tracker-widget {#tracker-widget}
 
 <InfoAndroidOnly />
 
@@ -733,7 +735,7 @@ Om de plugin en widget te laten werken, moet u [OsmAnd Online GPS Tracker](https
 
 Deze OsmAnd Tracker-plugin widget is gebruikt om snel toegang te krijgen tot de OsmAnd Tracker-app en uw locatie-informatie te delen met andere gebruikers. De app stuurt *Live Locatie*-berichten naar geselecteerde chats binnen een bepaalde tijd, toont een lijst met contacten en groepen, en controleert chats op berichten met uw locatie, die vervolgens op een kaart in OsmAnd worden weergegeven.  
 
-![Tracker widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
+![Tracker-widget](@site/static/img/plugins/online-tracker/tracker_widget.png)
 
 | | |
 |:------------|:------------|
@@ -755,13 +757,13 @@ Om Ontwikkelaarswidgets aan het kaartscherm toe te voegen, schakelt u de OsmAnd 
 
 <TabItem value="android" label="Android">
 
-![FPS widget Android](@site/static/img/widgets/fps_widgets_andr.png)  
+![FPS-widget Android](@site/static/img/widgets/fps_widgets_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![FPS widget iOS](@site/static/img/widgets/fps_widget_ios.png)
+![FPS-widget iOS](@site/static/img/widgets/fps_widget_ios.png)
 
 </TabItem>
 

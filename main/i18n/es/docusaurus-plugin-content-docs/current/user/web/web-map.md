@@ -1,5 +1,5 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
 sidebar_label: Mapa
 title: Mapa global en el sitio web
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 El mapa web de OsmAnd es un mapa global basado en datos de [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Permite a los usuarios ver sus propios datos, como tracks y favoritos, crear rutas de navegación para cualquier perfil y acceder a funciones adicionales como el tiempo, tracks GPX públicos, PDI e imágenes de Wikimedia. Explora y personaliza tu experiencia con los datos directamente en tu navegador.
 
-![Todo en OsmAnd Web](@site/static/img/web/web_map_all.png)
+![OsmAnd Web all](@site/static/img/web/web_map_all.png)
 
 
 ## Menú contextual del mapa {#map-context-menu}
@@ -73,21 +73,32 @@ El marcador seleccionado permanece visible al hacer zoom en el mapa.
 
 Los marcadores cercanos pueden ocultarse para hacer más fácil ver el objeto seleccionado.
 
-![Objeto seleccionado](@site/static/img/web/selected_object_favorite.png) ![Objeto seleccionado](@site/static/img/web/selected_object_explore.png)
+Cuando el tipo de mapa [OsmAnd vector (beta)](#map-type) está habilitado, puedes seleccionar objetos directamente en el mapa, incluidos PDI, edificios, números de casa y paradas de transporte público. Al pasar el cursor sobre un objeto seleccionable, el puntero cambia a una mano señalando. Los objetos sin nombre ni icono, como carreteras sin nombre y senderos peatonales, no se pueden seleccionar.
+
+Al seleccionar un objeto se abre su panel de detalles:
+
+- **PDI** — el panel muestra la misma información y acciones rápidas que en los resultados de [Búsqueda](web-search.md) y en la [superposición de PDI](#poi-overlay).
+- **Objeto sin datos de PDI** — por ejemplo, un edificio o un número de casa. El panel muestra el tipo de objeto, la dirección y las coordenadas.
+- **Parada de transporte público** — el panel también puede incluir la sección Rutas con el filtro de tipo de transporte, como se describe en [Paradas de transporte](#transport-stops).
+
+Si varios objetos están ubicados en el punto seleccionado, el panel los muestra uno a uno. Usa las flechas junto al botón de cierre para cambiar entre ellos. La flecha de retroceso aparece a partir del segundo objeto, y la flecha de avance está inactiva en el último.
+
+![Objeto seleccionado](@site/static/img/web/selected_object_favorite.png) ![Objeto seleccionado](@site/static/img/web/several_objects.webp)
 
 
 
 ## Menú Configurar mapa {#configure-map-menu}
 
-El menú Configurar mapa te permite gestionar los ajustes de visualización de los datos del mapa, como las capas de PDI, Favoritos, tracks y terreno. Este menú está disponible después de que inicies sesión en tu cuenta de OsmAnd. Para abrirlo, haz clic en el botón en la **esquina superior izquierda** o accede a él a través del **Menú**.
+El menú Configurar mapa te permite gestionar los ajustes de visualización de los datos del mapa, como las capas de PDI, Favoritos, tracks, terreno y tipo de mapa. Este menú está disponible después de que inicies sesión en tu cuenta de OsmAnd. Para abrirlo, haz clic en el botón en la **esquina superior izquierda** o accede a él a través del **Menú**.
 
 - [Superposición de PDI...](#poi-overlay). Te permite elegir y mostrar las categorías de PDI necesarias en el mapa.
 - [Favoritos](#favorites). Activa o desactiva la visualización de favoritos en el mapa.
 - [Tracks](#tracks). Contiene los tracks GPX visibles en el mapa.
 - [Paradas de transporte](#transport-stops). Activa o desactiva la visualización de paradas de transporte público en el mapa. 
 - [Terreno](#terrain). Activa o desactiva el esquema de color del terreno en el mapa.
+- [Raster (tiles) / OsmAnd vector (beta)](#map-type). Muestra el tipo de mapa actualmente en uso y te permite cambiar entre el mapa raster y el vectorial.
 
-![Menú de PDI](@site/static/img/web/configure_map_web_new.png)
+![Menú de PDI](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### Superposición de PDI {#poi-overlay}
@@ -184,6 +195,17 @@ En esta sección, puedes:
 - Ajustar la visibilidad de la capa de terreno seleccionada de **0% a 100%**.
 
 ![Menú Configurar mapa Terreno](@site/static/img/web/configure_map_terrain.png)
+
+### Tipo de mapa {#map-type}
+
+Selecciona el elemento tipo de mapa en el menú Configurar mapa para elegir uno de los siguientes:
+
+- **Raster (tiles)** — el tipo de mapa predeterminado. En este tipo de mapa, solo puedes seleccionar marcadores mostrados sobre el mapa, como los resultados de [Búsqueda](web-search.md), los marcadores de [superposición de PDI](#poi-overlay), [favoritos](#favorites) y [paradas de transporte](#transport-stops).
+- **OsmAnd vector (beta)** — el mapa vectorial. En este tipo de mapa, puedes [seleccionar objetos directamente en el mapa](#selected-object).
+
+El tipo de mapa seleccionado se guarda y se aplica la próxima vez que abras el mapa. **Restablecer a valores predeterminados** en el encabezado de Configurar mapa cambia el mapa de nuevo a **Raster (tiles)**.
+
+El mapa vectorial requiere un navegador con soporte para WebGL. Si WebGL no está disponible, el mapa cambia automáticamente a **Raster (tiles)**.
 
 
 ## Ajustes {#settings}
@@ -294,6 +316,10 @@ Dependiendo de los parámetros especificados, las cadenas de URL pueden contener
 10. **Planificar una ruta**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Enlace directo a la página [**Explorar**](https://osmand.net/docs/user/web/web-search#explore) actual&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **Detalles de PDI**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Objeto del mapa sin datos de PDI** (por ejemplo, un edificio)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## Artículos relacionados {#related-articles}

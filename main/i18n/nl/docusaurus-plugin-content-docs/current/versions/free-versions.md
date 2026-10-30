@@ -1,5 +1,5 @@
 ---
-source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
+source-hash: cd041547a7f80045d462bbc7c5a375476089c6105d35475b185588517c4f7162
 sidebar_position: 2
 ---
 
@@ -19,6 +19,21 @@ Je kunt de nieuwste versie van OsmAnd gratis downloaden via de vermelde appstore
 Directe links naar gratis OsmAnd-versies.
 
 ## Versie 5 {#version-5}
+
+### Versie 5.4 {#version-54}
+
+Releasedatum 09/2026:
+
+- Vernieuwde zoek-UI: sortering, categoriefilters, schonere look.
+- Foto's en media toevoegen aan Favorieten.
+- Favorieten: ondersteuning voor subgroepen en vastzetbare mappen.
+- Coördinaten: zoeken, kaartraster en POI-weergave ondersteunen nu EPSG en Maidenhead-locator.
+- Navigatieonderbrekingen opgelost; schakelen tussen Standaard- en Snelle routering.
+- Android Auto-kaartschaal apart instellen van je telefoon.
+- Nieuwe ruimtelijke zoekfunctie — vind plaatsen en zoek rond een plaats.
+- Astronomie: toegevoegde verkenners voor zons- en maansverduisteringen.
+
+<DownloadRelease blog="osmand-android-5-4-released" release="net.osmand-5.4.7-5407.apk" />
 
 ### Versie 5.3 {#version-53}
 
@@ -699,7 +714,7 @@ Releasedatum 10/2013:
 
 - Ondersteuning van Full HD-apparaten
 - Ondersteuning van transparante kaartachtergrond
-- Gedownloede kaarten weergeven en het downloaden van ontbrekende kaarten direct vanuit de kaartweergave vergemakkelijken
+- Gedownloegde kaarten weergeven en het downloaden van ontbrekende kaarten direct vanuit de kaartweergave vergemakkelijken
 - Contourlijnkaartbestanden nu gebundeld voor landen/regio's
 - Nieuwe wereldwijde basiskaart met belangrijke wegen, spoorwegen en belangrijke oppervlaktekenmerken zoals bossen.
 - Kaartvergrootglasfunctie (lang klikken op zoomknop) - Handig voor zowel tegel- als vectorkaarten

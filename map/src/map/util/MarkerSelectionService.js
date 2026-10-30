@@ -1,5 +1,10 @@
 import { DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
-import { createLayeredPinIcon, createHoverOutlineIcon, createDirectionPinIcon } from '../markers/SelectedPinMarker';
+import {
+    createLayeredPinIcon,
+    createHoverOutlineIcon,
+    createDirectionPinIcon,
+    getLayeredPinRects,
+} from '../markers/SelectedPinMarker';
 import L from 'leaflet';
 import { hexToRgba } from '../../util/ColorUtil';
 import { updateMarkerZIndex } from '../layers/ExploreLayer';
@@ -12,10 +17,6 @@ export const SELECTED_ICON_SIZE = 36;
 export const SELECTED_PIN_COLOR = '#FF8800';
 export const EXPLORE_PHOTO_ICON_SIZE = 43;
 
-const SELECTED_MARKER_HIDE_MAX_ZOOM = 16;
-const SELECTED_MARKER_HIDE_RADIUS_COEFF = 300 / 16;
-const SELECTED_MARKER_HIDE_MIN_RADIUS_M = 50;
-
 const DIRECTION_PIN_TIP_MARGIN = 6;
 
 export const toShape = (s) => (s === 'octagon' || s === 'hexagon' ? 'hexagon' : s);
@@ -25,26 +26,6 @@ const toColor = (c) => {
     if (c.startsWith('#')) return hexToRgba(c);
     return c;
 };
-
-export function getSelectedMarkerHideRadiusM(zoom) {
-    if (zoom >= SELECTED_MARKER_HIDE_MAX_ZOOM) {
-        return SELECTED_MARKER_HIDE_MIN_RADIUS_M;
-    }
-    const d = SELECTED_MARKER_HIDE_MAX_ZOOM - zoom;
-    return Math.max(SELECTED_MARKER_HIDE_MIN_RADIUS_M, SELECTED_MARKER_HIDE_RADIUS_COEFF * d * d);
-}
-
-function collectMarkerLayers(layerOrGroup, out = []) {
-    if (!layerOrGroup) return out;
-    if (layerOrGroup instanceof L.Marker) {
-        out.push(layerOrGroup);
-        return out;
-    }
-    if (layerOrGroup.eachLayer) {
-        layerOrGroup.eachLayer((l) => collectMarkerLayers(l, out));
-    }
-    return out;
-}
 
 function hideMarkerElement(el) {
     el.style.display = 'none';
@@ -58,6 +39,10 @@ function showMarkerElement(el) {
     el.style.opacity = '';
 }
 
+function rectsIntersect(a, b) {
+    return a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
+}
+
 export function restoreHiddenMarkers(hiddenLayersRef) {
     hiddenLayersRef.current.forEach((layer) => {
         const el = layer.getElement();
@@ -66,28 +51,28 @@ export function restoreHiddenMarkers(hiddenLayersRef) {
     hiddenLayersRef.current = [];
 }
 
-export function hideMarkersNearPin(map, ctx) {
+export function hideMarkersUnderPin(map, ctx) {
     const selectedPin = ctx.selectedCreatedLayerRef?.current;
-    if (!selectedPin || !map.hasLayer(selectedPin)) return;
+    if (!selectedPin?.options.isSelection || !map.hasLayer(selectedPin)) {
+        return;
+    }
 
-    const radiusM = getSelectedMarkerHideRadiusM(map.getZoom());
     restoreHiddenMarkers(ctx.selectedHiddenLayersRef);
-    const center = selectedPin.getLatLng();
+    const pinRects = getLayeredPinRects(selectedPin.getElement());
     const hidden = [];
 
-    map.eachLayer((group) => {
-        collectMarkerLayers(group, []).forEach((layer) => {
-            if (layer === selectedPin) return;
-            const ll = layer.getLatLng();
-            if (!ll || center.distanceTo(ll) > radiusM) return;
-            const el = layer.getElement();
-            if (el) {
-                hideMarkerElement(el);
-                hidden.push(layer);
-            }
-        });
+    // measure all markers before hiding any, so each hide does not force a new layout
+    map.eachLayer((layer) => {
+        if (!(layer instanceof L.Marker) || layer === selectedPin) {
+            return;
+        }
+        const rect = layer.getElement()?.getBoundingClientRect();
+        if (rect && pinRects.some((pinRect) => rectsIntersect(pinRect, rect))) {
+            hidden.push(layer);
+        }
     });
 
+    hidden.forEach((layer) => hideMarkerElement(layer.getElement()));
     ctx.selectedHiddenLayersRef.current = hidden;
 }
 
@@ -290,7 +275,7 @@ export function applySelectedPins({ ctx, map, items }) {
 }
 
 // Main entry point for showing a selected or hovered pin.
-// isSelection=true: creates a new separate pin on top of the map and hides nearby markers.
+// isSelection=true: creates a new separate pin on top of the map and hides the markers it overlaps.
 // isSelection=false (hover): updates the existing marker icon in-place.
 export function applySelectedPin({ ctx, map, layer = null, latlng = null, markerData, isSelection = false }) {
     if (!ctx || !map || !markerData) {
@@ -312,10 +297,11 @@ export function applySelectedPin({ ctx, map, layer = null, latlng = null, marker
     if (isSelection) {
         selectedLayer = applySelectedWithCreateMarker(map, ll, markerData, layer?.options);
         selectedLayer.options.idObj = layer?.options?.idObj ?? null;
+        selectedLayer.options.isSelection = true;
         ctx.selectedCreatedLayerRef.current = selectedLayer;
         const markerColor = String(markerData.color ?? '').replace(/^#/, '');
         selectedLayer.getElement().setAttribute('id', `se-selected-marker-${layer?.options?.name}-${markerColor}`);
-        hideMarkersNearPin(map, ctx);
+        hideMarkersUnderPin(map, ctx);
     } else if (layer && map.hasLayer(layer)) {
         selectedLayer = applyHoverUpdateMarker(map, layer, markerData);
         ctx.selectedUpdatedLayerRef.current = selectedLayer;

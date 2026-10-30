@@ -1,11 +1,19 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { clickBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import {
+    clickBy,
+    expectInputExactBy,
+    expectSelectedPinAtFavorite,
+    sendKeysBy,
+    waitBy,
+    waitByRemoved,
+} from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
+import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -34,6 +42,16 @@ export default async function test() {
     await waitBy(By.id('se-wpt-details'));
     await waitBy(By.id('se-add-poi-to-fav-item'));
 
+    // right-click elsewhere while the POI is open: the new favorite must not take the POI's name (#2030)
+    await actionOpenContextMenu();
+    await clickBy(By.id('se-add-favorite-action'));
+    await waitBy(By.id('se-add-fav-dialog'));
+    await expectInputExactBy(By.id('se-fav-name-input'), '');
+    await clickBy(By.id('se-close-add-wpt-panel'));
+    await waitByRemoved(By.id('se-add-fav-dialog'));
+    await waitBy(By.id('se-wpt-details'));
+    await waitBy(By.css('[id^="se-selected-marker-"]')); // the POI pin is back once the panel is closed
+
     // add POI to favorites
     await clickBy(By.id('se-add-poi-to-fav-item'));
     await waitBy(By.id('se-add-fav-dialog'));
@@ -48,7 +66,18 @@ export default async function test() {
     await waitBy(By.id('se-wpt-details'));
     await waitBy(By.id('se-add-poi-to-fav-item'));
 
-    // open favorites and verify the new favorite exists in the default group
+    // save a favorite by right-click while the POI is open: the selected pin must stay at the click, not jump to the POI (#2030)
+    const clickFavoriteName = 'TestClickFavorite';
+    await actionOpenContextMenu();
+    await clickBy(By.id('se-add-favorite-action'));
+    await waitBy(By.id('se-add-fav-dialog'));
+    await sendKeysBy(By.id('se-fav-name-input'), clickFavoriteName);
+    await clickBy(By.id('se-add-fav-btn'));
+    await waitByRemoved(By.id('se-add-fav-dialog'));
+    await waitBy(By.id('se-wpt-details'));
+    await expectSelectedPinAtFavorite(clickFavoriteName);
+
+    // open favorites while the saved favorite card is still open and verify the group opens with the new favorite
     await actionOpenFavorites();
     await clickBy(By.id('se-menu-fav-favorites'));
     await waitBy(By.id('se-opened-fav-group-favorites'));

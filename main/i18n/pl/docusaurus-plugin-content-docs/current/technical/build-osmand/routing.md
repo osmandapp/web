@@ -1,5 +1,5 @@
 ---
-source-hash: 25c29183922ffa0df481d5ee27894c6a7f4653e20a70b824ecbc3791edaafed7
+source-hash: 9fba3febb3976b4f66fedc9a6c2d4e8c305fe11e72aa3f7b02a2f5cf993505aa
 sidebar_position: 3
 ---
 
@@ -15,4 +15,4 @@ W niektórych przypadkach możesz chcieć rozszerzyć lub dostosować doświadcz
 * przeszkoda (kara w sekundach) - definiuje karę, która jest doliczana do czasu routingu
 * czas_przeszkody (kara w sekundach) - definiuje karę, która jest wyświetlana użytkownikowi, ale nie jest brana pod uwagę przez silnik routingu, np. czas_przeszkody - 2 godziny, przeszkoda - 1 minuta, na najkrótszej trasie silnik znajdzie trasę z przeszkodą 1 minuta, ale użytkownik zobaczy, że czas trasy wynosi 2 godziny.
 
-Aby przetestować [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), możesz użyć [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Aby przetestować routing.xml na urządzeniu, możesz po prostu zastąpić domyślny routing.xml w folderze głównym OsmAnd na karcie SD.
+Aby przetestować [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), możesz użyć [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Aby przetestować routing.xml na urządzeniu, możesz po prostu zastąpić domyślny routing.xml w folderze głównym OsmAnd na karcie SD.

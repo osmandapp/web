@@ -6,7 +6,7 @@ import L from 'leaflet';
 import styles from '../../menu/search/search.module.css';
 import 'leaflet-spin';
 import { Box, IconButton, Modal, Table, TableBody, TableCell, TableRow } from '@mui/material';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import 'leaflet.markercluster';
 import { useTranslation } from 'react-i18next';
 import { areSetsEqual } from '../../util/Utils';
@@ -20,7 +20,7 @@ import {
     EXPLORE_BIG_REAL_ICON_SIZE,
 } from '../util/Clusterizer';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
-import { hideMarkersNearPin } from '../util/MarkerSelectionService';
+import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { getPhotoUrl } from '../../menu/search/explore/PhotoGallery';
 import { WIKI_PLACE_PHOTO_SIZE } from '../../menu/search/explore/WikiPlacesItem';
 import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLayer';
@@ -29,6 +29,7 @@ import { SimpleDotMarker } from '../markers/SimpleDotMarker';
 import { EXPLORE_OBJS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { getIconNameForPoiType, navigateToPoi } from '../../manager/PoiManager';
 import { getPoiByOsmIdApi } from '../../manager/SearchApi';
+import { getWikiLangs } from '../../util/lang';
 import {
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
@@ -93,7 +94,7 @@ export default function ExploreLayer() {
             ctx.setWikiPlaces(null);
             removeLayers();
         }
-        hideMarkersNearPin(map, ctx);
+        hideMarkersUnderPin(map, ctx);
     }, [zoom]);
 
     const getExploreLayers = useCallback(() => {
@@ -260,7 +261,7 @@ export default function ExploreLayer() {
                 params: {
                     northWest: `${Number(bbox.getNorthWest().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getNorthWest().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
                     southEast: `${Number(bbox.getSouthEast().lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(bbox.getSouthEast().lng).toFixed(BBOX_COORDS_DECIMALS)}`,
-                    lang: settings?.useWikiImages ? null : i18n.language,
+                    lang: settings?.useWikiImages ? null : getWikiLangs(i18n.language),
                     filters: settings?.selectedFilters ? [...settings.selectedFilters] : null,
                 },
                 signal: controller.signal,
@@ -371,7 +372,7 @@ export default function ExploreLayer() {
         }
         newLayers.options = { ...newLayers.options, id: EXPLORE_LAYER_ID };
         map.addLayer(newLayers);
-        hideMarkersNearPin(map, ctx);
+        hideMarkersUnderPin(map, ctx);
         return newLayers;
     }
 
@@ -570,7 +571,7 @@ export default function ExploreLayer() {
                         <IconButton
                             variant="contained"
                             type="button"
-                            sx={{ top: 0, right: 0, position: 'absolute' }}
+                            sx={{ top: 0, right: 0, position: 'absolute', color: 'var(--svg-icon-color)' }}
                             onClick={closeModal}
                         >
                             <CloseIcon />

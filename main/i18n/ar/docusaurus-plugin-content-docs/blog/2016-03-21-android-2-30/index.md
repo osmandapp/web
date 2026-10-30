@@ -15,7 +15,7 @@ OsmAnd 2.3 is on its way! Get ready for a brand new route preparation interface,
 
 ## OSM Live Beta
 
-The most important and outstanding feature of the new release is OSM Live. It's the system that will encourage OSM mappers to update the information and will give you frequent updates (up to once an hour). You make a donation and receive the updates, 30% goes to the OsmAnd team and 70% is spread between OSM contributors who have registered in the OSM Live program. They are encouraged to make more updates and you get fresh and more detailed maps. Please read more and join <a href="http://osmand.net/osm_live#information">here</a>.
+The most important and outstanding feature of the new release is OSM Live. It's the system that will encourage OSM mappers to update the information and will give you frequent updates (up to once an hour). You make a donation and receive the updates, 30% goes to the OsmAnd team and 70% is spread between OSM contributors who have registered in the OSM Live program. They are encouraged to make more updates and you get fresh and more detailed maps. Please read more and join <a href="https://osmand.net/docs/user/personal/maps-resources#free-for-osm-mappers">here</a>.
 While the feature is in beta version, the updates will not cover routing: the road changes will be applied only during regular monthly updates.
 
 <table class="blogimage">

@@ -1,5 +1,5 @@
 ---
-source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
+source-hash: 334708e5a8593c3a9d8ad26cd8d035221ee3dbfa4929c3dd8a3cbfc49b55fc2d
 sidebar_position: 2
 title:  Navigeren op een track
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 De optie *Navigeren op een track* (GPX) stelt u in staat om een vooraf gedefinieerde route of track op een kaart te volgen. Dit kan met name handig zijn voor buitenactiviteiten zoals wandelen, fietsen of off-road rijden, waar een geplande route de veiligheid en efficiëntie verbetert. Als u in een georganiseerde groep reist, helpt deze functie u en elk lid van de groep om dezelfde route-informatie te hebben als de anderen.  
 
-De optie *Navigeren op een track* kan ook in het dagelijks leven worden gebruikt. U kunt een eerder [opgenomen track](../../plugins/trip-recording.md) gebruiken of [een track aanmaken](../../personal/tracks/manage-tracks.md#create-a-track) en deze delen met uw familie of vrienden in plaats van hen de route uit te leggen. U kunt ook de [routes op de OsmAnd-kaart](../../../../blog/routes/) gebruiken voor navigatie. Hoe u ze op de kaart markeert en wat hun kleuren betekenen, wordt beschreven in de sectie [Routes](../../map/vector-maps.md#routes) van het artikel *Vectorkaarten*.  
+De optie *Navigeren op een track* kan ook in het dagelijks leven worden gebruikt. U kunt een eerder [opgenomen track](../../plugins/trip-recording.md) gebruiken of [een track aanmaken](../../personal/tracks/manage-tracks.md#create-a-track) en deze delen met uw familie of vrienden in plaats van hen de route uit te leggen. U kunt ook de [routes op de OsmAnd-kaart](https://osmand.net/blog/routes/) gebruiken voor navigatie. Hoe u ze op de kaart markeert en wat hun kleuren betekenen, wordt beschreven in de sectie [Routes](../../map/vector-maps.md#routes) van het artikel *Vectorkaarten*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -217,7 +217,7 @@ Bij het voorbereiden of navigeren van een GPX-track kunt u geen tussenliggende p
 
 ## Begeleiding {#guidance}
 
-*Navigatie op GPX-track* bevat dezelfde [spraakinstructies](../guidance/voice-navigation.md) als routenavigatie. Sommige afslagen of rotondes worden echter mogelijk niet correct geïnterpreteerd omdat er geen informatie over kruispunten in GPX staat, behalve voor GPX-bestanden die door OsmAnd zijn gemaakt. Om deze problemen te elimineren, moet u de functie [Aan de weg koppelen](#attach-to-the-roads) gebruiken.  
+*Navigatie op GPX-track* bevat dezelfde [spraakinstructies](../guidance/voice-navigation.md) als routenavigatie. Sommige afslagen of rotondes worden echter mogelijk niet correct geïnterpreteerd omdat er geen informatie over kruispunten in GPX staat, behalve voor GPX-bestanden die door OsmAnd zijn gemaakt. Om deze problemen te elimineren, moet u de functie [sAttach to the roads](#attach-to-the-roads) gebruiken.  
 
 Tijdens de navigatie kunt u verschillende opties gebruiken, zoals in- of uitzoomen, de kaart verschuiven of overschakelen naar een andere kaartstijl. Als u van de track afwijkt, zal OsmAnd de route automatisch herberekenen om u weer op de track te brengen. U kunt ook de snelheid van de track aanpassen en hoorbare waarschuwingen instellen voor naderende punten of afwijkingen van de route.  
 

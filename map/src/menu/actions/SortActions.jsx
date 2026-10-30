@@ -18,7 +18,7 @@ import AppContext from '../../context/AppContext';
 import FavoritesManager, { getFavoriteSortKey } from '../../manager/FavoritesManager';
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
-import { getSelectedSort } from '../components/buttons/SortFilesButton';
+import { getSelectedSort, TRAVEL_CUSTOM_GROUP } from '../components/buttons/SortFilesButton';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 
@@ -218,7 +218,11 @@ export const allMethods = {
     },
 };
 
-const defaultMethod = () => {
+// travel tracks have no modification time, their natural order is the newest track first
+export const defaultSortMethod = (customGroupType = null) => {
+    if (customGroupType === TRAVEL_CUSTOM_GROUP) {
+        return 'newDate';
+    }
     for (let l in allMethods) {
         if (allMethods[l].default) {
             return l;
@@ -253,8 +257,8 @@ const SortActions = forwardRef(
                 customGroupType,
                 smartf,
                 ctx,
-                defaultMethod: defaultMethod(),
-            }) || defaultMethod()
+                defaultMethod: defaultSortMethod(customGroupType),
+            }) || defaultSortMethod(customGroupType)
         );
 
         const files = () => {
@@ -370,16 +374,20 @@ const SortActions = forwardRef(
                                     <Divider className={styles.dividerActions} />
                                 </>
                             )}
-                            <FormControlLabel
-                                id={'se-sort-time'}
-                                className={styles.controlLabel}
-                                disableTypography={true}
-                                labelPlacement="start"
-                                value="time"
-                                control={<Radio className={styles.control} size="small" />}
-                                label={<ActionItem item={allMethods.time} />}
-                            />
-                            <Divider className={styles.dividerActions} />
+                            {customGroupType !== TRAVEL_CUSTOM_GROUP && (
+                                <>
+                                    <FormControlLabel
+                                        id={'se-sort-time'}
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value="time"
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<ActionItem item={allMethods.time} />}
+                                    />
+                                    <Divider className={styles.dividerActions} />
+                                </>
+                            )}
                             <FormControlLabel
                                 id={'se-sort-az'}
                                 className={styles.controlLabel}

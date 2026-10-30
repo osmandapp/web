@@ -112,6 +112,8 @@ Use one of the following paths to open the plugin settings:
 - Higher memory allocation may impact the performance of other apps.
 - [Calculation of 50 km routes for pedestrians](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
 
+- **Java memory** shows how much Java memory the app uses and opens the heap histogram tools: *Collect & analyze now*, *Share report*, and *Collect on high usage* (off by default). See [Heap Histogram for Memory Problems](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android) for when to use them.
+
 
 ### Info and Statistics {#info-and-statistics}
 

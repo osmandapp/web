@@ -226,7 +226,7 @@ Voice guidance for *CarPlay* is one of OsmAnd's most useful navigation features,
 
 When voice prompts are played, OsmAnd adjusts background audio depending on its type. With *<Translate ios="true" ids="pause_spoken_audio"/>* enabled, spoken audio content, such as podcasts and audiobooks, is paused during navigation instructions, while music playback continues at a reduced volume. When *<Translate ios="true" ids="pause_spoken_audio"/>* is disabled, both spoken audio and music continue playing at a reduced volume.  
 
-To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device, see the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md#voice-prompts) article. For example, to enable Pause spoken audio go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
+To configure voice prompts according to the selected profile, you have to do this before starting a route in the OsmAnd app on your device, see the [Voice prompts / Notifications](../navigation/guidance/voice-navigation.md#voice-settings) article. For example, to enable Pause spoken audio go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 ### Navigation Alerts {#navigation-alerts}
 
@@ -332,6 +332,20 @@ You can choose one of the following appearance modes:
 - **Sunrise/sunset** — The map switches between light and dark themes automatically based on the calculated sunrise and sunset times for your current location.
 
 **Note:** The Map mode setting in CarPlay only affects the map appearance in CarPlay. It does not change the Map mode on your phone screen.
+
+### Map Orientation {#map-orientation}
+
+![Map Orientation](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+The *Map orientation* setting defines how the map rotates on the CarPlay screen. To open this setting, tap the *Settings* button in the CarPlay navigation bar, then select *Map orientation*. The current orientation is shown as the row's detail text.
+
+You can choose one of the following orientation modes:
+- **Manually rotated** — The map does not rotate automatically.
+- **Movement direction** — The map rotates to follow your direction of travel.
+- **Compass direction** — The map rotates to follow the iPhone compass, so the map's north matches the real north.
+- **North is up** — The north always stays at the top of the screen.
+
+**Note:** Map orientation is a profile setting shared between CarPlay and the OsmAnd app on your iPhone. A change made on one screen applies to the other. For more details, see the [Map Orientation Modes](../widgets/map-buttons.md#map-orientation-modes) article.
 
 ### Location Position in CarPlay {#location-position-in-carplay}
 

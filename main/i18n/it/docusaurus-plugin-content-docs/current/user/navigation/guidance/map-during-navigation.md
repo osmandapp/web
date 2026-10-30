@@ -1,5 +1,5 @@
 ---
-source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
+source-hash: 968394db45647827e95cb32f776ef7f818433675c6fb40f6ba7071f88e7d270d
 sidebar_position: 2
 title: Schermata della Mappa Durante la Navigazione
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Panoramica {#overview}
 
@@ -49,7 +48,7 @@ Durante la navigazione, l'aspetto della mappa si adatta in base al profilo di na
 
 | Parametro | Descrizione | Nota |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* |  Il tempo per cui la visualizzazione della mappa viene sincronizzata con la posizione corrente dopo lo spostamento.  |  *Valore:* <br /> Mai, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 50 sec.|
+| *<Translate android="true" ids="choose_auto_follow_route"/>* |  Il tempo per cui la visualizzazione della mappa viene sincronizzata con la posizione corrente dopo lo spostamento.  |  *Valore:* <br /> Mai, 5 sec, 10 sec, 15 sec, 20 sec, 25 sec, 30 sec, 45 sec, 60 sec, 90 sec.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  |  Ridimensiona automaticamente la mappa in base alla tua velocità, finché la mappa è sincronizzata con la tua posizione attuale. | *Valore:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - zoom manuale. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - lo zoom è di 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - lo zoom è di 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - lo zoom è di 5 m. <br /> Le modifiche dello zoom automatico possono essere animate (Fluido) o basate su passaggi (Discreto), a seconda delle [Impostazioni di sviluppo](navigation-settings.md#development-settings). In modalità Fluida, le modifiche dello zoom utilizzano un'animazione controllata (circa 0,1 zoom/secondo). Lo zoom automatico non regola lo zoom a velocità molto basse (sotto ~7 km/h). Se la modifica dello zoom richiesta richiedesse meno di ~1,5 secondi, l'animazione non viene avviata. <br /> Lo zoom automatico mira a mantenere la manovra imminente all'interno di un'area di messa a fuoco stabile sullo schermo, in modo che la distanza visibile davanti rimanga costante durante la guida.|
 | *Auto zoom 3D angle* | Imposta l'inclinazione della mappa quando si passa alla vista 3D durante la navigazione. Un angolo più alto fa apparire l'orizzonte più lontano, fornendo maggiore visibilità in avanti. |Viene applicato solo quando Auto zoom è abilitato. Valori: 20°, 25°, 30°, 35°, 40°. Predefinito: 25°. <br /> Quando ci si avvicina a una manovra/intersezione, l'app può ridurre gradualmente l'inclinazione 3D verso una vista 2D per mantenere leggibile la prossima svolta. |
 | *Preview next turn* | Ruota automaticamente la mappa leggermente in anticipo per mostrare la prossima svolta o manovra durante la navigazione. Aiuta ad anticipare le azioni imminenti.  | Abilitato per impostazione predefinita. Se esporti e reimporti un profilo, assicurati di verificare questa impostazione, poiché in alcune versioni precedenti poteva essere reimpostata su “abilitato”.   <br /> La rotazione/anteprima viene attivata non appena il punto della prossima manovra entra nell'area di messa a fuoco (in modo che la mappa inizi a “guardare” la svolta quando diventa rilevante). |
@@ -154,7 +153,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 </Tabs>
 
-| Parametro | Descrizione | Nota |
+| Parametro | Descrizione | Note |
 |:------------|:---------------|:---------------|
 | **<Translate android="true" ids="screen_alerts"/>** | Le notifiche, come gli avvisi sul traffico o i limiti di velocità, appariranno sullo schermo come un widget. Appaiono nell'angolo in basso a sinistra durante la navigazione. | [Tipi di widget di avviso](../../widgets/nav-widgets.md#alert-widget)   |
 

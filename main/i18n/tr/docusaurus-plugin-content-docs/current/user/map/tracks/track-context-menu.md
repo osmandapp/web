@@ -1,5 +1,5 @@
 ---
-source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
+source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
 sidebar_position: 4
 title:  Rota Bağlam Menüsü
 ---
@@ -14,8 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## Genel Bakış {#overview}
 
@@ -42,9 +40,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Bir rotaya dokunduğunuzda, *Rota bağlam menüsünün* ilk ekranı olan *Genel Bakış sekmesi* açılır. Bu sekmede, seçilen rota hakkında bir özet (*[Bilgi paneli](#info-panel)*) bulabilir ve *[Rota eylemleri menüsünü](#track-actions)* kullanarak rotayla ilgili en yaygın eylemleri gerçekleştirebilirsiniz. Genel Bakış sekmesini yukarı çekerseniz rotanız hakkında [açıklama ve hizmet bilgilerini](#description-and-info) görebilirsiniz.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Bilgi Paneli {#info-panel}
 
@@ -205,7 +200,7 @@ Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani nokta
       <year>2023</year>
       <license>https://github.com/osmandapp/OsmAnd/blob/master/LICENSE</license>
     </copyright>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <time>2023-12-13T12:00:00Z</time>
     <keywords>gpx, osmand, hiking</keywords>
     <extensions>
@@ -227,7 +222,7 @@ Rotanız OsmAnd veya başka bir takip uygulamasıyla oluşturulduysa (yani nokta
 </details>
 
 
-### Rota Etkinlik Türü {#ttrack-activity-type}
+### Rota Etkinlik Türü {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -560,7 +555,7 @@ Harita üzerindeki rotanın bağlam menüsünün sağ üst köşesindeki düğme
     <time>2024-04-04T13:12:11Z</time>
     <name>Waypoint 1</name>
     <desc>Long description</desc>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <type></type>
     <cmt>Short comment for the waypoint.</cmt>
     <extensions>

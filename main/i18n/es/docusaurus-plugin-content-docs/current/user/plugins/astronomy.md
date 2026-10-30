@@ -1,5 +1,5 @@
 ---
-source-hash: 1841e056ea7f5c484b55fab6bf53f5d00a5f31af278e2d2db0020bae898913a7
+source-hash: 18bdcf0d20caf5aabbea26b8ec6fcda7bc035763be0d7facfcec6e68cdb29d7d
 sidebar_position: 3
 title:  Astronomía
 unlistead: true
@@ -15,13 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-:::info 
-
-**Astronomía** está actualmente en **beta** en **Android**. 
-
-En **iOS**, el plugin está disponible a través del programa **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
-:::
 
 ## Resumen {#overview}
 
@@ -74,9 +67,9 @@ La pantalla dedicada del **Mapa estelar** muestra un domo celeste interactivo co
 - **<Translate android="true" ids="magnitude_filter"/>** — le permite limitar qué estrellas se muestran según su brillo. Use el deslizador para establecer el valor máximo de magnitud. Los valores más bajos muestran solo las estrellas más brillantes, mientras que los valores más altos revelan estrellas más tenues y objetos de cielo profundo. Esto ayuda a reducir el desorden visual o simular lo que es visible a simple vista.
 - [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — abre los ajustes de visualización que controlan cómo se muestran los objetos, trayectorias y líneas de referencia en el Mapa estelar.
 
-La pantalla renderiza el hemisferio completo del cielo sobre su ubicación, alineado con la dirección de la brújula. El Mapa estelar se puede rotar manualmente arrastrando la pantalla. La rotación manual del Mapa estelar no afecta la orientación del mapa de la Tierra. El mapa de la Tierra siempre sigue el [modo de orientación del mapa](../map/interact-with-map.md#map-orientation-modes) seleccionado en sus ajustes. Toque los objetos celestes para obtener detalles como magnitud, horas de salida/puesta o trayectorias.
+La pantalla renderiza el hemisferio completo del cielo sobre su ubicación, alineado con la dirección de la brújosa. El Mapa estelar se puede rotar manualmente arrastrando la pantalla. La rotación manual del Mapa estelar no afecta la orientación del mapa de la Tierra. El mapa de la Tierra siempre sigue el [modo de orientación del mapa](../map/interact-with-map.md#map-orientation-modes) seleccionado en sus ajustes. Toque los objetos celestes para obtener detalles como magnitud, horas de salida/puesta o trayectorias.
 
-El Mapa estelar también puede alinearse con la orientación de su dispositivo cuando el modo brújula está habilitado. En este modo, el cielo rota según los sensores de acelerómetro y brújosa del dispositivo, lo que le permite explorar el cielo moviendo físicamente su teléfono.
+El Mapa estelar también puede alinearse con la orientación de su dispositivo cuando el modo brújosa está habilitado. En este modo, el cielo rota según los sensores de acelerómetro y brújosa del dispositivo, lo que le permite explorar el cielo moviendo físicamente su teléfono.
 
 
 ## Menú contextual {#context-menu}

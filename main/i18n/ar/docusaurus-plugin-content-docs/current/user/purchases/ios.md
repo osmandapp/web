@@ -1,7 +1,7 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
 sidebar_position: 2
-title: عمليات الشراء على iOS
+title: مشتريات iOS
 ---
 
 import Tabs from '@theme/Tabs';
@@ -55,25 +55,25 @@ import Translate from '@site/src/components/Translate.js';
 
 
 
-<!--
 
-:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+:::danger 🎃 تخفيضات الهالوين
+
+*أسرع! هذا العرض متاح فقط حتى* **1 نوفمبر (23:59 UTC)**.
+
+*بالنسبة للاشتراكات، يسري السعر المخفض على السنة الأولى.*
 
 :::
 
 
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd مجاني   | [Maps+](#install-osmand-ios) داخل التطبيق | [Maps+](#install-osmand-ios) اشتراك | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 شهرًا) | **اشتراك** (شهر واحد / 12 شهرًا) |
+| **السعر (يورو)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **السعر (دولار أمريكي)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-
--->
+<!--
 
 
 |    | OsmAnd مجاني   | [Maps+](#install-osmand-ios) داخل التطبيق | [Maps+](#install-osmand-ios) اشتراك | [OsmAnd Pro](#install-osmand-ios) |
@@ -82,6 +82,9 @@ import Translate from '@site/src/components/Translate.js';
 | **نوع الشراء** | **مجاني** | **شراء لمرة واحدة** (مدى الحياة) | **اشتراك** (12 شهرًا) | **اشتراك** (شهر واحد / 12 شهرًا) |
 | **السعر (يورو)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **السعر (دولار أمريكي)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
+
 
 
 
@@ -136,7 +139,7 @@ import Translate from '@site/src/components/Translate.js';
 
 |  ميزة Pro  | الوصف   |
 | :------------- | :------------- |
-| [سحابة OsmAnd](../personal/osmand-cloud.md) | نسخ احتياطي واستعادة بياناتك، ومزامنة البيانات مع [بوابة ويب OsmAnd](https://www.osmand.net/map). |
+| [سحابة OsmAnd](../personal/osmand-cloud.md) | نسخ احتياطي واستعادة بياناتك، ومزامنة البيانات مع [بوابة ويب OsmAnd](https://osmand.net/map). |
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | يسمح لك بالحصول على نموذج مصغر لمحيطك أو قارة بأكملها ومراقبته. |
 | [ودجات الارتفاع - الارتفاع: مركز الخريطة](../widgets/info-widgets.md#elevation-map-center) | يسمح لك بمعرفة ارتفاع مركز الخريطة الحالي فوق مستوى سطح البحر.  |
 | [Live](../personal/maps-resources.md#live-updates) | يتم تحديث خرائط OsmAnd كل ١٥ دقيقة بعد تحسينات [OpenStreetMap](https://www.openstreetmap.org/). |
@@ -162,7 +165,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → متابعة مع OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro_new.png)
+![خطة Pro](@site/static/img/purchases/pro_new.png)
 
 ### شراء Maps+ {#maps-purchase}
 
@@ -170,7 +173,7 @@ import Translate from '@site/src/components/Translate.js';
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → انقر على قائمة ميزات Maps+ → متابعة مع Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_new.png)
+![خطة Maps+](@site/static/img/purchases/maps_new.png)
 
 
 ## الاشتراكات القديمة (قبل 4.0) {#legacy-subscriptions-prior-40}
@@ -189,7 +192,7 @@ import Translate from '@site/src/components/Translate.js';
 - افتح خرائط OsmAnd مع اتصال إنترنت نشط.
 - لاستعادة المشتريات، اتبع هذه الخطوات: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* وفي الجزء العلوي من الشاشة يجب أن يظهر أن Maps+(Pro, Live) قد تم تفعيله.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
+![خطة Pro](@site/static/img/purchases/maps_purchases_ios.png)
 
 **إذا لم تنجح أي من الطرق:**
 

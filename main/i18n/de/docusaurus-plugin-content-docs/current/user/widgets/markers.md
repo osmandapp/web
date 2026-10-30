@@ -1,8 +1,9 @@
 ---
-source-hash: 2e10650d0eee32138985228898ac7ac712a0a70a1f315f227a751d0c2f14ae10
+source-hash: 7b765aa07ea22d947a58624f6293200d6f6198cc047b028220974be3afc62756
 sidebar_position: 6
 title:  Markierungs-Widgets
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,7 +12,6 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
 
 ## Übersicht {#overview}
 
@@ -76,7 +76,7 @@ Das Widget **Kartenmarkierungen** *(für Android)* und **Entfernungsanzeige - Wi
 Dies ist die Zeit (hh:mm), zu der das Fahrzeug oder die Person am Ziel ankommen sollte. Sie wird berechnet als die Entfernung zur Markierung geteilt durch die Durchschnittsgeschwindigkeit.
 Die Durchschnittsgeschwindigkeit wird als Mittelwert aller Geschwindigkeitswerte berechnet, die von den Standortpunkten für das von Ihnen gewählte Zeitintervall von 15 Sekunden bis 60 Minuten empfangen wurden.
 
-Sie können auch auswählen, ob eine oder zwei Markierungen angezeigt werden sollen. Lesen Sie mehr über die Widget-Einstellungen in diesem [Artikel](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+Sie können auch auswählen, ob eine oder zwei Markierungen angezeigt werden sollen. Lesen Sie mehr über die Widget-Einstellungen in diesem [Artikel](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets).
 :::info
 *Die Entfernung zur Markierung* ist die Länge der geraden Linie zwischen Ihrer Position (oder einem bestimmten Punkt auf der Karte) und der Markierung.
 :::  

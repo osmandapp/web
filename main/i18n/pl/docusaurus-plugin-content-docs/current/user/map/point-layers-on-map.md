@@ -1,5 +1,5 @@
 ---
-source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+source-hash: bfe0420d8b7fdb1fb6c341554dbe5327adde2d1beb05e5eeb3114c2d541b823c
 sidebar_position: 8
 title:  Punkty na mapie
 ---
@@ -134,6 +134,8 @@ Przejdź do: *<Translate ios="true" ids="shared_string_menu,configure_map,config
 
 Każdy typ POI w OsmAnd ma przypisaną określoną ikonę i kolor. [Poziom powiększenia](../map/vector-maps.md#details) i wygląd POI mogą się różnić w niektórych [stylach mapy](../map/map-styles.md).  
 
+W [stylu mapy](../map/map-styles.md) OsmAnd miejsca kultu religijnego (kościoły, meczety, synagogi, świątynie i inne) są wyświetlane selektywnie. Na niższych poziomach powiększenia widoczne są tylko te najbardziej znane, a pozostałe pojawiają się w miarę przybliżania. Po włączeniu ustawienia [*<Translate android="true" ids="rendering_attr_moreDetailed_name"/>*](../map/vector-maps.md#details) wszystkie miejsca kultu religijnego pojawiają się przy niższym poziomie powiększenia. W [trybie nocnym](../map/vector-maps.md#map-mode) ich ikony są wyświetlane bez okręgu w tle, tak jak w trybie dziennym.
+
 [Czytaj więcej](../map/vector-maps.md#hide).
 
 
@@ -255,7 +257,7 @@ OsmAnd ma specjalne użyteczne miejsca oznaczone logo „W” i połączone z ar
 
 Przejdź do: *<Translate android="true" ids="shared_string_menu,configure_map,layer_recordings"/>*
 
-![AV POI](@site/static/img/map/av_poi.png)
+![POI audio/wideo](@site/static/img/map/av_poi.png)
 
 </TabItem>
 

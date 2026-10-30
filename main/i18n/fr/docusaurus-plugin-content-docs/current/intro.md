@@ -1,5 +1,5 @@
 ---
-source-hash: 493d0f4bb5654e0183f24ee23ee49f36be8431ec2466fa554bd47c6ad8ab3813
+source-hash: b0856a5094b1d215f8e6507452fbd1d83a9df996a95ba8afef203917b669a88f
 sidebar_position: 1
 label: Introduction
 title: Docs
@@ -16,7 +16,7 @@ Guide de l'utilisateur sur l'application OsmAnd décrivant les principales fonct
 
 ### [Carte](https://osmand.net/map) {#map}
 
-Utilisez le planificateur d'itinéraire OsmAnd, consultez les prévisions météorologiques, trouvez des lieux intéressants sur la carte et travaillez avec votre compte OsmAnd Cloud (traces, favoris, données de compte).
+Utilisez le planificateur d'itinéraire OsmAnd, consultez les prévisions météorologiques, trouvez des lieux intéressants sur la carte et travaillez avec votre compte OsmAnd Cloud (tracks, favorites, account data).
 
 ### [Documentation technique](/docs/technical/) {#technical-documentation}
 
@@ -33,7 +33,3 @@ Notes de publication et liens vers les versions précédentes d'OsmAnd. Versions
 ### [Mentions légales](/docs/legal/) {#legal}
 
 Licence. Politique de confidentialité. Conditions d'utilisation.
-
-### [Rejoignez notre équipe](/docs/hiring/) {#join-our-team}
-
-Nous recherchons toujours de nouveaux contributeurs qui peuvent rejoindre notre équipe internationale.

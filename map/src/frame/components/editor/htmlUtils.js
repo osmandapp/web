@@ -1,3 +1,8 @@
+import { generateHTML, generateJSON } from '@tiptap/core';
+import StarterKit from '@tiptap/starter-kit';
+
+const EXTENSIONS = [StarterKit];
+
 /**
  * Converts legacy plain text to HTML for loading into the rich text editor.
  * Used only for backward compatibility with descriptions saved before rich text was introduced.
@@ -25,15 +30,17 @@ export function textToHTML(text) {
 export function htmlToText(html) {
     if (!html) return '';
 
-    return html
+    // a textarea decodes entities (&amp;, &nbsp;) without parsing the rest as tags
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = html
         .replaceAll(/<\/p>/gi, '\n')
         .replaceAll(/<\/h[1-6]>/gi, '\n')
         .replaceAll(/<\/li>/gi, '\n')
         .replaceAll(/<\/blockquote>/gi, '\n')
         .replaceAll(/<br\s*\/?>/gi, '\n')
-        .replaceAll(/<[^>]+>/g, '')
-        .replace(/\n+$/, '')
-        .trim();
+        .replaceAll(/<[^>]+>/g, '');
+
+    return textarea.value.replace(/\n+$/, '').trim();
 }
 
 /**
@@ -41,4 +48,14 @@ export function htmlToText(html) {
  */
 export function stripHtml(html) {
     return htmlToText(html).replace(/\s+/g, ' ').trim();
+}
+
+/**
+ * Keeps only the HTML the rich text editor itself produces (paragraphs, marks, lists, safe links);
+ * every other tag, attribute and script is dropped.
+ */
+export function sanitizeHtml(html) {
+    if (!html) return '';
+
+    return generateHTML(generateJSON(html, EXTENSIONS), EXTENSIONS);
 }

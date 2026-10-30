@@ -1,5 +1,5 @@
 ---
-source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
+source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
 sidebar_position: 1
 title:  Zakupy w systemie Android
 ---
@@ -21,7 +21,7 @@ Na urządzenia z systemem Android można pobrać **darmową** i **płatną** wer
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon nie jest już dostępny. Szczegółowe informacje można znaleźć [tutaj](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon nie jest już dostępny. Szczegółowe informacje można znaleźć [tutaj](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).
 
 **Wersje aplikacji OsmAnd:**
 
@@ -78,12 +78,36 @@ Na liście znajdują się informacje o cenach produktów OsmAnd dla regionu USA 
 
 
 
+:::danger 🎃 Halloweenowa wyprzedaż
+
+*Pospiesz się! Ta oferta jest dostępna tylko do* **1 listopada (23:59 UTC)**.
+
+*W przypadku subskrypcji obniżona cena obowiązuje przez pierwszy rok.*
+
+*Zniżka nie dotyczy aplikacji OsmAnd+ w Google Play.*
+
+:::
+
+
+|    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
+| :------------- | :------------- | :----------------------- | :------------------- | :----------- |
+|  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
+| **Rodzaj zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
+| **Cena (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Cena (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
+
+<!--
+
+
 |    | OsmAnd Darmowy   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) w aplikacji | [Maps+](#install-osmand-android) Subskrypcja | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Rodzaj zakupu** | **Darmowy** | **Zakup jednorazowy** (Dożywotni) | **Subskrypcja** (12 miesięcy) | **Subskrypcja** (1 miesiąc / 12 miesięcy) |
 | **Cena (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Cena (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
+
 
 
 
@@ -150,7 +174,7 @@ Subskrypcja **Pro** obejmuje obecnie następujące funkcje:
 
 |  Funkcja Pro  | Opis   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Tworzenie kopii zapasowych i przywracanie danych, synchronizacja danych z [portalem internetowym OsmAnd](https://osmand.net/map). |
 | [Rzeźba terenu 3D](../plugins/topography.md#3d-relief) | Pozwala na posiadanie i obserwowanie modelu w skali Twojej okolicy lub całego kontynentu. |
 | [Aktualizacje na żywo](../personal/maps-resources.md#live-updates) | Mapy OsmAnd aktualizują się co 15 minut po ulepszeniu [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Wtyczka Pogoda](../plugins/weather.md) | 24-godzinna prognoza godzinowa na 7 dni naprzód na mapie. |

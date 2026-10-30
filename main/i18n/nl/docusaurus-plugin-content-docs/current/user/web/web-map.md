@@ -1,5 +1,5 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
 sidebar_label: Kaart
 title: Wereldkaart op de Website
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 De OsmAnd-webkaart is een wereldkaart gebaseerd op [OpenStreetMap (OSM)](https://www.openstreetmap.org/) gegevens. Het stelt gebruikers in staat om hun eigen gegevens te bekijken, zoals tracks en favorieten, navigatieroutes voor elk profiel te maken en toegang te krijgen tot extra functies zoals het weer, openbare GPX-tracks, POI's en Wikimedia-afbeeldingen. Verken en pas uw gegevenservaring rechtstreeks in uw browser aan.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![OsmAnd Web overzicht](@site/static/img/web/web_map_all.png)
 
 
 ## Kaart Contextmenu {#map-context-menu}
@@ -73,21 +73,32 @@ De geselecteerde marker blijft zichtbaar bij het zoomen op de kaart.
 
 Aangrenzende markers kunnen worden verborgen om het geselecteerde object gemakkelijker zichtbaar te maken.
 
-![Geselecteerd Object](@site/static/img/web/selected_object_favorite.png) ![Geselecteerd Object](@site/static/img/web/selected_object_explore.png)
+Wanneer het kaarttype [OsmAnd vector (beta)](#map-type) is ingeschakeld, kunt u objecten direct op de kaart selecteren, waaronder POI's, gebouwen, huisnummers en haltes van het openbaar vervoer. Wanneer u de aanwijzer boven een selecteerbaar object houdt, verandert deze in een wijzende hand. Objecten zonder naam of pictogram, zoals naamloze wegen en voetpaden, kunnen niet worden geselecteerd.
+
+Door een object te selecteren opent u het detailpaneel:
+
+- **POI** — het paneel toont dezelfde informatie en snelle acties als in de resultaten van [Zoeken](web-search.md) en de [POI-overlay](#poi-overlay).
+- **Object zonder POI-gegevens** — bijvoorbeeld een gebouw of een huisnummer. Het paneel toont het objecttype, het adres en de coördinaten.
+- **Halte van het openbaar vervoer** — het paneel kan ook de sectie Routes met het filter voor het vervoerstype bevatten, zoals beschreven in [Vervoersstops](#transport-stops).
+
+Als er meerdere objecten op het geselecteerde punt liggen, toont het paneel ze één voor één. Gebruik de pijlen naast de sluitknop om tussen ze te wisselen. De terugpijl verschijnt vanaf het tweede object en de vooruitpijl is inactief bij het laatste.
+
+![Geselecteerd Object](@site/static/img/web/selected_object_favorite.png) ![Geselecteerd Object](@site/static/img/web/several_objects.webp)
 
 
 
 ## Menu Kaart configureren {#configure-map-menu}
 
-Het menu Kaart configureren stelt u in staat om de weergave-instellingen voor kaartgegevens te beheren, zoals POI-lagen, favorieten, tracks en terrein. Dit menu is beschikbaar nadat u bent ingelogd op uw OsmAnd-account. Om het te openen, klikt u op de knop in de **linkerbovenhoek** of opent u het via het **Menu**.
+Het menu Kaart configureren stelt u in staat om de weergave-instellingen voor kaartgegevens te beheren, zoals POI-lagen, favorieten, tracks, terrein en kaarttype. Dit menu is beschikbaar nadat u bent ingelogd op uw OsmAnd-account. Om het te openen, klikt u op de knop in de **linkerbovenhoek** of opent u het via het **Menu**.
 
 - [POI-overlay...](#poi-overlay). Hiermee kunt u de benodigde POI-categorieën kiezen en op de kaart weergeven.
 - [Favorieten](#favorites). Schakel de weergave van favorieten op de kaart in of uit.
 - [Tracks](#tracks). Bevat GPX-tracks die zichtbaar zijn op de kaart.
 - [Vervoersstops](#transport-stops). Schakel de weergave van openbare vervoersstops op de kaart in of uit. 
 - [Terrein](#terrain). Schakel het terrein-kleurenschema op de kaart in of uit.
+- [Raster (tegels) / OsmAnd vector (beta)](#map-type). Toont het momenteel gebruikte kaarttype en stelt u in staat te schakelen tussen de rasterkaart en de vectorkaart.
 
-![POI's menu](@site/static/img/web/configure_map_web_new.png)
+![POI's menu](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### POI-overlay {#poi-overlay}
@@ -184,6 +195,17 @@ In deze sectie kunt u:
 - De zichtbaarheid van de geselecteerde terreinlaag aanpassen van **0% tot 100%**.
 
 ![Menu Kaart configureren Terrein](@site/static/img/web/configure_map_terrain.png)
+
+### Kaarttype {#map-type}
+
+Selecteer het kaarttype-item in het menu Kaart configureren om een van de volgende opties te kiezen:
+
+- **Raster (tegels)** — het standaardkaarttype. Op dit kaarttype kunt u alleen markers selecteren die over de kaart worden weergegeven, zoals resultaten van [Zoeken](web-search.md), markers van de [POI-overlay](#poi-overlay), [favorieten](#favorites) en [vervoersstops](#transport-stops).
+- **OsmAnd vector (beta)** — de vectorkaart. Op dit kaarttype kunt u [objecten direct op de kaart selecteren](#selected-object).
+
+Het geselecteerde kaarttype wordt opgeslagen en toegepast wanneer u de kaart de volgende keer opent. **Standaard herstellen** in de header van Kaart configureren schakelt de kaart terug naar **Raster (tegels)**.
+
+De vectorkaart vereist een browser met WebGL-ondersteuning. Als WebGL niet beschikbaar is, schakelt de kaart automatisch over naar **Raster (tegels)**.
 
 
 ## Instellingen {#settings}
@@ -294,6 +316,10 @@ Afhankelijk van de opgegeven parameters kunnen URL-strings het volgende bevatten
 10. **Plan een route**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Directe link naar de huidige [**Verken-pagina**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **POI-details**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Kaartobject zonder POI-gegevens** (bijvoorbeeld een gebouw)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## Gerelateerde artikelen {#related-articles}

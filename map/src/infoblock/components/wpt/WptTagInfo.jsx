@@ -10,9 +10,9 @@ import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
 import capitalize from 'lodash-es/capitalize';
-import { cleanHtml, translateWithSplit } from '../../../manager/PoiManager';
+import { getValueLabelParts, translateWithSplit } from '../../../manager/PoiManager';
 import { getLanguageName } from '../../../util/LanguageDisplayName';
-import { stripHtml } from '../../../frame/components/editor/htmlUtils';
+import { sanitizeHtml, htmlToText, textToHTML } from '../../../frame/components/editor/htmlUtils';
 
 export default function WptTagInfo({ tag = null, baseTag = null, copy = false, setDevWikiContent = null }) {
     const ctx = useContext(AppContext);
@@ -124,7 +124,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     }
 
     function showPrefix(tag) {
-        return tag.value !== tag.textPrefix;
+        return !prefixContainsValue(tag) && tag.value !== tag.textPrefix;
     }
 
     function prefixContainsValue(tag) {
@@ -163,20 +163,19 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
 
     function prepareValueFromList(tag) {
         const addPrefix = tag.key === 'cuisine';
-        if (tag.isUrl) {
+        if (tag.isUrl || tag.isRawValue) {
             return tag.value;
         }
-        if (prefixContainsValue(tag)) {
-            tag.value = tag.textPrefix;
-        }
-        const items = tag.value.split(SEPARATOR);
+        const value = prefixContainsValue(tag) ? tag.textPrefix : tag.value;
+        const items = value.split(SEPARATOR);
         if (items.length > 1) {
             const values = items.map((item) => {
                 return prepareValue(item, addPrefix, POI_PREFIX);
             });
             return values.join(' • ');
         }
-        return prepareValue(tag.value, addPrefix, POI_PREFIX);
+
+        return prepareValue(value, addPrefix, POI_PREFIX);
     }
 
     function openMoreInfoDialog(tag) {
@@ -202,22 +201,28 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             }
             return capitalize(translateWithSplit(i18n.t, 'web:lang_local'));
         }
-        return capitalize(key);
+        return capitalize(key.replaceAll('_', ' '));
     }
 
     function getValue(tag) {
-        let value = prepareValueFromList(tag);
         if (tag.collapsable) {
             const items = tag.value.split(SEPARATOR);
+            let prefix = getTranslation({ key: tag.textPrefix });
+            let value;
+            if (tag.labels) {
+                const parts = items.map((item, i) =>
+                    getValueLabelParts(prepareValue(item, false, POI_PREFIX), tag.labels[i])
+                );
+                prefix = parts.find((part) => part.tagName)?.tagName ?? prefix;
+                value = parts.map((part) => part.tagValue).join(' • ');
+            } else {
+                value = prepareValueFromList(tag);
+            }
 
             return (
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
-                        <MenuItemWithLines
-                            name={getTranslation({ key: tag.textPrefix })}
-                            maxLines={2}
-                            className={styles.tagPrefix}
-                        />
+                        <MenuItemWithLines name={prefix} maxLines={2} className={styles.tagPrefix} />
                         <MenuItemWithLines name={value} maxLines={1} className={styles.tagName} />
                     </ListItemText>
                     {items.length > 1 && (
@@ -228,7 +233,8 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         } else if (tag.otherLangs) {
             const mainTag = newTag ?? tag;
             const listTags = tagList ?? mainTag.otherLangs;
-            value = prepareValueFromList(mainTag);
+            const value = prepareValueFromList(mainTag);
+
             return (
                 <>
                     <ListItemText onClick={() => setOpen(!open)}>
@@ -247,18 +253,20 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                 </>
             );
         } else {
+            const { tagName, tagValue } = tag.labels
+                ? getValueLabelParts(translateWithSplit(t, `${POI_PREFIX}${tag.textPrefix}`), tag.labels[0])
+                : {};
+            const prefix = tagName ?? (showPrefix(tag) ? getTranslation({ key: tag.textPrefix }) : null);
+            const text = tagName ? tagValue : getText(tag, prepareValueFromList(tag));
+
             return (
                 <ListItemText onClick={() => openMoreInfoDialog(tag)}>
-                    {showPrefix(tag) && (
+                    {prefix && (
                         <Typography className={styles.tagPrefix} noWrap>
-                            {getTranslation({ key: tag.textPrefix })}
+                            {prefix}
                         </Typography>
                     )}
-                    <MenuItemWithLines
-                        name={getText(tag, value)}
-                        maxLines={tag.desc ? 5 : 2}
-                        className={styles.tagName}
-                    />
+                    <MenuItemWithLines name={text} maxLines={tag.desc ? 5 : 2} className={styles.tagName} />
                 </ListItemText>
             );
         }
@@ -301,7 +309,9 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                                 if (baseTag.isDesc || baseTag.value?.length > 50) {
                                     setOpenMoreDialog({
                                         title: baseTag.name,
-                                        content: baseTag.isDesc ? parse(cleanHtml(baseTag.value)) : baseTag.value,
+                                        content: baseTag.isDesc
+                                            ? parse(sanitizeHtml(textToHTML(baseTag.value)))
+                                            : baseTag.value,
                                     });
                                 }
                             }}
@@ -315,10 +325,12 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                                     arrow
                                     placement="bottom"
                                     open={hover && copy}
-                                    onClick={() => handleCopy(baseTag.value)}
+                                    onClick={() =>
+                                        handleCopy(baseTag.isDesc ? htmlToText(baseTag.value) : baseTag.value)
+                                    }
                                 >
                                     <MenuItemWithLines
-                                        name={baseTag.isDesc ? stripHtml(baseTag.value) : baseTag.value}
+                                        name={baseTag.isDesc ? htmlToText(baseTag.value) : baseTag.value}
                                         maxLines={3}
                                         className={styles.tagName}
                                     />
@@ -335,7 +347,12 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         typeof item === 'string' ? (
                             <MenuItem disableRipple key={index} divider className={styles.tagList}>
                                 <Typography key={index} className={styles.tagName}>
-                                    {translateWithSplit(t, `${POI_PREFIX}${item}`)}
+                                    {
+                                        getValueLabelParts(
+                                            translateWithSplit(t, `${POI_PREFIX}${item}`),
+                                            tag.labels?.[index]
+                                        ).tagValue
+                                    }
                                 </Typography>
                             </MenuItem>
                         ) : (

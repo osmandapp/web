@@ -1,5 +1,5 @@
 ---
-source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
+source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
 sidebar_position: 16
 title: Topografie
 ---
@@ -58,6 +58,7 @@ Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:
 ### Lizenz für DEM-Daten, die von OsmAnd zur Geländeerkennung verwendet werden {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 Die Höhendaten auf der Karte (zwischen 70 Grad nördlicher Breite und 70 Grad südlicher Breite) wurden aus Messungen im Rahmen der *Shuttle Radar Topography Mission (SRTM)* gewonnen. Dabei wurde der *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*, das primäre Bildgebungsinstrument im *Earth Observation System der NASA*, verwendet.  
+Für Nordamerika verwenden Geländekarten und Höhenlinien hochauflösende nationale Höhendaten: etwa 10 m im Festland der Vereinigten Staaten und etwa 30 m in Alaska sowie in den meisten Teilen Kanadas und Mexikos.  
 Für vollständige Informationen siehe die [Lizenz](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146).
 
 
@@ -66,7 +67,8 @@ Für vollständige Informationen siehe die [Lizenz](https://github.com/osmandapp
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Die für dieses Produkt verwendeten Originaldaten wurden von JAXAs AW3D geliefert.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digitale Geländemodelle von Europa</a> (DTM).
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digitale Geländemodelle von Europa</a> (DTM).<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program (3DEP)</a> über <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> (Vereinigte Staaten, Alaska) und das <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">USGS 1 arc-second DEM</a> auf <a href="https://opentopography.org/">OpenTopography</a> (Kanada, Mexiko), einschließlich Daten von <a href="https://natural-resources.canada.ca/">Natural Resources Canada (NRCan)</a> und <a href="https://www.inegi.org.mx/">INEGI</a>.
 
 </details>
 
@@ -380,7 +382,7 @@ Wenn [OpenStreetMap-Daten](https://wiki.openstreetmap.org/wiki/Tag:tunnel%3Dbuil
 
 3D-Gebäude werden nur bei höheren Zoomstufen (Stadt-/Straßensicht) angezeigt, wo einzelne Gebäude dargestellt werden können. Beim Zoomen und Verschieben der Karte erscheinen und verschwinden 3D-Gebäude mit einer sanften Überblendungsanimation. Wenn ein POI oder ein ausgewählter Ort (z. B. ein Kartenstift oder Navigationsziel) in einem Gebäude liegt, hebt OsmAnd das entsprechende Gebäude hervor, um es leichter auf der Karte zu identifizieren.
 
-Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Wenn aktiviert, zeigt die Einstellung auch den aktuellen [Detailgrad](#performance) (Niedrig oder Hoch) unter dem Haupsschalter an (*nur Android*). Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängend von der Sichtbarkeitseinstellung.
+Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder auszuschalten. Wenn aktiviert, zeigt die Einstellung auch den aktuellen [Detailgrad](#performance) (Niedrig oder Hoch) unter dem Hauptschalter an (*nur Android*). Um Gebäude in 3D zu sehen, neigen Sie die Karte, indem Sie zwei Finger auf den Bildschirm legen und nach oben wischen. In dieser Ansicht können Gebäude Straßen oder Kartenbeschriftungen teilweise überdecken, abhängig von der Sichtbarkeitseinstellung.
 
 Auf Android ist diese Option nur verfügbar, wenn das Topografie-Plugin aktiviert ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
@@ -407,7 +409,7 @@ Die Einstellungen für 3D-Gebäude sind in zwei Gruppen unterteilt: **Darstellun
 
 Die **<Translate android="true" ids="shared_string_appearance"/>** steuert, wie 3D-Gebäude auf der Karte aussehen. Sie umfasst zwei Einstellungen: Farbe und Sichtbarkeit. 
 
-**<Translate android="true" ids="shared_string_color"/>** ermöglicht es Ihnen, die Gebäudefarbe zu ändern. Wenn Sie auf Farbe tippen, öffnet OsmAnd einen separaten Vorschirm, auf dem Sie die Karte sehen können, während Sie die Einstellung anpassen. Der Vorschirm zeigt eine Live-Karte, sodass Sie sofort sehen können, wie die ausgewählte Farbe die Gebäude beeinflusst.
+**<Translate android="true" ids="shared_string_color"/>** ermöglicht es Ihnen, die Gebäudefarbe zu ändern. Wenn Sie auf Farbe tippen, öffnet OsmAnd einen separaten Vorschaubildschirm, auf dem Sie die Karte sehen können, während Sie die Einstellung anpassen. Der Vorschaubildschirm zeigt eine Live-Karte, sodass Sie sofort sehen können, wie die ausgewählte Farbe die Gebäude beeinflusst.
 - **Kartenstil** — verwendet die Standard-Gebäudefarbe aus dem derzeit ausgewählten Kartenstil.
 - **Benutzerdefiniert** — ermöglicht es Ihnen, eine benutzerdefinierte Gebäudefarbe separat für Tag-/Nachtmodus festzulegen.
 
@@ -417,15 +419,15 @@ Die Farbanpassung von 3D-Gebäuden ist eine [kostenpflichtige Funktion](../purch
 
 Wenn benutzerdefinierte Farben nicht gekauft wurden, sehen Sie einen leeren Zustand mit einer kurzen Beschreibung und einem Button „Erwerben“. Wenn Benutzerdefiniert verfügbar ist, können Sie zwischen Tag und Nacht wechseln, eine Farbe aus der Palette auswählen (oder Alle Farben öffnen) und dann auf Anwenden tippen.
 
-**<Translate android="true" ids="gpx_visibility_txt"/>** steuert die Opazität (Transparenz) von 3D-Gebäuden. Verwenden Sie den Schieberegler, um die Sichtbarkeit als Prozentsatz festzulegen. Der Schieberegler erlaubt Werte von 10 % bis 100 %, mit 50 % als Standard. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter. Das Antippen von Sichtbarkeit öffnet ebenfalls einen separaten Vorschirm mit dem Schieberegler.
+**<Translate android="true" ids="gpx_visibility_txt"/>** steuert die Opazität (Transparenz) von 3D-Gebäuden. Verwenden Sie den Schieberegler, um die Sichtbarkeit als Prozentsatz festzulegen. Der Schieberegler erlaubt Werte von 10 % bis 100 %, mit 50 % als Standard. Niedrigere Werte machen Gebäude transparenter und helfen, Straßen/Beschriftungen lesbar zu halten. Höhere Werte machen Gebäude solider und visuell dominanter. Das Antippen von Sichtbarkeit öffnet ebenfalls einen separaten Vorschaubildschirm mit dem Schieberegler.
 
-Auf den Vorschirmen (Farbe / Sichtbarkeit) können Sie über die App-Leiste „Auf Standard zurücksetzen“, um den Standardwert wiederherzustellen.
+Auf den Vorschaubildschirmen (Farbe / Sichtbarkeit) können Sie in der App-Leiste auf „Auf Standard zurücksetzen“ tippen, um den Standardwert wiederherzustellen.
 
 ### Leistung {#performance}
 
 Die **<Translate android="true" ids="performance"/>** steuert, wie 3D-Gebäude gerendert werden. Sie umfasst zwei Einstellungen: Detailgrad und Sichtweite.
 
-**<Translate android="true" ids="level_of_details"/>** bestimmt die Komplexität der 3D-Gebäudengeometrie:
+**<Translate android="true" ids="level_of_details"/>** bestimmt die Komplexität der 3D-Gebäudegeometrie:
 - Niedrig (Standard) — einfachere Geometrie.
 - Hoch — detailliertere Geometrie. Die Überblendungsanimation für 3D-Gebäude ist nur mit dieser Einstellung verfügbar.
 
@@ -435,7 +437,7 @@ Die **<Translate android="true" ids="performance"/>** steuert, wie 3D-Gebäude g
 
 Beide Leistungseinstellungen verwenden einen Zweipositionsschalter direkt im 3D-Gebäude-Einstellungsbildschirm.
 
-**Hinweis:** Die Verwendung von *Hohem Detail* und *Fern-Sichtweite* verbessert das visuelle Erscheinungsbild, kann jedoch die Leistung beeinträchtigen und den Akkuverbrauch erhöhen.
+**Hinweis:** Die Verwendung von *Hohem Detailgrad* und *ferner Sichtweite* verbessert das visuelle Erscheinungsbild, kann jedoch die Leistung beeinträchtigen und den Akkuverbrauch erhöhen.
 
 
 <!--
@@ -443,12 +445,12 @@ Beide Leistungseinstellungen verwenden einen Zweipositionsschalter direkt im 3D-
 
 ![3D-Gebäude](@site/static/img/map/sun_setting.png)
 
-Die **Sonne**-Einstellung steuert die Beleuchtungsrichtung, die zum Rendern von 3D-Gebäuden verwendet wird. Sie beeinflusst, wie Licht und Schatten auf Gebäuden in der 3D-Ansicht erscheinen. Wenn Sie auf Sonne tippen, öffnet OsmAnd einen Vorschirm, auf dem Sie die Beleuchtung mit zwei Schiebereglern anpassen können:
+Die **Sonne**-Einstellung steuert die Beleuchtungsrichtung, die zum Rendern von 3D-Gebäuden verwendet wird. Sie beeinflusst, wie Licht und Schatten auf Gebäuden in der 3D-Ansicht erscheinen. Wenn Sie auf Sonne tippen, öffnet OsmAnd einen Vorschaubildschirm, auf dem Sie die Beleuchtung mit zwei Schiebereglern anpassen können:
 
 - Azimut — steuert die horizontale Richtung der Lichtquelle (die Kompassrichtung der Sonne).
 - Höhe — steuert die Höhe der Sonne über dem Horizont.
 
-Das Ändern dieser Parameter verändert, wie Schatten auf Gebäude fallen, und kann die visuelle Wahrnehmung der Gebäudeforment in der 3D-Ansicht verbessern. Tippen Sie auf Anwenden, um die ausgewählten Beleuchtungsparameter zu bestätigen.
+Das Ändern dieser Parameter verändert, wie Schatten auf Gebäude fallen, und kann die visuelle Wahrnehmung der Gebäudeformen in der 3D-Ansicht verbessern. Tippen Sie auf Anwenden, um die ausgewählten Beleuchtungsparameter zu bestätigen.
 -->
 
 

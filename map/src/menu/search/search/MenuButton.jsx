@@ -5,7 +5,7 @@ import gStyles from '../../gstylesmenu.module.css';
 import styles from '../search.module.css';
 import { closeHeader } from '../../actions/HeaderHelper';
 import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
-import { ReactComponent as CloseIcon } from '../../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 
 export const MenuButton = ({ needBackButton = false, backToPrevScreen = null }) => {
     const ctx = useContext(AppContext);

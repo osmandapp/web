@@ -1,5 +1,5 @@
 ---
-source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
+source-hash: 40444298714f3efdf33ba91bcf4a1ae66aa667d887d5d943cfe77e1fa53575ee
 title:  Pistas
 sidebar_position: 2
 ---
@@ -170,7 +170,7 @@ Toque el botón [Mi Posición](../../map/interact-with-map.md#my-position-and-zo
 - [Apariencia de la pista](./appearance.md)
 - [Menú contextual de la pista](./track-context-menu.md)
 - [Navegar por pista](../../navigation/setup/gpx-navigation.md)
-- [Rutas en el mapa](https://docs.osmand.net/blog/routes) artículo del blog
+- [Rutas en el mapa](https://osmand.net/blog/routes) artículo del blog
 - [Configurar mapa](../../map/configure-map-menu.md)  
 - [Pistas GPX](../../personal/tracks/index.md)  
 - [Planificar ruta](../../plan-route/index.md)  

@@ -1,5 +1,5 @@
 import headerStyles from '../menu/trackfavmenu.module.css';
-import { Alert, IconButton, Tooltip, Box } from '@mui/material';
+import { Alert, IconButton, Tooltip, Box, DialogContentText } from '@mui/material';
 import { closeHeader } from '../menu/actions/HeaderHelper';
 import AppContext from '../context/AppContext';
 import LoginContext from '../context/LoginContext';
@@ -10,15 +10,24 @@ import { ReactComponent as PurchasesIcon } from '../assets/icons/ic_action_purch
 import { ReactComponent as DeleteIcon } from '../assets/icons/ic_action_user_account_delete.svg';
 import { ReactComponent as GiftIcon } from '../assets/icons/ic_action_gift_colored_red.svg';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
 import Login from './Login';
-import { closeLoginMenu, FREE_ACCOUNT, FREE_ACCOUNT_SUB_TYPE } from '../manager/LoginManager';
+import {
+    CANCEL_LOGIN_LINK_PARAM,
+    closeLoginMenu,
+    FREE_ACCOUNT,
+    FREE_ACCOUNT_SUB_TYPE,
+    getLoginLink,
+    LOGIN_LINK_EMAIL_PARAM,
+} from '../manager/LoginManager';
 import ChangeResetPwd from './ChangeResetPwd';
+import CancelLoginLinkDialog from './dialogs/CancelLoginLinkDialog';
 import CreateAccount from './CreateAccount';
 import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
 import { LOGIN_URL, MAIN_URL_WITH_SLASH, PURCHASES_URL } from '../manager/GlobalManager';
 import { userLogout } from '../manager/AccountManager';
+import { confirm } from '../dialogs/GlobalConfirmationDialog';
 import i18n from 'i18next';
 import DefaultItemWithActions from '../frame/components/items/DefaultItemWithActions';
 import ThickDivider from '../frame/components/dividers/ThickDivider';
@@ -65,6 +74,9 @@ export default function LoginMenu() {
     const [openCloudInfo, setOpenCloudInfo] = useState(false);
     const [showDeveloperArea, setShowDeveloperArea] = useState(false);
     const [showGift, setShowGift] = useState(false);
+    const [cancelLinkOpen, setCancelLinkOpen] = useState(
+        !!new URLSearchParams(location.search).get(CANCEL_LOGIN_LINK_PARAM)
+    );
     const [, height] = useWindowSize();
 
     const clickHandler = (event) => {
@@ -80,6 +92,37 @@ export default function LoginMenu() {
             setShowDeveloperArea(false);
         }
     }, [ltx.loginRoles]);
+
+    // links from order-mgmt (login link) and from the owner's email (cancel it)
+    const linkParams = new URLSearchParams(location.search);
+    const cancelLinkCode = linkParams.get(CANCEL_LOGIN_LINK_PARAM);
+
+    useEffect(() => {
+        if (!getLoginLink(location.search)) {
+            return;
+        }
+        if (ltx.isLoggedIn()) {
+            confirm({
+                ctx,
+                title: t('web:login_link_logout_title'),
+                text: (
+                    <>
+                        <DialogContentText>
+                            <Trans
+                                i18nKey="web:login_link_logged_in_as"
+                                values={{ email: ltx.loginUser }}
+                                components={{ strong: <strong /> }}
+                            />
+                        </DialogContentText>
+                        <DialogContentText>{t('web:login_link_logout_desc')}</DialogContentText>
+                    </>
+                ),
+                callback: () => userLogout({ ltx, username: ltx.loginUser, handleClose: resetApp, lang }),
+            });
+        } else if (!ltx.loginUser) {
+            ltx.setLoginState({ changePwd: true });
+        }
+    }, [location.search, ltx.loginUser]);
 
     useEffect(() => {
         if (location.hash === '#logout' && ltx.loginUser) {
@@ -227,6 +270,13 @@ export default function LoginMenu() {
             )}
             {ltx.loginState.login && <Login />}
             {ltx.loginState.changePwd && <ChangeResetPwd />}
+            {cancelLinkOpen && (
+                <CancelLoginLinkDialog
+                    email={linkParams.get(LOGIN_LINK_EMAIL_PARAM)}
+                    code={cancelLinkCode}
+                    onClose={() => setCancelLinkOpen(false)}
+                />
+            )}
             {ltx.loginState.create && <CreateAccount />}
             {ltx.openChangeEmailDialog && <ChangeEmailDialog setOpenChangeEmailDialog={ltx.setOpenChangeEmailDialog} />}
             {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}

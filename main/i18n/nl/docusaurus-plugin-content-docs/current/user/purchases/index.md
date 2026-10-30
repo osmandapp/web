@@ -1,5 +1,5 @@
 ---
-source-hash: be440c1569e9bfbe942ce6274154063e4405eb3f2127ea1a15070e5680537c7c
+source-hash: 446dc6fb8862e87b5c5410884e5d855a41f55489f8f416fdb6d8004a6d595853
 sidebar_position: 9
 ---
 
@@ -40,4 +40,4 @@ Er zijn verschillende manieren om dit te doen:
 
 - OsmAnd+ op [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - OsmAnd op [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon is niet langer beschikbaar. Gedetailleerde informatie is [hier](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do) te vinden.
+- Amazon is niet langer beschikbaar. Gedetailleerde informatie is [hier](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do) te vinden.

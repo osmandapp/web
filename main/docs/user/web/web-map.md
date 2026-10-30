@@ -72,21 +72,32 @@ The selected marker remains visible when zooming the map.
 
 Nearby markers may be hidden to make the selected object easier to see.
 
-![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+When the [OsmAnd vector (beta)](#map-type) map type is enabled, you can select objects directly on the map, including POIs, buildings, house numbers, and public transport stops. When you hover over a selectable object, the pointer changes to a pointing hand. Objects without a name or an icon, such as unnamed roads and footpaths, cannot be selected.
+
+Selecting an object opens its details panel:
+
+- **POI** — the panel shows the same information and quick actions as in [Search](web-search.md) results and the [POI overlay](#poi-overlay).
+- **Object without POI data** — for example, a building or a house number. The panel shows the object type, address, and coordinates.
+- **Public transport stop** — the panel can also include the Routes section with the transport type filter, as described in [Transport stops](#transport-stops).
+
+If several objects are located at the selected point, the panel shows them one at a time. Use the arrows next to the close button to switch between them. The back arrow appears starting from the second object, and the forward arrow is inactive on the last one.
+
+![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/several_objects.webp)
 
 
 
 ## Configure Map Menu {#configure-map-menu}
 
-The Configure Map menu allows you to manage the display settings for map data, such as POI layers, favorites, tracks, and terrain. This menu is available after you sign in to your OsmAnd account. To open it, click the button in the **top left corner** or access it through the **Menu**.
+The Configure Map menu allows you to manage the display settings for map data, such as POI layers, favorites, tracks, terrain, and map type. This menu is available after you sign in to your OsmAnd account. To open it, click the button in the **top left corner** or access it through the **Menu**.
 
 - [POI overlay...](#poi-overlay). Allows you to choose and show needed POI categories on the map.
 - [Favorites](#favorites). Toggle the display of favorites on the map.
 - [Tracks](#tracks). Contains GPX tracks visible on the map.
 - [Transport stops](#transport-stops). Toggle the display of public transport stops on the map. 
 - [Terrain](#terrain). Enable or disable the terrain color scheme on the map.
+- [Raster (tiles) / OsmAnd vector (beta)](#map-type). Shows the map type currently in use and lets you switch between the raster and vector map.
 
-![POIs menu](@site/static/img/web/configure_map_web_new.png)
+![POIs menu](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### POI overlay {#poi-overlay}
@@ -183,6 +194,17 @@ In this section, you can:
 - Adjust the visibility of the selected terrain layer from **0% to 100%**.
 
 ![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+
+### Map type {#map-type}
+
+Select the map type item in the Configure Map menu to choose one of the following:
+
+- **Raster (tiles)** — the default map type. On this map type, you can select only markers displayed over the map, such as [Search](web-search.md) results, [POI overlay](#poi-overlay) markers, [favorites](#favorites), and [transport stops](#transport-stops).
+- **OsmAnd vector (beta)** — the vector map. On this map type, you can [select objects directly on the map](#selected-object).
+
+The selected map type is saved and applied the next time you open the map. **Reset to default** in the Configure Map header switches the map back to **Raster (tiles)**.
+
+The vector map requires a browser with WebGL support. If WebGL is not available, the map automatically switches to **Raster (tiles)**.
 
 
 ## Settings {#settings}
@@ -293,6 +315,10 @@ Depending on the specified parameters, URL strings can contain:
 10. **Plan a Route**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Direct link to the current [**Explore page**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **POI details**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Map object without POI data** (for example, a building)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## Related Articles {#related-articles}

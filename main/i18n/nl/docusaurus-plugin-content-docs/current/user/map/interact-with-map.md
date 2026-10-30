@@ -1,5 +1,5 @@
 ---
-source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
+source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
 sidebar_position: 2
 title:  Interactie met de kaart
 ---
@@ -215,6 +215,12 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 ![Bolweergave](@site/static/img/map/globe_view_1.png) ![Bolweergave](@site/static/img/map/globe_view_2.png)
 
 **Bolweergave** stelt u in staat de kaart weer te geven als een bolvormige aarde in plaats van een platte projectie. Deze modus verandert de geometrie van het kaaroppervlak en past de kaartinteractie aan op bolvormige navigatie.  
+
+Bolweergave is momenteel alleen beschikbaar wanneer:
+- De [Topografie-plug-in](../plugins/topography.md) is ingeschakeld.  
+Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*  
+- De [Kaartweergave-engine](../personal/global-settings.md#map-rendering-engine) is ingesteld op versie 2 (OpenGL).  
+Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine,map_rendering_engine_v2"/>*  
 
 </TabItem>
 

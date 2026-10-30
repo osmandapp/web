@@ -1,5 +1,5 @@
 ---
-source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
+source-hash: 3e8ac9992e039c617c093a24702772bc6cdb0c520e1dcadb77013d26c7264441
 sidebar_position: 2
 title:  المشتريات والمدفوعات
 ---
@@ -90,6 +90,10 @@ import Translate from '@site/src/components/Translate.js';
 
 ➡️ حاليًا، [النقل عبر المنصات ممكن للاشتراكات والمشتريات داخل التطبيق](../purchases/cross.md).  
 ❗ لا يمكن نقل **OsmAnd+** (تطبيق مستقل) بين المنصات عبر حساب OsmAnd Cloud. للحصول على المساعدة، يرجى الاتصال بـ **support@osmand.net**.
+
+إذا تعذر تفعيل عملية الشراء من أمازون تلقائيًا عبر OsmAnd Cloud، فاتصل بدعم OsmAnd — **support@osmand.net** — لإجراء النقل اليدوي. قدّم رقم معاملة أمازون الذي يبدأ بـ D01-. يوصى أيضًا بإرفاق لقطة شاشة توضح المنتج الذي تم شراؤه.
+
+لا يمكن نقل عمليات الشراء التي تمت منذ أكثر من ١٠ سنوات.
 
 ## كيفية استعادة شراء إضافة التضاريس (Contour lines سابقًا) {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 

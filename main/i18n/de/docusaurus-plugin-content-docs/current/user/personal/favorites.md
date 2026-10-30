@@ -1,5 +1,5 @@
 ---
-source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Favoriten
 ---
@@ -24,13 +24,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favoriten Einführung Android](@site/static/img/personal/favorites_intro_android.png)
+![Favorites introduction android](@site/static/img/personal/favorites_intro_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoriten Einführung iOS](@site/static/img/personal/favorites_intro_ios.png)
+![Favorites introduction ios](@site/static/img/personal/favorites_intro_ios.png)
 
 </TabItem>
 
@@ -64,13 +64,13 @@ Favoriten sind Teil einer speziellen Kartenebene, und Sie können sie zusammen m
 
 <TabItem value="android" label="Android">
 
-![Favorit Beschreibung hinzufügen Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favoritengruppe Android](@site/static/img/personal/favorite_group_android.png)
+![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorit Beschreibung hinzufügen iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favoritengruppe iOS](@site/static/img/personal/favorite_group_ios.png)
+![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -101,13 +101,13 @@ Wenn ein Punkt aus OSM-Daten hinzugefügt wird, werden die relevanten POI-Inform
 
 <TabItem value="android" label="Android">
 
-![Favorit bearbeiten Android](@site/static/img/personal/favorite_edit_android.webp)
+![Favorite edit Android](@site/static/img/personal/favorite_edit_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorit bearbeiten iOS](@site/static/img/personal/favorite_edit_ios.png)
+![Favorite edit iOS](@site/static/img/personal/favorite_edit_ios.png)
 
 </TabItem>
 
@@ -131,26 +131,26 @@ So ändern Sie einen Favoritenpunkt:
 
 <TabItem value="android" label="Android">
 
-Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Favorit auswählen* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
-![Meine Orte Favoriten Android](@site/static/img/personal/favorite_icon_andr.png)
+![My places favorites android](@site/static/img/personal/favorite_icon_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Favorit auswählen* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
-![meine_orte_ios](@site/static/img/personal/favorite_icon_3_ios.png)
+![my_places_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-In OsmAnd ist eine große Auswahl an Symbolen für POIs und Wegpunkte verfügbar. Sie können:
+Der Bildschirm **Symbol auswählen** gruppiert Symbole nach [Kategorie](../search/search-poi.md#categories-and-their-filters). Mit einer Reihe von Kategorie-Chips am oberen Rand springen Sie direkt zum Abschnitt einer Kategorie in der darunterliegenden Liste. Tippen Sie auf das Lupensymbol, um ein Symbol nach Name oder Stichwort zu finden.
 
-- Ein Symbol aus der Liste der [POI-Kategorien](../search/search-poi.md#categories-and-their-filters) auswählen.
-- Ein passendes Symbol über die [Suchoption](../search/search-all.md#how-to-use) finden.
+- *Zuletzt verwendet* — Kürzlich ausgewählte Symbole erscheinen in einem eigenen Abschnitt zur schnellen Wiederverwendung.
+- *Spezial* — Eine Auswahl allgemeiner Symbole (Stern, Flagge, Markierung, Herz, Kamera und andere), die nicht an eine bestimmte Kategorie gebunden sind.
 
 
 ### Spezielle Favoriten (Persönlich) {#special-favorites-personal}
@@ -160,7 +160,7 @@ Der *Persönliche Ordner* enthält spezielle Punkte wie **<Translate android="tr
 
 ### Medien (Nur Android) {#media}
 
-![Medien](@site/static/img/personal/media_actions.webp) ![Medien](@site/static/img/personal/media_menu.webp)
+![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_menu.webp)
 
 Der Medienbereich ermöglicht das Anhängen von Fotos, Videos, Audioaufnahmen und Bildern an einen Favoritenpunkt. Medien können beim Erstellen eines Favoriten oder später über den Bildschirm „Favorit bearbeiten“ hinzugefügt werden. Um Medien anzuhängen, tippen Sie in der Medien-Sektion auf *Hinzufügen* und wählen Sie eine der verfügbaren Optionen:
 - **Foto aufnehmen** — Nehmen Sie ein neues Foto mit der Gerätekamera auf.
@@ -184,7 +184,7 @@ Tippen Sie auf ein beliebiges Element, um es in der Vollbildansicht zu öffnen. 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Meine Orte Favoriten Android](@site/static/img/personal/my_places_android_new.png)
+![My places favorites android](@site/static/img/personal/my_places_android_new.png)
 
 </TabItem>
 
@@ -192,7 +192,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![meine_orte_ios](@site/static/img/personal/my_places_ios_new.png)
+![my_places_ios](@site/static/img/personal/my_places_ios_new.png)
 
 </TabItem>
 
@@ -209,19 +209,20 @@ Der Bereich **Favoriten** ermöglicht Ihnen:
 
 <TabItem value="android" label="Android">
 
-![Favoriten Android](@site/static/img/personal/favorites_points_sorting.webp) ![Favoriten Android](@site/static/img/personal/favorites_folders_sorting.png)
+![Favorites android](@site/static/img/personal/favorites_points_sorting.webp) ![Favorites android](@site/static/img/personal/favorites_folders_sorting.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoriten iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Favoriten iOS](@site/static/img/personal/favorites_folders_sorting.webp)
+![Favorites iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Favorites iOS](@site/static/img/personal/favorites_folders_sorting.webp)
 </TabItem>
 
 </Tabs>
 
 - **Sortierung** — Favoritenordner und -punkte können mit den verfügbaren Sortieroptionen im Listenmenü sortiert werden. Für Favoritenpunkte stehen folgende Optionen zur Verfügung: *Name A – Z*, *Name Z – A*, *Zuletzt geändert*, *Nächster zum aktuellen Standort*, *Nächster zum Kartenzentrum*, *Neuestes Datum zuerst* und *Ältestes Datum zuerst*. Für Favoritenordner stehen folgende Optionen zur Verfügung: *Name A – Z*, *Name Z – A*, *Zuletzt geändert*, *Neuestes Datum zuerst* und *Ältestes Datum zuerst*. Standardmäßig werden die Elemente nach Name A – Z sortiert. Angepinnte Ordner werden immer oben in der Liste angezeigt. Sie sind visuell durch einen Trennstrich von den restlichen Ordnern getrennt. 
-- **Suche** — Verwenden Sie die [Globale Suche](../search/search-all.md), um Favoriten nach Namen zu finden. Favoriten werden nach der Entfernung vom Kartenzentrum sortiert. Um Favoritenpunkte aus der Favoritenliste auf der Registerkarte „Meine Orte“ zu suchen, tippen Sie auf das Symbol *Suchen* (Lupe).
+- **Suche** — Sie können die [Globale Suche](../search/search-all.md) verwenden, um Favoriten nach Namen zu finden. Um nur innerhalb der Favoritenliste auf der Registerkarte „Meine Orte“ zu suchen, tippen Sie auf das Symbol *Suchen* (Lupe).
+
 
 ### Stapelbearbeitung / Löschen {#bulk-edit--delete}
 
@@ -229,7 +230,7 @@ Der Bereich **Favoriten** ermöglicht Ihnen:
 
 <TabItem value="android" label="Android">
 
-![Favoritenaktionen Android](@site/static/img/personal/favorites_group_actions.png) ![Favoritenaktion Löschen Android](@site/static/img/personal/favorites_actions.png)
+![Favorites actions android](@site/static/img/personal/favorites_group_actions.png) ![Favorites action delete android](@site/static/img/personal/favorites_actions.png)
 
 Um mehrere Favoriten oder Ordner zu verwalten, aktivieren Sie den *Auswahlmodus*. Sie können den Auswahlmodus auf zwei Arten öffnen:
 - Tippen Sie auf das *Drei-Punkte-Menü* in der oberen rechten Ecke und wählen Sie *Auswählen*.
@@ -252,7 +253,7 @@ Wenn Favoritenpunkte ausgewählt sind, sind die folgenden Aktionen verfügbar:
 
 <TabItem value="ios" label="iOS">
 
-![Favoritenaktionen iOS](@site/static/img/personal/favorites_actions_folders.webp) ![Favoritenaktionen iOS](@site/static/img/personal/favorites_actions_points.webp)
+![Favorites actions ios](@site/static/img/personal/favorites_actions_folders.webp) ![Favorites actions ios](@site/static/img/personal/favorites_actions_points.webp)
 
 Um mehrere Favoritenpunkte oder Ordner zu verwalten, aktivieren Sie den *Auswahlmodus*, indem Sie auf das *Drei-Punkte-Menü* in der oberen rechten Ecke tippen und *Auswählen* wählen. Wenn der Auswahlmodus aktiviert ist, erscheinen Kontrollkästchen neben den Elementen in der Liste. Wählen Sie die gewünschten Favoritenpunkte oder Ordner aus, indem Sie auf die Kontrollkästchen tippen. Um alle Elemente in der Liste auszuwählen, tippen Sie auf das Symbol *Alle auswählen* in der oberen rechten Ecke.
 
@@ -275,21 +276,6 @@ Für ausgewählte Ordner stehen dieselben Aktionen zur Verfügung, mit folgenden
 
 </Tabs>
 
-<!--
-### Favoriten zu Kartenmarkierungen hinzufügen {#add-favorites-to-map-markers}
-
-<InfoAndroidOnly/>
-
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-Sie können Ihre Favoriten zur [Liste der Kartenmarkierungen](../personal/markers.md) hinzufügen oder daraus entfernen.
-Das Antippen der &#8942;-Schaltfläche (**Android**) öffnet spezielle Funktionen für einen ausgewählten Favoritenordner (Gruppe).
-
-**Funktionen für Favoritenordner:**
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  oder **<Translate android="true" ids="remove_from_map_markers"/>**.
-- Alle Favoritenpunkte aus einem Ordner zur [Liste der Kartenmarkierungen](../personal/markers.md) hinzufügen oder daraus entfernen.
--->
-
 
 ### Aktionen für Favoritengruppen {#favorite-group-actions}
 
@@ -297,13 +283,13 @@ Das Antippen der &#8942;-Schaltfläche (**Android**) öffnet spezielle Funktione
 
 <TabItem value="android" label="Android">
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions.webp)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoritenaktionen iOS](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
+![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
 
 </TabItem>
 
@@ -330,7 +316,7 @@ Verwenden Sie auf Android das ***Drei-Punkte-Menü*** neben jedem Ordner, um Gru
 
 Gehen Sie zu: *Drei-Punkte-Menü → Standard-Erscheinungsbild ändern*
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorite_change_appearance_new.png)
+![Favorites folder functions android](@site/static/img/personal/favorite_change_appearance_new.png)
 
 </TabItem>
 
@@ -338,7 +324,7 @@ Gehen Sie zu: *Drei-Punkte-Menü → Standard-Erscheinungsbild ändern*
 
 Gehen Sie zu: *Langes Antippen Ordner → Standard-Erscheinungsbild*
 
-![Favoritenaktionen iOS](@site/static/img/personal/favorite_add_new_group_3_ios.webp)
+![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_3_ios.webp)
 
 </TabItem>
 
@@ -376,7 +362,7 @@ OsmAnd bietet mehrere Methoden zum [Sichern](./import-export.md) und [Wiederhers
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_free_backup_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_andr.png)
 
 </TabItem>
 
@@ -384,7 +370,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![Favoritenaktionen iOS](@site/static/img/personal/favorites_free_backup_2_ios.webp)
+![Favorites actions ios](@site/static/img/personal/favorites_free_backup_2_ios.webp)
 
 </TabItem>
 
@@ -407,7 +393,7 @@ Das [kostenlose Favoriten-Backup](../personal/osmand-cloud.md#osmand-start) ist 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
 </TabItem>
 
@@ -415,44 +401,20 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
 
-![Favoritenaktionen iOS](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![Favorites actions ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Sie benötigen ein OsmAnd Cloud-Konto, um die Funktion *Kostenloses Einstellungen-Backup* zu nutzen. Wenn Sie ein Konto in *OsmAnd Pro* oder ein aktives Konto in *OsmAnd Cloud acount* haben, wird Ihnen das Werbebanner nicht angezeigt.  
+Sie benötigen ein OsmAnd Cloud-Konto, um die Funktion *Kostenloses Favoriten-Backup* zu nutzen. Wenn Sie ein Konto in *OsmAnd Pro* oder ein aktives Konto in *OsmAnd Cloud account* haben, wird Ihnen das Werbebanner nicht angezeigt.  
 
 - *Banner für kostenloses Favoriten-Backup*. Tippen Sie auf dieses Banner, um den Sicherungsvorgang zu starten.
 - *Schließen Sie den Registrierungsschritt ab*, wenn Sie kein OsmAnd Cloud-Konto haben, indem Sie den Anweisungen in der [Registrierungsanleitung](../personal/osmand-cloud.md#login) folgen.
 - *Navigieren Sie zum Menü "OsmAnd-Käufe"* (*Menü → Einstellungen → Käufe*).
-- *[OsmAnd Start-Paket](../personal/osmand-cloud.md#osmand-start)*. Wählen Sie diese Option, um auf die Funktion "Kostenloses Einstellungen-Backup" zuzugreifen.
-- *Erstellen Sie ein Backup* Ihrer Einstellungen.
+- *[OsmAnd Start-Paket](../personal/osmand-cloud.md#osmand-start)*. Wählen Sie diese Option, um auf die Funktion "Kostenloses Favoriten-Backup" zuzugreifen.
+- *Erstellen Sie ein Backup* Ihrer Favoriten.
 
-<!--
-### Alle Favoriten {#all-favorites}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Favoritenaktionen Android](@site/static/img/personal/favorites_export_import_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favoriten Export Import iOS](@site/static/img/personal/favorites_export_import_3_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-Sie können Ihre Favoriten über die speziellen Schaltflächen am unteren Rand des Favoritenbildschirms exportieren und importieren. Eine [.gpx-Datei](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) kann an Dropbox, E-Mail, Messenger und andere auf Ihrem Gerät installierte Anwendungen gesendet werden, die diese Funktion unterstützen.
-
-- **Importieren**-Schaltfläche (*Android*) / **Favorit importieren** (*iOS*). Ermöglicht den Import von Favoritenpunkten (*favorites.gpx*) als Wegpunkte aus einer *GPX*-Datei (ein gängiges GPS-Datenformat) aus dem Speicher Ihres Geräts.
-- **Teilen**-Schaltfläche (*Android*) / **Favorit exportieren** (*iOS*). Ermöglicht den Export (Teilen) all Ihrer Favoriten als *favorites.gpx*-Datei.
--->
 
 ### Favoritengruppe {#favorite-group}
 
@@ -460,19 +422,19 @@ Sie können Ihre Favoriten über die speziellen Schaltflächen am unteren Rand d
 
 <TabItem value="android" label="Android">
 
-![Funktionen für Favoritenordner Android](@site/static/img/personal/favorites_folder_functions_2_andr.webp)
+![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favoritenaktionen iOS](@site/static/img/personal/favorites_actions_1_ios.webp) 
+![Favorites actions ios](@site/static/img/personal/favorites_actions_1_ios.webp) 
 </TabItem>
 
 </Tabs>
 
-- Um mehrere Favoritenordner zu teilen, aktivieren Sie den [Auswahlmodus](#bulk-edit--delete), wählen Sie die gewünschten Ordner aus und tippen Sie auf *Teilen*.
-- Um einen einzelnen Favoritenordner zu teilen, tippen Sie auf das Drei-Punkte-Menü (*Android*) oder tippen Sie lange auf den Ordner (*iOS*), wählen Sie *Teilen*, um die Favorites.gpx-Datei in den Speicher Ihres Geräts zu senden oder sie über Messaging-Apps zu teilen. Auf Android erscheint bei Ordnern mit angehängten Medien ein Teilen-Blatt. Sie können wählen:
+- Um mehrere Favoritenordner zu teilen, siehe den Abschnitt [Stapelbearbeitung / Löschen](#bulk-edit--delete).
+- Um einen einzelnen Favoritenordner zu teilen, siehe den Abschnitt [Aktionen für Favoritengruppen](#favorite-group-actions). Auf Android erscheint bei Ordnern mit angehängten Medien ein Teilen-Blatt. Sie können wählen:
     - *Nur Punkte* — Teilen Sie die Favoritenpunkte aus dem Ordner als GPX-Datei.
     - *Punkte und Medien* — Teilen Sie die Favoritenpunkte und angehängte Medien als OSF-Archiv.
 
@@ -485,7 +447,7 @@ Sie können Ihre Favoriten über die speziellen Schaltflächen am unteren Rand d
 
 Gehen Sie zu: *Android → data → net.osmand → files → backup*
 
-![Favoriten-Backup-Export Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Automatische Favoritensicherung Android](@site/static/img/personal/favorites_autobackup_andr.png)  
+![Favorites backup export Android](@site/static/img/personal/favorites_backup_export_andr.png)  ![Favorites autobackup android](@site/static/img/personal/favorites_autobackup_andr.png)  
 
 </TabItem>
 
@@ -493,13 +455,13 @@ Gehen Sie zu: *Android → data → net.osmand → files → backup*
 
 Gehen Sie zu: *Dateien → Auf meinem iPhone → OsmAnd Maps → favourites_backup*
 
-![Automatische Favoritensicherung iOS](@site/static/img/personal/favorites_autobackup.png)  
+![Favorites autobackup ios](@site/static/img/personal/favorites_autobackup.png)  
 
 </TabItem>
 
 </Tabs>
 
-OsmAnd erstellt bei jeder Bearbeitung von Favoriten eine **Sicherungsdatei**.
+OsmAnd erstellt automatisch bei jeder Bearbeitung von Favoriten eine **Sicherungsdatei** und behält insgesamt bis zu 10 Sicherungsdateien, mit höchstens 2 neuen Sicherungen pro Tag.
 
 - **Android**: Sicherungen werden in *Android → data → net.osmand → files → backup* gespeichert. Verwenden Sie einen Dateimanager eines Drittanbieters, um darauf zuzugreifen.
 
@@ -519,6 +481,8 @@ In den neuesten Versionen von ***Android*** ist der Zugriff auf Systemverzeichni
 
 Alle Informationen über einen Favoriten werden mit Tags gespeichert und beschrieben. Beim Erstellen eines Favoritenpunktes können Sie Ihre eigene [Beschreibung](#favorite-point) verfassen oder Informationen aus den OSM-[Sonderzieldaten (POI)](../map/point-layers-on-map.md#points-of-interest-pois) verwenden, aus denen Ihr Punkt erstellt wurde. Favoritenpunkte, POIs und Wegpunkte verwenden dieselben **Tags** zur Speicherung von Informationen und werden im **GPX-Dateiformat** gespeichert.
 
+Wenn das [OSM-Editing-Plugin](../plugins/osm-editing.md) aktiviert ist, speichert ein aus einem OpenStreetMap-Objekt erstellter Favorit auch einen Link zu diesem Objekt im Tag `osm_url`, zum Beispiel `https://www.openstreetmap.org/node/7235345886`. Der Link bleibt in exportierten und geteilten Favoritendateien sowie in Backups erhalten.
+
 Favoriten können auch Verweise auf angehängte Medien mithilfe standardmäßiger GPX-`<link>`-Elemente enthalten. 
 
 
@@ -533,6 +497,7 @@ Favoriten können auch Verweise auf angehängte Medien mithilfe standardmäßige
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

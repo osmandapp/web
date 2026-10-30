@@ -133,6 +133,8 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,configure_ma
 
 Each POI type in OsmAnd assigned a specific icon and color. POI's [zoom level](../map/vector-maps.md#details) and design could be different in some [map styles](../map/map-styles.md).  
 
+In the OsmAnd [map style](../map/map-styles.md), places of worship (churches, mosques, synagogues, temples, and others) are displayed selectively. At lower zoom levels, only the most notable ones are shown, and the rest appear as you zoom in. With the [*<Translate android="true" ids="rendering_attr_moreDetailed_name"/>*](../map/vector-maps.md#details) setting enabled, all places of worship appear at a lower zoom level. In [night mode](../map/vector-maps.md#map-mode), their icons are shown without a background circle, as in day mode.
+
 [Read more](../map/vector-maps.md#hide).
 
 

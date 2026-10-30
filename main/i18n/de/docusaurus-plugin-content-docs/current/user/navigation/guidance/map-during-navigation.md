@@ -1,5 +1,5 @@
 ---
-source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
+source-hash: 968394db45647827e95cb32f776ef7f818433675c6fb40f6ba7071f88e7d270d
 sidebar_position: 2
 title: Kartenansicht während der Navigation
 ---
@@ -49,7 +49,7 @@ Während der Navigation passt sich das Erscheinungsbild der Karte an das ausgew�
 
 | Parameter | Beschreibung | Hinweis |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | Die Zeit, für die die Kartenansicht nach einer Bewegung mit der aktuellen Position synchronisiert wird.  |  *Wert:* <br /> Nie, 5 Sek., 10 Sek., 15 Sek., 20 Sek., 25 Sek., 30 Sek., 45 Sek., 60 Sek., 50 Sek.|
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | Die Zeit, für die die Kartenansicht nach einer Bewegung mit der aktuellen Position synchronisiert wird.  |  *Wert:* <br /> Nie, 5 Sek., 10 Sek., 15 Sek., 20 Sek., 25 Sek., 30 Sek., 45 Sek., 60 Sek., 90 Sek.|
 | *<Translate android="true" ids="auto_zoom_map"/>*  |  Automatische Skalierung der Karte entsprechend Ihrer Geschwindigkeit, solange die Karte mit Ihrer aktuellen Position synchronisiert ist. | *Wert:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - manueller Zoom. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - Zoom ist 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - Zoom ist 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - Zoom ist 5 m. <br /> Auto-Zoom-Änderungen können animiert (Sanft) oder schrittweise (Diskret) sein, abhängig von den [Entwicklungseinstellungen](navigation-settings.md#development-settings). Im Sanft-Modus verwenden Zoom-Änderungen eine kontrollierte Animation (ca. 0,1 Zoom/Sekunde). Auto-Zoom passt den Zoom bei sehr niedrigen Geschwindigkeiten (unter ~7 km/h) nicht an. Wenn die erforderliche Zoom-Änderung weniger als ~1,5 Sekunden dauern würde, wird die Animation nicht gestartet. <br /> Auto-Zoom zielt darauf ab, das bevorstehende Manöver in einem stabilen Fokus-Bereich auf dem Bildschirm zu halten, sodass die sichtbare Distanz voraus während der Fahrt konsistent bleibt.|
 | *Auto-Zoom-3D-Winkel* | Legt den Neigungswinkel der Karte fest, wenn während der Navigation auf die 3D-Ansicht gewechselt wird. Ein höherer Winkel lässt den Horizont weiter entfernt erscheinen und bietet mehr Sicht nach vorn. |Wird nur angewendet, wenn Auto-Zoom aktiviert ist. Werte: 20°, 25°, 30°, 35°, 40°. Standard: 25°. <br /> Beim Annähern an ein Manöver/Kreuzung kann die App den 3D-Neigungswinkel schrittweise auf eine 2D-Ansicht reduzieren, um die nächste Abbiegung lesbar zu halten. |
 | *Nächste Abbiegung vorbereiten* | Rotiert die Karte automatisch etwas im Voraus, um die nächste Abbiegung oder das nächste Manöver während der Navigation anzuzeigen. Hilft, bevorstehende Aktionen zu antizipieren.  | Standardmäßig aktiviert. Wenn Sie ein Profil exportieren und erneut importieren, überprüfen Sie diese Einstellung, da sie in einigen früheren Versionen auf „aktiviert“ zurückgesetzt werden konnte.   <br /> Die Rotation/Vorschau wird ausgelöst, sobald der nächste Manöverpunkt in den Fokus-Bereich fällt (die Karte beginnt also, sich die Abbiegung anzusehen, wenn sie relevant wird). |
@@ -161,7 +161,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 ## Darstellung der Routenlinie {#route-line-appearance}
 
 :::info Pro-Funktion
-Die Anpassung der Routenlinie ist eine kostenpflichtige [**OsmAnd Pro**]-Funktion <ProFeature />.
+Die Anpassung der Routenlinie ist eine kostenpflichtige [**OsmAnd Pro**](../../purchases/index.md)-Funktion <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">

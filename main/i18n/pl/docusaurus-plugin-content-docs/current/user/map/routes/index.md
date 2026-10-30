@@ -1,5 +1,5 @@
 ---
-source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title:  Trasy
 sidebar_position: 11
 ---
@@ -198,7 +198,7 @@ Możesz dostosować, czy trasy są włączone czy wyłączone, za pomocą widże
 
 </Tabs>  
 
-Znajdź trasy za pomocą funkcji [Wyszukiwania](../../search/index.md) według nazwy lub wybierając „Trasy” w sekcji [Kategorie](../../search/search-poi.md#).
+Znajdź trasy za pomocą funkcji [Wyszukiwania](../../search/index.md) według nazwy lub wybierając „Trasy” w sekcji [Kategorie](../../search/search-poi.md#poi-search-by-categories).
 
 Aby wyszukać, przejdź do menu *<Translate android="true" ids="search_button"/>* lub *<Translate android="true" ids="search_button,search_categories"/>* i wpisz swoją aktywność.
 
@@ -222,7 +222,7 @@ Przejdź do *<Translate android="true" ids="search_button,search_categories,poi_
 
 </Tabs>
 
-W wynikach wyszukiwania tras dotknij przycisku **Filtry** w prawym górnym rogu, aby zawęzić listę. Ekran filtrów zawiera pole **Filtruj według nazwy**; blok **Typ** z opcjami *Biuro*, *Aneks pocztowy* i *Partner pocztowy*; oraz **dodatkowe kryteria**, które zależą od wybranej kategorii trasy lub aktywności, ponieważ każda kategoria może udostępniać własne cechy i wartości filtrów.
+W wynikach wyszukiwania tras dotknij przycisku **Filtry** w prawym górnym rogu, aby zawęzić listę. Ekran filtrów zawiera pole **Filtruj według nazwy** oraz **dodatkowe kryteria**, które zależą od wybranej kategorii trasy lub aktywności, ponieważ każda kategoria może udostępniać własne cechy i wartości filtrów.
 
 Możesz włączać lub wyłączać filtry za pomocą przełączników, a niektóre sekcje zawierają opcję *Pokaż wszystko*, aby wyświetlić dodatkowe wartości.
 
@@ -235,5 +235,5 @@ Możesz włączać lub wyłączać filtry za pomocą przełączników, a niektó
 - [Menu kontekstowe śladów](../../map/tracks/track-context-menu.md)
 - [Transport publiczny](../public-transport.md)
 - [Wygląd linii trasy nawigacji](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [Wyszukiwanie POI](../../search/search-poi.md#)
+- [Wyszukiwanie POI](../../search/search-poi.md)
 - [Typy tras](./types-of-routes.md)

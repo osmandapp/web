@@ -1,5 +1,5 @@
 ---
-source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
+source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
 sidebar_position: 3
 title:  Saisie de coordonnées
 ---
@@ -24,11 +24,9 @@ La *Saisie de coordonnées* est un outil simple et facile à utiliser pour crée
 
 ## Comment utiliser {#how-to-use}
 
-Vous pouvez créer des points de cheminement à partir du menu *[Marqueurs sur la carte](../personal/markers.md#actions)* ou de [Mes lieux](../personal/myplaces.md) (voir les captures d'écran). Veuillez suivre ces chemins pour accéder à l'option de saisie de coordonnées :
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Bouton globe en bas de l'écran*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+Vous pouvez créer des points de cheminement à partir du menu *[Marqueurs sur la carte](../personal/markers.md#actions)*. Allez à : *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Comment trouver la saisie de coordonnées](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Comment trouver la saisie de coordonnées](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png) 
+![Comment trouver la saisie de coordonnées](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) 
 
 Après avoir ouvert l'écran de saisie des coordonnées :
 
@@ -101,7 +99,7 @@ Lorsque vous appuyez sur un point, il devient possible de modifier ses coordonn�
 
 Pour enregistrer vos points en tant que trace, appuyez sur le bouton *Retour* ( &#8592; ) ou utilisez le menu *[Options](#options)*.
 
-![Enregistrer un point via la saisie de coordonnées Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Liste de Mes lieux via la saisie de coordonnées Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![Enregistrer un point via la saisie de coordonnées Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Liste de Mes lieux via la saisie de coordonnées Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
 
 Dans le menu contextuel, vous pouvez saisir votre propre nom de trace ou l'enregistrer par défaut. Appuyez sur <Translate android="true" ids="shared_string_save"/> pour enregistrer les points ajoutés en tant que nouvelle trace.  
 Vous trouverez votre trace dans le menu [Mes lieux](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

@@ -93,14 +93,14 @@ Yapılandırdığınız ve oluşturduğunuz tüm veriler ***Dışa Aktar menüs�
 - *Yeniden başlatma*. Dosyaları içe aktardıktan sonra uygulamanın yeniden başlatılması gerekir.
 
 Desteklenen içe aktarma dosya türleri:
-- [Rotalar, güzergahlar](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favoriler](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML ve KMZ dosyaları GPX formatına dönüştürülerek içe aktarılır.
+- [Rotalar, güzergahlar](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [favoriler](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML ve KMZ dosyaları GPX formatına dönüştürülerek içe aktarılır.
 - [OsmAnd vektör haritaları](https://osmand.net/docs/user/map/vector-maps): `.obf`.
-- [Çevrimiçi harita karoları](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Çevrimiçi harita karoları](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [Yedeklemeler & profiller](#export): `.osf`.
-- [Yükseklik haritaları / 3D veriler](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Yükseklik haritaları / 3D veriler](https://osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [Diğer](color-palette-schemes.md): `.txt`.
 
-Tüm desteklenen formatların teknik bir genel bakış için, [OsmAnd Dosya Formatları](https://www.osmand.net/docs/technical/osmand-file-formats/) adresine bakın.
+Tüm desteklenen formatların teknik bir genel bakış için, [OsmAnd Dosya Formatları](https://osmand.net/docs/technical/osmand-file-formats/) adresine bakın.
 
 
 ### OsmAnd Cloud {#osmand-cloud}

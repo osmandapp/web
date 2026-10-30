@@ -1,5 +1,5 @@
 ---
-source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
+source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -18,7 +18,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## نظرة عامة {#overview}
 
-:::tip Purchase
+:::tip شراء
 *CarPlay* هي [ميزة مدفوعة](../purchases/index.md).  
 :::
 
@@ -91,7 +91,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 ### ملف CarPlay الشخصي {#carplay-profile}
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
-![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
+![الإعدادات العامة، الملف الشخصي الافتراضي](@site/static/img/personal/profiles/CarPlay_ios.png)
 
 **ملف CarPlay الشخصي** هو ملف شخصي محدد في تطبيق OsmAnd للاستخدام المريح لنظام الصوت والفيديو في سيارتك لعرض هذه البيانات لاحقًا على هاتفك.  
 
@@ -227,12 +227,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 عند تشغيل التوجيهات الصوتية، يقوم OsmAnd بضبط الصوت الخلفي حسب نوعه. مع تمكين *<Translate ios="true" ids="pause_spoken_audio"/>*، يتم إيقاف المحتوى الصوتي المنطوق مؤقتًا، مثل البودكاست والكتب الصوتية، أثناء تعليمات الملاحة، بينما يستمر تشغيل الموسيقى بمستوى صوت منخفض. عند تعطيل *<Translate ios="true" ids="pause_spoken_audio"/>*، يستمر تشغيل كل من الصوت المنطوق والموسيقى بمستوى صوت منخفض.  
 
-لتكوين التوجيهات الصوتية وفقًا للملف الشخصي المحدد، يجب عليك القيام بذلك قبل بدء المسار في تطبيق OsmAnd على جهازك. للاطلاع على الإعدادات الموصى بها لـ *CarPlay*، انتقل إلى مقالة [التوجيهات الصوتية / الإشعارات](../navigation/guidance/voice-navigation.md).  
+لتكوين التوجيهات الصوتية وفقًا للملف الشخصي المحدد، يجب عليك القيام بذلك قبل بدء المسار في تطبيق OsmAnd على جهازك. راجع مقالة [التوجيهات الصوتية / الإشعارات](../navigation/guidance/voice-navigation.md#voice-settings). على سبيل المثال، لتمكين إيقاف الصوت المنطوق مؤقتًا، انتقل إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 
 ### تنبيهات الملاحة {#navigation-alerts}
 
-![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+![تنبيه الخرائط المفقودة](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![تنبيه الطريق الخاص](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
 
 تُعرض التنبيهات المفيدة تلقائيًا قبل بدء الملاحة عند الحاجة إلى إجراء إضافي لحساب المسار. تساعد هذه التنبيهات في حل مشكلات التوجيه قبل بدء الملاحة.
 
@@ -275,7 +275,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### مظهر الخريطة (ثلاثي الأبعاد) {#map-appearance-3d}
 
-![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
+![CarPlay](@site/static/img/navigation/auto-car/car_play_3.png)
 
 يسمح لك تطبيق OsmAnd باستخدام عرض الخريطة ثلاثي الأبعاد على *شاشة CarPlay* لعرض مسارك والملاحة.
 
@@ -285,7 +285,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ### لوحة القيادة متعددة الوظائف {#multifunction-dashboard}
 
-![Car Play](@site/static/img/navigation/auto-car/car_play_4.png)
+![CarPlay](@site/static/img/navigation/auto-car/car_play_4.png)
 
 يمكن فتح تطبيق OsmAnd واستخدامه للملاحة في *CarPlay* على شاشة نظام الوسائط المتعددة في المركبة في نفس الوقت مع تطبيقات الموسيقى أو الرسائل أو الإشعارات الأخرى.
 
@@ -321,16 +321,19 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 يمكنك أيضًا تمكين أو تعطيل الإعلان عن الرسائل مباشرة في *CarPlay*. اقرأ عن كيفية تنفيذ إدارة الإشعارات على [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) و[CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
 
-### مظهر الخريطة {#map-theme}
+### وضع الخريطة {#map-mode}
 
-![مظهر الخريطة](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+![وضع الخريطة](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![وضع الخريطة](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-يسمح CarPlay بتكوين مظهر الخريطة لتحسين الرؤية في ظروف القيادة المختلفة. يمكنك اختيار أحد أوضاع المظهر التالية:
+يتيح لك OsmAnd تكوين مظهر الخريطة في CarPlay بشكل مستقل عن وضع الخريطة على هاتفك. لفتح هذا الإعداد، اضغط على زر *الإعدادات* في شريط التنقل في CarPlay، ثم حدد *وضع الخريطة*. يظهر الوضع الحالي كنص تفصيلي للصف.
 
-- *تلقائي*. يتغير مظهر الخريطة تلقائيًا حسب إعدادات النظام أو الوقت من اليوم أو حالة المركبة.
-- *داكن دائمًا*. يستخدم CarPlay سمة الخريطة الداكنة.
+يمكنك اختيار أحد أوضاع المظهر التالية:
+- **مظهر المركبة** — يتبع مظهر الخريطة نمط عرض المركبة نفسها، بناءً على إعداد مظهر CarPlay على جهاز iPhone الخاص بك (*تلقائي* أو *داكن دائمًا*) والوقت من اليوم. عند تمكين *عرض الخرائط الداكنة دائمًا* في ذلك الإعداد، تبقى الخريطة دائمًا في الوضع الداكن بغض النظر عن حالة أضواء المركبة الأمامية أو الوقت من اليوم.
+- **النهار** — تستخدم الخريطة دائمًا السمة الفاتحة في CarPlay، بغض النظر عن إعدادات مظهر المركبة.
+- **الليل** — تستخدم الخريطة دائمًا السمة الداكنة في CarPlay، بغض النظر عن إعدادات مظهر المركبة.
+- **شروق/غروب الشمس** — تتبدل الخريطة بين السمتين الفاتحة والداكنة تلقائيًا بناءً على أوقات شروق الشمس وغروبها المحسوبة لموقعك الحالي.
 
-عند تمكين خيار *عرض الخرائط الداكنة دائمًا*، تبقى الخريطة دائمًا في الوضع الداكن بغض النظر عن حالة أضواء المركبة الأمامية أو الوقت من اليوم.
+**ملاحظة:** يؤثر إعداد وضع الخريطة في CarPlay على مظهر الخريطة في CarPlay فقط. ولا يغير وضع الخريطة على شاشة هاتفك.
 
 ### موضع الموقع في CarPlay {#location-position-in-carplay}
 

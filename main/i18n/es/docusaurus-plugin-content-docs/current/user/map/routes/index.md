@@ -1,5 +1,5 @@
 ---
-source-hash: 3761c2b9d5cd95ca22a0ac2feb94d6b37c7cf816097afec7af5cc8c56523d5e4
+source-hash: e6056e84ddf7392f3f0afbed22b2fdc2ce26906ddad6de991e015eb8311058c6
 title:  Rutas
 sidebar_position: 11
 ---
@@ -198,7 +198,7 @@ Puede personalizar si las rutas están activadas o desactivadas mediante el widg
 
 </Tabs>  
 
-Busque rutas con la [función de búsqueda](../../search/index.md) por nombre o seleccionando «Rutas» en la [sección Categorías](../../search/search-poi.md#).
+Busque rutas con la [función de búsqueda](../../search/index.md) por nombre o seleccionando «Rutas» en la [sección Categorías](../../search/search-poi.md#poi-search-by-categories).
 
 Para buscar, vaya al menú *<Translate android="true" ids="search_button"/>* o *<Translate android="true" ids="search_button,search_categories"/>* e introduzca su actividad.
 
@@ -222,7 +222,7 @@ Vaya a *<Translate android="true" ids="search_button,search_categories,poi_route
 
 </Tabs>
 
-En los resultados de la búsqueda de rutas, toque el botón **Filtros** en la esquina superior derecha para reducir la lista. La pantalla de filtros incluye un campo **Filtrar por nombre**; un bloque **Tipo** con *Oficina*, *Anexo de correos* y *Socio de correos*; y **criterios adicionales** que dependen de la categoría o actividad de ruta seleccionada, ya que cada categoría puede mostrar sus propias características y valores de filtro.
+En los resultados de la búsqueda de rutas, toque el botón **Filtros** en la esquina superior derecha para reducir la lista. La pantalla de filtros incluye un campo **Filtrar por nombre** y **criterios adicionales** que dependen de la categoría o actividad de ruta seleccionada, ya que cada categoría puede mostrar sus propias características y valores de filtro.
 
 Puede activar o desactivar filtros con los interruptores y algunas secciones incluyen *Mostrar todo* para mostrar valores adicionales.
 
@@ -235,5 +235,5 @@ Puede activar o desactivar filtros con los interruptores y algunas secciones inc
 - [Menú contextual de pistas](../../map/tracks/track-context-menu.md)
 - [Transporte público](../public-transport.md)
 - [Apariencia de la línea de ruta de navegación](../../navigation/guidance/map-during-navigation.md#route-line-appearance)
-- [Buscar PDI](../../search/search-poi.md#)
+- [Buscar PDI](../../search/search-poi.md)
 - [Tipos de rutas](./types-of-routes.md)

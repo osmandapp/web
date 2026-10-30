@@ -119,7 +119,17 @@
     align-items: center !important;
     flex-shrink: 0 !important;
     fill: var(--svg-icon-color) !important;
+    color: var(--svg-icon-color) !important;
 }
 .loginDialogContent {
     padding: 0px 4px 20px 4px !important;
+}
+.loginDialogBody {
+    padding: 8px 20px 0px 20px !important;
+}
+.loginDialogButton {
+    margin-top: 16px !important;
+}
+.aiPermissionsPaper:global(.MuiPaper-root) {
+    max-width: 480px;
 }

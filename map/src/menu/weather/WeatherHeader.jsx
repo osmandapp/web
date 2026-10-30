@@ -2,7 +2,7 @@ import headerStyles from '../trackfavmenu.module.css';
 import { AppBar, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
 import styles from '../configuremap/configuremap.module.css';
 import { closeHeader } from '../actions/HeaderHelper';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import { ReactComponent as BackIcon } from '../../assets/icons/ic_arrow_back.svg';
 import React, { useContext, useRef, useState } from 'react';
 import ActionsMenu from '../actions/ActionsMenu';

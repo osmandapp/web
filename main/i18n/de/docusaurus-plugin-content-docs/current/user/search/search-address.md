@@ -1,5 +1,5 @@
 ---
-source-hash: 26be285ef167f7e84e717f11eb8dfd86b3ab86d6ad6832df5be474e7519a5787
+source-hash: e36caad58f36cfd88f8d8bd575e69fdf2d3e8f63a1d4a934dba6e473f1b95388
 sidebar_position: 2
 title:  Adresssuche
 ---
@@ -19,7 +19,13 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Die Adresssuche funktioniert offline mit heruntergeladenen Karten. Stellen Sie sicher, dass die Karte für die Region, in der Sie suchen, installiert ist. Die Ergebnisse hängen von den in OpenStreetMap verfügbaren Adressdaten ab.
 
-Suchergebnisse werden automatisch nach Relevanz und Entfernung sortiert, sodass nahegelegene und relevantere Ergebnisse höher in der Liste erscheinen.
+OsmAnd sortiert Suchergebnisse automatisch, sodass nahegelegene und relevantere Ergebnisse höher in der Liste erscheinen. Auf Android können Sie die Reihenfolge mit dem Sortierchip oben in der Ergebnisliste ändern. Der Chip zeigt die ausgewählte Option an. Tippen Sie darauf und wählen Sie im Menü *Sortieren nach* eine der folgenden Optionen:
+- *Relevanz* — Sortiert die Ergebnisse danach, wie gut sie mit Ihrer Abfrage übereinstimmen.
+- *Nächste* — Sortiert die Ergebnisse nach Entfernung, wobei die nächstgelegenen Ergebnisse zuerst angezeigt werden.
+
+Auch auf Android erscheinen Chips mit Objekttypen wie *Ort*, *Stadt*, *Straße* oder *Postleitzahl* über den Ergebnissen. Tippen Sie auf einen Chip, um nur Ergebnisse dieses Typs anzuzeigen. Weitere Informationen finden Sie unter [Suchergebnisse sortieren](./search-all.md#sorting-search-results).
+
+Auf Android wird die Suche um das Kartenzentrum durchgeführt, wenn das Kartenzentrum mehr als 50 m von Ihrem Standort entfernt ist und die Karte Ihrer Position nicht folgt, und das Suchfeld zeigt *Suche N km entfernt* an. Wenn das Kartenzentrum mehr als 70 km von Ihrem Standort entfernt ist, erscheint neben dem Sortierchip ein Chip mit dem Suchbereich *Kartenmitte* oder *Mein Standort*. Tippen Sie darauf, um auszuwählen, wo gesucht werden soll. Weitere Informationen finden Sie unter [Suche um](./search-all.md#search-around).
 
 OsmAnd bietet mehrere Möglichkeiten, zum *Suchwerkzeug* zu gelangen, wo sich der Abschnitt **Adresssuche** befindet.
 
@@ -28,46 +34,35 @@ OsmAnd bietet mehrere Möglichkeiten, zum *Suchwerkzeug* zu gelangen, wo sich de
 - Wenn Sie eine Route vorbereiten, tippen Sie auf *Navigation → Ziel festlegen → Suchfeld*.  
 
 
-## Volltextsuche {#full-text-search}
+## Adressreiter {#address-tab}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Suche Android](@site/static/img/search/search_address_2_andr.png)
+![Suche Android](@site/static/img/search/search_address_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Suche iOS](@site/static/img/search/street_search_ios.png)  
+![Suche iOS](@site/static/img/search/street_search_ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
-<!--
-Search by Address simplifies the search and navigation process, ensures accuracy and usability, and reduces the time it takes to find the right address.  
+Der Reiter *Adresse* enthält Schaltflächen für verschiedene Arten der Adresssuche. Jede Schaltfläche öffnet eine Liste mit vorgeschlagenen Optionen zur Auswahl:
 
-- **To use the Search Address function,** you have to [download a map](../start-with/download-maps.md) of the required area first.
-- **The search is based on the data located in the visible area of the map** on the device screen. If you do not find anything, OsmAnd offers to increase the search radius.
-- The address information in OsmAnd contains all [OSM tag keys](https://wiki.openstreetmap.org/w/index.php?title=Key:addr).
+- [**Straße in &lt;Stadt&gt; suchen**](#select-street) (*Android*) / **Straße in &lt;Stadt&gt; auswählen** (*iOS*) — Erscheint, wenn Sie zuvor nach einer Stadt gesucht haben. Die zuletzt gesuchte Stadt ist bereits eingestellt, sodass Sie nur den Straßennamen eingeben und aus den vorgeschlagenen Straßen auswählen müssen.
+- [**Zuerst Stadt/Ort/Lokalität angeben**](#select-city) (*Android*) / **Stadt auswählen** (*iOS*) — Immer verfügbar. Öffnet sofort eine Liste von Städten, Orten und Dörfern, sortiert nach Namen. Die Liste wird beim Tippen enger.
+- [**Postleitzahlsuche**](#postcode-search) — Immer verfügbar. Wechselt das Suchfeld zur Postleitzahleingabe. Die Liste bleibt leer, bis Sie mindestens ein Zeichen eingeben, dann erscheinen passende Ergebnisse.
+- [**Koordinatensuche**](#coordinates-search) — Immer verfügbar. Öffnet den Bildschirm zur Koordinateneingabe.
 
+Die Liste **Nächstgelegene Städte** wird unter den Schaltflächen angezeigt und zeigt bis zu 15 Städte und Orte um den Suchort, Ihren Standort oder das Kartenzentrum herum an. Jedes Element zeigt den Namen, seinen Typ *Stadt* oder *Ort* sowie die Entfernung und Richtung vom Suchort an. Auf Android wird auch die Region angezeigt.
 
-Search query list:
+## Volltextsuche {#full-text-search}
 
-**1.** The **order** of items in the list:
-
-- **Ordered by name**. Selecting *First specify city/town/locality* (Android) or *Select city* (iOS) will display a list that starts with unnamed items, if any, then numeric names followed by the names by letters.
-- **Ascending numerical order**. In the next search list, the house numbers are displayed in ascending order, after entering the city and street.
-
-**2.** Each field in the Address Search list contains **information** such as:
-
-- An icon that identifies the type of locality.
-- Part of an address, postal number, or coordinate area.
-- Distance from your current location or from the city center.
-- Additional information, such as the city's district.
--->
 OsmAnd unterstützt Volltext-Adresssuche. Das bedeutet, Sie können eine Adresse direkt im Suchfeld eingeben, anstatt Schritt für Schritt Stadt → Straße → Hausnummer auszuwählen. Die Suchmaschine versucht, Adresskomponenten wie folgt zu erkennen:
 - Stadt;
 - Straße;
@@ -89,10 +84,8 @@ Wenn eine Abfrage sowohl eine Adresse als auch einen POI betreffen kann, prioris
 
 **HINWEIS:** Die Adresssuche funktioniert nur innerhalb heruntergeladener Karten. Suchergebnisse basieren auf:
 - auf dem Gerät installierten Karten;
-- dem sichtbaren Kartenbereich;
+- [dem sichtbaren Kartenbereich](./search-all.md#how-to-use);
 - Ihrem aktuellen Standort. 
-
-Falls nichts gefunden wird, schlägt OsmAnd möglicherweise vor, den Suchradius zu vergrößern.
 
 ### US-Adresssuche und TIGER-Daten {#us-address-search-and-tiger-data}
 
@@ -109,6 +102,7 @@ OsmAnd unterstützt mehrere gängige Adressformate. Sie können Adressen in unte
 | Adressformat | Beispielabfragen |
 |---|---|
 | Hausnummer + Straße | 221B Baker Street<br />10 Downing Street |
+| Doppelte Hausnummer + Straße | 243/11 Husova |
 | Straße + Hausnummer | Baker Street 221B<br />Main Street 101 |
 | Stadt + Straße + Hausnummer | London Baker Street 221B<br />Paris Rue de Rivoli 10 |
 | Straßenschnittstellen | Broadway & Wall Street<br />Main Street and High Street |
@@ -136,29 +130,6 @@ Die Suchmaschine toleriert auch gängige Variationen in der Adressformatierung, 
 | US-Adressformat | [1500 North Main Avenue, Springfield](https://osmand.net/map?pin=37.226315,-93.296524#11/37.1799/-93.3522) <br /> [4600 Sugar Maple Lane, Nashville](https://osmand.net/map?pin=36.051846,-86.95705#18/36.0516/-86.9561) | [Diskussion](https://github.com/osmandapp/OsmAnd/issues/6824) |
 | US-Bundesstaatsabkürzungen | [Springfield, VA 22150](https://osmand.net/map?pin=36.51995,-86.86385#18/36.5199/-86.8635) <br /> [Manhattan Beach, CA 90266](https://osmand.net/map?pin=33.883938,-118.41048#20/33.8839/-118.4105) | [Diskussion](https://github.com/osmandapp/OsmAnd/issues/6824) |
 
-<!--
-**Examples**: Instead of `221B Baker Street London United Kingdom` try `221B Baker Street` or `Baker Street 221B`.
-
-OsmAnd may also ignore additional information such as country or region if the address can already be identified.
-
-Postal addresses copied from websites may include additional information such as company names, ZIP codes, or apartment numbers. If search does not return results, try entering only the street name, house number, and city.
-
-Search is also tolerant to minor differences in spelling, such as spaces, hyphens, or common abbreviations in street names. **For example**:
-
-`Weberstrasse`  
-`Weber strasse`  
-`Weber-strasse`
-
-House numbers with letter suffixes can also be written in different formats:
-
-`30B`  
-`30b`  
-`30-B`  
-`30-b`
-
-These variations may still return the same address.
--->
-
 
 ## Stadt auswählen {#select-city}
 
@@ -166,7 +137,7 @@ These variations may still return the same address.
 
 <TabItem value="android" label="Android">
 
-![Stadtsuche Android](@site/static/img/search/town_search_android.png)
+![Stadtsuche Android](@site/static/img/search/town_search_android.webp)
 
 </TabItem>
 
@@ -178,24 +149,14 @@ These variations may still return the same address.
 
 </Tabs>
 
-**Nächstgelegene Städte**  
-    Dies **zeigt eine kleine Liste von Städten in der Nähe Ihres Standorts** oder der von Ihnen für *Straße auswählen* oder *Stadt auswählen* angegebenen Örtlichkeit an. Jedes Feld enthält ein Symbol, das der Größe der Stadt entspricht, den Namen der Stadt, die Entfernung von Ihnen zu ihrem Zentrum und für Android die Himmelsrichtung.
-
 Diese Art der Suche erleichtert das Auffinden bestimmter Orte innerhalb einer ausgewählten Örtlichkeit und bietet eine bequeme Möglichkeit, Adressen genau und schnell zu finden. Sie können mit der Suche nach der benötigten Adresse beginnen, indem Sie die Örtlichkeit bestimmen.
 
 - Tippen Sie dazu auf **Zuerst Stadt/Ort/Lokalität angeben** (Android) oder **Stadt auswählen** (iOS).
 - Wählen Sie in der sich öffnenden Liste die gewünschte Örtlichkeit aus. [Hier](#full-text-search) wird die Reihenfolge beschrieben, in der die Suchanfragen angezeigt werden und welche Informationen zu jedem Element verfügbar sind.
-- Auf dem nächsten Bildschirm können Sie entweder die Adresse weiter verfeinern oder die Schaltfläche *Auf der Karte anzeigen* unter dem Sucheingabefeld auswählen.
+- Auf Android tippen Sie auf den Sortierchip, um *Relevanz* oder *Nächste* auszuwählen. Wenn das Kartenzentrum mehr als 70 km von Ihrem Standort entfernt ist, verwenden Sie den Suchbereichs-Chip, um zwischen *Kartenmitte* und *Mein Standort* zu wählen. Chips mit in den Ergebnissen gefundenen Örtlichkeitstypen wie *Stadt*, *Ort* oder *Dorf* erscheinen über der Liste. Tippen Sie auf einen Chip, um nur Ergebnisse dieses Typs anzuzeigen.
+- Auf dem nächsten Bildschirm können Sie entweder die Adresse weiter verfeinern oder den Ort auf der Karte anzeigen. Tippen Sie auf iOS auf *Auf der Karte anzeigen* unter dem Sucheingabefeld. Tippen Sie auf Android auf die Schaltfläche *Auf der Karte anzeigen*, die schwebende Schaltfläche in der unteren rechten Ecke.
 - Um Ihre Suche zu spezifizieren, können Sie den ganzen oder nur einen Teil des Namens der Stadt, des Ortes oder des Dorfes eingeben, in dem sich die gesuchte Adresse befindet. Dies ermöglicht es Ihnen, Ihre Suche einzugrenzen und eine genauere Liste zu erhalten.
 - Ein Tippen auf das letzte Element in der Adresse, die Hausnummer oder den Namen der Kreuzung, öffnet das [Kartenkontextmenü](../map/map-context-menu.md#select-an-object-single-tap) des Objekts.  
-
-<!--
-**Searching by city offers the following benefits:**
-
-- *Convenience*. Allows you to quickly select the required city from the list, and specify a certain street, house or intersection in the selected city without having to enter the full address. This saves time and simplifies the process of finding the right place.
-- *Precision.* You can select a city and street from the available options, avoiding errors when manually entering an address.
-- *Filtering.* The ability to select a specific house from the list makes it easier to accurately navigate to the required location, especially when the exact address is unknown.
---> 
 
 :::note Schlüssel & Wert
 *Stadt- / Orts- / Dorfsuche* nach [**addr:city/hamlet/town/village/suburb=**](https://wiki.openstreetmap.org/w/index.php?title=Key:addr)  
@@ -209,22 +170,24 @@ Diese Art der Suche erleichtert das Auffinden bestimmter Orte innerhalb einer au
 
 <TabItem value="android" label="Android">
 
-![Straßensuche Android](@site/static/img/search/street_search.png) ![Straßensuche Android](@site/static/img/search/street_search_1.png)
+![Straßensuche Android](@site/static/img/search/street_search.webp) ![Straßensuche Android](@site/static/img/search/street_search_1.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Straßensuche iOS](@site/static/img/search/address_street_search_3_ios.png) ![Straßensuche iOS](@site/static/img/search/address_street_search_4_ios.png)
+![Straßensuche iOS](@site/static/img/search/address_street_search_3_ios.png) ![Straßensuche Android](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Die Straßensuche wird in der Örtlichkeit durchgeführt, in der Sie sich befinden, oder in der Sie zuvor gesucht haben, oder die sich im Zentrum der sichtbaren Karte auf dem Anwendungsbildschirm befindet.
+Die Straßensuche wird in der zuletzt gesuchten Stadt durchgeführt. Ihr Name wird auf der Schaltfläche angezeigt, sodass Sie direkt mit der Straße beginnen können.
 
-- Um diese Art der Suche zu verwenden, tippen Sie auf **Straße suchen** (*Android*) oder **Straße auswählen** (*iOS*).
-- Im Suchfeld neben dem Stadtnamen können Sie mit der Eingabe des Straßennamens beginnen und die Liste wird verfeinert, um Ihnen die am besten passenden Ergebnisse zu liefern.
+- Um diese Art der Suche zu verwenden, tippen Sie auf **Straße in &lt;Stadt&gt; suchen** (*Android*) oder **Straße in &lt;Stadt&gt; auswählen** (*iOS*).
+- Der Stadtname ist bereits im Suchfeld eingetragen, und die Liste der Straßen der Stadt öffnet sich sofort. Im Suchfeld neben dem Stadtnamen können Sie mit der Eingabe des Straßennamens beginnen und die Liste wird verfeinert, um Ihnen die am besten passenden Ergebnisse zu liefern.
+- Auf Android tippen Sie auf den Sortierchip, um *Relevanz* oder *Nächste* auszuwählen. Wenn das Kartenzentrum mehr als 70 km von Ihrem Standort entfernt ist, verwenden Sie den Suchbereichs-Chip, um zwischen *Kartenmitte* und *Mein Standort* zu wählen. Chips mit in den Ergebnissen gefundenen Objekttypen wie *Straße* oder *Gebäude* erscheinen über der Liste. Tippen Sie auf einen Chip, um nur Ergebnisse dieses Typs anzuzeigen.
+- Wählen Sie eine Straße aus, um die Liste ihrer Gebäude zu öffnen. Wählen Sie die gewünschte Hausnummer aus, um das [Kartenkontextmenü](../map/map-context-menu.md#select-an-object-single-tap) der Adresse zu öffnen.
 - In anderen Punkten ist die Straßensuche die gleiche wie bei [Stadt auswählen](#select-city).
 
 :::note Schlüssel & Wert
@@ -239,7 +202,14 @@ Die Straßensuche wird in der Örtlichkeit durchgeführt, in der Sie sich befind
 
 <TabItem value="android" label="Android">
 
-![Postleitzahlsuche Android](@site/static/img/search/postcode_android.png)
+![Postleitzahlsuche Android](@site/static/img/search/postcode_android.webp)
+
+Tippen Sie auf der Registerkarte *Adresse* auf **Postleitzahlsuche**. Die Liste bleibt leer, bis Sie mit der Eingabe beginnen. Geben Sie die Postleitzahl ein, auch nur eine einzelne Ziffer, und die App bietet eine Liste passender Postleitzahlen an.
+
+- Tippen Sie auf den Sortierchip, um *Relevanz* oder *Nächste* auszuwählen. Wenn das Kartenzentrum mehr als 70 km von Ihrem Standort entfernt ist, verwenden Sie den Suchbereichs-Chip, um zwischen *Kartenmitte* und *Mein Standort* zu wählen. Tippen Sie auf den Chip *Postleitzahl*, um nur Postleitzahlen in der Liste anzuzeigen.
+- Wählen Sie die gewünschte Postleitzahl aus. Die Liste der Straßen mit dieser Postleitzahl öffnet sich, und die Postleitzahl bleibt im Suchfeld.
+- Um die Adresse zu verfeinern, wählen Sie eine Straße und dann die Hausnummer aus. Dadurch wird das [Kartenkontextmenü](../map/map-context-menu.md#select-an-object-single-tap) der Adresse geöffnet.
+- Um die Postleitzahl selbst auf der Karte anzuzeigen, tippen Sie auf die Schaltfläche *Auf der Karte anzeigen*, die schwebende Schaltfläche in der unteren rechten Ecke. Die Karte öffnet sich mit dem [Kontextmenü](../map/map-context-menu.md#select-an-object-single-tap) der Postleitzahl.
 
 </TabItem>
 
@@ -247,15 +217,15 @@ Die Straßensuche wird in der Örtlichkeit durchgeführt, in der Sie sich befind
 
 ![Postleitzahlsuche iOS](@site/static/img/search/postcode_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 **Um die *Postleitzahlsuche* zu verwenden, müssen Sie nur die Nummer eingeben**, die sogar aus einer einzigen Ziffer bestehen kann, und die Anwendung bietet eine Liste der verfügbaren relevanten Postleitzahlen an.
 
 - Wählen Sie den gewünschten Code aus und tippen Sie darauf.
 - Sie können die Funktion *Postleitzahl *Nummer* auf der Karte anzeigen* verwenden. Dies öffnet ein [Kartenkontextmenü](../map/map-context-menu.md#select-an-object-single-tap) mit der ausgewählten Postleitzahl ohne zusätzliche Informationen über den Standort.
 - Sie können Ihre Suche nach diesem Code verfeinern, indem Sie zuerst die gewünschte Straße aus der Liste und dann die Nummer auswählen.
+
+</TabItem>
+
+</Tabs>
 
 **Die Suche nach Postleitzahl kann in den folgenden Fällen nützlich sein:**
 

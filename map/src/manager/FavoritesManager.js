@@ -13,7 +13,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import i18n from '../i18n';
 import TracksManager from './track/TracksManager';
-import { refreshGlobalFiles } from './track/SaveTrackManager';
+import { getServerErrorMessage, refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
 import { getUniqFileId, MAIN_URL_WITH_SLASH, FAVORITES_URL } from './GlobalManager';
@@ -89,6 +89,7 @@ async function addFavorite(data, group, ctx) {
         throw new Error('File name is required to add a favorite');
     }
 
+    let serverError = null;
     const postAdd = async (updatetime) => {
         try {
             return await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/add`, data, {
@@ -96,7 +97,8 @@ async function addFavorite(data, group, ctx) {
                 dataOnErrors: true,
                 throwErrors: true,
             });
-        } catch {
+        } catch (e) {
+            serverError = getServerErrorMessage(e.response);
             return { data: null };
         }
     };
@@ -120,20 +122,24 @@ async function addFavorite(data, group, ctx) {
         resp = await postAdd(freshGroup?.updatetimems);
 
         if (resp?.data) return toResult(resp.data);
-
-        return null;
     } catch (err) {
         console.error('[addFavorite] failed:', err);
-        return null;
     }
+    ctx.setNotification({
+        text: serverError ? `${i18n.t('web:save_favorite_error')}: ${serverError}` : i18n.t('web:save_favorite_error'),
+        severity: 'error',
+    });
+
+    return null;
 }
 
-async function deleteFavorite(data, fileName, updatetime) {
+async function deleteFavorite(data, fileName, updatetime, ind) {
     fileName = normalizeGroupNameForFile(fileName);
     const resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/delete`, data, {
         params: {
             fileName,
             updatetime,
+            ind,
         },
     });
     if (resp.data) {
@@ -372,6 +378,11 @@ export function decodeGroupNameFromFile(groupName) {
 
 export function extractBaseFavFileName(name) {
     return name.replace(new RegExp(`^${FavoritesManager.FAV_FILE_PREFIX}`), '').replace(/\.gpx$/, '');
+}
+
+export function findFavGroupByFileName(groups, fileName) {
+    const folder = extractBaseFavFileName(fileName);
+    return groups?.find((g) => g.file.folder === folder);
 }
 
 export async function saveFavoriteGroup(data, groupName, ctx) {
@@ -692,7 +703,7 @@ export function updateFavoriteGroups({
     if (useSelected && favoriteName) {
         FavoriteHelper.updateSelectedFile({
             ctx,
-            result: null,
+            result: result.newGroupResp,
             favoriteName,
             selectedGroup,
             deleted: false,
@@ -731,13 +742,14 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
         if (!value?.options?.name) {
             return;
         }
-        const wpt = getWptByTitle(value.options.name, wpts);
+        const wpt = value.options.point ?? getWptByTitle(value.options.name, wpts);
         if (!wpt) {
             return;
         }
         const appearance = resolveWptAppearance(wpt, pointsGroups);
         const marker = {
             name: value.options.name,
+            point: wpt,
             icon: getFavoriteMenuIconHtml({ wpt, ...appearance }),
             layer: value,
             color: appearance.color,
@@ -750,6 +762,21 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
 
 export function getWptByTitle(title, wpts) {
     return wpts.find((wpt) => wpt.name === title);
+}
+
+// same rule as the server: the point at the remembered index if its name still matches
+export function findSelectedWpt(markerCurrent, wpts) {
+    if (!markerCurrent || !wpts) {
+        return undefined;
+    }
+    const { point, pointIndex, name } = markerCurrent;
+    if (point && wpts.includes(point)) {
+        return point;
+    }
+    if (wpts[pointIndex]?.name === name) {
+        return wpts[pointIndex];
+    }
+    return getWptByTitle(name, wpts);
 }
 
 /** Build menu marker + group for opening a favorite from search (requires map markers loaded). */
@@ -770,6 +797,7 @@ export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
     const appearance = resolveWptAppearance(wpt, mapObj.pointsGroups);
     const marker = {
         name: wptName,
+        point: wpt,
         icon: getFavoriteMenuIconHtml({
             wpt,
             icon: appearance.icon,
@@ -863,6 +891,7 @@ export function getSelectedFavoriteObj({
             });
         }
     });
+    favObj.markerCurrent.pointIndex = trackData?.wpts?.indexOf(marker.point);
     favObj.id = group.id;
     favObj.key = `${group.id}:${marker.name}`;
     favObj.trackData = trackData;
@@ -890,7 +919,9 @@ export function addFavoriteToMapFromSearch(ctx, { group, marker }) {
 
 export function openFavoriteObj({ ctx, favoriteObj, options = {} }) {
     ctx.setCurrentObjectType(options.fromSearch === true ? OBJECT_SEARCH : OBJECT_TYPE_FAVORITE);
-    const selectionId = getFavoriteId(favoriteObj.markerCurrent?.layer);
+    const { layer, point } = favoriteObj.markerCurrent ?? {};
+    // a just-saved favorite has no marker yet: its id must match the one the marker gets on rebuild
+    const selectionId = layer ? getFavoriteId(layer) : favoriteIdFromLatLng(point.lat, point.lon);
     ctx.setSelectedWpt({ ...favoriteObj, selectionId, id: selectionId, groupId: favoriteObj.id });
     ctx.setSelectedGpxFile({ ...favoriteObj });
 }
@@ -926,3 +957,13 @@ const FavoritesManager = {
 };
 
 export default FavoritesManager;
+
+export function resetFavoritesMenu(ctx) {
+    ctx.setSelectedFavoriteObj(null);
+    ctx.setPageParams((prev) => {
+        const params = new URLSearchParams(prev[OBJECT_TYPE_FAVORITE]);
+        params.delete(FAVORITES_URL_PARAM_FOLDER);
+
+        return { ...prev, [OBJECT_TYPE_FAVORITE]: params.size ? `?${params}` : '' };
+    });
+}

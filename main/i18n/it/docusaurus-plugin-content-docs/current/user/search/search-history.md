@@ -1,8 +1,9 @@
 ---
-source-hash: b0e4660605b0cdfdfcfc653e1f8929974cb654b66c0c55fbc588b89e37d05091
+source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
 sidebar_position: 3
-title:  Cronologia ricerche
+title:  Ricerca Esplora
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,19 +12,42 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+La scheda **Esplora** nello strumento Cerca ti aiuta a scoprire i luoghi popolari intorno a te e a tornare rapidamente ai luoghi che hai cercato o verso cui hai navigato in precedenza. Contiene due sezioni: [Luoghi popolari nelle vicinanze](#popular-places-nearby) e [Cronologia](#history-items).
+
+La *Cronologia* è una registrazione di tutte le ricerche e le destinazioni di navigazione che hai inserito o cercato nell'app durante il periodo di utilizzo. Questo strumento ti consente di trovare e accedere facilmente alle posizioni cercate in precedenza, il che facilita la navigazione e ti fa risparmiare tempo.
+
+OsmAnd offre diversi modi per visualizzare la cronologia.
+
+- Il [pulsante Cerca](../widgets/map-buttons.md#search) è sempre visualizzato sulla mappa e toccandolo si accede alla [schermata generale](#how-to-use) dello strumento.
+- Vai al *Menu principale → Cerca → scheda Esplora*.
+- Quando ti prepari ad avviare un percorso, tocca *Navigazione → Imposta destinazione → Campo di ricerca*.
+- Il blocco informazioni nel menu di navigazione della [preparazione del percorso](../navigation/setup/route-navigation.md#navigation-menu) mostra un elenco di punti di destinazione recenti, che fanno anche parte della cronologia delle ricerche.
+- La cronologia delle ricerche è disponibile in [Android Auto](../navigation/auto-car.md#search).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 *Cronologia ricerche* è una registrazione di tutte le ricerche e le posizioni che hai inserito o cercato nell'app durante il periodo di utilizzo. Questo strumento ti consente di trovare e accedere facilmente alle posizioni cercate in precedenza, il che facilita la navigazione e ti fa risparmiare tempo.
 
 OsmAnd offre diversi modi per visualizzare la cronologia delle ricerche.  
 
-- Il [pulsante Cerca](../widgets/map-buttons.md#search) è sempre visualizzato sulla mappa e toccandolo si accede alla [schermata generale](#how-to-use) dello strumento.
-- Vai al *Menu principale di Android → Cerca → scheda Cronologia*.
+- Il [pulsante Cerca](../widgets/map-buttons.md#search) è sempre visualizzato sulla mappa. Toccalo per aprire la [schermata generale](#how-to-use) dello strumento, quindi seleziona la scheda *Cronologia*.
 - Quando ti prepari ad avviare un percorso, tocca *Navigazione → Imposta destinazione → Campo di ricerca*.
 - Il blocco informazioni nel menu di navigazione della [preparazione del percorso](../navigation/setup/route-navigation.md#navigation-menu) mostra un elenco di punti di destinazione recenti, che fanno anche parte della cronologia delle ricerche.
-- La cronologia delle ricerche è disponibile in [Android Auto](../navigation/auto-car.md#search) e [CarPlay](../navigation/car-play.md#search).
+- La cronologia delle ricerche è disponibile in [CarPlay](../navigation/car-play.md#search).
+
+</TabItem>
+
+</Tabs>
 
 
 ## Come usare {#how-to-use}
@@ -32,7 +56,16 @@ OsmAnd offre diversi modi per visualizzare la cronologia delle ricerche.
 
 <TabItem value="android" label="Android">
 
-![Ricerca cronologia](@site/static/img/search/history_search_android.png)
+![Ricerca Esplora](@site/static/img/search/explore_search_android.webp)
+
+La scheda **Esplora** si apre quando apri lo strumento Cerca. La scheda Esplora serve a fornire informazioni pertinenti sui luoghi intorno a te e sulle tue azioni precedenti.
+
+- *Scopri i luoghi nelle vicinanze*. La sezione [Luoghi popolari nelle vicinanze](#popular-places-nearby) mostra monumenti e attrazioni famosi intorno a te, così puoi trovare luoghi interessanti senza inserire una query.
+- *Ricerca di nuovo*. Puoi utilizzare la cronologia delle ricerche per cercare di nuovo luoghi o indirizzi cercati in precedenza senza dover reinserire la query.
+- *Accesso rapido ai luoghi visitati di frequente*. Se visiti spesso determinati luoghi, come casa, lavoro o luoghi preferiti, la Cronologia ricerche salva tali luoghi, fornendo un accesso rapido ad essi.
+- *Traccia i viaggi precedenti*. La cronologia delle ricerche può essere utile per tracciare viaggi e percorsi precedenti. Puoi tracciare i percorsi che hai fatto prima, o [pianificare il tuo prossimo percorso](../plan-route/create-route.md) basandoti su quelli precedenti.
+- *Cerca luoghi in un determinato periodo di tempo*. Nella schermata Cronologia, gli elementi ordinati per *Recenti* sono raggruppati per periodo: *Oggi*, *Ieri*, *Ultima settimana* e poi per mese. Per trovare un elemento specifico, tocca il titolo *Cronologia* nella parte superiore dello schermo e inserisci il suo nome.
+- *Elimina voci*. La Cronologia ricerche offre la possibilità di [eliminare](#delete) le voci precedenti, il che può essere utile per la riservatezza o per mantenere organizzata la cronologia.
 
 </TabItem>
 
@@ -40,21 +73,28 @@ OsmAnd offre diversi modi per visualizzare la cronologia delle ricerche.
 
 ![Ricerca cronologia](@site/static/img/search/history_search_ios.png)
 
+La cronologia delle ricerche serve a fornire informazioni pertinenti sulle tue azioni precedenti.
+
+- *Ricerca di nuovo*. Puoi utilizzare la cronologia delle ricerche per cercare di nuovo luoghi o indirizzi cercati in precedenza senza dover reinserire la query.
+- *Accesso rapido ai luoghi visitati di frequente*. Se visiti spesso determinati luoghi, come casa, lavoro o luoghi preferiti, la Cronologia ricerche salva tali luoghi, fornendo un accesso rapido ad essi.  
+- *Traccia i viaggi precedenti*. La cronologia delle ricerche può essere utile per tracciare viaggi e percorsi precedenti. Puoi tracciare i percorsi che hai fatto prima, o [pianificare il tuo prossimo percorso](../plan-route/create-route.md) basandoti su quelli precedenti.  
+- *Cerca luoghi in un determinato periodo di tempo*. L'elenco della cronologia delle ricerche è già suddiviso in blocchi per mese.
+- *Elimina voci*. La Cronologia ricerche offre la possibilità di [eliminare](#delete) le voci precedenti, il che può essere utile per la riservatezza o per mantenere organizzata la cronologia.
+
 </TabItem>
 
 </Tabs>
 
-La cronologia delle ricerche serve a fornire informazioni pertinenti sulle tue azioni precedenti.
 
-- *Ricerca di nuovo*. Puoi utilizzare la cronologia delle ricerche per cercare di nuovo luoghi o indirizzi cercati in precedenza senza dover reinserire la query.  
+## Luoghi popolari nelle vicinanze {#popular-places-nearby}
 
-- *Accesso rapido ai luoghi visitati di frequente*. Se visiti spesso determinati luoghi, come casa, lavoro o luoghi preferiti, la Cronologia ricerche salva tali luoghi, fornendo un accesso rapido ad essi.  
+<InfoAndroidOnly/>
 
-- *Traccia i viaggi precedenti*. La cronologia delle ricerche può essere utile per tracciare viaggi e percorsi precedenti. Puoi tracciare i percorsi che hai fatto prima, o [pianificare il tuo prossimo percorso](../plan-route/create-route.md) basandoti su quelli precedenti.  
+![Luoghi popolari nelle vicinanze](@site/static/img/search/popular_places_nearby.webp)
 
-- *Cerca luoghi in un determinato periodo di tempo*. Per l'app Android, è necessario utilizzare un tocco lungo, quindi trovare il mese in cui hai effettuato il viaggio, uscire dal menu di eliminazione e impostare il nome nel campo di ricerca. Per l'app iOS, l'elenco della cronologia delle ricerche è già suddiviso in blocchi per mese.
+La sezione **Luoghi popolari nelle vicinanze** mostra un elenco scorrevole di monumenti e attrazioni famosi vicino alla tua posizione. Ogni elemento può includere il nome del luogo, la sua categoria, la distanza e la direzione e un'immagine di anteprima, se disponibile. Tocca *Mostra tutto* per aprire l'elenco completo o *Mostra sulla mappa* per visualizzare questi luoghi sulla mappa.
 
-- *Elimina voci*. La Cronologia ricerche offre la possibilità di [eliminare](#delete) le voci precedenti, il che può essere utile per la riservatezza o per mantenere organizzata la cronologia.
+Per maggiori dettagli, consulta l'articolo [Luoghi popolari](../map/popular_places.md#explore-in-search).
 
 
 ## Elementi della cronologia {#history-items}
@@ -63,7 +103,16 @@ La cronologia delle ricerche serve a fornire informazioni pertinenti sulle tue a
 
 <TabItem value="android" label="Android">
 
-![Ricerca cronologia](@site/static/img/search/history_search_android.png)
+![Sezione Cronologia](@site/static/img/search/history_section_list.webp)
+
+La sezione **Cronologia** della scheda Esplora mostra fino a 25 elementi più recenti. Tocca il titolo della sezione per comprimerla o espanderla. Tocca *Visualizza tutto* per aprire la schermata completa della *Cronologia*.
+
+Se sia la *Cronologia ricerche* che la *Cronologia navigazione* sono disattivate, la sezione mostra la scheda *La cronologia è disattivata*. Tocca *Apri impostazioni Cronologia* per attivarle.
+
+Ogni campo nell'elenco della Cronologia contiene alcune delle **informazioni** disponibili per l'applicazione.
+
+- Un'icona che identifica il tipo o la categoria dell'oggetto trovato.
+- Il nome dell'oggetto, la posizione, l'indirizzo o la query di tipo. Per le tracce, vengono visualizzate informazioni sulla distanza, il numero di waypoint e il tempo.
 
 </TabItem>
 
@@ -71,36 +120,87 @@ La cronologia delle ricerche serve a fornire informazioni pertinenti sulle tue a
 
 ![Ricerca cronologia](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 Ogni campo nell'elenco della Cronologia ricerche contiene alcune delle **informazioni** disponibili per l'applicazione.
 
 - Un'icona che identifica il tipo o la categoria dell'oggetto trovato.
 - Il nome dell'oggetto, la posizione, l'indirizzo o la query di tipo. Per le tracce, vengono visualizzate informazioni sulla distanza, il numero di waypoint e il tempo.
 - Distanza dalla tua posizione attuale al punto e direzione tramite bussola.
 
+</TabItem>
 
-### Ordine degli elementi {#order-of-items}
+</Tabs>
+
+
+### Ordina e filtra {#sort-and-filter}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Sezione Cronologia](@site/static/img/search/history_section_android.webp) ![Sezione Cronologia](@site/static/img/search/history_section_2_android.webp)
+
+Nella schermata completa della *Cronologia* puoi ordinare e filtrare gli elementi della cronologia usando le seguenti opzioni:
+
+1. **Ordina per**:
+    - *Recenti* — mostra per primi gli elementi aggiunti più di recente. Quando questa opzione è selezionata, gli elementi sono raggruppati per tempo, ad esempio Oggi, Ieri, Ultima settimana e periodi precedenti.
+    - *Più vicini* — ordina gli elementi in base alla distanza dalla tua posizione attuale.
+    - *Più vicini al centro della mappa* — ordina gli elementi in base alla distanza dal centro attuale della mappa. Quando è selezionata una delle opzioni di ordinamento basate sulla distanza, i gruppi temporali non vengono visualizzati.
+
+2. **Tipo** — filtra gli elementi della cronologia per:
+    - *Tutti* — mostra tutti gli elementi della cronologia disponibili.
+    - *Ricerca* — mostra gli elementi della cronologia delle ricerche.
+    - *Navigazione* — mostra gli elementi della cronologia di navigazione.
+
+Se la *Cronologia ricerche* o la *Cronologia navigazione* è disattivata nelle impostazioni della Cronologia, il filtro *Tipo* non è disponibile.
+
+3. **Filtri per categoria** — filtrano gli elementi della cronologia per categoria. I filtri per categoria disponibili dipendono dai tipi di elementi presenti nella tua Cronologia. Ad esempio, puoi vedere categorie come PDI, Traccia, Posizione, Preferito o Indirizzo. Puoi selezionare più categorie contemporaneamente.
+
+4. **Impostazioni** — tocca l'icona a forma di ingranaggio nell'angolo in alto a destra per aprire le impostazioni della Cronologia, dove puoi attivare o disattivare la *Cronologia ricerche*, la *Cronologia navigazione* e la *Cronologia marcatori mappa*, eseguire il backup della cronologia come file o cancellare tutta la cronologia.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Elementi recenti**. Le richieste o le posizioni più recenti vengono visualizzate in cima all'elenco. Ciò consente un accesso rapido agli elementi utilizzati di recente.
 - **Ordine cronologico**. Gli elementi nell'elenco della Cronologia ricerche sono disposti in ordine cronologico, partendo dalle voci più vecchie o più antiche e terminando con le più recenti o le ultime. Gli elementi vecchi scendono gradualmente nell'elenco man mano che vengono aggiunte nuove voci, a meno che gli elementi vecchi nella cronologia delle ricerche non siano stati utilizzati, nel qual caso verranno spostati in cima all'elenco.
-- In iOS, l'elenco è ordinato per mese.
+- L'elenco è ordinato per mese.
+
+</TabItem>
+
+</Tabs>
 
 ### Tipo di oggetti {#type-of-objects}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+I seguenti **tipi di oggetti** entrano nell'elenco della Cronologia ricerche:
+
+- **Posizioni**. Può trattarsi di un indirizzo, nome di un'attività commerciale, numero di percorso, coordinate, marcatori, punti di interesse, note OSM o luoghi che hai toccato sulla mappa.
+- **Tracce e Waypoint**. L'elenco include le tracce che hai creato, registrato o scaricato e che hai utilizzato nei percorsi precedenti, e i waypoint se hai navigato verso di essi separatamente.
+- **Preferiti e Foto**. Punti preferiti e note fotografiche che hai aperto.
+- **Destinazioni**. Punti verso cui hai navigato.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 I seguenti **tipi di oggetti** entrano nell'elenco della Cronologia ricerche:
 
 - **Posizioni**. Può trattarsi di un indirizzo, nome di un'attività commerciale, numero di percorso, coordinate, marcatori, punti di interesse, note OSM o luoghi che hai toccato sulla mappa.
 - **Tracce e Waypoint**. L'elenco include le tracce che hai creato, registrato o scaricato e che hai utilizzato nei percorsi precedenti, e i waypoint se hai navigato verso di essi separatamente.
 
+</TabItem>
+
+</Tabs>
+
 
 ## Azioni {#actions}
 
 Nello strumento Cronologia ricerche, puoi [eliminare](#delete) le query non necessarie, tutte in una volta o per singoli elementi. Puoi utilizzare l'opzione di [esportazione](#export-and-share) della cronologia. L'app Android offre un'azione aggiuntiva di [condivisione](#share-android) degli elementi di ricerca come file [GPX](../../technical/osmand-file-formats/osmand-gpx.md).  
 
-Puoi **disabilitare o abilitare** la visualizzazione dell'intera cronologia delle ricerche. In questo caso, le query non vengono eliminate dal dispositivo. In Android, l'interruttore si trova nella schermata principale dello strumento nella [scheda Cronologia](#overview). In iOS, si trova in *Menu → Impostazioni → Impostazioni OsmAnd → Cronologia → Cronologia ricerche*.
+Puoi **disabilitare o abilitare** la visualizzazione dell'intera cronologia delle ricerche. In questo caso, le query non vengono eliminate dal dispositivo. In Android, l'interruttore si trova nella parte superiore della schermata [Elimina](#delete) e nelle impostazioni della Cronologia, che puoi aprire con l'icona a forma di ingranaggio nella schermata [Cronologia](#sort-and-filter). In iOS, si trova in *Menu → Impostazioni → Impostazioni OsmAnd → Cronologia → Cronologia ricerche*.
 
 
 ### Elimina {#delete}
@@ -128,7 +228,7 @@ Dopo aver utilizzato OsmAnd per molto tempo, l'elenco della *Cronologia ricerche
 - *Seleziona o deseleziona elementi casuali* - tocca l'elemento desiderato nell'elenco.
 - *Seleziona il periodo disponibile per l'eliminazione*, come giorno, ultimi 7 giorni o mese - seleziona la casella con il sottotitolo nell'elenco.
 - *Puoi eliminare l'intera cronologia* in una volta toccando il pulsante *Seleziona tutto* nella parte inferiore dello schermo.
-- *Menu → Impostazioni → Impostazioni OsmAnd → Cronologia → Azioni*. Questa sezione contiene il pulsante **Elimina tutta la cronologia**.
+- *Menu → Impostazioni → Impostazioni OsmAnd → Cronologia → Azioni*. Questa sezione contiene il pulsante **Cancella tutta la cronologia** (*Android*)/**Elimina tutta la cronologia** (*iOS*).
 
 
 ### Esporta e Condividi {#export-and-share}

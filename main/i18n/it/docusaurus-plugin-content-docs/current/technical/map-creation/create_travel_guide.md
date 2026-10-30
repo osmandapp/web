@@ -1,5 +1,5 @@
 ---
-source-hash: 257260cc6f5df1e2457058808df69ed24a8aea6a73cb5b7dee08308979c295ac
+source-hash: d93d14b34275dc0a5e7f262f8293ed65af222ec0a7a2866d48f085cdca840627
 title: Creare guide di viaggio personalizzate
 versions: '*'
 ---
@@ -19,7 +19,7 @@ La scelta della fonte per il testo della tua guida dipende completamente da te. 
 
 ### Avviare lo strumento {#launch-the-tool}
 
-Scarica l'ultima versione di [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) ed estrai i file dall'archivio.
+Scarica l'ultima versione di [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) ed estrai i file dall'archivio.
 
 :::note
 Come utilizzare questo strumento è descritto nell'articolo [Creare mappe raster e vettoriali offline da soli](./create-offline-maps-yourself.md#osmandmapcreator).

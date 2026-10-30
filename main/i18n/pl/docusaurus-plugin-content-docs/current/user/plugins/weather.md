@@ -1,5 +1,5 @@
 ---
-source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
 sidebar_position: 19
 title:  Pogoda
 ---
@@ -151,21 +151,21 @@ W tym menu można zmienić **widoczność** i [ustawienia](#weather-settings) dl
 - *Menu główne → Wtyczki → Pogoda → Ustawienia*
 - *Menu główne → Ustawienia → Profil → Ustawienia wtyczek → Pogoda*
 
-![Ustawienia pogody Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Ustawienia pogody 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Ustawienia pogody Android](@site/static/img/plugins/weather/weather_settings_andr_1.webp) ![Ustawienia pogody 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Menu główne → Ustawienia → Profil → Wtyczki → Pogoda*
+*Menu główne → Ustawienia → Profil → Wtyczki → Pogoda*
 
-![Ustawienia pogody iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Ustawienia pogody iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Ustawienia pogody iOS](@site/static/img/plugins/weather/weather_settings_ios.webp) ![Ustawienia pogody iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.webp)
 
 </TabItem>
 
 </Tabs>  
 
-Ważne jest, aby zdecydować, w jakich jednostkach miary wygodnie jest widzieć [dane pogodowe](#weather-layers) na mapie i w sekcji [Widżety pogodowe](#weather-widgets) na ekranie. Możesz wybrać odpowiednie jednostki miary dla każdego parametru lub użyć wartości domyślnych (*tylko iOS*). W wersji aplikacji OsmAnd na iOS można również włączyć opcję prognozy offline, aby uniknąć korzystania z mobilnego transferu danych podczas podróży.  
+Ważne jest, aby zdecydować, w jakich jednostkach miary wygodnie jest widzieć [dane pogodowe](#weather-layers) na mapie i w sekcji [Widżety pogodowe](#weather-widgets) na ekranie. Możesz wybrać odpowiednie jednostki miary dla każdego parametru. Możesz też użyć wartości domyślnych — na iOS dla wszystkich parametrów, na Androidzie tylko dla temperatury. Jednostkę temperatury wybiera się w: *Menu → Profil → Ustawienia ogólne → Jednostki i formaty → Temperatura*. W wersji aplikacji OsmAnd na iOS można również włączyć opcję prognozy offline, aby uniknąć korzystania z mobilnego transferu danych podczas podróży.  
 
 :::note
 W wersji OsmAnd na iOS można zmienić jednostki miary i poziom przezroczystości w menu, które otwiera się po długim dotknięciu ikony wymaganej warstwy mapy.  

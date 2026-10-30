@@ -1,5 +1,5 @@
 ---
-source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title:  Ritten Registreren
 ---
@@ -107,7 +107,7 @@ Het startdialoogvenster wordt geopend als de optie **<Translate ios="true" ids="
 - **Onthoud mijn keuze** (*iOS*). Indien ingeschakeld, start de trackregistratie automatisch, zonder te vragen om extra instellingen of bevestiging. Als u de opname-instellingen wilt wijzigen voordat u een nieuwe track start, start dan de plug-in Ritten Registreren opnieuw om het instellingenmenu weer te laten verschijnen.
 
 
-### Launcher (Android) {#launcher-android}
+### Startscherm (Android) {#launcher-android}
 
 ![Contextmenu van pictogram](@site/static/img/plugins/trip-recording/launcher_icon_andr.png) ![Pictogram Opname Starten](@site/static/img/plugins/trip-recording/and_trip_rec_icon.png)
 
@@ -134,7 +134,7 @@ Voor *Stoppen / Opslaan / Pauzeren*:
 
 - Om **Opslaan, Pauzeren, een nieuw segment Starten** of de opname **Voltooien**, gebruik de [Snelle Actie](../widgets/quick-action.md#add-and-delete-actions) knoppen. Ga naar *Menu → Scherm configureren → Aangepaste knoppen → Snelle actie → Actie toevoegen → [Mijn Plaatsen](../widgets/quick-action.md#my-places)* en voeg een of meer snelle actieknoppen toe.
 
-- (*Alleen Android*) Om een opnametrack te **Pauzeren** of **Opslaan**, gebruik de systeem[melding](#notifications) in het meldingengebied van uw apparaat.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Alleen Android*) Om een opnametrack te **Pauzeren** of **Opslaan**, gebruik de systeem[melding](#notifications) in het meldingengebied van uw apparaat.<br/><br/> ![stoppen-opslaan-pauzeren](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Overzichtsscherm {#overview-screen}
@@ -185,7 +185,7 @@ Voor een meer gedetailleerde weergave kunt u **de grafiek schalen**:
 | ![gegevens](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
-Voor meer details kunt u het [**Tracks Contextmenu**](../map/tracks/track-context-menu.md#options) verkennen, waar u verschillende track-gerelateerde opties kunt beheren, zoals hernoemen, verwijderen of waypoints toevoegen. Om aan te passen hoe tracks op de kaart verschijnen, bezoekt u de sectie [**Weergave**](../map/tracks/appearance.md). Als u specifieke waypoints aan uw huidige track wilt toevoegen, bekijk dan de gids [**Trackpunten**](../map/tracks/track-context-menu.md#points--waypoints). Voor eventuele wijzigingen, zoals het hernoemen van een track, gebruikt u het tabblad [**Opties**](https://osmand.net/docs/user/map/track-context-menu#options) binnen het Tracks Contextmenu.
+Voor meer details kunt u het [**Tracks Contextmenu**](../map/tracks/track-context-menu.md#options) verkennen, waar u verschillende track-gerelateerde opties kunt beheren, zoals hernoemen, verwijderen of waypoints toevoegen. Om aan te passen hoe tracks op de kaart verschijnen, bezoekt u de sectie [**Weergave**](../map/tracks/appearance.md). Als u specifieke waypoints aan uw huidige track wilt toevoegen, bekijk dan de gids [**Trackpunten**](../map/tracks/track-context-menu.md#points--waypoints). Voor eventuele wijzigingen, zoals het hernoemen van een track, gebruikt u het tabblad [**Opties**](https://osmand.net/docs/user/map/tracks/track-context-menu#options) binnen het Tracks Contextmenu.
 :::
 
 
@@ -244,11 +244,11 @@ OsmAnd legt uw reis vast in een gestructureerd [GPX-bestand](https://en.wikipedi
 | `hdop` | **Horizontale Dilutie van Precisie (HDOP)** is een maat voor de GPS-nauwkeurigheid, die de potentiële fout in locatie weerspiegelt als gevolg van de posities van de satellieten. In tegenstelling tot de standaard HDOP, gebruiken OsmAnd GPX-tracks deze waarde om de horizontale nauwkeurigheid in meters weer te geven. Let op dat deze implementatie verschilt van de typische HDOP-standaarden. [Lees meer](https://github.com/osmandapp/Osmand/issues/3445).   |
 | `speed` | **Snelheid** registreert uw bewegingssnelheid in meters per seconde. Het geeft inzicht in uw tempo tijdens verschillende segmenten van uw activiteit.  |
 | `heading`  | **Koers** geeft de richting aan waarin de voorkant van uw voertuig of apparaat wijst, gemeten in graden. Dit is anders dan de 'course', wat het daadwerkelijke pad van de beweging is. Verschillen kunnen optreden door externe factoren zoals wind, stroming of wegomstandigheden. [Meer over koers](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
-| `speed_sensor` | **Snelheid** van [externe sensoren](../plugins/external-sensors.md) legt gegevens vast van aangesloten sensoren, wat preciezere snelheidsinformatie oplevert, vooral handig bij het fietsen. Voor meer details, zie de [documentatie van het GPX-bestandsformaat](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
-| `cadence` | **Cadans** meet het aantal pedaalomwentelingen per minuut, geregistreerd met [externe sensoren](../plugins/external-sensors.md). Dit is met name handig voor fietsers die hun trapefficiëntie willen monitoren en optimaliseren. [Lees meer](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
-| `power` | **Fietsvermogen** kwantificeert het vermogen dat wordt gegenereerd tijdens het trappen, vastgelegd door [externe sensoren](../plugins/external-sensors.md). Het is een essentiële metriek voor serieuze fietsers die hun prestaties willen meten. [Lees meer](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
-| `atemp` | **Luchttemperatuur** registreert de omgevingstemperatuur tijdens uw activiteit, gemeten met [externe sensoren](../plugins/external-sensors.md). Let op dat watertemperatuur niet wordt ondersteund. [Details hier](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
-| `hr` | **Hartslag** monitort uw hartslagen per minuut, met behulp van gegevens van aangesloten [sensoren](../plugins/external-sensors.md). Deze informatie kan essentieel zijn voor het volgen van uw cardiovasculaire prestaties tijdens trainingen. [Lees meer](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `speed_sensor` | **Snelheid** van [externe sensoren](../plugins/external-sensors.md) legt gegevens vast van aangesloten sensoren, wat preciezere snelheidsinformatie oplevert, vooral handig bij het fietsen. Voor meer details, zie de [documentatie van het GPX-bestandsformaat](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).  |
+| `cadence` | **Cadans** meet het aantal pedaalomwentelingen per minuut, geregistreerd met [externe sensoren](../plugins/external-sensors.md). Dit is met name handig voor fietsers die hun trapefficiëntie willen monitoren en optimaliseren. [Lees meer](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).  |
+| `power` | **Fietsvermogen** kwantificeert het vermogen dat wordt gegenereerd tijdens het trappen, vastgelegd door [externe sensoren](../plugins/external-sensors.md). Het is een essentiële metriek voor serieuze fietsers die hun prestaties willen meten. [Lees meer](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).   |
+| `atemp` | **Luchttemperatuur** registreert de omgevingstemperatuur tijdens uw activiteit, gemeten met [externe sensoren](../plugins/external-sensors.md). Let op dat watertemperatuur niet wordt ondersteund. [Details hier](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).   |
+| `hr` | **Hartslag** monitort uw hartslagen per minuut, met behulp van gegevens van aangesloten [sensoren](../plugins/external-sensors.md). Deze informatie kan essentieel zijn voor het volgen van uw cardiovasculaire prestaties tijdens trainingen. [Lees meer](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).  |
 
 
 ## Opname-instellingen {#recording-settings}
@@ -259,7 +259,7 @@ Voordat u begint met het volgen van uw ritten, moet u de **plug-in Ritten Regist
 
 - **Pas opnameparameters aan**. De opname-instellingen kunnen variëren afhankelijk van hoe u zich verplaatst. Bijvoorbeeld, lange afstanden rijden kan een lagere opnamefrequentie vereisen, terwijl wandelen of lopen kan profiteren van frequentere updates.
 
-- **Precieze locatiegegevens**. Om ervoor te zorgen dat uw opnames soepel en bruikbaar zijn voor toekomstig gebruik, kunt u de manier waarop u locatiepunten vastlegt aanpassen. Dit kan het aanpassen van de opnamefrequentie, het formaat van uw gegevens (zoals het aantal punten per afstandseenheid) of de afstand tussen opgenomen punten omvatten.
+- **Precieze locatiegegevens**. Om ervoor te zorgen dat uw opnames soepel en bruikbaar voor toekomstig gebruik zijn, kunt u de manier waarop u locatiepunten vastlegt aanpassen. Dit kan het aanpassen van de opnamefrequentie, het formaat van uw gegevens (zoals het aantal punten per afstandseenheid) of de afstand tussen opgenomen punten omvatten.
 
 - **Algemene instellingen**. De instellingen voor Ritten Registreren worden per profiel geconfigureerd, die u kunt beheren in de algemene [instellingen](../personal/global-settings.md) van de app. Voordat u de plug-in Ritten Registreren aanpast, selecteert u het profiel dat u wilt configureren in de sectie [profielen](../personal/profiles.md). Navigeer van daaruit naar de instellingen van het profiel om toegang te krijgen tot de opties voor Ritten Registreren.
 
@@ -292,12 +292,12 @@ Voordat u begint met het volgen van uw ritten, moet u de **plug-in Ritten Regist
 | **Opnames automatisch splitsen na onderbreking** | Splitst tracks automatisch op basis van tijdsonderbrekingen tussen opgenomen punten. <ul><li>Een nieuw segment begint na een onderbreking van 6 minuten.</li><li>Een nieuwe track begint na een onderbreking van 2 uur.</li><li>Een nieuw bestand begint wanneer de datum verandert.</li><li>Onderbrekingen kunnen het gevolg zijn van GPS-signaalverlies, lage snelheid of configuratie-instellingen.</li></ul><details><summary>*Opmerking*</summary>Een onderbreking wordt geïdentificeerd wanneer er geen punten worden opgenomen. Dit kan gebeuren omdat de locatie niet wordt gedetecteerd of omdat deze wordt gedetecteerd maar niet wordt opgenomen. Verschillende factoren kunnen dit veroorzaken, waaronder zwakke GPS-signalen door slechte weersomstandigheden, of de bewegingssnelheid die onder de geconfigureerde drempel valt. In dergelijke gevallen, hoewel het apparaat de locatie kan detecteren, wordt deze niet opgenomen.<br/><br/>Deze onderbrekingen in opgenomen gegevens kunnen leiden tot de aanmaak van een nieuw segment binnen dezelfde track, een nieuwe track in hetzelfde bestand, of een nieuw GPX-bestand binnen één opname. Dit wordt beheerd binnen één start/stop opnamesessie.</details> |
 | **Voorkom standalone logging** (*Android*) | Pauzeert de trackregistratie wanneer de OsmAnd-app wordt afgesloten (via *recente apps*). De achtergrondindicatie wordt niet weergegeven in het Android-meldingspaneel. |
 | **Inclusief koers** | Registreert de koers (bewegingsrichting) voor elk punt in het GPX-bestand. De koers is de richting waarin het apparaat wijst, wat kan verschillen van de bewegingsrichting door externe factoren zoals wind of slippen. |
-| **Activiteit**  | De optie stelt u in staat om een [activiteitstype](../map/tracks/track-context-menu.md#ttrack-activity-type) voor een profiel vooraf te selecteren, dat vervolgens automatisch wordt toegepast op alle opgenomen tracks. |
+| **Activiteit**  | De optie stelt u in staat om een [activiteitstype](../map/tracks/track-context-menu.md#track-activity-type) voor een profiel vooraf te selecteren, dat vervolgens automatisch wordt toegepast op alle opgenomen tracks. |
 | **Externe sensoren** <br/> *Plug-in moet ingeschakeld zijn* | Gegevens van [externe sensoren](../plugins/external-sensors.md#trip-recording) zoals *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, of *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* worden gelogd in het GPX-bestand. *Afstands*gegevens worden niet opgenomen op Android of iOS. Alleen weergegeven wanneer de [plug-in Externe Sensoren](../plugins/external-sensors.md) is ingeschakeld. |
 | **Voertuigmetrieken** <br/> *Plug-in moet ingeschakeld zijn* | Gegevens van een [OBD-II scanner](../plugins/vehicle-metrics.md#trip-recording) worden gelogd in het GPX-bestand. Alleen weergegeven wanneer de [plug-in Voertuigmetrieken](../plugins/vehicle-metrics.md) is ingeschakeld.<br />*Opmerking*: U kunt toevoegen welke metrieken u wilt opnemen in het GPX-bestand uit de lijst: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Opslagmap voor tracks** (*Android*) | Bepaalt waar in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* opgenomen tracks worden opgeslagen. Opties zijn onder meer het opslaan van alle tracks in de map Rec of het organiseren ervan per maand, zoals Rec/jjjjj-mm. |
 | **Melding** | Regelt de weergave van een systeemmelding voor [ritregistratie](#notifications) in het meldingengebied van het apparaat, waarmee u ritten kunt starten. |
-| **Online tracking** (*Android*) | Maakt real-time tracking van uw locatie mogelijk door opgenomen punten naar een opgegeven URL te sturen. Het trackinginterval bepaalt hoe vaak punten worden verzonden, en de tijdbuffer slaat punten op wanneer er geen internetverbinding is.<details><summary>*Opmerking*</summary>Als deze optie is ingeschakeld en de trackregistratie bezig is, wordt de Afstand/Start-Stop (REC) widget **groen** in plaats van **rood**, wat aangeeft dat elk opgenomen punt wordt verzonden naar een opgegeven URL. Het veld **Webadres** stelt u in staat de URL in te voeren met het volgende parameterformaat:<ul><li>`lat={0}`: Breedtegraad</li><li>`lon={1}`: Lengtegraad</li><li>`timestamp={2}`: Tijdstempel (Unix-tijd)</li><li>`hdop={3}`: Horizontale dilutie van precisie</li><li>`altitude={4}`: Hoogte</li><li>`speed={5}`: Snelheid</li><li>`bearing={6}`: Peiling (bewegingsrichting)</li><li>`eta={7}`: Geschatte aankomsttijd (Unix-tijd)</li><li>`etfa={8}`: Geschatte tijd tot het eerste tussenpunt of eindpunt (Unix-tijd)</li><li>`eda={9}`: Geschatte afstand tot aankomst of een markering (in meters)</li><li>`edfa={10}`: Geschatte afstand tot het eerste tussenpunt of eindpunt (in meters)</li><li>`batproc={11}`: Batterijniveau van apparaat (percentage)</li></ul>U kunt het **Trackinginterval** instellen om te specificeren hoe vaak locatiepunten worden verzonden, met opties variërend van 0 seconden tot 5 minuten. Daarnaast bepaalt de parameter **Tijdbuffer** hoe lang locatiepunten worden opgeslagen als er geen internetverbinding is, zodat gegevens worden opgeslagen en verzonden wanneer de verbinding wordt hersteld.</details><br />OsmAnd slaat de niet-verzonden locatiepunten alleen op in het tijdelijke geheugen van de app terwijl de applicatie draait. Dit betekent dat de buffer niet naar permanente opslag wordt geschreven. Als de app wordt gesloten, geforceerd gestopt of het apparaat herstart, gaan alle gebufferde punten verloren.<br />De instelling Tijdbuffer definieert niet hoe lang punten in het geheugen worden bewaard — het fungeert alleen als een filter op het moment van uploaden. Wanneer OsmAnd probeert gebufferde punten te verzenden, wordt elk punt gecontroleerd op de limiet van de Tijdbuffer. Punten ouder dan de geselecteerde limiet (bijv. 24 uur) worden verwijderd in plaats van geüpload. Als gevolg hiervan kan de buffer tijdelijk punten bevatten die ouder zijn dan de gekozen Tijdbuffer-waarde, maar deze punten worden weggegooid tijdens het uploadproces. |
+| **Online tracking** (*Android*) | Maakt real-time tracking van uw locatie mogelijk door opgenomen punten naar een opgegeven URL te sturen. Het trackinginterval bepaalt hoe vaak punten worden verzonden, en de tijdbuffer slaat punten op wanneer er geen internetverbinding is.<details><summary>*Opmerking*</summary>Als deze optie is ingeschakeld en de trackregistratie bezig is, wordt de Afstand/Start-Stop (REC) widget **groen** in plaats van **rood**, wat aangeeft dat elk opgenomen punt wordt verzonden naar een opgegeven URL. Het veld **Webadres** stelt u in staat de URL in te voeren met het volgende parameterformaat:<ul><li>`lat={0}`: Breedtegraad</li><li>`lon={1}`: Lengtegraad</li><li>`timestamp={2}`: Tijdstempel (Unix-tijd)</li><li>`hdop={3}`: Horizontale dilutie van precisie</li><li>`altitude={4}`: Hoogte</li><li>`speed={5}`: Snelheid</li><li>`bearing={6}`: Peiling (bewegingsrichting)</li><li>`eta={7}`: Geschatte aankomsttijd (Unix-tijd)</li><li>`etfa={8}`: Geschatte tijd tot het eerste tussenpunt of eindpunt (Unix-tijd)</li><li>`eda={9}`: Geschatte afstand tot aankomst of een markering (in meters)</li><li>`edfa={10}`: Geschatte afstand tot het eerste tussenpunt of eindpunt (in meters)</li><li>`batproc={11}`: Batterijniveau van apparaat (percentage)</li></ul>U kunt het **Trackinginterval** instellen om te specificeren hoe vaak locatiepunten worden verzonden, met opties variërend van 0 seconden tot 5 minuten. Daarnaast bepaalt de parameter **Tijdbuffer** hoe lang locatiepunten worden opgeslagen als er geen internetverbinding is, zodat gegevens worden opgeslagen en verzonden wanneer de verbinding wordt hersteld.</details><br />OsmAnd slaat de niet-verzonden locatiepunten alleen op in het tijdelijke geheugen van de app terwijl de applicatie draait. Dit betekent dat de buffer niet naar permanente opslag wordt geschreven. Als de app wordt gesloten, geforceerd gestopt of het apparaat herstart, gaan alle gebufferde punten verloren.<br />De instelling Tijdbuffer definieert niet hoe lang punten in het geheugen worden bewaard — het fungeert alleen als een filter op het moment van uploaden. Wanneer OsmAnd probeert gebufferde punten te verzenden, wordt elk punt gecontroleerd op de limiet van de Tijdbuffer. Punten ouder dan de geselecteerde limiet (bijv. 24 uur) worden verwijderd in plaats van geüpload. Als gevolg hiervan kan de buffer tijdelijk punten bevatten die ouder dan de gekozen Tijdbuffer-waarde, maar deze punten worden weggegooid tijdens het uploadproces. |
 | **Tracks** | Een snelle verwijzing naar de map waar tracks worden opgeslagen in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Plug-ininstellingen naar standaard resetten** | Reset alle ritregistratie-instellingen voor het huidige profiel naar hun standaardwaarden. |
 | **Kopiëren van een ander profiel** (*Android*) | Kopieert de ritregistratie-instellingen van het ene profiel naar het andere. |
@@ -432,6 +432,33 @@ Als de huidige opname nog geen stijgings- of dalingssegment bevat, tonen widgets
 
 
 ### Afstand (Start-Stop) {#distance-start-stop}
+
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
 
 | |
 |-----------|

@@ -1,5 +1,5 @@
 ---
-source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
+source-hash: 7dd018034f91c3c379a76d03258772b0e506136d147238424b5ac05df4862680
 sidebar_position: 3
 title:  Compras Web
 ---
@@ -38,11 +38,10 @@ Todas las compras realizadas a través de cualquiera de estas plataformas admite
 A continuación se muestran los precios de los productos OsmAnd en EE. UU. y la UE. Los precios en otras regiones son convertidos automáticamente a la moneda local por la plataforma de pago.
 
 
-<!--
 
-:::danger 🏖️ Summer Sale
+:::danger 🎃 Rebajas de Halloween
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+*¡Date prisa! Esta oferta solo está disponible hasta el* **1 de noviembre (23:59 UTC)**.
 
 :::
 
@@ -56,13 +55,12 @@ A continuación se muestran los precios de los productos OsmAnd en EE. UU. y la 
 
 
 :::note 
-By purchasing a subscription through our [website](https://osmand.net/pricing) at a discounted rate,  
-you receive a 2-year discounted plan.  
-Starting from the third year, the full price will apply.
+Al comprar una suscripción con descuento en nuestro [sitio web](https://osmand.net/pricing), obtienes un plan con descuento de 2 años.  
+A partir del tercer año se aplicará el precio completo.
 :::
 
+<!--
 
--->
 
 |    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
@@ -70,6 +68,9 @@ Starting from the third year, the full price will apply.
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
 | **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
+
+-->
+
 
 
 

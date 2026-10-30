@@ -2,6 +2,7 @@ import i18n from '../i18n';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { BBOX_COORDS_DECIMALS } from './GlobalManager';
 import { getCurrentTimeParams } from '../util/Utils';
+import { getApiLang } from '../util/lang';
 
 function formatBboxCorner(corner) {
     return `${Number(corner.lat).toFixed(BBOX_COORDS_DECIMALS)},${Number(corner.lng).toFixed(BBOX_COORDS_DECIMALS)}`;
@@ -30,7 +31,7 @@ export function searchByWordApi({
             northWest: formatBboxCorner(bbox.getNorthWest()),
             southEast: formatBboxCorner(bbox.getSouthEast()),
             text: query,
-            locale: i18n.language,
+            locale: getApiLang(i18n.language),
             baseSearch,
             ...(spatial ? { spatial: true } : {}),
             ...(autocomplete ? { autocomplete: true } : {}),

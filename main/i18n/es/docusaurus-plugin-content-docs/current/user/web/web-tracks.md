@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
 sidebar_label: Pistas
 title: Pistas
@@ -50,9 +50,13 @@ Para importar una pista mediante arrastrar y soltar:
 - Arrastra uno o más archivos GPX desde tu computadora.
 - Suelta los archivos sobre el mapa o sobre una carpeta de pistas específica.
 
-Cuando se arrastra un archivo sobre el mapa, se resalta el área disponible para soltarlo. Si sueltas el archivo directamente sobre el mapa, se importa en la carpeta Importar. Si lo sueltas sobre una carpeta existente, se importa en esa carpeta.
+Cuando se arrastra un archivo sobre el mapa, se resalta el área disponible para soltarlo. Si sueltas el archivo directamente sobre el mapa, se importa en la carpeta Importar. Si lo sueltas sobre una carpeta existente, se importa en esa carpeta. Sin una suscripción activa de [OsmAnd Pro](../purchases/index.md), al soltar un archivo se abre un diálogo que explica que la importación de pistas requiere OsmAnd Pro.
+
+El tamaño máximo de archivo es de 20 MB para archivos GPX y KML y de 2 MB para archivos KMZ. Los archivos más grandes no se importan y, en su lugar, aparece una advertencia. Cuando importas varios archivos a la vez, todos los archivos rechazados se enumeran en un solo mensaje. Las pistas de más de 20 MB que ya están almacenadas en OsmAnd Cloud tampoco se pueden abrir en la web, y aparece una notificación que sugiere abrirlas en la aplicación OsmAnd.
 
 Una vez completada la importación, la pista aparece en la lista de pistas, se sincroniza con [OsmAnd Cloud](../personal/osmand-cloud.md) y queda disponible en todos los dispositivos conectados a la misma cuenta.
+
+Si una pista no se puede importar o guardar en OsmAnd Cloud, un diálogo de error muestra el nombre del archivo y, cuando esté disponible, el motivo informado por el servidor.
 
 ![Drag and drop](@site/static/img/web/drag_and_drop.png)
 
@@ -103,7 +107,7 @@ En el menú de tres puntos (⋮) puedes realizar acciones adicionales para la Sm
 
 ## Pistas en la nube {#cloud-tracks}
 
-Las pistas GPX que tienes en [OsmAnd Cloud](../personal/osmand-cloud.md) estarán disponibles para mostrar y editar después de iniciar sesión. Solo para usuarios **Pro** <ProFeature/> y para usuarios de [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) (que pueden descargar sus datos incluso después de que su suscripción Pro haya expirado).
+Las pistas GPX que tienes en [OsmAnd Cloud](../personal/osmand-cloud.md) estarán disponibles para mostrar y editar después de iniciar sesión. Solo los **usuarios Pro** <ProFeature/> pueden acceder a ellas. Los usuarios de [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) pueden descargar sus datos de la Nube incluso después de que expire su suscripción Pro.
 
 Al seleccionar una pista, el mapa centra automáticamente y ajusta el nivel de zoom para mostrar toda la pista dentro del área visible del mapa.
 

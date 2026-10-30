@@ -6,7 +6,7 @@ import isEmpty from 'lodash-es/isEmpty';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
 import { AppBar, Box, Button, ButtonGroup, IconButton, Toolbar, Typography } from '@mui/material';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import headerStyles from '../trackfavmenu.module.css';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';

@@ -14,6 +14,7 @@ import TracksManager, {
     TRACK_VISIBLE_FLAG,
     preparedGpxFile,
     GPX_FILE_EXT,
+    INFO_FILE_EXT,
     KMZ_FILE_EXT,
     prepareName,
     renameLastFolderSegment,
@@ -24,7 +25,7 @@ import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE, OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
 import { getFilesForUpdateDetails } from '../../util/hooks/useInitialFilesLoad';
-import { cloneTrackObject, sanitizedFileName } from '../../util/Utils';
+import { cloneTrackObject, FILE_NAME_MAX_BYTES, sanitizedFileName, truncateToBytes } from '../../util/Utils';
 import i18n from '../../i18n';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { deleteLocalTrack, saveTrackToLocalStorage } from '../../context/LocalTrackStorage';
@@ -112,6 +113,7 @@ export async function saveTrackToCloud({
     }
 
     if (ltx.loginUser) {
+        let serverError = null;
         if (currentFile) {
             let convertedData;
             if (currentFile.originalName.toLowerCase().endsWith(KMZ_FILE_EXT)) {
@@ -135,7 +137,10 @@ export async function saveTrackToCloud({
 
             // close possibly loaded Cloud track (clean up layers)
             ctx.mutateGpxFiles((o) => o[params.name] && (o[params.name].url = null));
-            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, { params });
+            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/upload-file`, data, {
+                params,
+                dataOnErrors: true,
+            });
             if (res?.data?.status === 'ok') {
                 if (type !== FavoritesManager.FAVORITE_FILE_TYPE) {
                     await syncCloudTrackInfo(ctx, params.name);
@@ -149,22 +154,46 @@ export async function saveTrackToCloud({
                 refreshGlobalFiles({ ctx, currentFileName: params.name }).then();
                 return true;
             }
+            serverError = getServerErrorMessage(res);
         }
+        const msg = i18n.t('web:save_error_msg', { name: fileName });
         ctx.setTrackErrorMsg({
-            title: 'Save error',
-            msg: `Unable to save ${gpxFile?.name}`,
+            title: i18n.t('web:save_error_title'),
+            msg: serverError ? `${msg}: ${serverError}` : msg,
         });
     }
     return false;
+}
+
+// nginx answers some errors with its own html page instead of the server text
+export function getServerErrorMessage(res) {
+    if (!res?.data || res.headers?.get('Content-Type')?.includes('text/html')) {
+        return null;
+    }
+    try {
+        const error = JSON.parse(res.data).error;
+        return error.message ?? error;
+    } catch {
+        return res.data;
+    }
 }
 
 export function removeFileExtension(filename) {
     return filename.includes('.') ? filename.slice(0, filename.lastIndexOf('.')) : filename;
 }
 
+// the longest file of a track, "<name>.gpx.info", has to fit the 255-byte limit of the phone file systems
+function trackNameMaxBytes() {
+    return FILE_NAME_MAX_BYTES - GPX_FILE_EXT.length - INFO_FILE_EXT.length;
+}
+
+export function sanitizedTrackName(name) {
+    return sanitizedFileName(name, false, trackNameMaxBytes());
+}
+
 export function createTrackFreeName(name, otherTracks, folder = null, folderName = null, occupiedFileNames = null) {
     let occupied = null;
-    let newName = name;
+    let newName = truncateToBytes(name, trackNameMaxBytes());
     for (let i = 1; i < 100; i++) {
         if ((folder !== null || folderName !== null) && otherTracks) {
             //check cloud
@@ -176,7 +205,8 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
         if (!occupied && !occupiedFileNames?.has(newName)) {
             return newName;
         }
-        newName = name + ' - ' + i; // try with "Track - X"
+        const suffix = ' - ' + i; // try with "Track - X"
+        newName = truncateToBytes(name, trackNameMaxBytes() - suffix.length) + suffix;
     }
     if (occupied) {
         throw new Error('TracksManager addTrack() too many same-tracks');
@@ -188,7 +218,7 @@ export function createTrackFreeName(name, otherTracks, folder = null, folderName
  * Same sanitization as cloud rename (RenameDialog + renameTrack flow).
  */
 export function renameLocalTrack(ctx, oldName, rawNewName) {
-    const newName = prepareName(sanitizedFileName(rawNewName), true);
+    const newName = prepareName(sanitizedTrackName(rawNewName), true);
     if (!newName || newName.trim().length === 0) {
         return { error: i18n.t('web:rename_empty_track_name') };
     }
@@ -235,12 +265,16 @@ export async function renameTrack(oldName, folder, newName, ctx) {
         if (res && res?.data?.status === 'ok') {
             await refreshGlobalFiles({ ctx, oldName, currentFileName: newFileName });
         } else {
+            const msg = i18n.t('web:rename_error_msg', { name: prepareName(oldName) });
+            const serverError = getServerErrorMessage(res);
             ctx.setTrackErrorMsg({
-                title: 'Rename error',
-                msg: res.data,
+                title: i18n.t('web:rename_error_title'),
+                msg: serverError ? `${msg}: ${serverError}` : msg,
             });
+            return false;
         }
     }
+    return true;
 }
 
 export async function updateGpxFiles(oldName, newFileName, listFiles, ctx) {
@@ -324,9 +358,11 @@ export async function duplicateTrack(oldName, folderName, newName, ctx) {
         if (res && res?.data?.status === 'ok') {
             refreshGlobalFiles({ ctx, currentFileName: newFileName }).then();
         } else {
+            const msg = i18n.t('web:duplicate_error_msg', { name: prepareName(oldName) });
+            const serverError = getServerErrorMessage(res);
             ctx.setTrackErrorMsg({
-                title: 'Duplicate error',
-                msg: res.data,
+                title: i18n.t('web:duplicate_error_title'),
+                msg: serverError ? `${msg}: ${serverError}` : msg,
             });
         }
     }

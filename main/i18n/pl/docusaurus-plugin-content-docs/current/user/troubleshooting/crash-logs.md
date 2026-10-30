@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
 title:  Dzienniki awarii
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Przegląd {#overview}
 
-Dzienniki awarii są cennymi narzędziami diagnostycznymi, które pomagają programistom identyfikować i naprawiać problemy oraz błędy powodujące awarię aplikacji lub nieoczekiwane zachowanie. Udostępnianie dzienników z urządzenia z systemem Android zespołowi programistów OsmAnd jest możliwe. Obecnie użytkownicy iOS mają tylko jeden typ opcji dziennika awarii do wysłania.
+Dzienniki awarii są cennymi narzędziami diagnostycznymi, które pomagają programistom identyfikować i naprawiać problemy oraz błędy powodujące awarię aplikacji lub nieoczekiwane zachowanie. Udostępnianie dzienników z urządzenia zespołowi programistów OsmAnd jest możliwe. Jeśli OsmAnd zamknie się nieoczekiwanie, aplikacja oferuje również wysłanie raportu o awarii przy następnym uruchomieniu.
 
 
 ## Dzienniki awarii i dzienniki aplikacji {#crash-and-app-logs}
@@ -49,7 +49,7 @@ Zachowaj ostrożność podczas wysyłania dzienników aplikacji, ponieważ mogą
 
 </Tabs>
 
-1. Przejdź do *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* lub *<Translate android="true" ids="send_logcat_log"/>* (*Wyślij bieżący dziennik aplikacji* na iOS). W zależności od sytuacji wybierz odpowiedni typ dziennika. Szczegóły dotyczące różnic między typami dzienników można znaleźć w sekcji [Dzienniki awarii i dzienniki aplikacji](#crash-and-app-logs).
+1. Przejdź do *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* lub *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Wyślij bieżący dziennik aplikacji* (iOS). W zależności od sytuacji wybierz odpowiedni typ dziennika. Szczegóły dotyczące różnic między typami dzienników można znaleźć w sekcji [Dzienniki awarii i dzienniki aplikacji](#crash-and-app-logs).
 2. W wyskakującym menu wybierz Gmaila lub preferowaną aplikację pocztową. Zalecamy wysłanie dzienników na adres `support@osmand.net`.
 3. Stuknij przycisk *Wyślij*.
 
@@ -74,6 +74,67 @@ Zachowaj ostrożność podczas wysyłania dzienników aplikacji, ponieważ mogą
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Wyślij raport o awarii po awarii {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Jeśli OsmAnd zamknął się nieoczekiwanie podczas poprzedniego uruchomienia, przy następnym starcie aplikacji pojawi się okno Awaria. Pojawia się ono po awarii aplikacji, po jej przestaniu odpowiadać (Android 11 i nowszy) lub po awarii w natywnym kodzie aplikacji (Android 12 i nowszy). Okno nie pojawia się, gdy nawigacja jest aktywna.
+
+- *Wyślij* — wysyła raport o awarii bezpośrednio do zespołu programistów OsmAnd, bez użycia aplikacji pocztowej. Komunikat potwierdza, czy raport został wysłany.
+- *Odrzuć* — zamyka okno bez wysyłania raportu.
+
+Raport zawiera informacje techniczne o stanie aplikacji i użyciu pamięci przed awarią oraz ostatni dziennik aplikacji.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Jeśli OsmAnd zamknął się nieoczekiwanie podczas poprzedniego uruchomienia, przy następnym starcie aplikacji pojawi się okno Udostępnij dziennik awarii. Pojawia się ono po awarii aplikacji lub po nieoczekiwanym zamknięciu jej przez system.
+
+- *Wyślij* — wysyła raport o awarii bezpośrednio do zespołu programistów OsmAnd, bez użycia aplikacji pocztowej. Komunikat potwierdza, czy raport został wysłany.
+- *Anuluj* — zamyka okno bez wysyłania raportu.
+
+Raport zawiera informacje techniczne o stanie aplikacji i użyciu pamięci przed awarią oraz ostatni dziennik aplikacji.
+
+</TabItem>
+
+</Tabs>
+
+## Histogram sterty dla problemów z pamięcią (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Tylko Android
+:::
+
+*Histogram sterty* to tabela pokazująca, co wypełnia pamięć Java aplikacji: nazwy klas z liczbą obiektów i ich rozmiarami. Pomaga programistom ustalić, co zużywa pamięć, gdy aplikacja zwalnia, zawiesza się lub zamyka po pewnym czasie. Nie zawiera Twoich lokalizacji, nazw śladów ani zapytań wyszukiwania. OsmAnd wykonuje pełny zrzut pamięci na urządzeniu, przekształca go w histogram i natychmiast usuwa zrzut.
+
+Wykonanie zrzutu **zamraża aplikację na 5–10 sekund**. Jeśli w tym czasie dotkniesz ekranu, Android może wyświetlić komunikat *OsmAnd nie odpowiada*. Dlatego automatyczne zbieranie jest **domyślnie wyłączone**.
+
+**Kiedy włączyć:**
+
+- OsmAnd zamyka się samoczynnie lub wielokrotnie wyświetla komunikat *nie odpowiada*, zwłaszcza po pewnym czasie użytkowania lub przy otwieraniu wyszukiwania, mapy z wieloma POI lub *Moich miejsc* z wieloma śladami.
+- Aplikacja działa coraz wolniej im dłużej jest uruchomiona, a ponowne uruchomienie pomaga.
+- Raport o awarii informuje, że aplikacji zabrakło pamięci (`OutOfMemoryError`).
+- Zespół wsparcia OsmAnd poprosił Cię o zebranie histogramu sterty.
+
+**Kiedy pozostawić wyłączone:**
+
+- Codzienne użytkowanie i nawigacja, gdy aplikacja działa prawidłowo.
+- Awarię występujące od razu przy każdym uruchomieniu lub przy konkretnej czynności, np. otwarciu jednego pliku. Wystarczy zwykły [dziennik awarii](#send-logs-from-osmand-app).
+
+**Jak zebrać i wysłać:**
+
+1. Włącz [wtyczkę programistyczną OsmAnd](../plugins/development.md) i przejdź do *Menu główne → Wtyczki → Rozwój OsmAnd → Ustawienia → Pamięć → Pamięć Java*.
+2. W panelu *Zrzut sterty* wybierz jedną z opcji:
+    - **Zbieraj przy wysokim zużyciu**. Histogram jest zbierany automatycznie, gdy pamięć Java jest prawie pełna, maksymalnie raz na 30 minut, i dołączany do następnego raportu o awarii. Kontynuuj normalne korzystanie z aplikacji, aż problem wystąpi ponownie.
+    - **Zbierz i przeanalizuj teraz**. Zbiera histogram natychmiast i wyświetla wynik. Użyj tej opcji, gdy aplikacja już działa wolno, a *Pamięć Java* pokazuje wysokie zużycie.
+3. Stuknij **Udostępnij raport**, aby wysłać najnowszy raport do programistów, lub wyślij go z okna awarii przy następnym uruchomieniu aplikacji.
+4. Wyłącz *Zbieraj przy wysokim zużyciu* po wysłaniu raportu.
+
+![Pamięć Java Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Panel zrzutu sterty Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Wysyłanie plików Tombstone (Android) {#send-tombstone-files-android}
 

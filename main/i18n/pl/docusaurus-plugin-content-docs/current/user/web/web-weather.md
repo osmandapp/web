@@ -1,8 +1,8 @@
 ---
 source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
-sidebar_label:  Weather
-title: Weather on the Web
+sidebar_label:  Pogoda
+title: Pogoda na stronie internetowej
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,14 +17,14 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Przegląd {#overview}
 
 Funkcja Pogody na mapie OsmAnd Web wyświetla aktualne warunki pogodowe i dane prognozowane bezpośrednio na mapie. Zapewnia dostęp do informacji pogodowych z wielu źródeł prognoz, obsługuje regulację czasu i pozwala na przeglądanie warstw pogodowych, takich jak temperatura, wiatr, ciśnienie, zachmurzenie i opady.
 
 Dane pogodowe są dostępne bez logowania. Widok Pogody można otworzyć bezpośrednio z interfejsu mapy, klikając ikonę parasola w panelu menu lub klikając prawym przyciskiem myszy na mapie i wybierając Otwórz pogodę z menu kontekstowego.
 
 
-## Data Source {#data-source}
+## Źródło danych {#data-source}
 
 OsmAnd Web dostarcza informacje pogodowe z dwóch źródeł prognoz:
 
@@ -36,7 +36,7 @@ Aby przełączać się między nimi, kliknij przycisk **parasola** w menu Pogody
 ![Pogoda w OsmAnd Web](@site/static/img/web/weather_source.png)
 
 
-## Weather Menu {#weather-menu}
+## Menu Pogody {#weather-menu}
 
 Menu **Pogody** wyświetla aktualne warunki pogodowe i dane prognozowane dla wybranego miejsca na mapie. Łączy widok podsumowujący, kontrolki czasu i warstwy pogodowe w jednym panelu.
 
@@ -58,7 +58,7 @@ Na dole panelu wyświetlana jest informacja o czasie generowania danych pogodowy
 ![Pogoda w OsmAnd Web](@site/static/img/web/weather_menu.png)
 
 
-## Weather Layers {#weather-layers}
+## Warstwy pogodowe {#weather-layers}
 
 Warstwy pogodowe pozwalają na wizualizację danych prognozowanych bezpośrednio na mapie jako nakładka. Pomagają szybko ocenić warunki pogodowe na szerszym obszarze zamiast przeglądać wartości tylko dla jednego punktu.
 
@@ -76,7 +76,7 @@ Wszystkie warstwy pogodowe są zsynchronizowane z wybraną datą i czasem w menu
 ![Pogoda w OsmAnd Web](@site/static/img/web/weather_layers.png)
 
 
-## Forecast View {#forecast-view}
+## Widok prognozy {#forecast-view}
 
 Prognozy pogody są dostępne na maksymalnie 7 dni do przodu. Wartości prognozowane są obliczane w 3-godzinnych interwałach, co pozwala na badanie krótkoterminowych zmian w ciągu każdego dnia.
 
@@ -89,7 +89,7 @@ Możesz przełączać się między różnymi parametrami pogodowymi za pomocą i
 ![Pogoda w OsmAnd Web](@site/static/img/web/weather_forecast.png)
 
 
-## Related Articles {#related-articles}
+## Powiązane artykuły {#related-articles}
 
 - [Pogoda](../plugins/weather.md)
 - [Wstęp](../web/web-overview.md)

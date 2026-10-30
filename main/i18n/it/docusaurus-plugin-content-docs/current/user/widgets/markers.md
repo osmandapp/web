@@ -1,5 +1,5 @@
 ---
-source-hash: 2e10650d0eee32138985228898ac7ac712a0a70a1f315f227a751d0c2f14ae10
+source-hash: 7b765aa07ea22d947a58624f6293200d6f6198cc047b028220974be3afc62756
 sidebar_position: 6
 title:  Widget Marcatori
 ---
@@ -76,7 +76,7 @@ Il widget **Marcatori mappa** *(per Android)* e **Indicazione distanza - Widget*
 È l'ora (hh:mm) in cui il veicolo o la persona dovrebbe arrivare a destinazione. Viene calcolato come la distanza dal marcatore divisa per la velocità media.
 La velocità media è calcolata come la media di tutti i valori di velocità ricevuti dai punti di localizzazione per l'intervallo di tempo selezionato da 15 secondi a 60 minuti.
 
-È anche possibile selezionare la visualizzazione di uno o due marcatori. Per saperne di più sulle impostazioni dei widget, consultare questo [articolo](https://osmand.net/docs/user/personal/markers#map-markers-widgets).
+È anche possibile selezionare la visualizzazione di uno o due marcatori. Per saperne di più sulle impostazioni dei widget, consultare questo [articolo](https://osmand.net/docs/user/widgets/markers#configure-marker-widgets).
 :::info
 *La distanza dal marcatore* è la lunghezza della linea retta tra la propria posizione (o un punto particolare della mappa) e il marcatore.
 :::

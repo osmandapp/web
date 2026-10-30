@@ -94,7 +94,7 @@ Some of these settings interact, so be accurate. The best search for the above s
 
 ### Control the Behavior of iOS Background Apps {#control-the-behavior-of-ios-background-apps}
 
-iOS може автоматично призупиняти або зупиняти фонові застосунки, коли системні ресурси перерозподіляються. OsmAnd не може змінити цю поведінку. Якщо запис треку переривається, коли пристрій заблоковано, це може залишити пропуски в записі. Ви можете відредагувати ці пропуски за допомогою інструмента [Plan a Route](https://docs.osmand.net/docs/user/plan-route/create-route).
+iOS може автоматично призупиняти або зупиняти фонові застосунки, коли системні ресурси перерозподіляються. OsmAnd не може змінити цю поведінку. Якщо запис треку переривається, коли пристрій заблоковано, це може залишити пропуски в записі. Ви можете відредагувати ці пропуски за допомогою інструмента [Plan a Route](https://osmand.net/docs/user/plan-route/create-route).
 
 Для отримання додаткової інформації про те, як iOS обробляє відстеження місцезнаходження, перегляньте документацію Apple [тут](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

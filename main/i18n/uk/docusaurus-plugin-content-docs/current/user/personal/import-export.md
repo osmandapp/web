@@ -93,14 +93,14 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,loc
 - *Перезапуск*. Після імпорту файлів програму необхідно перезапустити.
 
 Supported import file types:
-- [Треки, маршрути](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [обране](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML and KMZ files are imported with conversion into GPX format.
+- [Треки, маршрути](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [обране](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML and KMZ files are imported with conversion into GPX format.
 - [Векторні карти OsmAnd](https://osmand.net/docs/user/map/vector-maps): `.obf`.
-- [Тайли онлайн-карт](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Тайли онлайн-карт](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [Резервні копії & профілі](#export): `.osf`.
-- [Еліваційні моделі / 3D дані](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Еліваційні моделі / 3D дані](https://osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [Інше](color-palette-schemes.md): `.txt`.
 
-Для технічного огляду всіх підтримуваних форматів див. [OsmAnd File Formats](https://www.osmand.net/docs/technical/osmand-file-formats/).
+Для технічного огляду всіх підтримуваних форматів див. [OsmAnd File Formats](https://osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

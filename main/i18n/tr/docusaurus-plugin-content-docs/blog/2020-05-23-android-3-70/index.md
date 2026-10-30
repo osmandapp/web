@@ -104,7 +104,7 @@ If you change the base profile settings you can reset them to default. To do thi
 
 ## Full GPX routes from Navigation support traffic lanes and complete turn instructions
 
-If you save <a href="https://osmand.net/docs/user/navigation/gpx-navigation">navigation route as a GPX file</a> or with a <a href="https://osmand.net/docs/user/widgets/radius-ruler#distance-by-tap-tool">measure distance</a> tool, this GPX file will keep all the information about traffic lanes and complete turn instructions.
+If you save <a href="https://osmand.net/docs/user/navigation/setup/gpx-navigation">navigation route as a GPX file</a> or with a <a href="https://osmand.net/docs/user/widgets/radius-ruler#distance-by-tap">measure distance</a> tool, this GPX file will keep all the information about traffic lanes and complete turn instructions.
 
 <table class="blogimage">
   <tr>

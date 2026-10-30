@@ -42,6 +42,7 @@ export default function CustomInput({
     const suggestionsTimerRef = useRef(null);
 
     const [value, setValue] = useState(defaultSearchValue);
+    const [typedBeforeDefault, setTypedBeforeDefault] = useState(false);
     const [isFocused, setIsFocused] = useState(false);
     const [isInitialRender, setIsInitialRender] = useState(true);
     const [suggestions, setSuggestions] = useState([]);
@@ -61,6 +62,10 @@ export default function CustomInput({
     }, [value]);
 
     useEffect(() => {
+        if (typedBeforeDefault && defaultSearchValue !== EMPTY_SEARCH) {
+            setTypedBeforeDefault(false);
+            return;
+        }
         setValue((prev) => (defaultSearchValue !== EMPTY_SEARCH || prev === EMPTY_SEARCH ? defaultSearchValue : prev));
     }, [defaultSearchValue]);
 
@@ -131,7 +136,7 @@ export default function CustomInput({
         });
         if (response?.ok) {
             const data = await response.json();
-            setSuggestions(buildSuggestions(data?.features, ctx, t));
+            setSuggestions(buildSuggestions(data, ctx, t));
             setHighlightedIndex(-1);
         } else if (!response?.aborted) {
             clearSuggestions();
@@ -234,6 +239,7 @@ export default function CustomInput({
                 onChange={(e) => {
                     const nextValue = e.target.value;
                     setValue(nextValue);
+                    setTypedBeforeDefault(defaultSearchValue === EMPTY_SEARCH);
                     setHighlightedIndex(-1);
                     if (type === SEARCH_TYPE_CATEGORY && nextValue.length >= MIN_SIZE_SEARCH_VALUE) {
                         search(formattingPoiType(nextValue));
@@ -285,9 +291,12 @@ export default function CustomInput({
                             >
                                 <Typography
                                     className={styles.autocompleteSelectText}
-                                    title={`${suggestion.name}${suggestion.info ? ` · ${suggestion.info}` : ''}`}
+                                    title={`${getSuggestionTitle(suggestion)}${suggestion.info ? ` · ${suggestion.info}` : ''}`}
                                 >
-                                    <span className={styles.autocompleteSelectName}>{suggestion.name}</span>
+                                    {suggestion.typo && <SearchIcon className={styles.typoSuggestionIcon} />}
+                                    <span className={styles.autocompleteSelectName}>
+                                        {getSuggestionTitle(suggestion)}
+                                    </span>
                                     {suggestion.info && (
                                         <span className={styles.autocompleteSelectInfo}> · {suggestion.info}</span>
                                     )}
@@ -301,10 +310,10 @@ export default function CustomInput({
     );
 }
 
-function buildSuggestions(features, ctx, t) {
+function buildSuggestions(data, ctx, t) {
     const seen = new Set();
 
-    return (features ?? [])
+    const suggestions = (data?.features ?? [])
         .filter((feature) => feature?.properties?.[WEB_VISIBLE_LEVEL] === 0)
         .map((feature) => {
             const props = getPropsFromSearchResultItem(feature.properties, t, null, ctx.listFiles, ctx.unitsSettings);
@@ -312,6 +321,7 @@ function buildSuggestions(features, ctx, t) {
 
             return {
                 name,
+                altName: props.altName,
                 info: props.info ?? props.type,
                 query: buildSuggestionQuery(props, feature.properties?.[CATEGORY_TYPE]) || name,
             };
@@ -326,6 +336,14 @@ function buildSuggestions(features, ctx, t) {
             return true;
         })
         .slice(0, SUGGESTIONS_LIMIT);
+    // "did you mean": the corrected query first, with a search icon
+    const typo = data?.typoSuggestion;
+    return typo ? [{ name: typo, query: typo, typo: true }, ...suggestions] : suggestions;
+}
+
+// show which other name matched the query, as Android does: "Школа (Schule)"
+function getSuggestionTitle({ name, altName }) {
+    return altName ? `${name} (${altName})` : name;
 }
 
 // a suggestion click runs the full search: rebuild a query specific enough to hit the picked object

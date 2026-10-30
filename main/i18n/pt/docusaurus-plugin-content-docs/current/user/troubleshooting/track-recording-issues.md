@@ -1,5 +1,5 @@
 ---
-source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
+source-hash: 0d78b54592f6e7bfbd495c20bbe33ec368ff22532c171a00e0b3b2a5a27c431f
 sidebar_position: 6
 title: Gravação de Trajetos
 ---
@@ -94,7 +94,7 @@ Algumas dessas configurações interagem, então seja preciso. A melhor forma de
 
 ### Controlar o Comportamento de Aplicativos em Segundo Plano do iOS {#control-the-behavior-of-ios-background-apps}
 
-O iOS pode suspender ou parar aplicativos em segundo plano automaticamente quando os recursos do sistema são realocados. O OsmAnd não pode substituir esse comportamento. Se a gravação de trajeto for interrompida quando o dispositivo estiver bloqueado, isso pode deixar lacunas na gravação. Você pode editar essas lacunas usando a ferramenta [Planejar uma Rota](https://docs.osmand.net/docs/user/plan-route/create-route).
+O iOS pode suspender ou parar aplicativos em segundo plano automaticamente quando os recursos do sistema são realocados. O OsmAnd não pode substituir esse comportamento. Se a gravação de trajeto for interrompida quando o dispositivo estiver bloqueado, isso pode deixar lacunas na gravação. Você pode editar essas lacunas usando a ferramenta [Planejar uma Rota](https://osmand.net/docs/user/plan-route/create-route).
 
 Para mais detalhes sobre como o iOS lida com o rastreamento de localização, consulte a documentação da Apple [aqui](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

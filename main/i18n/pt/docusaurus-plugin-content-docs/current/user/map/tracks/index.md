@@ -1,5 +1,5 @@
 ---
-source-hash: d4b5be99017a6a3696266f5f685701c1e29263b13ae3ceb83ea220779248bb77
+source-hash: 40444298714f3efdf33ba91bcf4a1ae66aa667d887d5d943cfe77e1fa53575ee
 title: Trilhas
 sidebar_position: 2
 ---
@@ -43,7 +43,7 @@ Você pode gerenciar a visibilidade das trilhas escolhendo quais exibir ou ocult
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,shared_string_show,show_gpx"/>*
 
-![Configurar mapa de trilhas Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)   ![Configurar mapa de trilhas Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.png)  
+![Configurar mapa de trilhas Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.webp)   ![Configurar mapa de trilhas Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_andr.webp)  
 
 </TabItem>
 
@@ -51,7 +51,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,share
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map,shared_string_gpx_tracks"/>*
 
-![Configurar mapa de trilhas iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)  ![Configurar mapa de trilhas iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.png)
+![Configurar mapa de trilhas iOS](@site/static/img/personal/tracks/follow_track_1_ios.webp)  ![Configurar mapa de trilhas iOS](@site/static/img/personal/tracks/configure_map_track_menu_ios.webp)
 
 </TabItem>
 
@@ -170,7 +170,7 @@ Toque no botão [Minha Posição](../../map/interact-with-map.md#my-position-and
 - [Aparência da trilha](./appearance.md)
 - [Menu de Contexto da Trilha](./track-context-menu.md)
 - [Navegar por trilha](../../navigation/setup/gpx-navigation.md)
-- Artigo do blog [Rotas no mapa](https://docs.osmand.net/blog/routes)
+- Artigo do blog [Rotas no mapa](https://osmand.net/blog/routes)
 - [Configurar mapa](../../map/configure-map-menu.md)  
 - [Trilhas GPX](../../personal/tracks/index.md)  
 - [Planejar rota](../../plan-route/index.md)  

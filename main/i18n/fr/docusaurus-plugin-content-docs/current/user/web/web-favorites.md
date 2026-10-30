@@ -1,5 +1,5 @@
 ---
-source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -26,7 +26,7 @@ Les Favoris dans le Planificateur Web vous permettent d'enregistrer et de gérer
 
 ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
 
-Après s'être inscrit à un [**OsmAnd Pro**](../personal/osmand-cloud.md#login) et pour [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), vos Favoris dans le Planificateur Web sont organisés en dossiers. Chaque dossier regroupe les lieux enregistrés et propose un ensemble d'actions disponibles depuis le menu des Favoris. 
+Après vous être connecté à un compte [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), vos Favoris dans le Planificateur Web sont organisés en dossiers. Chaque dossier regroupe les lieux enregistrés et propose un ensemble d'actions disponibles depuis le menu des Favoris. 
 Les actions suivantes sont disponibles :
 
 - *Afficher sur la carte* - afficher les points de favoris du dossier choisi sur la carte.
@@ -72,7 +72,7 @@ La vue Détails fournit les informations associées au lieu sélectionné et dé
 
 ## Actions des Favoris {#favorites-actions}
 
-[Pour ajouter](../personal/favorites.md#manage-favorites) un nouveau point de favori, cliquez avec le bouton droit sur l'écran. 
+[Pour ajouter](../personal/favorites.md#manage-favorites) un nouveau point de favori, cliquez avec le bouton droit sur l'écran. Si le favori ne peut pas être enregistré, le message d'erreur inclut la raison signalée par le serveur, par exemple qu'il n'y a pas assez d'espace dans [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Pour modifier un favori existant, cliquez sur le point de favori soit directement sur la carte, soit sélectionnez-le depuis un dossier de favoris. Cela ouvre le panneau Détails, où l'action Modifier est disponible. La modification peut également être démarrée depuis le menu à trois points (⋮) à côté du favori dans la liste des Favoris.
 
@@ -100,7 +100,7 @@ La boîte de dialogue inclut également une section Avancé, où les paramètres
 
 ### Apparence {#appearance}
 
-La section **Apparence** permet de personnaliser l'affichage du favori sur la carte. Les propriétés suivantes sont disponibles : icône, couleur, forme et icône. 
+La section **Apparence** permet de personnaliser l'affichage du favori sur la carte. Les propriétés suivantes sont disponibles : icône, couleur et forme. 
 
 La sélection de **Icône** ouvre un panneau secondaire avec des groupes d'icônes classés par catégories.
 

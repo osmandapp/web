@@ -1,7 +1,8 @@
-import {
+import PoiManager, {
     DEFAULT_POI_ICON,
     formattingPoiType,
     getCatPoiIconName,
+    getCategoryItemName,
     getCategoryName,
     getIconNameForPoiType,
     getTopIndexValueName,
@@ -10,12 +11,17 @@ import {
 } from '@map/manager/PoiManager';
 import {
     CATEGORY_ICON,
+    CATEGORY_KEY_NAME,
+    CATEGORY_NAME,
     ICON_KEY_NAME,
     MAIN_CATEGORY_KEY_NAME,
     POI_ICON_NAME,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '@map/infoblock/components/wpt/WptTagsProvider';
+import i18n from '@map/i18n';
+import { apiGet } from '@map/util/HttpApi';
+import { findRequest } from '../../util/requests';
 
 /** Translation stub: returns the key, so the tests read the key the ui would ask for. */
 const t = (key) => key;
@@ -49,6 +55,22 @@ describe('getCategoryName', () => {
 
     test('no category gives an empty name', () => {
         expect(getCategoryName(null, t)).toBe('');
+    });
+
+    test('a translation with a colon is shown whole', () => {
+        const translate = (key) => ({ poi_enforcement_maxspeed: 'Enforcement: maxspeed' })[key] ?? key;
+        expect(getCategoryName('enforcement_maxspeed', translate)).toBe('Enforcement: maxspeed');
+    });
+});
+
+describe('getCategoryItemName', () => {
+    test('a category found by the search is named by the server', () => {
+        const item = { [CATEGORY_KEY_NAME]: 'subway_station', [CATEGORY_NAME]: 'Станція метро' };
+        expect(getCategoryItemName(item, t)).toBe('Станція метро');
+    });
+
+    test('a category without a name from the server is translated', () => {
+        expect(getCategoryItemName({ [CATEGORY_KEY_NAME]: 'shop' }, t)).toBe('poi_shop');
     });
 });
 
@@ -100,5 +122,20 @@ describe('the icon of a poi type', () => {
             'shop_alcohol'
         );
         expect(getCatPoiIconName({})).toBe(DEFAULT_POI_ICON);
+    });
+});
+
+describe('searchPoiCategories', () => {
+    afterEach(() => {
+        i18n.language = 'en';
+    });
+
+    test('categories are asked in the language of the app', async () => {
+        i18n.language = 'uk';
+        apiGet.mockResolvedValue({ data: {} });
+
+        await PoiManager.searchPoiCategories('метро', { lat: 50.45, lng: 30.52 });
+
+        expect(findRequest(apiGet, '/search/search-poi-categories').options.params.locale).toBe('uk');
     });
 });

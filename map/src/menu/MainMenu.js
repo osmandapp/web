@@ -31,8 +31,10 @@ import AppContext, {
     FAVORITES_URL_PARAM_FOLDER,
     TRAVEL_ROUTE_ID_PARAM,
 } from '../context/AppContext';
+import TravelContext from '../context/TravelContext';
 import TracksMenu from './tracks/TracksMenu';
 import VisibleTracks from './visibletracks/VisibleTracks';
+import Empty from './errors/Empty';
 import ConfigureMap from './configuremap/ConfigureMap';
 import NavigationMenu from './navigation/NavigationMenu';
 import { matchPath, useLocation, useNavigate, useOutlet, useParams, useSearchParams } from 'react-router-dom';
@@ -96,10 +98,15 @@ import ProFeatures from '../frame/pro/ProFeatures';
 import { getShareFileInfo, updateUserRequests } from '../manager/ShareManager';
 import { debouncer } from '../context/TracksRoutingCache';
 import TrackAnalyzerMenu from './analyzer/TrackAnalyzerMenu';
-import { processDisplayTrack } from '../manager/track/TracksManager';
-import { openLoginMenu } from '../manager/LoginManager';
+import { processDisplayTrack, resetCloudTracksMenu } from '../manager/track/TracksManager';
+import { getLoginRedirect, openLoginMenu } from '../manager/LoginManager';
 import { saveSortToDB } from '../context/FavoriteStorage';
-import { getFavMenuListByLayers, openFavoriteObj } from '../manager/FavoritesManager';
+import {
+    getFavMenuListByLayers,
+    openFavoriteObj,
+    addFavoriteToMap,
+    resetFavoritesMenu,
+} from '../manager/FavoritesManager';
 import useMenuDots from '../util/hooks/menu/useMenuDots';
 import {
     openPoiObj,
@@ -107,14 +114,17 @@ import {
     navigateBackToSearchResults,
     isFavoriteFromSearch,
     isTrackFromSearch,
+    resetSearchMenu,
 } from '../manager/SearchManager';
 import { useRecentDataSaver } from '../util/hooks/menu/useRecentDataSaver';
-import { addFavoriteToMap } from '../manager/FavoritesManager';
 import { useGeoLocation } from '../util/hooks/useGeoLocation';
 import useSearchNav from '../util/hooks/search/useSearchNav';
 import { navigateToPoi } from '../manager/PoiManager';
 import { CATEGORY_TYPE } from '../infoblock/components/wpt/WptTagsProvider';
 import { searchTypeMap } from '../manager/searchConstants';
+import { useFocusMode } from '../util/hooks/map/useFocusMode';
+import { MAP_VIEW_ZOOM_FIT } from '../map/util/MapManager';
+import useCloseMenuByEsc from '../util/hooks/menu/useCloseMenuByEsc';
 
 export function closeSubPages({ ctx, ltx, wptDetails = true, closeLogin = true }) {
     ctx.setOpenProFeatures(null);
@@ -146,6 +156,7 @@ export default function MainMenu({
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const wtx = useContext(WeatherContext);
     const mtx = useContext(MapContext);
     const ltx = useContext(LoginContext);
@@ -154,6 +165,8 @@ export default function MainMenu({
     const location = useLocation();
     const currentLoc = useGeoLocation(ctx);
     const { isSearchResultRoute } = useSearchNav();
+    const { clearSelectionFocus } = useFocusMode();
+    useCloseMenuByEsc();
 
     const outlet = useOutlet();
     const showDeleteOutlet = matchPath({ path: MAIN_URL_WITH_SLASH + DELETE_ACCOUNT_URL + '*' }, location.pathname);
@@ -166,6 +179,7 @@ export default function MainMenu({
     const { filename, favgroup, favname } = useParams();
 
     const isAccountOpen = location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && ltx.openLoginMenu;
+    const openObjectByUrl = location.pathname.includes(INFO_MENU_URL) && isEmpty(ctx.selectedGpxFile);
 
     const timerRef = useRef(null);
     const lastMenuUrlsRef = useRef({});
@@ -220,22 +234,24 @@ export default function MainMenu({
     };
 
     useEffect(() => {
-        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL) && !ltx.openLoginMenu && !ltx.loginUser) {
-            setMenuInfo(null);
-            const params = new URLSearchParams(location.search);
-            const to = params.get('redirect');
+        if (location.pathname.startsWith(MAIN_URL_WITH_SLASH + LOGIN_URL)) {
+            // keep the redirect even while the login state is still INIT; same-site paths only
+            const to = getLoginRedirect(location.search);
             if (to) {
                 setRedirectUrl(to);
             }
-            openLoginMenu({ ctx, ltx, navigate, location });
+            if (!ltx.openLoginMenu && !ltx.loginUser) {
+                setMenuInfo(null);
+                openLoginMenu({ ctx, ltx, navigate, location });
+            }
         }
     }, [location.pathname]);
 
     useEffect(() => {
-        if (ltx.loginUser && redirectUrl) {
+        if (ltx.isLoggedIn() && redirectUrl) {
             globalThis.location.href = redirectUrl;
         }
-    }, [ltx.loginUser]);
+    }, [ltx.loginUser, redirectUrl]);
 
     // open trackInfo/trackShareMenu after reload or open by link
     useEffect(() => {
@@ -309,6 +325,7 @@ export default function MainMenu({
                         ctx,
                         sharedFile: location.pathname.includes(SHARE_MENU_URL),
                         mapObj: true,
+                        openedFolder: searchParams.get(FAVORITES_URL_PARAM_FOLDER) ?? undefined,
                     });
                 }
             }
@@ -430,6 +447,7 @@ export default function MainMenu({
             id: MENU_IDS.search,
             url: MAIN_URL_WITH_SLASH + SEARCH_URL,
             otherUrls: [MAIN_URL_WITH_SLASH + POI_URL],
+            clearState: resetSearchMenu,
         },
         {
             name: t('configure_map'),
@@ -457,6 +475,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.tracks,
             url: MAIN_URL_WITH_SLASH + TRACKS_URL,
+            clearState: resetCloudTracksMenu,
         },
         {
             name: t('shared_string_my_favorites'),
@@ -466,6 +485,7 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.favorites,
             url: MAIN_URL_WITH_SLASH + FAVORITES_URL,
+            clearState: resetFavoritesMenu,
         },
         {
             name: t('shared_string_navigation'),
@@ -486,7 +506,7 @@ export default function MainMenu({
             url: MAIN_URL_WITH_SLASH + PLANROUTE_URL,
         },
         {
-            name: 'Travel',
+            name: t('web:shared_string_travel'),
             icon: TravelIcon,
             component: <TravelMenu />,
             type: OBJECT_TYPE_TRAVEL,
@@ -514,21 +534,32 @@ export default function MainMenu({
         },
     ];
 
+    // Close is offered only by the menus that know how to forget their state
+    const closableMenu = !!items.find(isSelectedMenuItem)?.clearState;
+
+    useEffect(() => {
+        ctx.setClosableMenu(closableMenu);
+    }, [closableMenu]);
+
     useEffect(() => {
         setOpenCloudSettings(ctx.cloudSettings.changes || ctx.cloudSettings.trash);
     }, [ctx.cloudSettings]);
 
     // url caching for every menu type
     useEffect(() => {
-        if (ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj) {
-            return;
-        }
         const menuByUrl = items.find(
             (i) => location.pathname.startsWith(i.url) || i.otherUrls?.some((u) => location.pathname.startsWith(u))
         );
-        if (menuByUrl) {
-            lastMenuUrlsRef.current[menuByUrl.type] = location.pathname + location.search + liveHash();
+        if (!menuByUrl) {
+            return;
         }
+        const mapObject = ctx.selectedWpt?.mapObj || ctx.selectedWpt?.poi?.mapObj;
+        // a favorite clicked on the map drops the one opened from the list, so its folder is the menu behind
+        if (mapObject && menuByUrl.type !== OBJECT_TYPE_FAVORITE) {
+            return;
+        }
+        const menuUrl = mapObject || openObjectByUrl ? menuByUrl.url : location.pathname;
+        lastMenuUrlsRef.current[menuByUrl.type] = menuUrl + location.search + liveHash();
     }, [location.pathname, location.search, location.hash]);
 
     // open menu after closing map object if any selected before
@@ -546,6 +577,25 @@ export default function MainMenu({
             ctx.setCloseMapObj(false);
         }
     }, [ctx.closeMapObj]);
+
+    useEffect(() => {
+        if (!ctx.closeSelectedMenu) return;
+        ctx.setCloseSelectedMenu(false);
+        const item = items.find(isSelectedMenuItem);
+        if (!item) return;
+        item.clearState?.(ctx);
+        // the list item hovered before opening the object gets no mouseleave, drop its hover as Back does
+        ctx.setSelectedWptId((prev) => (prev ? { ...prev, show: false } : prev));
+        doSelectMenu({ item });
+        // don't move the map back to the previous location
+        mtx.setMapViewStack((prev) => prev.filter((entry) => entry.key !== MAP_VIEW_ZOOM_FIT));
+        clearSelectionFocus();
+        navigateToUrl({ isMain: true, params: ctx.pageParams });
+    }, [ctx.closeSelectedMenu]);
+
+    useEffect(() => {
+        ttx.setOpenTravel(ctx.develFeatures && selectedType === OBJECT_TYPE_TRAVEL && ltx.isLoggedIn());
+    }, [ctx.develFeatures, selectedType, ltx.loginUser]);
 
     useEffect(() => {
         openMenuObject();
@@ -572,7 +622,6 @@ export default function MainMenu({
         }
 
         if (selectedType === OBJECT_TYPE_TRAVEL) {
-            ctx.setOpenTravel(true);
             const savedTravelUrl = lastMenuUrlsRef.current[OBJECT_TYPE_TRAVEL];
             if (savedTravelUrl?.includes(TRAVEL_ROUTE_ID_PARAM)) {
                 navigate(savedTravelUrl);
@@ -683,7 +732,7 @@ export default function MainMenu({
 
     useEffect(() => {
         if (selectedType !== OBJECT_TYPE_TRAVEL && ctx.currentObjectType !== OBJECT_TYPE_TRAVEL) {
-            ctx.setOpenTravelFilters(false);
+            ttx.setOpenTravelFilters(false);
         }
     }, [ctx.currentObjectType, selectedType]);
 
@@ -792,7 +841,7 @@ export default function MainMenu({
                 ctx.setCurrentObjectType(null);
             }
             ctx.setOpenNavigationSettings(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: false });
+            ctx.setSearchSettings((prev) => ({ ...prev, showExploreMarkers: false }));
             closeCloudSettings(openCloudSettings, setOpenCloudSettings, ctx);
             const updateMenu = !isSelectedMenuItem(item) || ctx.openMenu;
             const menu = updateMenu ? item : null;
@@ -1110,8 +1159,18 @@ export default function MainMenu({
                             }}
                         >
                             {items.map((item) => {
-                                if (!item.show) return null;
-                                const display = selectedType === item.type ? 'block' : 'none';
+                                const selected = selectedType === item.type;
+                                if (!item.show) {
+                                    return selected ? (
+                                        <Empty
+                                            key={item.type}
+                                            title={t('web:coming_soon')}
+                                            text={t('web:coming_soon_description')}
+                                            checkLogin={false}
+                                        />
+                                    ) : null;
+                                }
+                                const display = selected ? 'block' : 'none';
                                 const id = `se-menu-component-${item.type}-${display}`;
 
                                 return (

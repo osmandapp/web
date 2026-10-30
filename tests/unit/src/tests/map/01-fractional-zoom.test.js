@@ -8,7 +8,6 @@ import MapStateLayer from '@map/map/layers/MapStateLayer';
 import { createPoiLayer } from '@map/map/layers/PoiLayer';
 import { addMarkerTooltip, clusterMarkers } from '@map/map/util/Clusterizer';
 import { createTooltip } from '@map/map/util/MapManager';
-import { getSelectedMarkerHideRadiusM } from '@map/map/util/MarkerSelectionService';
 import { DEFAULT_POI_ICON } from '@map/manager/PoiManager';
 import { FINAL_POI_ICON_NAME, POI_ELO, POI_ID, POI_NAME } from '@map/infoblock/components/wpt/WptTagsProvider';
 
@@ -182,7 +181,7 @@ describe('fractional wheel zoom', () => {
         finishZoom();
         const trackpadZoom = map.getZoom() - 10;
 
-        map.setZoom(10, { animate: false });
+        act(() => map.setZoom(10, { animate: false }));
         // 50 ms * 100 px > 200: a mouse
         for (let i = 0; i < 4; i++) {
             wheel(-100, undefined, 3000 + 50 * i);
@@ -537,12 +536,5 @@ describe('marker geometry at fractional zoom', () => {
 
         expect(clusterAt(10.01).mainMarkers).toEqual([places[0]]);
         expect(clusterAt(10.01).secondaryMarkers).toEqual([]);
-    });
-
-    test('the selected pin hide radius does not collapse just below zoom 16', () => {
-        const minimum = getSelectedMarkerHideRadiusM(16);
-        expect(minimum).toBe(50);
-
-        expect(getSelectedMarkerHideRadiusM(15.99)).toBeGreaterThanOrEqual(minimum);
     });
 });

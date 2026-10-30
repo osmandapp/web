@@ -1,5 +1,5 @@
 ---
-source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
+source-hash: 09518f7c9f30ff95cf4ee3c22d11fc8d1867a10a1fa6a3ea3d7b5c046dd047c7
 sidebar_position: 9
 title: Hulpbronnen en Aanpassingen
 ---
@@ -55,6 +55,7 @@ De onderstaande lijst bevat converters voor verschillende gegevenstypen die door
 | Topografische kaart naar afdrukbaar| Dit is [een tool](https://github.com/acui/osmand_topo_map_generator) om een afdrukbare topografische kaart te genereren met behulp van schermafbeeldingen van OsmAnd (https://osmand.net). De kaart gebruikt het UTM-raster en bevat declinatie-informatie. Het is bedoeld voor gebruik met een kompas of een GPS-apparaat met UTM-coördinaten.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
 | GPX Solar | GPXsolar werpt vanuit elk punt van een GPX-track een straal naar de zon en test deze tegen het terrein en de vegetatie (0,5 m HD LiDAR / IGN), voor een bepaalde datum en tijd. Meter voor meter vertelt het je of het zon of schaduw is. | [GPX Solar](https://github.com/nico579/gpxsolar)|
 | lidar2map | Een zelfstandige tool die openbare LiDAR-gegevens downloadt van nationale portals in 22 landen | [lidar2map](https://github.com/nico579/lidar2map)|
+| GPX hellingskleuren | Kleurt een GPX-track op basis van helling: klimmen, dalen en vlakke stukken worden aparte tracks met hun eigen kleur, die in het bestand worden geschreven zodat OsmAnd ze weergeeft. De helling is ondertekend, dus deze volgt de rijrichting. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Aangepaste Hulpbronnen {#custom-resources}
 

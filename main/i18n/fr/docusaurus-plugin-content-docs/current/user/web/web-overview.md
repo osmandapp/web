@@ -1,5 +1,5 @@
 ---
-source-hash: fbe030f46459c7842b5a92656ebe4306d04f1dc6eb3a76d1d912166eaabcec7b
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: Introduction
 title: Introduction au Planificateur Web
@@ -16,9 +16,6 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
 
 ## Aperçu {#overview}
 
@@ -28,32 +25,24 @@ Conçu comme un compagnon multiplateforme pour OsmAnd sur Android et iOS, le Por
 
 OsmAnd Web s'intègre étroitement avec le service **OsmAnd Cloud**, qui permet de synchroniser les favoris, les traces et les sauvegardes entre les appareils et les plateformes. Les utilisateurs disposant de comptes **OsmAnd Start** (gratuit) ou **OsmAnd Pro** (payant) peuvent tirer pleinement parti de cet écosystème en synchronisant les données entre le mobile et le web. Vous trouverez une comparaison détaillée des fonctionnalités de *Start* et de *Pro* dans la section [Accès par abonnement](#subscription-accesses) ci-dessous.
 
-> **Note :** Même sans vous connecter ou vérifier votre compte, vous pouvez toujours utiliser plusieurs fonctionnalités principales du Portail de Carte Web, notamment : [Itinéraire de navigation](./web-navigation.md), [Planificateur d'itinéraire](./planner.md), [Superpositions météo](./web-weather.md#), et [Paramètres](./web-map.md#settings).
+> **Note :** Même sans vous connecter ou vérifier votre compte, vous pouvez toujours utiliser plusieurs fonctionnalités principales du Portail de Carte Web, notamment : [Navigation Route](./web-navigation.md), [Route Planner](./planner.md), [Weather Overlays](./web-weather.md), et [Settings](./web-map.md#settings).
 
-<!--
-After the structure of this section is approved, some links should be updated.
--->
 
 ## Fonctionnalités clés {#key-features}
 
 Le Portail Web offre les principales capacités suivantes pour travailler avec des cartes et des données personnelles dans le navigateur : 
 
-- [Carte](./web-map.md) avec une couverture mondiale et des données vectorielles de haute qualité.
-- [Planification d'itinéraire](./planner.md) utilisant les profils à pied, voiture, vélo et autres.
-- [Aperçu de la navigation](./planner.md) avec des instructions au virage par virage.
-- [Recherche](./web-search.md) et [exploration](./web-search.md#explore) des lieux populaires à proximité.
-- Affichage des [Favoris](./web-map.md#favorites), [Traces](./web-map.md#tracks), et [POI](./web-map.md#poi-overlay) sur la carte.
-- [Superpositions météo](./web-weather.md) : vent, température et pression.
-- [Couches de terrain](./web-map.md#terrain) : ombrage, pentes et vue en altitude.
-- [Analyseur de trace](./web-tracks-analyzer.md) pour les profils d'altitude et de vitesse.
+- [Map](./web-map.md) avec une couverture mondiale et des données vectorielles de haute qualité.
+- [Route planning](./planner.md) utilisant les profils à pied, voiture, vélo et autres.
+- [Navigation](./web-navigation.md) avec des instructions au virage par virage.
+- [Search](./web-search.md) et [explore](./web-search.md#explore) des lieux populaires à proximité.
+- Affichage des [Favorites](./web-map.md#favorites), [Tracks](./web-map.md#tracks), et [POIs](./web-map.md#poi-overlay) sur la carte.
+- [Weather Overlays](./web-weather.md) : vent, température et pression.
+- [Terrain layers](./web-map.md#terrain) : ombrage, pentes et vue en altitude.
+- [Track Analyzer](./web-tracks-analyzer.md) pour les profils d'altitude et de vitesse.
 - Accès complet aux données synchronisées via [OsmAnd Cloud](./web-cloud#cloud-sync).
 - Prise en charge de l'import/export de fichiers (GPX : traces, favoris).
 - Intégration transparente avec **OsmAnd Pro** et **OsmAnd Start**.
-
-<!--
-After the structure of this section is approved, some links should be updated.
--->
-
 
 ### Accès par abonnement {#subscription-accesses}
 
@@ -63,19 +52,15 @@ Le Portail de Carte Web prend en charge plusieurs niveaux d'accès : sans connex
 
 | Fonctionnalité | Disponible dans |
 |--------|--------------|
-| [Itinéraire de navigation](./planner.md) | Sans connexion |
-| [Planificateur d'itinéraire](./planner.md) | Sans connexion |
-| [Superpositions météo](./web-weather.md) | Sans connexion |
-| [Paramètres](./web-map.md#settings) | Sans connexion |
-| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Favoris](./web-map.md#favorites), [Traces](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Menu de configuration de la carte](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Synchronisation OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Recherche web, Lieux populaires](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-| [Dossiers de traces et couche](./web-tracks.md) | [OsmAnd Pro](https://docs.osmand.net/docs/user/purchases/) |
-
-<!--
-After the structure of this section is approved, some links should be updated.
--->
+| [Navigation Route](./web-navigation.md) | Without Login |
+| [Route Planner](./planner.md) | Without Login |
+| [Weather Overlays](./web-weather.md) | Without Login |
+| [Settings](./web-map.md#settings) | Without Login |
+| [Configure Map Menu](./web-map.md#configure-map-menu) ([POIs](./web-map.md#poi-overlay), [Favorites](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Configure Map Menu](./web-map.md#configure-map-menu) ([Terrain](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Web Search, Popular Places](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) ou [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Tracks folders and Layer](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Comment commencer {#how-to-start}
@@ -85,71 +70,16 @@ Pour accéder à toutes les fonctionnalités du Portail Web OsmAnd, vous devez v
 - Si vous avez déjà un abonnement [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou si vous souhaitez créer un compte gratuit [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), suivez ces étapes :
 
 1. Allez sur le [**Portail Cartographique OsmAnd**](https://osmand.net/map).
-2. Ouvrez le menu **Compte** :
-   - **Se connecter** : Saisissez l'adresse e-mail liée à votre abonnement Pro ou Start, ou
-   - **Créer un compte** : Inscrivez-vous pour un compte gratuit OsmAnd Start. Pour un guide étape par étape détaillé sur la création d'un nouveau compte, consultez l'article [Compte OsmAnd](./web-cloud).
+2. Ouvrez le menu **Account** :
+   - **Log in** : Saisissez l'adresse e-mail liée à votre abonnement Pro ou Start, ou
+   - **Create account** : Inscrivez-vous pour un compte gratuit OsmAnd Start. Pour un guide étape par étape détaillé sur la création d'un nouveau compte, consultez l'article [OsmAnd Account](./web-cloud).
 
 ![Web Account](@site/static/img/web/web_account.png)
-
-<!--
-
-## Settings {#settings}
-
-### Language {#language}
-
-To switch the interface language:
-
-*Go to: Menu → ⚙ Settings → Display language*
-
-![Web Language](@site/static/img/web/web_language.png)
-
-### Units {#units}
-
-*Go to: Menu → ⚙ Settings → Units of length*  
-*Go to: Menu → ⚙ Settings → Unit of speed*
-
-You can choose which units are used to display distance, elevation and speed on the map, in route details and in measurement tools. This helps you keep OsmAnd consistent with your usual habits or regional standards.
-
-The **Units of length** option defines how horizontal distance and elevation are shown:
-- Kilometers/meters.
-- Miles/feet.
-- Miles/meters.
-- Miles/yards.
-- Nautical miles/meters.
-- Nautical miles/feet. 
-
-For example, a distance of 10 km will be shown as about 6.21 mi if you choose one of the Miles/... options, or as about 5.40 nmi when Nautical miles/... is selected.
-
-The **Unit of speed** option controls how current speed and speed limits are displayed:
-- Kilometers per hour.
-- Miles per hour.
-- Meters per second.
-- Minutes per mile.
-- Minutes per kilometer.
-- Nautical miles per hour (knots). 
-
-For example, a speed of 90 km/h corresponds to 25 m/s or about 55.92 mph.
-
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
-
-### OsmAnd Cloud {#osmand-cloud}
-
-![Web Cloud](@site/static/img/web/web_without_acc.png) ![Web Cloud](@site/static/img/web/web_with_acc.png)
-
-In the Web Map Portal, the *General settings* (Display language, Units of length, Unit of speed) are available for all users, whether you are signed in or not. Once you log in with your OsmAnd account, an additional OsmAnd Cloud section appears in the Settings panel. [OsmAnd Cloud](./web-cloud) connects the web map with your cloud backups so that you can manage data synchronized from your Android or iOS devices directly in the browser.
-
-**Changes** option shows a chronological list of files stored in your OsmAnd Cloud account. Items are grouped by month and include the file name, the type of change (for example, added, modified or deleted), the time of the last update and the device that created it. For each entry, you can open the three-dot menu and choose *Download* to save the selected file to your computer, or *Delete*.
-
-**Trash** option contains files that were deleted from OsmAnd Cloud. The list is also grouped by month and shows when each file was removed and from which device. Use the three-dot menu next to a file to *Download* a copy, *Restore from trash* (return the file to OsmAnd Cloud so it becomes available again in your data), or *Delete immediately* to remove it permanently. This helps prevent accidental data loss while still letting you free up cloud storage when you are sure a file is no longer needed. You can also clear all deleted items at once by clicking the Trash icon in the Trash panel header. This opens the **Empty trash** dialog, where you confirm deletion to permanently remove all files from Trash.
-
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
-
--->
 
 
 ## Articles connexes {#related-articles}
 
-- [Premiers pas](../start-with/first-steps.md)
+- [First Steps](../start-with/first-steps.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
-- [Achats web](../purchases/web.md)
-- [Achats multiplateformes](../purchases/cross.md)
+- [Web Purchases](../purchases/web.md)
+- [Cross-Platform Purchases](../purchases/cross.md)

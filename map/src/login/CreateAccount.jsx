@@ -5,7 +5,7 @@ import styles from './login.module.css';
 import { closeLoginMenu, EMPTY_INPUT, ERROR_TOKEN, openLogin } from '../manager/LoginManager';
 import { closeHeader } from '../menu/actions/HeaderHelper';
 import React, { useContext, useEffect, useState } from 'react';
-import { ReactComponent as CloseIcon } from '../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../context/AppContext';
 import { userActivate, userRegisterAndSendCode, validateUserToken } from '../manager/AccountManager';

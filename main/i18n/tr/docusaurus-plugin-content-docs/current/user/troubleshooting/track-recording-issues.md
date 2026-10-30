@@ -94,7 +94,7 @@ Some of these settings interact, so be accurate. The best search for the above s
 
 ### Control the Behavior of iOS Background Apps {#control-the-behavior-of-ios-background-apps}
 
-iOS, sistem kaynakları yeniden tahsis edildiğinde arka plan uygulamalarını otomatik olarak askıya alabilir veya durdurabilir. OsmAnd bu davranışı geçersiz kılamaz. Cihaz kilitliyken rota kaydı kesilirse, bu kayıtta boşluklar bırakabilir. Bu boşlukları [Plan a Route](https://docs.osmand.net/docs/user/plan-route/create-route) aracını kullanarak düzenleyebilirsiniz.
+iOS, sistem kaynakları yeniden tahsis edildiğinde arka plan uygulamalarını otomatik olarak askıya alabilir veya durdurabilir. OsmAnd bu davranışı geçersiz kılamaz. Cihaz kilitliyken rota kaydı kesilirse, bu kayıtta boşluklar bırakabilir. Bu boşlukları [Plan a Route](https://osmand.net/docs/user/plan-route/create-route) aracını kullanarak düzenleyebilirsiniz.
 
 iOS'un konum takibini nasıl ele aldığı hakkında daha fazla bilgi için Apple'ın belgelerini [here](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1) kontrol edin.
 

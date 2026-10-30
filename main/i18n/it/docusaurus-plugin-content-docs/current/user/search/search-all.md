@@ -1,5 +1,5 @@
 ---
-source-hash: 425f511859172593fe5402cce5c44974144e585dac7b77bd26c1c5e68a22a8f0
+source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
 sidebar_position: 1
 title:  Cerca Tutto
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-**La Ricerca** è uno strumento utile per trovare rapidamente luoghi. È possibile utilizzare la Ricerca per trovare una località tramite indirizzo, coordinate, punti di interesse (PDI), o ricerche precedenti. La [Ricerca Indirizzo](#search-address) consente di inserire l'indirizzo desiderato per ottenere una posizione esatta. La ricerca tramite [Coordinate](#search-coordinates) funziona con coordinate geografiche come latitudine e longitudine. Con la ricerca [PDI](#search-poi) è possibile cercare luoghi vicini in categorie specifiche, come caffè, hotel o stazioni di servizio. La scheda [Esplora](#search-explore) evidenzia luoghi popolari nelle vicinanze e fornisce un rapido accesso alle località visitate di recente. La [Cronologia](#search-history) salva le ricerche passate. La funzione di ricerca facilita la pianificazione di viaggi, la navigazione in terreni sconosciuti e la ricerca di PDI nelle vicinanze.
+**La Ricerca** è uno strumento utile per trovare rapidamente luoghi. È possibile utilizzare la Ricerca per trovare una località tramite indirizzo, coordinate, punti di interesse (PDI), o ricerche precedenti. La [Ricerca Indirizzo](#search-address) consente di inserire l'indirizzo desiderato per ottenere una posizione esatta. La ricerca tramite [Coordinate](#search-coordinates) funziona con coordinate geografiche come latitudine e longitudine. Con la ricerca [PDI](#search-poi) è possibile cercare luoghi vicini in categorie specifiche, come caffè, hotel o stazioni di servizio. La scheda [Esplora](#search-explore) evidenzia luoghi popolari nelle vicinanze e fornisce un rapido accesso alle località visitate di recente. La funzione di ricerca facilita la pianificazione di viaggi, la navigazione in terreni sconosciuti e la ricerca di PDI nelle vicinanze.
 
 
 ## Come si usa {#how-to-use}
@@ -109,7 +109,7 @@ OsmAnd ordina automaticamente i risultati della ricerca in base a diversi criter
 
 5. **Importanza** — Luoghi noti o frequentemente citati possono apparire più in alto nei risultati quando corrispondono strettamente alla query di ricerca.
 
-È inoltre possibile modificare manualmente l'ordine di ordinamento dei risultati di ricerca utilizzando il chip *Ordina per* nella parte superiore dell'elenco dei risultati di ricerca. Toccare *Ordina per* e selezionare una delle seguenti opzioni:
+È inoltre possibile modificare manualmente l'ordine di ordinamento dei risultati di ricerca utilizzando il chip di ordinamento nella parte superiore dell'elenco dei risultati di ricerca. Il chip mostra l'opzione selezionata. Toccarlo e scegliere una delle seguenti opzioni nel menu *Ordina per*:
 - **Rilevanza** — Ordina i risultati di ricerca in base alla rilevanza rispetto alla query di ricerca.
 - **Più vicini** — Ordina i risultati di ricerca in base alla distanza, mostrando prima i risultati più vicini.
 
@@ -165,12 +165,7 @@ OsmAnd ordina automaticamente i risultati della ricerca in base a diversi criter
 
 1. Iniziare a digitare il nome o l'indirizzo nella barra di ricerca.
 
-2. Durante la digitazione, l'elenco mostra i punti più vicini alla query, approssimativamente in questo ordine:
-    - Categorie di PDI
-    - Preferiti, PDI, Percorsi e Waypoint
-    - Tracce
-    - Indirizzi
-    - Mappe da scaricare
+2. Durante la digitazione, l'elenco mostra i risultati che corrispondono alla query. I risultati sono ordinati come descritto nella sezione [Ordinamento dei risultati di ricerca](#sorting-search-results).
 
 3. Durante la ricerca per nome su Android, OsmAnd visualizza i chip dei tipi di PDI in base ai tipi presenti nei risultati di ricerca. Toccare un chip per filtrare i risultati in base al tipo di PDI selezionato. È possibile selezionare più tipi di PDI. Una volta selezionato, un chip si sposta nella prima posizione dell'elenco. Toccare nuovamente un chip selezionato per deselezionarlo e tornare ai risultati di ricerca completi.
 
@@ -182,13 +177,33 @@ OsmAnd ordina automaticamente i risultati della ricerca in base a diversi criter
 OsmAnd ha integrato i [**dati TIGER**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) nelle mappe degli Stati Uniti per fornire informazioni sugli indirizzi statunitensi. Il set di dati TIGER è **basato su intervalli** e non contiene numeri civici precisi, quindi alcuni indirizzi potrebbero essere mancanti o imprecisi.
 :::
 
-### Cerca intorno (solo Android) {#search-around}
+### Ricerca spaziale {#spatial-search}
 
-![Cerca intorno](@site/static/img/search/search_around.webp)
+<InfoAndroidOnly/>
 
-Quando la ricerca viene aperta in una posizione significativamente diversa da quella attuale, il chip *Cerca intorno* consente di scegliere l'area da utilizzare per la ricerca. Toccare il chip e selezionare una delle seguenti opzioni:
+![Ricerca spaziale](@site/static/img/search/spatial_search.webp)
+
+La Ricerca spaziale è un motore di ricerca sperimentale che tiene conto di dove si trovano gli oggetti l'uno rispetto all'altro, non solo di quanto i loro nomi corrispondono alla query. Aiuta OsmAnd a interpretare correttamente le query che combinano più parti, come il nome di un luogo e una categoria di PDI.
+
+La Ricerca spaziale è disabilitata per impostazione predefinita. Per abilitarla, vai alle impostazioni del [plugin OsmAnd Development](../plugins/development.md#internal-algorithms) e attiva *Usa la ricerca di testo spaziale*. Quando è abilitata, la Ricerca spaziale sostituisce il motore di ricerca standard per le query di PDI e indirizzi.
+
+Con la Ricerca spaziale puoi:
+- Cercare un PDI in un luogo specifico. Inserisci una categoria e il nome di un luogo in un'unica query, ad esempio, Hotel Berlino. Il nome del luogo viene usato come area di ricerca e la categoria viene cercata al suo interno.
+- Cercare luoghi che soddisfano due condizioni. Inserisci due categorie o una categoria e una proprietà, ad esempio, Carburante Diesel o Caffè Vegano, per trovare i luoghi che soddisfano entrambe. Una query come Carburante McDonald's trova i distributori di carburante situati vicino a un McDonald's. L'ordine delle parole è importante. La prima parola indica cosa stai cercando e la seconda indica cosa deve essere vicino. Ad esempio, McDonald’s Carburante trova i ristoranti McDonald’s situati vicino ai distributori di carburante.
+- Cercare intorno a un luogo trovato. Inserisci una categoria e il nome di un luogo, ad esempio, *Hotel Berlino*, poi tocca *Hotel vicino a Berlino* in cima ai risultati di ricerca. Il nome di questo luogo viene aggiunto al chip [Cerca intorno](#search-around).
+- Usare diversi formati di nomi di vie e nomi di categorie tradotti nelle tue query.
+- Ottenere risultati più rapidi cercando per categorie di PDI popolari, come farmacia, parcheggio o ristorante.
+
+### Cerca intorno {#search-around}
+
+<InfoAndroidOnly/>
+
+![Cerca intorno](@site/static/img/search/search_around_berlin.webp)
+
+Quando il centro della mappa dista più di 50 m dalla tua posizione e la mappa non segue la tua posizione, la ricerca viene eseguita intorno al centro della mappa e il campo di ricerca mostra *Cerca a N km di distanza*. Quando il centro della mappa dista più di 70 km dalla tua posizione, accanto al chip di ordinamento compare un chip con l'area di ricerca. Il chip mostra l'opzione selezionata. Toccalo e scegli una delle seguenti opzioni nel menu *Cerca intorno*:
 - **Centro mappa** — Esegue la ricerca intorno al centro attuale della mappa. Questa opzione è selezionata per impostazione predefinita.
-- **Mia posizione** — Esegue la ricerca intorno alla posizione attuale. 
+- **Mia posizione** — Esegue la ricerca intorno alla posizione attuale.
+- **Nome del luogo** — Esegue la ricerca intorno a un luogo trovato con la [Ricerca spaziale](#spatial-search). Ad esempio, inserisci *Hotel Berlino*, poi tocca *Hotel vicino a Berlino* in cima ai risultati di ricerca. *Berlino* compare sul chip e vengono mostrati gli hotel intorno a Berlino. Questa opzione è disponibile solo quando la Ricerca spaziale è abilitata. 
 
 ### Cerca sulla mappa {#search-on-the-map}
 
@@ -247,46 +262,23 @@ OsmAnd consente di cercare i punti visualizzati su una mappa sullo schermo del d
 
 ## Ricerca Esplora {#search-explore}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Ricerca Esplora](@site/static/img/search/explore_search_android.webp)
 
-La scheda **Esplora** nello strumento di Ricerca aiuta a scoprire rapidamente luoghi vicino alla posizione attuale e ad accedere agli elementi aperti di recente. Contiene due sezioni principali: [Luoghi popolari nelle vicinanze](#popular-places-nearby)
- e [Cronologia](#history).
+</TabItem>
 
-### Luoghi popolari nelle vicinanze {#popular-places-nearby}
-
-La sezione **Luoghi popolari nelle vicinanze** visualizza un elenco scorrevole di punti di riferimento e attrazioni noti vicino alla posizione. Ogni elemento può includere il nome del luogo, la sua categoria, distanza e direzione, e un'immagine di anteprima se disponibile. Toccare *Mostra tutto* per aprire l'elenco completo o *Mostra sulla mappa* per visualizzare questi luoghi sulla mappa.
-
-Per maggiori dettagli, vedere [qui](../map/popular_places.md#explore-in-search).
-
-### Cronologia {#history}
-
-![Sezione cronologia](@site/static/img/search/history_section_android.webp) ![Sezione cronologia](@site/static/img/search/history_section_2_android.webp)
-
-La sezione **Cronologia** fornisce un accesso rapido agli elementi della cronologia recente. Visualizza fino a 25 elementi più recenti e può essere espansa o compressa. Toccare *Visualizza tutto* per aprire la schermata completa della Cronologia.
-
-Nella schermata completa della Cronologia, è possibile ordinare e filtrare gli elementi della cronologia utilizzando le seguenti opzioni:
-
-1. **Ordina per**:
-- Recenti — visualizza prima gli elementi aggiunti più di recente. Quando questa opzione è selezionata, gli elementi sono raggruppati per tempo, ad esempio Oggi, La scorsa settimana e periodi precedenti.
-- Più vicini — ordina gli elementi in base alla distanza dalla posizione attuale.
-- Più vicini al centro della mappa — ordina gli elementi in base alla distanza dal centro attuale della mappa. Quando viene selezionata una delle opzioni di ordinamento basate sulla distanza, i gruppi basati sul tempo non vengono visualizzati.
-
-2. **Tipo** — filtra gli elementi della cronologia in base a:
-- Tutti — visualizza tutti gli elementi della cronologia disponibili.
-- Ricerca — visualizza gli elementi dalla cronologia delle ricerche.
-- Navigazione — visualizza gli elementi dalla cronologia della navigazione.
-
-3. **Filtri per categoria** — filtra gli elementi della cronologia per categoria. I filtri per categoria disponibili dipendono dai tipi di elementi disponibili nella Cronologia. Ad esempio, è possibile visualizzare categorie come PDI, Traccia, Posizione, Preferito o Indirizzo.
-
-4. **Impostazioni** — toccare l'icona dell'ingranaggio nell'angolo in alto a destra per aprire le impostazioni della Cronologia, dove è possibile abilitare o disabilitare la cronologia delle ricerche, la cronologia della navigazione e la cronologia dei marcatori sulla mappa, eseguire il backup della cronologia come file o cancellare tutta la cronologia.
-
-## Cronologia Ricerca {#search-history}
+<TabItem value="ios" label="iOS">
 
 ![Ricerca cronologia](@site/static/img/search/history_search_ios.png)
 
-Su iOS, è possibile accedere alla Cronologia delle ricerche dalla scheda **Cronologia** dedicata nello strumento di Ricerca. Consente di cercare di nuovo luoghi, indirizzi o luoghi visitati di frequente trovati in precedenza senza dover inserire nuovamente la query. Per ulteriori informazioni, consultare la sezione iOS dell'articolo [Cronologia Ricerca](./search-history.md).
+</TabItem>
+
+</Tabs>
+
+Su Android, la scheda **Esplora** nello strumento di Ricerca ti aiuta a scoprire rapidamente i luoghi vicini alla tua posizione attuale e ad accedere alla tua cronologia. Su iOS, la scheda **Cronologia** consente di cercare di nuovo luoghi, indirizzi o luoghi visitati di frequente trovati in precedenza senza dover inserire nuovamente la query. Per ulteriori informazioni, consulta l'articolo [Ricerca Esplora](./search-history.md).
 
 
 ## Ricerca PDI {#search-poi}
@@ -342,7 +334,7 @@ La ricerca per coordinate fornisce una posizione precisa. È possibile inserire 
 ## Articoli correlati {#related-articles}
 
 - [Ricerca Indirizzo](./search-address.md)
-- [Cronologia Ricerca](./search-history.md)
+- [Ricerca Esplora](./search-history.md)
 - [Ricerca PDI](./search-poi.md)
 - [Ricerca Coordinate](./search-coordinates.md)
 - [Luoghi Popolari](../map/popular_places.md)

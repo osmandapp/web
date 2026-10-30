@@ -119,7 +119,7 @@ Yavaş harita oluşturma sorununu, özellikle çevrimdışı vektör haritaları
 
 6. **Yalnızca çevrimdışı haritaları kullanın.** Çevrimiçi haritalar, özellikle önceden indirilmediğinde, harita yüklemesini yavaşlatabilir. Daha sorunsuz performans için yalnızca çevrimdışı haritaları kullanmaya geçin.
 
-Bu değişiklikler, özellikle navigasyon sırasında haritaları oluşturmak için gereken süreyi azaltmalıdır. Daha ayrıntılı yapılandırma seçenekleri için [Harita Ayarları Kılavuzu](https://osmand.net/docs/user/map/interact-with-map.md#settings)'na bakın.
+Bu değişiklikler, özellikle navigasyon sırasında haritaları oluşturmak için gereken süreyi azaltmalıdır. Daha ayrıntılı yapılandırma seçenekleri için [Harita Ayarları Kılavuzu](https://osmand.net/docs/user/map/configure-map-menu)'na bakın.
 
 ### “Ücretsiz güncellemeler (acil durum)” ne anlama geliyor? {#what-does-free-updates-emergency-mean}
 

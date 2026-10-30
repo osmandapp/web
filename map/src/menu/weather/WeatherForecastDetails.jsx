@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useMemo, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import WeatherContext from '../../context/WeatherContext';
 import TopWeatherInfo from './TopWeatherInfo';
-import { openWeatherForecastDetails, ECWMF_WEATHER_TYPE, PRECIP_LAYER_KEY } from '../../manager/WeatherManager';
+import { openWeatherForecastDetails, ECMWF_WEATHER_TYPE, PRECIP_LAYER_KEY } from '../../manager/WeatherManager';
 import styles from '../weather/weather.module.css';
 import i18n from 'i18next';
 import isEmpty from 'lodash-es/isEmpty';
@@ -54,7 +54,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     useEffect(() => {
         if (currentWeatherType) {
             const selectedType = wtx.weatherLayers[wtx.weatherType].find((layer) => currentWeatherType === layer.key);
-            setIsDisabledType(wtx.weatherType === ECWMF_WEATHER_TYPE && selectedType.onlyGFS);
+            setIsDisabledType(wtx.weatherType === ECMWF_WEATHER_TYPE && selectedType.onlyGFS);
         }
     }, [wtx.weatherType, currentWeatherType]);
 
@@ -131,7 +131,7 @@ export default function WeatherForecastDetails({ setShowInfoBlock }) {
     }, [forecast, wtx.weatherLayers, wtx.weatherType]);
 
     const ForecastButtonItem = ({ item, index }) => {
-        const disabled = wtx.weatherType === ECWMF_WEATHER_TYPE && item.onlyGFS;
+        const disabled = wtx.weatherType === ECMWF_WEATHER_TYPE && item.onlyGFS;
         const selected = item.key === currentWeatherType;
 
         return (

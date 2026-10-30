@@ -22,9 +22,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## How to Use {#how-to-use}
 
-After opening the Tracks Analyzer (shown as a wrench), the tool opens with a map view and an empty state. From here, you can choose which tracks will be included in the analysis using the **Select tracks** panel. The analyzer allows working with all available tracks or limiting the analysis to specific folders.
+1. [Log in](./web-cloud.md#login) to your OsmAnd Pro account on the Web Map Portal. Your tracks must be synced to [OsmAnd Cloud](./web-cloud.md#cloud-sync).
+2. Open *Menu → Tracks analyzer* (the wrench icon).
+3. In the **Select tracks** panel, choose **All tracks** or only the folders you need.
+4. Right-click the map and select **Point A**. To analyze a segment between two points, also set **Point B**.
+5. Review the list of found segments, [sort it, and choose which parameters to display](#sorting-and-visible-parameters).
 
-To start the analysis, set one or two points directly on the map. Right-click on the desired location and select **Point A / Point B** from the context menu. With one point, the analyzer finds track segments that pass through the selected location. With two points, it finds and analyzes segments between Point A and Point B.
+With one point, the analyzer finds track segments that pass through the selected location. With two points, it finds and analyzes segments between Point A and Point B.
 
 ![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points_new.png)
 

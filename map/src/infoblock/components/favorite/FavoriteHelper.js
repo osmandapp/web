@@ -23,9 +23,13 @@ function updateSelectedFile({ ctx, result, favoriteName, selectedGroup, deleted 
         });
         newSelectedFile.file.updatetimems = result.updatetimems;
     }
+    const movedToGroup = selectedGroup.id !== ctx.selectedGpxFile?.id;
     newSelectedFile.id = selectedGroup.id;
     newSelectedFile.groupId = selectedGroup.id;
     updateMarker(newSelectedFile, deleted, favoriteName);
+    if (!deleted) {
+        updateMarkerPoint(newSelectedFile.markerCurrent, ctx.favorites.mapObjs[selectedGroup.id]?.wpts, movedToGroup);
+    }
     ctx.setSelectedGpxFile(newSelectedFile);
     ctx.setSelectedWpt(newSelectedFile);
 }
@@ -147,6 +151,17 @@ function updateMarker(newSelectedFile, deleted, name) {
         newSelectedFile.markerCurrent = {};
         newSelectedFile.markerCurrent.name = name;
     }
+}
+
+// the server keeps the index of an updated point and appends a point moved to another group
+function updateMarkerPoint(markerCurrent, wpts, movedToGroup) {
+    if (!wpts) {
+        return;
+    }
+    if (movedToGroup) {
+        markerCurrent.pointIndex = wpts.length - 1;
+    }
+    markerCurrent.point = wpts[markerCurrent.pointIndex];
 }
 
 function updateGroupObj(selectedGroup, result) {

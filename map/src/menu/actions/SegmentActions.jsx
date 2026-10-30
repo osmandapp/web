@@ -1,4 +1,4 @@
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext } from 'react';
 import { Box, Divider, ListItemIcon, ListItemText, MenuItem, Paper, Typography } from '@mui/material';
 import styles from '../trackfavmenu.module.css';
 import { ReactComponent as VisibleIcon } from '../../assets/icons/ic_show_on_map.svg';
@@ -13,25 +13,21 @@ const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSe
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const [displayTrack, setDisplayTrack] = useState(null); // null -> true/false -> null
     const recentSaver = useRecentDataSaver();
 
     const file = ctx.listFiles.uniqueFiles.find((file) => file.name === filteredStats[selectedSegmentInd].name);
 
-    useEffect(() => {
-        if (displayTrack === true || displayTrack === false) {
-            processDisplayTrack({
-                showOnMap: displayTrack,
-                visible: displayTrack,
-                file,
-                ctx,
-                fileStorage: ctx.gpxFiles,
-                setFileStorage: ctx.setGpxFiles,
-                recentSaver,
-            }).then();
-            setDisplayTrack(null);
-        }
-    }, [displayTrack]);
+    function toggleVisibility(visible) {
+        processDisplayTrack({
+            showOnMap: visible,
+            visible,
+            file,
+            ctx,
+            fileStorage: ctx.gpxFiles,
+            setFileStorage: ctx.setGpxFiles,
+            recentSaver,
+        }).then();
+    }
 
     async function openTrack() {
         processDisplayTrack({
@@ -75,7 +71,7 @@ const SegmentActions = forwardRef(({ filteredStats, setFilteredStats, selectedSe
                     <MakeTrackVisibleAction
                         ctx={ctx}
                         track={file}
-                        setDisplayTrack={setDisplayTrack}
+                        setDisplayTrack={toggleVisibility}
                         setOpenActions={setOpenActions}
                     />
                     <Divider className={styles.dividerActions} />

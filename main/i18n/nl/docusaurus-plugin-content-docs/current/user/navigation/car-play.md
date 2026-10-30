@@ -1,5 +1,5 @@
 ---
-source-hash: a09bdbc2d902b25ddff100e79f129d14a8aea685dc6a4670d90f3b6f2d5b7b44
+source-hash: 9f605668d58af560cd42ef64d15f56577a03661cd8b6c24cb599d9fe82542af1
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -227,12 +227,12 @@ Spraakbegeleiding voor *CarPlay* is een van de meest nuttige navigatiefuncties v
 
 Wanneer gesproken aanwijzingen worden afgespeeld, past OsmAnd de achtergrondaudio aan afhankelijk van het type. Met *<Translate ios="true" ids="pause_spoken_audio"/>* ingeschakeld, wordt gesproken audio-inhoud, zoals podcasts en audioboeken, gepauzeerd tijdens navigatie-instructies, terwijl muziekafspeling doorgaat met een lager volume. Wanneer *<Translate ios="true" ids="pause_spoken_audio"/>* is uitgeschakeld, blijven zowel gesproken audio als muziek afspelen met een lager volume.  
 
-Om gesproken aanwijzingen te configureren volgens het geselecteerde profiel, moet u dit doen voordat u een route start in de OsmAnd-app op uw apparaat. Voor aanbevolen instellingen voor *CarPlay*, ga naar het artikel [Gesproken aanwijzingen / Meldingen](../navigation/guidance/voice-navigation.md).  
+Om gesproken aanwijzingen te configureren volgens het geselecteerde profiel, moet u dit doen voordat u een route start in de OsmAnd-app op uw apparaat. Zie het artikel [Gesproken aanwijzingen / Meldingen](../navigation/guidance/voice-navigation.md#voice-settings). Om bijvoorbeeld *Gesproken audio pauzeren* in te schakelen, gaat u naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 
 ### Navigatie-waarschuwingen {#navigation-alerts}
 
-![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+![Ontbrekende waarschuwing](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Privé-waarschuwing](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
 
 Handige waarschuwingen worden automatisch weergegeven voordat de navigatie begint wanneer extra actie nodig is om de route te berekenen. Deze waarschuwingen helpen u routeringsproblemen op te lossen voordat de navigatie begint.
 
@@ -320,16 +320,33 @@ U kunt de meldingsinstellingen voor de OsmAnd-app wijzigen in de systeeminstelli
 
 U kunt het aankondigen van berichten ook rechtstreeks in *CarPlay* in- of uitschakelen. Lees hoe meldingsbeheer is geïmplementeerd op [iOS](https://support.apple.com/en-us/HT201925#:~:text=Go%20to%20Settings%20and%20tap,in%20the%20scheduled%20notification%20summary.) en [CarPlay](https://support.apple.com/en-gb/guide/iphone/iph9c8438165/ios).
 
-### Kaartthema {#map-theme}
+### Kaartmodus {#map-mode}
 
-![Kaartthema](@site/static/img/navigation/auto-car/map_theme_carplay.png)
+![Kaartmodus](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Kaartmodus](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-CarPlay stelt u in staat de kaartweergave te configureren voor betere zichtbaarheid onder verschillende rijomstandigheden. U kunt kiezen uit de volgende weergavemodi:
+OsmAnd stelt u in staat om de kaartweergave voor CarPlay onafhankelijk van de kaartmodus op uw telefoon te configureren. Om deze instelling te openen, tikt u op de knop *Instellingen* in de CarPlay-navigatiebalk en selecteert u vervolgens *Kaartmodus*. De huidige modus wordt weergegeven als de detailtekst van de rij.
 
-- *Automatisch*. De kaartweergave verandert automatisch afhankelijk van de systeeminstellingen, het tijdstip van de dag of de voertuigomstandigheden.
-- *Altijd donker*. CarPlay gebruikt het donkere kaartthema.
+U kunt kiezen uit de volgende weergavemodi:
+- **Voertuigweergave** — De kaartweergave volgt de eigen weergavestijl van het voertuig, gebaseerd op de CarPlay-weergave-instelling op uw iPhone (*Automatisch* of *Altijd donker*) en het tijdstip van de dag. Wanneer *Altijd donkere kaarten weergeven* is ingeschakeld in die instelling, blijft de kaart altijd in de donkere modus, ongeacht de status van de koplampen van het voertuig of het tijdstip van de dag.
+- **Dag** — De kaart gebruikt altijd het lichte thema in CarPlay, ongeacht de weergave-instellingen van het voertuig.
+- **Nacht** — De kaart gebruikt altijd het donkere thema in CarPlay, ongeacht de weergave-instellingen van het voertuig.
+- **Zonsopgang/zonsondergang** — De kaart schakelt automatisch tussen lichte en donkere thema's op basis van de berekende zonsopgang- en zonsondergangstijden voor uw huidige locatie.
 
-Wanneer de optie *Altijd donkere kaarten weergeven* is ingeschakeld, blijft de kaart altijd in de donkere modus, ongeacht de status van de koplampen van het voertuig of het tijdstip van de dag.
+**Opmerking:** De instelling Kaartmodus in CarPlay heeft alleen invloed op de kaartweergave in CarPlay. Het verandert de Kaartmodus niet op uw telefoonscherm.
+
+### Kaartoriëntatie {#map-orientation}
+
+![Kaartoriëntatie](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+De instelling *Kaartoriëntatie* bepaalt hoe de kaart draait op het CarPlay-scherm. Om deze instelling te openen, tikt u op de knop *Instellingen* in de CarPlay-navigatiebalk en selecteert u vervolgens *Kaartoriëntatie*. De huidige oriëntatie wordt weergegeven als de detailtekst van de rij.
+
+U kunt kiezen uit de volgende oriëntatiemodi:
+- **Handmatig gedraaid** — De kaart draait niet automatisch.
+- **Bewegingsrichting** — De kaart draait mee met uw rijrichting.
+- **Kompasrichting** — De kaart draait mee met het kompas van de iPhone, zodat het noorden van de kaart overeenkomt met het echte noorden.
+- **Noord boven** — Het noorden blijft altijd bovenaan het scherm.
+
+**Opmerking:** Kaartoriëntatie is een profielinstelling die wordt gedeeld tussen CarPlay en de OsmAnd-app op uw iPhone. Een wijziging op het ene scherm wordt ook op het andere toegepast. Voor meer informatie raadpleegt u het artikel [Kaartoriëntatiemodi](../widgets/map-buttons.md#map-orientation-modes).
 
 ### Locatiepositie in CarPlay {#location-position-in-carplay}
 

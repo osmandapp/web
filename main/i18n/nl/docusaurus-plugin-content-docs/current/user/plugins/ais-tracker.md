@@ -1,5 +1,5 @@
 ---
-source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
+source-hash: 04bb8eb2b1c8b30b97b5016c68f2b0de688c38c44449e4ebb8b695d258cad44b
 sidebar_position: 2
 title:  AIS Vaartuig Volgsysteem
 ---
@@ -14,12 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-<InfoAndroidOnly />
-
 ## Overzicht {#overview}
 
-De **AIS Vaartuig Volgsysteem** plugin toont [Automatisch Identificatie Systeem (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) posities en gedetailleerde informatie over nabijgelegen vaartuigen. De AIS-gegevens worden ontvangen via een netwerkverbinding van een externe AIS-ontvanger.
+De **AIS Vaartuig Volgsysteem** plugin toont [Automatisch Identificatie Systeem (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) posities en gedetailleerde informatie over nabijgelegen vaartuigen. De AIS-gegevens worden via een netwerkverbinding ontvangen van een externe AIS-ontvanger.
+
+De plugin kan NMEA-gegevens ontvangen via een netwerkverbinding met TCP of UDP. GPS-posities die via RMC/GGA NMEA-berichten worden ontvangen, kunnen ook als Mijn locatie in OsmAnd worden gebruikt.
 
 :::caution DISCLAIMER
 **Deze plugin is een hobbyproject en is niet ontworpen voor betrouwbaarheid of nauwkeurigheid. VERTROUW NIET op deze software voor navigatie of levensveiligheid.**
@@ -28,12 +27,14 @@ De **AIS Vaartuig Volgsysteem** plugin toont [Automatisch Identificatie Systeem 
 
 ## Vereiste Instelparameters {#required-setup-parameters}
 
-De mogelijkheid om online kaarten te gebruiken is automatisch ingeschakeld in de iOS-versie van OsmAnd. Om online kaarten in Android weer te geven, moet u de volgende instellingen maken:
+Om de AIS Vaartuig Volgsysteem plugin te gebruiken, moet u de plugin inschakelen en een netwerkverbinding configureren met een externe AIS/NMEA-gegevensbron:
 
 1. [Schakel](../plugins/index.md#enable--disable) de **AIS vaartuig volgsysteem** plugin in via *Hoofdmenu → Plugins → AIS vaartuig volgsysteem*.
 2. Configureer de [AIS-instellingen](../map/raster-maps.md#layers)
-3. Configureer een **AIS-serververbinding** of sluit een **externe AIS-ontvanger** aan.
+3. Configureer de verbinding met uw **AIS/NMEA-gegevensbron** via **TCP** of **UDP**.
 4. Controleer of vaartuigen worden weergegeven op de OsmAnd-kaart.
+
+Op iOS kunt u bovendien *NMEA als locatiebron gebruiken* inschakelen om GPS-posities uit RMC/GGA NMEA-berichten als uw huidige locatie in OsmAnd te gebruiken.
 
 ## Vaartuigen op de Kaart {#vessels-on-the-map}
 
@@ -54,6 +55,12 @@ AIS werkt op *VHF-frequenties* (161.975 MHz en 162.025 MHz) en heeft een beperkt
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+![AIS vaartuig volgsysteem](@site/static/img/plugins/ais/ais.webp)
+
+</TabItem>
+
 </Tabs>
 
 Indien correct ingesteld, verschijnen de posities van vaartuigen op de kaart. Belangrijkste kenmerken:
@@ -69,8 +76,13 @@ Indien correct ingesteld, verschijnen de posities van vaartuigen op de kaart. Be
 
 <TabItem value="android" label="Android">
 
-![AIS vaartuig volgsysteem](@site/static/img/plugins/ais/ais_menu.png)  
-![AIS vaartuig volgsysteem](@site/static/img/plugins/ais/ais_menu_2.png)
+![AIS vaartuig volgsysteem](@site/static/img/plugins/ais/ais_menu.png) ![AIS vaartuig volgsysteem](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![AIS vaartuig volgsysteem](@site/static/img/plugins/ais/ais_menu.webp)
 
 </TabItem>
 
@@ -159,6 +171,14 @@ AIS-vaartuigen zenden drie soorten gegevens uit:
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *AIS vaartuig volgsysteem* → *<Translate ios="true" ids="shared_string_settings"/>* 
+
+![AIS vaartuig volgsysteem](@site/static/img/plugins/ais/ais_settings_ios.webp)
+
+</TabItem>
+
 </Tabs>
 
 De *AIS vaartuig volgsysteem* plugin biedt verschillende instellingen om de navigatie en interactie te personaliseren voor gebruikers met een handicap. Deze instellingen worden toegepast voor alle [profielen](../personal/profiles.md) in OsmAnd.
@@ -171,11 +191,12 @@ De *AIS vaartuig volgsysteem* plugin biedt verschillende instellingen om de navi
 | IP-adres | Definieer IP van AIS-gegevensbron (indien TCP wordt gebruikt) | `192.168.200.16` |
 | TCP-poort   | Definieer TCP-poortnummer voor AIS-gegevens | `4001` |
 | UDP-poort   | Definieer UDP-poort voor OsmAnd AIS-ontvangst  | `10110` |
-| AIS-gegevens ontvangen ook als OsmAnd is gepauzeerd   | Houd de AIS-berichtenlistener actief als OsmAnd is gepauzeerd of op de achtergrond. Indien uitgeschakeld, worden geen AIS-berichten ontvangen wanneer OsmAnd op de achtergrond is  | `Ja/Nee` |
+| AIS-gegevens ontvangen ook als OsmAnd is gepauzeerd (*alleen Android*)   | Houd de AIS-berichtenlistener actief als OsmAnd is gepauzeerd of op de achtergrond. Indien uitgeschakeld, worden geen AIS-berichten ontvangen wanneer OsmAnd op de achtergrond is  | `Ja/Nee` |
+| NMEA als locatiebron gebruiken (*alleen iOS*)   | Gebruik GPS-posities uit RMC/GGA NMEA-berichten als Mijn locatie  | `Aan/Uit` |
 | | | |
 | **Time-out voor AIS-signaalontvangst** | |  |
-| Time-out voor verloren AIS-objecten     | Schepen verdwijnen als er gedurende een ingestelde tijd geen signaal wordt ontvangen | `3 - 20 min` |
-| Time-out voor zichtbaarheid van schepen      | Scheepsiconen veranderen van status wanneer er geen signaal wordt ontvangen | `2 - 15 min / Uitgeschakeld` |
+| Time-out voor verouderde schepen      | Stel de time-out in voor zichtbaarheid van verouderde schepen: na deze tijd zonder signaalontvangst wordt het scheepsymbool doorgehaald | `2 - 15 min / Uitgeschakeld` |
+| Time-out voor zichtbaarheid wanneer schip verloren is     | Stel een time-out in voor de zichtbaarheid van AIS-objecten: als er binnen de opgegeven duur geen signaal wordt ontvangen, wordt het object automatisch van het scherm verwijderd | `3 - 20 min` |
 | | | |
 | **Waarschuwingen voor Kortste Naderingspunt (CPA)** | | |
 | CPA-waarschuwingstijd | Vaartuig wordt rood gemarkeerd als de tijd tot CPA onder deze limiet komt | `1 - 60 min / Uitgeschakeld` |

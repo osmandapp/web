@@ -1,7 +1,7 @@
 ---
-source-hash: b0e4660605b0cdfdfcfc653e1f8929974cb654b66c0c55fbc588b89e37d05091
+source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
 sidebar_position: 3
-title:  Zoekgeschiedenis
+title:  Zoeken verkennen
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -11,19 +11,43 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Overzicht {#overview}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Het tabblad **Verkennen** in de Zoektool helpt u populaire plaatsen om u heen te ontdekken en snel terug te keren naar plaatsen waarnaar u eerder hebt gezocht of waarnaar u eerder hebt genavigeerd. Het bevat twee secties: [Populaire plaatsen in de buurt](#popular-places-nearby) en [Geschiedenis](#history-items).
+
+*Geschiedenis* is een overzicht van alle zoekopdrachten en navigatiebestemmingen die u gedurende de gebruiksperiode in de app hebt ingevoerd of waarnaar u hebt gezocht. Met deze tool kunt u gemakkelijk eerder gezochte locaties vinden en openen, wat de navigatie vergemakkelijkt en u tijd bespaart.
+
+OsmAnd biedt verschillende manieren om uw geschiedenis te bekijken.
+
+- De [Zoekknop](../widgets/map-buttons.md#search) wordt altijd op de kaart weergegeven en als u erop tikt, gaat u naar het [algemene scherm](#how-to-use) van de tool.
+- Ga naar het hoofdmenu *Menu → Zoeken → tabblad Verkennen*.
+- Tik bij het voorbereiden van een route op *Navigatie → Bestemming instellen → Zoekveld*.
+- Het informatieblok in het navigatiemenu van de [routevoorbereiding](../navigation/setup/route-navigation.md#navigation-menu) toont een lijst met recente bestemmingspunten, die ook deel uitmaken van de zoekgeschiedenis.
+- Zoekgeschiedenis is beschikbaar in [Android Auto](../navigation/auto-car.md#search).
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 *Zoekgeschiedenis* is een overzicht van alle zoekopdrachten en locaties die u gedurende de gebruiksperiode in de app hebt ingevoerd of waarnaar u hebt gezocht. Met deze tool kunt u gemakkelijk eerder gezochte locaties vinden en openen, wat de navigatie vergemakkelijkt en u tijd bespaart.
 
 OsmAnd biedt verschillende manieren om uw zoekgeschiedenis te bekijken.
 
-- De [Zoekknop](../widgets/map-buttons.md#search) wordt altijd op de kaart weergegeven en als u erop tikt, gaat u naar het [algemene scherm](#how-to-use) van de tool.
-- Ga naar het hoofdmenu van Android *Menu → Zoeken → tabblad Geschiedenis*.
+- De [Zoekknop](../widgets/map-buttons.md#search) wordt altijd op de kaart weergegeven. Tik erop om het [algemene scherm](#how-to-use) van de tool te openen en selecteer vervolgens het tabblad *Geschiedenis*.
 - Tik bij het voorbereiden van een route op *Navigatie → Bestemming instellen → Zoekveld*.
 - Het informatieblok in het navigatiemenu van de [routevoorbereiding](../navigation/setup/route-navigation.md#navigation-menu) toont een lijst met recente bestemmingspunten, die ook deel uitmaken van de zoekgeschiedenis.
-- Zoekgeschiedenis is beschikbaar in [Android Auto](../navigation/auto-car.md#search) en [CarPlay](../navigation/car-play.md#search).
+- Zoekgeschiedenis is beschikbaar in [CarPlay](../navigation/car-play.md#search).
+
+</TabItem>
+
+</Tabs>
 
 
 ## Hoe te gebruiken {#how-to-use}
@@ -32,7 +56,16 @@ OsmAnd biedt verschillende manieren om uw zoekgeschiedenis te bekijken.
 
 <TabItem value="android" label="Android">
 
-![Zoekgeschiedenis](@site/static/img/search/history_search_android.png)
+![Verkennen zoeken](@site/static/img/search/explore_search_android.webp)
+
+Het tabblad **Verkennen** wordt geopend wanneer u de Zoektool opent. Het tabblad Verkennen dient om relevante informatie te verstrekken over plaatsen om u heen en over uw eerdere acties.
+
+- *Plaatsen in de buurt ontdekken*. De sectie [Populaire plaatsen in de buurt](#popular-places-nearby) toont bekende bezienswaardigheden en attracties om u heen, zodat u interessante plaatsen kunt vinden zonder een zoekopdracht in te voeren.
+- *Opnieuw zoeken*. U kunt de zoekgeschiedenis gebruiken om opnieuw te zoeken naar eerder gezochte plaatsen of adressen zonder de zoekopdracht opnieuw te hoeven invoeren.
+- *Snelle toegang tot vaak bezochte plaatsen*. Als u bepaalde plaatsen vaak bezoekt, zoals uw huis, werk of favoriete plaatsen, slaat de zoekgeschiedenis die plaatsen op, zodat u er snel toegang toe hebt.
+- *Vorige reizen volgen*. De zoekgeschiedenis kan handig zijn voor het volgen van eerdere reizen en routes. U kunt routes volgen die u eerder hebt afgelegd, of [uw volgende route plannen](../plan-route/create-route.md) op basis van eerdere routes.
+- *Zoek naar plaatsen over een bepaalde periode*. Op het scherm Geschiedenis worden items die op *Recent* zijn gesorteerd gegroepeerd per periode: *Vandaag*, *Gisteren*, *Vorige week* en daarna per maand. Om een specifiek item te vinden, tikt u bovenaan het scherm op de titel *Geschiedenis* en voert u de naam in.
+- *Items verwijderen*. De zoekgeschiedenis biedt de mogelijkheid om eerdere [items te verwijderen](#delete), wat handig kan zijn voor de vertrouwelijkheid of om uw geschiedenis georganiseerd te houden.
 
 </TabItem>
 
@@ -40,21 +73,28 @@ OsmAnd biedt verschillende manieren om uw zoekgeschiedenis te bekijken.
 
 ![Zoekgeschiedenis](@site/static/img/search/history_search_ios.png)
 
+De zoekgeschiedenis dient om relevante informatie te verstrekken over uw eerdere acties.
+
+- *Opnieuw zoeken*. U kunt de zoekgeschiedenis gebruiken om opnieuw te zoeken naar eerder gezochte plaatsen of adressen zonder de zoekopdracht opnieuw te hoeven invoeren.
+- *Snelle toegang tot vaak bezochte plaatsen*. Als u bepaalde plaatsen vaak bezoekt, zoals uw huis, werk of favoriete plaatsen, slaat de zoekgeschiedenis die plaatsen op, zodat u er snel toegang toe hebt.  
+- *Vorige reizen volgen*. De zoekgeschiedenis kan handig zijn voor het volgen van eerdere reizen en routes. U kunt routes volgen die u eerder hebt afgelegd, of [uw volgende route plannen](../plan-route/create-route.md) op basis van eerdere routes.  
+- *Zoek naar plaatsen over een bepaalde periode*. De lijst met zoekgeschiedenis is al onderverdeeld in blokken per maand.
+- *Items verwijderen*. De zoekgeschiedenis biedt de mogelijkheid om eerdere [items te verwijderen](#delete), wat handig kan zijn voor de vertrouwelijkheid of om uw geschiedenis georganiseerd te houden.
+
 </TabItem>
 
 </Tabs>
 
-De zoekgeschiedenis dient om relevante informatie te verstrekken over uw eerdere acties.
 
-- *Opnieuw zoeken*. U kunt de zoekgeschiedenis gebruiken om opnieuw te zoeken naar eerder gezochte plaatsen of adressen zonder de zoekopdracht opnieuw te hoeven invoeren.
+## Populaire plaatsen in de buurt {#popular-places-nearby}
 
-- *Snelle toegang tot vaak bezochte plaatsen*. Als u bepaalde plaatsen vaak bezoekt, zoals uw huis, werk of favoriete plaatsen, slaat de zoekgeschiedenis die plaatsen op, zodat u er snel toegang toe hebt.
+<InfoAndroidOnly/>
 
-- *Vorige reizen volgen*. De zoekgeschiedenis kan handig zijn voor het volgen van eerdere reizen en routes. U kunt routes volgen die u eerder hebt afgelegd, of [uw volgende route plannen](../plan-route/create-route.md) op basis van eerdere routes.
+![Populaire plaatsen in de buurt](@site/static/img/search/popular_places_nearby.webp)
 
-- *Zoek naar plaatsen over een bepaalde periode*. Voor de Android-app moet u lang tikken, vervolgens de maand zoeken waarin u de reis hebt gemaakt, het verwijderingsmenu verlaten en de naam in het zoekveld instellen. Voor de iOS-app is de lijst met zoekgeschiedenis al onderverdeeld in blokken per maand.
+De sectie **Populaire plaatsen in de buurt** toont een doorrolbare lijst met bekende bezienswaardigheden en attracties in de buurt van uw locatie. Elk item kan de naam van de plaats, de categorie, afstand en richting en een voorbeeldafbeelding bevatten indien beschikbaar. Tik op *Alles tonen* om de volledige lijst te openen of op *Toon op kaart* om deze plaatsen op de kaart weer te geven.
 
-- *Items verwijderen*. De zoekgeschiedenis biedt de mogelijkheid om eerdere [items te verwijderen](#delete), wat handig kan zijn voor de vertrouwelijkheid of om uw geschiedenis georganiseerd te houden.
+Voor meer details, zie het artikel [Populaire plaatsen](../map/popular_places.md#explore-in-search).
 
 
 ## Geschiedenisitems {#history-items}
@@ -63,7 +103,16 @@ De zoekgeschiedenis dient om relevante informatie te verstrekken over uw eerdere
 
 <TabItem value="android" label="Android">
 
-![Zoekgeschiedenis](@site/static/img/search/history_search_android.png)
+![Geschiedenissectie](@site/static/img/search/history_section_list.webp)
+
+De sectie **Geschiedenis** van het tabblad Verkennen toont maximaal 25 meest recente items. Tik op de titel van de sectie om deze samen te vouwen of uit te vouwen. Tik op *Alles bekijken* om het volledige scherm *Geschiedenis* te openen.
+
+Als zowel *Zoekgeschiedenis* als *Navigatiegeschiedenis* zijn uitgeschakeld, toont de sectie de kaart *Geschiedenis is uitgeschakeld*. Tik op *Geschiedenisinstellingen openen* om ze in te schakelen.
+
+Elk veld in de lijst met geschiedenis bevat een deel van de **informatie** die beschikbaar is voor de applicatie.
+
+- Een pictogram dat het type of de categorie van het gevonden object identificeert.
+- De objectnaam, locatie, adres of type zoekopdracht. Voor tracks wordt informatie over de afstand, het aantal waypoints en de tijd weergegeven.
 
 </TabItem>
 
@@ -71,36 +120,87 @@ De zoekgeschiedenis dient om relevante informatie te verstrekken over uw eerdere
 
 ![Zoekgeschiedenis](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 Elk veld in de lijst met zoekgeschiedenis bevat een deel van de **informatie** die beschikbaar is voor de applicatie.
 
 - Een pictogram dat het type of de categorie van het gevonden object identificeert.
 - De objectnaam, locatie, adres of type zoekopdracht. Voor tracks wordt informatie over de afstand, het aantal waypoints en de tijd weergegeven.
 - Afstand van uw huidige locatie tot het punt en de richting per kompas.
 
+</TabItem>
 
-### Volgorde van items {#order-of-items}
+</Tabs>
+
+
+### Sorteren en filteren {#sort-and-filter}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Geschiedenissectie](@site/static/img/search/history_section_android.webp) ![Geschiedenissectie](@site/static/img/search/history_section_2_android.webp)
+
+Op het volledige scherm *Geschiedenis* kunt u uw geschiedenisitems sorteren en filteren met de volgende opties:
+
+1. **Sorteren op**:
+    - *Recent* — toont eerst de meest recent toegevoegde items. Wanneer deze optie is geselecteerd, worden items gegroepeerd op tijd, zoals Vandaag, Gisteren, Vorige week en eerdere periodes.
+    - *Dichtstbijzijnde* — sorteert items op hun afstand tot uw huidige locatie.
+    - *Dichtstbijzijnde bij kaartcentrum* — sorteert items op hun afstand tot het huidige centrum van de kaart. Wanneer een van de op afstand gebaseerde sorteeropties is geselecteerd, worden de op tijd gebaseerde groepen niet weergegeven.
+
+2. **Type** — filtert geschiedenisitems op:
+    - *Alles* — toont alle beschikbare geschiedenisitems.
+    - *Zoeken* — toont items uit uw zoekgeschiedenis.
+    - *Navigatie* — toont items uit uw navigatiegeschiedenis.
+
+Als *Zoekgeschiedenis* of *Navigatiegeschiedenis* is uitgeschakeld in de Geschiedenisinstellingen, is het filter *Type* niet beschikbaar.
+
+3. **Categoriefilters** — filtert geschiedenisitems op categorie. De beschikbare categoriefilters zijn afhankelijk van de typen items die in uw Geschiedenis beschikbaar zijn. U kunt bijvoorbeeld categorieën zien zoals POI, Track, Locatie, Favoriet of Adres. U kunt meerdere categorieën tegelijk selecteren.
+
+4. **Instellingen** — tik op het tandwielpictogram in de rechterbovenhoek om de Geschiedenisinstellingen te openen, waar u *Zoekgeschiedenis*, *Navigatiegeschiedenis* en *Kaartmarkergeschiedenis* kunt in- of uitschakelen, geschiedenis als bestand kunt back-uppen of alle geschiedenis kunt wissen.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Recente items**. De meest recente verzoeken of locaties worden bovenaan de lijst weergegeven. Dit geeft snelle toegang tot recent gebruikte items.
 - **Chronologische volgorde**. Items in de lijst met zoekgeschiedenis zijn chronologisch gerangschikt, beginnend met de oudste of vroegste vermeldingen en eindigend met de meest recente of laatste. Oude items zakken geleidelijk naar beneden in de lijst naarmate er nieuwe vermeldingen worden toegevoegd, tenzij oude items in de zoekgeschiedenis zijn gebruikt, in welk geval ze naar de bovenkant van de lijst worden verplaatst.
-- In iOS is de lijst gesorteerd op maand.
+- De lijst is gesorteerd op maand.
+
+</TabItem>
+
+</Tabs>
 
 ### Type objecten {#type-of-objects}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+De volgende **typen objecten** komen in de lijst met zoekgeschiedenis terecht:
+
+- **Locaties**. Dit kan een adres, bedrijfsnaam, routenummer, coördinaten, markeringen, nuttige plaatsen, OSM-notities of plaatsen zijn waarop u op de kaart hebt getikt.
+- **Tracks en Waypoints**. De lijst bevat tracks die u hebt gemaakt, opgenomen of gedownload en die u in eerdere routes hebt gebruikt, en waypoints als u er afzonderlijk naartoe hebt genavigeerd.
+- **Favorieten en Foto's**. Favoriete punten en fotonotities die u hebt geopend.
+- **Bestemmingen**. Punten waarnaar u hebt genavigeerd.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 De volgende **typen objecten** komen in de lijst met zoekgeschiedenis terecht:
 
 - **Locaties**. Dit kan een adres, bedrijfsnaam, routenummer, coördinaten, markeringen, nuttige plaatsen, OSM-notities of plaatsen zijn waarop u op de kaart hebt getikt.
 - **Tracks en Waypoints**. De lijst bevat tracks die u hebt gemaakt, opgenomen of gedownload en die u in eerdere routes hebt gebruikt, en waypoints als u er afzonderlijk naartoe hebt genavigeerd.
 
+</TabItem>
+
+</Tabs>
+
 
 ## Acties {#actions}
 
 In de tool Zoekgeschiedenis kunt u onnodige zoekopdrachten [verwijderen](#delete), allemaal tegelijk of per item. U kunt de geschiedenis [exporteren](#export-and-share). De Android-app biedt een extra actie om zoekitems te [delen](#share-android) als een [GPX](../../technical/osmand-file-formats/osmand-gpx.md)-bestand.
 
-U kunt de weergave van de volledige zoekgeschiedenis **uitschakelen of inschakelen**. In dit geval worden de zoekopdrachten niet van het apparaat verwijderd. In Android bevindt de schakelaar zich op het hoofdscherm van de tool op het [tabblad Geschiedenis](#overview). In iOS bevindt deze zich in *Menu → Instellingen → OsmAnd-instellingen → Geschiedenis → Zoekgeschiedenis*.
+U kunt de weergave van de volledige zoekgeschiedenis **uitschakelen of inschakelen**. In dit geval worden de zoekopdrachten niet van het apparaat verwijderd. In Android bevindt de schakelaar zich bovenaan het scherm [Verwijderen](#delete) en in de Geschiedenisinstellingen, die u kunt openen met het tandwielpictogram op het scherm [Geschiedenis](#sort-and-filter). In iOS bevindt deze zich in *Menu → Instellingen → OsmAnd-instellingen → Geschiedenis → Zoekgeschiedenis*.
 
 
 ### Verwijderen {#delete}
@@ -128,7 +228,7 @@ U moet **lang op een van de zoekopdrachten in de lijst tikken** om het scherm Ve
 - *Willekeurige items selecteren of deselecteren* - tik op het gewenste item in de lijst.
 - *Selecteer de periode die beschikbaar is voor verwijdering*, zoals dag, laatste 7 dagen of maand - vink het vakje met de subkop in de lijst aan.
 - *U kunt de hele geschiedenis in één keer verwijderen* door op de knop *Alles selecteren* onderaan het scherm te tikken.
-- *Menu → Instellingen → OsmAnd-instellingen → Geschiedenis → Acties*. Deze sectie bevat de knop **Alle geschiedenis verwijderen**.
+- *Menu → Instellingen → OsmAnd-instellingen → Geschiedenis → Acties*. Deze sectie bevat de knop **Alle geschiedenis wissen** (*Android*)/**Alle geschiedenis verwijderen** (*iOS*).
 
 
 ### Exporteren en delen {#export-and-share}

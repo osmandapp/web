@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Ustawienia globalne
 ---
@@ -101,6 +101,7 @@ Przejdź do: *<Translate android="true" ids="shared_string_menu,shared_string_se
     - *Wewnętrzna pamięć aplikacji*. Tylko aplikacja OsmAnd ma dostęp do swoich danych i żadna z aplikacji zewnętrznych.
     - *Pamięć współdzielona*. Już niedostępne.
     - *Pamięć zewnętrzna 1*. Dostęp ma tylko 1 aplikacja OsmAnd oraz aplikacje administratora i USB.
+    - *Widoczna pamięć zewnętrzna 1*. Dane są przechowywane w folderze Android/media, który jest otwarty dla menedżerów plików i USB. Nie są wymagane żadne dodatkowe uprawnienia do pamięci.
     - *Pamięć wieloużytkownika*. Dostęp ma tylko 1 aplikacja OsmAnd, ale jest ona współdzielona między wieloma użytkownikami Androida.
     - *Określone ręcznie*. Zależy od ścieżki.
 
@@ -115,6 +116,11 @@ Ustawienie **Przechowywanie multimediów** określa, gdzie są przechowywane zdj
 - **Pamięć współdzielona** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Folder aparatu** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Określone ręcznie** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Po wybraniu innego przechowywania multimediów OsmAnd pyta, czy przenieść istniejące pliki multimedialne:
+- **Przenieś do nowej lokalizacji** — Przenieś istniejące pliki multimedialne do wybranej pamięci.
+- **Nie przenoś** — Zmień pamięć bez przenoszenia istniejących plików.
+- **Anuluj** — Zachowaj bieżącą pamięć.
 
 Dostępny jest również przełącznik *Zawsze zachowuj lokalną kopię*. Po włączeniu OsmAnd kopiuje multimedia zaimportowane z Galerii lub Plików do własnego magazynu, dzięki czemu dołączone multimedia pozostają dostępne nawet po usunięciu oryginalnego pliku z Galerii lub systemu plików.
 
@@ -151,7 +157,7 @@ Przejdź do: *Pliki → Na moim iPhonie → OsmAnd Maps*
 | Funkcje | Wersja 1 | Wersja 2 (OpenGL) |
 |:---|:--- |:--- |
 | Wieloplatformowość | Nieużywana w wersji na iOS. | Pasuje do obu wersji. |
-| Zależność od GPU / CPU | Zalecana dla urządzeń o niskiej wydajności lub przestarzałych. | Potężny silnik renderujący. <br /> Dostępny tylko dla [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) i nowszych wersji oraz w trybie testowym dla [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Zależność od GPU / CPU | Zalecana dla urządzeń o niskiej wydajności lub przestarzałych. | Potężny silnik renderujący. <br /> Dostępny tylko dla [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) i nowszych wersji oraz w trybie testowym dla [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | Tryb 3D | Możliwe jest przeglądanie mapy w 2D, a także zmiana kąta widzenia w celu uzyskania [widoku 3D](../widgets/map-buttons.md#3d-mode). | Możesz przeglądać mapę w 2D i [3D](../widgets/map-buttons.md#3d-mode). |
 | Wyświetlanie mapy | Cała mapa jest renderowana jako zestaw kafelków, a znaczniki, linie i tekst znajdują się już w tych kafelkach. | Najpierw renderowany jest cały pakiet kafelków, a następnie dostępne symbole są nakładane na mapę, [warstwa po warstwie](../../technical/algorithms/map-rendering-layers.md). |
 | Przezroczyste symbole nakładki / podkładu | Obsługuje wszystkie ustawienia. | Nie obsługuje warstwy rastrowej na wierzchu tekstu wektorowego. |

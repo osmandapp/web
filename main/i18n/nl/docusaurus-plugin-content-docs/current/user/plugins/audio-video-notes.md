@@ -1,5 +1,5 @@
 ---
-source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+source-hash: 2c0a6908a74d63cbb4449e258729df822d9ac3927942ad52a8271ce7c951c29c
 sidebar_position: 4
 title:  Audio / Videonotities
 ---
@@ -147,8 +147,8 @@ Voor *audio- en videonotities* wordt respectievelijk de audio- of videorecorder 
 
 Het is mogelijk om de opname te stoppen door op de <Translate android="true" ids="map_widget_av_notes"/> widget te tikken, ongeacht of het Contextmenu of de widget de opname heeft gestart. Voor *een fotonotitie* verschijnt de camerafunctionaliteit, en u kunt een foto maken, het resultaat bekijken, accepteren en opslaan, of een nieuwe foto maken.
 
-:::info note
-Automatisch worden alle foto-, audio- en video-opnames opgeslagen in: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tabblad.
+:::info opmerking
+Automatisch worden alle foto-, audio- en video-opnames opgeslagen in: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> tabblad. Elke notitie wordt ook opgeslagen als favoriet in de map **media**. Zie [A/V-notities als Favorieten](#av-notes-as-favorites).
 :::
 
 
@@ -342,6 +342,14 @@ Gebruik de kaartlaag [Opname](../map/point-layers-on-map#-audio--video-points-an
 ![Geen notities op de kaart](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notities staan op de kaart](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
+## A/V-notities als Favorieten {#av-notes-as-favorites}
+
+Audio-, video- en fotonotities zijn gekoppeld aan Favorieten. Elke notitie heeft een bijbehorend favorietenpunt in de map **media** in *Mijn Plaatsen → Favorieten*, geplaatst op de locatie van de notitie en genoemd naar het notitietype en het aanmaaktijdstip, bijvoorbeeld *Photo Oct 1, 2026 09:45*. Het notitiebestand is aan deze favoriet gekoppeld en verschijnt in de [Mediakaart](../personal/favorites.md#media). De notitie zelf blijft ook beschikbaar in het tabblad *A/V-notities*.
+
+- Wanneer OsmAnd wordt bijgewerkt naar versie 5.4 vanaf een eerdere versie, wordt automatisch een favoriet aangemaakt voor elke bestaande notitie.
+- Nieuwe notities die zijn opgenomen met de widget of het contextmenu van de kaart worden automatisch toegevoegd aan de map **media**.
+
+
 ## Waypoints Gemaakt van Notities {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -387,7 +395,7 @@ Er zijn twee manieren om een waypoint te maken: automatisch en handmatig.
     - Selecteer de track waaraan u een waypoint wilt toevoegen.
     - Het dialoogvenster *<Translate android="true" ids="quick_action_add_gpx"/>* wordt geopend en stelt u in staat om enkele eigenschappen in te stellen, zoals de naam van het waypoint, een icoon, kleur en andere. Als u klaar bent, tikt u op **Opslaan**.
 
-:::info note
+:::info opmerking
 U kunt namen specificeren voor elk handmatig gemaakt waypoint.
 :::
 
@@ -421,11 +429,7 @@ Als u het GPX-bestand van de track bekijkt dat is toegevoegd met een waypoint va
 
 ### Details Bestandsnaam {#file-name-details}
 
-De <Translate android="true" ids="audionotes_plugin_name"/> plugin genereert audio-/video-/fotobestanden in het volgende formaat:
-
-    `{SHORTLINK_LOCATIE}_Beschrijving.{avi,mp3,jpg}`
-
-waarbij `SHORTLINK_LOCATIE` de breedte- en lengtegraad specificeert van de locatie waaraan het bestand is gekoppeld. De `SHORTLINK_LOCATIE` is gecodeerd volgens de specificatie van de [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
+De <Translate android="true" ids="audionotes_plugin_name"/> plugin geeft audio-, video- en fotobestanden een naam volgens het patroon `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, bijvoorbeeld `Photo_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. Het gedeelte `location` bevat de breedte- en lengtegraad van de notitie, gecodeerd volgens de specificatie van [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ### Exporteren naar JOSM {#export-to-josm}

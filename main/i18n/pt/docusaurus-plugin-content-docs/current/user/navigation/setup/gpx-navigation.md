@@ -1,5 +1,5 @@
 ---
-source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
+source-hash: 334708e5a8593c3a9d8ad26cd8d035221ee3dbfa4929c3dd8a3cbfc49b55fc2d
 sidebar_position: 2
 title: Navegar por Trajeto
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 A opção *Navegação por trajeto* (GPX) permite que você siga uma rota ou trajeto predefinido em um mapa. Pode ser particularmente útil para atividades ao ar livre, como caminhadas, ciclismo ou condução off-road, onde ter uma rota planejada melhora a segurança e a eficiência. Se você estiver viajando em um grupo organizado, este recurso ajuda você e cada membro do grupo a ter as mesmas informações de rota que os outros.  
 
-A opção *Navegação por trajeto* também pode ser usada no dia a dia. Você pode usar um [trajeto gravado](../../plugins/trip-recording.md) anteriormente ou [criar um trajeto](../../personal/tracks/manage-tracks.md#create-a-track) e compartilhá-lo com sua família ou amigos em vez de explicar a rota para eles. Você também pode usar as [rotas no mapa OsmAnd](../../../../blog/routes/) para navegação. Como destacá-las no mapa e o que suas cores significam é descrito na [seção Rotas](../../map/vector-maps.md#routes) do artigo *Mapas vetoriais*.  
+A opção *Navegação por trajeto* também pode ser usada no dia a dia. Você pode usar um [trajeto gravado](../../plugins/trip-recording.md) anteriormente ou [criar um trajeto](../../personal/tracks/manage-tracks.md#create-a-track) e compartilhá-lo com sua família ou amigos em vez de explicar a rota para eles. Você também pode usar as [rotas no mapa OsmAnd](https://osmand.net/blog/routes/) para navegação. Como destacá-las no mapa e o que suas cores significam é descrito na [seção Rotas](../../map/vector-maps.md#routes) do artigo *Mapas vetoriais*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

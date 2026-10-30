@@ -1,5 +1,5 @@
 ---
-source-hash: 710647a85f82c849e544e3f1eef3c66e99ee03100ef544758c79da96561e4476
+source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
 sidebar_position: 2
 title:  Карти та ресурси
 ---
@@ -14,7 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 ## Огляд {#overview}
 
@@ -134,7 +133,7 @@ OsmAnd працює з двома типами карт: [векторними](
 - [Морські карти](../plugins/nautical-charts.md) ([*платна функція*](../purchases/index.md)). Векторні карти з висотами у вигляді точок або ліній.
 - [Путівники (Wikivoyage)](../plan-route/travel-guides.md) ([*платна функція*](../purchases/index.md)). Векторні карти з колекцією статей у форматі HTML та додатково файлами GPX.
 - **Інші карти**. Карти, які не можуть бути віднесені до поточної ієрархії карт, оскільки вони не підтримуються або будуть доступні в майбутніх версіях.
-- [Голосові підказки](../navigation/guidance/voice-navigation.md) (*тільки для Android*). Голосові пакети для озвучування навігаційних підказок.
+- [Голосові підказки](../navigation/guidance/voice-navigation.md) (*тільки для Android*). Голосові пакети для озвучування navigational підказок.
 - [Шрифти карт](../map/vector-maps.md#map-fonts-android) (*тільки для Android*). Додаткові файли шрифтів для відображення тексту на карті.
 - **Пошук міста або регіону** (*тільки для Android*). Інструмент швидкого пошуку у верхній частині вкладки завантажень (іконка лупи) для пошуку потрібного міста або регіону.
 
@@ -318,89 +317,6 @@ OsmAnd підтримує передачу налаштувань та дани�
 
 </Tabs>
 
-<!--
-The Local tab provides an overview of the storage usage for all OsmAnd data on your device. Data is divided into three color-coded sections for clarity, with items sorted by size from largest to smallest. Each section displays only items with downloaded data:
-
-- ***Resources*** (*blue*).  
-    Includes maps ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
-
-- ***My Places*** (*yellow*).  
-    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
-
-- ***Settings*** (*green*).  
-    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
-
-
-#### Viewing Data {#viewing-data}
-
-![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
-
-
-Tap any item in the **Local** tab to open its detailed list. At the top of this list, a visual panel displays how much space the selected data type occupies relative to the total OsmAnd storage.
-
-***Available actions:***
-
-- **Search**. Find specific data by name within the selected folder.
-- **Three-dot menu**:  
-    ***Select***. Choose multiple items for actions like *Delete*, *Deactivate*, or *Activate*.  
-    ***Import***. Access the device's storage to import files.
-- [Sorting option](#sorting-options). Sort items by name, country, date, or size (availability depends on the data type).
-
-
-#### Menu for Items from the List {#menu-for-items-from-the-list}
-
-![Local category item actions 2](@site/static/img/personal/maps/local_menu_items_1_andr.png) ![Local category item actions](@site/static/img/personal/maps/local_menu_items_2_andr.png)  
-
-Each item in the list offers a *three-dot menu* with options:
-
-- **Info**. View detailed information on the *[data item](#local-data-item-overview)*.
-- **Export**. Save data to a file via *Settings → Export to File*.
-
-***Additional options for maps:***
-
-- **Deactivate**. Disable vector maps without deleting them. They remain stored but are not used for navigation, search, or routing. Reduces the load on the device and speeds up OsmAnd.
-- **Update**. Download the latest version of the map.
-- **Rename**. Customize the map’s name for better identification.
-- **Remove**. Delete the map from your device.
-- **Edit** (for Online Maps). Modify the online map configuration.
-
-#### Map source items menu {#map-source-items-menu}
-
-![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
-
-Each item in the [Map source](../map/raster-maps.md) list provides settings for managing online raster map stored on your device. Open the *three-dot menu* to access the available actions:
-
-- [Info](#local-data-item-overview). Displays general details about the selected map source, including format and last update date.  
-- **Calculate Size**. Estimates the storage occupied by the cached tiles of this map source. If the cache exceeds *50MB*, the size can be displayed as *≥50MB* instead of an exact number.
-- **Clear All Tiles**. Deletes all cached tiles for the selected map source, freeing up storage while keeping the map source available for future use.  
-- **Export**. Saves the selected map source configuration for backup or sharing.  
-- **Remove**. Deletes the selected map source. This action does not affect downloaded offline maps but clears the associated cache.
-
-
-#### Local Data Item Overview {#local-data-item-overview}
-
-![Local data item overview](@site/static/img/settings/local_category_overview_2.png) ![Local data item overview 2](@site/static/img/settings/local_category_overview_1.png)  
-
-When viewing a local data item, you see:
-
-- **Type**. The data type from the **Local** list.
-- **Created**. The date the item was added.
-- **Size**. The item’s size is in MB.
-
-Available **Actions** depend on the data type and may include **Deactivate**, **Update**, **Rename**, **Export**, and **Delete**.
-
-#### Sorting Options {#sorting-options}
-
-![Local data sorting options](@site/static/img/settings/local_sorting_options_andr_1.png)
-
-Use sorting options to organize map data:
-
-- **Name (A - Z / Z - A)**. Locate items alphabetically.
-- **Country name (A - Z / Z - A)**. Organize maps geographically.
-- **Newest date first** / **Oldest date first**. See updates or older versions.
-- **Large size first** / **Small size first**. Identify large maps to free storage space.
-
--->
 
 ## Меню Оновлення {#updates-menu}
 
@@ -410,13 +326,15 @@ Use sorting options to organize map data:
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Меню Карти Оновлення карт Android](@site/static/img/personal/maps/maps_update_andr.png) ![Меню Карти Оновлення вкладка Android](@site/static/img/personal/maps/maps_update_tab_andr.png)
+![Меню Карти Оновлення карт Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Меню Карти Оновлення вкладка Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
 
 Вкладка **Оновлення** дозволяє оновлювати карти та ресурси OsmAnd. Стандартні карти та карти лише з дорогами випускаються раз на місяць, зазвичай між 2-м і 5-м числом, і містять дані OpenStreetMap до останнього дня попереднього місяця (наприклад, жовтневий випуск містить дані до 30 вересня). Інші дані, такі як Wikipedia, рельєф або морські карти, можуть мати інші, нерегулярні графіки оновлення. Прогноз погоди має власний регулярний цикл оновлення. Для отримання детальної інформації див. [Завантаження прогнозу](../plugins/weather.md#download-forecast). 
 
 Якщо кілька карт однієї країни потребують оновлення, OsmAnd групує їх в один елемент у списку Оновлень. Групований елемент показує назву країни та кількість включених карт. При натисканні відкривається нижня панель *Оновити карти*, що показує всі карти, які потрібно оновити. 
 
-Використовуйте кнопку *Оновити все*, щоб оновити всі карти одночасно, або оновлюйте окремі карти за потреби. Для щогодинних оновлень перевірте статус вашої підписки на [Live-оновлення](#live-updates). Якщо увімкнено, розділ **Live-оновлення** з'явиться у верхній частині вкладки, під індикатором пам'яті пристрою.
+Використовуйте кнопку *Оновити все*, щоб оновити всі карти одночасно, або оновлюйте окремі карти за потреби. Для щогодинних оновлень перевірте статус вашої підписки на [Live-оновлення](#live-updates). Якщо увімкнено, розділ **Live-оновлення** з'явиться у верхній части вкладки, під індикатором пам'яті пристрою.
+
+Вкладка **Оновлення** також може відображати елемент **<Translate android="true" ids="unsupported_maps"/>**. Він з'являється, коли у вас є карти, які більше не підтримуються і були замінені меншими регіонами. Торкніться **Непідтримувані карти**, щоб переглянути список, видалити застарілі карти та завантажити нові версії регіонів замість них. На екрані **Непідтримувані карти** ви можете переглянути всі непідтримувані карти та використати **Видалити все**, щоб видалити їх одразу (перед видаленням з'являється запит на підтвердження).
 
 Ви також можете керувати картами безпосередньо з вкладки Оновлення за допомогою жесту довгого натискання на будь-яку карту зі списку. Це відкриває контекстне меню з кількома опціями:
 - **Інформація** — переглянути деталі про вибрану карту

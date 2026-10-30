@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title:  Gestire le Tracce
 ---
@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd elabora i file delle tracce in [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), ma i formati [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) e [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) possono essere importati e convertiti in GPX. Per saperne di più sui diversi tipi di tracce, consultare l'articolo [Tracce sulla mappa](../../map/tracks/index.md#types-of-tracks).
+Tutte le tracce in OsmAnd sono memorizzate in una scheda in *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> → <Translate android="true" ids="shared_string_gpx_tracks"/>*. OsmAnd elabora il file delle tracce in [formato GPX](https://en.wikipedia.org/wiki/GPS_Exchange_Format), ma [KML](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) e [KMZ](https://en.wikipedia.org/wiki/Keyhole_Markup_Language) possono essere importati e convertiti in GPX. Per saperne di più sui diversi tipi di tracce, consultare l'articolo [Tracce sulla mappa](../../map/tracks/index.md#types-of-tracks).
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -204,7 +204,7 @@ Una volta effettuata la scelta, vengono forniti i seguenti passaggi:
 
 - **Sposta** — È possibile organizzare i dati spostando le tracce e le cartelle selezionate in altre cartelle.
 
-- **[Cambia attività](../../map/tracks/track-context-menu.md#ttrack-activity-type)** — Questa azione consente di cambiare il tipo di attività, ad esempio in *Auto*, *Motociclismo d'avventura*, *Escursionismo* o altro, per la traccia selezionata.
+- **[Cambia attività](../../map/tracks/track-context-menu.md#track-activity-type)** — Questa azione consente di cambiare il tipo di attività, ad esempio in *Auto*, *Motociclismo d'avventura*, *Escursionismo* o altro, per la traccia selezionata.
 
 - **[Cambia aspetto](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks)** — Questa opzione consente di personalizzare l'aspetto delle tracce selezionate, rendendole più visibili e riconoscibili sulla mappa.
 

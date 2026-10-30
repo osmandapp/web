@@ -3,6 +3,7 @@ import {
     FINAL_POI_ICON_NAME,
     ICON_KEY_NAME,
     POI_ID,
+    RELATED_RESULT_IDS,
     TYPE_OSM_TAG,
     TYPE_OSM_VALUE,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
@@ -92,7 +93,7 @@ function layerHasIdentity(layer, id) {
 }
 
 function layerHasRelatedResultId(layer, id) {
-    return (layer?.options?.relatedResultIds ?? []).includes(id);
+    return (layer?.options?.[RELATED_RESULT_IDS] ?? []).includes(id);
 }
 
 // hover on an offscreen point shows a direction pin at the map edge for these list types
@@ -139,6 +140,11 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
             return;
         }
 
+        // the add-favorite preview owns the pin until the panel closes
+        if (isAddFavoritePreviewActive(ctx)) {
+            return;
+        }
+
         // Skip if the correct pin is already on the map
         const existingPin = ctx.selectedCreatedLayerRef?.current;
         if (existingPin && map.hasLayer(existingPin) && existingPin.options?.idObj === selectedObjId) {
@@ -152,7 +158,9 @@ export function useSelectMarkerOnMap({ ctx, getLayers, layers: layersProp, type,
         }
 
         if (type === SEARCH_LAYER_ID) {
-            const latlng = extractLatlng(ctx.selectedWptId) ?? ctx.selectedWpt?.poi?.latlng ?? null;
+            // the hover state may still point at a previous search result (its row never got mouseleave)
+            const hoverLatlng = ctx.selectedWptId?.id === selectedObjId ? extractLatlng(ctx.selectedWptId) : null;
+            const latlng = hoverLatlng ?? ctx.selectedWpt?.poi?.latlng ?? null;
             if (latlng) {
                 const pin = applySelectedPin({
                     ctx,

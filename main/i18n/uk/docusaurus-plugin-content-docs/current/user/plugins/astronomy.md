@@ -1,5 +1,5 @@
 ---
-source-hash: 8e1f02f9127b98b856da74b8c60e1a9a470bb0cd50ef772e997c5d458dc8a49f
+source-hash: 18bdcf0d20caf5aabbea26b8ec6fcda7bc035763be0d7facfcec6e68cdb29d7d
 sidebar_position: 3
 title: Астрономія
 unlistead: true
@@ -15,13 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-:::info 
-
-**Астрономія** зараз перебуває в **бета-версії** на **Android**. 
-
-На **iOS** плагін доступний через програму **iOS beta ([TestFlight](https://testflight.apple.com/join/7poGNCKy))**. 
-:::
 
 ## Overview {#overview}
 
@@ -329,7 +322,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 Цей розділ контролює основні режими відображення Зоряної карти.
 
-- **<Translate android="true" ids="map_2d"/> / <Translate android="true" ids="map_3d"/>**. Перемикає між видом небесної траєкторії (2D), який показує небо як спроектований купол з траєкторіями об’єктів, та видом неба в стилі глобуса (3D), що представляє небесну сферу.
+- **<Translate android="true" ids="map_2d"/> / <Translate android="true" ids="map_3d"/>**. Перемикає між видом небесної траєкторії (2D), який показує небо як спроектований купол з траєкторіями об’єктів, та видом неба в стилі глобоса (3D), що представляє небесну сферу.
 - **<Translate android="true" ids="shared_string_map"/>**. Увімкнює додатковий вид карти Землі, відображений під Зоряною картою, що допомагає пов’язати небесні об’єкти з вашим географічним розташуванням.
 - **<Translate android="true" ids="red_filter"/>**. Застосовує червоний кольоровий фільтр до всього екрана, щоб зменшити світлове забруднення та зберегти нічний зір під час спостережень у темному небі.
 
@@ -412,7 +405,7 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.png)
+![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
@@ -430,9 +423,52 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 Секція Watch now виділяє небесні об’єкти, які видимі саме зараз або цієї ночі. Ця секція діє як інструмент рекомендацій, показуючи об’єкти, які найкраще підходять для спостереження на основі вашого поточного розташування та часу.
 
-**2. Categories**
+**2. Solar and Lunar eclipses** (*Android only*)
+
+Інструменти [Solar eclipse](#solar-eclipse) та [Lunar eclipse](#lunar-eclipse) дозволяють досліджувати затемнення по всьому світу, переглядати їхній перебіг у часі та перевіряти видимість затемнень на карті.
+
+**3. Categories**
 
 Секція Categories дозволяє переглядати об’єкти за типом: Сонячна система, Сузір’я, Зірки, Туманності, Зоряні скупчення та Глибоке небо. Кожна категорія відкриває список об’єктів з ключовою інформацією: назва об’єкта, тип або сузір’я, магнітуда (яскравість) та час сходу чи заходу (якщо застосовується).
+
+### Solar Eclipse (Android only) {#solar-eclipse}
+
+![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+
+**Solar Eclipse Explorer** дозволяє досліджувати минулі та майбутні сонячні затемнення по всьому світу. Він поєднує Зоряну карту з інтерактивною шкалою часу та візуалізацією на карті, щоб показати, як затемнення розвивається в різних місцях.
+
+Solar Eclipse Explorer включає такі функції:
+
+- **Eclipse navigation**. Використовуйте кнопки Previous і Next, щоб перемикатися між доступними сонячними затемненнями.
+- **Timeline**. Шкала часу показує початок, максимум і кінець затемнення. Переміщуйте повзунок, щоб переглянути затемнення в будь-який момент під час події. Уся інформація про затемнення автоматично оновлюється для вибраного часу.
+- **Eclipse information**. Інформаційна панель відображає: тип затемнення, поточну дату та час, затемнення затемнення, висоту Сонця та координати центру карти. Відображена інформація розраховується для поточного центру карти.
+- **Eclipse path**. Натисніть Fit eclipse path, щоб центрувати карту на шляху затемнення. Натисніть *Show map* або *Hide map*, щоб показати або приховати шлях затемнення на карті. Шлях затемнення показує, де затемнення видно і як тінь Місяця рухається по поверхні Землі.
+
+:::warning
+
+Ніколи не дивіться безпосередньо на Сонце без відповідного захисту для перегляду сонця. Час затемнення є приблизним.
+
+:::
+
+### Lunar Eclipse (Android only) {#lunar-eclipse}
+
+![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+
+**Lunar Eclipse Explorer** дозволяє досліджувати місячні затемнення по всьому світу та спостерігати, як Місяць проходить крізь тінь Землі.
+
+Lunar Eclipse Explorer включає таку функцію:
+
+- **Eclipse navigation**. Використовуйте кнопки Previous і Next, щоб перемикатися між доступними місячними затемненнями.
+- **Eclipse types**. Дослідник підтримує: Півтіньові затемнення, Часткові затемнення та Повні затемнення
+- **Timeline**. Шкала часу показує початок, максимум і кінець затемнення. Маркери на шкалі часу вказують на різні стадії затемнення. Переміщуйте повзунок, щоб спостерігати затемнення в будь-який момент під час події.
+- **Eclipse information**. Інформаційна панель відображає: фазу затемнення, затемнення затемнення, висоту Місяця та координати центру карти. Відображена інформація розраховується для поточного центру карти.
+- **Visibility map**. Натисніть *Fit visibility*, щоб центрувати карту на зоні видимості затемнення. Натисніть *Show map* або *Hide map*, щоб показати або приховати шар видимості. Шар видимості виділяє регіони, де Місяць перебуває над горизонтом під час затемнення.
+
+:::warning
+
+Кольори та яскравість тіні є схематичними і призначені лише для візуалізації.
+
+:::
 
 ### Sorting and Filters {#sorting-and-filters}
 

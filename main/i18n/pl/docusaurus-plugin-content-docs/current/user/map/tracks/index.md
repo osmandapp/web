@@ -1,5 +1,5 @@
 ---
-source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
+source-hash: 40444298714f3efdf33ba91bcf4a1ae66aa667d887d5d943cfe77e1fa53575ee
 title:  Ślady
 sidebar_position: 2
 ---
@@ -170,7 +170,7 @@ Dotknij przycisku [Moja pozycja](../../map/interact-with-map.md#my-position-and-
 - [Wygląd śladu](./appearance.md)
 - [Menu kontekstowe śladu](./track-context-menu.md)
 - [Nawiguj po śladzie](../../navigation/setup/gpx-navigation.md)
-- [Trasy na mapie](https://docs.osmand.net/blog/routes) artykuł na blogu
+- [Trasy na mapie](https://osmand.net/blog/routes) artykuł na blogu
 - [Konfiguruj mapę](../../map/configure-map-menu.md)  
 - [Ślady GPX](../../personal/tracks/index.md)  
 - [Planowanie trasy](../../plan-route/index.md)  

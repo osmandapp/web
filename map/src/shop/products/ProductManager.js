@@ -3,13 +3,22 @@ import { ReactComponent as MapsIcon } from '../../assets/icons/ic_action_osmand_
 import { ReactComponent as ProIcon } from '../../assets/icons/ic_action_osmand_pro_logo_colored.svg';
 import { ReactComponent as DecadeIcon } from '../../assets/icons/ic_action_osmand_decade_v2.svg';
 
+export const PRODUCT_ID_START = 'osmand-start';
+export const PRODUCT_ID_MAPS_PLUS = 'osmand-maps-plus';
+export const PRODUCT_ID_PRO = 'osmand-pro';
+export const PRODUCT_ID_XV = 'osmand-15-years';
+
+export const PURCHASE_TYPE_MONTHLY = 'monthly';
+export const PURCHASE_TYPE_ANNUAL = 'annual';
+export const PURCHASE_TYPE_ONE_TIME = 'one-time';
+
 const PURCHASE_OSMAND_PRO = 'OsmAnd Pro';
 const PURCHASE_OSMAND_VX = 'OsmAnd XV';
 const PURCHASE_OSMAND_MAPS_PLUS = 'OsmAnd Maps+';
 
 export const products = [
     {
-        id: 'osmand-start',
+        id: PRODUCT_ID_START,
         name: 'Start',
         icon: <StartIcon />,
         shortFeaturesList: [
@@ -21,7 +30,7 @@ export const products = [
         show: true,
     },
     {
-        id: 'osmand-maps-plus',
+        id: PRODUCT_ID_MAPS_PLUS,
         name: 'Maps+',
         icon: <MapsIcon />,
         shortFeaturesList: [
@@ -35,7 +44,7 @@ export const products = [
         show: true,
     },
     {
-        id: 'osmand-pro',
+        id: PRODUCT_ID_PRO,
         name: 'Pro',
         icon: <ProIcon />,
         shortFeaturesList: [
@@ -51,7 +60,7 @@ export const products = [
         show: true,
     },
     {
-        id: 'osmand-15-years',
+        id: PRODUCT_ID_XV,
         name: 'XV',
         icon: <DecadeIcon />,
         shortFeaturesList: [
@@ -64,68 +73,35 @@ export const products = [
 ];
 
 export const purchase = {
-    monthly: [
+    [PURCHASE_TYPE_MONTHLY]: [
         {
-            id: 'osmand-pro',
+            id: PRODUCT_ID_PRO,
             name: PURCHASE_OSMAND_PRO,
-            oldPrice: null,
-            oldPriceDisplay: null,
-            newPrice: '2.99',
-            display: '€2.99',
-            sku: 'net.osmand.fastspring.subscription.pro.monthly',
-            fsName: 'osmand-pro-monthly',
             show: true,
         },
     ],
-    annual: [
+    [PURCHASE_TYPE_ANNUAL]: [
         {
-            id: 'osmand-pro',
+            id: PRODUCT_ID_PRO,
             name: PURCHASE_OSMAND_PRO,
-            oldPrice: null,
-            oldPriceDisplay: null,
-            newPrice: '14.99',
-            display: '€14.99',
-            sku: 'net.osmand.fastspring.subscription.pro.annual',
-            fsName: 'osmand-pro-annual',
-            monthlyVersionId: 'osmand-pro',
-            hasTestMode: true,
+            monthlyVersionId: PRODUCT_ID_PRO,
             show: true,
         },
         {
-            id: 'osmand-maps-plus',
+            id: PRODUCT_ID_MAPS_PLUS,
             name: PURCHASE_OSMAND_MAPS_PLUS,
-            oldPrice: '29.99',
-            oldPriceDisplay: '€29.99',
-            newPrice: '9.99',
-            display: '€9.99',
-            sku: 'net.osmand.fastspring.subscription.maps.annual',
-            fsName: 'osmand-maps-annual',
             show: true,
         },
     ],
-    'one-time': [
+    [PURCHASE_TYPE_ONE_TIME]: [
         {
-            id: 'osmand-maps-plus',
+            id: PRODUCT_ID_MAPS_PLUS,
             name: PURCHASE_OSMAND_MAPS_PLUS,
-            oldPrice: null,
-            oldPriceDisplay: null,
-            newPrice: '39.99',
-            display: '€39.99',
-            sku: 'net.osmand.fastspring.inapp.maps.plus',
-            fsName: 'osmand-maps',
-            hasTestMode: true,
             show: true,
         },
         {
-            id: 'osmand-15-years',
+            id: PRODUCT_ID_XV,
             name: PURCHASE_OSMAND_VX,
-            oldPrice: '399',
-            oldPriceDisplay: '€399',
-            newPrice: '249',
-            display: '€249',
-            sku: 'net.osmand.fastspring.inapp.osmand_pro_xv',
-            fsName: 'osmand-15-years',
-            hasTestMode: true,
             show: true,
         },
     ],

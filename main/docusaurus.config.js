@@ -37,6 +37,7 @@ async function createConfig(){
     organizationName: 'osmandapp', // Usually your GitHub org/user name.
     projectName: 'web', // Usually your repo name.
     staticDirectories: ['static', 'legacy-image-static'],
+    clientModules: [require.resolve('./src/clientModules/storeLinksUtm.js')],
     i18n: {
       defaultLocale: 'en',
       locales: ['en', 'ar', 'de', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'tr', 'uk'],
@@ -82,6 +83,10 @@ async function createConfig(){
       {
         redirects: [
           {
+            from: '/docs/hiring/mission', // hiring is hidden for now
+            to: '/help-online/mission',
+          },
+          {
             from: '/docs/user/map/track-context-menu', // old
             to: '/docs/user/map/tracks/track-context-menu', // new
           },
@@ -119,11 +124,13 @@ async function createConfig(){
     themeConfig:
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
+        // Default preview image for links shared in social networks (og:image, twitter:image)
+        image: 'img/social-card.png',
         navbar: {
           title: 'OsmAnd',
           logo: {
             alt: 'OsmAnd Logo',
-            src: 'img/logo.svg',
+            src: 'img/logo-halloween.svg',
           },
           items: [
             {
@@ -137,7 +144,7 @@ async function createConfig(){
               label: 'Docs',
             },
             { to: '/blog', label: 'Blog', position: 'left'},
-            { to: 'pathname:///pricing', label: '💳 Pricing', position: 'left' },
+            { to: 'pathname:///pricing', label: '🎃 -50% Sale', position: 'left' },
             { to: 'pathname:///map', target: '_self', label: '🌍 Map', position: 'left' },
             {
               href: 'https://github.com/osmandapp/',

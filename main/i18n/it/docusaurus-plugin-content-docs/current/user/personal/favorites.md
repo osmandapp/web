@@ -1,5 +1,5 @@
 ---
-source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Preferiti
 ---
@@ -131,7 +131,7 @@ Per modificare un punto preferito:
 
 <TabItem value="android" label="Android">
 
-Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Scegli preferito* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
 ![I miei luoghi preferiti Android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -139,7 +139,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 <TabItem value="ios" label="iOS">
 
-Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
+Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Scegli preferito* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
 ![i_miei_luoghi_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -147,10 +147,10 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 </Tabs>
 
-In OsmAnd è disponibile un'ampia gamma di icone per PDI e waypoint. È possibile:
+La schermata **Seleziona icona** raggruppa le icone per [categoria](../search/search-poi.md#categories-and-their-filters). Una riga di chip delle categorie in alto consente di passare direttamente alla sezione di una categoria nell'elenco sottostante. Toccare l'icona della lente d'ingrandimento per trovare un'icona per nome o parola chiave.
 
-- Selezionare un'icona dall'elenco delle [categorie di PDI](../search/search-poi.md#categories-and-their-filters).
-- Trovare un'icona adatta utilizzando l'[opzione di ricerca](../search/search-all.md#how-to-use).
+- *Ultime usate* — Le icone selezionate di recente appaiono in una sezione dedicata per un riutilizzo rapido.
+- *Speciali* — Un insieme di icone generiche (stella, bandiera, marcatore, cuore, fotocamera e altre) non associate a una categoria specifica.
 
 
 ### Preferiti Speciali (Personali) {#special-favorites-personal}
@@ -160,20 +160,34 @@ La *cartella Personale* contiene punti speciali come **<Translate android="true"
 
 ### Media (solo Android) {#media}
 
-![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_menu.webp)
+![Azioni media](@site/static/img/personal/media_actions.webp) ![Menu media](@site/static/img/personal/media_menu.webp)
 
-La sezione Media consente di allegare foto, video, registrazioni audio e immagini a un punto preferito. I media possono essere aggiunti durante la creazione di un preferito o successivamente dalla schermata Modifica preferito. Per allegare media, toccare *Aggiungi* nella sezione Media e scegliere una delle opzioni disponibili:
+La sezione Media consente di allegare foto, video, registrazioni audio e immagini a un punto preferito. I media possono essere aggiunti durante la creazione di un preferito, successivamente dalla schermata Modifica preferito o direttamente dal menu contestuale del preferito. Per allegare media, toccare il pulsante *+* nella schermata Modifica preferito o *Aggiungi* nel menu contestuale e scegliere una delle opzioni disponibili:
 - **Scatta una foto** — Scatta una nuova foto con la fotocamera del dispositivo.
 - **Registra una nota video** — Registra un nuovo video.
-- **Registra una nota audio** — Registra una nota audio.
+- **Registra una nota audio** — Registra una nota audio. Se OsmAnd non dispone dell'autorizzazione per registrare l'audio, il dispositivo chiede di concederla.
 - **Scegli dalla Galleria** — Seleziona un'immagine esistente dal dispositivo.
 - **Scegli dai File** — Seleziona un'immagine dal file system.
 
-Dopo aver allegato i media, questi vengono visualizzati nella scheda Media nel menu contestuale del preferito. La stessa scheda Media è disponibile anche per i [Waypoint](../map/tracks/track-context-menu.md#points--waypoints).
+Dopo aver allegato i media, questi vengono visualizzati nella scheda Media nel menu contestuale del preferito. Se non è allegato alcun media, la scheda mostra *Nessun media* e un pulsante *Aggiungi*. La stessa scheda Media è disponibile anche per i [Waypoint](../map/tracks/track-context-menu.md#points--waypoints).
+
+Le note audio, video e foto create con il [plugin Note audio/video](../plugins/audio-video-notes.md) vengono salvate anche come preferiti con media allegati.
 
 La scheda Media mostra le anteprime degli elementi allegati. Gli elementi visualizzati seguono l'ordine di ordinamento selezionato. Toccare *Mostra tutto* per aprire la galleria completa. La galleria mostra tutti i media allegati al preferito selezionato.
 
 Toccare un elemento qualsiasi per aprirlo a schermo intero. Foto e video possono essere visualizzati direttamente, mentre le registrazioni audio includono i controlli di riproduzione.
+
+La galleria include le seguenti opzioni:
+- **Ordinamento** — Toccare la barra di ordinamento in alto per scegliere l'ordine: Più vicini, Ultima modifica, Nome A - Z, Nome Z - A, Data più recente, Data meno recente, Durata più lunga, o Durata più breve.
+- **Riepilogo** — Sotto gli elementi, la galleria mostra il numero di foto, video e note audio e la loro dimensione totale.
+- **Pulsante +** — Aggiungi nuovi media.
+- **Modifica** (icona matita) — Entra nella modalità di selezione. È possibile anche toccare e tenere premuto un elemento qualsiasi.
+
+Nella modalità di selezione, toccare gli elementi per selezionarli o usare Seleziona tutto. Il menu a tre punti offre:
+- **Esporta** — Esporta i file multimediali selezionati.
+- **Elimina** — Rimuovi i media selezionati dal preferito. I media memorizzati da OsmAnd e non allegati a nessun altro elemento vengono eliminati anche dal dispositivo.
+
+I media acquisiti in OsmAnd sono denominati con il formato `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, ad esempio `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. Il nome contiene il tipo di media, la data e l'ora di creazione e la posizione in cui il media è stato acquisito, codificata come [OSM Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ## Gestire i Preferiti {#manage-favorites}
@@ -221,7 +235,8 @@ La sezione **Preferiti** consente di:
 </Tabs>
 
 - **Ordinamento** — Le cartelle e i punti preferiti possono essere ordinati utilizzando le opzioni di ordinamento disponibili nel menu dell'elenco. Per i punti preferiti, sono disponibili le seguenti opzioni: *Nome A – Z*, *Nome Z – A*, *Ultima modifica*, *Più vicini alla posizione attuale*, *Più vicini al centro della mappa*, *Data più recente prima* e *Data più antica prima*. Per le cartelle preferite, sono disponibili le seguenti opzioni: *Nome A – Z*, *Nome Z – A*, *Ultima modifica*, *Data più recente prima* e *Data più antica prima*. Per impostazione predefinita, gli elementi sono ordinati per Nome A – Z. Le cartelle pinnate sono sempre visualizzate in cima all'elenco. Sono visivamente separate dal resto delle cartelle da un divisore. 
-- **Ricerca** — Utilizzare la [Ricerca globale](../search/search-all.md) per trovare i preferiti per nome. I preferiti sono ordinati per distanza dal centro della mappa. Per cercare punti preferiti dall'elenco Preferiti nella scheda I miei luoghi, toccare l'icona *Ricerca* (lente di ingrandimento).
+- **Ricerca** — È possibile utilizzare la [Ricerca globale](../search/search-all.md) per trovare i preferiti per nome. Per cercare solo all'interno dell'elenco Preferiti nella scheda I miei luoghi, toccare l'icona *Ricerca* (lente di ingrandimento).
+
 
 ### Modifica / Eliminazione massiva {#bulk-edit--delete}
 
@@ -274,21 +289,6 @@ Per le cartelle selezionate, sono disponibili le stesse azioni, con le seguenti 
 </TabItem>
 
 </Tabs>
-
-<!--
-### Add Favorites to Map Markers {#add-favorites-to-map-markers}
-
-<InfoAndroidOnly/>
-
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-You can add to or remove your favorites from [Map markers list](../personal/markers.md).
-Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
-
-**Functions for Favorite folder:**
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
-- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
--->
 
 
 ### Azioni Gruppo Preferiti {#favorite-group-actions}
@@ -429,30 +429,6 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 - *[Pacchetto OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Selezionare questa opzione per accedere alla funzione di backup gratuito delle impostazioni.
 - *Creare un backup* delle proprie impostazioni.
 
-<!--
-### All Favorites {#all-favorites}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
-
-- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
-- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
--->
 
 ### Gruppo di preferiti {#favorite-group}
 
@@ -471,10 +447,10 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-- Per condividere più cartelle di preferiti, attivare la [Modalità Selezione](#bulk-edit--delete), selezionare le cartelle richieste e toccare *Condividi*.
-- Per condividere una singola cartella di preferiti, toccare il menu a tre punti (*Android*) o toccare a lungo la cartella (*iOS*), selezionare *Condividi* per inviare il file Favorites.gpx alla memoria del dispositivo o condividerlo tramite le app di messaggistica. Su Android, se la cartella contiene media allegati, viene visualizzato un foglio inferiore di condivisione. È possibile scegliere:
+- Per condividere più cartelle di preferiti, vedere la sezione [Modifica / Eliminazione massiva](#bulk-edit--delete).
+- Per condividere una singola cartella di preferiti, vedere la sezione [Azioni Gruppo Preferiti](#favorite-group-actions). Su Android, se la cartella contiene media allegati, viene visualizzato un foglio inferiore di condivisione. È possibile scegliere:
     - *Solo punti* — Condividi i punti preferiti della cartella come file GPX.
-    - *Punti e media* — Condividi i punti preferiti e i media allegati come archivio OSF.
+    - *Punti e media* — Condividi i punti preferiti e i media allegati come archivio.
 
 
 ### Backup automatico dei preferiti {#automatic-favorites-backup}
@@ -499,7 +475,7 @@ Andare su: *File → Sul mio iPhone → OsmAnd Maps → favourites_backup*
 
 </Tabs>
 
-OsmAnd crea un **file di backup** ogni volta che i preferiti vengono modificati.
+OsmAnd crea automaticamente un **file di backup** ogni volta che i preferiti vengono modificati, conservando fino a 10 file di backup in totale, con non più di 2 nuovi backup al giorno.
 
 - **Android**: I backup sono memorizzati in *Android → data → net.osmand → files → backup*. Utilizzare un file manager di terze parti per accedervi.
 
@@ -519,6 +495,8 @@ Nelle ultime versioni di ***Android***, l'accesso alle directory di sistema è l
 
 Tutte le informazioni su un Preferito sono memorizzate e descritte tramite tag. Quando si crea un punto Preferito, è possibile scrivere la propria [descrizione](#favorite-point) o utilizzare le informazioni dei dati del [punto di interesse (PDI)](../map/point-layers-on-map.md#points-of-interest-pois) di OSM da cui è stato creato il punto. I punti preferiti, i PDI e i Waypoint utilizzano gli stessi **tag** per memorizzare le informazioni e vengono salvati in **formato file GPX**.
 
+Se il [plugin Modifica di OpenStreetMap](../plugins/osm-editing.md) è abilitato, un Preferito creato da un oggetto OpenStreetMap memorizza anche un collegamento a quell'oggetto nel tag `osm_url`, ad esempio `https://www.openstreetmap.org/node/7235345886`. Il collegamento viene conservato nei file dei Preferiti esportati e condivisi e nei backup.
+
 I preferiti possono anche contenere riferimenti ai media allegati utilizzando gli elementi GPX standard `<link>`. 
 
 
@@ -533,6 +511,7 @@ I preferiti possono anche contenere riferimenti ai media allegati utilizzando gl
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

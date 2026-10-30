@@ -1,5 +1,5 @@
 ---
-source-hash: 9c34aac29eaabe9dff31bcf3e1e7b62519e93b1308d0b1eb5e8b4bafa3a7d91a
+source-hash: 09518f7c9f30ff95cf4ee3c22d11fc8d1867a10a1fa6a3ea3d7b5c046dd047c7
 sidebar_position: 9
 title: Ressourcen und Anpassungen
 ---
@@ -45,16 +45,17 @@ Die folgende Liste enthält Konverter für verschiedene von OsmAnd unterstützte
 
 | Typ | Beschreibung | Link |
 |-- | -- | --|
-| GoogleMap To OSMAnd GPX | Creates a folder of OSMAnd style GPX files from a google my maps map (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
-| KML to OsmAnd GPX | Python script to convert *KML* files to *GPX* format with icons. Other tools available. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
-| KMZ to GPX | Python script to convert *KMZ* files to *GPX* format, including icons. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
-| Garmin | Tool for converting Garmin Basecamp files to OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
-| GeoPDF/Tiff, ozi to OsmAnd | Conversion of geoPDF, geoTiff, and ozi map formats to OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
-| GPX to KML | Tool to convert OsmAnd *GPX* files to *KML* format, preserving icons. | [GitHub](https://github.com/mariush444/osmand2kml) |
-| iOverlander GPX to OsmAnd | Python script to convert iOverlander *GPX* files exported to OsmAnd with icons. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
-| Topo map into printable| This is [a tool](https://github.com/acui/osmand_topo_map_generator) to generate a printablea tool to generate a printable topographic map by using screenshots from OsmAnd (https://osmand.net). The map uses the UTM grid and has declination information. It's to be used with a compass or a GPS device with UTM coordinates.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
-| GPX Solar | GPXsolar casts a ray toward the sun from every point of a GPX track and tests it against the terrain and the vegetation (0.5 m HD LiDAR / IGN), for a given date and time. It tells you, meter by meter, sun or shade. | [GPX Solar](https://github.com/nico579/gpxsolar)|
-| lidar2map | A self-contained tool that downloads public LiDAR data from national portals across 22 countries| [lidar2map](https://github.com/nico579/lidar2map)|
+| GoogleMap To OSMAnd GPX | Erstellt einen Ordner mit GPX-Dateien im OSMAnd-Stil aus einer Google My Maps-Karte (GMap) | [GitHub](https://github.com/tmusolf/GoogleMapToOSMAndGPX) |
+| KML to OsmAnd GPX | Python-Skript zum Konvertieren von *KML*-Dateien in das *GPX*-Format mit Symbolen. Weitere Werkzeuge verfügbar. |[GitHub](https://github.com/tmusolf/KMLtoOSMAndGPX) |
+| KMZ to GPX | Python-Skript zum Konvertieren von *KMZ*-Dateien in das *GPX*-Format, einschließlich Symbolen. | [GitHub](https://github.com/mariush444/gmapIcons2osmand) |
+| Garmin | Werkzeug zum Konvertieren von Garmin Basecamp-Dateien für OsmAnd. | [GitHub](https://github.com/maurizioandreotti/GPX-Basecamp-2-OsmAnd)|
+| GeoPDF/Tiff, ozi to OsmAnd | Konvertierung der Kartenformate geoPDF, geoTiff und ozi für OsmAnd. | [GitHub](https://github.com/mariush444/raster2osmand) |
+| GPX to KML | Werkzeug zum Konvertieren von OsmAnd-*GPX*-Dateien in das *KML*-Format unter Beibehaltung der Symbole. | [GitHub](https://github.com/mariush444/osmand2kml) |
+| iOverlander GPX to OsmAnd | Python-Skript zum Konvertieren von iOverlander-*GPX*-Dateien für den Export nach OsmAnd mit Symbolen. | [GitHub](https://github.com/mariush444/Osmand-tools/blob/main/iOver.zip) |
+| Topokarte zum Ausdrucken| Dies ist [ein Werkzeug](https://github.com/acui/osmand_topo_map_generator), um eine druckbare topografische Karte aus Screenshots von OsmAnd (https://osmand.net) zu erstellen. Die Karte verwendet das UTM-Gitter und enthält Deklinationsangaben. Sie ist für die Verwendung mit einem Kompass oder einem GPS-Gerät mit UTM-Koordinaten gedacht.| [GitHub](https://github.com/acui/osmand_topo_map_generator)|
+| GPX Solar | GPXsolar wirft von jedem Punkt eines GPX-Tracks einen Strahl in Richtung Sonne und prüft ihn für ein bestimmtes Datum und eine bestimmte Uhrzeit gegen das Gelände und die Vegetation (0,5 m HD-LiDAR / IGN). Es zeigt Ihnen Meter für Meter, ob Sonne oder Schatten herrscht. | [GPX Solar](https://github.com/nico579/gpxsolar)|
+| lidar2map | Ein eigenständiges Werkzeug, das öffentliche LiDAR-Daten von nationalen Portalen in 22 Ländern herunterlädt| [lidar2map](https://github.com/nico579/lidar2map)|
+| GPX-Steigungsfarben | Färbt einen GPX-Track nach Steigung: Anstiege, Abstiege und flache Abschnitte werden zu separaten Tracks mit jeweils eigener Farbe, die in die Datei geschrieben werden, sodass OsmAnd sie anzeigt. Das Gefälle ist vorzeichenbehaftet, folgt also der Fahrtrichtung. | [GitHub](https://github.com/xdanielex/gpx-slope-colors) |
 
 ## Benutzerdefinierte Ressourcen {#custom-resources}
 

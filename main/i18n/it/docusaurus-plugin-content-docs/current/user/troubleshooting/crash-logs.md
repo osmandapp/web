@@ -1,5 +1,5 @@
 ---
-source-hash: 39d418f4e27287d045bdf80db534c375abb992ea40f27b907543333249efada9
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
 title:  Log dei crash
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Panoramica {#overview}
 
-I log dei crash sono strumenti diagnostici preziosi che aiutano gli sviluppatori a identificare e correggere problemi e bug che causano il crash o un comportamento inatteso dell'applicazione. È possibile condividere i log dal proprio dispositivo Android con il team di sviluppo di OsmAnd. Attualmente, gli utenti iOS hanno solo un tipo di opzione per l'invio dei log dei crash.
+I log dei crash sono strumenti diagnostici preziosi che aiutano gli sviluppatori a identificare e correggere problemi e bug che causano il crash o un comportamento inatteso dell'applicazione. È possibile condividere i log dal proprio dispositivo con il team di sviluppo di OsmAnd. Se OsmAnd si chiude inaspettatamente, al successivo avvio l'app propone anche di inviare un report di crash.
 
 
 ## Log dei crash e Log dell'app {#crash-and-app-logs}
@@ -37,19 +37,19 @@ Fai attenzione quando invii i log dell'app, poiché potrebbero contenere informa
 
 <TabItem value="android" label="Android">
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+![Invia log dei crash da Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Invia log dei crash da Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Send crash logs from iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+![Invia log dei crash da iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-1. Vai a *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* o *<Translate android="true" ids="send_logcat_log"/>* (*Invia log dell'app corrente* su iOS). A seconda della tua situazione, seleziona il tipo di log appropriato. Puoi fare riferimento alla sezione [Log dei crash e Log dell'app](#crash-and-app-logs) per i dettagli sulle differenze tra i tipi di log.
+1. Vai a *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* o *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Invia log corrente dell'app* (iOS). A seconda della tua situazione, seleziona il tipo di log appropriato. Puoi fare riferimento alla sezione [Log dei crash e Log dell'app](#crash-and-app-logs) per i dettagli sulle differenze tra i tipi di log.
 2. Nel menu a comparsa, scegli Gmail o la tua app di posta elettronica preferita. Ti consigliamo di inviare i log a `support@osmand.net`.
 3. Tocca il pulsante *Send*.
 
@@ -75,6 +75,67 @@ Fai attenzione quando invii i log dell'app, poiché potrebbero contenere informa
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
 
+### Invia il report di crash dopo un crash {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Se OsmAnd si è chiuso inaspettatamente durante l'esecuzione precedente, al successivo avvio dell'app compare la finestra di dialogo del crash. Compare dopo un crash dell'app, dopo che l'app ha smesso di rispondere (Android 11 e successivi) o dopo un crash nel codice nativo dell'app (Android 12 e successivi). La finestra di dialogo non compare mentre la navigazione è attiva.
+
+- *Invia* — invia il report di crash direttamente al team di sviluppo di OsmAnd, senza usare un'app di posta elettronica. Un messaggio conferma se il report è stato inviato.
+- *Ignora* — chiude la finestra di dialogo senza inviare il report.
+
+Il report contiene informazioni tecniche sullo stato dell'app e sull'uso della memoria prima del crash, insieme al log recente dell'app.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Se OsmAnd si è chiuso inaspettatamente durante l'esecuzione precedente, al successivo avvio dell'app compare la finestra di dialogo Condividi log del crash. Compare dopo un crash dell'app o dopo che il sistema l'ha chiusa inaspettatamente.
+
+- *Invia* — invia il report di crash direttamente al team di sviluppo di OsmAnd, senza usare un'app di posta elettronica. Un messaggio conferma se il report è stato inviato.
+- *Annulla* — chiude la finestra di dialogo senza inviare il report.
+
+Il report contiene informazioni tecniche sullo stato dell'app e sull'uso della memoria prima del crash, insieme al log recente dell'app.
+
+</TabItem>
+
+</Tabs>
+
+## Istogramma dell'heap per problemi di memoria (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Solo Android
+:::
+
+Un *istogramma dell'heap* è una tabella che mostra cosa occupa la memoria Java dell'app: nomi delle classi con conteggi e dimensioni degli oggetti. Aiuta gli sviluppatori a individuare cosa consuma memoria quando l'app diventa lenta, si blocca o si chiude dopo un po'. Non contiene le tue posizioni, i nomi delle tracce o le query di ricerca. OsmAnd esegue un dump completo della memoria sul dispositivo, lo trasforma in istogramma ed elimina subito il dump.
+
+L'esecuzione del dump **blocca l'app per 5–10 secondi**. Se tocchi lo schermo durante quel tempo, Android potrebbe mostrare *OsmAnd non risponde*. Per questo motivo la raccolta automatica è **disattivata per impostazione predefinita**.
+
+**Quando attivarla:**
+
+- OsmAnd si chiude da solo o mostra ripetutamente *non risponde*, soprattutto dopo un certo tempo di utilizzo o quando apri la ricerca, la mappa con molti POI o *I miei luoghi* con molte tracce.
+- L'app diventa più lenta più a lungo rimane in esecuzione e il riavvio la migliora.
+- Il report di crash indica che l'app ha esaurito la memoria (`OutOfMemoryError`).
+- Il supporto di OsmAnd ti ha chiesto di raccogliere un istogramma dell'heap.
+
+**Quando lasciarla disattivata:**
+
+- Uso quotidiano e navigazione, quando l'app funziona correttamente.
+- Crash che si verificano subito a ogni avvio o con un'azione specifica come l'apertura di un file. In questi casi è sufficiente un normale [log dei crash](#send-logs-from-osmand-app).
+
+**Come raccogliere e inviare:**
+
+1. Attiva il [plugin di sviluppo OsmAnd](../plugins/development.md) e vai su *Menu principale → Plugin → Sviluppo OsmAnd → Impostazioni → Memoria → Memoria Java*.
+2. Nel pannello *Heap dump*, scegli una delle seguenti opzioni:
+    - **Raccogli su utilizzo elevato**. L'istogramma viene raccolto automaticamente quando la memoria Java è quasi piena, al massimo una volta ogni 30 minuti, e viene allegato al successivo report di crash. Continua a usare l'app normalmente finché il problema non si ripresenta.
+    - **Raccogli e analizza ora**. Raccoglie subito l'istogramma e mostra il risultato. Usalo quando l'app è già lenta e *Memoria Java* mostra un utilizzo elevato.
+3. Tocca **Condividi report** per inviare l'ultimo report agli sviluppatori, oppure invialo dalla finestra di dialogo del crash al prossimo avvio dell'app.
+4. Disattiva *Raccogli su utilizzo elevato* una volta inviato il report.
+
+![Memoria Java Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Pannello heap dump Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
+
 ## Invia file Tombstone (Android) {#send-tombstone-files-android}
 
 :::caution Cruciale
@@ -98,7 +159,7 @@ Per esportare i file tombstone, è necessario generare un report di bug utilizza
   
 Dopo che il report bug è pronto, riceverai una notifica. Tocca la casella di notifica per scaricare il report sul tuo dispositivo. Decomprimi il file e invia i file tombstone al team di sviluppatori di OsmAnd (email: `support@osmand.net`).
 
-![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Invia log dei crash da Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Invia log dei crash da Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Si prega di notare che i report bug possono contenere dati privati, inclusi l'utilizzo dell'app o la posizione.

@@ -1,5 +1,5 @@
 ---
-source-hash: 4878e2457dfe96a2c0e6c1cdae203ecc324020d9a2f634ee6222b27cf4f606b5
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Configurações Globais
 ---
@@ -44,7 +44,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 ## Geral {#general}
 
-Esta seção contém as configurações básicas do OsmAnd, como a seleção de um [perfil](#default-profile) ao carregar o aplicativo, a seleção do [motor de renderização](#map-rendering-engine) e da [pasta](#data-storage-folder) onde os dados serão salvos.  
+Esta seção contém as configurações básicas do OsmAnd, como a seleção de um [perfil](#default-profile) ao carregar o aplicativo, a seleção do [motor de renderização](#map-rendering-engine) e da [pasta](#data-storage) onde os dados serão salvos.  
 
 
 ### Perfil Padrão {#default-profile}
@@ -84,15 +84,15 @@ Este recurso está disponível para a versão iOS do aplicativo OsmAnd.
 O [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) é usado quando conectado ao [software CarPlay](https://support.apple.com/en-gb/HT205634) do seu veículo e ajuda você a aproveitar ao máximo a versão otimizada do aplicativo OsmAnd usando os sistemas de áudio e vídeo para exibir dados no seu telefone.
 
 
-### Pasta de Armazenamento de Dados {#data-storage-folder}
+### Armazenamento de Dados {#data-storage}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,application_dir"/>*
+![Configurações de Armazenamento de Perfis Android](@site/static/img/personal/profiles/main_storage.webp) ![Configurações de Armazenamento de Perfis Android](@site/static/img/personal/profiles/media_storage.webp)
 
-![Configurações de Armazenamento de Perfis Android](@site/static/img/personal/profiles/settings_data_storage_andr.png)  
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,main_storage"/>*
 
 1. A **Memória do dispositivo** mostra quanto espaço livre resta no seu dispositivo. Toque em um campo para acessar o menu [*Mapas e Recursos*](../personal/maps-resources.md#local-menu), onde você pode visualizar e gerenciar informações detalhadas sobre seus dados do OsmAnd.
 
@@ -101,12 +101,28 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
     - *Memória interna do aplicativo*. Somente o aplicativo OsmAnd tem acesso aos seus dados e nenhum dos aplicativos externos.
     - *Memória compartilhada*. Não está mais disponível.
     - *Armazenamento externo 1*. Somente 1 aplicativo OsmAnd tem acesso e aplicativos de administração e USB.
+    - *Armazenamento externo 1 visível*. Os dados são armazenados na pasta Android/media, que é aberta para gerenciadores de arquivos e USB. Não são necessárias permissões de armazenamento adicionais.
     - *Armazenamento multiusuário*. Somente 1 aplicativo OsmAnd tem acesso, mas é compartilhado entre vários usuários Android.
     - *Especificado manualmente*. Depende do caminho.
 
 :::note Android 12+ (alterar pasta de armazenamento)
 Novas diretrizes de acesso ao armazenamento foram implementadas nas versões 11-12 do Android. Consulte a seção [**Solução de problemas**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) para obter detalhes.
 :::
+
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,data_storage,media_storage"/>*
+
+A configuração **Armazenamento de mídia** determina onde fotos, vídeos e arquivos de áudio anexados a favoritos, trilhas e outros itens do OsmAnd são armazenados. Você pode escolher um local de armazenamento dependendo se deseja que os arquivos permaneçam privados ou sejam acessíveis por outros aplicativos.
+- **Armazenamento principal** — <Translate android="true" ids="media_storage_main_storage_descr"/>
+- **Armazenamento compartilhado** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
+- **Pasta da câmera** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
+- **Especificado manualmente** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Ao selecionar um armazenamento de mídia diferente, o OsmAnd pergunta se deseja mover os arquivos de mídia existentes:
+- **Mover para o novo destino** — Move os arquivos de mídia existentes para o armazenamento selecionado.
+- **Não mover** — Altera o armazenamento sem mover os arquivos existentes.
+- **Cancelar** — Mantém o armazenamento atual.
+
+Há também um interruptor *Sempre manter uma cópia local*. Quando ativado, o OsmAnd copia a mídia importada da Galeria ou Arquivos para seu próprio armazenamento, para que a mídia anexada permaneça disponível mesmo se o arquivo original for excluído da Galeria ou do sistema de arquivos.
 
 </TabItem>
 
@@ -119,8 +135,6 @@ Vá para: *Dispositivo iOS → Ajustes → Geral → Armazenamento do iPhone →
 Os arquivos do OsmAnd são visíveis no aplicativo [*Arquivos*](https://apps.apple.com/us/app/files/id1232058109). Você pode acessar todos os arquivos do OsmAnd: [trilhas](../personal/tracks/manage-tracks.md), [favoritos](../personal/favorites.md), [mapas](../personal/maps-resources.md), [rendering.xml](../../technical/build-osmand/rendering.md), [routing.xmlustom](../../technical/build-osmand/routing.md). Para fazer isso, siga o seguinte caminho:  
 
 Vá para: *Arquivos → No Meu Telefone → OsmAnd Maps*
-
-<!-- ![Files app iOS](@site/static/img/personal/storage/files_app_ios.png) ![Files app iOS](@site/static/img/personal/storage/files_app_1_ios.png)  -->
 
 ![Armazenamento das configurações gerais iOS](@site/static/img/personal/profiles/files-1.png) ![Armazenamento das configurações gerais iOS](@site/static/img/personal/profiles/files-2.png)
 
@@ -143,7 +157,7 @@ Vá para: *Arquivos → No Meu Telefone → OsmAnd Maps*
 | Recursos | Versão 1 | Versão 2 (OpenGL) |
 |:---|:--- |:--- |
 | Multiplataforma | Não usado na versão iOS. | Serve para ambas as versões. |
-| Dependente de GPU / CPU | Recomendado para dispositivos de baixo desempenho ou desatualizados. | Motor de renderização poderoso. <br /> Disponível apenas para [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) e versões posteriores, e em modo de teste para [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| Dependente de GPU / CPU | Recomendado para dispositivos de baixo desempenho ou desatualizados. | Motor de renderização poderoso. <br /> Disponível apenas para [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) e versões posteriores, e em modo de teste para [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | Modo 3D | É possível visualizar o mapa em 2D, e você pode alterar o ângulo de visão para obter uma [visualização 3D](../widgets/map-buttons.md#3d-mode). | Você pode visualizar o mapa em 2D e [3D](../widgets/map-buttons.md#3d-mode). |
 | Exibição do mapa | O mapa inteiro é renderizado como um conjunto de blocos, e marcadores, linhas e texto já estão dentro desses blocos. | Primeiro, todo o pacote de blocos é renderizado, e então os símbolos disponíveis são aplicados ao mapa, [camada por camada](../../technical/algorithms/map-rendering-layers.md). |
 | Sobreposição / subposição de símbolos transparentes | Suporta todas as configurações. | Não suporta uma camada raster sobre texto vetorial. |
@@ -157,9 +171,9 @@ A imagem para a visualização 3D do mapa é carregada bloco por bloco, depois t
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="renderização"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="renderização"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="renderização"/></td>
     </tr>
 </table>
 

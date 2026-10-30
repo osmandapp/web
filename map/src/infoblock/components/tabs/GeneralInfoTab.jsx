@@ -3,6 +3,7 @@ import { Box, Divider, Checkbox, FormControlLabel } from '@mui/material';
 import AppContext, { isLocalTrack, isTravelTrack } from '../../../context/AppContext';
 import GeneralInfo from '../track/GeneralInfo';
 import TravelTrackInfo from '../track/TravelTrackInfo';
+import TravelTrackReview from '../track/TravelTrackReview';
 import { hasSegments, isEmptyTrack } from '../../../manager/track/TracksManager';
 import GpxGraphProvider from '../../../graph/track/GpxGraphProvider';
 import SubTitleMenu from '../../../frame/components/titles/SubTitleMenu';
@@ -13,6 +14,7 @@ import { ReactComponent as UserIcon } from '../../../assets/icons/ic_action_user
 import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_mail.svg';
 import { ReactComponent as LinkIcon } from '../../../assets/icons/ic_action_link.svg';
 import { useTranslation } from 'react-i18next';
+import styles from './tabpanels.module.css';
 
 export default function GeneralInfoTab() {
     const ctx = useContext(AppContext);
@@ -75,7 +77,7 @@ export default function GeneralInfoTab() {
 
     return (
         <>
-            <Box>
+            <Box className={isTravelTrack(ctx) ? styles.fillHeight : undefined}>
                 {author && (
                     <Box sx={{ mx: -3, mt: -3 }}>
                         <AuthorCard author={author} t={t} />
@@ -126,9 +128,10 @@ export default function GeneralInfoTab() {
                 )}
                 {hasSegments(ctx.selectedGpxFile) && <GpxGraphProvider width={ctx.infoBlockWidth} />}
                 {isTravelTrack(ctx) && (
-                    <Box sx={{ mx: -3 }}>
+                    <Box className={styles.travelBlock}>
                         <ThickDivider mt={'8px'} mb={'0px'} />
                         <TravelTrackInfo />
+                        <TravelTrackReview />
                     </Box>
                 )}
             </Box>

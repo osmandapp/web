@@ -1,5 +1,5 @@
 ---
-source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
+source-hash: 7a4ec38811965699d4bf8be48f33fcce4e1e12973b13ab13ffa374909cfef793
 sidebar_position: 2
 title:  Ogólne
 ---
@@ -89,6 +89,19 @@ Najnowsze wersje OsmAnd nie stosują już dodatkowego automatycznego skalowania 
 Jeśli chcesz ręcznie dostosować rozmiar przycisków mapy, użyj ustawień [Domyślny wygląd](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Menu → Konfiguruj ekran → Przyciski → Domyślne przyciski → menu z trzema kropkami → Wygląd*. Tam możesz ustawić niestandardowy Rozmiar, Promień narożnika i Przezroczystość tła dla wszystkich domyślnych przycisków jednocześnie.
 
 Jeśli interfejs nadal wydaje się większy niż oczekiwano, sprawdź *Ustawienia systemowe Androida → Wyświetlanie → Rozmiar i tekst wyświetlacza* i dostosuj ustawienia wyświetlania w razie potrzeby.
+
+### OsmAnd nie wypełnia ekranu w orientacji poziomej na iPadzie (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+OsmAnd obsługuje na iPadzie zarówno orientację pionową, jak i poziomą oraz podąża za obrotem systemu. Jeśli aplikacja wypełnia ekran w orientacji pionowej, ale w poziomej wyświetla się jako mniejsze okno, jest to spowodowane trybem okien w iPadOS 26, a nie przez OsmAnd.
+
+W trybie *Aplikacje w oknach* iPadOS zapamiętuje rozmiar okna każdej aplikacji. Gdy okno OsmAnd zostanie zmienione w orientacji poziomej, aplikacja zachowuje ten rozmiar okna w poziomie, a w pionie nadal wypełnia ekran.
+
+Aby OsmAnd ponownie wypełniał ekran, użyj jednej z poniższych opcji:
+
+- **Rozwiń okno.** Przy otwartym OsmAnd w orientacji poziomej dotknij małej pastylki u góry okna. Pojawią się trzy przyciski: *Zamknij*, *Minimalizuj* i *Powiększ*. Dotknij *Powiększ*, aby rozwinąć aplikację na cały ekran. Aplikacja zachowuje rozmiar pełnoekranowy po obróceniu iPada.
+- **Wyłącz okna dla wszystkich aplikacji.** Przejdź do *Ustawienia iPada → Wielozadaniowość i gesty* i wybierz *Aplikacje pełnoekranowe* zamiast *Aplikacje w oknach*. Wszystkie aplikacje, w tym OsmAnd, będą zawsze otwierane na pełnym ekranie.
+
+Upewnij się również, że OsmAnd nie jest otwarty w trybie *Split View* ani *Slide Over* obok innej aplikacji.
 
 
 ## Inne {#other}

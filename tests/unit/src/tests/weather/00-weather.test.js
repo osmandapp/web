@@ -1,6 +1,6 @@
 import {
     dayFormatter,
-    ECWMF_WEATHER_TYPE,
+    ECMWF_WEATHER_TYPE,
     GFS_WEATHER_TYPE,
     getAlignedStep,
     getBaseStep,
@@ -10,7 +10,7 @@ import {
 } from '@map/manager/WeatherManager';
 
 const gfs = { weatherType: GFS_WEATHER_TYPE };
-const ecmwf = { weatherType: ECWMF_WEATHER_TYPE };
+const ecmwf = { weatherType: ECMWF_WEATHER_TYPE };
 
 test('the forecast row is looked up by the utc day and hour', () => {
     const date = new Date('2026-09-08T22:00:00Z');

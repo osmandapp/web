@@ -1,5 +1,5 @@
 ---
-source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
 sidebar_position: 9
 title:  الخرائط عبر الإنترنت
 ---
@@ -69,10 +69,10 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 ## كيفية تحضير الخرائط النقطية {#how-to-prepare-raster-maps}
 
 :::info
-المقال الرئيسي لتحضير الخرائط [اقرأ هنا](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+المقال الرئيسي لتحضير الخرائط [اقرأ هنا](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-على الرغم من أن الإضافة تسمى *الخرائط عبر الإنترنت*، يمكنك استخدام الخرائط بدون اتصال بالإنترنت أيضًا. كل ما تحتاجه هو حفظ أجزاء من الخرائط (تسمى غالبًا المربعات) لاستخدامها لاحقًا. للقيام بذلك، قم بتنزيل [أداة Map Creator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) خاصة طورها فريق OsmAnd.
+على الرغم من أن الإضافة تسمى *الخرائط عبر الإنترنت*، يمكنك استخدام الخرائط بدون اتصال بالإنترنت أيضًا. كل ما تحتاجه هو حفظ أجزاء من الخرائط (تسمى غالبًا المربعات) لاستخدامها لاحقًا. للقيام بذلك، قم بتنزيل [أداة Map Creator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) خاصة طورها فريق OsmAnd.
 
 حدد المنطقة التي تحتاج إلى تنزيلها، انقر على "Preload area"، ثم اضبط أصغر وأكبر مستويات التكبير التي تريد عرضها وقم بتنزيل المربعات.
 بالنسبة **لإصدار أندرويد**، يمكنك نسخها إلى مجلد *osmand/tiles/*tile type** على هاتفك. ستحتاج أيضًا إلى فتح *تكوين الخريطة-. الطبقة العلوية* واختيار مربعات OsmAnd عبر الإنترنت.

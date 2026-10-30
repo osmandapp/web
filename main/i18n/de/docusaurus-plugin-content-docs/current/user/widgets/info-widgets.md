@@ -1,5 +1,5 @@
 ---
-source-hash: 2f452a1d8b316f905b1ea409998af97c7fd5afd3e4e38098246912c444d71c63
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -39,7 +39,7 @@ Wenn Sie die Android-API als Positionsquelle verwenden oder die MSL-Höhe nicht 
 - Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_downloads,world_maps,index_item_world_altitude_correction"/>*.
 - Um die Positionsquelle zu ändern, gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source"/>*.
 - Weitere Details finden Sie unter [Karten & Ressourcen](../personal/maps-resources.md#downloads-menu).
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -70,7 +70,7 @@ Wenn Sie die Android-API als Positionsquelle verwenden oder die MSL-Höhe nicht 
 
 :::info Pro-Funktion
 Das Widget *Höhe: Kartenzentrum* ist eine kostenpflichtige [**OsmAnd Pro**](../purchases/index.md)-Funktion <ProFeature />.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -254,11 +254,15 @@ Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*
 
 <TabItem value="android" label="Android">
 
-**Gleitverhältnis zum Ziel** zeigt das genaue Gleitverhältnis an, das erforderlich ist, um den Zielpunkt zu erreichen.
+- **Gleitverhältnis zum Ziel** zeigt das genaue Gleitverhältnis an, das erforderlich ist, um den Zielpunkt zu erreichen.
+- **Zielhöhe** zeigt die Höhe des Zielpunkts an. Der [Kartenmarker](../personal/markers.md) sollte als Zielpunkt verwendet werden.
+
+Um zwischen diesen Modi zu wechseln, tippen Sie direkt auf das Widget. Die Wechseloption ist im [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) nicht verfügbar. 
 
 | | |
 |:------------|:------------|
 | Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
+| Durch Tippen | Wechselt zwischen *Gleitverhältnis zum Ziel* und *Zielhöhe*  |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -285,11 +289,13 @@ Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*
 
 <TabItem value="android" label="Android">
 
-**Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
+- **Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
+- **Durchschnittliche Vertikalgeschwindigkeit** zeigt an, wie schnell Sie innerhalb des Zeitintervalls steigen oder sinken: die Höhendifferenz zwischen dem ersten und letzten Punkt des Intervalls, geteilt durch die Zeit zwischen ihnen. Positive Werte bedeuten Steigen, negative Werte bedeuten Sinken. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen.
 
 | | |
 |:------------|:------------|
 | Aktivieren | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Wählen Sie ein Panel → Widget hinzufügen → Gleitverhältnis* |
+| Durch Tippen | Wechselt zwischen *Durchschnittliches Gleitverhältnis* und *Durchschnittliche Vertikalgeschwindigkeit*  |
 | Langes Tippen | Öffnet das [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -297,7 +303,7 @@ Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*
 <TabItem value="ios" label="iOS">
 
 - **Durchschnittliches Gleitverhältnis** zeigt das durchschnittliche Gleitverhältnis für ein bestimmtes Zeitintervall an.
-- **Durchschnittliche Vertikalgeschwindigkeit** gibt die Rate an, mit der ein Objekt über eine Weile auf- oder absteigt. Nur der erste und letzte Punkt des Zeitintervalls werden zur Bewertung herangezogen. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen. Sie sollten den [Kartenmarker](../personal/markers.md) als Zielpunkt verwenden.
+- **Durchschnittliche Vertikalgeschwindigkeit** zeigt an, wie schnell Sie innerhalb des Zeitintervalls steigen oder sinken: die Höhendifferenz zwischen dem ersten und letzten Punkt des Intervalls, geteilt durch die Zeit zwischen ihnen. Positive Werte bedeuten Steigen, negative Werte bedeuten Sinken. Sie können das Zeitintervall für dieses Widget von 15 Sekunden bis 60 Minuten einstellen.
 
 | | |
 |:------------|:------------|
@@ -532,7 +538,7 @@ Reiseaufzeichnungs-Widgets beziehen sich auf das [<Translate android="true" ids=
 
 :::note
 Um Widgets für externe Sensoren zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Plugin für externe Sensoren](../plugins/external-sensors.md).
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -579,7 +585,7 @@ Widgets beziehen sich auf das [Plugin für externe Sensoren](../plugins/external
 
 :::note
 Um Fahrzeugmetrik-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md).
-::;
+:::
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -619,7 +625,7 @@ Die Widgets gehören zum [Fahrzeugmetrik-Plugin](../plugins/vehicle-metrics.md#w
 
 :::note
 Um Wetter-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Wetter-Plugin](../plugins/weather.md).
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -699,7 +705,7 @@ Dies ist ein Mapillary-Plugin-Widget, das schnellen Zugriff auf die Mapillary-An
 
 :::note
 Um Audio-/Videonotizen-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [Audio-/Videonotizen-Plugin](../plugins/audio-video-notes.md).
-::;
+:::
 
 ![Audio-Videonotizen-Widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -743,7 +749,7 @@ Dieses OsmAnd Tracker-Plugin-Widget ist verwendet, um schnell auf die OsmAnd Tra
 
 :::note
 Um Entwickler-Widgets zum Kartenbildschirm hinzuzufügen, aktivieren Sie das OsmAnd [OsmAnd-Entwicklungs-Plugin](../plugins/development.md).
-::;
+:::
 
 **Entwickler-Widgets** liefern Informationen über die [Rendering-Geschwindigkeit](../plugins/development.md#map-rendering-fps-widget) der Karte und die Parameter der virtuellen Kameraposition, einschließlich [Zoomstufe](../plugins/development.md#zoom-level), [Entfernung](../plugins/development.md#distance-to-target) zum Kartenzentrum, [Kamerahöhe](../plugins/development.md#camera-elevation) und [Neigungswinkel](../plugins/development.md#camera-tilt).  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 1cd614915f8ad88176c601eec31f3839c53ac00e85b5c837155ee5bb9e83514c
+source-hash: 04bb8eb2b1c8b30b97b5016c68f2b0de688c38c44449e4ebb8b695d258cad44b
 sidebar_position: 2
 title: Rastreador de Embarcações AIS
 ---
@@ -14,12 +14,11 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-
-<InfoAndroidOnly />
-
 ## Visão Geral {#overview}
 
 O plugin **Rastreador de Embarcações AIS** exibe posições do [Sistema de Identificação Automática (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) e informações detalhadas sobre embarcações próximas. Os dados AIS são recebidos via conexão de rede de um receptor AIS externo.
+
+O plugin pode receber dados NMEA por meio de uma conexão de rede usando TCP ou UDP. As posições GPS recebidas de mensagens NMEA RMC/GGA também podem ser usadas como Minha localização no OsmAnd.
 
 :::caution AVISO LEGAL
 **Este plugin é um projeto de hobby e não foi projetado para confiabilidade ou precisão. NÃO confie neste software para navegação ou segurança da vida.**
@@ -28,12 +27,14 @@ O plugin **Rastreador de Embarcações AIS** exibe posições do [Sistema de Ide
 
 ## Parâmetros de Configuração Necessários {#required-setup-parameters}
 
-A capacidade de usar mapas online é automaticamente ativada na versão iOS do OsmAnd. Para exibir mapas online no Android, você precisa fazer as seguintes configurações:
+Para usar o plugin Rastreador de Embarcações AIS, você precisa ativar o plugin e configurar uma conexão de rede com uma fonte de dados AIS/NMEA externa:
 
 1. [Ative](../plugins/index.md#enable--disable) o plugin **Rastreador de embarcações AIS** em *Menu Principal → Plugins → Rastreador de embarcações AIS*.
 2. Configure as [configurações AIS](../map/raster-maps.md#layers)
-3. Configure uma **conexão de servidor AIS** ou conecte um **receptor AIS externo**.
+3. Configure a conexão com sua **fonte de dados AIS/NMEA** usando **TCP** ou **UDP**.
 4. Verifique se as embarcações são exibidas no mapa do OsmAnd.
+
+No iOS, você pode ativar adicionalmente *Usar NMEA como fonte de localização* para usar posições GPS de mensagens NMEA RMC/GGA como sua localização atual no OsmAnd.
 
 ## Embarcações no Mapa {#vessels-on-the-map}
 
@@ -54,6 +55,12 @@ O AIS opera em *frequências VHF* (161,975 MHz e 162,025 MHz) e tem um alcance d
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+![Rastreador de embarcações AIS](@site/static/img/plugins/ais/ais.webp)
+
+</TabItem>
+
 </Tabs>
 
 Quando configurado corretamente, as posições das embarcações aparecerão no mapa. Principais características:
@@ -69,8 +76,13 @@ Quando configurado corretamente, as posições das embarcações aparecerão no 
 
 <TabItem value="android" label="Android">
 
-![Rastreador de embarcações AIS](@site/static/img/plugins/ais/ais_menu.png)  
-![Rastreador de embarcações AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+![Rastreador de embarcações AIS](@site/static/img/plugins/ais/ais_menu.png) ![Rastreador de embarcações AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Rastreador de embarcações AIS](@site/static/img/plugins/ais/ais_menu.webp)
 
 </TabItem>
 
@@ -100,8 +112,8 @@ As embarcações AIS transmitem três tipos de dados:
     - **Taxa de Curva (ROT)** (*Velocidade de mudança de curso*)  
     - **Hora da Última Atualização**  
 
-3. Informações da Viagem (definidas manualmente pela tripulação).  
-    *Enviadas a cada **6 minutos**, definidas manualmente pela tripulação*
+3. Informações da Viagem (definidas manualmente pela tripagem).  
+    *Enviadas a cada **6 minutos**, definidas manualmente pela tripagem*
 
     - **Porto de Destino**
     - **Tempo Estimado de Chegada (ETA)**  
@@ -155,7 +167,15 @@ As embarcações AIS transmitem três tipos de dados:
 
 *<Translate android="true" ids="shared_string_menu,plugins_menu_group,plugin_ais_tracker_name,shared_string_settings"/>*
 
-![Configurações AIS](@site/static/img/plugins/ais/ais_settings_2.png)  
+![Configurações AIS](@site/static/img/plugins/ais/ais_settings_2.webp)  
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *Rastreador de embarcações AIS* → *<Translate ios="true" ids="shared_string_settings"/>* 
+
+![Rastreador de embarcações AIS](@site/static/img/plugins/ais/ais_settings_ios.webp)
 
 </TabItem>
 
@@ -171,10 +191,12 @@ O plugin *Rastreador de embarcações AIS* oferece várias configurações para 
 | Endereço IP | Defina o IP da fonte de dados AIS (se TCP for usado) | `192.168.200.16` |
 | Porta TCP   | Defina o número da porta TCP para dados AIS | `4001` |
 | Porta UDP   | Defina a porta UDP para recepção AIS do OsmAnd  | `10110` |
+| Receber dados AIS mesmo se o OsmAnd estiver pausado (*somente Android*)   | Mantenha o ouvinte de mensagens AIS em execução se o OsmAnd estiver pausado ou em segundo plano. Se desativado, nenhuma mensagem AIS é recebida quando o OsmAnd está em segundo plano  | `Sim/Não` |
+| Usar NMEA como fonte de localização (*somente iOS*)   | Use posições GPS de mensagens NMEA RMC/GGA como Minha localização  | `Ligado/Desligado` |
 | | | |
 | **Tempo limite de recepção de sinal AIS** | |  |
-| Tempo limite para objetos AIS perdidos     | As embarcações desaparecem se nenhum sinal for recebido por um tempo definido | `3 - 20 min` |
-| Tempo limite para visibilidade da embarcação      | Os ícones das embarcações mudarão de estado quando nenhum sinal for recebido | `2 - 15 min / Desativado` |
+| Tempo limite de embarcação desatualizada      | Defina o tempo limite para visibilidade desatualizada da embarcação: após esse tempo sem recepção de sinal, o símbolo da embarcação será riscado | `2 - 15 min / Desativado` |
+| Tempo limite para visibilidade quando a embarcação é perdida     | Defina um tempo limite para visibilidade de objetos AIS: se nenhum sinal for recebido dentro da duração especificada, o objeto será removido automaticamente da exibição | `3 - 20 min` |
 | | | |
 | **Alertas de Ponto de Aproximação Mais Próximo (CPA)** | | |
 | Tempo de Aviso de CPA | A embarcação é marcada em vermelho se o tempo para o CPA estiver abaixo deste limite | `1 - 60 min / Desativado` |

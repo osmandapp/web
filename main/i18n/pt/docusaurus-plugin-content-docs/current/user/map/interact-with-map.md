@@ -1,5 +1,5 @@
 ---
-source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
+source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
 sidebar_position: 2
 title: Interagir com o Mapa
 ---
@@ -218,8 +218,6 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_
 **Visualização em Globo** permite que você exiba o mapa como uma Terra esférica em vez de uma projeção plana. Este modo altera a geometria da superfície do mapa e adapta a interação do mapa à navegação esférica.  
 
 A Visualização em Globo está atualmente disponível apenas quando:
-- O [plugin de Desenvolvimento](../plugins/development.md) está ativado.  
-Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - O [plugin de Topografia](../plugins/topography.md) está ativado.  
 Vá para: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - O [Motor de renderização do mapa](../personal/global-settings.md#map-rendering-engine) está definido para a Versão 2 (OpenGL).  

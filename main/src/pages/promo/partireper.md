@@ -30,7 +30,7 @@ OsmAnd e ["PARTIREper"](https://www.partireper.it/) vi presentano l'abbonamento 
 
 1. **Inserite il vostro indirizzo e-mail** per la registrazione:
    
-<RegisterUserPromoBlock  promoKey='partireper1'/>
+<RegisterUserPromoBlock  promoKey='partireper2'/>
 
 <p> </p>
 
@@ -56,7 +56,7 @@ You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='partireper1'/>
+<RegisterUserPromoBlock  promoKey='partireper2'/>
 
 <p> </p>
 

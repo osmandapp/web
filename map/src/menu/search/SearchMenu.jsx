@@ -18,6 +18,7 @@ import {
 import { matchPath, useNavigate } from 'react-router-dom';
 import PoiManager, {
     getCategoryIcon,
+    getCategoryItemName,
     getCatPoiIconName,
     getSearchResultIcon,
     translatePoi,
@@ -119,11 +120,9 @@ export default function SearchMenu() {
                         const validCategories = Object.values(categoriesResult).filter(
                             (item) => item[CATEGORY_KEY_NAME] !== undefined
                         );
-                        const sortedCategories = validCategories?.toSorted((a, b) => {
-                            const nameA = PoiManager.formattingPoiType(t(`poi_${a[CATEGORY_KEY_NAME]}`));
-                            const nameB = PoiManager.formattingPoiType(t(`poi_${b[CATEGORY_KEY_NAME]}`));
-                            return collator.compare(nameA, nameB);
-                        });
+                        const sortedCategories = validCategories?.toSorted((a, b) =>
+                            collator.compare(getCategoryItemName(a, t), getCategoryItemName(b, t))
+                        );
                         getCategoriesIcons(sortedCategories);
                         setSearchCategories(sortedCategories);
                     } else {

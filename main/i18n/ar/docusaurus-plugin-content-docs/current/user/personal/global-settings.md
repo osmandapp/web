@@ -1,7 +1,7 @@
 ---
-source-hash: bd81c2321c74c63107dfc284a099f5a70651f4b9ec53164117f0449dcf5774a9
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
-title:  Global Settings
+title: الإعدادات العامة
 ---
 
 import Tabs from '@theme/Tabs';
@@ -42,7 +42,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## عام {#general}
 
-يحتوي هذا القسم على الإعدادات الأساسية لـ OsmAnd، مثل اختيار [الملف الشخصي الافتراضي](#default-profile) عند تحميل التطبيق، واختيار [محرك العرض](#map-rendering-engine) و[مجلد التخزين](#data-storage-folder) حيث سيتم حفظ البيانات.  
+يحتوي هذا القسم على الإعدادات الأساسية لـ OsmAnd، مثل اختيار [الملف الشخصي الافتراضي](#default-profile) عند تحميل التطبيق، واختيار [محرك العرض](#map-rendering-engine) و[مجلد التخزين](#data-storage) حيث سيتم حفظ البيانات.  
 
 
 ### الملف الشخصي الافتراضي {#default-profile}
@@ -79,7 +79,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![إعدادات ملف CarPlay iOS](@site/static/img/personal/profiles/CarPlay_ios.png)  
 
-يُستخدم [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) عند الاتصال ببرنامج [CarPlay](https://support.apple.com/en-gb/HT205634) في سيارتك، ويساعدك على الاستفادة القصصى من الإصدار المحسّن من تطبيق OsmAnd باستخدام أنظمة الصوت والفيديو لعرض البيانات على هاتفك.
+يُستخدم [**<Translate ios="true" ids="carplay_profile"/>**](../navigation/car-play.md) عند الاتصال ببرنامج [CarPlay](https://support.apple.com/en-gb/HT205634) في سيارتك، ويساعدك على الاستفادة القصوى من الإصدار المحسّن من تطبيق OsmAnd باستخدام أنظمة الصوت والفيديو لعرض البيانات على هاتفك.
 
 
 ### تخزين البيانات {#data-storage}
@@ -99,10 +99,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - *ذاكرة التطبيق الداخلية*. فقط تطبيق OsmAnd لديه الوصول إلى بياناته ولا تطبيقات خارجية.
     - *الذاكرة المشتركة*. غير متاحة بعد الآن.
     - *التخزين الخارجي 1*. فقط تطبيق OsmAnd واحد لديه الوصول وتطبيقات الإدارة وUSB.
+    - *التخزين الخارجي المرئي 1*. يتم تخزين البيانات في مجلد Android/media، وهو مفتوح لمديري الملفات وUSB. لا يلزم أذونات تخزين إضافية.
     - *التخزين متعدد المستخدمين*. فقط تطبيق OsmAnd واحد لديه الوصول، لكنه مشترك بين عدة مستخدمين أندرويد.
     - *محدد يدويًا*. يعتمد على المسار.
 
-:::note Android 12+ (change storage folder)
+:::note أندرويد 12+ (تغيير مجلد التخزين)
 تم تنفيذ إرشادات وصول جديدة للتخزين في إصدارات أندرويد 11-12. راجع قسم [**استكشاف الأخطاء وإصلاحها**](../troubleshooting/maps-data.md#maps-slowly-loading-on-android-11-12-sd-card) للحصول على التفاصيل.
 :::
 
@@ -113,6 +114,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **التخزين المشترك** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **مجلد الكاميرا** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **محدد يدويًا** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+عند اختيار تخزين وسائط مختلف، يسأل OsmAnd عما إذا كان يجب نقل ملفات الوسائط الموجودة:
+- **النقل إلى الوجهة الجديدة** — انقل ملفات الوسائط الموجودة إلى التخزين المحدد.
+- **لا تنقل** — غيّر التخزين دون نقل الملفات الموجودة.
+- **إلغاء** — احتفظ بالتخزين الحالي.
 
 يوجد أيضًا مفتاح *الاحتفاظ دائمًا بنسخة محلية*. عند تفعيله، ينسخ OsmAnd الوسائط المستوردة من المعرض أو الملفات إلى تخزينه الخاص، بحيث تظل الوسائط المرفقة متاحة حتى لو تم حذف الملف الأصلي من المعرض أو نظام الملفات.
 
@@ -149,7 +155,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | الميزات | الإصدار 1 | الإصدار 2 (OpenGL) |
 |:---|:--- |:--- |
 | متعدد المنصات | غير مستخدم في إصدار iOS. | يناسب كلا الإصدارين. |
-| يعتمد على GPU / CPU | موصى به للأجهزة ذات الأداء المنخفض أو القديمة. | محرك عرض قوي. <br /> متاح فقط لـ [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) وإصدارات لاحقة، وفي وضع الاختبار لـ [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| يعتمد على GPU / CPU | موصى به للأجهزة ذات الأداء المنخفض أو القديمة. | محرك عرض قوي. <br /> متاح فقط لـ [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) وإصدارات لاحقة، وفي وضع الاختبار لـ [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | وضع 3D | من الممكن عرض الخريطة في 2D، ويمكنك تغيير زاوية العرض للحصول على [عرض ثلاثي الأبعاد](../widgets/map-buttons.md#3d-mode). | يمكنك عرض الخريطة في 2D و[3D](../widgets/map-buttons.md#3d-mode). |
 | عرض الخريطة | يتم عرض الخريطة بأكملها كمجموعة من البلاطات، والعلامات والخطوط والنصوص موجودة بالفعل داخل هذه البلاطات. | أولاً، يتم عرض حزمة البلاط بأكملها، ثم يتم تطبيق الرموز المتاحة على الخريطة، [طبقة بطبقة](../../technical/algorithms/map-rendering-layers.md). |
 | تراكب / تحت الرموز الشفافة | يدعم جميع الإعدادات. | لا يدعم طبقة رستر على النص المتجهي. |
@@ -317,7 +323,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,location_source" />* (*أندرويد فقط*)
 
-![إعدادات مصدر الموقع أندرويد](@site/static/img/personal/profiles/location_source_andr.png)
+![مصدر الموقع أندرويد](@site/static/img/personal/profiles/location_source_andr.png)
 
 يوفر OsmAnd لك خيارًا من الخدمات لتحديد موقعك. يُوصى بقراءة مزيد من المعلومات حول [إذن الموقع](../start-with/first-steps.md#permission-to-access-the-location) و[استكشاف الأخطاء وإصلاحها](../troubleshooting/track-recording-issues.md#osmand-39-altitude-issues-when-using-google-play-services) لهذا القسم.
 

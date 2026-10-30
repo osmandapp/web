@@ -22,14 +22,16 @@ import RegisterUserPromoBlock from "@site/src/components/RegisterUserPromoBlock"
 
 ¡Hola, amantes de las dos ruedas!
 
-OsmAnd y ["IBS Moto"](https://www.ibsmoto.com/) te presentan la suscripción a OsmAnd Pro por 1 año. Disfruta de todas las funciones de OsmAnd en [en todas las plataformas](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android y Web.
+OsmAnd y ["IBS Moto"](https://www.ibsmoto.com/) te presentan la suscripción a OsmAnd Pro por 1 año. Disfruta de todas las funciones de OsmAnd [en todas las plataformas](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android y Web.
+
+**VIII Fuengirola Challenge** · 13–15 de noviembre de 2026 · Andalucía · unos 500 km por la ruta **Terra Pirata**. Regístrate antes de la salida, instala OsmAnd y descarga los mapas de Andalucía para navegar sin conexión durante todo el recorrido.
 
 
 **Tus pasos**:
 
 1. **Ingresa tu correo electrónico** para el registro:
    
-<RegisterUserPromoBlock  promoKey='ibs1'/>
+<RegisterUserPromoBlock  promoKey='ibs2'/>
 
 <p> </p>
 
@@ -46,16 +48,18 @@ ______________________________
 
 **OsmAnd Pro for "IBS Moto"**
 
-Hello funs of two wheels!
+Hello fans of two wheels!
 
 OsmAnd and ["IBS Moto"](https://www.ibsmoto.com/) introduce and present you OsmAnd Pro subscriptions for 1 year. 
 You can use all OsmAnd features for [all platforms](https://osmand.net/docs/user/personal/osmand-cloud#cross-platform): iOS, Android and Web.
+
+**VIII Fuengirola Challenge** · November 13–15, 2026 · Andalusia · about 500 km on the **Terra Pirata** route. Register before the start, install OsmAnd and download the Andalusia maps so you can navigate offline along the whole route.
 
 **Your steps**:
 
 1. **Input your e-mail** for registration:
    
-<RegisterUserPromoBlock  promoKey='ibs1'/>
+<RegisterUserPromoBlock  promoKey='ibs2'/>
 
 <p> </p>
 

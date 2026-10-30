@@ -3,7 +3,7 @@ import React from 'react';
 import styles from '../login.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-import { ReactComponent as CloseIcon } from '../../assets/icons/ic_action_close.svg';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function BaseLoginDialog({ open, title = '', children, onClick }) {
     return (

@@ -256,7 +256,7 @@ The [simple](../widgets/configure-screen.md#widget-panels) *Glide Ratio* widgets
 - **Glide ratio to target** shows the exact glide ratio required to reach the target point.
 - **Target elevation** shows the target point elevation. The [Map marker](../personal/markers.md) should be used as the target point.
 
-To switch between these modes, tap directly on the widget. Switching option is not available in the [widget's context menu](../widgets/configure-screen.md#widget-context-menu). 
+To switch between these modes, tap directly on the widget. 
 
 | | |
 |:------------|:------------|
@@ -288,11 +288,13 @@ To switch between these modes, tap directly on the widget. Switching option is n
 
 <TabItem value="android" label="Android">
 
-**Average glide ratio** shows the average glide ratio for a specified time interval.
+- **Average glide ratio** shows the average glide ratio for a specified time interval.
+- **Average vertical speed** shows how fast you climb or descend over the time interval: the altitude difference between the first and last points of the interval, divided by the time between them. Positive values mean climbing, negative values mean descending. You can set the time interval for this widget from 15 seconds to 60 minutes.
 
 | | |
 |:------------|:------------|
 | Enable | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → Glide ratio* |
+| By tapping | Changes *Average glide ratio* or *Average vertical speed*  |
 | Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -300,7 +302,7 @@ To switch between these modes, tap directly on the widget. Switching option is n
 <TabItem value="ios" label="iOS">
 
 - **Average glide ratio** shows the average glide ratio for a specified time interval.
-- **Average vertical speed** indicates the rate at which an object ascends or descends over a while. Only the first and last points of the time interval are considered for evaluation. You can set the time interval for this widget from 15 seconds to 60 minutes. You should use the [Map marker](../personal/markers.md) as the target point.
+- **Average vertical speed** shows how fast you climb or descend over the time interval: the altitude difference between the first and last points of the interval, divided by the time between them. Positive values mean climbing, negative values mean descending. You can set the time interval for this widget from 15 seconds to 60 minutes.
 
 | | |
 |:------------|:------------|

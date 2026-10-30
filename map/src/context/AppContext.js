@@ -149,7 +149,7 @@ export const AppContextProvider = (props) => {
 
     const selectedUpdatedLayerRef = useRef(null); // layer whose icon we replaced — restore on cleanup
     const selectedCreatedLayerRef = useRef(null); // layer we created — remove on cleanup
-    const selectedHiddenLayersRef = useRef([]); // layers hidden near selected marker — restore when selection changes
+    const selectedHiddenLayersRef = useRef([]); // layers hidden under selected marker — restore when selection changes
 
     const [searchQuery, setSearchQuery] = useState(null);
     const [searchResult, setSearchResult] = useState(null);
@@ -164,12 +164,7 @@ export const AppContextProvider = (props) => {
     const [poiByUrl, setPoiByUrl] = useState(null);
     const [stopByUrl, setStopByUrl] = useState(null);
 
-    // travel
-    const [openTravel, setOpenTravel] = useState(false);
-    const [searchTravelRoutes, setSearchTravelRoutes] = useState(null);
-    const [selectedTravelRoute, setSelectedTravelRoute] = useState(null);
     const [selectedTransportRoute, setSelectedTransportRoute] = useState(null);
-    const [travelRouteIdByUrl, setTravelRouteIdByUrl] = useState(null);
     // share
     const [shareFile, setShareFile] = useState(null);
     const [updatedRequestList, setUpdatedRequestList] = useState([]);
@@ -199,6 +194,7 @@ export const AppContextProvider = (props) => {
     const [exitGuards, setExitGuards] = useState({});
 
     const [processingGroups, setProcessingGroups] = useState(false);
+    const [processingDownloads, setProcessingDownloads] = useState([]);
     const [favLoading, setFavLoading] = useState(false);
     const [removeFavGroup, setRemoveFavGroup] = useState(null);
     const [wptRecents, setWptRecents] = useState({
@@ -322,16 +318,14 @@ export const AppContextProvider = (props) => {
 
     const [processingPoiByUrl, setProcessingPoiByUrl] = useState(false);
     const [processingStopByUrl, setProcessingStopByUrl] = useState(false);
-    const [processingTravelRouteByUrl, setProcessingTravelRouteByUrl] = useState(false);
-    const [travelRoutesHidden, setTravelRoutesHidden] = useState(false); // hide other travel routes on the map
-    const [travelShowStartFinish, setTravelShowStartFinish] = useState(false);
 
     const [closeMapObj, setCloseMapObj] = useState(false);
+    const [closeSelectedMenu, setCloseSelectedMenu] = useState(false);
+    const [closableMenu, setClosableMenu] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
     const [processingAnalytics, setProcessingAnalytics] = useState(false);
     const [openNavigationSettings, setOpenNavigationSettings] = useState(false);
-    const [openTravelFilters, setOpenTravelFilters] = useState(false);
 
     useEffect(() => {
         async function loadSort() {
@@ -610,6 +604,8 @@ export const AppContextProvider = (props) => {
                 setUpdateMarkers,
                 processingGroups,
                 setProcessingGroups,
+                processingDownloads,
+                setProcessingDownloads,
                 selectedSort,
                 setSelectedSort,
                 visibleTracks,
@@ -655,14 +651,8 @@ export const AppContextProvider = (props) => {
                 selectedHiddenLayersRef,
                 favLoading,
                 setFavLoading,
-                searchTravelRoutes,
-                setSearchTravelRoutes,
-                selectedTravelRoute,
-                setSelectedTravelRoute,
                 selectedTransportRoute,
                 setSelectedTransportRoute,
-                travelRouteIdByUrl,
-                setTravelRouteIdByUrl,
                 openProFeatures,
                 setOpenProFeatures,
                 selectedSearchMarker,
@@ -715,8 +705,6 @@ export const AppContextProvider = (props) => {
                 setVisibleBounds,
                 exploreMenu,
                 setExploreMenu,
-                openTravel,
-                setOpenTravel,
                 poiCatMenu,
                 setPoiCatMenu,
                 selectedPoiObj,
@@ -733,6 +721,10 @@ export const AppContextProvider = (props) => {
                 setStopByUrl,
                 closeMapObj,
                 setCloseMapObj,
+                closeSelectedMenu,
+                setCloseSelectedMenu,
+                closableMenu,
+                setClosableMenu,
                 saveTrackToCloud,
                 setSaveTrackToCloud,
                 selectedLocalTrackObj,
@@ -743,18 +735,10 @@ export const AppContextProvider = (props) => {
                 setProcessingPoiByUrl,
                 processingStopByUrl,
                 setProcessingStopByUrl,
-                processingTravelRouteByUrl,
-                setProcessingTravelRouteByUrl,
-                travelRoutesHidden,
-                setTravelRoutesHidden,
-                travelShowStartFinish,
-                setTravelShowStartFinish,
                 processingAnalytics,
                 setProcessingAnalytics,
                 openNavigationSettings,
                 setOpenNavigationSettings,
-                openTravelFilters,
-                setOpenTravelFilters,
                 navigationHistory,
                 setNavigationHistory,
                 previousRoute,

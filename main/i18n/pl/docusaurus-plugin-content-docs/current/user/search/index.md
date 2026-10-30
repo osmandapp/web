@@ -1,5 +1,5 @@
 ---
-source-hash: 892c634b7bf81dafb9296c6e2b65ee7f15f7bf8b1d0e766e4ed35dfd9df8901e
+source-hash: bf407399cdc5546133d08abd4e5c9fb3226abf61b6a07f922fcb5088bb047056
 sidebar_position: 5
 title: Szukaj
 ---
@@ -14,29 +14,28 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Przegląd {#overview}
 
-**Szukaj** to ważne narzędzie OsmAnd, które pozwala znaleźć wymagane miejsca, obiekty lub adresy. Dostępne opcje wyszukiwania oferują różne sposoby znajdowania obiektów. Możesz użyć wyszukiwania według adresu do precyzyjnej nawigacji, wyszukiwania według kategorii POI, aby znaleźć najbliższe obiekty, wyszukiwania według historii dla szybkiego dostępu do poprzednich zapytań i wyszukiwania według współrzędnych dla precyzyjnej lokalizacji.
+**Szukaj** to ważne narzędzie OsmAnd, które pozwala znaleźć wymagane miejsca, obiekty lub adresy. Dostępne opcje wyszukiwania oferują różne sposoby znajdowania obiektów. Możesz użyć wyszukiwania według adresu do precyzyjnej nawigacji, wyszukiwania według kategorii POI, aby znaleźć najbliższe obiekty, karty Eksploruj, aby odkrywać popularne miejsca w pobliżu i wracać do miejsc z historii i wyszukiwania według współrzędnych dla precyzyjnej lokalizacji.
 
 
 ### [Szukaj wszystko](./search-all.md) {#search-all}
 
-Ten artykuł opisuje główne funkcje i dostępne opcje narzędzia wyszukiwania.
+Narzędzie wyszukiwania znajduje adresy, punkty zainteresowania, współrzędne i nazwy miejsc wpisane w jednym polu wyszukiwania. Artykuł omawia także sortowanie wyników wyszukiwania, wyszukiwanie w okolicy i wyszukiwanie na mapie.
 
 
 ### [Szukaj adres](./search-address.md) {#search-address}
 
-Narzędzie wyszukiwania posiada takie opcje, jak sekwencyjne wyszukiwanie według adresu, z już przygotowanymi danymi do szybkiego wyboru i wyszukiwanie według kodu pocztowego. Opcje te zostały opisane w tym artykule.
+Wyszukiwanie adresu pomaga znaleźć dokładny adres poprzez wpisanie go w całości, wybieranie kolejno miasta, ulicy i numeru domu lub wyszukiwanie według kodu pocztowego.
 
 
-### [Historia wyszukiwania](./search-history.md) {#search-history}
+### [Eksploruj w wyszukiwaniu](./search-history.md) {#search-explore}
 
-Ten artykuł szczegółowo omawia możliwości wyszukiwania historii zapytań.
+Karta Eksploruj pomaga odkrywać popularne miejsca wokół Ciebie i wracać do miejsc z historii. W systemie Android karta ma dwie sekcje. Popularne miejsca w pobliżu pokazują znane zabytki i atrakcje w pobliżu Twojej lokalizacji, a Historia zawiera Twoje poprzednie wyszukiwania i cele nawigacji. W systemie iOS dostępna jest tylko historia wyszukiwania, na karcie Historia.
 
 
 ### [Szukaj POI](./search-poi.md) {#search-poi}
 
-Wyszukiwanie we wszystkich kategoriach POI i ustawianie niestandardowego wyszukiwania POI zostało opisane w tym artykule.
-
+Wyszukiwanie POI znajduje punkty zainteresowania według kategorii, nazwy lub marki. Niestandardowe filtry POI pozwalają łączyć kilka kategorii i zapisywać je do późniejszego użycia.
 
 ### [Szukaj współrzędne](./search-coordinates.md) {#search-coordinates}
 
-W tym artykule dowiesz się, jak wyszukiwać prawidłowe lokalizacje za pomocą współrzędnych.
+Wyszukiwanie współrzędnych znajduje dokładną lokalizację na podstawie jej współrzędnych geograficznych.

@@ -1,5 +1,5 @@
 ---
-source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
+source-hash: 334708e5a8593c3a9d8ad26cd8d035221ee3dbfa4929c3dd8a3cbfc49b55fc2d
 sidebar_position: 2
 title:  Navegar por Pista
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 La opción *Navegación por pista* (GPX) le permite seguir una ruta o pista predefinida en un mapa. Puede ser particularmente útil para actividades al aire libre como senderismo, ciclismo o conducción todoterreno, donde tener una ruta planificada mejora la seguridad y la eficiencia. Si viaja en un grupo organizado, esta función le ayuda a usted y a cada miembro del grupo a tener la misma información de ruta que los demás.  
 
-La opción *Navegación por pista* también se puede utilizar en la vida cotidiana. Puede usar una [pista grabada](../../plugins/trip-recording.md) previamente o [crear una pista](../../personal/tracks/manage-tracks.md#create-a-track) y compartirla con su familia o amigos en lugar de explicarles la ruta. También puede usar las [rutas en el mapa de OsmAnd](../../../../blog/routes/) para la navegación. Cómo resaltarlas en el mapa y qué significan sus colores se describe en la [sección Rutas](../../map/vector-maps.md#routes) del artículo *Mapas vectoriales*.  
+La opción *Navegación por pista* también se puede utilizar en la vida cotidiana. Puede usar una [pista grabada](../../plugins/trip-recording.md) previamente o [crear una pista](../../personal/tracks/manage-tracks.md#create-a-track) y compartirla con su familia o amigos en lugar de explicarles la ruta. También puede usar las [rutas en el mapa de OsmAnd](https://osmand.net/blog/routes/) para la navegación. Cómo resaltarlas en el mapa y qué significan sus colores se describe en la [sección Rutas](../../map/vector-maps.md#routes) del artículo *Mapas vectoriales*.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

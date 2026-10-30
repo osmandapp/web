@@ -1,5 +1,5 @@
 ---
-source-hash: 892c634b7bf81dafb9296c6e2b65ee7f15f7bf8b1d0e766e4ed35dfd9df8901e
+source-hash: bf407399cdc5546133d08abd4e5c9fb3226abf61b6a07f922fcb5088bb047056
 sidebar_position: 5
 title: Ricerca
 ---
@@ -14,29 +14,28 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Panoramica {#overview}
 
-La **Ricerca** è uno strumento importante di OsmAnd che ti consente di trovare i luoghi, gli oggetti o gli indirizzi richiesti. Le opzioni di ricerca disponibili offrono diversi modi per trovare gli oggetti. Puoi utilizzare la ricerca per indirizzo per una navigazione precisa, la ricerca per categorie POI per trovare gli oggetti più vicini, la ricerca per cronologia per un accesso rapido alle richieste precedenti e la ricerca per coordinate per una posizione precisa.
+La **Ricerca** è uno strumento importante di OsmAnd che ti consente di trovare i luoghi, gli oggetti o gli indirizzi richiesti. Le opzioni di ricerca disponibili offrono diversi modi per trovare gli oggetti. Puoi utilizzare la ricerca per indirizzo per una navigazione precisa, la ricerca per categorie POI per trovare gli oggetti più vicini, la scheda Esplora per scoprire i luoghi popolari nelle vicinanze e tornare ai luoghi della tua cronologia e la ricerca per coordinate per una posizione precisa.
 
 
 ### [Ricerca tutto](./search-all.md) {#search-all}
 
-Questo articolo descrive le caratteristiche principali e le opzioni disponibili dello strumento di ricerca.
+Lo strumento di ricerca trova indirizzi, punti di interesse, coordinate e nomi di luoghi inseriti in un unico campo di ricerca. L'articolo tratta anche l'ordinamento dei risultati di ricerca, la Ricerca nei dintorni e la Ricerca sulla mappa.
 
 
 ### [Ricerca indirizzo](./search-address.md) {#search-address}
 
-Lo strumento di ricerca ha opzioni come la ricerca sequenziale per indirizzo, con dati già preparati per una selezione rapida e la ricerca per codice postale. Queste opzioni sono descritte in questo articolo.
+La ricerca per indirizzo ti aiuta a trovare un indirizzo esatto digitandolo per intero, selezionando uno dopo l'altro la città, la via e il numero civico, oppure tramite codice postale.
 
 
-### [Cronologia ricerche](./search-history.md) {#search-history}
+### [Ricerca Esplora](./search-history.md) {#search-explore}
 
-Questo articolo discute in dettaglio le capacità di ricerca della cronologia delle query.
+La scheda Esplora ti aiuta a scoprire i luoghi popolari intorno a te e a tornare ai luoghi della tua cronologia. Su Android la scheda ha due sezioni. Luoghi popolari nelle vicinanze mostra punti di riferimento e attrazioni famosi vicino alla tua posizione, e Cronologia elenca le tue ricerche precedenti e le destinazioni di navigazione. Su iOS è disponibile solo la cronologia delle ricerche, nella scheda Cronologia.
 
 
 ### [Ricerca POI](./search-poi.md) {#search-poi}
 
-La ricerca attraverso tutte le categorie POI e l'impostazione di una ricerca POI personalizzata sono descritte in questo articolo.
-
+La ricerca POI trova i punti di interesse per categoria, nome o marchio. I filtri POI personalizzati ti permettono di combinare più categorie e salvarle per un uso successivo.
 
 ### [Ricerca coordinate](./search-coordinates.md) {#search-coordinates}
 
-In questo articolo, imparerai come cercare le posizioni corrette utilizzando le coordinate.
+La ricerca per coordinate trova una posizione esatta a partire dalle sue coordinate geografiche.

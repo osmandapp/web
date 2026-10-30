@@ -30,7 +30,7 @@ The *Import* and *Export* allow you to save data from generated `.osf` **files**
 - **Settings:**  
         [Profiles](../personal/profiles.md#actions), &nbsp;[OsmAnd/General Settings](../personal/global-settings.md), &nbsp;[Colors](../personal/color-palette-schemes.md), &nbsp;[Quick action](../widgets/quick-action.md), &nbsp;[POI Type](../map/point-layers-on-map.md#poi-types), &nbsp;[Avoid road](../map/map-context-menu.md#avoid-road).
 - **My Places:**  
-        [Favorites](../personal/favorites.md#export--import), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM notes*, *OSM edits](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[Markers history*, *Search history*, *Navigation history](../personal/global-settings.md#history), &nbsp;*Itinerary*.
+        [Favorites](../personal/favorites.md#export--import), &nbsp;[Attached media](../personal/favorites.md#media), &nbsp;[Tracks](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM notes*, *OSM edits](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[Markers history*, *Search history*, *Navigation history](../personal/global-settings.md#history), &nbsp;*Itinerary*.
 - **Resources:**  
         [Rendering style](../map/map-styles.md#custom-map-style), &nbsp;[Routing](../navigation/routing/osmand-routing.md), &nbsp;[Online routing engines](../navigation/routing/online-routing.md), &nbsp;[Map sources*, *Standard/Offline Maps](../map/raster-maps.md), &nbsp;[Wikipedia and Travel maps](../plan-route/travel-guides.md), &nbsp;[Nautical maps](../plugins/nautical-charts.md), &nbsp;[Road maps](../map/vector-maps.md#road-style), &nbsp;[Topography maps](../plugins/topography.md), &nbsp;[Voice prompts (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Voice prompts (recorded)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favorites backup](../personal/favorites.md#automatic-favorites-backup).
 
@@ -92,14 +92,14 @@ Opens and restores `.osf` files. Tap the file in the device's file manager or us
 - *Restart*. After importing the files, the application must be restarted.
 
 Supported import file types:
-- [Tracks, routes](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) & [favorites](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML and KMZ files are imported with conversion into GPX format.
+- [Tracks, routes](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [favorites](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML and KMZ files are imported with conversion into GPX format.
 - [OsmAnd vector maps](https://osmand.net/docs/user/map/vector-maps): `.obf`.
-- [Online maps tiles](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Online maps tiles](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [Backups & profiles](#export): `.osf`.
-- [Heightmaps / 3D data](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Heightmaps / 3D data](https://osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [Other](color-palette-schemes.md): `.txt`.
 
-For a technical overview of all supported formats, see [OsmAnd File Formats](https://www.osmand.net/docs/technical/osmand-file-formats/).
+For a technical overview of all supported formats, see [OsmAnd File Formats](https://osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

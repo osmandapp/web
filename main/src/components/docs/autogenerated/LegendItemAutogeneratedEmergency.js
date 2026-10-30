@@ -22,5 +22,6 @@ export default function Render() {
         'Lifeguard tower' : {poiName:'lifeguard', poiName2:'lifeguard_tower', folderName:'emergency/emergency_emergency_lifeguard_lifeguard_tower'},
         'Emergency bay' : {poiName:'emergency_bay', poiName2:null, folderName:'emergency/emergency_highway_emergency_bay'},
         'Disaster responce station' : {poiName:'disaster_response', poiName2:null, folderName:'emergency/emergency_emergency_disaster_response'},
+        'Disaster help point' : {poiName:'disaster_help_point', poiName2:null, folderName:'emergency/emergency_emergency_disaster_help_point'},
     }});
 }

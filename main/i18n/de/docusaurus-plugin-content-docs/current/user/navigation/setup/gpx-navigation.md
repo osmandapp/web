@@ -1,5 +1,5 @@
 ---
-source-hash: 7b80c4a374ee1e6215b3369a16849975f2db3ea4aa8e345e992e364094f46a25
+source-hash: 334708e5a8593c3a9d8ad26cd8d035221ee3dbfa4929c3dd8a3cbfc49b55fc2d
 sidebar_position: 2
 title:  Navigation entlang eines Tracks
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Die Option *Navigation entlang eines Tracks* (GPX) ermöglicht es Ihnen, einer vordefinierten Route oder einem Track auf einer Karte zu folgen. Dies kann besonders nützlich für Outdoor-Aktivitäten wie Wandern, Radfahren oder Geländefahrten sein, bei denen eine geplante Route die Sicherheit und Effizienz verbessert. Wenn Sie in einer organisierten Gruppe reisen, hilft diese Funktion Ihnen und jedem Mitglied der Gruppe, die gleichen Routeninformationen wie die anderen zu haben.  
 
-Die Option *Navigation entlang eines Tracks* kann auch im Alltag verwendet werden. Sie können einen zuvor [aufgezeichneten Track](../../plugins/trip-recording.md) verwenden oder [einen Track erstellen](../../personal/tracks/manage-tracks.md#create-a-track) und ihn mit Ihrer Familie oder Freunden teilen, anstatt ihnen die Route zu erklären. Sie können auch die [Routen auf der OsmAnd-Karte](../../../../blog/routes/) zur Navigation verwenden. Wie man sie auf der Karte hervorhebt und was ihre Farben bedeuten, wird im Abschnitt [Routen](../../map/vector-maps.md#routes) des Artikels *Vektorkarten* beschrieben.  
+Die Option *Navigation entlang eines Tracks* kann auch im Alltag verwendet werden. Sie können einen zuvor [aufgezeichneten Track](../../plugins/trip-recording.md) verwenden oder [einen Track erstellen](../../personal/tracks/manage-tracks.md#create-a-track) und ihn mit Ihrer Familie oder Freunden teilen, anstatt ihnen die Route zu erklären. Sie können auch die [Routen auf der OsmAnd-Karte](https://osmand.net/blog/routes/) zur Navigation verwenden. Wie man sie auf der Karte hervorhebt und was ihre Farben bedeuten, wird im Abschnitt [Routen](../../map/vector-maps.md#routes) des Artikels *Vektorkarten* beschrieben.  
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -191,7 +191,7 @@ Die Funktion **An Straßen anheften** richtet Ihren Track an der nächstgelegene
 
 OsmAnd heftet Routen automatisch an Straßen an, wenn das Werkzeug **Route planen** verwendet wird:
 
-- **Wegpunkte** werden automatisch an der nächstgelegenen verfügbaren Straße ausgerichtet (*außer bei [Luftlinien-Routing](../routing/straight-line-routing.md) und [Direkt-zum-Punkt-Routing](../routing/direct-to-point-routing.md)*).
+- **Wegpunkte** werden automatisch an der nächstgelegenen verfügbaren Straße ausgerichtet (*außer bei [Luftlinien-Routing](../../navigation/routing/straight-line-routing.md) und [Direkt-zum-Punkt-Routing](../../navigation/routing/direct-to-point-routing.md)*).
 - Wenn keine Straßen erkannt werden (z. B. in Offroad-Umgebungen), folgt die Route **geraden Liniensegmenten**.
 - Sie können die Route **manuell anpassen**, indem Sie Wegpunkte an andere Orte ziehen.
 

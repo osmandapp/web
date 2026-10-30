@@ -26,7 +26,7 @@ Aşağıdaki OsmAnd ürünleri şu anda birden fazla platformda (Android, iOS ve
 **15. yıl dönümümüz** kutlamalarıyla yayınlanan **OsmAnd sürüm 5.1**'den itibaren, çapraz platform erişimi **Maps+**'a (önceden *Sınırsız* olarak biliniyordu) genişletilmiştir. Daha önce, yalnızca [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform) aboneliği çapraz platformdu.
 
 Çapraz platform erişimini etkinleştirmek için satın almalarınızın [OsmAnd Cloud](../personal/osmand-cloud.md#login) hesabınıza bağlı olması gerekir.
-Tüm OsmAnd ürünlerini buradan karşılaştırabilirsiniz: [satın alımlar arasındaki fark](https://osmand.net/docs/user/purchases/android/#difference-between-purchases)
+Tüm OsmAnd ürünlerini buradan karşılaştırabilirsiniz: [satın alımlar arasındaki fark](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)
 
 | **Ürün Türü**                 | **Çapraz Platform** | **Notlar**                                                                 |
 |-------------------------------|--------------------|--------------------------------------------------------------------------|

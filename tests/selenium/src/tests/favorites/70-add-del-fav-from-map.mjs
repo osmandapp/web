@@ -2,7 +2,7 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
-import { clickBy, matchTextBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, expectSelectedPinAtFavorite, matchTextBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
@@ -85,6 +85,7 @@ export default async function test() {
     await waitByRemoved(By.id('se-add-fav-dialog'));
     // check favorite info
     await waitBy(By.id(`se-fav-item-info-${favoriteName}`));
+    await expectSelectedPinAtFavorite(favoriteName); // the saved favorite keeps the selected pin at its point
     await matchTextBy(By.id('se-wpt-group'), `${favoriteGroupName} (1)`);
     await matchTextBy(By.id('se-wpt-address'), favoriteAddress);
     await clickBy(By.id('se-close-wpt-details'));

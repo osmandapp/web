@@ -1,5 +1,5 @@
 ---
-source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
+source-hash: 67e24e2d76639e1ba3e1dbe3fc8cff417ee3ff06770c41d09f400cac219c9cdf
 sidebar_position: 10
 sidebar_label:  البحث
 title: البحث على الموقع الإلكتروني
@@ -15,10 +15,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-<!--
-<InfoIncompleteArticle/>
--->
 
 
 ## نظرة عامة {#overview}
@@ -37,7 +33,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 استخدم **شريط البحث** للعثور على أماكن محددة أو نقاط اهتمام أو [مفضلات](../web/web-favorites.md) أو [مسارات](../web/web-tracks.md) بالاسم. انقر على أيقونة البحث، أدخل استعلامك، وحدد نتيجة من القائمة. يؤدي تحديد نقطة اهتمام إلى فتح [قائمة سياق نقطة الاهتمام](#poi-context-menu)، بينما يؤدي تحديد مفضلة أو مسار إلى فتح تفاصيله، حيث يمكنك عرض المعلومات واستخدام الإجراءات السريعة.
 
-إذا بحثت باسم فئة، قد تعرض النتيجة الأولى فئة نقطة الاهتمام المقابلة. انقر على الفئة لفتح عرض [بحث الفئات](#categories).
+يمكنك أيضًا دمج عدة أجزاء في استعلام واحد. أدخل فئة أو علامة تجارية مع اسم مكان، على سبيل المثال، `Hotel Berlin` أو `Billa Bratislava`، للعثور على نقاط اهتمام مطابقة في ذلك المكان. أدخل فئتين أو فئة وخاصية، على سبيل المثال، `Fuel Diesel` أو `Cafe Vegan`، للعثور على أماكن تطابق كلا الشرطين.
+
+إذا بحثت باسم فئة، قد تعرض النتيجة الأولى فئة نقطة الاهتمام المقابلة. يمكن إدخال أسماء الفئات بلغات مختلفة، على سبيل المثال، `bank` أو `банк`. انقر على الفئة لفتح عرض [بحث الفئات](#categories).
 
 ![خيارات البحث](@site/static/img/web/search_bar.png)
 
@@ -58,6 +56,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## قائمة سياق نقطة الاهتمام {#poi-context-menu}
 
 بغض النظر عن خيار البحث الذي تستخدمه (شريط البحث، أو الفئات، أو الاستكشاف)، يؤدي تحديد نقطة اهتمام على الخريطة أو في قائمة النتائج إلى فتح قائمة سياق نقطة الاهتمام. تعد قائمة السياق المكان الرئيسي لعرض معلومات نقطة الاهتمام وتنفيذ الإجراءات الشائعة. تجمع بين تفاصيل نقطة الاهتمام (مثل الموقع والبيانات ذات الصلة) مع الإجراءات السريعة (على سبيل المثال، الحفظ، أو المشاركة، أو بدء التنقل).
+
+للعودة إلى قائمة النتائج، انقر على *رجوع*. لإغلاق القائمة، انقر على *إغلاق* أو اضغط على Esc. يؤدي إغلاق القائمة إلى مسح البحث، لذا يفتح البحث في المرة التالية بدون النتائج السابقة. تبقى الخريطة في موضعها الحالي.
 
 ### تفاصيل نقطة الاهتمام {#poi-details}
 
@@ -82,85 +82,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **الاتجاهات من** — يحدد نقطة الاهتمام المحددة كنقطة البداية ويفتح لوحة الطريق حتى تتمكن من اختيار الوجهة والملف الشخصي.
 - **التنقل** — يحدد نقطة الاهتمام المحددة كنقطة الوجهة لـ [التنقل](../web/web-navigation.md#start-a-route).
 
-<!--
-Click the **🔍 button** to start the search. Enter a query in the **Search Line** and click on POI to open the [**POI Context Menu**](#explore-poi-data), where you can view the tags information.
-
-If you search by **Category name**, the first result will display the category of that POI.  If you click on a POI category, the [**Categories Search**](#categories) window opens.
-
-![Context Menu POI](@site/static/img/web/context_menu_poi.png)
-
-
-Click the chosen POI on the map or in the result list opens the **POI Context Menu**. This menu provides the following data and links:
-
-- **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
-- **🔍 Button**. Moves the map to the POI's location.  
-- **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
-- **Location**. Displays the coordinates of the POI.  
-- **Online Photos**. Provides Wikimedia data related to the POI, if available. Click the *Show All* to open the [Photo Gallery](#photo-gallery).
-- **Object Data**. Includes details such as contacts, social media links, Wikipedia links, descriptions, inscriptions, etc.  
-- **OSM ID**. The OpenStreetMap ID of the POI.  
-- **Coordinates**. Clicking the coordinates allows you to copy them.
-
-![Context Menu POI](@site/static/img/web/context_menu_poi_1.png)
-
-## Categories {#categories}
-
-You can choose and display one POI category on the map in the **Categories Menu**:
-
-- Select from the **6 most popular categories**.  
-- Or click **Show All** to open the full list of POI categories.
-
-![Categories POI](@site/static/img/web/categories_poi.png)
-
-Click the selected  POI on the map or in the results list to open the **POI Context Menu**. This menu provides the following data and links:
-
-- **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
-- **🔍 Button**. Moves the map to the POI's location.  
-- **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
-- **Location**. Displays the coordinates of the POI.  
-- **Online Photos**. Provides Wikimedia data related to the POI, if available. Click the *Show All* to open the [Photo Gallery](#photo-gallery).
-- **Object Data**. Includes details such as contacts, social media links, Wikipedia links, descriptions, inscriptions, etc.  
-- **OSM ID**. The OpenStreetMap ID of the POI.  
-- **Coordinates**. Clicking the coordinates allows you to copy them.
-
-![Context Menu POI](@site/static/img/web/categories_poi_1.png)
-
-
-## Explore {#explore}
-
-The **Explore** section in the Search menu makes it easier to find places and view points of interest (POIs) with their photos ([Wikidata source](https://www.wikidata.org/)) directly on the map.
-
-
-To get started:
-
-1. Click the **🔍 icon** to open the search tab, which displays popular POI categories and the **Explore** menu below.  
-2. The **Explore** data will automatically be displayed on the map.  
-3. Select **"Show All"** in the Explore section to open the full categories list with the ***Filter*** button at the top.  
-
-   ![Explore menu](@site/static/img/web/explore.png)
-
-4. Pressing the ***Filter* button** opens the Categories menu for "Explore." To refine your search, open the Categories menu and select the items you are interested in.  
-
-   ![Explore menu](@site/static/img/web/explore_cat.png)
-
-### Explore POI data {#explore-poi-data}
-
-Clicking on an image POI opens a new context menu that includes:
-
-- **Name and POI Tag**. Displays the name and general tag of the POI.  
-- **🔍 Button**. Moves the map to the POI's location.  
-- **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
-- **Location**. Displays the coordinates of the POI.  
-- **Description**. Provides additional information about the POI.  
-- **Online Photos**. Displays Wikimedia data related to the POI, if available. Click the *Show All* to open the [Photo Gallery](#photo-gallery).  
-- **Object Data**. Includes details such as contacts, social media links, Wikipedia links, etc.  
-- **OSM ID**. Displays the OpenStreetMap ID of the POI.  
-- **Coordinates**. By clicking on the coordinates, you can copy them.
-
-![Explore menu](@site/static/img/web/poi_context.png)
--->
 
 ### معرض الصور {#photo-gallery}
 

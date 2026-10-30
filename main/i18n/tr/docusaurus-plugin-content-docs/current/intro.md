@@ -33,7 +33,3 @@ Sürüm notları ve önceki OsmAnd Sürümlerine bağlantılar. Beta ve Gece sü
 ### [Yasal](/docs/legal/) {#legal}
 
 Lisans. Gizlilik Politikası. Kullanım Koşulları.
-
-### [Ekibimize katılın](/docs/hiring/) {#join-our-team}
-
-Uluslararası ekibimize katılabilecek yeni katkıda bulunanlar arıyoruz.

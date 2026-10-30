@@ -22,6 +22,7 @@ import {
     MATCHED_OBJECTS,
     POI_ID,
     POI_NAME,
+    RELATED_RESULT_IDS,
     WEB_VISIBLE_LEVEL,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
@@ -44,7 +45,7 @@ import {
     panToIfNeeded,
     pushMapView,
 } from '../util/MapManager';
-import { hideMarkersNearPin } from '../util/MarkerSelectionService';
+import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
 import { useNavigate } from 'react-router-dom';
 import { searchByWordApi, getMapsFromUrl, searchUserDataApi } from '../../manager/SearchApi';
@@ -207,7 +208,7 @@ export default function SearchLayer() {
             newLayers.eachLayer((l) => {
                 layers.addLayer(l);
             });
-            hideMarkersNearPin(map, ctx);
+            hideMarkersUnderPin(map, ctx);
         };
 
         if (ctx.searchResult?.features && ctx.searchQuery && !ctx.searchQuery.type) {
@@ -605,9 +606,9 @@ function formatSearchMarkerKey(lat, lon, name) {
 
 function addRelatedResultId(properties, resultId) {
     if (resultId == null) return;
-    const ids = new Set(properties.relatedResultIds ?? []);
+    const ids = new Set(properties[RELATED_RESULT_IDS] ?? []);
     ids.add(resultId);
-    properties.relatedResultIds = Array.from(ids);
+    properties[RELATED_RESULT_IDS] = Array.from(ids);
 }
 
 function filterByVisibleBounds(features, bounds) {

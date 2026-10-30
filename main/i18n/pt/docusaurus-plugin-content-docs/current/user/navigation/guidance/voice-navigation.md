@@ -1,5 +1,5 @@
 ---
-source-hash: 2c9397af0354174228972ec13437f8fb6f59c51a89e42ac61e3d456e9cee5cc1
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title: Prompts de Voz / Notificações
 ---
@@ -52,7 +52,7 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 - *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,voice_announces"/>*
 - *<Translate android="true" ids="shared_string_menu,shared_string_navigation,shared_string_settings,shared_string_sound,shared_string_settings"/>*
 
-![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt_android.png)
+![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt_android.png) ![Configurações de Navegação por Voz Android](@site/static/img/navigation/voice/voice_promt_android.webp)
 
 </TabItem>
 
@@ -61,7 +61,7 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 - *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces"/>*
 - *<Translate ios="true" ids="routing_settings"/> botão* *(ou <Translate ios="true" ids="shared_string_menu,shared_string_navigation"/>) → Escolher perfil → <Translate ios="true" ids="shared_string_settings,routing_settings_2,voice_announces"/>*
 
-![Configurações de Navegação por Voz iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.png)
+![Configurações de Navegação por Voz iOS](@site/static/img/navigation/voice/voice_promt-settings-ios.webp) ![Configurações de Navegação por Voz iOS](@site/static/img/navigation/voice/voice_promt-settings-ios_2.webp)
 
 </TabItem>
 
@@ -99,6 +99,7 @@ Para obter mais informações sobre como e quando os prompts de voz são acionad
 
 - *Repetir instruções de navegação*. Permite repetir as instruções de navegação em intervalos regulares de 1 min a 30 min. Ou manualmente - se você perder um prompt de voz, pode ouvi-lo novamente simplesmente tocando [na seta de próxima curva](../../widgets/nav-widgets.md#next-turn) na tela do aplicativo.
 - *[Tempo de anúncio](#announcement-time)*.
+- *Pausar áudio falado* (*somente iOS, incluindo CarPlay*). Quando ativado, podcasts, audiolivros e outros áudios falados são pausados enquanto os prompts de voz são reproduzidos, seja reproduzindo pelo dispositivo ou pelo CarPlay. A reprodução de música continua em volume reduzido. Quando desativado, tanto o áudio falado quanto a música continuam tocando em volume reduzido.
 
 **Saída** (*Somente Android*):
 
@@ -302,7 +303,7 @@ Atualmente, existem 45 idiomas no total. Nem todos os idiomas listados abaixo po
 
 | | |
 | :--- | :--- |
-| **A** | Árabe |
+| **А** | Árabe |
 | **B** | Bielorrusso, Búlgaro |
 | **C** | Catalão, Chinês, Chinês(Hong Kong), Chinês(Tradicional), Croata, Tcheco |  
 | **D** | Dinamarquês, Holandês |
@@ -396,7 +397,7 @@ Você pode controlar a tela do seu dispositivo para economizar energia. Este mod
 
     ![Controle de tela de tempo limite do sistema Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Se *Manter Tela Ligada* estiver ativado, a tela do dispositivo não aplica um tempo limite após acordar. Se estiver desativado, você pode definir o tempo após o qual a tela do dispositivo será desligada se você não interagir com ela, de 5 a 60 segundos.
+2. **<Translate android="true" ids="wake_time"/>**. Se *Manter Tela Ligada* estiver ativado, a tela do dispositivo não aplica um tempo limite após acordar. Se estiver desativado, você pode definir o tempo após o qual a tela do dispositivo será desligada se você não interagir com ela, de 5 a 60 segundos. O tempo limite é contado a partir da sua última interação com o mapa, e cada toque o reinicia. Quando ele termina, a tela desliga de acordo com o tempo limite de tela do sistema do seu dispositivo, de modo que o OsmAnd pode manter a tela ligada por mais tempo do que a configuração do sistema, mas nunca por menos.   
 
     ![Tempo limite após despertar Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Tempo limite após despertar Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -404,11 +405,15 @@ Você pode controlar a tela do seu dispositivo para economizar energia. Este mod
 
 ![ligar tela Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Selecione as opções de ativação da tela e garanta que o OsmAnd permaneça em primeiro plano quando o dispositivo estiver bloqueado.
+Selecione as opções de ativação da tela e garanta que o OsmAnd permaneça em primeiro plano quando o dispositivo estiver bloqueado. Quando uma opção de ativação da tela liga a tela, o mapa aparece sobre a tela de bloqueio e o dispositivo permanece bloqueado. Se nenhuma opção de ativação estiver habilitada, a tela de bloqueio normal é exibida.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> O sensor responde de forma confiável durante a navegação ou a gravação de trilha. Em outros casos, o Android deixa de enviar eventos do sensor ao OsmAnd cerca de um minuto depois que o aplicativo vai para segundo plano.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> Se *Usar tempo limite de tela do sistema* estiver desativado, esta opção requer que *Tempo limite após despertar* esteja definido como *Manter Tela Ligada*.
+
+Após o despertar pelo sensor de proximidade ou por uma instrução de navegação, o mapa permanece sobre a tela de bloqueio pelo tempo definido em *Tempo limite após despertar*, e depois o dispositivo bloqueia novamente. Com *Manter Tela Ligada*, o mapa permanece visível até você pressionar o botão liga/desliga.
+
+**Nota:** Em dispositivos Xiaomi, permita a permissão *Exibir na tela de bloqueio* para o OsmAnd (*Informações do app → Outras permissões*). Sem ela, a tela liga, mas o mapa não aparece sobre a tela de bloqueio. O OsmAnd não pode conceder essa permissão por conta própria.
 
 
 ## Artigos Relacionados {#related-articles}

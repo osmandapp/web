@@ -1,5 +1,5 @@
 ---
-source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
+source-hash: 3e8ac9992e039c617c093a24702772bc6cdb0c520e1dcadb77013d26c7264441
 sidebar_position: 2
 title:  Käufe & Zahlungen
 ---
@@ -90,6 +90,10 @@ Wenn Sie Käufe über Amazon getätigt haben, müssen Sie **Ihre Abonnements (Pr
 
 ➡️ Derzeit ist eine [plattformübergreifende Übertragung für Abonnements und In-App-Käufe möglich](../purchases/cross.md).
 ❗ **OsmAnd+** (eigenständige App) kann nicht über das OsmAnd Cloud-Konto zwischen Plattformen übertragen werden. Für Unterstützung wenden Sie sich bitte an **support@osmand.net**.
+
+Wenn Ihr Amazon-Kauf nicht automatisch über OsmAnd Cloud aktiviert werden kann, wenden Sie sich für eine manuelle Übertragung an den OsmAnd-Support — **support@osmand.net**. Geben Sie die Amazon-Transaktionsnummer an, die mit D01- beginnt. Ein Screenshot, der das erworbene Produkt zeigt, wird ebenfalls empfohlen.
+
+Käufe, die vor mehr als 10 Jahren getätigt wurden, können nicht übertragen werden.
 
 ## Wie man den Kauf des Topografie-Plugins (ehemals Höhenlinien) wiederherstellt {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 

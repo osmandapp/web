@@ -5,6 +5,8 @@ import FavoritesManager, {
     decodeGroupNameFromFile,
     DEFAULT_FAV_GROUP_NAME,
     extractBaseFavFileName,
+    findFavGroupByFileName,
+    findSelectedWpt,
     getFavGroupKey,
     getFavoriteSortKey,
     getFavMenuListByLayers,
@@ -113,6 +115,44 @@ describe('the favorites of a group in the menu', () => {
         expect(addLocDist({ location: null, wpts })).toBe(wpts);
     });
 
+    test('two waypoints with the same name are listed with their own points', () => {
+        const twins = [
+            { name: 'Hut', category: 'Trips' },
+            { name: 'Hut', category: 'Trips', address: 'second' },
+        ];
+        const twinLayers = {
+            1: { options: { name: 'Hut', point: twins[0] }, _latlng: { lat: 50, lng: 30 } },
+            2: { options: { name: 'Hut', point: twins[1] }, _latlng: { lat: 50, lng: 30 } },
+        };
+
+        const list = getFavMenuListByLayers({ layers: twinLayers, wpts: twins, currentLoc: null, pointsGroups });
+
+        expect(list.map((m) => m.point)).toEqual([twins[0], twins[1]]);
+        expect(list[1].point).toBe(twins[1]);
+    });
+});
+
+describe('the selected favorite among the waypoints of its group', () => {
+    const wpts = [
+        { name: 'Hut', category: 'Trips' },
+        { name: 'Hut', category: 'Trips', address: 'second' },
+        { name: 'Peak', category: 'Trips' },
+    ];
+
+    test('the point itself wins, then the point at the remembered index with the same name, then the name', () => {
+        expect(findSelectedWpt({ name: 'Hut', point: wpts[1], pointIndex: 1 }, wpts)).toBe(wpts[1]);
+
+        // the group was reloaded from the server: the same points as new objects
+        const reloaded = wpts.map((w) => ({ ...w }));
+        expect(findSelectedWpt({ name: 'Hut', point: wpts[1], pointIndex: 1 }, reloaded)).toBe(reloaded[1]);
+        // the remembered index points to another name: the first one with the name is taken
+        expect(findSelectedWpt({ name: 'Hut', point: wpts[1], pointIndex: 2 }, reloaded)).toBe(reloaded[0]);
+        expect(findSelectedWpt({ name: 'Peak' }, reloaded)).toBe(reloaded[2]);
+        expect(findSelectedWpt({ name: 'Lake' }, reloaded)).toBeUndefined();
+        expect(findSelectedWpt(null, reloaded)).toBeUndefined();
+        expect(findSelectedWpt({ name: 'Hut' }, null)).toBeUndefined();
+    });
+
     test('the direction to a favorite is measured from the same point as the distance', () => {
         const north = { layer: { _latlng: { lat: 50.01, lng: 30 } } };
         const east = { layer: { _latlng: { lat: 50, lng: 30.01 } } };
@@ -164,5 +204,21 @@ describe('the size of a group', () => {
 
         expect(getSize(group('Trips', { groupSize: '5' }), t)).toBe('5 shared_string_gpx_points');
         expect(getSize(group('Trips', {}), t)).toBe('empty');
+    });
+});
+
+describe('the group of a file in the Share menu', () => {
+    test('the group is found by the file name, before and after the groups are loaded', () => {
+        const listFile = favFile('Trips_%_Alps');
+        // the Share menu opened by URL keeps a copy of the list-files entry made before createGroup sets folder
+        const sharedFile = { ...listFile, mapObj: true };
+
+        expect(findFavGroupByFileName(undefined, sharedFile.name)).toBeUndefined();
+
+        const groups = [FavoritesManager.createGroup(favFile('Hikes')), FavoritesManager.createGroup(listFile)];
+
+        expect(sharedFile.folder).toBeUndefined();
+        expect(findFavGroupByFileName(groups, sharedFile.name)).toBe(groups[1]);
+        expect(findFavGroupByFileName(groups, favFile('Lakes').name)).toBeUndefined();
     });
 });

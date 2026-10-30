@@ -23,6 +23,11 @@ import { DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
 /** Pin SVGs use viewBox 0 0 70 70; the map anchor must be the bottom dot center (y=67), not the box bottom. */
 const PIN_VIEWBOX_SIZE = 70;
 const PIN_TIP_CENTER_Y = 67;
+// Head and tail of every pin shape in viewBox units: [left, top, right, bottom]
+const PIN_VISIBLE_BOXES = [
+    [8, 2, 62, 56],
+    [32, 56, 38, 70],
+];
 
 export const HOVER_OUTLINE_SIZE = 34;
 const DIRECTION_PIN_SIZE = 60;
@@ -201,4 +206,16 @@ export function createLayeredPinIcon(options = {}) {
         iconSize: [size, size],
         iconAnchor: iconAnchor ?? [size / 2, (size * PIN_TIP_CENTER_Y) / PIN_VIEWBOX_SIZE],
     });
+}
+
+export function getLayeredPinRects(pinElement) {
+    const box = pinElement.getBoundingClientRect();
+    const scale = box.width / PIN_VIEWBOX_SIZE;
+
+    return PIN_VISIBLE_BOXES.map(([left, top, right, bottom]) => ({
+        left: box.left + left * scale,
+        top: box.top + top * scale,
+        right: box.left + right * scale,
+        bottom: box.top + bottom * scale,
+    }));
 }

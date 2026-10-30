@@ -1,5 +1,6 @@
 .item {
     width: 360px !important;
+    flex-shrink: 0 !important;
     padding: 10px 16px !important;
     gap: 24px !important;
     min-height: 48px !important;

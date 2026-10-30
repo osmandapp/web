@@ -26,4 +26,4 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 Починаючи з **версії OsmAnd 5.1**, випущеної на честь нашого **15-річчя**, кросплатформний доступ було розширено до **Maps+** (раніше відомої як *Unlimited*). Раніше кросплатформною була лише підписка [OsmAnd Pro](../personal/osmand-cloud.md#cross-platform).  
 
 Щоб активувати кросплатформний доступ, покупки мають бути прив'язані до вашого облікового запису [OsmAnd Cloud](../personal/osmand-cloud.md#login).  
-Порівняти всі продукти OsmAnd можна тут: [різниця між покупками](https://osmand.net/docs
+Порівняти всі продукти OsmAnd можна тут: [різниця між покупками](https://osmand.net/docs/user/purchases/android/#difference-between-purchases-android)

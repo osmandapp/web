@@ -1,5 +1,5 @@
 ---
-source-hash: d59e8bc87f2d0d21d935f57b9e5c55437ca555db0435ff83d6015d99406dca9b
+source-hash: 16712c63dbd1992a0c89fe74110b06e1c38a2e7250119dccd919abbfe7df355a
 sidebar_position: 1
 title:  Покупки в Android
 ---
@@ -21,7 +21,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 - [Google Play](https://play.google.com/store/apps/dev?id=8483587772816822023)
 - [Huawei AppGallery](https://appgallery.huawei.com/#/app/C101486545)
-- Amazon більше не доступний. Детальну інформацію можна знайти [тут](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing--what-to-do).
+- Amazon більше не доступний. Детальну інформацію можна знайти [тут](https://osmand.net/docs/user/troubleshooting/purchases_payments#amazon-store-is-closing---what-to-do).
 
 **Версії програми OsmAnd:**
 
@@ -77,12 +77,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 У списку є інформація про ціни продуктів OsmAnd для регіону США та Європи. Для інших регіонів ціни еквівалентні в місцевих валютах.
 
 
-:::danger 🏖️ Літній розпродаж
+:::danger 🎃 Розпродаж до Гелловіну
 
-*Поспішайте! Ця пропозиція доступна лише до* **17 червня (23:00 CET)**.
+*Поспішайте! Ця пропозиція діє лише до* **1 листопада (23:59 UTC)**.
+
+*Для підписок знижена ціна діє протягом першого року.*
+
+*Знижка не поширюється на застосунок OsmAnd+ у Google Play.*
 
 :::
-
 
 
 |    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
@@ -90,7 +93,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
 | **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
 <!--
 
@@ -103,6 +106,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 -->
+
+
+
 
 ### Безкоштовні та платні функції {#free-and-paid-features}
 
@@ -133,6 +139,8 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [Плагін астрономії](../plugins/astronomy.md) — [Планування спостережень](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Плагін астрономії](../plugins/astronomy.md) — [Інтерактивний режим AR](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Плагін астрономії](../plugins/astronomy.md) — [Офлайн карта неба](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Плагін астрономії](../plugins/astronomy.md) — [Дослідник затемнень](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
+| [Користувацькі кольори віджетів](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Офлайн та онлайн навігація](../navigation/index.md)<br/>з поворот-за-поротом напрямками | ✔ | ✔ | ✔ |
 | [Офлайн миттєвий пошук](../search/index.md) | ✔ | ✔ | ✔ |
 | [Запис поїздки](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
@@ -165,7 +173,7 @@ Pro функції доступні для [підписки OsmAnd Pro](#prices
 
 |  Pro Feature  | Description   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [веб-порталом OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Резервне копіювання та відновлення ваших даних, синхронізація даних з [веб-порталом OsmAnd](https://osmand.net/map). |
 | [3D рельєф](../plugins/topography.md#3d-relief) | Дозволяє вам мати та спостерігати за масштабованою моделлю вашого району або цілого континенту. |
 | [Живі оновлення](../personal/maps-resources.md#live-updates) | Карти OsmAnd оновлюються кожні 15 хвилин після покращення [OpenStreetMap](https://www.openstreetmap.org/). |
 | [Плагін погоди](../plugins/weather.md) | Прогноз на 24 годині кожну годину на 7 днів вперед на карті. |

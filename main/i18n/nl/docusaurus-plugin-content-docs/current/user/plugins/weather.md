@@ -1,5 +1,5 @@
 ---
-source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
 sidebar_position: 19
 title:  Weer
 ---
@@ -60,7 +60,7 @@ De Weer-plugin is alleen beschikbaar met Kaart-renderingengine [Versie 2](../per
 
 Ga naar: *Ingeschakelde plugin → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
+![Weerdashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ Ga naar: *Ingeschakelde plugin → <Translate android="true" ids="shared_string_
 
 Ga naar: *Ingeschakelde plugin → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
+![Weerdashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -86,13 +86,13 @@ Onderaan het scherm bevindt zich de *weer-werkbalk*. U kunt de dagknoppen en de 
 
 <TabItem value="android" label="Android">
 
-![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)  
+![Gegevensbron Android](@site/static/img/plugins/weather/weather_source_android.png)  
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+![Gegevensbron iOS](@site/static/img/plugins/weather/weather_source_ios.png)
 
 </TabItem>  
 
@@ -123,7 +123,7 @@ Hoe de Gegevensbron de Weergave van het Weer beïnvloedt:
 
 Ga naar: *Ingeschakelde plugin → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
+![Weerdashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
 </TabItem>  
 
@@ -131,7 +131,7 @@ Ga naar: *Ingeschakelde plugin → <Translate android="true" ids="shared_string_
 
 Ga naar: *Ingeschakelde plugin → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
+![Weerdashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
 </TabItem>  
 
@@ -151,21 +151,21 @@ In dit menu kunt u de **zichtbaarheid** en [instellingen](#weather-settings) voo
 - *Hoofdmenu → Plugins → Weer → Instellingen*
 - *Hoofdmenu → Instellingen → Profiel → Plugin-instellingen → Weer*
 
-![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Weerinstellingen Android](@site/static/img/plugins/weather/weather_settings_andr_1.webp) ![Weerinstellingen 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Hoofdmenu → Instellingen → Profiel → Plugins → Weer*
+*Hoofdmenu → Instellingen → Profiel → Plugins → Weer*
 
-![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Weerinstellingen iOS](@site/static/img/plugins/weather/weather_settings_ios.webp) ![Weerinstellingen iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.webp)
 
 </TabItem>
 
 </Tabs>  
 
-Het is belangrijk om te beslissen in welke meeteenheden u de [Weergegevens](#weather-layers) op de kaart en in de sectie [Weer-widgets](#weather-widgets) van het scherm wilt zien. U kunt voor elke parameter de juiste meeteenheden kiezen of standaardwaarden gebruiken (*alleen iOS*). In de iOS-versie van de OsmAnd-app kunt u ook de optie voor offline voorspelling inschakelen om het gebruik van mobiele data tijdens het reizen te vermijden.  
+Het is belangrijk om te beslissen in welke meeteenheden u de [Weergegevens](#weather-layers) op de kaart en in de sectie [Weer-widgets](#weather-widgets) van het scherm wilt zien. U kunt voor elke parameter de juiste meeteenheden kiezen. U kunt ook standaardwaarden gebruiken — op iOS voor alle parameters, op Android alleen voor temperatuur. De temperatuureenheid wordt geselecteerd in: *Menu → Profiel → Algemene instellingen → Eenheden & formaten → Temperatuur*. In de iOS-versie van de OsmAnd-app kunt u ook de optie voor offline voorspelling inschakelen om het gebruik van mobiele data tijdens het reizen te vermijden.  
 
 :::note
 In de iOS-versie van OsmAnd kunt u de meeteenheden en het transparantieniveau wijzigen in het menu dat wordt geopend na lang tikken op het pictogram van de vereiste kaartlaag.  
@@ -178,17 +178,17 @@ Alle weergegevens worden gepresenteerd als afzonderlijke kaartlagen. Om de weerl
 | |  
 |------------|  
 | **Neerslaglaag** toont informatie over weersgebeurtenissen waarbij water in verschillende aggregatietoestanden uit de lucht op de grond valt. Neerslag is regen, sneeuw, ijzel of hagel. De neerslagschaal is ingedeeld in millimeters (of inches) water dat in 24 uur op 1 vierkante meter valt. 1 mm regen komt overeen met 1 liter water per 1 vierkante meter. |  
-|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
+|![Neerslagschema](@site/static/img/plugins/weather/precipitation.png)|  
 | **Temperatuur** drukt de kwantitatieve perceptie van warm en koud uit. Het wordt gemeten in graden. In OsmAnd kunt u kiezen tussen de schaal van Celsius en Fahrenheit. |  
-|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|  
+|![Temperatuurschema](@site/static/img/plugins/weather/temperature.png)|  
 | **Wind** is de beweging van lucht veroorzaakt door de ongelijkmatige opwarming van de aarde door de zon en haar eigen rotatie. Winden kunnen variëren van lichte briesjes tot natuurrampen zoals orkanen en tornado's. In OsmAnd kan de windsnelheid worden weergegeven in meters per seconde (m/s), kilometers per uur (km/h), mijlen per uur (mph) en knopen (kt). |  
-|![Wind sheme](@site/static/img/plugins/weather/wind.png)|  
+|![Windschema](@site/static/img/plugins/weather/wind.png)|  
 | **Bewolking** is de gemiddelde fractie van de hemel die bedekt is met wolken wanneer waargenomen vanaf een bepaalde locatie. Het wordt gemeten in %. |  
-|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|  
+|![Bewolkingsschema](@site/static/img/plugins/weather/clouds.png)|  
 | **Atmosferische druk** wordt veroorzaakt door het gewicht van de lucht boven het meetpunt. Het neemt af met toenemende hoogte. Atmosferische druk kan worden weergegeven in hectopascal (hPa), millimeter kwik (mmHg) en inch kwik (inHg). |  
-| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |  
+| ![Drukschema](@site/static/img/plugins/weather/pressure.png) |  
 | **Windanimatie** omvat dynamische weergaven die de windrichting en -snelheid in de regio tonen. |  
-| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |  
+| ![Windanimatie](@site/static/img/plugins/weather/wind_annimation.gif) |  
 
 
 ### Kaarten Combineren {#combine-maps}
@@ -197,13 +197,13 @@ Alle weergegevens worden gepresenteerd als afzonderlijke kaartlagen. Om de weerl
 
 <TabItem value="android" label="Android">
 
-![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
+![Weerlagen combineren op Android](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Weerlagen combineren op Android](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)  
+![Weerlagen combineren op iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Weerlagen combineren op iOS](@site/static/img/plugins/weather/weather_contours.png)  
 
 </TabItem>
 
@@ -214,7 +214,7 @@ Om uitgebreide weersinformatie te krijgen, kunt u de kaartlagen afzonderlijk geb
 
 ### Snelle Acties voor Lagen {#quick-actions-for-layers}
 
-![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
+![Vragen en antwoorden over weerlagen](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
 Om de zichtbaarheid van weerlagen te wisselen, kunt u de *Snelle Actie*-knoppen op het kaartscherm gebruiken. De algemene instellingen voor het tonen of verbergen van lagen zijn te vinden in de aparte sectie [Weer](#weather-forecast-screen) van het *Hoofdmenu*. In het artikel [Snelle Actie](../widgets/quick-action.md#configure-map) vindt u een lijst met de lagen die beschikbaar zijn voor weergave. Als u snelle toegang tot deze kaartconfiguratie nodig heeft, gebruik dan de tool *Aangepaste Knop*.
 
@@ -230,7 +230,7 @@ Wanneer het tabblad Weer geopend is, wordt de vereiste weersinformatie van het n
 
 :::tip
 Op Android-apparaten kunt u controleren wanneer weergegevens zijn gedownload door op de *Weer-widget* te tikken. De OsmAnd Development-plugin moet ingeschakeld zijn.  
-![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
+![Datum van weercache Android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Voorspelling Downloaden {#download-forecast}
@@ -239,13 +239,13 @@ Op Android-apparaten kunt u controleren wanneer weergegevens zijn gedownload doo
 
 <TabItem value="android" label="Android">  
 
-![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
+![Weerplugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weerplugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
+![Weerplugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weerplugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
 </TabItem>
 
@@ -279,7 +279,7 @@ Weergegevens worden elke 6 uur bijgewerkt (alle 4 updates van [GFS](https://www.
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Kies een paneel → <Translate android="true" ids="shared_string_weather"/>*
 
-![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
+![Weerwidgets op Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weerwidgets op Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
 </TabItem>
 
@@ -287,7 +287,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,sh
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Kies een paneel → <Translate ios="true" ids="shared_string_weather"/>*
 
-![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
+![Weerwidgets op iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 

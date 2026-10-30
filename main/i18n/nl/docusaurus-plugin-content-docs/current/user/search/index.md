@@ -1,5 +1,5 @@
 ---
-source-hash: 892c634b7bf81dafb9296c6e2b65ee7f15f7bf8b1d0e766e4ed35dfd9df8901e
+source-hash: bf407399cdc5546133d08abd4e5c9fb3226abf61b6a07f922fcb5088bb047056
 sidebar_position: 5
 title: Zoeken
 ---
@@ -14,29 +14,28 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Overzicht {#overview}
 
-**Zoeken** is een belangrijk hulpmiddel van OsmAnd waarmee u de gewenste plaatsen, objecten of adressen kunt vinden. De beschikbare zoekopties bieden verschillende manieren om objecten te vinden. U kunt zoeken op adres voor precieze navigatie, zoeken op POI-categorieën om de dichtstbijzijnde objecten te vinden, zoeken op geschiedenis voor snelle toegang tot eerdere verzoeken, en zoeken op coördinaten voor precieze locatie.
+**Zoeken** is een belangrijk hulpmiddel van OsmAnd waarmee u de gewenste plaatsen, objecten of adressen kunt vinden. De beschikbare zoekopties bieden verschillende manieren om objecten te vinden. U kunt zoeken op adres voor precieze navigatie, zoeken op POI-categorieën om de dichtstbijzijnde objecten te vinden, het tabblad Verkennen om populaire plaatsen in de buurt te ontdekken en terug te keren naar plaatsen uit uw geschiedenis, en zoeken op coördinaten voor precieze locatie.
 
 
 ### [Alles zoeken](./search-all.md) {#search-all}
 
-Dit artikel beschrijft de belangrijkste functies en beschikbare opties van het zoekhulpmiddel.
+Het zoekhulpmiddel vindt adressen, interessante plaatsen, coördinaten en plaatsnamen die in één zoekveld worden ingevoerd. Het artikel behandelt ook het sorteren van zoekresultaten, Zoeken in de omgeving en Zoeken op de kaart.
 
 
 ### [Adres zoeken](./search-address.md) {#search-address}
 
-Het zoekhulpmiddel heeft opties zoals sequentieel zoeken op adres, met reeds voorbereide gegevens voor snelle selectie en zoeken op postcode. Deze opties worden in dit artikel beschreven.
+Adres zoeken helpt u een exact adres te vinden door het volledig in te typen, door achtereenvolgens de plaats, straat en huisnummer te selecteren, of op postcode.
 
 
-### [Zoekgeschiedenis](./search-history.md) {#search-history}
+### [Zoeken verkennen](./search-history.md) {#search-explore}
 
-Dit artikel bespreekt de zoekmogelijkheden van de zoekgeschiedenis in detail.
+Het tabblad Verkennen helpt u populaire plaatsen in uw omgeving te ontdekken en terug te keren naar plaatsen uit uw geschiedenis. Op Android heeft het tabblad twee secties. Populaire plaatsen in de buurt toont bekende bezienswaardigheden en attracties in de buurt van uw locatie, en Geschiedenis toont uw eerdere zoekopdrachten en navigatiebestemmingen. Op iOS is alleen de zoekgeschiedenis beschikbaar, op het tabblad Geschiedenis.
 
 
 ### [POI zoeken](./search-poi.md) {#search-poi}
 
-Het zoeken door alle POI-categorieën en het instellen van een aangepaste POI-zoekopdracht wordt in dit artikel beschreven.
-
+POI zoeken vindt interessante plaatsen op categorie, naam of merk. Met aangepaste POI-filters kunt u meerdere categorieën combineren en opslaan voor later gebruik.
 
 ### [Coördinaten zoeken](./search-coordinates.md) {#search-coordinates}
 
-In dit artikel leert u hoe u de juiste locaties kunt vinden met behulp van coördinaten.
+Coördinaten zoeken vindt een exacte locatie aan de hand van de geografische coördinaten.

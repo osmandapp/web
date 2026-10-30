@@ -1,5 +1,5 @@
 ---
-source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
+source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
 sidebar_position: 2
 title:  Interagire con la mappa
 ---
@@ -39,7 +39,7 @@ Le animazioni di scorrimento possono essere disattivate nelle impostazioni con u
 
 ### La mia posizione e Zoom {#my-position-and-zoom}
 
-![Pulsanti posizione e zoom](@site/static/img/widgets/location_zoom_buttons.png)
+![Menu configura schermata](@site/static/img/widgets/location_zoom_buttons.png)
 
 **La mia posizione**.  
 Il pulsante *La mia posizione* è un'icona circolare che indica se il centro della mappa è sincronizzato con la geolocalizzazione attuale del tuo dispositivo. Spesso chiamato pulsante "Dove sono?", ti aiuta a trovare rapidamente la tua posizione sulla mappa. Durante la navigazione, la mappa di solito rimane sincronizzata con la posizione del dispositivo, quindi il pulsante rimane nascosto. Tuttavia, diventa visibile se la mappa e la tua posizione non sono più sincronizzate a causa dell'interazione dell'utente. Toccando il pulsante si ricentrerà la mappa sulla tua posizione attuale, e un doppio tocco passerà alla visualizzazione 3D.
@@ -216,8 +216,6 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 **Vista globo** ti permette di visualizzare la mappa come una Terra sferica invece di una proiezione piatta. Questa modalità cambia la geometria della superficie della mappa e adatta l'interazione con la mappa alla navigazione sferica.  
 
 La Vista globo è attualmente disponibile solo quando:
-- Il [plugin Sviluppo](../plugins/development.md) è abilitato.  
-Vai a: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - Il [plugin Topografia](../plugins/topography.md) è abilitato.  
 Vai a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - Il [Motore di rendering della mappa](../personal/global-settings.md#map-rendering-engine) è impostato su Versione 2 (OpenGL).  

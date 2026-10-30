@@ -1,5 +1,6 @@
 import { Box, IconButton, Paper, SvgIcon, Typography } from '@mui/material';
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import AppContext, { OBJECT_CONFIGURE_MAP, OBJECT_TYPE_WEATHER } from '../../context/AppContext';
 import PanelButtons from './PanelButtons';
 import { MAP_BUTTONS_Z_INDEX } from '../../map/util/ZIndexes';
@@ -25,6 +26,7 @@ export default function GeneralPanelButtons({
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
+    const { t } = useTranslation();
 
     const [width, height] = useWindowSize();
     const orientation = getButtonOrientation();
@@ -109,7 +111,7 @@ export default function GeneralPanelButtons({
                         }}
                     >
                         <SvgIcon className={styles.customIconPath} component={SearchIcon} inheritViewBox />
-                        <Typography className={styles.searchTitle}>Search</Typography>
+                        <Typography className={styles.searchTitle}>{t('shared_string_search')}</Typography>
                     </Box>
                 </Paper>
             </div>

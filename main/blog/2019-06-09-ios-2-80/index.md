@@ -18,7 +18,7 @@ import Translate from '@site/src/components/Translate.js';
 
 ## Mapillary
 
-We continue to follow our <a href="https://osmand.net/blog/2019-ny-resolutions">New Year’s resolutions</a>, where we have promised to catch the iOS version of OsmAnd up with the one on Android, and we are getting there.
+We continue to follow our <a href="https://osmand.net/blog/ny-resolutions-2019">New Year’s resolutions</a>, where we have promised to catch the iOS version of OsmAnd up with the one on Android, and we are getting there.
 
 We're proud to have collaborated with Mapillary for the new release. Now you can view the street-level imagery in your location or anywhere in the world using the Mapillary in OsmAnd for iOS.
 

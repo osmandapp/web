@@ -4,6 +4,7 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import AppContext from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
+import MvtContext from '../../context/MvtContext';
 import { HEADER_SIZE, MAIN_MENU_MIN_SIZE, MENU_INFO_OPEN_SIZE, SEARCH_RESULT_URL } from '../../manager/GlobalManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { MAP_CENTER_ICON_Z_INDEX } from '../util/ZIndexes';
@@ -12,6 +13,7 @@ import { initialPosition, initialZoom } from '../util/initialMapView';
 import { applyZoomToFit, getZoomToFitBounds, popMapView } from '../util/MapManager';
 import { applySubpixelMarkerPosition } from '../markers/subpixelMarkerPosition';
 import { useFocusVisibility } from '../../util/hooks/map/useFocusMode';
+import { isMvtTileURL } from './MvtLayerConfig';
 
 // In layers, we don't use cache — always compute from map; otherwise debouncer gets stale bbox on move.
 export function getVisibleBboxInfo(ctx, map) {
@@ -131,8 +133,10 @@ export function mapSpinOptionsForVisibleBbox(map, ctx, options = {}) {
 export default function MapStateLayer() {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
+    const vtx = useContext(MvtContext);
     const map = useMap();
     const { pathname } = useLocation();
+    const fractionalZoom = !ctx.develFeatures || !isMvtTileURL(mtx.tileURL) || vtx.mvtTweaks?.fractionalZoom !== false;
 
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [move, setMove] = useState(false);
@@ -184,6 +188,20 @@ export default function MapStateLayer() {
         };
     }, []);
 
+    useEffect(() => {
+        if (fractionalZoom) {
+            return undefined;
+        }
+        const originalZoomSnap = map.options.zoomSnap;
+        map.stop();
+        map.options.zoomSnap = 1;
+        map.setZoom(Math.trunc(map.getZoom()), { animate: false });
+
+        return () => {
+            map.options.zoomSnap = originalZoomSnap;
+        };
+    }, [fractionalZoom]);
+
     // Leaflet's zoom animation CSS-scales the MapLibre canvas as a bitmap for 250 ms, then MapLibre redraws: the map
     // and its markers jump. Moving the map by a fraction of a zoom level per frame lets MapLibre render every step.
     useEffect(() => {
@@ -208,7 +226,7 @@ export default function MapStateLayer() {
         function step() {
             const zoom = map.getZoom();
             const snappedTarget = map._limitZoom(targetZoom);
-            if (Math.abs(snappedTarget - zoom) < 0.005) {
+            if (!fractionalZoom || Math.abs(snappedTarget - zoom) < 0.005) {
                 frame = null;
                 // no setView: its viewreset drops the GridLayer tiles
                 map._move(zoomAroundAnchor(snappedTarget), snappedTarget);
@@ -298,7 +316,8 @@ export default function MapStateLayer() {
                     : TRACKPAD_PX_PER_ZOOM;
             // sigmoid as MapLibre: small deltas zoom linearly, a fast flick is compressed to a level per event
             const scale = 2 / (1 + Math.exp(-Math.abs(value) / pxPerZoom));
-            zoomBy(-Math.sign(value) * Math.log2(scale), map.mouseEventToContainerPoint(event));
+            const delta = -Math.sign(value) * (fractionalZoom ? Math.log2(scale) : 1);
+            zoomBy(delta, map.mouseEventToContainerPoint(event));
         }
 
         // the +/- buttons zoom around the center of the map part not covered by the side panel
@@ -339,7 +358,7 @@ export default function MapStateLayer() {
             map.setZoomAround = originalSetZoomAround;
             stopZoom();
         };
-    }, [ctx.infoBlockWidth]);
+    }, [ctx.infoBlockWidth, fractionalZoom]);
 
     // Central zoom-to-fit handler driven by useZoomToFit.
     useEffect(() => {

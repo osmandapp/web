@@ -5,6 +5,9 @@ const path = require('node:path');
 const MAP_DIR = path.resolve(__dirname, '../../map');
 const STUBS = '<rootDir>/src/util/stubs';
 
+// west of UTC a date without a time falls on the previous day; a test can't switch the zone, the workers inherit it
+process.env.TZ = 'America/New_York';
+
 // tests import the app sources directly from ../../map/src (alias @map), so they are transformed too.
 // moduleNameMapper is matched against the import string as it is written, so patterns are suffix-based;
 // stubs come before the @map alias - the first match wins.
@@ -25,7 +28,9 @@ module.exports = {
     transform: {
         '^.+\\.[mc]?jsx?$': ['babel-jest', { configFile: path.resolve(__dirname, 'babel.config.js') }],
     },
-    transformIgnorePatterns: ['/node_modules/(?!(lodash-es)/)'],
+    transformIgnorePatterns: [
+        '/node_modules/(?!(lodash-es|@tiptap|prosemirror-.*|orderedmap|w3c-keyname|rope-sequence|crelt|linkifyjs)/)',
+    ],
     moduleNameMapper: {
         // static assets
         '\\.(css|less|sass|scss)$': `${STUBS}/style.js`,
@@ -41,6 +46,8 @@ module.exports = {
         // modules pulling map layers / routing / i18n - not exercised by unit tests
         // leaflet itself works in jsdom, the map layers around it do not
         '^leaflet$': path.join(MAP_DIR, 'node_modules/leaflet/dist/leaflet-src.js'),
+        // react-leaflet is ESM and only used by the layer components, the marker selection helpers need plain leaflet
+        '^react-leaflet$': `${STUBS}/reactLeaflet.js`,
         // sorting is plain logic that createTrackGroups depends on, keep it real
         'menu/actions/SortActions$': path.join(MAP_DIR, 'src/menu/actions/SortActions.jsx'),
         // the visible-tracks cache is plain localStorage logic used by the managers
@@ -63,9 +70,12 @@ module.exports = {
         // only direct test imports load these layers; other suites keep their UI stubs
         '^@map/map/layers/MapStateLayer$': path.join(MAP_DIR, 'src/map/layers/MapStateLayer.js'),
         '^@map/map/layers/PoiLayer$': path.join(MAP_DIR, 'src/map/layers/PoiLayer.js'),
+        '^@map/map/layers/HeightmapLayer$': path.join(MAP_DIR, 'src/map/layers/HeightmapLayer.js'),
         '^@map/map/util/MarkerSelectionService$': path.join(MAP_DIR, 'src/map/util/MarkerSelectionService.js'),
         // the initial map view is plain url logic over leaflet, no map is involved
         'map/util/initialMapView$': path.join(MAP_DIR, 'src/map/util/initialMapView.js'),
+        // the route points of the url are checked by the coordinate parser of the navigation menu
+        'analyzer/util/PointsManager$': path.join(MAP_DIR, 'src/menu/analyzer/util/PointsManager.js'),
         // the url hash format is plain logic over leaflet-hash, no map is involved
         'map/util/mapHash$': path.join(MAP_DIR, 'src/map/util/mapHash.js'),
         // which vector tile feature a click opens is plain logic over the rendered features
@@ -75,6 +85,8 @@ module.exports = {
         'layers/(FavoriteLayer|ExploreLayer)$': `${STUBS}/empty.js`,
         // rebuilding the favorite groups after a change is plain logic over the server response
         'favorite/FavoriteHelper$': path.join(MAP_DIR, 'src/infoblock/components/favorite/FavoriteHelper.js'),
+        // the description html helpers are plain logic over the tiptap schema, no editor is rendered
+        'editor/htmlUtils$': path.join(MAP_DIR, 'src/frame/components/editor/htmlUtils.js'),
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,

@@ -5,7 +5,6 @@ import MapContext from '../context/MapContext';
 import NavigationLayer from './layers/NavigationLayer';
 import WeatherLayer from './layers/WeatherLayer';
 import { createMapHash, formatMapHash } from './util/mapHash';
-import L from 'leaflet';
 import 'leaflet-contextmenu';
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 import FavoriteLayer from './layers/FavoriteLayer';
@@ -24,6 +23,7 @@ import SearchLayer from './layers/SearchLayer';
 import MapStateLayer from './layers/MapStateLayer';
 import HeightmapLayer from './layers/HeightmapLayer';
 import TravelLayer from './layers/TravelLayer';
+import HeatmapLayer from './layers/HeatmapLayer';
 import ShareFileLayer from './layers/ShareFileLayer';
 import TrackAnalyzerLayer from './layers/TrackAnalyzerLayer';
 import { useGpxFileDragMapZone } from '../util/hooks/useGpxFileDragZone';
@@ -228,6 +228,7 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <TrackAnalyzerLayer />
                 <ShareFileLayer />
                 <TravelLayer />
+                <HeatmapLayer />
                 <FavoriteLayer />
                 <WeatherLayer />
                 <GraphLayer />

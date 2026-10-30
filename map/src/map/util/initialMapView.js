@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import { parseCoordinates } from '../../menu/analyzer/util/PointsManager';
 
 export const flyZoom = 9;
 
@@ -20,6 +21,14 @@ export function getPinPointFromUrl() {
         // ignore
     }
     return null;
+}
+
+export function hasRouteInUrl() {
+    const searchParams = new URLSearchParams(globalThis.location.search);
+    return (
+        !!parseCoordinates(searchParams.get('start')) &&
+        !!parseCoordinates(searchParams.get('finish') || searchParams.get('end'))
+    );
 }
 
 export function getInitialView() {

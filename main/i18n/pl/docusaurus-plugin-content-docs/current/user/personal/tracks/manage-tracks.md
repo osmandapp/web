@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title:  Zarządzaj trasami
 ---
@@ -138,13 +138,13 @@ Menu udostępnia następujące działania:
 
 - **Duplikuj** (*iOS*) — Tworzy kopię wybranej trasy.
 
-- **Zmień nazwę** — Zmień nazwę wybranej trasy dla lepszej organizacji.
+- **Zmień nazwę** — Zmień nazwę wybronej trasy dla lepszej organizacji.
 
 - **Przenieś** — Pozwala na przeniesienie wybronej trasy do innego folderu.
 
 - **Eksportuj** (*Android*) — Przejdź do zakładki *Menu → Ustawienia → Działania*, aby wyeksportować wszystkie trasy z folderu.
 
-- **Usuń** — Trwale usuwa wybraną trasę, która nie jest już potrzebna.
+- **Usuń** — Trwale usuwa wybronej trasy, która nie jest już potrzebna.
 
 
 ### Wyszukiwanie {#search}
@@ -204,7 +204,7 @@ Po dokonaniu wyboru dostępne są następujące kroki:
 
 - **Przenieś** — Możesz organizować swoje dane, przenosząc wybrane trasy i foldery do innych folderów.
 
-- [Zmień aktywność](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Ta akcja pozwala na zmianę typu aktywności, na przykład na *Samochód*, *Sporty motorowe przygodowe*, *Wędrówki z plecakiem* lub inne, dla wybranej trasy.
+- [Zmień aktywność](../../map/tracks/track-context-menu.md#track-activity-type) — Ta akcja pozwala na zmianę typu aktywności, na przykład na *Samochód*, *Sporty motorowe przygodowe*, *Wędrówki z plecakiem* lub inne, dla wybranej trasy.
 
 - [Zmień wygląd](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Ta opcja pozwala na dostosowanie wyglądu wybranych tras, czyniąc je bardziej widocznymi i rozpoznawalnymi na mapie.
 

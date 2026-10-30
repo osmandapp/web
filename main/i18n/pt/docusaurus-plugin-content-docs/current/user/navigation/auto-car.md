@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title: Android Auto
 ios: false
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-:::tip Purchase
+:::tip Compra
 O Android Auto é um [recurso pago](../purchases/index.md).  
 :::
 
@@ -331,19 +331,26 @@ Para ativar ou desativar as [**Informações da rota** para um ponto intermediá
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 O *Android Auto* e o OsmAnd oferecem a capacidade de ajustar o mapa para corresponder às condições de iluminação. No *modo de mapa Diurno*, o esquema de cores permanece brilhante e contrastante, facilitando a leitura mesmo sob luz solar intensa. No *modo Noturno*, os mapas ficam mais escuros, o que ajuda o motorista a navegar melhor no escuro.  
 
-O OsmAnd possui opções de [modo de mapa](../map/vector-maps.md#map-mode), mas quando você usa o aplicativo no *Android Auto*, essas opções são ignoradas. Em vez disso, o modo selecionado nas configurações do sistema *Android Auto* para mapas é usado.
+O OsmAnd no *Android Auto* tem sua própria configuração de modo de mapa, separada das opções de [modo de mapa](../map/vector-maps.md#map-mode) do aplicativo OsmAnd no seu dispositivo. Para alterá-la, vá para *Android Auto (OsmAnd) → Botão de configuração → Modo de mapa*, selecione uma opção e toque em *Aplicar*. O mapa muda para o modo selecionado depois que você toca em *Aplicar*. Se você sair da tela com a seta de voltar sem tocar em *Aplicar*, o modo anterior continua selecionado.
 
-- Selecione o modo Diurno ou Noturno para manter a exibição do mapa inalterada.
-- Se você deseja que o modo de exibição do mapa mude dependendo da hora do dia, selecione o modo Automático.  
+- Selecione *Diurno* ou *Noturno* para manter a exibição do mapa inalterada, independentemente dos sinais do seu veículo.
+- Se você deseja que o modo de exibição do mapa mude automaticamente com base nos sinais do seu veículo, selecione *Automático* (padrão).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Ampliação do Mapa {#map-magnifier}
+
+![Ampliação do mapa do Android Auto](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+A *Ampliação do mapa* altera o nível de ampliação do mapa na tela do *Android Auto*. Para alterá-la, vá para *Android Auto (OsmAnd) → Botão de configuração → Ampliação do mapa*, selecione um valor de 50% a 125% e toque em *Aplicar*. O valor atual é exibido abaixo de *Ampliação do mapa* na lista de configurações.  
+
+Para saber como a ampliação afeta a exibição do mapa, consulte [Ampliação do mapa](../map/vector-maps.md#map-magnifier).
 
 
 ### Tela Dividida {#split-screen}
@@ -357,8 +364,7 @@ O aplicativo OsmAnd pode ser aberto e usado para navegar no *Android Auto* na te
 3. Encontre Multi-janela e escolha o interruptor.
 4. Retorne à tela inicial.  
 
-<!--
-![Tela do Android Auto](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
+
 
 
 Nas configurações do Android Auto, você pode alterar a posição da barra de tarefas e o layout da tela inicial:

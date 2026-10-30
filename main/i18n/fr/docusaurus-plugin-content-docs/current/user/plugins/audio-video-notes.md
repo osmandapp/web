@@ -1,5 +1,5 @@
 ---
-source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+source-hash: 2c0a6908a74d63cbb4449e258729df822d9ac3927942ad52a8271ce7c951c29c
 sidebar_position: 4
 title:  Notes audio/vidéo
 ---
@@ -148,7 +148,7 @@ Pour les *notes audio et vidéo*, l'enregistreur audio ou vidéo s'affiche respe
 Il est possible d'arrêter l'enregistrement en appuyant sur le widget <Translate android="true" ids="map_widget_av_notes"/>, que l'enregistrement ait été démarré par le menu contextuel ou par le widget. Pour *une note photo*, la fonctionnalité de l'appareil photo apparaît, et vous pouvez prendre une photo, voir le résultat, l'accepter et l'enregistrer, ou prendre une nouvelle photo.
 
 :::info note
-Automatiquement, tous les enregistrements photo, audio et vidéo sont sauvegardés dans l'onglet : <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>.
+Automatiquement, tous les enregistrements photo, audio et vidéo sont sauvegardés dans l'ongtab : <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>. Chaque note est également enregistrée comme un favori dans le dossier **media**. Voir [Notes A/V en tant que favoris](#av-notes-as-favorites).
 :::
 
 
@@ -342,6 +342,14 @@ Utilisez la couche de carte [Enregistrement](../map/point-layers-on-map#-audio--
 ![Aucune note sur la carte](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Les notes sont sur la carte](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
+## Notes A/V en tant que favoris {#av-notes-as-favorites}
+
+Les notes audio, vidéo et photo sont liées aux favoris. Chaque note possède un point favori correspondant dans le dossier **media** de *Mes endroits → Favoris*, placé à l'emplacement de la note et nommé d'après le type de note et l'heure de création, par exemple *Photo 1 oct. 2026 09:45*. Le fichier de la note est joint à ce favori et apparaît dans sa [carte Média](../personal/favorites.md#media). La note elle-même reste également disponible dans l'onglet *Notes A/V*.
+
+- Lorsque OsmAnd est mis à jour vers la version 5.4 à partir d'une version antérieure, un favori est créé automatiquement pour chaque note existante.
+- Les nouvelles notes enregistrées avec le widget ou le menu contextuel de la carte sont ajoutées automatiquement au dossier **media**.
+
+
 ## Points de cheminement créés à partir de notes {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -421,11 +429,7 @@ Si vous visualisez le fichier GPX de la trace ajoutée avec un point de cheminem
 
 ### Détails du nom de fichier {#file-name-details}
 
-Le plugin <Translate android="true" ids="audionotes_plugin_name"/> génère des fichiers audio/vidéo/photo au format suivant :
-
-    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
-
-où `SHORTLINK_LOCATION` spécifie la latitude et la longitude de l'emplacement auquel le fichier est lié. Le `SHORTLINK_LOCATION` est encodé, conformément à la spécification du [Lien court](https://wiki.openstreetmap.org/wiki/Shortlink).
+Le plugin <Translate android="true" ids="audionotes_plugin_name"/> nomme les fichiers audio, vidéo et photo selon le modèle `Type_AAAA-MM-JJ_HH-mm-ss_location.ext`, par exemple `Photo_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. La partie `location` contient la latitude et la longitude de la note, encodées conformément à la spécification du [Lien court](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ### Exporter vers JOSM {#export-to-josm}

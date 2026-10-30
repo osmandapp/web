@@ -1,6 +1,6 @@
 ---
 source-hash: 9b261b980d55ca844b224f16fdc5201ded60242c62cc91adffc973d4d27faf3e
-title: Web Planner
+title: Planejador Web
 ---
 
 import Tabs from '@theme/Tabs';

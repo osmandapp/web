@@ -1,5 +1,5 @@
 ---
-source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
+source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
 sidebar_position: 7
 title:  Обране
 ---
@@ -130,7 +130,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Виберіть обране* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
 ![Мої місця Обране android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -138,7 +138,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
+Перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Виберіть обране* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
 ![мої_місця_ios](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -146,10 +146,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-В OsmAnd доступний широкий вибір іконок для POI та шляхових точок. Ви можете:
+На екрані **Вибір іконки** іконки згруповані за [категоріями](../search/search-poi.md#categories-and-their-filters). Ряд чіпів категорій у верхній частині дозволяє одразу перейти до розділу категорії у списку нижче. Торкніться піктограми лупи, щоб знайти іконку за назвою або ключовим словом.
 
-- Вибрати іконку зі списку [категорій POI](../search/search-poi.md#categories-and-their-filters).
-- Знайти відповідну іконку за допомогою [опції пошуку](../search/search-all.md#how-to-use).
+- *Останні використані* — Нещодавно вибрані іконки з’являються в окремому розділі для швидкого повторного використання.
+- *Спеціальні* — Набір універсальних іконок (зірка, прапорець, маркер, серце, камера та інші), не прив’язаних до конкретної категорії.
 
 
 ### Спеціальні точки "Обране" (Особисті) {#special-favorites-personal}
@@ -220,7 +220,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 - **Сортування** — Папки та точки "Обране" можна сортувати за допомогою доступних опцій сортування в меню списку. Для точок обраного доступні такі опції: *Назва A – Z*, *Назва Z – A*, *Останні зміни*, *Найближчі до поточного розташування*, *Найближчі до центру мапи*, *Спочатку новіша дата* та *Спочатку старіша дата*. Для папок обраного доступні такі опції: *Назва A – Z*, *Назва Z – A*, *Останні зміни*, *Спочатку новіша дата* та *Спочатку старіша дата*. За замовчуванням елементи сортуються за Назва A – Z. Закріплені папки завжди відображаються вгорі списку. Вони візуально відокремлені від решти папок роздільником. 
-- **Пошук** — Використовуйте [Глобальний пошук](../search/search-all.md), щоб знайти обрані точки за назвою. Обрані точки сортуються за відстанню від центру мапи. Щоб знайти обрані точки зі списку Обране на вкладці Мої місця, торкніться піктограми *Пошук* (лупа).
+- **Пошук** — Використовуйте [Глобальний пошук](../search/search-all.md), щоб знайти обрані точки за назвою. Щоб знайти обрані точки лише в межах списку Обране на вкладці Мої місця, торкніться піктограми *Пошук* (лупа).
+
 
 ### Групове редагування / видалення {#bulk-edit--delete}
 
@@ -271,21 +272,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </TabItem>
 
 </Tabs>
-
-<!--
-### Add Favorites to Map Markers {#add-favorites-to-map-markers}
-
-<InfoAndroidOnly/>
-
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-You can add to or remove your favorites from [Map markers list](../personal/markers.md).
-Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
-
-**Functions for Favorite folder:**
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
-- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
--->
 
 
 ### Дії з групою Обраного {#favorite-group-actions}
@@ -426,30 +412,6 @@ OsmAnd надає кілька методів для [резервного ко�
 - *[Пакет OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Виберіть цю опцію, щоб отримати доступ до функції безкоштовного резервного копіювання налаштувань.
 - *Створіть резервну копію* ваших налаштувань.
 
-<!--
-### All Favorites {#all-favorites}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
-
-- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
-- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
--->
 
 ### Група Обраного {#favorite-group}
 
@@ -468,8 +430,8 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-- Щоб поділитися кількома папками обраного, увійдіть у [Режим вибору](#bulk-edit--delete), виберіть потрібні папки та торкніться *Поділитися*.
-- Щоб поділитися однією папкою обраного, торкніться меню з трьома крапками (*Android*) або довго торкніться папки (*iOS*), виберіть *Поділитися*, щоб надіслати файл Favorites.gpx у пам’ять пристрою або поділитися ним через месенджери. На Android, якщо папка містить прикріплені медіа, з’явиться нижній аркуш «Поділитися». Ви можете вибрати:
+- Щоб поділитися кількома папками обраного, див. розділ [Групове редагування / видалення](#bulk-edit--delete).
+- Щоб поділитися однією папкою обраного, див. розділ [Дії з групою Обраного](#favorite-group-actions). На Android, якщо папка містить прикріплені медіа, з’явиться нижній аркуш «Поділитися». Ви можете вибрати:
     - *Лише точки* — Поділитися обраними точками з папки як файлом GPX.
     - *Точки та медіа* — Поділитися обраними точками та прикріпленими медіа як архівом OSF.
 
@@ -496,7 +458,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-OsmAnd створює **файл резервної копії** щоразу, коли редагуються обрані точки.
+OsmAnd автоматично створює **файл резервної копії** щоразу, коли редагуються обрані точки, зберігаючи загалом до 10 файлів резервних копій, але не більше 2 нових резервних копій на день.
 
 - **Android**: Резервні копії зберігаються в *Android → data → net.osmand → files → backup*. Використовуйте сторонній файловий менеджер для доступу до них.
 

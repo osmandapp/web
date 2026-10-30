@@ -1,5 +1,5 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Налаштувати екран
 ---
@@ -27,6 +27,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - Організовувати віджети на панелях (верхній, нижній, лівій, правій, центральній).
 - Створювати кілька **сторінок** на бічних панелях, обирати розмір віджетів.
 - Обирати висоту рядка та вмикати/вимикати іконки віджетів.
+- На Android налаштовувати [вигляд панелі віджетів](#widget-panel-appearance).
 
 Усі віджети [залежать від профілю](../personal/profiles.md) — кожен профіль має власний макет, порядок, видимість і налаштування.
 
@@ -37,7 +38,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -50,44 +51,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </TabItem>
 
 </Tabs>
-
-<!--
-## Overview {#overview}
-
-The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
-
-You can:
-
-- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
-- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
-- Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple pages within side panels, choose size of widgets.
-- Choose row height and toggle widget icons.
-- On Android, customize [widget panel appearance](#widget-panel-appearance).
-
-All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
--->
 
 
 ## Панелі віджетів {#widget-panels}
@@ -279,8 +242,6 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
 
 </Tabs>
 
-
-
 Функція **Режим рядків** дозволяє додавати стільки рядків, скільки потрібно, до верхньої та нижньої панелей. Ви можете відображати кілька віджетів у рядку, збільшуючи кількість видимої інформації.
 
 ***Як налаштувати рядки:***
@@ -399,38 +360,36 @@ OsmAnd дозволяє організувати інтерфейс мапи з�
     - Перемкніть у положення Вимкнено в полі *Показувати іконку*.
 
 
-<!--
-## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+## Вигляд панелі віджетів (лише Android) {#widget-panel-appearance}
 
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+Перейдіть до: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
 ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
 
-Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+Налаштування вигляду дозволяють налаштувати зовнішній вигляд усіх віджетів на вибраній панелі. Кожна панель (*Верхня*, *Нижня*, *Ліва*, *Права*) має власні налаштування вигляду.
 
-1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+1. **Висота**. Керує висотою віджетів на вибраній панелі. Для лівої та правої панелей цей параметр змінює **Висоту віджета**. Для верхньої та нижньої панелей — **Висоту рядка**. Доступні варіанти: *Оригінальний (за замовчуванням)*, *Малий*, *Середній*, *Великий*.
 
-2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+2. **Іконка**. Керує видимістю іконки. Доступні варіанти: *Оригінальний (за замовчуванням)*, *Увімкнено*, *Вимкнено*. 
 
-3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+3. **Колір тексту**. Змінює колір основного тексту віджета. Доступні варіанти: *За замовчуванням*, *Автоматичний*, *Користувацький*. Якщо вибрано **Користувацький**, можна налаштувати окремі кольори для режимів **День** та **Ніч**. Попередній перегляд показує вибрані кольори до їх застосування.
 
-:::tip Purchase
-Custom widget colors is a [paid feature](../purchases/index.md).  
+:::tip Покупка
+Користувацькі кольори віджетів — це [платна функція](../purchases/index.md).  
 :::
 
-4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+4. **Колір вторинного тексту**. Змінює колір назв віджетів та одиниць вимірювання. Доступні варіанти: *За замовчуванням*, *Автоматичний*, *Користувацький*.
 
-5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+5. **Колір фону**. Змінює колір фону віджетів на вибраній панелі. Доступні варіанти: *За замовчуванням*, *Прозорий*, *Користувацький*.
 
-6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+6. **Попередній перегляд**. Область попереднього перегляду показує, як виглядатимуть віджети з поточними налаштуваннями вигляду.
 
-7. **Copy appearance settings:**
+7. **Копіювати налаштування вигляду:**
 
-    - Tap the ⋮ menu in the upper-right corner.
-    - Select Copy from.
-    - Choose one of the following options: *Another profile* or *One of the other panels*.
+    - Натисніть меню ⋮ у верхньому правому куті.
+    - Виберіть *Копіювати з*.
+    - Виберіть один із варіантів: *Інший профіль* або *Одна з інших панелей*.
 
--->
 
 ## Налаштування панелей {#panels-customization}
 
@@ -490,7 +449,7 @@ OsmAnd дозволяє додавати кілька екземплярів о�
 ***Як дублювати віджети:***
 
 - **Додати віджет**. Перейдіть до: *OsmAnd menu → Configure screen → Widgets → Panel →* **Add** *widget*.
-- **Дублювати за допомогою контекстного меню**. Натисніть на віджет і виберіть **Дублювати** зі списку дій.
+- **Dubлювати за допомогою контекстного меню**. Натисніть на віджет і виберіть **Duplicate** зі списку дій.
 - **Альтернативний метод**. Виберіть той самий віджет зі списку *Доступні віджети* та натисніть *Додати*.
 
 

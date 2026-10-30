@@ -1,7 +1,7 @@
 import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { FAVORITES_URL_PARAM_FOLDER, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE, getSize } from '../../manager/FavoritesManager';
 import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
@@ -16,18 +16,20 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { fmt } from '../../util/dateFmt';
-import { useUpdateQueryParam } from '../../util/hooks/menu/useUpdateQueryParam';
-import { FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
+import { useNavigate } from 'react-router-dom';
+import { createUrlParams } from '../../util/Utils';
+import { FAVORITES_URL, liveHash, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useZoomToFit } from '../../util/hooks/map/useZoomToFit';
+import { useProcessDownload } from '../../util/hooks/menu/useProcessDownload';
 
 export default function FavoriteGroup({ index, group, smartf = null, showDivider = true }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
-    const { updateQueryParam } = useUpdateQueryParam();
+    const navigate = useNavigate();
     const { zoomToFit } = useZoomToFit();
+    const [processDownload, setProcessDownload] = useProcessDownload(FAVORITE_FILE_TYPE, smartf?.type, group.name);
 
     const [openActions, setOpenActions] = useState(false);
-    const [processDownload, setProcessDownload] = useState(false);
     const anchorEl = useRef(null);
     const share = getShare(group.file, ctx);
     const groupSize = getSize(group, t);
@@ -58,12 +60,15 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
                 id={'se-menu-fav-' + group.name}
                 onClick={(e) => {
                     if (e.target !== 'path') {
-                        updateQueryParam({
-                            key: FAVORITES_URL_PARAM_FOLDER,
-                            value: group.name,
-                            expectedLocation: MAIN_URL_WITH_SLASH + FAVORITES_URL,
-                            replace: false,
-                        });
+                        // an open point card keeps the favorites sub-route, so the folder is opened by its own address
+                        navigate(
+                            {
+                                pathname: MAIN_URL_WITH_SLASH + FAVORITES_URL,
+                                search: createUrlParams({ [FAVORITES_URL_PARAM_FOLDER]: group.name }),
+                                hash: liveHash(),
+                            },
+                            { preventScrollReset: true }
+                        );
                         zoomToFit({ type: OBJECT_TYPE_FAVORITE, object: group });
                     }
                 }}

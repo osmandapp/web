@@ -1,5 +1,5 @@
 ---
-source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
+source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
 sidebar_position: 18
 title:  Greffons
 ---
@@ -74,7 +74,7 @@ Les greffons OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Calque
 | [Cartes en ligne](#online-maps) |[Calque de carte](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Enregistrement de trajet](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profil](../plugins/trip-recording.md#recording-settings) |
 | [Topographie](#topography) | [Calque de carte](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [Relief 3D](#topography) 🤖  | [Calque de carte](../plugins/topography.md#3d-relief) |
+| [Relief 3D](#topography) | [Calque de carte](../plugins/topography.md#3d-relief) |
 | [Météo](../plugins/weather.md) | [Calque de carte](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Écran](../plugins/weather.md#weather-forecast-screen) |
 | [Vue carte marine](#nautical-map-view) | [Style de carte](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Vue carte de ski](#ski-map-view) | [Style de carte](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
@@ -82,13 +82,13 @@ Les greffons OsmAnd peuvent augmenter ces groupes de fonctionnalités : **Calque
 |[Position de stationnement](#parking-position) | [Menu contextuel](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Édition OpenStreetMap](#openstreetmap-editing)| [Calque de carte](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Calque de carte](../plugins/mapillary.md#map-layer), [Menu contextuel](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|[Capteurs externes](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Capteurs externes](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
 |[Métriques du véhicule](#vehicle-metrics)  | [Paramètres personnalisés](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
 |[Astronomie](#astronomy)  | [Écran](../plugins/astronomy.md#star-map-screen), [Menu contextuel](../plugins/astronomy.md#context-menu) |
 |[Accessibilité](#accessibility) 🤖  | [Paramètres personnalisés](../plugins/accessibility.md#plugin-settings) |
 |[Développement OsmAnd](#osmand-development) | [Paramètres personnalisés](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Calque de carte](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu contextuel](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[Suivi de navires AIS](#ais-vessel-tracker) 🤖  |  [Paramètres personnalisés](../plugins/ais-tracker.md#plugin-settings) |
+|[Suivi de navires AIS](#ais-vessel-tracker) |  [Paramètres personnalisés](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Paramètres des greffons {#plugin-settings}

@@ -963,7 +963,7 @@ function distToTrackM(segs, lat, lon) {
   return best;
 }
 
-// the heatmap activity a stored label is counted under, as heat_build.py does it
+// the heatmap activity a stored label is counted under, as the tiles count it
 function actIndexOf(activity) {
   const real = meta.acts.findIndex((a) => a.key === activity && !a.key.includes('~') && a.key !== 'unknown');
   if (real >= 0) return real;

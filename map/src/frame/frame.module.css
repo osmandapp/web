@@ -61,3 +61,7 @@
     flex: 1 0 0 !important;
     align-self: stretch !important;
 }
+
+.notification {
+    max-width: 600px;
+}

@@ -1,5 +1,5 @@
 ---
-source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
+source-hash: 7ab1b7c975524abc4cbcb3957975026e9c46aff353e0f442c1228dc360748218
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -34,12 +34,12 @@ OsmAnd Cloud le permite **almacenar y sincronizar ajustes personales y datos de 
 
 OsmAnd Cloud le permite hacer copias de seguridad, restaurar y sincronizar sus datos entre Android, iOS y la [versión web](../web/index.md). Con las capacidades multiplataforma, puede transferir **ajustes de perfil**, **pistas**, **favoritos**, **ediciones/notas de OSM** y más entre dispositivos. Además, la **versión web** le permite planificar rutas y guardarlas para su uso posterior en dispositivos conectados.  
 
-OsmAnd admite el **uso multiplataforma** entre *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://www.osmand.net/map))* con los siguientes pasos:
+OsmAnd admite el **uso multiplataforma** entre *([Android](../purchases/android.md) ← → [iOS](../purchases/ios.md) → [Web](https://osmand.net/map))* con los siguientes pasos:
 
 1. **Registre una [cuenta](#login) en OsmAnd Cloud**:
  
     1.1 **Suscríbase a OsmAnd Pro para obtener acceso completo a la Nube.**  
-   Obtenga más información sobre la compra para [Android](../purchases/android.md#how-to-buy) o [iOS](../purchases/ios.md#how-to-buy).
+   Obtenga más información sobre la compra para [Android](../purchases/android.md#how-to-buy) or [iOS](../purchases/ios.md#how-to-buy).
 
     2.1 **Use el plan gratuito OsmAnd Start** para copias de seguridad en la nube de favoritos, ajustes y ediciones/notas de OSM.  
    El límite de almacenamiento gratuito es de **5 MB**.
@@ -305,7 +305,7 @@ En este menú, puede seleccionar qué datos y carpetas subir a la Nube:
 
 1. **Ajustes**. Esta pestaña incluye todos sus ajustes, como preferencias generales, perfiles específicos, acciones rápidas, PDI y ajustes de evitación de carreteras.
 
-2. **Mis Lugares**. Esta pestaña lista los datos del menú [Mis Lugares](../personal/myplaces), incluyendo favoritos, pistas, notas de OSM, marcadores y otros elementos.
+2. **Mis Lugares**. Esta pestaña lista los datos del menú [Mis Lugares](../personal/myplaces), incluyendo favoritos, archivos adjuntos (solo Android), pistas, notas de OSM, marcadores y otros elementos.
 
 3. **Recursos**. Aquí, puede elegir hacer una copia de seguridad de recursos como favoritos, información de enrutamiento, indicaciones de voz y elementos adicionales.
 

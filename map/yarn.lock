@@ -7851,6 +7851,13 @@ eslint-plugin-react-compiler@beta:
   languageName: node
   linkType: hard
 
+"fflate@npm:^0.8.2":
+  version: 0.8.3
+  resolution: "fflate@npm:0.8.3"
+  checksum: a2a417e8fb5128b946cb397ab59a90e089057cba492f2c17a89c4af6ba8568b3da72ed36ef1efe901df7858a20964ce56e84d282e60498be1947fcc6133bc891
+  languageName: node
+  linkType: hard
+
 "file-entry-cache@npm:^6.0.1":
   version: 6.0.1
   resolution: "file-entry-cache@npm:6.0.1"
@@ -11644,6 +11651,7 @@ eslint-plugin-react-compiler@beta:
     maplibre-gl: 5.24.0
     pako: ^2.0.4
     patch-package: ^6.4.7
+    pmtiles: 4.5.0
     postinstall-postinstall: ^2.1.0
     prettier: ^3.0.0
     prop-types: ^15.8.1
@@ -12004,6 +12012,15 @@ eslint-plugin-react-compiler@beta:
   dependencies:
     find-up: ^3.0.0
   checksum: 5bac346b7c7c903613c057ae3ab722f320716199d753f4a7d053d38f2b5955460f3e6ab73b4762c62fd3e947f58e04f1343e92089e7bb6091c90877406fcd8c8
+  languageName: node
+  linkType: hard
+
+"pmtiles@npm:4.5.0":
+  version: 4.5.0
+  resolution: "pmtiles@npm:4.5.0"
+  dependencies:
+    fflate: ^0.8.2
+  checksum: 43877e58546ea52434b8c253dc363094d0e27f9489cd393756f6be7733e2b368b3139a51c3df482e6b6f488734b331892b64283f2c200f5483200c46c1b84e62
   languageName: node
   linkType: hard
 

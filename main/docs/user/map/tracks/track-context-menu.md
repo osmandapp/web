@@ -201,7 +201,7 @@ This section of the *Overview* tab displays ***tag data*** and ***all general in
       <year>2023</year>
       <license>https://github.com/osmandapp/OsmAnd/blob/master/LICENSE</license>
     </copyright>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <time>2023-12-13T12:00:00Z</time>
     <keywords>gpx, osmand, hiking</keywords>
     <extensions>
@@ -423,6 +423,7 @@ In this *Points* tab:
 - [Show track points data](#display-custom-gpx-tags) and modify your track points (waypoints and route points), [delete it and add](#points--waypoints) waypoints to a track.
 - Create and modify [Group (folder) of points](#waypoint-groups).
 - Show a waypoint on the map using the pin icon in the waypoint list. The map centers on the waypoint without closing the list or changing the current zoom level.
+- Attach photos, videos, and audio notes to a waypoint using the *Media* card in its context menu (*Android only*). See [Favorites article](../../personal/favorites.md#media).
 
 
 ### Add Waypoint to a Track {#add-waypoint-to-a-track}
@@ -556,7 +557,7 @@ You can switch group waypoints on or off on the map using the button in the uppe
     <time>2024-04-04T13:12:11Z</time>
     <name>Waypoint 1</name>
     <desc>Long description</desc>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <type></type>
     <cmt>Short comment for the waypoint.</cmt>
     <extensions>

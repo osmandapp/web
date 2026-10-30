@@ -1,5 +1,5 @@
 ---
-source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -289,11 +289,13 @@ Pour basculer entre ces modes, appuyez directement sur le widget. L'option de ba
 
 <TabItem value="android" label="Android">
 
-**Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
+- **Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
+- **Vitesse verticale moyenne** indique à quelle vitesse vous montez ou descendez sur l'intervalle de temps : la différence d'altitude entre le premier et le dernier point de l'intervalle, divisée par le temps écoulé entre eux. Les valeurs positives indiquent une montée, les valeurs négatives une descente. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes.
 
 | | |
 |:------------|:------------|
 | Activer | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisissez un panneau → Ajouter un widget → Finesse* |
+| Par appui | Change *Finesse moyenne* ou *Vitesse verticale moyenne*  |
 | Appui long | Ouvre le [Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -301,7 +303,7 @@ Pour basculer entre ces modes, appuyez directement sur le widget. L'option de ba
 <TabItem value="ios" label="iOS">
 
 - **Finesse moyenne** indique la finesse moyenne pour un intervalle de temps spécifié.
-- **Vitesse verticale moyenne** indique la vitesse à laquelle un objet monte ou descend sur une période donnée. Seuls les premier et dernier points de l'intervalle de temps sont pris en compte pour l'évaluation. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes. Vous devez utiliser le [marqueur de carte](../personal/markers.md) comme point cible.
+- **Vitesse verticale moyenne** indique à quelle vitesse vous montez ou descendez sur l'intervalle de temps : la différence d'altitude entre le premier et le dernier point de l'intervalle, divisée par le temps écoulé entre eux. Les valeurs positives indiquent une montée, les valeurs négatives une descente. Vous pouvez définir l'intervalle de temps pour ce widget de 15 secondes à 60 minutes.
 
 | | |
 |:------------|:------------|
@@ -311,7 +313,7 @@ Pour basculer entre ces modes, appuyez directement sur le widget. L'option de ba
 
 </TabItem>
 
-</Tabs>  
+</Tabs>
 
 
 ## Niveau de la batterie {#battery-level}
@@ -536,7 +538,7 @@ Les widgets d'enregistrement de trajet se réfèrent à l'[extension <Translate 
 
 :::note
 Pour ajouter des widgets de capteurs externes à l'écran de la carte, activez l'extension [Capteurs externes](../plugins/external-sensors.md) d'OsmAnd.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -583,7 +585,7 @@ Les widgets se réfèrent à l'[extension Capteurs externes](../plugins/external
 
 :::note
 Pour ajouter des widgets de métriques du véhicule à l'écran de la carte, activez l'extension [Métrique du véhicule](../plugins/vehicle-metrics.md) d'OsmAnd.
-::;
+:::
 
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -623,7 +625,7 @@ Les widgets appartiennent à l'[extension Métriques du véhicule](../plugins/ve
 
 :::note
 Pour ajouter des widgets Météo à l'écran de la carte, activez l'extension [Météo](../plugins/weather.md) d'OsmAnd.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -703,7 +705,7 @@ Il s'agit d'un widget de l'extension Mapillary qui offre un accès rapide à l'a
 
 :::note
 Pour ajouter des widgets de notes audio/vidéo à l'écran de la carte, activez l'extension [Notes audio/vidéo](../plugins/audio-video-notes.md) d'OsmAnd.
-::;
+:::
 
 ![Widget de notes audio-vidéo](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -747,7 +749,7 @@ Ce widget de l'extension OsmAnd Tracker est utilisé pour accéder rapidement à
 
 :::note
 Pour ajouter des widgets pour développeurs à l'écran de la carte, activez l'extension [Développement OsmAnd](../plugins/development.md).
-::;
+:::
 
 Les **widgets pour développeurs** fournissent des informations sur la [vitesse de rendu de la carte](../plugins/development.md#map-rendering-fps-widget) et les paramètres de position de la caméra virtuelle, y compris le [niveau de zoom](../plugins/development.md#zoom-level), la [distance](../plugins/development.md#distance-to-target) au centre de la carte, l'[élévation de la caméra](../plugins/development.md#camera-elevation) et l'[angle d'inclinaison](../plugins/development.md#camera-tilt).  
 

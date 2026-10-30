@@ -1,5 +1,5 @@
 ---
-source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
+source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
 sidebar_position: 18
 title:  Plugins
 ---
@@ -74,7 +74,7 @@ OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**
 | [Online-Karten](#online-maps) |[Kartenebene](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Reiseaufzeichnung](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Profil](../plugins/trip-recording.md#recording-settings) |
 | [Topografie](#topography) | [Kartenebene](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [3D-Relief](#topography) 🤖  | [Kartenebene](../plugins/topography.md#3d-relief) |
+| [3D-Relief](#topography) | [Kartenebene](../plugins/topography.md#3d-relief) |
 | [Wetter](../plugins/weather.md) | [Kartenebene](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Bildschirm](../plugins/weather.md#weather-forecast-screen) |
 | [Seekartenansicht](#nautical-map-view) | [Kartenstil](../plugins/nautical-charts.md#nautical-map-style), [Profil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Skikartenansicht](#ski-map-view) | [Kartenstil](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Profil](../plugins/ski-maps.md#skiing-profile) |
@@ -82,13 +82,13 @@ OsmAnd-Plugins können diese Funktionsgruppen erweitern: **Ebenen**, **Widgets**
 |[Parkposition](#parking-position) | [Kontextmenü](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[OpenStreetMap-Bearbeitung](#openstreetmap-editing)| [Kartenebene](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Kartenebene](../plugins/mapillary.md#map-layer), [Kontextmenü](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|[Externe Sensoren](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Externe Sensoren](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
 |[Fahrzeugmetriken](#vehicle-metrics)  | [Benutzerdefinierte Einstellungen](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
 |[Astronomie](#astronomy)  | [Bildschirm](../plugins/astronomy.md#star-map-screen), [Kontextmenü](../plugins/astronomy.md#context-menu) |
 |[Bedienungshilfen](#accessibility) 🤖  | [Benutzerdefinierte Einstellungen](../plugins/accessibility.md#plugin-settings) |
 |[OsmAnd-Entwicklung](#osmand-development) | [Benutzerdefinierte Einstellungen](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Kartenebene](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Kontextmenü](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[AIS-Schiffstracker](#ais-vessel-tracker) 🤖  |  [Benutzerdefinierte Einstellungen](../plugins/ais-tracker.md#plugin-settings) |
+|[AIS-Schiffstracker](#ais-vessel-tracker) |  [Benutzerdefinierte Einstellungen](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Plugin-Einstellungen {#plugin-settings}

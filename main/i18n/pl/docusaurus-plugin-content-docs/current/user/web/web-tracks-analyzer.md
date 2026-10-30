@@ -1,8 +1,8 @@
 ---
-source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
+source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
 sidebar_position: 7
-sidebar_label: Tracks Analyzer
-title: Tracks Analyzer
+sidebar_label: Analizator śladów
+title: Analizator śladów
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,13 +19,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Przegląd {#overview}
 
-**Tracks Analyzer** to narzędzie internetowe, które pomaga analizować powtarzające się segmenty ścieżek między wybranymi punktami na mapie. Aby korzystać z tej funkcji z własnymi danymi, potrzebujesz konta OsmAnd Pro ze ścieżkami zsynchronizowanymi do OsmAnd Cloud — w przeciwnym razie Twoje ścieżki nie będą dostępne w Planerze internetowym. Skanuje Twoje ścieżki i znajduje wszystkie segmenty przechodzące przez wybrane lokalizacje, umożliwiając porównanie prędkości, wysokości, dystansu i czasu w wielu aktywnościach.
+**Tracks Analyzer** to narzędzie internetowe, które pomaga analizować powtarzające się segmenty ścieżek między wybranymi punktami na mapie. Na przykład możesz użyć go do porównania swoich przejazdów na tym samym podjeździe lub codziennych dojazdów do pracy. Aby korzystać z tej funkcji z własnymi danymi, potrzebujesz konta OsmAnd Pro ze ścieżkami zsynchronizowanymi do OsmAnd Cloud — w przeciwnym razie Twoje ścieżki nie będą dostępne w Planerze internetowym. Skanuje Twoje ścieżki i znajduje wszystkie segmenty przechodzące przez wybrane lokalizacje, umożliwiając porównanie prędkości, wysokości, dystansu i czasu w wielu aktywnościach.
 
 ## Jak używać {#how-to-use}
 
-Po otwarciu Tracks Analyzer (pokazanego jako ikona klucza), narzędzie otwiera się z widokiem mapy i pustym stanem. Stąd możesz wybrać, które ścieżki będą uwzględnione w analizie za pomocą panelu **Wybierz ścieżki**. Analyzer pozwala pracować ze wszystkimi dostępnymi ścieżkami lub ograniczyć analizę do określonych folderów.
+1. [Zaloguj się](./web-cloud.md#login) na swoje konto OsmAnd Pro w Web Map Portal. Twoje ścieżki muszą być zsynchronizowane z [OsmAnd Cloud](./web-cloud.md#cloud-sync).
+2. Otwórz *Menu → Analizator śladów* (ikona klucza).
+3. W panelu **Wybierz ślady** wybierz **Wszystkie ścieżki** lub tylko potrzebne foldery.
+4. Kliknij prawym przyciskiem myszy na mapie i wybierz **Punkt A**. Aby przeanalizować segment między dwoma punktami, ustaw także **Punkt B**.
+5. Przejrzyj listę znalezionych segmentów, [posortuj ją i wybierz, które parametry mają być wyświetlane](#sorting-and-visible-parameters).
 
-Aby rozpocząć analizę, ustaw jeden lub dwa punkty bezpośrednio na mapie. Kliknij prawym przyciskiem myszy w żądanej lokalizacji i wybierz **Punkt A / Punkt B** z menu kontekstowego. Analyzer następnie wyszukuje segmenty ścieżek przechodzące przez wybrany punkt lub między dwoma punktami.
+Z jednym punktem analyzer znajduje segmenty ścieżek przechodzące przez wybraną lokalizację. Z dwoma punktami znajduje i analizuje segmenty między Punktem A a Punktem B.
 
 ![Analizator ścieżek](@site/static/img/web/web_analyzer_select.png) ![Analizator ścieżek](@site/static/img/web/web_analyzer_points_new.png)
 
@@ -33,29 +37,14 @@ Aby rozpocząć analizę, ustaw jeden lub dwa punkty bezpośrednio na mapie. Kli
 ## Sortowanie i widoczne parametry {#sorting-and-visible-parameters}
 Po znalezieniu pasujących segmentów przez analyzer, wyniki są wyświetlane jako lista. Lista może być posortowana za pomocą opcji **Sortuj**, co zmienia sposób wyświetlania segmentów. Ponadto przycisk **Pola** otwiera panel Widocznych parametrów, gdzie możesz kontrolować, które parametry analizy są wyświetlane dla każdego segmentu. Możesz wyświetlić wszystkie dostępne parametry lub wybrać tylko te istotne dla Twojej analizy.
 
-Dostępne parametry są pogrupowane według typu:
+Dostępne parametry obejmują:
 
-**Prędkość**
-- Maks. prędkość
-- Średnia prędkość
-- Min. prędkość
-
-**Wysokość**
-- Maks. wysokość
-- Średnia wysokość
-- Min. wysokość
-
-**Pod górę / Z górki**
-
-**Data i czas**
-- Data
-- Czas rozpoczęcia
-- Czas zakończenia
-- Zakres czasu
-- Czas trwania
-- Czas w ruchu
-
-**Długość**
+- Maks. prędkość, Średnia prędkość i Min. prędkość.
+- Maks. wysokość, Średnia wysokość i Min. wysokość.
+- Pod górę i Z górki.
+- Data.
+- Zakres czasu, Czas rozpoczęcia, Czas zakończenia, Czas trwania i Czas w ruchu.
+- Długość.
 
 ![Analizator ścieżek](@site/static/img/web/web_analyzer_sort.png) ![Analizator ścieżek](@site/static/img/web/web_analyzer_fields.png)
 
@@ -65,7 +54,7 @@ Każdy pasujący segment jest wyświetlany w liście wyników po lewej stronie. 
 
 Każdy segment ma również menu z trzema kropkami (⋮) z następującymi akcjami:
 - Otwórz ścieżkę — otwiera pełną ścieżkę związaną z wybranym segmentem.
-- Ukryj ścieżkę / Pokaż ścieżkę — kontroluje, czy ścieżka jest wyświetlana na mapie.
+- Ukryj ślad / Pokaż ślad — kontroluje, czy ścieżka jest wyświetlana na mapie.
 - Wyklucz — usuwa segment z aktualnych wyników analizy.
 
 ![Analizator ścieżek](@site/static/img/web/web_analyzer_menu.png)

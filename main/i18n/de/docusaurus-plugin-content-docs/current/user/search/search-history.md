@@ -1,8 +1,9 @@
 ---
-source-hash: b0e4660605b0cdfdfcfc653e1f8929974cb654b66c0c55fbc588b89e37d05091
+source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
 sidebar_position: 3
-title:  Suchverlauf
+title:  Suchen Erkunden
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -11,19 +12,42 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Der *Suchverlauf* ist eine Aufzeichnung aller Suchen und Orte, die Sie während der Nutzungsdauer in der App eingegeben oder gesucht haben. Dieses Werkzeug ermöglicht es Ihnen, zuvor gesuchte Orte einfach zu finden und darauf zuzugreifen, was die Navigation erleichtert und Ihre Zeit spart.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Der Tab **Erkunden** im Suchwerkzeug hilft Ihnen, beliebte Orte in Ihrer Nähe zu entdecken und schnell zu Orten zurückzukehren, die Sie zuvor gesucht oder zu denen Sie navigiert haben. Er enthält zwei Abschnitte: [Beliebte Orte in der Nähe](#popular-places-nearby) und [Verlauf](#history-items).
+
+*Verlauf* ist eine Aufzeichnung aller Suchen und Navigationsziele, die Sie während der Nutzungsdauer in der App eingegeben oder gesucht haben. Dieses Werkzeug ermöglicht es Ihnen, zuvor gesuchte Orte einfach zu finden und darauf zuzugreifen, was die Navigation erleichtert und Ihre Zeit spart.
+
+OsmAnd bietet mehrere Möglichkeiten, Ihren Verlauf anzuzeigen.
+
+- Die [Suchschaltfläche](../widgets/map-buttons.md#search) wird immer auf der Karte angezeigt. Ein Tippen darauf führt Sie zum [allgemeinen Bildschirm](#how-to-use) des Werkzeugs.
+- Gehen Sie zum Hauptmenü *Menü → Suchen → Tab Erkunden*.
+- Wenn Sie eine Route starten möchten, tippen Sie auf *Navigation → Ziel festlegen → Suchfeld*.
+- Der Informationsblock im Navigationsmenü der [Routenvorbereitung](../navigation/setup/route-navigation.md#navigation-menu) zeigt eine Liste der letzten Zielpunkte an, die ebenfalls Teil des Suchverlaufs sind.
+- Der Suchverlauf ist in [Android Auto](../navigation/auto-car.md#search) verfügbar.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Suchverlauf* ist eine Aufzeichnung aller Suchen und Orte, die Sie während der Nutzungsdauer in der App eingegeben oder gesucht haben. Dieses Werkzeug ermöglicht es Ihnen, zuvor gesuchte Orte einfach zu finden und darauf zuzugreifen, was die Navigation erleichtert und Ihre Zeit spart.
 
 OsmAnd bietet mehrere Möglichkeiten, Ihren Suchverlauf anzuzeigen.
 
-- Die [Suchschaltfläche](../widgets/map-buttons.md#search) wird immer auf der Karte angezeigt. Ein Tippen darauf führt Sie zum [allgemeinen Bildschirm](#how-to-use) des Werkzeugs.
-- Gehen Sie zum Hauptmenü von Android *Menü → Suchen → Tab Verlauf*.
+- Die [Suchschaltfläche](../widgets/map-buttons.md#search) wird immer auf der Karte angezeigt. Tippen Sie darauf, um den [allgemeinen Bildschirm](#how-to-use) des Werkzeugs zu öffnen, und wählen Sie dann den Tab *Verlauf*.
 - Wenn Sie eine Route starten möchten, tippen Sie auf *Navigation → Ziel festlegen → Suchfeld*.
 - Der Informationsblock im Navigationsmenü der [Routenvorbereitung](../navigation/setup/route-navigation.md#navigation-menu) zeigt eine Liste der letzten Zielpunkte an, die ebenfalls Teil des Suchverlaufs sind.
-- Der Suchverlauf ist in [Android Auto](../navigation/auto-car.md#search) und [CarPlay](../navigation/car-play.md#search) verfügbar.
+- Der Suchverlauf ist in [CarPlay](../navigation/car-play.md#search) verfügbar.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Anwendung {#how-to-use}
@@ -32,7 +56,16 @@ OsmAnd bietet mehrere Möglichkeiten, Ihren Suchverlauf anzuzeigen.
 
 <TabItem value="android" label="Android">
 
-![Suchverlauf](@site/static/img/search/history_search_android.png)
+![Erkunden suchen](@site/static/img/search/explore_search_android.webp)
+
+Der Tab **Erkunden** wird geöffnet, wenn Sie das Suchwerkzeug öffnen. Der Tab Erkunden dient dazu, relevante Informationen über Orte in Ihrer Nähe und Ihre vorherigen Aktionen bereitzustellen.
+
+- *Orte in der Nähe entdecken*. Der Abschnitt [Beliebte Orte in der Nähe](#popular-places-nearby) zeigt bekannte Sehenswürdigkeiten und Attraktionen in Ihrer Umgebung an, sodass Sie interessante Orte finden können, ohne eine Suchanfrage einzugeben.
+- *Erneute Suche*. Sie können den Suchverlauf verwenden, um erneut nach zuvor gesuchten Orten oder Adressen zu suchen, ohne die Anfrage erneut eingeben zu müssen.
+- *Schneller Zugriff auf häufig besuchte Orte*. Wenn Sie bestimmte Orte häufig besuchen, wie Ihr Zuhause, Ihre Arbeit oder Ihre Lieblingsorte, speichert der Suchverlauf diese Orte und bietet schnellen Zugriff darauf.
+- *Verfolgen früherer Fahrten*. Der Suchverlauf kann nützlich sein, um frühere Fahrten und Routen zu verfolgen. Sie können Routen nachverfolgen, die Sie zuvor gefahren sind, oder [Ihre nächste Route planen](../plan-route/create-route.md), basierend auf früheren.
+- *Suche nach Orten über einen bestimmten Zeitraum*. Auf dem Verlaufsbildschirm werden nach *Neueste* sortierte Einträge nach Zeitraum gruppiert: *Heute*, *Gestern*, *Letzte Woche* und dann nach Monat. Um einen bestimmten Eintrag zu finden, tippen Sie oben auf dem Bildschirm auf den Titel *Verlauf* und geben Sie dessen Namen ein.
+- *Einträge löschen*. Der Suchverlauf bietet die Möglichkeit, frühere Einträge zu [löschen](#delete), was aus Datenschutzgründen oder zur Organisation Ihres Verlaufs nützlich sein kann.
 
 </TabItem>
 
@@ -40,21 +73,28 @@ OsmAnd bietet mehrere Möglichkeiten, Ihren Suchverlauf anzuzeigen.
 
 ![Suchverlauf](@site/static/img/search/history_search_ios.png)
 
+Der Suchverlauf dient dazu, relevante Informationen über Ihre früheren Aktionen bereitzustellen.
+
+- *Erneute Suche*. Sie können den Suchverlauf verwenden, um erneut nach zuvor gesuchten Orten oder Adressen zu suchen, ohne die Anfrage erneut eingeben zu müssen.
+- *Schneller Zugriff auf häufig besuchte Orte*. Wenn Sie bestimmte Orte wie Ihr Zuhause, Ihre Arbeit oder Ihre Lieblingsorte häufig besuchen, speichert der Suchverlauf diese Orte und bietet schnellen Zugriff darauf.
+- *Verfolgen früherer Fahrten*. Der Suchverlauf kann nützlich sein, um frühere Fahrten und Routen zu verfolgen. Sie können Routen nachverfolgen, die Sie zuvor gefahren sind, oder [Ihre nächste Route planen](../plan-route/create-route.md), basierend auf früheren.
+- *Suche nach Orten über einen bestimmten Zeitraum*. Die Suchverlaufsliste ist bereits in Blöcke nach Monat unterteilt.
+- *Einträge löschen*. Der Suchverlauf bietet die Möglichkeit, frühere Einträge zu [löschen](#delete), was aus Datenschutzgründen oder zur Organisation Ihres Verlaufs nützlich sein kann.
+
 </TabItem>
 
 </Tabs>
 
-Der Suchverlauf dient dazu, relevante Informationen über Ihre früheren Aktionen bereitzustellen.
 
-- *Erneute Suche*. Sie können den Suchverlauf verwenden, um erneut nach zuvor gesuchten Orten oder Adressen zu suchen, ohne die Anfrage erneut eingeben zu müssen.
+## Beliebte Orte in der Nähe {#popular-places-nearby}
 
-- *Schneller Zugriff auf häufig besuchte Orte*. Wenn Sie bestimmte Orte wie Ihr Zuhause, Ihre Arbeit oder Ihre Lieblingsorte häufig besuchen, speichert der Suchverlauf diese Orte und bietet schnellen Zugriff darauf.
+<InfoAndroidOnly/>
 
-- *Verfolgen früherer Fahrten*. Der Suchverlauf kann nützlich sein, um frühere Fahrten und Routen zu verfolgen. Sie können Routen nachverfolgen, die Sie zuvor gefahren sind, oder [Ihre nächste Route planen](../plan-route/create-route.md), basierend auf früheren.
+![Beliebte Orte in der Nähe](@site/static/img/search/popular_places_nearby.webp)
 
-- *Suche nach Orten über einen bestimmten Zeitraum*. Für die Android-App müssen Sie lange tippen, dann den Monat finden, in dem Sie die Reise unternommen haben, das Löschmenü verlassen und den Namen im Suchfeld eingeben. Für die iOS-App ist die Suchverlaufsliste bereits in Blöcke nach Monat unterteilt.
+Der Abschnitt **Beliebte Orte in der Nähe** zeigt eine scrollbare Liste bekannter Sehenswürdigkeiten und Attraktionen in Ihrer Nähe an. Jedes Element kann den Namen des Ortes, seine Kategorie, Entfernung und Richtung sowie bei Verfügbarkeit ein Vorschaubild enthalten. Tippen Sie auf *Alle anzeigen*, um die vollständige Liste zu öffnen, oder auf *Auf Karte anzeigen*, um diese Orte auf der Karte anzuzeigen.
 
-- *Einträge löschen*. Der Suchverlauf bietet die Möglichkeit, frühere Einträge zu [löschen](#delete), was aus Datenschutzgründen oder zur Organisation Ihres Verlaufs nützlich sein kann.
+Weitere Details finden Sie im Artikel [Beliebte Orte](../map/popular_places.md#explore-in-search).
 
 
 ## Verlaufseinträge {#history-items}
@@ -63,7 +103,16 @@ Der Suchverlauf dient dazu, relevante Informationen über Ihre früheren Aktione
 
 <TabItem value="android" label="Android">
 
-![Suchverlauf](@site/static/img/search/history_search_android.png)
+![Verlaufsabschnitt](@site/static/img/search/history_section_list.webp)
+
+Der Abschnitt **Verlauf** des Tabs Erkunden zeigt bis zu 25 der neuesten Einträge an. Tippen Sie auf den Abschnittstitel, um ihn ein- oder auszublenden. Tippen Sie auf *Alle anzeigen*, um den vollständigen *Verlaufs*bildschirm zu öffnen.
+
+Wenn sowohl *Suchverlauf* als auch *Navigationsverlauf* deaktiviert sind, zeigt der Abschnitt die Karte *Verlauf ist deaktiviert* an. Tippen Sie auf *Verlaufseinstellungen öffnen*, um sie zu aktivieren.
+
+Jedes Feld in der Verlaufsliste enthält einige der für die Anwendung verfügbaren **Informationen**.
+
+- Ein Symbol, das den Typ oder die Kategorie des gefundenen Objekts identifiziert.
+- Der Objektname, der Ort, die Adresse oder die Typanfrage. Bei Tracks werden Informationen über die Entfernung, die Anzahl der Wegpunkte und die Zeit angezeigt.
 
 </TabItem>
 
@@ -71,36 +120,87 @@ Der Suchverlauf dient dazu, relevante Informationen über Ihre früheren Aktione
 
 ![Suchverlauf](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 Jedes Feld in der Suchverlaufsliste enthält einige der für die Anwendung verfügbaren **Informationen**.
 
 - Ein Symbol, das den Typ oder die Kategorie des gefundenen Objekts identifiziert.
 - Der Objektname, der Ort, die Adresse oder die Typanfrage. Bei Tracks werden Informationen über die Entfernung, die Anzahl der Wegpunkte und die Zeit angezeigt.
 - Entfernung von Ihrem aktuellen Standort zum Punkt und Richtung per Kompass.
 
+</TabItem>
 
-### Reihenfolge der Einträge {#order-of-items}
+</Tabs>
+
+
+### Sortieren und Filtern {#sort-and-filter}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Verlaufsabschnitt](@site/static/img/search/history_section_android.webp) ![Verlaufsabschnitt](@site/static/img/search/history_section_2_android.webp)
+
+Auf dem vollständigen *Verlaufs*bildschirm können Sie Ihre Verlaufseinträge mit den folgenden Optionen sortieren und filtern:
+
+1. **Sortieren nach**:
+    - *Neueste* — zeigt zuerst die zuletzt hinzugefügten Einträge an. Bei Auswahl dieser Option werden die Einträge nach Zeit gruppiert, z. B. Heute, Gestern, Letzte Woche und frühere Zeiträume.
+    - *Nächste* — sortiert Einträge nach ihrer Entfernung von Ihrem aktuellen Standort.
+    - *Nächste zum Kartenmittelpunkt* — sortiert Einträge nach ihrer Entfernung vom aktuellen Mittelpunkt der Karte. Bei Auswahl einer der entfernungsbasierten Sortieroptionen werden die zeitbasierten Gruppen nicht angezeigt.
+
+2. **Typ** — filtert Verlaufseinträge nach:
+    - *Alle* — zeigt alle verfügbaren Verlaufseinträge an.
+    - *Suchen* — zeigt Einträge aus Ihrem Suchverlauf an.
+    - *Navigation* — zeigt Einträge aus Ihrem Navigationsverlauf an.
+
+Wenn *Suchverlauf* oder *Navigationsverlauf* in den Verlaufseinstellungen deaktiviert ist, ist der Filter *Typ* nicht verfügbar.
+
+3. **Kategoriefilter** — filtert Verlaufseinträge nach Kategorie. Die verfügbaren Kategoriefilter hängen von den Typen der in Ihrem Verlauf verfügbaren Einträge ab. Sie können beispielsweise Kategorien wie POI, Track, Standort, Favorit oder Adresse sehen. Sie können mehrere Kategorien gleichzeitig auswählen.
+
+4. **Einstellungen** — tippen Sie auf das Zahnradsymbol in der oberen rechten Ecke, um die Verlaufseinstellungen zu öffnen, in denen Sie *Suchverlauf*, *Navigationsverlauf* und *Kartenmarkierungsverlauf* aktivieren oder deaktivieren, den Verlauf als Datei sichern oder den gesamten Verlauf löschen können.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Neueste Einträge**. Die neuesten Anfragen oder Orte werden oben in der Liste angezeigt. Dies ermöglicht einen schnellen Zugriff auf kürzlich verwendete Einträge.
 - **Chronologische Reihenfolge**. Die Einträge in der Suchverlaufsliste sind in chronologischer Reihenfolge angeordnet, beginnend mit den ältesten oder frühesten Einträgen und endend mit den neuesten oder letzten. Alte Einträge rutschen allmählich in der Liste nach unten, wenn neue Einträge hinzugefügt werden, es sei denn, alte Einträge im Suchverlauf wurden verwendet. In diesem Fall werden sie an den Anfang der Liste verschoben.
-- In iOS ist die Liste nach Monaten sortiert.
+- Die Liste ist nach Monaten sortiert.
+
+</TabItem>
+
+</Tabs>
 
 ### Objekttypen {#type-of-objects}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Die folgenden **Objekttypen** gelangen in die Suchverlaufsliste:
+
+- **Orte**. Dies kann eine Adresse, ein Firmenname, eine Routennummer, Koordinaten, Markierungen, Sonderziele, OSM-Notizen oder Orte sein, auf die Sie auf der Karte getippt haben.
+- **Tracks und Wegpunkte**. Die Liste enthält Tracks, die Sie erstellt, aufgezeichnet oder heruntergeladen und in früheren Routen verwendet haben, sowie Wegpunkte, wenn Sie separat zu ihnen navigiert sind.
+- **Favoriten und Fotos**. Favoritenpunkte und Fotnotizen, die Sie geöffnet haben.
+- **Ziele**. Punkte, zu denen Sie navigiert haben.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 Die folgenden **Objekttypen** gelangen in die Suchverlaufsliste:
 
 - **Orte**. Dies kann eine Adresse, ein Firmenname, eine Routennummer, Koordinaten, Markierungen, Sonderziele, OSM-Notizen oder Orte sein, auf die Sie auf der Karte getippt haben.
 - **Tracks und Wegpunkte**. Die Liste enthält Tracks, die Sie erstellt, aufgezeichnet oder heruntergeladen und in früheren Routen verwendet haben, sowie Wegpunkte, wenn Sie separat zu ihnen navigiert sind.
 
+</TabItem>
+
+</Tabs>
+
 
 ## Aktionen {#actions}
 
 Im Suchverlauf-Werkzeug können Sie unnötige Anfragen [löschen](#delete), alle auf einmal oder einzelne Einträge. Sie können den Verlauf [exportieren](#export-and-share). Die Android-App bietet eine zusätzliche Aktion zum [Teilen](#share-android) von Sucheinträgen als [GPX](../../technical/osmand-file-formats/osmand-gpx.md)-Datei.
 
-Sie können die Anzeige des gesamten Suchverlaufs **deaktivieren oder aktivieren**. In diesem Fall werden die Anfragen nicht vom Gerät gelöscht. Bei Android befindet sich der Schalter auf dem Hauptbildschirm des Werkzeugs im [Tab Verlauf](#overview). Bei iOS befindet er sich unter *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Suchverlauf*.
+Sie können die Anzeige des gesamten Suchverlaufs **deaktivieren oder aktivieren**. In diesem Fall werden die Anfragen nicht vom Gerät gelöscht. Bei Android befindet sich der Schalter oben auf dem [Löschbildschirm](#delete) und in den Verlaufseinstellungen, die Sie über das Zahnradsymbol auf dem [Verlaufsbildschirm](#sort-and-filter) öffnen können. Bei iOS befindet er sich unter *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Suchverlauf*.
 
 
 ### Löschen {#delete}
@@ -109,13 +209,13 @@ Sie können die Anzeige des gesamten Suchverlaufs **deaktivieren oder aktivieren
 
 <TabItem value="android" label="Android">
 
-![Suchverlauf löschen](@site/static/img/search/history_search_delete_andr.png)
+![Suchverlauf](@site/static/img/search/history_search_delete_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Suchverlauf löschen](@site/static/img/search/history_search_delete_ios.png)
+![Suchverlauf](@site/static/img/search/history_search_delete_ios.png)
 
 </TabItem>
 
@@ -128,7 +228,7 @@ Sie müssen **lange auf einen der Anfrageeinträge in der Liste tippen**, um den
 - *Zufällige Einträge auswählen oder abwählen* - tippen Sie auf den gewünschten Eintrag in der Liste.
 - *Den zum Löschen verfügbaren Zeitraum auswählen*, z. B. Tag, letzte 7 Tage oder Monat - aktivieren Sie das Kontrollkästchen mit der Unterüberschrift in der Liste.
 - *Sie können den gesamten Verlauf auf einmal löschen*, indem Sie auf die Schaltfläche *Alle auswählen* am unteren Bildschirmrand tippen.
-- *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Aktionen*. Dieser Abschnitt enthält die Schaltfläche **Gesamten Verlauf löschen**.
+- *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Aktionen*. Dieser Abschnitt enthält die Schaltfläche **Gesamten Verlauf löschen** (*Android*)/**Gesamten Verlauf löschen** (*iOS*).
 
 
 ### Exportieren und Teilen {#export-and-share}
@@ -153,7 +253,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 </Tabs>
 
-Es gibt mehrere verfügbare Optionen, um den Suchverlauf zu exportieren. Alle Dateien werden im Format `.osf` (OsmAnd Settings File) exportiert.
+Es gibt mehrere verfügbare Optionen, um den Suchverlauf zu exportieren. Alle Dateien werden im Format `.osf` (OsmAnd-Einstellungsdatei) exportiert.
 
 1. *Menü → Einstellungen → OsmAnd-Einstellungen → Verlauf → Suchverlauf*.
     Der Export ist über das OsmAnd-Einstellungsmenü verfügbar. Bei Android führt dieser Pfad zum Löschbildschirm, wo [Verlauf teilen](#share-android) verfügbar ist. Im Fall von iOS können Sie auf dem Bildschirm einzelne Einträge oder den gesamten Verlauf auswählen und nach dem Tippen auf die Schaltfläche *Exportieren* zum Menü *Lokales Backup* gelangen.

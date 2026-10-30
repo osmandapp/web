@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -34,7 +34,7 @@ La funzione **Android Auto** è supportata solo quando si utilizza l'app OsmAnd 
 
 ### Schermata di connessione {#connection-screen}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
+![Schermata di connessione di Android Auto](@site/static/img/navigation/auto-car/android_auto_connect_screen.png)  
 
 Mentre il dispositivo è connesso ad *Android Auto*, la mappa sulla schermata dell'app è bloccata. Si tratta di una funzione di sicurezza intenzionale per garantire che la navigazione sia controllata esclusivamente dal display dell'auto, riducendo al minimo le distrazioni durante la guida. Controlla le [domande comuni](#common-issues-and-solutions) sulla schermata di connessione.
 
@@ -56,7 +56,7 @@ Quando si apre l'applicazione, viene visualizzato un elenco di categorie. Per fa
 
 ### Interazione con la mappa {#interaction-with-the-map}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction_2.png)
+![Interazione con Android Auto](@site/static/img/navigation/auto-car/android_auto_interaction_2.png)
 
 *Android Auto* visualizza l'interfaccia di OsmAnd adattata allo schermo del sistema multimediale del veicolo. L'interazione con la mappa è limitata a pulsanti come:  
 
@@ -72,7 +72,7 @@ Quando si apre l'applicazione, viene visualizzato un elenco di categorie. Per fa
 
 ### Avvia navigazione {#start-navigation}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)
+![Avvio della navigazione in Android Auto](@site/static/img/navigation/auto-car/android_auto_start_navigation.png)
 
 Affinché OsmAnd funzioni in *Android Auto*, è necessario [connettere](#connection-screen) il dispositivo Android al sistema multimediale del veicolo. Il sistema operativo Android deve essere aggiornato alla versione 6.0 o successiva.
 
@@ -128,7 +128,7 @@ Durante la guida, i punti selezionati possono essere [annunciati](#voice-prompts
 
 ### Cronologia {#history}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)  
+![Cronologia in Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)  
 
 Nella categoria Cronologia, è possibile selezionare una destinazione da un elenco di punti finali. Sono ordinati in base all'uso più recente, a partire dal più nuovo. Questo può essere comodo per un accesso rapido ai percorsi utilizzati di frequente. Per sapere come utilizzare o eliminare una destinazione, leggere l'articolo [Cronologia ricerche](../search/search-history.md).  
 
@@ -172,14 +172,14 @@ Per creare un percorso verso un punto preferito in *Android Auto*, seguire i pas
 
 ### Segnalibri mappa {#map-markers}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_markers_2.png)
+![Marcatori mappa in Android Auto](@site/static/img/navigation/auto-car/android_auto_markers_2.png)
 
 Per definire la destinazione finale come Segnalibro mappa, è necessario creare il numero richiesto di segnalibri nell'app OsmAnd sul dispositivo prima di collegarlo al sistema. I segnalibri devono essere disponibili nell'elenco *Menu → Segnalibro mappa*. Questo è descritto più dettagliatamente nell'articolo [Segnalibri](../personal/markers.md).
 
 
 ### Tracce {#tracks}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_tracks.png)  
+![Tracce in Android Auto](@site/static/img/navigation/auto-car/android_auto_tracks.png)  
 
 Per creare un percorso verso una destinazione, è possibile selezionare una traccia esistente disponibile nell'app OsmAnd. La traccia può essere [scaricata](../personal/tracks/manage-tracks.md#import) in anticipo, utilizzata come [registrata](../plugins/trip-recording.md) o creata in [Pianifica un percorso](../plan-route/create-route.md).  
 
@@ -190,7 +190,7 @@ Le tracce possono anche essere selezionate direttamente sullo schermo del veicol
 
 ### Cerca {#search}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
+![Ricerca in Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
 
 Andare su Cerca offre un accesso rapido a un elenco della [cronologia delle destinazioni](#history) recenti. Analogamente al [menu Navigazione](../navigation/setup/route-navigation.md#navigation-menu), dove sono raccolti tutti i metodi di destinazione di OsmAnd come un indirizzo, POI o coordinate.
 
@@ -203,7 +203,7 @@ Andare su Cerca offre un accesso rapido a un elenco della [cronologia delle dest
 
 ### Cartella Ultima modifica {#folder-last-modified}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)  
+![Ultime modifiche in Android Auto](@site/static/img/navigation/auto-car/android_auto_last_modified.png)  
 
 
 Le categorie Preferiti e Tracce hanno una cartella speciale *Ultima modifica*. Poiché l'elenco in queste categorie può essere molto ampio in quanto contiene tutti i preferiti o le tracce esistenti, questa cartella è necessaria per un accesso facile e rapido alle destinazioni più recenti.
@@ -216,13 +216,13 @@ Oltre alle funzionalità di base dell'app OsmAnd in *Android Auto* che forniscon
 
 ### Prossima svolta {#next-turn}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
+![Widget di avviso in Android Auto](@site/static/img/navigation/auto-car/android_auto_alert_widget.png)
 
 Il widget **Prossima svolta** visualizza la distanza e il tipo della [prossima manovra di svolta](../widgets/nav-widgets.md#next-turn) e il [nome della via](../widgets/nav-widgets.md#street-name).
 
 ### Info percorso {#route-info}
 
-![Android Auto](@site/static/img/navigation/auto-car/x_button.png)
+![Pulsante X in Android Auto](@site/static/img/navigation/auto-car/x_button.png)
 
 Le informazioni sul percorso consistono in:
 
@@ -268,7 +268,7 @@ Questo widget informativo combina tipi di avvisi come **Attraversamenti pedonali
 
 ### Tachimetro {#speedometer}
 
-![Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
+![Tachimetro in Android Auto](@site/static/img/navigation/auto-car/speedometer_3_android.png)
 
 Il widget **Tachimetro** è un elemento di interfaccia integrato che visualizza la *velocità attuale* utilizzando i dati GPS e il *limite di velocità* dal [database OSM](https://wiki.openstreetmap.org/wiki/Key:maxspeed) e dalle [impostazioni di OsmAnd](../navigation/guidance/voice-navigation.md#speed-limit) sullo schermo del sistema multimediale del veicolo. Quando la velocità attuale si avvicina alla tolleranza del limite di velocità configurata o lo supera, il widget cambia aspetto (colori) per fornire un avviso. Il cambiamento di aspetto può essere animato.
 
@@ -279,7 +279,7 @@ Il widget **Tachimetro** è un elemento di interfaccia integrato che visualizza 
 
 ### Aspetto mappa (3D) {#map-appearance-3d}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance_3d_2.png)
+![Aspetto della mappa 3D in Android Auto](@site/static/img/navigation/auto-car/android_auto_map_appearance_3d_2.png)
 
 L'app OsmAnd consente di utilizzare la visualizzazione della mappa 3D sullo schermo di *Android Auto* per visualizzare il percorso e la navigazione.
 
@@ -311,7 +311,7 @@ Questo aggiornamento garantisce anche che le sessioni di Android Auto ora si chi
 
 ### Suggerimenti vocali {#voice-prompts}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
+![Comandi vocali in Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
 
 I suggerimenti vocali sono una delle funzioni più utili di OsmAnd durante la navigazione per *Android Auto*, fornendo una guida in tempo reale e consentendo al conducente di rimanere concentrato sulla strada. I suggerimenti vocali forniscono istruzioni chiare su svolte, direzioni e altre istruzioni di navigazione, garantendo un uso più sicuro e confortevole del sistema di navigazione.  
 
@@ -320,7 +320,7 @@ Per configurare i [suggerimenti vocali](../navigation/guidance/voice-navigation.
 
 ### ETA fermata successiva {#eta-next-stop}
 
-![Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
+![Comandi vocali in Android Auto](@site/static/img/navigation/auto-car/android_auto_voice_prompt.png)
 
 Nell'app OsmAnd, è possibile selezionare uno o più [punti intermedi](../navigation/setup/route-navigation.md#intermediate-destinations) per il percorso di navigazione.
 
@@ -331,19 +331,26 @@ Per abilitare o disabilitare le [**Info percorso** per un punto intermedio (ferm
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* e OsmAnd offrono la possibilità di regolare la mappa in base alle condizioni di illuminazione. In *Modalità mappa diurna*, la combinazione di colori rimane brillante e contrastata, facilitando la lettura anche in piena luce solare. In *Modalità notturna*, le mappe diventano più scure, il che aiuta il conducente a orientarsi meglio al buio.  
 
-OsmAnd ha opzioni di [modalità mappa](../map/vector-maps.md#map-mode), ma quando si utilizza l'app in *Android Auto*, queste opzioni vengono ignorate. Viene invece utilizzata la modalità selezionata nelle impostazioni di sistema di *Android Auto* per le mappe.
+OsmAnd in *Android Auto* ha una propria impostazione della modalità mappa, separata dalle opzioni di [modalità mappa](../map/vector-maps.md#map-mode) dell'app OsmAnd sul dispositivo. Per modificarla, andare su *Android Auto (OsmAnd) → Pulsante Impostazioni → Modalità mappa*, selezionare un'opzione e toccare *Applica*. La mappa passa alla modalità selezionata dopo aver toccato *Applica*. Se si esce dalla schermata con la freccia indietro senza toccare *Applica*, rimane selezionata la modalità precedente.
 
-- Selezionare la modalità Giorno o la modalità Notte per mantenere invariata la visualizzazione della mappa.
-- Se si desidera che la modalità di visualizzazione della mappa cambi a seconda dell'ora del giorno, selezionare la modalità Automatica.  
+- Selezionare *Giorno* o *Notte* per mantenere invariata la visualizzazione della mappa, indipendentemente dai segnali del veicolo.
+- Se si desidera che la modalità di visualizzazione della mappa cambi automaticamente in base ai segnali del veicolo, selezionare *Automatica* (predefinita).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Lente d'ingrandimento Mappa {#map-magnifier}
+
+![Lente d'ingrandimento Mappa in Android Auto](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+La *Lente d'ingrandimento Mappa* modifica l'ingrandimento della mappa sullo schermo di *Android Auto*. Per modificarlo, andare su *Android Auto (OsmAnd) → Pulsante Impostazioni → Lente d'ingrandimento Mappa*, selezionare un valore da 50% a 125% e toccare *Applica*. Il valore corrente è mostrato sotto *Lente d'ingrandimento Mappa* nell'elenco delle impostazioni.  
+
+Per scoprire come l'ingrandimento influisce sulla visualizzazione della mappa, vedere [Lente d'ingrandimento Mappa](../map/vector-maps.md#map-magnifier).
 
 
 ### Schermo diviso {#split-screen}
@@ -356,9 +363,6 @@ L'app OsmAnd può essere aperta e utilizzata per la navigazione in *Android Auto
 2. Toccare Impostazioni.
 3. Trovare Multi finestra e scegliere l'interruttore.
 4. Tornare alla schermata iniziale.  
-
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 Nelle impostazioni di Android Auto, è possibile modificare la posizione della barra delle applicazioni e il layout della schermata iniziale:

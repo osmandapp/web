@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
 sidebar_position: 2
 title:  Acquisti iOS
 ---
@@ -53,25 +53,25 @@ import Translate from '@site/src/components/Translate.js';
 
 Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le regioni USA ed Europa. Per le altre regioni, i prezzi sono equivalenti nelle valute locali.
 
-<!--
 
-:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+:::danger 🎃 Saldi di Halloween
+
+*Affrettati! Questa offerta è valida solo fino al* **1 novembre (23:59 UTC)**.
+
+*Per gli abbonamenti, il prezzo scontato vale per il primo anno.*
 
 :::
 
 
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abbonamento | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Tipo di acquisto** | **Gratuito** | **Acquisto una tantum** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |
+| **Prezzo (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Prezzo (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-
--->
+<!--
 
 
 |    | OsmAnd Gratuito   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Abbonamento | [OsmAnd Pro](#install-osmand-ios) |
@@ -80,6 +80,9 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | **Tipo di acquisto** | **Gratuito** | **Acquisto una tantum** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |
 | **Prezzo (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Prezzo (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
+
 
 
 
@@ -134,7 +137,7 @@ Al momento, l'abbonamento Pro include le seguenti funzionalità:
 
 |  Funzionalità Pro  | Descrizione   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Esegui il backup e il ripristino dei tuoi dati, sincronizza i dati con il [portale web di OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Esegui il backup e il ripristino dei tuoi dati, sincronizza i dati con il [portale web di OsmAnd](https://osmand.net/map). |
 | [Rilievo 3D](../plugins/topography.md#3d-relief) | Permette di avere e osservare un modello in scala del proprio quartiere o di un intero continente. |
 | [Widget Altitudine - Elevazione: Centro mappa](../widgets/info-widgets.md#elevation-map-center) | Permette di conoscere l'altitudine del centro mappa corrente sul livello del mare.  |
 | [Aggiornamenti Live](../personal/maps-resources.md#live-updates) | Le mappe di OsmAnd si aggiornano ogni 15 minuti dopo i miglioramenti di [OpenStreetMap](https://www.openstreetmap.org/). |
@@ -160,7 +163,7 @@ o
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continua con OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro_new.png)
+![Piano Pro](@site/static/img/purchases/pro_new.png)
 
 ### Acquisto di Maps+ {#maps-purchase}
 
@@ -168,7 +171,7 @@ o
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tocca l'elenco delle funzionalità di Maps+ → Continua con Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_new.png)
+![Piano Maps+](@site/static/img/purchases/maps_new.png)
 
 
 ## Abbonamenti legacy (precedenti alla 4.0) {#legacy-subscriptions-prior-40}
@@ -187,7 +190,7 @@ Utilizza lo stesso ID Apple per ripristinare i tuoi acquisti.
 - Apri OsmAnd Maps con una connessione Internet attiva.
 - Per ripristinare gli acquisti, segui questi passaggi: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* e nella parte superiore dello schermo dovrebbe apparire che Maps+(Pro, Live) è attivato.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
+![Piano Pro](@site/static/img/purchases/maps_purchases_ios.png)
 
 **Se nessuno dei metodi ha funzionato:**
 

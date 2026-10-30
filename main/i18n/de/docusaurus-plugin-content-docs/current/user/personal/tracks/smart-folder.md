@@ -1,5 +1,5 @@
 ---
-source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
+source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
 title: Intelligenter Ordner (Filter)
 ---
@@ -99,7 +99,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_pl
 - **Durchschnittliche Höhe** und **Maximale Höhe** — Finden Sie Tracks mit spezifischen durchschnittlichen oder maximalen Höhendaten.
 - **Erstellungsdatum** — Filtern Sie Tracks, die innerhalb eines bestimmten Datumsbereichs erstellt wurden.
 - **Nächstgelegene Städte** — Zeigen Sie Tracks an, die in der Nähe ausgewählter Städte oder Ortschaften verlaufen.
-- **Aktivitätstyp** — Filtern Sie Tracks basierend auf dem [activities](../../map/tracks/track-context-menu.md#ttrack-activity-type) type recorded in the GPX file (z. B. Radfahren, Wandern).
+- **Aktivitätstyp** — Filtern Sie Tracks basierend auf den [Aktivitäten](../../map/tracks/track-context-menu.md#track-activity-type), die in der GPX-Datei aufgezeichnet wurden (z. B. Radfahren, Wandern).
 - **Land** — Filtern Sie Tracks nach dem Land oder der Region, in der sie aufgezeichnet wurden.
 - **Farbe** und **Breite** — Wählen Sie Tracks nach zugewiesener Farbe oder Linienbreite aus.
 - **Andere** — Zusätzliche Filter für besondere Merkmale:

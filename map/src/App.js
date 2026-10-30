@@ -4,7 +4,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GlobalFrame from './frame/GlobalFrame';
 import { AppContextProvider } from './context/AppContext';
 import { WeatherContextProvider } from './context/WeatherContext';
+import { TravelContextProvider } from './context/TravelContext';
 import { MapContextProvider } from './context/MapContext';
+import { MvtContextProvider } from './context/MvtContext';
 import DeleteAccountDialog from './login/dialogs/DeleteAccountDialog';
 import { AppServices } from './services/AppServices';
 import './variables.css';
@@ -210,11 +212,15 @@ const App = () => {
             <ResetAppContext.Provider value={resetApp}>
                 <LoginContextProvider key={'login-' + resetKey}>
                     <AppContextProvider key={'app-' + resetKey}>
-                        <WeatherContextProvider>
-                            <MapContextProvider>
-                                <RouterProvider router={router} future={{ v7_startTransition: true }} />
-                            </MapContextProvider>
-                        </WeatherContextProvider>
+                        <TravelContextProvider>
+                            <WeatherContextProvider>
+                                <MapContextProvider>
+                                    <MvtContextProvider>
+                                        <RouterProvider router={router} future={{ v7_startTransition: true }} />
+                                    </MvtContextProvider>
+                                </MapContextProvider>
+                            </WeatherContextProvider>
+                        </TravelContextProvider>
                     </AppContextProvider>
                 </LoginContextProvider>
             </ResetAppContext.Provider>

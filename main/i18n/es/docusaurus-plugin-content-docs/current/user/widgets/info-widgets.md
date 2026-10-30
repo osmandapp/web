@@ -1,5 +1,5 @@
 ---
-source-hash: 2f452a1d8b316f905b1ea409998af97c7fd5afd3e4e38098246912c444d71c63
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title:  Widgets informativos
 ---
@@ -254,11 +254,15 @@ Los widgets [simples](../widgets/configure-screen.md#widget-panels) de *Ratio de
 
 <TabItem value="android" label="Android">
 
-**Ratio de planeo al objetivo** muestra el ratio de planeo exacto requerido para alcanzar el punto objetivo.
+- **Ratio de planeo al objetivo** muestra el ratio de planeo exacto requerido para alcanzar el punto objetivo.
+- **Elevación del objetivo** muestra la elevación del punto objetivo. El [Marcador de mapa](../personal/markers.md) debe utilizarse como punto objetivo.
+
+Para cambiar entre estos modos, toque directamente el widget. La opción de cambio no está disponible en el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu). 
 
 | | |
 |:------------|:------------|
 | Activar | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → Ratio de planeo* |
+| Al tocar | Cambia *Ratio de planeo al objetivo* o *Elevación del objetivo*  |
 | Pulsación larga | Abre el [Menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -285,11 +289,13 @@ Los widgets [simples](../widgets/configure-screen.md#widget-panels) de *Ratio de
 
 <TabItem value="android" label="Android">
 
-**Ratio de planeo medio** muestra el ratio de planeo medio para un intervalo de tiempo especificado.
+- **Ratio de planeo medio** muestra el ratio de planeo medio para un intervalo de tiempo especificado.
+- **Velocidad vertical media** muestra la velocidad a la que asciende o desciende durante un intervalo de tiempo: la diferencia de altitud entre el primer y el último punto del intervalo, dividida por el tiempo transcurrido entre ellos. Los valores positivos indican ascenso y los negativos descenso. Puede establecer el intervalo de tiempo para este widget de 15 segundos a 60 minutos.
 
 | | |
 |:------------|:------------|
 | Activar | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → Ratio de planeo* |
+| Al tocar | Cambia *Ratio de planeo medio* o *Velocidad vertical media*  |
 | Pulsación larga | Abre el [Menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
 </TabItem>
@@ -297,7 +303,7 @@ Los widgets [simples](../widgets/configure-screen.md#widget-panels) de *Ratio de
 <TabItem value="ios" label="iOS">
 
 - **Ratio de planeo medio** muestra el ratio de planeo medio para un intervalo de tiempo especificado.
-- **Velocidad vertical media** indica la velocidad a la que un objeto asciende o desciende durante un tiempo. Para la evaluación sólo se consideran el primer y el último punto del intervalo de tiempo. Puede establecer el intervalo de tiempo para este widget de 15 segundos a 60 minutos. Debe utilizar el [Marcador de mapa](../personal/markers.md) como punto objetivo.
+- **Velocidad vertical media** muestra la velocidad a la que asciende o desciende durante un intervalo de tiempo: la diferencia de altitud entre el primer y el último punto del intervalo, dividida por el tiempo transcurrido entre ellos. Los valores positivos indican ascenso y los negativos descenso. Puede establecer el intervalo de tiempo para este widget de 15 segundos a 60 minutos.
 
 | | |
 |:------------|:------------|
@@ -698,8 +704,8 @@ Este es un widget del complemento Mapillary que proporciona acceso rápido a la 
 <InfoAndroidOnly />
 
 :::note
-Para añadir widgets de Notes de audio/vídeo a la pantalla del mapa, active el [complemento Notas de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
-::;
+Para añadir widgets de Notes de audio/vídeo a la pantalla del mapa, active el [complemento Notes de audio/vídeo](../plugins/audio-video-notes.md) de OsmAnd.
+:::
 
 ![Audio-video notes widget](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -743,7 +749,7 @@ Este widget del complemento OsmAnd Tracker se utiliza para acceder rápidamente 
 
 :::note
 Para añadir widgets de Desarrollador a la pantalla del mapa, active el [complemento de desarrollo de OsmAnd](../plugins/development.md).
-::;
+:::
 
 Los **widgets de desarrollador** proporcionan información sobre la [velocidad de renderizado del mapa](../plugins/development.md#map-rendering-fps-widget) y los parámetros de posición de la cámara virtual, incluyendo el [nivel de zoom](../plugins/development.md#zoom-level), la [distancia](../plugins/development.md#distance-to-target) al centro del mapa, la [elevación de la cámara](../plugins/development.md#camera-elevation) y el [ángulo de inclinación](../plugins/development.md#camera-tilt).  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 257260cc6f5df1e2457058808df69ed24a8aea6a73cb5b7dee08308979c295ac
+source-hash: d93d14b34275dc0a5e7f262f8293ed65af222ec0a7a2866d48f085cdca840627
 title: Aangepaste reisgids maken
 versions: '*'
 ---
@@ -21,7 +21,7 @@ Het kiezen van de bron voor de tekst van uw gids is geheel aan u. Het kan een ar
 
 ### De tool starten {#launch-the-tool}
 
-Download de nieuwste versie van [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) en pak de bestanden uit het archief uit.
+Download de nieuwste versie van [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) en pak de bestanden uit het archief uit.
 
 :::note
 Hoe u deze tool gebruikt, wordt beschreven in het artikel [Offline raster- en vectorkaarten maken](./create-offline-maps-yourself.md#osmandmapcreator).

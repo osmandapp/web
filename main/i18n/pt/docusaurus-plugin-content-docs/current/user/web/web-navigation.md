@@ -1,8 +1,8 @@
 ---
 source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
-sidebar_label:  Navigation
-title: Navigation on the Web
+sidebar_label:  Navegação
+title: Navegação na Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -26,7 +26,7 @@ Use **Navegação na Web** para construir uma rota no mapa e visualizar a orient
 
 No estado vazio, a Navegação o convida a adicionar pontos de rota: *Clique no mapa para definir os pontos de Início e Destino*.
 
-Os pontos de rota podem ser fornecidos a partir do painel de Rota. Quando você seleciona **Definir ponto de início** ou **Definir destino**, o campo mostra sugestões como *Localização atual* e pontos usados anteriormente do histórico. Você pode remover as sugestões salvas usando *Limpar histórico*.
+Os pontos de rota podem ser fornecidos a partir do painel de Rota. Quando você seleciona **Definir ponto de partida** ou **Definir destino**, o campo mostra sugestões como *Localização atual* e pontos usados anteriormente do histórico. Você pode remover as sugestões salvas usando *Limpar histórico*.
 
 Você também pode inserir coordenadas diretamente nos campos de pontos de rota usando o formato latitude, longitude (por exemplo, 48.23737, 24.40830). Outros formatos de coordenadas ou links compartilhados podem não ser sempre reconhecidos. Se uma localização não for analisada corretamente, tente convertê-la para lat,lon ou encontre o lugar usando a pesquisa.
 

@@ -4,6 +4,7 @@ import OsmAndMap from '../map/OsmAndMap';
 import MainMenu from '../menu/MainMenu';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../context/AppContext';
+import TravelContext from '../context/TravelContext';
 import MapContext from '../context/MapContext';
 import GeneralPanelButtons from './panelbuttons/GeneralPanelButtons';
 import { GlobalConfirmationDialog } from '../dialogs/GlobalConfirmationDialog';
@@ -26,6 +27,7 @@ import {
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import DialogTitle from '@mui/material/DialogTitle';
 import dialogStyles from '../dialogs/dialog.module.css';
+import styles from './frame.module.css';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import isEmpty from 'lodash-es/isEmpty';
@@ -39,6 +41,7 @@ import {
 import { addCloseTracksToRecently, VISIBLE_SHARE_MARKER } from '../menu/visibletracks/VisibleTracks';
 import PhotosModal from '../menu/search/explore/PhotosModal';
 import InstallBanner from './components/InstallBanner';
+import OfflineNotification from './components/OfflineNotification';
 import { hideAllTracks } from '../manager/track/DeleteTrackManager';
 import GlobalGraph from '../graph/mapGraph/GlobalGraph';
 import TracksFileDragController from './TracksFileDragController';
@@ -53,6 +56,7 @@ const ENCODED_SEMICOLON = '%3B';
 
 const GlobalFrame = () => {
     const ctx = useContext(AppContext);
+    const ttx = useContext(TravelContext);
     const ltx = useContext(LoginContext);
     const mtx = useContext(MapContext);
 
@@ -253,13 +257,13 @@ const GlobalFrame = () => {
         const routeId = searchParams.get(TRAVEL_ROUTE_ID_PARAM);
         if (isTravelPath(location.pathname)) {
             if (routeId) {
-                ctx.setTravelRouteIdByUrl(routeId);
-                ctx.setProcessingTravelRouteByUrl(true);
+                ttx.setTravelRouteIdByUrl(routeId);
+                ttx.setProcessingTravelRouteByUrl(true);
                 setShowInfoBlock(true);
                 ctx.setInfoBlockWidth(MENU_INFO_OPEN_SIZE + 'px');
             } else {
-                ctx.setTravelRouteIdByUrl(null);
-                ctx.setProcessingTravelRouteByUrl(false);
+                ttx.setTravelRouteIdByUrl(null);
+                ttx.setProcessingTravelRouteByUrl(false);
             }
         }
     }, [location.pathname, location.search]);
@@ -445,8 +449,11 @@ const GlobalFrame = () => {
                     sx={{ mt: `${HEADER_SIZE}px` }}
                     onClose={handleCloseNotification}
                 >
-                    <Alert severity={ctx.notification?.severity}>{ctx.notification?.text}</Alert>
+                    <Alert className={styles.notification} severity={ctx.notification?.severity}>
+                        {ctx.notification?.text}
+                    </Alert>
                 </Snackbar>
+                <OfflineNotification />
                 <GeneralPanelButtons
                     mainMenuWidth={MAIN_MENU_MIN_SIZE + 'px'}
                     menuInfoWidth={`${TOTAL_MENU_INFO_WIDTH}px`}

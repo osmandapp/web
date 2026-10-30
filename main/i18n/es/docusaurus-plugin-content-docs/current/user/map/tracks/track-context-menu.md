@@ -1,5 +1,5 @@
 ---
-source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title:  Menú contextual del track
 ---
@@ -14,8 +14,6 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
-
 
 ## Vista general {#overview}
 
@@ -42,9 +40,6 @@ El *Menú contextual del track* proporciona información sobre el *[Track](../..
 
 Cuando tocas un track, se abre la primera pantalla del *Menú contextual del track*: la pestaña *Vista general*. En esta pestaña, puedes encontrar un resumen sobre el track elegido (*[Panel de información](#info-panel)*) y realizar las acciones más comunes con el track utilizando el *[Menú de acciones del track](#track-actions)*. Puedes ver la [descripción e información de servicio](#description-and-info) sobre tu track si deslizas la pestaña Vista general hacia arriba.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Panel de información {#info-panel}
 
@@ -205,7 +200,7 @@ Esta sección de la pestaña *Vista general* muestra ***datos de etiquetas*** y 
       <year>2023</year>
       <license>https://github.com/osmandapp/OsmAnd/blob/master/LICENSE</license>
     </copyright>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <time>2023-12-13T12:00:00Z</time>
     <keywords>gpx, osmand, hiking</keywords>
     <extensions>
@@ -227,7 +222,7 @@ Esta sección de la pestaña *Vista general* muestra ***datos de etiquetas*** y 
 </details>
 
 
-### Tipo de actividad del track {#ttrack-activity-type}
+### Tipo de actividad del track {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -427,6 +422,7 @@ En esta pestaña *Puntos*:
 - [Mostrar datos de los puntos del track](#display-custom-gpx-tags) y modificar los puntos de tu track (waypoints y puntos de ruta), [eliminarlos y añadir](#points--waypoints) waypoints a un track.
 - Crear y modificar [Grupo (carpeta) de puntos](#waypoint-groups).
 - Mostrar un waypoint en el mapa usando el icono de pin en la lista de waypoints. El mapa se centra en el waypoint sin cerrar la lista ni cambiar el nivel de zoom actual.
+- Adjuntar fotos, vídeos y notas de audio a un waypoint mediante la tarjeta *Medios* en su menú contextual (*solo Android*). Consulta el [artículo de Favoritos](../../personal/favorites.md#media).
 
 
 ### Añadir Waypoint a un Track {#add-waypoint-to-a-track}
@@ -560,7 +556,7 @@ Puedes activar o desactivar los waypoints del grupo en el mapa usando el botón 
     <time>2024-04-04T13:12:11Z</time>
     <name>Waypoint 1</name>
     <desc>Long description</desc>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <type></type>
     <cmt>Short comment for the waypoint.</cmt>
     <extensions>

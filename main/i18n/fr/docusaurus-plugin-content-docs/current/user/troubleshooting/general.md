@@ -1,5 +1,5 @@
 ---
-source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
+source-hash: 7a4ec38811965699d4bf8be48f33fcce4e1e12973b13ab13ffa374909cfef793
 sidebar_position: 2
 title:  Généralités
 ---
@@ -89,6 +89,19 @@ Les versions récentes d'OsmAnd n'appliquent plus de mise à l'échelle automati
 Si vous souhaitez ajuster manuellement la taille des boutons de carte, utilisez les paramètres [Apparence par défaut](https://osmand.net/docs/user/widgets/configure-screen#button-appearance) : *Menu → Configurer l'écran → Boutons → Boutons par défaut → menu à trois points → Apparence*. Vous pouvez y définir une Taille personnalisée, un Rayon des coins et une Opacité de l'arrière-plan pour tous les boutons par défaut à la fois.
 
 Si l'interface semble toujours plus grande que prévu, vérifiez *Paramètres système Android → Affichage → Taille d'affichage et texte* et ajustez les paramètres d'affichage si nécessaire.
+
+### OsmAnd ne remplit pas l'écran en mode paysage sur iPad (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+OsmAnd prend en charge les orientations portrait et paysage sur iPad et suit la rotation du système. Si l'application remplit l'écran en portrait mais s'affiche comme une fenêtre plus petite en paysage, cela est dû au mode fenêtrage d'iPadOS 26, et non à OsmAnd.
+
+Dans le mode *Applications fenêtrées*, iPadOS mémorise la taille de chaque fenêtre d'application. Une fois que la fenêtre OsmAnd a été redimensionnée en paysage, l'application conserve cette taille de fenêtre en paysage tout en remplissant toujours l'écran en portrait.
+
+Pour que OsmAnd remplisse à nouveau l'écran, utilisez l'une des options suivantes :
+
+- **Agrandir la fenêtre.** Avec OsmAnd ouvert en paysage, appuyez sur la petite pilule en haut de la fenêtre. Trois boutons apparaissent : *Fermer*, *Réduire* et *Zoom*. Appuyez sur *Zoom* pour agrandir l'application sur tout l'écran. L'application conserve la taille plein écran après avoir fait pivoter l'iPad.
+- **Désactiver le fenêtrage pour toutes les applications.** Allez dans *Réglages iPad → Multitâche et gestes* et sélectionnez *Applications plein écran* au lieu de *Applications fenêtrées*. Toutes les applications, y compris OsmAnd, s'ouvriront toujours en plein écran.
+
+Assurez-vous également qu'OsmAnd n'est pas ouvert en *Vue partagée* ou *Glisser dessus* à côté d'une autre application.
 
 
 ## Autres {#other}

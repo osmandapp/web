@@ -4,20 +4,18 @@ import styles from '../trackfavmenu.module.css';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as RenameIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
 import { ReactComponent as DeleteIcon } from '../../assets/icons/ic_action_delete_outlined.svg';
-import GpxCollection from '../tracks/GpxCollection';
 import RenameDialog from '../../dialogs/tracks/RenameDialog';
 import DeleteFolderDialog from '../../dialogs/tracks/DeleteFolderDialog';
-import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import { SMART_TYPE } from '../share/shareConstants';
 import { populateSmartFolderFiles } from '../../manager/SmartFoldersManager';
 import { GARMIN_FOLDER_NAME, fetchGarminStatus } from '../../login/garmin/garminApi';
+import { downloadObfCollection, downloadOsfBackup } from '../../manager/track/TracksManager';
 
 const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, ref) => {
     const ctx = useContext(AppContext);
 
-    const [newCollection, setNewCollection] = useState([]);
     const [openRenameDialog, setOpenRenameDialog] = useState(false);
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
     const [garminLinked, setGarminLinked] = useState(false);
@@ -43,34 +41,28 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
     };
 
     async function downloadFolderBackup(isSmart) {
-        setProcessDownload(true);
-        const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup-folder`, [], {
+        await downloadOsfBackup({
             params: {
-                format: '.osf',
                 folderName: group.fullName,
-                type: 'GPX',
                 smart: isSmart,
             },
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            responseType: 'arraybuffer',
-            throwErrors: true,
-        }).catch(() => {
-            setProcessDownload(false);
-            ctx.setTrackErrorMsg({
-                title: 'Get OSF error',
-                msg: `We couldn't download osf for folder ${group.name}. Please contact us at support@osmand.net`,
-            });
+            displayName: group.name,
+            ctx,
+            setProcessDownload,
         });
-        if (res.status === 200) {
-            setProcessDownload(false);
-            let name = res.headers['content-disposition'].split('filename=')[1];
-            const url = document.createElement('a');
-            url.href = URL.createObjectURL(new Blob([res.data], { type: 'octet/stream' }));
-            url.download = name;
-            url.click();
-        }
+    }
+
+    async function downloadObf() {
+        const files = getGroupFiles();
+        if (files.length === 0) return;
+
+        await downloadObfCollection({
+            names: files.map((file) => file.name),
+            fileName: 'OsmAndCollection.travel.obf',
+            displayName: group.name,
+            ctx,
+            setProcessDownload,
+        });
     }
 
     return (
@@ -98,7 +90,7 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                         disabled={group.realSize === 0}
                         className={styles.action}
                         onClick={() => {
-                            setNewCollection(getGroupFiles);
+                            downloadObf().then();
                             setOpenActions(false);
                         }}
                     >
@@ -147,9 +139,6 @@ const GroupActions = forwardRef(({ group, setOpenActions, setProcessDownload }, 
                     </>
                 </Paper>
             </Box>
-            {newCollection.length > 0 && (
-                <GpxCollection tracks={newCollection} setProcessDownload={setProcessDownload} />
-            )}
             {openRenameDialog && (
                 <RenameDialog setOpenDialog={setOpenRenameDialog} group={group} setOpenActions={setOpenActions} />
             )}

@@ -1,5 +1,5 @@
 ---
-source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
 sidebar_position: 19
 title: Tempo
 ---
@@ -60,7 +60,7 @@ O plugin Tempo está disponível apenas com o motor de renderização de mapa [V
 
 Vá para: *Plugin ativado → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
+![Painel de Tempo Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ Vá para: *Plugin ativado → <Translate android="true" ids="shared_string_menu,
 
 Vá para: *Plugin ativado → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
+![Painel de Tempo no iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -86,13 +86,13 @@ Na parte inferior da tela está a *barra de ferramentas do tempo*. Você pode us
 
 <TabItem value="android" label="Android">
 
-![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)  
+![Fonte de dados Android](@site/static/img/plugins/weather/weather_source_android.png)  
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+![Fonte de dados iOS](@site/static/img/plugins/weather/weather_source_ios.png)
 
 </TabItem>  
 
@@ -123,7 +123,7 @@ Como a Fonte de Dados afeta a exibição do Tempo:
 
 Vá para: *Plugin ativado → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
+![Painel de Tempo Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
 </TabItem>  
 
@@ -131,7 +131,7 @@ Vá para: *Plugin ativado → <Translate android="true" ids="shared_string_menu,
 
 Vá para: *Plugin ativado → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
+![Painel de Tempo no iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
 
 </TabItem>  
 
@@ -151,21 +151,21 @@ Neste menu, você pode alterar a **visibilidade** e as [configurações](#weathe
 - *Menu Principal → Plugins → Tempo → Configurações*
 - *Menu Principal → Configurações → Perfil → Configurações do plugin → Tempo*
 
-![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Configurações de Tempo Android](@site/static/img/plugins/weather/weather_settings_andr_1.webp) ![Configurações de Tempo 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Menu Principal → Configurações → Perfil → Plugins → Tempo*
+*Menu Principal → Configurações → Perfil → Plugins → Tempo*
 
-![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Configurações de Tempo iOS](@site/static/img/plugins/weather/weather_settings_ios.webp) ![Configurações de Tempo iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.webp)
 
 </TabItem>
 
 </Tabs>  
 
-É importante decidir em quais unidades de medida é conveniente para você ver os [dados meteorológicos](#weather-layers) no mapa e na seção [Widgets de Tempo](#weather-widgets) da tela. Você pode escolher as unidades de medida apropriadas para cada parâmetro ou usar os valores padrão (*somente iOS*). Na versão iOS do aplicativo OsmAnd, você também pode ativar a opção de previsão offline para evitar o uso de dados móveis durante a viagem.  
+É importante decidir em quais unidades de medida é conveniente para você ver os [dados meteorológicos](#weather-layers) no mapa e na seção [Widgets de Tempo](#weather-widgets) da tela. Você pode escolher as unidades de medida apropriadas para cada parâmetro. Você também pode usar os valores padrão — no iOS para todos os parâmetros, no Android somente para temperatura. A unidade de temperatura é selecionada em: *Menu → Perfil → Configurações gerais → Unidades e formatos → Temperatura*. Na versão iOS do aplicativo OsmAnd, você também pode ativar a opção de previsão offline para evitar o uso de dados móveis durante a viagem.  
 
 :::note
 Na versão iOS do OsmAnd, você pode alterar as unidades de medida e o nível de transparência no menu que se abre após um toque longo no ícone da camada de mapa desejada.  
@@ -178,17 +178,17 @@ Todos os dados meteorológicos são apresentados como camadas de mapa separadas.
 | |  
 |------------|  
 | A **camada de precipitação** exibe informações sobre eventos meteorológicos quando a água em diferentes estados agregados cai do céu para o solo. Precipitação é chuva, neve, neve derretida ou granizo. A escala de precipitação é graduada em milímetros (ou polegadas) de água que cai em 1 metro quadrado em 24 horas. 1 mm de chuva corresponde a 1 litro de água por 1 metro quadrado. |  
-|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
+|![Esquema de precipitação](@site/static/img/plugins/weather/precipitation.png)|  
 | A **Temperatura** expressa a percepção quantitativa de quente e frio. É medida em graus. No OsmAnd, você pode escolher entre a escala Celsius e Fahrenheit. |  
-|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|  
+|![Esquema de temperatura](@site/static/img/plugins/weather/temperature.png)|  
 | O **Vento** é o movimento do ar causado pelo aquecimento desigual da Terra pelo sol e sua própria rotação. Os ventos podem variar de brisas leves a desastres naturais como furacões e tornados. No OsmAnd, a velocidade do vento pode ser exibida em metros por segundo (m/s), quilômetros por hora (km/h), milhas por hora (mph) e nós (kt). |  
-|![Wind sheme](@site/static/img/plugins/weather/wind.png)|  
+|![Esquema de vento](@site/static/img/plugins/weather/wind.png)|  
 | A **cobertura de nuvens** é a fração média do céu coberta por nuvens quando observada de um local específico. É medida em %. |  
-|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|  
+|![Esquema de nuvens](@site/static/img/plugins/weather/clouds.png)|  
 | A **pressão atmosférica** é causada pelo peso do ar acima do ponto de medição. Diminui com o aumento da elevação. A pressão atmosférica pode ser exibida em hectopascais (hPa), milímetros de mercúrio (mmHg) e polegadas de mercúrio (inHg). |  
-| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |  
+| ![Esquema de pressão](@site/static/img/plugins/weather/pressure.png) |  
 | A **Animação do vento** inclui representações dinâmicas mostrando a direção e a velocidade do vento na região. |  
-| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |  
+| ![Animação do vento](@site/static/img/plugins/weather/wind_annimation.gif) |  
 
 
 ### Combinar Mapas {#combine-maps}
@@ -197,13 +197,13 @@ Todos os dados meteorológicos são apresentados como camadas de mapa separadas.
 
 <TabItem value="android" label="Android">
 
-![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
+![Combinar camadas de Tempo no Android](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Combinar camadas de Tempo no Android](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)  
+![Combinar camadas de Tempo no iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combinar camadas de Tempo no iOS](@site/static/img/plugins/weather/weather_contours.png)  
 
 </TabItem>
 
@@ -214,7 +214,7 @@ Para obter informações meteorológicas abrangentes, você pode usar as camadas
 
 ### Ações Rápidas para Camadas {#quick-actions-for-layers}
 
-![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
+![Camadas de Tempo (perguntas e respostas)](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
 Para alternar a visibilidade das camadas meteorológicas, você pode usar os botões de *Ação Rápida* na tela do mapa. As configurações gerais para mostrar ou ocultar camadas podem ser encontradas na [seção Tempo](#weather-forecast-screen) separada do *Menu Principal*. No artigo [Ação Rápida](../widgets/quick-action.md#configure-map), você encontrará uma lista das camadas disponíveis para exibição. Se você precisar de acesso rápido a esta configuração de mapa, use a ferramenta *Botão Personalizado*.
 
@@ -230,7 +230,7 @@ Quando a aba Tempo está aberta, a menos que especificado de outra forma, as inf
 
 :::tip
 Em dispositivos Android, você pode verificar quando os dados meteorológicos foram baixados tocando no *widget Tempo*. O plugin de Desenvolvimento do OsmAnd deve estar ativado.  
-![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
+![Data do cache de tempo android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Baixar Previsão {#download-forecast}
@@ -239,13 +239,13 @@ Em dispositivos Android, você pode verificar quando os dados meteorológicos fo
 
 <TabItem value="android" label="Android">  
 
-![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
+![Plugin de Tempo no Android](@site/static/img/plugins/weather/download_weather_android.png) ![Plugin de Tempo no Android](@site/static/img/plugins/weather/download_weather_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
+![Plugin de Tempo no iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Plugin de Tempo no iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
 </TabItem>
 
@@ -279,7 +279,7 @@ Os dados meteorológicos são atualizados a cada 6 horas (todas as 4 atualizaç�
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Escolha um painel → <Translate android="true" ids="shared_string_weather"/>*
 
-![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
+![Widgets de Tempo no Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Widgets de Tempo no Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
 </TabItem>
 
@@ -287,7 +287,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,s
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Escolha um painel → <Translate ios="true" ids="shared_string_weather"/>*
 
-![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
+![Widgets de Tempo no iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 

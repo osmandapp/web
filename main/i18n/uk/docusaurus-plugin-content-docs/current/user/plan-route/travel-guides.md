@@ -1,5 +1,5 @@
 ---
-source-hash: 2909d719e3832bd283b34011e633a5100ddc7318c2bb2fcda46898a989afeec4
+source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
 sidebar_position: 2
 title:  Туристичні путівники
 ---
@@ -17,8 +17,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-:::info Платна функція
-Туристичні путівники — це [платна функція](../purchases/index.md) застосунку OsmAnd.
+:::tip Покупка
+Туристичні путівники — це [платна функція](../purchases/index.md).  
 :::
 
 Віртуальні туристичні путівники в OsmAnd пропонують користувачам цінну інформацію, рекомендації та поради. Вони також дозволяють мандрівникам отримувати доступ до вичерпної навігаційної інформації про визначні пам'ятки в застосунку.
@@ -30,13 +30,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Загальний вигляд туристичних путівників](@site/static/img/guides/travel_guides_view_android.png)
+![Travel guides view General](@site/static/img/guides/travel_guides_view_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню мап iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
+![Maps menu iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
 
-![Меню завантаження туристичних путівників](@site/static/img/guides/travel_guides_download.png)
+![Travel guides download menu](@site/static/img/guides/travel_guides_download.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
-![Меню мап iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
+![Maps menu iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
 
 </TabItem>
 
@@ -99,13 +99,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Головний екран туристичних путівників](@site/static/img/guides/travel_guides_main_screen_1.png) ![Головний екран туристичних путівників 2](@site/static/img/guides/travel_guides_main_screen_2.png)
+![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1.png) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Головний екран туристичних путівників](@site/static/img/guides/travel_guides_main_screen_1_ios.png) ![Головний екран туристичних путівників 2](@site/static/img/guides/travel_guides_main_screen_2_ios.png)
+![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -124,13 +124,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_search_android.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню пошуку туристичних путівників](@site/static/img/guides/travel_guides_search_1_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 
@@ -154,13 +154,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Меню опцій туристичних путівників](@site/static/img/guides/travel_guides_options_android.png)
+![Travel guides options menu](@site/static/img/guides/travel_guides_options_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню опцій туристичних путівників](@site/static/img/guides/travel_guides_options_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_options_ios.png)
 
 </TabItem>
 
@@ -179,13 +179,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Стаття туристичного путівника](@site/static/img/guides/travel_guides_article.png)
+![Travel guides article](@site/static/img/guides/travel_guides_article.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Стаття туристичного путівника](@site/static/img/guides/travel_guides_article_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_article_ios.png)
 
 </TabItem>
 
@@ -212,13 +212,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Меню навігації туристичних путівників](@site/static/img/guides/travel_guides_navigation_menu.png)
+![Travel guides contents menu](@site/static/img/guides/travel_guides_navigation_menu.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню навігації туристичних путівників](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
 
 </TabItem>
 
@@ -234,13 +234,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Меню змісту туристичних путівників](@site/static/img/guides/travel_guides_contents_menu_android.png)
+![Travel guides contents menu](@site/static/img/guides/travel_guides_contents_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню змісту туристичних путівників](@site/static/img/guides/travel_guides_contents_menu_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_contents_menu_ios.png)
 
 </TabItem>
 
@@ -264,13 +264,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
+![Travel guides points  menu](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Меню точок туристичних путівників](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
 
 </TabItem>
 
@@ -292,12 +292,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Альтернативний спосіб перегляду *туристичних путівників* — відобразити їх на мапі за допомогою меню *Налаштувати мапу*. Ця функція не стосується можливості, яку надає OsmAnd для використання Wikivoyage, вона стосується лише треків. Детальніше ви можете прочитати в нашому [блозі](https://osmand.net/blog/routes#generated-travel-routes).
 
-![Меню туристичних маршрутів](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Меню туристичних маршрутів](@site/static/img/guides/travel_guides_travel_routes_view.png)
+![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
 ### Туристичні маршрути та статті на мапі {#travel-routes-and-articles-on-the-map}
 
-![Статті та маршрути на мапі](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Контекстне меню туристичних маршрутів](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
+![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
 Після того, як ви увімкнете відображення *туристичних маршрутів* у меню *Налаштувати мапу*, на мапі з'являться кола різних кольорів. Помаранчеві позначають треки маршрутів, статті про маршрути та деякі шляхові точки. Торкніться певного маршруту, статті або точки, а потім натисніть кнопку *Завантажити* (&#9047;), і ви зможете [керувати ними як треком](#manage-as-gpx-track).
 
@@ -314,7 +314,7 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 ## Керування як GPX-треком {#manage-as-gpx-track}
 
-![Точки туристичних путівників на мапі](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Точки туристичних путівників у моїх місцях](@site/static/img/guides/travel_guides_articles_my_places.png)  
+![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
 
 Після додавання *туристичних путівників* на мапу, *туристичні статті* можна зберегти як GPX-трек і керувати ними через меню *[Мої місця](../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). Їх можна відображати на мапі, ділитися ними, перейменовувати, переміщувати в іншу папку, експортувати або видаляти.  
 
@@ -334,13 +334,13 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 <TabItem value="android" label="Android">
 
-![Поєднання туристичних путівників з Вікіпедією 1](@site/static/img/guides/travel_guides_wikipedia_1.png) ![Поєднання туристичних путівників з Вікіпедією 2](@site/static/img/guides/travel_guides_wikipedia_2.png)
+![Travel guides combine with Wikipedia 1](@site/static/img/guides/travel_guides_wikipedia_1.png) ![Travel guides combine with Wikipedia 2](@site/static/img/guides/travel_guides_wikipedia_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Поєднання туристичних путівників з Вікіпедією 1](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Поєднання туристичних путівників з Вікіпедією 2](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
+![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
 
 </TabItem>
 
@@ -350,7 +350,7 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 У деяких випадках *[вкладка "Закладки"](#explore-and-bookmark)* OsmAnd запропонує вам завантажити [шар мапи з Вікіпедії](../plugins/wikipedia.md#download-wikipedia-packages) для перегляду пов'язаних статей в автономному режимі.
 
-![Завантаження Вікіпедії для туристичних путівників](@site/static/img/guides/travel_guides_wikipedia_download.png)
+![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
 :::info ПРИМІТКА
 [Плагін "Вікіпедія"](../plugins/wikipedia.md) — це [платна функція](../purchases/index.md) застосунку OsmAnd.

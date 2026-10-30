@@ -631,6 +631,33 @@ export async function expectInputExactBy(by, expected) {
 }
 
 /**
+ * Asserts the selected (big) pin on the map stands at the favorite with the given name.
+ *
+ * @param {string} name - favorite name
+ */
+export async function expectSelectedPinAtFavorite(name) {
+    const { pin, fav } = await driver.executeScript(
+        `
+        const layers = Object.values(window.__leafletMap._layers).filter((l) => typeof l.getLatLng === 'function');
+        const pin = layers.find((l) => (l.getElement?.()?.id ?? '').startsWith('se-selected-marker-'));
+        const fav = layers.find((l) => l.options?.name === arguments[0] && l.options?.idObj);
+        return { pin: pin?.getLatLng(), fav: fav?.getLatLng() };
+        `,
+        name
+    );
+    await assert(
+        pin && fav,
+        `selected pin ${JSON.stringify(pin)} or favorite ${name} ${JSON.stringify(fav)} not found`
+    );
+    const dist = await driver.executeScript(
+        'return window.__leafletMap.distance(arguments[0], arguments[1])',
+        pin,
+        fav
+    );
+    await assert(dist < 10, `selected pin is ${Math.round(dist)} m away from the favorite ${name}`);
+}
+
+/**
  * Format latitude/longitude with fixed precision.
  *
  * @param {{lat:number, lon:number}} coords

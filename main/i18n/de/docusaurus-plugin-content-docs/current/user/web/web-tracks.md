@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
 sidebar_label: Tracks
 title: Tracks
@@ -34,7 +34,7 @@ Der Tracks-Bereich enthält alle trackbezogenen Tools und Aktionen. Die folgende
 
 - Tracks aus [OsmAnd Cloud](#cloud-tracks) anzeigen.
 - Tracks auf der Karte hinzufügen (Ordner **Auf Karte sichtbar**).
-- Alle Track-Informationen und Diagramme anzeigen
+- Track-Informationen und Diagramme anzeigen.
 - Tracks bearbeiten und zur Cloud hinzufügen.
 - Tracks herunterladen und löschen.
 - Neue Ordner erstellen oder löschen.
@@ -50,9 +50,13 @@ So importieren Sie einen Track per Drag-and-Drop:
 - Ziehen Sie eine oder mehrere GPX-Dateien von Ihrem Computer.
 - Legen Sie die Dateien auf der Karte oder in einem bestimmten Track-Ordner ab.
 
-Wenn eine Datei über die Karte gezogen wird, wird der verfügbare Ablagebereich hervorgehoben. Wird die Datei direkt auf die Karte abgelegt, wird sie in den Import-Ordner importiert. Wird sie in einen bestehenden Ordner abgelegt, erfolgt der Import in diesen Ordner.
+Wenn eine Datei über die Karte gezogen wird, wird der verfügbare Ablagebereich hervorgehoben. Wird die Datei direkt auf die Karte abgelegt, wird sie in den Import-Ordner importiert. Wird sie in einen bestehenden Ordner abgelegt, erfolgt der Import in diesen Ordner. Ohne ein aktives [OsmAnd Pro](../purchases/index.md)-Abonnement öffnet das Ablegen einer Datei einen Dialog, der erklärt, dass der Track-Import OsmAnd Pro erfordert.
+
+Die maximale Dateigröße beträgt 20 MB für GPX- und KML-Dateien und 2 MB für KMZ-Dateien. Größere Dateien werden nicht importiert, stattdessen erscheint eine Warnung. Werden mehrere Dateien gleichzeitig importiert, werden alle abgelehnten Dateien in einer Nachricht aufgelistet. Tracks, die größer als 20 MB sind und bereits in OsmAnd Cloud gespeichert sind, können ebenfalls nicht im Web geöffnet werden; eine Benachrichtigung empfiehlt, sie in der OsmAnd-App zu öffnen.
 
 Nach Abschluss des Imports erscheint der Track in der Track-Liste, wird mit [OsmAnd Cloud](../personal/osmand-cloud.md) synchronisiert und steht auf allen mit demselben Konto verbundenen Geräten zur Verfügung.
+
+Wenn ein Track nicht importiert oder in OsmAnd Cloud gespeichert werden kann, zeigt ein Fehlerdialog den Dateinamen und, falls verfügbar, den vom Server gemeldeten Grund an.
 
 ![Drag and drop](@site/static/img/web/drag_and_drop.png)
 
@@ -103,7 +107,7 @@ Das Drei-Punkte-Menü (⋮) bietet zusätzliche Aktionen für den Smart Folder. 
 
 ## Cloud-Tracks {#cloud-tracks}
 
-GPX-Tracks, die Sie in [OsmAnd Cloud](../personal/osmand-cloud.md) haben, sind nach der Anmeldung zur Anzeige und Bearbeitung verfügbar. Nur für **Pro-Nutzer** <ProFeature/> und für [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Nutzer (die ihre Daten auch nach Ablauf ihres Pro-Abonnements herunterladen können).
+GPX-Tracks, die Sie in [OsmAnd Cloud](../personal/osmand-cloud.md) haben, sind nach der Anmeldung zur Anzeige und Bearbeitung verfügbar. Nur **Pro-Nutzer** <ProFeature/> können darauf zugreifen. [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Nutzer können ihre Cloud-Daten auch nach Ablauf ihres Pro-Abonnements herunterladen.
 
 Wenn Sie einen Track auswählen, zentriert die Karte automatisch und passt die Zoomstufe an, um den gesamten Track im sichtbaren Kartenbereich anzuzeigen.
 

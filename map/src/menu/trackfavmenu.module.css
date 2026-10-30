@@ -41,9 +41,11 @@
 }
 .appBarIcon {
     fill: var(--svg-icon-color) !important;
+    color: var(--svg-icon-color) !important;
     padding: 8px;
     &:hover {
         fill: var(--selected-color) !important;
+        color: var(--selected-color) !important;
         background-color: var(--buttons-background-secondary) !important;
     }
 }

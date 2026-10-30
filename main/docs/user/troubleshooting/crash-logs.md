@@ -15,7 +15,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Overview {#overview}
 
-Crash logs are valuable diagnostic tools that help developers identify and fix issues and bugs causing the application to crash or behave unexpectedly. Sharing logs from your Android device with the OsmAnd development team is possible. Currently, iOS users only have one type of crash log option to send.
+Crash logs are valuable diagnostic tools that help developers identify and fix issues and bugs causing the application to crash or behave unexpectedly. Sharing logs from your device with the OsmAnd development team is possible. If OsmAnd closes unexpectedly, the app also offers to send a crash report the next time it starts.
 
 
 ## Crash and App Logs {#crash-and-app-logs}
@@ -48,7 +48,7 @@ Be cautious when sending app logs, as they may contain private information such 
 
 </Tabs>
 
-1. Go to *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* or *<Translate android="true" ids="send_logcat_log"/>* (*Send current app log* on iOS). Depending on your situation, select the appropriate type of log. You can refer to the section [Crash and App Logs](#crash-and-app-logs) for details on the differences between the log types.
+1. Go to *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* or *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Send current app log* (iOS). Depending on your situation, select the appropriate type of log. You can refer to the section [Crash and App Logs](#crash-and-app-logs) for details on the differences between the log types.
 2. In the pop-up menu, choose Gmail or your preferred email app. We recommend sending the logs to `support@osmand.net`.
 3. Tap the *Send* button.
 
@@ -73,6 +73,67 @@ Be cautious when sending app logs, as they may contain private information such 
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Send Crash Report After a Crash {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+If OsmAnd closed unexpectedly during the previous run, the Crash dialog appears the next time you start the app. It appears after the app crashes, after it stops responding (Android 11 and later), or after a crash in the app’s native code (Android 12 and later). The dialog does not appear while navigation is active.
+
+- *Send* — sends the crash report directly to the OsmAnd development team, without using an email app. A message confirms whether the report was sent.
+- *Dismiss* — closes the dialog without sending the report.
+
+The report contains technical information about the app’s state and memory use before the crash, along with the app’s recent log.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+If OsmAnd closed unexpectedly during the previous run, the Share crash log dialog appears the next time you start the app. It appears after the app crashes or after the system closes it unexpectedly.
+
+- *Send* — sends the crash report directly to the OsmAnd development team, without using an email app. A message confirms whether the report was sent.
+- *Cancel* — closes the dialog without sending the report.
+
+The report contains technical information about the app’s state and memory use before the crash, along with the app’s recent log.
+
+</TabItem>
+
+</Tabs>
+
+## Heap Histogram for Memory Problems (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Android only
+:::
+
+A *heap histogram* is a table of what fills the app's Java memory: class names with object counts and sizes. It helps developers find what uses up memory when the app gets slow, freezes, or closes after a while. It does not contain your locations, track names, or search queries. OsmAnd takes a full memory dump on the device, turns it into the histogram, and deletes the dump right away.
+
+Taking the dump **freezes the app for 5–10 seconds**. If you touch the screen during that time, Android may show *OsmAnd isn't responding*. That is why automatic collection is **turned off by default**.
+
+**When to turn it on:**
+
+- OsmAnd closes by itself or shows *isn't responding* again and again, especially after some time of use or when you open search, the map with many POIs, or *My Places* with many tracks.
+- The app gets slower the longer it runs, and restarting it helps.
+- The crash report says the app ran out of memory (`OutOfMemoryError`).
+- OsmAnd support asked you to collect a heap histogram.
+
+**When to leave it off:**
+
+- Everyday use and navigation, when the app works fine.
+- Crashes that happen right away at every start, or with a specific action like opening one file. A regular [crash log](#send-logs-from-osmand-app) is enough there.
+
+**How to collect and send it:**
+
+1. Enable the [OsmAnd development plugin](../plugins/development.md) and go to *Main Menu → Plugins → OsmAnd development → Settings → Memory → Java memory*.
+2. In the *Heap dump* panel, choose one of the following:
+    - **Collect on high usage**. The histogram is collected automatically when Java memory is nearly full, at most once every 30 minutes, and it is attached to the next crash report. Keep using the app as usual until the problem happens again.
+    - **Collect & analyze now**. Collects the histogram right away and shows the result. Use it when the app is already slow and *Java memory* shows high usage.
+3. Tap **Share report** to send the latest report to the developers, or send it from the crash dialog the next time the app starts.
+4. Turn off *Collect on high usage* once the report is sent.
+
+![Java memory Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Heap dump panel Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
+
 
 ## Send Tombstone Files (Android) {#send-tombstone-files-android}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+source-hash: bfe0420d8b7fdb1fb6c341554dbe5327adde2d1beb05e5eeb3114c2d541b823c
 sidebar_position: 8
 title:  Points sur la carte
 ---
@@ -133,6 +133,8 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,configur
 </Tabs>
 
 À chaque type de POI dans OsmAnd est assigné une icône et une couleur spécifiques. Le [niveau de zoom](../map/vector-maps.md#details) et le design des POI peuvent être différents dans certains [styles de carte](../map/map-styles.md).  
+
+Dans le [style de carte](../map/map-styles.md) OsmAnd, les lieux de culte (églises, mosquées, synagogues, temples et autres) sont affichés de manière sélective. Aux niveaux de zoom inférieurs, seuls les plus remarquables sont affichés, et les autres apparaissent au fur et à mesure que vous zoomez. Avec le paramètre [*<Translate android="true" ids="rendering_attr_moreDetailed_name"/>*](../map/vector-maps.md#details) activé, tous les lieux de culte apparaissent à un niveau de zoom inférieur. En [mode nuit](../map/vector-maps.md#map-mode), leurs icônes sont affichées sans cercle de fond, comme en mode jour.
 
 [En savoir plus](../map/vector-maps.md#hide).
 

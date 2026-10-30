@@ -170,7 +170,7 @@ Harita görünümünü ve grafiği konumunuzla senkronize etmek için [Konumum](
 - [İz görünümü](./appearance.md)
 - [İz Bağlam menüsü](./track-context-menu.md)
 - [İz ile gezinme](../../navigation/setup/gpx-navigation.md)
-- [Haritadaki rotalar](https://docs.osmand.net/blog/routes) blog makalesi
+- [Haritadaki rotalar](https://osmand.net/blog/routes) blog makalesi
 - [Haritayı yapılandır](../../map/configure-map-menu.md)  
 - [GPX izleri](../../personal/tracks/index.md)  
 - [Rota planla](../../plan-route/index.md)  

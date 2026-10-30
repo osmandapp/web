@@ -46,6 +46,7 @@ import {
     COLOR_NAME_EXTENSION,
     EN_NAME,
     ICON_KEY_NAME,
+    MATCHED_ALT_NAME,
     POI_NAME,
     POI_SUBTYPE,
     POI_TYPE,
@@ -105,7 +106,8 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
         } else {
             type = props[CATEGORY_TYPE]?.toLowerCase();
             if (type) {
-                type = capitalize(t(`search_address_${type}`, formattingPoiType(type)));
+                const typeKey = type === 'postcode' ? 'postcode' : `city_type_${type}`;
+                type = capitalize(t([typeKey, `search_address_${type}`], formattingPoiType(type)));
             }
         }
     }
@@ -113,6 +115,7 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
     name = getFirstSubstring(name);
     type = getFirstSubstring(type);
     city = props[CITY];
+    const altName = props[MATCHED_ALT_NAME] !== name ? props[MATCHED_ALT_NAME] : undefined;
 
     const addressParts = [props[ADDRESS_1], props[ADDRESS_2]].filter(Boolean);
     const info = getInfo();
@@ -134,7 +137,7 @@ export function getPropsFromSearchResultItem(props, t = null, lang = null, listF
         i18n.changeLanguage(restoreLang);
     }
 
-    return { name, type, info, city };
+    return { name, type, info, city, altName };
 }
 
 function getTrackInfo(name, listFiles, unitsSettings, t) {
@@ -158,7 +161,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
 
     const { t } = useTranslation();
 
-    const { name, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
+    const { name, altName, info, distance, bearing, isUserLocation, type, city, icon } = parseItem(item);
     const [isHovered, setIsHovered] = useState(false);
     const [showMatched, setShowMatched] = useState(false);
     const [showPropertiesDump, setShowPropertiesDump] = useState(false);
@@ -295,7 +298,10 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
             const category = item.properties[CATEGORY_KEY_NAME];
             if (category) {
                 moveToMatchedPoiTypeLocation();
-                return navigateToSearchResults({ type: category }, backToSearchResultsState);
+                return navigateToSearchResults(
+                    { type: category },
+                    { state: { ...backToSearchResultsState.state, categoryName: item.properties[CATEGORY_NAME] } }
+                );
             }
         }
     }
@@ -377,7 +383,13 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                 onClick={clickHandler}
             >
                 <ListItemText>
-                    <MenuItemWithLines className={styles.titleText} name={name} maxLines={2} />
+                    <MenuItemWithLines className={styles.titleText} name={name} maxLines={2}>
+                        {altName && (
+                            <Typography component="span" className={styles.titleText}>
+                                {` (${altName})`}
+                            </Typography>
+                        )}
+                    </MenuItemWithLines>
                     {(info ||
                         type ||
                         matchedNameObjects.length > 0 ||

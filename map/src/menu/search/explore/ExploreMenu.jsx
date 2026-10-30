@@ -1,10 +1,8 @@
 import headerStyles from '../../trackfavmenu.module.css';
-import { AppBar, Box, IconButton, Toolbar, Tooltip, Typography } from '@mui/material';
+import { Box, IconButton, Tooltip } from '@mui/material';
 import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
-import IconBtn from '../../../frame/components/btns/IconBtn';
-import styles from '../../settings/settings.module.css';
+import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { ReactComponent as BackIcon } from '../../../assets/icons/ic_arrow_back.svg';
 import { ReactComponent as FilterIcon } from '../../../assets/icons/ic_action_filter.svg';
 import { useTranslation } from 'react-i18next';
 import { MAIN_URL_WITH_SLASH, SEARCH_URL, liveHash } from '../../../manager/GlobalManager';
@@ -14,8 +12,8 @@ import Empty from '../../errors/Empty';
 import ActionsMenu from '../../actions/ActionsMenu';
 import WikiPlacesFilter from './WikiPlacesFilter';
 import WikiPlacesList from './WikiPlacesList';
-import { addWikiPlacesDefaultFilters } from '../../../manager/SearchManager';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { addWikiPlacesDefaultFilters, closeExploreMenu } from '../../../manager/SearchManager';
+import { useNavigate } from 'react-router-dom';
 import EmptySearch from '../../errors/EmptySearch';
 import { ZOOM_ERROR } from '../search/SearchResults';
 import useHashParams from '../../../util/hooks/useHashParams';
@@ -26,7 +24,6 @@ export default function ExploreMenu() {
 
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const location = useLocation();
     const [openFiltersDialog, setOpenFiltersDialog] = useState(false);
     const anchorEl = useRef(null);
 
@@ -36,8 +33,7 @@ export default function ExploreMenu() {
 
     function close() {
         navigate(MAIN_URL_WITH_SLASH + SEARCH_URL + liveHash());
-        ctx.setLoadingContextMenu(false);
-        ctx.setExploreMenu(false);
+        closeExploreMenu(ctx);
     }
 
     useEffect(() => {
@@ -55,20 +51,13 @@ export default function ExploreMenu() {
 
     return (
         <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
-            <AppBar position="static" className={headerStyles.appbar}>
-                <Toolbar className={headerStyles.toolbar}>
-                    <IconBtn
-                        id={'se-explore-menu-close'}
-                        variant="contained"
-                        type="button"
-                        className={styles.closeIcon}
-                        onClick={close}
-                    >
-                        <BackIcon />
-                    </IconBtn>
-                    <Typography id="se-explore-menu-name" component="div" className={headerStyles.title}>
-                        {t('web:explore_menu')}
-                    </Typography>
+            <HeaderWithUnderline
+                title={t('web:explore_menu')}
+                titleId="se-explore-menu-name"
+                onClose={close}
+                showBackButton
+                appBarProps={{ id: 'se-explore-menu-close' }}
+                rightContent={
                     <Tooltip key={'wikidata_filters'} title={t('shared_string_filters')} arrow placement="bottom-end">
                         <span>
                             <IconButton
@@ -84,11 +73,9 @@ export default function ExploreMenu() {
                             </IconButton>
                         </span>
                     </Tooltip>
-                </Toolbar>
-                {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (
-                    <OverlayLinearProgress />
-                ) : null}
-            </AppBar>
+                }
+            />
+            {ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? <OverlayLinearProgress /> : null}
             <Box sx={{ flex: 1, overflowY: 'auto' }}>
                 {zoom > 0 && zoom < EXPLORE_MIN_ZOOM && <EmptySearch message={ZOOM_ERROR} />}
                 {!ctx.wikiPlaces && ctx.loadingContextMenu && !ctx.searchSettings.getPoi ? (

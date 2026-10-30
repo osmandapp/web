@@ -1,7 +1,7 @@
 ---
-source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
 sidebar_position: 9
-title:  Online Maps
+title:  Online Kaarten
 ---
 
 import Tabs from '@theme/Tabs';
@@ -51,7 +51,7 @@ U kunt gedetailleerde informatie over het visualiseren en aanpassen van rasterka
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Underlay / Overlay configureren Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Underlay / Overlay configureren iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
@@ -69,10 +69,10 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 ## Hoe Rasterkaarten Voor te Bereiden {#how-to-prepare-raster-maps}
 
 :::info
-Hoofdartikel over het voorbereiden van kaarten [lees hier](https://docs.osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
+Hoofdartikel over het voorbereiden van kaarten [lees hier](https://osmand.net/docs/technical/map-creation/create-offline-maps-yourself#raster-maps-advanced).
 :::
 
-Ondanks dat de plugin *Online Maps* heet, kunt u de kaarten ook zonder internetverbinding gebruiken. U hoeft alleen de delen van de kaarten (vaak tegels genoemd) op te slaan om ze later te gebruiken. Om dat te doen, downloadt u een specifieke [Map Creator tool](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) ontwikkeld door het OsmAnd-team.
+Ondanks dat de plugin *Online Maps* heet, kunt u de kaarten ook zonder internetverbinding gebruiken. U hoeft alleen de delen van de kaarten (vaak tegels genoemd) op te slaan om ze later te gebruiken. Om dat te doen, downloadt u een specifieke [Map Creator tool](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) ontwikkeld door het OsmAnd-team.
 
 Selecteer het gebied dat u wilt downloaden, klik op het Preload-gebied, stel vervolgens de kleinste en de grootste zoomniveaus in die u wilt weergeven en download de tegels.
 Voor de <b>Android-versie</b> kunt u ze kopiëren naar de map <i>osmand/tiles/*tile type*</i> van uw telefoon. U moet ook <i>Configure map-. Overlay map</i> openen en OsmAnd online tegels kiezen.
@@ -84,9 +84,9 @@ Hoe u een SQ Lite-bestand toevoegt in de Android- en iOS-versie van OsmAnd kunt 
 
 Online tegels kunnen handig zijn wanneer u slechts een klein deel van de kaart of een specifiek type ervan nodig heeft om in een beperkt gebied te gebruiken, maar niet de hele regio wilt downloaden. Ze kunnen in eindeloze situaties van pas komen.
 
-![Online Maps](@site/static/img/plugins/online-maps/map_creator.jpg)
+![Online kaarten](@site/static/img/plugins/online-maps/map_creator.jpg)
 
-![Online Maps](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
+![Online kaarten](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
 
 ## Gerelateerde Artikelen {#related-articles}
@@ -95,7 +95,7 @@ Online tegels kunnen handig zijn wanneer u slechts een klein deel van de kaart o
 - [Global Settings](../../user/personal/global-settings.md)
 - [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
 
-### Common Issues and Solutions {#common-issues-and-solutions}
+### Veelvoorkomende Problemen en Oplossingen {#common-issues-and-solutions}
 
 1. Online Maps verschijnen niet in het Kaartbron-menu:  
   

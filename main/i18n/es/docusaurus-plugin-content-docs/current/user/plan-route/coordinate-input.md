@@ -1,8 +1,9 @@
 ---
-source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
+source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
 sidebar_position: 3
 title:  Entrada de coordenadas
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -12,7 +13,6 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
-
 
 
 <InfoAndroidOnly />
@@ -25,11 +25,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Cómo utilizar {#how-to-use}
 
-Puede crear puntos de ruta desde el menú *[Marcadores del mapa](../personal/markers.md#actions)* o desde [Mis lugares](../personal/myplaces.md) (ver capturas de pantalla). Por favor, siga estas rutas para acceder a la opción de entrada de coordenadas:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Botón de la Tierra en la parte inferior de la pantalla*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+Puede crear puntos de ruta desde el menú *[Marcadores del mapa](../personal/markers.md#actions)*. Vaya a: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Cómo encontrar la entrada de coordenadas](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Cómo encontrar la entrada de coordenadas](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
+![Cómo encontrar la entrada de coordenadas](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png)
 
 Después de haber abierto la pantalla de entrada de coordenadas:
 
@@ -38,7 +36,7 @@ Después de haber abierto la pantalla de entrada de coordenadas:
 - &nbsp;Guarde su(s) punto(s) como una *[Ruta](../personal/tracks/manage-tracks.md)* utilizando el *[menú Opciones](#options)* o el botón &#8592; *(Atrás)*.
 
 :::note
-Los resultados de la creación de puntos por coordenadas - una *[ruta GPX](../personal/tracks/manage-tracks.md)* con puntos de ruta - se pueden encontrar en el [menú Mis lugares](../personal/myplaces.md) (carpeta *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>*).
+Los resultados de la creación de puntos por coordenadas - una [ruta GPX](../personal/tracks/manage-tracks.md) con puntos de ruta - se pueden encontrar en el [menú Mis lugares](../personal/myplaces.md) (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>* carpeta).
 :::
 
 ## Opciones {#options}
@@ -102,7 +100,7 @@ Al tocar un punto, es posible cambiar sus coordenadas. Toque el botón *Aplicar*
 
 Para guardar sus puntos como una ruta, toque el botón *Atrás* ( &#8592; ) o utilice el menú *[Opciones](#options)*.
 
-![Guardar punto de entrada de coordenadas Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Lista de Mis lugares de entrada de coordenadas Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![Guardar punto de entrada de coordenadas Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Lista de Mis lugares de entrada de coordenadas Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
 
 En el menú emergente, puede introducir su propio nombre de ruta o guardarla por defecto. Toque <Translate android="true" ids="shared_string_save"/> para guardar los puntos añadidos como una nueva ruta.
 Encontrará su ruta en el [menú Mis lugares](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

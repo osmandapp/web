@@ -9,7 +9,7 @@ import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import AppContext from '../../context/AppContext';
 import { FAVOURITES, GPX } from '../../manager/GlobalManager';
-import FavoritesManager, { getSize } from '../../manager/FavoritesManager';
+import FavoritesManager, { findFavGroupByFileName, getSize } from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
@@ -19,7 +19,10 @@ export default function ShareFileItem({ file, type }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
 
-    const favGroup = type === FAVOURITES && ctx.favorites?.groups.find((g) => g.file.folder === file.folder);
+    const favGroup = type === FAVOURITES && findFavGroupByFileName(ctx.favorites?.groups, file.name);
+    if (type === FAVOURITES && !favGroup) {
+        return null;
+    }
 
     const dist = type === GPX && getDist(file);
     const time = type === GPX && getTime(file);

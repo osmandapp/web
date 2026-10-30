@@ -1,5 +1,5 @@
 ---
-source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+source-hash: 2c0a6908a74d63cbb4449e258729df822d9ac3927942ad52a8271ce7c951c29c
 sidebar_position: 4
 title: Notas de Áudio / Vídeo
 ---
@@ -147,8 +147,8 @@ Para *notas de áudio e vídeo*, o gravador de áudio ou vídeo é exibido, resp
 
 É possível parar a gravação com um toque no widget <Translate android="true" ids="map_widget_av_notes"/>, independentemente de o Menu de Contexto ou o widget terem iniciado a gravação. Para *uma nota de foto*, a funcionalidade da câmera aparece, e você pode tirar uma foto, visualizar o resultado, aceitar e salvá-la, ou tirar uma nova foto.
 
-:::info note
-Automaticamente, todos os registros de foto, áudio e vídeo são salvos em: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> guia.
+:::info Nota
+Automaticamente, todos os registros de foto, áudio e vídeo são salvos em: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> guia. Cada nota também é salva como favorito na pasta **media**. Consulte [Notas A/V como Favoritos](#av-notes-as-favorites).
 :::
 
 
@@ -342,6 +342,14 @@ Use a camada de mapa [Gravação](../map/point-layers-on-map#-audio--video-point
 ![Nenhuma nota no mapa](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notas no mapa](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
+## Notas A/V como Favoritos {#av-notes-as-favorites}
+
+Notas de áudio, vídeo e foto estão vinculadas aos Favoritos. Cada nota tem um ponto favorito correspondente na pasta **media** em *Meus Lugares → Favoritos*, posicionado no local da nota e nomeado de acordo com o tipo da nota e a hora de criação, por exemplo *Photo Oct 1, 2026 09:45*. O arquivo da nota é anexado a esse favorito e aparece em seu [cartão Mídia](../personal/favorites.md#media). A própria nota também continua disponível na guia *Notas A/V*.
+
+- Quando o OsmAnd é atualizado para a versão 5.4 a partir de uma versão anterior, um favorito é criado automaticamente para cada nota existente.
+- As novas notas gravadas com o widget ou com o menu de contexto do mapa são adicionadas automaticamente à pasta **media**.
+
+
 ## Pontos de Passagem Criados a Partir de Notas {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -387,7 +395,7 @@ Existem duas maneiras de criar um ponto de passagem: automaticamente e manualmen
     - Selecione a trilha à qual você pretende adicionar um ponto de passagem.
     - A caixa de diálogo *<Translate android="true" ids="quick_action_add_gpx"/>* é aberta e permite que você defina algumas propriedades, como o nome do ponto de passagem, um ícone, cor e outros. Depois de feito, toque em **Salvar**.
 
-:::info note
+:::info Nota
 Você pode especificar nomes para cada ponto de passagem criado manualmente.
 :::
 
@@ -421,11 +429,7 @@ Se você visualizar o arquivo GPX da trilha adicionada com um ponto de passagem 
 
 ### Detalhes do Nome do Arquivo {#file-name-details}
 
-O plugin <Translate android="true" ids="audionotes_plugin_name"/> gera arquivos de áudio/vídeo/foto no seguinte formato:
-
-    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
-
-onde `SHORTLINK_LOCATION` especifica a latitude e longitude do local ao qual o arquivo está vinculado. O `SHORTLINK_LOCATION` é codificado, de acordo com a especificação do [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
+O plugin <Translate android="true" ids="audionotes_plugin_name"/> nomeia os arquivos de áudio, vídeo e foto usando o padrão `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, por exemplo `Photo_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. A parte `location` contém a latitude e a longitude da nota, codificadas de acordo com a especificação do [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ### Exportar para JOSM {#export-to-josm}

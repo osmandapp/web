@@ -23,6 +23,7 @@ selenium tests. The number is what `yarn test 01` matches.
 | `stubs/` | module stubs wired through `moduleNameMapper` in `jest.config.js` |
 | `requests.js` | finds the request the app has sent to a given endpoint |
 | `infoFile.js` | reads the `.info` payload the app uploaded (FormData → gunzip → JSON) |
+| `login.js` | renders inside the real `LoginContextProvider` with a Pro session; holds `get-account-info` to switch accounts |
 | `setup.js` | jsdom polyfills (`TextEncoder`) and `REACT_APP_*` env |
 
 ## Stubs
@@ -35,6 +36,7 @@ selenium tests. The number is what `yarn test 01` matches.
 | `LocalTrackStorage$` | `stubs/localTrackStorage.js` | IndexedDB is not available in jsdom |
 | `context/AppContext$` | `stubs/appContext.js` | the real one pulls in the whole app; only track-type helpers are needed |
 | `menu/`, `frame/`, `infoblock/`, `dialogs/`, `map/layers/`… | `stubs/empty.js` | UI layers are not covered by unit tests |
+| `^react-leaflet$` | `stubs/reactLeaflet.js` | ESM; its own file, so a `jest.mock('react-leaflet')` in a suite does not replace `stubs/empty.js` |
 | `*.css`, `*.svg`, … | `stubs/style.js`, `stubs/file.js` | static assets |
 
 `stubs/empty.js` is a proxy: any named export of a stubbed module is a `jest.fn()`.

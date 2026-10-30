@@ -1,5 +1,5 @@
 ---
-source-hash: 425f511859172593fe5402cce5c44974144e585dac7b77bd26c1c5e68a22a8f0
+source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
 sidebar_position: 1
 title:  Buscar todo
 ---
@@ -109,7 +109,7 @@ OsmAnd ordena automáticamente los resultados de la búsqueda según varios crit
 
 5. **Importancia** — Los lugares emblemáticos conocidos o lugares referenciados con frecuencia pueden aparecer más arriba en los resultados cuando coinciden estrechamente con la consulta de búsqueda.
 
-También puede cambiar manualmente el orden de clasificación de los resultados de búsqueda mediante la opción *Ordenar por* en la parte superior de la lista de resultados de búsqueda. Toque *Ordenar por* y seleccione una de las siguientes opciones:
+También puede cambiar manualmente el orden de clasificación de los resultados de búsqueda mediante la opción de ordenación en la parte superior de la lista de resultados de búsqueda. El chip muestra la opción seleccionada. Toque el chip y seleccione una de las siguientes opciones en el menú *Ordenar por*:
 - **Relevancia** — Ordena los resultados de búsqueda por relevancia con respecto a la consulta de búsqueda.
 - **Más cercano** — Ordena los resultados de búsqueda por distancia, mostrando primero los resultados más cercanos.
 
@@ -164,12 +164,7 @@ Puede encontrar la ubicación requerida en el mapa a partir de la lista de punto
 
 1. Comience a escribir el nombre o la dirección en la barra de búsqueda.
 
-2. A medida que escribe, la lista muestra los puntos más cercanos a la consulta, aproximadamente en este orden:
-    - Categorías de PDI
-    - Favoritos, PDI, Rutas y Waypoints
-    - Tracks
-    - Direcciones
-    - Mapas para descargar
+2. A medida que escribe, la lista muestra los resultados que coinciden con su consulta. Los resultados se ordenan tal como se describe en la sección [Ordenar resultados de búsqueda](#sorting-search-results).
 
 3. Al buscar por nombre en Android, OsmAnd muestra chips de tipo de PDI según los tipos representados en los resultados de búsqueda. Toque un chip para filtrar los resultados por el tipo de PDI seleccionado. Puede seleccionar varios tipos de PDI. Una vez seleccionado, un chip se mueve a la primera posición de la lista. Toque de nuevo un chip seleccionado para anular la selección y volver a los resultados de búsqueda completos.
 
@@ -181,13 +176,33 @@ Puede encontrar la ubicación requerida en el mapa a partir de la lista de punto
 OsmAnd ha integrado los [**datos TIGER**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) en los mapas de EE. UU. para proporcionar información sobre las direcciones de EE. UU. El conjunto de datos TIGER se basa en **rangos** y no contiene números de casa precisos, por lo que algunas direcciones pueden faltar o ser inexactas.
 :::
 
-### Buscar alrededor (solo Android) {#search-around}
+### Búsqueda espacial {#spatial-search}
 
-![Buscar alrededor](@site/static/img/search/search_around.webp)
+<InfoAndroidOnly/>
 
-Cuando la búsqueda se abre significativamente alejada de su ubicación actual, el chip *Buscar alrededor* le permite elegir el área utilizada para la búsqueda. Toque el chip y seleccione una de las siguientes opciones:
+![Búsqueda espacial](@site/static/img/search/spatial_search.webp)
+
+La Búsqueda espacial es un motor de búsqueda experimental que tiene en cuenta la ubicación relativa de los objetos entre sí, no solo la coincidencia de sus nombres con la consulta. Ayuda a OsmAnd a interpretar correctamente las consultas que combinan varias partes, como un nombre de lugar y una categoría de PDI.
+
+La Búsqueda espacial está desactivada de forma predeterminada. Para activarla, vaya a los ajustes del [complemento de Desarrollo de OsmAnd](../plugins/development.md#internal-algorithms) y active *Usar búsqueda de texto espacial*. Cuando está activada, la Búsqueda espacial reemplaza al motor de búsqueda estándar para consultas de PDI y direcciones.
+
+Con la Búsqueda espacial puede:
+- Buscar un PDI en un lugar específico. Introduzca una categoría y un nombre de lugar en una sola consulta, por ejemplo, Hotel Berlín. El nombre del lugar se utiliza como área de búsqueda y la categoría se busca dentro de él.
+- Buscar lugares que coincidan con dos condiciones. Introduzca dos categorías o una categoría y una propiedad, por ejemplo, Combustible Diésel o Café Vegano, para encontrar lugares que cumplan ambas. Una consulta como Combustible McDonald's encuentra gasolineras situadas cerca de un McDonald's. El orden de las palabras importa. La primera palabra establece lo que busca y la segunda lo que debe estar cerca. Por ejemplo, McDonald’s Combustible encuentra restaurantes McDonald’s situados cerca de gasolineras.
+- Buscar alrededor de un lugar encontrado. Introduzca una categoría y un nombre de lugar, por ejemplo, *Hotel Berlín*, y luego toque *Hotel cerca de Berlín* en la parte superior de los resultados de búsqueda. El nombre de este lugar se añade al chip [Buscar alrededor](#search-around).
+- Utilizar diferentes formatos de nombres de calles y nombres de categorías traducidos en sus consultas.
+- Obtener resultados más rápidos al buscar por categorías de PDI populares, como farmacia, aparcamiento o restaurante.
+
+### Buscar alrededor {#search-around}
+
+<InfoAndroidOnly/>
+
+![Buscar alrededor](@site/static/img/search/search_around_berlin.webp)
+
+Cuando el centro del mapa está a más de 50 m de su ubicación y el mapa no sigue su posición, la búsqueda se realiza alrededor del centro del mapa y el campo de búsqueda muestra *Buscar a N km*. Cuando el centro del mapa está a más de 70 km de su ubicación, aparece un chip con el área de búsqueda junto al chip de ordenación. El chip muestra la opción seleccionada. Toque el chip y elija una de las siguientes opciones en el menú *Buscar alrededor*:
 - **Centro del mapa** — Busca alrededor del centro actual del mapa. Esta opción está seleccionada de forma predeterminada.
-- **Mi ubicación** — Busca alrededor de su ubicación actual. 
+- **Mi ubicación** — Busca alrededor de su ubicación actual.
+- **Nombre del lugar** — Busca alrededor de un lugar que haya encontrado con la [Búsqueda espacial](#spatial-search). Por ejemplo, introduzca *Hotel Berlín* y luego toque *Hotel cerca de Berlín* en la parte superior de los resultados de búsqueda. *Berlín* aparece en el chip y se muestran hoteles alrededor de Berlín. Esta opción solo está disponible cuando la Búsqueda espacial está activada. 
 
 ### Buscar en el mapa {#search-on-the-map}
 
@@ -246,46 +261,23 @@ La **Búsqueda de dirección** utiliza datos de OpenStreetMap. Este tipo de bús
 
 ## Búsqueda Explorar {#search-explore}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Búsqueda Explorar](@site/static/img/search/explore_search_android.webp)
 
-La pestaña **Explorar** en la herramienta de Búsqueda le ayuda a descubrir rápidamente lugares cerca de su ubicación actual y acceder a elementos abiertos recientemente. Contiene dos secciones principales: [Lugares populares cercanos](#popular-places-nearby)
- y [Historial](#history).
+</TabItem>
 
-### Lugares populares cercanos {#popular-places-nearby}
-
-La sección **Lugares populares cercanos** muestra una lista desplazable de lugares emblemáticos y atracciones conocidas cerca de su ubicación. Cada elemento puede incluir el nombre del lugar, su categoría, distancia y dirección, y una imagen de vista previa si está disponible. Toque *Mostrar todo* para abrir la lista completa o *Mostrar en el mapa* para mostrar estos lugares en el mapa.
-
-Para más detalles, consulte [aquí](../map/popular_places.md#explore-in-search).
-
-### Historial {#history}
-
-![Sección de historial](@site/static/img/search/history_section_android.webp) ![Sección de historial](@site/static/img/search/history_section_2_android.webp)
-
-La sección **Historial** proporciona acceso rápido a los elementos de su historial reciente. Muestra hasta 25 elementos más recientes y se puede expandir o contraer. Toque *Ver todo* para abrir la pantalla de Historial completa.
-
-En la pantalla de Historial completa, puede ordenar y filtrar los elementos de su historial mediante las siguientes opciones:
-
-1. **Ordenar por**:
-- Reciente — muestra primero los elementos añadidos más recientemente. Cuando se selecciona esta opción, los elementos se agrupan por tiempo, como Hoy, La semana pasada y periodos anteriores.
-- Más cercano — ordena los elementos por distancia desde su ubicación actual.
-- Más cercano al centro del mapa — ordena los elementos por distancia desde el centro actual del mapa. Cuando se selecciona cualquiera de las opciones de ordenación basadas en la distancia, los grupos basados en el tiempo no se muestran.
-
-2. **Tipo** — filtra los elementos de historial por:
-- Todos — muestra todos los elementos de historial disponibles.
-- Búsqueda — muestra los elementos de su historial de búsqueda.
-- Navegación — muestra los elementos de su historial de navegación.
-
-3. **Filtros de categoría** — filtra los elementos de historial por categoría. Los filtros de categoría disponibles dependen de los tipos de elementos disponibles en su Historial. Por ejemplo, puede ver categorías como PDI, Track, Ubicación, Favorito o Dirección.
-
-4. **Ajustes** — toque el icono de engranaje en la esquina superior derecha para abrir los ajustes de Historial, donde puede activar o desactivar el historial de búsqueda, el historial de navegación y el historial de marcadores de mapa, hacer una copia de seguridad del historial como archivo o borrar todo el historial.
-
-## Historial de búsqueda {#search-history}
+<TabItem value="ios" label="iOS">
 
 ![Búsqueda en el historial](@site/static/img/search/history_search_ios.png)
 
-En iOS, puede acceder a su Historial de búsqueda desde la pestaña **Historial** dedicada en la herramienta de Búsqueda. Le permite buscar de nuevo lugares, direcciones o lugares visitados con frecuencia encontrados anteriormente sin volver a introducir la consulta. Para más información, consulte la sección de iOS del artículo [Historial de búsqueda](./search-history.md).
+</TabItem>
+
+</Tabs>
+
+En Android, la pestaña **Explorar** en la herramienta de Búsqueda le ayuda a descubrir rápidamente lugares cerca de su ubicación actual y acceder a su historial. En iOS, la pestaña **Historial** le permite buscar de nuevo lugares, direcciones o lugares visitados con frecuencia encontrados anteriormente sin volver a introducir la consulta. Para más información, consulte el artículo [Búsqueda Explorar](./search-history.md).
 
 
 ## Búsqueda de PDI {#search-poi}
@@ -341,7 +333,7 @@ La búsqueda de coordenadas proporciona una ubicación precisa. Puede introducir
 ## Artículos relacionados {#related-articles}
 
 - [Búsqueda de dirección](./search-address.md)
-- [Historial de búsqueda](./search-history.md)
+- [Búsqueda Explorar](./search-history.md)
 - [Búsqueda de PDI](./search-poi.md)
 - [Búsqueda de coordenadas](./search-coordinates.md)
 - [Lugares populares](../map/popular_places.md)

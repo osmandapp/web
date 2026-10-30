@@ -1,5 +1,5 @@
 ---
-source-hash: 257260cc6f5df1e2457058808df69ed24a8aea6a73cb5b7dee08308979c295ac
+source-hash: d93d14b34275dc0a5e7f262f8293ed65af222ec0a7a2866d48f085cdca840627
 title: Tworzenie własnego przewodnika turystycznego
 versions: '*'
 ---
@@ -21,7 +21,7 @@ Wybór źródła tekstu do przewodnika zależy wyłącznie od Ciebie. Może to b
 
 ### Uruchom narzędzie {#launch-the-tool}
 
-Pobierz najnowszą wersję [OsmAnd MapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) i rozpakuj pliki z archiwum.
+Pobierz najnowszą wersję [OsmAnd MapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) i rozpakuj pliki z archiwum.
 
 :::note
 Sposób użycia tego narzędzia opisano w artykule [Tworzenie własnych map rastrowych i wektorowych offline](./create-offline-maps-yourself.md#osmandmapcreator).

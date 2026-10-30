@@ -208,6 +208,7 @@ export async function prepareDriver() {
 
     options.setUserPreferences({
         'profile.default_content_setting_values.geolocation': 2, // 2 means block geolocation requests
+        'intl.accept_languages': 'en-GB',
     });
     const builder = new Builder().forBrowser('chrome').setChromeOptions(options);
 

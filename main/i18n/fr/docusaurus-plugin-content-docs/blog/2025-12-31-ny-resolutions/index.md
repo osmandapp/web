@@ -219,7 +219,7 @@ In 2025, OsmAnd released three major updates (5.0, 5.1, and 5.2) that significan
 * [**Trip Recording Enhancements:**](https://osmand.net/blog/osmand-android-5-2-released/#new-trip-recording-widgets)
     * New widgets for **Max Speed** and **Average Slope**.
     * Improved **Uphill/Downhill** widget showing total elevation gain/loss.
-* [**Enhanced Connectivity:**](https://osmand.net/blog/osmand-android-5-2-released/#obdii-ble-connectivity) Improved **OBD-II BLE** support, including new live data metrics like fuel consumption and adapter voltage.
+* [**Enhanced Connectivity:**](https://osmand.net/blog/osmand-android-5-2-released/#improved-obdii-connectivity) Improved **OBD-II BLE** support, including new live data metrics like fuel consumption and adapter voltage.
 * [**Search Context:**](https://osmand.net/blog/osmand-android-5-2-released/#search-improvements) Street and city details are now shown directly within the search result list for faster identification.
 
 ---

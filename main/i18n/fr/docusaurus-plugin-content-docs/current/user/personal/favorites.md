@@ -1,5 +1,5 @@
 ---
-source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Favoris
 ---
@@ -131,7 +131,7 @@ Pour modifier un point favori :
 
 <TabItem value="android" label="Android">
 
-Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *Choisir un favori* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
 ![Mes lieux favoris Android](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -139,7 +139,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 <TabItem value="ios" label="iOS">
 
-Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
+Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *Choisir un favori* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
 ![Mes lieux iOS](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -147,10 +147,10 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 </Tabs>
 
-Une large gamme d'icônes pour les POI et les points de cheminement est disponible dans OsmAnd. Vous pouvez :
+L'écran **Sélectionner une icône** regroupe les icônes par [catégorie](../search/search-poi.md#categories-and-their-filters). Une rangée de puces de catégories en haut vous permet d'accéder directement à la section d'une catégorie dans la liste ci-dessous. Appuyez sur l'icône de loupe pour trouver une icône par nom ou par mot-clé.
 
-- Sélectionner une icône dans la liste des [catégories de POI](../search/search-poi.md#categories-and-their-filters).
-- Trouver une icône appropriée en utilisant l'[option de recherche](../search/search-all.md#how-to-use).
+- *Dernières utilisées* — Les icônes récemment sélectionnées apparaissent dans leur propre section pour être facilement réutilisées.
+- *Spéciales* — Un ensemble d'icônes à usage général (étoile, drapeau, marqueur, cœur, appareil photo, et autres) qui ne sont pas liées à une catégorie spécifique.
 
 
 ### Favoris spéciaux (Personnel) {#special-favorites-personal}
@@ -162,19 +162,32 @@ Le *dossier Personnel* contient des points spéciaux comme **<Translate android=
 
 ![Médias](@site/static/img/personal/media_actions.webp) ![Médias](@site/static/img/personal/media_menu.webp)
 
-La section Médias vous permet de joindre des photos, des vidéos, des enregistrements audio et des images à un point favori. Les médias peuvent être ajoutés lors de la création d'un favori ou ultérieurement depuis l'écran Modifier le favori. Pour joindre des médias, appuyez sur *Ajouter* dans la section Médias et choisissez l'une des options disponibles :
+La section Médias vous permet de joindre des photos, des vidéos, des enregistrements audio et des images à un point favori. Les médias peuvent être ajoutés lors de la création d'un favori ou ultérieurement depuis l'écran Modifier le favori, ou directement depuis le menu contextuel du favori. Pour joindre des médias, appuyez sur le bouton *+* sur l'écran Modifier le favori ou sur *Ajouter* dans le menu contextuel et choisissez l'une des options disponibles :
 - **Prendre une photo** — Capturez une nouvelle photo avec l'appareil photo de l'appareil.
 - **Prendre une note vidéo** — Enregistrez une nouvelle vidéo.
-- **Prendre une note audio** — Enregistrez une note audio.
+- **Prendre une note audio** — Enregistrez une note audio. Si OsmAnd n'a pas l'autorisation d'enregistrer de l'audio, votre appareil vous demande de l'autoriser.
 - **Choisir dans la Galerie** — Sélectionnez une image existante sur votre appareil.
 - **Choisir dans les Fichiers** — Sélectionnez une image dans le système de fichiers.
 
-Une fois le média joint, il apparaît dans la carte Médias du menu contextuel du favori. La même carte Médias est également disponible pour les [Points de cheminement](../map/tracks/track-context-menu.md#points--waypoints).
+Une fois le média joint, il apparaît dans la carte Médias du menu contextuel du favori. Si aucun média n'est joint, la carte affiche *Aucun média* et un bouton *Ajouter*. La même carte Médias est également disponible pour les [Points de cheminement](../map/tracks/track-context-menu.md#points--waypoints).
+
+Les notes audio, vidéo et photo créées avec le [plugin Audio/Vidéo Notes](../plugins/audio-video-notes.md) sont également enregistrées comme favoris avec des médias joints.
 
 La carte Médias affiche les aperçus des éléments joints. Les éléments affichés suivent l'ordre de tri sélectionné. Appuyez sur *Afficher tout* pour ouvrir la galerie complète. La galerie affiche tous les médias joints au favori sélectionné.
 
 Appuyez sur n'importe quel élément pour l'ouvrir en vue plein écran. Les photos et vidéos peuvent être visualisées directement, tandis que les enregistrements audio incluent des commandes de lecture.
 
+La galerie comprend les options suivantes :
+- **Tri** — Appuyez sur la barre de tri en haut pour choisir l'ordre : Le plus proche, Dernière modification, Nom A - Z, Nom Z - A, Date la plus récente en premier, Date la plus ancienne en premier, Durée la plus longue en premier ou Durée la plus courte en premier.
+- **Résumé** — Sous les éléments, la galerie affiche le nombre de photos, de vidéos et de notes audio ainsi que leur taille totale.
+- **Bouton +** — Ajouter un nouveau média.
+- **Modifier** (icône crayon) — Entrer en mode sélection. Vous pouvez également appuyer longuement sur n'importe quel élément.
+
+En mode sélection, appuyez sur les éléments pour les sélectionner ou utilisez Sélectionner tout. Le menu à trois points propose :
+- **Exporter** — Exporter les fichiers médias sélectionnés.
+- **Supprimer** — Supprimer les médias sélectionnés du favori. Les médias stockés par OsmAnd et non joints à un autre élément sont également supprimés de l'appareil.
+
+Les médias capturés dans OsmAnd sont nommés selon le modèle `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, par exemple `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. Le nom contient le type de média, la date et l'heure de création, ainsi que l'emplacement où le média a été capturé, encodé sous forme de [lien court OSM](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 ## Gérer les favoris {#manage-favorites}
 
@@ -221,7 +234,8 @@ La section **Favoris** vous permet de :
 </Tabs>
 
 - **Tri** — Les dossiers et points favoris peuvent être triés en utilisant les options de tri disponibles dans le menu de la liste. Pour les points favoris, les options suivantes sont disponibles : *Nom A – Z*, *Nom Z – A*, *Dernière modification*, *Le plus proche de l'emplacement actuel*, *Le plus proche du centre de la carte*, *Date la plus récente en premier* et *Date la plus ancienne en premier*. Pour les dossiers de favoris, les options suivantes sont disponibles : *Nom A – Z*, *Nom Z – A*, *Dernière modification*, *Date la plus récente en premier* et *Date la plus ancienne en premier*. Par défaut, les éléments sont triés par Nom A – Z. Les dossiers épinglés sont toujours affichés en haut de la liste. Ils sont visuellement séparés du reste des dossiers par un séparateur. 
-- **Recherche** — Utilisez la [recherche globale](../search/search-all.md) pour trouver des favoris par nom. Les favoris sont triés par distance par rapport au centre de la carte. Pour rechercher des points favoris depuis la liste des Favoris dans l'onglet Mes lieux, appuyez sur l'icône *Rechercher* (loupe).
+- **Recherche** — Vous pouvez utiliser la [recherche globale](../search/search-all.md) pour trouver des favoris par nom. Pour rechercher uniquement dans la liste des Favoris dans l'onglet Mes lieux, appuyez sur l'icône *Rechercher* (loupe).
+
 
 ### Modification / Suppression en masse {#bulk-edit--delete}
 
@@ -274,21 +288,6 @@ Pour les dossiers sélectionnés, les mêmes actions sont disponibles, avec les 
 </TabItem>
 
 </Tabs>
-
-<!--
-### Add Favorites to Map Markers {#add-favorites-to-map-markers}
-
-<InfoAndroidOnly/>
-
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-You can add to or remove your favorites from [Map markers list](../personal/markers.md).
-Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
-
-**Functions for Favorite folder:**
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
-- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
--->
 
 
 ### Actions sur les groupes de favoris {#favorite-group-actions}
@@ -421,38 +420,14 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 </Tabs>
 
-Vous avez besoin d'un compte OsmAnd Cloud pour utiliser la fonction *Sauvegarde gratuite des paramètres*. Si vous avez un compte *OsmAnd Pro* ou un compte actif *OsmAnd Cloud*, vous ne verrez pas la bannière promotionnelle.  
+Vous avez besoin d'un compte OsmAnd Cloud pour utiliser la fonction *Sauvegarde gratuite des favoris*. Si vous avez un compte *OsmAnd Pro* ou un compte actif *OsmAnd Cloud*, vous ne verrez pas la bannière promotionnelle.  
 
 - *Bannière de sauvegarde gratuite des favoris*. Appuyez sur cette bannière pour démarrer le processus de sauvegarde.
 - *Terminez l'étape d'inscription* si vous n'avez pas de compte OsmAnd Cloud en suivant les instructions du [guide d'inscription](../personal/osmand-cloud.md#login).
 - *Accédez au menu Achats OsmAnd* (*Menu → Paramètres → Achats*).
-- *[Forfait OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Sélectionnez cette option pour accéder à la fonction de sauvegarde gratuite des paramètres.
-- *Créez une sauvegarde* de vos paramètres.
+- *[Forfait OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. Sélectionnez cette option pour accéder à la fonction de sauvegarde gratuite des favoris.
+- *Créez une sauvegarde* de vos favoris.
 
-<!--
-### All Favorites {#all-favorites}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
-
-- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
-- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
--->
 
 ### Groupe de favoris {#favorite-group}
 
@@ -471,8 +446,8 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-- Pour partager plusieurs dossiers de favoris, entrez en [Mode de sélection](#bulk-edit--delete), sélectionnez les dossiers requis et appuyez sur *Partager*.
-- Pour partager un seul dossier de favoris, appuyez sur le menu à trois points (*Android*) ou faites un appui long sur le dossier (*iOS*), sélectionnez *Partager* pour envoyer le fichier Favorites.gpx dans la mémoire de votre appareil ou le partager via des applications de messagerie. Sur Android, si le dossier contient des médias joints, une feuille de partage apparaît. Vous pouvez choisir :
+- Pour partager plusieurs dossiers de favoris, consultez la section [Modification / Suppression en masse](#bulk-edit--delete).
+- Pour partager un seul dossier de favoris, consultez la section [Actions sur les groupes de favoris](#favorite-group-actions). Sur Android, si le dossier contient des médias joints, une feuille de partage apparaît. Vous pouvez choisir :
     - *Points uniquement* — Partagez les points favoris du dossier sous forme de fichier GPX.
     - *Points et médias* — Partagez les points favoris et les médias joints sous forme d'archive OSF.
 
@@ -499,7 +474,7 @@ Aller à : *Fichiers → Sur mon iPhone → OsmAnd Maps → favourites_backup*
 
 </Tabs>
 
-OsmAnd crée un **fichier de sauvegarde** chaque fois que les favoris sont modifiés.
+OsmAnd crée automatiquement un **fichier de sauvegarde** chaque fois que les favoris sont modifiés, en conservant jusqu'à 10 fichiers de sauvegarde au total, avec au maximum 2 nouvelles sauvegardes par jour.
 
 - **Android** : Les sauvegardes sont stockées dans *Android → data → net.osmand → files → backup*. Utilisez un gestionnaire de fichiers tiers pour y accéder.
 
@@ -519,6 +494,8 @@ Dans les dernières versions d'***Android***, l'accès aux répertoires système
 
 Toutes les informations sur un favori sont stockées et décrites à l'aide de balises. Lors de la création d'un point favori, vous pouvez écrire votre propre [description](#favorite-point) ou utiliser les informations des données du [point d'intérêt (POI)](../map/point-layers-on-map.md#points-of-interest-pois) OSM à partir duquel votre point a été créé. Les points favoris, les POI et les points de cheminement utilisent les mêmes **balises** pour stocker les informations et sont enregistrés au **format de fichier GPX**.  
 
+Si le [plugin Édition OSM](../plugins/osm-editing.md) est activé, un favori créé à partir d'un objet OpenStreetMap stocke également un lien vers cet objet dans la balise `osm_url`, par exemple `https://www.openstreetmap.org/node/7235345886`. Le lien est conservé dans les fichiers de favoris exportés et partagés ainsi que dans les sauvegardes.
+
 Les favoris peuvent également contenir des références aux médias joints à l'aide d'éléments GPX `<link>` standard. 
 
 
@@ -533,6 +510,7 @@ Les favoris peuvent également contenir des références aux médias joints à l
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

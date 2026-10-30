@@ -1,5 +1,5 @@
 ---
-source-hash: 756a40ba81db3ee984ab835e6e44aa623b7f0480a500ed49dae658617e109964
+source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
 sidebar_position: 1
 title:  Configurar Tela
 ---
@@ -27,6 +27,7 @@ Você pode:
 - Organizar widgets em painéis (superior, inferior, esquerdo, direito, central).
 - Criar várias **páginas** dentro dos painéis laterais, escolher o tamanho dos widgets.
 - Escolher a altura da linha e alternar os ícones dos widgets.
+- No Android, personalizar a [aparência do painel de widgets](#widget-panel-appearance).
 
 Todos os widgets são [dependentes do perfil](../personal/profiles.md) — cada perfil tem seu próprio layout, ordem, visibilidade e configurações.
 
@@ -37,7 +38,7 @@ Todos os widgets são [dependentes do perfil](../personal/profiles.md) — cada 
 
 Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Configurar tela](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Menu Configurar tela](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![Menu Configurar tela](@site/static/img/widgets/configure_screen_overview.webp)  ![Menu Configurar tela](@site/static/img/widgets/configure_screen_overview_2.webp)  
 
 </TabItem>
 
@@ -50,44 +51,6 @@ Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config"/
 </TabItem>
 
 </Tabs>
-
-<!--
-## Overview {#overview}
-
-The **Configure screen** menu in OsmAnd allows you to customize the map interface by adding and arranging widgets, buttons, and quick actions across multiple panels.
-
-You can:
-
-- Add [informational](../widgets/info-widgets.md), [navigational](../widgets/nav-widgets.md), and [marker-related](../widgets/markers.md) widgets.
-- Add or edit [Quick Actions](../widgets/quick-action.md), [Custom buttons](../widgets/quick-action.md#custom-buttons) and [Default buttons](../widgets/map-buttons.md).
-- Organize widgets in panels (top, bottom, left, right, center).
-- Create multiple pages within side panels, choose size of widgets.
-- Choose row height and toggle widget icons.
-- On Android, customize [widget panel appearance](#widget-panel-appearance).
-
-All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
-
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview.webp)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_2.webp)  
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
-
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
-
-</TabItem>
-
-</Tabs>
--->
 
 
 ## Painéis de Widgets {#widget-panels}
@@ -399,38 +362,36 @@ Essas configurações se aplicam apenas ao widget selecionado.
     - Mude para a posição Desligado, no campo *Mostrar ícone*.
 
 
-<!--
-## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+## Aparência do Painel de Widgets (somente Android) {#widget-panel-appearance}
 
-Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
+Vá para: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
-![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+![Aparência do Painel de Widgets](@site/static/img/widgets/widget_appearance.webp) ![Aparência do Painel de Widgets](@site/static/img/widgets/widget_appearance_2.webp)
 
-Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
+As configurações de aparência permitem personalizar a aparência de todos os widgets no painel selecionado. Cada painel (*Superior*, *Inferior*, *Esquerdo*, *Direito*) tem suas próprias configurações de aparência.
 
-1. **Height**. Controls the height of widgets in the selected panel. For the Left and Right panels, this setting changes **Widget height**. For the Top and Bottom panels, it changes **Row height**. Available options: *Original (default)*, *Small*, *Medium*, *Large*.
+1. **Altura**. Controla a altura dos widgets no painel selecionado. Para os painéis Esquerdo e Direito, esta configuração altera a **Altura do widget**. Para os painéis Superior e Inferior, altera a **Altura da linha**. Opções disponíveis: *Original (padrão)*, *Pequeno*, *Médio*, *Grande*.
 
-2. **Icon**. Controls icon visibility. Available options: *Original (default)*, *On*, *Off*. 
+2. **Ícone**. Controla a visibilidade do ícone. Opções disponíveis: *Original (padrão)*, *Ligado*, *Desligado*. 
 
-3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
+3. **Cor do texto**. Altera a cor do texto principal do widget. Opções disponíveis: *Padrão*, *Automático*, *Personalizado*. Quando **Personalizado** é selecionado, você pode configurar cores separadas para os modos **Dia** e **Noite**. Uma visualização ao vivo exibe as cores selecionadas antes de serem aplicadas.
 
-:::tip Purchase
-Custom widget colors is a [paid feature](../purchases/index.md).  
+:::tip Compra
+Cores personalizadas de widgets são um [recurso pago](../purchases/index.md).  
 :::
 
-4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
+4. **Cor do texto secundário**. Altera a cor dos nomes e unidades dos widgets. Opções disponíveis: *Padrão*, *Automático*, *Personalizado*.
 
-5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+5. **Cor de fundo**. Altera a cor de fundo dos widgets no painel selecionado. Opções disponíveis: *Padrão*, *Transparente*, *Personalizado*.
 
-6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
+6. **Visualização**. A área de visualização mostra como os widgets ficarão com as configurações de aparência atualmente selecionadas.
 
-7. **Copy appearance settings:**
+7. **Copiar configurações de aparência:**
 
-    - Tap the ⋮ menu in the upper-right corner.
-    - Select Copy from.
-    - Choose one of the following options: *Another profile* or *One of the other panels*.
+    - Toque no menu ⋮ no canto superior direito.
+    - Selecione Copiar de.
+    - Escolha uma das seguintes opções: *Outro perfil* ou *Um dos outros painéis*.
 
--->
 
 ## Personalização de Painéis {#panels-customization}
 

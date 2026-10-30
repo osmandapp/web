@@ -1,5 +1,5 @@
 ---
-source-hash: 81997fd5f3d0eb2b0aacab759d10d4705f0c377296103eb3970986d7e48a2f05
+source-hash: 04bb8eb2b1c8b30b97b5016c68f2b0de688c38c44449e4ebb8b695d258cad44b
 sidebar_position: 2
 title:  Suivi des navires AIS
 ---
@@ -15,11 +15,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-<InfoAndroidOnly />
-
 ## Aperçu {#overview}
 
 Le plugin **Suivi des navires AIS** affiche les positions du [Système d'Identification Automatique (AIS)](https://en.wikipedia.org/wiki/Automatic_identification_system) et des informations détaillées sur les navires à proximité. Les données AIS sont reçues via une connexion réseau depuis un récepteur AIS externe.
+
+Le plugin peut recevoir des données NMEA via une connexion réseau en utilisant TCP ou UDP. Les positions GPS reçues à partir des messages NMEA RMC/GGA peuvent également être utilisées comme Ma position dans OsmAnd.
 
 :::caution AVERTISSEMENT
 **Ce plugin est un projet amateur et n'est pas conçu pour être fiable ou précis. NE PAS se fier à ce logiciel pour la navigation ou la sécurité des personnes.**
@@ -28,12 +28,14 @@ Le plugin **Suivi des navires AIS** affiche les positions du [Système d'Identif
 
 ## Paramètres de configuration requis {#required-setup-parameters}
 
-La capacité d'utiliser les cartes en ligne est automatiquement activée dans la version iOS d'OsmAnd. Pour afficher les cartes en ligne sur Android, vous devez effectuer les réglages suivants :
+Pour utiliser le plugin Suivi des navires AIS, vous devez activer le plugin et configurer une connexion réseau vers une source de données AIS/NMEA externe :
 
 1. [Activer](../plugins/index.md#enable--disable) le plugin **Suivi des navires AIS** dans le *Menu principal → Plugins → Suivi des navires AIS*.
 2. Configurer les [paramètres AIS](../map/raster-maps.md#layers)
-3. Configurer une **connexion au serveur AIS** ou connecter un **récepteur AIS externe**.
+3. Configurer la connexion à votre **source de données AIS/NMEA** en utilisant **TCP** ou **UDP**.
 4. Vérifier que les navires sont affichés sur la carte OsmAnd.
+
+Sur iOS, vous pouvez en plus activer *Utiliser NMEA comme source de localisation* pour utiliser les positions GPS des messages NMEA RMC/GGA comme votre position actuelle dans OsmAnd.
 
 ## Navires sur la carte {#vessels-on-the-map}
 
@@ -54,6 +56,12 @@ L'AIS fonctionne sur les *fréquences VHF* (161,975 MHz et 162,025 MHz) et a une
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+![Suivi des navires AIS](@site/static/img/plugins/ais/ais.webp)
+
+</TabItem>
+
 </Tabs>
 
 Lorsqu'il est correctement configuré, les positions des navires apparaissent sur la carte. Caractéristiques principales :
@@ -69,8 +77,13 @@ Lorsqu'il est correctement configuré, les positions des navires apparaissent su
 
 <TabItem value="android" label="Android">
 
-![Suivi des navires AIS](@site/static/img/plugins/ais/ais_menu.png)  
-![Suivi des navires AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+![Suivi des navires AIS](@site/static/img/plugins/ais/ais_menu.png) ![Suivi des navires AIS](@site/static/img/plugins/ais/ais_menu_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Suivi des navires AIS](@site/static/img/plugins/ais/ais_menu.webp)
 
 </TabItem>
 
@@ -159,6 +172,14 @@ Les navires AIS transmettent trois types de données :
 
 </TabItem>
 
+<TabItem value="ios" label="iOS">  
+
+*<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/>* → *Suivi des navires AIS* → *<Translate ios="true" ids="shared_string_settings"/>* 
+
+![Suivi des navires AIS](@site/static/img/plugins/ais/ais_settings_ios.webp)
+
+</TabItem>
+
 </Tabs>
 
 Le plugin *Suivi des navires AIS* offre divers paramètres pour personnaliser la navigation et l'interaction pour les utilisateurs handicapés. Ces paramètres sont appliqués à tous les [profils](../personal/profiles.md) dans OsmAnd.
@@ -171,11 +192,12 @@ Le plugin *Suivi des navires AIS* offre divers paramètres pour personnaliser la
 | Adresse IP | Définir l'IP de la source de données AIS (si TCP est utilisé) | `192.168.200.16` |
 | Port TCP   | Définir le numéro de port TCP pour les données AIS | `4001` |
 | Port UDP   | Définir le port UDP pour la réception AIS d'OsmAnd  | `10110` |
-| Recevoir les données AIS même si OsmAnd est en pause   | Maintenir l'écoute des messages AIS active si OsmAnd est en pause ou en arrière-plan. Si désactivé, aucun message AIS n'est reçu lorsque OsmAnd est en arrière-plan  | `Oui/Non` |
+| Recevoir les données AIS même si OsmAnd est en pause (*Android uniquement*)   | Maintenir l'écoute des messages AIS active si OsmAnd est en pause ou en arrière-plan. Si désactivé, aucun message AIS n'est reçu lorsque OsmAnd est en arrière-plan  | `Oui/Non` |
+| Utiliser NMEA comme source de localisation (*iOS uniquement*)   | Utiliser les positions GPS des messages NMEA RMC/GGA comme Ma position  | `On/Off` |
 | | | |
 | **Délai d'attente de réception du signal AIS** | |  |
-| Délai d'attente pour les objets AIS perdus     | Les navires disparaissent si aucun signal n'est reçu pendant un temps défini | `3 - 20 min` |
-| Délai d'attente pour la visibilité du navire      | Les icônes des navires changeront d'état lorsqu'aucun signal n'est reçu | `2 - 15 min / Désactivé` |
+| Délai d'obsolescence du navire      | Définir le délai d'obsolescence de la visibilité du navire : après ce temps sans réception de signal, le symbole du navire sera barré | `2 - 15 min / Désactivé` |
+| Délai de visibilité lorsque le navire est perdu     | Définir un délai de visibilité de l'objet AIS : si aucun signal n'est reçu pendant la durée spécifiée, l'objet sera automatiquement retiré de l'affichage | `3 - 20 min` |
 | | | |
 | **Alertes du Point de Rapprochement le plus Proche (CPA)** | | |
 | Temps d'avertissement CPA | Le navire est marqué en rouge si le temps avant le CPA est inférieur à cette limite | `1 - 60 min / Désactivé` |

@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -331,19 +331,26 @@ Aby włączyć lub wyłączyć [**Informacje o trasie** dla punktu pośredniego 
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* i OsmAnd oferują możliwość dostosowania mapy do warunków oświetleniowych. W *trybie dziennym mapy* schemat kolorów pozostaje jasny i kontrastowy, co ułatwia odczyt nawet w jasnym świetle słonecznym. W *trybie nocnym* mapy stają się ciemniejsze, co pomaga kierowcy lepiej nawigować w ciemności.  
 
-OsmAnd ma [opcje trybu mapy](../map/vector-maps.md#map-mode), ale gdy używasz aplikacji w *Android Auto*, opcje te są ignorowane. Zamiast tego używany jest tryb wybrany w ustawieniach systemowych *Android Auto* dla map.
+OsmAnd w *Android Auto* ma własne ustawienie trybu mapy, niezależne od [opcji trybu mapy](../map/vector-maps.md#map-mode) w aplikacji OsmAnd na urządzeniu. Aby go zmienić, przejdź do *Android Auto (OsmAnd) → przycisk Ustawienia → Tryb mapy*, wybierz opcję i dotknij *Zastosuj*. Mapa przełączy się na wybrany tryb po dotknięciu *Zastosuj*. Jeśli opuścisz ekran strzałką wstecz bez dotknięcia *Zastosuj*, pozostanie poprzedni tryb.
 
-- Wybierz tryb Dzień lub Noc, aby wyświetlanie mapy pozostało niezmienione.
-- Jeśli chcesz, aby tryb wyświetlania mapy przełączał się w zależności od pory dnia, wybierz tryb Automatyczny.  
+- Wybierz *Dzień* lub *Noc*, aby wyświetlanie mapy pozostało niezmienione, niezależnie od sygnałów z pojazdu.
+- Jeśli chcesz, aby tryb wyświetlania mapy przełączał się automatycznie na podstawie sygnałów z pojazdu, wybierz *Automatyczny* (domyślnie).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Powiększenie mapy {#map-magnifier}
+
+![Powiększenie mapy Android Auto](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+*Powiększenie mapy* zmienia powiększenie mapy na ekranie *Android Auto*. Aby je zmienić, przejdź do *Android Auto (OsmAnd) → przycisk Ustawienia → Powiększenie mapy*, wybierz wartość od 50% do 125% i dotknij *Zastosuj*. Bieżąca wartość jest wyświetlana pod pozycją *Powiększenie mapy* na liście ustawień.  
+
+Aby dowiedzieć się, jak powiększenie wpływa na wyświetlanie mapy, zobacz [Powiększenie mapy](../map/vector-maps.md#map-magnifier).
 
 
 ### Podzielony ekran {#split-screen}
@@ -357,8 +364,6 @@ Aplikacja OsmAnd może być otwierana i używana do nawigacji w *Android Auto* n
 3. Znajdź Wiele okien i wybierz przełącznik.
 4. Wróć do ekranu głównego.  
 
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 W ustawieniach Android Auto można zmienić położenie paska zadań i układ ekranu głównego:

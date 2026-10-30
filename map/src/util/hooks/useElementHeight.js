@@ -15,7 +15,8 @@ export function useElementHeight() {
         if (!node) {
             return;
         }
-        const update = () => setHeight(node.clientHeight);
+        // clientHeight rounds up a fractional height, and a list that tall overflows its box
+        const update = () => setHeight(Math.floor(node.getBoundingClientRect().height));
         update();
         observerRef.current = new ResizeObserver(update);
         observerRef.current.observe(node);

@@ -1,5 +1,5 @@
 ---
-source-hash: 493d0f4bb5654e0183f24ee23ee49f36be8431ec2466fa554bd47c6ad8ab3813
+source-hash: b0856a5094b1d215f8e6507452fbd1d83a9df996a95ba8afef203917b669a88f
 sidebar_position: 1
 label: Inleiding
 title: Documenten
@@ -33,7 +33,3 @@ Release-opmerkingen en links naar eerdere OsmAnd-releases. Bèta- en nachtelijke
 ### [Juridisch](/docs/legal/) {#legal}
 
 Licentie. Privacybeleid. Gebruiksvoorwaarden.
-
-### [Word lid van ons team](/docs/hiring/) {#join-our-team}
-
-We zijn altijd op zoek naar nieuwe medewerkers die ons internationale team kunnen versterken.

@@ -8,6 +8,7 @@ import AppContext, {
 import MapContext from '../context/MapContext';
 import TracksManager, { prepareNavigationTrack, getApproximatePoints } from '../manager/track/TracksManager';
 import { createUrlParams } from '../util/Utils';
+import { parseCoordinates } from '../menu/analyzer/util/PointsManager';
 import {
     ROUTE_POINTS_START,
     ROUTE_POINTS_FINISH,
@@ -120,26 +121,21 @@ export function RouteService() {
 
         let shouldZoomToRoute = false;
 
-        if (searchParams.get('start')) {
-            const [lat, lng] = searchParams.get('start').split(',');
-            routeObject.setOption(ROUTE_POINTS_START, { lat: parseFloat(lat), lng: parseFloat(lng) });
+        const start = parseCoordinates(searchParams.get('start'));
+        if (start) {
+            routeObject.setOption(ROUTE_POINTS_START, start);
             shouldZoomToRoute = true;
         }
 
-        if (searchParams.get('finish') || searchParams.get('end')) {
-            const finish = searchParams.get('finish') || searchParams.get('end');
-            const [lat, lng] = finish.split(',');
-            routeObject.setOption(ROUTE_POINTS_FINISH, { lat: parseFloat(lat), lng: parseFloat(lng) });
+        const finish = parseCoordinates(searchParams.get('finish') || searchParams.get('end'));
+        if (finish) {
+            routeObject.setOption(ROUTE_POINTS_FINISH, finish);
             shouldZoomToRoute = true;
         }
 
         if (searchParams.get('via') || searchParams.get('inter')) {
             const via = searchParams.get('via') || searchParams.get('inter');
-            const viaPoints = [];
-            via.split(';').forEach((ll) => {
-                const [lat, lng] = ll.split(',');
-                viaPoints.push({ lat: parseFloat(lat), lng: parseFloat(lng) });
-            });
+            const viaPoints = via.split(';').map(parseCoordinates).filter(Boolean);
             routeObject.setOption(ROUTE_POINTS_VIA, viaPoints);
         }
 

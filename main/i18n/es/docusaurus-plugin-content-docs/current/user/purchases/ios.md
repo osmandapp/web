@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -53,25 +53,25 @@ Puedes descargar la aplicación a través de este enlace - [OsmAnd Maps en la Ap
 
 En la lista, hay información sobre los precios del producto OsmAnd para la región de EE.UU. y Europa. Para otras regiones, los precios son equivalentes en las monedas locales.
 
-<!--
 
-:::danger 🏖️ Summer Sale
 
-*Hurry up! This offer is only available until* **June 17 (23:00 CET)**.
+:::danger 🎃 Rebajas de Halloween
+
+*¡Date prisa! Esta oferta solo está disponible hasta el* **1 de noviembre (23:59 UTC)**.
+
+*En las suscripciones, el precio con descuento se aplica durante el primer año*.
 
 :::
 
 
-
-|    | OsmAnd Free   | [OsmAnd+](#install-osmand-ios) /<br/> [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99**|
+| **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 Meses) | **Suscripción** (1 Mes / 12 Meses) |
+| **Precio (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** |
+| **Precio (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** |
 
-
--->
+<!--
 
 
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
@@ -80,6 +80,9 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 Meses) | **Suscripción** (1 Mes / 12 Meses) |
 | **Precio (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
 | **Precio (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+
+-->
+
 
 
 
@@ -134,7 +137,7 @@ Por el momento, la suscripción Pro tiene las siguientes características:
 
 |  Función Pro  | Descripción   |
 | :------------- | :------------- |
-| [OsmAnd Cloud](../personal/osmand-cloud.md) | Copia de seguridad y restauración de tus datos, sincronización de datos con el [portal web de OsmAnd](https://www.osmand.net/map). |
+| [OsmAnd Cloud](../personal/osmand-cloud.md) | Copia de seguridad y restauración de tus datos, sincronización de datos con el [portal web de OsmAnd](https://osmand.net/map). |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | Te permite tener y observar un modelo a escala de tu vecindario o de un continente entero. |
 | [Widgets de altitud - Elevación: Centro del mapa](../widgets/info-widgets.md#elevation-map-center) | Te permite conocer la elevación del centro del mapa actual sobre el nivel del mar.  |
 | [Live Updates](../personal/maps-resources.md#live-updates) | Los mapas de OsmAnd se actualizan cada 15 minutos después de la mejora de [OpenStreetMap](https://www.openstreetmap.org/). |

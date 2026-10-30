@@ -1,5 +1,5 @@
 ---
-source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
+source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
 sidebar_position: 7
 sidebar_label: İz Analizörü
 title: İz Analizörü
@@ -19,13 +19,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**İz Analizörü**, haritada seçilen noktalar arasında tekrar eden iz segmentlerini analiz etmenize yardımcı olan bir web aracıdır. Kendi verilerinizle bu özelliği kullanmak için, izlerin OsmAnd Cloud'a senkronize edildiği bir OsmAnd Pro hesabına ihtiyacınız var — aksi takdirde, izleriniz Web Planlayıcı'da mevcut olmayacaktır. İzlerinizi tarar ve seçilen konum(lar)dan geçen tüm segmentleri bulur, böylece birden fazla aktivite genelinde hız, yükseklik, mesafe ve süreyi karşılaştırmanıza olanak tanır.
+**İz Analizörü**, haritada seçilen noktalar arasında tekrar eden iz segmentlerini analiz etmenize yardımcı olan bir web aracıdır. Örneğin, aynı tırmanışta yaptığınız sürüşleri veya günlük işe gidiş gelişlerinizi karşılaştırmak için kullanabilirsiniz. Kendi verilerinizle bu özelliği kullanmak için, izlerin OsmAnd Cloud'a senkronize edildiği bir OsmAnd Pro hesabına ihtiyacınız var — aksi takdirde, izleriniz Web Planlayıcı'da mevcut olmayacaktır. İzlerinizi tarar ve seçilen konum(lar)dan geçen tüm segmentleri bulur, böylece birden fazla aktivite genelinde hız, yükseklik, mesafe ve süreyi karşılaştırmanıza olanak tanır.
 
 ## Nasıl Kullanılır {#how-to-use}
 
 İz Analizörü'nü açtıktan sonra (anahtar simgesi olarak gösterilir), araç harita görünümü ve boş bir durumla açılır. Buradan, **İzleri Seç** panelini kullanarak analize dahil edilecek izleri seçebilirsiniz. Analizör, tüm mevcut izlerle çalışmaya veya analizi belirli klasörlerle sınırlamaya izin verir.
 
-Analizi başlatmak için harita üzerinde doğrudan bir veya iki nokta ayarlayın. İstediğiniz konuma sağ tıklayın ve bağlam menüsünden **Nokta A / Nokta B**'yi seçin. Analizör, seçilen noktadan geçen veya iki nokta arasında iz segmentlerini arar.
+Analizi başlatmak için harita üzerinde doğrudan bir veya iki nokta ayarlayın. İstediğiniz konuma sağ tıklayın ve bağlam menüsünden **Nokta A / Nokta B**'yi seçin. Tek nokta ile analizör, seçilen konumdan geçen iz segmentlerini bulur. İki nokta ile ise Nokta A ve Nokta B arasındaki segmentleri bulur ve analiz eder.
 
 ![İz Analizörü](@site/static/img/web/web_analyzer_select.png) ![İz Analizörü](@site/static/img/web/web_analyzer_points_new.png)
 
@@ -33,29 +33,14 @@ Analizi başlatmak için harita üzerinde doğrudan bir veya iki nokta ayarlayı
 ## Sıralama ve Görünür Parametreler {#sorting-and-visible-parameters}
 Analizör eşleşen segmentleri bulduktan sonra, sonuçlar bir liste olarak gösterilir. Liste, **Sırala** seçeneği kullanılarak yeniden sıralanabilir, bu da segmentlerin nasıl listelendiğini değiştirir. Ayrıca, **Alanlar** düğmesi Görünür parametreler panelini açar, burada her segment için hangi analiz parametrelerinin gösterileceğini kontrol edebilirsiniz. Tüm mevcut parametreleri görüntüleyebilir veya yalnızca analizinize ilgili olanları seçebilirsiniz.
 
-Mevcut parametreler türe göre gruplandırılmıştır:
+Mevcut parametreler şunları içerir:
 
-**Hız**
-- Maks. hız
-- Ortal. hız
-- Min. hız
-
-**Yükseklik**
-- Maks. yükseklik
-- Ortal. yükseklik
-- Min. yükseklik
-
-**Yokuş Yukarı / Yokuş Aşağı**
-
-**Tarih ve saat**
-- Tarih
-- Başlangıç saati
-- Bitiş saati
-- Zaman aralığı
-- Süre
-- Hareket süresi
-
-**Uzunluk**
+- Maks. hız, Ort. hız ve Min. hız.
+- Maks. yükseklik, Ort. yükseklik ve Min. yükseklik.
+- Yokuş yukarı ve Yokuş aşağı.
+- Tarih.
+- Zaman aralığı, Başlangıç saati, Bitiş saati, Süre ve Hareket süresi.
+- Uzunluk.
 
 ![İz Analizörü](@site/static/img/web/web_analyzer_sort.png) ![İz Analizörü](@site/static/img/web/web_analyzer_fields.png)
 

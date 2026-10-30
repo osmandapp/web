@@ -1,5 +1,5 @@
 ---
-source-hash: 3e45f22f8b3a9b130e09a38e6debc650ea27e04d99612fa8de8141dd69f610da
+source-hash: cd041547a7f80045d462bbc7c5a375476089c6105d35475b185588517c4f7162
 sidebar_position: 2
 ---
 
@@ -18,6 +18,21 @@ Puoi ottenere l'ultima versione di OsmAnd gratuitamente dagli store di app elenc
 Link diretti alle versioni gratuite di OsmAnd.
 
 ## Versione 5 {#version-5}
+
+### Versione 5.4 {#version-54}
+
+Data di rilascio 09/2026:
+
+- Interfaccia di ricerca rinnovata: ordinamento, filtri per categoria, aspetto più pulito.
+- Allega foto e media ai Preferiti.
+- Preferiti: supporto per sottogruppi e cartelle fissabili.
+- Coordinate: ricerca, griglia della mappa e visualizzazione POI ora supportano EPSG e localizzatore Maidenhead.
+- Corrette interruzioni della navigazione; passaggio tra routing Standard e Veloce.
+- Imposta la scala della mappa di Android Auto separatamente dal telefono.
+- Nuova ricerca spaziale — trova luoghi e cerca intorno a un luogo.
+- Astronomia: aggiunti esploratori di eclissi solari e lunari.
+
+<DownloadRelease blog="osmand-android-5-4-released" release="net.osmand-5.4.7-5407.apk" />
 
 ### Versione 5.3 {#version-53}
 

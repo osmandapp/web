@@ -1,5 +1,5 @@
 ---
-source-hash: fdc663d456ec4a461fac3f4ef3baf08d8c7af8e8006a87ec3621c334120d364a
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
 sidebar_label: Favorites
 title: Favorites
@@ -26,7 +26,7 @@ Los favoritos en el Planificador Web te permiten guardar y gestionar lugares imp
 
 ![Editar favoritos en la nube de OsmAnd Web](@site/static/img/web/favorites_1_new.png)
 
-Después de registrarte en [**OsmAnd Pro**](../personal/osmand-cloud.md#login) y para [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), tus Favoritos en el Planificador Web están organizados en carpetas. Cada carpeta agrupa lugares guardados y proporciona un conjunto de acciones disponibles desde el menú de Favoritos. 
+Después de registrarte en una cuenta de [**OsmAnd Pro**](../personal/osmand-cloud.md#login) o [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), tus Favoritos en el Planificador Web están organizados en carpetas. Cada carpeta agrupa lugares guardados y proporciona un conjunto de acciones disponibles desde el menú de Favoritos. 
 Las siguientes acciones están disponibles:
 
 - *Mostrar en el mapa* - muestra los puntos de favoritos de la carpeta elegida en el mapa.
@@ -72,7 +72,7 @@ La vista de Detalles proporciona información asociada con el lugar seleccionado
 
 ## Acciones de favoritos {#favorites-actions}
 
-[Para agregar](../personal/favorites.md#manage-favorites) un nuevo punto de favorito, haz clic derecho en la pantalla. 
+[Para agregar](../personal/favorites.md#manage-favorites) un nuevo punto de favorito, haz clic derecho en la pantalla. Si el favorito no se puede guardar, el mensaje de error incluye el motivo informado por el servidor, por ejemplo, que no hay suficiente espacio en [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Para editar un favorito existente, haz clic en el punto de favorito ya sea directamente en el mapa o selecciónalo de una carpeta de favoritos. Esto abre el panel de Detalles, donde está disponible la acción de Editar. La edición también se puede iniciar desde el menú de tres puntos (⋮) junto al favorito en la lista de Favoritos.
 
@@ -100,7 +100,7 @@ El diálogo también incluye una sección Avanzado, donde se pueden configurar l
 
 ### Apariencia {#appearance}
 
-La sección **Apariencia** permite personalizar cómo se muestra el favorito en el mapa. Las siguientes propiedades están disponibles: icono, color, forma e icono. 
+La sección **Apariencia** permite personalizar cómo se muestra el favorito en el mapa. Las siguientes propiedades están disponibles: icono, color y forma. 
 
 Al seleccionar **Icono** se abre un panel secundario con grupos de iconos categorizados.
 

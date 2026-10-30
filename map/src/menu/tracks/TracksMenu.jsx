@@ -244,7 +244,7 @@ export default function TracksMenu() {
                     ) : (
                         <Box
                             id={'se-track-menu'}
-                            className={dropOverlayStyles.folderDropTarget}
+                            className={`${dropOverlayStyles.dropZoneContent} ${dropOverlayStyles.folderDropTarget}`}
                             {...rootDropZoneHandlers}
                         >
                             {isRootDropActive && <TracksDropHighlight />}

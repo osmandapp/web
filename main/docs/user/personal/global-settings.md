@@ -99,6 +99,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings
     - *Internal app memory*. Only the OsmAnd app has access to its data and none of the external apps.
     - *Shared memory*. No longer available.
     - *External storage 1*. Only 1 OsmAnd app has access and Admin apps and USB.
+    - *Visible external storage 1*. Data is stored in the Android/media folder, which is open to file managers and USB. No additional storage permissions are required.
     - *Multiuser storage*. Only 1 OsmAnd app has access, but it's shared between multiple Android users.
     - *Manually specified*. Depends on the path.
 
@@ -113,6 +114,11 @@ The **Media storage** setting determines where photos, videos, and audio files a
 - **Shared storage** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Camera folder** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Manually specified** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+When you select a different media storage, OsmAnd asks whether to move existing media files:
+- **Move to the new destination** — Move existing media files to the selected storage.
+- **Don't move** — Change the storage without moving existing files.
+- **Cancel** — Keep the current storage.
 
 There is also an *Always keep a local copy* switch. When enabled, OsmAnd copies media imported from the Gallery or Files into its own storage, so the attached media remains available even if the original file is deleted from the Gallery or file system.
 
@@ -148,7 +154,7 @@ Go to: *Files → On My Phone → OsmAnd Maps*
 | Features | Version 1 | Version 2 (OpenGL) |
 |:---|:--- |:--- |
 | Cross-platform | Not used in the iOS version. | Fits both versions. |
-| GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) and later versions, and in test mode for [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| GPU / CPU dependent | Recommended for low-performance or outdated devices. | Powerful rendering engine. <br /> Only available for [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) and later versions, and in test mode for [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | 3D mode | It is possible to view the map in 2D, and you can change the viewing angle to get a [3D view](../widgets/map-buttons.md#3d-mode). | You can view the map in 2D and [3D](../widgets/map-buttons.md#3d-mode). |
 | Map display | The whole map is rendered as a set of tiles, and markers, lines, and text are already inside these tiles. | First, the entire tile pack is rendered, and then the available symbols are applied to the map, [layer by layer](../../technical/algorithms/map-rendering-layers.md). |
 | Transparent symbols overlay / underlay | Supports all settings. | It does not support a raster layer on top of vector text. |

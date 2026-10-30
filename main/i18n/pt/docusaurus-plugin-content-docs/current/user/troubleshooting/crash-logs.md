@@ -1,5 +1,5 @@
 ---
-source-hash: 5f3cf642f46def8b297602c9bfd712fe505ad1b49873449f53c2a266a969471b
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
 title: Logs de Falhas
 ---
@@ -16,54 +16,129 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Visão Geral {#overview}
 
-Os logs de falhas são ferramentas de diagnóstico valiosas que ajudam os desenvolvedores a identificar e corrigir problemas e bugs que causam o aplicativo a falhar ou se comportar de forma inesperada. É possível compartilhar logs do seu dispositivo Android com a equipe de desenvolvimento do OsmAnd. Atualmente, os usuários de iOS têm apenas um tipo de opção de log de falha para enviar.
+Os logs de falhas são ferramentas de diagnóstico valiosas que ajudam os desenvolvedores a identificar e corrigir problemas e bugs que causam o aplicativo a falhar ou se comportar de forma inesperada. É possível compartilhar logs do seu dispositivo com a equipe de desenvolvimento do OsmAnd. Se o OsmAnd fechar inesperadamente, o aplicativo também oferece o envio de um relatório de falha na próxima vez que for iniciado.
 
 
-## Logs de Falhas e Logs do Logcat {#crash-and-logcat-logs}
+## Logs de Falhas e Logs do Aplicativo {#crash-and-app-logs}
 
 O OsmAnd permite que você envie dois tipos de dados para os desenvolvedores:
 
 - **Logs de falhas**. Gerados quando o aplicativo OsmAnd encontra um erro crítico ou exceção que o faz falhar. Esses logs fornecem informações detalhadas sobre o estado do aplicativo durante a falha, incluindo dados de compilação, rastreamentos de pilha, mensagens de erro e outros detalhes relevantes.
-- **Logs do Logcat**. Um registro do fluxo de log do OsmAnd que captura vários eventos e mensagens. Esses logs ajudam os desenvolvedores a monitorar o comportamento do aplicativo, rastrear o fluxo de execução, rastrear ações específicas e investigar problemas não relacionados a falhas. Os logs do Logcat geralmente contêm registros de atividade desde a última vez que o aplicativo foi iniciado.
+- **Logs da sessão/app atual**. Um registro do fluxo de log do OsmAnd que captura vários eventos e mensagens. Esses logs ajudam os desenvolvedores a monitorar o comportamento do aplicativo, rastrear o fluxo de execução, rastrear ações específicas e investigar problemas não relacionados a falhas. Os logs do Logcat geralmente contêm registros de atividade desde a última vez que o aplicativo foi iniciado.
 
 :::caution Suas informações privadas
-Tenha cuidado ao enviar logs do Logcat, pois eles podem conter informações privadas, como localização do dispositivo, consultas de pesquisa, resultados de construção de rotas e dados de navegação.
+Tenha cuidado ao enviar logs do aplicativo, pois eles podem conter informações privadas, como localização do dispositivo, consultas de pesquisa, resultados de construção de rotas e dados de navegação.
 :::
 
 
-### Enviar Logs do Aplicativo OsmAnd (Android) {#send-logs-from-osmand-app-android}
+### Enviar Logs do Aplicativo OsmAnd {#send-logs-from-osmand-app}
 
-1. Vá para *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/> (<Translate android="true" ids="send_logcat_log"/>)*. Dependendo da sua situação, selecione o tipo de log apropriado. Você pode consultar a seção [Logs de Falhas e Logs do Logcat](#crash-and-logcat-logs) para obter detalhes sobre as diferenças entre os tipos de log.
-2. No menu pop-up, escolha o Gmail ou seu aplicativo de e-mail preferido. O e-mail será gerado automaticamente.
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Enviar logs de falhas no Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Enviar logs de falhas no Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Enviar logs de falhas no iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+1. Vá para *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* ou *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Enviar log do app atual* (iOS). Dependendo da sua situação, selecione o tipo de log apropriado. Você pode consultar a seção [Logs de Falhas e Logs do Aplicativo](#crash-and-app-logs) para obter detalhes sobre as diferenças entre os tipos de log.
+2. No menu pop-up, escolha o Gmail ou seu aplicativo de e-mail preferido. Recomendamos enviar os logs para `support@osmand.net`.
 3. Toque no botão *Enviar*.
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.png)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+<!--
+### Send Logs from iOS Devices {#send-logs-from-ios-devices}
 
+1. Logs from iOS devices can be sent:
 
-### Enviar Logs de Dispositivos iOS {#send-logs-from-ios-devices}
+    - Automatically.
+        - Navigate to OsmAnd app *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
+        - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
-1. Os logs de dispositivos iOS podem ser enviados:
-
-    - Automaticamente.
-        - Navegue até o aplicativo OsmAnd *<Translate ios="true" ids="shared_string_menu,shared_string_help,report_an_issues"/> (<Translate ios="true" ids="send_log"/>)*.  
-        - Em seguida, usando seu aplicativo de e-mail, recomendamos enviar os logs para `support@osmand.net`.
-
-    - Manualmente.
-        - Navegue até o aplicativo do sistema iOS *Arquivos → No meu iPhone (ou No meu iPad) → OsmAnd Maps → Logs*.
+    - Manually.
+        - Navigate to the iOS system app *Files → On my iPhone (or On my iPad) → OsmAnd Maps → Logs*.
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_logs_ios_1.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/send_logs_ios_2.png)
 
-2. Envie [formato IPS](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) de logs e dados de autorização:
-    - Em iOS 15 ou anterior: *Configurações → Análise → Dados de Análise → Arquivo OsmAnd Maps em formato ips*.
-    - Em iOS 16 ou posterior:  *Configurações → Privacidade e Segurança → Análise e Melhorias → Dados de Análise → Arquivo OsmAnd Maps em formato ips*.
-    - Em seguida, usando seu aplicativo de e-mail, recomendamos enviar os logs para `support@osmand.net`.
+2. Send [IPS-format](https://docs.fileformat.com/misc/ips/#formats-for-ios-analytics-data) of logs and authorization data:
+    - On iOS 15 or older: *Settings → Analytics → Analytics Data → OsmAnd Maps ips-format file*.
+    - On iOS 16 or newer:  *Settings → Privacy & Security → Analytics & Improvements → Analytics Data → OsmAnd Maps ips-format file*.
+    - Then, using your email app, we recommend sending the logs to `support@osmand.net`.
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
+-->
+
+### Enviar Relatório de Falha Após uma Falha {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Se o OsmAnd fechou inesperadamente na execução anterior, a caixa de diálogo de falha aparece na próxima vez que você iniciar o aplicativo. Ela aparece depois que o aplicativo falha, depois que ele deixa de responder (Android 11 e posterior) ou depois de uma falha no código nativo do aplicativo (Android 12 e posterior). A caixa de diálogo não aparece enquanto a navegação está ativa.
+
+- *Enviar* — envia o relatório de falha diretamente para a equipe de desenvolvimento do OsmAnd, sem usar um aplicativo de e-mail. Uma mensagem confirma se o relatório foi enviado.
+- *Dispensar* — fecha a caixa de diálogo sem enviar o relatório.
+
+O relatório contém informações técnicas sobre o estado do aplicativo e o uso de memória antes da falha, junto com o log recente do aplicativo.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Se o OsmAnd fechou inesperadamente na execução anterior, a caixa de diálogo Compartilhar log de falha aparece na próxima vez que você iniciar o aplicativo. Ela aparece depois que o aplicativo falha ou depois que o sistema o fecha inesperadamente.
+
+- *Enviar* — envia o relatório de falha diretamente para a equipe de desenvolvimento do OsmAnd, sem usar um aplicativo de e-mail. Uma mensagem confirma se o relatório foi enviado.
+- *Cancelar* — fecha a caixa de diálogo sem enviar o relatório.
+
+O relatório contém informações técnicas sobre o estado do aplicativo e o uso de memória antes da falha, junto com o log recente do aplicativo.
+
+</TabItem>
+
+</Tabs>
+
+## Histograma de Heap para Problemas de Memória (Android) {#heap-histogram-for-memory-problems-android}
+
+:::caution Somente Android
+:::
+
+Um *histograma de heap* é uma tabela do que preenche a memória Java do aplicativo: nomes de classes com contagens e tamanhos de objetos. Ele ajuda os desenvolvedores a descobrir o que consome memória quando o aplicativo fica lento, trava ou fecha após algum tempo. Ele não contém suas localizações, nomes de trilhas ou consultas de pesquisa. O OsmAnd faz um dump completo de memória no dispositivo, o converte no histograma e exclui o dump imediatamente.
+
+Fazer o dump **congela o aplicativo por 5–10 segundos**. Se você tocar na tela durante esse tempo, o Android pode exibir *OsmAnd não está respondendo*. É por isso que a coleta automática está **desativada por padrão**.
+
+**Quando ativar:**
+
+- O OsmAnd fecha sozinho ou exibe *não está respondendo* repetidamente, especialmente após algum tempo de uso ou quando você abre a pesquisa, o mapa com muitos POIs ou *Meus lugares* com muitas trilhas.
+- O aplicativo fica mais lento quanto mais tempo fica em execução, e reiniciá-lo ajuda.
+- O relatório de falha indica que o aplicativo ficou sem memória (`OutOfMemoryError`).
+- O suporte do OsmAnd pediu que você coletasse um histograma de heap.
+
+**Quando deixar desativado:**
+
+- Uso diário e navegação, quando o aplicativo funciona bem.
+- Falhas que ocorrem imediatamente em cada início ou com uma ação específica, como abrir um arquivo. Um [log de falha](#send-logs-from-osmand-app) regular é suficiente nesses casos.
+
+**Como coletar e enviar:**
+
+1. Ative o [plug-in de desenvolvimento do OsmAnd](../plugins/development.md) e vá para *Menu Principal → Plug-ins → Desenvolvimento do OsmAnd → Configurações → Memória → Memória Java*.
+2. No painel *Dump de heap*, escolha uma das opções:
+    - **Coletar em alto uso**. O histograma é coletado automaticamente quando a memória Java está quase cheia, no máximo uma vez a cada 30 minutos, e é anexado ao próximo relatório de falha. Continue usando o aplicativo normalmente até que o problema ocorra novamente.
+    - **Coletar e analisar agora**. Coleta o histograma imediatamente e exibe o resultado. Use quando o aplicativo já estiver lento e *Memória Java* mostrar alto uso.
+3. Toque em **Compartilhar relatório** para enviar o relatório mais recente aos desenvolvedores, ou envie-o pela caixa de diálogo de falha na próxima vez que o aplicativo for iniciado.
+4. Desative *Coletar em alto uso* após o envio do relatório.
+
+![Memória Java no Android](@site/static/img/troubleshooting/heap_histogram_andr_1.webp)  ![Painel de dump de heap no Android](@site/static/img/troubleshooting/heap_histogram_andr_2.webp)
 
 
 ## Enviar Arquivos Tombstone (Android) {#send-tombstone-files-android}
 
-:::caution Crucial
+:::caution Importante
 Apenas para usuários avançados!
 :::
 
@@ -84,7 +159,7 @@ Para exportar arquivos tombstone, você precisa gerar um relatório de bug usand
   
 Depois que o relatório de bug estiver pronto, você receberá uma notificação. Toque na caixa de notificação para baixar o relatório para o seu dispositivo. Descompacte o arquivo e envie os arquivos tombstone para a equipe de desenvolvedores do OsmAnd (e-mail: `support@osmand.net`).
 
-![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Enviar logs de falhas no Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Enviar logs de falhas no Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Observe que os relatórios de bug podem conter dados privados, incluindo uso de aplicativos ou localização.

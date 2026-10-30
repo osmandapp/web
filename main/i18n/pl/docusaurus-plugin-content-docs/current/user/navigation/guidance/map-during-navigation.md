@@ -1,5 +1,5 @@
 ---
-source-hash: 61934dd5af339994be6206c1c038564196d93757302e93f1413e563dac0c4b41
+source-hash: 968394db45647827e95cb32f776ef7f818433675c6fb40f6ba7071f88e7d270d
 sidebar_position: 2
 title: Ekran mapy podczas nawigacji
 ---
@@ -49,7 +49,7 @@ Podczas nawigacji wygląd mapy dostosowuje się do wybranego profilu nawigacji. 
 
 | Parametr | Opis | Uwaga |
 |:------------|:---------------|:---------------|
-| *<Translate android="true" ids="choose_auto_follow_route"/>* | Czas, przez który widok mapy jest zsynchronizowany z bieżącą pozycją po przesunięciu. | *Wartość:* <br /> Nigdy, 5 s, 10 s, 15 s, 20 s, 25 s, 30 s, 45 s, 60 s, 50 s. |
+| *<Translate android="true" ids="choose_auto_follow_route"/>* | Czas, przez który widok mapy jest zsynchronizowany z bieżącą pozycją po przesunięciu. | *Wartość:* <br /> Nigdy, 5 s, 10 s, 15 s, 20 s, 25 s, 30 s, 45 s, 60 s, 90 s. |
 | *<Translate android="true" ids="auto_zoom_map"/>*  | Automatycznie skaluj mapę w zależności od prędkości, o ile mapa jest zsynchronizowana z bieżącą pozycją. | *Wartość:* <br /> *<Translate android="true" ids="auto_zoom_none"/>* - powiększenie ręczne. <br /> *<Translate android="true" ids="auto_zoom_farthest"/>* - powiększenie wynosi 200 m.<br /> *<Translate android="true" ids="auto_zoom_far"/>* - powiększenie wynosi 100 m. <br /> *<Translate android="true" ids="auto_zoom_close"/>* - powiększenie wynosi 5 m. <br /> Zmiany automatycznego powiększenia mogą być animowane (Płynne) lub oparte na krokach (Dyskretne), w zależności od [ustawień deweloperskich](navigation-settings.md#development-settings). W trybie Płynnym zmiany powiększenia wykorzystują kontrolowaną animację (około 0,1 powiększenia/sekundę). Automatyczne powiększenie nie dostosowuje powiększenia przy bardzo niskich prędkościach (poniżej ~7 km/h). Jeśli wymagana zmiana powiększenia zajęłaby mniej niż ~1,5 sekundy, animacja nie jest uruchamiana. <br /> Automatyczne powiększenie ma na celu utrzymanie nadchodzącego manewru w stabilnym obszarze skupienia na ekranie, tak aby widoczna odległość do przodu pozostała spójna podczas jazdy. |
 | *Automatyczne powiększenie kąta 3D* | Ustawia nachylenie mapy podczas przełączania na widok 3D w trakcie nawigacji. Wyższy kąt sprawia, że horyzont wydaje się dalej, dając większą widoczność do przodu. | Jest stosowane tylko wtedy, gdy włączone jest automatyczne powiększenie. Wartości: 20°, 25°, 30°, 35°, 40°. Domyślnie: 25°. <br /> Podczas zbliżania się do manewru/skrzyżowania aplikacja może stopniowo zmniejszać nachylenie 3D w kierunku widoku 2D, aby następny skręt pozostał czytelny. |
 | *Podgląd następnego skrętu* | Automatycznie obraca mapę nieco wcześniej, aby pokazać następny skręt lub manewr podczas nawigacji. Pomaga antycypować nadchodzące działania.  | Włączone domyślnie. Jeśli eksportujesz i ponownie importujesz profil, upewnij się, że ta opcja jest zweryfikowana, ponieważ w niektórych wcześniejszych wersjach mogła zostać zresetowana do „włączonej”.  <br /> Obrót/podgląd jest wyzwalany, gdy punkt następnego manewru znajdzie się w obszarze skupienia (mapa zaczyna „patrzeć” na skręt, gdy staje się on istotny). |
@@ -211,10 +211,10 @@ Ustawienie **Kolor** zmienia odcienie kolorów linii trasy. Ich ogólny kolor zm
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_surface_name" />***. Dostarcza informacji o fizycznej nawierzchni drogi lub szlaku. Szczegółowy opis można znaleźć w artykule *Styl mapy OsmAnd - [Nawierzchnia](../../map-legend/osmand.md#surface-smoothness)* w sekcji *Legenda mapy*.  
     ![Wysokość](@site/static/img/navigation/route/Surface.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Klasyfikacja manewrowości drogi lub szlaku dla pojazdów kołowych, zwłaszcza w odniesieniu do regularności i gładkości nawierzchni. Szczegółowy opis można znaleźć w artykule *Styl mapy OsmAnd - [Gładkość](../../map-legend/osmand.md#surface-smoothness)* w sekcji *Legenda mapy*.  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_smoothness_name"/>***. Klasyfikacja manewrowości drogi lub szlaku dla pojazdów kołowych, zwłaszcza w odniesieniu do regularności i gładkości nawierzchni. Szczegółowy opis można znaleźć w artykule *Styl mapy OsmAnd - [Gładność](../../map-legend/osmand.md#surface-smoothness)* w sekcji *Legenda mapy*.  
     ![Wysokość](@site/static/img/navigation/route/Smoothness.png)
 
-- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Koloruje linię trasy lub śladu zgodnie z *klasyfikacją dróg zimowych*. Szczegółowy opis można znaleźć w artykule *Style map*, sekcja [Drogi zimowe i lodowe](../../map/map-styles.md#winter-and-ski).  
+- ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_winter_ice_road_name" />***. Koloruje linię trasy lub śladu zgodnie z *klasyfikacją dróg zimowych*. Szczegółowy opis można znaleźć w artykule *Style mapy*, sekcja [Drogi zimowe i lodowe](../../map/map-styles.md#winter-and-ski).  
     ![Wysokość](@site/static/img/navigation/route/Winter.png)
 
 - ***<ProFeature/> &nbsp;<Translate android="true" id="routeInfo_tracktype_name" />***. Kolorowanie linii trasy lub szlaku według składu nawierzchni. Zazwyczaj używane, gdy sieć drogowa jest w dużej mierze nieutwardzona. Szczegółowy opis można znaleźć w artykule *Styl mapy OsmAnd - [Twardość nawierzchni](../../map-legend/osmand.md#surface-smoothness)* w sekcji *Legenda mapy*.  

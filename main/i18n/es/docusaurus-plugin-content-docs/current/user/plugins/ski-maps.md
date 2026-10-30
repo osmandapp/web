@@ -237,11 +237,11 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,rendering_c
 
 </Tabs>
 
-Para saber por qué pistas fuera de la estación de esquí puede navegar, debe habilitar la opción **Pistas y rutas de esquí** en la lista [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes.md), abierta desde el menú [Configurar mapa](../map/configure-map-menu.md).  
+Para saber por qué pistas fuera de la estación de esquí puede navegar, debe habilitar la opción **Pistas y rutas de esquí** en la lista [**<Translate android="true" ids="rendering_category_routes"/>**](../map/routes/types-of-routes.md), abierta desde el menú [Configurar mapa](../map/configure-map-menu.md).  
 
-With the Skiing profile, the ski navigation and the [Winter and Ski map style](../map/map-styles.md#winter-and-ski) enabled, the [Ski slopes and routes](../map/routes.md#ski-slopes-and-routes) show all types of pistes that the Ski navigation can use to build navigation routes along. Such ski slope routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.  
-When enabling the option [Ski slopes and routes](../map/routes.md#ski-slopes-and-routes) for a map style other than Winter and Ski, only the slopes are displayed. Other ski-related features might not be shown in this styling layer.  
-Las _Pistas y rutas de esquí_ [son clicables](../map/routes.md#actions-with-routes).
+With the Skiing profile, the ski navigation and the [Winter and Ski map style](../map/map-styles.md#winter-and-ski) enabled, the [Ski slopes and routes](../map/routes/types-of-routes.md#ski-slopes-and-routes) show all types of pistes that the Ski navigation can use to build navigation routes along. Such ski slope routes, if enabled, are outlined with the violet color mostly outside ski resort boundaries.  
+When enabling the option [Ski slopes and routes](../map/routes/types-of-routes.md#ski-slopes-and-routes) for a map style other than Winter and Ski, only the slopes are displayed. Other ski-related features might not be shown in this styling layer.  
+Las _Pistas y rutas de esquí_ [son clicables](../map/routes/index.md#actions-with-routes).
 
 
 ### Noche e iluminación {#night-and-lighting}

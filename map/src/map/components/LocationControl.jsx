@@ -11,7 +11,7 @@ import { apiGet } from '../../util/HttpApi';
 import styles from '../map.module.css';
 import { POSITION_CLASSES, TOOLTIP_PLACEMENT } from '../util/MapStylesManager';
 import AppContext from '../../context/AppContext';
-import { flyZoom, initialPosition, initialZoom } from '../util/initialMapView';
+import { flyZoom, hasRouteInUrl, initialPosition, initialZoom } from '../util/initialMapView';
 
 const locationZoom = 17;
 
@@ -19,6 +19,7 @@ const XYZ_HASH_SYNC = 'hash'; // use Alt/Ctrl+click on LocationControl to save/r
 
 export async function detectGeoByIp({ map, hash }) {
     if (!map) return;
+    if (hasRouteInUrl()) return;
     if (hash) {
         const [zoom, lat, lon] = (hash.lastHash ?? window.location.hash ?? '').split('/');
         // use != instead of !== to compare coordinates

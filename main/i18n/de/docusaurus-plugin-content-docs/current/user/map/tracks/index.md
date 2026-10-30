@@ -1,5 +1,5 @@
 ---
-source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
+source-hash: 40444298714f3efdf33ba91bcf4a1ae66aa667d887d5d943cfe77e1fa53575ee
 title:  Tracks
 sidebar_position: 2
 ---
@@ -136,7 +136,7 @@ Dieses Werkzeug bietet eine detaillierte Analyse von [Track](../../map/tracks/tr
 - **Diagrammdimension (X-Achse)** stellt dar: *Distanz*, *Zeit* und *Tageszeit*.
 - **Tippen/Schieben-Interaktion**. Tippen Sie auf ein Diagramm, um Informationen über einen bestimmten Punkt auf dem Track anzuzeigen. Das Schieben auf dem Diagramm hebt die entsprechende Stelle auf der Karte hervor und zeigt Details in der Informationsleiste an.
 - **Distanzbeschriftung**. Beim Tippen oder Schieben entlang des Diagramms zeigt das Tooltip auch die genaue Distanz entlang des Tracks an. Der Wert folgt den Einstellungen der aktuellen Profil-Einheit (<Translate android="true" ids="km"/> oder <Translate android="true" ids="mile"/>). Verwenden Sie es, um schnell zu schätzen, wie weit ein Punkt vom Track-Start entfernt ist, oder um die Distanz zwischen zwei Positionen zu berechnen, indem Sie ihre Werte vergleichen.
-- **Skalierung**. Verwenden Sie eine [Zwei-Finger-Geste](../../map/interact-with-map.md#gestures), um das Diagramm für eine detailliertere Ansicht zu skalieren.
+- **Skalierung**. Verwenden Sie eine [Zwei-Finger-Geste](../../map/interact-with-map.md#gestures), um das Diagramm für eine detaillierte Ansicht zu skalieren.
 
 
 ### Meinem Standort folgen {#follow-my-location}
@@ -170,7 +170,7 @@ Tippen Sie auf die Schaltfläche [My Position](../../map/interact-with-map.md#my
 - [Track appearance](./appearance.md)
 - [Track-Kontextmenü](./track-context-menu.md)
 - [Navigate by track](../../navigation/setup/gpx-navigation.md)
-- [Routes on the map](https://docs.osmand.net/blog/routes) blog article
+- [Routes on the map](https://osmand.net/blog/routes) blog article
 - [Karte konfigurieren](../../map/configure-map-menu.md)  
 - [GPX tracks](../../personal/tracks/index.md)  
 - [Plan route](../../plan-route/index.md)  

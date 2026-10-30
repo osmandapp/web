@@ -1,5 +1,12 @@
 import { Box, Link, Radio, Typography } from '@mui/material';
-import { purchase, findPurchase, hasOldPrice } from './ProductManager';
+import {
+    purchase,
+    findPurchase,
+    hasOldPrice,
+    PURCHASE_TYPE_ANNUAL,
+    PURCHASE_TYPE_MONTHLY,
+    PURCHASE_TYPE_ONE_TIME,
+} from './ProductManager';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
@@ -30,15 +37,15 @@ export default function PurchaseTypeItem({
     });
 
     const labelMap = {
-        monthly: 'web:purchase_type_monthly_subscription',
-        annual: 'web:purchase_type_annual_subscription',
-        'one-time': 'web:purchase_type_one_time_purchase',
+        [PURCHASE_TYPE_MONTHLY]: 'web:purchase_type_monthly_subscription',
+        [PURCHASE_TYPE_ANNUAL]: 'web:purchase_type_annual_subscription',
+        [PURCHASE_TYPE_ONE_TIME]: 'web:purchase_type_one_time_purchase',
     };
 
     const periodMap = {
-        monthly: `/ ${t('web:purchase_period_month')}`,
-        annual: `/ ${t('web:purchase_period_year')}`,
-        'one-time': '',
+        [PURCHASE_TYPE_MONTHLY]: `/ ${t('web:purchase_period_month')}`,
+        [PURCHASE_TYPE_ANNUAL]: `/ ${t('web:purchase_period_year')}`,
+        [PURCHASE_TYPE_ONE_TIME]: '',
     };
 
     useEffect(() => {
@@ -47,7 +54,7 @@ export default function PurchaseTypeItem({
         }
         const { monthlyVersionId, oldPrice, newPrice } = purchaseObj;
         if (monthlyVersionId && oldPrice === newPrice) {
-            const monthlyVersion = purchase['monthly'].find((p) => p.id === monthlyVersionId);
+            const monthlyVersion = purchase[PURCHASE_TYPE_MONTHLY].find((p) => p.id === monthlyVersionId);
             if (monthlyVersion && monthlyVersion.oldPrice === monthlyVersion.newPrice) {
                 const annualFull = parseFloat(monthlyVersion.newPrice) * 12;
                 const annualPromo = parseFloat(newPrice);

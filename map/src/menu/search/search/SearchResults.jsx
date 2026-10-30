@@ -11,7 +11,8 @@ import PoiManager, {
 } from '../../../manager/PoiManager';
 import SearchResultItem from './SearchResultItem';
 import { MenuButton } from './MenuButton';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Button, ListItemButton, ListItemIcon, Typography } from '@mui/material';
+import { ReactComponent as SearchIcon } from '../../../assets/icons/ic_action_search_dark.svg';
 import SelectItemBoolean from '../../../frame/components/items/SelectItemBoolean';
 import VirtualizedList from '../../../frame/components/VirtualizedList';
 import styles from '../search.module.css';
@@ -32,7 +33,7 @@ import {
     FINAL_POI_ICON_NAME,
     WEB_VISIBLE_LEVEL,
 } from '../../../infoblock/components/wpt/WptTagsProvider';
-import { getIconByType } from '../../../manager/SearchManager';
+import { clearSearchQuery, getIconByType } from '../../../manager/SearchManager';
 import { SEARCH_BRAND } from '../../../manager/searchConstants';
 import { parseTagWithLang } from '../../../manager/PoiManager';
 import useSearchNav from '../../../util/hooks/search/useSearchNav';
@@ -72,7 +73,7 @@ export function performBaseSearch(searchParams, ctx, loc) {
     searchByWord(searchParams, ctx, loc, true);
 }
 
-export function searchByCategory(searchParams, ctx, t) {
+export function searchByCategory(searchParams, ctx, t, name) {
     // Brand format: type:lang, Category format: just type
     let categoryName = '';
     let lang = null;
@@ -84,7 +85,7 @@ export function searchByCategory(searchParams, ctx, t) {
             lang = brandInfo.lang;
         } else {
             // Category search: translate category name
-            categoryName = getCategoryName(searchParams.type, t);
+            categoryName = name ?? getCategoryName(searchParams.type, t);
         }
     }
 
@@ -111,8 +112,12 @@ export default function SearchResults() {
     const { classicSearch, setClassicSearch } = useSpatialSearch();
     const navigate = useNavigate();
 
-    const { params, navigateToSearchMenu, isSearchEqualToUrl, isSearchResultRoute, location } = useSearchNav();
+    const { params, navigateToSearchMenu, navigateToSearchResults, isSearchEqualToUrl, isSearchResultRoute, location } =
+        useSearchNav();
     const hasSearchParams = !!(params.type || (params.query && params.query !== ''));
+    const categoryName =
+        location.state?.categoryName ??
+        (result ? (ctx.searchResult?.categoryNames?.[params.type] ?? getCategoryName(params.type, t)) : '');
     const useSpatialSearchResults = !params.type && ctx.spatialSearch;
     const { hasMapView, requestMapViewPop } = useZoomToFit();
 
@@ -143,11 +148,11 @@ export default function SearchResults() {
             if (brandInfo) {
                 return brandInfo.brandName;
             } else {
-                return getCategoryName(params.type, t);
+                return categoryName;
             }
         }
         return null;
-    }, [params.engine, params.query, params.type]);
+    }, [params.engine, params.query, params.type, categoryName]);
 
     usePageTitle(pageTitle);
 
@@ -247,7 +252,7 @@ export default function SearchResults() {
                     ctx.setForceSearch(false);
                 }
                 if (params.type) {
-                    searchByCategory(params, ctx, t);
+                    searchByCategory(params, ctx, t, location.state?.categoryName);
                 } else {
                     const { loc } = getLoc();
                     if (!loc) return;
@@ -305,9 +310,7 @@ export default function SearchResults() {
             requestMapViewPop(MAP_VIEW_SEARCH_RESULT);
         }
         ctx.setCurrentObjectType(null);
-        ctx.setSearchResult(null);
-        ctx.setSearchFavoriteGroupIds(null);
-        ctx.setSearchQuery(null);
+        clearSearchQuery(ctx);
         ctx.setSearchSettings({ ...ctx.searchSettings, showExploreMarkers: true });
         navigateToSearchMenu();
     }
@@ -396,13 +399,7 @@ export default function SearchResults() {
             <CustomInput
                 menuButton={<MenuButton needBackButton={true} backToPrevScreen={backToMainSearch} />}
                 defaultSearchValue={
-                    ctx.searchQuery?.query ??
-                    (params?.type
-                        ? (() => {
-                              const brandInfo = parseBrandType(params.type);
-                              return brandInfo ? brandInfo.brandName : getCategoryName(params.type, t);
-                          })()
-                        : params?.query || '')
+                    params?.type ? formattingPoiType(pageTitle) : (ctx.searchQuery?.query ?? (params?.query || ''))
                 }
             />
             {ctx.develFeatures && !params.type && (
@@ -421,6 +418,18 @@ export default function SearchResults() {
                 </Typography>
             )}
             {(ctx.processingSearch || resulNotPrepared() || staleResult) && <Loading />}
+            {ctx.searchResult?.typoSuggestion && !ctx.processingSearch && !staleResult && (
+                <ListItemButton
+                    id={'se-search-typo-suggestion'}
+                    className={styles.typoSuggestion}
+                    onClick={() => navigateToSearchResults({ query: ctx.searchResult.typoSuggestion })}
+                >
+                    <ListItemIcon className={styles.typoSuggestionIcon}>
+                        <SearchIcon />
+                    </ListItemIcon>
+                    <Typography noWrap>{ctx.searchResult.typoSuggestion}</Typography>
+                </ListItemButton>
+            )}
             {(hasSearchParams || result === EMPTY_SEARCH_RESULT) &&
                 !ctx.processingSearch &&
                 !reopenSearchResult() &&

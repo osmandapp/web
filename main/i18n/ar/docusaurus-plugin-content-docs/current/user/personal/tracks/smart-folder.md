@@ -1,5 +1,5 @@
 ---
-source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
+source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
 title: المجلد الذكي (فلتر)
 ---
@@ -31,7 +31,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/> علامة تبويب*
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
+![مسارات الأماكن الخاصة بي](@site/static/img/personal/tracks/my_places_tracks_filter_2_andr.png)
 
 </TabItem>
 
@@ -39,7 +39,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> علامة تبويب*
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
+![مسارات الأماكن الخاصة بي](@site/static/img/personal/tracks/my_places_tracks_filter_ios.png)
 
 </TabItem>
 
@@ -64,13 +64,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
+![مسارات الأماكن الخاصة بي](@site/static/img/personal/tracks/my_places_tracks_filter_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
+![مسارات الأماكن الخاصة بي](@site/static/img/personal/tracks/my_places_tracks_filter_2_ios.png)
 
 </TabItem>
 
@@ -99,7 +99,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **متوسط الارتفاع** و **أقصى ارتفاع** — ابحث عن المسارات التي تحتوي على بيانات متوسط أو أقصى ارتفاع محددة.
 - **تاريخ الإنشاء** — فلترة المسارات التي تم إنشاؤها ضمن نطاق زمني معين.
 - **أقرب المدن** — عرض المسارات التي تمر بالقرب من مدن أو مناطق محددة.
-- **نوع النشاط** — فلترة المسارات بناءً على نوع [الأنشطة](../../map/tracks/track-context-menu.md#ttrack-activity-type) المسجلة في ملف GPX (مثل ركوب الدراجات، والمشي لمسافات طويلة).
+- **نوع النشاط** — فلترة المسارات بناءً على نوع [الأنشطة](../../map/tracks/track-context-menu.md#track-activity-type) المسجلة في ملف GPX (مثل ركوب الدراجات، والمشي لمسافات طويلة).
 - **البلد** — فلترة المسارات حسب البلد أو المنطقة التي تم تسجيلها فيها.
 - **اللون** و **العرض** — حدد المسارات حسب اللون أو عرض الخط المخصص لها.
 - **أخرى** — فلاتر إضافية للخصائص الخاصة:
@@ -113,13 +113,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
+![وظيفة فرز مسارات الأماكن الخاصة بي أندرويد](@site/static/img/personal/tracks/my_places_smart_folder_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
+![مسارات الأماكن الخاصة بي](@site/static/img/personal/tracks/my_places_smart_folder_ios.png)
 
 </TabItem>
 
@@ -164,7 +164,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![My places Managing Smart Folders Android](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![My places Managing Smart Folders Android](@site/static/img/personal/tracks/smart_folder_2_andr.png)
+![إدارة المجلدات الذكية أندرويد](@site/static/img/personal/tracks/smart_folder_1_andr.png) ![إدارة المجلدات الذكية أندرويد](@site/static/img/personal/tracks/smart_folder_2_andr.png)
 
 يتم عرض **المجلد الذكي** بأيقونة فريدة في قائمة المجلدات في علامة تبويب المسارات. لإدارة المجلد، اضغط على *قائمة الثلاث نقاط* بجواره للوصول إلى الإجراءات المتاحة:
 
@@ -195,7 +195,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![My places Managing Smart Folders iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![My places Managing Smart Foldersn iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
+![إدارة المجلدات الذكية iOS](@site/static/img/personal/tracks/smart_folder_new_ios.png) ![إدارة المجلدات الذكية iOS](@site/static/img/personal/tracks/smart_folder_new1_ios.png)
 
 يتم عرض **المجلد الذكي** بأيقونة فريدة في قائمة المجلدات في علامة تبويب المسارات. لإدارة المجلد، *اضغط مطولاً* على اسم المجلد للوصول إلى الإجراءات المتاحة:
 
@@ -210,7 +210,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **<Translate ios="true" ids="shared_string_select"/>** — استخدم [وضع التحديد](./manage-tracks.md#selection-mode) لإجراءات محددة على المسارات داخل المجلد.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — تحديث محتوى المجلد يدويًا للتأكد من أنه يتضمن أحدث المسارات.
 - **<Translate ios="true" ids="edit_filter"/>** — تعديل إعدادات فلتر المسار للمجلد الذكي الحالي. انظر [فلتر البحث](#search-filter) لمزيد من التفاصيل.
-- **تنظيم حسب** — تنظيم المسارات في المجلد الذكي تلقائيًا إلى مجموعات بناءً على معلمة محددة. حدد *لا شيء* لعرض جميع المسارات كقائمة واحدة، مطابقة لعرض المجلد الذكي الافتراضي. تشمل أنواع التجميع المتاحة *عام*، *التاريخ والوقت*، *الموقع*، *السرعة*، *الارتفاع والارتفاع*، و*بيانات المستشعر*. 
+- **<Translate ios="true" ids="organize_by"/>** — تنظيم المسارات في المجلد الذكي تلقائيًا إلى مجموعات بناءً على معلمة محددة. حدد *لا شيء* لعرض جميع المسارات كقائمة واحدة، مطابقة لعرض المجلد الذكي الافتراضي. تشمل أنواع التجميع المتاحة *عام*، *التاريخ والوقت*، *الموقع*، *السرعة*، *الارتفاع والارتفاع*، و*بيانات المستشعر*. 
 
 بعض معلمات التجميع متاحة فقط مع اشتراك OsmAnd Pro. تشمل المعلمات المجانية *النشاط*، *سنة الإنشاء*، و*أقرب مدينة*. جميع المعلمات الأخرى تحمل علامة <ProFeature/>.
 

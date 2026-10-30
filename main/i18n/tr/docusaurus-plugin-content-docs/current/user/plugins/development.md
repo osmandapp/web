@@ -1,5 +1,5 @@
 ---
-source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
+source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
 sidebar_position: 11
 title:  OsmAnd Geliştirme
 ---
@@ -83,16 +83,13 @@ Use one of the following paths to open the plugin settings:
 
 ### Uygulama Testi {#application-testing}
 
-:::caution Android only
-:::
-
-- **Simulate first app start**. Sets the flag indicating first app startup, keeps all other settings unchanged.  
-- **Test voice prompts**. Select a voice and test by playing announcements.
+- **Simulate first app start** (*Android*). Sets the flag indicating first app startup, keeps all other settings unchanged.  
+- **Test voice prompts** (*Android*). Select a voice and test by playing announcements.
 - **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
-- **Transparent status bar**. The map becomes visible under the status bar.  
-- **Show free version banner**. Display the free version banner even in the paid version.  
-- **Show debug information**. Display graphical information about the placement of each text on the map.
-- **Allow display on top**. Allows map texts to be displayed on top of each other.
+- **Transparent status bar** (*Android*). The map becomes visible under the status bar.  
+- **Show free version banner** (*Android*). Display the free version banner even in the paid version.  
+- **Show debug information** (*Android*). Display graphical information about the placement of each text on the map.
+- **Allow display on top** (*Android*). Allows map texts to be displayed on top of each other.
 
 
 ### Dahili Algoritmalar {#internal-algorithms}
@@ -100,7 +97,8 @@ Use one of the following paths to open the plugin settings:
 :::caution Android only
 :::
 
-- **Güvenli mod**. OsmAnd'ı yerel C++ kütüphanesi olmadan çalıştırır, bunun yerine harita oluşturma ve rota hesaplama için Java uygulamalarını kullanır. Yerel kütüphane başlangıç sırasında başarısız olursa uygulama otomatik olarak bu moda geçer, böylece başlamasına ve kullanılabilir kalmasına izin verir. Güvenli mod etkinken harita oluşturma ve rota hesaplama belirgin şekilde daha yavaştır.  
+- **Safe mode**. Runs OsmAnd without the native C++ library, using Java implementations for map rendering and route calculation instead. The app switches to this mode automatically if the native library fails during startup, allowing it to start and remain usable. Map rendering and route calculation are noticeably slower while safe mode is active. 
+- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
 
 
 ### Bellek Ayarları {#memory-settings}
@@ -114,6 +112,8 @@ Use one of the following paths to open the plugin settings:
 
 - Higher memory allocation may impact the performance of other apps.
 - [Calculation of 50 km routes for pedestrians](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
+
+- **Java memory** shows how much Java memory the app uses and opens the heap histogram tools: *Collect & analyze now*, *Share report*, and *Collect on high usage* (off by default). See [Heap Histogram for Memory Problems](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android) for when to use them.
 
 
 ### Bilgi ve İstatistikler {#info-and-statistics}

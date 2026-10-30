@@ -5,7 +5,7 @@ import debounce from 'lodash-es/debounce';
 import isEmpty from 'lodash-es/isEmpty';
 import L from 'leaflet';
 import { changeIconColor, createPoiIcon, DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
-import { applySelectedPin, hideMarkersNearPin } from '../util/MarkerSelectionService';
+import { applySelectedPin, hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import 'leaflet-spin';
 import PoiManager, {
     createPoiCache,
@@ -22,6 +22,7 @@ import { getVisibleBboxInfo, mapSpinOptionsForVisibleBbox } from './MapStateLaye
 import { createMapObject, createSearchObjectOptions, getObjIdSearch } from '../../manager/SearchManager';
 import { SEARCH_ICON_MAP_LOCATION, searchTypeMap } from '../../manager/searchConstants';
 import i18n from '../../i18n';
+import { getApiLang, getWikiLangs } from '../../util/lang';
 import { clusterMarkers, addMarkerTooltip, createSecondaryMarker } from '../util/Clusterizer';
 import { escapeHtmlAttr, useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
 import {
@@ -174,6 +175,7 @@ export default function PoiLayer() {
 
     const [prevController, setPrevController] = useState(false);
     const [prevCategories, setPrevCategories] = useState(null);
+    const [categoryNames, setCategoryNames] = useState(null);
     useZoomMoveMapHandlers(map, setZoom, setMove);
     const recentSaver = useRecentDataSaver();
 
@@ -268,9 +270,11 @@ export default function PoiLayer() {
     }, [ctx.configureMapState.pois]);
 
     async function openPoiByUrl() {
-        const { pin, name, type, osmId, wikidataId, lang } = ctx.poiByUrl.params;
+        const { pin, name, type, osmId, wikidataId } = ctx.poiByUrl.params;
 
-        const response = type ? await getPoiApi({ pin, name, type, osmId, wikidataId, lang }) : null;
+        const response = type
+            ? await getPoiApi({ pin, name, type, osmId, wikidataId, lang: getWikiLangs(i18n.language) })
+            : null;
         if (response?.data) {
             const data = response.data;
 
@@ -359,7 +363,7 @@ export default function PoiLayer() {
         };
         const response = await apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/search-poi`, searchData, {
             params: {
-                locale: i18n.language,
+                locale: getApiLang(i18n.language),
                 lat: center.lat,
                 lon: center.lng,
                 zoom: Math.round(map.getZoom()),
@@ -415,7 +419,7 @@ export default function PoiLayer() {
                 return;
             }
             if (map.hasLayer(layer)) {
-                hideMarkersNearPin(map, ctx);
+                hideMarkersUnderPin(map, ctx);
                 return;
             }
             if (existing) {
@@ -423,7 +427,7 @@ export default function PoiLayer() {
             }
             layer.addTo(map);
             layer.on('click', onClick);
-            hideMarkersNearPin(map, ctx);
+            hideMarkersUnderPin(map, ctx);
         }
 
         const getPoiTask = async ({
@@ -446,6 +450,7 @@ export default function PoiLayer() {
             try {
                 const res = await getPoi(controller, showPoiCategories, visibleBboxInfo);
                 if (reqId !== reqIdRef.current || ignore) return;
+                setCategoryNames(res?.categoryNames ?? null);
                 if (res?.zoomInHint) {
                     // category too common for this zoom
                     updateLayerOnMap(null);
@@ -490,7 +495,7 @@ export default function PoiLayer() {
         };
         const debouncedGetPoi = debounce(getPoiTask, GET_POI_DEBOUNCE_MS);
 
-        hideMarkersNearPin(map, ctx);
+        hideMarkersUnderPin(map, ctx);
 
         async function getPoiList() {
             if (isEmpty(ctx.showPoiCategories)) {
@@ -580,6 +585,7 @@ export default function PoiLayer() {
                     features: poiList && !poiList.tooMany ? poiList.listFeatures?.features : [],
                     info: poiList?.info,
                     tooMany: poiList?.tooMany ?? false,
+                    categoryNames,
                 };
             });
         }

@@ -1,5 +1,5 @@
 ---
-source-hash: 17ca976b7f8d82911b24eae797a9bd42269a5d96772ec19d589a026b6fbfdcf8
+source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
 sidebar_position: 7
 sidebar_label: Tracks Analyzer
 title: Tracks Analyzer
@@ -19,13 +19,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-**Analyseur de traces** est un outil web qui aide à analyser les segments de traces répétitifs entre des points sélectionnés sur la carte. Pour utiliser cette fonctionnalité avec vos propres données, vous avez besoin d'un compte OsmAnd Pro avec des traces synchronisées vers OsmAnd Cloud — sinon, vos traces ne seront pas disponibles dans le Planificateur Web. Il analyse vos traces et trouve tous les segments qui passent par le(s) emplacement(s) choisi(s), vous permettant de comparer la vitesse, l'altitude, la distance et le temps à travers plusieurs activités.
+**Analyseur de traces** est un outil web qui aide à analyser les segments de traces répétitifs entre des points sélectionnés sur la carte. Par exemple, vous pouvez l'utiliser pour comparer vos sorties sur une même montée ou vos trajets quotidiens. Pour utiliser cette fonctionnalité avec vos propres données, vous avez besoin d'un compte OsmAnd Pro avec des traces synchronisées vers OsmAnd Cloud — sinon, vos traces ne seront pas disponibles dans le Planificateur Web. Il analyse vos traces et trouve tous les segments qui passent par le(s) emplacement(s) choisi(s), vous permettant de comparer la vitesse, l'altitude, la distance et le temps à travers plusieurs activités.
 
 ## Comment utiliser {#how-to-use}
 
-Après avoir ouvert l'Analyseur de traces (représenté par une clé à molette), l'outil s'ouvre avec une vue carte et un état vide. À partir de là, vous pouvez choisir quelles traces seront incluses dans l'analyse en utilisant le panneau **Sélectionner les traces**. L'analyseur permet de travailler avec toutes les traces disponibles ou de limiter l'analyse à des dossiers spécifiques.
+1. [Connectez-vous](./web-cloud.md#login) à votre compte OsmAnd Pro sur le portail de la carte Web. Vos traces doivent être synchronisées avec [OsmAnd Cloud](./web-cloud.md#cloud-sync).
+2. Ouvrez *Menu → Analyseur de traces* (l'icône clé à molette).
+3. Dans le panneau **Sélectionner les traces**, choisissez **Toutes les traces** ou uniquement les dossiers dont vous avez besoin.
+4. Faites un clic droit sur la carte et sélectionnez **Point A**. Pour analyser un segment entre deux points, définissez également **Point B**.
+5. Consultez la liste des segments trouvés, [triez-la et choisissez les paramètres à afficher](#sorting-and-visible-parameters).
 
-Pour démarrer l'analyse, définissez un ou deux points directement sur la carte. Faites un clic droit à l'emplacement souhaité et sélectionnez **Point A / Point B** dans le menu contextuel. L'analyseur recherche ensuite les segments de traces qui passent par le point sélectionné ou entre les deux points.
+Avec un seul point, l'analyseur trouve les segments de traces qui passent par l'emplacement sélectionné. Avec deux points, il trouve et analyse les segments entre le Point A et le Point B.
 
 ![Analyseur de traces](@site/static/img/web/web_analyzer_select.png) ![Analyseur de traces](@site/static/img/web/web_analyzer_points_new.png)
 
@@ -33,29 +37,14 @@ Pour démarrer l'analyse, définissez un ou deux points directement sur la carte
 ## Tri et paramètres visibles {#sorting-and-visible-parameters}
 Après que l'analyseur a trouvé les segments correspondants, les résultats sont affichés sous forme de liste. La liste peut être réorganisée en utilisant l'option **Trier**, qui modifie la façon dont les segments sont listés. De plus, le bouton **Champs** ouvre le panneau des paramètres visibles, où vous pouvez contrôler quels paramètres d'analyse sont affichés pour chaque segment. Vous pouvez afficher tous les paramètres disponibles ou sélectionner uniquement ceux qui sont pertinents pour votre analyse.
 
-Les paramètres disponibles sont regroupés par type :
+Les paramètres disponibles comprennent :
 
-**Vitesse**
-- Vitesse max.
-- Vitesse moy.
-- Vitesse min.
-
-**Altitude**
-- Altitude max.
-- Altitude moy.
-- Altitude min.
-
-**Montée / Descente**
-
-**Date et heure**
-- Date
-- Heure de début
-- Heure de fin
-- Étendue temporelle
-- Durée
-- Temps en mouvement
-
-**Longueur**
+- Vitesse max., Vitesse moy. et Vitesse min.
+- Altitude max., Altitude moy. et Altitude min.
+- Montée et Descente.
+- Date.
+- Étendue temporelle, Heure de début, Heure de fin, Durée et Temps en mouvement.
+- Longueur.
 
 ![Analyseur de traces](@site/static/img/web/web_analyzer_sort.png) ![Analyseur de traces](@site/static/img/web/web_analyzer_fields.png)
 

@@ -1,5 +1,5 @@
 ---
-source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+source-hash: 2c0a6908a74d63cbb4449e258729df822d9ac3927942ad52a8271ce7c951c29c
 sidebar_position: 4
 title:  Notatki audio/wideo
 ---
@@ -148,7 +148,7 @@ W przypadku *notatek audio i wideo* wyświetlany jest odpowiednio rejestrator au
 Możliwe jest zatrzymanie nagrywania poprzez dotknięcie widżetu <Translate android="true" ids="map_widget_av_notes"/>, niezależnie od tego, czy nagrywanie zostało rozpoczęte z menu kontekstowego, czy z widżetu. W przypadku *notatki zdjęciowej* pojawia się funkcja aparatu, za pomocą której można zrobić zdjęcie, wyświetlić wynik, zaakceptować i zapisać je lub zrobić nowe zdjęcie.
 
 :::info Uwaga
-Automatycznie wszystkie nagrania zdjęciowe, audio i wideo są zapisywane w zakładce: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>.
+Automatycznie wszystkie nagrania zdjęciowe, audio i wideo są zapisywane w zakładce: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>. Każda notatka jest również zapisywana jako ulubiony w folderze **media**. Zobacz [Notatki A/V jako ulubione](#av-notes-as-favorites).
 :::
 
 
@@ -342,6 +342,14 @@ Użyj warstwy mapy [Nagrania](../map/point-layers-on-map#-audio--video-points-an
 ![Brak notatek na mapie](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notatki na mapie](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
+## Notatki A/V jako ulubione {#av-notes-as-favorites}
+
+Notatki audio, wideo i zdjęciowe są powiązane z Ulubionymi. Każda notatka ma odpowiadający jej punkt ulubiony w folderze **media** w *Moje miejsca → Ulubione*, umieszczony w lokalizacji notatki i nazwany według typu notatki i czasu utworzenia, na przykład *Photo Oct 1, 2026 09:45*. Plik notatki jest dołączony do tego ulubionego i pojawia się w jego [karcie Multimedia](../personal/favorites.md#media). Sama notatka pozostaje również dostępna w zakładce *Notatki A/V*.
+
+- Po aktualizacji OsmAnd do wersji 5.4 z wcześniejszej wersji dla każdej istniejącej notatki automatycznie tworzony jest ulubiony.
+- Nowe notatki nagrane za pomocą widżetu lub menu kontekstowego mapy są automatycznie dodawane do folderu **media**.
+
+
 ## Punkty trasy utworzone z notatek {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -421,11 +429,7 @@ Jeśli przeglądasz plik GPX śladu dodanego z punktem trasy z notatki audio/wid
 
 ### Szczegóły nazwy pliku {#file-name-details}
 
-Wtyczka <Translate android="true" ids="audionotes_plugin_name"/> generuje pliki audio/wideo/zdjęciowe w następującym formacie:
-
-    `{SHORTLINK_LOCATION}_Opis.{avi,mp3,jpg}`
-
-gdzie `SHORTLINK_LOCATION` określa szerokość i długość geograficzną lokalizacji, z którą plik jest powiązany. `SHORTLINK_LOCATION` jest zakodowany zgodnie ze specyfikacją [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
+Wtyczka <Translate android="true" ids="audionotes_plugin_name"/> nazywa pliki audio, wideo i zdjęciowe według wzorca `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, na przykład `Photo_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. Część `location` zawiera szerokość i długość geograficzną notatki, zakodowane zgodnie ze specyfikacją [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ### Eksport do JOSM {#export-to-josm}

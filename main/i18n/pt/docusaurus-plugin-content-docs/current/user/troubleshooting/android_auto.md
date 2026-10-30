@@ -30,7 +30,7 @@ A orientação do mapa na direção do movimento está [invertida e tremida](htt
 - Visível apenas se o [Desenvolvimento do OsmAnd](../plugins/development.md) estiver ativado.
 - Localizado em *Menu → Configurações → Perfil → Configurações de navegação → [Mapa durante a navegação](../navigation/guidance/map-during-navigation.md) → Orientação aproximada*.
 
-## Problema de controlo de volume {#volume-control-issue}
+## Problema de controle de volume {#volume-control-issue}
 
 Na maioria dos casos, todos os tipos de **sinais** permanecem em volume máximo constante, o que não é afetado pelas configurações de reprodução de áudio simultâneas. Para alterar o volume dos avisos de navegação do OsmAnd ao usar o Android Auto, vá para *Configuração → Voz → Volume da voz* na tela do sistema multimédia do veículo.
 

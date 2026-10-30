@@ -1,5 +1,5 @@
 ---
-source-hash: 493d0f4bb5654e0183f24ee23ee49f36be8431ec2466fa554bd47c6ad8ab3813
+source-hash: b0856a5094b1d215f8e6507452fbd1d83a9df996a95ba8afef203917b669a88f
 sidebar_position: 1
 label: Introduction
 title: Documentos
@@ -33,7 +33,3 @@ Notas de lançamento e links para versões anteriores do OsmAnd. Compilações B
 ### [Jurídico](/docs/legal/) {#legal}
 
 Licença. Política de Privacidade. Termos de Uso.
-
-### [Junte-se à nossa equipe](/docs/hiring/) {#join-our-team}
-
-Estamos sempre em busca de novos colaboradores que possam se juntar à nossa equipe internacional.

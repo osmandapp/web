@@ -1,5 +1,5 @@
 ---
-source-hash: 7926e754bf75b15bbc30909534298a5e195b50fd2ca3e7b8c344f26073000b1a
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title:  Sprachansagen / Benachrichtigungen
 ---
@@ -99,7 +99,7 @@ Weitere Informationen darüber, wie und wann Sprachansagen ausgelöst werden, fi
 
 - *Navigationsanweisungen wiederholen*. Ermöglicht die Wiederholung der Navigationsanweisungen in regelmäßigen Abständen von 1 Minute bis 30 Minuten. Oder manuell - wenn Sie eine Sprachansage verpasst haben, können Sie sie erneut anhören, indem Sie einfach auf den [aktuellen Abbiegepfeil](../../widgets/nav-widgets.md#next-turn) auf dem Anwendungsbildschirm tippen.
 - *[Zeitpunkt der Ansagen](#announcement-time)*.
-- *Gesprochene Audioinhalte pausieren* (*nur iOS*). Bei Aktivierung werden Podcasts, Hörbücher und andere gesprochene Inhalte während der Sprachansagen pausiert. Die Musikwiedergabe läuft mit reduzierter Lautstärke weiter. Bei Deaktivierung werden sowohl gesprochene Inhalte als auch Musik mit reduzierter Lautstärke wiedergegeben.
+- *Gesprochene Audioinhalte pausieren* (*nur iOS, einschließlich CarPlay*). Bei Aktivierung werden Podcasts, Hörbücher und andere gesprochene Inhalte während der Sprachansagen pausiert, unabhängig davon, ob die Wiedergabe über das Gerät oder über CarPlay erfolgt. Die Musikwiedergabe läuft mit reduzierter Lautstärke weiter. Bei Deaktivierung werden sowohl gesprochene Inhalte als auch Musik mit reduzierter Lautstärke wiedergegeben.
 
 **Ausgabe** (*nur Android*):
 
@@ -394,7 +394,7 @@ Sie können den Bildschirm Ihres Geräts steuern, um Energie zu sparen. Dieser M
 
     ![System-Timeout Bildschirmsteuerung Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. Wenn *Bildschirm eingeschaltet lassen* aktiviert ist, wendet der Bildschirm des Geräts nach dem Aufwachen kein Timeout an. Wenn es deaktiviert ist, können Sie die Zeit einstellen, nach der sich der Bildschirm des Geräts ausschaltet, wenn Sie nicht damit interagieren, von 5 bis 60 Sekunden.  
+2. **<Translate android="true" ids="wake_time"/>**. Wenn *Bildschirm eingeschaltet lassen* aktiviert ist, wendet der Bildschirm des Geräts nach dem Aufwachen kein Timeout an. Wenn es deaktiviert ist, können Sie die Zeit einstellen, nach der sich der Bildschirm des Geräts ausschaltet, wenn Sie nicht damit interagieren, von 5 bis 60 Sekunden. Der Timeout wird ab der letzten Interaktion mit der Karte gezählt, und jede Berührung startet ihn neu. Wenn er endet, schaltet sich der Bildschirm entsprechend dem System-Bildschirm-Timeout des Geräts aus, sodass OsmAnd den Bildschirm länger als die Systemeinstellung eingeschaltet lassen kann, aber niemals kürzer.   
 
     ![Timeout nach dem Aufwachen Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Timeout nach dem Aufwachen Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -402,11 +402,15 @@ Sie können den Bildschirm Ihres Geräts steuern, um Energie zu sparen. Dieser M
 
 ![Bildschirm einschalten Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Wählen Sie Optionen zum Aufwecken des Bildschirms und stellen Sie sicher, dass OsmAnd im Vordergrund bleibt, wenn das Gerät gesperrt ist.
+Wählen Sie Optionen zum Aufwecken des Bildschirms und stellen Sie sicher, dass OsmAnd im Vordergrund bleibt, wenn das Gerät gesperrt ist. Wenn eine Aufwachoption den Bildschirm einschaltet, erscheint die Karte über dem Sperrbildschirm und das Gerät bleibt gesperrt. Wenn keine Aufwachoption aktiviert ist, wird der normale Sperrbildschirm angezeigt.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> Der Sensor reagiert während der Navigation oder der Aufzeichnung einer Fahrt zuverlässig. In anderen Fällen hört Android etwa eine Minute nachdem die App in den Hintergrund wechselt auf, Sensorereignisse an OsmAnd zu senden.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> Wenn *System-Bildschirm-Timeout verwenden* deaktiviert ist, erfordert diese Option, dass *Timeout nach dem Aufwachen* auf *Bildschirm eingeschaltet lassen* eingestellt ist.
+
+Nach dem Aufwecken durch den Näherungssensor oder eine Navigationsanweisung bleibt die Karte für die in *Timeout nach dem Aufwachen* eingestellte Zeit über dem Sperrbildschirm, danach wird das Gerät erneut gesperrt. Bei *Bildschirm eingeschaltet lassen* bleibt die Karte sichtbar, bis Sie die Einschalttaste drücken.
+
+**Hinweis:** Auf Xiaomi-Geräten gewähren Sie OsmAnd die Berechtigung *Auf dem Sperrbildschirm anzeigen* (*App-Info → Andere Berechtigungen*). Ohne diese Berechtigung schaltet sich der Bildschirm ein, aber die Karte erscheint nicht über dem Sperrbildschirm. OsmAnd kann diese Berechtigung nicht selbst erteilen.
 
 
 ## Verwandte Artikel {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 1505593576ed8b4e4ca8274ad047f82a70181f3fcafd8e9ca6d60e795b2f0724
+source-hash: 11466169a279a3ab071bc189fa304918d7bbc1c32ad8db94c7351a3b621420ff
 sidebar_position: 3
 title:  Koordinateneingabe
 ---
@@ -25,11 +25,9 @@ Die *Koordinateneingabe* ist ein einfaches und benutzerfreundliches Werkzeug zur
 
 ## Anwendung {#how-to-use}
 
-Sie können Wegpunkte über das Menü *[Kartenmarkierungen](../personal/markers.md#actions)* oder über [Meine Orte](../personal/myplaces.md) erstellen (siehe Screenshots). Bitte folgen Sie diesen Pfaden, um zur Option der Koordinateneingabe zu gelangen:
-  - *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> → Erd-Symbol am unteren Bildschirmrand*
-  - *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
+Sie können Wegpunkte über das Menü *[Kartenmarkierungen](../personal/markers.md#actions)* erstellen. Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_markers_item,shared_string_more_without_dots,coordinate_input"/>*
 
-![Koordinateneingabe finden](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) ![Koordinateneingabe finden](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_2.png)
+![Koordinateneingabe finden](@site/static/img/plan-route/coordinates_input/coordinates_input_how_to_find_1.png) 
 
 Nachdem Sie den Bildschirm zur Koordinateneingabe geöffnet haben:
 
@@ -102,7 +100,7 @@ Wenn Sie auf einen Punkt tippen, können Sie dessen Koordinaten ändern. Tippen 
 
 Um Ihre Punkte als Track zu speichern, tippen Sie auf die Schaltfläche *Zurück* ( &#8592; ) oder verwenden Sie das Menü *[Optionen](#options)*.
 
-![Koordinateneingabe Punkt speichern Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.png) ![Koordinateneingabe Punkt speichern Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_places_list.png)
+![Koordinateneingabe Punkt speichern Android 1](@site/static/img/plan-route/coordinates_input/coordinates_input_save.webp) ![Koordinateneingabe Punkt speichern Android 2](@site/static/img/plan-route/coordinates_input/coordinates_input_my_tracks_list.webp)
 
 Im Pop-up-Menü können Sie einen eigenen Tracknamen eingeben oder ihn unter dem Standardnamen speichern. Tippen Sie auf <Translate android="true" ids="shared_string_save"/>, um die hinzugefügten Punkte als neuen Track zu speichern.
 Sie finden Ihren Track im [Menü Meine Orte](../personal/myplaces.md) (<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks,map_markers_item"/>).

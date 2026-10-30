@@ -4,9 +4,15 @@ import styles from '../trackfavmenu.module.css';
 import { ReactComponent as DownloadIcon } from '../../assets/icons/ic_action_gsave_dark.svg';
 import { ReactComponent as ShowIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
 import { useTranslation } from 'react-i18next';
-import { apiPost } from '../../util/HttpApi';
 import AppContext from '../../context/AppContext';
-import { FIT_BOUNDS_MAX_ZOOM, openTrackOnMap, updateTracks } from '../../manager/track/TracksManager';
+import {
+    downloadObfCollection,
+    downloadOsfBackup,
+    FIT_BOUNDS_MAX_ZOOM,
+    openTrackOnMap,
+    updateTracks,
+} from '../../manager/track/TracksManager';
+import { GPX } from '../../manager/GlobalManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { SHARE_FILE_TYPE, SHARE_TYPE } from '../share/shareConstants';
 import { useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
@@ -18,60 +24,27 @@ const SharedFolderActions = forwardRef(
         const recentSaver = useRecentDataSaver();
 
         async function downloadOsf() {
-            setProcessDownload(true);
-            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-backup-folder`, [], {
+            await downloadOsfBackup({
                 params: {
-                    format: '.osf',
                     shared: true,
-                    type: 'GPX',
                 },
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                responseType: 'arraybuffer',
-                throwErrors: true,
-            }).catch(() => {
-                setProcessDownload(false);
-                ctx.setTrackErrorMsg({
-                    title: 'Get OSF error',
-                    msg: `We couldn't download osf for Shared With Me folder. Please contact us at support@osmand.net`,
-                });
+                displayName: t('web:shared_with_me'),
+                ctx,
+                setProcessDownload,
             });
-            if (res.status === 200) {
-                setProcessDownload(false);
-                let name = res.headers['content-disposition'].split('filename=')[1];
-                const url = document.createElement('a');
-                url.href = URL.createObjectURL(new Blob([res.data], { type: 'octet/stream' }));
-                url.download = name;
-                url.click();
-            }
         }
 
         async function downloadObf() {
-            setProcessDownload(true);
-
-            const res = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/download-obf`, [], {
+            await downloadObfCollection({
                 params: {
                     shared: true,
-                    sharedType: 'GPX',
+                    sharedType: GPX,
                 },
-                responseType: 'blob',
-                throwErrors: true,
-            }).catch(() => {
-                setProcessDownload(false);
-                ctx.setTrackErrorMsg({
-                    title: 'Get OBF error',
-                    msg: "We couldn't download obf for Shared With Me folder. Please contact us at support@osmand.net",
-                });
+                fileName: 'SharedWithMe.travel.obf',
+                displayName: t('web:shared_with_me'),
+                ctx,
+                setProcessDownload,
             });
-
-            if (res.status === 200) {
-                setProcessDownload(false);
-                const url = document.createElement('a');
-                url.href = URL.createObjectURL(res.data);
-                url.download = 'SharedWithMe.travel.obf';
-                url.click();
-            }
         }
 
         async function showAll({ show }) {

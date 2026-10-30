@@ -1,5 +1,5 @@
 ---
-source-hash: e22fb8635f9ca67db7272704ab1bb824bba0f0025c8378fd7b5a17ae0d2d6e7d
+source-hash: 27e163fb9c00f16babac0d57756eb5c012d829bdfb18b14e19cc7407e03838fa
 sidebar_position: 2
 title:  Взаємодія з мапою
 ---
@@ -217,8 +217,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **Вигляд глобуса** дозволяє відображати мапу як сферичну Землю замість пласкої проєкції. Цей режим змінює геометрію поверхні мапи та адаптує взаємодію з мапою до сферичної навігації.  
 
 Вигляд глобуса наразі доступний лише за таких умов:
-- Увімкнено [плагін Розробка](../plugins/development.md).  
-Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,debugging_and_development"/>*
 - Увімкнено [плагін Топографії](../plugins/topography.md).  
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 - [Рушій візуалізації мапи](../personal/global-settings.md#map-rendering-engine) встановлено на Версію 2 (OpenGL).  
@@ -395,7 +393,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Пов'язані статті {#related-articles}
 
-- [Контекстне меню мапи](./map-context-menu.md)
+- [Контекстное меню мапи](./map-context-menu.md)
 - [Налаштувати мапу](./configure-map-menu.md)
 - [Векторні мапи (Стилі мапи)](./vector-maps.md)
 - [Растрові мапи (Онлайн / Офлайн)](./raster-maps.md)

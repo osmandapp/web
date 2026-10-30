@@ -15,11 +15,13 @@ import { ReactComponent as EmailIcon } from '../../../assets/icons/ic_action_at_
 import { ReactComponent as WikidataIcon } from '../../../assets/icons/ic_action_logo_wikidata.svg';
 import { ReactComponent as DisplayLanguageIcon } from '../../../assets/icons/ic_action_map_language.svg';
 import { changeIconColor } from '../../../map/markers/MarkerOptions';
-import { createPoiCache, getIconNameForPoiType, parseTagWithLang, updatePoiCache } from '../../../manager/PoiManager';
+import { cleanHtml, createPoiCache, getIconNameForPoiType, updatePoiCache } from '../../../manager/PoiManager';
+import { htmlToText } from '../../../frame/components/editor/htmlUtils';
 import React from 'react';
 import { apiGet, apiPost } from '../../../util/HttpApi';
 
-import { localizeWeekTokens } from '../../../util/dateFmt';
+import { localizeOpeningHours } from '../../../util/dateFmt';
+import { getApiLang, WIKI_DEFAULT_LANG } from '../../../util/lang';
 import {
     convertMeters,
     getSmallLengthUnit,
@@ -44,6 +46,7 @@ const SUBTYPE_POI = WEB_POI_PREFIX + 'subType';
 const SERVICE_TIMES = 'service_times';
 const COLLECTION_TIMES = 'collection_times';
 export const DESCRIPTION = 'description';
+const SHORT_DESCRIPTION = 'short_description';
 export const OPENING_HOURS = 'opening_hours';
 export const OPENING_HOURS_INFO = 'opening_hours_info';
 const PHONE = 'phone';
@@ -58,6 +61,7 @@ export const WIKIDATA = 'wikidata';
 export const WIKIMEDIA_COMMONS = 'wikimedia_commons';
 const INSTAGRAM = 'instagram';
 export const OSM_PREFIX = 'osm_tag_';
+const SHORT_DESCRIPTION_TAG = OSM_PREFIX + SHORT_DESCRIPTION;
 const COLLAPSABLE_PREFIX = 'collapsable_';
 export const COLOR_NAME_EXTENSION = 'color';
 const ICON_NAME_EXTENSION = 'icon';
@@ -68,6 +72,8 @@ export const ALT_NAME = 'osm_tag_alt_name';
 const ORIGINAL_ICON = 'originalIcon';
 const MARKER_ICON_SVG = 'svg';
 const MARKER_OBJ_ID = 'idObj';
+export const RELATED_RESULT_IDS = 'relatedResultIds';
+export const MARKER_INTERNAL_KEYS = [MARKER_ICON_SVG, MARKER_OBJ_ID, ICON_NAME_EXTENSION, RELATED_RESULT_IDS];
 
 // from Amenity object
 export const POI_NAME = WEB_POI_PREFIX + 'name';
@@ -86,6 +92,8 @@ export const CITY = WEB_PREFIX + 'city';
 export const ADDRESS_1 = WEB_PREFIX + 'address1';
 export const ADDRESS_2 = WEB_PREFIX + 'address2';
 export const MATCHED_OBJECTS = WEB_PREFIX + 'matched_objects';
+// the other name (synonym, another language) the query matched, e.g. "Schule" for the category "Школа"
+export const MATCHED_ALT_NAME = WEB_PREFIX + 'alt_name';
 export const BBOX_LAT_LON = WEB_PREFIX + 'bbox_lat_lon';
 export const CATEGORY_KEY_NAME = WEB_PREFIX + 'keyName';
 export const ICON_KEY_NAME = WEB_PREFIX + 'iconKeyName';
@@ -118,7 +126,6 @@ const WEB_TAGS_TO_SKIP = [
     POI_NAME,
     POI_ID,
     POI_OSM_URL,
-    MARKER_OBJ_ID,
 ];
 export const SEPARATOR = ';';
 
@@ -239,10 +246,20 @@ async function getWptTags(obj, type, ctx) {
         const tagList = await fetchVisibleTags(mainTags);
 
         for (const entry of tagList) {
-            let tagObj = await buildTagObj({ key: entry.key, value: entry.value, lang: entry.lang, ctx, subtypeTag });
+            let tagObj = await buildTagObj({
+                key: entry.key,
+                value: entry.value,
+                lang: entry.lang,
+                generic: entry.generic,
+                ctx,
+                subtypeTag,
+            });
 
             if (entry.otherLangs?.length) {
                 tagObj.otherLangs = await buildOtherLangTags(entry.otherLangs, ctx, subtypeTag, entry.key);
+            }
+            if (entry.labels) {
+                tagObj.labels = entry.labels;
             }
 
             res.push(tagObj);
@@ -257,7 +274,7 @@ async function getWptTags(obj, type, ctx) {
     return { res, rawTags, id, type: typeTag, subtype: subtypeTag };
 }
 
-async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
+async function buildTagObj({ key, value, lang, generic, ctx, subtypeTag }) {
     let tagObj = { key };
     tagObj.value = value;
     tagObj.isUrl = isUrl(value);
@@ -271,7 +288,7 @@ async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
         }
     }
 
-    Object.assign(tagObj, await getTagIconProps({ key, value, lang, ctx }));
+    Object.assign(tagObj, await getTagIconProps({ key, value, lang, generic, ctx }));
 
     const [formattedPrefix, formattedValue] = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag, ctx);
     tagObj.textPrefix = formattedPrefix;
@@ -281,7 +298,7 @@ async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
     applySharedNameTag(tagObj);
 
     if (tagObj.key === OPENING_HOURS) {
-        tagObj.value = localizeWeekTokens(tagObj.value);
+        tagObj.value = localizeOpeningHours(tagObj.value);
     }
 
     if (key.includes(WIKIDATA)) {
@@ -296,7 +313,7 @@ async function buildTagObj({ key, value, lang, ctx, subtypeTag }) {
     return tagObj;
 }
 
-async function getTagIconProps({ key, value, lang, ctx }) {
+async function getTagIconProps({ key, value, lang, generic, ctx }) {
     switch (key) {
         case WIKIPEDIA:
             return { icon: <WikipediaIcon /> };
@@ -325,8 +342,19 @@ async function getTagIconProps({ key, value, lang, ctx }) {
         case 'internet_access_fee_yes':
             return { icon: <InternetIcon /> };
         default:
+            if (generic) {
+                return getGenericTagProps(key);
+            }
             return await getOtherTagIconProps({ key, value, lang, ctx });
     }
+}
+
+function getGenericTagProps(key) {
+    return {
+        icon: getIcon(null, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR),
+        textPrefix: key.slice(key.indexOf(':') + 1),
+        isRawValue: true,
+    };
 }
 
 async function getOtherTagIconProps({ key, value, lang, ctx }) {
@@ -338,7 +366,7 @@ async function getOtherTagIconProps({ key, value, lang, ctx }) {
         const svgData = await getSvgIcon({ value: prepValue, ctx });
         return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
     }
-    if (lang || parseTagWithLang(key).lang) {
+    if (lang) {
         return { icon: <DisplayLanguageIcon /> };
     }
     const svgData = await getSvgIcon({ key, value, ctx });
@@ -434,7 +462,7 @@ async function fetchVisibleTags(tags) {
     tags = stringifyTagValues(tags);
     const response = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/search/visible-tags`, tags, {
         apiCache: true,
-        params: { lang: i18n.language },
+        params: { lang: getApiLang(i18n.language) },
     });
 
     return Array.isArray(response?.data) ? response.data : Object.entries(tags).map(([key, value]) => ({ key, value }));
@@ -474,8 +502,7 @@ function filterWebKeys(tags) {
             key.startsWith(ALT_NAME) ||
             WEB_TAGS_TO_SKIP.includes(key) ||
             key.startsWith(ORIGINAL_ICON) ||
-            key === MARKER_ICON_SVG ||
-            key === ICON_NAME_EXTENSION
+            MARKER_INTERNAL_KEYS.includes(key)
         ) {
             continue;
         }
@@ -747,6 +774,30 @@ export const otherImgTags = (tag) => {
 
 export function getOsmIdFromOsmUrl(url) {
     return url ? url.split('/').pop() : null;
+}
+
+export function getShortDescriptionKey(lang) {
+    return lang && lang !== WIKI_DEFAULT_LANG ? `${SHORT_DESCRIPTION_TAG}:${lang}` : SHORT_DESCRIPTION_TAG;
+}
+
+export function getShortDescriptionLang(key) {
+    return key.split(':')[1] ?? WIKI_DEFAULT_LANG;
+}
+
+export function isShortDescriptionTag(key) {
+    return key === SHORT_DESCRIPTION_TAG || key.startsWith(`${SHORT_DESCRIPTION_TAG}:`);
+}
+
+export function getShortDescriptions(extensions) {
+    return Object.fromEntries(Object.entries(extensions ?? {}).filter(([key]) => isShortDescriptionTag(key)));
+}
+
+export function cleanShortDescriptions(shortDescriptions) {
+    return Object.fromEntries(
+        Object.entries(shortDescriptions)
+            .map(([key, value]) => [key, htmlToText(cleanHtml(value ?? ''))])
+            .filter(([, value]) => value)
+    );
 }
 
 const WptTagsProvider = {

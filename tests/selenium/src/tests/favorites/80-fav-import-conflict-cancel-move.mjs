@@ -2,7 +2,7 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
-import { assert, clickBy, matchValueBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { assert, clickBy, enclose, matchTextBy, matchValueBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 import { getFiles } from '../../util.mjs';
@@ -166,6 +166,51 @@ export default async function test() {
     await clickBy(By.id(`se-menu-fav-${subFullName}`));
     await waitBy(By.id(`se-opened-fav-group-${subFullName}`));
     await waitBy(By.id(`se-fav-item-name-${wptName}`));
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
+
+    // --- Test 6: Move via the card, then edit again while the card is still open ---
+    const suffix = '-edited';
+    await clickBy(By.id(`se-menu-fav-${subFullName}`));
+    await waitBy(By.id(`se-opened-fav-group-${subFullName}`));
+    await clickBy(By.id(`se-fav-item-name-${wptName}`));
+    await waitBy(By.id(`se-fav-item-info-${wptName}`));
+    await clickBy(By.id('se-edit-fav-item'));
+    await waitBy(By.id('se-edit-fav-dialog'));
+    await clickBy(By.id('se-fav-group-selector'));
+    await waitBy(By.id('se-back-folder-selection-panel'));
+    await clickBy(By.id(`se-fav-group-item-${foodGroupName}`));
+    await clickBy(By.id('se-back-folder-selection-panel'));
+    await waitByRemoved(By.id('se-back-folder-selection-panel'));
+    await clickBy(By.id('se-edit-fav-item-submit'));
+    await waitByRemoved(By.id('se-edit-fav-dialog'));
+    await matchTextBy(By.id('se-wpt-group'), foodGroupName);
+    await clickBy(By.id('se-edit-fav-item'));
+    await waitBy(By.id('se-edit-fav-dialog'));
+    await enclose(
+        async () => {
+            const input = await waitBy(By.id('se-edit-fav-dialog-address'));
+            await input.sendKeys(suffix);
+            return true;
+        },
+        { tag: 'edit-address-after-move' }
+    );
+    await clickBy(By.id('se-edit-fav-item-submit'));
+    await waitByRemoved(By.id('se-edit-fav-dialog'));
+    await matchTextBy(By.id('se-wpt-address'), suffix);
+    await clickBy(By.id('se-back-wpt-details'));
+    await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await waitBy(By.id(`se-menu-fav-${foodGroupName}`));
+
+    // the edited favorite is in food once, not duplicated by the second save
+    await clickBy(By.id(`se-menu-fav-${foodGroupName}`));
+    await waitBy(By.id(`se-opened-fav-group-${foodGroupName}`));
+    await waitBy(By.id(`se-fav-item-name-${wptName}`));
+    await enclose(async () => (await driver.findElements(By.id(`se-fav-item-name-${wptName}`))).length === 1, {
+        tag: 'moved-favorite-not-duplicated',
+    });
+    await matchTextBy(By.xpath(`//*[@id='se-fav-item-name-${wptName}']//*[@id='se-fav-item-address']`), suffix);
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id(`se-menu-fav-${shopGroupName}`));
 

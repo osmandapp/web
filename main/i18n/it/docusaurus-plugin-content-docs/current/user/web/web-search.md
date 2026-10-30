@@ -1,5 +1,5 @@
 ---
-source-hash: f10008ced0e7be7571934643223ef0c5dc43f1b7c075563eff0f8973b874023d
+source-hash: 67e24e2d76639e1ba3e1dbe3fc8cff417ee3ff06770c41d09f400cac219c9cdf
 sidebar_position: 10
 sidebar_label:  Cerca
 title: Cerca sul sito web
@@ -16,16 +16,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
-<!--
-<InfoIncompleteArticle/>
--->
-
-
 ## Panoramica {#overview}
 
 Il **menu Cerca** è accessibile dal pannello laterale o dall'icona di ricerca 🔍 sulla mappa. Contiene:
 
-- [Barra di ricerca](#search-bar). Inserisci parole chiave per cercare luoghi specifici, punti di interesse, preferiti o tracce.  
+- [Barra di ricerca](#search-bar). Inserisci parole chiave per cercare luoghi specifici, punti di interesse, preferiti o tracce. 
 - [Sezione Categorie](#categories). Sfoglia le opzioni categorizzate per facilitare la ricerca di PDI.  
 - [Sezione Esplora](#explore). Visualizza PDI popolari per il centro della mappa attuale ed esplora luoghi con foto sulla mappa.
 
@@ -37,7 +32,9 @@ Il **menu Cerca** è accessibile dal pannello laterale o dall'icona di ricerca �
 
 Usa la **Barra di ricerca** per trovare luoghi specifici, punti di interesse, [preferiti](../web/web-favorites.md) e [tracce](../web/web-tracks.md) per nome. Fai clic sull'icona di ricerca, inserisci la tua query e seleziona un risultato dall'elenco. Selezionando un PDI si apre il [Menu contestuale PDI](#poi-context-menu), mentre selezionando un preferito o una traccia si aprono i relativi dettagli, dove puoi visualizzare le informazioni e utilizzare azioni rapide.
 
-Se cerchi per nome di categoria, il primo risultato potrebbe mostrare la categoria PDI corrispondente. Fai clic sulla categoria per aprire la vista [Ricerca per categorie](#categories).
+Puoi anche combinare più parti in una sola query. Inserisci una categoria o un marchio insieme al nome di un luogo, ad esempio `Hotel Berlin` o `Billa Bratislava`, per trovare i PDI corrispondenti in quel luogo. Inserisci due categorie oppure una categoria e una proprietà, ad esempio `Fuel Diesel` o `Cafe Vegan`, per trovare i luoghi che corrispondono a entrambe.
+
+Se cerchi per nome di categoria, il primo risultato potrebbe mostrare la categoria PDI corrispondente. I nomi delle categorie possono essere inseriti in lingue diverse, ad esempio `bank` o `банк`. Fai clic sulla categoria per aprire la vista [Ricerca per categorie](#categories).
 
 ![Opzioni di ricerca](@site/static/img/web/search_bar.png)
 
@@ -58,6 +55,8 @@ Apri la scheda di ricerca per accedere a Esplora — i risultati di Esplora veng
 ## Menu contestuale PDI {#poi-context-menu}
 
 Indipendentemente dall'opzione di ricerca che usi (Barra di ricerca, Categorie o Esplora), selezionando un PDI sulla mappa o nell'elenco dei risultati si apre il Menu contestuale PDI. Il menu contestuale è il luogo principale per visualizzare le informazioni sui PDI ed eseguire azioni comuni. Combina i dettagli sui PDI (come posizione e dati correlati) con azioni rapide (ad esempio, salvare, condividere o avviare la pianificazione del percorso e la navigazione).
+
+Per tornare all'elenco dei risultati, fai clic su *Indietro*. Per chiudere il menu, fai clic su *Chiudi* o premi Esc. La chiusura del menu cancella la ricerca, quindi la volta successiva Cerca si aprirà senza i risultati precedenti. La mappa rimane nella posizione corrente.
 
 ### Dettagli PDI {#poi-details}
 
@@ -81,86 +80,6 @@ Il **Menu contestuale PDI** include pulsanti di azione per attività comuni. Usa
 - **Condividi** — genera un link condivisibile che apre il PDI direttamente in OsmAnd Web. Il link include il nome del PDI, il tipo e le coordinate (pin).
 - **Indicazioni da** — imposta il PDI selezionato come punto di partenza e apre il pannello del percorso in modo da poter scegliere una destinazione e un profilo.
 - **Navigazione** — imposta il PDI selezionato come punto di destinazione per la [navigazione](../web/web-navigation.md#start-a-route).
-
-<!--
-Click the **🔍 button** to start the search. Enter a query in the **Search Line** and click on POI to open the [**POI Context Menu**](#explore-poi-data), where you can view the tags information.
-
-If you search by **Category name**, the first result will display the category of that POI.  If you click on a POI category, the [**Categories Search**](#categories) window opens.
-
-![Context Menu POI](@site/static/img/web/context_menu_poi.png)
-
-
-Click the chosen POI on the map or in the result list opens the **POI Context Menu**. This menu provides the following data and links:
-
-- **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
-- **🔍 Button**. Moves the map to the POI's location.  
-- **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
-- **Location**. Displays the coordinates of the POI.  
-- **Online Photos**. Provides Wikimedia data related to the POI, if available. Click the *Show All* to open the [Photo Gallery](#photo-gallery).
-- **Object Data**. Includes details such as contacts, social media links, Wikipedia links, descriptions, inscriptions, etc.  
-- **OSM ID**. The OpenStreetMap ID of the POI.  
-- **Coordinates**. Clicking the coordinates allows you to copy them.
-
-![Context Menu POI](@site/static/img/web/context_menu_poi_1.png)
-
-## Categories {#categories}
-
-You can choose and display one POI category on the map in the **Categories Menu**:
-
-- Select from the **6 most popular categories**.  
-- Or click **Show All** to open the full list of POI categories.
-
-![Categories POI](@site/static/img/web/categories_poi.png)
-
-Click the selected  POI on the map or in the results list to open the **POI Context Menu**. This menu provides the following data and links:
-
-- **Name and Icon**. Displays the name and icon of the POI.  
-- **★ Button (*Add to Favorites*)**. Allows you to save the chosen POI as a [favorite](../web/web-favorites.md#favorites-actions).  
-- **🔍 Button**. Moves the map to the POI's location.  
-- **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
-- **Location**. Displays the coordinates of the POI.  
-- **Online Photos**. Provides Wikimedia data related to the POI, if available. Click the *Show All* to open the [Photo Gallery](#photo-gallery).
-- **Object Data**. Includes details such as contacts, social media links, Wikipedia links, descriptions, inscriptions, etc.  
-- **OSM ID**. The OpenStreetMap ID of the POI.  
-- **Coordinates**. Clicking the coordinates allows you to copy them.
-
-![Context Menu POI](@site/static/img/web/categories_poi_1.png)
-
-
-## Explore {#explore}
-
-The **Explore** section in the Search menu makes it easier to find places and view points of interest (POIs) with their photos ([Wikidata source](https://www.wikidata.org/)) directly on the map.
-
-
-To get started:
-
-1. Click the **🔍 icon** to open the search tab, which displays popular POI categories and the **Explore** menu below.  
-2. The **Explore** data will automatically be displayed on the map.  
-3. Select **"Show All"** in the Explore section to open the full categories list with the ***Filter*** button at the top.  
-
-   ![Explore menu](@site/static/img/web/explore.png)
-
-4. Pressing the ***Filter* button** opens the Categories menu for "Explore." To refine your search, open the Categories menu and select the items you are interested in.  
-
-   ![Explore menu](@site/static/img/web/explore_cat.png)
-
-### Explore POI data {#explore-poi-data}
-
-Clicking on an image POI opens a new context menu that includes:
-
-- **Name and POI Tag**. Displays the name and general tag of the POI.  
-- **🔍 Button**. Moves the map to the POI's location.  
-- **Distance and Direction**. Shows the distance and direction from your location to the chosen POI.  
-- **Location**. Displays the coordinates of the POI.  
-- **Description**. Provides additional information about the POI.  
-- **Online Photos**. Displays Wikimedia data related to the POI, if available. Click the *Show All* to open the [Photo Gallery](#photo-gallery).  
-- **Object Data**. Includes details such as contacts, social media links, Wikipedia links, etc.  
-- **OSM ID**. Displays the OpenStreetMap ID of the POI.  
-- **Coordinates**. By clicking on the coordinates, you can copy them.
-
-![Explore menu](@site/static/img/web/poi_context.png)
--->
 
 ### Galleria fotografica {#photo-gallery}
 

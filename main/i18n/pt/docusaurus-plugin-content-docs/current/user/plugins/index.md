@@ -1,5 +1,5 @@
 ---
-source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
+source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
 sidebar_position: 18
 title:  Plugins
 ---
@@ -74,7 +74,7 @@ Os Plugins do OsmAnd podem aumentar esses grupos de Recursos: **Camadas**, **Wid
 | [Mapas online](#online-maps) |[Camada de mapa](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [Gravação de viagem](#trip-recording) | [Widget](../plugins/trip-recording.md#widgets), [Perfil](../plugins/trip-recording.md#recording-settings) |
 | [Topografia](#topography) | [Camada de mapa](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [Relevo 3D](#topography) 🤖  | [Camada de mapa](../plugins/topography.md#3d-relief) |
+| [Relevo 3D](#topography) | [Camada de mapa](../plugins/topography.md#3d-relief) |
 | [Clima](../plugins/weather.md) | [Camada de mapa](../plugins/weather.md#display-weather-on-the-map), [Widget](../plugins/weather#weather-widgets), [Tela](../plugins/weather.md#weather-forecast-screen) |
 | [Visualização de mapa náutico](#nautical-map-view) | [Estilo de mapa](../plugins/nautical-charts.md#nautical-map-style), [Perfil](../plugins/nautical-charts.md#nautical-profile)  |
 | [Visualização de mapa de esqui](#ski-map-view) | [Estilo de mapa](../plugins/ski-maps.md#set-winter-and-ski-map-style), [Perfil](../plugins/ski-maps.md#skiing-profile) |
@@ -82,13 +82,13 @@ Os Plugins do OsmAnd podem aumentar esses grupos de Recursos: **Camadas**, **Wid
 |[Posição de estacionamento](#parking-position) | [Menu de contexto](../plugins/parking.md#set-a-spot), [Widget](../plugins/parking.md#parking-widget) |
 |[Edição OpenStreetMap](#openstreetmap-editing)| [Camada de mapa](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [Camada de mapa](../plugins/mapillary.md#map-layer), [Menu de contexto](../plugins/mapillary.md#map-context-menu) , [Widget](../plugins/mapillary.md#mapillary-widget)|
-|[Sensores externos](#external-sensors) 🤖  | [Widget](../plugins/external-sensors.md#widgets) |
+|[Sensores externos](#external-sensors) | [Widget](../plugins/external-sensors.md#widgets) |
 |[Métricas do veículo](#vehicle-metrics)  | [Configurações personalizadas](../plugins/vehicle-metrics#scanner-settings), [Widget](../plugins/vehicle-metrics#widgets) |
 |[Astronomia](#astronomy)  | [Tela](../plugins/astronomy.md#star-map-screen), [Menu de Contexto](../plugins/astronomy.md#context-menu) |
 |[Acessibilidade](#accessibility) 🤖  | [Configurações personalizadas](../plugins/accessibility.md#plugin-settings) |
 |[Desenvolvimento OsmAnd](#osmand-development) | [Configurações personalizadas](../plugins/development.md#plugin-settings) |
 |[OsmAnd Tracker](#osmand-tracker) 🤖  | [Camada de mapa](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map), [Widget](../plugins/osmand-tracker.md#tracker-widget), [Menu de contexto](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[Rastreador de embarcações AIS](#ais-vessel-tracker) 🤖  |  [Configurações personalizadas](../plugins/ais-tracker.md#plugin-settings) |
+|[Rastreador de embarcações AIS](#ais-vessel-tracker) |  [Configurações personalizadas](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### Configurações do Plugin {#plugin-settings}
@@ -126,7 +126,7 @@ Os seguintes plugins fornecem suas próprias configurações:
 |:------------|:-------|
 | [Gravação de viagem](#trip-recording) | Configurar os [modos de operação](../plugins/trip-recording.md#required-setup-parameters) da gravação de viagem |
 | [Clima](#weather) | Configurar unidades de medida para exibir eventos climáticos |
-|[Notas de áudio/vídeo](#audiovideo-notes) 🤖  | Selecionar [formato de vídeo, tempo de armazenamento, etc.](../plugins/audio-video-notes.md#plugin-settings) |
+|[Notes de áudio/vídeo](#audiovideo-notes) 🤖  | Selecionar [formato de vídeo, tempo de armazenamento, etc.](../plugins/audio-video-notes.md#plugin-settings) |
 |[Edição OpenStreetMap](#openstreetmap-editing)| Especificar [login](../plugins/osm-editing.md#settings)  do usuário |
 |  [Sensores externos](#external-sensors) 🤖  | Conectar a dispositivo externo [Configurações](../plugins/external-sensors.md#required-setup-parameters) |
 |  [Acessibilidade](#accessibility) 🤖  | [Configurações](../plugins/accessibility.md#plugin-settings) permitem usar os [recursos de acessibilidade do Android](https://www.android.com/accessibility/) dentro do OsmAnd. |

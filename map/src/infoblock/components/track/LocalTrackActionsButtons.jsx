@@ -17,7 +17,7 @@ export default function LocalTrackActionsButtons({ track }) {
     const { t } = useTranslation();
     const [openDownloadDialog, setOpenDownloadDialog] = useState(false);
     const [openUnavailableDialog, setOpenUnavailableDialog] = useState(false);
-    const isSaveDisabled = !ltx.loginUser;
+    const isSaveDisabled = !ltx.loginUser || ctx.processRouting;
 
     if (!track?.name) {
         return null;

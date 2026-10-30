@@ -151,7 +151,7 @@ OsmAnd dosyaları [*Dosyalar*](https://apps.apple.com/us/app/files/id1232058109)
 | Özellikler | Sürüm 1 | Sürüm 2 (OpenGL) |
 |:---|:--- |:--- |
 | Çapraz platform | iOS sürümünde kullanılmaz. | Her iki sürüme de uyar. |
-| GPU / CPU bağımlı | Düşük performanslı veya eski cihazlar için önerilir. | Güçlü oluşturma motoru. <br /> Yalnızca [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) ve sonraki sürümler için ve [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released) için test modunda mevcuttur. |
+| GPU / CPU bağımlı | Düşük performanslı veya eski cihazlar için önerilir. | Güçlü oluşturma motoru. <br /> Yalnızca [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) ve sonraki sürümler için ve [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released) için test modunda mevcuttur. |
 | 3B mod | Haritayı 2B olarak görüntülemek mümkündür ve [3B görünüm](../widgets/map-buttons.md#3d-mode) elde etmek için görüntüleme açısını değiştirebilirsiniz. | Haritayı 2B ve [3B](../widgets/map-buttons.md#3d-mode) olarak görüntüleyebilirsiniz. |
 | Harita gösterimi | Tüm harita bir dizi döşeme olarak oluşturulur ve işaretleyiciler, çizgiler ve metin zaten bu döşemelerin içindedir. | İlk olarak, tüm döşeme paketi oluşturulur ve ardından mevcut semboller haritaya [katman katman](../../technical/algorithms/map-rendering-layers.md) uygulanır. |
 | Şeffaf semboller katmanı / alt katmanı | Tüm ayarları destekler. | Vektör metninin üzerinde bir raster katmanı desteklemez. |

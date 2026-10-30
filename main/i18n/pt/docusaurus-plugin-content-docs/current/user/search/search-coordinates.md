@@ -18,11 +18,11 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 A **pesquisa de coordenadas do OsmAnd** permite encontrar um local específico por latitude e longitude. Este tipo de pesquisa ajuda a identificar um local com precisão. É especialmente útil para áreas que não possuem endereços precisos, ou para tarefas geográficas específicas, como a criação de cercas geográficas ou posicionamento preciso em espaço aberto.
 
-O OsmAnd oferece várias maneiras de aceder à *ferramenta de pesquisa → [separador de pesquisa de endereços](../search/search-address.md)*, onde a **pesquisa de coordenadas** está localizada.
+O OsmAnd oferece várias maneiras de acessar a *ferramenta de pesquisa → [aba de pesquisa de endereços](../search/search-address.md)*, onde a **pesquisa de coordenadas** está localizada.
 
-- O [botão de pesquisa](../widgets/map-buttons.md#search) no ecrã da aplicação do mapa.
-- Vá para o *Menu* principal do Android *→ Pesquisar → separador Endereço → Pesquisar Coordenadas*.
-- Ao preparar-se para iniciar um percurso, toque em *Navegação → Definir destino → Campo de pesquisa → separador Endereço → Pesquisar Coordenadas*.  
+- O [botão de pesquisa](../widgets/map-buttons.md#search) na tela da aplicação do mapa.
+- Vá para o *Menu* principal do Android *→ Pesquisar → aba Endereço → Pesquisar Coordenadas*.
+- Ao se preparar para iniciar um percurso, toque em *Navegação → Definir destino → Campo de pesquisa → aba Endereço → Pesquisar Coordenadas*.  
 
 
 ## Como usar {#how-to-use}
@@ -45,7 +45,7 @@ O OsmAnd oferece várias maneiras de aceder à *ferramenta de pesquisa → [sepa
 
 As coordenadas podem ser inseridas em qualquer formato disponível, mas o local encontrado é exibido no formato especificado em *Configurar perfil → Configurações gerais → Unidades e formatos*.
 
-- Para usar a pesquisa de coordenadas, pode digitá-las em cada campo correspondente individualmente, ou colar coordenadas previamente copiadas no campo de pesquisa ou inseri-las nele. A aplicação solicita que selecione um local adequado.
+- Para usar a pesquisa de coordenadas, você pode digitá-las em cada campo correspondente individualmente, ou colar coordenadas previamente copiadas no campo de pesquisa ou inseri-las nele. A aplicação solicita que selecione um local adequado.
 - A pesquisa de coordenadas converte automaticamente um formato de coordenada para outro quando o formato especificado é alterado no campo com a sua lista.
 - Toque no local sugerido e o [menu de contexto do mapa](../map/map-context-menu.md#select-any-point-long-tap) abre.
 - Mais informações podem ser encontradas aqui [Coordenadas geográficas](https://en.wikipedia.org/wiki/Geographic_coordinate_system).
@@ -53,9 +53,9 @@ As coordenadas podem ser inseridas em qualquer formato disponível, mas o local 
 
 **Âmbito da função de pesquisa de coordenadas**:
 
-- *Localização precisa*. A pesquisa de coordenadas fornece uma localização precisa. Pode inserir coordenadas precisas obtidas, por exemplo, de outras fontes, como um mapa, dispositivo GPS ou serviços online.
-- *Locais sem endereço*. As coordenadas são particularmente úteis quando se trata de locais que não possuem um endereço exato, ou quando o endereço é desconhecido. Por exemplo, pode ser uma área remota, um ponto no mar ou um pico de montanha. Ao inserir coordenadas, pode encontrar e navegar para esses locais sem ter que saber o endereço.
-- *Partilha de localização*. A pesquisa por coordenadas oferece uma maneira conveniente de inserir informações. Pode inserir coordenadas manualmente ou copiá-las de outras fontes. Isso pode ser útil ao partilhar locais com outras pessoas ou ao usar coordenadas obtidas anteriormente.
+- *Localização precisa*. A pesquisa de coordenadas fornece uma localização precisa. Você pode inserir coordenadas precisas obtidas, por exemplo, de outras fontes, como um mapa, dispositivo GPS ou serviços online.
+- *Locais sem endereço*. As coordenadas são particularmente úteis quando se trata de locais que não possuem um endereço exato, ou quando o endereço é desconhecido. Por exemplo, pode ser uma área remota, um ponto no mar ou um pico de montanha. Ao inserir coordenadas, você pode encontrar e navegar para esses locais sem ter que saber o endereço.
+- *Compartilhamento de localização*. A pesquisa por coordenadas oferece uma maneira conveniente de inserir informações. Você pode inserir coordenadas manualmente ou copiá-las de outras fontes. Isso pode ser útil ao compartilhar locais com outras pessoas ou ao usar coordenadas obtidas anteriormente.
 
 
 ## Formato de Coordenadas {#coordinate-format}
@@ -66,7 +66,7 @@ Existem várias maneiras de inserir coordenadas para a pesquisa. Para usar cada 
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_degrees_andr.png)  
 
-**<Translate android="true" ids="navigate_point_format_D"/>**. Neste formato, as coordenadas de latitude e longitude são escritas em formato decimal, por exemplo, 52.37022° de latitude e 4.89517° de longitude para Amesterdão. Este método de entrada é fácil de usar e é o mais comum. Pode ler mais sobre o formato de coordenadas decimais [aqui](https://en.wikipedia.org/wiki/Decimal_degrees).  
+**<Translate android="true" ids="navigate_point_format_D"/>**. Neste formato, as coordenadas de latitude e longitude são escritas em formato decimal, por exemplo, 52.37022° de latitude e 4.89517° de longitude para Amsterdã. Este método de entrada é fácil de usar e é o mais comum. Você pode ler mais sobre o formato de coordenadas decimais [aqui](https://en.wikipedia.org/wiki/Decimal_degrees).  
 
 - *Regras de entrada*. As coordenadas de latitude e longitude são escritas em formato decimal, onde a latitude varia de -90 a 90 e a longitude varia de -180 a 180.
 - *Mais comum*. As coordenadas decimais são amplamente utilizadas em aplicações de navegação, dispositivos GPS, mapas web e outros serviços de geoposicionamento.  
@@ -75,7 +75,7 @@ Existem várias maneiras de inserir coordenadas para a pesquisa. Para usar cada 
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_DM_andr.png)  
 
-**<Translate android="true" ids="navigate_point_format_DM"/>**. Neste formato, as coordenadas de latitude e longitude são registadas usando graus e minutos. Por exemplo, 37:46.29 de latitude e -122:25.10 de longitude para São Francisco. Este formato pode ser menos preciso e pode levar mais tempo para ser inserido.
+**<Translate android="true" ids="navigate_point_format_DM"/>**. Neste formato, as coordenadas de latitude e longitude são registradas usando graus e minutos. Por exemplo, 37:46.29 de latitude e -122:25.10 de longitude para São Francisco. Este formato pode ser menos preciso e pode levar mais tempo para ser inserido.
 - *Regras de entrada*. As coordenadas de latitude e longitude são escritas em um formato que usa graus (:) e minutos (:).
 - *Mais comum*. O formato DM é frequentemente encontrado em navegação marítima, aviação, astronomia e sistemas de mapeamento topográfico.
 
@@ -83,7 +83,7 @@ Existem várias maneiras de inserir coordenadas para a pesquisa. Para usar cada 
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_DMS_andr.png)  
 
-**<Translate android="true" ids="navigate_point_format_DMS"/>**. O formato de coordenadas DMS regista coordenadas geográficas onde os valores são dados em graus, minutos e segundos. Graus (DDD) podem assumir valores de 0 a 180 para longitude e 0 a 90 para latitude. Valores positivos indicam longitude leste e latitude norte, e valores negativos indicam longitude oeste e latitude sul. Minutos (MM) podem assumir valores de 0 a 59. Segundos (SS.S) representam a fração decimal de um segundo e também podem variar de 0 a 59.9.
+**<Translate android="true" ids="navigate_point_format_DMS"/>**. O formato de coordenadas DMS registra coordenadas geográficas onde os valores são dados em graus, minutos e segundos. Graus (DDD) podem assumir valores de 0 a 180 para longitude e 0 a 90 para latitude. Valores positivos indicam longitude leste e latitude norte, e valores negativos indicam longitude oeste e latitude sul. Minutos (MM) podem assumir valores de 0 a 59. Segundos (SS.S) representam a fração decimal de um segundo e também podem variar de 0 a 59.9.
 - *Regras de entrada*. As coordenadas de latitude e longitude são escritas em um formato que usa graus (:), minutos (:) e segundos (.).
 - *Mais comum*. O formato DMS é amplamente utilizado em geodésia, aplicações de navegação, cartografia, astronomia e outros campos onde é necessária uma expressão mais detalhada das coordenadas de localização.
 
@@ -91,15 +91,15 @@ Existem várias maneiras de inserir coordenadas para a pesquisa. Para usar cada 
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_UTM_andr.png)  
 
-**<Translate android="true" ids="navigate_point_format_utm"/>**. Neste formato, as coordenadas são especificadas usando a zona UTM, direções Leste e Norte. Por exemplo, para Amesterdão, as coordenadas podem ser aproximadamente as seguintes: zona 31, direção Leste 581000, direção Norte 5809000. A inserção de coordenadas no formato UTM pode exigir alguma familiaridade com o sistema e ser mais complexa do que outros formatos, mas oferece boa precisão e atende aos padrões globais de geoposicionamento. Pode ler mais sobre o formato UTM [aqui](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system).
-- *Regras de entrada*. As coordenadas são registadas em um formato que usa a zona UTM e os deslocamentos Leste e Norte.
+**<Translate android="true" ids="navigate_point_format_utm"/>**. Neste formato, as coordenadas são especificadas usando a zona UTM, direções Leste e Norte. Por exemplo, para Amsterdã, as coordenadas podem ser aproximadamente as seguintes: zona 31, direção Leste 581000, direção Norte 5809000. A inserção de coordenadas no formato UTM pode exigir alguma familiaridade com o sistema e ser mais complexa do que outros formatos, mas oferece boa precisão e atende aos padrões globais de geoposicionamento. Você pode ler mais sobre o formato UTM [aqui](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system).
+- *Regras de entrada*. As coordenadas são registradas em um formato que usa a zona UTM e os deslocamentos Leste e Norte.
 - *Mais comum*. O formato UTM é frequentemente usado em levantamentos, mapeamento e sistemas de informações geográficas para medição e navegação.
 
 ### Open Location Code {#open-location-code} 
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_OLC_andr.png)  
 
-**<Translate android="true" ids="navigate_point_format_olc"/>**  ((OLC) - 9F2X4WFJ+7W (Open Location Code representa área 9m x 14m)), também conhecido como **Plus Code**, é um sistema global de codificação de localização. É uma combinação de letras e números para indicar a latitude e longitude de qualquer local no planeta. Exemplo de um código OLC para Amesterdão: 9F3WCVWG+FP. Neste exemplo, "9F3WCVWG" indica uma grade grosseira, e "+FP" especifica um local dentro dessa área. Leia mais [aqui](https://en.wikipedia.org/wiki/Open_Location_Code).
+**<Translate android="true" ids="navigate_point_format_olc"/>**  ((OLC) - 9F2X4WFJ+7W (Open Location Code representa área 9m x 14m)), também conhecido como **Plus Code**, é um sistema global de codificação de localização. É uma combinação de letras e números para indicar a latitude e longitude de qualquer local no planeta. Exemplo de um código OLC para Amsterdã: 9F3WCVWG+FP. Neste exemplo, "9F3WCVWG" indica uma grade grosseira, e "+FP" especifica um local dentro dessa área. Leia mais [aqui](https://en.wikipedia.org/wiki/Open_Location_Code).
 - *Regras de entrada*.  
      - O código OLC consiste em 4 a 14 caracteres, que podem ser letras de "C" a "Z" (exceto "I" e "O") e números de "2" a "9".
      - O código começa com um prefixo global que indica um continente ou área.
@@ -111,7 +111,7 @@ Existem várias maneiras de inserir coordenadas para a pesquisa. Para usar cada 
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_MGRS_andr.png)  
 
-**<Translate android="true" ids="navigate_point_mgrs"/>**. Este é um sistema de coordenadas frequentemente usado em aplicações militares. É baseado no sistema UTM e é complementado com uma grade adicional de quadrados. Um exemplo de coordenadas no formato MGRS para um local na Austrália pode ser o seguinte: 55HBE1234567890. Neste exemplo, "55H" representa a zona MGRS e "BE" representa o quadrado em que o local está localizado. "123456" representa o deslocamento para leste e "7890" representa o deslocamento para norte dentro desse quadrado. MGRS são amplamente utilizados em áreas que exigem alta precisão e georreferenciamento. São particularmente úteis em ambientes onde os endereços podem não ser claros ou disponíveis, como operações militares ou expedições em áreas remotas. Pode ler mais sobre o formato MGRS [aqui](https://en.wikipedia.org/wiki/Military_Grid_Reference_System).  
+**<Translate android="true" ids="navigate_point_mgrs"/>**. Este é um sistema de coordenadas frequentemente usado em aplicações militares. É baseado no sistema UTM e é complementado com uma grade adicional de quadrados. Um exemplo de coordenadas no formato MGRS para um local na Austrália pode ser o seguinte: 55HBE1234567890. Neste exemplo, "55H" representa a zona MGRS e "BE" representa o quadrado em que o local está localizado. "123456" representa o deslocamento para leste e "7890" representa o deslocamento para norte dentro desse quadrado. MGRS são amplamente utilizados em áreas que exigem alta precisão e georreferenciamento. São particularmente úteis em ambientes onde os endereços podem não ser claros ou disponíveis, como operações militares ou expedições em áreas remotas. Você pode ler mais sobre o formato MGRS [aqui](https://en.wikipedia.org/wiki/Military_Grid_Reference_System).  
 - *Regras de entrada*. As coordenadas consistem em uma zona MGRS, um quadrado e mais dois dígitos indicando os deslocamentos leste e norte.
 - *Mais comum*. O formato MGRS é amplamente utilizado em navegação e comunicações militares, e também pode ser útil para entusiastas de atividades ao ar livre e caminhantes.
 
@@ -119,39 +119,39 @@ Existem várias maneiras de inserir coordenadas para a pesquisa. Para usar cada 
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
-**Sistema de coordenadas suíço**. Swiss Grid (CH1903) e Swiss Grid (CH1903+) são sistemas de coordenadas amplamente utilizados na Suíça para posicionamento. Ambos os formatos são baseados no sistema CH1903, que foi introduzido em 1903 e é baseado na projeção da Grade Internacional Suíça. Exemplo de coordenadas no formato Swiss Grid (CH1903) — Leste: 600000; Norte: 200000. No formato Swiss Grid (CH1903+) — Leste: 600300; Norte: 200400. Pode ler mais sobre o sistema de coordenadas geográficas Swiss Grid [aqui](https://en.wikipedia.org/wiki/Swiss_coordinate_system).  
+**Sistema de coordenadas suíço**. Swiss Grid (CH1903) e Swiss Grid (CH1903+) são sistemas de coordenadas amplamente utilizados na Suíça para posicionamento. Ambos os formatos são baseados no sistema CH1903, que foi introduzido em 1903 e é baseado na projeção da Grade Internacional Suíça. Exemplo de coordenadas no formato Swiss Grid (CH1903) — Leste: 600000; Norte: 200000. No formato Swiss Grid (CH1903+) — Leste: 600300; Norte: 200400. Você pode ler mais sobre o sistema de coordenadas geográficas Swiss Grid [aqui](https://en.wikipedia.org/wiki/Swiss_coordinate_system).  
  - *Regras de entrada*.  
     - As coordenadas no formato CH1903 consistem em dois componentes: Leste e Norte.
     - Leste está em metros a partir de um ponto chamado Eixo de Lucerna (zero Leste).
     - Norte é dado em metros a partir do equador.
     - O formato CH1903+ usa as mesmas regras de entrada que o CH1903, mas com valores mais precisos.
-    - CH1903+ inclui correções para contabilizar deslocamentos nas coordenadas causados por mudanças nos movimentos tectónicos na Suíça.
+    - CH1903+ inclui correções para contabilizar deslocamentos nas coordenadas causados por mudanças nos movimentos tectônicos na Suíça.
 - *Mais comum*. O Swiss Grid (CH1903) e o Swiss Grid (CH1903+) são usados na Suíça para medições geodésicas, cartografia, sistemas de informações geográficas e construção e engenharia. Esses formatos fornecem um sistema de coordenadas local específico para a Suíça.
 
 ### Sistema de Localizador Maidenhead (somente Android) {#maidenhead-locator-system}
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/coordinates_search_maidenhead.webp)
 
-**Maidenhead**. Este é um sistema de geocódigo usado principalmente por operadores de rádio amador. Codifica localizações geográficas em uma sequência curta de letras e dígitos, tornando-o conveniente para identificar posições e trocar informações de localização. Um exemplo de coordenadas no formato Maidenhead é KN29AS 19CX. O primeiro par de letras identifica um campo grande, seguido por dígitos e pares de letras adicionais que aumentam a precisão da localização. Pode ler mais sobre o Sistema de Localizador Maidenhead [aqui](https://en.wikipedia.org/wiki/Maidenhead_Locator_System).  
+**Maidenhead**. Este é um sistema de geocódigo usado principalmente por operadores de rádio amador. Codifica localizações geográficas em uma sequência curta de letras e dígitos, tornando-o conveniente para identificar posições e trocar informações de localização. Um exemplo de coordenadas no formato Maidenhead é KN29AS 19CX. O primeiro par de letras identifica um campo grande, seguido por dígitos e pares de letras adicionais que aumentam a precisão da localização. Você pode ler mais sobre o Sistema de Localizador Maidenhead [aqui](https://en.wikipedia.org/wiki/Maidenhead_Locator_System).  
 - *Regras de entrada*. As coordenadas consistem em pares alternados de letras e dígitos. Localizadores mais longos fornecem maior precisão posicional.  
 - *Mais comum*. O Sistema de Localizador Maidenhead é amplamente utilizado por operadores de rádio amador para localização de estações, comunicação por rádio e concursos.
 
-Para cada perfil separadamente, pode definir um formato de coordenada diferente. Para fazer isso, vá para *Configurações gerais → [Formato de coordenadas](../personal/profiles.md#units--formats)*.
+Para cada perfil separadamente, você pode definir um formato de coordenada diferente. Para fazer isso, vá para *Configurações gerais → [Formato de coordenadas](../personal/profiles.md#units--formats)*.
 
 
 ## Personalizar formato de coordenadas (somente Android) {#customize-coordinate-format}
 
 ![Pesquisar Coordenadas Android](@site/static/img/search/customising_format.webp) ![Pesquisar Coordenadas Android](@site/static/img/search/searching_format.webp)
 
-Pode personalizar a lista de formatos de coordenadas disponíveis para o perfil atual.  
+Você pode personalizar a lista de formatos de coordenadas disponíveis para o perfil atual.  
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
 
-Neste ecrã pode:  
+Nesta tela você pode:  
 - Tocar no botão *Editar* para definir o formato de coordenadas primário, reordenar ou remover formatos de coordenadas.
 - Tocar em + para adicionar outro formato de coordenadas.
-- Abrir o menu ⋮ para restaurar a lista predefinida de formatos de coordenadas ou copiar formatos de coordenadas de outro perfil.
+- Abrir o menu ⋮ para restaurar a lista padrão de formatos de coordenadas ou copiar formatos de coordenadas de outro perfil.
 
-Ao pesquisar por coordenadas, pode selecionar um formato de coordenadas na lista Recentes ou tocar em *Selecionar outro formato* para navegar por todos os sistemas de coordenadas disponíveis. Também pode pesquisar pelo nome do sistema de coordenadas ou pelo código EPSG.
+Ao pesquisar por coordenadas, você pode selecionar um formato de coordenadas na lista Recentes ou tocar em *Selecionar outro formato* para navegar por todos os sistemas de coordenadas disponíveis. Você também pode pesquisar pelo nome do sistema de coordenadas ou pelo código EPSG.
 
 
 <!--

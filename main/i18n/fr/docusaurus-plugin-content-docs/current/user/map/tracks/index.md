@@ -1,5 +1,5 @@
 ---
-source-hash: 67dbee3b2cb3419f887082bd114b275864806c521d170897985887189af8edad
+source-hash: 40444298714f3efdf33ba91bcf4a1ae66aa667d887d5d943cfe77e1fa53575ee
 title:  Traces
 sidebar_position: 2
 ---
@@ -81,7 +81,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 </Tabs>
 
-Dans l'onglet [Mes lieux *→* Traces](../../personal/tracks/manage-tracks.md#manage-tracks) pour afficher la trace sur la carte, vous devez :
+Dans l'ongtab [Mes lieux *→* Traces](../../personal/tracks/manage-tracks.md#manage-tracks) pour afficher la trace sur la carte, vous devez :
 
 - *Android* - touchez le *menu à trois points* dans le champ de la trace requise.
 - *iOS* - appuyez longuement sur la trace requise dans la liste.
@@ -170,7 +170,7 @@ Appuyez sur le bouton [Ma position](../../map/interact-with-map.md#my-position-a
 - [Apparence de la trace](./appearance.md)
 - [Menu contextuel de la trace](./track-context-menu.md)
 - [Naviguer en suivant une trace](../../navigation/setup/gpx-navigation.md)
-- Article de blog [Itinéraires sur la carte](https://docs.osmand.net/blog/routes)
+- Article de blog [Itinéraires sur la carte](https://osmand.net/blog/routes)
 - [Configurer la carte](../../map/configure-map-menu.md)  
 - [Traces GPX](../../personal/tracks/index.md)  
 - [Planifier un itinéraire](../../plan-route/index.md)  

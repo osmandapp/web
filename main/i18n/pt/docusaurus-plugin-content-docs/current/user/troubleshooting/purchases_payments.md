@@ -1,8 +1,9 @@
 ---
-source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
+source-hash: 3e8ac9992e039c617c093a24702772bc6cdb0c520e1dcadb77013d26c7264441
 sidebar_position: 2
 title: Compras e Pagamentos
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
@@ -10,7 +11,6 @@ import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
 import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
-
 
 
 ## Compras entre plataformas {#cross-platform-purchases}
@@ -40,7 +40,7 @@ import Translate from '@site/src/components/Translate.js';
 
 2. Se você **já tem** uma conta OsmAnd Cloud:
 
-    - Certifique-se de estar logado na conta OsmAnd Cloud no dispositivo onde você fez a compra.
+    - Certifique-se de estar logado na conta OsmAnd Cloud no dispositivo onde você fez a compra.  
     - Navegue até *Menu OsmAnd → Configurações → OsmAnd Cloud → Já tenho uma conta*.
     - Após fazer login em sua conta, vá para *Menu OsmAnd → Configurações → Compras*.
     - Toque em **Restaurar compras** para sincronizar a compra com sua conta.
@@ -88,8 +88,12 @@ Em **20 de agosto de 2025**, a Amazon encerrará a Amazon Appstore para disposit
 
 Se você fez compras via Amazon, precisará **transferir suas assinaturas (Pro, Maps+) ou compras no aplicativo (Maps+)** para outra plataforma.
 
-➡️ Atualmente, [a transferência entre plataformas é possível para assinaturas e compras no aplicativo](../purchases/cross.md).
+➡️ Atualmente, [a transferência entre plataformas é possível para assinaturas e compras no aplicativo](../purchases/cross.md).  
 ❗ **OsmAnd+** (aplicativo autônomo) não pode ser transferido entre plataformas via conta OsmAnd Cloud. Para assistência, entre em contato com **support@osmand.net**.
+
+Se sua compra na Amazon não puder ser ativada automaticamente por meio do OsmAnd Cloud, entre em contato com o Suporte OsmAnd — **support@osmand.net** — para transferência manual. Forneça o número da transação da Amazon que começa com D01-. Também é recomendável enviar uma captura de tela mostrando o produto adquirido.
+
+Compras feitas há mais de 10 anos não podem ser transferidas.
 
 ## Como restaurar a compra do plugin Topografia (anteriormente Curvas de Nível) {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 
@@ -103,6 +107,11 @@ Para restaurar o [plugin Topografia](https://play.google.com/store/apps/details?
 ## Como identificar se o OsmAnd Unlimited está ativo {#how-to-identify-if-osmand-unlimited-is-active}
 
 Navegue até *Menu → Baixar mapas* e toque no contador de mapas (o campo rotulado *Versão gratuita. X downloads restantes*). Se o OsmAnd Unlimited estiver ativo, a exibição mostrará o armazenamento restante do dispositivo em vez do número de downloads gratuitos.
+
+
+## Posso obter a versão completa do OsmAnd como um aplicativo separado para iOS? {#can-i-get-the-full-version-of-osmand-as-a-separate-app-for-ios}
+
+Para iOS, existe apenas uma versão do OsmAnd disponível. Para acessar a versão completa, você precisa desbloquear funções adicionais por meio de compras no aplicativo.
 
 
 ## O que significam 5 ou 7 downloads gratuitos? {#what-do-5-or-7-free-downloads-mean}
@@ -119,19 +128,19 @@ Se você usou todos os 5 (iOS) ou 7 (Android) downloads gratuitos, você pode re
 
 Se você não receber o **código de verificação** ao criar uma conta **OsmAnd Cloud**, siga estas etapas para resolver o problema:
 
-1. Verifique seu endereço de e-mail.
-    Certifique-se de ter digitado o **endereço de e-mail correto**. O e-mail deve corresponder ao usado para comprar o **OsmAnd Pro** ou registrar sua conta **OsmAnd Cloud**.
+1. Verifique seu endereço de e-mail.  
+    Certifique-se de ter digitado o **endereço de e-mail correto**. O e-mail deve corresponder ao usado para comprar o **OsmAnd Pro** ou registrar sua conta **OsmAnd Cloud**.  
 
-2. Verifique as pastas de spam.
-    Às vezes, o e-mail de verificação pode ser filtrado como spam. Procure um e-mail do **OsmAnd** em suas pastas de **Spam**, **Lixo Eletrônico** ou **Promoções**.
+2. Verifique as pastas de spam.  
+    Às vezes, o e-mail de verificação pode ser filtrado como spam. Procure um e-mail do **OsmAnd** em suas pastas de **Spam**, **Lixo Eletrônico** ou **Promoções**.  
 
-3. Aguarde a chegada do código.
-    Em alguns casos, o e-mail do código de ativação pode estar **atrasado**. Evite **múltiplas tentativas de ativação** em um curto período, pois isso pode causar atrasos adicionais.
+3. Aguarde a chegada do código.  
+    Em alguns casos, o e-mail do código de ativação pode estar **atrasado**. Evite **múltiplas tentativas de ativação** em um curto período, pois isso pode causar atrasos adicionais.  
 
-4. Tente reenviar o código.
-    Retorne à **tela de login do OsmAnd Cloud** e selecione **Reenviar Código**, se disponível. Aguarde alguns minutos antes de solicitar outro código.
+4. Tente reenviar o código.  
+    Retorne à **tela de login do OsmAnd Cloud** e selecione **Reenviar Código**, se disponível. Aguarde alguns minutos antes de solicitar outro código.  
 
-5. Verifique as restrições do servidor de e-mail.
+5. Verifique as restrições do servidor de e-mail.  
     Se você estiver usando um **domínio de e-mail corporativo ou personalizado**, verifique com seu **provedor de e-mail** para garantir que o e-mail não esteja sendo bloqueado. Considere usar um serviço de e-mail diferente (por exemplo, Gmail, Outlook) se os problemas persistirem.
 
 <!--

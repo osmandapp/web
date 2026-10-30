@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title:  Tracks verwalten
 ---
@@ -204,7 +204,7 @@ Sobald Sie Ihre Auswahl getroffen haben, stehen folgende Schritte zur Verfügung
 
 - **Verschieben** — Sie können Ihre Daten organisieren, indem Sie ausgewählte Tracks und Ordner in andere Ordner verschieben.
 
-- [Aktivität ändern](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Diese Aktion ermöglicht es Ihnen, den Aktivitätstyp für den ausgewählten Track zu ändern, z. B. in *Auto*, *Abenteuer-Motorsport*, *Rucksackwandern* oder andere.
+- [Aktivität ändern](../../map/tracks/track-context-menu.md#track-activity-type) — Diese Aktion ermöglicht es Ihnen, den Aktivitätstyp für den ausgewählten Track zu ändern, z. B. in *Auto*, *Abenteuer-Motorsport*, *Rucksackwandern* oder andere.
 
 - [Erscheinungsbild ändern](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Mit dieser Option können Sie das Erscheinungsbild ausgewählter Tracks anpassen, um sie auf der Karte sichtbarer und erkennbarer zu machen.
 

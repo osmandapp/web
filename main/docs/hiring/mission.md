@@ -1,4 +1,5 @@
 ---
+draft: true
 sidebar_position: 1
 title: OsmAnd Mission
 ---

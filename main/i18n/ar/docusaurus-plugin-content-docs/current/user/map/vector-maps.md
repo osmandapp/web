@@ -1,5 +1,5 @@
 ---
-source-hash: 675808bd2d06c051371b3e4be495bfa786f4b573accd175a78fb6d095cc39471
+source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
 sidebar_position: 5
 title:  الخرائط المتجهة 
 ---
@@ -409,7 +409,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+![عرض خطوط العمق البحري](@site/static/img/map/nautical_depth_width_and.png)  ![لون خطوط العمق البحري](@site/static/img/map/nautical_depth_color_and.png)
 
 </TabItem>
 
@@ -417,7 +417,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+![عرض خطوط العمق البحري](@site/static/img/map/nautical_depth_width_ios.png)  ![لون خطوط العمق البحري](@site/static/img/map/nautical_depth_color_ios.png)
 
 </TabItem>
 
@@ -480,7 +480,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 افتراضيًا، ستظهر حدود الخرائط عند التكبير إلى المستوى 7 وستختفي عند مستوى التكبير 3 وما دونه.
 
-:::tip Color Show borders of downloaded maps
+:::tip لون إظهار حدود الخرائط التي تم تنزيلها
 عند تمكين ميزة *إظهار حدود الخرائط التي تم تنزيلها*، يتم تلوين الخرائط التي تم تنزيلها باللون **الأخضر** في كل من إصداري Android و iOS من OsmAnd.  
 
 في Android، تظهر الخرائط المؤرشفة باللون **البرتقالي**. في iOS، يتم أيضًا تمييز الخرائط التي يمكن تحديثها باللون **البرتقالي**.
@@ -488,7 +488,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 ### شبكة الإحداثيات {#coordinates-grid}
 
-:::tip Purchase
+:::tip شراء
 تخصيص ألوان شبكة الإحداثيات هو [ميزة مدفوعة](../purchases/index.md).  
 :::
 
@@ -498,17 +498,38 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 
 <TabItem value="android" label="Android">  
 
-![قائمة شبكة الإحداثيات](@site/static/img/map/coordinates_grid_settings_andr.png)
+![قائمة شبكة الإحداثيات](@site/static/img/map/coordinates_grid_settings_andr.png) ![قائمة شبكة الإحداثيات](@site/static/img/map/coordinates_grid_format_andr.webp)
+
+تضيف ميزة **شبكة الإحداثيات** شبكة مرجعية فوق الخريطة، مما يتيح لك تصور خطوط الطول والعرض بناءً على أنظمة إحداثيات مختلفة. هذه الميزة مفيدة للمرجعية الدقيقة للمواقع والملاحة الجغرافية المكانية. 
+
+يمكنك تكوين الخيارات التالية:
+- **مستويات التكبير:** قم بتعيين الحد الأدنى والأقصى لمستويات التكبير (2 - 22) التي تكون الشبكة مرئية عندها.
+- **موضع التسميات:** اختر بين *الحواف* (افتراضي) أو *الوسط* لتسميات الشبكة.
+- **لون الشبكة:** متاح بشكل منفصل للوضع النهاري/الليلي. 
+- **تنسيق الإحداثيات:** اختر من بين عدة تنسيقات متاحة (انظر القائمة أدناه).
+
+***تنسيقات الإحداثيات المتاحة:***
+
+- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (درجات، دقائق، ثوانٍ)
+- **WGS84** (EPSG:4326) - **DD.DDDDD°** (درجات عشرية - التنسيق الافتراضي لـ WGS84)
+- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (درجات، دقائق عشرية)
+- **UTM** (EPSG:6387، نظام مركاتور المستعرض العالمي - نظام شبكي قائم على المناطق). الحد الأدنى لمستوى التكبير هو 9، ويتم عرض منطقة UTM واحدة فقط في كل مرة، حيث يتم فصل المناطق بخطوط طول كل 6 درجات.
+- **OLC** (رمز الموقع المفتوح، ويُعرف أيضًا باسم Plus Code)
+- **MGRS** (نظام الإسناد الشبكي العسكري)
+- **النظام الإحداثي السويسري** - الشبكة السويسرية (CH1903) والشبكة السويسرية (CH1903+)
+- **Maidenhead** (نظام محدد مواقع Maidenhead)
+
+يعرض قسم **الأخيرة** أنظمة الإحداثيات المستخدمة مؤخرًا. لإضافة نظام إحداثيات مدعوم آخر، انقر على *تحديد تنسيق آخر*. يمكنك البحث باسم نظام الإحداثيات أو رمز EPSG، ثم انقر على *+* لإضافته إلى القائمة.
+
+افتراضيًا، يستخدم التطبيق تنسيق الإحداثيات المحدد في [الإعدادات العامة](../personal/profiles.md#units--formats)، ولكن يمكنك تغييره مباشرة في هذه القائمة.
+
+[الإجراء السريع](../widgets/quick-action.md#overview): يمكنك أيضًا إضافة مفتاح تبديل سريع *إظهار/إخفاء شبكة الإحداثيات* إلى مجموعة [تكوين الخريطة](../widgets/quick-action.md#configure-map) للوصول السريع.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
 ![إعدادات شبكة الإحداثيات iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-</TabItem>
-
-</Tabs>
 
 تضيف ميزة **شبكة الإحداثيات** شبكة مرجعية فوق الخريطة، مما يتيح لك تصور خطوط الطول والعرض بناءً على أنظمة إحداثيات مختلفة. هذه الميزة مفيدة للمرجعية الدقيقة للمواقع والملاحة الجغرافية المكانية. 
 
@@ -529,6 +550,10 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 افتراضيًا، يستخدم التطبيق تنسيق الإحداثيات المحدد في [الإعدادات العامة](../personal/profiles.md#units--formats)، ولكن يمكنك تغييره مباشرة في هذه القائمة.
 
 [الإجراء السريع](../widgets/quick-action.md#overview): يمكنك أيضًا إضافة مفتاح تبديل سريع *إظهار/إخفاء شبكة الإحداثيات* إلى مجموعة [تكوين الخريطة](../widgets/quick-action.md#configure-map) للوصول السريع.
+
+</TabItem>
+
+</Tabs>
 
 
 ## المسارات {#routes}
@@ -562,11 +587,3 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';import Info
 - [المسارات](../map/routes/index.md)
 - [استيراد / تصدير](../personal/import-export.md)
 - [مخططات لوحة الألوان](../personal/color-palette-schemes.md)
-
-<!--
-## Map Legend {#map-legend}
-
-The map legend serves as a key to understanding the symbols used in OsmAnd maps. It explains the meaning behind various map symbols, including points, lines, and areas. For example, symbols like blue sinuous lines indicate rivers, while different colors and shapes may represent buildings, paths, and routes.  
-
-The legend helps users interpret what they see on the map. You can access the full OsmAnd map legend [here](../map-legend/index.md).
--->

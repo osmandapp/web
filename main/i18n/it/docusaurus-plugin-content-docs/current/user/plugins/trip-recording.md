@@ -1,5 +1,5 @@
 ---
-source-hash: 7c4766417aaa741bcd6e7e3ab65bbc128e0affb311404c65c1dd0e8618261459
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title:  Registrazione tracce
 ---
@@ -134,7 +134,7 @@ Per *Interrompi / Salva / Pausa*:
 
 - Per **Salvare, Mettere in pausa, Avviare** un nuovo segmento o **Terminare** la registrazione, utilizzare i pulsanti [Azione rapida](../widgets/quick-action.md#add-and-delete-actions). Andare su *Menu → Configura schermo → Pulsanti personalizzati → Azione rapida → Aggiungi azione → [Miei luoghi](../widgets/quick-action.md#my-places)* e aggiungere uno o più pulsanti di azione rapida.
 
-- (*Solo Android*) Per **Mettere in pausa** o **Salvare** una traccia in registrazione, utilizzare la [notifica](#notifications) di sistema nell'area di notifica del dispositivo.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Solo Android*) Per **Mettere in pausa** o **Salvare** una traccia in registrazione, utilizzare la [notifica](#notifications) di sistema nell'area di notifica del dispositivo.<br/><br/> ![Mettere in pausa o salvare la registrazione dalla notifica](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Schermata di panoramica {#overview-screen}
@@ -185,7 +185,7 @@ Per una visualizzazione più dettagliata, è possibile **scalare il grafico**:
 | ![dati](@site/static/img/plugins/trip-recording/graph_y-x-combinations_andr.png) |
 
 :::info
-Per maggiori dettagli, potete esplorare il [**Menu contestuale delle tracce**](../map/tracks/track-context-menu.md#options), dove potete gestire varie opzioni relative alle tracce come rinominare, eliminare o aggiungere waypoint. Per regolare l'aspetto delle tracce sulla mappa, visitate la sezione [**Aspetto**](../map/tracks/appearance.md). Se volete aggiungere waypoint specifici alla vostra traccia corrente, consultate la guida [**Punti della traccia**](../map/tracks/track-context-menu.md#points--waypoints). Per qualsiasi modifica, come rinominare una traccia, utilizzate la scheda [**Opzioni**](https://osmand.net/docs/user/map/track-context-menu#options) all'interno del Menu contestuale delle tracce.
+Per maggiori dettagli, potete esplorare il [**Menu contestuale delle tracce**](../map/tracks/track-context-menu.md#options), dove potete gestire varie opzioni relative alle tracce come rinominare, eliminare o aggiungere waypoint. Per regolare l'aspetto delle tracce sulla mappa, visitate la sezione [**Aspetto**](../map/tracks/appearance.md). Se volete aggiungere waypoint specifici alla vostra traccia corrente, consultate la guida [**Punti della traccia**](../map/tracks/track-context-menu.md#points--waypoints). Per qualsiasi modifica, come rinominare una traccia, utilizzate la scheda [**Opzioni**](https://osmand.net/docs/user/map/tracks/track-context-menu#options) all'interno del Menu contestuale delle tracce.
 :::
 
 
@@ -195,13 +195,13 @@ Per maggiori dettagli, potete esplorare il [**Menu contestuale delle tracce**](.
 
 <TabItem value="android" label="Android">
 
-![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configura tracce mappa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![Mostra la traccia registrata sulla mappa Android](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configura tracce mappa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configura tracce mappa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![Mostra la traccia registrata sulla mappa iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configura tracce mappa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -244,11 +244,11 @@ OsmAnd cattura il vostro viaggio in un [file GPX](https://en.wikipedia.org/wiki/
 | `hdop` | **Diluizione orizzontale della precisione (HDOP)** è una misura della precisione del GPS, che riflette l'errore potenziale nella posizione dovuto alla posizione dei satelliti. A differenza dell'HDOP standard, le tracce GPX di OsmAnd utilizzano questo valore per rappresentare la precisione orizzontale in metri. Si prega di notare che questa implementazione differisce dagli standard HDOP tipici. [Per saperne di più](https://github.com/osmandapp/Osmand/issues/3445).   |
 | `speed` | **Velocità** registra la vostra velocità di movimento in metri al secondo. Fornisce informazioni sul vostro ritmo durante i vari segmenti della vostra attività.  |
 | `heading`  | **Direzione** indica la direzione in cui è puntata la parte anteriore del vostro veicolo o dispositivo, misurata in gradi. È distinta dalla rotta, che è il percorso effettivo del movimento. Le differenze possono verificarsi a causa di fattori esterni come vento, correnti o condizioni stradali. [Maggiori informazioni sulla direzione](https://en.wikipedia.org/wiki/Heading_(navigation)).  |
-| `speed_sensor` | **Velocità** da [sensori esterni](../plugins/external-sensors.md) cattura dati da sensori collegati, fornendo informazioni sulla velocità più precise, particolarmente utili quando si va in bicicletta. Per maggiori dettagli, fare riferimento alla [documentazione del formato file GPX](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
-| `cadence` | **Cadenza** misura il numero di rivoluzioni dei pedali al minuto, registrato utilizzando [sensori esterni](../plugins/external-sensors.md). Questo è particolarmente utile per i ciclisti che mirano a monitorare e ottimizzare la loro efficienza di pedalata. [Leggi di più](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
-| `power` | **Potenza della bicicletta** quantifica la potenza generata durante la pedalata, catturata da [sensori esterni](../plugins/external-sensors.md). È una metrica essenziale per i ciclisti seri che vogliono valutare le loro prestazioni. [Per saperne di più](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
-| `atemp` | **Temperatura dell'aria** registra la temperatura ambiente durante la vostra attività, misurata utilizzando [sensori esterni](../plugins/external-sensors.md). Notare che la temperatura dell'acqua non è supportata. [Dettagli qui](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).   |
-| `hr` | **Frequenza cardiaca** monitora i battiti cardiaci al minuto, utilizzando dati da [sensori](../plugins/external-sensors.md) collegati. Questa informazione può essere vitale per tracciare le vostre prestazioni cardiovascolari durante gli allenamenti. [Scopri di più](https://docs.osmand.net/docs/technical/osmand-file-formats/osmand-gpx#tags-name-for-sensor-data).  |
+| `speed_sensor` | **Velocità** da [sensori esterni](../plugins/external-sensors.md) cattura dati da sensori collegati, fornendo informazioni sulla velocità più precise, particolarmente utili quando si va in bicicletta. Per maggiori dettagli, fare riferimento alla [documentazione del formato file GPX](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).  |
+| `cadence` | **Cadenza** misura il numero di rivoluzioni dei pedali al minuto, registrato utilizzando [sensori esterni](../plugins/external-sensors.md). Questo è particolarmente utile per i ciclisti che mirano a monitorare e ottimizzare la loro efficienza di pedalata. [Leggi di più](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).  |
+| `power` | **Potenza della bicicletta** quantifica la potenza generata durante la pedalata, catturata da [sensori esterni](../plugins/external-sensors.md). È una metrica essenziale per i ciclisti seri che vogliono valutare le loro prestazioni. [Per saperne di più](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).   |
+| `atemp` | **Temperatura dell'aria** registra la temperatura ambiente durante la vostra attività, misurata utilizzando [sensori esterni](../plugins/external-sensors.md). Notare che la temperatura dell'acqua non è supportata. [Dettagli qui](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).   |
+| `hr` | **Frequenza cardiaca** monitora i battiti cardiaci al minuto, utilizzando dati da [sensori](../plugins/external-sensors.md) collegati. Questa informazione può essere vitale per tracciare le vostre prestazioni cardiovascolari durante gli allenamenti. [Scopri di più](https://osmand.net/docs/technical/osmand-file-formats/osmand-gpx#sensor-data-tags).  |
 
 
 ## Impostazioni di registrazione {#recording-settings}
@@ -292,11 +292,11 @@ Prima di iniziare a tracciare i vostri viaggi, è necessario configurare corrett
 | **Divisione automatica delle registrazioni dopo un'interruzione** | Divide automaticamente le tracce in base a intervalli di tempo tra i punti registrati. <ul><li>Un nuovo segmento inizia dopo un'interruzione di 6 minuti.</li><li>Una nuova traccia inizia dopo un'interruzione di 2 ore.</li><li>Un nuovo file inizia quando cambia la data.</li><li>Le interruzioni possono derivare dalla perdita del segnale GPS, dalla bassa velocità o dalle impostazioni di configurazione.</li></ul><details><summary>*Nota*</summary>Un'interruzione viene identificata quando non vengono registrati punti. Ciò può accadere perché la posizione non viene rilevata o perché viene rilevata ma non registrata. Diversi fattori possono causare questo, inclusi segnali GPS deboli a causa di cattive condizioni meteorologiche, o la velocità di movimento che scende al di sotto della soglia configurata. In tali casi, anche se il dispositivo può rilevare la posizione, non la registra.<br/><br/>Queste interruzioni nei dati registrati possono attivare la creazione di un nuovo segmento all'interno della stessa traccia, una nuova traccia nello stesso file o un nuovo file GPX all'interno di una singola registrazione. Questo viene gestito all'interno di una singola sessione di avvio/arresto della registrazione.</details> |
 | **Impedisci registrazione autonoma** (*Android*) | Mette in pausa la registrazione della traccia quando l'app OsmAnd viene chiusa (tramite *app recenti*). L'indicazione di background non viene visualizzata nel pannello di notifica di Android. |
 | **Includi direzione** | Registra la direzione (direzione del movimento) per ogni punto nel file GPX. La direzione è la direzione in cui è rivolto il dispositivo, che può differire dalla direzione del movimento a causa di fattori esterni come vento o slittamento. |
-| **Attività**  | L'opzione consente di preselezionare un [tipo di attività](../map/tracks/track-context-menu.md#ttrack-activity-type) per un profilo, che viene quindi applicato automaticamente a tutte le tracce registrate. |
+| **Attività**  | L'opzione consente di preselezionare un [tipo di attività](../map/tracks/track-context-menu.md#track-activity-type) per un profilo, che viene quindi applicato automaticamente a tutte le tracce registrate. |
 | **Sensori esterni** <br/> *Necessario plugin abilitato* | I dati da [sensori esterni](../plugins/external-sensors.md#trip-recording) come *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, o *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* vengono registrati nel file GPX. I dati di *Distanza* non vengono registrati su Android o iOS. Visualizzato solo quando il [plugin Sensori esterni](../plugins/external-sensors.md) è abilitato. |
 | **Metriche veicolo** <br/> *Necessario plugin abilitato* | I dati dallo [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) vengono registrati nel file GPX. Visualizzato solo quando il [plugin Metriche veicolo](../plugins/vehicle-metrics.md) è abilitato.<br />*Nota*: È possibile aggiungere quali metriche registrare nel file GPX dalla lista: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Cartella di archiviazione tracce** (*Android*) | Definisce dove nella scheda *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* vengono archiviate le tracce registrate. Le opzioni includono l'archiviazione di tutte le tracce nella cartella Rec o l'organizzazione per mese, come Rec/aaaa-mm. |
-| **Notifica** | Controlla la visualizzazione di una notifica di sistema di [registrazione tracce](#notifications) nell'area di notifica del dispositivo che consente di avviare la registrazione dei viaggi. |
+| **Pulsante 'Registra' nelle notifiche** | Controlla la visualizzazione di una notifica di sistema di [registrazione tracce](#notifications) nell'area di notifica del dispositivo che consente di avviare la registrazione dei viaggi. |
 | **Tracciamento online** (*Android*) | Consente il tracciamento in tempo reale della vostra posizione inviando i punti registrati a un URL specificato. L'intervallo di tracciamento determina la frequenza con cui i punti vengono inviati e il buffer di tempo memorizza i punti quando non c'è connessione a Internet.<details><summary>*Nota*</summary>Se questa opzione è abilitata e la registrazione della traccia è in corso, il widget Distanza/Avvio-Stop (REC) diventa **verde** invece di **rosso**, indicando che ogni punto registrato viene trasmesso a un URL specificato. Il campo **Indirizzo web** consente di inserire l'URL utilizzando il seguente formato di parametri:<ul><li>`lat={0}`: Latitudine</li><li>`lon={1}`: Longitudine</li><li>`timestamp={2}`: Timestamp (ora Unix)</li><li>`hdop={3}`: Diluizione orizzontale della precisione</li><li>`altitude={4}`: Altitudine</li><li>`speed={5}`: Velocità</li><li>`bearing={6}`: Direzione (direzione del movimento)</li><li>`eta={7}`: Orario di arrivo previsto (ora Unix)</li><li>`etfa={8}`: Orario previsto al primo punto intermedio o al punto di arrivo (ora Unix)</li><li>`eda={9}`: Distanza stimata all'arrivo o a un marcatore (in metri)</li><li>`edfa={10}`: Distanza stimata al primo punto intermedio o al punto di arrivo (in metri)</li><li>`batproc={11}`: Livello della batteria del dispositivo (percentuale)</li></ul>È possibile impostare l'**Intervallo di tracciamento** per specificare la frequenza con cui i punti di localizzazione vengono inviati, con opzioni che vanno da 0 secondi a 5 minuti. Inoltre, il parametro **Buffer di tempo** determina per quanto tempo i punti di localizzazione vengono memorizzati se non c'è connessione a Internet, garantendo che i dati vengano salvati e trasmessi quando la connessione viene ripristinata.</details><br />OsmAnd memorizza i punti di localizzazione non inviati solo nella memoria temporanea dell'app mentre l'applicazione è in esecuzione. Ciò significa che il buffer non viene scritto in una memoria permanente. Se l'app viene chiusa, forzata a terminare o il dispositivo si riavvia, tutti i punti nel buffer vengono persi.<br />L'impostazione Buffer di tempo non definisce per quanto tempo i punti vengono mantenuti in memoria — funziona solo come un filtro al momento del caricamento. Quando OsmAnd tenta di inviare i punti nel buffer, ogni punto viene controllato rispetto al limite del Buffer di tempo. I punti più vecchi del limite selezionato (ad es., 24 ore) vengono rimossi invece di essere caricati. Di conseguenza, il buffer potrebbe contenere temporaneamente punti più vecchi del valore del Buffer di tempo scelto, ma questi punti verranno scartati durante il processo di caricamento. |
 | **Tracce** | Un riferimento rapido alla cartella in cui vengono salvate le tracce nella scheda *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Ripristina impostazioni predefinite del plugin** | Ripristina tutte le impostazioni di registrazione delle tracce per il profilo corrente ai valori predefiniti. |
@@ -320,7 +320,7 @@ Questa funzione consente di gestire le impostazioni di ottimizzazione della batt
 
 ![Notifica Registrazione Tracce](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
-Se [Notifica](#recording-settings) è abilitata nelle impostazioni del plugin, le notifiche di registrazione delle tracce verranno sempre visualizzate nell'area di notifica del sistema quando la registrazione è attiva. Questa notifica garantisce che il processo di registrazione non venga interrotto dal sistema e non può essere disabilitata durante una registrazione attiva.
+Se [Pulsante 'Registra' nelle notifiche](#recording-settings) è abilitata nelle impostazioni del plugin, le notifiche di registrazione delle tracce verranno sempre visualizzate nell'area di notifica del sistema quando la registrazione è attiva. Questa notifica garantisce che il processo di registrazione non venga interrotto dal sistema e non può essere disabilitata durante una registrazione attiva.
 
 - L'area di notifica si apre scorrendo verso il basso dalla parte superiore dello schermo e si chiude scorrendo verso l'alto. Questi messaggi notificano azioni come l'avvio/arresto della registrazione delle tracce, specialmente quando la registrazione automatica è abilitata durante la navigazione.
 - Le notifiche rimangono visibili indipendentemente dal fatto che l'app sia in esecuzione in primo piano, in background o sia chiusa. È possibile cancellare manualmente la vecchia notifica se non è più necessaria, ma ciò non interromperà la registrazione in corso.
@@ -330,7 +330,7 @@ Se [Notifica](#recording-settings) è abilitata nelle impostazioni del plugin, l
 Questo comportamento è richiesto da Android per qualsiasi servizio in primo piano, come la registrazione delle tracce, affinché rimanga visibile all'utente.
 
 - Se la notifica viene rimossa, Android interromperà automaticamente la registrazione. È possibile utilizzare l'impostazione [Impedisci registrazione autonoma](#recording-settings).
-- L'impostazione **Notifica** in OsmAnd influisce sulla visualizzazione di una scorciatoia nella barra delle notifiche per avviare una registrazione quando nessuna registrazione è attiva. **Non** controlla la visibilità della notifica durante una registrazione attiva.
+- L'impostazione **Pulsante 'Registra' nelle notifiche** in OsmAnd influisce sulla visualizzazione di una scorciatoia nella barra delle notifiche per avviare una registrazione quando nessuna registrazione è attiva. **Non** controlla la visibilità della notifica durante una registrazione attiva.
 
 **Opzioni aggiuntive di Android**.
 
@@ -433,6 +433,33 @@ Se la registrazione corrente non contiene ancora una sezione di salita o discesa
 
 ### Distanza (Avvio-Stop) {#distance-start-stop}
 
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
+
 | |
 |-----------|
 | **Distanza/Avvio-Stop**. Questo widget visualizza la distanza della registrazione del viaggio in corso. Viene aggiunto automaticamente quando il plugin Registrazione tracce è abilitato, ma è possibile nasconderlo tramite il menu Configura schermo. Il widget presenta tre stati distinti: *Registrazione*, *In pausa* e *Inattivo*, ognuno dei quali indica lo stato attuale della registrazione del viaggio. |
@@ -460,6 +487,30 @@ Se la registrazione corrente non contiene ancora una sezione di salita o discesa
 |![widget](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Se avete selezionato più widget — *Durata*, *Salita* o *Discesa* — potete accedere alla stessa finestra di dialogo per ciascuno senza doverla cambiare o chiudere. Questa interfaccia unificata facilita la visualizzazione e la gestione di tutte le informazioni correlate in modo fluido.
+
+<!--
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+-->
 
 
 ## Articoli correlati {#related-articles}

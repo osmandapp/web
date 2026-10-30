@@ -47,7 +47,11 @@ import {
     navigateToPoi,
 } from '../../../manager/PoiManager';
 import { changeIconColor, createPoiIcon, removeShadowFromIconWpt } from '../../../map/markers/MarkerOptions';
-import FavoritesManager, { navigateToFavoritesMenu, resolveWptAppearance } from '../../../manager/FavoritesManager';
+import FavoritesManager, {
+    findSelectedWpt,
+    navigateToFavoritesMenu,
+    resolveWptAppearance,
+} from '../../../manager/FavoritesManager';
 import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
@@ -67,6 +71,8 @@ import WptTagsProvider, {
     WIKIPEDIA,
     addWikidataTags,
     getOsmIdFromOsmUrl,
+    getShortDescriptionKey,
+    getShortDescriptions,
     ICON_KEY_NAME,
     POI_FROM_TAGS,
     POI_ID,
@@ -83,6 +89,7 @@ import Loading from '../../../menu/errors/Loading';
 import PhotoGallery from '../../../menu/search/explore/PhotoGallery';
 import wptStyles from '../wpt/wptDetails.module.css';
 import parse from 'html-react-parser';
+import { getWikiLang } from '../../../util/lang';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
@@ -120,11 +127,14 @@ import {
     isFavoriteFromSearch,
     isWptFromSearch,
     navigateBackToSearchResults,
+    closeWikiPoi,
 } from '../../../manager/SearchManager';
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
 import { getPoiApi, getPoiByMapObjectApi, getTransportStopApi } from '../../../manager/SearchApi';
+import LoginContext from '../../../context/LoginContext';
+import PhotoLibraryOutlinedIcon from '@mui/icons-material/PhotoLibraryOutlined';
 
 export const WptIcon = ({ wpt = null, color, background, icon, iconSize, shieldSize, ctx }) => {
     const [iconState, setIconState] = useState({ svg: null, isLoading: true });
@@ -211,6 +221,7 @@ export async function getAddressByLatLon(lat, lon) {
 
 export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const ctx = useContext(AppContext);
+    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
     const navigate = useNavigate();
@@ -305,11 +316,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             newWpt.trackWpt = true;
             return newWpt;
         } else if (type?.isFav || type?.isShareFav) {
-            const markerName = ctx.selectedWpt.markerCurrent.name;
             const wpts = ctx.selectedWpt.trackData?.wpts ?? ctx.selectedWpt.wpts;
-            const currentWpt = wpts.find((p) => p.name === markerName);
+            const currentWpt = findSelectedWpt(ctx.selectedWpt.markerCurrent, wpts);
             if (currentWpt) {
                 const newWpt = getDataFromWpt(type, ctx.selectedWpt, currentWpt);
+                newWpt.point = currentWpt;
                 newWpt.id = ctx.selectedWpt.groupId;
                 newWpt.group = ctx.favorites?.groups?.find((g) => g.id === ctx.selectedWpt.groupId);
                 return newWpt;
@@ -435,9 +446,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             if (type?.isWpt) {
                 tags = await WptTagsProvider.getWptTags(ctx.selectedWpt, type, ctx);
             } else if (type?.isFav || type?.isShareFav) {
-                const markerName = ctx.selectedWpt.markerCurrent.name;
                 const wpts = ctx.selectedWpt.trackData?.wpts ?? ctx.selectedWpt.wpts;
-                const currentWpt = wpts.find((p) => p.name === markerName);
+                const currentWpt = findSelectedWpt(ctx.selectedWpt.markerCurrent, wpts);
                 if (currentWpt) {
                     tags = await WptTagsProvider.getWptTags(currentWpt, type, ctx);
                 }
@@ -551,6 +561,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             sharedWithMe: selectedWpt.file?.sharedWithMe,
             name: currentWpt.name,
             desc: currentWpt.desc,
+            comment: currentWpt.ext?.metadata?.comment,
             hidden: currentWpt.hidden,
             latlon: getCoordsFromWpt(currentWpt),
             marker: currentWpt.marker,
@@ -558,6 +569,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             category: currentWpt.category,
             address: currentWpt.address ?? ADDRESS_NOT_FOUND,
             time: parseInt(currentWpt.ext?.time) !== 0 ? currentWpt.ext?.time : null,
+            osmUrl: currentWpt.ext?.metadata?.links?.find((l) => l?.href?.includes('openstreetmap.org/'))?.href,
+            extensions: currentWpt.ext?.extensions,
             tags: null,
             mapObj: selectedWpt.mapObj,
         };
@@ -661,11 +674,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 });
             }
             setShowInfoBlock(false);
-            ctx.setSearchSettings({ ...ctx.searchSettings, getPoi: null });
             if (wpt.mapObj) {
+                ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
                 closeObjectFromMap();
             } else {
-                ctx.setSelectedPoiObj(null);
+                closeWikiPoi(ctx);
                 navigate({
                     pathname: MAIN_URL_WITH_SLASH + SEARCH_URL + (ctx.exploreMenu ? EXPLORE_URL : ''),
                     hash: liveHash(),
@@ -906,11 +919,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     };
 
     const Header = () => {
+        // newWpt knows the origin at once, wpt only after the details are loaded
+        const mapObj = newWpt?.mapObj;
+
         return (
             <HeaderWithUnderline
                 onClose={() => closeDetails()}
-                showBackButton={!wpt?.mapObj}
-                appBarProps={{ id: wpt?.mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
+                showBackButton={!mapObj}
+                appBarProps={{ id: mapObj ? 'se-close-wpt-details' : 'se-back-wpt-details' }}
                 rightContent={<MapObjectsNav />}
             />
         );
@@ -1030,6 +1046,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
     };
 
+    const shortDescription = !wpt?.type?.isWpt && getShortDescription(getShortDescriptions(wpt?.extensions));
+
     return (
         <>
             {showLoading ? (
@@ -1131,6 +1149,27 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         }}
                                     />
                                 )}
+                                {shortDescription && (
+                                    <WptTagInfo
+                                        key={'short-desc'}
+                                        baseTag={{
+                                            icon: <WikiIcon />,
+                                            name: t('web:wiki_description'),
+                                            value: shortDescription,
+                                            isDesc: true,
+                                        }}
+                                    />
+                                )}
+                                {wpt.comment && (
+                                    <WptTagInfo
+                                        key={'comment'}
+                                        baseTag={{
+                                            icon: <DescriptionIcon />,
+                                            name: t('poi_dialog_comment'),
+                                            value: wpt.comment,
+                                        }}
+                                    />
+                                )}
                                 {wpt.time && (
                                     <WptTagInfo
                                         key={'time'}
@@ -1215,6 +1254,36 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                                         )}
                                     </>
                                 )}
+                                {wpt.wikidata && ltx.isAdmin() && (
+                                    <>
+                                        <Divider />
+                                        <MenuItem className={styles.descTitle}>
+                                            <ListItemText>
+                                                <Typography className={styles.descTitleText}>
+                                                    {t('web:developer')}
+                                                </Typography>
+                                            </ListItemText>
+                                        </MenuItem>
+                                        <WptTagInfo
+                                            key={'top-photos'}
+                                            baseTag={{
+                                                icon: (
+                                                    <PhotoLibraryOutlinedIcon sx={{ color: 'var(--svg-icon-color)' }} />
+                                                ),
+                                                name: t('web:dev_top_photos'),
+                                                link: (
+                                                    <Link
+                                                        href={`${window.location.origin}/admin/top-photos/per-place?placeId=${wpt.wikidata}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        {wpt.wikidata}
+                                                    </Link>
+                                                ),
+                                            }}
+                                        />
+                                    </>
+                                )}
                             </ListItemText>
                         )}
                     </Box>
@@ -1290,4 +1359,12 @@ function createPoiObject(feature, tags) {
     props[FINAL_POI_ICON_NAME] = getFinalPoiIconName(props);
 
     return createMapObject(feature);
+}
+
+function getShortDescription(shortDescriptions) {
+    return (
+        shortDescriptions[getShortDescriptionKey(getWikiLang(i18n.language))] ??
+        shortDescriptions[getShortDescriptionKey()] ??
+        Object.values(shortDescriptions)[0]
+    );
 }

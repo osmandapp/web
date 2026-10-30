@@ -1,5 +1,5 @@
 ---
-source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
+source-hash: 0d78b54592f6e7bfbd495c20bbe33ec368ff22532c171a00e0b3b2a5a27c431f
 sidebar_position: 6
 title:  Grabación de rutas
 ---
@@ -94,7 +94,7 @@ Algunos de estos ajustes interactúan, así que sea preciso. La mejor manera es 
 
 ### Controlar el comportamiento de las aplicaciones en segundo plano de iOS {#control-the-behavior-of-ios-background-apps}
 
-iOS puede suspender o detener aplicaciones en segundo plano automáticamente cuando se reasignan los recursos del sistema. OsmAnd no puede anular este comportamiento. Si la grabación de la ruta se interrumpe cuando el dispositivo está bloqueado, esto puede dejar huecos en la grabación. Puede editar estos huecos utilizando la herramienta [Planificar una ruta](https://docs.osmand.net/docs/user/plan-route/create-route).
+iOS puede suspender o detener aplicaciones en segundo plano automáticamente cuando se reasignan los recursos del sistema. OsmAnd no puede anular este comportamiento. Si la grabación de la ruta se interrumpe cuando el dispositivo está bloqueado, esto puede dejar huecos en la grabación. Puede editar estos huecos utilizando la herramienta [Planificar una ruta](https://osmand.net/docs/user/plan-route/create-route).
 
 Para más detalles sobre cómo iOS maneja el seguimiento de la ubicación, consulte la documentación de Apple [aquí](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

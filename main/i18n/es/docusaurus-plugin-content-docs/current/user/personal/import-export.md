@@ -1,5 +1,5 @@
 ---
-source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
+source-hash: 15444c168df6f3554637066910aa28d6eb9b1c274618b9570845570e8988b856
 sidebar_position: 10
 title:  Importar / Exportar
 ---
@@ -31,7 +31,7 @@ Las herramientas de **Importar** y **Exportar** en OsmAnd le permiten gestionar 
 - **Ajustes:**  
         [Perfiles](../personal/profiles.md#actions), &nbsp;[OsmAnd/Ajustes generales](../personal/global-settings.md), &nbsp;[Colores](../personal/color-palette-schemes.md), &nbsp;[Acción rápida](../widgets/quick-action.md), &nbsp;[Tipo de PDI](../map/point-layers-on-map.md#poi-types), &nbsp;[Evitar carretera](../map/map-context-menu.md#avoid-road).
 - **Mis Lugares:**  
-        [Favoritos](../personal/favorites.md#export--import), &nbsp;[Pistas](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notas OSM*, *Ediciones OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Historial de marcadores*, *Historial de búsqueda*, *Historial de navegación](../personal/global-settings.md#history), &nbsp;*Itinerario*.
+        [Favoritos](../personal/favorites.md#export--import), &nbsp;[Archivos adjuntos](../personal/favorites.md#media), &nbsp;[Pistas](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Notas OSM*, *Ediciones OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[Notas A/V](../plugins/audio-video-notes.md), &nbsp;[Marcadores de mapa](../personal/markers.md), &nbsp;[Historial de marcadores*, *Historial de búsqueda*, *Historial de navegación](../personal/global-settings.md#history), &nbsp;*Itinerario*.
 - **Recursos:**  
         [Estilo de renderizado](../map/map-styles.md#custom-map-style), &nbsp;[Enrutamiento](../navigation/routing/osmand-routing.md), &nbsp;[Motores de enrutamiento en línea](../navigation/routing/online-routing.md), &nbsp;[Fuentes de mapa*, *Mapas estándar/sin conexión](../map/raster-maps.md), &nbsp;[Mapas de Wikipedia y Viajes](../plan-route/travel-guides.md), &nbsp;[Cartas náuticas](../plugins/nautical-charts.md), &nbsp;[Mapas de carreteras](../map/vector-maps.md#road-style), &nbsp;[Mapas topográficos](../plugins/topography.md), &nbsp;[Instrucciones de voz (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Instrucciones de voz (grabadas)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Copia de seguridad de favoritos](../personal/favorites.md#automatic-favorites-backup).
 
@@ -93,14 +93,14 @@ Abre y restaura archivos `.osf`. Toque el archivo en el gestor de archivos del d
 - *Reiniciar*. Después de importar los archivos, la aplicación debe reiniciarse.
 
 Tipos de archivos de importación compatibles:
-- [Pistas, rutas](https://www.osmand.net/docs/user/personal/tracks/manage-tracks/) y [favoritos](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. Los archivos KML y KMZ se importan con conversión al formato GPX.
+- [Pistas, rutas](https://osmand.net/docs/user/personal/tracks/manage-tracks/) y [favoritos](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. Los archivos KML y KMZ se importan con conversión al formato GPX.
 - [Mapas vectoriales de OsmAnd](https://osmand.net/docs/user/map/vector-maps): `.obf`.
-- [Baldosas de mapas en línea](https://www.osmand.net/docs/user/map/raster-maps/): `.sqlitedb`. 
+- [Baldosas de mapas en línea](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [Copias de seguridad y perfiles](#export): `.osf`.
-- [Mapas de altura / datos 3D](https://www.osmand.net/docs/user/plugins/topography/): `.geotif`.
+- [Mapas de altura / datos 3D](https://osmand.net/docs/user/plugins/topography/): `.geotif`.
 - [Otros](color-palette-schemes.md): `.txt`.
 
-Para una visión técnica general de todos los formatos compatibles, consulte [Formatos de archivos de OsmAnd](https://www.osmand.net/docs/technical/osmand-file-formats/).
+Para una visión técnica general de todos los formatos compatibles, consulte [Formatos de archivos de OsmAnd](https://osmand.net/docs/technical/osmand-file-formats/).
 
 
 ### OsmAnd Cloud {#osmand-cloud}

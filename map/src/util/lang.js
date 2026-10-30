@@ -1,7 +1,42 @@
+import supportedLanguages from '../resources/translations/supportedLanguages.json';
+
 const LANG_TRANSFORM_MAP = {
     yue: 'zhyue',
     'b+be+Latn': 'be-BY',
 };
+
+const WIKI_LANG_MAP = {
+    iw: 'he',
+    in: 'id',
+    nb: 'no',
+    zhyue: 'zh',
+};
+export const WIKI_DEFAULT_LANG = 'en';
+
+// folders use Android qualifiers (es-rAR, b+sr+Latn), the browser and i18next use BCP 47 (es-AR, sr-Latn)
+export function findTranslationFolder(lang) {
+    if (supportedLanguages.includes(lang)) {
+        return lang;
+    }
+    const normalized = normalizeLang(lang);
+    const baseLang = getBaseLang(lang);
+
+    return (
+        supportedLanguages.find((folder) => normalizeLang(folder) === normalized) ??
+        supportedLanguages.find((folder) => folder === baseLang) ??
+        'en'
+    );
+}
+
+export function getBaseLang(lang) {
+    return normalizeLang(lang).split(/[-_]/)[0];
+}
+
+export function getApiLang(lang) {
+    const baseLang = getBaseLang(lang);
+
+    return supportedLanguages.includes(baseLang) ? baseLang : 'en';
+}
 
 /**
  * Normalizes a given Android resource qualifiers code string into a standardized format,
@@ -28,4 +63,14 @@ export function normalizeLang(lang) {
     normalized = normalized.replace(pattern, (match, rPrefix, regionCode) => '-' + regionCode);
 
     return normalized;
+}
+
+export function getWikiLang(lang) {
+    const baseLang = getBaseLang(lang);
+
+    return WIKI_LANG_MAP[baseLang] ?? baseLang;
+}
+
+export function getWikiLangs(lang) {
+    return [...new Set([getWikiLang(lang), WIKI_DEFAULT_LANG])].join(',');
 }

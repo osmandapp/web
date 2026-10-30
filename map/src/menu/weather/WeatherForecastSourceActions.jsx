@@ -5,7 +5,7 @@ import styles from '../trackfavmenu.module.css';
 import weatherStyles from './weather.module.css';
 import { ReactComponent as WeatherIcon } from '../../assets/menu/ic_action_umbrella.svg';
 import {
-    ECWMF_WEATHER_TYPE,
+    ECMWF_WEATHER_TYPE,
     GFS_WEATHER_TYPE,
     LOCAL_STORAGE_WEATHER_FORECAST_WEEK,
 } from '../../manager/WeatherManager';
@@ -19,9 +19,9 @@ export const weatherTypes = {
         icon: <WeatherIcon className={weatherStyles.icon} />,
         name: 'GFS',
     },
-    ECWMF: {
+    ECMWF: {
         icon: <WeatherIcon className={weatherStyles.icon} />,
-        name: 'ECWMF',
+        name: 'ECMWF',
     },
 };
 
@@ -76,13 +76,13 @@ const WeatherForecastSourceActions = forwardRef(({ setOpenActions = null }, ref)
                                 label={<ActionItem item={weatherTypes.GFS} />}
                             />
                             <FormControlLabel
-                                id={'se-ECWMF'}
-                                className={setWeatherTypeStyles(ECWMF_WEATHER_TYPE)}
+                                id={'se-ECMWF'}
+                                className={setWeatherTypeStyles(ECMWF_WEATHER_TYPE)}
                                 disableTypography={true}
                                 labelPlacement="start"
-                                value={ECWMF_WEATHER_TYPE}
+                                value={ECMWF_WEATHER_TYPE}
                                 control={<Radio className={styles.control} size="small" />}
-                                label={<ActionItem item={weatherTypes.ECWMF} />}
+                                label={<ActionItem item={weatherTypes.ECMWF} />}
                             />
                         </RadioGroup>
                     </FormControl>

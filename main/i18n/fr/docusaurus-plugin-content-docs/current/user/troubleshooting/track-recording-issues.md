@@ -1,5 +1,5 @@
 ---
-source-hash: eb93726e0592003532df793f15601aaea57aea0d308a2e16a1bc45bfd0e949d8
+source-hash: 0d78b54592f6e7bfbd495c20bbe33ec368ff22532c171a00e0b3b2a5a27c431f
 sidebar_position: 6
 title:  Enregistrement de traces
 ---
@@ -96,7 +96,7 @@ Certains de ces paramètres interagissent, alors soyez précis. Le mieux est de 
 
 ### Contrôler le comportement des applications en arrière-plan sur iOS {#control-the-behavior-of-ios-background-apps}
 
-iOS peut suspendre ou arrêter automatiquement les applications en arrière-plan lorsque les ressources système sont réallouées. OsmAnd ne peut pas outrepasser ce comportement. Si l'enregistrement de la trace est interrompu lorsque l'appareil est verrouillé, cela peut laisser des interruptions dans l'enregistrement. Vous pouvez modifier ces interruptions à l'aide de l'outil [Planifier un itinéraire](https://docs.osmand.net/docs/user/plan-route/create-route).
+iOS peut suspendre ou arrêter automatiquement les applications en arrière-plan lorsque les ressources système sont réallouées. OsmAnd ne peut pas outrepasser ce comportement. Si l'enregistrement de la trace est interrompu lorsque l'appareil est verrouillé, cela peut laisser des interruptions dans l'enregistrement. Vous pouvez modifier ces interruptions à l'aide de l'outil [Planifier un itinéraire](https://osmand.net/docs/user/plan-route/create-route).
 
 Pour plus de détails sur la manière dont iOS gère le suivi de la localisation, consultez la documentation d'Apple [ici](https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/CoreLocation/CoreLocation.html#//apple_ref/doc/uid/TP40009497-CH2-SW1).
 

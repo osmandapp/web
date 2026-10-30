@@ -1,5 +1,5 @@
 ---
-source-hash: 449e3fd74110eab1bc4b7ddd396afd19c55f4ebbe738f978b5563b9680f73e74
+source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
 sidebar_position: 5
 sidebar_label: İzler
 title: İzler
@@ -103,7 +103,7 @@ Akıllı Klasör senkronizasyonu, platforma ve senkronizasyon yapılandırmasın
 
 ## Bulut İzleri {#cloud-tracks}
 
-[OsmAnd Cloud](../personal/osmand-cloud.md) içindeki GPX izleriniz, giriş yaptıktan sonra görüntüleme ve düzenleme için kullanılabilir. Yalnızca **Pro kullanıcıları** <ProFeature/> için ve [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) kullanıcıları için (Pro abonelikleri sona erdikten sonra bile verilerini indirebilirler).
+[OsmAnd Cloud](../personal/osmand-cloud.md) içindeki GPX izleriniz, giriş yaptıktan sonra görüntüleme ve düzenleme için kullanılabilir. Yalnızca **Pro kullanıcıları** <ProFeature/> bunlara erişebilir. [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) kullanıcıları, Pro abonelikleri sona erdikten sonra bile Bulut verilerini indirebilir.
 
 Bir iz seçtikten sonra harita otomatik olarak ortalanır ve yakınlaştırma düzeyini ayarlayarak tüm izi görünür harita alanında gösterir.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
+source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
 sidebar_position: 11
 title:  Wtyczka deweloperska OsmAnd
 ---
@@ -83,16 +83,13 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 ### Testowanie aplikacji {#application-testing}
 
-:::caution Tylko dla Androida
-:::
-
-- **Symuluj pierwsze uruchomienie aplikacji**. Ustawia flagę wskazującą pierwsze uruchomienie aplikacji, pozostawiając wszystkie inne ustawienia bez zmian.  
-- **Testuj komunikaty głosowe**. Wybierz głos i przetestuj, odtwarzając komunikaty.  
+- **Symuluj pierwsze uruchomienie aplikacji** (*Android*). Ustawia flagę wskazującą pierwsze uruchomienie aplikacji, pozostawiając wszystkie inne ustawienia bez zmian.  
+- **Testuj komunikaty głosowe** (*Android*). Wybierz głos i przetestuj, odtwarzając komunikaty.  
 - **<Translate ios="true" ids="show_touches"/>** (*iOS*). Podświetla dotknięcia ekranu za pomocą wskaźników wizualnych.
-- **Przezroczysty pasek stanu**. Mapa staje się widoczna pod paskiem stanu.  
-- **Pokaż baner wersji darmowej**. Wyświetla baner wersji darmowej nawet w wersji płatnej.  
-- **Pokaż informacje debugowania**. Wyświetla informacje graficzne o umiejscowieniu każdego tekstu na mapie.
-- **Zezwalaj na wyświetlanie na wierzchu**. Pozwala na wyświetlanie tekstów mapy jeden na drugim.
+- **Przezroczysty pasek stanu** (*Android*). Mapa staje się widoczna pod paskiem stanu.  
+- **Pokaż baner wersji darmowej** (*Android*). Wyświetla baner wersji darmowej nawet w wersji płatnej.  
+- **Pokaż informacje debugowania** (*Android*). Wyświetla informacje graficzne o umiejscowieniu każdego tekstu na mapie.
+- **Zezwalaj na wyświetlanie na wierzchu** (*Android*). Pozwala na wyświetlanie tekstów mapy jeden na drugim.
 
 
 ### Algorytmy wewnętrzne {#internal-algorithms}
@@ -101,6 +98,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 :::
 
 - **Tryb awaryjny**. Uruchamia OsmAnd bez natywnej biblioteki C++, używając implementacji Java do renderowania map i obliczania tras. Aplikacja automatycznie przełącza się w ten tryb, jeśli natywna biblioteka ulegnie awarii podczas uruchamiania, umożliwiając uruchomienie i dalsze korzystanie z aplikacji. Renderowanie mapy i obliczanie tras są zauważalnie wolniejsze, gdy tryb awaryjny jest aktywny.  
+- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
 
 
 ### Ustawienia pamięci {#memory-settings}
@@ -114,6 +112,8 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 
 - Wyższy przydział pamięci może wpłynąć na wydajność innych aplikacji.
 - [Obliczanie 50-kilometrowych tras dla pieszych](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
+
+- **Pamięć Java** pokazuje, ile pamięci Java zużywa aplikacja i otwiera narzędzia histogramu sterty: *Zbierz i analizuj teraz*, *Udostępnij raport* i *Zbierz przy wysokim zużyciu* (domyślnie wyłączone). Zobacz [Histogram sterty dla problemów z pamięcią](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android), kiedy ich używać.
 
 
 ### Informacje i statystyki {#info-and-statistics}
@@ -211,7 +211,7 @@ Możesz użyć [widżetów pozycji kamery](../widgets/info-widgets.md#camera-wid
 
 </Tabs>  
 
-Widżet pochylenia kamery wyświetla nachylenie między centralnym wektorem widoku kamery (obserwatora) a wyimaginowanym płaskim gruntem ziemi. Domyślna wartość to 90 stopni (bez pochylenia).  
+Widżet pochylenia kamery wyświetla nachylenie między centralnym wektorem widoku kamery (obserwatora) oraz wyimaginowanym płaskim gruntem ziemi. Domyślna wartość to 90 stopni (bez pochylenia).  
 
 :::note  
 Pochylenie kamery jest zmieniane przez poruszanie kamerą (obserwatorem), podczas gdy centralny punkt na mapie (na który patrzymy) pozostaje ten sam. Odległość do niego (w rzeczywistości powiększenie) nie zmienia się.
@@ -240,7 +240,7 @@ Jednocześnie, z powodu wyimaginowanego ruchu obserwatora, zmienia się odległo
 Widżet wysokości kamery pokazuje wysokość kamery nad poziomem powierzchni. Wysokość kamery jest podawana w metrach / kilometrach.  
 
 
-### Poziem powiększenia {#zoom-level}
+### Poziom powiększenia {#zoom-level}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

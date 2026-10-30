@@ -15,6 +15,8 @@ It is built entirely on open data — and it lets you look at every single track
 
 The tool is currently in **test**: [test.osmand.net/map/prototypes/heatmap.html](https://test.osmand.net/map/prototypes/heatmap.html)
 
+At the end of this article you'll find a short survey. Your feedback shapes what comes next.
+
 ![OsmAnd Heatmap around Kraków](@site/static/img/promo/heatmap/overview.webp)
 
 :::note What is inside
@@ -58,7 +60,9 @@ Every activity group has a checkbox and a track count. Expand a group to pick si
 
 ![Review tracks](@site/static/img/promo/heatmap/review.webp)
 
-The heatmap is not only a picture — you can get to the tracks behind it. Zoom in to **16 or closer** and click a line on the map: the panel lists the tracks that pass under your click. Pick one to see it on the map with its details, download the original GPX file, or leave a review. Anyone can look at the tracks and their reviews; sending a review requires signing in (see below).
+**To leave a review, sign in first** with your OsmAnd account at [test.osmand.net/map/account](https://test.osmand.net/map/account) — then come back to the heatmap. Viewing tracks does not require an account.
+
+The heatmap is not only a picture — you can get to the tracks behind it. Zoom in to **16 or closer** and click a line on the map: the panel lists the tracks that pass under your click. Pick one to see it on the map with its details, download the original GPX file, or leave a review. Anyone can look at the tracks and their reviews. The link **Download reviewed tracks (.csv.gz)** at the bottom of the section exports all tracks that have been reviewed so far, with their verdicts, as one CSV file.
 
 ### Data source
 
@@ -125,7 +129,6 @@ _________________
 The heatmap is a prototype, and your feedback decides where it goes next.
 
 - **2-minute survey** — how you use it and what is missing: [Heatmap feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdqh4qpBRe1vem3FbyufV950ahLA_B_odTdhUd55SwOMbZBXA/viewform)
-- **Ideas and discussion** — suggest features, report odd data, share what you found in your area: [GitHub Discussion #26169](https://github.com/osmandapp/OsmAnd/discussions/26169)
 - **Rate the tracks** — zoom in, click a trail you know and send a verdict. It takes a few seconds and directly improves the data (sign in with your OsmAnd Cloud account on [test.osmand.net/map/account](https://test.osmand.net/map/account) first).
 
 _________________

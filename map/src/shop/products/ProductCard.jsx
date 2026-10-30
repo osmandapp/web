@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { products, purchase } from './ProductManager';
+import {
+    products,
+    purchase,
+    PRODUCT_ID_START,
+    PURCHASE_TYPE_ANNUAL,
+    PURCHASE_TYPE_MONTHLY,
+    PURCHASE_TYPE_ONE_TIME,
+} from './ProductManager';
 import {
     Box,
     Card,
@@ -17,6 +24,7 @@ import PurchaseTypeItem from './PurchaseTypeItem';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
+import AppContext from '../../context/AppContext';
 import { createFastSpringPurchase } from '../../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,7 +37,9 @@ export default function ProductCard({
     setSelectedCardId,
     updateCardPrices,
     setUpdateCardPrices,
+    purchasesReady,
 }) {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
 
     const { t } = useTranslation();
@@ -41,20 +51,20 @@ export default function ProductCard({
     const [btnText, setBtnText] = useState('web:action_complete_purchase');
 
     useEffect(() => {
-        if (ltx.completePurchase) {
+        if (ltx.completePurchase && purchasesReady) {
             processingPurchase();
             ltx.setCompletePurchase(false);
         }
-    }, [ltx.completePurchase]);
+    }, [ltx.completePurchase, purchasesReady]);
 
     useEffect(() => {
         if (product?.btnText) {
             setBtnText(product.btnText);
-        } else if (type === 'monthly') {
+        } else if (type === PURCHASE_TYPE_MONTHLY) {
             setBtnText('web:action_subscribe_monthly');
-        } else if (type === 'annual') {
+        } else if (type === PURCHASE_TYPE_ANNUAL) {
             setBtnText('web:action_subscribe_annual');
-        } else if (type === 'one-time') {
+        } else if (type === PURCHASE_TYPE_ONE_TIME) {
             setBtnText('web:action_complete_purchase');
         } else {
             setBtnText('web:action_complete_purchase');
@@ -62,7 +72,7 @@ export default function ProductCard({
     }, [type]);
 
     function onClick() {
-        if (productId === 'osmand-start') {
+        if (productId === PRODUCT_ID_START) {
             ltx.setOpenLoginDialog(true);
         } else {
             purchaseProduct();
@@ -79,8 +89,8 @@ export default function ProductCard({
 
     function processingPurchase() {
         const selectedProduct = purchase[type]?.find((p) => p.id === productId);
-        if (selectedProduct) {
-            createFastSpringPurchase({ testMode, ltx, selectedProduct: selectedProduct.fsName, navigate });
+        if (selectedProduct && (selectedProduct.show || testMode)) {
+            createFastSpringPurchase({ testMode, ltx, ctx, productId, type, navigate });
         }
     }
 

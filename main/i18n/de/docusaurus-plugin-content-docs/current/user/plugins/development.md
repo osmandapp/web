@@ -1,5 +1,5 @@
 ---
-source-hash: 113d5cb2915bdfc0a1d0c55e8e1c10416b0b42094163926acf13043f1275c2e7
+source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
 sidebar_position: 11
 title:  OsmAnd-Entwicklung
 ---
@@ -83,29 +83,27 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 
 ### Anwendungstests {#application-testing}
 
-:::caution Android only
-:::
-
-- **Ersten App-Start simulieren**. Setzt das Flag, das den ersten App-Start anzeigt, und behält alle anderen Einstellungen bei.  
-- **Sprachansagen testen**. Wählen Sie eine Stimme und testen Sie sie durch Abspielen von Ansagen.
+- **Ersten App-Start simulieren** (*Android*). Setzt das Flag, das den ersten App-Start anzeigt, und behält alle anderen Einstellungen bei.  
+- **Sprachansagen testen** (*Android*). Wählen Sie eine Stimme und testen Sie sie durch Abspielen von Ansagen.
 - **<Translate ios="true" ids="show_touches"/>** (*iOS*). Hebt Bildschirmberührungen mit visuellen Indikatoren hervor.
-- **Transparente Statusleiste**. Die Karte wird unter der Statusleiste sichtbar.  
-- **Banner der kostenlosen Version anzeigen**. Zeigt das Banner der kostenlosen Version auch in der kostenpflichtigen Version an.  
-- **Debug-Informationen anzeigen**. Zeigt grafische Informationen über die Platzierung jedes Textes auf der Karte an.
-- **Anzeige im Vordergrund erlauben**. Ermöglicht die Anzeige von Kartentexten übereinander.
+- **Transparente Statusleiste** (*Android*). Die Karte wird unter der Statusleiste sichtbar.  
+- **Banner der kostenlosen Version anzeigen** (*Android*). Zeigt das Banner der kostenlosen Version auch in der kostenpflichtigen Version an.  
+- **Debug-Informationen anzeigen** (*Android*). Zeigt grafische Informationen über die Platzierung jedes Textes auf der Karte an.
+- **Anzeige im Vordergrund erlauben** (*Android*). Ermöglicht die Anzeige von Kartentexten übereinander.
 
 
 ### Interne Algorithmen {#internal-algorithms}
 
-:::caution Android only
+:::caution Nur Android
 :::
 
-- **Sicherer Modus**. Führt OsmAnd ohne die native C++-Bibliothek aus und verwendet stattdessen Java-Implementierungen für das Karten-Rendering und die Routenberechnung. Die App wechselt automatisch in diesen Modus, wenn die native Bibliothek beim Start fehlschlägt, sodass sie gestartet werden und nutzbar bleiben kann. Das Karten-Rendering und die Routenberechnung sind im sicheren Modus deutlich langsamer.  
+- **Sicherer Modus**. Führt OsmAnd ohne die native C++-Bibliothek aus und verwendet stattdessen Java-Implementierungen für das Karten-Rendering und die Routenberechnung. Die App wechselt automatisch in diesen Modus, wenn die native Bibliothek beim Start fehlschlägt, sodass sie gestartet werden und nutzbar bleiben kann. Das Karten-Rendering und die Routenberechnung sind im sicheren Modus deutlich langsamer. 
+- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
 
 
 ### Speichereinstellungen {#memory-settings}
 
-:::caution Android only
+:::caution Nur Android
 :::  
 
 - Die Option **Für das Routing zugewiesener Speicher** ermöglicht es Ihnen, die Speichermenge zu bestimmen, die für die Berechnung langer Routen zugewiesen wird. Sie können diese Option verwenden, wenn das [Standard-Routing A*](../navigation/guidance/navigation-settings.md#development-settings) in den *Navigationseinstellungen* ausgewählt ist.
@@ -115,10 +113,12 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 - Eine höhere Speicherzuweisung kann die Leistung anderer Apps beeinträchtigen.
 - [Berechnung von 50-km-Routen für Fußgänger](../troubleshooting/navigation.md#calculation-of-50-km-routes-for-pedestrians)
 
+- **Java-Speicher** zeigt an, wie viel Java-Speicher die App verwendet, und öffnet die Heap-Histogramm-Werkzeuge: *Jetzt erfassen und analysieren*, *Bericht teilen* und *Bei hoher Auslastung erfassen* (standardmäßig aus). Siehe [Heap-Histogramm bei Speicherproblemen](../troubleshooting/crash-logs.md#heap-histogram-for-memory-problems-android), wann Sie diese verwenden sollten.
+
 
 ### Informationen und Statistiken {#info-and-statistics}
 
-:::caution Android only
+:::caution Nur Android
 :::  
 
 - **Zugewiesener Speicher**. Zeigt den zugewiesenen Systemspeicher für die OsmAnd-Anwendung an.  

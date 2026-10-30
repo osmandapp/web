@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import capitalize from 'lodash-es/capitalize';
+import { activityLabel } from '../../../map/util/activities';
 import AppContext from '../../../context/AppContext';
 import DefaultItem from '../../../frame/components/items/DefaultItem';
 import DividerWithMargin from '../../../frame/components/dividers/DividerWithMargin';
@@ -16,7 +16,7 @@ export default function TravelTrackInfo() {
     const { t } = useTranslation();
 
     const file = ctx.selectedGpxFile;
-    const activity = file?.activity ? capitalize(String(file.activity).replaceAll('_', ' ')) : null;
+    const activity = file?.activity ? activityLabel(String(file.activity), t) : null;
     const tags = file?.tags?.length ? file.tags.join(', ') : null;
     const date = file?.date ? String(file.date).slice(0, 10) : null;
     const osmUrl =

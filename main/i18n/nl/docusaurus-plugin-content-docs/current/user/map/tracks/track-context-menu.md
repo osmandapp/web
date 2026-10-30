@@ -1,5 +1,5 @@
 ---
-source-hash: 667db8cdb4e1fec2bc01d9c638937027845aef91848d327a62c300da938cb08c
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title:  Contextmenu Spoor
 ---
@@ -42,9 +42,6 @@ Het *Contextmenu Spoor* geeft informatie over het *[Spoor](../../personal/tracks
 
 Wanneer u op een spoor tikt, opent het eerste scherm van het *Contextmenu Spoor* - het tabblad *Overzicht*. Op dit tabblad vindt u een samenvatting van het gekozen spoor (*[Infopaneel](#info-panel)*) en kunt u de meest voorkomende acties met het spoor uitvoeren via het *[Spooracties menu](#track-actions)*. U kunt de [beschrijving en service-informatie](#description-and-info) over uw spoor zien als u het tabblad Overzicht omhoog trekt.
 
-<!--
-You can [short tap](../../map/map-context-menu.md#select-route-short-tap-for-android) on the track on the map → <Translate android="true" ids="shared_string_overview"/> → click to "eye" button for not showing the track on the map. 
--->
 
 ### Infopaneel {#info-panel}
 
@@ -205,7 +202,7 @@ Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle alge
       <year>2023</year>
       <license>https://github.com/osmandapp/OsmAnd/blob/master/LICENSE</license>
     </copyright>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <time>2023-12-13T12:00:00Z</time>
     <keywords>gpx, osmand, hiking</keywords>
     <extensions>
@@ -227,7 +224,7 @@ Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle alge
 </details>
 
 
-### Type Spooractiviteit {#ttrack-activity-type}
+### Type Spooractiviteit {#track-activity-type}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -246,7 +243,7 @@ Dit gedeelte van het tabblad *Overzicht* toont ***taggegevens*** en ***alle alge
 </Tabs>
 
 
-De functie *Activiteit* in OsmAnd stelt u in staat om opgenomen GPX-sporen en sporen opgeslagen via [Route plannen](../../plan-route/create-route.md) te taggen met specifieke activiteiten voor verdere analyse en organisatie in mappen.
+De functie *Activiteit* in OsmAnd stelt u in staat om opgenomen GPX-sporen en sporen opgeslagen via Route plannen te taggen met specifieke activiteiten voor verdere analyse en organisatie in mappen.
 
 - [Activiteitstags voor GPX-sporen](#description-and-info). [Opgenomen sporen](../../plugins/trip-recording.md#recording-settings) en sporen opgeslagen via [Route plannen](../../plan-route/create-route.md) ontvangen automatisch een activiteitstype op basis van het gebruikte profiel. Dit helpt bij het categoriseren en filteren later. U kunt de activiteit handmatig wijzigen indien nodig.
 - [Activiteitenfilter](../../personal/tracks/smart-folder.md#search-filter). U kunt de opgenomen GPX-sporen filteren op activiteit, waardoor u zich kunt concentreren op het vinden van specifieke soorten opnames, zoals alle fiets- of wandelsporen.
@@ -393,7 +390,7 @@ Als er *geen hoogte-informatie* op de route is, kunt u deze op de volgende manie
 
 [Deze functie](../../plan-route/create-route.md#get-elevation-data) stelt u in staat om ontbrekende hoogtegegevens te berekenen voor een [geplande route](../../plan-route/create-route.md#create-new-route) of een [bestaand GPX-spoor](../../plan-route/create-route.md#modify-existing-gpx-track).
 
-Als u een route maakt met de Rechte lijn-methode en er geen hoogtegegevens beschikbaar zijn, tik dan op *Hoogtegegevens ophalen* in het tabblad Analyseren en selecteer *Gebruik Terreinkaarten*. Eerder gedownloade [Terreinkaarten (3D)](../../plugins/topography.md#download-maps) zijn vereist. Het hoogteprofiel wordt vervolgens berekend op basis van de terreingegevens terwijl de routegeometrie ongewijzigd blijft.
+Als u een route maakt met de Rechte lijn-methode en er geen hoogtegegevens beschikbaar zijn, tik dan op *Hoogtegegevens ophalen* in het tabblad Analyseren en selecteer *Gebruik Terreinkaarten*. Eerder gedownloonde [Terreinkaarten (3D)](../../plugins/topography.md#download-maps) zijn vereist. Het hoogteprofiel wordt vervolgens berekend op basis van de terreingegevens terwijl de routegeometrie ongewijzigd blijft.
 
 Voor een bestaand GPX-spoor kunt u *Gebruik nabijgelegen wegen* selecteren. OsmAnd koppelt het spoor aan de dichtstbijzijnde toegestane wegen met behulp van een geselecteerd navigatieprofiel en haalt hoogtegegevens op uit de gekoppelde wegen. Deze optie kan de geometrie van het spoor aanpassen. Indien nodig kunt u ook *Gebruik Terreinkaarten* selecteren om de hoogte te berekenen terwijl de geometrie van het spoor ongewijzigd blijft.
 
@@ -427,6 +424,7 @@ In dit *Punten* tabblad:
 - [Toon spoorpuntgegevens](#display-custom-gpx-tags) en wijzig uw spoorpunten (waypoints en routepunten), [verwijder ze en voeg](#points--waypoints) waypoints toe aan een spoor.
 - Maak en wijzig [Groep (map) van punten](#waypoint-groups).
 - Toon een waypoint op de kaart met behulp van het pin-icoon in de waypointlijst. De kaart centreert op het waypoint zonder de lijst te sluiten of het huidige zoomniveau te wijzigen.
+- Voeg foto's, video's en audionotities toe aan een waypoint met behulp van de kaart *Media* in het contextmenu (*alleen Android*). Zie het [artikel Favorieten](../../personal/favorites.md#media).
 
 
 ### Waypoint toevoegen aan een spoor {#add-waypoint-to-a-track}
@@ -560,7 +558,7 @@ U kunt groepswaypoints op de kaart in- of uitschakelen met de knop in de rechter
     <time>2024-04-04T13:12:11Z</time>
     <name>Waypoint 1</name>
     <desc>Long description</desc>
-    <link href="http://docs.osmand.net" />
+    <link href="https://osmand.net" />
     <type></type>
     <cmt>Short comment for the waypoint.</cmt>
     <extensions>
@@ -703,7 +701,7 @@ Tik op een label om het detailpaneel te openen voor het geselecteerde stijgings-
 
 ![Hartslagmetrieken](@site/static/img/personal/tracks/heart_rate.png)
 
-Deze optie stelt u in staat om gemiddelde, minimale en maximale hartslagwaarden (slagen per minuut, bpm) voor elk interval van uw spoor te bekijken. Hartslaggegevens worden genomen uit het GPX-bestand van het spoor of direct opgenomen van een verbonden [externe hartslagsensor](https://osmand.net/docs/user/plugins/external-sensors) (BLE). Als er geen hartslaggegevens beschikbaar zijn, wordt deze rij verborgen in de intervallentabel.
+Deze optie stelt u in staat om gemiddelde, minimale en maximale hartslagwaarden (slagen per minuut, bpm) voor elk interval van uw spoor te bekijken. Hartslaggegevens worden genomen uit het GPX-bestand van het spoor of direct opgenomen van een verbonden [externe hartslagsensor](https://osmand.net/docs/user/plugins/external-sensors) (BLE). Als er geen hartslaggegevens beschikbaar, wordt deze rij verborgen in de intervallentabel.
 
 **Opmerking:** U kunt een BLE-hartslagmonitor verbinden via *<Translate android="true" ids="shared_string_plugin,external_sensors_plugin_name"/>* om HR-gegevens direct in OsmAnd op te nemen.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 486ba412add5b9d4b990309d87b8af70a94ef71e579cdfeb3ce640bc57611e55
+source-hash: 102625ca59014cb37545a3a7e0be7539528028775078539293c203501c086777
 sidebar_position: 18
 title:  الإضافات
 ---
@@ -36,7 +36,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings"/> ← &#65049; ← تفعيل*
 
-![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
+![تفعيل الملحقات في أندرويد](@site/static/img/settings/plugins_enable_android.png) ![مثال على ملحق في أندرويد](@site/static/img/settings/plugin_example_android.png)
 
 </TabItem>
 
@@ -44,7 +44,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> ← &#10003;*
 
-![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
+![تفعيل الملحقات في iOS](@site/static/img/settings/plugins_enable_ios.png) ![مثال على ملحق في iOS](@site/static/img/settings/plugin_example_ios.png)
 
 </TabItem>
 
@@ -74,7 +74,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | [الخرائط عبر الإنترنت](#online-maps) |[طبقة الخريطة](../plugins/online-map.md#how-to-prepare-raster-maps) |
 | [تسجيل الرحلة](#trip-recording) | [أداة مصغرة (Widget)](../plugins/trip-recording.md#widgets)، [الملف الشخصي](../plugins/trip-recording.md#recording-settings) |
 | [التضاريس](#topography) | [طبقة الخريطة](../plugins/topography.md#hillshade-slope-and-altitude-layers) |
-| [التضاريس ثلاثية الأبعاد](#topography) 🤖  | [طبقة الخريطة](../plugins/topography.md#3d-relief) |
+| [التضاريس ثلاثية الأبعاد](#topography) | [طبقة الخريطة](../plugins/topography.md#3d-relief) |
 | [الطقس](../plugins/weather.md) | [طبقة الخريطة](../plugins/weather.md#display-weather-on-the-map)، [أداة مصغرة (Widget)](../plugins/weather#weather-widgets)، [شاشة](../plugins/weather.md#weather-forecast-screen) |
 | [عرض الخرائط البحرية](#nautical-map-view) | [نمط الخريطة](../plugins/nautical-charts.md#nautical-map-style)، [الملف الشخصي](../plugins/nautical-charts.md#nautical-profile)  |
 | [عرض خرائط التزلج](#ski-map-view) | [نمط الخريطة](../plugins/ski-maps.md#set-winter-and-ski-map-style)، [الملف الشخصي](../plugins/ski-maps.md#skiing-profile) |
@@ -82,13 +82,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |[موقف السيارة](#parking-position) | [قائمة السياق](../plugins/parking.md#set-a-spot)، [أداة مصغرة (Widget)](../plugins/parking.md#parking-widget) |
 |[تعديل OpenStreetMap](#openstreetmap-editing)| [طبقة الخريطة](../plugins/osm-editing.md#authorization) |
 |[Mapillary](#mapillary) | [طبقة الخريطة](../plugins/mapillary.md#map-layer)، [قائمة السياق](../plugins/mapillary.md#map-context-menu) ، [أداة مصغرة (Widget)](../plugins/mapillary.md#mapillary-widget)|
-|[المستشعرات الخارجية](#external-sensors) 🤖  | [أداة مصغرة (Widget)](../plugins/external-sensors.md#widgets) |
+|[المستشعرات الخارجية](#external-sensors) | [أداة مصغرة (Widget)](../plugins/external-sensors.md#widgets) |
 |[مقاييس المركبة](#vehicle-metrics)  | [إعدادات مخصصة](../plugins/vehicle-metrics#scanner-settings)، [أداة مصغرة (Widget)](../plugins/vehicle-metrics#widgets) |
 |[الفلك](#astronomy)  | [شاشة](../plugins/astronomy.md#star-map-screen)، [قائمة السياق](../plugins/astronomy.md#context-menu) |
 |[إمكانية الوصول](#accessibility) 🤖  | [إعدادات مخصصة](../plugins/accessibility.md#plugin-settings) |
 |[تطوير OsmAnd](#osmand-development) | [إعدادات مخصصة](../plugins/development.md#plugin-settings) |
 |[متتبع OsmAnd](#osmand-tracker) 🤖  | [طبقة الخريطة](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map)، [أداة مصغرة (Widget)](../plugins/osmand-tracker.md#tracker-widget)، [قائمة السياق](../plugins/osmand-tracker.md#active-marker-on-the-osmand-map) |
-|[متتبع سفن AIS](#ais-vessel-tracker) 🤖  |  [إعدادات مخصصة](../plugins/ais-tracker.md#plugin-settings) |
+|[متتبع سفن AIS](#ais-vessel-tracker) |  [إعدادات مخصصة](../plugins/ais-tracker.md#plugin-settings) |
 
 
 ### إعدادات الإضافة {#plugin-settings}
@@ -106,13 +106,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Settings plugin Android 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![Settings plugin Android 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)
+![إعدادات الملحق في أندرويد 1](@site/static/img/plugins/development/access_plugin_settings_andr_2.png) ![إعدادات الملحق في أندرويد 2](@site/static/img/plugins/development/access_plugin_settings_andr_1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Settings plugin iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![Settings plugin iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png)
+![إعدادات الملحق في iOS 1](@site/static/img/plugins/development/access_plugin_settings_ios_2.png) ![إعدادات الملحق في iOS 2](@site/static/img/plugins/development/access_plugin_settings_ios_1.png)
 
 </TabItem>
 

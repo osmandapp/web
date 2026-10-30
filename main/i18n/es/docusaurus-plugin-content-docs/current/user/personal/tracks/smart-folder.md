@@ -1,5 +1,5 @@
 ---
-source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
+source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
 title: Carpeta Inteligente (Filtro)
 ---
@@ -99,7 +99,7 @@ Ir a: *pestaña <Translate ios="true" ids="shared_string_menu,shared_string_my_p
 - **Altitud media** y **Altitud máxima** — Encontrar pistas con datos de altitud media o máxima específicos.
 - **Fecha de creación** — Filtrar pistas creadas dentro de un rango de fechas particular.
 - **Ciudades más cercanas** — Mostrar pistas que pasan cerca de ciudades o localidades seleccionadas.
-- **Tipo de actividad** — Filtrar pistas basadas en el tipo de [actividades](../../map/tracks/track-context-menu.md#ttrack-activity-type) registradas en el archivo GPX (p. ej., ciclismo, senderismo).
+- **Tipo de actividad** — Filtrar pistas basadas en el tipo de [actividades](../../map/tracks/track-context-menu.md#track-activity-type) registradas en el archivo GPX (p. ej., ciclismo, senderismo).
 - **País** — Filtrar pistas por el país o región donde fueron grabadas.
 - **Color** y **Ancho** — Seleccionar pistas por color o ancho de línea asignado.
 - **Otro** — Filtros adicionales para características especiales:

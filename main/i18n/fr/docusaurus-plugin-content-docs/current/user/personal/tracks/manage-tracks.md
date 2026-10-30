@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title:  Gérer les traces
 ---
@@ -204,7 +204,7 @@ Une fois votre choix fait, les étapes suivantes sont proposées :
 
 - **Déplacer** — Vous pouvez organiser vos données en déplaçant les traces et les dossiers sélectionnés vers d'autres dossiers.
 
-- [Changer d'activité](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Cette action vous permet de changer le type d'activité, par exemple en *Voiture*, *Moto d'aventure*, *Randonnée* ou autres, pour la trace sélectionnée.
+- [Changer d'activité](../../map/tracks/track-context-menu.md#track-activity-type) — Cette action vous permet de changer le type d'activité, par exemple en *Voiture*, *Moto d'aventure*, *Randonnée* ou autres, pour la trace sélectionnée.
 
 - [Changer l'apparence](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Cette option vous permet de personnaliser l'apparence des traces sélectionnées, les rendant plus visibles et reconnaissables sur la carte.
 

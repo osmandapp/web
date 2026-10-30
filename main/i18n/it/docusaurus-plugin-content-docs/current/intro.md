@@ -1,5 +1,5 @@
 ---
-source-hash: 493d0f4bb5654e0183f24ee23ee49f36be8431ec2466fa554bd47c6ad8ab3813
+source-hash: b0856a5094b1d215f8e6507452fbd1d83a9df996a95ba8afef203917b669a88f
 sidebar_position: 1
 label: Introduzione
 title: Documentazione
@@ -33,7 +33,3 @@ Note di rilascio e link alle versioni precedenti di OsmAnd. Build Beta e Nightly
 ### [Legale](/docs/legal/) {#legal}
 
 Licenza. Informativa sulla privacy. Termini di utilizzo.
-
-### [Unisciti al nostro team](/docs/hiring/) {#join-our-team}
-
-Siamo sempre alla ricerca di nuovi collaboratori che possano unirsi al nostro team internazionale.

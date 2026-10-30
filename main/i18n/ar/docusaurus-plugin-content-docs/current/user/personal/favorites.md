@@ -1,5 +1,5 @@
 ---
-source-hash: 0000cb42245d9871184d8009b30a97fd6f15555a6510bbbd8d52edde2e10f458
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  المفضلة
 ---
@@ -131,7 +131,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>* → *اختر مفضلة* → *<Translate android="true" ids="favourites_context_menu_edit,select_icon_profile_dialog_title"/>*
 
 ![أماكني المفضلة أندرويد](@site/static/img/personal/favorite_icon_andr.png)
 
@@ -139,7 +139,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>*
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_favorites"/>* → *اختر مفضلة* → *<Translate ios="true" ids="ctx_mnu_edit_fav,select_icon_profile_dialog_title"/>*
 
 ![أماكني iOS](@site/static/img/personal/favorite_icon_3_ios.png)
 
@@ -147,34 +147,47 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-تتوفر مجموعة واسعة من الأيقونات لنقاط الاهتمام ونقاط الطريق في OsmAnd. يمكنك:
+تقوم شاشة **تحديد أيقونة** بتجميع الأيقونات حسب [الفئة](../search/search-poi.md#categories-and-their-filters). يتيح لك صف من شرائح الفئات في الأعلى الانتقال مباشرة إلى قسم الفئة في القائمة أدناه. انقر على أيقونة العدسة المكبرة للعثور على أيقونة بالاسم أو الكلمة المفتاحية.
 
-- تحديد أيقونة من قائمة [فئات نقاط الاهتمام](../search/search-poi.md#categories-and-their-filters).
-- العثور على أيقونة مناسبة باستخدام [خيار البحث](../search/search-all.md#how-to-use).
+- *المستخدمة مؤخرًا* — تظهر الأيقونات المحددة مؤخرًا في قسم خاص بها لإعادة استخدامها بسرعة.
+- *خاصة* — مجموعة من الأيقونات العامة (نجمة، علم، علامة، قلب، كاميرا، وغيرها) غير المرتبطة بفئة محددة.
 
 
 ### المفضلة الخاصة (شخصي) {#special-favorites-personal}
 
-يحتوي *المجلد الشخصي* على نقاط خاصة مثل **<Translate android="true" ids="favorite_home_category"/>** و **<Translate android="true" ids="work_button"/>**، والتي غالبًا ما تستخدم في [الملاحة](../navigation/setup/route-navigation.md#select-start-point). لا يحتوي هذا المجلد على *قائمة النقاط الثلاث*، ولا يمكن تغيير معلماته.
+يحتوي *المجلد الشخصي* على نقاط خاصة مثل **<Translate android="true" ids="favorite_home_category"/>** و **<Translate android="true" ids="work_button"/>**، والتي غالبًا تستخدم في [الملاحة](../navigation/setup/route-navigation.md#select-start-point). لا يحتوي هذا المجلد على *قائمة النقاط الثلاث*، ولا يمكن تغيير معلماته.
 
 
 ### الوسائط (أندرويد فقط) {#media}
 
 ![وسائط](@site/static/img/personal/media_actions.webp) ![وسائط](@site/static/img/personal/media_menu.webp)
 
-يتيح قسم الوسائط إرفاق صور وفيديوهات وتسجيلات صوتية وصور بنقطة مفضلة. يمكن إضافة الوسائط أثناء إنشاء المفضلة أو لاحقًا من شاشة تحرير المفضلة. لإرفاق وسائط، انقر على *إضافة* في قسم الوسائط واختر أحد الخيارات المتاحة:
+يتيح قسم الوسائط إرفاق صور وفيديوهات وتسجيلات صوتية وصور بنقطة مفضلة. يمكن إضافة الوسائط أثناء إنشاء المفضلة أو لاحقًا من شاشة تحرير المفضلة أو مباشرة من قائمة سياق المفضلة. لإرفاق وسائط، انقر على زر *+* في شاشة تحرير المفضلة أو *إضافة* في قائمة السياق واختر أحد الخيارات المتاحة:
 - **التقاط صورة** — التقط صورة جديدة بكاميرا الجهاز.
 - **تسجيل ملاحظة فيديو** — سجّل فيديو جديدًا.
-- **تسجيل ملاحظة صوتية** — سجّل ملاحظة صوتية.
+- **تسجيل ملاحظة صوتية** — سجّل ملاحظة صوتية. إذا لم يكن لدى OsmAnd إذن لتسجيل الصوت، يطلب الجهاز السماح بذلك.
 - **اختيار من المعرض** — اختر صورة موجودة من جهازك.
 - **اختيار من الملفات** — اختر صورة من نظام الملفات.
 
-بعد إرفاق الوسائط، تظهر في بطاقة الوسائط في قائمة سياق المفضلة. تتوفر بطاقة الوسائط أيضًا لـ [نقاط الطريق](../map/tracks/track-context-menu.md#points--waypoints).
+بعد إرفاق الوسائط، تظهر في بطاقة الوسائط في قائمة سياق المفضلة. إذا لم تُرفق وسائط، تظهر البطاقة *لا توجد وسائط* وزر *إضافة*. تتوفر بطاقة الوسائط أيضًا لـ [نقاط الطريق](../map/tracks/track-context-menu.md#points--waypoints).
+
+تُحفظ الملاحظات الصوتية والفيديو والصور التي تم إنشاؤها باستخدام [ملحق الملاحظات الصوتية/الفيديو](../plugins/audio-video-notes.md) أيضًا كمفضلات مع وسائط مرفقة.
 
 تعرض بطاقة الوسائط معاينات للعناصر المرفقة. تتبع العناصر المعروضة ترتيب الفرز المحدد. انقر على *عرض الكل* لفتح المعرض الكامل. يعرض المعرض جميع الوسائط المرفقة بالمفضلة المحددة.
 
 انقر على أي عنصر لفتحه في عرض ملء الشاشة. يمكن عرض الصور والفيديوهات مباشرة، بينما تتضمن التسجيلات الصوتية عناصر تحكم في التشغيل.
 
+يتضمن المعرض الخيارات التالية:
+- **الفرز** — انقر على شريط الفرز في الأعلى لاختيار الترتيب: الأقرب، آخر تعديل، الاسم أ - و، الاسم و - أ، أحدث تاريخ أولاً، أقدم تاريخ أولاً، أطول مدة أولاً، أو أقصر مدة أولاً.
+- **الملخص** — أسفل العناصر، يعرض المعرض عدد الصور والفيديوهات والملاحظات الصوتية وحجمها الإجمالي.
+- **زر +** — إضافة وسائط جديدة.
+- **تحرير** (أيقونة القلم) — الدخول في وضع التحديد. يمكنك أيضًا النقر طويلاً على أي عنصر.
+
+في وضع التحديد، انقر على العناصر لتحديدها أو استخدم تحديد الكل. تقدم قائمة النقاط الثلاث:
+- **تصدير** — تصدير ملفات الوسائط المحددة.
+- **حذف** — إزالة الوسائط المحددة من المفضلة. تُحذف الوسائط المخزنة بواسطة OsmAnd وغير المرفقة بأي عنصر آخر من الجهاز أيضًا.
+
+تُسمى الوسائط الملتقطة في OsmAnd باستخدام النمط `Type_YYYY-MM-DD_HH-mm-ss_location.ext`، على سبيل المثال `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. يحتوي الاسم على نوع الوسائط وتاريخ ووقت الإنشاء والموقع الذي تم التقاط الوسائط فيه، مشفرًا كـ [رابط قصير OSM](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 ## إدارة المفضلة {#manage-favorites}
 
@@ -221,7 +234,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </Tabs>
 
 - **الفرز** — يمكن فرز مجلدات ونقاط المفضلة باستخدام خيارات الفرز المتاحة في قائمة القائمة. بالنسبة لنقاط المفضلة، الخيارات المتاحة هي: *الاسم أ – و*، *الاسم و – أ*، *آخر تعديل*، *الأقرب إلى الموقع الحالي*، *الأقرب إلى مركز الخريطة*، *أحدث تاريخ أولاً*، و*أقدم تاريخ أولاً*. بالنسبة لمجلدات المفضلة، الخيارات المتاحة هي: *الاسم أ – و*، *الاسم و – أ*، *آخر تعديل*، *أحدث تاريخ أولاً*، و*أقدم تاريخ أولاً*. بشكل افتراضي، تُفرز العناصر حسب الاسم أ – و. تُعرض المجلدات المثبتة دائمًا في أعلى القائمة، وتُفصل بصريًا عن باقي المجلدات بواسطة فاصل. 
-- **البحث** — استخدم [البحث العام](../search/search-all.md) للعثور على المفضلة بالاسم. تُفرز المفضلة حسب المسافة من مركز الخريطة. للبحث عن نقاط المفضلة من قائمة المفضلة في علامة تبويب أماكني، انقر على أيقونة *البحث* (العدسة المكبرة).
+- **البحث** — يمكنك استخدام [البحث العام](../search/search-all.md) للعثور على المفضلة بالاسم. للبحث داخل قائمة المفضلة فقط في علامة تبويب أماكني، انقر على أيقونة *البحث* (العدسة المكبرة).
+
 
 ### تحرير / حذف جماعي {#bulk-edit--delete}
 
@@ -264,7 +278,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **إضافة إلى علامات الخريطة** — إضافة النقاط المحددة إلى قائمة علامات الخريطة.
 - **إضافة إلى مسار** — إضافة النقاط المحددة إلى مسار.
 - **إضافة إلى الملاحة** — إضافة النقاط المحددة إلى الملاحة.
-- **حذف** — إزالة نقاط المفضلة المحددة.
+- **حذف** — إزالة النقاط المفضلة المحددة.
 
 بالنسبة للمجلدات المحددة، تتوفر الإجراءات نفسها، مع الخيارات الإضافية التالية:
 
@@ -274,21 +288,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 </TabItem>
 
 </Tabs>
-
-<!--
-### Add Favorites to Map Markers {#add-favorites-to-map-markers}
-
-<InfoAndroidOnly/>
-
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions_android.png)
-
-You can add to or remove your favorites from [Map markers list](../personal/markers.md).
-Tap &#8942; button (**Android**) opens special functions for a chosen Favorite folder (group).
-
-**Functions for Favorite folder:**
-- **<Translate android="true" ids="shared_string_add_to_map_markers"/>**  or **<Translate android="true" ids="remove_from_map_markers"/>**.
-- Add or remove all Favorite points from a folder in [Map markers list](../personal/markers.md).
--->
 
 
 ### إجراءات مجموعة المفضلة {#favorite-group-actions}
@@ -421,38 +420,14 @@ Tap &#8942; button (**Android**) opens special functions for a chosen Favorite f
 
 </Tabs>
 
-تحتاج إلى حساب سحابة OsmAnd لاستخدام ميزة *النسخ الاحتياطي المجاني للإعدادات*. إذا كان لديك حساب في *OsmAnd Pro* أو حساب نشط في *حساب سحابة OsmAnd*، فلن ترى اللافتة الترويجية.  
+تحتاج إلى حساب سحابة OsmAnd لاستخدام ميزة *النسخ الاحتياطي المجاني للمفضلة*. إذا كان لديك حساب في *OsmAnd Pro* أو حساب نشط في *حساب سحابة OsmAnd*، فلن ترى اللافتة الترويجية.  
 
 - *لافتة النسخ الاحتياطي المجاني للمفضلة*. انقر على هذه اللافتة لبدء عملية النسخ الاحتياطي.
 - *أكمل خطوة التسجيل* إذا لم يكن لديك حساب سحابة OsmAnd باتباع الإرشادات في [دليل التسجيل](../personal/osmand-cloud.md#login).
 - *انتقل إلى قائمة مشتريات OsmAnd* (*القائمة ← الإعدادات ← المشتريات*).
-- *[حزمة OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. حدد هذا الخيار للوصول إلى ميزة النسخ الاحتياطي المجاني للإعدادات.
-- *أنشئ نسخة احتياطية* من إعداداتك.
+- *[حزمة OsmAnd Start](../personal/osmand-cloud.md#osmand-start)*. حدد هذا الخيار للوصول إلى ميزة النسخ الاحتياطي المجاني للمفضلة.
+- *أنشئ نسخة احتياطية* من مفضلاتك.
 
-<!--
-### All Favorites {#all-favorites}
-
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Favorites actions android](@site/static/img/personal/favorites_export_import_2_andr.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Favorites export import ios](@site/static/img/personal/favorites_export_import_3_ios.png)  
-
-</TabItem>
-
-</Tabs>
-
-You can export and import your favorites using the special buttons at the bottom of the Favorites screen. A [.gpx file](../../technical/osmand-file-formats/osmand-gpx.md) (*favorites.gpx*) can be sent to Dropbox, email, messengers, and other applications installed on your device that support this feature.
-
-- **Import** button (*Android*) / **Import favorite** (*iOS*). Allows you to import favorite points (*favorites.gpx*) as waypoints from a *GPX* file (a common GPS data format) from your device's storage.
-- **Share** button (*Android*) / **Export favorite** (*iOS*). Allows you to export (share) all your favorites as a *favorites.gpx* file.
--->
 
 ### مجموعة المفضلة {#favorite-group}
 
@@ -471,8 +446,8 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-- لمشاركة عدة مجلدات مفضلة، أدخل [وضع التحديد](#bulk-edit--delete)، وحدد المجلدات المطلوبة، ثم انقر على *مشاركة*.
-- لمشاركة مجلد مفضل واحد، انقر على قائمة النقاط الثلاث (*أندرويد*) أو انقر طويلاً على المجلد (*iOS*)، ثم اختر *مشاركة* لإرسال ملف Favorites.gpx إلى ذاكرة جهازك أو مشاركته عبر تطبيقات المراسلة. على أندرويد، إذا كان المجلد يحتوي على وسائط مرفقة، تظهر ورقة مشاركة. يمكنك اختيار:
+- لمشاركة عدة مجلدات مفضلة، راجع قسم [تحرير / حذف جماعي](#bulk-edit--delete).
+- لمشاركة مجلد مفضل واحد، راجع قسم [إجراءات مجموعة المفضلة](#favorite-group-actions). على أندرويد، إذا كان المجلد يحتوي على وسائط مرفقة، تظهر ورقة مشاركة. يمكنك اختيار:
     - *النقاط فقط* — شارك نقاط المفضلة من المجلد كملف GPX.
     - *النقاط والوسائط* — شارك نقاط المفضلة والوسائط المرفقة كأرشيف OSF.
 
@@ -499,7 +474,7 @@ You can export and import your favorites using the special buttons at the bottom
 
 </Tabs>
 
-ينشئ OsmAnd **ملف نسخ احتياطي** في كل مرة يتم فيها تحرير المفضلة.
+ينشئ OsmAnd تلقائيًا **ملف نسخ احتياطي** في كل مرة يتم فيها تحرير المفضلة، مع الاحتفاظ بما يصل إلى 10 ملفات نسخ احتياطي في المجموع، وبحد أقصى نسختين احتياطيتين جديدتين يوميًا.
 
 - **أندرويد**: يتم تخزين النسخ الاحتياطية في *Android → data → net.osmand → files → backup*. استخدم مدير ملفات تابع لجهة خارجية للوصول إليها.
 
@@ -519,6 +494,8 @@ You can export and import your favorites using the special buttons at the bottom
 
 يتم تخزين جميع المعلومات حول المفضلة ووصفها باستخدام العلامات. عند إنشاء نقطة مفضلة، يمكنك كتابة [وصفك](#favorite-point) الخاص أو استخدام معلومات من بيانات [نقطة الاهتمام (POI)](../map/point-layers-on-map.md#points-of-interest-pois) الخاصة بـ OSM التي تم إنشاء نقطتك منها. تستخدم نقاط المفضلة ونقاط الاهتمام ونقاط الطريق نفس **العلامات** لتخزين المعلومات ويتم حفظها في **تنسيق ملف GPX**.
 
+إذا كان [ملحق تحرير OSM](../plugins/osm-editing.md) مفعّلاً، فإن المفضلة التي تم إنشاؤها من كائن OpenStreetMap تخزن أيضًا رابطًا لذلك الكائن في وسم `osm_url`، على سبيل المثال `https://www.openstreetmap.org/node/7235345886`. يُحتفظ بالرابط في ملفات المفضلة المصدرة والمشتركة وفي النسخ الاحتياطية.
+
 يمكن أن تحتوي المفضلة أيضًا على مراجع للوسائط المرفقة باستخدام عناصر `<link>` القياسية في GPX. 
 
 
@@ -533,6 +510,7 @@ You can export and import your favorites using the special buttons at the bottom
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

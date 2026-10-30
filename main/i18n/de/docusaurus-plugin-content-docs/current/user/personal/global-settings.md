@@ -1,5 +1,5 @@
 ---
-source-hash: bd81c2321c74c63107dfc284a099f5a70651f4b9ec53164117f0449dcf5774a9
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Globale Einstellungen
 ---
@@ -44,7 +44,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 ## Allgemein {#general}
 
-Dieser Abschnitt enthält die grundlegenden OsmAnd-Einstellungen, wie die Auswahl eines [Profils](#default-profile) beim Laden der Anwendung, die Auswahl der [Rendering-Engine](#map-rendering-engine) und des [Ordners](#data-storage-folder), in dem die Daten gespeichert werden.  
+Dieser Abschnitt enthält die grundlegenden OsmAnd-Einstellungen, wie die Auswahl eines [Profils](#default-profile) beim Laden der Anwendung, die Auswahl der [Rendering-Engine](#map-rendering-engine) und des [Ordners](#data-storage), in dem die Daten gespeichert werden.  
 
 
 ### Standardprofil {#default-profile}
@@ -98,9 +98,10 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settin
 
 2. Im **<Translate android="true" ids="change_data_storage_folder"/>** können Sie einen Ordner zum Speichern von OsmAnd-Daten auf Ihrem Gerät auswählen.  
 
-    - *Interner App-Speicher*. Nur die OsmAnd-App hat Zugriff auf ihre Daten und keine der externen Apps.
+    - *Interner App-Speicher*. Nur die OsmAnd-App haben Zugriff auf ihre Daten und keine der externen Apps.
     - *Gemeinsamer Speicher*. Nicht mehr verfügbar.
     - *Externer Speicher 1*. Nur 1 OsmAnd-App hat Zugriff sowie Admin-Apps und USB.
+    - *Sichtbarer externer Speicher 1*. Daten werden im Android/media-Ordner gespeichert, der für Dateimanager und USB offen ist. Es sind keine zusätzlichen Speicherberechtigungen erforderlich.
     - *Mehrbenutzerspeicher*. Nur 1 OsmAnd-App hat Zugriff, aber er wird von mehreren Android-Benutzern gemeinsam genutzt.
     - *Manuell angegeben*. Hängt vom Pfad ab.
 
@@ -115,6 +116,11 @@ Die Einstellung **Medienspeicher** bestimmt, wo Fotos, Videos und Audiodateien g
 - **Gemeinsamer Speicher** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Kameraordner** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Manuell angegeben** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Wenn Sie einen anderen Medienspeicher auswählen, fragt OsmAnd, ob vorhandene Mediendateien verschoben werden sollen:
+- **An den neuen Speicherort verschieben** — Verschieben Sie vorhandene Mediendateien an den ausgewählten Speicherort.
+- **Nicht verschieben** — Ändern Sie den Speicherort, ohne vorhandene Dateien zu verschieben.
+- **Abbrechen** — Behalten Sie den aktuellen Speicherort bei.
 
 Es gibt auch den Schalter *Immer eine lokale Kopie behalten*. Wenn er aktiviert ist, kopiert OsmAnd Medien, die aus der Galerie oder Dateien importiert wurden, in seinen eigenen Speicher, sodass die angehängten Medien auch dann verfügbar bleiben, wenn die Originaldatei aus der Galerie oder dem Dateisystem gelöscht wird.
 
@@ -151,7 +157,7 @@ Gehe zu: *Dateien → Auf meinem iPhone → OsmAnd Maps*
 | Funktionen | Version 1 | Version 2 (OpenGL) |
 |:---|:--- |:--- |
 | Plattformübergreifend | Wird in der iOS-Version nicht verwendet. | Passt für beide Versionen. |
-| GPU-/CPU-abhängig | Empfohlen für leistungsschwache oder veraltete Geräte. | Leistungsstarke Rendering-Engine. <br /> Nur verfügbar für [OsmAnd 4.3](https://docs.osmand.net/blog/osmand-android-4-3-released) und spätere Versionen sowie im Testmodus für [OsmAnd 4.2](https://docs.osmand.net/blog/osmand-android-4-2-released). |
+| GPU-/CPU-abhängig | Empfohlen für leistungsschwache oder veraltete Geräte. | Leistungsstarke Rendering-Engine. <br /> Nur verfügbar für [OsmAnd 4.3](https://osmand.net/blog/osmand-android-4-3-released) und spätere Versionen sowie im Testmodus für [OsmAnd 4.2](https://osmand.net/blog/osmand-android-4-2-released). |
 | 3D-Modus | Es ist möglich, die Karte in 2D anzuhaften, und Sie können den Betrachtungswinkel ändern, um eine [3D-Ansicht](../widgets/map-buttons.md#3d-mode) zu erhalten. | Sie können die Karte in 2D und [3D](../widgets/map-buttons.md#3d-mode) anzeigen. |
 | Kartenanzeige | Die gesamte Karte wird als Satz von Kacheln gerendert, und Markierungen, Linien und Text befinden sich bereits innerhalb dieser Kacheln. | Zuerst wird das gesamte Kachelpaket gerendert, und dann werden die verfügbaren Symbole [Schicht für Schicht](../../technical/algorithms/map-rendering-layers.md) auf die Karte angewendet. |
 | Transparente Symbole über/unterlagern | Unterstützt alle Einstellungen. | Unterstützt keine Rasterebene über Vektortext. |

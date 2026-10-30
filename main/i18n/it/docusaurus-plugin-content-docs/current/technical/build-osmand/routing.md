@@ -1,5 +1,5 @@
 ---
-source-hash: 25c29183922ffa0df481d5ee27894c6a7f4653e20a70b824ecbc3791edaafed7
+source-hash: 9fba3febb3976b4f66fedc9a6c2d4e8c305fe11e72aa3f7b02a2f5cf993505aa
 sidebar_position: 3
 ---
 
@@ -15,4 +15,4 @@ In alcuni casi potresti voler estendere o regolare l'esperienza di routing di Os
 * obstacle (penalità in secondi) - definisce una penalità che si aggiunge al tempo di routing
 * obstacle_time (penalità in secondi) - definisce una penalità che viene visualizzata all'utente ma che non viene considerata dal motore di routing, ad esempio obstacle_time - 2 ore, obstacle - 1 minuto, sul percorso più breve il motore troverà un percorso utilizzando l'ostacolo di 1 minuto ma l'utente vedrà che il tempo di percorso è di 2 ore.
 
-Per testare [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), puoi usare [OsmAndMapCreator](http://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Per testare routing.xml sul dispositivo, puoi semplicemente sostituire il routing.xml predefinito nella cartella principale di OsmAnd con quello sulla scheda SD.
+Per testare [routing.xml](https://github.com/osmandapp/OsmAnd-resources/blob/master/routing/routing.xml), puoi usare [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). Per testare routing.xml sul dispositivo, puoi semplicemente sostituire il routing.xml predefinito nella cartella principale di OsmAnd con quello sulla scheda SD.
