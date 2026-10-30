@@ -1,5 +1,5 @@
 ---
-source-hash: aaf555350b020e79f75cc282a791378b92cd34f88ae3f6444be21630b7822872
+source-hash: 14cb9879b6c01033f21d3ca426e63d47e65739497bfce1c4624a2a8918eccc4b
 sidebar_position: 3
 title:  Sesli Komutlar / Bildirimler
 ---
@@ -394,7 +394,7 @@ Güç tasarrufu yapmak için cihazınızın ekranını kontrol edebilirsiniz. Bu
 
     ![Sistem zaman aşımı ekran kontrolü Android](@site/static/img/navigation/route/system_timeout_android.png)
 
-2. **<Translate android="true" ids="wake_time"/>**. *Ekranı Açık Tut* açıksa, cihazın ekranı uyandıktan sonra zaman aşımı uygulamaz. Devre dışı bırakılırsa, cihazın ekranının etkileşimde bulunmadığınız takdirde 5 ila 60 saniye sonra kapanacağı süreyi ayarlayabilirsiniz.  
+2. **<Translate android="true" ids="wake_time"/>**. *Ekranı Açık Tut* açıksa, cihazın ekranı uyandıktan sonra zaman aşımı uygulamaz. Devre dışı bırakılırsa, cihazın ekranının etkileşimde bulunmadığınız takdirde 5 ila 60 saniye sonra kapanacağı süreyi ayarlayabilirsiniz. Zaman aşımı, haritayla son etkileşiminizden itibaren sayılır ve her dokunuş onu yeniden başlatır. Süre dolduğunda ekran, cihazınızın sistem ekran zaman aşımına göre kapanır; bu nedenle OsmAnd ekranı sistem ayarından daha uzun süre açık tutabilir, ancak asla daha kısa tutmaz.   
 
     ![Uyandıktan sonra zaman aşımı Android](@site/static/img/navigation/route/timeout_after_wakeup_android.png) ![Uyandıktan sonra zaman aşımı Android](@site/static/img/navigation/route/timeout_after_wakeup_1_android.png)
 
@@ -402,11 +402,15 @@ Güç tasarrufu yapmak için cihazınızın ekranını kontrol edebilirsiniz. Bu
 
 ![ekranı aç Android](@site/static/img/navigation/voice/voice_navigation_Turnscreenon.png)
 
-Ekran uyandırma seçeneklerini seçin ve cihaz kilitliyken OsmAnd'ın ön planda kalmasını sağlayın.
+Ekran uyandırma seçeneklerini seçin ve cihaz kilitliyken OsmAnd'ın ön planda kalmasını sağlayın. Bir uyandırma seçeneği ekranı açtığında harita kilit ekranının üzerinde görünür ve cihaz kilitli kalır. Hiçbir uyandırma seçeneği etkin değilse normal kilit ekranı gösterilir.
 
-- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/>
+- *<Translate android="true" ids="turn_screen_on_proximity_sensor"/>*. <Translate android="true" ids="turn_screen_on_sensor_descr"/> Sensör, navigasyon veya iz kaydı sırasında güvenilir şekilde yanıt verir. Diğer durumlarda Android, uygulama arka plana geçtikten yaklaşık bir dakika sonra OsmAnd'a sensör olaylarını göndermeyi durdurur.
 - *<Translate android="true" ids="turn_screen_on_navigation_instructions"/>*. <Translate android="true" ids="turn_screen_on_navigation_instructions_descr"/>
-- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/>
+- *<Translate android="true" ids="turn_screen_on_power_button"/>*. <Translate android="true" ids="turn_screen_on_power_button_descr"/> *Sistem ekran zaman aşımını kullan* kapalıysa, bu seçenek *Uyandıktan sonra zaman aşımı* ayarının *Ekranı Açık Tut* olarak ayarlanmasını gerektirir.
+
+Yakınlık sensörü veya bir navigasyon talimatıyla uyandırıldıktan sonra harita, *Uyandıktan sonra zaman aşımı* ayarında belirlenen süre boyunca kilit ekranının üzerinde kalır ve ardından cihaz yeniden kilitlenir. *Ekranı Açık Tut* seçeneğiyle harita, güç düğmesine basana kadar görünür kalır.
+
+**Not:** Xiaomi cihazlarda OsmAnd için *Kilit ekranında göster* iznine izin verin (*Uygulama bilgisi → Diğer izinler*). Bu izin olmadan ekran açılır, ancak harita kilit ekranının üzerinde görünmez. OsmAnd bu izni kendisi veremez.
 
 
 ## İlgili Makaleler {#related-articles}

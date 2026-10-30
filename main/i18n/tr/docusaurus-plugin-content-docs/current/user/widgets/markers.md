@@ -1,5 +1,5 @@
 ---
-source-hash: 2e10650d0eee32138985228898ac7ac712a0a70a1f315f227a751d0c2f14ae10
+source-hash: 7b765aa07ea22d947a58624f6293200d6f6198cc047b028220974be3afc62756
 sidebar_position: 6
 title:  İşaretçi Widget'ları
 ---
@@ -138,7 +138,7 @@ Widget, Harita işaretleyicileri listesindeki birinci veya ikinci işaretleyici 
 
 ## Harita Üzerinde Görünüm {#appearance-on-the-map}
 
-Harita işaretleyicilerinin görünümünü yapılandırma, OsmAnd'ın hem Android hem de iOS sürümlerinde mevcuttur. "Harita Üzerinde Görünüm" menüsü, Harita işaretleyicileri için genel bir ayardır ve widget'lar etkin olsun veya olmasın geçerlidir. Ayrıntılı bilgiyi bu [sayfada](../personal/markers.md#appearance-on_the_map) okuyabilirsiniz.
+Harita işaretleyicilerinin görünümünü yapılandırma, OsmAnd'ın hem Android hem de iOS sürümlerinde mevcuttur. "Harita Üzerinde Görünüm" menüsü, Harita işaretleyicileri için genel bir ayardır ve widget'lar etkin olsun veya olmasın geçerlidir. Ayrıntılı bilgiyi bu [sayfada](../personal/markers.md#appearance-on-the-map) okuyabilirsiniz.
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

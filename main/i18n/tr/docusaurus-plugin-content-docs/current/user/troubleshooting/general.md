@@ -1,5 +1,5 @@
 ---
-source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
+source-hash: 7a4ec38811965699d4bf8be48f33fcce4e1e12973b13ab13ffa374909cfef793
 sidebar_position: 2
 title:  Genel
 ---
@@ -90,6 +90,19 @@ Harita düğmelerinin boyutunu manuel olarak ayarlamak istiyorsanız, [Varsayıl
 
 Arayüz hala beklenenden daha büyük görünüyorsa, *Android Sistem Ayarları → Ekran → Ekran boyutu ve metin* bölümünü kontrol edin ve ekran ayarlarını gerektiği gibi ayarlayın.
 
+### OsmAnd iPad'de yatay modda ekranı doldurmuyor (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+OsmAnd, iPad'de hem dikey hem de yatay yönlendirmeyi destekler ve sistem döndürmesini takip eder. Uygulama dikey modda ekranı doldurup yatay modda daha küçük bir pencere olarak görünüyorsa, bunun nedeni OsmAnd değil, iPadOS 26'nın pencere modudur.
+
+*Pencereli Uygulamalar* modunda iPadOS her uygulama penceresinin boyutunu hatırlar. OsmAnd penceresi yatay modda yeniden boyutlandırıldığında, uygulama dikey modda ekranı doldurmaya devam ederken yatay modda bu pencere boyutunu korur.
+
+OsmAnd'ın yeniden ekranı doldurması için aşağıdaki seçeneklerden birini kullanın:
+
+- **Pencereyi genişletin.** OsmAnd yatay modda açıkken pencerenin üstündeki küçük hapa dokunun. Üç düğme görünür: *Kapat*, *Küçült* ve *Yakınlaştır*. Uygulamayı tüm ekrana genişletmek için *Yakınlaştır*'a dokunun. Uygulama, iPad döndürüldükten sonra da tam ekran boyutunu korur.
+- **Tüm uygulamalar için pencere modunu kapatın.** *iPad Ayarları → Çoklu Görev ve Hareketler* bölümüne gidin ve *Pencereli Uygulamalar* yerine *Tam Ekran Uygulamalar* seçeneğini belirleyin. OsmAnd dahil tüm uygulamalar her zaman tam ekran açılır.
+
+Ayrıca OsmAnd'ın başka bir uygulamanın yanında *Bölünmüş Görünüm* veya *Slide Over* modunda açılmadığından emin olun.
+
 
 ## Diğer {#other}
 
@@ -112,7 +125,7 @@ GPS bağlantı sorunlarını çözmek için şu adımları izleyin:
 
 <!-- ???
 or this title:
-### Resolving payment account and app email sync issues in OsmAnd {#resolving-payment-account-and-app-email-sync-issues-in-osmand}
+### OsmAnd'da ödeme hesabı ile uygulama e-postası arasındaki senkronizasyon sorunlarını çözme {#resolving-payment-account-and-app-email-sync-issues-in-osmand}
 -->
 
 OsmAnd Pro satın alımınızla ilişkili e-postanın OsmAnd uygulaması e-postasıyla eşleşmediği bir sorunla karşılaşırsanız, sorunu çözmek için şu adımları izleyin:

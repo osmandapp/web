@@ -1,5 +1,5 @@
 ---
-source-hash: 803b22736228c5b37a1814163faeb441138781434f1ba2a3069b7668f1ffe213
+source-hash: 6ec692ef2d49e44b3cbbd765dc588f2913d7072ca92f833de726302514647064
 sidebar_position: 4
 title:  Çapraz Platform Satın Alımları
 ---
@@ -42,7 +42,7 @@ Tüm OsmAnd ürünlerini buradan karşılaştırabilirsiniz: [satın alımlar ar
 
 ### Satın Alımınızı Bağlayın {#link-your-purchase}
 
-![Cloud link](@site/static/img/purchases/cloud_activation.png)
+![Cloud bağlantısı](@site/static/img/purchases/cloud_activation.png)
 
 Bu adımı **satın alımı yaptığınız cihazda** (Android veya iOS, sürüm 5.0 veya üzeri) gerçekleştirin:
 
@@ -55,8 +55,8 @@ Bu adımı **satın alımı yaptığınız cihazda** (Android veya iOS, sürüm 
 
 ### Başka Bir Cihazda veya Platformda Etkinleştirin {#activate-on-another-device-or-platform}
 
-![Maps+ cross](@site/static/img/purchases/cross_purchase.png)
-![Maps+ cross](@site/static/img/purchases/cross_purchase_1.png)
+![Maps+ çapraz platform](@site/static/img/purchases/cross_purchase.png)
+![Maps+ çapraz platform](@site/static/img/purchases/cross_purchase_1.png)
 
 1. [OsmAnd Cloud hesabınıza](../personal/osmand-cloud.md#login) gidin:
    *Menü → Ayarlar → OsmAnd Cloud →* ***Aynı hesapla giriş yapın***
@@ -80,6 +80,20 @@ Sorun devam ederse, **support@osmand.net** ile iletişime geçin ve şunları ek
 - Satın alma türü (Pro / Maps+ tek seferlik / Maps+ aboneliği).
 
 
+### Manuel Aktarım {#manual-transfer}
+
+Satın alımınız OsmAnd Cloud aracılığıyla otomatik olarak etkinleştirilemiyorsa, Destek ekibi — **support@osmand.net** — satın alımı manuel olarak aktarabilir.
+
+Manuel aktarım talep etmek için şunları belirtin:
+- OsmAnd Cloud e-postanız.
+- Satın alma işlem veya sipariş numarası.
+- Satın alınan ürünü gösteren bir ekran görüntüsü de önerilir.
+
+Satın alma işlem veya sipariş numarası ve kayıtlı bir OsmAnd Cloud hesabı olmadan Destek ekibi satın alımı normalde aktaramaz.
+
+10 yıldan daha eski satın alımlar aktarılamaz.
+
+
 ### Satın Alımlar ve Birden Fazla Hesap {#purchases-and-multiple-accounts}
 
 Çapraz platform satın alma, orijinal satın alma makbuzunu (App Store veya Google Play'den) tutan cihazda en son etkinleştirilen OsmAnd Cloud hesabına bağlanır. Birincil hesabınızdan çıkış yapıp bu cihazda yeni bir hesaba giriş yaparsanız, sistem lisansı otomatik olarak yeni hesaba aktarır. Sonuç olarak, orijinal OsmAnd Cloud hesabınız diğer platformlardaki satın alma durumunu kaybeder, çünkü lisans aynı anda yalnızca bir OsmAnd Cloud hesabında etkin olabilir. Daha fazla bilgi [burada](../troubleshooting/purchases_payments.md#purchase-association-with-multiple-osmand-cloud-accounts).
@@ -87,12 +101,12 @@ Sorun devam ederse, **support@osmand.net** ile iletişime geçin ve şunları ek
 
 ## Örnek {#example}
 
-[Amazon Appstore](https://www.amazon.com/OsmAnd-Maps-Navigation/dp/B00D0SA8I8)'dan OsmAnd'ın ücretsiz sürümünde **Maps+**'ı tek seferlik uygulama içi satın alma olarak satın aldınız.
+[Google Play](https://play.google.com/store/apps/details?id=net.osmand)'den OsmAnd'ın ücretsiz sürümünde **Maps+**'ı tek seferlik uygulama içi satın alma olarak satın aldınız.
 Daha sonra bir iPhone'a geçmeye karar verdiniz ve [OsmAnd iOS sürümü](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257) ile **Maps+**'ı kullanmak istiyorsunuz.
 
 Maps+ satın alımınızı iOS'ta etkinleştirmek için:
 
-1. Orijinal cihazınızda OsmAnd uygulamasının **Amazon sürümünü** açın.
+1. Orijinal Android cihazınızda OsmAnd'ı açın.
 2. [OsmAnd Cloud hesabınıza](../personal/osmand-cloud.md#login) giriş yapın:
    *Menü → Ayarlar → OsmAnd Cloud → Yeni hesap oluştur / Zaten bir hesabım var*
 3. iPhone'unuza [App Store](https://apps.apple.com/app/osmand-maps-travel-navigate/id934850257)'dan OsmAnd'ı yükleyin

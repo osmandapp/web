@@ -1,5 +1,5 @@
 ---
-source-hash: fc1b2c0235716aa50473c8f887e1a5bd1752fd011931da9e6726f958a0e3fca9
+source-hash: 3e8ac9992e039c617c093a24702772bc6cdb0c520e1dcadb77013d26c7264441
 sidebar_position: 2
 title:  Satın Almalar ve Ödemeler
 ---
@@ -52,11 +52,11 @@ import Translate from '@site/src/components/Translate.js';
 ### Satın Alımın Birden Fazla OsmAnd Cloud Hesabıyla İlişkilendirilmesi {#purchase-association-with-multiple-osmand-cloud-accounts}
 
 
-_Maps+_ ve _Pro_ gibi çapraz platform satın alımları, orijinal satın alma makbuzunu (App Store veya Google Play'den) tutan cihazda en son etkinleştirilen OsmAnd Cloud hesabına bağlanır. Bu cihazdaki bir kullanıcı birincil hesabından (`OsmAnd Cloud hesabı A`) çıkış yapıp yeni bir hesaba (`OsmAnd Cloud hesabı B`) giriş yaparsa, OsmAnd sistemi lisansı otomatik olarak yeni `OsmAnd Cloud hesabı B`'ye aktarır. Sonuç olarak, orijinal OsmAnd Cloud hesabınız diğer platformlarda satın alma durumunu kaybeder, çünkü lisans aynı anda yalnızca bir OsmAnd Cloud hesabında etkin olabilir.
+_Maps+_ ve _Pro_ gibi çapraz platform satın alımları, orijinal satın alma makbuzunu (App Store veya Google Play'den) tutan cihazda en son etkinleştirilen OsmAnd Cloud hesabına bağlanır. Bu cihazdaki bir kullanıcı birincil hesabından (`OsmAnd Cloud account A`) çıkış yapıp yeni bir hesaba (`OsmAnd Cloud account B`) giriş yaparsa, OsmAnd sistemi lisansı otomatik olarak yeni `OsmAnd Cloud account B`'ye aktarır. Sonuç olarak, orijinal OsmAnd Cloud hesabınız diğer platformlarda satın alma durumunu kaybeder, çünkü lisans aynı anda yalnızca bir OsmAnd Cloud hesabında etkin olabilir.
 
 Teknik olarak bu şu şekilde çalışır: satın almanın kendisi bir OsmAnd hesabına değil, Apple Kimliğinize veya Google Hesabınıza aittir. Satın alımın yapıldığı cihazdaki OsmAnd uygulaması, sunucumuza şu anda hangi OsmAnd Cloud hesabının etkin olduğunu bildirir. Sunucu da bu hesaba çapraz platform erişimi sağlar. Bu nedenle, "ana" cihaza en son giriş yapan hesap her zaman lisansın sahibi olur.
 
-Satın alımı doğru hesaba (`OsmAnd Cloud hesabı A`) geri yüklemek için ters işlemi yapmanız gerekir. Satın alımın yapıldığı aynı cihazda, yanlış `OsmAnd Cloud hesabı B`'den çıkış yapmanız ve tekrar `OsmAnd Cloud hesabı A`'ya giriş yapmanız gerekir. Bu işlem, sistemin satın alma makbuzunu yeniden doğrulamasını ve lisansı doğru `OsmAnd Cloud hesabı A`'ya yeniden bağlamasını sağlayarak çapraz platform durumunu geri yükleyecektir.
+Satın alımı doğru hesaba (`OsmAnd Cloud account A`) geri yüklemek için ters işlemi yapmanız gerekir. Satın alımın yapıldığı aynı cihazda, yanlış `OsmAnd Cloud account B`'den çıkış yapmanız ve tekrar `OsmAnd Cloud account A`'ya giriş yapmanız gerekir. Bu işlem, sistemin satın alma makbuzunu yeniden doğrulamasını ve lisansı doğru `OsmAnd Cloud account A`'ya yeniden bağlamasını sağlayarak çapraz platform durumunu geri yükleyecektir.
 
 > Daha fazla bilgi için [Çapraz platform satın alımları](../purchases/cross.md) makalelerini okuyun.
 
@@ -91,6 +91,10 @@ Amazon üzerinden satın alma işlemleri yaptıysanız, **aboneliklerinizi (Pro,
 ➡️ Şu anda, [abonelikler ve uygulama içi satın alımlar için çapraz platform aktarımı mümkündür](../purchases/cross.md).  
 ❗ **OsmAnd+** (bağımsız uygulama) OsmAnd Cloud hesabı aracılığıyla platformlar arasında aktarılamaz. Yardım için lütfen **support@osmand.net** adresinden iletişime geçin.
 
+Amazon satın alımınız OsmAnd Cloud aracılığıyla otomatik olarak etkinleştirilemiyorsa, manuel aktarım için OsmAnd Destek ekibiyle — **support@osmand.net** — iletişime geçin. D01- ile başlayan Amazon işlem numarasını belirtin. Satın alınan ürünü gösteren bir ekran görüntüsü de önerilir.
+
+10 yıldan daha eski satın alımlar aktarılamaz.
+
 ## Topografya (eski adıyla Kontur çizgileri) eklentisi satın alımını nasıl geri yüklerim {#how-to-restore-the-topography-formerly-contour-lines-plugin-purchase}
 
 [Topografya eklentisini](https://play.google.com/store/apps/details?id=net.osmand.srtmPlugin.paid) geri yüklemek için:
@@ -103,6 +107,11 @@ Amazon üzerinden satın alma işlemleri yaptıysanız, **aboneliklerinizi (Pro,
 ## OsmAnd Unlimited'ın etkin olup olmadığını nasıl anlarım {#how-to-identify-if-osmand-unlimited-is-active}
 
 *Menü → Haritaları indir* yolunu izleyin ve harita sayacına (*Ücretsiz sürüm. X indirme kaldı* etiketli alan) dokunun. OsmAnd Unlimited etkinse, görüntülenen şey ücretsiz indirme sayısı yerine kalan cihaz depolama alanı olacaktır.
+
+
+## iOS için OsmAnd'ın tam sürümünü ayrı bir uygulama olarak edinebilir miyim? {#can-i-get-the-full-version-of-osmand-as-a-separate-app-for-ios}
+
+iOS için OsmAnd'ın yalnızca tek bir sürümü bulunmaktadır. Tam sürüme erişmek için uygulama içi satın alımlar yoluyla ek işlevlerin kilidini açmanız gerekir.
 
 
 ## 5 veya 7 ücretsiz indirme ne anlama geliyor? {#what-do-5-or-7-free-downloads-mean}

@@ -1,5 +1,5 @@
 ---
-source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
+source-hash: 15444c168df6f3554637066910aa28d6eb9b1c274618b9570845570e8988b856
 sidebar_position: 10
 title:  İçe / Dışa Aktar
 ---
@@ -17,8 +17,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 OsmAnd'daki **İçe Aktar** ve **Dışa Aktar** araçları, verilerinizi yönetmenizi sağlar. Profillerinizi, favorilerinizi, rotalarınızı ve diğer ayarlarınızı cihazınızdaki uygulamalar aracılığıyla özel bir format kullanarak taşıyabilirsiniz. Bu işlem, verileri cihazlar arasında kaydetmeyi ve aktarmayı basitleştirir ve diğer OsmAnd kullanıcılarıyla paylaşmanıza olanak tanır.
 
-:::note Large size
-*If the size of your selected data is significant, it will take time for the application to prepare the `.osf` file.*
+:::note Büyük boyut
+*Seçtiğiniz verilerin boyutu büyükse, uygulamanın `.osf` dosyasını hazırlaması zaman alacaktır.*
 :::
 
 
@@ -31,7 +31,7 @@ OsmAnd'daki **İçe Aktar** ve **Dışa Aktar** araçları, verilerinizi yönetm
 - **Ayarlar:**  
         [Profiller](../personal/profiles.md#actions), &nbsp;[OsmAnd/Genel Ayarlar](../personal/global-settings.md), &nbsp;[Renkler](../personal/color-palette-schemes.md), &nbsp;[Hızlı eylem](../widgets/quick-action.md), &nbsp;[POI Türü](../map/point-layers-on-map.md#poi-types), &nbsp;[Yoldan kaçın](../map/map-context-menu.md#avoid-road).
 - **Yerlerim:**  
-        [Favoriler](../personal/favorites.md#export--import), &nbsp;[Rotalar](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM notları*, *OSM düzenlemeleri](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V notları](../plugins/audio-video-notes.md), &nbsp;[Harita işaretleyicileri](../personal/markers.md), &nbsp;[İşaretleyici geçmişi*, *Arama geçmişi*, *Navigasyon geçmişi](../personal/global-settings.md#history), &nbsp;*Güzergah*.
+        [Favoriler](../personal/favorites.md#export--import), &nbsp;[Ekli medya](../personal/favorites.md#media), &nbsp;[Rotalar](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[OSM notları*, *OSM düzenlemeleri](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V notları](../plugins/audio-video-notes.md), &nbsp;[Harita işaretleyicileri](../personal/markers.md), &nbsp;[İşaretleyici geçmişi*, *Arama geçmişi*, *Navigasyon geçmişi](../personal/global-settings.md#history), &nbsp;*Güzergah*.
 - **Kaynaklar:**  
         [Renderleme stili](../map/map-styles.md#custom-map-style), &nbsp;[Rota oluşturma](../navigation/routing/osmand-routing.md), &nbsp;[Çevrimiçi rota oluşturma motorları](../navigation/routing/online-routing.md), &nbsp;[Harita kaynakları*, *Standart/Çevrimdışı Haritalar](../map/raster-maps.md), &nbsp;[Wikipedia ve Seyahat haritaları](../plan-route/travel-guides.md), &nbsp;[Deniz haritaları](../plugins/nautical-charts.md), &nbsp;[Yol haritaları](../map/vector-maps.md#road-style), &nbsp;[Topografya haritaları](../plugins/topography.md), &nbsp;[Sesli komutlar (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Sesli komutlar (kaydedilmiş)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Favori yedekleme](../personal/favorites.md#automatic-favorites-backup).
 
@@ -44,7 +44,7 @@ OsmAnd'daki **İçe Aktar** ve **Dışa Aktar** araçları, verilerinizi yönetm
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
+![Profil Eylemleri Dışa Aktarma Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png) ![Yerel yedekleme Android](@site/static/img/personal/profiles/profile_actions_export_2_andr.png)  
 
 </TabItem>
 
@@ -52,7 +52,7 @@ OsmAnd'daki **İçe Aktar** ve **Dışa Aktar** araçları, verilerinizi yönetm
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
+![Profil Eylemleri Dışa Aktarma iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)   ![Profil Eylemleri Dışa Aktarma iOS](@site/static/img/personal/profiles/profile_actions_export_2_ios.png)
 
 </TabItem>
 
@@ -69,9 +69,9 @@ Yapılandırdığınız ve oluşturduğunuz tüm veriler ***Dışa Aktar menüs�
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,shared_string_import"/>*  
 
-![Profiles Actions Import Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Profiles Actions Import 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
+![Profil Eylemleri İçe Aktarma Android](@site/static/img/personal/profiles/profile_actions_import_android.png) ![Profil Eylemleri İçe Aktarma 1 Android](@site/static/img/personal/profiles/profile_actions_import_1_android.png) 
 
-<!-- ![Profiles Actions Import 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
+<!-- ![Profil Eylemleri İçe Aktarma 2 Android](@site/static/img/personal/profiles/profile_actions_import_2_android.png) -->
 
 </TabItem>
 
@@ -80,8 +80,8 @@ Yapılandırdığınız ve oluşturduğunuz tüm veriler ***Dışa Aktar menüs�
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,restore_from_file"/>*  
 
 
-![Profiles Actions Import iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Profiles Actions Import 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
-<!--  ![Profiles Actions Import 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
+![Profil Eylemleri İçe Aktarma iOS](@site/static/img/personal/profiles/profile_actions_import_ios.png) ![Profil Eylemleri İçe Aktarma 1 iOS](@site/static/img/personal/profiles/profile_actions_import_1_ios.png) 
+<!--  ![Profil Eylemleri İçe Aktarma 2 iOS](@site/static/img/personal/profiles/profile_actions_import_2_ios.png) -->
 
 </TabItem>
 

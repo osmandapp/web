@@ -1,5 +1,5 @@
 ---
-source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
 sidebar_position: 19
 title: Hava Durumu
 ---
@@ -60,7 +60,7 @@ Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal
 
 Şuraya git: *Etkin eklenti → <Translate android="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
+![Hava durumu panosu Android 2](@site/static/img/plugins/weather/weather_dashbord_andr_new_3.png)  
 
 </TabItem>  
 
@@ -68,7 +68,7 @@ Hava Durumu eklentisi yalnızca Harita oluşturma motoru [Sürüm 2](../personal
 
 Şuraya git: *Etkin eklenti → <Translate ios="true" ids="shared_string_menu,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
+![iOS'ta hava durumu panosu](@site/static/img/plugins/weather/weather_dashbord_ios_new_2.png)
 
 </TabItem>  
 
@@ -86,13 +86,13 @@ Ekranın altında *hava durumu araç çubuğu* bulunur. Hava durumu tahmininin g
 
 <TabItem value="android" label="Android">
 
-![Data Source Android](@site/static/img/plugins/weather/weather_source_android.png)  
+![Veri kaynağı Android](@site/static/img/plugins/weather/weather_source_android.png)  
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Data Source iOS](@site/static/img/plugins/weather/weather_source_ios.png)
+![Veri kaynağı iOS](@site/static/img/plugins/weather/weather_source_ios.png)
 
 </TabItem>  
 
@@ -123,7 +123,7 @@ Veri Kaynağının Hava Durumu Görüntülemeyi Etkileme Şekli:
 
 Şuraya git: *Etkin eklenti → <Translate android="true" ids="shared_string_menu,quick_action_add_configure_map,shared_string_show,shared_string_weather"/>*
 
-![Weather Dashboard Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
+![Hava durumu panosu Android 2](@site/static/img/plugins/weather/weather_customize_andr.png)  
 
 </TabItem>  
 
@@ -131,7 +131,7 @@ Veri Kaynağının Hava Durumu Görüntülemeyi Etkileme Şekli:
 
 Şuraya git: *Etkin eklenti → <Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,shared_string_weather"/>*
 
-![Weather Dashboard in iOS](@site/static/img/plugins/weather/weather_customize_ios.png)
+![iOS'ta hava durumu panosu](@site/static/img/plugins/weather/weather_customize_ios.png)
 
 </TabItem>  
 
@@ -151,21 +151,21 @@ Bu menüde, her katman için **görünürlüğü** ve [ayarları](#weather-setti
 - *Ana Menü → Eklentiler → Hava Durumu → Ayarlar*
 - *Ana Menü → Ayarlar → Profil → Eklenti ayarları → Hava Durumu*
 
-![Weather Settings Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Weather Settings 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Hava durumu ayarları Android](@site/static/img/plugins/weather/weather_settings_andr_1.webp) ![Hava durumu ayarları 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Ana Menü → Ayarlar → Profil → Eklentiler → Hava Durumu*
+*Ana Menü → Ayarlar → Profil → Eklentiler → Hava Durumu*
 
-![Weather Settings iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Weather Settings iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Hava durumu ayarları iOS](@site/static/img/plugins/weather/weather_settings_ios.webp) ![Hava durumu ayarları iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.webp)
 
 </TabItem>
 
 </Tabs>  
 
-Harita üzerindeki [Hava Durumu verilerini](#weather-layers) ve ekranın [Hava Durumu widget'ları](#weather-widgets) bölümünü hangi ölçü birimlerinde görmenin sizin için uygun olduğuna karar vermek önemlidir. Her parametre için uygun ölçü birimlerini seçebilir veya varsayılan değerleri kullanabilirsiniz (*yalnızca iOS*). OsmAnd uygulamasının iOS sürümünde, seyahat ederken mobil trafiği kullanmaktan kaçınmak için çevrimdışı tahmin seçeneğini de etkinleştirebilirsiniz.  
+Harita üzerindeki [Hava Durumu verilerini](#weather-layers) ve ekranın [Hava Durumu widget'ları](#weather-widgets) bölümünü hangi ölçü birimlerinde görmenin sizin için uygun olduğuna karar vermek önemlidir. Her parametre için uygun ölçü birimlerini seçebilirsiniz. Ayrıca varsayılan değerleri de kullanabilirsiniz — iOS'ta tüm parametreler için, Android'de yalnızca sıcaklık için. Sıcaklık birimi şuradan seçilir: *Menü → Profil → Genel ayarlar → Birimler ve biçimler → Sıcaklık*. OsmAnd uygulamasının iOS sürümünde, seyahat ederken mobil trafiği kullanmaktan kaçınmak için çevrimdışı tahmin seçeneğini de etkinleştirebilirsiniz.  
 
 :::note
 OsmAnd'ın iOS sürümünde, gerekli harita katmanının simgesine uzun dokunuşla açılan menüde ölçü birimlerini ve şeffaflık seviyesini değiştirebilirsiniz.  
@@ -178,17 +178,17 @@ Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Harita üzeri
 | |  
 |------------|  
 | **Yağış katmanı**, suyun farklı hallerde gökyüzünden yere düştüğü hava olayları hakkında bilgi görüntüler. Yağış, yağmur, kar, sulu kar veya dolu olabilir. Yağış ölçeği, 24 saatte 1 metrekareye düşen milimetre (veya inç) su cinsinden derecelendirilmiştir. 1 mm yağmur, 1 metrekareye 1 litre suya karşılık gelir. |  
-|![Precipitation sheme](@site/static/img/plugins/weather/precipitation.png)|  
+|![Yağış şeması](@site/static/img/plugins/weather/precipitation.png)|  
 | **Sıcaklık**, sıcak ve soğuk algısının nicel ifadesidir. Derece cinsinden ölçülür. OsmAnd'da Celsius ve Fahrenheit ölçeği arasında seçim yapabilirsiniz. |  
-|![Temperature sheme](@site/static/img/plugins/weather/temperature.png)|  
+|![Sıcaklık şeması](@site/static/img/plugins/weather/temperature.png)|  
 | **Rüzgar**, Dünya'nın güneş tarafından düzensiz ısınması ve kendi dönüşü nedeniyle havanın hareketidir. Rüzgarlar hafif esintilerden kasırga ve hortum gibi doğal afetlere kadar değişebilir. OsmAnd'da rüzgar hızı metre/saniye (m/s), kilometre/saat (km/sa), mil/saat (mph) ve knot (kt) olarak görüntülenebilir. |  
-|![Wind sheme](@site/static/img/plugins/weather/wind.png)|  
+|![Rüzgar şeması](@site/static/img/plugins/weather/wind.png)|  
 | **Bulutluluk**, belirli bir konumdan gözlemlendiğinde gökyüzünün bulutlarla kaplı ortalama oranıdır. % cinsinden ölçülür. |  
-|![Clouds sheme](@site/static/img/plugins/weather/clouds.png)|  
+|![Bulut şeması](@site/static/img/plugins/weather/clouds.png)|  
 | **Atmosfer basıncı**, ölçüm noktasının üzerindeki havanın ağırlığından kaynaklanır. Yükseklik arttıkça azalır. Atmosfer basıncı hektopaskal (hPa), milimetre cıva (mmHg) ve inç cıva (inHg) olarak görüntülenebilir. |  
-| ![Pressure sheme](@site/static/img/plugins/weather/pressure.png) |  
+| ![Basınç şeması](@site/static/img/plugins/weather/pressure.png) |  
 | **Rüzgar animasyonu**, bölge genelinde rüzgar yönünü ve hızını gösteren dinamik temsilleri içerir. |  
-| ![Wind annimation](@site/static/img/plugins/weather/wind_annimation.gif) |  
+| ![Rüzgar animasyonu](@site/static/img/plugins/weather/wind_annimation.gif) |  
 
 
 ### Haritaları Birleştirme {#combine-maps}
@@ -197,13 +197,13 @@ Tüm hava durumu verileri ayrı harita katmanları olarak sunulur. Harita üzeri
 
 <TabItem value="android" label="Android">
 
-![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Combine Weather layers on Android](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
+![Android'de hava durumu katmanlarını birleştirme](@site/static/img/plugins/weather/weather_combine_layers_andr_1.png) ![Android'de hava durumu katmanlarını birleştirme](@site/static/img/plugins/weather/weather_combine_layers_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![Combine Weather layers on iOS](@site/static/img/plugins/weather/weather_contours.png)  
+![iOS'ta hava durumu katmanlarını birleştirme](@site/static/img/plugins/weather/weather_combine_layers_ios_1.png) ![iOS'ta hava durumu katmanlarını birleştirme](@site/static/img/plugins/weather/weather_contours.png)  
 
 </TabItem>
 
@@ -214,7 +214,7 @@ Kapsamlı hava durumu bilgileri almak için harita katmanlarını ayrı ayrı ku
 
 ### Katmanlar için Hızlı Eylemler {#quick-actions-for-layers}
 
-![QA Weather layers](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
+![Hava durumu katmanları hakkında SSS](@site/static/img/plugins/weather/QA_weather_layers_andr.png)
 
 Hava durumu katmanlarının görünürlüğünü değiştirmek için harita ekranındaki *Hızlı Eylem* düğmelerini kullanabilirsiniz. Katmanları gösterme veya gizleme genel ayarları, *Ana Menü*'nün ayrı [Hava Durumu bölümünde](#weather-forecast-screen) bulunabilir. [Hızlı Eylem](../widgets/quick-action.md#configure-map) makalesinde, görüntülenebilecek katmanların bir listesini bulacaksınız. Bu harita yapılandırmasına hızlı erişime ihtiyacınız varsa, *Özel Düğme* aracını kullanın.
 
@@ -230,7 +230,7 @@ Hava Durumu sekmesi açıkken, aksi belirtilmedikçe, gerekli hava durumu bilgil
 
 :::tip
 Android cihazlarda, *Hava durumu widget'ına* dokunarak hava durumu verilerinin ne zaman indirildiğini kontrol edebilirsiniz. OsmAnd Geliştirme eklentisi etkinleştirilmelidir.  
-![Date of weather cash android](@site/static/img/plugins/weather/weather_cash_andr.png)  
+![Hava durumu önbelleği tarihi Android](@site/static/img/plugins/weather/weather_cash_andr.png)  
 :::
 
 ### Tahmini İndir {#download-forecast}
@@ -239,13 +239,13 @@ Android cihazlarda, *Hava durumu widget'ına* dokunarak hava durumu verilerinin 
 
 <TabItem value="android" label="Android">  
 
-![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_android.png) ![Weather plugin in Android](@site/static/img/plugins/weather/download_weather_1_android.png)
+![Android'de hava durumu eklentisi](@site/static/img/plugins/weather/download_weather_android.png) ![Android'de hava durumu eklentisi](@site/static/img/plugins/weather/download_weather_1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_ios.png) ![Weather plugin in iOS](@site/static/img/plugins/weather/download_weather_1_ios.png)
+![iOS'ta hava durumu eklentisi](@site/static/img/plugins/weather/download_weather_ios.png) ![iOS'ta hava durumu eklentisi](@site/static/img/plugins/weather/download_weather_1_ios.png)
 
 </TabItem>
 
@@ -279,7 +279,7 @@ Hava durumu verileri her 6 saatte bir güncellenir ([GFS](https://www.ncei.noaa.
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_widgets"/> → Bir panel seçin → <Translate android="true" ids="shared_string_weather"/>*
 
-![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Weather widgets on Android](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
+![Android'de hava durumu widget'ları](@site/static/img/plugins/weather/weather_widgets_1_android.png) ![Android'de hava durumu widget'ları](@site/static/img/plugins/weather/weather_widgets_2_android.png)  
 
 </TabItem>
 
@@ -287,7 +287,7 @@ Hava durumu verileri her 6 saatte bir güncellenir ([GFS](https://www.ncei.noaa.
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_widgets"/> → Bir panel seçin → <Translate ios="true" ids="shared_string_weather"/>*
 
-![Weather widgets on iOS](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
+![iOS'ta hava durumu widget'ları](@site/static/img/plugins/weather/weather_widgets_1_ios.png)  
 
 </TabItem>
 

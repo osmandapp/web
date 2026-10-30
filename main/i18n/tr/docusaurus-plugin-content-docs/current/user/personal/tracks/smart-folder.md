@@ -1,5 +1,5 @@
 ---
-source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
+source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
 title: Akıllı Klasör (Filtre)
 ---
@@ -99,7 +99,7 @@ Bu özellik, gereksinimlerinize uygun belirli parkurları hızlı bir şekilde b
 - **Ortalama rakım** ve **Maksimum rakım** — Belirli ortalama veya maksimum rakım verilerine sahip parkurları bulun.
 - **Oluşturma tarihi** — Belirli bir tarih aralığında oluşturulan parkurları filtreleyin.
 - **En yakın şehirler** — Seçilen şehirlerin veya yerleşim yerlerinin yakınından geçen parkurları görüntüleyin.
-- **Etkinlik türü** — Parkurları GPX dosyasında kaydedilen [etkinlik](../../map/tracks/track-context-menu.md#ttrack-activity-type) türüne göre filtreleyin (örn. bisiklet, yürüyüş).
+- **Etkinlik türü** — Parkurları GPX dosyasında kaydedilen [etkinlik](../../map/tracks/track-context-menu.md#track-activity-type) türüne göre filtreleyin (örn. bisiklet, yürüyüş).
 - **Ülke** — Parkurları kaydedildikleri ülkeye veya bölgeye göre filtreleyin.
 - **Renk** ve **Genişlik** — Atanan renge veya çizgi genişliğine göre parkurları seçin.
 - **Diğer** — Özel özellikler için ek filtreler:

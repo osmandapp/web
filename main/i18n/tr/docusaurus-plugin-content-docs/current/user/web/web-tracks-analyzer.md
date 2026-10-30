@@ -1,8 +1,8 @@
 ---
-source-hash: f82111f3d9acdf1ee0aa9855e31834b2a7561f31228aeec8a9db46e24bc3f188
+source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
 sidebar_position: 7
-sidebar_label: İz Analizörü
-title: İz Analizörü
+sidebar_label: Parkur Analizörü
+title: Parkur Analizörü
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,15 +19,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**İz Analizörü**, haritada seçilen noktalar arasında tekrar eden iz segmentlerini analiz etmenize yardımcı olan bir web aracıdır. Örneğin, aynı tırmanışta yaptığınız sürüşleri veya günlük işe gidiş gelişlerinizi karşılaştırmak için kullanabilirsiniz. Kendi verilerinizle bu özelliği kullanmak için, izlerin OsmAnd Cloud'a senkronize edildiği bir OsmAnd Pro hesabına ihtiyacınız var — aksi takdirde, izleriniz Web Planlayıcı'da mevcut olmayacaktır. İzlerinizi tarar ve seçilen konum(lar)dan geçen tüm segmentleri bulur, böylece birden fazla aktivite genelinde hız, yükseklik, mesafe ve süreyi karşılaştırmanıza olanak tanır.
+**Parkur Analizörü**, haritada seçilen noktalar arasında tekrar eden parkur segmentlerini analiz etmenize yardımcı olan bir web aracıdır. Örneğin, aynı tırmanışta yaptığınız sürüşleri veya günlük işe gidiş gelişlerinizi karşılaştırmak için kullanabilirsiniz. Kendi verilerinizle bu özelliği kullanmak için, parkurların OsmAnd Cloud'a senkronize edildiği bir OsmAnd Pro hesabına ihtiyacınız var — aksi takdirde, parkurlarınız Web Planlayıcı'da mevcut olmayacaktır. Parkurlarınızı tarar ve seçilen konum(lar)dan geçen tüm segmentleri bulur, böylece birden fazla aktivite genelinde hız, yükseklik, mesafe ve süreyi karşılaştırmanıza olanak tanır.
 
 ## Nasıl Kullanılır {#how-to-use}
 
-İz Analizörü'nü açtıktan sonra (anahtar simgesi olarak gösterilir), araç harita görünümü ve boş bir durumla açılır. Buradan, **İzleri Seç** panelini kullanarak analize dahil edilecek izleri seçebilirsiniz. Analizör, tüm mevcut izlerle çalışmaya veya analizi belirli klasörlerle sınırlamaya izin verir.
+1. OsmAnd Web Harita Portalı'nda OsmAnd Pro hesabınıza [giriş yapın](./web-cloud.md#login). Parkurlarınız [OsmAnd Cloud](./web-cloud.md#cloud-sync) ile senkronize edilmiş olmalıdır.
+2. *Menü → Parkur analizörü* (anahtar simgesi) seçeneğini açın.
+3. **Parkurları seç** panelinde **Tüm parkurlar**'i veya yalnızca ihtiyacınız olan klasörleri seçin.
+4. Haritaya sağ tıklayın ve **A Noktası**'nı seçin. İki nokta arasındaki bir segmenti analiz etmek için ayrıca **B Noktası**'nı de ayarlayın.
+5. Bulunan segmentlerin listesini inceleyin, [sıralayın ve hangi parametrelerin gösterileceğini seçin](#sorting-and-visible-parameters).
 
-Analizi başlatmak için harita üzerinde doğrudan bir veya iki nokta ayarlayın. İstediğiniz konuma sağ tıklayın ve bağlam menüsünden **Nokta A / Nokta B**'yi seçin. Tek nokta ile analizör, seçilen konumdan geçen iz segmentlerini bulur. İki nokta ile ise Nokta A ve Nokta B arasındaki segmentleri bulur ve analiz eder.
+Tek nokta ile analizör, seçilen konumdan geçen parkur segmentlerini bulur. İki nokta ile ise A Noktası ve B Noktası arasındaki segmentleri bulur ve analiz eder.
 
-![İz Analizörü](@site/static/img/web/web_analyzer_select.png) ![İz Analizörü](@site/static/img/web/web_analyzer_points_new.png)
+![Parkur Analizörü](@site/static/img/web/web_analyzer_select.png) ![Parkur Analizörü](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Sıralama ve Görünür Parametreler {#sorting-and-visible-parameters}
@@ -42,22 +46,22 @@ Mevcut parametreler şunları içerir:
 - Zaman aralığı, Başlangıç saati, Bitiş saati, Süre ve Hareket süresi.
 - Uzunluk.
 
-![İz Analizörü](@site/static/img/web/web_analyzer_sort.png) ![İz Analizörü](@site/static/img/web/web_analyzer_fields.png)
+![Parkur Analizörü](@site/static/img/web/web_analyzer_sort.png) ![Parkur Analizörü](@site/static/img/web/web_analyzer_fields.png)
 
 ## Veri Analizi {#data-analysis}
 
 Sol taraftaki sonuçlar listesinde her eşleşen segment gösterilir. Her segment için, etkinleştirilen Görünür parametrelere bağlı olarak hesaplanmış parametre kümesi görüntülenir.
 
 Her segment ayrıca şu eylemleri içeren üç nokta menüsüne (⋮) sahiptir:
-- İz Aç — seçilen segmentle ilgili tam izi açar.
-- İz Gizle / İzi Görünür Yap — izin haritada gösterilip gösterilmeyeceğini kontrol eder.
+- Parkur Aç — seçilen segmentle ilgili tam parkuru açar.
+- Parkuru gizle / Parkuru görünür yap — parkurun haritada gösterilip gösterilmeyeceğini kontrol eder.
 - Hariç Tut — segmenti mevcut analiz sonuçlarından kaldırır.
 
-![İz Analizörü](@site/static/img/web/web_analyzer_menu.png)
+![Parkur Analizörü](@site/static/img/web/web_analyzer_menu.png)
 
 ### Grafikler {#graphs}
 
-Haritanın altında, analizör seçilen segmentleri görselleştiren bir grafik görüntüler. Grafik, yalnızca seçilen noktalar arasında bulunan segmentler için veri temsil eder, tüm izler değil.
+Haritanın altında, analizör seçilen segmentleri görselleştiren bir grafik görüntüler. Grafik, yalnızca seçilen noktalar arasında bulunan segmentler için veri temsil eder, tüm parkurlar değil.
 
 Grafik, farklı veri türleri arasında geçişi destekler:
 - Yükseklik.
@@ -67,10 +71,10 @@ Yalnızca bir veri türü aynı anda görüntülenir ve değiştirilmesi grafiğ
 
 Birden fazla segment mevcut olduğunda, grafik birkaç segment için veriyi aynı anda gösterir. Grafiğin üzerindeki bir seçici, kaç segment grafiğinin aynı anda görüntüleneceğini seçmenize ve aralarında geçiş yapmanıza olanak tanır.
 
-![İz Analizörü](@site/static/img/web/web_analyzer_altitude.png) ![İz Analizörü](@site/static/img/web/web_analyzer_tracks.png)
+![Parkur Analizörü](@site/static/img/web/web_analyzer_altitude.png) ![Parkur Analizörü](@site/static/img/web/web_analyzer_tracks.png)
 
 ## İlgili Makaleler {#related-articles}
 
-- [İzler](../web/web-tracks.md)
-- [İzleri Yönet](../personal/tracks/manage-tracks.md)
+- [Parkurlar](../web/web-tracks.md)
+- [Parkurları Yönet](../personal/tracks/manage-tracks.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)

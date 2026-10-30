@@ -495,7 +495,7 @@ Daha kişiselleştirilmiş bir deneyim için, OsmAnd'a **özel 3B simgeler** olu
 
 :::note Kullanılmayan eklentiler için
 Kullanılmayan [eklentilerin](../plugins/index.md#configure-plugin) tüm kontrol parametrelerini gizlemek için bunları devre dışı bırakın.
-::;
+:::
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
@@ -540,7 +540,7 @@ Kullanıcı arayüzü özelleştirme özelliği ile [<Translate android="true" i
 
 :::caution Eklenti ayarlarına erişim
 Eklentinin ayarlarına erişmek için önce ana menünün *Eklenti bölümünde* [**eklentiyi etkinleştirmeniz**](../plugins/index.md#enable--disable) gerekir.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

@@ -1,5 +1,5 @@
 ---
-source-hash: ef995e8b1b8aca15a5e60eb52f0b00b4ea12a1485c305cc7136c9bb34d0b3e33
+source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
 sidebar_position: 16
 title: Topografya
 ---
@@ -41,7 +41,7 @@ Topografya eklentisi aşağıdaki harita türlerine erişim sağlar:
 
 | Eşyükselti Eğrileri | Gölgelendirme | Eğim |
 |:---|:---|:---|
-| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Eşyükselti eğrileri Android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Gölgelendirme Android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Eğim Android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ Topografya eklentisi aşağıdaki harita türlerine erişim sağlar:
 
 | Eşyükselti Eğrileri | Gölgelendirme | Eğim |
 |:---|:---|:---|
-| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Eşyükselti eğrileri iOS](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Gölgelendirme iOS](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Eğim iOS](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -58,6 +58,7 @@ Topografya eklentisi aşağıdaki harita türlerine erişim sağlar:
 ### OsmAnd tarafından arazi tespiti için kullanılan DEM verileri için lisans {#license-for-dem-data-used-by-osmand-for-terrain-detection}
 
 Haritadaki yükseklik verileri (70 derece kuzey enlemi ile 70 derece güney enlemi arasında), *Shuttle Radar Topography Mission (SRTM)* kapsamında yapılan ölçümlerden elde edilmiştir. Bu, *NASA'nın Dünya Gözlem Sistemi*'ndeki birincil görüntüleme aracı olan *Advanced Spaceborne Thermal Emission and Reflection Radiometer (ASTER)*'ı kullanmıştır.  
+Kuzey Amerika için arazi haritaları ve eşyükselti eğrileri, yüksek çözünürlüklü ulusal yükseklik verilerini kullanır: Amerika Birleşik Devletleri anakarasında yaklaşık 10 m, Alaska'da ve Kanada ile Meksika'nın çoğunda yaklaşık 30 m.  
 Tam bilgi için [Lisans](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE#L146) bölümüne bakın.
 
 
@@ -66,7 +67,8 @@ Tam bilgi için [Lisans](https://github.com/osmandapp/OsmAnd/blob/master/LICENSE
    - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. Bu ürün için kullanılan orijinal veriler JAXA’nın AW3D’si tarafından sağlanmıştır.<br/>
 	- <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
 	- <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummins, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
-	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
+	- <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).<br/>
+	- <a href="https://www.usgs.gov/3d-elevation-program">USGS 3D Elevation Program (3DEP)</a>, <a href="https://apps.nationalmap.gov/downloader/">The National Map</a> üzerinden (Amerika Birleşik Devletleri, Alaska) ve <a href="https://opentopography.org/">OpenTopography</a> üzerindeki <a href="https://portal.opentopography.org/raster?opentopoID=OTNED.012021.4269.2">USGS 1 yay saniyelik DEM</a> (Kanada, Meksika) ile <a href="https://natural-resources.canada.ca/">Natural Resources Canada (NRCan)</a> ve <a href="https://www.inegi.org.mx/">INEGI</a> verileri dahil.
 
 </details>
 
@@ -99,7 +101,7 @@ Kararlı çalışma ve kaynak tasarrufu için, tüm ülkenin değil, uygulamanı
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,maps_and_resources,regions"/>*
 
-![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Contour lines download Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
+![Eşyükselti eğrileri indirme Android](@site/static/img/plugins/contour-lines/downl_pack_andr_5.png)  ![Eşyükselti eğrileri indirme Android](@site/static/img/plugins/contour-lines/downl_pack_andr_4.png)
 
 </TabItem>  
 
@@ -107,7 +109,7 @@ Kararlı çalışma ve kaynak tasarrufu için, tüm ülkenin değil, uygulamanı
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,res_mapsres,res_worldwide"/>*
 
-![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Contour lines download iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
+![Eşyükselti eğrileri indirme iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_1.png) ![Eşyükselti eğrileri indirme iOS](@site/static/img/plugins/contour-lines/downl_pack_ios_2.png)
 
 </TabItem>
 
@@ -124,13 +126,13 @@ Ekranda görüntülenen harita indirilmemişse, *Menü → Haritayı yapılandı
 
 <TabItem value="android" label="Android">
 
-![Contour lines download dialog Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
+![Eşyükselti eğrileri indirme penceresi Android](@site/static/img/plugins/contour-lines/contour_lines_download_dialogue_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Contour lines download dialog iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
+![Eşyükselti eğrileri indirme penceresi iOS](@site/static/img/plugins/contour-lines/ios_cont_lines_meters_feet1.png)
 
 </TabItem>
 
@@ -153,7 +155,7 @@ Eşyükselti eğrileri, [ücretli bir özelliktir](../purchases/index.md).
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Eşyükselti eğrileri menüsü Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
 
 </TabItem>
 
@@ -161,7 +163,7 @@ Eşyükselti eğrileri, [ücretli bir özelliktir](../purchases/index.md).
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Eşyükselti eğrileri*
 
-![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Eşyükselti eğrileri menüsü iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
 
 </TabItem>
 
@@ -196,7 +198,7 @@ Arazi, [ücretli bir özelliktir](../purchases/index.md).
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Arazi menüsü Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Arazi menüsü Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
 
 </TabItem>
 
@@ -204,7 +206,7 @@ Arazi, [ücretli bir özelliktir](../purchases/index.md).
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Terrain menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
+![Arazi menüsü iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_ios.png)   ![Arazi menüsü iOS](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_2_ios_new.png)
 
 </TabItem>
 
@@ -223,7 +225,7 @@ Arazi, [ücretli bir özelliktir](../purchases/index.md).
 
 | Gölgelendirme | Eğim | Rakım |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Gölgelendirme](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Eğim](../../../blog/2023-08-28-terrain/img/slope.png) | ![Eğim](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Gölgelendirme**, arazi verilerini kullanarak yüzey aydınlatmasını simüle etmeye dayanır. Bu yöntem, ışık kaynağına göre yüzeyin açısına bağlı olarak gölgeler ve vurgular oluşturmayı içerir. Sonuç olarak, haritada doğal tepeler, vadiler ve diğer arazi detaylarını görürsünüz.  
 
@@ -242,7 +244,7 @@ Arazi, [ücretli bir özelliktir](../purchases/index.md).
 
 ### Arazi Gölgeleri (iOS) {#terrain-shadows}
 
-![Terrain shadows iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
+![Arazi gölgeleri iOS](@site/static/img/plugins/contour-lines/terrain_shadows_ios.png)
 
 **Arazi Gölgeleri**, 3B arazi geometrisine dayalı gerçek zamanlı dinamik gölgelendirme sağlar. Raster Gölgelendirme haritalarının aksine, gölgelendirme etkisi doğrudan cihaz üzerinde arazi verileri kullanılarak oluşturulur ve otomatik olarak mevcut harita perspektifini takip eder.
 
@@ -253,7 +255,7 @@ Arazi Gölgeleri, 3B Rölyef gerektirir ve seçildiğinde otomatik olarak etkinl
 
 | Gölgelendirme | Eğim | Rakım |
 | ------ | ------- | ------- |
-|![Hillshade](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Slope](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Gölgelendirme](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Eğim](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menü](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Gölgelendirme*, yamaçları, zirveleri ve alçak bölgeleri göstermek için koyu tonlar kullanır. Sanal Güneş'in sabit bir azimutu (yönü) 315 derecedir.
 
@@ -272,19 +274,19 @@ Arazi Gölgeleri, 3B Rölyef gerektirir ve seçildiğinde otomatik olarak etkinl
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Renk şemasını değiştir](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Renk şemasını değiştir](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
+![Renk şemasını değiştir](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios.png)   ![Renk şemasını değiştir](@site/static/img/plugins/contour-lines/modify_color_scheme_palette_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-*Modify Color Scheme feature* allows you to select a color scheme:
+*Renk Şemasını Değiştir özelliği* bir renk şeması seçmenizi sağlar:
 
 - [Önceden tanımlanmış bir listeden](#default-color-scheme).
 - Bilgisayarınızda oluşturduğunuz renk paleti dosyalarından. Özel dosyalar, [içe/dışa aktarma aracı](../personal/import-export.md) kullanılarak OsmAnd'a eklenebilir.
@@ -305,13 +307,13 @@ Palet dosyalarını kullanarak gelişmiş palet özelleştirmesi için [Renk Şe
 
 | Görünürlük %31 | Görünürlük %74 |
 | ------ | ------- |
-| ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
+| ![Görünürlük ](../../../blog/2023-08-28-terrain/img/31.png) | ![Görünürlük ](../../../blog/2023-08-28-terrain/img/74.png) |
 
 *Görünürlük* işlevi, Gölgelendirme için gölgelerin şeffaflığını ve Eğim parametresindeki açıyı temsil etmek için kullanılan renkleri ayarlamak için kullanılır. Arazi Gölgeleri için Görünürlük, arazi gölgelendirme etkisinin gücünü kontrol eder.
 
 ### Yakınlaştırma Seviyeleri {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Yakınlaştırma](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 *Yakınlaştırma Seviyeleri* işlevi, Gölgelendirme veya Eğim harita katmanlarının görüntüleneceği harita yakınlaştırma seviyelerinin minimum ve maksimum değerlerini 4'ten 19'a kadar ayarlamanıza olanak tanır.
 
@@ -338,7 +340,7 @@ Arazi Gölgeleri için Yakınlaştırma Seviyeleri mevcut değildir çünkü bu 
 
 ### Hızlı Eylemler {#quick-actions}
 
-![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![Arazi hakkında SSS](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 [Eşyükselti Eğrileri](#contour-lines), [Arazi](#terrain) katmanları ve [Arazi renk şeması](../../user/personal/color-palette-schemes.md#quick-actions) görünürlüğünü değiştirmek için harita ekranındaki *Hızlı Eylem* düğmelerini kullanabilirsiniz. Haritayı Yapılandır menüsünde seçilen katmana bağlı olarak, bir *Arazi* eylemini düğmeye atamak *Gölgelendirme*, *Eğim* veya *Rakım*'ı görüntüleyecektir.  
 
@@ -356,7 +358,7 @@ Arazi Gölgeleri için Yakınlaştırma Seviyeleri mevcut değildir çünkü bu 
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![3D Buildings](@site/static/img/map/3d_buildings_4_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_3_new.png)
+![3B Binalar](@site/static/img/map/3d_buildings_4_new.png) ![3B Binalar](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -364,7 +366,7 @@ Arazi Gölgeleri için Yakınlaştırma Seviyeleri mevcut değildir çünkü bu 
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>*
 
-![3D Buildings](@site/static/img/map/3d_buildings_1_ios_new.png) ![3D Buildings](@site/static/img/map/3d_buildings_highlight_ios.png)
+![3B Binalar](@site/static/img/map/3d_buildings_1_ios_new.png) ![3B Binalar](@site/static/img/map/3d_buildings_highlight_ios.png)
 
 </TabItem>
 
@@ -393,13 +395,13 @@ Android'de bu seçenek yalnızca Topografya eklentisi etkinleştirildiğinde kul
 
 <TabItem value="android" label="Android">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_color.png)
+![3B Binalar](@site/static/img/map/3d_buildings_color.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![3D Buildings](@site/static/img/map/3d_buildings_color_ios.png)
+![3B Binalar](@site/static/img/map/3d_buildings_color_ios.png)
 
 </TabItem>
 
@@ -463,7 +465,7 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![3B Rölyef](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
 
 </TabItem>
 
@@ -471,7 +473,7 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
+![3B Rölyef](@site/static/img/plugins/contour-lines/3drelief_switch_ios.png)
 
 </TabItem>
 
@@ -495,7 +497,7 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 
 | Vektör harita katmanı | Raster harita katmanı |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
+| ![3B Rölyef](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![3B Rölyef](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
 </TabItem>  
 
@@ -503,7 +505,7 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 
 | Vektör harita katmanı | Raster harita katmanı |
 | ------ | ------- |
-| ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
+| ![3B Rölyef](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![3B Rölyef](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
 </TabItem>
 
@@ -517,7 +519,7 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/> → Dikey abartı*
 
-![Vertical exaggeration Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
+![Dikey abartı Android](@site/static/img/plugins/contour-lines/vertical_exag_and.png)
 
 </TabItem>  
 
@@ -525,7 +527,7 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain,shared_string_relief_3d"/> → Dikey abartı*
 
-![Vertical exaggeration iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
+![Dikey abartı iOS](@site/static/img/plugins/contour-lines/vertical_exag.png)
 
 </TabItem>
 
@@ -538,7 +540,7 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 
 | Gölgelendirme | 3B Rölyef |
 |--------|---------|
-| ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Terrain layers](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
+| ![Arazi katmanları](@site/static/img/plugins/online-maps/hillshade_3d_relief_1.png) | ![Arazi katmanları](@site/static/img/plugins/online-maps/hillshade_3d_relief_2.png) |
 
 **Gölgelendirme**, arazinin eğimini ve şeklini görsel olarak temsil eden gölgeler kullanarak araziyi gösteren bir harita türüdür.  
 **3B Rölyef**, haritaya üç boyutlu efektler ekleyen bir özelliktir.  
@@ -554,13 +556,13 @@ Bu parametreleri değiştirmek, binalar üzerindeki gölgelerin nasıl düştü�
 
 <TabItem value="android" label="Android">
 
-![Contour lines combined with Hillshade](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Contour lines combined with Slope](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
+![Gölgelendirme ile birleştirilmiş eşyükselti eğrileri](@site/static/img/plugins/contour-lines/4_hillshade_n_contour.png) ![Eğim ile birleştirilmiş eşyükselti eğrileri](@site/static/img/plugins/contour-lines/5_slope_n_contour.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Contour lines combined with Hillshade in iOS](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![Contour lines combined with Slope in iOS](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
+![iOS'ta Gölgelendirme ile birleştirilmiş eşyükselti eğrileri](@site/static/img/plugins/contour-lines/ios_hillshade_n_cont_lines1.png) ![iOS'ta Eğim ile birleştirilmiş eşyükselti eğrileri](@site/static/img/plugins/contour-lines/ios_slope_n_cont_lines1.png)
 
 </TabItem>
 
