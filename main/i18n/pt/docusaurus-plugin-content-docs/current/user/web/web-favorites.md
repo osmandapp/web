@@ -1,8 +1,8 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
-sidebar_label: Favorites
-title: Favorites
+sidebar_label: Favoritos
+title: Favoritos
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,13 +24,13 @@ Favoritos no Planejador Web permitem que você salve e gerencie lugares importan
 
 ## Gerenciar Favoritos {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
+![Edição de favoritos do Cloud no OsmAnd Web](@site/static/img/web/favorites_1_new.png)
 
 Após fazer login em uma conta [**OsmAnd Pro**](../personal/osmand-cloud.md#login) ou [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), seus Favoritos no Planejador Web são organizados em pastas. Cada pasta agrupa lugares salvos e fornece um conjunto de ações disponíveis no menu de Favoritos. 
 As seguintes ações estão disponíveis:
 
 - *Mostrar no mapa* - mostra os pontos de favoritos da pasta escolhida no mapa.
-- *Fixar pasta* - fixa uma pasta no topo da lista de Favoritos para acesso rápido. Pastas fixadas são separadas das outras pastas. Para remover uma pasta da seção superior, selecione *Desfixar pasta*. A pasta Pessoal está fixada por padrão.
+- *Afixar pasta* - fixa uma pasta no topo da lista de Favoritos para acesso rápido. Pastas fixadas são separadas das outras pastas. Para remover uma pasta da seção superior, selecione *Desafixar pasta*. A pasta Pessoal está fixada por padrão.
 - *Renomear* - nome e descrição da pasta de favoritos.
 - *Compartilhar* - abre opções de compartilhamento. Você pode escolher quem pode acessar esta pasta.
 - *Baixar* - baixa a pasta de favoritos escolhida.
@@ -44,7 +44,7 @@ Você também pode usar o botão **Foco** para ocultar todos os outros favoritos
 
 Selecionando **Compartilhar** abre a tela de compartilhamento, onde o acesso a uma pasta de Favoritos pode ser configurado. Um dos seguintes modos de acesso pode ser selecionado:
 - *Privado*. Apenas você pode visualizar a pasta. Mudar para Privado revoga o acesso para todos os usuários aprovados anteriormente. Um diálogo de confirmação é exibido antes que a alteração seja aplicada.
-- *Apenas solicitação*. Qualquer pessoa com o link pode solicitar acesso. As solicitações aparecem na lista Pendente, onde podem ser aprovadas, negadas ou bloqueadas.
+- *Somente solicitação*. Qualquer pessoa com o link pode solicitar acesso. As solicitações aparecem na lista Pendente, onde podem ser aprovadas, negadas ou bloqueadas.
 - *Qualquer um*. Qualquer pessoa com o link pode visualizar a pasta imediatamente, sem aprovação.  
 Dependendo do modo de acesso selecionado, o botão **Copiar link** fica disponível. O link pode ser compartilhado para permitir visualização ou para solicitar acesso.
 
@@ -58,7 +58,7 @@ Durante a configuração de acesso, os seguintes diálogos podem aparecer:
 - *Alterar acesso*. Exibido ao mudar a pasta para Privado. O diálogo avisa que todo o acesso de usuário existente será revogado antes de confirmar a alteração.
 - *Solicitações de acesso*. Exibido ao gerenciar usuários na lista Pendente, permitindo que as solicitações de acesso sejam aprovadas ou negadas.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
+![Edição de favoritos do Cloud no OsmAnd Web](@site/static/img/web/favorites_share.png) ![Edição de favoritos do Cloud no OsmAnd Web](@site/static/img/web/favorites_share_2.png)
 
 
 ## Detalhes dos Favoritos {#favorites-details} 
@@ -67,12 +67,12 @@ Selecionar um favorito abre o painel **Detalhes**. Este painel aparece quando vo
 
 A visualização de Detalhes fornece informações associadas ao lugar selecionado e depende dos dados disponíveis para esse favorito específico. No mínimo, inclui a localização no mapa e suas coordenadas geográficas. Para lugares vinculados a objetos do OpenStreetMap ou fontes enriquecidas, metadados adicionais podem ser exibidos, como nomes, categorias, identificadores ou links de referência (por exemplo, Wikipedia ou links do Wikidata). 
 
-![Web Favorites Details](@site/static/img/web/favorites_details.png)
+![Detalhes dos favoritos no Web](@site/static/img/web/favorites_details.png)
 
 
 ## Ações dos Favoritos {#favorites-actions}
 
-[Para adicionar](../personal/favorites.md#manage-favorites) um novo ponto de favorito, clique com o botão direito na tela. 
+[Para adicionar](../personal/favorites.md#manage-favorites) um novo ponto de favorito, clique com o botão direito na tela. Se o favorito não puder ser salvo, a mensagem de erro inclui o motivo informado pelo servidor, por exemplo, que não há espaço suficiente no [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Para editar um favorito existente, clique no ponto de favorito diretamente no mapa ou selecione-o de uma pasta de favoritos. Isso abre o painel de Detalhes, onde a ação Editar está disponível. A edição também pode ser iniciada do menu de três pontos (⋮) ao lado do favorito na lista de Favoritos.
 
@@ -96,7 +96,7 @@ Novas pastas podem ser criadas diretamente do painel de seleção de pastas. Sel
 
 O diálogo também inclui uma seção Avançado, onde as configurações de aparência padrão para a pasta podem ser configuradas. Essas configurações incluem a cor padrão, ícone e forma que serão aplicados automaticamente aos pontos de favoritos adicionados a esta pasta.
 
-![Web Edit Folder](@site/static/img/web/edit_folder.png)
+![Editar pasta no Web](@site/static/img/web/edit_folder.png)
 
 ### Aparência {#appearance}
 
@@ -120,7 +120,7 @@ A opção **Forma** define o formato de fundo usado para o marcador de favorito.
 
 A visualização da aparência é atualizada imediatamente tanto no painel de edição quanto no mapa ao alterar o ícone, a cor ou a forma.
 
-![Web Edit Appearance](@site/static/img/web/edit_icon.png)
+![Editar aparência no Web](@site/static/img/web/edit_icon.png)
 
 ### Outras Ações {#other-actions}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: a6836029bb50419c5550039136abecddd7cd07e0b7216dc545881dae7482ec65
+source-hash: c47382e3eb41818c4cf320edb44a68a13d0c554338043ba81287b93b58191a9f
 sidebar_position: 3
 title: Pasta Inteligente (Filtro)
 ---
@@ -99,7 +99,7 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places
 - **Altitude média** e **Altitude máxima** — Encontre trilhas com dados de altitude média ou máxima específicos.
 - **Data de criação** — Filtre trilhas criadas dentro de um determinado intervalo de datas.
 - **Cidades mais próximas** — Exiba trilhas que passam perto de cidades ou localidades selecionadas.
-- **Tipo de atividade** — Filtre trilhas com base no tipo de [atividades](../../map/tracks/track-context-menu.md#ttrack-activity-type) registradas no arquivo GPX (por exemplo, ciclismo, caminhada).
+- **Tipo de atividade** — Filtre trilhas com base no tipo de [atividades](../../map/tracks/track-context-menu.md#track-activity-type) registradas no arquivo GPX (por exemplo, ciclismo, caminhada).
 - **País** — Filtre trilhas pelo país ou região onde foram gravadas.
 - **Cor** e **Largura** — Selecione trilhas por cor atribuída ou largura da linha.
 - **Outros** — Filtros adicionais para características especiais:
@@ -147,11 +147,11 @@ Para criar uma **Pasta Inteligente**, siga estes passos:
 
 2. Selecione **Adicionar pasta inteligente** no menu suspenso.
 
-3. Configure as definições:
+3. Defina as configurações:
    - **Nomeie a pasta**. Digite um nome para identificar a pasta.
    - Especifique os **parâmetros de filtro de trilha**. Aplique os filtros necessários usando as opções de [Filtro](#available-filters) disponíveis.
 
-4. **Salve** as definições.
+4. **Salve** as configurações.
     - Toque em **Mostrar** para pré-visualizar as trilhas.
     - Selecione o botão **Salvar** para finalizar a *Pasta Inteligente*.
 
@@ -210,7 +210,7 @@ Você também pode abrir a pasta e toque no ícone no *canto superior direito* p
 - **<Translate ios="true" ids="shared_string_select"/>** — Use o [Modo de Seleção](./manage-tracks.md#selection-mode) para ações específicas de trilha dentro da pasta.
 - **<Translate ios="true" ids="shared_string_refresh"/>** — Atualize manualmente o conteúdo da pasta para garantir que ela inclua as trilhas mais recentes.
 - **<Translate ios="true" ids="edit_filter"/>** — Modifique as configurações de filtro de trilha para a Pasta Inteligente atual. Consulte [Filtro de Busca](#search-filter) para obter detalhes.
-- **Organizar por** — Organize automaticamente as trilhas na Pasta Inteligente em grupos com base em um parâmetro selecionado. Selecione *Nenhum* para exibir todas as trilhas como uma única lista, correspondendo à visualização padrão da Pasta Inteligente. Os tipos de agrupamento disponíveis incluem *Geral*, *Data e hora*, *Localização*, *Velocidade*, *Altitude e elevação* e *Dados do sensor*. 
+- **<Translate ios="true" ids="organize_by"/>** — Organize automaticamente as trilhas na Pasta Inteligente em grupos com base em um parâmetro selecionado. Selecione *Nenhum* para exibir todas as trilhas como uma única lista, correspondendo à visualização padrão da Pasta Inteligente. Os tipos de agrupamento disponíveis incluem *Geral*, *Data e hora*, *Localização*, *Velocidade*, *Altitude e elevação* e *Dados do sensor*. 
 
 Alguns parâmetros de agrupamento estão disponíveis apenas com uma assinatura OsmAnd Pro. Os parâmetros gratuitos incluem *Atividade*, *Ano de criação* e *Cidade mais próxima*. Todos os outros parâmetros são marcados com um rótulo <ProFeature/>.
 

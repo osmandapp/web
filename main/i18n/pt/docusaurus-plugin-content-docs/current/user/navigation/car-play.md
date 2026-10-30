@@ -1,5 +1,5 @@
 ---
-source-hash: bcf6b575b3a4fda9b746badca4cfc8f28d464d5066f682b25d3bd4be49dceab0
+source-hash: 9f605668d58af560cd42ef64d15f56577a03661cd8b6c24cb599d9fe82542af1
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -18,7 +18,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Visão Geral {#overview}
 
-:::tip Purchase
+:::tip Compra
 O *CarPlay* é um [recurso pago](../purchases/index.md).  
 :::
 
@@ -227,7 +227,7 @@ A orientação por voz para o *CarPlay* é um dos recursos de navegação mais �
 
 Quando os comandos de voz são reproduzidos, o OsmAnd ajusta o áudio de fundo dependendo do seu tipo. Com *<Translate ios="true" ids="pause_spoken_audio"/>* ativado, o conteúdo de áudio falado, como podcasts e audiolivros, é pausado durante as instruções de navegação, enquanto a reprodução de música continua com volume reduzido. Quando *<Translate ios="true" ids="pause_spoken_audio"/>* está desativado, tanto o áudio falado quanto a música continuam tocando com volume reduzido.  
 
-Para configurar os comandos de voz de acordo com o perfil selecionado, você deve fazer isso antes de iniciar uma rota no aplicativo OsmAnd em seu dispositivo, consulte o artigo [Comandos de voz / Notificações](../navigation/guidance/voice-navigation.md#voice-prompts). Por exemplo, para ativar Pausar áudio falado, vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
+Para configurar os comandos de voz de acordo com o perfil selecionado, você deve fazer isso antes de iniciar uma rota no aplicativo OsmAnd em seu dispositivo, consulte o artigo [Comandos de voz / Notificações](../navigation/guidance/voice-navigation.md#voice-settings). Por exemplo, para ativar Pausar áudio falado, vá para: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*
 
 ### Alertas de Navegação {#navigation-alerts}
 
@@ -333,6 +333,20 @@ Você pode escolher um dos seguintes modos de aparência:
 - **Nascer do sol/pôr do sol** — O mapa alterna automaticamente entre temas claro e escuro com base nos horários calculados de nascer e pôr do sol para sua localização atual.
 
 **Observação:** A configuração do Modo do mapa no CarPlay afeta apenas a aparência do mapa no CarPlay. Ela não altera o modo do mapa na tela do seu telefone.
+
+### Orientação do Mapa {#map-orientation}
+
+![Orientação do mapa](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+A configuração *Orientação do mapa* define como o mapa gira na tela do CarPlay. Para abrir esta configuração, toque no botão *Configurações* na barra de navegação do CarPlay e selecione *Orientação do mapa*. A orientação atual é mostrada como o texto de detalhe da linha.
+
+Você pode escolher um dos seguintes modos de orientação:
+- **Girado manualmente** — O mapa não gira automaticamente.
+- **Direção do movimento** — O mapa gira para seguir a sua direção de deslocamento.
+- **Direção da bússola** — O mapa gira para seguir a bússola do iPhone, de modo que o norte do mapa corresponda ao norte real.
+- **Norte para cima** — O norte permanece sempre na parte superior da tela.
+
+**Observação:** A orientação do mapa é uma configuração de perfil compartilhada entre o CarPlay e o aplicativo OsmAnd no seu iPhone. Uma alteração feita em uma tela se aplica à outra. Para mais detalhes, consulte o artigo [Modos de Orientação do Mapa](../widgets/map-buttons.md#map-orientation-modes).
 
 ### Posição da Localização no CarPlay {#location-position-in-carplay}
 

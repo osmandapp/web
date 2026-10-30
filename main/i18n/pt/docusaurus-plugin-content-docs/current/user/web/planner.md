@@ -1,8 +1,8 @@
 ---
 source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
-sidebar_label:  Planear Rota
-title: Planear Rota no Website
+sidebar_label:  Planejar Rota
+title: Planejar Rota no Website
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-O Planeador de Rotas Web do OsmAnd permite-lhe criar rotas de navegação, planear percursos e gerir ficheiros locais diretamente a partir do seu navegador. Esta ferramenta web é útil para criar rotas de viagem detalhadas que pode sincronizar com a sua aplicação ou partilhar com outros.
+O Planejador de Rotas Web do OsmAnd permite que você crie rotas de navegação, planeje trilhas e gerencie arquivos locais diretamente a partir do seu navegador. Esta ferramenta web é útil para criar rotas de viagem detalhadas que você pode sincronizar com o seu aplicativo ou compartilhar com outros.
 
 
 <!--
@@ -61,47 +61,47 @@ To create a navigation route, follow these steps:
 
 ## Criar Nova Rota {#create-new-route}
 
-Existem duas formas de iniciar uma nova rota no Planear rota. A primeira opção é diretamente do mapa: clique com o botão direito em qualquer lugar do mapa e selecione **Criar nova rota**. A segunda opção é do painel esquerdo: clique no botão **Criar percurso**.
+Existem duas formas de iniciar uma nova rota no Planejar rota. A primeira opção é diretamente do mapa: clique com o botão direito em qualquer lugar do mapa e selecione **Criar nova rota**. A segunda opção é do painel esquerdo: clique no botão **Criar trilha**.
 
-Uma vez criada a rota, adicione pontos diretamente no mapa. Cada clique coloca o próximo ponto, e o planeador constrói a rota entre os pontos.
+Uma vez criada a rota, adicione pontos diretamente no mapa. Cada clique coloca o próximo ponto, e o planejador constrói a rota entre os pontos.
 
 ![OsmAnd Web Criar Nova Rota](@site/static/img/web/create_new_route_1.png)
 
-### Importar Percurso {#import-track}
+### Importar Trilha {#import-track}
 
-Se já tiver um ficheiro de percurso, pode importá-lo para o Planear rota e continuar a trabalhar com ele no Planeador Web. Clique no botão **Importar percurso** e selecione um ficheiro GPX do seu computador. Após o upload, o percurso aparece na sua lista local e abre no planeador, para que possa revê-lo no mapa e prosseguir com a edição e gestão nos painéis de percurso.
+Se você já tiver um arquivo de trilha, você pode importá-lo para o Planejar rota e continuar a trabalhar com ele no Planejador Web. Clique no botão **Importar trilha** e selecione um arquivo GPX do seu computador. Após o upload, a trilha aparece na sua lista local e abre no planejador, para que você possa revê-lo no mapa e prosseguir com a edição e gerenciamento nos painéis de trilha.
 
-### Ficheiros Locais {#local-files}
+### Arquivos Locais {#local-files}
 
-Todas as rotas e percursos que criar ou importar no Planear rota são adicionados à lista Local no painel esquerdo. Isso facilita manter múltiplos ficheiros GPX num só lugar e alternar entre eles durante o planeamento.
+Todas as rotas e trilhas que criar ou importar no Planejar rota são adicionados à lista Local no painel esquerdo. Isso facilita manter múltiplos arquivos GPX em um só lugar e alternar entre eles durante o planejamento.
 
-Cada item na lista tem um alternador que lhe permite mostrar ou ocultar rapidamente o percurso no mapa. Selecione um percurso da lista para o abrir no planeador e continuar a trabalhar com ele. 
+Cada item na lista tem um alternador que permite que você mostre ou oculte rapidamente a trilha no mapa. Selecione uma trilha da lista para o abrir no planejador e continuar a trabalhar com ele. 
 
 ![OsmAnd Web Criar Nova Rota](@site/static/img/web/local_files.png)
 
 
-## Gerir Percurso {#manage-track}
+## Gerenciar Trilha {#manage-track}
 
-Quando cria ou importa uma rota no Planear rota, abre-se um painel vertical de percurso. Este painel permite-lhe alterar o perfil de roteamento e gerir a rota.
+Quando cria ou importa uma rota no Planejar rota, se abre um painel vertical de trilha. Este painel permite que você altere o perfil de roteamento e gerencie a rota.
 
 Clique no controlo de perfil para abrir a caixa de diálogo **Alterar perfil**. Selecione o perfil necessário (por exemplo, Carro, Bicicleta ou Peão), depois escolha como aplicá-lo: *Próximos segmentos* aplica o perfil apenas às novas partes adicionadas a partir deste ponto em diante, enquanto *Todos os segmentos* recalcula toda a rota com o perfil selecionado.
 
-Do painel de percurso, também pode **Eliminar** o percurso da sua lista local.
+Do painel de trilha, você também pode **Excluir** a trilha da sua lista local.
 
-No [Painel de Visão Geral](#overview-panel), pode **Guardar na Cloud** para manter a rota para uso posterior e **Descarregar** como ficheiro GPX.
+No [Painel de Visão Geral](#overview-panel), você pode **Salvar na Nuvem** para manter a rota para uso posterior e **Baixar** como arquivo GPX.
 
-![OsmAnd Web Gerir Percurso](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Gerir Percurso](@site/static/img/web/change_profile.png)
+![OsmAnd Web Gerenciar Trilha](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Gerenciar Trilha](@site/static/img/web/change_profile.png)
 
 
-## Painéis de Detalhes de Percurso {#track-details-panels}
+## Painéis de Detalhes de Trilha {#track-details-panels}
 
-O menu de percurso local inclui três painéis: **Visão Geral**, **Percurso** e **Pontos**. Use-os para visualizar informações de percurso e gerir pontos de rota e pontos de passagem.
+O menu de trilha local inclui três painéis: **Visão Geral**, **Trilha** e **Pontos**. Use-os para visualizar informações de trilha e gerenciar pontos de rota e pontos de passagem.
 
 ### Painel de Visão Geral {#overview-panel}
 
-O Painel de Visão Geral resume o percurso selecionado e mostra dados chave de rota e elevação. Inclui uma visão geral rápida das estatísticas da rota, mais gráficos e análise adicional de percurso baseada em dados de mapa disponíveis.
+O Painel de Visão Geral resume a trilha selecionada e mostra dados chave de rota e elevação. Inclui uma visão geral rápida das estatísticas da rota, mais gráficos e análise adicional de trilha baseada em dados de mapa disponíveis.
 
-A secção de resumo mostra:
+A seção de resumo mostra:
 
 - Pontos — o número de pontos de rota usados para construir a rota.
 - Distância — o comprimento total da rota.
@@ -112,41 +112,41 @@ A secção de resumo mostra:
 Abaixo do resumo, o painel fornece gráficos:
 
 - Elevação — um perfil de elevação da rota.
-- Inclinação — um gráfico de inclinação mostrando mudanças de gradiente ao longo do percurso.
-- Velocidade — um gráfico de velocidade ao longo do percurso.
+- Inclinação — um gráfico de inclinação mostrando mudanças de gradiente ao longo da trilha.
+- Velocidade — um gráfico de velocidade ao longo da trilha.
 
-Pode ativar ou desativar as seguintes opções:
+Você você pode ativar ou desativar as seguintes opções:
 
-- Mostrar pontos de percurso — exibe pontos de percurso no mapa.
+- Mostrar pontos de trilha — exibe pontos de trilha no mapa.
 - Mostrar pontos de passagem — exibe pontos de passagem no mapa.
 
-Para detalhes adicionais de percurso, abra as secções de análise:
+Para detalhes adicionais de trilha, abra as seções de análise:
 
-- Tipo de estrada — divide o percurso em segmentos por classificação de estrada.
+- Tipo de estrada — divide a trilha em segmentos por classificação de estrada.
 - Superfície — mostra tipos de superfície ao longo da rota baseados em dados OSM.
 - Suavidade — mostra a suavidade de segmentos baseada em tags OSM.
 
 ![OsmAnd Web Painel de Visão Geral](@site/static/img/web/overview_panel.png) 
 
-### Painel de Percurso {#track-panel}
+### Painel de Trilha {#track-panel}
 
-O Painel de Percurso mostra a lista de pontos de rota usados para construir o percurso. Use-o para rever e editar a estrutura da rota: arraste pontos para os reordenar, remova pontos usando o ícone de eliminar, ou use Limpar pontos para remover todos os pontos e começar de novo.
+O Painel de Trilha mostra a lista de pontos de rota usados para construir a trilha. Use-o para rever e editar a estrutura da rota: arraste pontos para os reordenar, remova pontos usando o ícone de excluir, ou use Limpar pontos para remover todos os pontos e começar de novo.
 
-![OsmAnd Web Painel de Percurso](@site/static/img/web/track_panel_new.png)
+![OsmAnd Web Painel de Trilha](@site/static/img/web/track_panel_new.png)
 
 ### Painel de Pontos {#points-panel}
 
-O Painel de Pontos é usado para visualizar e gerir pontos de passagem para o percurso selecionado. Os pontos de passagem podem ser adicionados a partir do menu de contexto do mapa — clique com o botão direito no mapa e escolha a opção para **Adicionar ponto de passagem**, depois preencha os detalhes do ponto de passagem (como nome, ícone e cor) e guarde-o.
+O Painel de Pontos é usado para visualizar e gerenciar pontos de passagem para a trilha selecionada. Os pontos de passagem podem ser adicionados a partir do menu de contexto do mapa — clique com o botão direito no mapa e escolha a opção para **Adicionar ponto de passagem**, depois preencha os detalhes do ponto de passagem (como nome, ícone e cor) e salve-o.
 
-A edição de pontos de passagem utiliza a mesma interface que a [edição de Favoritos](../web/web-favorites.md#edit-favorites). Pode modificar as propriedades dos pontos de passagem, como nome, endereço, descrição, ícone, cor e forma, utilizando o painel de edição unificado. A aparência selecionada é pré-visualizada tanto no painel de edição como diretamente no mapa.
+A edição de pontos de passagem usa a mesma interface que a [edição de Favoritos](../web/web-favorites.md#edit-favorites). Você você pode modificar as propriedades dos pontos de passagem, como nome, endereço, descrição, ícone, cor e forma, usando o painel de edição unificado. A aparência selecionada é pré-visualizada tanto no painel de edição como diretamente no mapa.
 
-Na lista de Pontos de Passagem, pode controlar se os pontos de passagem são mostrados no mapa e remover pontos de passagem individuais quando necessário. Para remover todos os pontos de passagem do percurso de uma só vez, use *Limpar todos os pontos de passagem*.
+Na lista de Pontos de Passagem, você pode controlar se os pontos de passagem são mostrados no mapa e remover pontos de passagem individuais quando necessário. Para remover todos os pontos de passagem da trilha de uma só vez, use *Limpar todos os pontos de passagem*.
 
 ![OsmAnd Web Painel de Pontos de Passagem](@site/static/img/web/points_panel_new.png)
 
 
 ## Artigos Relacionados {#related-articles}
 
-- [Planear uma Rota](../plan-route/create-route.md)
+- [Planejar uma Rota](../plan-route/create-route.md)
 - [Guias de Viagem](../plan-route/travel-guides.md)
 - [Navegação](../web/web-navigation.md)

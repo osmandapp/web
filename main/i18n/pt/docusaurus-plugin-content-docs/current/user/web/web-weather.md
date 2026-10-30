@@ -24,7 +24,7 @@ O recurso de Clima no Mapa Web do OsmAnd exibe condições climáticas atuais e 
 Os dados climáticos estão disponíveis sem necessidade de login. A visualização de Clima pode ser aberta diretamente da interface do mapa, seja clicando no ícone de guarda-chuva no painel de menu ou clicando com o botão direito no mapa e selecionando Abrir clima no menu de contexto.
 
 
-## Data Source {#data-source}
+## Fonte de Dados {#data-source}
 
 O OsmAnd Web fornece informações climáticas de duas fontes de previsão:
 
@@ -36,7 +36,7 @@ Para alternar entre elas, clique no **botão guarda-chuva** no menu de Clima.
 ![Clima no OsmAnd Web](@site/static/img/web/weather_source.png)
 
 
-## Weather Menu {#weather-menu}
+## Menu de Clima {#weather-menu}
 
 O **menu de Clima** exibe condições climáticas atuais e dados de previsão para o local selecionado no mapa. Ele combina uma visualização resumida, controles de tempo e camadas climáticas em um único painel.
 
@@ -58,7 +58,7 @@ Na parte inferior do painel, são exibidas informações sobre o horário de ger
 ![Clima no OsmAnd Web](@site/static/img/web/weather_menu.png)
 
 
-## Weather Layers {#weather-layers}
+## Camadas de Clima {#weather-layers}
 
 As camadas de clima permitem visualizar os dados de previsão diretamente no mapa como uma sobreposição. Elas ajudam a avaliar rapidamente as condições climáticas em uma área mais ampla, em vez de visualizar valores apenas para um único ponto.
 
@@ -76,7 +76,7 @@ Todas as camadas de clima estão sincronizadas com a data e hora selecionadas no
 ![Clima no OsmAnd Web](@site/static/img/web/weather_layers.png)
 
 
-## Forecast View {#forecast-view}
+## Visualização da Previsão {#forecast-view}
 
 As previsões climáticas estão disponíveis para até 7 dias à frente. Os valores de previsão são calculados em intervalos de 3 horas, permitindo examinar mudanças de curto prazo ao longo de cada dia.
 
@@ -89,7 +89,7 @@ Você pode alternar entre diferentes parâmetros climáticos usando os ícones n
 ![Clima no OsmAnd Web](@site/static/img/web/weather_forecast.png)
 
 
-## Related Articles {#related-articles}
+## Artigos Relacionados {#related-articles}
 
 - [Clima](../plugins/weather.md)
 - [Introdução](../web/web-overview.md)

@@ -1,8 +1,8 @@
 ---
-source-hash: 0f4d43db5e7fc2384dd4ee693e3c1828ad6368d3e9ba5e38ea40ddd156a2c47c
+source-hash: 0c19d193401abb84484ff5570c24cad44445840c466f64041a7446ed6afebfa6
 sidebar_position: 5
-sidebar_label: Tracks
-title: Tracks
+sidebar_label: Trilhas
+title: Trilhas
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,111 +19,115 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-The Web Planner gives you a simple way to work with your personal data right in the browser. After signing in, you can open your tracks, adjust them, create new ones, or upload files from your computer. 
+O Web Planner oferece uma maneira simples de trabalhar com seus dados pessoais diretamente no navegador. Depois de fazer login, você pode abrir suas trilhas, ajustá-las, criar novas ou carregar arquivos do seu computador. 
 
-All changes are automatically synced through [OsmAnd Cloud](../personal/osmand-cloud.md), so anything you update on the web appears on your devices, and anything you create on your phone shows up here as well. This makes it easy to move between platforms and keep your data consistent wherever you use OsmAnd.
-
-
-## How to use {#how-to-use}
-
-It's a paid feature <ProFeature/>. To use it, log in to your OsmAnd Pro account.
-
-![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
-
-Tracks section contains all track-related tools and actions. The following options are available:
-
-- Show tracks from [OsmAnd Cloud](#cloud-tracks).
-- Adding tracks on the map (**Visible on map** folder).
-- Viewing track information and graphs.
-- Modify tracks and add it to Cloud.
-- Download and delete tracks.
-- Create new folders or delete it.
-- Download folders as OSF or OBF collection.
+Todas as alterações são sincronizadas automaticamente por meio do [OsmAnd Cloud](../personal/osmand-cloud.md), de modo que tudo o que você atualiza na web aparece nos seus dispositivos, e tudo o que você cria no celular também aparece aqui. Isso facilita a troca entre plataformas e mantém seus dados consistentes onde quer que você use o OsmAnd.
 
 
-## Import Tracks {#import-tracks}
+## Como usar {#how-to-use}
 
-You can import GPX tracks into Web Planner either by using the Import button or by dragging and dropping GPX files directly onto the map.
+É um recurso pago <ProFeature/>. Para usá-lo, faça login na sua conta OsmAnd Pro.
 
-To import a track using drag and drop:
-- Open the Tracks section.
-- Drag one or more GPX files from your computer.
-- Drop the files onto the map or onto a specific track folder.
+![Login de trilhas](@site/static/img/web/track_login.png) ![Login de trilhas](@site/static/img/web/track_login_2.png)
 
-When a file is dragged over the map, the available drop area is highlighted. If you drop the file directly onto the map, it is imported into the Import folder. If you drop it onto an existing folder, it is imported into that folder instead.
+A seção Trilhas contém todas as ferramentas e ações relacionadas a trilhas. Estão disponíveis as seguintes opções:
 
-After the import is complete, the track appears in the track list, is synchronized with [OsmAnd Cloud](../personal/osmand-cloud.md), and becomes available on all devices connected to the same account.
-
-![Drag and drop](@site/static/img/web/drag_and_drop.png)
-
-
-## Visible on the Map {#visible-on-the-map}
-
-The **Visible on map** view lists all tracks that are currently displayed on the map. Any track can be added to this list from the main Tracks panel using the **⋮ → Make track visible** option.
-
-Tracks that are visible on the map are highlighted in blue, while tracks that are currently hidden appear in grey. A switch next to each track lets you quickly show or hide it. The **Hide all** button turns off all visible tracks at once.
-
-Below the main list, the **Recently visible** section displays tracks that were shown on the map earlier. This makes it easy to turn a track back on without searching for it again in your folders or in OsmAnd Cloud.
-
-![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
+- Mostrar trilhas do [OsmAnd Cloud](#cloud-tracks).
+- Adicionar trilhas ao mapa (pasta **Visível no mapa**).
+- Visualizar informações e gráficos da trilha.
+- Modificar trilhas e adicioná-las ao Cloud.
+- Baixar e excluir trilhas.
+- Criar novas pastas ou excluí-las.
+- Baixar pastas como coleção OSF ou OBF.
 
 
-## Track folder menu {#track-folder-menu}
+## Importar Trilhas {#import-tracks}
 
-![Track folder menu](@site/static/img/web/collection_new.png)
+Você pode importar trilhas GPX para o Web Planner usando o botão Importar ou arrastando e soltando arquivos GPX diretamente no mapa.
 
-Click the three-dot button (⋮) to open the *Track Folder* menu. From here, you can:
+Para importar uma trilha arrastando e soltando:
+- Abra a seção Trilhas.
+- Arraste um ou mais arquivos GPX do seu computador.
+- Solte os arquivos no mapa ou em uma pasta de trilhas específica.
 
- - Download as OSF.
- - Download as OBF Collection. Export the folder in OsmAnd Binary Format, choosing either an [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) or a [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
-      -  **OBF file**. You can download an offline OBF map and open it with OsmAnd on your device. It is suitable for displaying a large number of tracks on the map.
-      -  **Travel OBF**. You can also import a map of tracks as a travel book, which allows you to select individual tracks on the map and use them like normal GPX files. A travel book also supports features such as displaying tracks as points, filtering tracks by activity type, and filtering waypoints.
- - Rename. Opens a dialog where you can enter a new name for the selected folder. The change is synced to OsmAnd Cloud and will appear on all connected devices.
- - Delete. Opens a confirmation dialog. Deleting a folder removes it permanently along with all tracks it contains. This action is also synced through OsmAnd Cloud.
+Quando um arquivo é arrastado sobre o mapa, a área de soltura disponível é destacada. Se você soltar o arquivo diretamente no mapa, ele será importado para a pasta Importar. Se você soltá-lo em uma pasta existente, ele será importado para essa pasta. Sem uma assinatura ativa do [OsmAnd Pro](../purchases/index.md), ao soltar um arquivo é aberta uma caixa de diálogo explicando que a importação de trilhas requer o OsmAnd Pro.
 
-![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+O tamanho máximo do arquivo é de 20 MB para arquivos GPX e KML e de 2 MB para arquivos KMZ. Arquivos maiores não são importados e, em vez disso, aparece um aviso. Ao importar vários arquivos de uma vez, todos os arquivos rejeitados são listados em uma única mensagem. Trilhas maiores que 20 MB que já estão armazenadas no OsmAnd Cloud também não podem ser abertas na web, e uma notificação sugere abri-las no aplicativo OsmAnd.
 
-### Smart Folders {#smart-folders}
+Após a conclusão da importação, a trilha aparece na lista de trilhas, é sincronizada com o [OsmAnd Cloud](../personal/osmand-cloud.md) e fica disponível em todos os dispositivos conectados à mesma conta.
 
-**Smart Folders** created on mobile devices can be synced and viewed in the web version via OsmAnd Cloud. To ensure they appear on the web, synchronization of [OsmAnd Settings](../personal/osmand-cloud.md#select-data-to-back-up) must be enabled in Cloud settings.  
-Go to: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+Se uma trilha não puder ser importada ou salva no OsmAnd Cloud, uma caixa de diálogo de erro mostra o nome do arquivo e, quando disponível, o motivo informado pelo servidor.
 
-Smart Folders are currently stored as part of global settings, so they are uploaded to the Cloud only when Settings sync is active. After creating or editing a Smart Folder, it is recommended to run a manual sync to update the data.
-
-On the web, Smart Folders are displayed in the track list with a distinct star icon, making them easy to distinguish from regular folders. The folder name is synchronized first, while the list of tracks depends on how the folder is configured on the device.
-
-Tracks are displayed only if the Smart Folder configuration is supported on the web. This includes both [filter settings](../personal/tracks/smart-folder.md#search-filter) and [grouping options](../personal/tracks/smart-folder.md#managing-smart-folders). If unsupported parameters are used (for example, nearest city), the folder may appear without tracks. For best compatibility, use common parameters such as activity, date, distance, or duration.
-
-Smart Folder synchronization may vary depending on the platform and sync configuration. For the most consistent results, ensure that Cloud sync is enabled and up to date on all devices.
-
-The three-dot menu (⋮) provides additional actions for the Smart Folder. You can *Download as OSF*, *Download as OBF collection*, *Rename*, or *Delete* the folder.
-
-![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
+![Arrastar e soltar](@site/static/img/web/drag_and_drop.png)
 
 
-## Cloud Tracks {#cloud-tracks}
+## Visível no Mapa {#visible-on-the-map}
 
-GPX tracks that you have in [OsmAnd Cloud](../personal/osmand-cloud.md) will be available for display and editing after login. Only **Pro users** <ProFeature/> can access them. [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) users can download their Cloud data even after their Pro subscription expires.
+A visualização **Visível no mapa** lista todas as trilhas que estão sendo exibidas no mapa. Qualquer trilha pode ser adicionada a esta lista a partir do painel principal Trilhas, usando a opção **⋮ → Tornar trilha visível**.
 
-When you select a track, the map automatically centers and adjusts the zoom level to display the entire track within the visible map area.
+As trilhas visíveis no mapa são destacadas em azul, enquanto as trilhas ocultas aparecem em cinza. Um interruptor ao lado de cada trilha permite mostrá-la ou ocultá-la rapidamente. O botão **Ocultar tudo** desativa todas as trilhas visíveis de uma só vez.
 
-You can also use the **Focus** button to hide all other favorites and tracks on the map, making it easier to review the selected track. Turn off Focus mode to restore the visibility of other map objects.
+Abaixo da lista principal, a seção **Recentemente visível** exibe as trilhas que foram mostradas no mapa anteriormente. Isso facilita reativar uma trilha sem procurá-la novamente em suas pastas ou no OsmAnd Cloud.
 
-The following features are available after choosing cloud track:
-- *Information* - displaying track data.
-- *Elevation* - graph of elevation.
-- *Speed* - speed graph.
-- *Slope* - slope graph.
-- *Recalculate Elevation (Satellite)* - recalculates elevation values for the selected track and shows them on the elevation graph.
-- *Road type* - breaks the track into segments by road classification.
-- *Surface* - shows the types of track surfaces along the route.
-- *Smoothness* - displays segment smoothness based on OSM tags.
-
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
+![Visível no mapa](@site/static/img/web/visible_new.png) ![Visível no mapa](@site/static/img/web/visible_new_2.png)
 
 
-## Related Articles {#related-articles}
+## Menu da pasta de trilhas {#track-folder-menu}
 
-- [Manage Tracks](../personal/tracks/manage-tracks.md)
-- [Tracks Analyzer](../web/web-tracks-analyzer.md)
+![Menu da pasta de trilhas](@site/static/img/web/collection_new.png)
+
+Clique no botão de três pontos (⋮) para abrir o menu *Pasta de Trilhas*. A partir daqui, você pode:
+
+ - Baixar como OSF.
+ - Baixar como coleção OBF. Exporte a pasta no OsmAnd Binary Format, escolhendo um [arquivo OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) ou um [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+      -  **Arquivo OBF**. Você pode baixar um mapa OBF offline e abri-lo com o OsmAnd no seu dispositivo. É adequado para exibir um grande número de trilhas no mapa.
+      -  **Travel OBF**. Você também pode importar um mapa de trilhas como um livro de viagem, o que permite selecionar trilhas individuais no mapa e usá-las como arquivos GPX normais. Um livro de viagem também oferece recursos como exibir trilhas como pontos, filtrar trilhas por tipo de atividade e filtrar pontos de passagem.
+ - Renomear. Abre uma caixa de diálogo onde você pode inserir um novo nome para a pasta selecionada. A alteração é sincronizada com o OsmAnd Cloud e aparecerá em todos os dispositivos conectados.
+ - Excluir. Abre uma caixa de diálogo de confirmação. Excluir uma pasta a remove permanentemente junto com todas as trilhas que ela contém. Essa ação também é sincronizada por meio do OsmAnd Cloud.
+
+![Menu da pasta de trilhas](@site/static/img/web/collection_rename.png) ![Menu da pasta de trilhas](@site/static/img/web/collection_delete.png)
+
+### Pastas Inteligentes {#smart-folders}
+
+As **Pastas Inteligentes** criadas em dispositivos móveis podem ser sincronizadas e visualizadas na versão web por meio do OsmAnd Cloud. Para garantir que apareçam na web, a sincronização das [Configurações do OsmAnd](../personal/osmand-cloud.md#select-data-to-back-up) deve estar ativada nas configurações do Cloud.  
+Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
+
+Atualmente, as Pastas Inteligentes são armazenadas como parte das configurações globais, portanto são enviadas ao Cloud somente quando a sincronização de Configurações está ativa. Após criar ou editar uma Pasta Inteligente, recomenda-se executar uma sincronização manual para atualizar os dados.
+
+Na web, as Pastas Inteligentes são exibidas na lista de trilhas com um ícone de estrela distinto, o que facilita distingui-las das pastas comuns. O nome da pasta é sincronizado primeiro, enquanto a lista de trilhas depende de como a pasta está configurada no dispositivo.
+
+As trilhas são exibidas somente se a configuração da Pasta Inteligente for compatível com a web. Isso inclui tanto as [configurações de filtro](../personal/tracks/smart-folder.md#search-filter) quanto as [opções de agrupamento](../personal/tracks/smart-folder.md#managing-smart-folders). Se forem usados parâmetros não compatíveis (por exemplo, cidade mais próxima), a pasta pode aparecer sem trilhas. Para melhor compatibilidade, use parâmetros comuns, como atividade, data, distância ou duração.
+
+A sincronização das Pastas Inteligentes pode variar de acordo com a plataforma e a configuração de sincronização. Para obter resultados mais consistentes, certifique-se de que a sincronização do Cloud esteja ativada e atualizada em todos os dispositivos.
+
+O menu de três pontos (⋮) oferece ações adicionais para a Pasta Inteligente. Você pode *Baixar como OSF*, *Baixar como coleção OBF*, *Renomear* ou *Excluir* a pasta.
+
+![Pastas Inteligentes](@site/static/img/web/smart_folder_new.png) ![Pastas Inteligentes](@site/static/img/web/smart_folder_menu_new.png)
+
+
+## Trilhas do Cloud {#cloud-tracks}
+
+As trilhas GPX que você tem no [OsmAnd Cloud](../personal/osmand-cloud.md) estarão disponíveis para exibição e edição após o login. Somente **usuários Pro** <ProFeature/> podem acessá-las. Os usuários do [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) podem baixar seus dados do Cloud mesmo depois que a assinatura Pro expirar.
+
+Ao selecionar uma trilha, o mapa é centralizado automaticamente e o nível de zoom é ajustado para exibir a trilha inteira dentro da área visível do mapa.
+
+Você também pode usar o botão **Foco** para ocultar todos os outros favoritos e trilhas no mapa, facilitando a análise da trilha selecionada. Desative o modo Foco para restaurar a visibilidade dos outros objetos do mapa.
+
+Os seguintes recursos estão disponíveis após escolher uma trilha do Cloud:
+- *Informações* - exibe os dados da trilha.
+- *Elevação* - gráfico de elevação.
+- *Velocidade* - gráfico de velocidade.
+- *Inclinação* - gráfico de inclinação.
+- *Recalcular elevação (satélite)* - recalcula os valores de elevação da trilha selecionada e os mostra no gráfico de elevação.
+- *Tipo de via* - divide a trilha em segmentos pela classificação das vias.
+- *Superfície* - mostra os tipos de superfície da trilha ao longo da rota.
+- *Suavidade* - exibe a suavidade dos segmentos com base em tags do OSM.
+
+![Edição de GPX do Cloud no OsmAnd Web](@site/static/img/web/cloud_track_new.png) ![Edição de GPX do Cloud no OsmAnd Web](@site/static/img/web/cloud_track_details_new.png)
+
+
+## Artigos Relacionados {#related-articles}
+
+- [Gerenciar Trilhas](../personal/tracks/manage-tracks.md)
+- [Analisador de Trilhas](../web/web-tracks-analyzer.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)

@@ -1,5 +1,5 @@
 ---
-source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
+source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
 sidebar_position: 1
 title:  Planejar uma Rota
 ---
@@ -25,13 +25,13 @@ Uma rota consiste em um conjunto de segmentos entre pontos especificados. Os seg
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_overview_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
+![Planejar uma rota ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
 
 </TabItem>
 
@@ -46,7 +46,7 @@ Uma rota consiste em um conjunto de segmentos entre pontos especificados. Os seg
 
 Vá para: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
-![Plan a route android](@site/static/img/plan-route/plan-route-menu-andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
@@ -54,7 +54,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
-![Plan a route ios](@site/static/img/plan-route/plan-route-menu-ios.png)
+![Planejar uma rota ios](@site/static/img/plan-route/plan-route-menu-ios.png)
 
 </TabItem>
 
@@ -97,13 +97,13 @@ A ferramenta *Planejar uma rota* permite modificar trilhas GPX existentes, bem c
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_lines_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_lines_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
+![Planejar uma rota iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
 
 </TabItem>
 
@@ -126,13 +126,13 @@ A *Linha Reta* é necessária e será usada para áreas não cobertas por dados 
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
+![Planejar uma rota iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
 
 </TabItem>
 
@@ -157,13 +157,13 @@ Use opções offline em vez disso: anexar a estradas ou mapas de terreno (Pro).
 
 <TabItem value="android" label="Android">
 
-![Plan a route snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Planejar uma rota anexar a estradas android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
+![Planejar uma rota anexar a estradas ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Planejar uma rota anexar a estradas-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -186,21 +186,6 @@ Você pode selecionar um [valor limite](../navigation/setup/gpx-navigation.md#at
 Se você selecionar uma trilha e o ícone de perfil ***não especificado*** ("?") for exibido ao lado do ícone *Configurações*, toque nele para escolher se deseja anexar a trilha às estradas ou apenas conectar os pontos com uma linha reta e tratá-la como uma trilha gravada.
 :::
 
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
-
 
 ## Pontos e Segmentos {#points--segments}
 
@@ -210,7 +195,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Plan a route Favorites android](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Planejar uma rota Favoritos android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Para medir uma distância ou planejar uma viagem, adicione pontos na localização do *Ponteiro* um por um e toque no botão *Adicionar*. Ao acessar a **lista de pontos** abaixo, você pode reordenar pontos, excluir ou acessar um [menu de contexto de ponto](#point-context-menu) específico.
 
@@ -220,7 +205,7 @@ Você também pode adicionar um ponto diretamente do mapa tocando em um POI ou F
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
+![Planejar uma rota ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
 Para medir uma distância ou planejar uma viagem, adicione pontos na localização do *Ponteiro* um por um e toque no botão *Route +*. Ao acessar a **lista de pontos** abaixo, você pode reordenar pontos, excluir ou acessar um [menu de contexto de ponto](#point-context-menu) específico.
 
@@ -234,7 +219,7 @@ Você também pode **Desfazer**/**Refazer** cada ação que você fez no planeja
 
 ### Adicionando Waypoints (somente iOS) {#adding-waypoints}
 
-![Plan a route ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Plan a route ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
+![Planejar uma rota ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Planejar uma rota ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
 
 A aba POI permite adicionar e gerenciar waypoints enquanto planeja uma rota.
 
@@ -258,7 +243,7 @@ Toque em um ponto em um grupo para abrir seu menu de contexto. Você pode:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Plan a route android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Planejar uma rota android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
 Os pontos adicionados no editor podem ser conectados como uma linha reta ou como uma rota entre pontos de um perfil selecionado. *Rota entre pontos* pode ser acessada de várias maneiras:
 
@@ -277,19 +262,20 @@ Você pode alterar a rota entre 2 pontos específicos ou entre vários pontos:
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Plan a route ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Planejar uma rota ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Planejar uma rota ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Os pontos adicionados podem ser conectados com uma linha reta ou uma rota calculada usando um perfil de roteamento selecionado. O menu Rota entre pontos permite visualizar e alterar o tipo de roteamento e as configurações para segmentos e seções da rota.
 
 Você pode abrir Rota entre pontos tocando no botão *Rota entre pontos*, que exibe o ícone do perfil de roteamento atualmente selecionado, ou a partir de um [Segmento](#segments) ou menu de Seção.
 
-Na aba Tipo de rota, você pode selecionar um perfil de roteamento para o segmento ou seção selecionado. Linha reta está disponível como a primeira opção, seguida pelos perfis de roteamento disponíveis.
+Na aba Rota, você pode selecionar um perfil de roteamento para o segmento ou seção selecionado. Linha reta está disponível como a primeira opção, seguida pelos perfis de roteamento disponíveis.
 
-Quando uma rota contém apenas um tipo de roteamento, a visualização simples de Rota entre pontos é exibida. Quando uma rota contém vários tipos de roteamento, a visualização complexa mostra todos os segmentos e seções, permitindo selecionar qual parte da rota modificar.
+Quando a rota tem um único segmento com um tipo de roteamento, a visualização simples de Rota entre pontos é exibida. Quando a rota tem vários segmentos ou um segmento com vários tipos de roteamento, a visualização complexa mostra todos os segmentos e seções, permitindo selecionar qual parte da rota modificar.
 
 Você também pode:
-- **Iniciar novo segmento** — cria um novo segmento e continua adicionando pontos de rota. O novo segmento usa o mesmo tipo de rota que o atual.
-- **Alterar para toda a trilha** — seleciona um tipo de roteamento para aplicar a toda a trilha.
+- **Continuar com um tipo de rota diferente** — seleciona um tipo de roteamento para a próxima seção do segmento atual e, em seguida, continua adicionando pontos no mapa. Na visualização complexa, esta opção é chamada de Continuar com um tipo diferente e é exibida abaixo do último segmento.
+- **Iniciar novo segmento** — cria um novo segmento que não está conectado à parte anterior da trilha. Selecione um tipo de roteamento para o novo segmento e continue adicionando pontos no mapa.
+- **Alterar tipo para toda a trilha** — disponível na visualização complexa. Selecione um tipo de roteamento para aplicar a toda a trilha.
 
 Na aba Configurações, você pode selecionar configurações de roteamento predefinidas para o tipo de rota selecionado.
 
@@ -313,7 +299,7 @@ Um segmento de trilha é uma coleção de pontos conectados sem **lacunas**. Em 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/segment_menu.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
+![Planejar uma rota ios](@site/static/img/plan-route/segment_menu_1.webp) ![Planejar uma rota ios](@site/static/img/plan-route/section_menu.webp)
 
 Uma rota pode conter um ou mais segmentos. Um segmento pode usar um único tipo de rota ou conter várias seções com tipos de rota diferentes.
 
@@ -321,12 +307,12 @@ Na aba Rota, cada segmento é exibido com seu tipo de rota e distância. Quando 
 
 Você pode gerenciar um segmento usando seu menu de três pontos:
 - **Alterar tipo de rota** — disponível para um segmento com um único tipo de rota. Abre Rota entre pontos, onde você pode selecionar um tipo de rota diferente.
-- **Definir tipo de rota único** — disponível quando um segmento contém várias seções com tipos de rota diferentes. Abre Rota entre pontos, onde você pode aplicar um tipo de rota ao segmento.
+- **Definir tipo de rota único** — disponível quando um segmento contém várias seções com tipos de rota diferentes. Abre Rota entre pontos, onde você pode aplicar um tipo de rota ao segmento. Todo o segmento é recalculado usando o tipo de roteamento selecionado.
 - **Ordenar** — reordena os pontos de rota manualmente ou usa Ordenar porta a porta para reordená-los minimizando a distância total de viagem.
 - **Salvar como…** — salva o segmento como um arquivo separado.
 - **Excluir segmento** — exclui o segmento.
 
-Para criar um novo segmento desconectado, toque em *Iniciar novo segmento* na parte inferior da aba Rota.
+Para criar um novo segmento desconectado, toque em *Iniciar novo segmento* na parte inferior da aba Rota. Para continuar o segmento atual com um tipo de roteamento diferente, toque em *Continuar com um tipo diferente* abaixo do último segmento e, em seguida, selecione um tipo de roteamento para a próxima seção.
 
 Um segmento pode ser dividido em [seções](#multimodal-routes) quando tipos de rota diferentes são usados para diferentes partes do segmento. Cada seção exibe seu tipo de rota e distância.
 
@@ -346,13 +332,13 @@ Toque no menu de três pontos de uma seção para:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
+![Planejar uma rota ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
 
 </TabItem>
 
@@ -390,13 +376,13 @@ Cada ponto em sua rota tem seu menu de contexto. Ele mostra o *número de sequê
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
+![Planejar uma rota android linha de rota](@site/static/img/plan-route/plan-route-routeline-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
+![Planejar uma rota iOS (tela)](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -413,7 +399,7 @@ Usando a ferramenta *Planejar uma Rota* e a opção [Rota entre pontos](#route-b
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
 Depois de [adicionar](#adding-points) pelo menos um ponto ao mapa, você pode usar a opção de salvar. Todas as trilhas salvas em *Planejar uma rota* podem ser encontradas no *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
@@ -434,7 +420,7 @@ Ao salvar uma nova trilha, você pode selecionar a opção de trilha ***Simplifi
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
+![Planejar uma rota ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
 
 Depois de [adicionar](#adding-points) pelo menos um ponto ao mapa, você pode usar a opção de salvar. Todas as trilhas salvas em *Planejar uma rota* podem ser encontradas no *<Translate ios="true" ids="shared_string_menu"/> → <Translate ios="true" ids="shared_string_my_places"/> →* *[<Translate ios="true" ids="shared_string_gpx_tracks"/>](../personal/tracks/manage-tracks.md)*.
 
@@ -458,7 +444,7 @@ Ao salvar, a trilha herda o tipo de atividade do perfil de roteamento usado para
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
+![Planejar uma rota android (opções)](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Mostra o perfil de aplicativo selecionado (o padrão é uma linha reta). Tocar nesta ação é o mesmo que tocar no botão *Perfil*, que abre o [menu de perfil](../personal/profiles.md) do aplicativo.
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) ou **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Desenha novos segmentos de rota que não se conectam ao segmento anterior.
@@ -476,7 +462,7 @@ Ao salvar, a trilha herda o tipo de atividade do perfil de roteamento usado para
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+![Planejar uma rota iOS (opções)](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
 
 Toque no menu de três pontos na barra de ferramentas superior para abrir o menu *Opções*. As ações disponíveis dependem se você está criando uma nova rota ou editando uma trilha existente.
 
@@ -499,7 +485,7 @@ Toque no menu de três pontos na barra de ferramentas superior para abrir o menu
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
+![Planejar uma rota android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 Durante o planejamento da rota, o [gráfico](../navigation/setup/route-details.md#elevation-graph) exibe informações de altitude e porcentagem de inclinação da rota, além de você poder tocar em qualquer lugar do gráfico para exibir um ponteiro com dados específicos.  
 
@@ -511,7 +497,7 @@ Ao calcular uma rota para navegação em *Planejar uma rota*, você pode encontr
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+![Planejar uma rota anexar a estradas ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Planejar uma rota anexar a estradas-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
 
 A seção Visão geral exibe um gráfico baseado no eixo selecionado. Use os controles de seleção de eixo para escolher os dados exibidos no gráfico. *Recalcular elevação* permite recalcular os dados de elevação quando necessário. Se os dados de elevação não estiverem disponíveis, a aba Analisar exibe Sem dados de elevação. A mensagem explica que o OsmAnd pode recuperar dados de elevação de estradas próximas ou mapas de terreno. Toque em *Obter dados de elevação* para calcular os dados de elevação. Para mais informações, consulte a seção [Obter Dados de Elevação](#get-elevation-data).
 

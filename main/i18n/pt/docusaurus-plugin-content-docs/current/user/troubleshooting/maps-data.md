@@ -1,5 +1,5 @@
 ---
-source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
+source-hash: b2b4863468543cee690b0a3568b81ee3415698752aaf50fecc63c1797c031476
 sidebar_position: 4
 title: Mapas e Dados
 ---
@@ -38,7 +38,7 @@ No momento, as seguintes soluções estão disponíveis:
 
 #### 1. Migrar a pasta de armazenamento de dados do OsmAnd para “Memória interna do aplicativo” {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- Você pode alterar a pasta de armazenamento selecionando a opção ***Memória interna do aplicativo*** em *Menu → Configurações → Configurações do OsmAnd → Pasta de armazenamento de dados*.
+- Você pode alterar a pasta de armazenamento selecionando a opção ***Memória interna do aplicativo*** em *Menu → Configurações → Configurações do OsmAnd → Armazenamento de dados → Armazenamento principal*.
 
 - No entanto, esteja ciente de que a memória interna é frequentemente limitada. Como solução alternativa, você pode mover arquivos importantes para a memória interna, mantendo mapas raramente usados no cartão SD. Use um gerenciador de arquivos para transferir manualmente esses arquivos quando necessário.
 
@@ -46,7 +46,7 @@ A equipe de desenvolvimento está procurando ativamente soluções mais eficient
 
 #### 2. Usar a pasta “Download” do cartão SD {#2-use-the-sd-cards-download-folder}
 
-Você pode tentar resolver o problema de carregamento lento do mapa especificando a pasta **Download** do cartão SD para armazenamento do OsmAnd em *Menu → Configurações → Configurações do OsmAnd → Pasta de armazenamento de dados → Especificado manualmente*. Os seguintes caminhos são possíveis:
+Você pode tentar resolver o problema de carregamento lento do mapa especificando a pasta **Download** do cartão SD para armazenamento do OsmAnd em *Menu → Configurações → Configurações do OsmAnd → Armazenamento de dados → Armazenamento principal → Especificado manualmente*. Os seguintes caminhos são possíveis:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Este caminho pode causar erros ao acessar vários arquivos. Por exemplo, você pode conseguir baixar o mapa World Overview, mas outras regiões podem não aparecer.
@@ -66,11 +66,12 @@ O Android tornou-se mais rigoroso com as permissões de armazenamento, muitas ve
 
 No entanto, o OsmAnd não possui a permissão de *Acesso a todos os arquivos* (devido às restrições do Google), limitando a escolha de pastas. Uma solução alternativa é usar a pasta de armazenamento "Mídia", à qual o Android geralmente concede acesso de leitura/gravação mais amplo. Para fazer isso:
 
-- Vá para *Configurações do OsmAnd → Configurações do OsmAnd → Pasta de armazenamento de dados* e revise as áreas de armazenamento disponíveis. Use o indicador de espaço livre para identificar o armazenamento de destino, muitas vezes rotulado como *Armazenamento externo 2*.
+- Vá para *Configurações do OsmAnd → Configurações do OsmAnd → Armazenamento de dados → Armazenamento principal* e revise as áreas de armazenamento disponíveis. Use o indicador de espaço livre para identificar o armazenamento de destino, muitas vezes rotulado como *Armazenamento externo 2*.
+- Se disponível, selecione *Armazenamento externo visível* para o seu cartão SD e mova seus dados quando solicitado. Caso contrário, siga os passos manuais abaixo.
 - Anote o caminho da pasta atual, que pode ser parecido com */storage/xxxx-xxxx/Android/data/net.osmand.plus/files*.
-- Mude para a opção *Especificado manualmente* e modifique o caminho para uma pasta acessível à mídia. Em muitos sistemas, alterar */Android/data/* para */media/* (por exemplo, ***/storage/xxxx-xxxx/media***) funciona. Alguns sistemas podem exigir diferentes modificações de caminho.
+- Mude para a opção *Especificado manualmente* e modifique o caminho para uma pasta acessível à mídia. Em muitos sistemas, alterar */Android/data/* para */Android/media/* (por exemplo, ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***) funciona. Alguns sistemas podem exigir diferentes modificações de caminho.
 
-Um caminho correto não solicitará ao OsmAnd nenhum erro de permissão de gravação. Antes de fazer essas alterações, certifique-se de que o OsmAnd tenha as permissões de armazenamento apropriadas, incluindo a permissão de armazenamento "Mídia", nas configurações de **Aplicativos** do Android. Em versões mais recentes do Android, essas permissões podem estar localizadas em menus avançados ou ocultos.
+Um caminho correto não solicitará ao OsmAnd nenhum erro de permissão de gravação. Nenhuma permissão de armazenamento adicional é necessária para esta pasta.
 
 ### Excluindo dados do mapa após a atualização do aplicativo (se “Armazenamento multiusuário 1” estiver selecionado) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 
@@ -127,13 +128,13 @@ Essas alterações devem reduzir o tempo necessário para renderizar mapas, espe
 
 <TabItem value="android" label="Android">
 
-![Emergency Access Android](@site/static/img/troubleshooting/emergency_access_android.png)
+![Acesso de emergência Android](@site/static/img/troubleshooting/emergency_access_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Emergency Access iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
+![Acesso de emergência iOS](@site/static/img/troubleshooting/emergency_access_ios.png)
 
 </TabItem>
 
@@ -167,7 +168,7 @@ Sim, as linhas de contorno podem ser exibidas em pés em vez de metros. Antes de
 
 ### A pesquisa de endereço estruturada (cidade *→* rua *→* casa) não encontra a casa {#structured-city--street--house-address-search-doesnt-find-the-house}
 
-If you're trying to search for a location using the structure *City → Street → House Number* and no results are returned, consider the following tips and potential causes:
+Se você está tentando pesquisar um local usando a estrutura *Cidade → Rua → Número da casa* e nenhum resultado é retornado, considere as seguintes dicas e possíveis causas:
 
 > **Dica**: Tente uma pesquisa de texto completo sem especificar a cidade, pois o endereço pode estar listado sob uma cidade diferente.
 

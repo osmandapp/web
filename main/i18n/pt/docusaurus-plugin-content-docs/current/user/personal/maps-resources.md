@@ -1,5 +1,5 @@
 ---
-source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
+source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
 sidebar_position: 2
 title: Mapas e Recursos
 ---
@@ -28,7 +28,7 @@ O OsmAnd opera com dois tipos de mapas: [Mapas vetoriais](../map/vector-maps.md)
 
 Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources"/>*
 
-![Maps menu Android](@site/static/img/personal/maps/maps_overview_1_andr.png)
+![Menu Mapas Android](@site/static/img/personal/maps/maps_overview_1_andr.png)
 
 </TabItem>
 
@@ -36,7 +36,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources"
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
-![Maps menu iOS](@site/static/img/personal/maps/maps_overview_ios.png)
+![Menu Mapas iOS](@site/static/img/personal/maps/maps_overview_ios.png)
 
 </TabItem>
 
@@ -49,13 +49,13 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
 <TabItem value="android" label="Android">
 
-![Download map menu Android](@site/static/img/personal/maps/map_type_1_andr.png) ![Regionwide maps Android](@site/static/img/personal/maps/map_type_2_andr.png)
+![Menu de download de mapas Android](@site/static/img/personal/maps/map_type_1_andr.png) ![Mapas de regiões inteiras Android](@site/static/img/personal/maps/map_type_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Download map menu iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Regionwide maps Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
+![Menu de download de mapas iOS](@site/static/img/personal/maps/map_type_1_ios.png) ![Mapas de regiões inteiras Android](@site/static/img/personal/maps/map_type_2_ios_new.png)  
 
 </TabItem>
 
@@ -66,10 +66,10 @@ Baixar mapas para o aplicativo OsmAnd é um passo importante que determina a fun
 ### Conteúdo de mapa gratuito {#free-map-content}
 
 - **Mapa padrão**. Fornece uma visão geral da área com base na fonte [OpenStreetMap](https://www.openstreetmap.org/) e contém um mapa, rotas, endereços, POIs e informações de transporte público. Tocar abre uma tela com uma lista de regiões do país selecionado e informações sobre quanto espaço esses mapas ocuparão no seu dispositivo.  
-- **Somente estradas**. O mapa contém apenas informações da grade rodoviária para focar em rotas e infraestrutura rodoviária. Ao remover detalhes como edifícios e pontos de interesse, ele é menor que um mapa padrão. Tocar abre uma tela com uma lista de regiões no país selecionado e informações sobre quanto espaço esses mapas ocuparão no seu dispositivo.
+- **Somente estradas**. Uma alternativa menor ao mapa padrão, focada em rotas e infraestrutura rodoviária. Contém a rede viária com nomes de ruas, além de áreas maiores como água, florestas e parques, enquanto detalhes como edifícios e pontos de interesse são omitidos. Tocar abre uma tela com uma lista de regiões no país selecionado e informações sobre quanto espaço esses mapas ocuparão no seu dispositivo.
 - **Mapa de visão geral do mundo**. As versões do OsmAnd até 3.8 oferecem o download de um mapa mundial para que você possa visualizá-lo em escala planetária. Em versões mais recentes do OsmAnd, um *Mini Mapa Mundial* leve é incluído no aplicativo. O aplicativo permite que você baixe um mapa mundial de visão geral maior com informações mais detalhadas. 
 
-:::info monthly map updates
+:::info atualizações mensais de mapas
 Observe que as atualizações mensais de mapas são consideradas outro download de mapa e são subtraídas do número disponível de downloads de mapas gratuitos.
 :::
 
@@ -94,7 +94,7 @@ Sem uma assinatura ativa, esses tipos de mapa mostram um botão *Obter* em vez d
 
 Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,downloads"/>*
 
-![Download map menu general Android](@site/static/img/personal/maps/download_menu_andr.png)
+![Menu geral de download de mapas Android](@site/static/img/personal/maps/download_menu_andr.png)
 
 </TabItem>
 
@@ -102,7 +102,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres"/>*
 
-![Download map menu general iOS](@site/static/img/personal/maps/download_menu_ios.png)
+![Menu geral de download de mapas iOS](@site/static/img/personal/maps/download_menu_ios.png)
 
 </TabItem>
 
@@ -167,13 +167,13 @@ Leia mais no artigo [**Pacote personalizado**](../plugins/custom).
 
 <TabItem value="android" label="Android">
 
-![Download map menu general Android](@site/static/img/personal/maps/multiple_maps_andr.png) ![Deselect menu Android](@site/static/img/personal/maps/multiple_maps_2_andr.png)
+![Menu geral de download de mapas Android](@site/static/img/personal/maps/multiple_maps_andr.png) ![Menu de desmarcar Android](@site/static/img/personal/maps/multiple_maps_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Download map menu general iOS](@site/static/img/personal/maps/multiple_maps_ios.png) ![Deselect menu IOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
+![Menu geral de download de mapas iOS](@site/static/img/personal/maps/multiple_maps_ios.png) ![Menu de desmarcar iOS](@site/static/img/personal/maps/multiple_maps_2_ios.png)
 
 </TabItem>
 
@@ -192,7 +192,7 @@ Quando um item de país agrupado é aberto, uma folha inferior é exibida com a 
 
 Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local"/>*
 
-![Local tab Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Local tab Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
+![Aba Local Android 1](@site/static/img/settings/new_map_and_resourses_andr_1.png) ![Aba Local Android 2](@site/static/img/settings/new_map_and_resourses_andr_2.png)
 
 A aba Local fornece uma visão geral do uso de armazenamento para todos os dados do OsmAnd no seu dispositivo. Os dados são divididos em três seções codificadas por cores para maior clareza, com os itens classificados por tamanho do maior para o menor. Cada seção exibe apenas itens com dados baixados:
 
@@ -211,7 +211,7 @@ A aba Local fornece uma visão geral do uso de armazenamento para todos os dados
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*
 
-![Local tab menu iOS](@site/static/img/personal/maps/local_tab_ios.png)
+![Menu da aba Local iOS](@site/static/img/personal/maps/local_tab_ios.png)
 
 A aba Local fornece uma visão geral do uso de armazenamento para mapas e recursos no seu dispositivo. A barra de memória na parte superior exibe três categorias:
 
@@ -232,7 +232,7 @@ Abaixo da barra de memória, é exibida uma lista de todos os mapas e recursos d
 
 <TabItem value="android" label="Android">  
 
-![Local category overview Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Local category options Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
+![Visão geral da categoria Local Android 1](@site/static/img/personal/maps/local_category_options_1_andr.png) ![Opções da categoria Local Android 2](@site/static/img/personal/maps/local_category_options_2_andr.png)
 
 
 Toque em qualquer item na aba **Local** para abrir sua lista detalhada. Na parte superior desta lista, um painel visual exibe quanto espaço o tipo de dados selecionado ocupa em relação ao armazenamento total do OsmAnd.
@@ -264,7 +264,7 @@ Cada item na lista oferece um *menu de três pontos* com opções:
 
 <TabItem value="ios" label="iOS">  
 
-![Viewing data](@site/static/img/personal/maps/viewing_data_ios.png)
+![Visualização de dados](@site/static/img/personal/maps/viewing_data_ios.png)
 
 Toque em qualquer item offline na aba **Local** para abrir seus dados detalhados, da seguinte forma:
 
@@ -285,7 +285,7 @@ Para mapas online, apenas o tipo e o tamanho dos dados em cache são exibidos.
 
 <TabItem value="android" label="Android">  
 
-![Map Source items menu](@site/static/img/personal/maps/map_source_items_menu_andr.png)
+![Menu de itens de fonte de mapa](@site/static/img/personal/maps/map_source_items_menu_andr.png)
 
 Cada item na lista [Fonte do mapa](../map/raster-maps.md) fornece configurações para gerenciar o mapa raster online armazenado no seu dispositivo. Abra o *menu de três pontos* para acessar as ações disponíveis:
 
@@ -307,7 +307,7 @@ As **Ações** disponíveis dependem do tipo de dados e podem incluir **Desativa
 
 <TabItem value="ios" label="iOS">  
 
-![Actions iOS](@site/static/img/personal/maps/local_actions_ios.png)
+![Ações iOS](@site/static/img/personal/maps/local_actions_ios.png)
 
 As **Ações** disponíveis dependem do tipo de dados:
 
@@ -326,7 +326,7 @@ As **Ações** disponíveis dependem do tipo de dados:
 
 Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates"/>*
 
-![Maps menu Update maps Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Maps menu Update tab Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
+![Menu Mapas Atualizar mapas Android](@site/static/img/personal/maps/maps_update_andr.webp) ![Menu Mapas aba Atualizar Android](@site/static/img/personal/maps/maps_update_tab_andr.webp)
 
 A aba **Atualizações** permite atualizar mapas e recursos do OsmAnd. Mapas padrão e somente estradas são lançados uma vez por mês, geralmente entre o dia 2 e o dia 5, e incluem dados do OpenStreetMap até o último dia do mês anterior (por exemplo, o lançamento de outubro contém dados até 30 de setembro). Outros dados, como Wikipedia, terreno ou mapas náuticos, podem seguir cronogramas de atualização diferentes e não regulares. A previsão do tempo tem seu próprio ciclo de atualização regular. Para detalhes, consulte a [Previsão de Download](../plugins/weather.md#download-forecast). 
 
@@ -350,7 +350,7 @@ Quando um mapa é desativado, ele pode desaparecer temporariamente da aba Local.
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates"/>*
 
-![Maps menu Update maps iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Weather forecast Update maps iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
+![Menu Mapas Atualizar mapas iOS](@site/static/img/personal/maps/maps_update_ios_new.png) ![Atualização de mapas de previsão do tempo iOS](@site/static/img/personal/maps/maps_update_2_ios.png)
 
 A aba **Atualizações** permite atualizar mapas e recursos do OsmAnd. Mapas padrão e somente estradas são lançados uma vez por mês, geralmente entre o dia 2 e o dia 5, e incluem dados do OpenStreetMap até o último dia do mês anterior (por exemplo, o lançamento de outubro contém dados até 30 de setembro). Outros dados, como Wikipedia, terreno ou mapas náuticos, podem seguir cronogramas de atualização diferentes e não regulares. 
 
@@ -371,7 +371,7 @@ A aba **Atualizações** também inclui uma seção de Previsão do tempo. Ela f
 
 ## Atualizações ao vivo {#live-updates}
 
-:::info Pro feature
+:::info Recurso Pro
 Atualizações ao vivo é um recurso pago do [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -380,7 +380,7 @@ Atualizações ao vivo é um recurso pago do [**OsmAnd Pro**](../purchases/index
 
 Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_updates,live_updates"/>*  
 
-![Maps menu OsmAnd live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Maps menu OsmAnd live edit Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
+![Menu Mapas OsmAnd Live Android](@site/static/img/personal/maps/maps_menu_osmand_live_android.png) ![Menu Mapas edição OsmAnd Live Android](@site/static/img/personal/maps/maps_menu_osmand_live_edit_android.png)
 
 </TabItem>
 
@@ -388,7 +388,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,maps_and_resources,
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_updates,live_updates"/>*
 
-![Maps menu OsmAnd live  iOS](@site/static/img/personal/maps/maps_menu_live_updates_ios.png) ![Maps menu OsmAnd live edit iOS](@site/static/img/personal/maps/maps_menu_live_updates_edit_ios.png)
+![Menu Mapas OsmAnd Live iOS](@site/static/img/personal/maps/maps_menu_live_updates_ios.png) ![Menu Mapas edição OsmAnd Live iOS](@site/static/img/personal/maps/maps_menu_live_updates_edit_ios.png)
 
 </TabItem>
 
@@ -397,10 +397,6 @@ Vá para: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_ta
 **Atualizações ao vivo** fornece atualizações de mapa incrementais e frequentes através de [assinatura](../purchases/index.md) ou é gratuito para [colaboradores OSM](#free-for-osm-mappers). As atualizações ocorrem a cada 15 minutos nos servidores OsmAnd e são baixáveis a cada hora, diariamente ou semanalmente. Essas atualizações consomem armazenamento mínimo — cerca de 2-4% do tamanho total do mapa por mês.
 
 As Atualizações ao vivo são aplicadas sobre o mapa baixado e não substituem o arquivo completo do mapa. Como resultado, a data exibida para um mapa na aba Local não reflete as Atualizações ao vivo e pode permanecer inalterada após sua aplicação. Para baixar uma versão mais recente do mapa completo, use Atualizar mapa ou Atualizar tudo no [Menu de Atualizações](#updates-menu).
-
-<!--
-Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
--->
 
 Principais recursos:
 
@@ -437,13 +433,13 @@ Referências de rota excluídas ou alteradas ainda podem aparecer incorretamente
 
 <TabItem value="android" label="Android">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
+![OsmAnd Live para mapeadores](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+![OsmAnd Live para mapeadores](@site/static/img/personal/maps/map_updates_mappers_ios.png)
 
 </TabItem>
 

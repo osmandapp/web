@@ -1,5 +1,5 @@
 ---
-source-hash: 425f511859172593fe5402cce5c44974144e585dac7b77bd26c1c5e68a22a8f0
+source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
 sidebar_position: 1
 title: Pesquisar Tudo
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão geral {#overview}
 
-A **Pesquisa** é uma ferramenta útil para encontrar rapidamente locais. Você pode usar a Pesquisa para encontrar um local por endereço, coordenadas, pontos de interesse (POI) ou pesquisas anteriores. A [Pesquisa de Endereço](#search-address) permite que você insira o endereço para obter um local exato. A pesquisa de [Coordenadas](#search-coordinates) funciona com coordenadas geográficas, como latitude e longitude. Com a pesquisa de [POI](#search-poi), você pode pesquisar locais próximos em categorias específicas, como cafés, hotéis ou postos de gasolina. A aba [Explorar](#search-explore) destaca locais populares próximos e fornece acesso rápido a locais visitados recentemente. O [Histórico de Pesquisa](#search-history) salva pesquisas anteriores. O recurso de pesquisa facilita o planejamento de viagens, a navegação em terrenos desconhecidos e a localização de POIs próximos.
+A **Pesquisa** é uma ferramenta útil para encontrar rapidamente locais. Você pode usar a Pesquisa para encontrar um local por endereço, coordenadas, pontos de interesse (POI) ou pesquisas anteriores. A [Pesquisa de Endereço](#search-address) permite que você insira o endereço para obter um local exato. A pesquisa de [Coordenadas](#search-coordinates) funciona com coordenadas geográficas, como latitude e longitude. Com a pesquisa de [POI](#search-poi), você pode pesquisar locais próximos em categorias específicas, como cafés, hotéis ou postos de gasolina. A aba [Explorar](#search-explore) destaca locais populares próximos e fornece acesso rápido a locais visitados recentemente. O recurso de pesquisa facilita o planejamento de viagens, a navegação em terrenos desconhecidos e a localização de POIs próximos.
 
 
 ## Como usar {#how-to-use}
@@ -109,7 +109,7 @@ O OsmAnd classifica automaticamente os resultados da pesquisa por vários crité
 
 5. **Importância** — Marcos bem conhecidos ou locais frequentemente referenciados podem aparecer mais acima nos resultados quando correspondem de perto à consulta de pesquisa.
 
-Você também pode alterar manualmente a ordem de classificação dos resultados da pesquisa usando o chip *Classificar por* no topo da lista de resultados da pesquisa. Toque em *Classificar por* e selecione uma das seguintes opções:
+Você também pode alterar manualmente a ordem de classificação dos resultados da pesquisa usando o chip de classificação no topo da lista de resultados da pesquisa. O chip mostra a opção selecionada. Toque nele e escolha uma das seguintes opções no menu *Classificar por*:
 - **Relevância** — Classifica os resultados da pesquisa por relevância à consulta de pesquisa.
 - **Mais próximo** — Classifica os resultados da pesquisa por distância, mostrando primeiro os resultados mais próximos.
 
@@ -164,12 +164,7 @@ Você pode encontrar o local desejado no mapa a partir da lista de pontos que ap
 
 1. Comece a digitar o nome ou endereço na barra de pesquisa.
 
-2. Enquanto você digita, a lista exibe os pontos mais próximos da consulta, aproximadamente nesta ordem:
-    - Categorias de POI
-    - Favoritos, POI, Rotas e Pontos de Referência
-    - Trilhas
-    - Endereços
-    - Mapas para download
+2. Enquanto você digita, a lista exibe os resultados que correspondem à sua consulta. Os resultados são classificados conforme descrito na seção [Classificando os resultados da pesquisa](#sorting-search-results).
 
 3. Ao pesquisar por nome no Android, o OsmAnd exibe chips de tipo de POI com base nos tipos representados nos resultados da pesquisa. Toque em um chip para filtrar os resultados pelo tipo de POI selecionado. Você pode selecionar vários tipos de POI. Uma vez selecionado, um chip move-se para a primeira posição na lista. Toque novamente em um chip selecionado para desmarcá-lo e retornar aos resultados completos da pesquisa.
 
@@ -181,13 +176,33 @@ Você pode encontrar o local desejado no mapa a partir da lista de pontos que ap
 O OsmAnd integrou os [**dados TIGER**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) nos mapas dos EUA para fornecer informações sobre endereços dos EUA. O conjunto de dados TIGER é **baseado em intervalos** e não contém números de casas precisos, portanto, alguns endereços podem estar ausentes ou imprecisos.
 :::
 
-### Pesquisar nas proximidades (somente Android) {#search-around}
+### Pesquisa Espacial {#spatial-search}
 
-![Pesquisar nas proximidades](@site/static/img/search/search_around.webp)
+<InfoAndroidOnly/>
 
-Quando a pesquisa é aberta significativamente longe de sua localização atual, o chip *Pesquisar nas proximidades* permite que você escolha a área usada para a pesquisa. Toque no chip e selecione uma das seguintes opções:
+![Pesquisa Espacial](@site/static/img/search/spatial_search.webp)
+
+A Pesquisa Espacial é um mecanismo de pesquisa experimental que leva em conta onde os objetos estão localizados uns em relação aos outros, e não apenas o quanto seus nomes correspondem à sua consulta. Ela ajuda o OsmAnd a interpretar corretamente consultas que combinam várias partes, como o nome de um lugar e uma categoria de POI.
+
+A Pesquisa Espacial está desativada por padrão. Para ativá-la, vá para as configurações do [plugin OsmAnd Development](../plugins/development.md#internal-algorithms) e ative *Usar pesquisa de texto espacial*. Quando ativada, a Pesquisa Espacial substitui o mecanismo de pesquisa padrão para consultas de POI e de endereço.
+
+Com a Pesquisa Espacial, você pode:
+- Pesquisar um POI em um lugar específico. Insira uma categoria e o nome de um lugar em uma única consulta, por exemplo, Hotel Berlim. O nome do lugar é usado como área de pesquisa, e a categoria é pesquisada dentro dela.
+- Pesquisar lugares que correspondam a duas condições. Insira duas categorias ou uma categoria e uma propriedade, por exemplo, Combustível Diesel ou Café Vegano, para encontrar lugares que correspondam a ambas. Uma consulta como Combustível McDonald's encontra postos de combustível localizados perto de um McDonald's. A ordem das palavras importa. A primeira palavra define o que você procura, e a segunda define perto do que deve estar. Por exemplo, McDonald’s Combustível encontra restaurantes McDonald’s localizados perto de postos de combustível.
+- Pesquisar ao redor de um lugar encontrado. Insira uma categoria e o nome de um lugar, por exemplo, *Hotel Berlim*, e depois toque em *Hotel perto de Berlim* no topo dos resultados da pesquisa. O nome desse lugar é adicionado ao chip [Pesquisar nas proximidades](#search-around).
+- Usar diferentes formatos de nomes de ruas e nomes de categorias traduzidos em suas consultas.
+- Obter resultados mais rápidos ao pesquisar por categorias de POI populares, como farmácia, estacionamento ou restaurante.
+
+### Pesquisar nas proximidades {#search-around}
+
+<InfoAndroidOnly/>
+
+![Pesquisar nas proximidades](@site/static/img/search/search_around_berlin.webp)
+
+Quando o centro do mapa está a mais de 50 m da sua localização e o mapa não segue a sua posição, a pesquisa é feita ao redor do centro do mapa, e o campo de pesquisa mostra *Pesquisar a N km de distância*. Quando o centro do mapa está a mais de 70 km da sua localização, um chip com a área de pesquisa aparece ao lado do chip de classificação. O chip mostra a opção selecionada. Toque nele e escolha uma das seguintes opções no menu *Pesquisar nas proximidades*:
 - **Centro do mapa** — Pesquisa ao redor do centro atual do mapa. Esta opção é selecionada por padrão.
-- **Minha localização** — Pesquisa ao redor da sua localização atual. 
+- **Minha localização** — Pesquisa ao redor da sua localização atual.
+- **Nome do lugar** — Pesquisa ao redor de um lugar que você encontrou com a [Pesquisa Espacial](#spatial-search). Por exemplo, insira *Hotel Berlim*, depois toque em *Hotel perto de Berlim* no topo dos resultados da pesquisa. *Berlim* aparece no chip, e os hotéis ao redor de Berlim são exibidos. Esta opção está disponível somente quando a Pesquisa Espacial está ativada. 
 
 ### Pesquisar no mapa {#search-on-the-map}
 
@@ -244,48 +259,25 @@ Você pode usar a pesquisa nas proximidades de um local específico. Para fazer 
 A **Pesquisa de Endereço** usa dados do OpenStreetMap. Este tipo de pesquisa permite que você encontre a localização e a direção para um endereço específico a partir de uma lista já classificada. Leia mais no artigo [Pesquisar Endereço](./search-address.md).
 
 
-## Pesquisar Explorar {#search-explore}
+## Explorar na Pesquisa {#search-explore}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Pesquisa Explorar](@site/static/img/search/explore_search_android.webp)
 
-A aba **Explorar** na ferramenta de Pesquisa ajuda você a descobrir rapidamente locais perto da sua localização atual e acessar itens abertos recentemente. Ela contém duas seções principais: [Locais populares próximos](#popular-places-nearby)
- e [Histórico](#history).
+</TabItem>
 
-### Locais populares próximos {#popular-places-nearby}
-
-A seção **Locais populares próximos** exibe uma lista rolável de marcos bem conhecidos e atrações perto da sua localização. Cada item pode incluir o nome do local, sua categoria, distância e direção, e uma imagem de visualização se disponível. Toque em *Mostrar tudo* para abrir a lista completa ou *Mostrar no mapa* para exibir esses locais no mapa.
-
-Para mais detalhes, consulte [aqui](../map/popular_places.md#explore-in-search).
-
-### Histórico {#history}
-
-![Seção de histórico](@site/static/img/search/history_section_android.webp) ![Seção de histórico](@site/static/img/search/history_section_2_android.webp)
-
-A seção **Histórico** fornece acesso rápido aos seus itens de histórico recentes. Ela exibe até 25 itens mais recentes e pode ser expandida ou recolhida. Toque em *Ver tudo* para abrir a tela completa do Histórico.
-
-Na tela completa do Histórico, você pode classificar e filtrar seus itens de histórico usando as seguintes opções:
-
-1. **Classificar por**:
-- Recente — exibe primeiro os itens adicionados mais recentemente. Quando esta opção é selecionada, os itens são agrupados por tempo, como Hoje, Semana passada e períodos anteriores.
-- Mais próximo — classifica os itens pela distância de sua localização atual.
-- Mais próximo do centro do mapa — classifica os itens pela distância do centro atual do mapa. Quando qualquer uma das opções de classificação baseadas em distância é selecionada, os grupos baseados em tempo não são exibidos.
-
-2. **Tipo** — filtra os itens de histórico por:
-- Todos — exibe todos os itens de histórico disponíveis.
-- Pesquisa — exibe itens do seu histórico de pesquisa.
-- Navegação — exibe itens do seu histórico de navegação.
-
-3. **Filtros de categoria** — filtra os itens de histórico por categoria. Os filtros de categoria disponíveis dependem dos tipos de itens disponíveis no seu Histórico. Por exemplo, você pode ver categorias como POI, Trilha, Localização, Favorito ou Endereço.
-
-4. **Configurações** — toque no ícone de engrenagem no canto superior direito para abrir as configurações do Histórico, onde você pode ativar ou desativar o histórico de pesquisa, histórico de navegação e histórico de marcadores de mapa, fazer backup do histórico como um arquivo ou limpar todo o histórico.
-
-## Histórico de pesquisa {#search-history}
+<TabItem value="ios" label="iOS">
 
 ![Pesquisa de histórico](@site/static/img/search/history_search_ios.png)
 
-No iOS, você pode acessar seu Histórico de Pesquisa na aba dedicada **Histórico** na ferramenta de Pesquisa. Isso permite que você pesquise novamente locais, endereços ou lugares visitados com frequência anteriormente, sem precisar digitar a consulta novamente. Para mais informações, consulte a seção iOS do artigo [Histórico de Pesquisa](./search-history.md).
+</TabItem>
+
+</Tabs>
+
+No Android, a aba **Explorar** na ferramenta de Pesquisa ajuda você a descobrir rapidamente locais perto da sua localização atual e acessar o seu histórico. No iOS, a aba **Histórico** permite que você pesquise novamente locais, endereços ou lugares visitados com frequência anteriormente, sem precisar digitar a consulta novamente. Para mais informações, consulte o artigo [Explorar na Pesquisa](./search-history.md).
 
 
 ## Pesquisar POI {#search-poi}
@@ -341,7 +333,7 @@ A pesquisa de coordenadas fornece uma localização precisa. Você pode inserir 
 ## Artigos relacionados {#related-articles}
 
 - [Pesquisar Endereço](./search-address.md)
-- [Histórico de Pesquisa](./search-history.md)
+- [Explorar na Pesquisa](./search-history.md)
 - [Pesquisar POI](./search-poi.md)
 - [Pesquisar Coordenadas](./search-coordinates.md)
 - [Locais Populares](../map/popular_places.md)

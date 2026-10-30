@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Configurações Globais
 ---
@@ -101,6 +101,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,shared_string_setti
     - *Memória interna do aplicativo*. Somente o aplicativo OsmAnd tem acesso aos seus dados e nenhum dos aplicativos externos.
     - *Memória compartilhada*. Não está mais disponível.
     - *Armazenamento externo 1*. Somente 1 aplicativo OsmAnd tem acesso e aplicativos de administração e USB.
+    - *Armazenamento externo 1 visível*. Os dados são armazenados na pasta Android/media, que é aberta para gerenciadores de arquivos e USB. Não são necessárias permissões de armazenamento adicionais.
     - *Armazenamento multiusuário*. Somente 1 aplicativo OsmAnd tem acesso, mas é compartilhado entre vários usuários Android.
     - *Especificado manualmente*. Depende do caminho.
 
@@ -115,6 +116,11 @@ A configuração **Armazenamento de mídia** determina onde fotos, vídeos e arq
 - **Armazenamento compartilhado** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Pasta da câmera** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Especificado manualmente** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Ao selecionar um armazenamento de mídia diferente, o OsmAnd pergunta se deseja mover os arquivos de mídia existentes:
+- **Mover para o novo destino** — Move os arquivos de mídia existentes para o armazenamento selecionado.
+- **Não mover** — Altera o armazenamento sem mover os arquivos existentes.
+- **Cancelar** — Mantém o armazenamento atual.
 
 Há também um interruptor *Sempre manter uma cópia local*. Quando ativado, o OsmAnd copia a mídia importada da Galeria ou Arquivos para seu próprio armazenamento, para que a mídia anexada permaneça disponível mesmo se o arquivo original for excluído da Galeria ou do sistema de arquivos.
 
@@ -165,9 +171,9 @@ A imagem para a visualização 3D do mapa é carregada bloco por bloco, depois t
 
 <table class="blogimage">
     <tr>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="rendering"/></td>
-        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="rendering"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_1_andr.png').default} alt="renderização"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_2_andr.png').default} alt="renderização"/></td>
+        <td><img src={require('@site/static/img/personal/global-settings/rendering_opengl_3_andr.png').default} alt="renderização"/></td>
     </tr>
 </table>
 

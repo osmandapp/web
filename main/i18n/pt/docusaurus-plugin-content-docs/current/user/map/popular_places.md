@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Locais Populares
 ---
@@ -16,7 +16,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Visão Geral {#overview}
 
-:::tip Purchase
+:::tip Compra
 Locais Populares é um [recurso pago](../purchases/index.md).  
 :::
 
@@ -34,7 +34,7 @@ Atualmente, o banco de dados curado inclui aproximadamente **50.000 a 150.000 lo
 
 <TabItem value="android" label="Android">
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
+![Locais populares](@site/static/img/map/popular_places/popular_places.png) ![Locais populares](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -85,7 +85,7 @@ Existem duas maneiras principais de acessar este recurso:
 
 Vá para: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.webp) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.webp)
+![Modo Explorar](@site/static/img/map/popular_places/popular_places_search.webp) ![Modo Explorar](@site/static/img/map/popular_places/popular_places_search_2.webp)
 
 </TabItem>
 
@@ -117,7 +117,7 @@ Para usá-lo **offline**, você precisa de uma assinatura [Maps+ ou OsmAnd Pro](
 
 Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+![Menu de locais populares](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
@@ -125,7 +125,7 @@ Vá para: *<Translate android="true" ids="shared_string_menu,configure_map,poi_o
 
 Vá para: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Locais Populares (Wikipedia)*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu_ios.png)
+![Menu de locais populares](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -163,13 +163,13 @@ Tocar em um POI no mapa abre o [menu de contexto do POI](./map-context-menu.md),
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Menu de contexto de fotos online Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Menu de contexto de fotos online iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
@@ -185,15 +185,15 @@ As imagens visualizadas online são armazenadas em cache automaticamente para ac
 
 <TabItem value="android" label="Android">  
 
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
+![Menu da Galeria – Android](@site/static/img/map/gallery_menu_android.png)
+![Menu da Galeria – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Menu da Galeria – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Menu da Galeria – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
@@ -209,7 +209,7 @@ Você também pode realizar as seguintes ações em cada foto:
   Compartilhe a imagem selecionada usando qualquer aplicativo compatível instalado em seu dispositivo (por exemplo, mensagens, e-mail ou mídia social). O conteúdo compartilhado inclui a imagem e seu link de origem (se disponível).
 
 - **Detalhes**  
-  Abra uma visualização detalhada mostrando metadados sobre a imagem, incluindo: *Descrição (texto completo, apenas Android)*, *Nome*, *Data de adição*, *Autor*, *Licença*, *Fonte* e *Link direto*
+  Abra uma visualização detalhada mostrando metadados sobre a imagem, incluindo: *Descrição (texto completo)*, *Nome*, *Data de adição*, *Autor*, *Licença*, *Fonte* e *Link direto*.
 
   **Nota:** O idioma da descrição depende do idioma de exibição do aplicativo. Se a descrição no idioma selecionado não estiver disponível, o OsmAnd exibe a versão em inglês ou a primeira tradução disponível.
 

@@ -1,8 +1,8 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
-sidebar_label: Map
-title: Global Map on the Website
+sidebar_label: Mapa
+title: Mapa Global no Site
 ---
 
 import Tabs from '@theme/Tabs';
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 O mapa web do OsmAnd é um mapa global baseado em dados do [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Ele permite que os usuários visualizem seus próprios dados, como trilhas e favoritos, criem rotas de navegação para qualquer perfil e acessem recursos adicionais como clima, trilhas GPX públicas, POIs e imagens da Wikimedia. Explore e personalize sua experiência de dados diretamente no seu navegador.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![OsmAnd Web completo](@site/static/img/web/web_map_all.png)
 
 
 ## Menu de Contexto do Mapa {#map-context-menu}
@@ -60,7 +60,7 @@ Para abri-lo, clique com o botão direito em qualquer lugar do mapa. Este menu i
 Add pin option will be added back once it becomes available again.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+![Menu de contexto do mapa](@site/static/img/web/map_context_menu_2_new.png)
 
 
 ## Objeto Selecionado {#selected-object}
@@ -73,21 +73,32 @@ O marcador selecionado permanece visível ao fazer zoom no mapa.
 
 Marcadores próximos podem ser ocultados para facilitar a visualização do objeto selecionado.
 
-![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+Quando o tipo de mapa [OsmAnd vector (beta)](#map-type) está ativado, você pode selecionar objetos diretamente no mapa, incluindo POIs, edifícios, números de casas e paradas de transporte público. Ao passar o cursor sobre um objeto selecionável, o ponteiro muda para uma mão com o dedo apontando. Objetos sem nome ou ícone, como ruas e caminhos sem nome, não podem ser selecionados.
+
+Selecionar um objeto abre seu painel de detalhes:
+
+- **POI** — o painel mostra as mesmas informações e ações rápidas que nos resultados da [Pesquisa](web-search.md) e na [sobreposição de POI](#poi-overlay).
+- **Objeto sem dados de POI** — por exemplo, um edifício ou um número de casa. O painel mostra o tipo do objeto, o endereço e as coordenadas.
+- **Parada de transporte público** — o painel também pode incluir a seção Rotas com o filtro de tipo de transporte, conforme descrito em [Paradas de transporte](#transport-stops).
+
+Se vários objetos estiverem localizados no ponto selecionado, o painel os mostra um de cada vez. Use as setas ao lado do botão de fechar para alternar entre eles. A seta para voltar aparece a partir do segundo objeto, e a seta para avançar fica inativa no último.
+
+![Objeto selecionado](@site/static/img/web/selected_object_favorite.png) ![Objeto selecionado](@site/static/img/web/several_objects.webp)
 
 
 
 ## Menu Configurar Mapa {#configure-map-menu}
 
-O menu Configurar Mapa permite gerenciar as configurações de exibição para dados do mapa, como camadas de POI, Favoritos, trilhas e terreno. Este menu está disponível após você fazer login na sua conta OsmAnd. Para abri-lo, clique no botão no **canto superior esquerdo** ou acesse-o através do **Menu**.
+O menu Configurar Mapa permite gerenciar as configurações de exibição para dados do mapa, como camadas de POI, Favoritos, trilhas, terreno e tipo de mapa. Este menu está disponível após você fazer login na sua conta OsmAnd. Para abri-lo, clique no botão no **canto superior esquerdo** ou acesse-o através do **Menu**.
 
 - [Sobreposição de POI...](#poi-overlay). Permite escolher e mostrar as categorias de POI necessárias no mapa.
 - [Favoritos](#favorites). Alterna a exibição de favoritos no mapa.
 - [Trilhas](#tracks). Contém trilhas GPX visíveis no mapa.
 - [Paradas de transporte](#transport-stops). Alterna a exibição de paradas de transporte público no mapa. 
 - [Terreno](#terrain). Ativa ou desativa o esquema de cores do terreno no mapa.
+- [Raster (tiles) / OsmAnd vector (beta)](#map-type). Mostra o tipo de mapa em uso no momento e permite alternar entre o mapa raster e o mapa vetorial.
 
-![POIs menu](@site/static/img/web/configure_map_web_new.png)
+![Menu de POIs](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### Sobreposição de POI {#poi-overlay}
@@ -108,7 +119,7 @@ No painel de detalhes do POI, ações rápidas estão disponíveis a partir dos 
 - *Rotas de* — define o POI selecionado como o ponto de partida e abre o painel de Rota para que você possa escolher um destino e perfil.
 - *Navegação* — define o POI selecionado como o ponto de destino para navegação.
 
-![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
+![Menu de POIs](@site/static/img/web/poi_categories.png) ![Menu de POIs](@site/static/img/web/poi_photo_new.png)
 
 
 ### Favoritos {#favorites}
@@ -118,15 +129,15 @@ Com um clique, você pode ativar ou desativar os favoritos no mapa. No entanto, 
 
 ### Trilhas {#tracks}
 
-Esta seção contém uma lista das suas [**trilhas GPX visíveis no mapa**](../web/web-tracks.md#visible-on-the-map) e trilhas **Recentemente Visíveis**.
+Esta seção contém uma lista das suas [**trilhas GPX visíveis no mapa**](../web/web-tracks.md#visible-on-the-map) e a lista **Recentemente visível**.
 
 - Você pode ativar ou desativar as trilhas diretamente.  
-- Ativar ou desativar trilhas da lista **Recentemente Visíveis**.  
+- Ativar ou desativar trilhas da lista **Recentemente visível**.  
 
 Cada trilha possui um menu (⋮) com os seguintes comandos:
 
 - **Ocultar trilha**: Oculta a trilha atualmente visível do mapa.  
-- **Tornar trilha visível**: Exibe uma trilha da lista Recentemente Visíveis no mapa.  
+- **Tornar trilha visível**: Exibe uma trilha da lista Recentemente visível no mapa.  
 - **Renomear**: Permite renomear a trilha para facilitar a identificação.  
 - **Duplicar**: Cria uma cópia da trilha.
 - **Compartilhar**: Abre a tela de compartilhamento (mesmo que para [Favoritos](../web/web-favorites.md#share)).
@@ -141,7 +152,7 @@ O painel da trilha inclui as seguintes abas:
 - Trilha — atualmente não implementado.
 - Pontos — mostra waypoints e pontos de rota agrupados por tipo.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
+![Menu Configurar mapa, Trilhas](@site/static/img/web/configure_map_track_new.png) ![Menu Configurar mapa, Trilhas](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Paradas de transporte {#transport-stops}
 
@@ -163,13 +174,13 @@ Botões de navegação permitem mover-se entre paradas ao longo da rota usando o
 
 **3. Filtro de tipo de transporte**
 
-Um filtro de tipo de transporte permite filtrar as rotas mostradas na lista. Por padrão, o filtro está definido como *Todas* e exibe todas as rotas disponíveis. Você pode selecionar um tipo de transporte específico (por exemplo, Ônibus, Bonde ou Metrô) para mostrar apenas rotas desse tipo. O filtro é redefinido para *Todas* toda vez que o painel da parada é aberto.
+Um filtro de tipo de transporte permite filtrar as rotas mostradas na lista. Por padrão, o filtro está definido como *Todos* e exibe todas as rotas disponíveis. Você pode selecionar um tipo de transporte específico (por exemplo, Ônibus, Bonde ou Metrô) para mostrar apenas rotas desse tipo. O filtro é redefinido para *Todas* toda vez que o painel da parada é aberto.
 
 **4. Rotas próximas**
 
 A seção Rotas próximas pode exibir rotas adicionais localizadas próximas à parada selecionada. Isso ajuda você a descobrir rapidamente opções alternativas de transporte na área ao redor.
 
-![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
+![Paradas de transporte](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Terreno {#terrain}
 
@@ -183,7 +194,18 @@ Nesta seção, você pode:
   - **Altura**
 - Ajustar a visibilidade da camada de terreno selecionada de **0% a 100%**.
 
-![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+![Menu Configurar mapa, Terreno](@site/static/img/web/configure_map_terrain.png)
+
+### Tipo de mapa {#map-type}
+
+Selecione o item de tipo de mapa no menu Configurar Mapa para escolher uma das seguintes opções:
+
+- **Raster (tiles)** — o tipo de mapa padrão. Neste tipo de mapa, você pode selecionar apenas marcadores exibidos sobre o mapa, como resultados da [Pesquisa](web-search.md), marcadores da [sobreposição de POI](#poi-overlay), [favoritos](#favorites) e [paradas de transporte](#transport-stops).
+- **OsmAnd vector (beta)** — o mapa vetorial. Neste tipo de mapa, você pode [selecionar objetos diretamente no mapa](#selected-object).
+
+O tipo de mapa selecionado é salvo e aplicado na próxima vez que você abrir o mapa. **Redefinir para o padrão** no cabeçalho de Configurar Mapa volta o mapa para **Raster (tiles)**.
+
+O mapa vetorial requer um navegador com suporte a WebGL. Se o WebGL não estiver disponível, o mapa muda automaticamente para **Raster (tiles)**.
 
 
 ## Configurações {#settings}
@@ -196,7 +218,7 @@ Para alternar o idioma da interface:
 
 *Vá para: Menu → ⚙ Configurações → Idioma de exibição*
 
-![Web Language](@site/static/img/web/web_language.png)
+![Idioma do Web](@site/static/img/web/web_language.png)
 
 ### Unidades {#units}
 
@@ -225,7 +247,7 @@ A opção **Unidade de velocidade** controla como a velocidade atual e os limite
 
 Por exemplo, uma velocidade de 90 km/h corresponde a 25 m/s ou cerca de 55,92 mph.
 
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
+![Unidades do Web](@site/static/img/web/web_units_len.png) ![Unidades do Web](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -254,19 +276,19 @@ Esses URLs podem ser copiados e compartilhados usando qualquer meio suportado pe
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+  ![OsmAnd Web, URL com pino](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL sem um pino no mapa:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+  ![OsmAnd Web, URL sem pino](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL com navegação:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+  ![OsmAnd Web, URL com navegação](@site/static/img/plan-route/web_url_track.png)
 
 Dependendo dos parâmetros especificados, as strings de URL podem conter:
 
@@ -294,6 +316,10 @@ Dependendo dos parâmetros especificados, as strings de URL podem conter:
 10. **Planejar uma Rota**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Link direto para a página [**Explorar**](https://osmand.net/docs/user/web/web-search#explore) atual&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **Detalhes do POI**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Objeto do mapa sem dados de POI** (por exemplo, um edifício)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## Artigos Relacionados {#related-articles}

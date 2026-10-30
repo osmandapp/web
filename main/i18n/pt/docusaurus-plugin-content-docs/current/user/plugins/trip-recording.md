@@ -1,5 +1,5 @@
 ---
-source-hash: bc6d5ba96cb9e583b36cbcf01a41444d6f79cda06c1a7921fa913f30e6f428a8
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title: Gravação de Viagem
 ---
@@ -134,7 +134,7 @@ Para *Parar / Salvar / Pausar*:
 
 - Para **Salvar, Pausar, Iniciar** um novo segmento ou **Finalizar** a gravação, use os botões de [Ação Rápida](../widgets/quick-action.md#add-and-delete-actions). Vá para *Menu → Configurar tela → Botões personalizados → Ação rápida → Adicionar ação → [Meus Lugares](../widgets/quick-action.md#my-places)* e adicione um ou mais botões de ação rápida.
 
-- (*Somente Android*) Para **Pausar** ou **Salvar** uma trilha de gravação, use a [notificação](#notifications) do sistema na área de notificação do seu dispositivo.<br/><br/> ![stop-save-pause](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
+- (*Somente Android*) Para **Pausar** ou **Salvar** uma trilha de gravação, use a [notificação](#notifications) do sistema na área de notificação do seu dispositivo.<br/><br/> ![parar-salvar-pausar](@site/static/img/plugins/trip-recording/stop-save-pause_andr.png)
 
 
 ### Tela de Visão Geral {#overview-screen}
@@ -292,7 +292,7 @@ Antes de começar a rastrear suas viagens, você precisa configurar corretamente
 | **Dividir gravações automaticamente após lacuna** | Divide automaticamente as trilhas com base em lacunas de tempo entre os pontos registrados. <ul><li>Um novo segmento começa após uma lacuna de 6 minutos.</li><li>Uma nova trilha começa após uma lacuna de 2 horas.</li><li>Um novo arquivo começa quando a data muda.</li><li>Lacunas podem resultar de perda de sinal GPS, baixa velocidade ou configurações de configuração.</li></ul><details><summary>*Observação*</summary>Uma lacuna é identificada quando nenhum ponto é registrado. Isso pode acontecer porque a localização não é detectada ou porque é detectada, mas não registrada. Vários fatores podem causar isso, incluindo sinais GPS fracos devido a condições climáticas adversas, ou a velocidade do movimento caindo abaixo do limite configurado. Nesses casos, mesmo que o dispositivo possa detectar a localização, ele não a registra.<br/><br/>Essas lacunas nos dados registrados podem acionar a criação de um novo segmento dentro da mesma trilha, uma nova trilha no mesmo arquivo ou um novo arquivo GPX dentro de uma gravação. Isso é gerenciado dentro de uma única sessão de gravação de início/parada.</details> |
 | **Prevenir registro autônomo** (*Android*) | Pausa a gravação da trilha quando o aplicativo OsmAnd é encerrado (via *aplicativos recentes*). A indicação de segundo plano não é exibida no painel de notificações do Android. |
 | **Incluir rumo** | Registra o rumo (direção do movimento) para cada ponto no arquivo GPX. O rumo é a direção para a qual o dispositivo está virado, o que pode diferir da direção do movimento devido a fatores externos como vento ou derrapagem. |
-| **Atividade**  | A opção permite pré-selecionar um [tipo de atividade](../map/tracks/track-context-menu.md#ttrack-activity-type) para um perfil, que é então aplicado automaticamente a todas as trilhas gravadas. |
+| **Atividade**  | A opção permite pré-selecionar um [tipo de atividade](../map/tracks/track-context-menu.md#track-activity-type) para um perfil, que é então aplicado automaticamente a todas as trilhas gravadas. |
 | **Sensores externos** <br/> *Precisa de plugin ativado* | Dados de [sensores externos](../plugins/external-sensors.md#trip-recording) como *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, ou *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* são registrados no arquivo GPX. Dados de *Distância* não são registrados no Android ou iOS. Exibido apenas quando o [plugin de Sensores Externos](../plugins/external-sensors.md) está ativado. |
 | **Métricas do Veículo** <br/> *Precisa de plugin ativado* | Dados do [scanner OBD-II](../plugins/vehicle-metrics.md#trip-recording) são registrados no arquivo GPX. Exibido apenas quando o [plugin de Métricas do Veículo](../plugins/vehicle-metrics.md) está ativado.<br />*Nota*: Você pode adicionar quais métricas registrar no arquivo GPX da lista: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Pasta de armazenamento de trilhas** (*Android*) | Define onde, na guia *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*, as trilhas gravadas são armazenadas. As opções incluem armazenar todas as trilhas na pasta Rec ou organizá-las por mês, como Rec/aaaa-mm. |
@@ -433,6 +433,33 @@ Se a gravação atual ainda não contiver uma seção de subida ou descida, os w
 
 ### Distância (Iniciar-Parar) {#distance-start-stop}
 
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
+
 | |
 |-----------|
 | **Distância/Iniciar-Parar**. Este widget exibe a distância da sua gravação de viagem em andamento. Ele é adicionado automaticamente quando o plugin de Gravação de Viagem é ativado, mas você pode ocultá-lo através do menu Configurar Tela. O widget apresenta três estados distintos: *Gravando*, *Pausado* e *Inativo*, cada um indicando o status atual da sua gravação de viagem. |
@@ -445,21 +472,45 @@ Se a gravação atual ainda não contiver uma seção de subida ou descida, os w
 | |
 |------------|
 |**Inclinação Média**. Exibe a inclinação média para a última seção de subida ou descida da viagem atual, dependendo do modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|![widgets de gravação de viagem](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 |**Velocidade Média** *(Somente Android)*. Mostra a velocidade média para a viagem gravada atualmente, ou a velocidade média durante a última seção de subida ou descida, dependendo do modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
+|![widgets de gravação de viagem](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Descida**. Indica a descida total ou a seção de descida mais recente, dependendo do modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|![widgets de gravação de viagem](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Duração**. Exibe o tempo total da gravação da viagem atual em horas e minutos. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|![widgets de gravação de viagem](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Velocidade Máxima**. Mostra a velocidade máxima para a viagem gravada atualmente no modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|![widgets de gravação de viagem](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Tempo em Movimento**. Mostra o tempo em movimento para a viagem gravada atualmente, ou o tempo para a última subida e descida, dependendo do modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|![widgets de gravação de viagem](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**Subida**. Mostra a subida total ou a seção de subida mais recente, dependendo do modo selecionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
+|![widgets de gravação de viagem](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Se você tiver vários widgets selecionados, você pode acessar a mesma caixa de diálogo para cada um sem precisar alternar ou fechá-la. Esta interface unificada facilita a visualização e o gerenciamento de todas as informações relacionadas de forma contínua.
+
+<!--
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+-->
 
 
 ## Artigos Relacionados {#related-articles}

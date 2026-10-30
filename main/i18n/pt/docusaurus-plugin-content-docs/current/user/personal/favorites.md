@@ -1,5 +1,5 @@
 ---
-source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title: Favoritos
 ---
@@ -162,18 +162,32 @@ A *pasta Pessoal* contém pontos especiais como **<Translate android="true" ids=
 
 ![Mídia](@site/static/img/personal/media_actions.webp) ![Mídia](@site/static/img/personal/media_menu.webp)
 
-A seção Mídia permite anexar fotos, vídeos, gravações de áudio e imagens a um ponto favorito. A mídia pode ser adicionada ao criar um favorito ou posteriormente na tela Editar favorito. Para anexar mídia, toque em *Adicionar* na seção Mídia e escolha uma das opções disponíveis:
+A seção Mídia permite anexar fotos, vídeos, gravações de áudio e imagens a um ponto favorito. A mídia pode ser adicionada ao criar um favorito, posteriormente na tela Editar favorito ou diretamente no menu de contexto do favorito. Para anexar mídia, toque no botão *+* na tela Editar favorito ou em *Adicionar* no menu de contexto e escolha uma das opções disponíveis:
 - **Tirar foto** — Capture uma nova foto com a câmera do dispositivo.
 - **Gravar nota de vídeo** — Grave um novo vídeo.
-- **Gravar nota de áudio** — Grave uma nota de áudio.
+- **Gravar nota de áudio** — Grave uma nota de áudio. Se o OsmAnd não tiver permissão para gravar áudio, seu dispositivo pede que você a conceda.
 - **Escolher da Galeria** — Selecione uma imagem existente do dispositivo.
 - **Escolher dos Arquivos** — Selecione uma imagem do sistema de arquivos.
 
-Após anexar a mídia, ela aparece no cartão Mídia no menu de contexto do favorito. O mesmo cartão Mídia também está disponível para [Waypoints](../map/tracks/track-context-menu.md#points--waypoints).
+Após anexar a mídia, ela aparece no cartão Mídia no menu de contexto do favorito. Se nenhuma mídia estiver anexada, o cartão mostra *Sem mídia* e um botão *Adicionar*. O mesmo cartão Mídia também está disponível para [Waypoints](../map/tracks/track-context-menu.md#points--waypoints).
+
+Notas de áudio, vídeo e foto criadas com o [plugin Notas de Áudio/Vídeo](../plugins/audio-video-notes.md) também são salvas como favoritos com mídia anexada.
 
 O cartão Mídia exibe visualizações dos itens anexados. Os itens exibidos seguem a ordem de classificação selecionada. Toque em *Mostrar tudo* para abrir a galeria completa. A galeria exibe toda a mídia anexada ao favorito selecionado.
 
 Toque em qualquer item para abri-lo em visualização em tela cheia. Fotos e vídeos podem ser visualizados diretamente, enquanto as gravações de áudio incluem controles de reprodução.
+
+A galeria inclui as seguintes opções:
+- **Classificação** — Toque na barra de classificação na parte superior para escolher a ordem: Mais próximo, Última modificação, Nome A - Z, Nome Z - A, Data mais recente primeiro, Data mais antiga primeiro, Maior duração primeiro ou Menor duração primeiro.
+- **Resumo** — Abaixo dos itens, a galeria mostra o número de fotos, vídeos e notas de áudio e seu tamanho total.
+- **Botão +** — Adicione nova mídia.
+- **Editar** (ícone de lápis) — Entre no modo de seleção. Você também pode tocar e segurar qualquer item.
+
+No modo de seleção, toque nos itens para selecioná-los ou use Selecionar tudo. O menu de três pontos oferece:
+- **Exportar** — Exporte os arquivos de mídia selecionados.
+- **Excluir** — Remova a mídia selecionada do favorito. A mídia armazenada pelo OsmAnd e não anexada a nenhum outro item também é excluída do dispositivo.
+
+A mídia capturada no OsmAnd é nomeada usando o padrão `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, por exemplo `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. O nome contém o tipo de mídia, a data e a hora de criação e o local onde a mídia foi capturada, codificado como um [OSM Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ## Gerenciar Favoritos {#manage-favorites}
@@ -436,7 +450,7 @@ Você precisa de uma conta OsmAnd Cloud para usar o recurso *Backup Gratuito de 
 - Para compartilhar várias pastas de favoritos, consulte a seção [Edição / Exclusão em Massa](#bulk-edit--delete).
 - Para compartilhar uma única pasta de favoritos, consulte a seção [Ações do Grupo de Favoritos](#favorite-group-actions). No Android, se a pasta contiver mídia anexada, uma folha inferior de Compartilhar será exibida. Você pode escolher:
     - *Apenas pontos* — Compartilhe os pontos favoritos da pasta como um arquivo GPX.
-    - *Pontos e mídia* — Compartilhe os pontos favoritos e a mídia anexada como um arquivo OSF.
+    - *Pontos e mídia* — Compartilhe os pontos favoritos e a mídia anexada como um arquivo compactado.
 
 
 ### Backup Automático de Favoritos {#automatic-favorites-backup}
@@ -481,6 +495,8 @@ Nas últimas versões do ***Android***, o acesso a diretórios do sistema é lim
 
 Todas as informações sobre um Favorito são armazenadas e descritas usando tags. Ao criar um ponto Favorito, você pode escrever sua própria [descrição](#favorite-point) ou usar informações dos dados de [ponto de interesse (POI)](../map/point-layers-on-map.md#points-of-interest-pois) do OSM a partir dos quais seu ponto foi criado. Pontos favoritos, POIs e Waypoints usam as mesmas **tags** para armazenar informações e são salvos no **formato de arquivo GPX**.
 
+Se o [plugin Edição do OpenStreetMap](../plugins/osm-editing.md) estiver ativado, um Favorito criado a partir de um objeto do OpenStreetMap também armazena um link para esse objeto na tag `osm_url`, por exemplo `https://www.openstreetmap.org/node/7235345886`. O link é mantido nos arquivos de Favoritos exportados e compartilhados e nos backups.
+
 Os favoritos também podem conter referências à mídia anexada usando elementos `<link>` padrão do GPX. 
 
 
@@ -495,6 +511,7 @@ Os favoritos também podem conter referências à mídia anexada usando elemento
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

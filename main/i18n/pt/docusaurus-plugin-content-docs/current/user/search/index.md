@@ -1,5 +1,5 @@
 ---
-source-hash: 892c634b7bf81dafb9296c6e2b65ee7f15f7bf8b1d0e766e4ed35dfd9df8901e
+source-hash: bf407399cdc5546133d08abd4e5c9fb3226abf61b6a07f922fcb5088bb047056
 sidebar_position: 5
 title: Pesquisar
 ---
@@ -14,29 +14,28 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Visão geral {#overview}
 
-A **Pesquisa** é uma ferramenta importante do OsmAnd que permite encontrar os locais, objetos ou endereços necessários. As opções de pesquisa disponíveis fornecem diferentes maneiras de encontrar objetos. Você pode usar a pesquisa por endereço para navegação precisa, pesquisa por categorias de POI para encontrar os objetos mais próximos, pesquisa por histórico para acesso rápido a solicitações anteriores e pesquisa por coordenadas para localização precisa.
+A **Pesquisa** é uma ferramenta importante do OsmAnd que permite encontrar os locais, objetos ou endereços necessários. As opções de pesquisa disponíveis fornecem diferentes maneiras de encontrar objetos. Você pode usar a pesquisa por endereço para navegação precisa, pesquisa por categorias de POI para encontrar os objetos mais próximos, a aba Explorar para descobrir locais populares próximos e voltar a lugares do seu histórico, e pesquisa por coordenadas para localização precisa.
 
 
 ### [Pesquisar Tudo](./search-all.md) {#search-all}
 
-Este artigo descreve as principais características e opções disponíveis da ferramenta de Pesquisa.
+A ferramenta de Pesquisa encontra endereços, pontos de interesse, coordenadas e nomes de lugares inseridos em um único campo de pesquisa. O artigo também aborda a classificação dos resultados da pesquisa, a Pesquisa nas proximidades e a Pesquisa no mapa.
 
 
 ### [Pesquisar Endereço](./search-address.md) {#search-address}
 
-A ferramenta de Pesquisa possui opções como pesquisa sequencial por endereço, com dados já preparados para seleção rápida e pesquisa por código postal. Essas opções são descritas neste artigo.
+A pesquisa de endereço ajuda você a encontrar um endereço exato digitando-o por completo, selecionando a cidade, a rua e o número da casa um após o outro, ou pelo código postal.
 
 
-### [Histórico de Pesquisa](./search-history.md) {#search-history}
+### [Explorar na Pesquisa](./search-history.md) {#search-explore}
 
-Este artigo discute em detalhes os recursos de pesquisa do histórico de consultas.
+A aba Explorar ajuda você a descobrir locais populares ao seu redor e voltar a lugares do seu histórico. No Android, a aba tem duas seções. Locais populares próximos mostra marcos bem conhecidos e atrações perto da sua localização, e Histórico lista suas pesquisas e destinos de navegação anteriores. No iOS, apenas o histórico de pesquisa está disponível, na aba Histórico.
 
 
 ### [Pesquisar POI](./search-poi.md) {#search-poi}
 
-A pesquisa em todas as categorias de POI e a configuração de uma pesquisa de POI personalizada são descritas neste artigo.
-
+A pesquisa de POI encontra pontos de interesse por categoria, nome ou marca. Filtros de POI personalizados permitem combinar várias categorias e salvá-los para uso posterior.
 
 ### [Pesquisar Coordenadas](./search-coordinates.md) {#search-coordinates}
 
-Neste artigo, você aprenderá como pesquisar os locais corretos usando coordenadas.
+A pesquisa de coordenadas encontra uma localização exata a partir das suas coordenadas geográficas.

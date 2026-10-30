@@ -1,5 +1,5 @@
 ---
-source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: Introdução
 title: Introdução ao Planejador Web
@@ -45,7 +45,7 @@ O Portal Web oferece as seguintes principais capacidades para trabalhar com mapa
 
 ### Acesso por Assinatura {#subscription-accesses}
 
-![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
+![Conta Web](@site/static/img/web/web_start.png) ![Conta Web](@site/static/img/web/web_pro.png)
 
 O Portal de Mapas Web suporta vários níveis de acesso: sem login, com OsmAnd Start e com OsmAnd Pro. A tabela abaixo resume quais recursos estão disponíveis em cada nível para que você possa ver rapidamente o que já tem e o que se torna disponível com uma conta ou upgrade. Esta visão geral tem como objetivo ajudá-lo a decidir se você precisa de uma conta e, se precisar, qual opção melhor se adequa à forma como você usa o OsmAnd.
 
@@ -70,10 +70,10 @@ Para acessar todos os recursos do Portal Web OsmAnd, você precisa fazer login c
 
 1. Vá para o [**Portal de Mapas OsmAnd**](https://osmand.net/map).
 2. Abra o menu **Conta**:
-   - **Fazer login**: Insira o endereço de e-mail vinculado à sua assinatura Pro ou Start, ou
+   - **Entrar**: Insira o endereço de e-mail vinculado à sua assinatura Pro ou Start, ou
    - **Criar conta**: Registre-se para uma conta gratuita OsmAnd Start. Para um guia detalhado passo a passo para criar uma nova conta, consulte o artigo [Conta OsmAnd](./web-cloud).
 
-![Web Account](@site/static/img/web/web_account.png)
+![Conta Web](@site/static/img/web/web_account.png)
 
 
 ## Artigos Relacionados {#related-articles}

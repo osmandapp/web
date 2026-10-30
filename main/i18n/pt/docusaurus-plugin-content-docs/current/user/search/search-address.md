@@ -1,5 +1,5 @@
 ---
-source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
+source-hash: e36caad58f36cfd88f8d8bd575e69fdf2d3e8f63a1d4a934dba6e473f1b95388
 sidebar_position: 2
 title: Pesquisar Endereço
 ---
@@ -13,13 +13,20 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Visão geral {#overview}
 
 *Pesquisa por Endereço do OsmAnd* é baseada em dados do OpenStreetMap e permite que você encontre a localização e as direções para um endereço específico a partir de uma lista já classificada, bem como pesquise por código postal ou coordenadas. Esta ferramenta permite que você encontre os endereços necessários em poucos toques, o que reduz o tempo de pesquisa e ajuda caso você não se lembre do endereço exato.
 
 A pesquisa por endereço funciona offline usando mapas baixados. Certifique-se de que o mapa da região em que você está pesquisando esteja instalado. Os resultados dependem dos dados de endereço disponíveis no OpenStreetMap.
 
-Os resultados da pesquisa são automaticamente ordenados por relevância e distância, para que resultados próximos e mais relevantes apareçam mais altos na lista.
+O OsmAnd ordena os resultados da pesquisa automaticamente, para que resultados próximos e mais relevantes apareçam mais altos na lista. No Android, você pode alterar a ordem com o chip de classificação no topo da lista de resultados. O chip mostra a opção selecionada. Toque nele e escolha uma das seguintes opções no menu *Ordenar por*:
+- *Relevância* — Ordena os resultados pela proximidade com que correspondem à sua consulta.
+- *Mais próximo* — Ordena os resultados por distância, com os resultados mais próximos exibidos primeiro.
+
+Também no Android, chips com tipos de objetos, como *Município*, *Cidade*, *Rua* ou *Código postal*, aparecem acima dos resultados. Toque em um chip para mostrar apenas resultados desse tipo. Leia mais em [Ordenar resultados da pesquisa](./search-all.md#sorting-search-results).
+
+No Android, quando o centro do mapa está a mais de 50 m da sua localização e o mapa não segue a sua posição, a pesquisa é executada ao redor do centro do mapa, e o campo de pesquisa mostra *Pesquisar a N km de distância*. Quando o centro do mapa está a mais de 70 km da sua localização, um chip com a área de pesquisa, *Centro do mapa* ou *Minha localização*, aparece ao lado do chip de classificação. Toque nele para escolher onde pesquisar. Leia mais em [Pesquisar ao redor](./search-all.md#search-around).
 
 O OsmAnd oferece várias maneiras de acessar a *ferramenta de Pesquisa*, onde a seção **Pesquisar Endereço** está localizada.
 
@@ -28,23 +35,34 @@ O OsmAnd oferece várias maneiras de acessar a *ferramenta de Pesquisa*, onde a 
 - Ao se preparar para iniciar uma rota, toque em *Navegação* → *Definir destino* → *campo Pesquisar*.
 
 
-## Pesquisa de texto completo {#full-text-search}
+## Guia Endereço {#address-tab}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Pesquisar Android](@site/static/img/search/search_address_2_andr.png)
+![Pesquisar Android](@site/static/img/search/search_address_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Pesquisar iOS](@site/static/img/search/street_search_ios.png)  
+![Pesquisar iOS](@site/static/img/search/street_search_ios.webp)  
 
 </TabItem>
 
 </Tabs>
+
+A guia *Endereço* contém botões para diferentes formas de pesquisar por endereço. Cada botão abre uma lista de opções sugeridas para escolher:
+
+- [**Pesquisar rua em &lt;cidade&gt;**](#select-street) (*Android*) / **Selecionar rua em &lt;cidade&gt;** (*iOS*) — Aparece se você já pesquisou uma cidade antes. A última cidade pesquisada já está definida, então você só precisa digitar o nome da rua e escolhê-la entre as ruas sugeridas.
+- [**Primeiro especificar cidade/município/localidade**](#select-city) (*Android*) / **Selecionar cidade** (*iOS*) — Sempre disponível. Abre imediatamente uma lista de cidades, municípios e vilas, ordenada por nome. A lista é refinada conforme você digita.
+- [**Pesquisa por código postal**](#postcode-search) — Sempre disponível. Muda o campo de pesquisa para a entrada de código postal. A lista permanece vazia até você digitar pelo menos um caractere, e então os resultados correspondentes aparecem.
+- [**Pesquisa por coordenadas**](#coordinates-search) — Sempre disponível. Abre a tela de entrada de coordenadas.
+
+A lista **Cidades mais próximas** é exibida abaixo dos botões e mostra até 15 cidades e municípios ao redor do local de pesquisa, da sua posição ou do centro do mapa. Cada item mostra o nome, seu tipo, *Cidade* ou *Município*, e a distância e a direção a partir do local de pesquisa. No Android, a região também é exibida.
+
+## Pesquisa de texto completo {#full-text-search}
 
 O OsmAnd suporta pesquisa de endereço por texto completo. Isso significa que você pode digitar um endereço diretamente no campo de pesquisa em vez de selecionar cidade → rua → número da casa passo a passo. O mecanismo de pesquisa tenta reconhecer componentes de endereço como:
 - cidade;
@@ -67,10 +85,8 @@ Quando uma consulta pode se referir tanto a um endereço quanto a um POI, o OsmA
 
 **NOTA:** A pesquisa por endereço funciona apenas dentro de mapas baixados. Os resultados de pesquisa são baseados em:
 - mapas instalados no seu dispositivo;
-- a área visível do mapa;
+- [a área visível do mapa](./search-all.md#how-to-use);
 - sua localização atual. 
-
-Se nada for encontrado, o OsmAnd pode sugerir aumentar o raio de pesquisa.
 
 ### Pesquisa de Endereços nos EUA e Dados TIGER {#us-address-search-and-tiger-data}
 
@@ -122,7 +138,7 @@ O mecanismo de pesquisa também tolera variações comuns no formato de endereç
 
 <TabItem value="android" label="Android">
 
-![Pesquisar Cidade Android](@site/static/img/search/town_search_android.png)
+![Pesquisar Cidade Android](@site/static/img/search/town_search_android.webp)
 
 </TabItem>
 
@@ -134,14 +150,12 @@ O mecanismo de pesquisa também tolera variações comuns no formato de endereç
 
 </Tabs>
 
-**Cidades mais próximas**  
-    Isso **exibe uma pequena lista de cidades ao redor da sua localização** ou da localidade que você especificou para *Selecionar rua* ou *Selecionar cidade*. Cada campo contém um ícone correspondente ao tamanho da cidade, o nome da cidade, a distância de você até o centro dela e, para Android, a direção da bússola.
-
 Essa forma de pesquisa facilita a localização de locais específicos dentro de uma localidade selecionada, proporcionando uma maneira conveniente de encontrar endereços com precisão e rapidez. Você pode começar a pesquisar o endereço necessário determinando a localidade.
 
 - Para fazer isso, toque em **Primeiro especificar cidade/município/localidade** (Android) ou **Selecionar cidade** (iOS).
 - Na lista que se abre, selecione a localidade desejada. [Aqui](#full-text-search) descreve a ordem em que as consultas de pesquisa são exibidas e quais informações estão disponíveis sobre cada item.
-- Na próxima tela, você pode continuar a refinar o endereço ou selecionar o botão *Mostrar no mapa* abaixo do campo de entrada de pesquisa.
+- No Android, toque no chip de classificação para escolher *Relevância* ou *Mais próximo*. Quando o centro do mapa está a mais de 70 km da sua localização, use o chip de área de pesquisa para escolher entre *Centro do mapa* e *Minha localização*. Chips com os tipos de localidade encontrados nos resultados, como *Cidade*, *Município* ou *Vila*, aparecem acima da lista. Toque em um chip para mostrar apenas resultados desse tipo.
+- Na próxima tela, você pode continuar a refinar o endereço ou mostrar a localidade no mapa. No iOS, toque em *Mostrar no mapa* abaixo do campo de pesquisa. No Android, toque no botão *Mostrar no mapa*, o botão flutuante no canto inferior direito.
 - Para especificar sua pesquisa, você pode inserir todo ou apenas parte do nome da cidade, município ou vila onde o endereço que você está procurando está localizado. Isso permite que você restrinja sua pesquisa e obtenha uma lista mais precisa.
 - Tocar no último item do endereço, número da casa ou nome do cruzamento, abre o [menu de contexto do mapa](../map/map-context-menu.md#select-an-object-single-tap) do objeto.  
 
@@ -157,7 +171,7 @@ Essa forma de pesquisa facilita a localização de locais específicos dentro de
 
 <TabItem value="android" label="Android">
 
-![Pesquisar Rua Android](@site/static/img/search/street_search.png) ![Pesquisar Rua Android](@site/static/img/search/street_search_1.png)
+![Pesquisar Rua Android](@site/static/img/search/street_search.webp) ![Pesquisar Rua Android](@site/static/img/search/street_search_1.webp)
 
 </TabItem>
 
@@ -169,10 +183,12 @@ Essa forma de pesquisa facilita a localização de locais específicos dentro de
 
 </Tabs>
 
-A pesquisa de rua é realizada na localidade onde você está, ou onde você pesquisou antes, ou que está no centro do mapa visível na tela do aplicativo.
+A pesquisa de rua é realizada na última cidade que você pesquisou. O nome dela é exibido no botão, então você pode começar pela rua imediatamente.
 
-- Para usar este tipo de pesquisa, toque em **Pesquisar Rua** (*Android*) ou **Selecionar Rua** (*iOS*).
-- No campo de pesquisa ao lado do nome da cidade, você pode começar a digitar o nome da rua e a lista será refinada, fornecendo os resultados mais apropriados.
+- Para usar este tipo de pesquisa, toque em **Pesquisar rua em &lt;cidade&gt;** (*Android*) ou **Selecionar rua em &lt;cidade&gt;** (*iOS*).
+- O nome da cidade já está inserido no campo de pesquisa, e a lista de suas ruas abre imediatamente. No campo de pesquisa ao lado do nome da cidade, você pode começar a digitar o nome da rua e a lista será refinada, fornecendo os resultados mais apropriados.
+- No Android, toque no chip de classificação para escolher *Relevância* ou *Mais próximo*. Quando o centro do mapa está a mais de 70 km da sua localização, use o chip de área de pesquisa para escolher entre *Centro do mapa* e *Minha localização*. Chips com os tipos de objeto encontrados nos resultados, como *Rua* ou *Edifício*, aparecem acima da lista. Toque em um chip para mostrar apenas resultados desse tipo.
+- Selecione uma rua para abrir a lista de seus edifícios. Selecione o número da casa desejado para abrir o [menu de contexto do mapa](../map/map-context-menu.md#select-an-object-single-tap) do endereço.
 - Em outros itens, a pesquisa de rua é a mesma que em [Selecionar Cidade](#select-city).
 
 :::note Chave e Valor
@@ -187,7 +203,14 @@ A pesquisa de rua é realizada na localidade onde você está, ou onde você pes
 
 <TabItem value="android" label="Android">
 
-![Pesquisar Código Postal Android](@site/static/img/search/postcode_android.png)
+![Pesquisar Código Postal Android](@site/static/img/search/postcode_android.webp)
+
+Toque em **Pesquisa por código postal** na guia *Endereço*. A lista permanece vazia até você começar a digitar. Insira o código postal, até mesmo um único dígito, e o aplicativo oferece uma lista de códigos postais correspondentes.
+
+- Toque no chip de classificação para escolher *Relevância* ou *Mais próximo*. Quando o centro do mapa está a mais de 70 km da sua localização, use o chip de área de pesquisa para escolher entre *Centro do mapa* e *Minha localização*. Toque no chip *Código postal* para mostrar apenas códigos postais na lista.
+- Selecione o código postal desejado. A lista de ruas com esse código postal abre, e o código postal permanece no campo de pesquisa.
+- Para refinar o endereço, selecione uma rua e depois o número da casa. Isso abre o [menu de contexto do mapa](../map/map-context-menu.md#select-an-object-single-tap) do endereço.
+- Para ver o próprio código postal no mapa, toque no botão *Mostrar no mapa*, o botão flutuante no canto inferior direito. O mapa abre com o [menu de contexto](../map/map-context-menu.md#select-an-object-single-tap) do código postal.
 
 </TabItem>
 
@@ -195,15 +218,15 @@ A pesquisa de rua é realizada na localidade onde você está, ou onde você pes
 
 ![Pesquisar Código Postal iOS](@site/static/img/search/postcode_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 **Para usar a *Pesquisa por Código Postal*, você só precisa inserir o número**, que pode consistir até mesmo em um único dígito, e o aplicativo oferece uma lista de códigos postais relevantes disponíveis.
 
 - Selecione o código necessário e toque nele.
-- Você pode usar o recurso *Mostrar *número do código postal* no mapa*. Isso abre um [menu de contexto do mapa](../map/map-context-menu.md#select-an-object-single-tap) com o código postal selecionado sem nenhuma informação adicional sobre o local.
+- Você pode usar o recurso *Mostrar &lt;código postal&gt; no mapa*. Isso abre um [menu de contexto do mapa](../map/map-context-menu.md#select-an-object-single-tap) com o código postal selecionado sem nenhuma informação adicional sobre o local.
 - Você pode refinar sua pesquisa por este código selecionando primeiro a rua necessária na lista e depois o número.
+
+</TabItem>
+
+</Tabs>
 
 **A pesquisa por código postal pode ser útil quando:**
 
@@ -239,6 +262,6 @@ Para mais informações, leia os **[dados de Código Postal do Reino Unido](http
 ## Artigos Relacionados {#related-articles}
 
 - [Pesquisar Tudo](./search-all.md)
-- [Histórico de Pesquisa](./search-history.md)
+- [Explorar na Pesquisa](./search-history.md)
 - [Pesquisar POI](./search-poi.md)
 - [Pesquisar Coordenadas](./search-coordinates.md)
