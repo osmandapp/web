@@ -50,6 +50,7 @@ export default function AiAssistantsItem() {
                 name={t('web:ai_assistants_access')}
                 component="div"
                 onClick={openPricing}
+                className={configureMapStyles.item}
                 rightSlot={
                     <span onClick={(e) => e.stopPropagation()}>
                         <ButtonPro onClick={openPricing} />
