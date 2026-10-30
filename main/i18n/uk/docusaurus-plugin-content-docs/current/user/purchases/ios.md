@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 128c6a3c0461bcc75584d56b095a0ae9e2c8bab17befa8ebaf8ed344af899b90
 sidebar_position: 2
 title:  Покупки в iOS
 ---

@@ -1,7 +1,7 @@
 ---
-source-hash: 5b3750665c687a40a761d91985f8374b8185b89bf9f80ae13ef176b1cdf7d83b
+source-hash: 15444c168df6f3554637066910aa28d6eb9b1c274618b9570845570e8988b856
 sidebar_position: 10
-title:  Import / Export
+title:  Імпорт / Експорт
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,8 +17,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Інструменти **Імпорт** та **Експорт** в OsmAnd дозволяють керувати вашими даними. Ви можете переміщувати свої профілі, обране, треки та інші налаштування за допомогою спеціального формату через програми на вашому пристрої. Цей процес спрощує збереження та передачу даних між пристроями, а також дозволяє ділитися ними з іншими користувачами OsmAnd.
 
-:::note Large size
-*If the size of your selected data is significant, it will take time for the application to prepare the `.osf` file.*
+:::note Великий розмір
+*Якщо розмір вибраних даних великий, програмі знадобиться час, щоб підготувати файл `.osf`.*
 :::
 
 
@@ -31,7 +31,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 - **Налаштування:**  
         [Профілі](../personal/profiles.md#actions), &nbsp;[OsmAnd/Загальні налаштування](../personal/global-settings.md), &nbsp;[Кольори](../personal/color-palette-schemes.md), &nbsp;[Швидка дія](../widgets/quick-action.md), &nbsp;[Тип POI](../map/point-layers-on-map.md#poi-types), &nbsp;[Уникати дорогу](../map/map-context-menu.md#avoid-road).
 - **Мої місця:**  
-        [Обране](../personal/favorites.md#export--import), &nbsp;[Треки](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Нотатки OSM*, *Редагування OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V нотатки](../plugins/audio-video-notes.md), &nbsp;[Маркери на карті](../personal/markers.md), &nbsp;[Історія маркерів*, *Історія пошуку*, *Історія навігації](../personal/global-settings.md#history), &nbsp;*Ітінерер*.
+        [Обране](../personal/favorites.md#export--import), &nbsp;[Прикріплені медіа](../personal/favorites.md#media), &nbsp;[Треки](../personal/tracks/manage-tracks.md#import--export-track), &nbsp;[Нотатки OSM*, *Редагування OSM](../plugins/osm-editing.md#create--modify-poi), &nbsp;[A/V нотатки](../plugins/audio-video-notes.md), &nbsp;[Маркери на карті](../personal/markers.md), &nbsp;[Історія маркерів*, *Історія пошуку*, *Історія навігації](../personal/global-settings.md#history), &nbsp;*Ітінерер*.
 - **Ресурси:**  
         [Стиль візуалізації](../map/map-styles.md#custom-map-style), &nbsp;[Маршрутизація](../navigation/routing/osmand-routing.md), &nbsp;[Двигуни онлайн-маршрутизації](../navigation/routing/online-routing.md), &nbsp;[Джерела карт*, *Стандартні/Офлайн карти](../map/raster-maps.md), &nbsp;[Карти Вікіпедії та Подорожей](../plan-route/travel-guides.md), &nbsp;[Морські карти](../plugins/nautical-charts.md), &nbsp;[Дорожні карти](../map/vector-maps.md#road-style), &nbsp;[Топографічні карти](../plugins/topography.md), &nbsp;[Голосові підказки (TTS)](../navigation/guidance/voice-navigation.md#tts-text-to-speech), [Голосові підказки (записані)](../navigation/guidance/voice-navigation.md#recorded-voice-prompts), &nbsp;[Резервне копіювання Обраного](../personal/favorites.md#automatic-favorites-backup).
 
@@ -92,8 +92,8 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,loc
 - *Деякі елементи вже існують*. Ви можете скористатися цією функцією, щоб зберегти обидва файли або замінити всі.
 - *Перезапуск*. Після імпорту файлів програму необхідно перезапустити.
 
-Supported import file types:
-- [Треки, маршрути](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [обране](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. KML and KMZ files are imported with conversion into GPX format.
+Підтримувані типи файлів для імпорту:
+- [Треки, маршрути](https://osmand.net/docs/user/personal/tracks/manage-tracks/) & [обране](https://osmand.net/docs/user/personal/favorites/): `.gpx`, `.kml`, `.kmz`. Файли KML і KMZ імпортуються з перетворенням у формат GPX.
 - [Векторні карти OsmAnd](https://osmand.net/docs/user/map/vector-maps): `.obf`.
 - [Тайли онлайн-карт](https://osmand.net/docs/user/map/raster-maps/): `.sqlitedb`.
 - [Резервні копії & профілі](#export): `.osf`.
@@ -127,6 +127,6 @@ Supported import file types:
 
 ### Common Issues and Solutions {#common-issues-and-solutions}
 
-1. How to transfer Favorites and Tracks to a new device. [(перевірити)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
-2. I have a GPX file, how do I import it into OsmAnd? [(перевірити)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
-3. Deleting map data after the app update (if “Multiuser Storage 1” is selected). [(перевірити)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)
+1. Як перенести обране та треки на новий пристрій. [(перевірити)](../troubleshooting/setup.md#how-to-transfer-favorites-and-tracks-to-a-new-device)
+2. У мене є файл GPX, як імпортувати його в OsmAnd? [(перевірити)](../troubleshooting/setup.md#i-have-a-gpx-file-how-do-i-import-it-into-osmand)
+3. Видалення даних мап після оновлення програми (якщо вибрано «Сховище для кількох користувачів 1»). [(перевірити)](../troubleshooting/maps-data#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected)

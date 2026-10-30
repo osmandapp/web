@@ -1,5 +1,5 @@
 ---
-source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: Вступ
 title: Вступ до веб-планувальника
@@ -34,7 +34,7 @@ OsmAnd Web тісно інтегрований із сервісом **OsmAnd Cl
 - [Мапа](./web-map.md) з глобальним покриттям та високоякісними векторними даними.
 - [Планування маршруту](./planner.md) для пішоходів, автомобілів, велосипедів та інших профілів.
 - [Навігація](./web-navigation.md) з покроковими інструкціями.
-- [Пошук](./web-search.md) та [дослідження](./web-search.md#explore) популярних місць поблизу.
+- [Пошук](./web-search.md) та [Огляд](./web-search.md#explore) популярних місць поблизу.
 - Відображення [Улюблених місць](./web-map.md#favorites), [Треків](./web-map.md#tracks) та [POI](./web-map.md#poi-overlay) на мапі.
 - [Шари погоди](./web-weather.md): вітер, температура та тиск.
 - [Шари рельєфу](./web-map.md#terrain): відтінення пагорбів, схили та вигляд висот.
@@ -45,7 +45,7 @@ OsmAnd Web тісно інтегрований із сервісом **OsmAnd Cl
 
 ### Доступ за підпискою {#subscription-accesses}
 
-![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
+![Обліковий запис у вебпланувальнику](@site/static/img/web/web_start.png) ![Обліковий запис у вебпланувальнику](@site/static/img/web/web_pro.png)
 
 Веб-портал мап підтримує кілька рівнів доступу: без входу, з OsmAnd Start та з OsmAnd Pro. Таблиця нижче підсумовує, які функції доступні на кожному рівні, щоб ви могли швидко побачити, що у вас вже є, і що стає доступним з обліковим записом або оновленням. Цей огляд призначений для того, щоб допомогти вам вирішити, чи потрібен вам обліковий запис взагалі і, якщо так, то який варіант найкраще відповідає тому, як ви використовуєте OsmAnd.
 
@@ -55,10 +55,10 @@ OsmAnd Web тісно інтегрований із сервісом **OsmAnd Cl
 | [Планувальник маршрутів](./planner.md) | Без входу |
 | [Шари погоди](./web-weather.md) | Без входу |
 | [Налаштування](./web-map.md#settings) | Без входу |
-| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Улюблені місця](./web-map.md#favorites), [Треки](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Налаштування меню мапи](./web-map.md#configure-map-menu) ([POI](./web-map.md#poi-overlay), [Улюблені місця](./web-map.md#favorites), [Треки](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) або [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 | [Налаштування меню мапи](./web-map.md#configure-map-menu) ([Рельєф](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [Синхронізація OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [Веб-пошук, популярні місця](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Синхронізація OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) або [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Веб-пошук, популярні місця](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) або [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 | [Папки треків та шар](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
@@ -73,7 +73,7 @@ OsmAnd Web тісно інтегрований із сервісом **OsmAnd Cl
    - **Увійти**: Введіть адресу електронної пошти, пов'язану з вашою підпискою Pro або Start, або
    - **Створити обліковий запис**: Зареєструйтеся для безкоштовного облікового запису OsmAnd Start. Для детального покрокового посібника зі створення нового облікового запису див. статтю [Обліковий запис OsmAnd](./web-cloud).
 
-![Web Account](@site/static/img/web/web_account.png)
+![Обліковий запис у вебпланувальнику](@site/static/img/web/web_account.png)
 
 
 ## Пов'язані статті {#related-articles}

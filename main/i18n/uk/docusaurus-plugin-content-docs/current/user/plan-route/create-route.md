@@ -1,5 +1,5 @@
 ---
-source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
+source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
 sidebar_position: 1
 title:  Планування маршруту
 ---
@@ -157,13 +157,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Plan a route snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Планування маршруту, прив’язка до доріг, Android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
+![Планування маршруту, прив’язка до доріг, iOS](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Планування маршруту, прив’язка до доріг, iOS](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -186,21 +186,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Якщо ви виберете трек і поруч зі значком *Налаштування* відобразиться значок ***невизначеного*** профілю ("?"), торкніться його, щоб вибрати, чи прив'язувати трек до доріг, чи просто з'єднати точки прямою лінією і розглядати його як записаний трек.
 :::
 
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
-
 
 ## Точки та сегменти {#points--segments}
 
@@ -210,7 +195,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Планування маршруту android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Планування маршруту Favorites android](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Планування маршруту android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Планування маршруту Улюблені android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Щоб виміряти відстань або спланувати поїздку, додавайте точки в місці розташування *Вказівника* одну за одною і натискайте кнопку *Додати*. Перейшовши до **списку точок** нижче, ви можете змінювати порядок точок, видаляти їх або отримати доступ до контекстного меню конкретної [точки](#point-context-menu).
 
@@ -277,19 +262,20 @@ To generate navigation instructions:
 
 <TabItem value="ios" label="iOS">
 
-![Планування маршруту ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Планування маршруту ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Планування маршруту ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Планування маршруту ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Додані точки можна з'єднати прямою лінією або маршрутом, розрахованим за допомогою вибраного профілю маршрутизації. Меню «Маршрут між точками» дозволяє переглядати та змінювати тип маршрутизації та налаштування для сегментів і ділянок маршруту.
 
 Відкрити «Маршрут між точками» можна, торкнувшись кнопки *Маршрут між точками*, на якій відображається значок поточного вибраного профілю маршрутизації, або з меню [Сегмент](#segments) чи Розділ.
 
-На вкладці «Тип маршруту» можна вибрати профіль маршрутизації для вибраного сегмента чи ділянки. Пряма лінія доступна як перший варіант, а потім — доступні профілі маршрутизації.
+На вкладці «Маршрут» можна вибрати профіль маршрутизації для вибраного сегмента чи ділянки. Пряма лінія доступна як перший варіант, а потім — доступні профілі маршрутизації.
 
-Коли маршрут містить лише один тип маршрутизації, відображається простий вигляд «Маршрут між точками». Коли маршрут містить кілька типів маршрутизації, у складному вигляді показуються всі сегменти та ділянки, що дозволяє вибрати, яку частину маршруту змінити.
+Коли маршрут має один сегмент з одним типом маршрутизації, відображається простий вигляд «Маршрут між точками». Коли маршрут має кілька сегментів або сегмент з кількома типами маршрутизації, у складному вигляді показуються всі сегменти та ділянки, що дозволяє вибрати, яку частину маршруту змінити.
 
 Також можна:
-- **Почати новий сегмент** — створити новий сегмент і продовжити додавання точок маршруту. Новий сегмент використовує той самий тип маршруту, що й поточний.
-- **Змінити для всього треку** — вибрати тип маршрутизації для застосування до всього треку.
+- **Продовжити з іншим типом маршруту** — вибрати тип маршрутизації для наступної ділянки поточного сегмента, а потім продовжити додавання точок на мапі. У складному вигляді цей параметр називається «Продовжити з іншим типом» і відображається під останнім сегментом.
+- **Почати новий сегмент** — створити новий сегмент, не пов’язаний з попередньою частиною треку. Виберіть тип маршрутизації для нового сегмента, а потім продовжте додавання точок на мапі.
+- **Змінити тип для всього треку** — доступно в складному вигляді. Виберіть тип маршрутизації для застосування до всього треку.
 
 На вкладці «Налаштування» можна вибрати попередньо визначені налаштування маршрутизації для вибраного типу маршруту.
 
@@ -313,7 +299,7 @@ To generate navigation instructions:
 
 <TabItem value="ios" label="iOS">
 
-![Планування маршруту ios](@site/static/img/plan-route/segment_menu.webp) ![Планування маршруту ios](@site/static/img/plan-route/section_menu.webp)
+![Планування маршруту ios](@site/static/img/plan-route/segment_menu_1.webp) ![Планування маршруту ios](@site/static/img/plan-route/section_menu.webp)
 
 Маршрут може містити один або кілька сегментів. Сегмент може використовувати один тип маршруту або містити кілька ділянок з різними типами маршруту.
 
@@ -321,12 +307,12 @@ To generate navigation instructions:
 
 Керувати сегментом можна за допомогою меню з трьома крапками:
 - **Змінити тип маршруту** — доступно для сегмента з одним типом маршруту. Відкриває «Маршрут між точками», де можна вибрати інший тип маршруту.
-- **Встановити один тип маршруту** — доступно, коли сегмент містить кілька ділянок з різними типами маршруту. Відкриває «Маршрут між точками», де можна застосувати один тип маршруту до сегмента.
+- **Встановити один тип маршруту** — доступно, коли сегмент містить кілька ділянок з різними типами маршруту. Відкриває «Маршрут між точками», де можна застосувати один тип маршруту до сегмента. Увесь сегмент буде перераховано за вибраним типом маршрутизації.
 - **Сортувати** — змінити порядок точок маршруту вручну або використати «Сортувати door-to-door», щоб змінити їхній порядок для мінімізації загальної відстані подорожі.
 - **Зберегти як…** — зберегти сегмент як окремий файл.
 - **Видалити сегмент** — видалити сегмент.
 
-Щоб створити новий нез'єднаний сегмент, торкніться *Почати новий сегмент* у нижній частині вкладки «Маршрут».
+Щоб створити новий нез'єднаний сегмент, торкніться *Почати новий сегмент* у нижній частині вкладки «Маршрут». Щоб продовжити поточний сегмент з іншим типом маршрутизації, торкніться *Продовжити з іншим типом* під останнім сегментом, а потім виберіть тип маршрутизації для наступної ділянки.
 
 Сегмент можна розділити на [ділянки](#multimodal-routes), коли для різних частин сегмента використовуються різні типи маршруту. Кожна ділянка відображає свій тип маршруту та відстань.
 
@@ -390,13 +376,13 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
+![Планування маршруту, лінія маршруту, Android](@site/static/img/plan-route/plan-route-routeline-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
+![Планування маршруту, лінія маршруту, iOS](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -458,7 +444,7 @@ To generate navigation instructions:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
+![Планування маршруту, опції, Android](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Показує вибраний профіль програми (за замовчуванням — пряма лінія). Натискання цієї дії аналогічне натисканню кнопки *Профіль*, що відкриває [меню профілів](../personal/profiles.md) програми.
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) або **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Малює нові сегменти маршруту, які не з'єднуються з попереднім сегментом.
@@ -476,7 +462,7 @@ To generate navigation instructions:
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+![Планування маршруту, опції, iOS](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
 
 Торкніться меню з трьома крапками на верхній панелі інструментів, щоб відкрити меню *Опції*. Доступні дії залежать від того, чи створюєте ви новий маршрут, чи редагуєте наявний трек.
 
@@ -511,7 +497,7 @@ To generate navigation instructions:
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+![Планування маршруту, аналіз, iOS](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Планування маршруту, аналіз, iOS](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
 
 У розділі «Огляд» відображається графік на основі вибраної осі. Використовуйте елементи керування вибором осі, щоб вибрати дані, що відображаються на графіку. *Перерахувати висоту* дозволяє перерахувати дані про висоту за потреби. Якщо дані про висоту недоступні, на вкладці «Аналіз» відображається повідомлення «Немає даних про висоту». У повідомленні пояснюється, що OsmAnd може отримати дані про висоту з прилеглих доріг або карт рельєфу. Торкніться *Отримати дані про висоту*, щоб розрахувати дані про висоту. Докладніше див. у розділі [Отримання даних про висоту](#get-elevation-data).
 

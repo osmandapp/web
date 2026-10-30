@@ -1,5 +1,5 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
 sidebar_label: Мапа
 title: Глобальна мапа на сайті
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 Веб-мапа OsmAnd — це глобальна мапа, що базується на даних [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Вона дозволяє користувачам переглядати власні дані, такі як треки та улюблені місця, створювати навігаційні маршрути для будь-якого профілю та отримувати доступ до додаткових функцій, таких як погода, загальнодоступні GPX-треки, POI та зображення з Wikimedia. Досліджуйте та налаштовуйте досвід роботи з даними безпосередньо у браузері.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![Вебпланувальник OsmAnd](@site/static/img/web/web_map_all.png)
 
 
 ## Контекстне меню мапи {#map-context-menu}
@@ -60,7 +60,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 Add pin option will be added back once it becomes available again.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+![Контекстне меню мапи](@site/static/img/web/map_context_menu_2_new.png)
 
 
 ## Вибраний об'єкт {#selected-object}
@@ -73,21 +73,32 @@ Add pin option will be added back once it becomes available again.
 
 Найближчі позначки можуть бути приховані, щоб полегшити перегляд вибраного об'єкта.
 
-![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+Коли ввімкнено тип мапи [OsmAnd vector (beta)](#map-type), можна вибирати об'єкти безпосередньо на мапі, зокрема POI, будівлі, номери будинків і зупинки громадського транспорту. Коли ви наводите курсор на об'єкт, який можна вибрати, вказівник змінюється на руку. Об'єкти без назви та іконки, такі як дороги й пішохідні доріжки без назви, вибрати не можна.
+
+Вибір об'єкта відкриває його панель деталей:
+
+- **POI** — панель показує ту саму інформацію та швидкі дії, що й у результатах [Пошуку](web-search.md) та в [шарі POI](#poi-overlay).
+- **Об'єкт без даних POI** — наприклад, будівля або номер будинку. Панель показує тип об'єкта, адресу та координати.
+- **Зупинка громадського транспорту** — панель також може містити розділ Маршрути з фільтром за типом транспорту, як описано в розділі [Зупинки транспорту](#transport-stops).
+
+Якщо в обраній точці розташовано кілька об'єктів, панель показує їх по одному. Використовуйте стрілки поруч із кнопкою закриття, щоб перемикатися між ними. Стрілка назад з'являється, починаючи з другого об'єкта, а стрілка вперед неактивна на останньому.
+
+![Вибраний об'єкт](@site/static/img/web/selected_object_favorite.png) ![Вибраний об'єкт](@site/static/img/web/several_objects.webp)
 
 
 
 ## Меню "Налаштувати мапу" {#configure-map-menu}
 
-Меню "Налаштувати мапу" дозволяє керувати налаштуваннями відображення даних на мапі, таких як шари POI, улюблені місця, треки та рельєф. Це меню доступне після входу в обліковий запис OsmAnd. Щоб відкрити його, клацніть кнопку у **верхньому лівому куті** або отримайте доступ через **Меню**.
+Меню "Налаштувати мапу" дозволяє керувати налаштуваннями відображення даних на мапі, таких як шари POI, улюблені місця, треки, рельєф і тип мапи. Це меню доступне після входу в обліковий запис OsmAnd. Щоб відкрити його, клацніть кнопку у **верхньому лівому куті** або отримайте доступ через **Меню**.
 
 - [Шар POI...](#poi-overlay). Дозволяє вибирати та показувати потрібні категорії POI на мапі.
 - [Улюблені місця](#favorites). Перемикає відображення улюблених місць на мапі.
 - [Треки](#tracks). Містить GPX-треки, видимі на мапі.
 - [Зупинки транспорту](#transport-stops). Перемикає відображення зупинок громадського транспорту на мапі. 
 - [Рельєф](#terrain). Вмикає або вимикає колірну схему рельєфу на мапі.
+- [Raster (tiles) / OsmAnd vector (beta)](#map-type). Показує поточний тип мапи та дозволяє перемикатися між растровою та векторною мапою.
 
-![POIs menu](@site/static/img/web/configure_map_web_new.png)
+![Меню POI](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### Шар POI {#poi-overlay}
@@ -103,12 +114,12 @@ Add pin option will be added back once it becomes available again.
 Для POI, які мають онлайн-фотографії, панель деталей показує блок "Онлайн-фотографії" з ескізами. "Показати все" відкриває режим галереї з повним списком фотографій. У переглядачі фотографій веб-версія OsmAnd відображає метадані фотографії, коли вони доступні, включаючи: дату, автора, ліцензію та опис.
 
 У панелі деталей POI доступні швидкі дії з кнопок дій:
-- *Додати до улюблених* — зберігає POI до ваших улюблених.
+- *Додати улюблене* — зберігає POI до ваших улюблених місць.
 - *Поділитися* — генерує посилання для поширення, яке безпосередньо відкриває POI в веб-версії OsmAnd. Посилання включає назву POI, тип та координати (позначка).
 - *Маршрут звідси* — встановлює вибраний POI як початкову точку та відкриває панель Маршруту, щоб ви могли вибрати пункт призначення та профіль.
 - *Навігація* — встановлює вибраний POI як пункт призначення для навігації.
 
-![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
+![Меню POI](@site/static/img/web/poi_categories.png) ![Меню POI](@site/static/img/web/poi_photo_new.png)
 
 
 ### Улюблені місця {#favorites}
@@ -141,7 +152,7 @@ Add pin option will be added back once it becomes available again.
 - Трек — наразі не реалізовано.
 - Точки — показує контрольні точки та точки маршруту, згруповані за типом.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
+![Меню «Налаштувати мапу»: треки](@site/static/img/web/configure_map_track_new.png) ![Меню «Налаштувати мапу»: треки](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Зупинки транспорту {#transport-stops}
 
@@ -169,7 +180,7 @@ Add pin option will be added back once it becomes available again.
 
 Розділ Найближчі маршрути може відображати додаткові маршрути, розташовані поблизу вибраної зупинки. Це допомагає швидко виявити альтернативні варіанти транспорту в навколишній зоні.
 
-![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
+![Зупинки транспорту](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Рельєф {#terrain}
 
@@ -183,7 +194,18 @@ Add pin option will be added back once it becomes available again.
   - **Висота**
 - Налаштувати видимість вибраного шару рельєфу від **0% до 100%**.
 
-![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+![Меню «Налаштувати мапу»: рельєф](@site/static/img/web/configure_map_terrain.png)
+
+### Тип мапи {#map-type}
+
+Виберіть пункт типу мапи в меню "Налаштувати мапу", щоб вибрати один із таких варіантів:
+
+- **Raster (tiles)** — тип мапи за замовчуванням. На цьому типі мапи можна вибирати лише позначки, що відображаються поверх мапи, такі як результати [Пошуку](web-search.md), позначки [шару POI](#poi-overlay), [улюблені місця](#favorites) та [зупинки транспорту](#transport-stops).
+- **OsmAnd vector (beta)** — векторна мапа. На цьому типі мапи можна [вибирати об'єкти безпосередньо на мапі](#selected-object).
+
+Вибраний тип мапи зберігається та застосовується під час наступного відкриття мапи. Кнопка **Скинути до типових** у заголовку меню "Налаштувати мапу" повертає тип **Raster (tiles)**.
+
+Векторна мапа потребує браузера з підтримкою WebGL. Якщо WebGL недоступний, мапа автоматично перемикається на **Raster (tiles)**.
 
 
 ## Налаштування {#settings}
@@ -196,7 +218,7 @@ Add pin option will be added back once it becomes available again.
 
 *Перейдіть до: Меню → ⚙ Налаштування → Мова відображення*
 
-![Web Language](@site/static/img/web/web_language.png)
+![Мова у вебпланувальнику](@site/static/img/web/web_language.png)
 
 ### Одиниці {#units}
 
@@ -225,7 +247,7 @@ Add pin option will be added back once it becomes available again.
 
 Наприклад, швидкість 90 км/год відповідає 25 m/s або близько 55,92 mph.
 
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
+![Одиниці у вебпланувальнику](@site/static/img/web/web_units_len.png) ![Одиниці у вебпланувальнику](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -254,19 +276,19 @@ In this section of the menu, you can change the map style. You can read more abo
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+  ![Створення треку у вебпланувальнику OsmAnd](@site/static/img/plan-route/web_url_pin.png)
 
 2. **URL без позначкою на мапі:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+  ![Створення треку у вебпланувальнику OsmAnd](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL з навігацією:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+  ![Створення треку у вебпланувальнику OsmAnd](@site/static/img/plan-route/web_url_track.png)
 
 Залежно від зазначених параметрів, рядки URL можуть містити:
 
@@ -294,6 +316,10 @@ In this section of the menu, you can change the map style. You can read more abo
 10. **Планувати маршрут**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Пряме посилання на поточну [**сторінку "Огляд"**](https://osmand.net/docs/user/web/web-search#explore)&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **Деталі POI**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **Об'єкт мапи без даних POI** (наприклад, будівля)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## Пов'язані статті {#related-articles}

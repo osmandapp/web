@@ -31,7 +31,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - Пошук оновлено з новою вкладкою **[Дослідити](https://osmand.net/docs/user/map/popular_places#explore-in-search)**, що містить популярні місця поблизу.
 - Новий експериментальний **[Плагін «Астрономія»](https://osmand.net/docs/user/plugins/astronomy)** з астрономічним накладенням, що показує шляхи Сонця, планет і зірок.
 - Додано **[редактор палітри](https://osmand.net/docs/user/map/tracks/appearance#color-palette-editor)** для створення та налаштування колірних схем для маршрутів і рельєфу.
-- Розумніша організація треків за допомогою **[Smart Folders](https://osmand.net/docs/user/personal/tracks/smart-folder)** і чіткішої зведеної статистики.
+- Розумніша організація треків за допомогою **[Розумних папок](https://osmand.net/docs/user/personal/tracks/smart-folder)** і чіткішої зведеної статистики.
 - Гнучкіше **[розташування віджетів і кнопок карти](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, особливо в альбомному режимі.
 - Покращено **[Планування маршруту](https://osmand.net/docs/user/plan-route/create-route)** з графіком висоти, офлайн-розрахунком висоти та параметрами маршруту.
 - Додано сегменти підйому, спуску та рівнин до **[аналізу треку](https://osmand.net/docs/user/map/tracks/track-context-menu#analyze-by-intervals)**.
@@ -53,7 +53,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Виправлення помилок {#bug-fixes}
 
-- Виправлено, що [Smart Folders](https://github.com/osmandapp/OsmAnd-iOS/issues/5358) не синхронізуються з OsmAnd Cloud і не з’являються в експорті налаштувань.
+- Виправлено, що [Розумні папки](https://github.com/osmandapp/OsmAnd-iOS/issues/5358) не синхронізуються з OsmAnd Cloud і не з’являються в експорті налаштувань.
 - Оновлено [контекстне меню Вікіпедії](https://github.com/osmandapp/OsmAnd-Issues/issues/3215) з новим дизайном і додано онлайн-фото.
 - Виправлено відсутність [назв POI](https://github.com/osmandapp/OsmAnd-iOS/issues/5253) у меню «Що тут».
 - Виправлено відкриття [Туристичних путівників](https://github.com/osmandapp/OsmAnd-Issues/issues/3212) з результатів пошуку для безпосереднього показу статті.
