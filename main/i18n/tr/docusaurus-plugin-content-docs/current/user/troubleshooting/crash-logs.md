@@ -1,5 +1,5 @@
 ---
-source-hash: 49c536aaf8d6f4f285889d13e50c872cab450c0dc30630d0930692ab61fb581c
+source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
 sidebar_position: 5
 title:  Kilitlenme Günlükleri
 ---
@@ -16,7 +16,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Genel Bakış {#overview}
 
-Kilitlenme günlükleri, geliştiricilerin uygulamanın çökmesine veya beklenmedik şekilde davranmasına neden olan sorunları ve hataları belirlemesine ve düzeltmesine yardımcı olan değerli tanılama araçlarıdır. Android cihazınızdan OsmAnd geliştirme ekibiyle günlükleri paylaşmak mümkündür. Şu anda, iOS kullanıcıları göndermek için yalnızca bir tür kilitlenme günlüğü seçeneğine sahiptir.
+Kilitlenme günlükleri, geliştiricilerin uygulamanın çökmesine veya beklenmedik şekilde davranmasına neden olan sorunları ve hataları belirlemesine ve düzeltmesine yardımcı olan değerli tanılama araçlarıdır. cihazınızdan OsmAnd geliştirme ekibiyle günlükleri paylaşmak mümkündür. OsmAnd beklenmedik şekilde kapanırsa, uygulama bir sonraki başlatışta kilitlenme raporu göndermeyi de önerir.
 
 
 ## Kilitlenme ve Uygulama Günlükleri {#crash-and-app-logs}
@@ -49,7 +49,7 @@ Uygulama günlüklerini gönderirken dikkatli olun, çünkü cihaz konumu, arama
 
 </Tabs>
 
-1. *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* veya *<Translate android="true" ids="send_logcat_log"/>* bölümüne gidin (*iOS'ta Geçerli uygulama günlüğünü gönder*). Durumunuza bağlı olarak uygun günlük türünü seçin. Günlük türleri arasındaki farklar için [Kilitlenme ve Uygulama Günlükleri](#crash-and-app-logs) bölümüne başvurabilirsiniz.
+1. *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* veya *<Translate android="true" ids="send_logcat_log"/>* bölümüne gidin (Android)/*Geçerli uygulama günlüğünü gönder* (iOS). Durumunuza bağlı olarak uygun günlük türünü seçin. Günlük türleri arasındaki farklar için [Kilitlenme ve Uygulama Günlükleri](#crash-and-app-logs) bölümüne başvurabilirsiniz.
 2. Açılır menüde Gmail'i veya tercih ettiğiniz e-posta uygulamasını seçin. Günlükleri `support@osmand.net` adresine göndermenizi öneririz.
 3. *Gönder* düğmesine dokunun.
 
@@ -74,6 +74,34 @@ Uygulama günlüklerini gönderirken dikkatli olun, çünkü cihaz konumu, arama
 
     ![Send crash logs iOS 1](@site/static/img/troubleshooting/send_log_ios.png)  ![Send crash logs iOS 2](@site/static/img/troubleshooting/log_1_ios.png)
 -->
+
+### Kilitlenmeden Sonra Kilitlenme Raporu Gönderme {#send-crash-report-after-a-crash}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+OsmAnd önceki çalıştırmada beklenmedik şekilde kapandıysa, uygulamayı bir sonraki başlatışınızda Kilitlenme iletişim kutusu görünür. Bu iletişim kutusu, uygulama çöktükten, yanıt vermeyi bıraktıktan (Android 11 ve üzeri) veya uygulamanın yerel kodunda bir çökme olduktan (Android 12 ve üzeri) sonra görünür. Navigasyon etkinken iletişim kutusu görünmez.
+
+- *Gönder* — kilitlenme raporunu bir e-posta uygulaması kullanmadan doğrudan OsmAnd geliştirme ekibine gönderir. Bir mesaj, raporun gönderilip gönderilmediğini onaylar.
+- *Kapat* — iletişim kutusunu raporu göndermeden kapatır.
+
+Rapor, çökmeden önceki uygulama durumu ve bellek kullanımı hakkında teknik bilgileri ve uygulamanın son günlüğünü içerir.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+OsmAnd önceki çalıştırmada beklenmedik şekilde kapandıysa, uygulamayı bir sonraki başlatışınızda Kilitlenme günlüğünü paylaş iletişim kutusu görünür. Bu iletişim kutusu, uygulama çöktükten veya sistem uygulamayı beklenmedik şekilde kapattıktan sonra görünür.
+
+- *Gönder* — kilitlenme raporunu bir e-posta uygulaması kullanmadan doğrudan OsmAnd geliştirme ekibine gönderir. Bir mesaj, raporun gönderilip gönderilmediğini onaylar.
+- *İptal* — iletişim kutusunu raporu göndermeden kapatır.
+
+Rapor, çökmeden önceki uygulama durumu ve bellek kullanımı hakkında teknik bilgileri ve uygulamanın son günlüğünü içerir.
+
+</TabItem>
+
+</Tabs>
 
 ## Bellek Sorunları için Yığın Histogramı (Android) {#heap-histogram-for-memory-problems-android}
 

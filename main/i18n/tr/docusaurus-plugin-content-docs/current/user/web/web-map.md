@@ -1,5 +1,5 @@
 ---
-source-hash: fa8f474f5e2203eb5dd38cdd400498c0ffc7a2f78948485b7842e9f0f1052728
+source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
 sidebar_position: 3
 sidebar_label: Harita
 title: Web Sitesindeki Küresel Harita
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 OsmAnd web haritası, [OpenStreetMap (OSM)](https://www.openstreetmap.org/) verilerine dayalı küresel bir haritadır. Kullanıcıların kendi verilerini (örneğin, parkurlar ve favoriler) görüntülemesine, herhangi bir profil için navigasyon rotaları oluşturmasına ve hava durumu, genel GPX parkurları, POI'ler ve Wikimedia görselleri gibi ek özelliklere erişmesine olanak tanır. Veri deneyiminizi doğrudan tarayıcınızda keşfedin ve özelleştirin.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![OsmAnd Web tümü](@site/static/img/web/web_map_all.png)
 
 
 ## Harita Bağlam Menüsü {#map-context-menu}
@@ -55,12 +55,12 @@ Açmak için haritada herhangi bir yere sağ tıklayın. Bu menü aşağıdaki e
 <!--
 - **Add pin** – Places a pin to mark a location on the map. ([Example](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 
-![Map Context menu](@site/static/img/web/map_context_menu.png)
+![Harita bağlam menüsü](@site/static/img/web/map_context_menu.png)
 
 Add pin option will be added back once it becomes available again.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+![Harita bağlam menüsü](@site/static/img/web/map_context_menu_2_new.png)
 
 
 ## Seçilen Nesne {#selected-object}
@@ -73,21 +73,32 @@ Haritayı yakınlaştırdığınızda seçilen işaretçi görünür kalır.
 
 Seçilen nesneyi daha kolay görmek için yakındaki işaretçiler gizlenebilir.
 
-![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/selected_object_explore.png)
+[OsmAnd vektör (beta)](#map-type) harita türü etkinleştirildiğinde, POI'ler, binalar, kapı numaraları ve toplu taşıma durakları dahil olmak üzere nesneleri doğrudan harita üzerinde seçebilirsiniz. Seçilebilir bir nesnenin üzerine geldiğinizde işaretçi, işaret eden bir ele dönüşür. Adı veya simgesi olmayan nesneler, örneğin adsız yollar ve patikalar, seçilemez.
+
+Bir nesne seçmek, ayrıntılar panelini açar:
+
+- **POI** — panel, [Arama](web-search.md) sonuçlarındaki ve [POI katmanındaki](#poi-overlay) ile aynı bilgileri ve hızlı eylemleri gösterir.
+- **POI verisi olmayan nesne** — örneğin bir bina veya kapı numarası. Panel nesne türünü, adresi ve koordinatları gösterir.
+- **Toplu taşıma durağı** — panel ayrıca, [Ulaşım durakları](#transport-stops) bölümünde açıklandığı gibi, taşıma türü filtresiyle birlikte Güzergahlar bölümünü de içerebilir.
+
+Seçilen noktada birden fazla nesne bulunuyorsa, panel bunları tek tek gösterir. Aralarında geçiş yapmak için kapat düğmesinin yanındaki okları kullanın. Geri oku ikinci nesneden itibaren görünür, son nesnede ise ileri oku etkin değildir.
+
+![Seçilen nesne](@site/static/img/web/selected_object_favorite.png) ![Seçilen nesne](@site/static/img/web/several_objects.webp)
 
 
 
 ## Harita Menüsünü Yapılandır {#configure-map-menu}
 
-Harita Menüsünü Yapılandır menüsü, POI katmanları, favoriler, parkurlar ve arazi gibi harita verileri için görüntüleme ayarlarını yönetmenize olanak tanır. Bu menü, OsmAnd hesabınıza giriş yaptıktan sonra kullanılabilir. Açmak için **sol üst köşedeki** düğmeye tıklayın veya **Menü** aracılığıyla erişin.
+Harita Menüsünü Yapılandır menüsü, POI katmanları, favoriler, parkurlar, arazi ve harita türü gibi harita verileri için görüntüleme ayarlarını yönetmenize olanak tanır. Bu menü, OsmAnd hesabınıza giriş yaptıktan sonra kullanılabilir. Açmak için **sol üst köşedeki** düğmeye tıklayın veya **Menü** aracılığıyla erişin.
 
 - [POI katmanı...](#poi-overlay). Haritada gerekli POI kategorilerini seçmenize ve göstermenize olanak tanır.
 - [Favoriler](#favorites). Haritada favorilerin görüntülenmesini açıp kapatın.
 - [Parkurlar](#tracks). Haritada görünen GPX parkurlarını içerir.
-- [Taşıma durakları](#transport-stops). Haritada toplu taşıma duraklarının görüntülenmesini açıp kapatın. 
+- [Ulaşım durakları](#transport-stops). Haritada toplu taşıma duraklarının görüntülenmesini açıp kapatın. 
 - [Arazi](#terrain). Haritada arazi renk şemasını etkinleştirin veya devre dışı bırakın.
+- [Raster (karolar) / OsmAnd vektör (beta)](#map-type). Kullanılan harita türünü gösterir ve raster ile vektör harita arasında geçiş yapmanızı sağlar.
 
-![POIs menu](@site/static/img/web/configure_map_web_new.png)
+![İÇN menüsü](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### POI katmanı {#poi-overlay}
@@ -108,7 +119,7 @@ POI ayrıntı panelinde, eylem düğmelerinden hızlı eylemler kullanılabilir:
 - *Buradan yol tarifi* — Seçilen POI'yi başlangıç noktası olarak ayarlar ve varış noktası ile profil seçebilmeniz için Rota panelini açar.
 - *Navigasyon* — Seçilen POI'yi navigasyon için varış noktası olarak ayarlar.
 
-![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
+![İÇN menüsü](@site/static/img/web/poi_categories.png) ![İÇN menüsü](@site/static/img/web/poi_photo_new.png)
 
 
 ### Favoriler {#favorites}
@@ -118,15 +129,15 @@ Tek bir tıklamayla, haritada favorileri açıp kapatabilirsiniz. Ancak, yalnız
 
 ### Parkurlar {#tracks}
 
-Bu bölüm, [**haritada görünen GPX parkurlarınızın**](../web/web-tracks.md#visible-on-the-map) ve **Son Görünür** parkurların bir listesini içerir.
+Bu bölüm, [**haritada görünen GPX parkurlarınızın**](../web/web-tracks.md#visible-on-the-map) ve **Son görülenler** parkurların bir listesini içerir.
 
 - Parkurları doğrudan açıp kapatabilirsiniz.  
-- **Son Görünür** listesinden parkurları açıp kapatın.  
+- **Son görülenler** listesinden parkurları açıp kapatın.  
 
 Her parkurun, aşağıdaki komutları içeren bir **Bağlam Menüsü** (⋮ düğmesi aracılığıyla erişilebilir) vardır:
 
 - **Parkuru gizle**: Haritada şu anda görünen parkuru gizler.  
-- **Parkuru görünür yap**: Son Görünür listesindeki bir parkuru haritada görüntüler.  
+- **Parkuru görünür yap**: Son görülenler listesindeki bir parkuru haritada görüntüler.  
 - **Yeniden adlandır**: Daha kolay tanımlama için parkuru yeniden adlandırmanıza olanak tanır.  
 - **Çoğalt**: Parkurun bir kopyasını oluşturur.
 - **Paylaş**: [Favoriler](../web/web-favorites.md#share) için olanla aynı paylaşım ekranını açar.
@@ -141,11 +152,11 @@ Parkur paneli aşağıdaki sekmeleri içerir:
 - Parkur — şu anda uygulanmadı.
 - Noktalar — türlerine göre gruplandırılmış yol noktaları ve rota noktalarını gösterir.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
+![Haritayı yapılandır menüsü Parkurlar](@site/static/img/web/configure_map_track_new.png) ![Haritayı yapılandır menüsü Parkurlar](@site/static/img/web/configure_map_track_2_new.png)
 
-### Taşıma durakları {#transport-stops}
+### Ulaşım durakları {#transport-stops}
 
-**Taşıma durakları** seçeneği, toplu taşıma duraklarını doğrudan haritada görüntülemenize olanak tanır. Etkinleştirildiğinde, durak işaretçileri harita genelinde görünür ve toplu taşıma rotalarının durduğu konumları temsil eder. Bir taşıma durağını seçmek, o durak hakkında bilgi ve duraktan geçen taşıma rotaları içeren bir bağlam panelini açar. Durak paneli birkaç bölüm içerir.
+**Ulaşım durakları** seçeneği, toplu taşıma duraklarını doğrudan haritada görüntülemenize olanak tanır. Etkinleştirildiğinde, durak işaretçileri harita genelinde görünür ve toplu taşıma rotalarının durduğu konumları temsil eder. Bir taşıma durağını seçmek, o durak hakkında bilgi ve duraktan geçen taşıma rotaları içeren bir bağlam panelini açar. Durak paneli birkaç bölüm içerir.
 
 **1. Durak bilgisi**
 
@@ -169,7 +180,7 @@ Taşıma türü filtresi, listede gösterilen rotaları filtrelemenize olanak ta
 
 Yakındaki rotalar bölümü, seçilen durağa yakın konumdaki ek rotaları görüntüleyebilir. Bu, çevredeki alanda alternatif taşıma seçeneklerini hızlıca keşfetmenize yardımcı olur.
 
-![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
+![Ulaşım durakları](@site/static/img/web/configure_map_transport_stops.png)
 
 ### Arazi {#terrain}
 
@@ -183,7 +194,18 @@ Bu bölümde şunları yapabilirsiniz:
   - **Yükseklik**
 - Seçilen arazi katmanının görünürlüğünü **%0'dan %100'e** ayarlayın.
 
-![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+![Haritayı yapılandır menüsü Arazi](@site/static/img/web/configure_map_terrain.png)
+
+### Harita türü {#map-type}
+
+Aşağıdakilerden birini seçmek için Haritayı Yapılandır menüsündeki harita türü öğesini seçin:
+
+- **Raster (karolar)** — varsayılan harita türü. Bu harita türünde yalnızca harita üzerinde gösterilen işaretçileri seçebilirsiniz, örneğin [Arama](web-search.md) sonuçları, [POI katmanı](#poi-overlay) işaretçileri, [favoriler](#favorites) ve [taşıma durakları](#transport-stops).
+- **OsmAnd vektör (beta)** — vektör harita. Bu harita türünde [nesneleri doğrudan harita üzerinde seçebilirsiniz](#selected-object).
+
+Seçilen harita türü kaydedilir ve haritayı bir sonraki açışınızda uygulanır. Haritayı Yapılandır başlığındaki **Varsayılana sıfırla** haritayı **Raster (karolar)** türüne geri döndürür.
+
+Vektör harita, WebGL destekleyen bir tarayıcı gerektirir. WebGL kullanılamıyorsa harita otomatik olarak **Raster (karolar)** türüne geçer.
 
 
 ## Ayarlar {#settings}
@@ -196,7 +218,7 @@ Arayüz dilini değiştirmek için:
 
 *Menü → ⚙ Ayarlar → Görüntü dili'ne gidin*
 
-![Web Language](@site/static/img/web/web_language.png)
+![Web dili](@site/static/img/web/web_language.png)
 
 ### Birimler {#units}
 
@@ -225,22 +247,22 @@ Haritada, rota ayrıntılarında ve ölçüm araçlarında mesafe, yükseklik ve
 
 Örneğin, 90 km/h hız, 25 m/s'ye veya yaklaşık 55.92 mph'ye karşılık gelir.
 
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
+![Web birimleri](@site/static/img/web/web_units_len.png) ![Web birimleri](@site/static/img/web/web_units_spe.png)
 
 
 <!--
-## Map style {#map-style}
+## Harita stili {#map-style}
 
-In this section of the menu, you can change the map style. You can read more about how to do this in the article [Vector Maps (Map Styles)](../map/vector-maps.md) for the OsmAnd app. The settings in the web version are no different.  
+Menünün bu bölümünde harita stilini değiştirebilirsiniz. Bunun nasıl yapılacağı hakkında daha fazla bilgiyi OsmAnd uygulaması için [Vektör Haritalar (Harita Stilleri)](../map/vector-maps.md) makalesinde okuyabilirsiniz. Web sürümündeki ayarlar farklı değildir.  
 **Some examples:**
 
 - Nautical map style
 
-![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
+![OsmAnd Web harita stili](@site/static/img/web/web_map_style_nautical.png)
 
 - Topo map style
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
+![OsmAnd Web favori ekleme](@site/static/img/web/web_map_style_topo.png)
 -->
 
 
@@ -254,19 +276,19 @@ Bu URL'ler, cihazınız tarafından desteklenen herhangi bir ortam kullanılarak
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+  ![OsmAnd Web parkur oluşturma](@site/static/img/plan-route/web_url_pin.png)
 
 2. **Haritada iğne bulunmayan URL:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+  ![OsmAnd Web parkur oluşturma](@site/static/img/plan-route/web_url_without.png)
 
 3. **Navigasyonlu URL:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+  ![OsmAnd Web parkur oluşturma](@site/static/img/plan-route/web_url_track.png)
 
 Belirtilen parametrelere bağlı olarak, URL dizeleri şunları içerebilir:
 
@@ -294,6 +316,10 @@ Belirtilen parametrelere bağlı olarak, URL dizeleri şunları içerebilir:
 10. **Rota Planla**&nbsp; - &nbsp;`osmand.net/map/plan`
 
 11. Mevcut [**Keşfet sayfasına**](https://osmand.net/docs/user/web/web-search#explore) doğrudan bağlantı&nbsp; - &nbsp;`osmand.net/map/search`
+
+12. **POI ayrıntıları**&nbsp; – &nbsp;`osmand.net/map/poi/`
+
+13. **POI verisi olmayan harita nesnesi** (örneğin bir bina)&nbsp; – &nbsp;`osmand.net/map/obj/`
 
 
 ## İlgili Makaleler {#related-articles}

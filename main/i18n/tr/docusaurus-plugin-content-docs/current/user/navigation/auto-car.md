@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -330,19 +330,26 @@ Bir ara nokta (sonraki durak) için [**Rota bilgisi**](#next-turn) öğesini etk
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="AA"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* ve OsmAnd, haritayı aydınlatma koşullarına uyacak şekilde ayarlama yeteneği sunar. *Gündüz harita modunda*, renk şeması parlak ve kontrastlı kalır, bu da parlak güneş ışığında bile okunmasını kolaylaştırır. *Gece modunda*, haritalar kararır, bu da sürücünün karanlıkta daha iyi gezinmesine yardımcı olur.  
 
-OsmAnd'ın [harita modu](../map/vector-maps.md#map-mode) seçenekleri vardır, ancak uygulamayı *Android Auto*'da kullandığınızda bu seçenekler göz ardı edilir. Bunun yerine, *Android Auto* sistem ayarlarında haritalar için seçtiğiniz mod kullanılır.
+*Android Auto*'daki OsmAnd'ın, cihazınızdaki OsmAnd uygulamasındaki [harita modu](../map/vector-maps.md#map-mode) seçeneklerinden ayrı, kendi harita modu ayarı vardır. Değiştirmek için *Android Auto (OsmAnd) → Ayarlar düğmesi → Harita modu* öğesine gidin, bir seçenek belirleyin ve *Uygula*'ya dokunun. Harita, *Uygula*'ya dokunduktan sonra seçilen moda geçer. *Uygula*'ya dokunmadan geri okuyla ekrandan çıkarsanız, önceki mod seçili kalır.
 
-- Harita görüntüsünü değiştirmeden tutmak için Gündüz modunu veya Gece modunu seçin.
-- Harita görüntüleme modunun günün saatine bağlı olarak değişmesini istiyorsanız, Otomatik modu seçin.  
+- Aracınızdan gelen sinyallerden bağımsız olarak harita görüntüsünü değiştirmeden tutmak için *Gündüz* veya *Gece* seçeneğini seçin.
+- Harita görüntüleme modunun aracınızdan gelen sinyallere göre otomatik olarak değişmesini istiyorsanız, *Otomatik* (varsayılan) seçeneğini seçin.  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Harita Büyüteci {#map-magnifier}
+
+![Android Auto Harita Büyüteci](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+*Harita büyüteci*, *Android Auto* ekranındaki haritanın büyütme oranını değiştirir. Değiştirmek için *Android Auto (OsmAnd) → Ayarlar düğmesi → Harita büyüteci* öğesine gidin, %50 ile %125 arasında bir değer seçin ve *Uygula*'ya dokunun. Geçerli değer, ayarlar listesinde *Harita büyüteci* altında gösterilir.  
+
+Büyütmenin harita görünümünü nasıl etkilediğini öğrenmek için [Harita büyüteci](../map/vector-maps.md#map-magnifier) bölümüne bakın.
 
 
 ### Bölünmüş Ekran {#split-screen}
@@ -355,9 +362,6 @@ OsmAnd uygulaması, araç multimedya sistemi ekranında müzik, mesaj veya diğe
 2. Ayarlar'a dokunun.
 3. Çoklu pencereyi bulun ve anahtarı seçin.
 4. Ana ekrana geri dönün.  
-
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 Android Auto ayarlarında, görev çubuğunun konumunu ve ana ekranın düzenini değiştirebilirsiniz:

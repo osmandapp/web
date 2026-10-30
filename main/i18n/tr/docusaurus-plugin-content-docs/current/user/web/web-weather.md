@@ -1,8 +1,8 @@
 ---
 source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
-sidebar_label:  Weather
-title: Weather on the Web
+sidebar_label:  Hava Durumu
+title: Web'de Hava Durumu
 ---
 
 import Tabs from '@theme/Tabs';

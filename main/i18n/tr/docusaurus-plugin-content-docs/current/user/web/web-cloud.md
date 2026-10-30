@@ -1,8 +1,8 @@
 ---
-source-hash: 6d86091f99fcc3a40ed293334c95361fd6142d9eab867812422962bbd0783539
+source-hash: 3d7c0440f81fe7d7c68aa8cdc03f7757d017ff3c9522e4e2e9666eb2f8516db1
 sidebar_position: 2
-sidebar_label:  Account
-title: OsmAnd Account
+sidebar_label:  Hesap
+title: OsmAnd Hesabı
 ---
 
 import Tabs from '@theme/Tabs';
@@ -32,11 +32,11 @@ OsmAnd Web özelliklerine erişmek için bir hesap oluşturmanız gerekir. Kayı
 - **Yeni hesap oluştur**'u seçin. Yeni hesap oluştur diyaloğu açılır.
 - **E-posta** alanına OsmAnd hesabınız için kullanmak istediğiniz e-posta adresini girin ve **Devam Et**'e tıklayın.
 - Bu e-posta adresine bir doğrulama kodu gönderilir. Gelen kutunuzu (gerekirse spam klasörünü) kontrol edin.
-- Sonraki diyaloğu açın, Doğrulama kodunu girin ve e-postanızı onaylamak için **Devam Et**'e tıklayın. Kodu almadıysanız, **Doğrulama kodu almadım** bağlantısını kullanın ve talimatları izleyin.
+- Sonraki diyaloğu açın, Doğrulama kodunu girin ve e-postanızı onaylamak için **Devam Et**'e tıklayın. Kodu almadıysanız, **Doğrulama kodunu almadım** bağlantısını kullanın ve talimatları izleyin.
 
 Kod doğrulandıktan sonra web hesabınız oluşturulur ve otomatik olarak oturum açılır.
 
-![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
+![Web kaydı](@site/static/img/web/web_sign_up.png) ![Web kaydı](@site/static/img/web/web_ver_code.png)
 
 
 ### Giriş Yap {#login}
@@ -67,12 +67,12 @@ Tüm verilerinizin bir kopyasını kaydetmek istiyorsanız, **Tümünü indir**'
 
 Dışa aktarmayı başlatmak ve arşivi bilgisayarınıza kaydetmek için **Yedek İndir**'e tıklayın.
 
-![Web Account](@site/static/img/web/web_download_all.png)
+![Web hesabı](@site/static/img/web/web_download_all.png)
 
-### Ödemeler ve Satın Alımlar {#payments-and-purchases}
+### Ödemeler ve Satın Almalar {#payments-and-purchases}
 
 Bu bölüm, OsmAnd hesabınıza bağlı tüm ürünleri ve abonelikleri gösterir. Açmak için,  
-Şuraya gidin: *Genel Menü → Hesap → Ödemeler ve Satın Alımlar*
+Şuraya gidin: *Genel Menü → Hesap → Ödemeler ve Satın Almalar*
 
 Burada e-postanıza bağlı tüm satın alımların bir listesini görebilirsiniz:
 - Ücretsiz ve ücretli planlar (örneğin OsmAnd Start veya OsmAnd Pro).
@@ -91,19 +91,19 @@ Hesabınıza henüz bağlı satın alım yoksa, bu bölüm **Henüz satın alım
 
 Satın alımlarınızı farklı platformlarda kullanma hakkında daha fazla detay için [çapraz platform erişimi](../purchases/cross.md) hakkındaki yazıyı okuyun.
 
-![Web Account](@site/static/img/web/web_purchases.png)
+![Web hesabı](@site/static/img/web/web_purchases.png)
 
 ### Bulut Senkronizasyonu {#cloud-sync}
 
-Bulut Senkronizasyonu, [Web Harita Portalı](https://osmand.net/map/)'nda OsmAnd Cloud'a senkronize ettiğiniz verilere doğrudan erişmenizi sağlar. OsmAnd Start veya OsmAnd Pro hesabınızla oturum açtığınızda, web sitesi mobil uygulamanızdan daha önce senkronize ettiğiniz Favoriler, İzler ve yedek dosyaları gösterir. Bu, bulut içeriğinizi daha büyük bir ekranda görüntülemenin ve yedeklerinizi ihtiyaç duyduğunuzda indirmenin basit bir yoludur.
+Bulut Senkronizasyonu, [Web Harita Portalı](https://osmand.net/map/)'nda OsmAnd Cloud'a senkronize ettiğiniz verilere doğrudan erişmenizi sağlar. OsmAnd Start veya OsmAnd Pro hesabınızla oturum açtığınızda, web sitesi mobil uygulamanızdan daha önce senkronize ettiğiniz Favoriler, Parkurlar ve yedek dosyaları gösterir. Bu, bulut içeriğinizi daha büyük bir ekranda görüntülemenin ve yedeklerinizi ihtiyaç duyduğunuzda indirmenin basit bir yoludur.
 
 Bu öğeler web sitesinde oturum açtıktan hemen sonra menüde görünür hale gelir. Bu bilgileri güncellemek için mobil uygulamada [Şimdi Senkronize Et](https://osmand.net/docs/user/personal/osmand-cloud#last-sync) eylemini kullanarak verilerinizi cihazlarınızdan senkronize etmeniz gerekir.
 
 Bulut Senkronizasyonu kullanılabilirliği hesap türünüze bağlıdır:
 - [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – [Favorileri](../web/web-favorites.md) senkronize eder ve web'de gösterir.
-- OsmAnd Pro – [İzleri](../web/web-tracks.md), Favorileri ve [Yedekleri](#my-data) senkronize eder ve bulut verilerine tam web erişimini açar.
+- OsmAnd Pro – [Parkurları](../web/web-tracks.md), Favorileri ve [Yedekleri](#my-data) senkronize eder ve bulut verilerine tam web erişimini açar.
 
-![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+![Web parkuru](@site/static/img/web/web_track_start.png) ![Web parkuru](@site/static/img/web/web_track_pro.png)
 
 ### OsmAnd Cloud {#osmand-cloud}
 
@@ -113,7 +113,7 @@ Oturum açtığınızda, OsmAnd Cloud bölümü Menü → Ayarlar'da görünür 
 
 **Çöp Kutusu** seçeneği, OsmAnd Cloud'dan silinen dosyaları içerir. Liste de aya göre gruplandırılır ve her dosyanın ne zaman kaldırıldığını ve hangi cihazdan kaldırıldığını gösterir. Bir dosyanın yanındaki üç nokta menüsünü kullanarak bir kopyayı *İndir*', *Çöp kutusundan Geri Yükle* (dosyayı OsmAnd Cloud'a geri döndürerek verilerinize tekrar erişilebilir hale getirin) veya *Hemen Sil*'i seçerek kalıcı olarak kaldırabilirsiniz. Bu, kazara veri kaybını önlerken, bir dosyanın artık gerekmediğinden emin olduğunuzda bulut depolama alanını boşaltmanıza olanak tanır. Ayrıca, Çöp Kutusu panel başlığındaki Çöp Kutusu simgesine tıklayarak tüm silinen öğeleri bir kerede temizleyebilirsiniz. Bu, **Çöp kutusunu boşalt** diyaloğunu açar; burada silmeyi onaylayarak Çöp Kutusu'ndeki tüm dosyaları kalıcı olarak kaldırırsınız.
 
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+![Web bulutu](@site/static/img/web/web_changes.png) ![Web bulutu](@site/static/img/web/web_trash.png)
 
 ### Bağlı Uygulamalar {#connected-apps}
 
@@ -123,13 +123,13 @@ Garmin Connect entegrasyonu yalnızca [OsmAnd Pro](https://osmand.net/docs/user/
 
 Garmin Connect™ hesabınızı bağlamak için **Bağla**'ya tıklayın. Garmin yetkilendirme sayfasına yönlendirileceksiniz; burada oturum açmanız ve Garmin Connect™ verilerinize erişim izni vermeniz gerekir. Yetkilendirme sırasında, son 30 günden veri içe aktarmak için son etkinliklerin senkronizasyonunu etkinleştirebilirsiniz. 30 günden eski etkinlikler otomatik olarak içe aktarılamaz.
 
-Bağlantıdan sonra OsmAnd, [İzler bölümünde](./web-tracks.md) özel bir Garmin Connect klasörü oluşturur ve etkinlikleri otomatik olarak içe aktarmaya başlar. Garmin Connect™'te kaydedilen yeni etkinlikler, manuel içe aktarma olmadan bu klasöre eklenir. Klasör ayrıca [OsmAnd Cloud](../personal/osmand-cloud.md) etkinleştirildiğinde OsmAnd mobil uygulamalarıyla senkronize edilir.
+Bağlantıdan sonra OsmAnd, [Parkurlar bölümünde](./web-tracks.md) özel bir Garmin Connect klasörü oluşturur ve etkinlikleri otomatik olarak içe aktarmaya başlar. Garmin Connect™'te kaydedilen yeni etkinlikler, manuel içe aktarma olmadan bu klasöre eklenir. Klasör ayrıca [OsmAnd Cloud](../personal/osmand-cloud.md) etkinleştirildiğinde OsmAnd mobil uygulamalarıyla senkronize edilir.
 
-Garmin Connect menüsü iki bölüm içerir: **Verilerim** ve **Ayarlar**. Verilerim'de senkronize edilmiş etkinlik sayısını görüntüleyebilir, son alınan etkinliği açabilir veya **Garmin Connect™'te Görüntüle** düğmesini kullanarak Garmin Connect™ Etkinlikler sayfasını açabilirsiniz. Ayarlar'da, Etkinlikleri senkronize et seçeneğini kullanarak hangi etkinlik türlerinin senkronize edilmesi gerektiğini yapılandırabilirsiniz.
+Garmin Connect menüsü iki bölüm içerir: **Verilerim** ve **Ayarlar**. Verilerim'de senkronize edilmiş etkinlik sayısını görüntüleyebilir, son alınan etkinliği açabilir veya **Garmin Connect™ üzerinde görüntüle** düğmesini kullanarak Garmin Connect™ Etkinlikler sayfasını açabilirsiniz. Ayarlar'da, Etkinlikleri senkronize et seçeneğini kullanarak hangi etkinlik türlerinin senkronize edilmesi gerektiğini yapılandırabilirsiniz.
 
 Etkinlikler, Bisiklet, Yürüyüş ve Koşu, Su Sporları ve Kış ve Diğer Sporlar gibi kategorilere ayrılır. Bireysel etkinlik türleri etkinleştirilebilir veya devre dışı bırakılabilir. Varsayılan olarak, bağlantıdan sonra tüm desteklenen etkinlik türleri seçilir.
 
-Garmin Connect™ hesabınızın bağlantısını kesmek için *Ayarlar → Bağlantıyı kes* bölümüne gidin ve işlemi onaylayın. Önceden içe aktarılan izler Garmin Connect klasöründe kalır, ancak yeni etkinlikler artık senkronize edilmez.
+Garmin Connect™ hesabınızın bağlantısını kesmek için *Ayarlar → Bağlantıyı kes* bölümüne gidin ve işlemi onaylayın. Önceden içe aktarılan parkurlar Garmin Connect klasöründe kalır, ancak yeni etkinlikler artık senkronize edilmez.
 
 ![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
@@ -140,7 +140,7 @@ Garmin Connect™ hesabınızın bağlantısını kesmek için *Ayarlar → Bağ
 
 Parolanızı hatırlamıyorsanız, giriş diyaloğundaki **Parolam yok veya unuttum** bağlantısını kullanın. Bu, **Parolayı değiştir veya sıfırla** panelini açar. Hesabınızı oluşturmak için kullandığınız e-posta adresini girin ve **Devam Et**'e tıklayın. Bu e-postaya bir doğrulama kodu içeren bir mesaj gönderilir. Sonraki ekranda, doğrulama kodunu ve yeni parolanızı yazın, ardından onaylamak için **Devam Et**'i seçin. Kod kabul edildiğinde, parolanız güncellenir ve yeni kimlik bilgilerinizle OsmAnd Web'e giriş yapabilirsiniz.
 
-![Web Account](@site/static/img/web/web_password.png)
+![Web hesabı](@site/static/img/web/web_password.png)
 
 ### E-posta Adresini Değiştir {#change-email-address}
 
@@ -149,11 +149,11 @@ E-posta adresinizi güncellemek için,
 
 E-postayı değiştir diyaloğu görünür. Mevcut e-posta adresine bir doğrulama kodu gönderilir. Bu kodu **Eski E-postadan Gelen Kod** alanına girin, **Yeni E-posta**'da yeni adresi belirtin, ardından **İleri**'yi seçin. Güvenlik nedenleriyle, hesabınızın e-postasının güncellendiğini bildiren bir onay mesajı yeni e-posta adresinize gönderilir.
 
-![Web Account](@site/static/img/web/web_email_new.png)
+![Web hesabı](@site/static/img/web/web_email_new.png)
 
 ### Çıkış Yap ve Hesabı Sil {#logout-and-delete}
 
-![Web Account](@site/static/img/web/web_logout_new.png)
+![Web hesabı](@site/static/img/web/web_logout_new.png)
 
 OsmAnd Hesap paneli, mevcut web oturumunu sonlandırmak ve hesabı kalıcı olarak kaldırmak için kontroller içerir.
 
@@ -161,7 +161,7 @@ OsmAnd Hesap paneli, mevcut web oturumunu sonlandırmak ve hesabı kalıcı olar
 
 Hesabı silmek için, OsmAnd Hesap panelinin en altında **Hesabı sil**'i seçin. *“Bunu yapmak istediğinizden emin misiniz?”* mesajı ve tüm verilerin ve hesap detaylarının OsmAnd Cloud'dan kaldırılacağı, ikincil cihazların ücretli özelliklere erişimi kaybedeceği kısa bir açıklamayla bir onay diyaloğu görünür. Hesap e-posta adresine bir doğrulama kodu gönderilir. Kodu E-postadan Gelen Kod alanına girin ve işlemi tamamlamak için **BU HESABI SİL**'i seçin. Bu işlem kalıcıdır ve geri alınamaz.
 
-![Web Account](@site/static/img/web/web_delete.png)
+![Web hesabı](@site/static/img/web/web_delete.png)
 
 
 ## İlgili Makaleler {#related-articles}
@@ -169,4 +169,4 @@ Hesabı silmek için, OsmAnd Hesap panelinin en altında **Hesabı sil**'i seçi
 - [Giriş](./web-overview.md)
 - [Çapraz Platform Satın Alımlar](../purchases/cross.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
-- [İzler](./web-tracks.md)
+- [Parkurlar](./web-tracks.md)

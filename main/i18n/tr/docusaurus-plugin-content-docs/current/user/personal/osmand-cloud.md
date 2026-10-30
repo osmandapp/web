@@ -1,5 +1,5 @@
 ---
-source-hash: 692f1e00a3ae8527884d72ca4e21a03bde5fd78fa0527d6476762fc1c765766c
+source-hash: 7ab1b7c975524abc4cbcb3957975026e9c46aff353e0f442c1228dc360748218
 sidebar_position: 11
 title:  OsmAnd Cloud
 ---
@@ -19,11 +19,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-:::info Pro feature
+:::info Pro özelliği
 OsmAnd Cloud, [**OsmAnd Pro**](../purchases/index.md) ücretli bir özelliktir <ProFeature />.
 :::
 
-:::note cross-platform  
+:::note çapraz platform  
 OsmAnd Cloud bağımsız bir bulut depolama hizmetidir ve belirli bir Android, iOS veya web platformu sürümüne *bağlı değildir*.  
 :::  
 
@@ -59,7 +59,7 @@ OsmAnd, aşağıdaki adımlarla *([Android](../purchases/android.md) ← → [iO
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,register_opr_create_new_account"/> / <Translate android="true" ids="register_opr_have_account"/>*  
 
-![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_17.png)
+![OsmAnd Cloud girişi](@site/static/img/personal/osmand-cloud/cloud_1.png)  ![OsmAnd Cloud girişi](@site/static/img/personal/osmand-cloud/cloud_17.png)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ OsmAnd, aşağıdaki adımlarla *([Android](../purchases/android.md) ← → [iO
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/> → <Translate ios="true" ids="shared_string_get"/> / <Translate ios="true" ids="register_opr_have_account"/>*
 
-![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_first_screen_ios.png)  ![Login OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
+![OsmAnd Cloud girişi](@site/static/img/personal/osmand-cloud/cloud_first_screen_ios.png)  ![OsmAnd Cloud girişi](@site/static/img/personal/osmand-cloud/cloud_ios_2.png)
 
 </TabItem>
 
@@ -135,7 +135,7 @@ OsmAnd Start'a dahil olan özellikler:
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favourites"/>*
 
-![Favorites folder functions android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
+![Favoriler klasör işlevleri android](@site/static/img/personal/favorites_free_backup_purch_andr.png)
 
 </TabItem>
 
@@ -143,7 +143,7 @@ OsmAnd Start'a dahil olan özellikler:
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,my_favorites"/>*
 
-![Favorites actions ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
+![Favoriler eylemleri ios](@site/static/img/personal/favorites_free_backup_purch_ios.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ Zaten bir **OsmAnd Pro** aboneliğiniz veya **aktif bir OsmAnd Cloud hesabınız
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*  
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_16.png)
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_16.png)
 
 </TabItem>
 
@@ -179,7 +179,7 @@ Zaten bir **OsmAnd Pro** aboneliğiniz veya **aktif bir OsmAnd Cloud hesabınız
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_ios_8-1.png)  
 
 </TabItem>
 
@@ -222,7 +222,7 @@ Bu özelliği kullanmak için:
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,help_article_personal_storage_name,shared_string_trash"/>*
 
-![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)  
+![OsmAnd Cloud çöp kutusu](@site/static/img/personal/osmand-cloud/cloud_trash_1_andr.png)  ![OsmAnd Cloud çöp kutusu](@site/static/img/personal/osmand-cloud/cloud_trash_2_andr.png)  
 
 </TabItem>
 
@@ -230,7 +230,7 @@ Bu özelliği kullanmak için:
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_trash"/>*
 
-![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_ios.png) ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/trash_2_ios.png)
+![OsmAnd Cloud çöp kutusu](@site/static/img/personal/osmand-cloud/trash_ios.png) ![OsmAnd Cloud çöp kutusu](@site/static/img/personal/osmand-cloud/trash_2_ios.png)
 
 </TabItem>
 
@@ -241,13 +241,13 @@ Bu özelliği kullanmak için:
 - **Dosyaları görüntüle**. *Çöp Kutusu*, *Bulut Değişiklikleri* klasöründen daha önce silinen tüm dosyaları listeler. Tüm dosyalar, silindikleri tarih ve saat hakkında bilgi içerir. Aya göre gruplandırılır ve en son silinenlerden Çöp Kutusu'nda kalan en eski dosyalara doğru sıralanır.
 - **Çöp Kutusunu Boşalt**.  
 
-    ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
+    ![OsmAnd Cloud çöp kutusu](@site/static/img/personal/osmand-cloud/cloud_trash_3_andr.png)  
 
     Buluttan silinen tüm dosyalardan yer açmak için *Çöp Kutusunu Boşalt* özelliğini kullanabilirsiniz. Bu, Çöp Kutusu ekranının sağ üst köşesindeki *üç nokta menüsünden* erişilebilir. Dosyalar kalıcı olarak silinir ve geri yükleme imkanı yoktur.
 
 - **Ayrı dosyaları yönetme**.  
 
-    ![Trash OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)  
+    ![OsmAnd Cloud çöp kutusu](@site/static/img/personal/osmand-cloud/cloud_trash_4_andr.png)  
 
     - *<Translate ios="true" ids="restore_from_trash"/>*. Bu özellik ile dosyaları OsmAnd Cloud'a geri yükleyebilirsiniz. Dokunduktan sonra, seçilen dosya Çöp Kutusu'ndan *Değişiklikler* bölümündeki *Bulut* klasörüne taşınır.
     - *<Translate ios="true" ids="download_to_device"/>*. Bu özellik, bir dosyayı cihaza indirmenize olanak tanır. Aynı ada sahip seçilen dosya klasörde mevcutsa, *Dosya zaten var* iletişim kutusu görüntülenir ve burada bir eylem seçeneği belirleyebilirsiniz: *Değiştir* veya *İkisini de Sakla*.
@@ -262,7 +262,7 @@ Bu özelliği kullanmak için:
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/deletion_option_new.png)  
 
 </TabItem>
 
@@ -270,7 +270,7 @@ Bu özelliği kullanmak için:
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_ios_3-2.png)  
 
 </TabItem>
 
@@ -287,7 +287,7 @@ Bu bölüm, OsmAnd Cloud'unuzu düzenlemek ve yönetmek içindir.
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_3.png)
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_3.png)
 
 </TabItem>
 
@@ -295,7 +295,7 @@ Bu bölüm, OsmAnd Cloud'unuzu düzenlemek ve yönetmek içindir.
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_10.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_ios_10.png)  
 
 </TabItem>
 
@@ -305,7 +305,7 @@ Bu menüde, Cloud'a yüklenecek verileri ve klasörleri seçebilirsiniz:
 
 1. **Ayarlar**. Bu sekme, genel tercihler, belirli profiller, hızlı eylemler, POI'ler ve yol kaçınma ayarları gibi tüm ayarlarınızı içerir.
 
-2. **Yerlerim**. Bu sekme, favoriler, izler, OSM notları, işaretleyiciler ve diğer öğeler dahil olmak üzere [Yerlerim menüsündeki](../personal/myplaces) verileri listeler.
+2. **Yerlerim**. Bu sekme, favoriler, ekli medya (yalnızca Android), izler, OSM notları, işaretleyiciler ve diğer öğeler dahil olmak üzere [Yerlerim menüsündeki](../personal/myplaces) verileri listeler.
 
 3. **Kaynaklar**. Burada, favoriler, rota bilgileri, sesli komutlar ve ek öğeler gibi kaynakları yedeklemeyi seçebilirsiniz.
 
@@ -322,7 +322,7 @@ Belirli bir veri türü için yedeklemeyi devre dışı bırakmak, yalnızca sen
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_version_history"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_19-1.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_19-1.png)  
 
 </TabItem>
 
@@ -330,7 +330,7 @@ Belirli bir veri türü için yedeklemeyi devre dışı bırakmak, yalnızca sen
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,manage_storage"/>*
 
-![Backup data screen iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
+![Yedekleme verileri ekranı iOS](@site/static/img/personal/osmand-cloud/cloud_ios_13.png)  
 
 </TabItem>
 
@@ -346,7 +346,7 @@ Cloud'dan veri silmek, yedekleme durumunu veya cihazınızdaki yerel kopyaları 
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,auto_backup_title"/>*
 
-![Auto Backup Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
+![Otomatik yedekleme Android](@site/static/img/personal/osmand-cloud/auto_backup_android.png)
 
 Otomatik yedekleme, uygulama aktifken seçili OsmAnd verilerini düzenli aralıklarla Cloud'a otomatik olarak kaydeder. Bu, verilerinizi korumaya yardımcı olur ve aynı hesap kullanılarak cihazlar arasında senkronize kalmasını sağlar. Otomatik yedekleme ekranı, *Ayarlar*, *Yerlerim* ve *Kaynaklar* olmak üzere üç genişletilebilir bölüme ayrılmıştır.
 
@@ -361,7 +361,7 @@ Otomatik yedekleme davranışı:
 
 ### Hesap {#account}
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_9-1.png)
 
 Bu bölüm, hangi hesaplarınızın OsmAnd Cloud'a bağlı olduğu hakkında bilgi içerir ve bir çıkış düğmesi içerir. Verileri yedeklemek veya geri yüklemek için tekrar giriş yapmanız gerekecektir.
 
@@ -374,7 +374,7 @@ Bu bölüm, hangi hesaplarınızın OsmAnd Cloud'a bağlı olduğu hakkında bil
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
-![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_7.png)  
+![OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_8.png)   ![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_7.png)  
 
 </TabItem>
 
@@ -382,7 +382,7 @@ Bu bölüm, hangi hesaplarınızın OsmAnd Cloud'a bağlı olduğu hakkında bil
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_danger_zone"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_11.png)   ![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_12.png)
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_ios_11.png)   ![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_ios_12.png)
 
 </TabItem>
 
@@ -408,13 +408,13 @@ Ayarlar menüsünün **Tehlike bölgesi** bölümünde yapabileceğiniz eylemler
 
 <TabItem value="android" label="Android">
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_11.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_11.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_ios_9-1.png)  
 
 </TabItem>
 
@@ -437,7 +437,7 @@ Ayarlar menüsünün **Tehlike bölgesi** bölümünde yapabileceğiniz eylemler
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate android="true" ids="shared_string_cloud"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_2.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_2.png)  
 
 </TabItem>
 
@@ -445,7 +445,7 @@ Ayarlar menüsünün **Tehlike bölgesi** bölümünde yapabileceğiniz eylemler
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,download_tab_local"/> / <Translate ios="true" ids="shared_string_cloud"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_ios_6.png)  
 
 </TabItem>
 
@@ -466,7 +466,7 @@ Ayarlar menüsünün **Tehlike bölgesi** bölümünde yapabileceğiniz eylemler
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_13-2.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_13-2.png)  
 
 </TabItem>
 
@@ -474,7 +474,7 @@ Ayarlar menüsünün **Tehlike bölgesi** bölümünde yapabileceğiniz eylemler
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,cloud_recent_changes,cloud_conflicts"/>*
 
-![Changes OsmAnd Cloud](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)  
+![OsmAnd Cloud değişiklikleri](@site/static/img/personal/osmand-cloud/cloud_ios_7.png)  
 
 </TabItem>
 

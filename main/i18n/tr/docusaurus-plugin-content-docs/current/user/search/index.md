@@ -1,5 +1,5 @@
 ---
-source-hash: 892c634b7bf81dafb9296c6e2b65ee7f15f7bf8b1d0e766e4ed35dfd9df8901e
+source-hash: bf407399cdc5546133d08abd4e5c9fb3226abf61b6a07f922fcb5088bb047056
 sidebar_position: 5
 title: Arama
 ---
@@ -14,29 +14,28 @@ import Translate from '@site/src/components/Translate.js';
 
 ### Genel Bakış {#overview}
 
-**Arama**, OsmAnd'ın gerekli yerleri, nesneleri veya adresleri bulmanızı sağlayan önemli bir aracıdır. Mevcut arama seçenekleri, nesneleri bulmak için farklı yollar sunar. Hassas navigasyon için adrese göre arama, en yakın nesneleri bulmak için POI kategorilerine göre arama, önceki isteklere hızlı erişim için geçmişe göre arama ve hassas konum için koordinatlara göre arama kullanabilirsiniz.
+**Arama**, OsmAnd'ın gerekli yerleri, nesneleri veya adresleri bulmanızı sağlayan önemli bir aracıdır. Mevcut arama seçenekleri, nesneleri bulmak için farklı yollar sunar. Hassas navigasyon için adrese göre arama, en yakın nesneleri bulmak için POI kategorilerine göre arama, yakındaki popüler yerleri keşfetmek ve geçmişinizdeki yerlere geri dönmek için Keşfet sekmesi ve hassas konum için koordinatlara göre arama kullanabilirsiniz.
 
 
 ### [Tümünü Ara](./search-all.md) {#search-all}
 
-Bu makale, Arama aracının ana özelliklerini ve mevcut seçeneklerini açıklamaktadır.
+Arama aracı, tek bir arama alanına girilen adresleri, ilgi çekici noktaları, koordinatları ve yer adlarını bulur. Makale ayrıca arama sonuçlarının sıralanmasını, Çevrede Arama'yı ve Haritada Arama'yı da kapsar.
 
 
 ### [Adres Ara](./search-address.md) {#search-address}
 
-Arama aracı, hızlı seçim için önceden hazırlanmış verilerle adrese göre sıralı arama ve posta koduna göre arama gibi seçeneklere sahiptir. Bu seçenekler bu makalede açıklanmıştır.
+Adres araması, adresi tam olarak yazarak, şehir, sokak ve bina numarasını sırayla seçerek veya posta koduyla tam adresi bulmanıza yardımcı olur.
 
 
-### [Arama Geçmişi](./search-history.md) {#search-history}
+### [Keşfet Ara](./search-history.md) {#search-explore}
 
-Bu makale, sorgu geçmişinin arama yeteneklerini ayrıntılı olarak tartışmaktadır.
+Keşfet sekmesi, çevrenizdeki popüler yerleri keşfetmenize ve geçmişinizdeki yerlere geri dönmenize yardımcı olur. Android'de sekme iki bölümden oluşur. Yakındaki popüler yerler, konumunuzun yakınındaki tanınmış simge yapıları ve çekim noktalarını gösterir; Geçmiş ise önceki aramalarınızı ve navigasyon hedeflerinizi listeler. iOS'ta yalnızca arama geçmişi mevcuttur ve Geçmiş sekmesinde yer alır.
 
 
 ### [POI Ara](./search-poi.md) {#search-poi}
 
-Tüm POI kategorileri arasında arama ve özel bir POI araması ayarlama bu makalede açıklanmıştır.
-
+POI araması, ilgi çekici noktaları kategori, ad veya markaya göre bulur. Özel POI filtreleri, birkaç kategoriyi birleştirmenize ve daha sonra kullanmak üzere kaydetmenize olanak tanır.
 
 ### [Koordinat Ara](./search-coordinates.md) {#search-coordinates}
 
-Bu makalede, koordinatları kullanarak doğru konumları nasıl arayacağınızı öğreneceksiniz.
+Koordinat araması, coğrafi koordinatlarından tam bir konumu bulur.

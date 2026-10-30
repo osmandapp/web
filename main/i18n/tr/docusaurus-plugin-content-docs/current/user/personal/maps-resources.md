@@ -1,5 +1,5 @@
 ---
-source-hash: 17817a3f651e3b34393776bafc4204800fabe283e95e82b1ad0a4d5d78b7663d
+source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
 sidebar_position: 2
 title: Haritalar ve Kaynaklar
 ---
@@ -66,7 +66,7 @@ Haritaları OsmAnd uygulamasına indirmek, navigasyonun işlevselliğini ve veri
 ### Ücretsiz Harita İçeriği {#free-map-content}
 
 - **Standart harita**. [OpenStreetMap](https://www.openstreetmap.org/) kaynağına dayalı olarak alanın genel bir görünümünü sağlar ve bir harita, rotalar, adresler, POI ve toplu taşıma bilgilerini içerir. Dokunulduğunda, seçilen ülkenin bölgelerinin bir listesini ve bu haritaların cihazınızda ne kadar yer kaplayacağına dair bilgileri içeren bir ekran açılır.  
-- **Yalnızca yollar**. Harita, yalnızca rotalara ve yol altyapısına odaklanmak için yol ağı bilgilerini içerir. Binalar ve ilgi çekici noktalar gibi ayrıntıları kaldırarak standart bir haritadan daha küçüktür. Dokunulduğunda, seçilen ülkedeki bölgelerin bir listesini ve bu haritaların cihazınızda ne kadar yer kaplayacağına dair bilgileri içeren bir ekran açılır.
+- **Yalnızca yollar**. Standart haritaya göre daha küçük, rotalara ve yol altyapısına odaklanan bir alternatiftir. Sokak adlarıyla birlikte yol ağını ve su, orman ve park gibi daha geniş alanları içerir; binalar ve ilgi çekici noktalar gibi ayrıntılar ise dahil edilmez. Dokunulduğunda, seçilen ülkedeki bölgelerin bir listesini ve bu haritaların cihazınızda ne kadar yer kaplayacağına dair bilgileri içeren bir ekran açılır.
 - **Dünya genel bakış haritası**. OsmAnd'ın 3.8'e kadar olan sürümleri, gezegensel ölçekte görüntüleyebilmeniz için bir dünya haritası indirmeyi teklif eder. OsmAnd'ın daha yeni sürümlerinde, hafif bir *Mini Dünya Haritası* uygulamayla birlikte gelir. Uygulama, daha ayrıntılı bilgi içeren daha büyük bir genel bakış dünya haritası indirmenize olanak tanır. 
 
 :::info aylık harita güncellemeleri
@@ -142,7 +142,7 @@ Aktif bir abonelik olmadan, bu harita türleri İndir yerine bir *Satın Al* dü
 
 Harita İndir menüsünde, uygulamanın işlevselliğini tamamlayan çeşitli dünya haritalarını indirmeye erişim sağlayan bir **Dünya Haritaları** bölümü bulunmaktadır.  
 
-- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Yalnızca Android*). Bu dosya, ortalama deniz seviyesinin üzerindeki rakımı sağlamayan cihazlarda rakım doğruluğunu iyileştirmek için kullanılan rakım düzeltmelerini içerir; bu, konum kaynağı olarak Google Play Hizmetleri yerine Android API kullanıldığında da geçerlidir.
+- **<Translate android="true" ids="index_item_world_altitude_correction"/>** (*Yalnızca Android*). Bu dosya, ortalama deniz seviyesinin üzerindeki rakımı sağlamayan cihazlarda rakım doğruluğunu iyileştirmek için kullanılan rakım düzeltmelerini içerir; bu, [konum kaynağı](../personal/global-settings.md#location-source) olarak Google Play Hizmetleri yerine Android API kullanıldığında da geçerlidir.
 - **<Translate android="true" ids="index_item_world_basemap"/>**. Uzun vadeli rota planlaması ve gündelik keşifler için faydalı olan dünya yüzeyinin kapsamlı bir genel görünümünü sağlar.
 - **Dünya hava durumu haritası**. Hava durumu bilgileriyle bir harita indirmenize olanak tanır.
 
@@ -372,7 +372,7 @@ Tüm haritaları aynı anda güncellemek için *Tümünü güncelle* düğmesini
 
 ## Canlı Güncellemeler {#live-updates}
 
-:::info Pro feature
+:::info Pro özelliği
 Canlı güncellemeler bir [**OsmAnd Pro**](../purchases/index.md) ücretli özelliktir <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -398,10 +398,6 @@ Canlı güncellemeler bir [**OsmAnd Pro**](../purchases/index.md) ücretli özel
 **Canlı Güncellemeler**, [abonelik](../purchases/index.md) aracılığıyla sık, artımlı harita güncellemeleri sağlar veya [OSM katkıda bulunanlar](#free-for-osm-mappers) için ücretsizdir. Güncellemeler OsmAnd sunucularında her 15 dakikada bir gerçekleşir ve saatlik, günlük veya haftalık olarak indirilebilir. Bu güncellemeler minimum depolama alanı tüketir - ayda tam harita boyutunun yaklaşık %2-4'ü.
 
 Canlı Güncellemeler, indirilen haritanın üzerine uygulanır ve tam harita dosyasının yerini almaz. Sonuç olarak, Yerel sekmesinde bir harita için gösterilen tarih Canlı Güncellemeleri yansıtmaz ve uygulandıktan sonra değişmeden kalabilir. Haritanın tam sürümünün daha yeni bir sürümünü indirmek için [Güncellemeler Menüsü](#updates-menu) bölümündeki Haritayı güncelle veya Tümünü güncelle seçeneğini kullanın.
-
-<!--
-Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
--->
 
 Temel özellikler:
 
@@ -438,13 +434,13 @@ Silinen veya değiştirilen rota referansları hala yanlış görünebilir.
 
 <TabItem value="android" label="Android">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers.png)
+![Haritacılar için OsmAnd live](@site/static/img/personal/maps/map_updates_mappers.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OsmAnd live for mappers](@site/static/img/personal/maps/map_updates_mappers_ios.png)
+![Haritacılar için OsmAnd live](@site/static/img/personal/maps/map_updates_mappers_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 775bf966f48a4b8cd9f307c8eaf529edb3d58a0239efed54d53cad90c3c1bca4
+source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
 sidebar_label: Favoriler
 title: Favoriler
@@ -24,13 +24,13 @@ Favoriler, Web Planlayıcı'da harita üzerinde önemli yerleri doğrudan kaydet
 
 ## Favorileri Yönet {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
+![OsmAnd Web bulut favorileri düzenleme](@site/static/img/web/favorites_1_new.png)
 
 [**OsmAnd Pro**](../personal/osmand-cloud.md#login) veya [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start) hesabına giriş yaptıktan sonra, Web Planlayıcı'daki Favorileriniz klasörlere organize edilir. Her klasör, kaydedilen yerleri gruplar ve Favoriler menüsünden kullanılabilir bir dizi eylem sağlar. 
 Aşağıdaki eylemler kullanılabilir:
 
 - *Haritada göster* - seçilen klasördeki favori noktaları haritada göster.
-- *Klasörü sabitle* - bir klasörü Favoriler listesinin üst kısmına hızlı erişim için sabitleyin. Sabitlenmiş klasörler diğer klasörlerden ayrılır. Bir klasörü üst bölümden kaldırmak için *Klasörü sabitlenmeyi kaldır* seçin. Kişisel klasör varsayılan olarak sabitlenmiştir.
+- *Klasörü sabitle* - bir klasörü Favoriler listesinin üst kısmına hızlı erişim için sabitleyin. Sabitlenmiş klasörler diğer klasörlerden ayrılır. Bir klasörü üst bölümden kaldırmak için *Klasörü sabit kaldırmayı bırak* seçin. Kişisel klasör varsayılan olarak sabitlenmiştir.
 - *Yeniden adlandır* - favori klasörünün adı ve açıklaması.
 - *Paylaş* - paylaşım seçeneklerini açar. Bu klasöre kimin erişebileceğini seçebilirsiniz.
 - *İndir* - seçilen favori klasörünü indir.
@@ -38,15 +38,15 @@ Aşağıdaki eylemler kullanılabilir:
 
 Bir favoriler klasörü seçtiğinizde, harita otomatik olarak ortalanır ve yakınlaştırma düzeyini ayarlayarak o klasördeki tüm favori noktaları görünür harita alanında gösterir.
 
-Ayrıca, seçilen klasörü incelemeyi kolaylaştırmak için diğer tüm favorileri ve izleri haritada gizlemek üzere **Odak** düğmesini kullanabilirsiniz. Odak modunu kapatmak, diğer harita nesnelerinin görünürlüğünü geri yükler.
+Ayrıca, seçilen klasörü incelemeyi kolaylaştırmak için diğer tüm favorileri ve parkurları haritada gizlemek üzere **Odak** düğmesini kullanabilirsiniz. Odak modunu kapatmak, diğer harita nesnelerinin görünürlüğünü geri yükler.
 
 ### Paylaş {#share}
 
 **Paylaş** seçeneğini belirlemek, paylaşım ekranını açar; burada bir Favoriler klasörüne erişim yapılandırılabilir. Aşağıdaki erişim modlarından biri seçilebilir:
 - *Özel*. Yalnızca siz klasörü görüntüleyebilirsiniz. Özel'e geçiş, daha önce onaylanmış tüm kullanıcıların erişimini iptal eder. Değişiklik uygulanmadan önce bir onay iletişim kutusu gösterilir.
-- *Sadece istek*. Linke sahip herkes erişim isteyebilir. İstekler Bekleyen listesinde görünür; burada onaylanabilir, reddedilebilir veya engellenebilir.
+- *Sadece Talep Üzerine*. Linke sahip herkes erişim isteyebilir. İstekler Bekleyen listesinde görünür; burada onaylanabilir, reddedilebilir veya engellenebilir.
 - *Herkes*. Linke sahip herkes, onay olmadan hemen klasörü görüntüleyebilir.  
-Seçilen erişim moduna bağlı olarak, **Linki kopyala** düğmesi kullanılabilir hale gelir. Link, görüntüleme veya erişim isteği için paylaşılabilir.
+Seçilen erişim moduna bağlı olarak, **Bağlantıyı kopyala** düğmesi kullanılabilir hale gelir. Link, görüntüleme veya erişim isteği için paylaşılabilir.
 
 Paylaşım ekranı üç kullanıcı listesi içerir:
 - Onaylanmış — klasöre şu anda erişimi olan kullanıcılar.
@@ -58,7 +58,7 @@ Erişim yapılandırması sırasında aşağıdaki iletişim kutuları görüneb
 - *Erişimi değiştir*. Klasörü Özel'e geçirirken görüntülenir. İletişim kutusu, değişikliği onaylamadan önce tüm mevcut kullanıcı erişiminin iptal edileceğini uyarır.
 - *Erişim istekleri*. Bekleyen listesinde kullanıcıları yönetirken görüntülenir; erişim isteklerinin onaylanmasına veya reddedilmesine olanak tanır.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
+![OsmAnd Web bulut favorileri düzenleme](@site/static/img/web/favorites_share.png) ![OsmAnd Web bulut favorileri düzenleme](@site/static/img/web/favorites_share_2.png)
 
 
 ## Favori Detayları {#favorites-details} 
@@ -67,12 +67,12 @@ Bir favoriyi seçmek, **Detaylar** panelini açar. Bu panel, harita üzerinde bi
 
 Detaylar görünümü, seçilen yerle ilişkili bilgileri sağlar ve o belirli favori için mevcut verilere bağlıdır. En azından haritadaki konumu ve coğrafi koordinatlarını içerir. OpenStreetMap nesnelerine veya zenginleştirilmiş kaynaklara bağlı yerler için, ek meta veriler gösterilebilir; örneğin isimler, kategoriler, tanımlayıcılar veya referans bağlantıları (örneğin, Wikipedia veya Wikidata bağlantıları). 
 
-![Web Favorites Details](@site/static/img/web/favorites_details.png)
+![Web favori ayrıntıları](@site/static/img/web/favorites_details.png)
 
 
 ## Favori Eylemleri {#favorites-actions}
 
-[Yeni bir favori noktası eklemek](../personal/favorites.md#manage-favorites) için ekrana sağ tıklayın. 
+[Yeni bir favori noktası eklemek](../personal/favorites.md#manage-favorites) için ekrana sağ tıklayın. Favori kaydedilemezse, hata mesajı sunucunun bildirdiği nedeni içerir, örneğin [OsmAnd Cloud](../personal/osmand-cloud.md)'da yeterli alan olmaması. 
 
 Mevcut bir favoriyi düzenlemek için, favori noktasına harita üzerinde doğrudan tıklayın veya bir favoriler klasöründen seçin. Bu, Detaylar panelini açar; burada Düzenle eylemi kullanılabilir. Düzenleme ayrıca Favoriler listesindeki favorinin yanındaki üç nokta menüsünden (⋮) başlatılabilir.
 
@@ -96,7 +96,7 @@ Yeni klasörler doğrudan klasör seçim panelinden oluşturulabilir. Klasör ek
 
 İletişim kutusu ayrıca Gelişmiş bölümünü içerir; burada klasör için varsayılan görünüm ayarları yapılandırılabilir. Bu ayarlar, bu klasöre eklenen favori noktalarına otomatik olarak uygulanacak varsayılan rengi, simgeyi ve şekli içerir.
 
-![Web Edit Folder](@site/static/img/web/edit_folder.png)
+![Web klasör düzenleme](@site/static/img/web/edit_folder.png)
 
 ### Görünüm {#appearance}
 
@@ -120,7 +120,7 @@ Yeni klasörler doğrudan klasör seçim panelinden oluşturulabilir. Klasör ek
 
 Görünüm önizlemesi, simge, renk veya şekil değiştirildiğinde hem düzenleme panelinde hem de harita üzerinde hemen güncellenir.
 
-![Web Edit Appearance](@site/static/img/web/edit_icon.png)
+![Web görünüm düzenleme](@site/static/img/web/edit_icon.png)
 
 ### Diğer Eylemler {#other-actions}
 

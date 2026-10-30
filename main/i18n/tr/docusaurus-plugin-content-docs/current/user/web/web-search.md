@@ -1,5 +1,5 @@
 ---
-source-hash: cd5ee4063d6f696a2707a1c3427de7ad82005454c2015da463bd27c2e760db67
+source-hash: 67e24e2d76639e1ba3e1dbe3fc8cff417ee3ff06770c41d09f400cac219c9cdf
 sidebar_position: 10
 sidebar_label:  Arama
 title: Web Sitesinde Arama
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Kategoriler Bölümü](#categories). İÇN aramalarını kolaylaştırmak için kategorize edilmiş seçeneklere göz atın.  
 - [Keşfet Bölümü](#explore). Mevcut harita merkezi için popüler İÇN'leri görüntüleyin ve harita üzerinde fotoğraflarla yerleri keşfedin.
 
-![Search menu](@site/static/img/web/search.png)
+![Arama menüsü](@site/static/img/web/search.png)
 
 ## Arama Seçenekleri {#search-options}
 
@@ -32,15 +32,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 **Arama Çubuğu**nu, belirli yerleri, ilgi çekici noktaları, [favorileri](../web/web-favorites.md) ve [rotaları](../web/web-tracks.md) adıyla bulmak için kullanın. Arama simgesine tıklayın, sorgunuzu girin ve listeden bir sonuç seçin. Bir İÇN seçmek [İÇN Bağlam Menüsünü](#poi-context-menu) açar; favori veya rota seçmek ise ayrıntıları açar, burada bilgileri görüntüleyebilir ve hızlı eylemleri kullanabilirsiniz.
 
-Bir kategori adına göre arama yaparsanız, ilk sonuç ilgili İÇN kategorisini gösterebilir. Kategoriye tıklayarak [Kategoriler araması](#categories) görünümünü açın.
+Ayrıca tek bir sorguda birkaç parçayı birleştirebilirsiniz. O yerdeki eşleşen İÇN'leri bulmak için bir kategori veya markayı yer adıyla birlikte girin, örneğin `Hotel Berlin` veya `Billa Bratislava`. Her ikisine de uyan yerleri bulmak için iki kategori ya da bir kategori ve bir özellik girin, örneğin `Fuel Diesel` veya `Cafe Vegan`.
 
-![Search Options](@site/static/img/web/search_bar.png)
+Bir kategori adına göre arama yaparsanız, ilk sonuç ilgili İÇN kategorisini gösterebilir. Kategori adları farklı dillerde girilebilir, örneğin `bank` veya `банк`. Kategoriye tıklayarak [Kategoriler araması](#categories) görünümünü açın.
+
+![Arama seçenekleri](@site/static/img/web/search_bar.png)
 
 ### Kategoriler {#categories}
 
 **Kategoriler**i, İÇN'leri türe göre taramak ve harita üzerinde görüntülemek için kullanın. Menü, hızlı erişim için altı popüler kategori gösterir. Daha fazla seçeneğe ihtiyacınız varsa, Tamamını göster'e tıklayarak 18 mevcut kategorinin tam listesini açın. Bir kategori seçmek, eşleşen İÇN'leri haritada görüntüler; bir İÇN seçmek [İÇN Bağlam Menüsünü](#poi-context-menu) açar.
 
-![Search Options](@site/static/img/web/search_categories.png)
+![Arama seçenekleri](@site/static/img/web/search_categories.png)
 
 ### Keşfet {#explore}
 
@@ -48,11 +50,13 @@ Bir kategori adına göre arama yaparsanız, ilk sonuç ilgili İÇN kategorisin
 
 Keşfet'e erişmek için Arama sekmesini açın — Keşfet sonuçları haritada otomatik olarak görüntülenir. Tam Keşfet kategoriler listesini açmak için Tamamını göster'i kullanın. Listede ve haritada neyin görüneceğini daraltmak için Filtre'yi kullanın; bu, Keşfet kategoriler menüsünü açar. Listeden veya haritadan bir İÇN seçmek [İÇN Bağlam Menüsünü](#poi-context-menu) açar.
 
-![Search Options](@site/static/img/web/search_explore.png) ![Search Options](@site/static/img/web/explore_filters.png)
+![Arama seçenekleri](@site/static/img/web/search_explore.png) ![Arama seçenekleri](@site/static/img/web/explore_filters.png)
 
 ## İÇN Bağlam Menüsü {#poi-context-menu}
 
 Hangi arama seçeneğini kullanırsanız kullanın (Arama Çubuğu, Kategoriler veya Keşfet), haritada veya sonuç listesinde bir İÇN seçmek İÇN Bağlam Menüsünü açar. Bağlam menüsü, İÇN bilgilerini görüntülemek ve yaygın eylemleri gerçekleştirmek için ana yerdir. İÇN ayrıntılarını (konum ve ilgili veriler gibi) hızlı eylemlerle (örneğin, kaydetme, paylaşma veya navigasyon başlatma) birleştirir.
+
+Sonuç listesine dönmek için *Geri*'ye tıklayın. Menüyü kapatmak için *Kapat*'a tıklayın veya Esc tuşuna basın. Menüyü kapatmak aramayı temizler, bu nedenle Arama bir sonraki açışınızda önceki sonuçlar olmadan açılır. Harita mevcut konumunda kalır.
 
 ### İÇN Ayrıntıları {#poi-details}
 
@@ -67,7 +71,7 @@ Hangi arama seçeneğini kullanırsanız kullanın (Arama Çubuğu, Kategoriler 
 - **OSM Kimliği** — İÇN'nin OpenStreetMap tanımlayıcısı.
 - **Koordinatlar** — Koordinatları kopyalamak için seçin.
 
-![POI Context Menu](@site/static/img/web/poi_context_menu_new.png)
+![İÇN Bağlam Menüsü](@site/static/img/web/poi_context_menu_new.png)
 
 ### İÇN Eylemleri {#poi-actions}
 
@@ -87,7 +91,7 @@ Fotoğraf ayrıntıları şunları içerir:
 - **Lisans Bilgileri**. Fotoğrafın kullanım hakları hakkında ayrıntılar.  
 - **Açıklama**. Fotoğraf hakkında ek bilgi.
 
-![Photo Gallery](@site/static/img/web/poi_photo.png)
+![Fotoğraf galerisi](@site/static/img/web/poi_photo.png)
 
 
 ## İlgili Makaleler {#related-articles}

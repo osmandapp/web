@@ -1,7 +1,7 @@
 ---
-source-hash: b0e4660605b0cdfdfcfc653e1f8929974cb654b66c0c55fbc588b89e37d05091
+source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
 sidebar_position: 3
-title:  Arama Geçmişi
+title:  Keşfet Ara
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -11,19 +11,42 @@ import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
 import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
-
+import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-*Arama Geçmişi*, uygulama içinde belirli bir süre boyunca girdiğiniz veya aradığınız tüm aramaların ve konumların bir kaydıdır. Bu araç, daha önce aranan konumlara kolayca erişmenizi ve bunları bulmanızı sağlayarak navigasyonu kolaylaştırır ve zamandan tasarruf etmenizi sağlar.
+<Tabs groupId="operating-systems" queryString="current-os">
 
-OsmAnd, arama geçmişinizi görüntülemek için çeşitli yollar sunar.
+<TabItem value="android" label="Android">
+
+Arama aracındaki **Keşfet** sekmesi, çevrenizdeki popüler yerleri keşfetmenize ve daha önce aradığınız veya gezindiğiniz yerlere hızlıca geri dönmenize yardımcı olur. İki bölüm içerir: [Yakındaki Popüler Yerler](#popular-places-nearby) ve [Geçmiş](#history-items).
+
+*Geçmiş*, uygulama içinde belirli bir süre boyunca girdiğiniz veya aradığınız tüm aramaların ve navigasyon hedeflerinin bir kaydıdır. Bu araç, daha önce aranan konumlara kolayca erişmenizi ve bunları bulmanızı sağlayarak navigasyonu kolaylaştırır ve zamandan tasarruf etmenizi sağlar.
+
+OsmAnd, geçmişinizi görüntülemek için çeşitli yollar sunar.
 
 - [Arama düğmesi](../widgets/map-buttons.md#search) her zaman haritada görüntülenir ve üzerine dokunmak sizi aracın [genel ekranına](#how-to-use) götürür.
-- Ana Android *Menü → Ara → Geçmiş sekmesine* gidin.
+- Ana *Menü → Ara → Keşfet sekmesine* gidin.
 - Bir rota başlatmaya hazırlanırken *Navigasyon → Hedef belirle → Arama alanı*'na dokunun.
 - [Rota hazırlama](../navigation/setup/route-navigation.md#navigation-menu) navigasyon menüsündeki bilgi bloğu, aynı zamanda arama geçmişinin bir parçası olan son hedef noktalarının bir listesini görüntüler.
-- Arama geçmişi [Android Auto](../navigation/auto-car.md#search) ve [CarPlay](../navigation/car-play.md#search) içinde mevcuttur.
+- Arama geçmişi [Android Auto](../navigation/auto-car.md#search) içinde mevcuttur.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+*Arama Geçmişi*, uygulama içinde belirli bir süre boyunca girdiğiniz veya aradığınız tüm aramaların ve konumların bir kaydıdır. Bu araç, daha önce aranan konumlara kolayca erişmenizi ve bunları bulmanızı sağlayarak navigasyonu kolaylaştırır ve zamandan tasarruf etmenizi sağlar.
+
+OsmAnd, arama geçmişinizi görüntülemek için çeşitli yollar sunar.  
+
+- [Arama düğmesi](../widgets/map-buttons.md#search) her zaman haritada görüntülenir. Aracın [genel ekranını](#how-to-use) açmak için üzerine dokunun, ardından *Geçmiş* sekmesini seçin.
+- Bir rota başlatmaya hazırlanırken *Navigasyon → Hedef belirle → Arama alanı*'na dokunun.
+- [Rota hazırlama](../navigation/setup/route-navigation.md#navigation-menu) navigasyon menüsündeki bilgi bloğu, aynı zamanda arama geçmişinin bir parçası olan son hedef noktalarının bir listesini görüntüler.
+- Arama geçmişi [CarPlay](../navigation/car-play.md#search) içinde mevcuttur.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Nasıl Kullanılır {#how-to-use}
@@ -32,7 +55,16 @@ OsmAnd, arama geçmişinizi görüntülemek için çeşitli yollar sunar.
 
 <TabItem value="android" label="Android">
 
-![Geçmiş araması](@site/static/img/search/history_search_android.png)
+![Keşfet araması](@site/static/img/search/explore_search_android.webp)
+
+**Keşfet** sekmesi, Arama aracını açtığınızda açılır. Keşfet sekmesi, çevrenizdeki yerler ve önceki eylemleriniz hakkında ilgili bilgileri sağlamaya hizmet eder.
+
+- *Yakındaki yerleri keşfetme*. [Yakındaki Popüler Yerler](#popular-places-nearby) bölümü, çevrenizdeki tanınmış simge yapıları ve çekim noktalarını gösterir, böylece sorgu girmeden ilginç yerler bulabilirsiniz.
+- *Yeniden arama*. Arama geçmişini, sorguyu yeniden girmek zorunda kalmadan daha önce aranan yerleri veya adresleri tekrar aramak için kullanabilirsiniz.
+- *Sık ziyaret edilen yerlere hızlı erişim*. Eviniz, işiniz veya favori yerleriniz gibi belirli yerleri sık sık ziyaret ediyorsanız, Arama Geçmişi bu yerleri kaydederek onlara hızlı erişim sağlar.
+- *Önceki seyahatleri takip etme*. Arama geçmişi, önceki seyahatleri ve rotaları takip etmek için faydalı olabilir. Daha önce gittiğiniz rotaları takip edebilir veya önceki rotalara dayanarak [bir sonraki rotanızı planlayabilirsiniz](../plan-route/create-route.md).
+- *Belirli bir zaman dilimindeki yerleri arama*. Geçmiş ekranında, *Son* olarak sıralanan öğeler döneme göre gruplanır: *Bugün*, *Dün*, *Geçen hafta* ve ardından aylara göre. Belirli bir öğeyi bulmak için ekranın üstündeki *Geçmiş* başlığına dokunun ve adını girin.
+- *Girdileri silme*. Arama Geçmişi, gizlilik için veya geçmişinizi düzenli tutmak için faydalı olabilecek önceki girdileri [silme](#delete) olanağı sağlar.
 
 </TabItem>
 
@@ -40,21 +72,28 @@ OsmAnd, arama geçmişinizi görüntülemek için çeşitli yollar sunar.
 
 ![Geçmiş araması](@site/static/img/search/history_search_ios.png)
 
+Arama geçmişi, önceki eylemleriniz hakkında ilgili bilgileri sağlamaya hizmet eder.
+
+- *Yeniden arama*. Arama geçmişini, sorguyu yeniden girmek zorunda kalmadan daha önce aranan yerleri veya adresleri tekrar aramak için kullanabilirsiniz.
+- *Sık ziyaret edilen yerlere hızlı erişim*. Eviniz, işiniz veya favori yerleriniz gibi belirli yerleri sık sık ziyaret ediyorsanız, Arama Geçmişi bu yerleri kaydederek onlara hızlı erişim sağlar.  
+- *Önceki seyahatleri takip etme*. Arama geçmişi, önceki seyahatleri ve rotaları takip etmek için faydalı olabilir. Daha önce gittiğiniz rotaları takip edebilir veya önceki rotalara dayanarak [bir sonraki rotanızı planlayabilirsiniz](../plan-route/create-route.md).  
+- *Belirli bir zaman dilimindeki yerleri arama*. Arama geçmişi listesi zaten aya göre bloklara ayrılmıştır.
+- *Girdileri silme*. Arama Geçmişi, gizlilik için veya geçmişinizi düzenli tutmak için faydalı olabilecek önceki girdileri [silme](#delete) olanağı sağlar.
+
 </TabItem>
 
 </Tabs>
 
-Arama geçmişi, önceki eylemleriniz hakkında ilgili bilgileri sağlamaya hizmet eder.
 
-- *Yeniden arama*. Arama geçmişini, sorguyu yeniden girmek zorunda kalmadan daha önce aranan yerleri veya adresleri tekrar aramak için kullanabilirsiniz.
+## Yakındaki Popüler Yerler {#popular-places-nearby}
 
-- *Sık ziyaret edilen yerlere hızlı erişim*. Eviniz, işiniz veya favori yerleriniz gibi belirli yerleri sık sık ziyaret ediyorsanız, Arama Geçmişi bu yerleri kaydederek onlara hızlı erişim sağlar.
+<InfoAndroidOnly/>
 
-- *Önceki seyahatleri takip etme*. Arama geçmişi, önceki seyahatleri ve rotaları takip etmek için faydalı olabilir. Daha önce gittiğiniz rotaları takip edebilir veya önceki rotalara dayanarak [bir sonraki rotanızı planlayabilirsiniz](../plan-route/create-route.md).
+![Yakındaki Popüler Yerler](@site/static/img/search/popular_places_nearby.webp)
 
-- *Belirli bir zaman dilimindeki yerleri arama*. Android uygulaması için uzun bir dokunuş kullanmanız, ardından seyahati yaptığınız ayı bulmanız, silme menüsünden çıkmanız ve arama alanına adı ayarlamanız gerekir. iOS uygulaması için arama geçmişi listesi zaten aya göre bloklara ayrılmıştır.
+**Yakındaki popüler yerler** bölümü, konumunuzun yakınındaki tanınmış simge yapıların ve çekim noktalarının kaydırılabilir bir listesini görüntüler. Her öğe yerin adını, kategorisini, mesafesini ve yönünü ve varsa bir önizleme görselini içerebilir. Tam listeyi açmak için *Tümünü göster*'e, bu yerleri haritada görüntülemek için *Haritada göster*'e dokunun.
 
-- *Girdileri silme*. Arama Geçmişi, gizlilik için veya geçmişinizi düzenli tutmak için faydalı olabilecek önceki girdileri [silme](#delete) olanağı sağlar.
+Daha fazla ayrıntı için [Popüler Yerler](../map/popular_places.md#explore-in-search) makalesine bakın.
 
 
 ## Geçmiş Öğeleri {#history-items}
@@ -63,7 +102,16 @@ Arama geçmişi, önceki eylemleriniz hakkında ilgili bilgileri sağlamaya hizm
 
 <TabItem value="android" label="Android">
 
-![Geçmiş araması](@site/static/img/search/history_search_android.png)
+![Geçmiş bölümü](@site/static/img/search/history_section_list.webp)
+
+Keşfet sekmesinin **Geçmiş** bölümü en son 25 öğeye kadarını görüntüler. Bölümü daraltmak veya genişletmek için bölüm başlığına dokunun. Tam *Geçmiş* ekranını açmak için *Tümünü görüntüle*'ye dokunun.
+
+*Arama geçmişi* ve *Navigasyon geçmişi* kapalıysa, bölüm *Geçmiş kapalı* kartını görüntüler. Bunları etkinleştirmek için *Geçmiş ayarlarını aç*'a dokunun.
+
+Geçmiş listesindeki her alan, uygulamada bulunan **bilgilerin** bir kısmını içerir.
+
+- Bulunan nesnenin türünü veya kategorisini tanımlayan bir simge.
+- Nesne adı, konumu, adresi veya tür sorgusu. İzler için mesafe, ara nokta sayısı ve zaman bilgileri görüntülenir.
 
 </TabItem>
 
@@ -71,36 +119,87 @@ Arama geçmişi, önceki eylemleriniz hakkında ilgili bilgileri sağlamaya hizm
 
 ![Geçmiş araması](@site/static/img/search/history_search_ios.png)
 
-</TabItem>
-
-</Tabs>
-
 Arama Geçmişi listesindeki her alan, uygulamada bulunan **bilgilerin** bir kısmını içerir.
 
 - Bulunan nesnenin türünü veya kategorisini tanımlayan bir simge.
 - Nesne adı, konumu, adresi veya tür sorgusu. İzler için mesafe, ara nokta sayısı ve zaman bilgileri görüntülenir.
 - Mevcut konumunuzdan noktaya olan mesafe ve pusula ile yön.
 
+</TabItem>
 
-### Öğelerin Sırası {#order-of-items}
+</Tabs>
+
+
+### Sırala ve Filtrele {#sort-and-filter}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Geçmiş bölümü](@site/static/img/search/history_section_android.webp) ![Geçmiş bölümü](@site/static/img/search/history_section_2_android.webp)
+
+Tam *Geçmiş* ekranında, geçmiş öğelerini aşağıdaki seçenekleri kullanarak sıralayabilir ve filtreleyebilirsiniz:
+
+1. **Sıralama ölçütü**:
+    - *Son* — en son eklenen öğeleri önce görüntüler. Bu seçenek seçildiğinde öğeler Bugün, Dün, Geçen hafta ve daha eski dönemler gibi zamana göre gruplanır.
+    - *En yakın* — öğeleri mevcut konumunuza olan mesafelerine göre sıralar.
+    - *Harita merkezine en yakın* — öğeleri haritanın mevcut merkezine olan mesafelerine göre sıralar. Mesafeye dayalı sıralama seçeneklerinden biri seçildiğinde zamana dayalı gruplar görüntülenmez.
+
+2. **Tür** — geçmiş öğelerini şuna göre filtreler:
+    - *Tümü* — mevcut tüm geçmiş öğelerini görüntüler.
+    - *Arama* — arama geçmişinizdeki öğeleri görüntüler.
+    - *Navigasyon* — navigasyon geçmişinizdeki öğeleri görüntüler.
+
+Geçmiş ayarlarında *Arama geçmişi* veya *Navigasyon geçmişi* kapalıysa, *Tür* filtresi kullanılamaz.
+
+3. **Kategori filtreleri** — geçmiş öğelerini kategoriye göre filtreler. Mevcut kategori filtreleri, Geçmişinizdeki öğe türlerine bağlıdır. Örneğin POI, İz, Konum, Favori veya Adres gibi kategoriler görebilirsiniz. Aynı anda birden fazla kategori seçebilirsiniz.
+
+4. **Ayarlar** — *Arama geçmişi*, *Navigasyon geçmişi* ve *Harita işaretleyicileri geçmişi*'ni etkinleştirebileceğiniz veya devre dışı bırakabileceğiniz, geçmişi dosya olarak yedekleyebileceğiniz veya tüm geçmişi temizleyebileceğiniz Geçmiş ayarlarını açmak için sağ üst köşedeki dişli simgesine dokunun.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 - **Son Öğeler**. En son istekler veya konumlar listenin en üstünde görüntülenir. Bu, yakın zamanda kullanılan öğelere hızlı erişim sağlar.
 - **Kronolojik sıra**. Arama Geçmişi listesindeki öğeler, en eski veya en erken girişlerden başlayarak en yeni veya en son girişlerle biten kronolojik sıraya göre düzenlenir. Yeni girişler eklendikçe eski öğeler listede yavaş yavaş aşağı doğru hareket eder, ancak arama geçmişindeki eski öğeler kullanılmışsa, listenin en üstüne taşınırlar.
-- iOS'ta liste aya göre sıralanır.
+- Liste aya göre sıralanır.
+
+</TabItem>
+
+</Tabs>
 
 ### Nesne Türü {#type-of-objects}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Arama Geçmişi listesine aşağıdaki **nesne türleri** girer:
+
+- **Konumlar**. Bu bir adres, işletme adı, rota numarası, koordinatlar, işaretleyiciler, ilgi çekici noktalar, OSM notları veya haritada dokunduğunuz yerler olabilir.
+- **İzler ve Ara Noktalar**. Liste, daha önceki rotalarda kullandığınız oluşturduğunuz, kaydettiğiniz veya indirdiğiniz izleri ve ayrı ayrı gezindiyseniz ara noktaları içerir.
+- **Favoriler ve Fotoğraflar**. Açtığınız favori noktalar ve fotoğraf notları.
+- **Hedefler**. Gezindiğiniz noktalar.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
 
 Arama Geçmişi listesine aşağıdaki **nesne türleri** girer:
 
 - **Konumlar**. Bu bir adres, işletme adı, rota numarası, koordinatlar, işaretleyiciler, ilgi çekici noktalar, OSM notları veya haritada dokunduğunuz yerler olabilir.
 - **İzler ve Ara Noktalar**. Liste, daha önceki rotalarda kullandığınız oluşturduğunuz, kaydettiğiniz veya indirdiğiniz izleri ve ayrı ayrı gezindiyseniz ara noktaları içerir.
 
+</TabItem>
+
+</Tabs>
+
 
 ## Eylemler {#actions}
 
-Arama Geçmişi aracında, gereksiz sorguları, hepsini bir kerede veya tek tek öğeleri [silebilirsiniz](#delete). Geçmişi [dışa aktarabilir](#export-and-share) ve [paylaşabilirsiniz](#share-android). Android uygulaması, arama öğelerini bir [GPX](../../technical/osmand-file-formats/osmand-gpx.md) dosyası olarak [paylaşmak](#share-android) için ek bir eylem sağlar.
+Arama Geçmişi aracında, gereksiz sorguları, hepsini bir kerede veya tek tek öğeleri [silebilirsiniz](#delete). Geçmişi [dışa aktarabilirsiniz](#export-and-share). Android uygulaması, arama öğelerini bir [GPX](../../technical/osmand-file-formats/osmand-gpx.md) dosyası olarak [paylaşmak](#share-android) için ek bir eylem sağlar.
 
-Tüm arama geçmişinin görüntülenmesini **devre dışı bırakabilir veya etkinleştirebilirsiniz**. Bu durumda, sorgular cihazdan silinmez. Android'de, anahtar aracın ana ekranındaki [Geçmiş sekmesinde](#overview) bulunur. iOS'ta ise *Menü → Ayarlar → OsmAnd Ayarları → Geçmiş → Arama Geçmişi*'nde bulunur.
+Tüm arama geçmişinin görüntülenmesini **devre dışı bırakabilir veya etkinleştirebilirsiniz**. Bu durumda, sorgular cihazdan silinmez. Android'de, anahtar [Sil](#delete) ekranının üst kısmında ve [Geçmiş](#sort-and-filter) ekranındaki dişli simgesiyle açabileceğiniz Geçmiş ayarlarında bulunur. iOS'ta ise *Menü → Ayarlar → OsmAnd Ayarları → Geçmiş → Arama Geçmişi*'nde bulunur.
 
 
 ### Sil {#delete}

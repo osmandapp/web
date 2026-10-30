@@ -1,5 +1,5 @@
 ---
-source-hash: e43fd440ddc72dab53b1e4b114522801c068e29ec28f5fda47945d051ce42371
+source-hash: 4f5964f36ea6b0dd1490891fdde35c556566e85e11c870554eef0d3b298f2317
 sidebar_position: 3
 title:  Web Satın Almaları
 ---
@@ -46,12 +46,12 @@ Aşağıda OsmAnd ürünlerinin ABD ve AB'deki fiyatları bulunmaktadır. Diğer
 :::
 
 
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
+|    | OsmAnd Ücretsiz   | **Maps+** Tek Seferlik | **Maps+** Abonelik | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** | <s>€450</s> **€299.00** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** | <s>$450</s> **$299.00** |
+| **Satın Alma Türü** | **Ücretsiz** | **Tek Seferlik Satın Alma** (Ömür Boyu) | **Abonelik** (12 Ay) | **Abonelik** (1 Ay / 12 Ay) |**Tek Seferlik Satın Alma** (15 Yıl Pro / Maps+ Ömür Boyu) |
+| **Fiyat (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** | <s>€450</s> **€299.00** |
+| **Fiyat (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** | <s>$450</s> **$299.00** |
 
 :::note 
 Aboneliği [web sitemiz](https://osmand.net/pricing) üzerinden indirimli fiyatla satın aldığınızda 2 yıllık indirimli bir plan elde edersiniz.  

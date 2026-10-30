@@ -1,5 +1,5 @@
 ---
-source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+source-hash: 2c0a6908a74d63cbb4449e258729df822d9ac3927942ad52a8271ce7c951c29c
 sidebar_position: 4
 title:  Sesli / Görüntülü Notlar
 ---
@@ -148,7 +148,7 @@ Haritada seçilen bir noktaya bağlı bir not oluşturmak için noktanın [Bağl
 Kaydı, Bağlam menüsü veya widget kaydı başlatmış olsun, <Translate android="true" ids="map_widget_av_notes"/> widget'ına dokunarak durdurmak mümkündür. *Bir fotoğraf notu* için kamera işlevselliği belirir ve bir fotoğraf çekebilir, sonucu görüntüleyebilir, kabul edip kaydedebilir veya yeni bir fotoğraf çekebilirsiniz.
 
 :::info note
-Otomatik olarak, tüm fotoğraf, ses ve video kayıtları şuraya kaydedilir: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> sekmesi.
+Otomatik olarak, tüm fotoğraf, ses ve video kayıtları şuraya kaydedilir: <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/> sekmesi. Her not ayrıca **media** klasöründe bir favori olarak da kaydedilir. Bkz. [Favori Olarak A/V Notları](#av-notes-as-favorites).
 :::
 
 
@@ -342,6 +342,14 @@ Tüm notları göstermek veya gizlemek için [Kayıt](../map/point-layers-on-map
 ![Haritada not yok](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Notlar haritada](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
+## Favori Olarak A/V Notları {#av-notes-as-favorites}
+
+Ses, video ve fotoğraf notları Sık Kullanılanlar ile ilişkilendirilir. Her notun, *Yerlerim → Sık Kullanılanlar* içindeki **media** klasöründe, notun konumuna yerleştirilmiş ve not türü ile oluşturulma zamanına göre adlandırılmış (örneğin *Fotoğraf 1 Eki 2026 09:45*) karşılık gelen bir favori noktası vardır. Not dosyası bu favoriye eklenir ve onun [Medya kartında](../personal/favorites.md#media) görünür. Notun kendisi de *A/V notları* sekmesinde kullanılabilir olmaya devam eder.
+
+- OsmAnd daha önceki bir sürümden 5.4 sürümüne güncellendiğinde, mevcut her not için otomatik olarak bir favori oluşturulur.
+- Widget veya harita bağlam menüsüyle kaydedilen yeni notlar **media** klasörüne otomatik olarak eklenir.
+
+
 ## Notlardan Oluşturulan Yol Noktaları {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -421,11 +429,7 @@ Bir ses/video/fotoğraf notundan bir yol noktası ile eklenen iz'in GPX dosyası
 
 ### Dosya Adı Ayrıntıları {#file-name-details}
 
-<Translate android="true" ids="audionotes_plugin_name"/> eklentisi, ses/video/fotoğraf dosyalarını aşağıdaki formatta oluşturur:
-
-    `{SHORTLINK_LOCATION}_Açıklama.{avi,mp3,jpg}`
-
-burada `SHORTLINK_LOCATION`, dosyanın bağlı olduğu konumun enlem ve boylamını belirtir. `SHORTLINK_LOCATION`, [Kısa bağlantı](https://wiki.openstreetmap.org/wiki/Shortlink) belirtimine göre kodlanmıştır.
+<Translate android="true" ids="audionotes_plugin_name"/> eklentisi, ses, video ve fotoğraf dosyalarını `Type_YYYY-MM-DD_HH-mm-ss_location.ext` kalıbıyla adlandırır, örneğin `Photo_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. `location` kısmı, notun enlem ve boylamını içerir ve [Kısa bağlantı](https://wiki.openstreetmap.org/wiki/Shortlink) belirtimine göre kodlanmıştır.
 
 
 ### JOSM'ye Aktar {#export-to-josm}

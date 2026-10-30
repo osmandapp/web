@@ -1,5 +1,5 @@
 ---
-source-hash: e0173be6fa81b710afb1b4b52c4268f63865918a50d504364df4f0d772bf2d39
+source-hash: a4ab003fa68f8ff7c393f79dced64ce22df0b72bda332626935257db71197cb1
 title: Ülke Poligonu Oluşturma
 versions: '*'
 ---
@@ -14,7 +14,7 @@ OsmAnd, birçok ülke için birçok harita ile birlikte gelir. Çoğu harita, [g
 Geofabrik.de, daha fazla sayıda kullanıcı veya müşterileri tarafından talep edilen ülkeler için harita sunma stratejisine sahiptir. Bu, Seyşeller veya Burundi gibi bazı egzotik ülkeler gibi bazı haritaların geofabrik'e asla ulaşmadığı anlamına gelir, çünkü yeterli talep yoktur (veya hiç yoktur).
 
 ## Sunucu süreci {#server-process}
-Geofabrik'in bu stratejik kararı nedeniyle, OsmAnd'ın bu ülkeler için harita oluşturma seçeneği vardır ve bunun için [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) ve [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) araçları kullanılır. OsmAndMapCreator için bu üç adımlı bir süreçtir:
+Geofabrik'in bu stratejik kararı nedeniyle, OsmAnd'ın bu ülkeler için harita oluşturma seçeneği vardır ve bunun için [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) ve [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) araçları kullanılır. OsmAndMapCreator için bu üç adımlı bir süreçtir:
 - OsmAndMapCreator, ülkenin dış sınırını çevreleyen bir poligona ihtiyaç duyar.
 - OsmAndMapCreator, bu ülkeyi içeren bir sonraki daha yüksek seviyeden "ham veri haritasına" ihtiyaç duyar. Burundi için bu, OsmAndMapCreator'ın Afrika haritasına ihtiyaç duyduğu anlamına gelir. Kuzey Ren-Vestfalya için bu, OsmAndMapCreator'ın Almanya haritasına ihtiyaç duyduğu anlamına gelir.
 - [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert), "üst" haritadan harita verilerini çıkararak poligon'dan bir "ham veri" haritası oluşturacaktır.

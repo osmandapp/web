@@ -1,5 +1,5 @@
 ---
-source-hash: 335134b8c3ae17bedf9242b26a204be890c56d7bc05e5fce7081d6f0c85a39d0
+source-hash: 128c6a3c0461bcc75584d56b095a0ae9e2c8bab17befa8ebaf8ed344af899b90
 sidebar_position: 2
 title:  iOS Satın Almaları
 ---
@@ -146,7 +146,7 @@ Listede, ABD ve Avrupa bölgesi için OsmAnd ürün fiyatları hakkında bilgile
 | [Rota çizgisini özelleştir](../navigation/guidance/map-during-navigation.md#route-line-appearance) | Navigasyon sırasında rota çizgisinin rengini ve genişliğini değiştirme. |
 | [Renk Şemasını Değiştir](../../user/plugins/topography.md#modify-color-scheme) | Harita görünümünü seçerek veya içe aktararak renk paletleri ile özelleştirmenizi sağlar. Yerleşik şemaları düzenleyebilir veya harita ve rota renklerini kişiselleştirmek için kendi palet dosyalarınızı kullanabilirsiniz. |
 | [Özel paletler oluşturma](../../user/map/tracks/appearance.md#color-palette-editor) | İlgili veya Sabit değerleri kullanarak iz renklendirmesi için gradyan paletleri oluşturmanıza ve düzenlemenize olanak tanır. Renk adımlarını tanımlayabilir, değerler atayabilir ve iz boyunca verilerin (hız veya yükseklik gibi) nasıl görüntüleneceğini özelleştirebilirsiniz. |
-| [Smart Folders – Organize by](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. |
+| [Akıllı Klasörler – Şuna göre düzenle](../../user/personal/tracks/smart-folder.md#managing-smart-folders) | Akıllı Klasörler'de tarih & saat, mesafe, süre, hız, yükseklik & irtifa ve sensör verileri gibi gelişmiş gruplandırma parametrelerini kullanarak izleri düzenlemeye olanak tanır. Bu seçenekler daha ayrıntılı iz kategorizasyonu ve esnek analiz sağlar. |
 
 
 ## Nasıl Satın Alınır {#how-to-buy}
@@ -163,7 +163,7 @@ veya
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → OsmAnd Pro ile Devam Et*
 
-![Pro Plan](@site/static/img/purchases/pro_new.png)
+![Pro Planı](@site/static/img/purchases/pro_new.png)
 
 ### Maps+ Satın Alma {#maps-purchase}
 
@@ -171,7 +171,7 @@ veya
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Maps+ özellik listesine dokunun → Maps+ ile Devam Et*
 
-![Maps+ Plan](@site/static/img/purchases/maps_new.png)
+![Maps+ Planı](@site/static/img/purchases/maps_new.png)
 
 
 ## Eski Abonelikler (4.0 öncesi) {#legacy-subscriptions-prior-40}
@@ -190,7 +190,7 @@ Satın alımlarınızı geri yüklemek için aynı Apple Kimliğini kullanın.
 - Aktif bir İnternet bağlantısıyla OsmAnd Haritaları'nı açın.
 - Satın alımları geri yüklemek için şu adımları izleyin: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* ve ekranın üst kısmında Maps+(Pro, Live) etkinleştirildiğine dair bir bildirim görünmelidir.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
+![Pro Planı](@site/static/img/purchases/maps_purchases_ios.png)
 
 **Yöntemlerden hiçbiri işe yaramazsa:**
 
