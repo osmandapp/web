@@ -1,5 +1,5 @@
 ---
-source-hash: 40ab91f5bfd2e818fef784d4ab0b3ad21622f54a2a638b5a01d09a813a888d33
+source-hash: 7a4ec38811965699d4bf8be48f33fcce4e1e12973b13ab13ffa374909cfef793
 sidebar_position: 2
 title:  Загальні питання
 ---
@@ -17,116 +17,129 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 ## Споживання заряду батареї {#battery-consumption}
 
-### OsmAnd seems to use up too much battery power {#osmand-seems-to-use-up-too-much-battery-power}
+### OsmAnd, схоже, витрачає занадто багато заряду батареї {#osmand-seems-to-use-up-too-much-battery-power}
 
-There have been user reports of OsmAnd consuming excessive battery power, with cases where OsmAnd was responsible for up to 90% of battery usage. However, we have performed many tests and could not reproduce such results.  
+Користувачі повідомляли, що OsmAnd споживає надмірну кількість заряду батареї, а в окремих випадках на OsmAnd припадало до 90% розряду. Проте ми провели багато тестів і не змогли відтворити такі результати.  
 
-Under normal circumstances, OsmAnd only consumes power when needed for active functions like live navigation or track recording. When these services are active, they appear in the Android notification area. If no such notification is visible, OsmAnd is not consuming power in the background.  
+За звичайних умов OsmAnd споживає енергію лише тоді, коли це потрібно для активних функцій, як-от навігація в реальному часі або запис треку. Коли ці служби активні, вони відображаються в області сповіщень Android. Якщо такого сповіщення немає, OsmAnd не споживає енергію у фоновому режимі.  
 
-Several factors influence battery consumption: the device's age, number of charge cycles, battery capacity, temperature, and more. Below are typical battery consumption rates, based on tests performed on a mid-level device:
+На споживання заряду впливає кілька чинників: вік пристрою, кількість циклів заряджання, ємність батареї, температура тощо. Нижче наведено типові показники споживання заряду за результатами тестів на пристрої середнього рівня:
 
-| Device function | Battery consumption per hour |
+| Функція пристрою | Споживання заряду за годину |
 | :--- | :--- |
-| Typical device asleep with only standard apps active | 0.5 % |
-| Screen on (typically) | 6 % |
-| GPS active (typically) | 5 % |
-| OsmAnd running in the background for track recording | 0.5 % |
-| OsmAnd not running any service in the background | 0 % |
+| Типовий пристрій у режимі сну лише зі стандартними активними застосунками | 0.5 % |
+| Екран увімкнено (зазвичай) | 6 % |
+| GPS активний (зазвичай) | 5 % |
+| OsmAnd працює у фоновому режимі для запису треку | 0.5 % |
+| OsmAnd не виконує жодної служби у фоновому режимі | 0 % |
 
-#### OsmAnd Function Battery Consumption {#osmand-function-battery-consumption}
+#### Споживання заряду функціями OsmAnd {#osmand-function-battery-consumption}
 
-| OsmAnd function | Battery consumption per hour |
+| Функція OsmAnd | Споживання заряду за годину |
 | :--- | :--- |
-| Track recording with screen off | 6 % |
-| Navigation with screen on | 12 % |
+| Запис треку з вимкненим екраном | 6 % |
+| Навігація з увімкненим екраном | 12 % |
 
-The overall power consumption should result from adding these components as applicable, depending on how you use OsmAnd. Please report if you see significant deviations from these typical values.
-
-
-### Optimizing battery consumption {#optimizing-battery-consumption}
-
-When using OsmAnd, several features can influence battery consumption, especially during activities like navigation or track recording. Here are some tips to help manage battery usage effectively:
-
-- **Screen control during navigation** (*Android*). To save power, you can configure OsmAnd to keep the screen off during navigation unless a turn or important event occurs. This is particularly useful during voice navigation. For more details, refer to the *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2"/> → [<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)*.
-
-- **Power-saving navigation settings**. You can reduce battery consumption by minimizing map redraw frequency and limiting GPS accuracy. To adjust these settings, go to *Navigation → Settings → Route Navigation*. For more information, refer to the [saving power during navigation](../navigation/setup/route-navigation.md#power-saving-tips).
-
-- **Managing map layers and details**. Deactivate unnecessary map features like 3D relief, contour lines, or hillshades. You can also reduce the number of displayed objects (POI labels, boundaries, house numbers, etc.) via the *Configure Map* menu. Disabling these layers helps reduce the frequency of map redraws, which lowers power consumption.
-
-- **Disabling auto zoom**. Auto zoom during navigation can cause frequent map redraws, which increases battery usage. Disabling this feature can help reduce power consumption. Navigate to *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*  to turn off auto zoom. For further details, visit [Map During Navigation](../navigation/guidance/map-during-navigation.md).
-
-- **Optimizing track recording settings**. Make sure to adjust GPS accuracy and screen usage during track recording to save battery. Visit the [Track recording troubleshooting](../troubleshooting/track-recording-issues.md) section for more guidance.
+Загальне енергоспоживання складається з цих складових залежно від того, як ви користуєтеся OsmAnd. Будь ласка, повідомляйте, якщо помітите значні відхилення від цих типових значень.
 
 
-## Privacy {#privacy}
+### Оптимізація споживання заряду батареї {#optimizing-battery-consumption}
+
+Під час користування OsmAnd на споживання заряду можуть впливати різні функції, особливо під час навігації або запису треків. Ось кілька порад, які допоможуть ефективно керувати споживанням заряду:
+
+- **Керування екраном під час навігації** (*Android*). Щоб заощадити заряд, можна налаштувати OsmAnd так, щоб екран залишався вимкненим під час навігації, доки не буде повороту чи іншої важливої події. Це особливо корисно під час голосової навігації. Докладніше див. *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2"/> → [<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)*.
+
+- **Налаштування навігації для економії заряду**. Ви можете зменшити споживання заряду, знизивши частоту перемальовування карти та обмеживши точність GPS. Щоб змінити ці налаштування, перейдіть до *Навігація → Налаштування → Навігація за маршрутом*. Докладніше див. [економія заряду під час навігації](../navigation/setup/route-navigation.md#power-saving-tips).
+
+- **Керування шарами та деталізацією карти**. Вимкніть непотрібні елементи карти, як-от 3D-рельєф, горизонталі або тіньовий рельєф. Також можна зменшити кількість відображуваних об'єктів (підписи POI, межі, номери будинків тощо) через меню *Налаштувати карту*. Вимкнення цих шарів зменшує частоту перемальовування карти, що знижує енергоспоживання.
+
+- **Вимкнення автозуму**. Автозум під час навігації може спричиняти часте перемальовування карти, що збільшує витрати заряду. Вимкнення цієї функції може допомогти зменшити енергоспоживання. Щоб вимкнути автозум, перейдіть до *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,map_during_navigation"/>*. Докладніше див. [Карта під час навігації](../navigation/guidance/map-during-navigation.md).
+
+- **Оптимізація налаштувань запису треку**. Обов'язково налаштуйте точність GPS і використання екрана під час запису треку, щоб заощадити заряд. Додаткові поради див. у розділі [Усунення неполадок із записом треків](../troubleshooting/track-recording-issues.md).
+
+
+## Конфіденційність {#privacy}
 
 <!--
 Privacy related issues (delete history / check internet usage / permissions).
 -->
 
-### How to delete search history {#how-to-delete-search-history}
+### Як видалити історію пошуку {#how-to-delete-search-history}
 
-To remove search history in OsmAnd:
+Щоб видалити історію пошуку в OsmAnd:
 
-1. Open the *Search* menu.
-2. Long tap on any search result.
-3. Select the results you want to delete, or use the *Select All* option in the upper-left corner to delete all results.
-4. Tap the *Trash* icon in the upper-right corner to confirm deletion.
+1. Відкрийте меню *Пошук*.
+2. Довго натисніть на будь-який результат пошуку.
+3. Виберіть результати, які потрібно видалити, або скористайтеся опцією *Вибрати все* у верхньому лівому куті, щоб видалити всі результати.
+4. Торкніться значка *Кошик* у верхньому правому куті, щоб підтвердити видалення.
 
-For more detailed instructions about the search functionality, you can refer to [this guide](../search/search-history.md).
+Докладніші інструкції щодо функції пошуку див. у [цьому посібнику](../search/search-history.md).
 
 
 ## Інтерфейс {#interface}
 
-### Why are map buttons, widgets, or text too large? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
+### Чому кнопки карти, віджети або текст завеликі? (Android) {#why-are-map-buttons-widgets-or-the-map-ruler-too-large}
 
-If map buttons, widgets, or the map ruler appear oversized after adjusting the display size in Android system settings, it may be related to how OsmAnd adapts the interface to the current screen configuration.
+Якщо кнопки карти, віджети або лінійка карти стали завеликими після зміни розміру дисплея в системних налаштуваннях Android, це може бути пов'язано з тим, як OsmAnd адаптує інтерфейс до поточної конфігурації екрана.
 
-On some devices, reducing the screen density or changing the display size can affect the size of interface elements, especially on large-screen devices and tablets.
+На деяких пристроях зменшення щільності екрана або зміна розміру дисплея може впливати на розмір елементів інтерфейсу, особливо на пристроях із великим екраном і планшетах.
 
-Recent OsmAnd versions no longer apply additional automatic scaling for devices detected as tablets. Interface elements now more closely follow the Android system display settings.
+Останні версії OsmAnd більше не застосовують додаткове автоматичне масштабування для пристроїв, визначених як планшети. Елементи інтерфейсу тепер точніше відповідають системним налаштуванням дисплея Android.
 
-If you want to manually adjust the size of map buttons, use the [Default Appearance](https://osmand.net/docs/user/widgets/configure-screen#button-appearance) settings: *Menu → Configure screen → Buttons → Default buttons → three-dot menu → Appearance*. There you can set a custom Size, Corner radius, and Background opacity for all default buttons at once.
+Якщо ви хочете вручну змінити розмір кнопок карти, скористайтеся налаштуваннями [Типовий вигляд](https://osmand.net/docs/user/widgets/configure-screen#button-appearance): *Меню → Налаштувати екран → Кнопки → Типові кнопки → меню з трьома крапками → Вигляд*. Там можна задати власний розмір, радіус кутів і прозорість фону одразу для всіх типових кнопок.
 
-If the interface still appears larger than expected, check *Android System Settings → Display → Display size and text* and adjust the display settings as needed.
+Якщо інтерфейс усе ще здається більшим, ніж очікувалося, перевірте *Системні налаштування Android → Дисплей → Розмір дисплея та тексту* і за потреби змініть налаштування дисплея.
+
+### OsmAnd не заповнює екран у горизонтальній орієнтації на iPad (iOS) {#osmand-does-not-fill-the-screen-in-landscape-on-ipad-ios}
+
+OsmAnd підтримує як портретну, так і альбомну орієнтацію на iPad і слідує за системним поворотом екрана. Якщо застосунок заповнює екран у портретній орієнтації, але в альбомній відображається як менше вікно, причина в режимі вікон iPadOS 26, а не в OsmAnd.
+
+У режимі *Вікна застосунків* iPadOS запам'ятовує розмір вікна кожного застосунку. Щойно розмір вікна OsmAnd було змінено в альбомній орієнтації, застосунок зберігає цей розмір вікна в альбомній орієнтації, але в портретній і далі заповнює екран.
+
+Щоб OsmAnd знову заповнював екран, скористайтеся одним із варіантів:
+
+- **Розгорніть вікно.** Відкрийте OsmAnd в альбомній орієнтації й торкніться невеликої таблетки у верхній частині вікна. З'являться три кнопки: *Закрити*, *Згорнути* та *Масштаб*. Торкніться *Масштаб*, щоб розгорнути застосунок на весь екран. Після повороту iPad застосунок зберігає повноекранний розмір.
+- **Вимкніть вікна для всіх застосунків.** Перейдіть до *Налаштування iPad → Багатозадачність і жести* та виберіть *Повноекранні застосунки* замість *Вікна застосунків*. Усі застосунки, зокрема OsmAnd, завжди відкриватимуться на весь екран.
+
+Також переконайтеся, що OsmAnd не відкрито в режимі *Split View* або *Slide Over* поруч з іншим застосунком.
 
 
 ## Інше {#other}
 
-### Problem with the GPS connection (Android) {#problem-with-the-gps-connection-android}
+### Проблема зі з'єднанням GPS (Android) {#problem-with-the-gps-connection-android}
 
-OsmAnd relies on location data provided by your Android device through the Android API.  
+OsmAnd використовує дані про місцезнаходження, які надає ваш пристрій Android через Android API.  
 
-To resolve GPS connection issues, follow these steps:
+Щоб усунути проблеми зі з'єднанням GPS, виконайте такі кроки:
 
-1. **Change Location Source**. Try different options like Google Play Services or Android API in *OsmAnd Settings → Location Source*.
-2. **Update Google Service API**. Ensure you have the latest version from [Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en&gl=US).
-3. **Check Android Location Settings**. Go to Android System Settings and ensure Location Access is turned on and set to High Accuracy. You can also try clearing the cache and restarting your device. GPS issues may occur if buildings or large objects interfere with the signal. Test GPS performance, and if the signal is weak, set the minimum recording accuracy to over 15 meters.
-4. **Enable GPS Widget**. Use the GPS info widget to check satellite connections. If there are no satellite connections, your device will not determine the location, and the number of satellites will be 0. More details can be found in the [GPS widget guide](../widgets/info-widgets.md#gps-info).
-5. **Use GPS Signal Only**. Set your device to use only GPS (disable Wi-Fi or Bluetooth-based location). Instructions are available on [Google Support](https://support.google.com/android/answer/3467281?hl=en).
-6. **Reinstall OsmAnd**. If the above steps don't work, try reinstalling the OsmAnd app to clear bad data and resolve GPS issues. Before doing so, export all your saved data.
-7. **Check Device RAM**. If the issue persists, it may be due to insufficient memory, so ensure your device has enough RAM available.
+1. **Змініть джерело місцезнаходження**. Спробуйте різні варіанти, як-от Google Play Services або Android API, у *Налаштування OsmAnd → Джерело місцезнаходження*.
+2. **Оновіть Google Service API**. Переконайтеся, що у вас остання версія з [Google Play](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en&gl=US).
+3. **Перевірте налаштування місцезнаходження Android**. Перейдіть до системних налаштувань Android і переконайтеся, що доступ до геолокації ввімкнено та встановлено високу точність. Також можна спробувати очистити кеш і перезапустити пристрій. Проблеми з GPS можуть виникати, якщо сигнал заважають приймати будівлі або великі об'єкти. Перевірте роботу GPS, і якщо сигнал слабкий, встановіть мінімальну точність запису понад 15 метрів.
+4. **Увімкніть віджет GPS**. Скористайтеся віджетом інформації про GPS, щоб перевірити з'єднання із супутниками. Якщо супутникових з'єднань немає, ваш пристрій не визначить місцезнаходження, а кількість супутників буде 0. Докладніше див. у [посібнику з віджета GPS](../widgets/info-widgets.md#gps-info).
+5. **Використовуйте лише сигнал GPS**. Налаштуйте пристрій на використання лише GPS (вимкніть визначення місцезнаходження через Wi-Fi або Bluetooth). Інструкції доступні на [Google Support](https://support.google.com/android/answer/3467281?hl=en).
+6. **Перевстановіть OsmAnd**. Якщо наведені вище кроки не допомагають, спробуйте перевстановити застосунок OsmAnd, щоб очистити пошкоджені дані та усунути проблеми з GPS. Перш ніж це зробити, експортуйте всі збережені дані.
+7. **Перевірте оперативну пам'ять пристрою**. Якщо проблема не зникає, причиною може бути брак пам'яті, тож переконайтеся, що на вашому пристрої достатньо оперативної пам'яті.
 
 
-### Email mismatch issue during OsmAnd Pro purchase {#email-mismatch-issue-during-osmand-pro-purchase}
+### Невідповідність електронної пошти під час придбання OsmAnd Pro {#email-mismatch-issue-during-osmand-pro-purchase}
 
 <!-- ???
 or this title:
 ### Resolving payment account and app email sync issues in OsmAnd {#resolving-payment-account-and-app-email-sync-issues-in-osmand}
 -->
 
-If you encounter an issue where the email associated with your OsmAnd Pro purchase does not match the OsmAnd app email, follow these steps to resolve the problem:
+Якщо електронна адреса, пов'язана з вашою покупкою OsmAnd Pro, не збігається з адресою в застосунку OsmAnd, виконайте такі кроки, щоб вирішити проблему:
 
-1. **Check Google Play and Pay accounts**. Ensure that the correct email is linked to your Google Play Store and Pay accounts. The payment process is handled by these services, and the email mismatch might occur due to an old email still being associated with your payment profile.
+1. **Перевірте облікові записи Google Play і Pay**. Переконайтеся, що до ваших облікових записів Google Play Store і Pay прив'язано правильну адресу електронної пошти. Платежі обробляються цими службами, а невідповідність адрес може виникати через те, що до вашого платіжного профілю досі прив'язано стару адресу.
 
-2. **Verify OsmAnd app email**. Recheck the email address in your OsmAnd app to ensure it matches your current Google Play email. This can be done by opening the app and navigating to the account settings.
+2. **Перевірте адресу електронної пошти в застосунку OsmAnd**. Ще раз перевірте адресу в застосунку OsmAnd і переконайтеся, що вона збігається з вашою поточною адресою Google Play. Для цього відкрийте застосунок і перейдіть до налаштувань облікового запису.
 
-3. **Restore purchases**. Check the availability and appropriateness of your purchase. To do this, go to OsmAnd *Menu → Settings → Purchases*. If the displayed data does not match your expectations, try [Restore purchases](./purchases_payments.md#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services).
+3. **Відновіть покупки**. Перевірте наявність і відповідність вашої покупки. Для цього перейдіть до OsmAnd *Меню → Налаштування → Покупки*. Якщо відображувані дані не відповідають вашим очікуванням, спробуйте [Відновити покупки](./purchases_payments.md#how-to-buy-and-restore-osmand-in-the-huawei-appgallery-without-huawei-mobile-services).
 
-4. **Clear app cache and data**. Clear the cache and data of the OsmAnd app by going to your device's *Settings → Apps → OsmAnd → Storage → Clear Cache and Clear Data*. This will refresh the app and remove any residual issues from the old account.
+4. **Очистьте кеш і дані застосунку**. Очистьте кеш і дані застосунку OsmAnd, перейшовши до *Налаштування → Застосунки → OsmAnd → Сховище → Очистити кеш і Очистити дані* на вашому пристрої. Це оновить застосунок і усуне залишкові проблеми, пов'язані зі старим обліковим записом.
 
-5. **Reinstall OsmAnd**. If clearing the cache doesn’t resolve the issue, try uninstalling and reinstalling the app. Before doing this, make sure to back up any important data (tracks, favorites) by going to *Menu → Settings → Export to file*. Reinstalling the app will ensure that all account details are correctly refreshed.
+5. **Перевстановіть OsmAnd**. Якщо очищення кешу не вирішує проблему, спробуйте видалити й заново встановити застосунок. Перш ніж це зробити, обов'язково створіть резервну копію важливих даних (треків, обраного) через *Меню → Налаштування → Експортувати у файл*. Перевстановлення застосунку гарантує коректне оновлення всіх даних облікового запису.
 
-6. **Disable proxy**. Check the app's proxy settings and make sure the proxy is turned off by going to *Menu → Settings → OsmAnd settings → Proxy*. A proxy or VPN could interfere with account syncing.
+6. **Вимкніть проксі**. Перевірте налаштування проксі в застосунку та переконайтеся, що проксі вимкнено, перейшовши до *Меню → Налаштування → Налаштування OsmAnd → Проксі*. Проксі або VPN можуть заважати синхронізації облікового запису.
 
-7. **Re-login or use Web for account management**. If you're still facing issues, try logging out and back in to refresh the app's connection to your current account. If you encounter any problems deleting the old account in-app, consider managing your account through the web version of OsmAnd.
+7. **Увійдіть повторно або скористайтеся вебверсією для керування обліковим записом**. Якщо проблема не зникає, спробуйте вийти з облікового запису та увійти знову, щоб оновити з'єднання застосунку з вашим поточним обліковим записом. Якщо виникають проблеми з видаленням старого облікового запису в застосунку, розгляньте можливість керувати обліковим записом через вебверсію OsmAnd.

@@ -1,5 +1,5 @@
 ---
-source-hash: f01806a5c4606f91ada0b513566d0e12eec69b22d60c2aaf3a3d9e4999b82670
+source-hash: 36fe11f195bf45ea65f7987845c43fe864d311e043ee7925b305223e61e495c6
 sidebar_position: 4
 title:  Контекстне меню треку
 ---
@@ -127,7 +127,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **<Translate android="true" ids="join_segments"/>** (*Лише для Android*) – Об'єднує сегменти треку для заповнення прогалин.
 - **<Translate android="true" ids="analyze_on_map"/>**. Відкриває інструмент [Аналіз на мапі](../tracks/index.md#analyze-track-on-map) для перевірки висоти, швидкості, відстані та будь-яких додаткових даних, що містяться в треку (наприклад, даних зовнішніх датчиків або метрик транспортного засобу).
-- **<Translate android="true" ids="analyze_by_intervals"/>** (*Лише для Android*) - Аналізує трек за [інтервалами](#analyze-by-intervals) часу або відстані.
+- **<Translate android="true" ids="analyze_by_intervals"/>** (*Лише для Android*) - Аналізує трек за [інтервалами](./track-context-menu.md#analyze-by-intervals) часу, відстані або підйому/спуску.
 
 <br/>
 
@@ -424,6 +424,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [Показувати дані точок треку](#display-custom-gpx-tags) та змінювати точки вашого треку (шляхові точки та точки маршруту), [видаляти їх та додавати](#points--waypoints) шляхові точки до треку.
 - Створювати та змінювати [Групу (папку) точок](#waypoint-groups).
 - Показувати шляхову точку на мапі за допомогою піктограми шпильки в списку шляхів точок. Мапа центрується на шляховий точці без закриття списку або зміни поточного масштабу.
+- Прикріплювати фото, відео та аудіонотатки до шляхової точки за допомогою картки *Медіа* в її контекстному меню (*лише Android*). Див. [статтю про Обране](../../personal/favorites.md#media).
 
 
 ### Додати шляхову точку до треку {#add-waypoint-to-a-track}

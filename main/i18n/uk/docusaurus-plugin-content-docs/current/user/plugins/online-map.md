@@ -1,5 +1,5 @@
 ---
-source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
 sidebar_position: 9
 title:  Онлайн-карти
 ---
@@ -51,7 +51,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Налаштування підкладки / накладки Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Налаштування підкладки / накладки iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
 
 </TabItem>
 
@@ -84,9 +84,9 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 Онлайн-тайли можуть бути корисними, коли вам потрібна лише невелика секція карти або конкретний її тип для використання в обмеженій області, але ви не хочете завантажувати всю регіон. Вони можуть стати в пригоді в нескінченних ситуаціях.
 
-![Online Maps](@site/static/img/plugins/online-maps/map_creator.jpg)
+![Онлайн-мапи](@site/static/img/plugins/online-maps/map_creator.jpg)
 
-![Online Maps](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
+![Онлайн-мапи](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
 
 ## Пов’язані статті {#related-articles}

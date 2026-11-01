@@ -1,5 +1,5 @@
 ---
-source-hash: bcf6b575b3a4fda9b746badca4cfc8f28d464d5066f682b25d3bd4be49dceab0
+source-hash: 9f605668d58af560cd42ef64d15f56577a03661cd8b6c24cb599d9fe82542af1
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -18,7 +18,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Огляд {#overview}
 
-:::tip Purchase
+:::tip Придбання
 CarPlay є [платною функцією](../purchases/index.md).  
 :::
 
@@ -91,7 +91,7 @@ CarPlay є [платною функцією](../purchases/index.md).
 ### Профіль CarPlay {#carplay-profile}
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,carplay_profile"/>*  
-![General Settings Default profile Android](@site/static/img/personal/profiles/CarPlay_ios.png)
+![Загальні налаштування, профіль за замовчуванням, Android](@site/static/img/personal/profiles/CarPlay_ios.png)
 
 **Профіль CarPlay** — це специфічний профіль у застосунку OsmAnd для зручного використання аудіо- та відеосистеми вашого автомобіля для подальшого відображення цих даних на вашому телефоні.  
 
@@ -227,12 +227,12 @@ CarPlay є [платною функцією](../purchases/index.md).
 
 Коли відтворюються голосові підказки, OsmAnd регулює фонове аудіо залежно від його типу. Якщо ввімкнено опцію *<Translate ios="true" ids="pause_spoken_audio"/>*, аудіовміст, наприклад подкасти та аудіокниги, призупиняється під час навігаційних інструкцій, а відтворення музики продовжується зі зменшеною гучністю. Якщо опцію *<Translate ios="true" ids="pause_spoken_audio"/>* вимкнено, аудіовміст і музика продовжують відтворюватися зі зменшеною гучністю.  
 
-Щоб налаштувати голосові підказки відповідно до вибраного профілю, вам потрібно зробити це перед початком маршруту в застосунку OsmAnd на вашому пристрої. Щоб переглянути рекомендовані налаштування для *CarPlay*, перейдіть до статті [Голосові підказки / Сповіщення](../navigation/guidance/voice-navigation.md#voice-prompts). Наприклад, щоб увімкнути Пауза вимовленого аудіо, перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*  
+Щоб налаштувати голосові підказки відповідно до вибраного профілю, вам потрібно зробити це перед початком маршруту в застосунку OsmAnd на вашому пристрої. Щоб переглянути рекомендовані налаштування для *CarPlay*, перейдіть до статті [Голосові підказки / Сповіщення](../navigation/guidance/voice-navigation.md#voice-settings). Наприклад, щоб увімкнути Пауза вимовленого аудіо, перейдіть до: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2,voice_announces,pause_spoken_audio"/>*  
 
 
 ### Сповіщення навігації {#navigation-alerts}
 
-![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+![Сповіщення про відсутність](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Сповіщення про приватну дорогу](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
 
 Корисні сповіщення автоматично показуються перед початком навігації, коли потрібна додаткова дія для розрахунку маршруту. Ці сповіщення допомагають вирішити проблеми маршрутизації до початку навігації.
 
@@ -334,6 +334,20 @@ OsmAnd дозволяє налаштувати вигляд карта для Ca
 - **Схід/захід сонця** — Карта автоматично перемикається між світлою та темною темами на основі розрахованого часу сходу та заходу сонця для вашого поточного розташування.
 
 **Примітка:** Налаштування режиму карти в CarPlay впливає лише на вигляд карти в CarPlay. Воно не змінює режим карти на екрані телефону.
+
+### Орієнтація карти {#map-orientation}
+
+![Орієнтація карти](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+Налаштування *Орієнтація карти* визначає, як обертається карта на екрані CarPlay. Щоб відкрити це налаштування, торкніться кнопки *Налаштування* на панелі навігації CarPlay, а потім виберіть *Орієнтація карти*. Поточна орієнтація відображається як детальний текст рядка.
+
+Ви можете вибрати один із таких режимів орієнтації:
+- **Обертання вручну** — Карта не обертається автоматично.
+- **Напрямок руху** — Карта обертається відповідно до напрямку вашого руху.
+- **Напрямок за компасом** — Карта обертається відповідно до компаса iPhone, тож північ на карті збігається з реальною північчю.
+- **Північ угорі** — Північ завжди залишається у верхній частині екрана.
+
+**Примітка:** Орієнтація карти — це налаштування профілю, спільне для CarPlay і додатка OsmAnd на вашому iPhone. Зміна, зроблена на одному екрані, застосовується й на іншому. Докладніше див. у статті [Режими орієнтації мапи](../widgets/map-buttons.md#map-orientation-modes).
 
 ### Позиція місцезнаходження в CarPlay {#location-position-in-carplay}
 

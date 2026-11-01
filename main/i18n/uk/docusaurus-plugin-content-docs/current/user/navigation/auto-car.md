@@ -1,5 +1,5 @@
 ---
-source-hash: d166f5fe6557e801916a6d6ea73d3593402b2fb701fae49791a98f8065c91a18
+source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Огляд {#overview}
 
-:::tip Purchase
+:::tip Придбання
 *Android Auto* — це [платна функція](../purchases/index.md).  
 :::
 
@@ -43,8 +43,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png').default} alt="АА"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_landing_screen_2.png').default} alt="АА"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_landing_screen_2.png').default} alt="AA"/></td>
     </tr>
 </table>
 
@@ -137,8 +137,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_poi_3.png').default} alt="АА"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_poi_2.png').default} alt="АА"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_poi_3.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_poi_2.png').default} alt="AA"/></td>
     </tr>
 </table>
 
@@ -157,8 +157,8 @@ POI (Points of Interest) — це тип точок, які позначають
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_favorites_3.png').default} alt="АА"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_favorites_4.png').default} alt="АА"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_favorites_3.png').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_favorites_4.png').default} alt="AA"/></td>
     </tr>
 </table>  
 
@@ -331,19 +331,26 @@ POI (Points of Interest) — це тип точок, які позначають
 
 <table class="image">
     <tr>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.png').default} alt="АА"/></td>
-        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.png').default} alt="АА"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode.webp').default} alt="AA"/></td>
+        <td><img src={require('@site/static/img/navigation/auto-car/android_auto_map_mode_2.webp').default} alt="AA"/></td>
     </tr>
 </table>
 
 *Android Auto* та OsmAnd пропонують можливість налаштовувати карту відповідно до умов освітлення. У *Денному режимі карти* колірна схема залишається яскравою та контрастною, що полегшує читання навіть при яскравому сонячному світлі. У *Нічному режимі* карти стають темнішими, що допомагає водієві краще орієнтуватися в темряві.  
 
-OsmAnd має опції [режиму карти](../map/vector-maps.md#map-mode), але коли ви використовуєте додаток в *Android Auto*, ці опції ігноруються. Замість цього використовується режим, який ви вибрали в системних налаштуваннях *Android Auto* для карт.
+OsmAnd в *Android Auto* має власне налаштування режиму карти, окреме від опцій [режиму карти](../map/vector-maps.md#map-mode) у додатку OsmAnd на вашому пристрої. Щоб змінити його, перейдіть до *Android Auto (OsmAnd) → кнопка Налаштування → Режим карти*, виберіть опцію та торкніться *Застосувати*. Карта перемкнеться на вибраний режим після того, як ви торкнетеся *Застосувати*. Якщо ви вийдете з екрана стрілкою «назад», не торкнувшись *Застосувати*, залишиться попередній режим.
 
-- Виберіть Денний режим або Нічний режим, щоб зберегти вигляд карти незмінним.
-- Якщо ви хочете, щоб режим відображення карти перемикався залежно від часу доби, виберіть Автоматичний режим.  
+- Виберіть *День* або *Ніч*, щоб зберегти вигляд карти незмінним, незалежно від сигналів вашого автомобіля.
+- Якщо ви хочете, щоб режим відображення карти перемикався автоматично на основі сигналів вашого автомобіля, виберіть *Автоматично* (за замовчуванням).  
+ 
 
-<!-- ![Android Auto](@site/static/img/navigation/auto-car/android_auto_map_mode.png) -->
+### Збільшувач карти {#map-magnifier}
+
+![Збільшувач карти Android Auto](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
+
+*Збільшувач карти* змінює збільшення карти на екрані *Android Auto*. Щоб змінити його, перейдіть до *Android Auto (OsmAnd) → кнопка Налаштування → Збільшувач карти*, виберіть значення від 50% до 125% та торкніться *Застосувати*. Поточне значення відображається під пунктом *Збільшувач карти* у списку налаштувань.  
+
+Щоб дізнатися, як збільшення впливає на відображення карти, див. [Збільшувач карти](../map/vector-maps.md#map-magnifier).
 
 
 ### Розділений екран {#split-screen}
@@ -356,9 +363,6 @@ OsmAnd має опції [режиму карти](../map/vector-maps.md#map-mod
 2. Торкніться "Налаштування".
 3. Знайдіть "Багатовіконний режим" і виберіть перемикач.
 4. Поверніться на головний екран.  
-
-<!--
-![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_taskbar.png)-->
 
 
 У налаштуваннях Android Auto ви можете змінити положення панелі завдань та макет головного екрана:

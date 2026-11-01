@@ -1,5 +1,5 @@
 ---
-source-hash: fcc41923da511a92a49a39ced30aab0625942e0f8c394ce04d54655aefcf56fa
+source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
 sidebar_position: 2
 title:  Керування треками
 ---
@@ -204,7 +204,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **Перемістити** — Ви можете впорядкувати свої дані, перемістивши вибрані треки та теки в інші теки.
 
-- [Змінити вид активності](../../map/tracks/track-context-menu.md#ttrack-activity-type) — Ця дія дозволяє змінити тип активності, наприклад, на *Автомобіль*, *Екстремальний мотоспорт*, *Піший туризм* або інші, для вибраного треку.
+- [Змінити вид активності](../../map/tracks/track-context-menu.md#track-activity-type) — Ця дія дозволяє змінити тип активності, наприклад, на *Автомобіль*, *Екстремальний мотоспорт*, *Піший туризм* або інші, для вибраного треку.
 
 - [Змінити вигляд](../../map/tracks/appearance.md#change-appearance-for-multiple-tracks) — Ця опція дозволяє налаштувати вигляд вибраних треків, роблячи їх більш помітними та впізнаваними на карті.
 
@@ -436,7 +436,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 <TabItem value="android" label="Android">
 
-![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
+![Імпорт мультитреку](@site/static/img/personal/tracks/import_multitrack.png) ![Імпорт мультитреку](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
@@ -444,7 +444,7 @@ OsmAnd пропонує простий спосіб сортування ваш�
 
 | Export | Import |
 |:------------|:---------------|
-| ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Export </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Export </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
+| ![Імпорт мультитреку](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Експорт </summary> ![Імпорт мультитреку](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![Імпорт мультитреку](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Експорт </summary> ![Імпорт мультитреку](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
 
 <!--
 <table class="blogimage">

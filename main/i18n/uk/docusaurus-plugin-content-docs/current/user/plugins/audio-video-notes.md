@@ -1,5 +1,5 @@
 ---
-source-hash: fe7c7051fac61d2e1550b483ebf03ae6ef02356400cc9d2a0ed9c6567b00a95d
+source-hash: 2c0a6908a74d63cbb4449e258729df822d9ac3927942ad52a8271ce7c951c29c
 sidebar_position: 4
 title:  Аудіо / Відеонотатки
 ---
@@ -147,8 +147,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Можна зупинити запис дотиком до віджета <Translate android="true" ids="map_widget_av_notes"/>, незалежно від того, чи було розпочато запис з контекстного меню, чи з віджета. Для *фотонотатки* з'являється функціонал камери, і ви можете зробити фото, переглянути результат, прийняти та зберегти його, або зробити нове фото.
 
-:::info note
-Автоматично всі фото-, аудіо- та відеозаписи зберігаються у: вкладка <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>.
+:::info Примітка
+Автоматично всі фото-, аудіо- та відеозаписи зберігаються у: вкладка <Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>. Кожна нотатка також зберігається як обране у папці **media**. Див. [Аудіо/відеонотатки як обране](#av-notes-as-favorites).
 :::
 
 
@@ -342,6 +342,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ![Немає нотаток на мапі](@site/static/img/plugins/audio-video-notes/no_notes_on_map.png) ![Нотатки на мапі](@site/static/img/plugins/audio-video-notes/notes_on_map.png)
 
 
+## Аудіо/відеонотатки як обране {#av-notes-as-favorites}
+
+Аудіо-, відео- та фотонотатки пов'язані з обраним. Кожній нотатці відповідає точка обраного в папці **media** у *Мої місця → Обране*, розташована в місці нотатки та названа за типом нотатки й часом створення, наприклад *Фото 1 жовт. 2026, 09:45*. Файл нотатки прикріплено до цього обраного, і він відображається в його [картці Медіа](../personal/favorites.md#media). Сама нотатка також залишається доступною у вкладці *Аудіо/відеонотатки*.
+
+- Після оновлення OsmAnd до версії 5.4 з попередньої версії для кожної наявної нотатки автоматично створюється точка обраного.
+- Нові нотатки, записані за допомогою віджета або контекстного меню мапи, автоматично додаються до папки **media**.
+
+
 ## Шляхові точки, створені з нотаток {#waypoints-created-from-notes}
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -387,7 +395,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - Виберіть трек, до якого ви хочете додати шляхову точку.
     - Відкриється діалогове вікно *<Translate android="true" ids="quick_action_add_gpx"/>* , яке дозволяє встановити деякі властивості, такі як назва шляхової точки, іконка, колір та інші. Після завершення торкніться **Зберегти**.
 
-:::info note
+:::info Примітка
 Ви можете вказати назви для кожної шляхової точки, створеної вручну.
 :::
 
@@ -421,11 +429,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### Деталі назви файлу {#file-name-details}
 
-Плагін <Translate android="true" ids="audionotes_plugin_name"/> генерує аудіо/відео/фотофайли у наступному форматі:
-
-    `{SHORTLINK_LOCATION}_Description.{avi,mp3,jpg}`
-
-де `SHORTLINK_LOCATION` вказує широту та довготу місцезнаходження, до якого прив'язаний файл. `SHORTLINK_LOCATION` кодується відповідно до специфікації [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
+Плагін <Translate android="true" ids="audionotes_plugin_name"/> називає аудіо-, відео- та фотофайли за шаблоном `Type_YYYY-MM-DD_HH-mm-ss_location.ext`, наприклад `Photo_2026-10-01_15-58-12_0hZTCM5Q--.jpg`. Частина `location` містить широту та довготу місця нотатки, закодовані відповідно до специфікації [Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink).
 
 
 ### Експорт до JOSM {#export-to-josm}

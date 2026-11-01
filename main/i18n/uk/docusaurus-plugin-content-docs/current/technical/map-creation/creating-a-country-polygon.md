@@ -1,5 +1,5 @@
 ---
-source-hash: e0173be6fa81b710afb1b4b52c4268f63865918a50d504364df4f0d772bf2d39
+source-hash: a4ab003fa68f8ff7c393f79dced64ce22df0b72bda332626935257db71197cb1
 title: Створення полігону країни
 versions: '*'
 ---
@@ -14,7 +14,7 @@ OsmAnd постачається з великою кількістю мап дл
 Geofabrik.de має стратегію надавати мапи для країн, які запитуються великою кількістю користувачів або їхніми клієнтами. Це означає, що деякі мапи ніколи не потрапляють на geofabrik, оскільки запитів на них просто недостатньо (або їх взагалі немає), як, наприклад, деякі екзотичні країни, такі як Сейшельські острови або Бурунді тощо.
 
 ## Процес на сервері {#server-process}
-Через це стратегічне рішення geofabrik, OsmAnd має можливість генерувати мапи для цих країн, і для цього використовуються інструменти [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-development.zip) та [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Для OsmAndMapCreator це триетапний процес:
+Через це стратегічне рішення geofabrik, OsmAnd має можливість генерувати мапи для цих країн, і для цього використовуються інструменти [OsmAndMapCreator](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) та [osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert). Для OsmAndMapCreator це триетапний процес:
 - OsmAndMapCreator потрібен полігон, який оточує зовнішній кордон країни.
 - OsmAndMapCreator потрібна *"мапа з сирими даними"* наступного вищого рівня, що включає цю країну. Для Бурунді це означає, що OsmAndMapCreator потрібна мапа Африки. Для Північного Рейну-Вестфалії це означає, що OsmAndMapCreator потрібна мапа Німеччини.
 - [Osmconvert](https://wiki.openstreetmap.org/wiki/Osmconvert) створить *"мапу з сирими даними"* з полігону, витягуючи дані мапи з *"батьківської"* мапи.

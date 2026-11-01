@@ -1,5 +1,5 @@
 ---
-source-hash: 0ece8e7a1a25127672614cdf13cd0688a67a4cbb64515cc18d60c278f7999862
+source-hash: 6cd58289fa863d41e34b91d4957c55fa523752c06e24588537decc922b41bdaa
 title: Створення офлайн растрових та векторних мап
 versions: '*'
 intro: За допомогою OsmAndMapCreator існує багато способів створення та налаштування растрових та векторних мап відповідно до ваших потреб.
@@ -7,7 +7,7 @@ intro: За допомогою OsmAndMapCreator існує багато спос
 
 ## OsmAndMapCreator {#osmandmapcreator}
 
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) можна використовувати для самостійного створення будь-яких мап, що підтримуються OsmAnd. Ви можете завантажити останню версію з [вебсайту](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator має можливості інтерфейсу користувача для створення растрових та векторних мап. *Для створення векторної мапи вам знадобиться файл OSM (`*.pbf, *.osm.gz, *.osm.bz2`)*, а *для створення онлайн-файлу мапи sqlite вам знадобиться `базовий URL тайлів`*.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator) можна використовувати для самостійного створення будь-яких мап, що підтримуються OsmAnd. Ви можете завантажити останню версію з [вебсайту](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip). OsmAndMapCreator має можливості інтерфейсу користувача для створення растрових та векторних мап. *Для створення векторної мапи вам знадобиться файл OSM (`*.pbf, *.osm.gz, *.osm.bz2`)*, а *для створення онлайн-файлу мапи sqlite вам знадобиться `base tile url`*.
 
 ### Растрові мапи (прості) {#raster-maps-simple}
 
@@ -33,7 +33,7 @@ intro: За допомогою OsmAndMapCreator існує багато спос
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Створити векторні мапи" />
 
-Більше параметрів для генерації векторних мап можна вказати в оболонці `utilities.sh`.
+Більше параметрів для генерації векторних мап можна вказати в оболонці `utilities.sh `.
 
 
 ## Векторні мапи (скрипт оболонки) {#vector-maps-shell-script}

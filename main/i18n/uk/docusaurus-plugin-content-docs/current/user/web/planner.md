@@ -65,7 +65,7 @@ To create a navigation route, follow these steps:
 
 Після створення маршруту додавайте точки безпосередньо на карті. Кожен клік розміщує наступну точку, і планувальник будує маршрут між точками.
 
-![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
+![Створення нового маршруту у веб-планувальнику OsmAnd](@site/static/img/web/create_new_route_1.png)
 
 ### Імпорт треку {#import-track}
 
@@ -77,7 +77,7 @@ To create a navigation route, follow these steps:
 
 Кожен елемент у списку має перемикач, який дозволяє швидко показати або приховати трек на карті. Виберіть трек зі списку, щоб відкрити його в планувальнику та продовжити роботу з ним. 
 
-![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
+![Створення нового маршруту у веб-планувальнику OsmAnd](@site/static/img/web/local_files.png)
 
 
 ## Керування треком {#manage-track}
@@ -90,7 +90,7 @@ To create a navigation route, follow these steps:
 
 У [панелі Огляд](#overview-panel) ви можете **Зберегти в хмару**, щоб зберегти маршрут для подальшого використання, та **Завантажити** його як GPX-файл.
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+![Керування треком у веб-планувальнику OsmAnd](@site/static/img/web/manage_track_2_new.png) ![Керування треком у веб-планувальнику OsmAnd](@site/static/img/web/change_profile.png)
 
 
 ## Панелі деталей треку {#track-details-panels}
@@ -103,50 +103,50 @@ To create a navigation route, follow these steps:
 
 Розділ підсумку показує:
 
-- Points — the number of route points used to build the route.
-- Distance — the total route length.
-- Uphill / downhill — total ascent and total descent along the route.
-- Elevation (min/avg/max) — elevation statistics for the route.
-- If elevation data is missing or needs to be updated, use Elevation (Satellite) → recalculate to rebuild elevation using satellite data (when available).
+- Точки — кількість точок маршруту, використаних для побудови маршруту.
+- Відстань — загальна довжина маршруту.
+- Підйом / спуск — загальний набір висоти та загальний спуск уздовж маршруту.
+- Висота (мін./сер./макс.) — статистика висот для маршруту.
+- Якщо дані про висоту відсутні або потребують оновлення, скористайтеся Висота (супутник) → перерахувати, щоб відновити висоту за супутниковими даними (за наявності).
 
 Нижче підсумку панель надає графіки:
 
-- Elevation — an elevation profile of the route.
-- Slope — a slope graph showing gradient changes along the track.
-- Speed — a speed graph along the track.
+- Висота — профіль висот маршруту.
+- Ухил — графік ухилу, що показує зміни градієнта вздовж треку.
+- Швидкість — графік швидкості вздовж треку.
 
 Ви можете увімкнути або вимкнути такі опції:
 
-- Show track points — displays track points on the map.
-- Show waypoints — displays waypoints on the map.
+- Показати точки треку — відображає точки треку на мапі.
+- Показати шляхові точки — відображає шляхові точки на мапі.
 
 Для додаткових деталей треку відкрийте розділи аналізу:
 
-- Road type — breaks the track into segments by road classification.
-- Surface — shows surface types along the route based on OSM data.
-- Smoothness — shows segment smoothness based on OSM tags.
+- Тип дороги — розбиває трек на сегменти за класифікацією доріг.
+- Покриття — показує типи покриття вздовж маршруту на основі даних OSM.
+- Рівність — показує рівність сегментів на основі тегів OSM.
 
-![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
+![Панель Огляд у веб-планувальнику OsmAnd](@site/static/img/web/overview_panel.png) 
 
 ### Панель Трек {#track-panel}
 
-Панель Трек показує список точок маршруту, використаних для побудови треку. Використовуйте її для перегляду та редагування структури маршруту: перетягуйте точки, щоб переставити їх, видаляйте точки за допомогою іконки видалення або використовуйте Clear points, щоб видалити всі точки та почати заново.
+Панель Трек показує список точок маршруту, використаних для побудови треку. Використовуйте її для перегляду та редагування структури маршруту: перетягуйте точки, щоб переставити їх, видаляйте точки за допомогою іконки видалення або використовуйте Очистити точки, щоб видалити всі точки та почати заново.
 
-![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
+![Панель Трек у веб-планувальнику OsmAnd](@site/static/img/web/track_panel_new.png)
 
 ### Панель Точки {#points-panel}
 
-Панель Точки використовується для перегляду та керування шляховими точками для вибраного треку. Шляхові точки можна додавати з контекстного меню карти — клацніть правою кнопкою миші на карті та виберіть опцію **Add waypoint**, потім заповніть деталі шляхоположення (такі як назва, іконка та колір) і збережіть його.
+Панель Точки використовується для перегляду та керування шляховими точками для вибраного треку. Шляхові точки можна додавати з контекстного меню карти — клацніть правою кнопкою миші на карті та виберіть опцію **Додати маршрутну точку**, потім заповніть деталі шляхоположення (такі як назва, іконка та колір) і збережіть його.
 
-Редагування шляхових точок використовує той самий інтерфейс, що й [редагування Обраного](../web/web-favorites.md#edit-favorites). Ви можете змінювати властивості шляхової точки, такі як назва, адреса, опис, іконка, колір і форма, за допомогою єдиної панелі редагування. Вибраний вигляд попередньо переглядається як у панелі редагування, так і безпосередньо на карті.
+Редагування шляхових точок використовує той самий інтерфейс, що й [редагування улюблених місць](../web/web-favorites.md#edit-favorites). Ви можете змінювати властивості шляхової точки, такі як назва, адреса, опис, іконка, колір і форма, за допомогою єдиної панелі редагування. Вибраний вигляд попередньо переглядається як у панелі редагування, так і безпосередньо на карті.
 
-У списку Шляхові точки ви можете контролювати, чи показуються шляхоположення на карті, та видаляти окремі шляхоположення за потреби. Щоб видалити всі шляхоположення з треку одразу, використовуйте *Clear all waypoints*.
+У списку Шляхові точки ви можете контролювати, чи показуються шляхоположення на карті, та видаляти окремі шляхоположення за потреби. Щоб видалити всі шляхоположення з треку одразу, використовуйте *Очистити всі шляхові точки*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
+![Панель Точки у веб-планувальнику OsmAnd](@site/static/img/web/points_panel_new.png)
 
 
 ## Пов'язані статті {#related-articles}
 
-- [Plan a Route](../plan-route/create-route.md)
-- [Travel Guides](../plan-route/travel-guides.md)
+- [Планування маршруту](../plan-route/create-route.md)
+- [Путівники](../plan-route/travel-guides.md)
 - [Navigation](../web/web-navigation.md)

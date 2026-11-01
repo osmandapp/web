@@ -1,5 +1,5 @@
 ---
-source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
+source-hash: d6a31c4940f73f3e1b07d66705ee71fb7de3941616a4621cd534af1b863917ad
 sidebar_position: 1
 title:  Перші кроки
 ---
@@ -25,13 +25,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Offline navigation Android](@site/static/img/settings/google_play_screen1_android.png)
+![Офлайн-навігація Android](@site/static/img/settings/google_play_screen1_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Offline navigationiOS](@site/static/img/settings/itunes_screen_ios.png)
+![Офлайн-навігація iOS](@site/static/img/settings/itunes_screen_ios.png)
 
 </TabItem>
 
@@ -76,13 +76,13 @@ OsmAnd — це мобільний застосунок для мап та на�
 
 <TabItem value="android" label="Android">
 
-![Precise location android](@site/static/img/steps/first_start_andr.png)
+![Точне місцезнаходження android](@site/static/img/steps/first_start_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Precise location iOS](@site/static/img/steps/first_start_ios.png) ![Precise location iOS](@site/static/img/steps/first_start_ios_1.png)
+![Точне місцезнаходження iOS](@site/static/img/steps/first_start_ios.png) ![Точне місцезнаходження iOS](@site/static/img/steps/first_start_ios_1.png)
 
 </TabItem>
 
@@ -97,13 +97,13 @@ OsmAnd — це мобільний застосунок для мап та на�
 
 <TabItem value="android" label="Android">
 
-![Show on the map](@site/static/img/steps/start_screen_download_andr.png)
+![Показати на мапі](@site/static/img/steps/start_screen_download_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Show on the map](@site/static/img/steps/start_screen_download_ios.png)
+![Показати на мапі](@site/static/img/steps/start_screen_download_ios.png)
 
 </TabItem>
 
@@ -144,7 +144,7 @@ OsmAnd не може коректно працювати без завантаж
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_settings,osmand_settings"/> → Мова відображення*
 
-![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![General Settings Language Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
+![Загальні налаштування, мова Android](@site/static/img/personal/profiles/general_settings_language_1_andr_new.png) ![Загальні налаштування, мова Android](@site/static/img/personal/profiles/general_settings_language_2_andr_new.png) 
 
 </TabItem>
 
@@ -152,7 +152,7 @@ OsmAnd не може коректно працювати без завантаж
 
 Перейдіть до: *Налаштування → OsmAnd Maps → Мова*
 
-![General Settings Language iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
+![Загальні налаштування, мова iOS](@site/static/img/personal/profiles/general_settings_language_ios_new.png)
 
 </TabItem>
 
@@ -171,13 +171,13 @@ OsmAnd не може коректно працювати без завантаж
 
 <TabItem value="android" label="Android">
 
-![Manage profile Android](@site/static/img/settings/manage_profile_android.png) ![Configure profile Android](@site/static/img/settings/configure_profile_android.png)
+![Керування профілем Android](@site/static/img/settings/manage_profile_android.png) ![Налаштування профілю Android](@site/static/img/settings/configure_profile_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Manage profile iOS](@site/static/img/settings/manage_profile_ios.png) ![Configure profile iOS](@site/static/img/settings/configure_profile_ios.png)
+![Керування профілем iOS](@site/static/img/settings/manage_profile_ios.png) ![Налаштування профілю iOS](@site/static/img/settings/configure_profile_ios.png)
 
 </TabItem>
 
@@ -197,7 +197,7 @@ OsmAnd не може коректно працювати без завантаж
 
 <TabItem value="android" label="Android">
 
-![Enable plugins Android](@site/static/img/settings/plugins_enable_android.png) ![Plugin example Android](@site/static/img/settings/plugin_example_android.png)
+![Увімкнення плагінів Android](@site/static/img/settings/plugins_enable_android.png) ![Приклад плагіна Android](@site/static/img/settings/plugin_example_android.png)
 
 Щоб увімкнути/вимкнути плагіни, перейдіть до:
 <Translate android="true" ids="android_button_seq"/> <Translate android="true" ids="shared_string_menu,plugin_settings"/> →  &#65049; → Увімкнути
@@ -206,7 +206,7 @@ OsmAnd не може коректно працювати без завантаж
 
 <TabItem value="ios" label="iOS">
 
-![Enable plugins iOS](@site/static/img/settings/plugins_enable_ios.png) ![Plugin example iOS](@site/static/img/settings/plugin_example_ios.png)
+![Увімкнення плагінів iOS](@site/static/img/settings/plugins_enable_ios.png) ![Приклад плагіна iOS](@site/static/img/settings/plugin_example_ios.png)
 
 Щоб увімкнути/вимкнути плагіни, перейдіть до:
 <Translate ios="true" ids="ios_button_seq"/> <Translate ios="true" ids="shared_string_menu,plugins_menu_group"/> → &#10003;
@@ -226,13 +226,13 @@ OsmAnd не може коректно працювати без завантаж
 
 <TabItem value="android" label="Android">
 
-![Configure map Android](@site/static/img/settings/configure_map_menu_android.png) ![Configure map example Android](@site/static/img/settings/configure_map_example_android.png)
+![Налаштування мапи Android](@site/static/img/settings/configure_map_menu_android.png) ![Приклад налаштування мапи Android](@site/static/img/settings/configure_map_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configure map iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Configure map example iOS](@site/static/img/settings/configure_map_example_ios.png)
+![Налаштування мапи iOS](@site/static/img/settings/configure_map_menu_ios.png) ![Приклад налаштування мапи iOS](@site/static/img/settings/configure_map_example_ios.png)
 
 </TabItem>
 
@@ -249,13 +249,13 @@ OsmAnd не може коректно працювати без завантаж
 
 <TabItem value="android" label="Android">
 
-![Configure screen Android](@site/static/img/widgets/configure_screen_android.png) ![Configure screen example Android](@site/static/img/settings/configure_screen_example_android.png)
+![Налаштування екрана Android](@site/static/img/widgets/configure_screen_android.png) ![Приклад налаштування екрана Android](@site/static/img/settings/configure_screen_example_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configure screen iOS](@site/static/img/settings/configure_screen_ios.png) ![Configure screen example iOS](@site/static/img/settings/configure_screen_example_ios.png)
+![Налаштування екрана iOS](@site/static/img/settings/configure_screen_ios.png) ![Приклад налаштування екрана iOS](@site/static/img/settings/configure_screen_example_ios.png)
 
 </TabItem>
 
@@ -272,13 +272,13 @@ OsmAnd дозволяє робити різні позначки на мапі �
 
 <TabItem value="android" label="Android">
 
-![Add personal data Andoroid](@site/static/img/settings/personal_data_android.png)
+![Додавання особистих даних Android](@site/static/img/settings/personal_data_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Add personal data iOS](@site/static/img/settings/personal_data_ios.png)
+![Додавання особистих даних iOS](@site/static/img/settings/personal_data_ios.png)
 
 </TabItem>
 
@@ -295,13 +295,13 @@ OsmAnd дозволяє робити різні позначки на мапі �
 
 <TabItem value="android" label="Android">
 
-![Multiple POI Selection](@site/static/img/map/multiple_selection_android.png) ![Search and display POI Android](@site/static/img/map/search_display_poi_android.png)
+![Вибір кількох POI](@site/static/img/map/multiple_selection_android.png) ![Пошук і відображення POI Android](@site/static/img/map/search_display_poi_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Multiple POI Selection](@site/static/img/settings/multiple_selection_iOS.png) ![Search and display POI iOS](@site/static/img/settings/search_display_poi_iOS.png)
+![Вибір кількох POI](@site/static/img/settings/multiple_selection_iOS.png) ![Пошук і відображення POI iOS](@site/static/img/settings/search_display_poi_iOS.png)
 
 </TabItem>
 
@@ -318,13 +318,13 @@ OsmAnd дозволяє робити різні позначки на мапі �
 
 <TabItem value="android" label="Android">
 
-![Plan route Android](@site/static/img/settings/plan_route_android.png) ![Plan route graph Android](@site/static/img/settings/plan_route_graph_android.png)
+![Планування маршруту Android](@site/static/img/settings/plan_route_android.png) ![Графік планування маршруту Android](@site/static/img/settings/plan_route_graph_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan route iOS](@site/static/img/settings/plan_route_ios.png)
+![Планування маршруту iOS](@site/static/img/settings/plan_route_ios.png)
 
 </TabItem>
 
@@ -341,13 +341,13 @@ OsmAnd надає багато можливостей для пошуку, вк�
 
 <TabItem value="android" label="Android">
 
-![Address search Android](@site/static/img/settings/address_search_android.png) ![Search result Android](@site/static/img/settings/address_search_result_android.png)
+![Пошук за адресою Android](@site/static/img/settings/address_search_android.png) ![Результат пошуку Android](@site/static/img/settings/address_search_result_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Address search iOS](@site/static/img/settings/address_search_ios.png) ![Search result iOS](@site/static/img/settings/address_search_result_ios.png)
+![Пошук за адресою iOS](@site/static/img/settings/address_search_ios.png) ![Результат пошуку iOS](@site/static/img/settings/address_search_result_ios.png)
 
 </TabItem>
 
@@ -368,13 +368,13 @@ OsmAnd надає багато можливостей для пошуку, вк�
 
 <TabItem value="android" label="Android">
 
-![Start navigation Android](@site/static/img/settings/start_navigation_android.png) ![Route graph Android](@site/static/img/settings/route_graph_android.png)
+![Початок навігації Android](@site/static/img/settings/start_navigation_android.png) ![Графік маршруту Android](@site/static/img/settings/route_graph_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Start navigation iOS](@site/static/img/settings/start_navigation_ios.png) ![Route graph iOS](@site/static/img/settings/route_graph_ios.png)
+![Початок навігації iOS](@site/static/img/settings/start_navigation_ios.png) ![Графік маршруту iOS](@site/static/img/settings/route_graph_ios.png)
 
 </TabItem>
 
@@ -395,13 +395,13 @@ OsmAnd надає багато можливостей для пошуку, вк�
 
 <TabItem value="android" label="Android">
 
-![Trip recording Android](@site/static/img/settings/trip_recording_android.png) ![Overview trip recording Android](@site/static/img/settings/trip_recording_overview_android.png)
+![Запис поїздки Android](@site/static/img/settings/trip_recording_android.png) ![Огляд запису поїздки Android](@site/static/img/settings/trip_recording_overview_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Start trip recording iOS](@site/static/img/settings/trip_recording_start_ios.png) ![Trip recording menu iOS](@site/static/img/settings/trip_recording_ios.png)
+![Початок запису поїздки iOS](@site/static/img/settings/trip_recording_start_ios.png) ![Меню запису поїздки iOS](@site/static/img/settings/trip_recording_ios.png)
 
 </TabItem>
 
@@ -418,13 +418,13 @@ OsmAnd працює на даних [OpenStreetMap](https://www.openstreetmap.or
 
 <TabItem value="android" label="Android">
 
-![OSM note Android](@site/static/img/settings/osm_note_android.png) ![Create POI Android](@site/static/img/settings/create_poi_menu_android.png)
+![Нотатка OSM Android](@site/static/img/settings/osm_note_android.png) ![Створення POI Android](@site/static/img/settings/create_poi_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![OSM note iOS](@site/static/img/settings/osm_note_ios.png) ![Create POI iOS](@site/static/img/settings/create_poi_ios.png)
+![Нотатка OSM iOS](@site/static/img/settings/osm_note_ios.png) ![Створення POI iOS](@site/static/img/settings/create_poi_ios.png)
 
 </TabItem>
 
@@ -439,27 +439,27 @@ OsmAnd працює на даних [OpenStreetMap](https://www.openstreetmap.or
 
 <TabItem value="android" label="Android">
 
-There are two available variants of how to close OsmAnd.
+Є два способи закрити OsmAnd.
 
-1. Close an app by swiping up and off the screen. For a vertical list of apps, swipe left or right.  
+1. Закрийте застосунок, змахнувши його вгору за межі екрана. Якщо список застосунків вертикальний, змахніть вліво або вправо.  
 
-2. You may need to perform the following steps before doing so, otherwise OsmAnd will run in the background:
+2. Перед цим може знадобитися виконати такі кроки, інакше OsmAnd працюватиме у фоновому режимі:
     - [Dismiss navigation](../navigation/setup/route-navigation.md#start--stop-navigation)
     - [Stop map downloading and updating](../start-with/download-maps.md)
     - [Stop trip recording](../plugins/trip-recording.md#new-track-recording)
     - [Stop audio/video note recording](../plugins/audio-video-notes.md)
 
-3. *Force stop* function:
-    - Long tap *OsmAnd icon → **i** button → Force stop*.
-    - Open the settings and tap *Apps & notifications → OsmAnd → Force stop*.
+3. Функція *Примусово зупинити*:
+    - Довго утримуйте *значок OsmAnd → кнопка **i** → Примусово зупинити*.
+    - Відкрийте налаштування та натисніть *Застосунки та сповіщення → OsmAnd → Примусово зупинити*.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-Close an app by swiping up and off the screen. For a vertical list of apps, swipe left or right.  
+Закрийте застосунок, змахнувши його вгору за межі екрана. Якщо список застосунків вертикальний, змахніть вліво або вправо.  
 
-You may need to perform the following steps before doing so, otherwise, OsmAnd will run in the background:
+Перед цим може знадобитися виконати такі кроки, інакше OsmAnd працюватиме у фоновому режимі:
 
 - [Cancel navigation](../navigation/setup/route-navigation.md)
 - [Stop map downloading and updating](../start-with/download-maps.md)
@@ -479,7 +479,7 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 Торкніться іконки дії, щоб негайно запустити застосунок з вибраною дією.
 
-![Shortcuts](@site/static/img/steps/shortcuts_3_andr.png) ![Shortcuts](@site/static/img/steps/shortcuts_4_andr.png)
+![Ярлики](@site/static/img/steps/shortcuts_3_andr.png) ![Ярлики](@site/static/img/steps/shortcuts_4_andr.png)
 
 
 ## Офлайн-довідка {#offline-help}
@@ -488,13 +488,13 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_screen_andr.png)
+![Офлайн-довідка Android (знімок екрана)](@site/static/img/steps/offline_help_screen_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_screen_ios.png)
+![Меню Довідка iOS](@site/static/img/steps/offline_help_screen_ios.png)
 
 </TabItem>
 
@@ -502,7 +502,7 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 У *меню Довідка* ви можете знайти статті з нашого сайту [www.osmand.net/docs](https://osmand.net/docs/intro/). Після початкового завантаження (потрібне підключення до Інтернету) статті довідки доступні в автономному режимі.  
 Перший підрозділ, *Офлайн-довідка*, містить **Найбільш переглядані** (або популярні) статті серед наших користувачів. Ці статті відображаються мовою, встановленою для застосунку, якщо ця мова підтримується на нашому сайті документації. Підтримувані мови наразі включають: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, та *<Translate android="true" ids="lang_uk"/>*. Якщо ви змінюєте мову застосунку, будь ласка, перезапустіть OsmAnd, щоб документація відкрилася обраною мовою. Коли переклад недоступний, автоматично відображатиметься англійська версія сторінки. Розділи **Посібник користувача** та **Вирішення проблем** мають таку ж структуру, як і на веб-сайті.  
-У *меню Довідка* ви також можете знайти корисні посилання на соціальні мережі OsmAnd, інформацію про версію вашого застосунку, примітки до випуску та контакти служби підтримки. Через Довідку ви також можете надсилати [logcat та звіти про збої](../troubleshooting/crash-logs.md#crash-and-app-logs).  
+У *меню Довідка* ви також можете знайти корисні посилання на соціальні мережі OsmAnd, інформацію про версію вашого застосунку, примітки до випуску та контакти служби підтримки. Через Довідку ви також можете надсилати [звіти застосунку та про збої](../troubleshooting/crash-logs.md#crash-and-app-logs).  
 
 ### Меню {#menu}
 
@@ -510,21 +510,21 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_menu_andr.webp)
+![Офлайн-довідка Android (знімок екрана)](@site/static/img/steps/offline_help_menu_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_menu_ios.webp)
+![Меню Довідка iOS](@site/static/img/steps/offline_help_menu_ios.webp)
 
 </TabItem>
 
 </Tabs>  
 
-- **Send app crashes logs**. Allows users to send crash reports recorded from previous app crashes to developers for analysis and troubleshooting. 
-- **Send current session logs** (Android)/**Send current app log** (iOS). Allows users to send the current app log, containing information recorded since the app was started, to developers for troubleshooting.
-- **Copy build version**. Enables users to quickly and accurately communicate the current version of the app to developers when reporting issues, simplifying the diagnostic and resolution process.
+- **Надіслати журнали збоїв застосунку**. Дає змогу надсилати розробникам звіти про попередні збої застосунку для аналізу та усунення проблем. 
+- **Надіслати журнали поточного сеансу** (Android)/**Надіслати поточний журнал застосунку** (iOS). Дає змогу надіслати розробникам поточний журнал застосунку з інформацією, записаною від моменту запуску застосунку, для усунення проблем.
+- **Копіювати версію збірки**. Дає змогу швидко й точно повідомити розробникам поточну версію застосунку під час звернення про проблему, спрощуючи діагностику та її усунення.
 
 
 ### Найбільш переглядані {#most-viewed}
@@ -533,13 +533,13 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
+![Офлайн-довідка Android (знімок екрана)](@site/static/img/steps/offline_help_most_viewed_3_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_most_viewed_ios.png)
+![Меню Довідка iOS](@site/static/img/steps/offline_help_most_viewed_ios.png)
 
 </TabItem>
 
@@ -554,13 +554,13 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/guide_andr.png)
+![Офлайн-довідка Android (знімок екрана)](@site/static/img/steps/guide_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/guide_ios.png)
+![Меню Довідка iOS](@site/static/img/steps/guide_ios.png)
 
 </TabItem>
 
@@ -575,13 +575,13 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_troubleshooting_andr.png)
+![Офлайн-довідка Android (знімок екрана)](@site/static/img/steps/offline_help_troubleshooting_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png)
+![Меню Довідка iOS](@site/static/img/steps/offline_help_troubleshooting_ios.png)
 
 </TabItem>
 
@@ -603,13 +603,13 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_contact_us_andr.png)
+![Офлайн-довідка Android (знімок екрана)](@site/static/img/steps/offline_help_contact_us_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_contact_us_ios.png)
+![Меню Довідка iOS](@site/static/img/steps/offline_help_contact_us_ios.png)
 
 </TabItem>
 
@@ -623,21 +623,21 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_help_report_andr.webp)
+![Офлайн-довідка Android (знімок екрана)](@site/static/img/steps/offline_help_report_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_help_report_ios.webp)
+![Меню Довідка iOS](@site/static/img/steps/offline_help_report_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-- **Open issue on GitHub**. [Android version GitHub](https://github.com/osmandapp/OsmAnd-Issues/issues), [iOS version GitHub](https://github.com/osmandapp/OsmAnd-iOS/issues): ask questions, write about bugs and propose features.
-- **Send app crashes logs**. Contains reports of previous app crashes.
-- **Send current session logs** (Android)/**Send current app log** (iOS). Contains the app log recorded since the app was started.
+- **Відкрити проблему на GitHub**. [GitHub версії для Android](https://github.com/osmandapp/OsmAnd-Issues/issues), [GitHub версії для iOS](https://github.com/osmandapp/OsmAnd-iOS/issues): ставте запитання, повідомляйте про помилки та пропонуйте нові функції.
+- **Надіслати журнали збоїв застосунку**. Містить звіти про попередні збої застосунку.
+- **Надіслати журнали поточного сеансу** (Android)/**Надіслати поточний журнал застосунку** (iOS). Містить журнал застосунку, записаний від моменту його запуску.
 
 ### Про OsmAnd {#about-osmand}
 
@@ -645,13 +645,13 @@ You may need to perform the following steps before doing so, otherwise, OsmAnd w
 
 <TabItem value="android" label="Android">
 
-![Offline help Android screenshot](@site/static/img/steps/offline_about_1_andr.png)
+![Офлайн-довідка Android (знімок екрана)](@site/static/img/steps/offline_about_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/steps/offline_about_ios_new.png) ![Maps menu iOS](@site/static/img/steps/offline_about_ios_new_2.png)
+![Меню Довідка iOS](@site/static/img/steps/offline_about_ios_new.png) ![Меню Довідка iOS](@site/static/img/steps/offline_about_ios_new_2.png)
 
 </TabItem>
 

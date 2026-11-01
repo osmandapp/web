@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Популярні місця
 ---
@@ -34,7 +34,7 @@ Popular Places — це [платна функція](../purchases/index.md).
 
 <TabItem value="android" label="Android">
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
+![Популярні місця](@site/static/img/map/popular_places/popular_places.png) ![Популярні місця](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -85,7 +85,7 @@ Popular Places — це [платна функція](../purchases/index.md).
 
 Перейдіть до: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.webp) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.webp)
+![Режим дослідження](@site/static/img/map/popular_places/popular_places_search.webp) ![Режим дослідження](@site/static/img/map/popular_places/popular_places_search_2.webp)
 
 </TabItem>
 
@@ -117,7 +117,7 @@ Popular Places — це [платна функція](../purchases/index.md).
 
 Перейдіть до: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+![Меню популярних місць](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
@@ -125,7 +125,7 @@ Popular Places — це [платна функція](../purchases/index.md).
 
 Перейдіть до: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Popular places (Wikipedia)*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu_ios.png)
+![Меню популярних місць](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -163,13 +163,13 @@ Popular Places — це [платна функція](../purchases/index.md).
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Контекстне меню онлайн-фото Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Контекстне меню онлайн-фото iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
@@ -185,15 +185,15 @@ Popular Places — це [платна функція](../purchases/index.md).
 
 <TabItem value="android" label="Android">  
 
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
+![Меню галереї – Android](@site/static/img/map/gallery_menu_android.png)
+![Меню галереї – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Меню галереї – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Меню галереї – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
@@ -209,7 +209,7 @@ Popular Places — це [платна функція](../purchases/index.md).
   Поділіться вибраним зображенням за допомогою будь-якого сумісного додатка, встановленого на вашому пристрої (наприклад, месенджери, електронна пошта або соціальні мережі). Спільний вміст включає зображення та посилання на його джерело (за наявності).
 
 - **Details**  
-  Відкрийте детальний перегляд, що показує метадані про зображення, включаючи: *Опис (повний текст, лише Android)*, *Назва*, *Дата додавання*, *Автор*, *Ліцензія*, *Джерело* та *Пряме посилання*
+  Відкрийте детальний перегляд, що показує метадані про зображення, включаючи: *Опис (повний текст)*, *Назва*, *Дата додавання*, *Автор*, *Ліцензія*, *Джерело* та *Пряме посилання*.
 
   **Примітка:** Мова опису залежить від мови інтерфейсу додатка. Якщо опис обраною мовою недоступний, OsmAnd показує англійську версію або першу доступну перекладену версію.
 

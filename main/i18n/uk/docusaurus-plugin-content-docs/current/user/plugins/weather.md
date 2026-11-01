@@ -1,5 +1,5 @@
 ---
-source-hash: bb2a9cfeeb4c86312326d2838bf8f2aad11240e1f172f40e7191288df4689b54
+source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
 sidebar_position: 19
 title:  Погода
 ---
@@ -151,21 +151,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *Головне меню → Плагіни → Погода → Налаштування*
 - *Головне меню → Налаштування → Профіль → Налаштування плагінів → Погода*
 
-![Налаштування погоди Android](@site/static/img/plugins/weather/weather_settings_andr_1.png) ![Налаштування погоди 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.png)
+![Налаштування погоди Android](@site/static/img/plugins/weather/weather_settings_andr_1.webp) ![Налаштування погоди 2 Android](@site/static/img/plugins/weather/weather_settings_andr_2.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-- *Головне меню → Налаштування → Профіль → Плагіни → Погода*
+*Головне меню → Налаштування → Профіль → Плагіни → Погода*
 
-![Налаштування погоди iOS](@site/static/img/plugins/weather/weather_settings_ios.png) ![Налаштування погоди iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.png)
+![Налаштування погоди iOS](@site/static/img/plugins/weather/weather_settings_ios.webp) ![Налаштування погоди iOS 2](@site/static/img/plugins/weather/weather_settings_ios_2.webp)
 
 </TabItem>
 
 </Tabs>  
 
-Важливо вирішити, в яких одиницях вимірювання вам зручно бачити [дані про погоду](#weather-layers) на карті та у віджетах [Погода](#weather-widgets) на екрані. Ви можете вибрати відповідні одиниці вимірювання для кожного параметра або використовувати значення за замовчуванням (*лише для iOS*). У версії застосунку OsmAnd для iOS ви також можете увімкнути опцію офлайн-прогнозу, щоб уникнути використання мобільного трафіку під час подорожей.  
+Важливо вирішити, в яких одиницях вимірювання вам зручно бачити [дані про погоду](#weather-layers) на карті та у віджетах [Погода](#weather-widgets) на екрані. Ви можете вибрати відповідні одиниці вимірювання для кожного параметра. Також можна використовувати значення за замовчуванням — на iOS для всіх параметрів, на Android лише для температури. Одиницю температури можна вибрати в: *Меню → Профіль → Загальні налаштування → Одиниці та формати → Температура*. У версії застосунку OsmAnd для iOS ви також можете увімкнути опцію офлайн-прогнозу, щоб уникнути використання мобільного трафіку під час подорожей.  
 
 :::note
 У версії OsmAnd для iOS ви можете змінити одиниці вимірювання та рівень прозорості в меню, що відкривається після тривалого натискання на іконку потрібного шару карти.  
