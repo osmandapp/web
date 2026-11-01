@@ -39,9 +39,11 @@ Unten sind die Preise für OsmAnd-Produkte in den USA und der EU aufgeführt. Pr
 
 
 
-:::danger 🎃 Halloween-Sale
+<!--
 
-*Beeilen Sie sich! Dieses Angebot gilt nur bis* **1. November (23:59 UTC)**.
+:::danger 🍂 Herbst-Sale
+
+*Beeilen Sie sich! Dieses Angebot gilt nur bis* **4. Oktober (23:59 UTC)**.
 
 :::
 
@@ -58,7 +60,7 @@ Wenn Sie ein Abonnement über unsere [Website](https://osmand.net/pricing) zum e
 Ab dem dritten Jahr gilt der volle Preis.
 :::
 
-<!--
+-->
 
 
 |    | OsmAnd Free   | **Maps+** Einmalkauf | **Maps+** Abonnement | **OsmAnd Pro** |**OsmAnd XV** |
@@ -67,8 +69,6 @@ Ab dem dritten Jahr gilt der volle Preis.
 | **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |**Einmalkauf** (15 Jahre Pro / Maps+ Lebenslang) |
 | **Preis (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 | €450.00  |
 | **Preis (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 | $450.00  |
-
--->
 
 
 
