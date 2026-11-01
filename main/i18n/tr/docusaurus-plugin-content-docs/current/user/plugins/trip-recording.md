@@ -1,5 +1,5 @@
 ---
-source-hash: bc6d5ba96cb9e583b36cbcf01a41444d6f79cda06c1a7921fa913f30e6f428a8
+source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
 sidebar_position: 17
 title:  Gezi Kaydı
 ---
@@ -292,7 +292,7 @@ Gezilerinizi izlemeye başlamadan önce, en iyi performans için **Gezi Kaydı e
 | **Boşluktan sonra kayıtları otomatik böl** | Kaydedilen noktalar arasındaki zaman boşluklarına göre parkurları otomatik olarak böler. <ul><li>6 dakikalık bir boşluktan sonra yeni bir segment başlar.</li><li>2 saatlik bir boşluktan sonra yeni bir parkur başlar.</li><li>Tarih değiştiğinde yeni bir dosya başlar.</li><li>Boşluklar GPS sinyal kaybı, düşük hız veya yapılandırma ayarlarından kaynaklanabilir.</li></ul><details><summary>*Açıklama*</summary>Hiçbir nokta kaydedilmediğinde bir boşluk belirlenir. Bu, konum algılanmadığı veya algılandığı ancak kaydedilmediği için olabilir. Zayıf GPS sinyalleri (kötü hava koşulları nedeniyle), veya hareket hızının yapılandırılan eşiğin altına düşmesi gibi çeşitli faktörler buna neden olabilir. Bu gibi durumlarda, cihaz konumu algılasa bile kaydetmez.<br/><br/>Kaydedilen verilerdeki bu boşluklar, aynı parkur içinde yeni bir segmentin, aynı dosya içinde yeni bir parkurun veya tek bir kayıt içinde yeni bir GPX dosyasının oluşturulmasını tetikleyebilir. Bu, tek bir başlatma/durdurma kayıt oturumu içinde yönetilir.</details> |
 | **Bağımsız günlük kaydını önle** (*Android*) | OsmAnd uygulaması kapatıldığında (son uygulamalar aracılığıyla) parkur kaydını duraklatır. Arka plan göstergesi Android bildirim panelinde görüntülenmez. |
 | **Yönü dahil et** | GPX dosyasındaki her nokta için yönü (hareket yönü) kaydeder. Yön, cihazın baktığı yöndür ve rüzgar veya kayma gibi dış etkenler nedeniyle hareket yönünden farklılık gösterebilir. |
-| **Etkinlik**  | Seçenek, bir profil için bir [etkinlik türü](../map/tracks/track-context-menu.md#ttrack-activity-type) önceden seçmenize olanak tanır, bu da daha sonra tüm kaydedilen parkurlara otomatik olarak uygulanır. |
+| **Etkinlik**  | Seçenek, bir profil için bir [etkinlik türü](../map/tracks/track-context-menu.md#track-activity-type) önceden seçmenize olanak tanır, bu da daha sonra tüm kaydedilen parkurlara otomatik olarak uygulanır. |
 | **Harici sensörler** <br/> *Eklentinin etkinleştirilmesi gerekir* | *<Translate android="true" ids="map_widget_ant_heart_rate"/>* veya *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* gibi [harici sensörlerden](../plugins/external-sensors.md#trip-recording) gelen veriler GPX dosyasına kaydedilir. *Mesafe* verileri Android veya iOS'ta kaydedilmez. Yalnızca [Harici Sensörler eklentisi](../plugins/external-sensors.md) etkinleştirildiğinde görüntülenir. |
 | **Araç Metrikleri** <br/> *Eklentinin etkinleştirilmesi gerekir* | [OBD-II tarayıcısından](../plugins/vehicle-metrics.md#trip-recording) gelen veriler GPX dosyasına kaydedilir. Yalnızca [Araç Metrikleri eklentisi](../plugins/vehicle-metrics.md) etkinleştirildiğinde görüntülenir.<br />*Not*: Listeden GPX dosyasına hangi metriklerin kaydedileceğini ekleyebilirsiniz: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Parkur depolama klasörü** (*Android*) | *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* sekmesinde kaydedilen parkurların nerede depolanacağını tanımlar. Seçenekler arasında tüm parkurları Rec klasöründe depolamak veya bunları Rec/yyyyy-mm gibi aylara göre düzenlemek bulunur. |
@@ -414,13 +414,13 @@ Bazı Gezi Kaydı widget'ları birden fazla görüntüleme modunu destekler. Mod
 
 | **Widget** | **Mevcut modlar**  |
 |-------|-------------|
-| Ortalama Eğim | Son yokuş aşağı; Son yokuş yukarı |
-| Ortalama Hız (*Yalnızca Android*) | Gezi ortalaması (varsayılan); Son yokuş aşağı; Son yokuş yukarı |
-| Mesafe (Başlat-Durdur) | Gezi ortalaması (varsayılan); Son yokuş aşağı; Son yokuş yukarı |
-| Yokuş aşağı | Toplam (varsayılan); Son yokuş aşağı |
-| Maksimum Hız | Toplam (varsayılan); Son yokuş aşağı; Son yokuş yukarı |
-| Hareket Süresi | Toplam (varsayılan); Son yokuş aşağı; Son yokuş yukarı |
-| Yokuş yukarı | Toplam (varsayılan); Son yokuş yukarı |
+| Ortalama Eğim | <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Ortalama Hız (*Yalnızca Android*) | Gezi ortalaması (varsayılan); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Mesafe (Başlat-Durdur) | Toplam mesafe (varsayılan); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Yokuş aşağı | Toplam (varsayılan); <Translate android="true" ids="shared_string_last_downhill"/> |
+| Maksimum Hız | Toplam (varsayılan); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Hareket Süresi | Toplam (varsayılan); <Translate android="true" ids="shared_string_last_downhill"/>; <Translate android="true" ids="shared_string_last_uphill"/> |
+| Yokuş yukarı | Toplam (varsayılan); <Translate android="true" ids="shared_string_last_uphill"/> |
 
 Mod değiştirme widget'a bağlıdır:
 - Yokuş yukarı / Yokuş aşağı / Maksimum Hız / Ortalama Eğim / Hareket Süresi / Ortalama Hız — Haritada widget'a dokunarak modunu değiştirin.
@@ -432,6 +432,33 @@ Mevcut kayıt henüz bir yokuş yukarı veya yokuş aşağı bölümü içermiyo
 
 
 ### Mesafe (Başlat-Durdur) {#distance-start-stop}
+
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
 
 | |
 |-----------|
@@ -460,6 +487,31 @@ Mevcut kayıt henüz bir yokuş yukarı veya yokuş aşağı bölümü içermiyo
 |![widget'lar](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Birden fazla widget seçtiyseniz — *Süre*, *Yokuş yukarı* veya *Yokuş aşağı* — her biri için aynı iletişim kutusuna geçiş yapmanıza veya kapatmanıza gerek kalmadan erişebilirsiniz. Bu birleşik arayüz, ilgili tüm bilgileri sorunsuz bir şekilde görüntülemeyi ve yönetmeyi kolaylaştırır.
+
+<!--
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+-->
+
 
 
 ## İlgili Makaleler {#related-articles}

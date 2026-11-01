@@ -1,5 +1,5 @@
 ---
-source-hash: cb8c5833ebaed38f613b68f78e5af512ccbcbb7c7c2a17b2a88bae584448d661
+source-hash: b2b4863468543cee690b0a3568b81ee3415698752aaf50fecc63c1797c031476
 sidebar_position: 4
 title: Haritalar ve Veriler
 ---
@@ -38,7 +38,7 @@ Android 11 ve 12'de tanıtılan yeni [depolama erişim kuralları](https://www.a
 
 #### 1. OsmAnd veri depolama klasörünü "Dahili uygulama belleği"ne taşıyın {#1-migrate-the-osmand-data-storage-folder-to-internal-app-memory}
 
-- Depolama klasörünü *Menü → Ayarlar → OsmAnd ayarları → Veri depolama klasörü* içinde ***Dahili uygulama belleği*** seçeneğini belirleyerek değiştirebilirsiniz.
+- Depolama klasörünü *Menü → Ayarlar → OsmAnd ayarları → Veri depolama → Ana depolama* içinde ***Dahili uygulama belleği*** seçeneğini belirleyerek değiştirebilirsiniz.
 
 - Ancak, dahili belleğin genellikle sınırlı olduğunu unutmayın. Geçici bir çözüm olarak, önemli dosyaları dahili belleğe taşıyabilir, nadiren kullanılan haritaları ise SD kartta tutabilirsiniz. Bu dosyaları gerektiğinde manuel olarak aktarmak için bir dosya yöneticisi kullanın.
 
@@ -46,7 +46,7 @@ Geliştirme ekibi, yeni Android depolama politikaları altında SD kart performa
 
 #### 2. SD kartın "İndirilenler" Klasörünü kullanın {#2-use-the-sd-cards-download-folder}
 
-Yavaş harita yükleme sorununu, OsmAnd depolaması için SD kartın **İndirilenler** klasörünü *Menü → Ayarlar → OsmAnd ayarları → Veri depolama klasörü → Manuel olarak belirtilen* altında belirterek çözmeyi deneyebilirsiniz. Aşağıdaki yollar mümkündür:
+Yavaş harita yükleme sorununu, OsmAnd depolaması için SD kartın **İndirilenler** klasörünü *Menü → Ayarlar → OsmAnd ayarları → Veri depolama → Ana depolama → Manuel olarak belirtilen* altında belirterek çözmeyi deneyebilirsiniz. Aşağıdaki yollar mümkündür:
 
 - ***/storage/XXXX-XXXX/Download/osmand***  
    Bu yol, birden fazla dosyaya erişirken hatalara neden olabilir. Örneğin, Dünya Genel Bakış haritasını indirebilirsiniz, ancak diğer bölgeler görünmeyebilir.
@@ -66,11 +66,12 @@ Android, depolama izinleri konusunda daha katı hale geldi ve genellikle uygulam
 
 Ancak, OsmAnd'ın *Tüm dosyalara erişim* izni yoktur (Google'ın kısıtlamaları nedeniyle), bu da klasör seçimini sınırlar. Bir geçici çözüm, Android'in genellikle daha geniş okuma/yazma erişimi sağladığı "Medya" depolama klasörünü kullanmaktır. Bunu yapmak için:
 
-- *OsmAnd Ayarları → OsmAnd ayarları → Veri depolama klasörü*'ne gidin ve mevcut depolama alanlarını inceleyin. Hedef depolamayı belirlemek için boş alan göstergesini kullanın, genellikle *Harici depolama 2* olarak etiketlenir.
+- *OsmAnd Ayarları → OsmAnd ayarları → Veri depolama → Ana depolama*'ne gidin ve mevcut depolama alanlarını inceleyin. Hedef depolamayı belirlemek için boş alan göstergesini kullanın, genellikle *Harici depolama 2* olarak etiketlenir.
+- Varsa, SD kartınız için *Görünür harici depolama* seçeneğini belirleyin ve istendiğinde verilerinizi taşıyın. Aksi takdirde aşağıdaki manuel adımları izleyin.
 - Mevcut klasör yolunu not edin, bu */storage/xxxx-xxxx/Android/data/net.osmand.plus/files* gibi görünebilir.
-- *Manuel olarak belirtilen* seçeneğine geçin ve yolu medya erişimli bir klasöre değiştirin. Birçok sistemde, */Android/data/* öğesini */media/* olarak değiştirmek (örneğin, ***/storage/xxxx-xxxx/media***) işe yarar. Bazı sistemler farklı yol değişiklikleri gerektirebilir.
+- *Manuel olarak belirtilen* seçeneğine geçin ve yolu medya erişimli bir klasöre değiştirin. Birçok sistemde, */Android/data/* öğesini */Android/media/* olarak değiştirmek (örneğin, ***/storage/xxxx-xxxx/Android/media/net.osmand.plus/files***) işe yarar. Bazı sistemler farklı yol değişiklikleri gerektirebilir.
 
-Doğru bir yol, OsmAnd'a herhangi bir yazma izni hatası istemeyecektir. Bu değişiklikleri yapmadan önce, OsmAnd'ın Android'in **Uygulamalar** ayarları altında "Medya" depolama izni de dahil olmak üzere uygun depolama izinlerine sahip olduğundan emin olun. Daha yeni Android sürümlerinde, bu izinler gelişmiş veya gizli menülerde bulunabilir.
+Doğru bir yol, OsmAnd'a herhangi bir yazma izni hatası istemeyecektir. Bu klasör için ek depolama izinleri gerekmez.
 
 ### Uygulama güncellemesinden sonra harita verilerini silme (eğer “Çoklu Kullanıcı Depolama 1” seçiliyse) {#deleting-map-data-after-the-app-update-if-multiuser-storage-1-is-selected}
 

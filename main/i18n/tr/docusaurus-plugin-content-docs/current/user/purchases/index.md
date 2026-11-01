@@ -1,5 +1,5 @@
 ---
-source-hash: be440c1569e9bfbe942ce6274154063e4405eb3f2127ea1a15070e5680537c7c
+source-hash: 446dc6fb8862e87b5c5410884e5d855a41f55489f8f416fdb6d8004a6d595853
 sidebar_position: 9
 ---
 
@@ -11,7 +11,7 @@ OsmAnd uygulaması Android ve iOS sistemleri için mevcuttur. OsmAnd'ın sunduğ
 
 Android'deki satın almalar hakkında ayrıntılı bilgi: yükleme pazarları, abonelikler ve uygulama içi satın almalar, fiyatlar, ücretli özellikler.
 
-### [iOS Satın Alımları](./ios.md) {#ios-ios-purchases}
+### [iOS Satın Alımları](./ios.md) {#ios-purchases}
 
 iOS'taki satın almalar hakkında ayrıntılı bilgi: abonelikler ve uygulama içi satın almalar, fiyatlar, ücretli özellikler.
 

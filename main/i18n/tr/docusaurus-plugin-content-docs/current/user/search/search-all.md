@@ -1,5 +1,5 @@
 ---
-source-hash: 425f511859172593fe5402cce5c44974144e585dac7b77bd26c1c5e68a22a8f0
+source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
 sidebar_position: 1
 title: Tümünü Ara
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Genel Bakış {#overview}
 
-**Arama**, konumları hızlı bir şekilde bulmak için kullanışlı bir araçtır. Bir konumu adres, koordinatlar, ilgi çekici noktalar (POI) veya önceki aramalarla bulmak için Aramayı kullanabilirsiniz. [Adres Ara](#search-address), tam bir konum elde etmek istediğiniz adresi girmenizi sağlar. [Koordinat](#search-coordinates) araması enlem ve boylam gibi coğrafi koordinatlarla çalışır. [POI](#search-poi) araması ile kafeler, oteller veya benzin istasyonları gibi belirli kategorilerdeki yakındaki yerleri arayabilirsiniz. Arama aracındaki [Keşfet](#search-explore) sekmesi yakındaki popüler yerleri vurgular ve son ziyaret edilen konumlara hızlı erişim sağlar. Arama [Geçmişi](#search-history) geçmiş aramaları kaydeder. Arama özelliği, gezileri planlamayı, bilinmeyen arazide gezinmeyi ve yakındaki POI'leri bulmayı kolaylaştırır.
+**Arama**, konumları hızlı bir şekilde bulmak için kullanışlı bir araçtır. Bir konumu adres, koordinatlar, ilgi çekici noktalar (POI) veya önceki aramalarla bulmak için Aramayı kullanabilirsiniz. [Adres Ara](#search-address), tam bir konum elde etmek istediğiniz adresi girmenizi sağlar. [Koordinat](#search-coordinates) araması enlem ve boylam gibi coğrafi koordinatlarla çalışır. [POI](#search-poi) araması ile kafeler, oteller veya benzin istasyonları gibi belirli kategorilerdeki yakındaki yerleri arayabilirsiniz. Arama aracındaki [Keşfet](#search-explore) sekmesi yakındaki popüler yerleri vurgular ve son ziyaret edilen konumlara hızlı erişim sağlar. Arama özelliği, gezileri planlamayı, bilinmeyen arazide gezinmeyi ve yakındaki POI'leri bulmayı kolaylaştırır.
 
 
 ## Nasıl Kullanılır {#how-to-use}
@@ -29,13 +29,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Search POI list Android](@site/static/img/search/search_online_2_andr_new.png)
+![Android'de POI listesi arama](@site/static/img/search/search_online_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search POI list iOS](@site/static/img/search/poi_list_1_ios.png)  
+![iOS'ta POI listesi arama](@site/static/img/search/poi_list_1_ios.png)  
 
 </TabItem>
 
@@ -95,7 +95,7 @@ Karışıklığı önlemek için bazen anahtar veya değer tırnak içine alın�
 
 <TabItem value="android" label="Android">
 
-![Search POI list Android](@site/static/img/search/search_sort_by.webp)
+![Android'de arama sonuçlarını sıralama](@site/static/img/search/search_sort_by.webp)
 
 OsmAnd, arama sonuçlarını birkaç kritere göre otomatik olarak sıralar:
 
@@ -109,7 +109,7 @@ OsmAnd, arama sonuçlarını birkaç kritere göre otomatik olarak sıralar:
 
 5. **Önem** — İyi bilinen simgeler veya sıkça referans verilen yerler, arama sorgusuyla yakından eşleştiğinde sonuçlarda daha üstte görünebilir.
 
-Ayrıca arama sonuçları listesindeki *Sırala* çipini kullanarak arama sonuçlarının sıralama düzenini manuel olarak değiştirebilirsiniz. *Sırala* öğesine dokunun ve aşağıdaki seçeneklerden birini seçin:
+Ayrıca arama sonuçları listesinin üstündeki sıralama çipini kullanarak arama sonuçlarının sıralama düzenini manuel olarak değiştirebilirsiniz. Çip seçili seçeneği gösterir. Çipe dokunun ve *Sırala* menüsünde aşağıdakilerden birini seçin:
 - **İlgililik** — Arama sonuçlarını arama sorgusuna göre sıralar.
 - **En yakın** — Arama sonuçlarını mesafeye göre sıralar, en yakın sonuçlar önce gösterilir.
 
@@ -148,13 +148,13 @@ OsmAnd, arama sonuçlarını birkaç kritere göre otomatik olarak sıralar:
 
 <TabItem value="android" label="Android">
 
-![Favorite search Android](@site/static/img/search/favorite_search_android.webp)
+![Android'de favori arama](@site/static/img/search/favorite_search_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorite search iOS](@site/static/img/search/favorite_search_ios.png)  
+![iOS'ta favori arama](@site/static/img/search/favorite_search_ios.png)  
 
 </TabItem>
 
@@ -164,12 +164,7 @@ Bir sorgu girerken görünen noktalar listesinden harita üzerinde gerekli konum
 
 1. Arama çubuğuna adı veya adresi yazmaya başlayın.
 
-2. Siz yazdıkça, liste sorguya en yakın noktaları kabaca şu sırayla görüntüler:
-    - POI Kategorileri
-    - Favoriler, POI, Rotalar ve Yol Noktaları
-    - Parkurlar
-    - Adresler
-    - İndirilecek haritalar
+2. Siz yazdıkça, liste sorgunuzla eşleşen sonuçları görüntüler. Sonuçlar [Arama Sonuçlarını Sıralama](#sorting-search-results) bölümünde açıklandığı gibi sıralanır.
 
 3. Android'de ada göre arama yaparken OsmAnd, arama sonuçlarında temsil edilen türlere göre POI türü çipleri görüntüler. Sonuçları seçilen POI türüne göre filtrelemek için bir çipe dokunun. Birden fazla POI türü seçebilirsiniz. Seçildikten sonra bir çip listenin ilk konumuna taşınır. Bir çipi tekrar seçmek için dokunarak seçimini kaldırabilir ve tam arama sonuçlarına dönebilirsiniz.
 
@@ -181,13 +176,33 @@ Bir sorgu girerken görünen noktalar listesinden harita üzerinde gerekli konum
 OsmAnd, ABD adresleri hakkında bilgi sağlamak için ABD haritalarına [**TIGER verilerini**](../../technical/algorithms/trace-address-search-issues.md#us-address-search-and-tiger-data) entegre etmiştir. TIGER veri kümesi **aralık tabanlıdır** ve kesin ev numaralarını içermez, bu nedenle bazı adresler eksik veya yanlış olabilir.
 :::
 
-### Etrafta Ara (Yalnızca Android) {#search-around}
+### Uzamsal Arama {#spatial-search}
 
-![Search Around](@site/static/img/search/search_around.webp)
+<InfoAndroidOnly/>
 
-Arama, mevcut konumunuzdan önemli ölçüde uzakta açıldığında, *Etrafta ara* çipi aramanın kullanılacağı alanı seçmenize olanak tanır. Çipe dokunun ve aşağıdaki seçeneklerden birini seçin:
+![Uzamsal arama](@site/static/img/search/spatial_search.webp)
+
+Uzamsal Arama, yalnızca adların sorgunuzla ne kadar eşleştiğini değil, nesnelerin birbirine göre nerede bulunduğunu da dikkate alan deneysel bir arama motorudur. OsmAnd'ın, bir yer adı ve bir POI kategorisi gibi birkaç bölümü birleştiren sorguları doğru yorumlamasına yardımcı olur.
+
+Uzamsal Arama varsayılan olarak devre dışıdır. Etkinleştirmek için [OsmAnd Geliştirme eklentisi](../plugins/development.md#internal-algorithms) ayarlarına gidin ve *Uzamsal metin aramasını kullan* seçeneğini açın. Etkinleştirildiğinde, Uzamsal Arama POI ve adres sorguları için standart arama motorunun yerini alır.
+
+Uzamsal Arama ile şunları yapabilirsiniz:
+- Belirli bir yerdeki POI'yi arayın. Tek bir sorguda bir kategori ve bir yer adı girin, örneğin Hotel Berlin. Yer adı arama alanı olarak kullanılır ve kategori bunun içinde aranır.
+- İki koşulla eşleşen yerleri arayın. İkisini de karşılayan yerleri bulmak için iki kategori veya bir kategori ile bir özellik girin, örneğin Fuel Diesel veya Cafe Vegan. Fuel McDonald's gibi bir sorgu, McDonald's yakınında bulunan akaryakıt istasyonlarını bulur. Kelimelerin sırası önemlidir. İlk kelime neyi aradığınızı, ikincisi ise onun neyin yakınında olması gerektiğini belirler. Örneğin, McDonald’s Fuel akaryakıt istasyonlarının yakınında bulunan McDonald’s restoranlarını bulur.
+- Bulunan bir yerin çevresinde arayın. Bir kategori ve bir yer adı girin, örneğin *Hotel Berlin*, ardından arama sonuçlarının üstündeki *Hotel near Berlin* öğesine dokunun. Bu yerin adı [Etrafta ara](#search-around) çipine eklenir.
+- Sorgularınızda cadde adlarının farklı biçimlerini ve çevrilmiş kategori adlarını kullanın.
+- Eczane, otopark veya restoran gibi popüler POI kategorilerine göre arama yaparken daha hızlı sonuç alın.
+
+### Etrafta Ara {#search-around}
+
+<InfoAndroidOnly/>
+
+![Etrafta ara](@site/static/img/search/search_around_berlin.webp)
+
+Harita merkezi konumunuzdan 50 m'den fazla uzaktaysa ve harita konumunuzu takip etmiyorsa, arama harita merkezi çevresinde yapılır ve arama alanında *Arama N km uzakta* yazar. Harita merkezi konumunuzdan 70 km'den fazla uzaktaysa, sıralama çipinin yanında arama alanını gösteren bir çip görünür. Çip seçili seçeneği gösterir. Çipe dokunun ve *Etrafta ara* menüsünde aşağıdakilerden birini seçin:
 - **Harita merkezi** — Haritanın mevcut merkezinin etrafında arama yapar. Bu seçenek varsayılan olarak seçilidir.
-- **Konumum** — Mevcut konumunuzun etrafında arama yapar. 
+- **Konumum** — Mevcut konumunuzun etrafında arama yapar.
+- **Yer adı** — [Uzamsal Arama](#spatial-search) ile bulduğunuz bir yerin etrafında arama yapar. Örneğin, *Hotel Berlin* girin, ardından arama sonuçlarının üstündeki *Hotel near Berlin* öğesine dokunun. Çipte *Berlin* görünür ve Berlin çevresindeki oteller gösterilir. Bu seçenek yalnızca Uzamsal Arama etkinleştirildiğinde kullanılabilir. 
 
 ### Haritada Ara {#search-on-the-map}
 
@@ -195,13 +210,13 @@ Arama, mevcut konumunuzdan önemli ölçüde uzakta açıldığında, *Etrafta a
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/poi_overlay_android_new.png) ![Search POI Android](@site/static/img/search/poi_overlay_android_new.webp)
+![Android'de POI arama](@site/static/img/search/poi_overlay_android_new.png) ![Android'de POI arama](@site/static/img/search/poi_overlay_android_new.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.png) ![Search POI iOS](@site/static/img/search/poi_overlay_ios_new.webp)
+![iOS'ta POI arama](@site/static/img/search/poi_overlay_ios_new.png) ![iOS'ta POI arama](@site/static/img/search/poi_overlay_ios_new.webp)
 
 </TabItem>
 
@@ -218,7 +233,7 @@ OsmAnd, cihazınızın ekranındaki bir haritada görüntülenen noktaları aram
 
 ### Yakınlarda Ara {#search-nearby}
 
-![Search Android](@site/static/img/search/search_all_near_location_andr_new.png)
+![Android'de arama](@site/static/img/search/search_all_near_location_andr_new.png)
 
 Belirli bir konumun yakınında aramayı kullanabilirsiniz. Bunu yapmak için, arama menüsündeki listeden gerekli noktayı [seçin](#full-text-search) veya doğrudan harita üzerinde seçin. [Harita bağlam menüsünde](../map/map-context-menu.md#actions), *Eylemler → Yakınlarda ara* seçeneğini seçin.
 
@@ -229,13 +244,13 @@ Belirli bir konumun yakınında aramayı kullanabilirsiniz. Bunu yapmak için, a
 
 <TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_address_2_andr_new.png)
+![Android'de arama](@site/static/img/search/search_address_2_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search iOS](@site/static/img/search/street_search_ios.png)  
+![iOS'ta arama](@site/static/img/search/street_search_ios.png)  
 
 </TabItem>
 
@@ -246,46 +261,23 @@ Belirli bir konumun yakınında aramayı kullanabilirsiniz. Bunu yapmak için, a
 
 ## Keşfet Ara {#search-explore}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
 
-![Explore search](@site/static/img/search/explore_search_android.webp)
+<TabItem value="android" label="Android">
 
-Arama aracındaki **Keşfet** sekmesi, mevcut konumunuzun yakınındaki yerleri hızlıca keşfetmenize ve son açılan öğelere erişmenize yardımcı olur. İki ana bölüm içerir: [Yakındaki Popüler Yerler](#popular-places-nearby)
- ve [Geçmiş](#history).
+![Keşfet araması](@site/static/img/search/explore_search_android.webp)
 
-### Yakındaki Popüler Yerler {#popular-places-nearby}
+</TabItem>
 
-**Yakındaki popüler yerler** bölümü, konumunuzun yakınındaki iyi bilinen simgelerin ve çekiciliklerin kaydırılabilir bir listesini görüntüler. Her öğe, yerin adı, kategorisi, mesafe ve yönü ile varsa önizleme görüntüsünü içerebilir. Tam listeyi açmak için *Tümünü göster* veya bu yerleri haritada görüntülemek için *Haritada göster* üzerine dokunun.
+<TabItem value="ios" label="iOS">
 
-Daha fazla ayrıntı için [buraya](../map/popular_places.md#explore-in-search) bakın.
+![Geçmiş araması](@site/static/img/search/history_search_ios.png)
 
-### Geçmiş {#history}
+</TabItem>
 
-![History section](@site/static/img/search/history_section_android.webp) ![History section](@site/static/img/search/history_section_2_android.webp)
+</Tabs>
 
-**Geçmiş** bölümü, son geçmiş öğelerinize hızlı erişim sağlar. En fazla 25 en son öğeyi görüntüler ve genişletilebilir veya daraltılabilir. Tam Geçmiş ekranını açmak için *Tümünü görüntüle* öğesine dokunun.
-
-Tam Geçmiş ekranında, geçmiş öğelerinizi aşağıdaki seçenekleri kullanarak sıralayabilir ve filtreleyebilirsiniz:
-
-1. **Sırala**:
-- Son — en son eklenen öğeleri önce görüntüler. Bu seçenek seçildiğinde, öğeler Bugün, Geçen hafta ve daha önceki dönemler gibi zamana göre gruplandırılır.
-- En yakın — öğeleri mevcut konumunuza olan mesafeye göre sıralar.
-- Harita merkezine en yakın — öğeleri haritanın mevcut merkezine olan mesafeye göre sıralar. Mesafeye dayalı sıralama seçeneklerinden biri seçildiğinde, zamana dayalı gruplar görüntülenmez.
-
-2. **Tür** — geçmiş öğeleri şuna göre filtreler:
-- Tümü — tüm mevcut geçmiş öğeleri görüntüler.
-- Arama — arama geçmişinizdeki öğeleri görüntüler.
-- Navigasyon — navigasyon geçmişinizdeki öğeleri görüntüler.
-
-3. **Kategori filtreleri** — geçmiş öğeleri kategoriye göre filtreler. Mevcut kategori filtreleri, Geçmişinizde bulunan öğe türlerine bağlıdır. Örneğin, POI, Parkur, Konum, Favori veya Adres gibi kategorileri görebilirsiniz.
-
-4. **Ayarlar** — Arama geçmişi, Navigasyon geçmişi ve Harita işaretçileri geçmişini etkinleştirmek veya devre dışı bırakmak, geçmişi bir dosya olarak yedeklemek veya tüm geçmişi temizlemek için sağ üst köşedeki dişli simgesine dokunun.
-
-## Arama Geçmişi {#search-history}
-
-![History search](@site/static/img/search/history_search_ios.png)
-
-iOS'ta Arama Geçmişinize Arama aracındaki özel **Geçmiş** sekmesinden erişebilirsiniz. Daha önce bulunan yerleri, adresleri veya sık ziyaret edilen yerleri sorguyu tekrar girmeden tekrar aramanızı sağlar. Daha fazla bilgi için [Arama Geçmişi](./search-history.md) makalesinin iOS bölümüne bakın.
+Android'de, Arama aracındaki **Keşfet** sekmesi, mevcut konumunuzun yakınındaki yerleri hızlıca keşfetmenize ve geçmişinize erişmenize yardımcı olur. iOS'ta **Geçmiş** sekmesi, daha önce bulunan yerleri, adresleri veya sık ziyaret edilen yerleri sorguyu tekrar girmeden tekrar aramanızı sağlar. Daha fazla bilgi için [Keşfet Ara](./search-history.md) makalesine bakın.
 
 
 ## POI Ara {#search-poi}
@@ -294,13 +286,13 @@ iOS'ta Arama Geçmişinize Arama aracındaki özel **Geçmiş** sekmesinden eri�
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/search_poi_categoties_andr_new.png)
+![Android'de POI arama](@site/static/img/search/search_poi_categoties_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/search_poi_categoties_1_ios.png)
+![iOS'ta POI arama](@site/static/img/search/search_poi_categoties_1_ios.png)
 
 </TabItem>
 
@@ -323,13 +315,13 @@ Bölgenin haritaları mevcut olmadığında kullanışlıdır, ancak sürekli ve
 
 <TabItem value="android" label="Android">
 
-![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)
+![Android'de koordinat arama](@site/static/img/search/coordinates_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
+![iOS'ta koordinat arama](@site/static/img/search/coordinates_search_ios.png)
 
 </TabItem>
 
@@ -341,7 +333,7 @@ Koordinat araması doğru bir konum sağlar. Örneğin, bir harita, GPS cihazı 
 ## İlgili Makaleler {#related-articles}
 
 - [Adres Ara](./search-address.md)
-- [Arama Geçmişi](./search-history.md)
+- [Keşfet Ara](./search-history.md)
 - [POI Ara](./search-poi.md)
 - [Koordinat Ara](./search-coordinates.md)
 - [Popüler Yerler](../map/popular_places.md)

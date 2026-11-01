@@ -1,5 +1,5 @@
 ---
-source-hash: cfeff8f8f57fbdb014fad35d6ada3afdf1bf6cd5443cc3e69f77460144202dd0
+source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
 sidebar_position: 1
 title: Rota Planla
 ---
@@ -186,21 +186,6 @@ Basitleştirilmiş iz noktalarının orijinal iz noktalarından olabileceği mes
 Bir iz seçerseniz ve *Ayarlar* simgesinin yanında ***belirtilmemiş*** profil simgesi ("?") görüntülenirse, izi yollara bağlayıp bağlamayacağınızı veya sadece noktaları düz bir çizgiyle bağlayıp kaydedilmiş bir iz olarak ele alıp almayacağınızı seçmek için üzerine dokunun.
 :::
 
-<!--
-### Add Route Points to Navigation from GPX {#add-route-points-to-navigation-from-gpx}
-
-If you import a GPX file containing a route (with `<rtept>` elements), OsmAnd will display the route on the map but will not automatically convert the route points into a turn-by-turn navigation list.
-
-To generate navigation instructions:
-
-1. Open the GPX file from *My Places → Tracks*.
-2. Tap the track to open it.
-3. Tap the point menu (⋮) and choose **Add to Navigation**.
-4. OsmAnd will convert the route points into a full navigation route with instructions.
-
-> **NOTE:** *You may still use [Attach to roads](#attach-track-to-roads) to adjust geometry before converting to navigation.*
--->
-
 
 ## Noktalar ve Segmentler {#points--segments}
 
@@ -277,19 +262,20 @@ Düzenleyicide eklenen noktalar, düz bir çizgi olarak veya seçilen bir profil
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla ios](@site/static/img/plan-route/route_between_points_ios.webp) ![Rota planla ios](@site/static/img/plan-route/settings_tab_ios.webp)
+![Rota planla ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Rota planla ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Düzenleyicide eklenen noktalar, düz bir çizgi olarak veya seçilen bir profilin noktaları arasında bir rota olarak bağlanabilir. *Noktalar arası rota* menüsü, rota segmentleri ve bölümleri için yönlendirme türünü ve ayarlarını görüntülemenize ve değiştirmenize olanak tanır.
 
 *Noktalar arası rota* öğesine, geçerli seçili yönlendirme profilinin simgesini gösteren *Noktalar arası rota* düğmesine dokunarak veya bir [Segment](#segments) ya da Bölüm menüsünden açabilirsiniz.
 
-Rota türü sekmesinde, seçilen segment veya bölüm için bir yönlendirme profili seçebilirsiniz. Düz çizgi ilk seçenek olarak sunulur, ardından mevcut yönlendirme profilleri gelir.
+Rota sekmesinde, seçilen segment veya bölüm için bir yönlendirme profili seçebilirsiniz. Düz çizgi ilk seçenek olarak sunulur, ardından mevcut yönlendirme profilleri gelir.
 
-Bir rotada yalnızca tek bir yönlendirme türü olduğunda basit *Noktalar arası rota* görünümü gösterilir. Bir rotada birden fazla yönlendirme türü olduğunda karmaşık görünüm tüm segmentleri ve bölümleri gösterir ve rotanın hangi kısmını değiştireceğinizi seçmenize olanak tanır.
+Rota tek bir yönlendirme türüne sahip tek bir segmentten oluştuğunda basit *Noktalar arası rota* görünümü gösterilir. Rota birden fazla segmente veya birden fazla yönlendirme türüne sahip bir segmente sahip olduğunda karmaşık görünüm tüm segmentleri ve bölümleri gösterir ve rotanın hangi kısmını değiştireceğinizi seçmenize olanak tanır.
 
 Ayrıca şunları yapabilirsiniz:
-- **Yeni segment başlat** — yeni bir segment oluşturun ve rota noktaları eklemeye devam edin. Yeni segment geçerliyle aynı rota türünü kullanır.
-- **Tüm iz için değiştir** — tüm ize uygulanacak bir yönlendirme türü seçin.
+- **Farklı bir rota türüyle devam et** — geçerli segmentin sonraki bölümü için bir yönlendirme türü seçin, ardından haritaya nokta eklemeye devam edin. Karmaşık görünümde bu seçenek Farklı bir türle devam et olarak adlandırılır ve son segmentin altında görüntülenir.
+- **Yeni segment başlat** — önceki iz bölümüne bağlı olmayan yeni bir segment oluşturun. Yeni segment için bir yönlendirme türü seçin, ardından haritaya nokta eklemeye devam edin.
+- **Tüm iz için türü değiştir** — karmaşık görünümde kullanılabilir. Tüm ize uygulanacak bir yönlendirme türü seçin.
 
 Ayarlar sekmesinde, seçilen rota türü için önceden tanımlanmış yönlendirme ayarlarını seçebilirsiniz.
 
@@ -313,7 +299,7 @@ Bir iz segmenti, **boşluklar** olmadan birbirine bağlı bir nokta koleksiyonud
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla ios](@site/static/img/plan-route/segment_menu.webp) ![Rota planla ios](@site/static/img/plan-route/section_menu.webp)
+![Rota planla ios](@site/static/img/plan-route/segment_menu_1.webp) ![Rota planla ios](@site/static/img/plan-route/section_menu.webp)
 
 Bir rotada bir veya daha fazla segment bulunabilir. Bir segment tek bir rota türü kullanabilir veya farklı rota türlerine sahip birden fazla bölüm içerebilir.
 
@@ -321,12 +307,12 @@ Rota sekmesinde her segment, rota türü ve mesafesiyle birlikte görüntülenir
 
 Bir segmenti üç nokta menüsünü kullanarak yönetebilirsiniz:
 - **Rota türünü değiştir** — tek rota türüne sahip bir segment için kullanılabilir. Farklı bir rota türü seçebileceğiniz *Noktalar arası rota* öğesini açar.
-- **Tek rota türü ayarla** — bir segment farklı rota türlerine sahip birden fazla bölüm içerdiğinde kullanılabilir. Segment için tek bir rota türü uygulayabileceğiniz *Noktalar arası rota* öğesini açar.
+- **Tek rota türü ayarla** — bir segment farklı rota türlerine sahip birden fazla bölüm içerdiğinde kullanılabilir. Segment için tek bir rota türü uygulayabileceğiniz *Noktalar arası rota* öğesini açar. Segmentin tamamı seçilen yönlendirme türü kullanılarak yeniden hesaplanır.
 - **Sırala** — rota noktalarını el ile yeniden sıralayın veya toplam seyahat mesafesini en aza indirmek için Kapıdan kapıya sırala seçeneğini kullanın.
 - **Farklı kaydet** — segmenti ayrı bir dosya olarak kaydedin.
 - **Segmenti sil** — segmenti silin.
 
-Yeni bağlantısız bir segment oluşturmak için Rota sekmesinin altındaki *Yeni segment başlat* öğesine dokunun.
+Yeni bağlantısız bir segment oluşturmak için Rota sekmesinin altındaki *Yeni segment başlat* öğesine dokunun. Geçerli segmenti farklı bir yönlendirme türüyle sürdürmek için son segmentin altındaki *Farklı bir türle devam et* öğesine dokunun, ardından sonraki bölüm için bir yönlendirme türü seçin.
 
 Bir segment, farklı bölümlerinde farklı rota türleri kullanıldığında [bölümlere](#multimodal-routes) ayrılabilir. Her bölüm kendi rota türünü ve mesafesini gösterir.
 
@@ -396,7 +382,7 @@ Rotanızdaki her noktanın kendi bağlam menüsü vardır. Noktanın *sıra numa
 
 <TabItem value="ios" label="iOS">
 
-![Rota planla ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
+![Rota planla iOS ekranı](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 

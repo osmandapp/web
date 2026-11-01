@@ -1,5 +1,5 @@
 ---
-source-hash: d79ba640b8c7960fdd61ed60a28ffe7043b5c8681f355388f3776b707af3a2af
+source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
 sidebar_position: 8
 title: Popüler Yerler
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 Popüler Yerler, [ücretli bir özelliktir](../purchases/index.md).  
 :::
 
-OsmAnd'daki **Popüler Yerler** özelliği, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) kaynaklarındaki açık yapılandırılmış verileri kullanarak önemli yer işaretlerini ve çekici noktaları vurgular. Çok dilli açıklamalar ve fotoğraflarla kullanıcıların iyi bilinen destinasyonları keşfetmelerine yardımcı olur.
+OsmAnd'daki **Popüler Yerler** özelliği, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org/) kaynaklarındaki açık yapılandırılmış verileri kullanarak önemli yer işaretlerini ve çekici noktaları vurgular. Çok dilli açıklamalar ve fotoğraflarla kullanıcıların iyi bilinen destinasyonları keşfetmelerine yardımcı olur.
 
 Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme görüntülerini ve Wikipedia makalelerine bağlantıları görüntülemesini sağlayan bir **Wikidata Kimliği** ile bağlantılıdır. Bu araç tüm OpenStreetMap (OSM) noktalarını **göstermez**. Wikidata referansları olan İÇN'lerle sınırlıdır.
 
@@ -34,7 +34,7 @@ Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme
 
 <TabItem value="android" label="Android">
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
+![Popüler yerler](@site/static/img/map/popular_places/popular_places.png) ![Popüler yerler](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -43,7 +43,7 @@ Bu özelliğe dahil edilen her yer, OsmAnd'ın doğrulanmış adları, önizleme
 
 ## Veri Kaynakları {#data-sources}
 
-**Popüler Yerler**, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org) kaynaklarındaki yapılandırılmış içeriğe dayanmaktadır.
+**Popüler Yerler**, [Wikidata](https://www.wikidata.org) ve [Wikipedia](https://www.wikipedia.org/) kaynaklarındaki yapılandırılmış içeriğe dayanmaktadır.
 
 Bağlantılı bir **Wikidata Kimliği** olan İÇN'ler yalnızca görüntülenir. Bu kimlikler, harita nesnelerini doğrulanmış adlara, açıklamalara ve görüntülere bağlar.
 
@@ -85,7 +85,7 @@ Bu özelliğe erişmenin iki ana yolu vardır:
 
 Şuraya gidin: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.webp) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.webp)
+![Keşfet modu](@site/static/img/map/popular_places/popular_places_search.webp) ![Keşfet modu](@site/static/img/map/popular_places/popular_places_search_2.webp)
 
 </TabItem>
 
@@ -117,7 +117,7 @@ Arama tabanlı Keşfet Modu, ücretsiz sürümde **yalnızca çevrimiçi** çal�
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+![Popüler yerler menüsü](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
@@ -125,7 +125,7 @@ Arama tabanlı Keşfet Modu, ücretsiz sürümde **yalnızca çevrimiçi** çal�
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Popular places (Wikipedia)*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu_ios.png)
+![Popüler yerler menüsü](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -163,13 +163,13 @@ Haritadaki bir İÇN'ye dokunmak, [çevrimiçi fotoğrafları](#online-photos) g
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Çevrimiçi fotoğraflar bağlam menüsü Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Çevrimiçi fotoğraflar bağlam menüsü iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
@@ -185,15 +185,15 @@ Bu, seçilen Popüler Yer'in (Wikipedia) bir fotoğraf önizlemesini görüntül
 
 <TabItem value="android" label="Android">  
 
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
+![Galeri menüsü – Android](@site/static/img/map/gallery_menu_android.png)
+![Galeri menüsü – Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Galeri menüsü – iOS](@site/static/img/map/gallery_menu_ios.png)
+![Galeri menüsü – iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
@@ -209,7 +209,7 @@ Her fotoğraf üzerinde aşağıdaki eylemleri de gerçekleştirebilirsiniz:
   Seçilen görüntüyü cihazınızda yüklü herhangi bir uyumlu uygulama (örn. mesajlaşma, e-posta veya sosyal medya) kullanarak paylaşın. Paylaşılan içerik, görüntüyü ve kaynak bağlantısını (varsa) içerir.
 
 - **Ayrıntılar**  
-  Görüntü hakkında meta verileri gösteren ayrıntılı bir görünüm açın: *Açıklama (Android'de tam metin)*, *Ad*, *Eklenme tarihi*, *Yazar*, *Lisans*, *Kaynak* ve *Doğrudan bağlantı*
+  Görüntü hakkında meta verileri gösteren ayrıntılı bir görünüm açın: *Açıklama (tam metin)*, *Ad*, *Eklenme tarihi*, *Yazar*, *Lisans*, *Kaynak* ve *Doğrudan bağlantı*.
 
   **Not:** Açıklama dili, uygulamanın görüntüleme diline bağlıdır. Seçili dilde açıklama mevcut değilse, OsmAnd İngilizce sürümü veya ilk mevcut çeviriyi gösterir.
 

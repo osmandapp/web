@@ -21,7 +21,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 -->
 
 
-## Overview {#overview}
+## Genel Bakış {#overview}
 
 OsmAnd Web Rota Planlayıcı, tarayıcınızdan doğrudan navigasyon rotaları oluşturmanıza, parkurları planlamanıza ve yerel dosyaları yönetmenize olanak tanır. Bu web aracı, uygulamanızla senkronize edebileceğiniz veya başkalarıyla paylaşabileceğiniz ayrıntılı seyahat rotaları oluşturmak için kullanışlıdır.
 
@@ -65,7 +65,7 @@ Rota Planla'da yeni bir rota başlatmanın iki yolu vardır. İlk seçenek doğr
 
 Rota oluşturulduktan sonra, noktaları doğrudan haritaya ekleyin. Her tıklama bir sonraki noktayı yerleştirir ve planlayıcı noktalar arasında rotayı oluşturur.
 
-![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
+![OsmAnd Web Yeni Rota Oluştur](@site/static/img/web/create_new_route_1.png)
 
 ### Parkur İçe Aktar {#import-track}
 
@@ -77,7 +77,7 @@ Rota Planla'da oluşturduğunuz veya içe aktardığınız tüm rotalar ve parku
 
 Listedeki her öğe, parkuru haritada hızlıca gösterip gizlemenize olanak tanıyan bir geçiş anahtarı içerir. Listeden bir parkur seçerek planlayıcıda açın ve onunla çalışmaya devam edin. 
 
-![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
+![OsmAnd Web Yeni Rota Oluştur](@site/static/img/web/local_files.png)
 
 
 ## Parkuru Yönet {#manage-track}
@@ -90,7 +90,7 @@ Parkur panelinden ayrıca parkuru yerel listenizden **Sil**'ebilirsiniz.
 
 [Genel Bakış paneli](#overview-panel)'nde, rotayı daha sonra kullanmak için **Buluta Kaydet**'i ve GPX dosyası olarak **İndir**'i kullanabilirsiniz.
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+![OsmAnd Web Parkuru Yönet](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Parkuru Yönet](@site/static/img/web/change_profile.png)
 
 
 ## Parkur Ayrıntı Panelleri {#track-details-panels}
@@ -126,13 +126,13 @@ Ek parkur ayrıntıları için analiz bölümlerini açın:
 - Yüzey — OSM verilerine dayalı rota boyunca yüzey tiplerini gösterir.
 - Pürüzsüzlük — OSM etiketlerine dayalı segment pürüzsüzlüğünü gösterir.
 
-![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
+![OsmAnd Web Bilgi Paneli](@site/static/img/web/overview_panel.png) 
 
 ### Parkur Paneli {#track-panel}
 
 Parkur paneli, parkuru oluşturmak için kullanılan rota noktalarının listesini gösterir. Rota yapısını incelemek ve düzenlemek için kullanın: noktaları sürükleyerek yeniden sıralayın, silme simgesini kullanarak noktaları kaldırın veya tüm noktaları kaldırmak ve baştan başlamak için Noktaları Temizle'yi kullanın.
 
-![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
+![OsmAnd Web Parkur Paneli](@site/static/img/web/track_panel_new.png)
 
 ### Noktalar Paneli {#points-panel}
 
@@ -142,7 +142,7 @@ Yol noktası düzenleme, [Sık kullanılanları düzenleme](../web/web-favorites
 
 Yol Noktaları listesinde, yol noktalarının haritada gösterilip gösterilmeyeceğini kontrol edebilir ve gerektiğinde bireysel yol noktalarını kaldırabilirsiniz. Parkurdan tüm yol noktalarını bir kerede kaldırmak için *Tüm yol noktalarını temizle*'yi kullanın.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
+![OsmAnd Web Noktalar Paneli](@site/static/img/web/points_panel_new.png)
 
 
 ## İlgili Makaleler {#related-articles}

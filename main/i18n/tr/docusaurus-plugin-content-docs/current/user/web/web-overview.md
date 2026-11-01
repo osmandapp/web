@@ -1,5 +1,5 @@
 ---
-source-hash: 5c0ec057fd60df8e67edea1ef3d5a69cce84edf9177789c1998911043f2d9f81
+source-hash: 1176bc70f0db3fedccaa5992751e310f41f9966db20541d5d42567f84fffd660
 sidebar_position: 1
 sidebar_label: Giriş
 title: Web Planlayıcıya Giriş
@@ -45,7 +45,7 @@ Web Portalı, tarayıcıda haritalar ve kişisel verilerle çalışmak için aş
 
 ### Abonelik Erişimi {#subscription-accesses}
 
-![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
+![Web hesabı](@site/static/img/web/web_start.png) ![Web hesabı](@site/static/img/web/web_pro.png)
 
 Web Harita Portalı, giriş yapmadan, OsmAnd Start ile ve OsmAnd Pro ile olmak üzere birkaç erişim seviyesini destekler. Aşağıdaki tablo, her seviyede hangi özelliklerin mevcut olduğunu özetler; böylece zaten sahip olduklarınızı hızlıca görebilir ve bir hesap veya yükseltmeyle neler elde edebileceğinizi öğrenebilirsiniz. Bu genel bakış, bir hesaba ihtiyacınız olup olmadığını karar vermenize ve eğer varsa, OsmAnd'ı nasıl kullandığınıza en uygun seçeneği belirlemenize yardımcı olmayı amaçlar.
 
@@ -73,7 +73,7 @@ OsmAnd Web Portalı'nın tam özelliklerine erişmek için bir OsmAnd Cloud hesa
    - **Giriş yap**: Pro veya Start aboneliğinizle bağlantılı e-posta adresini girin veya
    - **Hesap oluştur**: Ücretsiz bir OsmAnd Start hesabı için kaydolun. Yeni bir hesap oluşturma için ayrıntılı adım adım rehber için [OsmAnd Hesabı](./web-cloud) makalesine bakın.
 
-![Web Account](@site/static/img/web/web_account.png)
+![Web hesabı](@site/static/img/web/web_account.png)
 
 
 ## İlgili Makaleler {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: a5f171a6ac74a9d1a66cb38144cd58900587299bb8ac163d65951bdc9a1ca8f4
+source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
 sidebar_position: 9
 title:  Çevrimiçi Haritalar
 ---
@@ -74,7 +74,7 @@ Eklentinin *Çevrimiçi Haritalar* olarak adlandırılmasına rağmen, haritalar
 
 <b>iOS sürümü</b> için telefonunuzda SQ Lite dosyasını (herhangi bir mesajlaşma veya dropbox) seçebilirsiniz, OsmAnd bunu eklemeyi önerecektir. Ayrıca <i>Harita → Üst Katman / Alt Katman veya Harita türünü</i> açmanız ve yeni harita kaynağını seçmeniz gerekir.
 
-Android ve iOS OsmAnd sürümlerinde SQ Lite dosyası nasıl eklenir, [<a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis projesi</b></a>](https://anygis.ru/Web/Html/Osmand_en)'nde okuyabilirsiniz.
+Android ve iOS OsmAnd sürümlerinde SQ Lite dosyası nasıl eklenir, <a href="https://anygis.ru/Web/Html/Osmand_en"><b>Anygis projesi</b></a>'nde okuyabilirsiniz.
 
 Çevrimiçi döşemeler, haritanın sadece küçük bir bölümüne veya belirli bir türüne sınırlı bir alanda ihtiyaç duyduğunuzda, ancak tüm bölgeyi indirmek istemediğinizde yardımcı olabilir. Sonsuz durumlarda işe yarayabilirler.
 

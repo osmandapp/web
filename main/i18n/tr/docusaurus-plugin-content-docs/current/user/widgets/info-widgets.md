@@ -1,5 +1,5 @@
 ---
-source-hash: 8a0221d927151f77bc15e90d2bdf85576fbb210cf30c9ba0fc83383c5b0de488
+source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
 sidebar_position: 3
 title:  Bilgi Widget'ları
 ---
@@ -157,7 +157,7 @@ Widget, GPS sensörü tarafından algılanan mevcut hızı gösterir.
    - Ortalama hız, **15 saniyeden 60 dakikaya** kadar değişebilen seçilen zaman aralığına göre hesaplanır.  
 
    - Hesaplama, GPS verilerine dayanır ve şu formülü kullanır:  
-   `Ortalama Hız = ORTALAMA(GPS_KONUMU.hız)`.
+   `Average Speed = AVERAGE(GPS_LOCATION.speed)`.
 
 3. ***Duraklamaları hesaba katın.***
 
@@ -257,7 +257,7 @@ Sıfırlamadan sonra, ortalama hız yeni GPS verilerinden yeniden hesaplanır. B
 - **Hedefe süzülme oranı**, hedef noktaya ulaşmak için gereken tam süzülme oranını gösterir.
 - **Hedef yükseklik**, hedef noktanın yüksekliğini gösterir. [Harita işaretçisi](../personal/markers.md) hedef nokta olarak kullanılmalıdır.
 
-Widget modları arasında doğrudan widget'a dokunarak geçiş yapabilirsiniz. Geçiş seçeneği [widget'ın bağlam menüsünde](../widgets/configure-screen.md#widget-context-menu) mevcut değildir. 
+Widget modları arasında doğrudan widget'a dokunarak geçiş yapabilirsiniz. 
 
 | | |
 |:------------|:------------|
@@ -289,11 +289,13 @@ Widget modları arasında doğrudan widget'a dokunarak geçiş yapabilirsiniz. G
 
 <TabItem value="android" label="Android">
 
-**Ortalama süzülme oranı**, belirtilen bir zaman aralığı için ortalama süzülme oranını gösterir.
+- **Ortalama süzülme oranı**, belirtilen bir zaman aralığı için ortalama süzülme oranını gösterir.
+- **Ortalama dikey hız**, zaman aralığı boyunca ne kadar hızlı yükseldiğinizi veya alçaldığınızı gösterir: aralığın ilk ve son noktaları arasındaki yükseklik farkının, aralarındaki süreye bölünmesiyle bulunur. Pozitif değerler yükselmeyi, negatif değerler alçalmayı ifade eder. Bu widget için zaman aralığını 15 saniyeden 60 dakikaya kadar ayarlayabilirsiniz.
 
 | | |
 |:------------|:------------|
 | Etkinleştir | *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Bir panel seçin → Widget ekle → Süzülme oranı* |
+| Dokunarak | *Ortalama süzülme oranı* veya *Ortalama dikey hız* değiştirir  |
 | Uzun dokunuş | [Widget'ın Bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar |
 
 </TabItem>
@@ -301,7 +303,7 @@ Widget modları arasında doğrudan widget'a dokunarak geçiş yapabilirsiniz. G
 <TabItem value="ios" label="iOS">
 
 - **Ortalama süzülme oranı**, belirtilen bir zaman aralığı için ortalama süzülme oranını gösterir.
-- **Ortalama dikey hız**, bir nesnenin belirli bir süre boyunca yükselme veya alçalma hızını gösterir. Değerlendirme için yalnızca zaman aralığının ilk ve son noktaları dikkate alınır. Bu widget için zaman aralığını 15 saniyeden 60 dakikaya kadar ayarlayabilirsiniz. Hedef nokta olarak [Harita işaretçisini](../personal/markers.md) kullanmalısınız.
+- **Ortalama dikey hız**, zaman aralığı boyunca ne kadar hızlı yükseldiğinizi veya alçaldığınızı gösterir: aralığın ilk ve son noktaları arasındaki yükseklik farkının, aralarındaki süreye bölünmesiyle bulunur. Pozitif değerler yükselmeyi, negatif değerler alçalmayı ifade eder. Bu widget için zaman aralığını 15 saniyeden 60 dakikaya kadar ayarlayabilirsiniz.
 
 | | |
 |:------------|:------------|
@@ -703,7 +705,7 @@ Bu, Mapillary uygulamasına hızlı erişim sağlayan bir Mapillary eklentisi wi
 
 :::note
 Ses/Video Notları widget'larını harita ekranına eklemek için OsmAnd [Ses/Video Notları eklentisini](../plugins/audio-video-notes.md) etkinleştirin.
-::;
+:::
 
 ![Ses-video notları widget'ı](@site/static/img/plugins/audio-video-notes/audio_video_notes_widget.png)  
 
@@ -747,7 +749,7 @@ Bu OsmAnd İzleyici eklentisi widget'ı, OsmAnd İzleyici uygulamasına hızlı 
 
 :::note
 Geliştirici widget'larını harita ekranına eklemek için OsmAnd [OsmAnd geliştirme eklentisini](../plugins/development.md) etkinleştirin.
-::;
+:::
 
 **Geliştirici widget'ları**, harita [oluşturma hızı](../plugins/development.md#map-rendering-fps-widget) ve sanal kamera konumu parametreleri hakkında bilgi sağlar; bunlar arasında [yakınlaştırma seviyesi](../plugins/development.md#zoom-level), harita merkezine olan [mesafe](../plugins/development.md#distance-to-target), [kamera yüksekliği](../plugins/development.md#camera-elevation) ve [eğim açısı](../plugins/development.md#camera-tilt) bulunur.  
 

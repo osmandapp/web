@@ -1,5 +1,5 @@
 ---
-source-hash: 65481e7673ab113c8c2152c8b337afa4c4c03e07700228d78ed4464d44818be3
+source-hash: e98c351cba570a3605d5821b0bfecb95cb14ab0ee196bea305605c28b70da756
 sidebar_position: 7
 title:  Favoriler
 ---
@@ -24,13 +24,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favorites introduction android](@site/static/img/personal/favorites_intro_android.png)
+![Favoriler giriş android](@site/static/img/personal/favorites_intro_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites introduction ios](@site/static/img/personal/favorites_intro_ios.png)
+![Favoriler giriş ios](@site/static/img/personal/favorites_intro_ios.png)
 
 </TabItem>
 
@@ -43,13 +43,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![Favotires layer Android](@site/static/img/map/favorites_layer.png)
+![Favoriler katmanı Android](@site/static/img/map/favorites_layer.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favotires layer iOS](@site/static/img/map/favorites_layer_ios.png)
+![Favoriler katmanı iOS](@site/static/img/map/favorites_layer_ios.png)
 
 </TabItem>
 
@@ -64,13 +64,13 @@ Favoriler özel bir harita katmanının parçasıdır ve bunları harita üzerin
 
 <TabItem value="android" label="Android">
 
-![Favorite add description Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favorite group Android](@site/static/img/personal/favorite_group_android.png)
+![Favori açıklama ekleme Android](@site/static/img/personal/favorite_add_descr_android.png)  ![Favori grubu Android](@site/static/img/personal/favorite_group_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorite add description iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favorite group iOS](@site/static/img/personal/favorite_group_ios.png)
+![Favori açıklama ekleme iOS](@site/static/img/personal/favorite_add_descr_ios.png)  ![Favori grubu iOS](@site/static/img/personal/favorite_group_ios.png)
 
 </TabItem>
 
@@ -101,13 +101,13 @@ OSM verilerinden bir nokta eklerken, ilgili İÇN bilgileri otomatik olarak dahi
 
 <TabItem value="android" label="Android">
 
-![Favorite edit Android](@site/static/img/personal/favorite_edit_android.webp)
+![Favori düzenleme Android](@site/static/img/personal/favorite_edit_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorite edit iOS](@site/static/img/personal/favorite_edit_ios.png)
+![Favori düzenleme iOS](@site/static/img/personal/favorite_edit_ios.png)
 
 </TabItem>
 
@@ -160,21 +160,34 @@ Bir favori noktayı değiştirmek için:
 
 ### Medya (Yalnızca Android) {#media}
 
-![Media](@site/static/img/personal/media_actions.webp) ![Media](@site/static/img/personal/media_menu.webp)
+![Medya](@site/static/img/personal/media_actions.webp) ![Medya](@site/static/img/personal/media_menu.webp)
 
-Medya bölümü, bir favori noktasına fotoğraf, video, ses kaydı ve görüntü eklemenize olanak tanır. Medya, favori oluşturulurken veya daha sonra Favoriyi düzenle ekranından eklenebilir. Medya eklemek için Medya bölümündeki *Ekle* öğesine dokunun ve mevcut seçeneklerden birini seçin:
+Medya bölümü, bir favori noktasına fotoğraf, video, ses kaydı ve görüntü eklemenize olanak tanır. Medya, favori oluşturulurken, daha sonra Favoriyi düzenle ekranından veya doğrudan favorinin bağlam menüsünden eklenebilir. Medya eklemek için Favoriyi düzenle ekranındaki *+* düğmesine veya bağlam menüsündeki *Ekle* öğesine dokunun ve mevcut seçeneklerden birini seçin:
 - **Fotoğraf çek** — Cihaz kamerasıyla yeni bir fotoğraf çekin.
 - **Video notu çek** — Yeni bir video kaydedin.
-- **Ses notu kaydet** — Bir ses notu kaydedin.
+- **Ses notu kaydet** — Bir ses notu kaydedin. OsmAnd'ın ses kaydetme izni yoksa cihazınız bu izni vermenizi ister.
 - **Galeriden seç** — Cihazınızdan mevcut bir görüntüyü seçin.
 - **Dosyalardan seç** — Dosya sisteminden bir görüntü seçin.
 
-Medya eklendikten sonra, favori bağlam menüsündeki Medya kartında görünür. Aynı Medya kartı [Ara noktalar](../map/tracks/track-context-menu.md#points--waypoints) için de kullanılabilir.
+Medya eklendikten sonra, favori bağlam menüsündeki Medya kartında görünür. Hiçbir medya eklenmemişse kart *Medya yok* ifadesini ve bir *Ekle* düğmesini gösterir. Aynı Medya kartı [Ara noktalar](../map/tracks/track-context-menu.md#points--waypoints) için de kullanılabilir.
+
+[Ses/Video Notları eklentisi](../plugins/audio-video-notes.md) ile oluşturulan ses, video ve fotoğraf notları da ekli medyaya sahip favoriler olarak kaydedilir.
 
 Medya kartı, eklenen öğelerin önizlemelerini gösterir. Görüntülenen öğeler seçilen sıralama düzenini takip eder. Tam galeriyi açmak için *Tümünü göster* öğesine dokunun. Galeri, seçilen favoriye eklenen tüm medyayı görüntüler.
 
 Herhangi bir öğeye dokunarak tam ekran görünümünde açabilirsiniz. Fotoğraflar ve videolar doğrudan görüntülenebilir, ses kayıtları ise oynatma kontrollerini içerir.
 
+Galeri aşağıdaki seçenekleri içerir:
+- **Sıralama** — Sıralamayı seçmek için üstteki sıralama çubuğuna dokunun: En yakın, Son değiştirilen, Ad A - Z, Ad Z - A, Önce en yeni tarih, Önce en eski tarih, Önce en uzun süre veya Önce en kısa süre.
+- **Özet** — Öğelerin altında galeri, fotoğraf, video ve ses notlarının sayısını ve toplam boyutlarını gösterir.
+- **+ düğmesi** — Yeni medya ekleyin.
+- **Düzenle** (kalem simgesi) — Seçim moduna girin. Ayrıca herhangi bir öğeye uzun dokunabilirsiniz.
+
+Seçim modunda öğeleri seçmek için dokunun veya Tümünü seç'i kullanın. Üç nokta menüsü şunları sunar:
+- **Dışa aktar** — Seçilen medya dosyalarını dışa aktarın.
+- **Sil** — Seçilen medyayı favoriden kaldırın. OsmAnd tarafından saklanan ve başka hiçbir öğeye eklenmemiş medya cihazdan da silinir.
+
+OsmAnd'da çekilen medya, `Type_YYYY-MM-DD_HH-mm-ss_location.ext` kalıbı kullanılarak adlandırılır, örneğin `Photo_2026-10-01_09-36-45_0hZTCM5Q--.jpg`. Ad; medya türünü, oluşturulma tarih ve saatini ve medyanın çekildiği konumu içerir, konum bir [OSM Shortlink](https://wiki.openstreetmap.org/wiki/Shortlink) olarak kodlanır.
 
 ## Favorileri Yönet {#manage-favorites}
 
@@ -209,13 +222,13 @@ Herhangi bir öğeye dokunarak tam ekran görünümünde açabilirsiniz. Fotoğr
 
 <TabItem value="android" label="Android">
 
-![Favorites android](@site/static/img/personal/favorites_points_sorting.webp) ![Favorites android](@site/static/img/personal/favorites_folders_sorting.png)
+![Favoriler android](@site/static/img/personal/favorites_points_sorting.webp) ![Favoriler android](@site/static/img/personal/favorites_folders_sorting.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Favorites iOS](@site/static/img/personal/favorites_folders_sorting.webp)
+![Favoriler iOS](@site/static/img/personal/favorites_points_sorting_ios.webp) ![Favoriler iOS](@site/static/img/personal/favorites_folders_sorting.webp)
 </TabItem>
 
 </Tabs>
@@ -252,7 +265,7 @@ Favori noktalar seçildiğinde, aşağıdaki eylemler mevcuttur:
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorites_actions_folders.webp) ![Favorites actions ios](@site/static/img/personal/favorites_actions_points.webp)
+![Favoriler eylemleri ios](@site/static/img/personal/favorites_actions_folders.webp) ![Favoriler eylemleri ios](@site/static/img/personal/favorites_actions_points.webp)
 
 Birden fazla favori noktası veya klasörü yönetmek için sağ üst köşedeki *üç nokta menüsüne* dokunup *Seç* seçeneğini belirleyerek *Seçim modu*na girin. Seçim modu etkinleştirildiğinde, listedeki öğelerin yanında onay kutuları görünür. Gerekli favori noktalarını veya klasörleri onay kutularına dokunarak seçin. Listede tüm öğeleri seçmek için sağ üst köşedeki Tümünü seç simgesine dokunun.
 
@@ -282,13 +295,13 @@ Seçilen klasörler için aynı eylemler kullanılabilir ve şu ek seçenekler b
 
 <TabItem value="android" label="Android">
 
-![Favorites folder functions android](@site/static/img/personal/favorites_folder_functions.webp)
+![Favoriler klasör işlevleri android](@site/static/img/personal/favorites_folder_functions.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Favorites actions ios](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
+![Favoriler eylemleri ios](@site/static/img/personal/favorite_add_new_group_2_ios.webp)
 
 </TabItem>
 
@@ -433,9 +446,9 @@ OsmAnd, favorileri [yedeklemek](./import-export.md) ve [geri yüklemek](./import
 </Tabs>
 
 - Birden fazla favori klasörünü paylaşmak için [Seçim modu](#bulk-edit--delete)na girin, gerekli klasörleri seçin ve *Paylaş* öğesine dokunun.
-- Tek bir favori klasörünü paylaşmak için Üç nokta menüsüne (*Android*) veya klasöre uzun dokunun (*iOS*), *Paylaş* öğesini seçerek Favorites.gpx dosyasını cihazınızın belleğine gönderin veya mesajlaşma uygulamaları aracılığıyla paylaşın. Android'de klasör ekli medya içeriyorsa bir Paylaş alt sayfası görünür. Şunları seçebilirsiniz:
+- Tek bir favori klasörünü paylaşmak için [Favori Grup Eylemleri](#favorite-group-actions) bölümüne bakın. Android'de klasör ekli medya içeriyorsa bir Paylaş alt sayfası görünür. Şunları seçebilirsiniz:
     - *Yalnızca noktalar* — Klasördeki favori noktaları GPX dosyası olarak paylaşın.
-    - *Noktalar ve medya* — Favori noktaları ve ekli medyayı OSF arşivi olarak paylaşın.
+    - *Noktalar ve medya* — Favori noktaları ve ekli medyayı arşiv olarak paylaşın.
 
 
 ### Otomatik Favoriler Yedekleme {#automatic-favorites-backup}
@@ -480,6 +493,8 @@ OsmAnd, favoriler her düzenlendiğinde otomatik olarak bir **yedekleme dosyası
 
 Bir Favori hakkındaki tüm bilgiler etiketler kullanılarak saklanır ve açıklanır. Bir Favori noktası oluştururken, kendi [açıklamanızı](#favorite-point) yazabilir veya noktanızın oluşturulduğu OSM [ilgi çekici nokta (İÇN)](../map/point-layers-on-map.md#points-of-interest-pois) verilerinden bilgileri kullanabilirsiniz. Favori noktaları, İÇN'ler ve Ara noktalar, bilgileri depolamak için aynı **etiketleri** kullanır ve **GPX dosya biçiminde** kaydedilir.  
 
+[OSM Düzenleme eklentisi](../plugins/osm-editing.md) etkinse, OpenStreetMap nesnesinden oluşturulan bir Favori, bu nesneye giden bağlantıyı da `osm_url` etiketinde saklar, örneğin `https://www.openstreetmap.org/node/7235345886`. Bağlantı, dışa aktarılan ve paylaşılan Favori dosyalarında ve yedeklerde korunur.
+
 Favoriler ayrıca standart GPX `<link>` öğelerini kullanarak ekli medyaya referanslar içerebilir. 
 
 
@@ -494,6 +509,7 @@ Favoriler ayrıca standart GPX `<link>` öğelerini kullanarak ekli medyaya refe
             <osmand:icon>place_town</osmand:icon>
             <osmand:background>circle</osmand:background>
             <osmand:color>#ff4e4eff</osmand:color>
+            <osmand:osm_url>https://www.openstreetmap.org/node/7235345886</osmand:osm_url>
             <test:country>United States</test:country>
             <test:state>Virginia</test:state>
             <test:telephone>(804) 828-0100</test:telephone>

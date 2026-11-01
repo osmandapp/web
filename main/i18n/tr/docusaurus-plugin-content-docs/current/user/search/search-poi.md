@@ -1,5 +1,5 @@
 ---
-source-hash: 72cb4e907727cda492f4e775c9fae7c6f4f6e3557555fb108b3ef04af82da1ac
+source-hash: 97f2c33a4074c4cc756ff122bf583a92e9a6275e2f47dd97dda9ca19c19cf16f
 sidebar_position: 4
 title: POI Ara
 ---
@@ -82,7 +82,7 @@ Arama sonuçları, POI'nin bulunduğu şehir gibi ek konum bilgilerini içerebil
 
 
 :::note
-Bu görevlerden bazılarını (adresleri, POI'leri bulma) gerçekleştirmek için çevrimdışı vektör harita dosyasına sahip olmanız gerekir. Başlangıçta, arama, cihaz ekranının görünür alanındaki haritada bulunan verilere dayanır. Hiçbir şey bulamazsanız, OsmAnd arama yarıçapını artırmayı önerir.
+Bu görevlerden bazılarını (adresleri, POI'leri bulma) gerçekleştirmek için çevrimdışı vektör harita dosyasına sahip olmanız gerekir. Başlangıçta, arama, [cihaz ekranının görünür alanındaki](./search-all.md#how-to-use) haritada bulunan verilere dayanır.
 :::  
 
 ### Arama İpuçları {#search-tips}
@@ -152,7 +152,7 @@ Bu yer, şunlar için aranırken görünebilir:
 
 **Kategorilere Göre Ara** aracı, farklı kategorilere ayrılmış nesneleri, yerleri ve rotaları hızlı bir şekilde bulmanızı sağlar. 
 
-OsmAnd'daki POI kategorileri OpenStreetMap etiketlerine dayanır. Bazı yerler, harita verilerinde daha spesifik bir tür mevcut değilse daha genel bir kategori altında görünebilir (örneğin, bir kilise `İbadethane` altında görünebilir).
+OsmAnd'daki POI kategorileri OpenStreetMap etiketlerine dayanır. Bazı yerler, harita verilerinde daha spesifik bir tür mevcut değilse daha genel bir kategori altında görünebilir (örneğin, bir kilise `Place of worship` altında görünebilir).
 
 Her kategorinin benzersiz bir özellik kümesi vardır ve bu araç, ek özellikler için farklı değerler seçerek arama sonuçlarını iyileştirmenize olanak tanıyan filtrelere sahiptir.
 
@@ -205,23 +205,23 @@ Listedeki seçilen POI'ye dokunmak, POI'nin [Harita Bağlam menüsünü](../map/
 
 Bir filtre, seçilen kategoriye bağlı olarak oldukça fazla sayıda öğeden oluşabilir. Her kategorinin, türe göre klasörler halinde düzenlenmiş, kendisine özgü bir dizi filtresi vardır. Toplamda *21 varsayılan kategori* vardır. Bazıları burada listelenmiştir:
 
- 1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Konaklama](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation), oteller, moteller, hosteller, misafirhaneler ve kamp alanları gibi geçici konaklama sağlayan tesisleri içerir. Bu yerler, seyahat ederken konforlu bir konaklama için olanaklar ve Hizmetler sunar.  
-        *9* tür filtre içerir: **Buzdolabı** (*2* değeri vardır), **Isıtma** (*7* değeri vardır), **İnternet erişim türü** (*3* değeri vardır), **Şilte** (*2* değeri vardır), **Ödeme türü** (*10*'dan fazla değeri vardır), **Duş** (*1* değeri vardır), **Sigara içme** (*6* değeri vardır), **Yıldız derecelendirmesi** (*10* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık.
+ 1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Konaklama](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation), oteller, moteller, hosteller, misafirhaneler ve kamp alanları gibi geçici konaklama sağlayan tesisleri içerir. Bu yerler, seyahat ederken konforlu bir konaklama için olanaklar ve Hizmetler sunar.    
+        *10* tür filtre içerir: **Buzdolabı** (*2* değeri vardır), **Isıtma** (*7* değeri vardır), **İnternet erişim ücreti** (*3* değeri vardır), **İnternet erişim türü** (*3* değeri vardır), **Şilte** (*2* değeri vardır), **Ödeme türü** (*10*'dan fazla değeri vardır), **Duş** (*1* değeri vardır), **Sigara içme** (*6* değeri vardır), **Yıldız derecelendirmesi** (*10* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık.
 
- 2. **Kafe ve restoran**. [Kafe](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) ve [restoranlar](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) yemek hizmeti veren yerleri temsil eder.  
-        *16* tür filtre içerir: **Bebek bakım masası** (*3* değeri vardır), **Kahve** (*2* değeri vardır), **Mutfak** (*10*'dan fazla değeri vardır), **Teslimat** (*1* değeri vardır), **Diyet** (*8* değeri vardır), **Yemek** (*10*'dan fazla değeri vardır), **İçme suyu dolumu** (*1* değeri vardır), **Arabaya servis** (*1* değeri vardır), **İnternet erişim türü** (*3* değeri vardır), **Mikro bira fabrikası** (*1* değeri vardır), **Organik ürünler** (*2* değeri vardır), **Açık havada oturma** (*1* değeri vardır), **Ödeme türü** (*10*'dan fazla değeri vardır), **Sigara içme** (*6* değeri vardır), **Paket servis** (*1* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık.
+ 2. **Kafe ve restoran**. [Kafe](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcafe) ve [restoranlar](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Drestaurant) yemek hizmeti veren yerleri temsil eder.   
+        *23* tür filtre içerir: **Klima** (*2* değeri vardır), **Kafe** (*1* değeri vardır), **Bebek bakım masası** (*3* değeri vardır), **Kahve** (*2* değeri vardır), **Mutfak** (*10*'dan fazla değeri vardır), **Teslimat** (*1* değeri vardır), **Diyet** (*7* değeri vardır), **Yemek** (*10*'dan fazla değeri vardır), **İçme suyu dolumu** (*1* değeri vardır), **Arabaya servis** (*1* değeri vardır), **İnternet erişim ücreti** (*3* değeri vardır), **İnternet erişim türü** (*3* değeri vardır), **Canlı müzik** (*1* değeri vardır), **Mikro bira fabrikası** (*1* değeri vardır), **Organik ürünler** (*2* değeri vardır), **Açık havada oturma** (*1* değeri vardır), **Ödeme türü** (*10*'dan fazla değeri vardır), **Rezervasyon** (*5* değeri vardır), **Sigara içme** (*6* değeri vardır), **Paket servis** (*1* değeri vardır), **Tema** (*20*'den fazla değeri vardır), **Tür** (*3* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık.
 
  3. **Şarj istasyonu**. Bir [şarj istasyonu](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dcharging_station), elektrikli araç sahiplerinin arabalarını, motosikletlerini veya diğer elektrikli araçlarını şarj edebilecekleri bir altyapı tesisidir. Bu noktalar, araç akülerine enerji sağlamak için şarj cihazları ve uygun bağlantılar sağlar.
-        *35* tür filtre içerir: **Bisiklet erişimi** (*1* değeri vardır), **Otobüs erişimi** (*1* değeri vardır), **Ağır vasıta erişimi** (*5* değeri vardır), **Motorlu araç erişimi** (*1* değeri vardır), **Scooter erişimi** (*1* değeri vardır), **Uygulama ile kimlik doğrulama** (*1* değeri vardır), **Çip kart ile kimlik doğrulama** (*1* değeri vardır), **Temassız kimlik doğrulama** (*1* değeri vardır), **Anahtar ile kimlik doğrulama** (*1* değeri vardır), **Gerekli kimlik doğrulama** (*1* değeri vardır), **Telefon araması ile kimlik doğrulama** (*1* değeri vardır) **Kısa mesaj ile kimlik doğrulama** (*1* değeri vardır), **Ücret** (*2* değeri vardır), **İnternet erişim türü** (*3* değeri vardır), **İnternet erişim türü** (*3* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık ve diğerleri.  
+        *36* tür filtre içerir: **Uygulama ile kimlik doğrulama** (*1* değeri vardır), **Çip kart ile kimlik doğrulama** (*1* değeri vardır), **Anahtar ile kimlik doğrulama** (*1* değeri vardır), **Telefon araması ile kimlik doğrulama** (*1* değeri vardır), **Kısa mesaj ile kimlik doğrulama** (*1* değeri vardır), **Kimlik doğrulama gerekmez** (*1* değeri vardır), **Bisiklet erişimi** (*1* değeri vardır), **Otobüs erişimi** (*2* değeri vardır), **Temassız kimlik doğrulama** (*1* değeri vardır), **Ücret** (*2* değeri vardır), **Ağır vasıta erişimi** (*5* değeri vardır), **İnternet erişim ücreti** (*3* değeri vardır), **İnternet erişim türü** (*3* değeri vardır), **Motorlu araç erişimi** (*1* değeri vardır), **Otopark ücreti** (*2* değeri vardır), **Ödeme türü** (*10*'dan fazla değeri vardır), **Scooter erişimi** (*1* değeri vardır), **Soket** (*20*'den fazla değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), **ayrı konnektör türleri için konnektör çıkış gücü ve voltaj filtreleri** (*17* filtre, her birinin *3* değeri vardır), Şimdi açık / 7/24 açık.  
 
- 4. **Market ve süpermarket**. [Market](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) ve [süpermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) perakende tesislerini temsil eder.
-        *13* tür filtre içerir: **Toplu alım** (*2* değeri vardır), **Nakit çekme** (*5* değeri vardır), **Bebek bakım masası** (*3* değeri vardır), **Kahve** (*2* değeri vardır), **Teslimat** (*1* değeri vardır), **Diyet** (*8* değeri vardır), **Dondurma** (*1* değeri vardır), **Organik ürünler** (*2* değeri vardır), **Ödeme türü** (*10*'dan fazla değeri vardır), **İkinci El Filtre** (*2* değeri vardır), **Self servis kasa** (*2* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık.
+ 4. **Market ve süpermarket**. [Market](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dconvenience) ve [süpermarket](https://wiki.openstreetmap.org/wiki/Tag:shop%3Dsupermarket) perakende tesislerini temsil eder.  
+        *17* tür filtre içerir: **Toplu alım** (*2* değeri vardır), **Kafe** (*1* değeri vardır), **Nakit çekme** (*4* değeri vardır), **Bebek bakım masası** (*3* değeri vardır), **Kahve** (*2* değeri vardır), **Teslimat** (*1* değeri vardır), **Diyet** (*7* değeri vardır), **Arabaya servis** (*1* değeri vardır), **Dondurma** (*1* değeri vardır), **İnternet erişim ücreti** (*3* değeri vardır), **Üyelik gerekli** (*2* değeri vardır), **Organik ürünler** (*2* değeri vardır), **Ödeme türü** (*10*'dan fazla değeri vardır), **İkinci el ürünler** (*2* değeri vardır), **Self servis kasa** (*2* değeri vardır), **Tür** (*3* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık.
 
  5. **<Translate android="true" ids="poi_filter_emergency"/>**. [Acil durum](https://wiki.openstreetmap.org/wiki/Key:emergency), hastaneler, polis karakolları, itfaiye istasyonları ve ilk yardım tıbbi merkezleri gibi acil durum hizmetleriyle ilişkili tesisleri ve konumları içerir.  
         Herhangi bir filtre içermez.
 
- 6. **Akaryakıt istasyonu**. Bir [akaryakıt istasyonu](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), benzin istasyonu, gaz istasyonu ve benzin garajı olarak da bilinir. Motorlu araçların yakıt ikmali yapabileceği perakende tipi tesistir.  
-        *13* tür filtre içerir: **Araç yıkama** (*2* değeri vardır), **Nakit çekme** (*5* değeri vardır), **Basınçlı hava** (*1* değeri vardır), **Yakıt türü (havacılık)** (*20*'den fazla değeri vardır), **Yakıt kartları** (*5* değeri vardır), **Ödeme türü** (*20*'den fazla değeri vardır), **Self servis kasa** (*2* değeri vardır), **Kar motosikleti erişimi** (*3* değeri vardır), **Dinlenme odası** (*1*'den fazla değeri vardır), **Elektrik süpürgesi** (*1* değeri vardır), **Otomatik yakıt dağıtıcısı** (*1* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık.  
+ 6. **Akaryakıt istasyonu**. Bir [akaryakıt istasyonu](https://wiki.openstreetmap.org/wiki/Tag:amenity%3Dfuel), benzin istasyonu, gaz istasyonu ve benzin garajı olarak da bilinir. Motorlu araçların yakıt ikmali yapabileceği perakende tipi tesistir.    
+        *17* tür filtre içerir: **Otomatik yakıt dağıtıcıları** (*1* değeri vardır), **Kafe** (*1* değeri vardır), **Araç yıkama** (*2* değeri vardır), **Nakit çekme** (*4* değeri vardır), **Basınçlı hava** (*1* değeri vardır), **Yakıt kartları** (*6* değeri vardır), **Yakıt türü** (*20*'den fazla değeri vardır), **Yakıt türü (havacılık)** (*4* değeri vardır), **İnternet erişim ücreti** (*3* değeri vardır), **Ödeme türü** (*20*'den fazla değeri vardır), **Tuvalet** (*1* değeri vardır), **Self servis kasa** (*2* değeri vardır), **Self servis** (*2* değeri vardır), **Kar motosikleti erişimi** (*3* değeri vardır), **Tür** (*3* değeri vardır), **Elektrik süpürgesi** (*1* değeri vardır), **Tekerlekli sandalye erişilebilirliği** (*4* değeri vardır), Şimdi açık / 7/24 açık.  
 
  7. **Finans**. [Finans](https://wiki.openstreetmap.org/wiki/Tag:office%3Dfinancial) finans sektöründeki şirketlerin ofisleri için kullanılır.  
         *5* tür filtre içerir.  
@@ -326,9 +326,7 @@ Açıklama ve nasıl kullanılır:
 - Bölgenin haritaları yoksa ve bunları indirmek imkansızsa çevrimiçi arama kullanışlıdır.
 - *Sürekli ve kararlı bir İnternet bağlantısı gerektirir.*  
 
-![POI Ara Android](@site/static/img/search/search_poi_online_increase2_andr.png)  
-
-Sonuçları iyileştirmek için, Arama aracını kullanmadan önce, belirli bir konumu bulmanız gereken yere yaklaşmak için haritayı yakınlaştırın. Ve arama yaparken, konumunuzdan daha uzaktaki yerleri bulmak için **arama yarıçapını artırabilirsiniz**. Çevrimdışı arama yaparken, gerekli sonuçlar mevcut değilse, OsmAnd çevrimiçi aramayı kullanmayı önerir.  
+Sonuçları iyileştirmek için, Arama aracını kullanmadan önce, belirli bir konumu bulmanız gereken yere yaklaşmak için haritayı yakınlaştırın. Yakınlarda hiçbir şey bulunamazsa [arama yarıçapını artırabilirsiniz](./search-all.md#how-to-use). Çevrimdışı arama yaparken, gerekli sonuçlar mevcut değilse, OsmAnd çevrimiçi aramayı kullanmayı önerir.  
 
 Çevrimiçi Navigasyon hakkında bilgiyi [Çevrimiçi yönlendirme](../navigation/routing/online-routing.md) makalesinde bulabilirsiniz.
 
@@ -434,7 +432,7 @@ Haritada yerleri bulmak için özel filtreler oluşturmak üzere, ilgili kategor
 23. **Kullanıcı tanımlı**. 1 tür içerir: *Kullanıcı Tanımlı Diğer Posta Kodu*.
 
 <!--
-:::note since OsmAnd 5.0 for Android
+:::note Android için OsmAnd 5.0'dan itibaren
 Arama için mevcut:
 
 - `amenity=place_of_worship` etiketine dayalı dini POI'ler, kiliseler, camiler veya sinagoglar gibi dine özgü konumlara ayrılmıştır.

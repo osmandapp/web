@@ -1,5 +1,5 @@
 ---
-source-hash: 0da9c96364eb27892c42666b0e37fb5654ac44a6f15bb632c2fac452e50c6222
+source-hash: bfe0420d8b7fdb1fb6c341554dbe5327adde2d1beb05e5eeb3114c2d541b823c
 sidebar_position: 8
 title:  Haritadaki Noktalar
 ---
@@ -133,6 +133,8 @@ Standart OsmAnd İÇN türlerinden birini veya çoğunu seçebilir veya kendi [�
 </Tabs>
 
 OsmAnd'deki her İÇN türüne belirli bir simge ve renk atanmıştır. İÇN'nin [yakınlaştırma seviyesi](../map/vector-maps.md#details) ve tasarımı bazı [harita stillerinde](../map/map-styles.md) farklı olabilir.  
+
+OsmAnd [harita stilinde](../map/map-styles.md) ibadet yerleri (kiliseler, camiler, sinagoglar, tapınaklar ve diğerleri) seçici olarak görüntülenir. Düşük yakınlaştırma seviyelerinde yalnızca en dikkat çekici olanlar gösterilir, diğerleri yakınlaştırdıkça görünür. [*<Translate android="true" ids="rendering_attr_moreDetailed_name"/>*](../map/vector-maps.md#details) ayarı etkinleştirildiğinde, tüm ibadet yerleri daha düşük bir yakınlaştırma seviyesinde görünür. [Gece modunda](../map/vector-maps.md#map-mode) simgeleri, gündüz modunda olduğu gibi arka plan dairesi olmadan gösterilir.
 
 Daha fazla bilgi için [okuyun](../map/vector-maps.md#hide).
 

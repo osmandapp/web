@@ -1,5 +1,5 @@
 ---
-source-hash: d5de9c3084442f355b9b6536f2e73e330ece35ee360363e944195eaf5ddfe9fb
+source-hash: 941d8e8096800d75da224d6bdd577697326daf17319375cb9b22749166c80554
 sidebar_position: 6
 title: Yerlerim
 ---
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places android](@site/static/img/personal/my_places_android_new.png) ![My places menu Android](@site/static/img/personal/my_places_menu_android_new.png)
+![Yerlerim android](@site/static/img/personal/my_places_android_new.png) ![Yerlerim menüsü Android](@site/static/img/personal/my_places_menu_android_new.png)
 
 </TabItem>
 
@@ -34,7 +34,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places"/>*  
 
-![My Places ios](@site/static/img/personal/my_places_ios_2.png)  ![My places menu iOS](@site/static/img/personal/my_places_menu_ios.webp)
+![Yerlerim ios](@site/static/img/personal/my_places_ios_2.png)  ![Yerlerim menüsü iOS](@site/static/img/personal/my_places_menu_ios.webp)
 
 </TabItem>
 
@@ -52,7 +52,7 @@ Yerlerim kategorilere göre organize edilmiştir. İlgili veriyi yönetmek için
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu android](@site/static/img/personal/favorites_menu_android.png)
+![Favoriler menüsü android](@site/static/img/personal/favorites_menu_android.png)
 
 </TabItem>
 
@@ -60,7 +60,7 @@ Yerlerim kategorilere göre organize edilmiştir. İlgili veriyi yönetmek için
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,favorites_item"/>*
 
-![Favorites menu iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
+![Favoriler menüsü iOS](@site/static/img/personal/favorites_menu_tab_ios.webp)
 
 </TabItem>
 
@@ -78,7 +78,7 @@ Tam talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![İzlerle Yerlerim Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
 </TabItem>
 
@@ -86,7 +86,7 @@ Tam talimatlar için [Favoriler](../personal/favorites.md) makalesine bakın.
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
+![İzlerle Yerlerim iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios.webp)
 
 </TabItem>
 
@@ -104,7 +104,7 @@ Kapsamlı rehberlik için [Parkurları Yönet](../personal/tracks/manage-tracks.
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm.png)
+![Paylaş](@site/static/img/plugins/osm-editing/my_places_osm.png)
 
 </TabItem>
 
@@ -112,7 +112,7 @@ Kapsamlı rehberlik için [Parkurları Yönet](../personal/tracks/manage-tracks.
 
 Şuraya git: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,osm_edits"/>*
 
-![Share](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
+![Paylaş](@site/static/img/plugins/osm-editing/my_places_osm_ios.webp)
 
 </TabItem>
 
@@ -128,9 +128,9 @@ Adım adım talimatlar için [OSM Düzenleme eklentisine](../plugins/osm-editing
 
 *<Translate android="true" ids="shared_string_menu,shared_string_my_places,notes"/>*
 
-![Audio video plugin My places menu Three actions](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
+![Sesli görüntülü notlar eklentisi Yerlerim menüsü üç eylem](@site/static/img/plugins/audio-video-notes/my_places_a-v_notes.png)  
 
-**Sesli/Görüntülü Notlar eklentisi**, belirli harita konumlarına bağlı multimedya notları oluşturmanıza olanak tanır. Bu notlar, **Yerlerim** altında **A/V Notları Sekmesi**'nde saklanır.
+**Sesli/Görüntülü Notlar eklentisi**, belirli harita konumlarına bağlı multimedya notları oluşturmanıza olanak tanır. Bu notlar, **Yerlerim** altında **A/V Notları Sekmesi**'nde saklanır. Her not ayrıca [Favoriler](#favorites) sekmesindeki **media** klasöründe bir favori olarak da kaydedilir.
 
 Daha fazla bilgi için [Sesli/Görüntülü Notlar eklentisi](../plugins/audio-video-notes.md) sayfasına bakın.
 
@@ -138,7 +138,7 @@ Daha fazla bilgi için [Sesli/Görüntülü Notlar eklentisi](../plugins/audio-v
 
 Şuraya git: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_travel_guides"/>*
 
-![Travel Guides iOS](@site/static/img/plan-route/travel_guides_ios.webp)
+![Seyahat Rehberleri iOS](@site/static/img/plan-route/travel_guides_ios.webp)
 
 **Seyahat** bölümü, çevrimdışı erişim için kaydedilen yer imli seyahat rehberlerini ve makaleleri içerir. Kaydedilen seyahat içeriğinizi Yerlerim'den hızlıca açabilir, düzenleyebilirsiniz. Seyahat bölümü yalnızca birden fazla seyahat rehberi yer imlerine eklendiğinde görüntülenir.
 

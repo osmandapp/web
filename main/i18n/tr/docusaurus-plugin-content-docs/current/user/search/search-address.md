@@ -1,5 +1,5 @@
 ---
-source-hash: 27c41800e1baf2eac0813e2537f7e3166e3e039c715b9b89778ccd05dc135e5f
+source-hash: e36caad58f36cfd88f8d8bd575e69fdf2d3e8f63a1d4a934dba6e473f1b95388
 sidebar_position: 2
 title: Adres Ara
 ---
@@ -13,13 +13,20 @@ import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
 import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 
+
 ## Genel Bakış {#overview}
 
 *OsmAnd Adrese Göre Arama*, OpenStreetMap verilerine dayanır ve belirli bir adrese giden konumu ve yol tarifini hazır sıralanmış bir listeden bulmanıza, ayrıca posta kodu veya koordinatlara göre arama yapmanıza olanak tanır. Bu araç, gerekli adresleri birkaç dokunuşla bulmanızı sağlayarak arama süresini azaltır ve tam adresi hatırlamadığınız durumlarda yardımcı olur.
 
 Adres araması, indirilen haritaları kullanarak çevrimdışı çalışır. Aradığınız bölgenin haritasının yüklü olduğundan emin olun. Sonuçlar, OpenStreetMap'te mevcut olan adres verilerine bağlıdır.
 
-Arama sonuçları, ilgili ve mesafeye göre otomatik olarak sıralanır, bu nedenle yakındaki ve daha ilgili sonuçlar listede daha üstte görünür.
+OsmAnd arama sonuçlarını otomatik olarak sıralar, bu nedenle yakındaki ve daha ilgili sonuçlar listede daha üstte görünür. Android'de sıralamayı, sonuç listesinin üstündeki sıralama çipiyle değiştirebilirsiniz. Çip seçili seçeneği gösterir. Çipe dokunun ve *Sırala* menüsünde aşağıdakilerden birini seçin:
+- *Alaka düzeyi* — Sonuçları sorgunuzla ne kadar yakından eşleştiklerine göre sıralar.
+- *En yakın* — Sonuçları mesafeye göre sıralar, en yakın sonuçlar önce gösterilir.
+
+Yine Android'de, sonuçların üstünde *Kasaba*, *Şehir*, *Cadde* veya *Posta kodu* gibi nesne türlerine ait çipler görünür. Yalnızca o türdeki sonuçları göstermek için bir çipe dokunun. Daha fazla bilgi için [Arama Sonuçlarını Sıralama](./search-all.md#sorting-search-results) bölümüne bakın.
+
+Android'de harita merkezi konumunuzdan 50 m'den fazla uzaktaysa ve harita konumunuzu takip etmiyorsa, arama harita merkezi çevresinde yapılır ve arama alanında *Arama N km uzakta* yazar. Harita merkezi konumunuzdan 70 km'den fazla uzaktaysa, sıralama çipinin yanında arama alanını gösteren bir çip, *Harita merkezi* veya *Konumum*, görünür. Nerede arama yapılacağını seçmek için ona dokunun. Daha fazla bilgi için [Çevrede Arama](./search-all.md#search-around) bölümüne bakın.
 
 OsmAnd, **Adres Ara** bölümünün bulunduğu *Arama aracına* ulaşmak için çeşitli yollar sunar.
 
@@ -28,23 +35,34 @@ OsmAnd, **Adres Ara** bölümünün bulunduğu *Arama aracına* ulaşmak için �
 - Bir rotayı başlatmaya hazırlanırken, *Navigasyon → Hedef belirle → Arama alanı* üzerine dokunun.  
 
 
-## Tam metin arama {#full-text-search}
+## Adres Sekmesi {#address-tab}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Search Android](@site/static/img/search/search_address_2_andr.png)
+![Android'de arama](@site/static/img/search/search_address_2_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search iOS](@site/static/img/search/street_search_ios.png)  
+![iOS'ta arama](@site/static/img/search/street_search_ios.webp)  
 
 </TabItem>
 
 </Tabs>
+
+*Adres* sekmesi, adrese göre arama yapmanın farklı yolları için düğmeler içerir. Her düğme, aralarından seçim yapabileceğiniz önerilen seçeneklerin bir listesini açar:
+
+- [**&lt;şehir&gt; içinde cadde ara**](#select-street) (*Android*) / **&lt;şehir&gt; içinde cadde seç** (*iOS*) — Daha önce bir şehir aradıysanız görünür. Son aranan şehir zaten ayarlanmıştır, bu nedenle yalnızca cadde adını yazıp önerilen caddeler arasından seçmeniz yeterlidir.
+- [**Önce şehir/kasaba/yerleşim yeri belirt**](#select-city) (*Android*) / **Şehir seç** (*iOS*) — Her zaman kullanılabilir. Hemen şehirlerin, kasabaların ve köylerin isme göre sıralanmış bir listesini açar. Yazdıkça liste daralır.
+- [**Posta kodu ara**](#postcode-search) — Her zaman kullanılabilir. Arama alanını posta kodu girişine geçirir. En az bir karakter yazana kadar liste boş kalır, ardından eşleşen sonuçlar görünür.
+- [**Koordinat arama**](#coordinates-search) — Her zaman kullanılabilir. Koordinat giriş ekranını açar.
+
+**En yakın şehirler** listesi düğmelerin altında görüntülenir ve arama konumunun, yani konumunuzun veya harita merkezinin çevresindeki en fazla 15 şehir ve kasabayı gösterir. Her öğe adı, türünü, *Şehir* veya *Kasaba*, ve arama konumundan uzaklığı ile yönünü gösterir. Android'de bölge de gösterilir.
+
+## Tam metin arama {#full-text-search}
 
 OsmAnd, tam metin adres aramasını destekler. Bu, şehir → cadde → ev numarası adım adım seçmek yerine arama alanına doğrudan adres yazabileceğiniz anlamına gelir. Arama motoru şu adres bileşenlerini tanımaya çalışır:
 - şehir;
@@ -67,10 +85,8 @@ Bir sorgu hem bir adres hem de bir POI'ye atıfta bulunuyorsa, OsmAnd bağlam, m
 
 **NOT:** Adres araması yalnızca indirilen haritalar içinde çalışır. Arama sonuçları şunlara dayanır:
 - cihazınıza yüklenmiş haritalar;
-- görünür harita alanı;
+- [görünür harita alanı](./search-all.md#how-to-use);
 - mevcut konumunuz. 
-
-Hiçbir şey bulunamazsa, OsmAnd arama yarıçapını artırmayı önerebilir.
 
 ### ABD Adres Araması ve TIGER Verileri {#us-address-search-and-tiger-data}
 
@@ -122,26 +138,24 @@ Arama motoru ayrıca farklı kelime sırası, yazım farklılıkları, kısaltma
 
 <TabItem value="android" label="Android">
 
-![Search Street Android](@site/static/img/search/town_search_android.png)
+![Android'de cadde arama](@site/static/img/search/town_search_android.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search Street iOS](@site/static/img/search/town_search_ios.png)
+![iOS'ta cadde arama](@site/static/img/search/town_search_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-**En yakın şehirler**  
-    Bu, **konumunuzun etrafındaki küçük bir şehir listesini görüntüler** veya *Cadde seç* veya *Şehir seç* için belirttiğiniz yerleşim yeri. Her alan, şehrin büyüklüğüne karşılık gelen bir simge, şehrin adı, sizden merkezine olan uzaklık ve Android için pusula yönünü içerir.
-
 Bu arama şekli, seçilen bir yerleşim yeri içindeki belirli konumları bulmayı kolaylaştırır, adresleri doğru ve hızlı bir şekilde bulmak için uygun bir yol sağlar. Gerekli adresi, yerleşim yerini belirleyerek aramaya başlayabilirsiniz.
 
 - Bunu yapmak için **Önce şehir/kasaba/yerleşim yeri belirt** (Android) veya **Şehir seç** (iOS) üzerine dokunun.
 - Açılan listeden gerekli yerleşim yerini seçin. [Burada](#full-text-search) arama sorgularının görüntülenme sırası ve her öğe hakkında hangi bilgilerin mevcut olduğu açıklanmaktadır.
-- Bir sonraki ekranda, adresi daha da daraltabilir veya arama giriş alanının altındaki *Haritada göster* düğmesini seçebilirsiniz.
+- Android'de *Alaka düzeyi* veya *En yakın* seçeneğini belirlemek için sıralama çipine dokunun. Harita merkezi konumunuzdan 70 km'den fazla uzaktaysa, *Harita merkezi* ve *Konumum* arasında seçim yapmak için arama alanı çipini kullanın. Sonuçlarda bulunan *Şehir*, *Kasaba* veya *Köy* gibi yerleşim yeri türlerine ait çipler listenin üstünde görünür. Yalnızca o türdeki sonuçları göstermek için bir çipe dokunun.
+- Bir sonraki ekranda, adresi daha da daraltabilir veya yerleşim yerini haritada gösterebilirsiniz. iOS'ta arama alanının altındaki *Haritada göster* düğmesine dokunun. Android'de sağ alt köşedeki yüzen düğme olan *Haritada göster* düğmesine dokunun.
 - Aramanızı belirtmek için, aradığınız adresin bulunduğu şehrin, kasabanın veya köyün adının tamamını veya yalnızca bir kısmını girebilirsiniz. Bu, aramanızı daraltmanıza ve daha doğru bir liste almanıza olanak tanır.
 - Adresin, ev numarasının veya kavşak adının son öğesine dokunmak, nesnenin [harita bağlam menüsünü](../map/map-context-menu.md#select-an-object-single-tap) açar.  
 
@@ -157,22 +171,24 @@ Bu arama şekli, seçilen bir yerleşim yeri içindeki belirli konumları bulmay
 
 <TabItem value="android" label="Android">
 
-![Search Street Android](@site/static/img/search/street_search.png) ![Search Street Android](@site/static/img/search/street_search_1.png)
+![Android'de cadde arama](@site/static/img/search/street_search.webp) ![Android'de cadde arama](@site/static/img/search/street_search_1.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search Street iOS](@site/static/img/search/address_street_search_3_ios.png) ![Search Street Android](@site/static/img/search/address_street_search_4_ios.png)
+![iOS'ta cadde arama](@site/static/img/search/address_street_search_3_ios.png) ![iOS'ta cadde arama](@site/static/img/search/address_street_search_4_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Cadde araması, bulunduğunuz yerleşim yerinde veya daha önce arama yaptığınız yerde veya uygulama ekranındaki görünür haritanın merkezinde bulunan yerleşim yerinde yapılır.
+Cadde araması, en son aradığınız şehirde yapılır. Adı düğmede gösterilir, bu nedenle doğrudan caddeyle başlayabilirsiniz.
 
-- Bu arama türünü kullanmak için **Cadde Ara** (*Android*) veya **Cadde Seç** (*iOS*) üzerine dokunun.
-- Şehir adının yanındaki arama alanına cadde adını yazmaya başlayabilirsiniz ve liste daralacak, size en uygun sonuçları verecektir.
+- Bu arama türünü kullanmak için **&lt;şehir&gt; içinde cadde ara** (*Android*) veya **&lt;şehir&gt; içinde cadde seç** (*iOS*) üzerine dokunun.
+- Şehir adı arama alanına zaten girilmiştir ve şehrin caddelerinin listesi hemen açılır. Şehir adının yanındaki arama alanına cadde adını yazmaya başlayabilirsiniz ve liste daralacak, size en uygun sonuçları verecektir.
+- Android'de *Alaka düzeyi* veya *En yakın* seçeneğini belirlemek için sıralama çipine dokunun. Harita merkezi konumunuzdan 70 km'den fazla uzaktaysa, *Harita merkezi* ve *Konumum* arasında seçim yapmak için arama alanı çipini kullanın. Sonuçlarda bulunan *Cadde* veya *Bina* gibi nesne türlerine ait çipler listenin üstünde görünür. Yalnızca o türdeki sonuçları göstermek için bir çipe dokunun.
+- Bir caddeyi seçerek binalarının listesini açın. Gerekli ev numarasını seçerek adresin [harita bağlam menüsünü](../map/map-context-menu.md#select-an-object-single-tap) açın.
 - Diğer öğelerde, cadde araması [Şehir Seç](#select-city) ile aynıdır.
 
 :::note Anahtar ve Değer
@@ -187,23 +203,30 @@ Cadde araması, bulunduğunuz yerleşim yerinde veya daha önce arama yaptığı
 
 <TabItem value="android" label="Android">
 
-![Search Postcode Android](@site/static/img/search/postcode_android.png)
+![Android'de posta kodu arama](@site/static/img/search/postcode_android.webp)
+
+*Adres* sekmesinde **Posta kodu ara** düğmesine dokunun. Yazmaya başlayana kadar liste boş kalır. Posta kodunu, tek bir rakam bile olsa, girin; uygulama eşleşen posta kodlarının bir listesini sunar.
+
+- *Alaka düzeyi* veya *En yakın* seçeneğini belirlemek için sıralama çipine dokunun. Harita merkezi konumunuzdan 70 km'den fazla uzaktaysa, *Harita merkezi* ve *Konumum* arasında seçim yapmak için arama alanı çipini kullanın. Listede yalnızca posta kodlarını göstermek için *Posta kodu* çipine dokunun.
+- Gerekli posta kodunu seçin. Bu posta koduna sahip caddelerin listesi açılır ve posta kodu arama alanında kalır.
+- Adresi daraltmak için bir cadde ve ardından ev numarasını seçin. Bu, adresin [harita bağlam menüsünü](../map/map-context-menu.md#select-an-object-single-tap) açar.
+- Posta kodunun kendisini haritada görmek için sağ alt köşedeki yüzen düğme olan *Haritada göster* düğmesine dokunun. Harita, posta kodunun [bağlam menüsüyle](../map/map-context-menu.md#select-an-object-single-tap) açılır.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search Postcode iOS](@site/static/img/search/postcode_ios.png)
-
-</TabItem>
-
-</Tabs>
+![iOS'ta posta kodu arama](@site/static/img/search/postcode_ios.png)
 
 **Posta kodu aramasını kullanmak için, sadece numarayı girmeniz yeterlidir**, bu tek bir rakamdan bile oluşabilir ve uygulama mevcut ilgili posta kodlarının bir listesini sunar.
 
 - Gerekli kodu seçin ve üzerine dokunun.
-- *Haritada posta kodu numarasını göster* özelliğini kullanabilirsiniz. Bu, konum hakkında ek bilgi olmaksızın seçilen posta koduyla bir [harita bağlam menüsü](../map/map-context-menu.md#select-an-object-single-tap) açar.
+- *Haritada &lt;posta kodu&gt; göster* özelliğini kullanabilirsiniz. Bu, konum hakkında ek bilgi olmaksızın seçilen posta koduyla bir [harita bağlam menüsü](../map/map-context-menu.md#select-an-object-single-tap) açar.
 - Önce listeden gerekli caddeyi ve ardından numarayı seçerek bu koda göre aramanızı daraltabilirsiniz.
+
+</TabItem>
+
+</Tabs>
 
 **Posta koduna göre arama aşağıdaki durumlarda faydalı olabilir:**
 
@@ -221,13 +244,13 @@ Daha fazla bilgi için **[Birleşik Krallık Posta Kodu verileri](https://github
 
 <TabItem value="android" label="Android">
 
-![Search Coordinates Android](@site/static/img/search/coordinates_search_android.png)
+![Android'de koordinat arama](@site/static/img/search/coordinates_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search Coordinates iOS](@site/static/img/search/coordinates_search_ios.png)
+![iOS'ta koordinat arama](@site/static/img/search/coordinates_search_ios.png)
 
 </TabItem>
 
@@ -239,6 +262,6 @@ Daha fazla bilgi için **[Birleşik Krallık Posta Kodu verileri](https://github
 ## İlgili Makaleler {#related-articles}
 
 - [Tümünü Ara](./search-all.md)
-- [Arama Geçmişi](./search-history.md)
+- [Keşfet Ara](./search-history.md)
 - [POI Ara](./search-poi.md)
 - [Koordinat Ara](./search-coordinates.md)

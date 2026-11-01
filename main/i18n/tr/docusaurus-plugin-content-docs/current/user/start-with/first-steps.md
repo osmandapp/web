@@ -1,5 +1,5 @@
 ---
-source-hash: 80a22460424e38aa75f1f26d3dada0ffbc01fd27bcf90e4b1702cce7d6a9ac4d
+source-hash: d6a31c4940f73f3e1b07d66705ee71fb7de3941616a4621cd534af1b863917ad
 sidebar_position: 1
 title: İlk Adımlar
 ---
@@ -183,8 +183,8 @@ Uygulama ayarlarını [Ana Menü](../start-with/main-menu.md) aracılığıyla [
 
 </Tabs>
 
-[Genel ayarlar](../personal/global-settings.md) hakkında [daha fazla bilgi edinin](../personal/global-settings.md).
-[Profil ayarları](../personal/profiles.md) hakkında [daha fazla bilgi edinin](../personal/profiles.md).
+[Genel ayarlar](../personal/global-settings.md) hakkında daha fazla bilgi edinin.
+[Profil ayarları](../personal/profiles.md) hakkında daha fazla bilgi edinin.
 
 
 ### Eklentiler nasıl yapılandırılır {#how-to-configure-plugins}
@@ -502,7 +502,7 @@ Seçilen eylemle uygulamayı hemen başlatmak için bir eylem simgesine dokunun.
 
 *Yardım menüsünde* sitemizdeki [www.osmand.net/docs](https://osmand.net/docs/intro/) makalelerini bulabilirsiniz. İlk indirmeden sonra (İnternet bağlantısı gereklidir), yardım makaleleri çevrimdışı olarak kullanılabilir.  
 İlk alt bölüm olan *Çevrimdışı Yardım*, kullanıcılarımız arasında **En çok görüntülenen** (veya popüler) makaleleri içerir. Bu makaleler, uygulama için ayarlanan dilde görüntülenir, eğer bu dil belgemiz web sitesinde destekleniyorsa. Şu anda desteklenen diller: *<Translate android="true" ids="lang_en"/>, <Translate android="true" ids="lang_ar"/>, <Translate android="true" ids="lang_de"/>, <Translate android="true" ids="lang_es"/>, <Translate android="true" ids="lang_fr"/>, <Translate android="true" ids="lang_it"/>, <Translate android="true" ids="lang_nl"/>, <Translate android="true" ids="lang_pl"/>, <Translate android="true" ids="lang_pt"/>, <Translate android="true" ids="lang_tr"/>*, ve *<Translate android="true" ids="lang_uk"/>*. Uygulama dilini değiştirdiğinizde, belgelerin seçilen dilde açılması için lütfen OsmAnd'ı yeniden başlatın. Bir çeviri mevcut olmadığında, sayfanın İngilizce sürümü otomatik olarak görüntülenir. **Kullanıcı kılavuzu** ve **Sorun giderme** bölümleri web sitesindekiyle aynı yapıya sahiptir.  
-*Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine faydalı bağlantılar bulabilirsiniz. Yardım aracılığıyla [logcat ve çökme günlüklerini](../troubleshooting/crash-logs.md#crash-and-app-logs) de gönderebilirsiniz.  
+*Yardım menüsünde* ayrıca OsmAnd sosyal ağlarına, uygulamanızın sürüm bilgilerine, sürüm notlarına ve destek iletişim bilgilerine faydalı bağlantılar bulabilirsiniz. Yardım aracılığıyla [uygulama ve çökme günlüklerini](../troubleshooting/crash-logs.md#crash-and-app-logs) de gönderebilirsiniz.  
 
 ### Menü {#menu}
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 85e618476478ea546a67307979d025f08e38c3d1df9f9026c8de03a743af2712
+source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
 sidebar_position: 7
 title:  Raster Haritalar (Çevrimiçi / Çevrimdışı)
 ---
@@ -47,7 +47,7 @@ Raster haritaların geniş bir kullanım alanı vardır. İşte en popüler olan
 - Gerçek zamanlı gemi bilgileri.
 - OSM düzenlemesi için çevrimiçi OpenStreetMap döşemeleri.
 
-![Online maps overview](@site/static/img/plugins/online-maps/online-maps-overview.png)
+![Çevrimiçi haritalara genel bakış](@site/static/img/plugins/online-maps/online-maps-overview.png)
 
 :::tip
 Ayrıca haritaların [ana kaynağını](#main) vektör haritalardan çevrimiçi döşemelere değiştirebilirsiniz.
@@ -70,13 +70,13 @@ Ayrıca haritaların [ana kaynağını](#main) vektör haritalardan çevrimiçi 
 
 <TabItem value="android" label="Android">  
 
-![Show maps](@site/static/img/plugins/online-maps/show-maps-andr_new.png)  
+![Haritaları göster](@site/static/img/plugins/online-maps/show-maps-andr_new.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Show maps](@site/static/img/plugins/online-maps/show-maps-ios_new.png)  
+![Haritaları göster](@site/static/img/plugins/online-maps/show-maps-ios_new.png)  
 
 </TabItem>
 
@@ -102,7 +102,7 @@ Katmanlarınızla harmanlamak için temel haritanın şeffaflığını da ayarla
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,gpx_add_track"/>*  
 
-![Show maps](@site/static/img/plugins/online-maps/map_source_1.png) ![Show maps](@site/static/img/plugins/online-maps/map_source_2.png)
+![Haritaları göster](@site/static/img/plugins/online-maps/map_source_1.png) ![Haritaları göster](@site/static/img/plugins/online-maps/map_source_2.png)
 
 </TabItem>
 
@@ -110,7 +110,7 @@ Katmanlarınızla harmanlamak için temel haritanın şeffaflığını da ayarla
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_type,shared_string_online_maps,map_settings_install_more"/>*  
 
-![Show maps](@site/static/img/plugins/online-maps/map_type_new.png)
+![Haritaları göster](@site/static/img/plugins/online-maps/map_type_new.png)
 
 </TabItem>
 
@@ -126,7 +126,7 @@ Varsayılan olarak, ana harita [Çevrimdışı vektör haritalarına](./vector-m
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Alt katman / üst katman yapılandırması Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
 
 </TabItem>
 
@@ -134,7 +134,7 @@ Varsayılan olarak, ana harita [Çevrimdışı vektör haritalarına](./vector-m
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Alt katman / üst katman yapılandırması iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
 
 </TabItem>
 
@@ -156,7 +156,7 @@ Varsayılan olarak, ana harita [Çevrimdışı vektör haritalarına](./vector-m
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Alt katman / üst katman yapılandırması Android](@site/static/img/plugins/online-maps/underlay-andr.png)
 
 </TabItem>
 
@@ -164,7 +164,7 @@ Varsayılan olarak, ana harita [Çevrimdışı vektör haritalarına](./vector-m
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Alt katman / üst katman yapılandırması iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
 
 </TabItem>
 
@@ -180,7 +180,7 @@ Varsayılan olarak, ana harita [Çevrimdışı vektör haritalarına](./vector-m
 
 ### Arazi {#terrain}
 
-![Terrain layers](@site/static/img/plugins/online-maps/terrain_two_layers.png)
+![Arazi katmanları](@site/static/img/plugins/online-maps/terrain_two_layers.png)
 
 Raster haritalar bağlamında, [Arazi](../plugins/topography.md#terrain) düz bir harita üzerinde manzaranın şeklini görselleştirmeye yardımcı olan bir kabartma gölgelendirme katmanını ifade eder. Bu katman, yamaçların ve arazi formlarının algısını iyileştirmek için temel haritanın üzerine raster arazi verilerine dayanarak görüntülenir.
 
@@ -220,7 +220,7 @@ OsmAnd'da henüz tanımlanmamış yeni bir raster harita kaynağı eklemek için
 
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,configure_map,layer_map,shared_string_add_manually"/>*
 
-![Add online source](@site/static/img/plugins/online-maps/add-online-source-2.png)
+![Çevrimiçi kaynak ekle](@site/static/img/plugins/online-maps/add-online-source-2.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ OsmAnd'da henüz tanımlanmamış yeni bir raster harita kaynağı eklemek için
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,add_online_source"/>*
 
-![Add online source](@site/static/img/plugins/online-maps/add-online-source-2_ios.png)
+![Çevrimiçi kaynak ekle](@site/static/img/plugins/online-maps/add-online-source-2_ios.png)
 
 </TabItem>
 
@@ -288,7 +288,7 @@ Döşeme formatını değiştirmek için, çevrimiçi haritaların düzenleme me
 Şuraya gidin: *<Translate android="true" ids="shared_string_menu,maps_and_resources,download_tab_local,quick_action_map_source_title"/> → çevrimiçi haritaları seçin →  
 &#8942; → <Translate android="true" ids="clear_tile_data"/>*
 
-![Online sources list](@site/static/img/plugins/online-maps/clear_cache_android.png)
+![Çevrimiçi kaynaklar listesi](@site/static/img/plugins/online-maps/clear_cache_android.png)
 
 </TabItem>
 
@@ -296,7 +296,7 @@ Döşeme formatını değiştirmek için, çevrimiçi haritaların düzenleme me
 
 Şuraya gidin: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local,online_raster_maps"/> → i → <Translate ios="true" ids="shared_string_clear_cache"/>*
 
-![Online sources list](@site/static/img/plugins/online-maps/clear_cache_ios.png)
+![Çevrimiçi kaynaklar listesi](@site/static/img/plugins/online-maps/clear_cache_ios.png)
 </TabItem>
 
 </Tabs>
@@ -315,10 +315,10 @@ Haritaların bir süre sonra döşemeleri otomatik olarak güncellemesi için bi
 
 <table class="images">
     <tr>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-1.png').default} alt="raster-maps"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-2.png').default} alt="raster-maps"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-3.png').default} alt="raster-maps"/></td>
-        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-4.png').default} alt="raster-maps"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-1.png').default} alt="raster haritalar"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-2.png').default} alt="raster haritalar"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-3.png').default} alt="raster haritalar"/></td>
+        <td><img src={require('@site/static/img/plugins/online-maps/download-online-maps-4.png').default} alt="raster haritalar"/></td>
     </tr>
 </table>  
 
@@ -326,7 +326,7 @@ Haritaların bir süre sonra döşemeleri otomatik olarak güncellemesi için bi
 
 <TabItem value="ios" label="iOS">  
 
-![Download tiles iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
+![Karoları indir iOS](@site/static/img/plugins/online-maps/online-maps-download-tiles-ios.png)
 
 </TabItem>
 
@@ -363,8 +363,7 @@ Raster haritalar, döşemeler zaten eşlenmişse olduğu gibi kullanılabilir. R
 ## İlgili Makaleler {#related-articles}
 
 - [İçe / Dışa Aktar](../personal/import-export.md)
-- [Renk Paleti Şemaları](../personal/color-palette-schemes.md)
 - [Hızlı Eylem (Özel düğme)](../widgets/quick-action.md)
 - [Çevrimiçi Haritalar](../plugins/online-map.md)
 - [Topografya](../plugins/topography.md)
-- [Çevrimdışı Raster & Vektör Haritalar Oluştur](technical/map-creation/create-offline-maps-yourself.md)
+- [Çevrimdışı Raster & Vektör Haritalar Oluştur](../../technical/map-creation/create-offline-maps-yourself.md)

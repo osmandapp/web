@@ -30,15 +30,15 @@ Bu bölüm, OsmAnd Web harita arayüzünü kapsar; harita menüsü, katman yapı
 
 Bu bölüm, web haritasında hava koşullarını ve tahminlerini nasıl görüntüleyeceğinizi açıklar; zamana dayalı tahminler ve hava katmanları dahil.
 
-### [Rotalar](./web-tracks.md) {#tracks}
+### [Parkurlar](./web-tracks.md) {#tracks}
 
 Bu bölüm, web'de kişisel GPX rotalarıyla çalışmayı kapsar; görüntüleme, düzenleme, organize etme ve OsmAnd Cloud ile senkronize etme dahil.
 
-### [Sık Kullanılanlar](./web-favorites.md) {#favorites}
+### [Favoriler](./web-favorites.md) {#favorites}
 
 Haritada görüntülenen kaydedilmiş yerler; bunları klasörlere organize etme, erişimi yönetme ve navigasyon veya rota planlama için yeniden kullanma seçenekleri ile.
 
-### [Rota Analizörü](./web-tracks-analyzer.md) {#tracks-analyzer}
+### [Parkur Analizörü](./web-tracks-analyzer.md) {#tracks-analyzer}
 
 Bu bölüm, haritada seçilen noktalar arasındaki rota segmentlerini analiz etmeye ve birden fazla rota arasında anahtar parametreleri karşılaştırmaya odaklanır.
 

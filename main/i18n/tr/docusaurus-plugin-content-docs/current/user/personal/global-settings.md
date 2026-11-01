@@ -1,5 +1,5 @@
 ---
-source-hash: 0655350369584efc3de7d1f6c48ed25a0339a132fb53f2012a2185301e8f452b
+source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
 sidebar_position: 3
 title:  Küresel Ayarlar
 ---
@@ -101,6 +101,7 @@ Bu özellik OsmAnd uygulamasının iOS sürümü için mevcuttur.
     - *Dahili uygulama belleği*. Yalnızca OsmAnd uygulaması verilerine erişebilir ve harici uygulamaların hiçbiri erişemez.
     - *Paylaşılan bellek*. Artık mevcut değil.
     - *Harici depolama 1*. Yalnızca 1 OsmAnd uygulaması erişebilir ve Yönetici uygulamaları ve USB.
+    - *Görünür harici depolama 1*. Veriler, dosya yöneticilerine ve USB'ye açık olan Android/media klasöründe saklanır. Ek depolama izni gerekmez.
     - *Çok kullanıcılı depolama*. Yalnızca 1 OsmAnd uygulaması erişebilir, ancak birden çok Android kullanıcısı arasında paylaşılır.
     - *Manuel olarak belirtildi*. Yola bağlıdır.
 
@@ -115,6 +116,11 @@ Android 11-12 sürümlerinde yeni depolama erişim yönergeleri uygulanmıştır
 - **Paylaşılan depolama** — <Translate android="true" ids="media_storage_shared_storage_descr"/>
 - **Kamera klasörü** — <Translate android="true" ids="media_storage_camera_folder_descr"/>
 - **Manuel olarak belirtildi** — <Translate android="true" ids="media_storage_manually_specified_descr"/>
+
+Farklı bir medya depolama alanı seçtiğinizde OsmAnd, mevcut medya dosyalarının taşınıp taşınmayacağını sorar:
+- **Yeni konuma taşı** — Mevcut medya dosyalarını seçilen depolama alanına taşıyın.
+- **Taşıma** — Mevcut dosyaları taşımadan depolama alanını değiştirin.
+- **İptal** — Geçerli depolama alanını koruyun.
 
 Ayrıca *Her zaman yerel bir kopya tut* anahtarı vardır. Etkinleştirildiğinde, OsmAnd Galeri veya Dosyalar'dan içe aktarılan medyayı kendi depolama alanına kopyalar, böylece orijinal dosya Galeri veya dosya sisteminden silinse bile eklenen medya kullanılabilir kalır.
 
@@ -141,7 +147,7 @@ OsmAnd dosyaları [*Dosyalar*](https://apps.apple.com/us/app/files/id1232058109)
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,map_rendering_engine"/> (Yalnızca Android)*
 
-![Genel Ayarlar motor oluşturma Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
+![Genel Ayarlar oluşturma motoru Android](@site/static/img/personal/global-settings/rendering_engine_andr.png)  
 
 - Uygulamanın **Android** sürümünde, OsmAnd uygulamasında orijinal olarak uygulanan Sürüm 1 harita oluşturma ile iki ve üç boyutlu grafik nesneleri oluşturmak için OpenGL (Açık Grafik Kitaplığı) programlama arayüzünü kullanan Sürüm 2 arasında geçiş yapabilirsiniz.
 
@@ -221,7 +227,7 @@ Her OsmAnd uygulama yüklemesi için bir **UUID** (*Benzersiz Kullanıcı Tanım
 - Sunucu kaynaklarının rasyonel kullanımını kontrol etmek, trafik kullanımını tahmin etmek ve harita indirmeleri hakkında genel aylık raporlar sağlamak için OsmAnd sunucularından çevrimdışı haritaları indirmek için rastgele bir UUID kullanılır.
 - UUID her 3 ayda bir değişir.  
 - OsmAnd sürüm 4.3'ten itibaren, OsmAnd uygulamasını kullanırken kullanıcı verilerinin toplanmasını devre dışı bırakabilirsiniz. O zaman UUID herhangi bir indirme isteğiyle gönderilmeyecektir.  
-- Daha fazla bilgiyi [Kullanım Koşulları (ToS)](../../legal/terms-of-use.md#6-unique-user-identifier) bölümünde okuyabilirsiniz.
+- Daha fazla bilgiyi [Kullanım Koşulları (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier) bölümünde okuyabilirsiniz.
 
 
 ### Geçmiş {#history}

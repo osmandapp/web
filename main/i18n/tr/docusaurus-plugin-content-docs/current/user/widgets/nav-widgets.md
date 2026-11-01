@@ -1,5 +1,5 @@
 ---
-source-hash: 605c701cbbb77f516e6469701cf6ff81022dfa1f29fc77a6ec022960658661d0
+source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
 sidebar_position: 4
 title: Navigasyon Widget'ları
 ---
@@ -320,7 +320,7 @@ Sonraki dönüşe kalan mesafe, yol adı, mevcut sokak adı ve şerit bilgileri 
 |:------------|:------------|
 | Etkinleştir      | **Android:** *Menü → Ekranı yapılandır →  Sol / Sağ / Üst / Alt panel → Rota Rehberliği → Widget ekle → Şerit, Sonraki dönüş, İkinci sonraki dönüş*  |
 |      | **iOS:** *Menü → Ekranı yapılandır →  Sol / Sağ / Üst / Alt panel → Rota Rehberliği → Widget ekle → Şerit, Sonraki dönüş, İkinci sonraki dönüş*   |
-| Dokunarak  | **Sonraki dönüş**: [Sesli komutlar](../navigation/guidance/voice-navigation.md) etkinse, bir sonraki manevra ve ona olan mesafe söylenir. <br/> **Şerit**: Değişiklik yok. |
+| Dokunarak  | **Sonraki dönüş**: [Sesli komutlar](../navigation/guidance/voice-navigation.md) etkinse, bir sonraki manevra ve ona olan mesafe söylenir. <br/> **Şeritler**: Değişiklik yok. |
 | Uzun dokunuş    | **Sonraki dönüş**: [Widget'ın bağlam menüsünü](../widgets/configure-screen.md#widget-context-menu) açar <br/> **Şeritler**: Değişiklik yok. |
 
 
@@ -328,7 +328,9 @@ Sonraki dönüşe kalan mesafe, yol adı, mevcut sokak adı ve şerit bilgileri 
 
 ![Şeritler widget'ları](@site/static/img/widgets/lanes_widget.png)
 
-**Şeritler** widget'ı, navigasyon aktifken mevcut şeridi vurgular ve navigasyon pasifken mevcut yol için şerit düzenini gösterir. Şerit diyagramının altında, şerit rehberliğinin uygulanacağı manevraya kadar ne kadar kaldığını gösteren bir mesafe göstergesi de bulunur. Bu widget yalnızca Üst ve Alt paneller için kullanılabilir. Veriler [OpenStreetMap projesinden](https://wiki.openstreetmap.org/wiki/Key:turn) alınmıştır.
+**Şeritler** widget'ı, navigasyon aktifken mevcut şeridi vurgular ve navigasyon pasifken mevcut yol için şerit düzenini gösterir. Şerit diyagramının altında, şerit rehberliğinin uygulanacağı manevraya kadar ne kadar kaldığını gösteren bir mesafe göstergesi de bulunur. Bu widget yalnızca Üst ve Alt paneller için kullanılabilir. Veriler [OpenStreetMap projesinden](https://wiki.openstreetmap.org/wiki/Key:turn) alınmıştır. Harita verisi her şerit için bir yön belirtmiyorsa, OsmAnd eksik yönleri kavşağın düzenine göre tamamlar.
+
+Android'de widget ayarları, varsayılan olarak etkin olan *Düz giderken küçük kavşaklarda göster* seçeneğini içerir. Bu seçenekle widget, o kavşak için sesli komut olmasa bile düz giderken geçtiğiniz her kavşakta şeritleri gösterir.
 
 
 ### Sonraki Dönüş {#next-turn}
@@ -395,7 +397,7 @@ Yaklaşma süresi ayarlarına göre bir widget görüntüler. Şeridin rengi [se
 
 - *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* ve *<Translate android="true" ids="show_tunnels"/>* gibi uyarıları açıp kapatabilirsiniz. Diğer uyarılar, widget etkinleştirilirse varsayılan olarak aktiftir.  
 
-- *Hız Limiti* uyarı türü için, araç hızı ve GPS hızıyla daha iyi eşleşmesi için sesli komut ayarlarında [<Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) değerini ayarlayabilirsiniz.  
+- *Hız Limiti* uyarı türü için, araç hızı ve GPS hızıyla daha iyi eşleşmesi için sesli komut ayarlarında <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) değerini ayarlayabilirsiniz.  
 
 - Çoğu uyarı ekranda görüntülenir ve 15 saniye boyunca sesli komutla duyurulur, ayrıca bir Ara Nokta, Favori Nokta veya İÇN'yi geçmek için tetikleme süresi de duyurulur. Daha fazla bilgiyi [burada](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) okuyun.
 

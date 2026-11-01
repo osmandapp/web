@@ -1,5 +1,5 @@
 ---
-source-hash: 0ece8e7a1a25127672614cdf13cd0688a67a4cbb64515cc18d60c278f7999862
+source-hash: 6cd58289fa863d41e34b91d4957c55fa523752c06e24588537decc922b41bdaa
 title: Çevrimdışı Raster ve Vektör Haritalar Oluşturma
 versions: '*'
 intro: OsmAndMapCreator ile ihtiyaçlarınıza göre Raster ve Vektör haritalar oluşturmanın ve özelleştirmenin birçok yolu vardır.
@@ -7,7 +7,7 @@ intro: OsmAndMapCreator ile ihtiyaçlarınıza göre Raster ve Vektör haritalar
 
 ## OsmAndMapCreator {#osmandmapcreator}
 
-[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator), OsmAnd tarafından desteklenen herhangi bir haritayı kendiniz oluşturmak için kullanılabilir. En son sürümünü [web sitesinden](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) indirebilirsiniz. OsmAndMapCreator, raster ve vektör haritalar oluşturmak için kullanıcı arayüzü özelliklerine sahiptir. *Vektör harita oluşturmak için OSM dosyasına (`*.pbf, *.osm.gz, *.osm.bz2`)* ve *çevrimiçi sqlite harita dosyası oluşturmak için `temel döşeme URL'sine`* ihtiyacınız olacaktır.
+[**OsmAndMapCreator**](https://wiki.openstreetmap.org/wiki/OsmAndMapCreator), OsmAnd tarafından desteklenen herhangi bir haritayı kendiniz oluşturmak için kullanılabilir. En son sürümünü [web sitesinden](https://download.osmand.net/latest-night-build/OsmAndMapCreator-main.zip) indirebilirsiniz. OsmAndMapCreator, raster ve vektör haritalar oluşturmak için kullanıcı arayüzü özelliklerine sahiptir. *Vektör harita oluşturmak için OSM dosyasına (`*.pbf, *.osm.gz, *.osm.bz2`)* ve *çevrimiçi sqlite harita dosyası oluşturmak için `base tile url`* ihtiyacınız olacaktır.
 
 ### Raster haritalar (basit) {#raster-maps-simple}
 
@@ -33,7 +33,7 @@ OsmAndMapCreator kullanıcı arayüzü aracılığıyla vektör harita oluşturm
 
 <img src={require('@site/static/img/osmandmapcreator/OsmAndMapCreator-create-vector-maps.png').default} alt="Vektör haritaları oluştur" />
 
-Vektör haritaların nasıl oluşturulacağına dair daha fazla parametre `utilities.sh` kabuğunda belirtilebilir.
+Vektör haritaların nasıl oluşturulacağına dair daha fazla parametre `utilities.sh ` kabuğunda belirtilebilir.
 
 ## Vektör haritalar (kabuk betiği) {#vector-maps-shell-script}
 
@@ -65,10 +65,10 @@ Tüm ek parametreler, düzgün bir şekilde belgelenmemiş olmaları durumunda k
 | `--add-region-tags` | Harita oluşturma sürecini yavaşlatır, her yola işlendiği bölge adını içeren bir etiket ekler. Bu sadece dünya çapında temel harita veya çok uluslu bölgeleri işlerken gereklidir, diğer tüm durumlarda dosyanız için uygun bir ada sahip olmak daha kolaydır, yani almanya_..., us_.... Bu parametreniz yoksa ve bu parametreyi eklemezseniz, OsmAnd'da yerelleştirilmemiş yol / toplu taşıma rotası rozetleri görmeniz olasıdır. |
 | `--keep-only-sea-objects` | Okyanus / deniz parçası olmayan nesneleri kaldırır, deniz haritası üretmek için kullanılır |
 | `--ram-process` | Oluşturmanın disk yerine RAM SQlite DB kullanılarak yapılacağını belirtir - [daha fazla bilgi](#ram-to-process-maps). |
-| `--srtm=<KLASÖR>` | TIF-DEM görüntülerinin bulunduğu klasörü belirtir, böylece yükseklik ve eğim bilgileri yollara kodlanır |
-| `--rendering-types=<DOSYA>` | Kuralları ve OBF'ye kodlanması gereken OSM etiketlerini içeren rendering_types.xml konumu - [daha fazla bilgi](#custom-vector-map-tags). |
-| `--poi-types=<DOSYA>` | POI için OBF'ye kodlanması gereken kuralları ve OSM etiketlerini içeren poi_types.xml konumu - [daha fazla bilgi](#custom-vector-map-tags). |
-| `--extra-relations=<DOSYA>` | Etiketleri yollara yayılması gereken Düşük Emisyon Bölgeleri gibi çokgenleri içeren OSM dosyası. |
+| `--srtm=<FOLDER>` | TIF-DEM görüntülerinin bulunduğu klasörü belirtir, böylece yükseklik ve eğim bilgileri yollara kodlanır |
+| `--rendering-types=<FILE>` | Kuralları ve OBF'ye kodlanması gereken OSM etiketlerini içeren rendering_types.xml konumu - [daha fazla bilgi](#custom-vector-map-tags). |
+| `--poi-types=<FILE>` | POI için OBF'ye kodlanması gereken kuralları ve OSM etiketlerini içeren poi_types.xml konumu - [daha fazla bilgi](#custom-vector-map-tags). |
+| `--extra-relations=<FILE>` | Etiketleri yollara yayılması gereken Düşük Emisyon Bölgeleri gibi çokgenleri içeren OSM dosyası. |
 
 **Not**: Batch.xml ile harita oluşturmak kullanımdan kaldırılmıştır, lütfen yukarıda belirtilen kabuk yöntemlerini kullanın ve standart kabuk betiği yeteneklerini kullanarak indirmeler / döngülerle birleştirin.
 
@@ -250,7 +250,7 @@ Herhangi bir nedenle, tek bir _geopdf_'yi _geotiff_'e dönüştürmek isterseniz
 
 **Kullanım:**
 
-&nbsp;<i>gdal_translate ```<GeoPDF dosya adı> <Çıkış Geotiff Dosya Adı>``` -of gtiff --config
+&nbsp;<i>gdal_translate ```<GeoPDF filename> <Output Geotiff Filename>``` -of gtiff --config
 gdal_pdf_layers_off “```<pdf katman adı 1>,<pdf katman adı 2>,<pdf katman adı 3>```” --config gdal_pdf_dpi ```<çıktı dpi>``` </i>&nbsp;
 
 **Örnekler:**
