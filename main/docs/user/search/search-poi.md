@@ -377,7 +377,7 @@ To create custom filters for finding places on the map, select relevant categori
 
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Includes 25 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
-2. **Сhristmas**. Includes 5 types types of filters: *Christmas event, Christmas market, Christmas pyramid, Christmas shop, Christmas tree*.
+2. **Christmas**. Includes 5 types of filters: *Christmas event, Christmas market, Christmas pyramid, Christmas shop, Christmas tree*.
 
 3. **<Translate android="true" ids="amenity_type_education"/>**. Includes 18 types: *Animal training, Childcare, College, Dancing school, Dojo, Driver training place, Driving school, Educational institution, Kindergarten, Language school, Library, Mobile library stop position, Music school, School, Student accommodation, Training facility, Tutorial school, University*.  
 
