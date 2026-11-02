@@ -40,7 +40,6 @@ import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../uti
 import { useNavigate } from 'react-router-dom';
 import LoginContext from '../../context/LoginContext';
 import { INIT_LOGIN_STATE } from '../../manager/LoginManager';
-import { getCurrentTimeParams } from '../../util/Utils';
 import { getPoiApi } from '../../manager/SearchApi';
 
 const SPINNER_DELAY_MS = 500;
@@ -367,7 +366,6 @@ export default function PoiLayer() {
                 lat: center.lat,
                 lon: center.lng,
                 zoom: Math.round(map.getZoom()),
-                ...getCurrentTimeParams(),
             },
             apiCache: true,
             signal: controller.signal,

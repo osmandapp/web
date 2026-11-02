@@ -36,7 +36,6 @@ export function searchByWordApi({
             ...(spatial ? { spatial: true } : {}),
             ...(autocomplete ? { autocomplete: true } : {}),
             ...(maps ? { maps } : {}),
-            ...getCurrentTimeParams(),
         },
     });
 }
@@ -45,7 +44,7 @@ export function getPoiByOsmIdApi({ lat, lon, osmid, type, signal }) {
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-osmid`, {
         apiCache: true,
         signal,
-        params: { lat, lon, osmid, type, ...getCurrentTimeParams() },
+        params: { lat, lon, osmid, type },
     });
 }
 
@@ -54,17 +53,24 @@ export function getPoiByMapObjectApi({ lat, lon, id, tags, signal }) {
     return apiPost(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi-by-map-object`, tags, {
         apiCache: true,
         signal,
-        params: { lat, lon, id, ...getCurrentTimeParams() },
+        params: { lat, lon, id },
     });
 }
 
 export function getPoiApi({ pin, name, type, osmId, wikidataId, lang, signal }) {
-    const params = { pin, name, type, osmId, wikidataId, lang, ...getCurrentTimeParams() };
+    const params = { pin, name, type, osmId, wikidataId, lang };
 
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-poi`, {
         apiCache: true,
         signal,
         params: Object.fromEntries(Object.entries(params).filter(([, value]) => value != null)),
+    });
+}
+
+export function getOpeningHoursInfoApi({ openingHours, signal }) {
+    return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-opening-hours-info`, {
+        signal,
+        params: { openingHours, ...getCurrentTimeParams() },
     });
 }
 

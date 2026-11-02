@@ -48,7 +48,6 @@ const COLLECTION_TIMES = 'collection_times';
 export const DESCRIPTION = 'description';
 const SHORT_DESCRIPTION = 'short_description';
 export const OPENING_HOURS = 'opening_hours';
-export const OPENING_HOURS_INFO = 'opening_hours_info';
 const PHONE = 'phone';
 const MOBILE = 'mobile';
 const EMAIL = 'email';

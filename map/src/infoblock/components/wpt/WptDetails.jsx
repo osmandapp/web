@@ -60,7 +60,7 @@ import WptTagsProvider, {
     GRAPH_URL_ENDPOINT,
     MAPILLARY_OSM_TAG,
     openWikivoyageContent,
-    OPENING_HOURS_INFO,
+    OPENING_HOURS,
     AMENITY_PREFIX,
     OSM_PREFIX,
     otherImgTags,
@@ -132,7 +132,12 @@ import {
 import { useLocation, useNavigate } from 'react-router-dom';
 import LocationInfoLine from '../common/LocationInfoLine';
 import OpeningHoursInfo, { getOpeningHours } from './OpeningHoursInfo';
-import { getPoiApi, getPoiByMapObjectApi, getTransportStopApi } from '../../../manager/SearchApi';
+import {
+    getOpeningHoursInfoApi,
+    getPoiApi,
+    getPoiByMapObjectApi,
+    getTransportStopApi,
+} from '../../../manager/SearchApi';
 import LoginContext from '../../../context/LoginContext';
 import PhotoLibraryOutlinedIcon from '@mui/icons-material/PhotoLibraryOutlined';
 
@@ -307,7 +312,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 wvLinks: wikiObj?.properties.wvLinks,
                 lang: wikiObj?.properties.wikiLang,
                 wikidata: wikidataId,
-                openingHours: getOpeningHours(currentPoi?.properties[AMENITY_PREFIX + OPENING_HOURS_INFO]),
+                openingHoursValue: currentPoi?.properties[AMENITY_PREFIX + OPENING_HOURS],
                 mapObj,
             };
         } else if (type?.isWpt) {
@@ -341,7 +346,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 tags: null,
                 osmUrl: objOptions[POI_OSM_URL],
                 wikipedia: getWikipedia(objOptions[OSM_PREFIX + WIKIPEDIA]),
-                openingHours: getOpeningHours(objOptions[AMENITY_PREFIX + OPENING_HOURS_INFO]),
+                openingHoursValue: objOptions[AMENITY_PREFIX + OPENING_HOURS],
                 mapObj,
                 pending: Boolean(ctx.selectedWpt.mvt),
                 stopId: objOptions[TRANSPORT_STOP_ID],
@@ -473,9 +478,14 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             setLoading(true);
         }
 
-        fetchTagsAndData().then((tags) => {
+        const controller = new AbortController();
+        const openingHoursInfoRequest = getOpeningHoursInfo(newWpt.openingHoursValue, controller.signal);
+        Promise.all([fetchTagsAndData(), openingHoursInfoRequest]).then(([tags, openingHours]) => {
+            if (controller.signal.aborted) {
+                return;
+            }
             setWpt((prev) => {
-                const base = { ...newWpt, tags };
+                const base = { ...newWpt, tags, openingHours };
                 // preserve address if same POI was already loaded (or its MVT preview)
                 if ((prev?.id === newWpt.id || prev?.pending) && prev?.address) {
                     base.address = prev.address;
@@ -486,6 +496,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             setIsPhotosAdded(false);
             setLoading(false);
         });
+
+        return () => controller.abort();
     }, [newWpt]);
 
     useEffect(() => {
@@ -1330,6 +1342,15 @@ async function getTransportStop(stopId, latlng, signal) {
     const response = await getTransportStopApi({ lat: latlng.lat, lon: latlng.lng, stopId, signal });
 
     return createMapObject(response?.data);
+}
+
+async function getOpeningHoursInfo(openingHoursValue, signal) {
+    if (!openingHoursValue) {
+        return null;
+    }
+    const response = await getOpeningHoursInfoApi({ openingHours: openingHoursValue, signal });
+
+    return getOpeningHours(response?.data);
 }
 
 async function getPoiByMapObject({ mapObjectId, tags }, latlng, signal) {

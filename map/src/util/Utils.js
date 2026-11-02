@@ -347,6 +347,7 @@ export function truncateText(text, maxLength) {
 
 export function getCurrentTimeParams() {
     return {
+        clientTime: Date.now(),
         timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     };
 }
