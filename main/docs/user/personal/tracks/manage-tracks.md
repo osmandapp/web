@@ -310,7 +310,7 @@ Track folder menu lets you view, rename, export, and manage folders.
 
 Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.webp)
 
 </TabItem>
 
@@ -324,14 +324,14 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 </Tabs>
 
-At the bottom of the list in the *Tracks* tab, and below the list of tracks **in each of your folders**, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. All values are displayed in the [units](../../personal/profiles.md#units--formats) you have selected.
+At the bottom of the list in the *Tracks* tab, and below the list of tracks in a folder, there is an information section that allows you to view the overall summary statistics for the tracks in the selected folder. On Android, the section is shown only when the folder or its subfolders contain at least one track. All values are displayed in the [units](../../personal/profiles.md#units--formats) you have selected.
 
 - *Number of **Tracks** in the folder* — Displays the number of tracks contained in the selected folder.
 - *Total sum of* **Distances** — The total length of all tracks in the selected folder, measured in the units you have selected, is displayed.
 - *Sum of* **Uphills** — The data indicates the total vertical rise across all tracks in the selected folder.
 - *Sum of* **Downhills** — This parameter is the sum of vertical descents on all tracks in the selected folder.
 - *Sum of* **Duration** *time* — This displays the total time taken to complete all tracks in the selected folder.
-- *Total **Size** of downloaded files in MB* — The total downloaded file size in megabytes shows how much space all tracks in the selected folder take up on your device.
+- *Total* **Size** — The total size of all track files in the selected folder, which shows how much space they take up on your device.
 
 
 ### Folder Actions {#folder-actions}
