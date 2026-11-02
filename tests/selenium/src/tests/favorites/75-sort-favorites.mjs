@@ -81,7 +81,7 @@ export default async function test() {
 
     // check item sort by nearest to map center
     // the resulting order depends on the current map view, so check the selected mode, not the order
-    await clickBy(By.id('se-sort-button-time-favorites'));
+    await clickBy(By.id('se-sort-button-za-favorites'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-nearestMapCenter'));
     await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
