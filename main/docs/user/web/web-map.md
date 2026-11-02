@@ -277,6 +277,8 @@ These URLs can be copied and shared using any medium supported by your device an
 
   ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
 
+  The map opens centered on the pin. The zoom level is taken from the part of the URL after `#`. If the URL has no such part, the map opens at zoom level 9. This also applies to links created with the *Share* button in the [POI Context Menu](../web/web-search.md#poi-actions).
+
 2. **URL without a pin on the map:**
 
   https://osmand.net/map/#9/52.3924/6.3116
