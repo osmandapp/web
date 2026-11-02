@@ -499,7 +499,7 @@ Go to: *Menu → Configure Map → Show → Coordinates Grid*
 
 ![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.png) ![Coordinates grid menu](@site/static/img/map/coordinates_grid_format_andr.webp)
 
-The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. 
+The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines or metric grid lines, depending on the selected coordinate system. This feature is useful for precise location reference and geospatial navigation. 
 
 You can configure the following options:
 - **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
@@ -512,13 +512,15 @@ You can configure the following options:
 - **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrees, Minutes, Seconds)
 - **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
 - **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrees, Decimal Minutes)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°
+- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°.
 - **OLC** (Open Location Code, also known as Plus Code)
 - **MGRS** (Military Grid Reference System)
 - **Swiss coordinate system** - Swiss Grid (CH1903) and Swiss Grid (CH1903+)
 - **Maidenhead** (Maidenhead Locator System)
 
 The **Recent** section shows recently used coordinate systems. To add another supported coordinate system, tap *Select other format*. You can search by coordinate system name or EPSG code, then tap *+* to add it to the list.
+
+**Note:** The list includes only coordinate systems that the grid can display accurately: systems measured in meters, with one datum transformation to WGS 84 that is valid across the whole area of the system. Systems measured in feet or other non-metric units, and systems that require several regional transformations, are not available for the grid.
 
 By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
 
@@ -530,7 +532,7 @@ By default, the app uses the coordinate format selected in [General settings](..
 
 ![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
 
-The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines based on different coordinate systems. This feature is useful for precise location reference and geospatial navigation. 
+The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines or metric grid lines, depending on the selected coordinate system. This feature is useful for precise location reference and geospatial navigation. 
 
 You can configure the following options:
 - **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
@@ -543,7 +545,7 @@ You can configure the following options:
 - **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrees, Minutes, Seconds)
 - **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
 - **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrees, Decimal Minutes)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°
+- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°.
 - **MGRS** (Military Grid Reference System)
 
 By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
