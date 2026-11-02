@@ -151,7 +151,7 @@ This place may appear when searching for:
 
 The **Search by Categories** tool allows you to quickly find objects, places, and routes classified into different categories. 
 
-POI categories in OsmAnd are based on OpenStreetMap tags. Some places may appear under a more general category if a more specific type is not available in the map data (for example, a church may appear under `Place of worship`).
+POI categories in OsmAnd are based on OpenStreetMap tags. Some places may appear under a more general category if a more specific type is not available in the map data (for example, a church may appear under `Place of worship`). Offices of a type that OsmAnd does not recognize appear under `Company`.
 
 Each category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
 
@@ -377,10 +377,9 @@ To create custom filters for finding places on the map, select relevant categori
 
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Includes 25 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
 
-2. **Сhristmas**. Includes 5 types types of filters:  
-    *Christmas event, Christmas market, Christmas pyramid, Christmas shop, Christmas tree*.
+2. **Сhristmas**. Includes 5 types types of filters: *Christmas event, Christmas market, Christmas pyramid, Christmas shop, Christmas tree*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Includes 16 types: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Includes 18 types: *Animal training, Childcare, College, Dancing school, Dojo, Driver training place, Driving school, Educational institution, Kindergarten, Language school, Library, Mobile library stop position, Music school, School, Student accommodation, Training facility, Tutorial school, University*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Includes 26 types of filters.  
 
