@@ -26,6 +26,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { ReactComponent as TracksIcon } from '../../assets/menu/ic_action_track.svg';
 import { ReactComponent as PoiIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import { ReactComponent as TerrainIcon } from '../../assets/icons/ic_action_terrain.svg';
+import { ReactComponent as ContourLinesIcon } from '../../assets/icons/ic_plugin_srtm.svg';
 import { ReactComponent as TransportStopIcon } from '../../assets/icons/ic_action_transport_stop.svg';
 import cloneDeep from 'lodash-es/cloneDeep';
 import EmptyLogin from '../../login/EmptyLogin';
@@ -41,6 +42,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import MvtTweaks from './MvtTweaks';
 import SimpleItemWithSwitch from '../../frame/components/items/SimpleItemWithSwitch';
+import DefaultItem from '../../frame/components/items/DefaultItem';
 import ActionsMenu from '../actions/ActionsMenu';
 import LoginContext from '../../context/LoginContext';
 import gStyles from '../gstylesmenu.module.css';
@@ -56,7 +58,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { osmandTileURL } from '../../map/baseTileURL';
-import { isMvtTileURL, mvtOsmAndURL } from '../../map/layers/MvtLayerConfig';
+import { isMvtTileURL, isOsmAndTileURL, mvtOsmAndURL } from '../../map/layers/MvtLayerConfig';
 import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
 const DEFAULT_MAP_STYLE_OPTIONS = [osmandTileURL, mvtOsmAndURL];
@@ -81,19 +83,14 @@ export default function ConfigureMap() {
     const mapStyleAnchorRef = useRef(null);
     const hybridUnderlayUrl = useHybridUnderlayUrl();
 
-    const handleFavoritesSwitchChange = () => {
+    const handleSwitchChange = (key) => () => {
         const newConfigureMap = cloneDeep(ctx.configureMapState);
-        newConfigureMap.showFavorites = !ctx.configureMapState.showFavorites;
+        newConfigureMap[key] = !ctx.configureMapState[key];
         updateConfigureMapCache(newConfigureMap);
         ctx.setConfigureMapState(newConfigureMap);
     };
 
-    const handleTransportStopsSwitchChange = () => {
-        const newConfigureMap = cloneDeep(ctx.configureMapState);
-        newConfigureMap.showTransportStops = !ctx.configureMapState.showTransportStops;
-        updateConfigureMapCache(newConfigureMap);
-        ctx.setConfigureMapState(newConfigureMap);
-    };
+    const openContourLinesPricing = () => openPricingPage('contour_lines');
 
     function setIconStyles(active) {
         let res = [];
@@ -233,7 +230,7 @@ export default function ConfigureMap() {
                                     icon={<StarIcon />}
                                     text={t('shared_string_favorites')}
                                     checked={ctx.configureMapState.showFavorites}
-                                    onChange={handleFavoritesSwitchChange}
+                                    onChange={handleSwitchChange('showFavorites')}
                                     id="se-configure-map-menu-favorite-switch"
                                     className={styles.item}
                                     iconClassName={setIconStyles(ctx.configureMapState.showFavorites)}
@@ -279,12 +276,40 @@ export default function ConfigureMap() {
                                     icon={<TransportStopIcon />}
                                     text={t('web:transport_stops_title')}
                                     checked={ctx.configureMapState.showTransportStops}
-                                    onChange={handleTransportStopsSwitchChange}
+                                    onChange={handleSwitchChange('showTransportStops')}
                                     id="se-configure-map-menu-transport_stops"
                                     className={styles.item}
                                     iconClassName={setIconStyles(ctx.configureMapState.showTransportStops)}
                                 />
                                 <DividerWithMargin margin={'64px'} />
+                                {ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) && (
+                                    <>
+                                        {showProButton() ? (
+                                            <DefaultItem
+                                                icon={<ContourLinesIcon />}
+                                                name={t('web:feature_contour_lines')}
+                                                className={styles.item}
+                                                onClick={openContourLinesPricing}
+                                                rightSlot={
+                                                    <span onClick={(e) => e.stopPropagation()}>
+                                                        <ButtonPro onClick={openContourLinesPricing} />
+                                                    </span>
+                                                }
+                                            />
+                                        ) : (
+                                            <SimpleItemWithSwitch
+                                                icon={<ContourLinesIcon />}
+                                                text={t('web:feature_contour_lines')}
+                                                checked={ctx.configureMapState.showContourLines}
+                                                onChange={handleSwitchChange('showContourLines')}
+                                                id="se-configure-map-menu-contour-lines-switch"
+                                                className={styles.item}
+                                                iconClassName={setIconStyles(ctx.configureMapState.showContourLines)}
+                                            />
+                                        )}
+                                        <DividerWithMargin margin={'64px'} />
+                                    </>
+                                )}
                                 <MenuItem
                                     className={styles.item}
                                     onClick={() => {

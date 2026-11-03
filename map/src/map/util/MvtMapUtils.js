@@ -1,4 +1,5 @@
 import L from 'leaflet';
+import { MVT_CONTOURS_SOURCE } from '../layers/MvtLayerConfig';
 
 const MAX_MVT_ZOOM = 24;
 
@@ -10,16 +11,21 @@ export function getMvtTileZoom(source, zoom) {
     return Math.max(source.minzoom, Math.min(source.maxzoom, Math.floor(zoom)));
 }
 
-export function setMapDataZoomShift(maplibreMap, sources, tileUrl, shift) {
-    const url = getMvtDataTileUrl(tileUrl, shift);
-    const source = maplibreMap.getSource('osm');
-    if (source && source.tiles?.[0] !== url) {
-        source.setTiles([url]);
-    }
-    sources.forEach((source) => {
-        if (source.id === 'osm') {
-            source.url = url;
+export function hasMvtTiles(source, zoom) {
+    return Math.floor(zoom) >= source.minzoom;
+}
+
+export function setMapDataZoomShift(maplibreMap, sources, shiftedSources) {
+    shiftedSources.forEach(({ id, url }) => {
+        const source = maplibreMap.getSource(id);
+        if (source && source.tiles?.[0] !== url) {
+            source.setTiles([url]);
         }
+        sources.forEach((source) => {
+            if (source.id === id) {
+                source.url = url;
+            }
+        });
     });
 }
 
@@ -36,10 +42,26 @@ export function setMapStyleDetailShift(maplibreMap, style, shift, minZoomIdFilte
     });
 }
 
+export function setStyleContourVisibility(style, visibility) {
+    style.layers = style.layers?.map((layer) =>
+        isContourStyleLayer(layer) ? { ...layer, layout: { ...layer.layout, visibility } } : layer
+    );
+}
+
+export function setMapContourVisibility(maplibreMap, style, visible) {
+    style.layers?.filter(isContourStyleLayer).forEach((layer) => {
+        if (maplibreMap.getLayer(layer.id)) {
+            maplibreMap.setLayoutProperty(layer.id, 'visibility', visible ? 'visible' : 'none');
+        }
+    });
+}
+
 export function watchMvtZoom(map, sources, setStats) {
     const update = () => {
         const mapZoom = Number(map.getZoom().toFixed(2));
-        const zooms = sources.map((source) => getMvtTileZoom(source, source.getZoom()));
+        const zooms = sources
+            .filter((source) => hasMvtTiles(source, source.getZoom()))
+            .map((source) => getMvtTileZoom(source, source.getZoom()));
         const zoom = zooms.length ? Math.max(...zooms) : null;
         setStats((stats) => (stats?.mapZoom === mapZoom && stats?.zoom === zoom ? stats : { ...stats, mapZoom, zoom }));
     };
@@ -127,4 +149,8 @@ function getMvtTileDataStats(tile, cache) {
     cache.set(data, stats);
 
     return stats;
+}
+
+function isContourStyleLayer(layer) {
+    return layer.source === MVT_CONTOURS_SOURCE;
 }

@@ -7,7 +7,11 @@ const host = window.location.hostname.toLowerCase();
 const cache = ''; // host.endsWith('osmand.net') ? '' : '?cache=false';
 const tilesPort = !port || port === '80' || port === '443' ? '' : `:${port}`;
 const tilesHost = host === 'osmand.net' || host === 'www.osmand.net' ? 'maptile.osmand.net' : host;
-export const MVT_OSMAND_URL = `${window.location.protocol}//${tilesHost}${tilesPort}/vector/{z}/{x}/{y}.mvt${cache}`;
+const tilesOrigin = `${window.location.protocol}//${tilesHost}${tilesPort}`;
+export const MVT_OSMAND_URL = `${tilesOrigin}/vector/{z}/{x}/{y}.mvt${cache}`;
+export const MVT_OSMAND_CONTOURS_URL = `${tilesOrigin}/vector/contours/{z}/{x}/{y}.mvt${cache}`;
+
+export const MVT_CONTOURS_SOURCE = 'contours';
 
 export const MVT_OSM_TEST_LAYER = 'mvt-osm-test';
 export const MVT_OSM_TEST_URL = 'https://tiles.openstreetmap.us/vector/openmaptiles/{z}/{x}/{y}.mvt';
