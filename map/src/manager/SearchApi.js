@@ -69,8 +69,9 @@ export function getPoiApi({ pin, name, type, osmId, wikidataId, lang, signal }) 
 
 export function getOpeningHoursInfoApi({ openingHours, signal }) {
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-opening-hours-info`, {
+        apiCache: true,
         signal,
-        params: { openingHours, ...getCurrentTimeParams() },
+        params: { openingHours, ...getCurrentTimeParams(), minute: Math.floor(Date.now() / 60000) },
     });
 }
 
