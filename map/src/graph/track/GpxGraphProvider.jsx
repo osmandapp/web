@@ -50,8 +50,8 @@ export const getGraphData = ({
         let elevationSRTM = hasSrtm ? 'srtmEle' : null;
         let points = cloneDeep(pointsArr);
         let result = [];
-        let minEle = elevation ? TracksManager.NAN_MARKER : elevationSRTM ? points[0][elevationSRTM] : null;
-        let maxEle = elevation ? TracksManager.NAN_MARKER : elevationSRTM ? points[0][elevationSRTM] : null;
+        let minEle = elevation || elevationSRTM ? TracksManager.NAN_MARKER : null;
+        let maxEle = elevation || elevationSRTM ? TracksManager.NAN_MARKER : null;
         let minSpeed = hasSpeed ? 0 : null;
         let maxSpeed = hasSpeed ? 0 : null;
         let sumDist = 0;
@@ -71,8 +71,8 @@ export const getGraphData = ({
                 eleSRTM = TracksManager.getEle(point, elevationSRTM)?.toFixed(2);
                 if (eleSRTM && !elevation) {
                     eleSRTM = Math.round(eleSRTM * 10) / 10;
-                    minEle = Math.min(eleSRTM, minEle);
-                    maxEle = Math.max(eleSRTM, maxEle);
+                    minEle = minEle === TracksManager.NAN_MARKER ? eleSRTM : Math.min(eleSRTM, minEle);
+                    maxEle = maxEle === TracksManager.NAN_MARKER ? eleSRTM : Math.max(eleSRTM, maxEle);
                 }
             }
             if (hasSpeed) {
