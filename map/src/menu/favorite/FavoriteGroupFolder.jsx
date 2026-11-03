@@ -18,8 +18,7 @@ import FavoritesManager, {
 import FavoriteItem from './FavoriteItem';
 import Loading from '../errors/Loading';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
-import { byTime, doSort, isNearestSort, NEAREST_MAP_CENTER_SORT } from '../actions/SortActions';
-import { getSelectedSort } from '../components/buttons/SortFilesButton';
+import { byTime, doSort, getSelectedSort, isNearestSort, NEAREST_MAP_CENTER_SORT } from '../actions/SortActions';
 import { getMapCenter } from '../../map/layers/MapStateLayer';
 import { FixedSizeList } from 'react-window';
 import FavoriteGroup from './FavoriteGroup';
@@ -100,6 +99,14 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         }
         return items;
     }, [smartf, sortGroups]);
+
+    useEffect(() => {
+        if (!isSharedWithMeBaseFolder) return;
+        const method = getSelectedSort({ favoriteGroup: DEFAULT_FAV_GROUP_NAME, smartf, ctx });
+        if (method) {
+            doSort({ method, setSortGroups, groups: smartf.files, favoriteGroup: DEFAULT_FAV_GROUP_NAME });
+        }
+    }, [smartf, ctx.selectedSort?.favorites]);
 
     useEffect(() => {
         if (!useMapCenter && !currentLoc) {

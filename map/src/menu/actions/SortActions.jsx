@@ -15,10 +15,10 @@ import { ReactComponent as LongDurationIcon } from '../../assets/icons/ic_action
 import { ReactComponent as ShortDurationIcon } from '../../assets/icons/ic_action_sort_duration_short_to_long.svg';
 import styles from '../trackfavmenu.module.css';
 import AppContext from '../../context/AppContext';
-import FavoritesManager, { getFavoriteSortKey } from '../../manager/FavoritesManager';
+import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
-import { getSelectedSort, TRAVEL_CUSTOM_GROUP } from '../components/buttons/SortFilesButton';
+import { TRAVEL_CUSTOM_GROUP } from '../components/buttons/SortFilesButton';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 
@@ -139,23 +139,51 @@ export function doSort({ method, setSortFiles, setSortGroups, markers, files, gr
     return { files: sortedFiles, groups: sortedGroups };
 }
 
+export function getFavoriteSortKey(favoriteGroup, smartf = null) {
+    if (favoriteGroup === DEFAULT_FAV_GROUP_NAME) {
+        return smartf?.type === SHARE_TYPE ? SHARE_TYPE : DEFAULT_FAV_GROUP_NAME;
+    }
+
+    return favoriteGroup.id;
+}
+
+export function getSelectedSort({
+    trackGroup = null,
+    favoriteGroup = null,
+    customGroup = null,
+    customGroupType = null,
+    smartf = null,
+    ctx,
+    defaultMethod = null,
+}) {
+    if (trackGroup && ctx.selectedSort?.tracks) {
+        return ctx.selectedSort.tracks[trackGroup.fullName];
+    } else if (favoriteGroup && ctx.selectedSort?.favorites) {
+        return ctx.selectedSort.favorites[getFavoriteSortKey(favoriteGroup, smartf)];
+    } else if (customGroup && ctx.selectedSort?.custom) {
+        return ctx.selectedSort.custom[customGroupType];
+    }
+    return defaultMethod;
+}
+
 export function updateSortList({ oldName, newName, isFavorites = false, isTracks = false, ctx }) {
     if (isTracks && ctx.selectedSort?.tracks) {
         ctx.selectedSort.tracks[newName] = ctx.selectedSort.tracks[oldName];
-    } else if (isFavorites && ctx.selectedSort?.favorites) {
+    } else if (isFavorites && ctx.selectedSort?.favorites?.[oldName]) {
         ctx.selectedSort.favorites[newName] = ctx.selectedSort.favorites[oldName];
+        delete ctx.selectedSort.favorites[oldName];
     }
     ctx.setSelectedSort({ ...ctx.selectedSort });
 }
 
 export const allMethods = {
-    nearest: {
+    [NEAREST_SORT]: {
         reverse: false,
         callback: byLocation,
         icon: <NearestIcon />,
         name: () => i18n?.t('sort_by_nearest_to_current_location'),
     },
-    nearestMapCenter: {
+    [NEAREST_MAP_CENTER_SORT]: {
         reverse: false,
         callback: byLocation,
         icon: <NearestMapCenterIcon />,

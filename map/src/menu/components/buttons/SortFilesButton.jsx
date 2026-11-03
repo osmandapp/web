@@ -2,9 +2,8 @@ import { IconButton, Tooltip } from '@mui/material';
 import styles from '../../trackfavmenu.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import SortActions, { allMethods, defaultSortMethod } from '../../actions/SortActions';
+import SortActions, { allMethods, defaultSortMethod, getSelectedSort } from '../../actions/SortActions';
 import AppContext from '../../../context/AppContext';
-import { getFavoriteSortKey } from '../../../manager/FavoritesManager';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
 import SortMenu from '../../actions/SortMenu';
 import LoginContext from '../../../context/LoginContext';
@@ -12,25 +11,6 @@ import LoginContext from '../../../context/LoginContext';
 export const TRACK_FILE_TYPE = 'tracks';
 export const FAVORITE_FILE_TYPE = 'favorites';
 export const TRAVEL_CUSTOM_GROUP = 'travel';
-
-export function getSelectedSort({
-    trackGroup = null,
-    favoriteGroup = null,
-    customGroup = null,
-    customGroupType = null,
-    smartf = null,
-    ctx,
-    defaultMethod = null,
-}) {
-    if (trackGroup && ctx.selectedSort?.tracks) {
-        return ctx.selectedSort.tracks[trackGroup.fullName];
-    } else if (favoriteGroup && ctx.selectedSort?.favorites) {
-        return ctx.selectedSort.favorites[getFavoriteSortKey(favoriteGroup, smartf)];
-    } else if (customGroup && ctx.selectedSort?.custom) {
-        return ctx.selectedSort.custom[customGroupType];
-    }
-    return defaultMethod;
-}
 
 export default function SortFilesButton({
     type = TRACK_FILE_TYPE,

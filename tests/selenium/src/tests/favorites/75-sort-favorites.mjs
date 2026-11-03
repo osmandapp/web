@@ -87,6 +87,7 @@ export default async function test() {
     await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
 
     // check opening the sort menu keeps the order after the map is moved
+    await actionIdleWait();
     const favItemsNearestMapCenter = await enumerateIds('se-fav-item-name-');
     await setMapCenter(50.4719142, 30.5059648);
     await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));

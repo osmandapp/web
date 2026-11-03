@@ -29,7 +29,7 @@ function FavInfo({ marker, currentLoc }) {
     const separator = marker.locDist > 0 && address ? ' · ' : '';
 
     return (
-        <div style={{ display: 'flex', alignItems: 'centre' }}>
+        <div className={styles.favInfo}>
             {address && (
                 <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>
                     {`${address}${separator}`}

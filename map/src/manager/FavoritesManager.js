@@ -18,7 +18,6 @@ import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from 
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
 import { getUniqFileId, MAIN_URL_WITH_SLASH, FAVORITES_URL } from './GlobalManager';
 import { getFavoriteFromDB, saveFavoriteToDB } from '../context/FavoriteStorage';
-import { SHARE_TYPE } from '../menu/share/shareConstants';
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
@@ -36,14 +35,6 @@ export const HIDDEN_FALSE = 'false';
 
 export function normalizeFavoritePointsGroupName(groupName) {
     return groupName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : groupName;
-}
-
-export function getFavoriteSortKey(favoriteGroup, smartf = null) {
-    if (favoriteGroup === DEFAULT_FAV_GROUP_NAME) {
-        return smartf?.type === SHARE_TYPE ? SHARE_TYPE : DEFAULT_FAV_GROUP_NAME;
-    }
-
-    return favoriteGroup.id;
 }
 
 const colors = [
@@ -811,24 +802,32 @@ export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
     return { group, marker };
 }
 
+export function getLocDist(location, latlng) {
+    if (!location || location === LOCATION_UNAVAILABLE || !latlng) {
+        return null;
+    }
+
+    return {
+        locDist: Math.round(getDistance(location.lat, location.lng, latlng.lat, latlng.lng)),
+        locBearing: getBearing(location.lat, location.lng, latlng.lat, latlng.lng),
+    };
+}
+
 export function addLocDist({ location, markers = null, wpts = null }) {
     let res = [];
     if (location && location !== LOCATION_UNAVAILABLE) {
         if (markers && markers.length > 0) {
             markers.forEach((m) => {
-                if (m?.layer?._latlng) {
-                    m.locDist = Math.round(
-                        getDistance(location.lat, location.lng, m.layer._latlng.lat, m.layer._latlng.lng)
-                    );
-                    m.locBearing = getBearing(location.lat, location.lng, m.layer._latlng.lat, m.layer._latlng.lng);
+                const latlng = m?.layer?._latlng;
+                if (latlng) {
+                    Object.assign(m, getLocDist(location, latlng));
                 }
                 res.push(m);
             });
         } else if (wpts && wpts.length > 0) {
             wpts.forEach((w) => {
                 if (w.latlng) {
-                    w.locDist = Math.round(getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng));
-                    w.locBearing = getBearing(location.lat, location.lng, w.latlng.lat, w.latlng.lng);
+                    Object.assign(w, getLocDist(location, w.latlng));
                 }
                 res.push(w);
             });

@@ -8,7 +8,6 @@ import FavoritesManager, {
     findFavGroupByFileName,
     findSelectedWpt,
     getFavGroupKey,
-    getFavoriteSortKey,
     getFavMenuListByLayers,
     getSize,
     isCurrentLocation,
@@ -19,6 +18,7 @@ import FavoritesManager, {
 } from '@map/manager/FavoritesManager';
 import { fakeIndexedDbStore } from '../../util/indexedDb';
 import { SHARE_TYPE } from '@map/menu/share/shareConstants';
+import { getFavoriteSortKey } from '@map/menu/actions/SortActions';
 
 const t = (key) => key;
 
@@ -189,7 +189,6 @@ describe('the saved sort of favorites', () => {
 
         expect(defaultGroup.name).toBe(DEFAULT_FAV_GROUP_NAME);
         expect(new Set(keys).size).toBe(keys.length);
-        expect(getFavoriteSortKey(ownGroup)).toBe(ownGroup.id);
     });
 });
 

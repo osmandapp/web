@@ -32,12 +32,8 @@ import HeatmapAppearance from './HeatmapAppearance';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import headerStyles from '../trackfavmenu.module.css';
 import mainMenuStyles from '../mainmenu.module.css';
-import SortFilesButton, {
-    getSelectedSort,
-    TRACK_FILE_TYPE,
-    TRAVEL_CUSTOM_GROUP,
-} from '../components/buttons/SortFilesButton';
-import { defaultSortMethod, doSort } from '../actions/SortActions';
+import SortFilesButton, { TRACK_FILE_TYPE, TRAVEL_CUSTOM_GROUP } from '../components/buttons/SortFilesButton';
+import { defaultSortMethod, doSort, getSelectedSort } from '../actions/SortActions';
 import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';

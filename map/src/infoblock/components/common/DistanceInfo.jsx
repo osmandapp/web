@@ -14,6 +14,7 @@ export default function DistanceInfo({ distance, bearing, isUserLocation }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const DISTANCE_THRESHOLD_LARGE_UNIT = 1000;
+    const locationClass = isUserLocation ? styles.userLocationDistance : styles.mapCenterDistance;
 
     function addDistance() {
         if (!distance) return '';
@@ -26,16 +27,14 @@ export default function DistanceInfo({ distance, bearing, isUserLocation }) {
     return (
         <>
             <DirectionIcon
-                className={styles.directionIcon}
+                className={`${styles.directionIcon} ${locationClass}`}
                 style={{
                     transform: `rotate(${bearing ?? 0}deg)`,
-                    fill: isUserLocation ? '#237bff' : '#ff8800',
                 }}
             />
             <span
-                className={styles.placeDistance}
+                className={`${styles.placeDistance} ${locationClass}`}
                 style={{
-                    color: isUserLocation ? '#237bff' : '#ff8800',
                     whiteSpace: 'nowrap',
                 }}
             >
