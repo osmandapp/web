@@ -24,6 +24,7 @@ import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 
 export const NEAREST_SORT = 'nearest';
 export const NEAREST_MAP_CENTER_SORT = 'nearestMapCenter';
+export const FAVORITE_SORT_KEYS_VERSION = 1;
 
 const az = (a, b) => collator.compare(a, b);
 
@@ -145,6 +146,32 @@ export function getFavoriteSortKey(favoriteGroup, smartf = null) {
     }
 
     return favoriteGroup.id;
+}
+
+export function migrateFavoriteSortKeys(selectedSort, groups) {
+    if (
+        !groups?.length ||
+        !selectedSort?.favorites ||
+        selectedSort.favoritesKeysVersion === FAVORITE_SORT_KEYS_VERSION
+    ) {
+        return null;
+    }
+    const oldSort = selectedSort.favorites;
+    const favorites = { ...oldSort };
+    const oldKeys = new Set();
+    groups.forEach((group) => {
+        const oldKey = group.name;
+        if (oldKey === DEFAULT_FAV_GROUP_NAME || oldKey === SHARE_TYPE || oldSort[oldKey] === undefined) {
+            return;
+        }
+        if (favorites[group.id] === undefined) {
+            favorites[group.id] = oldSort[oldKey];
+        }
+        oldKeys.add(oldKey);
+    });
+    oldKeys.forEach((key) => delete favorites[key]);
+
+    return { ...selectedSort, favorites, favoritesKeysVersion: FAVORITE_SORT_KEYS_VERSION };
 }
 
 export function getSelectedSort({

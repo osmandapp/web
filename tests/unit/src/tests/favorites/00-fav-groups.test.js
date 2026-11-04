@@ -15,7 +15,7 @@ import FavoritesManager, {
 } from '@map/manager/FavoritesManager';
 import { fakeIndexedDbStore } from '../../util/indexedDb';
 import { SHARE_TYPE } from '@map/menu/share/shareConstants';
-import { getFavoriteSortKey } from '@map/menu/actions/SortActions';
+import { FAVORITE_SORT_KEYS_VERSION, getFavoriteSortKey, migrateFavoriteSortKeys } from '@map/menu/actions/SortActions';
 
 const t = (key) => key;
 
@@ -179,6 +179,41 @@ describe('the saved sort of favorites', () => {
 
         expect(defaultGroup.name).toBe(DEFAULT_FAV_GROUP_NAME);
         expect(new Set(keys).size).toBe(keys.length);
+    });
+
+    test('a sort saved under the group name moves to the group id once', () => {
+        const defaultGroup = FavoritesManager.createGroup({ name: 'favorites.gpx', userid: 1 });
+        const ownGroup = FavoritesManager.createGroup(favFile('food'));
+        const sharedGroup = FavoritesManager.createGroup({ ...favFile('food'), userid: 2, sharedWithMe: true });
+        const shopsGroup = FavoritesManager.createGroup(favFile('shops'));
+        const groups = [defaultGroup, ownGroup, sharedGroup, shopsGroup];
+        const oldSort = {
+            tracks: { Trips: 'az' },
+            favorites: { [DEFAULT_FAV_GROUP_NAME]: 'za', food: 'az', shops: 'time', [shopsGroup.id]: 'za', gone: 'az' },
+        };
+
+        // without the groups (not logged in yet) the sort is not marked, so it still moves after the login
+        expect(migrateFavoriteSortKeys(oldSort, [])).toBeNull();
+        // before the saved sort is read nothing is marked, or the mark would be saved over it
+        expect(migrateFavoriteSortKeys({}, groups)).toBeNull();
+
+        const migrated = migrateFavoriteSortKeys(oldSort, groups);
+
+        // an own and a shared group of one name shared the old key; 'favorites' is still the sort of the group list
+        expect(migrated).toEqual({
+            tracks: { Trips: 'az' },
+            favorites: {
+                [DEFAULT_FAV_GROUP_NAME]: 'za',
+                [ownGroup.id]: 'az',
+                [sharedGroup.id]: 'az',
+                [shopsGroup.id]: 'za',
+                gone: 'az',
+            },
+            favoritesKeysVersion: FAVORITE_SORT_KEYS_VERSION,
+        });
+        // a group created later with the name of a removed one does not take its old sort
+        const goneGroup = FavoritesManager.createGroup(favFile('gone'));
+        expect(migrateFavoriteSortKeys(migrated, [...groups, goneGroup])).toBeNull();
     });
 });
 
