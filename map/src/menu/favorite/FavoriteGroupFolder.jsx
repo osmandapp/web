@@ -111,9 +111,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         if (!loc || !refMarkers.current?.length) {
             return;
         }
-        if (ctx.openedPopper && !isNearestSort(sortMethod)) {
-            return;
-        }
+        if (ctx.openedPopper) return;
         // update markers location
         const updatedMarkers = refMarkers.current.map((m) => ({ ...m, ...getLocDist(loc, m.layer?._latlng) }));
         setMarkers(updatedMarkers);
@@ -129,6 +127,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         mapCenter?.lng,
         group,
         ctx.favorites,
+        ctx.openedPopper,
     ]);
 
     useEffect(() => {

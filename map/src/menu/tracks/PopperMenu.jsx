@@ -15,6 +15,12 @@ export default function PopperMenu({ anchorEl, open, setOpen, Buttons }) {
         }
     }, [ctx.openedPopper]);
 
+    useEffect(() => {
+        if (!open && ctx.openedPopper === anchorEl) {
+            ctx.setOpenedPopper(null);
+        }
+    }, [open]);
+
     return (
         <Popper
             disablePortal={true}
