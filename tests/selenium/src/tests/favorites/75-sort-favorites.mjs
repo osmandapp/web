@@ -1,7 +1,7 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import { getFiles } from '../../util.mjs';
-import { clickBy, enclose, enumerateIds, setMapCenter, waitBy, waitByRemoved } from '../../lib.mjs';
+import { clickBy, enclose, enumerateIds, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
@@ -11,6 +11,7 @@ import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
 import actionUploadFavGroup from '../../actions/favorites/actionUploadFavGroup.mjs';
+import setView from '../../actions/setView.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -80,21 +81,24 @@ export default async function test() {
     await validateItemOrder(favItemsFoodZA);
 
     // check item sort by nearest to map center
-    // the resulting order depends on the current map view, so check the selected mode, not the order
+    // the points of the city in the map center go first, the order inside a city depends on the visible map area
+    await setView({ lat: 50.4719142, lon: 30.5059648, zoom: 15 });
     await clickBy(By.id('se-sort-button-za-favorites'));
     await waitBy(By.id('se-sort-menu'));
     await clickBy(By.id('se-sort-nearestMapCenter'));
     await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+    await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
 
-    // check opening the sort menu keeps the order after the map is moved
-    await actionIdleWait();
-    const favItemsNearestMapCenter = await enumerateIds('se-fav-item-name-');
-    await setMapCenter(50.4719142, 30.5059648);
+    // check the list is re-sorted when the map is moved
+    await setView({ lat: 50.0508012, lon: 19.9421275, zoom: 15 });
+    await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
+
+    // check opening the sort menu keeps the order
     await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));
     await waitBy(By.id('se-sort-menu'));
     await driver.executeScript('document.body.click();');
     await waitByRemoved(By.id('se-sort-menu'));
-    await validateItemOrder(favItemsNearestMapCenter);
+    await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
 
     // check item sort is restored after the group is reopened
     await clickBy(By.id('se-back-folder-button-favorites'));
@@ -220,6 +224,18 @@ const favItemsFoodZA = [
     'se-fav-item-name-111test',
 ];
 
+const favItemsFoodKyiv = ['se-fav-item-name-ssssарарар', 'se-fav-item-name-ывывыв'];
+
+const favItemsFoodLviv = ['se-fav-item-name-Крива Липа'];
+
+const favItemsFoodKrakow = [
+    'se-fav-item-name-111test',
+    'se-fav-item-name-Józefa (Kraków) 14',
+    'se-fav-item-name-Parkingtest',
+    'se-fav-item-name-Plac Szczepański (Stare Miasto) 7',
+    'se-fav-item-name-Świętej Katarzyny (Stare Miasto) 2',
+];
+
 async function validateGroupOrder(ids) {
     await enclose(
         async () => {
@@ -238,5 +254,25 @@ async function validateItemOrder(ids) {
             return JSON.stringify(ids) === JSON.stringify(groups);
         },
         { tag: 'validateFavItemsSort' }
+    );
+}
+
+async function validateItemClusters(clusters) {
+    await enclose(
+        async () => {
+            const ids = await enumerateIds('se-fav-item-name-');
+            let start = 0;
+
+            return (
+                ids.length === clusters.flat().length &&
+                clusters.every((cluster) => {
+                    const part = ids.slice(start, start + cluster.length);
+                    start += cluster.length;
+
+                    return part.every((id) => cluster.includes(id));
+                })
+            );
+        },
+        { tag: 'validateFavItemsNearest' }
     );
 }

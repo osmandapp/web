@@ -126,7 +126,16 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         if (updatedMarkers) {
             sortMarkers(updatedMarkers);
         }
-    }, [sortMethod, useMapCenter, currentLoc?.lat, currentLoc?.lng, group, ctx.favorites]);
+    }, [
+        sortMethod,
+        useMapCenter,
+        currentLoc?.lat,
+        currentLoc?.lng,
+        mapCenter?.lat,
+        mapCenter?.lng,
+        group,
+        ctx.favorites,
+    ]);
 
     useEffect(() => {
         if (folder) {
