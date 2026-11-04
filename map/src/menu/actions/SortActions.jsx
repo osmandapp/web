@@ -337,7 +337,17 @@ const SortActions = forwardRef(
 
         const handleChange = (event) => {
             const method = event.target.value;
-            doSort({ method, setSortFiles, setSortGroups, markers, files: files(), groups: groups(), favoriteGroup });
+            if (!isNearestSort(method)) {
+                doSort({
+                    method,
+                    setSortFiles,
+                    setSortGroups,
+                    markers,
+                    files: files(),
+                    groups: groups(),
+                    favoriteGroup,
+                });
+            }
             if (setOpenSort) {
                 setOpenSort(false);
             }
