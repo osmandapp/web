@@ -204,14 +204,14 @@ describe('getWptTags: the tags of a poi', () => {
         expect(tags.collapsable_socket.values).toEqual(['4 × 22 kW', null]);
     });
 
-    test('a group without an icon of its own gets the icon of its parent type', async () => {
+    test('a group takes the icon of its category, as in the apps', async () => {
         apiPost.mockResolvedValueOnce({
             data: [
                 {
                     key: 'collapsable_socket',
                     value: 'osmand_socket_type2_yes',
                     labels: ['NAME'],
-                    parentIcon: 'charging_station',
+                    icon: 'charging_station',
                 },
             ],
         });

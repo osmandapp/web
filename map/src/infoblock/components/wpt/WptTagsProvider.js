@@ -251,7 +251,7 @@ async function getWptTags(obj, type, ctx) {
                 value: entry.value,
                 lang: entry.lang,
                 generic: entry.generic,
-                parentIcon: entry.parentIcon,
+                categoryIcon: entry.icon,
                 ctx,
                 subtypeTag,
             });
@@ -278,7 +278,7 @@ async function getWptTags(obj, type, ctx) {
     return { res, rawTags, id, type: typeTag, subtype: subtypeTag };
 }
 
-async function buildTagObj({ key, value, lang, generic, parentIcon, ctx, subtypeTag }) {
+async function buildTagObj({ key, value, lang, generic, categoryIcon, ctx, subtypeTag }) {
     let tagObj = { key };
     tagObj.value = value;
     tagObj.isUrl = isUrl(value);
@@ -292,7 +292,7 @@ async function buildTagObj({ key, value, lang, generic, parentIcon, ctx, subtype
         }
     }
 
-    Object.assign(tagObj, await getTagIconProps({ key, value, lang, generic, parentIcon, ctx }));
+    Object.assign(tagObj, await getTagIconProps({ key, value, lang, generic, categoryIcon, ctx }));
 
     const [formattedPrefix, formattedValue] = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag, ctx);
     tagObj.textPrefix = formattedPrefix;
@@ -317,7 +317,7 @@ async function buildTagObj({ key, value, lang, generic, parentIcon, ctx, subtype
     return tagObj;
 }
 
-async function getTagIconProps({ key, value, lang, generic, parentIcon, ctx }) {
+async function getTagIconProps({ key, value, lang, generic, categoryIcon, ctx }) {
     switch (key) {
         case WIKIPEDIA:
             return { icon: <WikipediaIcon /> };
@@ -349,7 +349,7 @@ async function getTagIconProps({ key, value, lang, generic, parentIcon, ctx }) {
             if (generic) {
                 return getGenericTagProps(key);
             }
-            return await getOtherTagIconProps({ key, value, lang, parentIcon, ctx });
+            return await getOtherTagIconProps({ key, value, lang, categoryIcon, ctx });
     }
 }
 
@@ -361,7 +361,7 @@ function getGenericTagProps(key) {
     };
 }
 
-async function getOtherTagIconProps({ key, value, lang, parentIcon, ctx }) {
+async function getOtherTagIconProps({ key, value, lang, categoryIcon, ctx }) {
     if (key.startsWith('operator') || key.startsWith('brand')) {
         return { icon: <BrandIcon /> };
     }
@@ -373,13 +373,13 @@ async function getOtherTagIconProps({ key, value, lang, parentIcon, ctx }) {
     if (lang) {
         return { icon: <DisplayLanguageIcon /> };
     }
-    const svgData = (await getSvgIcon({ key, value, ctx })) ?? (await getParentTypeSvgIcon(parentIcon, ctx));
+    const svgData = (await getCategorySvgIcon(categoryIcon, ctx)) ?? (await getSvgIcon({ key, value, ctx }));
 
     return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
 }
 
-async function getParentTypeSvgIcon(iconKeyName, ctx) {
-    const icon = iconKeyName && getIconNameForPoiType({ iconKeyName, useDefault: false });
+async function getCategorySvgIcon(iconName, ctx) {
+    const icon = iconName && getIconNameForPoiType({ iconKeyName: iconName, useDefault: false });
     return icon ? await getSvgIcon({ ctx, icon }) : null;
 }
 
