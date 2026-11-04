@@ -9,9 +9,9 @@ import gStyles from '../gstylesmenu.module.css';
 import GroupHeader from '../actions/GroupHeader';
 import Empty from '../errors/Empty';
 import FavoritesManager, {
-    addLocDist,
     DEFAULT_FAV_GROUP_NAME,
     getFavMenuListByLayers,
+    getLocDist,
     LOCATION_UNAVAILABLE,
 } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
@@ -107,21 +107,17 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     }, [smartf, ctx.selectedSort?.favorites]);
 
     useEffect(() => {
-        if (!useMapCenter && !currentLoc) {
+        const loc = getDistanceLocation();
+        if (!loc || !refMarkers.current?.length) {
             return;
         }
-        if (ctx.openedPopper) return;
-        const updatedMarkers = getMarkersWithDistance();
-        if (updatedMarkers) {
-            // update markers location
-            setMarkers(updatedMarkers);
+        if (ctx.openedPopper && !isNearestSort(sortMethod)) {
+            return;
         }
-    }, [currentLoc?.lat, currentLoc?.lng, useMapCenter, mapCenter?.lat, mapCenter?.lng]);
-
-    useEffect(() => {
-        if (!isNearestSort(sortMethod)) return;
-        const updatedMarkers = getMarkersWithDistance();
-        if (updatedMarkers) {
+        // update markers location
+        const updatedMarkers = refMarkers.current.map((m) => ({ ...m, ...getLocDist(loc, m.layer?._latlng) }));
+        setMarkers(updatedMarkers);
+        if (isNearestSort(sortMethod)) {
             sortMarkers(updatedMarkers);
         }
     }, [
@@ -187,15 +183,6 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
     function getDistanceLocation() {
         return useMapCenter ? mapCenter : currentLoc;
-    }
-
-    function getMarkersWithDistance() {
-        const loc = getDistanceLocation();
-        if (!loc || !refMarkers.current?.length) {
-            return null;
-        }
-
-        return addLocDist({ location: loc, markers: refMarkers.current });
     }
 
     function sortMarkers(markerList) {
