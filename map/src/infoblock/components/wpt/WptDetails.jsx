@@ -643,7 +643,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     function closeDetails() {
-        const type = wpt?.type;
+        const type = newWpt?.type;
         if (!type) return;
 
         ctx.setSelectedWpt(null);
@@ -658,7 +658,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                     return { ...prev, show: false };
                 });
             }
-            if (!wpt.mapObj) {
+            if (!newWpt.mapObj) {
                 ctx.setSelectedPoiObj(null);
                 setShowInfoBlock(false);
                 navigate({
@@ -677,7 +677,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 setShowInfoBlock(false);
                 navigateBackToSearchResults(navigate, ctx, location);
             } else {
-                !wpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
+                !newWpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
             }
         } else if (type.isWikiPoi) {
             if (ctx.selectedWptId) {
@@ -686,7 +686,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 });
             }
             setShowInfoBlock(false);
-            if (wpt.mapObj) {
+            if (newWpt.mapObj) {
                 ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
                 closeObjectFromMap();
             } else {
@@ -701,11 +701,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 // Opened from search — always return to search results.
                 ctx.setSelectedSearchObj(null);
                 setShowInfoBlock(false);
-                if (!wpt.mapObj) {
+                if (!newWpt.mapObj) {
                     ctx.setSelectedFavoriteObj(null);
                 }
                 navigateBackToSearchResults(navigate, ctx, location);
-            } else if (!wpt.mapObj) {
+            } else if (!newWpt.mapObj) {
                 ctx.setSelectedFavoriteObj(null);
                 closeOnlyFavDetails();
             } else {
@@ -717,7 +717,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             setShowInfoBlock(false);
             ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));
         } else if (type.isStop) {
-            if (wpt.mapObj) {
+            if (newWpt.mapObj) {
                 closeObjectFromMap();
             }
         }
@@ -1062,18 +1062,18 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     return (
         <>
-            {showLoading ? (
-                <Loading />
-            ) : (
-                <Box
-                    sx={{
-                        height: `${height - HEADER_SIZE}px`,
-                        minWidth: ctx.infoBlockWidth,
-                        maxWidth: ctx.infoBlockWidth,
-                    }}
-                    className={gStyles.scrollMainBlock}
-                >
-                    <Header />
+            <Box
+                sx={{
+                    height: `${height - HEADER_SIZE}px`,
+                    minWidth: ctx.infoBlockWidth,
+                    maxWidth: ctx.infoBlockWidth,
+                }}
+                className={gStyles.scrollMainBlock}
+            >
+                <Header />
+                {showLoading ? (
+                    <Loading />
+                ) : (
                     <Box className={gStyles.scrollActiveBlock}>
                         {wpt !== null && (
                             <ListItemText id={getId()} sx={{ mt: 0 }}>
@@ -1299,8 +1299,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             </ListItemText>
                         )}
                     </Box>
-                </Box>
-            )}
+                )}
+            </Box>
             {devWikiContent && (
                 <Dialog open={true}>
                     <DialogContent>
