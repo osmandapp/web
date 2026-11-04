@@ -186,6 +186,42 @@ describe('getWptTags: the tags of a poi', () => {
         expect(tags.brand.isRawValue).toBeUndefined();
     });
 
+    test('a group of the server keeps the values of its items', async () => {
+        apiPost.mockResolvedValueOnce({
+            data: [
+                {
+                    key: 'collapsable_socket',
+                    value: 'osmand_socket_type2_yes;osmand_socket_chademo_yes',
+                    labels: ['NAME', 'NAME'],
+                    values: ['4 × 22 kW', null],
+                },
+            ],
+        });
+
+        const tags = await tagsOf({ 'socket:type2': '4' });
+
+        expect(tags.collapsable_socket).toMatchObject({ collapsable: true, textPrefix: 'socket' });
+        expect(tags.collapsable_socket.values).toEqual(['4 × 22 kW', null]);
+    });
+
+    test('a group without an icon of its own gets the icon of its parent type', async () => {
+        apiPost.mockResolvedValueOnce({
+            data: [
+                {
+                    key: 'collapsable_socket',
+                    value: 'osmand_socket_type2_yes',
+                    labels: ['NAME'],
+                    parentIcon: 'charging_station',
+                },
+            ],
+        });
+
+        const tags = await tagsOf({ 'socket:type2': '4' });
+
+        expect(global.fetch).toHaveBeenCalledWith('/map/images/poi-icons-svg/mx_charging_station.svg');
+        expect(tags.collapsable_socket.icon.props.svg).toBe('<svg width="24"/>');
+    });
+
     test('the tags of a favorite are read from its extensions', async () => {
         const favorite = { ext: { extensions: { amenity_type: 'shop', phone: '+380 44 000' } } };
 

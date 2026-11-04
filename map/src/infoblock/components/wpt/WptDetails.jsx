@@ -3,7 +3,6 @@ import {
     Button,
     Collapse,
     Divider,
-    IconButton,
     Link,
     ListItemIcon,
     ListItemText,
@@ -52,7 +51,7 @@ import FavoritesManager, {
     navigateToFavoritesMenu,
     resolveWptAppearance,
 } from '../../../manager/FavoritesManager';
-import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
+import { Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
     filterTag,
@@ -81,6 +80,7 @@ import WptTagsProvider, {
     stringifyTagValues,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
+import CollapsableTagHeader from './CollapsableTagHeader';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
@@ -985,38 +985,31 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const WikiVoyageLinks = ({ wvLinks }) => {
         const [open, setOpen] = useState(false);
 
-        const value = Object.values(wvLinks)
-            .map((link) => link[0])
-            .join(' • ');
+        const links = Object.values(wvLinks);
+        const value = links.map((link) => link[0]).join(' • ');
+        const singleLink = links.length === 1 ? links[0][1] : null;
 
         return (
             <>
                 <MenuItem style={{ userSelect: 'text' }} disableRipple className={wptStyles.tagItem} divider>
                     <WikiIcon className={wptStyles.tagIcon} />
-                    <>
-                        <ListItemText onClick={() => setOpen(!open)}>
-                            <MenuItemWithLines
-                                name={t('shared_string_wikivoyage')}
-                                maxLines={1}
-                                className={wptStyles.tagPrefix}
-                            />
-                            {Object.keys(wvLinks).length > 1 ? (
-                                <MenuItemWithLines name={value} maxLines={1} className={wptStyles.tagName} />
-                            ) : (
-                                <Link href={Object.values(wvLinks)[0][1]} target="_blank" rel="noopener noreferrer">
-                                    {Object.values(wvLinks)[0][1]}
-                                </Link>
-                            )}
-                        </ListItemText>
-                        {Object.keys(wvLinks).length > 1 && (
-                            <IconButton onClick={() => setOpen(!open)}>
-                                {open ? <ExpandLess /> : <ExpandMore />}
-                            </IconButton>
+                    <CollapsableTagHeader
+                        prefix={t('shared_string_wikivoyage')}
+                        prefixMaxLines={1}
+                        value={value}
+                        expandable={!singleLink}
+                        open={open}
+                        setOpen={setOpen}
+                    >
+                        {singleLink && (
+                            <Link href={singleLink} target="_blank" rel="noopener noreferrer">
+                                {singleLink}
+                            </Link>
                         )}
-                    </>
+                    </CollapsableTagHeader>
                 </MenuItem>
                 <Collapse in={open} timeout="auto" unmountOnExit>
-                    {Object.values(wvLinks).map((item, index) => (
+                    {links.map((item, index) => (
                         <MenuItem
                             disableRipple={!ctx.develFeatures}
                             onClick={() => {

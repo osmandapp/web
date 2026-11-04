@@ -54,6 +54,7 @@ const EMAIL = 'email';
 const WEBSITE = 'website';
 const CUISINE = 'cuisine';
 export const CUISINE_PREFIX = 'cuisine_';
+export const OSMAND_PREFIX = 'osmand_';
 export const IMAGE_OSM_TAG = 'image';
 export const MAPILLARY_OSM_TAG = 'mapillary';
 export const WIKIDATA = 'wikidata';
@@ -250,6 +251,7 @@ async function getWptTags(obj, type, ctx) {
                 value: entry.value,
                 lang: entry.lang,
                 generic: entry.generic,
+                parentIcon: entry.parentIcon,
                 ctx,
                 subtypeTag,
             });
@@ -259,6 +261,9 @@ async function getWptTags(obj, type, ctx) {
             }
             if (entry.labels) {
                 tagObj.labels = entry.labels;
+            }
+            if (entry.values) {
+                tagObj.values = entry.values;
             }
 
             res.push(tagObj);
@@ -273,7 +278,7 @@ async function getWptTags(obj, type, ctx) {
     return { res, rawTags, id, type: typeTag, subtype: subtypeTag };
 }
 
-async function buildTagObj({ key, value, lang, generic, ctx, subtypeTag }) {
+async function buildTagObj({ key, value, lang, generic, parentIcon, ctx, subtypeTag }) {
     let tagObj = { key };
     tagObj.value = value;
     tagObj.isUrl = isUrl(value);
@@ -287,7 +292,7 @@ async function buildTagObj({ key, value, lang, generic, ctx, subtypeTag }) {
         }
     }
 
-    Object.assign(tagObj, await getTagIconProps({ key, value, lang, generic, ctx }));
+    Object.assign(tagObj, await getTagIconProps({ key, value, lang, generic, parentIcon, ctx }));
 
     const [formattedPrefix, formattedValue] = getFormattedPrefixAndText(key, tagObj.textPrefix, value, subtypeTag, ctx);
     tagObj.textPrefix = formattedPrefix;
@@ -312,7 +317,7 @@ async function buildTagObj({ key, value, lang, generic, ctx, subtypeTag }) {
     return tagObj;
 }
 
-async function getTagIconProps({ key, value, lang, generic, ctx }) {
+async function getTagIconProps({ key, value, lang, generic, parentIcon, ctx }) {
     switch (key) {
         case WIKIPEDIA:
             return { icon: <WikipediaIcon /> };
@@ -344,7 +349,7 @@ async function getTagIconProps({ key, value, lang, generic, ctx }) {
             if (generic) {
                 return getGenericTagProps(key);
             }
-            return await getOtherTagIconProps({ key, value, lang, ctx });
+            return await getOtherTagIconProps({ key, value, lang, parentIcon, ctx });
     }
 }
 
@@ -356,7 +361,7 @@ function getGenericTagProps(key) {
     };
 }
 
-async function getOtherTagIconProps({ key, value, lang, ctx }) {
+async function getOtherTagIconProps({ key, value, lang, parentIcon, ctx }) {
     if (key.startsWith('operator') || key.startsWith('brand')) {
         return { icon: <BrandIcon /> };
     }
@@ -368,9 +373,14 @@ async function getOtherTagIconProps({ key, value, lang, ctx }) {
     if (lang) {
         return { icon: <DisplayLanguageIcon /> };
     }
-    const svgData = await getSvgIcon({ key, value, ctx });
+    const svgData = (await getSvgIcon({ key, value, ctx })) ?? (await getParentTypeSvgIcon(parentIcon, ctx));
 
     return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
+}
+
+async function getParentTypeSvgIcon(iconKeyName, ctx) {
+    const icon = iconKeyName && getIconNameForPoiType({ iconKeyName, useDefault: false });
+    return icon ? await getSvgIcon({ ctx, icon }) : null;
 }
 
 function applyCollapsablePrefix(tagObj, key) {
