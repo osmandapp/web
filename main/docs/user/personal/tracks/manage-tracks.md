@@ -216,13 +216,13 @@ Once you have made your choice, the following steps are provided:
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.webp)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
+![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_3_ios.webp)
 
 </TabItem>
 
@@ -232,7 +232,8 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 
 ***Sorting options:***
 
-- **Nearest** — Shows tracks closest to your current location.
+- **Nearest to current location** — Shows tracks closest to your current location.
+- **Nearest to map center** — Shows tracks closest to the current map center. Each track displays the distance and an orange direction arrow pointing from the map center.
 - **Last modified** — Displays tracks sorted by their most recent modification date.
 - **Name: A - Z** — Arranges tracks alphabetically from A to Z.
 - **Name: Z - A** — Arranges tracks alphabetically from Z to A.
@@ -241,7 +242,7 @@ OsmAnd offers an easy way to sort your tracks, helping you manage a large collec
 - **Longest distance first** — Displays tracks sorted by length, with the longest at the top.
 - **Shortest distance first** — Displays tracks sorted by length, with the shortest at the top.
 - **Longest duration first** — Sorts tracks by duration, placing the longest at the top.
-- **Shorted duration first** — Sorts tracks by duration, placing the shortest at the top.
+- **Shortest duration first** — Sorts tracks by duration, placing the shortest at the top.
 
 ### Sorting Subfolders {#sorting-subfolders}
 
