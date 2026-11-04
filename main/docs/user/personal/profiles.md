@@ -122,7 +122,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,gene
 
 Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
+![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.webp)
 
 </TabItem>
 
@@ -147,6 +147,12 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Android only*). Opens the screen control menu, where you can select options for the device screen while navigating to save device battery consumption.  
+
+- **Keep screen on** (*iOS only*). Defines when the device screen stays on while OsmAnd is open.
+  - *<Translate ios="true" ids="shared_string_system_default"/>*. The screen turns off according to the Auto-Lock time set in your device settings.
+  - *During navigation*. The screen stays on while navigation is active and turns off according to the Auto-Lock time when navigation is paused or stopped. This option is not available for the *<Translate ios="true" ids="rendering_value_browse_map_name"/>* profile.
+  - *<Translate ios="true" ids="shared_string_always"/>*. The screen stays on all the time while OsmAnd is open.
+  - By default, the *<Translate ios="true" ids="rendering_value_browse_map_name"/>* profile uses *<Translate ios="true" ids="shared_string_system_default"/>*, and other profiles use *During navigation*.
 
 
 ### Units & Formats {#units--formats}
