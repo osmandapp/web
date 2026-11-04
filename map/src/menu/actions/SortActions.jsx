@@ -1,7 +1,7 @@
 import { Box, Divider, FormControl, FormControlLabel, Paper, Radio, RadioGroup } from '@mui/material';
 import { getAnalysisData, getGpxTime, filterSmartFolders } from '../../manager/track/TracksManager';
 import { collator } from '../../context/AppContext';
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useEffect } from 'react';
 import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { ReactComponent as DescendingIcon } from '../../assets/icons/ic_action_sort_by_name_descending.svg';
@@ -271,13 +271,12 @@ const SortActions = forwardRef(
             setOpenSort = null,
             setSortIcon = null,
             setSortName = null,
-            markers = null,
             smartf = null,
         },
         ref
     ) => {
         const ctx = useContext(AppContext);
-        const [currentMethod, setCurrentMethod] = useState(
+        const currentMethod =
             getSelectedSort({
                 trackGroup,
                 favoriteGroup,
@@ -286,8 +285,7 @@ const SortActions = forwardRef(
                 smartf,
                 ctx,
                 defaultMethod: defaultSortMethod(customGroupType),
-            }) || defaultSortMethod(customGroupType)
-        );
+            }) || defaultSortMethod(customGroupType);
 
         const files = () => {
             if (trackGroup) {
@@ -327,7 +325,6 @@ const SortActions = forwardRef(
                     method: currentMethod,
                     setSortFiles,
                     setSortGroups,
-                    markers,
                     files: files(),
                     groups: groups(),
                     favoriteGroup,
@@ -338,15 +335,7 @@ const SortActions = forwardRef(
         const handleChange = (event) => {
             const method = event.target.value;
             if (!isNearestSort(method)) {
-                doSort({
-                    method,
-                    setSortFiles,
-                    setSortGroups,
-                    markers,
-                    files: files(),
-                    groups: groups(),
-                    favoriteGroup,
-                });
+                doSort({ method, setSortFiles, setSortGroups, files: files(), groups: groups(), favoriteGroup });
             }
             if (setOpenSort) {
                 setOpenSort(false);
@@ -360,7 +349,6 @@ const SortActions = forwardRef(
             if (setSortName) {
                 setSortName(allMethods[method].name());
             }
-            setCurrentMethod(method);
         };
 
         function setSelectedSort(method) {

@@ -181,5 +181,5 @@ export default function FavoriteItem({
                 </div>
             </>
         );
-    }, [inView, marker, marker.locDist, marker.locBearing, isUserLocation, openActions, ctx.openedPopper]);
+    }, [inView, marker, isUserLocation, openActions, ctx.openedPopper]);
 }

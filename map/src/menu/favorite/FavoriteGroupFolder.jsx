@@ -230,13 +230,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                         onClose={onClose}
                     />
                 ) : (
-                    <GroupHeader
-                        smartf={smartf}
-                        type="favorites"
-                        favoriteGroup={group}
-                        setSortFiles={setSortFiles}
-                        markers={markers}
-                    />
+                    <GroupHeader smartf={smartf} type="favorites" favoriteGroup={group} setSortFiles={setSortFiles} />
                 )}
                 <Box
                     ref={listContainerRef}

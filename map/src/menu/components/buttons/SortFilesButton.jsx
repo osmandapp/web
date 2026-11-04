@@ -20,7 +20,6 @@ export default function SortFilesButton({
     customGroupType = 'analyzer',
     setSortGroups = null,
     setSortFiles = null,
-    markers,
     smartf,
 }) {
     const ctx = useContext(AppContext);
@@ -88,7 +87,6 @@ export default function SortFilesButton({
                         setOpenSort={setOpenSort}
                         setSortIcon={setSortIcon}
                         setSortName={setSortName}
-                        markers={markers}
                         smartf={smartf}
                     />
                 }

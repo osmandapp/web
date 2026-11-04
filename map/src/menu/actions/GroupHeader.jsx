@@ -33,7 +33,6 @@ export default function GroupHeader({
     favoriteGroup = null,
     setSortGroups = null,
     setSortFiles = null,
-    markers = null,
     onClose = null,
 }) {
     const ctx = useContext(AppContext);
@@ -153,7 +152,6 @@ export default function GroupHeader({
                             favoriteGroup={favoriteGroup}
                             setSortGroups={setSortGroups}
                             setSortFiles={setSortFiles}
-                            markers={markers}
                             smartf={smartf}
                         />
                         {type === TRACKS_TYPE && !hiddenBtn && (
