@@ -159,7 +159,8 @@ export default function ShareFile() {
     const favItems = useMemo(() => {
         const layers = ctx.shareFileMarkers?.getLayers();
         if (layers?.length > 0 && ctx.selectedGpxFile?.wpts) {
-            const loc = currentLoc && currentLoc !== LOCATION_UNAVAILABLE ? currentLoc : getMapCenter(mtx, hash);
+            const isUserLocation = !!currentLoc && currentLoc !== LOCATION_UNAVAILABLE;
+            const loc = isUserLocation ? currentLoc : getMapCenter(mtx, hash);
             const markerList = getFavMenuListByLayers({
                 layers,
                 wpts: ctx.selectedGpxFile.wpts,
@@ -173,7 +174,7 @@ export default function ShareFile() {
                         key={m + index}
                         marker={m}
                         group={ctx.selectedGpxFile}
-                        currentLoc={currentLoc}
+                        isUserLocation={isUserLocation}
                         share={true}
                     />
                 );

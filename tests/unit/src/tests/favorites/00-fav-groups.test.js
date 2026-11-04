@@ -10,9 +10,6 @@ import FavoritesManager, {
     getFavGroupKey,
     getFavMenuListByLayers,
     getSize,
-    isCurrentLocation,
-    LOCATION_UNAVAILABLE,
-    MAP_CENTER_LOCATION,
     normalizeFavoritePointsGroupName,
     normalizeGroupNameForFile,
 } from '@map/manager/FavoritesManager';
@@ -164,13 +161,6 @@ describe('the selected favorite among the waypoints of its group', () => {
         expect(north.locBearing).toBeCloseTo(0);
         expect(east.locBearing).toBeCloseTo(90, 0);
         expect(south.locBearing).toBeCloseTo(180);
-    });
-
-    test('only a real position counts as the location of the user', () => {
-        expect(isCurrentLocation({ lat: 50, lng: 30 })).toBe(true);
-        expect(isCurrentLocation(LOCATION_UNAVAILABLE)).toBe(false);
-        expect(isCurrentLocation(MAP_CENTER_LOCATION)).toBe(false);
-        expect(isCurrentLocation(null)).toBe(false);
     });
 });
 

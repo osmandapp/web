@@ -13,7 +13,6 @@ import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     getFavMenuListByLayers,
     LOCATION_UNAVAILABLE,
-    MAP_CENTER_LOCATION,
 } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
 import Loading from '../errors/Loading';
@@ -50,7 +49,6 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
     const sortMethod = getSelectedSort({ favoriteGroup: group, ctx });
     const useMapCenter = sortMethod === NEAREST_MAP_CENTER_SORT || currentLoc === LOCATION_UNAVAILABLE;
-    const distanceLoc = useMapCenter ? MAP_CENTER_LOCATION : currentLoc;
     const mapCenter = useMapCenter ? getMapCenter(mtx, hash) : null;
 
     // get markers
@@ -175,7 +173,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
                                 key={index}
                                 marker={visibleMarkers[index]}
                                 group={group}
-                                currentLoc={distanceLoc}
+                                isUserLocation={!useMapCenter}
                                 smartf={smartf}
                             />
                         </div>
@@ -185,7 +183,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         }
 
         return null;
-    }, [markers, sortFiles, ctx.favorites, listHeight, distanceLoc]);
+    }, [markers, sortFiles, ctx.favorites, listHeight, useMapCenter]);
 
     function getDistanceLocation() {
         return useMapCenter ? mapCenter : currentLoc;

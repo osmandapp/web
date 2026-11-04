@@ -69,7 +69,6 @@ import {
     addFavoriteToMapFromSearch,
     getFavoriteMenuIconHtml,
     getLocDist,
-    MAP_CENTER_LOCATION,
     resolveFavoriteMarkerForSearch,
 } from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
@@ -155,7 +154,7 @@ function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
 
-export default function SearchResultItem({ item, typeItem, index, currentLoc, loc = null, isUser = false }) {
+export default function SearchResultItem({ item, typeItem, index, loc = null, isUser = false }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -328,7 +327,6 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
     }
 
     const placeDetails = `${addInfo()}${addType()}${addCity()}`;
-    const distanceLoc = isUserLocation ? currentLoc : MAP_CENTER_LOCATION;
 
     function hasTextBeforeMatchedName(index) {
         return index > 0 || Boolean(placeDetails || distance > 0);
@@ -344,7 +342,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                 id={id}
                 marker={marker}
                 group={resolved.group}
-                currentLoc={distanceLoc}
+                isUserLocation={isUserLocation}
                 onOpen={() => addFavoriteToMapFromSearch(ctx, { group: resolved.group, marker: resolved.marker })}
                 hideActions
             />
@@ -357,7 +355,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
                 id={id}
                 marker={buildWptMarker(item, name, distance, bearing)}
                 group={{ id: item.properties[WPT_TRACK_FILE], name: item.properties[CATEGORY_NAME] }}
-                currentLoc={distanceLoc}
+                isUserLocation={isUserLocation}
                 onOpen={() => {
                     openTrackWptFromSearch(ctx, {
                         file: item.properties[WPT_TRACK_FILE],

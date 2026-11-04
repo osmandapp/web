@@ -5,7 +5,6 @@ import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext
 import {
     FAVORITE_FILE_TYPE,
     addShareFavoriteToMap,
-    isCurrentLocation,
     getFavoriteId,
     addFavoriteToMap,
 } from '../../manager/FavoritesManager';
@@ -24,7 +23,7 @@ export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
 };
 
-function FavInfo({ marker, currentLoc }) {
+function FavInfo({ marker, isUserLocation }) {
     const address = marker?.layer?.options?.address ?? '';
     const separator = marker.locDist > 0 && address ? ' · ' : '';
 
@@ -36,11 +35,7 @@ function FavInfo({ marker, currentLoc }) {
                 </Typography>
             )}
             {marker.locDist > 0 && (
-                <DistanceInfo
-                    distance={marker.locDist}
-                    bearing={marker.locBearing}
-                    isUserLocation={isCurrentLocation(currentLoc)}
-                />
+                <DistanceInfo distance={marker.locDist} bearing={marker.locBearing} isUserLocation={isUserLocation} />
             )}
         </div>
     );
@@ -49,7 +44,7 @@ function FavInfo({ marker, currentLoc }) {
 export default function FavoriteItem({
     marker,
     group,
-    currentLoc,
+    isUserLocation,
     share = false,
     smartf = null,
     insideVirtualizedList = false,
@@ -158,7 +153,7 @@ export default function FavoriteItem({
                             </ListItemIcon>
                             <ListItemText>
                                 <MenuItemWithLines name={marker.name} maxLines={1} />
-                                <FavInfo marker={marker} currentLoc={currentLoc} />
+                                <FavInfo marker={marker} isUserLocation={isUserLocation} />
                             </ListItemText>
                             {!share && !sharedFile && !hideActions && (
                                 <ThreeDotsButton
@@ -186,5 +181,5 @@ export default function FavoriteItem({
                 </div>
             </>
         );
-    }, [inView, marker, marker.locDist, marker.locBearing, currentLoc, openActions, ctx.openedPopper]);
+    }, [inView, marker, marker.locDist, marker.locBearing, isUserLocation, openActions, ctx.openedPopper]);
 }

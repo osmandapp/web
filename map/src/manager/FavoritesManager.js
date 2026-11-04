@@ -26,7 +26,6 @@ const DEFAULT_TAB_ICONS = 'used';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
 const FAV_FILE_PREFIX = 'favorites-';
 export const LOCATION_UNAVAILABLE = 'loc_unavailable';
-export const MAP_CENTER_LOCATION = 'loc_map_center';
 export const DEFAULT_GROUP_NAME_POINTS_GROUPS = '';
 export const FAVORITE_PLACEHOLDER_MAP = { '_-_': ':', '_%_': '/' };
 
@@ -701,10 +700,6 @@ export function updateFavoriteGroups({
         });
     }
     ctx.setUpdateMarkers({ ...ctx.favorites });
-}
-
-export function isCurrentLocation(location) {
-    return !!location && location !== LOCATION_UNAVAILABLE && location !== MAP_CENTER_LOCATION;
 }
 
 export function getSize(group, t) {
