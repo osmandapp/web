@@ -24,6 +24,7 @@ import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 
 export const NEAREST_SORT = 'nearest';
 export const NEAREST_MAP_CENTER_SORT = 'nearestMapCenter';
+
 export const FAVORITE_SORT_KEYS_VERSION = 1;
 
 const az = (a, b) => collator.compare(a, b);
@@ -379,7 +380,7 @@ const SortActions = forwardRef(
         };
 
         const handleClick = (event) => {
-            if (event.target.value === currentMethod) {
+            if (event.target.value === currentMethod && isNearestSort(currentMethod)) {
                 handleChange(event);
             }
         };
@@ -419,7 +420,7 @@ const SortActions = forwardRef(
                                         labelPlacement="start"
                                         value={NEAREST_SORT}
                                         control={<Radio className={styles.control} size="small" />}
-                                        label={<ActionItem item={allMethods.nearest} />}
+                                        label={<ActionItem item={allMethods[NEAREST_SORT]} />}
                                     />
                                     <FormControlLabel
                                         id={'se-sort-nearestMapCenter'}
@@ -428,7 +429,7 @@ const SortActions = forwardRef(
                                         labelPlacement="start"
                                         value={NEAREST_MAP_CENTER_SORT}
                                         control={<Radio className={styles.control} size="small" />}
-                                        label={<ActionItem item={allMethods.nearestMapCenter} />}
+                                        label={<ActionItem item={allMethods[NEAREST_MAP_CENTER_SORT]} />}
                                     />
                                     <Divider className={styles.dividerActions} />
                                 </>

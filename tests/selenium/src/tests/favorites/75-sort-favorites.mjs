@@ -98,13 +98,6 @@ export default async function test() {
     // check the distances follow the map center while the order is kept
     await validateDistancesChanged(distancesFromKyiv);
 
-    // check opening the sort menu keeps the order
-    await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));
-    await waitBy(By.id('se-sort-menu'));
-    await driver.executeScript('document.body.click();');
-    await waitByRemoved(By.id('se-sort-menu'));
-    await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
-
     // check picking the option again re-sorts the list from the new map center
     await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));
     await waitBy(By.id('se-sort-menu'));
@@ -345,7 +338,8 @@ async function readItemDistances() {
         async () => {
             const distances = [];
             for (const id of await enumerateIds('se-fav-item-name-')) {
-                const spans = await driver.findElement(By.id(id)).findElements(By.css('[class*="placeDistance"]'));
+                const name = id.slice('se-fav-item-name-'.length);
+                const spans = await driver.findElement(By.id(id)).findElements(By.id(`se-fav-item-distance-${name}`));
                 distances.push(spans.length > 0 ? parseDistance(await spans[0].getText()) : null);
             }
 

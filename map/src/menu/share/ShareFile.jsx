@@ -164,7 +164,7 @@ export default function ShareFile() {
             const markerList = getFavMenuListByLayers({
                 layers,
                 wpts: ctx.selectedGpxFile.wpts,
-                currentLoc: loc,
+                location: loc,
                 pointsGroups: getResolvedPointsGroups(ctx.selectedGpxFile),
             });
             const items = [];

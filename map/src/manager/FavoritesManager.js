@@ -721,7 +721,7 @@ export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } 
     return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, background);
 }
 
-export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups = null }) {
+export function getFavMenuListByLayers({ layers, wpts, location, pointsGroups = null }) {
     let markerList = [];
     Object.values(layers).forEach((value) => {
         // Only process waypoint markers (skip route points, track points, polylines, start/end markers)
@@ -743,7 +743,7 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
         };
         markerList.push(marker);
     });
-    return addLocDist({ location: currentLoc, markers: markerList });
+    return addLocDist({ location, markers: markerList });
 }
 
 export function getWptByTitle(title, wpts) {
@@ -797,7 +797,7 @@ export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
     return { group, marker };
 }
 
-export function getLocDist(location, latlng) {
+export function getDistanceAndBearing(location, latlng) {
     if (!location || location === LOCATION_UNAVAILABLE || !latlng) {
         return null;
     }
@@ -815,14 +815,14 @@ export function addLocDist({ location, markers = null, wpts = null }) {
             markers.forEach((m) => {
                 const latlng = m?.layer?._latlng;
                 if (latlng) {
-                    Object.assign(m, getLocDist(location, latlng));
+                    Object.assign(m, getDistanceAndBearing(location, latlng));
                 }
                 res.push(m);
             });
         } else if (wpts && wpts.length > 0) {
             wpts.forEach((w) => {
                 if (w.latlng) {
-                    Object.assign(w, getLocDist(location, w.latlng));
+                    Object.assign(w, getDistanceAndBearing(location, w.latlng));
                 }
                 res.push(w);
             });

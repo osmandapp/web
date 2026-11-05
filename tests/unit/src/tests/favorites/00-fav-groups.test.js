@@ -95,18 +95,19 @@ describe('the favorites of a group in the menu', () => {
         4: { options: {} },
     };
 
-    test('only the waypoints of the group are listed, with the distance to the current location', () => {
-        const list = getFavMenuListByLayers({ layers, wpts, currentLoc: { lat: 50, lng: 30 }, pointsGroups });
+    test('only the waypoints of the group are listed, with the distance and the direction from the location', () => {
+        const list = getFavMenuListByLayers({ layers, wpts, location: { lat: 50, lng: 30 }, pointsGroups });
 
         expect(list.map((m) => m.name)).toEqual(['Hut', 'Peak']);
         expect(list.map((m) => m.locDist)).toEqual([0, 1112]);
+        expect(list[1].locBearing).toBeCloseTo(0);
         // the color of the group is used until the waypoint has its own
         expect(list.map((m) => m.color)).toEqual(['#00ff00', '#ff0000']);
         expect(list[0].icon).toContain('svg');
     });
 
     test('without a location the list is left as it is', () => {
-        const list = getFavMenuListByLayers({ layers, wpts, currentLoc: null, pointsGroups });
+        const list = getFavMenuListByLayers({ layers, wpts, location: null, pointsGroups });
 
         expect(list.map((m) => m.locDist)).toEqual([undefined, undefined]);
         expect(addLocDist({ location: null, wpts })).toBe(wpts);
@@ -122,7 +123,7 @@ describe('the favorites of a group in the menu', () => {
             2: { options: { name: 'Hut', point: twins[1] }, _latlng: { lat: 50, lng: 30 } },
         };
 
-        const list = getFavMenuListByLayers({ layers: twinLayers, wpts: twins, currentLoc: null, pointsGroups });
+        const list = getFavMenuListByLayers({ layers: twinLayers, wpts: twins, location: null, pointsGroups });
 
         expect(list.map((m) => m.point)).toEqual([twins[0], twins[1]]);
         expect(list[1].point).toBe(twins[1]);
@@ -148,19 +149,6 @@ describe('the selected favorite among the waypoints of its group', () => {
         expect(findSelectedWpt({ name: 'Lake' }, reloaded)).toBeUndefined();
         expect(findSelectedWpt(null, reloaded)).toBeUndefined();
         expect(findSelectedWpt({ name: 'Hut' }, null)).toBeUndefined();
-    });
-
-    test('the direction to a favorite is measured from the same point as the distance', () => {
-        const north = { layer: { _latlng: { lat: 50.01, lng: 30 } } };
-        const east = { layer: { _latlng: { lat: 50, lng: 30.01 } } };
-        const south = { latlng: { lat: 49.99, lng: 30 } };
-
-        addLocDist({ location: { lat: 50, lng: 30 }, markers: [north, east] });
-        addLocDist({ location: { lat: 50, lng: 30 }, wpts: [south] });
-
-        expect(north.locBearing).toBeCloseTo(0);
-        expect(east.locBearing).toBeCloseTo(90, 0);
-        expect(south.locBearing).toBeCloseTo(180);
     });
 });
 

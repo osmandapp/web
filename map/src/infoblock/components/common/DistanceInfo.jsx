@@ -10,7 +10,7 @@ import {
 } from '../../../menu/settings/units/UnitsConverter';
 import AppContext from '../../../context/AppContext';
 
-export default function DistanceInfo({ distance, bearing, isUserLocation }) {
+export default function DistanceInfo({ distance, bearing, isUserLocation, id = null }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const DISTANCE_THRESHOLD_LARGE_UNIT = 1000;
@@ -33,6 +33,7 @@ export default function DistanceInfo({ distance, bearing, isUserLocation }) {
                 }}
             />
             <span
+                id={id}
                 className={`${styles.placeDistance} ${locationClass}`}
                 style={{
                     whiteSpace: 'nowrap',

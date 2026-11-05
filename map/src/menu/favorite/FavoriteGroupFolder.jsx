@@ -11,7 +11,7 @@ import Empty from '../errors/Empty';
 import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     getFavMenuListByLayers,
-    getLocDist,
+    getDistanceAndBearing,
     LOCATION_UNAVAILABLE,
 } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
@@ -63,7 +63,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             markerList = getFavMenuListByLayers({
                 layers,
                 wpts: ctx.favorites.mapObjs[group.id].wpts,
-                currentLoc: getDistanceLocation(),
+                location: getDistanceLocation(),
                 pointsGroups: ctx.favorites.mapObjs[group.id].pointsGroups,
             });
         }
@@ -123,7 +123,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         if (updatedMarkers) {
             sortNearest(updatedMarkers);
         }
-    }, [sortMethod, ctx.selectedSort?.favorites, group, ctx.favorites, distanceFrom]);
+    }, [ctx.selectedSort?.favorites, group, ctx.favorites, distanceFrom]);
 
     useEffect(() => {
         if (folder) {
@@ -144,7 +144,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             let sortMarkers = [];
 
             if (sortFiles?.length > 0) {
-                sortMarkers = isWpts(sortFiles) ? getMarkersBySortFiles(sortFiles, markers) : sortFiles;
+                sortMarkers = getMarkersBySortFiles(sortFiles, markers);
             }
 
             const visibleMarkers = sortMarkers.length > 0 ? sortMarkers : markers;
@@ -185,7 +185,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             return null;
         }
 
-        return refMarkers.current.map((m) => ({ ...m, ...getLocDist(loc, m.layer?._latlng) }));
+        return refMarkers.current.map((m) => ({ ...m, ...getDistanceAndBearing(loc, m.layer?._latlng) }));
     }
 
     function sortNearest(markerList) {
@@ -206,10 +206,6 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             files: ctx.favorites.mapObjs[group.id]?.wpts,
             favoriteGroup: group,
         });
-    }
-
-    function isWpts(files) {
-        return files?.length > 0 && !files[0].layer;
     }
 
     function getMarkersBySortFiles(wpts, markers) {

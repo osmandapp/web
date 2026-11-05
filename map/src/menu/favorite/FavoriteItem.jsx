@@ -35,7 +35,12 @@ function FavInfo({ marker, isUserLocation }) {
                 </Typography>
             )}
             {marker.locDist > 0 && (
-                <DistanceInfo distance={marker.locDist} bearing={marker.locBearing} isUserLocation={isUserLocation} />
+                <DistanceInfo
+                    id={`se-fav-item-distance-${marker.name}`}
+                    distance={marker.locDist}
+                    bearing={marker.locBearing}
+                    isUserLocation={isUserLocation}
+                />
             )}
         </div>
     );

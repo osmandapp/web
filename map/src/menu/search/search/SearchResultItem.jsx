@@ -68,7 +68,7 @@ import { getTrackInfoText } from '../../tracks/CloudTrackItem';
 import {
     addFavoriteToMapFromSearch,
     getFavoriteMenuIconHtml,
-    getLocDist,
+    getDistanceAndBearing,
     resolveFavoriteMarkerForSearch,
 } from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
@@ -336,7 +336,7 @@ export default function SearchResultItem({ item, typeItem, index, loc = null, is
         const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
         const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
         if (!resolved) return null;
-        const marker = { ...resolved.marker, ...getLocDist(loc, resolved.marker.layer._latlng) };
+        const marker = { ...resolved.marker, ...getDistanceAndBearing(loc, resolved.marker.layer._latlng) };
         return (
             <FavoriteItem
                 id={id}
