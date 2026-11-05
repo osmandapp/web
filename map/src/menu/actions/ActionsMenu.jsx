@@ -11,6 +11,10 @@ export default function ActionsMenu({ open, setOpen, anchorEl, favItems = false,
         }
     }, [open]);
 
+    useEffect(() => {
+        return () => ctx.setOpenedPopper((popper) => (popper === anchorEl ? null : popper));
+    }, []);
+
     // a Popover left mounted while closed swallows the clicks on the panel under it
     return (
         actions &&

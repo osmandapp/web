@@ -39,6 +39,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     const [, height] = useWindowSize();
     const [listContainerRef, listHeight] = useElementHeight();
     const [markers, setMarkers] = useState([]);
+    const [sortOnMenuClose, setSortOnMenuClose] = useState(false);
     const currentLoc = useGeoLocation(ctx);
 
     const refMarkers = useRef(null);
@@ -119,11 +120,22 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     // Kept on map move on purpose; picking the option again re-sorts
     useEffect(() => {
         if (!isNearestSort(sortMethod)) return;
-        const updatedMarkers = getMarkersWithDistance();
-        if (updatedMarkers) {
-            sortNearest(updatedMarkers);
+        if (ctx.openedPopper) {
+            setSortOnMenuClose(true);
+            return;
         }
+        sortNearest();
     }, [ctx.selectedSort?.favorites, group, ctx.favorites, distanceFrom]);
+
+    useEffect(() => {
+        if (ctx.openedPopper || !sortOnMenuClose) {
+            return;
+        }
+        setSortOnMenuClose(false);
+        if (isNearestSort(sortMethod)) {
+            sortNearest();
+        }
+    }, [ctx.openedPopper]);
 
     useEffect(() => {
         if (folder) {
@@ -188,7 +200,9 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         return refMarkers.current.map((m) => ({ ...m, ...getDistanceAndBearing(loc, m.layer?._latlng) }));
     }
 
-    function sortNearest(markerList) {
+    function sortNearest() {
+        const markerList = getMarkersWithDistance();
+        if (!markerList) return;
         const { files } = doSort({
             method: sortMethod,
             markers: markerList,
