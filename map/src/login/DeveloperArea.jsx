@@ -12,6 +12,7 @@ import PhotoLibraryOutlinedIcon from '@mui/icons-material/PhotoLibraryOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { ReactComponent as FilterIcon } from '../assets/icons/ic_action_filter.svg';
 import { ReactComponent as CopyIcon } from '../assets/icons/ic_action_copy.svg';
+import { ReactComponent as EmailIcon } from '../assets/icons/ic_action_at_mail.svg';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
 import { useTranslation } from 'react-i18next';
 import ThickDivider from '../frame/components/dividers/ThickDivider';
@@ -59,6 +60,12 @@ export default function DeveloperArea() {
                 name={t('web:info')}
                 icon={<InfoIcon />}
                 onClick={() => window.open(`${window.location.origin}/admin/info`, '_blank')}
+            />
+            <DividerWithMargin margin={'64px'} />
+            <SimpleItemWithRightInfo
+                name={t('web:dev_email_templates')}
+                icon={<EmailIcon />}
+                onClick={() => window.open(`${window.location.origin}/admin/email-templates`, '_blank')}
             />
             <DividerWithMargin margin={'64px'} />
             <SimpleItemWithRightInfo
