@@ -378,6 +378,12 @@ const SortActions = forwardRef(
             }
         };
 
+        const handleClick = (event) => {
+            if (event.target.value === currentMethod) {
+                handleChange(event);
+            }
+        };
+
         function setSelectedSort(method) {
             let updatedSelectedSort = { ...ctx.selectedSort };
             if (trackGroup) {
@@ -386,10 +392,10 @@ const SortActions = forwardRef(
                 }
                 updatedSelectedSort.tracks[trackGroup.fullName] = method;
             } else if (favoriteGroup) {
-                if (!updatedSelectedSort.favorites) {
-                    updatedSelectedSort.favorites = {};
-                }
-                updatedSelectedSort.favorites[getFavoriteSortKey(favoriteGroup, smartf)] = method;
+                updatedSelectedSort.favorites = {
+                    ...updatedSelectedSort.favorites,
+                    [getFavoriteSortKey(favoriteGroup, smartf)]: method,
+                };
             } else if (customGroup) {
                 if (!updatedSelectedSort.custom) {
                     updatedSelectedSort.custom = {};
@@ -403,7 +409,7 @@ const SortActions = forwardRef(
             <Box ref={ref}>
                 <Paper className={styles.actions}>
                     <FormControl>
-                        <RadioGroup value={currentMethod} onChange={handleChange}>
+                        <RadioGroup value={currentMethod} onChange={handleChange} onClick={handleClick}>
                             {favoriteGroup && setSortFiles && (
                                 <>
                                     <FormControlLabel

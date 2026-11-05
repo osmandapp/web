@@ -50,6 +50,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     const sortMethod = getSelectedSort({ favoriteGroup: group, ctx });
     const useMapCenter = sortMethod === NEAREST_MAP_CENTER_SORT || currentLoc === LOCATION_UNAVAILABLE;
     const mapCenter = useMapCenter ? getMapCenter(mtx, hash) : null;
+    const distanceFrom = useMapCenter ? 'mapCenter' : currentLoc ? 'location' : null;
 
     // get markers
     useEffect(() => {
@@ -107,28 +108,22 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     }, [smartf, ctx.selectedSort?.favorites]);
 
     useEffect(() => {
-        const loc = getDistanceLocation();
-        if (!loc || !refMarkers.current?.length) {
-            return;
-        }
         if (ctx.openedPopper) return;
-        // update markers location
-        const updatedMarkers = refMarkers.current.map((m) => ({ ...m, ...getLocDist(loc, m.layer?._latlng) }));
-        setMarkers(updatedMarkers);
-        if (isNearestSort(sortMethod)) {
-            sortMarkers(updatedMarkers);
+        const updatedMarkers = getMarkersWithDistance();
+        if (updatedMarkers) {
+            // update markers location
+            setMarkers(updatedMarkers);
         }
-    }, [
-        sortMethod,
-        useMapCenter,
-        currentLoc?.lat,
-        currentLoc?.lng,
-        mapCenter?.lat,
-        mapCenter?.lng,
-        group,
-        ctx.favorites,
-        ctx.openedPopper,
-    ]);
+    }, [currentLoc?.lat, currentLoc?.lng, useMapCenter, mapCenter?.lat, mapCenter?.lng, ctx.openedPopper]);
+
+    // Kept on map move on purpose; picking the option again re-sorts
+    useEffect(() => {
+        if (!isNearestSort(sortMethod)) return;
+        const updatedMarkers = getMarkersWithDistance();
+        if (updatedMarkers) {
+            sortNearest(updatedMarkers);
+        }
+    }, [sortMethod, ctx.selectedSort?.favorites, group, ctx.favorites, distanceFrom]);
 
     useEffect(() => {
         if (folder) {
@@ -182,6 +177,25 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
     function getDistanceLocation() {
         return useMapCenter ? mapCenter : currentLoc;
+    }
+
+    function getMarkersWithDistance() {
+        const loc = getDistanceLocation();
+        if (!loc || !refMarkers.current?.length) {
+            return null;
+        }
+
+        return refMarkers.current.map((m) => ({ ...m, ...getLocDist(loc, m.layer?._latlng) }));
+    }
+
+    function sortNearest(markerList) {
+        const { files } = doSort({
+            method: sortMethod,
+            markers: markerList,
+            files: ctx.favorites.mapObjs[group.id]?.wpts,
+            favoriteGroup: group,
+        });
+        setSortFiles(files?.map((m) => m.point) ?? []);
     }
 
     function sortMarkers(markerList) {
