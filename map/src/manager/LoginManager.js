@@ -4,7 +4,7 @@ import { LOGIN_URL, MAIN_URL_WITH_SLASH } from './GlobalManager';
 export const FREE_ACCOUNT = 'Free';
 export const FREE_ACCOUNT_SUB_TYPE = 'OsmAnd Start';
 export const INIT_LOGIN_STATE = 'INIT';
-// REACT_APP_SKIP_LOGIN=yes (local debug only): every feature behind the login works without an account
+// REACT_APP_SKIP_LOGIN=yes (local debug only): login and PRO features work without an account
 export const SKIP_LOGIN = process.env.REACT_APP_SKIP_LOGIN === 'yes';
 export const SKIP_LOGIN_USER = 'debug@localhost';
 export const ERROR_EMAIL = 'error_email';

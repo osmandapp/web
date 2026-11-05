@@ -36,7 +36,7 @@ export const LoginContextProvider = ({ children }) => {
     const [loginRoles, setLoginRoles] = useState(null);
     const [openLoginMenu, setOpenLoginMenu] = useState(false);
     const [loginState, setLoginState] = useState({ default: true });
-    const [accountInfo, setAccountInfo] = useState(SKIP_LOGIN ? { account: FREE_ACCOUNT } : null);
+    const [accountInfo, setAccountInfo] = useState(SKIP_LOGIN ? { name: 'OsmAnd Pro', valid: 'true' } : null);
     const [wantDeleteAcc, setWantDeleteAcc] = useState(false);
     const [loginError, setLoginError] = useState(null);
     const [openChangeEmailDialog, setOpenChangeEmailDialog] = useState(false);
