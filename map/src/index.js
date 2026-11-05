@@ -1,4 +1,5 @@
 import React from 'react';
+import 'leaflet/dist/leaflet.css';
 import './assets/css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';

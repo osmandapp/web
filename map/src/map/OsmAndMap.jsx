@@ -239,7 +239,6 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                 <TransportStopsLayer />
                 <CustomTileLayer
                     ref={tileLayer}
-                    attribution='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
                     minZoom={2}
                     maxZoom={20}
                     maxNativeZoom={19}
@@ -252,7 +251,10 @@ const OsmAndMap = ({ mainMenuWidth, menuInfoWidth }) => {
                     <Marker ref={hoverPointRef} position={hoverPoint} icon={MarkerOptions.options.pointerGraph} />
                 )}
                 <ScaleControl position="bottomleft" imperial={false} />
-                <AttributionControl position="bottomleft" prefix={false} />
+                <AttributionControl
+                    position="bottomleft"
+                    prefix='OsmAnd Web 1.03 &amp;copy <a href="https://osm.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+                />
                 <LocationControl position="bottomright" />
                 <ZoomControl position="bottomright" />
                 <ContextMenu setGeocodingData={setGeocodingData} setRegionData={setRegionData} />
