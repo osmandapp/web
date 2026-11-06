@@ -1,11 +1,18 @@
-import { Collapse, IconButton, Link, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
+import { Collapse, Link, ListItemIcon, ListItemText, MenuItem, Tooltip, Typography } from '@mui/material';
 import styles from './wptDetails.module.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import parse from 'html-react-parser';
-import { CUISINE_PREFIX, openWikipediaContent, POI_PREFIX, SEPARATOR, WIKIPEDIA } from './WptTagsProvider';
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import {
+    CUISINE_PREFIX,
+    openWikipediaContent,
+    OSMAND_PREFIX,
+    POI_PREFIX,
+    SEPARATOR,
+    WIKIPEDIA,
+} from './WptTagsProvider';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
+import CollapsableTagHeader from './CollapsableTagHeader';
 import i18n from 'i18next';
 import MoreInfoDialog from './MoreInfoDialog';
 import AppContext from '../../../context/AppContext';
@@ -32,7 +39,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         setNewTag(null);
         if (tag?.collapsable) {
             const items = tag.value.split(SEPARATOR);
-            if (items.length > 1) {
+            if (isExpandableGroup(items, tag)) {
                 setTagList(items);
             }
         }
@@ -137,7 +144,12 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
     function prepareValue(item, addPrefix, POI_PREFIX) {
         const hasCuisine = item.startsWith(CUISINE_PREFIX);
         const cuisinePrefix = addPrefix && !hasCuisine ? CUISINE_PREFIX : '';
-        const base = hasCuisine ? item.slice(CUISINE_PREFIX.length) : item;
+        let base = item;
+        if (hasCuisine) {
+            base = item.slice(CUISINE_PREFIX.length);
+        } else if (item.startsWith(OSMAND_PREFIX)) {
+            base = item.slice(OSMAND_PREFIX.length);
+        }
 
         const preparedItem = cuisinePrefix + item;
 
@@ -159,6 +171,17 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
         }
 
         return key ? translateWithSplit(t, key) : base;
+    }
+
+    function getItemLabelParts(item, index) {
+        return getValueLabelParts(prepareValue(item, false, POI_PREFIX), tag.labels?.[index]);
+    }
+
+    function getCollapsableItemText(item, index) {
+        const name = getItemLabelParts(item, index).tagValue;
+        const value = tag.values?.[index];
+
+        return value ? `${name}: ${value}` : name;
     }
 
     function prepareValueFromList(tag) {
@@ -210,9 +233,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             let prefix = getTranslation({ key: tag.textPrefix });
             let value;
             if (tag.labels) {
-                const parts = items.map((item, i) =>
-                    getValueLabelParts(prepareValue(item, false, POI_PREFIX), tag.labels[i])
-                );
+                const parts = items.map(getItemLabelParts);
                 prefix = parts.find((part) => part.tagName)?.tagName ?? prefix;
                 value = parts.map((part) => part.tagValue).join(' • ');
             } else {
@@ -220,15 +241,13 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             }
 
             return (
-                <>
-                    <ListItemText onClick={() => setOpen(!open)}>
-                        <MenuItemWithLines name={prefix} maxLines={2} className={styles.tagPrefix} />
-                        <MenuItemWithLines name={value} maxLines={1} className={styles.tagName} />
-                    </ListItemText>
-                    {items.length > 1 && (
-                        <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
-                    )}
-                </>
+                <CollapsableTagHeader
+                    prefix={prefix}
+                    value={value}
+                    expandable={isExpandableGroup(items, tag)}
+                    open={open}
+                    setOpen={setOpen}
+                />
             );
         } else if (tag.otherLangs) {
             const mainTag = newTag ?? tag;
@@ -236,21 +255,15 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             const value = prepareValueFromList(mainTag);
 
             return (
-                <>
-                    <ListItemText onClick={() => setOpen(!open)}>
-                        <MenuItemWithLines
-                            name={getTranslation({
-                                key: mainTag.textPrefix,
-                            })}
-                            maxLines={2}
-                            className={styles.tagPrefix}
-                        />
-                        <MenuItemWithLines name={value} maxLines={1} className={styles.tagName} />
-                    </ListItemText>
-                    {listTags.length > 0 && (
-                        <IconButton onClick={() => setOpen(!open)}>{open ? <ExpandLess /> : <ExpandMore />}</IconButton>
-                    )}
-                </>
+                <CollapsableTagHeader
+                    prefix={getTranslation({
+                        key: mainTag.textPrefix,
+                    })}
+                    value={value}
+                    expandable={listTags.length > 0}
+                    open={open}
+                    setOpen={setOpen}
+                />
             );
         } else {
             const { tagName, tagValue } = tag.labels
@@ -347,12 +360,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         typeof item === 'string' ? (
                             <MenuItem disableRipple key={index} divider className={styles.tagList}>
                                 <Typography key={index} className={styles.tagName}>
-                                    {
-                                        getValueLabelParts(
-                                            translateWithSplit(t, `${POI_PREFIX}${item}`),
-                                            tag.labels?.[index]
-                                        ).tagValue
-                                    }
+                                    {getCollapsableItemText(item, index)}
                                 </Typography>
                             </MenuItem>
                         ) : (
@@ -392,4 +400,8 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
             )}
         </>
     );
+}
+
+function isExpandableGroup(items, tag) {
+    return items.length > 1 || tag.values?.some(Boolean);
 }
