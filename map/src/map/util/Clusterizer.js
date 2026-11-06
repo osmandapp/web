@@ -240,6 +240,9 @@ function clusterPlaces(places, zoom, isFavorites) {
             continue;
         }
         const coords = isFavorites ? getPointLatLon(place) : null;
+        if (isFavorites && !coords) {
+            continue;
+        }
         const [lng, lat] = coords ? [coords.lon, coords.lat] : place.geometry.coordinates;
         const x31 = Math.floor(((lng + 180) / 360) * (1 << 31));
         const y31 = Math.floor(

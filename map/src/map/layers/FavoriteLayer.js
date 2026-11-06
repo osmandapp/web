@@ -58,8 +58,11 @@ export function filterPointsInBounds(points, map) {
     const mapBounds = map.getBounds();
 
     return points.filter((point) => {
-        if (point == null) return false;
+        if (point?.lat == null || point?.lon == null) {
+            return false;
+        }
         const pointLatLng = L.latLng(point.lat, point.lon);
+
         return mapBounds.contains(pointLatLng);
     });
 }
