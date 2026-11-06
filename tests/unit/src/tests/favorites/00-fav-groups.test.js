@@ -3,6 +3,7 @@ import FavoritesManager, {
     addLocDist,
     createFavGroupFreeName,
     decodeGroupNameFromFile,
+    DEFAULT_FAV_GROUP_NAME,
     extractBaseFavFileName,
     findFavGroupByFileName,
     findSelectedWpt,
@@ -13,6 +14,8 @@ import FavoritesManager, {
     normalizeGroupNameForFile,
 } from '@map/manager/FavoritesManager';
 import { fakeIndexedDbStore } from '../../util/indexedDb';
+import { SHARE_TYPE } from '@map/menu/share/shareConstants';
+import { FAVORITE_SORT_KEYS_VERSION, getFavoriteSortKey, migrateFavoriteSortKeys } from '@map/menu/actions/SortActions';
 
 const t = (key) => key;
 
@@ -92,21 +95,29 @@ describe('the favorites of a group in the menu', () => {
         4: { options: {} },
     };
 
-    test('only the waypoints of the group are listed, with the distance to the current location', () => {
-        const list = getFavMenuListByLayers({ layers, wpts, currentLoc: { lat: 50, lng: 30 }, pointsGroups });
+    test('only the waypoints of the group are listed, with the distance and the direction from the location', () => {
+        const list = getFavMenuListByLayers({ layers, wpts, location: { lat: 50, lng: 30 }, pointsGroups });
 
         expect(list.map((m) => m.name)).toEqual(['Hut', 'Peak']);
-        expect(list.map((m) => m.locDist)).toEqual(['0', '1112']);
+        expect(list.map((m) => m.locDist)).toEqual([0, 1112]);
+        expect(list[1].locBearing).toBeCloseTo(0);
         // the color of the group is used until the waypoint has its own
         expect(list.map((m) => m.color)).toEqual(['#00ff00', '#ff0000']);
         expect(list[0].icon).toContain('svg');
     });
 
     test('without a location the list is left as it is', () => {
-        const list = getFavMenuListByLayers({ layers, wpts, currentLoc: null, pointsGroups });
+        const list = getFavMenuListByLayers({ layers, wpts, location: null, pointsGroups });
 
         expect(list.map((m) => m.locDist)).toEqual([undefined, undefined]);
-        expect(addLocDist({ location: null, wpts })).toBe(wpts);
+    });
+
+    test('the distance is added to copies of the markers', () => {
+        const markers = [{ name: 'Peak', layer: layers[2] }];
+        const list = addLocDist({ location: { lat: 50, lng: 30 }, markers });
+
+        expect(list[0].locDist).toBe(1112);
+        expect(markers[0].locDist).toBeUndefined();
     });
 
     test('two waypoints with the same name are listed with their own points', () => {
@@ -119,7 +130,7 @@ describe('the favorites of a group in the menu', () => {
             2: { options: { name: 'Hut', point: twins[1] }, _latlng: { lat: 50, lng: 30 } },
         };
 
-        const list = getFavMenuListByLayers({ layers: twinLayers, wpts: twins, currentLoc: null, pointsGroups });
+        const list = getFavMenuListByLayers({ layers: twinLayers, wpts: twins, location: null, pointsGroups });
 
         expect(list.map((m) => m.point)).toEqual([twins[0], twins[1]]);
         expect(list[1].point).toBe(twins[1]);
@@ -145,6 +156,59 @@ describe('the selected favorite among the waypoints of its group', () => {
         expect(findSelectedWpt({ name: 'Lake' }, reloaded)).toBeUndefined();
         expect(findSelectedWpt(null, reloaded)).toBeUndefined();
         expect(findSelectedWpt({ name: 'Hut' }, null)).toBeUndefined();
+    });
+});
+
+describe('the saved sort of favorites', () => {
+    test('the list of groups, the shared folder and every group keep their own sort', () => {
+        const defaultGroup = FavoritesManager.createGroup({ name: 'favorites.gpx', userid: 1 });
+        const ownGroup = FavoritesManager.createGroup(favFile('food'));
+        const sharedGroup = FavoritesManager.createGroup({ ...favFile('food'), userid: 2, sharedWithMe: true });
+        const keys = [
+            getFavoriteSortKey(DEFAULT_FAV_GROUP_NAME),
+            getFavoriteSortKey(DEFAULT_FAV_GROUP_NAME, { type: SHARE_TYPE }),
+            getFavoriteSortKey(defaultGroup),
+            getFavoriteSortKey(ownGroup),
+            getFavoriteSortKey(sharedGroup, { type: SHARE_TYPE }),
+        ];
+
+        expect(defaultGroup.name).toBe(DEFAULT_FAV_GROUP_NAME);
+        expect(new Set(keys).size).toBe(keys.length);
+    });
+
+    test('a sort saved under the group name moves to the group id once', () => {
+        const defaultGroup = FavoritesManager.createGroup({ name: 'favorites.gpx', userid: 1 });
+        const ownGroup = FavoritesManager.createGroup(favFile('food'));
+        const sharedGroup = FavoritesManager.createGroup({ ...favFile('food'), userid: 2, sharedWithMe: true });
+        const shopsGroup = FavoritesManager.createGroup(favFile('shops'));
+        const groups = [defaultGroup, ownGroup, sharedGroup, shopsGroup];
+        const oldSort = {
+            tracks: { Trips: 'az' },
+            favorites: { [DEFAULT_FAV_GROUP_NAME]: 'za', food: 'az', shops: 'time', [shopsGroup.id]: 'za', gone: 'az' },
+        };
+
+        // without the groups (not logged in yet) the sort is not marked, so it still moves after the login
+        expect(migrateFavoriteSortKeys(oldSort, [])).toBeNull();
+        // before the saved sort is read nothing is marked, or the mark would be saved over it
+        expect(migrateFavoriteSortKeys({}, groups)).toBeNull();
+
+        const migrated = migrateFavoriteSortKeys(oldSort, groups);
+
+        // an own and a shared group of one name shared the old key; 'favorites' is still the sort of the group list
+        expect(migrated).toEqual({
+            tracks: { Trips: 'az' },
+            favorites: {
+                [DEFAULT_FAV_GROUP_NAME]: 'za',
+                [ownGroup.id]: 'az',
+                [sharedGroup.id]: 'az',
+                [shopsGroup.id]: 'za',
+                gone: 'az',
+            },
+            favoritesKeysVersion: FAVORITE_SORT_KEYS_VERSION,
+        });
+        // a group created later with the name of a removed one does not take its old sort
+        const goneGroup = FavoritesManager.createGroup(favFile('gone'));
+        expect(migrateFavoriteSortKeys(migrated, [...groups, goneGroup])).toBeNull();
     });
 });
 

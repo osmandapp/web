@@ -34,7 +34,6 @@ import {
 } from '../../../manager/searchConstants';
 import { createSearchMatchedObjectActions } from '../../../manager/SpatialSearchMatchedObjects';
 import DistanceInfo from '../../../infoblock/components/common/DistanceInfo';
-import { getDistance, getBearing } from '../../../util/Utils';
 import {
     ADDRESS_1,
     ADDRESS_2,
@@ -68,6 +67,7 @@ import { getTrackInfoText } from '../../tracks/CloudTrackItem';
 import {
     addFavoriteToMapFromSearch,
     getFavoriteMenuIconHtml,
+    getDistanceAndBearing,
     resolveFavoriteMarkerForSearch,
 } from '../../../manager/FavoritesManager';
 import FavoriteItem from '../../favorite/FavoriteItem';
@@ -153,7 +153,7 @@ function safeCategoryTypeKey(type) {
     return String(type).replaceAll(/[^a-zA-Z0-9_-]/g, '_');
 }
 
-export default function SearchResultItem({ item, typeItem, index, currentLoc, loc = null, isUser = false }) {
+export default function SearchResultItem({ item, typeItem, index, loc = null, isUser = false }) {
     const ctx = useContext(AppContext);
 
     const navigate = useNavigate();
@@ -211,11 +211,16 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         const res = getPropsFromSearchResultItem(item.properties, t, null, ctx.listFiles, ctx.unitsSettings);
         const lat = item.geometry?.coordinates?.[1];
         const lon = item.geometry?.coordinates?.[0];
-        const hasCoords = loc && lat != null && lon != null && !(lat === 0 && lon === 0);
-        const distance = hasCoords ? getDistance(loc.lat, loc.lng, lat, lon) : null;
-        const bearing = hasCoords ? getBearing(loc.lat, loc.lng, lat, lon) : null;
+        const hasCoords = lat != null && lon != null && !(lat === 0 && lon === 0);
+        const distanceAndBearing = hasCoords ? getDistanceAndBearing(loc, { lat, lng: lon }) : null;
         const icon = item.icon;
-        return { ...res, icon, distance, bearing, isUserLocation: isUser };
+        return {
+            ...res,
+            icon,
+            distance: distanceAndBearing?.locDist ?? null,
+            bearing: distanceAndBearing?.locBearing ?? null,
+            isUserLocation: isUser,
+        };
     }
 
     const id = (() => {
@@ -335,13 +340,13 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         const groupId = item.properties[FAVORITE_HIT_GROUP_ID];
         const resolved = resolveFavoriteMarkerForSearch(ctx, groupId, name);
         if (!resolved) return null;
-        const marker = { ...resolved.marker, locDist: distance };
+        const marker = { ...resolved.marker, ...getDistanceAndBearing(loc, resolved.marker.layer._latlng) };
         return (
             <FavoriteItem
                 id={id}
                 marker={marker}
                 group={resolved.group}
-                currentLoc={currentLoc}
+                isUserLocation={isUserLocation}
                 onOpen={() => addFavoriteToMapFromSearch(ctx, { group: resolved.group, marker: resolved.marker })}
                 hideActions
             />
@@ -352,9 +357,9 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
         return (
             <FavoriteItem
                 id={id}
-                marker={buildWptMarker(item, name, distance)}
+                marker={buildWptMarker(item, name, distance, bearing)}
                 group={{ id: item.properties[WPT_TRACK_FILE], name: item.properties[CATEGORY_NAME] }}
-                currentLoc={currentLoc}
+                isUserLocation={isUserLocation}
                 onOpen={() => {
                     openTrackWptFromSearch(ctx, {
                         file: item.properties[WPT_TRACK_FILE],
@@ -484,7 +489,7 @@ export default function SearchResultItem({ item, typeItem, index, currentLoc, lo
 
 // FavoriteItem marker for a waypoint search result; the fake layer feeds the
 // second line (address slot) and getFavoriteId (getLatLng)
-function buildWptMarker(item, name, distance) {
+function buildWptMarker(item, name, distance, bearing) {
     const properties = item.properties;
 
     return {
@@ -495,6 +500,7 @@ function buildWptMarker(item, name, distance) {
             background: properties[BACKGROUND_TYPE_EXTENSION],
         }),
         locDist: distance,
+        locBearing: bearing,
         layer: {
             options: {
                 address: properties[CATEGORY_NAME],

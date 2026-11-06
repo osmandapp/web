@@ -9,14 +9,14 @@ import styles from '../trackfavmenu.module.css';
 import TracksManager, { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
 import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
-import { byTime } from './SortActions';
+import { byTime, getSelectedSort } from './SortActions';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import FavoriteGroupUploader from '../../frame/util/FavoriteGroupUploader';
 import IconButtonWithPermissions from '../../frame/components/IconButtonWithPermissions';
 import { useTranslation } from 'react-i18next';
 import { closeHeader } from './HeaderHelper';
 import { confirm } from '../../dialogs/GlobalConfirmationDialog';
-import SortFilesButton, { getSelectedSort } from '../components/buttons/SortFilesButton';
+import SortFilesButton from '../components/buttons/SortFilesButton';
 import LoginContext from '../../context/LoginContext';
 import { SHARE_TYPE, SMART_TYPE } from '../share/shareConstants';
 import ActionIconBtn from '../../frame/components/btns/ActionIconBtn';
@@ -33,7 +33,6 @@ export default function GroupHeader({
     favoriteGroup = null,
     setSortGroups = null,
     setSortFiles = null,
-    markers = null,
     onClose = null,
 }) {
     const ctx = useContext(AppContext);
@@ -153,7 +152,6 @@ export default function GroupHeader({
                             favoriteGroup={favoriteGroup}
                             setSortGroups={setSortGroups}
                             setSortFiles={setSortFiles}
-                            markers={markers}
                             smartf={smartf}
                         />
                         {type === TRACKS_TYPE && !hiddenBtn && (

@@ -1,7 +1,7 @@
 import { Box, Divider, FormControl, FormControlLabel, Paper, Radio, RadioGroup } from '@mui/material';
 import { getAnalysisData, getGpxTime, filterSmartFolders } from '../../manager/track/TracksManager';
 import { collator } from '../../context/AppContext';
-import React, { forwardRef, useContext, useEffect, useState } from 'react';
+import React, { forwardRef, useContext, useEffect } from 'react';
 import { ReactComponent as AscendingIcon } from '../../assets/icons/ic_action_sort_by_name_ascending.svg';
 import { ReactComponent as TimeIcon } from '../../assets/icons/ic_action_time.svg';
 import { ReactComponent as DescendingIcon } from '../../assets/icons/ic_action_sort_by_name_descending.svg';
@@ -10,6 +10,7 @@ import { ReactComponent as ShortToLongIcon } from '../../assets/icons/ic_action_
 import { ReactComponent as NewDateIcon } from '../../assets/icons/ic_action_sort_date_1.svg';
 import { ReactComponent as OldDateIcon } from '../../assets/icons/ic_action_sort_date_31.svg';
 import { ReactComponent as NearestIcon } from '../../assets/icons/ic_show_on_map_outlined.svg';
+import { ReactComponent as NearestMapCenterIcon } from '../../assets/icons/ic_action_nearest_map_center.svg';
 import { ReactComponent as LongDurationIcon } from '../../assets/icons/ic_action_sort_duration_long_to_short.svg';
 import { ReactComponent as ShortDurationIcon } from '../../assets/icons/ic_action_sort_duration_short_to_long.svg';
 import styles from '../trackfavmenu.module.css';
@@ -17,9 +18,14 @@ import AppContext from '../../context/AppContext';
 import FavoritesManager, { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
 import i18n from '../../i18n';
 import ActionItem from '../components/ActionItem';
-import { getSelectedSort, TRAVEL_CUSTOM_GROUP } from '../components/buttons/SortFilesButton';
+import { TRAVEL_CUSTOM_GROUP } from '../components/buttons/SortFilesButton';
 import { SHARE_TYPE } from '../share/shareConstants';
 import { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
+
+export const NEAREST_SORT = 'nearest';
+export const NEAREST_MAP_CENTER_SORT = 'nearestMapCenter';
+
+export const FAVORITE_SORT_KEYS_VERSION = 1;
 
 const az = (a, b) => collator.compare(a, b);
 
@@ -96,10 +102,14 @@ function byLocation(files, reverse, markers = null) {
     });
 }
 
+export function isNearestSort(method) {
+    return method === NEAREST_SORT || method === NEAREST_MAP_CENTER_SORT;
+}
+
 export function doSort({ method, setSortFiles, setSortGroups, markers, files, groups, favoriteGroup }) {
     let sortedFiles;
     if (files && files.length > 0) {
-        if (method === 'nearest' && markers) {
+        if (isNearestSort(method) && markers) {
             sortedFiles = allMethods[method].callback(files, allMethods[method].reverse, markers);
         } else {
             sortedFiles = allMethods[method].callback(files, allMethods[method].reverse);
@@ -131,21 +141,81 @@ export function doSort({ method, setSortFiles, setSortGroups, markers, files, gr
     return { files: sortedFiles, groups: sortedGroups };
 }
 
+export function getFavoriteSortKey(favoriteGroup, smartf = null) {
+    if (favoriteGroup === DEFAULT_FAV_GROUP_NAME) {
+        return smartf?.type === SHARE_TYPE ? SHARE_TYPE : DEFAULT_FAV_GROUP_NAME;
+    }
+
+    return favoriteGroup.id;
+}
+
+export function migrateFavoriteSortKeys(selectedSort, groups) {
+    if (
+        !groups?.length ||
+        !selectedSort?.favorites ||
+        selectedSort.favoritesKeysVersion === FAVORITE_SORT_KEYS_VERSION
+    ) {
+        return null;
+    }
+    const oldSort = selectedSort.favorites;
+    const favorites = { ...oldSort };
+    const oldKeys = new Set();
+    groups.forEach((group) => {
+        const oldKey = group.name;
+        if (oldKey === DEFAULT_FAV_GROUP_NAME || oldKey === SHARE_TYPE || oldSort[oldKey] === undefined) {
+            return;
+        }
+        if (favorites[group.id] === undefined) {
+            favorites[group.id] = oldSort[oldKey];
+        }
+        oldKeys.add(oldKey);
+    });
+    oldKeys.forEach((key) => delete favorites[key]);
+
+    return { ...selectedSort, favorites, favoritesKeysVersion: FAVORITE_SORT_KEYS_VERSION };
+}
+
+export function getSelectedSort({
+    trackGroup = null,
+    favoriteGroup = null,
+    customGroup = null,
+    customGroupType = null,
+    smartf = null,
+    ctx,
+    defaultMethod = null,
+}) {
+    if (trackGroup && ctx.selectedSort?.tracks) {
+        return ctx.selectedSort.tracks[trackGroup.fullName];
+    } else if (favoriteGroup && ctx.selectedSort?.favorites) {
+        return ctx.selectedSort.favorites[getFavoriteSortKey(favoriteGroup, smartf)];
+    } else if (customGroup && ctx.selectedSort?.custom) {
+        return ctx.selectedSort.custom[customGroupType];
+    }
+    return defaultMethod;
+}
+
 export function updateSortList({ oldName, newName, isFavorites = false, isTracks = false, ctx }) {
     if (isTracks && ctx.selectedSort?.tracks) {
         ctx.selectedSort.tracks[newName] = ctx.selectedSort.tracks[oldName];
-    } else if (isFavorites && ctx.selectedSort?.favorites) {
+    } else if (isFavorites && ctx.selectedSort?.favorites?.[oldName]) {
         ctx.selectedSort.favorites[newName] = ctx.selectedSort.favorites[oldName];
+        delete ctx.selectedSort.favorites[oldName];
     }
     ctx.setSelectedSort({ ...ctx.selectedSort });
 }
 
 export const allMethods = {
-    nearest: {
+    [NEAREST_SORT]: {
         reverse: false,
         callback: byLocation,
         icon: <NearestIcon />,
-        name: () => i18n?.t('shared_string_nearest'),
+        name: () => i18n?.t('sort_by_nearest_to_current_location'),
+    },
+    [NEAREST_MAP_CENTER_SORT]: {
+        reverse: false,
+        callback: byLocation,
+        icon: <NearestMapCenterIcon />,
+        name: () => i18n?.t('sort_by_nearest_to_map_center'),
     },
     time: {
         default: true,
@@ -229,22 +299,21 @@ const SortActions = forwardRef(
             setOpenSort = null,
             setSortIcon = null,
             setSortName = null,
-            markers = null,
             smartf = null,
         },
         ref
     ) => {
         const ctx = useContext(AppContext);
-        const [currentMethod, setCurrentMethod] = useState(
+        const currentMethod =
             getSelectedSort({
                 trackGroup,
                 favoriteGroup,
                 customGroup,
                 customGroupType,
+                smartf,
                 ctx,
                 defaultMethod: defaultSortMethod(customGroupType),
-            }) || defaultSortMethod(customGroupType)
-        );
+            }) || defaultSortMethod(customGroupType);
 
         const files = () => {
             if (trackGroup) {
@@ -279,12 +348,11 @@ const SortActions = forwardRef(
         };
 
         useEffect(() => {
-            if (currentMethod) {
+            if (currentMethod && !isNearestSort(currentMethod)) {
                 doSort({
                     method: currentMethod,
                     setSortFiles,
                     setSortGroups,
-                    markers,
                     files: files(),
                     groups: groups(),
                     favoriteGroup,
@@ -294,7 +362,9 @@ const SortActions = forwardRef(
 
         const handleChange = (event) => {
             const method = event.target.value;
-            doSort({ method, setSortFiles, setSortGroups, markers, files: files(), groups: groups(), favoriteGroup });
+            if (!isNearestSort(method)) {
+                doSort({ method, setSortFiles, setSortGroups, files: files(), groups: groups(), favoriteGroup });
+            }
             if (setOpenSort) {
                 setOpenSort(false);
             }
@@ -307,7 +377,12 @@ const SortActions = forwardRef(
             if (setSortName) {
                 setSortName(allMethods[method].name());
             }
-            setCurrentMethod(method);
+        };
+
+        const handleClick = (event) => {
+            if (event.target.value === currentMethod && isNearestSort(currentMethod)) {
+                handleChange(event);
+            }
         };
 
         function setSelectedSort(method) {
@@ -318,12 +393,10 @@ const SortActions = forwardRef(
                 }
                 updatedSelectedSort.tracks[trackGroup.fullName] = method;
             } else if (favoriteGroup) {
-                if (!updatedSelectedSort.favorites) {
-                    updatedSelectedSort.favorites = {};
-                }
-                updatedSelectedSort.favorites[
-                    favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
-                ] = method;
+                updatedSelectedSort.favorites = {
+                    ...updatedSelectedSort.favorites,
+                    [getFavoriteSortKey(favoriteGroup, smartf)]: method,
+                };
             } else if (customGroup) {
                 if (!updatedSelectedSort.custom) {
                     updatedSelectedSort.custom = {};
@@ -337,16 +410,26 @@ const SortActions = forwardRef(
             <Box ref={ref}>
                 <Paper className={styles.actions}>
                     <FormControl>
-                        <RadioGroup value={currentMethod} onChange={handleChange}>
+                        <RadioGroup value={currentMethod} onChange={handleChange} onClick={handleClick}>
                             {favoriteGroup && setSortFiles && (
                                 <>
                                     <FormControlLabel
+                                        id={'se-sort-nearest'}
                                         className={styles.controlLabel}
                                         disableTypography={true}
                                         labelPlacement="start"
-                                        value="nearest"
+                                        value={NEAREST_SORT}
                                         control={<Radio className={styles.control} size="small" />}
-                                        label={<ActionItem item={allMethods.nearest} />}
+                                        label={<ActionItem item={allMethods[NEAREST_SORT]} />}
+                                    />
+                                    <FormControlLabel
+                                        id={'se-sort-nearestMapCenter'}
+                                        className={styles.controlLabel}
+                                        disableTypography={true}
+                                        labelPlacement="start"
+                                        value={NEAREST_MAP_CENTER_SORT}
+                                        control={<Radio className={styles.control} size="small" />}
+                                        label={<ActionItem item={allMethods[NEAREST_MAP_CENTER_SORT]} />}
                                     />
                                     <Divider className={styles.dividerActions} />
                                 </>

@@ -2,9 +2,8 @@ import { IconButton, Tooltip } from '@mui/material';
 import styles from '../../trackfavmenu.module.css';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import SortActions, { allMethods, defaultSortMethod } from '../../actions/SortActions';
+import SortActions, { allMethods, defaultSortMethod, getSelectedSort } from '../../actions/SortActions';
 import AppContext from '../../../context/AppContext';
-import { DEFAULT_FAV_GROUP_NAME } from '../../../manager/FavoritesManager';
 import { ReactComponent as TimeIcon } from '../../../assets/icons/ic_action_time.svg';
 import SortMenu from '../../actions/SortMenu';
 import LoginContext from '../../../context/LoginContext';
@@ -12,26 +11,6 @@ import LoginContext from '../../../context/LoginContext';
 export const TRACK_FILE_TYPE = 'tracks';
 export const FAVORITE_FILE_TYPE = 'favorites';
 export const TRAVEL_CUSTOM_GROUP = 'travel';
-
-export function getSelectedSort({
-    trackGroup = null,
-    favoriteGroup = null,
-    customGroup = null,
-    customGroupType = null,
-    ctx,
-    defaultMethod = null,
-}) {
-    if (trackGroup && ctx.selectedSort?.tracks) {
-        return ctx.selectedSort.tracks[trackGroup.fullName];
-    } else if (favoriteGroup && ctx.selectedSort?.favorites) {
-        return ctx.selectedSort.favorites[
-            favoriteGroup === DEFAULT_FAV_GROUP_NAME ? DEFAULT_FAV_GROUP_NAME : favoriteGroup.name
-        ];
-    } else if (customGroup && ctx.selectedSort?.custom) {
-        return ctx.selectedSort.custom[customGroupType];
-    }
-    return defaultMethod;
-}
 
 export default function SortFilesButton({
     type = TRACK_FILE_TYPE,
@@ -41,7 +20,6 @@ export default function SortFilesButton({
     customGroupType = 'analyzer',
     setSortGroups = null,
     setSortFiles = null,
-    markers,
     smartf,
 }) {
     const ctx = useContext(AppContext);
@@ -55,7 +33,7 @@ export default function SortFilesButton({
     const [sortIcon, setSortIcon] = useState(<TimeIcon />);
 
     // get selected sort method from cache
-    const sortType = getSelectedSort({ trackGroup, favoriteGroup, customGroup, customGroupType, ctx });
+    const sortType = getSelectedSort({ trackGroup, favoriteGroup, customGroup, customGroupType, smartf, ctx });
     const currentSortType = sortType ? sortType : defaultSortMethod(customGroupType);
 
     useEffect(() => {
@@ -109,7 +87,6 @@ export default function SortFilesButton({
                         setOpenSort={setOpenSort}
                         setSortIcon={setSortIcon}
                         setSortName={setSortName}
-                        markers={markers}
                         smartf={smartf}
                     />
                 }

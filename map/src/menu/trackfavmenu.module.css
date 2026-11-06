@@ -102,8 +102,9 @@
 .groupInfo {
     color: var(--text-secondary) !important;
 }
-.favLocationInfo {
-    margin-left: 5px !important;
+.favInfo {
+    display: flex;
+    align-items: center;
 }
 .item {
     min-height: var(--menu-item-size) !important;

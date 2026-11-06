@@ -12,7 +12,7 @@ import VirtualizedList from '../../frame/components/VirtualizedList';
 import gStyles from '../gstylesmenu.module.css';
 import isEmpty from 'lodash-es/isEmpty';
 import Loading from '../errors/Loading';
-import { byTime, doSort } from '../actions/SortActions';
+import { byTime, doSort, migrateFavoriteSortKeys } from '../actions/SortActions';
 import SharedFolder from '../components/SharedFolder';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
@@ -99,6 +99,13 @@ export default function FavoritesMenu() {
             });
         }
     }, [ctx.selectedSort?.favorites, ctx.favorites.groups]);
+
+    useEffect(() => {
+        const migratedSort = migrateFavoriteSortKeys(ctx.selectedSort, ctx.favorites.groups);
+        if (migratedSort) {
+            ctx.setSelectedSort(migratedSort);
+        }
+    }, [ctx.selectedSort?.favorites, ctx.selectedSort?.favoritesKeysVersion, ctx.favorites.groups]);
 
     useEffect(() => {
         if (location.pathname !== MAIN_URL_WITH_SLASH + FAVORITES_URL) return;

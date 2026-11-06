@@ -3,6 +3,7 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import { getFiles } from '../../util.mjs';
 import { clickBy, enclose, enumerateIds, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
+import { driver } from '../../options.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionRenameFavGroup from '../../actions/favorites/actionRenameFavGroup.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
@@ -10,6 +11,7 @@ import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
 import actionUploadFavGroup from '../../actions/favorites/actionUploadFavGroup.mjs';
+import setView from '../../actions/setView.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -78,6 +80,45 @@ export default async function test() {
     await waitBy(By.id('se-opened-fav-group-food'));
     await validateItemOrder(favItemsFoodZA);
 
+    // check item sort by nearest to map center
+    // the points of the city in the map center go first, the order inside a city depends on the visible map area
+    await setView({ lat: 50.4719142, lon: 30.5059648, zoom: 15 });
+    await clickBy(By.id('se-sort-button-za-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await clickBy(By.id('se-sort-nearestMapCenter'));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+    await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
+    const distancesFromKyiv = await readItemDistances();
+
+    // check the order is kept when the map is moved
+    await setView({ lat: 50.0508012, lon: 19.9421275, zoom: 15 });
+    await actionIdleWait();
+    await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
+
+    // check the distances follow the map center while the order is kept
+    await validateDistancesChanged(distancesFromKyiv);
+
+    // check picking the option again re-sorts the list from the new map center
+    await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+    await waitBy(By.id('se-sort-menu'));
+    await clickBy(By.id('se-sort-nearestMapCenter'));
+    await waitByRemoved(By.id('se-sort-menu'));
+    await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
+
+    // move the map back, the open list keeps its order
+    await setView({ lat: 50.4719142, lon: 30.5059648, zoom: 15 });
+    await actionIdleWait();
+    await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
+
+    // check item sort is restored after the group is reopened
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await clickBy(By.id('se-menu-fav-food'));
+    await waitBy(By.id('se-opened-fav-group-food'));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+
+    // check reopening the group sorts the list by the distances it shows
+    await validateItemsSortedByDistance(favItemsFood.length);
+
     // check save prev groups sort
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id('se-sort-button-oldDate-favorites'));
@@ -87,6 +128,13 @@ export default async function test() {
     await waitBy(By.id('se-sort-button-oldDate-favorites'));
     await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
     await validateGroupOrder(favGroupsOldDateAfterRename);
+
+    // check item sort is kept after the group is renamed
+    await clickBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
+    await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}${suffix}`));
+    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await waitBy(By.id('se-sort-button-oldDate-favorites'));
 
     // check save sort order after change hidden
     await waitBy(By.id('se-folder-actions-button-shops'));
@@ -189,6 +237,18 @@ const favItemsFoodZA = [
     'se-fav-item-name-111test',
 ];
 
+const favItemsFoodKyiv = ['se-fav-item-name-ssssарарар', 'se-fav-item-name-ывывыв'];
+
+const favItemsFoodLviv = ['se-fav-item-name-Крива Липа'];
+
+const favItemsFoodKrakow = [
+    'se-fav-item-name-111test',
+    'se-fav-item-name-Józefa (Kraków) 14',
+    'se-fav-item-name-Parkingtest',
+    'se-fav-item-name-Plac Szczepański (Stare Miasto) 7',
+    'se-fav-item-name-Świętej Katarzyny (Stare Miasto) 2',
+];
+
 async function validateGroupOrder(ids) {
     await enclose(
         async () => {
@@ -208,4 +268,71 @@ async function validateItemOrder(ids) {
         },
         { tag: 'validateFavItemsSort' }
     );
+}
+
+async function validateItemClusters(clusters) {
+    await enclose(
+        async () => {
+            const ids = await enumerateIds('se-fav-item-name-');
+            let start = 0;
+
+            return (
+                ids.length === clusters.flat().length &&
+                clusters.every((cluster) => {
+                    const part = ids.slice(start, start + cluster.length);
+                    start += cluster.length;
+
+                    return part.every((id) => cluster.includes(id));
+                })
+            );
+        },
+        { tag: 'validateFavItemsNearest' }
+    );
+}
+
+async function validateDistancesChanged(before) {
+    await enclose(
+        async () => {
+            const distances = await readItemDistances();
+
+            return distances.length === before.length && distances.every((d, i) => d !== before[i]);
+        },
+        { tag: 'validateFavItemsDistanceChanged' }
+    );
+}
+
+async function validateItemsSortedByDistance(count) {
+    await enclose(
+        async () => {
+            const distances = await readItemDistances();
+
+            return (
+                distances.length === count &&
+                distances.every((d, i) => d !== null && (i === 0 || distances[i - 1] <= d))
+            );
+        },
+        { tag: 'validateFavItemsSortedByDistance' }
+    );
+}
+
+async function readItemDistances() {
+    return await enclose(
+        async () => {
+            const distances = [];
+            for (const id of await enumerateIds('se-fav-item-name-')) {
+                const name = id.slice('se-fav-item-name-'.length);
+                const spans = await driver.findElement(By.id(id)).findElements(By.id(`se-fav-item-distance-${name}`));
+                distances.push(spans.length > 0 ? parseDistance(await spans[0].getText()) : null);
+            }
+
+            return distances;
+        },
+        { tag: 'readFavItemsDistance' }
+    );
+}
+
+function parseDistance(text) {
+    const match = text.match(/^([\d.]+)\s*(km|m)$/);
+
+    return match ? Number(match[1]) * (match[2] === 'km' ? 1000 : 1) : null;
 }

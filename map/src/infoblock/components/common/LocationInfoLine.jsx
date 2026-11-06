@@ -5,7 +5,7 @@ import i18n from 'i18next';
 import AppContext from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
 import { getMapCenter } from '../../../map/layers/MapStateLayer';
-import { getBearing, getDistance } from '../../../util/Utils';
+import { getDistanceAndBearing } from '../../../manager/FavoritesManager';
 import DistanceInfo from './DistanceInfo';
 import ActivityType from './ActivityType';
 import styles from '../../infoblock.module.css';
@@ -47,9 +47,8 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         if (!mapCenter) {
             return EMPTY_DISTANCE_INFO;
         }
-        const distance = getDistance(mapCenter.lat, mapCenter.lng, coords.lat, coords.lon);
-        const bearing = getBearing(mapCenter.lat, mapCenter.lng, coords.lat, coords.lon);
-        return { distance, bearing };
+        const { locDist, locBearing } = getDistanceAndBearing(mapCenter, { lat: coords.lat, lng: coords.lon });
+        return { distance: locDist, bearing: locBearing };
     }, [coords, ctx, location.hash]);
 
     useEffect(() => {
