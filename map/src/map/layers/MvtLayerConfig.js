@@ -7,10 +7,11 @@ const host = window.location.hostname.toLowerCase();
 const cache = ''; // host.endsWith('osmand.net') ? '' : '?cache=false';
 const tilesPort = !port || port === '80' || port === '443' ? '' : `:${port}`;
 const tilesHost = host === 'osmand.net' || host === 'www.osmand.net' ? 'maptile.osmand.net' : host;
-const tilesOrigin = process.env.REACT_APP_TILES_API_SITE || `${window.location.protocol}//${tilesHost}${tilesPort}`;
+const tilesOrigin = `${window.location.protocol}//${tilesHost}${tilesPort}`;
+const contoursOrigin = process.env.REACT_APP_CONTOURS_API_SITE || tilesOrigin;
 export const MVT_OSMAND_URL = `${tilesOrigin}/vector/{z}/{x}/{y}.mvt${cache}`;
-export const MVT_OSMAND_CONTOURS_URL = `${tilesOrigin}/vector/contours/{z}/{x}/{y}.mvt${cache}`;
-export const MVT_OSMAND_CONTOURS_FEET_URL = `${tilesOrigin}/vector/contours-feet/{z}/{x}/{y}.mvt${cache}`;
+export const MVT_OSMAND_CONTOURS_URL = `${contoursOrigin}/vector/contours/{z}/{x}/{y}.mvt${cache}`;
+export const MVT_OSMAND_CONTOURS_FEET_URL = `${contoursOrigin}/vector/contours-feet/{z}/{x}/{y}.mvt${cache}`;
 
 export const MVT_CONTOURS_SOURCE = 'contours';
 
