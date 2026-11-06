@@ -10,6 +10,7 @@ const tilesHost = host === 'osmand.net' || host === 'www.osmand.net' ? 'maptile.
 const tilesOrigin = `${window.location.protocol}//${tilesHost}${tilesPort}`;
 export const MVT_OSMAND_URL = `${tilesOrigin}/vector/{z}/{x}/{y}.mvt${cache}`;
 export const MVT_OSMAND_CONTOURS_URL = `${tilesOrigin}/vector/contours/{z}/{x}/{y}.mvt${cache}`;
+export const MVT_OSMAND_CONTOURS_FEET_URL = `${tilesOrigin}/vector/contours-feet/{z}/{x}/{y}.mvt${cache}`;
 
 export const MVT_CONTOURS_SOURCE = 'contours';
 

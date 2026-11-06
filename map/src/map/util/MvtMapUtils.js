@@ -15,8 +15,8 @@ export function hasMvtTiles(source, zoom) {
     return Math.floor(zoom) >= source.minzoom;
 }
 
-export function setMapDataZoomShift(maplibreMap, sources, shiftedSources) {
-    shiftedSources.forEach(({ id, url }) => {
+export function setMapSourceTiles(maplibreMap, sources, newSources) {
+    newSources.forEach(({ id, url }) => {
         const source = maplibreMap.getSource(id);
         if (source && source.tiles?.[0] !== url) {
             source.setTiles([url]);

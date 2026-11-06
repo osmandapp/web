@@ -9,7 +9,14 @@ import MapContext from '../../context/MapContext';
 import MvtContext from '../../context/MvtContext';
 import LoginContext from '../../context/LoginContext';
 import { osmandTileURL } from '../baseTileURL';
-import { isOsmAndTileURL, isWebGLAvailable, MVT_CONTOURS_SOURCE, MVT_OSMAND_CONTOURS_URL } from './MvtLayerConfig';
+import {
+    isOsmAndTileURL,
+    isWebGLAvailable,
+    MVT_CONTOURS_SOURCE,
+    MVT_OSMAND_CONTOURS_FEET_URL,
+    MVT_OSMAND_CONTOURS_URL,
+} from './MvtLayerConfig';
+import { isSmallLengthUnitFeet } from '../../menu/settings/units/UnitsConverter';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
 import { isTravelSearchOn } from './TravelLayer';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
@@ -19,7 +26,7 @@ import {
     getMvtTileZoom,
     hasMvtTiles,
     setMapContourVisibility,
-    setMapDataZoomShift,
+    setMapSourceTiles,
     setMapStyleDetailShift,
     setStyleContourVisibility,
     watchMvtZoom,
@@ -58,7 +65,12 @@ function createStyle(baseStyle, tileUrl, options = {}) {
     if (style.sources[MVT_CONTOURS_SOURCE]) {
         style.sources[MVT_CONTOURS_SOURCE] = {
             ...style.sources[MVT_CONTOURS_SOURCE],
-            tiles: [getMvtDataTileUrl(MVT_OSMAND_CONTOURS_URL, options.dataZoomShift)],
+            tiles: [
+                getMvtDataTileUrl(
+                    options.contourLinesFeet ? MVT_OSMAND_CONTOURS_FEET_URL : MVT_OSMAND_CONTOURS_URL,
+                    options.dataZoomShift
+                ),
+            ],
         };
     }
     style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
@@ -73,8 +85,8 @@ function createStyle(baseStyle, tileUrl, options = {}) {
     return style;
 }
 
-function getMvtSources(config, dataZoomShift) {
-    const sources = createStyle(config.style, config.tileUrl, { dataZoomShift }).sources || {};
+function getMvtSources(config, dataZoomShift, contourLinesFeet) {
+    const sources = createStyle(config.style, config.tileUrl, { dataZoomShift, contourLinesFeet }).sources || {};
     return Object.entries(sources).flatMap(([id, source]) =>
         source?.type === 'vector' && source.tiles?.length
             ? [
@@ -138,6 +150,7 @@ export default function MvtLayer({ config }) {
     const maplibreMapRef = useRef(null);
     const dataZoomShift = ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) ? vtx.mvtTweaks.dataZoomShift : 0;
     const showContourLines = ctx.develFeatures && ctx.configureMapState.showContourLines && ltx.isProAccountLoaded();
+    const contourLinesFeet = isSmallLengthUnitFeet(ctx);
 
     hybridUnderlayUrlRef.current = hybridUnderlayUrl;
 
@@ -172,6 +185,7 @@ export default function MvtLayer({ config }) {
                 hideHybridLayers: Boolean(hybridUnderlayUrlRef.current),
                 showContourLines,
                 dataZoomShift,
+                contourLinesFeet,
             }),
             interactive: false,
             ...(paneName ? { pane: paneName } : {}),
@@ -182,7 +196,7 @@ export default function MvtLayer({ config }) {
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES && ctx.develFeatures === true;
 
         const sourceOwner = Symbol(config.tileUrl);
-        const sources = getMvtSources(config, dataZoomShift).map((source) => ({
+        const sources = getMvtSources(config, dataZoomShift, contourLinesFeet).map((source) => ({
             ...source,
             sourceOwner,
             layerKey: mtx.tileURL?.key,
@@ -300,18 +314,18 @@ export default function MvtLayer({ config }) {
         if (!maplibreMap || !config.isActive(mtx.tileURL) || !isOsmAndTileURL(mtx.tileURL)) {
             return undefined;
         }
-        const applyShift = () => {
+        const applySourceTiles = () => {
             const sources = (map[TILE_SOURCES_KEY] || []).filter((source) => source.layerKey === mtx.tileURL.key);
-            setMapDataZoomShift(maplibreMap, sources, getMvtSources(config, dataZoomShift));
+            setMapSourceTiles(maplibreMap, sources, getMvtSources(config, dataZoomShift, contourLinesFeet));
         };
         if (maplibreMap.isStyleLoaded()) {
-            applyShift();
+            applySourceTiles();
         } else {
-            maplibreMap.once('idle', applyShift);
+            maplibreMap.once('idle', applySourceTiles);
         }
 
-        return () => maplibreMap.off('idle', applyShift);
-    }, [config, mtx.tileURL, ctx.develFeatures, dataZoomShift]);
+        return () => maplibreMap.off('idle', applySourceTiles);
+    }, [config, mtx.tileURL, ctx.develFeatures, dataZoomShift, contourLinesFeet]);
 
     useEffect(() => {
         const maplibreMap = maplibreMapRef.current;
