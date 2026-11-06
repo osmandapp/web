@@ -18,7 +18,7 @@ export default function HeightmapLayer() {
     useEffect(() => {
         if (!map) return;
 
-        if (mtx.heightmap === NO_HEIGHTMAP.key || !ltx.accountInfo || !ltx.isProAccount()) {
+        if (mtx.heightmap === NO_HEIGHTMAP.key || !ltx.isProAccountLoaded()) {
             if (tileLayerRef.current) {
                 map.removeLayer(tileLayerRef.current);
                 tileLayerRef.current = null;
@@ -69,7 +69,7 @@ export default function HeightmapLayer() {
                 tileLayerRef.current.off('tileerror');
             }
         };
-    }, [mtx.heightmap, Boolean(ltx.accountInfo), ltx.isProAccount()]);
+    }, [mtx.heightmap, ltx.isProAccountLoaded()]);
 
     useEffect(() => {
         mtx.setProcessHeightmaps(loadingTiles);

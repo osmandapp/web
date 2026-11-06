@@ -7,8 +7,16 @@ import '@maplibre/maplibre-gl-leaflet';
 import AppContext, { OBJECT_TYPE_POI, updateConfigureMapCache } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import MvtContext from '../../context/MvtContext';
+import LoginContext from '../../context/LoginContext';
 import { osmandTileURL } from '../baseTileURL';
-import { isOsmAndTileURL, isWebGLAvailable } from './MvtLayerConfig';
+import {
+    isOsmAndTileURL,
+    isWebGLAvailable,
+    MVT_CONTOURS_SOURCE,
+    MVT_OSMAND_CONTOURS_FEET_URL,
+    MVT_OSMAND_CONTOURS_URL,
+} from './MvtLayerConfig';
+import { isSmallLengthUnitFeet } from '../../menu/settings/units/UnitsConverter';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
 import { isTravelSearchOn } from './TravelLayer';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
@@ -16,8 +24,11 @@ import {
     getMvtDataTileUrl,
     getMvtTileStats,
     getMvtTileZoom,
-    setMapDataZoomShift,
+    hasMvtTiles,
+    setMapContourVisibility,
+    setMapSourceTiles,
     setMapStyleDetailShift,
+    setStyleContourVisibility,
     watchMvtZoom,
 } from '../util/MvtMapUtils';
 import {
@@ -48,19 +59,34 @@ function createStyle(baseStyle, tileUrl, options = {}) {
         ...style.sources,
         osm: {
             ...style.sources.osm,
-            tiles: [tileUrl],
+            tiles: [getMvtDataTileUrl(tileUrl, options.dataZoomShift)],
         },
     };
+    if (style.sources[MVT_CONTOURS_SOURCE]) {
+        style.sources[MVT_CONTOURS_SOURCE] = {
+            ...style.sources[MVT_CONTOURS_SOURCE],
+            tiles: [
+                getMvtDataTileUrl(
+                    options.contourLinesFeet ? MVT_OSMAND_CONTOURS_FEET_URL : MVT_OSMAND_CONTOURS_URL,
+                    options.dataZoomShift
+                ),
+            ],
+        };
+    }
     style.sprite = getPublicAssetUrl('/mvt/sprites/sprite');
     style.glyphs = getPublicAssetPath('/mvt/fonts/{fontstack}/{range}.pbf');
     if (options.hideHybridLayers) {
         setStyleHybridVisibility(style, 'none');
     }
+    if (options.showContourLines) {
+        setStyleContourVisibility(style, 'visible');
+    }
+
     return style;
 }
 
-function getMvtSources(config) {
-    const sources = createStyle(config.style, config.tileUrl).sources || {};
+function getMvtSources(config, dataZoomShift, contourLinesFeet) {
+    const sources = createStyle(config.style, config.tileUrl, { dataZoomShift, contourLinesFeet }).sources || {};
     return Object.entries(sources).flatMap(([id, source]) =>
         source?.type === 'vector' && source.tiles?.length
             ? [
@@ -91,12 +117,19 @@ export function getMvtTileDownloads(map, latlng) {
         return [];
     }
 
-    return (map?.[TILE_SOURCES_KEY] || []).map((source) => {
-        const { z, x, y } = getTileCoord(latlng, source, source.getZoom?.() ?? map.getZoom());
-        return {
-            url: source.url.replace('{z}', z).replace('{x}', x).replace('{y}', y),
-            name: `${source.layerKey || source.id}-${z}-${x}-${y}.mvt`,
-        };
+    return (map?.[TILE_SOURCES_KEY] || []).flatMap((source) => {
+        const zoom = source.getZoom?.() ?? map.getZoom();
+        if (!source.isUsed() || !hasMvtTiles(source, zoom)) {
+            return [];
+        }
+        const { z, x, y } = getTileCoord(latlng, source, zoom);
+
+        return [
+            {
+                url: source.url.replace('{z}', z).replace('{x}', x).replace('{y}', y),
+                name: `${source.layerKey}-${source.id}-${z}-${x}-${y}.mvt`,
+            },
+        ];
     });
 }
 
@@ -111,10 +144,13 @@ export default function MvtLayer({ config }) {
     const ctx = useContext(AppContext);
     const mtx = useContext(MapContext);
     const vtx = useContext(MvtContext);
+    const ltx = useContext(LoginContext);
     const hybridUnderlayUrl = useHybridUnderlayUrl();
     const hybridUnderlayUrlRef = useRef(hybridUnderlayUrl);
     const maplibreMapRef = useRef(null);
     const dataZoomShift = ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) ? vtx.mvtTweaks.dataZoomShift : 0;
+    const showContourLines = ctx.develFeatures && ctx.configureMapState.showContourLines && ltx.isProAccountLoaded();
+    const contourLinesFeet = isSmallLengthUnitFeet(ctx);
 
     hybridUnderlayUrlRef.current = hybridUnderlayUrl;
 
@@ -144,10 +180,12 @@ export default function MvtLayer({ config }) {
             ensureLeafletPane(map, paneName, paneZIndex);
         }
 
-        const shiftedTileUrl = getMvtDataTileUrl(tileUrl, dataZoomShift);
         const glLayer = L.maplibreGL({
-            style: createStyle(style, shiftedTileUrl, {
+            style: createStyle(style, tileUrl, {
                 hideHybridLayers: Boolean(hybridUnderlayUrlRef.current),
+                showContourLines,
+                dataZoomShift,
+                contourLinesFeet,
             }),
             interactive: false,
             ...(paneName ? { pane: paneName } : {}),
@@ -158,11 +196,12 @@ export default function MvtLayer({ config }) {
         maplibreMap.showTileBoundaries = SHOW_TILE_BOUNDARIES && ctx.develFeatures === true;
 
         const sourceOwner = Symbol(config.tileUrl);
-        const sources = getMvtSources({ ...config, tileUrl: shiftedTileUrl }).map((source) => ({
+        const sources = getMvtSources(config, dataZoomShift, contourLinesFeet).map((source) => ({
             ...source,
             sourceOwner,
             layerKey: mtx.tileURL?.key,
             getZoom: () => maplibreMap.getZoom(),
+            isUsed: () => maplibreMap.style?.tileManagers?.[source.id]?.used,
         }));
         map[TILE_SOURCES_KEY] = [...(map[TILE_SOURCES_KEY] || []), ...sources];
         const stopZoomStats = ctx.develFeatures ? watchMvtZoom(map, sources, vtx.setMvtTileStats) : null;
@@ -275,18 +314,18 @@ export default function MvtLayer({ config }) {
         if (!maplibreMap || !config.isActive(mtx.tileURL) || !isOsmAndTileURL(mtx.tileURL)) {
             return undefined;
         }
-        const applyShift = () => {
+        const applySourceTiles = () => {
             const sources = (map[TILE_SOURCES_KEY] || []).filter((source) => source.layerKey === mtx.tileURL.key);
-            setMapDataZoomShift(maplibreMap, sources, config.tileUrl, dataZoomShift);
+            setMapSourceTiles(maplibreMap, sources, getMvtSources(config, dataZoomShift, contourLinesFeet));
         };
         if (maplibreMap.isStyleLoaded()) {
-            applyShift();
+            applySourceTiles();
         } else {
-            maplibreMap.once('idle', applyShift);
+            maplibreMap.once('idle', applySourceTiles);
         }
 
-        return () => maplibreMap.off('idle', applyShift);
-    }, [config, mtx.tileURL, ctx.develFeatures, dataZoomShift]);
+        return () => maplibreMap.off('idle', applySourceTiles);
+    }, [config, mtx.tileURL, ctx.develFeatures, dataZoomShift, contourLinesFeet]);
 
     useEffect(() => {
         const maplibreMap = maplibreMapRef.current;
@@ -297,6 +336,7 @@ export default function MvtLayer({ config }) {
         const finishStyle = () => vtx.setMvtStyleUpdating(false);
         const applyStyle = () => {
             setMapHybridVisibility(maplibreMap, config.style, Boolean(hybridUnderlayUrl));
+            setMapContourVisibility(maplibreMap, config.style, showContourLines);
             setMapStyleDetailShift(
                 maplibreMap,
                 config.style,
@@ -320,6 +360,7 @@ export default function MvtLayer({ config }) {
         config,
         mtx.tileURL,
         hybridUnderlayUrl,
+        showContourLines,
         ctx.develFeatures,
         vtx.mvtTweaks.styleDetailShift,
         vtx.mvtTweaks.minZoomIdFilter,
