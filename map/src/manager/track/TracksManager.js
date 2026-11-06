@@ -908,27 +908,8 @@ function updateGapProfileOneSegment(routePoint, points) {
     return false;
 }
 
-function getEle(point, elevation, array, pointInd) {
-    let ele = point[elevation];
-    let ind = pointInd;
-    //value smoothing
-    while (isNaN(ele) || ele === NAN_MARKER || ele === null || ele === undefined) {
-        if (array && ind !== 0) {
-            let prevP = array[ind - 1];
-            if (prevP && prevP[elevation] && !isNaN(prevP[elevation]) && prevP[elevation] !== NAN_MARKER) {
-                return Number(prevP[elevation]);
-            } else {
-                if (ind - pointInd > 2) {
-                    return undefined;
-                } else {
-                    ind++;
-                }
-            }
-        } else {
-            ele = 0;
-        }
-    }
-    return Number(ele);
+function getEle(point, elevation) {
+    return isEmptyEle(point[elevation]) ? undefined : Number(point[elevation]);
 }
 
 function isEmptyEle(ele) {

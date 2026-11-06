@@ -50,17 +50,17 @@ export const getGraphData = ({
         let elevationSRTM = hasSrtm ? 'srtmEle' : null;
         let points = cloneDeep(pointsArr);
         let result = [];
-        let minEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
-        let maxEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
+        let minEle = elevation || elevationSRTM ? TracksManager.NAN_MARKER : null;
+        let maxEle = elevation || elevationSRTM ? TracksManager.NAN_MARKER : null;
         let minSpeed = hasSpeed ? 0 : null;
         let maxSpeed = hasSpeed ? 0 : null;
         let sumDist = 0;
-        points.forEach((point, ind) => {
+        points.forEach((point) => {
             let ele;
             let eleSRTM;
             let speed;
             if (elevation) {
-                ele = TracksManager.getEle(point, elevation, points, ind)?.toFixed(2);
+                ele = TracksManager.getEle(point, elevation)?.toFixed(2);
                 if (ele !== undefined) {
                     ele = Math.round(ele * 10) / 10;
                     minEle = minEle === TracksManager.NAN_MARKER ? ele : Math.min(ele, minEle);
@@ -68,11 +68,11 @@ export const getGraphData = ({
                 }
             }
             if (elevationSRTM) {
-                eleSRTM = TracksManager.getEle(point, elevationSRTM, points, ind)?.toFixed(2);
+                eleSRTM = TracksManager.getEle(point, elevationSRTM)?.toFixed(2);
                 if (eleSRTM && !elevation) {
                     eleSRTM = Math.round(eleSRTM * 10) / 10;
-                    minEle = Math.min(eleSRTM, minEle);
-                    maxEle = Math.max(eleSRTM, maxEle);
+                    minEle = minEle === TracksManager.NAN_MARKER ? eleSRTM : Math.min(eleSRTM, minEle);
+                    maxEle = maxEle === TracksManager.NAN_MARKER ? eleSRTM : Math.max(eleSRTM, maxEle);
                 }
             }
             if (hasSpeed) {
@@ -195,10 +195,10 @@ const GpxGraphProvider = ({ width }) => {
         if (data) {
             let newShowData = {};
             if (data.ele) {
-                newShowData[ELEVATION] = data.ele;
+                newShowData[ELEVATION] = showData?.[ELEVATION] ?? data.ele;
             }
             if (data.srtm) {
-                newShowData[ELEVATION_SRTM] = data.srtm;
+                newShowData[ELEVATION_SRTM] = showData?.[ELEVATION_SRTM] ?? data.srtm;
             }
             if (data.speed) {
                 newShowData[SPEED] = showData && showData[SPEED] ? true : '';

@@ -198,7 +198,7 @@ export function calculateSlopes(
         return null;
     }
 
-    const hasGraphKeys = rawPoints[0][DISTANCE] !== undefined && rawPoints[0][ELEVATION] !== undefined;
+    const hasGraphKeys = rawPoints[0][DISTANCE] !== undefined;
 
     let points;
     if (hasGraphKeys) {
@@ -221,7 +221,8 @@ function getSlopes(result, ctx, sumDist) {
         STEP = Math.max(STEP, totalDistance / (result.length * l--));
     }
     // interpolate
-    const interpolatorResult = interpolate(totalDistance, STEP, result);
+    const pointsWithEle = result.filter((point) => Number.isFinite(point[ELEVATION]));
+    const interpolatorResult = interpolate(totalDistance, STEP, isEmpty(pointsWithEle) ? result : pointsWithEle);
 
     const calculatedDist = interpolatorResult.calculatedX;
     const calculatedH = interpolatorResult.calculatedY;

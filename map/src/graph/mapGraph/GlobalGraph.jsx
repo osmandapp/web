@@ -252,6 +252,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         return {
             responsive: true,
             maintainAspectRatio: false,
+            spanGaps: true,
             animation: {
                 duration: 400,
             },
