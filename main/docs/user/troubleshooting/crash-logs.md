@@ -49,8 +49,8 @@ Be cautious when sending app logs, as they may contain private information such 
 </Tabs>
 
 1. Go to *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* or *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Send current app log* (iOS). Depending on your situation, select the appropriate type of log. You can refer to the section [Crash and App Logs](#crash-and-app-logs) for details on the differences between the log types.
-2. In the pop-up menu, choose Gmail or your preferred email app. We recommend sending the logs to `support@osmand.net`.
-3. Tap the *Send* button.
+2. In the pop-up menu, choose where to send or save the logs: an email app, a cloud storage app, or a file manager to save them on your device. We recommend sending the logs to `support@osmand.net`.
+3. If you send the logs by email, tap the *Send* button.
 
 <!--
 ### Send Logs from iOS Devices {#send-logs-from-ios-devices}
