@@ -73,6 +73,10 @@ Go to: *<Translate android="true" ids="shared_string_menu,shared_string_my_place
 
 ![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
+All tracks ever recorded, created, or imported are automatically displayed in the [My Places](../../personal/myplaces.md) folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
+
+Each track in the list displays its parent folder name on the second line, separated by `|` (for example, `Hiking | Tracks`), making it easier to identify where a track is stored. This applies in [Search](#search), [Smart Folders](../../personal/tracks/smart-folder.md), and [Configure Map → Tracks](../../map/tracks/index.md#configure-map).
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -81,13 +85,15 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,sh
 
 ![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
-</TabItem>
-
-</Tabs>
-
 All tracks ever recorded, created, or imported are automatically displayed in the [My Places](../../personal/myplaces.md) folder in the *Tracks* tab. They are organized by folder or displayed in a list below them.
 
 Each track in the list displays its parent folder name on the second line, separated by `|` (for example, `Hiking | Tracks`), making it easier to identify where a track is stored. This applies in [Search](#search), [Smart Folders](../../personal/tracks/smart-folder.md), and [Configure Map → Tracks](../../map/tracks/index.md#configure-map).
+
+**Note:** While OsmAnd calculates track statistics, for example after many tracks are added at once, the *<Translate ios="true" ids="tracks_stats_are_being_calculated"/>* row with a progress ring is shown at the top of the list. All tracks are listed immediately, and their statistics appear as the calculation progresses. You can open, rename, move, share, or delete any track during the calculation. The row disappears when all statistics are calculated.
+
+</TabItem>
+
+</Tabs>
 
 
 ### Track Menu {#track-menu}
