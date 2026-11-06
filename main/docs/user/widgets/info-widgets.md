@@ -345,7 +345,7 @@ The **Battery Level** widget displays your device's battery percentage right on 
 
 <TabItem value="ios" label="iOS">
 
-![Coordinates widget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Coordinates widget iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -358,12 +358,17 @@ OsmAnd offers two types of coordinate widgets:
 
 Coordinates widgets are displayed at the top of the screen. Icons with a green background show the latitude and longitude of the point in the center of the visible part of the map, and those with a blue background show the coordinates of your current location. Information about supported *Coordinates formats* can be found in the *[Search coordinates article](../search/search-coordinates.md#coordinate-format)*.
 
+Each coordinates widget has its own *Format* setting. By default, the widget shows coordinates in the Primary format from the profile's [coordinate format list](../search/search-coordinates.md#customize-coordinate-format). To choose another format, long tap the widget and select *Settings* in the [widget context menu](../widgets/configure-screen.md#widget-context-menu). Two coordinates widgets can show coordinates in different formats.
+
+The selected format is saved in the widget settings: it is copied together with the profile settings, and resetting the widget settings returns it to the Primary format.
+
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | By tapping | Copies the coordinates to the clipboard. |
-| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| Format | **Android:** *[Widget context menu](../widgets/configure-screen.md#widget-context-menu) → <Translate android="true" ids="shared_string_settings,navigate_point_format"/>* |
+|   | **iOS:** *[Widget context menu](../widgets/configure-screen.md#widget-context-menu) → <Translate ios="true" ids="shared_string_settings,coords_format"/>* |
 
 
 ## GPS Info   {#gps-info}
