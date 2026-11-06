@@ -154,7 +154,7 @@ Contour lines is a [paid feature](../purchases/index.md).
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Contour lines menu Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.webp)
 
 </TabItem>
 
@@ -162,7 +162,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Contour lines*
 
-![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Contour lines menu iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.webp)
 
 </TabItem>
 
@@ -183,6 +183,14 @@ When using the [Map rendering engine](../personal/global-settings.md#map-renderi
 - *<Translate android="true" ids="rendering_attr_contourWidth_name"/>*. Adjust the width of contour lines.
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Select the density of contour lines (Low, Medium, High). Higher densities may affect loading speed.
 - *<Translate android="true" ids="maps_and_resources"/>*. View and download contour line maps for the current region and nearby areas.
+
+**Labels settings**:
+
+- *<Translate android="true" ids="rendering_attr_contourLabelDirection_name"/>*. Choose how elevation numbers on contour lines are oriented:
+    - *<Translate android="true" ids="rendering_value_upright_name"/>*. Numbers turn with the map so they stay readable on the screen.
+    - *<Translate android="true" ids="rendering_value_uphill_name"/>*. The top of each number faces higher ground, as on paper topographic maps. Numbers keep this direction when the map rotates, so they can appear upside down on the screen.
+
+The short ticks on contour lines point downhill.
 
 
 ## Terrain {#terrain}
