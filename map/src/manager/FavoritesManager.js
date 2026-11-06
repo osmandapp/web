@@ -808,34 +808,8 @@ export function getDistanceAndBearing(location, latlng) {
     };
 }
 
-export function addLocDist({ location, markers = null, wpts = null }) {
-    let res = [];
-    if (location && location !== LOCATION_UNAVAILABLE) {
-        if (markers && markers.length > 0) {
-            markers.forEach((m) => {
-                const latlng = m?.layer?._latlng;
-                if (latlng) {
-                    Object.assign(m, getDistanceAndBearing(location, latlng));
-                }
-                res.push(m);
-            });
-        } else if (wpts && wpts.length > 0) {
-            wpts.forEach((w) => {
-                if (w.latlng) {
-                    Object.assign(w, getDistanceAndBearing(location, w.latlng));
-                }
-                res.push(w);
-            });
-        }
-    }
-    if (isEmpty(res)) {
-        if (markers) {
-            return markers;
-        } else if (wpts) {
-            return wpts;
-        }
-    }
-    return res;
+export function addLocDist({ location, markers }) {
+    return markers.map((m) => ({ ...m, ...getDistanceAndBearing(location, m?.layer?._latlng) }));
 }
 
 export function addShareFavoriteToMap(marker, ctx) {

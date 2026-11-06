@@ -110,7 +110,14 @@ describe('the favorites of a group in the menu', () => {
         const list = getFavMenuListByLayers({ layers, wpts, location: null, pointsGroups });
 
         expect(list.map((m) => m.locDist)).toEqual([undefined, undefined]);
-        expect(addLocDist({ location: null, wpts })).toBe(wpts);
+    });
+
+    test('the distance is added to copies of the markers', () => {
+        const markers = [{ name: 'Peak', layer: layers[2] }];
+        const list = addLocDist({ location: { lat: 50, lng: 30 }, markers });
+
+        expect(list[0].locDist).toBe(1112);
+        expect(markers[0].locDist).toBeUndefined();
     });
 
     test('two waypoints with the same name are listed with their own points', () => {

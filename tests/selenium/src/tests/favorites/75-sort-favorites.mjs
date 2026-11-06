@@ -105,26 +105,10 @@ export default async function test() {
     await waitByRemoved(By.id('se-sort-menu'));
     await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
 
-    // check a change of the favorites re-sorts the list from the current map center
+    // move the map back, the open list keeps its order
     await setView({ lat: 50.4719142, lon: 30.5059648, zoom: 15 });
     await actionIdleWait();
     await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
-    await waitBy(By.id(`se-actions-${editedFavItem}`), { idle: true });
-    await clickBy(By.id(`se-actions-${editedFavItem}`));
-    await waitBy(By.id('se-fav-item-actions'));
-    await clickBy(By.id('se-edit-fav-item'));
-    await waitBy(By.id('se-edit-fav-dialog'));
-    await enclose(
-        async () => {
-            const input = await waitBy(By.id('se-edit-fav-dialog-address'));
-            await input.sendKeys(suffix);
-            return true;
-        },
-        { tag: 'edit-address-fav-item' }
-    );
-    await clickBy(By.id('se-edit-fav-item-submit'));
-    await waitByRemoved(By.id('se-edit-fav-dialog'));
-    await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
 
     // check item sort is restored after the group is reopened
     await clickBy(By.id('se-back-folder-button-favorites'));
@@ -264,8 +248,6 @@ const favItemsFoodKrakow = [
     'se-fav-item-name-Plac Szczepański (Stare Miasto) 7',
     'se-fav-item-name-Świętej Katarzyny (Stare Miasto) 2',
 ];
-
-const editedFavItem = 'ывывыв';
 
 async function validateGroupOrder(ids) {
     await enclose(

@@ -1,19 +1,12 @@
 import { ClickAwayListener, Popover } from '@mui/material';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
+import useClearOpenedPopper from '../../util/hooks/menu/useClearOpenedPopper';
 
 export default function ActionsMenu({ open, setOpen, anchorEl, favItems = false, setShowMenu = null, actions = null }) {
     const ctx = useContext(AppContext);
 
-    useEffect(() => {
-        if (!open && ctx.openedPopper === anchorEl) {
-            ctx.setOpenedPopper(null);
-        }
-    }, [open]);
-
-    useEffect(() => {
-        return () => ctx.setOpenedPopper((popper) => (popper === anchorEl ? null : popper));
-    }, []);
+    useClearOpenedPopper(open, anchorEl);
 
     // a Popover left mounted while closed swallows the clicks on the panel under it
     return (

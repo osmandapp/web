@@ -11,7 +11,7 @@ import Empty from '../errors/Empty';
 import FavoritesManager, {
     DEFAULT_FAV_GROUP_NAME,
     getFavMenuListByLayers,
-    getDistanceAndBearing,
+    addLocDist,
     LOCATION_UNAVAILABLE,
 } from '../../manager/FavoritesManager';
 import FavoriteItem from './FavoriteItem';
@@ -69,7 +69,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             });
         }
         if (sortMethod && !isNearestSort(sortMethod)) {
-            sortMarkers(markerList);
+            sortFavorites();
         }
         setMarkers([...markerList]);
         refMarkers.current = markerList;
@@ -110,10 +110,10 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
 
     useEffect(() => {
         if (ctx.openedPopper) return;
-        const updatedMarkers = getMarkersWithDistance();
-        if (updatedMarkers) {
+        const loc = getDistanceLocation();
+        if (loc && refMarkers.current?.length > 0) {
             // update markers location
-            setMarkers(updatedMarkers);
+            setMarkers(addLocDist({ location: loc, markers: refMarkers.current }));
         }
     }, [currentLoc?.lat, currentLoc?.lng, useMapCenter, mapCenter?.lat, mapCenter?.lng, ctx.openedPopper]);
 
@@ -124,7 +124,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
             setSortOnMenuClose(true);
             return;
         }
-        sortNearest();
+        sortFavorites();
     }, [ctx.selectedSort?.favorites, group, ctx.favorites, distanceFrom]);
 
     useEffect(() => {
@@ -133,7 +133,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         }
         setSortOnMenuClose(false);
         if (isNearestSort(sortMethod)) {
-            sortNearest();
+            sortFavorites();
         }
     }, [ctx.openedPopper]);
 
@@ -191,35 +191,19 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         return useMapCenter ? mapCenter : currentLoc;
     }
 
-    function getMarkersWithDistance() {
+    function sortFavorites() {
+        const isNearest = isNearestSort(sortMethod);
         const loc = getDistanceLocation();
-        if (!loc || !refMarkers.current?.length) {
-            return null;
+        if (isNearest && !loc) {
+            return;
         }
-
-        return refMarkers.current.map((m) => ({ ...m, ...getDistanceAndBearing(loc, m.layer?._latlng) }));
-    }
-
-    function sortNearest() {
-        const markerList = getMarkersWithDistance();
-        if (!markerList) return;
         const { files } = doSort({
             method: sortMethod,
-            markers: markerList,
+            markers: isNearest ? addLocDist({ location: loc, markers: refMarkers.current }) : null,
             files: ctx.favorites.mapObjs[group.id]?.wpts,
             favoriteGroup: group,
         });
-        setSortFiles(files?.map((m) => m.point) ?? []);
-    }
-
-    function sortMarkers(markerList) {
-        doSort({
-            method: sortMethod,
-            setSortFiles,
-            markers: markerList,
-            files: ctx.favorites.mapObjs[group.id]?.wpts,
-            favoriteGroup: group,
-        });
+        setSortFiles((isNearest ? files?.map((m) => m.point) : files) ?? []);
     }
 
     function getMarkersBySortFiles(wpts, markers) {
