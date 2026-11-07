@@ -269,14 +269,21 @@
 
    <!-- Australia maps-->
    <tile_source name="🇦🇺 Getlost Maps" url_template="https://live.getlost.com.au/{0}/{1}/{2}.jpg" ext=".jpg" min_zoom="5" max_zoom="18" tile_size="256" img_density="8" avg_img_size="25000"/>
-<!--   <tile_source name="🇦🇺 National Base Map" url_template="https://nationalmap.gov.au/proxy/_1d/https:/services.ga.gov.au/gis/rest/services/NationalBaseMap/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>-->
-<!--   <tile_source name="🇦🇺 NSW Topographic" url_template="https://nsw.digitaltwin.terria.io/api/v0/tileserver-gl/styles/nsw-topographic/{0}/{1}/{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>-->
+   <tile_source name="🇦🇺 National Base Map (GA)" url_template="https://services.ga.gov.au/gis/rest/services/NationalBaseMap/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000"/>
+   <tile_source name="🇦🇺 NSW Topo Map" url_template="https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Topo_Map/MapServer/tile/{0}/{2}/{1}" ext=".jpg" min_zoom="5" max_zoom="16" tile_size="256" img_density="16" avg_img_size="18000"/>
    <tile_source name="🇦🇺 🛰 NSW Imagery" url_template="https://maps.six.nsw.gov.au/arcgis/rest/services/public/NSW_Imagery/MapServer/tile/{0}/{2}/{1}" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
    <tile_source name="🇦🇺 🛰 Bing Maps" url_template="https://t1.ssl.ak.dynamic.tiles.virtualearth.net/comp/ch/{q}?n=z&amp;mkt=en-US&amp;it=A,G,L&amp;og=2629" ext=".png" min_zoom="1" max_zoom="19" tile_size="256" img_density="16" avg_img_size="18000"/>
 
+   <!-- Australia: protected areas (CAPAD 2024, DCCEEW) -->
+   <tile_source name="🇦🇺 🌳 Protected areas CAPAD (AU)" url_template="https://gis.environment.gov.au/gispubmap/rest/services/ogc_services/CAPAD/MapServer/export?bbox={bbox}&amp;bboxSR=4326&amp;imageSR=3857&amp;size=256,256&amp;format=png32&amp;transparent=true&amp;f=image&amp;layers=show:0" ext=".png" min_zoom="5" max_zoom="18" tile_size="256" img_density="16" avg_img_size="10000"/>
+   <tile_source name="🇦🇺 🌊 Marine protected areas CAPAD (AU)" url_template="https://gis.environment.gov.au/gispubmap/rest/services/ogc_services/CAPAD/MapServer/export?bbox={bbox}&amp;bboxSR=4326&amp;imageSR=3857&amp;size=256,256&amp;format=png32&amp;transparent=true&amp;f=image&amp;layers=show:1" ext=".png" min_zoom="4" max_zoom="18" tile_size="256" img_density="16" avg_img_size="10000"/>
 
-   <!-- AU maps
-   <tile_source name="🇦🇺 ⚓ Australian Hydrographic Office ENC Series" url_template="https://services.hydro.gov.au/site1/services/Basemaps/AHOENCSeries/ImageServer/WMSServer?format=image%2Fpng&amp;request=GetMap&amp;service=WMS&amp;styles=&amp;transparent=TRUE&amp;version=1.3.0&amp;layers=AHOENCSeries&amp;crs=EPSG:3857&amp;width=256&amp;height=256&amp;bbox={bbox}" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>   -->
+   <!-- Australia: depth contours (AusBathyTopo 2024, Geoscience Australia, served by IMAS Seamap) -->
+   <tile_source name="🇦🇺 ⚓ Depth contours AusBathyTopo (AU)" url_template="https://geoserver.imas.utas.edu.au/geoserver/seamap/wms?SERVICE=WMS&amp;VERSION=1.1.1&amp;REQUEST=GetMap&amp;LAYERS=seamap:CONTOURS_AusBathyTopo2024_select&amp;STYLES=&amp;SRS=EPSG:4326&amp;BBOX={bbox}&amp;WIDTH=256&amp;HEIGHT=256&amp;FORMAT=image/png&amp;TRANSPARENT=TRUE" ext=".png" min_zoom="4" max_zoom="16" tile_size="256" img_density="16" avg_img_size="10000"/>
+
+
+   <!-- AU maps: AHO ENC works via ImageServer exportImage (bboxSR=4326, imageSR=3857); licence ("Not for navigation", (c) Commonwealth) to be confirmed before enabling
+   <tile_source name="🇦🇺 ⚓ Australian Hydrographic Office ENC Series" url_template="https://services.hydro.gov.au/site1/rest/services/Basemaps/AHOENCSeries/ImageServer/exportImage?bbox={bbox}&amp;bboxSR=4326&amp;imageSR=3857&amp;size=256,256&amp;format=png&amp;f=image" ext=".png" min_zoom="4" max_zoom="18" tile_size="256" img_density="16" avg_img_size="18000"/>   -->
 
    <!-- NZ maps
    <tile_source name="🇳🇿 New Zealand Topo50" url_template="https://tiles-4.topomap.co.nz/tiles-topo50-202410/{0}-{1}-{2}.png" ext=".png" min_zoom="1" max_zoom="20" tile_size="256" img_density="16" avg_img_size="18000"/>
