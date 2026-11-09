@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## How to Use {#how-to-use}
 
 1. [Log in](./web-cloud.md#login) to your OsmAnd Pro account on the Web Map Portal. Your tracks must be synced to [OsmAnd Cloud](./web-cloud.md#cloud-sync).
-2. Open *Menu → Tracks analyzer* (the wrench icon).
+2. Open *Menu → Tracks analyzer* (the chart with a magnifier icon).
 3. In the **Select tracks** panel, choose **All tracks** or only the folders you need.
 4. Right-click the map and select **Point A**. To analyze a segment between two points, also set **Point B**.
 5. Review the list of found segments, [sort it, and choose which parameters to display](#sorting-and-visible-parameters).
