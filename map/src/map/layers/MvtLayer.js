@@ -188,6 +188,8 @@ export default function MvtLayer({ config }) {
                 contourLinesFeet,
             }),
             interactive: false,
+            // Split overzoomed tiles to keep repeated contour ticks below MapLibre's 32768-symbol limit.
+            experimentalZoomLevelsToOverscale: 4,
             ...(paneName ? { pane: paneName } : {}),
         }).addTo(map);
 
