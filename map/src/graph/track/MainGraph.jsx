@@ -9,9 +9,9 @@ import GraphManager, {
     DISTANCE,
     ELEVATION,
     ELEVATION_SRTM,
-    KM_IN_METERS,
     sampleElevationData,
     SLOPE,
+    slopeDistance,
     SPEED,
     STEEPNESS,
     UNDEFINED_DATA,
@@ -35,13 +35,7 @@ import clsx from 'clsx';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import { getRelativePosition } from 'chart.js/helpers';
-import {
-    convertMeters,
-    getLargeLengthUnit,
-    getSmallLengthUnit,
-    getSpeedUnit,
-    LARGE_UNIT,
-} from '../../menu/settings/units/UnitsConverter';
+import { getLargeLengthUnit, getSmallLengthUnit, getSpeedUnit } from '../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
 
 ChartJS.register(
@@ -129,7 +123,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
             );
             setSlopeData(
                 showData[y1Axis[2]]
-                    ? slopes.map((d, i) => ({ x: slopeDistance(d, ctx), y: d.slope, originalIndex: i }))
+                    ? slopes.map((d, i) => ({ x: slopeDistance(d, ctx.unitsSettings), y: d.slope, originalIndex: i }))
                     : null
             );
             if (showData[y1Axis[0]]) {
@@ -183,11 +177,11 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
             res = {
                 min:
                     dataSet === 'Slope'
-                        ? { x: slopeDistance(slopes[res.minInd], ctx), y: slopes[res.minInd].slope }
+                        ? { x: slopeDistance(slopes[res.minInd], ctx.unitsSettings), y: slopes[res.minInd].slope }
                         : { x: dataGraph[res.minInd][xAxis], y: dataGraph[res.minInd][dataSet] },
                 max:
                     dataSet === 'Slope'
-                        ? { x: slopeDistance(slopes[res.maxInd], ctx), y: slopes[res.maxInd].slope }
+                        ? { x: slopeDistance(slopes[res.maxInd], ctx.unitsSettings), y: slopes[res.maxInd].slope }
                         : { x: dataGraph[res.maxInd][xAxis], y: dataGraph[res.maxInd][dataSet] },
             };
             setMaxMinData(res);
@@ -638,8 +632,4 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
             />
         </>
     );
-}
-
-function slopeDistance(slope, ctx) {
-    return convertMeters(slope.dist * KM_IN_METERS, ctx.unitsSettings.len, LARGE_UNIT);
 }

@@ -14,7 +14,13 @@ import {
 } from '../../menu/settings/units/UnitsConverter';
 import { LINE_STRING, getDistance } from '../../util/Utils';
 import styles from './../graph.module.css';
-import GraphManager, { calculateSlopes, ELEVATION_COLOR, ELEVATION_FILL_COLOR, SLOPE_COLOR } from '../GraphManager';
+import GraphManager, {
+    calculateSlopes,
+    ELEVATION_COLOR,
+    ELEVATION_FILL_COLOR,
+    SLOPE_COLOR,
+    slopeDistance,
+} from '../GraphManager';
 import { createCombinedYAxisLabelsPlugin } from '../plugins/combinedYAxisLabelsPlugin';
 import { createDistanceXAxisPlugin } from '../plugins/distanceXAxisPlugin';
 import { createTooltip } from '../plugins/tooltipPlugin';
@@ -79,7 +85,7 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
                 const prepDistance = convertMeters(totalDist, unitsSettings.len, LARGE_UNIT);
                 const prepElevation = convertMeters(elevation, unitsSettings.len, SMALL_UNIT);
                 if (prepDistance != null && prepElevation != null) {
-                    points.push({ distance: prepDistance, elevation: prepElevation });
+                    points.push({ distance: prepDistance, elevation: prepElevation, elevationMeters: elevation });
                     coordsWithDistance.push({ lat, lng, distance: prepDistance });
                 }
             }
@@ -97,8 +103,9 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
         const slopes = calculateSlopes(points, {
             totalDistance: totalDist,
             distanceKey: 'distance',
-            elevationKey: 'elevation',
-        });
+            elevationKey: 'elevationMeters',
+            unitsSettings,
+        }).map((slope) => ({ ...slope, dist: slopeDistance(slope, unitsSettings) }));
 
         return { points: sampledPoints, slopes, allPoints: points, coordinates: coordsWithDistance };
     }, [route, unitsSettings.len]);

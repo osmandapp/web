@@ -43,7 +43,7 @@ export const ELEVATION_COLOR = '#2183F4';
 export const ELEVATION_FILL_COLOR = 'rgba(35, 123, 255, 0.10)';
 
 export const SLOPE_STEP = 10; //m
-export const KM_IN_METERS = 1000;
+const KM_IN_METERS = 1000;
 
 const data_parser = {
     [ROAD_CLASS]: parse(styles, ROAD_CLASS),
@@ -183,6 +183,7 @@ export function cap(s) {
  * @param {boolean} options.mutateOriginal - Whether original array can be mutated (default false).
  * @param {string} options.distanceKey - Key name for distance if points don't contain GraphManager keys.
  * @param {string} options.elevationKey - Key name for elevation if points don't contain GraphManager keys.
+ * @param {Object|null} options.unitsSettings - Units of the point distances (default ctx.unitsSettings).
  *
  * @returns {Array|null} slopes array with additional min/max properties from getSlopes().
  */
@@ -194,6 +195,7 @@ export function calculateSlopes(
         mutateOriginal = false,
         distanceKey = 'distance',
         elevationKey = 'elevation',
+        unitsSettings = ctx?.unitsSettings,
     } = {}
 ) {
     if (!rawPoints || rawPoints.length === 0) {
@@ -212,12 +214,12 @@ export function calculateSlopes(
         }));
     }
 
-    return getSlopes(points, ctx, totalDistance);
+    return getSlopes(points, ctx, totalDistance, unitsSettings);
 }
 
-function getSlopes(result, ctx, sumDist) {
+function getSlopes(result, ctx, sumDist, unitsSettings) {
     const totalDistance = ctx?.selectedGpxFile?.analysis?.totalDistance || sumDist;
-    const unitInMeters = ctx?.unitsSettings ? 1 / convertMeters(1, ctx.unitsSettings.len, LARGE_UNIT) : KM_IN_METERS;
+    const unitInMeters = 1 / convertMeters(1, unitsSettings.len, LARGE_UNIT);
     let STEP = SLOPE_STEP;
     let l = 10;
     while (l > 0 && totalDistance / STEP > 10000) {
@@ -275,7 +277,7 @@ function getSlopes(result, ctx, sumDist) {
         let dist = calculatedSlopeDist[i];
         res.push({
             slope: Math.trunc(calculatedSlope[i] * 100) / 100,
-            dist: dist !== undefined ? dist / 1000 : 0,
+            dist: dist !== undefined ? dist / KM_IN_METERS : 0,
         });
     }
     if (STEP > 5) {
@@ -288,6 +290,10 @@ function getSlopes(result, ctx, sumDist) {
 
 export function hasValue(point) {
     return Number.isFinite(parseFloat(point.y));
+}
+
+export function slopeDistance(slope, unitsSettings) {
+    return convertMeters(slope.dist * KM_IN_METERS, unitsSettings.len, LARGE_UNIT);
 }
 
 export function sampleElevationData(eleData, step) {
