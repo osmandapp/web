@@ -5,6 +5,7 @@ import i18n from '../i18n';
 import { hexToRgba } from '../util/ColorUtil';
 import { Interaction } from 'chart.js';
 import { getRelativePosition } from 'chart.js/helpers';
+import { convertMeters, LARGE_UNIT } from '../menu/settings/units/UnitsConverter';
 
 export function getPrimaryFontFamily() {
     if (typeof document === 'undefined') return 'Inter';
@@ -42,6 +43,7 @@ export const ELEVATION_COLOR = '#2183F4';
 export const ELEVATION_FILL_COLOR = 'rgba(35, 123, 255, 0.10)';
 
 export const SLOPE_STEP = 10; //m
+export const KM_IN_METERS = 1000;
 
 const data_parser = {
     [ROAD_CLASS]: parse(styles, ROAD_CLASS),
@@ -215,6 +217,7 @@ export function calculateSlopes(
 
 function getSlopes(result, ctx, sumDist) {
     const totalDistance = ctx?.selectedGpxFile?.analysis?.totalDistance || sumDist;
+    const unitInMeters = ctx?.unitsSettings ? 1 / convertMeters(1, ctx.unitsSettings.len, LARGE_UNIT) : KM_IN_METERS;
     let STEP = SLOPE_STEP;
     let l = 10;
     while (l > 0 && totalDistance / STEP > 10000) {
@@ -222,7 +225,12 @@ function getSlopes(result, ctx, sumDist) {
     }
     // interpolate
     const pointsWithEle = result.filter((point) => Number.isFinite(point[ELEVATION]));
-    const interpolatorResult = interpolate(totalDistance, STEP, isEmpty(pointsWithEle) ? result : pointsWithEle);
+    const interpolatorResult = interpolate(
+        totalDistance,
+        STEP,
+        isEmpty(pointsWithEle) ? result : pointsWithEle,
+        unitInMeters
+    );
 
     const calculatedDist = interpolatorResult.calculatedX;
     const calculatedH = interpolatorResult.calculatedY;
@@ -254,7 +262,7 @@ function getSlopes(result, ctx, sumDist) {
         let current = result[i];
         if (current) {
             let dist = current[DISTANCE];
-            let ind = findSlopeIndex(calculatedSlopeDist, dist, STEP);
+            let ind = findSlopeIndex(calculatedSlopeDist, dist, STEP, unitInMeters);
             if (ind !== -1 && ind >= 0) {
                 result[i][SLOPE] = Math.trunc(calculatedSlope[ind] * 100) / 100;
             }
@@ -290,22 +298,22 @@ export function isSrtmAppeared(trackData, ctx) {
     return !trackData.srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis;
 }
 
-function findSlopeIndex(slopeDist, dist, step) {
+function findSlopeIndex(slopeDist, dist, step, unitInMeters) {
     let lo = 0;
     let hi = slopeDist.length;
     while (lo < hi) {
         const mid = (lo + hi) >> 1;
-        if (slopeDist[mid] / 1000 > dist - step / 1000) {
+        if (slopeDist[mid] / unitInMeters > dist - step / unitInMeters) {
             hi = mid;
         } else {
             lo = mid + 1;
         }
     }
 
-    return lo < slopeDist.length && slopeDist[lo] / 1000 < dist + step / 1000 ? lo : -1;
+    return lo < slopeDist.length && slopeDist[lo] / unitInMeters < dist + step / unitInMeters ? lo : -1;
 }
 
-function interpolate(totalLength, step, result) {
+function interpolate(totalLength, step, result, unitInMeters) {
     const calculatedPointsCount = Math.floor(totalLength / step) + 1;
     const calculatedX = [];
     const calculatedY = [];
@@ -317,7 +325,7 @@ function interpolate(totalLength, step, result) {
     }
 
     function getX(index) {
-        return result[index][DISTANCE] * 1000;
+        return result[index][DISTANCE] * unitInMeters;
     }
 
     for (let k = 0; k < calculatedPointsCount; k++) {
