@@ -169,7 +169,7 @@ On this screen you can:
 - Tap + to add another coordinate format. On the *Add format* screen, search a database of over 5,000 local and national EPSG codes by country, name, or ID. Each added format appears at the end of the list.
 - Open the ⋮ menu to restore the default list of coordinate formats or copy coordinate formats from another profile. 
 
-When searching by coordinates, you can select a coordinate format from the Recent list or tap *Select other format* to browse all available coordinate systems. You can also search by coordinate system name or EPSG code. The *Recent* list shows the last 5 formats you used. For EPSG formats, the coordinate fields are *Easting / X* and *Northing / Y*.
+When searching by coordinates, you can select a coordinate format from the Recent list or tap *Select other format* to browse all available coordinate systems. You can also search by coordinate system name or EPSG code. The *Recent* list shows the last 5 formats you added. For EPSG formats, the coordinate fields are *Easting / X* and *Northing / Y*.
 
 
 <!--
