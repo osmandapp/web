@@ -282,7 +282,7 @@ export default function ConfigureMap() {
                                     iconClassName={setIconStyles(ctx.configureMapState.showTransportStops)}
                                 />
                                 <DividerWithMargin margin={'64px'} />
-                                {ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) && (
+                                {isOsmAndTileURL(mtx.tileURL) && (
                                     <>
                                         {showProButton() ? (
                                             <DefaultItem

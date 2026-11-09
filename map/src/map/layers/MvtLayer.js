@@ -149,7 +149,7 @@ export default function MvtLayer({ config }) {
     const hybridUnderlayUrlRef = useRef(hybridUnderlayUrl);
     const maplibreMapRef = useRef(null);
     const dataZoomShift = ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) ? vtx.mvtTweaks.dataZoomShift : 0;
-    const showContourLines = ctx.develFeatures && ctx.configureMapState.showContourLines && ltx.isProAccountLoaded();
+    const showContourLines = ctx.configureMapState.showContourLines && ltx.isProAccountLoaded();
     const contourLinesFeet = isSmallLengthUnitFeet(ctx);
 
     hybridUnderlayUrlRef.current = hybridUnderlayUrl;
