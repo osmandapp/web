@@ -497,12 +497,22 @@ Go to: *Menu → Configure Map → Show → Coordinates Grid*
 
 <TabItem value="android" label="Android">  
 
-![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.png) ![Coordinates grid menu](@site/static/img/map/coordinates_grid_format_andr.webp)
+![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_andr.webp) ![Coordinates grid menu](@site/static/img/map/coordinates_grid_format_andr.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Coordinates grid menu](@site/static/img/map/coordinates_grid_settings_ios.webp) ![Coordinates grid menu](@site/static/img/map/coordinates_grid_format_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines or metric grid lines, depending on the selected coordinate system. This feature is useful for precise location reference and geospatial navigation. 
 
 You can configure the following options:
-- **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
+- **Zoom levels:** set the minimum and maximum zoom levels (0 - 22) at which the grid is visible.
 - **Labels position:** choose between *Edges* (default) or *Center* for grid labels.
 - **Grid color:** available separately for Day/Night mode. 
 - **Coordinate format:** select from several available formats (see list below).
@@ -522,39 +532,9 @@ The **Recent** section shows recently used coordinate systems. To add another su
 
 **Note:** The list includes only coordinate systems that the grid can display accurately: systems measured in meters, with one datum transformation to WGS 84 that is valid across the whole area of the system. Systems measured in feet or other non-metric units, and systems that require several regional transformations, are not available for the grid.
 
-By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
+By default, the grid uses the DDD.DDDDD format. The format you select in this menu applies only to the coordinates grid.
 
 [Quick action](../widgets/quick-action.md#overview): You can also add a quick toggle *Show/Hide Coordinates Grid* to the [Configure Map](../widgets/quick-action.md#configure-map) group for fast access.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-The **Coordinates Grid** feature overlays a reference grid on the map, allowing you to visualize latitude and longitude lines or metric grid lines, depending on the selected coordinate system. This feature is useful for precise location reference and geospatial navigation. 
-
-You can configure the following options:
-- **Zoom levels:** set the minimum and maximum zoom levels (2 - 22) at which the grid is visible.
-- **Labels position:** choose between *Edges* (default) or *Center* for grid labels.
-- **Grid color:** available separately for Day/Night mode. 
-- **Coordinate format:** select from several available formats (see list below).
-
-***Available coordinate formats:***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrees, Minutes, Seconds)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimal Degrees - WGS84 default format)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrees, Decimal Minutes)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - zone-based grid system). The minimum zoom level is 9, only one UTM zone is displayed at a time, as zones are separated by meridians every 6°.
-- **MGRS** (Military Grid Reference System)
-
-By default, the app uses the coordinate format selected in [General settings](../personal/profiles.md#units--formats), but you can change it directly in this menu.
-
-[Quick action](../widgets/quick-action.md#overview): You can also add a quick toggle *Show/Hide Coordinates Grid* to the [Configure Map](../widgets/quick-action.md#configure-map) group for fast access.
-
-</TabItem>
-
-</Tabs>
 
 
 ## Routes {#routes}
