@@ -12,7 +12,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.4 {#ios-54}
+# iOS 5.5 {#ios-55}
 
 ## Join Beta {#join-beta}
 
@@ -27,42 +27,30 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 ## What's new {#whats-new}
 
-- Search updated with a new **[Explore](https://osmand.net/docs/user/map/popular_places#explore-in-search)** tab featuring popular places nearby.
-- New experimental **[Astronomy plugin](https://osmand.net/docs/user/plugins/astronomy)** with an astronomical overlay showing the paths of the Sun, planets and stars.
-- Added a **[palette editor](https://osmand.net/docs/user/map/tracks/appearance#color-palette-editor)** to create and customize color schemes for routes and terrain.
-- Smarter track organization with **[Smart Folders](https://osmand.net/docs/user/personal/tracks/smart-folder)** and clearer summary statistics.
-- More flexible **[widget and map button layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especially in landscape mode.
-- Enhanced **[Plan a route](https://osmand.net/docs/user/plan-route/create-route)** with elevation graph, offline elevation calculation, and route parameters.
-- Added uphill, downhill, and flat segments to **[track analysis](https://osmand.net/docs/user/map/tracks/track-context-menu#analyze-by-intervals)**.
-
-<!--
-- Last Uphill / Last Downhill mode for **[Trip recording widgets](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, with switching between total and last ascent/descent.
-- Updated **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** with modes for total distance, last uphill/downhill distance.
-- **[Max Speed widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing maximum speed for the whole trip or for the most recent uphill/downhill section.
-- **[Average Slope widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing the average slope of the latest ascent or descent.
-- *Show track on map* quick action added to the Trip recording widget group.
-- Improvements in route selection and altitude graph integration under the updated rendering scheme.
-- Elevation graph widget for navigation, displaying a compact profile along routes or GPX tracks.
-- **[Popular places](https://osmand.net/docs/user/map/popular_places/)** layer updated with POI source selection and optional image previews on the map.
-- New Explore section in Search with “Popular places nearby” and improved offline/no-data states.
-- Enhanced POI search results with consistent city display, refined layout, and optional thumbnails.
-- Default appearance settings for track folders, allowing new tracks to inherit a unified folder style.
--->
+- New **[coordinate formats](https://osmand.net/docs/user/search/search-coordinates#coordinate-format)**, including EPSG systems, Maidenhead locator, and Swiss Grid, with a primary format and a list of preferred ones.
+- Separate **[widget layouts](https://osmand.net/docs/user/widgets/configure-screen#single-and-separate-layouts)** for Portrait and Landscape, plus Wide or Compact top and bottom panels.
+- Customizable **[widget panel appearance](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance)** with widget size, icons, and text and background colors.
+- New **[CarPlay settings](https://osmand.net/docs/user/navigation/car-play#settings)** for map orientation and frame rate, with Home available in one tap from the Navigation menu.
+- New **[Keep screen on](https://osmand.net/docs/user/personal/profiles#appearance)** setting for each profile: follow the system timeout, keep the screen on during navigation only, or keep it always on.
+- **[Contour line](https://osmand.net/docs/user/plugins/topography#contour-lines)** labels can face uphill, as on paper topographic maps.
+- Full appearance settings when you **[change several Favorites](https://osmand.net/docs/user/personal/favorites#bulk-edit--delete)** at once.
 
 
 ## Bug fixes {#bug-fixes}
 
-- Fixed [Smart Folders](https://github.com/osmandapp/OsmAnd-iOS/issues/5358) not syncing to OsmAnd Cloud or appearing in Settings export.
-- Updated the [Wikipedia context menu](https://github.com/osmandapp/OsmAnd-Issues/issues/3215) with a new design and added online photos.
-- Fixed missing [POI names](https://github.com/osmandapp/OsmAnd-iOS/issues/5253) in the “What’s here” menu.
-- Fixed opening [Travel Guides](https://github.com/osmandapp/OsmAnd-Issues/issues/3212) from search results to show the article directly.
-- Adjusted the position of the [Online Photos](https://github.com/osmandapp/OsmAnd-iOS/issues/5336) section in the region context menu.
+- Fixed an [issue](https://github.com/osmandapp/OsmAnd-iOS/issues/5696) where emptying the OsmAnd Cloud trash restored deleted maps and Favorites.
+- Corrected [elevation dropping to 0](https://github.com/osmandapp/OsmAnd-iOS/issues/5526) in tracks recorded in the background.
+- Resolved [OsmAnd Cloud sync conflicts](https://github.com/osmandapp/OsmAnd-iOS/issues/5463) after updating maps on several devices.
+- Prevented [Favorites from hidden folders](https://github.com/osmandapp/OsmAnd-iOS/issues/5558) from appearing in search results.
+- Fixed [Plan a route closing](https://github.com/osmandapp/OsmAnd-iOS/issues/5947) when you tap a track on the map.
+- Corrected [pedestrian travel time](https://github.com/osmandapp/OsmAnd-iOS/issues/5787) shown for car routes after Attach to roads.
+- Fixed [waypoints added to the recording track](https://github.com/osmandapp/OsmAnd-iOS/issues/5893) not responding to taps.
+- Stopped the [waypoint icon from blinking](https://github.com/osmandapp/OsmAnd-iOS/issues/2764) during track recording.
 
 <!--
-- Faster opening of context menus when tapping POIs, Favorites, tracks and buildings.
-- Correct handling of relation-based POIs on multipolygons.
-- Fixed “null” appearing instead of a city name in POI search results and improved night-mode background consistency.
-- Restored tappable behaviour for fitness, running and canoe routes with shields.
+- Fixed map updates for mappers with Devanagari and Eastern Arabic numerals.
+- Fixed the map zooming out when you add a Quick Action while moving.
+- Fixed KML import creating an empty track.
 -->
 
 

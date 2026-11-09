@@ -462,6 +462,7 @@
     "spatial_search_busy_descr": "The search server is busy. Please try again in a moment.",
     "dev_backup_maps": "Backup Maps",
     "dev_top_photos": "Top Photos",
+    "dev_email_templates": "Email Templates",
     "plan_route": "Plan route",
     "create_track": "Create track",
     "import_track": "Import track",

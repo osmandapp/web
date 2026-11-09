@@ -92,6 +92,21 @@ describe('clusterMarkers: favorites', () => {
         expect(names(mainMarkers)).toEqual(['p0', 'p2', 'p4']);
         expect(names(secondaryMarkers)).toEqual(['p8']);
     });
+
+    test('a waypoint without a latitude gets no marker', () => {
+        const ZOOM = 14;
+        const places = [wpt(0, ZOOM, 'a'), { ...wpt(100, ZOOM, 'no lat'), lat: null }];
+
+        const { mainMarkers, secondaryMarkers } = clusterMarkers({
+            places,
+            zoom: ZOOM,
+            latitude: LAT,
+            isFavorites: true,
+        });
+
+        expect(names(mainMarkers)).toEqual(['a']);
+        expect(names(secondaryMarkers)).toEqual([]);
+    });
 });
 
 describe('clusterMarkers: explore', () => {

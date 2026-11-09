@@ -3,7 +3,6 @@ import {
     Button,
     Collapse,
     Divider,
-    IconButton,
     Link,
     ListItemIcon,
     ListItemText,
@@ -52,7 +51,7 @@ import FavoritesManager, {
     navigateToFavoritesMenu,
     resolveWptAppearance,
 } from '../../../manager/FavoritesManager';
-import { ExpandLess, ExpandMore, Folder } from '@mui/icons-material';
+import { Folder } from '@mui/icons-material';
 import FavoriteActionsButtons from './actions/FavoriteActionsButtons';
 import WptTagsProvider, {
     filterTag,
@@ -81,6 +80,7 @@ import WptTagsProvider, {
     stringifyTagValues,
 } from './WptTagsProvider';
 import WptTagInfo from './WptTagInfo';
+import CollapsableTagHeader from './CollapsableTagHeader';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
 import MenuItemWithLines from '../../../menu/components/MenuItemWithLines';
@@ -643,7 +643,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     }
 
     function closeDetails() {
-        const type = wpt?.type;
+        const type = newWpt?.type;
         if (!type) return;
 
         ctx.setSelectedWpt(null);
@@ -658,7 +658,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                     return { ...prev, show: false };
                 });
             }
-            if (!wpt.mapObj) {
+            if (!newWpt.mapObj) {
                 ctx.setSelectedPoiObj(null);
                 setShowInfoBlock(false);
                 navigate({
@@ -677,7 +677,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 setShowInfoBlock(false);
                 navigateBackToSearchResults(navigate, ctx, location);
             } else {
-                !wpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
+                !newWpt.mapObj || ctx.selectedCloudTrackObj ? setOpenWptTab(true) : closeObjectFromMap();
             }
         } else if (type.isWikiPoi) {
             if (ctx.selectedWptId) {
@@ -686,7 +686,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 });
             }
             setShowInfoBlock(false);
-            if (wpt.mapObj) {
+            if (newWpt.mapObj) {
                 ctx.setSearchSettings((prev) => ({ ...prev, getPoi: null }));
                 closeObjectFromMap();
             } else {
@@ -701,11 +701,11 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                 // Opened from search — always return to search results.
                 ctx.setSelectedSearchObj(null);
                 setShowInfoBlock(false);
-                if (!wpt.mapObj) {
+                if (!newWpt.mapObj) {
                     ctx.setSelectedFavoriteObj(null);
                 }
                 navigateBackToSearchResults(navigate, ctx, location);
-            } else if (!wpt.mapObj) {
+            } else if (!newWpt.mapObj) {
                 ctx.setSelectedFavoriteObj(null);
                 closeOnlyFavDetails();
             } else {
@@ -717,7 +717,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
             setShowInfoBlock(false);
             ctx.setSelectedGpxFile((prev) => ({ ...prev, markerCurrent: null, favItem: false, name: null }));
         } else if (type.isStop) {
-            if (wpt.mapObj) {
+            if (newWpt.mapObj) {
                 closeObjectFromMap();
             }
         }
@@ -985,38 +985,31 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
     const WikiVoyageLinks = ({ wvLinks }) => {
         const [open, setOpen] = useState(false);
 
-        const value = Object.values(wvLinks)
-            .map((link) => link[0])
-            .join(' • ');
+        const links = Object.values(wvLinks);
+        const value = links.map((link) => link[0]).join(' • ');
+        const singleLink = links.length === 1 ? links[0][1] : null;
 
         return (
             <>
                 <MenuItem style={{ userSelect: 'text' }} disableRipple className={wptStyles.tagItem} divider>
                     <WikiIcon className={wptStyles.tagIcon} />
-                    <>
-                        <ListItemText onClick={() => setOpen(!open)}>
-                            <MenuItemWithLines
-                                name={t('shared_string_wikivoyage')}
-                                maxLines={1}
-                                className={wptStyles.tagPrefix}
-                            />
-                            {Object.keys(wvLinks).length > 1 ? (
-                                <MenuItemWithLines name={value} maxLines={1} className={wptStyles.tagName} />
-                            ) : (
-                                <Link href={Object.values(wvLinks)[0][1]} target="_blank" rel="noopener noreferrer">
-                                    {Object.values(wvLinks)[0][1]}
-                                </Link>
-                            )}
-                        </ListItemText>
-                        {Object.keys(wvLinks).length > 1 && (
-                            <IconButton onClick={() => setOpen(!open)}>
-                                {open ? <ExpandLess /> : <ExpandMore />}
-                            </IconButton>
+                    <CollapsableTagHeader
+                        prefix={t('shared_string_wikivoyage')}
+                        prefixMaxLines={1}
+                        value={value}
+                        expandable={!singleLink}
+                        open={open}
+                        setOpen={setOpen}
+                    >
+                        {singleLink && (
+                            <Link href={singleLink} target="_blank" rel="noopener noreferrer">
+                                {singleLink}
+                            </Link>
                         )}
-                    </>
+                    </CollapsableTagHeader>
                 </MenuItem>
                 <Collapse in={open} timeout="auto" unmountOnExit>
-                    {Object.values(wvLinks).map((item, index) => (
+                    {links.map((item, index) => (
                         <MenuItem
                             disableRipple={!ctx.develFeatures}
                             onClick={() => {
@@ -1062,18 +1055,18 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
 
     return (
         <>
-            {showLoading ? (
-                <Loading />
-            ) : (
-                <Box
-                    sx={{
-                        height: `${height - HEADER_SIZE}px`,
-                        minWidth: ctx.infoBlockWidth,
-                        maxWidth: ctx.infoBlockWidth,
-                    }}
-                    className={gStyles.scrollMainBlock}
-                >
-                    <Header />
+            <Box
+                sx={{
+                    height: `${height - HEADER_SIZE}px`,
+                    minWidth: ctx.infoBlockWidth,
+                    maxWidth: ctx.infoBlockWidth,
+                }}
+                className={gStyles.scrollMainBlock}
+            >
+                <Header />
+                {showLoading ? (
+                    <Loading />
+                ) : (
                     <Box className={gStyles.scrollActiveBlock}>
                         {wpt !== null && (
                             <ListItemText id={getId()} sx={{ mt: 0 }}>
@@ -1299,8 +1292,8 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
                             </ListItemText>
                         )}
                     </Box>
-                </Box>
-            )}
+                )}
+            </Box>
             {devWikiContent && (
                 <Dialog open={true}>
                     <DialogContent>
