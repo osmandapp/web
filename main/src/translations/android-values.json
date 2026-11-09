@@ -11142,7 +11142,10 @@
 	"coordinate_grid_outside_crs_area": "This grid is visible only within the selected CRS area of use.",
 	"coordinate_grid_visible_from_zoom_and_crs_area": "This grid is visible from zoom level %1$d and only within the selected CRS area of use.",
 	"coordinate_grid_format_not_supported": "This coordinate format is not supported by Coordinate Grid.",
-  "report_an_issues": "Report a problem"
+  "report_an_issues": "Report a problem",
+  "rendering_attr_contourLabelDirection_name": "Label direction",
+  "rendering_value_upright_name": "Upright",
+  "rendering_value_uphill_name": "Uphill"
 
 
 
