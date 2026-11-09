@@ -11,8 +11,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
+import AppContext from '../../context/AppContext';
+import { openLogin } from '../../manager/LoginManager';
 
 export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -105,6 +108,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                     <TextField
                         margin="dense"
                         onChange={(e) => {
+                            setEmailError('');
                             oldCodeConfirmed ? setNewCode(e.target.value) : setOldCode(e.target.value);
                         }}
                         id="code"
@@ -120,6 +124,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                         <TextField
                             margin="dense"
                             onChange={(e) => {
+                                setEmailError('');
                                 setNewEmail(e.target.value);
                             }}
                             id="pwd"
@@ -174,8 +179,10 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                         <Button onClick={() => setOpenChangeEmailDialog(false)}>Cancel</Button>
                         <Button
                             onClick={() => {
+                                setOpenChangeEmailDialog(false);
                                 ltx.setLoginUser(null);
                                 ltx.setEmailCookie(newEmail, { days: 30, SameSite: 'Strict' });
+                                openLogin({ ctx, ltx, navigate });
                             }}
                         >
                             Login using new credentials
