@@ -305,6 +305,29 @@ Behavior when disconnecting from Android Auto:
 
 This update also ensures that Android Auto sessions now close correctly, preventing unnecessary battery usage and stopping “trip in progress” notifications once navigation ends.
 
+### Voice Control {#voice-control}
+
+You can control OsmAnd on the *Android Auto* screen by voice with Google Assistant or Gemini. Voice actions work both online and offline.
+
+Navigation actions:
+
+- *End navigation* — stops the current route.
+- *Mute or unmute voice guidance* — turns [voice prompts](#voice-prompts) off or on. The *Voice prompts* switch in the *Android Auto* settings changes accordingly.
+- *Avoid or allow toll roads, motorways, or ferries* — changes the corresponding route parameter of the profile used for navigation, and the route is recalculated.
+- *Return to my location* — centers the map on your current position.
+- *Go back* — returns to the previous screen.
+
+Route information. The answer appears as a message on the *Android Auto* screen:
+
+- *Arrival time* — the estimated time of arrival.
+- *Distance to destination* — the remaining distance.
+- *Time or distance to the next turn* — how soon the next turn is.
+- *Next turn* — a description of the next maneuver.
+- *Destination* — the name or coordinates of the destination point.
+- *Current road* — the name of the road you are on.
+
+If no route is calculated, OsmAnd shows a message that the route is not calculated. Requests for features that are not available in OsmAnd, such as traffic, satellite view, or reporting road events, show a message that the action is not supported.
+
 
 ## Settings {#settings}
 
