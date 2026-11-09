@@ -135,6 +135,14 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
         }
     }, [data, showData, slopes]);
 
+    useEffect(() => {
+        window.seGraphData = data;
+
+        return () => {
+            window.seGraphData = null;
+        };
+    }, [data]);
+
     function addMaxMinMarkers(dataSet, min = null, max = null) {
         let res = {
             minInd: null,

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx version="1.1" creator="OsmAnd" xmlns="http://www.topografix.com/GPX/1/1">
+  <metadata>
+    <name>test-track-two-segments</name>
+  </metadata>
+  <trk>
+    <trkseg>
+      <trkpt lat="50.0182977" lon="19.8901514">
+        <ele>224.6</ele>
+      </trkpt>
+      <trkpt lat="50.0235518" lon="19.9010903">
+        <ele>210.4</ele>
+      </trkpt>
+      <trkpt lat="50.0277058" lon="19.8989462">
+        <ele>204.4</ele>
+      </trkpt>
+      <trkpt lat="50.033321" lon="19.9003506">
+        <ele>202.8</ele>
+      </trkpt>
+      <trkpt lat="50.0369523" lon="19.8859021">
+        <ele>200.6</ele>
+      </trkpt>
+      <trkpt lat="50.0419062" lon="19.8644925">
+        <ele>203.6</ele>
+      </trkpt>
+      <trkpt lat="50.0336494" lon="19.8320629">
+        <ele>206.8</ele>
+      </trkpt>
+      <trkpt lat="50.024887" lon="19.8086228">
+        <ele>208.4</ele>
+      </trkpt>
+      <trkpt lat="50.0172472" lon="19.8009371">
+        <ele>203.4</ele>
+      </trkpt>
+      <trkpt lat="50.0072839" lon="19.7966931"></trkpt>
+    </trkseg>
+    <trkseg>
+      <trkpt lat="49.9924516" lon="19.8001878"></trkpt>
+      <trkpt lat="49.9862798" lon="19.8139531">
+        <ele>208.4</ele>
+      </trkpt>
+      <trkpt lat="49.9882503" lon="19.827178">
+        <ele>216.2</ele>
+      </trkpt>
+      <trkpt lat="49.9914943" lon="19.8478992">
+        <ele>215.6</ele>
+      </trkpt>
+      <trkpt lat="49.9895573" lon="19.8554148">
+        <ele>226.6</ele>
+      </trkpt>
+      <trkpt lat="49.98849" lon="19.8728432">
+        <ele>224.8</ele>
+      </trkpt>
+      <trkpt lat="49.9974765" lon="19.8785966">
+        <ele>223.8</ele>
+      </trkpt>
+      <trkpt lat="49.998921" lon="19.8846099">
+        <ele>235.6</ele>
+      </trkpt>
+      <trkpt lat="50.0070803" lon="19.8887865">
+        <ele>247.6</ele>
+      </trkpt>
+      <trkpt lat="50.0175836" lon="19.8919436">
+        <ele>232.4</ele>
+      </trkpt>
+    </trkseg>
+  </trk>
+</gpx>

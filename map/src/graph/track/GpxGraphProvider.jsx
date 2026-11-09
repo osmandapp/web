@@ -280,6 +280,7 @@ const GpxGraphProvider = ({ width }) => {
                             label={key === ELEVATION_SRTM ? 'Elevation (Satellite)' : key}
                             control={
                                 <Checkbox
+                                    id={`se-graph-${key}`}
                                     sx={{ ml: '-15px', mt: '-4px' }}
                                     checked={checkShowData(value)}
                                     onChange={() => {
