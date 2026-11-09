@@ -118,7 +118,7 @@ You can select previously preset and added [POIs](../map/point-layers-on-map.md#
 
 3. Select [Search](#search) to enter a destination from the available search categories.  
 
-4. Choose **Free ride** to take a journey without a specified endpoint.
+4. Choose **Free ride** to take a journey without a specified endpoint. If no route is calculated and you do not select any category, OsmAnd starts *Free ride* automatically after your vehicle has been moving faster than 5 km/h for 15 seconds. This way, the map appears after reconnecting to Android Auto without any interaction with the vehicle screen.
 
 :::note
 While driving, selected points can be [announced](#voice-prompts) when you approach or pass them. See the [Voice prompts](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
