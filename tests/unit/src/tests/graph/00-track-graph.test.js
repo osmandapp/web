@@ -1,5 +1,5 @@
 import { getGraphData } from '@map/graph/track/GpxGraphProvider';
-import { DISTANCE, ELEVATION, ELEVATION_SRTM, SLOPE } from '@map/graph/GraphManager';
+import { DISTANCE, ELEVATION, ELEVATION_SRTM, sampleElevationData, SLOPE } from '@map/graph/GraphManager';
 import { addDistance, addDistanceToPoints, getTrackPoints } from '@map/manager/track/TracksManager';
 import { createEditorPoint } from '../../util/fixtures/tracks';
 
@@ -67,4 +67,15 @@ test('the segments of a multi-track file are one graph, a gap at the segment bou
     expect(res[2][SLOPE]).toBeCloseTo(climb, 1);
     expect(res[3][SLOPE]).toBeCloseTo(climb, 1);
     expect(res[4][SLOPE]).toBeCloseTo(climb, 1);
+});
+
+test('sampling a long elevation graph keeps the points with elevation when the gaps fall on the sampling step', () => {
+    const gappy = Array.from({ length: 1002 }, (_, i) => ({ x: i, y: i % 2 ? 100 + i : NaN }));
+    const full = Array.from({ length: 6 }, (_, i) => ({ x: i, y: 100 + i }));
+
+    const sampled = sampleElevationData(gappy, 2);
+
+    expect(sampled).toHaveLength(251);
+    expect(sampled.every((p) => Number.isFinite(p.y))).toBe(true);
+    expect(sampleElevationData(full, 2).map((p) => p.x)).toEqual([0, 2, 4]);
 });

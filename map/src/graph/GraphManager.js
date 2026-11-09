@@ -278,6 +278,14 @@ function getSlopes(result, ctx, sumDist) {
     return res;
 }
 
+export function hasValue(point) {
+    return Number.isFinite(parseFloat(point.y));
+}
+
+export function sampleElevationData(eleData, step) {
+    return eleData?.filter(hasValue).filter((_, i) => i % step === 0);
+}
+
 export function isSrtmAppeared(trackData, ctx) {
     return !trackData.srtm && ctx.selectedGpxFile.analysis?.srtmAnalysis;
 }

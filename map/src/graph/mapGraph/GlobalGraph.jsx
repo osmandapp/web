@@ -15,7 +15,7 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { DISTANCE, ELEVATION, SLOPE, SPEED } from '../GraphManager';
+import { DISTANCE, ELEVATION, hasValue, SLOPE, SPEED } from '../GraphManager';
 import { getGraphData } from '../track/GpxGraphProvider';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import styles from '../../frame/frame.module.css';
@@ -138,7 +138,8 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
 
             // Highlight the closest point
             if (closestPoint && datasetIndex !== -1 && pointIndex !== -1) {
-                chartRef.current.tooltip.setActiveElements([{ datasetIndex, index: pointIndex }], {
+                const activeElements = hasValue(closestPoint) ? [{ datasetIndex, index: pointIndex }] : [];
+                chartRef.current.tooltip.setActiveElements(activeElements, {
                     x: closestPoint.x,
                     y: closestPoint.y,
                 });
@@ -201,6 +202,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                             borderWidth: 2,
                             pointRadius: points.length < 200 ? 2 : 0,
                             fill: false,
+                            spanGaps: yAxisOption === 'altitude',
                         });
                     }
                 });
@@ -226,7 +228,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
 
             chart.data.datasets.forEach((dataset, datasetIndex) => {
                 dataset.data.forEach((point, index) => {
-                    if (Math.abs(point.x - xValue) < 0.001) {
+                    if (hasValue(point) && Math.abs(point.x - xValue) < 0.001) {
                         newActiveElements.push({ datasetIndex, index });
                     }
                 });
@@ -252,7 +254,6 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         return {
             responsive: true,
             maintainAspectRatio: false,
-            spanGaps: true,
             animation: {
                 duration: 400,
             },

@@ -50,8 +50,8 @@ export const getGraphData = ({
         let elevationSRTM = hasSrtm ? 'srtmEle' : null;
         let points = cloneDeep(pointsArr);
         let result = [];
-        let minEle = elevation || elevationSRTM ? TracksManager.NAN_MARKER : null;
-        let maxEle = elevation || elevationSRTM ? TracksManager.NAN_MARKER : null;
+        let minEle = null;
+        let maxEle = null;
         let minSpeed = hasSpeed ? 0 : null;
         let maxSpeed = hasSpeed ? 0 : null;
         let sumDist = 0;
@@ -63,16 +63,16 @@ export const getGraphData = ({
                 ele = TracksManager.getEle(point, elevation)?.toFixed(2);
                 if (ele !== undefined) {
                     ele = Math.round(ele * 10) / 10;
-                    minEle = minEle === TracksManager.NAN_MARKER ? ele : Math.min(ele, minEle);
-                    maxEle = maxEle === TracksManager.NAN_MARKER ? ele : Math.max(ele, maxEle);
+                    minEle = Math.min(ele, minEle ?? ele);
+                    maxEle = Math.max(ele, maxEle ?? ele);
                 }
             }
             if (elevationSRTM) {
                 eleSRTM = TracksManager.getEle(point, elevationSRTM)?.toFixed(2);
                 if (eleSRTM && !elevation) {
                     eleSRTM = Math.round(eleSRTM * 10) / 10;
-                    minEle = minEle === TracksManager.NAN_MARKER ? eleSRTM : Math.min(eleSRTM, minEle);
-                    maxEle = maxEle === TracksManager.NAN_MARKER ? eleSRTM : Math.max(eleSRTM, maxEle);
+                    minEle = Math.min(eleSRTM, minEle ?? eleSRTM);
+                    maxEle = Math.max(eleSRTM, maxEle ?? eleSRTM);
                 }
             }
             if (hasSpeed) {
@@ -125,6 +125,7 @@ const GpxGraphProvider = ({ width }) => {
 
     const [data, setData] = useState(null);
     const [showData, setShowData] = useState(null);
+    const [showDataTrackName, setShowDataTrackName] = useState(null);
     const [roadPoints, setRoadPoints] = useState(null);
     const [routeTypes, setRouteTypes] = useState(null);
     const [slopes, setSlopes] = useState(null);
@@ -193,12 +194,13 @@ const GpxGraphProvider = ({ width }) => {
 
     useEffect(() => {
         if (data) {
+            const sameTrackShowData = showDataTrackName === ctx.selectedGpxFile?.name ? showData : null;
             let newShowData = {};
             if (data.ele) {
-                newShowData[ELEVATION] = showData?.[ELEVATION] ?? data.ele;
+                newShowData[ELEVATION] = sameTrackShowData?.[ELEVATION] ?? data.ele;
             }
             if (data.srtm) {
-                newShowData[ELEVATION_SRTM] = showData?.[ELEVATION_SRTM] ?? data.srtm;
+                newShowData[ELEVATION_SRTM] = sameTrackShowData?.[ELEVATION_SRTM] ?? data.srtm;
             }
             if (data.speed) {
                 newShowData[SPEED] = showData && showData[SPEED] ? true : '';
@@ -207,6 +209,7 @@ const GpxGraphProvider = ({ width }) => {
                 newShowData[SLOPE] = showData && showData[SLOPE] ? true : '';
             }
             setShowData(newShowData);
+            setShowDataTrackName(ctx.selectedGpxFile?.name);
             seleniumUpdateActivity();
         }
     }, [data]);

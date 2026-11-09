@@ -9,6 +9,7 @@ import GraphManager, {
     DISTANCE,
     ELEVATION,
     ELEVATION_SRTM,
+    sampleElevationData,
     SLOPE,
     SPEED,
     STEEPNESS,
@@ -349,11 +350,11 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                         },
                         afterBody: (context) => {
                             let res = [];
-                            const ind = dataGraph.findIndex((d) => d[xAxis] === Number(context[0].label));
+                            const ind = dataGraph.findIndex((d) => d[xAxis] === context[0].parsed.x);
                             //add slopes
                             if (dataGraph[ind] && context[0].dataset.yAxisID !== 'y1Slope' && showSlope) {
-                                if (dataGraph[ind]['Slope']) {
-                                    res.push(`Slope: ${dataGraph[ind]['Slope'].toFixed(0)} %`);
+                                if (Number.isFinite(dataGraph[ind][SLOPE])) {
+                                    res.push(`Slope: ${Math.round(dataGraph[ind][SLOPE])} %`);
                                 } else {
                                     res.push('Slope: N/A');
                                 }
@@ -504,7 +505,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                 {
                     label: y1Axis[0],
                     type: 'line',
-                    data: eleData?.filter((_, i) => i % sliderStep === 0),
+                    data: sampleElevationData(eleData, sliderStep),
                     borderColor: 'rgb(242, 217, 131)',
                     backgroundColor: 'rgba(242, 217, 131, 0.46)',
                     borderWidth: 1,
