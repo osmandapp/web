@@ -1,13 +1,14 @@
 export const MVT_OSMAND_LAYER = 'mvt-osmand';
 
-// URL in default.mvt.json is used for external style editors only
-// This URL overrides the default one and requires setupProxy.js to proxy /vector/ queries
-const port = window.location.port;
-const host = window.location.hostname.toLowerCase();
-const cache = ''; // host.endsWith('osmand.net') ? '' : '?cache=false';
-const tilesPort = !port || port === '80' || port === '443' ? '' : `:${port}`;
-const tilesHost = host === 'osmand.net' || host === 'www.osmand.net' ? 'maptile.osmand.net' : host;
-export const MVT_OSMAND_URL = `${window.location.protocol}//${tilesHost}${tilesPort}/vector/{z}/{x}/{y}.mvt${cache}`;
+// URLs in default.mvt.json are used for external style editors only.
+const localOrigin = process.env.REACT_APP_USE_LOCAL_API ? window.location.origin : null;
+const tilesOrigin = localOrigin || process.env.REACT_APP_MVT_TILES_URL;
+const contoursOrigin = localOrigin || process.env.REACT_APP_CONTOUR_TILES_URL;
+export const MVT_OSMAND_URL = `${tilesOrigin}/vector/{z}/{x}/{y}.mvt`;
+export const MVT_OSMAND_CONTOURS_URL = `${contoursOrigin}/vector/contours/{z}/{x}/{y}.mvt`;
+export const MVT_OSMAND_CONTOURS_FEET_URL = `${contoursOrigin}/vector/contours-feet/{z}/{x}/{y}.mvt`;
+
+export const MVT_CONTOURS_SOURCE = 'contours';
 
 export const MVT_OSM_TEST_LAYER = 'mvt-osm-test';
 export const MVT_OSM_TEST_URL = 'https://tiles.openstreetmap.us/vector/openmaptiles/{z}/{x}/{y}.mvt';

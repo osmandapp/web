@@ -93,6 +93,10 @@ export function getSmallLengthUnit(ctx) {
     return lengthUnitsMap[ctx.unitsSettings.len].native.small;
 }
 
+export function isSmallLengthUnitFeet(ctx) {
+    return getSmallLengthUnit(ctx) === lengthUnitsMap.si_mi_feet.native.small;
+}
+
 export function getLargeLengthUnit(ctx) {
     return lengthUnitsMap[ctx.unitsSettings.len].native.large;
 }

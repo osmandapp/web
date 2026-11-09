@@ -62,6 +62,7 @@ export const defaultConfigureMapStateValues = {
     showTransportStops: false,
     pois: [],
     showTracks: true,
+    showContourLines: false,
     terrain: NO_HEIGHTMAP.key,
     mapStyle: { tileURL: osmandTileURL },
 };
