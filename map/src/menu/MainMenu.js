@@ -515,15 +515,6 @@ export default function MainMenu({
             url: MAIN_URL_WITH_SLASH + TRAVEL_URL,
         },
         {
-            name: t('shared_string_settings'),
-            icon: SettingsIcon,
-            component: <SettingsMenu />,
-            type: OBJECT_GLOBAL_SETTINGS,
-            show: true,
-            id: MENU_IDS.settings,
-            url: MAIN_URL_WITH_SLASH + SETTINGS_URL,
-        },
-        {
             name: t('web:tracks_analyzer'),
             icon: TrackAnalyzerIcon,
             component: <TrackAnalyzerMenu />,
@@ -531,6 +522,15 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.trackanalyzer,
             url: MAIN_URL_WITH_SLASH + TRACK_ANALYZER_URL,
+        },
+        {
+            name: t('shared_string_settings'),
+            icon: SettingsIcon,
+            component: <SettingsMenu />,
+            type: OBJECT_GLOBAL_SETTINGS,
+            show: true,
+            id: MENU_IDS.settings,
+            url: MAIN_URL_WITH_SLASH + SETTINGS_URL,
         },
     ];
 
