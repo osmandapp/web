@@ -653,5 +653,15 @@
     "your_email_address": "Your email address",
     "code_from_email": "Code from Email",
     "enter_valid_email": "Please enter valid email",
-    "email_does_not_match": "Email does not match"
+    "email_does_not_match": "Email does not match",
+    "change_email": "Change email",
+    "change_email_old_code_desc": "Please enter verification code which was sent to your current email",
+    "change_email_new_email_desc": "Please enter your new email",
+    "new_email_value": "New email: {{email}}",
+    "code_from_old_email": "Code from Old Email",
+    "code_from_new_email": "Code from New Email",
+    "new_email": "New Email",
+    "finish_btn": "Finish",
+    "email_changed_successfully": "Email changed successfully",
+    "login_new_credentials_btn": "Login using new credentials"
 }
