@@ -103,30 +103,30 @@ test('road type and surface bars follow the route segments, equal neighbours mer
             backgroundColor: path,
             index: 0,
             size: 8,
-            data: [8],
-            totalDist: 8,
+            data: [expect.closeTo(8)],
+            totalDist: expect.closeTo(8),
         },
         {
             label: 'rendering_attr_highway_class_service_name',
             backgroundColor: service,
             index: 8,
             size: 4,
-            data: [4],
-            totalDist: 12,
+            data: [expect.closeTo(4)],
+            totalDist: expect.closeTo(12),
         },
         {
             label: 'rendering_attr_highway_class_street_name',
             backgroundColor: street,
             index: 12,
             size: 8,
-            data: [8],
-            totalDist: 20,
+            data: [expect.closeTo(8)],
+            totalDist: expect.closeTo(20),
         },
     ]);
     expect(graphs.roadClass.legend).toEqual({
-        rendering_attr_highway_class_path_name: { color: path, distance: 800 },
-        rendering_attr_highway_class_service_name: { color: service, distance: 400 },
-        rendering_attr_highway_class_street_name: { color: street, distance: 800 },
+        rendering_attr_highway_class_path_name: { color: path, distance: expect.closeTo(800, 0) },
+        rendering_attr_highway_class_service_name: { color: service, distance: expect.closeTo(400, 0) },
+        rendering_attr_highway_class_street_name: { color: street, distance: expect.closeTo(800, 0) },
     });
 
     const ground = hexToRgba('#cc9900');
@@ -138,30 +138,30 @@ test('road type and surface bars follow the route segments, equal neighbours mer
             backgroundColor: ground,
             index: 0,
             size: 8,
-            data: [8],
-            totalDist: 8,
+            data: [expect.closeTo(8)],
+            totalDist: expect.closeTo(8),
         },
         {
             label: 'rendering_attr_surface_asphalt_name',
             backgroundColor: asphalt,
             index: 8,
             size: 8,
-            data: [8],
-            totalDist: 16,
+            data: [expect.closeTo(8)],
+            totalDist: expect.closeTo(16),
         },
         {
             label: 'rendering_attr_surface_gravel_name',
             backgroundColor: gravel,
             index: 16,
             size: 4,
-            data: [4],
-            totalDist: 20,
+            data: [expect.closeTo(4)],
+            totalDist: expect.closeTo(20),
         },
     ]);
     expect(graphs.surface.legend).toEqual({
-        rendering_attr_surface_ground_name: { color: ground, distance: 800 },
-        rendering_attr_surface_asphalt_name: { color: asphalt, distance: 800 },
-        rendering_attr_surface_gravel_name: { color: gravel, distance: 400 },
+        rendering_attr_surface_ground_name: { color: ground, distance: expect.closeTo(800, 0) },
+        rendering_attr_surface_asphalt_name: { color: asphalt, distance: expect.closeTo(800, 0) },
+        rendering_attr_surface_gravel_name: { color: gravel, distance: expect.closeTo(400, 0) },
     });
 });
 

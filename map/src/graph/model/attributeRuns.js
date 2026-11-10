@@ -10,7 +10,7 @@ export function routeSegments(roadPoints, routeTypes, distances) {
         segments.push({
             from,
             to,
-            length: Math.round(distances[to] - distances[from]),
+            length: distances[to] - distances[from],
             tags: segmentTags(ext.types, routeTypes),
         });
     });
