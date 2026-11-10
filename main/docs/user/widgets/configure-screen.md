@@ -489,7 +489,11 @@ You can rearrange or remove widgets from the application screen using the **Edit
 
 ## Map Screen Layout {#map-screen-layout}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ![Map Screen Layout](@site/static/img/widgets/map_screen_layout_1.png) ![Map Screen Layout](@site/static/img/widgets/map_screen_layout_2.png)
 
@@ -497,11 +501,29 @@ The **Map screen layout** setting allows you to control how widget panels are ar
 
 You can open the Map screen layout settings from the Configure screen menu, either directly from the screen actions or via the three-dot menu.
 
-### Single & Separate Layouts {#single-and-separate-layouts}
+</TabItem>
 
-![Map Screen Layout](@site/static/img/widgets/screen_layout_single.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_separate.png)
+<TabItem value="ios" label="iOS"> 
+
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
+
+![Map Screen Layout](@site/static/img/widgets/map_screen_layout_ios.webp) ![Map Screen Layout](@site/static/img/widgets/map_screen_layout_ios_2.webp) 
+
+The map screen layout settings allow you to control how widget panels are arranged on the map screen in **<Translate ios="true" ids="map_orientation_portrait"/>** and **<Translate ios="true" ids="map_orientation_landscape"/>** orientations. To choose how the orientations share screen elements, tap **⋮** and select **<Translate ios="true" ids="screen_elements"/>**.
+
+</TabItem>
+
+</Tabs>
+
+### Single & Separate Layouts / Screen Elements {#single-and-separate-layouts}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
+
+![Map Screen Layout](@site/static/img/widgets/screen_layout_single.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_separate.png)
 
 OsmAnd supports two layout modes for the map screen:
 - **<Translate android="true" ids="single_layout"/>** – uses the same widget layout for all screen orientations. This option is selected by default.
@@ -509,7 +531,33 @@ OsmAnd supports two layout modes for the map screen:
 
 When Separate layouts is enabled, changes made in one orientation do not affect the other. This is useful if you want to optimize the map screen differently for portrait and landscape use.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate ios="true" ids="screen_elements"/>*
+
+![Map Screen Layout](@site/static/img/widgets/screen_shared.webp) ![Map Screen Layout](@site/static/img/widgets/screen_independent.webp)
+
+The **<Translate ios="true" ids="screen_elements"/>** setting defines whether **<Translate ios="true" ids="map_orientation_portrait"/>** and **<Translate ios="true" ids="map_orientation_landscape"/>** orientations use the same screen elements or independent sets:
+
+- **<Translate ios="true" ids="screen_elements_shared"/>** – Landscape uses the same screen elements as Portrait. Changes in one orientation apply to both. This option is selected by default.
+- **<Translate ios="true" ids="screen_elements_independent"/>** – Portrait and Landscape have independent sets of screen elements. Changes made in one orientation do not affect the other.
+
+Tap **✓** to apply the selected option.
+
+When **<Translate ios="true" ids="screen_elements_independent"/>** is selected, widget panels and widget panel appearance are configured separately for each orientation.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Portrait & Landscape Tabs {#portrait-and-landscape-tabs}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Map Screen Layout](@site/static/img/widgets/screen_layout_tabs.png)
 
@@ -523,7 +571,39 @@ Only the widget list is copied, and the operation applies within the same profil
 
 ![Map Screen Layout](@site/static/img/widgets/screen_layout_portrait.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_landscape.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Map Screen Layout](@site/static/img/widgets/screen_layout_landscape.webp)
+
+The **<Translate ios="true" ids="map_orientation_portrait"/>** and **<Translate ios="true" ids="map_orientation_landscape"/>** tabs are always available at the top of the **<Translate ios="true" ids="layer_map_appearance"/>** menu. Each tab shows the settings for the corresponding screen orientation. When **<Translate ios="true" ids="screen_elements"/>** is set to **<Translate ios="true" ids="screen_elements_independent"/>**, the menu opens on the tab of the current device orientation. Otherwise, it opens on the Portrait tab.
+
+When **<Translate ios="true" ids="screen_elements"/>** is set to **<Translate ios="true" ids="screen_elements_shared"/>**, the Landscape tab shows:
+
+- **<Translate ios="true" ids="screen_elements"/>** card – describes the current mode. Tap **<Translate ios="true" ids="switch_to_independent"/>** to open the Screen elements settings.
+- **<Translate ios="true" ids="panels_layout"/>** and **<Translate ios="true" ids="shared_string_appearance"/>** – settings for the Landscape orientation.
+
+Widget panels, buttons, and other settings are configured on the Portrait tab and apply to both orientations.
+
+When **<Translate ios="true" ids="screen_elements"/>** is set to **<Translate ios="true" ids="screen_elements_independent"/>**, you can copy the widget list of a panel from the other orientation. Open the widget panel, tap **⋮** and select:
+
+- **<Translate ios="true" ids="copy_from_landscape_layout"/>** – available on the Portrait tab. Copies the widget list of the panel from the Landscape layout.
+- **<Translate ios="true" ids="copy_from_portrait_layout"/>** – available on the Landscape tab. Copies the widget list of the panel from the Portrait layout.
+
+Only the widget list is copied, and the operation applies within the same profile.
+
+</TabItem>
+
+</Tabs>
+
 ### Panels Layout {#panels-layout}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,panels_layout"/>*
 
 ![Map Screen Layout](@site/static/img/widgets/screen_layout_wide.png) ![Map Screen Layout](@site/static/img/widgets/screen_layout_compact.png)
 
@@ -536,6 +616,27 @@ You can choose between two modes:
 - **<Translate android="true" ids="panels_layout_compact"/>** – the top and bottom panels fit between the side panels and map buttons.
 
 Panels layout can be configured independently for Portrait and Landscape orientations, allowing better adaptation to different screen sizes and orientations.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,panels_layout"/>*
+
+![Map Screen Layout](@site/static/img/widgets/screen_layout_wide.webp) ![Map Screen Layout](@site/static/img/widgets/screen_layout_compact.webp)
+
+The **<Translate ios="true" ids="panels_layout"/>** setting controls how the top and bottom widget panels are displayed. You can choose between two modes:
+
+- **<Translate ios="true" ids="panels_layout_wide"/>** – the top and bottom panels span the full width of the screen. This option is selected by default.
+- **<Translate ios="true" ids="panels_layout_compact"/>** – the top and bottom panels fit between the side panels and map buttons.
+
+The preview shows the selected mode for the current orientation. Tap **✓** to apply the selected mode.
+
+Panels layout is configured separately on the **<Translate ios="true" ids="map_orientation_portrait"/>** and **<Translate ios="true" ids="map_orientation_landscape"/>** tabs, with both **<Translate ios="true" ids="screen_elements_shared"/>** and **<Translate ios="true" ids="screen_elements_independent"/>** screen elements.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Buttons {#buttons}

@@ -4429,7 +4429,16 @@
   "msg_favorites_skipped_as_existing": "Favorite points (%d) were skipped as already existing.",
   "carplay_trip_via_point": "Via %@",
   "tracks_stats_are_being_calculated": "Tracks stats are being calculated...",
-  "tracks_stats_are_being_calculated_left": "%1$@ %2$@ left"
+  "tracks_stats_are_being_calculated_left": "%1$@ %2$@ left",
+    "screen_elements": "Screen elements",
+  "screen_elements_shared": "Shared",
+  "screen_elements_independent": "Independent",
+  "switch_to_independent": "Switch to Independent",
+  "panels_layout": "Panels layout",
+  "panels_layout_wide": "Wide",
+  "panels_layout_compact": "Compact",
+  "copy_from_portrait_layout": "Copy from Portrait layout",
+  "copy_from_landscape_layout": "Copy from Landscape layout"
 
 
 
