@@ -18,7 +18,7 @@ import { By } from 'selenium-webdriver';
 
 const MVT_STYLE_KEY = 'mvt-osmand';
 
-const NOVUS = { hash: '#17/50.45146/30.52493', lat: 50.450943, lon: 30.522257, name: 'NOVUS', osmId: '1420181775' };
+const NOVUS = { hash: '#16/50.45146/30.52493', lat: 50.450943, lon: 30.522257, name: 'NOVUS', osmId: '1420181775' };
 const STOP = {
     hash: '#17/50.45115/30.51999',
     lat: 50.451286,
