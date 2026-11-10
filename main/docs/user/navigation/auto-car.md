@@ -360,7 +360,7 @@ To enable or disable [**Route info** for an intermediate point (next stop)](#nex
 
 *Android Auto* and OsmAnd offer the ability to adjust the map to match lighting conditions. In *Day map mode*, the color scheme remains bright and contrasting, making it easier to read even in bright sunlight. In *Night mode*, the maps become darker, which helps the driver navigate better in the dark.  
 
-OsmAnd in *Android Auto* has its own map mode setting, separate from the [map mode](../map/vector-maps.md#map-mode) options in the OsmAnd app on your device. To change it, go to *Android Auto (OsmAnd) → Setting button → Map mode*, select an option, and tap *Apply*. The map switches to the selected mode after you tap *Apply*. If you leave the screen with the back arrow without tapping *Apply*, the previous mode remains selected.
+OsmAnd in *Android Auto* has its own map mode setting, separate from the [map mode](../map/vector-maps.md#map-mode) options in the OsmAnd app on your device. To change it, go to *Android Auto (OsmAnd) → Setting button → Map mode* and select an option. The selected mode is applied immediately, and the screen returns to the Settings list.
 
 - Select *Day* or *Night* to keep the map display unchanged, regardless of signals from your vehicle.
 - If you want the map display mode to switch automatically based on signals from your vehicle, select *Automatic* (default).  
@@ -370,7 +370,7 @@ OsmAnd in *Android Auto* has its own map mode setting, separate from the [map mo
 
 ![Android Auto Map Magnifier](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
 
-*Map magnifier* changes the magnification of the map on the *Android Auto* screen. To change it, go to *Android Auto (OsmAnd) → Setting button → Map magnifier*, select a value from 50% to 125%, and tap *Apply*. The current value is shown under *Map magnifier* in the settings list.  
+*Map magnifier* changes the magnification of the map on the *Android Auto* screen. To change it, go to *Android Auto (OsmAnd) → Setting button → Map magnifier*, select a value, and tap *Apply*. The current value is shown under *Map magnifier* in the settings list.  
 
 To learn how magnification affects the map display, see [Map magnifier](../map/vector-maps.md#map-magnifier).
 
