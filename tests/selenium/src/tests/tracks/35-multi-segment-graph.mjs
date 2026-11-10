@@ -47,8 +47,8 @@ export default async function test() {
 
 async function validateGraph() {
     const points = await driver.executeScript(`
-        const res = window.seGraphData?.res;
-        return res ? res.map((p) => ({ dist: p.Distance, ele: p.Elevation ?? null, slope: p.Slope ?? null })) : null;
+        const graph = window.seGraphData;
+        return graph?.profile.map((p, i) => ({ dist: p.distance, ele: p.elevation, slope: graph.slopes?.pointSlopes[i] ?? null })) ?? null;
     `);
     if (points?.length !== POINTS) {
         return false;

@@ -15,8 +15,10 @@ import {
     Tooltip,
     Legend,
 } from 'chart.js';
-import { DISTANCE, ELEVATION, hasValue, SLOPE, SPEED } from '../GraphManager';
-import { getGraphData } from '../track/GpxGraphProvider';
+import { hasValue } from '../model/sampling';
+import { analyzerProfile } from '../model/profile';
+import { computeSlopes } from '../model/slopes';
+import { useGraphUnits } from '../units';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import styles from '../../frame/frame.module.css';
 import SegmentSelector from '../analyzer/SegmentSelector';
@@ -24,8 +26,9 @@ import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
 import YAxisSelector from './YAxisSelector';
 import debounce from 'lodash-es/debounce';
+import isEmpty from 'lodash-es/isEmpty';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import { getLargeLengthUnit, getSmallLengthUnit } from '../../menu/settings/units/UnitsConverter';
+import { getLargeLengthUnit, getSmallLengthUnit, getSpeedUnit } from '../../menu/settings/units/UnitsConverter';
 
 const MIN_GRAPH_HEIGHT = 34;
 const INNER_GRAPH_HEIGHT = 150;
@@ -56,6 +59,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
 
     const chartRef = useRef(null);
     const [width] = useWindowSize();
+    const units = useGraphUnits();
     const [collapsed, setCollapsed] = useState(false);
 
     const GRAPH_TYPES = {
@@ -170,23 +174,19 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                     if (!segmentVisibility[trackName]?.[index]) {
                         return;
                     }
-                    const segmentData = getGraphData({
-                        segmentData: segment,
-                        ctx,
-                        hasEle: true,
-                        hasSpeed: true,
-                    });
-                    if (segmentData?.res?.length) {
-                        const points = segmentData.res.map((point) => ({
-                            x: parseFloat(point[DISTANCE]),
+                    if (!isEmpty(segment.points)) {
+                        const profile = analyzerProfile(segment.points);
+                        const slopes = yAxisOption === 'slope' ? computeSlopes(profile) : null;
+                        const points = profile.map((p, i) => ({
+                            x: units.distance(p.distance),
                             y:
                                 yAxisOption === 'altitude'
-                                    ? point[ELEVATION]
+                                    ? roundTo(units.elevation(p.elevation), 10)
                                     : yAxisOption === 'speed'
-                                      ? point[SPEED]
-                                      : point[SLOPE],
-                            lat: point.lat,
-                            lng: point.lon,
+                                      ? roundTo(units.speed(p.speed), 100)
+                                      : roundTo(slopes?.pointSlopes[i], 100),
+                            lat: p.lat,
+                            lng: p.lng,
                         }));
 
                         const distanceValues = points.map((p) => p.x);
@@ -210,7 +210,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
         }
 
         return { datasets, allDistances };
-    }, [currentGraph.object, yAxisOption, segmentVisibility]);
+    }, [currentGraph.object, yAxisOption, segmentVisibility, units]);
 
     // fix tooltip for nearest points
     useEffect(() => {
@@ -269,7 +269,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                     ticks: {
                         callback: (value) => {
                             return totalDistance < 1
-                                ? `${(value * 1000).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`
+                                ? `${units.largeToSmall(value).toFixed(0)} ${t(getSmallLengthUnit(ctx))}`
                                 : `${value.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`;
                         },
                         autoSkip: true,
@@ -280,7 +280,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                     ticks: {
                         callback: (value) => {
                             if (yAxisOption === 'altitude') return `${value} ${t(getSmallLengthUnit(ctx))}`;
-                            if (yAxisOption === 'speed') return `${value} ${t(getLargeLengthUnit(ctx))}`;
+                            if (yAxisOption === 'speed') return `${value} ${t(getSpeedUnit(ctx))}`;
                             if (yAxisOption === 'slope') return `${value} %`;
                             return value;
                         },
@@ -310,7 +310,7 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
                 },
             },
         };
-    }, [graphData, yAxisOption]);
+    }, [graphData, yAxisOption, units]);
 
     const GraphName = () => {
         return <Typography className={styles.graphTitle}>{currentGraph.name}</Typography>;
@@ -408,4 +408,8 @@ export default function GlobalGraph({ type = TYPE_ANALYZER }) {
             </Drawer>
         </>
     );
+}
+
+function roundTo(value, factor) {
+    return Number.isFinite(value) ? Math.round(value * factor) / factor : null;
 }

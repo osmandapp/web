@@ -5,22 +5,14 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 import { useTranslation } from 'react-i18next';
 import throttle from 'lodash-es/throttle';
 import AppContext from '../../context/AppContext';
-import {
-    convertMeters,
-    getLargeLengthUnit,
-    getSmallLengthUnit,
-    LARGE_UNIT,
-    SMALL_UNIT,
-} from '../../menu/settings/units/UnitsConverter';
-import { LINE_STRING, getDistance } from '../../util/Utils';
+import { getLargeLengthUnit, getSmallLengthUnit } from '../../menu/settings/units/UnitsConverter';
+import { LINE_STRING } from '../../util/Utils';
 import styles from './../graph.module.css';
-import GraphManager, {
-    calculateSlopes,
-    ELEVATION_COLOR,
-    ELEVATION_FILL_COLOR,
-    SLOPE_COLOR,
-    slopeDistance,
-} from '../GraphManager';
+import GraphManager, { ELEVATION_COLOR, ELEVATION_FILL_COLOR, SLOPE_COLOR } from '../GraphManager';
+import { routeProfile } from '../model/profile';
+import { computeSlopes } from '../model/slopes';
+import { sampleSeries } from '../model/sampling';
+import { useGraphUnits } from '../units';
 import { createCombinedYAxisLabelsPlugin } from '../plugins/combinedYAxisLabelsPlugin';
 import { createDistanceXAxisPlugin } from '../plugins/distanceXAxisPlugin';
 import { createTooltip } from '../plugins/tooltipPlugin';
@@ -28,6 +20,8 @@ import { createMouseLinePlugin } from '../plugins/mouseLinePlugin';
 
 // ~60 FPS (16ms) for smooth performance
 const MOUSE_MOVE_THROTTLE_MS = 16;
+
+const MAX_GRAPH_POINTS = 100;
 
 ChartJS.register(LinearScale, PointElement, LineElement, Tooltip, Legend, zoomPlugin);
 
@@ -42,6 +36,7 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
     const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const unitsSettings = ctx.unitsSettings;
+    const units = useGraphUnits();
     const chartRef = useRef(null);
 
     // Process route geometry and calculate distances, elevations, and slopes
@@ -66,57 +61,34 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
             return null;
         }
 
-        const points = [];
-        const coordsWithDistance = [];
-        let totalDist = 0;
-        let prevLat = null;
-        let prevLng = null;
-
         // Calculate cumulative distance and elevation for each point
-        coordinates.forEach(([lng, lat, ele]) => {
-            if (prevLat !== null && prevLng !== null) {
-                totalDist += getDistance(prevLat, prevLng, lat, lng);
-            }
-            prevLat = lat;
-            prevLng = lng;
-
-            const elevation = Number(ele);
-            if (Number.isFinite(elevation)) {
-                const prepDistance = convertMeters(totalDist, unitsSettings.len, LARGE_UNIT);
-                const prepElevation = convertMeters(elevation, unitsSettings.len, SMALL_UNIT);
-                if (prepDistance != null && prepElevation != null) {
-                    points.push({ distance: prepDistance, elevation: prepElevation, elevationMeters: elevation });
-                    coordsWithDistance.push({ lat, lng, distance: prepDistance });
-                }
-            }
-        });
-
+        const profile = routeProfile(coordinates);
+        const elevation = profile.map((p, index) => ({
+            x: units.distance(p.distance),
+            y: units.elevation(p.elevation),
+            index,
+        }));
+        // Sample points for graph performance (max 100 points displayed)
+        const points = sampleSeries(elevation, MAX_GRAPH_POINTS);
         if (points.length < 2) {
             return null;
         }
+        const slopes = computeSlopes(profile);
 
-        // Sample points for graph performance (max 100 points displayed)
-        const maxPoints = 100;
-        const step = Math.max(1, Math.floor(points.length / maxPoints));
-        const sampledPoints = points.filter((_, i) => i % step === 0);
-
-        const slopes = calculateSlopes(points, {
-            totalDistance: totalDist,
-            distanceKey: 'distance',
-            elevationKey: 'elevationMeters',
-            unitsSettings,
-        }).map((slope) => ({ ...slope, dist: slopeDistance(slope, unitsSettings) }));
-
-        return { points: sampledPoints, slopes, allPoints: points, coordinates: coordsWithDistance };
-    }, [route, unitsSettings.len]);
+        return {
+            elevation: points,
+            slope: points.map((p) => ({ x: p.x, y: slopes.pointSlopes[p.index], index: p.index })),
+            coordinates: profile.map((p, i) => ({ lat: p.lat, lng: p.lng, distance: elevation[i].x })),
+        };
+    }, [route, units]);
 
     const distanceUnit = t(getLargeLengthUnit({ unitsSettings }));
     const smallDistanceUnit = t(getSmallLengthUnit({ unitsSettings }));
     const elevationUnit = smallDistanceUnit;
 
     const totalDistance = totalDistanceMeters
-        ? (convertMeters(totalDistanceMeters, unitsSettings.len, LARGE_UNIT) ?? 0)
-        : graphData?.points[graphData.points.length - 1]?.distance || 0;
+        ? units.distance(totalDistanceMeters)
+        : graphData?.elevation.at(-1)?.x || 0;
 
     const mouseLinePlugin = useMemo(() => createMouseLinePlugin('#f8931d'), []);
 
@@ -124,6 +96,7 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
         () =>
             createTooltip({
                 t,
+                unitsSettings,
                 distanceUnit,
                 smallDistanceUnit,
                 totalDistance,
@@ -133,7 +106,7 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
                 ],
                 attributes: null,
             }),
-        [distanceUnit, smallDistanceUnit, totalDistance, elevationUnit]
+        [unitsSettings, distanceUnit, smallDistanceUnit, totalDistance, elevationUnit]
     );
 
     const options = useMemo(
@@ -231,18 +204,11 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
         return null;
     }
 
-    const elevationData = graphData.points.map((p) => ({ x: p.distance, y: p.elevation }));
-
-    const slopeData = graphData.points.map((p) => {
-        const slope = graphData.slopes.find((s) => Math.abs(s.dist - p.distance) < 0.01);
-        return { x: p.distance, y: slope ? slope.slope : 0 };
-    });
-
     const data = {
         datasets: [
             {
                 label: 'Elevation',
-                data: elevationData,
+                data: graphData.elevation,
                 borderColor: ELEVATION_COLOR,
                 backgroundColor: ELEVATION_FILL_COLOR,
                 borderWidth: 2,
@@ -253,7 +219,7 @@ export default function NavigationSummaryGraph({ route, totalDistanceMeters }) {
             },
             {
                 label: 'Slope',
-                data: slopeData,
+                data: graphData.slope,
                 borderColor: SLOPE_COLOR,
                 backgroundColor: 'transparent',
                 borderWidth: 2,

@@ -1,81 +1,89 @@
-import { getGraphData } from '@map/graph/track/GpxGraphProvider';
-import { DISTANCE, ELEVATION, ELEVATION_SRTM, sampleElevationData, SLOPE } from '@map/graph/GraphManager';
-import { addDistance, addDistanceToPoints, getTrackPoints } from '@map/manager/track/TracksManager';
-import { createEditorPoint } from '../../util/fixtures/tracks';
+import { analyzerProfile, trackProfile } from '@map/graph/model/profile';
+import { computeSlopes } from '@map/graph/model/slopes';
+import { sampleSeries } from '@map/graph/model/sampling';
+import { graphUnits } from '@map/graph/units';
+import TracksManager, { NAN_MARKER } from '@map/manager/track/TracksManager';
+import { createEditorPoint, createRoutedPoints } from '../../util/fixtures/tracks';
 
-const CTX = { unitsSettings: { len: 'si_km_m' } };
-const KM_BETWEEN_POINTS = 1.112;
+const METERS_BETWEEN_EDITOR_POINTS = 1112.26;
+const METERS_IN_DEGREE = 111226.29;
 
-function segmentPoints(values, from = 0, key = 'ele') {
-    return values.map((value, i) => ({ ...createEditorPoint(from + i), [key]: value }));
+function point(i, ele, extra = {}) {
+    return { ...createEditorPoint(i), ele, ...extra };
 }
 
-function trackPoints(values, key = 'ele') {
-    const points = segmentPoints(values, 0, key);
-    addDistanceToPoints(points);
-
-    return points;
+function pointAt(meters, ele) {
+    return { lat: 50 + meters / METERS_IN_DEGREE, lng: 30, ele };
 }
 
-function graphData(points, options) {
-    return getGraphData({ trackData: { data: points }, ctx: CTX, ...options });
-}
+test('the distance skips the gap between segments and tracks, a point without elevation has no value', () => {
+    const first = [point(0, 100), point(1, null), point(2, 120, { profile: TracksManager.PROFILE_GAP }), point(5, 130)];
+    const second = [point(9, undefined), point(10, NAN_MARKER)];
+    const profile = trackProfile({ tracks: [{ points: first }, { points: second }] });
 
-test('a point without elevation is a gap in the graph, not a zero or the height of a neighbour', () => {
-    const { res, minEle, maxEle } = graphData(trackPoints([null, 210.4, 204.4, undefined, 200.6, 247.6]), {
-        hasEle: true,
+    expect(profile.map((p) => p.distance)).toEqual(
+        [0, 1, 2, 2, 2, 3].map((i) => expect.closeTo(i * METERS_BETWEEN_EDITOR_POINTS, 0))
+    );
+    expect(profile.map((p) => p.elevation)).toEqual([100, null, 120, 130, null, null]);
+
+    const routed = trackProfile({ points: createRoutedPoints(3) });
+    expect(routed.map((p) => p.distance)).toEqual(
+        [0, 1, 1, 2].map((i) => expect.closeTo(i * METERS_BETWEEN_EDITOR_POINTS, 0))
+    );
+
+    const analyzer = analyzerProfile([
+        { lat: 50, lon: 30, ele: 100 },
+        { lat: 50.01, lon: 30, ele: 110, distance: 1112 },
+    ]);
+    expect(analyzer.map((p) => [p.distance, p.lng])).toEqual([
+        [0, 30],
+        [1112, 30],
+    ]);
+});
+
+test('the slope runs through the points without elevation, from the first point', () => {
+    const profile = trackProfile({
+        points: [point(0, 100), point(1, 110), point(2, null), point(3, 130), point(4, 140)],
+    });
+    const climb = (10 / METERS_BETWEEN_EDITOR_POINTS) * 100;
+
+    const { pointSlopes } = computeSlopes(profile);
+
+    expect(pointSlopes).toEqual(profile.map(() => expect.closeTo(climb, 1)));
+    expect(computeSlopes(trackProfile({ points: [point(0, null), point(1, null)] }))).toBeNull();
+});
+
+test('the tooltip shows the values of the slope line', () => {
+    const profile = trackProfile({
+        points: [pointAt(0, 100), pointAt(40, 100), pointAt(50, 103), pointAt(60, 100), pointAt(200, 100)],
     });
 
-    expect(res.map((p) => p[ELEVATION])).toEqual([undefined, 210.4, 204.4, undefined, 200.6, 247.6]);
-    expect([minEle, maxEle]).toEqual([200.6, 247.6]);
-    expect(res.map((p) => p[DISTANCE])).toEqual(
-        [0, 1, 2, 3, 4, 5].map((i) => expect.closeTo(i * KM_BETWEEN_POINTS, 2))
-    );
+    const { grid, pointSlopes } = computeSlopes(profile);
+    const lineAt = (distance) => grid.filter((s) => s.distance <= distance).at(-1).slope;
+
+    expect(pointSlopes).toEqual(profile.map((p) => lineAt(p.distance)));
+    expect(grid.filter((s) => [40, 50, 200].includes(Math.round(s.distance))).map((s) => s.index)).toEqual([1, 2, 4]);
 });
 
-test('the slope runs through the points without elevation, a track with no elevation keeps its graph', () => {
-    const { res, slopes } = graphData(trackPoints([null, 110, 120, undefined, 140, 150]), { hasEle: true });
-    const climb = res[2][SLOPE];
-    const drawn = slopes.map((s) => s.slope);
-
-    expect(climb).toBeGreaterThan(0);
-    expect(res[3][SLOPE]).toBeCloseTo(climb, 1);
-    expect(res[4][SLOPE]).toBeCloseTo(climb, 1);
-    expect(Math.min(...drawn)).toBeCloseTo(0, 1);
-    expect(Math.max(...drawn)).toBeCloseTo(climb, 1);
-
-    const { res: srtm } = graphData(trackPoints([110, 120, 130], 'srtmEle'), { hasSrtm: true });
-
-    expect(srtm.map((p) => p[ELEVATION_SRTM])).toEqual([110, 120, 130]);
-});
-
-test('the segments of a multi-track file are one graph, a gap at the segment boundary stays a gap', () => {
-    const file = {
-        tracks: [{ points: segmentPoints([100, 110, null]) }, { points: segmentPoints([null, 130, 140], 8) }],
-    };
-    addDistance(file);
-
-    const { res, minEle, maxEle } = graphData(getTrackPoints(file), { hasEle: true });
-
-    expect(res.map((p) => p[DISTANCE])).toEqual(
-        [0, 1, 2, 2, 3, 4].map((i) => expect.closeTo(i * KM_BETWEEN_POINTS, 2))
-    );
-    expect(res.map((p) => p[ELEVATION])).toEqual([100, 110, undefined, undefined, 130, 140]);
-    expect([minEle, maxEle]).toEqual([100, 140]);
-    const climb = res[1][SLOPE];
-    expect(climb).toBeGreaterThan(0);
-    expect(res[2][SLOPE]).toBeCloseTo(climb, 1);
-    expect(res[3][SLOPE]).toBeCloseTo(climb, 1);
-    expect(res[4][SLOPE]).toBeCloseTo(climb, 1);
-});
-
-test('sampling a long elevation graph keeps the points with elevation when the gaps fall on the sampling step', () => {
-    const gappy = Array.from({ length: 1002 }, (_, i) => ({ x: i, y: i % 2 ? 100 + i : NaN }));
+test('sampling keeps the points with a value when the gaps fall on the sampling step', () => {
+    const gappy = Array.from({ length: 1002 }, (_, i) => ({ x: i, y: i % 2 ? 100 + i : null }));
     const full = Array.from({ length: 6 }, (_, i) => ({ x: i, y: 100 + i }));
 
-    const sampled = sampleElevationData(gappy, 2);
+    const sampled = sampleSeries(gappy, 250);
 
     expect(sampled).toHaveLength(251);
     expect(sampled.every((p) => Number.isFinite(p.y))).toBe(true);
-    expect(sampleElevationData(full, 2).map((p) => p.x)).toEqual([0, 2, 4]);
+    expect(sampleSeries(full, 3).map((p) => p.x)).toEqual([0, 2, 4]);
+});
+
+test('the graph shows the distance, the elevation and the speed in the units of the settings', () => {
+    const imperial = graphUnits({ len: 'si_mi_feet', speed: 'si_mph' });
+    const metric = graphUnits({ len: 'si_km_m', speed: 'si_kmh' });
+
+    expect(imperial.distance(1609.344)).toBeCloseTo(1, 3);
+    expect(imperial.elevation(100)).toBeCloseTo(328.08, 1);
+    expect(imperial.speed(10)).toBeCloseTo(22.37, 1);
+    expect(imperial.largeToSmall(0.5)).toBeCloseTo(2640, 0);
+    expect([imperial.elevation(null), imperial.speed(null)]).toEqual([null, null]);
+    expect([metric.distance(1500), metric.elevation(100), metric.speed(10)]).toEqual([1.5, 100, 36]);
 });

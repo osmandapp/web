@@ -1,5 +1,6 @@
 import { Chart } from 'react-chartjs-2';
-import GraphManager from '../../graph/GraphManager';
+import { activeMouseLinePlugin } from '../../graph/plugins/mouseLinePlugin';
+import { CUSTOM_MODE } from '../../graph/plugins/interactionModes';
 import { Box } from '@mui/material';
 import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,7 +9,6 @@ import {
     CategoryScale,
     Chart as ChartJS,
     Filler,
-    Interaction,
     Legend,
     LinearScale,
     LineController,
@@ -38,7 +38,6 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
     const chartRef = useRef(null);
     const { t, i18n } = useTranslation();
 
-    Interaction.modes.myCustomMode = GraphManager.myCustomMode;
     const isPrecipitation = weatherType?.includes('precip');
 
     const graphData = {
@@ -107,7 +106,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
             },
             interaction: {
                 intersect: false,
-                mode: 'myCustomMode',
+                mode: CUSTOM_MODE,
             },
             hover: {
                 intersect: false,
@@ -118,7 +117,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
             },
             tooltip: {
                 enabled: true,
-                mode: 'myCustomMode',
+                mode: CUSTOM_MODE,
                 intersect: false,
                 backgroundColor: '#757575',
                 displayColors: false,
@@ -146,7 +145,7 @@ export default function ForecastGraph({ data, weatherType, weatherUnits }) {
                 ref={chartRef}
                 style={{ fontSize: 10 }}
                 data={graphData}
-                plugins={[GraphManager.mouseLine]}
+                plugins={[activeMouseLinePlugin]}
                 options={options}
             />
         </Box>

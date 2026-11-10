@@ -6,7 +6,8 @@ import React, { useContext, useMemo, useRef, useState } from 'react';
 import annotationsPlugin from 'chartjs-plugin-annotation';
 import AppContext from '../../context/AppContext';
 import { ExpandLess, ExpandMore, RadioButtonUnchecked } from '@mui/icons-material';
-import { cap, formattingSteepnessLabel, prepareType, STEEPNESS } from '../GraphManager';
+import { cap } from '../GraphManager';
+import { formattingSteepnessLabel, prepareType, STEEPNESS } from './roadAttributes';
 import isEmpty from 'lodash-es/isEmpty';
 import {
     convertMeters,

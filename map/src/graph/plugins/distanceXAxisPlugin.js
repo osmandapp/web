@@ -1,5 +1,6 @@
 import { getPrimaryFontFamily } from '../GraphManager';
 import { getLargeLengthUnit, getSmallLengthUnit } from '../../menu/settings/units/UnitsConverter';
+import { graphUnits } from '../units';
 
 const TICK_TOLERANCE = 0.0001; // Tolerance for floating point comparison when checking duplicate ticks
 const DEFAULT_INTERVAL = 0.1; // Default interval when maxValue is too small (in km)
@@ -18,6 +19,7 @@ const MIN_TICK_DISTANCE_RATIO = 0.8; // Minimum distance between ticks as ratio 
 export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
     const largeUnit = t(getLargeLengthUnit({ unitsSettings }));
     const smallUnit = t(getSmallLengthUnit({ unitsSettings }));
+    const units = graphUnits(unitsSettings);
 
     /**
      * Formats distance value with appropriate unit (large or small).
@@ -29,7 +31,7 @@ export function createDistanceXAxisPlugin({ unitsSettings, totalDistance, t }) {
 
         let formattedValue;
         if (totalDistance < 1 || value < 1) {
-            formattedValue = Math.round(value * 1000).toString();
+            formattedValue = Math.round(units.largeToSmall(value)).toString();
             return includeUnit ? `${formattedValue} ${smallUnit}` : formattedValue;
         }
 
