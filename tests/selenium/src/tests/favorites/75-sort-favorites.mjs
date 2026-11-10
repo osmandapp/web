@@ -119,6 +119,16 @@ export default async function test() {
     // check reopening the group sorts the list by the distances it shows
     await validateItemsSortedByDistance(favItemsFood.length);
 
+    // check the group opened with an animated zoom to fit is sorted by the distances it shows
+    await clickBy(By.id('se-back-folder-button-favorites'));
+    await waitBy(By.id('se-menu-fav-food'), { idle: true });
+    await setView({ lat: 50.4501, lon: 30.5234, zoom: 9 });
+    await actionIdleWait();
+    await clickBy(By.id('se-menu-fav-food'));
+    await waitBy(By.id('se-opened-fav-group-food'));
+    await actionIdleWait();
+    await validateItemsSortedByDistance(favItemsFood.length);
+
     // check save prev groups sort
     await clickBy(By.id('se-back-folder-button-favorites'));
     await waitBy(By.id('se-sort-button-oldDate-favorites'));

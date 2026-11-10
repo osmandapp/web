@@ -154,6 +154,7 @@ export default function MapStateLayer() {
             if (visible && !isInitialViewWithEmptyContext(visible, map, mtx.visibleBboxInfo)) {
                 mtx.setVisibleBboxInfo(visible);
             }
+            mtx.setZoomToFitInProgress(false);
             setCenterPositionPx(centerPx);
         };
 
@@ -365,8 +366,10 @@ export default function MapStateLayer() {
         if (!mtx.zoomToFitRequest) return;
         const bounds = getZoomToFitBounds({ ...mtx.zoomToFitRequest, ctx });
         if (bounds) {
-            applyZoomToFit({ map, mtx, bounds });
+            mtx.setZoomToFitInProgress(applyZoomToFit({ map, mtx, bounds }));
             mtx.setZoomToFitRequest(null);
+        } else {
+            mtx.setZoomToFitInProgress(false);
         }
     }, [mtx.zoomToFitRequest, ctx.favorites?.mapObjs, ctx.gpxFiles]);
 

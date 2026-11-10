@@ -39,7 +39,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     const [, height] = useWindowSize();
     const [listContainerRef, listHeight] = useElementHeight();
     const [markers, setMarkers] = useState([]);
-    const [sortOnMenuClose, setSortOnMenuClose] = useState(false);
+    const [sortDeferred, setSortDeferred] = useState(false);
     const currentLoc = useGeoLocation(ctx);
 
     const refMarkers = useRef(null);
@@ -52,6 +52,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     const useMapCenter = sortMethod === NEAREST_MAP_CENTER_SORT || currentLoc === LOCATION_UNAVAILABLE;
     const mapCenter = useMapCenter ? getMapCenter(mtx, hash) : null;
     const distanceFrom = useMapCenter ? 'mapCenter' : currentLoc ? 'location' : null;
+    const holdSort = !!ctx.openedPopper || mtx.zoomToFitInProgress;
 
     // get markers
     useEffect(() => {
@@ -120,22 +121,22 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
     // Kept on map move on purpose; picking the option again re-sorts
     useEffect(() => {
         if (!isNearestSort(sortMethod)) return;
-        if (ctx.openedPopper) {
-            setSortOnMenuClose(true);
+        if (holdSort) {
+            setSortDeferred(true);
             return;
         }
         sortFavorites();
     }, [ctx.selectedSort?.favorites, group, ctx.favorites, distanceFrom]);
 
     useEffect(() => {
-        if (ctx.openedPopper || !sortOnMenuClose) {
+        if (holdSort || !sortDeferred) {
             return;
         }
-        setSortOnMenuClose(false);
+        setSortDeferred(false);
         if (isNearestSort(sortMethod)) {
             sortFavorites();
         }
-    }, [ctx.openedPopper]);
+    }, [holdSort]);
 
     useEffect(() => {
         if (folder) {
