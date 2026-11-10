@@ -4,22 +4,30 @@ import { getDistance } from '../../util/Utils';
 export function trackProfile(track) {
     const parts = track.tracks ? track.tracks.map((t) => t.points) : [track.points];
     const profile = [];
-    let distance = 0;
+    let start = 0;
     parts
         .filter((points) => Array.isArray(points) && points.length > 0)
         .forEach((points) => {
             const flat = getAllPoints(points);
-            flat.forEach((point, i) => {
-                const prev = flat[i - 1];
-                const startsSegment = !prev || prev.profile === TracksManager.PROFILE_GAP;
-                if (!startsSegment) {
-                    distance += getDistance(prev.lat, prev.lng, point.lat, point.lng);
-                }
-                profile.push(profilePoint(point, distance));
-            });
+            const distances = pointDistances(flat, start);
+            flat.forEach((point, i) => profile.push(profilePoint(point, distances[i])));
+            start = distances.at(-1);
         });
 
     return profile;
+}
+
+export function pointDistances(points, start = 0) {
+    let distance = start;
+
+    return points.map((point, i) => {
+        const prev = points[i - 1];
+        if (prev && prev.profile !== TracksManager.PROFILE_GAP) {
+            distance += getDistance(prev.lat, prev.lng, point.lat, point.lng);
+        }
+
+        return distance;
+    });
 }
 
 export function analyzerProfile(points) {

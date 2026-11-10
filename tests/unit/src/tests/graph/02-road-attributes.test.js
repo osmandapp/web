@@ -1,4 +1,4 @@
-import { checkNextSegment, roadAttributesData } from '@map/graph/track/roadAttributes';
+import { checkNextSegment, roadAttributeCharts, roadAttributeRuns } from '@map/graph/track/roadAttributes';
 import { hexToRgba } from '@map/util/ColorUtil';
 import { createEditorPoint, createRouteSegmentPoints } from '../../util/fixtures/tracks';
 
@@ -13,6 +13,10 @@ function twoRouteSegments() {
         ...createEditorPoint(i),
         ...(i % 5 === 0 && { segment: { ext: { types: String(i / 5), length: 5 } } }),
     }));
+}
+
+function attributeGraphs(roadPoints, routeTypes, slopes, metersToX) {
+    return roadAttributeCharts(roadAttributeRuns(roadPoints, routeTypes, slopes), metersToX);
 }
 
 function segmentAt(datasets, ind) {
@@ -35,7 +39,7 @@ test('the tooltip finds the road attribute of every segment, the last one includ
         { tag: 'highway', value: 'primary' },
         { tag: 'highway', value: 'track' },
     ];
-    const { datasets } = roadAttributesData(twoRouteSegments(), routeTypes, null, toKm).roadClass;
+    const { datasets } = attributeGraphs(twoRouteSegments(), routeTypes, null, toKm).roadClass;
 
     expect(datasets.map((d) => d.index)).toEqual([0, 5]);
     expect(segmentAt(datasets, 2)).toBe(datasets[0]);
@@ -47,7 +51,7 @@ test('winter roads and ice roads share one graph, as in the rendering style', ()
         { tag: 'winter_road', value: 'yes' },
         { tag: 'ice_road', value: 'yes' },
     ];
-    const { datasets } = roadAttributesData(twoRouteSegments(), routeTypes, null, toKm).winter_ice_road;
+    const { datasets } = attributeGraphs(twoRouteSegments(), routeTypes, null, toKm).winter_ice_road;
 
     // the i18n stub returns the key, so the label names the style category
     expect(datasets.map((d) => [d.label, d.index])).toEqual([
@@ -75,7 +79,7 @@ test('road type and surface bars follow the route segments, equal neighbours mer
         ['5,4', 5],
         ['6,7', 5],
     ]);
-    const graphs = roadAttributesData(points, routeTypes, null, toDisplayUnits);
+    const graphs = attributeGraphs(points, routeTypes, null, toDisplayUnits);
 
     expect(Object.keys(graphs)).toEqual([
         'roadClass',
@@ -177,7 +181,7 @@ test('steepness bars follow the slope classes of the style, as on the phone', ()
         index: Math.round(distance / 100),
     }));
     const points = createRouteSegmentPoints([['0', 21]]);
-    const { steepness } = roadAttributesData(
+    const { steepness } = attributeGraphs(
         points,
         [{ tag: 'highway', value: 'path' }],
         { step: SLOPE_STEP, grid },

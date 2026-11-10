@@ -10,7 +10,7 @@ import { seleniumUpdateActivity } from '../../util/Utils';
 import { ELEVATION, ELEVATION_SRTM, SLOPE, SPEED } from '../GraphManager';
 import { trackProfile } from '../model/profile';
 import { computeSlopes } from '../model/slopes';
-import { roadAttributesData } from './roadAttributes';
+import { roadAttributeCharts, roadAttributeRuns } from './roadAttributes';
 import { useGraphUnits } from '../units';
 
 const DEFAULT_VISIBILITY = { [ELEVATION]: true, [ELEVATION_SRTM]: true, [SPEED]: false, [SLOPE]: false };
@@ -85,13 +85,15 @@ const GpxGraphProvider = ({ width }) => {
         [data, profile]
     );
 
-    const attrGraphData = useMemo(() => {
+    const attrRuns = useMemo(() => {
         if (Array.isArray(roadPoints) && roadPoints.length > 0 && routeTypes) {
-            return roadAttributesData(roadPoints, routeTypes, slopes, units.distance);
+            return roadAttributeRuns(roadPoints, routeTypes, slopes);
         }
 
         return null;
-    }, [roadPoints, routeTypes, slopes, units]);
+    }, [roadPoints, routeTypes, slopes]);
+
+    const attrGraphData = useMemo(() => attrRuns && roadAttributeCharts(attrRuns, units.distance), [attrRuns, units]);
 
     function toggle(key) {
         setChoices((prev) => ({ ...prev, values: { ...prev.values, [key]: !visible[key] } }));
