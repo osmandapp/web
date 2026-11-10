@@ -1,7 +1,7 @@
 import { analyzerProfile, trackProfile } from '@map/graph/model/profile';
 import { computeSlopes } from '@map/graph/model/slopes';
 import { sampleSeries } from '@map/graph/model/sampling';
-import { graphUnits } from '@map/graph/units';
+import { graphUnits } from '@map/menu/settings/units/UnitsConverter';
 import TracksManager, { NAN_MARKER } from '@map/manager/track/TracksManager';
 import { createEditorPoint, createPointAt, createRoutedPoints } from '../../util/fixtures/tracks';
 

@@ -6,7 +6,7 @@ import isEqual from 'lodash-es/isEqual';
 import GraphManager, { cap, DISTANCE, ELEVATION, ELEVATION_SRTM, SLOPE, SPEED } from '../GraphManager';
 import { checkNextSegment, STEEPNESS, UNDEFINED_DATA } from './roadAttributes';
 import { hasValue, sampleSeries } from '../model/sampling';
-import { useGraphUnits } from '../units';
+import { useGraphUnits } from '../../util/hooks/useGraphUnits';
 import { activeMouseLinePlugin } from '../plugins/mouseLinePlugin';
 import { CUSTOM_MODE } from '../plugins/interactionModes';
 import AppContext from '../../context/AppContext';

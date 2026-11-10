@@ -11,7 +11,7 @@ import { ELEVATION, ELEVATION_SRTM, SLOPE, SPEED } from '../GraphManager';
 import { trackProfile } from '../model/profile';
 import { computeSlopes } from '../model/slopes';
 import { roadAttributeCharts, roadAttributeRuns } from './roadAttributes';
-import { useGraphUnits } from '../units';
+import { useGraphUnits } from '../../util/hooks/useGraphUnits';
 
 const DEFAULT_VISIBILITY = { [ELEVATION]: true, [ELEVATION_SRTM]: true, [SPEED]: false, [SLOPE]: false };
 const KEPT_FOR_ANOTHER_TRACK = [SPEED, SLOPE];

@@ -1,4 +1,4 @@
-import { graphUnits } from '../units';
+import { graphUnits } from '../../menu/settings/units/UnitsConverter';
 
 const UNIT_SWITCH_THRESHOLD = 1; // Distance threshold (in km/mi) to switch between large and small units
 const DISTANCE_MATCH_TOLERANCE = 0.01; // Tolerance for matching attribute distances

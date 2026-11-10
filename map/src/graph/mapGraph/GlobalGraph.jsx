@@ -18,7 +18,7 @@ import {
 import { hasValue } from '../model/sampling';
 import { analyzerProfile } from '../model/profile';
 import { computeSlopes } from '../model/slopes';
-import { useGraphUnits } from '../units';
+import { useGraphUnits } from '../../util/hooks/useGraphUnits';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import styles from '../../frame/frame.module.css';
 import SegmentSelector from '../analyzer/SegmentSelector';

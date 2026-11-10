@@ -89,6 +89,19 @@ export function convertMeters(value, toUnit, type = SMALL_UNIT) {
     return convert(value).from('m').to(target);
 }
 
+export function graphUnits(unitsSettings) {
+    const large = convertMeters(1, unitsSettings.len, LARGE_UNIT);
+    const small = convertMeters(1, unitsSettings.len, SMALL_UNIT);
+
+    return {
+        distance: (meters) => meters * large,
+        largeToSmall: (value) => (value / large) * small,
+        elevation: (meters) => (meters === null ? null : meters * small),
+        speed: (metersPerSecond) =>
+            metersPerSecond === null ? null : convertSpeedMS(metersPerSecond, unitsSettings.speed),
+    };
+}
+
 export function getSmallLengthUnit(ctx) {
     return lengthUnitsMap[ctx.unitsSettings.len].native.small;
 }

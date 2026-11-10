@@ -42,7 +42,7 @@ const GRAPHS = [
     { name: PISTE_TYPE_NAME, tags: [PISTE_TYPE] },
 ];
 
-const data_parser = {
+const STYLE_CATEGORIES = {
     [ROAD_CLASS]: parse(styles, ROAD_CLASS),
     [SURFACE]: parse(styles, SURFACE),
     [SMOOTHNESS]: parse(styles, SMOOTHNESS),
@@ -54,7 +54,7 @@ const data_parser = {
     [PISTE_TYPE_NAME]: parse(styles, PISTE_TYPE_NAME, SKI_STYLE),
 };
 
-const STEEPNESS_RANGES = Object.keys(data_parser[STEEPNESS] ?? {}).map((key) => ({
+const STEEPNESS_RANGES = Object.keys(STYLE_CATEGORIES[STEEPNESS] ?? {}).map((key) => ({
     key,
     range: prepareRange(key, '_'),
 }));
@@ -71,9 +71,9 @@ export function roadAttributeRuns(roadPoints, routeTypes, slopes) {
             const runs = attributeRuns(
                 segments,
                 (segmentTags) => graphValue(segmentTags, tags),
-                (value) => data_parser[name]?.[value]?.category ?? value
+                (value) => STYLE_CATEGORIES[name]?.[value]?.category ?? value
             );
-            res[name] = runs.map((run) => ({ ...run, label: getType(data_parser[name], run.value) }));
+            res[name] = runs.map((run) => ({ ...run, label: getType(STYLE_CATEGORIES[name], run.value) }));
         }
     });
 
@@ -85,11 +85,7 @@ export function roadAttributeCharts(runsByGraph, metersToX) {
 }
 
 export function prepareType(type) {
-    if (type) {
-        type = type.replaceAll('_', ' ');
-        type = cap(type);
-    }
-    return type;
+    return type ? cap(type.replaceAll('_', ' ')) : type;
 }
 
 export function checkNextSegment(arr, arrI, selectedInd) {
@@ -97,8 +93,9 @@ export function checkNextSegment(arr, arrI, selectedInd) {
 }
 
 export function formattingSteepnessLabel(name) {
-    let range = prepareRange(name, '_');
-    return `${range[0]}% ➞ ${range[1]}%`;
+    const [from, to] = prepareRange(name, '_');
+
+    return `${from}% ➞ ${to}%`;
 }
 
 function parse(styles, attribute, style = DEFAULT_STYLE) {
@@ -108,29 +105,26 @@ function parse(styles, attribute, style = DEFAULT_STYLE) {
             return parseType(styles, attribute, style);
         }
     }
+
     return null;
 }
 
 function parseType(styles, tag, style = DEFAULT_STYLE) {
-    const types = styles[style][`routeInfo_${tag}`];
-    tag = tag === ROAD_CLASS ? 'highway_class' : tag;
-    let res = [];
-    Object.values(types).map((data) => {
-        const value = data.attrStringValue === `${tag}_undefined` ? UNDEFINED_DATA : data.attrStringValue;
-        let name = i18n?.t(`rendering_attr_${value}_name`);
-        const attr = value && value.replace(`${tag}_`, '');
-        if (!name) {
-            name = prepareType(attr);
-        }
-        res[data.value ? data.value : attr] = {
+    const prefix = tag === ROAD_CLASS ? 'highway_class' : tag;
+    const res = {};
+    styles[style][`routeInfo_${tag}`].forEach((data) => {
+        const value = data.attrStringValue === `${prefix}_undefined` ? UNDEFINED_DATA : data.attrStringValue;
+        const attr = value?.replace(`${prefix}_`, '');
+        res[data.value || attr] = {
             category: attr,
-            name: name,
+            name: i18n?.t(`rendering_attr_${value}_name`) || prepareType(attr),
             color: hexToRgba(data.attrColorValue),
         };
         if (data.value === 'road') {
             res[UNDEFINED_DATA] = res.road;
         }
     });
+
     return res;
 }
 
@@ -158,7 +152,7 @@ function chartData(runs, graph, metersToX) {
     const datasets = runs.map(({ label, value, from, size, length }) => {
         const color =
             legend[label]?.color ??
-            data_parser[graph]?.[value]?.color ??
+            STYLE_CATEGORIES[graph]?.[value]?.color ??
             generatePastelColor(Object.keys(legend).length);
         if (length > 0) {
             legend[label] = { color, distance: (legend[label]?.distance ?? 0) + length };
@@ -199,6 +193,7 @@ function prepareRange(data, delimiter) {
     if (r1 !== -100 && r2 !== 100) {
         r2 = r1 + 4;
     }
+
     return [r1, r2];
 }
 
@@ -210,6 +205,7 @@ function generatePastelColor(seed) {
     const R = 127 + (((seed + 1) * 111) % 127);
     const G = 127 + (((seed + 1) * 222) % 127);
     const B = 127 + (((seed + 1) * 333) % 127);
-    let rgb = (R << 16) + (G << 8) + B;
+    const rgb = (R << 16) + (G << 8) + B;
+
     return `#${rgb.toString(16)}`;
 }

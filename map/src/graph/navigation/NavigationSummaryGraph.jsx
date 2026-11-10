@@ -12,7 +12,7 @@ import GraphManager, { ELEVATION_COLOR, ELEVATION_FILL_COLOR, SLOPE_COLOR } from
 import { routeProfile } from '../model/profile';
 import { computeSlopes } from '../model/slopes';
 import { sampleSeries } from '../model/sampling';
-import { useGraphUnits } from '../units';
+import { useGraphUnits } from '../../util/hooks/useGraphUnits';
 import { createCombinedYAxisLabelsPlugin } from '../plugins/combinedYAxisLabelsPlugin';
 import { createDistanceXAxisPlugin } from '../plugins/distanceXAxisPlugin';
 import { createTooltip } from '../plugins/tooltipPlugin';

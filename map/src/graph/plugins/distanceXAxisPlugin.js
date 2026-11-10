@@ -1,6 +1,5 @@
 import { getPrimaryFontFamily } from '../GraphManager';
-import { getLargeLengthUnit, getSmallLengthUnit } from '../../menu/settings/units/UnitsConverter';
-import { graphUnits } from '../units';
+import { getLargeLengthUnit, getSmallLengthUnit, graphUnits } from '../../menu/settings/units/UnitsConverter';
 
 const TICK_TOLERANCE = 0.0001; // Tolerance for floating point comparison when checking duplicate ticks
 const DEFAULT_INTERVAL = 0.1; // Default interval when maxValue is too small (in km)
