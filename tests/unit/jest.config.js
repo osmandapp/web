@@ -91,6 +91,7 @@ module.exports = {
         // UI layers - unit tests cover managers, not components
         '/(menu|frame|infoblock|dialogs)/': `${STUBS}/empty.js`,
         '/map/(layers|util|markers)/': `${STUBS}/empty.js`,
+        '/GpxGraph$': `${STUBS}/empty.js`,
         FavoritesManager$: path.join(MAP_DIR, 'src/manager/FavoritesManager.js'),
         'geoRouter(\\.js)?$': `${STUBS}/empty.js`,
         // the app i18n module boots the whole translation setup, i18next itself stays real

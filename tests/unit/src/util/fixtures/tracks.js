@@ -4,6 +4,8 @@ export const CLOUD_FOLDER = 'Folder';
 export const CLOUD_TRACK_NAME = 'Folder/Track.gpx';
 export const WPT_GROUP = 'My group';
 
+const METERS_IN_DEGREE = 111226.29;
+
 /** Waypoint group as it comes from a parsed gpx - `points` and `ext` must not reach the .info file. */
 export function createPointsGroups({ hidden = false } = {}) {
     return {
@@ -71,6 +73,27 @@ export function createRoutedPoints(n) {
     return Array.from({ length: n }, (_, i) =>
         createEditorPoint(i, { geometry: i === 0 ? [] : [createEditorPoint(i - 1), createEditorPoint(i)] })
     );
+}
+
+/** Track point `meters` north of 50° along the meridian, as `getDistance` (R = 6372.8 km) measures it. */
+export function createPointAt(meters, extra = {}) {
+    return { lat: 50 + meters / METERS_IN_DEGREE, lng: 30, ...extra };
+}
+
+/**
+ * Routed track as the server returns it, a point every 100 m. Each `[types, length]` segment of osmand:route
+ * starts at the last point of the previous one and its `ext` is attached to that point.
+ */
+export function createRouteSegmentPoints(segments) {
+    const count = 1 + segments.reduce((sum, [, length]) => sum + length - 1, 0);
+    const points = Array.from({ length: count }, (_, i) => createPointAt(i * 100));
+    let start = 0;
+    segments.forEach(([types, length]) => {
+        points[start].segment = { ext: { types, length: String(length) } };
+        start += length - 1;
+    });
+
+    return points;
 }
 
 /**

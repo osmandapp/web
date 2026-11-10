@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import RoadAttributesGraph from './RoadAttributesGraph';
 import MainGraph from './MainGraph';
-import { cap, UNDEFINED_DATA } from '../GraphManager';
+import { cap } from '../GraphManager';
+import { UNDEFINED_DATA } from './roadAttributes';
 import { useTranslation } from 'react-i18next';
 
-export default function GpxGraph({ mainData, attrGraphData, showData, width }) {
+export default function GpxGraph({ profile, slopes, attrGraphData, visible, width }) {
     const [selectedPoint, setSelectedPoint] = useState(null);
 
     const { t } = useTranslation();
@@ -24,9 +25,10 @@ export default function GpxGraph({ mainData, attrGraphData, showData, width }) {
     return (
         <>
             <MainGraph
-                data={mainData}
+                profile={profile}
+                slopes={slopes}
                 attrGraphData={attrGraphData}
-                showData={showData}
+                visible={visible}
                 setSelectedPoint={setSelectedPoint}
                 width={width}
             />

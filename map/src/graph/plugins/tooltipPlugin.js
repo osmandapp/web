@@ -1,11 +1,13 @@
-const UNIT_SWITCH_THRESHOLD = 1; // Distance threshold (in km) to switch between large and small units
-const METERS_IN_KM = 1000; // Conversion factor from km to meters
+import { graphUnits } from '../../menu/settings/units/UnitsConverter';
+
+const UNIT_SWITCH_THRESHOLD = 1; // Distance threshold (in km/mi) to switch between large and small units
 const DISTANCE_MATCH_TOLERANCE = 0.01; // Tolerance for matching attribute distances
 
 /**
  * Creates tooltip for graphs showing distance, main parameters, and optional attributes.
  *
  * @param {Function} t - Translation function
+ * @param {Object} unitsSettings - User's unit settings
  * @param {string} distanceUnit - Large distance unit (km/mi)
  * @param {string} smallDistanceUnit - Small distance unit (m/ft)
  * @param {number} totalDistance - Total distance to determine unit display
@@ -18,12 +20,15 @@ const DISTANCE_MATCH_TOLERANCE = 0.01; // Tolerance for matching attribute dista
  */
 export function createTooltip({
     t,
+    unitsSettings,
     distanceUnit,
     smallDistanceUnit,
     totalDistance,
     mainParams = [],
     attributes = null,
 }) {
+    const units = graphUnits(unitsSettings);
+
     return {
         enabled: true,
         mode: 'index',
@@ -54,7 +59,7 @@ export function createTooltip({
 
                 // Show in small units (m/ft) for short distances
                 if (totalDistance < UNIT_SWITCH_THRESHOLD || dist < UNIT_SWITCH_THRESHOLD) {
-                    return `${distLabel}: ${Math.round(dist * METERS_IN_KM)} ${smallDistanceUnit}`;
+                    return `${distLabel}: ${Math.round(units.largeToSmall(dist))} ${smallDistanceUnit}`;
                 }
 
                 return `${distLabel}: ${dist.toFixed(1)} ${distanceUnit}`;

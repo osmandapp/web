@@ -3,25 +3,18 @@ import { Box, Slider, SliderThumb } from '@mui/material';
 import React, { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import isEmpty from 'lodash-es/isEmpty';
 import isEqual from 'lodash-es/isEqual';
-import GraphManager, {
-    cap,
-    checkNextSegment,
-    DISTANCE,
-    ELEVATION,
-    ELEVATION_SRTM,
-    SLOPE,
-    SPEED,
-    STEEPNESS,
-    UNDEFINED_DATA,
-} from '../GraphManager';
-import TracksManager from '../../manager/track/TracksManager';
+import GraphManager, { cap, DISTANCE, ELEVATION, ELEVATION_SRTM, SLOPE, SPEED } from '../GraphManager';
+import { checkNextSegment, STEEPNESS, UNDEFINED_DATA } from './roadAttributes';
+import { hasValue, sampleSeries } from '../model/sampling';
+import { useGraphUnits } from '../../util/hooks/useGraphUnits';
+import { activeMouseLinePlugin } from '../plugins/mouseLinePlugin';
+import { CUSTOM_MODE } from '../plugins/interactionModes';
 import AppContext from '../../context/AppContext';
 import {
     BarElement,
     CategoryScale,
     Chart as ChartJS,
     Filler,
-    Interaction,
     Legend,
     LinearScale,
     LineController,
@@ -32,7 +25,6 @@ import {
 import clsx from 'clsx';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
-import { getRelativePosition } from 'chart.js/helpers';
 import { getLargeLengthUnit, getSmallLengthUnit, getSpeedUnit } from '../../menu/settings/units/UnitsConverter';
 import { useTranslation } from 'react-i18next';
 
@@ -50,40 +42,61 @@ ChartJS.register(
     annotationsPlugin
 );
 
-export default function MainGraph({ data, attrGraphData, showData, setSelectedPoint, width }) {
+const GRAPH_SAMPLING_LIMIT = 500;
+
+const ELEVATION_AXIS = 'y1';
+const SPEED_AXIS = 'y2';
+const SLOPE_AXIS = 'y1Slope';
+
+export default function MainGraph({ profile, slopes, attrGraphData, visible, setSelectedPoint, width }) {
     const ctx = useContext(AppContext);
 
     const { t } = useTranslation();
 
-    const [speedData, setSpeedData] = useState(null);
-    const [eleData, setEleData] = useState(null);
-    const [eleSRTMData, setEleSRTMData] = useState(null);
-    const [slopeData, setSlopeData] = useState(null);
-    const [maxMinData, setMaxMinData] = useState({});
-
+    const units = useGraphUnits();
     const chartRef = useRef(null);
+    const distRangeRef = useRef([0, profile.length - 1]);
 
-    const dataGraph = data?.res;
-    const xAxis = DISTANCE;
-    const y1Axis = [ELEVATION, ELEVATION_SRTM, SLOPE];
-    const y2Axis = SPEED;
-    const minEle = data?.minEle;
-    const maxEle = data?.maxEle;
-    const minSpeed = data?.minSpeed;
-    const maxSpeed = data?.maxSpeed;
-    const slopes = data?.slopes;
-
-    const [distRangeValue, setDistRangeValue] = useState([0, dataGraph.length - 1]);
-
-    const showY1 = showY1Scale();
-    const showY2 = showY2Scale();
-    const showSlope = showSlopeScale();
-
+    const [distRangeValue, setDistRangeValue] = useState([0, profile.length - 1]);
     const [zoomLevel, setZoomLevel] = useState(1);
 
-    const GRAPH_SAMPLING_LIMIT = 500;
-    const distRangeRef = useRef([0, dataGraph.length - 1]);
-    const sliderStep = zoomLevel > 3 ? 1 : Math.max(1, Math.floor(dataGraph.length / GRAPH_SAMPLING_LIMIT));
+    const showY1 = !!(visible[ELEVATION] || visible[ELEVATION_SRTM]);
+    const showY2 = !!visible[SPEED];
+    const showSlope = !!visible[SLOPE];
+    const sliderStep = zoomLevel > 3 ? 1 : Math.max(1, Math.floor(profile.length / GRAPH_SAMPLING_LIMIT));
+
+    const xs = useMemo(() => profile.map((p) => units.distance(p.distance)), [profile, units]);
+
+    const series = useMemo(() => {
+        const line = (valueOf) => profile.map((p, index) => ({ x: xs[index], y: valueOf(p), index }));
+
+        return {
+            [ELEVATION]: visible[ELEVATION] ? line((p) => units.elevation(p.elevation)) : null,
+            [ELEVATION_SRTM]: visible[ELEVATION_SRTM] ? line((p) => units.elevation(p.srtmElevation)) : null,
+            [SPEED]: visible[SPEED] ? line((p) => units.speed(p.speed)) : null,
+            [SLOPE]:
+                visible[SLOPE] && slopes
+                    ? slopes.grid.map((s) => ({ x: units.distance(s.distance), y: s.slope, index: s.index }))
+                    : null,
+        };
+    }, [profile, slopes, visible, units, xs]);
+
+    const markers = useMemo(() => {
+        const shown = Object.keys(visible).filter((key) => visible[key]);
+        if (visible[ELEVATION]) {
+            return extremes(series[ELEVATION]);
+        }
+        if (shown.length === 1) {
+            return extremes(series[shown[0]]);
+        }
+
+        return null;
+    }, [series, visible]);
+
+    const trackCoordinates = useMemo(
+        () => profile.map((p, i) => ({ lat: p.lat, lng: p.lng, distance: xs[i] })),
+        [profile, xs]
+    );
 
     const handleRangeChange = useCallback(
         (event, newValue) => {
@@ -95,143 +108,36 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
             requestAnimationFrame(() => {
                 ctx.setTrackRange({
                     range: distRangeRef.current,
-                    dist: [dataGraph[newValue[0]][xAxis], dataGraph[newValue[1]][xAxis]],
+                    dist: [xs[newValue[0]], xs[newValue[1]]],
                 });
             });
         },
-        [ctx, dataGraph, xAxis]
+        [ctx, xs]
     );
 
     useEffect(() => {
-        if (data) {
-            setSpeedData(
-                showData[y2Axis]
-                    ? dataGraph.map((d, i) => ({ x: d[xAxis], y: parseFloat(d[y2Axis]), originalIndex: i }))
-                    : null
-            );
-            setEleData(
-                showData[y1Axis[0]]
-                    ? dataGraph.map((d, i) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[0]]), originalIndex: i }))
-                    : null
-            );
-            setEleSRTMData(
-                showData[y1Axis[1]]
-                    ? dataGraph.map((d, i) => ({ x: d[xAxis], y: parseFloat(d[y1Axis[1]]), originalIndex: i }))
-                    : null
-            );
-            setSlopeData(
-                showData[y1Axis[2]] ? slopes.map((d, i) => ({ x: d.dist, y: d.slope, originalIndex: i })) : null
-            );
-            if (showData[y1Axis[0]]) {
-                addMaxMinMarkers(y1Axis[0], minEle, maxEle);
-            } else {
-                const activeData = Object.keys(showData).filter((k) => showData[k] === true);
-                if (activeData.length === 1) {
-                    addMaxMinMarkers(activeData[0]);
-                }
-            }
-            setDistRangeValue([0, dataGraph.length - 1]);
-            ctx.setTrackRange(null);
-        }
-    }, [data, showData, slopes]);
+        distRangeRef.current = [0, profile.length - 1];
+        setDistRangeValue([0, profile.length - 1]);
+        ctx.setTrackRange(null);
+    }, [profile, visible]);
 
-    function addMaxMinMarkers(dataSet, min = null, max = null) {
-        let res = {
-            minInd: null,
-            maxInd: null,
+    useEffect(() => {
+        window.seGraphData = { profile, slopes };
+
+        return () => {
+            window.seGraphData = null;
         };
-        if (dataSet === 'Slope' && slopes?.length > 0) {
-            slopes.forEach((value, index) => {
-                if (value.slope === slopes.min && !res.minInd) {
-                    res.minInd = index;
-                }
-                if (value.slope === slopes.max && !res.maxInd) {
-                    res.maxInd = index;
-                }
-            });
-        } else {
-            if (min && max) {
-                dataGraph.forEach((value, index) => {
-                    if (value[dataSet] === min && !res.minInd) {
-                        res.minInd = index;
-                    }
-                    if (value[dataSet] === max && !res.maxInd) {
-                        res.maxInd = index;
-                    }
-                });
-            }
-        }
-        if (res.minInd && res.maxInd) {
-            res = {
-                min:
-                    dataSet === 'Slope'
-                        ? { x: slopes[res.minInd].dist, y: slopes[res.minInd].slope }
-                        : { x: dataGraph[res.minInd][xAxis], y: dataGraph[res.minInd][dataSet] },
-                max:
-                    dataSet === 'Slope'
-                        ? { x: slopes[res.maxInd].dist, y: slopes[res.maxInd].slope }
-                        : { x: dataGraph[res.maxInd][xAxis], y: dataGraph[res.maxInd][dataSet] },
-            };
-            setMaxMinData(res);
-        }
-    }
-
-    const trackCoordinates = useMemo(() => {
-        if (!ctx.selectedGpxFile || !dataGraph) {
-            return [];
-        }
-        const pointList = TracksManager.getTrackPoints(ctx.selectedGpxFile);
-        return Object.values(pointList).map((point, i) => ({
-            lat: point.lat,
-            lng: point.lng,
-            distance: dataGraph[i] ? dataGraph[i][xAxis] : 0,
-        }));
-    }, [ctx.selectedGpxFile, dataGraph, xAxis]);
-
-    function showMaxMin() {
-        return !isEmpty(maxMinData);
-    }
+    }, [profile, slopes]);
 
     function showRange() {
         const defaultPos =
             isEmpty(ctx.trackRange?.range) ||
-            (ctx.trackRange.range[0] === 0 && ctx.trackRange.range[1] === dataGraph.length - 1);
+            (ctx.trackRange.range[0] === 0 && ctx.trackRange.range[1] === profile.length - 1);
         return !defaultPos;
     }
 
-    function showY1Scale() {
-        const hasEle = showData[y1Axis[0]] !== '' && showData[y1Axis[0]] !== false && showData[y1Axis[0]] !== undefined;
-        const hasEleSRTM =
-            showData[y1Axis[1]] !== '' && showData[y1Axis[1]] !== false && showData[y1Axis[1]] !== undefined;
-        return hasEle || hasEleSRTM;
-    }
-
-    function showY2Scale() {
-        return showData[y2Axis] !== '' && showData[y2Axis] !== false && showData[y2Axis] !== undefined;
-    }
-
-    function showSlopeScale() {
-        return showData[y1Axis[2]] !== '' && showData[y1Axis[2]] !== false && showData[y1Axis[2]] !== undefined;
-    }
-
-    Interaction.modes.myCustomMode = function (chart, e, options, useFinalPosition) {
-        const position = getRelativePosition(e, chart);
-        const items = [];
-        Interaction.evaluateInteractionItems(chart, 'x', position, (element, datasetIndex, index) => {
-            //filter slope points and duplicates
-            if (
-                element.inXRange(position.x, useFinalPosition) &&
-                datasetIndex !== 2 &&
-                !items.some((i) => i.datasetIndex === datasetIndex)
-            ) {
-                items.push({ element, datasetIndex, index });
-            }
-        });
-        return items;
-    };
-
     function getMode() {
-        return !showY1 && !showY2 && showSlope ? 'nearest' : 'myCustomMode';
+        return !showY1 && !showY2 && showSlope ? 'nearest' : CUSTOM_MODE;
     }
 
     const options = useMemo(
@@ -253,22 +159,22 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                 annotation: {
                     annotations: {
                         label1: {
-                            display: showMaxMin(),
+                            display: !!markers,
                             type: 'line',
-                            id: 'vline' + maxMinData?.min?.x,
+                            id: 'vline' + markers?.min.x,
                             mode: 'vertical',
                             scaleID: 'x',
-                            value: maxMinData?.min?.x,
+                            value: markers?.min.x,
                             borderColor: '#757575',
                             borderWidth: 1,
                         },
                         label2: {
-                            display: showMaxMin(),
+                            display: !!markers,
                             type: 'label',
-                            xValue: maxMinData?.min?.x,
+                            xValue: markers?.min.x,
                             yValue: 'center',
                             backgroundColor: '#ebf3f2',
-                            content: [Math.round(maxMinData?.min?.y)],
+                            content: [Math.round(markers?.min.y)],
                             font: {
                                 size: 9,
                             },
@@ -278,22 +184,22 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                             padding: 2,
                         },
                         label3: {
-                            display: showMaxMin(),
+                            display: !!markers,
                             type: 'line',
-                            id: 'vline' + maxMinData?.max?.x,
+                            id: 'vline' + markers?.max.x,
                             mode: 'vertical',
                             scaleID: 'x',
-                            value: maxMinData?.max?.x,
+                            value: markers?.max.x,
                             borderColor: '#757575',
                             borderWidth: 1,
                         },
                         label4: {
-                            display: showMaxMin(),
+                            display: !!markers,
                             type: 'label',
-                            xValue: maxMinData?.max?.x,
+                            xValue: markers?.max.x,
                             yValue: 'center',
                             backgroundColor: '#ebf3f2',
-                            content: [Math.round(maxMinData?.max?.y)],
+                            content: [Math.round(markers?.max.y)],
                             font: {
                                 size: 9,
                             },
@@ -321,7 +227,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                     callbacks: {
                         title: (context) => {
                             const xValue = context[0]?.parsed?.x;
-                            return `${xAxis}: ${xValue.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`;
+                            return `${DISTANCE}: ${xValue.toFixed(2)} ${t(getLargeLengthUnit(ctx))}`;
                         },
                         label: (context) => {
                             let label = context.dataset.label || '';
@@ -329,23 +235,24 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                                 label += ': ';
                             }
                             const dimension =
-                                context.dataset.yAxisID === 'y1'
+                                context.dataset.yAxisID === ELEVATION_AXIS
                                     ? t(getSmallLengthUnit(ctx))
-                                    : context.dataset.yAxisID === 'y1Slope'
+                                    : context.dataset.yAxisID === SLOPE_AXIS
                                       ? '%'
                                       : t(getSpeedUnit(ctx));
                             if (context.parsed.y !== null) {
-                                label += `${context.parsed.y.toFixed(0)} ${dimension}`;
+                                label += `${Math.round(context.parsed.y)} ${dimension}`;
                             }
                             return label;
                         },
                         afterBody: (context) => {
                             let res = [];
-                            const ind = dataGraph.findIndex((d) => d[xAxis] === Number(context[0].label));
+                            const ind = context[0].raw.index;
                             //add slopes
-                            if (dataGraph[ind] && context[0].dataset.yAxisID !== 'y1Slope' && showSlope) {
-                                if (dataGraph[ind]['Slope']) {
-                                    res.push(`Slope: ${dataGraph[ind]['Slope'].toFixed(0)} %`);
+                            if (context[0].dataset.yAxisID !== SLOPE_AXIS && showSlope) {
+                                const slope = slopes?.pointSlopes[ind];
+                                if (Number.isFinite(slope)) {
+                                    res.push(`Slope: ${Math.round(slope)} %`);
                                 } else {
                                     res.push('Slope: N/A');
                                 }
@@ -382,8 +289,8 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                 zoom: {
                     limits: {
                         x: {
-                            min: dataGraph[0][xAxis],
-                            max: dataGraph[dataGraph.length - 1][xAxis],
+                            min: xs[0],
+                            max: xs.at(-1),
                             minRange: 0.1,
                         },
                     },
@@ -408,7 +315,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                 x: {
                     display: true,
                     type: 'linear',
-                    max: parseFloat(Number(dataGraph[dataGraph.length - 1][xAxis]).toFixed(1)),
+                    max: parseFloat(Number(xs.at(-1)).toFixed(1)),
                     ticks: {
                         maxTicksLimit: 10,
                         beginAtZero: true,
@@ -428,7 +335,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                         },
                     },
                 },
-                y1: {
+                [ELEVATION_AXIS]: {
                     display: showY1,
                     position: 'left',
                     ticks: {
@@ -444,7 +351,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                         },
                     },
                 },
-                y2: {
+                [SPEED_AXIS]: {
                     display: showY2,
                     position: 'right',
                     ticks: {
@@ -464,7 +371,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                         display: !showY1,
                     },
                 },
-                ['y1Slope']: {
+                [SLOPE_AXIS]: {
                     display: !showY2 && showSlope,
                     position: 'right',
                     ticks: {
@@ -486,71 +393,64 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                 },
             },
         }),
-        [dataGraph, ctx.trackRange, showData]
+        [xs, markers, ctx.trackRange, visible, slopes, attrGraphData]
     );
 
-    const graphData = useMemo(
-        () => ({
-            labels: dataGraph.filter((_, i) => i % sliderStep === 0).map((d) => d[xAxis]?.toFixed(1)),
+    const graphData = useMemo(() => {
+        const maxPoints = zoomLevel > 3 ? Infinity : GRAPH_SAMPLING_LIMIT;
+        const sampled = (key) => (series[key] ? sampleSeries(series[key], maxPoints) : []);
+
+        return {
             datasets: [
                 {
-                    label: y1Axis[0],
+                    label: ELEVATION,
                     type: 'line',
-                    data: eleData?.filter((_, i) => i % sliderStep === 0),
+                    data: sampled(ELEVATION),
                     borderColor: 'rgb(242, 217, 131)',
                     backgroundColor: 'rgba(242, 217, 131, 0.46)',
                     borderWidth: 1,
-                    min: minEle,
-                    max: maxEle,
                     fill: true,
-                    yAxisID: 'y1',
-                    pointRadius: dataGraph.length < 100 ? 2 : 0,
+                    yAxisID: ELEVATION_AXIS,
+                    pointRadius: profile.length < 100 ? 2 : 0,
                     order: 2,
                 },
                 {
-                    label: y1Axis[1],
+                    label: ELEVATION_SRTM,
                     type: 'line',
-                    data: eleSRTMData?.filter((_, i) => i % sliderStep === 0),
+                    data: sampled(ELEVATION_SRTM),
                     borderColor: 'rgba(169, 212, 129, 0.79)',
                     backgroundColor: 'rgba(169, 212, 129, 0.46)',
                     borderWidth: 1,
-                    min: minEle,
-                    max: maxEle,
                     fill: true,
-                    yAxisID: 'y1',
+                    yAxisID: ELEVATION_AXIS,
                     pointRadius: 0,
                     order: 3,
                 },
                 {
-                    label: y1Axis[2],
+                    label: SLOPE,
                     type: 'line',
-                    data: slopeData?.filter((_, i) => i % sliderStep === 0),
+                    data: sampled(SLOPE),
                     borderColor: 'rgba(145, 217, 255, 0.80)',
                     backgroundColor: 'rgba(145, 217, 255, 0.46)',
                     borderWidth: 1,
-                    min: slopes.min,
-                    max: slopes.max,
                     fill: true,
-                    yAxisID: 'y1Slope',
+                    yAxisID: SLOPE_AXIS,
                     pointRadius: 0,
                     order: 0,
                 },
                 {
-                    label: y2Axis,
+                    label: SPEED,
                     type: 'line',
-                    data: speedData?.filter((_, i) => i % sliderStep === 0),
+                    data: sampled(SPEED),
                     borderColor: '#ff595e',
                     borderWidth: 1,
-                    min: minSpeed,
-                    max: maxSpeed,
-                    yAxisID: 'y2',
+                    yAxisID: SPEED_AXIS,
                     pointRadius: 0,
                     order: 1,
                 },
             ],
-        }),
-        [dataGraph, eleData, eleSRTMData, slopeData, speedData, sliderStep, xAxis]
-    );
+        };
+    }, [series, zoomLevel, profile]);
 
     function ThumbComponent(props) {
         const { children, className, ...other } = props;
@@ -563,8 +463,8 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
     }
 
     const valueLabelFormat = useMemo(() => {
-        return (value) => `${dataGraph[value][xAxis].toFixed(1)}  ${t(getLargeLengthUnit(ctx))}`;
-    }, [dataGraph, xAxis]);
+        return (value) => `${xs[value].toFixed(1)}  ${t(getLargeLengthUnit(ctx))}`;
+    }, [xs]);
 
     function hideSelectedPoint() {
         GraphManager.hideGraphMarker(ctx, (point) => setSelectedPoint(point));
@@ -577,7 +477,7 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                     style={{ fontSize: 10 }}
                     data={graphData}
                     options={options}
-                    plugins={[GraphManager.mouseLine]}
+                    plugins={[activeMouseLinePlugin]}
                     onMouseMove={(e) =>
                         GraphManager.handleGraphMouseMove(e, chartRef, ctx, trackCoordinates, (point) => {
                             if (point) {
@@ -615,9 +515,21 @@ export default function MainGraph({ data, attrGraphData, showData, setSelectedPo
                 onChange={handleRangeChange}
                 min={0}
                 step={sliderStep}
-                max={dataGraph?.length - 1}
+                max={profile.length - 1}
                 components={{ Thumb: ThumbComponent }}
             />
         </>
     );
+}
+
+function extremes(series) {
+    const valued = series?.filter(hasValue);
+    if (isEmpty(valued)) {
+        return null;
+    }
+
+    return {
+        min: valued.reduce((a, b) => (b.y < a.y ? b : a)),
+        max: valued.reduce((a, b) => (b.y > a.y ? b : a)),
+    };
 }

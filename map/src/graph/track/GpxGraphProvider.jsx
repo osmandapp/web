@@ -1,150 +1,30 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import GpxGraph from './GpxGraph';
 import AppContext from '../../context/AppContext';
-import TracksManager, {
-    addDistanceToPoints,
-    equalsPoints,
-    getAllPoints,
-    getTrackPoints,
-} from '../../manager/track/TracksManager';
+import { equalsPoints, getAllPoints, getTrackPoints } from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
-import cloneDeep from 'lodash-es/cloneDeep';
-import indexOf from 'lodash-es/indexOf';
+import isEqual from 'lodash-es/isEqual';
+import pick from 'lodash-es/pick';
 import { Checkbox, Divider, FormControlLabel } from '@mui/material';
 import { seleniumUpdateActivity } from '../../util/Utils';
-import {
-    calculateSlopes,
-    checkShowData,
-    DISTANCE,
-    ELEVATION,
-    ELEVATION_SRTM,
-    generateDataSets,
-    HIGHWAY,
-    HORSE_SCALE,
-    ICE_ROAD,
-    isSrtmAppeared,
-    PISTE_DIFFICULTY,
-    PISTE_TYPE,
-    SLOPE,
-    SMOOTHNESS,
-    SPEED,
-    STEEPNESS,
-    SURFACE,
-    TRACK_TYPE,
-    UNDEFINED_DATA,
-    WINTER_ROAD,
-} from '../GraphManager';
-import { convertMeters, LARGE_UNIT } from '../../menu/settings/units/UnitsConverter';
+import { ELEVATION, ELEVATION_SRTM, SLOPE, SPEED } from '../GraphManager';
+import { trackProfile } from '../model/profile';
+import { computeSlopes } from '../model/slopes';
+import { roadAttributeCharts, roadAttributeRuns } from './roadAttributes';
+import { useGraphUnits } from '../../util/hooks/useGraphUnits';
 
-export const getGraphData = ({
-    trackData = null,
-    segmentData = null,
-    ctx,
-    hasEle = false,
-    hasSrtm = false,
-    hasSpeed = false,
-}) => {
-    const pointsArr = trackData ? trackData.data : segmentData ? segmentData.points : [];
-    if (!isEmpty(pointsArr)) {
-        let elevation = hasEle ? 'ele' : null;
-        let elevationSRTM = hasSrtm ? 'srtmEle' : null;
-        let points = cloneDeep(pointsArr);
-        let result = [];
-        let minEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
-        let maxEle = elevation ? points[0][elevation] : elevationSRTM ? points[0][elevationSRTM] : null;
-        let minSpeed = hasSpeed ? 0 : null;
-        let maxSpeed = hasSpeed ? 0 : null;
-        let sumDist = 0;
-        points.forEach((point, ind) => {
-            let ele;
-            let eleSRTM;
-            let speed;
-            if (elevation) {
-                ele = TracksManager.getEle(point, elevation, points, ind)?.toFixed(2);
-                if (ele !== undefined) {
-                    ele = Math.round(ele * 10) / 10;
-                    minEle = minEle === TracksManager.NAN_MARKER ? ele : Math.min(ele, minEle);
-                    maxEle = maxEle === TracksManager.NAN_MARKER ? ele : Math.max(ele, maxEle);
-                }
-            }
-            if (elevationSRTM) {
-                eleSRTM = TracksManager.getEle(point, elevationSRTM, points, ind)?.toFixed(2);
-                if (eleSRTM && !elevation) {
-                    eleSRTM = Math.round(eleSRTM * 10) / 10;
-                    minEle = Math.min(eleSRTM, minEle);
-                    maxEle = Math.max(eleSRTM, maxEle);
-                }
-            }
-            if (hasSpeed) {
-                speed = cloneDeep(
-                    point.speed ? point.speed : point.ext?.speed ? point.ext?.speed : point.ext?.extensions?.speed
-                );
-                if (speed) {
-                    speed = ((Math.round(speed * 10) / 10) * 3.6).toFixed(2);
-                    minSpeed = Math.min(speed, minSpeed);
-                    maxSpeed = Math.max(speed, maxSpeed);
-                }
-            }
-
-            if (trackData) {
-                // get-analysis might make point.distance inaccurate, so use "total" first
-                if (point.distanceTotal > 0 || point.distanceSegment > 0 || point.ext?.distance > 0) {
-                    sumDist = point.distanceTotal || point.distanceSegment || point.ext?.distance;
-                } else if (point.distance || point.distance === 0) {
-                    sumDist += point.distance;
-                }
-            } else if (segmentData) {
-                sumDist = point.distance;
-            }
-
-            result.push({
-                [DISTANCE]: convertMeters(sumDist, ctx.unitsSettings.len, LARGE_UNIT),
-                [ELEVATION]: ele,
-                [ELEVATION_SRTM]: eleSRTM,
-                [SPEED]: speed,
-                lat: point.lat,
-                lon: point.lon,
-            });
-        });
-
-        const newSlopes = calculateSlopes(result, { ctx, totalDistance: sumDist, mutateOriginal: true });
-        return {
-            res: result,
-            minEle,
-            maxEle,
-            minSpeed,
-            maxSpeed,
-            slopes: newSlopes,
-        };
-    }
-    return null;
-};
+const DEFAULT_VISIBILITY = { [ELEVATION]: true, [ELEVATION_SRTM]: true, [SPEED]: false, [SLOPE]: false };
+const KEPT_FOR_ANOTHER_TRACK = [SPEED, SLOPE];
 
 const GpxGraphProvider = ({ width }) => {
     const ctx = useContext(AppContext);
 
+    const units = useGraphUnits();
+
     const [data, setData] = useState(null);
-    const [showData, setShowData] = useState(null);
+    const [choices, setChoices] = useState({ trackName: null, values: {} });
     const [roadPoints, setRoadPoints] = useState(null);
     const [routeTypes, setRouteTypes] = useState(null);
-    const [slopes, setSlopes] = useState(null);
-
-    const attributesTags = [
-        HIGHWAY,
-        SURFACE,
-        STEEPNESS,
-        SMOOTHNESS,
-        WINTER_ROAD,
-        ICE_ROAD,
-        TRACK_TYPE,
-        HORSE_SCALE,
-        PISTE_DIFFICULTY,
-        PISTE_TYPE,
-    ];
-
-    function hasData() {
-        return showData[ELEVATION] || showData[ELEVATION_SRTM] || showData[SPEED] || showData[SLOPE];
-    }
 
     function getRoadPoints(pointsFromTracks) {
         let points = !isEmpty(ctx.selectedGpxFile.points) ? getAllPoints(ctx.selectedGpxFile.points) : pointsFromTracks;
@@ -158,149 +38,110 @@ const GpxGraphProvider = ({ width }) => {
 
     //get changed track data
     useEffect(() => {
-        if (ctx.selectedGpxFile) {
-            let trackData = {};
-            let points = getTrackPoints(ctx.selectedGpxFile);
-            getRoadPoints(points);
-            setRouteTypes(ctx.selectedGpxFile.routeTypes);
-            if (!isEmpty(points) && (isSrtmAppeared(trackData, ctx) || !equalsPoints(points, data?.data))) {
-                if (ctx.selectedGpxFile.analysis?.hasElevationData) {
-                    trackData.ele = true;
-                    trackData.slope = true;
-                    trackData.data = points;
-                }
-                if (ctx.selectedGpxFile.analysis?.srtmAnalysis) {
-                    trackData.srtm = true;
-                    if (!trackData.data) {
-                        trackData.data = points;
-                    }
-                }
-                if (ctx.selectedGpxFile?.analysis?.hasSpeedData) {
-                    trackData.speed = true;
-                    if (!trackData.data) {
-                        trackData.data = points;
-                    }
-                }
-                setData({ ...trackData });
-            } else if (isEmpty(points)) {
-                setData(null);
-            }
-        } else {
+        if (!ctx.selectedGpxFile) {
             setData(null);
             setRoadPoints(null);
+            return;
+        }
+        const points = getTrackPoints(ctx.selectedGpxFile);
+        getRoadPoints(points);
+        setRouteTypes(ctx.selectedGpxFile.routeTypes);
+        if (isEmpty(points)) {
+            setData(null);
+            return;
+        }
+        const pointsChanged = !equalsPoints(points, data?.points);
+        const available = availableSeries(ctx.selectedGpxFile.analysis);
+        if (pointsChanged || !isEqual(available, data?.available)) {
+            setData({ track: ctx.selectedGpxFile, points, available });
+        }
+        if (ctx.selectedGpxFile.name !== choices.trackName) {
+            setChoices((prev) => ({
+                trackName: ctx.selectedGpxFile.name,
+                values: pointsChanged ? pick(prev.values, KEPT_FOR_ANOTHER_TRACK) : prev.values,
+            }));
         }
     }, [ctx.selectedGpxFile]);
 
     useEffect(() => {
         if (data) {
-            let newShowData = {};
-            if (data.ele) {
-                newShowData[ELEVATION] = data.ele;
-            }
-            if (data.srtm) {
-                newShowData[ELEVATION_SRTM] = data.srtm;
-            }
-            if (data.speed) {
-                newShowData[SPEED] = showData && showData[SPEED] ? true : '';
-            }
-            if (data.slope) {
-                newShowData[SLOPE] = showData && showData[SLOPE] ? true : '';
-            }
-            setShowData(newShowData);
             seleniumUpdateActivity();
         }
     }, [data]);
 
-    const mainGraphData = useMemo(() => {
-        const graphData = getGraphData({
-            trackData: data,
-            ctx,
-            hasEle: data?.ele,
-            hasSrtm: data?.srtm,
-            hasSpeed: data?.speed,
+    const visible = useMemo(() => {
+        const result = {};
+        data?.available.forEach((key) => {
+            result[key] = choices.values[key] ?? DEFAULT_VISIBILITY[key];
         });
-        if (graphData) {
-            setSlopes(graphData.slopes);
-        }
-        return graphData;
-    }, [data]);
 
-    const attrGraphData = useMemo(() => {
-        if (roadPoints && roadPoints instanceof Array && roadPoints.length > 0 && routeTypes) {
-            addDistanceToPoints(roadPoints);
-            let segments = [];
-            let prevSegPoint;
-            roadPoints.forEach((p) => {
-                if (p.segment?.ext.types) {
-                    let seg = cloneDeep(p);
-                    seg.ind = indexOf(roadPoints, p);
-                    const rawLen = Number(seg.segment?.ext?.length);
-                    if (!Number.isFinite(rawLen) || rawLen < 1) {
-                        return;
-                    }
-                    let endIdx = seg.ind + rawLen - 1;
-                    if (endIdx >= roadPoints.length) {
-                        return;
-                    }
-                    seg.distance = prevSegPoint
-                        ? roadPoints[endIdx].distanceTotal - seg.distanceTotal
-                        : roadPoints[endIdx].distanceTotal;
-                    attributesTags.forEach((a) => (seg[a] = UNDEFINED_DATA));
-                    p.segment.ext.types.split(',').forEach((t) => {
-                        const type = routeTypes?.[t];
-                        if (type) {
-                            seg = getTags(type, seg);
-                        }
-                    });
-                    prevSegPoint = seg;
-                    segments.push(seg);
-                }
-            });
-            return generateDataSets(segments, roadPoints, attributesTags, slopes);
+        return result;
+    }, [data, choices.values]);
+
+    const profile = useMemo(() => (isEmpty(data?.available) ? null : trackProfile(data.track)), [data]);
+
+    const slopes = useMemo(
+        () => (profile && data.available.includes(ELEVATION) ? computeSlopes(profile) : null),
+        [data, profile]
+    );
+
+    const attrRuns = useMemo(() => {
+        if (Array.isArray(roadPoints) && roadPoints.length > 0 && routeTypes) {
+            return roadAttributeRuns(roadPoints, routeTypes, slopes);
         }
+
+        return null;
     }, [roadPoints, routeTypes, slopes]);
 
-    function getTags(type, seg) {
-        attributesTags.forEach((a) => {
-            if (type.tag === a) {
-                seg[a] = type.value;
-            }
-        });
-        return seg;
+    const attrGraphData = useMemo(() => attrRuns && roadAttributeCharts(attrRuns, units.distance), [attrRuns, units]);
+
+    function toggle(key) {
+        setChoices((prev) => ({ ...prev, values: { ...prev.values, [key]: !visible[key] } }));
     }
 
     return (
         <>
-            {mainGraphData && showData && <Divider sx={{ mt: '3px', mb: '12px' }} />}
+            {profile && <Divider sx={{ mt: '3px', mb: '12px' }} />}
             <div style={{ marginLeft: '8px' }}>
-                {showData &&
-                    Object.entries(showData).map(([key, value]) => (
-                        <FormControlLabel
-                            key={key}
-                            label={key === ELEVATION_SRTM ? 'Elevation (Satellite)' : key}
-                            control={
-                                <Checkbox
-                                    sx={{ ml: '-15px', mt: '-4px' }}
-                                    checked={checkShowData(value)}
-                                    onChange={() => {
-                                        let updatedShowData = Object.assign({}, showData);
-                                        updatedShowData[key] = !value;
-                                        setShowData(updatedShowData);
-                                    }}
-                                />
-                            }
-                            sx={{
-                                '& .MuiFormControlLabel-label': { fontSize: '12px' },
-                                transform: 'scale(0.8)',
-                            }}
-                        />
-                    ))}
+                {Object.entries(visible).map(([key, checked]) => (
+                    <FormControlLabel
+                        key={key}
+                        label={key === ELEVATION_SRTM ? 'Elevation (Satellite)' : key}
+                        control={
+                            <Checkbox
+                                id={`se-graph-${key}`}
+                                sx={{ ml: '-15px', mt: '-4px' }}
+                                checked={checked}
+                                onChange={() => toggle(key)}
+                            />
+                        }
+                        sx={{
+                            '& .MuiFormControlLabel-label': { fontSize: '12px' },
+                            transform: 'scale(0.8)',
+                        }}
+                    />
+                ))}
             </div>
-            {mainGraphData && showData && hasData() && (
-                <GpxGraph mainData={mainGraphData} attrGraphData={attrGraphData} showData={showData} width={width} />
+            {profile && Object.values(visible).some(Boolean) && (
+                <GpxGraph
+                    profile={profile}
+                    slopes={slopes}
+                    attrGraphData={attrGraphData}
+                    visible={visible}
+                    width={width}
+                />
             )}
         </>
     );
 };
+
+function availableSeries(analysis) {
+    return [
+        analysis?.hasElevationData && ELEVATION,
+        analysis?.srtmAnalysis && ELEVATION_SRTM,
+        analysis?.hasSpeedData && SPEED,
+        analysis?.hasElevationData && SLOPE,
+    ].filter(Boolean);
+}
 
 export default GpxGraphProvider;
