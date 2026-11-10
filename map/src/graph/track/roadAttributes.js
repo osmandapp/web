@@ -10,7 +10,7 @@ import { cap } from '../GraphManager';
 
 //road attributes
 const HIGHWAY = 'highway';
-const SURFACE = 'surface';
+export const SURFACE = 'surface';
 const SMOOTHNESS = 'smoothness';
 const WINTER_ROAD = 'winter_road';
 const ICE_ROAD = 'ice_road';
@@ -215,7 +215,7 @@ function addSteepnessDataSet(tag, slopes, roadPoints, metersToX) {
     slopes.grid.forEach((slope) => {
         const currentRange = Object.entries(data).find((arr) => {
             const d = arr[1];
-            if (slope.slope) {
+            if (Number.isFinite(slope.slope)) {
                 let s = Number(slope.slope.toFixed(0));
                 return s >= d.range[0] && s <= d.range[1];
             }
@@ -247,6 +247,9 @@ function addSteepnessDataSet(tag, slopes, roadPoints, metersToX) {
             }
         }
     });
+    tag.datasets.forEach((d, i) => {
+        d.size = (tag.datasets[i + 1]?.index ?? roadPoints.length - 1) - d.index;
+    });
     tag.legend = prepareLegend(tag.legend);
 }
 
@@ -273,7 +276,7 @@ function createSteepnessDataSet(tag, type, roadPoints, slope, step, metersToX) {
     const ind = roadPoints.findIndex((p, i) => {
         return (
             slope.distance >= p.distanceTotal &&
-            i + 1 < roadPoints.length - 1 &&
+            i + 1 < roadPoints.length &&
             slope.distance <= roadPoints[i + 1].distanceTotal
         );
     });
@@ -288,16 +291,15 @@ function createSteepnessDataSet(tag, type, roadPoints, slope, step, metersToX) {
         barPercentage: 1.0,
         categoryPercentage: 1.0,
         index: ind,
-        size: undefined,
     };
 }
 
 function createRangeArr(data) {
     let res = [];
-    Object.entries(data).forEach((d) => {
+    Object.keys(data).forEach((key) => {
         res.push({
-            name: d[0],
-            range: prepareRange(d[1].name, ' '),
+            name: key,
+            range: prepareRange(key, '_'),
         });
     });
     return res;
@@ -310,7 +312,7 @@ function prepareRange(data, delimiter) {
     if (r1 % 2 !== 0) {
         r1 += -1;
     }
-    if (r1 !== 100 && r2 !== 100) {
+    if (r1 !== -100 && r2 !== 100) {
         r2 = r1 + 4;
     }
     return [r1, r2];

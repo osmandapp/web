@@ -7,7 +7,7 @@ import annotationsPlugin from 'chartjs-plugin-annotation';
 import AppContext from '../../context/AppContext';
 import { ExpandLess, ExpandMore, RadioButtonUnchecked } from '@mui/icons-material';
 import { cap } from '../GraphManager';
-import { formattingSteepnessLabel, prepareType, STEEPNESS } from './roadAttributes';
+import { formattingSteepnessLabel, prepareType, STEEPNESS, SURFACE, UNDEFINED_DATA } from './roadAttributes';
 import isEmpty from 'lodash-es/isEmpty';
 import {
     convertMeters,
@@ -54,7 +54,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                         label: (context) => {
                             let label = context.dataset?.label || '';
                             if (label) {
-                                if (name === cap(STEEPNESS)) {
+                                if (name === t(`routeInfo_${STEEPNESS}_name`)) {
                                     label = formattingSteepnessLabel(label);
                                 }
                                 return `${cap(label)}: ${Number(context.dataset.data).toFixed(1)} ${t(getLargeLengthUnit(ctx))}`;
@@ -210,7 +210,7 @@ export default function RoadAttributesGraph({ name, data, width, selectedPoint }
                                         xs={Object.entries(data.legend).length > 3 ? 6 : 12}
                                     >
                                         <Icon sx={{ overflow: 'visible' }}>
-                                            {type === 'Undefined' && name === 'Surface' ? (
+                                            {type === cap(UNDEFINED_DATA) && name === t(`routeInfo_${SURFACE}_name`) ? (
                                                 <RadioButtonUnchecked sx={{ color: '#666666', fontSize: '0.8rem' }} />
                                             ) : (
                                                 <CircleIcon sx={{ color: value.color, fontSize: '0.8rem' }} />

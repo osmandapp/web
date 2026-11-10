@@ -3,17 +3,12 @@ import { computeSlopes } from '@map/graph/model/slopes';
 import { sampleSeries } from '@map/graph/model/sampling';
 import { graphUnits } from '@map/graph/units';
 import TracksManager, { NAN_MARKER } from '@map/manager/track/TracksManager';
-import { createEditorPoint, createRoutedPoints } from '../../util/fixtures/tracks';
+import { createEditorPoint, createPointAt, createRoutedPoints } from '../../util/fixtures/tracks';
 
 const METERS_BETWEEN_EDITOR_POINTS = 1112.26;
-const METERS_IN_DEGREE = 111226.29;
 
 function point(i, ele, extra = {}) {
     return { ...createEditorPoint(i), ele, ...extra };
-}
-
-function pointAt(meters, ele) {
-    return { lat: 50 + meters / METERS_IN_DEGREE, lng: 30, ele };
 }
 
 test('the distance skips the gap between segments and tracks, a point without elevation has no value', () => {
@@ -55,7 +50,13 @@ test('the slope runs through the points without elevation, from the first point'
 
 test('the tooltip shows the values of the slope line', () => {
     const profile = trackProfile({
-        points: [pointAt(0, 100), pointAt(40, 100), pointAt(50, 103), pointAt(60, 100), pointAt(200, 100)],
+        points: [
+            [0, 100],
+            [40, 100],
+            [50, 103],
+            [60, 100],
+            [200, 100],
+        ].map(([meters, ele]) => createPointAt(meters, { ele })),
     });
 
     const { grid, pointSlopes } = computeSlopes(profile);
