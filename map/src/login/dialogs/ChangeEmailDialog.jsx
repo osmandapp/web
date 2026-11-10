@@ -11,8 +11,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../../context/LoginContext';
+import AppContext from '../../context/AppContext';
+import { openLogin } from '../../manager/LoginManager';
 
 export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
+    const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -178,8 +181,10 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                         <Button onClick={() => setOpenChangeEmailDialog(false)}>{t('shared_string_cancel')}</Button>
                         <Button
                             onClick={() => {
+                                setOpenChangeEmailDialog(false);
                                 ltx.setLoginUser(null);
                                 ltx.setEmailCookie(newEmail, { days: 30, SameSite: 'Strict' });
+                                openLogin({ ctx, ltx, navigate });
                             }}
                         >
                             {t('web:login_new_credentials_btn')}
