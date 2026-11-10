@@ -27,7 +27,7 @@ iOS beta builds (TestFlight) are usually provided weekly (after a Team Sprint de
 
 ## What's new {#whats-new}
 
-- New **[coordinate formats](https://osmand.net/docs/user/search/search-coordinates#coordinate-format)**, including EPSG systems, Maidenhead locator, and Swiss Grid, with a primary format and a list of preferred ones.
+- New **[coordinate formats](https://osmand.net/docs/user/search/search-coordinates#customize-coordinate-format)**, including EPSG systems, Maidenhead locator, and Swiss Grid, with a primary format and a list of preferred ones.
 - Separate **[widget layouts](https://osmand.net/docs/user/widgets/configure-screen#single-and-separate-layouts)** for Portrait and Landscape, plus Wide or Compact top and bottom panels.
 - Customizable **[widget panel appearance](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance)** with widget size, icons, and text and background colors.
 - New **[CarPlay settings](https://osmand.net/docs/user/navigation/car-play#settings)** for map orientation and frame rate, with Home available in one tap from the Navigation menu.

@@ -47,7 +47,7 @@ import { ReactComponent as NavigationIcon } from '../assets/menu/ic_action_navig
 import { ReactComponent as PlanRouteIcon } from '../assets/menu/ic_action_plan_route.svg';
 import { ReactComponent as ConfigureMapIcon } from '../assets/icons/ic_map_configure_map.svg';
 import { ReactComponent as SettingsIcon } from '../assets/icons/ic_action_settings_outlined.svg';
-import { ReactComponent as TrackAnalyzerIcon } from '../assets/icons/ic_action_tool.svg';
+import TrackAnalyzerIcon from '@mui/icons-material/QueryStats';
 import { ReactComponent as TravelIcon } from '../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../assets/icons/ic_action_search_dark.svg';
 import InformationBlock from '../infoblock/components/InformationBlock';
@@ -515,15 +515,6 @@ export default function MainMenu({
             url: MAIN_URL_WITH_SLASH + TRAVEL_URL,
         },
         {
-            name: t('shared_string_settings'),
-            icon: SettingsIcon,
-            component: <SettingsMenu />,
-            type: OBJECT_GLOBAL_SETTINGS,
-            show: true,
-            id: MENU_IDS.settings,
-            url: MAIN_URL_WITH_SLASH + SETTINGS_URL,
-        },
-        {
             name: t('web:tracks_analyzer'),
             icon: TrackAnalyzerIcon,
             component: <TrackAnalyzerMenu />,
@@ -531,6 +522,15 @@ export default function MainMenu({
             show: true,
             id: MENU_IDS.trackanalyzer,
             url: MAIN_URL_WITH_SLASH + TRACK_ANALYZER_URL,
+        },
+        {
+            name: t('shared_string_settings'),
+            icon: SettingsIcon,
+            component: <SettingsMenu />,
+            type: OBJECT_GLOBAL_SETTINGS,
+            show: true,
+            id: MENU_IDS.settings,
+            url: MAIN_URL_WITH_SLASH + SETTINGS_URL,
         },
     ];
 

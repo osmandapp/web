@@ -20,7 +20,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const lang = i18n.language;
 
     const [width] = useWindowSize();
@@ -61,9 +61,9 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
 
     function getMsg() {
         if (!oldCodeConfirmed) {
-            return `Please enter verification code which was sent to your current email`;
+            return t('web:change_email_old_code_desc');
         } else {
-            return `Please enter your new email`;
+            return t('web:change_email_new_email_desc');
         }
     }
 
@@ -82,7 +82,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
             >
                 <Grid container spacing={2}>
                     <Grid item xs={11} sx={{ mb: -3 }}>
-                        <DialogTitle>Change email</DialogTitle>
+                        <DialogTitle>{t('web:change_email')}</DialogTitle>
                     </Grid>
                     <Grid item xs={1} sx={{ ml: -2, mt: 1 }}>
                         <IconButton
@@ -102,7 +102,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                     <DialogContentText>{getMsg()}</DialogContentText>
                     {newEmail && oldCodeConfirmed && (
                         <Typography variant="body2" noWrap>
-                            {`New email: ${newEmail}`}
+                            {t('web:new_email_value', { email: newEmail })}
                         </Typography>
                     )}
                     <TextField
@@ -112,13 +112,15 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                             oldCodeConfirmed ? setNewCode(e.target.value) : setOldCode(e.target.value);
                         }}
                         id="code"
-                        label={`Code from ${newEmail && oldCodeConfirmed ? 'New' : 'Old'} Email`}
+                        label={
+                            newEmail && oldCodeConfirmed ? t('web:code_from_new_email') : t('web:code_from_old_email')
+                        }
                         type="text"
                         fullWidth
                         variant="standard"
                         value={(newEmail && oldCodeConfirmed ? newCode : oldCode) ?? ''}
-                        helperText={emailError ? emailError : ''}
-                        error={emailError.length > 0}
+                        helperText={oldCodeConfirmed ? emailError : ''}
+                        error={oldCodeConfirmed && emailError.length > 0}
                     ></TextField>
                     {!oldCodeConfirmed && (
                         <TextField
@@ -128,7 +130,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                                 setNewEmail(e.target.value);
                             }}
                             id="pwd"
-                            label="New Email"
+                            label={t('web:new_email')}
                             type="email"
                             fullWidth
                             variant="standard"
@@ -139,9 +141,9 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                     )}
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setOpenChangeEmailDialog(false)}>Cancel</Button>
+                    <Button onClick={() => setOpenChangeEmailDialog(false)}>{t('shared_string_cancel')}</Button>
                     <Button disabled={emailError !== ''} onClick={handleNext}>
-                        {oldCodeConfirmed ? 'Finish' : 'Next'}
+                        {oldCodeConfirmed ? t('web:finish_btn') : t('shared_string_next')}
                     </Button>
                 </DialogActions>
             </Dialog>
@@ -149,7 +151,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                 <Dialog open={true} onClose={() => setOpenChangeEmailDialog(false)}>
                     <Grid container spacing={2}>
                         <Grid item xs={11} sx={{ mb: -3 }}>
-                            <DialogTitle>Email changed succesfully</DialogTitle>
+                            <DialogTitle>{t('web:email_changed_successfully')}</DialogTitle>
                         </Grid>
                         <Grid item xs={1} sx={{ ml: -2, mt: 1 }}>
                             <IconButton
@@ -171,12 +173,12 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                     <DialogContent>
                         {newEmail && (
                             <Typography variant="body2" noWrap>
-                                {`New email: ${newEmail}`}
+                                {t('web:new_email_value', { email: newEmail })}
                             </Typography>
                         )}
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={() => setOpenChangeEmailDialog(false)}>Cancel</Button>
+                        <Button onClick={() => setOpenChangeEmailDialog(false)}>{t('shared_string_cancel')}</Button>
                         <Button
                             onClick={() => {
                                 setOpenChangeEmailDialog(false);
@@ -185,7 +187,7 @@ export default function ChangeEmailDialog({ setOpenChangeEmailDialog }) {
                                 openLogin({ ctx, ltx, navigate });
                             }}
                         >
-                            Login using new credentials
+                            {t('web:login_new_credentials_btn')}
                         </Button>
                     </DialogActions>
                 </Dialog>

@@ -118,7 +118,7 @@ You can select previously preset and added [POIs](../map/point-layers-on-map.md#
 
 3. Select [Search](#search) to enter a destination from the available search categories.  
 
-4. Choose **Free ride** to take a journey without a specified endpoint.
+4. Choose **Free ride** to take a journey without a specified endpoint. If no route is calculated and you do not select any category, OsmAnd starts *Free ride* automatically after your vehicle has been moving faster than 5 km/h for 15 seconds. This way, the map appears after reconnecting to Android Auto without any interaction with the vehicle screen.
 
 :::note
 While driving, selected points can be [announced](#voice-prompts) when you approach or pass them. See the [Voice prompts](../navigation/guidance/voice-navigation.md) settings in the appropriate article to set up voice notifications.
@@ -304,6 +304,29 @@ Behavior when disconnecting from Android Auto:
 - If the disconnection occurs while standing still or moving slower than 1 m/s (for example, at a gas station), OsmAnd temporarily pauses navigation. It automatically resumes when the device reconnects to Android Auto.
 
 This update also ensures that Android Auto sessions now close correctly, preventing unnecessary battery usage and stopping “trip in progress” notifications once navigation ends.
+
+### Voice Control {#voice-control}
+
+You can control OsmAnd on the *Android Auto* screen by voice with Google Assistant or Gemini. Voice actions work both online and offline.
+
+Navigation actions:
+
+- *End navigation* — stops the current route.
+- *Mute or unmute voice guidance* — turns [voice prompts](#voice-prompts) off or on. The *Voice prompts* switch in the *Android Auto* settings changes accordingly.
+- *Avoid or allow toll roads, motorways, or ferries* — changes the corresponding route parameter of the profile used for navigation, and the route is recalculated.
+- *Return to my location* — centers the map on your current position.
+- *Go back* — returns to the previous screen.
+
+Route information. The answer appears as a message on the *Android Auto* screen:
+
+- *Arrival time* — the estimated time of arrival.
+- *Distance to destination* — the remaining distance.
+- *Time or distance to the next turn* — how soon the next turn is.
+- *Next turn* — a description of the next maneuver.
+- *Destination* — the name or coordinates of the destination point.
+- *Current road* — the name of the road you are on.
+
+If no route is calculated, OsmAnd shows a message that the route is not calculated. Requests for features that are not available in OsmAnd, such as traffic, satellite view, or reporting road events, show a message that the action is not supported.
 
 
 ## Settings {#settings}

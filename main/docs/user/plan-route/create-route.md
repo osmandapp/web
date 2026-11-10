@@ -16,21 +16,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-The **Plan a route** (*Menu → Plan a route*) tool is a powerful feature of the OsmAnd application that allows you to [create new routes](#create-new-route) as GPX tracks, [edit and add new segments](#segments) to already saved tracks, [measure distances](#distance-measurement) on the map, and [attach track](#attach-track-to-roads) segments to the nearest available road using different navigation profiles. The feature is designed to work in *offline mode*.
-
-A route consists of a set of segments between specified points. The segments can be straight lines or routes adapted to the selected profile. The route can be saved as GPX for later import, edit, and [navigation](../navigation/setup/gpx-navigation.md).
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
 ![Plan a route android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
+The **Plan a route** (*Menu → Plan a route*) tool is a powerful feature of the OsmAnd application that allows you to [create new routes](#create-new-route) as GPX tracks, [edit and add new segments](#segments) to already saved tracks, [measure distances](#distance-measurement) on the map, and [attach track](#attach-track-to-roads) segments to the nearest available road using different navigation profiles. The feature is designed to work in *offline mode*.
+
+A route consists of a set of segments between specified points. The segments can be straight lines or routes adapted to the selected profile. The route can be saved as GPX for later import, edit, and [navigation](../navigation/setup/gpx-navigation.md).
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Plan a route ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
+
+The **Plan a route** (*Menu → Plan a route*) tool is a powerful feature of the OsmAnd application that allows you to [create new routes](#create-new-route) as GPX tracks, [edit and add new segments](#segments) to already saved tracks, [measure distances](#distance-measurement) on the map, and [attach track](#attach-track-to-roads) segments to the nearest available road using different navigation profiles. The feature is designed to work in *offline mode*.
+
+A route consists of a set of segments between specified points. The segments can be straight lines or routes adapted to the selected profile. The route can be saved as GPX for later import, edit, and [navigation](../navigation/setup/gpx-navigation.md).
+
+**Note:** On iPad and Mac, and on iPhone in landscape orientation, the *Plan a route* panel opens on the left side of the screen at full height, and the *+ POI*, *Undo*, *Redo*, and *Route +* buttons are located on the map. On iPhone in portrait orientation and in narrow iPad windows, such as Split View or Slide Over, the panel opens at the bottom of the screen.
 
 </TabItem>
 
@@ -206,7 +212,7 @@ You can also add a via point directly from the map by tapping a POI or Favorite 
 
 ![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Route +* button. By accessing the **points list** below, you can reorder points, delete, or access a specific [point context menu](#point-context-menu).
+To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Route +* button. By accessing the **points list** in the *Plan a route* panel, you can reorder points, delete, or access a specific [point context menu](#point-context-menu).
 
 </TabItem>
 
