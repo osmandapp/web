@@ -26,7 +26,7 @@ You can:
 - Organize widgets in panels (top, bottom, left, right, center).
 - Create multiple pages within side panels, choose size of widgets.
 - Choose row height and toggle widget icons.
-- On Android, customize [widget panel appearance](#widget-panel-appearance).
+- Customize [widget panel appearance](#widget-panel-appearance).
 
 All widgets are [profile-dependent](../personal/profiles.md) — each profile has its own layout, order, visibility, and settings.
 
@@ -45,7 +45,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios.webp)  
 
 </TabItem>
 
@@ -359,11 +359,27 @@ These settings apply only to the selected widget.
     - Switch to the Off position, in the *Show icon* field.
 
 
-## Widget Panel Appearance (Android only) {#widget-panel-appearance}
+## Widget Panel Appearance {#widget-panel-appearance}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Go to: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
 ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_appearance"/>*
+
+![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_ios.webp) ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Appearance settings allow you to customize the appearance of all widgets in the selected panel. Each panel (*Top*, *Bottom*, *Left*, *Right*) has its own appearance settings.
 
@@ -373,13 +389,13 @@ Appearance settings allow you to customize the appearance of all widgets in the 
 
 3. **Text color**. Changes the color of the primary widget text. Available options: *Default*, *Automatic*, *Custom*. When **Custom** is selected, you can configure separate colors for **Day** and **Night** modes. A live preview displays the selected colors before they are applied.
 
-:::tip Purchase
-Custom widget colors is a [paid feature](../purchases/index.md).  
-:::
-
 4. **Secondary text color**. Changes the color of widget names and units. Available options: *Default*, *Automatic*, *Custom*.
 
 5. **Background color**. Changes the background color of widgets in the selected panel. Available options: *Default*, *Transparent*, *Custom*.
+
+:::tip Purchase
+Custom background color is a [paid feature](../purchases/index.md).  
+:::
 
 6. **Preview**. The preview area displays how widgets will look with the currently selected appearance settings.
 
@@ -388,6 +404,11 @@ Custom widget colors is a [paid feature](../purchases/index.md).
     - Tap the ⋮ menu in the upper-right corner.
     - Select Copy from.
     - Choose one of the following options: *Another profile* or *One of the other panels*.
+
+8. **Reset to default**. Returns all appearance settings of the selected panel to their default values.
+
+    - *Android*. Tap the reset icon in the upper-right corner.
+    - *iOS*. Tap *Reset to default* at the bottom of the screen and confirm the action.
 
 
 ## Panels Customization {#panels-customization}
