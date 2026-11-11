@@ -94,10 +94,12 @@ yarn test --help                     # Show help
 - POI display
 - Wikipedia photos
 
-### map/ (3 tests)
+### map/ (5 tests)
 - Context menu
 - Marker selection
 - Vector tiles (MVT) object context menu
+- Marker clustering on zoom and pan (tracks, favorites, shared files, POI, search, explore, transport stops; data in `other/`)
+- Map centered on a pin from the URL
 
 ### purchases/ (1 test)
 - Purchase flow

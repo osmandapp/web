@@ -9,25 +9,26 @@ import { waitBy, clickBy, enclose } from '../lib.mjs';
 import actionIdleWait from './actionIdleWait.mjs';
 
 /**
- * Action: actionUploadGpx({ mask, multiple })
+ * Action: actionUploadGpx({ mask, multiple, folder })
  *
  * Param: mask <String> use gpx-files by wildcard instead of upload *.gpx
  * Param: multiple <Boolean> perform multiple-upload (all-files by one form Submit request)
+ * Param: folder <String> folder to take the files from
  *
  * test: all files should be found in Local tracks list
  */
-export default async function test({ mask = '*.gpx', multiple = false } = {}) {
+export default async function test({ mask = '*.gpx', multiple = false, folder = 'gpx' } = {}) {
     const tracks = [];
 
     // convert mask (support only * as wildcard, eg *wiki*.gpx)
     const regexp = mask.replaceAll('.', '\\.').replaceAll('*', '.*');
 
-    readdirSync('gpx')
+    readdirSync(folder)
         .sort()
         .forEach((file) => {
             if (file.match(/\.gpx$/i) && (!mask || file.match(regexp))) {
                 const name = file.replace(/\.gpx$/i, '');
-                const path = resolve('gpx', file);
+                const path = resolve(folder, file);
                 tracks.push({ file, name, path });
             }
         });
