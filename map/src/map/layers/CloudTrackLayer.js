@@ -58,31 +58,21 @@ export function addTrackToMap({ ctx, mtx, file, map, fit = false, recentSaver, n
         panToTrack({ map, layer, mtx });
         if (file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD) {
             // Simplify and add layer immediately for tracks with many waypoints
-            layer = simplifyLayer({
-                layerGroup: layer,
-                wpts: file.wpts,
-                map,
-                ctx,
-                data: file,
-                useMapBounds: true,
-            });
+            layer = simplifyTrackLayer({ layerGroup: layer, file, map, ctx });
         }
         addLayerToMap(map, layer, ID);
     } else {
         // case for Make track visible
         if (file.wpts?.length >= WPT_SIMPLIFY_THRESHOLD) {
-            layer = simplifyLayer({
-                layerGroup: layer,
-                wpts: file.wpts,
-                map,
-                ctx,
-                data: file,
-                useMapBounds: true,
-            });
+            layer = simplifyTrackLayer({ layerGroup: layer, file, map, ctx });
         }
         addLayerToMap(map, layer, ID);
     }
     return layer;
+}
+
+export function simplifyTrackLayer({ layerGroup, file, map, ctx }) {
+    return simplifyLayer({ layerGroup, wpts: file.wpts, map, ctx, data: file, useMapBounds: true });
 }
 
 function simplifyLayer({ layerGroup, wpts, map, ctx = null, data = null, useMapBounds = false }) {
@@ -175,6 +165,7 @@ const CloudTrackLayer = () => {
     const [zoom, setZoom] = useState(map ? map.getZoom() : 0);
     const [prevZoom, setPrevZoom] = useState(null);
     const [move, setMove] = useState(false);
+    const [shareTracksSimplifyCount, setShareTracksSimplifyCount] = useState(0);
 
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
@@ -183,7 +174,7 @@ const CloudTrackLayer = () => {
             .filter(isTrackRenderedOnMap)
             .flatMap((file) => file.gpx.getLayers?.() ?? []);
         return layers.length > 0 ? layers : null;
-    }, [ctx.gpxFiles, ctx.shareWithMeFiles?.tracks]);
+    }, [ctx.gpxFiles, ctx.shareWithMeFiles?.tracks, shareTracksSimplifyCount]);
 
     useSelectMarkerOnMap({
         ctx,
@@ -198,34 +189,34 @@ const CloudTrackLayer = () => {
 
     useEffect(() => {
         const needUpdate = move || zoom !== prevZoom;
-        let processed = 0;
         if (needUpdate) {
-            const newGpxFiles = { ...ctx.gpxFiles } ?? {};
-            Object.values(newGpxFiles).forEach((file) => {
-                if (isTrackRenderedOnMap(file)) {
-                    if (file.wpts.length >= WPT_SIMPLIFY_THRESHOLD) {
-                        const layer = simplifyLayer({
-                            layerGroup: file.gpx,
-                            wpts: file.wpts,
-                            map,
-                            ctx,
-                            data: file,
-                            useMapBounds: true,
-                        });
-                        layer.on('click', (e) => clickHandler({ ctx, file, navigate, recentSaver, e }));
-                        file.gpx = layer;
-                        addLayerToMap(map, file.gpx, 'add-cloud-track-to-map-zoom-move');
-                        processed++;
-                    }
-                }
-            });
+            if (simplifyFiles(ctx.gpxFiles)) {
+                ctx.setGpxFiles({ ...ctx.gpxFiles });
+            }
+            if (simplifyFiles(ctx.shareWithMeFiles?.tracks)) {
+                setShareTracksSimplifyCount((n) => n + 1);
+            }
             setPrevZoom(zoom);
             setMove(false);
-            if (processed > 0) {
-                ctx.setGpxFiles(newGpxFiles);
-            }
         }
     }, [zoom, move]);
+
+    function simplifyFiles(files) {
+        let simplified = false;
+        Object.values(files ?? {}).forEach((file) => {
+            if (isTrackRenderedOnMap(file)) {
+                if (file.wpts.length >= WPT_SIMPLIFY_THRESHOLD) {
+                    simplifyTrackLayer({ layerGroup: file.gpx, file, map, ctx });
+                    file.gpx.off('click');
+                    file.gpx.on('click', (e) => clickHandler({ ctx, file, navigate, recentSaver, e }));
+                    addLayerToMap(map, file.gpx, 'add-cloud-track-to-map-zoom-move');
+                    simplified = true;
+                }
+            }
+        });
+
+        return simplified;
+    }
 
     function cleanupZombieLayers({ id, name }) {
         for (let x in allLayers) {

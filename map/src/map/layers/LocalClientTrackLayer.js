@@ -208,8 +208,8 @@ export default function LocalClientTrackLayer() {
     useEffect(() => {
         const needUpdate =
             (move || zoom !== prevZoom) &&
-            ctx.selectedGpxFile.wpts?.length > 100 &&
-            ctx.selectedGpxFile.points?.length > 100;
+            (ctx.selectedGpxFile.wpts?.length >= WPT_SIMPLIFY_THRESHOLD ||
+                (ctx.selectedGpxFile.wpts?.length > 100 && ctx.selectedGpxFile.points?.length > 100));
         if (needUpdate && ctx.createTrack?.enable && ctxTrack) {
             ctxTrack.layers = updateLayers({
                 map,
