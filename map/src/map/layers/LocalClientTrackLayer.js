@@ -363,13 +363,17 @@ export default function LocalClientTrackLayer() {
                 clearAllRegisteredLayers(map, setRegisteredLayers); // reset+cleanup track-closed (edited, by Close button)
             }
             let savedFile;
+            let closePrev = false;
             if (ctx.createTrack.deletePrev && ctxTrack.prevState) {
                 savedFile = ctxTrack.prevState;
+            } else if (isEmpty(ctxTrack) && ctx.selectedLocalTrackObj) {
+                savedFile = ctx.localTracks.find((t) => t?.name === ctx.selectedLocalTrackObj.name);
+                closePrev = true;
             } else {
                 savedFile = ctxTrack;
             }
             if (savedFile) {
-                saveResult(savedFile, false);
+                saveResult(savedFile, closePrev);
             }
             ctx.setCreateTrack(null); // stop-editor (finished)
         }

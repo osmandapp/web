@@ -49,7 +49,7 @@ export default function LocalTrackItem({ track }) {
     function addTrackToMap() {
         if (isAlreadyEdit() === false) {
             startEdit(ctx);
-            updateLocalTrack(ref, ctx, track);
+            updateLocalTrack(ref, ctx);
             updateTrackInfoBlock(ctx);
             ctx.setSelectedLocalTrackObj({ ...track });
         }
