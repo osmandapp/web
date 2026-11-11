@@ -1,6 +1,6 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
-import { assert, clickBy, getTextBy, getUrl, waitBy, waitByRemoved } from '../../lib.mjs';
+import { assert, clickBy, getUrl, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.mjs';
 import actionCheckDisabled from '../../actions/actionCheckDisabled.mjs';
@@ -9,6 +9,8 @@ import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { TEST_LOGIN2, TEST_PASSWORD2 } from '../../options.mjs';
 import actionLogOut from '../../actions/login/actionLogOut.mjs';
+import actionSwitchUser from '../../actions/login/actionSwitchUser.mjs';
+import actionSetShareType from '../../actions/actionSetShareType.mjs';
 import actionOpenShare from '../../actions/actionOpenShare.mjs';
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
@@ -87,9 +89,7 @@ export default async function test() {
     linkFav2 = await createShareFile(favName2Short);
 
     // send request to access from another user
-    await actionLogOut();
-    await clickBy(By.id('se-login-button'));
-    await actionLogIn({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
+    await actionSwitchUser({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
 
     await actionOpenMap(linkTrack1);
     await waitBy(By.id('se-request-access-error'));
@@ -107,10 +107,8 @@ export default async function test() {
     await waitBy(By.id('se-request-access-error'));
     await clickBy(By.id('se-request-access-btn'));
 
-    await actionLogOut();
-    await clickBy(By.id('se-login-button'));
     // approve access
-    await actionLogIn();
+    await actionSwitchUser();
 
     await clickBy(By.id('se-show-menu-tracks'));
     await approveAccessTrack(trackName, userName);
@@ -120,10 +118,8 @@ export default async function test() {
     await approveAccessFav(favNameShort, userName);
     await approveAccessFav(favName2Short, userName);
 
-    await actionLogOut();
-    await clickBy(By.id('se-login-button'));
     // check shared with me
-    await actionLogIn({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
+    await actionSwitchUser({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
     // check shared link
     await actionOpenMap(linkTrack1);
     await waitBy(By.id('se-share-file'));
@@ -144,9 +140,7 @@ export default async function test() {
     await waitBy(By.id(`se-menu-fav-${favNameShort}`));
     await waitBy(By.id(`se-menu-fav-${favName2Short}`));
 
-    await actionLogOut();
-    await clickBy(By.id('se-login-button'));
-    await actionLogIn();
+    await actionSwitchUser();
 
     // make favorites share public
     await clickBy(By.id('se-show-menu-favorites'));
@@ -171,54 +165,27 @@ export default async function test() {
 }
 
 async function createShareFile(name) {
-    await waitBy(By.id('se-share-file-menu'));
-    await waitBy(By.id(`se-share-file-item-${name}`));
     await waitBy(By.id('se-selected-share-type-Private'));
     await waitBy(By.id('se-private-access-list'));
     await waitByRemoved(By.id('se-public-access-list'));
     await waitByRemoved(By.id('se-user-access-list'));
     await actionCheckDisabled('se-share-generate-link');
 
-    await clickBy(By.id('se-share-type'));
-
-    await actionIdleWait();
-    await waitBy(By.id('se-actions-share-type'));
-    await clickBy(By.id('se-share-type-Request Only'));
-    await waitByRemoved(By.id('se-actions-share-type'));
-    await actionIdleWait();
-
-    await waitBy(By.id('se-selected-share-type-Request Only'));
+    const link = await actionSetShareType(name, 'Request Only');
     await waitByRemoved(By.id('se-private-access-list'));
     await waitByRemoved(By.id('se-public-access-list'));
     await waitBy(By.id('se-user-access-list'));
 
-    await clickBy(By.id('se-share-generate-link'));
-    await waitBy(By.id('se-copy-link'));
-
-    let link = await getTextBy(By.id('se-generated-link'));
-    return link.split('/map/')[1];
+    return link;
 }
 
 async function setPublicShareType(name) {
-    await waitBy(By.id('se-share-file-menu'));
-    await waitBy(By.id(`se-share-file-item-${name}`));
     await waitBy(By.id('se-selected-share-type-Request Only'));
-
-    await clickBy(By.id('se-share-type'));
-
-    await actionIdleWait();
-    await waitBy(By.id('se-actions-share-type'));
-    await clickBy(By.id('se-share-type-Anyone'));
-    await waitByRemoved(By.id('se-actions-share-type'));
-    await actionIdleWait();
-
-    await waitBy(By.id('se-selected-share-type-Anyone'));
+    const link = await actionSetShareType(name, 'Anyone');
     await waitByRemoved(By.id('se-user-access-list'));
     await waitBy(By.id('se-public-access-list'));
-    await waitBy(By.id('se-copy-link'));
 
-    let link = await getTextBy(By.id('se-generated-link'));
-    return link.split('/map/')[1];
+    return link;
 }
 
 async function checkAnonymousPublicFavorites(link, wptName) {

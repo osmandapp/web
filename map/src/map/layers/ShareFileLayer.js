@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import AppContext, { OBJECT_TYPE_SHARE_FILE } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
-import { addTrackToMap } from './CloudTrackLayer';
+import { addTrackToMap, simplifyTrackLayer } from './CloudTrackLayer';
 import { useMap } from 'react-leaflet';
 import { FAVOURITES, GPX, SHARE_FILE_MAIN_URL } from '../../manager/GlobalManager';
-import TrackLayerProvider from '../util/TrackLayerProvider';
+import TrackLayerProvider, { WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
 import { addClusteredMarkersToMap, clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { filterPointsInBounds } from './FavoriteLayer';
@@ -33,9 +33,11 @@ export default function ShareFileLayer() {
     useEffect(() => {
         if (ctx.currentObjectType === OBJECT_TYPE_SHARE_FILE && location.pathname.includes(SHARE_FILE_MAIN_URL)) {
             if (ctx.selectedGpxFile?.type === GPX) {
-                const layer = addTrackToMap({ ctx, mtx, file: ctx.selectedGpxFile, map, fit: true, recentSaver });
-                if (layer) {
-                    setCurrentShareFile(layer);
+                if (!currentShareFile) {
+                    const layer = addTrackToMap({ ctx, mtx, file: ctx.selectedGpxFile, map, fit: true, recentSaver });
+                    if (layer) {
+                        setCurrentShareFile(layer);
+                    }
                 }
             } else if (ctx.selectedGpxFile?.type === FAVOURITES) {
                 if (ctx.selectedGpxFile && !ctx.selectedGpxFile.markerCurrent && !currentShareFile) {
@@ -70,6 +72,12 @@ export default function ShareFileLayer() {
             if (move) {
                 setMove(false);
             }
+        } else if (
+            currentShareFile &&
+            ctx.selectedGpxFile?.type === GPX &&
+            ctx.selectedGpxFile.wpts?.length >= WPT_SIMPLIFY_THRESHOLD
+        ) {
+            simplifyTrackLayer({ layerGroup: currentShareFile, file: ctx.selectedGpxFile, map, ctx });
         }
     }, [zoom, move]);
 
