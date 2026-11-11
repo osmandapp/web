@@ -5,12 +5,10 @@ import AppContext, { FAVORITES_URL_PARAM_FOLDER } from '../../context/AppContext
 import {
     FAVORITE_FILE_TYPE,
     addShareFavoriteToMap,
-    getColorLocation,
     getFavoriteId,
     addFavoriteToMap,
 } from '../../manager/FavoritesManager';
 import { useSearchParams } from 'react-router-dom';
-import { ReactComponent as DirectionIcon } from '../../assets/icons/ic_direction_arrow_16.svg';
 import ActionsMenu from '../actions/ActionsMenu';
 import styles from '../trackfavmenu.module.css';
 import FavoriteItemActions from '../actions/FavoriteItemActions';
@@ -18,40 +16,31 @@ import { MENU_INFO_OPEN_SIZE } from '../../manager/GlobalManager';
 import MenuItemWithLines from '../components/MenuItemWithLines';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import ThreeDotsButton from '../../frame/components/btns/ThreeDotsButton';
-import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
-import { useTranslation } from 'react-i18next';
+import DistanceInfo from '../../infoblock/components/common/DistanceInfo';
 import { SHARE_TYPE } from '../share/shareConstants';
 
 export const CustomIcon = ({ marker }) => {
     return <div style={{ height: '30px' }} dangerouslySetInnerHTML={{ __html: marker.icon + '' }} />;
 };
 
-function FavInfo({ marker, currentLoc, unitsSettings }) {
-    const { t } = useTranslation();
-
+function FavInfo({ marker, isUserLocation }) {
     const address = marker?.layer?.options?.address ?? '';
     const separator = marker.locDist > 0 && address ? ' · ' : '';
 
     return (
-        <div style={{ display: 'flex', alignItems: 'centre' }}>
+        <div className={styles.favInfo}>
             {address && (
                 <Typography id={'se-fav-item-address'} variant="body2" className={styles.groupInfo} noWrap>
                     {`${address}${separator}`}
                 </Typography>
             )}
             {marker.locDist > 0 && (
-                <ListItemIcon sx={{ mr: '-23px !important', fill: getColorLocation(currentLoc), mt: '2px' }}>
-                    <DirectionIcon />
-                </ListItemIcon>
-            )}
-            {marker.locDist > 0 && (
-                <Typography
-                    variant="body2"
-                    className={styles.favLocationInfo}
-                    sx={{ color: getColorLocation(currentLoc) }}
-                >
-                    {`${convertMeters(marker.locDist, unitsSettings.len, LARGE_UNIT).toFixed(0)} ${t(getLargeLengthUnit({ unitsSettings }))}`}
-                </Typography>
+                <DistanceInfo
+                    id={`se-fav-item-distance-${marker.name}`}
+                    distance={marker.locDist}
+                    bearing={marker.locBearing}
+                    isUserLocation={isUserLocation}
+                />
             )}
         </div>
     );
@@ -60,7 +49,7 @@ function FavInfo({ marker, currentLoc, unitsSettings }) {
 export default function FavoriteItem({
     marker,
     group,
-    currentLoc,
+    isUserLocation,
     share = false,
     smartf = null,
     insideVirtualizedList = false,
@@ -169,7 +158,7 @@ export default function FavoriteItem({
                             </ListItemIcon>
                             <ListItemText>
                                 <MenuItemWithLines name={marker.name} maxLines={1} />
-                                <FavInfo marker={marker} currentLoc={currentLoc} unitsSettings={ctx.unitsSettings} />
+                                <FavInfo marker={marker} isUserLocation={isUserLocation} />
                             </ListItemText>
                             {!share && !sharedFile && !hideActions && (
                                 <ThreeDotsButton
@@ -197,5 +186,5 @@ export default function FavoriteItem({
                 </div>
             </>
         );
-    }, [inView, marker, openActions, ctx.openedPopper]);
+    }, [inView, marker, isUserLocation, openActions, ctx.openedPopper]);
 }

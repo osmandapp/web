@@ -82,7 +82,7 @@ afterEach(() => {
 });
 
 function mountLayers({ infoBlockWidth = 0 } = {}) {
-    const context = { setVisibleBboxInfo: jest.fn() };
+    const context = { setVisibleBboxInfo: jest.fn(), setZoomToFitInProgress: jest.fn() };
     act(() => {
         root.render(
             React.createElement(

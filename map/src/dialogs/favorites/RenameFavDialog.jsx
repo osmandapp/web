@@ -11,6 +11,7 @@ import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import FavoritesManager, { normalizeGroupNameForFile, extractBaseFavFileName } from '../../manager/FavoritesManager';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { GPX_FILE_EXT } from '../../manager/track/TracksManager';
+import { getUniqFileId } from '../../manager/GlobalManager';
 
 export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }) {
     const ctx = useContext(AppContext);
@@ -53,7 +54,12 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
                 dataOnErrors: true,
             });
             if (res && res?.data?.status === 'ok') {
-                updateSortList({ oldName, newName, isFavorites: true, ctx });
+                updateSortList({
+                    oldName: group.id,
+                    newName: getUniqFileId({ ...group.file, name: newGroupName }),
+                    isFavorites: true,
+                    ctx,
+                });
                 refreshGlobalFiles({ ctx, currentFileName: newGroupName, type: OBJECT_TYPE_FAVORITE }).then();
             } else {
                 ctx.setTrackErrorMsg({

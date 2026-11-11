@@ -131,6 +131,16 @@
     line-height: 140% !important;
 }
 
+.userLocationDistance {
+    color: var(--selected-color);
+    fill: var(--selected-color);
+}
+
+.mapCenterDistance {
+    color: var(--map-center-color);
+    fill: var(--map-center-color);
+}
+
 .placeAddress {
     color: #727272;
     font-size: 14px !important;

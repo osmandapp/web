@@ -380,18 +380,9 @@ export default function SearchResults() {
                 );
             }
 
-            return (
-                <SearchResultItem
-                    item={item}
-                    index={index}
-                    typeItem={typeItem}
-                    currentLoc={currentLoc}
-                    loc={distanceLoc}
-                    isUser={isUser}
-                />
-            );
+            return <SearchResultItem item={item} index={index} typeItem={typeItem} loc={distanceLoc} isUser={isUser} />;
         },
-        [typeItem, currentLoc, distanceLoc, isUser, showMoreResults]
+        [typeItem, distanceLoc, isUser, showMoreResults]
     );
 
     return (

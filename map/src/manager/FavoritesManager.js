@@ -7,7 +7,7 @@ import MarkerOptions, {
     getBackground,
     removeShadowFromIconWpt,
 } from '../map/markers/MarkerOptions';
-import Utils, { getDistance, quickNaNfix } from '../util/Utils';
+import Utils, { getBearing, getDistance, quickNaNfix } from '../util/Utils';
 import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
@@ -702,10 +702,6 @@ export function updateFavoriteGroups({
     ctx.setUpdateMarkers({ ...ctx.favorites });
 }
 
-export function getColorLocation(location) {
-    return location === LOCATION_UNAVAILABLE ? '#ff8800' : '#237bff';
-}
-
 export function getSize(group, t) {
     return FavoritesManager.getGroupSize(group) > 0
         ? `${FavoritesManager.getGroupSize(group)} ${t('shared_string_gpx_points').toLowerCase()}`
@@ -725,7 +721,7 @@ export function getFavoriteMenuIconHtml({ wpt = null, icon, color, background } 
     return changeIconSizeWpt(removeShadowFromIconWpt(rawHtml), 18, 30, background);
 }
 
-export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups = null }) {
+export function getFavMenuListByLayers({ layers, wpts, location, pointsGroups = null }) {
     let markerList = [];
     Object.values(layers).forEach((value) => {
         // Only process waypoint markers (skip route points, track points, polylines, start/end markers)
@@ -747,7 +743,7 @@ export function getFavMenuListByLayers({ layers, wpts, currentLoc, pointsGroups 
         };
         markerList.push(marker);
     });
-    return addLocDist({ location: currentLoc, markers: markerList });
+    return addLocDist({ location, markers: markerList });
 }
 
 export function getWptByTitle(title, wpts) {
@@ -801,38 +797,19 @@ export function resolveFavoriteMarkerForSearch(ctx, groupId, wptName) {
     return { group, marker };
 }
 
-export function addLocDist({ location, markers = null, wpts = null }) {
-    let res = [];
-    if (location && location !== LOCATION_UNAVAILABLE) {
-        if (markers && markers.length > 0) {
-            markers.forEach((m) => {
-                if (m?.layer?._latlng) {
-                    m.locDist = getDistance(
-                        location.lat,
-                        location.lng,
-                        m.layer._latlng.lat,
-                        m.layer._latlng.lng
-                    ).toFixed(0);
-                }
-                res.push(m);
-            });
-        } else if (wpts && wpts.length > 0) {
-            wpts.forEach((w) => {
-                if (w.latlng) {
-                    w.locDist = getDistance(location.lat, location.lng, w.latlng.lat, w.latlng.lng).toFixed(0);
-                }
-                res.push(w);
-            });
-        }
+export function getDistanceAndBearing(location, latlng) {
+    if (!location || location === LOCATION_UNAVAILABLE || !latlng) {
+        return null;
     }
-    if (isEmpty(res)) {
-        if (markers) {
-            return markers;
-        } else if (wpts) {
-            return wpts;
-        }
-    }
-    return res;
+
+    return {
+        locDist: Math.round(getDistance(location.lat, location.lng, latlng.lat, latlng.lng)),
+        locBearing: getBearing(location.lat, location.lng, latlng.lat, latlng.lng),
+    };
+}
+
+export function addLocDist({ location, markers }) {
+    return markers.map((m) => ({ ...m, ...getDistanceAndBearing(location, m?.layer?._latlng) }));
 }
 
 export function addShareFavoriteToMap(marker, ctx) {

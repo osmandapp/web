@@ -16,6 +16,7 @@ export function useZoomToFit() {
             if (!type) return;
             if (!object) return;
             mtx.setZoomToFitRequest({ type, object });
+            mtx.setZoomToFitInProgress(true);
         },
         [mtx]
     );

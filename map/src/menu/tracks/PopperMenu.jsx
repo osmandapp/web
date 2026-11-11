@@ -2,6 +2,7 @@ import { ClickAwayListener, MenuList, Paper, Popper } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import AppContext from '../../context/AppContext';
 import { POPPER_MENU_Z_INDEX } from '../../map/util/ZIndexes';
+import useClearOpenedPopper from '../../util/hooks/menu/useClearOpenedPopper';
 
 export default function PopperMenu({ anchorEl, open, setOpen, Buttons }) {
     const ctx = useContext(AppContext);
@@ -14,6 +15,8 @@ export default function PopperMenu({ anchorEl, open, setOpen, Buttons }) {
             setOpen(false);
         }
     }, [ctx.openedPopper]);
+
+    useClearOpenedPopper(open, anchorEl);
 
     return (
         <Popper

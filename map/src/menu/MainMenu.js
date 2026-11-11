@@ -302,7 +302,7 @@ export default function MainMenu({
                     const markerList = getFavMenuListByLayers({
                         layers: mapObj.markers._layers,
                         wpts: mapObj.wpts,
-                        currentLoc,
+                        location: currentLoc,
                         pointsGroups: mapObj.pointsGroups,
                     });
                     if (markerList.length === 0) return;

@@ -26,6 +26,7 @@ function getInitialPinPoint() {
 
 export const MapContextProvider = ({ children }) => {
     const [zoomToFitRequest, setZoomToFitRequest] = useState(null);
+    const [zoomToFitInProgress, setZoomToFitInProgress] = useState(false);
     const [mapViewStack, setMapViewStack] = useState([]);
     const [mapViewStackRequest, setMapViewStackRequest] = useState(null);
     const [fitBoundsPadding, mutateFitBoundsPadding] = useMutator({ left: 0, top: 0, right: 0, bottom: 0 });
@@ -49,6 +50,8 @@ export const MapContextProvider = ({ children }) => {
             value={{
                 zoomToFitRequest,
                 setZoomToFitRequest,
+                zoomToFitInProgress,
+                setZoomToFitInProgress,
                 mapViewStack,
                 setMapViewStack,
                 mapViewStackRequest,
