@@ -359,7 +359,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                     {tagList.map((item, index) =>
                         typeof item === 'string' ? (
                             <MenuItem disableRipple key={index} divider className={styles.tagList}>
-                                <Typography key={index} className={styles.tagName}>
+                                <Typography key={index} className={styles.tagName} noWrap>
                                     {getCollapsableItemText(item, index)}
                                 </Typography>
                             </MenuItem>
