@@ -315,7 +315,15 @@ export default function MainGraph({ profile, slopes, attrGraphData, visible, set
                 x: {
                     display: true,
                     type: 'linear',
-                    max: parseFloat(Number(xs.at(-1)).toFixed(1)),
+                    max: xs.at(-1),
+                    afterTickToLabelConversion: (axis) => {
+                        const last = axis.ticks.at(-1);
+                        if (last) {
+                            last.label = new Intl.NumberFormat(axis.chart.options.locale, {
+                                maximumFractionDigits: 2,
+                            }).format(last.value);
+                        }
+                    },
                     ticks: {
                         maxTicksLimit: 10,
                         beginAtZero: true,
