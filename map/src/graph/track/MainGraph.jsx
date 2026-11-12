@@ -22,6 +22,7 @@ import {
     PointElement,
     Tooltip,
 } from 'chart.js';
+import { formatNumber, toFont } from 'chart.js/helpers';
 import clsx from 'clsx';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import annotationsPlugin from 'chartjs-plugin-annotation';
@@ -316,15 +317,9 @@ export default function MainGraph({ profile, slopes, attrGraphData, visible, set
                     display: true,
                     type: 'linear',
                     max: xs.at(-1),
-                    afterTickToLabelConversion: (axis) => {
-                        const last = axis.ticks.at(-1);
-                        if (last) {
-                            last.label = new Intl.NumberFormat(axis.chart.options.locale, {
-                                maximumFractionDigits: 2,
-                            }).format(last.value);
-                        }
-                    },
+                    afterTickToLabelConversion: labelAxisBounds,
                     ticks: {
+                        includeBounds: false,
                         maxTicksLimit: 10,
                         beginAtZero: true,
                         align: 'inner',
@@ -528,6 +523,30 @@ export default function MainGraph({ profile, slopes, attrGraphData, visible, set
             />
         </>
     );
+}
+
+function labelAxisBounds(axis) {
+    const range = axis.max - axis.min;
+    const fractionDigits = Math.max(2, 1 - Math.floor(Math.log10(range)));
+    const format = (value) => formatNumber(value, axis.chart.options.locale, { maximumFractionDigits: fractionDigits });
+    const start = { value: axis.min, label: format(axis.min) };
+    const end = { value: axis.max, label: format(axis.max) };
+    const pixelsPerUnit = axis.width / range;
+    axis.ctx.font = toFont(axis.options.ticks.font).string;
+    const labelWidth = (tick) => axis.ctx.measureText(tick.label).width;
+    const overlaps = (tick, bound) =>
+        tick &&
+        Math.abs(tick.value - bound.value) * pixelsPerUnit <
+            labelWidth(bound) + labelWidth(tick) / 2 + axis.options.ticks.autoSkipPadding;
+
+    if (overlaps(axis.ticks[0], start)) {
+        axis.ticks.shift();
+    }
+    if (overlaps(axis.ticks.at(-1), end)) {
+        axis.ticks.pop();
+    }
+    axis.ticks.unshift(start);
+    axis.ticks.push(end);
 }
 
 function extremes(series) {
