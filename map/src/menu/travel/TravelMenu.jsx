@@ -7,6 +7,7 @@ import { ReactComponent as AppearanceIcon } from '../../assets/icons/ic_action_a
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
 import { ReactComponent as ReviewIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
+import CloseIcon from '@mui/icons-material/Close';
 import debounce from 'lodash-es/debounce';
 import isEqual from 'lodash-es/isEqual';
 import {
@@ -25,10 +26,12 @@ import ActivitySelect from './ActivitySelect';
 import { useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
-import TravelRoutesResult, { formatActivity } from './TravelRoutesResult';
+import TravelRoutesResult from './TravelRoutesResult';
 import { activityLabel } from '../../map/util/activities';
 import TravelFilters from './TravelFilters';
 import HeatmapAppearance from './HeatmapAppearance';
+import TravelDataSource from './TravelDataSource';
+import TravelActivityStats from './TravelActivityStats';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import headerStyles from '../trackfavmenu.module.css';
 import mainMenuStyles from '../mainmenu.module.css';
@@ -43,7 +46,6 @@ import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
 import ColorBlock from '../../frame/components/other/ColorBlock';
-import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
 import {
     convertMeters,
     getLargeLengthUnit,
@@ -64,6 +66,7 @@ export const OSM_GPX_ABORT_KEYS = {
     routeInfo: 'osmgpx-get-route-info',
     osmRoute: 'osmgpx-get-osm-route',
     activities: 'osmgpx-activities',
+    activitiesAllDates: 'osmgpx-activities-all-dates',
     reviews: 'osmgpx-reviews',
 };
 
@@ -81,6 +84,13 @@ export function monthKey(index) {
     return `${MONTHS_BASE_YEAR + Math.floor(index / 12)}-${String((index % 12) + 1).padStart(2, '0')}`;
 }
 
+// 'Mar 2015' in the interface language
+function formatMonth(index, lang) {
+    const date = new Date(Date.UTC(MONTHS_BASE_YEAR + Math.floor(index / 12), index % 12, 1));
+
+    return date.toLocaleDateString(lang, { month: 'short', year: 'numeric', timeZone: 'UTC' });
+}
+
 export function monthIndex(key, baseYear = MONTHS_BASE_YEAR) {
     const [year, month] = key.split('-').map(Number);
 
@@ -92,7 +102,7 @@ export function hasSpeedOnlyTracks(group) {
     return group.id !== OTHER_GROUP && group.id !== IGNORED_GROUP;
 }
 
-function groupActivityIds(group) {
+export function groupActivityIds(group) {
     return [...group.activities.map((a) => a.id), ...(hasSpeedOnlyTracks(group) ? [group.id] : [])];
 }
 
@@ -145,7 +155,7 @@ export default function TravelMenu() {
     const ctx = useContext(AppContext);
     const ttx = useContext(TravelContext);
     const ltx = useContext(LoginContext);
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -154,10 +164,10 @@ export default function TravelMenu() {
     const [updatedActivities, setUpdatedActivities] = useState([]);
     const [travelResult, setTravelResult] = useState(null);
     const [loadingResult, setLoadingResult] = useState(false);
-    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
+    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }] in the date range
+    const [activityCountsAllDates, setActivityCountsAllDates] = useState(null); // the same without the date range
     const [openFilters, setOpenFilters] = useState(false); // secondary filters drawer
     const [openAppearance, setOpenAppearance] = useState(false);
-    const [pinnedActivity, setPinnedActivity] = useState(null); // its tracks go first in the list
 
     const DEFAULT_MAX_DISTANCE = 500000; // 500 km in meters
     const DEFAULT_MAX_SPEED = 100; // 100 km/h
@@ -284,25 +294,33 @@ export default function TravelMenu() {
                 minLon: mapBounds.getWest(),
                 maxLon: mapBounds.getEast(),
             };
-
-            if (months) {
-                params.dateFrom = monthKey(months[0]);
-                params.dateTo = monthKey(months[1]);
-            }
+            const fetchCounts = (query, abortControllerKey) =>
+                apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
+                    apiCache: true,
+                    params: query,
+                    abortControllerKey,
+                });
 
             try {
-                const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
-                    apiCache: true,
-                    params,
-                    abortControllerKey: OSM_GPX_ABORT_KEYS.activities,
-                });
-                if (response?.aborted) {
+                // the counts in the date range, and without it for "40 of 408"
+                const [dated, allDates] = await Promise.all([
+                    months
+                        ? fetchCounts(
+                              { ...params, dateFrom: monthKey(months[0]), dateTo: monthKey(months[1]) },
+                              OSM_GPX_ABORT_KEYS.activities
+                          )
+                        : null,
+                    fetchCounts(params, OSM_GPX_ABORT_KEYS.activitiesAllDates),
+                ]);
+                if (dated?.aborted || allDates?.aborted) {
                     return;
                 }
-                setActivityCounts(response?.data || null);
+                setActivityCounts((months ? dated?.data : allDates?.data) || null);
+                setActivityCountsAllDates(allDates?.data || null);
             } catch (error) {
                 console.error('Error fetching activities:', error);
                 setActivityCounts(null);
+                setActivityCountsAllDates(null);
             }
         }, 500)
     ).current;
@@ -437,7 +455,7 @@ export default function TravelMenu() {
             return t('web:travel_tracks_too_many_desc');
         }
 
-        return res?.limited ? t('web:travel_tracks_nearest_desc') : t('web:travel_search_point_desc');
+        return res?.limited ? t('web:travel_tracks_nearest_desc') : null;
     }
 
     function resetSearch() {
@@ -498,20 +516,6 @@ export default function TravelMenu() {
         [visibleRoutes]
     );
 
-    // how many of the found tracks each activity has, the biggest first
-    const activityBreakdown = useMemo(() => {
-        const counts = new Map();
-        visibleRoutes.forEach((route) => {
-            const label = formatActivity(route, t);
-            if (label) {
-                const id = route.properties.activity;
-                counts.set(id, { id, label, count: (counts.get(id)?.count ?? 0) + 1 });
-            }
-        });
-
-        return [...counts.values()].sort((a, b) => b.count - a.count);
-    }, [visibleRoutes]);
-
     const sortedRoutes = useMemo(() => {
         const method = getSelectedSort({
             customGroup: sortGroup,
@@ -520,14 +524,39 @@ export default function TravelMenu() {
             defaultMethod: defaultSortMethod(TRAVEL_CUSTOM_GROUP),
         });
 
-        const routes = (doSort({ method, files: sortGroup.files }).files ?? []).map((file) => file.route);
-        if (!pinnedActivity) {
-            return routes;
-        }
-        const pinned = (route) => route.properties.activity === pinnedActivity;
+        return (doSort({ method, files: sortGroup.files }).files ?? []).map((file) => file.route);
+    }, [sortGroup, ctx.selectedSort]);
 
-        return [...routes.filter(pinned), ...routes.filter((route) => !pinned(route))];
-    }, [sortGroup, ctx.selectedSort, pinnedActivity]);
+    const showList = !!travelResult && !travelResult.tooMany && visibleRoutes.length > 0;
+
+    const pointDesc = ttx.searchTravelRoutes?.point && searchPointDesc();
+    const pointBlock = ttx.searchTravelRoutes?.point && (
+        <Box className={styles.pointHeader}>
+            <Box className={styles.pointHeaderRow}>
+                <Typography className={styles.pointTitle}>{searchPointTitle()}</Typography>
+                <Box className={styles.pointActions}>
+                    {showList && (
+                        <SortFilesButton
+                            type={TRACK_FILE_TYPE}
+                            customGroup={sortGroup}
+                            customGroupType={TRAVEL_CUSTOM_GROUP}
+                            menuInPortal={true}
+                        />
+                    )}
+                    <Tooltip title={t('web:travel_remove_point')} arrow placement="bottom-end">
+                        <IconButton
+                            id="se-travel-remove-point"
+                            className={headerStyles.appBarIcon}
+                            onClick={clearSearchPoint}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    </Tooltip>
+                </Box>
+            </Box>
+            {pointDesc && <Typography className={styles.pointDesc}>{pointDesc}</Typography>}
+        </Box>
+    );
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
@@ -607,7 +636,8 @@ export default function TravelMenu() {
                             <div className={styles.sliderHeader}>
                                 <Typography className={styles.sliderTitle}>{t('shared_string_date')}</Typography>
                                 <Typography className={styles.sliderValue}>
-                                    {monthKey(uploadMonths[0])} - {monthKey(uploadMonths[1])}
+                                    {formatMonth(uploadMonths[0], i18n.language)} –{' '}
+                                    {formatMonth(uploadMonths[1], i18n.language)}
                                 </Typography>
                             </div>
                             <Slider
@@ -620,74 +650,31 @@ export default function TravelMenu() {
                                 valueLabelDisplay="off"
                             />
                         </Box>
-                        {ctx.develFeatures && ttx.travelHeatmapMatch && (
-                            <Typography className={styles.matchCount}>
-                                {t('web:travel_tracks_match', {
-                                    matched: ttx.travelHeatmapMatch.matched.toLocaleString(),
-                                    total: ttx.travelHeatmapMatch.total.toLocaleString(),
-                                })}
-                            </Typography>
-                        )}
+                        <TravelActivityStats
+                            activities={activities}
+                            activityCounts={activityCounts}
+                            activityCountsAllDates={activityCountsAllDates}
+                            value={filters.activity}
+                            onChange={(value) => setFilter('activity', value)}
+                        />
                         <ThickDivider mt={16} />
-                        {ttx.searchTravelRoutes?.point ? (
-                            <>
-                                <TextLeftIconBtn
-                                    id="se-travel-remove-point"
-                                    icon={<SearchIcon />}
-                                    text={searchPointTitle()}
-                                    desc={searchPointDesc()}
-                                    btnText={t('web:travel_remove_point')}
-                                    onClick={clearSearchPoint}
-                                />
-                                <ThickDivider mt={0} mb={0} />
-                            </>
-                        ) : (
+                        {ttx.searchTravelRoutes?.point && !showList && pointBlock}
+                        {!ttx.searchTravelRoutes?.point && (
                             <>
                                 <TextWithLeftIcon icon={<SearchIcon />} text={t('web:travel_click_map_hint')} />
                                 <DividerWithMargin dashed={true} />
                                 <TextWithLeftIcon icon={<ReviewIcon />} text={t('web:travel_review_hint')} />
+                                <DividerWithMargin dashed={true} />
+                                <TravelDataSource />
                                 <ThickDivider mt={0} mb={0} />
                                 <ColorBlock color={'#f0f0f0'} />
                             </>
                         )}
                         {loadingResult && <CircularProgress className={styles.resultsSpinner} size={36} />}
-                        {travelResult &&
-                            !travelResult.tooMany &&
-                            (visibleRoutes.length > 0 ? (
-                                <>
-                                    <Box className={styles.resultsHeader}>
-                                        <Typography
-                                            variant="body2"
-                                            className={`${headerStyles.groupInfo} ${styles.activityBreakdown}`}
-                                            noWrap
-                                        >
-                                            {activityBreakdown.map(({ id, label, count }, i) => (
-                                                <React.Fragment key={id}>
-                                                    {i > 0 && ' · '}
-                                                    <span
-                                                        id={`se-travel-activity-${id}`}
-                                                        className={`${styles.activityType} ${id === pinnedActivity ? styles.activityPinned : ''}`}
-                                                        onClick={() =>
-                                                            setPinnedActivity(id === pinnedActivity ? null : id)
-                                                        }
-                                                    >
-                                                        {label}
-                                                    </span>
-                                                    {` ${count}`}
-                                                </React.Fragment>
-                                            ))}
-                                        </Typography>
-                                        <SortFilesButton
-                                            type={TRACK_FILE_TYPE}
-                                            customGroup={sortGroup}
-                                            customGroupType={TRAVEL_CUSTOM_GROUP}
-                                        />
-                                    </Box>
-                                    <TravelRoutesResult routes={sortedRoutes} />
-                                </>
-                            ) : (
-                                <EmptyTravel reset={resetSearch} />
-                            ))}
+                        {showList && <TravelRoutesResult routes={sortedRoutes} header={pointBlock} />}
+                        {travelResult && !travelResult.tooMany && visibleRoutes.length === 0 && (
+                            <EmptyTravel reset={resetSearch} />
+                        )}
                     </Box>
                     {openFilters && (
                         <TravelFilters

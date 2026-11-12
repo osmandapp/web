@@ -510,7 +510,7 @@ export default function MainMenu({
             icon: TravelIcon,
             component: <TravelMenu />,
             type: OBJECT_TYPE_TRAVEL,
-            show: ctx.develFeatures,
+            show: true,
             id: MENU_IDS.travel,
             url: MAIN_URL_WITH_SLASH + TRAVEL_URL,
         },
@@ -594,8 +594,8 @@ export default function MainMenu({
     }, [ctx.closeSelectedMenu]);
 
     useEffect(() => {
-        ttx.setOpenTravel(ctx.develFeatures && selectedType === OBJECT_TYPE_TRAVEL && ltx.isLoggedIn());
-    }, [ctx.develFeatures, selectedType, ltx.loginUser]);
+        ttx.setOpenTravel(selectedType === OBJECT_TYPE_TRAVEL && ltx.isLoggedIn());
+    }, [selectedType, ltx.loginUser]);
 
     useEffect(() => {
         openMenuObject();

@@ -1,14 +1,15 @@
 import React from 'react';
 import { ClickAwayListener, Popover } from '@mui/material';
 
-export default function SortMenu({ openSort, setOpenSort, anchorEl, actions }) {
+// inPortal: for a button inside a transformed box (a virtual list), which would clip a fixed menu
+export default function SortMenu({ openSort, setOpenSort, anchorEl, actions, inPortal = false }) {
     return (
         <Popover
             id={'se-sort-menu'}
             sx={{ ml: '40px', mt: '60px' }}
             open={openSort}
             anchorEl={anchorEl.current}
-            disablePortal={true}
+            disablePortal={!inPortal}
             anchorOrigin={{
                 vertical: 'bottom',
                 horizontal: 'right',
