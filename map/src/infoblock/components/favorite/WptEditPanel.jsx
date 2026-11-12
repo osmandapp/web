@@ -338,17 +338,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             return;
         }
         const ind = ctx.localTracks.findIndex((t) => t?.name === ctx.selectedGpxFile?.name);
-        if (ind !== -1) {
-            if (!ctx.localTracks[ind].wpts) {
-                ctx.localTracks[ind].wpts = [];
-            }
-            if (!ctx.localTracks[ind].pointsGroups) {
-                ctx.localTracks[ind].pointsGroups = {};
-            }
-            ctx.localTracks[ind].wpts = ctx.selectedGpxFile.wpts;
-            ctx.localTracks[ind].pointsGroups = ctx.selectedGpxFile.pointsGroups;
-            ctx.localTracks[ind].routeTypes = ctx.selectedGpxFile.routeTypes;
-        } else {
+        if (ind === -1) {
             TracksManager.prepareTrack(ctx.selectedGpxFile);
             ctx.localTracks.push(ctx.selectedGpxFile);
         }

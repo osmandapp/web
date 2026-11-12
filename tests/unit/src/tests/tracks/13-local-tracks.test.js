@@ -36,7 +36,7 @@ afterEach(() => {
     removeIndexedDb();
 });
 
-test('a track is saved under its own place, a nameless one is refused', async () => {
+test('a track is saved under its own place and the list keeps the saved version, a nameless one is refused', async () => {
     const ctx = createCtx();
 
     saveTrackToLocalStorage({ ctx, track: track('Track') });
@@ -44,7 +44,7 @@ test('a track is saved under its own place, a nameless one is refused', async ()
     saveTrackToLocalStorage({ ctx, track: { points: [] } });
     await settle();
 
-    expect(ctx.localTracks.map((t) => t.name)).toEqual(['Track']);
+    expect(ctx.localTracks).toEqual([{ ...track('Track'), points: [{ lat: 51, lng: 31 }] }]);
     expect([...db.keys()]).toEqual([0]);
     expect(db.get(0).points).toEqual([{ lat: 51, lng: 31 }]);
     expect(ctx.setRoutingErrorMsg).toHaveBeenCalled();

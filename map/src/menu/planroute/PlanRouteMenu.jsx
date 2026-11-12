@@ -21,7 +21,7 @@ export function openSelectedLocalTrack(ctx) {
     }
     const ref = ctx.localTracks.find((t) => t?.name === track.name);
     if (!ref) return;
-    updateLocalTrack(ref, ctx, track);
+    updateLocalTrack(ref, ctx);
     updateTrackInfoBlock(ctx);
     startEdit(ctx);
 }
@@ -31,14 +31,14 @@ export function updateTrackInfoBlock(ctx) {
     ctx.setUpdateInfoBlock(true);
 }
 
-export function updateLocalTrack(ref, ctx, track) {
+export function updateLocalTrack(ref, ctx) {
     ref.zoom = true;
     ref.selected = true;
     ref.wpts?.length > 0 && (ref.localRedrawWpts = true);
     ref.analysis = TracksManager.prepareAnalysis(ref.analysis);
     TracksManager.addDistance(ref); // recalc-distance-local
     ctx.setLocalTracks([...ctx.localTracks]);
-    ctx.setSelectedGpxFile({ ...track });
+    ctx.setSelectedGpxFile({ ...ref });
 }
 
 export function startEdit(ctx) {
