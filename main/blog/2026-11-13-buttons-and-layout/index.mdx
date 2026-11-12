@@ -37,6 +37,8 @@ If there's something you do on almost every ride, you can give it a separate but
 
 Custom buttons can be moved with a long press, so you can put them where they're easier to reach. They snap to an [invisible grid](https://osmand.net/docs/user/widgets/quick-action#grid-layout-for-buttons) in the corners of the screen, and when widgets or panels change, OsmAnd shifts them so they don't overlap.
 
+The map can also make more room for the road ahead. With [Display position](https://osmand.net/docs/user/widgets/configure-screen#display-position-location-position-on-screen) set to Bottom (on iOS, it's called Location position on screen), your location sits a little below the center, so you see more of what's coming than of what you've already passed.
+
 || |
 |:--------|:---------|
 |![Default Buttons](./img/default_buttons.webp)| ![Custom Button on the Map](./img/custom_button_map.webp) |
@@ -53,29 +55,29 @@ A bigger button covers more of the road, though, and that's what the background 
 
 Every change shows up right away in the preview, so you can play with it until the button feels right, and only then save it.
 
+And if you'd rather not touch the screen with gloves at all, OsmAnd works with [external input devices](https://osmand.net/docs/user/map/interact-with-map#external-input-devices), such as Bluetooth keyboards and WunderLINQ controllers. Their buttons can zoom the map and run Quick Actions, so the voice prompts switch can live on the handlebar instead of the screen.
+
 || |
 |:--------|:---------|
 |![Button Appearance Android](./img/button_appearance_android.webp)| ![Button Appearance iOS](./img/button_appearance_ios.webp) |
 
 ## Portrait or Landscape
 
-|| |
-|:--------|:---------|
-|![Panels Layout Wide](./img/panels_layout_wide.webp)| ![Panels Layout Compact](./img/panels_layout_compact.webp) |
-
 Painters had these two words long before phones did. A portrait is tall, a landscape is wide, and nobody expects one picture to work in both. On a motorcycle, you get both in one day. The phone rides sideways on the handlebar, and at a stop you take it in your hand and hold it upright.
 
 By default, OsmAnd uses the same widgets in both orientations, so whatever you set up for the handlebar follows you into portrait too. To keep them apart, turn on [Separate layouts](https://osmand.net/docs/user/widgets/configure-screen#single-and-separate-layouts) on Android or set Screen elements to Independent on iOS. Configure screen then has Portrait and Landscape tabs, and changes in one don't touch the other. You don't have to start from scratch, either: a panel's widget list can be copied from the other orientation and adjusted from there.
 
-The top and bottom panels also need to get along with the map buttons, and in landscape, where the screen is wide but not very tall, they end up right next to each other. [Panels layout](https://osmand.net/docs/user/widgets/configure-screen#panels-layout) decides how they share the space. Wide stretches the top and bottom panels across the whole screen, and Compact fits them between the side panels and the map buttons. You can choose it separately for portrait and landscape (on Android, the option appears once Separate layouts is on).
+Landscape has its own catch. The screen is wide but not very tall, and the top and bottom panels end up right next to the map buttons. [Panels layout](https://osmand.net/docs/user/widgets/configure-screen#panels-layout) decides how they share the space. Wide stretches the top and bottom panels across the whole screen, and Compact fits them between the side panels and the map buttons. You can choose it separately for portrait and landscape (on Android, the option appears once Separate layouts is on).
 
-The widgets themselves can be adjusted too, [panel by panel](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance): their height, whether icons are shown, text colors for day and night, and the background, which can also be transparent. A custom background color is a [paid feature](https://osmand.net/docs/user/purchases/). If one panel or another profile already looks the way you like, you can copy its appearance instead of setting everything again. On iOS with Independent screen elements, all of this is set separately for each orientation.
+The widgets themselves can be adjusted too, [panel by panel](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance): their height, whether icons are shown, text colors for day and night, and the background, which can also be transparent. A custom background color is a [paid feature](https://osmand.net/docs/user/purchases/). Each widget also has its [own size](https://osmand.net/docs/user/widgets/configure-screen#widget-settings), Small, Medium or Large. Speed and the next turn are worth making Large, because on the road you read them at a glance. If one panel or another profile already looks the way you like, you can copy its appearance instead of setting everything again. On iOS with Independent screen elements, all of this is set separately for each orientation.
 
 ![Landscape](./img/landscape.webp)
 
 ## A Frame for Every Trip
 
 All of this belongs to one profile. The screen you put together for the motorcycle stays in the Motorcycle profile, and the ones you use on foot or in the car stay exactly as they were. Nothing you changed for the handlebar follows you into the city.
+
+Even within one profile, the screen doesn't have to look the same all day. The left and right panels can hold up to five [pages](https://osmand.net/docs/user/widgets/configure-screen#pages) of widgets, so one page can show what matters on the move and another what you check at a stop.
 
 If another profile should get the same buttons, you don't have to set them up again. In Default buttons, Copy from another profile brings over which buttons are visible and how they look. Custom buttons are shared between profiles, and in each one you just decide whether a button shows up. Switching profiles can be a Quick Action as well, so going from the bike to walking around town takes one tap.
 
