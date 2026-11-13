@@ -138,7 +138,7 @@ The table below details the features included in both the free and paid packages
 | [Astronomy plugin](../plugins/astronomy.md) — [Interactive AR Mode](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Astronomy plugin](../plugins/astronomy.md) — [Offline Sky Map](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Astronomy plugin](../plugins/astronomy.md) — [Eclipses Explorer](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
-| [Custom widget colors](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
+| [Custom widget background color](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
