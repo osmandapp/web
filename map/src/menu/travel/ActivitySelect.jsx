@@ -14,13 +14,14 @@ import {
 } from '@mui/material';
 import styles from './travel.module.css';
 import MenuItemWithLines from '../components/MenuItemWithLines';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { ACTIVITY_ALL, FOOT_CYCLING_GROUPS, hasSpeedOnlyTracks, IGNORED_GROUP } from './TravelMenu';
 import { activityLabel, IGNORED_ACTIVITIES } from '../../map/util/activities';
+import AppContext from '../../context/AppContext';
 
 const PRESETS = [
     { id: 'foot_cycling', name: 'web:activities_foot_cycling', groups: (id) => FOOT_CYCLING_GROUPS.includes(id) },
@@ -40,6 +41,7 @@ export default function ActivitySelect({
     activityCounts = null,
     defaultIcon = null,
 }) {
+    const ctx = useContext(AppContext);
     const { t } = useTranslation();
     const [, height] = useWindowSize();
     const [expandedGroups, setExpandedGroups] = useState({});
@@ -56,11 +58,16 @@ export default function ActivitySelect({
 
     const groups = [
         ...(activities?.groups ?? []).map((group) => ({ ...group, label: activityLabel(group.id, t) })),
-        {
-            id: IGNORED_GROUP,
-            label: t('web:ignored_tracks'),
-            activities: IGNORED_ACTIVITIES.map((a) => ({ id: a.id, label: t(a.name) })),
-        },
+        // tracks the heatmap build drops (errors, too short, too sparse) are only for developers
+        ...(ctx.develFeatures
+            ? [
+                  {
+                      id: IGNORED_GROUP,
+                      label: t('web:ignored_tracks'),
+                      activities: IGNORED_ACTIVITIES.map((a) => ({ id: a.id, label: t(a.name) })),
+                  },
+              ]
+            : []),
     ];
 
     const getGroupItems = (group) => {
@@ -264,8 +271,6 @@ export default function ActivitySelect({
                             activityCounts != null && group.activities?.length
                                 ? getGroupItems(group).reduce((sum, a) => sum + (getActivityCount(a.id) ?? 0), 0)
                                 : null;
-                        const groupLabelWithCount =
-                            groupSum != null && groupSum > 0 ? `${group.label} (${groupSum})` : group.label;
                         const groupDisabled = activityCounts != null && (groupSum == null || groupSum === 0);
                         return (
                             <Box key={group.id}>
@@ -281,7 +286,7 @@ export default function ActivitySelect({
                                         disabled={groupDisabled}
                                     />
                                     <ListItemText className={styles.groupTitle}>
-                                        <MenuItemWithLines name={groupLabelWithCount} maxLines={1} />
+                                        <MenuItemWithLines name={group.label} maxLines={1} />
                                     </ListItemText>
                                     <Box onClick={(e) => toggleExpand(group.id, e)} className={styles.expandIcon}>
                                         {expandedGroups[group.id] ? (
@@ -297,9 +302,6 @@ export default function ActivitySelect({
                                         const count = getActivityCount(activity.id);
                                         const hasCount = count != null && count > 0;
                                         const disabled = activityCounts != null && !hasCount;
-                                        const labelWithCount = hasCount
-                                            ? `${activity.label} (${count})`
-                                            : activity.label;
                                         return (
                                             <MenuItem
                                                 key={activity.id}
@@ -314,7 +316,7 @@ export default function ActivitySelect({
                                                     disabled={disabled}
                                                 />
                                                 <ListItemText>
-                                                    <MenuItemWithLines name={labelWithCount} maxLines={2} />
+                                                    <MenuItemWithLines name={activity.label} maxLines={2} />
                                                 </ListItemText>
                                             </MenuItem>
                                         );
