@@ -247,7 +247,7 @@ Road attributes are accessible in the [Route Details](#how-to-access) and displa
 
 Turn-by-turn information provides detailed [instructions](#instructions) on how to navigate a route. In addition to the *Details* menu, it is also displayed in the [*Route maneuvers*](../../widgets/nav-widgets.md#route-guidance) and [*Lanes*](../../widgets/nav-widgets.md#lanes) widgets. This information helps you to better navigate your route and allows you to plan ahead.
 
-Tap a specific section of the route in the list to view detailed information or make changes as required. The map enlarges and a [Context menu](../../map/map-context-menu.md) opens.
+Tap a specific section of the route in the list to view detailed information or make changes as required. The map enlarges and a [Context menu](../../map/map-context-menu.md) opens. Tap an intermediate destination in the list to open the map at that destination (*Android only*).
 
 
 ### Instructions {#instructions}
@@ -256,13 +256,13 @@ Tap a specific section of the route in the list to view detailed information or 
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Navigation route Android](@site/static/img/navigation/route/navigation_turn_ios.webp)
 
 </TabItem>
 
@@ -275,6 +275,8 @@ Instructions include information about moving along the route, such as:
 - A description of *what to do*, which includes the *name of the street or trail*.
 - *Total distance* and *time of the route*.
 - *[Lanes](../../widgets/nav-widgets.md#lanes) layout* for the current road.
+- *Intermediate destinations* in their order along the route, each with its number, name or coordinates, and the distance and time from the start.
+- *Final destination*, marked with the destination icon (*Android only*).
 - [*Road side indicator*](#roadside-indicator) (*iOS only*).
 
 
