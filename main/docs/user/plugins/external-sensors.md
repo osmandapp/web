@@ -86,7 +86,7 @@ To pair a new sensor, follow these steps:
 - On **iOS**, only **Bluetooth Low Energy (BLE)** sensors are supported due to hardware limitations. ANT+ sensors are not available.
 - On **Android**, both BLE and ANT+ sensors may be supported depending on your device. See [ANT+ compatibility guide](https://www.thisisant.com/consumer/ant-101/ant-in-phones) for more details.
 - A **pop-up notification** will appear each time a sensor connects or disconnects.
-- **Bicycle power sensors** are available only on Android via ANT+.
+- **Bicycle power sensors** are available only on Android via ANT+ and BLE.
 
 
 ## Sensor Settings {#sensor-settings}
@@ -234,7 +234,7 @@ Supported widget types:
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – displays real-time heart rate from a paired monitor.
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android only*) – shows current pedaling power in watts.
-3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – shows the number of pedal revolutions per minute.
+3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – shows the number of pedal revolutions per minute. Cadence data can come from a cadence sensor or from a bicycle power sensor that transmits cadence.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – current cycling speed.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – total distance measured by the sensor.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – current ambient temperature.

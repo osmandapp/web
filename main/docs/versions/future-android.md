@@ -43,7 +43,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - Smarter **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** with suggestions from recent destinations, automatic [Free ride](https://osmand.net/docs/user/navigation/auto-car#destination-points) while driving, and [Google Assistant and Gemini](https://osmand.net/docs/user/navigation/auto-car#voice-control) support.
 - New **[Quick action](https://osmand.net/docs/user/widgets/quick-action#my-places)** to show or hide one or several tracks with a single tap.
 - **[Contour line](https://osmand.net/docs/user/plugins/topography#contour-lines)** labels can face uphill, as on paper topographic maps.
-- Support for BLE power meters in **[External sensors](https://osmand.net/docs/user/plugins/external-sensors)**.
+- Support for BLE power meters in **[External sensors](https://osmand.net/docs/user/plugins/external-sensors#pair-new-sensor)**.
 
 <!--
 - Navigation settings included in route links.
