@@ -26,7 +26,6 @@ import styles from './travel.module.css';
 import ActivitySelect from './ActivitySelect';
 import { Trans, useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
-import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
 import { activityLabel, IGNORED_ACTIVITIES } from '../../map/util/activities';
 import TravelFilters from './TravelFilters';
@@ -37,7 +36,6 @@ import headerStyles from '../trackfavmenu.module.css';
 import mainMenuStyles from '../mainmenu.module.css';
 import SortFilesButton, { TRACK_FILE_TYPE, TRAVEL_CUSTOM_GROUP } from '../components/buttons/SortFilesButton';
 import { defaultSortMethod, doSort, getSelectedSort } from '../actions/SortActions';
-import LoginContext from '../../context/LoginContext';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import { apiGet } from '../../util/HttpApi';
@@ -171,7 +169,6 @@ export function routeMatchesFilters(route, search) {
 export default function TravelMenu() {
     const ctx = useContext(AppContext);
     const ttx = useContext(TravelContext);
-    const ltx = useContext(LoginContext);
     const { t } = useTranslation();
     const location = useLocation();
     const navigate = useNavigate();
@@ -583,164 +580,158 @@ export default function TravelMenu() {
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
-            {ltx.isLoggedIn() ? (
-                <>
-                    <HeaderNoUnderline
-                        title={t('web:shared_string_travel')}
-                        onClose={close}
-                        titleId="se-travel-menu-name"
-                        rightContent={
-                            <>
-                                <Tooltip title={t('reset_to_default')} arrow placement="bottom-end">
-                                    <span>
-                                        <IconButton
-                                            id="se-travel-reset"
-                                            variant="contained"
-                                            type="button"
-                                            className={headerStyles.appBarIcon}
-                                            onClick={resetSearch}
-                                        >
-                                            <ResetIcon />
-                                        </IconButton>
-                                    </span>
-                                </Tooltip>
-                                <Tooltip title={t('shared_string_appearance')} arrow placement="bottom-end">
-                                    <span>
-                                        <IconButton
-                                            id="se-travel-appearance"
-                                            variant="contained"
-                                            type="button"
-                                            className={headerStyles.appBarIcon}
-                                            onClick={() => {
-                                                setOpenFilters(false);
-                                                setOpenAppearance((prev) => !prev);
-                                            }}
-                                        >
-                                            <AppearanceIcon />
-                                        </IconButton>
-                                    </span>
-                                </Tooltip>
-                                <Tooltip title={t('shared_string_filters')} arrow placement="bottom-end">
-                                    <span>
-                                        <IconButton
-                                            id="se-travel-filters"
-                                            variant="contained"
-                                            type="button"
-                                            className={headerStyles.appBarIcon}
-                                            disabled={!ttx.searchTravelRoutes?.point}
-                                            onClick={() => {
-                                                setOpenAppearance(false);
-                                                setOpenFilters((prev) => !prev);
-                                            }}
-                                        >
-                                            <SettingsIcon />
-                                            {hasActiveFilters && ttx.searchTravelRoutes?.point && (
-                                                <span className={mainMenuStyles.dotMenu} />
-                                            )}
-                                        </IconButton>
-                                    </span>
-                                </Tooltip>
-                            </>
-                        }
+            <HeaderNoUnderline
+                title={t('web:shared_string_travel')}
+                onClose={close}
+                titleId="se-travel-menu-name"
+                rightContent={
+                    <>
+                        <Tooltip title={t('reset_to_default')} arrow placement="bottom-end">
+                            <span>
+                                <IconButton
+                                    id="se-travel-reset"
+                                    variant="contained"
+                                    type="button"
+                                    className={headerStyles.appBarIcon}
+                                    onClick={resetSearch}
+                                >
+                                    <ResetIcon />
+                                </IconButton>
+                            </span>
+                        </Tooltip>
+                        <Tooltip title={t('shared_string_appearance')} arrow placement="bottom-end">
+                            <span>
+                                <IconButton
+                                    id="se-travel-appearance"
+                                    variant="contained"
+                                    type="button"
+                                    className={headerStyles.appBarIcon}
+                                    onClick={() => {
+                                        setOpenFilters(false);
+                                        setOpenAppearance((prev) => !prev);
+                                    }}
+                                >
+                                    <AppearanceIcon />
+                                </IconButton>
+                            </span>
+                        </Tooltip>
+                        <Tooltip title={t('shared_string_filters')} arrow placement="bottom-end">
+                            <span>
+                                <IconButton
+                                    id="se-travel-filters"
+                                    variant="contained"
+                                    type="button"
+                                    className={headerStyles.appBarIcon}
+                                    disabled={!ttx.searchTravelRoutes?.point}
+                                    onClick={() => {
+                                        setOpenAppearance(false);
+                                        setOpenFilters((prev) => !prev);
+                                    }}
+                                >
+                                    <SettingsIcon />
+                                    {hasActiveFilters && ttx.searchTravelRoutes?.point && (
+                                        <span className={mainMenuStyles.dotMenu} />
+                                    )}
+                                </IconButton>
+                            </span>
+                        </Tooltip>
+                    </>
+                }
+            />
+            <Box className={styles.contentColumn}>
+                {updatedActivities?.length > 0 && (
+                    <ActivitySelect
+                        name={t('web:shared_string_activity')}
+                        value={filters.activity}
+                        onChange={(value) => setFilter('activity', value)}
+                        activities={activities}
+                        updatedActivities={updatedActivities}
+                        activityCounts={activityCounts}
+                        defaultIcon={ActivityAllIcon}
                     />
-                    <Box className={styles.contentColumn}>
-                        {updatedActivities?.length > 0 && (
-                            <ActivitySelect
-                                name={t('web:shared_string_activity')}
-                                value={filters.activity}
-                                onChange={(value) => setFilter('activity', value)}
-                                activities={activities}
-                                updatedActivities={updatedActivities}
-                                activityCounts={activityCounts}
-                                defaultIcon={ActivityAllIcon}
-                            />
-                        )}
-                        <Box className={`${styles.sliderContainer} ${styles.dateSliderContainer}`}>
-                            <div className={styles.sliderHeader}>
-                                <Typography className={styles.sliderTitle}>{t('shared_string_date')}</Typography>
-                                <Typography className={styles.sliderValue}>
-                                    {fmt.monthYearShort(monthStart(monthKey(uploadMonths[0])))} –{' '}
-                                    {fmt.monthYearShort(monthStart(monthKey(uploadMonths[1])))}
-                                </Typography>
-                            </div>
-                            <Slider
-                                value={uploadMonths}
-                                min={0}
-                                max={LAST_MONTH}
-                                step={1}
-                                onChange={(e, value) => previewMonths(value)}
-                                onChangeCommitted={(e, value) => commitMonths(value)}
-                                valueLabelDisplay="off"
-                            />
-                        </Box>
-                        <TravelActivityStats
-                            activityCounts={activityCounts}
-                            activityCountsAllDates={activityCountsAllDates}
-                            value={filters.activity}
-                            onChange={(value) => setFilter('activity', value)}
-                        />
-                        <ThickDivider mt={16} />
-                        {!showList && pointBlock}
-                        {!ttx.searchTravelRoutes?.point && (
-                            <>
-                                <TextWithLeftIcon icon={<SearchIcon />} text={t('web:travel_click_map_hint')} />
-                                <DividerWithMargin dashed={true} />
-                                <TextWithLeftIcon icon={<ReviewIcon />} text={t('web:travel_review_hint')} />
-                                <DividerWithMargin dashed={true} />
-                                <TextWithLeftIcon
-                                    icon={<InfoIcon />}
-                                    text={
-                                        <Trans
-                                            i18nKey="web:travel_data_source"
-                                            components={{
-                                                osm: (
-                                                    <Link
-                                                        href={OSM_TRACES_URL}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        underline="hover"
-                                                        className={styles.dataSourceLink}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                    />
-                                                ),
-                                                upload: (
-                                                    <Link
-                                                        href={UPLOAD_TRACK_DOCS_URL}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        underline="hover"
-                                                        className={styles.dataSourceLink}
-                                                        onClick={(e) => e.stopPropagation()}
-                                                    />
-                                                ),
-                                            }}
-                                        />
-                                    }
+                )}
+                <Box className={`${styles.sliderContainer} ${styles.dateSliderContainer}`}>
+                    <div className={styles.sliderHeader}>
+                        <Typography className={styles.sliderTitle}>{t('shared_string_date')}</Typography>
+                        <Typography className={styles.sliderValue}>
+                            {fmt.monthYearShort(monthStart(monthKey(uploadMonths[0])))} –{' '}
+                            {fmt.monthYearShort(monthStart(monthKey(uploadMonths[1])))}
+                        </Typography>
+                    </div>
+                    <Slider
+                        value={uploadMonths}
+                        min={0}
+                        max={LAST_MONTH}
+                        step={1}
+                        onChange={(e, value) => previewMonths(value)}
+                        onChangeCommitted={(e, value) => commitMonths(value)}
+                        valueLabelDisplay="off"
+                    />
+                </Box>
+                <TravelActivityStats
+                    activityCounts={activityCounts}
+                    activityCountsAllDates={activityCountsAllDates}
+                    value={filters.activity}
+                    onChange={(value) => setFilter('activity', value)}
+                />
+                <ThickDivider mt={16} />
+                {!showList && pointBlock}
+                {!ttx.searchTravelRoutes?.point && (
+                    <>
+                        <TextWithLeftIcon icon={<SearchIcon />} text={t('web:travel_click_map_hint')} />
+                        <DividerWithMargin dashed={true} />
+                        <TextWithLeftIcon icon={<ReviewIcon />} text={t('web:travel_review_hint')} />
+                        <DividerWithMargin dashed={true} />
+                        <TextWithLeftIcon
+                            icon={<InfoIcon />}
+                            text={
+                                <Trans
+                                    i18nKey="web:travel_data_source"
+                                    components={{
+                                        osm: (
+                                            <Link
+                                                href={OSM_TRACES_URL}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                underline="hover"
+                                                className={styles.dataSourceLink}
+                                                onClick={(e) => e.stopPropagation()}
+                                            />
+                                        ),
+                                        upload: (
+                                            <Link
+                                                href={UPLOAD_TRACK_DOCS_URL}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                underline="hover"
+                                                className={styles.dataSourceLink}
+                                                onClick={(e) => e.stopPropagation()}
+                                            />
+                                        ),
+                                    }}
                                 />
-                                <ThickDivider mt={0} mb={0} />
-                                <ColorBlock color={'#f0f0f0'} />
-                            </>
-                        )}
-                        {loadingResult && <CircularProgress className={styles.resultsSpinner} size={36} />}
-                        {showList && <TravelRoutesResult routes={sortedRoutes} header={pointBlock} />}
-                        {listed?.length === 0 && <EmptyTravel reset={resetSearch} />}
-                    </Box>
-                    {openFilters && (
-                        <TravelFilters
-                            onClose={() => setOpenFilters(false)}
-                            onReset={resetFilters}
-                            hasActiveFilters={hasActiveFilters}
-                            filters={filters}
-                            bounds={bounds}
-                            setFilter={setFilter}
-                            previewFilter={previewFilter}
+                            }
                         />
-                    )}
-                    {openAppearance && <HeatmapAppearance onClose={() => setOpenAppearance(false)} />}
-                </>
-            ) : (
-                <EmptyLogin />
+                        <ThickDivider mt={0} mb={0} />
+                        <ColorBlock color={'#f0f0f0'} />
+                    </>
+                )}
+                {loadingResult && <CircularProgress className={styles.resultsSpinner} size={36} />}
+                {showList && <TravelRoutesResult routes={sortedRoutes} header={pointBlock} />}
+                {listed?.length === 0 && <EmptyTravel reset={resetSearch} />}
+            </Box>
+            {openFilters && (
+                <TravelFilters
+                    onClose={() => setOpenFilters(false)}
+                    onReset={resetFilters}
+                    hasActiveFilters={hasActiveFilters}
+                    filters={filters}
+                    bounds={bounds}
+                    setFilter={setFilter}
+                    previewFilter={previewFilter}
+                />
             )}
+            {openAppearance && <HeatmapAppearance onClose={() => setOpenAppearance(false)} />}
         </Box>
     );
 }

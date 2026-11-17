@@ -594,8 +594,8 @@ export default function MainMenu({
     }, [ctx.closeSelectedMenu]);
 
     useEffect(() => {
-        ttx.setOpenTravel(selectedType === OBJECT_TYPE_TRAVEL && ltx.isLoggedIn());
-    }, [selectedType, ltx.loginUser]);
+        ttx.setOpenTravel(selectedType === OBJECT_TYPE_TRAVEL);
+    }, [selectedType]);
 
     useEffect(() => {
         openMenuObject();
