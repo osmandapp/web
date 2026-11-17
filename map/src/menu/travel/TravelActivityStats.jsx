@@ -9,9 +9,15 @@ import TravelContext from '../../context/TravelContext';
 import DefaultItem from '../../frame/components/items/DefaultItem';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import MenuItemWithLines from '../components/MenuItemWithLines';
-import { activityLabel } from '../../map/util/activities';
-import activities from '../../resources/activities.json';
-import { ACTIVITY_ALL, ALL_ACTIVITY_IDS, groupItems, sumCounts } from './TravelMenu';
+import {
+    ACTIVITY_ALL,
+    ALL_ACTIVITY_IDS,
+    activityGroups,
+    groupActivityIds,
+    groupItems,
+    groupLabel,
+    sumCounts,
+} from './TravelMenu';
 import styles from './travel.module.css';
 
 const TOP_PARTS = 2;
@@ -32,14 +38,14 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
         }
         const counts = new Map(activityCounts.map((a) => [a.id, a.count ?? 0]));
 
-        return activities.groups
+        return activityGroups(ctx.develFeatures)
             .map((group) => {
                 const items = groupItems(group, t).map((item) => ({ ...item, count: counts.get(item.id) ?? 0 }));
                 const shown = items.filter((a) => a.count > 0).sort((a, b) => b.count - a.count);
 
                 return {
                     id: group.id,
-                    label: activityLabel(group.id, t),
+                    label: groupLabel(group.id, t),
                     ids: items.map((a) => a.id),
                     shown,
                     count: shown.reduce((sum, a) => sum + a.count, 0),
@@ -47,7 +53,7 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
             })
             .filter((group) => group.count > 0)
             .sort((a, b) => b.count - a.count);
-    }, [activityCounts, t]);
+    }, [activityCounts, ctx.develFeatures, t]);
 
     const isAll = value === ACTIVITY_ALL;
     const databaseMatch =
@@ -73,7 +79,9 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
     const matchedAllDates = Array.isArray(activityCountsAllDates)
         ? sumCounts(
               activityCountsAllDates,
-              ALL_ACTIVITY_IDS.filter((id) => selected.has(id))
+              activityGroups(ctx.develFeatures)
+                  .flatMap(groupActivityIds)
+                  .filter((id) => selected.has(id))
           )
         : matched;
     const breakdown = selectedGroups.length === 1 && !isAll ? selectedGroups[0].shown : selectedGroups;

@@ -28,7 +28,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
-import { activityLabel } from '../../map/util/activities';
+import { activityLabel, IGNORED_ACTIVITIES } from '../../map/util/activities';
 import TravelFilters from './TravelFilters';
 import HeatmapAppearance from './HeatmapAppearance';
 import TravelActivityStats from './TravelActivityStats';
@@ -111,6 +111,16 @@ export function groupItems(group, t) {
 
 export function sumCounts(activityCounts, ids) {
     return activityCounts.reduce((sum, a) => (ids.includes(a.id) ? sum + (a.count ?? 0) : sum), 0);
+}
+
+export function activityGroups(withIgnored) {
+    return withIgnored
+        ? [...activities.groups, { id: IGNORED_GROUP, activities: IGNORED_ACTIVITIES }]
+        : activities.groups;
+}
+
+export function groupLabel(id, t) {
+    return id === IGNORED_GROUP ? t('web:ignored_tracks') : activityLabel(id, t);
 }
 
 // "All" as the tiles count it: activities plus the groups given by speed

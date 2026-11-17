@@ -21,10 +21,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import {
     ACTIVITY_ALL,
+    activityGroups,
     FOOT_CYCLING_GROUPS,
     groupActivityIds,
     groupItems,
-    IGNORED_GROUP,
+    groupLabel,
     sumCounts,
 } from './TravelMenu';
 import { activityLabel, IGNORED_ACTIVITIES } from '../../map/util/activities';
@@ -63,18 +64,7 @@ export default function ActivitySelect({
     const selectedActivities = Array.isArray(value) ? value : value === ACTIVITY_ALL ? [] : [value];
     const isAllSelected = value === ACTIVITY_ALL || (Array.isArray(value) && value.length === 0);
 
-    const groups = [
-        ...(activities?.groups ?? []).map((group) => ({ ...group, label: activityLabel(group.id, t) })),
-        ...(ctx.develFeatures
-            ? [
-                  {
-                      id: IGNORED_GROUP,
-                      label: t('web:ignored_tracks'),
-                      activities: IGNORED_ACTIVITIES.map((a) => ({ id: a.id, label: t(a.name) })),
-                  },
-              ]
-            : []),
-    ];
+    const groups = activityGroups(ctx.develFeatures).map((group) => ({ ...group, label: groupLabel(group.id, t) }));
 
     const getGroupActivityIds = (groupId) => {
         const group = groups.find((g) => g.id === groupId);
