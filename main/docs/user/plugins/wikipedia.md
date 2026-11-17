@@ -120,26 +120,6 @@ When you tap the Search button, an additional panel appears allowing you to [sea
 
 - In the **Android** version, you can open [Search](../search/index.md) by tapping the *Search icon* in the upper left corner of the screen and/or tapping the *Search option* in the menu.
 - In the **iOS** version, to open [Search](../search/index.md), the Search icon is in the upper left corner of the screen.
-
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
--->
-
 - To search by the Wikipedia [category](../search/search-poi.md#poi-search-by-categories), select: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -201,7 +181,12 @@ To open the Wikipedia article:
 
 ## Wikipedia Settings {#wikipedia-settings}
 
-You can [set the language(-s)](#set-preferred-language) in which you prefer to read [articles](#wikipedia-article) and also configure [images download options](#download-images) for each [profile](../personal/profiles.md).
+You can [set the language(-s)](#set-preferred-language) in which you prefer to read [articles](#wikipedia-article) for each [profile](../personal/profiles.md), configure [image download options](#download-images), and manage the [image cache](#image-cache). On iOS, image download options are set for each profile. On Android, they apply to all profiles.
+
+All Wikipedia settings are collected in the Wikipedia plugin settings:
+
+- **Android**. Go to: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings"/>*. Use the profile button at the top of the screen to select the profile whose settings you want to change.
+- **iOS**. Go to: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 ### Set Preferred Language {#set-preferred-language}
 
@@ -229,10 +214,11 @@ In the **Android** and **iOS** versions of the OsmAnd app, you can set your pref
 </Tabs>
 
 :::note
-In the **iOS** version, you can also set the preferred language for Wikipedia articles using:  
+You can also set the preferred language for Wikipedia articles in the Wikipedia plugin settings:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,shared_string_languages"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 :::
 
@@ -280,12 +266,38 @@ You can choose whether to download images from Wikipedia on your device or not i
 
 </Tabs>
 
-In the **iOS** version of the app, you can also access the image download options using *Wikipedia plugin settings*:
+You can also access the image download options in the *Wikipedia plugin settings*:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,download_images"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
 ![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+
+### Image Cache {#image-cache}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Image cache on Android](@site/static/img/plugins/wikipedia/image_cache_android.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Image cache on iOS](@site/static/img/plugins/wikipedia/image_cache_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+The Wikipedia plugin settings show the size of the images saved on your device. The image cache is shared with Travel guides, so clearing it also deletes the saved images of travel guides.
+
+To delete the saved images, go to:
+
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,images_cache"/>* → *<Translate android="true" ids="shared_string_clear"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics,remove_cache"/>*
 
 
 ## Related Articles {#related-articles}

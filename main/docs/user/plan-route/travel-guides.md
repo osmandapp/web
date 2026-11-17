@@ -167,10 +167,10 @@ Next to each search result are listed the first 3 most commonly used languages i
 </Tabs>
 
 In this menu, you can customize the appearance of articles when working offline. NOTE, that *[downloaded](#download-articles)* travel guides do not contain images. They only appear when you view articles with an active Internet connection.  
-In the Options menu, you can choose whether to save images in the viewed articles to use them when you are offline. You can also clear existing images cash or delete the search history (only works when searching in *Travel guides*).
+In the Options menu, you can choose whether to save images in the viewed articles to use them when you are offline. You can also clear existing images cache or delete the search history (only works when searching in *Travel guides*).
 
 - &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Images in articles can be downloaded for offline use.  
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. Clears the image cache to free up memory.
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. Clears the image cache to free up memory. The cache is shared with the Wikipedia plugin, so clearing it also deletes the saved images of Wikipedia articles.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Clears [search history](#search).
 
 ## Travel Article {#travel-article}
