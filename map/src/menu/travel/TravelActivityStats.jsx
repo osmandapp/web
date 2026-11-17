@@ -122,7 +122,7 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
                     className={sub ? styles.nestedActivityCheckbox : undefined}
                 />
                 <ListItemText>
-                    <MenuItemWithLines name={label} maxLines={sub ? 2 : 1} />
+                    <MenuItemWithLines name={label} maxLines={1} />
                 </ListItemText>
                 <span className={styles.statsBar}>
                     <span
