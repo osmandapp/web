@@ -400,7 +400,7 @@ OpenStreetMap link provides direct link to the OpenStreetMap object where you ca
 
 </Tabs>
 
-When you tap a Popular Place on map, the **Online Photos** section in the *POIs context menu* displays image previews sourced from [Wikipedia](https://www.wikipedia.org/) and [Wikimedia Commons](https://www.wikimedia.org/).
+When you tap a Popular Place on map, the **Online Photos** section in the *POIs context menu* displays image previews sourced from [Wikipedia](https://www.wikipedia.org/) and [Wikimedia Commons](https://www.wikimedia.org/). If a POI has a [Mapillary](../plugins/mapillary.md) image linked in OpenStreetMap (the `mapillary` tag), this image is shown first in the **Online Photos** section. The Mapillary plugin does not need to be enabled.
 
 Tapping a photo opens the **Gallery** view, where you can:
 
