@@ -337,7 +337,7 @@ export default function TravelMenu() {
         }
 
         debouncedFetchActivityCounts({ mapBounds: ctx.visibleBounds, months: filters.months });
-    }, [ctx.visibleBounds, filters.months]);
+    }, [ctx.visibleBounds, filters.months, location.pathname]);
 
     // Create activities array
     const activitiesArr = useMemo(() => {
