@@ -241,6 +241,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                 />
             )}
             <Dialog
+                id="se-change-profile-dialog"
                 disableEnforceFocus
                 open={open}
                 onClose={handleCancel}
@@ -309,6 +310,7 @@ export default function ChangeProfileTrackDialog({ open }) {
                     </Box>
                     <Button onClick={handleCancel}>Cancel</Button>
                     <Button
+                        id="se-change-profile-dialog-change"
                         onClick={() => {
                             changeProfile().then((changed) => {
                                 if (changed) {

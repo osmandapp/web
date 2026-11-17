@@ -4,6 +4,10 @@ export const CLOUD_FOLDER = 'Folder';
 export const CLOUD_TRACK_NAME = 'Folder/Track.gpx';
 export const WPT_GROUP = 'My group';
 
+/** The moment a new track is created at in the tests, and the date name it gets. */
+export const NOW = new Date('2026-11-17T12:00:00Z');
+export const TODAY = 'Tue Nov 17 2026';
+
 const METERS_IN_DEGREE = 111226.29;
 
 /** Waypoint group as it comes from a parsed gpx - `points` and `ext` must not reach the .info file. */
@@ -52,6 +56,7 @@ export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
         openGroups: [],
         setOpenGroups: jest.fn(),
         setSelectedGpxFile: setter('selectedGpxFile'),
+        setLocalTracks: setter('localTracks'),
         setTrackErrorMsg: jest.fn(),
     };
 
@@ -66,6 +71,14 @@ export function createInfoFile({ name = CLOUD_TRACK_NAME, updatetimems = 1700000
 /** Point of the track editor `i` hundredths of a degree north of 50, optionally with the geometry leading to it. */
 export function createEditorPoint(i, { profile = 'car', geometry } = {}) {
     return { lat: 50 + i / 100, lng: 30, profile, ...(geometry && { geometry }) };
+}
+
+/** Points of an imported plain track as the editor holds them: no profile and no geometry. */
+export function createPlainPoints(n) {
+    return Array.from({ length: n }, (_, i) => {
+        const { lat, lng } = createEditorPoint(i);
+        return { lat, lng };
+    });
 }
 
 /** Routed track of the editor: every point but the first carries the geometry of the segment leading to it. */

@@ -8,6 +8,7 @@ import React from 'react';
 export default function AddRoutingToTrackDialog({ setOpenAddRoutingToTrackDialog, setAddRoutingToTrack }) {
     return (
         <Dialog
+            id="se-add-routing-dialog"
             PaperProps={{
                 sx: { minWidth: '100vh' },
             }}
@@ -21,8 +22,11 @@ export default function AddRoutingToTrackDialog({ setOpenAddRoutingToTrackDialog
                 </Typography>
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => setOpenAddRoutingToTrackDialog(false)}>Cancel</Button>
+                <Button id="se-add-routing-dialog-cancel" onClick={() => setOpenAddRoutingToTrackDialog(false)}>
+                    Cancel
+                </Button>
                 <Button
+                    id="se-add-routing-dialog-continue"
                     onClick={() => {
                         setAddRoutingToTrack(true);
                         setOpenAddRoutingToTrackDialog(false);
