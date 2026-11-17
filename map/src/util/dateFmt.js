@@ -108,6 +108,10 @@ export const fmt = {
         )}`,
 };
 
+export function monthStart(monthKey) {
+    return new Date(monthKey + '-01' + PARSE_AS_LOCAL_TIME); // Add the first day of the month for browser compatibility
+}
+
 export function formatPhotoDate(dateStr) {
     if (!dateStr) {
         return '';
@@ -119,7 +123,7 @@ export function formatPhotoDate(dateStr) {
     }
     // Format YYYY-MM 2025-09 -> September 2025
     if (/^\d{4}-\d{2}$/.test(clean)) {
-        const d = new Date(clean + '-01' + PARSE_AS_LOCAL_TIME); // Add the first day of the month for browser compatibility
+        const d = monthStart(clean);
         return isNaN(d) ? dateStr : fmt.monthYearLong(d);
     }
     // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025

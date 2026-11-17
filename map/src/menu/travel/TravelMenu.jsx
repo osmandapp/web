@@ -42,7 +42,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import { apiGet } from '../../util/HttpApi';
 import { createUrlParams } from '../../util/Utils';
-import { fmt } from '../../util/dateFmt';
+import { fmt, monthStart } from '../../util/dateFmt';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
@@ -649,8 +649,8 @@ export default function TravelMenu() {
                             <div className={styles.sliderHeader}>
                                 <Typography className={styles.sliderTitle}>{t('shared_string_date')}</Typography>
                                 <Typography className={styles.sliderValue}>
-                                    {fmt.monthYearShort(monthDate(uploadMonths[0]))} –{' '}
-                                    {fmt.monthYearShort(monthDate(uploadMonths[1]))}
+                                    {fmt.monthYearShort(monthStart(monthKey(uploadMonths[0])))} –{' '}
+                                    {fmt.monthYearShort(monthStart(monthKey(uploadMonths[1])))}
                                 </Typography>
                             </div>
                             <Slider
@@ -738,10 +738,6 @@ function boundsOf(features, defaults) {
 // the whole range is no filter
 function toMonthsFilter([from, to]) {
     return from === 0 && to === LAST_MONTH ? null : [from, to];
-}
-
-function monthDate(index) {
-    return new Date(MONTHS_BASE_YEAR + Math.floor(index / 12), index % 12);
 }
 
 function listedRoutes(travelResult, visibleRoutes) {
