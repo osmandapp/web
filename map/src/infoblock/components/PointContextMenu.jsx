@@ -227,7 +227,7 @@ export default function PointContextMenu({ anchorEl }) {
                     <ClickAwayListener onClickAway={handleClose}>
                         <Grid container spacing={2}>
                             <Grid item xs={10}>
-                                <Paper>
+                                <Paper id="se-point-context-menu">
                                     <div style={{ maxHeight: '30vh', overflow: 'auto' }}>
                                         <MenuList
                                             autoFocusItem={open}

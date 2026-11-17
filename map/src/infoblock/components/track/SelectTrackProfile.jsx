@@ -32,13 +32,14 @@ export default function SelectTrackProfile({ geoRouter, label, hideSettings = fa
                 <FormControl fullWidth>
                     <InputLabel id="route-mode-label">{label}</InputLabel>
                     <Select
+                        id="se-track-profile-select"
                         labelid="route-mode-label"
                         label={label}
                         value={profile}
                         onChange={(e) => geoRouter.onRouterProfileSelected({ profile: e.target.value })}
                     >
                         {geoRouter.listProfiles().map(({ key, name, icon }) => (
-                            <MenuItem key={key} value={key}>
+                            <MenuItem key={key} id={`se-track-profile-${key}`} value={key}>
                                 <Box display="flex" width="100%" alignItems="center">
                                     <Box display="flex" width={25} justifyContent="center" alignItems="center">
                                         {icon}

@@ -2,7 +2,7 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
-import { clickBy, matchTextBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
+import { assert, clickBy, getTextBy, matchTextBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
@@ -39,6 +39,8 @@ export default async function test() {
     await clickBy(By.id('se-add-fav-btn'));
     await waitByRemoved(By.id('se-add-fav-dialog'));
     await waitBy(By.className('leaflet-marker-icon'));
+    // the waypoint is not a point of the route
+    await assert(!/Points:/.test(await getTextBy(By.id('se-track-context-menu'))), 'the waypoint added a route point');
     await clickBy(By.id('se-local-track-actions-save-to-cloud'));
     await waitBy(By.id('se-save-track-dialog'));
     await clickBy(By.id('se-submit-save-to-cloud'));
