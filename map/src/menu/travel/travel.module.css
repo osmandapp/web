@@ -340,13 +340,8 @@
 }
 
 .dataSourceLink {
-    color: var(--selected-color);
-    text-decoration: none;
+    color: var(--selected-color) !important;
     white-space: nowrap;
-}
-
-.dataSourceLink:hover {
-    text-decoration: underline;
 }
 
 .pointHeader {

@@ -1,4 +1,4 @@
-import { Box, CircularProgress, IconButton, Slider, Tooltip, Typography } from '@mui/material';
+import { Box, CircularProgress, IconButton, Link, Slider, Tooltip, Typography } from '@mui/material';
 import React, { useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { ReactComponent as ResetIcon } from '../../assets/icons/ic_action_reset_to_default_dark.svg';
@@ -7,6 +7,7 @@ import { ReactComponent as AppearanceIcon } from '../../assets/icons/ic_action_a
 import { ReactComponent as ActivityAllIcon } from '../../assets/icons/ic_action_activity.svg';
 import { ReactComponent as SearchIcon } from '../../assets/icons/ic_action_search_dark.svg';
 import { ReactComponent as ReviewIcon } from '../../assets/icons/ic_action_edit_outlined.svg';
+import { ReactComponent as InfoIcon } from '../../assets/icons/ic_action_info_outlined.svg';
 import CloseIcon from '@mui/icons-material/Close';
 import debounce from 'lodash-es/debounce';
 import isEqual from 'lodash-es/isEqual';
@@ -23,14 +24,13 @@ import activities from '../../resources/activities.json';
 import { getActivityIcon } from '../../infoblock/components/common/ActivityType';
 import styles from './travel.module.css';
 import ActivitySelect from './ActivitySelect';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import EmptyTravel from '../errors/EmptyTravel';
 import EmptyLogin from '../../login/EmptyLogin';
 import TravelRoutesResult from './TravelRoutesResult';
 import { activityLabel } from '../../map/util/activities';
 import TravelFilters from './TravelFilters';
 import HeatmapAppearance from './HeatmapAppearance';
-import TravelDataSource from './TravelDataSource';
 import TravelActivityStats from './TravelActivityStats';
 import HeaderNoUnderline from '../../frame/components/header/HeaderNoUnderline';
 import headerStyles from '../trackfavmenu.module.css';
@@ -72,6 +72,8 @@ export const OSM_GPX_ABORT_KEYS = {
 };
 
 export const TRAVEL_REVIEWS_URL = `${process.env.REACT_APP_OSM_GPX_URL}/api/pubtracks`;
+export const OSM_TRACES_URL = 'https://www.openstreetmap.org/traces';
+const UPLOAD_TRACK_DOCS_URL = 'https://osmand.net/docs/user/plugins/osm-editing#upload-gps-track';
 
 const OTHER_GROUP = 'other';
 // months are counted from 2004-01, the same way the tiles count them
@@ -675,7 +677,18 @@ export default function TravelMenu() {
                                 <DividerWithMargin dashed={true} />
                                 <TextWithLeftIcon icon={<ReviewIcon />} text={t('web:travel_review_hint')} />
                                 <DividerWithMargin dashed={true} />
-                                <TravelDataSource />
+                                <TextWithLeftIcon
+                                    icon={<InfoIcon />}
+                                    text={
+                                        <Trans
+                                            i18nKey="web:travel_data_source"
+                                            components={{
+                                                osm: externalLink(OSM_TRACES_URL),
+                                                upload: externalLink(UPLOAD_TRACK_DOCS_URL),
+                                            }}
+                                        />
+                                    }
+                                />
                                 <ThickDivider mt={0} mb={0} />
                                 <ColorBlock color={'#f0f0f0'} />
                             </>
@@ -733,6 +746,19 @@ function monthDate(index) {
 
 function listedRoutes(travelResult, visibleRoutes) {
     return travelResult && !travelResult.tooMany ? visibleRoutes : null;
+}
+
+function externalLink(href) {
+    return (
+        <Link
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            underline="hover"
+            className={styles.dataSourceLink}
+            onClick={(e) => e.stopPropagation()}
+        />
+    );
 }
 
 // Serialize the current filters into URL query params

@@ -5,8 +5,7 @@ import { useMap } from 'react-leaflet';
 import { useTranslation } from 'react-i18next';
 import AppContext, { isTravelTrack } from '../../context/AppContext';
 import TravelContext from '../../context/TravelContext';
-import { ACTIVITY_ALL, monthIndex } from '../../menu/travel/TravelMenu';
-import { OSM_TRACES_URL } from '../../menu/travel/TravelDataSource';
+import { ACTIVITY_ALL, monthIndex, OSM_TRACES_URL } from '../../menu/travel/TravelMenu';
 import { ACTIVITY_ERROR, ACTIVITY_SHORT, ACTIVITY_SPARSE, UNIDENTIFIED_TRACKS_KEY } from '../util/activities';
 import {
     HEATMAP_PALETTES,
