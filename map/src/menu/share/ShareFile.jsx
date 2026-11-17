@@ -182,7 +182,7 @@ export default function ShareFile() {
 
         return addLocDist({ location: loc, markers: shareMarkers }).map((m, index) => (
             <FavoriteItem
-                key={m + index}
+                key={index}
                 marker={m}
                 group={ctx.selectedGpxFile}
                 isUserLocation={isUserLocation}
