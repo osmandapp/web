@@ -7,22 +7,6 @@ import styles from './travel.module.css';
 export const OSM_TRACES_URL = 'https://www.openstreetmap.org/traces';
 const UPLOAD_TRACK_DOCS_URL = 'https://osmand.net/docs/user/plugins/osm-editing#upload-gps-track';
 
-// the tip row cancels clicks, so a link keeps its own
-function ExternalLink({ href, children }) {
-    return (
-        <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.dataSourceLink}
-            onClick={(e) => e.stopPropagation()}
-        >
-            {children}
-        </a>
-    );
-}
-
-// where the Travel tracks come from and how to add one
 export default function TravelDataSource() {
     return (
         <TextWithLeftIcon
@@ -39,5 +23,19 @@ export default function TravelDataSource() {
                 </span>
             }
         />
+    );
+}
+
+function ExternalLink({ href, children }) {
+    return (
+        <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.dataSourceLink}
+            onClick={(e) => e.stopPropagation()}
+        >
+            {children}
+        </a>
     );
 }

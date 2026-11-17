@@ -19,7 +19,14 @@ import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
-import { ACTIVITY_ALL, FOOT_CYCLING_GROUPS, hasSpeedOnlyTracks, IGNORED_GROUP } from './TravelMenu';
+import {
+    ACTIVITY_ALL,
+    FOOT_CYCLING_GROUPS,
+    groupActivityIds,
+    groupItems,
+    IGNORED_GROUP,
+    sumCounts,
+} from './TravelMenu';
 import { activityLabel, IGNORED_ACTIVITIES } from '../../map/util/activities';
 import AppContext from '../../context/AppContext';
 
@@ -58,7 +65,6 @@ export default function ActivitySelect({
 
     const groups = [
         ...(activities?.groups ?? []).map((group) => ({ ...group, label: activityLabel(group.id, t) })),
-        // tracks the heatmap build drops (errors, too short, too sparse) are only for developers
         ...(ctx.develFeatures
             ? [
                   {
@@ -70,17 +76,9 @@ export default function ActivitySelect({
             : []),
     ];
 
-    const getGroupItems = (group) => {
-        const items = group.activities.map((activity) => ({ ...activity, label: activityLabel(activity.id, t) }));
-
-        return hasSpeedOnlyTracks(group)
-            ? [...items, { id: group.id, label: t('web:classified_by_speed_only') }]
-            : items;
-    };
-
     const getGroupActivityIds = (groupId) => {
         const group = groups.find((g) => g.id === groupId);
-        return group ? getGroupItems(group).map((a) => a.id) : [];
+        return group ? groupActivityIds(group) : [];
     };
 
     const getPresetIds = (preset) =>
@@ -268,8 +266,8 @@ export default function ActivitySelect({
                         // When activityCounts is null (no data loaded or error), groups stay enabled.
                         // When activityCounts exists: disable group only if it has no tracks in view (sum null or 0).
                         const groupSum =
-                            activityCounts != null && group.activities?.length
-                                ? getGroupItems(group).reduce((sum, a) => sum + (getActivityCount(a.id) ?? 0), 0)
+                            Array.isArray(activityCounts) && group.activities?.length
+                                ? sumCounts(activityCounts, groupActivityIds(group))
                                 : null;
                         const groupDisabled = activityCounts != null && (groupSum == null || groupSum === 0);
                         return (
@@ -298,7 +296,7 @@ export default function ActivitySelect({
                                 </MenuItem>
 
                                 <Collapse in={expandedGroups[group.id]} timeout="auto">
-                                    {getGroupItems(group).map((activity) => {
+                                    {groupItems(group, t).map((activity) => {
                                         const count = getActivityCount(activity.id);
                                         const hasCount = count != null && count > 0;
                                         const disabled = activityCounts != null && !hasCount;

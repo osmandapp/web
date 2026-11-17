@@ -1,4 +1,5 @@
 import i18n from 'i18next';
+import { normalizeLang } from './lang';
 
 const lang = () => i18n?.language || (typeof navigator !== 'undefined' ? navigator.language : 'en-US');
 
@@ -68,6 +69,8 @@ export const fmt = {
 
     // "MMMM yyyy", capitalized (e.g., "September 2025")
     monthYearLong: (d) => capFirst(new Date(d).toLocaleDateString(lang(), { month: 'long', year: 'numeric' })),
+
+    monthYearShort: (d) => new Date(d).toLocaleDateString(normalizeLang(lang()), { month: 'short', year: 'numeric' }),
 
     // 24h time "HH:mm"
     time24: (d) =>

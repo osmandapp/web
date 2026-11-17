@@ -6,13 +6,13 @@ import { useTranslation } from 'react-i18next';
 import AppContext from '../../context/AppContext';
 import TravelContext from '../../context/TravelContext';
 import { activityLabel } from '../../map/util/activities';
-import { ACTIVITY_ALL, ALL_ACTIVITY_IDS, groupActivityIds, hasSpeedOnlyTracks } from './TravelMenu';
+import activities from '../../resources/activities.json';
+import { ACTIVITY_ALL, ALL_ACTIVITY_IDS, groupItems, sumCounts } from './TravelMenu';
 import styles from './travel.module.css';
 
-const TOP_GROUPS = 2;
+const TOP_PARTS = 2;
 
-// tracks of the map view that pass the filter, the two biggest parts of them, and every activity in a popover where they also filter
-export default function TravelActivityStats({ activities, activityCounts, activityCountsAllDates, value, onChange }) {
+export default function TravelActivityStats({ activityCounts, activityCountsAllDates, value, onChange }) {
     const ctx = useContext(AppContext);
     const ttx = useContext(TravelContext);
     const { t } = useTranslation();
@@ -21,88 +21,104 @@ export default function TravelActivityStats({ activities, activityCounts, activi
     const [maxHeight, setMaxHeight] = useState(null);
     const [expanded, setExpanded] = useState({});
 
-    const isAll = value === ACTIVITY_ALL;
-    const selected = useMemo(() => new Set(isAll ? ALL_ACTIVITY_IDS : value), [value]);
+    const selected = useMemo(() => new Set(value === ACTIVITY_ALL ? ALL_ACTIVITY_IDS : value), [value]);
 
     const groups = useMemo(() => {
         if (!Array.isArray(activityCounts)) {
             return null;
         }
         const counts = new Map(activityCounts.map((a) => [a.id, a.count ?? 0]));
-        return (activities?.groups ?? [])
+
+        return activities.groups
             .map((group) => {
-                const items = groupActivityIds(group).map((id) => ({
-                    id,
-                    label:
-                        hasSpeedOnlyTracks(group) && id === group.id
-                            ? t('web:classified_by_speed_only')
-                            : activityLabel(id, t),
-                    count: counts.get(id) ?? 0,
-                }));
+                const items = groupItems(group, t).map((item) => ({ ...item, count: counts.get(item.id) ?? 0 }));
+                const shown = items.filter((a) => a.count > 0).sort((a, b) => b.count - a.count);
+
                 return {
                     id: group.id,
                     label: activityLabel(group.id, t),
-                    items,
-                    count: items.reduce((sum, a) => sum + a.count, 0),
+                    ids: items.map((a) => a.id),
+                    shown,
+                    count: shown.reduce((sum, a) => sum + a.count, 0),
                 };
             })
             .filter((group) => group.count > 0)
             .sort((a, b) => b.count - a.count);
-    }, [activityCounts, activities]);
+    }, [activityCounts, t]);
+
+    const isAll = value === ACTIVITY_ALL;
+    const databaseMatch =
+        ctx.develFeatures &&
+        ttx.travelHeatmapMatch &&
+        t('web:travel_tracks_match', {
+            matched: ttx.travelHeatmapMatch.matched.toLocaleString(),
+            total: ttx.travelHeatmapMatch.total.toLocaleString(),
+        });
 
     if (!groups?.length) {
-        return null;
+        return databaseMatch ? <Typography className={styles.matchCount}>{databaseMatch}</Typography> : null;
     }
 
     const maxCount = groups[0].count;
 
-    // what the filter keeps: its groups, or the subtypes when it stays inside one group
-    const kept = groups
-        .map((g) => ({ ...g, items: g.items.filter((a) => selected.has(a.id) && a.count > 0) }))
-        .filter((g) => g.items.length > 0)
-        .map((g) => ({ ...g, count: g.items.reduce((sum, a) => sum + a.count, 0) }));
-    const matched = kept.reduce((sum, g) => sum + g.count, 0);
-    // the same filter without the date range
+    const selectedGroups = groups
+        .map((g) => ({ ...g, shown: g.shown.filter((a) => selected.has(a.id)) }))
+        .filter((g) => g.shown.length > 0)
+        .map((g) => ({ ...g, count: g.shown.reduce((sum, a) => sum + a.count, 0) }))
+        .sort((a, b) => b.count - a.count);
+    const matched = selectedGroups.reduce((sum, g) => sum + g.count, 0);
     const matchedAllDates = Array.isArray(activityCountsAllDates)
-        ? activityCountsAllDates.reduce((sum, a) => sum + (selected.has(a.id) ? (a.count ?? 0) : 0), 0)
+        ? sumCounts(
+              activityCountsAllDates,
+              ALL_ACTIVITY_IDS.filter((id) => selected.has(id))
+          )
         : matched;
-    const parts = (kept.length === 1 && !isAll ? kept[0].items : kept).sort((a, b) => b.count - a.count);
-    const top = parts.slice(0, TOP_GROUPS);
-    const more = parts.length - top.length;
+    const breakdown = selectedGroups.length === 1 && !isAll ? selectedGroups[0].shown : selectedGroups;
+    const topParts = breakdown.slice(0, TOP_PARTS);
+    const moreCount = breakdown.length - topParts.length;
 
-    function toggle(ids) {
-        const allOn = ids.every((id) => selected.has(id));
+    function toggle(ids, shownIds) {
+        const allOn = shownIds.every((id) => selected.has(id));
         const next = new Set(selected);
         ids.forEach((id) => (allOn ? next.delete(id) : next.add(id)));
-        const nextIds = ALL_ACTIVITY_IDS.filter((id) => next.has(id));
-        onChange(nextIds.length === 0 || nextIds.length === ALL_ACTIVITY_IDS.length ? ACTIVITY_ALL : nextIds);
+        const groupIds = ALL_ACTIVITY_IDS.filter((id) => next.has(id));
+        const ignoredIds = [...next].filter((id) => !ALL_ACTIVITY_IDS.includes(id));
+        const nextIds = [...groupIds, ...ignoredIds];
+        const isEverything = groupIds.length === ALL_ACTIVITY_IDS.length && ignoredIds.length === 0;
+        onChange(nextIds.length === 0 || isEverything ? ACTIVITY_ALL : nextIds);
     }
 
-    function row({ id, label, count, ids, sub = false, group = null }) {
-        const on = ids.filter((a) => selected.has(a)).length;
+    function row({ id, label, count, ids, shownIds = ids, sub = false, expandable = false }) {
+        const selectedCount = shownIds.filter((a) => selected.has(a)).length;
+
         return (
-            <Box key={id} className={`${styles.statsRow} ${sub ? styles.statsSubRow : ''}`} onClick={() => toggle(ids)}>
+            <Box
+                key={id}
+                className={`${styles.statsRow} ${sub ? styles.statsSubRow : ''}`}
+                onClick={() => toggle(ids, shownIds)}
+            >
                 <Checkbox
-                    checked={on === ids.length}
-                    indeterminate={on > 0 && on < ids.length}
+                    checked={selectedCount === shownIds.length}
+                    indeterminate={selectedCount > 0 && selectedCount < shownIds.length}
                     className={styles.statsCheckbox}
                 />
                 <Typography className={styles.statsLabel}>{label}</Typography>
-                {group && group.items.length > 1 ? (
+                {expandable && (
                     <Box
                         className={styles.expandIcon}
                         onClick={(e) => {
                             e.stopPropagation();
-                            setExpanded((prev) => ({ ...prev, [group.id]: !prev[group.id] }));
+                            setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
                         }}
                     >
-                        {expanded[group.id] ? <ExpandLessIcon fontSize="small" /> : <ExpandMoreIcon fontSize="small" />}
+                        {expanded[id] ? <ExpandLessIcon fontSize="small" /> : <ExpandMoreIcon fontSize="small" />}
                     </Box>
-                ) : (
-                    <span />
                 )}
                 <span className={styles.statsBar}>
-                    <i style={{ width: `${Math.max(2, (count / maxCount) * 100)}%` }} />
+                    <span
+                        className={styles.statsBarFill}
+                        style={{ width: `${Math.max(2, (count / maxCount) * 100)}%` }}
+                    />
                 </span>
                 <Typography className={styles.statsCount}>{count.toLocaleString()}</Typography>
             </Box>
@@ -115,11 +131,9 @@ export default function TravelActivityStats({ activities, activityCounts, activi
             ref={anchorRef}
             className={styles.statsSummary}
             onClick={() => {
-                // all the room below the line, so the list opens under it instead of covering it
                 setMaxHeight(window.innerHeight - anchorRef.current.getBoundingClientRect().bottom - 16);
-                // a filter inside one group opens with that group's subtypes shown
-                if (kept.length === 1 && !isAll) {
-                    setExpanded((prev) => ({ ...prev, [kept[0].id]: true }));
+                if (selectedGroups.length === 1 && !isAll) {
+                    setExpanded((prev) => ({ ...prev, [selectedGroups[0].id]: true }));
                 }
                 setOpen(true);
             }}
@@ -132,13 +146,15 @@ export default function TravelActivityStats({ activities, activityCounts, activi
                       })
                     : t('web:travel_tracks_here', { count: matched.toLocaleString() })}
             </Typography>
-            {top.length > 0 && (
+            {topParts.length > 0 && (
                 <Typography component="div" className={styles.statsTop}>
                     <span className={styles.statsTopList}>
-                        {top.map((p) => `${p.label} ${p.count.toLocaleString()}`).join(' · ')}
+                        {topParts.map((p) => `${p.label} ${p.count.toLocaleString()}`).join(' · ')}
                     </span>
-                    {more > 0 && (
-                        <span className={styles.statsMore}>· {t('web:travel_more_activities', { count: more })}</span>
+                    {moreCount > 0 && (
+                        <span className={styles.statsMore}>
+                            · {t('web:travel_more_activities', { count: moreCount })}
+                        </span>
                     )}
                 </Typography>
             )}
@@ -147,15 +163,8 @@ export default function TravelActivityStats({ activities, activityCounts, activi
 
     return (
         <>
-            {ctx.develFeatures && ttx.travelHeatmapMatch ? (
-                <Tooltip
-                    arrow
-                    placement="bottom-start"
-                    title={t('web:travel_tracks_match', {
-                        matched: ttx.travelHeatmapMatch.matched.toLocaleString(),
-                        total: ttx.travelHeatmapMatch.total.toLocaleString(),
-                    })}
-                >
+            {databaseMatch ? (
+                <Tooltip arrow placement="bottom-start" title={databaseMatch}>
                     {summary}
                 </Tooltip>
             ) : (
@@ -172,13 +181,14 @@ export default function TravelActivityStats({ activities, activityCounts, activi
                 <Typography className={styles.statsHeader}>{t('web:travel_tracks_in_view')}</Typography>
                 {groups.map((group) => (
                     <Box key={group.id}>
-                        {row({ ...group, ids: group.items.map((a) => a.id), group })}
-                        {group.items.length > 1 && (
+                        {row({
+                            ...group,
+                            shownIds: group.shown.map((a) => a.id),
+                            expandable: group.shown.length > 1,
+                        })}
+                        {group.shown.length > 1 && (
                             <Collapse in={!!expanded[group.id]} timeout="auto">
-                                {group.items
-                                    .filter((a) => a.count > 0)
-                                    .sort((a, b) => b.count - a.count)
-                                    .map((a) => row({ ...a, ids: [a.id], sub: true }))}
+                                {group.shown.map((a) => row({ ...a, ids: [a.id], sub: true }))}
                             </Collapse>
                         )}
                     </Box>

@@ -1,6 +1,6 @@
-import React, { createContext, forwardRef, useContext, useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { FixedSizeList } from 'react-window';
+import VirtualizedList from '../../frame/components/VirtualizedList';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../../context/AppContext';
 import TravelContext from '../../context/TravelContext';
@@ -117,54 +117,31 @@ const TravelRoute = ({ route }) => {
 const ITEM_HEIGHT = 85;
 const SECTION_HEIGHT = 750;
 
-// the block above the rows, which scrolls together with them
-const ListHeaderContext = createContext({});
-
-const ListInner = forwardRef(({ children, style, ...rest }, ref) => {
-    const { header, headerRef, headerHeight } = useContext(ListHeaderContext);
-
-    return (
-        <div ref={ref} style={{ ...style, height: style.height + headerHeight }} {...rest}>
-            {header && <div ref={headerRef}>{header}</div>}
-            {children}
-        </div>
-    );
-});
-ListInner.displayName = 'ListInner';
-
 const TravelRoutesResult = React.memo(({ routes, header = null }) => {
     const [containerRef, containerHeight] = useElementHeight();
-    const [headerRef, measuredHeaderHeight] = useElementHeight();
-    const headerHeight = header ? measuredHeaderHeight : 0;
-    const headerValue = useMemo(() => ({ header, headerRef, headerHeight }), [header, headerHeight]);
+
+    const rows = useMemo(
+        () => [
+            ...(header ? [header] : []),
+            ...(routes ?? []).map((route) => <TravelRoute key={route.properties.id} route={route} />),
+        ],
+        [routes, header]
+    );
+
     const itemCount = routes?.length ?? 0;
 
     if (itemCount === 0) {
         return null;
     }
 
-    const listHeight = containerHeight || Math.min(itemCount * ITEM_HEIGHT + headerHeight, SECTION_HEIGHT);
-
     return (
         <Box ref={containerRef} className={travelStyles.resultsListBox}>
-            <ListHeaderContext.Provider value={headerValue}>
-                <FixedSizeList
-                    height={listHeight}
-                    itemCount={itemCount}
-                    itemSize={ITEM_HEIGHT}
-                    width={'100%'}
-                    innerElementType={ListInner}
-                    // the list counts rows from its top, so rows hidden under the header would go unrendered
-                    overscanCount={2 + Math.ceil(headerHeight / ITEM_HEIGHT)}
-                    style={{ overflowX: 'hidden' }}
-                >
-                    {({ index, style }) => (
-                        <div style={{ ...style, top: style.top + headerHeight }}>
-                            <TravelRoute route={routes[index]} />
-                        </div>
-                    )}
-                </FixedSizeList>
-            </ListHeaderContext.Provider>
+            <VirtualizedList
+                items={rows}
+                renderItem={(row) => row}
+                height={containerHeight || SECTION_HEIGHT}
+                estimatedItemHeight={ITEM_HEIGHT}
+            />
         </Box>
     );
 });

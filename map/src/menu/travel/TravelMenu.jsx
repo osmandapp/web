@@ -42,6 +42,7 @@ import { useWindowSize } from '../../util/hooks/useWindowSize';
 import gStyles from '../gstylesmenu.module.css';
 import { apiGet } from '../../util/HttpApi';
 import { createUrlParams } from '../../util/Utils';
+import { fmt } from '../../util/dateFmt';
 import ThickDivider from '../../frame/components/dividers/ThickDivider';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import TextWithLeftIcon from '../../frame/components/other/TextWithLeftIcon';
@@ -84,13 +85,6 @@ export function monthKey(index) {
     return `${MONTHS_BASE_YEAR + Math.floor(index / 12)}-${String((index % 12) + 1).padStart(2, '0')}`;
 }
 
-// 'Mar 2015' in the interface language
-function formatMonth(index, lang) {
-    const date = new Date(Date.UTC(MONTHS_BASE_YEAR + Math.floor(index / 12), index % 12, 1));
-
-    return date.toLocaleDateString(lang, { month: 'short', year: 'numeric', timeZone: 'UTC' });
-}
-
 export function monthIndex(key, baseYear = MONTHS_BASE_YEAR) {
     const [year, month] = key.split('-').map(Number);
 
@@ -104,6 +98,17 @@ export function hasSpeedOnlyTracks(group) {
 
 export function groupActivityIds(group) {
     return [...group.activities.map((a) => a.id), ...(hasSpeedOnlyTracks(group) ? [group.id] : [])];
+}
+
+export function groupItems(group, t) {
+    return groupActivityIds(group).map((id) => ({
+        id,
+        label: hasSpeedOnlyTracks(group) && id === group.id ? t('web:classified_by_speed_only') : activityLabel(id, t),
+    }));
+}
+
+export function sumCounts(activityCounts, ids) {
+    return activityCounts.reduce((sum, a) => (ids.includes(a.id) ? sum + (a.count ?? 0) : sum), 0);
 }
 
 // "All" as the tiles count it: activities plus the groups given by speed
@@ -155,7 +160,7 @@ export default function TravelMenu() {
     const ctx = useContext(AppContext);
     const ttx = useContext(TravelContext);
     const ltx = useContext(LoginContext);
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -164,8 +169,8 @@ export default function TravelMenu() {
     const [updatedActivities, setUpdatedActivities] = useState([]);
     const [travelResult, setTravelResult] = useState(null);
     const [loadingResult, setLoadingResult] = useState(false);
-    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }] in the date range
-    const [activityCountsAllDates, setActivityCountsAllDates] = useState(null); // the same without the date range
+    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
+    const [activityCountsAllDates, setActivityCountsAllDates] = useState(null);
     const [openFilters, setOpenFilters] = useState(false); // secondary filters drawer
     const [openAppearance, setOpenAppearance] = useState(false);
 
@@ -302,7 +307,6 @@ export default function TravelMenu() {
                 });
 
             try {
-                // the counts in the date range, and without it for "40 of 408"
                 const [dated, allDates] = await Promise.all([
                     months
                         ? fetchCounts(
@@ -527,36 +531,43 @@ export default function TravelMenu() {
         return (doSort({ method, files: sortGroup.files }).files ?? []).map((file) => file.route);
     }, [sortGroup, ctx.selectedSort]);
 
-    const showList = !!travelResult && !travelResult.tooMany && visibleRoutes.length > 0;
+    const pointBlock = useMemo(() => {
+        if (!ttx.searchTravelRoutes?.point) {
+            return null;
+        }
+        const pointDesc = searchPointDesc();
 
-    const pointDesc = ttx.searchTravelRoutes?.point && searchPointDesc();
-    const pointBlock = ttx.searchTravelRoutes?.point && (
-        <Box className={styles.pointHeader}>
-            <Box className={styles.pointHeaderRow}>
-                <Typography className={styles.pointTitle}>{searchPointTitle()}</Typography>
-                <Box className={styles.pointActions}>
-                    {showList && (
-                        <SortFilesButton
-                            type={TRACK_FILE_TYPE}
-                            customGroup={sortGroup}
-                            customGroupType={TRAVEL_CUSTOM_GROUP}
-                            menuInPortal={true}
-                        />
-                    )}
-                    <Tooltip title={t('web:travel_remove_point')} arrow placement="bottom-end">
-                        <IconButton
-                            id="se-travel-remove-point"
-                            className={headerStyles.appBarIcon}
-                            onClick={clearSearchPoint}
-                        >
-                            <CloseIcon />
-                        </IconButton>
-                    </Tooltip>
+        return (
+            <Box className={styles.pointHeader}>
+                <Box className={styles.pointHeaderRow}>
+                    <Typography className={styles.pointTitle}>{searchPointTitle()}</Typography>
+                    <Box className={styles.pointActions}>
+                        {listedRoutes(travelResult, visibleRoutes)?.length > 0 && (
+                            <SortFilesButton
+                                type={TRACK_FILE_TYPE}
+                                customGroup={sortGroup}
+                                customGroupType={TRAVEL_CUSTOM_GROUP}
+                                menuInPortal={true}
+                            />
+                        )}
+                        <Tooltip title={t('web:travel_remove_point')} arrow placement="bottom-end">
+                            <IconButton
+                                id="se-travel-remove-point"
+                                className={headerStyles.appBarIcon}
+                                onClick={clearSearchPoint}
+                            >
+                                <CloseIcon />
+                            </IconButton>
+                        </Tooltip>
+                    </Box>
                 </Box>
+                {pointDesc && <Typography className={styles.pointDesc}>{pointDesc}</Typography>}
             </Box>
-            {pointDesc && <Typography className={styles.pointDesc}>{pointDesc}</Typography>}
-        </Box>
-    );
+        );
+    }, [ttx.searchTravelRoutes, loadingResult, travelResult, visibleRoutes, sortGroup, ctx.unitsSettings, t]);
+
+    const listed = listedRoutes(travelResult, visibleRoutes);
+    const showList = listed?.length > 0;
 
     return (
         <Box sx={{ height: `${height - HEADER_SIZE}px` }} className={gStyles.scrollMainBlock}>
@@ -636,8 +647,8 @@ export default function TravelMenu() {
                             <div className={styles.sliderHeader}>
                                 <Typography className={styles.sliderTitle}>{t('shared_string_date')}</Typography>
                                 <Typography className={styles.sliderValue}>
-                                    {formatMonth(uploadMonths[0], i18n.language)} –{' '}
-                                    {formatMonth(uploadMonths[1], i18n.language)}
+                                    {fmt.monthYearShort(monthDate(uploadMonths[0]))} –{' '}
+                                    {fmt.monthYearShort(monthDate(uploadMonths[1]))}
                                 </Typography>
                             </div>
                             <Slider
@@ -651,14 +662,13 @@ export default function TravelMenu() {
                             />
                         </Box>
                         <TravelActivityStats
-                            activities={activities}
                             activityCounts={activityCounts}
                             activityCountsAllDates={activityCountsAllDates}
                             value={filters.activity}
                             onChange={(value) => setFilter('activity', value)}
                         />
                         <ThickDivider mt={16} />
-                        {ttx.searchTravelRoutes?.point && !showList && pointBlock}
+                        {!showList && pointBlock}
                         {!ttx.searchTravelRoutes?.point && (
                             <>
                                 <TextWithLeftIcon icon={<SearchIcon />} text={t('web:travel_click_map_hint')} />
@@ -672,9 +682,7 @@ export default function TravelMenu() {
                         )}
                         {loadingResult && <CircularProgress className={styles.resultsSpinner} size={36} />}
                         {showList && <TravelRoutesResult routes={sortedRoutes} header={pointBlock} />}
-                        {travelResult && !travelResult.tooMany && visibleRoutes.length === 0 && (
-                            <EmptyTravel reset={resetSearch} />
-                        )}
+                        {listed?.length === 0 && <EmptyTravel reset={resetSearch} />}
                     </Box>
                     {openFilters && (
                         <TravelFilters
@@ -717,6 +725,14 @@ function boundsOf(features, defaults) {
 // the whole range is no filter
 function toMonthsFilter([from, to]) {
     return from === 0 && to === LAST_MONTH ? null : [from, to];
+}
+
+function monthDate(index) {
+    return new Date(MONTHS_BASE_YEAR + Math.floor(index / 12), index % 12);
+}
+
+function listedRoutes(travelResult, visibleRoutes) {
+    return travelResult && !travelResult.tooMany ? visibleRoutes : null;
 }
 
 // Serialize the current filters into URL query params
