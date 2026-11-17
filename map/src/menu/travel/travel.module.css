@@ -152,94 +152,25 @@
     font-size: 13px !important;
 }
 
-.statsSummary {
-    display: flex !important;
-    flex-direction: column;
-    align-items: flex-start !important;
-    margin: 4px 8px 0 !important;
-    padding: 6px 8px !important;
-    border-radius: 4px !important;
-    text-align: left;
-    width: calc(100% - 16px);
-}
-
-.statsSummary:hover {
-    background-color: var(--buttons-background-secondary) !important;
-}
-
-.statsTotal {
-    color: var(--text-primary) !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-}
-
-.statsTop {
-    display: flex;
-    gap: 4px;
-    max-width: 100%;
-    color: var(--text-secondary) !important;
-    font-size: 14px !important;
-}
-
-.statsTopList {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
 .statsMore {
-    flex: none;
     color: var(--selected-color);
 }
 
 .statsPaper {
-    width: 400px;
+    width: 360px;
     max-width: calc(100vw - 32px);
-    padding: 8px 0;
-}
-
-.statsHeader {
-    padding: 4px 16px 8px;
-    color: var(--text-secondary) !important;
-    font-size: 14px !important;
 }
 
 .statsRow {
-    display: grid;
-    grid-template-columns: 40px minmax(0, 1fr) 28px 48px 56px;
-    align-items: center;
-    gap: 4px;
-    min-height: 44px;
-    padding: 0 16px 0 8px;
-    cursor: pointer;
-}
-
-.statsRow:hover {
-    background-color: var(--buttons-background-secondary);
-}
-
-.statsSubRow {
-    padding-left: 32px;
-}
-
-.statsCheckbox {
-    padding: 8px !important;
-}
-
-.statsLabel {
-    padding: 4px 0;
-    color: var(--text-primary) !important;
-    font-size: 16px !important;
-    line-height: 1.3 !important;
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) 48px 56px 24px;
 }
 
 .statsBar {
-    grid-column: 4;
     position: relative;
     height: 6px;
     border-radius: 3px;
-    background: #eeeeee;
+    background: var(--buttons-background-secondary);
     overflow: hidden;
 }
 
@@ -247,7 +178,7 @@
     position: absolute;
     inset: 0 auto 0 0;
     border-radius: 3px;
-    background: #9e9e9e;
+    background: var(--svg-icon-color);
 }
 
 .statsCount {

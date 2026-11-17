@@ -1,10 +1,14 @@
-import React, { useContext, useMemo, useRef, useState } from 'react';
-import { Box, ButtonBase, Checkbox, Collapse, Popover, Tooltip, Typography } from '@mui/material';
+import React, { useContext, useMemo, useState } from 'react';
+import { Box, Checkbox, Collapse, ListItemText, Menu, MenuItem, Tooltip, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import { useTranslation } from 'react-i18next';
+import { ReactComponent as ActivityIcon } from '../../assets/icons/ic_action_activity.svg';
 import AppContext from '../../context/AppContext';
 import TravelContext from '../../context/TravelContext';
+import DefaultItem from '../../frame/components/items/DefaultItem';
+import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
+import MenuItemWithLines from '../components/MenuItemWithLines';
 import { activityLabel } from '../../map/util/activities';
 import activities from '../../resources/activities.json';
 import { ACTIVITY_ALL, ALL_ACTIVITY_IDS, groupItems, sumCounts } from './TravelMenu';
@@ -16,8 +20,7 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
     const ctx = useContext(AppContext);
     const ttx = useContext(TravelContext);
     const { t } = useTranslation();
-    const anchorRef = useRef(null);
-    const [open, setOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null);
     const [maxHeight, setMaxHeight] = useState(null);
     const [expanded, setExpanded] = useState({});
 
@@ -88,21 +91,38 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
         onChange(nextIds.length === 0 || isEverything ? ACTIVITY_ALL : nextIds);
     }
 
+    function openStats(e) {
+        setMaxHeight(window.innerHeight - e.currentTarget.getBoundingClientRect().bottom - 16);
+        if (selectedGroups.length === 1 && !isAll) {
+            setExpanded((prev) => ({ ...prev, [selectedGroups[0].id]: true }));
+        }
+        setAnchorEl(e.currentTarget);
+    }
+
     function row({ id, label, count, ids, shownIds = ids, sub = false, expandable = false }) {
         const selectedCount = shownIds.filter((a) => selected.has(a)).length;
 
         return (
-            <Box
+            <MenuItem
                 key={id}
-                className={`${styles.statsRow} ${sub ? styles.statsSubRow : ''}`}
+                className={`${styles.optionItem} ${styles.statsRow}`}
                 onClick={() => toggle(ids, shownIds)}
             >
                 <Checkbox
                     checked={selectedCount === shownIds.length}
                     indeterminate={selectedCount > 0 && selectedCount < shownIds.length}
-                    className={styles.statsCheckbox}
+                    className={sub ? styles.nestedActivityCheckbox : undefined}
                 />
-                <Typography className={styles.statsLabel}>{label}</Typography>
+                <ListItemText>
+                    <MenuItemWithLines name={label} maxLines={sub ? 2 : 1} />
+                </ListItemText>
+                <span className={styles.statsBar}>
+                    <span
+                        className={styles.statsBarFill}
+                        style={{ width: `${Math.max(2, (count / maxCount) * 100)}%` }}
+                    />
+                </span>
+                <Typography className={styles.statsCount}>{count.toLocaleString()}</Typography>
                 {expandable && (
                     <Box
                         className={styles.expandIcon}
@@ -114,71 +134,58 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
                         {expanded[id] ? <ExpandLessIcon fontSize="small" /> : <ExpandMoreIcon fontSize="small" />}
                     </Box>
                 )}
-                <span className={styles.statsBar}>
-                    <span
-                        className={styles.statsBarFill}
-                        style={{ width: `${Math.max(2, (count / maxCount) * 100)}%` }}
-                    />
-                </span>
-                <Typography className={styles.statsCount}>{count.toLocaleString()}</Typography>
-            </Box>
+            </MenuItem>
         );
     }
 
     const summary = (
-        <ButtonBase
+        <DefaultItem
             id="se-travel-activity-stats"
-            ref={anchorRef}
-            className={styles.statsSummary}
-            onClick={() => {
-                setMaxHeight(window.innerHeight - anchorRef.current.getBoundingClientRect().bottom - 16);
-                if (selectedGroups.length === 1 && !isAll) {
-                    setExpanded((prev) => ({ ...prev, [selectedGroups[0].id]: true }));
-                }
-                setOpen(true);
-            }}
-        >
-            <Typography className={styles.statsTotal}>
-                {matchedAllDates > matched
+            icon={<ActivityIcon />}
+            name={
+                matchedAllDates > matched
                     ? t('web:travel_tracks_here_of', {
                           matched: matched.toLocaleString(),
                           total: matchedAllDates.toLocaleString(),
                       })
-                    : t('web:travel_tracks_here', { count: matched.toLocaleString() })}
-            </Typography>
-            {topParts.length > 0 && (
-                <Typography component="div" className={styles.statsTop}>
-                    <span className={styles.statsTopList}>
+                    : t('web:travel_tracks_here', { count: matched.toLocaleString() })
+            }
+            additionalInfo={
+                topParts.length > 0 ? (
+                    <>
                         {topParts.map((p) => `${p.label} ${p.count.toLocaleString()}`).join(' · ')}
-                    </span>
-                    {moreCount > 0 && (
-                        <span className={styles.statsMore}>
-                            · {t('web:travel_more_activities', { count: moreCount })}
-                        </span>
-                    )}
-                </Typography>
-            )}
-        </ButtonBase>
+                        {moreCount > 0 && (
+                            <span className={styles.statsMore}>
+                                {' · '}
+                                {t('web:travel_more_activities', { count: moreCount })}
+                            </span>
+                        )}
+                    </>
+                ) : null
+            }
+            onClick={openStats}
+        />
     );
 
     return (
         <>
             {databaseMatch ? (
                 <Tooltip arrow placement="bottom-start" title={databaseMatch}>
-                    {summary}
+                    <div>{summary}</div>
                 </Tooltip>
             ) : (
                 summary
             )}
-            <Popover
-                open={open}
-                anchorEl={anchorRef.current}
-                onClose={() => setOpen(false)}
+            <Menu
+                anchorEl={anchorEl}
+                open={!!anchorEl}
+                onClose={() => setAnchorEl(null)}
+                disableAutoFocusItem
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
                 transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                 slotProps={{ paper: { className: styles.statsPaper, style: { maxHeight } } }}
             >
-                <Typography className={styles.statsHeader}>{t('web:travel_tracks_in_view')}</Typography>
+                <SubTitleMenu text={t('web:travel_tracks_in_view')} />
                 {groups.map((group) => (
                     <Box key={group.id}>
                         {row({
@@ -193,7 +200,7 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
                         )}
                     </Box>
                 ))}
-            </Popover>
+            </Menu>
         </>
     );
 }
