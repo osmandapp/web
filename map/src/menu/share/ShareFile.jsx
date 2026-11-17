@@ -22,7 +22,12 @@ import {
     SHARE_FILE_MAIN_URL,
 } from '../../manager/GlobalManager';
 import NotAvailableError from './errors/NotAvailableError';
-import { getFavMenuListByLayers, LOCATION_UNAVAILABLE, extractBaseFavFileName } from '../../manager/FavoritesManager';
+import {
+    addLocDist,
+    getFavMenuListByLayers,
+    LOCATION_UNAVAILABLE,
+    extractBaseFavFileName,
+} from '../../manager/FavoritesManager';
 import { getResolvedPointsGroups } from '../../manager/track/TracksManager';
 import FavoriteItem from '../favorite/FavoriteItem';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
@@ -156,33 +161,35 @@ export default function ShareFile() {
         }
     }
 
-    const favItems = useMemo(() => {
+    const isUserLocation = !!currentLoc && currentLoc !== LOCATION_UNAVAILABLE;
+    const loc = isUserLocation ? currentLoc : getMapCenter(mtx, hash);
+
+    const shareMarkers = useMemo(() => {
         const layers = ctx.shareFileMarkers?.getLayers();
         if (layers?.length > 0 && ctx.selectedGpxFile?.wpts) {
-            const isUserLocation = !!currentLoc && currentLoc !== LOCATION_UNAVAILABLE;
-            const loc = isUserLocation ? currentLoc : getMapCenter(mtx, hash);
-            const markerList = getFavMenuListByLayers({
+            return getFavMenuListByLayers({
                 layers,
                 wpts: ctx.selectedGpxFile.wpts,
-                location: loc,
+                location: null,
                 pointsGroups: getResolvedPointsGroups(ctx.selectedGpxFile),
             });
-            const items = [];
-            markerList.map((m, index) => {
-                items.push(
-                    <FavoriteItem
-                        key={m + index}
-                        marker={m}
-                        group={ctx.selectedGpxFile}
-                        isUserLocation={isUserLocation}
-                        share={true}
-                    />
-                );
-            });
-            return items;
         }
         return null;
-    }, [ctx.shareFileMarkers, currentLoc]);
+    }, [ctx.shareFileMarkers]);
+
+    const favItems = useMemo(() => {
+        if (!shareMarkers) return null;
+
+        return addLocDist({ location: loc, markers: shareMarkers }).map((m, index) => (
+            <FavoriteItem
+                key={m + index}
+                marker={m}
+                group={ctx.selectedGpxFile}
+                isUserLocation={isUserLocation}
+                share={true}
+            />
+        ));
+    }, [shareMarkers, isUserLocation, loc?.lat, loc?.lng]);
 
     return (
         <>
