@@ -683,8 +683,26 @@ export default function TravelMenu() {
                                         <Trans
                                             i18nKey="web:travel_data_source"
                                             components={{
-                                                osm: externalLink(OSM_TRACES_URL),
-                                                upload: externalLink(UPLOAD_TRACK_DOCS_URL),
+                                                osm: (
+                                                    <Link
+                                                        href={OSM_TRACES_URL}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        underline="hover"
+                                                        className={styles.dataSourceLink}
+                                                        onClick={(e) => e.stopPropagation()}
+                                                    />
+                                                ),
+                                                upload: (
+                                                    <Link
+                                                        href={UPLOAD_TRACK_DOCS_URL}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        underline="hover"
+                                                        className={styles.dataSourceLink}
+                                                        onClick={(e) => e.stopPropagation()}
+                                                    />
+                                                ),
                                             }}
                                         />
                                     }
@@ -742,19 +760,6 @@ function toMonthsFilter([from, to]) {
 
 function listedRoutes(travelResult, visibleRoutes) {
     return travelResult && !travelResult.tooMany ? visibleRoutes : null;
-}
-
-function externalLink(href) {
-    return (
-        <Link
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            underline="hover"
-            className={styles.dataSourceLink}
-            onClick={(e) => e.stopPropagation()}
-        />
-    );
 }
 
 // Serialize the current filters into URL query params
