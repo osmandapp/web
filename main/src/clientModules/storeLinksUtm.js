@@ -10,7 +10,7 @@ const DEFAULT_UTM = { utm_source: 'osmand.net', utm_medium: 'website' };
 const PLAY_APPS = ['net.osmand', 'net.osmand.plus'];
 const APP_STORE_ID = 'id934850257';
 // Provider token from App Store Connect; without it `ct` is not attributed
-const APP_STORE_PROVIDER_TOKEN = '';
+const APP_STORE_PROVIDER_TOKEN = '2123532';
 const MAX_CT_LENGTH = 40;
 
 function readStored() {
