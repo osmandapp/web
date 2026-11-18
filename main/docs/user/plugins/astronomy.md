@@ -65,9 +65,12 @@ The dedicated **Star map screen** shows interactive celestial dome with stars, c
 - [**Search**](#search) — opens the Search screen where you can search for celestial objects and browse sky catalogs and categories. 
 - **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time. If you set a custom date/time, the chip shows the full date and time, and a reset button appears next to it to return to the current system time.
 - **<Translate android="true" ids="magnitude_filter"/>** — allows you to limit which stars are displayed based on their brightness. Use the slider to set the maximum magnitude value. Lower values show only the brightest stars, while higher values reveal dimmer stars and deep-sky objects. This helps reduce visual clutter or simulate what is visible to the naked eye.
+- **<Translate android="true" ids="zoomIn"/> / <Translate android="true" ids="zoomOut"/>** — change the Star map scale smoothly, one step per tap. The buttons are shown on tablets in one column above the <Translate android="true" ids="magnitude_filter"/> button.
 - [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — opens display settings that control how objects, paths, and reference lines are shown on the Star map.
 
-The screen renders the full sky hemisphere above your location, aligned with the compass direction. The Star map can be rotated manually by dragging the screen. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
+The screen renders the full sky hemisphere above your location, aligned with the compass direction. The Star map can be rotated manually by dragging the screen. After a quick swipe, the sky keeps moving for a moment and then gradually slows down. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
+
+The Star map keeps its last view. When you open it again, including after restarting the app, it shows the same direction, zoom level, and 2D or 3D mode as when you closed it.
 
 The Star map can also align with your device orientation when compass mode is enabled. In this mode, the sky rotates according to the device's accelerometer and compass sensors, allowing you to explore the sky by physically moving your phone.
 
@@ -131,7 +134,7 @@ These values update dynamically based on the selected time and the user's locati
 
 Below the quick information blocks, the menu may also include additional information and resources about the object:
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Allows you to download an extended database with Wikipedia articles and deep sky catalogues for offline use. After downloading, detailed information about celestial objects can be viewed directly in the app without an internet connection.
-- <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article.
+- <Translate android="true" ids="read_on_wiki"/> – Opens the object's Wikipedia article. If the article is available in other languages, a language button with the current language code (for example, `En`) appears in the article. Tap it to choose another language from the list.
 - <Translate android="true" ids="astro_designations"/> – Shows alternative names and catalogue identifiers for the object (for example, HD, HIP, NGC). This section is available for objects that have catalog entries, such as stars and deep sky objects. If the object does not have a common name, one of these designations is used as the primary name.
 - <Translate android="true" ids="online_photos"/> – Displays available photos related to the selected celestial object.
 
@@ -149,7 +152,7 @@ Below the object information, the Context Menu provides several actions for inte
 
 <TabItem value="android" label="Android">
 
-![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.webp)
 
 </TabItem>
 
@@ -168,7 +171,7 @@ The graph displays the object's altitude above the horizon over time.
 - The horizontal axis represents time from 12:00 to 12:00 the next day.
 - The vertical axis represents altitude from −30° to +90°.
 
-The colored curve shows the object's altitude throughout the day.
+The colored curve shows the object's altitude throughout the day. An up arrow on the graph marks the object's rise, and a down arrow marks its set.
 
 The background of the graph represents the state of the sky and changes depending on the Sun's position. This helps identify when observations are possible.
 
