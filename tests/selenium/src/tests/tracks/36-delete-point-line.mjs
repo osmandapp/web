@@ -1,14 +1,5 @@
-import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
-import {
-    enclose,
-    getMarkersNear,
-    hoverBy,
-    matchTextBy,
-    pointsCount,
-    setMapCenter,
-    waitRoutedLines,
-} from '../../lib.mjs';
+import { enclose, getMarkersNear, hoverBy, matchPointsCount, setMapCenter, waitRoutedLines } from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionCreateRoute, { ROUTE_POINTS } from '../../actions/tracks/actionCreateRoute.mjs';
@@ -25,7 +16,7 @@ export default async function test() {
     await validateNewPointOnLine();
 
     await actionDeletePoint(ROUTE_POINTS[1]);
-    await matchTextBy(By.id('se-track-context-menu'), pointsCount(2));
+    await matchPointsCount(2);
     await waitRoutedLines(1);
 
     // so does the line left by a deleted point
