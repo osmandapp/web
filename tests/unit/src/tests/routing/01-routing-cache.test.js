@@ -4,7 +4,7 @@ import TracksRoutingCache, {
     effectRefreshTrackWithRouting,
     syncTrackWithCache,
 } from '@map/context/TracksRoutingCache';
-import TracksManager from '@map/manager/track/TracksManager';
+import TracksManager, { updateTrackRouteTypes } from '@map/manager/track/TracksManager';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
 import { createEditorCtx, createEditorPoint } from '../../util/fixtures/tracks';
 
@@ -64,6 +64,16 @@ test('the router is asked for the segments without geometry, six at a time', asy
             .filter((e) => e.geometry)
             .map((e) => e.geometry)
     ).toEqual(Array(6).fill(['routed']));
+});
+
+test('nothing is sent to the router while the analysis is running', () => {
+    const ctx = createCtx();
+    ctx.processingAnalytics = true;
+    jest.spyOn(console, 'debug').mockImplementation(() => {});
+    TracksRoutingCache.addRoutingToCache(point(0), point(1), line(), ctx);
+
+    expect(effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() })).toBe(false);
+    expect(ctx.trackRouter.updateRouteBetweenPoints).not.toHaveBeenCalled();
 });
 
 test('a failed request is not repeated', async () => {
@@ -139,6 +149,39 @@ test('a router answer for the place a point was dragged away from is not put on 
 
         expect(b.geometry).toEqual(['to 50.012']);
     }
+});
+
+test.failing('the dashed line of a pair that starts at a gap is removed, not left', () => {
+    const [gap, c] = [point(0, TracksManager.PROFILE_GAP), point(1)];
+    const ctx = createCtx([gap, c]);
+    const gapC = line();
+    TracksRoutingCache.addRoutingToCache(gap, c, gapC, ctx);
+    entries(ctx)[0].geometry = ['routed'];
+
+    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn() });
+
+    expect(gapC.removeFrom).toHaveBeenCalledWith(ctx.selectedGpxFile.layers);
+});
+
+test('the route types of an answer join the track, the indexes in its segments follow them', () => {
+    const ctx = createCtx();
+    ctx.selectedGpxFile.routeTypes = [{ tag: 'highway', value: 'primary' }];
+    const answer = [{ lat: 50, lng: 30, segment: { ext: { types: '0,1', pointTypes: '1', names: '0' } } }];
+
+    updateTrackRouteTypes(
+        answer,
+        [
+            { tag: 'highway', value: 'residential' },
+            { tag: 'highway', value: 'primary' },
+        ],
+        ctx
+    );
+
+    expect(ctx.selectedGpxFile.routeTypes).toEqual([
+        { tag: 'highway', value: 'primary' },
+        { tag: 'highway', value: 'residential' },
+    ]);
+    expect(answer[0].segment.ext).toEqual({ types: '1,0', pointTypes: '0', names: '1' });
 });
 
 test('undo restores the geometry of every segment from the cache and drops the unfinished ones', () => {

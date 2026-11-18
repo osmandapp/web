@@ -8,6 +8,9 @@ global.TextDecoder = global.TextDecoder ?? TextDecoder;
 
 // the app builds request urls from this - nothing is ever requested, the host is a placeholder
 process.env.REACT_APP_USER_API_SITE = 'https://api.test';
+process.env.REACT_APP_GPX_API = 'https://api.test';
+// as in map/.env*: an OSRM route longer than this is not approximated
+process.env.REACT_APP_MAX_APPROXIMATE_KM = '100';
 
 // the local tracks storage is real in tests: give every suite an empty in-memory indexedDB,
 // the tests of the storage itself install their own records with fakeIndexedDbStore()
