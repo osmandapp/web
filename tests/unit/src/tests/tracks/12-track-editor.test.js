@@ -1,4 +1,5 @@
 import TracksManager, {
+    openTrackOnMap,
     addDistanceToPoints,
     isPointUnrouted,
     isProtectedSegment,
@@ -176,12 +177,48 @@ describe('a new track of the editor', () => {
             ],
         });
         expect(ctx.localTracks.map((t) => t.name)).toEqual([TODAY]);
+        expect(ctx.trackState.update).toBe(true);
 
         create({ enable: true });
 
         expect(ctx.selectedGpxFile).toMatchObject({ name: `${TODAY} - 2`, points: [] });
         // an empty track is stored with its first point, not before
         expect(ctx.localTracks).toHaveLength(1);
+    });
+});
+
+describe('another track opened while one is edited', () => {
+    const editedCtx = () => {
+        const ctx = createEditorCtx({ points: createRoutedPoints(2) });
+        ctx.createTrack = { enable: true };
+        ctx.trackRouter.escapeFromLineProfile = jest.fn();
+
+        return ctx;
+    };
+
+    test('a new track hands the edited one over to be saved', () => {
+        const ctx = editedCtx();
+
+        TracksManager.createTrack(ctx);
+
+        const [[state]] = ctx.setCreateTrack.mock.calls;
+        expect(state).toMatchObject({
+            enable: true,
+            closePrev: { file: { name: 'Local', points: createRoutedPoints(2) } },
+        });
+        expect(state.closePrev.file).not.toBe(ctx.selectedGpxFile);
+    });
+
+    test('a cloud track stops the editor and hands the edited one over to be saved', async () => {
+        const ctx = editedCtx();
+        ctx.gpxFiles = { 'Folder/Track.gpx': { url: 'stored' } };
+
+        await openTrackOnMap({ file: { name: 'Folder/Track.gpx' }, ctx, showOnMap: false, returnOneTrack: true });
+
+        expect(ctx.setCreateTrack).toHaveBeenCalledWith({
+            enable: false,
+            closePrev: { file: expect.objectContaining({ name: 'Local', points: createRoutedPoints(2) }) },
+        });
     });
 });
 

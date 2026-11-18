@@ -1,10 +1,13 @@
 import {
+    clearAllLocalTracks,
     deleteLocalTrack,
     deleteLocalTracksByIndexes,
     loadLocalTracksFromStorage,
     saveTrackToLocalStorage,
 } from '@map/context/LocalTrackStorage';
+import { renameLocalTrack } from '@map/manager/track/SaveTrackManager';
 import { fakeIndexedDbStore, removeIndexedDb } from '../../util/indexedDb';
+import { settle } from '../../util/settle';
 
 /** ctx as the local tracks menu keeps it: the list itself plus its setter. */
 function createCtx(localTracks = []) {
@@ -22,9 +25,6 @@ function createCtx(localTracks = []) {
 function track(name) {
     return { name, points: [{ lat: 50, lng: 30 }], wpts: [] };
 }
-
-/** the storage writes are not awaited by the app, give them a tick */
-const settle = () => new Promise((resolve) => setTimeout(resolve, 0));
 
 let db;
 
@@ -65,6 +65,90 @@ test('the tracks are loaded in the order of their ids, a record without a name i
     ]);
 });
 
+describe('an edited local track', () => {
+    const points = [
+        { lat: 50, lng: 30, profile: 'car', geoProfile: { profile: 'car' }, geometry: [] },
+        {
+            lat: 50.01,
+            lng: 30,
+            profile: 'car',
+            geometry: [
+                { lat: 50, lng: 30 },
+                { lat: 50.01, lng: 30 },
+            ],
+        },
+    ];
+    const edited = () => ({
+        ...track('Track'),
+        points,
+        tracks: [{ points }],
+        layers: {},
+        updateLayers: true,
+        selected: true,
+        analysis: { totalDistance: 1112, srtmAnalysis: true, isSrtmApplied: true },
+    });
+
+    test('is stored with its points, profiles and geometry, without its lines and the tracks of the gpx', async () => {
+        saveTrackToLocalStorage({ ctx: createCtx(), track: edited() });
+        await settle();
+
+        const record = db.get(0);
+        expect(record.points).toEqual(points);
+        expect(record).not.toHaveProperty('tracks');
+        expect(record).not.toHaveProperty('layers');
+        expect(record).not.toHaveProperty('updateLayers');
+        expect(record.selected).toBe(false);
+        expect(record.analysis).toMatchObject({ totalDistance: 1112, srtmAnalysis: false, isSrtmApplied: false });
+    });
+
+    test('opens after a reload with its edits', async () => {
+        saveTrackToLocalStorage({ ctx: createCtx(), track: edited() });
+        await settle();
+
+        const [loaded] = await loadLocalTracksFromStorage(jest.fn());
+
+        expect(loaded.points).toEqual(points);
+        expect(loaded.selected).toBe(false);
+    });
+});
+
+describe('renaming a local track', () => {
+    function ctxWithTwo() {
+        ['First', 'Second'].forEach((name, id) => db.set(id, track(name)));
+        const ctx = createCtx([track('First'), track('Second')]);
+        ctx.selectedGpxFile = track('Second');
+        ctx.setSelectedGpxFile = jest.fn();
+
+        return ctx;
+    }
+
+    test('the track keeps its place in the storage, the open track and the list get the new name', async () => {
+        const ctx = ctxWithTwo();
+
+        expect(renameLocalTrack(ctx, 'Second', 'Renamed')).toEqual({ ok: true });
+        await settle();
+
+        expect(ctx.localTracks.map((t) => t.name)).toEqual(['First', 'Renamed']);
+        expect([...db.entries()].map(([id, t]) => [id, t.name])).toEqual([
+            [0, 'First'],
+            [1, 'Renamed'],
+        ]);
+        expect(ctx.setSelectedGpxFile).toHaveBeenCalledWith(
+            expect.objectContaining({ name: 'Renamed', id: 'Renamed', oldName: 'Second' })
+        );
+    });
+
+    test('the name of another track renames nothing', async () => {
+        const ctx = ctxWithTwo();
+
+        expect(renameLocalTrack(ctx, 'Second', 'First')).toHaveProperty('error');
+        await settle();
+
+        expect(ctx.localTracks.map((t) => t.name)).toEqual(['First', 'Second']);
+        expect(db.get(1).name).toBe('Second');
+    });
+});
+
 describe('deleting local tracks', () => {
     function ctxWithThree() {
         ['First', 'Second', 'Third'].forEach((name, id) => db.set(id, track(name)));
@@ -84,6 +168,19 @@ describe('deleting local tracks', () => {
         expect(ctx.localTracks.map((t) => t.name)).toEqual(['First']);
         const left = await loadLocalTracksFromStorage(jest.fn());
         expect(left.map((t) => t.name)).toEqual(['First']);
+    });
+
+    test('clearing the list removes every stored track and closes the open one', async () => {
+        const ctx = ctxWithThree();
+        ctx.selectedGpxFile = track('Second');
+        ctx.setSelectedGpxFile = jest.fn();
+
+        clearAllLocalTracks(ctx);
+        await settle();
+
+        expect(ctx.localTracks).toEqual([]);
+        expect([...db.keys()]).toEqual([]);
+        expect(ctx.setSelectedGpxFile).toHaveBeenCalledWith({});
     });
 
     test('the tracks that are left keep their place in the storage', async () => {

@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { clickBy, leftClickBy, matchTextBy, pointsCount, rightClickBy, waitBy, waitRoutedLines } from '../../lib.mjs';
+import { clickBy, leftClickBy, matchPointsCount, rightClickBy, waitBy, waitRoutedLines } from '../../lib.mjs';
 
 export const ROUTE_POINTS = [
     [50.492409, 30.525041],
@@ -33,7 +33,7 @@ export default async function test(points) {
     for (const point of next) {
         await leftClickBy(...point);
     }
-    await matchTextBy(By.id('se-track-context-menu'), pointsCount(points.length));
+    await matchPointsCount(points.length);
 
     return await waitRoutedLines(routedBefore + next.length);
 }

@@ -1,7 +1,7 @@
 import { apiGet, apiPost } from '@map/util/HttpApi';
 import TracksManager from '@map/manager/track/TracksManager';
 import { updateRouteBetweenPoints } from '@map/store/geoRouter/legacy/updateRouteBetweenPoints';
-import { createEditorPoint } from '../../util/fixtures/tracks';
+import { createEditorPoint, lats } from '../../util/fixtures/tracks';
 
 const GAP = TracksManager.PROFILE_GAP;
 const OSRM = { type: 'osrm', profile: 'OSRM-car' };
@@ -10,7 +10,6 @@ const OSMAND = { type: 'osmand', profile: 'car' };
 const router = { getURL: () => 'https://osrm.test/' };
 const createGapPoint = () => createEditorPoint(1, { profile: GAP });
 const createCtx = () => ({ setRoutingErrorMsg: jest.fn() });
-const lats = (points) => points.map((point) => point.lat);
 const along = (...lats) => lats.map((lat) => ({ lat, lng: 30 }));
 
 /** OSRM answer with one route along the given latitudes, or with no route. */

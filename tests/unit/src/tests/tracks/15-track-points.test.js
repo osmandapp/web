@@ -18,6 +18,7 @@ import {
     createRoutedPoint,
     createRoutedPoints,
     createRoutedThenRecordedPoints,
+    lats,
 } from '../../util/fixtures/tracks';
 
 TrackLayerProvider.createTempPolyline = () => ({ temp: true });
@@ -26,8 +27,6 @@ const GAP = TracksManager.PROFILE_GAP;
 
 const plain = (n) => Array.from({ length: n }, (_, i) => createEditorPoint(i));
 const createCtx = (points) => createEditorCtx({ points });
-
-const lats = (points) => points.map((p) => p.lat);
 
 // the map the editor draws on, as far as drawing and dragging use it
 const map = { getZoom: () => 15, hasLayer: () => false, removeLayer: () => {}, on: () => {}, off: () => {} };
@@ -578,6 +577,12 @@ describe('changeProfile', () => {
         expect(cached(whole)).toEqual([[50.01, 50.02, PROFILE_BICYCLE]]);
     });
 
+    test.failing('a profile change of the next segments reports that the track has changed', async () => {
+        const ctx = createProfileCtx(createRoutedPoints(3), CHANGE_PROFILE_ALL);
+
+        expect(await PointManager.changeProfile({ ctx, geoProfile: BICYCLE, changeOne: true })).toBe(true);
+    });
+
     test('a track of one point gets the new profile on its point', async () => {
         for (const changeAll of [true, false]) {
             const ctx = createProfileCtx(createRoutedPoints(1), CHANGE_PROFILE_ALL);
@@ -774,6 +779,26 @@ describe('insert a point from the line', () => {
             const lines = drawnLines(createDrawnCtx(points)).map((line) => lats(line.getLatLngs()));
 
             expect(lines).not.toContainEqual(expect.arrayContaining([50.01, 50.02]));
+        }
+    });
+});
+
+describe('the history of the editor', () => {
+    test('every point operation asks for a snapshot', async () => {
+        for (const [points, operate] of [
+            [createRoutedPoints(4), (ctx) => PointManager.trimBefore(1, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.trimAfter(1, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.split(1, ctx)],
+            [createGapPoints(4, 1), (ctx) => PointManager.join(...ctx.selectedGpxFile.points.slice(1, 3), ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.reorder(1, 2, ctx.selectedGpxFile, ctx)],
+            [createRoutedPoints(4), (ctx) => dragPoint(ctx, 1, 50.015)],
+            [createRoutedPoints(4), (ctx) => insertPoint(ctx, drawnLines(ctx)[1], 50.015)],
+        ]) {
+            const ctx = createDrawnCtx(points);
+
+            await operate(ctx);
+
+            expect(ctx.trackState.update).toBe(true);
         }
     });
 });

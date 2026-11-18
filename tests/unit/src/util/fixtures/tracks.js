@@ -6,6 +6,10 @@ export const CLOUD_FOLDER = 'Folder';
 export const CLOUD_TRACK_NAME = 'Folder/Track.gpx';
 export const WPT_GROUP = 'My group';
 
+export const LOGGED_IN = { loginUser: 'osmand@grr.la' };
+
+export const lats = (points) => points.map((point) => point.lat);
+
 /** The moment a new track is created at in the tests, and the date name it gets. */
 export const NOW = new Date('2026-11-17T12:00:00Z');
 export const TODAY = 'Tue Nov 17 2026';

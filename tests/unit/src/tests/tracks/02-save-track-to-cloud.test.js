@@ -3,7 +3,14 @@ import { DEFAULT_GROUP_NAME } from '@map/manager/track/TracksManager';
 import { apiPost } from '@map/util/HttpApi';
 import { readUploadedInfo } from '../../util/infoFile';
 import { findRequest } from '../../util/requests';
-import { CLOUD_FOLDER, CLOUD_TRACK_NAME, WPT_GROUP, createCtx, createTrack } from '../../util/fixtures/tracks';
+import {
+    CLOUD_FOLDER,
+    CLOUD_TRACK_NAME,
+    LOGGED_IN,
+    WPT_GROUP,
+    createCtx,
+    createTrack,
+} from '../../util/fixtures/tracks';
 
 const UPDATE_TIME = 1800000000000;
 const GPX_DATA = '<gpx></gpx>';
@@ -30,7 +37,7 @@ beforeEach(() => {
 function saveToCloud(ctx, currentFolder = CLOUD_FOLDER) {
     return saveTrackToCloud({
         ctx,
-        ltx: { loginUser: 'osmand@grr.la' },
+        ltx: LOGGED_IN,
         currentFolder,
         fileName: NEW_TRACK_NAME,
         type: 'GPX',

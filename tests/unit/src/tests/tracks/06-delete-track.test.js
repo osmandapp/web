@@ -2,9 +2,7 @@ import { deleteTrack, deleteTrackFolder, deleteTracksFromMap } from '@map/manage
 import { apiGet, apiPost } from '@map/util/HttpApi';
 import { findRequest } from '../../util/requests';
 import { createTrackGroups, findGroupByName } from '@map/manager/track/TracksManager';
-import { createCtx } from '../../util/fixtures/tracks';
-
-const LOGGED_IN = { loginUser: 'osmand@grr.la' };
+import { createCtx, LOGGED_IN } from '../../util/fixtures/tracks';
 
 function cloudCtx() {
     return createCtx({ uniqueFiles: [{ name: 'Folder/Track.gpx', type: 'GPX' }] });
@@ -44,6 +42,15 @@ describe('deleteTrack', () => {
         const files = { 'Folder/Track.gpx': { url: 'http://track' } };
         mutate(files);
         expect(files['Folder/Track.gpx']).toEqual({ url: null, delete: true });
+    });
+
+    test('a local track is deleted from the local list only, the cloud is not asked', async () => {
+        const ctx = createCtx({ track: { name: 'Local' }, cloud: false });
+
+        await deleteTrack({ file: null, ctx, ltx: LOGGED_IN });
+
+        expect(ctx.localTracks).toEqual([]);
+        expect(apiPost).not.toHaveBeenCalled();
     });
 
     test('nothing happens without a logged in user', async () => {

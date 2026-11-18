@@ -556,6 +556,18 @@ export async function hoverBy(lat, lon) {
     await driver.actions({ async: true }).move({ origin: 'viewport', x: xAbs, y: yAbs }).perform();
 }
 
+export async function getOpenTrackName() {
+    const actions = await waitBy(By.css('[id^="se-actions-"]'));
+
+    return (await actions.getAttribute('id')).replace('se-actions-', '');
+}
+
+export async function validateEnabled(id, enabled) {
+    await enclose(async () => (await (await waitBy(By.id(id))).isEnabled()) === enabled, {
+        tag: `${id} ${enabled ? 'enabled' : 'disabled'}`,
+    });
+}
+
 export async function dragBy([fromLat, fromLon], [toLat, toLon]) {
     await actionIdleWait({ tiles: true });
     const from = await getMapCoords(fromLat, fromLon);
@@ -634,6 +646,10 @@ export async function getMarker(lat, lon, { optional = false } = {}) {
 
 export function pointsCount(n) {
     return new RegExp(`Points: ${n}\\b`);
+}
+
+export async function matchPointsCount(n) {
+    await matchTextBy(By.id('se-track-context-menu'), pointsCount(n));
 }
 
 export async function waitNoPointsCount() {

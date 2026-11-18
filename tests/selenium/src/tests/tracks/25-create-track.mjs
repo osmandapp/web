@@ -6,6 +6,7 @@ import {
     dragBy,
     enclose,
     getMarkersNear,
+    getOpenTrackName,
     getTextBy,
     getTrackLines,
     hoverBy,
@@ -13,6 +14,7 @@ import {
     matchTextBy,
     pointsCount,
     setMapCenter,
+    validateEnabled,
     waitBy,
     waitByRemoved,
     waitNoPointsCount,
@@ -47,6 +49,7 @@ const INSERTED_POINT = [50.4925, 30.515];
 const MOVED_POINT = [50.4925, 30.512];
 const MOVED_FIRST_POINT = [50.4895, 30.517];
 const AWAY_FROM_ROUTE = [50.4925, 30.505];
+const LAST_POINT = [50.4965, 30.515];
 
 const PLAIN_TRACK = 'test-track-trkpt';
 const PLAIN_TRACK_POINTS = 1460;
@@ -98,6 +101,8 @@ export default async function test() {
     await deleteAllPoints();
     await editSegments();
     await dragPoints();
+    await undoRedo();
+    await closeTrack();
     await addPointsToPlainTrack();
 
     await actionFinish();
@@ -113,6 +118,8 @@ async function createEmptyTrack() {
     await setMapCenter(lat, lng);
     await leftClickBy(lat, lng);
     await validateInfoBlockStrings([pointsCount(1)]);
+    await validateEnabled('se-panel-button-undo', false);
+    await validateEnabled('se-panel-button-redo', false);
 }
 
 async function addSquarePoints() {
@@ -257,6 +264,42 @@ async function dragPoints() {
     await waitRoutedLines(routedLines + 1);
     await validateRouteDirection(MOVED_FIRST_POINT, MOVED_POINT);
     await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 1)]);
+
+    // a routed track shows its turns
+    await waitBy(By.css("[testid='se-tab-turns']"));
+}
+
+// Undo takes back the last drag with its route, Redo brings it again, a new point drops the steps to redo
+async function undoRedo() {
+    const [, second] = SQUARE_ROUTE_POINTS;
+
+    await clickBy(By.id('se-panel-button-undo'));
+    await validateRoutePoint(...MOVED_FIRST_POINT, false);
+    await validateRoutePoint(...second, true);
+    await validateRouteDirection(second, MOVED_POINT);
+    await validateEnabled('se-panel-button-redo', true);
+
+    await clickBy(By.id('se-panel-button-redo'));
+    await validateRoutePoint(...MOVED_FIRST_POINT, true);
+    await validateRouteDirection(MOVED_FIRST_POINT, MOVED_POINT);
+
+    await clickBy(By.id('se-panel-button-undo'));
+    await validateRoutePoint(...second, true);
+    await leftClickBy(...LAST_POINT);
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length)]);
+    await validateEnabled('se-panel-button-redo', false);
+}
+
+// Back closes the editor and takes the track off the map, the track keeps its points
+async function closeTrack() {
+    const name = await getOpenTrackName();
+
+    await clickBy(By.id('se-button-back'));
+    await waitByRemoved(By.id('se-panel-button-undo'));
+    await enclose(async () => (await getTrackLines()).length === 0, { tag: 'no lines of the closed track' });
+
+    await clickBy(By.id('se-local-track-' + name));
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length)]);
 }
 
 async function addPointsToPlainTrack() {
@@ -293,6 +336,14 @@ async function addPointsToPlainTrack() {
     await waitRoutedLines(routedLines + 1);
     await validateLine(EXTENDED_TRACK_POINTS);
     await enclose(async () => (await getDistance()) > lineDistance, { tag: 'distance after the routed segment' });
+
+    // Back leaves the track opened from the list on the map, its switch takes it off, the points are kept
+    await clickBy(By.id('se-button-back'));
+    await waitByRemoved(By.id('se-panel-button-undo'));
+    await clickBy(By.css(`[id="se-local-track-${PLAIN_TRACK}"] .MuiSwitch-root`));
+    await enclose(async () => (await getTrackLines()).length === 0, { tag: 'no lines of the track switched off' });
+    await clickBy(By.id('se-local-track-' + PLAIN_TRACK));
+    await validateInfoBlockStrings([pointsCount(3)]);
 }
 
 async function saveLocalToCloud({ name = null, overwrite = false } = {}) {

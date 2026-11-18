@@ -1,5 +1,5 @@
 import { By } from 'selenium-webdriver';
-import { clickBy, matchTextBy, pointsCount, waitRoutedLines } from '../../lib.mjs';
+import { clickBy, matchPointsCount, waitRoutedLines } from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionCreateRoute, { SQUARE_ROUTE_POINTS } from '../../actions/tracks/actionCreateRoute.mjs';
@@ -21,12 +21,12 @@ export default async function test() {
 
     // the point after a gap is deleted: the gap stretches to the next point, nothing is routed
     await actionDeletePoint(SQUARE_ROUTE_POINTS[2]);
-    await matchTextBy(By.id('se-track-context-menu'), pointsCount(3));
+    await matchPointsCount(3);
     await waitRoutedLines(routedLines - 2);
 
     // the gap point is deleted: the gap passes to the previous point, nothing is routed
     await actionDeletePoint(SQUARE_ROUTE_POINTS[1]);
-    await matchTextBy(By.id('se-track-context-menu'), pointsCount(2));
+    await matchPointsCount(2);
     await waitRoutedLines(routedLines - 3);
 
     await actionFinish();
