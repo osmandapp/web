@@ -164,7 +164,7 @@ export default function TravelTrackReview() {
                         <Box className={styles.travelReviewButtons}>
                             <PrimaryBtn
                                 id="se-travel-review-send"
-                                text={t('web:travel_review_send')}
+                                text={view?.mine ? t('web:shared_string_update') : t('shared_string_add')}
                                 action={() => saveReview(verdict)}
                                 disabled={!verdict || saving}
                                 span={true}
