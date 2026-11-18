@@ -65,12 +65,12 @@ The dedicated **Star map screen** shows interactive celestial dome with stars, c
 - [**Search**](#search) — opens the Search screen where you can search for celestial objects and browse sky catalogs and categories. 
 - **Time and date** — lets you change the date and time to observe the sky at different moments in the past or future. This is useful for planning observations, tracking object movement, or learning how the sky changes over time. If you set a custom date/time, the chip shows the full date and time, and a reset button appears next to it to return to the current system time.
 - **<Translate android="true" ids="magnitude_filter"/>** — allows you to limit which stars are displayed based on their brightness. Use the slider to set the maximum magnitude value. Lower values show only the brightest stars, while higher values reveal dimmer stars and deep-sky objects. This helps reduce visual clutter or simulate what is visible to the naked eye.
-- **<Translate android="true" ids="zoomIn"/> / <Translate android="true" ids="zoomOut"/>** — change the Star map scale smoothly, one step per tap. The buttons are shown on tablets in one column above the <Translate android="true" ids="magnitude_filter"/> button.
+- **<Translate android="true" ids="zoomIn"/> / <Translate android="true" ids="zoomOut"/>** — change the Star map scale smoothly, one step per tap. The buttons are shown on Android tablets and on Mac, in one column above the <Translate android="true" ids="magnitude_filter"/> button.
 - [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — opens display settings that control how objects, paths, and reference lines are shown on the Star map.
 
 The screen renders the full sky hemisphere above your location, aligned with the compass direction. The Star map can be rotated manually by dragging the screen. After a quick swipe, the sky keeps moving for a moment and then gradually slows down. Manual rotation of the Star map does not affect the orientation of the Earth map. The Earth map always follows the [map orientation mode](../map/interact-with-map.md#map-orientation-modes) selected in your settings. Tap celestial objects for details like magnitude, rising/setting times or paths.
 
-The Star map keeps its last view. When you open it again, including after restarting the app, it shows the same direction, zoom level, and 2D or 3D mode as when you closed it.
+The Star map keeps its last view. When you open it again, including after restarting the app, it shows the same direction and zoom level as when you closed it.
 
 The Star map can also align with your device orientation when compass mode is enabled. In this mode, the sky rotates according to the device's accelerometer and compass sensors, allowing you to explore the sky by physically moving your phone.
 
@@ -193,7 +193,7 @@ Below the graph, important observation events are displayed:
 - **<Translate android="true" ids="astro_culmination"/>** – when the object reaches its highest altitude.
 - **<Translate android="true" ids="astro_set"/>** – when the object sets below the horizon. If the object never rises or never sets, the corresponding values are hidden.
 
-The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph. The location is displayed as a city name. On iOS, the city name is followed by the time zone of the displayed times, for example, `Canberra (6.38 km) · Kyiv time (UTC+3)`. All times on the Visibility tab are shown in your device's time zone. If the clocks change during the displayed day, both UTC offsets are shown, for example, `UTC+3 → UTC+2`.
+The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph. The location is displayed as a city name. On iOS, the city name is followed by the time zone of the displayed times, for example, `Canberra · Kyiv time (UTC+2)`. All times on the Visibility tab are shown in your device's time zone. If the clocks change during the displayed day, both UTC offsets are shown, for example, `UTC+3 → UTC+2`.
 
 ### Observation Schedule {#observation-schedule}
 
