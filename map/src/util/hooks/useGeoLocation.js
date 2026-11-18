@@ -7,19 +7,54 @@ export function useGeoLocation(ctx, useHighPrecision = true) {
     const [loc, setLoc] = useState(null);
 
     useEffect(() => {
-        if (ctx.stopUseGeoLocation === false) {
-            const fetchData = async () => {
-                // the browser keeps silent until the prompt is answered - the map center is used meanwhile
-                if (await needsLocationFallback()) {
-                    setLoc(LOCATION_UNAVAILABLE);
-                }
-                const coord = await getCoordinates();
+        let cancelled = false;
+        let resetCount = 0;
+        let permission = null;
+
+        const requestCoordinates = async () => {
+            const resetCountAtStart = resetCount;
+            const coord = await getCoordinates();
+            if (!cancelled && resetCount === resetCountAtStart) {
                 setLoc(coord);
-            };
-            fetchData().then();
-        } else {
-            setLoc(LOCATION_UNAVAILABLE);
-        }
+            }
+        };
+
+        const onPermissionChange = () => {
+            if (permission.state === 'denied') {
+                ctx.setStopUseGeoLocation(true);
+            } else if (permission.state === 'prompt') {
+                resetCount++;
+                setLoc(LOCATION_UNAVAILABLE);
+            } else if (permission.state === 'granted') {
+                if (ctx.stopUseGeoLocation) {
+                    ctx.setStopUseGeoLocation(false);
+                } else {
+                    requestCoordinates().then();
+                }
+            }
+        };
+
+        const fetchData = async () => {
+            permission = await queryLocationPermission();
+            if (cancelled) return;
+            permission?.addEventListener('change', onPermissionChange);
+            if (ctx.stopUseGeoLocation) {
+                setLoc(LOCATION_UNAVAILABLE);
+                return;
+            }
+            // the browser keeps silent until the prompt is answered - the map center is used meanwhile
+            if (permission?.state !== 'granted') {
+                setLoc(LOCATION_UNAVAILABLE);
+            }
+            await requestCoordinates();
+        };
+
+        fetchData().then();
+
+        return () => {
+            cancelled = true;
+            permission?.removeEventListener('change', onPermissionChange);
+        };
     }, [ctx.stopUseGeoLocation]);
 
     function getCoordinates() {
@@ -54,10 +89,10 @@ export function useGeoLocation(ctx, useHighPrecision = true) {
 }
 
 // only a granted permission is answered without a prompt; an unknown state is treated as a prompt
-async function needsLocationFallback() {
+async function queryLocationPermission() {
     try {
-        return (await navigator.permissions?.query({ name: 'geolocation' }))?.state !== 'granted';
+        return await navigator.permissions?.query({ name: 'geolocation' });
     } catch {
-        return true;
+        return null;
     }
 }
