@@ -104,7 +104,7 @@ For more details, see the [Popular Places](../map/popular_places.md#explore-in-s
 
 ![History section](@site/static/img/search/history_section_list.webp)
 
-The **History** section of the Explore tab displays up to 25 most recent items. Tap the section title to collapse or expand it. Tap *View all* to open the full *History* screen.
+The **History** section of the Explore tab displays up to 25 most recent items. The section is expanded by default. Tap the section title to collapse or expand it; OsmAnd remembers your choice. Tap *View all* to open the full *History* screen.
 
 If both *Search history* and *Navigation history* are turned off, the section displays the *History is turned off* card. Tap *Open History settings* to enable them.
 
