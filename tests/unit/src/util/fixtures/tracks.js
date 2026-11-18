@@ -88,6 +88,14 @@ export function createRoutedPoint(i, { profile } = {}) {
     return createEditorPoint(i, { profile, geometry: [createEditorPoint(i - 1), createEditorPoint(i)] });
 }
 
+/** Plain track of the editor with a gap after point `gapAt`, as a plain gpx of several segments is loaded. */
+export function createPlainGapPoints(n, gapAt) {
+    const points = createPlainPoints(n);
+    points[gapAt].profile = TracksManager.PROFILE_GAP;
+
+    return points;
+}
+
 /** Routed track of the editor: every point but the first carries the geometry of the segment leading to it. */
 export function createRoutedPoints(n) {
     return Array.from({ length: n }, (_, i) =>
