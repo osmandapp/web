@@ -619,6 +619,16 @@ export async function getMarker(lat, lon, { optional = false } = {}) {
     }
 }
 
+export function pointsCount(n) {
+    return new RegExp(`Points: ${n}\\b`);
+}
+
+export async function waitNoPointsCount() {
+    await enclose(async () => !/Points:/.test(await getTextBy(By.id('se-track-context-menu'))), {
+        tag: 'no point count',
+    });
+}
+
 export async function getTrackLines() {
     return await driver.executeScript(`
         return Object.values(window.__leafletMap._layers)

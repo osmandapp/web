@@ -1,38 +1,31 @@
 import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 import {
-    clickBy,
     enclose,
     getMarkersNear,
     hoverBy,
     matchTextBy,
-    rightClickBy,
+    pointsCount,
     setMapCenter,
     waitRoutedLines,
 } from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import actionCreateRoute from '../../actions/tracks/actionCreateRoute.mjs';
+import actionCreateRoute, { ROUTE_POINTS } from '../../actions/tracks/actionCreateRoute.mjs';
+import actionDeletePoint from '../../actions/tracks/actionDeletePoint.mjs';
 import ignoreTest from '../../actions/actionIgnoreTest.mjs';
-
-const POINTS = [
-    [50.492409, 30.525041],
-    [50.496149, 30.514956],
-    [50.501308, 30.514183],
-];
 
 export default async function test() {
     ignoreTest();
 
     await actionOpenMap('#15/50.4946/30.5220');
-    await actionCreateRoute(POINTS);
+    await actionCreateRoute(ROUTE_POINTS);
 
     // a line drawn after a click offers a new point under the cursor
     await validateNewPointOnLine();
 
-    await rightClickBy(...POINTS[1]);
-    await clickBy(By.id('se-point-context-menu-delete'));
-    await matchTextBy(By.id('se-track-context-menu'), /Points: 2\b/);
+    await actionDeletePoint(ROUTE_POINTS[1]);
+    await matchTextBy(By.id('se-track-context-menu'), pointsCount(2));
     await waitRoutedLines(1);
 
     // so does the line left by a deleted point

@@ -206,7 +206,11 @@ export default function PointContextMenu({ anchorEl }) {
                 {showJoinBefore() && <MenuItem onClick={joinBefore}>Join before</MenuItem>}
                 {showProfileBefore() && <MenuItem onClick={changeProfileBefore}>Profile before</MenuItem>}
                 {showTrimAfter() && <MenuItem onClick={trimAfter}>Trim after</MenuItem>}
-                {showSplitAfter() && <MenuItem onClick={splitAfter}>Split after</MenuItem>}
+                {showSplitAfter() && (
+                    <MenuItem id="se-point-context-menu-split-after" onClick={splitAfter}>
+                        Split after
+                    </MenuItem>
+                )}
                 {showJoinAfter() && <MenuItem onClick={joinAfter}>Join after</MenuItem>}
                 {showProfileAfter() && <MenuItem onClick={changeProfileAfter}>Profile after</MenuItem>}
             </div>
