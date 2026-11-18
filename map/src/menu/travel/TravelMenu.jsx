@@ -69,7 +69,7 @@ export const OSM_GPX_ABORT_KEYS = {
     reviews: 'osmgpx-reviews',
 };
 
-export const TRAVEL_REVIEWS_URL = `${process.env.REACT_APP_USER_API_SITE}/api/pubtracks`;
+export const TRAVEL_REVIEWS_URL = `${process.env.REACT_APP_USER_API_SITE}/api/pubtracks`; // Reviews require auth.
 export const OSM_TRACES_URL = 'https://www.openstreetmap.org/traces';
 const UPLOAD_TRACK_DOCS_URL = 'https://osmand.net/docs/user/plugins/osm-editing#upload-gps-track';
 

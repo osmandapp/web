@@ -52,10 +52,9 @@ module.exports = function (app) {
         routing = maptileProxy;
         search = maptileProxy;
         weather = maptileProxy;
+        osmgpx = maptileProxy;
         mapapi = mainProxy;
         others = mainProxy;
-        // TODO switch to mainProxy later
-        osmgpx = testProxy;
         share = mainProxy;
         fs = mainProxy;
     }
@@ -68,8 +67,10 @@ module.exports = function (app) {
     app.use('/search/', search);
     app.use('/routing/', routing);
     app.use('/weather-api/', weather);
+
     app.use('/osmgpx/', osmgpx);
-    app.use('/api/pubtracks/', osmgpx);
+    app.use('/api/pubtracks/', mapapi); // OsmGpx reviews require auth (mainProxy)
+
     // app.use('/weather/', weather); // defined-by-env
     app.use('/online-routing-providers.json', others); // osrm-providers
     app.use('/share/', share);
