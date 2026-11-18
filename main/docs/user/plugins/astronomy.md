@@ -158,7 +158,7 @@ Below the object information, the Context Menu provides several actions for inte
 
 <TabItem value="ios" label="iOS">
 
-![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios_new.webp)
 
 </TabItem>
 
@@ -193,7 +193,7 @@ Below the graph, important observation events are displayed:
 - **<Translate android="true" ids="astro_culmination"/>** – when the object reaches its highest altitude.
 - **<Translate android="true" ids="astro_set"/>** – when the object sets below the horizon. If the object never rises or never sets, the corresponding values are hidden.
 
-The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph. The location is displayed as a city name.
+The graph opens with the indicator positioned at the current system time. The location used for calculations is shown below the graph. The location is displayed as a city name. On iOS, the city name is followed by the time zone of the displayed times, for example, `Canberra (6.38 km) · Kyiv time (UTC+3)`. All times on the Visibility tab are shown in your device's time zone. If the clocks change during the displayed day, both UTC offsets are shown, for example, `UTC+3 → UTC+2`.
 
 ### Observation Schedule {#observation-schedule}
 
@@ -207,7 +207,7 @@ The graph opens with the indicator positioned at the current system time. The lo
 
 <TabItem value="ios" label="iOS">
 
-![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios_new.webp)
 
 </TabItem>
 
@@ -223,6 +223,8 @@ The **Schedule** tab displays the visibility of the selected object for the curr
 The mini graph shows when the object is visible during the day and how its altitude changes. The colored section of the bar represents the period when the object is above the horizon. The mini graph represents the time range from 00:00 to 23:59 for the selected day.
 
 You can navigate between weeks using the arrow buttons in the Schedule header. The calendar button allows you to return to the current week.
+
+On iOS, the note below the schedule shows the time zone of the displayed times, for example, `Kyiv time (UTC+3)`. All times on the Schedule tab are shown in your device's time zone. If the clocks change during the displayed week, both UTC offsets are shown.
 
 <!--
 ## Celestial Object Info {#celestial-object-info}
