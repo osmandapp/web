@@ -4,13 +4,16 @@ import actionFinish from '../../actions/actionFinish.mjs';
 import {
     clickBy,
     enclose,
+    getMarkersNear,
     getTextBy,
+    getTrackLines,
     leftClickBy,
     matchTextBy,
     rightClickBy,
     setMapCenter,
     waitBy,
     waitByRemoved,
+    waitRoutedLines,
 } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
@@ -19,17 +22,31 @@ import { deleteTrack } from '../../util.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 import actionUploadGpx from '../../actions/actionUploadGpx.mjs';
+import actionCreateRoute from '../../actions/tracks/actionCreateRoute.mjs';
 
 const TRACK_NAME = 'se-test-create-track';
 
 const strings3 = [/Points: 3/, /Distance: [1-9]\.[0-9]+ km/];
 const strings4 = [/Points: 4/, /Distance: [1-9]\.[0-9]+ km/];
 
+const ROUTE_POINTS = [
+    [50.492409, 30.525041],
+    [50.496149, 30.514956],
+    [50.501308, 30.514183],
+];
+
 const EDITOR_PANEL_BUTTONS = [
     'se-panel-button-change-profile',
     'se-panel-button-undo',
     'se-panel-button-redo',
     'se-panel-button-delete-track',
+];
+
+const NEW_TRACK_POINTS = [
+    [50.49, 30.51],
+    [50.49, 30.52],
+    [50.495, 30.52],
+    [50.495, 30.51],
 ];
 
 const PLAIN_TRACK = 'test-track-trkpt';
@@ -46,20 +63,11 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-tracks'));
 
     // Create local track with 3 points
-    await rightClickBy(50.492409, 30.525041);
-    await waitBy(By.id('se-context-menu'));
-    await clickBy(By.id('se-create-route-action'));
-
-    await leftClickBy(50.496149, 30.514956);
-    await leftClickBy(50.501308, 30.514183);
-
-    await waitBy(By.className('leaflet-interactive'));
-    await waitBy(By.id('se-track-context-menu'));
+    await actionCreateRoute(ROUTE_POINTS);
     await validateInfoBlockStrings(strings3);
-    await validateRoutedLines(2);
 
     // a click on the map while the menu of a point is open adds no point
-    await rightClickBy(50.496149, 30.514956);
+    await rightClickBy(...ROUTE_POINTS[1]);
     await waitBy(By.id('se-point-context-menu'));
     await leftClickBy(50.494, 30.53);
     await waitByRemoved(By.id('se-point-context-menu'));
@@ -86,6 +94,7 @@ export default async function test() {
     await deleteTrack(TRACK_NAME);
 
     await createEmptyTrack();
+    await deletePoints();
     await addPointsToPlainTrack();
 
     await actionFinish();
@@ -97,22 +106,50 @@ async function createEmptyTrack() {
     for (const id of EDITOR_PANEL_BUTTONS) {
         await waitBy(By.id(id));
     }
-    await setMapCenter(50.49, 30.51);
-    await leftClickBy(50.49, 30.51);
-    await validateInfoBlockStrings([/Points: 1\b/]);
+    const [lat, lng] = NEW_TRACK_POINTS[0];
+    await setMapCenter(lat, lng);
+    await leftClickBy(lat, lng);
+    await validateInfoBlockStrings([pointsCount(1)]);
+}
+
+async function deletePoints() {
+    for (const [lat, lng] of NEW_TRACK_POINTS.slice(1)) {
+        await leftClickBy(lat, lng);
+    }
+    await validateInfoBlockStrings([pointsCount(NEW_TRACK_POINTS.length)]);
+    const routedLines = await waitRoutedLines();
+
+    // a middle point deleted from its menu is gone, its neighbours are routed anew
+    const [middleLat, middleLng] = NEW_TRACK_POINTS[1];
+    await validateRoutePoint(middleLat, middleLng, true);
+    await rightClickBy(middleLat, middleLng);
+    await clickBy(By.id('se-point-context-menu-delete'));
+    await validateInfoBlockStrings([pointsCount(NEW_TRACK_POINTS.length - 1)]);
+    await validateRoutePoint(middleLat, middleLng, false);
+    await waitRoutedLines(routedLines - 1);
+
+    // the delete button of a row in the Track tab deletes the point of that row
+    const [firstLat, firstLng] = NEW_TRACK_POINTS[0];
+    await validateRoutePoint(firstLat, firstLng, true);
+    await clickBy(By.css("[testid='se-tab-track']"));
+    await clickBy(By.id('se-track-point-delete-0'));
+    await clickBy(By.css("[testid='se-tab-overview']"));
+    await validateInfoBlockStrings([pointsCount(NEW_TRACK_POINTS.length - 2)]);
+    await validateRoutePoint(firstLat, firstLng, false);
+    await waitRoutedLines(routedLines - 2);
 }
 
 async function addPointsToPlainTrack() {
     await actionUploadGpx({ mask: PLAIN_TRACK + '.gpx' });
     await clickBy(By.id('se-local-track-' + PLAIN_TRACK));
     await waitBy(By.id('se-panel-button-undo'), { idle: true });
-    await validateInfoBlockStrings([`Points: ${PLAIN_TRACK_POINTS}`]);
+    await validateInfoBlockStrings([pointsCount(PLAIN_TRACK_POINTS)]);
     await setMapCenter(50.0191, 19.8397);
     const recordedDistance = await getDistance();
 
     // a Line point extends the recorded line
     await leftClickBy(50.0132, 19.8493);
-    await validateInfoBlockStrings([`Points: ${EXTENDED_TRACK_POINTS}`]);
+    await validateInfoBlockStrings([pointsCount(EXTENDED_TRACK_POINTS)]);
     await validateLine(EXTENDED_TRACK_POINTS);
     await enclose(async () => (await getDistance()) > recordedDistance, { tag: 'distance after a Line point' });
     const lineDistance = await getDistance();
@@ -127,15 +164,15 @@ async function addPointsToPlainTrack() {
     await leftClickBy(50.025, 19.83);
     await clickBy(By.id('se-add-routing-dialog-cancel'));
     await waitByRemoved(By.id('se-add-routing-dialog'));
-    await validateInfoBlockStrings([`Points: ${EXTENDED_TRACK_POINTS}`]);
+    await validateInfoBlockStrings([pointsCount(EXTENDED_TRACK_POINTS)]);
 
     // Continue puts the recorded points into one segment and routes the new one
-    const routedLines = (await getTrackLines()).filter((line) => line.size > 2).length;
+    const routedLines = await waitRoutedLines();
     await leftClickBy(50.025, 19.83);
     await clickBy(By.id('se-add-routing-dialog-continue'));
     await waitByRemoved(By.id('se-add-routing-dialog'));
-    await validateInfoBlockStrings([/Points: 3\b/]);
-    await validateRoutedLines(routedLines + 1);
+    await validateInfoBlockStrings([pointsCount(3)]);
+    await waitRoutedLines(routedLines + 1);
     await validateLine(EXTENDED_TRACK_POINTS);
     await enclose(async () => (await getDistance()) > lineDistance, { tag: 'distance after the routed segment' });
 }
@@ -162,26 +199,20 @@ async function validateInfoBlockStrings(strings) {
     }
 }
 
-async function validateRoutedLines(count) {
-    await enclose(
-        async () => {
-            const lines = await getTrackLines();
-            return !lines.some((line) => line.dashed) && lines.filter((line) => line.size > 2).length === count;
-        },
-        { tag: 'routed segments' }
-    );
-}
-
 async function validateLine(size) {
     await enclose(async () => (await getTrackLines()).some((line) => line.size === size), { tag: `line of ${size}` });
 }
 
-async function getTrackLines() {
-    return await driver.executeScript(`
-        return Object.values(window.__leafletMap._layers)
-            .filter((layer) => typeof layer.getLatLngs === 'function' && layer.options.type === 'localTracksLayers')
-            .map((layer) => ({ size: layer.getLatLngs().flat(Infinity).length, dashed: !!layer.options.dashArray }));
-    `);
+async function validateRoutePoint(lat, lng, present) {
+    const isOnMap = async () =>
+        (await getMarkersNear(lat, lng)).some(
+            (marker) => marker.type === 'localTracksLayers' && marker.draggable && marker.title !== 'poly'
+        );
+    await enclose(async () => (await isOnMap()) === present, { tag: `route point ${lat}, ${lng}` });
+}
+
+function pointsCount(n) {
+    return new RegExp(`Points: ${n}\\b`);
 }
 
 async function getDistance() {

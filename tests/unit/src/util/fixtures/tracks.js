@@ -1,4 +1,5 @@
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '@map/context/AppContext';
+import TracksManager, { PROFILE_LINE } from '@map/manager/track/TracksManager';
 
 export const CLOUD_FOLDER = 'Folder';
 export const CLOUD_TRACK_NAME = 'Folder/Track.gpx';
@@ -86,6 +87,33 @@ export function createRoutedPoints(n) {
     return Array.from({ length: n }, (_, i) =>
         createEditorPoint(i, { geometry: i === 0 ? [] : [createEditorPoint(i - 1), createEditorPoint(i)] })
     );
+}
+
+/** Routed track of the editor with a gap after point `gapAt`, as Split leaves it: nothing leads to the next point. */
+export function createGapPoints(n, gapAt) {
+    const points = createRoutedPoints(n);
+    points[gapAt].profile = TracksManager.PROFILE_GAP;
+    points[gapAt].geometry.at(-1).profile = TracksManager.PROFILE_GAP;
+    points[gapAt + 1].geometry = [];
+
+    return points;
+}
+
+/** Recorded geometry of a protected piece from editor point `from` to `to`: `size` vertices along the meridian. */
+export function createRecordedGeometry(from, to, size = 4) {
+    return Array.from({ length: size }, (_, k) => {
+        const { lat, lng } = createEditorPoint(from + ((to - from) * k) / (size - 1));
+        return { lat, lng };
+    });
+}
+
+/** Editor track as Continue of "Add segment with routing" leaves it: a recorded piece from point 0 to 1, a route to 2. */
+export function createRecordedThenRoutedPoints() {
+    return [
+        createEditorPoint(0, { profile: PROFILE_LINE, geometry: [] }),
+        createEditorPoint(1, { geometry: createRecordedGeometry(0, 1) }),
+        createEditorPoint(2, { geometry: [createEditorPoint(1), createEditorPoint(2)] }),
+    ];
 }
 
 /** Track point `meters` north of 50° along the meridian, as `getDistance` (R = 6372.8 km) measures it. */

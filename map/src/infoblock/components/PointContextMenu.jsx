@@ -198,7 +198,9 @@ export default function PointContextMenu({ anchorEl }) {
     const Buttons = () => {
         return (
             <div>
-                {<MenuItem onClick={deletePoint}>Delete point</MenuItem>}
+                <MenuItem id="se-point-context-menu-delete" onClick={deletePoint}>
+                    Delete point
+                </MenuItem>
                 {showTrimBefore() && <MenuItem onClick={trimBefore}>Trim before</MenuItem>}
                 {showSplitBefore() && <MenuItem onClick={splitBefore}>Split before</MenuItem>}
                 {showJoinBefore() && <MenuItem onClick={joinBefore}>Join before</MenuItem>}

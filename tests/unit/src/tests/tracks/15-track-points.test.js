@@ -1,8 +1,19 @@
 import PointManager from '@map/manager/PointManager';
+import TracksManager, { PROFILE_LINE } from '@map/manager/track/TracksManager';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
-import { createEditorCtx, createEditorPoint, createRoutedPoints } from '../../util/fixtures/tracks';
+import {
+    createEditorCtx,
+    createEditorPoint,
+    createGapPoints,
+    createPlainPoints,
+    createRecordedGeometry,
+    createRecordedThenRoutedPoints,
+    createRoutedPoints,
+} from '../../util/fixtures/tracks';
 
 TrackLayerProvider.createTempPolyline = () => ({ temp: true });
+
+const GAP = TracksManager.PROFILE_GAP;
 
 const plain = (n) => Array.from({ length: n }, (_, i) => createEditorPoint(i));
 const createCtx = (points) => createEditorCtx({ points });
@@ -47,6 +58,87 @@ describe('deletePoint', () => {
         expect(ctx.selectedGpxFile.points).toEqual([]);
         expect(ctx.selectedGpxFile.name).toBe('Local');
         expect(ctx.selectedGpxFile.tracks).toBeDefined();
+    });
+
+    test('a point without a profile is removed alone, nothing is routed', async () => {
+        for (const index of [0, 1, 2]) {
+            const ctx = createCtx(createPlainPoints(3));
+
+            await PointManager.deletePoint(index, ctx);
+
+            expect(ctx.selectedGpxFile.points).toEqual(createPlainPoints(3).filter((_, i) => i !== index));
+            expect(ctx.routingCache).toEqual({});
+        }
+    });
+
+    test.failing(
+        'a deleted gap point passes the gap to the previous point, its neighbours are not routed',
+        async () => {
+            const ctx = createCtx(createGapPoints(5, 2));
+
+            await PointManager.deletePoint(2, ctx);
+
+            const points = ctx.selectedGpxFile.points;
+            expect(lats(points)).toEqual([50, 50.01, 50.03, 50.04]);
+            expect(points[1].profile).toBe(GAP);
+            expect(points[1].geometry.at(-1).profile).toBe(GAP);
+            expect(points[2].geometry).toEqual([]);
+            expect(ctx.routingCache).toEqual({});
+        }
+    );
+
+    test.failing('a deleted point after a gap stretches the gap to the next point, nothing is routed', async () => {
+        const ctx = createCtx(createGapPoints(5, 2));
+
+        await PointManager.deletePoint(3, ctx);
+
+        const points = ctx.selectedGpxFile.points;
+        expect(lats(points)).toEqual([50, 50.01, 50.02, 50.04]);
+        expect(points[2].profile).toBe(GAP);
+        expect(points[3].geometry).toEqual([]);
+        expect(ctx.routingCache).toEqual({});
+    });
+
+    test('a point next to a recorded piece is replaced by a segment with the profile of the previous point', async () => {
+        const betweenPieces = createCtx([
+            createEditorPoint(0, { profile: PROFILE_LINE, geometry: [] }),
+            createEditorPoint(1, { profile: PROFILE_LINE, geometry: createRecordedGeometry(0, 1) }),
+            createEditorPoint(2, { geometry: createRecordedGeometry(1, 2) }),
+        ]);
+        const pieceAndRoute = createCtx(createRecordedThenRoutedPoints());
+
+        for (const ctx of [betweenPieces, pieceAndRoute]) {
+            await PointManager.deletePoint(1, ctx);
+
+            expect(lats(ctx.selectedGpxFile.points)).toEqual([50, 50.02]);
+            expect(ctx.selectedGpxFile.points[1].geometry).toEqual([]);
+            expect(Object.values(ctx.routingCache)).toMatchObject([
+                { startPoint: { lat: 50, profile: PROFILE_LINE }, endPoint: { lat: 50.02 }, geometry: null },
+            ]);
+        }
+    });
+
+    test('the first or the last point takes its recorded piece with it', async () => {
+        const first = createCtx(createRecordedThenRoutedPoints());
+
+        await PointManager.deletePoint(0, first);
+
+        expect(lats(first.selectedGpxFile.points)).toEqual([50.01, 50.02]);
+        expect(first.selectedGpxFile.points[0].geometry).toEqual([]);
+        expect(first.routingCache).toEqual({});
+
+        const routedGeometry = [createEditorPoint(0), createEditorPoint(1)];
+        const last = createCtx([
+            createEditorPoint(0, { geometry: [] }),
+            createEditorPoint(1, { profile: PROFILE_LINE, geometry: routedGeometry }),
+            createEditorPoint(2, { geometry: createRecordedGeometry(1, 2) }),
+        ]);
+
+        await PointManager.deletePoint(2, last);
+
+        expect(lats(last.selectedGpxFile.points)).toEqual([50, 50.01]);
+        expect(last.selectedGpxFile.points[1].geometry).toBe(routedGeometry);
+        expect(last.routingCache).toEqual({});
     });
 });
 

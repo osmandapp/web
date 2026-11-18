@@ -104,6 +104,7 @@ const PointsTab = ({ width }) => {
                         </ListItemText>
                         <ListItemAvatar>
                             <IconButton
+                                id={`se-track-point-delete-${index}`}
                                 x={{ mr: 1 }}
                                 onClick={(e) => {
                                     e.stopPropagation();

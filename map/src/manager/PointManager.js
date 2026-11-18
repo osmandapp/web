@@ -3,14 +3,7 @@ import Utils from '../util/Utils';
 import TrackLayerProvider from '../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../context/TracksRoutingCache';
 
-const deletePoint = async (index, ctx) => {
-    let currentTrack = ctx.localTracks.find((t) => t?.name === ctx.selectedGpxFile?.name);
-    if (currentTrack && TracksManager.getEditablePoints(currentTrack).length > 2 && !ctx.createTrack?.enable) {
-        await deletePointByIndex(currentTrack, index, ctx);
-    } else {
-        await deletePointByIndex(ctx.selectedGpxFile, index, ctx);
-    }
-};
+const deletePoint = (index, ctx) => deletePointByIndex(ctx.selectedGpxFile, index, ctx);
 
 function deleteWpt(ind, ctx, save = false) {
     ctx.setSelectedGpxFile((o) => {
