@@ -4,11 +4,14 @@ import { apiGet } from '@map/util/HttpApi';
 import { updateRouteBetweenPoints } from '@map/store/geoRouter/legacy/updateRouteBetweenPoints';
 import TracksManager, { isProtectedSegment, PROFILE_LINE } from '@map/manager/track/TracksManager';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
+import EditableMarker from '@map/map/util/creator/EditableMarker';
+import EditablePolyline from '@map/map/util/creator/EditablePolyline';
 import { PROFILE_BICYCLE, PROFILE_CAR, PROFILE_PEDESTRIAN } from '@map/store/geoRouter/profileConstants';
 import {
     createEditorCtx,
     createEditorPoint,
     createGapPoints,
+    createPlainGapPoints,
     createPlainPoints,
     createRecordedGeometry,
     createRecordedThenRoutedPoints,
@@ -25,6 +28,42 @@ const plain = (n) => Array.from({ length: n }, (_, i) => createEditorPoint(i));
 const createCtx = (points) => createEditorCtx({ points });
 
 const lats = (points) => points.map((p) => p.lat);
+
+// the map the editor draws on, as far as drawing and dragging use it
+const map = { getZoom: () => 15, hasLayer: () => false, removeLayer: () => {}, on: () => {}, off: () => {} };
+
+const createDragEvent = (point) => ({ target: { _latlng: L.latLng(point.lat, point.lng) } });
+
+const createDrawnCtx = (points) => {
+    const ctx = createCtx(points);
+    const layers = [];
+    TrackLayerProvider.parsePoints({ map, ctx, points, layers, draggable: true, hidden: true });
+    ctx.selectedGpxFile.layers = L.layerGroup(layers);
+    ctx.setRoutingNewSegments = jest.fn();
+
+    return ctx;
+};
+const drawnLines = (ctx) => TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
+const routedPairs = (ctx) =>
+    ctx.setRoutingNewSegments.mock.calls
+        .flatMap(([segments]) => segments)
+        .map(({ start, end }) => [start.lat, end.lat]);
+
+const dragPoint = (ctx, index, lat) => {
+    const track = ctx.selectedGpxFile;
+    const marker = new EditableMarker(null, ctx, null, null, track);
+    marker.dragStartPoint(createDragEvent(track.points[index]), track);
+    marker.dragEndPoint(createDragEvent({ lat, lng: track.points[index].lng }), track);
+};
+
+const insertPoint = (ctx, line, lat) => {
+    const track = ctx.selectedGpxFile;
+    const editable = new EditablePolyline(map, ctx, null, line, track);
+    editable.currentPolyline = L.stamp(line);
+    editable.dragStartNewPoint(createDragEvent({ lat, lng: 30 }), track);
+
+    return editable.dragEndNewPoint(createDragEvent({ lat, lng: 30 }), jest.fn(), track);
+};
 
 describe('deletePoint', () => {
     test('the neighbours of a deleted point are joined, a routed segment is routed again', async () => {
@@ -458,11 +497,7 @@ describe('changeProfile', () => {
     const { CHANGE_PROFILE_AFTER, CHANGE_PROFILE_ALL, CHANGE_PROFILE_BEFORE } = TracksManager;
 
     const createProfileCtx = (points, change, pointInd) => {
-        const ctx = createCtx(points);
-        const polylines = points
-            .filter((point) => point.geometry?.length > 0)
-            .map(({ geometry }) => L.polyline(geometry));
-        ctx.selectedGpxFile.layers.getLayers = () => polylines;
+        const ctx = createDrawnCtx(points);
         ctx.trackProfileManager = { change, pointInd };
 
         return ctx;
@@ -487,7 +522,7 @@ describe('changeProfile', () => {
             expect(profiles(ctx)).toEqual([PROFILE_CAR, PROFILE_BICYCLE, PROFILE_CAR, PROFILE_CAR]);
             expect(ctx.selectedGpxFile.points[1].geoProfile).toBe(BICYCLE);
             expect(cached(ctx)).toEqual([[50.01, 50.02, PROFILE_BICYCLE]]);
-            const dashed = ctx.selectedGpxFile.layers.getLayers().map((polyline) => !!polyline.options.dashArray);
+            const dashed = drawnLines(ctx).map((line) => !!line.options.dashArray);
             expect(dashed).toEqual([false, true, false]);
         }
     });
@@ -551,6 +586,194 @@ describe('changeProfile', () => {
 
             expect(profiles(ctx)).toEqual([PROFILE_BICYCLE]);
             expect(ctx.selectedGpxFile.points[0].geoProfile).toBe(BICYCLE);
+        }
+    });
+});
+
+describe('drag a point', () => {
+    test('a plain point is moved in its line, its elevation is dropped and the analysis is asked again', () => {
+        const points = createPlainPoints(3).map((point) => ({ ...point, ele: 100 }));
+        const ctx = createDrawnCtx(points);
+        const [line] = drawnLines(ctx);
+
+        dragPoint(ctx, 1, 50.015);
+
+        expect(lats(line.getLatLngs())).toEqual([50, 50.015, 50.02]);
+        expect(points[1].ele).toBeUndefined();
+        expect(ctx.selectedGpxFile.refreshAnalytics).toBe(true);
+        expect(ctx.setRoutingNewSegments).not.toHaveBeenCalled();
+    });
+
+    test.failing('a plain point of the first segment of a plain track is moved in its line', () => {
+        jest.spyOn(console, 'error').mockImplementation(() => {});
+        const ctx = createDrawnCtx(createPlainGapPoints(4, 1));
+        const [firstSegment] = drawnLines(ctx);
+
+        dragPoint(ctx, 0, 49.995);
+
+        expect(lats(firstSegment.getLatLngs())).toEqual([49.995, 50.01]);
+    });
+
+    test('a routed point sends both of its segments to the router as dashed lines', () => {
+        const ctx = createDrawnCtx(createRoutedPoints(3));
+        const points = ctx.selectedGpxFile.points;
+
+        dragPoint(ctx, 1, 50.015);
+
+        expect(points[1].lat).toBe(50.015);
+        expect(points[1].geometry).toEqual([]);
+        expect(points[2].geometry).toEqual([]);
+        expect(routedPairs(ctx)).toEqual([
+            [50, 50.015],
+            [50.015, 50.02],
+        ]);
+        expect(drawnLines(ctx).map((line) => !!line.options.dashArray)).toEqual([true, true]);
+        expect(ctx.trackState.update).toBe(true);
+    });
+
+    test('a segment with the Line profile moves its end vertex and is not routed', () => {
+        const lineBefore = createDrawnCtx([
+            createEditorPoint(0, { profile: PROFILE_LINE, geometry: [] }),
+            createRoutedPoint(1),
+            createRoutedPoint(2),
+        ]);
+
+        dragPoint(lineBefore, 1, 50.015);
+
+        expect(lats(lineBefore.selectedGpxFile.points[1].geometry)).toEqual([50, 50.015]);
+        expect(routedPairs(lineBefore)).toEqual([[50.015, 50.02]]);
+
+        const lineAfter = createDrawnCtx([
+            createEditorPoint(0, { geometry: [] }),
+            createRoutedPoint(1, { profile: PROFILE_LINE }),
+            createRoutedPoint(2),
+        ]);
+
+        dragPoint(lineAfter, 1, 50.015);
+
+        expect(lats(lineAfter.selectedGpxFile.points[2].geometry)).toEqual([50.015, 50.02]);
+        expect(routedPairs(lineAfter)).toEqual([[50, 50.015]]);
+    });
+
+    test('a recorded piece keeps its points and gets the dragged point as its last vertex', () => {
+        const ctx = createDrawnCtx(createRecordedThenRoutedPoints());
+        const points = ctx.selectedGpxFile.points;
+        const recorded = lats(points[1].geometry);
+
+        dragPoint(ctx, 1, 50.012);
+
+        expect(lats(points[1].geometry)).toEqual([...recorded.slice(0, -1), 50.012]);
+        expect(isProtectedSegment({ startPoint: points[0], endPoint: points[1] })).toBe(true);
+        expect(routedPairs(ctx)).toEqual([[50.012, 50.02]]);
+    });
+
+    test('the gap side of a dragged point stays untouched', () => {
+        const afterGap = createDrawnCtx(createGapPoints(4, 1));
+
+        dragPoint(afterGap, 2, 50.025);
+
+        expect(afterGap.selectedGpxFile.points[2].geometry).toEqual([]);
+        expect(routedPairs(afterGap)).toEqual([[50.025, 50.03]]);
+
+        const gap = createDrawnCtx(createGapPoints(4, 1));
+
+        dragPoint(gap, 1, 50.015);
+
+        expect(gap.selectedGpxFile.points[1].profile).toBe(GAP);
+        expect(gap.selectedGpxFile.points[2].geometry).toEqual([]);
+        expect(routedPairs(gap)).toEqual([[50, 50.015]]);
+    });
+
+    test('the first and the last point have one segment to route', () => {
+        const first = createDrawnCtx(createRoutedPoints(3));
+
+        dragPoint(first, 0, 49.995);
+
+        expect(first.selectedGpxFile.points[0].geometry).toEqual([]);
+        expect(routedPairs(first)).toEqual([[49.995, 50.01]]);
+
+        const last = createDrawnCtx(createRoutedPoints(3));
+
+        dragPoint(last, 2, 50.025);
+
+        expect(routedPairs(last)).toEqual([[50.01, 50.025]]);
+    });
+
+    test('a dragged waypoint gets its new place, the route points stay', () => {
+        const ctx = createDrawnCtx(createRoutedPoints(2));
+        const track = ctx.selectedGpxFile;
+        track.wpts = [{ lat: 50.005, lon: 30.001, name: 'wpt' }];
+        const marker = new EditableMarker(null, ctx, null, null, track);
+
+        marker.dragStartPoint(createDragEvent({ lat: 50.005, lng: 30.001 }), track);
+        marker.dragEndPoint(createDragEvent({ lat: 50.006, lng: 30.002 }), track);
+
+        expect(track.wpts[0]).toMatchObject({ lat: 50.006, lon: 30.002 });
+        expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(2));
+        expect(ctx.setRoutingNewSegments).not.toHaveBeenCalled();
+    });
+});
+
+describe('insert a point from the line', () => {
+    test('a point dropped on a plain line goes into the line and into the points at its place', async () => {
+        const ctx = createDrawnCtx(createPlainPoints(4));
+        const [line] = drawnLines(ctx);
+
+        await insertPoint(ctx, line, 50.015);
+
+        expect(lats(ctx.selectedGpxFile.points)).toEqual([50, 50.01, 50.015, 50.02, 50.03]);
+        expect(lats(line.getLatLngs())).toEqual([50, 50.01, 50.015, 50.02, 50.03]);
+        expect(ctx.selectedGpxFile.refreshAnalytics).toBe(true);
+    });
+
+    test.failing(
+        'a point dropped on the second segment of a plain track goes into that line at its place',
+        async () => {
+            const ctx = createDrawnCtx(createPlainGapPoints(5, 1));
+            const [, secondSegment] = drawnLines(ctx);
+
+            await insertPoint(ctx, secondSegment, 50.035);
+
+            expect(lats(secondSegment.getLatLngs())).toEqual([50.02, 50.03, 50.035, 50.04]);
+        }
+    );
+
+    test('a point dropped on a routed line takes the profile of the previous point, both new segments are routed', async () => {
+        const points = createRoutedPoints(3);
+        points[1].profile = PROFILE_BICYCLE;
+        const ctx = createDrawnCtx(points);
+        const [, segment] = drawnLines(ctx);
+
+        await insertPoint(ctx, segment, 50.015);
+
+        expect(lats(points)).toEqual([50, 50.01, 50.015, 50.02]);
+        expect(points[2]).toMatchObject({ profile: PROFILE_BICYCLE, geometry: [] });
+        expect(points[3].geometry).toEqual([]);
+        const dashedLines = drawnLines(ctx).filter((line) => line.options.dashArray);
+        expect(dashedLines.map((line) => lats(line.getLatLngs()))).toEqual([
+            [50.01, 50.015],
+            [50.015, 50.02],
+        ]);
+        expect(routedPairs(ctx)).toEqual([
+            [50.01, 50.015],
+            [50.015, 50.02],
+        ]);
+    });
+
+    test('the nearest segment of a line is the one the point lies on', () => {
+        const segments = createPlainPoints(4);
+
+        const nearest = new EditablePolyline().findTheNearestSegment({ point: { lat: 50.025, lng: 30 }, segments });
+
+        expect(nearest.index).toBe(2);
+        expect([nearest.start.lat, nearest.end.lat]).toEqual([50.02, 50.03]);
+    });
+
+    test('no line is drawn across a gap, imported or split, so no point can be dropped there', () => {
+        for (const points of [createGapPoints(4, 1), createPlainGapPoints(4, 1)]) {
+            const lines = drawnLines(createDrawnCtx(points)).map((line) => lats(line.getLatLngs()));
+
+            expect(lines).not.toContainEqual(expect.arrayContaining([50.01, 50.02]));
         }
     });
 });

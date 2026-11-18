@@ -3,10 +3,12 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import {
     clickBy,
+    dragBy,
     enclose,
     getMarkersNear,
     getTextBy,
     getTrackLines,
+    hoverBy,
     leftClickBy,
     matchTextBy,
     pointsCount,
@@ -40,6 +42,11 @@ const EDITOR_PANEL_BUTTONS = [
 ];
 
 const BICYCLE_COLOR = '#9053bd';
+
+const INSERTED_POINT = [50.4925, 30.515];
+const MOVED_POINT = [50.4925, 30.512];
+const MOVED_FIRST_POINT = [50.4895, 30.517];
+const AWAY_FROM_ROUTE = [50.4925, 30.505];
 
 const PLAIN_TRACK = 'test-track-trkpt';
 const PLAIN_TRACK_POINTS = 1460;
@@ -90,6 +97,7 @@ export default async function test() {
     await dragFirstPoint();
     await deleteAllPoints();
     await editSegments();
+    await dragPoints();
     await addPointsToPlainTrack();
 
     await actionFinish();
@@ -217,6 +225,40 @@ async function editSegments() {
     await validateRouteDirection(second, third);
 }
 
+// a point dropped from the line goes into the route, a dragged point is routed in its new place
+async function dragPoints() {
+    const [, second, third] = SQUARE_ROUTE_POINTS;
+    const routedLines = await waitRoutedLines();
+    const middle = await getRouteMiddle(second, third);
+
+    // hovering the line shows a marker to drag a new point from, leaving the line hides it
+    await hoverBy(middle.lat, middle.lng);
+    await validateLineMarker(middle, true);
+    await hoverBy(...AWAY_FROM_ROUTE);
+    await validateLineMarker(middle, false);
+
+    await dragBy([middle.lat, middle.lng], INSERTED_POINT);
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 1)]);
+    await validateRoutePoint(...INSERTED_POINT, true);
+    await waitRoutedLines(routedLines + 1);
+    await validateRouteDirection(second, INSERTED_POINT);
+    await validateRouteDirection(INSERTED_POINT, third);
+
+    await dragBy(INSERTED_POINT, MOVED_POINT);
+    await validateRoutePoint(...INSERTED_POINT, false);
+    await validateRoutePoint(...MOVED_POINT, true);
+    await waitRoutedLines(routedLines + 1);
+    await validateRouteDirection(second, MOVED_POINT);
+    await validateRouteDirection(MOVED_POINT, third);
+
+    // the first point has one segment to route
+    await dragBy(second, MOVED_FIRST_POINT);
+    await validateRoutePoint(...MOVED_FIRST_POINT, true);
+    await waitRoutedLines(routedLines + 1);
+    await validateRouteDirection(MOVED_FIRST_POINT, MOVED_POINT);
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 1)]);
+}
+
 async function addPointsToPlainTrack() {
     await actionUploadGpx({ mask: PLAIN_TRACK + '.gpx' });
     await clickBy(By.id('se-local-track-' + PLAIN_TRACK));
@@ -289,22 +331,40 @@ async function closeProfileDialog(button) {
     await waitByRemoved(By.id('se-change-profile-dialog'));
 }
 
-async function getRouteColor(from, to) {
-    const lines = await getTrackLines();
+async function getRouteMiddle(from, to) {
+    let middle;
+    await enclose(
+        async () => {
+            middle = (await getRoutedLine(from, to))?.middle;
+            return middle;
+        },
+        { tag: `route from ${from} to ${to}` }
+    );
 
-    return lines.find((line) => isRoutedLine(line, from, to))?.color;
+    return middle;
 }
 
-function isRoutedLine(line, from, to) {
-    const isNear = (point, [lat, lng]) => Math.abs(point.lat - lat) < 0.002 && Math.abs(point.lng - lng) < 0.002;
+async function validateLineMarker({ lat, lng }, visible) {
+    await enclose(
+        async () =>
+            (await getMarkersNear(lat, lng)).some((marker) => marker.title === 'poly' && marker.visible === visible),
+        { tag: `line marker ${visible ? 'shown' : 'hidden'}` }
+    );
+}
 
-    return !line.dashed && line.size > 2 && isNear(line.start, from) && isNear(line.end, to);
+async function getRouteColor(from, to) {
+    return (await getRoutedLine(from, to))?.color;
+}
+
+async function getRoutedLine(from, to) {
+    const isNear = (point, [lat, lng]) => Math.abs(point.lat - lat) < 0.002 && Math.abs(point.lng - lng) < 0.002;
+    const lines = await getTrackLines();
+
+    return lines.find((line) => !line.dashed && line.size > 2 && isNear(line.start, from) && isNear(line.end, to));
 }
 
 async function validateRouteDirection(from, to) {
-    await enclose(async () => (await getTrackLines()).some((line) => isRoutedLine(line, from, to)), {
-        tag: `route from ${from} to ${to}`,
-    });
+    await enclose(() => getRoutedLine(from, to), { tag: `route from ${from} to ${to}` });
 }
 
 async function validateRoutePoint(lat, lng, present) {

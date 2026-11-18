@@ -75,6 +75,8 @@ module.exports = {
         '^@map/map/util/MarkerSelectionService$': path.join(MAP_DIR, 'src/map/util/MarkerSelectionService.js'),
         // which segments a profile change routes again is plain logic over the polylines of the track
         '/TrackLayerProvider$': path.join(MAP_DIR, 'src/map/util/TrackLayerProvider.js'),
+        // a dragged point and a point dropped from the line change the points and the polylines of the track
+        '/creator/Editable(Marker|Polyline)$': path.join(MAP_DIR, 'src/map/util/creator/Editable$1.js'),
         // what the track editor does with a new point is plain logic over the points, its layers stay stubbed
         '^@map/map/util/creator/LocalTrackHelper$': path.join(MAP_DIR, 'src/map/util/creator/LocalTrackHelper.js'),
         '^\\./LocalTrackLayerHelper$': `${STUBS}/empty.js`,

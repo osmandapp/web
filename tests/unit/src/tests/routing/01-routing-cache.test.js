@@ -8,9 +8,15 @@ import TracksManager from '@map/manager/track/TracksManager';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
 import { createEditorCtx, createEditorPoint } from '../../util/fixtures/tracks';
 
+jest.mock('@map/map/util/creator/EditablePolyline');
+
 const point = (i, profile) => createEditorPoint(i, { profile });
 const line = () => ({ setStyle: jest.fn(), setLatLngs: jest.fn(), removeFrom: jest.fn(), options: {} });
 const flush = () => new Promise((resolve) => setTimeout(resolve, 0));
+const mockEditablePolyline = () =>
+    EditablePolyline.mockImplementation(function () {
+        return { create: () => ({ _latlngs: ['latlng'] }) };
+    });
 const createCtx = (points) => createEditorCtx({ points });
 const geoRouter = createEditorCtx().trackRouter;
 
@@ -78,9 +84,7 @@ test('a routed segment goes into the track once, the segments that are gone leav
     const [a, b, gap, c, d] = [point(0), point(1), point(2, TracksManager.PROFILE_GAP), point(3), point(4)];
     const ctx = createCtx([a, b, gap, c, d]);
     const saveChanges = jest.fn();
-    EditablePolyline.mockImplementation(function () {
-        return { create: () => ({ _latlngs: ['latlng'] }) };
-    });
+    mockEditablePolyline();
     const [ab, gapC, old] = [line(), line(), line()];
     TracksRoutingCache.addRoutingToCache(a, b, ab, ctx);
     TracksRoutingCache.addRoutingToCache(gap, c, gapC, ctx);
@@ -105,6 +109,36 @@ test('a routed segment goes into the track once, the segments that are gone leav
     // a second pass finds nothing new
     expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges })).toBe(false);
     expect(saveChanges).toHaveBeenCalledTimes(1);
+});
+
+test('a router answer for the place a point was dragged away from is not put on the track', async () => {
+    for (const order of [
+        [0, 1],
+        [1, 0],
+    ]) {
+        const [a, b] = [point(0), point(1)];
+        const ctx = createCtx([a, b]);
+        const answers = [];
+        mockEditablePolyline();
+        ctx.trackRouter.updateRouteBetweenPoints.mockImplementation(
+            (ctx, start, end) => new Promise((resolve) => answers.push(() => resolve({ points: [`to ${end.lat}`] })))
+        );
+        const drag = (lat) => {
+            b.lat = lat;
+            TracksRoutingCache.addRoutingToCache(a, b, line(), ctx);
+            effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
+        };
+
+        drag(50.015);
+        drag(50.012);
+        for (const index of order) {
+            answers[index]();
+            await flush();
+            effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn() });
+        }
+
+        expect(b.geometry).toEqual(['to 50.012']);
+    }
 });
 
 test('undo restores the geometry of every segment from the cache and drops the unfinished ones', () => {

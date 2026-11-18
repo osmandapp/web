@@ -556,6 +556,19 @@ export async function hoverBy(lat, lon) {
     await driver.actions({ async: true }).move({ origin: 'viewport', x: xAbs, y: yAbs }).perform();
 }
 
+export async function dragBy([fromLat, fromLon], [toLat, toLon]) {
+    await actionIdleWait({ tiles: true });
+    const from = await getMapCoords(fromLat, fromLon);
+    const to = await getMapCoords(toLat, toLon);
+    await driver
+        .actions({ async: true })
+        .move({ origin: 'viewport', x: from.xAbs, y: from.yAbs })
+        .press()
+        .move({ origin: 'viewport', x: to.xAbs, y: to.yAbs, duration: 500 })
+        .release()
+        .perform();
+}
+
 export async function getMarkersNear(lat, lon) {
     return await driver.executeScript(
         `return Object.values(window.__leafletMap._layers)
@@ -635,9 +648,11 @@ export async function getTrackLines() {
             .filter((layer) => typeof layer.getLatLngs === 'function' && layer.options.type === 'localTracksLayers')
             .map((layer) => {
                 const points = layer.getLatLngs().flat(Infinity);
-                const [start, end] = [points[0], points.at(-1)].map((point) => point && { lat: point.lat, lng: point.lng });
+                const [start, middle, end] = [points[0], points[Math.floor(points.length / 2)], points.at(-1)].map(
+                    (point) => point && { lat: point.lat, lng: point.lng }
+                );
 
-                return { size: points.length, dashed: !!layer.options.dashArray, color: layer.options.color, start, end };
+                return { size: points.length, dashed: !!layer.options.dashArray, color: layer.options.color, start, middle, end };
             });
     `);
 }
