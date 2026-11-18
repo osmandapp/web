@@ -323,15 +323,15 @@ You can also enable or disable Announce messages directly in *CarPlay*. Read abo
 
 ![Map Mode](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Map Mode](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-OsmAnd allows you to configure the map appearance for CarPlay independently from the map mode on your phone. To open this setting, tap the *Settings* button in the CarPlay navigation bar, then select *Map mode*. The current mode is shown as the row's detail text.
+OsmAnd allows you to configure the map appearance for CarPlay independently from the map mode on your phone. To open this setting, tap the *Settings* button (gear icon next to the pan button) in the CarPlay navigation bar, then select *Map mode*. The button is available while browsing the map, in trip preview, and during navigation. The selected mode is shown next to the *Map mode* item.
 
 You can choose one of the following appearance modes:
-- **Vehicle appearance** — The map appearance follows the vehicle's own display style, based on the CarPlay Appearance setting on your iPhone (*Automatic* or *Always Dark*) and the time of day. When *Always Show Dark Maps* is enabled in that setting, the map always remains in Dark Mode regardless of the vehicle headlight status or the time of day.
+- **Vehicle appearance** — The map appearance follows the vehicle's own display style, based on the CarPlay Appearance setting on your iPhone (*Automatic* or *Always Dark*) and the time of day. When *Always Show Dark Maps* is enabled in that setting, the map always remains in Dark Mode regardless of the vehicle headlight status or the time of day. This mode is used by default.
 - **Day** — The map always uses the light theme in CarPlay, regardless of the vehicle's appearance settings.
 - **Night** — The map always uses the dark theme in CarPlay, regardless of the vehicle's appearance settings.
 - **Sunrise/sunset** — The map switches between light and dark themes automatically based on the calculated sunrise and sunset times for your current location.
 
-**Note:** The Map mode setting in CarPlay only affects the map appearance in CarPlay. It does not change the Map mode on your phone screen.
+**Note:** The Map mode setting in CarPlay only affects the map appearance in CarPlay. It does not change the Map mode on your phone screen. The Map mode on your phone does not change the CarPlay map either. All map elements on the CarPlay screen, including POI icons, the route line, and the position marker, follow the CarPlay Map mode. The setting is common to all profiles and is kept after reconnecting CarPlay or restarting the app.
 
 ### Map Orientation {#map-orientation}
 
