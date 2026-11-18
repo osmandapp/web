@@ -39,6 +39,8 @@ const EDITOR_PANEL_BUTTONS = [
     'se-panel-button-delete-track',
 ];
 
+const BICYCLE_COLOR = '#9053bd';
+
 const PLAIN_TRACK = 'test-track-trkpt';
 const PLAIN_TRACK_POINTS = 1460;
 const EXTENDED_TRACK_POINTS = PLAIN_TRACK_POINTS + 1;
@@ -87,6 +89,7 @@ export default async function test() {
     await deletePoints();
     await dragFirstPoint();
     await deleteAllPoints();
+    await editSegments();
     await addPointsToPlainTrack();
 
     await actionFinish();
@@ -162,6 +165,58 @@ async function deleteAllPoints() {
     await waitRoutedLines(routedLines - 1);
 }
 
+// Split, Join, Profile and Trim from the point menu on the square route drawn again
+async function editSegments() {
+    const [first, second, third, fourth] = SQUARE_ROUTE_POINTS;
+    await leftClickBy(...first);
+    await addSquarePoints();
+    const routedLines = await waitRoutedLines();
+
+    // Split after a point leaves no line to the next one, Join after routes it again
+    await actionOpenPointMenu(second);
+    await clickBy(By.id('se-point-context-menu-split-after'));
+    await waitRoutedLines(routedLines - 1);
+    await actionOpenPointMenu(second);
+    await clickBy(By.id('se-point-context-menu-join-after'));
+    await waitRoutedLines(routedLines);
+    await validateRouteDirection(second, third);
+
+    // Profile after routes the next segment again in the color of the new profile
+    const color = await getRouteColor(third, fourth);
+    await actionOpenPointMenu(third);
+    await clickBy(By.id('se-point-context-menu-profile-after'));
+    await selectProfile('bicycle');
+    await closeProfileDialog('change');
+    await enclose(async () => color !== BICYCLE_COLOR && (await getRouteColor(third, fourth)) === BICYCLE_COLOR, {
+        tag: 'color of the new profile',
+    });
+
+    // Cancel gives the track its profile back
+    await clickBy(By.id('se-panel-button-change-profile'));
+    const profile = await getTextBy(By.id('se-track-profile-select'));
+    await selectProfile('pedestrian');
+    await closeProfileDialog('cancel');
+    await clickBy(By.id('se-panel-button-change-profile'));
+    await enclose(async () => (await getTextBy(By.id('se-track-profile-select'))) === profile, {
+        tag: 'profile after Cancel',
+    });
+    await closeProfileDialog('cancel');
+
+    // Trim after a point removes the points after it, Trim before removes the points before it
+    await actionOpenPointMenu(third);
+    await clickBy(By.id('se-point-context-menu-trim-after'));
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 1)]);
+    await validateRoutePoint(...fourth, false);
+    await waitRoutedLines(routedLines - 1);
+
+    await actionOpenPointMenu(second);
+    await clickBy(By.id('se-point-context-menu-trim-before'));
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 2)]);
+    await validateRoutePoint(...first, false);
+    await waitRoutedLines(routedLines - 2);
+    await validateRouteDirection(second, third);
+}
+
 async function addPointsToPlainTrack() {
     await actionUploadGpx({ mask: PLAIN_TRACK + '.gpx' });
     await clickBy(By.id('se-local-track-' + PLAIN_TRACK));
@@ -178,10 +233,8 @@ async function addPointsToPlainTrack() {
     const lineDistance = await getDistance();
 
     await clickBy(By.id('se-panel-button-change-profile'));
-    await clickBy(By.id('se-track-profile-select'));
-    await clickBy(By.id('se-track-profile-car'));
-    await clickBy(By.id('se-change-profile-dialog-change'));
-    await waitByRemoved(By.id('se-change-profile-dialog'));
+    await selectProfile('car');
+    await closeProfileDialog('change');
 
     // a router point on a recorded track asks first, Cancel keeps the track
     await leftClickBy(50.025, 19.83);
@@ -226,15 +279,32 @@ async function validateLine(size) {
     await enclose(async () => (await getTrackLines()).some((line) => line.size === size), { tag: `line of ${size}` });
 }
 
-async function validateRouteDirection(from, to) {
+async function selectProfile(profile) {
+    await clickBy(By.id('se-track-profile-select'));
+    await clickBy(By.id(`se-track-profile-${profile}`));
+}
+
+async function closeProfileDialog(button) {
+    await clickBy(By.id(`se-change-profile-dialog-${button}`));
+    await waitByRemoved(By.id('se-change-profile-dialog'));
+}
+
+async function getRouteColor(from, to) {
+    const lines = await getTrackLines();
+
+    return lines.find((line) => isRoutedLine(line, from, to))?.color;
+}
+
+function isRoutedLine(line, from, to) {
     const isNear = (point, [lat, lng]) => Math.abs(point.lat - lat) < 0.002 && Math.abs(point.lng - lng) < 0.002;
-    await enclose(
-        async () =>
-            (await getTrackLines()).some(
-                (line) => !line.dashed && line.size > 2 && isNear(line.start, from) && isNear(line.end, to)
-            ),
-        { tag: `route from ${from} to ${to}` }
-    );
+
+    return !line.dashed && line.size > 2 && isNear(line.start, from) && isNear(line.end, to);
+}
+
+async function validateRouteDirection(from, to) {
+    await enclose(async () => (await getTrackLines()).some((line) => isRoutedLine(line, from, to)), {
+        tag: `route from ${from} to ${to}`,
+    });
 }
 
 async function validateRoutePoint(lat, lng, present) {

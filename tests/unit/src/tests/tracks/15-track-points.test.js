@@ -1,5 +1,8 @@
+import L from 'leaflet';
 import PointManager from '@map/manager/PointManager';
-import TracksManager, { PROFILE_LINE } from '@map/manager/track/TracksManager';
+import { apiGet } from '@map/util/HttpApi';
+import { updateRouteBetweenPoints } from '@map/store/geoRouter/legacy/updateRouteBetweenPoints';
+import TracksManager, { isProtectedSegment, PROFILE_LINE } from '@map/manager/track/TracksManager';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import { PROFILE_BICYCLE, PROFILE_CAR, PROFILE_PEDESTRIAN } from '@map/store/geoRouter/profileConstants';
 import {
@@ -9,7 +12,9 @@ import {
     createPlainPoints,
     createRecordedGeometry,
     createRecordedThenRoutedPoints,
+    createRoutedPoint,
     createRoutedPoints,
+    createRoutedThenRecordedPoints,
 } from '../../util/fixtures/tracks';
 
 TrackLayerProvider.createTempPolyline = () => ({ temp: true });
@@ -213,10 +218,7 @@ describe('reorder', () => {
     });
 
     test('a recorded piece the moved point does not touch keeps its geometry', async () => {
-        const points = [
-            ...createRecordedThenRoutedPoints(),
-            createEditorPoint(3, { geometry: [createEditorPoint(2), createEditorPoint(3)] }),
-        ];
+        const points = createRecordedThenRoutedPoints(4);
         const recorded = points[1].geometry;
         const ctx = createCtx(points);
 
@@ -297,6 +299,259 @@ describe('reorder', () => {
         await PointManager.reorder(0, 0, ctx.selectedGpxFile, ctx);
 
         expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(1));
+    });
+});
+
+describe('trim', () => {
+    test('trim before a middle point removes the points before it, the new first point has no segment', () => {
+        const ctx = createCtx(createRoutedPoints(4));
+        const kept = ctx.selectedGpxFile.points[3].geometry;
+
+        PointManager.trimBefore(2, ctx);
+
+        const points = ctx.selectedGpxFile.points;
+        expect(lats(points)).toEqual([50.02, 50.03]);
+        expect(points[0].geometry).toEqual([]);
+        expect(points[1].geometry).toBe(kept);
+        expect(ctx.selectedGpxFile.updateLayers).toBe(true);
+        expect(ctx.trackState.update).toBe(true);
+    });
+
+    test('trim after a middle point removes the tail', () => {
+        const ctx = createCtx(createRoutedPoints(4));
+        const kept = ctx.selectedGpxFile.points[1].geometry;
+
+        PointManager.trimAfter(1, ctx);
+
+        expect(lats(ctx.selectedGpxFile.points)).toEqual([50, 50.01]);
+        expect(ctx.selectedGpxFile.points[1].geometry).toBe(kept);
+        expect(ctx.trackState.update).toBe(true);
+    });
+
+    test('trim before the start of a recorded piece keeps the piece protected', () => {
+        const ctx = createCtx(createRoutedThenRecordedPoints());
+        const recorded = ctx.selectedGpxFile.points[2].geometry;
+
+        PointManager.trimBefore(1, ctx);
+
+        const [start, end] = ctx.selectedGpxFile.points;
+        expect(end.geometry).toBe(recorded);
+        expect(isProtectedSegment({ startPoint: start, endPoint: end })).toBe(true);
+    });
+});
+
+describe('split', () => {
+    test('split before or after a point puts a gap after it and drops only the geometry of the split segment', () => {
+        for (const index of [1, 2]) {
+            const ctx = createCtx(createRoutedPoints(5));
+
+            PointManager.split(index, ctx);
+
+            expect(ctx.selectedGpxFile.points).toEqual(createGapPoints(5, index));
+            expect(ctx.trackRouter.updateRouteBetweenPoints).not.toHaveBeenCalled();
+            expect(ctx.routingCache).toEqual({});
+            expect(ctx.trackState.update).toBe(true);
+        }
+    });
+
+    test('a split right after a recorded piece keeps the piece', () => {
+        const ctx = createCtx(createRecordedThenRoutedPoints(4));
+
+        PointManager.split(1, ctx);
+
+        const [start, end] = ctx.selectedGpxFile.points;
+        expect(lats(end.geometry)).toEqual(lats(createRecordedGeometry(0, 1)));
+        expect(isProtectedSegment({ startPoint: start, endPoint: end })).toBe(true);
+    });
+
+    // the issue hides Split on a recorded piece instead, with that fix this case is dropped, not flipped
+    test.failing('a split at the start of a recorded piece keeps its recorded points', () => {
+        const ctx = createCtx([...createRoutedThenRecordedPoints(), createRoutedPoint(3)]);
+
+        PointManager.split(1, ctx);
+
+        const vertices = ctx.selectedGpxFile.points.flatMap((point) => point.geometry);
+        expect(lats(vertices)).toEqual(expect.arrayContaining(lats(createRecordedGeometry(1, 2))));
+    });
+});
+
+describe('join', () => {
+    const createJoinCtx = () => {
+        const points = createGapPoints(4, 1);
+        points[2].profile = PROFILE_BICYCLE;
+
+        return createCtx(points);
+    };
+
+    test('join across a gap gives the gap point the profile of the next point and removes the gap marker', async () => {
+        const ctx = createJoinCtx();
+        const [, gap, next] = ctx.selectedGpxFile.points;
+
+        await PointManager.join(gap, next, ctx);
+
+        expect(gap.profile).toBe(PROFILE_BICYCLE);
+        expect(gap.geometry.at(-1).profile).toBeUndefined();
+        expect(lats(next.geometry)).toEqual([50.01, 50.02]);
+        expect(ctx.trackState.update).toBe(true);
+    });
+
+    test.failing('join across a gap routes the segment with the profile of the next point', async () => {
+        const ctx = createJoinCtx();
+        const [, gap, next] = ctx.selectedGpxFile.points;
+
+        await PointManager.join(gap, next, ctx);
+
+        expect(ctx.trackRouter.routed.map(({ profile }) => profile)).toEqual([PROFILE_BICYCLE]);
+    });
+
+    test('a router answer without points in join leaves a straight line and a message', async () => {
+        const ctx = createJoinCtx();
+        ctx.setRoutingErrorMsg = jest.fn();
+        ctx.trackRouter.getURL = () => 'osrm/';
+        ctx.trackRouter.getGeoProfile = () => ({ type: 'osrm', profile: PROFILE_BICYCLE });
+        ctx.trackRouter.updateRouteBetweenPoints = updateRouteBetweenPoints;
+        apiGet.mockResolvedValue({ ok: true, json: async () => ({ routes: [] }) });
+        const [, gap, next] = ctx.selectedGpxFile.points;
+
+        await PointManager.join(gap, next, ctx);
+
+        expect(lats(next.geometry)).toEqual([50.01, 50.02]);
+        expect(ctx.setRoutingErrorMsg).toHaveBeenCalledWith('Router error, Line used');
+    });
+
+    test.failing('a router error in join leaves a straight line and a message', async () => {
+        const ctx = createJoinCtx();
+        ctx.setRoutingErrorMsg = jest.fn();
+        ctx.trackRouter.updateRouteBetweenPoints.mockRejectedValueOnce(new Error('no route'));
+        const [, gap, next] = ctx.selectedGpxFile.points;
+
+        await PointManager.join(gap, next, ctx);
+
+        expect(lats(next.geometry)).toEqual([50.01, 50.02]);
+        expect(ctx.setRoutingErrorMsg).toHaveBeenCalled();
+    });
+
+    test('a join next to recorded pieces keeps their geometry', async () => {
+        const before = createCtx(createRecordedThenRoutedPoints(4));
+        PointManager.split(1, before);
+        const [recordedStart, gap, next] = before.selectedGpxFile.points;
+
+        await PointManager.join(gap, next, before);
+
+        expect(lats(gap.geometry)).toEqual(lats(createRecordedGeometry(0, 1)));
+        expect(isProtectedSegment({ startPoint: recordedStart, endPoint: gap })).toBe(true);
+
+        const after = createCtx(createRoutedThenRecordedPoints(2));
+        const recorded = after.selectedGpxFile.points[3].geometry;
+        PointManager.split(1, after);
+        const [, afterGap, afterNext, recordedEnd] = after.selectedGpxFile.points;
+
+        await PointManager.join(afterGap, afterNext, after);
+
+        expect(recordedEnd.geometry).toBe(recorded);
+        expect(isProtectedSegment({ startPoint: afterNext, endPoint: recordedEnd })).toBe(true);
+    });
+});
+
+describe('changeProfile', () => {
+    const BICYCLE = { profile: PROFILE_BICYCLE };
+    const { CHANGE_PROFILE_AFTER, CHANGE_PROFILE_ALL, CHANGE_PROFILE_BEFORE } = TracksManager;
+
+    const createProfileCtx = (points, change, pointInd) => {
+        const ctx = createCtx(points);
+        const polylines = points
+            .filter((point) => point.geometry?.length > 0)
+            .map(({ geometry }) => L.polyline(geometry));
+        ctx.selectedGpxFile.layers.getLayers = () => polylines;
+        ctx.trackProfileManager = { change, pointInd };
+
+        return ctx;
+    };
+    const profiles = (ctx) => ctx.selectedGpxFile.points.map((point) => point.profile);
+    const cached = (ctx) =>
+        Object.values(ctx.routingCache).map(({ startPoint, endPoint, geoProfile }) => [
+            startPoint.lat,
+            endPoint.lat,
+            geoProfile.profile,
+        ]);
+
+    test('one segment before or after a point gets the new profile on its start point and is routed again', async () => {
+        for (const [change, pointInd] of [
+            [CHANGE_PROFILE_AFTER, 1],
+            [CHANGE_PROFILE_BEFORE, 2],
+        ]) {
+            const ctx = createProfileCtx(createRoutedPoints(4), change, pointInd);
+
+            expect(await PointManager.changeProfile({ ctx, geoProfile: BICYCLE, changeOne: true })).toBe(true);
+
+            expect(profiles(ctx)).toEqual([PROFILE_CAR, PROFILE_BICYCLE, PROFILE_CAR, PROFILE_CAR]);
+            expect(ctx.selectedGpxFile.points[1].geoProfile).toBe(BICYCLE);
+            expect(cached(ctx)).toEqual([[50.01, 50.02, PROFILE_BICYCLE]]);
+            const dashed = ctx.selectedGpxFile.layers.getLayers().map((polyline) => !!polyline.options.dashArray);
+            expect(dashed).toEqual([false, true, false]);
+        }
+    });
+
+    test('all segments before or after a point skip the gap, the last point gets the profile for "after" only', async () => {
+        const after = createProfileCtx(createGapPoints(5, 1), CHANGE_PROFILE_AFTER, 0);
+
+        await PointManager.changeProfile({ ctx: after, geoProfile: BICYCLE, changeAll: true });
+
+        expect(profiles(after)).toEqual([PROFILE_BICYCLE, GAP, PROFILE_BICYCLE, PROFILE_BICYCLE, PROFILE_BICYCLE]);
+        expect(cached(after)).toEqual([
+            [50, 50.01, PROFILE_BICYCLE],
+            [50.02, 50.03, PROFILE_BICYCLE],
+            [50.03, 50.04, PROFILE_BICYCLE],
+        ]);
+
+        const before = createProfileCtx(createGapPoints(5, 1), CHANGE_PROFILE_BEFORE, 4);
+
+        await PointManager.changeProfile({ ctx: before, geoProfile: BICYCLE, changeAll: true });
+
+        expect(profiles(before)).toEqual([PROFILE_BICYCLE, GAP, PROFILE_BICYCLE, PROFILE_BICYCLE, PROFILE_CAR]);
+    });
+
+    test('the whole track skips the gap and gives the last point the new profile', async () => {
+        const ctx = createProfileCtx(createGapPoints(4, 1), CHANGE_PROFILE_ALL);
+
+        expect(await PointManager.changeProfile({ ctx, geoProfile: BICYCLE, changeAll: true })).toBe(true);
+
+        expect(profiles(ctx)).toEqual([PROFILE_BICYCLE, GAP, PROFILE_BICYCLE, PROFILE_BICYCLE]);
+        expect(cached(ctx)).toEqual([
+            [50, 50.01, PROFILE_BICYCLE],
+            [50.02, 50.03, PROFILE_BICYCLE],
+        ]);
+    });
+
+    test('a recorded piece keeps its profile and geometry', async () => {
+        const one = createProfileCtx(createRecordedThenRoutedPoints(), CHANGE_PROFILE_AFTER, 0);
+        const recorded = one.selectedGpxFile.points[1].geometry;
+
+        await PointManager.changeProfile({ ctx: one, geoProfile: BICYCLE, changeOne: true });
+
+        expect(profiles(one)).toEqual([PROFILE_LINE, PROFILE_CAR, PROFILE_CAR]);
+        expect(one.selectedGpxFile.points[1].geometry).toBe(recorded);
+        expect(one.routingCache).toEqual({});
+
+        const whole = createProfileCtx(createRecordedThenRoutedPoints(), CHANGE_PROFILE_ALL);
+        const wholeRecorded = whole.selectedGpxFile.points[1].geometry;
+
+        await PointManager.changeProfile({ ctx: whole, geoProfile: BICYCLE, changeAll: true });
+
+        expect(profiles(whole)).toEqual([PROFILE_LINE, PROFILE_BICYCLE, PROFILE_BICYCLE]);
+        expect(whole.selectedGpxFile.points[1].geometry).toBe(wholeRecorded);
+        expect(cached(whole)).toEqual([[50.01, 50.02, PROFILE_BICYCLE]]);
+    });
+
+    test('a track of one point gets the new profile on its point', async () => {
+        for (const changeAll of [true, false]) {
+            const ctx = createProfileCtx(createRoutedPoints(1), CHANGE_PROFILE_ALL);
+
+            await PointManager.changeProfile({ ctx, geoProfile: BICYCLE, changeOne: !changeAll, changeAll });
+
+            expect(profiles(ctx)).toEqual([PROFILE_BICYCLE]);
+            expect(ctx.selectedGpxFile.points[0].geoProfile).toBe(BICYCLE);
+        }
     });
 });
 

@@ -195,10 +195,154 @@ function deleteOldTempLayer(ctx, point) {
     }
 }
 
+function trimBefore(index, ctx) {
+    if (index !== -1 && index !== 0) {
+        ctx.selectedGpxFile.points.splice(0, index);
+        let geo = ctx.selectedGpxFile.points[0].geometry;
+        if (geo?.length > 0) {
+            ctx.selectedGpxFile.points[0].geometry = [];
+        }
+        ctx.selectedGpxFile.updateLayers = true;
+        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        TracksManager.updateState(ctx);
+    }
+}
+
+function trimAfter(index, ctx) {
+    if (index !== -1 && index !== ctx.selectedGpxFile.points.length - 1) {
+        ctx.selectedGpxFile.points.splice(index + 1, ctx.selectedGpxFile.points.length - index);
+        ctx.selectedGpxFile.updateLayers = true;
+        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+        TracksManager.updateState(ctx);
+    }
+}
+
+function split(index, ctx) {
+    const geometryLength = ctx.selectedGpxFile.points[index].geometry.length;
+    ctx.selectedGpxFile.points[index].geometry[geometryLength - 1].profile = TracksManager.PROFILE_GAP;
+    ctx.selectedGpxFile.points[index].profile = TracksManager.PROFILE_GAP;
+
+    ctx.selectedGpxFile.points[index + 1].geometry = [];
+
+    ctx.selectedGpxFile.updateLayers = true;
+    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+
+    TracksManager.updateState(ctx);
+}
+
+async function join(point1, point2, ctx) {
+    const result = await ctx.trackRouter.updateRouteBetweenPoints(ctx, point1, point2);
+    point2.geometry = result?.points || [];
+    if (result) {
+        updateTrackRouteTypes(result.points, result.routeTypes, ctx);
+    }
+    point1.profile = point2.profile;
+    point1.geoProfile = point2.geoProfile;
+    if (point1.geometry?.length > 0) {
+        delete point1.geometry[point1.geometry.length - 1].profile;
+    }
+    ctx.selectedGpxFile.updateLayers = true;
+    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+    TracksManager.updateState(ctx);
+}
+
+function updateLastPointProfile(ctx, geoProfile) {
+    const track = ctx.selectedGpxFile;
+    if (track.points?.length > 0) {
+        const last = track.points.length - 1;
+        if (track.points[last].profile !== TracksManager.PROFILE_GAP) {
+            track.points[last].geoProfile = geoProfile;
+            track.points[last].profile = geoProfile.profile;
+        }
+    }
+}
+
+function changeSegmentProfile(start, end, polylines, geoProfile, ctx) {
+    const currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
+    if (currentPolyline) {
+        start.geoProfile = geoProfile;
+        start.profile = geoProfile.profile;
+        TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
+    }
+}
+
+function changeSegmentsProfile(from, to, polylines, geoProfile, ctx) {
+    const points = ctx.selectedGpxFile.points;
+    for (let i = from; i < to; i++) {
+        if (points[i].profile !== TracksManager.PROFILE_GAP) {
+            changeSegmentProfile(points[i], points[i + 1], polylines, geoProfile, ctx);
+        }
+    }
+}
+
+async function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
+    const partialEdit = [TracksManager.CHANGE_PROFILE_BEFORE, TracksManager.CHANGE_PROFILE_AFTER].includes(
+        ctx.trackProfileManager?.change
+    );
+    if (!ctx.selectedGpxFile.layers) {
+        return false; // on empty track
+    }
+    let polylines = TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
+    if (!partialEdit) {
+        if (changeAll) {
+            // whole track - all segments
+            if (ctx.selectedGpxFile.points?.length > 1) {
+                changeSegmentsProfile(0, ctx.selectedGpxFile.points.length - 1, polylines, geoProfile, ctx);
+                updateLastPointProfile(ctx, geoProfile);
+                return true;
+            } else {
+                if (ctx.selectedGpxFile.points?.length > 0) {
+                    ctx.selectedGpxFile.points[0].geoProfile = geoProfile;
+                    ctx.selectedGpxFile.points[0].profile = geoProfile.profile;
+                }
+                return true;
+            }
+        } else {
+            updateLastPointProfile(ctx, geoProfile); // just update last point's profile
+        }
+    } else {
+        if (changeOne) {
+            // before or after - one segment
+            let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
+            let prevPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd - 1];
+            let nextPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd + 1];
+            if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
+                changeSegmentProfile(prevPoint, currentPoint, polylines, geoProfile, ctx);
+                return true;
+            } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
+                changeSegmentProfile(currentPoint, nextPoint, polylines, geoProfile, ctx);
+                return true;
+            }
+        } else if (changeAll) {
+            // before or after - all segments
+            if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
+                changeSegmentsProfile(0, ctx.trackProfileManager.pointInd, polylines, geoProfile, ctx);
+                return true;
+            } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
+                changeSegmentsProfile(
+                    ctx.trackProfileManager.pointInd,
+                    ctx.selectedGpxFile.points.length - 1,
+                    polylines,
+                    geoProfile,
+                    ctx
+                );
+                updateLastPointProfile(ctx, geoProfile);
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 const PointManager = {
     deletePoint,
     deleteWpt,
     reorder,
+    trimBefore,
+    trimAfter,
+    split,
+    join,
+    changeProfile,
 };
 
 export default PointManager;
