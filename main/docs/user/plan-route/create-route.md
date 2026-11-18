@@ -212,7 +212,7 @@ You can also add a via point directly from the map by tapping a POI or Favorite 
 
 ![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Route +* button. By accessing the **points list** in the *Plan a route* panel, you can reorder points, delete, or access a specific [point context menu](#point-context-menu).
+To measure a distance or plan a trip, add points at the *Pointer* location one by one and tap the *Route +* button. By accessing the **points list** in the *Plan a route* panel, you can reorder points, delete, or access a specific [point context menu](#point-context-menu). A point can be dragged only within its [section](#multimodal-routes), that is, among the points reached with the same route type.
 
 </TabItem>
 
@@ -313,11 +313,11 @@ In the Route tab, each segment is displayed with its route type and distance. Wh
 You can manage a segment using its three-dot menu:
 - **Change route type** — available for a segment with a single route type. Opens Route between points, where you can select a different route type.
 - **Set single route type** — available when a segment contains multiple sections with different route types. Opens Route between points, where you can apply one route type to the segment. The whole segment is recalculated using the selected routing type.
-- **Sort** — reorder route points manually or use Sort door-to-door to reorder them to minimize the total travel distance.
+- **Sort** — reorder route points manually or use Sort door-to-door to reorder them to minimize the total travel distance. In a segment with several sections, points are sorted within each section.
 - **Save as…** — save the segment as a separate file.
 - **Delete segment** — delete the segment.
 
-To create a new unconnected segment, tap *Start new segment* at the bottom of the Route tab. To continue the current segment with a different routing type, tap *Continue with a different type* under the last segment, then select a routing type for the next section.
+To create a new unconnected segment, tap *Start new segment* at the bottom of the Route tab. To continue the current segment with a different routing type, tap *Continue with a different type* under the last segment, then select a routing type for the next section. The selected type is shown in this row as *Next: …*, and the new section starts with the next point you add.
 
 A segment can be divided into [sections](#multimodal-routes) when different route types are used for different parts of the segment. Each section displays its route type and distance.
 
