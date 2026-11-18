@@ -8,7 +8,6 @@ import styles from './routemenu.module.css';
 import AppContext from '../../context/AppContext';
 import { useGeoLocation } from '../../util/hooks/useGeoLocation';
 import { LOCATION_UNAVAILABLE } from '../../manager/FavoritesManager';
-import { formatLatLon } from './NavigationPointsManager';
 import { navigationObject } from '../../store/navigationObject/navigationObject';
 import { WptIcon } from '../../infoblock/components/wpt/WptDetails';
 import { DEFAULT_POI_COLOR, DEFAULT_POI_SHAPE } from '../../manager/PoiManager';
@@ -30,7 +29,7 @@ export default function NavigationHistoryDropdown({
     const { t } = useTranslation();
     const ctx = useContext(AppContext);
 
-    const currentLocationRaw = useGeoLocation(ctx, false);
+    const currentLocationRaw = useGeoLocation(ctx);
     const hasCurrentLocation = currentLocationRaw && currentLocationRaw !== LOCATION_UNAVAILABLE;
 
     const filteredHistory = useMemo(() => {
@@ -166,11 +165,7 @@ export default function NavigationHistoryDropdown({
                             }
 
                             handleHistoryItemClick(
-                                {
-                                    lat: currentLocationRaw.lat,
-                                    lng: currentLocationRaw.lng,
-                                    name: formatLatLon(currentLocationRaw),
-                                },
+                                navigationObject.fromCoordinates(currentLocationRaw.lat, currentLocationRaw.lng),
                                 e
                             );
                         }}
