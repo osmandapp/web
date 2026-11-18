@@ -1,5 +1,10 @@
 import md5 from 'blueimp-md5';
-import { ROUTE_POINTS_START, ROUTE_POINTS_FINISH } from '../geoRouter/profileConstants';
+import {
+    ROUTE_POINTS_START,
+    ROUTE_POINTS_FINISH,
+    ROUTE_ROUND_TRIP,
+    ROUTE_ROUND_TRIP_ENABLED,
+} from '../geoRouter/profileConstants';
 
 export function getTrack() {
     return this.track;
@@ -24,9 +29,14 @@ export function getRouteEffectDeps() {
     return JSON.stringify({
         allPoints: this.getOption('route.points'),
         forceApproximation: this.getOption('route.map.forceApproximation'),
+        // round trip settings matter only while it is on
+        roundTrip: this.getOption(ROUTE_ROUND_TRIP_ENABLED) ? this.getOption(ROUTE_ROUND_TRIP) : null,
     });
 }
 
 export function isRouteReadyToCalc() {
+    if (this.getOption(ROUTE_ROUND_TRIP_ENABLED)) {
+        return !!this.getOption(ROUTE_POINTS_START);
+    }
     return this.getOption(ROUTE_POINTS_START) && this.getOption(ROUTE_POINTS_FINISH);
 }
