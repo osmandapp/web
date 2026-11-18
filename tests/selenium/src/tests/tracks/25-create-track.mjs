@@ -16,7 +16,7 @@ import {
     waitNoPointsCount,
     waitRoutedLines,
 } from '../../lib.mjs';
-import { By } from 'selenium-webdriver';
+import { By, Key } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 
 import { deleteTrack } from '../../util.mjs';
@@ -83,7 +83,10 @@ export default async function test() {
     await deleteTrack(TRACK_NAME);
 
     await createEmptyTrack();
+    await addSquarePoints();
     await deletePoints();
+    await dragFirstPoint();
+    await deleteAllPoints();
     await addPointsToPlainTrack();
 
     await actionFinish();
@@ -101,11 +104,14 @@ async function createEmptyTrack() {
     await validateInfoBlockStrings([pointsCount(1)]);
 }
 
-async function deletePoints() {
+async function addSquarePoints() {
     for (const [lat, lng] of SQUARE_ROUTE_POINTS.slice(1)) {
         await leftClickBy(lat, lng);
     }
     await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length)]);
+}
+
+async function deletePoints() {
     const routedLines = await waitRoutedLines();
 
     // a middle point deleted from its menu is gone, its neighbours are routed anew
@@ -125,16 +131,35 @@ async function deletePoints() {
     await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 2)]);
     await validateRoutePoint(firstLat, firstLng, false);
     await waitRoutedLines(routedLines - 2);
+}
 
-    // a track left without points keeps nothing on the map and shows no point count
+// the first row dragged one place down in the Track tab takes its point there, the track is routed in the new order
+async function dragFirstPoint() {
+    const [first, second] = SQUARE_ROUTE_POINTS.slice(2);
+    await validateRouteDirection(first, second);
     await clickBy(By.css("[testid='se-tab-track']"));
-    for (const [lat, lng] of SQUARE_ROUTE_POINTS.slice(2)) {
+    await actionIdleWait();
+
+    const row = await waitBy(By.id('se-track-point-0'));
+    await driver.executeScript('arguments[0].focus()', row);
+    await driver.actions().sendKeys(Key.SPACE).sendKeys(Key.ARROW_DOWN).sendKeys(Key.SPACE).perform();
+
+    await validateRouteDirection(second, first);
+    await clickBy(By.css("[testid='se-tab-overview']"));
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 2)]);
+}
+
+// a track left without points keeps nothing on the map and shows no point count
+async function deleteAllPoints() {
+    const routedLines = await waitRoutedLines();
+    await clickBy(By.css("[testid='se-tab-track']"));
+    for (const [lat, lng] of [SQUARE_ROUTE_POINTS[3], SQUARE_ROUTE_POINTS[2]]) {
         await clickBy(By.id('se-track-point-delete-0'));
         await validateRoutePoint(lat, lng, false);
     }
     await clickBy(By.css("[testid='se-tab-overview']"));
     await waitNoPointsCount();
-    await waitRoutedLines(routedLines - 3);
+    await waitRoutedLines(routedLines - 1);
 }
 
 async function addPointsToPlainTrack() {
@@ -199,6 +224,17 @@ async function validateInfoBlockStrings(strings) {
 
 async function validateLine(size) {
     await enclose(async () => (await getTrackLines()).some((line) => line.size === size), { tag: `line of ${size}` });
+}
+
+async function validateRouteDirection(from, to) {
+    const isNear = (point, [lat, lng]) => Math.abs(point.lat - lat) < 0.002 && Math.abs(point.lng - lng) < 0.002;
+    await enclose(
+        async () =>
+            (await getTrackLines()).some(
+                (line) => !line.dashed && line.size > 2 && isNear(line.start, from) && isNear(line.end, to)
+            ),
+        { tag: `route from ${from} to ${to}` }
+    );
 }
 
 async function validateRoutePoint(lat, lng, present) {

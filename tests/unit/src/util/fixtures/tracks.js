@@ -1,5 +1,6 @@
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '@map/context/AppContext';
 import TracksManager, { PROFILE_LINE } from '@map/manager/track/TracksManager';
+import { PROFILE_TRUCK } from '@map/store/geoRouter/profileConstants';
 
 export const CLOUD_FOLDER = 'Folder';
 export const CLOUD_TRACK_NAME = 'Folder/Track.gpx';
@@ -139,7 +140,8 @@ export function createRouteSegmentPoints(segments) {
 
 /**
  * ctx of the track editor: a local track open on the map, the routing cache and a router that answers
- * with a straight line. `geoRouter` is what the layers pass around separately from ctx.
+ * with a straight line. The router is set to the truck profile, which no editor point uses, and keeps
+ * the profile of every pair it routed in `routed`. `geoRouter` is what the layers pass around separately from ctx.
  */
 export function createEditorCtx({ points = [] } = {}) {
     const track = { name: 'Local', points, layers: { addLayer: jest.fn(), getLayers: () => [] } };
@@ -148,11 +150,22 @@ export function createEditorCtx({ points = [] } = {}) {
     ctx.trackState = {};
     ctx.routingCache = {};
     ctx.mutateRoutingCache = (update) => update(ctx.routingCache);
-    ctx.trackRouter = {
-        getGeoProfile: (point) => ({ profile: point.profile, cacheKey: `key-${point.profile}` }),
+    const router = {
+        profile: PROFILE_TRUCK,
+        routed: [],
+        getGeoProfile: (point) => {
+            const profile = point ? point.profile : router.profile;
+            return { profile, cacheKey: `key-${profile}` };
+        },
+        onGeoProfile: (geoProfile) => (router.profile = geoProfile.profile),
         getColor: () => '#0000ff',
-        updateRouteBetweenPoints: jest.fn(async (ctx, start, end) => ({ points: [start, end] })),
+        updateRouteBetweenPoints: jest.fn(async (ctx, start, end, geoProfile = router.getGeoProfile()) => {
+            router.routed.push({ start, profile: geoProfile.profile });
+
+            return { points: [start, end].map(({ lat, lng }) => ({ lat, lng })) };
+        }),
     };
+    ctx.trackRouter = router;
     ctx.setTrackState = jest.fn();
     ctx.setProcessRouting = jest.fn();
     ctx.setUpdateInfoBlock = jest.fn();

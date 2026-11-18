@@ -82,6 +82,7 @@ const PointsTab = ({ width }) => {
             <Draggable key={index} draggableId={index + ' row'} index={index}>
                 {(provided, snapshot) => (
                     <MenuItem
+                        id={`se-track-point-${index}`}
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
