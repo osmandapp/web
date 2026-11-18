@@ -550,6 +550,30 @@ export async function leftClickBy(lat, lon, { optional = false } = {}) {
  * @param {Object} opts
  * @param {boolean} opts.optional  – if true, returns null instead of throwing when not found
  */
+export async function hoverBy(lat, lon) {
+    await actionIdleWait({ tiles: true });
+    const { xAbs, yAbs } = await getMapCoords(lat, lon);
+    await driver.actions({ async: true }).move({ origin: 'viewport', x: xAbs, y: yAbs }).perform();
+}
+
+export async function getMarkersNear(lat, lon) {
+    return await driver.executeScript(
+        `return Object.values(window.__leafletMap._layers)
+            .filter((layer) =>
+                typeof layer.getLatLng === 'function' &&
+                Math.abs(layer.getLatLng().lat - arguments[0]) < 1e-4 &&
+                Math.abs(layer.getLatLng().lng - arguments[1]) < 1e-4)
+            .map((layer) => ({
+                type: layer.options.type,
+                title: layer.options.title,
+                draggable: !!layer.options.draggable,
+                visible: layer._icon?.style.display !== 'none',
+            }))`,
+        lat,
+        lon
+    );
+}
+
 export async function getMarker(lat, lon, { optional = false } = {}) {
     const fn = async () => {
         await actionIdleWait({ tiles: true });
@@ -593,6 +617,28 @@ export async function getMarker(lat, lon, { optional = false } = {}) {
         if (optional) return null;
         throw e;
     }
+}
+
+export async function getTrackLines() {
+    return await driver.executeScript(`
+        return Object.values(window.__leafletMap._layers)
+            .filter((layer) => typeof layer.getLatLngs === 'function' && layer.options.type === 'localTracksLayers')
+            .map((layer) => ({ size: layer.getLatLngs().flat(Infinity).length, dashed: !!layer.options.dashArray }));
+    `);
+}
+
+export async function waitRoutedLines(count) {
+    let routed;
+    await enclose(
+        async () => {
+            const lines = await getTrackLines();
+            routed = lines.filter((line) => line.size > 2).length;
+            return !lines.some((line) => line.dashed) && (count === undefined || routed === count);
+        },
+        { tag: 'routed segments' }
+    );
+
+    return routed;
 }
 
 /**
