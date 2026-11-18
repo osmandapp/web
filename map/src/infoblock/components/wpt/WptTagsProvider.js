@@ -48,6 +48,10 @@ const COLLECTION_TIMES = 'collection_times';
 export const DESCRIPTION = 'description';
 const SHORT_DESCRIPTION = 'short_description';
 export const OPENING_HOURS = 'opening_hours';
+const XMAS_PREFIX = 'xmas_';
+const XMAS_ICON = 'xmas';
+const XMAS_OPENING_HOURS = XMAS_PREFIX + OPENING_HOURS;
+const XMAS_DAY_DATE = XMAS_PREFIX + 'day_date';
 const PHONE = 'phone';
 const MOBILE = 'mobile';
 const EMAIL = 'email';
@@ -265,6 +269,9 @@ async function getWptTags(obj, type, ctx) {
             if (entry.values) {
                 tagObj.values = entry.values;
             }
+            if (entry.key === XMAS_OPENING_HOURS) {
+                tagObj.season = mainTags[OSM_PREFIX + XMAS_DAY_DATE];
+            }
 
             res.push(tagObj);
         }
@@ -301,7 +308,7 @@ async function buildTagObj({ key, value, lang, generic, categoryIcon, ctx, subty
     applyCollapsablePrefix(tagObj, key);
     applySharedNameTag(tagObj);
 
-    if (tagObj.key === OPENING_HOURS) {
+    if (tagObj.key === OPENING_HOURS || tagObj.key === XMAS_OPENING_HOURS) {
         tagObj.value = localizeOpeningHours(tagObj.value);
     }
 
@@ -364,6 +371,10 @@ function getGenericTagProps(key) {
 async function getOtherTagIconProps({ key, value, lang, categoryIcon, ctx }) {
     if (key.startsWith('operator') || key.startsWith('brand')) {
         return { icon: <BrandIcon /> };
+    }
+    if (key.startsWith(XMAS_PREFIX)) {
+        const svgData = await getCategorySvgIcon(XMAS_ICON, ctx);
+        return { icon: getIcon(svgData, DEFAULT_TAG_ICON_SIZE, DEFAULT_TAG_ICON_COLOR) };
     }
     if (key.includes('internet_access')) {
         const prepValue = value.replace(TYPE, '').replace('__', '_');
