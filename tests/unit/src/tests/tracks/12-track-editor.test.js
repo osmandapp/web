@@ -12,6 +12,7 @@ import {
     addPointToTrack,
     addRoutedSegment,
     createNewPoint,
+    getLastSegmentGeoProfile,
     initNewSelectedTrack,
     isAddPointByClick,
 } from '@map/map/util/creator/LocalTrackHelper';
@@ -253,5 +254,26 @@ describe('a click on the map in the editor', () => {
         expect(isAddPointByClick({ ...editor, pointContextMenu: { coord: { lat: 50, lng: 30 } } })).toBeFalsy();
         expect(isAddPointByClick({ ...editor, openContextMenu: true })).toBeFalsy();
         expect(isAddPointByClick({ ...editor, createTrack: { enable: false } })).toBeFalsy();
+    });
+});
+
+describe('the profile of the next segment after an undo', () => {
+    const router = { getGeoProfile: (geoProfile) => ({ ...geoProfile, cacheKey: geoProfile.profile }) };
+
+    test('is the profile of the second-to-last point', () => {
+        const points = createRoutedPoints(3).map((point, i) => ({
+            ...point,
+            geoProfile: { profile: [PROFILE_CAR, PROFILE_PEDESTRIAN, PROFILE_CAR][i] },
+        }));
+
+        expect(getLastSegmentGeoProfile(points, router)).toMatchObject({ profile: PROFILE_PEDESTRIAN });
+        expect(getLastSegmentGeoProfile(points.slice(0, 1), router)).toBeNull();
+    });
+
+    test.failing('is the profile of the second-to-last point of an imported track too', () => {
+        const points = createRoutedPoints(3);
+        points[1].profile = PROFILE_PEDESTRIAN;
+
+        expect(getLastSegmentGeoProfile(points, router)).toMatchObject({ profile: PROFILE_PEDESTRIAN });
     });
 });

@@ -1,4 +1,6 @@
+import TracksRoutingCache, { effectControlRouterRequests } from '@map/context/TracksRoutingCache';
 import { geoRouter } from '@map/store/geoRouter/geoRouter';
+import { createEditorCtx } from '../../util/fixtures/tracks';
 
 const OSMAND = {
     key: 'osmand',
@@ -87,6 +89,27 @@ describe('the profile of a track point', () => {
 });
 
 describe('the params of a profile', () => {
+    test('other params route a pair again only when the profile is applied again', () => {
+        const ctx = createEditorCtx();
+        ctx.trackRouter = router();
+        const [start, end] = [
+            { lat: 50, lng: 30, profile: 'car' },
+            { lat: 50.01, lng: 30, profile: 'car' },
+        ];
+        TracksRoutingCache.addRoutingToCache(start, end, {}, ctx);
+        Object.values(ctx.routingCache)[0].geometry = ['routed'];
+
+        ctx.trackRouter.providers = [
+            { ...OSMAND, profiles: OSMAND.profiles.map((profile) => ({ ...profile, params: profile.resetParams })) },
+            OSRM,
+        ];
+        expect(effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() })).toBe(false);
+
+        TracksRoutingCache.addRoutingToCache(start, end, {}, ctx);
+
+        expect(Object.values(ctx.routingCache).map((entry) => entry.geometry)).toEqual([['routed'], null]);
+    });
+
     test('the caller gets a copy, the provider is not changed by it', () => {
         const geo = router();
 

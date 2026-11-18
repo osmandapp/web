@@ -103,6 +103,17 @@ export function addRoutedSegment({ points, newPoint, geoRouter }) {
     return [firstPoint, lastPoint, newPoint];
 }
 
+export function getLastSegmentGeoProfile(points, geoRouter) {
+    if (points?.length > 1) {
+        const beforeLast = points[points.length - 2];
+        if (beforeLast?.geoProfile) {
+            return geoRouter.getGeoProfile(beforeLast.geoProfile);
+        }
+    }
+
+    return null;
+}
+
 export function createLocalTrack({ ctx, map, file, points = [], wpts = [] }) {
     ctx.setLocalTracks((prev) => {
         const tracks = [...prev];
