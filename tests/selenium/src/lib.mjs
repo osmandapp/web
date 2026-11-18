@@ -550,6 +550,30 @@ export async function leftClickBy(lat, lon, { optional = false } = {}) {
  * @param {Object} opts
  * @param {boolean} opts.optional  – if true, returns null instead of throwing when not found
  */
+export async function hoverBy(lat, lon) {
+    await actionIdleWait({ tiles: true });
+    const { xAbs, yAbs } = await getMapCoords(lat, lon);
+    await driver.actions({ async: true }).move({ origin: 'viewport', x: xAbs, y: yAbs }).perform();
+}
+
+export async function getMarkersNear(lat, lon) {
+    return await driver.executeScript(
+        `return Object.values(window.__leafletMap._layers)
+            .filter((layer) =>
+                typeof layer.getLatLng === 'function' &&
+                Math.abs(layer.getLatLng().lat - arguments[0]) < 1e-4 &&
+                Math.abs(layer.getLatLng().lng - arguments[1]) < 1e-4)
+            .map((layer) => ({
+                type: layer.options.type,
+                title: layer.options.title,
+                draggable: !!layer.options.draggable,
+                visible: layer._icon?.style.display !== 'none',
+            }))`,
+        lat,
+        lon
+    );
+}
+
 export async function getMarker(lat, lon, { optional = false } = {}) {
     const fn = async () => {
         await actionIdleWait({ tiles: true });
@@ -593,6 +617,43 @@ export async function getMarker(lat, lon, { optional = false } = {}) {
         if (optional) return null;
         throw e;
     }
+}
+
+export function pointsCount(n) {
+    return new RegExp(`Points: ${n}\\b`);
+}
+
+export async function waitNoPointsCount() {
+    await enclose(async () => !/Points:/.test(await getTextBy(By.id('se-track-context-menu'))), {
+        tag: 'no point count',
+    });
+}
+
+export async function getTrackLines() {
+    return await driver.executeScript(`
+        return Object.values(window.__leafletMap._layers)
+            .filter((layer) => typeof layer.getLatLngs === 'function' && layer.options.type === 'localTracksLayers')
+            .map((layer) => {
+                const points = layer.getLatLngs().flat(Infinity);
+                const [start, end] = [points[0], points.at(-1)].map((point) => point && { lat: point.lat, lng: point.lng });
+
+                return { size: points.length, dashed: !!layer.options.dashArray, color: layer.options.color, start, end };
+            });
+    `);
+}
+
+export async function waitRoutedLines(count) {
+    let routed;
+    await enclose(
+        async () => {
+            const lines = await getTrackLines();
+            routed = lines.filter((line) => line.size > 2).length;
+            return !lines.some((line) => line.dashed) && (count === undefined || routed === count);
+        },
+        { tag: 'routed segments' }
+    );
+
+    return routed;
 }
 
 /**

@@ -6,8 +6,26 @@ import TracksManager, {
     validateRoutePoints,
     PROFILE_LINE,
 } from '@map/manager/track/TracksManager';
+import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
+import {
+    ADDED_POINT,
+    addPointToTrack,
+    addRoutedSegment,
+    createNewPoint,
+    initNewSelectedTrack,
+    isAddPointByClick,
+} from '@map/map/util/creator/LocalTrackHelper';
+import { PROFILE_CAR, PROFILE_PEDESTRIAN } from '@map/store/geoRouter/profileConstants';
+import { createEditorCtx, createPlainPoints, createRoutedPoints, NOW, TODAY } from '../../util/fixtures/tracks';
+
+TrackLayerProvider.createLayersByTrackData = () => null;
 
 const GAP = TracksManager.PROFILE_GAP;
+
+const geoRouter = { getShortGeoProfile: ({ profile = PROFILE_CAR } = {}) => ({ profile }) };
+
+/** The point a click on the map at `lat` adds with the profile chosen in the editor. */
+const clicked = (lat, profile) => createNewPoint({ e: { latlng: { lat, lng: 30 } }, geoProfile: { profile } });
 
 /** Geometry of a routed segment: the points the router returned between two track points. */
 function geometry(...coords) {
@@ -126,4 +144,114 @@ test('every point carries the length of its segment and of the track, a gap star
     expect(points[0].dist).toBeGreaterThan(0);
     expect(points[1].distanceSegment).toBe(points[1].dist);
     expect(points[1].distanceTotal).toBeCloseTo(points[0].dist + points[1].dist, 1);
+});
+
+describe('a new track of the editor', () => {
+    beforeEach(() => jest.useFakeTimers({ now: NOW }));
+    afterEach(() => jest.useRealTimers());
+
+    test('a track created on the map starts with the clicked point and is stored, one created by the button is empty', () => {
+        const ctx = createEditorCtx();
+        ctx.localTracks = [];
+        ctx.setSelectedLocalTrackObj = jest.fn();
+        const create = (createTrack) => {
+            ctx.createTrack = createTrack;
+            initNewSelectedTrack({ ctx, map: null, geoRouter, selectedGpxFile: {}, setRegisteredLayers: jest.fn() });
+        };
+
+        create({ enable: true, latlng: { lat: 50, lng: 30 } });
+
+        expect(ctx.selectedGpxFile).toMatchObject({
+            name: TODAY,
+            points: [
+                {
+                    lat: 50,
+                    lng: 30,
+                    ele: TracksManager.NAN_MARKER,
+                    profile: PROFILE_CAR,
+                    geoProfile: { profile: PROFILE_CAR },
+                    geometry: [],
+                },
+            ],
+        });
+        expect(ctx.localTracks.map((t) => t.name)).toEqual([TODAY]);
+
+        create({ enable: true });
+
+        expect(ctx.selectedGpxFile).toMatchObject({ name: `${TODAY} - 2`, points: [] });
+        // an empty track is stored with its first point, not before
+        expect(ctx.localTracks).toHaveLength(1);
+    });
+});
+
+describe('a click on the map in the editor', () => {
+    test('the first point starts the track, the next one gives its profile to the previous point and goes to the router', () => {
+        const track = { points: [] };
+        const first = clicked(50, PROFILE_CAR);
+
+        expect(addPointToTrack(track, first)).toBe(ADDED_POINT.FIRST);
+        expect(track.points).toEqual([first]);
+
+        const second = clicked(50.01, PROFILE_PEDESTRIAN);
+
+        expect(addPointToTrack(track, second)).toBe(ADDED_POINT.ROUTED);
+        expect(track.points).toEqual([first, second]);
+        expect(first).toMatchObject({ profile: PROFILE_PEDESTRIAN, geoProfile: { profile: PROFILE_PEDESTRIAN } });
+        // filled in by the router
+        expect(second.geometry).toEqual([]);
+        expect(track.hasGeo).toBe(true);
+    });
+
+    test('a Line point on a plain track extends the line without routing', () => {
+        const track = { points: createPlainPoints(3) };
+        const point = clicked(50.05, PROFILE_LINE);
+
+        expect(addPointToTrack(track, point)).toBe(ADDED_POINT.LINE);
+        expect(track.points).toEqual([
+            ...createPlainPoints(2),
+            { lat: 50.02, lng: 30, profile: PROFILE_LINE, geoProfile: { profile: PROFILE_LINE } },
+            point,
+        ]);
+        expect(point).not.toHaveProperty('geometry');
+    });
+
+    test('a router point on a plain track asks first: Continue puts the recorded points into one protected segment', () => {
+        const points = createPlainPoints(4);
+        const point = clicked(50.05, PROFILE_CAR);
+
+        // Cancel leaves the track as it is
+        expect(addPointToTrack({ points }, point)).toBe(ADDED_POINT.ASK_ROUTING);
+        expect(points).toEqual(createPlainPoints(4));
+
+        const routed = addRoutedSegment({ points, newPoint: point, geoRouter });
+
+        expect(routed).toHaveLength(3);
+        expect(routed[0]).toEqual({
+            lat: 50,
+            lng: 30,
+            profile: PROFILE_LINE,
+            geoProfile: { profile: PROFILE_LINE },
+            geometry: [],
+        });
+        expect(routed[1]).toMatchObject({ lat: 50.03, profile: PROFILE_CAR, geoProfile: { profile: PROFILE_CAR } });
+        expect(routed[1].geometry).toEqual(createPlainPoints(4));
+        expect(isProtectedSegment({ startPoint: routed[0], endPoint: routed[1] })).toBe(true);
+        expect(routed[2]).toBe(point);
+    });
+
+    test('a click on a point of the track adds nothing', () => {
+        const track = { points: createRoutedPoints(2) };
+
+        expect(addPointToTrack(track, clicked(50.01, PROFILE_CAR))).toBeNull();
+        expect(track.points).toEqual(createRoutedPoints(2));
+    });
+
+    test('a click adds a point only while the editor is on and neither the point menu nor the map menu is open', () => {
+        const editor = { createTrack: { enable: true }, pointContextMenu: {} };
+
+        expect(isAddPointByClick(editor)).toBeTruthy();
+        expect(isAddPointByClick({ ...editor, pointContextMenu: { coord: { lat: 50, lng: 30 } } })).toBeFalsy();
+        expect(isAddPointByClick({ ...editor, openContextMenu: true })).toBeFalsy();
+        expect(isAddPointByClick({ ...editor, createTrack: { enable: false } })).toBeFalsy();
+    });
 });

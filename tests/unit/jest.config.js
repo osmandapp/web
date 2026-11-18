@@ -73,6 +73,11 @@ module.exports = {
         '^@map/map/layers/HeightmapLayer$': path.join(MAP_DIR, 'src/map/layers/HeightmapLayer.js'),
         '^@map/map/layers/FavoriteLayer$': path.join(MAP_DIR, 'src/map/layers/FavoriteLayer.js'),
         '^@map/map/util/MarkerSelectionService$': path.join(MAP_DIR, 'src/map/util/MarkerSelectionService.js'),
+        // which segments a profile change routes again is plain logic over the polylines of the track
+        '/TrackLayerProvider$': path.join(MAP_DIR, 'src/map/util/TrackLayerProvider.js'),
+        // what the track editor does with a new point is plain logic over the points, its layers stay stubbed
+        '^@map/map/util/creator/LocalTrackHelper$': path.join(MAP_DIR, 'src/map/util/creator/LocalTrackHelper.js'),
+        '^\\./LocalTrackLayerHelper$': `${STUBS}/empty.js`,
         // the initial map view is plain url logic over leaflet, no map is involved
         'map/util/initialMapView$': path.join(MAP_DIR, 'src/map/util/initialMapView.js'),
         // the route points of the url are checked by the coordinate parser of the navigation menu

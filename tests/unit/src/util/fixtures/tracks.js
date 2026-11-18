@@ -1,8 +1,14 @@
 import { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_LOCAL_TRACK } from '@map/context/AppContext';
+import TracksManager, { PROFILE_LINE } from '@map/manager/track/TracksManager';
+import { PROFILE_TRUCK } from '@map/store/geoRouter/profileConstants';
 
 export const CLOUD_FOLDER = 'Folder';
 export const CLOUD_TRACK_NAME = 'Folder/Track.gpx';
 export const WPT_GROUP = 'My group';
+
+/** The moment a new track is created at in the tests, and the date name it gets. */
+export const NOW = new Date('2026-11-17T12:00:00Z');
+export const TODAY = 'Tue Nov 17 2026';
 
 const METERS_IN_DEGREE = 111226.29;
 
@@ -52,6 +58,7 @@ export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
         openGroups: [],
         setOpenGroups: jest.fn(),
         setSelectedGpxFile: setter('selectedGpxFile'),
+        setLocalTracks: setter('localTracks'),
         setTrackErrorMsg: jest.fn(),
     };
 
@@ -68,11 +75,59 @@ export function createEditorPoint(i, { profile = 'car', geometry } = {}) {
     return { lat: 50 + i / 100, lng: 30, profile, ...(geometry && { geometry }) };
 }
 
+/** Points of an imported plain track as the editor holds them: no profile and no geometry. */
+export function createPlainPoints(n) {
+    return Array.from({ length: n }, (_, i) => {
+        const { lat, lng } = createEditorPoint(i);
+        return { lat, lng };
+    });
+}
+
+/** Point `i` of the editor with the geometry of the segment routed to it from point `i - 1`. */
+export function createRoutedPoint(i, { profile } = {}) {
+    return createEditorPoint(i, { profile, geometry: [createEditorPoint(i - 1), createEditorPoint(i)] });
+}
+
 /** Routed track of the editor: every point but the first carries the geometry of the segment leading to it. */
 export function createRoutedPoints(n) {
     return Array.from({ length: n }, (_, i) =>
-        createEditorPoint(i, { geometry: i === 0 ? [] : [createEditorPoint(i - 1), createEditorPoint(i)] })
+        i === 0 ? createEditorPoint(0, { geometry: [] }) : createRoutedPoint(i)
     );
+}
+
+/** Routed track of the editor with a gap after point `gapAt`, as Split leaves it: nothing leads to the next point. */
+export function createGapPoints(n, gapAt) {
+    const points = createRoutedPoints(n);
+    points[gapAt].profile = TracksManager.PROFILE_GAP;
+    points[gapAt].geometry.at(-1).profile = TracksManager.PROFILE_GAP;
+    points[gapAt + 1].geometry = [];
+
+    return points;
+}
+
+/** Recorded geometry of a protected piece from editor point `from` to `to`: `size` vertices along the meridian. */
+export function createRecordedGeometry(from, to, size = 4) {
+    return Array.from({ length: size }, (_, k) => {
+        const { lat, lng } = createEditorPoint(from + ((to - from) * k) / (size - 1));
+        return { lat, lng };
+    });
+}
+
+/** Editor track as Continue of "Add segment with routing" leaves it: a recorded piece from point 0 to 1, a route to `n - 1`. */
+export function createRecordedThenRoutedPoints(n = 3) {
+    return [
+        createEditorPoint(0, { profile: PROFILE_LINE, geometry: [] }),
+        createEditorPoint(1, { geometry: createRecordedGeometry(0, 1) }),
+        ...Array.from({ length: n - 2 }, (_, i) => createRoutedPoint(i + 2)),
+    ];
+}
+
+/** Editor track routed up to point `from`, a recorded piece from it to the next point. */
+export function createRoutedThenRecordedPoints(from = 1) {
+    const points = createRoutedPoints(from + 1);
+    points[from].profile = PROFILE_LINE;
+
+    return [...points, createEditorPoint(from + 1, { geometry: createRecordedGeometry(from, from + 1) })];
 }
 
 /** Track point `meters` north of 50° along the meridian, as `getDistance` (R = 6372.8 km) measures it. */
@@ -98,7 +153,8 @@ export function createRouteSegmentPoints(segments) {
 
 /**
  * ctx of the track editor: a local track open on the map, the routing cache and a router that answers
- * with a straight line. `geoRouter` is what the layers pass around separately from ctx.
+ * with a straight line. The router is set to the truck profile, which no editor point uses, and keeps
+ * the profile of every pair it routed in `routed`. `geoRouter` is what the layers pass around separately from ctx.
  */
 export function createEditorCtx({ points = [] } = {}) {
     const track = { name: 'Local', points, layers: { addLayer: jest.fn(), getLayers: () => [] } };
@@ -107,11 +163,22 @@ export function createEditorCtx({ points = [] } = {}) {
     ctx.trackState = {};
     ctx.routingCache = {};
     ctx.mutateRoutingCache = (update) => update(ctx.routingCache);
-    ctx.trackRouter = {
-        getGeoProfile: (point) => ({ profile: point.profile, cacheKey: `key-${point.profile}` }),
+    const router = {
+        profile: PROFILE_TRUCK,
+        routed: [],
+        getGeoProfile: (point) => {
+            const profile = point ? point.profile : router.profile;
+            return { profile, cacheKey: `key-${profile}` };
+        },
+        onGeoProfile: (geoProfile) => (router.profile = geoProfile.profile),
         getColor: () => '#0000ff',
-        updateRouteBetweenPoints: jest.fn(async (ctx, start, end) => ({ points: [start, end] })),
+        updateRouteBetweenPoints: jest.fn(async (ctx, start, end, geoProfile = router.getGeoProfile()) => {
+            router.routed.push({ start, profile: geoProfile.profile });
+
+            return { points: [start, end].map(({ lat, lng }) => ({ lat, lng })) };
+        }),
     };
+    ctx.trackRouter = router;
     ctx.setTrackState = jest.fn();
     ctx.setProcessRouting = jest.fn();
     ctx.setUpdateInfoBlock = jest.fn();

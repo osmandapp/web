@@ -1,7 +1,6 @@
 import i18n from '../i18n';
 import { apiGet, apiPost } from '../util/HttpApi';
 import { BBOX_COORDS_DECIMALS } from './GlobalManager';
-import { getCurrentTimeParams } from '../util/Utils';
 import { getApiLang } from '../util/lang';
 
 function formatBboxCorner(corner) {
@@ -67,11 +66,11 @@ export function getPoiApi({ pin, name, type, osmId, wikidataId, lang, signal }) 
     });
 }
 
-export function getOpeningHoursInfoApi({ openingHours, signal }) {
+export function getOpeningHoursInfoApi({ openingHours, lat, lon, signal }) {
     return apiGet(`${process.env.REACT_APP_ROUTING_API_SITE}/search/get-opening-hours-info`, {
         apiCache: true,
         signal,
-        params: { openingHours, ...getCurrentTimeParams(), minute: Math.floor(Date.now() / 60000) },
+        params: { openingHours, lat, lon, minute: Math.floor(Date.now() / 60000) },
     });
 }
 

@@ -10,8 +10,9 @@ const DEFAULT_UTM = { utm_source: 'osmand.net', utm_medium: 'website' };
 const PLAY_APPS = ['net.osmand', 'net.osmand.plus'];
 const APP_STORE_ID = 'id934850257';
 // Provider token from App Store Connect; without it `ct` is not attributed
-const APP_STORE_PROVIDER_TOKEN = '';
-const MAX_CT_LENGTH = 40;
+const APP_STORE_PROVIDER_TOKEN = '2123532';
+const MAX_CT_LENGTH = 30;
+const CT_DISALLOWED_CHARS = /[^A-Za-z0-9 [\]/\\~+=<>:;,._*&$%#@?!|{}()-]/g;
 
 function readStored() {
     try {
@@ -36,8 +37,10 @@ function saveLandingUtm() {
         } catch (e) {
             // storage blocked: the campaign is used only on this page
         }
+
         return utm;
     }
+
     return null;
 }
 
@@ -52,16 +55,26 @@ function playUrl(url, utm) {
     const referrer = new URLSearchParams();
     UTM_KEYS.forEach((key) => utm[key] && referrer.set(key, utm[key]));
     url.searchParams.set('referrer', referrer.toString());
+
     return url.toString();
 }
 
+function appStoreCampaign(utm) {
+    const ct = [utm.utm_source, utm.utm_campaign]
+        .map((value) => value?.replace(CT_DISALLOWED_CHARS, '').trim())
+        .filter(Boolean)
+        .join('_');
+
+    return (ct || DEFAULT_UTM.utm_source).slice(0, MAX_CT_LENGTH).trimEnd();
+}
+
 function appStoreUrl(url, utm) {
-    if (!url.pathname.includes(APP_STORE_ID) || url.searchParams.has('ct') || !APP_STORE_PROVIDER_TOKEN) {
+    if (!url.pathname.includes(APP_STORE_ID) || url.searchParams.has('ct')) {
         return null;
     }
-    const ct = [utm.utm_source, utm.utm_campaign].filter(Boolean).join('_');
     url.searchParams.set('pt', APP_STORE_PROVIDER_TOKEN);
-    url.searchParams.set('ct', ct.slice(0, MAX_CT_LENGTH));
+    url.searchParams.set('ct', appStoreCampaign(utm));
+
     return url.toString();
 }
 
@@ -78,13 +91,14 @@ function storeUrl(href, utm) {
     if (url.hostname === 'apps.apple.com' || url.hostname === 'itunes.apple.com') {
         return appStoreUrl(url, utm);
     }
+
     return null;
 }
 
 let landingUtm = null;
 
 function onLinkClick(event) {
-    const link = event.target.closest && event.target.closest('a[href]');
+    const link = event.target.closest?.('a[href]');
     if (!link) {
         return;
     }

@@ -82,6 +82,7 @@ const PointsTab = ({ width }) => {
             <Draggable key={index} draggableId={index + ' row'} index={index}>
                 {(provided, snapshot) => (
                     <MenuItem
+                        id={`se-track-point-${index}`}
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
@@ -104,6 +105,7 @@ const PointsTab = ({ width }) => {
                         </ListItemText>
                         <ListItemAvatar>
                             <IconButton
+                                id={`se-track-point-delete-${index}`}
                                 x={{ mr: 1 }}
                                 onClick={(e) => {
                                     e.stopPropagation();

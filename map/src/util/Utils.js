@@ -345,12 +345,6 @@ export function truncateText(text, maxLength) {
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 }
 
-export function getCurrentTimeParams() {
-    return {
-        timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-    };
-}
-
 const Utils = {
     getFileData,
     getDistance,

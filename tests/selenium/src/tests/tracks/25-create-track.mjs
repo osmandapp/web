@@ -1,18 +1,49 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { clickBy, leftClickBy, matchTextBy, rightClickBy, waitBy } from '../../lib.mjs';
-import { By } from 'selenium-webdriver';
+import {
+    clickBy,
+    enclose,
+    getMarkersNear,
+    getTextBy,
+    getTrackLines,
+    leftClickBy,
+    matchTextBy,
+    pointsCount,
+    setMapCenter,
+    waitBy,
+    waitByRemoved,
+    waitNoPointsCount,
+    waitRoutedLines,
+} from '../../lib.mjs';
+import { By, Key } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 
 import { deleteTrack } from '../../util.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
+import actionUploadGpx from '../../actions/actionUploadGpx.mjs';
+import actionCreateRoute, { ROUTE_POINTS, SQUARE_ROUTE_POINTS } from '../../actions/tracks/actionCreateRoute.mjs';
+import actionDeletePoint from '../../actions/tracks/actionDeletePoint.mjs';
+import actionOpenPointMenu from '../../actions/tracks/actionOpenPointMenu.mjs';
 
 const TRACK_NAME = 'se-test-create-track';
 
 const strings3 = [/Points: 3/, /Distance: [1-9]\.[0-9]+ km/];
 const strings4 = [/Points: 4/, /Distance: [1-9]\.[0-9]+ km/];
+
+const EDITOR_PANEL_BUTTONS = [
+    'se-panel-button-change-profile',
+    'se-panel-button-undo',
+    'se-panel-button-redo',
+    'se-panel-button-delete-track',
+];
+
+const BICYCLE_COLOR = '#9053bd';
+
+const PLAIN_TRACK = 'test-track-trkpt';
+const PLAIN_TRACK_POINTS = 1460;
+const EXTENDED_TRACK_POINTS = PLAIN_TRACK_POINTS + 1;
 
 export default async function test() {
     await actionOpenMap('#15/50.4946/30.5220');
@@ -24,15 +55,13 @@ export default async function test() {
     await clickBy(By.id('se-show-menu-tracks'));
 
     // Create local track with 3 points
-    await rightClickBy(50.492409, 30.525041);
-    await waitBy(By.id('se-context-menu'));
-    await clickBy(By.id('se-create-route-action'));
+    await actionCreateRoute(ROUTE_POINTS);
+    await validateInfoBlockStrings(strings3);
 
-    await leftClickBy(50.496149, 30.514956);
-    await leftClickBy(50.501308, 30.514183);
-
-    await waitBy(By.className('leaflet-interactive'));
-    await waitBy(By.id('se-track-context-menu'));
+    // a click on the map while the menu of a point is open adds no point
+    await actionOpenPointMenu(ROUTE_POINTS[1]);
+    await leftClickBy(50.494, 30.53);
+    await waitByRemoved(By.id('se-point-context-menu'));
     await validateInfoBlockStrings(strings3);
 
     await waitBy(By.id('se-main-graph'));
@@ -55,7 +84,173 @@ export default async function test() {
     await clickBy(By.id('se-button-back'));
     await deleteTrack(TRACK_NAME);
 
+    await createEmptyTrack();
+    await addSquarePoints();
+    await deletePoints();
+    await dragFirstPoint();
+    await deleteAllPoints();
+    await editSegments();
+    await addPointsToPlainTrack();
+
     await actionFinish();
+}
+
+// a track created by the button gets its first point by a click
+async function createEmptyTrack() {
+    await clickBy(By.id('se-create-new-route'));
+    for (const id of EDITOR_PANEL_BUTTONS) {
+        await waitBy(By.id(id));
+    }
+    const [lat, lng] = SQUARE_ROUTE_POINTS[0];
+    await setMapCenter(lat, lng);
+    await leftClickBy(lat, lng);
+    await validateInfoBlockStrings([pointsCount(1)]);
+}
+
+async function addSquarePoints() {
+    for (const [lat, lng] of SQUARE_ROUTE_POINTS.slice(1)) {
+        await leftClickBy(lat, lng);
+    }
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length)]);
+}
+
+async function deletePoints() {
+    const routedLines = await waitRoutedLines();
+
+    // a middle point deleted from its menu is gone, its neighbours are routed anew
+    const [middleLat, middleLng] = SQUARE_ROUTE_POINTS[1];
+    await validateRoutePoint(middleLat, middleLng, true);
+    await actionDeletePoint(SQUARE_ROUTE_POINTS[1]);
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 1)]);
+    await validateRoutePoint(middleLat, middleLng, false);
+    await waitRoutedLines(routedLines - 1);
+
+    // the delete button of a row in the Track tab deletes the point of that row
+    const [firstLat, firstLng] = SQUARE_ROUTE_POINTS[0];
+    await validateRoutePoint(firstLat, firstLng, true);
+    await clickBy(By.css("[testid='se-tab-track']"));
+    await clickBy(By.id('se-track-point-delete-0'));
+    await clickBy(By.css("[testid='se-tab-overview']"));
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 2)]);
+    await validateRoutePoint(firstLat, firstLng, false);
+    await waitRoutedLines(routedLines - 2);
+}
+
+// the first row dragged one place down in the Track tab takes its point there, the track is routed in the new order
+async function dragFirstPoint() {
+    const [first, second] = SQUARE_ROUTE_POINTS.slice(2);
+    await validateRouteDirection(first, second);
+    await clickBy(By.css("[testid='se-tab-track']"));
+    await actionIdleWait();
+
+    const row = await waitBy(By.id('se-track-point-0'));
+    await driver.executeScript('arguments[0].focus()', row);
+    await driver.actions().sendKeys(Key.SPACE).sendKeys(Key.ARROW_DOWN).sendKeys(Key.SPACE).perform();
+
+    await validateRouteDirection(second, first);
+    await clickBy(By.css("[testid='se-tab-overview']"));
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 2)]);
+}
+
+// a track left without points keeps nothing on the map and shows no point count
+async function deleteAllPoints() {
+    const routedLines = await waitRoutedLines();
+    await clickBy(By.css("[testid='se-tab-track']"));
+    for (const [lat, lng] of [SQUARE_ROUTE_POINTS[3], SQUARE_ROUTE_POINTS[2]]) {
+        await clickBy(By.id('se-track-point-delete-0'));
+        await validateRoutePoint(lat, lng, false);
+    }
+    await clickBy(By.css("[testid='se-tab-overview']"));
+    await waitNoPointsCount();
+    await waitRoutedLines(routedLines - 1);
+}
+
+// Split, Join, Profile and Trim from the point menu on the square route drawn again
+async function editSegments() {
+    const [first, second, third, fourth] = SQUARE_ROUTE_POINTS;
+    await leftClickBy(...first);
+    await addSquarePoints();
+    const routedLines = await waitRoutedLines();
+
+    // Split after a point leaves no line to the next one, Join after routes it again
+    await actionOpenPointMenu(second);
+    await clickBy(By.id('se-point-context-menu-split-after'));
+    await waitRoutedLines(routedLines - 1);
+    await actionOpenPointMenu(second);
+    await clickBy(By.id('se-point-context-menu-join-after'));
+    await waitRoutedLines(routedLines);
+    await validateRouteDirection(second, third);
+
+    // Profile after routes the next segment again in the color of the new profile
+    const color = await getRouteColor(third, fourth);
+    await actionOpenPointMenu(third);
+    await clickBy(By.id('se-point-context-menu-profile-after'));
+    await selectProfile('bicycle');
+    await closeProfileDialog('change');
+    await enclose(async () => color !== BICYCLE_COLOR && (await getRouteColor(third, fourth)) === BICYCLE_COLOR, {
+        tag: 'color of the new profile',
+    });
+
+    // Cancel gives the track its profile back
+    await clickBy(By.id('se-panel-button-change-profile'));
+    const profile = await getTextBy(By.id('se-track-profile-select'));
+    await selectProfile('pedestrian');
+    await closeProfileDialog('cancel');
+    await clickBy(By.id('se-panel-button-change-profile'));
+    await enclose(async () => (await getTextBy(By.id('se-track-profile-select'))) === profile, {
+        tag: 'profile after Cancel',
+    });
+    await closeProfileDialog('cancel');
+
+    // Trim after a point removes the points after it, Trim before removes the points before it
+    await actionOpenPointMenu(third);
+    await clickBy(By.id('se-point-context-menu-trim-after'));
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 1)]);
+    await validateRoutePoint(...fourth, false);
+    await waitRoutedLines(routedLines - 1);
+
+    await actionOpenPointMenu(second);
+    await clickBy(By.id('se-point-context-menu-trim-before'));
+    await validateInfoBlockStrings([pointsCount(SQUARE_ROUTE_POINTS.length - 2)]);
+    await validateRoutePoint(...first, false);
+    await waitRoutedLines(routedLines - 2);
+    await validateRouteDirection(second, third);
+}
+
+async function addPointsToPlainTrack() {
+    await actionUploadGpx({ mask: PLAIN_TRACK + '.gpx' });
+    await clickBy(By.id('se-local-track-' + PLAIN_TRACK));
+    await waitBy(By.id('se-panel-button-undo'), { idle: true });
+    await validateInfoBlockStrings([pointsCount(PLAIN_TRACK_POINTS)]);
+    await setMapCenter(50.0191, 19.8397);
+    const recordedDistance = await getDistance();
+
+    // a Line point extends the recorded line
+    await leftClickBy(50.0132, 19.8493);
+    await validateInfoBlockStrings([pointsCount(EXTENDED_TRACK_POINTS)]);
+    await validateLine(EXTENDED_TRACK_POINTS);
+    await enclose(async () => (await getDistance()) > recordedDistance, { tag: 'distance after a Line point' });
+    const lineDistance = await getDistance();
+
+    await clickBy(By.id('se-panel-button-change-profile'));
+    await selectProfile('car');
+    await closeProfileDialog('change');
+
+    // a router point on a recorded track asks first, Cancel keeps the track
+    await leftClickBy(50.025, 19.83);
+    await clickBy(By.id('se-add-routing-dialog-cancel'));
+    await waitByRemoved(By.id('se-add-routing-dialog'));
+    await validateInfoBlockStrings([pointsCount(EXTENDED_TRACK_POINTS)]);
+
+    // Continue puts the recorded points into one segment and routes the new one
+    const routedLines = await waitRoutedLines();
+    await leftClickBy(50.025, 19.83);
+    await clickBy(By.id('se-add-routing-dialog-continue'));
+    await waitByRemoved(By.id('se-add-routing-dialog'));
+    await validateInfoBlockStrings([pointsCount(3)]);
+    await waitRoutedLines(routedLines + 1);
+    await validateLine(EXTENDED_TRACK_POINTS);
+    await enclose(async () => (await getDistance()) > lineDistance, { tag: 'distance after the routed segment' });
 }
 
 async function saveLocalToCloud({ name = null, overwrite = false } = {}) {
@@ -78,4 +273,50 @@ async function validateInfoBlockStrings(strings) {
     for await (const match of strings) {
         await matchTextBy(By.id('se-track-context-menu'), match);
     }
+}
+
+async function validateLine(size) {
+    await enclose(async () => (await getTrackLines()).some((line) => line.size === size), { tag: `line of ${size}` });
+}
+
+async function selectProfile(profile) {
+    await clickBy(By.id('se-track-profile-select'));
+    await clickBy(By.id(`se-track-profile-${profile}`));
+}
+
+async function closeProfileDialog(button) {
+    await clickBy(By.id(`se-change-profile-dialog-${button}`));
+    await waitByRemoved(By.id('se-change-profile-dialog'));
+}
+
+async function getRouteColor(from, to) {
+    const lines = await getTrackLines();
+
+    return lines.find((line) => isRoutedLine(line, from, to))?.color;
+}
+
+function isRoutedLine(line, from, to) {
+    const isNear = (point, [lat, lng]) => Math.abs(point.lat - lat) < 0.002 && Math.abs(point.lng - lng) < 0.002;
+
+    return !line.dashed && line.size > 2 && isNear(line.start, from) && isNear(line.end, to);
+}
+
+async function validateRouteDirection(from, to) {
+    await enclose(async () => (await getTrackLines()).some((line) => isRoutedLine(line, from, to)), {
+        tag: `route from ${from} to ${to}`,
+    });
+}
+
+async function validateRoutePoint(lat, lng, present) {
+    const isOnMap = async () =>
+        (await getMarkersNear(lat, lng)).some(
+            (marker) => marker.type === 'localTracksLayers' && marker.draggable && marker.title !== 'poly'
+        );
+    await enclose(async () => (await isOnMap()) === present, { tag: `route point ${lat}, ${lng}` });
+}
+
+async function getDistance() {
+    const text = await getTextBy(By.id('se-track-context-menu'));
+
+    return parseFloat(text.match(/Distance: ([\d.]+) km/)?.[1]);
 }

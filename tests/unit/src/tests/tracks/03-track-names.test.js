@@ -1,5 +1,6 @@
 import { createTrackFreeName, removeFileExtension, sanitizedTrackName } from '@map/manager/track/SaveTrackManager';
-import { getFileName, isTrackExists, prepareName, validName } from '@map/manager/track/TracksManager';
+import TracksManager, { getFileName, isTrackExists, prepareName, validName } from '@map/manager/track/TracksManager';
+import { NOW, TODAY } from '../../util/fixtures/tracks';
 
 // what a decoder puts in place of a character cut in half
 const UTF8_BROKEN_SYMBOL = '\uFFFD';
@@ -61,6 +62,25 @@ describe('prepareName', () => {
     test('an empty name is generated from the date', () => {
         expect(prepareName('')).toBe(new Date().toDateString());
         expect(prepareName('.gpx')).toBe(new Date().toDateString());
+    });
+});
+
+describe('createName', () => {
+    const createName = (...names) => TracksManager.createName({ localTracks: names.map((name) => ({ name })) });
+
+    beforeEach(() => jest.useFakeTimers({ now: NOW }));
+    afterEach(() => jest.useRealTimers());
+
+    test('a new track is named by the date, the next ones of that day get a number and never repeat a name', () => {
+        expect(createName()).toBe(TODAY);
+        expect(createName(TODAY)).toBe(`${TODAY} - 2`);
+        expect(createName(TODAY, `${TODAY} - 2`)).toBe(`${TODAY} - 3`);
+        expect(createName('Mon Nov 16 2026')).toBe(TODAY);
+
+        // a deleted track leaves a gap in the numbers
+        const left = [TODAY, `${TODAY} - 3`];
+        expect(left).not.toContain(createName(...left));
+        expect(createName(`${TODAY} - 2`)).not.toBe(`${TODAY} - 2`);
     });
 });
 

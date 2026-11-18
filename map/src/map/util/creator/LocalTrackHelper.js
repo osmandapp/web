@@ -1,6 +1,15 @@
 import TracksManager from '../../../manager/track/TracksManager';
 import TrackLayerProvider, { WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvider';
 import { createFirstLayers } from './LocalTrackLayerHelper';
+import cloneDeep from 'lodash-es/cloneDeep';
+import isEmpty from 'lodash-es/isEmpty';
+
+export const ADDED_POINT = {
+    FIRST: 'first',
+    LINE: 'line',
+    ROUTED: 'routed',
+    ASK_ROUTING: 'ask-routing',
+};
 
 export function trackWasChanged(localTracks, track) {
     return localTracks.find((t) => t?.name === track.name)?.updated;
@@ -50,6 +59,50 @@ export function createNewPoint({ ctx, e, geoProfile }) {
     };
 }
 
+export function isAddPointByClick(ctx) {
+    return ctx.createTrack?.enable && isEmpty(ctx.pointContextMenu) && !ctx.openContextMenu;
+}
+
+export function addPointToTrack(track, newPoint) {
+    if (!isNewPoint(track, newPoint)) {
+        return null;
+    }
+    if (newPoint.profile !== TracksManager.PROFILE_LINE && trackWithoutRouting(track.points)) {
+        return ADDED_POINT.ASK_ROUTING;
+    }
+    track.points.push(newPoint);
+    if (track.points.length === 1) {
+        return ADDED_POINT.FIRST;
+    }
+    const prevPoint = track.points[track.points.length - 2];
+    prevPoint.profile = newPoint.profile;
+    prevPoint.geoProfile = newPoint.geoProfile;
+    if (newPoint.profile === TracksManager.PROFILE_LINE && !trackHasRouting(track)) {
+        delete newPoint.geometry;
+        if (prevPoint.geometry?.length === 0) {
+            delete prevPoint.geometry;
+        }
+
+        return ADDED_POINT.LINE;
+    }
+    track.hasGeo = true;
+
+    return ADDED_POINT.ROUTED;
+}
+
+export function addRoutedSegment({ points, newPoint, geoRouter }) {
+    const lastPoint = points[points.length - 1];
+    lastPoint.geometry = deleteInfo(cloneDeep(points));
+    lastPoint.profile = newPoint.profile;
+    lastPoint.geoProfile = newPoint.geoProfile;
+    const firstPoint = points[0];
+    firstPoint.geometry = [];
+    firstPoint.profile = TracksManager.PROFILE_LINE;
+    firstPoint.geoProfile = geoRouter.getShortGeoProfile({ profile: TracksManager.PROFILE_LINE });
+
+    return [firstPoint, lastPoint, newPoint];
+}
+
 export function createLocalTrack({ ctx, map, file, points = [], wpts = [] }) {
     ctx.setLocalTracks((prev) => {
         const tracks = [...prev];
@@ -71,4 +124,43 @@ export function createLocalTrack({ ctx, map, file, points = [], wpts = [] }) {
         ctx.setSelectedLocalTrackObj(file);
         return tracks;
     });
+}
+
+function isNewPoint(track, newPoint) {
+    return !track.points.find((p) => TracksManager.isEqualPoints(p, newPoint));
+}
+
+function trackWithoutRouting(points) {
+    const prevProfilePoint = points.length - 2 > 0 ? points[points.length - 2] : null;
+    const prevProfile = prevProfilePoint?.profile;
+
+    return (
+        prevProfilePoint && (!prevProfile || (prevProfile === TracksManager.PROFILE_LINE && !prevProfilePoint.geometry))
+    );
+}
+
+function trackHasRouting(track) {
+    // hasGeo set before?
+    if (track.hasGeo) {
+        return true;
+    }
+    // just-created is routable
+    if (track.points.length <= 2) {
+        return true;
+    }
+    // finally, assume Line-only as non-routable
+    const pointWithRouting = track.points.find(
+        (p) => p.profile !== undefined && p.profile !== TracksManager.PROFILE_LINE
+    );
+
+    return !!pointWithRouting;
+}
+
+function deleteInfo(points) {
+    points.forEach((p) => {
+        delete p.profile;
+        delete p.geometry;
+    });
+
+    return points;
 }

@@ -280,6 +280,7 @@ export default function WptTagInfo({ tag = null, baseTag = null, copy = false, s
                         </Typography>
                     )}
                     <MenuItemWithLines name={text} maxLines={tag.desc ? 5 : 2} className={styles.tagName} />
+                    {tag.season && <MenuItemWithLines name={tag.season} maxLines={2} className={styles.tagName} />}
                 </ListItemText>
             );
         }

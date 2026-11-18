@@ -186,7 +186,7 @@ export default function FavoriteGroupFolder({ folder, smartf = null, onClose = n
         }
 
         return null;
-    }, [markers, sortFiles, ctx.favorites, listHeight, useMapCenter]);
+    }, [markers, sortFiles, ctx.favorites, listHeight]);
 
     function getDistanceLocation() {
         return useMapCenter ? mapCenter : currentLoc;
