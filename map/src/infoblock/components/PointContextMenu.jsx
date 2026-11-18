@@ -1,6 +1,6 @@
 import { ClickAwayListener, Grid, IconButton, MenuItem, MenuList, Paper, Popper } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
-import TracksManager, { updateTrackRouteTypes } from '../../manager/track/TracksManager';
+import TracksManager from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import PointManager from '../../manager/PointManager';
 import { Close } from '@mui/icons-material';
@@ -48,28 +48,12 @@ export default function PointContextMenu({ anchorEl }) {
 
     function trimBefore() {
         closeContextMenu();
-        if (pointInd !== -1 && pointInd !== 0) {
-            ctx.selectedGpxFile.points.splice(0, pointInd);
-            let geo = ctx.selectedGpxFile.points[0].geometry;
-            if (geo?.length > 0) {
-                ctx.selectedGpxFile.points[0].geometry = [];
-            }
-            ctx.selectedGpxFile.updateLayers = true;
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-            ctx.trackState.update = true;
-            ctx.setTrackState({ ...ctx.trackState });
-        }
+        PointManager.trimBefore(pointInd, ctx);
     }
 
     function trimAfter() {
         closeContextMenu();
-        if (pointInd !== -1 && pointInd !== ctx.selectedGpxFile.points.length - 1) {
-            ctx.selectedGpxFile.points.splice(pointInd + 1, ctx.selectedGpxFile.points.length - pointInd);
-            ctx.selectedGpxFile.updateLayers = true;
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-            ctx.trackState.update = true;
-            ctx.setTrackState({ ...ctx.trackState });
-        }
+        PointManager.trimAfter(pointInd, ctx);
     }
 
     function changeProfileBefore() {
@@ -88,57 +72,26 @@ export default function PointContextMenu({ anchorEl }) {
 
     function splitBefore() {
         closeContextMenu();
-        split(pointInd - 1, pointInd);
+        PointManager.split(pointInd - 1, ctx);
     }
 
     function splitAfter() {
         closeContextMenu();
-        split(pointInd, pointInd + 1);
+        PointManager.split(pointInd, ctx);
     }
 
     async function joinBefore() {
         closeContextMenu();
         let currentPoint = ctx.selectedGpxFile.points[pointInd];
         let prevPoint = ctx.selectedGpxFile.points[pointInd - 1];
-        await join(prevPoint, currentPoint);
+        await PointManager.join(prevPoint, currentPoint, ctx);
     }
 
     async function joinAfter() {
         closeContextMenu();
         let currentPoint = ctx.selectedGpxFile.points[pointInd];
         let nextPoint = ctx.selectedGpxFile.points[pointInd + 1];
-        await join(currentPoint, nextPoint);
-    }
-
-    function split(ind, nextInd) {
-        const geometryLength = ctx.selectedGpxFile.points[ind].geometry.length;
-        ctx.selectedGpxFile.points[ind].geometry[geometryLength - 1].profile = TracksManager.PROFILE_GAP;
-        ctx.selectedGpxFile.points[ind].profile = TracksManager.PROFILE_GAP;
-
-        ctx.selectedGpxFile.points[nextInd].geometry = [];
-
-        ctx.selectedGpxFile.updateLayers = true;
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-
-        ctx.trackState.update = true;
-        ctx.setTrackState({ ...ctx.trackState });
-    }
-
-    async function join(point1, point2) {
-        const result = await ctx.trackRouter.updateRouteBetweenPoints(ctx, point1, point2);
-        point2.geometry = result?.points || [];
-        if (result) {
-            updateTrackRouteTypes(result.points, result.routeTypes, ctx);
-        }
-        point1.profile = point2.profile;
-        point1.geoProfile = point2.geoProfile;
-        if (point1.geometry?.length > 0) {
-            delete point1.geometry[point1.geometry.length - 1].profile;
-        }
-        ctx.selectedGpxFile.updateLayers = true;
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        ctx.trackState.update = true;
-        ctx.setTrackState({ ...ctx.trackState });
+        await PointManager.join(currentPoint, nextPoint, ctx);
     }
 
     function isGap(pointInd) {
@@ -201,18 +154,34 @@ export default function PointContextMenu({ anchorEl }) {
                 <MenuItem id="se-point-context-menu-delete" onClick={deletePoint}>
                     Delete point
                 </MenuItem>
-                {showTrimBefore() && <MenuItem onClick={trimBefore}>Trim before</MenuItem>}
+                {showTrimBefore() && (
+                    <MenuItem id="se-point-context-menu-trim-before" onClick={trimBefore}>
+                        Trim before
+                    </MenuItem>
+                )}
                 {showSplitBefore() && <MenuItem onClick={splitBefore}>Split before</MenuItem>}
                 {showJoinBefore() && <MenuItem onClick={joinBefore}>Join before</MenuItem>}
                 {showProfileBefore() && <MenuItem onClick={changeProfileBefore}>Profile before</MenuItem>}
-                {showTrimAfter() && <MenuItem onClick={trimAfter}>Trim after</MenuItem>}
+                {showTrimAfter() && (
+                    <MenuItem id="se-point-context-menu-trim-after" onClick={trimAfter}>
+                        Trim after
+                    </MenuItem>
+                )}
                 {showSplitAfter() && (
                     <MenuItem id="se-point-context-menu-split-after" onClick={splitAfter}>
                         Split after
                     </MenuItem>
                 )}
-                {showJoinAfter() && <MenuItem onClick={joinAfter}>Join after</MenuItem>}
-                {showProfileAfter() && <MenuItem onClick={changeProfileAfter}>Profile after</MenuItem>}
+                {showJoinAfter() && (
+                    <MenuItem id="se-point-context-menu-join-after" onClick={joinAfter}>
+                        Join after
+                    </MenuItem>
+                )}
+                {showProfileAfter() && (
+                    <MenuItem id="se-point-context-menu-profile-after" onClick={changeProfileAfter}>
+                        Profile after
+                    </MenuItem>
+                )}
             </div>
         );
     };

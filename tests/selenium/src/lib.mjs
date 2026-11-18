@@ -637,7 +637,7 @@ export async function getTrackLines() {
                 const points = layer.getLatLngs().flat(Infinity);
                 const [start, end] = [points[0], points.at(-1)].map((point) => point && { lat: point.lat, lng: point.lng });
 
-                return { size: points.length, dashed: !!layer.options.dashArray, start, end };
+                return { size: points.length, dashed: !!layer.options.dashArray, color: layer.options.color, start, end };
             });
     `);
 }

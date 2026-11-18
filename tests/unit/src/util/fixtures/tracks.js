@@ -83,10 +83,15 @@ export function createPlainPoints(n) {
     });
 }
 
+/** Point `i` of the editor with the geometry of the segment routed to it from point `i - 1`. */
+export function createRoutedPoint(i, { profile } = {}) {
+    return createEditorPoint(i, { profile, geometry: [createEditorPoint(i - 1), createEditorPoint(i)] });
+}
+
 /** Routed track of the editor: every point but the first carries the geometry of the segment leading to it. */
 export function createRoutedPoints(n) {
     return Array.from({ length: n }, (_, i) =>
-        createEditorPoint(i, { geometry: i === 0 ? [] : [createEditorPoint(i - 1), createEditorPoint(i)] })
+        i === 0 ? createEditorPoint(0, { geometry: [] }) : createRoutedPoint(i)
     );
 }
 
@@ -108,13 +113,21 @@ export function createRecordedGeometry(from, to, size = 4) {
     });
 }
 
-/** Editor track as Continue of "Add segment with routing" leaves it: a recorded piece from point 0 to 1, a route to 2. */
-export function createRecordedThenRoutedPoints() {
+/** Editor track as Continue of "Add segment with routing" leaves it: a recorded piece from point 0 to 1, a route to `n - 1`. */
+export function createRecordedThenRoutedPoints(n = 3) {
     return [
         createEditorPoint(0, { profile: PROFILE_LINE, geometry: [] }),
         createEditorPoint(1, { geometry: createRecordedGeometry(0, 1) }),
-        createEditorPoint(2, { geometry: [createEditorPoint(1), createEditorPoint(2)] }),
+        ...Array.from({ length: n - 2 }, (_, i) => createRoutedPoint(i + 2)),
     ];
+}
+
+/** Editor track routed up to point `from`, a recorded piece from it to the next point. */
+export function createRoutedThenRecordedPoints(from = 1) {
+    const points = createRoutedPoints(from + 1);
+    points[from].profile = PROFILE_LINE;
+
+    return [...points, createEditorPoint(from + 1, { geometry: createRecordedGeometry(from, from + 1) })];
 }
 
 /** Track point `meters` north of 50° along the meridian, as `getDistance` (R = 6372.8 km) measures it. */

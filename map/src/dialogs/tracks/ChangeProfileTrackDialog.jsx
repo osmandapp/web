@@ -7,8 +7,7 @@ import AppContext from '../../context/AppContext';
 import TracksManager from '../../manager/track/TracksManager';
 import { Button, IconButton, ToggleButton, ToggleButtonGroup, Box, Dialog } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import TrackLayerProvider from '../../map/util/TrackLayerProvider';
-import TracksRoutingCache from '../../context/TracksRoutingCache';
+import PointManager from '../../manager/PointManager';
 import RouteProfileSettings from '../../menu/navigation/RouteProfileSettings';
 import { Settings } from '@mui/icons-material';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
@@ -97,140 +96,6 @@ export default function ChangeProfileTrackDialog({ open }) {
         }
     }, [ctx.trackProfileManager?.pointInd]);
 
-    function updateLastPointProfile() {
-        const track = ctx.selectedGpxFile;
-        if (track.points?.length > 0) {
-            const last = track.points.length - 1;
-            if (track.points[last].profile !== TracksManager.PROFILE_GAP) {
-                track.points[last].geoProfile = geoProfile;
-                track.points[last].profile = geoProfile.profile;
-            }
-        }
-    }
-
-    async function changeProfile() {
-        if (!ctx.selectedGpxFile.layers) {
-            return false; // on empty track
-        }
-        let polylines = TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
-        if (!partialEdit) {
-            if (changeAll) {
-                // whole track - all segments
-                if (ctx.selectedGpxFile.points?.length > 1) {
-                    for (let i = 0; i < ctx.selectedGpxFile.points.length - 1; i++) {
-                        const start = ctx.selectedGpxFile.points[i];
-                        const end = ctx.selectedGpxFile.points[i + 1];
-                        if (start.profile !== TracksManager.PROFILE_GAP) {
-                            const currentPolyline = TrackLayerProvider.updatePolyline(
-                                start,
-                                end,
-                                polylines,
-                                start,
-                                end
-                            );
-                            if (currentPolyline) {
-                                start.geoProfile = geoProfile;
-                                start.profile = geoProfile.profile;
-                                TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
-                            }
-                        }
-                    }
-                    updateLastPointProfile();
-                    return true;
-                } else {
-                    if (ctx.selectedGpxFile.points?.length > 0) {
-                        ctx.selectedGpxFile.points[0].geoProfile = geoProfile;
-                        ctx.selectedGpxFile.points[0].profile = geoProfile.profile;
-                    }
-                    return true;
-                }
-            } else {
-                updateLastPointProfile(); // just update last point's profile
-            }
-        } else {
-            if (changeOne) {
-                // before or after - one segment
-                let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
-                let prevPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd - 1];
-                let nextPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd + 1];
-                if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                    const currentPolyline = TrackLayerProvider.updatePolyline(
-                        prevPoint,
-                        currentPoint,
-                        polylines,
-                        prevPoint,
-                        currentPoint
-                    );
-                    if (currentPolyline) {
-                        prevPoint.geoProfile = geoProfile;
-                        prevPoint.profile = geoProfile.profile;
-                        TracksRoutingCache.addRoutingToCache(prevPoint, currentPoint, currentPolyline, ctx);
-                    }
-                    return true;
-                } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                    const currentPolyline = TrackLayerProvider.updatePolyline(
-                        currentPoint,
-                        nextPoint,
-                        polylines,
-                        currentPoint,
-                        nextPoint
-                    );
-                    if (currentPolyline) {
-                        currentPoint.geoProfile = geoProfile;
-                        currentPoint.profile = geoProfile.profile;
-                        TracksRoutingCache.addRoutingToCache(currentPoint, nextPoint, currentPolyline, ctx);
-                    }
-                    return true;
-                }
-            } else if (changeAll) {
-                // before or after - all segments
-                if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                    for (let i = 0; i < ctx.trackProfileManager.pointInd; i++) {
-                        const start = ctx.selectedGpxFile.points[i];
-                        const end = ctx.selectedGpxFile.points[i + 1];
-                        if (start.profile !== TracksManager.PROFILE_GAP) {
-                            const currentPolyline = TrackLayerProvider.updatePolyline(
-                                start,
-                                end,
-                                polylines,
-                                start,
-                                end
-                            );
-                            if (currentPolyline) {
-                                start.geoProfile = geoProfile;
-                                start.profile = geoProfile.profile;
-                                TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
-                            }
-                        }
-                    }
-                    return true;
-                } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                    for (let i = ctx.trackProfileManager.pointInd; i < ctx.selectedGpxFile.points.length - 1; i++) {
-                        const start = ctx.selectedGpxFile.points[i];
-                        const end = ctx.selectedGpxFile.points[i + 1];
-                        if (start.profile !== TracksManager.PROFILE_GAP) {
-                            const currentPolyline = TrackLayerProvider.updatePolyline(
-                                start,
-                                end,
-                                polylines,
-                                start,
-                                end
-                            );
-                            if (currentPolyline) {
-                                start.geoProfile = geoProfile;
-                                start.profile = geoProfile.profile;
-                                TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
-                            }
-                        }
-                    }
-                    updateLastPointProfile();
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
     return (
         <>
             {openSettings && (
@@ -308,11 +173,13 @@ export default function ChangeProfileTrackDialog({ open }) {
                             <Settings fontSize="medium" />
                         </IconButton>
                     </Box>
-                    <Button onClick={handleCancel}>Cancel</Button>
+                    <Button id="se-change-profile-dialog-cancel" onClick={handleCancel}>
+                        Cancel
+                    </Button>
                     <Button
                         id="se-change-profile-dialog-change"
                         onClick={() => {
-                            changeProfile().then((changed) => {
+                            PointManager.changeProfile({ ctx, geoProfile, changeOne, changeAll }).then((changed) => {
                                 if (changed) {
                                     ctx.trackState.update = true;
                                     ctx.setTrackState({ ...ctx.trackState });
