@@ -26,6 +26,7 @@ import {
     isAlternativeFeature,
 } from '../../store/geoRouter/legacy/calculateRoute';
 import { LINE_STRING } from '../../util/Utils';
+import { getRouteVariants, selectAlternativeRoute } from '../../store/geoRouter/legacy/selectAlternativeRoute';
 
 const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
@@ -394,41 +395,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
             const delta = main.routingTime ? ` (${d > 0 ? '+' : ''}${d})` : '';
             parts.push(`${Math.round(alt.routingTime)} cost${delta}`);
         }
-        return `${t('web:alt_route_label', { n: props.alternative })}. ` + parts.join(', ');
-    };
-
-    // the picked route moves to the front and the two routes swap the "alternative" number (lines and turns)
-    const selectAlternative = (feature) => {
-        const route = routeObject.getRoute();
-        const number = feature.properties?.alternative;
-        // matched by the number rather than by object identity - the layer may hold a copy
-        const index = (route?.features ?? []).findIndex(
-            (f) => f.geometry?.type === LINE_STRING && f.properties?.alternative === number
+        const n = getRouteVariants(routeObject.getRoute()).findIndex(
+            (f) => f.properties?.alternative === props.alternative
         );
-        if (index <= 0) {
-            return;
-        }
-        const color = route.mainRouteStyle?.color ?? routeObject.getColor();
-        const features = route.features.map((f) => {
-            const properties = { ...f.properties };
-            if (f.properties?.alternative === number) {
-                delete properties.alternative;
-            } else if (!isAlternativeFeature(f)) {
-                properties.alternative = number;
-            } else {
-                return f;
-            }
-            let style = f.style;
-            if (f.geometry?.type === LINE_STRING) {
-                style = properties.alternative ? alternativeRouteStyle(color) : (route.mainRouteStyle ?? { color });
-            }
-
-            return { ...f, properties, style };
-        });
-        const picked = features[index];
-        features[index] = features[0];
-        features[0] = picked;
-        routeObject.putRoute({ route: { ...route, features } });
+        return `${t('web:alt_route_label', { n: n + 1 })}. ` + parts.join(', ');
     };
 
     const onEachAlternative = (feature, layer) => {
@@ -442,7 +412,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
         });
         layer.on('mouseover', () => layer.setStyle({ opacity: ALTERNATIVE_HOVER_OPACITY }));
         layer.on('mouseout', () => layer.setStyle({ opacity: ALTERNATIVE_ROUTE_OPACITY }));
-        layer.on('click', () => selectAlternative(feature));
+        layer.on('click', () => selectAlternativeRoute(routeObject, feature.properties?.alternative));
     };
 
     const onEachFeature = ({ feature, layer, id = null }) => {
