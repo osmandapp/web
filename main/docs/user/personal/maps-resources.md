@@ -178,7 +178,7 @@ Read more in the [**Custom package**](../plugins/custom) article.
 
 </Tabs>
 
-For countries consisting of **multiple region maps**, you can use bulk loading of multiple maps. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (e.g. Contour lines / All Regions: 10). You get to choose how many maps to download. Bulk loading supports several map types, including Standard, Contour lines, Wikipedia, and Terrain.
+For countries consisting of **multiple region maps**, you can use bulk loading of multiple maps. Maps available for this type of download are displayed with a double download arrow icons and a label with the number of regions inside (e.g. Contour lines / All Regions: 10). You get to choose how many maps to download. Bulk loading supports several map types, including Standard, Contour lines, Wikipedia, and Terrain. If a region lies entirely within another region of the same country, such as a capital city within its surrounding region, its map is not included in the bulk download or the region count, because the larger region map already contains its data. You can download this map separately from its region page.
 
 When a grouped country item is opened, a bottom sheet is displayed with the full list of maps for that country, allowing individual maps to be selected or all of them to be downloaded at once.
 
