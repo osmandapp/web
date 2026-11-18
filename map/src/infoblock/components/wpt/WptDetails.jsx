@@ -479,7 +479,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         }
 
         const controller = new AbortController();
-        const openingHoursInfoRequest = getOpeningHoursInfo(newWpt.openingHoursValue, controller.signal);
+        const openingHoursInfoRequest = getOpeningHoursInfo(newWpt.openingHoursValue, newWpt.latlon, controller.signal);
         Promise.all([fetchTagsAndData(), openingHoursInfoRequest]).then(([tags, openingHours]) => {
             if (controller.signal.aborted) {
                 return;
@@ -1337,11 +1337,16 @@ async function getTransportStop(stopId, latlng, signal) {
     return createMapObject(response?.data);
 }
 
-async function getOpeningHoursInfo(openingHoursValue, signal) {
+async function getOpeningHoursInfo(openingHoursValue, latlon, signal) {
     if (!openingHoursValue) {
         return null;
     }
-    const response = await getOpeningHoursInfoApi({ openingHours: openingHoursValue, signal });
+    const response = await getOpeningHoursInfoApi({
+        openingHours: openingHoursValue,
+        lat: latlon.lat,
+        lon: latlon.lon,
+        signal,
+    });
 
     return getOpeningHours(response?.data);
 }
