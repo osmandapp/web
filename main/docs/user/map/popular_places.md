@@ -209,12 +209,12 @@ You can also perform the following actions on each photo:
   Share the selected image using any compatible app installed on your device (e.g., messaging, email, or social media). The shared content includes the image and its source link (if available).
 
 - **Details**  
-  Open a detailed view showing metadata about the image, including: *Description (full text)*, *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*.
+  Open a detailed view showing metadata about the image, including: *Description (full text)*, *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*. On Android, Mapillary photos show *Author*, *Date added*, *Source*, *License*, and a *Link* to the photo page on [Mapillary](https://www.mapillary.com/).
 
   **Note:** The description language depends on the display language of the application. If the description in the selected language is not available, OsmAnd shows the English version or the first available translation.
 
 - **Open in browser**  
-  Launch the image’s source page (usually on [Wikimedia Commons](https://commons.wikimedia.org/)) in your default browser. This allows you to view the full image, licensing information, and related content.
+  Launch the image’s source page (usually on [Wikimedia Commons](https://commons.wikimedia.org/), or the photo viewer page for Mapillary photos) in your default browser. This allows you to view the full image, licensing information, and related content.
 
 - **Download**  
   Save the image to your device’s storage. The downloaded image can be found in your device’s default Downloads folder and accessed offline.
