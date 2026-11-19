@@ -3,53 +3,36 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { clickBy, matchTextBy, waitBy, waitNoPointsCount } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
-import actionIdleWait from '../../actions/actionIdleWait.mjs';
-import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
-import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
-import { deleteTrack, getFiles } from '../../util.mjs';
-import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
+import { deleteTrack, cleanupCloud } from '../../util.mjs';
 import actionAddWpt from '../../actions/tracks/actionAddWpt.mjs';
+import actionSaveLocalToCloud from '../../actions/tracks/actionSaveLocalToCloud.mjs';
+
+const TRACK_NAME = 'se-test-add-wpt-from-map';
 
 export default async function test() {
-    await actionOpenMap();
-    await actionLogIn();
+    try {
+        await actionOpenMap();
+        await actionLogIn();
 
-    const favorites = getFiles({ folder: 'favorites' });
-    const favoriteName = 'Apple';
-    const trackName = getFormattedDate();
+        const favoriteName = 'Apple';
 
-    // prepare
-    await actionOpenFavorites();
-    await actionDeleteAllFavorites(favorites);
+        await clickBy(By.id('se-show-menu-tracks'));
 
-    await clickBy(By.id('se-show-menu-tracks'));
-    for (const track of getFiles({ folder: 'gpx' })) {
-        await actionDeleteTracksByPattern(track.name);
+        await clickBy(By.id('se-create-new-route'));
+
+        // add wpt
+        await actionAddWpt(favoriteName);
+        // the waypoint is not a point of the route
+        await waitNoPointsCount();
+        await actionSaveLocalToCloud({ name: TRACK_NAME });
+        await clickBy(By.id('se-button-back'));
+
+        await waitBy(By.id('se-' + TRACK_NAME));
+        await matchTextBy(By.id('se-cloud-t-info-' + TRACK_NAME), '0 · 0:00 · 1');
+        await deleteTrack(TRACK_NAME);
+
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [TRACK_NAME] });
     }
-    // the track this test saves is named by the date, so the loop above never reaches it
-    await actionDeleteTracksByPattern(trackName);
-
-    await clickBy(By.id('se-create-new-route'));
-
-    // add wpt
-    await actionAddWpt(favoriteName);
-    // the waypoint is not a point of the route
-    await waitNoPointsCount();
-    await clickBy(By.id('se-local-track-actions-save-to-cloud'));
-    await waitBy(By.id('se-save-track-dialog'));
-    await clickBy(By.id('se-submit-save-to-cloud'));
-    await waitBy(By.id('se-track-actions-edit'));
-    await actionIdleWait(); // let save-to-cloud finish refreshing the list before leaving the track
-    await clickBy(By.id('se-button-back'));
-
-    await waitBy(By.id('se-' + trackName));
-    await matchTextBy(By.id('se-cloud-t-info-' + trackName), '0 · 0:00 · 1');
-    await deleteTrack(trackName);
-
-    await actionFinish();
-}
-
-function getFormattedDate() {
-    const date = new Date();
-    return date.toDateString();
 }

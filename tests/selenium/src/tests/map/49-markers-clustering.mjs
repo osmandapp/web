@@ -16,7 +16,7 @@ import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 import setView from '../../actions/setView.mjs';
 import { assert, clickBy, enclose, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
-import { deleteTrack, getFilesByName } from '../../util.mjs';
+import { deleteTrack, getFilesByName, cleanupCloud } from '../../util.mjs';
 import { driver, TEST_LOGIN2, TEST_PASSWORD2 } from '../../options.mjs';
 
 const DATA_FOLDER = 'other';
@@ -40,33 +40,33 @@ const SEARCH_WORD = 'silpo';
 const SERVER_CANDIDATES = 5;
 
 export default async function test() {
-    const track = readDataFile(TRACK);
-    const favorites = readDataFile(FAV_FILE);
+    try {
+        const track = readDataFile(TRACK);
+        const favorites = readDataFile(FAV_FILE);
 
-    await actionOpenMap();
-    await actionLogIn();
+        await actionOpenMap();
+        await actionLogIn();
 
-    await clickBy(By.id('se-show-menu-tracks'));
-    await actionDeleteTracksByPattern(TRACK);
-    await actionOpenFavorites();
-    await deleteFavGroupIfExists();
+        await clickBy(By.id('se-show-menu-tracks'));
+        await checkPlanRouteTrack(track);
+        await checkCloudTrack(track);
+        await checkSharedTrack(track);
+        await checkFavorites(favorites);
 
-    await checkPlanRouteTrack(track);
-    await checkCloudTrack(track);
-    await checkSharedTrack(track);
-    await checkFavorites(favorites);
+        await checkPoiOverlay();
+        await checkSearchResults();
+        await checkExplore();
+        await checkTransportStops();
 
-    await checkPoiOverlay();
-    await checkSearchResults();
-    await checkExplore();
-    await checkTransportStops();
+        await clickBy(By.id('se-show-menu-tracks'));
+        await actionDeleteTracksByPattern(TRACK);
+        await actionOpenFavorites();
+        await deleteFavGroupIfExists();
 
-    await clickBy(By.id('se-show-menu-tracks'));
-    await actionDeleteTracksByPattern(TRACK);
-    await actionOpenFavorites();
-    await deleteFavGroupIfExists();
-
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [TRACK], favorites: [FAV_GROUP], mainUser: true });
+    }
 }
 
 async function checkPlanRouteTrack(track) {

@@ -8,7 +8,7 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionsUploadFavorites from '../../actions/favorites/actionsUploadFavorites.mjs';
-import { getFiles } from '../../util.mjs';
+import { getFiles, cleanupCloud } from '../../util.mjs';
 
 const FAVORITE_NAME = 'Test wpt • shops';
 const FAVORITE_COORDS = { lat: 52.3554606, lon: 4.8929554 };
@@ -19,43 +19,46 @@ export default async function test() {
     await actionLogIn();
 
     const favGroupName = 'favorites-shops';
-    const favorites = getFiles({ folder: 'favorites' });
-    const { path } = favorites.find((t) => t.name === favGroupName);
 
-    await actionOpenFavorites();
-    await actionDeleteAllFavorites(favorites);
+    try {
+        const favorites = getFiles({ folder: 'favorites' });
+        const { path } = favorites.find((t) => t.name === favGroupName);
 
-    await clickBy(By.id('se-import-fav-group'));
-    await actionsUploadFavorites({ files: path });
-    await waitBy(By.id('se-menu-fav-shops'));
-    await actionIdleWait();
+        await actionOpenFavorites();
+        await clickBy(By.id('se-import-fav-group'));
+        await actionsUploadFavorites({ files: path });
+        await waitBy(By.id('se-menu-fav-shops'));
+        await actionIdleWait();
 
-    await clickBy(By.id('se-menu-fav-shops'));
-    await actionIdleWait();
+        await clickBy(By.id('se-menu-fav-shops'));
+        await actionIdleWait();
 
-    // Open navigation menu
-    await clickBy(By.id('se-show-menu-navigation'));
-    await waitBy(By.id('se-route-start-point'));
+        // Open navigation menu
+        await clickBy(By.id('se-show-menu-navigation'));
+        await waitBy(By.id('se-route-start-point'));
 
-    // Click on favorite marker on map
-    await leftClickBy(FAVORITE_COORDS.lat, FAVORITE_COORDS.lon);
-    await actionIdleWait();
+        // Click on favorite marker on map
+        await leftClickBy(FAVORITE_COORDS.lat, FAVORITE_COORDS.lon);
+        await actionIdleWait();
 
-    // Check that favorite name appears in start input
-    await expectInputExactBy(By.id('se-route-start-point'), FAVORITE_NAME);
-    await expectInputExactBy(By.id('se-route-finish-point'), '');
+        // Check that favorite name appears in start input
+        await expectInputExactBy(By.id('se-route-start-point'), FAVORITE_NAME);
+        await expectInputExactBy(By.id('se-route-finish-point'), '');
 
-    // Click on another place to set finish
-    await leftClickBy(FAVORITE_COORDS.lat + FINISH_OFFSET, FAVORITE_COORDS.lon + FINISH_OFFSET);
-    await actionIdleWait();
+        // Click on another place to set finish
+        await leftClickBy(FAVORITE_COORDS.lat + FINISH_OFFSET, FAVORITE_COORDS.lon + FINISH_OFFSET);
+        await actionIdleWait();
 
-    await expectInputExactBy(By.id('se-route-start-point'), FAVORITE_NAME);
-    await waitByRemoved(By.id('se-progress-route-calculation'));
+        await expectInputExactBy(By.id('se-route-start-point'), FAVORITE_NAME);
+        await waitByRemoved(By.id('se-progress-route-calculation'));
 
-    await actionOpenFavorites();
-    await clickBy(By.id('se-back-folder-button-favorites'));
-    await waitBy(By.id('se-menu-fav-shops'));
-    await actionDeleteAllFavorites(favorites);
+        await actionOpenFavorites();
+        await clickBy(By.id('se-back-folder-button-favorites'));
+        await waitBy(By.id('se-menu-fav-shops'));
+        await actionDeleteAllFavorites(favorites);
 
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ favorites: [favGroupName] });
+    }
 }

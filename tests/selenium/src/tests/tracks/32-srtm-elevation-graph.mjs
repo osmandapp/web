@@ -5,7 +5,7 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionAddOneTrack from '../../actions/tracks/actionAddOneTrack.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { deleteTrack } from '../../util.mjs';
+import { deleteTrack, cleanupCloud } from '../../util.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -13,19 +13,23 @@ export default async function test() {
 
     const trackName = 'test-routed-osrm';
 
-    await clickBy(By.id('se-show-menu-tracks'));
+    try {
+        await clickBy(By.id('se-show-menu-tracks'));
 
-    await actionAddOneTrack(trackName);
-    await clickBy(By.id(`se-cloud-track-${trackName}`));
-    await waitBy(By.id('se-track-context-menu'));
+        await actionAddOneTrack(trackName);
+        await clickBy(By.id(`se-cloud-track-${trackName}`));
+        await waitBy(By.id('se-track-context-menu'));
 
-    await actionIdleWait({ idle: 3000 });
-    await waitByRemoved(By.id('se-loadingSrtm'));
+        await actionIdleWait({ idle: 3000 });
+        await waitByRemoved(By.id('se-loadingSrtm'));
 
-    await waitBy(By.id('se-main-graph'));
+        await waitBy(By.id('se-main-graph'));
 
-    await clickBy(By.id('se-button-back'));
-    await deleteTrack(trackName);
+        await clickBy(By.id('se-button-back'));
+        await deleteTrack(trackName);
 
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [trackName] });
+    }
 }

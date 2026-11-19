@@ -9,7 +9,7 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionUploadGpx from '../../actions/actionUploadGpx.mjs';
 import actionLocalToCloud from '../../actions/tracks/actionLocalToCloud.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
-import { deleteTrack } from '../../util.mjs';
+import { deleteTrack, cleanupCloud } from '../../util.mjs';
 
 const TRACKS = [
     {
@@ -64,34 +64,38 @@ const cloudTrackButtons = [
 const TRACK_WITH_SRTM_ELE = 'test-routed-osrm.gpx';
 
 export default async function test() {
-    await actionOpenMap();
-    await actionLogIn();
+    try {
+        await actionOpenMap();
+        await actionLogIn();
 
-    for await (const { gpx, strings } of TRACKS) {
-        const name = gpx.replace('.gpx', '');
+        for await (const { gpx, strings } of TRACKS) {
+            const name = gpx.replace('.gpx', '');
 
-        await actionUploadGpx({ mask: gpx });
-        await clickBy(By.id('se-local-track-' + name));
-        await actionIdleWait({ idle: 3000 });
-        await waitByRemoved(By.id(`se-loadingSrtm`));
-        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true, now: true });
-        await actionIdleWait({ idle: 3000 });
-        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true, now: true });
-        await validateInfoBlockStrings(strings, gpx);
-        await validateInfoBlockButtons(localTrackButtons);
-        await clickBy(By.id('se-button-back'));
-        await clickBy(By.id('se-show-menu-planroute'));
-        await actionLocalToCloud({ mask: name });
-        await clickBy(By.id('se-cloud-track-' + name));
-        await actionIdleWait({ idle: 3000 });
-        await waitByRemoved(By.id(`se-loadingSrtm`));
-        await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true, now: true });
-        await actionIdleWait({ idle: 3000 });
-        await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true, now: true });
-        await validateInfoBlockStrings(strings, gpx);
-        await validateInfoBlockButtons(cloudTrackButtons);
-        await clickBy(By.id('se-button-back'));
-        await deleteTrack(name);
+            await actionUploadGpx({ mask: gpx });
+            await clickBy(By.id('se-local-track-' + name));
+            await actionIdleWait({ idle: 3000 });
+            await waitByRemoved(By.id(`se-loadingSrtm`));
+            await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true, now: true });
+            await actionIdleWait({ idle: 3000 });
+            await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true, now: true });
+            await validateInfoBlockStrings(strings, gpx);
+            await validateInfoBlockButtons(localTrackButtons);
+            await clickBy(By.id('se-button-back'));
+            await clickBy(By.id('se-show-menu-planroute'));
+            await actionLocalToCloud({ mask: name });
+            await clickBy(By.id('se-cloud-track-' + name));
+            await actionIdleWait({ idle: 3000 });
+            await waitByRemoved(By.id(`se-loadingSrtm`));
+            await clickBy(By.id('se-show-attr-legend-Road type'), { optional: true, now: true });
+            await actionIdleWait({ idle: 3000 });
+            await clickBy(By.id('se-show-attr-legend-Surface'), { optional: true, now: true });
+            await validateInfoBlockStrings(strings, gpx);
+            await validateInfoBlockButtons(cloudTrackButtons);
+            await clickBy(By.id('se-button-back'));
+            await deleteTrack(name);
+        }
+    } finally {
+        await cleanupCloud({ tracks: TRACKS.map(({ gpx }) => gpx.replace('.gpx', '')) });
     }
 }
 

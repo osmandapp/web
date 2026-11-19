@@ -3,12 +3,24 @@
 import { By } from 'selenium-webdriver';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
-import { clickBy, waitBy, waitByRemoved, sendKeysBy, assert, enclose, enumerateIds } from '../../lib.mjs';
+import {
+    clickBy,
+    waitBy,
+    waitByRemoved,
+    sendKeysBy,
+    assert,
+    enclose,
+    enumerateIds,
+    replaceTextBy,
+} from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { deleteTrack } from '../../util.mjs';
+import { deleteTrack, cleanupCloud } from '../../util.mjs';
 import { ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
+
+const ROUTE_TRACK = 'se-test-navigation-route';
+const INFO_BLOCK_TRACK = 'se-test-navigation-route-info';
 
 const START_COORDS = '50.45010, 30.52340';
 const FINISH_COORDS = '50.45466, 30.51660';
@@ -18,38 +30,42 @@ const ROUTE_TRACK_ACTION_BUTTONS = [
     'se-route-track-actions-download',
 ];
 export default async function test() {
-    await actionOpenMap();
-    await actionLogIn();
+    try {
+        await actionOpenMap();
+        await actionLogIn();
 
-    await returnToNavigation();
+        await returnToNavigation();
 
-    await buildRoute();
+        await buildRoute();
 
-    const trackName = await saveRouteToCloud('se-route-save-to-cloud');
-    await verifyTrackInCloud(trackName);
+        await saveRouteToCloud('se-route-save-to-cloud', ROUTE_TRACK);
+        await verifyTrackInCloud(ROUTE_TRACK);
 
-    await returnToNavigation();
-    await verifyDownloadDialog('se-route-download-track');
+        await returnToNavigation();
+        await verifyDownloadDialog('se-route-download-track');
 
-    await navigateToTracks();
-    await deleteTrack(trackName);
+        await navigateToTracks();
+        await deleteTrack(ROUTE_TRACK);
 
-    await returnToNavigation();
-    await openRouteInfoBlock();
-    await verifyDownloadDialog('se-route-track-actions-download');
-    const infoBlockTrackName = await saveRouteToCloud('se-route-track-actions-save-to-cloud');
-    // save from InfoBlock opens the cloud track, go back to the list
-    await waitBy(By.id('se-track-actions-edit'));
-    await actionIdleWait(); // let save-to-cloud finish refreshing the list before leaving the track
-    await clickBy(By.id('se-button-back'));
-    await verifyCloudTrackInfo(infoBlockTrackName);
-    await deleteTrack(infoBlockTrackName);
+        await returnToNavigation();
+        await openRouteInfoBlock();
+        await verifyDownloadDialog('se-route-track-actions-download');
+        await saveRouteToCloud('se-route-track-actions-save-to-cloud', INFO_BLOCK_TRACK);
+        // save from InfoBlock opens the cloud track, go back to the list
+        await waitBy(By.id('se-track-actions-edit'));
+        await actionIdleWait(); // let save-to-cloud finish refreshing the list before leaving the track
+        await clickBy(By.id('se-button-back'));
+        await verifyCloudTrackInfo(INFO_BLOCK_TRACK);
+        await deleteTrack(INFO_BLOCK_TRACK);
 
-    await returnToNavigation();
-    await openRouteInfoBlock();
-    await verifyEditOpensLocalTrack();
+        await returnToNavigation();
+        await openRouteInfoBlock();
+        await verifyEditOpensLocalTrack();
 
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [ROUTE_TRACK, INFO_BLOCK_TRACK] });
+    }
 }
 
 async function buildRoute() {
@@ -89,18 +105,15 @@ async function verifyDownloadDialog(buttonId) {
     await waitByRemoved(By.id('se-download-track-full'));
 }
 
-async function saveRouteToCloud(buttonId) {
+async function saveRouteToCloud(buttonId, trackName) {
     await clickBy(By.id(buttonId));
     await waitBy(By.id('se-save-track-dialog'));
-
-    const nameInput = await waitBy(By.id('se-save-track-name'));
-    const trackName = await nameInput.getAttribute('value');
+    await replaceTextBy(By.id('se-save-track-name'), trackName);
 
     await clickBy(By.id('se-submit-save-to-cloud'));
-    // the name is generated from the date, so a track left by a failed run asks to be updated
+    // a track left by a killed run asks to be updated
     await clickBy(By.id('se-overwrite-cloud-track'), { optional: true });
     await waitByRemoved(By.id('se-save-track-dialog'));
-    return trackName;
 }
 
 async function verifyTrackInCloud(routeName) {

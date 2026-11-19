@@ -3,9 +3,8 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import { clickBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.mjs';
-import { deleteTrack, getFiles } from '../../util.mjs';
+import { deleteTrack, getFiles, cleanupCloud } from '../../util.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
 export default async function test() {
@@ -17,49 +16,50 @@ export default async function test() {
     const tracks = getFiles({ folder: 'gpx' });
     const trackName = 'test-routed-osrm';
 
-    for (const track of tracks) {
-        await actionDeleteTracksByPattern(track.name);
+    try {
+        // create track
+        await actionImportCloudTrack(tracks, trackName);
+
+        // check version "Added"
+        await openChanges();
+        await waitBy(By.id(`se-cloud_change-${trackName}-Added`));
+
+        // delete track
+        await clickBy(By.id('se-show-menu-tracks'));
+        await deleteTrack(trackName);
+
+        // check version "Deleted"
+        await openChanges();
+        await waitBy(By.id(`se-cloud_change-${trackName}-Deleted`));
+
+        // delete version "Deleted"
+        await clickBy(By.id(`se-cloud-changes-actions-${trackName}`));
+        await waitBy(By.id('se-changes-actions'));
+        await clickBy(By.id('se-changes-actions-delete'));
+        await actionIdleWait(); // leaving settings refreshes the list, let the server apply the change first
+
+        // check track
+        await clickBy(By.id('se-show-menu-tracks'));
+        await waitBy(By.id(`se-cloud-track-${trackName}`));
+
+        // delete track
+        await deleteTrack(trackName);
+
+        // restore track
+        await openChanges();
+        await clickBy(By.id(`se-cloud-changes-actions-${trackName}`));
+        await waitBy(By.id('se-changes-actions'));
+        await clickBy(By.id('se-changes-actions-restore'));
+        await actionIdleWait();
+
+        // check track
+        await clickBy(By.id('se-show-menu-tracks'));
+        await waitBy(By.id(`se-cloud-track-${trackName}`));
+
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [trackName] });
     }
-    // create track
-    await actionImportCloudTrack(tracks, trackName);
-
-    // check version "Added"
-    await openChanges();
-    await waitBy(By.id(`se-cloud_change-${trackName}-Added`));
-
-    // delete track
-    await clickBy(By.id('se-show-menu-tracks'));
-    await deleteTrack(trackName);
-
-    // check version "Deleted"
-    await openChanges();
-    await waitBy(By.id(`se-cloud_change-${trackName}-Deleted`));
-
-    // delete version "Deleted"
-    await clickBy(By.id(`se-cloud-changes-actions-${trackName}`));
-    await waitBy(By.id('se-changes-actions'));
-    await clickBy(By.id('se-changes-actions-delete'));
-    await actionIdleWait(); // leaving settings refreshes the list, let the server apply the change first
-
-    // check track
-    await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id(`se-cloud-track-${trackName}`));
-
-    // delete track
-    await deleteTrack(trackName);
-
-    // restore track
-    await openChanges();
-    await clickBy(By.id(`se-cloud-changes-actions-${trackName}`));
-    await waitBy(By.id('se-changes-actions'));
-    await clickBy(By.id('se-changes-actions-restore'));
-    await actionIdleWait();
-
-    // check track
-    await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id(`se-cloud-track-${trackName}`));
-
-    await actionFinish();
 }
 
 async function openChanges() {

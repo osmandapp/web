@@ -1,6 +1,7 @@
 import { waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionDeleteFavGroup from './actionDeleteFavGroup.mjs';
+import actionDeleteFavGroupsByPattern from './actionDeleteFavGroupsByPattern.mjs';
 
 const DEFAULT_FAV_GROUP = 'favorites';
 
@@ -39,15 +40,7 @@ export default async function test(favorites, other = null) {
     }
 
     // delete any remaining groups left over from failed previous tests
-    let leftover;
-    do {
-        leftover = await waitBy(By.css('[id^="se-menu-fav-"]'), { optional: true, idle: true });
-        if (leftover) {
-            const id = await leftover.getAttribute('id');
-            const groupName = id.replace('se-menu-fav-', '');
-            await actionDeleteFavGroup(groupName);
-        }
-    } while (leftover);
+    await actionDeleteFavGroupsByPattern('');
 
     await waitBy(By.id('se-empty-page'));
 }
