@@ -189,8 +189,13 @@ With Spatial Search, you can:
 - Search for a POI in a specific place. Enter a category and a place name in one query, for example, Hotel Berlin. The place name is used as the search area, and the category is searched within it.
 - Search for places that match two conditions. Enter two categories or a category and a property, for example, Fuel Diesel or Cafe Vegan, to find places that match both. A query such as Fuel McDonald's finds fuel stations located near a McDonald's. The order of words matters. The first word sets what you are looking for, and the second sets what it should be near. For example, McDonald’s Fuel finds McDonald’s restaurants located near fuel stations.
 - Search around a found place. Enter a category and a place name, for example, *Hotel Berlin*, then tap *Hotel near Berlin* at the top of the search results. The name of this place is added to the [Search around](#search-around) chip.
-- Use different formats of street names and translated category names in your queries.
+- Use different formats of street names and translated category names in your queries. Categories are found by their names in the app language, in English, in the [map language](../map/vector-maps.md#map-language), and in the main language of the region where you search. For example, with the app in Ukrainian, `schule` in Leipzig finds the School category.
+- Find a category by other words people commonly use for it. For example, `RV park` finds Caravan site.
 - Get faster results when searching by popular POI categories, such as pharmacy, parking, or restaurant.
+
+While you are typing a word, the search results show matching POI categories as rows and places with matching names. Places of a category appear in the results after you type a word of the category name in full. For example, `ca` shows category rows and matching names, and `cafe` lists cafés.
+
+**Note:** If a short word matches a very large number of objects in your downloaded maps, it is matched only as a whole word. Type more letters to see results that start with it.
 
 ### Search Around {#search-around}
 

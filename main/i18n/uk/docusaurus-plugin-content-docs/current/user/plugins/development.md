@@ -98,7 +98,7 @@ To activate special features for developers and testers:
 :::
 
 - **Безпечний режим**. Запускає OsmAnd без нативної бібліотеки C++, використовуючи замість цього реалізації Java для рендерингу мапи та розрахунку маршрутів. Програма автоматично переходить у цей режим, якщо під час запуску сталася помилка нативної бібліотеки, що дозволяє запустити її та продовжити роботу. Рендеринг мапи та розрахунок маршрутів помітно сповільнюються, поки активний безпечний режим. 
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### Налаштування пам'яті {#memory-settings}

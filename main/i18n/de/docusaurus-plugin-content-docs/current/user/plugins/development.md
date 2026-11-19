@@ -98,7 +98,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 :::
 
 - **Sicherer Modus**. Führt OsmAnd ohne die native C++-Bibliothek aus und verwendet stattdessen Java-Implementierungen für das Karten-Rendering und die Routenberechnung. Die App wechselt automatisch in diesen Modus, wenn die native Bibliothek beim Start fehlschlägt, sodass sie gestartet werden und nutzbar bleiben kann. Das Karten-Rendering und die Routenberechnung sind im sicheren Modus deutlich langsamer. 
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### Speichereinstellungen {#memory-settings}

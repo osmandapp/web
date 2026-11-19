@@ -98,7 +98,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 :::
 
 - **Safe mode**. Voert OsmAnd uit zonder de native C++-bibliotheek, met Java-implementaties voor kaartweergave en routeberekening in plaats daarvan. De app schakelt automatisch over naar deze modus als de native bibliotheek tijdens het opstarten faalt, zodat de app kan starten en bruikbaar blijft. Kaartweergave en routeberekening zijn merkbaar langzamer terwijl de veilige modus actief is.  
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### Geheugeninstellingen {#memory-settings}
