@@ -69,7 +69,7 @@ export default function AiAssistantPermissionsDialog({ connection, groups, onClo
                 <Typography variant="body2" color="text.secondary">
                     {t('web:ai_assistant_permissions_desc')}
                 </Typography>
-                <Table size="small">
+                <Table size="small" className={styles.aiPermissionsTable}>
                     <TableHead>
                         <TableRow>
                             <TableCell />

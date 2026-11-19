@@ -133,3 +133,6 @@
 .aiPermissionsPaper:global(.MuiPaper-root) {
     max-width: 480px;
 }
+.aiPermissionsTable {
+    word-break: normal;
+}
