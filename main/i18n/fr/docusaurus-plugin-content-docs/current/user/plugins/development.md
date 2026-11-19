@@ -98,7 +98,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 :::
 
 - **Mode sans échec**. Exécute OsmAnd sans la bibliothèque C++ native, en utilisant des implémentations Java pour le rendu de la carte et le calcul d'itinéraire à la place. L'application passe automatiquement en mode sans échec si la bibliothèque native échoue au démarrage, ce qui lui permet de démarrer et de rester utilisable. Le rendu de la carte et le calcul d'itinéraire sont nettement plus lents lorsque le mode sans échec est actif. 
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### Paramètres de mémoire {#memory-settings}

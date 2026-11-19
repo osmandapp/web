@@ -96,7 +96,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 :::
 
 - **Modo seguro**. Ejecuta OsmAnd sin la biblioteca nativa de C++, utilizando implementaciones en Java para el renderizado del mapa y el cálculo de rutas. La aplicación cambia automáticamente a este modo si la biblioteca nativa falla durante el inicio, permitiendo que se inicie y siga siendo utilizable. El renderizado del mapa y el cálculo de rutas son notablemente más lentos mientras el modo seguro está activo.  
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### Ajustes de memoria {#memory-settings}

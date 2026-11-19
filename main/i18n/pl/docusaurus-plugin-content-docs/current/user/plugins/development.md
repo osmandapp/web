@@ -98,7 +98,7 @@ Użyj jednej z następujących ścieżek, aby otworzyć ustawienia wtyczki:
 :::
 
 - **Tryb awaryjny**. Uruchamia OsmAnd bez natywnej biblioteki C++, używając implementacji Java do renderowania map i obliczania tras. Aplikacja automatycznie przełącza się w ten tryb, jeśli natywna biblioteka ulegnie awarii podczas uruchamiania, umożliwiając uruchomienie i dalsze korzystanie z aplikacji. Renderowanie mapy i obliczanie tras są zauważalnie wolniejsze, gdy tryb awaryjny jest aktywny.  
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### Ustawienia pamięci {#memory-settings}
