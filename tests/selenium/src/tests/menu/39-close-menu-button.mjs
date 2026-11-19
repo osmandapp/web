@@ -13,13 +13,12 @@ import {
     waitByRemoved,
 } from '../../lib.mjs';
 import { driver } from '../../options.mjs';
-import { getFiles } from '../../util.mjs';
+import { getFiles, cleanupCloud } from '../../util.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
-import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
 import actionsUploadFavorites from '../../actions/favorites/actionsUploadFavorites.mjs';
 import actionCreateNewFolder from '../../actions/actionCreateNewFolder.mjs';
@@ -49,138 +48,141 @@ export default async function test() {
     const trackFolder = 'close menu button';
     const trackName = 'test-routed-osrm';
 
-    const favorites = getFiles({ folder: 'favorites' });
+    try {
+        const favorites = getFiles({ folder: 'favorites' });
 
-    // prepare
-    await actionOpenFavorites();
-    await actionDeleteAllFavorites(favorites);
-    const { path } = favorites.find((t) => t.name === favGroupName);
-    await clickBy(By.id('se-import-fav-group'));
-    await actionsUploadFavorites({ files: path });
-    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+        // prepare
+        await actionOpenFavorites();
+        const { path } = favorites.find((t) => t.name === favGroupName);
+        await clickBy(By.id('se-import-fav-group'));
+        await actionsUploadFavorites({ files: path });
+        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
-    await setView({ lat: 50, lon: 25, zoom: 10 });
-    await actionIdleWait();
+        await setView({ lat: 50, lon: 25, zoom: 10 });
+        await actionIdleWait();
 
-    // --- My Places: Close closes the favorite and the menu, keeps the map, resets the opened folder ---
-    await openFavoriteFromGroup(shortFavGroupName, wptName);
-    await closeMenuKeepingMap(By.id(`se-fav-item-info-${wptName}`), INFO_MENU_URL);
-    await waitByRemoved(By.id(`se-opened-fav-group-${shortFavGroupName}`));
+        // --- My Places: Close closes the favorite and the menu, keeps the map, resets the opened folder ---
+        await openFavoriteFromGroup(shortFavGroupName, wptName);
+        await closeMenuKeepingMap(By.id(`se-fav-item-info-${wptName}`), INFO_MENU_URL);
+        await waitByRemoved(By.id(`se-opened-fav-group-${shortFavGroupName}`));
 
-    // the next opening starts from the list of folders, not from the opened folder or favorite
-    await actionOpenFavorites();
-    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
-    await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
+        // the next opening starts from the list of folders, not from the opened folder or favorite
+        await actionOpenFavorites();
+        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+        await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
 
-    // --- Esc closes the menu the same way ---
-    await openFavoriteFromGroup(shortFavGroupName, wptName);
-    await waitBy(CLOSE_MENU_BUTTON);
-    await driver.actions().sendKeys(Key.ESCAPE).perform();
-    await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
+        // --- Esc closes the menu the same way ---
+        await openFavoriteFromGroup(shortFavGroupName, wptName);
+        await waitBy(CLOSE_MENU_BUTTON);
+        await driver.actions().sendKeys(Key.ESCAPE).perform();
+        await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
+        await waitByRemoved(CLOSE_MENU_BUTTON);
 
-    // --- Search: Close of a result opened from the search results resets the query and the results ---
-    // the results list itself has no app bar, so it has no Close (checked inside submitSearchQuery)
-    await clickBy(By.id('se-show-menu-search'));
-    await submitSearchQuery(wptName);
-    await clickBy(By.id(`se-search-result-fav-${wptName}`));
-    await waitBy(By.id(`se-fav-item-info-${wptName}`));
-    await waitBy(CLOSE_MENU_BUTTON);
+        // --- Search: Close of a result opened from the search results resets the query and the results ---
+        // the results list itself has no app bar, so it has no Close (checked inside submitSearchQuery)
+        await clickBy(By.id('se-show-menu-search'));
+        await submitSearchQuery(wptName);
+        await clickBy(By.id(`se-search-result-fav-${wptName}`));
+        await waitBy(By.id(`se-fav-item-info-${wptName}`));
+        await waitBy(CLOSE_MENU_BUTTON);
 
-    await clickBy(CLOSE_MENU_BUTTON);
-    await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
-    await expectClosedUrl(INFO_MENU_URL);
-    await clickBy(By.id('se-show-menu-search'));
-    await expectCleanSearch();
+        await clickBy(CLOSE_MENU_BUTTON);
+        await waitByRemoved(By.id(`se-fav-item-info-${wptName}`));
+        await waitByRemoved(CLOSE_MENU_BUTTON);
+        await expectClosedUrl(INFO_MENU_URL);
+        await clickBy(By.id('se-show-menu-search'));
+        await expectCleanSearch();
 
-    // --- Search: no Close for an object opened from the map over the search results ---
-    // the object has its own X, Close and Esc would drop the whole search
-    await setView(STREET_VIEW);
-    await actionIdleWait({ tiles: true });
-    await submitSearchQuery(STREET_QUERY);
-    const street = await findSearchMarker(STREET_TYPE);
-    await leftClickBy(street.lat, street.lng);
-    await waitBy(By.id('se-close-wpt-details'));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
+        // --- Search: no Close for an object opened from the map over the search results ---
+        // the object has its own X, Close and Esc would drop the whole search
+        await setView(STREET_VIEW);
+        await actionIdleWait({ tiles: true });
+        await submitSearchQuery(STREET_QUERY);
+        const street = await findSearchMarker(STREET_TYPE);
+        await leftClickBy(street.lat, street.lng);
+        await waitBy(By.id('se-close-wpt-details'));
+        await waitByRemoved(CLOSE_MENU_BUTTON);
 
-    await driver.actions().sendKeys(Key.ESCAPE).perform();
-    await waitBy(By.id('se-close-wpt-details'), { idle: true });
+        await driver.actions().sendKeys(Key.ESCAPE).perform();
+        await waitBy(By.id('se-close-wpt-details'), { idle: true });
 
-    // X returns to the search results, which are left by the Back button of the search input
-    await clickBy(By.id('se-close-wpt-details'));
-    await waitBy(By.id('se-search-results'));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
-    await clickBy(By.id('se-search-input-back'));
-    await expectCleanSearch();
+        // X returns to the search results, which are left by the Back button of the search input
+        await clickBy(By.id('se-close-wpt-details'));
+        await waitBy(By.id('se-search-results'));
+        await waitByRemoved(CLOSE_MENU_BUTTON);
+        await clickBy(By.id('se-search-input-back'));
+        await expectCleanSearch();
 
-    // --- Search: a wiki place closed by Close opens again ---
-    await waitByRemoved(By.id('se-wiki-place-progress'));
-    await waitBy(By.id('se-wiki-places-items'));
-    const [wikiPlaceId] = await enumerateIds('se-wiki-place-');
-    await openWikiPlace(wikiPlaceId);
-    await clickBy(CLOSE_MENU_BUTTON);
-    await waitByRemoved(By.id('se-wpt-details'));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
-    await expectClosedUrl(POI_URL);
+        // --- Search: a wiki place closed by Close opens again ---
+        await waitByRemoved(By.id('se-wiki-place-progress'));
+        await waitBy(By.id('se-wiki-places-items'));
+        const [wikiPlaceId] = await enumerateIds('se-wiki-place-');
+        await openWikiPlace(wikiPlaceId);
+        await clickBy(CLOSE_MENU_BUTTON);
+        await waitByRemoved(By.id('se-wpt-details'));
+        await waitByRemoved(CLOSE_MENU_BUTTON);
+        await expectClosedUrl(POI_URL);
 
-    await clickBy(By.id('se-show-menu-search'));
-    await openWikiPlace(wikiPlaceId);
-    await clickBy(CLOSE_MENU_BUTTON);
-    await waitByRemoved(By.id('se-wpt-details'));
+        await clickBy(By.id('se-show-menu-search'));
+        await openWikiPlace(wikiPlaceId);
+        await clickBy(CLOSE_MENU_BUTTON);
+        await waitByRemoved(By.id('se-wpt-details'));
 
-    // --- Search: Close on the Explore list, without a selected place ---
-    await clickBy(By.id('se-show-menu-search'));
-    await waitBy(By.id('se-wiki-places-items'));
-    await clickBy(By.id('se-show-all-wiki-place'));
-    await waitBy(By.id('se-explore-menu-name'));
-    await clickBy(CLOSE_MENU_BUTTON);
-    await waitByRemoved(By.id('se-explore-menu-name'));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
-    await expectClosedUrl(EXPLORE_URL);
+        // --- Search: Close on the Explore list, without a selected place ---
+        await clickBy(By.id('se-show-menu-search'));
+        await waitBy(By.id('se-wiki-places-items'));
+        await clickBy(By.id('se-show-all-wiki-place'));
+        await waitBy(By.id('se-explore-menu-name'));
+        await clickBy(CLOSE_MENU_BUTTON);
+        await waitByRemoved(By.id('se-explore-menu-name'));
+        await waitByRemoved(CLOSE_MENU_BUTTON);
+        await expectClosedUrl(EXPLORE_URL);
 
-    // the next opening starts from the search screen, not from the Explore list
-    // (se-default-search-categories inside expectCleanSearch cannot coexist with the Explore list)
-    await clickBy(By.id('se-show-menu-search'));
-    await expectCleanSearch();
+        // the next opening starts from the search screen, not from the Explore list
+        // (se-default-search-categories inside expectCleanSearch cannot coexist with the Explore list)
+        await clickBy(By.id('se-show-menu-search'));
+        await expectCleanSearch();
 
-    // --- Search: Close on the POI categories list, it has an app bar with Back ---
-    await clickBy(By.id('se-search-categories-show-all'));
-    await waitBy(By.id('se-search-categories-list'));
-    await clickBy(CLOSE_MENU_BUTTON);
-    await waitByRemoved(By.id('se-search-categories-list'));
-    await waitByRemoved(CLOSE_MENU_BUTTON);
-    await expectClosedUrl(POI_CATEGORIES_URL);
+        // --- Search: Close on the POI categories list, it has an app bar with Back ---
+        await clickBy(By.id('se-search-categories-show-all'));
+        await waitBy(By.id('se-search-categories-list'));
+        await clickBy(CLOSE_MENU_BUTTON);
+        await waitByRemoved(By.id('se-search-categories-list'));
+        await waitByRemoved(CLOSE_MENU_BUTTON);
+        await expectClosedUrl(POI_CATEGORIES_URL);
 
-    // the next opening starts from the search screen, not from the categories list
-    await clickBy(By.id('se-show-menu-search'));
-    await expectCleanSearch();
+        // the next opening starts from the search screen, not from the categories list
+        await clickBy(By.id('se-show-menu-search'));
+        await expectCleanSearch();
 
-    // --- Tracks: Close closes the track and the menu, keeps the map, resets the opened folder ---
-    await clickBy(By.id('se-show-menu-tracks'));
-    await actionCreateNewFolder(trackFolder);
-    await clickBy(By.id(`se-menu-cloud-${trackFolder}`));
-    await waitBy(By.id('se-back-folder-button-tracks'));
-    await clickBy(By.id('se-import-cloud-track'));
-    await actionImportCloudTrack(getFiles({ folder: 'gpx' }), trackName);
+        // --- Tracks: Close closes the track and the menu, keeps the map, resets the opened folder ---
+        await clickBy(By.id('se-show-menu-tracks'));
+        await actionCreateNewFolder(trackFolder);
+        await clickBy(By.id(`se-menu-cloud-${trackFolder}`));
+        await waitBy(By.id('se-back-folder-button-tracks'));
+        await clickBy(By.id('se-import-cloud-track'));
+        await actionImportCloudTrack(getFiles({ folder: 'gpx' }), trackName);
 
-    await clickBy(By.id(`se-cloud-track-${trackName}`));
-    await waitBy(By.id('se-track-context-menu'));
-    await waitBy(CLOSE_MENU_BUTTON);
-    await closeMenuKeepingMap(By.id('se-track-context-menu'), INFO_MENU_URL);
+        await clickBy(By.id(`se-cloud-track-${trackName}`));
+        await waitBy(By.id('se-track-context-menu'));
+        await waitBy(CLOSE_MENU_BUTTON);
+        await closeMenuKeepingMap(By.id('se-track-context-menu'), INFO_MENU_URL);
 
-    // the next opening starts from the list of folders, not from the opened folder
-    await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id(`se-menu-cloud-${trackFolder}`));
-    await waitByRemoved(By.id('se-back-folder-button-tracks'));
+        // the next opening starts from the list of folders, not from the opened folder
+        await clickBy(By.id('se-show-menu-tracks'));
+        await waitBy(By.id(`se-menu-cloud-${trackFolder}`));
+        await waitByRemoved(By.id('se-back-folder-button-tracks'));
 
-    // cleanup
-    await actionDeleteFolder(trackFolder);
-    await actionOpenFavorites();
-    await actionDeleteFavGroup(shortFavGroupName);
-    await waitBy(By.id('se-empty-page'));
+        // cleanup
+        await actionDeleteFolder(trackFolder);
+        await actionOpenFavorites();
+        await actionDeleteFavGroup(shortFavGroupName);
+        await waitBy(By.id('se-empty-page'));
 
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ folders: [trackFolder], favorites: [shortFavGroupName] });
+    }
 }
 
 // the search menu must be open; the results list has no app bar, so Close is not shown there

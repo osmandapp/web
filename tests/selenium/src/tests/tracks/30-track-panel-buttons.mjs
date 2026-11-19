@@ -8,7 +8,7 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
 import actionLocalToCloud from '../../actions/tracks/actionLocalToCloud.mjs';
-import { deleteTrack } from '../../util.mjs';
+import { deleteTrack, cleanupCloud } from '../../util.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 
 const TRACK = 'test-routed-osrm';
@@ -23,20 +23,24 @@ const cloudTrackActionButtons = [
 ];
 
 export default async function test() {
-    await actionOpenMap();
-    await actionLogIn();
+    try {
+        await actionOpenMap();
+        await actionLogIn();
 
-    await actionOpenLocalTrack(TRACK);
-    await validatePanelButtons(localTrackButtons);
-    await clickBy(By.id('se-show-menu-planroute'));
-    await actionLocalToCloud({ mask: TRACK });
-    await clickBy(By.id('se-cloud-track-' + TRACK));
-    await validateNoPanelButtons();
-    await validateTrackActionButtons(cloudTrackActionButtons);
-    await clickBy(By.id('se-button-back'));
+        await actionOpenLocalTrack(TRACK);
+        await validatePanelButtons(localTrackButtons);
+        await clickBy(By.id('se-show-menu-planroute'));
+        await actionLocalToCloud({ mask: TRACK });
+        await clickBy(By.id('se-cloud-track-' + TRACK));
+        await validateNoPanelButtons();
+        await validateTrackActionButtons(cloudTrackActionButtons);
+        await clickBy(By.id('se-button-back'));
 
-    await deleteTrack(TRACK);
-    await actionFinish();
+        await deleteTrack(TRACK);
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [TRACK] });
+    }
 }
 
 const LOCAL_PANEL_OPTIONAL_IDS = ['se-panel-button-change-profile'];

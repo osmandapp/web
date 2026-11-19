@@ -3,7 +3,7 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { clickBy, enclose, enumerateIds, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
-import { getFiles } from '../../util.mjs';
+import { getFiles, cleanupCloud } from '../../util.mjs';
 import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.mjs';
 import actionCheckCloudTracks from '../../actions/tracks/actionCheckCloudTracks.mjs';
 import actionCreateNewFolder from '../../actions/actionCreateNewFolder.mjs';
@@ -24,37 +24,41 @@ export default async function test() {
     let trackName = 'test-infoblock-desc';
     const suffix = '-renamed';
 
-    await actionCreateNewFolder(folder);
-    await clickBy(By.id(`se-menu-cloud-${folder}`));
-    await waitBy(By.id(`se-cloud-name-track`));
-    // import list of tracks
-    await actionImportCloudTrack(tracks);
-    await actionIdleWait();
-    for (const t of tracks) {
-        await waitByRemoved(By.id('se-import-loading-' + t.name));
+    try {
+        await actionCreateNewFolder(folder);
+        await clickBy(By.id(`se-menu-cloud-${folder}`));
+        await waitBy(By.id(`se-cloud-name-track`));
+        // import list of tracks
+        await actionImportCloudTrack(tracks);
+        await actionIdleWait();
+        for (const t of tracks) {
+            await waitByRemoved(By.id('se-import-loading-' + t.name));
+        }
+
+        await waitBy(By.id('se-sort-button-time-tracks'));
+        await actionIdleWait();
+        await actionCheckCloudTracks(tracks);
+        await actionRenameTrack(trackName, suffix);
+        await validateGroupOrder(trackGroupsLastModified, 'LastModified');
+        await waitBy(By.id('se-sort-button-time-tracks'));
+        await clickBy(By.id('se-sort-button-time-tracks'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-longest'));
+        await validateGroupOrder(trackGroupsLongest, 'Longest');
+        await waitBy(By.id('se-sort-button-longest-tracks'));
+        await clickBy(By.id('se-sort-button-longest-tracks'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-shortest'));
+        await validateGroupOrder(trackGroupsShortest, 'Shortest');
+        await waitBy(By.id('se-back-folder-button-tracks'));
+        await clickBy(By.id('se-back-folder-button-tracks'));
+        await waitBy(By.id(`se-menu-cloud-${folder}`));
+        await actionDeleteFolder(folder);
+
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ folders: [folder] });
     }
-
-    await waitBy(By.id('se-sort-button-time-tracks'));
-    await actionIdleWait();
-    await actionCheckCloudTracks(tracks);
-    await actionRenameTrack(trackName, suffix);
-    await validateGroupOrder(trackGroupsLastModified, 'LastModified');
-    await waitBy(By.id('se-sort-button-time-tracks'));
-    await clickBy(By.id('se-sort-button-time-tracks'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-longest'));
-    await validateGroupOrder(trackGroupsLongest, 'Longest');
-    await waitBy(By.id('se-sort-button-longest-tracks'));
-    await clickBy(By.id('se-sort-button-longest-tracks'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-shortest'));
-    await validateGroupOrder(trackGroupsShortest, 'Shortest');
-    await waitBy(By.id('se-back-folder-button-tracks'));
-    await clickBy(By.id('se-back-folder-button-tracks'));
-    await waitBy(By.id(`se-menu-cloud-${folder}`));
-    await actionDeleteFolder(folder);
-
-    await actionFinish();
 }
 
 const trackGroupsLastModified = [

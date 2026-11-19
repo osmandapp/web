@@ -5,8 +5,7 @@ import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
 import { clickBy, expectSelectedPinAtFavorite, matchTextBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
-import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
-import { getFiles } from '../../util.mjs';
+import { cleanupCloud } from '../../util.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
 
 const PREVIEW_DEFAULT_ICON = 'special_star';
@@ -18,99 +17,101 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    const favorites = getFiles({ folder: 'favorites' });
     const favoriteName = 'Apple';
     const favoriteAddress = 'One Apple Park Way, Cupertino, CA 95014, USA';
     const favoriteDescription =
         'Apple Inc. is an American multinational technology company that specializes in consumer electronics, computer software, and online services.';
     const favoriteGroupName = 'Tech Companies';
 
-    const idPreviewCircleDefault = favPreviewMarkerId(
-        PREVIEW_DEFAULT_SHAPE,
-        PREVIEW_DEFAULT_ICON,
-        PREVIEW_DEFAULT_COLOR_PART
-    );
+    try {
+        const idPreviewCircleDefault = favPreviewMarkerId(
+            PREVIEW_DEFAULT_SHAPE,
+            PREVIEW_DEFAULT_ICON,
+            PREVIEW_DEFAULT_COLOR_PART
+        );
 
-    // prepare
-    await actionOpenFavorites();
-    await actionDeleteAllFavorites(favorites, favoriteGroupName);
+        // prepare
+        await actionOpenFavorites();
 
-    // add favorite — cancel once: preview must disappear
-    await actionOpenContextMenu();
-    await clickBy(By.id('se-add-favorite-action'));
-    await waitBy(By.id('se-add-fav-dialog'));
-    await waitBy(By.id(idPreviewCircleDefault));
-    await clickBy(By.id('se-close-add-wpt-panel'));
-    await waitByRemoved(By.id('se-add-fav-dialog'));
-    await waitByRemoved(By.id(idPreviewCircleDefault));
-    // add favorite
-    await actionOpenContextMenu();
-    await clickBy(By.id('se-add-favorite-action'));
-    await waitBy(By.id('se-add-fav-dialog'));
-    await sendKeysBy(By.id('se-fav-name-input'), favoriteName);
-    await sendKeysBy(By.id('se-edit-fav-dialog-address'), favoriteAddress);
-    // open description panel, type, save and return
-    await clickBy(By.id('se-add-fav-add-desc-btn'));
-    await waitBy(By.id('se-back-description-panel'));
-    await sendKeysBy(By.id('se-edit-fav-dialog-desc'), favoriteDescription);
-    await clickBy(By.id('se-back-description-panel'));
-    await waitByRemoved(By.id('se-back-description-panel'));
-    // create new favorite group via folder selection panel
-    await clickBy(By.id('se-fav-group-selector'));
-    await waitBy(By.id('se-back-folder-selection-panel'));
-    await clickBy(By.id('se-add-folder-btn'));
-    await waitBy(By.id('se-add-fav-folder-dialog'));
-    await sendKeysBy(By.id('se-add-fav-folder-name-input'), favoriteGroupName);
-    await clickBy(By.id('se-add-fav-folder-save-btn'));
-    await waitByRemoved(By.id('se-add-fav-folder-dialog'));
-    await clickBy(By.id('se-back-folder-selection-panel'));
-    await waitByRemoved(By.id('se-back-folder-selection-panel'));
-    // pick a color (palette panel; empty palette → add via color picker)
-    await selectFavoriteColor();
-    // open icon selection panel, pick first icon, go back
-    await clickBy(By.id('se-fav-icon-row'));
-    await waitBy(By.id('se-back-icon-selection-panel'));
-    await waitBy(By.id(`se-fav-icon-last-used-${PREVIEW_DEFAULT_ICON}`));
-    await clickBy(By.id(`se-fav-icon-last-used-${PREVIEW_DEFAULT_ICON}`));
-    await clickBy(By.id('se-back-icon-selection-panel'));
-    await waitByRemoved(By.id('se-back-icon-selection-panel'));
-    await clickBy(By.id('se-favorite-shape-1'));
-    const idPreviewComplete = favPreviewMarkerId(
-        PREVIEW_SELECTED_SHAPE,
-        PREVIEW_DEFAULT_ICON,
-        PREVIEW_DEFAULT_COLOR_PART
-    );
-    await waitBy(By.id(idPreviewComplete));
-    await clickBy(By.id('se-add-fav-btn'));
-    await waitByRemoved(By.id('se-add-fav-dialog'));
-    // check favorite info
-    await waitBy(By.id(`se-fav-item-info-${favoriteName}`));
-    await expectSelectedPinAtFavorite(favoriteName); // the saved favorite keeps the selected pin at its point
-    await matchTextBy(By.id('se-wpt-group'), `${favoriteGroupName} (1)`);
-    await matchTextBy(By.id('se-wpt-address'), favoriteAddress);
-    await clickBy(By.id('se-close-wpt-details'));
-    // check new favorite group
-    await waitByRemoved(By.id(`se-fav-item-info-${favoriteName}`));
-    await waitBy(By.className('leaflet-marker-icon'));
-    await actionOpenFavorites();
-    await waitBy(By.id(`se-menu-fav-${favoriteGroupName}`));
-    await waitBy(By.id('se-fav-group-size-1 points'));
+        // add favorite — cancel once: preview must disappear
+        await actionOpenContextMenu();
+        await clickBy(By.id('se-add-favorite-action'));
+        await waitBy(By.id('se-add-fav-dialog'));
+        await waitBy(By.id(idPreviewCircleDefault));
+        await clickBy(By.id('se-close-add-wpt-panel'));
+        await waitByRemoved(By.id('se-add-fav-dialog'));
+        await waitByRemoved(By.id(idPreviewCircleDefault));
+        // add favorite
+        await actionOpenContextMenu();
+        await clickBy(By.id('se-add-favorite-action'));
+        await waitBy(By.id('se-add-fav-dialog'));
+        await sendKeysBy(By.id('se-fav-name-input'), favoriteName);
+        await sendKeysBy(By.id('se-edit-fav-dialog-address'), favoriteAddress);
+        // open description panel, type, save and return
+        await clickBy(By.id('se-add-fav-add-desc-btn'));
+        await waitBy(By.id('se-back-description-panel'));
+        await sendKeysBy(By.id('se-edit-fav-dialog-desc'), favoriteDescription);
+        await clickBy(By.id('se-back-description-panel'));
+        await waitByRemoved(By.id('se-back-description-panel'));
+        // create new favorite group via folder selection panel
+        await clickBy(By.id('se-fav-group-selector'));
+        await waitBy(By.id('se-back-folder-selection-panel'));
+        await clickBy(By.id('se-add-folder-btn'));
+        await waitBy(By.id('se-add-fav-folder-dialog'));
+        await sendKeysBy(By.id('se-add-fav-folder-name-input'), favoriteGroupName);
+        await clickBy(By.id('se-add-fav-folder-save-btn'));
+        await waitByRemoved(By.id('se-add-fav-folder-dialog'));
+        await clickBy(By.id('se-back-folder-selection-panel'));
+        await waitByRemoved(By.id('se-back-folder-selection-panel'));
+        // pick a color (palette panel; empty palette → add via color picker)
+        await selectFavoriteColor();
+        // open icon selection panel, pick first icon, go back
+        await clickBy(By.id('se-fav-icon-row'));
+        await waitBy(By.id('se-back-icon-selection-panel'));
+        await waitBy(By.id(`se-fav-icon-last-used-${PREVIEW_DEFAULT_ICON}`));
+        await clickBy(By.id(`se-fav-icon-last-used-${PREVIEW_DEFAULT_ICON}`));
+        await clickBy(By.id('se-back-icon-selection-panel'));
+        await waitByRemoved(By.id('se-back-icon-selection-panel'));
+        await clickBy(By.id('se-favorite-shape-1'));
+        const idPreviewComplete = favPreviewMarkerId(
+            PREVIEW_SELECTED_SHAPE,
+            PREVIEW_DEFAULT_ICON,
+            PREVIEW_DEFAULT_COLOR_PART
+        );
+        await waitBy(By.id(idPreviewComplete));
+        await clickBy(By.id('se-add-fav-btn'));
+        await waitByRemoved(By.id('se-add-fav-dialog'));
+        // check favorite info
+        await waitBy(By.id(`se-fav-item-info-${favoriteName}`));
+        await expectSelectedPinAtFavorite(favoriteName); // the saved favorite keeps the selected pin at its point
+        await matchTextBy(By.id('se-wpt-group'), `${favoriteGroupName} (1)`);
+        await matchTextBy(By.id('se-wpt-address'), favoriteAddress);
+        await clickBy(By.id('se-close-wpt-details'));
+        // check new favorite group
+        await waitByRemoved(By.id(`se-fav-item-info-${favoriteName}`));
+        await waitBy(By.className('leaflet-marker-icon'));
+        await actionOpenFavorites();
+        await waitBy(By.id(`se-menu-fav-${favoriteGroupName}`));
+        await waitBy(By.id('se-fav-group-size-1 points'));
 
-    // remove favorite from map
-    await clickBy(By.className('leaflet-marker-icon'));
-    await waitBy(By.id(`se-fav-item-info-${favoriteName}`));
-    await clickBy(By.id('se-delete-fav-item'));
-    await waitBy(By.id('se-delete-fav-dialog'));
-    await clickBy(By.id('se-delete-fav-dialog-submit'));
-    await waitByRemoved(By.className('leaflet-marker-icon'));
-    await waitByRemoved(By.id(`se-fav-item-info-${favoriteName}`));
+        // remove favorite from map
+        await clickBy(By.className('leaflet-marker-icon'));
+        await waitBy(By.id(`se-fav-item-info-${favoriteName}`));
+        await clickBy(By.id('se-delete-fav-item'));
+        await waitBy(By.id('se-delete-fav-dialog'));
+        await clickBy(By.id('se-delete-fav-dialog-submit'));
+        await waitByRemoved(By.className('leaflet-marker-icon'));
+        await waitByRemoved(By.id(`se-fav-item-info-${favoriteName}`));
 
-    await actionOpenFavorites();
-    // clean up
-    await actionDeleteFavGroup(favoriteGroupName);
-    await waitBy(By.id('se-empty-page'));
+        await actionOpenFavorites();
+        // clean up
+        await actionDeleteFavGroup(favoriteGroupName);
+        await waitBy(By.id('se-empty-page'));
 
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ favorites: [favoriteGroupName] });
+    }
 }
 
 function favPreviewMarkerId(background, icon, color) {

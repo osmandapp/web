@@ -39,6 +39,34 @@ export let mobile = false;
 export let noexit = false;
 export let headless = false;
 
+// set by SIGINT / SIGTERM: the next wait of lib.mjs fails the current test, so its finally cleans the cloud
+export let interrupted = false;
+let interruptPending = false;
+let cleaning = false;
+export function interrupt() {
+    interrupted = true;
+    interruptPending = true;
+}
+export function consumeInterrupt() {
+    if (cleaning || !interruptPending) {
+        return false;
+    }
+    interruptPending = false;
+    return true;
+}
+export function setCleaning(value) {
+    cleaning = value;
+}
+
+// the page before the cleanup of a test's finally, saved by main instead of the page after it
+export let testScreenshot = null;
+export async function captureTestScreenshot() {
+    testScreenshot = await driver.takeScreenshot();
+}
+export function resetTestScreenshot() {
+    testScreenshot = null;
+}
+
 export const tests = []; // used by main
 
 export function parseArgs() {

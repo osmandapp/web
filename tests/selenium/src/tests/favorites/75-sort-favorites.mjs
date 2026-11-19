@@ -1,6 +1,6 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
-import { getFiles } from '../../util.mjs';
+import { getFiles, cleanupCloud } from '../../util.mjs';
 import { clickBy, enclose, enumerateIds, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
@@ -19,187 +19,183 @@ export default async function test() {
 
     const shortFavGroupName = 'food';
     const suffix = '-renamed';
-
-    await actionOpenFavorites();
-
     const favorites = getFiles({ folder: 'favorites' });
 
-    const exist = await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`), { optional: true, idle: true });
-    if (exist) {
+    try {
+        await actionOpenFavorites();
+
+        await actionUploadFavGroup(favorites);
+
+        // check group sort
+        await validateGroupOrder(favGroupsLastModified);
+        await clickBy(By.id('se-sort-button-time-favorites'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-az'));
+        await actionUploadFavGroup(favorites, false);
+        await validateGroupOrder(favGroupsAZ);
+        await waitBy(By.id('se-sort-button-az-favorites'));
+        await clickBy(By.id('se-sort-button-az-favorites'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-za'));
+        await actionUploadFavGroup(favorites, false);
+        await validateGroupOrder(favGroupsZA);
+        await waitBy(By.id('se-sort-button-za-favorites'));
+        await clickBy(By.id('se-sort-button-za-favorites'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-newDate'));
+        await actionUploadFavGroup(favorites, false);
+        await validateGroupOrder(favGroupsNewDate);
+        await waitBy(By.id('se-sort-button-newDate-favorites'));
+        await clickBy(By.id('se-sort-button-newDate-favorites'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-oldDate'));
+        await actionUploadFavGroup(favorites, false);
+        await validateGroupOrder(favGroupsOldDate);
+
+        // check item sort by time
+        await clickBy(By.id('se-menu-fav-food'));
+        await waitBy(By.id('se-opened-fav-group-food'));
+        await validateItemOrder(favItemsFood);
+
+        // check item sort is kept after a point was opened and closed, and after a reload
+        await clickBy(By.id('se-sort-button-time-favorites'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-za'));
+        await validateItemOrder(favItemsFoodZA);
+        await clickBy(By.id('se-fav-item-name-111test'));
+        await waitBy(By.id('se-fav-item-info-111test'));
+        await clickBy(By.id('se-back-wpt-details'));
+        await waitByRemoved(By.id('se-fav-item-info-111test'));
+        await validateItemOrder(favItemsFoodZA);
+        await actionOpenMap();
+        await actionOpenFavorites();
+        await clickBy(By.id('se-menu-fav-food'));
+        await waitBy(By.id('se-opened-fav-group-food'));
+        await validateItemOrder(favItemsFoodZA);
+
+        // check item sort by nearest to map center
+        // the points of the city in the map center go first, the order inside a city depends on the visible map area
+        await setView({ lat: 50.4719142, lon: 30.5059648, zoom: 15 });
+        await clickBy(By.id('se-sort-button-za-favorites'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-nearestMapCenter'));
+        await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+        await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
+        const distancesFromKyiv = await readItemDistances();
+
+        // check the order is kept when the map is moved
+        await setView({ lat: 50.0508012, lon: 19.9421275, zoom: 15 });
+        await actionIdleWait();
+        await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
+
+        // check the distances follow the map center while the order is kept
+        await validateDistancesChanged(distancesFromKyiv);
+
+        // check picking the option again re-sorts the list from the new map center
+        await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+        await waitBy(By.id('se-sort-menu'));
+        await clickBy(By.id('se-sort-nearestMapCenter'));
+        await waitByRemoved(By.id('se-sort-menu'));
+        await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
+
+        // move the map back, the open list keeps its order
+        await setView({ lat: 50.4719142, lon: 30.5059648, zoom: 15 });
+        await actionIdleWait();
+        await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
+
+        // check item sort is restored after the group is reopened
+        await clickBy(By.id('se-back-folder-button-favorites'));
+        await clickBy(By.id('se-menu-fav-food'));
+        await waitBy(By.id('se-opened-fav-group-food'));
+        await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+
+        // check reopening the group sorts the list by the distances it shows
+        await validateItemsSortedByDistance(favItemsFood.length);
+
+        // check the group opened with an animated zoom to fit is sorted by the distances it shows
+        await clickBy(By.id('se-back-folder-button-favorites'));
+        await waitBy(By.id('se-menu-fav-food'), { idle: true });
+        await setView({ lat: 50.4501, lon: 30.5234, zoom: 9 });
+        await actionIdleWait();
+        await clickBy(By.id('se-menu-fav-food'));
+        await waitBy(By.id('se-opened-fav-group-food'));
+        await actionIdleWait();
+        await validateItemsSortedByDistance(favItemsFood.length);
+
+        // check save prev groups sort
+        await clickBy(By.id('se-back-folder-button-favorites'));
+        await waitBy(By.id('se-sort-button-oldDate-favorites'));
+
+        // check save prev groups sort after rename
+        await actionRenameFavGroup(shortFavGroupName, suffix);
+        await waitBy(By.id('se-sort-button-oldDate-favorites'));
+        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
+        await validateGroupOrder(favGroupsOldDateAfterRename);
+
+        // check item sort is kept after the group is renamed
+        await clickBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
+        await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}${suffix}`));
+        await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
+        await clickBy(By.id('se-back-folder-button-favorites'));
+        await waitBy(By.id('se-sort-button-oldDate-favorites'));
+
+        // check save sort order after change hidden
+        await waitBy(By.id('se-folder-actions-button-shops'));
+        await clickBy(By.id('se-folder-actions-button-shops'));
+        await waitBy(By.id('se-favorite-folder-actions'));
+        await clickBy(By.id('se-favorite-folder-actions-show-on-map'));
+        await waitBy(By.id('se-fav-menu-icon-hidden-shops'));
+
+        await validateGroupOrder(favGroupsOldDateAfterRenameHidden);
+
+        // check pinned/unpinned group order
+        // Pin ozoo group - pinned groups should appear before unpinned
+        await waitBy(By.id('se-folder-actions-button-ozoo'));
+        await clickBy(By.id('se-folder-actions-button-ozoo'));
+        await waitBy(By.id('se-favorite-folder-actions'));
+        await clickBy(By.id('se-favorite-folder-actions-pinned'));
+        await actionIdleWait();
+        await validateGroupOrder(favGroupsOldDateWithOZooPinned);
+
+        // Pin shops group - both pinned groups should appear before unpinned
+        await waitBy(By.id('se-folder-actions-button-shops'));
+        await clickBy(By.id('se-folder-actions-button-shops'));
+        await waitBy(By.id('se-favorite-folder-actions'));
+        await clickBy(By.id('se-favorite-folder-actions-pinned'));
+        await actionIdleWait();
+        await validateGroupOrder(favGroupsOldDateWithShopsAndOZooPinned);
+
+        // Check pinned with hidden: hide shops (pinned and hidden should appear after pinned visible)
+        await waitBy(By.id('se-folder-actions-button-shops'));
+        await clickBy(By.id('se-folder-actions-button-shops'));
+        await waitBy(By.id('se-favorite-folder-actions'));
+        await clickBy(By.id('se-favorite-folder-actions-show-on-map'));
+        await actionIdleWait();
+        await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
+
+        // Unpin ozoo - only shops (pinned hidden) should remain pinned
+        await waitBy(By.id('se-folder-actions-button-ozoo'));
+        await clickBy(By.id('se-folder-actions-button-ozoo'));
+        await waitBy(By.id('se-favorite-folder-actions'));
+        await clickBy(By.id('se-favorite-folder-actions-pinned'));
+        await actionIdleWait();
+        await validateGroupOrder(favGroupsOldDateWithOnlyPinnedHidden);
+
+        // Unpin shops - all groups should be unpinned, divider should disappear
+        await waitBy(By.id('se-folder-actions-button-shops'));
+        await clickBy(By.id('se-folder-actions-button-shops'));
+        await waitBy(By.id('se-favorite-folder-actions'));
+        await clickBy(By.id('se-favorite-folder-actions-pinned'));
+        await actionIdleWait();
+        await validateGroupOrder(favGroupsOldDateAfterRename);
+
         await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
+        await actionDeleteAllFavorites(favorites);
+
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ favorites: favorites.map(({ name }) => name) });
     }
-
-    await actionDeleteAllFavorites(favorites);
-
-    await actionUploadFavGroup(favorites);
-
-    // check group sort
-    await validateGroupOrder(favGroupsLastModified);
-    await clickBy(By.id('se-sort-button-time-favorites'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-az'));
-    await actionUploadFavGroup(favorites, false);
-    await validateGroupOrder(favGroupsAZ);
-    await waitBy(By.id('se-sort-button-az-favorites'));
-    await clickBy(By.id('se-sort-button-az-favorites'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-za'));
-    await actionUploadFavGroup(favorites, false);
-    await validateGroupOrder(favGroupsZA);
-    await waitBy(By.id('se-sort-button-za-favorites'));
-    await clickBy(By.id('se-sort-button-za-favorites'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-newDate'));
-    await actionUploadFavGroup(favorites, false);
-    await validateGroupOrder(favGroupsNewDate);
-    await waitBy(By.id('se-sort-button-newDate-favorites'));
-    await clickBy(By.id('se-sort-button-newDate-favorites'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-oldDate'));
-    await actionUploadFavGroup(favorites, false);
-    await validateGroupOrder(favGroupsOldDate);
-
-    // check item sort by time
-    await clickBy(By.id('se-menu-fav-food'));
-    await waitBy(By.id('se-opened-fav-group-food'));
-    await validateItemOrder(favItemsFood);
-
-    // check item sort is kept after a point was opened and closed, and after a reload
-    await clickBy(By.id('se-sort-button-time-favorites'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-za'));
-    await validateItemOrder(favItemsFoodZA);
-    await clickBy(By.id('se-fav-item-name-111test'));
-    await waitBy(By.id('se-fav-item-info-111test'));
-    await clickBy(By.id('se-back-wpt-details'));
-    await waitByRemoved(By.id('se-fav-item-info-111test'));
-    await validateItemOrder(favItemsFoodZA);
-    await actionOpenMap();
-    await actionOpenFavorites();
-    await clickBy(By.id('se-menu-fav-food'));
-    await waitBy(By.id('se-opened-fav-group-food'));
-    await validateItemOrder(favItemsFoodZA);
-
-    // check item sort by nearest to map center
-    // the points of the city in the map center go first, the order inside a city depends on the visible map area
-    await setView({ lat: 50.4719142, lon: 30.5059648, zoom: 15 });
-    await clickBy(By.id('se-sort-button-za-favorites'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-nearestMapCenter'));
-    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
-    await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
-    const distancesFromKyiv = await readItemDistances();
-
-    // check the order is kept when the map is moved
-    await setView({ lat: 50.0508012, lon: 19.9421275, zoom: 15 });
-    await actionIdleWait();
-    await validateItemClusters([favItemsFoodKyiv, favItemsFoodLviv, favItemsFoodKrakow]);
-
-    // check the distances follow the map center while the order is kept
-    await validateDistancesChanged(distancesFromKyiv);
-
-    // check picking the option again re-sorts the list from the new map center
-    await clickBy(By.id('se-sort-button-nearestMapCenter-favorites'));
-    await waitBy(By.id('se-sort-menu'));
-    await clickBy(By.id('se-sort-nearestMapCenter'));
-    await waitByRemoved(By.id('se-sort-menu'));
-    await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
-
-    // move the map back, the open list keeps its order
-    await setView({ lat: 50.4719142, lon: 30.5059648, zoom: 15 });
-    await actionIdleWait();
-    await validateItemClusters([favItemsFoodKrakow, favItemsFoodLviv, favItemsFoodKyiv]);
-
-    // check item sort is restored after the group is reopened
-    await clickBy(By.id('se-back-folder-button-favorites'));
-    await clickBy(By.id('se-menu-fav-food'));
-    await waitBy(By.id('se-opened-fav-group-food'));
-    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
-
-    // check reopening the group sorts the list by the distances it shows
-    await validateItemsSortedByDistance(favItemsFood.length);
-
-    // check the group opened with an animated zoom to fit is sorted by the distances it shows
-    await clickBy(By.id('se-back-folder-button-favorites'));
-    await waitBy(By.id('se-menu-fav-food'), { idle: true });
-    await setView({ lat: 50.4501, lon: 30.5234, zoom: 9 });
-    await actionIdleWait();
-    await clickBy(By.id('se-menu-fav-food'));
-    await waitBy(By.id('se-opened-fav-group-food'));
-    await actionIdleWait();
-    await validateItemsSortedByDistance(favItemsFood.length);
-
-    // check save prev groups sort
-    await clickBy(By.id('se-back-folder-button-favorites'));
-    await waitBy(By.id('se-sort-button-oldDate-favorites'));
-
-    // check save prev groups sort after rename
-    await actionRenameFavGroup(shortFavGroupName, suffix);
-    await waitBy(By.id('se-sort-button-oldDate-favorites'));
-    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
-    await validateGroupOrder(favGroupsOldDateAfterRename);
-
-    // check item sort is kept after the group is renamed
-    await clickBy(By.id(`se-menu-fav-${shortFavGroupName}${suffix}`));
-    await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}${suffix}`));
-    await waitBy(By.id('se-sort-button-nearestMapCenter-favorites'));
-    await clickBy(By.id('se-back-folder-button-favorites'));
-    await waitBy(By.id('se-sort-button-oldDate-favorites'));
-
-    // check save sort order after change hidden
-    await waitBy(By.id('se-folder-actions-button-shops'));
-    await clickBy(By.id('se-folder-actions-button-shops'));
-    await waitBy(By.id('se-favorite-folder-actions'));
-    await clickBy(By.id('se-favorite-folder-actions-show-on-map'));
-    await waitBy(By.id('se-fav-menu-icon-hidden-shops'));
-
-    await validateGroupOrder(favGroupsOldDateAfterRenameHidden);
-
-    // check pinned/unpinned group order
-    // Pin ozoo group - pinned groups should appear before unpinned
-    await waitBy(By.id('se-folder-actions-button-ozoo'));
-    await clickBy(By.id('se-folder-actions-button-ozoo'));
-    await waitBy(By.id('se-favorite-folder-actions'));
-    await clickBy(By.id('se-favorite-folder-actions-pinned'));
-    await actionIdleWait();
-    await validateGroupOrder(favGroupsOldDateWithOZooPinned);
-
-    // Pin shops group - both pinned groups should appear before unpinned
-    await waitBy(By.id('se-folder-actions-button-shops'));
-    await clickBy(By.id('se-folder-actions-button-shops'));
-    await waitBy(By.id('se-favorite-folder-actions'));
-    await clickBy(By.id('se-favorite-folder-actions-pinned'));
-    await actionIdleWait();
-    await validateGroupOrder(favGroupsOldDateWithShopsAndOZooPinned);
-
-    // Check pinned with hidden: hide shops (pinned and hidden should appear after pinned visible)
-    await waitBy(By.id('se-folder-actions-button-shops'));
-    await clickBy(By.id('se-folder-actions-button-shops'));
-    await waitBy(By.id('se-favorite-folder-actions'));
-    await clickBy(By.id('se-favorite-folder-actions-show-on-map'));
-    await actionIdleWait();
-    await validateGroupOrder(favGroupsOldDateWithPinnedHidden);
-
-    // Unpin ozoo - only shops (pinned hidden) should remain pinned
-    await waitBy(By.id('se-folder-actions-button-ozoo'));
-    await clickBy(By.id('se-folder-actions-button-ozoo'));
-    await waitBy(By.id('se-favorite-folder-actions'));
-    await clickBy(By.id('se-favorite-folder-actions-pinned'));
-    await actionIdleWait();
-    await validateGroupOrder(favGroupsOldDateWithOnlyPinnedHidden);
-
-    // Unpin shops - all groups should be unpinned, divider should disappear
-    await waitBy(By.id('se-folder-actions-button-shops'));
-    await clickBy(By.id('se-folder-actions-button-shops'));
-    await waitBy(By.id('se-favorite-folder-actions'));
-    await clickBy(By.id('se-favorite-folder-actions-pinned'));
-    await actionIdleWait();
-    await validateGroupOrder(favGroupsOldDateAfterRename);
-
-    await actionDeleteFavGroup(`${shortFavGroupName}${suffix}`);
-    await actionDeleteAllFavorites(favorites);
-
-    await actionFinish();
 }
 
 const favGroupsLastModified = ['se-menu-fav-shops', 'se-menu-fav-ozoo', 'se-menu-fav-food'];

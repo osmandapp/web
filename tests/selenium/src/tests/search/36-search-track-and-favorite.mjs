@@ -5,199 +5,199 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionUploadGpx from '../../actions/actionUploadGpx.mjs';
 import actionLocalToCloud from '../../actions/tracks/actionLocalToCloud.mjs';
-import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 import actionRenameTrack from '../../actions/tracks/actionRenameTrack.mjs';
 import actionsUploadFavorites from '../../actions/favorites/actionsUploadFavorites.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
-import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionDeleteFavGroup from '../../actions/favorites/actionDeleteFavGroup.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { deleteTrack, getFiles } from '../../util.mjs';
+import { deleteTrack, getFiles, cleanupCloud } from '../../util.mjs';
 
 export default async function test() {
     await actionOpenMap();
     await actionLogIn();
     // --- Search: track appears, then disappears after delete ---
     const trackName = 'test-track-mixed';
-
-    // the cloud list is rendered only after the tracks menu was opened
-    await clickBy(By.id('se-show-menu-tracks'));
-    await actionDeleteTracksByPattern(trackName);
-
-    await actionUploadGpx({ mask: `${trackName}.gpx` });
-    await clickBy(By.id('se-show-menu-planroute'));
-    await actionLocalToCloud({ mask: trackName });
-
-    await submitSearchQuery(trackName);
-
-    await waitBy(By.id('se-search-results'));
-    const trackResultId = `se-search-result-${trackName}.gpx`;
-    await clickBy(By.id(trackResultId));
-    await waitBy(By.id('se-track-context-menu'));
-    await waitBy(By.id(`se-track-${trackName}`));
-
-    await clickBy(By.id('se-button-back'));
-
-    await waitBy(By.id('se-search-results'));
-    await waitBy(By.id(trackResultId));
-
-    // --- Search: waypoint of the visible track is found and opens its details ---
-    const trackWptName = 'FIREWORK';
-    const trackWptResultId = `se-search-result-wpt-${trackWptName}`;
-
-    // back from search hides the track, waypoints are searched only in visible tracks - show it on the map
-    await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id(`se-cloud-track-${trackName}`));
-    await clickBy(By.id(`se-actions-${trackName}`));
-    await waitBy(By.id('se-track-actions'));
-    await clickBy(By.id('se-show-track-action'));
-    await checkElementByCss('img[src*="point_finish"]');
-
-    await submitSearchQuery(trackWptName);
-    await waitBy(By.id('se-search-results'));
-    await clickBy(By.id(trackWptResultId));
-    await waitBy(By.id(`se-wpt-item-info-${trackWptName}`));
-
-    await clickBy(By.id('se-back-wpt-details'));
-    await waitBy(By.id('se-search-results'));
-    await waitBy(By.id(trackWptResultId));
-
-    // --- Search: renamed track is found by the new name only ---
-    const suffix = '-renamed';
-    const renamedTrackName = `${trackName}${suffix}`;
-    const renamedTrackResultId = `se-search-result-${renamedTrackName}.gpx`;
-
-    await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id(`se-cloud-track-${trackName}`));
-    await actionRenameTrack(trackName, suffix);
-
-    await submitSearchQueryUntilFound(renamedTrackName, By.id(renamedTrackResultId));
-    await waitBy(By.id('se-search-results'));
-    await waitBy(By.id(renamedTrackResultId));
-    await waitByRemoved(By.id(trackResultId));
-
-    await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id(`se-cloud-track-${renamedTrackName}`));
-    await deleteTrack(renamedTrackName);
-
-    await submitSearchQuery(trackName);
-    await assertSearchResultAbsent(By.id(renamedTrackResultId));
-
-    // waypoints of the deleted track are not searchable anymore
-    await clickBy(By.id('se-show-menu-search'));
-    await submitSearchQuery(trackWptName);
-    await assertSearchResultAbsent(By.id(trackWptResultId));
-
-    // --- Search: favorite appears, then disappears after group delete ---
     const favGroupName = 'favorites-shops';
     const shortFavGroupName = 'shops';
-    const wptName = 'Primark';
 
-    const favorites = getFiles({ folder: 'favorites' });
-    const { path } = favorites.find((t) => t.name === favGroupName);
+    try {
+        // the cloud list is rendered only after the tracks menu was opened
+        await clickBy(By.id('se-show-menu-tracks'));
 
-    await actionOpenFavorites();
-    await actionDeleteAllFavorites(favorites);
+        await actionUploadGpx({ mask: `${trackName}.gpx` });
+        await clickBy(By.id('se-show-menu-planroute'));
+        await actionLocalToCloud({ mask: trackName });
 
-    await clickBy(By.id('se-import-fav-group'));
-    await actionsUploadFavorites({ files: path });
-    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+        await submitSearchQuery(trackName);
 
-    // --- Search: one token matches every name with a word starting with it, ordered by name ---
-    await submitSearchQuery('Amsterdam');
-    await waitBy(By.id('se-search-results'));
-    await enclose(
-        async () => {
-            const ids = await enumerateIds('se-search-result-fav-');
-            return ids.length === 4 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
-        },
-        { tag: 'validateFavSearchOneToken' }
-    );
+        await waitBy(By.id('se-search-results'));
+        const trackResultId = `se-search-result-${trackName}.gpx`;
+        await clickBy(By.id(trackResultId));
+        await waitBy(By.id('se-track-context-menu'));
+        await waitBy(By.id(`se-track-${trackName}`));
 
-    // --- Search: every query token has to match, so a second token narrows the result ---
-    await clickBy(By.id('se-show-menu-search'));
-    await submitSearchQuery('Amsterdam 99');
-    await waitBy(By.id('se-search-results'));
-    await enclose(
-        async () => {
-            const ids = await enumerateIds('se-search-result-fav-');
-            return ids.length === 1 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
-        },
-        { tag: 'validateFavSearchAllTokens' }
-    );
+        await clickBy(By.id('se-button-back'));
 
-    // "dam" is inside "Amsterdam" but no name token starts with it
-    await clickBy(By.id('se-show-menu-search'));
-    await submitSearchQuery('dam');
-    await assertSearchResultAbsent(By.css('[id^="se-search-result-fav-"]'));
+        await waitBy(By.id('se-search-results'));
+        await waitBy(By.id(trackResultId));
 
-    await clickBy(By.id('se-show-menu-search'));
-    await submitSearchQuery(wptName);
+        // --- Search: waypoint of the visible track is found and opens its details ---
+        const trackWptName = 'FIREWORK';
+        const trackWptResultId = `se-search-result-wpt-${trackWptName}`;
 
-    await waitBy(By.id('se-search-results'));
-    const favResultId = `se-search-result-fav-${wptName}`;
-    await clickBy(By.id(favResultId));
-    await waitBy(By.id(`se-fav-item-info-${wptName}`));
+        // back from search hides the track, waypoints are searched only in visible tracks - show it on the map
+        await clickBy(By.id('se-show-menu-tracks'));
+        await waitBy(By.id(`se-cloud-track-${trackName}`));
+        await clickBy(By.id(`se-actions-${trackName}`));
+        await waitBy(By.id('se-track-actions'));
+        await clickBy(By.id('se-show-track-action'));
+        await checkElementByCss('img[src*="point_finish"]');
 
-    await clickBy(By.id('se-back-wpt-details'));
+        await submitSearchQuery(trackWptName);
+        await waitBy(By.id('se-search-results'));
+        await clickBy(By.id(trackWptResultId));
+        await waitBy(By.id(`se-wpt-item-info-${trackWptName}`));
 
-    await waitBy(By.id('se-search-results'));
-    await waitBy(By.id(favResultId));
+        await clickBy(By.id('se-back-wpt-details'));
+        await waitBy(By.id('se-search-results'));
+        await waitBy(By.id(trackWptResultId));
 
-    // --- Search: favorite renamed from search results is updated in the list ---
-    const renamedWptName = `${wptName}${suffix}`;
-    const renamedFavResultId = `se-search-result-fav-${renamedWptName}`;
+        // --- Search: renamed track is found by the new name only ---
+        const suffix = '-renamed';
+        const renamedTrackName = `${trackName}${suffix}`;
+        const renamedTrackResultId = `se-search-result-${renamedTrackName}.gpx`;
 
-    await clickBy(By.id(favResultId));
-    await waitBy(By.id(`se-fav-item-info-${wptName}`));
-    await clickBy(By.id('se-edit-fav-item'));
-    await waitBy(By.id('se-edit-fav-dialog'));
-    await sendKeysBy(By.id('se-fav-name-input'), suffix);
-    await clickBy(By.id('se-edit-fav-item-submit'));
-    await waitBy(By.id(`se-fav-item-info-${renamedWptName}`));
+        await clickBy(By.id('se-show-menu-tracks'));
+        await waitBy(By.id(`se-cloud-track-${trackName}`));
+        await actionRenameTrack(trackName, suffix);
 
-    await clickBy(By.id('se-back-wpt-details'));
-    await waitBy(By.id('se-search-results'));
-    await waitBy(By.id(renamedFavResultId));
-    await waitByRemoved(By.id(favResultId));
+        await submitSearchQueryUntilFound(renamedTrackName, By.id(renamedTrackResultId));
+        await waitBy(By.id('se-search-results'));
+        await waitBy(By.id(renamedTrackResultId));
+        await waitByRemoved(By.id(trackResultId));
 
-    // --- Search: delete favorite opened from search -> back to results without it ---
-    await clickBy(By.id(renamedFavResultId));
-    await waitBy(By.id(`se-fav-item-info-${renamedWptName}`));
-    await deleteOpenedFavorite();
+        await clickBy(By.id('se-show-menu-tracks'));
+        await waitBy(By.id(`se-cloud-track-${renamedTrackName}`));
+        await deleteTrack(renamedTrackName);
 
-    await assertSearchResultAbsent(By.id(renamedFavResultId));
+        await submitSearchQuery(trackName);
+        await assertSearchResultAbsent(By.id(renamedTrackResultId));
 
-    // --- Search: delete favorite from favorites menu -> disappears from search ---
-    const wptName2 = 'Michael Kors';
-    const favResultId2 = `se-search-result-fav-${wptName2}`;
+        // waypoints of the deleted track are not searchable anymore
+        await clickBy(By.id('se-show-menu-search'));
+        await submitSearchQuery(trackWptName);
+        await assertSearchResultAbsent(By.id(trackWptResultId));
 
-    // close search menu, submitSearchQuery opens it again
-    await clickBy(By.id('se-show-menu-search'));
-    await submitSearchQuery(wptName2);
-    await waitBy(By.id(favResultId2));
+        // --- Search: favorite appears, then disappears after group delete ---
+        const wptName = 'Primark';
 
-    await clickBy(By.id('se-show-menu-favorites'));
-    await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
-    await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
-    await waitBy(By.id(`se-actions-${wptName2}`), { idle: true });
-    await clickBy(By.id(`se-actions-${wptName2}`));
-    await waitBy(By.id('se-fav-item-actions'));
-    await deleteOpenedFavorite();
-    await waitByRemoved(By.id(`se-fav-item-name-${wptName2}`));
-    await clickBy(By.id('se-back-folder-button-favorites'));
-    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+        const favorites = getFiles({ folder: 'favorites' });
+        const { path } = favorites.find((t) => t.name === favGroupName);
 
-    await submitSearchQuery(wptName2);
-    await assertSearchResultAbsent(By.id(favResultId2));
+        await actionOpenFavorites();
 
-    await clickBy(By.id('se-show-menu-favorites'));
-    await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
-    await actionDeleteFavGroup(shortFavGroupName);
+        await clickBy(By.id('se-import-fav-group'));
+        await actionsUploadFavorites({ files: path });
+        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
 
-    await submitSearchQuery(wptName);
-    await assertSearchResultAbsent(By.id(favResultId));
-    await actionFinish();
+        // --- Search: one token matches every name with a word starting with it, ordered by name ---
+        await submitSearchQuery('Amsterdam');
+        await waitBy(By.id('se-search-results'));
+        await enclose(
+            async () => {
+                const ids = await enumerateIds('se-search-result-fav-');
+                return ids.length === 4 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
+            },
+            { tag: 'validateFavSearchOneToken' }
+        );
+
+        // --- Search: every query token has to match, so a second token narrows the result ---
+        await clickBy(By.id('se-show-menu-search'));
+        await submitSearchQuery('Amsterdam 99');
+        await waitBy(By.id('se-search-results'));
+        await enclose(
+            async () => {
+                const ids = await enumerateIds('se-search-result-fav-');
+                return ids.length === 1 && ids[0] === 'se-search-result-fav-Haarlemmerstraat (Amsterdam) 99';
+            },
+            { tag: 'validateFavSearchAllTokens' }
+        );
+
+        // "dam" is inside "Amsterdam" but no name token starts with it
+        await clickBy(By.id('se-show-menu-search'));
+        await submitSearchQuery('dam');
+        await assertSearchResultAbsent(By.css('[id^="se-search-result-fav-"]'));
+
+        await clickBy(By.id('se-show-menu-search'));
+        await submitSearchQuery(wptName);
+
+        await waitBy(By.id('se-search-results'));
+        const favResultId = `se-search-result-fav-${wptName}`;
+        await clickBy(By.id(favResultId));
+        await waitBy(By.id(`se-fav-item-info-${wptName}`));
+
+        await clickBy(By.id('se-back-wpt-details'));
+
+        await waitBy(By.id('se-search-results'));
+        await waitBy(By.id(favResultId));
+
+        // --- Search: favorite renamed from search results is updated in the list ---
+        const renamedWptName = `${wptName}${suffix}`;
+        const renamedFavResultId = `se-search-result-fav-${renamedWptName}`;
+
+        await clickBy(By.id(favResultId));
+        await waitBy(By.id(`se-fav-item-info-${wptName}`));
+        await clickBy(By.id('se-edit-fav-item'));
+        await waitBy(By.id('se-edit-fav-dialog'));
+        await sendKeysBy(By.id('se-fav-name-input'), suffix);
+        await clickBy(By.id('se-edit-fav-item-submit'));
+        await waitBy(By.id(`se-fav-item-info-${renamedWptName}`));
+
+        await clickBy(By.id('se-back-wpt-details'));
+        await waitBy(By.id('se-search-results'));
+        await waitBy(By.id(renamedFavResultId));
+        await waitByRemoved(By.id(favResultId));
+
+        // --- Search: delete favorite opened from search -> back to results without it ---
+        await clickBy(By.id(renamedFavResultId));
+        await waitBy(By.id(`se-fav-item-info-${renamedWptName}`));
+        await deleteOpenedFavorite();
+
+        await assertSearchResultAbsent(By.id(renamedFavResultId));
+
+        // --- Search: delete favorite from favorites menu -> disappears from search ---
+        const wptName2 = 'Michael Kors';
+        const favResultId2 = `se-search-result-fav-${wptName2}`;
+
+        // close search menu, submitSearchQuery opens it again
+        await clickBy(By.id('se-show-menu-search'));
+        await submitSearchQuery(wptName2);
+        await waitBy(By.id(favResultId2));
+
+        await clickBy(By.id('se-show-menu-favorites'));
+        await clickBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+        await waitBy(By.id(`se-opened-fav-group-${shortFavGroupName}`));
+        await waitBy(By.id(`se-actions-${wptName2}`), { idle: true });
+        await clickBy(By.id(`se-actions-${wptName2}`));
+        await waitBy(By.id('se-fav-item-actions'));
+        await deleteOpenedFavorite();
+        await waitByRemoved(By.id(`se-fav-item-name-${wptName2}`));
+        await clickBy(By.id('se-back-folder-button-favorites'));
+        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+
+        await submitSearchQuery(wptName2);
+        await assertSearchResultAbsent(By.id(favResultId2));
+
+        await clickBy(By.id('se-show-menu-favorites'));
+        await waitBy(By.id(`se-menu-fav-${shortFavGroupName}`));
+        await actionDeleteFavGroup(shortFavGroupName);
+
+        await submitSearchQuery(wptName);
+        await assertSearchResultAbsent(By.id(favResultId));
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [trackName], favorites: [shortFavGroupName] });
+    }
 }
 
 async function deleteOpenedFavorite() {

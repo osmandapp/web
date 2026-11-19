@@ -1,11 +1,19 @@
 import { By } from 'selenium-webdriver';
 import { clickBy, waitBy, waitByRemoved } from './lib.mjs';
+import { captureTestScreenshot, setCleaning } from './options.mjs';
 
 import { mkdirSync, readdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import actionIdleWait from './actions/actionIdleWait.mjs';
 import actionUploadGpx from './actions/actionUploadGpx.mjs';
+import actionOpenMap from './actions/map/actionOpenMap.mjs';
+import actionLogIn from './actions/login/actionLogIn.mjs';
+import actionSwitchUser from './actions/login/actionSwitchUser.mjs';
+import actionDeleteTracksByPattern from './actions/tracks/actionDeleteTracksByPattern.mjs';
+import actionDeleteFolder from './actions/actionDeleteFolder.mjs';
+import actionOpenFavorites from './actions/favorites/actionOpenFavorites.mjs';
+import actionDeleteFavGroupsByPattern from './actions/favorites/actionDeleteFavGroupsByPattern.mjs';
 import { generatedVertex } from '../../bench.mjs';
 
 export function getFiles({ folder = 'gpx', filter = true }) {
@@ -55,6 +63,45 @@ export async function deleteTrack(name) {
     await clickBy(By.id('se-delete-track-dialog'));
     await waitByRemoved(By.id(`se-actions-${name}`), false, { failOnError: true });
     await actionIdleWait();
+}
+
+// shoots the page for the report, then deletes the tracks and favorite groups by name prefix and the folders by name
+export async function cleanupCloud({ tracks = [], folders = [], favorites = [], mainUser = false }) {
+    setCleaning(true);
+    try {
+        await captureTestScreenshot();
+        await actionOpenMap();
+        if (mainUser) {
+            if (await waitBy(By.id('se-logout-button'), { optional: true, idle: true })) {
+                await actionSwitchUser();
+            } else {
+                await actionLogIn();
+            }
+        }
+        if (tracks.length > 0 || folders.length > 0) {
+            await clickBy(By.id('se-show-menu-tracks'));
+            // the root list is shown once the files are loaded, empty or not
+            await waitBy(By.id('se-track-menu'), { idle: true });
+            for (const name of tracks) {
+                await actionDeleteTracksByPattern(name);
+            }
+            for (const name of folders) {
+                if (await waitBy(By.id(`se-menu-cloud-${name}`), { optional: true, idle: true })) {
+                    await actionDeleteFolder(name);
+                }
+            }
+        }
+        if (favorites.length > 0) {
+            await actionOpenFavorites();
+            for (const name of favorites) {
+                await actionDeleteFavGroupsByPattern(name.replace('favorites-', ''));
+            }
+        }
+    } catch (e) {
+        console.log('cleanupCloud: ' + e.message);
+    } finally {
+        setCleaning(false);
+    }
 }
 
 /**

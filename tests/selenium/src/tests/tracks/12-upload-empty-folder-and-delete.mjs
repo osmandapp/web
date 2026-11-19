@@ -7,30 +7,35 @@ import { By } from 'selenium-webdriver';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionDeleteFolder from '../../actions/actionDeleteFolder.mjs';
 import actionCreateNewFolder from '../../actions/actionCreateNewFolder.mjs';
-import { getFiles } from '../../util.mjs';
+import { getFiles, cleanupCloud } from '../../util.mjs';
 import actionUploadCloudTracks from '../../actions/tracks/actionUploadCloudTracks.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
 export default async function test() {
     const folder = 'new';
-    await actionOpenMap();
-    await actionLogIn();
 
-    await clickBy(By.id('se-show-menu-tracks'));
+    try {
+        await actionOpenMap();
+        await actionLogIn();
 
-    await actionCreateNewFolder(folder);
-    await clickBy(By.id(`se-menu-cloud-${folder}`));
+        await clickBy(By.id('se-show-menu-tracks'));
 
-    // import first track
-    await clickBy(By.id('se-import-first-track'));
-    const { path } = getFiles({ folder: 'gpx' }).find((t) => t.name === 'test-routed-osrm');
-    await actionUploadCloudTracks({ files: path });
-    await waitBy(By.id('se-track-context-menu')); // single upload opens the track
-    await actionIdleWait(); // upload also refreshes the list and re-opens the track, leave only after that
-    await clickBy(By.id('se-button-back'));
-    await clickBy(By.id('se-back-folder-button-tracks'));
+        await actionCreateNewFolder(folder);
+        await clickBy(By.id(`se-menu-cloud-${folder}`));
 
-    await actionDeleteFolder(folder);
+        // import first track
+        await clickBy(By.id('se-import-first-track'));
+        const { path } = getFiles({ folder: 'gpx' }).find((t) => t.name === 'test-routed-osrm');
+        await actionUploadCloudTracks({ files: path });
+        await waitBy(By.id('se-track-context-menu')); // single upload opens the track
+        await actionIdleWait(); // upload also refreshes the list and re-opens the track, leave only after that
+        await clickBy(By.id('se-button-back'));
+        await clickBy(By.id('se-back-folder-button-tracks'));
 
-    await actionFinish();
+        await actionDeleteFolder(folder);
+
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ folders: [folder] });
+    }
 }
