@@ -1,4 +1,5 @@
 import i18n from 'i18next';
+import { normalizeLang } from './lang';
 
 const lang = () => i18n?.language || (typeof navigator !== 'undefined' ? navigator.language : 'en-US');
 
@@ -69,6 +70,8 @@ export const fmt = {
     // "MMMM yyyy", capitalized (e.g., "September 2025")
     monthYearLong: (d) => capFirst(new Date(d).toLocaleDateString(lang(), { month: 'long', year: 'numeric' })),
 
+    monthYearShort: (d) => new Date(d).toLocaleDateString(normalizeLang(lang()), { month: 'short', year: 'numeric' }),
+
     // 24h time "HH:mm"
     time24: (d) =>
         new Date(d).toLocaleTimeString(lang(), {
@@ -105,6 +108,10 @@ export const fmt = {
         )}`,
 };
 
+export function monthStart(monthKey) {
+    return new Date(monthKey + '-01' + PARSE_AS_LOCAL_TIME); // Add the first day of the month for browser compatibility
+}
+
 export function formatPhotoDate(dateStr) {
     if (!dateStr) {
         return '';
@@ -116,7 +123,7 @@ export function formatPhotoDate(dateStr) {
     }
     // Format YYYY-MM 2025-09 -> September 2025
     if (/^\d{4}-\d{2}$/.test(clean)) {
-        const d = new Date(clean + '-01' + PARSE_AS_LOCAL_TIME); // Add the first day of the month for browser compatibility
+        const d = monthStart(clean);
         return isNaN(d) ? dateStr : fmt.monthYearLong(d);
     }
     // Format YYYY-MM-DD 2025-09-04 -> 4 September 2025

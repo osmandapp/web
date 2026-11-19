@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { Box, ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
-import { FixedSizeList } from 'react-window';
+import VirtualizedList from '../../frame/components/VirtualizedList';
 import { ReactComponent as TrackIcon } from '../../assets/icons/ic_action_polygom_dark.svg';
 import AppContext, { TRAVEL_ROUTE_ID_PARAM } from '../../context/AppContext';
 import TravelContext from '../../context/TravelContext';
@@ -117,31 +117,31 @@ const TravelRoute = ({ route }) => {
 const ITEM_HEIGHT = 85;
 const SECTION_HEIGHT = 750;
 
-const TravelRoutesResult = React.memo(({ routes }) => {
+const TravelRoutesResult = React.memo(({ routes, header = null }) => {
     const [containerRef, containerHeight] = useElementHeight();
+
+    const rows = useMemo(
+        () => [
+            ...(header ? [header] : []),
+            ...(routes ?? []).map((route) => <TravelRoute key={route.properties.id} route={route} />),
+        ],
+        [routes, header]
+    );
+
     const itemCount = routes?.length ?? 0;
 
     if (itemCount === 0) {
         return null;
     }
 
-    const listHeight = containerHeight || Math.min(itemCount * ITEM_HEIGHT, SECTION_HEIGHT);
-
     return (
         <Box ref={containerRef} className={travelStyles.resultsListBox}>
-            <FixedSizeList
-                height={listHeight}
-                itemCount={itemCount}
-                itemSize={ITEM_HEIGHT}
-                width={'100%'}
-                style={{ overflowX: 'hidden' }}
-            >
-                {({ index, style }) => (
-                    <div style={style}>
-                        <TravelRoute route={routes[index]} />
-                    </div>
-                )}
-            </FixedSizeList>
+            <VirtualizedList
+                items={rows}
+                renderItem={(row) => row}
+                height={containerHeight || SECTION_HEIGHT}
+                estimatedItemHeight={ITEM_HEIGHT}
+            />
         </Box>
     );
 });

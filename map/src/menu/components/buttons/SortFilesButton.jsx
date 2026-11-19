@@ -21,6 +21,7 @@ export default function SortFilesButton({
     setSortGroups = null,
     setSortFiles = null,
     smartf,
+    menuInPortal = false,
 }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
@@ -76,6 +77,7 @@ export default function SortFilesButton({
                 openSort={openSort}
                 setOpenSort={setOpenSort}
                 anchorEl={anchorEl}
+                inPortal={menuInPortal}
                 actions={
                     <SortActions
                         trackGroup={trackGroup}

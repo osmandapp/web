@@ -37,7 +37,7 @@ const SEARCH_CIRCLE_CLASS = 'travel-search-circle';
 const SEARCH_PANE = 'travelSearchPane';
 const SEARCH_HANDLE_CLASS = 'travel-search-handle';
 const SEARCH_MIN_RADIUS_M = 10;
-const SEARCH_MAX_DRAG_RADIUS_M = 500000;
+const SEARCH_MAX_DRAG_RADIUS_M = 50000;
 const MAX_TOOLTIP_TRACKS = 20;
 
 function buildOsmPopupHtml({ id, name, user }) {

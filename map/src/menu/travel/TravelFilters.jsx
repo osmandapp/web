@@ -25,22 +25,8 @@ import {
     LARGE_UNIT,
 } from '../settings/units/UnitsConverter';
 
-// metres, as the dropped-pin radius of Komoot, up to 500 km
-const SEARCH_RADIUS_OPTIONS = [
-    AUTO_SEARCH_RADIUS,
-    100,
-    250,
-    500,
-    1000,
-    5000,
-    10000,
-    20000,
-    30000,
-    50000,
-    100000,
-    200000,
-    500000,
-];
+// metres, as the dropped-pin radius of Komoot, up to 50 km
+const SEARCH_RADIUS_OPTIONS = [AUTO_SEARCH_RADIUS, 100, 250, 500, 1000, 5000, 10000, 20000, 30000, 50000];
 
 export default function TravelFilters({
     onClose,
