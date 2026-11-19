@@ -29,6 +29,9 @@ export const POINTS_SIMPLIFY_ZOOM_THRESHOLD = 17;
 
 export const DEFAULT_TRACK_LINE_WEIGHT = 7;
 
+const TRACK_HIT_LINE_WEIGHT = 16;
+const TRACK_HIT_LINE_SMOOTH_FACTOR = 3;
+
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     const layers = [];
     const emptyInfo = data?.info?.width === '' && data.info.color === '#00000000';
@@ -104,7 +107,15 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
-                let polyline = createPolyline({ coords: coordsTrk, ctx, map, point, points, trackAppearance });
+                let polyline = createPolyline({
+                    coords: coordsTrk,
+                    ctx,
+                    map,
+                    point,
+                    points,
+                    trackAppearance,
+                    draggable,
+                });
                 addStartEndGap(point, points, layers, draggable);
                 layers.push(polyline);
                 coordsAll = coordsAll.concat(cloneDeep(coordsTrk));
@@ -137,7 +148,15 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
         });
     }
 
-    const endPolyline = createPolyline({ coords: coordsTrk, ctx, map, point: null, points: null, trackAppearance });
+    const endPolyline = createPolyline({
+        coords: coordsTrk,
+        ctx,
+        map,
+        point: null,
+        points: null,
+        trackAppearance,
+        draggable,
+    });
     layers.push(endPolyline);
 
     return {
@@ -188,7 +207,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             addStartEndGap(point, points, layers, draggable);
             coords.push(new L.LatLng(p.lat, p.lng));
-            layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
+            layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance, draggable }));
             coordsAll = coordsAll.concat(Object.assign([], coords));
             coords = [];
         } else {
@@ -198,7 +217,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
 
     if (coords.length > 0) {
         coordsAll = coordsAll.concat(Object.assign([], coords));
-        layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
+        layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance, draggable }));
     }
 
     return coordsAll;
@@ -246,7 +265,7 @@ function addTooltipOnHover(polyline, map, coords, name = null) {
     });
 }
 
-function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
+function createPolyline({ coords, ctx, map, point, points, trackAppearance, draggable = false }) {
     let color =
         point && points
             ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
@@ -269,6 +288,15 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
         ...(arrowSettings.show ? { renderer: L.svg() } : {}),
     });
 
+    if (!draggable) {
+        polyline.hitLine = new L.Polyline(coords, {
+            weight: TRACK_HIT_LINE_WEIGHT,
+            opacity: 0,
+            smoothFactor: TRACK_HIT_LINE_SMOOTH_FACTOR,
+        });
+        polyline.hitLine.addEventParent(polyline);
+    }
+
     addTooltipOnHover(polyline, map, coords);
 
     polyline.on('add', function () {
@@ -284,12 +312,14 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
 
         updateStyle();
         map.on('zoomend moveend', updateStyle);
+        polyline.hitLine?.addTo(map).bringToBack();
 
         polyline.on('redraw-arrows', updateStyle);
 
         polyline.once('remove', () => {
             map.off('zoomend moveend', updateStyle);
             polyline.off('redraw-arrows', updateStyle);
+            polyline.hitLine?.remove();
             if (arrowSettings.show) {
                 const svg = polyline._renderer?._container;
                 if (svg) {
