@@ -175,7 +175,7 @@ Tapping a POI on the map opens the [POI context menu](./map-context-menu.md), wh
 
 </Tabs>
 
-This is a section within the [POI context menu](./map-context-menu.md) that displays a photo preview of the selected Popular Place (Wikipedia). You can scroll horizontally to browse through the available photos, or tap any image to open it in [full screen mode](#gallery).
+This is a section within the [POI context menu](./map-context-menu.md) that displays a photo preview of the selected Popular Place (Wikipedia) and photos linked to the POI in OpenStreetMap. A photo from the POI's [`mapillary`](https://wiki.openstreetmap.org/wiki/Key:mapillary) tag is shown first, even when the [Mapillary plugin](../plugins/mapillary.md) is disabled. On Android, photos from the [`panoramax`](https://wiki.openstreetmap.org/wiki/Key:panoramax) tag come next, so the order is Mapillary, Panoramax, Wikimedia. You can scroll horizontally to browse through the available photos, or tap any image to open it in [full screen mode](#gallery).
 
 Images viewed online are automatically cached for offline access. Cached photos display a small offline badge in the corner. The preview grid adapts to the screen size on iPadOS and macOS, ensuring comfortable image layout on larger displays. OsmAnd also avoids triggering repeated network requests when the Online Photos section is closed, and cancels previous requests when switching quickly between different POIs.
 
@@ -209,7 +209,7 @@ You can also perform the following actions on each photo:
   Share the selected image using any compatible app installed on your device (e.g., messaging, email, or social media). The shared content includes the image and its source link (if available).
 
 - **Details**  
-  Open a detailed view showing metadata about the image, including: *Description (full text)*, *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*. On Android, Mapillary photos show *Author*, *Date added*, *Source*, *License*, and a *Link* to the photo page on [Mapillary](https://www.mapillary.com/).
+    Open a detailed view showing metadata about the image, including: *Description (full text)*, *Name*, *Date added*, *Author*, *License*, *Source*, and *Direct link*. On Android, Mapillary photos show *Author*, *Added* (the capture date), *Source*, *License*, and a *Link* to the photo page on [Mapillary](https://www.mapillary.com/).
 
   **Note:** The description language depends on the display language of the application. If the description in the selected language is not available, OsmAnd shows the English version or the first available translation.
 
