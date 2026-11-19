@@ -2,10 +2,14 @@
 
 import { Builder, By } from 'selenium-webdriver';
 import { existsSync, readdirSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Options } from 'selenium-webdriver/chrome.js'; // ServiceBuilder for logging
+import { RESULTS_DIR_VARIABLE, RESULTS_FOLDER } from '../../bench.mjs';
 
-const TESTS_DIR = 'src/tests/';
+const BENCH_FOLDER = 'bench';
+
+export let testsFolder = 'tests';
 
 export const TEST_LOGIN = 'osmand@grr.la';
 export const TEST_PASSWORD = '0xDEADBEEF';
@@ -57,6 +61,7 @@ export function parseArgs() {
             a === '--debug' && (debug = true);
             a === '--cycle' && (cycle = true);
             a === '--stop' && (stop = true);
+            a === '--bench' && useBenchmarks();
         } else {
             findTestsByMask(a);
         }
@@ -75,7 +80,7 @@ function scanTestsDir(startDir, filterFn = null) {
             if (entry.isDirectory()) {
                 scanDir(fullPath);
             } else if (entry.name.endsWith('.mjs')) {
-                const relativePath = fullPath.replace(TESTS_DIR, '');
+                const relativePath = fullPath.replace(testsDir(), '');
                 if (!filterFn || filterFn(entry.name, relativePath)) {
                     found.push(relativePath);
                 }
@@ -86,14 +91,23 @@ function scanTestsDir(startDir, filterFn = null) {
     return found;
 }
 
+function useBenchmarks() {
+    testsFolder = BENCH_FOLDER;
+    process.env[RESULTS_DIR_VARIABLE] = join(dirname(fileURLToPath(import.meta.url)), '..', '..', RESULTS_FOLDER);
+}
+
+function testsDir() {
+    return `src/${testsFolder}/`;
+}
+
 function findAllTests() {
-    const allTests = scanTestsDir(TESTS_DIR);
+    const allTests = scanTestsDir(testsDir());
     allTests.sort((a, b) => a.localeCompare(b));
     tests.push(...allTests);
 }
 
 function findTestsByMask(mask) {
-    const testDir = `${TESTS_DIR}${mask}`;
+    const testDir = `${testsDir()}${mask}`;
     if (existsSync(testDir) && statSync(testDir).isDirectory()) {
         const found = scanTestsDir(testDir);
         found.sort((a, b) => a.localeCompare(b));
@@ -105,13 +119,13 @@ function findTestsByMask(mask) {
     const rangeMatch = mask.match(/^(\d+)-(\d+)$/);
     if (rangeMatch) {
         const [, from, to] = rangeMatch.map(Number);
-        found = scanTestsDir(TESTS_DIR, (filename) => {
+        found = scanTestsDir(testsDir(), (filename) => {
             const nums = [...filename.matchAll(/\d+/g)].map((m) => parseInt(m[0], 10));
             return nums.some((n) => n >= from && n <= to);
         });
     } else {
         const regexp = mask2regexp(mask);
-        found = scanTestsDir(TESTS_DIR, (filename) => filename.match(regexp));
+        found = scanTestsDir(testsDir(), (filename) => filename.match(regexp));
     }
 
     found.sort((a, b) => a.localeCompare(b));
@@ -141,7 +155,7 @@ function showList() {
             }
         }
     };
-    scanDir(TESTS_DIR);
+    scanDir(testsDir());
 }
 
 function showUsage() {
@@ -162,6 +176,7 @@ Options:
     --debug         Print debug info and full errors
     --verbose       Print console and network logs
     --cycle         Restart cycle of tests forever
+    --bench         Run the benchmarks of src/bench instead of the tests (yarn bench)
     --list (--ls)   List tests and exit
     --help          Help and exit
 
@@ -196,6 +211,8 @@ export async function prepareDriver() {
     headless && options.addArguments('--headless', '--disable-gpu', '--no-sandbox', `--window-size=${width},${height}`);
     // software WebGL for the MVT (MapLibre) layer
     headless && options.addArguments('--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader');
+    // exact heap size and window.gc() for the memory numbers of the benchmarks
+    testsFolder === BENCH_FOLDER && options.addArguments('--enable-precise-memory-info', '--js-flags=--expose-gc');
 
     const tryHomeBinary = process.env.HOME + '/bin/chromium';
     const useLocalHomeBinary = existsSync(tryHomeBinary);

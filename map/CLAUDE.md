@@ -16,6 +16,7 @@ Tests live outside `map/`:
 
 - `tests/unit` — jest: `yarn test`, `test:watch`, `test:coverage`.
 - `tests/selenium` — e2e against a running app: `yarn test` (localhost:3000), `test:main` (osmand.net), `test:test` (test.osmand.net).
+- `yarn bench` in both — benchmarks of big tracks, compared before / after by `tests/bench-compare.mjs` (see their README).
 
 Both have their own `README.md` and `TESTS_STRUCTURE.md`.
 

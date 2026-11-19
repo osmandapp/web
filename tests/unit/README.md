@@ -48,6 +48,24 @@ yarn test --coverage        # coverage report
 yarn test --help            # show all options
 ```
 
+## Benchmarks
+
+`src/bench/*.bench.js` measure the track editor on big tracks. `yarn test` and Jenkins never run them.
+Run them on `main` and on a branch on one machine, then compare:
+
+```bash
+BENCH_LABEL=before yarn bench           # on main
+BENCH_LABEL=after yarn bench            # on the branch
+node ../bench-compare.mjs before after  # fails if a time grows by more than 15 % or a count grows
+```
+
+The numbers go to `tests/bench-results/<label>.json`, together with the selenium benchmarks.
+A run takes about 25 s.
+
+These benchmarks call the functions of today's editor. A step that replaces one moves its benchmark to the new code
+in the same PR; a benchmark only the branch has is shown as `new` and does not fail the compare.
+The selenium benchmarks measure the editor from the outside and stay the same through the rework.
+
 ## Writing a Test
 
 1. Create `src/tests/<category>/NN-name.test.js` (next free number).

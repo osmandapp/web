@@ -5,7 +5,19 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { TestIgnored } from './TestIgnored.mjs';
 import { recordResult, generateReport } from './reporter.mjs';
 import { failed, loggerRun, loggerPass, loggerFail, loggerTitle, loggerReport } from './logger.mjs';
-import { driver, ignore, cycle, stop, mobile, headless, noexit, tests, parseArgs, prepareDriver } from './options.mjs';
+import {
+    driver,
+    ignore,
+    cycle,
+    stop,
+    mobile,
+    headless,
+    noexit,
+    tests,
+    testsFolder,
+    parseArgs,
+    prepareDriver,
+} from './options.mjs';
 
 console.debug = () => {}; // suppress selenium's console.debug
 
@@ -43,7 +55,7 @@ async function runTest({ file, i, total }) {
 
             await prepareDriver();
 
-            const { default: test } = await import('./tests/' + file);
+            const { default: test } = await import(`./${testsFolder}/` + file);
 
             try {
                 await test();
