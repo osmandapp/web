@@ -10,7 +10,7 @@ import {
 } from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import actionUploadGpx from '../../actions/actionUploadGpx.mjs';
+import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
 import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 const TRACK = 'test-track-two-segments';
@@ -20,9 +20,7 @@ export default async function test() {
     ignoreTest();
 
     await actionOpenMap();
-    await actionUploadGpx({ mask: TRACK + '.gpx' });
-    await clickBy(By.id('se-local-track-' + TRACK));
-    await waitBy(By.id('se-panel-button-undo'), { idle: true });
+    await actionOpenLocalTrack(TRACK);
     await matchPointsCount(TRACK_POINTS);
     const [line] = await getTrackLines();
 

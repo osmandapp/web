@@ -2,6 +2,7 @@ import TracksManager, { isPointUnrouted, updateTrackRouteTypes } from './track/T
 import Utils from '../util/Utils';
 import TrackLayerProvider from '../map/util/TrackLayerProvider';
 import TracksRoutingCache from '../context/TracksRoutingCache';
+import isEmpty from 'lodash-es/isEmpty';
 
 const deletePoint = (index, ctx) => deletePointByIndex(ctx.selectedGpxFile, index, ctx);
 
@@ -334,6 +335,34 @@ async function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
     return false;
 }
 
+function getPointMenuItems(points, index) {
+    const isGap = (i) => points[i]?.profile === TracksManager.PROFILE_GAP;
+    const last = points.length - 1;
+
+    return {
+        trimBefore: index > 0 && !isGap(index) && !isGap(index - 1),
+        splitBefore:
+            index >= 2 &&
+            index < last &&
+            !isGap(index) &&
+            !isGap(index - 1) &&
+            !isGap(index - 2) &&
+            !isEmpty(points[index].geometry),
+        joinBefore: isGap(index - 1),
+        profileBefore: index > 0 && !isGap(index - 1),
+        trimAfter: index < last && !isGap(index) && !isGap(index - 1),
+        splitAfter:
+            index >= 1 &&
+            index < last - 1 &&
+            !isGap(index) &&
+            !isGap(index - 1) &&
+            !isGap(index + 1) &&
+            !isEmpty(points[index].geometry),
+        joinAfter: isGap(index),
+        profileAfter: index < last && !isGap(index),
+    };
+}
+
 const PointManager = {
     deletePoint,
     deleteWpt,
@@ -343,6 +372,7 @@ const PointManager = {
     split,
     join,
     changeProfile,
+    getPointMenuItems,
 };
 
 export default PointManager;

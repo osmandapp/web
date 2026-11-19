@@ -6,6 +6,8 @@ import TracksManager, { isProtectedSegment, PROFILE_LINE } from '@map/manager/tr
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import EditableMarker from '@map/map/util/creator/EditableMarker';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
+import MarkerOptions from '@map/map/markers/MarkerOptions';
+import { updateGroupsVisibility } from '@map/manager/track/TrackAppearanceManager';
 import { PROFILE_BICYCLE, PROFILE_CAR, PROFILE_PEDESTRIAN } from '@map/store/geoRouter/profileConstants';
 import {
     createEditorCtx,
@@ -19,6 +21,8 @@ import {
     createRoutedPoints,
     createRoutedThenRecordedPoints,
     lats,
+    createPointsGroups,
+    WPT_GROUP,
 } from '../../util/fixtures/tracks';
 
 TrackLayerProvider.createTempPolyline = () => ({ temp: true });
@@ -780,6 +784,187 @@ describe('insert a point from the line', () => {
 
             expect(lines).not.toContainEqual(expect.arrayContaining([50.01, 50.02]));
         }
+    });
+});
+
+describe('the menu of a point', () => {
+    const offered = (points, index) =>
+        Object.entries(PointManager.getPointMenuItems(points, index))
+            .filter(([, shown]) => shown)
+            .map(([item]) => item);
+
+    test('a routed track offers trim, split and profile by the place of the point', () => {
+        const points = createRoutedPoints(5);
+
+        expect([0, 1, 2, 3, 4].map((index) => offered(points, index))).toEqual([
+            ['trimAfter', 'profileAfter'],
+            ['trimBefore', 'profileBefore', 'trimAfter', 'splitAfter', 'profileAfter'],
+            ['trimBefore', 'splitBefore', 'profileBefore', 'trimAfter', 'splitAfter', 'profileAfter'],
+            ['trimBefore', 'splitBefore', 'profileBefore', 'trimAfter', 'profileAfter'],
+            ['trimBefore', 'profileBefore'],
+        ]);
+    });
+
+    test('next to a gap only join goes across it, trim and split stay away from it', () => {
+        const points = createGapPoints(5, 2);
+
+        expect([1, 2, 3].map((index) => offered(points, index))).toEqual([
+            ['trimBefore', 'profileBefore', 'trimAfter', 'profileAfter'],
+            ['profileBefore', 'joinAfter'],
+            ['joinBefore', 'profileAfter'],
+        ]);
+    });
+
+    test.failing('split and profile are not offered on a recorded piece', () => {
+        const points = [...createRoutedThenRecordedPoints(), createRoutedPoint(3)];
+
+        expect(PointManager.getPointMenuItems(points, 1)).toMatchObject({ splitAfter: false, profileAfter: false });
+        expect(PointManager.getPointMenuItems(points, 2)).toMatchObject({ splitBefore: false, profileBefore: false });
+    });
+});
+
+describe('drawing in the editor', () => {
+    const WORLD = L.latLngBounds([-90, -180], [90, 180]);
+
+    const draw = (points, { zoom = 15, bounds = WORLD } = {}) => {
+        const ctx = createCtx(points);
+        ctx.trackRouter.getColor = ({ profile }) => profile;
+        const view = { ...map, getZoom: () => zoom, getBounds: () => bounds };
+        const layers = [];
+        TrackLayerProvider.parsePoints({ map: view, ctx, points, layers, draggable: true });
+
+        return layers;
+    };
+    const markers = (layers) => layers.filter((layer) => layer instanceof L.Marker);
+    const lines = (layers) => TrackLayerProvider.getPolylines(layers);
+
+    test('every point in view has a marker, a track of more than 1000 points shows every 30th below zoom 17', () => {
+        const big = createPlainPoints(1001);
+
+        expect(markers(draw(createPlainPoints(1000), { zoom: 16 }))).toHaveLength(1000);
+        expect(lats(markers(draw(big, { zoom: 16 })).map((marker) => marker.getLatLng()))).toEqual(
+            lats(big.filter((_, i) => i % 30 === 0))
+        );
+        expect(markers(draw(big, { zoom: 17 }))).toHaveLength(1001);
+        expect(markers(draw(createPlainPoints(3), { bounds: L.latLngBounds([0, 0], [1, 1]) }))).toEqual([]);
+    });
+
+    test('a line has the color of the profile of its start point, a plain run the color of Line', () => {
+        const profiles = [PROFILE_CAR, PROFILE_BICYCLE, PROFILE_PEDESTRIAN, PROFILE_CAR];
+        const routed = createRoutedPoints(4).map((point, i) => ({ ...point, profile: profiles[i] }));
+
+        expect(lines(draw(routed)).map((line) => line.options.color)).toEqual(profiles.slice(0, 3));
+        expect(lines(draw(createPlainPoints(3))).map((line) => line.options.color)).toEqual([PROFILE_LINE]);
+    });
+
+    test('a segment waiting for the router is a dashed line from its start point', () => {
+        const points = createRoutedPoints(3);
+        points[2].geometry = [];
+
+        const [routed, waiting] = lines(draw(points));
+
+        expect(routed.options.dashArray).toBeFalsy();
+        expect(waiting.options.dashArray).toBeTruthy();
+        expect(lats(waiting.getLatLngs())).toEqual([50.01, 50.02]);
+    });
+
+    test('the edited track has no start and finish markers, a track shown on the map has them', () => {
+        const points = createRoutedPoints(3);
+        const icons = (layers) => markers(layers).map((marker) => marker.options.icon);
+        const view = { ...map, getBounds: () => WORLD, getCenter: () => L.latLng(50, 30) };
+
+        const shown = TrackLayerProvider.createLayersByTrackData({
+            data: { name: 'Track', tracks: [{ points }] },
+            ctx: createCtx(points),
+            map: view,
+        });
+
+        expect(icons(draw(points)).every((icon) => icon === MarkerOptions.options.route)).toBe(true);
+        expect(icons(shown.getLayers())).toEqual(
+            expect.arrayContaining([MarkerOptions.options.trackStart, MarkerOptions.options.trackEnd])
+        );
+    });
+
+    test('the line weight follows the zoom', () => {
+        const weights = [10, 13, 15, 17].map((zoom) => lines(draw(createRoutedPoints(2), { zoom }))[0].options.weight);
+
+        expect(weights).toEqual([2, 5, 6, 7]);
+    });
+
+    test('a point picked in the Track tab gets a pointer on the map, the previous pointer goes away', () => {
+        const view = { addLayer: jest.fn(), removeLayer: jest.fn() };
+        let selected = null;
+        const pick = (i) =>
+            TracksManager.showSelectedPointOnMap(
+                { name: 'Local', showPoint: createEditorPoint(i) },
+                view,
+                selected,
+                (marker) => (selected = marker)
+            );
+
+        pick(1);
+        const first = selected.marker;
+        pick(2);
+
+        expect(view.removeLayer).toHaveBeenCalledWith(first);
+        expect(selected.marker.getLatLng().lat).toBe(50.02);
+    });
+});
+
+describe('the waypoints of the edited track', () => {
+    const createWpts = () => [{ lat: 50.005, lon: 30.001, name: 'wpt', category: WPT_GROUP }];
+
+    test('a hidden group hides its waypoints in the editor and is kept in the info of the track', () => {
+        const ctx = createDrawnCtx(createRoutedPoints(2));
+        ctx.createTrack = { enable: true };
+        ctx.selectedGpxFile.pointsGroups = createPointsGroups();
+        ctx.localTracks = [ctx.selectedGpxFile];
+        const marker = (category) =>
+            new EditableMarker(
+                null,
+                ctx,
+                null,
+                L.marker([50, 30], { wpt: true, category }),
+                ctx.selectedGpxFile
+            ).create();
+
+        updateGroupsVisibility(ctx, [WPT_GROUP], true, { current: null });
+
+        expect(ctx.selectedGpxFile.updateLayers).toBe(true);
+        expect(ctx.selectedGpxFile.info.pointsGroups[WPT_GROUP].hidden).toBe(true);
+        expect(marker(WPT_GROUP)).toBeNull();
+        expect(marker('Other group')).toBeInstanceOf(L.Marker);
+    });
+
+    test('the point operations keep the waypoints and their groups', async () => {
+        for (const [points, operate] of [
+            [createRoutedPoints(4), (ctx) => PointManager.deletePoint(1, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.reorder(1, 2, ctx.selectedGpxFile, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.trimBefore(1, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.trimAfter(1, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.split(1, ctx)],
+            [createGapPoints(4, 1), (ctx) => PointManager.join(...ctx.selectedGpxFile.points.slice(1, 3), ctx)],
+            [createRoutedPoints(4), (ctx) => dragPoint(ctx, 1, 50.015)],
+            [createRoutedPoints(4), (ctx) => insertPoint(ctx, drawnLines(ctx)[1], 50.015)],
+        ]) {
+            const ctx = createDrawnCtx(points);
+            Object.assign(ctx.selectedGpxFile, { wpts: createWpts(), pointsGroups: createPointsGroups() });
+
+            await operate(ctx);
+
+            expect(ctx.selectedGpxFile.wpts).toEqual(createWpts());
+            expect(ctx.selectedGpxFile.pointsGroups).toEqual(createPointsGroups());
+        }
+    });
+
+    test.failing('deleting the last point keeps the waypoints and their groups', async () => {
+        const ctx = createCtx(createRoutedPoints(1));
+        Object.assign(ctx.selectedGpxFile, { wpts: createWpts(), pointsGroups: createPointsGroups() });
+
+        await PointManager.deletePoint(0, ctx);
+
+        expect(ctx.selectedGpxFile.wpts).toEqual(createWpts());
+        expect(ctx.selectedGpxFile.pointsGroups).toEqual(createPointsGroups());
     });
 });
 

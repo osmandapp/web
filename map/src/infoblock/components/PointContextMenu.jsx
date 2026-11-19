@@ -4,7 +4,6 @@ import TracksManager from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import PointManager from '../../manager/PointManager';
 import { Close } from '@mui/icons-material';
-import isEmpty from 'lodash-es/isEmpty';
 
 export default function PointContextMenu({ anchorEl }) {
     const ctx = useContext(AppContext);
@@ -94,90 +93,50 @@ export default function PointContextMenu({ anchorEl }) {
         await PointManager.join(currentPoint, nextPoint, ctx);
     }
 
-    function isGap(pointInd) {
-        return ctx.selectedGpxFile.points[pointInd]?.profile === TracksManager.PROFILE_GAP;
-    }
-
-    function isPointAfterGap(pointInd) {
-        return isGap(pointInd - 1);
-    }
-
-    function showTrimBefore() {
-        return pointInd > 0 && !isGap(pointInd) && !isPointAfterGap(pointInd);
-    }
-
-    function showSplitBefore() {
-        return (
-            pointInd >= 2 &&
-            pointInd < ctx.selectedGpxFile.points.length - 1 &&
-            !isGap(pointInd) &&
-            !isPointAfterGap(pointInd) &&
-            !isPointAfterGap(pointInd - 1) &&
-            !isEmpty(ctx.selectedGpxFile.points[pointInd].geometry)
-        );
-    }
-
-    function showJoinBefore() {
-        return isPointAfterGap(pointInd);
-    }
-
-    function showProfileBefore() {
-        return pointInd > 0 && !isPointAfterGap(pointInd);
-    }
-
-    function showTrimAfter() {
-        return pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd) && !isPointAfterGap(pointInd);
-    }
-
-    function showSplitAfter() {
-        return (
-            pointInd >= 1 &&
-            pointInd < ctx.selectedGpxFile.points.length - 2 &&
-            !isGap(pointInd) &&
-            !isPointAfterGap(pointInd) &&
-            !isGap(pointInd + 1) &&
-            !isEmpty(ctx.selectedGpxFile.points[pointInd].geometry)
-        );
-    }
-
-    function showJoinAfter() {
-        return isGap(pointInd);
-    }
-
-    function showProfileAfter() {
-        return pointInd < ctx.selectedGpxFile.points.length - 1 && !isGap(pointInd);
-    }
-
     const Buttons = () => {
+        const items = PointManager.getPointMenuItems(ctx.selectedGpxFile.points, pointInd);
+
         return (
             <div>
                 <MenuItem id="se-point-context-menu-delete" onClick={deletePoint}>
                     Delete point
                 </MenuItem>
-                {showTrimBefore() && (
+                {items.trimBefore && (
                     <MenuItem id="se-point-context-menu-trim-before" onClick={trimBefore}>
                         Trim before
                     </MenuItem>
                 )}
-                {showSplitBefore() && <MenuItem onClick={splitBefore}>Split before</MenuItem>}
-                {showJoinBefore() && <MenuItem onClick={joinBefore}>Join before</MenuItem>}
-                {showProfileBefore() && <MenuItem onClick={changeProfileBefore}>Profile before</MenuItem>}
-                {showTrimAfter() && (
+                {items.splitBefore && (
+                    <MenuItem id="se-point-context-menu-split-before" onClick={splitBefore}>
+                        Split before
+                    </MenuItem>
+                )}
+                {items.joinBefore && (
+                    <MenuItem id="se-point-context-menu-join-before" onClick={joinBefore}>
+                        Join before
+                    </MenuItem>
+                )}
+                {items.profileBefore && (
+                    <MenuItem id="se-point-context-menu-profile-before" onClick={changeProfileBefore}>
+                        Profile before
+                    </MenuItem>
+                )}
+                {items.trimAfter && (
                     <MenuItem id="se-point-context-menu-trim-after" onClick={trimAfter}>
                         Trim after
                     </MenuItem>
                 )}
-                {showSplitAfter() && (
+                {items.splitAfter && (
                     <MenuItem id="se-point-context-menu-split-after" onClick={splitAfter}>
                         Split after
                     </MenuItem>
                 )}
-                {showJoinAfter() && (
+                {items.joinAfter && (
                     <MenuItem id="se-point-context-menu-join-after" onClick={joinAfter}>
                         Join after
                     </MenuItem>
                 )}
-                {showProfileAfter() && (
+                {items.profileAfter && (
                     <MenuItem id="se-point-context-menu-profile-after" onClick={changeProfileAfter}>
                         Profile after
                     </MenuItem>
@@ -222,6 +181,7 @@ export default function PointContextMenu({ anchorEl }) {
                             </Grid>
                             <Grid item xs={2}>
                                 <IconButton
+                                    id="se-point-context-menu-close"
                                     sx={{
                                         backgroundColor: 'white',
                                         padding: '3px !important',

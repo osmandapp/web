@@ -1,12 +1,12 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
 import { clickBy, matchTextBy, sendKeysBy, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import { deleteTrack, getFiles } from '../../util.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
+import actionAddWpt from '../../actions/tracks/actionAddWpt.mjs';
 
 const SELECTED_PIN = By.css('[id^="se-selected-marker-"]');
 const PREVIEW_PIN = By.css('[id^="se-add-fav-map-preview--"]');
@@ -32,13 +32,7 @@ export default async function test() {
     await clickBy(By.id('se-create-new-route'));
 
     // add waypoint via context menu
-    await actionOpenContextMenu();
-    await clickBy(By.id('se-add-wpt-action'));
-    await waitBy(By.id('se-add-fav-dialog'));
-    await sendKeysBy(By.id('se-fav-name-input'), wptName);
-    await clickBy(By.id('se-add-fav-btn'));
-    await waitByRemoved(By.id('se-add-fav-dialog'));
-    await waitBy(By.className('leaflet-marker-icon'));
+    await actionAddWpt(wptName);
 
     // switch to waypoints tab
     await clickBy(By.css('[testid="se-tab-points"]'));
