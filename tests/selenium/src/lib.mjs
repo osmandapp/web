@@ -3,7 +3,15 @@
 // import { strict as assert } from 'node:assert';
 import { By, Condition, logging } from 'selenium-webdriver';
 
-import { debug, driver, HIDDEN_TIMEOUT, TIMEOUT_OPTIONAL, TIMEOUT_REQUIRED, verbose } from './options.mjs';
+import {
+    debug,
+    driver,
+    HIDDEN_TIMEOUT,
+    LONG_TIMEOUT,
+    TIMEOUT_OPTIONAL,
+    TIMEOUT_REQUIRED,
+    verbose,
+} from './options.mjs';
 import actionIdleWait from './actions/actionIdleWait.mjs';
 
 // helpers
@@ -568,7 +576,7 @@ export async function validateEnabled(id, enabled) {
     });
 }
 
-export async function dragBy([fromLat, fromLon], [toLat, toLon]) {
+export async function dragBy([fromLat, fromLon], [toLat, toLon], { duration = 500 } = {}) {
     await actionIdleWait({ tiles: true });
     const from = await getMapCoords(fromLat, fromLon);
     const to = await getMapCoords(toLat, toLon);
@@ -576,7 +584,7 @@ export async function dragBy([fromLat, fromLon], [toLat, toLon]) {
         .actions({ async: true })
         .move({ origin: 'viewport', x: from.xAbs, y: from.yAbs })
         .press()
-        .move({ origin: 'viewport', x: to.xAbs, y: to.yAbs, duration: 500 })
+        .move({ origin: 'viewport', x: to.xAbs, y: to.yAbs, duration })
         .release()
         .perform();
 }
@@ -599,11 +607,13 @@ export async function getMarkersNear(lat, lon) {
     );
 }
 
+// also runs in the page, see ROUTE_POINT_COUNT_JS
+const isRoutePointMarker = (options) =>
+    options.type === 'localTracksLayers' && options.draggable && options.title !== 'poly';
+
 /** A point of the edited track at [lat, lon], not the marker to drag a new point from the line. */
 export async function hasRoutePointNear(lat, lon) {
-    return (await getMarkersNear(lat, lon)).some(
-        (marker) => marker.type === 'localTracksLayers' && marker.draggable && marker.title !== 'poly'
-    );
+    return (await getMarkersNear(lat, lon)).some(isRoutePointMarker);
 }
 
 /** The pointer of a point picked in the Track tab at [lat, lon]. */
@@ -669,6 +679,11 @@ export function pointsCount(n) {
     return new RegExp(`Points: ${n}\\b`);
 }
 
+/** Page code: the infoblock of the open track shows `n` points. */
+export function pointsCountJs(n) {
+    return `${pointsCount(n)}.test(document.getElementById('se-track-context-menu')?.innerText)`;
+}
+
 export async function matchPointsCount(n) {
     await matchTextBy(By.id('se-track-context-menu'), pointsCount(n));
 }
@@ -709,6 +724,70 @@ export async function getTrackLines(trackName) {
     `,
         trackName
     );
+}
+
+// page code of the number of the point markers of the edited track
+export const ROUTE_POINT_COUNT_JS = `Object.values(window.__leafletMap._layers).filter(
+    (layer) => (${isRoutePointMarker})(layer.options)
+).length`;
+
+export async function getRoutePointCount() {
+    return await driver.executeScript(`return ${ROUTE_POINT_COUNT_JS};`);
+}
+
+/**
+ * Time from the start of `act` until the page expression `isDone` is true on a drawn frame, ms.
+ */
+export async function measureInPage(act, isDone) {
+    await driver.manage().setTimeouts({ script: LONG_TIMEOUT });
+    await driver.executeScript('window.seBenchStart = performance.now()');
+    await act();
+
+    return await driver.executeAsyncScript(`
+        const done = arguments[arguments.length - 1];
+        const check = () => ((${isDone}) ? done(performance.now() - window.seBenchStart) : requestAnimationFrame(check));
+        requestAnimationFrame(check);
+    `);
+}
+
+/** Used JS heap of the page after a garbage collection, MB; yarn bench starts Chrome with gc and exact sizes. */
+export async function getHeapMb() {
+    return await driver.executeScript('window.gc(); return performance.memory.usedJSHeapSize / 1048576;');
+}
+
+// the edited track is saved and its analysis comes back within this quiet time after an edit
+export const SETTLE_MS = 3000;
+
+/** Total of the long tasks of the page, the main thread busy for over 50 ms, from `act` until the page settles, ms. */
+export async function measureLongTasks(act) {
+    await driver.executeScript(`
+        window.seLongTasksMs = 0;
+        window.seLongTasks = new PerformanceObserver((list) =>
+            list.getEntries().forEach((task) => (window.seLongTasksMs += task.duration))
+        );
+        window.seLongTasks.observe({ type: 'longtask' });
+    `);
+    await act();
+    await actionIdleWait({ idle: SETTLE_MS });
+
+    return await driver.executeScript('window.seLongTasks.disconnect(); return window.seLongTasksMs;');
+}
+
+/** Frames per second the page draws during `act`. */
+export async function measureFps(act) {
+    await driver.executeScript(`
+        const frames = { count: 0, start: performance.now(), on: true };
+        const tick = () => frames.on && ++frames.count && requestAnimationFrame(tick);
+        window.seFrames = frames;
+        requestAnimationFrame(tick);
+    `);
+    await act();
+
+    return await driver.executeScript(`
+        const frames = window.seFrames;
+        frames.on = false;
+        return (frames.count * 1000) / (performance.now() - frames.start);
+    `);
 }
 
 export async function waitRoutedLines(count) {

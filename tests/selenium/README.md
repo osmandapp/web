@@ -53,6 +53,24 @@ yarn test --longtimeout     # Use 5 minute timeout
 yarn test --help            # Show all options
 ```
 
+## Benchmarks
+
+`src/bench/` measures the track editor on big tracks in the browser: times, heap, frames. `yarn test` never runs it.
+Run it on `main` and on a branch on one machine, then compare. Before each run:
+
+- start the app on `localhost:3000` by `yarn start` in `map/`, and wait until it has compiled the code of that branch;
+- build the app the same way for both runs: `yarn start` both times, never a dev build against a production one;
+- pass `--headless` both times: the number of markers depends on the window size.
+
+```bash
+BENCH_LABEL=before yarn bench --headless   # on main
+BENCH_LABEL=after yarn bench --headless    # on the branch
+node ../bench-compare.mjs before after     # fails if a time grows by more than 15 % or a count grows
+```
+
+The numbers go to `tests/bench-results/<label>.json`, together with the unit benchmarks.
+A run takes about 4 min, the 50 edits of a 50k track take most of it.
+
 ## TODO
 
 - split timeouts by soft/hard limit (soft should grow up to hard, raising with window.seActivityTimestamp)

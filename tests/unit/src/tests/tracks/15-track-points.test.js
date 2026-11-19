@@ -24,6 +24,7 @@ import {
     createPointsGroups,
     WPT_GROUP,
 } from '../../util/fixtures/tracks';
+import { createDragEvent, createDrawnCtx, dragPoint, map } from '../../util/editor';
 
 TrackLayerProvider.createTempPolyline = () => ({ temp: true });
 
@@ -32,32 +33,11 @@ const GAP = TracksManager.PROFILE_GAP;
 const plain = (n) => Array.from({ length: n }, (_, i) => createEditorPoint(i));
 const createCtx = (points) => createEditorCtx({ points });
 
-// the map the editor draws on, as far as drawing and dragging use it
-const map = { getZoom: () => 15, hasLayer: () => false, removeLayer: () => {}, on: () => {}, off: () => {} };
-
-const createDragEvent = (point) => ({ target: { _latlng: L.latLng(point.lat, point.lng) } });
-
-const createDrawnCtx = (points) => {
-    const ctx = createCtx(points);
-    const layers = [];
-    TrackLayerProvider.parsePoints({ map, ctx, points, layers, draggable: true, hidden: true });
-    ctx.selectedGpxFile.layers = L.layerGroup(layers);
-    ctx.setRoutingNewSegments = jest.fn();
-
-    return ctx;
-};
 const drawnLines = (ctx) => TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
 const routedPairs = (ctx) =>
     ctx.setRoutingNewSegments.mock.calls
         .flatMap(([segments]) => segments)
         .map(({ start, end }) => [start.lat, end.lat]);
-
-const dragPoint = (ctx, index, lat) => {
-    const track = ctx.selectedGpxFile;
-    const marker = new EditableMarker(null, ctx, null, null, track);
-    marker.dragStartPoint(createDragEvent(track.points[index]), track);
-    marker.dragEndPoint(createDragEvent({ lat, lng: track.points[index].lng }), track);
-};
 
 const insertPoint = (ctx, line, lat) => {
     const track = ctx.selectedGpxFile;

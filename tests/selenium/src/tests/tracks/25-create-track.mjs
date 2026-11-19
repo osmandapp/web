@@ -7,6 +7,7 @@ import {
     enclose,
     getMarkersNear,
     getOpenTrackName,
+    getRoutePointCount,
     getTextBy,
     getTrackDistance,
     getTrackLines,
@@ -570,14 +571,6 @@ async function validateRoutePoint(lat, lng, present) {
 
 async function validateRoutePointCount(count) {
     await enclose(async () => (await getRoutePointCount()) === count, { tag: `${count} route point markers` });
-}
-
-async function getRoutePointCount() {
-    return await driver.executeScript(`
-        return Object.values(window.__leafletMap._layers).filter(
-            (layer) => layer.options.type === 'localTracksLayers' && layer.options.draggable && layer.options.title !== 'poly'
-        ).length;
-    `);
 }
 
 async function getTrackEnds() {

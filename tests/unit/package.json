@@ -8,8 +8,9 @@
         "test": "jest",
         "test:watch": "jest --watch",
         "test:coverage": "jest --coverage",
-        "lint": "eslint src",
-        "format": "prettier --write './src/**/*.js' --config ./.prettierrc"
+        "bench": "jest -c jest.bench.config.mjs --runInBand",
+        "lint": "eslint -c .eslintrc.js src ../bench.mjs ../bench-compare.mjs",
+        "format": "prettier --write './src/**/*.js' '../*.mjs' --config ../.prettierrc"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.26.0",
