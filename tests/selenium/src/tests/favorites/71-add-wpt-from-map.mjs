@@ -1,14 +1,14 @@
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import actionOpenContextMenu from '../../actions/map/actionOpenContextMenu.mjs';
-import { clickBy, matchTextBy, sendKeysBy, waitBy, waitByRemoved, waitNoPointsCount } from '../../lib.mjs';
+import { clickBy, matchTextBy, waitBy, waitNoPointsCount } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import { deleteTrack, getFiles } from '../../util.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
+import actionAddWpt from '../../actions/tracks/actionAddWpt.mjs';
 
 export default async function test() {
     await actionOpenMap();
@@ -32,13 +32,7 @@ export default async function test() {
     await clickBy(By.id('se-create-new-route'));
 
     // add wpt
-    await actionOpenContextMenu();
-    await clickBy(By.id('se-add-wpt-action'));
-    await waitBy(By.id('se-add-fav-dialog'));
-    await sendKeysBy(By.id('se-fav-name-input'), favoriteName);
-    await clickBy(By.id('se-add-fav-btn'));
-    await waitByRemoved(By.id('se-add-fav-dialog'));
-    await waitBy(By.className('leaflet-marker-icon'));
+    await actionAddWpt(favoriteName);
     // the waypoint is not a point of the route
     await waitNoPointsCount();
     await clickBy(By.id('se-local-track-actions-save-to-cloud'));

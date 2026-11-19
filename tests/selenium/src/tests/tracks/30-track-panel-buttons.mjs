@@ -6,7 +6,7 @@ import { enclose, clickBy, enumerateIds, waitBy } from '../../lib.mjs';
 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
-import actionUploadGpx from '../../actions/actionUploadGpx.mjs';
+import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
 import actionLocalToCloud from '../../actions/tracks/actionLocalToCloud.mjs';
 import { deleteTrack } from '../../util.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
@@ -26,9 +26,7 @@ export default async function test() {
     await actionOpenMap();
     await actionLogIn();
 
-    await actionUploadGpx({ mask: TRACK + '.gpx' });
-    await clickBy(By.id('se-local-track-' + TRACK));
-    await waitBy(By.id('se-panel-button-undo'), { idle: true });
+    await actionOpenLocalTrack(TRACK);
     await validatePanelButtons(localTrackButtons);
     await clickBy(By.id('se-show-menu-planroute'));
     await actionLocalToCloud({ mask: TRACK });

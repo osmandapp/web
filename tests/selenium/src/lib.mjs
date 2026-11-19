@@ -599,6 +599,27 @@ export async function getMarkersNear(lat, lon) {
     );
 }
 
+/** A point of the edited track at [lat, lon], not the marker to drag a new point from the line. */
+export async function hasRoutePointNear(lat, lon) {
+    return (await getMarkersNear(lat, lon)).some(
+        (marker) => marker.type === 'localTracksLayers' && marker.draggable && marker.title !== 'poly'
+    );
+}
+
+/** The pointer of a point picked in the Track tab at [lat, lon]. */
+export async function hasPointerNear(lat, lon) {
+    return (await getMarkersNear(lat, lon)).some((marker) => !marker.type && !marker.draggable);
+}
+
+/** Names of the waypoints of the edited track on the map. */
+export async function getWaypointNames() {
+    return await driver.executeScript(`
+        return Object.values(window.__leafletMap._layers)
+            .filter((layer) => layer.options.wpt && layer.options.type === 'localTracksLayers')
+            .map((layer) => layer.options.name);
+    `);
+}
+
 export async function getMarker(lat, lon, { optional = false } = {}) {
     const fn = async () => {
         await actionIdleWait({ tiles: true });
@@ -652,25 +673,42 @@ export async function matchPointsCount(n) {
     await matchTextBy(By.id('se-track-context-menu'), pointsCount(n));
 }
 
+/** Distance of the open track in its infoblock, km. */
+export async function getTrackDistance() {
+    const text = await getTextBy(By.id('se-track-context-menu'));
+
+    return parseFloat(text.match(/Distance: ([\d.]+) km/)?.[1]);
+}
+
 export async function waitNoPointsCount() {
     await enclose(async () => !/Points:/.test(await getTextBy(By.id('se-track-context-menu'))), {
         tag: 'no point count',
     });
 }
 
-export async function getTrackLines() {
-    return await driver.executeScript(`
+/**
+ * Lines of the edited track, or of a track shown on the map outside the editor.
+ *
+ * @param {string} [trackName] - the track outside the editor, the edited track when omitted
+ */
+export async function getTrackLines(trackName) {
+    return await driver.executeScript(
+        `
         return Object.values(window.__leafletMap._layers)
-            .filter((layer) => typeof layer.getLatLngs === 'function' && layer.options.type === 'localTracksLayers')
+            .filter((layer) => typeof layer.getLatLngs === 'function' &&
+                (arguments[0] ? layer.options.trackName === arguments[0] : layer.options.type === 'localTracksLayers'))
             .map((layer) => {
                 const points = layer.getLatLngs().flat(Infinity);
                 const [start, middle, end] = [points[0], points[Math.floor(points.length / 2)], points.at(-1)].map(
                     (point) => point && { lat: point.lat, lng: point.lng }
                 );
+                const { dashArray, color, weight } = layer.options;
 
-                return { size: points.length, dashed: !!layer.options.dashArray, color: layer.options.color, start, middle, end };
+                return { size: points.length, dashed: !!dashArray, color, weight, start, middle, end };
             });
-    `);
+    `,
+        trackName
+    );
 }
 
 export async function waitRoutedLines(count) {
@@ -704,9 +742,15 @@ export async function zoomMap(direction) {
  *
  * @param {number} lat - latitude
  * @param {number} lon - longitude
+ * @param {number} [zoom] - zoom, the current one when omitted
  */
-export async function setMapCenter(lat, lon) {
-    await driver.executeScript('window.__leafletMap.setView([arguments[0], arguments[1]]);', lat, lon);
+export async function setMapCenter(lat, lon, zoom) {
+    await driver.executeScript(
+        'window.__leafletMap.setView([arguments[0], arguments[1]], arguments[2] ?? window.__leafletMap.getZoom(), { animate: false });',
+        lat,
+        lon,
+        zoom
+    );
     await actionIdleWait({ tiles: true });
 }
 
