@@ -98,7 +98,6 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Map downloads](../start-with/download-maps.md) |  <details><summary>**5 map downloads** <br /> (map update counts as download):</summary> <br /> - Map download or update is meant only download-update of a country (region) map.<br /> - **World overview map**, **World altitude correction**, **Map fonts** and **Voice prompts** are not counted as 5 possibilities to download.</details> | ✔ | ✔ |
 | [Monthly map updates](../personal/maps-resources.md#updates-menu) |  <details><summary>**Once a month** <br /> (with 2 days delay):</summary> * limited to 5 downloads (map update counts as download) </details> |  ✔ | ✔ |
 | [Hourly map updates](../personal/maps-resources.md#live-updates)<br/>Live updates (1 hour delay) - [**](#-map-updates) | **-** | **-**| ✔ |
-| [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topography data](../plugins/topography.md#overview)<br/>(Contour lines and Terrain) | **-** | ✔ | ✔ |
 | [Coordinates Grid — Color Customization](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -112,6 +111,7 @@ In the list, there is information about prices of OsmAnd product for the US and 
 | [Astronomy plugin](../plugins/astronomy.md) — [Offline Sky Map](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Custom widget background color](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Offline and online navigation](../navigation/index.md)<br/>with turn-by-turn directions | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/car-play.md) | ✔ | ✔ | ✔ |
 | [Offline instant search](../search/index.md) | ✔ | ✔ | ✔ |
 | [Trip recording](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Export GPX tracks](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |

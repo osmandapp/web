@@ -32,15 +32,13 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 ## What's new {#whats-new}
 
-## What's new {#whats-new}
-
 - **[Spatial Search](https://osmand.net/blog/offline-search-video)** is enabled by default, with more accurate ranking, synonyms, and suggested corrections for misspelled words.
+- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** is free for all users and gets [suggestions from recent destinations](https://osmand.net/docs/user/navigation/auto-car#dashboard-suggestions), automatic [Free ride](https://osmand.net/docs/user/navigation/auto-car#destination-points) while driving, and [Google Assistant and Gemini](https://osmand.net/docs/user/navigation/auto-car#voice-control) support.
 - New **Panoramax plugin** with street-level imagery as a map layer, filtered by contributor, date, and type.
 - Realistic **[sun shadows](https://osmand.net/docs/user/plugins/topography#3d-buildings)** cast by 3D buildings and terrain.
 - Media library in **[My Places](https://osmand.net/docs/user/personal/myplaces)** that gathers your photos, videos, and audio notes in one place.
 - Dashed and dotted lines in **[track appearance](https://osmand.net/docs/user/map/tracks/appearance#track-appearance-settings)**, also available as a folder's default appearance.
 - Speed range for route calculation and arrival time based on your actual speed in **[vehicle parameters](https://osmand.net/docs/user/navigation/guidance/vehicle-parameters#default-speed)**.
-- Smarter **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** with suggestions from recent destinations, automatic [Free ride](https://osmand.net/docs/user/navigation/auto-car#destination-points) while driving, and [Google Assistant and Gemini](https://osmand.net/docs/user/navigation/auto-car#voice-control) support.
 - New **[Quick action](https://osmand.net/docs/user/widgets/quick-action#my-places)** to show or hide one or several tracks with a single tap.
 - **[Contour line](https://osmand.net/docs/user/plugins/topography#contour-lines)** labels can face uphill, as on paper topographic maps.
 - Support for BLE power meters in **[External sensors](https://osmand.net/docs/user/plugins/external-sensors#pair-new-sensor)**.

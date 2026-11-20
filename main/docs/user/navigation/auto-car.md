@@ -18,10 +18,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overview {#overview}
 
-:::tip Purchase
-Android Auto is a [paid feature](../purchases/index.md).  
-:::
-
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
 [**Android Auto**](https://www.android.com/auto) is software developed by Google that allows users to connect their Android devices to compatible vehicle multimedia systems. *Android Auto* provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.  
@@ -79,8 +75,6 @@ In order for OsmAnd to work in *Android Auto*, you must [connect](#connection-sc
 
 - Not all vehicles support device connection capability. Check the [list for *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
 
-- You need to purchase a **paid version** of the app or take out a [subscription](../purchases/android.md#free-and-paid-features). Check your current subscription here *Menu → Settings → Purchases*.  
-
 - *Android Auto* uses the first [OsmAnd Driving profile](#profile-first) in the Profiles list for navigation. Set the preferred profile to first, except for the *Browse map* profile, it is not read by *Android Auto*. To do this, go to OsmAnd *Menu → Settings → App profiles → Edit profile list* → move your [**Driving**](#profile-first) profile to the first place or after the *Browse map* profile.  
 
 - It is important to remember that *Android Auto* is a data-intensive application, including mobile data, and the quality of the system may depend on the quality of your connection and the speed of your Internet access.
@@ -105,7 +99,7 @@ If you do not have any *Driving* profile selected on your device that correspond
 
 ![Android Auto screen](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-pois), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks/manage-tracks.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md) or take a *Free ride*.
+You can select previously preset and added [POIs](../map/point-layers-on-map.md#points-of-interest-pois), or [Favorites](../personal/favorites.md), or [Markers](../personal/markers.md) as a destination point. It is also possible to select a recorded or downloaded [Track](../personal/tracks/manage-tracks.md) for the route, use the [Search](../search/index.md), or select a destination from the route [History](../search/search-history.md) or take a *Free ride*. Your previous route and recent destinations are also available as [cards on the Android Auto dashboard](#dashboard-suggestions).
 
 1. If you want a particular location on the map as an endpoint, select the appropriate category of points from the list, [POIs](#poi-categories), [Favorites](#favorites), or [Map Markers](#map-markers).  
   
@@ -130,6 +124,28 @@ While driving, selected points can be [announced](#voice-prompts) when you appro
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)  
 
 In the History category, you can select a destination from a list of endpoints. They are sorted by most recent use, starting with the newest. This can be convenient for quick access to frequently used routes. To learn how to use or delete a destination, read the [Search History](../search/search-history.md) article.  
+
+
+### Dashboard Suggestions {#dashboard-suggestions}
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_dashboard_suggestions.webp)
+
+When no navigation is active, OsmAnd shows up to five suggestion cards on the Android Auto dashboard, so you can start a route without opening the app menu. The cards are available when *Navigation history* is turned on in the [History settings](../search/search-history.md#sort-and-filter).
+
+- **Previous route** — the first card. It restores the start point, intermediate points, and destination of your last route.
+- **Recent destinations** — the next cards, taken from the [History](#history) and sorted from newest to oldest. Each card shows the destination name, its address or type, and an icon of the destination type.
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_card_countdown.webp)
+
+To start a route from a card:
+
+1. Tap a card. OsmAnd opens full screen and shows the route preview.
+2. The **Start** button counts down from 10, and navigation starts automatically. To begin right away, tap **Start**.
+3. To close the preview without starting navigation, tap **Back**. If you open another screen or app during the countdown, the countdown stops, and navigation begins only when you tap **Start**.
+
+If the route needs maps that are not downloaded, OsmAnd shows the *Missing maps* screen and does not start navigation.
+
+**Note:** The cards are hidden during navigation. After you tap a card or swipe the cards away, Android Auto shows them again when your next navigation ends or when you reconnect to the car.
 
 
 ### POI Categories {#poi-categories}
@@ -191,7 +207,7 @@ Tracks can also be selected directly on the vehicle screen in *Android Auto*. Th
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
 
-Going to Search gives you quick access to a list of recent [destination history](#history). Similarly with the [Navigation menu](../navigation/setup/route-navigation.md#navigation-menu), where all OsmAnd destination methods such as an address, POIs, or coordinates are collected.
+Going to Search gives you quick access to a list of recent [destination history](#history). Similarly with the [Navigation menu](../navigation/setup/route-navigation.md#navigation-menu), where all OsmAnd destination methods such as an address, POIs, or coordinates are collected. The *Previous route* item restores the start point, intermediate points, and destination of your last route. It is shown when *Navigation history* is turned on.
 
 You can use the Search tool to find the required place on the map for route planning from any available search category.
 

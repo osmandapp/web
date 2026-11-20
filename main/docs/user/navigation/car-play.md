@@ -17,10 +17,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Overview {#overview}
 
-:::tip Purchase
-CarPlay is a [paid feature](../purchases/index.md).  
-:::
-
 Driving a vehicle and using your phone or tablet at the same time is usually forbidden by law for safety reasons. [***CarPlay***](https://www.apple.com/ios/carplay/) is software that provides an adapted and optimized version of the OsmAnd app for safe use while driving, making it easier and more secure to access the app's navigation functions.
 
 To use *CarPlay* on your vehicle screen, follow these steps:
@@ -60,7 +56,6 @@ While your device is connected to *CarPlay*, the map on the app screen is locked
     - A convenient profile for using *CarPlay* can be *Driving*, and the type of routing can be [Car routing](../navigation/routing/car-based-routing.md).
     - OsmAnd has a separate item [CarPlay Profile](#carplay-profile) for quick access to the list of profiles available for connecting to *CarPlay*.
 - For OsmAnd to work, [connect your iOS device](#overview) to the vehicle multimedia system. To find out more about how to connect and set up your device, you can visit the [**CarPlay**](https://support.apple.com/en-us/HT205634) website.
-- You need to have one of [OsmAnd paid or subscription](../purchases/ios#free-and-paid-features). Check it here *Menu → Settings → Purchases*.
 - Once connected, you can set a destination and start OsmAnd navigation in *CarPlay*.  
 
 :::note
@@ -71,8 +66,6 @@ You may need an Internet connection to use OsmAnd in *CarPlay*. If your device h
 ### Start Navigation {#start-navigation}
 
 ![CarPlay screen](@site/static/img/navigation/auto-car/car-play-start(1).png)  
-
-To use the iOS version of the OsmAnd app in *CarPlay*, you have to purchase a [paid version of the app or to subscribe](../purchases/ios#free-and-paid-features).  
 
 1. To create a route, you need to choose the [route endpoint](#select-a-route-endpoint) on the *CarPlay screen* or in the [OsmAnd app](../navigation/setup/route-navigation.md).
 2. You can use [voice prompts](#voice-prompts) to listen for directions or messages about issues on the road.  
