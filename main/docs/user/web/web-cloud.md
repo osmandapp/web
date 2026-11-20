@@ -144,10 +144,10 @@ If you do not remember your password, use the **I don’t have or forgot passwor
 
 ### Change Email Address {#change-email-address}
 
-To update your email address,
+To update your email address,  
 Go to *General Menu → Account → Email → ⋮ → Change email*
 
-The Change email dialog appears. A verification code is sent to the current email address. Enter this code in the **Code from Old Email** field, specify the new address in **New Email**, then select **Next**. For security reasons, a confirmation message is sent to your new email address informing you that the account email has been updated.
+The Change email dialog appears. A verification code is sent to the current email address. Enter this code in the **Code from Old Email** field, specify the new address in **New Email**, then select **Next**. A second verification code is sent to the new email address. Enter it in the **Code from New Email** field and select **Finish**. When the code is accepted, the *Email changed successfully* message appears. For security reasons, a notification is also sent to your previous email address.
 
 ![Web Account](@site/static/img/web/web_email_new.png)
 
