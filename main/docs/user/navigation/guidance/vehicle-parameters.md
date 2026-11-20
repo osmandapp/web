@@ -23,7 +23,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Navigation Settings Android](@site/static/img/navigation/vehicle-parameters_andr.webp)
 
 </TabItem>
 
@@ -39,7 +39,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,app
 
 For optimal route calculation in OsmAnd, you should consider the following vehicle parameters:
 
-1. Set the [*Default Speed* or *Road Speeds*](#road-speeds), as the [minimum and maximum speed](#road-speeds) of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
+1. Set the [*Default Speed*](#default-speed) and the [*Speed Range*](#speed-range) — the minimum and maximum speed of the vehicle. This will help the application determine the time required to complete the route and allow it to choose the best route, considering the speed limits on different road segments.
 2. Specify the [*type*](#fuel-used-by-motor) of fuel used by the motor. This will allow the app to estimate CO2 emissions.
 3. Enter the [*capacity of your tank*](#fuel-tank-capacity) to accurately track your fuel level and consumption.
 4. Define [*size and weight parameters*](#size-parameters) of your vehicle, which can help the app calculate the optimal route and avoid obstacles on the road due to restrictions.
@@ -170,6 +170,7 @@ The **Fuel tank capacity** parameter allows you to track your vehicle's [fuel le
 
 The **Fuel tank capacity** setting is only available in vehicle-based navigation. For navigation types such as *Bicycle*, *Horseback riding*, *On foot*, and *Ski*, this parameter is not displayed in the Vehicle Parameters.
 
+
 ## Speed parameters
 
 ### Default Speed {#default-speed}
@@ -178,7 +179,18 @@ The **Fuel tank capacity** setting is only available in vehicle-based navigation
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+Go to: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,vehicle_parameters,travel_speed"/>*
+
+![Travel speed Android](@site/static/img/navigation/navigation_settings_travel_speed_andr.webp)
+
+The *Travel speed* screen contains the *Default speed*, *Speed range* and *Estimated arrival time* settings of the profile. Changes are saved immediately. The *Reset to default* button in the top bar restores the default values of all settings on the screen.
+
+The **Default speed** is the default movement speed for this mode of transport ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h (mph) ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h (1 mph). It is used:
+- To estimate the [route time](../../widgets/nav-widgets.md#time-to-intermediate) when speed cannot be determined from the roads like [GPX Navigation](../setup/gpx-navigation.md), [Ski routes](../routing/ski-routing.md), [Boat routes](../routing/boat-navigation.md), [Pedestrian](../routing/pedestrian-routing.md) and other similar profiles.
+- To determine when [voice announcements](../guidance/voice-navigation.md) are activated.
+- To determine ETA for Map markers by a straight line navigation if average speed is not calculated yet.
+
+The *Default speed* can only be set within the [*Speed range*](#speed-range): when you narrow the range, the *Default speed* moves with it.
 
 </TabItem>
 
@@ -186,34 +198,57 @@ The **Fuel tank capacity** setting is only available in vehicle-based navigation
 
 ![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
-</TabItem>
-
-</Tabs>  
-
 The **Default speed** is the default movement speed for this mode of transport ([Default speed limits](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). For the *Walking*, *Horseback riding* and *Cycling* profiles, in small increments equivalent to 0.1 km/h (mph) ([Units & formats](https://osmand.net/docs/user/personal/profiles#units--formats)), and for the other profiles, in increments equivalent to 1 km/h (1 mph). It is used:
 - To estimate the [route time](../../widgets/nav-widgets.md#time-to-intermediate) when speed cannot be determined from the roads like [GPX Navigation](../setup/gpx-navigation.md), [Ski routes](../routing/ski-routing.md), [Boat routes](../routing/boat-navigation.md), [Pedestrian](../routing/pedestrian-routing.md) and other similar profiles.
 - To determine when [voice announcements](../guidance/voice-navigation.md) are activated.
 - To determine ETA for Map markers by a straight line navigation if average speed is not calculated yet.
 
+</TabItem>
+
+</Tabs>
 
 
- It is used to calculate the arrival time and determine the optimal route based on the movement speed that the application considers typical. For example, car, public transport, pedestrian, or the speed you set manually.
+### Speed Range {#speed-range}
 
+<Tabs groupId="operating-systems" queryString="current-os">
 
-### Road Speeds {#road-speeds}
+<TabItem value="android" label="Android">
 
+For some types of navigation the minimum and maximum allowable speed can be set. Both values are set with one slider with two handles. If they are set, the routing engine assumes that the vehicle or transportation mode won't move faster than the maximum speed and won't move slower than the minimum speed. The *Speed range* is used for both route calculation and arrival time.
+For example, it allows to create a **fuel efficient** route where fuel consumption is optimal at **maximum speed** set and the engine will find a shorter route avoiding longer but faster roads.
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
+- **Minimum speed** — sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.
+- **Maximum speed** — sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
 
-For some types of navigation the minimum and maximum allowable speed could be set. If it's set than routing engine assumes that vehicle or transportation mode won't move faster the limit and won't move slower than minimal speed. 
-For example, it allows to create an **fuel efficient** route where fuel consumption is optimal at **maximum speed** set and the egnine will find shorter route avoiding longer but faster roads.
+The *Speed range* is not available for profiles with straight line routing, for example, *Aircraft*.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+For some types of navigation the minimum and maximum allowable speed can be set. If they are set, the routing engine assumes that the vehicle or transportation mode won't move faster than the maximum speed and won't move slower than the minimum speed.
+For example, it allows to create a **fuel efficient** route where fuel consumption is optimal at **maximum speed** set and the engine will find a shorter route avoiding longer but faster roads.
 
 - **Minimum speed**  
     The setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
 - **Maximum speed**  
     The setting sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
 
+</TabItem>
 
+</Tabs>
+
+
+### Estimated Arrival Time {#estimated-arrival-time}
+
+<InfoAndroidOnly />
+
+The *Estimated arrival time* settings define how OsmAnd calculates the arrival time during navigation.
+
+- **Adapt to my speed** — off by default. When the setting is off, the arrival time comes from the expected speed on each road of the route. When it is on, OsmAnd divides the remaining distance by your average speed over the selected *Interval*. Only movement during navigation is counted, stops are skipped. Right after the navigation starts, the route estimate is shown until the *Interval* is filled.
+- **Interval** — the period over which your average speed is measured, from 15 seconds to 60 minutes. The default value is 15 minutes. The setting is available when *Adapt to my speed* is on.
+
+The adapted arrival time is shown in the [*Time to destination*](../../widgets/nav-widgets.md#time-to-destination) and [*Time to intermediate*](../../widgets/nav-widgets.md#time-to-intermediate) widgets, in the navigation notification, and in [Android Auto](../auto-car.md). Time to the next turn and voice prompts are not affected.
 
 
 ## Related Articles {#related-articles}
