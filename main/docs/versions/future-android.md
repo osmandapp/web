@@ -38,7 +38,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - Realistic **[sun shadows](https://osmand.net/docs/user/plugins/topography#3d-buildings)** cast by 3D buildings and terrain.
 - Media library in **[My Places](https://osmand.net/docs/user/personal/myplaces)** that gathers your photos, videos, and audio notes in one place.
 - Dashed and dotted lines in **[track appearance](https://osmand.net/docs/user/map/tracks/appearance#track-appearance-settings)**, also available as a folder's default appearance.
-- Speed range for route calculation and arrival time based on your actual speed in **[vehicle parameters](https://osmand.net/docs/user/navigation/guidance/vehicle-parameters#default-speed)**.
+- New Travel speed settings with a speed range for route calculation and an arrival time based on your actual speed in **[vehicle parameters](https://osmand.net/docs/user/navigation/guidance/vehicle-parameters#default-speed)**.
 - New **[Quick action](https://osmand.net/docs/user/widgets/quick-action#my-places)** to show or hide one or several tracks with a single tap.
 - **[Contour line](https://osmand.net/docs/user/plugins/topography#contour-lines)** labels can face uphill, as on paper topographic maps.
 - Support for BLE power meters in **[External sensors](https://osmand.net/docs/user/plugins/external-sensors#pair-new-sensor)**.
