@@ -26,6 +26,10 @@ import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
 import { compressFileToBlob, compressJSONToBlob } from '../../util/GzipCompression';
 import { findInfoFile } from './TrackAppearanceManager';
 import i18n from '../../i18n';
+import { PROFILE_GAP } from '../../store/geoRouter/profileConstants';
+import { markGapEnd } from './TrackOperations';
+
+export { isPointUnrouted, isProtectedSegment, splitProtectedSegment } from './TrackOperations';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -49,8 +53,8 @@ export function isWptGroupShown(pointsGroups, groupName) {
 }
 
 const PROFILE_CAR = 'car';
-const PROFILE_GAP = 'gap';
 export const NAN_MARKER = 99999;
+export const ROUTER_ERROR_LINE_USED = 'Router error, Line used';
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 
@@ -336,7 +340,11 @@ function getEditablePoints(track) {
         track.tracks.forEach((track) => {
             if (track.points) {
                 if (points.length > 0) {
-                    points[points.length - 1].profile = PROFILE_GAP;
+                    const last = points[points.length - 1];
+                    last.profile = PROFILE_GAP;
+                    if (last.geometry) {
+                        last.geometry = markGapEnd(last.geometry);
+                    }
                 }
                 points = points.concat(track.points);
             }
@@ -1218,6 +1226,8 @@ function clearTrack(file, points) {
     emptyFile.points = points ?? [];
     emptyFile.tracks = TracksManager.createGpxTracks();
     emptyFile.layers = file.layers;
+    emptyFile.wpts = file.wpts;
+    emptyFile.pointsGroups = file.pointsGroups;
     emptyFile.updateLayers = true;
 
     return emptyFile;
@@ -1288,70 +1298,6 @@ export function hasSegmentTurns({ track = null }) {
         return checkPointsGeometrySegments(track.tracks[0].points);
     }
     return false;
-}
-
-export function isPointUnrouted({ point, pointIndex, prevPoint }) {
-    return (
-        !point.profile || // empty profile is Unrouted but PROFILE_LINE is Routed
-        !point.geometry || // undefined geometry (null, undefined) is always Unrouted
-        // empty geometry is Unrouted, but first point or previous PROFILE_GAP is Routed
-        (pointIndex > 0 && point.geometry?.length === 0 && prevPoint.profile !== PROFILE_GAP)
-    );
-}
-
-export function isProtectedSegment({ startPoint, endPoint }) {
-    if (!startPoint || !endPoint) {
-        console.error('isProtectedSegment got empty point');
-        return true;
-    }
-
-    // gpx (just loaded)
-    if (!endPoint.geometry && !startPoint.profile) {
-        // console.debug('protect-gpx-plain');
-        return true;
-    }
-
-    // gpx (after routing): protect Line-segments with more-than-line geometry
-    if (startPoint.profile === PROFILE_LINE && endPoint.geometry?.length > 2) {
-        // console.debug('protect-gpx-geometry');
-        return true;
-    }
-
-    // gap-profile should be protected
-    if (startPoint.profile === PROFILE_GAP) {
-        // console.debug('protect-gap-profile');
-        return true;
-    }
-
-    return false;
-}
-
-export function splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex }) {
-    if (geometryIndex !== -1 && endPointIndex >= 1 && newPoint && trackPoints && trackPoints.length >= 2) {
-        // newPoint should have previous geometry (up to geometryIndex) + newPoint at the end
-        newPoint.geometry = trackPoints[endPointIndex].geometry.slice(0, geometryIndex + 1);
-        newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
-        if (newPoint.geometry.length <= 2) {
-            // in case when new segment becomes Line "point-to-point"
-            // duplicate newPoint geometry to keep the segment protected
-            // dupe-geometry tested: GPX, Cloud, Android OsmAnd app, Garmin
-            newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
-        }
-
-        // endPoint should have newPoint at the begin and the rest of previous geometry (next to geometryIndex)
-        trackPoints[endPointIndex].geometry = trackPoints[endPointIndex].geometry.slice(geometryIndex + 1);
-        trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
-        if (trackPoints[endPointIndex].geometry.length <= 2) {
-            // keep the segment protected (see comment for similar case before)
-            trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
-        }
-
-        // duplicate profile string (from previous to endPoint)
-        newPoint.profile = trackPoints[endPointIndex - 1].profile;
-
-        // insert newPoint into trackPoints
-        trackPoints.splice(endPointIndex, 0, newPoint);
-    }
 }
 
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
@@ -1841,7 +1787,6 @@ const TracksManager = {
     handleEditCloudTrack,
     getTrackPoints,
     getEditablePoints,
-    updateGapProfileOneSegment,
     getEle,
     createName,
     getTrackWithAnalysis,

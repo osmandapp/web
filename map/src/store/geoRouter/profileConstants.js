@@ -9,6 +9,7 @@ export const PROFILE_SKI = 'ski';
 export const PROFILE_MOPED = 'moped';
 export const PROFILE_TRAIN = 'train';
 export const PROFILE_LINE = 'line';
+export const PROFILE_GAP = 'gap';
 export const PROFILE_RESCUETRACK = 'rescuetrack';
 export const PROFILE_RESCUETRACK_EMERGENCY = 'rescuetrack-emergency';
 

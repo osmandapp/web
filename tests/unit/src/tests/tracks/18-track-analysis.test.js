@@ -156,7 +156,7 @@ describe('when the analysis is asked', () => {
         await PointManager.deletePoint(2, deleted);
 
         const moved = createCtx(createRoutedPoints(4));
-        await PointManager.reorder(3, 1, moved.selectedGpxFile, moved);
+        await PointManager.reorder(3, 1, moved);
 
         expect(await analysedLats()).toEqual([
             [50, 50.01],

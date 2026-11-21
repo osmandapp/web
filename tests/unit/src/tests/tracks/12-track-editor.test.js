@@ -233,10 +233,12 @@ describe('a click on the map in the editor', () => {
         const second = clicked(50.01, PROFILE_PEDESTRIAN);
 
         expect(addPointToTrack(track, second)).toBe(ADDED_POINT.ROUTED);
-        expect(track.points).toEqual([first, second]);
-        expect(first).toMatchObject({ profile: PROFILE_PEDESTRIAN, geoProfile: { profile: PROFILE_PEDESTRIAN } });
+        expect(track.points).toEqual([
+            { ...first, profile: PROFILE_PEDESTRIAN, geoProfile: second.geoProfile },
+            second,
+        ]);
         // filled in by the router
-        expect(second.geometry).toEqual([]);
+        expect(track.points[1].geometry).toEqual([]);
         expect(track.hasGeo).toBe(true);
     });
 
@@ -248,9 +250,9 @@ describe('a click on the map in the editor', () => {
         expect(track.points).toEqual([
             ...createPlainPoints(2),
             { lat: 50.02, lng: 30, profile: PROFILE_LINE, geoProfile: { profile: PROFILE_LINE } },
-            point,
+            { ...point, geometry: undefined },
         ]);
-        expect(point).not.toHaveProperty('geometry');
+        expect(track.points.at(-1)).not.toHaveProperty('geometry');
     });
 
     test('a router point on a plain track asks first: Continue puts the recorded points into one protected segment', () => {

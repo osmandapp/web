@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import TracksManager from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import PointManager from '../../manager/PointManager';
+import { findPointIndex } from '../../manager/track/TrackOperations';
 import { Close } from '@mui/icons-material';
 
 export default function PointContextMenu({ anchorEl }) {
@@ -13,12 +14,7 @@ export default function PointContextMenu({ anchorEl }) {
 
     useEffect(() => {
         if (anchorEl) {
-            let ind = ctx.selectedGpxFile.points.findIndex(
-                (point) => point.lat === ctx.pointContextMenu.coord.lat && point.lng === ctx.pointContextMenu.coord.lng
-            );
-            if (ind !== -1) {
-                setPointInd(ind);
-            }
+            setPointInd(findPointIndex(ctx.selectedGpxFile.points, ctx.pointContextMenu.pointId));
         }
     }, [anchorEl]);
 
@@ -81,16 +77,12 @@ export default function PointContextMenu({ anchorEl }) {
 
     async function joinBefore() {
         closeContextMenu();
-        let currentPoint = ctx.selectedGpxFile.points[pointInd];
-        let prevPoint = ctx.selectedGpxFile.points[pointInd - 1];
-        await PointManager.join(prevPoint, currentPoint, ctx);
+        await PointManager.join(pointInd - 1, ctx);
     }
 
     async function joinAfter() {
         closeContextMenu();
-        let currentPoint = ctx.selectedGpxFile.points[pointInd];
-        let nextPoint = ctx.selectedGpxFile.points[pointInd + 1];
-        await PointManager.join(currentPoint, nextPoint, ctx);
+        await PointManager.join(pointInd, ctx);
     }
 
     const Buttons = () => {

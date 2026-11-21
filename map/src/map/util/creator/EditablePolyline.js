@@ -2,13 +2,13 @@ import L from 'leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import MarkerOptions from '../../markers/MarkerOptions';
 import GeometryUtil from 'leaflet-geometryutil';
-import indexOfL from 'lodash-es/indexOf';
-import cloneDeep from 'lodash-es/cloneDeep';
-import TracksManager, {
+import TracksManager from '../../../manager/track/TracksManager';
+import {
+    findPointIndex,
+    insertOnLine,
     isPointUnrouted,
     isProtectedSegment,
-    splitProtectedSegment,
-} from '../../../manager/track/TracksManager';
+} from '../../../manager/track/TrackOperations';
 import EditableMarker from './EditableMarker';
 import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
@@ -132,48 +132,35 @@ export default class EditablePolyline {
         const lng = e.target._latlng.lng;
 
         const currentLayer = track.layers._layers[this.currentPolyline];
-        const points = track.points;
-
-        // find exact point which has the same geometry with the current layer (OK for routable)
-        const nextPoint = TrackLayerProvider.getPointByPolyline(currentLayer, points);
-        const indexOf = nextPoint ? indexOfL(points, nextPoint, 0) : -1;
-
         const findPoint = new L.LatLng(lat, lng);
 
-        if (nextPoint && indexOf !== -1) {
+        const { index: segmentIndex } = this.findTheNearestSegment({
+            point: findPoint,
+            segments: currentLayer._latlngs,
+        });
+        const pointIds = currentLayer.options.pointIds;
+        const endPointId = pointIds
+            ? pointIds[segmentIndex + 1]
+            : (currentLayer.options.pointId ?? currentLayer.point?.id);
+        const index = findPointIndex(track.points, endPointId);
+
+        if (index !== -1) {
             /**
-             * index is 100% found (layer-to-points match)
              * additionally, find the nearest geometryIndex
              * it will be used to split GPX-protected segment
              */
+            const endPoint = track.points[index];
             let geometryIndex = -1;
-            if (nextPoint.geometry) {
-                const { index } = this.findTheNearestSegment({
-                    point: findPoint,
-                    segments: nextPoint.geometry,
-                });
-                geometryIndex = index;
+            if (endPoint.geometry) {
+                geometryIndex = this.findTheNearestSegment({ point: findPoint, segments: endPoint.geometry }).index;
             }
             this.dragPoint = {
                 lat: lat,
                 lng: lng,
                 geometryIndex,
-                index: indexOf,
+                index,
+                layerIndex: segmentIndex + 1,
             };
-        } else {
-            const layerPoints = currentLayer._latlngs;
-
-            // process Unrouted Line points: first by the nearest segment, then by points
-            const { end } = this.findTheNearestSegment({ point: findPoint, segments: layerPoints });
-            const { index: deepIndexOf } = this.findPointInPoints({ point: end, points: track.points });
-
-            if (deepIndexOf !== -1) {
-                this.dragPoint = {
-                    index: deepIndexOf,
-                    lat: lat,
-                    lng: lng,
-                };
-            }
         }
     }
 
@@ -187,42 +174,29 @@ export default class EditablePolyline {
         const lat = e.target._latlng.lat;
         const lng = e.target._latlng.lng;
 
-        const newMarker = new EditableMarker(this.map, this.ctx, new L.LatLng(lat, lng), null, track).create();
-        track.layers.addLayer(newMarker);
-
         const currentLayer = track.layers._layers[this.currentPolyline];
-        const trackPoints = track.points; // ref
-        const index = this.dragPoint.index;
+        const points = track.points;
+        const { index, geometryIndex, layerIndex } = this.dragPoint;
 
-        const prevPoint = trackPoints[index - 1];
-        const segmentEndPoint = trackPoints[index];
+        const prevPoint = points[index - 1];
+        const segmentEndPoint = points[index];
 
-        if (isPointUnrouted({ point: trackPoints[index], pointIndex: index, prevPoint })) {
-            const newPoint = { lat, lng };
-            currentLayer._latlngs.splice(index, 0, newPoint);
+        track.points = insertOnLine(points, index, { lat, lng }, geometryIndex);
+        if (track.points.length > points.length) {
+            const newMarker = new EditableMarker(this.map, this.ctx, track.points[index], null, track).create();
+            track.layers.addLayer(newMarker);
+        }
+
+        if (isPointUnrouted({ point: segmentEndPoint, pointIndex: index, prevPoint })) {
+            currentLayer._latlngs.splice(layerIndex, 0, { lat, lng });
             currentLayer.setLatLngs(currentLayer._latlngs);
             // refresh analytics (newPoint ele is undefined)
-            trackPoints.splice(index, 0, newPoint);
             track.refreshAnalytics = true;
         } else if (isProtectedSegment({ startPoint: prevPoint, endPoint: segmentEndPoint })) {
-            const newPoint = { lat, lng };
-            const geometryIndex = this.dragPoint.geometryIndex;
-            splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex: index });
             track.refreshAnalytics = true;
         } else {
-            const newPoint = cloneDeep(track.points[index]);
-
-            newPoint.lat = lat;
-            newPoint.lng = lng;
-            newPoint.geometry = [];
-            newPoint.profile = prevPoint.profile;
-            newPoint.geoProfile = Object.assign({}, prevPoint.geoProfile);
-
-            trackPoints.splice(index, 0, newPoint);
-            const currentPoint = trackPoints[index];
-
-            const nextPoint = trackPoints[index + 1];
-            nextPoint.geometry = [];
+            const currentPoint = track.points[index];
+            const nextPoint = track.points[index + 1];
 
             this.map.removeLayer(currentLayer);
 
@@ -284,21 +258,6 @@ export default class EditablePolyline {
         // XXX register layers (but check is it still really need)
 
         return polyline;
-    }
-
-    findPointInPoints({ point, points }) {
-        const found = {
-            index: -1,
-            point: null,
-        };
-
-        found.index = points.findIndex((p) => TracksManager.isEqualPoints(point, p));
-
-        if (found.index !== -1) {
-            found.point = points[found.index];
-        }
-
-        return found;
     }
 
     findTheNearestSegment({ point, segments }) {

@@ -45,6 +45,7 @@ import {
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
+import { assignPointIds } from '../../manager/track/TrackOperations';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -143,12 +144,16 @@ export default function LocalClientTrackLayer() {
         }
 
         if (unverified && trusted) {
-            if (
+            const sameTrack =
                 unverified.name === trusted.name &&
                 unverified.selected === trusted.selected &&
-                unverified.metaData?.desc === trusted.metaData?.desc &&
+                unverified.metaData?.desc === trusted.metaData?.desc;
+            const hasPoints = unverified.points && trusted.points;
+            if (
+                sameTrack &&
                 (isPointsHaveSameGeo(unverified.points, trusted.points) ||
-                    (unverified.tracks &&
+                    (!hasPoints &&
+                        unverified.tracks &&
                         trusted.tracks &&
                         isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points)))
             ) {
@@ -163,8 +168,11 @@ export default function LocalClientTrackLayer() {
                 // keep layers
                 unverified.gpx = trusted.gpx;
                 unverified.layers = trusted.layers;
+                unverified.points = trusted.points;
 
                 ctx.setSelectedGpxFile(unverified);
+            } else if (sameTrack && hasPoints) {
+                requestAnalytics({ ctx, track: trusted, debouncerTimer });
             } else {
                 console.debug('unverified-gpx-file', unverified.name);
             }
@@ -550,7 +558,7 @@ export default function LocalClientTrackLayer() {
             setTrigger: setTriggerControlRouterRequests,
             delay: CONTROL_ROUTER_REQUEST_DEBOUNCER_MS,
         });
-    }, [ctx.routingCache, startedRouterJobs, triggerControlRouterRequests]);
+    }, [ctx.routingCache, startedRouterJobs, triggerControlRouterRequests, ctx.processingAnalytics]);
 
     // after-routing
     useEffect(() => {
@@ -745,7 +753,7 @@ export default function LocalClientTrackLayer() {
         if (currentTrack) {
             ctxTrack = currentTrack;
         }
-        const points = TracksManager.getEditablePoints(ctxTrack);
+        const points = assignPointIds(TracksManager.getEditablePoints(ctxTrack));
         ctxTrack.layers = updateLayers({
             map,
             ctx,

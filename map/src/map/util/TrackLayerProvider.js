@@ -87,6 +87,7 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
 
 function parsePoints({ map, ctx, points, layers, draggable = false, hidden = false, trackAppearance = null }) {
     let coordsTrk = [];
+    let pointIdsTrk = [];
     let coordsAll = [];
     points.forEach((point, index) => {
         if (point.geometry !== undefined && point.geometry !== null) {
@@ -103,12 +104,22 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
             });
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
+            pointIdsTrk.push(point.id);
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
-                let polyline = createPolyline({ coords: coordsTrk, ctx, map, point, points, trackAppearance });
+                let polyline = createPolyline({
+                    coords: coordsTrk,
+                    ctx,
+                    map,
+                    point,
+                    points,
+                    trackAppearance,
+                    pointIds: pointIdsTrk,
+                });
                 addStartEndGap(point, points, layers, draggable);
                 layers.push(polyline);
                 coordsAll = coordsAll.concat(cloneDeep(coordsTrk));
                 coordsTrk = [];
+                pointIdsTrk = [];
             }
         }
     });
@@ -131,13 +142,22 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
                     icon: MarkerOptions.options.route,
                     draggable: draggable,
                     isRoutePoint: true,
+                    pointId: p.id,
                 });
                 layers.push(marker);
             }
         });
     }
 
-    const endPolyline = createPolyline({ coords: coordsTrk, ctx, map, point: null, points: null, trackAppearance });
+    const endPolyline = createPolyline({
+        coords: coordsTrk,
+        ctx,
+        map,
+        point: null,
+        points: null,
+        trackAppearance,
+        pointIds: pointIdsTrk,
+    });
     layers.push(endPolyline);
 
     return {
@@ -188,7 +208,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             addStartEndGap(point, points, layers, draggable);
             coords.push(new L.LatLng(p.lat, p.lng));
-            layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
+            layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance, pointId: point.id }));
             coordsAll = coordsAll.concat(Object.assign([], coords));
             coords = [];
         } else {
@@ -198,7 +218,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
 
     if (coords.length > 0) {
         coordsAll = coordsAll.concat(Object.assign([], coords));
-        layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
+        layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance, pointId: point.id }));
     }
 
     return coordsAll;
@@ -246,7 +266,7 @@ function addTooltipOnHover(polyline, map, coords, name = null) {
     });
 }
 
-function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
+function createPolyline({ coords, ctx, map, point, points, trackAppearance, pointId, pointIds }) {
     let color =
         point && points
             ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
@@ -266,6 +286,8 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
     const polyline = new L.Polyline(coords, {
         color,
         weight: getPolylineWeight(width, map.getZoom()),
+        pointId,
+        pointIds,
         ...(arrowSettings.show ? { renderer: L.svg() } : {}),
     });
 
@@ -658,27 +680,6 @@ function updatePolylineToTemp(startPoint, endPoint, polyline) {
     }
 }
 
-function getPointByPolyline(layer, points) {
-    let res;
-    let layerPoints = layer._latlngs;
-    points.forEach((p) => {
-        let geo = p.geometry;
-        if (geo) {
-            if (geo.length === layerPoints.length) {
-                if (
-                    geo[0].lat === layerPoints[0].lat &&
-                    geo[0].lng === layerPoints[0].lng &&
-                    geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat &&
-                    geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng
-                ) {
-                    res = p;
-                }
-            }
-        }
-    });
-    return res;
-}
-
 function getPolylines(layers) {
     let res = [];
     layers.forEach((layer) => {
@@ -778,7 +779,6 @@ const TrackLayerProvider = {
     parsePoints,
     parseWpt,
     getPolylineOpt,
-    getPointByPolyline,
     createTempPolyline,
     getPolylines,
     updatePolyline,
