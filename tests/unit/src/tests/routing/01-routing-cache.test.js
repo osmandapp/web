@@ -104,7 +104,9 @@ test('a routed segment goes into the track once, the segments that are gone leav
     const [abEntry, gapEntry, cdEntry, oldEntry] = entries(ctx);
     abEntry.geometry = gapEntry.geometry = oldEntry.geometry = ['routed'];
 
-    expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges })).toBe(true);
+    expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer: { current: null } })).toBe(
+        true
+    );
 
     expect(b.geometry).toEqual(['routed']);
     expect(ab.setLatLngs).toHaveBeenCalledWith(['latlng']);
@@ -117,7 +119,9 @@ test('a routed segment goes into the track once, the segments that are gone leav
     expect(entries(ctx)).toEqual([abEntry, gapEntry, cdEntry]);
 
     // a second pass finds nothing new
-    expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges })).toBe(false);
+    expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer: { current: null } })).toBe(
+        false
+    );
     expect(saveChanges).toHaveBeenCalledTimes(1);
 });
 
@@ -144,7 +148,12 @@ test('a router answer for the place a point was dragged away from is not put on 
         for (const index of order) {
             answers[index]();
             await settle();
-            effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn() });
+            effectRefreshTrackWithRouting({
+                ctx,
+                geoRouter,
+                saveChanges: jest.fn(),
+                debouncerTimer: { current: null },
+            });
         }
 
         expect(b.geometry).toEqual(['to 50.012']);
@@ -158,7 +167,7 @@ test.failing('the dashed line of a pair that starts at a gap is removed, not lef
     TracksRoutingCache.addRoutingToCache(gap, c, gapC, ctx);
     entries(ctx)[0].geometry = ['routed'];
 
-    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn() });
+    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn(), debouncerTimer: { current: null } });
 
     expect(gapC.removeFrom).toHaveBeenCalledWith(ctx.selectedGpxFile.layers);
 });

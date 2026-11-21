@@ -95,6 +95,7 @@ export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, deb
 
     if (updated > 0) {
         saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
+        requestAnalytics({ ctx, track, debouncerTimer });
     }
 
     return updated > 0;
@@ -113,19 +114,16 @@ export function debouncer(f, timerRef, ms) {
     }
 }
 
-export function requestAnalytics({ ctx, track, debouncerTimer }) {
-    const analysis = () => {
-        TracksManager.getTrackWithAnalysis(
-            TracksManager.GET_ANALYSIS,
-            ctx,
-            ctx.setLoadingContextMenu,
-            track.points
-        ).then((res) => {
+export function requestAnalysisNow({ ctx, track }) {
+    TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, track.points).then(
+        (res) => {
             if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
-        });
-    };
+        }
+    );
+}
 
-    debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
+export function requestAnalytics({ ctx, track, debouncerTimer }) {
+    debouncer(() => requestAnalysisNow({ ctx, track }), debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
 }
 
 // refresh fresh data to previously created "temp-line" layer
@@ -202,7 +200,7 @@ export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
 }
 
 // key looks like query string but never used as it
-function createRoutingKey(startPoint, endPoint, geoProfile) {
+export function createRoutingKey(startPoint, endPoint, geoProfile) {
     if (!startPoint || !endPoint || !geoProfile) {
         console.error('createRoutingKey got empty parameter', startPoint, endPoint, geoProfile);
     }

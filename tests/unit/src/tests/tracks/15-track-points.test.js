@@ -99,23 +99,20 @@ describe('deletePoint', () => {
         }
     });
 
-    test.failing(
-        'a deleted gap point passes the gap to the previous point, its neighbours are not routed',
-        async () => {
-            const ctx = createCtx(createGapPoints(5, 2));
+    test('a deleted gap point passes the gap to the previous point, its neighbours are not routed', async () => {
+        const ctx = createCtx(createGapPoints(5, 2));
 
-            await PointManager.deletePoint(2, ctx);
+        await PointManager.deletePoint(2, ctx);
 
-            const points = ctx.selectedGpxFile.points;
-            expect(lats(points)).toEqual([50, 50.01, 50.03, 50.04]);
-            expect(points[1].profile).toBe(GAP);
-            expect(points[1].geometry.at(-1).profile).toBe(GAP);
-            expect(points[2].geometry).toEqual([]);
-            expect(ctx.routingCache).toEqual({});
-        }
-    );
+        const points = ctx.selectedGpxFile.points;
+        expect(lats(points)).toEqual([50, 50.01, 50.03, 50.04]);
+        expect(points[1].profile).toBe(GAP);
+        expect(points[1].geometry.at(-1).profile).toBe(GAP);
+        expect(points[2].geometry).toEqual([]);
+        expect(ctx.routingCache).toEqual({});
+    });
 
-    test.failing('a deleted point after a gap stretches the gap to the next point, nothing is routed', async () => {
+    test('a deleted point after a gap stretches the gap to the next point, nothing is routed', async () => {
         const ctx = createCtx(createGapPoints(5, 2));
 
         await PointManager.deletePoint(3, ctx);
@@ -174,7 +171,7 @@ describe('reorder', () => {
     test('a moved point is routed from its new neighbours', async () => {
         const ctx = createCtx(createRoutedPoints(4));
 
-        await PointManager.reorder(3, 1, ctx.selectedGpxFile, ctx);
+        await PointManager.reorder(3, 1, ctx);
 
         const points = ctx.selectedGpxFile.points;
         expect(lats(points)).toEqual([50, 50.03, 50.01, 50.02]);
@@ -186,7 +183,7 @@ describe('reorder', () => {
     test('a point moved to the start has no segment leading to it', async () => {
         const ctx = createCtx(createRoutedPoints(3));
 
-        await PointManager.reorder(2, 0, ctx.selectedGpxFile, ctx);
+        await PointManager.reorder(2, 0, ctx);
 
         const points = ctx.selectedGpxFile.points;
         expect(lats(points)).toEqual([50.02, 50, 50.01]);
@@ -197,7 +194,7 @@ describe('reorder', () => {
     test('a point moved from the middle joins its old neighbours by the router and is routed in its new place', async () => {
         const middle = createCtx(createRoutedPoints(5));
 
-        await PointManager.reorder(1, 3, middle.selectedGpxFile, middle);
+        await PointManager.reorder(1, 3, middle);
 
         const points = middle.selectedGpxFile.points;
         expect(lats(points)).toEqual([50, 50.02, 50.03, 50.01, 50.04]);
@@ -211,18 +208,18 @@ describe('reorder', () => {
 
         const end = createCtx(createRoutedPoints(4));
 
-        await PointManager.reorder(1, 3, end.selectedGpxFile, end);
+        await PointManager.reorder(1, 3, end);
 
         expect(lats(end.selectedGpxFile.points)).toEqual([50, 50.02, 50.03, 50.01]);
         expect(lats(end.selectedGpxFile.points[3].geometry)).toEqual([50.03, 50.01]);
     });
 
-    test.failing('the segments around a moved point are routed with the profile of their start point', async () => {
+    test('the segments around a moved point are routed with the profile of their start point', async () => {
         const profiles = [PROFILE_BICYCLE, PROFILE_CAR, PROFILE_PEDESTRIAN, PROFILE_CAR];
         const mixed = () => createRoutedPoints(4).map((point, i) => ({ ...point, profile: profiles[i] }));
         const routedWith = async (points, from, to) => {
             const ctx = createCtx(points);
-            await PointManager.reorder(from, to, ctx.selectedGpxFile, ctx);
+            await PointManager.reorder(from, to, ctx);
 
             return ctx.trackRouter.routed.map(({ start, profile }) => [start.profile, profile]);
         };
@@ -244,7 +241,7 @@ describe('reorder', () => {
         const recorded = points[1].geometry;
         const ctx = createCtx(points);
 
-        await PointManager.reorder(3, 2, ctx.selectedGpxFile, ctx);
+        await PointManager.reorder(3, 2, ctx);
 
         expect(lats(ctx.selectedGpxFile.points)).toEqual([50, 50.01, 50.03, 50.02]);
         expect(ctx.selectedGpxFile.points[1].geometry).toBe(recorded);
@@ -260,7 +257,7 @@ describe('reorder', () => {
             const expected = createPlainPoints(4);
             expected.splice(to, 0, ...expected.splice(from, 1));
 
-            await PointManager.reorder(from, to, ctx.selectedGpxFile, ctx);
+            await PointManager.reorder(from, to, ctx);
 
             expect(ctx.selectedGpxFile.points).toEqual(expected);
             expect(ctx.routingCache).toEqual({});
@@ -268,10 +265,10 @@ describe('reorder', () => {
         }
     });
 
-    test.failing('a point moved right after a gap starts a new piece, the gap point is not routed to it', async () => {
+    test('a point moved right after a gap starts a new piece, the gap point is not routed to it', async () => {
         const ctx = createCtx(createGapPoints(5, 2));
 
-        await PointManager.reorder(4, 3, ctx.selectedGpxFile, ctx);
+        await PointManager.reorder(4, 3, ctx);
 
         const points = ctx.selectedGpxFile.points;
         expect(lats(points)).toEqual([50, 50.01, 50.02, 50.04, 50.03]);
@@ -279,10 +276,10 @@ describe('reorder', () => {
         expect(lats(points[4].geometry)).toEqual([50.04, 50.03]);
     });
 
-    test.failing('a moved gap point keeps the gap after it in its new place', async () => {
+    test('a moved gap point keeps the gap after it in its new place', async () => {
         const ctx = createCtx(createGapPoints(5, 2));
 
-        await PointManager.reorder(2, 3, ctx.selectedGpxFile, ctx);
+        await PointManager.reorder(2, 3, ctx);
 
         const points = ctx.selectedGpxFile.points;
         expect(lats(points)).toEqual([50, 50.01, 50.03, 50.02, 50.04]);
@@ -291,34 +288,31 @@ describe('reorder', () => {
         expect(points[4].geometry).toEqual([]);
     });
 
-    test.failing(
-        'the point after a gap moved away stretches the gap to the next point, nothing is routed across it',
-        async () => {
-            const ctx = createCtx(createGapPoints(5, 2));
+    test('the point after a gap moved away stretches the gap to the next point, nothing is routed across it', async () => {
+        const ctx = createCtx(createGapPoints(5, 2));
 
-            await PointManager.reorder(3, 1, ctx.selectedGpxFile, ctx);
+        await PointManager.reorder(3, 1, ctx);
 
-            const points = ctx.selectedGpxFile.points;
-            expect(lats(points)).toEqual([50, 50.03, 50.01, 50.02, 50.04]);
-            expect(points[4].geometry).toEqual([]);
-            expect(ctx.routingCache).toEqual({});
-        }
-    );
+        const points = ctx.selectedGpxFile.points;
+        expect(lats(points)).toEqual([50, 50.03, 50.01, 50.02, 50.04]);
+        expect(points[4].geometry).toEqual([]);
+        expect(ctx.routingCache).toEqual({});
+    });
 
-    test.failing('a point dropped on its own place changes nothing', async () => {
+    test('a point dropped on its own place changes nothing', async () => {
         const ctx = createCtx(createRoutedPoints(3));
 
-        await PointManager.reorder(1, 1, ctx.selectedGpxFile, ctx);
+        await PointManager.reorder(1, 1, ctx);
 
         expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(3));
         expect(ctx.routingCache).toEqual({});
         expect(ctx.trackRouter.updateRouteBetweenPoints).not.toHaveBeenCalled();
     });
 
-    test.failing('the only point of a track dropped on its own place stays', async () => {
+    test('the only point of a track dropped on its own place stays', async () => {
         const ctx = createCtx(createRoutedPoints(1));
 
-        await PointManager.reorder(0, 0, ctx.selectedGpxFile, ctx);
+        await PointManager.reorder(0, 0, ctx);
 
         expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(1));
     });
@@ -385,16 +379,6 @@ describe('split', () => {
         expect(lats(end.geometry)).toEqual(lats(createRecordedGeometry(0, 1)));
         expect(isProtectedSegment({ startPoint: start, endPoint: end })).toBe(true);
     });
-
-    // the issue hides Split on a recorded piece instead, with that fix this case is dropped, not flipped
-    test.failing('a split at the start of a recorded piece keeps its recorded points', () => {
-        const ctx = createCtx([...createRoutedThenRecordedPoints(), createRoutedPoint(3)]);
-
-        PointManager.split(1, ctx);
-
-        const vertices = ctx.selectedGpxFile.points.flatMap((point) => point.geometry);
-        expect(lats(vertices)).toEqual(expect.arrayContaining(lats(createRecordedGeometry(1, 2))));
-    });
 });
 
 describe('join', () => {
@@ -407,21 +391,20 @@ describe('join', () => {
 
     test('join across a gap gives the gap point the profile of the next point and removes the gap marker', async () => {
         const ctx = createJoinCtx();
+
+        await PointManager.join(1, ctx);
+
         const [, gap, next] = ctx.selectedGpxFile.points;
-
-        await PointManager.join(gap, next, ctx);
-
         expect(gap.profile).toBe(PROFILE_BICYCLE);
         expect(gap.geometry.at(-1).profile).toBeUndefined();
         expect(lats(next.geometry)).toEqual([50.01, 50.02]);
         expect(ctx.trackState.update).toBe(true);
     });
 
-    test.failing('join across a gap routes the segment with the profile of the next point', async () => {
+    test('join across a gap routes the segment with the profile of the next point', async () => {
         const ctx = createJoinCtx();
-        const [, gap, next] = ctx.selectedGpxFile.points;
 
-        await PointManager.join(gap, next, ctx);
+        await PointManager.join(1, ctx);
 
         expect(ctx.trackRouter.routed.map(({ profile }) => profile)).toEqual([PROFILE_BICYCLE]);
     });
@@ -433,43 +416,42 @@ describe('join', () => {
         ctx.trackRouter.getGeoProfile = () => ({ type: 'osrm', profile: PROFILE_BICYCLE });
         ctx.trackRouter.updateRouteBetweenPoints = updateRouteBetweenPoints;
         apiGet.mockResolvedValue({ ok: true, json: async () => ({ routes: [] }) });
-        const [, gap, next] = ctx.selectedGpxFile.points;
 
-        await PointManager.join(gap, next, ctx);
+        await PointManager.join(1, ctx);
 
-        expect(lats(next.geometry)).toEqual([50.01, 50.02]);
+        expect(lats(ctx.selectedGpxFile.points[2].geometry)).toEqual([50.01, 50.02]);
         expect(ctx.setRoutingErrorMsg).toHaveBeenCalledWith('Router error, Line used');
     });
 
-    test.failing('a router error in join leaves a straight line and a message', async () => {
+    test('a router error in join leaves a straight line and a message', async () => {
+        jest.spyOn(console, 'error').mockImplementation(() => {});
         const ctx = createJoinCtx();
         ctx.setRoutingErrorMsg = jest.fn();
         ctx.trackRouter.updateRouteBetweenPoints.mockRejectedValueOnce(new Error('no route'));
-        const [, gap, next] = ctx.selectedGpxFile.points;
 
-        await PointManager.join(gap, next, ctx);
+        await PointManager.join(1, ctx);
 
-        expect(lats(next.geometry)).toEqual([50.01, 50.02]);
+        expect(lats(ctx.selectedGpxFile.points[2].geometry)).toEqual([50.01, 50.02]);
         expect(ctx.setRoutingErrorMsg).toHaveBeenCalled();
     });
 
     test('a join next to recorded pieces keeps their geometry', async () => {
         const before = createCtx(createRecordedThenRoutedPoints(4));
         PointManager.split(1, before);
-        const [recordedStart, gap, next] = before.selectedGpxFile.points;
 
-        await PointManager.join(gap, next, before);
+        await PointManager.join(1, before);
 
+        const [recordedStart, gap] = before.selectedGpxFile.points;
         expect(lats(gap.geometry)).toEqual(lats(createRecordedGeometry(0, 1)));
         expect(isProtectedSegment({ startPoint: recordedStart, endPoint: gap })).toBe(true);
 
         const after = createCtx(createRoutedThenRecordedPoints(2));
         const recorded = after.selectedGpxFile.points[3].geometry;
         PointManager.split(1, after);
-        const [, afterGap, afterNext, recordedEnd] = after.selectedGpxFile.points;
 
-        await PointManager.join(afterGap, afterNext, after);
+        await PointManager.join(1, after);
 
+        const [, , afterNext, recordedEnd] = after.selectedGpxFile.points;
         expect(recordedEnd.geometry).toBe(recorded);
         expect(isProtectedSegment({ startPoint: afterNext, endPoint: recordedEnd })).toBe(true);
     });
@@ -561,7 +543,7 @@ describe('changeProfile', () => {
         expect(cached(whole)).toEqual([[50.01, 50.02, PROFILE_BICYCLE]]);
     });
 
-    test.failing('a profile change of the next segments reports that the track has changed', async () => {
+    test('a profile change of the next segments reports that the track has changed', async () => {
         const ctx = createProfileCtx(createRoutedPoints(3), CHANGE_PROFILE_ALL);
 
         expect(await PointManager.changeProfile({ ctx, geoProfile: BICYCLE, changeOne: true })).toBe(true);
@@ -581,19 +563,18 @@ describe('changeProfile', () => {
 
 describe('drag a point', () => {
     test('a plain point is moved in its line, its elevation is dropped and the analysis is asked again', () => {
-        const points = createPlainPoints(3).map((point) => ({ ...point, ele: 100 }));
-        const ctx = createDrawnCtx(points);
+        const ctx = createDrawnCtx(createPlainPoints(3).map((point) => ({ ...point, ele: 100 })));
         const [line] = drawnLines(ctx);
 
         dragPoint(ctx, 1, 50.015);
 
         expect(lats(line.getLatLngs())).toEqual([50, 50.015, 50.02]);
-        expect(points[1].ele).toBeUndefined();
+        expect(ctx.selectedGpxFile.points[1].ele).toBeUndefined();
         expect(ctx.selectedGpxFile.refreshAnalytics).toBe(true);
         expect(ctx.setRoutingNewSegments).not.toHaveBeenCalled();
     });
 
-    test.failing('a plain point of the first segment of a plain track is moved in its line', () => {
+    test('a plain point of the first segment of a plain track is moved in its line', () => {
         jest.spyOn(console, 'error').mockImplementation(() => {});
         const ctx = createDrawnCtx(createPlainGapPoints(4, 1));
         const [firstSegment] = drawnLines(ctx);
@@ -605,10 +586,10 @@ describe('drag a point', () => {
 
     test('a routed point sends both of its segments to the router as dashed lines', () => {
         const ctx = createDrawnCtx(createRoutedPoints(3));
-        const points = ctx.selectedGpxFile.points;
 
         dragPoint(ctx, 1, 50.015);
 
+        const points = ctx.selectedGpxFile.points;
         expect(points[1].lat).toBe(50.015);
         expect(points[1].geometry).toEqual([]);
         expect(points[2].geometry).toEqual([]);
@@ -646,11 +627,11 @@ describe('drag a point', () => {
 
     test('a recorded piece keeps its points and gets the dragged point as its last vertex', () => {
         const ctx = createDrawnCtx(createRecordedThenRoutedPoints());
-        const points = ctx.selectedGpxFile.points;
-        const recorded = lats(points[1].geometry);
+        const recorded = lats(ctx.selectedGpxFile.points[1].geometry);
 
         dragPoint(ctx, 1, 50.012);
 
+        const points = ctx.selectedGpxFile.points;
         expect(lats(points[1].geometry)).toEqual([...recorded.slice(0, -1), 50.012]);
         expect(isProtectedSegment({ startPoint: points[0], endPoint: points[1] })).toBe(true);
         expect(routedPairs(ctx)).toEqual([[50.012, 50.02]]);
@@ -698,7 +679,8 @@ describe('drag a point', () => {
         marker.dragEndPoint(createDragEvent({ lat: 50.006, lng: 30.002 }), track);
 
         expect(track.wpts[0]).toMatchObject({ lat: 50.006, lon: 30.002 });
-        expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(2));
+        const ids = ctx.selectedGpxFile.points.map(({ id }) => id);
+        expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(2).map((point, i) => ({ ...point, id: ids[i] })));
         expect(ctx.setRoutingNewSegments).not.toHaveBeenCalled();
     });
 });
@@ -715,26 +697,24 @@ describe('insert a point from the line', () => {
         expect(ctx.selectedGpxFile.refreshAnalytics).toBe(true);
     });
 
-    test.failing(
-        'a point dropped on the second segment of a plain track goes into that line at its place',
-        async () => {
-            const ctx = createDrawnCtx(createPlainGapPoints(5, 1));
-            const [, secondSegment] = drawnLines(ctx);
+    test('a point dropped on the second segment of a plain track goes into that line at its place', async () => {
+        const ctx = createDrawnCtx(createPlainGapPoints(5, 1));
+        const [, secondSegment] = drawnLines(ctx);
 
-            await insertPoint(ctx, secondSegment, 50.035);
+        await insertPoint(ctx, secondSegment, 50.035);
 
-            expect(lats(secondSegment.getLatLngs())).toEqual([50.02, 50.03, 50.035, 50.04]);
-        }
-    );
+        expect(lats(secondSegment.getLatLngs())).toEqual([50.02, 50.03, 50.035, 50.04]);
+    });
 
     test('a point dropped on a routed line takes the profile of the previous point, both new segments are routed', async () => {
-        const points = createRoutedPoints(3);
-        points[1].profile = PROFILE_BICYCLE;
-        const ctx = createDrawnCtx(points);
+        const routed = createRoutedPoints(3);
+        routed[1].profile = PROFILE_BICYCLE;
+        const ctx = createDrawnCtx(routed);
         const [, segment] = drawnLines(ctx);
 
         await insertPoint(ctx, segment, 50.015);
 
+        const points = ctx.selectedGpxFile.points;
         expect(lats(points)).toEqual([50, 50.01, 50.015, 50.02]);
         expect(points[2]).toMatchObject({ profile: PROFILE_BICYCLE, geometry: [] });
         expect(points[3].geometry).toEqual([]);
@@ -795,7 +775,7 @@ describe('the menu of a point', () => {
         ]);
     });
 
-    test.failing('split and profile are not offered on a recorded piece', () => {
+    test('split and profile are not offered on a recorded piece', () => {
         const points = [...createRoutedThenRecordedPoints(), createRoutedPoint(3)];
 
         expect(PointManager.getPointMenuItems(points, 1)).toMatchObject({ splitAfter: false, profileAfter: false });
@@ -919,11 +899,11 @@ describe('the waypoints of the edited track', () => {
     test('the point operations keep the waypoints and their groups', async () => {
         for (const [points, operate] of [
             [createRoutedPoints(4), (ctx) => PointManager.deletePoint(1, ctx)],
-            [createRoutedPoints(4), (ctx) => PointManager.reorder(1, 2, ctx.selectedGpxFile, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.reorder(1, 2, ctx)],
             [createRoutedPoints(4), (ctx) => PointManager.trimBefore(1, ctx)],
             [createRoutedPoints(4), (ctx) => PointManager.trimAfter(1, ctx)],
             [createRoutedPoints(4), (ctx) => PointManager.split(1, ctx)],
-            [createGapPoints(4, 1), (ctx) => PointManager.join(...ctx.selectedGpxFile.points.slice(1, 3), ctx)],
+            [createGapPoints(4, 1), (ctx) => PointManager.join(1, ctx)],
             [createRoutedPoints(4), (ctx) => dragPoint(ctx, 1, 50.015)],
             [createRoutedPoints(4), (ctx) => insertPoint(ctx, drawnLines(ctx)[1], 50.015)],
         ]) {
@@ -937,7 +917,7 @@ describe('the waypoints of the edited track', () => {
         }
     });
 
-    test.failing('deleting the last point keeps the waypoints and their groups', async () => {
+    test('deleting the last point keeps the waypoints and their groups', async () => {
         const ctx = createCtx(createRoutedPoints(1));
         Object.assign(ctx.selectedGpxFile, { wpts: createWpts(), pointsGroups: createPointsGroups() });
 
@@ -954,8 +934,8 @@ describe('the history of the editor', () => {
             [createRoutedPoints(4), (ctx) => PointManager.trimBefore(1, ctx)],
             [createRoutedPoints(4), (ctx) => PointManager.trimAfter(1, ctx)],
             [createRoutedPoints(4), (ctx) => PointManager.split(1, ctx)],
-            [createGapPoints(4, 1), (ctx) => PointManager.join(...ctx.selectedGpxFile.points.slice(1, 3), ctx)],
-            [createRoutedPoints(4), (ctx) => PointManager.reorder(1, 2, ctx.selectedGpxFile, ctx)],
+            [createGapPoints(4, 1), (ctx) => PointManager.join(1, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.reorder(1, 2, ctx)],
             [createRoutedPoints(4), (ctx) => dragPoint(ctx, 1, 50.015)],
             [createRoutedPoints(4), (ctx) => insertPoint(ctx, drawnLines(ctx)[1], 50.015)],
         ]) {

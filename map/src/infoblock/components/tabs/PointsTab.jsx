@@ -39,7 +39,7 @@ const PointsTab = ({ width }) => {
                 return;
             }
             if (ctx.selectedGpxFile) {
-                await PointManager.reorder(result.source.index, result.destination.index, ctx.selectedGpxFile, ctx);
+                await PointManager.reorder(result.source.index, result.destination.index, ctx);
             }
             setLoading(false);
         },

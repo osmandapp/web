@@ -38,7 +38,7 @@ describe('a router answer without a route', () => {
         }
     });
 
-    test.failing('OsmAnd gives a straight line to a gap point too', async () => {
+    test('OsmAnd gives a straight line to a gap point too', async () => {
         apiPost.mockResolvedValue({ data: { msg: 'Route not found' } });
 
         const result = await route(createCtx(), createGapPoint(), OSMAND);
@@ -61,7 +61,7 @@ describe('a route to a gap point', () => {
         }
     });
 
-    test.failing('carries the gap on its last vertex when OSRM is approximated', async () => {
+    test('carries the gap on its last vertex when OSRM is approximated', async () => {
         apiGet.mockResolvedValue(osrmAnswer(50, 50.005, 50.01));
         apiPost.mockResolvedValue({ data: { points: along(50, 50.004, 50.01) } });
 
@@ -70,7 +70,7 @@ describe('a route to a gap point', () => {
         expect(result.points.at(-1).profile).toBe(GAP);
     });
 
-    test.failing('carries the gap on its last vertex when it is replaced by a straight line', async () => {
+    test('carries the gap on its last vertex when it is replaced by a straight line', async () => {
         apiGet.mockResolvedValue(osrmAnswer());
 
         const result = await route(createCtx(), createGapPoint(), OSRM);

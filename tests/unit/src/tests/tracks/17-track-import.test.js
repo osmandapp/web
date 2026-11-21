@@ -113,7 +113,7 @@ describe('the points of an imported gpx in the editor', () => {
         expect(TracksManager.getEditablePoints({ ...createGpxData(), wpts: [WPT] })).toEqual([]);
     });
 
-    test.failing('a gap between two routed trk also ends the geometry of the first one, as Split puts it', () => {
+    test('a gap between two routed trk also ends the geometry of the first one, as Split puts it', () => {
         const points = TracksManager.getEditablePoints(
             createGpxData(createRouteLeg(0, 2, PROFILE_PEDESTRIAN), createRouteLeg(3, 5, PROFILE_BICYCLE))
         );

@@ -1,10 +1,8 @@
-import TracksManager, { isPointUnrouted, updateTrackRouteTypes } from './track/TracksManager';
-import Utils from '../util/Utils';
+import TracksManager, { ROUTER_ERROR_LINE_USED, updateTrackRouteTypes } from './track/TracksManager';
+import * as TrackOperations from './track/TrackOperations';
 import TrackLayerProvider from '../map/util/TrackLayerProvider';
-import TracksRoutingCache from '../context/TracksRoutingCache';
+import TracksRoutingCache, { createRoutingKey, requestAnalysisNow } from '../context/TracksRoutingCache';
 import isEmpty from 'lodash-es/isEmpty';
-
-const deletePoint = (index, ctx) => deletePointByIndex(ctx.selectedGpxFile, index, ctx);
 
 function deleteWpt(ind, ctx, save = false) {
     ctx.setSelectedGpxFile((o) => {
@@ -20,168 +18,51 @@ function deleteWpt(ind, ctx, save = false) {
     TracksManager.updateState(ctx);
 }
 
-async function reorder(startIndex, endIndex, currentTrack, ctx) {
-    let lengthSum = 0;
-    let removed = await deleteByIndex(currentTrack.points, startIndex, lengthSum, ctx).then((result) => {
-        if (currentTrack.points.length > 0) {
-            return result.deletedPoint;
-        }
-    });
-    if (removed.length > 0) {
-        await insertPointToTrack(currentTrack, endIndex, removed[0], ctx);
+async function reorder(startIndex, endIndex, ctx) {
+    const oldNext = ctx.selectedGpxFile.points[startIndex + 1];
+    const points = TrackOperations.reorder(ctx.selectedGpxFile.points, startIndex, endIndex);
+    if (points === ctx.selectedGpxFile.points) {
+        return;
     }
+    ctx.selectedGpxFile.points = points;
+
+    const joinedIndex = endIndex <= startIndex ? startIndex + 1 : startIndex;
+    if (TrackOperations.isWaitingForRouter(points, joinedIndex)) {
+        routeByCache(joinedIndex, oldNext, ctx);
+    }
+    await routeNow([endIndex, endIndex + 1], ctx);
+
+    TracksManager.updateState(ctx);
+    ctx.selectedGpxFile.updateLayers = true;
+    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+    requestAnalysisNow({ ctx, track: ctx.selectedGpxFile });
 }
 
-async function insertPointToTrack(currentTrack, index, point, ctx) {
-    let lengthSum = 0;
-    if (currentTrack.points) {
-        await insertPoint(currentTrack.points, index, point, lengthSum, ctx).then(() => {
-            TracksManager.updateState(ctx);
-
-            ctx.selectedGpxFile.updateLayers = true;
-            ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-
-            TracksManager.getTrackWithAnalysis(
-                TracksManager.GET_ANALYSIS,
-                ctx,
-                ctx.setLoadingContextMenu,
-                currentTrack.points
-            ).then((res) => {
-                if (res) {
-                    ctx.setUnverifiedGpxFile(() => ({ ...res }));
-                }
-            });
-        });
+async function deletePoint(index, ctx) {
+    if (!ctx.selectedGpxFile.points) {
+        return;
     }
-}
-
-async function insertPoint(points, index, point, lengthSum, ctx) {
-    const geoRouter = ctx.trackRouter;
-    points.splice(index, 0, point);
-    let firstPoint = index === 0 || index === lengthSum;
-    let lastPoint = index === points.length - 1 + lengthSum;
-    for (let i = 0; i <= points.length; i++) {
-        if (i + lengthSum === index && point) {
-            if (firstPoint) {
-                if (points[i + 1].geometry) {
-                    point.geometry = []; // nothing leads to the first point
-                    let newGeometryFromNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, point, points[i + 1]);
-                    if (newGeometryFromNewPoint) {
-                        points[i + 1].geometry = newGeometryFromNewPoint.points || [];
-                        updateTrackRouteTypes(newGeometryFromNewPoint.points, newGeometryFromNewPoint.routeTypes, ctx);
-                    }
-                }
-            } else if (lastPoint) {
-                if (points[i - 1].geometry) {
-                    let newGeometryToNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, points[i - 1], point);
-                    if (newGeometryToNewPoint) {
-                        point.geometry = newGeometryToNewPoint.points || [];
-                        updateTrackRouteTypes(newGeometryToNewPoint.points, newGeometryToNewPoint.routeTypes, ctx);
-                    }
-                }
-            } else {
-                if (points[i + 1].geometry) {
-                    let newGeometryToNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, points[i - 1], point);
-                    if (newGeometryToNewPoint) {
-                        point.geometry = newGeometryToNewPoint.points || [];
-                        updateTrackRouteTypes(newGeometryToNewPoint.points, newGeometryToNewPoint.routeTypes, ctx);
-                    }
-                    let newGeometryFromNewPoint = await geoRouter.updateRouteBetweenPoints(ctx, point, points[i + 1]);
-                    if (newGeometryFromNewPoint) {
-                        points[i + 1].geometry = newGeometryFromNewPoint.points || [];
-                        updateTrackRouteTypes(newGeometryFromNewPoint.points, newGeometryFromNewPoint.routeTypes, ctx);
-                    }
-                }
-            }
-            break;
-        }
+    if (ctx.selectedGpxFile.points.length === 1) {
+        const emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile, []);
+        ctx.setSelectedGpxFile({ ...emptyFile });
+        ctx.setUpdateInfoBlock(true);
+        return;
     }
-    lengthSum += points.length;
-    return lengthSum;
-}
-
-async function deletePointByIndex(currentTrack, index, ctx) {
-    let lengthSum = 0;
-    let res;
-    if (currentTrack.points) {
-        res = await deleteByIndex(currentTrack.points, index, lengthSum, ctx).then((result) => {
-            if (currentTrack.points.length > 0) {
-                if (currentTrack.points.length === 1) {
-                    ctx.setUpdateInfoBlock(true);
-                }
-
-                ctx.selectedGpxFile.updateLayers = true;
-                ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-
-                TracksManager.getTrackWithAnalysis(
-                    TracksManager.GET_ANALYSIS,
-                    ctx,
-                    ctx.setLoadingContextMenu,
-                    currentTrack.points
-                ).then((res) => {
-                    if (res) {
-                        ctx.setUnverifiedGpxFile(() => ({ ...res }));
-                    }
-                });
-                return result.deletedPoint;
-            } else {
-                let emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile, currentTrack.points);
-                ctx.setSelectedGpxFile({ ...emptyFile });
-                ctx.setUpdateInfoBlock(true);
-            }
-        });
+    const oldNext = ctx.selectedGpxFile.points[index + 1];
+    const points = TrackOperations.deletePoint(ctx.selectedGpxFile.points, index);
+    ctx.selectedGpxFile.points = points;
+    const routed = TrackOperations.isWaitingForRouter(points, index);
+    if (routed) {
+        routeByCache(index, oldNext, ctx);
     }
-    return res;
-}
-
-async function deleteByIndex(points, index, lengthSum, ctx) {
-    let res = {
-        deletedPoint: null,
-        lengthSum: null,
-    };
-    let firstPoint = index === 0 || index === lengthSum;
-    let lastPoint = index === points.length - 1 + lengthSum;
-    if (firstPoint) {
-        if (points.length > 1 && points[index + 1].geometry) {
-            points[index + 1].geometry = [];
-        }
-        res.deletedPoint = points.splice(0, 1);
-        return res;
-    } else if (lastPoint) {
-        res.deletedPoint = points.splice(points.length - 1, 1);
-        return res;
-    } else {
-        for (let i = 0; i <= points.length - 1; i++) {
-            if (i + lengthSum === index) {
-                if (points[i].geometry) {
-                    let newGeometry;
-                    if (isPointUnrouted({ point: points[i], pointIndex: i, prevPoint: points[i - 1] })) {
-                        // FIXME this if is never happened
-                        // FIXME need to process PROFILE_GAP
-                        let currentNewGeo = points[i].geometry;
-                        currentNewGeo.pop();
-                        let nextNewGeo = points[i + 1].geometry;
-                        nextNewGeo.shift();
-                        let resGeo = currentNewGeo.concat(nextNewGeo);
-                        newGeometry = Utils.getPointsDist(resGeo);
-                        points[i + 1].geometry = newGeometry;
-                    } else {
-                        let tempLine = TrackLayerProvider.createTempPolyline(points[i - 1], points[i + 1]);
-                        deleteOldTempLayer(ctx, points[i + 1]);
-                        ctx.selectedGpxFile.layers.addLayer(tempLine);
-                        ctx.selectedGpxFile.updateLayers = true;
-                        TracksRoutingCache.addRoutingToCache(points[i - 1], points[i + 1], tempLine, ctx);
-                        points[i + 1].geometry = [];
-                    }
-                }
-                res.deletedPoint = points.splice(i, 1);
-                return res;
-            }
-        }
+    if (points.length === 1) {
+        ctx.setUpdateInfoBlock(true);
     }
-    lengthSum += points.length;
-    res.lengthSum = lengthSum;
-    return res;
+    ctx.selectedGpxFile.updateLayers = true;
+    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+    if (!routed) {
+        requestAnalysisNow({ ctx, track: ctx.selectedGpxFile });
+    }
 }
 
 function deleteOldTempLayer(ctx, point) {
@@ -198,53 +79,24 @@ function deleteOldTempLayer(ctx, point) {
 
 function trimBefore(index, ctx) {
     if (index !== -1 && index !== 0) {
-        ctx.selectedGpxFile.points.splice(0, index);
-        let geo = ctx.selectedGpxFile.points[0].geometry;
-        if (geo?.length > 0) {
-            ctx.selectedGpxFile.points[0].geometry = [];
-        }
-        ctx.selectedGpxFile.updateLayers = true;
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        TracksManager.updateState(ctx);
+        applyOperation(ctx, TrackOperations.trimBefore(ctx.selectedGpxFile.points, index));
     }
 }
 
 function trimAfter(index, ctx) {
     if (index !== -1 && index !== ctx.selectedGpxFile.points.length - 1) {
-        ctx.selectedGpxFile.points.splice(index + 1, ctx.selectedGpxFile.points.length - index);
-        ctx.selectedGpxFile.updateLayers = true;
-        ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-        TracksManager.updateState(ctx);
+        applyOperation(ctx, TrackOperations.trimAfter(ctx.selectedGpxFile.points, index));
     }
 }
 
 function split(index, ctx) {
-    const geometryLength = ctx.selectedGpxFile.points[index].geometry.length;
-    ctx.selectedGpxFile.points[index].geometry[geometryLength - 1].profile = TracksManager.PROFILE_GAP;
-    ctx.selectedGpxFile.points[index].profile = TracksManager.PROFILE_GAP;
-
-    ctx.selectedGpxFile.points[index + 1].geometry = [];
-
-    ctx.selectedGpxFile.updateLayers = true;
-    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-
-    TracksManager.updateState(ctx);
+    applyOperation(ctx, TrackOperations.split(ctx.selectedGpxFile.points, index));
 }
 
-async function join(point1, point2, ctx) {
-    const result = await ctx.trackRouter.updateRouteBetweenPoints(ctx, point1, point2);
-    point2.geometry = result?.points || [];
-    if (result) {
-        updateTrackRouteTypes(result.points, result.routeTypes, ctx);
-    }
-    point1.profile = point2.profile;
-    point1.geoProfile = point2.geoProfile;
-    if (point1.geometry?.length > 0) {
-        delete point1.geometry[point1.geometry.length - 1].profile;
-    }
-    ctx.selectedGpxFile.updateLayers = true;
-    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-    TracksManager.updateState(ctx);
+async function join(index, ctx) {
+    ctx.selectedGpxFile.points = TrackOperations.join(ctx.selectedGpxFile.points, index);
+    await routeNow([index + 1], ctx);
+    applyOperation(ctx, ctx.selectedGpxFile.points);
 }
 
 function updateLastPointProfile(ctx, geoProfile) {
@@ -252,26 +104,26 @@ function updateLastPointProfile(ctx, geoProfile) {
     if (track.points?.length > 0) {
         const last = track.points.length - 1;
         if (track.points[last].profile !== TracksManager.PROFILE_GAP) {
-            track.points[last].geoProfile = geoProfile;
-            track.points[last].profile = geoProfile.profile;
+            track.points = TrackOperations.setProfile(track.points, last, geoProfile);
         }
     }
 }
 
-function changeSegmentProfile(start, end, polylines, geoProfile, ctx) {
+function changeSegmentProfile(index, polylines, geoProfile, ctx) {
+    const start = ctx.selectedGpxFile.points[index];
+    const end = ctx.selectedGpxFile.points[index + 1];
     const currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
     if (currentPolyline) {
-        start.geoProfile = geoProfile;
-        start.profile = geoProfile.profile;
-        TracksRoutingCache.addRoutingToCache(start, end, currentPolyline, ctx);
+        const updated = TrackOperations.setProfile(ctx.selectedGpxFile.points, index, geoProfile);
+        ctx.selectedGpxFile.points = updated;
+        TracksRoutingCache.addRoutingToCache(updated[index], updated[index + 1], currentPolyline, ctx);
     }
 }
 
 function changeSegmentsProfile(from, to, polylines, geoProfile, ctx) {
-    const points = ctx.selectedGpxFile.points;
     for (let i = from; i < to; i++) {
-        if (points[i].profile !== TracksManager.PROFILE_GAP) {
-            changeSegmentProfile(points[i], points[i + 1], polylines, geoProfile, ctx);
+        if (ctx.selectedGpxFile.points[i].profile !== TracksManager.PROFILE_GAP) {
+            changeSegmentProfile(i, polylines, geoProfile, ctx);
         }
     }
 }
@@ -293,25 +145,22 @@ async function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
                 return true;
             } else {
                 if (ctx.selectedGpxFile.points?.length > 0) {
-                    ctx.selectedGpxFile.points[0].geoProfile = geoProfile;
-                    ctx.selectedGpxFile.points[0].profile = geoProfile.profile;
+                    ctx.selectedGpxFile.points = TrackOperations.setProfile(ctx.selectedGpxFile.points, 0, geoProfile);
                 }
                 return true;
             }
         } else {
             updateLastPointProfile(ctx, geoProfile); // just update last point's profile
+            return true;
         }
     } else {
         if (changeOne) {
             // before or after - one segment
-            let currentPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd];
-            let prevPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd - 1];
-            let nextPoint = ctx.selectedGpxFile.points[ctx.trackProfileManager.pointInd + 1];
             if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                changeSegmentProfile(prevPoint, currentPoint, polylines, geoProfile, ctx);
+                changeSegmentProfile(ctx.trackProfileManager.pointInd - 1, polylines, geoProfile, ctx);
                 return true;
             } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                changeSegmentProfile(currentPoint, nextPoint, polylines, geoProfile, ctx);
+                changeSegmentProfile(ctx.trackProfileManager.pointInd, polylines, geoProfile, ctx);
                 return true;
             }
         } else if (changeAll) {
@@ -337,6 +186,8 @@ async function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
 
 function getPointMenuItems(points, index) {
     const isGap = (i) => points[i]?.profile === TracksManager.PROFILE_GAP;
+    const isRecorded = (end) =>
+        end > 0 && TrackOperations.isRecordedSegment({ startPoint: points[end - 1], endPoint: points[end] });
     const last = points.length - 1;
 
     return {
@@ -347,9 +198,10 @@ function getPointMenuItems(points, index) {
             !isGap(index) &&
             !isGap(index - 1) &&
             !isGap(index - 2) &&
-            !isEmpty(points[index].geometry),
+            !isEmpty(points[index].geometry) &&
+            !isRecorded(index),
         joinBefore: isGap(index - 1),
-        profileBefore: index > 0 && !isGap(index - 1),
+        profileBefore: index > 0 && !isGap(index - 1) && !isRecorded(index),
         trimAfter: index < last && !isGap(index) && !isGap(index - 1),
         splitAfter:
             index >= 1 &&
@@ -357,10 +209,79 @@ function getPointMenuItems(points, index) {
             !isGap(index) &&
             !isGap(index - 1) &&
             !isGap(index + 1) &&
-            !isEmpty(points[index].geometry),
+            !isEmpty(points[index].geometry) &&
+            !isRecorded(index + 1),
         joinAfter: isGap(index),
-        profileAfter: index < last && !isGap(index),
+        profileAfter: index < last && !isGap(index) && !isRecorded(index + 1),
     };
+}
+
+function applyOperation(ctx, points) {
+    ctx.selectedGpxFile.points = points;
+    ctx.selectedGpxFile.updateLayers = true;
+    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+    TracksManager.updateState(ctx);
+}
+
+function routeByCache(index, oldEnd, ctx) {
+    const start = ctx.selectedGpxFile.points[index - 1];
+    const end = ctx.selectedGpxFile.points[index];
+    const tempLine = TrackLayerProvider.createTempPolyline(start, end);
+    deleteOldTempLayer(ctx, oldEnd);
+    ctx.selectedGpxFile.layers.addLayer(tempLine);
+    ctx.selectedGpxFile.updateLayers = true;
+    TracksRoutingCache.addRoutingToCache(start, end, tempLine, ctx);
+}
+
+async function routeNow(indexes, ctx) {
+    for (const index of indexes) {
+        if (TrackOperations.isWaitingForRouter(ctx.selectedGpxFile.points, index)) {
+            const start = ctx.selectedGpxFile.points[index - 1];
+            const end = ctx.selectedGpxFile.points[index];
+            const key = getSegmentKey(start, end, ctx);
+            const geometry = await routeSegment(start, end, ctx);
+            const routedIndex = ctx.selectedGpxFile.points.findIndex(
+                (point, i) =>
+                    TrackOperations.isWaitingForRouter(ctx.selectedGpxFile.points, i) &&
+                    getSegmentKey(ctx.selectedGpxFile.points[i - 1], point, ctx) === key
+            );
+            if (routedIndex !== -1) {
+                ctx.selectedGpxFile.points = TrackOperations.setSegmentGeometry(
+                    ctx.selectedGpxFile.points,
+                    routedIndex,
+                    geometry
+                );
+            }
+        }
+    }
+}
+
+function getSegmentKey(start, end, ctx) {
+    return createRoutingKey(start, end, ctx.trackRouter.getGeoProfile(start));
+}
+
+async function routeSegment(start, end, ctx) {
+    try {
+        const result = await ctx.trackRouter.updateRouteBetweenPoints(
+            ctx,
+            start,
+            end,
+            ctx.trackRouter.getGeoProfile(start)
+        );
+        if (result) {
+            updateTrackRouteTypes(result.points, result.routeTypes, ctx);
+        }
+
+        return result?.points ?? [];
+    } catch (e) {
+        console.error('routeSegment failed', e);
+        ctx.setRoutingErrorMsg(ROUTER_ERROR_LINE_USED);
+        const line = await ctx.trackRouter.updateRouteBetweenPoints(ctx, start, end, {
+            profile: TracksManager.PROFILE_LINE,
+        });
+
+        return line?.points ?? [];
+    }
 }
 
 const PointManager = {
