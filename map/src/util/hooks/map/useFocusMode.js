@@ -137,6 +137,7 @@ function applyOpacityToLayer(layer, opacity) {
     if (typeof layer.setStyle === 'function') {
         layer.setStyle({ opacity, fillOpacity: opacity });
         disablePointerEventsIfHidden(layer.getElement?.(), opacity);
+        disablePointerEventsIfHidden(layer.hitLine?.getElement(), opacity);
     }
 }
 
