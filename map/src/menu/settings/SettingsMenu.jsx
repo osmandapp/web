@@ -78,8 +78,7 @@ export default function SettingsMenu() {
     }, [getTransLanguage]);
 
     const handleLangClick = async (lang) => {
-        const normalized = normalizeLang(lang);
-        await handleLanguageChange({ lng: normalized, folderLng: lang });
+        await handleLanguageChange(lang);
         setCurrentLang(getTransLanguage(lang));
         setOpenLangList(false);
         ctx.setOpenedPopper(null);

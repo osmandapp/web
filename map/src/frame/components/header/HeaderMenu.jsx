@@ -25,6 +25,7 @@ import { handleLanguageChange } from '../../../i18n';
 import { collator } from '../../../context/AppContext';
 import { useUpdateQueryParam } from '../../../util/hooks/menu/useUpdateQueryParam';
 import { HEADER_MENU_Z_INDEX } from '../../../map/util/ZIndexes';
+import { normalizeLang } from '../../../util/lang';
 
 const pages = ({ t }) => [
     {
@@ -73,9 +74,9 @@ export default function HeaderMenu({ showInstallBanner = null }) {
         if (searchParams.size !== 1) return;
         if (!searchParams.has(LANG_PARAM)) return;
         const lang = searchParams.get(LANG_PARAM);
-        if (lang && lang !== i18n.language && supportedLanguages.includes(lang)) {
+        if (lang && normalizeLang(lang) !== i18n.language && supportedLanguages.includes(lang)) {
             (async () => {
-                await handleLanguageChange({ lng: lang });
+                await handleLanguageChange(lang);
                 setCurrentLangLabel(getTransLanguage(lang));
             })();
         }
@@ -122,7 +123,7 @@ export default function HeaderMenu({ showInstallBanner = null }) {
                 <MenuItem
                     key={lng}
                     onClick={async () => {
-                        await handleLanguageChange({ lng });
+                        await handleLanguageChange(lng);
                         setCurrentLangLabel(getTransLanguage(lng));
                         setOpenLang(false);
                     }}
