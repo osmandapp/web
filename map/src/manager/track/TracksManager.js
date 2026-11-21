@@ -26,8 +26,7 @@ import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
 import { compressFileToBlob, compressJSONToBlob } from '../../util/GzipCompression';
 import { findInfoFile } from './TrackAppearanceManager';
 import i18n from '../../i18n';
-import { PROFILE_GAP } from '../../store/geoRouter/profileConstants';
-import { markGapEnd } from './TrackOperations';
+import { markGapEnd, PROFILE_GAP } from './TrackOperations';
 
 export { isPointUnrouted, isProtectedSegment, splitProtectedSegment } from './TrackOperations';
 

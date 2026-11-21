@@ -1,5 +1,7 @@
 import cloneDeep from 'lodash-es/cloneDeep';
-import { PROFILE_GAP, PROFILE_LINE } from '../../store/geoRouter/profileConstants';
+import { PROFILE_LINE } from '../../store/geoRouter/profileConstants';
+
+export const PROFILE_GAP = 'gap';
 
 let lastPointId = 0;
 
