@@ -20,6 +20,7 @@ import TracksRoutingCache, {
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
     GET_ANALYSIS_DEBOUNCE_MS,
+    requestAnalysisNow,
     requestAnalytics,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
@@ -612,11 +613,7 @@ export default function LocalClientTrackLayer() {
 
         const analysis = () => {
             if (startedRouterJobs > 0) return;
-            TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, points).then(
-                (res) => {
-                    if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
-                }
-            );
+            requestAnalysisNow({ ctx, track: ctxTrack });
         };
 
         debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);

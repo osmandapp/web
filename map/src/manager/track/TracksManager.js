@@ -1112,86 +1112,104 @@ export function validateRoutePoints(points) {
     return true;
 }
 
-async function getTrackWithAnalysis(path, ctx, setLoading, points) {
-    setLoading(true);
+const runningCounts = new Map();
 
-    const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
-
-    if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
-        return cloneFile; // no tracks = nothing to analyze
+function startRunning(setRunning) {
+    if (!setRunning) {
+        return;
     }
+    runningCounts.set(setRunning, (runningCounts.get(setRunning) ?? 0) + 1);
+    setRunning(true);
+}
 
-    const wpts = cloneFile.wpts;
-    const pointsGroups = cloneFile.pointsGroups;
-    if (validateRoutePoints(points)) {
-        cloneFile.tracks[0].points = points;
+function finishRunning(setRunning) {
+    if (!setRunning) {
+        return;
     }
-
-    const postData = prepareTrackData({ file: cloneFile, routeTypes: cloneFile.routeTypes, getAnalysis: true });
-    // time vs better cache
-    let saveStartTime = null;
-    let saveEndTime = null;
-    if (postData.analysis) {
-        saveStartTime = postData.analysis.startTime;
-        saveEndTime = postData.analysis.endTime;
-        // zero every-time-unique variables for better caching
-        postData.analysis.startTime = postData.analysis.endTime = 0;
-    }
-
-    if (ctx.setProcessingAnalytics) {
-        ctx.setProcessingAnalytics(true);
-    }
-
-    const compressedData = compressJSONToBlob(postData);
-
-    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, compressedData, {
-        params: {
-            dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
-        },
-        apiCache: true,
-        abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
-    });
-    setLoading(false);
-    if (resp?.data) {
-        // data will be mutated, use cloneDeep to avoid apiCache mutations
-        const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
-
-        const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
-
-        // restore previously saved time
-        if (data.data?.analysis) {
-            if (data.data.analysis.startTime === 0 && saveStartTime > 0) {
-                data.data.analysis.startTime = saveStartTime;
-            }
-            if (data.data.analysis.endTime === 0 && saveEndTime > 0) {
-                data.data.analysis.endTime = saveEndTime;
-            }
-        }
-
-        Object.keys(data.data).forEach((t) => {
-            newGpxFile[`${t}`] = data.data[t];
-        });
-
-        newGpxFile.update = true;
-        newGpxFile.wpts = wpts;
-        newGpxFile.pointsGroups = pointsGroups;
-
-        // auto-srtm
-        if (path === GET_ANALYSIS) {
-            const track = newGpxFile;
-            if (eligibleToApplySrtm({ track })) {
-                return applySrtmElevation({ track, setLoading });
-            }
-        }
-        if (ctx.setProcessingAnalytics) {
-            ctx.setProcessingAnalytics(false);
-        }
-        return newGpxFile;
+    const running = runningCounts.get(setRunning) - 1;
+    if (running > 0) {
+        runningCounts.set(setRunning, running);
     } else {
-        if (ctx.setProcessingAnalytics) {
-            ctx.setProcessingAnalytics(false);
+        runningCounts.delete(setRunning);
+    }
+    setRunning(running > 0);
+}
+
+async function getTrackWithAnalysis(path, ctx, setLoading, points) {
+    startRunning(setLoading);
+    startRunning(ctx.setProcessingAnalytics);
+    try {
+        const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
+
+        if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
+            return cloneFile; // no tracks = nothing to analyze
         }
-        return ctx.selectedGpxFile;
+
+        const wpts = cloneFile.wpts;
+        const pointsGroups = cloneFile.pointsGroups;
+        if (validateRoutePoints(points)) {
+            cloneFile.tracks[0].points = points;
+        }
+
+        const postData = prepareTrackData({ file: cloneFile, routeTypes: cloneFile.routeTypes, getAnalysis: true });
+        // time vs better cache
+        let saveStartTime = null;
+        let saveEndTime = null;
+        if (postData.analysis) {
+            saveStartTime = postData.analysis.startTime;
+            saveEndTime = postData.analysis.endTime;
+            // zero every-time-unique variables for better caching
+            postData.analysis.startTime = postData.analysis.endTime = 0;
+        }
+
+        const compressedData = compressJSONToBlob(postData);
+
+        const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, compressedData, {
+            params: {
+                dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
+            },
+            apiCache: true,
+            abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
+        });
+        if (resp?.data) {
+            // data will be mutated, use cloneDeep to avoid apiCache mutations
+            const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
+
+            const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
+
+            // restore previously saved time
+            if (data.data?.analysis) {
+                if (data.data.analysis.startTime === 0 && saveStartTime > 0) {
+                    data.data.analysis.startTime = saveStartTime;
+                }
+                if (data.data.analysis.endTime === 0 && saveEndTime > 0) {
+                    data.data.analysis.endTime = saveEndTime;
+                }
+            }
+
+            Object.keys(data.data).forEach((t) => {
+                newGpxFile[`${t}`] = data.data[t];
+            });
+
+            newGpxFile.update = true;
+            newGpxFile.wpts = wpts;
+            newGpxFile.pointsGroups = pointsGroups;
+
+            // auto-srtm
+            if (path === GET_ANALYSIS) {
+                const track = newGpxFile;
+                if (eligibleToApplySrtm({ track })) {
+                    return await applySrtmElevation({ track, setLoading });
+                }
+            }
+
+            return newGpxFile;
+        } else {
+            return ctx.selectedGpxFile;
+        }
+    } finally {
+        finishRunning(ctx.setProcessingAnalytics);
+        finishRunning(setLoading);
     }
 }
 

@@ -259,7 +259,7 @@ describe('srtm', () => {
         });
     });
 
-    test.failing('the analysis is finished when srtm is applied, so routing is not blocked', async () => {
+    test('the analysis is finished when srtm is applied, so routing is not blocked', async () => {
         const ctx = createSrtmCtx();
 
         await analyse(ctx);

@@ -115,11 +115,9 @@ export function debouncer(f, timerRef, ms) {
 }
 
 export function requestAnalysisNow({ ctx, track }) {
-    TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setLoadingContextMenu, track.points).then(
-        (res) => {
-            if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
-        }
-    );
+    TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, null, track.points).then((res) => {
+        if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
+    });
 }
 
 export function requestAnalytics({ ctx, track, debouncerTimer }) {
