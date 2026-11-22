@@ -12,6 +12,7 @@ import MenuItemWithLines from '../components/MenuItemWithLines';
 import {
     ACTIVITY_ALL,
     ALL_ACTIVITY_IDS,
+    IGNORED_GROUP,
     activityGroups,
     groupActivityIds,
     groupItems,
@@ -90,12 +91,13 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
 
     function toggle(ids, shownIds) {
         const allOn = shownIds.every((id) => selected.has(id));
-        const next = new Set(selected);
+        const listedIds = groups.filter((g) => g.id !== IGNORED_GROUP).flatMap((g) => g.ids);
+        const next = new Set(isAll ? listedIds : selected);
         ids.forEach((id) => (allOn ? next.delete(id) : next.add(id)));
         const groupIds = ALL_ACTIVITY_IDS.filter((id) => next.has(id));
         const ignoredIds = [...next].filter((id) => !ALL_ACTIVITY_IDS.includes(id));
         const nextIds = [...groupIds, ...ignoredIds];
-        const isEverything = groupIds.length === ALL_ACTIVITY_IDS.length && ignoredIds.length === 0;
+        const isEverything = listedIds.every((id) => next.has(id)) && ignoredIds.length === 0;
         onChange(nextIds.length === 0 || isEverything ? ACTIVITY_ALL : nextIds);
     }
 

@@ -40,8 +40,8 @@ async function importWebTranslation(folder) {
     return enWebTranslation;
 }
 
-export async function handleLanguageChange({ lng, folderLng = null }) {
-    const folder = folderLng ?? lng;
+export async function handleLanguageChange(folder) {
+    const lng = normalizeLang(folder);
     try {
         const translation = await import(`./resources/translations/${folder}/translation.json`);
         if (translation) {
