@@ -42,16 +42,17 @@ import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
 import CloudInfo from './CloudInfo';
 import ConnectedAppsSection from './ConnectedAppsSection';
 import DeveloperArea from './DeveloperArea';
-import { getStatus } from './purchases/PurchaseManager';
+import { getStatus, PURCHASE_STATE_ACTIVE } from './purchases/PurchaseManager';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
 import { useResetApp } from '../App';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { HEADER_SIZE } from '../manager/GlobalManager';
 import gStyles from '../menu/gstylesmenu.module.css';
+import { PURCHASE_OSMAND_MAPS_PLUS } from '../shop/products/ProductManager';
 
-export function getAccountType({ account = null, name = null }) {
+export function getAccountType({ account = null, name = null, mapsPlus = false }) {
     if (account && account === FREE_ACCOUNT) {
-        return FREE_ACCOUNT_SUB_TYPE;
+        return mapsPlus ? PURCHASE_OSMAND_MAPS_PLUS : FREE_ACCOUNT_SUB_TYPE;
     }
     return name ?? FREE_ACCOUNT_SUB_TYPE;
 }
@@ -144,9 +145,16 @@ export default function LoginMenu() {
         if (!ltx.accountInfo) {
             return FREE_ACCOUNT_SUB_TYPE;
         }
-        const resolvedStatus = getStatus(ltx.accountInfo.state, t);
+        const type =
+            getAccountType({
+                account: ltx.accountInfo.account,
+                name: ltx.accountInfo.name,
+                mapsPlus: ltx.hasMapsPlusFeatures(),
+            }) || '';
+        const state = ltx.accountInfo.state ?? (type === FREE_ACCOUNT_SUB_TYPE ? null : PURCHASE_STATE_ACTIVE);
+        const resolvedStatus = getStatus(state, t);
         const status = resolvedStatus ? resolvedStatus + ' · ' : '';
-        const type = getAccountType({ account: ltx.accountInfo.account, name: ltx.accountInfo.name }) || '';
+
         return status + type;
     };
 

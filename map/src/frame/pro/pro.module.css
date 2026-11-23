@@ -77,25 +77,46 @@
     min-width: 24px !important;
     max-width: 24px !important;
 }
-.proButton {
-    width: 70px !important;
+.planButton {
     height: 24px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     border-radius: 3px !important;
-    padding: 16px !important;
     box-shadow: none !important;
+}
+
+.planButtonLogos {
+    display: flex;
+    padding: 4px 6px 4px 3px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.proButton {
+    width: 70px !important;
+    padding: 16px !important;
     background: rgba(87, 20, 204, 0.2) !important;
 }
 
 .proButton:hover {
     background-color: rgba(87, 20, 204, 0.3) !important;
 }
-.proButtonLogos {
-    display: flex;
-    padding: 4px 6px 4px 3px;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
+
+.mapsPlusButton {
+    padding: 16px 0 !important;
+    background: rgba(255, 136, 0, 0.2) !important;
+}
+
+.mapsPlusButton:hover {
+    background-color: rgba(255, 136, 0, 0.3) !important;
+}
+
+.mapsPlusButtonText {
+    color: #cc6d00;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 12px;
+    text-transform: none;
 }

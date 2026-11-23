@@ -36,8 +36,7 @@ import { TRACK_VISIBLE_FLAG } from '../../manager/track/TracksManager';
 import PoiCategoriesConfig from './PoiCategoriesConfig';
 import capitalize from 'lodash-es/capitalize';
 import TerrainConfig, { getCurrentColorScheme } from './TerrainConfig';
-import ButtonPro from '../../frame/pro/ButtonPro';
-import { FREE_ACCOUNT } from '../../manager/LoginManager';
+import ButtonMapsPlus from '../../frame/pro/ButtonMapsPlus';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import MvtTweaks from './MvtTweaks';
@@ -53,6 +52,7 @@ import {
     VISIBLE_TRACKS_URL,
     liveHash,
     openPricingPage,
+    PRICING_SOURCE_MAPS_PLUS,
 } from '../../manager/GlobalManager';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import VisibleTracks from '../visibletracks/VisibleTracks';
@@ -90,7 +90,8 @@ export default function ConfigureMap() {
         ctx.setConfigureMapState(newConfigureMap);
     };
 
-    const openContourLinesPricing = () => openPricingPage('contour_lines');
+    const openContourLinesPricing = () => openPricingPage('contour_lines', PRICING_SOURCE_MAPS_PLUS);
+    const openTerrainPricing = () => openPricingPage('terrain_visualization', PRICING_SOURCE_MAPS_PLUS);
 
     function setIconStyles(active) {
         let res = [];
@@ -120,14 +121,15 @@ export default function ConfigureMap() {
         updateConfigureMapCache(defaultConfigureMap);
     }
 
-    function showProButton() {
-        return ltx.accountInfo?.account === FREE_ACCOUNT;
+    function showMapsPlusButton() {
+        return Boolean(ltx.accountInfo) && !ltx.hasMapsPlusFeatures();
     }
 
     const mapStyleOptions = ctx.develFeatures ? Object.values(ctx.allTileURLs) : DEFAULT_MAP_STYLE_OPTIONS;
     const mapStyleKey = mapStyleOptions.some((item) => item.key === mtx.tileURL.key) ? mtx.tileURL.key : '';
     const mapStyleLabel = mapStyleOptions.find((item) => item.key === mapStyleKey)?.uiname ?? mtx.tileURL?.uiname ?? '';
     const hasRenderingSettings = Boolean(ctx.allTileURLs[mtx.tileURL.key]?.properties?.length);
+    const isOsmAndVectorMap = isOsmAndTileURL(mtx.tileURL);
 
     function handleMapStyleSelect(selected) {
         if (!selected) {
@@ -181,6 +183,47 @@ export default function ConfigureMap() {
                     }
                 />
             </>
+        );
+    }
+
+    function renderContourLinesItem() {
+        if (showMapsPlusButton()) {
+            return (
+                <DefaultItem
+                    icon={<ContourLinesIcon />}
+                    name={t('web:feature_contour_lines')}
+                    className={styles.item}
+                    onClick={openContourLinesPricing}
+                    rightSlot={
+                        <span onClick={(e) => e.stopPropagation()}>
+                            <ButtonMapsPlus onClick={openContourLinesPricing} />
+                        </span>
+                    }
+                />
+            );
+        }
+        if (isOsmAndVectorMap) {
+            return (
+                <SimpleItemWithSwitch
+                    icon={<ContourLinesIcon />}
+                    text={t('web:feature_contour_lines')}
+                    checked={ctx.configureMapState.showContourLines}
+                    onChange={handleSwitchChange('showContourLines')}
+                    id="se-configure-map-menu-contour-lines-switch"
+                    className={styles.item}
+                    iconClassName={setIconStyles(ctx.configureMapState.showContourLines)}
+                />
+            );
+        }
+
+        return (
+            <DefaultItem
+                icon={<ContourLinesIcon />}
+                name={t('web:feature_contour_lines')}
+                additionalInfo={t('web:available_with_vector_maps')}
+                className={styles.item}
+                onClick={() => handleMapStyleSelect(mvtOsmAndURL)}
+            />
         );
     }
 
@@ -282,45 +325,25 @@ export default function ConfigureMap() {
                                     iconClassName={setIconStyles(ctx.configureMapState.showTransportStops)}
                                 />
                                 <DividerWithMargin margin={'64px'} />
-                                {isOsmAndTileURL(mtx.tileURL) && (
+                                {(isOsmAndVectorMap || !isMvtTileURL(mtx.tileURL)) && (
                                     <>
-                                        {showProButton() ? (
-                                            <DefaultItem
-                                                icon={<ContourLinesIcon />}
-                                                name={t('web:feature_contour_lines')}
-                                                className={styles.item}
-                                                onClick={openContourLinesPricing}
-                                                rightSlot={
-                                                    <span onClick={(e) => e.stopPropagation()}>
-                                                        <ButtonPro onClick={openContourLinesPricing} />
-                                                    </span>
-                                                }
-                                            />
-                                        ) : (
-                                            <SimpleItemWithSwitch
-                                                icon={<ContourLinesIcon />}
-                                                text={t('web:feature_contour_lines')}
-                                                checked={ctx.configureMapState.showContourLines}
-                                                onChange={handleSwitchChange('showContourLines')}
-                                                id="se-configure-map-menu-contour-lines-switch"
-                                                className={styles.item}
-                                                iconClassName={setIconStyles(ctx.configureMapState.showContourLines)}
-                                            />
-                                        )}
+                                        {renderContourLinesItem()}
                                         <DividerWithMargin margin={'64px'} />
                                     </>
                                 )}
                                 <MenuItem
                                     className={styles.item}
                                     onClick={() => {
-                                        if (!showProButton()) {
+                                        if (!showMapsPlusButton()) {
                                             setOpenTerrainConfig(true);
                                         }
                                     }}
                                 >
                                     <ListItemIcon
                                         className={setIconStyles(
-                                            ltx.accountInfo && !showProButton() && ctx.configureMapState.terrain?.key
+                                            ltx.accountInfo &&
+                                                !showMapsPlusButton() &&
+                                                ctx.configureMapState.terrain?.key
                                         )}
                                     >
                                         <TerrainIcon />
@@ -336,8 +359,8 @@ export default function ConfigureMap() {
                                             <Typography variant="inherit" noWrap>
                                                 {t('shared_string_terrain')}
                                             </Typography>
-                                            {showProButton() ? (
-                                                <ButtonPro onClick={() => openPricingPage('terrain_visualization')} />
+                                            {showMapsPlusButton() ? (
+                                                <ButtonMapsPlus onClick={openTerrainPricing} />
                                             ) : (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>
                                                     {capitalize(getCurrentColorScheme(t, ctx))}

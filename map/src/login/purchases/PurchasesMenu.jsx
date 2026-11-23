@@ -121,12 +121,16 @@ export default function PurchasesMenu() {
 
     useEffect(() => {
         if (ltx.accountInfo?.account) {
-            const type = getAccountType({ account: ltx.accountInfo?.account, name: ltx.accountInfo?.name });
+            const type = getAccountType({
+                account: ltx.accountInfo?.account,
+                name: ltx.accountInfo?.name,
+                mapsPlus: ltx.hasMapsPlusFeatures(),
+            });
             setIsFreeAcc(type === FREE_ACCOUNT_SUB_TYPE);
         } else {
             setIsFreeAcc(false);
         }
-    }, [ltx.accountInfo?.account]);
+    }, [ltx.accountInfo?.account, ltx.accountInfo?.mapsPlus]);
 
     const subscriptions = ltx.accountInfo?.subscriptions && JSON.parse(ltx.accountInfo.subscriptions);
     const inAppPurchases = ltx.accountInfo?.inAppPurchases && JSON.parse(ltx.accountInfo.inAppPurchases);

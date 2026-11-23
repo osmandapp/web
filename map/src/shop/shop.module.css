@@ -527,10 +527,6 @@
     height: 24px !important;
 }
 
-.stickyBarIconFramePro {
-    background: rgba(87, 20, 204, 0.2) !important;
-}
-
 .stickyBarInfo {
     display: flex !important;
     flex-direction: column !important;
