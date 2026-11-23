@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { getAccountInfo, INIT_LOGIN_STATE, FREE_ACCOUNT, SKIP_LOGIN, SKIP_LOGIN_USER } from '../manager/LoginManager';
+import {
+    ACCOUNT_PLAN_FREE,
+    ACCOUNT_PLAN_MAPS_PLUS,
+    ACCOUNT_PLAN_PRO,
+    getAccountInfo,
+    INIT_LOGIN_STATE,
+    FREE_ACCOUNT,
+    SKIP_LOGIN,
+    SKIP_LOGIN_USER,
+} from '../manager/LoginManager';
 import { apiGet } from '../util/HttpApi';
 import useCookie from 'react-use-cookie';
-import { PRODUCT_ID_MAPS_PLUS, PRODUCT_ID_PRO, PRODUCT_ID_START } from '../shop/products/ProductManager';
-import { planFeatures } from '../shop/features/FeaturesManager';
 
 const LoginContext = React.createContext();
 
@@ -49,10 +56,9 @@ export const LoginContextProvider = ({ children }) => {
 
     const isLoggedIn = () => Boolean(loginUser && loginUser !== INIT_LOGIN_STATE);
     const accountPlan = isLoggedIn() ? getAccountPlan(accountInfo) : null;
-    const isProAccount = () => accountPlan === PRODUCT_ID_PRO;
+    const isProAccount = () => accountPlan === ACCOUNT_PLAN_PRO;
+    const hasMapsPlus = () => accountPlan === ACCOUNT_PLAN_PRO || accountPlan === ACCOUNT_PLAN_MAPS_PLUS;
     const isAdmin = () => Boolean(loginRoles?.includes('ROLE_ADMIN'));
-
-    const hasFeature = (featureId) => planFeatures[accountPlan]?.includes(featureId) ?? false;
 
     useEffect(() => {
         if (SKIP_LOGIN) {
@@ -117,7 +123,7 @@ export const LoginContextProvider = ({ children }) => {
                 isProAccount,
                 isAdmin,
                 accountPlan,
-                hasFeature,
+                hasMapsPlus,
             }}
         >
             {children}
@@ -130,10 +136,10 @@ function getAccountPlan(accountInfo) {
         return null;
     }
     if (accountInfo.account !== FREE_ACCOUNT) {
-        return PRODUCT_ID_PRO;
+        return ACCOUNT_PLAN_PRO;
     }
 
-    return accountInfo.mapsPlus === 'true' ? PRODUCT_ID_MAPS_PLUS : PRODUCT_ID_START;
+    return accountInfo.mapsPlus === 'true' ? ACCOUNT_PLAN_MAPS_PLUS : ACCOUNT_PLAN_FREE;
 }
 
 export default LoginContext;

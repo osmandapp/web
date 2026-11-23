@@ -14,7 +14,7 @@ import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { getStatus } from './PurchaseManager';
-import { PRODUCT_ID_START } from '../../shop/products/ProductManager';
+import { ACCOUNT_PLAN_FREE } from '../../manager/LoginManager';
 import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
 import { formatString } from '../../manager/SettingsManager';
 
@@ -125,7 +125,7 @@ export default function PurchasesMenu() {
         [subscriptions, inAppPurchases]
     );
 
-    const isFreeAcc = ltx.accountPlan === PRODUCT_ID_START;
+    const isFreeAcc = ltx.accountPlan === ACCOUNT_PLAN_FREE;
 
     function clickOnSubscription(index) {
         setSelectedPurchase({

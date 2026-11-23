@@ -18,7 +18,6 @@ import {
 } from './MvtLayerConfig';
 import { isSmallLengthUnitFeet } from '../../menu/settings/units/UnitsConverter';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
-import { FEATURE_CONTOUR_LINES } from '../../shop/features/FeaturesManager';
 import { isTravelSearchOn } from './TravelLayer';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
 import {
@@ -150,7 +149,7 @@ export default function MvtLayer({ config }) {
     const hybridUnderlayUrlRef = useRef(hybridUnderlayUrl);
     const maplibreMapRef = useRef(null);
     const dataZoomShift = ctx.develFeatures && isOsmAndTileURL(mtx.tileURL) ? vtx.mvtTweaks.dataZoomShift : 0;
-    const showContourLines = ctx.configureMapState.showContourLines && ltx.hasFeature(FEATURE_CONTOUR_LINES);
+    const showContourLines = ctx.configureMapState.showContourLines && ltx.hasMapsPlus();
     const contourLinesFeet = isSmallLengthUnitFeet(ctx);
 
     hybridUnderlayUrlRef.current = hybridUnderlayUrl;
