@@ -191,6 +191,8 @@ The *Route Information* widget provides real-time data about the ongoing navigat
 
 > NOTE: The widget is visible only during navigation.
 
+On Android phones in landscape orientation, the *<Translate android="true" ids="map_widget_route_information"/>* widget is hidden by default. Instead, the *<Translate android="true" ids="map_widget_right"/>* shows the [<Translate android="true" ids="map_widget_distance_to_destination"/>](#distance-to-destination), [<Translate android="true" ids="map_widget_time_to_destination"/>](#time-to-destination), [<Translate android="true" ids="map_widget_distance_to_intermediate"/>](#distance-to-intermediate), and [<Translate android="true" ids="map_widget_time_to_intermediate"/>](#time-to-intermediate) widgets. You can show or hide any of these widgets in [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md).
+
 | | |
 |:------------|:------------|
 | Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget →<Translate android="true" ids="map_widget_route_information"/>* |
