@@ -482,7 +482,6 @@ export default function TravelMenu() {
     }
 
     function previewMonths(value) {
-        previewFilter('months', toMonthsFilter(value));
         ttx.setTravelPreviewDates({ dateFrom: monthKey(value[0]), dateTo: monthKey(value[1]) });
     }
 
@@ -491,7 +490,9 @@ export default function TravelMenu() {
         setFilter('months', toMonthsFilter(value));
     }
 
-    const uploadMonths = filters.months ?? [0, LAST_MONTH];
+    const uploadMonths = ttx.travelPreviewDates
+        ? [monthIndex(ttx.travelPreviewDates.dateFrom), monthIndex(ttx.travelPreviewDates.dateTo)]
+        : filters.months ?? [0, LAST_MONTH];
 
     const hasActiveFilters =
         filters.tags.length > 0 ||
