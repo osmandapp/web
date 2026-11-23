@@ -210,9 +210,7 @@ The **Default speed** is the default movement speed for this mode of transport (
 
 ### Speed Range {#speed-range}
 
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
+<InfoAndroidOnly />
 
 For some types of navigation the minimum and maximum allowable speed can be set. Both values are set with one slider with two handles. If they are set, the routing engine assumes that the vehicle or transportation mode won't move faster than the maximum speed and won't move slower than the minimum speed. The *Speed range* is used for both route calculation and arrival time.
 For example, it allows to create a **fuel efficient** route where fuel consumption is optimal at **maximum speed** set and the engine will find a shorter route avoiding longer but faster roads.
@@ -222,22 +220,6 @@ For example, it allows to create a **fuel efficient** route where fuel consumpti
 
 The *Speed range* is not available for profiles with straight line routing, for example, *Aircraft*.
 
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-For some types of navigation the minimum and maximum allowable speed can be set. If they are set, the routing engine assumes that the vehicle or transportation mode won't move faster than the maximum speed and won't move slower than the minimum speed.
-For example, it allows to create a **fuel efficient** route where fuel consumption is optimal at **maximum speed** set and the engine will find a shorter route avoiding longer but faster roads.
-
-- **Minimum speed**  
-    The setting sets the minimum driving speed for all road types on the route. It increases the priority for roads with a recommended speed lower than the minimum speed.  
-- **Maximum speed**  
-    The setting sets the maximum driving speed and decreases the priority for roads with a possible speed higher than the maximum.
-
-</TabItem>
-
-</Tabs>
-
 
 ### Estimated Arrival Time {#estimated-arrival-time}
 
@@ -245,7 +227,7 @@ For example, it allows to create a **fuel efficient** route where fuel consumpti
 
 The *Estimated arrival time* settings define how OsmAnd calculates the arrival time during navigation.
 
-- **Adapt to my speed** — off by default. When the setting is off, the arrival time comes from the expected speed on each road of the route. When it is on, OsmAnd divides the remaining distance by your average speed over the selected *Interval*. Only movement during navigation is counted, stops are skipped. Right after the navigation starts, the route estimate is shown until the *Interval* is filled.
+- **Adapt to my speed** — off by default. When the setting is off, the arrival time comes from the expected speed on each road of the route. When it is on, OsmAnd divides the remaining distance by your average speed over the selected *Interval*. Only movement during navigation is counted, stops are skipped. Right after the navigation starts, the arrival time combines the route estimate with your average speed until you have been moving for the whole *Interval*.
 - **Interval** — the period over which your average speed is measured, from 15 seconds to 60 minutes. The default value is 15 minutes. The setting is available when *Adapt to my speed* is on.
 
 The adapted arrival time is shown in the [*Time to destination*](../../widgets/nav-widgets.md#time-to-destination) and [*Time to intermediate*](../../widgets/nav-widgets.md#time-to-intermediate) widgets, in the navigation notification, and in [Android Auto](../auto-car.md). Time to the next turn and voice prompts are not affected.
