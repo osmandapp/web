@@ -14,9 +14,11 @@ import { Trans, useTranslation } from 'react-i18next';
 import EmptyLogin from './EmptyLogin';
 import Login from './Login';
 import {
+    ACCOUNT_PLAN_FREE,
+    ACCOUNT_PLAN_MAPS_PLUS,
+    ACCOUNT_PLAN_PRO,
     CANCEL_LOGIN_LINK_PARAM,
     closeLoginMenu,
-    FREE_ACCOUNT,
     FREE_ACCOUNT_SUB_TYPE,
     getLoginLink,
     LOGIN_LINK_EMAIL_PARAM,
@@ -42,19 +44,13 @@ import AppBarWithBtns from '../frame/components/header/AppBarWithBtns';
 import CloudInfo from './CloudInfo';
 import ConnectedAppsSection from './ConnectedAppsSection';
 import DeveloperArea from './DeveloperArea';
-import { getStatus } from './purchases/PurchaseManager';
+import { getStatus, PURCHASE_STATE_ACTIVE } from './purchases/PurchaseManager';
 import DividerWithMargin from '../frame/components/dividers/DividerWithMargin';
 import { useResetApp } from '../App';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { HEADER_SIZE } from '../manager/GlobalManager';
 import gStyles from '../menu/gstylesmenu.module.css';
-
-export function getAccountType({ account = null, name = null }) {
-    if (account && account === FREE_ACCOUNT) {
-        return FREE_ACCOUNT_SUB_TYPE;
-    }
-    return name ?? FREE_ACCOUNT_SUB_TYPE;
-}
+import { PURCHASE_OSMAND_MAPS_PLUS } from '../shop/products/ProductManager';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -144,9 +140,11 @@ export default function LoginMenu() {
         if (!ltx.accountInfo) {
             return FREE_ACCOUNT_SUB_TYPE;
         }
-        const resolvedStatus = getStatus(ltx.accountInfo.state, t);
+        const type = getAccountType(ltx.accountPlan, ltx.accountInfo.name);
+        const state = ltx.accountInfo.state ?? (ltx.accountPlan === ACCOUNT_PLAN_FREE ? null : PURCHASE_STATE_ACTIVE);
+        const resolvedStatus = getStatus(state, t);
         const status = resolvedStatus ? resolvedStatus + ' · ' : '';
-        const type = getAccountType({ account: ltx.accountInfo.account, name: ltx.accountInfo.name }) || '';
+
         return status + type;
     };
 
@@ -282,4 +280,12 @@ export default function LoginMenu() {
             {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}
         </>
     );
+}
+
+function getAccountType(plan, name) {
+    if (plan === ACCOUNT_PLAN_MAPS_PLUS) {
+        return PURCHASE_OSMAND_MAPS_PLUS;
+    }
+
+    return plan === ACCOUNT_PLAN_PRO ? (name ?? FREE_ACCOUNT_SUB_TYPE) : FREE_ACCOUNT_SUB_TYPE;
 }

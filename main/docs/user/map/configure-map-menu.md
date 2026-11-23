@@ -26,7 +26,7 @@ Section **Show**:
 
 Section **Topography**:  
 
-![Configure map android](@site/static/img/map/configure_map_topography_andr_new.png)  
+![Configure map android](@site/static/img/map/configure_map_topography_andr_new.webp)  
 
 Section **OpenStreetMap**:  
 

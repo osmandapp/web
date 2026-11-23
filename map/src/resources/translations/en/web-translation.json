@@ -667,5 +667,6 @@
     "new_email": "New Email",
     "finish_btn": "Finish",
     "email_changed_successfully": "Email changed successfully",
-    "login_new_credentials_btn": "Login using new credentials"
+    "login_new_credentials_btn": "Login using new credentials",
+    "available_with_vector_maps": "Available with vector maps"
 }

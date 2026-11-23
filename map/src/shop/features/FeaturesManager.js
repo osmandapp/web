@@ -27,6 +27,9 @@ import { ReactComponent as InteractiveArIcon } from '../../assets/features/ic_ac
 import { ReactComponent as OfflineSkyMapIcon } from '../../assets/features/ic_action_sky_map_download.svg';
 import { PRODUCT_ID_MAPS_PLUS, PRODUCT_ID_PRO, PRODUCT_ID_START } from '../products/ProductManager';
 
+export const FEATURE_CONTOUR_LINES = 'contour_lines';
+export const FEATURE_TERRAIN_VISUALIZATION = 'terrain_visualization';
+
 export const featureCategories = [
     {
         id: 'features',
@@ -141,13 +144,13 @@ export const featureCategories = [
                 icon: <Relief3dIcon />,
             },
             {
-                id: 'contour_lines',
+                id: FEATURE_CONTOUR_LINES,
                 name: 'web:feature_contour_lines',
                 desc: 'web:feature_contour_lines_desc',
                 icon: <SrtmIcon />,
             },
             {
-                id: 'terrain_visualization',
+                id: FEATURE_TERRAIN_VISUALIZATION,
                 name: 'web:feature_terrain_visualization',
                 desc: 'web:feature_terrain_visualization_desc',
                 icon: <TerrainVisualizationIcon />,
@@ -277,8 +280,8 @@ export const planFeatures = {
         'settings_favorites_sync',
         'monthly_map_updates',
         'unlimited_map_downloads',
-        'contour_lines',
-        'terrain_visualization',
+        FEATURE_CONTOUR_LINES,
+        FEATURE_TERRAIN_VISUALIZATION,
         'android_auto_and_apple_carplay',
         'external_sensors',
         'wikimedia_photos',
@@ -306,8 +309,8 @@ export const planFeatures = {
         'monthly_map_updates',
         'unlimited_map_downloads',
         '3d_relief',
-        'contour_lines',
-        'terrain_visualization',
+        FEATURE_CONTOUR_LINES,
+        FEATURE_TERRAIN_VISUALIZATION,
         'android_auto_and_apple_carplay',
         'vehicle_metrics_obd_ii',
         'external_sensors',
