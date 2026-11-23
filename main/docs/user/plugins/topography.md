@@ -205,7 +205,7 @@ Terrain is a [paid feature](../purchases/index.md).
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Terrain menu Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.webp)
 
 </TabItem>
 
@@ -219,13 +219,14 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </Tabs>  
 
-The **Terrain** option enables and allows you to customize three features such as *Hillshade*, *Slope*, and *Altitude*. On iOS, the Visualization menu also includes *Terrain Shadows*, a real-time terrain shading mode based on 3D Relief.  
+The **Terrain** option enables and allows you to customize three features such as *Hillshade*, *Slope*, and *Altitude*. On iOS, the Visualization menu also includes [*Terrain Shadows*](#terrain-shadows), a real-time terrain shading mode based on 3D Relief.  
 Specific features:  
 
-- Only one option can be enabled at the same time, either Hillshade, Slope, Altitude, or Terrain Shadows.
+- Only one option can be enabled at the same time, either Hillshade, Slope, Altitude, or Terrain Shadows (the last one is available only on iOS).
 - If you do not see any changes after downloading and enabling the corresponding map, it is recommended to restart the application.
+- On Android, the Terrain screen also shows the [3D Relief](#3d-relief) and [3D buildings](#3d-buildings) rows, which open their settings. These rows stay visible when the Terrain switch is off.
 
-The **Terrain** menu includes [color scheme](#default-color-scheme) (**visualization** on iOS) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
+The **Terrain** menu includes [visualization](#default-color-scheme) selection with the option to [modify it](#modify-color-scheme) (for [Pro subscribers](../../user/purchases/index.md)), the ability to change the transparency of the layer on the map ([visibility](#visibility)), and select the [zoom level](#zoom-levels) for its display, information about the size of [cached data](#cache-size), and a list of [maps](../../user/personal/maps-resources.md) needed to display the layer.
 
 
 ## Hillshade, Slope and Altitude Layers {#hillshade-slope-and-altitude-layers}
@@ -281,7 +282,7 @@ Terrain Shadows requires 3D Relief and automatically enables it when selected. T
 
 <TabItem value="android" label="Android">
 
-![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.webp)   ![Modify Color Scheme](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
@@ -316,7 +317,7 @@ For advanced palette customization using palette files, see [Color Schemes](../p
 | ------ | ------- |
 | ![Visibility ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibility ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter. For Terrain Shadows, Visibility controls the strength of the terrain shading effect.
+The *Visibility* function is used to adjust the transparency of the shadows for Hillshade and the colors used for representing the angle in the Slope parameter. For [Terrain Shadows](#terrain-shadows) on iOS, Visibility controls the strength of the terrain shading effect.
 
 ### Zoom Levels {#zoom-levels}
 
@@ -324,7 +325,7 @@ The *Visibility* function is used to adjust the transparency of the shadows for 
 
 The *Scale Levels* function allows you to set the minimum and maximum values of map zoom levels, ranging from 4 to 19, at which the Hillshade or Slope map layers will be displayed.
 
-Zoom Levels are not available for Terrain Shadows because this visualization is rendered dynamically and does not depend on raster layer visibility ranges.
+Zoom Levels are not available for Terrain Shadows on iOS because this visualization is rendered dynamically and does not depend on raster layer visibility ranges.
 
 ### Cache Size {#cache-size}
 
@@ -391,7 +392,7 @@ Use the main toggle to enable or disable 3D rendering of buildings. When enabled
 On Android, this option is available only when the Topography plugin is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-The 3D buildings settings are divided into two groups, **Appearance** and **Performance**, followed by a separate [**Sun**](#sun) setting (*Android only*).
+The 3D buildings settings are divided into two groups, **Appearance** and **Performance**, followed by a separate [**Sun position**](#sun-position) setting (*Android only*).
 
 ### Appearance {#appearance}
 
@@ -429,7 +430,7 @@ On the preview screens (Color / Visibility), you can use Reset to default from t
 
 ### Performance {#performance}
 
-The **<Translate android="true" ids="performance"/>** controls how 3D buildings are rendered. It includes two settings: Level of detail and View distance.
+The **<Translate android="true" ids="performance"/>** controls how 3D buildings are rendered. It includes three settings: Level of detail, View distance, and Shadows.
 
 **<Translate android="true" ids="level_of_details"/>** determines the complexity of the 3D building geometry:
 - Low (default) — simpler geometry.
@@ -439,26 +440,32 @@ The **<Translate android="true" ids="performance"/>** controls how 3D buildings 
 - Near (default) — renders buildings closer to you.
 - Far — renders buildings from a longer distance.
 
-Both performance options use a two-position toggle right in the 3D buildings settings screen.
+**<Translate android="true" ids="cast_shadows"/>** (*Android only*) controls sun shadows on the map:
+- Off (default) — buildings are drawn without shadows.
+- On — buildings cast shadows on the ground and on the walls of neighboring buildings in the direction set in [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). When [3D Relief](#3d-relief) is enabled, the terrain also casts shadows. The darkness of building shadows depends on the [Visibility](#appearance) of 3D buildings.
+
+All three performance options use a two-position toggle right in the 3D buildings settings screen. Shadows are set separately for each profile and are available only with the [Version 2 (OpenGL)](#rendering-engine-android) rendering engine.
 
 **Note:** Using *High detail* and *Far view distance* improves visual appearance but may impact performance and increase battery usage.
 
 
-### Sun {#sun}
+### Sun Position {#sun-position}
 
 <InfoAndroidOnly />
 
 ![Sun](@site/static/img/map/sun_setting.webp) ![Sun shadows](@site/static/img/map/sun_shadows.webp)
 
-The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders and a switch:
+The **<Translate android="true" ids="map_widget_sun_position"/>** setting defines the direction of light for building shadows and for the Terrain shadows of 3D Relief. You can open it from the 3D buildings screen and from the 3D Relief screen. The row shows the current sun direction, and tapping it opens a preview panel with three modes:
 
-- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
-- Altitude — controls the height of the sun above the horizon.
-- Shadows — displays shadows cast by 3D buildings in the direction set by Azimuth and Altitude. Buildings cast shadows on the ground and on the walls of neighboring buildings. When [3D Relief](#3d-relief) is enabled, the terrain also casts shadows. The darkness of building shadows depends on the [Visibility](#appearance) of 3D buildings.
+- **<Translate android="true" ids="sun_light_live"/>** — uses the real position of the sun above the center of the map at the current time. Azimuth and Altitude are shown for reference.
+- **<Translate android="true" ids="shared_string_date"/>** — uses the real position of the sun above the center of the map at the date and time you select. The time is set in the time zone of your device.
+- **<Translate android="true" ids="shared_string_manual"/>** — lets you set the light direction with two sliders:
+    - *<Translate android="true" ids="shared_string_azimuth"/>* — controls the horizontal direction of the light source (the compass direction of the sun).
+    - *<Translate android="true" ids="altitude"/>* — controls the height of the sun above the horizon.
 
-Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+Changes appear on the map immediately. Tap Apply to confirm the selected sun position. Reset to default switches to Manual mode with an azimuth of 315° and an altitude of 45°.
 
-**Note:** The Shadows switch is available only with the [Version 2 (OpenGL)](#rendering-engine-android) rendering engine. It is off by default and is set separately for each profile.
+**Note:** Sun position is available only with the [Version 2 (OpenGL)](#rendering-engine-android) rendering engine.
 
 
 ## 3D Relief {#3d-relief}
@@ -473,7 +480,7 @@ Changing these parameters modifies how shadows fall on buildings and can improve
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![3D Relief](@site/static/img/map/configure_map_topography_andr_new.webp) ![3D Relief](@site/static/img/plugins/contour-lines/3drelief_screen_andr.webp)
 
 </TabItem>
 
@@ -488,6 +495,8 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 </Tabs>  
 
 The 3D Relief feature produces a raised relief and provides a three-dimensional representation of the landscape. 3D Relief works offline and can be used with [OsmAnd vector maps](../map/vector-maps.md) or any  [raster maps](../map/raster-maps.md#layers) as a [Map Source](../map/raster-maps.md#main) or as an [Underlay/Overlay](../map/raster-maps.md#overlay).
+
+On Android, 3D Relief has its own settings screen with the main switch, [<Translate android="true" ids="vertical_exaggeration"/>](#vertical-exaggeration), [<Translate android="true" ids="terrain_shadows"/>](#terrain-shadows-android), and [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). The 3D Relief item in the Configure map menu shows whether 3D Relief is on and the current Terrain shadows intensity. You can also open 3D Relief from the Terrain screen.
 
 ***How to display 3D Relief on the map.***
 
@@ -543,6 +552,18 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 *Vertical exaggeration* is a special coefficient for *3D relief*. You can change the scale (*Vertical exaggeration*) from x1 to x3. This feature allows you to view smoother terrain contours with increased detail.
 
+### Terrain Shadows (Android) {#terrain-shadows-android}
+
+Go to: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d,terrain_shadows"/>*
+
+![Terrain shadows Android](@site/static/img/plugins/contour-lines/terrain_shadows_andr.webp)
+
+**<Translate android="true" ids="terrain_shadows"/>** shade the 3D relief in real time, based on the terrain geometry and the [Sun position](#sun-position). They are drawn whenever 3D Relief is on.
+
+Tap *Terrain shadows* to open a preview panel, set the intensity from 10% to 100% (40% by default), and tap Apply. The intensity is set separately for each profile.
+
+**Note:** While Terrain shows Hillshade, Terrain shadows are off, because Hillshade already shades the relief.
+
 
 ### Hillshade and 3D Relief {#hillshade-and-3d-relief}
 
@@ -553,7 +574,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 **Hillshade** is a type of map that displays terrain using shadows, creating a visual representation of the slope and shape of the earth's surface.  
 **3D Relief** is a feature that adds three-dimensional effects to the map.  
 
-If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will still be visible because *Hillshade* and *3D Relief* are two different ways of visualizing a map. *Hillshade* creates shadows based on the terrain and adds them to the map, while *3D Relief* models 3D elements to show the depth and shape of the terrain, and the shadows are part of the visualization. These features can work in parallel, and disabling *Hillshade* does not affect how 3D effects are displayed.  
+If you **disable** *Hillshade* and **enable** *3D Relief*, relief shadows will still be visible because *Hillshade* and *3D Relief* are two different ways of visualizing a map. *Hillshade* creates shadows based on the terrain and adds them to the map, while *3D Relief* models 3D elements to show the depth and shape of the terrain, and the shadows are part of the visualization. These features can work in parallel, and disabling *Hillshade* does not affect how 3D effects are displayed. On Android, these relief shadows are [Terrain shadows](#terrain-shadows-android), and they are off while Terrain shows Hillshade.  
 
 When **Hillshade** is **enabled**, an image with relief shadows appears more detailed, darker, and more stepped than a *3D Relief* image. The explanation is that *Hillshade* emphasizes the gradients and contrasts of the terrain, creating a sharper and more detailed image. The *3D Relief* feature gives the map a more fluid and smoothed appearance, softening the terrain and potentially reducing the visibility of some finer details.
 
