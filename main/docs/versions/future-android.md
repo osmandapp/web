@@ -34,6 +34,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 
 - **[Spatial Search](https://osmand.net/blog/offline-search-video)** is enabled by default, with more accurate ranking, synonyms, and suggested corrections for misspelled words.
 - **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** is free for all users and gets [suggestions from recent destinations](https://osmand.net/docs/user/navigation/auto-car#dashboard-suggestions), automatic [Free ride](https://osmand.net/docs/user/navigation/auto-car#destination-points) while driving, and [Google Assistant and Gemini](https://osmand.net/docs/user/navigation/auto-car#voice-control) support.
+- The **[free version](https://osmand.net/docs/user/purchases/android#free-and-paid-features)** includes all maps of one region.
 - New **Panoramax plugin** with street-level imagery as a map layer, filtered by contributor, date, and type.
 - Realistic **[sun shadows](https://osmand.net/docs/user/plugins/topography#sun)** cast by 3D buildings and terrain.
 - Media library in **[My Places](https://osmand.net/docs/user/personal/myplaces)** that gathers your photos, videos, and audio notes in one place.
