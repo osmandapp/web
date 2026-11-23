@@ -87,7 +87,7 @@ To pair a new sensor, follow these steps:
 - On **Android**, both BLE and ANT+ sensors may be supported depending on your device. See [ANT+ compatibility guide](https://www.thisisant.com/consumer/ant-101/ant-in-phones) for more details.
 - A **pop-up notification** will appear each time a sensor connects or disconnects.
 - **Bicycle power sensors** are available only on Android via ANT+ and BLE.
-- A sensor that transmits several types of data (for example, a heart rate monitor that also measures running speed and cadence, or earbuds with heart rate and temperature) appears in the list as one device. OsmAnd reads all supported data types from it.
+- On **Android**, a sensor that transmits several types of data (for example, a heart rate monitor that also measures running speed and cadence, or earbuds with heart rate and temperature) appears in the list as one device. OsmAnd reads all supported data types from it.
 
 
 ## Sensor Settings {#sensor-settings}
@@ -123,7 +123,7 @@ Each paired external sensor listed in OsmAnd has its own configuration screen wi
 - **Connect / Disconnect** – toggle the connection state.
 - **Rename** – assign a custom name to the sensor.
 - **Forget sensor** – remove the sensor from the list (can be re-paired later).
-- **Settings** – open the sensor details screen (sensor type, values, battery level, wheel circumference setting). For a sensor with several data types, the screen shows all its values.
+- **Settings** – open the sensor details screen (sensor type, values, battery level, wheel circumference setting). On **Android**, for a sensor with several data types, the screen shows all its values.
 
 ***Notes:***
 
@@ -165,7 +165,7 @@ To record sensor data using the [Trip recording plugin](../plugins/trip-recordin
 - The list of available sensor types is shown even if no sensors are connected.
 - If no sensors are paired yet, use the [Pair new sensor](#pair-new-sensor) button in the plugins settings.
 - Battery level data is **not** recorded into GPX files and is not available for analysis on the map.
-- One sensor with several data types can be selected as the source for each of them.
+- On **Android**, one sensor with several data types can be selected as the source for each of them.
 - The default source for each data type is *Any connected*. OsmAnd records data from a connected sensor of this type. To stop recording a data type, select *None*.
 - On **Android**, the name of the matching paired sensor is shown next to *Any connected*. If you forget a selected sensor, the source returns to *Any connected*.
 
@@ -269,7 +269,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,share
 
 </Tabs>
 
-By default, the widget shows the first currently connected sensor of this type. If you want to use a specific sensor, tap **Source of data** and choose from the list of connected sensors. A sensor with several data types is available as a source in each matching widget, for example, *Heart rate*, *Bicycle speed*, and *Bicycle cadence*.
+By default, the widget shows the first currently connected sensor of this type. If you want to use a specific sensor, tap **Source of data** and choose from the list of connected sensors. On **Android**, a sensor with several data types is available as a source in each matching widget, for example, *Heart rate*, *Bicycle speed*, and *Bicycle cadence*.
 
 On **iOS**, you can choose what value to display in the widget:  
 
