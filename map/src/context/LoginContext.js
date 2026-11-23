@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { getAccountInfo, INIT_LOGIN_STATE, FREE_ACCOUNT, SKIP_LOGIN, SKIP_LOGIN_USER } from '../manager/LoginManager';
 import { apiGet } from '../util/HttpApi';
 import useCookie from 'react-use-cookie';
+import { PRODUCT_ID_MAPS_PLUS, PRODUCT_ID_PRO, PRODUCT_ID_START } from '../shop/products/ProductManager';
+import { planFeatures } from '../shop/features/FeaturesManager';
 
 const LoginContext = React.createContext();
 
@@ -46,11 +48,11 @@ export const LoginContextProvider = ({ children }) => {
     const [emailCookie, setEmailCookie] = useCookie('email', '');
 
     const isLoggedIn = () => Boolean(loginUser && loginUser !== INIT_LOGIN_STATE);
-    const isProAccount = () => isLoggedIn() && accountInfo?.account !== FREE_ACCOUNT;
-    const isMapsPlusAccount = () => isLoggedIn() && accountInfo?.mapsPlus === 'true';
-    const isProAccountLoaded = () => Boolean(accountInfo) && isProAccount();
-    const hasMapsPlusFeatures = () => isProAccountLoaded() || isMapsPlusAccount();
+    const accountPlan = isLoggedIn() ? getAccountPlan(accountInfo) : null;
+    const isProAccount = () => accountPlan === PRODUCT_ID_PRO;
     const isAdmin = () => Boolean(loginRoles?.includes('ROLE_ADMIN'));
+
+    const hasFeature = (featureId) => planFeatures[accountPlan]?.includes(featureId) ?? false;
 
     useEffect(() => {
         if (SKIP_LOGIN) {
@@ -113,14 +115,25 @@ export const LoginContextProvider = ({ children }) => {
                 setCompletePurchase,
                 isLoggedIn,
                 isProAccount,
-                isMapsPlusAccount,
-                hasMapsPlusFeatures,
                 isAdmin,
+                accountPlan,
+                hasFeature,
             }}
         >
             {children}
         </LoginContext.Provider>
     );
 };
+
+function getAccountPlan(accountInfo) {
+    if (accountInfo === null) {
+        return null;
+    }
+    if (accountInfo.account !== FREE_ACCOUNT) {
+        return PRODUCT_ID_PRO;
+    }
+
+    return accountInfo.mapsPlus === 'true' ? PRODUCT_ID_MAPS_PLUS : PRODUCT_ID_START;
+}
 
 export default LoginContext;

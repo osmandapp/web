@@ -16,7 +16,6 @@ import Login from './Login';
 import {
     CANCEL_LOGIN_LINK_PARAM,
     closeLoginMenu,
-    FREE_ACCOUNT,
     FREE_ACCOUNT_SUB_TYPE,
     getLoginLink,
     LOGIN_LINK_EMAIL_PARAM,
@@ -48,14 +47,12 @@ import { useResetApp } from '../App';
 import { useWindowSize } from '../util/hooks/useWindowSize';
 import { HEADER_SIZE } from '../manager/GlobalManager';
 import gStyles from '../menu/gstylesmenu.module.css';
-import { PURCHASE_OSMAND_MAPS_PLUS } from '../shop/products/ProductManager';
-
-export function getAccountType({ account = null, name = null, mapsPlus = false }) {
-    if (account && account === FREE_ACCOUNT) {
-        return mapsPlus ? PURCHASE_OSMAND_MAPS_PLUS : FREE_ACCOUNT_SUB_TYPE;
-    }
-    return name ?? FREE_ACCOUNT_SUB_TYPE;
-}
+import {
+    PRODUCT_ID_MAPS_PLUS,
+    PRODUCT_ID_PRO,
+    PRODUCT_ID_START,
+    PURCHASE_OSMAND_MAPS_PLUS,
+} from '../shop/products/ProductManager';
 
 export default function LoginMenu() {
     const ctx = useContext(AppContext);
@@ -145,13 +142,8 @@ export default function LoginMenu() {
         if (!ltx.accountInfo) {
             return FREE_ACCOUNT_SUB_TYPE;
         }
-        const type =
-            getAccountType({
-                account: ltx.accountInfo.account,
-                name: ltx.accountInfo.name,
-                mapsPlus: ltx.isMapsPlusAccount(),
-            }) || '';
-        const state = ltx.accountInfo.state ?? (type === FREE_ACCOUNT_SUB_TYPE ? null : PURCHASE_STATE_ACTIVE);
+        const type = getAccountType(ltx.accountPlan, ltx.accountInfo.name);
+        const state = ltx.accountInfo.state ?? (ltx.accountPlan === PRODUCT_ID_START ? null : PURCHASE_STATE_ACTIVE);
         const resolvedStatus = getStatus(state, t);
         const status = resolvedStatus ? resolvedStatus + ' · ' : '';
 
@@ -290,4 +282,12 @@ export default function LoginMenu() {
             {deleteAccountFlag && <DeleteAccountDialog setDeleteAccountFlag={setDeleteAccountFlag} />}
         </>
     );
+}
+
+function getAccountType(plan, name) {
+    if (plan === PRODUCT_ID_MAPS_PLUS) {
+        return PURCHASE_OSMAND_MAPS_PLUS;
+    }
+
+    return plan === PRODUCT_ID_PRO ? (name ?? FREE_ACCOUNT_SUB_TYPE) : FREE_ACCOUNT_SUB_TYPE;
 }

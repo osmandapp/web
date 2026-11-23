@@ -4,6 +4,7 @@ import MapContext from '../../context/MapContext';
 import L from 'leaflet';
 import { NO_HEIGHTMAP } from '../../menu/configuremap/TerrainConfig';
 import LoginContext from '../../context/LoginContext';
+import { FEATURE_TERRAIN_VISUALIZATION } from '../../shop/features/FeaturesManager';
 
 export default function HeightmapLayer() {
     const mtx = useContext(MapContext);
@@ -18,7 +19,7 @@ export default function HeightmapLayer() {
     useEffect(() => {
         if (!map) return;
 
-        if (mtx.heightmap === NO_HEIGHTMAP.key || !ltx.hasMapsPlusFeatures()) {
+        if (mtx.heightmap === NO_HEIGHTMAP.key || !ltx.hasFeature(FEATURE_TERRAIN_VISUALIZATION)) {
             if (tileLayerRef.current) {
                 map.removeLayer(tileLayerRef.current);
                 tileLayerRef.current = null;
@@ -69,7 +70,7 @@ export default function HeightmapLayer() {
                 tileLayerRef.current.off('tileerror');
             }
         };
-    }, [mtx.heightmap, ltx.hasMapsPlusFeatures()]);
+    }, [mtx.heightmap, ltx.hasFeature(FEATURE_TERRAIN_VISUALIZATION)]);
 
     useEffect(() => {
         mtx.setProcessHeightmaps(loadingTiles);

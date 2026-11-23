@@ -1,5 +1,5 @@
 import AppBarWithBtns from '../../frame/components/header/AppBarWithBtns';
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Outlet, useLocation, useNavigate, useOutlet } from 'react-router-dom';
 import EmptyLogin from '../EmptyLogin';
@@ -14,8 +14,7 @@ import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import { getStatus } from './PurchaseManager';
-import { getAccountType } from '../LoginMenu';
-import { FREE_ACCOUNT_SUB_TYPE } from '../../manager/LoginManager';
+import { PRODUCT_ID_START } from '../../shop/products/ProductManager';
 import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
 import { formatString } from '../../manager/SettingsManager';
 
@@ -117,20 +116,6 @@ export default function PurchasesMenu() {
     const [, height] = useWindowSize();
 
     const [selectedPurchase, setSelectedPurchase] = useState(null);
-    const [isFreeAcc, setIsFreeAcc] = useState(false);
-
-    useEffect(() => {
-        if (ltx.accountInfo?.account) {
-            const type = getAccountType({
-                account: ltx.accountInfo?.account,
-                name: ltx.accountInfo?.name,
-                mapsPlus: ltx.isMapsPlusAccount(),
-            });
-            setIsFreeAcc(type === FREE_ACCOUNT_SUB_TYPE);
-        } else {
-            setIsFreeAcc(false);
-        }
-    }, [ltx.accountInfo?.account, ltx.accountInfo?.mapsPlus]);
 
     const subscriptions = ltx.accountInfo?.subscriptions && JSON.parse(ltx.accountInfo.subscriptions);
     const inAppPurchases = ltx.accountInfo?.inAppPurchases && JSON.parse(ltx.accountInfo.inAppPurchases);
@@ -139,6 +124,8 @@ export default function PurchasesMenu() {
         () => buildDisplayPurchases(subscriptions, inAppPurchases),
         [subscriptions, inAppPurchases]
     );
+
+    const isFreeAcc = ltx.accountPlan === PRODUCT_ID_START;
 
     function clickOnSubscription(index) {
         setSelectedPurchase({

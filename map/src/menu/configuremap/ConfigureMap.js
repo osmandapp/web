@@ -59,6 +59,7 @@ import VisibleTracks from '../visibletracks/VisibleTracks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { osmandTileURL } from '../../map/baseTileURL';
 import { isMvtTileURL, isOsmAndTileURL, mvtOsmAndURL } from '../../map/layers/MvtLayerConfig';
+import { FEATURE_CONTOUR_LINES, FEATURE_TERRAIN_VISUALIZATION } from '../../shop/features/FeaturesManager';
 import { toggleHybridUnderlayUrl, useHybridUnderlayUrl } from '../../map/layers/MvtHybridDemo';
 
 const DEFAULT_MAP_STYLE_OPTIONS = [osmandTileURL, mvtOsmAndURL];
@@ -90,8 +91,8 @@ export default function ConfigureMap() {
         ctx.setConfigureMapState(newConfigureMap);
     };
 
-    const openContourLinesPricing = () => openPricingPage('contour_lines', PRICING_SOURCE_MAPS_PLUS);
-    const openTerrainPricing = () => openPricingPage('terrain_visualization', PRICING_SOURCE_MAPS_PLUS);
+    const openContourLinesPricing = () => openPricingPage(FEATURE_CONTOUR_LINES, PRICING_SOURCE_MAPS_PLUS);
+    const openTerrainPricing = () => openPricingPage(FEATURE_TERRAIN_VISUALIZATION, PRICING_SOURCE_MAPS_PLUS);
 
     function setIconStyles(active) {
         let res = [];
@@ -121,8 +122,8 @@ export default function ConfigureMap() {
         updateConfigureMapCache(defaultConfigureMap);
     }
 
-    function showMapsPlusButton() {
-        return Boolean(ltx.accountInfo) && !ltx.hasMapsPlusFeatures();
+    function isFeatureLocked(featureId) {
+        return ltx.accountPlan !== null && !ltx.hasFeature(featureId);
     }
 
     const mapStyleOptions = ctx.develFeatures ? Object.values(ctx.allTileURLs) : DEFAULT_MAP_STYLE_OPTIONS;
@@ -187,7 +188,7 @@ export default function ConfigureMap() {
     }
 
     function renderContourLinesItem() {
-        if (showMapsPlusButton()) {
+        if (isFeatureLocked(FEATURE_CONTOUR_LINES)) {
             return (
                 <DefaultItem
                     icon={<ContourLinesIcon />}
@@ -334,15 +335,14 @@ export default function ConfigureMap() {
                                 <MenuItem
                                     className={styles.item}
                                     onClick={() => {
-                                        if (!showMapsPlusButton()) {
+                                        if (!isFeatureLocked(FEATURE_TERRAIN_VISUALIZATION)) {
                                             setOpenTerrainConfig(true);
                                         }
                                     }}
                                 >
                                     <ListItemIcon
                                         className={setIconStyles(
-                                            ltx.accountInfo &&
-                                                !showMapsPlusButton() &&
+                                            ltx.hasFeature(FEATURE_TERRAIN_VISUALIZATION) &&
                                                 ctx.configureMapState.terrain?.key
                                         )}
                                     >
@@ -359,7 +359,7 @@ export default function ConfigureMap() {
                                             <Typography variant="inherit" noWrap>
                                                 {t('shared_string_terrain')}
                                             </Typography>
-                                            {showMapsPlusButton() ? (
+                                            {isFeatureLocked(FEATURE_TERRAIN_VISUALIZATION) ? (
                                                 <ButtonMapsPlus onClick={openTerrainPricing} />
                                             ) : (
                                                 <Typography variant="body2" className={styles.poiCategoriesInfo} noWrap>

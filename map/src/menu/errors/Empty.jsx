@@ -5,7 +5,6 @@ import styles from './errors.module.css';
 import CloudGpxUploader from '../../frame/util/CloudGpxUploader';
 import { useContext } from 'react';
 import EmptyLogin from '../../login/EmptyLogin';
-import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import LoginContext from '../../context/LoginContext';
 import { useTranslation } from 'react-i18next';
 import PrimaryBtn from '../../frame/components/btns/PrimaryBtn';
@@ -15,8 +14,7 @@ export default function Empty({ title, text, folder = null, checkLogin = true })
     const ltx = useContext(LoginContext);
     const { t } = useTranslation();
 
-    const isFreeAccount = ltx.accountInfo?.account === FREE_ACCOUNT;
-    const requiresProForTracks = folder !== null && isFreeAccount;
+    const requiresProForTracks = folder !== null && !ltx.isProAccount();
     const showImportBtn = folder !== null && !requiresProForTracks;
     const displayTitle = requiresProForTracks ? t('web:empty_cloud_tracks') : title;
     const displayText = requiresProForTracks ? t('web:empty_cloud_tracks_description') : text;

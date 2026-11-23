@@ -23,7 +23,6 @@ import { ReactComponent as TrashIcon } from '../../assets/icons/ic_action_delete
 import { HEADER_SIZE, MENU_INFO_CLOSE_SIZE } from '../../manager/GlobalManager';
 import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import IconBtn from '../../frame/components/btns/IconBtn';
 import UnitsMenu from './units/UnitsMenu';
@@ -122,7 +121,7 @@ export default function SettingsMenu() {
                 <DividerWithMargin margin={'64px'} />
                 <UnitsMenu />
                 <SimpleDivider />
-                {ltx.loginUser && ltx.accountInfo?.account !== FREE_ACCOUNT && (
+                {ltx.isProAccount() && (
                     <>
                         <SubTitleMenu text={t('osmand_cloud')} />
                         <MenuItem

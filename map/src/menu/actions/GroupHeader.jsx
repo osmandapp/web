@@ -7,7 +7,6 @@ import { ReactComponent as AddFolderIcon } from '../../assets/icons/ic_action_fo
 import { ReactComponent as AddTrackIcon } from '../../assets/icons/ic_action_track_add.svg';
 import styles from '../trackfavmenu.module.css';
 import TracksManager, { DEFAULT_GROUP_NAME } from '../../manager/track/TracksManager';
-import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import AddFolderDialog from '../../dialogs/tracks/AddFolderDialog';
 import { byTime, getSelectedSort } from './SortActions';
 import { DEFAULT_FAV_GROUP_NAME } from '../../manager/FavoritesManager';
@@ -161,7 +160,7 @@ export default function GroupHeader({
                                         id="se-add-folder"
                                         variant="contained"
                                         type="button"
-                                        disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
+                                        disabled={!ltx.isProAccount()}
                                         className={styles.appBarIcon}
                                         onClick={() => setOpenAddFolderDialog(true)}
                                     >
@@ -179,7 +178,7 @@ export default function GroupHeader({
                                             component="span"
                                             variant="contained"
                                             type="button"
-                                            disabled={ltx.accountInfo?.account === FREE_ACCOUNT}
+                                            disabled={!ltx.isProAccount()}
                                             className={styles.appBarIcon}
                                         >
                                             <ImportIcon />
