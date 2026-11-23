@@ -2,17 +2,25 @@ import TracksRoutingCache, {
     debouncer,
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
+    GET_ANALYSIS_DEBOUNCE_MS,
     syncTrackWithCache,
 } from '@map/context/TracksRoutingCache';
 import TracksManager, { updateTrackRouteTypes } from '@map/manager/track/TracksManager';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
+import { apiPost } from '@map/util/HttpApi';
 import { createEditorCtx, createEditorPoint } from '../../util/fixtures/tracks';
 import { settle } from '../../util/settle';
 
 jest.mock('@map/map/util/creator/EditablePolyline');
 
 const point = (i, profile) => createEditorPoint(i, { profile });
-const line = () => ({ setStyle: jest.fn(), setLatLngs: jest.fn(), removeFrom: jest.fn(), options: {} });
+const line = () => ({
+    setStyle: jest.fn(),
+    setLatLngs: jest.fn(),
+    removeFrom: jest.fn(),
+    listens: () => true,
+    options: {},
+});
 const mockEditablePolyline = () =>
     EditablePolyline.mockImplementation(function () {
         return { create: () => ({ _latlngs: ['latlng'] }) };
@@ -123,6 +131,32 @@ test('a routed segment goes into the track once, the segments that are gone leav
         false
     );
     expect(saveChanges).toHaveBeenCalledTimes(1);
+});
+
+test('the analysis is asked when the last waiting segment is routed, not while others still wait', () => {
+    jest.useFakeTimers();
+    const [a, b, c] = [point(0), point(1), point(2)];
+    const ctx = createCtx([a, b, c]);
+    ctx.selectedGpxFile.tracks = [{ points: [] }];
+    mockEditablePolyline();
+    TracksRoutingCache.addRoutingToCache(a, b, line(), ctx);
+    TracksRoutingCache.addRoutingToCache(b, c, line(), ctx);
+    const [abEntry, bcEntry] = entries(ctx);
+    const debouncerTimer = { current: null };
+    const analyses = () => apiPost.mock.calls.filter(([url]) => url.endsWith(`/gpx/${TracksManager.GET_ANALYSIS}`));
+    const refresh = () => {
+        effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn(), debouncerTimer });
+        jest.advanceTimersByTime(GET_ANALYSIS_DEBOUNCE_MS);
+    };
+
+    abEntry.geometry = ['routed'];
+    refresh();
+    expect(analyses()).toHaveLength(0);
+
+    bcEntry.geometry = ['routed'];
+    refresh();
+    expect(analyses()).toHaveLength(1);
+    jest.useRealTimers();
 });
 
 test('a router answer for the place a point was dragged away from is not put on the track', async () => {

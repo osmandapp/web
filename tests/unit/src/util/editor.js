@@ -3,6 +3,7 @@ import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import EditableMarker from '@map/map/util/creator/EditableMarker';
 import { assignPointIds } from '@map/manager/track/TrackOperations';
 import { createEditorCtx } from './fixtures/tracks';
+import { settle } from './settle';
 
 /** The map the editor draws on, as far as drawing and dragging use it. */
 export const map = { getZoom: () => 15, hasLayer: () => false, removeLayer: () => {}, on: () => {}, off: () => {} };
@@ -36,4 +37,24 @@ export function dragPoint(ctx, index, lat) {
     const marker = new EditableMarker(null, ctx, null, null, track);
     marker.dragStartPoint(createDragEvent(track.points[index]), track);
     marker.dragEndPoint(createDragEvent({ lat, lng: track.points[index].lng }), track);
+}
+
+/** ctx of one render: it keeps the track of that render while the setters update the store. */
+export const renderCtx = (store) => ({ ...store });
+
+/** Holds every router answer of `store` until `release`, which gives them one by one. */
+export function holdRouter(store) {
+    const answers = [];
+    const route = store.trackRouter.updateRouteBetweenPoints.getMockImplementation();
+    store.trackRouter.updateRouteBetweenPoints.mockImplementation(
+        (...args) => new Promise((resolve) => answers.push(() => resolve(route(...args))))
+    );
+    const release = async () => {
+        while (answers.length > 0) {
+            answers.shift()();
+            await settle();
+        }
+    };
+
+    return { answers, release };
 }

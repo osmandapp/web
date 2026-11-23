@@ -24,7 +24,7 @@ import {
     createPointsGroups,
     WPT_GROUP,
 } from '../../util/fixtures/tracks';
-import { createDragEvent, createDrawnCtx, dragPoint, map } from '../../util/editor';
+import { createDragEvent, createDrawnCtx, dragPoint, holdRouter, map, renderCtx } from '../../util/editor';
 
 TrackLayerProvider.createTempPolyline = () => ({ temp: true });
 
@@ -316,6 +316,36 @@ describe('reorder', () => {
 
         expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(1));
     });
+
+    test('deletes made before and after the moved point while reorder waits for the router stay', async () => {
+        const store = createCtx(createRoutedPoints(7));
+        const { answers, release } = holdRouter(store);
+
+        const reordered = PointManager.reorder(1, 3, renderCtx(store));
+        expect(answers).toHaveLength(1);
+        await PointManager.deletePoint(0, renderCtx(store));
+        await PointManager.deletePoint(5, renderCtx(store));
+        await release();
+        await reordered;
+
+        const points = store.selectedGpxFile.points;
+        expect(lats(points)).toEqual([50.02, 50.03, 50.01, 50.04, 50.05]);
+        expect(lats(points[2].geometry)).toEqual([50.03, 50.01]);
+        expect(lats(points[3].geometry)).toEqual([50.01, 50.04]);
+    });
+
+    test('a track closed while reorder waits for the router is not opened again', async () => {
+        const store = createCtx(createRoutedPoints(4));
+        const { answers, release } = holdRouter(store);
+
+        const reordered = PointManager.reorder(1, 3, renderCtx(store));
+        expect(answers).toHaveLength(1);
+        renderCtx(store).setSelectedGpxFile({});
+        await release();
+        await reordered;
+
+        expect(store.selectedGpxFile.points).toBeUndefined();
+    });
 });
 
 describe('trim', () => {
@@ -398,6 +428,7 @@ describe('join', () => {
         expect(gap.profile).toBe(PROFILE_BICYCLE);
         expect(gap.geometry.at(-1).profile).toBeUndefined();
         expect(lats(next.geometry)).toEqual([50.01, 50.02]);
+        expect(ctx.selectedGpxFile.updateLayers).toBe(true);
         expect(ctx.trackState.update).toBe(true);
     });
 
@@ -455,6 +486,49 @@ describe('join', () => {
         expect(recordedEnd.geometry).toBe(recorded);
         expect(isProtectedSegment({ startPoint: afterNext, endPoint: recordedEnd })).toBe(true);
     });
+
+    test('a trim and a delete made while join waits for the router stay', async () => {
+        const store = createCtx(createGapPoints(5, 1));
+        const { answers, release } = holdRouter(store);
+
+        const joined = PointManager.join(1, renderCtx(store));
+        expect(answers).toHaveLength(1);
+        PointManager.trimAfter(3, renderCtx(store));
+        await PointManager.deletePoint(3, renderCtx(store));
+        await release();
+        await joined;
+
+        const points = store.selectedGpxFile.points;
+        expect(lats(points)).toEqual([50, 50.01, 50.02]);
+        expect(lats(points[2].geometry)).toEqual([50.01, 50.02]);
+    });
+
+    test('the router answer of join is put on the track although the params of its profile changed meanwhile', async () => {
+        const store = createCtx(createGapPoints(4, 1));
+        const { answers, release } = holdRouter(store);
+        const getGeoProfile = store.trackRouter.getGeoProfile;
+
+        const joined = PointManager.join(1, renderCtx(store));
+        expect(answers).toHaveLength(1);
+        store.trackRouter.getGeoProfile = (point) => ({ ...getGeoProfile(point), cacheKey: 'other params' });
+        await release();
+        await joined;
+
+        expect(lats(store.selectedGpxFile.points[2].geometry)).toEqual([50.01, 50.02]);
+    });
+
+    test('a track closed while join waits for the router is not opened again', async () => {
+        const store = createCtx(createGapPoints(4, 1));
+        const { answers, release } = holdRouter(store);
+
+        const joined = PointManager.join(1, renderCtx(store));
+        expect(answers).toHaveLength(1);
+        renderCtx(store).setSelectedGpxFile({});
+        await release();
+        await joined;
+
+        expect(store.selectedGpxFile.points).toBeUndefined();
+    });
 });
 
 describe('changeProfile', () => {
@@ -468,6 +542,7 @@ describe('changeProfile', () => {
         return ctx;
     };
     const profiles = (ctx) => ctx.selectedGpxFile.points.map((point) => point.profile);
+    const trackOfLayers = (store, drawn) => (store.selectedGpxFile.updateLayers ? store.selectedGpxFile : drawn);
     const cached = (ctx) =>
         Object.values(ctx.routingCache).map(({ startPoint, endPoint, geoProfile }) => [
             startPoint.lat,
@@ -487,8 +562,9 @@ describe('changeProfile', () => {
             expect(profiles(ctx)).toEqual([PROFILE_CAR, PROFILE_BICYCLE, PROFILE_CAR, PROFILE_CAR]);
             expect(ctx.selectedGpxFile.points[1].geoProfile).toBe(BICYCLE);
             expect(cached(ctx)).toEqual([[50.01, 50.02, PROFILE_BICYCLE]]);
-            const dashed = drawnLines(ctx).map((line) => !!line.options.dashArray);
-            expect(dashed).toEqual([false, true, false]);
+            expect(ctx.selectedGpxFile.points[2].geometry).toEqual([]);
+            expect(ctx.selectedGpxFile.layers.getLayers()).toContainEqual(expect.objectContaining({ temp: true }));
+            expect(ctx.selectedGpxFile.updateLayers).toBe(true);
         }
     });
 
@@ -547,6 +623,21 @@ describe('changeProfile', () => {
         const ctx = createProfileCtx(createRoutedPoints(3), CHANGE_PROFILE_ALL);
 
         expect(await PointManager.changeProfile({ ctx, geoProfile: BICYCLE, changeOne: true })).toBe(true);
+    });
+
+    test('a point dragged after a profile change keeps the new profile', async () => {
+        const store = createProfileCtx(createRoutedPoints(5), CHANGE_PROFILE_AFTER, 1);
+        const drawn = store.selectedGpxFile;
+        store.setSelectedGpxFile({ ...drawn });
+
+        await PointManager.changeProfile({ ctx: renderCtx(store), geoProfile: BICYCLE, changeOne: true });
+        const track = trackOfLayers(store, drawn);
+        const marker = new EditableMarker(null, store, null, null, track);
+        marker.dragStartPoint(createDragEvent(track.points[3]), track);
+        marker.dragEndPoint(createDragEvent({ lat: 50.035, lng: 30 }), track);
+
+        expect(lats(store.selectedGpxFile.points)).toEqual([50, 50.01, 50.02, 50.035, 50.04]);
+        expect(profiles(store)).toEqual([PROFILE_CAR, PROFILE_BICYCLE, PROFILE_CAR, PROFILE_CAR, PROFILE_CAR]);
     });
 
     test('a track of one point gets the new profile on its point', async () => {

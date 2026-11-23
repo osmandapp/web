@@ -1063,7 +1063,7 @@ export async function applySrtmElevation({ track, setLoading }) {
     }
     const fakeCtx = { selectedGpxFile: track };
     const newGpxFile = await getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, track.points);
-    if (newGpxFile.analysis) {
+    if (newGpxFile?.analysis) {
         const analysis = newGpxFile.analysis; // ref
 
         // convert srtm-to-main
@@ -1171,6 +1171,9 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
             apiCache: true,
             abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
         });
+        if (resp?.aborted) {
+            return null;
+        }
         if (resp?.data) {
             // data will be mutated, use cloneDeep to avoid apiCache mutations
             const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));

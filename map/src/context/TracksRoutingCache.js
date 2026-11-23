@@ -60,7 +60,7 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
     return false;
 }
 
-export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer }) {
+export function effectRefreshTrackWithRouting({ ctx, map, geoRouter, saveChanges, debouncerTimer }) {
     let updated = 0;
     const validKeys = {};
     const cache = ctx.routingCache;
@@ -82,7 +82,7 @@ export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, deb
 
                 if (geometry && tempLine && startPoint.profile !== TracksManager.PROFILE_GAP) {
                     // used when tempLine exist (segment recalculation, new points, etc), skip PROFILE_GAP
-                    refreshTempLine({ ctx, geometry, track, tempLine, color: geoRouter.getColor(startPoint) });
+                    refreshTempLine({ ctx, map, geometry, track, tempLine, color: geoRouter.getColor(startPoint) });
                     ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // use tempLine only once
                     endPoint.geometry = geometry; // mutate
                     updated++;
@@ -95,7 +95,9 @@ export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, deb
 
     if (updated > 0) {
         saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
-        requestAnalytics({ ctx, track, debouncerTimer });
+        if (Object.keys(validKeys).every((key) => cache[key].geometry !== null)) {
+            requestAnalytics({ ctx, track, debouncerTimer });
+        }
     }
 
     return updated > 0;
@@ -115,9 +117,11 @@ export function debouncer(f, timerRef, ms) {
 }
 
 export function requestAnalysisNow({ ctx, track }) {
-    TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, null, track.points).then((res) => {
-        if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
-    });
+    TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, ctx.setAnalysisLoading, track.points).then(
+        (res) => {
+            if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
+        }
+    );
 }
 
 export function requestAnalytics({ ctx, track, debouncerTimer }) {
@@ -125,16 +129,23 @@ export function requestAnalytics({ ctx, track, debouncerTimer }) {
 }
 
 // refresh fresh data to previously created "temp-line" layer
-function refreshTempLine({ ctx, geometry, track, tempLine, color }) {
+function refreshTempLine({ ctx, map, geometry, track, tempLine, color }) {
     // don't destroy tempLine (empty geo)
     if (geometry && geometry.length > 0) {
         const polyline = new EditablePolyline(null, ctx, geometry, null, track).create(); // latlngs-only
         tempLine.setStyle({ color, dashArray: null });
         tempLine.setLatLngs(polyline._latlngs);
         tempLine.options.name = undefined;
+        if (!isEditableLine(tempLine)) {
+            new EditablePolyline(map, ctx, null, tempLine, track).create();
+        }
     } else {
         tempLine.setStyle({ color });
     }
+}
+
+function isEditableLine(line) {
+    return line.listens('mousemove');
 }
 
 // cleanup but keep: by validKeys or if geometry finished

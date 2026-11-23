@@ -4,8 +4,10 @@ import { saveTrackToCloud } from '@map/manager/track/SaveTrackManager';
 import TracksRoutingCache, {
     effectControlRouterRequests,
     GET_ANALYSIS_DEBOUNCE_MS,
+    requestAnalysisNow,
     requestAnalytics,
 } from '@map/context/TracksRoutingCache';
+import { setProfile, withAnsweredElevation } from '@map/manager/track/TrackOperations';
 import { apiPost } from '@map/util/HttpApi';
 import { findRequest } from '../../util/requests';
 import { readGzipJson } from '../../util/infoFile';
@@ -22,6 +24,7 @@ import {
     lats,
 } from '../../util/fixtures/tracks';
 import { settle } from '../../util/settle';
+import { renderCtx } from '../../util/editor';
 
 const { GET_ANALYSIS, GET_SRTM_DATA } = TracksManager;
 const ANALYSIS_URL = `/gpx/${GET_ANALYSIS}`;
@@ -184,7 +187,7 @@ describe('when the analysis is asked', () => {
         ['trim before a point', createRoutedPoints(4), (ctx) => PointManager.trimBefore(2, ctx)],
         ['trim after a point', createRoutedPoints(4), (ctx) => PointManager.trimAfter(1, ctx)],
         ['split', createRoutedPoints(4), (ctx) => PointManager.split(1, ctx)],
-        ['join', createGapPoints(4, 1), (ctx) => PointManager.join(...ctx.selectedGpxFile.points.slice(1, 3), ctx)],
+        ['join', createGapPoints(4, 1), (ctx) => PointManager.join(1, ctx)],
     ])('%s asks for the analysis of the new points', async (_, points, operation) => {
         const ctx = createCtx(points);
 
@@ -195,6 +198,20 @@ describe('when the analysis is asked', () => {
         const asked =
             ctx.selectedGpxFile.refreshAnalytics === true || sent.includes(String(lats(ctx.selectedGpxFile.points)));
         expect(asked).toBe(true);
+    });
+
+    test('the analysis after a reorder describes the routed points, so its answer is taken', async () => {
+        apiPost.mockResolvedValue({
+            data: { data: { analysis: { totalDistance: TOTAL_DISTANCE, isSrtmApplied: true } } },
+        });
+        const ctx = createCtx(createRoutedPoints(4));
+
+        await PointManager.reorder(3, 1, renderCtx(ctx));
+        await settle();
+
+        const [answer] = ctx.setUnverifiedGpxFile.mock.calls.at(-1);
+        const geometries = (track) => track.points.map(({ geometry }) => lats(geometry));
+        expect(geometries(answer())).toEqual(geometries(ctx.selectedGpxFile));
     });
 });
 
@@ -232,6 +249,32 @@ describe('the answer of the analysis', () => {
         expect(ctx.setProcessingAnalytics).toHaveBeenLastCalledWith(false);
     });
 
+    test('an aborted analysis or srtm request gives no answer: the request that replaced it answers', async () => {
+        const aborted = { ok: false, aborted: true, data: null };
+        apiPost.mockResolvedValue(aborted);
+
+        await expect(analyse(createCtx(createRoutedPoints(3)))).resolves.toBeNull();
+
+        const srtm = createSrtmCtx();
+        const answer = apiPost.getMockImplementation();
+        apiPost.mockImplementation(async (url, ...args) => (url.endsWith(SRTM_URL) ? aborted : answer(url, ...args)));
+
+        await expect(analyse(srtm)).resolves.toBeNull();
+    });
+
+    test('the editor analysis shows the loading of the track, a recalculation of srtm in General does not', async () => {
+        const ctx = createCtx(createRoutedPoints(3));
+        ctx.setAnalysisLoading = jest.fn();
+
+        requestAnalysisNow({ ctx, track: ctx.selectedGpxFile });
+        await settle();
+        expect(ctx.setAnalysisLoading.mock.calls).toEqual([[true], [false]]);
+
+        ctx.setAnalysisLoading.mockClear();
+        await TracksManager.getTrackWithAnalysis(GET_SRTM_DATA, ctx, jest.fn(), ctx.selectedGpxFile.points);
+        expect(ctx.setAnalysisLoading).not.toHaveBeenCalled();
+    });
+
     test.failing('an analysis answer without data keeps the track and ends the analysis', async () => {
         const ctx = createCtx(createRoutedPoints(3));
         apiPost.mockResolvedValue({ data: {} });
@@ -243,6 +286,16 @@ describe('the answer of the analysis', () => {
 });
 
 describe('srtm', () => {
+    test('the srtm elevation reaches the points that were copied while the analysis was asked', async () => {
+        const ctx = createSrtmCtx();
+
+        const asked = analyse(ctx);
+        const current = setProfile(ctx.selectedGpxFile.points, 4, { profile: 'bicycle' });
+        const answer = await asked;
+
+        expect(withAnsweredElevation(current, answer.points).map(({ ele }) => ele)).toEqual(SRTM_ELE);
+    });
+
     test('a track without elevation takes the elevation of srtm after the analysis', async () => {
         const ctx = createSrtmCtx();
 
@@ -296,7 +349,7 @@ describe('routing in progress', () => {
         ctx.trackRouter.updateRouteBetweenPoints.mockImplementation(() => new Promise((resolve) => (answer = resolve)));
         const [, gap, next] = ctx.selectedGpxFile.points;
 
-        const joined = PointManager.join(gap, next, ctx);
+        const joined = PointManager.join(1, ctx);
         const disabled =
             ctx.setRoutingNewSegments.mock.calls.length > 0 ||
             ctx.setProcessRouting.mock.calls.some(([routing]) => routing);

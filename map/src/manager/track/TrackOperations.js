@@ -34,6 +34,10 @@ export function isWaitingForRouter(points, index) {
     return index > 0 && points[index]?.geometry?.length === 0 && !isGap(points[index - 1]);
 }
 
+export function hasSegmentWaitingForRouter(points) {
+    return points.some((point, index) => isWaitingForRouter(points, index));
+}
+
 export function isRecordedSegment({ startPoint, endPoint }) {
     return startPoint.profile === PROFILE_LINE && endPoint.geometry?.length > 2;
 }
@@ -213,6 +217,20 @@ export function setProfile(points, index, geoProfile) {
     return result;
 }
 
+export function setSegmentsProfile(points, starts, geoProfile) {
+    const result = [...points];
+    starts.forEach((start) => {
+        result[start] = { ...result[start], profile: geoProfile.profile, geoProfile };
+        result[start + 1] = { ...result[start + 1], geometry: [] };
+    });
+
+    return result;
+}
+
+export function withAnsweredElevation(points, answered) {
+    return points.map((point, index) => (point === answered[index] ? point : withElevation(point, answered[index])));
+}
+
 export function setSegmentGeometry(points, index, geometry) {
     const result = [...points];
     const point = points[index];
@@ -223,6 +241,22 @@ export function setSegmentGeometry(points, index, geometry) {
 
 function isGap(point) {
     return point?.profile === PROFILE_GAP;
+}
+
+function withElevation(point, answered) {
+    if (point.lat !== answered.lat || point.lng !== answered.lng) {
+        return point;
+    }
+    const geometry =
+        point.geometry && point.geometry !== answered.geometry && point.geometry.length === answered.geometry?.length
+            ? point.geometry.map((vertex, index) => withElevation(vertex, answered.geometry[index]))
+            : point.geometry;
+    const ele = answered.ele ?? point.ele;
+    if (ele === point.ele && geometry === point.geometry) {
+        return point;
+    }
+
+    return { ...point, ele, ...(geometry && { geometry }) };
 }
 
 function withGap(point) {

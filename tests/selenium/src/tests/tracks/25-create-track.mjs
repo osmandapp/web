@@ -67,6 +67,7 @@ const POINT_MENU_ITEMS = [
 const INSERTED_POINT = [50.4925, 30.515];
 const MOVED_POINT = [50.4925, 30.512];
 const MOVED_FIRST_POINT = [50.4895, 30.517];
+const DRAGGED_FIRST_POINT = [50.4895, 30.51];
 const AWAY_FROM_ROUTE = [50.4925, 30.505];
 const LAST_POINT = [50.4965, 30.515];
 
@@ -250,6 +251,20 @@ async function editSegments() {
         tag: 'color of the new profile',
     });
 
+    // the line of the segment routed again takes a new point
+    const middle = await getRouteMiddle(third, fourth);
+    await hoverBy(middle.lat, middle.lng);
+    await validateLineMarker(middle, true);
+    await hoverBy(...AWAY_FROM_ROUTE);
+
+    // a point dragged after the profile change keeps the new profile of the segment
+    await dragBy(first, DRAGGED_FIRST_POINT);
+    await validateRoutePoint(...DRAGGED_FIRST_POINT, true);
+    await waitRoutedLines(routedLines);
+    await enclose(async () => (await getRouteColor(third, fourth)) === BICYCLE_COLOR, {
+        tag: 'color of the new profile after a drag',
+    });
+
     // Cancel gives the track its profile back
     await clickBy(By.id('se-panel-button-change-profile'));
     const profile = await getTextBy(By.id('se-track-profile-select'));
@@ -271,7 +286,7 @@ async function editSegments() {
     await actionOpenPointMenu(second);
     await clickBy(By.id('se-point-context-menu-trim-before'));
     await matchPointsCount(SQUARE_ROUTE_POINTS.length - 2);
-    await validateRoutePoint(...first, false);
+    await validateRoutePoint(...DRAGGED_FIRST_POINT, false);
     await waitRoutedLines(routedLines - 2);
     await validateRouteDirection(second, third);
 }

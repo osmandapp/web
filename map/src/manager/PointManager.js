@@ -30,12 +30,11 @@ async function reorder(startIndex, endIndex, ctx) {
     if (TrackOperations.isWaitingForRouter(points, joinedIndex)) {
         routeByCache(joinedIndex, oldNext, ctx);
     }
-    await routeNow([endIndex, endIndex + 1], ctx);
+    const routes = await routeNow([endIndex, endIndex + 1], ctx);
 
-    TracksManager.updateState(ctx);
-    ctx.selectedGpxFile.updateLayers = true;
-    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
-    requestAnalysisNow({ ctx, track: ctx.selectedGpxFile });
+    publishRoutes(routes, ctx);
+    const track = { ...ctx.selectedGpxFile, points: applyRoutes(points, routes, ctx) };
+    requestAnalysisNow({ ctx: { ...ctx, selectedGpxFile: track }, track });
 }
 
 async function deletePoint(index, ctx) {
@@ -58,8 +57,7 @@ async function deletePoint(index, ctx) {
     if (points.length === 1) {
         ctx.setUpdateInfoBlock(true);
     }
-    ctx.selectedGpxFile.updateLayers = true;
-    ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+    publishTrack(ctx);
     if (!routed) {
         requestAnalysisNow({ ctx, track: ctx.selectedGpxFile });
     }
@@ -95,8 +93,8 @@ function split(index, ctx) {
 
 async function join(index, ctx) {
     ctx.selectedGpxFile.points = TrackOperations.join(ctx.selectedGpxFile.points, index);
-    await routeNow([index + 1], ctx);
-    applyOperation(ctx, ctx.selectedGpxFile.points);
+    const routes = await routeNow([index + 1], ctx);
+    publishRoutes(routes, ctx);
 }
 
 function updateLastPointProfile(ctx, geoProfile) {
@@ -109,38 +107,48 @@ function updateLastPointProfile(ctx, geoProfile) {
     }
 }
 
-function changeSegmentProfile(index, polylines, geoProfile, ctx) {
-    const start = ctx.selectedGpxFile.points[index];
-    const end = ctx.selectedGpxFile.points[index + 1];
-    const currentPolyline = TrackLayerProvider.updatePolyline(start, end, polylines, start, end);
-    if (currentPolyline) {
-        const updated = TrackOperations.setProfile(ctx.selectedGpxFile.points, index, geoProfile);
-        ctx.selectedGpxFile.points = updated;
-        TracksRoutingCache.addRoutingToCache(updated[index], updated[index + 1], currentPolyline, ctx);
-    }
+function changeSegmentProfile(index, geoProfile, ctx) {
+    changeSegmentsProfile(index, index + 1, geoProfile, ctx);
 }
 
-function changeSegmentsProfile(from, to, polylines, geoProfile, ctx) {
+function changeSegmentsProfile(from, to, geoProfile, ctx) {
+    const points = ctx.selectedGpxFile.points;
+    const starts = [];
     for (let i = from; i < to; i++) {
-        if (ctx.selectedGpxFile.points[i].profile !== TracksManager.PROFILE_GAP) {
-            changeSegmentProfile(i, polylines, geoProfile, ctx);
+        const startPoint = points[i];
+        const endPoint = points[i + 1];
+        if (
+            startPoint.profile !== TracksManager.PROFILE_GAP &&
+            !TrackOperations.isProtectedSegment({ startPoint, endPoint })
+        ) {
+            starts.push(i);
         }
     }
+    ctx.selectedGpxFile.points = TrackOperations.setSegmentsProfile(points, starts, geoProfile);
+    starts.forEach((start) => routeByCache(start + 1, points[start + 1], ctx));
 }
 
 async function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
+    const changed = applyProfile({ ctx, geoProfile, changeOne, changeAll });
+    if (changed) {
+        publishTrack(ctx);
+    }
+
+    return changed;
+}
+
+function applyProfile({ ctx, geoProfile, changeOne, changeAll }) {
     const partialEdit = [TracksManager.CHANGE_PROFILE_BEFORE, TracksManager.CHANGE_PROFILE_AFTER].includes(
         ctx.trackProfileManager?.change
     );
     if (!ctx.selectedGpxFile.layers) {
         return false; // on empty track
     }
-    let polylines = TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
     if (!partialEdit) {
         if (changeAll) {
             // whole track - all segments
             if (ctx.selectedGpxFile.points?.length > 1) {
-                changeSegmentsProfile(0, ctx.selectedGpxFile.points.length - 1, polylines, geoProfile, ctx);
+                changeSegmentsProfile(0, ctx.selectedGpxFile.points.length - 1, geoProfile, ctx);
                 updateLastPointProfile(ctx, geoProfile);
                 return true;
             } else {
@@ -157,22 +165,21 @@ async function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
         if (changeOne) {
             // before or after - one segment
             if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                changeSegmentProfile(ctx.trackProfileManager.pointInd - 1, polylines, geoProfile, ctx);
+                changeSegmentProfile(ctx.trackProfileManager.pointInd - 1, geoProfile, ctx);
                 return true;
             } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                changeSegmentProfile(ctx.trackProfileManager.pointInd, polylines, geoProfile, ctx);
+                changeSegmentProfile(ctx.trackProfileManager.pointInd, geoProfile, ctx);
                 return true;
             }
         } else if (changeAll) {
             // before or after - all segments
             if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                changeSegmentsProfile(0, ctx.trackProfileManager.pointInd, polylines, geoProfile, ctx);
+                changeSegmentsProfile(0, ctx.trackProfileManager.pointInd, geoProfile, ctx);
                 return true;
             } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
                 changeSegmentsProfile(
                     ctx.trackProfileManager.pointInd,
                     ctx.selectedGpxFile.points.length - 1,
-                    polylines,
                     geoProfile,
                     ctx
                 );
@@ -218,8 +225,19 @@ function getPointMenuItems(points, index) {
 
 function applyOperation(ctx, points) {
     ctx.selectedGpxFile.points = points;
+    publishTrack(ctx);
+    TracksManager.updateState(ctx);
+}
+
+function publishTrack(ctx) {
     ctx.selectedGpxFile.updateLayers = true;
     ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
+}
+
+function publishRoutes(routes, ctx) {
+    ctx.setSelectedGpxFile((current) =>
+        current.points ? { ...current, points: applyRoutes(current.points, routes, ctx), updateLayers: true } : current
+    );
     TracksManager.updateState(ctx);
 }
 
@@ -234,30 +252,35 @@ function routeByCache(index, oldEnd, ctx) {
 }
 
 async function routeNow(indexes, ctx) {
+    const points = ctx.selectedGpxFile.points;
+    const routes = [];
     for (const index of indexes) {
-        if (TrackOperations.isWaitingForRouter(ctx.selectedGpxFile.points, index)) {
-            const start = ctx.selectedGpxFile.points[index - 1];
-            const end = ctx.selectedGpxFile.points[index];
+        if (TrackOperations.isWaitingForRouter(points, index)) {
+            const start = points[index - 1];
+            const end = points[index];
             const key = getSegmentKey(start, end, ctx);
-            const geometry = await routeSegment(start, end, ctx);
-            const routedIndex = ctx.selectedGpxFile.points.findIndex(
-                (point, i) =>
-                    TrackOperations.isWaitingForRouter(ctx.selectedGpxFile.points, i) &&
-                    getSegmentKey(ctx.selectedGpxFile.points[i - 1], point, ctx) === key
-            );
-            if (routedIndex !== -1) {
-                ctx.selectedGpxFile.points = TrackOperations.setSegmentGeometry(
-                    ctx.selectedGpxFile.points,
-                    routedIndex,
-                    geometry
-                );
-            }
+            routes.push({ key, geometry: await routeSegment(start, end, ctx) });
         }
     }
+
+    return routes;
+}
+
+function applyRoutes(points, routes, ctx) {
+    return routes.reduce((routed, { key, geometry }) => {
+        const routedIndex = routed.findIndex(
+            (point, i) =>
+                TrackOperations.isWaitingForRouter(routed, i) && getSegmentKey(routed[i - 1], point, ctx) === key
+        );
+
+        return routedIndex === -1 ? routed : TrackOperations.setSegmentGeometry(routed, routedIndex, geometry);
+    }, points);
 }
 
 function getSegmentKey(start, end, ctx) {
-    return createRoutingKey(start, end, ctx.trackRouter.getGeoProfile(start));
+    const { type, router, profile } = ctx.trackRouter.getGeoProfile(start);
+
+    return createRoutingKey(start, end, { cacheKey: [type, router, profile].join('_') });
 }
 
 async function routeSegment(start, end, ctx) {

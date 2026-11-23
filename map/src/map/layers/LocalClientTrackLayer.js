@@ -46,7 +46,7 @@ import {
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
-import { assignPointIds } from '../../manager/track/TrackOperations';
+import { assignPointIds, hasSegmentWaitingForRouter, withAnsweredElevation } from '../../manager/track/TrackOperations';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -169,10 +169,12 @@ export default function LocalClientTrackLayer() {
                 // keep layers
                 unverified.gpx = trusted.gpx;
                 unverified.layers = trusted.layers;
-                unverified.points = trusted.points;
+                unverified.points = hasPoints
+                    ? withAnsweredElevation(trusted.points, unverified.points)
+                    : trusted.points;
 
                 ctx.setSelectedGpxFile(unverified);
-            } else if (sameTrack && hasPoints) {
+            } else if (sameTrack && hasPoints && !hasSegmentWaitingForRouter(trusted.points)) {
                 requestAnalytics({ ctx, track: trusted, debouncerTimer });
             } else {
                 console.debug('unverified-gpx-file', unverified.name);
@@ -567,6 +569,7 @@ export default function LocalClientTrackLayer() {
             effect: () =>
                 effectRefreshTrackWithRouting({
                     ctx,
+                    map,
                     geoRouter,
                     saveChanges,
                     debouncerTimer,
