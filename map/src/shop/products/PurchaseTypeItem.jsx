@@ -1,12 +1,5 @@
 import { Box, Link, Radio, Typography } from '@mui/material';
-import {
-    purchase,
-    findPurchase,
-    hasOldPrice,
-    PURCHASE_TYPE_ANNUAL,
-    PURCHASE_TYPE_MONTHLY,
-    PURCHASE_TYPE_ONE_TIME,
-} from './ProductManager';
+import { purchase, findPurchase, hasOldPrice, PURCHASE_TYPE_MONTHLY, PURCHASE_TYPE_TEXTS } from './ProductManager';
 import styles from '../shop.module.css';
 import { useTranslation } from 'react-i18next';
 import React, { useEffect, useState } from 'react';
@@ -36,17 +29,7 @@ export default function PurchaseTypeItem({
         }
     });
 
-    const labelMap = {
-        [PURCHASE_TYPE_MONTHLY]: 'web:purchase_type_monthly_subscription',
-        [PURCHASE_TYPE_ANNUAL]: 'web:purchase_type_annual_subscription',
-        [PURCHASE_TYPE_ONE_TIME]: 'web:purchase_type_one_time_purchase',
-    };
-
-    const periodMap = {
-        [PURCHASE_TYPE_MONTHLY]: `/ ${t('web:purchase_period_month')}`,
-        [PURCHASE_TYPE_ANNUAL]: `/ ${t('web:purchase_period_year')}`,
-        [PURCHASE_TYPE_ONE_TIME]: '',
-    };
+    const { label, period } = PURCHASE_TYPE_TEXTS[type];
 
     useEffect(() => {
         if (!purchaseObj) {
@@ -93,7 +76,7 @@ export default function PurchaseTypeItem({
                 }}
             >
                 <Box>
-                    <Typography className={styles.purchaseTypeCardTitle}>{t(labelMap[type])}</Typography>
+                    <Typography className={styles.purchaseTypeCardTitle}>{t(label)}</Typography>
                     <Box
                         sx={{
                             display: 'inline-flex',
@@ -108,7 +91,9 @@ export default function PurchaseTypeItem({
                             </Typography>
                         )}
                         <Typography className={styles.purchaseTypeCardNewPrice}>{purchaseObj.display}</Typography>
-                        <Typography className={styles.purchaseTypeCardNewPriceType}>&nbsp;{periodMap[type]}</Typography>
+                        <Typography className={styles.purchaseTypeCardNewPriceType}>
+                            &nbsp;{period && `/ ${t(period)}`}
+                        </Typography>
                     </Box>
                     {saveBox && <Typography className={styles.productTypeSale}>{saveBox}</Typography>}
                 </Box>

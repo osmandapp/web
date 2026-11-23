@@ -1,37 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from './shop.module.css';
-import { ReactComponent as ProIcon } from '../assets/icons/ic_action_osmand_pro_logo_colored.svg';
-import { ReactComponent as MapsIcon } from '../assets/icons/ic_action_osmand_maps_plus.svg';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import { useTranslation } from 'react-i18next';
 import LoginContext from '../context/LoginContext';
 import AppContext from '../context/AppContext';
 import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
-import {
-    findPurchase,
-    hasOldPrice,
-    PRODUCT_ID_MAPS_PLUS,
-    PRODUCT_ID_PRO,
-    PURCHASE_TYPE_ANNUAL,
-} from './products/ProductManager';
+import { findPurchase, hasOldPrice, PURCHASE_TYPE_ANNUAL, stickyBarProducts } from './products/ProductManager';
 import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
 import StickyBarContainer from './StickyBarContainer';
-const STICKY_PRODUCTS = [
-    {
-        name: 'Maps+',
-        icon: <MapsIcon />,
-        iconBg: 'rgba(255, 136, 0, 0.2)',
-        purchaseId: PRODUCT_ID_MAPS_PLUS,
-    },
-    {
-        name: 'OsmAnd Pro',
-        icon: <ProIcon />,
-        iconBg: 'rgba(87, 20, 204, 0.2)',
-        purchaseId: PRODUCT_ID_PRO,
-    },
-];
 
 export default function StickyBarPricingPage({ visible, testMode, updateCardPrices, setUpdateCardPrices }) {
     const [purchaseObjs, setPurchaseObjs] = useState({});
@@ -44,14 +22,14 @@ export default function StickyBarPricingPage({ visible, testMode, updateCardPric
 
     function loadPrices() {
         const objs = {};
-        STICKY_PRODUCTS.forEach((p) => {
+        stickyBarProducts.forEach((p) => {
             const item = findPurchase(PURCHASE_TYPE_ANNUAL, p.purchaseId);
             if (item) objs[p.purchaseId] = { ...item };
         });
         setPurchaseObjs(objs);
     }
 
-    const availableProducts = STICKY_PRODUCTS.filter(
+    const availableProducts = stickyBarProducts.filter(
         (product) => testMode || purchaseObjs[product.purchaseId]?.show !== false
     );
 

@@ -8,7 +8,6 @@ import DownloadTrackDialog from '../../../dialogs/tracks/DownloadTrackDialog';
 import { ReactComponent as CloudIcon } from '../../../assets/icons/ic_action_cloud.svg';
 import { ReactComponent as DownloadIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
 import LoginContext from '../../../context/LoginContext';
-import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import UnavailableActionAlert from '../../../menu/errors/UnavailableActionAlert';
 
 export default function LocalTrackActionsButtons({ track }) {
@@ -28,7 +27,7 @@ export default function LocalTrackActionsButtons({ track }) {
             <Box className={styles.wptActionButtonContainer}>
                 <BlueBtn
                     action={() => {
-                        if (ltx.accountInfo?.account === FREE_ACCOUNT) {
+                        if (!ltx.isProAccount()) {
                             setOpenUnavailableDialog(true);
                             return;
                         }
