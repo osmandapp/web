@@ -56,7 +56,7 @@ Go to: *Menu → Maps & Resources → Local → Colors*
 
 <TabItem value="android" label="Android">
 
-![Palettes](@site/static/img/personal/color-schemes/palette_new.png) ![Palettes](@site/static/img/personal/color-schemes/palette_new_2.png)
+![Palettes](@site/static/img/personal/color-schemes/palette_new.webp) ![Palettes](@site/static/img/personal/color-schemes/palette_new_2.png)
 
 </TabItem>
 
