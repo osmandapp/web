@@ -47,8 +47,9 @@ export const LoginContextProvider = ({ children }) => {
 
     const isLoggedIn = () => Boolean(loginUser && loginUser !== INIT_LOGIN_STATE);
     const isProAccount = () => isLoggedIn() && accountInfo?.account !== FREE_ACCOUNT;
+    const isMapsPlusAccount = () => isLoggedIn() && accountInfo?.mapsPlus === 'true';
     const isProAccountLoaded = () => Boolean(accountInfo) && isProAccount();
-    const hasMapsPlusFeatures = () => isProAccountLoaded() || (isLoggedIn() && accountInfo?.mapsPlus === 'true');
+    const hasMapsPlusFeatures = () => isProAccountLoaded() || isMapsPlusAccount();
     const isAdmin = () => Boolean(loginRoles?.includes('ROLE_ADMIN'));
 
     useEffect(() => {
@@ -112,6 +113,7 @@ export const LoginContextProvider = ({ children }) => {
                 setCompletePurchase,
                 isLoggedIn,
                 isProAccount,
+                isMapsPlusAccount,
                 hasMapsPlusFeatures,
                 isAdmin,
             }}

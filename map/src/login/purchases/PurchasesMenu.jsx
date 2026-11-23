@@ -124,7 +124,7 @@ export default function PurchasesMenu() {
             const type = getAccountType({
                 account: ltx.accountInfo?.account,
                 name: ltx.accountInfo?.name,
-                mapsPlus: ltx.hasMapsPlusFeatures(),
+                mapsPlus: ltx.isMapsPlusAccount(),
             });
             setIsFreeAcc(type === FREE_ACCOUNT_SUB_TYPE);
         } else {

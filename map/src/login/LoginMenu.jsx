@@ -149,7 +149,7 @@ export default function LoginMenu() {
             getAccountType({
                 account: ltx.accountInfo.account,
                 name: ltx.accountInfo.name,
-                mapsPlus: ltx.hasMapsPlusFeatures(),
+                mapsPlus: ltx.isMapsPlusAccount(),
             }) || '';
         const state = ltx.accountInfo.state ?? (type === FREE_ACCOUNT_SUB_TYPE ? null : PURCHASE_STATE_ACTIVE);
         const resolvedStatus = getStatus(state, t);
