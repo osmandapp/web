@@ -35,7 +35,7 @@ OsmAnd releases several Ready-To-Use builds daily, allowing you to track new fea
 - **[Spatial Search](https://osmand.net/blog/offline-search-video)** is enabled by default, with more accurate ranking, synonyms, and suggested corrections for misspelled words.
 - **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** is free for all users and gets [suggestions from recent destinations](https://osmand.net/docs/user/navigation/auto-car#dashboard-suggestions), automatic [Free ride](https://osmand.net/docs/user/navigation/auto-car#destination-points) while driving, and [Google Assistant and Gemini](https://osmand.net/docs/user/navigation/auto-car#voice-control) support.
 - New **Panoramax plugin** with street-level imagery as a map layer, filtered by contributor, date, and type.
-- Realistic **[sun shadows](https://osmand.net/docs/user/plugins/topography#sun)** cast by 3D buildings and terrain.
+- Realistic **[sun shadows](https://osmand.net/docs/user/plugins/topography#sun-position)** cast by 3D buildings and terrain.
 - Media library in **[My Places](https://osmand.net/docs/user/personal/myplaces)** that gathers your photos, videos, and audio notes in one place.
 - Dashed and dotted lines in **[track appearance](https://osmand.net/docs/user/map/tracks/appearance#track-appearance-settings)**, also available as a folder's default appearance.
 - Speed range for route calculation and arrival time based on your actual speed in **[vehicle parameters](https://osmand.net/docs/user/navigation/guidance/vehicle-parameters#default-speed)**.

@@ -391,7 +391,7 @@ Use the main toggle to enable or disable 3D rendering of buildings. When enabled
 On Android, this option is available only when the Topography plugin is enabled.  
 Go to: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-The 3D buildings settings are divided into two groups, **Appearance** and **Performance**, followed by a separate [**Sun**](#sun) setting (*Android only*).
+The 3D buildings settings are divided into two groups, **Appearance** and **Performance**, followed by a separate [**Sun position**](#sun-position) setting (*Android only*).
 
 ### Appearance {#appearance}
 
@@ -429,7 +429,7 @@ On the preview screens (Color / Visibility), you can use Reset to default from t
 
 ### Performance {#performance}
 
-The **<Translate android="true" ids="performance"/>** controls how 3D buildings are rendered. It includes two settings: Level of detail and View distance.
+The **<Translate android="true" ids="performance"/>** controls how 3D buildings are rendered. It includes three settings: Level of detail, View distance, and Shadows.
 
 **<Translate android="true" ids="level_of_details"/>** determines the complexity of the 3D building geometry:
 - Low (default) — simpler geometry.
@@ -439,26 +439,32 @@ The **<Translate android="true" ids="performance"/>** controls how 3D buildings 
 - Near (default) — renders buildings closer to you.
 - Far — renders buildings from a longer distance.
 
-Both performance options use a two-position toggle right in the 3D buildings settings screen.
+**<Translate android="true" ids="cast_shadows"/>** (*Android only*) controls sun shadows on the map:
+- Off (default) — buildings are drawn without shadows.
+- On — buildings cast shadows on the ground and on the walls of neighboring buildings in the direction set in [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). When [3D Relief](#3d-relief) is enabled, the terrain also casts shadows. The darkness of building shadows depends on the [Visibility](#appearance) of 3D buildings.
+
+All three performance options use a two-position toggle right in the 3D buildings settings screen. Shadows are set separately for each profile and are available only with the [Version 2 (OpenGL)](#rendering-engine-android) rendering engine.
 
 **Note:** Using *High detail* and *Far view distance* improves visual appearance but may impact performance and increase battery usage.
 
 
-### Sun {#sun}
+### Sun Position {#sun-position}
 
 <InfoAndroidOnly />
 
 ![Sun](@site/static/img/map/sun_setting.webp) ![Sun shadows](@site/static/img/map/sun_shadows.webp)
 
-The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders and a switch:
+The **<Translate android="true" ids="map_widget_sun_position"/>** setting defines the direction of light for building shadows and for the Terrain shadows of 3D Relief. You can open it from the 3D buildings screen and from the 3D Relief screen. The row shows the current sun direction, and tapping it opens a preview panel with three modes:
 
-- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
-- Altitude — controls the height of the sun above the horizon.
-- Shadows — displays shadows cast by 3D buildings in the direction set by Azimuth and Altitude. Buildings cast shadows on the ground and on the walls of neighboring buildings. When [3D Relief](#3d-relief) is enabled, the terrain also casts shadows. The darkness of building shadows depends on the [Visibility](#appearance) of 3D buildings.
+- **<Translate android="true" ids="sun_light_live"/>** — uses the real position of the sun above the center of the map at the current time. Azimuth and Altitude are shown for reference.
+- **<Translate android="true" ids="shared_string_date"/>** — uses the real position of the sun above the center of the map at the date and time you select. The time is set in the time zone of your device.
+- **<Translate android="true" ids="shared_string_manual"/>** — lets you set the light direction with two sliders:
+    - *<Translate android="true" ids="shared_string_azimuth"/>* — controls the horizontal direction of the light source (the compass direction of the sun).
+    - *<Translate android="true" ids="altitude"/>* — controls the height of the sun above the horizon.
 
-Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
+Changes appear on the map immediately. Tap Apply to confirm the selected sun position. Reset to default switches to Manual mode with an azimuth of 315° and an altitude of 45°.
 
-**Note:** The Shadows switch is available only with the [Version 2 (OpenGL)](#rendering-engine-android) rendering engine. It is off by default and is set separately for each profile.
+**Note:** Sun position is available only with the [Version 2 (OpenGL)](#rendering-engine-android) rendering engine.
 
 
 ## 3D Relief {#3d-relief}
