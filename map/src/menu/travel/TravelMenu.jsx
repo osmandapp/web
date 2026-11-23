@@ -65,7 +65,6 @@ export const OSM_GPX_ABORT_KEYS = {
     routeInfo: 'osmgpx-get-route-info',
     osmRoute: 'osmgpx-get-osm-route',
     activities: 'osmgpx-activities',
-    activitiesAllDates: 'osmgpx-activities-all-dates',
     reviews: 'osmgpx-reviews',
 };
 
@@ -107,8 +106,8 @@ export function groupItems(group, t) {
     }));
 }
 
-export function sumCounts(activityCounts, ids) {
-    return activityCounts.reduce((sum, a) => (ids.includes(a.id) ? sum + (a.count ?? 0) : sum), 0);
+export function sumCounts(activityCounts, ids, countField = 'count') {
+    return activityCounts.reduce((sum, a) => (ids.includes(a.id) ? sum + (a[countField] ?? 0) : sum), 0);
 }
 
 export function activityGroups(withIgnored) {
@@ -178,8 +177,7 @@ export default function TravelMenu() {
     const [updatedActivities, setUpdatedActivities] = useState([]);
     const [travelResult, setTravelResult] = useState(null);
     const [loadingResult, setLoadingResult] = useState(false);
-    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count }]
-    const [activityCountsAllDates, setActivityCountsAllDates] = useState(null);
+    const [activityCounts, setActivityCounts] = useState(null); // [{ id, count, total }]
     const [openFilters, setOpenFilters] = useState(false); // secondary filters drawer
     const [openAppearance, setOpenAppearance] = useState(false);
 
@@ -307,33 +305,23 @@ export default function TravelMenu() {
                 maxLat: mapBounds.getNorth(),
                 minLon: mapBounds.getWest(),
                 maxLon: mapBounds.getEast(),
+                dateFrom: months ? monthKey(months[0]) : undefined,
+                dateTo: months ? monthKey(months[1]) : undefined,
             };
-            const fetchCounts = (query, abortControllerKey) =>
-                apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
-                    apiCache: true,
-                    params: query,
-                    abortControllerKey,
-                });
 
             try {
-                const [dated, allDates] = await Promise.all([
-                    months
-                        ? fetchCounts(
-                              { ...params, dateFrom: monthKey(months[0]), dateTo: monthKey(months[1]) },
-                              OSM_GPX_ABORT_KEYS.activities
-                          )
-                        : null,
-                    fetchCounts(params, OSM_GPX_ABORT_KEYS.activitiesAllDates),
-                ]);
-                if (dated?.aborted || allDates?.aborted) {
+                const response = await apiGet(`${process.env.REACT_APP_OSM_GPX_URL}/osmgpx/activities`, {
+                    apiCache: true,
+                    params,
+                    abortControllerKey: OSM_GPX_ABORT_KEYS.activities,
+                });
+                if (response.aborted) {
                     return;
                 }
-                setActivityCounts((months ? dated?.data : allDates?.data) || null);
-                setActivityCountsAllDates(allDates?.data || null);
+                setActivityCounts(response.data || null);
             } catch (error) {
                 console.error('Error fetching activities:', error);
                 setActivityCounts(null);
-                setActivityCountsAllDates(null);
             }
         }, 500)
     ).current;
@@ -670,7 +658,6 @@ export default function TravelMenu() {
                 </Box>
                 <TravelActivityStats
                     activityCounts={activityCounts}
-                    activityCountsAllDates={activityCountsAllDates}
                     value={filters.activity}
                     onChange={(value) => setFilter('activity', value)}
                 />
