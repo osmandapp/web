@@ -10,7 +10,11 @@ export function createPointId() {
 }
 
 export function assignPointIds(points) {
-    return points.map((point) => ({ ...point, id: createPointId() }));
+    points.forEach((point) => {
+        point.id = createPointId();
+    });
+
+    return points;
 }
 
 export function findPointIndex(points, id) {

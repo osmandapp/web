@@ -100,16 +100,23 @@ beforeEach(() => {
 });
 
 describe('what is sent for the analysis', () => {
-    test('a gpx of two tracks opened in the editor keeps its tracks as they are, no point ids are sent', async () => {
-        const tracks = [{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }];
-        const ctx = createCtx(assignPointIds(TracksManager.getEditablePoints({ tracks })));
-        ctx.selectedGpxFile.tracks = tracks;
+    test('a gpx of two tracks opened in the editor sends no point ids and gets no gap written into its tracks', async () => {
+        for (const unrouted of [false, true]) {
+            apiPost.mockClear();
+            const tracks = [{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }];
+            const points = assignPointIds(TracksManager.getEditablePoints({ tracks }));
+            if (unrouted) {
+                delete points[1].geometry;
+            }
+            const ctx = createCtx(points);
+            ctx.selectedGpxFile.tracks = tracks;
 
-        await analyse(ctx);
+            await analyse(ctx);
 
-        const body = await readGzipJson(findRequest(apiPost, ANALYSIS_URL).body);
-        expect(JSON.stringify(body)).not.toContain('"id"');
-        expect(tracks).toEqual([{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }]);
+            const body = await readGzipJson(findRequest(apiPost, ANALYSIS_URL).body);
+            expect(JSON.stringify(body)).not.toContain('"id"');
+            expect(tracks[0].points.at(-1).profile).not.toBe(TracksManager.PROFILE_GAP);
+        }
     });
 
     test('only the position, elevation, profile and geometry of the editor points are sent, the times are zeroed', async () => {

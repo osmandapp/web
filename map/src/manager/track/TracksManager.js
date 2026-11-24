@@ -645,6 +645,17 @@ export function updateMetadata({ file, name = null }) {
     return file;
 }
 
+function withoutIds(points) {
+    return points?.some((point) => point.id !== undefined) ? points.map(withoutId) : points;
+}
+
+function withoutId(point) {
+    const copy = { ...point };
+    delete copy.id;
+
+    return copy;
+}
+
 function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     // add updated points to track
     let points = file.points;
@@ -670,7 +681,7 @@ function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     }
 
     return {
-        tracks: file.tracks,
+        tracks: file.tracks?.map((track) => ({ ...track, points: withoutIds(track.points) })),
         wpts: file.wpts,
         metaData: file.metaData,
         pointsGroups: file.pointsGroups,
