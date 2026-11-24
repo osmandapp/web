@@ -45,6 +45,7 @@ import {
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
+import { passClickToNavigation } from '../../manager/NavigationManager';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -288,12 +289,7 @@ export default function LocalClientTrackLayer() {
                 if (!map.hasLayer(currLayer.layer)) {
                     currLayer.layer.options = { ...currLayer.layer.options, type: LOCAL_TRACKS_LAYERS_ID };
                     // Set trackName for all polylines in the layer
-                    TrackLayerProvider.addTooltipOnHover(
-                        currLayer.layer,
-                        map,
-                        currLayer.points.map((point) => new L.LatLng(point.lat, point.lng)),
-                        track?.name
-                    );
+                    TrackLayerProvider.setTrackName(currLayer.layer.getLayers(), track.name);
                     map.addLayer(currLayer.layer);
                 }
 
@@ -479,7 +475,10 @@ export default function LocalClientTrackLayer() {
             if (fitBounds) {
                 pendingZoomRef.current = true;
             }
-            layer.on('click', () => {
+            layer.on('click', (e) => {
+                if (!e.propagatedFrom?.options?.wpt && passClickToNavigation(e)) {
+                    return;
+                }
                 if (!ctx.createTrack?.enable) {
                     ctx.setCreateTrack({
                         enable: true, // start-editor

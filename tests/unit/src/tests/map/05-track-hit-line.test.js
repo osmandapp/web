@@ -10,6 +10,7 @@ import { createMap, removeMap, renderWithMapContexts } from '../../util/map';
 const HIT_LINE = { weight: 16, opacity: 0 };
 
 let map;
+let view;
 
 beforeEach(() => {
     map = createMap([50.05, 30], 10);
@@ -19,7 +20,10 @@ beforeEach(() => {
     formatTrackName.mockImplementation((name) => name);
 });
 
-afterEach(() => removeMap(map));
+afterEach(() => {
+    view?.unmount();
+    removeMap(map);
+});
 
 const showTrack = (name, info = {}) => {
     const data = createTrack({
@@ -81,16 +85,20 @@ test('events of the hit line reach the track, the hit line leaves the map with t
     expect(linesOnMap()).toEqual([line, hitLines[0]]);
 });
 
-test('a hit line never covers the line of another track, also after a track is shown again', () => {
-    const first = showTrack('First');
-    const second = showTrack('Second');
-    map.removeLayer(first);
-    first.addTo(map);
+test('hit lines lie in their own pane under the lines of all tracks, also after a track is shown again', () => {
+    const arrows = showTrack('Arrows', { show_arrows: true });
+    const plain = showTrack('Plain');
+    map.removeLayer(arrows);
+    arrows.addTo(map);
 
-    const hitLines = [...trackLines(first), ...trackLines(second)].map((l) => l.hitLine.getElement());
-    const paths = [...map.getContainer().querySelectorAll('.leaflet-overlay-pane path')];
+    const lines = [...trackLines(arrows), ...trackLines(plain)];
+    const paneOf = (layer) => layer.getElement().closest('.leaflet-pane');
+    const overlayPane = map.getPane('overlayPane');
+    const hitPane = paneOf(lines[0].hitLine);
 
-    expect(paths.map((p) => (hitLines.includes(p) ? 'hit' : 'line'))).toEqual(['hit', 'hit', 'line', 'line']);
+    expect(hitPane).not.toBe(overlayPane);
+    expect(lines.map(paneOf)).toEqual([overlayPane, overlayPane]);
+    expect(lines.map((l) => paneOf(l.hitLine))).toEqual([hitPane, hitPane]);
 });
 
 test('lines of the track editor get no hit line, a line with arrows keeps its arrows and gets one', () => {
@@ -143,7 +151,7 @@ test('focus mode: a hidden track lets clicks beside its line through, a dimmed o
         };
     };
 
-    const view = renderWithMapContexts(createElement(FocusVisibility), { ctx, mtx: focusMtx(true) });
+    view = renderWithMapContexts(createElement(FocusVisibility), { ctx, mtx: focusMtx(true) });
     expect([lineState(focused), lineState(other)]).toEqual([
         { opacity: 1, hitOpacity: 0, hitEvents: '' },
         { opacity: 0, hitOpacity: 0, hitEvents: 'none' },
@@ -154,6 +162,4 @@ test('focus mode: a hidden track lets clicks beside its line through, a dimmed o
         { opacity: 1, hitOpacity: 0, hitEvents: '' },
         { opacity: 0.9, hitOpacity: 0, hitEvents: '' },
     ]);
-
-    view.unmount();
 });

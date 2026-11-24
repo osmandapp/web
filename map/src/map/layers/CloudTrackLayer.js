@@ -10,6 +10,7 @@ import TracksManager, {
 } from '../../manager/track/TracksManager';
 import { encodeString, useMutator } from '../../util/Utils';
 import { INFO_MENU_URL, MAIN_URL_WITH_SLASH, MENU_INFO_OPEN_SIZE, TRACKS_URL } from '../../manager/GlobalManager';
+import { passClickToNavigation } from '../../manager/NavigationManager';
 import { clusterMarkers } from '../util/Clusterizer';
 import { DEFAULT_ICON_SIZE } from '../markers/MarkerOptions';
 import { processMarkers } from './FavoriteLayer';
@@ -22,8 +23,15 @@ import { TRACKS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentD
 import { useNavigate } from 'react-router-dom';
 
 function clickHandler({ ctx, file, navigate, recentSaver, e }) {
+    const wptClick = e.propagatedFrom?.options?.wpt;
+    if (!wptClick && ctx.createTrack?.enable) {
+        return;
+    }
+    if (!wptClick && passClickToNavigation(e)) {
+        return;
+    }
     if (file.name === ctx.selectedGpxFile?.name) {
-        if (!e.propagatedFrom?.options?.wpt) {
+        if (!wptClick) {
             ctx.setSelectedWpt(null);
         }
         return;
@@ -170,9 +178,7 @@ const CloudTrackLayer = () => {
     useZoomMoveMapHandlers(map, setZoom, setMove);
 
     const getRenderedTracksWptLayers = useCallback(() => {
-        const layers = [...Object.values(ctx.gpxFiles ?? {}), ...Object.values(ctx.shareWithMeFiles?.tracks ?? {})]
-            .filter(isTrackRenderedOnMap)
-            .flatMap((file) => file.gpx.getLayers?.() ?? []);
+        const layers = getRenderedTracks(ctx).flatMap((file) => file.gpx.getLayers?.() ?? []);
         return layers.length > 0 ? layers : null;
     }, [ctx.gpxFiles, ctx.shareWithMeFiles?.tracks, shareTracksSimplifyCount]);
 
@@ -244,14 +250,13 @@ const CloudTrackLayer = () => {
 
     // update all click handlers with fresh context
     useEffect(() => {
-        for (const l in ctx.gpxFiles) {
-            const file = ctx.gpxFiles[l];
-            if (isTrackRenderedOnMap(file) && map.hasLayer(file.gpx)) {
+        getRenderedTracks(ctx).forEach((file) => {
+            if (map.hasLayer(file.gpx)) {
                 file.gpx.off('click');
                 file.gpx.on('click', (e) => clickHandler({ ctx, file, navigate, recentSaver, e }));
             }
-        }
-    }, [ctx.selectedGpxFile?.name, ctx.infoBlockWidth]);
+        });
+    }, [ctx.selectedGpxFile?.name, ctx.infoBlockWidth, ctx.createTrack?.enable]);
 
     // control zoom-fit for cloud tracks
     useEffect(() => {
@@ -368,6 +373,12 @@ const CloudTrackLayer = () => {
 
 function isTrackRenderedOnMap(file) {
     return !!(file?.url && file.gpx);
+}
+
+function getRenderedTracks(ctx) {
+    return [...Object.values(ctx.gpxFiles ?? {}), ...Object.values(ctx.shareWithMeFiles?.tracks ?? {})].filter(
+        isTrackRenderedOnMap
+    );
 }
 
 export default CloudTrackLayer;

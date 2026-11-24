@@ -1,5 +1,5 @@
 import L from 'leaflet';
-import { POINT_MARKER_Z_INDEX_OFFSET } from './ZIndexes';
+import { POINT_MARKER_Z_INDEX_OFFSET, TRACK_HIT_LINE_PANE_Z_INDEX } from './ZIndexes';
 import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
 import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
@@ -15,6 +15,8 @@ import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
 import { hexToRgba, numberToRgba } from '../../util/ColorUtil';
 import { createTooltip, TOOLTIP_MAX_LENGTH, formatTrackName } from './MapManager';
+import { ensureLeafletPane } from '../layers/MvtHybridDemo';
+import { disablePointerEventsIfHidden } from '../../util/hooks/map/useFocusMode';
 
 export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
@@ -31,6 +33,11 @@ export const DEFAULT_TRACK_LINE_WEIGHT = 7;
 
 const TRACK_HIT_LINE_WEIGHT = 16;
 const TRACK_HIT_LINE_SMOOTH_FACTOR = 3;
+const TRACK_HIT_LINE_PANE = 'trackHitLinePane';
+const TRACK_HIT_LINES_MAX_TRACKS = 20;
+
+const tracksWithHitLines = new Set();
+const linesWithHitLines = new Set();
 
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     const layers = [];
@@ -74,17 +81,24 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
 
     const trackName = data?.name;
     if (trackName) {
-        for (const layer of layers) {
-            if (layer instanceof L.Polyline) {
-                layer.options.trackName = trackName;
-            }
-        }
+        setTrackName(layers, trackName);
     }
 
     if (layers.length > 0) {
         let layersGroup = new L.FeatureGroup(layers);
         layersGroup.options.type = type;
+        if (layers.some((layer) => layer.hitLine)) {
+            countTrackWithHitLines(layersGroup, map);
+        }
         return layersGroup;
+    }
+}
+
+function setTrackName(layers, trackName) {
+    for (const layer of layers) {
+        if (layer instanceof L.Polyline) {
+            layer.options.trackName = trackName;
+        }
     }
 }
 
@@ -223,13 +237,13 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
     return coordsAll;
 }
 
-function addTooltipOnHover(polyline, map, coords, name = null) {
+function addTooltipOnHover(polyline, map, coords) {
     if (coords.length === 0) return;
 
     const tooltipRef = { current: null };
 
     const onMouseOver = (e) => {
-        const trackName = name ?? polyline.options?.trackName;
+        const trackName = polyline.options?.trackName;
         if (!trackName) return;
 
         if (tooltipRef.current && map.hasLayer(tooltipRef.current)) {
@@ -255,13 +269,11 @@ function addTooltipOnHover(polyline, map, coords, name = null) {
 
     polyline.on('mouseover', onMouseOver);
     polyline.on('mouseout', onMouseOut);
-    map.on('zoomend', onZoomEnd);
+    polyline.on('add', () => map.on('zoomend', onZoomEnd));
 
     polyline.on('remove', () => {
         removeTooltip(map, tooltipRef);
         map.off('zoomend', onZoomEnd);
-        polyline.off('mouseover', onMouseOver);
-        polyline.off('mouseout', onMouseOut);
     });
 }
 
@@ -288,8 +300,9 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance, drag
         ...(arrowSettings.show ? { renderer: L.svg() } : {}),
     });
 
-    if (!draggable) {
+    if (!draggable && coords.length > 0) {
         polyline.hitLine = new L.Polyline(coords, {
+            pane: TRACK_HIT_LINE_PANE,
             weight: TRACK_HIT_LINE_WEIGHT,
             opacity: 0,
             smoothFactor: TRACK_HIT_LINE_SMOOTH_FACTOR,
@@ -314,12 +327,16 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance, drag
         map.on('zoomend moveend', updateStyle);
 
         polyline.on('redraw-arrows', updateStyle);
-        polyline.hitLine?.addTo(map).bringToBack();
+        if (polyline.hitLine) {
+            addHitLine(polyline, map);
+        }
 
         polyline.once('remove', () => {
             map.off('zoomend moveend', updateStyle);
             polyline.off('redraw-arrows', updateStyle);
-            polyline.hitLine?.remove();
+            if (polyline.hitLine) {
+                removeHitLine(polyline);
+            }
             if (arrowSettings.show) {
                 const svg = polyline._renderer?._container;
                 if (svg) {
@@ -330,6 +347,39 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance, drag
     });
 
     return polyline;
+}
+
+function countTrackWithHitLines(track, map) {
+    track.on('add', () => {
+        tracksWithHitLines.add(track);
+        if (tracksWithHitLines.size === TRACK_HIT_LINES_MAX_TRACKS + 1) {
+            linesWithHitLines.forEach((line) => line.hitLine.remove());
+        }
+    });
+    track.on('remove', () => {
+        tracksWithHitLines.delete(track);
+        if (tracksWithHitLines.size === TRACK_HIT_LINES_MAX_TRACKS) {
+            linesWithHitLines.forEach((line) => drawHitLine(line, map));
+        }
+    });
+}
+
+function addHitLine(line, map) {
+    linesWithHitLines.add(line);
+    if (tracksWithHitLines.size <= TRACK_HIT_LINES_MAX_TRACKS) {
+        drawHitLine(line, map);
+    }
+}
+
+function removeHitLine(line) {
+    linesWithHitLines.delete(line);
+    line.hitLine.remove();
+}
+
+function drawHitLine(line, map) {
+    ensureLeafletPane(map, TRACK_HIT_LINE_PANE, TRACK_HIT_LINE_PANE_Z_INDEX);
+    line.hitLine.addTo(map);
+    disablePointerEventsIfHidden(line.hitLine.getElement(), line.options.opacity);
 }
 
 function renderArrows({ polyline, lineWidth, coords, map, arrowSettings }) {
@@ -813,7 +863,7 @@ const TrackLayerProvider = {
     getPolylines,
     updatePolyline,
     createEditableTempLPolyline,
-    addTooltipOnHover,
+    setTrackName,
     TEMP_LINE_STYLE,
     TEMP_LAYER_FLAG,
 };

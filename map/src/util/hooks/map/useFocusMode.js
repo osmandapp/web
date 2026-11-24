@@ -141,7 +141,7 @@ function applyOpacityToLayer(layer, opacity) {
     }
 }
 
-function disablePointerEventsIfHidden(el, opacity) {
+export function disablePointerEventsIfHidden(el, opacity) {
     if (!el) return;
     el.style.pointerEvents = opacity === 0 ? 'none' : '';
 }
