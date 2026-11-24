@@ -15,6 +15,7 @@ import { settle } from '../../util/settle';
 jest.mock('@map/map/util/creator/EditablePolyline');
 
 const point = (i, profile) => createEditorPoint(i, { profile });
+const waitingPoint = (i) => createEditorPoint(i, { geometry: [] });
 const line = () => ({
     setStyle: jest.fn(),
     setLatLngs: jest.fn(),
@@ -139,7 +140,13 @@ test('a segment that waits for the router without a cache entry is cached once, 
 });
 
 test('a routed segment goes into the track once, the segments that are gone leave the cache', () => {
-    const [a, b, gap, c, d] = [point(0), point(1), point(2, TracksManager.PROFILE_GAP), point(3), point(4)];
+    const [a, b, gap, c, d] = [
+        point(0),
+        waitingPoint(1),
+        point(2, TracksManager.PROFILE_GAP),
+        waitingPoint(3),
+        waitingPoint(4),
+    ];
     const ctx = createCtx([a, b, gap, c, d]);
     const saveChanges = jest.fn();
     mockEditablePolyline();
@@ -163,7 +170,7 @@ test('a routed segment goes into the track once, the segments that are gone leav
     expect(abEntry.tempLine).toBeNull();
     expect(saveChanges).toHaveBeenCalledTimes(1);
     // a gap is never routed, a segment still waiting for the router is kept
-    expect(routed.points[3].geometry).toBeUndefined();
+    expect(routed.points[3].geometry).toEqual([]);
     expect(gapC.setLatLngs).not.toHaveBeenCalled();
     expect(entries(ctx)).toEqual([abEntry, gapEntry, cdEntry]);
 
@@ -176,7 +183,7 @@ test('a routed segment goes into the track once, the segments that are gone leav
 
 test('the analysis is asked when the last waiting segment is routed, not while others still wait', () => {
     jest.useFakeTimers();
-    const [a, b, c] = [point(0), point(1), point(2)];
+    const [a, b, c] = [point(0), waitingPoint(1), waitingPoint(2)];
     const ctx = createCtx([a, b, c]);
     ctx.selectedGpxFile.tracks = [{ points: [] }];
     mockEditablePolyline();
@@ -225,7 +232,7 @@ test('a router answer for the place a point was dragged away from is not put on 
         [0, 1],
         [1, 0],
     ]) {
-        const [a, b] = [point(0), point(1)];
+        const [a, b] = [point(0), waitingPoint(1)];
         const ctx = createCtx([a, b]);
         const answers = [];
         mockEditablePolyline();

@@ -82,7 +82,7 @@ export function effectRefreshTrackWithRouting({ ctx, map, geoRouter, saveChanges
     forEachCachedSegment(ctx.selectedGpxFile.points, cache, geoRouter, (index, key, startPoint) => {
         const { geometry, tempLine } = cache[key];
         validKeys[key] = true;
-        if (geometry && tempLine && startPoint.profile !== TracksManager.PROFILE_GAP) {
+        if (geometry && tempLine && isWaitingForRouter(ctx.selectedGpxFile.points, index)) {
             // used when tempLine exist (segment recalculation, new points, etc), skip PROFILE_GAP
             refreshTempLine({ ctx, map, geometry, tempLine, color: geoRouter.getColor(startPoint) });
             ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // use tempLine only once
