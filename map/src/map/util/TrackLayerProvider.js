@@ -15,8 +15,7 @@ import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
 import { hexToRgba, numberToRgba } from '../../util/ColorUtil';
 import { createTooltip, TOOLTIP_MAX_LENGTH, formatTrackName } from './MapManager';
-import { ensureLeafletPane } from '../layers/MvtHybridDemo';
-import { disablePointerEventsIfHidden } from '../../util/hooks/map/useFocusMode';
+import { disablePointerEventsIfHidden, ensureLeafletPane, TRACK_HIT_LINE_PANE } from './LayerUtils';
 
 export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
@@ -33,11 +32,9 @@ export const DEFAULT_TRACK_LINE_WEIGHT = 7;
 
 const TRACK_HIT_LINE_WEIGHT = 16;
 const TRACK_HIT_LINE_SMOOTH_FACTOR = 3;
-const TRACK_HIT_LINE_PANE = 'trackHitLinePane';
 const TRACK_HIT_LINES_MAX_TRACKS = 20;
 
-const tracksWithHitLines = new Set();
-const linesWithHitLines = new Set();
+const hitLinesByMap = new WeakMap();
 
 function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE, simplifyWpts = false }) {
     const layers = [];
@@ -88,7 +85,7 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
         let layersGroup = new L.FeatureGroup(layers);
         layersGroup.options.type = type;
         if (layers.some((layer) => layer.hitLine)) {
-            countTrackWithHitLines(layersGroup, map);
+            enforceHitLineLimit(layersGroup, map);
         }
         return layersGroup;
     }
@@ -339,16 +336,12 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance, poin
         map.on('zoomend moveend', updateStyle);
 
         polyline.on('redraw-arrows', updateStyle);
-        if (polyline.hitLine) {
-            addHitLine(polyline, map);
-        }
+        registerHitLine(polyline, map);
 
         polyline.once('remove', () => {
             map.off('zoomend moveend', updateStyle);
             polyline.off('redraw-arrows', updateStyle);
-            if (polyline.hitLine) {
-                removeHitLine(polyline);
-            }
+            unregisterHitLine(polyline, map);
             if (arrowSettings.show) {
                 const svg = polyline._renderer?._container;
                 if (svg) {
@@ -361,30 +354,42 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance, poin
     return polyline;
 }
 
-function countTrackWithHitLines(track, map) {
+function hitLinesOf(map) {
+    if (!hitLinesByMap.has(map)) {
+        hitLinesByMap.set(map, { tracks: new Set(), lines: new Set() });
+    }
+
+    return hitLinesByMap.get(map);
+}
+
+function enforceHitLineLimit(track, map) {
+    const { tracks, lines } = hitLinesOf(map);
     track.on('add', () => {
-        tracksWithHitLines.add(track);
-        if (tracksWithHitLines.size === TRACK_HIT_LINES_MAX_TRACKS + 1) {
-            linesWithHitLines.forEach((line) => line.hitLine.remove());
+        tracks.add(track);
+        if (tracks.size === TRACK_HIT_LINES_MAX_TRACKS + 1) {
+            lines.forEach((line) => line.hitLine.remove());
         }
     });
     track.on('remove', () => {
-        tracksWithHitLines.delete(track);
-        if (tracksWithHitLines.size === TRACK_HIT_LINES_MAX_TRACKS) {
-            linesWithHitLines.forEach((line) => drawHitLine(line, map));
+        tracks.delete(track);
+        if (tracks.size === TRACK_HIT_LINES_MAX_TRACKS) {
+            lines.forEach((line) => drawHitLine(line, map));
         }
     });
 }
 
-function addHitLine(line, map) {
-    linesWithHitLines.add(line);
-    if (tracksWithHitLines.size <= TRACK_HIT_LINES_MAX_TRACKS) {
+function registerHitLine(line, map) {
+    if (!line.hitLine) return;
+    const { tracks, lines } = hitLinesOf(map);
+    lines.add(line);
+    if (tracks.size <= TRACK_HIT_LINES_MAX_TRACKS) {
         drawHitLine(line, map);
     }
 }
 
-function removeHitLine(line) {
-    linesWithHitLines.delete(line);
+function unregisterHitLine(line, map) {
+    if (!line.hitLine) return;
+    hitLinesOf(map).lines.delete(line);
     line.hitLine.remove();
 }
 
@@ -822,6 +827,10 @@ export function bindWptVisibilityOnAdd(marker, pointsGroups) {
         const category = e.target.options?.category ?? '';
         el.style.display = isWptGroupShown(pointsGroups, category) ? '' : 'none';
     });
+}
+
+export function isWptClick(e) {
+    return !!e.propagatedFrom?.options?.wpt;
 }
 
 // for updating markers

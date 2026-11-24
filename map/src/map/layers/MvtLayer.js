@@ -31,12 +31,8 @@ import {
     setStyleContourVisibility,
     watchMvtZoom,
 } from '../util/MvtMapUtils';
-import {
-    ensureLeafletPane,
-    setMapHybridVisibility,
-    setStyleHybridVisibility,
-    useHybridUnderlayUrl,
-} from './MvtHybridDemo';
+import { setMapHybridVisibility, setStyleHybridVisibility, useHybridUnderlayUrl } from './MvtHybridDemo';
+import { ensureLeafletPane } from '../util/LayerUtils';
 
 const SHOW_TILE_BOUNDARIES = true;
 const TILE_SOURCES_KEY = '__osmandMvtTileSources';

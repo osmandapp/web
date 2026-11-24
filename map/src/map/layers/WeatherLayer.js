@@ -4,7 +4,7 @@ import MapContext from '../../context/MapContext';
 import WeatherContext from '../../context/WeatherContext';
 import { TileLayer, LayersControl } from 'react-leaflet';
 import { disableLayers } from '../../manager/WeatherManager';
-import { ensureLeafletPane } from './MvtHybridDemo';
+import { ensureLeafletPane } from '../util/LayerUtils';
 import { WEATHER_PANE_Z_INDEX, WEATHER_TILE_Z_INDEX } from '../util/ZIndexes';
 
 const WEATHER_PANE = 'weatherPane';

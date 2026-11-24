@@ -31,6 +31,8 @@ const DRAG_DEBOUNCE_MS = 10;
 const ALTERNATIVE_HOVER_OPACITY = 0.9;
 const TURN_DOT_Z_INDEX_OFFSET = 1100;
 
+const POINT_CURSOR_CLASS = 'navigation-point-cursor';
+
 function setMarkerIconHtml(marker, html) {
     const el = marker?.getElement();
     if (el && html) el.innerHTML = html;
@@ -106,14 +108,10 @@ const NavigationLayer = ({ geocodingData, region }) => {
     }, [routeObject, ctx.viaInputsCount]);
 
     const updateCursor = useCallback(() => {
-        const container = map.getContainer();
-        if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
-            container.style.cursor = '';
-            return;
-        }
-        container.style.cursor = pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0)
-            ? 'crosshair'
-            : '';
+        const picksPoint =
+            globalThis.location.pathname.includes(NAVIGATE_URL) &&
+            !!pickNextRoutePoint(routeObjectRef.current, viaInputsCountRef.current || 0);
+        map.getContainer().classList.toggle(POINT_CURSOR_CLASS, picksPoint);
     }, []);
 
     const handleMapClick = useCallback(
@@ -180,7 +178,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             map.on('mousemove', updateCursor);
             return () => {
                 map.off('mousemove', updateCursor);
-                container.style.cursor = '';
+                container.classList.remove(POINT_CURSOR_CLASS);
             };
         }
 
@@ -193,7 +191,7 @@ const NavigationLayer = ({ geocodingData, region }) => {
             map.off('click', handleMapClick);
             map.off('mousemove', updateCursor);
             globalThis.removeEventListener('nav-marker-click', handleMapClick);
-            container.style.cursor = '';
+            container.classList.remove(POINT_CURSOR_CLASS);
         };
     }, [ctx.openContextMenu]);
 

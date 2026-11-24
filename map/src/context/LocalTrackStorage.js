@@ -99,9 +99,10 @@ function deleteAllTracksFromDB() {
     });
 }
 
-function replaceAllTracksInDB(records) {
-    return new Promise(async (resolve, reject) => {
-        const db = await openDB();
+async function replaceAllTracksInDB(records) {
+    const db = await openDB();
+
+    return new Promise((resolve, reject) => {
         const transaction = db.transaction(STORE_NAME, 'readwrite');
         const store = transaction.objectStore(STORE_NAME);
         store.clear();

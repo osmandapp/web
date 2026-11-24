@@ -67,6 +67,8 @@ module.exports = {
         'markers/MarkerOptions$': path.join(MAP_DIR, 'src/map/markers/MarkerOptions.js'),
         // marker clustering is plain geometry over the places, no map is involved
         'map/util/Clusterizer$': path.join(MAP_DIR, 'src/map/util/Clusterizer.js'),
+        // panes and pointer events of leaflet layers are plain dom logic
+        'map/util/LayerUtils$': path.join(MAP_DIR, 'src/map/util/LayerUtils.js'),
         // only direct test imports load these layers; other suites keep their UI stubs
         '^@map/map/layers/MapStateLayer$': path.join(MAP_DIR, 'src/map/layers/MapStateLayer.js'),
         '^@map/map/layers/PoiLayer$': path.join(MAP_DIR, 'src/map/layers/PoiLayer.js'),

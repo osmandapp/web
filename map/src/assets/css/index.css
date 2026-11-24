@@ -87,6 +87,16 @@ code {
     pointer-events: none;
 }
 
+.leaflet-container.track-editor-cursor,
+.leaflet-container.navigation-point-cursor {
+    cursor: crosshair;
+}
+
+.leaflet-container.track-editor-cursor .leaflet-trackHitLine-pane path,
+.leaflet-container.navigation-point-cursor .leaflet-trackHitLine-pane path {
+    pointer-events: none;
+}
+
 .leaflet-control-zoom {
     background-color: transparent !important;
     border: none !important;

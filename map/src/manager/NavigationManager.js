@@ -38,13 +38,14 @@ export function pickNextRoutePoint(navObject, viaInputsCount = 0) {
     return null;
 }
 
-export function passClickToNavigation(e) {
+export function passClickToNavigation(e, wpt) {
     if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
         return false;
     }
     const navEvent = new CustomEvent('nav-marker-click', {
         detail: {
-            latlng: e.latlng,
+            wpt,
+            latlng: wpt ? L.latLng(wpt.lat, wpt.lng) : e.latlng,
         },
         cancelable: true,
     });

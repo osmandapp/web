@@ -2,7 +2,7 @@ import { useCallback, useContext, useEffect, useState } from 'react';
 import AppContext, { isCloudTrack, OBJECT_TYPE_CLOUD_TRACK } from '../../context/AppContext';
 import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
-import TrackLayerProvider, { redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
+import TrackLayerProvider, { isWptClick, redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
 import TracksManager, {
     fitBoundsOptions,
     getResolvedPointsGroups,
@@ -23,7 +23,7 @@ import { TRACKS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentD
 import { useNavigate } from 'react-router-dom';
 
 function clickHandler({ ctx, file, navigate, recentSaver, e }) {
-    const wptClick = e.propagatedFrom?.options?.wpt;
+    const wptClick = isWptClick(e);
     if (!wptClick && ctx.createTrack?.enable) {
         return;
     }

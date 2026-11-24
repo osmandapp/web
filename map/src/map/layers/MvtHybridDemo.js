@@ -4,6 +4,7 @@ import L from 'leaflet';
 import MapContext from '../../context/MapContext';
 import { isMvtTileURL } from './MvtLayerConfig';
 import { MVT_HYBRID_UNDERLAY_PANE_Z_INDEX } from '../util/ZIndexes';
+import { ensureLeafletPane } from '../util/LayerUtils';
 
 const HYBRID_UNDERLAY_URL_KEY = 'mvtHybridUnderlayUrl';
 const HYBRID_UNDERLAY_ACTIVE_KEY = 'mvtHybridUnderlayActive';
@@ -110,15 +111,6 @@ export function toggleHybridUnderlayUrl() {
     if (nextUrl) {
         activateHybridUnderlayUrl(nextUrl);
     }
-}
-
-export function ensureLeafletPane(map, paneName, zIndex) {
-    const pane = map.getPane(paneName) || map.createPane(paneName);
-    if (zIndex !== undefined) {
-        pane.style.zIndex = `${zIndex}`;
-    }
-    pane.style.pointerEvents = 'none';
-    return pane;
 }
 
 export function isHybridStyleLayer(layer) {

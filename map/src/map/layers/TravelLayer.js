@@ -24,7 +24,7 @@ import MarkerOptions from '../markers/MarkerOptions';
 import { getActivityColor } from '../util/activities';
 import isEmpty from 'lodash-es/isEmpty';
 import { GPX } from '../../manager/GlobalManager';
-import { ensureLeafletPane } from './MvtHybridDemo';
+import { ensureLeafletPane } from '../util/LayerUtils';
 import { TRAVEL_SEARCH_PANE_Z_INDEX } from '../util/ZIndexes';
 import { formatActivity } from '../../menu/travel/TravelRoutesResult';
 import styles from '../map.module.css';

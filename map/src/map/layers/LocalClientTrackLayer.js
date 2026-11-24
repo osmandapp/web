@@ -4,6 +4,7 @@ import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider, {
+    isWptClick,
     redrawWptsOnLayer,
     TEMP_LAYER_FLAG,
     WPT_SIMPLIFY_THRESHOLD,
@@ -49,6 +50,8 @@ import {
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { passClickToNavigation } from '../../manager/NavigationManager';
 import { assignPointIds, hasSegmentWaitingForRouter, withAnsweredElevation } from '../../manager/track/TrackOperations';
+
+const EDITOR_CURSOR_CLASS = 'track-editor-cursor';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -261,6 +264,7 @@ export default function LocalClientTrackLayer() {
                 deleteClickOnMap();
             }
         }
+        map.getContainer().classList.toggle(EDITOR_CURSOR_CLASS, Boolean(ctxTrack && isAddPointByClick(ctx)));
         // ctx.pointContextMenu was added to monitor menu state and ignore click
         // ctx.routingCache was added to have actual context for addRoutingToCache()
     }, [
@@ -486,7 +490,7 @@ export default function LocalClientTrackLayer() {
                 pendingZoomRef.current = true;
             }
             layer.on('click', (e) => {
-                if (!e.propagatedFrom?.options?.wpt && passClickToNavigation(e)) {
+                if (!isWptClick(e) && passClickToNavigation(e)) {
                     return;
                 }
                 if (!ctx.createTrack?.enable) {
@@ -644,13 +648,11 @@ export default function LocalClientTrackLayer() {
     }
 
     function setupClickOnMap() {
-        map.getContainer().style.cursor = 'crosshair';
         map.off('click');
         map.on('click', clickMap);
     }
 
     function deleteClickOnMap() {
-        map.getContainer().style.cursor = '';
         map.off('click');
     }
 

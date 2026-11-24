@@ -3,6 +3,7 @@ import { useMap } from 'react-leaflet';
 import AppContext, { OBJECT_TYPE_CLOUD_TRACK, OBJECT_TYPE_FAVORITE } from '../../../context/AppContext';
 import MapContext from '../../../context/MapContext';
 import { EXPLORE_LAYER_ID, POI_LAYER_ID, SEARCH_LAYER_ID } from '../../../manager/GlobalManager';
+import { disablePointerEventsIfHidden, TRACK_HIT_LINE_PANE } from '../../../map/util/LayerUtils';
 
 export const FOCUS_DIM_OPACITY = 0.9;
 export const FOCUS_HIDDEN_OPACITY = 0;
@@ -52,7 +53,8 @@ export function useFocusVisibility() {
 
     // Apply passive opacity to layers added after focus state was established.
     useEffect(() => {
-        function applyPassive() {
+        function applyPassive(e) {
+            if (e.layer.options?.pane === TRACK_HIT_LINE_PANE) return;
             map.eachLayer((layer) => {
                 if (!FOCUS_PASSIVE_LAYER_IDS.has(layer.options?.id)) return;
                 applyOpacityToLayer(layer, passiveOpacity);
@@ -139,11 +141,6 @@ function applyOpacityToLayer(layer, opacity) {
         disablePointerEventsIfHidden(layer.getElement?.(), opacity);
         disablePointerEventsIfHidden(layer.hitLine?.getElement(), opacity);
     }
-}
-
-export function disablePointerEventsIfHidden(el, opacity) {
-    if (!el) return;
-    el.style.pointerEvents = opacity === 0 ? 'none' : '';
 }
 
 function getFocusModeHandlers() {
