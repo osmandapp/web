@@ -15,6 +15,7 @@ import {
     CLOUD_FOLDER,
     CLOUD_TRACK_NAME,
     LOGGED_IN,
+    createCounter,
     createEditorCtx,
     createEditorPoint,
     createGapPoints,
@@ -58,7 +59,8 @@ const withEditorFields = (points) =>
 const createCtx = (points) => {
     const ctx = createEditorCtx({ points });
     ctx.selectedGpxFile.tracks = [{ points: [] }];
-    ctx.setProcessingAnalytics = jest.fn();
+    ctx.analyses = createCounter();
+    ctx.setRunningAnalyses = ctx.analyses.set;
 
     return ctx;
 };
@@ -268,13 +270,13 @@ describe('the answer of the analysis', () => {
 
     test('a failed analysis keeps the track and ends the loading and the analysis', async () => {
         const ctx = createCtx(createRoutedPoints(3));
-        const setLoading = jest.fn();
+        const loading = createCounter();
         apiPost.mockResolvedValue({ ok: false, status: 502, data: null });
 
-        await expect(analyse(ctx, setLoading)).resolves.toBe(ctx.selectedGpxFile);
+        await expect(analyse(ctx, loading.set)).resolves.toBe(ctx.selectedGpxFile);
 
-        expect(setLoading).toHaveBeenLastCalledWith(false);
-        expect(ctx.setProcessingAnalytics).toHaveBeenLastCalledWith(false);
+        expect(loading.values).toEqual([1, 0]);
+        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 
     test('an aborted analysis or srtm request gives no answer: the request that replaced it answers', async () => {
@@ -292,15 +294,17 @@ describe('the answer of the analysis', () => {
 
     test('the editor analysis shows the loading of the track, a recalculation of srtm in General does not', async () => {
         const ctx = createCtx(createRoutedPoints(3));
-        ctx.setAnalysisLoading = jest.fn();
+        const editorLoading = createCounter();
+        ctx.setRunningEditorAnalyses = editorLoading.set;
 
         requestAnalysisNow({ ctx, track: ctx.selectedGpxFile });
         await settle();
-        expect(ctx.setAnalysisLoading.mock.calls).toEqual([[true], [false]]);
+        expect(editorLoading.values).toEqual([1, 0]);
 
-        ctx.setAnalysisLoading.mockClear();
-        await TracksManager.getTrackWithAnalysis(GET_SRTM_DATA, ctx, jest.fn(), ctx.selectedGpxFile.points);
-        expect(ctx.setAnalysisLoading).not.toHaveBeenCalled();
+        const generalLoading = createCounter();
+        await TracksManager.getTrackWithAnalysis(GET_SRTM_DATA, ctx, generalLoading.set, ctx.selectedGpxFile.points);
+        expect(generalLoading.values).toEqual([1, 0]);
+        expect(editorLoading.values).toEqual([1, 0]);
     });
 
     test.failing('an analysis answer without data keeps the track and ends the analysis', async () => {
@@ -309,7 +313,7 @@ describe('the answer of the analysis', () => {
 
         await expect(analyse(ctx)).resolves.toBe(ctx.selectedGpxFile);
 
-        expect(ctx.setProcessingAnalytics).toHaveBeenLastCalledWith(false);
+        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 });
 
@@ -348,7 +352,7 @@ describe('srtm', () => {
 
         await analyse(ctx);
 
-        expect(ctx.setProcessingAnalytics).toHaveBeenLastCalledWith(false);
+        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 });
 

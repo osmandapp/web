@@ -31,7 +31,6 @@ export function createDrawnCtx(points) {
         hidden: true,
     });
     ctx.selectedGpxFile.layers = L.layerGroup(layers);
-    ctx.setRoutingNewSegments = jest.fn();
 
     return ctx;
 }

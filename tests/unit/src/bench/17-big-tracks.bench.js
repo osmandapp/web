@@ -110,7 +110,7 @@ test('17.7 the analysis request of routed 50k', async () => {
     apiPost.mockResolvedValue(null);
     const ctx = createEditorCtx({ points: createRouteTrackPoints() });
     ctx.selectedGpxFile.tracks = [{ points: [] }];
-    ctx.setProcessingAnalytics = jest.fn();
+    ctx.setRunningAnalyses = jest.fn();
 
     const prepare = await measure(() =>
         TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, jest.fn(), ctx.selectedGpxFile.points)

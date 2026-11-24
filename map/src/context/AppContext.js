@@ -241,7 +241,6 @@ export const AppContextProvider = (props) => {
     const [searchSettings, setSearchSettings] = useState({});
 
     const [routingCache, mutateRoutingCache] = useMutator({});
-    const [routingNewSegments, setRoutingNewSegments] = useState([]);
     const [processRouting, setProcessRouting] = useState(false);
     const [navigationRoutingInProgress, setNavigationRoutingInProgress] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
@@ -327,8 +326,8 @@ export const AppContextProvider = (props) => {
     const [closableMenu, setClosableMenu] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
-    const [processingAnalytics, setProcessingAnalytics] = useState(false);
-    const [analysisLoading, setAnalysisLoading] = useState(false);
+    const [runningAnalyses, setRunningAnalyses] = useState(0);
+    const [runningEditorAnalyses, setRunningEditorAnalyses] = useState(0);
     const [openNavigationSettings, setOpenNavigationSettings] = useState(false);
 
     useEffect(() => {
@@ -572,8 +571,6 @@ export const AppContextProvider = (props) => {
                 mutateRoutingCache,
                 poiIconCache,
                 setPoiIconCache,
-                routingNewSegments,
-                setRoutingNewSegments,
                 processRouting,
                 setProcessRouting,
                 navigationRoutingInProgress,
@@ -740,10 +737,10 @@ export const AppContextProvider = (props) => {
                 setProcessingPoiByUrl,
                 processingStopByUrl,
                 setProcessingStopByUrl,
-                processingAnalytics,
-                setProcessingAnalytics,
-                analysisLoading,
-                setAnalysisLoading,
+                processingAnalytics: runningAnalyses > 0,
+                setRunningAnalyses,
+                analysisLoading: runningEditorAnalyses > 0,
+                setRunningEditorAnalyses,
                 openNavigationSettings,
                 setOpenNavigationSettings,
                 navigationHistory,

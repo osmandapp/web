@@ -2,10 +2,10 @@ import L from 'leaflet';
 import PointManager from '@map/manager/PointManager';
 import { apiGet } from '@map/util/HttpApi';
 import { updateRouteBetweenPoints } from '@map/store/geoRouter/legacy/updateRouteBetweenPoints';
-import TracksManager, { isProtectedSegment, PROFILE_LINE } from '@map/manager/track/TracksManager';
+import TracksManager, { PROFILE_LINE } from '@map/manager/track/TracksManager';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import EditableMarker from '@map/map/util/creator/EditableMarker';
-import { assignPointIds, isWaitingForRouter, setProfile } from '@map/manager/track/TrackOperations';
+import { assignPointIds, isProtectedSegment, isWaitingForRouter, setProfile } from '@map/manager/track/TrackOperations';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
 import { updateLayers } from '@map/map/util/creator/LocalTrackLayerHelper';
 import MarkerOptions from '@map/map/markers/MarkerOptions';
@@ -35,9 +35,7 @@ const createCtx = (points) => createEditorCtx({ points });
 
 const drawnLines = (ctx) => TrackLayerProvider.getPolylines(ctx.selectedGpxFile.layers.getLayers());
 const routedPairs = (ctx) =>
-    ctx.setRoutingNewSegments.mock.calls
-        .flatMap(([segments]) => segments)
-        .map(({ start, end }) => [start.lat, end.lat]);
+    Object.values(ctx.routingCache).map(({ startPoint, endPoint }) => [startPoint.lat, endPoint.lat]);
 
 const insertPoint = (ctx, line, lat) => {
     const track = ctx.selectedGpxFile;
@@ -743,7 +741,7 @@ describe('drag a point', () => {
         expect(lats(line.getLatLngs())).toEqual([50, 50.015, 50.02]);
         expect(ctx.selectedGpxFile.points[1].ele).toBeUndefined();
         expect(ctx.selectedGpxFile.refreshAnalytics).toBe(true);
-        expect(ctx.setRoutingNewSegments).not.toHaveBeenCalled();
+        expect(ctx.routingCache).toEqual({});
     });
 
     test('a plain point of the first segment of a plain track is moved in its line', () => {
@@ -853,7 +851,7 @@ describe('drag a point', () => {
         expect(track.wpts[0]).toMatchObject({ lat: 50.006, lon: 30.002 });
         const ids = ctx.selectedGpxFile.points.map(({ id }) => id);
         expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(2).map((point, i) => ({ ...point, id: ids[i] })));
-        expect(ctx.setRoutingNewSegments).not.toHaveBeenCalled();
+        expect(ctx.routingCache).toEqual({});
     });
 });
 

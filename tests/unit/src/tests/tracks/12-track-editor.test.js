@@ -1,9 +1,6 @@
 import TracksManager, {
     openTrackOnMap,
     addDistanceToPoints,
-    isPointUnrouted,
-    isProtectedSegment,
-    splitProtectedSegment,
     validateRoutePoints,
     PROFILE_LINE,
 } from '@map/manager/track/TracksManager';
@@ -19,7 +16,12 @@ import {
 } from '@map/map/util/creator/LocalTrackHelper';
 import { PROFILE_CAR, PROFILE_PEDESTRIAN } from '@map/store/geoRouter/profileConstants';
 import { createEditorCtx, createPlainPoints, createRoutedPoints, NOW, TODAY } from '../../util/fixtures/tracks';
-import { assignPointIds } from '@map/manager/track/TrackOperations';
+import {
+    assignPointIds,
+    isPointUnrouted,
+    isProtectedSegment,
+    splitProtectedSegment,
+} from '@map/manager/track/TrackOperations';
 
 TrackLayerProvider.createLayersByTrackData = () => null;
 

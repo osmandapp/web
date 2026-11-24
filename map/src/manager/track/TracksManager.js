@@ -28,8 +28,6 @@ import { findInfoFile } from './TrackAppearanceManager';
 import i18n from '../../i18n';
 import { PROFILE_GAP, withGap } from './TrackOperations';
 
-export { isPointUnrouted, isProtectedSegment, splitProtectedSegment } from './TrackOperations';
-
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
 export const INFO_FILE_EXT = '.info';
@@ -1125,32 +1123,13 @@ export function validateRoutePoints(points) {
     return true;
 }
 
-const runningCounts = new Map();
-
-function startRunning(setRunning) {
-    if (!setRunning) {
-        return;
-    }
-    runningCounts.set(setRunning, (runningCounts.get(setRunning) ?? 0) + 1);
-    setRunning(true);
-}
-
-function finishRunning(setRunning) {
-    if (!setRunning) {
-        return;
-    }
-    const running = runningCounts.get(setRunning) - 1;
-    if (running > 0) {
-        runningCounts.set(setRunning, running);
-    } else {
-        runningCounts.delete(setRunning);
-    }
-    setRunning(running > 0);
+function countRunning(setRunning, step) {
+    setRunning?.((running) => running + step);
 }
 
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
-    startRunning(setLoading);
-    startRunning(ctx.setProcessingAnalytics);
+    countRunning(setLoading, 1);
+    countRunning(ctx.setRunningAnalyses, 1);
     try {
         const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
 
@@ -1224,8 +1203,8 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
             return ctx.selectedGpxFile;
         }
     } finally {
-        finishRunning(ctx.setProcessingAnalytics);
-        finishRunning(setLoading);
+        countRunning(ctx.setRunningAnalyses, -1);
+        countRunning(setLoading, -1);
     }
 }
 

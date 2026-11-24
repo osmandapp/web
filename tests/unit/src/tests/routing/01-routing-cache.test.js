@@ -210,9 +210,12 @@ test('a cached route put back into a point gets the gap mark of that point', () 
     toGap.geometry = [point(0), point(1)];
     toC.geometry = [point(2), point(3, GAP)];
 
-    syncTrackWithCache({ ctx, track: ctx.selectedGpxFile, geoRouter, debouncerTimer: { current: null } });
-
-    const points = ctx.selectedGpxFile.points;
+    const { points } = syncTrackWithCache({
+        ctx,
+        track: ctx.selectedGpxFile,
+        geoRouter,
+        debouncerTimer: { current: null },
+    });
     expect(points[1].geometry.at(-1).profile).toBe(GAP);
     expect(points[3].geometry.at(-1).profile).toBeUndefined();
 });
@@ -298,9 +301,12 @@ test('undo restores the geometry of every segment from the cache and drops the u
     abEntry.geometry = gapEntry.geometry = ['routed'];
     abEntry.tempLine = gapEntry.tempLine = null;
 
-    syncTrackWithCache({ ctx, track: ctx.selectedGpxFile, geoRouter, debouncerTimer: { current: null } });
-
-    const points = ctx.selectedGpxFile.points;
+    const { points } = syncTrackWithCache({
+        ctx,
+        track: ctx.selectedGpxFile,
+        geoRouter,
+        debouncerTimer: { current: null },
+    });
     expect(points[1].geometry).toEqual(['routed']);
     expect(points[3].geometry).toBeUndefined();
     expect(points[4].geometry).toBeUndefined();

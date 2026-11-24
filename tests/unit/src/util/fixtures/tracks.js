@@ -168,6 +168,17 @@ export function createRouteSegmentPoints(segments) {
  * with a straight line. The router is set to the truck profile, which no editor point uses, and keeps
  * the profile of every pair it routed in `routed`. `geoRouter` is what the layers pass around separately from ctx.
  */
+/** A count kept in state as the app keeps it: the setter takes an update of the count, `values` are the counts it went through. */
+export function createCounter() {
+    const counter = { value: 0, values: [] };
+    counter.set = (update) => {
+        counter.value = update(counter.value);
+        counter.values.push(counter.value);
+    };
+
+    return counter;
+}
+
 export function createEditorCtx({ points = [] } = {}) {
     const track = { name: 'Local', points, layers: { addLayer: jest.fn(), getLayers: () => [] } };
     const ctx = createCtx({ track, cloud: false });

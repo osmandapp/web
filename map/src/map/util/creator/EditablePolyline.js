@@ -202,22 +202,8 @@ export default class EditablePolyline {
             });
             const polylineTempNext = this.activatePolyline({ track, start: currentPoint, end: nextPoint, temp: true });
 
-            let segments = [];
-            segments = TracksRoutingCache.addSegmentToRouting(
-                prevPoint,
-                currentPoint,
-                null, // oldPoint,
-                polylineTempCurrent,
-                segments
-            );
-            segments = TracksRoutingCache.addSegmentToRouting(
-                currentPoint,
-                nextPoint,
-                null, // oldPoint,
-                polylineTempNext,
-                segments
-            );
-            this.ctx.setRoutingNewSegments([...segments]);
+            TracksRoutingCache.addRoutingToCache(prevPoint, currentPoint, polylineTempCurrent, this.ctx);
+            TracksRoutingCache.addRoutingToCache(currentPoint, nextPoint, polylineTempNext, this.ctx);
         }
 
         // finally

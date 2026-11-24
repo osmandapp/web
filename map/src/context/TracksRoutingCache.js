@@ -137,7 +137,7 @@ export function requestAnalysisNow({ ctx, track }) {
     TracksManager.getTrackWithAnalysis(
         TracksManager.GET_ANALYSIS,
         { ...ctx, selectedGpxFile: track },
-        ctx.setAnalysisLoading,
+        ctx.setRunningEditorAnalyses,
         track.points
     ).then((res) => {
         if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
@@ -192,7 +192,6 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
     }
     const geoProfile = ctx.trackRouter.getGeoProfile(startPoint);
     const routingKey = createRoutingKey(startPoint, endPoint, geoProfile);
-    const cachedGeometry = ctx.routingCache[routingKey]?.geometry ?? null;
     ctx.mutateRoutingCache(
         (o) =>
             (o[routingKey] = {
@@ -200,7 +199,7 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
                 startPoint: cloneDeep(startPoint),
                 endPoint: cloneDeep(endPoint),
                 geoProfile: geoProfile,
-                geometry: cachedGeometry,
+                geometry: o[routingKey]?.geometry ?? null,
                 busy: false,
             })
     );
@@ -231,12 +230,12 @@ export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
             routes.push({ index, geometry: cache[key].geometry });
         }
     });
-    if (track.points) {
-        track.points = setSegmentGeometries(track.points, routes);
-    }
+    const synced = track.points ? { ...track, points: setSegmentGeometries(track.points, routes) } : track;
 
-    setTimeout(() => requestAnalytics({ ctx, track, debouncerTimer }), GET_ANALYSIS_DEBOUNCE_MS); // delayed
+    setTimeout(() => requestAnalytics({ ctx, track: synced, debouncerTimer }), GET_ANALYSIS_DEBOUNCE_MS); // delayed
     dropOutdatedCache({ ctx, validKeys: {}, killLayers: true });
+
+    return synced;
 }
 
 // key looks like query string but never used as it
@@ -251,20 +250,8 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
     return ll + geo;
 }
 
-function addSegmentToRouting(start, end, oldPoint, tempPolyline, segments) {
-    const segment = {
-        oldPoint, // purpose of oldPoint here?
-        start: start,
-        end: end,
-        tempPolyline: tempPolyline,
-    };
-    segments.push(segment);
-    return segments;
-}
-
 const TracksRoutingCache = {
     addRoutingToCache,
-    addSegmentToRouting,
 };
 
 export default TracksRoutingCache;

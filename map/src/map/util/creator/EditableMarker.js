@@ -84,10 +84,11 @@ export default class EditableMarker {
 
     createPointContextMenu(e) {
         if (e.latlng) {
-            this.ctx.pointContextMenu.coord = e.latlng;
-            this.ctx.pointContextMenu.pointId = e.target.options.pointId;
-            this.ctx.pointContextMenu.element = e.originalEvent.target;
-            this.ctx.setPointContextMenu({ ...this.ctx.pointContextMenu });
+            this.ctx.setPointContextMenu({
+                coord: e.latlng,
+                pointId: e.target.options.pointId,
+                element: e.originalEvent.target,
+            });
         }
     }
 
@@ -121,7 +122,6 @@ export default class EditableMarker {
         const lng = e.target._latlng.lng;
 
         const indPoint = this.dragPoint.indPoint;
-        let segments = [];
 
         if (indPoint !== undefined && indPoint !== -1) {
             const points = track.points;
@@ -164,7 +164,7 @@ export default class EditableMarker {
                         points[index]
                     );
                     if (polyline) {
-                        segments = TracksRoutingCache.addSegmentToRouting(start, end, null, polyline, segments);
+                        TracksRoutingCache.addRoutingToCache(start, end, polyline, this.ctx);
                     }
                 }
             }
@@ -175,10 +175,6 @@ export default class EditableMarker {
                 currentWpt.lat = lat;
                 currentWpt.lon = lng;
             }
-        }
-
-        if (segments.length > 0) {
-            this.ctx.setRoutingNewSegments([...segments]);
         }
 
         // finally

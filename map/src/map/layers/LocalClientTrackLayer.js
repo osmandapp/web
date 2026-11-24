@@ -435,10 +435,8 @@ export default function LocalClientTrackLayer() {
     }
 
     function syncRouting() {
-        const track = { ...ctxTrack };
-        track.syncRouting = false;
-        syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }); // mutate track
-        ctx.setSelectedGpxFile(track);
+        const track = { ...ctxTrack, syncRouting: false };
+        ctx.setSelectedGpxFile(syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }));
     }
 
     function localRedrawWpts() {
@@ -780,15 +778,6 @@ export default function LocalClientTrackLayer() {
 
         TracksManager.updateState(ctx);
     }
-
-    useEffect(() => {
-        if (!isEmpty(ctx.routingNewSegments)) {
-            ctx.routingNewSegments.forEach((s) => {
-                TracksRoutingCache.addRoutingToCache(s.start, s.end, s.tempPolyline, ctx);
-            });
-            ctx.setRoutingNewSegments([]); // reset new segments queue
-        }
-    }, [ctx.routingNewSegments]);
 
     const lastSegmentGeoProfile = getLastSegmentGeoProfile(ctxTrack.points, geoRouter);
 

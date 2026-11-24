@@ -113,7 +113,7 @@ function changeSegmentsProfile(track, from, to, polylines, geoProfile, ctx) {
     );
 }
 
-async function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
+function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
     if (!ctx.selectedGpxFile.layers) {
         return false; // on empty track
     }
@@ -121,6 +121,7 @@ async function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
     const changed = changeTrackProfile({ track, ctx, geoProfile, changeOne, changeAll });
     if (changed) {
         ctx.setSelectedGpxFile(track);
+        TracksManager.updateState(ctx);
     }
 
     return changed;

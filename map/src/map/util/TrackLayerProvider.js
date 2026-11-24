@@ -6,9 +6,9 @@ import indexOf from 'lodash-es/indexOf';
 import TracksManager, {
     getResolvedPointsGroups,
     GPX_FILE_TYPE,
-    isProtectedSegment,
     isWptGroupShown,
 } from '../../manager/track/TracksManager';
+import { isProtectedSegment } from '../../manager/track/TrackOperations';
 import { FAVORITE_FILE_TYPE, getFavoriteId, resolveWptAppearance } from '../../manager/FavoritesManager';
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
