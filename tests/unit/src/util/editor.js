@@ -2,6 +2,11 @@ import L from 'leaflet';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import EditableMarker from '@map/map/util/creator/EditableMarker';
 import { assignPointIds } from '@map/manager/track/TrackOperations';
+import {
+    effectControlRouterRequests,
+    effectRefreshTrackWithRouting,
+    requestAnalysisNow,
+} from '@map/context/TracksRoutingCache';
 import { createEditorCtx } from './fixtures/tracks';
 import { settle } from './settle';
 
@@ -34,7 +39,7 @@ export function createDrawnCtx(points) {
 /** Drags point `index` of the open track along its meridian to `lat`, as the marker of the point does. */
 export function dragPoint(ctx, index, lat) {
     const track = ctx.selectedGpxFile;
-    const marker = new EditableMarker(null, ctx, null, null, track);
+    const marker = new EditableMarker(null, ctx, null, null);
     marker.dragStartPoint(createDragEvent(track.points[index]), track);
     marker.dragEndPoint(createDragEvent({ lat, lng: track.points[index].lng }), track);
 }
@@ -42,19 +47,21 @@ export function dragPoint(ctx, index, lat) {
 /** ctx of one render: it keeps the track of that render while the setters update the store. */
 export const renderCtx = (store) => ({ ...store });
 
-/** Holds every router answer of `store` until `release`, which gives them one by one. */
-export function holdRouter(store) {
-    const answers = [];
-    const route = store.trackRouter.updateRouteBetweenPoints.getMockImplementation();
-    store.trackRouter.updateRouteBetweenPoints.mockImplementation(
-        (...args) => new Promise((resolve) => answers.push(() => resolve(route(...args))))
-    );
-    const release = async () => {
-        while (answers.length > 0) {
-            answers.shift()();
-            await settle();
-        }
-    };
-
-    return { answers, release };
+/** Runs the routing cache of `store` as the editor effects do: the router answers the waiting segments, they go on the track; `analysis` sends the analysis they ask for without its debounce. */
+export async function routeCached(store, { analysis = false } = {}) {
+    const debouncerTimer = { current: null };
+    effectControlRouterRequests({ ctx: store, startedRouterJobs: 0, setStartedRouterJobs: () => {} });
+    await settle();
+    effectRefreshTrackWithRouting({
+        ctx: store,
+        map,
+        geoRouter: store.trackRouter,
+        saveChanges: (points, wpts, layers, track) => store.setSelectedGpxFile({ ...track }),
+        debouncerTimer,
+    });
+    const analysisAsked = debouncerTimer.current !== null;
+    clearTimeout(debouncerTimer.current);
+    if (analysis && analysisAsked) {
+        requestAnalysisNow({ ctx: store, track: store.selectedGpxFile });
+    }
 }

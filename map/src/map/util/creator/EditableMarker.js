@@ -1,20 +1,19 @@
 import L from 'leaflet';
 import MarkerOptions from '../../markers/MarkerOptions';
 import TrackLayerProvider from '../TrackLayerProvider';
-import { getResolvedPointsGroups, isWptGroupShown } from '../../../manager/track/TracksManager';
-import { findPointIndex, isPointUnrouted, movePoint } from '../../../manager/track/TrackOperations';
+import { publishEditedTrack } from '../../../manager/track/TracksManager';
+import { findPointIndex, isPointUnrouted, isWaitingForRouter, movePoint } from '../../../manager/track/TrackOperations';
 import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
 export default class EditableMarker {
     stopclick;
     dragPoint;
 
-    constructor(map, ctx, point, layer, track) {
+    constructor(map, ctx, point, layer) {
         this.map = map;
         this.ctx = ctx;
         this.point = point;
         this.layer = layer;
-        this.track = track;
         this.dragPoint = null;
         this.stopclick = false;
     }
@@ -24,13 +23,6 @@ export default class EditableMarker {
         let options;
         let point;
         if (marker) {
-            if (marker.options?.wpt) {
-                const pg = getResolvedPointsGroups(this.track);
-                const cat = marker.options.category ?? '';
-                if (!isWptGroupShown(pg, cat)) {
-                    return null;
-                }
-            }
             point = marker.getLatLng();
             options = marker.options;
         } else if (this.point) {
@@ -46,19 +38,19 @@ export default class EditableMarker {
         }
 
         if (marker) {
-            this.addEvents(marker, this.track);
+            this.addEvents(marker);
         }
         return marker;
     }
 
-    addEvents(marker, track) {
+    addEvents(marker) {
         marker.on('dragstart', (e) => {
             this.ctx.setPointContextMenu({});
-            this.dragStartPoint(e, track);
+            this.dragStartPoint(e, this.ctx.selectedGpxFileRef.current);
         });
         marker.on('dragend', (e) => {
             this.ctx.setPointContextMenu({});
-            this.dragEndPoint(e, track);
+            this.dragEndPoint(e, this.ctx.selectedGpxFileRef.current);
             if (e.target.options.wpt) {
                 e.target.dragging.disable();
                 this.stopclick = true;
@@ -73,6 +65,7 @@ export default class EditableMarker {
                 } else {
                     let lat = e.target._latlng.lat;
                     let lng = e.target._latlng.lng;
+                    const track = this.ctx.selectedGpxFileRef.current;
                     const point = track.wpts.find(
                         (point) => parseFloat(point.lat) === lat && parseFloat(point.lon) === lng
                     );
@@ -122,7 +115,8 @@ export default class EditableMarker {
         }
     }
 
-    dragEndPoint(e, track) {
+    dragEndPoint(e, current) {
+        const track = { ...current };
         const lat = e.target._latlng.lat;
         const lng = e.target._latlng.lng;
 
@@ -131,13 +125,17 @@ export default class EditableMarker {
 
         if (indPoint !== undefined && indPoint !== -1) {
             const points = track.points;
-            const polylines = TrackLayerProvider.getPolylines(track.layers.getLayers());
+            const polylines = TrackLayerProvider.getPolylines(track.layers?.getLayers() ?? []);
 
             track.points = movePoint(points, indPoint, { lat, lng });
             const currentPoint = track.points[indPoint];
 
             if (isPointUnrouted({ point: points[indPoint], pointIndex: indPoint, prevPoint: points[indPoint - 1] })) {
-                const currentPolyline = polylines.find((p) => p.options.pointIds?.includes(currentPoint.id));
+                const currentPolyline = polylines.find(
+                    (p) =>
+                        p.options.pointIds?.length === p.getLatLngs().length &&
+                        p.options.pointIds.includes(currentPoint.id)
+                );
                 if (currentPolyline) {
                     const latlngs = currentPolyline.getLatLngs();
                     latlngs[currentPolyline.options.pointIds.indexOf(currentPoint.id)] = L.latLng(lat, lng);
@@ -150,12 +148,10 @@ export default class EditableMarker {
                 }
             } else {
                 for (const index of [indPoint, indPoint + 1]) {
-                    const geometry = track.points[index]?.geometry;
-                    if (!geometry || geometry === points[index].geometry) {
-                        continue;
-                    }
-                    if (geometry.length > 0) {
-                        track.refreshAnalytics = true;
+                    if (!isWaitingForRouter(track.points, index)) {
+                        if (track.points[index]?.geometry !== points[index]?.geometry) {
+                            track.refreshAnalytics = true;
+                        }
                         continue;
                     }
                     const start = track.points[index - 1];
@@ -186,13 +182,7 @@ export default class EditableMarker {
         }
 
         // finally
-        track.zoom = false;
-        track.addPoint = false;
-        track.updateLayers = true;
-        this.ctx.setSelectedGpxFile({ ...track });
-
-        this.ctx.trackState.update = true;
-        this.ctx.setTrackState({ ...this.ctx.trackState });
+        publishEditedTrack(this.ctx, track);
 
         this.dragPoint = null;
     }

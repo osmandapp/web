@@ -20,7 +20,7 @@ export function isNewTrack(localTracks, track) {
     return !localTracks.find((t) => t?.name === track?.name);
 }
 
-export function initNewSelectedTrack({ ctx, map, geoRouter, selectedGpxFile, setRegisteredLayers }) {
+export function initNewSelectedTrack({ ctx, map, geoRouter, setRegisteredLayers }) {
     let newPoint;
     if (ctx.createTrack.latlng) {
         newPoint = createNewPoint({ ctx, geoProfile: geoRouter.getShortGeoProfile() });
@@ -32,9 +32,7 @@ export function initNewSelectedTrack({ ctx, map, geoRouter, selectedGpxFile, set
         pointsGroups: {},
         points: newPoint ? [newPoint] : [],
         newPoint: newPoint ?? null,
-        layers: newPoint
-            ? createFirstLayers({ map, ctx, track: selectedGpxFile, newPoint, setRegisteredLayers })
-            : null,
+        layers: newPoint ? createFirstLayers({ map, ctx, newPoint, setRegisteredLayers }) : null,
         updateLayers: !!newPoint,
         addPoint: !!newPoint,
         routeTypes: [],
@@ -173,6 +171,7 @@ function trackHasRouting(track) {
 
 function deleteInfo(points) {
     points.forEach((p) => {
+        delete p.id;
         delete p.profile;
         delete p.geometry;
     });

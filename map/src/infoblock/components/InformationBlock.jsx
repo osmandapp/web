@@ -517,7 +517,7 @@ export default function InformationBlock({
                 ) : (
                     <>
                         {(ctx.loadingContextMenu ||
-                            ctx.analysisLoading ||
+                            (isLocalTrack(ctx) && ctx.analysisLoading) ||
                             ctx.gpxLoading ||
                             ttx.processingTravelRouteByUrl) && <OverlayLinearProgress />}
                         {ctx.updateFiles && <OverlayLinearProgress id="se-info-files-loading" />}

@@ -177,6 +177,8 @@ export const AppContextProvider = (props) => {
     const [smartFoldersCache, setSmartFoldersCache] = useState(null);
     // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
+    const selectedGpxFileRef = useRef(selectedGpxFile);
+    selectedGpxFileRef.current = selectedGpxFile;
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
@@ -518,6 +520,7 @@ export const AppContextProvider = (props) => {
                 setSmartFoldersLoading,
                 selectedGpxFile,
                 setSelectedGpxFile,
+                selectedGpxFileRef,
                 unverifiedGpxFile,
                 setUnverifiedGpxFile,
                 mapMarkerListener,

@@ -175,6 +175,11 @@ export function createEditorCtx({ points = [] } = {}) {
     ctx.trackState = {};
     ctx.routingCache = {};
     ctx.mutateRoutingCache = (update) => update(ctx.routingCache);
+    ctx.selectedGpxFileRef = {
+        get current() {
+            return ctx.selectedGpxFile;
+        },
+    };
     const router = {
         profile: PROFILE_TRUCK,
         routed: [],

@@ -7,7 +7,7 @@ import TracksRoutingCache, {
     requestAnalysisNow,
     requestAnalytics,
 } from '@map/context/TracksRoutingCache';
-import { setProfile, withAnsweredElevation } from '@map/manager/track/TrackOperations';
+import { assignPointIds, setProfile, withAnsweredElevation } from '@map/manager/track/TrackOperations';
 import { apiPost } from '@map/util/HttpApi';
 import { findRequest } from '../../util/requests';
 import { readGzipJson } from '../../util/infoFile';
@@ -24,7 +24,7 @@ import {
     lats,
 } from '../../util/fixtures/tracks';
 import { settle } from '../../util/settle';
-import { renderCtx } from '../../util/editor';
+import { renderCtx, routeCached } from '../../util/editor';
 
 const { GET_ANALYSIS, GET_SRTM_DATA } = TracksManager;
 const ANALYSIS_URL = `/gpx/${GET_ANALYSIS}`;
@@ -100,6 +100,18 @@ beforeEach(() => {
 });
 
 describe('what is sent for the analysis', () => {
+    test('a gpx of two tracks opened in the editor keeps its tracks as they are, no point ids are sent', async () => {
+        const tracks = [{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }];
+        const ctx = createCtx(assignPointIds(TracksManager.getEditablePoints({ tracks })));
+        ctx.selectedGpxFile.tracks = tracks;
+
+        await analyse(ctx);
+
+        const body = await readGzipJson(findRequest(apiPost, ANALYSIS_URL).body);
+        expect(JSON.stringify(body)).not.toContain('"id"');
+        expect(tracks).toEqual([{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }]);
+    });
+
     test('only the position, elevation, profile and geometry of the editor points are sent, the times are zeroed', async () => {
         const points = withEditorFields(createRoutedPoints(3));
         const ctx = createCtx(points);
@@ -154,12 +166,13 @@ describe('what is sent for the analysis', () => {
 });
 
 describe('when the analysis is asked', () => {
-    test('deleting or moving a point asks for the analysis of the new points', async () => {
+    test('deleting a point asks for the analysis of the new points, moving one asks it once the router has answered', async () => {
         const deleted = createCtx(createRoutedPoints(3));
-        await PointManager.deletePoint(2, deleted);
+        PointManager.deletePoint(2, deleted);
 
         const moved = createCtx(createRoutedPoints(4));
-        await PointManager.reorder(3, 1, moved);
+        PointManager.reorder(3, 1, moved);
+        await routeCached(moved, { analysis: true });
 
         expect(await analysedLats()).toEqual([
             [50, 50.01],
@@ -183,21 +196,28 @@ describe('when the analysis is asked', () => {
         jest.useRealTimers();
     });
 
-    test.failing.each([
-        ['trim before a point', createRoutedPoints(4), (ctx) => PointManager.trimBefore(2, ctx)],
-        ['trim after a point', createRoutedPoints(4), (ctx) => PointManager.trimAfter(1, ctx)],
-        ['split', createRoutedPoints(4), (ctx) => PointManager.split(1, ctx)],
-        ['join', createGapPoints(4, 1), (ctx) => PointManager.join(1, ctx)],
-    ])('%s asks for the analysis of the new points', async (_, points, operation) => {
-        const ctx = createCtx(points);
+    test('trim and split ask for the analysis of the new points, join asks for it once the router has answered', async () => {
+        for (const [points, operation] of [
+            [createRoutedPoints(4), (ctx) => PointManager.trimBefore(2, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.trimAfter(1, ctx)],
+            [createRoutedPoints(4), (ctx) => PointManager.split(1, ctx)],
+            [
+                createGapPoints(4, 1),
+                async (ctx) => {
+                    PointManager.join(1, ctx);
+                    await routeCached(ctx, { analysis: true });
+                },
+            ],
+        ]) {
+            apiPost.mockClear();
+            const ctx = createCtx(points);
 
-        await operation(ctx);
-        await settle();
+            await operation(ctx);
+            await settle();
 
-        const sent = (await analysedLats()).map(String);
-        const asked =
-            ctx.selectedGpxFile.refreshAnalytics === true || sent.includes(String(lats(ctx.selectedGpxFile.points)));
-        expect(asked).toBe(true);
+            const sent = (await analysedLats()).map(String);
+            expect(sent).toContain(String(lats(ctx.selectedGpxFile.points)));
+        }
     });
 
     test('the analysis after a reorder describes the routed points, so its answer is taken', async () => {
@@ -206,7 +226,8 @@ describe('when the analysis is asked', () => {
         });
         const ctx = createCtx(createRoutedPoints(4));
 
-        await PointManager.reorder(3, 1, renderCtx(ctx));
+        PointManager.reorder(3, 1, renderCtx(ctx));
+        await routeCached(ctx, { analysis: true });
         await settle();
 
         const [answer] = ctx.setUnverifiedGpxFile.mock.calls.at(-1);
@@ -294,6 +315,9 @@ describe('srtm', () => {
         const answer = await asked;
 
         expect(withAnsweredElevation(current, answer.points).map(({ ele }) => ele)).toEqual(SRTM_ELE);
+
+        const copiedAfterAnswer = setProfile(answer.points, 4, { profile: 'car' });
+        expect(withAnsweredElevation(copiedAfterAnswer, answer.points)).toBe(copiedAfterAnswer);
     });
 
     test('a track without elevation takes the elevation of srtm after the analysis', async () => {
@@ -342,20 +366,12 @@ describe('routing in progress', () => {
         expect(ctx.setProcessRouting).toHaveBeenLastCalledWith(false);
     });
 
-    test.failing('save stays disabled while join waits for the router', async () => {
+    test('save stays disabled while join waits for the router', () => {
         const ctx = createCtx(createGapPoints(4, 1));
-        ctx.setRoutingNewSegments = jest.fn();
-        let answer;
-        ctx.trackRouter.updateRouteBetweenPoints.mockImplementation(() => new Promise((resolve) => (answer = resolve)));
-        const [, gap, next] = ctx.selectedGpxFile.points;
 
-        const joined = PointManager.join(1, ctx);
-        const disabled =
-            ctx.setRoutingNewSegments.mock.calls.length > 0 ||
-            ctx.setProcessRouting.mock.calls.some(([routing]) => routing);
-        answer?.({ points: [gap, next] });
-        await joined;
+        PointManager.join(1, ctx);
+        effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
 
-        expect(disabled).toBe(true);
+        expect(ctx.setProcessRouting).toHaveBeenLastCalledWith(true);
     });
 });

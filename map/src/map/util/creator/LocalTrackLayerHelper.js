@@ -2,13 +2,14 @@ import EditableMarker from './EditableMarker';
 import L from 'leaflet';
 import TrackLayerProvider, { redrawWptsOnLayer, TEMP_LAYER_FLAG, WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvider';
 import isEmpty from 'lodash-es/isEmpty';
-import TracksManager, { getResolvedPointsGroups } from '../../../manager/track/TracksManager';
+import { getResolvedPointsGroups, isWptGroupShown } from '../../../manager/track/TracksManager';
 import EditablePolyline from './EditablePolyline';
 import { LOCAL_TRACKS_LAYERS_ID } from '../../layers/LocalClientTrackLayer';
 import { addLayerToMap } from '../MapManager';
+import { findPointIndex } from '../../../manager/track/TrackOperations';
 
-export function createFirstLayers({ map, ctx, track, newPoint, setRegisteredLayers }) {
-    const marker = new EditableMarker(map, ctx, newPoint, null, track).create();
+export function createFirstLayers({ map, ctx, newPoint, setRegisteredLayers }) {
+    const marker = new EditableMarker(map, ctx, newPoint, null).create();
     const layers = new L.FeatureGroup().addLayer(marker);
 
     // register both
@@ -83,10 +84,7 @@ export function updateLayers({ map, ctx, localLayers, ctxTrack, points, wpts, tr
             }
         });
         trackLayers.eachLayer((layer) => {
-            if (
-                !isTempLayer(layer) ||
-                (isTempLayer(layer) && !points.find((p) => TracksManager.isEqualPoints(p, layer.point)))
-            ) {
+            if (!isTempLayer(layer) || findPointIndex(points, layer.point?.id) === -1) {
                 trackLayers.removeLayer(layer); // cleanup sub-layers
             }
             layer.options.type = LOCAL_TRACKS_LAYERS_ID;
@@ -123,14 +121,14 @@ function isTempLayer(layer) {
 // change layers view->editable
 function createEditableLayers(map, ctx, ctxTrack, layers) {
     const res = [];
+    const pointsGroups = getResolvedPointsGroups(ctxTrack);
     layers.forEach((layer) => {
         if (layer instanceof L.Marker) {
-            const editableMarker = new EditableMarker(map, ctx, null, layer, ctxTrack).create();
-            if (editableMarker) {
-                res.push(editableMarker);
+            if (!layer.options.wpt || isWptGroupShown(pointsGroups, layer.options.category ?? '')) {
+                res.push(new EditableMarker(map, ctx, null, layer).create());
             }
         } else if (layer instanceof L.Polyline) {
-            const editablePolyline = new EditablePolyline(map, ctx, null, layer, ctxTrack).create();
+            const editablePolyline = new EditablePolyline(map, ctx, null, layer).create();
             res.push(editablePolyline);
         }
         map.removeLayer(layer);

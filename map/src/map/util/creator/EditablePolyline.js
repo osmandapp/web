@@ -2,7 +2,7 @@ import L from 'leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import MarkerOptions from '../../markers/MarkerOptions';
 import GeometryUtil from 'leaflet-geometryutil';
-import TracksManager from '../../../manager/track/TracksManager';
+import TracksManager, { publishEditedTrack } from '../../../manager/track/TracksManager';
 import {
     findPointIndex,
     insertOnLine,
@@ -16,13 +16,11 @@ export default class EditablePolyline {
     currentPolyline;
     dragPoint;
 
-    constructor(map, ctx, points, layer, track, style) {
+    constructor(map, ctx, points, layer) {
         this.map = map;
         this.ctx = ctx;
         this.points = points;
         this.layer = layer;
-        this.track = track;
-        this.style = style;
         this.dragPoint = null;
     }
 
@@ -91,12 +89,12 @@ export default class EditablePolyline {
         marker.on('dragstart', (e) => {
             marker._icon.style.display = ''; // visible
             this.ctx.setPointContextMenu({});
-            this.dragStartNewPoint(e, this.track);
+            this.dragStartNewPoint(e, this.ctx.selectedGpxFileRef.current);
         });
 
         marker.on('dragend', (e) => {
             this.ctx.setPointContextMenu({});
-            this.dragEndNewPoint(e, this.ctx.setGpxLoading, this.track).then(() => {
+            this.dragEndNewPoint(e, this.ctx.setGpxLoading, this.ctx.selectedGpxFileRef.current).then(() => {
                 this.ctx.setGpxLoading(false);
                 if (this.map.hasLayer(marker)) {
                     marker.removeFrom(this.map);
@@ -107,13 +105,9 @@ export default class EditablePolyline {
 
     createBasePolyline() {
         const polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt(this.map));
-        if (this.style) {
-            polyline.setStyle(this.style);
-        } else {
-            polyline.setStyle({
-                color: this.ctx.trackRouter.getColor(),
-            });
-        }
+        polyline.setStyle({
+            color: this.ctx.trackRouter.getColor(),
+        });
         return polyline;
     }
 
@@ -138,10 +132,9 @@ export default class EditablePolyline {
             point: findPoint,
             segments: currentLayer._latlngs,
         });
-        const pointIds = currentLayer.options.pointIds;
-        const endPointId = pointIds
-            ? pointIds[segmentIndex + 1]
-            : (currentLayer.options.pointId ?? currentLayer.point?.id);
+        const pointIds = currentLayer.options.pointIds ?? [];
+        const endPointId =
+            pointIds.length === currentLayer._latlngs.length ? pointIds[segmentIndex + 1] : pointIds.at(-1);
         const index = findPointIndex(track.points, endPointId);
 
         if (index !== -1) {
@@ -164,13 +157,14 @@ export default class EditablePolyline {
         }
     }
 
-    async dragEndNewPoint(e, setLoading, track) {
+    async dragEndNewPoint(e, setLoading, current) {
         if (!this.dragPoint) {
             console.error('dragEndNewPoint empty dragPoint');
             return;
         }
 
         setLoading(true);
+        const track = { ...current };
         const lat = e.target._latlng.lat;
         const lng = e.target._latlng.lng;
 
@@ -183,7 +177,7 @@ export default class EditablePolyline {
 
         track.points = insertOnLine(points, index, { lat, lng }, geometryIndex);
         if (track.points.length > points.length) {
-            const newMarker = new EditableMarker(this.map, this.ctx, track.points[index], null, track).create();
+            const newMarker = new EditableMarker(this.map, this.ctx, track.points[index], null).create();
             track.layers.addLayer(newMarker);
         }
 
@@ -200,8 +194,13 @@ export default class EditablePolyline {
 
             this.map.removeLayer(currentLayer);
 
-            const polylineTempCurrent = this.activatePolyline({ start: prevPoint, end: currentPoint, temp: true });
-            const polylineTempNext = this.activatePolyline({ start: currentPoint, end: nextPoint, temp: true });
+            const polylineTempCurrent = this.activatePolyline({
+                track,
+                start: prevPoint,
+                end: currentPoint,
+                temp: true,
+            });
+            const polylineTempNext = this.activatePolyline({ track, start: currentPoint, end: nextPoint, temp: true });
 
             let segments = [];
             segments = TracksRoutingCache.addSegmentToRouting(
@@ -222,39 +221,32 @@ export default class EditablePolyline {
         }
 
         // finally
-        track.zoom = false;
-        track.addPoint = false;
-        track.updateLayers = true;
-        this.ctx.setSelectedGpxFile({ ...track });
-
-        this.ctx.trackState.update = true;
-        this.ctx.setTrackState({ ...this.ctx.trackState });
+        publishEditedTrack(this.ctx, track);
 
         this.dragPoint = null;
     }
 
-    activatePolyline({ start, end, temp }) {
+    activatePolyline({ track, start, end, temp }) {
         let polyline = null;
 
         if (end.geometry && end.geometry.length > 0) {
-            polyline = new EditablePolyline(this.map, this.ctx, end.geometry, null, this.track).create();
+            polyline = new EditablePolyline(this.map, this.ctx, end.geometry, null).create();
         } else {
-            polyline = new EditablePolyline(this.map, this.ctx, [start, end], null, this.track).create();
+            polyline = new EditablePolyline(this.map, this.ctx, [start, end], null).create();
         }
 
         if (temp) {
-            polyline.setStyle(TrackLayerProvider.TEMP_LINE_STYLE);
-            polyline.options.name = TrackLayerProvider.TEMP_LAYER_FLAG;
-            polyline.point = end; // used in drawRoutePoints() and updateLayers()
+            TrackLayerProvider.toTempLine(polyline, start, end);
         } else {
             const color = this.ctx.trackRouter.getColor(
                 // use PROFILE_LINE color for unrouted segments
                 start.profile ? start : { profile: TracksManager.PROFILE_LINE }
             );
             polyline.setStyle({ color });
+            polyline.options.pointIds = [start.id, end.id];
         }
 
-        polyline.addTo(this.track.layers);
+        polyline.addTo(track.layers);
         // XXX register layers (but check is it still really need)
 
         return polyline;

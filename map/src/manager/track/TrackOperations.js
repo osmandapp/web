@@ -10,11 +10,7 @@ export function createPointId() {
 }
 
 export function assignPointIds(points) {
-    points.forEach((point) => {
-        point.id = createPointId();
-    });
-
-    return points;
+    return points.map((point) => ({ ...point, id: createPointId() }));
 }
 
 export function findPointIndex(points, id) {
@@ -70,31 +66,38 @@ export function isProtectedSegment({ startPoint, endPoint }) {
 }
 
 export function splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex }) {
-    if (geometryIndex !== -1 && endPointIndex >= 1 && newPoint && trackPoints && trackPoints.length >= 2) {
-        // newPoint should have previous geometry (up to geometryIndex) + newPoint at the end
-        newPoint.geometry = trackPoints[endPointIndex].geometry.slice(0, geometryIndex + 1);
-        newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
-        if (newPoint.geometry.length <= 2) {
-            // in case when new segment becomes Line "point-to-point"
-            // duplicate newPoint geometry to keep the segment protected
-            // dupe-geometry tested: GPX, Cloud, Android OsmAnd app, Garmin
-            newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
-        }
-
-        // endPoint should have newPoint at the begin and the rest of previous geometry (next to geometryIndex)
-        trackPoints[endPointIndex].geometry = trackPoints[endPointIndex].geometry.slice(geometryIndex + 1);
-        trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
-        if (trackPoints[endPointIndex].geometry.length <= 2) {
-            // keep the segment protected (see comment for similar case before)
-            trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
-        }
-
-        // duplicate profile string (from previous to endPoint)
-        newPoint.profile = trackPoints[endPointIndex - 1].profile;
-
-        // insert newPoint into trackPoints
-        trackPoints.splice(endPointIndex, 0, newPoint);
+    if (geometryIndex === -1 || endPointIndex < 1 || !newPoint || !trackPoints || trackPoints.length < 2) {
+        return trackPoints;
     }
+    const end = trackPoints[endPointIndex];
+    const vertex = () => ({ lat: newPoint.lat, lng: newPoint.lng });
+
+    // newPoint should have previous geometry (up to geometryIndex) + newPoint at the end
+    const newGeometry = [...end.geometry.slice(0, geometryIndex + 1), vertex()];
+    if (newGeometry.length <= 2) {
+        // in case when new segment becomes Line "point-to-point"
+        // duplicate newPoint geometry to keep the segment protected
+        // dupe-geometry tested: GPX, Cloud, Android OsmAnd app, Garmin
+        newGeometry.push(vertex());
+    }
+
+    // endPoint should have newPoint at the begin and the rest of previous geometry (next to geometryIndex)
+    const endGeometry = [vertex(), ...end.geometry.slice(geometryIndex + 1)];
+    if (endGeometry.length <= 2) {
+        // keep the segment protected (see comment for similar case before)
+        endGeometry.unshift(vertex());
+    }
+
+    // duplicate profile string (from previous to endPoint)
+    const inserted = { ...newPoint, geometry: newGeometry, profile: trackPoints[endPointIndex - 1].profile };
+
+    // insert newPoint into trackPoints
+    return [
+        ...trackPoints.slice(0, endPointIndex),
+        inserted,
+        { ...end, geometry: endGeometry },
+        ...trackPoints.slice(endPointIndex + 1),
+    ];
 }
 
 export function markGapEnd(geometry) {
@@ -103,6 +106,14 @@ export function markGapEnd(geometry) {
 
 function unmarkGapEnd(geometry) {
     return geometry.length > 0 ? [...geometry.slice(0, -1), { ...geometry.at(-1), profile: undefined }] : geometry;
+}
+
+function withGapEnd(point, geometry) {
+    if (isGap(point)) {
+        return markGapEnd(geometry);
+    }
+
+    return geometry?.at(-1)?.profile === PROFILE_GAP ? unmarkGapEnd(geometry) : geometry;
 }
 
 export function deletePoint(points, index) {
@@ -134,11 +145,7 @@ export function insertOnLine(points, index, { lat, lng }, geometryIndex) {
         return insertAt(points, index, newPoint);
     }
     if (isProtectedSegment({ startPoint: prev, endPoint: end })) {
-        const result = [...points];
-        result[index] = { ...end };
-        splitProtectedSegment({ newPoint, trackPoints: result, geometryIndex, endPointIndex: index });
-
-        return result;
+        return splitProtectedSegment({ newPoint, trackPoints: points, geometryIndex, endPointIndex: index });
     }
     const routedPoint = {
         ...cloneDeep(end),
@@ -211,16 +218,21 @@ export function join(points, index) {
 }
 
 export function setProfile(points, index, geoProfile) {
+    return setProfiles(points, [index], geoProfile);
+}
+
+export function setProfiles(points, indexes, geoProfile) {
     const result = [...points];
-    result[index] = { ...points[index], profile: geoProfile.profile, geoProfile };
+    indexes.forEach((index) => {
+        result[index] = { ...points[index], profile: geoProfile.profile, geoProfile };
+    });
 
     return result;
 }
 
 export function setSegmentsProfile(points, starts, geoProfile) {
-    const result = [...points];
+    const result = setProfiles(points, starts, geoProfile);
     starts.forEach((start) => {
-        result[start] = { ...result[start], profile: geoProfile.profile, geoProfile };
         result[start + 1] = { ...result[start + 1], geometry: [] };
     });
 
@@ -228,13 +240,19 @@ export function setSegmentsProfile(points, starts, geoProfile) {
 }
 
 export function withAnsweredElevation(points, answered) {
-    return points.map((point, index) => (point === answered[index] ? point : withElevation(point, answered[index])));
+    return mapOrSame(points, (point, index) =>
+        point === answered[index] ? point : withElevation(point, answered[index])
+    );
 }
 
-export function setSegmentGeometry(points, index, geometry) {
+export function setSegmentGeometries(points, routes) {
+    if (routes.length === 0) {
+        return points;
+    }
     const result = [...points];
-    const point = points[index];
-    result[index] = { ...point, geometry: isGap(point) ? markGapEnd(geometry) : geometry };
+    routes.forEach(({ index, geometry }) => {
+        result[index] = { ...points[index], geometry: withGapEnd(points[index], geometry) };
+    });
 
     return result;
 }
@@ -249,7 +267,7 @@ function withElevation(point, answered) {
     }
     const geometry =
         point.geometry && point.geometry !== answered.geometry && point.geometry.length === answered.geometry?.length
-            ? point.geometry.map((vertex, index) => withElevation(vertex, answered.geometry[index]))
+            ? mapOrSame(point.geometry, (vertex, index) => withElevation(vertex, answered.geometry[index]))
             : point.geometry;
     const ele = answered.ele ?? point.ele;
     if (ele === point.ele && geometry === point.geometry) {
@@ -259,7 +277,13 @@ function withElevation(point, answered) {
     return { ...point, ele, ...(geometry && { geometry }) };
 }
 
-function withGap(point) {
+function mapOrSame(items, update) {
+    const result = items.map(update);
+
+    return result.every((item, index) => item === items[index]) ? items : result;
+}
+
+export function withGap(point) {
     return point.geometry
         ? { ...point, profile: PROFILE_GAP, geometry: markGapEnd(point.geometry) }
         : { ...point, profile: PROFILE_GAP };

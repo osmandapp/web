@@ -22,6 +22,7 @@ import TracksRoutingCache, {
     GET_ANALYSIS_DEBOUNCE_MS,
     requestAnalysisNow,
     requestAnalytics,
+    routeWaitingSegments,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
@@ -172,9 +173,10 @@ export default function LocalClientTrackLayer() {
                 unverified.points = hasPoints
                     ? withAnsweredElevation(trusted.points, unverified.points)
                     : trusted.points;
+                unverified.tracksPoints = unverified.points;
 
                 ctx.setSelectedGpxFile(unverified);
-            } else if (sameTrack && hasPoints && !hasSegmentWaitingForRouter(trusted.points)) {
+            } else if (sameTrack && hasPoints && isLocalTrack(ctx) && !hasSegmentWaitingForRouter(trusted.points)) {
                 requestAnalytics({ ctx, track: trusted, debouncerTimer });
             } else {
                 console.debug('unverified-gpx-file', unverified.name);
@@ -371,7 +373,6 @@ export default function LocalClientTrackLayer() {
                     ctx,
                     map,
                     geoRouter,
-                    selectedGpxFile: ctxTrack,
                     setRegisteredLayers,
                 });
             }
@@ -583,16 +584,11 @@ export default function LocalClientTrackLayer() {
     function createNewRouteLine(prevPoint, newPoint, points, layers) {
         newPoint = points[points.length - 1];
         let polylines = TrackLayerProvider.getPolylines(layers.getLayers());
-        let currentPolyline = polylines.find((p) => {
-            let lastPoint = p._latlngs[p._latlngs.length - 1];
-            if (lastPoint.lat === prevPoint.lat || lastPoint.lng === prevPoint.lng) {
-                return p;
-            }
-            return null;
-        });
+        let currentPolyline = polylines.find((p) => p.options.pointIds?.at(-1) === prevPoint.id);
 
         if (currentPolyline) {
             currentPolyline._latlngs.push(newPoint);
+            currentPolyline.options.pointIds?.push(newPoint.id);
             currentPolyline.setLatLngs(currentPolyline._latlngs);
         } else {
             let polyline = new EditablePolyline(
@@ -605,12 +601,12 @@ export default function LocalClientTrackLayer() {
                         lng: newPoint.lng,
                     },
                 ],
-                null,
-                ctxTrack
+                null
             ).create();
             polyline.setStyle({
                 color: geoRouter.getColor(),
             });
+            polyline.options.pointIds = [prevPoint.id, newPoint.id];
             layers.addLayer(polyline);
         }
 
@@ -625,8 +621,8 @@ export default function LocalClientTrackLayer() {
         saveChanges(null, null, null, ctxTrack);
     }
 
-    function createPointOnMap(newPoint, layers, track) {
-        const marker = new EditableMarker(map, ctx, newPoint, null, track).create();
+    function createPointOnMap(newPoint, layers) {
+        const marker = new EditableMarker(map, ctx, newPoint, null).create();
         layers.addLayer(marker);
     }
 
@@ -676,7 +672,7 @@ export default function LocalClientTrackLayer() {
             ctxTrack.addNewPoint = addNewPoint;
             ctxTrack.points = points;
 
-            createPointOnMap(addNewPoint, layers, ctxTrack);
+            createPointOnMap(addNewPoint, layers);
 
             ctxTrack.layers = updateLayers({
                 map,
@@ -715,7 +711,7 @@ export default function LocalClientTrackLayer() {
                 const points = ctxTrack.points;
                 let layers = ctxTrack.layers ?? new L.FeatureGroup();
                 if (added === ADDED_POINT.FIRST) {
-                    layers = createFirstLayers({ map, ctx, track: ctxTrack, newPoint, setRegisteredLayers });
+                    layers = createFirstLayers({ map, ctx, newPoint, setRegisteredLayers });
                 } else {
                     const prevPoint = points[points.length - 2];
                     if (added === ADDED_POINT.LINE) {
@@ -727,7 +723,7 @@ export default function LocalClientTrackLayer() {
                     }
                 }
                 ctxTrack.newPoint = newPoint;
-                createPointOnMap(newPoint, layers, ctxTrack);
+                createPointOnMap(newPoint, layers);
                 ctxTrack.layers = updateLayers({
                     map,
                     ctx,
@@ -764,6 +760,8 @@ export default function LocalClientTrackLayer() {
             trackLayers: new L.FeatureGroup(),
         });
         ctxTrack.points = points;
+        ctxTrack.tracksPoints = points;
+        routeWaitingSegments(ctxTrack, ctx);
 
         ctxTrack.newPoint = points[points.length - 1];
         ctxTrack.update = false;

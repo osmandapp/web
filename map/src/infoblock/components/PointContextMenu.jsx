@@ -25,10 +25,7 @@ export default function PointContextMenu({ anchorEl }) {
     function deletePoint() {
         closeContextMenu();
         if (pointInd !== -1) {
-            PointManager.deletePoint(pointInd, ctx).then(() => {
-                ctx.trackState.update = true;
-                ctx.setTrackState({ ...ctx.trackState });
-            });
+            PointManager.deletePoint(pointInd, ctx);
         } else {
             deleteWpt(ctx.pointContextMenu.coord);
         }
@@ -75,14 +72,14 @@ export default function PointContextMenu({ anchorEl }) {
         PointManager.split(pointInd, ctx);
     }
 
-    async function joinBefore() {
+    function joinBefore() {
         closeContextMenu();
-        await PointManager.join(pointInd - 1, ctx);
+        PointManager.join(pointInd - 1, ctx);
     }
 
-    async function joinAfter() {
+    function joinAfter() {
         closeContextMenu();
-        await PointManager.join(pointInd, ctx);
+        PointManager.join(pointInd, ctx);
     }
 
     const Buttons = () => {

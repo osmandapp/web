@@ -26,7 +26,7 @@ import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
 import { compressFileToBlob, compressJSONToBlob } from '../../util/GzipCompression';
 import { findInfoFile } from './TrackAppearanceManager';
 import i18n from '../../i18n';
-import { markGapEnd, PROFILE_GAP } from './TrackOperations';
+import { PROFILE_GAP, withGap } from './TrackOperations';
 
 export { isPointUnrouted, isProtectedSegment, splitProtectedSegment } from './TrackOperations';
 
@@ -332,18 +332,20 @@ export function getTrackPoints(track) {
     return points;
 }
 
-// Create an array of points that contains references to the points in tracks
+export function withEditedPoints(track) {
+    return track.tracksPoints && track.tracksPoints !== track.points
+        ? { ...track, tracks: [{ points: track.points }] }
+        : track;
+}
+
+// Create an array of points that contains references to the points in tracks (the gap end of a track is a copy)
 function getEditablePoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach((track) => {
             if (track.points) {
                 if (points.length > 0) {
-                    const last = points[points.length - 1];
-                    last.profile = PROFILE_GAP;
-                    if (last.geometry) {
-                        last.geometry = markGapEnd(last.geometry);
-                    }
+                    points[points.length - 1] = withGap(points[points.length - 1]);
                 }
                 points = points.concat(track.points);
             }
@@ -1266,6 +1268,11 @@ function isEqualPoints(point1, point2) {
 function updateState(ctx) {
     ctx.trackState.update = true;
     ctx.setTrackState({ ...ctx.trackState });
+}
+
+export function publishEditedTrack(ctx, track) {
+    ctx.setSelectedGpxFile({ ...track, zoom: false, addPoint: false, updateLayers: true });
+    updateState(ctx);
 }
 
 // check: geo-points, way-points, gpx-trkpt

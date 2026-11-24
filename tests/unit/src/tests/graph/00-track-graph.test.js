@@ -2,7 +2,8 @@ import { analyzerProfile, trackProfile } from '@map/graph/model/profile';
 import { computeSlopes } from '@map/graph/model/slopes';
 import { sampleSeries } from '@map/graph/model/sampling';
 import { graphUnits } from '@map/menu/settings/units/UnitsConverter';
-import TracksManager, { NAN_MARKER } from '@map/manager/track/TracksManager';
+import TracksManager, { NAN_MARKER, withEditedPoints } from '@map/manager/track/TracksManager';
+import { assignPointIds, movePoint, setSegmentGeometries } from '@map/manager/track/TrackOperations';
 import { createEditorPoint, createPointAt, createRoutedPoints } from '../../util/fixtures/tracks';
 
 const METERS_BETWEEN_EDITOR_POINTS = 1112.26;
@@ -33,6 +34,28 @@ test('the distance skips the gap between segments and tracks, a point without el
     expect(analyzer.map((p) => [p.distance, p.lng])).toEqual([
         [0, 30],
         [1112, 30],
+    ]);
+});
+
+test('the graph of a track opened in the editor follows its edited points until an analysis answer brings new tracks', () => {
+    const tracks = [{ points: createRoutedPoints(3) }];
+    const points = assignPointIds(TracksManager.getEditablePoints({ tracks }));
+    const opened = { tracks, points, tracksPoints: points };
+    const moved = { lat: 50.025, lng: 30 };
+    const edited = {
+        ...opened,
+        points: setSegmentGeometries(movePoint(points, 2, moved), [
+            { index: 2, geometry: [createEditorPoint(1), moved] },
+        ]),
+    };
+
+    expect(withEditedPoints(opened)).toBe(opened);
+    expect(trackProfile(withEditedPoints(edited)).map((p) => p.lat)).toEqual([50, 50.01, 50.01, 50.025]);
+
+    const answered = { ...edited, tracks: [{ points: [point(0, 100), point(2.5, 110)] }], tracksPoints: edited.points };
+    expect(trackProfile(withEditedPoints(answered)).map((p) => [p.lat, p.elevation])).toEqual([
+        [50, 100],
+        [50.025, 110],
     ]);
 });
 
