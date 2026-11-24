@@ -6,7 +6,6 @@ import actionFinish from '../../actions/actionFinish.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
 import actionOpenPointMenu from '../../actions/tracks/actionOpenPointMenu.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 const TRACK = 'test-track-wpt';
 const WPT = [50.71871, 29.588748];
@@ -16,8 +15,6 @@ const ROUTE_POINTS = [
 ];
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap();
     await actionOpenLocalTrack(TRACK);
     await setMapCenter(...WPT, 17);

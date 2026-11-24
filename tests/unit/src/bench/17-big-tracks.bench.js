@@ -69,7 +69,13 @@ test('17.4 router answers of 200 route points with 100k vertices', async () => {
     const answered = createRouteTrackPoints(ROUTE_POINTS, perSegment);
 
     const apply = await measure(
-        (ctx) => effectRefreshTrackWithRouting({ ctx, geoRouter: ctx.trackRouter, saveChanges: () => {} }),
+        (ctx) =>
+            effectRefreshTrackWithRouting({
+                ctx,
+                geoRouter: ctx.trackRouter,
+                saveChanges: () => {},
+                debouncerTimer: { current: null },
+            }),
         {
             prepare: () => {
                 const points = answered.map(({ lat, lng, profile }) => ({ lat, lng, profile, geometry: [] }));
@@ -104,7 +110,7 @@ test('17.7 the analysis request of routed 50k', async () => {
     apiPost.mockResolvedValue(null);
     const ctx = createEditorCtx({ points: createRouteTrackPoints() });
     ctx.selectedGpxFile.tracks = [{ points: [] }];
-    ctx.setProcessingAnalytics = jest.fn();
+    ctx.setRunningAnalyses = jest.fn();
 
     const prepare = await measure(() =>
         TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, jest.fn(), ctx.selectedGpxFile.points)

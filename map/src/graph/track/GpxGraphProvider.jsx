@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import GpxGraph from './GpxGraph';
 import AppContext from '../../context/AppContext';
-import { equalsPoints, getAllPoints, getTrackPoints } from '../../manager/track/TracksManager';
+import { equalsPoints, getAllPoints, getTrackPoints, withEditedPoints } from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import isEqual from 'lodash-es/isEqual';
 import pick from 'lodash-es/pick';
@@ -43,7 +43,8 @@ const GpxGraphProvider = ({ width }) => {
             setRoadPoints(null);
             return;
         }
-        const points = getTrackPoints(ctx.selectedGpxFile);
+        const track = withEditedPoints(ctx.selectedGpxFile);
+        const points = getTrackPoints(track);
         getRoadPoints(points);
         setRouteTypes(ctx.selectedGpxFile.routeTypes);
         if (isEmpty(points)) {
@@ -53,7 +54,7 @@ const GpxGraphProvider = ({ width }) => {
         const pointsChanged = !equalsPoints(points, data?.points);
         const available = availableSeries(ctx.selectedGpxFile.analysis);
         if (pointsChanged || !isEqual(available, data?.available)) {
-            setData({ track: ctx.selectedGpxFile, points, available });
+            setData({ track, points, available });
         }
         if (ctx.selectedGpxFile.name !== choices.trackName) {
             setChoices((prev) => ({

@@ -6,9 +6,9 @@ import indexOf from 'lodash-es/indexOf';
 import TracksManager, {
     getResolvedPointsGroups,
     GPX_FILE_TYPE,
-    isProtectedSegment,
     isWptGroupShown,
 } from '../../manager/track/TracksManager';
+import { isProtectedSegment } from '../../manager/track/TrackOperations';
 import { FAVORITE_FILE_TYPE, getFavoriteId, resolveWptAppearance } from '../../manager/FavoritesManager';
 import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
@@ -87,6 +87,7 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
 
 function parsePoints({ map, ctx, points, layers, draggable = false, hidden = false, trackAppearance = null }) {
     let coordsTrk = [];
+    let pointIdsTrk = [];
     let coordsAll = [];
     points.forEach((point, index) => {
         if (point.geometry !== undefined && point.geometry !== null) {
@@ -103,12 +104,22 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
             });
         } else {
             coordsTrk.push(new L.LatLng(point.lat, point.lng));
+            pointIdsTrk.push(point.id);
             if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
-                let polyline = createPolyline({ coords: coordsTrk, ctx, map, point, points, trackAppearance });
+                let polyline = createPolyline({
+                    coords: coordsTrk,
+                    ctx,
+                    map,
+                    point,
+                    points,
+                    trackAppearance,
+                    pointIds: pointIdsTrk,
+                });
                 addStartEndGap(point, points, layers, draggable);
                 layers.push(polyline);
                 coordsAll = coordsAll.concat(cloneDeep(coordsTrk));
                 coordsTrk = [];
+                pointIdsTrk = [];
             }
         }
     });
@@ -131,13 +142,22 @@ function parsePoints({ map, ctx, points, layers, draggable = false, hidden = fal
                     icon: MarkerOptions.options.route,
                     draggable: draggable,
                     isRoutePoint: true,
+                    pointId: p.id,
                 });
                 layers.push(marker);
             }
         });
     }
 
-    const endPolyline = createPolyline({ coords: coordsTrk, ctx, map, point: null, points: null, trackAppearance });
+    const endPolyline = createPolyline({
+        coords: coordsTrk,
+        ctx,
+        map,
+        point: null,
+        points: null,
+        trackAppearance,
+        pointIds: pointIdsTrk,
+    });
     layers.push(endPolyline);
 
     return {
@@ -157,6 +177,7 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
 
 function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index, trackAppearance }) {
     let coords = [];
+    const segmentIds = [points[index - 1]?.id, point.id];
 
     // draw tempLine for orphaned empty geo but not for gap
     if (ctx && map && point.geometry.length === 0 && index > 0) {
@@ -165,7 +186,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
             const trackLayers = ctx.selectedGpxFile.layers;
             if (trackLayers && map.hasLayer(trackLayers)) {
                 trackLayers.eachLayer((l) => {
-                    if (l.point && TracksManager.isEqualPoints(l.point, point)) {
+                    if (point.id !== undefined && l.point?.id === point.id) {
                         pointLayersFound++;
                     }
                 });
@@ -188,7 +209,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
         if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
             addStartEndGap(point, points, layers, draggable);
             coords.push(new L.LatLng(p.lat, p.lng));
-            layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
+            layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance, pointIds: segmentIds }));
             coordsAll = coordsAll.concat(Object.assign([], coords));
             coords = [];
         } else {
@@ -198,7 +219,7 @@ function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable
 
     if (coords.length > 0) {
         coordsAll = coordsAll.concat(Object.assign([], coords));
-        layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance }));
+        layers.push(createPolyline({ coords, ctx, map, point, points, trackAppearance, pointIds: segmentIds }));
     }
 
     return coordsAll;
@@ -246,7 +267,7 @@ function addTooltipOnHover(polyline, map, coords, name = null) {
     });
 }
 
-function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
+function createPolyline({ coords, ctx, map, point, points, trackAppearance, pointIds }) {
     let color =
         point && points
             ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
@@ -266,6 +287,7 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance }) {
     const polyline = new L.Polyline(coords, {
         color,
         weight: getPolylineWeight(width, map.getZoom()),
+        pointIds,
         ...(arrowSettings.show ? { renderer: L.svg() } : {}),
     });
 
@@ -649,34 +671,10 @@ function updatePolylineToTemp(startPoint, endPoint, polyline) {
     if (polyline) {
         const polylineTemp = createTempPolyline(startPoint, endPoint);
         polyline.setLatLngs(polylineTemp._latlngs);
-        polyline.options.name = TEMP_LAYER_FLAG;
-        polyline.setStyle(TEMP_LINE_STYLE);
-        polyline.point = endPoint;
-        return polyline;
+        return toTempLine(polyline, startPoint, endPoint);
     } else {
         console.error('updatePolylineToTemp empty polyline');
     }
-}
-
-function getPointByPolyline(layer, points) {
-    let res;
-    let layerPoints = layer._latlngs;
-    points.forEach((p) => {
-        let geo = p.geometry;
-        if (geo) {
-            if (geo.length === layerPoints.length) {
-                if (
-                    geo[0].lat === layerPoints[0].lat &&
-                    geo[0].lng === layerPoints[0].lng &&
-                    geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat &&
-                    geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng
-                ) {
-                    res = p;
-                }
-            }
-        }
-    });
-    return res;
 }
 
 function getPolylines(layers) {
@@ -722,9 +720,14 @@ function createTempPolyline(start, end) {
     const startPoint = new L.LatLng(start.lat, start.lng);
     const endPoint = new L.LatLng(end.lat, end.lng);
 
-    const polyline = new L.Polyline([startPoint, endPoint], TEMP_LINE_STYLE);
-    polyline.point = end; // always store end-point ref inside layer
+    return toTempLine(new L.Polyline([startPoint, endPoint]), start, end);
+}
+
+function toTempLine(polyline, start, end) {
+    polyline.setStyle(TEMP_LINE_STYLE);
+    polyline.point = end; // always store end-point ref inside layer, used in drawRoutePoints() and updateLayers()
     polyline.options.name = TEMP_LAYER_FLAG; // use temp-flag
+    polyline.options.pointIds = [start.id, end.id];
 
     return polyline;
 }
@@ -732,18 +735,7 @@ function createTempPolyline(start, end) {
 function createEditableTempLPolyline(start, end, map, ctx) {
     const startPoint = new L.LatLng(start.lat, start.lng);
     const endPoint = new L.LatLng(end.lat, end.lng);
-    let polylineTemp = new EditablePolyline(
-        map,
-        ctx,
-        [startPoint, endPoint],
-        null,
-        ctx.selectedGpxFile,
-        TrackLayerProvider.TEMP_LINE_STYLE
-    ).create();
-    polylineTemp.point = end;
-    polylineTemp.options.name = TEMP_LAYER_FLAG;
-
-    return polylineTemp;
+    return toTempLine(new EditablePolyline(map, ctx, [startPoint, endPoint], null).create(), start, end);
 }
 
 // set visibility each time the marker is added to the map (Leaflet 'add' event)
@@ -778,8 +770,8 @@ const TrackLayerProvider = {
     parsePoints,
     parseWpt,
     getPolylineOpt,
-    getPointByPolyline,
     createTempPolyline,
+    toTempLine,
     getPolylines,
     updatePolyline,
     createEditableTempLPolyline,

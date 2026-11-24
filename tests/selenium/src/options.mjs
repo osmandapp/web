@@ -11,10 +11,12 @@ const BENCH_FOLDER = 'bench';
 
 export let testsFolder = 'tests';
 
-export const TEST_LOGIN = 'osmand@grr.la';
-export const TEST_PASSWORD = '0xDEADBEEF';
+export let TEST_LOGIN = 'osmand@grr.la';
+export let TEST_PASSWORD = '0xDEADBEEF';
 export const TEST_LOGIN2 = 'osmandtest2@gmail.com';
 export const TEST_PASSWORD2 = 'osmandTest2osmandTest2';
+export const TEST_LOGIN3 = 'osmandtest@grr.la';
+export const TEST_PASSWORD3 = '0xDEADBEEF';
 
 export const TIMEOUT_OPTIONAL = 1000; // optional element timeout (1s)
 export let TIMEOUT_REQUIRED = 45 * 1000; // required element timeout (waitBy / clickBy / enclose) (45s)
@@ -79,6 +81,10 @@ export function parseArgs() {
             process.kill(process.pid);
         } else if (a.match(/^(http:|https:)/)) {
             url = a;
+            if (url.match(/^http:\/\/localhost:/)) {
+                TEST_LOGIN = TEST_LOGIN3;
+                TEST_PASSWORD = TEST_PASSWORD3;
+            }
         } else if (a.match(/^--/)) {
             a === '--longtimeout' && (TIMEOUT_REQUIRED = LONG_TIMEOUT);
             a === '--headless' && (headless = true);

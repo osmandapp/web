@@ -284,13 +284,8 @@ export default function WaypointsTab() {
             ctx,
             text: 'Delete all waypoints?',
             callback: () => {
-                const updatedSelectedGpxFile = {
-                    ...ctx.selectedGpxFile,
-                    wpts: [],
-                    updateLayers: true,
-                };
                 TracksManager.updateState(ctx);
-                ctx.setSelectedGpxFile(updatedSelectedGpxFile);
+                ctx.setSelectedGpxFile((track) => ({ ...track, wpts: [], updateLayers: true }));
             },
         });
     }

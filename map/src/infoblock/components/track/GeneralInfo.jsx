@@ -69,7 +69,7 @@ export default function GeneralInfo({ width }) {
     const [speed, setSpeed] = useState('');
     const [elevation, setElevation] = useState('');
     const [elevationSRTM, setElevationSRTM] = useState('');
-    const [loadingSrtm, setLoadingSrtm] = useState(false);
+    const [loadingSrtm, setLoadingSrtm] = useState(0);
 
     const DESC_MAX_HEIGHT = 150;
     const ref = useRef(null);
@@ -313,7 +313,7 @@ export default function GeneralInfo({ width }) {
                                 <Tooltip title="Elevation is calculated based on Satellite imagery of points" arrow>
                                     <Typography sx={{ ml: 1 }} variant="body2" noWrap>
                                         {`Elevation (Satellite): ${elevationSRTM}`}
-                                        {elevationSRTM === '' && loadingSrtm === false && (
+                                        {elevationSRTM === '' && !loadingSrtm && (
                                             <Link
                                                 id={'se-link-srtm'}
                                                 href="#"
