@@ -61,7 +61,7 @@ You can also change [the main source](#main) of maps from vector maps to online 
 - **iOS**. For *iOS*, this feature works by default.
 - **Android**. For *Android*, to use raster maps in OsmAnd you need to enable [Online maps plugin](../plugins/online-map.md). Follow these steps: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**[Change layer parameters](#layers)**. To improve the visibility and mix of raster map layers, you can adjust the layer transparency using the screen slider. Additionally, you can modify the vector map style by hiding polygons, making the underlay layers more visible. This is especially useful when viewing satellite imagery.
+**[Change layer parameters](#layers)**. To blend raster map layers, you can adjust layer visibility using the screen slider. Additionally, you can modify the vector map style by hiding polygons, making the underlay layers more visible. This is especially useful when viewing satellite imagery.
 
 
 ## Layers {#layers}
@@ -84,7 +84,7 @@ You can also change [the main source](#main) of maps from vector maps to online 
 
 In OsmAnd, raster maps can serve as an additional map source alongside the default vector maps, which are optimized for offline use.  
 
-You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen (plus Terrain). Think of them like a pie: [**Underlay**](#underlay) (raster base below), [**Main**](#main) (vector or raster core), [**Overlay**](#overlay) (raster atop), with [**Terrain**](#terrain) shading over all. For instance, you can use satellite imagery as the Underlay, OsmAnd's offline vector map as the Main layer with increased transparency, and a bike path map as the Overlay on top.
+You have the flexibility to add one or two online tile layers to complement your base map. This allows you to view up to three map layers simultaneously on your screen (plus Terrain). Think of them like a pie: [**Underlay**](#underlay) (raster base below), [**Main**](#main) (vector or raster core), [**Overlay**](#overlay) (raster atop), with [**Terrain**](#terrain) shading over all. For instance, you can use satellite imagery as the Underlay, OsmAnd's offline vector map as the Main layer with reduced visibility, and a bike path map as the Overlay on top.
 
 >[Vector maps](./vector-maps.md) are available **only** in the [Main](#main) layer (and are the default there). Raster maps can be used in all three layers: Main, Underlay, and Overlay.
 
@@ -92,7 +92,7 @@ You have the flexibility to add one or two online tile layers to complement your
 
 If you want to switch these layers faster ([Main map source](#main), [Overlay](#overlay), [Underlay](#underlay), and [Terrain](#terrain)), you can add a [Quick Action (Custom button)](../widgets/quick-action.md) to the map screen and assign the corresponding map actions to it.
 
-You can also adjust the transparency of the base map to blend it with your layers. If needed, you can enable a transparency slider on the main screen for quick adjustments.
+You can also adjust base map visibility to blend it with your layers. If needed, you can enable a slider on the main screen for quick adjustments.
 
 ### Main {#main}
 
@@ -126,7 +126,7 @@ By default, the main map is set to [Offline vector maps](./vector-maps.md) (OsmA
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.webp)  
 
 </TabItem>
 
@@ -134,15 +134,15 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_ov
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Switch on/off* the Overlay map layer.
-2. *Overlay transparency* (*Android*)/ *Transparency* of the Overlay map (*iOS*).
-3. *Show transparency slider* (*Android*) / *Show slider on the map* (*iOS*). Quick access to the transparency setting.
+2. *<Translate android="true" ids="overlay_transparency"/>* (*Android*) / *<Translate ios="true" ids="visibility"/>* (*iOS*). At 0%, the Overlay map is hidden; at 100%, it is fully visible.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Quick access to the visibility setting.
 4. *Overlay map source* (*Android*) / *Available layers* (*iOS*). Select an online tile map from the list to add it directly as your Overlay layer.
 5. *Show map symbols* - such as text, road signs, and others.  
 6. *Add online source* (*iOS*). [Add new online source](#add-new-online-source).
@@ -156,7 +156,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.webp)
 
 </TabItem>
 
@@ -164,15 +164,15 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_un
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Switch on/off* the Underlay map.
-2. *Base map transparency*.
-3. *Show transparency slider* (*Android*) / *Show slider on the map* (*iOS*). Quick access to the transparency setting.
+2. *<Translate android="true" ids="map_transparency"/>*. At 100%, the base map is fully visible; at 0%, only the Underlay map is shown.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Quick access to the visibility setting.
 4. *Underlay map source* (*Android*) / *Available layers* (*iOS*). Select an online tile map from the list to add it directly as your Underlay layer.
 5. *Show/Hide polygons*.
 6. *Add online source* (*iOS*). [Add new online source](#add-new-online-source).

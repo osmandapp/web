@@ -1,8 +1,5 @@
-import TracksManager, {
-    getGpxFileFromTrackData,
-    isProtectedSegment,
-    PROFILE_LINE,
-} from '@map/manager/track/TracksManager';
+import TracksManager, { getGpxFileFromTrackData, PROFILE_LINE } from '@map/manager/track/TracksManager';
+import { isProtectedSegment } from '@map/manager/track/TrackOperations';
 import { saveTrackToLocal } from '@map/manager/track/SaveTrackManager';
 import { apiPost } from '@map/util/HttpApi';
 import { PROFILE_BICYCLE, PROFILE_PEDESTRIAN } from '@map/store/geoRouter/profileConstants';
@@ -113,7 +110,7 @@ describe('the points of an imported gpx in the editor', () => {
         expect(TracksManager.getEditablePoints({ ...createGpxData(), wpts: [WPT] })).toEqual([]);
     });
 
-    test.failing('a gap between two routed trk also ends the geometry of the first one, as Split puts it', () => {
+    test('a gap between two routed trk also ends the geometry of the first one, as Split puts it', () => {
         const points = TracksManager.getEditablePoints(
             createGpxData(createRouteLeg(0, 2, PROFILE_PEDESTRIAN), createRouteLeg(3, 5, PROFILE_BICYCLE))
         );

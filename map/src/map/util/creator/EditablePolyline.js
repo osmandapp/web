@@ -2,13 +2,13 @@ import L from 'leaflet';
 import TrackLayerProvider from '../TrackLayerProvider';
 import MarkerOptions from '../../markers/MarkerOptions';
 import GeometryUtil from 'leaflet-geometryutil';
-import indexOfL from 'lodash-es/indexOf';
-import cloneDeep from 'lodash-es/cloneDeep';
-import TracksManager, {
+import TracksManager, { publishEditedTrack } from '../../../manager/track/TracksManager';
+import {
+    findPointIndex,
+    insertOnLine,
     isPointUnrouted,
     isProtectedSegment,
-    splitProtectedSegment,
-} from '../../../manager/track/TracksManager';
+} from '../../../manager/track/TrackOperations';
 import EditableMarker from './EditableMarker';
 import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
@@ -16,13 +16,11 @@ export default class EditablePolyline {
     currentPolyline;
     dragPoint;
 
-    constructor(map, ctx, points, layer, track, style) {
+    constructor(map, ctx, points, layer) {
         this.map = map;
         this.ctx = ctx;
         this.points = points;
         this.layer = layer;
-        this.track = track;
-        this.style = style;
         this.dragPoint = null;
     }
 
@@ -91,12 +89,12 @@ export default class EditablePolyline {
         marker.on('dragstart', (e) => {
             marker._icon.style.display = ''; // visible
             this.ctx.setPointContextMenu({});
-            this.dragStartNewPoint(e, this.track);
+            this.dragStartNewPoint(e, this.ctx.selectedGpxFileRef.current);
         });
 
         marker.on('dragend', (e) => {
             this.ctx.setPointContextMenu({});
-            this.dragEndNewPoint(e, this.ctx.setGpxLoading, this.track).then(() => {
+            this.dragEndNewPoint(e, this.ctx.setGpxLoading, this.ctx.selectedGpxFileRef.current).then(() => {
                 this.ctx.setGpxLoading(false);
                 if (this.map.hasLayer(marker)) {
                     marker.removeFrom(this.map);
@@ -107,13 +105,9 @@ export default class EditablePolyline {
 
     createBasePolyline() {
         const polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt(this.map));
-        if (this.style) {
-            polyline.setStyle(this.style);
-        } else {
-            polyline.setStyle({
-                color: this.ctx.trackRouter.getColor(),
-            });
-        }
+        polyline.setStyle({
+            color: this.ctx.trackRouter.getColor(),
+        });
         return polyline;
     }
 
@@ -132,173 +126,116 @@ export default class EditablePolyline {
         const lng = e.target._latlng.lng;
 
         const currentLayer = track.layers._layers[this.currentPolyline];
-        const points = track.points;
-
-        // find exact point which has the same geometry with the current layer (OK for routable)
-        const nextPoint = TrackLayerProvider.getPointByPolyline(currentLayer, points);
-        const indexOf = nextPoint ? indexOfL(points, nextPoint, 0) : -1;
-
         const findPoint = new L.LatLng(lat, lng);
 
-        if (nextPoint && indexOf !== -1) {
+        const { index: segmentIndex } = this.findTheNearestSegment({
+            point: findPoint,
+            segments: currentLayer._latlngs,
+        });
+        const pointIds = currentLayer.options.pointIds ?? [];
+        const endPointId =
+            pointIds.length === currentLayer._latlngs.length ? pointIds[segmentIndex + 1] : pointIds.at(-1);
+        const index = findPointIndex(track.points, endPointId);
+
+        if (index !== -1) {
             /**
-             * index is 100% found (layer-to-points match)
              * additionally, find the nearest geometryIndex
              * it will be used to split GPX-protected segment
              */
+            const endPoint = track.points[index];
             let geometryIndex = -1;
-            if (nextPoint.geometry) {
-                const { index } = this.findTheNearestSegment({
-                    point: findPoint,
-                    segments: nextPoint.geometry,
-                });
-                geometryIndex = index;
+            if (endPoint.geometry) {
+                geometryIndex = this.findTheNearestSegment({ point: findPoint, segments: endPoint.geometry }).index;
             }
             this.dragPoint = {
                 lat: lat,
                 lng: lng,
                 geometryIndex,
-                index: indexOf,
+                index,
+                layerIndex: segmentIndex + 1,
             };
-        } else {
-            const layerPoints = currentLayer._latlngs;
-
-            // process Unrouted Line points: first by the nearest segment, then by points
-            const { end } = this.findTheNearestSegment({ point: findPoint, segments: layerPoints });
-            const { index: deepIndexOf } = this.findPointInPoints({ point: end, points: track.points });
-
-            if (deepIndexOf !== -1) {
-                this.dragPoint = {
-                    index: deepIndexOf,
-                    lat: lat,
-                    lng: lng,
-                };
-            }
         }
     }
 
-    async dragEndNewPoint(e, setLoading, track) {
+    async dragEndNewPoint(e, setLoading, current) {
         if (!this.dragPoint) {
             console.error('dragEndNewPoint empty dragPoint');
             return;
         }
 
         setLoading(true);
+        const track = { ...current };
         const lat = e.target._latlng.lat;
         const lng = e.target._latlng.lng;
 
-        const newMarker = new EditableMarker(this.map, this.ctx, new L.LatLng(lat, lng), null, track).create();
-        track.layers.addLayer(newMarker);
-
         const currentLayer = track.layers._layers[this.currentPolyline];
-        const trackPoints = track.points; // ref
-        const index = this.dragPoint.index;
+        const points = track.points;
+        const { index, geometryIndex, layerIndex } = this.dragPoint;
 
-        const prevPoint = trackPoints[index - 1];
-        const segmentEndPoint = trackPoints[index];
+        const prevPoint = points[index - 1];
+        const segmentEndPoint = points[index];
 
-        if (isPointUnrouted({ point: trackPoints[index], pointIndex: index, prevPoint })) {
-            const newPoint = { lat, lng };
-            currentLayer._latlngs.splice(index, 0, newPoint);
+        track.points = insertOnLine(points, index, { lat, lng }, geometryIndex);
+        if (track.points.length > points.length) {
+            const newMarker = new EditableMarker(this.map, this.ctx, track.points[index], null).create();
+            track.layers.addLayer(newMarker);
+        }
+
+        if (isPointUnrouted({ point: segmentEndPoint, pointIndex: index, prevPoint })) {
+            currentLayer._latlngs.splice(layerIndex, 0, { lat, lng });
             currentLayer.setLatLngs(currentLayer._latlngs);
             // refresh analytics (newPoint ele is undefined)
-            trackPoints.splice(index, 0, newPoint);
             track.refreshAnalytics = true;
         } else if (isProtectedSegment({ startPoint: prevPoint, endPoint: segmentEndPoint })) {
-            const newPoint = { lat, lng };
-            const geometryIndex = this.dragPoint.geometryIndex;
-            splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex: index });
             track.refreshAnalytics = true;
         } else {
-            const newPoint = cloneDeep(track.points[index]);
-
-            newPoint.lat = lat;
-            newPoint.lng = lng;
-            newPoint.geometry = [];
-            newPoint.profile = prevPoint.profile;
-            newPoint.geoProfile = Object.assign({}, prevPoint.geoProfile);
-
-            trackPoints.splice(index, 0, newPoint);
-            const currentPoint = trackPoints[index];
-
-            const nextPoint = trackPoints[index + 1];
-            nextPoint.geometry = [];
+            const currentPoint = track.points[index];
+            const nextPoint = track.points[index + 1];
 
             this.map.removeLayer(currentLayer);
 
-            const polylineTempCurrent = this.activatePolyline({ start: prevPoint, end: currentPoint, temp: true });
-            const polylineTempNext = this.activatePolyline({ start: currentPoint, end: nextPoint, temp: true });
+            const polylineTempCurrent = this.activatePolyline({
+                track,
+                start: prevPoint,
+                end: currentPoint,
+                temp: true,
+            });
+            const polylineTempNext = this.activatePolyline({ track, start: currentPoint, end: nextPoint, temp: true });
 
-            let segments = [];
-            segments = TracksRoutingCache.addSegmentToRouting(
-                prevPoint,
-                currentPoint,
-                null, // oldPoint,
-                polylineTempCurrent,
-                segments
-            );
-            segments = TracksRoutingCache.addSegmentToRouting(
-                currentPoint,
-                nextPoint,
-                null, // oldPoint,
-                polylineTempNext,
-                segments
-            );
-            this.ctx.setRoutingNewSegments([...segments]);
+            TracksRoutingCache.addRoutingToCache(prevPoint, currentPoint, polylineTempCurrent, this.ctx);
+            TracksRoutingCache.addRoutingToCache(currentPoint, nextPoint, polylineTempNext, this.ctx);
         }
 
         // finally
-        track.zoom = false;
-        track.addPoint = false;
-        track.updateLayers = true;
-        this.ctx.setSelectedGpxFile({ ...track });
-
-        this.ctx.trackState.update = true;
-        this.ctx.setTrackState({ ...this.ctx.trackState });
+        publishEditedTrack(this.ctx, track);
 
         this.dragPoint = null;
     }
 
-    activatePolyline({ start, end, temp }) {
+    activatePolyline({ track, start, end, temp }) {
         let polyline = null;
 
         if (end.geometry && end.geometry.length > 0) {
-            polyline = new EditablePolyline(this.map, this.ctx, end.geometry, null, this.track).create();
+            polyline = new EditablePolyline(this.map, this.ctx, end.geometry, null).create();
         } else {
-            polyline = new EditablePolyline(this.map, this.ctx, [start, end], null, this.track).create();
+            polyline = new EditablePolyline(this.map, this.ctx, [start, end], null).create();
         }
 
         if (temp) {
-            polyline.setStyle(TrackLayerProvider.TEMP_LINE_STYLE);
-            polyline.options.name = TrackLayerProvider.TEMP_LAYER_FLAG;
-            polyline.point = end; // used in drawRoutePoints() and updateLayers()
+            TrackLayerProvider.toTempLine(polyline, start, end);
         } else {
             const color = this.ctx.trackRouter.getColor(
                 // use PROFILE_LINE color for unrouted segments
                 start.profile ? start : { profile: TracksManager.PROFILE_LINE }
             );
             polyline.setStyle({ color });
+            polyline.options.pointIds = [start.id, end.id];
         }
 
-        polyline.addTo(this.track.layers);
+        polyline.addTo(track.layers);
         // XXX register layers (but check is it still really need)
 
         return polyline;
-    }
-
-    findPointInPoints({ point, points }) {
-        const found = {
-            index: -1,
-            point: null,
-        };
-
-        found.index = points.findIndex((p) => TracksManager.isEqualPoints(point, p));
-
-        if (found.index !== -1) {
-            found.point = points[found.index];
-        }
-
-        return found;
     }
 
     findTheNearestSegment({ point, segments }) {

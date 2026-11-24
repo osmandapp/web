@@ -179,13 +179,8 @@ export default function ChangeProfileTrackDialog({ open }) {
                     <Button
                         id="se-change-profile-dialog-change"
                         onClick={() => {
-                            PointManager.changeProfile({ ctx, geoProfile, changeOne, changeAll }).then((changed) => {
-                                if (changed) {
-                                    ctx.trackState.update = true;
-                                    ctx.setTrackState({ ...ctx.trackState });
-                                }
-                            });
-                            closeDialog(); // don't wait for changeProfile's promise
+                            PointManager.changeProfile({ ctx, geoProfile, changeOne, changeAll });
+                            closeDialog();
                         }}
                         sx={{ fontWeight: 'bold' }}
                     >

@@ -23,7 +23,7 @@ import styles from './travel.module.css';
 
 const TOP_PARTS = 2;
 
-export default function TravelActivityStats({ activityCounts, activityCountsAllDates, value, onChange }) {
+export default function TravelActivityStats({ activityCounts, value, onChange }) {
     const ctx = useContext(AppContext);
     const ttx = useContext(TravelContext);
     const { t } = useTranslation();
@@ -77,14 +77,13 @@ export default function TravelActivityStats({ activityCounts, activityCountsAllD
         .map((g) => ({ ...g, count: g.shown.reduce((sum, a) => sum + a.count, 0) }))
         .sort((a, b) => b.count - a.count);
     const matched = selectedGroups.reduce((sum, g) => sum + g.count, 0);
-    const matchedAllDates = Array.isArray(activityCountsAllDates)
-        ? sumCounts(
-              activityCountsAllDates,
-              activityGroups(ctx.develFeatures)
-                  .flatMap(groupActivityIds)
-                  .filter((id) => selected.has(id))
-          )
-        : matched;
+    const matchedAllDates = sumCounts(
+        activityCounts,
+        activityGroups(ctx.develFeatures)
+            .flatMap(groupActivityIds)
+            .filter((id) => selected.has(id)),
+        'total'
+    );
     const breakdown = selectedGroups.length === 1 && !isAll ? selectedGroups[0].shown : selectedGroups;
     const topParts = breakdown.slice(0, TOP_PARTS);
     const moreCount = breakdown.length - topParts.length;

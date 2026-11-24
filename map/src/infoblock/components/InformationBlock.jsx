@@ -516,9 +516,10 @@ export default function InformationBlock({
                     <ShareFile />
                 ) : (
                     <>
-                        {(ctx.loadingContextMenu || ctx.gpxLoading || ttx.processingTravelRouteByUrl) && (
-                            <OverlayLinearProgress />
-                        )}
+                        {(ctx.loadingContextMenu ||
+                            (isLocalTrack(ctx) && ctx.analysisLoading) ||
+                            ctx.gpxLoading ||
+                            ttx.processingTravelRouteByUrl) && <OverlayLinearProgress />}
                         {ctx.updateFiles && <OverlayLinearProgress id="se-info-files-loading" />}
                         {showTrackContextMenu && (
                             <TrackContextMenu

@@ -4,7 +4,6 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
 import actionOpenPointMenu from '../../actions/tracks/actionOpenPointMenu.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 const TRACK = 'test-routed-osmand';
 const TRACK_POINTS = 16;
@@ -12,8 +11,6 @@ const TRIM_POINT_INDEX = 7;
 const TRIM_POINT = [48.5986357, 23.9110565];
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap('#10/48.5/23.72');
     await actionOpenLocalTrack(TRACK);
     await matchPointsCount(TRACK_POINTS);

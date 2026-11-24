@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import TracksManager from '../../manager/track/TracksManager';
 import AppContext from '../../context/AppContext';
 import PointManager from '../../manager/PointManager';
+import { findPointIndex } from '../../manager/track/TrackOperations';
 import { Close } from '@mui/icons-material';
 
 export default function PointContextMenu({ anchorEl }) {
@@ -13,12 +14,7 @@ export default function PointContextMenu({ anchorEl }) {
 
     useEffect(() => {
         if (anchorEl) {
-            let ind = ctx.selectedGpxFile.points.findIndex(
-                (point) => point.lat === ctx.pointContextMenu.coord.lat && point.lng === ctx.pointContextMenu.coord.lng
-            );
-            if (ind !== -1) {
-                setPointInd(ind);
-            }
+            setPointInd(findPointIndex(ctx.selectedGpxFile.points, ctx.pointContextMenu.pointId));
         }
     }, [anchorEl]);
 
@@ -29,10 +25,7 @@ export default function PointContextMenu({ anchorEl }) {
     function deletePoint() {
         closeContextMenu();
         if (pointInd !== -1) {
-            PointManager.deletePoint(pointInd, ctx).then(() => {
-                ctx.trackState.update = true;
-                ctx.setTrackState({ ...ctx.trackState });
-            });
+            PointManager.deletePoint(pointInd, ctx);
         } else {
             deleteWpt(ctx.pointContextMenu.coord);
         }
@@ -79,18 +72,14 @@ export default function PointContextMenu({ anchorEl }) {
         PointManager.split(pointInd, ctx);
     }
 
-    async function joinBefore() {
+    function joinBefore() {
         closeContextMenu();
-        let currentPoint = ctx.selectedGpxFile.points[pointInd];
-        let prevPoint = ctx.selectedGpxFile.points[pointInd - 1];
-        await PointManager.join(prevPoint, currentPoint, ctx);
+        PointManager.join(pointInd - 1, ctx);
     }
 
-    async function joinAfter() {
+    function joinAfter() {
         closeContextMenu();
-        let currentPoint = ctx.selectedGpxFile.points[pointInd];
-        let nextPoint = ctx.selectedGpxFile.points[pointInd + 1];
-        await PointManager.join(currentPoint, nextPoint, ctx);
+        PointManager.join(pointInd, ctx);
     }
 
     const Buttons = () => {

@@ -28,11 +28,11 @@ export function createPointsGroups({ hidden = false } = {}) {
     };
 }
 
-export function createTrack({ name, pointsGroups = createPointsGroups(), info = undefined } = {}) {
-    return { name, pointsGroups, info };
+export function createTrack({ name, pointsGroups = createPointsGroups(), info = undefined, tracks = undefined } = {}) {
+    return { name, pointsGroups, info, tracks };
 }
 
-export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
+export function createCtx({ track, cloud = true, uniqueFiles = [], gpxFiles = {} } = {}) {
     // the app calls the setters both with a value and with an updater, as react does
     const setter = (key) => jest.fn((update) => (ctx[key] = typeof update === 'function' ? update(ctx[key]) : update));
     const ctx = {
@@ -41,7 +41,7 @@ export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
         localTracks: cloud ? [] : [track],
         createTrack: null,
         listFiles: { uniqueFiles },
-        gpxFiles: {},
+        gpxFiles,
         tracksGroups: [],
         // useMutator: the callback gets a shallow copy of the previous state and mutates it
         mutateGpxFiles: jest.fn((update) => {
@@ -163,6 +163,17 @@ export function createRouteSegmentPoints(segments) {
     return points;
 }
 
+/** A count kept in state as the app keeps it: the setter takes an update of the count, `values` are the counts it went through. */
+export function createCounter() {
+    const counter = { value: 0, values: [] };
+    counter.set = (update) => {
+        counter.value = update(counter.value);
+        counter.values.push(counter.value);
+    };
+
+    return counter;
+}
+
 /**
  * ctx of the track editor: a local track open on the map, the routing cache and a router that answers
  * with a straight line. The router is set to the truck profile, which no editor point uses, and keeps
@@ -175,6 +186,11 @@ export function createEditorCtx({ points = [] } = {}) {
     ctx.trackState = {};
     ctx.routingCache = {};
     ctx.mutateRoutingCache = (update) => update(ctx.routingCache);
+    ctx.selectedGpxFileRef = {
+        get current() {
+            return ctx.selectedGpxFile;
+        },
+    };
     const router = {
         profile: PROFILE_TRUCK,
         routed: [],

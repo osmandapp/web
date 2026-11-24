@@ -37,9 +37,9 @@ import {
     TYPE_OSM_VALUE,
 } from '../../infoblock/components/wpt/WptTagsProvider';
 import { useNavigate } from 'react-router-dom';
-import { BBOX_COORDS_DECIMALS, EXPLORE_LAYER_ID, NAVIGATE_URL } from '../../manager/GlobalManager';
+import { BBOX_COORDS_DECIMALS, EXPLORE_LAYER_ID } from '../../manager/GlobalManager';
 import { MARKER_Z_INDEX_MAIN } from '../util/ZIndexes';
-import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
+import { NAVIGATION_OBJECT_TYPE_SEARCH, passClickToNavigation } from '../../manager/NavigationManager';
 
 export const EXPLORE_MIN_ZOOM = 6;
 
@@ -493,33 +493,13 @@ export default function ExploreLayer() {
     function addEventListeners({ marker, place, main = false, latlng, iconSize = SIMPLE_ICON_SIZE }) {
         // Add click event to open information about the place
         marker.on('click', (e) => {
-            if (globalThis.location.pathname.includes(NAVIGATE_URL)) {
-                const lat = e.latlng?.lat ?? latlng?.lat;
-                const lon = e.latlng?.lng ?? latlng?.lng;
+            const lat = e.latlng?.lat ?? latlng?.lat;
+            const lon = e.latlng?.lng ?? latlng?.lng;
+            const wpt = { ...place.properties, lat, lng: lon, type: NAVIGATION_OBJECT_TYPE_SEARCH };
 
-                if (lat && lon) {
-                    const wpt = {
-                        ...place.properties,
-                        lat,
-                        lng: lon,
-                        type: NAVIGATION_OBJECT_TYPE_SEARCH,
-                    };
-                    const navEvent = new CustomEvent('nav-marker-click', {
-                        detail: {
-                            wpt,
-                            latlng: L.latLng(lat, lon),
-                        },
-                        cancelable: true,
-                    });
-                    navEvent.originalEvent = e.originalEvent;
-                    globalThis.dispatchEvent(navEvent);
-
-                    // If NavigationLayer handled it (found empty input), don't open info
-                    if (navEvent.defaultPrevented) {
-                        L.DomEvent.stopPropagation(e);
-                        return;
-                    }
-                }
+            // If NavigationLayer handled it (found empty input), don't open info
+            if (lat && lon && passClickToNavigation(e, wpt)) {
+                return;
             }
             // Normal logic: open info
             openInfo(e, place);

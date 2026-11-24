@@ -1,8 +1,12 @@
+import L from 'leaflet';
 import { ROUTE_POINTS_FINISH, ROUTE_POINTS_START, ROUTE_POINTS_VIA } from '../store/geoRouter/profileConstants';
+import { NAVIGATE_URL } from './GlobalManager';
 
 export const NAVIGATION_OBJECT_TYPE_LOCATION = 'location';
 export const NAVIGATION_OBJECT_TYPE_SEARCH = 'search';
 export const NAVIGATION_OBJECT_TYPE_FAVORITE = 'favorite';
+
+export const NAV_MARKER_CLICK_EVENT = 'nav-marker-click';
 
 export function pickNextRoutePoint(navObject, viaInputsCount = 0) {
     if (!navObject) {
@@ -34,4 +38,24 @@ export function pickNextRoutePoint(navObject, viaInputsCount = 0) {
 
     // All inputs are filled - no empty slots available
     return null;
+}
+
+export function passClickToNavigation(e, wpt) {
+    if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
+        return false;
+    }
+    const navEvent = new CustomEvent(NAV_MARKER_CLICK_EVENT, {
+        detail: {
+            wpt,
+            latlng: wpt ? L.latLng(wpt.lat, wpt.lng) : e.latlng,
+        },
+        cancelable: true,
+    });
+    navEvent.originalEvent = e.originalEvent;
+    globalThis.dispatchEvent(navEvent);
+    if (navEvent.defaultPrevented) {
+        L.DomEvent.stopPropagation(e);
+    }
+
+    return navEvent.defaultPrevented;
 }

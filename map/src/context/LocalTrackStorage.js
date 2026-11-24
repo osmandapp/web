@@ -99,6 +99,26 @@ function deleteAllTracksFromDB() {
     });
 }
 
+async function replaceAllTracksInDB(records) {
+    const db = await openDB();
+
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+        store.clear();
+        records.forEach((record) => store.put(record));
+
+        transaction.oncomplete = () => {
+            DEBUG && console.log(`✅ Tracks replaced in DB: ${records.length}`);
+            resolve(true);
+        };
+        transaction.onabort = () => {
+            DEBUG && console.error(`❌ Error replacing tracks in DB`);
+            reject('Error replacing tracks in DB');
+        };
+    });
+}
+
 export async function loadLocalTracksFromStorage(setLoading) {
     let localTracks = [];
     setLoading(true);
@@ -166,7 +186,7 @@ export function saveTrackToLocalStorage({ ctx, track }) {
 }
 
 async function updateStoredLocalTracks(tracks) {
-    await deleteAllTracksFromDB();
+    const records = [];
     for (let i = 0; i < tracks.length; i++) {
         const track = tracks[i];
         if (!track?.name || typeof track.name !== 'string' || track.name.trim() === '') {
@@ -174,9 +194,10 @@ async function updateStoredLocalTracks(tracks) {
         }
         const res = prepareLocalTrack(track);
         if (res?.name) {
-            await saveTrackToDB(i, res);
+            records.push({ id: i, data: res });
         }
     }
+    await replaceAllTracksInDB(records);
 }
 
 export function deleteLocalTrack(ctx, index = -1) {

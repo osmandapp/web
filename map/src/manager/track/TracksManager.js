@@ -26,6 +26,7 @@ import { TRACKS_KEY } from '../../util/hooks/menu/useRecentDataSaver';
 import { compressFileToBlob, compressJSONToBlob } from '../../util/GzipCompression';
 import { findInfoFile } from './TrackAppearanceManager';
 import i18n from '../../i18n';
+import { PROFILE_GAP, withGap } from './TrackOperations';
 
 export const GPX_FILE_TYPE = 'GPX';
 export const GPX_FILE_EXT = '.gpx';
@@ -49,8 +50,8 @@ export function isWptGroupShown(pointsGroups, groupName) {
 }
 
 const PROFILE_CAR = 'car';
-const PROFILE_GAP = 'gap';
 export const NAN_MARKER = 99999;
+export const ROUTER_ERROR_LINE_USED = 'Router error, Line used';
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 
@@ -329,14 +330,20 @@ export function getTrackPoints(track) {
     return points;
 }
 
-// Create an array of points that contains references to the points in tracks
+export function withEditedPoints(track) {
+    return track.tracksPoints && track.tracksPoints !== track.points
+        ? { ...track, tracks: [{ points: track.points }] }
+        : track;
+}
+
+// Create an array of points that contains references to the points in tracks (the gap end of a track is a copy)
 function getEditablePoints(track) {
     let points = [];
     if (track.tracks) {
         track.tracks.forEach((track) => {
             if (track.points) {
                 if (points.length > 0) {
-                    points[points.length - 1].profile = PROFILE_GAP;
+                    points[points.length - 1] = withGap(points[points.length - 1]);
                 }
                 points = points.concat(track.points);
             }
@@ -636,6 +643,17 @@ export function updateMetadata({ file, name = null }) {
     return file;
 }
 
+function withoutIds(points) {
+    return points?.some((point) => point.id !== undefined) ? points.map(withoutId) : points;
+}
+
+function withoutId(point) {
+    const copy = { ...point };
+    delete copy.id;
+
+    return copy;
+}
+
 function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     // add updated points to track
     let points = file.points;
@@ -661,7 +679,7 @@ function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     }
 
     return {
-        tracks: file.tracks,
+        tracks: file.tracks?.map((track) => ({ ...track, points: withoutIds(track.points) })),
         wpts: file.wpts,
         metaData: file.metaData,
         pointsGroups: file.pointsGroups,
@@ -1056,7 +1074,7 @@ export async function applySrtmElevation({ track, setLoading }) {
     }
     const fakeCtx = { selectedGpxFile: track };
     const newGpxFile = await getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, track.points);
-    if (newGpxFile.analysis) {
+    if (newGpxFile?.analysis) {
         const analysis = newGpxFile.analysis; // ref
 
         // convert srtm-to-main
@@ -1105,86 +1123,88 @@ export function validateRoutePoints(points) {
     return true;
 }
 
+function countRunning(setRunning, step) {
+    setRunning?.((running) => running + step);
+}
+
 async function getTrackWithAnalysis(path, ctx, setLoading, points) {
-    setLoading(true);
+    countRunning(setLoading, 1);
+    countRunning(ctx.setRunningAnalyses, 1);
+    try {
+        const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
 
-    const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
-
-    if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
-        return cloneFile; // no tracks = nothing to analyze
-    }
-
-    const wpts = cloneFile.wpts;
-    const pointsGroups = cloneFile.pointsGroups;
-    if (validateRoutePoints(points)) {
-        cloneFile.tracks[0].points = points;
-    }
-
-    const postData = prepareTrackData({ file: cloneFile, routeTypes: cloneFile.routeTypes, getAnalysis: true });
-    // time vs better cache
-    let saveStartTime = null;
-    let saveEndTime = null;
-    if (postData.analysis) {
-        saveStartTime = postData.analysis.startTime;
-        saveEndTime = postData.analysis.endTime;
-        // zero every-time-unique variables for better caching
-        postData.analysis.startTime = postData.analysis.endTime = 0;
-    }
-
-    if (ctx.setProcessingAnalytics) {
-        ctx.setProcessingAnalytics(true);
-    }
-
-    const compressedData = compressJSONToBlob(postData);
-
-    const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, compressedData, {
-        params: {
-            dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
-        },
-        apiCache: true,
-        abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
-    });
-    setLoading(false);
-    if (resp?.data) {
-        // data will be mutated, use cloneDeep to avoid apiCache mutations
-        const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
-
-        const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
-
-        // restore previously saved time
-        if (data.data?.analysis) {
-            if (data.data.analysis.startTime === 0 && saveStartTime > 0) {
-                data.data.analysis.startTime = saveStartTime;
-            }
-            if (data.data.analysis.endTime === 0 && saveEndTime > 0) {
-                data.data.analysis.endTime = saveEndTime;
-            }
+        if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
+            return cloneFile; // no tracks = nothing to analyze
         }
 
-        Object.keys(data.data).forEach((t) => {
-            newGpxFile[`${t}`] = data.data[t];
+        const wpts = cloneFile.wpts;
+        const pointsGroups = cloneFile.pointsGroups;
+        if (validateRoutePoints(points)) {
+            cloneFile.tracks[0].points = points;
+        }
+
+        const postData = prepareTrackData({ file: cloneFile, routeTypes: cloneFile.routeTypes, getAnalysis: true });
+        // time vs better cache
+        let saveStartTime = null;
+        let saveEndTime = null;
+        if (postData.analysis) {
+            saveStartTime = postData.analysis.startTime;
+            saveEndTime = postData.analysis.endTime;
+            // zero every-time-unique variables for better caching
+            postData.analysis.startTime = postData.analysis.endTime = 0;
+        }
+
+        const compressedData = compressJSONToBlob(postData);
+
+        const resp = await apiPost(`${process.env.REACT_APP_GPX_API}/gpx/${path}`, compressedData, {
+            params: {
+                dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
+            },
+            apiCache: true,
+            abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
         });
+        if (resp?.aborted) {
+            return null;
+        }
+        if (resp?.data) {
+            // data will be mutated, use cloneDeep to avoid apiCache mutations
+            const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
 
-        newGpxFile.update = true;
-        newGpxFile.wpts = wpts;
-        newGpxFile.pointsGroups = pointsGroups;
+            const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
 
-        // auto-srtm
-        if (path === GET_ANALYSIS) {
-            const track = newGpxFile;
-            if (eligibleToApplySrtm({ track })) {
-                return applySrtmElevation({ track, setLoading });
+            // restore previously saved time
+            if (data.data?.analysis) {
+                if (data.data.analysis.startTime === 0 && saveStartTime > 0) {
+                    data.data.analysis.startTime = saveStartTime;
+                }
+                if (data.data.analysis.endTime === 0 && saveEndTime > 0) {
+                    data.data.analysis.endTime = saveEndTime;
+                }
             }
+
+            Object.keys(data.data).forEach((t) => {
+                newGpxFile[`${t}`] = data.data[t];
+            });
+
+            newGpxFile.update = true;
+            newGpxFile.wpts = wpts;
+            newGpxFile.pointsGroups = pointsGroups;
+
+            // auto-srtm
+            if (path === GET_ANALYSIS) {
+                const track = newGpxFile;
+                if (eligibleToApplySrtm({ track })) {
+                    return await applySrtmElevation({ track, setLoading });
+                }
+            }
+
+            return newGpxFile;
+        } else {
+            return ctx.selectedGpxFile;
         }
-        if (ctx.setProcessingAnalytics) {
-            ctx.setProcessingAnalytics(false);
-        }
-        return newGpxFile;
-    } else {
-        if (ctx.setProcessingAnalytics) {
-            ctx.setProcessingAnalytics(false);
-        }
-        return ctx.selectedGpxFile;
+    } finally {
+        countRunning(ctx.setRunningAnalyses, -1);
+        countRunning(setLoading, -1);
     }
 }
 
@@ -1218,6 +1238,8 @@ function clearTrack(file, points) {
     emptyFile.points = points ?? [];
     emptyFile.tracks = TracksManager.createGpxTracks();
     emptyFile.layers = file.layers;
+    emptyFile.wpts = file.wpts;
+    emptyFile.pointsGroups = file.pointsGroups;
     emptyFile.updateLayers = true;
 
     return emptyFile;
@@ -1236,6 +1258,11 @@ function isEqualPoints(point1, point2) {
 function updateState(ctx) {
     ctx.trackState.update = true;
     ctx.setTrackState({ ...ctx.trackState });
+}
+
+export function publishEditedTrack(ctx, track) {
+    ctx.setSelectedGpxFile({ ...track, zoom: false, addPoint: false, updateLayers: true });
+    updateState(ctx);
 }
 
 // check: geo-points, way-points, gpx-trkpt
@@ -1288,70 +1315,6 @@ export function hasSegmentTurns({ track = null }) {
         return checkPointsGeometrySegments(track.tracks[0].points);
     }
     return false;
-}
-
-export function isPointUnrouted({ point, pointIndex, prevPoint }) {
-    return (
-        !point.profile || // empty profile is Unrouted but PROFILE_LINE is Routed
-        !point.geometry || // undefined geometry (null, undefined) is always Unrouted
-        // empty geometry is Unrouted, but first point or previous PROFILE_GAP is Routed
-        (pointIndex > 0 && point.geometry?.length === 0 && prevPoint.profile !== PROFILE_GAP)
-    );
-}
-
-export function isProtectedSegment({ startPoint, endPoint }) {
-    if (!startPoint || !endPoint) {
-        console.error('isProtectedSegment got empty point');
-        return true;
-    }
-
-    // gpx (just loaded)
-    if (!endPoint.geometry && !startPoint.profile) {
-        // console.debug('protect-gpx-plain');
-        return true;
-    }
-
-    // gpx (after routing): protect Line-segments with more-than-line geometry
-    if (startPoint.profile === PROFILE_LINE && endPoint.geometry?.length > 2) {
-        // console.debug('protect-gpx-geometry');
-        return true;
-    }
-
-    // gap-profile should be protected
-    if (startPoint.profile === PROFILE_GAP) {
-        // console.debug('protect-gap-profile');
-        return true;
-    }
-
-    return false;
-}
-
-export function splitProtectedSegment({ newPoint, trackPoints, geometryIndex, endPointIndex }) {
-    if (geometryIndex !== -1 && endPointIndex >= 1 && newPoint && trackPoints && trackPoints.length >= 2) {
-        // newPoint should have previous geometry (up to geometryIndex) + newPoint at the end
-        newPoint.geometry = trackPoints[endPointIndex].geometry.slice(0, geometryIndex + 1);
-        newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
-        if (newPoint.geometry.length <= 2) {
-            // in case when new segment becomes Line "point-to-point"
-            // duplicate newPoint geometry to keep the segment protected
-            // dupe-geometry tested: GPX, Cloud, Android OsmAnd app, Garmin
-            newPoint.geometry.push({ lat: newPoint.lat, lng: newPoint.lng });
-        }
-
-        // endPoint should have newPoint at the begin and the rest of previous geometry (next to geometryIndex)
-        trackPoints[endPointIndex].geometry = trackPoints[endPointIndex].geometry.slice(geometryIndex + 1);
-        trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
-        if (trackPoints[endPointIndex].geometry.length <= 2) {
-            // keep the segment protected (see comment for similar case before)
-            trackPoints[endPointIndex].geometry.unshift({ lat: newPoint.lat, lng: newPoint.lng });
-        }
-
-        // duplicate profile string (from previous to endPoint)
-        newPoint.profile = trackPoints[endPointIndex - 1].profile;
-
-        // insert newPoint into trackPoints
-        trackPoints.splice(endPointIndex, 0, newPoint);
-    }
 }
 
 function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedPointMarker) {
@@ -1841,7 +1804,6 @@ const TracksManager = {
     handleEditCloudTrack,
     getTrackPoints,
     getEditablePoints,
-    updateGapProfileOneSegment,
     getEle,
     createName,
     getTrackWithAnalysis,

@@ -9,11 +9,9 @@ import {
     MenuItem,
     Typography,
 } from '@mui/material';
-import OverlayLinearProgress from '../../../frame/components/progress/OverlayLinearProgress';
 import React, { useContext, useState, useCallback } from 'react';
 import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
-import TracksManager from '../../../manager/track/TracksManager';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import PointManager from '../../../manager/PointManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
@@ -22,7 +20,6 @@ import isEmpty from 'lodash-es/isEmpty';
 const PointsTab = ({ width }) => {
     const ctx = useContext(AppContext);
 
-    const [loading, setLoading] = useState(false);
     const [openPointAlert, setOpenPointAlert] = useState(true);
 
     function showPointOnMap(point) {
@@ -33,15 +30,13 @@ const PointsTab = ({ width }) => {
     }
 
     const onDragEnd = useCallback(
-        async (result) => {
-            setLoading(true);
+        (result) => {
             if (!result.destination) {
                 return;
             }
             if (ctx.selectedGpxFile) {
-                await PointManager.reorder(result.source.index, result.destination.index, ctx.selectedGpxFile, ctx);
+                PointManager.reorder(result.source.index, result.destination.index, ctx);
             }
-            setLoading(false);
         },
         [ctx.trackRouter, ctx.selectedGpxFile]
     );
@@ -109,9 +104,7 @@ const PointsTab = ({ width }) => {
                                 x={{ mr: 1 }}
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    PointManager.deletePoint(index, ctx).then(() => {
-                                        TracksManager.updateState(ctx);
-                                    });
+                                    PointManager.deletePoint(index, ctx);
                                 }}
                             >
                                 <Cancel fontSize="small" />
@@ -157,7 +150,6 @@ const PointsTab = ({ width }) => {
             {ctx.selectedGpxFile?.points && (
                 <DragDropContext onDragEnd={onDragEnd}>
                     <Box sx={{ mt: 2 }} minWidth={width}>
-                        {loading ? <OverlayLinearProgress /> : <></>}
                         <Droppable droppableId="droppable-1">
                             {(provided) => (
                                 <div ref={provided.innerRef} {...provided.droppableProps}>

@@ -1,10 +1,10 @@
 import L from 'leaflet';
 import { applyHoverOutline, applySelectedPin, hideMarkersUnderPin } from '@map/map/util/MarkerSelectionService';
+import { createMap, removeMap } from '../../util/map';
 
 const MARKER_SIZE = 24;
 
 let map;
-let container;
 let markersGroup;
 
 // jsdom has no layout: an element's box is where Leaflet placed it, shifted by the icon anchor
@@ -20,26 +20,12 @@ function leafletIconBox() {
 
 beforeEach(() => {
     jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(leafletIconBox);
-    container = document.createElement('div');
-    document.body.append(container);
-    Object.defineProperties(container, {
-        clientWidth: { value: 800 },
-        clientHeight: { value: 600 },
-    });
-    map = L.map(container, {
-        zoomAnimation: false,
-        fadeAnimation: false,
-        zoomControl: false,
-        attributionControl: false,
-    }).setView([50.4501, 30.5234], 18);
+    map = createMap([50.4501, 30.5234], 18);
     // layers keep their markers in groups, as the favorite and poi layers do
     markersGroup = L.layerGroup().addTo(map);
 });
 
-afterEach(() => {
-    map.remove();
-    container.remove();
-});
+afterEach(() => removeMap(map));
 
 function createCtx() {
     return {

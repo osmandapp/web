@@ -1,11 +1,13 @@
 // Leaflet default panes (leaflet.css):
 // tile 200, overlay 400, shadow 500, marker 600, tooltip 650, popup 700
+export const LEAFLET_OVERLAY_PANE_Z_INDEX = 400;
 export const LEAFLET_MARKER_PANE_Z_INDEX = 600;
 
 // Custom leaflet panes
 export const MVT_HYBRID_UNDERLAY_PANE_Z_INDEX = 180;
 export const MVT_PANE_Z_INDEX = 190;
 export const HEATMAP_PANE_Z_INDEX = 350;
+export const TRACK_HIT_LINE_PANE_Z_INDEX = LEAFLET_OVERLAY_PANE_Z_INDEX - 10;
 export const TRAVEL_SEARCH_PANE_Z_INDEX = 450;
 export const POI_SECONDARY_PANE_Z_INDEX = 500;
 export const WEATHER_PANE_Z_INDEX = LEAFLET_MARKER_PANE_Z_INDEX + 10;

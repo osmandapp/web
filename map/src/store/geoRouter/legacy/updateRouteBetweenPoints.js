@@ -1,8 +1,9 @@
 import { apiGet, apiPost } from '../../../util/HttpApi';
 import Utils, { quickNaNfix } from '../../../util/Utils';
-import TracksManager, { PROFILE_LINE } from '../../../manager/track/TracksManager';
+import TracksManager, { PROFILE_LINE, ROUTER_ERROR_LINE_USED } from '../../../manager/track/TracksManager';
 import { defaultPointExtras } from '../../geoObject/convert/convertRouteToTrack';
 import { showProcessingNotification } from '../../../manager/GlobalManager';
+import { markGapEnd } from '../../../manager/track/TrackOperations';
 
 /**
  * Calculates route between two points using selected router (OSRM, OsmAnd, or Line)
@@ -30,16 +31,16 @@ export async function updateRouteBetweenPoints(ctx, start, end, geoProfile = thi
     const type = geoProfile?.profile === PROFILE_LINE ? PROFILE_LINE : geoProfile?.type;
 
     if (type && routers[type] && start && end && geoProfile) {
-        const result = await routers[type].call(this, { ctx, start, end, geoProfile });
+        let result = await routers[type].call(this, { ctx, start, end, geoProfile });
 
         // don't allow empty geometry
-        if (result?.points?.length > 0) {
-            return result;
-        } else {
+        if (!(result?.points?.length > 0)) {
             // console.error('Router error, Line used');
-            ctx.setRoutingErrorMsg('Router error, Line used');
-            return routers[PROFILE_LINE]({ ctx, start, end, geoProfile });
+            ctx.setRoutingErrorMsg(ROUTER_ERROR_LINE_USED);
+            result = await routers[PROFILE_LINE]({ ctx, start, end, geoProfile });
         }
+
+        return end.profile === TracksManager.PROFILE_GAP ? { ...result, points: markGapEnd(result.points) } : result;
     }
 
     throw new Error('updateRouteBetweenPoints unknown router');
@@ -81,8 +82,6 @@ async function updateRouteBetweenPointsOSRM({ start, end, geoProfile, ctx }) {
     if (response.ok) {
         const { points, totalDistance } = osrmToPoints(await response.json());
         if (points.length >= 2) {
-            TracksManager.updateGapProfileOneSegment(end, points);
-
             if (totalDistance > process.env.REACT_APP_MAX_APPROXIMATE_KM * 1000) {
                 return { points };
             }
@@ -158,7 +157,6 @@ async function updateRouteBetweenPointsOsmAnd({ ctx, start, end, geoProfile }) {
         } else {
             ctx.setRoutingErrorMsg(null);
         }
-        TracksManager.updateGapProfileOneSegment(end, data?.points);
         return data;
     }
 

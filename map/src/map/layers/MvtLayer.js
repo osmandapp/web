@@ -31,12 +31,8 @@ import {
     setStyleContourVisibility,
     watchMvtZoom,
 } from '../util/MvtMapUtils';
-import {
-    ensureLeafletPane,
-    setMapHybridVisibility,
-    setStyleHybridVisibility,
-    useHybridUnderlayUrl,
-} from './MvtHybridDemo';
+import { setMapHybridVisibility, setStyleHybridVisibility, useHybridUnderlayUrl } from './MvtHybridDemo';
+import { ensureLeafletPane } from '../util/LayerUtils';
 
 const SHOW_TILE_BOUNDARIES = true;
 const TILE_SOURCES_KEY = '__osmandMvtTileSources';
@@ -251,7 +247,7 @@ export default function MvtLayer({ config }) {
             }
         };
 
-        // DOM listener runs after Leaflet map handlers (NavigationLayer resets the cursor on map mousemove)
+        // DOM listener runs after Leaflet map handlers; its inline pointer wins over the crosshair cursor classes
         const handleMouseMove = (mouseEvent) => {
             const container = map.getContainer();
             if (!isTravelSearchOn(map) && getClickableFeatures(mouseEvent).length > 0) {

@@ -1874,6 +1874,7 @@
   "shared_string_legend": "Legend",
   "shared_string_zoom_levels": "Zoom levels",
   "shared_string_transparency": "Transparency",
+  "shared_string_visibility": "Visibility",
   "slope_read_more": "Read more about slope in %1$s.",
   "slope_download_description": "Additional maps are needed to view slope on the map.",
   "hillshade_download_description": "Additional maps are needed to view hillshade on the map.",
@@ -3062,7 +3063,7 @@
   "select_map_marker": "Select map marker",
   "map_markers_other": "Other markers",
   "upload_anonymously": "Upload anonymously",
-  "show_transparency_seekbar": "Show transparency seekbar",
+  "show_transparency_seekbar": "Show visibility seekbar",
   "download_files_error_not_enough_space": "Not enough space!\\n\n    {3} MB is needed temporarily, {1} MB permanently.\\n\n    (Only {2} MB available.)",
   "download_files_question_space_with_temp": "Download {0} file(s)?\\n\n    {3} MB is used temporarily, {1} MB permanently. (Of {2} MB.)",
   "download_files_question_space": "Download {0} file(s)?\\n\n    {1} MB (of {2} MB) will be used.",
@@ -4416,9 +4417,9 @@
   "voice_stream_music": "Media/navigation audio",
   "warning_tile_layer_not_downloadable": "The app cannot download the map layer %1$s, reinstalling it might help.",
   "overlay_transparency_descr": "Adjust overlay transparency.",
-  "overlay_transparency": "Overlay transparency",
+  "overlay_transparency": "Overlay visibility",
   "map_transparency_descr": "Adjust base map transparency.",
-  "map_transparency": "Base map transparency",
+  "map_transparency": "Base map visibility",
   "layer_underlay": "Underlay map…",
   "map_underlay": "Underlay map",
   "map_underlay_descr": "Choose underlay map",
@@ -11151,8 +11152,8 @@
   "cast_shadows": "Shadows",
   "sun_light_live": "Live",
   "terrain_shadows": "Terrain shadows",
+  "travel_speed": "Travel speed",
   "poi_check_date": "Check date"
-
 
 
 
