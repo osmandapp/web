@@ -312,9 +312,9 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance, drag
 
         updateStyle();
         map.on('zoomend moveend', updateStyle);
-        polyline.hitLine?.addTo(map).bringToBack();
 
         polyline.on('redraw-arrows', updateStyle);
+        polyline.hitLine?.addTo(map).bringToBack();
 
         polyline.once('remove', () => {
             map.off('zoomend moveend', updateStyle);

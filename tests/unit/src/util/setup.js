@@ -2,11 +2,10 @@
 
 const { TextDecoder, TextEncoder } = require('node:util');
 
-// missing in jsdom, used by the app code (e.g. gzip of the .info payload)
+// missing in jsdom, used by the app code (e.g. gzip of the .info payload) and by Leaflet (svg support check)
 global.TextEncoder = global.TextEncoder ?? TextEncoder;
 global.TextDecoder = global.TextDecoder ?? TextDecoder;
-
-SVGSVGElement.prototype.createSVGRect = () => ({ x: 0, y: 0, width: 0, height: 0 });
+SVGSVGElement.prototype.createSVGRect ??= () => ({ x: 0, y: 0, width: 0, height: 0 });
 
 // the app builds request urls from this - nothing is ever requested, the host is a placeholder
 process.env.REACT_APP_USER_API_SITE = 'https://api.test';

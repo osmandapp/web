@@ -1,6 +1,4 @@
 import { act, createElement } from 'react';
-import { useMap } from 'react-leaflet';
-import L from 'leaflet';
 import MapContext from '@map/context/MapContext';
 import HeightmapLayer from '@map/map/layers/HeightmapLayer';
 import {
@@ -12,25 +10,21 @@ import {
     renderWithLogin,
     serveProSession,
 } from '../../util/login';
+import { createMap, removeMap } from '../../util/map';
 
 const HILLSHADE = { key: 'hillshade', url: 'https://tiles.test/heightmap/hillshade/{z}/{x}/{y}.png', opacity: 1 };
 
 let map;
-let container;
 let view;
 
 beforeEach(() => {
     serveProSession();
-    container = document.createElement('div');
-    document.body.append(container);
-    map = L.map(container, { zoomAnimation: false, fadeAnimation: false }).setView([50.45, 30.52], 9);
-    useMap.mockReturnValue(map);
+    map = createMap([50.45, 30.52], 9);
 });
 
 afterEach(() => {
     view?.unmount();
-    map.remove();
-    container.remove();
+    removeMap(map);
 });
 
 function terrainUrls() {

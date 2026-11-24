@@ -28,11 +28,11 @@ export function createPointsGroups({ hidden = false } = {}) {
     };
 }
 
-export function createTrack({ name, pointsGroups = createPointsGroups(), info = undefined } = {}) {
-    return { name, pointsGroups, info };
+export function createTrack({ name, pointsGroups = createPointsGroups(), info = undefined, tracks = undefined } = {}) {
+    return { name, pointsGroups, info, tracks };
 }
 
-export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
+export function createCtx({ track, cloud = true, uniqueFiles = [], gpxFiles = {} } = {}) {
     // the app calls the setters both with a value and with an updater, as react does
     const setter = (key) => jest.fn((update) => (ctx[key] = typeof update === 'function' ? update(ctx[key]) : update));
     const ctx = {
@@ -41,7 +41,7 @@ export function createCtx({ track, cloud = true, uniqueFiles = [] } = {}) {
         localTracks: cloud ? [] : [track],
         createTrack: null,
         listFiles: { uniqueFiles },
-        gpxFiles: {},
+        gpxFiles,
         tracksGroups: [],
         // useMutator: the callback gets a shallow copy of the previous state and mutates it
         mutateGpxFiles: jest.fn((update) => {

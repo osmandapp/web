@@ -1,51 +1,33 @@
-import { act, createElement } from 'react';
-import { createRoot } from 'react-dom/client';
-import { useMap } from 'react-leaflet';
+import { createElement } from 'react';
 import L from 'leaflet';
-import AppContext, { OBJECT_TYPE_CLOUD_TRACK } from '@map/context/AppContext';
-import MapContext from '@map/context/MapContext';
+import { OBJECT_TYPE_CLOUD_TRACK } from '@map/context/AppContext';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import { createTooltip, formatTrackName } from '@map/map/util/MapManager';
 import { useFocusVisibility } from '@map/util/hooks/map/useFocusMode';
-import { createEditorCtx, createPlainPoints } from '../../util/fixtures/tracks';
+import { createCtx, createEditorCtx, createPlainPoints, createTrack } from '../../util/fixtures/tracks';
+import { createMap, removeMap, renderWithMapContexts } from '../../util/map';
 
 const HIT_LINE = { weight: 16, opacity: 0 };
 
-let container;
 let map;
 
 beforeEach(() => {
-    container = document.createElement('div');
-    document.body.append(container);
-    Object.defineProperties(container, {
-        clientWidth: { value: 800 },
-        clientHeight: { value: 600 },
-    });
-    map = L.map(container, {
-        zoomAnimation: false,
-        fadeAnimation: false,
-        zoomControl: false,
-        attributionControl: false,
-    }).setView([50.05, 30], 10);
-    useMap.mockReturnValue(map);
+    map = createMap([50.05, 30], 10);
     createTooltip.mockImplementation((text, latlng) =>
         L.tooltip({ permanent: true }).setContent(text).setLatLng(latlng)
     );
     formatTrackName.mockImplementation((name) => name);
 });
 
-afterEach(() => {
-    map.remove();
-    container.remove();
-});
+afterEach(() => removeMap(map));
 
-const createTrackData = (name, info = {}) => ({
-    name,
-    info: { show_start_finish: false, ...info },
-    tracks: [{ points: createPlainPoints(11) }],
-});
-
-const showTrack = (data) => {
+const showTrack = (name, info = {}) => {
+    const data = createTrack({
+        name,
+        pointsGroups: {},
+        info: { show_start_finish: false, ...info },
+        tracks: [{ points: createPlainPoints(11) }],
+    });
     const track = TrackLayerProvider.createLayersByTrackData({ data, ctx: createEditorCtx(), map });
     track.clicks = 0;
     track.on('click', () => track.clicks++);
@@ -75,8 +57,8 @@ const fire = (line, type) => {
     line.getElement().dispatchEvent(new MouseEvent(type, { bubbles: true, clientX: x, clientY: y }));
 };
 
-test('a click or a hover beside a track line reaches the track, the wide line leaves the map with the track', () => {
-    const track = showTrack(createTrackData('Track'));
+test('events of the hit line reach the track, the hit line leaves the map with the track', () => {
+    const track = showTrack('Track');
     const [line] = trackLines(track);
     const hitLines = linesOnMap().filter((l) => l !== line);
 
@@ -99,19 +81,19 @@ test('a click or a hover beside a track line reaches the track, the wide line le
     expect(linesOnMap()).toEqual([line, hitLines[0]]);
 });
 
-test('a wide line never covers the line of another track, also after a track is shown again', () => {
-    const first = showTrack(createTrackData('First'));
-    const second = showTrack(createTrackData('Second'));
+test('a hit line never covers the line of another track, also after a track is shown again', () => {
+    const first = showTrack('First');
+    const second = showTrack('Second');
     map.removeLayer(first);
     first.addTo(map);
 
-    const wideLines = [...trackLines(first), ...trackLines(second)].map((l) => l.hitLine.getElement());
-    const paths = [...container.querySelectorAll('.leaflet-overlay-pane path')];
+    const hitLines = [...trackLines(first), ...trackLines(second)].map((l) => l.hitLine.getElement());
+    const paths = [...map.getContainer().querySelectorAll('.leaflet-overlay-pane path')];
 
-    expect(paths.map((p) => (wideLines.includes(p) ? 'wide' : 'line'))).toEqual(['wide', 'wide', 'line', 'line']);
+    expect(paths.map((p) => (hitLines.includes(p) ? 'hit' : 'line'))).toEqual(['hit', 'hit', 'line', 'line']);
 });
 
-test('lines of the track editor get no wide line, a line with arrows keeps its arrows and gets one', () => {
+test('lines of the track editor get no hit line, a line with arrows keeps its arrows and gets one', () => {
     const editorLayers = [];
     TrackLayerProvider.parsePoints({
         map,
@@ -125,7 +107,7 @@ test('lines of the track editor get no wide line, a line with arrows keeps its a
     expect(linesOnMap()).toEqual(trackLines(editor));
     map.removeLayer(editor);
 
-    const arrows = showTrack(createTrackData('Arrows', { show_arrows: true }));
+    const arrows = showTrack('Arrows', { show_arrows: true });
     const [line] = trackLines(arrows);
     const [hitLine] = linesOnMap().filter((l) => l !== line);
 
@@ -134,34 +116,22 @@ test('lines of the track editor get no wide line, a line with arrows keeps its a
     expect(arrows.clicks).toBe(1);
 });
 
-test('focus mode: a hidden track lets clicks beside its line through, a dimmed one catches them and stays thin', () => {
-    globalThis.IS_REACT_ACT_ENVIRONMENT = true;
-    const focused = showTrack(createTrackData('Focused'));
-    const other = showTrack(createTrackData('Other'));
-    const ctx = { gpxFiles: { Focused: { name: 'Focused', gpx: focused }, Other: { name: 'Other', gpx: other } } };
-    const reactContainer = document.createElement('div');
-    const root = createRoot(reactContainer);
+test('focus mode: a hidden track lets clicks beside its line through, a dimmed one catches them and its hit line stays invisible', () => {
+    const focused = showTrack('Focused');
+    const other = showTrack('Other');
+    const ctx = createCtx({
+        gpxFiles: { Focused: { name: 'Focused', gpx: focused }, Other: { name: 'Other', gpx: other } },
+    });
+    const focusMtx = (focusModeOn) => ({
+        selectionFocus: { type: OBJECT_TYPE_CLOUD_TRACK, id: 'Focused' },
+        focusModeOn,
+    });
 
     function FocusVisibility() {
         useFocusVisibility();
 
         return null;
     }
-
-    const renderFocus = (focusModeOn) =>
-        act(() =>
-            root.render(
-                createElement(
-                    AppContext.Provider,
-                    { value: ctx },
-                    createElement(
-                        MapContext.Provider,
-                        { value: { selectionFocus: { type: OBJECT_TYPE_CLOUD_TRACK, id: 'Focused' }, focusModeOn } },
-                        createElement(FocusVisibility)
-                    )
-                )
-            )
-        );
 
     const lineState = (track) => {
         const [line] = trackLines(track);
@@ -173,17 +143,17 @@ test('focus mode: a hidden track lets clicks beside its line through, a dimmed o
         };
     };
 
-    renderFocus(true);
+    const view = renderWithMapContexts(createElement(FocusVisibility), { ctx, mtx: focusMtx(true) });
     expect([lineState(focused), lineState(other)]).toEqual([
         { opacity: 1, hitOpacity: 0, hitEvents: '' },
         { opacity: 0, hitOpacity: 0, hitEvents: 'none' },
     ]);
 
-    renderFocus(false);
+    view.rerender({ ctx, mtx: focusMtx(false) });
     expect([lineState(focused), lineState(other)]).toEqual([
         { opacity: 1, hitOpacity: 0, hitEvents: '' },
         { opacity: 0.9, hitOpacity: 0, hitEvents: '' },
     ]);
 
-    act(() => root.unmount());
+    view.unmount();
 });

@@ -41,7 +41,7 @@ module.exports = {
         '/App$': `${STUBS}/empty.js`,
         // no unit test is allowed to reach the network
         HttpApi$: `${STUBS}/httpApi.js`,
-        // AppContext pulls in the whole app - only the track-type helpers are needed
+        // AppContext pulls in the whole app - only the track-type helpers and a context for AppContext.Provider are needed
         'context/AppContext$': `${STUBS}/appContext.js`,
         // modules pulling map layers / routing / i18n - not exercised by unit tests
         // leaflet itself works in jsdom, the map layers around it do not

@@ -1,4 +1,4 @@
-// AppContext pulls in the whole app - unit tests only need the track-type helpers
+// AppContext pulls in the whole app - unit tests only need the track-type helpers and a context for AppContext.Provider
 const { createContext } = require('react');
 
 const OBJECT_TYPE_LOCAL_TRACK = 'local_track';
