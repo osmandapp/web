@@ -178,7 +178,6 @@ export default function TravelMenu() {
     const [travelResult, setTravelResult] = useState(null);
     const [loadingResult, setLoadingResult] = useState(false);
     const [activityCounts, setActivityCounts] = useState(null); // [{ id, count, total }]
-    const [activitiesClientId] = useState(() => crypto.randomUUID());
     const [openFilters, setOpenFilters] = useState(false); // secondary filters drawer
     const [openAppearance, setOpenAppearance] = useState(false);
 
@@ -302,7 +301,6 @@ export default function TravelMenu() {
     const debouncedFetchActivityCounts = useRef(
         debounce(async ({ mapBounds, months }) => {
             const params = {
-                clientId: activitiesClientId,
                 minLat: mapBounds.getSouth(),
                 maxLat: mapBounds.getNorth(),
                 minLon: mapBounds.getWest(),
