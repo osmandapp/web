@@ -28,12 +28,11 @@ import { escapeHtmlAttr, useSelectMarkerOnMap } from '../../util/hooks/map/useSe
 import {
     BBOX_COORDS_DECIMALS,
     MENU_INFO_OPEN_SIZE,
-    NAVIGATE_URL,
     POI_LAYER_ID,
     SEARCH_LAYER_ID,
     showProcessingNotification,
 } from '../../manager/GlobalManager';
-import { NAVIGATION_OBJECT_TYPE_SEARCH } from '../../manager/NavigationManager';
+import { NAVIGATION_OBJECT_TYPE_SEARCH, passClickToNavigation } from '../../manager/NavigationManager';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { findFeatureGroupById, getIconFromMap, panToIfNeeded } from '../util/MapManager';
 import { EXPLORE_OBJS_KEY, POI_OBJECTS_KEY, useRecentDataSaver } from '../../util/hooks/menu/useRecentDataSaver';
@@ -590,33 +589,13 @@ export default function PoiLayer() {
     }
 
     function onClick(e) {
-        if (globalThis.location.pathname.includes(NAVIGATE_URL)) {
-            const lat = e.latlng?.lat ?? e.sourceTarget?._latlng?.lat;
-            const lon = e.latlng?.lng ?? e.sourceTarget?._latlng?.lng;
+        const lat = e.latlng?.lat ?? e.sourceTarget?._latlng?.lat;
+        const lon = e.latlng?.lng ?? e.sourceTarget?._latlng?.lng;
+        const wpt = { ...e.sourceTarget.options, lat, lng: lon, type: NAVIGATION_OBJECT_TYPE_SEARCH };
 
-            if (lat && lon) {
-                const wpt = {
-                    ...e.sourceTarget.options,
-                    lat,
-                    lng: lon,
-                    type: NAVIGATION_OBJECT_TYPE_SEARCH,
-                };
-                const navEvent = new CustomEvent('nav-marker-click', {
-                    detail: {
-                        wpt,
-                        latlng: L.latLng(lat, lon),
-                    },
-                    cancelable: true,
-                });
-                navEvent.originalEvent = e.originalEvent;
-                globalThis.dispatchEvent(navEvent);
-
-                // If NavigationLayer handled it (found empty input), don't open info
-                if (navEvent.defaultPrevented) {
-                    L.DomEvent.stopPropagation(e);
-                    return;
-                }
-            }
+        // If NavigationLayer handled it (found empty input), don't open info
+        if (lat && lon && passClickToNavigation(e, wpt)) {
+            return;
         }
 
         // Normal logic: open info block

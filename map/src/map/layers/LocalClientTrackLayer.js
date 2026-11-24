@@ -4,6 +4,7 @@ import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import TrackLayerProvider, {
+    isWptClick,
     redrawWptsOnLayer,
     TEMP_LAYER_FLAG,
     WPT_SIMPLIFY_THRESHOLD,
@@ -47,7 +48,10 @@ import {
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
+import { passClickToNavigation } from '../../manager/NavigationManager';
 import { assignPointIds, hasSegmentWaitingForRouter, withAnsweredElevation } from '../../manager/track/TrackOperations';
+
+const EDITOR_PICKS_POINT_CLASS = 'track-editor-picks-point';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -260,6 +264,7 @@ export default function LocalClientTrackLayer() {
                 deleteClickOnMap();
             }
         }
+        map.getContainer().classList.toggle(EDITOR_PICKS_POINT_CLASS, Boolean(ctxTrack && isAddPointByClick(ctx)));
         // ctx.pointContextMenu was added to monitor menu state and ignore click
         // ctx.routingCache was added to have actual context for addRoutingToCache()
     }, [
@@ -301,12 +306,7 @@ export default function LocalClientTrackLayer() {
                 if (!map.hasLayer(currLayer.layer)) {
                     currLayer.layer.options = { ...currLayer.layer.options, type: LOCAL_TRACKS_LAYERS_ID };
                     // Set trackName for all polylines in the layer
-                    TrackLayerProvider.addTooltipOnHover(
-                        currLayer.layer,
-                        map,
-                        currLayer.points.map((point) => new L.LatLng(point.lat, point.lng)),
-                        track?.name
-                    );
+                    TrackLayerProvider.setTrackName(currLayer.layer.getLayers(), track.name);
                     map.addLayer(currLayer.layer);
                 }
 
@@ -489,7 +489,10 @@ export default function LocalClientTrackLayer() {
             if (fitBounds) {
                 pendingZoomRef.current = true;
             }
-            layer.on('click', () => {
+            layer.on('click', (e) => {
+                if (!isWptClick(e) && passClickToNavigation(e)) {
+                    return;
+                }
                 if (!ctx.createTrack?.enable) {
                     ctx.setCreateTrack({
                         enable: true, // start-editor
@@ -645,13 +648,11 @@ export default function LocalClientTrackLayer() {
     }
 
     function setupClickOnMap() {
-        map.getContainer().style.cursor = 'crosshair';
         map.off('click');
         map.on('click', clickMap);
     }
 
     function deleteClickOnMap() {
-        map.getContainer().style.cursor = '';
         map.off('click');
     }
 

@@ -1,8 +1,8 @@
 import { act, createElement, useContext } from 'react';
-import { createRoot } from 'react-dom/client';
 import LoginContext, { LoginContextProvider } from '@map/context/LoginContext';
 import { FREE_ACCOUNT } from '@map/manager/LoginManager';
 import { apiGet } from '@map/util/HttpApi';
+import { mountRoot } from './reactRoot';
 
 export const PRO_USER = 'pro@example.com';
 export const FREE_USER = 'free@example.com';
@@ -46,11 +46,7 @@ export function flush() {
 
 // renders children inside the real LoginContextProvider and waits for the session; login() is its current value
 export async function renderWithLogin(children = null) {
-    const previousActEnvironment = globalThis.IS_REACT_ACT_ENVIRONMENT;
-    globalThis.IS_REACT_ACT_ENVIRONMENT = true;
-    const container = document.createElement('div');
-    document.body.append(container);
-    const root = createRoot(container);
+    const { root, unmount } = mountRoot();
     let ltx;
 
     function Probe() {
@@ -64,10 +60,6 @@ export async function renderWithLogin(children = null) {
 
     return {
         login: () => ltx,
-        unmount: () => {
-            act(() => root.unmount());
-            container.remove();
-            globalThis.IS_REACT_ACT_ENVIRONMENT = previousActEnvironment;
-        },
+        unmount,
     };
 }

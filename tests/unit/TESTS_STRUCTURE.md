@@ -25,7 +25,9 @@ selenium tests. The number is what `yarn test 01` matches.
 | `requests.js` | finds the request the app has sent to a given endpoint |
 | `infoFile.js` | reads the `.info` payload the app uploaded (FormData → gunzip → JSON) |
 | `login.js` | renders inside the real `LoginContextProvider` with a Pro session; holds `get-account-info` to switch accounts |
-| `setup.js` | jsdom polyfills (`TextEncoder`) and `REACT_APP_*` env |
+| `map.js` | an 800×600 Leaflet map that `useMap()` returns; renders a component inside `AppContext` and `MapContext` providers |
+| `reactRoot.js` | a React root in the document with `act()` enabled until `unmount()`; used by `login.js` and `map.js` |
+| `setup.js` | jsdom polyfills (`TextEncoder`, `createSVGRect`) and `REACT_APP_*` env |
 
 ## Stubs
 
@@ -35,7 +37,7 @@ selenium tests. The number is what `yarn test 01` matches.
 |---|---|---|
 | `HttpApi$` | `stubs/httpApi.js` | no unit test may reach the network; `apiPost` is a `jest.fn()` |
 | `LocalTrackStorage$` | `stubs/localTrackStorage.js` | IndexedDB is not available in jsdom |
-| `context/AppContext$` | `stubs/appContext.js` | the real one pulls in the whole app; only track-type helpers are needed |
+| `context/AppContext$` | `stubs/appContext.js` | the real one pulls in the whole app; only track-type helpers and a context for `AppContext.Provider` are needed |
 | `menu/`, `frame/`, `infoblock/`, `dialogs/`, `map/layers/`… | `stubs/empty.js` | UI layers are not covered by unit tests |
 | `^react-leaflet$` | `stubs/reactLeaflet.js` | ESM; its own file, so a `jest.mock('react-leaflet')` in a suite does not replace `stubs/empty.js` |
 | `*.css`, `*.svg`, … | `stubs/style.js`, `stubs/file.js` | static assets |

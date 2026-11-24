@@ -1,44 +1,21 @@
 import React, { act } from 'react';
-import { createRoot } from 'react-dom/client';
-import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import AppContext from '@map/context/AppContext';
-import MapContext from '@map/context/MapContext';
 import MapStateLayer from '@map/map/layers/MapStateLayer';
 import { createPoiLayer } from '@map/map/layers/PoiLayer';
 import { addMarkerTooltip, clusterMarkers } from '@map/map/util/Clusterizer';
 import { createTooltip } from '@map/map/util/MapManager';
 import { DEFAULT_POI_ICON } from '@map/manager/PoiManager';
 import { FINAL_POI_ICON_NAME, POI_ELO, POI_ID, POI_NAME } from '@map/infoblock/components/wpt/WptTagsProvider';
+import { createMap, removeMap, renderWithMapContexts } from '../../util/map';
 
-jest.mock('react-leaflet', () => ({ useMap: jest.fn() }));
 jest.mock('react-router-dom', () => ({ useLocation: () => ({ pathname: '/map' }) }));
 jest.mock('leaflet-spin', () => ({}));
 jest.mock('leaflet.markercluster', () => ({}));
-jest.mock('@map/context/AppContext', () => ({
-    ...jest.requireActual('@map/context/AppContext'),
-    default: require('react').createContext(null),
-}));
-jest.mock('@map/context/MapContext', () => ({
-    __esModule: true,
-    default: require('react').createContext(null),
-}));
 
 let map;
-let root;
-let container;
-let reactContainer;
+let view;
 let frames;
 let any3d;
-const previousActEnvironment = globalThis.IS_REACT_ACT_ENVIRONMENT;
-
-beforeAll(() => {
-    globalThis.IS_REACT_ACT_ENVIRONMENT = true;
-});
-
-afterAll(() => {
-    globalThis.IS_REACT_ACT_ENVIRONMENT = previousActEnvironment;
-});
 
 beforeEach(() => {
     // jsdom has no CSS transforms; enable Leaflet's fractional zoom support.
@@ -52,46 +29,18 @@ beforeEach(() => {
     });
     jest.spyOn(L.Util, 'cancelAnimFrame').mockImplementation((id) => frames.delete(id));
 
-    container = document.createElement('div');
-    reactContainer = document.createElement('div');
-    document.body.append(container, reactContainer);
-    Object.defineProperties(container, {
-        clientWidth: { value: 800 },
-        clientHeight: { value: 600 },
-    });
-    map = L.map(container, {
-        zoomSnap: 0.01,
-        minZoom: 2,
-        maxZoom: 20,
-        scrollWheelZoom: false,
-        zoomAnimation: false,
-        fadeAnimation: false,
-        zoomControl: false,
-        attributionControl: false,
-    }).setView([0, 0], 10);
-    useMap.mockReturnValue(map);
-    root = createRoot(reactContainer);
+    map = createMap([0, 0], 10, { zoomSnap: 0.01, minZoom: 2, maxZoom: 20, scrollWheelZoom: false });
 });
 
 afterEach(() => {
-    act(() => root.unmount());
-    map.remove();
-    container.remove();
-    reactContainer.remove();
+    view?.unmount();
+    removeMap(map);
     L.Browser.any3d = any3d;
 });
 
 function mountLayers({ infoBlockWidth = 0 } = {}) {
     const context = { setVisibleBboxInfo: jest.fn(), setZoomToFitInProgress: jest.fn() };
-    act(() => {
-        root.render(
-            React.createElement(
-                AppContext.Provider,
-                { value: { infoBlockWidth } },
-                React.createElement(MapContext.Provider, { value: context }, React.createElement(MapStateLayer))
-            )
-        );
-    });
+    view = renderWithMapContexts(React.createElement(MapStateLayer), { ctx: { infoBlockWidth }, mtx: context });
 }
 
 function wheel(deltaY, point = L.point(400, 300), timeStamp = Date.now()) {
@@ -103,7 +52,7 @@ function wheel(deltaY, point = L.point(400, 300), timeStamp = Date.now()) {
         cancelable: true,
     });
     Object.defineProperty(event, 'timeStamp', { value: timeStamp });
-    container.dispatchEvent(event);
+    map.getContainer().dispatchEvent(event);
 }
 
 // ScrollZoomHandler of MapLibre: 100 px per level for a trackpad, 450 for a mouse, compressed by a sigmoid
@@ -228,7 +177,7 @@ describe('zoom button animation regression (89f4884fe)', () => {
 
     function clickZoom(direction) {
         act(() => {
-            container
+            map.getContainer()
                 .querySelector(`.leaflet-control-zoom-${direction}`)
                 .dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
         });

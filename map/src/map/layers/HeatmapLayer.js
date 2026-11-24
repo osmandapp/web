@@ -14,7 +14,7 @@ import {
     HEATMAP_STYLE_HYBRID,
 } from '../../menu/travel/HeatmapAppearance';
 import { apiGet } from '../../util/HttpApi';
-import { ensureLeafletPane } from './MvtHybridDemo';
+import { ensureLeafletPane } from '../util/LayerUtils';
 import { HEATMAP_PANE_Z_INDEX } from '../util/ZIndexes';
 import {
     buildLut,
