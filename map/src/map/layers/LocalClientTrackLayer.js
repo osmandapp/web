@@ -51,7 +51,7 @@ import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { passClickToNavigation } from '../../manager/NavigationManager';
 import { assignPointIds, hasSegmentWaitingForRouter, withAnsweredElevation } from '../../manager/track/TrackOperations';
 
-const EDITOR_CURSOR_CLASS = 'track-editor-cursor';
+const EDITOR_PICKS_POINT_CLASS = 'track-editor-picks-point';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
@@ -264,7 +264,7 @@ export default function LocalClientTrackLayer() {
                 deleteClickOnMap();
             }
         }
-        map.getContainer().classList.toggle(EDITOR_CURSOR_CLASS, Boolean(ctxTrack && isAddPointByClick(ctx)));
+        map.getContainer().classList.toggle(EDITOR_PICKS_POINT_CLASS, Boolean(ctxTrack && isAddPointByClick(ctx)));
         // ctx.pointContextMenu was added to monitor menu state and ignore click
         // ctx.routingCache was added to have actual context for addRoutingToCache()
     }, [

@@ -87,13 +87,13 @@ code {
     pointer-events: none;
 }
 
-.leaflet-container.track-editor-cursor,
-.leaflet-container.navigation-point-cursor {
+.leaflet-container.track-editor-picks-point,
+.leaflet-container.navigation-picks-point {
     cursor: crosshair;
 }
 
-.leaflet-container.track-editor-cursor .leaflet-trackHitLine-pane path,
-.leaflet-container.navigation-point-cursor .leaflet-trackHitLine-pane path {
+.leaflet-container.track-editor-picks-point .leaflet-trackHitLine-pane path,
+.leaflet-container.navigation-picks-point .leaflet-trackHitLine-pane path {
     pointer-events: none;
 }
 

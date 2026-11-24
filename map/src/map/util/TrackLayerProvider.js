@@ -356,6 +356,7 @@ function createPolyline({ coords, ctx, map, point, points, trackAppearance, poin
 
 function hitLinesOf(map) {
     if (!hitLinesByMap.has(map)) {
+        ensureLeafletPane(map, TRACK_HIT_LINE_PANE, TRACK_HIT_LINE_PANE_Z_INDEX);
         hitLinesByMap.set(map, { tracks: new Set(), lines: new Set() });
     }
 
@@ -363,14 +364,15 @@ function hitLinesOf(map) {
 }
 
 function enforceHitLineLimit(track, map) {
-    const { tracks, lines } = hitLinesOf(map);
     track.on('add', () => {
+        const { tracks, lines } = hitLinesOf(map);
         tracks.add(track);
         if (tracks.size === TRACK_HIT_LINES_MAX_TRACKS + 1) {
             lines.forEach((line) => line.hitLine.remove());
         }
     });
     track.on('remove', () => {
+        const { tracks, lines } = hitLinesOf(map);
         tracks.delete(track);
         if (tracks.size === TRACK_HIT_LINES_MAX_TRACKS) {
             lines.forEach((line) => drawHitLine(line, map));
@@ -394,7 +396,6 @@ function unregisterHitLine(line, map) {
 }
 
 function drawHitLine(line, map) {
-    ensureLeafletPane(map, TRACK_HIT_LINE_PANE, TRACK_HIT_LINE_PANE_Z_INDEX);
     line.hitLine.addTo(map);
     disablePointerEventsIfHidden(line.hitLine.getElement(), line.options.opacity);
 }

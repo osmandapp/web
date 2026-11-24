@@ -6,6 +6,8 @@ export const NAVIGATION_OBJECT_TYPE_LOCATION = 'location';
 export const NAVIGATION_OBJECT_TYPE_SEARCH = 'search';
 export const NAVIGATION_OBJECT_TYPE_FAVORITE = 'favorite';
 
+export const NAV_MARKER_CLICK_EVENT = 'nav-marker-click';
+
 export function pickNextRoutePoint(navObject, viaInputsCount = 0) {
     if (!navObject) {
         return null;
@@ -42,7 +44,7 @@ export function passClickToNavigation(e, wpt) {
     if (!globalThis.location.pathname.includes(NAVIGATE_URL)) {
         return false;
     }
-    const navEvent = new CustomEvent('nav-marker-click', {
+    const navEvent = new CustomEvent(NAV_MARKER_CLICK_EVENT, {
         detail: {
             wpt,
             latlng: wpt ? L.latLng(wpt.lat, wpt.lng) : e.latlng,
