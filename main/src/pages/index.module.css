@@ -9,7 +9,7 @@
   position: relative;
   overflow: hidden; 
   
-  background: #ededed url('/static/img/headers/header_image.jpg') center center no-repeat;
+  background: #ededed url('/static/img/headers/header_image_blackfriday.jpg') center 20% no-repeat;
   background-size: cover;
   color: rgb(255, 255, 255);
 }
@@ -17,5 +17,19 @@
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .heroBanner {
+    background-image: url('/static/img/headers/header_image_tablet_blackfriday.jpg');
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroBanner {
+    padding-bottom: calc(45vw - 3.5rem);
+    background-image: url('/static/img/headers/header_image_mobile_blackfriday.jpg');
+    background-position: center bottom;
   }
 }
