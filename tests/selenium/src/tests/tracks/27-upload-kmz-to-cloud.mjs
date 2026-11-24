@@ -5,7 +5,7 @@ import { By } from 'selenium-webdriver';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.mjs';
 import actionCreateNewFolder from '../../actions/actionCreateNewFolder.mjs';
-import { deleteTrack, getFilesByName } from '../../util.mjs';
+import { deleteTrack, getFilesByName, cleanupCloud } from '../../util.mjs';
 import actionDeleteFolder from '../../actions/actionDeleteFolder.mjs';
 
 export const UPLOAD_TRACK = 'upload track';
@@ -15,28 +15,32 @@ export default async function test() {
     const trackNameWithExt = `${trackName}.kmz`;
     const files = getFilesByName({ folder: 'other' });
 
-    await actionOpenMap();
-    await actionLogIn();
+    try {
+        await actionOpenMap();
+        await actionLogIn();
 
-    await clickBy(By.id('se-show-menu-tracks'));
+        await clickBy(By.id('se-show-menu-tracks'));
 
-    await actionCreateNewFolder(UPLOAD_TRACK);
+        await actionCreateNewFolder(UPLOAD_TRACK);
 
-    await clickBy(By.id(`se-menu-cloud-${UPLOAD_TRACK}`));
-    await waitBy(By.id(`se-cloud-name-track`));
+        await clickBy(By.id(`se-menu-cloud-${UPLOAD_TRACK}`));
+        await waitBy(By.id(`se-cloud-name-track`));
 
-    await clickBy(By.id('se-import-cloud-track'));
+        await clickBy(By.id('se-import-cloud-track'));
 
-    await actionImportCloudTrack(files, trackNameWithExt, trackName);
-    await matchTextBy(By.id('se-cloud-t-info-' + trackName), '225.67 km · 0:00');
+        await actionImportCloudTrack(files, trackNameWithExt, trackName);
+        await matchTextBy(By.id('se-cloud-t-info-' + trackName), '225.67 km · 0:00');
 
-    await deleteTrack(trackName);
+        await deleteTrack(trackName);
 
-    await waitBy(By.id('se-import-first-track'));
+        await waitBy(By.id('se-import-first-track'));
 
-    await clickBy(By.id('se-back-folder-button-tracks'));
-    await waitBy(By.id(`se-menu-cloud-${UPLOAD_TRACK}`));
-    await actionDeleteFolder(UPLOAD_TRACK);
+        await clickBy(By.id('se-back-folder-button-tracks'));
+        await waitBy(By.id(`se-menu-cloud-${UPLOAD_TRACK}`));
+        await actionDeleteFolder(UPLOAD_TRACK);
 
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ folders: [UPLOAD_TRACK] });
+    }
 }

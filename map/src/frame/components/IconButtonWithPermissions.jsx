@@ -1,5 +1,4 @@
 import { useContext, useState } from 'react';
-import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import UnavailableActionAlert from '../../menu/errors/UnavailableActionAlert';
 import { IconButton } from '@mui/material';
 import LoginContext from '../../context/LoginContext';
@@ -13,7 +12,7 @@ export default function IconButtonWithPermissions({ onClick, className, ...props
         setOpenDialog(false);
     };
 
-    const isDisabled = ltx.accountInfo?.account === FREE_ACCOUNT;
+    const isDisabled = !ltx.isProAccount();
 
     const handleClick = () => {
         if (isDisabled) {

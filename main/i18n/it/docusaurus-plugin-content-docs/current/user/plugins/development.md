@@ -98,7 +98,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 :::
 
 - **Modalità provvisoria**. Esegue OsmAnd senza la libreria C++ nativa, utilizzando implementazioni Java per il rendering della mappa e il calcolo del percorso. L'app passa automaticamente a questa modalità se la libreria nativa non si avvia correttamente, consentendo comunque l'avvio e l'uso dell'applicazione. Il rendering della mappa e il calcolo del percorso risultano notevolmente più lenti mentre la modalità provvisoria è attiva. 
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### Impostazioni di memoria {#memory-settings}

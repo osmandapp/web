@@ -66,6 +66,9 @@ export const INFO_MENU_URL = 'info/';
 export const SHARE_MENU_URL = 'share/';
 export const PRICING_URL = 'pricing/';
 
+export const PRICING_SOURCE_PRO = 'pro';
+export const PRICING_SOURCE_MAPS_PLUS = 'maps';
+
 export const MENU_IDS = {
     search: 'se-show-menu-search',
     config: 'se-show-menu-configuremap',
@@ -81,8 +84,8 @@ export const MENU_IDS = {
 
 export const isTravelPath = (pathname) => pathname?.includes(TRAVEL_URL);
 
-export const openPricingPage = (featureId) =>
-    window.open(`/${PRICING_URL}?source=pro#${featureId}`, '_blank', 'noopener,noreferrer');
+export const openPricingPage = (featureId, source = PRICING_SOURCE_PRO) =>
+    window.open(`/${PRICING_URL}?source=${source}#${featureId}`, '_blank', 'noopener,noreferrer');
 
 export function getUniqFileId(file) {
     return `_id_${file.name}_${file.userid}`;

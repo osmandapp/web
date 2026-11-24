@@ -177,6 +177,8 @@ export const AppContextProvider = (props) => {
     const [smartFoldersCache, setSmartFoldersCache] = useState(null);
     // selected track
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
+    const selectedGpxFileRef = useRef(selectedGpxFile);
+    selectedGpxFileRef.current = selectedGpxFile;
     const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
@@ -239,7 +241,6 @@ export const AppContextProvider = (props) => {
     const [searchSettings, setSearchSettings] = useState({});
 
     const [routingCache, mutateRoutingCache] = useMutator({});
-    const [routingNewSegments, setRoutingNewSegments] = useState([]);
     const [processRouting, setProcessRouting] = useState(false);
     const [navigationRoutingInProgress, setNavigationRoutingInProgress] = useState(false);
     const [selectedWpt, setSelectedWpt] = useState(null);
@@ -325,7 +326,8 @@ export const AppContextProvider = (props) => {
     const [closableMenu, setClosableMenu] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
-    const [processingAnalytics, setProcessingAnalytics] = useState(false);
+    const [runningAnalyses, setRunningAnalyses] = useState(0);
+    const [runningEditorAnalyses, setRunningEditorAnalyses] = useState(0);
     const [openNavigationSettings, setOpenNavigationSettings] = useState(false);
 
     useEffect(() => {
@@ -517,6 +519,7 @@ export const AppContextProvider = (props) => {
                 setSmartFoldersLoading,
                 selectedGpxFile,
                 setSelectedGpxFile,
+                selectedGpxFileRef,
                 unverifiedGpxFile,
                 setUnverifiedGpxFile,
                 mapMarkerListener,
@@ -568,8 +571,6 @@ export const AppContextProvider = (props) => {
                 mutateRoutingCache,
                 poiIconCache,
                 setPoiIconCache,
-                routingNewSegments,
-                setRoutingNewSegments,
                 processRouting,
                 setProcessRouting,
                 navigationRoutingInProgress,
@@ -736,8 +737,10 @@ export const AppContextProvider = (props) => {
                 setProcessingPoiByUrl,
                 processingStopByUrl,
                 setProcessingStopByUrl,
-                processingAnalytics,
-                setProcessingAnalytics,
+                processingAnalytics: runningAnalyses > 0,
+                setRunningAnalyses,
+                analysisLoading: runningEditorAnalyses > 0,
+                setRunningEditorAnalyses,
                 openNavigationSettings,
                 setOpenNavigationSettings,
                 navigationHistory,

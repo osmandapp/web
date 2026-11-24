@@ -17,9 +17,21 @@ import {
     testsFolder,
     parseArgs,
     prepareDriver,
+    interrupted,
+    interrupt,
+    testScreenshot,
+    resetTestScreenshot,
 } from './options.mjs';
 
 console.debug = () => {}; // suppress selenium's console.debug
+
+// once: the second signal of the same kind ends the run at once
+for (const signal of ['SIGINT', 'SIGTERM']) {
+    process.once(signal, () => {
+        console.log(`${signal}: the current test cleans up its cloud files, the next tests are skipped`);
+        interrupt();
+    });
+}
 
 parseArgs();
 
@@ -30,7 +42,7 @@ do {
     if (failed > 0 && stop) {
         break;
     }
-} while (cycle);
+} while (cycle && !interrupted);
 
 await loggerReport();
 await generateReport();
@@ -40,7 +52,7 @@ process.exitCode = failed > 0 && ignore === false ? 1 : 0;
 async function cycleTests() {
     for (let i = 0; i < tests.length; i++) {
         await runTest({ file: tests[i], i, total: tests.length });
-        if (failed > 0 && stop) {
+        if ((failed > 0 && stop) || interrupted) {
             break;
         }
     }
@@ -54,6 +66,7 @@ async function runTest({ file, i, total }) {
             let error = null;
 
             await prepareDriver();
+            resetTestScreenshot();
 
             const { default: test } = await import(`./${testsFolder}/` + file);
 
@@ -102,7 +115,7 @@ async function manageScreenshot({ file, error = false }) {
     mkdirSync('screenshots/latest', { recursive: true });
     mkdirSync('screenshots/trusted', { recursive: true });
 
-    const ss = await driver.takeScreenshot();
+    const ss = testScreenshot ?? (await driver.takeScreenshot());
 
     const tag = (process.env.npm_lifecycle_event ?? 'test').replace(/[^a-z]/g, '-') + '-'; // yarn command as tag
     const name =

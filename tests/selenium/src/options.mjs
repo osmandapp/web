@@ -11,10 +11,12 @@ const BENCH_FOLDER = 'bench';
 
 export let testsFolder = 'tests';
 
-export const TEST_LOGIN = 'osmand@grr.la';
-export const TEST_PASSWORD = '0xDEADBEEF';
+export let TEST_LOGIN = 'osmand@grr.la';
+export let TEST_PASSWORD = '0xDEADBEEF';
 export const TEST_LOGIN2 = 'osmandtest2@gmail.com';
 export const TEST_PASSWORD2 = 'osmandTest2osmandTest2';
+export const TEST_LOGIN3 = 'osmandtest@grr.la';
+export const TEST_PASSWORD3 = '0xDEADBEEF';
 
 export const TIMEOUT_OPTIONAL = 1000; // optional element timeout (1s)
 export let TIMEOUT_REQUIRED = 45 * 1000; // required element timeout (waitBy / clickBy / enclose) (45s)
@@ -39,6 +41,34 @@ export let mobile = false;
 export let noexit = false;
 export let headless = false;
 
+// set by SIGINT / SIGTERM: the next wait of lib.mjs fails the current test, so its finally cleans the cloud
+export let interrupted = false;
+let interruptPending = false;
+let cleaning = false;
+export function interrupt() {
+    interrupted = true;
+    interruptPending = true;
+}
+export function consumeInterrupt() {
+    if (cleaning || !interruptPending) {
+        return false;
+    }
+    interruptPending = false;
+    return true;
+}
+export function setCleaning(value) {
+    cleaning = value;
+}
+
+// the page before the cleanup of a test's finally, saved by main instead of the page after it
+export let testScreenshot = null;
+export async function captureTestScreenshot() {
+    testScreenshot = await driver.takeScreenshot();
+}
+export function resetTestScreenshot() {
+    testScreenshot = null;
+}
+
 export const tests = []; // used by main
 
 export function parseArgs() {
@@ -51,6 +81,10 @@ export function parseArgs() {
             process.kill(process.pid);
         } else if (a.match(/^(http:|https:)/)) {
             url = a;
+            if (url.match(/^http:\/\/localhost:/)) {
+                TEST_LOGIN = TEST_LOGIN3;
+                TEST_PASSWORD = TEST_PASSWORD3;
+            }
         } else if (a.match(/^--/)) {
             a === '--longtimeout' && (TIMEOUT_REQUIRED = LONG_TIMEOUT);
             a === '--headless' && (headless = true);

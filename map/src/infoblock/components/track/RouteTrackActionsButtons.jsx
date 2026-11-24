@@ -11,7 +11,6 @@ import { ReactComponent as EditIcon } from '../../../assets/icons/ic_action_edit
 import { ReactComponent as CloudIcon } from '../../../assets/icons/ic_action_cloud.svg';
 import { ReactComponent as DownloadIcon } from '../../../assets/icons/ic_action_gsave_dark.svg';
 import LoginContext from '../../../context/LoginContext';
-import { FREE_ACCOUNT } from '../../../manager/LoginManager';
 import UnavailableActionAlert from '../../../menu/errors/UnavailableActionAlert';
 
 export default function RouteTrackActionsButtons({ track }) {
@@ -38,7 +37,7 @@ export default function RouteTrackActionsButtons({ track }) {
                 />
                 <BlueBtn
                     action={() => {
-                        if (ltx.accountInfo?.account === FREE_ACCOUNT) {
+                        if (!ltx.isProAccount()) {
                             setOpenUnavailableDialog(true);
                             return;
                         }

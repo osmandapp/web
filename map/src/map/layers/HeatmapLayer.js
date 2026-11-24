@@ -5,7 +5,7 @@ import { useMap } from 'react-leaflet';
 import { useTranslation } from 'react-i18next';
 import AppContext, { isTravelTrack } from '../../context/AppContext';
 import TravelContext from '../../context/TravelContext';
-import { ACTIVITY_ALL, monthIndex } from '../../menu/travel/TravelMenu';
+import { ACTIVITY_ALL, monthIndex, OSM_TRACES_URL } from '../../menu/travel/TravelMenu';
 import { ACTIVITY_ERROR, ACTIVITY_SHORT, ACTIVITY_SPARSE, UNIDENTIFIED_TRACKS_KEY } from '../util/activities';
 import {
     HEATMAP_PALETTES,
@@ -29,7 +29,6 @@ import {
 } from '../util/HeatmapAlgorithms';
 
 const HEATMAP_PANE = 'heatmapPane';
-const OSM_TRACES_URL = 'https://www.openstreetmap.org/traces';
 const HEATMAP_DIMMED_FACTOR = 0.4;
 const HEATMAP_GREY_MAP_CLASS = 'travel-grey-map';
 const HEATMAP_SPEED_SUFFIX = '~speed';

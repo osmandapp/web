@@ -29,7 +29,6 @@ import TextLeftIconBtn from '../../frame/components/other/TextLeftIconBtn';
 import { abortApiRequest } from '../../util/HttpApi';
 import { NAVIGATION_ROUTE_ABORT_KEY } from '../../store/geoRouter/legacy/calculateRoute';
 import LoginContext from '../../context/LoginContext';
-import { FREE_ACCOUNT } from '../../manager/LoginManager';
 import { isEmptyTrack, GPX_FILE_TYPE } from '../../manager/track/TracksManager';
 import DownloadTrackDialog from '../../dialogs/tracks/DownloadTrackDialog';
 import {
@@ -240,7 +239,7 @@ export default function NavigationMenu() {
             return;
         }
 
-        if (!ltx.loginUser || ltx.accountInfo?.account === FREE_ACCOUNT) {
+        if (!ltx.isProAccount()) {
             navigate({
                 pathname: '/' + PRICING_URL,
                 hash: liveHash(),

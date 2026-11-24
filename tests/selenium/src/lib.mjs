@@ -11,6 +11,7 @@ import {
     TIMEOUT_OPTIONAL,
     TIMEOUT_REQUIRED,
     verbose,
+    consumeInterrupt,
 } from './options.mjs';
 import actionIdleWait from './actions/actionIdleWait.mjs';
 
@@ -25,6 +26,14 @@ async function failOnErrorDialog() {
     const dialog = await driver.findElements(ERROR_DIALOG);
     if (dialog.length > 0) {
         throw new SiteError(`Site error: ${await dialog[0].getText()}`);
+    }
+}
+
+// thrown once by the next wait after the run is interrupted, by an optional wait too
+class Interrupted extends Error {}
+function failOnInterrupt() {
+    if (consumeInterrupt()) {
+        throw new Interrupted('Run interrupted');
     }
 }
 
@@ -44,6 +53,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
     try {
         return await driver.wait(
             new Condition(tag, async (d) => {
+                failOnInterrupt();
                 try {
                     return await callback(d); // awaiting for truthy, using (d) is optional
                 } catch (e) {
@@ -56,7 +66,7 @@ export async function enclose(callback, { tag = 'enclose', optional = false } = 
             optional ? TIMEOUT_OPTIONAL : TIMEOUT_REQUIRED
         );
     } catch (error) {
-        if (optional === true) {
+        if (optional === true && !(error instanceof Interrupted)) {
             return null;
         }
         verbose && (await logBrowserAndNetworkErrors(driver));
@@ -88,6 +98,7 @@ export async function waitBy(
         await actionIdleWait();
     }
     const findVisible = async () => {
+        failOnInterrupt();
         failOnError && (await failOnErrorDialog());
         const found = await driver.findElements(by);
         if (found && found.length > 0) {
@@ -123,7 +134,7 @@ export async function waitBy(
             optional ? TIMEOUT_OPTIONAL : TIMEOUT_REQUIRED
         );
     } catch (error) {
-        if (optional === true && !(error instanceof SiteError)) {
+        if (optional === true && !(error instanceof SiteError || error instanceof Interrupted)) {
             return null;
         }
         verbose && (await logBrowserAndNetworkErrors(driver));
@@ -150,6 +161,7 @@ export async function waitByRemoved(by, allowHidden = false, { failOnError = fal
     if (found && found.length > 0) {
         return await driver.wait(
             new Condition('waitByRemoved' + by.value, async () => {
+                failOnInterrupt();
                 failOnError && (await failOnErrorDialog());
                 try {
                     const found = await driver.findElements(by);
@@ -342,6 +354,13 @@ export async function sendKeysBy(by, keys) {
         },
         { tag: `sendKeysBy (${by.value || by}) (${keys})` }
     );
+}
+
+/** Types `text` over the whole value of the input: a triple click selects it first. */
+export async function replaceTextBy(by, text) {
+    const input = await waitBy(by);
+    await driver.actions().click(input).click(input).click(input).perform();
+    await input.sendKeys(text);
 }
 
 export async function checkElementByCss(searchString, exist = true) {

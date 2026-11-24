@@ -2,6 +2,7 @@ import { ReactComponent as StartIcon } from '../../assets/icons/ic_action_osmand
 import { ReactComponent as MapsIcon } from '../../assets/icons/ic_action_osmand_maps_plus_v2.svg';
 import { ReactComponent as ProIcon } from '../../assets/icons/ic_action_osmand_pro_logo_colored.svg';
 import { ReactComponent as DecadeIcon } from '../../assets/icons/ic_action_osmand_decade_v2.svg';
+import { ReactComponent as MapsLogoIcon } from '../../assets/icons/ic_action_osmand_maps_plus.svg';
 
 export const PRODUCT_ID_START = 'osmand-start';
 export const PRODUCT_ID_MAPS_PLUS = 'osmand-maps-plus';
@@ -12,9 +13,25 @@ export const PURCHASE_TYPE_MONTHLY = 'monthly';
 export const PURCHASE_TYPE_ANNUAL = 'annual';
 export const PURCHASE_TYPE_ONE_TIME = 'one-time';
 
+export const PURCHASE_TYPE_TEXTS = {
+    [PURCHASE_TYPE_MONTHLY]: {
+        label: 'web:purchase_type_monthly_subscription',
+        period: 'web:purchase_period_month',
+    },
+    [PURCHASE_TYPE_ANNUAL]: {
+        label: 'web:purchase_type_annual_subscription',
+        period: 'web:purchase_period_year',
+    },
+    [PURCHASE_TYPE_ONE_TIME]: {
+        label: 'web:purchase_type_one_time_purchase',
+    },
+};
+
 const PURCHASE_OSMAND_PRO = 'OsmAnd Pro';
 const PURCHASE_OSMAND_VX = 'OsmAnd XV';
-const PURCHASE_OSMAND_MAPS_PLUS = 'OsmAnd Maps+';
+export const PURCHASE_OSMAND_MAPS_PLUS = 'OsmAnd Maps+';
+
+export const PRODUCT_NAME_MAPS_PLUS = 'Maps+';
 
 export const products = [
     {
@@ -31,7 +48,7 @@ export const products = [
     },
     {
         id: PRODUCT_ID_MAPS_PLUS,
-        name: 'Maps+',
+        name: PRODUCT_NAME_MAPS_PLUS,
         icon: <MapsIcon />,
         shortFeaturesList: [
             'web:feature_unlimited_map_downloads',
@@ -69,6 +86,21 @@ export const products = [
         ],
         purchaseTypes: ['one-time'],
         show: false,
+    },
+];
+
+export const stickyBarProducts = [
+    {
+        name: PRODUCT_NAME_MAPS_PLUS,
+        icon: <MapsLogoIcon />,
+        iconBg: 'rgba(255, 136, 0, 0.2)',
+        purchaseId: PRODUCT_ID_MAPS_PLUS,
+    },
+    {
+        name: PURCHASE_OSMAND_PRO,
+        icon: <ProIcon />,
+        iconBg: 'rgba(87, 20, 204, 0.2)',
+        purchaseId: PRODUCT_ID_PRO,
     },
 ];
 

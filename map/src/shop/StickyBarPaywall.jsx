@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import styles from './shop.module.css';
-import { ReactComponent as ProIcon } from '../assets/icons/ic_action_osmand_pro_logo_colored.svg';
 import PrimaryBtn from '../frame/components/btns/PrimaryBtn';
 import GrayBtnWithBlueHover from '../frame/components/btns/GrayBtnWithBlueHover';
 import { useTranslation } from 'react-i18next';
@@ -9,7 +8,13 @@ import LoginContext from '../context/LoginContext';
 import AppContext from '../context/AppContext';
 import { createFastSpringPurchase } from '../login/fs/FastSpringHelper';
 import { useNavigate } from 'react-router-dom';
-import { findPurchase, PRODUCT_ID_PRO, PURCHASE_TYPE_ANNUAL, PURCHASE_TYPE_MONTHLY } from './products/ProductManager';
+import {
+    findPurchase,
+    products,
+    PURCHASE_TYPE_ANNUAL,
+    PURCHASE_TYPE_TEXTS,
+    stickyBarProducts,
+} from './products/ProductManager';
 import { findFeature } from './features/FeaturesManager';
 import useCardPriceRefresh from '../util/hooks/useCardPriceRefresh';
 import StickyBarContainer from './StickyBarContainer';
@@ -19,6 +24,7 @@ export default function StickyBarPaywall({
     testMode,
     updateCardPrices,
     setUpdateCardPrices,
+    productId,
     featureId,
     onSeeAllPlans,
 }) {
@@ -29,8 +35,7 @@ export default function StickyBarPaywall({
 
     const navigate = useNavigate();
 
-    const [monthlyPurchase, setMonthlyPurchase] = useState(null);
-    const [annualPurchase, setAnnualPurchase] = useState(null);
+    const [purchases, setPurchases] = useState({});
 
     useEffect(() => {
         loadPrices();
@@ -38,14 +43,21 @@ export default function StickyBarPaywall({
 
     useCardPriceRefresh(updateCardPrices, setUpdateCardPrices, loadPrices);
 
-    function loadPrices() {
-        const monthly = findPurchase(PURCHASE_TYPE_MONTHLY, PRODUCT_ID_PRO);
-        const annual = findPurchase(PURCHASE_TYPE_ANNUAL, PRODUCT_ID_PRO);
-        setMonthlyPurchase(monthly && { ...monthly });
-        setAnnualPurchase(annual && { ...annual });
-    }
-
+    const product = stickyBarProducts.find((p) => p.purchaseId === productId);
+    const purchaseTypes = products.find((p) => p.id === productId).purchaseTypes;
     const feature = findFeature(featureId);
+    const annualPurchase = purchases[PURCHASE_TYPE_ANNUAL];
+
+    function loadPrices() {
+        const loaded = {};
+        purchaseTypes.forEach((type) => {
+            const item = findPurchase(type, productId);
+            if (item) {
+                loaded[type] = { ...item };
+            }
+        });
+        setPurchases(loaded);
+    }
 
     function subscribeAnnual() {
         if (!ltx.loginUser) {
@@ -55,7 +67,7 @@ export default function StickyBarPaywall({
                 testMode,
                 ltx,
                 ctx,
-                productId: PRODUCT_ID_PRO,
+                productId,
                 type: PURCHASE_TYPE_ANNUAL,
                 navigate,
             });
@@ -66,51 +78,38 @@ export default function StickyBarPaywall({
         <StickyBarContainer visible={visible}>
             <Box className={styles.stickyBarPaywallItem}>
                 <Box className={styles.stickyBarPaywallItemContent}>
-                    <Box className={`${styles.stickyBarIconFrame} ${styles.stickyBarIconFramePro}`}>
-                        <ProIcon />
+                    <Box className={styles.stickyBarIconFrame} style={{ backgroundColor: product.iconBg }}>
+                        {product.icon}
                     </Box>
                     <Box className={styles.stickyBarInfo}>
-                        <Typography className={styles.stickyBarName}>OsmAnd Pro</Typography>
+                        <Typography className={styles.stickyBarName}>{product.name}</Typography>
                         <Typography className={styles.stickyBarPaywallDesc}>
                             {t(feature?.name ?? 'web:feature_cross_platform')}
                         </Typography>
                     </Box>
                     <Box className={styles.stickyBarPaywallPrices}>
-                        <Box className={styles.stickyBarPaywallPriceCol}>
-                            <Typography className={styles.stickyBarPaywallPriceLabel}>
-                                {t('web:purchase_type_monthly_subscription')}
-                            </Typography>
-                            <Box className={styles.stickyBarPriceRow}>
-                                {monthlyPurchase?.display && (
-                                    <Typography className={styles.stickyBarNewPrice}>
-                                        {monthlyPurchase.display}
+                        {purchaseTypes.map((type, index) => (
+                            <React.Fragment key={type}>
+                                {index > 0 && <Box className={styles.stickyBarPaywallDivider} />}
+                                <Box className={styles.stickyBarPaywallPriceCol}>
+                                    <Typography className={styles.stickyBarPaywallPriceLabel}>
+                                        {t(PURCHASE_TYPE_TEXTS[type].label)}
                                     </Typography>
-                                )}
-                                {monthlyPurchase?.display && (
-                                    <Typography className={styles.stickyBarPricePeriod}>
-                                        &nbsp;/ {t('web:purchase_period_month')}
-                                    </Typography>
-                                )}
-                            </Box>
-                        </Box>
-                        <Box className={styles.stickyBarPaywallDivider} />
-                        <Box className={styles.stickyBarPaywallPriceCol}>
-                            <Typography className={styles.stickyBarPaywallPriceLabel}>
-                                {t('web:purchase_type_annual_subscription')}
-                            </Typography>
-                            <Box className={styles.stickyBarPriceRow}>
-                                {annualPurchase?.display && (
-                                    <Typography className={styles.stickyBarNewPrice}>
-                                        {annualPurchase.display}
-                                    </Typography>
-                                )}
-                                {annualPurchase?.display && (
-                                    <Typography className={styles.stickyBarPricePeriod}>
-                                        &nbsp;/ {t('web:purchase_period_year')}
-                                    </Typography>
-                                )}
-                            </Box>
-                        </Box>
+                                    <Box className={styles.stickyBarPriceRow}>
+                                        {purchases[type]?.display && (
+                                            <Typography className={styles.stickyBarNewPrice}>
+                                                {purchases[type].display}
+                                            </Typography>
+                                        )}
+                                        {purchases[type]?.display && PURCHASE_TYPE_TEXTS[type].period && (
+                                            <Typography className={styles.stickyBarPricePeriod}>
+                                                &nbsp;/ {t(PURCHASE_TYPE_TEXTS[type].period)}
+                                            </Typography>
+                                        )}
+                                    </Box>
+                                </Box>
+                            </React.Fragment>
+                        ))}
                     </Box>
                 </Box>
                 <Box className={styles.stickyBarPaywallBtns}>

@@ -21,6 +21,7 @@ export default function SortFilesButton({
     setSortGroups = null,
     setSortFiles = null,
     smartf,
+    menuInPortal = false,
 }) {
     const ctx = useContext(AppContext);
     const ltx = useContext(LoginContext);
@@ -42,11 +43,11 @@ export default function SortFilesButton({
     }, [ctx.selectedSort, trackGroup, currentSortType]);
 
     function disableSort() {
+        if (customGroup) {
+            return !customGroup.files || customGroup.files.length <= 1;
+        }
         if (ltx.loginUser) {
             if (type === TRACK_FILE_TYPE) {
-                if (customGroup) {
-                    return !customGroup.files || customGroup.files.length <= 1;
-                }
                 return !trackGroup || (trackGroup.files?.length <= 1 && trackGroup.groupFiles?.length <= 1);
             } else if (type === FAVORITE_FILE_TYPE) {
                 return ctx.favorites.groups?.length === 0;
@@ -76,6 +77,7 @@ export default function SortFilesButton({
                 openSort={openSort}
                 setOpenSort={setOpenSort}
                 anchorEl={anchorEl}
+                inPortal={menuInPortal}
                 actions={
                     <SortActions
                         trackGroup={trackGroup}

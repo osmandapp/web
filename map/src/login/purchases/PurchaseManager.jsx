@@ -10,6 +10,8 @@ import styles from '../../frame/components/items/items.module.css';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { statusMap } from './PurchaseStatus';
 
+export const PURCHASE_STATE_ACTIVE = 'active';
+
 const storeMap = {
     'Google Play': {
         text: 'web:google_play_text',
@@ -41,7 +43,7 @@ export function getStatus(state, t = null) {
         return t('web:unknown_state');
     }
     if (state === 'cancelled' || state === 'in_grace_period') {
-        state = 'active';
+        state = PURCHASE_STATE_ACTIVE;
     }
     if (t === null) {
         return state;

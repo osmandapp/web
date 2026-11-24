@@ -19,8 +19,14 @@ import { getAccountInfo } from '../manager/LoginManager';
 import LoginContext from '../context/LoginContext';
 import StickyBarPricingPage from './StickyBarPricingPage';
 import StickyBarPaywall from './StickyBarPaywall';
+import { PRICING_SOURCE_MAPS_PLUS, PRICING_SOURCE_PRO } from '../manager/GlobalManager';
 
 const FeaturesTable = React.lazy(() => import('./features/FeaturesTable'));
+
+const PAYWALL_PRODUCT_BY_SOURCE = new Map([
+    [PRICING_SOURCE_PRO, PRODUCT_ID_PRO],
+    [PRICING_SOURCE_MAPS_PLUS, PRODUCT_ID_MAPS_PLUS],
+]);
 
 export default function PricingPage() {
     const ltx = useContext(LoginContext);
@@ -45,7 +51,7 @@ export default function PricingPage() {
     const cardBoxRef = useRef(null);
     const scrollContainerRef = useRef(null);
 
-    const isPaywall = searchParams.get('source') === 'pro';
+    const paywallProductId = PAYWALL_PRODUCT_BY_SOURCE.get(searchParams.get('source'));
     const paywallFeatureId = location.hash?.slice(1) || null;
 
     function scrollToTop() {
@@ -133,12 +139,14 @@ export default function PricingPage() {
     return (
         <Box>
             <HeaderMenu />
-            {isPaywall ? (
+            {paywallProductId ? (
                 <StickyBarPaywall
+                    key={paywallProductId}
                     visible={stickyVisible}
                     testMode={useTestMode}
                     updateCardPrices={updateCardPrices}
                     setUpdateCardPrices={setUpdateCardPrices}
+                    productId={paywallProductId}
                     featureId={paywallFeatureId}
                     onSeeAllPlans={scrollToTop}
                 />

@@ -124,6 +124,13 @@
 .dateSliderContainer {
     margin-top: 0;
     margin-bottom: 0;
+    padding-top: 0;
+}
+
+.dateSliderContainer :global(.MuiSlider-root) {
+    width: calc(100% - 14px) !important;
+    margin: 0 7px !important;
+    padding: 10px 0 !important;
 }
 
 .sliderHeader {
@@ -143,6 +150,42 @@
     margin: 8px 16px 0 !important;
     color: var(--text-secondary) !important;
     font-size: 13px !important;
+}
+
+.statsMore {
+    color: var(--selected-color);
+}
+
+.statsPaper {
+    width: 360px;
+    max-width: calc(100vw - 32px);
+}
+
+.statsRow {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) 48px 56px 24px;
+}
+
+.statsBar {
+    position: relative;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--buttons-background-secondary);
+    overflow: hidden;
+}
+
+.statsBarFill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    border-radius: 3px;
+    background: var(--svg-icon-color);
+}
+
+.statsCount {
+    text-align: right;
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    font-variant-numeric: tabular-nums;
 }
 
 .sliderValue {
@@ -180,29 +223,6 @@
 
 .sliderContainer :global(.MuiSlider-valueLabel) {
     font-size: 12px !important;
-}
-
-.resultsHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin: 16px 16px 0;
-    flex-shrink: 0;
-}
-
-.activityBreakdown {
-    flex: 1;
-    min-width: 0;
-    font-size: 13px !important;
-}
-
-.activityBreakdown .activityType {
-    cursor: pointer;
-}
-
-.activityBreakdown .activityPinned {
-    color: var(--text-primary);
 }
 
 .filtersBody {
@@ -248,4 +268,37 @@
 .resultsSpinner {
     margin-top: 80px;
     margin-left: 160px;
+}
+
+.dataSourceLink {
+    color: var(--selected-color) !important;
+    white-space: nowrap;
+}
+
+.pointHeader {
+    margin: 12px 16px 0;
+}
+
+.pointHeaderRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.pointActions {
+    display: flex;
+    flex: none;
+    align-items: center;
+}
+
+.pointTitle {
+    color: var(--text-primary) !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
+.pointDesc {
+    color: var(--text-secondary) !important;
+    font-size: 13px !important;
 }

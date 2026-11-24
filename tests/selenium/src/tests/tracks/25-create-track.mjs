@@ -28,9 +28,9 @@ import {
 import { By, Key } from 'selenium-webdriver';
 import { driver } from '../../options.mjs';
 
-import { deleteTrack } from '../../util.mjs';
+import { deleteTrack, cleanupCloud } from '../../util.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
-import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
+import actionSaveLocalToCloud from '../../actions/tracks/actionSaveLocalToCloud.mjs';
 import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
 import actionDeleteWptFromTab from '../../actions/tracks/actionDeleteWptFromTab.mjs';
 import actionDeleteWptFromDetails from '../../actions/tracks/actionDeleteWptFromDetails.mjs';
@@ -67,6 +67,7 @@ const POINT_MENU_ITEMS = [
 const INSERTED_POINT = [50.4925, 30.515];
 const MOVED_POINT = [50.4925, 30.512];
 const MOVED_FIRST_POINT = [50.4895, 30.517];
+const DRAGGED_FIRST_POINT = [50.4895, 30.51];
 const AWAY_FROM_ROUTE = [50.4925, 30.505];
 const LAST_POINT = [50.4965, 30.515];
 
@@ -88,59 +89,58 @@ const WPT_ROUTE_POINTS = [
 ];
 
 export default async function test() {
-    await actionOpenMap('#15/50.4946/30.5220');
-    await actionLogIn();
+    try {
+        await actionOpenMap('#15/50.4946/30.5220');
+        await actionLogIn();
 
-    // remove the track left by a previous failed run, otherwise save asks to update it
-    await clickBy(By.id('se-show-menu-tracks'));
-    await actionDeleteTracksByPattern(TRACK_NAME);
-    await clickBy(By.id('se-show-menu-tracks'));
+        // Create local track with 3 points
+        await actionCreateRoute(ROUTE_POINTS);
+        await validateInfoBlockStrings(strings3);
 
-    // Create local track with 3 points
-    await actionCreateRoute(ROUTE_POINTS);
-    await validateInfoBlockStrings(strings3);
+        // a click on the map while the menu of a point is open adds no point
+        await actionOpenPointMenu(ROUTE_POINTS[1]);
+        await leftClickBy(50.494, 30.53);
+        await waitByRemoved(By.id('se-point-context-menu'));
+        await validateInfoBlockStrings(strings3);
 
-    // a click on the map while the menu of a point is open adds no point
-    await actionOpenPointMenu(ROUTE_POINTS[1]);
-    await leftClickBy(50.494, 30.53);
-    await waitByRemoved(By.id('se-point-context-menu'));
-    await validateInfoBlockStrings(strings3);
+        await waitBy(By.id('se-main-graph'));
+        await waitBy(By.id('se-road-attributes-graph'));
 
-    await waitBy(By.id('se-main-graph'));
-    await waitBy(By.id('se-road-attributes-graph'));
+        // save to cloud → edit → save again → cloud must reflect update
+        await actionSaveLocalToCloud({ name: TRACK_NAME });
 
-    // save to cloud → edit → save again → cloud must reflect update
-    await saveLocalToCloud({ name: TRACK_NAME });
+        await clickBy(By.id('se-track-actions-edit'));
+        await waitBy(By.id('se-track-context-menu'));
 
-    await clickBy(By.id('se-track-actions-edit'));
-    await waitBy(By.id('se-track-context-menu'));
+        await leftClickBy(50.497, 30.52);
+        await waitBy(By.className('leaflet-interactive'));
+        await waitBy(By.id('se-track-context-menu'));
+        await validateInfoBlockStrings(strings4);
+        await actionIdleWait();
+        await actionSaveLocalToCloud({ overwrite: true });
+        await validateInfoBlockStrings(strings4);
+        await actionIdleWait();
+        await clickBy(By.id('se-button-back'));
+        await deleteTrack(TRACK_NAME);
 
-    await leftClickBy(50.497, 30.52);
-    await waitBy(By.className('leaflet-interactive'));
-    await waitBy(By.id('se-track-context-menu'));
-    await validateInfoBlockStrings(strings4);
-    await actionIdleWait();
-    await saveLocalToCloud({ overwrite: true });
-    await validateInfoBlockStrings(strings4);
-    await actionIdleWait();
-    await clickBy(By.id('se-button-back'));
-    await deleteTrack(TRACK_NAME);
+        await createEmptyTrack();
+        await addSquarePoints();
+        await deletePoints();
+        await dragFirstPoint();
+        await deleteAllPoints();
+        await editSegments();
+        await dragPoints();
+        await undoRedo();
+        await showPointFromTab();
+        const name = await closeTrack();
+        await addPointsToPlainTrack();
+        await editBesideVisibleTrack(name);
+        await editWaypoints();
 
-    await createEmptyTrack();
-    await addSquarePoints();
-    await deletePoints();
-    await dragFirstPoint();
-    await deleteAllPoints();
-    await editSegments();
-    await dragPoints();
-    await undoRedo();
-    await showPointFromTab();
-    const name = await closeTrack();
-    await addPointsToPlainTrack();
-    await editBesideVisibleTrack(name);
-    await editWaypoints();
-
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [TRACK_NAME] });
+    }
 }
 
 // a track created by the button gets its first point by a click
@@ -251,6 +251,20 @@ async function editSegments() {
         tag: 'color of the new profile',
     });
 
+    // the line of the segment routed again takes a new point
+    const middle = await getRouteMiddle(third, fourth);
+    await hoverBy(middle.lat, middle.lng);
+    await validateLineMarker(middle, true);
+    await hoverBy(...AWAY_FROM_ROUTE);
+
+    // a point dragged after the profile change keeps the new profile of the segment
+    await dragBy(first, DRAGGED_FIRST_POINT);
+    await validateRoutePoint(...DRAGGED_FIRST_POINT, true);
+    await waitRoutedLines(routedLines);
+    await enclose(async () => (await getRouteColor(third, fourth)) === BICYCLE_COLOR, {
+        tag: 'color of the new profile after a drag',
+    });
+
     // Cancel gives the track its profile back
     await clickBy(By.id('se-panel-button-change-profile'));
     const profile = await getTextBy(By.id('se-track-profile-select'));
@@ -272,7 +286,7 @@ async function editSegments() {
     await actionOpenPointMenu(second);
     await clickBy(By.id('se-point-context-menu-trim-before'));
     await matchPointsCount(SQUARE_ROUTE_POINTS.length - 2);
-    await validateRoutePoint(...first, false);
+    await validateRoutePoint(...DRAGGED_FIRST_POINT, false);
     await waitRoutedLines(routedLines - 2);
     await validateRouteDirection(second, third);
 }
@@ -447,22 +461,6 @@ async function editWaypoints() {
     await actionDeletePoint(WPT_ROUTE_POINTS[1]);
     await matchPointsCount(WPT_ROUTE_POINTS.length - 1);
     await validateWaypoints(kept);
-}
-
-async function saveLocalToCloud({ name = null, overwrite = false } = {}) {
-    // disabled while a segment is being routed
-    await clickBy(By.css('#se-local-track-actions-save-to-cloud:not([disabled])'));
-    if (name) {
-        const input = await waitBy(By.id('se-save-track-name'));
-        await driver.actions().click(input).click(input).click(input).perform();
-        await input.sendKeys(name);
-    }
-    if (!overwrite) {
-        await clickBy(By.id('se-submit-save-to-cloud'));
-    }
-    await waitBy(By.id('se-track-actions-edit'));
-    // saving to cloud reopens the track and refreshes the list
-    await actionIdleWait();
 }
 
 async function validateInfoBlockStrings(strings) {

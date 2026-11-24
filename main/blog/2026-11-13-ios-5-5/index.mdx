@@ -19,7 +19,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 OsmAnd 5.5 has reached iPhone, iPad, and CarPlay, and the update is already waiting for you in the App Store.
 
-This update brings EPSG coordinate systems, separate widget layouts for Portrait and Landscape, appearance settings for widget panels, new CarPlay settings, and many other improvements and bug fixes.
+This update makes CarPlay free for everyone and gives it new settings, and the free version now includes all maps of one region. It also brings EPSG coordinate systems, separate widget layouts for Portrait and Landscape, appearance settings for widget panels, and many other improvements and bug fixes.
 
 
 [🔄 **Update Now**](https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
@@ -29,10 +29,11 @@ This update brings EPSG coordinate systems, separate widget layouts for Portrait
 ## What's new
 
 
+- [CarPlay updates](#carplay-updates): free for everyone, map orientation, Home in one tap, and frame rate limit
+- [Free version](#free-version-maps-of-one-region): all maps of one region
 - [New coordinate formats](#new-coordinate-formats): EPSG systems, Maidenhead, and Swiss Grid
 - [Separate widget layouts](#separate-widget-layouts-for-portrait-and-landscape) for Portrait and Landscape
 - [Appearance settings for widget panels](#appearance-settings-for-widget-panels)
-- [CarPlay updates](#carplay-updates): map orientation, Home in one tap, and frame rate limit
 - ["Keep screen on" setting](#keep-screen-on) for each profile
 - [Contour line labels face uphill](#contour-line-labels-face-uphill)
 - [Full appearance settings](#full-appearance-settings-for-several-favorites) for several Favorites at once
@@ -41,6 +42,22 @@ This update brings EPSG coordinate systems, separate widget layouts for Portrait
 - [Holidays in opening hours](#holidays-in-opening-hours)
 - [Other updates and improvements](#other-updates-and-improvements)
 - [Bug fixes](#bug-fixes).
+
+
+## CarPlay updates
+
+[**CarPlay**](https://osmand.net/docs/user/navigation/car-play) is free for everyone, with no purchase or subscription needed. It also gets three practical changes:
+
+* **Map orientation** is now available in [CarPlay Settings](https://osmand.net/docs/user/navigation/car-play#settings). It shares the profile setting with the phone, so a change in one place applies in both.
+* **Home** sits at the top of Favorites in the Navigation menu, and one tap builds the route home.
+* A new option **limits the map frame rate**, which keeps CarPlay responsive on head units that slow down when the map moves constantly.
+
+
+## Free version: maps of one region
+
+The [**free version**](https://osmand.net/docs/user/purchases/ios#free-and-paid-features) of OsmAnd includes all maps of one region instead of a limited number of downloads. A region is a country, or a state in the USA, Canada, Russia, Brazil, India, China, and Australia. The first map you download sets your free region, and other maps of the same region download without limits. Updates of the maps you already have are always free.
+
+To download a map from another region, you can replace your free region: the maps of the previous region are deleted, while the world map and plugin maps such as contour lines and Wikipedia stay. When a replacement isn't available, OsmAnd asks for your email or offers **Maps+** with maps of all regions. If you already use the free version, your free region is set by your current location or by the region with the most map data, and everything you have downloaded stays.
 
 
 ## New coordinate formats
@@ -82,15 +99,6 @@ Each widget panel now has its own [**appearance settings**](https://osmand.net/d
 You can also copy appearance settings from another panel or another profile, keeping your layout consistent across profiles.
 
 ![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2_ios.webp)
-
-
-## CarPlay updates
-
-[**CarPlay**](https://osmand.net/docs/user/navigation/car-play#settings) gets three practical changes:
-
-* **Map orientation** is now available in CarPlay Settings. It shares the profile setting with the phone, so a change in one place applies in both.
-* **Home** sits at the top of Favorites in the Navigation menu, and one tap builds the route home.
-* A new option **limits the map frame rate**, which keeps CarPlay responsive on head units that slow down when the map moves constantly.
 
 
 ## Keep screen on
@@ -137,9 +145,11 @@ When you select several Favorites and choose [**Change appearance**](https://osm
 
 - **[Plan a route on larger screens](https://osmand.net/docs/user/plan-route/create-route?current-os=ios#overview).** On iPad, Mac, and iPhone in landscape orientation, the route panel now sits on the left side of the screen, and *+ POI*, *Undo*, *Redo*, and *Route +* move to the map, so more of the map stays visible while you plan.
 
+- **[Speed limit tolerance](https://osmand.net/docs/user/navigation/guidance/voice-navigation?current-os=ios#speed-limit).** The allowed deviation from the speed limit is set with a slider, with limits and steps that depend on the profile.
+
 - **Safer OSM note uploads.** If OsmAnd cannot confirm that a note was uploaded, it warns you before sending it again, so you don't create a duplicate note on OpenStreetMap.
 
-- **[Tracks statistics](https://osmand.net/docs/user/personal/tracks/manage-tracks?current-os=ios#manage-tracks).** My Places shows when track statistics are still being calculated.
+- **[Large track libraries](https://osmand.net/docs/user/personal/tracks/manage-tracks?current-os=ios#manage-tracks).** My Places opens faster with a large number of tracks and shows the indexing progress while track statistics are still being calculated.
 
 - **OSM Edits** shows a clear message when you have no pending map edits.
 
@@ -158,6 +168,7 @@ When you select several Favorites and choose [**Change appearance**](https://osm
 * Fixed [KML import creating an empty track](https://github.com/osmandapp/OsmAnd-iOS/issues/5956);
 * Fixed [Radius ruler circles rendering with artifacts near the poles in globe view](https://github.com/osmandapp/OsmAnd-iOS/issues/5830);
 * Fixed [the map list jumping after downloading USFS maps](https://github.com/osmandapp/OsmAnd-iOS/issues/4363);
+* Fixed [some OBD-II Bluetooth adapters connecting without receiving data](https://github.com/osmandapp/OsmAnd-iOS/pull/6066);
 * Fixed [tapping a point group always applying the red color to the point](https://github.com/osmandapp/OsmAnd-iOS/issues/5644).
 
 

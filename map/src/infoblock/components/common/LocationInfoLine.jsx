@@ -13,7 +13,7 @@ import wptStyles from '../wpt/wptDetails.module.css';
 import { apiGet } from '../../../util/HttpApi';
 import { ReactComponent as LocationIcon } from '../../../assets/icons/ic_action_location_16.svg';
 import { ReactComponent as DotIcon } from '../../../assets/icons/ic_action_dot_16.svg';
-import { getTrackPoints } from '../../../manager/track/TracksManager';
+import { getTrackPoints, withEditedPoints } from '../../../manager/track/TracksManager';
 import { WEATHER_COORDS_DECIMALS } from '../../../manager/GlobalManager';
 
 const ADDRESS_NOT_FOUND = i18n.t('web:no_data');
@@ -31,7 +31,7 @@ export default function LocationInfoLine({ wpt = null, track = null }) {
         if (wpt?.latlon?.lat != null && wpt?.latlon?.lon != null) {
             return { lat: wpt.latlon.lat, lon: wpt.latlon.lon };
         }
-        const points = getTrackPoints(track);
+        const points = getTrackPoints(withEditedPoints(track));
         const firstPoint = points?.[0];
         if (firstPoint?.lat == null || firstPoint?.lng == null) {
             return null;

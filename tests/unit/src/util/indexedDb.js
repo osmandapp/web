@@ -37,9 +37,16 @@ export function fakeIndexedDbStore(records = new Map()) {
         clear: () => request(records.clear()),
     };
 
+    const afterQueuedRequests = (callback) => queueMicrotask(() => queueMicrotask(callback));
+
     const db = {
         objectStoreNames: { contains: () => true },
-        transaction: () => ({ objectStore: () => store }),
+        transaction: () => {
+            const transaction = { objectStore: () => store };
+            afterQueuedRequests(() => transaction.oncomplete?.());
+
+            return transaction;
+        },
     };
 
     global.indexedDB = { open: () => request(db) };

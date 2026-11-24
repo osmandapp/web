@@ -6,7 +6,7 @@ import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionAddOneTrack from '../../actions/tracks/actionAddOneTrack.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
-import { deleteTrack } from '../../util.mjs';
+import { deleteTrack, cleanupCloud } from '../../util.mjs';
 
 const TRACK_NAME = 'test-track-two-segments';
 const POINTS = 20;
@@ -15,34 +15,40 @@ const SLOPE_TOLERANCE = 0.05;
 const graphCheckbox = (key) => By.id(`se-graph-${key}`);
 
 export default async function test() {
-    await actionOpenMap();
-    await actionLogIn();
+    try {
+        await actionOpenMap();
+        await actionLogIn();
 
-    await clickBy(By.id('se-show-menu-tracks'));
-    await actionAddOneTrack(TRACK_NAME);
-    await clickBy(By.id(`se-cloud-track-${TRACK_NAME}`));
-    await waitBy(By.id('se-track-context-menu'));
-    await actionIdleWait({ idle: 3000 });
-    await waitByRemoved(By.id('se-loadingSrtm'));
+        await clickBy(By.id('se-show-menu-tracks'));
+        await actionAddOneTrack(TRACK_NAME);
+        await clickBy(By.id(`se-cloud-track-${TRACK_NAME}`));
+        await waitBy(By.id('se-track-context-menu'));
+        await actionIdleWait({ idle: 3000 });
+        await waitByRemoved(By.id('se-loadingSrtm'));
 
-    await matchInnerTextBy(By.id('se-track-context-menu'), `Points: ${POINTS}`);
-    await matchInnerTextBy(By.id('se-track-context-menu'), '201 / 216 / 248 m');
-    await waitBy(By.id('se-main-graph'));
+        await matchInnerTextBy(By.id('se-track-context-menu'), `Points: ${POINTS}`);
+        await matchInnerTextBy(By.id('se-track-context-menu'), '201 / 216 / 248 m');
+        await waitBy(By.id('se-main-graph'));
 
-    await enclose(validateGraph, { tag: 'validateGraph' });
+        await enclose(validateGraph, { tag: 'validateGraph' });
 
-    await clickBy(graphCheckbox('Elevation'));
-    await clickBy(graphCheckbox('Slope'));
-    await clickBy(By.id('se-link-srtm'));
-    await waitByRemoved(By.id('se-loadingSrtm'));
-    await waitBy(graphCheckbox('ElevationSRTM'));
-    await actionIdleWait({ idle: 3000 });
-    await enclose(() => checkboxesAre({ Elevation: false, Slope: true }), { tag: 'checkboxes kept after recalculate' });
+        await clickBy(graphCheckbox('Elevation'));
+        await clickBy(graphCheckbox('Slope'));
+        await clickBy(By.id('se-link-srtm'));
+        await waitByRemoved(By.id('se-loadingSrtm'));
+        await waitBy(graphCheckbox('ElevationSRTM'));
+        await actionIdleWait({ idle: 3000 });
+        await enclose(() => checkboxesAre({ Elevation: false, Slope: true }), {
+            tag: 'checkboxes kept after recalculate',
+        });
 
-    await clickBy(By.id('se-button-back'));
-    await deleteTrack(TRACK_NAME);
+        await clickBy(By.id('se-button-back'));
+        await deleteTrack(TRACK_NAME);
 
-    await actionFinish();
+        await actionFinish();
+    } finally {
+        await cleanupCloud({ tracks: [TRACK_NAME] });
+    }
 }
 
 async function validateGraph() {

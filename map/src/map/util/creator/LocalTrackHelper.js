@@ -3,6 +3,7 @@ import TrackLayerProvider, { WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvide
 import { createFirstLayers } from './LocalTrackLayerHelper';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
+import { createPointId } from '../../../manager/track/TrackOperations';
 
 export const ADDED_POINT = {
     FIRST: 'first',
@@ -19,7 +20,7 @@ export function isNewTrack(localTracks, track) {
     return !localTracks.find((t) => t?.name === track?.name);
 }
 
-export function initNewSelectedTrack({ ctx, map, geoRouter, selectedGpxFile, setRegisteredLayers }) {
+export function initNewSelectedTrack({ ctx, map, geoRouter, setRegisteredLayers }) {
     let newPoint;
     if (ctx.createTrack.latlng) {
         newPoint = createNewPoint({ ctx, geoProfile: geoRouter.getShortGeoProfile() });
@@ -31,9 +32,7 @@ export function initNewSelectedTrack({ ctx, map, geoRouter, selectedGpxFile, set
         pointsGroups: {},
         points: newPoint ? [newPoint] : [],
         newPoint: newPoint ?? null,
-        layers: newPoint
-            ? createFirstLayers({ map, ctx, track: selectedGpxFile, newPoint, setRegisteredLayers })
-            : null,
+        layers: newPoint ? createFirstLayers({ map, ctx, newPoint, setRegisteredLayers }) : null,
         updateLayers: !!newPoint,
         addPoint: !!newPoint,
         routeTypes: [],
@@ -50,6 +49,7 @@ export function initNewSelectedTrack({ ctx, map, geoRouter, selectedGpxFile, set
 
 export function createNewPoint({ ctx, e, geoProfile }) {
     return {
+        id: createPointId(),
         lat: e ? e.latlng.lat : ctx.createTrack.latlng.lat,
         lng: e ? e.latlng.lng : ctx.createTrack.latlng.lng,
         ele: TracksManager.NAN_MARKER,
@@ -70,18 +70,20 @@ export function addPointToTrack(track, newPoint) {
     if (newPoint.profile !== TracksManager.PROFILE_LINE && trackWithoutRouting(track.points)) {
         return ADDED_POINT.ASK_ROUTING;
     }
-    track.points.push(newPoint);
-    if (track.points.length === 1) {
+    if (track.points.length === 0) {
+        track.points = [newPoint];
         return ADDED_POINT.FIRST;
     }
-    const prevPoint = track.points[track.points.length - 2];
-    prevPoint.profile = newPoint.profile;
-    prevPoint.geoProfile = newPoint.geoProfile;
+    const last = track.points.length - 1;
+    const prevPoint = { ...track.points[last], profile: newPoint.profile, geoProfile: newPoint.geoProfile };
+    track.points = [...track.points.slice(0, last), prevPoint, newPoint];
     if (newPoint.profile === TracksManager.PROFILE_LINE && !trackHasRouting(track)) {
-        delete newPoint.geometry;
+        const linePoint = { ...newPoint };
+        delete linePoint.geometry;
         if (prevPoint.geometry?.length === 0) {
             delete prevPoint.geometry;
         }
+        track.points[last + 1] = linePoint;
 
         return ADDED_POINT.LINE;
     }
@@ -169,6 +171,7 @@ function trackHasRouting(track) {
 
 function deleteInfo(points) {
     points.forEach((p) => {
+        delete p.id;
         delete p.profile;
         delete p.geometry;
     });

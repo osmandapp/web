@@ -98,7 +98,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 :::
 
 - **الوضع الآمن**. يشغّل OsmAnd بدون مكتبة C++ الأصلية، باستخدام تطبيقات Java لعرض الخريطة وحساب المسارات بدلاً من ذلك. ينتقل التطبيق إلى هذا الوضع تلقائيًا إذا فشلت المكتبة الأصلية أثناء بدء التشغيل، مما يسمح له بالبدء والبقاء قابلاً للاستخدام. يصبح عرض الخريطة وحساب المسارات أبطأ بشكل ملحوظ أثناء تفعيل الوضع الآمن. 
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### إعدادات الذاكرة {#memory-settings}

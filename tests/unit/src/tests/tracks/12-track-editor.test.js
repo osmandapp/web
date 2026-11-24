@@ -1,9 +1,6 @@
 import TracksManager, {
     openTrackOnMap,
     addDistanceToPoints,
-    isPointUnrouted,
-    isProtectedSegment,
-    splitProtectedSegment,
     validateRoutePoints,
     PROFILE_LINE,
 } from '@map/manager/track/TracksManager';
@@ -19,6 +16,12 @@ import {
 } from '@map/map/util/creator/LocalTrackHelper';
 import { PROFILE_CAR, PROFILE_PEDESTRIAN } from '@map/store/geoRouter/profileConstants';
 import { createEditorCtx, createPlainPoints, createRoutedPoints, NOW, TODAY } from '../../util/fixtures/tracks';
+import {
+    assignPointIds,
+    isPointUnrouted,
+    isProtectedSegment,
+    splitProtectedSegment,
+} from '@map/manager/track/TrackOperations';
 
 TrackLayerProvider.createLayersByTrackData = () => null;
 
@@ -81,37 +84,38 @@ describe('splitProtectedSegment', () => {
         ];
     }
 
-    test('the geometry is cut in two and the new point is inserted between them', () => {
+    test('the geometry is cut in two and the new point is inserted between them, the points it got stay', () => {
         const trackPoints = track();
         const newPoint = { lat: 50.15, lng: 30.15 };
 
-        splitProtectedSegment({ newPoint, trackPoints, geometryIndex: 1, endPointIndex: 1 });
+        const split = splitProtectedSegment({ newPoint, trackPoints, geometryIndex: 1, endPointIndex: 1 });
 
-        expect(trackPoints.map((p) => [p.lat, p.lng])).toEqual([
+        expect(split.map((p) => [p.lat, p.lng])).toEqual([
             [50, 30],
             [50.15, 30.15],
             [50.3, 30.3],
         ]);
-        expect(newPoint.geometry).toEqual(geometry([50, 30], [50.1, 30.1], [50.15, 30.15]));
-        expect(newPoint.profile).toBe('car');
-        expect(trackPoints[2].geometry).toEqual(geometry([50.15, 30.15], [50.2, 30.2], [50.3, 30.3]));
+        expect(split[1].geometry).toEqual(geometry([50, 30], [50.1, 30.1], [50.15, 30.15]));
+        expect(split[1].profile).toBe('car');
+        expect(split[2].geometry).toEqual(geometry([50.15, 30.15], [50.2, 30.2], [50.3, 30.3]));
+        expect(trackPoints).toEqual(track());
+        expect(newPoint).toEqual({ lat: 50.15, lng: 30.15 });
     });
 
     test('a part that becomes a plain line keeps a doubled point, a miss changes nothing', () => {
-        const trackPoints = track();
         const newPoint = { lat: 50.05, lng: 30.05 };
 
-        splitProtectedSegment({ newPoint, trackPoints, geometryIndex: 0, endPointIndex: 1 });
-        expect(newPoint.geometry).toEqual(geometry([50, 30], [50.05, 30.05], [50.05, 30.05]));
+        const split = splitProtectedSegment({ newPoint, trackPoints: track(), geometryIndex: 0, endPointIndex: 1 });
+        expect(split[1].geometry).toEqual(geometry([50, 30], [50.05, 30.05], [50.05, 30.05]));
 
         const untouched = track();
-        splitProtectedSegment({
+        const missed = splitProtectedSegment({
             newPoint: { lat: 1, lng: 1 },
             trackPoints: untouched,
             geometryIndex: -1,
             endPointIndex: 1,
         });
-        expect(untouched).toHaveLength(2);
+        expect(missed).toBe(untouched);
     });
 });
 
@@ -158,7 +162,7 @@ describe('a new track of the editor', () => {
         ctx.setSelectedLocalTrackObj = jest.fn();
         const create = (createTrack) => {
             ctx.createTrack = createTrack;
-            initNewSelectedTrack({ ctx, map: null, geoRouter, selectedGpxFile: {}, setRegisteredLayers: jest.fn() });
+            initNewSelectedTrack({ ctx, map: null, geoRouter, setRegisteredLayers: jest.fn() });
         };
 
         create({ enable: true, latlng: { lat: 50, lng: 30 } });
@@ -233,10 +237,12 @@ describe('a click on the map in the editor', () => {
         const second = clicked(50.01, PROFILE_PEDESTRIAN);
 
         expect(addPointToTrack(track, second)).toBe(ADDED_POINT.ROUTED);
-        expect(track.points).toEqual([first, second]);
-        expect(first).toMatchObject({ profile: PROFILE_PEDESTRIAN, geoProfile: { profile: PROFILE_PEDESTRIAN } });
+        expect(track.points).toEqual([
+            { ...first, profile: PROFILE_PEDESTRIAN, geoProfile: second.geoProfile },
+            second,
+        ]);
         // filled in by the router
-        expect(second.geometry).toEqual([]);
+        expect(track.points[1].geometry).toEqual([]);
         expect(track.hasGeo).toBe(true);
     });
 
@@ -248,9 +254,9 @@ describe('a click on the map in the editor', () => {
         expect(track.points).toEqual([
             ...createPlainPoints(2),
             { lat: 50.02, lng: 30, profile: PROFILE_LINE, geoProfile: { profile: PROFILE_LINE } },
-            point,
+            { ...point, geometry: undefined },
         ]);
-        expect(point).not.toHaveProperty('geometry');
+        expect(track.points.at(-1)).not.toHaveProperty('geometry');
     });
 
     test('a router point on a plain track asks first: Continue puts the recorded points into one protected segment', () => {
@@ -275,6 +281,14 @@ describe('a click on the map in the editor', () => {
         expect(routed[1].geometry).toEqual(createPlainPoints(4));
         expect(isProtectedSegment({ startPoint: routed[0], endPoint: routed[1] })).toBe(true);
         expect(routed[2]).toBe(point);
+    });
+
+    test('the recorded points put into a routed segment keep no point ids', () => {
+        const points = assignPointIds(createPlainPoints(4));
+
+        const routed = addRoutedSegment({ points, newPoint: clicked(50.05, PROFILE_CAR), geoRouter });
+
+        expect(routed[1].geometry).toEqual(createPlainPoints(4));
     });
 
     test('a click on a point of the track adds nothing', () => {

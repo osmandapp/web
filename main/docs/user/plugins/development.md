@@ -67,7 +67,7 @@ Use one of the following paths to open the plugin settings:
 ### Troubleshooting {#troubleshooting}
 
 - **Simulate your position** (*Android* / *iOS*). [Simulate](#gpx-track-simulation) the location and movement using a GPX track.
-- **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 frames per second to help save battery power while using applications.
+- **Battery saving mode** (*Android* / *iOS*). This setting reduces [the screen refresh rate](#map-rendering-fps-widget) by 20 frames per second to help save battery power while using applications. It also turns off the smooth fade-in and fade-out of map icons and labels.
 - **Use 3D location position icons** (*iOS*). Allows you to select a 3D icon for the [My Location icon](../personal/profiles.md#my-location-appearance).
 - **Simulate obd data** (*Android* / *iOS*). Allows simulation of [OBD scanner](./vehicle-metrics.md) usage.
 - **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Displays rendering and navigation performance.
@@ -97,7 +97,7 @@ Use one of the following paths to open the plugin settings:
 :::
 
 - **Safe mode**. Runs OsmAnd without the native C++ library, using Java implementations for map rendering and route calculation instead. The app switches to this mode automatically if the native library fails during startup, allowing it to start and remain usable. Map rendering and route calculation are noticeably slower while safe mode is active. 
-- **<Translate android="true" ids="use_spatial_text_search"/>**. <Translate android="true" ids="use_spatial_text_search_description"/>.
+- **<Translate android="true" ids="use_spatial_search"/>**. <Translate android="true" ids="use_spatial_search_description"/>.
 
 
 ### Memory Settings {#memory-settings}

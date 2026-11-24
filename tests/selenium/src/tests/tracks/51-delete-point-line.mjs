@@ -4,11 +4,8 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionCreateRoute, { ROUTE_POINTS } from '../../actions/tracks/actionCreateRoute.mjs';
 import actionDeletePoint from '../../actions/tracks/actionDeletePoint.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap('#15/50.4946/30.5220');
     await actionCreateRoute(ROUTE_POINTS);
 

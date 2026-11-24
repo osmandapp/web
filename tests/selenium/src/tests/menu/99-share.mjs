@@ -4,7 +4,7 @@ import { assert, clickBy, getUrl, waitBy, waitByRemoved } from '../../lib.mjs';
 import { By } from 'selenium-webdriver';
 import actionImportCloudTrack from '../../actions/tracks/actionImportCloudTrack.mjs';
 import actionCheckDisabled from '../../actions/actionCheckDisabled.mjs';
-import { deleteTrack, getFiles } from '../../util.mjs';
+import { deleteTrack, getFiles, cleanupCloud } from '../../util.mjs';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import { TEST_LOGIN2, TEST_PASSWORD2 } from '../../options.mjs';
@@ -15,7 +15,6 @@ import actionOpenShare from '../../actions/actionOpenShare.mjs';
 import actionDeleteAllFavorites from '../../actions/favorites/actionDeleteAllFavorites.mjs';
 import actionOpenFavorites from '../../actions/favorites/actionOpenFavorites.mjs';
 import actionUploadFavGroup from '../../actions/favorites/actionUploadFavGroup.mjs';
-import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
 
 export default async function test() {
     const tracks = getFiles({ folder: 'gpx' });
@@ -34,134 +33,136 @@ export default async function test() {
     let linkFav1;
     let linkFav2;
 
-    //start
-    await actionOpenMap();
-    await actionLogIn();
+    try {
+        //start
+        await actionOpenMap();
+        await actionLogIn();
 
-    await clickBy(By.id('se-show-menu-tracks'));
+        await clickBy(By.id('se-show-menu-tracks'));
 
-    // prepared tracks
-    for (const track of tracks) {
-        await actionDeleteTracksByPattern(track.name);
+        await actionImportCloudTrack(tracks, trackName);
+        await actionImportCloudTrack(tracks, trackName2);
+
+        // create shared track
+        await actionOpenShare(trackName);
+
+        linkTrack1 = await createShareFile(trackName);
+
+        // check owner can open shared track
+        await actionOpenMap(linkTrack1);
+        await waitBy(By.id('se-share-file'));
+        await clickBy(By.id('se-close-share-file'));
+
+        await clickBy(By.id('se-show-menu-tracks'));
+
+        await waitBy(By.id(`se-cloud-track-${trackName}`));
+        await clickBy(By.id(`se-cloud-track-${trackName}`));
+        await waitBy(By.id('se-track-context-menu'));
+        await clickBy(By.id('se-button-back'));
+        await waitBy(By.id(`se-cloud-track-${trackName}`));
+
+        await actionOpenShare(trackName2);
+        linkTrack2 = await createShareFile(trackName2);
+
+        // prepared favorites
+
+        await actionOpenFavorites();
+        await actionUploadFavGroup(favorites);
+
+        await actionOpenShare(favNameShort, 'favorite-folder');
+        linkFav1 = await createShareFile(favNameShort);
+
+        // check owner can open the Share menu of favorites by its url
+        const favShareMenuUrl = (await getUrl()).split('/map/')[1].split('#')[0];
+        await actionOpenMap(favShareMenuUrl);
+        await waitBy(By.id(`se-share-file-item-${favNameShort}`));
+
+        await clickBy(By.id('se-close-share-menu'));
+
+        await actionOpenShare(favName2Short, 'favorite-folder');
+        linkFav2 = await createShareFile(favName2Short);
+
+        // send request to access from another user
+        await actionSwitchUser({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
+
+        await actionOpenMap(linkTrack1);
+        await waitBy(By.id('se-request-access-error'));
+        await clickBy(By.id('se-request-access-btn'));
+
+        await actionOpenMap(linkTrack2);
+        await waitBy(By.id('se-request-access-error'));
+        await clickBy(By.id('se-request-access-btn'));
+
+        await actionOpenMap(linkFav1);
+        await waitBy(By.id('se-request-access-error'));
+        await clickBy(By.id('se-request-access-btn'));
+
+        await actionOpenMap(linkFav2);
+        await waitBy(By.id('se-request-access-error'));
+        await clickBy(By.id('se-request-access-btn'));
+
+        // approve access
+        await actionSwitchUser();
+
+        await clickBy(By.id('se-show-menu-tracks'));
+        await approveAccessTrack(trackName, userName);
+        await approveAccessTrack(trackName2, userName);
+
+        await clickBy(By.id('se-show-menu-favorites'));
+        await approveAccessFav(favNameShort, userName);
+        await approveAccessFav(favName2Short, userName);
+
+        // check shared with me
+        await actionSwitchUser({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
+        // check shared link
+        await actionOpenMap(linkTrack1);
+        await waitBy(By.id('se-share-file'));
+        await clickBy(By.id('se-close-share-file'));
+
+        // check shared track
+        await clickBy(By.id('se-show-menu-tracks'));
+        await waitBy(By.id('se-shared-folder-track'));
+        await clickBy(By.id('se-shared-folder-track'));
+        await waitBy(By.id('se-tracks-folder'));
+        await waitBy(By.id('se-cloud-track-' + trackName));
+        await waitBy(By.id('se-cloud-track-' + trackName2));
+
+        // check shared favorites
+        await clickBy(By.id('se-show-menu-favorites'));
+        await waitBy(By.id('se-shared-folder-favorite'));
+        await clickBy(By.id('se-shared-folder-favorite'));
+        await waitBy(By.id(`se-menu-fav-${favNameShort}`));
+        await waitBy(By.id(`se-menu-fav-${favName2Short}`));
+
+        await actionSwitchUser();
+
+        // make favorites share public
+        await clickBy(By.id('se-show-menu-favorites'));
+        await actionOpenShare(favNameShort, 'favorite-folder');
+        linkFav1 = await setPublicShareType(favNameShort);
+        await clickBy(By.id('se-close-share-menu'));
+
+        // check anonymous user can open public favorites and favorite details
+        await actionLogOut();
+        await checkAnonymousPublicFavorites(linkFav1, favWptName);
+
+        await actionLogIn();
+        await clickBy(By.id('se-show-menu-tracks'));
+
+        await deleteTrack(trackName);
+        await deleteTrack(trackName2);
+
+        await clickBy(By.id('se-show-menu-favorites'));
+        await actionDeleteAllFavorites(favorites);
+
+        await actionFinish();
+    } finally {
+        await cleanupCloud({
+            tracks: [trackName, trackName2],
+            favorites: favorites.map(({ name }) => name),
+            mainUser: true,
+        });
     }
-
-    await actionImportCloudTrack(tracks, trackName);
-    await actionImportCloudTrack(tracks, trackName2);
-
-    // create shared track
-    await actionOpenShare(trackName);
-
-    linkTrack1 = await createShareFile(trackName);
-
-    // check owner can open shared track
-    await actionOpenMap(linkTrack1);
-    await waitBy(By.id('se-share-file'));
-    await clickBy(By.id('se-close-share-file'));
-
-    await clickBy(By.id('se-show-menu-tracks'));
-
-    await waitBy(By.id(`se-cloud-track-${trackName}`));
-    await clickBy(By.id(`se-cloud-track-${trackName}`));
-    await waitBy(By.id('se-track-context-menu'));
-    await clickBy(By.id('se-button-back'));
-    await waitBy(By.id(`se-cloud-track-${trackName}`));
-
-    await actionOpenShare(trackName2);
-    linkTrack2 = await createShareFile(trackName2);
-
-    // prepared favorites
-
-    await actionOpenFavorites();
-    await actionDeleteAllFavorites(favorites);
-    await actionUploadFavGroup(favorites);
-
-    await actionOpenShare(favNameShort, 'favorite-folder');
-    linkFav1 = await createShareFile(favNameShort);
-
-    // check owner can open the Share menu of favorites by its url
-    const favShareMenuUrl = (await getUrl()).split('/map/')[1].split('#')[0];
-    await actionOpenMap(favShareMenuUrl);
-    await waitBy(By.id(`se-share-file-item-${favNameShort}`));
-
-    await clickBy(By.id('se-close-share-menu'));
-
-    await actionOpenShare(favName2Short, 'favorite-folder');
-    linkFav2 = await createShareFile(favName2Short);
-
-    // send request to access from another user
-    await actionSwitchUser({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
-
-    await actionOpenMap(linkTrack1);
-    await waitBy(By.id('se-request-access-error'));
-    await clickBy(By.id('se-request-access-btn'));
-
-    await actionOpenMap(linkTrack2);
-    await waitBy(By.id('se-request-access-error'));
-    await clickBy(By.id('se-request-access-btn'));
-
-    await actionOpenMap(linkFav1);
-    await waitBy(By.id('se-request-access-error'));
-    await clickBy(By.id('se-request-access-btn'));
-
-    await actionOpenMap(linkFav2);
-    await waitBy(By.id('se-request-access-error'));
-    await clickBy(By.id('se-request-access-btn'));
-
-    // approve access
-    await actionSwitchUser();
-
-    await clickBy(By.id('se-show-menu-tracks'));
-    await approveAccessTrack(trackName, userName);
-    await approveAccessTrack(trackName2, userName);
-
-    await clickBy(By.id('se-show-menu-favorites'));
-    await approveAccessFav(favNameShort, userName);
-    await approveAccessFav(favName2Short, userName);
-
-    // check shared with me
-    await actionSwitchUser({ login: TEST_LOGIN2, password: TEST_PASSWORD2 });
-    // check shared link
-    await actionOpenMap(linkTrack1);
-    await waitBy(By.id('se-share-file'));
-    await clickBy(By.id('se-close-share-file'));
-
-    // check shared track
-    await clickBy(By.id('se-show-menu-tracks'));
-    await waitBy(By.id('se-shared-folder-track'));
-    await clickBy(By.id('se-shared-folder-track'));
-    await waitBy(By.id('se-tracks-folder'));
-    await waitBy(By.id('se-cloud-track-' + trackName));
-    await waitBy(By.id('se-cloud-track-' + trackName2));
-
-    // check shared favorites
-    await clickBy(By.id('se-show-menu-favorites'));
-    await waitBy(By.id('se-shared-folder-favorite'));
-    await clickBy(By.id('se-shared-folder-favorite'));
-    await waitBy(By.id(`se-menu-fav-${favNameShort}`));
-    await waitBy(By.id(`se-menu-fav-${favName2Short}`));
-
-    await actionSwitchUser();
-
-    // make favorites share public
-    await clickBy(By.id('se-show-menu-favorites'));
-    await actionOpenShare(favNameShort, 'favorite-folder');
-    linkFav1 = await setPublicShareType(favNameShort);
-    await clickBy(By.id('se-close-share-menu'));
-
-    // check anonymous user can open public favorites and favorite details
-    await actionLogOut();
-    await checkAnonymousPublicFavorites(linkFav1, favWptName);
-
-    await actionLogIn();
-    await clickBy(By.id('se-show-menu-tracks'));
-
-    await deleteTrack(trackName);
-    await deleteTrack(trackName2);
-
-    await clickBy(By.id('se-show-menu-favorites'));
-    await actionDeleteAllFavorites(favorites);
-
-    await actionFinish();
 }
 
 async function createShareFile(name) {

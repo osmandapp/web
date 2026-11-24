@@ -79,6 +79,11 @@ module.exports = {
         '/creator/Editable(Marker|Polyline)$': path.join(MAP_DIR, 'src/map/util/creator/Editable$1.js'),
         // what the track editor does with a new point is plain logic over the points, its layers stay stubbed
         '^@map/map/util/creator/LocalTrackHelper$': path.join(MAP_DIR, 'src/map/util/creator/LocalTrackHelper.js'),
+        // the editor redraws the edited track with its waypoints
+        '^@map/map/util/creator/LocalTrackLayerHelper$': path.join(
+            MAP_DIR,
+            'src/map/util/creator/LocalTrackLayerHelper.js'
+        ),
         '^\\./LocalTrackLayerHelper$': `${STUBS}/empty.js`,
         // the initial map view is plain url logic over leaflet, no map is involved
         'map/util/initialMapView$': path.join(MAP_DIR, 'src/map/util/initialMapView.js'),
