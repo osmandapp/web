@@ -209,7 +209,7 @@ function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
 export function routeWaitingSegments(track, ctx) {
     const layers = track.layers?.getLayers() ?? [];
     track.points?.forEach((end, index) => {
-        if (!isWaitingForRouter(track.points, index)) {
+        if (end.id === undefined || !isWaitingForRouter(track.points, index)) {
             return;
         }
         const start = track.points[index - 1];

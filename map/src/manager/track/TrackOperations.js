@@ -305,10 +305,12 @@ function removePoint(points, index, { passGap }) {
         if (next.geometry) {
             result[index] = { ...next, geometry: [] };
         }
+
         return result;
     }
     if (passGap && isGap(removed)) {
         result[index - 1] = withGap(prev);
+
         return result;
     }
     if (removed.geometry || (isGap(prev) && next.geometry)) {

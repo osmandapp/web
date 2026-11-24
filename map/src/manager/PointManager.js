@@ -46,7 +46,7 @@ function deletePoint(index, ctx) {
 }
 
 function deleteOldTempLayer(layers, point) {
-    const layer = layers.getLayers().find((l) => l.point?.id === point.id);
+    const layer = layers.getLayers().find((l) => point.id !== undefined && l.point?.id === point.id);
     if (layer) {
         layer.point = null;
     }
