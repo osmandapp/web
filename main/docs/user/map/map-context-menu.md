@@ -151,7 +151,8 @@ Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstr
 
 - [Website](https://wiki.openstreetmap.org/wiki/Key:website)
 - [Phone number](https://wiki.openstreetmap.org/wiki/Key:contact) — numbers that include a [country code](https://wiki.openstreetmap.org/wiki/Key:phone) are split into groups of digits so they're easier to read, for example, `+33 6 12 34 56 78`. When you call or copy a number, OsmAnd uses the value stored in [OpenStreetMap](https://www.openstreetmap.org/).
-- [Working hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) — displayed in the app language, including days of the week, months, public holidays, and school holidays. Days when the place doesn't work are marked as *closed*.
+- [Working hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) — displayed in the app language, including days of the week, months, public holidays, and school holidays. Days when the place doesn't work are marked as *closed*. If OpenStreetMap contains the date when the opening hours were last verified ([check_date:opening_hours](https://wiki.openstreetmap.org/wiki/Key:check_date)), tap the row to expand it. The *<Translate android="true" ids="poi_check_date"/>* is shown below the hours in the short date format of the app language.
+- [<Translate android="true" ids="poi_check_date"/>](https://wiki.openstreetmap.org/wiki/Key:check_date) — the date when the object's data was last verified in OpenStreetMap.
 - [Fee](https://wiki.openstreetmap.org/wiki/Key:fee)
 - [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height) 
