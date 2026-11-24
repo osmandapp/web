@@ -33,7 +33,7 @@ The ability to use Online maps is automatically enabled in iOS version of OsmAnd
 You can find detailed information about visualizing and customizing raster maps in the article [Raster Maps](../map/raster-maps.md). How to use:
 
 1. [Select](../map/raster-maps.md#layers) the raster map as a *Main*, *Underlay*, or *Overlay* layer.
-    - [Change](../map/raster-maps.md#overlay) layer parameters (transparency).
+    - [Change](../map/raster-maps.md#overlay) layer parameters (visibility).
 
 2. [Prepare / copy](../map/raster-maps.md#preparecopy-maps) raster maps to device.
     - [Add new online raster map source](../map/raster-maps.md#add-new-online-source)
@@ -50,7 +50,7 @@ You can find detailed information about visualizing and customizing raster maps 
 
 Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Configure underlay / overlay Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.webp)
 
 </TabItem>
 
@@ -58,7 +58,7 @@ Go to: *<Translate android="true" ids="shared_string_menu,configure_map,layer_ov
 
 Go to: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configure underlay / overlay iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.webp)
 
 </TabItem>
 

@@ -138,7 +138,7 @@ Go to: *Enabled plugin → <Translate ios="true" ids="shared_string_menu,configu
 
 To display weather layers on the OsmAnd map screen, you need to use the *Configure Map menu*. Go to the menu, find the *Weather* item in the list (available only when the plugin is enabled), and tap it.  
 
-In this menu, you can change the **visibility** and [settings](#weather-settings) for each layer, select the type of contour lines, and download the [offline 7-day weather forecast](#offline-forecast) (*only available for Android here*).
+In this menu, you can change the **visibility** and [settings](#weather-settings) for each layer, select the type of contour lines, and download the [offline 7-day weather forecast](#offline-forecast) (*only available for Android here*). At 0% visibility, the layer is hidden; at 100%, it is fully visible.
 
 
 ### Weather Settings {#weather-settings}
@@ -167,7 +167,7 @@ In this menu, you can change the **visibility** and [settings](#weather-settings
 It is important to decide in which units of measurement it is convenient for you to see the [Weather data](#weather-layers) on the map and in the [Weather widgets](#weather-widgets) section of the screen. You can choose appropriate units of measurement for each parameter. You can also use default values — on iOS for all parameters, on Android only for temperature. The temperature unit is selected in: *Menu → Profile → General settings → Units & formats → Temperature*. In the iOS version of the OsmAnd app, you can also enable the offline forecast option to avoid using mobile traffic while traveling.  
 
 :::note
-In the iOS version of OsmAnd, you can change measurement units and transparency level in the menu that opens after a long tap of the icon of the required map layer.  
+In the iOS version of OsmAnd, you can change measurement units and visibility level in the menu that opens after a long tap of the icon of the required map layer.  
 :::
 
 ### Weather Layers {#weather-layers}
