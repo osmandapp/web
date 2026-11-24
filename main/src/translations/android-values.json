@@ -11150,8 +11150,8 @@
   "trip_rec_start_from_notification_descr": "Shows a notification with a button to start trip recording. While recording, a notification is always shown.",
   "cast_shadows": "Shadows",
   "sun_light_live": "Live",
-  "terrain_shadows": "Terrain shadows"
-
+  "terrain_shadows": "Terrain shadows",
+  "travel_speed": "Travel speed"
 
 
 
