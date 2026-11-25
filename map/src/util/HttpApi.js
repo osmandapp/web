@@ -77,6 +77,7 @@ import { quickNaNfix, seleniumUpdateActivity } from './Utils';
     Cache:
 
         option { apiCache: true } will cache successful responses by key: md5(url+options+body)
+        option { apiCache: 5 } will keep only the last 5 cached responses of the url
         option { abortOnCacheHit: true } will abort the pending request of abortControllerKey on a cache hit
 
     Return:
@@ -256,6 +257,9 @@ export async function apiGet(url, options = null) {
             text: async () => await response.clone().text(), // resolved
         });
         cache[cacheKey] = cached;
+        if (typeof options.apiCache === 'number') {
+            keepLastCached(url, cacheKey, options.apiCache);
+        }
     }
 
     seleniumUpdateActivity();
@@ -343,6 +347,13 @@ function isFormData(data) {
 }
 
 const cache = {};
+const cacheKeysByUrl = {};
+
+function keepLastCached(url, cacheKey, size) {
+    const keys = [...(cacheKeysByUrl[url] ?? []).filter((key) => key !== cacheKey), cacheKey];
+    keys.splice(0, keys.length - size).forEach((key) => delete cache[key]);
+    cacheKeysByUrl[url] = keys;
+}
 
 // use native digest
 export async function digest(string) {

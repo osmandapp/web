@@ -55,3 +55,18 @@ test('a cached answer cancels the request of the same abort key only when asked 
     const [, slowRequest] = global.fetch.mock.calls;
     expect(slowRequest[1].signal.aborted).toBe(false);
 });
+
+test('a cache of a given size keeps only the last answers of its url', async () => {
+    global.fetch = jest.fn((url) => Promise.resolve(jsonResponse({ url })));
+    const ask = (text) => apiGet('https://api.test/gpx/get-analysis', { apiCache: 2, params: { text } });
+
+    await ask('a');
+    await ask('b');
+    await ask('c');
+    await ask('b');
+    await ask('c');
+    expect(global.fetch).toHaveBeenCalledTimes(3);
+
+    await ask('a');
+    expect(global.fetch).toHaveBeenCalledTimes(4);
+});
