@@ -5,6 +5,8 @@ const UNDO = 'UNDO';
 const REDO = 'REDO';
 const CLEAR = 'CLEAR';
 
+const HISTORY_LIMIT = 50;
+
 const useUndoRedo = (initialState = {}, pastStates = [], futureStates = []) => {
     const reducerWithUndoRedo = (state, action) => {
         const { past, present, future } = state;
@@ -12,7 +14,7 @@ const useUndoRedo = (initialState = {}, pastStates = [], futureStates = []) => {
         switch (action.type) {
             case SET_STATE:
                 return {
-                    past: [...past, present],
+                    past: [...past, present].slice(-HISTORY_LIMIT),
                     present: action.data,
                     future: [],
                 };

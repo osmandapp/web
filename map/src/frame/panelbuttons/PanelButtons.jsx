@@ -7,7 +7,7 @@ import DeleteTrackDialog from '../../dialogs/tracks/DeleteTrackDialog';
 import isEmpty from 'lodash-es/isEmpty';
 import TracksManager from '../../manager/track/TracksManager';
 import useUndoRedo from '../../infoblock/useUndoRedo';
-import { cloneTrackObject } from '../../util/Utils';
+import { fromHistoryState, toHistoryState } from '../../manager/track/TrackHistory';
 
 const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
     const ctx = useContext(AppContext);
@@ -38,7 +38,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
     useEffect(() => {
         if (!useSavedState) {
             if (ctx.trackState.update) {
-                setState(cloneTrackObject(ctx.selectedGpxFile));
+                setState(toHistoryState(ctx.selectedGpxFile));
                 ctx.trackState.update = false;
                 ctx.setTrackState({ ...ctx.trackState });
             }
@@ -51,16 +51,8 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
     }
 
     function getState(nextState) {
-        getTrack(nextState);
+        ctx.setSelectedGpxFile(fromHistoryState(nextState, ctx.selectedGpxFile));
         setUseSavedState(false);
-    }
-
-    function getTrack(nextState) {
-        const objFromState = nextState;
-        objFromState.syncRouting = true; // will be 1st effect
-        objFromState.updateLayers = true; // will be 2nd effect
-        objFromState.layers = ctx.selectedGpxFile.layers;
-        ctx.setSelectedGpxFile(objFromState);
     }
 
     function getMarginTop() {
