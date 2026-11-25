@@ -154,6 +154,7 @@ Additionally, the panel may include [OpenStreetMap Details](https://wiki.openstr
 - [Working hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours) — displayed in the app language, including days of the week, months, public holidays, and school holidays. Days when the place doesn't work are marked as *closed*. If OpenStreetMap contains the date when the opening hours were last verified ([check_date:opening_hours](https://wiki.openstreetmap.org/wiki/Key:check_date)), tap the row to expand it. The *<Translate android="true" ids="poi_check_date"/>* is shown below the hours in the short date format of the app language.
 - [<Translate android="true" ids="poi_check_date"/>](https://wiki.openstreetmap.org/wiki/Key:check_date) — the date when the object's data was last verified in OpenStreetMap.
 - [Fee](https://wiki.openstreetmap.org/wiki/Key:fee)
+- [<Translate android="true" ids="poi_zone"/>](https://wiki.openstreetmap.org/wiki/Key:zone) — the parking zone within a city's parking system, for example, *M*. Shown for parking lots.
 - [Accessibility](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Width](https://wiki.openstreetmap.org/wiki/Key:width) / [Height](https://wiki.openstreetmap.org/wiki/Key:height) 
 
