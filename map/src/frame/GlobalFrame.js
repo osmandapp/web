@@ -63,7 +63,7 @@ const GlobalFrame = () => {
     const rootDragHandlers = useGpxFileDragRootZone();
 
     const [showInfoBlock, setShowInfoBlock] = useState(false);
-    const [clearState, setClearState] = useState(false);
+    const [historyClears, setHistoryClears] = useState(0);
     const [openMainMenu, setOpenMainMenu] = useState(false);
     const [openErrorDialog, setOpenErrorDialog] = useState(false);
     const [menuInfo, setMenuInfo] = useState(null);
@@ -459,7 +459,7 @@ const GlobalFrame = () => {
                     menuInfoWidth={`${TOTAL_MENU_INFO_WIDTH}px`}
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
-                    clearState={clearState}
+                    historyClears={historyClears}
                     setMenuInfo={setMenuInfo}
                     showInstallBanner={showInstallBanner}
                 />
@@ -474,7 +474,7 @@ const GlobalFrame = () => {
                 setMenuInfo={setMenuInfo}
                 showInfoBlock={showInfoBlock}
                 setShowInfoBlock={setShowInfoBlock}
-                setClearState={setClearState}
+                setHistoryClears={setHistoryClears}
                 showInstallBanner={showInstallBanner}
             />
             <Dialog id={'se-error-dialog'} open={openErrorDialog} onClose={() => setOpenErrorDialog(false)}>

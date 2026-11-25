@@ -50,7 +50,7 @@ import Loading from '../../menu/errors/Loading';
 export default function InformationBlock({
     showInfoBlock,
     setShowInfoBlock,
-    setClearState,
+    setHistoryClears,
     mainMenuSize,
     setSavePrevState,
     trackUrlOpenLoading = false,
@@ -160,7 +160,7 @@ export default function InformationBlock({
             stopCreatedTrack(false);
             ctx.mutateShowPoints({ points: true, wpts: true });
             ctx.setTrackRange(null);
-            setClearState(true);
+            setHistoryClears((count) => count + 1);
             if (!ctx.currentObjectType) {
                 setTrackName(null);
                 hideTrackFromMapIfNotVisible(ctx.selectedGpxFile);
@@ -279,6 +279,8 @@ export default function InformationBlock({
                     clearStateIfObjChange();
                     setTabsObj(tObj);
                 }
+            } else if (ctx.selectedGpxFile.oldName && ctx.selectedGpxFile.oldName === prevTrack.name) {
+                setPrevTrack(ctx.selectedGpxFile);
             }
         }
     }, [ctx.currentObjectType, ctx.selectedGpxFile, ctx.updateInfoBlock]);
@@ -362,14 +364,8 @@ export default function InformationBlock({
     }
 
     function clearStateIfObjChange() {
-        if (
-            prevTrack &&
-            prevTrack.name !== ctx.selectedGpxFile.name &&
-            prevTrack.points?.length !== ctx.selectedGpxFile?.points?.length
-        ) {
-            setClearState(true);
-        } else {
-            setClearState(false);
+        if (prevTrack && prevTrack.name !== ctx.selectedGpxFile.name) {
+            setHistoryClears((count) => count + 1);
         }
     }
 

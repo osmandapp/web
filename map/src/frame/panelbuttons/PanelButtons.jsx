@@ -9,7 +9,7 @@ import TracksManager from '../../manager/track/TracksManager';
 import useUndoRedo from '../../infoblock/useUndoRedo';
 import { fromHistoryState, toHistoryState } from '../../manager/track/TrackHistory';
 
-const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clearState, bsize }) => {
+const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, historyClears, bsize }) => {
     const ctx = useContext(AppContext);
 
     const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
@@ -23,10 +23,10 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
     const isProfileProgress = ctx.processRouting;
 
     useEffect(() => {
-        if (clearState) {
-            doClear();
+        if (historyClears) {
+            clear(); // setState() can't be used inside dispatch()
         }
-    }, [clearState]);
+    }, [historyClears]);
 
     useEffect(() => {
         if (useSavedState) {
@@ -44,11 +44,6 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, clear
             }
         }
     }, [ctx.trackState]);
-
-    function doClear() {
-        clear(); // setState() can't be used inside dispatch()
-        ctx.setTrackState({ update: false });
-    }
 
     function getState(nextState) {
         ctx.setSelectedGpxFile(fromHistoryState(nextState, ctx.selectedGpxFile));

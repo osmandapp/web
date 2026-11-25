@@ -21,7 +21,7 @@ export default function GeneralPanelButtons({
     menuInfoWidth,
     showInfoBlock,
     setShowInfoBlock,
-    clearState,
+    historyClears,
     setMenuInfo,
     showInstallBanner,
 }) {
@@ -139,7 +139,7 @@ export default function GeneralPanelButtons({
                             orientation={orientation}
                             tooltipOrientation={tooltipOrientation}
                             setShowInfoBlock={setShowInfoBlock}
-                            clearState={clearState}
+                            historyClears={historyClears}
                             bsize={BUTTON_SIZE}
                         />
                     )}
