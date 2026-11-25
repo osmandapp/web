@@ -484,6 +484,7 @@
     transform: translateX(-50%) !important;
     height: 56px !important;
     width: 912px !important;
+    max-width: calc(100% - 32px) !important;
     display: flex !important;
     align-items: center !important;
     gap: 16px !important;
