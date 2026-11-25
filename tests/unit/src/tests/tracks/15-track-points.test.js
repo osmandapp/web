@@ -1119,14 +1119,22 @@ describe('the waypoints of the edited track', () => {
         }
     });
 
-    test('deleting the last point keeps the waypoints and their groups', async () => {
+    test('deleting the last point keeps the waypoints, their groups, the id and the metadata', async () => {
         const ctx = createCtx(createRoutedPoints(1));
-        Object.assign(ctx.selectedGpxFile, { wpts: createWpts(), pointsGroups: createPointsGroups() });
+        const metaData = { name: 'Local', desc: 'About the track' };
+        Object.assign(ctx.selectedGpxFile, {
+            id: 'Local',
+            metaData,
+            wpts: createWpts(),
+            pointsGroups: createPointsGroups(),
+        });
 
         await PointManager.deletePoint(0, ctx);
 
         expect(ctx.selectedGpxFile.wpts).toEqual(createWpts());
         expect(ctx.selectedGpxFile.pointsGroups).toEqual(createPointsGroups());
+        expect(ctx.selectedGpxFile.id).toBe('Local');
+        expect(ctx.selectedGpxFile.metaData).toEqual({ name: 'Local', desc: 'About the track' });
     });
 });
 

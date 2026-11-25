@@ -1220,6 +1220,8 @@ function createGpxTracks() {
 function clearTrack(file, points) {
     let emptyFile = {};
     emptyFile.name = file.name;
+    emptyFile.id = file.id;
+    emptyFile.metaData = file.metaData;
     emptyFile.points = points ?? [];
     emptyFile.tracks = TracksManager.createGpxTracks();
     emptyFile.layers = file.layers;
