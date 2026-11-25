@@ -13,7 +13,7 @@ import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { getStatus } from './PurchaseManager';
+import { getStatus, isPurchaseValid } from './PurchaseManager';
 import { ACCOUNT_PLAN_FREE } from '../../manager/LoginManager';
 import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
 import { formatString } from '../../manager/SettingsManager';
@@ -41,7 +41,7 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
     const oldExpiredSubscriptions = []; // expired > 1 month
 
     for (const { item, index } of subscriptionItems) {
-        const isValid = item.valid !== 'false';
+        const isValid = isPurchaseValid(item);
         const expireTime = item.expire_time ? Number(item.expire_time) : null;
         const isExpired = expireTime !== null && expireTime < now;
         const isOldExpired = isExpired && now - expireTime > ONE_MONTH_MS;
@@ -70,19 +70,16 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
 
     // --- IN‑APP PURCHASES ---
     const activeInApps = []; // valid
-    const inactiveInApps = []; // non-valid
 
     for (const { item, index } of inAppItemsRaw) {
-        const isValid = item.valid !== 'false';
+        if (!isPurchaseValid(item)) continue;
         const ts = item.purchaseTime ? Number(item.purchaseTime) : 0;
-        const target = isValid ? activeInApps : inactiveInApps;
-        target.push({ item, index, ts, isValid });
+        activeInApps.push({ item, index, ts });
     }
 
     const sortByPurchaseTimeDesc = (a, b) => b.ts - a.ts;
 
     activeInApps.sort(sortByPurchaseTimeDesc);
-    inactiveInApps.sort(sortByPurchaseTimeDesc);
 
     const hasActiveOrders = activeSubscriptions.length + activeInApps.length > 0;
 
@@ -93,14 +90,12 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
         inactiveSubscriptions.sort(sortByStartTimeDesc);
     }
 
-    const hasPurchases =
-        activeSubscriptions.length + inactiveSubscriptions.length + activeInApps.length + inactiveInApps.length > 0;
+    const hasPurchases = activeSubscriptions.length + inactiveSubscriptions.length + activeInApps.length > 0;
 
     return {
         activeSubscriptions,
         inactiveSubscriptions,
         activeInApps,
-        inactiveInApps,
         hasPurchases,
     };
 }
@@ -120,7 +115,7 @@ export default function PurchasesMenu() {
     const subscriptions = ltx.accountInfo?.subscriptions && JSON.parse(ltx.accountInfo.subscriptions);
     const inAppPurchases = ltx.accountInfo?.inAppPurchases && JSON.parse(ltx.accountInfo.inAppPurchases);
 
-    const { activeSubscriptions, inactiveSubscriptions, activeInApps, inactiveInApps, hasPurchases } = useMemo(
+    const { activeSubscriptions, inactiveSubscriptions, activeInApps, hasPurchases } = useMemo(
         () => buildDisplayPurchases(subscriptions, inAppPurchases),
         [subscriptions, inAppPurchases]
     );
@@ -215,15 +210,6 @@ export default function PurchasesMenu() {
                                             state={getStatus(item.state)}
                                             billingDate={item.billingDate}
                                             onClick={() => clickOnSubscription(index)}
-                                        />
-                                    ))}
-                                    {inactiveInApps.map(({ item, index }) => (
-                                        <InAppItem
-                                            id={item.name}
-                                            key={`inactive-inapp-${index}-${item.name}`}
-                                            name={item.name}
-                                            purchaseTime={item.purchaseTime}
-                                            onClick={() => clickOnInApp(index)}
                                         />
                                     ))}
                                 </>

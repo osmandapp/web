@@ -11,6 +11,7 @@ import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin
 import { statusMap } from './PurchaseStatus';
 
 export const PURCHASE_STATE_ACTIVE = 'active';
+export const PURCHASE_STATE_EXPIRED = 'expired';
 
 const storeMap = {
     'Google Play': {
@@ -49,6 +50,10 @@ export function getStatus(state, t = null) {
         return state;
     }
     return t(statusMap[state].text);
+}
+
+export function isPurchaseValid(purchase) {
+    return purchase.valid !== 'false';
 }
 
 export default function PurchaseManager({ store }) {

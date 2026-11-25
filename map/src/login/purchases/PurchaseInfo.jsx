@@ -9,7 +9,7 @@ import { FREE_ACCOUNT, getAccountInfo } from '../../manager/LoginManager';
 import Loading from '../../menu/errors/Loading';
 import InAppItem from './InAppItem';
 import ColorBlock from '../../frame/components/other/ColorBlock';
-import PurchaseManager, { getStatus } from './PurchaseManager';
+import PurchaseManager, { getStatus, isPurchaseValid } from './PurchaseManager';
 import SimpleDivider from '../../frame/components/dividers/SimpleDivider';
 import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
 import { fmt } from '../../util/dateFmt';
@@ -131,7 +131,12 @@ export default function PurchaseInfo() {
                     ) : item.name === FREE_ACCOUNT ? (
                         <FreeAccItem regTime={ltx.accountInfo.regtime} />
                     ) : (
-                        <InAppItem id={item.name} name={item.name} purchaseTime={item.purchaseTime} />
+                        <InAppItem
+                            id={item.name}
+                            name={item.name}
+                            purchaseTime={item.purchaseTime}
+                            isValid={isPurchaseValid(item)}
+                        />
                     )}
                     {purchaseType() && (
                         <DefaultItem name={t('shared_string_type')} additionalInfo={purchaseType()} revertText={true} />
