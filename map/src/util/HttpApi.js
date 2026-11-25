@@ -266,7 +266,7 @@ export async function apiGet(url, options = null) {
         cacheExpiryTimestamps[cacheKey] =
             Date.now() + (options.apiCacheExpirySeconds ?? DEFAULT_CACHE_EXPIRY_SECONDS) * 1000;
         keepLastCached(
-            options.apiCacheKeepLastKey ?? url,
+            options.apiCacheKeepLastKey ?? url.split('?')[0],
             cacheKey,
             options.apiCacheKeepLastNumber ?? DEFAULT_CACHE_KEEP_LAST_NUMBER
         );

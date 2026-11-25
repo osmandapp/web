@@ -72,6 +72,20 @@ test('a cache of a given size keeps only the last answers of its url', async () 
     expect(global.fetch).toHaveBeenCalledTimes(4);
 });
 
+test('the default cache group excludes query parameters already in the url', async () => {
+    global.fetch = jest.fn((url) => Promise.resolve(jsonResponse({ url })));
+    const ask = (text) =>
+        apiGet(`https://api.test/search/inline?text=${text}`, { apiCache: true, apiCacheKeepLastNumber: 2 });
+
+    for (const text of ['a', 'b', 'c', 'b', 'c']) {
+        expect((await ask(text)).data.url).toBe(`https://api.test/search/inline?text=${text}`);
+    }
+    expect(global.fetch).toHaveBeenCalledTimes(3);
+
+    await ask('a');
+    expect(global.fetch).toHaveBeenCalledTimes(4);
+});
+
 test('a cached answer expires after its time, a url or a given key keeps only its last answers', async () => {
     global.fetch = jest.fn((url) => Promise.resolve(jsonResponse({ url })));
     let now = Date.now();
