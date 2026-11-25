@@ -17,6 +17,7 @@ export function fromHistoryState(state, current) {
         metaData: current.metaData,
         tracks: state.tracks ?? current.tracks,
         tracksPoints: current.tracksPoints,
+        routeTypes: current.routeTypes,
         syncRouting: true, // will be 1st effect
         updateLayers: true, // will be 2nd effect
         layers: current.layers,

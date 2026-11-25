@@ -1123,12 +1123,13 @@ describe('the waypoints of the edited track', () => {
         }
     });
 
-    test('deleting the last point keeps the waypoints, their groups, the id and the metadata', async () => {
+    test('deleting the last point keeps the waypoints, their groups, the id, the metadata and the route types', async () => {
         const ctx = createCtx(createRoutedPoints(1));
         const metaData = { name: 'Local', desc: 'About the track' };
         Object.assign(ctx.selectedGpxFile, {
             id: 'Local',
             metaData,
+            routeTypes: [{ tag: 'highway', value: 'primary' }],
             wpts: createWpts(),
             pointsGroups: createPointsGroups(),
         });
@@ -1139,6 +1140,7 @@ describe('the waypoints of the edited track', () => {
         expect(ctx.selectedGpxFile.pointsGroups).toEqual(createPointsGroups());
         expect(ctx.selectedGpxFile.id).toBe('Local');
         expect(ctx.selectedGpxFile.metaData).toEqual({ name: 'Local', desc: 'About the track' });
+        expect(ctx.selectedGpxFile.routeTypes).toEqual([{ tag: 'highway', value: 'primary' }]);
     });
 });
 
@@ -1161,13 +1163,23 @@ describe('the history of the editor', () => {
         }
     });
 
-    test('undo restores the points of a step and keeps the name, metadata and analysis tracks of the open track', () => {
+    test('undo restores the points of a step and keeps the name, metadata, route types and analysis tracks of the open track', () => {
         const wpts = [{ lat: 50.005, lon: 30.001, name: 'wpt' }];
         const earlier = createPlainPoints(3);
-        const step = toHistoryState({ name: 'Old', points: earlier, wpts, tracks: [{ points: earlier }] });
+        const step = toHistoryState({
+            name: 'Old',
+            points: earlier,
+            wpts,
+            tracks: [{ points: earlier }],
+            routeTypes: [],
+        });
         const moved = [{ ...earlier[0], lat: 49.99 }, earlier[1], earlier[2]];
         const current = { name: 'New', id: 'New', metaData: { name: 'New' }, points: moved, tracksPoints: moved };
-        Object.assign(current, { tracks: [{ points: [] }], layers: {} });
+        Object.assign(current, {
+            tracks: [{ points: [] }],
+            layers: {},
+            routeTypes: [{ tag: 'highway', value: 'primary' }],
+        });
         addDistanceToPoints(current.points);
 
         const restored = fromHistoryState(step, current);
@@ -1176,6 +1188,7 @@ describe('the history of the editor', () => {
         expect(restored).toMatchObject({ name: 'New', id: 'New', metaData: { name: 'New' }, syncRouting: true });
         expect(restored.layers).toBe(current.layers);
         expect(restored.tracks).toBe(current.tracks);
+        expect(restored.routeTypes).toBe(current.routeTypes);
         // the analysis tracks describe other points, so the graph is drawn from the restored points
         expect(withEditedPoints(restored).tracks).toEqual([{ points: earlier }]);
         const fresh = createPlainPoints(3);

@@ -1213,6 +1213,7 @@ function clearTrack(file, points) {
     emptyFile.name = file.name;
     emptyFile.id = file.id;
     emptyFile.metaData = file.metaData;
+    emptyFile.routeTypes = file.routeTypes;
     emptyFile.points = points ?? [];
     emptyFile.tracks = TracksManager.createGpxTracks();
     emptyFile.layers = file.layers;
