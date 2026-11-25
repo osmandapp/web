@@ -19,6 +19,7 @@ import {
 import { isSmallLengthUnitFeet } from '../../menu/settings/units/UnitsConverter';
 import { MENU_INFO_OPEN_SIZE, POI_LAYER_ID } from '../../manager/GlobalManager';
 import { isTravelSearchOn } from './TravelLayer';
+import { isTrackEditorPicksPoint } from './LocalClientTrackLayer';
 import { createMvtObject, pickClickableFeatures } from '../util/MvtObjectSelection';
 import {
     getMvtDataTileUrl,
@@ -247,10 +248,12 @@ export default function MvtLayer({ config }) {
             }
         };
 
+        const isMapClickTaken = () => isTravelSearchOn(map) || isTrackEditorPicksPoint(map);
+
         // DOM listener runs after Leaflet map handlers; its inline pointer wins over the crosshair cursor classes
         const handleMouseMove = (mouseEvent) => {
             const container = map.getContainer();
-            if (!isTravelSearchOn(map) && getClickableFeatures(mouseEvent).length > 0) {
+            if (!isMapClickTaken() && getClickableFeatures(mouseEvent).length > 0) {
                 container.style.cursor = POINTER_CURSOR;
             } else {
                 resetPointerCursor(container);
@@ -258,7 +261,7 @@ export default function MvtLayer({ config }) {
         };
 
         const handleMapClick = (event) => {
-            if (isTravelSearchOn(map)) {
+            if (isMapClickTaken()) {
                 return;
             }
             const features = getClickableFeatures(event.originalEvent);

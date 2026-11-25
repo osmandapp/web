@@ -56,8 +56,11 @@ const EDITOR_PICKS_POINT_CLASS = 'track-editor-picks-point';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
-const REFRESH_ANALYTICS_DEBOUNCER_MS = 3000;
 export const LOCAL_TRACKS_LAYERS_ID = 'localTracksLayers';
+
+export function isTrackEditorPicksPoint(map) {
+    return L.DomUtil.hasClass(map.getContainer(), EDITOR_PICKS_POINT_CLASS);
+}
 
 export default function LocalClientTrackLayer() {
     const ctx = useContext(AppContext);
@@ -97,13 +100,6 @@ export default function LocalClientTrackLayer() {
     useSelectMarkerOnMap({ ctx, getLayers: getLocalWptLayers, type: LOCAL_TRACKS_LAYERS_ID, map, zoom, move });
 
     let ctxTrack = ctx.selectedGpxFile;
-
-    useEffect(() => {
-        if (startedRouterJobs === 0 && !isEmpty(ctxTrack) && isLocalTrack(ctx)) {
-            const timeout = ctxTrack?.analysis ? REFRESH_ANALYTICS_DEBOUNCER_MS : GET_ANALYSIS_DEBOUNCE_MS;
-            setTimeout(() => requestAnalytics({ ctx, track: ctxTrack, debouncerTimer }), timeout);
-        }
-    }, [startedRouterJobs]);
 
     const geoRouter = ctx.trackRouter;
 
@@ -261,14 +257,14 @@ export default function LocalClientTrackLayer() {
     }, [zoom, move]);
 
     useEffect(() => {
-        if (ctx.createTrack && ctxTrack) {
-            if (isAddPointByClick(ctx)) {
-                setupClickOnMap();
-            } else {
-                deleteClickOnMap();
-            }
+        const picksPoint = Boolean(ctxTrack && isAddPointByClick(ctx));
+        map.getContainer().classList.toggle(EDITOR_PICKS_POINT_CLASS, picksPoint);
+        if (!picksPoint) {
+            return;
         }
-        map.getContainer().classList.toggle(EDITOR_PICKS_POINT_CLASS, Boolean(ctxTrack && isAddPointByClick(ctx)));
+        map.on('click', clickMap);
+
+        return () => map.off('click', clickMap);
         // ctx.pointContextMenu was added to monitor menu state and ignore click
         // ctx.routingCache was added to have actual context for addRoutingToCache()
     }, [
@@ -649,15 +645,6 @@ export default function LocalClientTrackLayer() {
         addRegisteredLayers(track.layers, setRegisteredLayers);
 
         ctx.setSelectedGpxFile({ ...track });
-    }
-
-    function setupClickOnMap() {
-        map.off('click');
-        map.on('click', clickMap);
-    }
-
-    function deleteClickOnMap() {
-        map.off('click');
     }
 
     useEffect(() => {
