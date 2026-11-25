@@ -18,7 +18,6 @@ import TracksManager, {
     KMZ_FILE_EXT,
     prepareName,
     renameLastFolderSegment,
-    updateMetadata,
     calculateLastModified,
 } from './TracksManager';
 import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
@@ -232,15 +231,12 @@ export function renameLocalTrack(ctx, oldName, rawNewName) {
     if (newName === oldName) {
         return { ok: true };
     }
-    const track = ctx.localTracks[idx];
-    track.name = newName;
-    track.id = newName;
-    updateMetadata({ file: track, name: newName });
+    const isSelected = ctx.selectedGpxFile?.name === oldName;
+    const track = withName(ctx.localTracks[idx], newName);
+    ctx.localTracks[idx] = track;
 
-    if (ctx.selectedGpxFile?.name === oldName) {
-        const prev = ctx.selectedGpxFile;
-        updateMetadata({ file: prev, name: newName });
-        ctx.setSelectedGpxFile({ ...prev, name: newName, id: newName, oldName });
+    if (isSelected) {
+        ctx.setSelectedGpxFile({ ...withName(ctx.selectedGpxFile, newName), oldName });
     }
     if (ctx.selectedLocalTrackObj?.name === oldName) {
         ctx.setSelectedLocalTrackObj((prev) => ({ ...prev, name: newName }));
@@ -556,4 +552,8 @@ function openNewLocalTrack({ ctx, track, cloudAutoSave = false }) {
     ctx.setSelectedGpxFile({ ...track });
 
     ctx.setCurrentObjectType(OBJECT_TYPE_LOCAL_TRACK);
+}
+
+function withName(track, name) {
+    return { ...track, name, id: name, metaData: { ...track.metaData, name } };
 }

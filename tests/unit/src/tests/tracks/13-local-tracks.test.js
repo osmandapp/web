@@ -116,7 +116,7 @@ describe('renaming a local track', () => {
     function ctxWithTwo() {
         ['First', 'Second'].forEach((name, id) => db.set(id, track(name)));
         const ctx = createCtx([track('First'), track('Second')]);
-        ctx.selectedGpxFile = track('Second');
+        ctx.selectedGpxFile = ctx.localTracks[1];
         ctx.setSelectedGpxFile = jest.fn();
 
         return ctx;

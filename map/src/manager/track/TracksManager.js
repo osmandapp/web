@@ -634,16 +634,6 @@ export const downloadCurrentLocalGpx = async ({ selectedGpxFile, routeTypes, isL
     }
 };
 
-export function updateMetadata({ file, name = null }) {
-    if (!file.metaData) {
-        file.metaData = {};
-    }
-    if (name) {
-        file.metaData.name = name;
-    }
-    return file;
-}
-
 function withoutIds(points) {
     return points?.some((point) => point.id !== undefined) ? points.map(withoutId) : points;
 }
