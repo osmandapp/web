@@ -39,7 +39,7 @@ const MAX_KMZ_FILE_MB = 2;
 export const EMPTY_FILE_NAME = `__folder__${INFO_FILE_EXT}`;
 const GET_SRTM_DATA = 'get-srtm-data';
 const GET_ANALYSIS = 'get-analysis';
-const ANALYSIS_CACHE_SIZE = 5;
+const ANALYSIS_CACHE_KEEP_LAST_NUMBER = 5;
 export const PROFILE_LINE = 'line';
 
 export function getResolvedPointsGroups(file) {
@@ -1135,7 +1135,8 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
             params: {
                 dist: ctx.selectedGpxFile?.analysis?.totalDistance?.toFixed(0) ?? 0,
             },
-            apiCache: ANALYSIS_CACHE_SIZE,
+            apiCache: true,
+            apiCacheKeepLastNumber: ANALYSIS_CACHE_KEEP_LAST_NUMBER,
             abortControllerKey: 'gpx-analytics-' + ctx.selectedGpxFile.name,
         });
         if (resp?.aborted) {

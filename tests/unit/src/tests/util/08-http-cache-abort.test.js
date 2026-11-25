@@ -58,7 +58,8 @@ test('a cached answer cancels the request of the same abort key only when asked 
 
 test('a cache of a given size keeps only the last answers of its url', async () => {
     global.fetch = jest.fn((url) => Promise.resolve(jsonResponse({ url })));
-    const ask = (text) => apiGet('https://api.test/gpx/get-analysis', { apiCache: 2, params: { text } });
+    const ask = (text) =>
+        apiGet('https://api.test/gpx/get-analysis', { apiCache: true, apiCacheKeepLastNumber: 2, params: { text } });
 
     await ask('a');
     await ask('b');
@@ -68,5 +69,45 @@ test('a cache of a given size keeps only the last answers of its url', async () 
     expect(global.fetch).toHaveBeenCalledTimes(3);
 
     await ask('a');
+    expect(global.fetch).toHaveBeenCalledTimes(4);
+});
+
+test('a cached answer expires after its time, a url or a given key keeps only its last answers', async () => {
+    global.fetch = jest.fn((url) => Promise.resolve(jsonResponse({ url })));
+    let now = Date.now();
+    jest.spyOn(Date, 'now').mockImplementation(() => now);
+    const ask = (url, options = {}) => apiGet(url, { apiCache: true, ...options });
+
+    await ask('https://api.test/weather');
+    now += 299 * 1000;
+    await ask('https://api.test/weather');
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+    now += 2 * 1000;
+    await ask('https://api.test/weather');
+    expect(global.fetch).toHaveBeenCalledTimes(2);
+
+    await ask('https://api.test/poi', { apiCacheExpirySeconds: 10 });
+    now += 11 * 1000;
+    await ask('https://api.test/poi', { apiCacheExpirySeconds: 10 });
+    expect(global.fetch).toHaveBeenCalledTimes(4);
+
+    global.fetch.mockClear();
+    const search = (text) => ask('https://api.test/search', { params: { text } });
+    for (let i = 0; i <= 10; i++) {
+        await search(`q${i}`);
+    }
+    await search('q1');
+    expect(global.fetch).toHaveBeenCalledTimes(11);
+    await search('q0');
+    expect(global.fetch).toHaveBeenCalledTimes(12);
+
+    global.fetch.mockClear();
+    const route = (to) =>
+        ask(`https://api.test/route/${to}`, { apiCacheKeepLastKey: 'route', apiCacheKeepLastNumber: 2 });
+    for (const to of ['a', 'b', 'c', 'b', 'c']) {
+        await route(to);
+    }
+    expect(global.fetch).toHaveBeenCalledTimes(3);
+    await route('a');
     expect(global.fetch).toHaveBeenCalledTimes(4);
 });
