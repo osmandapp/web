@@ -50,8 +50,8 @@ Unten sind die Preise für OsmAnd-Produkte in den USA und der EU aufgeführt. Pr
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
 | **Kaufart** | **Kostenlos** | **Einmalkauf** (Lebenslang) | **Abonnement** (12 Monate) | **Abonnement** (1 Monat / 12 Monate) |**Einmalkauf** (15 Jahre Pro / Maps+ Lebenslang) |
-| **Preis (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €2.99 / <s>€39.99</s> **€19.99** | <s>€450</s> **€299.00** |
-| **Preis (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $2.99 / <s>$39.99</s> **$19.99** | <s>$450</s> **$299.00** |
+| **Preis (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €5.99 / <s>€39.99</s> **€19.99** | <s>€450</s> **€299.00** |
+| **Preis (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $5.99 / <s>$39.99</s> **$19.99** | <s>$450</s> **$299.00** |
 
 :::note 
 Wenn Sie ein Abonnement über unsere [Website](https://osmand.net/pricing) zum ermäßigten Preis abschließen, erhalten Sie einen ermäßigten 2-Jahres-Tarif.  
