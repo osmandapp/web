@@ -1,11 +1,12 @@
 import cloneDeep from 'lodash-es/cloneDeep';
+import isEmpty from 'lodash-es/isEmpty';
 import TracksManager, {
     PROFILE_LINE,
     ROUTER_ERROR_LINE_USED,
     updateTrackRouteTypes,
 } from '../manager/track/TracksManager';
 import EditablePolyline from '../map/util/creator/EditablePolyline';
-import { isWaitingForRouter, setSegmentGeometries } from '../manager/track/TrackOperations';
+import { isWaitingForRouter, setSegmentGeometries, withAnsweredElevation } from '../manager/track/TrackOperations';
 
 const MAX_STARTED_ROUTER_JOBS = 6;
 export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
@@ -235,6 +236,23 @@ export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
     dropOutdatedCache({ ctx, validKeys: {}, killLayers: true });
 
     return synced;
+}
+
+export function addElevationToCache({ ctx, points, geoRouter }) {
+    const cache = ctx.routingCache;
+    if (isEmpty(cache)) {
+        return;
+    }
+    forEachCachedSegment(points, cache, geoRouter, (index, key) => {
+        const cached = cache[key].geometry;
+        const answered = points[index].geometry;
+        if (cached && cached.length === answered?.length) {
+            const geometry = withAnsweredElevation(cached, answered);
+            if (geometry !== cached) {
+                ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = geometry));
+            }
+        }
+    });
 }
 
 // key looks like query string but never used as it
