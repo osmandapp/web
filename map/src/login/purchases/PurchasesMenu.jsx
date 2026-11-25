@@ -13,7 +13,7 @@ import SubTitleMenu from '../../frame/components/titles/SubTitleMenu';
 import SimpleText from '../../frame/components/other/SimpleText';
 import { IN_APP, SUBSCRIPTION } from './PurchaseInfo';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
-import { getStatus } from './PurchaseManager';
+import { getStatus, isPurchaseValid } from './PurchaseManager';
 import { ACCOUNT_PLAN_FREE } from '../../manager/LoginManager';
 import FreeAccItem, { FreeAccountObject } from './free/FreeAccItem';
 import { formatString } from '../../manager/SettingsManager';
@@ -41,7 +41,7 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
     const oldExpiredSubscriptions = []; // expired > 1 month
 
     for (const { item, index } of subscriptionItems) {
-        const isValid = item.valid !== 'false';
+        const isValid = isPurchaseValid(item);
         const expireTime = item.expire_time ? Number(item.expire_time) : null;
         const isExpired = expireTime !== null && expireTime < now;
         const isOldExpired = isExpired && now - expireTime > ONE_MONTH_MS;
@@ -73,7 +73,7 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
     const inactiveInApps = []; // non-valid
 
     for (const { item, index } of inAppItemsRaw) {
-        const isValid = item.valid !== 'false';
+        const isValid = isPurchaseValid(item);
         const ts = item.purchaseTime ? Number(item.purchaseTime) : 0;
         const target = isValid ? activeInApps : inactiveInApps;
         target.push({ item, index, ts, isValid });
@@ -197,12 +197,13 @@ export default function PurchasesMenu() {
                                             onClick={() => clickOnSubscription(index)}
                                         />
                                     ))}
-                                    {activeInApps.map(({ item, index }) => (
+                                    {activeInApps.map(({ item, index, isValid }) => (
                                         <InAppItem
                                             id={item.name}
                                             key={`active-inapp-${index}-${item.name}`}
                                             name={item.name}
                                             purchaseTime={item.purchaseTime}
+                                            isValid={isValid}
                                             onClick={() => clickOnInApp(index)}
                                         />
                                     ))}
@@ -217,12 +218,13 @@ export default function PurchasesMenu() {
                                             onClick={() => clickOnSubscription(index)}
                                         />
                                     ))}
-                                    {inactiveInApps.map(({ item, index }) => (
+                                    {inactiveInApps.map(({ item, index, isValid }) => (
                                         <InAppItem
                                             id={item.name}
                                             key={`inactive-inapp-${index}-${item.name}`}
                                             name={item.name}
                                             purchaseTime={item.purchaseTime}
+                                            isValid={isValid}
                                             onClick={() => clickOnInApp(index)}
                                         />
                                     ))}
