@@ -322,8 +322,7 @@ export default function GeneralInfo({ width }) {
                                                     TracksManager.getTrackWithAnalysis(
                                                         TracksManager.GET_SRTM_DATA,
                                                         ctx,
-                                                        setLoadingSrtm,
-                                                        ctx.selectedGpxFile.points
+                                                        setLoadingSrtm
                                                     ).then((track) => {
                                                         if (track) {
                                                             // getSRTMEle(track); // set by distinct Effect

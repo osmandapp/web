@@ -131,11 +131,12 @@ describe('the points that go to the router', () => {
         expect(validateRoutePoints([{ geometry: geometry([50, 30], [50.1, 30.1]) }, { geometry: [] }])).toBe(false);
     });
 
-    test('a gap of a routed track is kept, the last point gets it', () => {
-        const points = [{ geometry: [] }, { profile: GAP }];
+    test('a gap point without geometry keeps a routed track valid, the points are not changed', () => {
+        const points = () => [{ geometry: [] }, { profile: GAP }, { geometry: geometry([50, 30], [50.1, 30.1]) }];
+        const checked = points();
 
-        expect(validateRoutePoints(points)).toBe(true);
-        expect(points[points.length - 1].profile).toBe(GAP);
+        expect(validateRoutePoints(checked)).toBe(true);
+        expect(checked).toEqual(points());
     });
 });
 

@@ -149,12 +149,13 @@ describe('the track data a save sends to the server', () => {
         expect(TracksManager.getEditablePoints(createGpxData(sent.tracks[0].points))).toEqual(expected);
     });
 
-    test.failing('a save does not change the points of the editor', async () => {
+    test('a save does not change the points of the editor, the gap of a plain track goes on the last sent point', async () => {
         const points = createPlainGapPoints(4, 1);
 
-        await save({ name: TRACK_NAME, tracks: TracksManager.createGpxTracks(), wpts: [], points });
+        const sent = await save({ name: TRACK_NAME, tracks: TracksManager.createGpxTracks(), wpts: [], points });
 
         expect(points).toEqual(createPlainGapPoints(4, 1));
+        expect(sent.tracks[0].points.at(-1).profile).toBe(TracksManager.PROFILE_GAP);
     });
 
     test.failing('a plain point keeps its time and extensions', async () => {
@@ -163,7 +164,7 @@ describe('the track data a save sends to the server', () => {
         expect(sent.tracks[0].points.map((p) => p.ext)).toEqual(createTrkpts(0, 2).map((p) => p.ext));
     });
 
-    test.failing('every point of a gpx of two trk is sent once', async () => {
+    test('every point of a gpx of two trk is sent once', async () => {
         const sent = await save(openInEditor(createGpxData(createTrkpts(0, 2), createTrkpts(3, 4))));
 
         expect(lats(sentPoints(sent))).toEqual(lats(createPlainPoints(5)));

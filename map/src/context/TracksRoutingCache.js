@@ -137,8 +137,7 @@ export function requestAnalysisNow({ ctx, track }) {
     TracksManager.getTrackWithAnalysis(
         TracksManager.GET_ANALYSIS,
         { ...ctx, selectedGpxFile: track },
-        ctx.setRunningEditorAnalyses,
-        track.points
+        ctx.setRunningEditorAnalyses
     ).then((res) => {
         if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
     });

@@ -657,9 +657,9 @@ function withoutId(point) {
 
 function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     // add updated points to track
-    let points = file.points;
-    if (file.tracks && file.tracks[0] && validateRoutePoints(points)) {
-        points = points.map((point) => {
+    let tracks = file.tracks;
+    if (file.tracks?.[0] && validateRoutePoints(file.points)) {
+        const points = file.points.map((point) => {
             return {
                 lat: point.lat,
                 lng: point.lng,
@@ -668,21 +668,19 @@ function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
                 geometry: point.geometry,
             };
         });
-        file.tracks[0].points = points;
+        if (points.some((point) => !point.geometry && point.profile === PROFILE_GAP)) {
+            points[points.length - 1].profile = PROFILE_GAP;
+        }
+        tracks = [{ ...file.tracks[0], points }];
     }
 
     // add metaData name if it isn't exist
-    if (!file.metaData?.name) {
-        if (!file.metaData) {
-            file.metaData = {};
-        }
-        file.metaData.name = file.name;
-    }
+    const metaData = file.metaData?.name ? file.metaData : { ...file.metaData, name: file.name };
 
     return {
-        tracks: file.tracks?.map((track) => ({ ...track, points: withoutIds(track.points) })),
+        tracks: tracks?.map((track) => ({ ...track, points: withoutIds(track.points) })),
         wpts: file.wpts,
-        metaData: file.metaData,
+        metaData,
         pointsGroups: file.pointsGroups,
         ext: file.ext,
         analysis: getAnalysis ? file.analysis : null,
@@ -919,14 +917,6 @@ function parseOldRoutingType(profile, params) {
     return routing == defaultRouting ? undefined : routing;
 }
 
-function updateGapProfileOneSegment(routePoint, points) {
-    if (routePoint.profile === PROFILE_GAP) {
-        points[points.length - 1].profile = PROFILE_GAP;
-        return true;
-    }
-    return false;
-}
-
 function getEle(point, elevation) {
     return isEmptyEle(point[elevation]) ? undefined : Number(point[elevation]);
 }
@@ -1060,21 +1050,21 @@ export async function applySrtmElevation({ track, setLoading }) {
         return cache;
     }
     function applySrtmPoints({ track, cache }) {
-        function apply(p) {
-            if (p && p.lat && p.lng) {
-                const key = latlngKey(p);
-                if (cache[key]) {
-                    p.ele = cache[key];
-                }
-            }
+        function withSrtmEle(p) {
+            const ele = p.lat && p.lng ? cache[latlngKey(p)] : undefined;
+            const geometry = p.geometry?.map(withSrtmEle);
+
+            return { ...p, ...(ele && { ele }), ...(geometry && { geometry }) };
         }
-        track.points?.forEach((p) => apply(p));
-        track.points?.forEach((p) => p.geometry?.forEach((g) => apply(g)));
-        track.tracks?.forEach((t) => t.points?.forEach((p) => apply(p)));
-        track.tracks?.forEach((t) => t.points?.forEach((p) => p.geometry?.forEach((g) => apply(g))));
+        if (track.points) {
+            track.points = track.points.map(withSrtmEle);
+        }
+        if (track.tracks) {
+            track.tracks = track.tracks.map((t) => ({ ...t, points: t.points?.map(withSrtmEle) }));
+        }
     }
     const fakeCtx = { selectedGpxFile: track };
-    const newGpxFile = await getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading, track.points);
+    const newGpxFile = await getTrackWithAnalysis(GET_SRTM_DATA, fakeCtx, setLoading);
     if (newGpxFile?.analysis) {
         const analysis = newGpxFile.analysis; // ref
 
@@ -1114,11 +1104,8 @@ export function validateRoutePoints(points) {
     }
 
     for (let i = 0; i < points.length; i++) {
-        if (!points[i].geometry) {
-            const hasGap = updateGapProfileOneSegment(points[i], points);
-            if (!hasGap && trackWithGeometry) {
-                return false;
-            }
+        if (!points[i].geometry && points[i].profile !== PROFILE_GAP && trackWithGeometry) {
+            return false;
         }
     }
     return true;
@@ -1128,7 +1115,7 @@ function countRunning(setRunning, step) {
     setRunning?.((running) => running + step);
 }
 
-async function getTrackWithAnalysis(path, ctx, setLoading, points) {
+async function getTrackWithAnalysis(path, ctx, setLoading) {
     countRunning(setLoading, 1);
     countRunning(ctx.setRunningAnalyses, 1);
     try {
@@ -1140,9 +1127,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading, points) {
 
         const wpts = cloneFile.wpts;
         const pointsGroups = cloneFile.pointsGroups;
-        if (validateRoutePoints(points)) {
-            cloneFile.tracks[0].points = points;
-        }
 
         const postData = prepareTrackData({ file: cloneFile, routeTypes: cloneFile.routeTypes, getAnalysis: true });
         // time vs better cache

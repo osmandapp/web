@@ -112,9 +112,7 @@ test('17.7 the analysis request of routed 50k', async () => {
     ctx.selectedGpxFile.tracks = [{ points: [] }];
     ctx.setRunningAnalyses = jest.fn();
 
-    const prepare = await measure(() =>
-        TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, jest.fn(), ctx.selectedGpxFile.points)
-    );
+    const prepare = await measure(() => TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, jest.fn()));
     record('17.7 analysis request of routed 50k', prepare, MS);
     record('17.7 analysis request size of routed 50k', findRequest(apiPost, ANALYSIS_URL).body.size, BYTES);
 });
