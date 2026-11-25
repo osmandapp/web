@@ -17,6 +17,7 @@ import EditableMarker from '../util/creator/EditableMarker';
 import { effectDebouncer } from '../../util/Utils';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
 import TracksRoutingCache, {
+    addElevationToCache,
     debouncer,
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
@@ -178,6 +179,9 @@ export default function LocalClientTrackLayer() {
                     ? withAnsweredElevation(trusted.points, unverified.points)
                     : trusted.points;
                 unverified.tracksPoints = unverified.points;
+                if (hasPoints && isLocalTrack(ctx)) {
+                    addElevationToCache({ ctx, points: unverified.points, geoRouter });
+                }
 
                 ctx.setSelectedGpxFile(unverified);
             } else if (sameTrack && hasPoints && isLocalTrack(ctx) && !hasSegmentWaitingForRouter(trusted.points)) {

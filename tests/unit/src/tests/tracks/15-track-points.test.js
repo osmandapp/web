@@ -1,14 +1,17 @@
 import L from 'leaflet';
+import { act, createElement } from 'react';
 import PointManager from '@map/manager/PointManager';
 import { apiGet } from '@map/util/HttpApi';
 import { updateRouteBetweenPoints } from '@map/store/geoRouter/legacy/updateRouteBetweenPoints';
-import TracksManager, { PROFILE_LINE } from '@map/manager/track/TracksManager';
+import TracksManager, { addDistanceToPoints, PROFILE_LINE, withEditedPoints } from '@map/manager/track/TracksManager';
+import { fromHistoryState, toHistoryState } from '@map/manager/track/TrackHistory';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import EditableMarker from '@map/map/util/creator/EditableMarker';
 import { assignPointIds, isProtectedSegment, isWaitingForRouter, setProfile } from '@map/manager/track/TrackOperations';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
 import { updateLayers } from '@map/map/util/creator/LocalTrackLayerHelper';
 import MarkerOptions from '@map/map/markers/MarkerOptions';
+import useUndoRedo from '@map/infoblock/useUndoRedo';
 import { updateGroupsVisibility } from '@map/manager/track/TrackAppearanceManager';
 import { PROFILE_BICYCLE, PROFILE_CAR, PROFILE_PEDESTRIAN } from '@map/store/geoRouter/profileConstants';
 import {
@@ -27,6 +30,7 @@ import {
     WPT_GROUP,
 } from '../../util/fixtures/tracks';
 import { createDragEvent, createDrawnCtx, dragPoint, map, renderCtx, routeCached } from '../../util/editor';
+import { mountRoot } from '../../util/reactRoot';
 
 const GAP = TracksManager.PROFILE_GAP;
 
@@ -1119,14 +1123,24 @@ describe('the waypoints of the edited track', () => {
         }
     });
 
-    test('deleting the last point keeps the waypoints and their groups', async () => {
+    test('deleting the last point keeps the waypoints, their groups, the id, the metadata and the route types', async () => {
         const ctx = createCtx(createRoutedPoints(1));
-        Object.assign(ctx.selectedGpxFile, { wpts: createWpts(), pointsGroups: createPointsGroups() });
+        const metaData = { name: 'Local', desc: 'About the track' };
+        Object.assign(ctx.selectedGpxFile, {
+            id: 'Local',
+            metaData,
+            routeTypes: [{ tag: 'highway', value: 'primary' }],
+            wpts: createWpts(),
+            pointsGroups: createPointsGroups(),
+        });
 
         await PointManager.deletePoint(0, ctx);
 
         expect(ctx.selectedGpxFile.wpts).toEqual(createWpts());
         expect(ctx.selectedGpxFile.pointsGroups).toEqual(createPointsGroups());
+        expect(ctx.selectedGpxFile.id).toBe('Local');
+        expect(ctx.selectedGpxFile.metaData).toEqual({ name: 'Local', desc: 'About the track' });
+        expect(ctx.selectedGpxFile.routeTypes).toEqual([{ tag: 'highway', value: 'primary' }]);
     });
 });
 
@@ -1147,6 +1161,59 @@ describe('the history of the editor', () => {
 
             expect(ctx.trackState.update).toBe(true);
         }
+    });
+
+    test('undo restores the points of a step and keeps the name, metadata, route types and analysis tracks of the open track', () => {
+        const wpts = [{ lat: 50.005, lon: 30.001, name: 'wpt' }];
+        const earlier = createPlainPoints(3);
+        const step = toHistoryState({
+            name: 'Old',
+            points: earlier,
+            wpts,
+            tracks: [{ points: earlier }],
+            routeTypes: [],
+        });
+        const moved = [{ ...earlier[0], lat: 49.99 }, earlier[1], earlier[2]];
+        const current = { name: 'New', id: 'New', metaData: { name: 'New' }, points: moved, tracksPoints: moved };
+        Object.assign(current, {
+            tracks: [{ points: [] }],
+            layers: {},
+            routeTypes: [{ tag: 'highway', value: 'primary' }],
+        });
+        addDistanceToPoints(current.points);
+
+        const restored = fromHistoryState(step, current);
+
+        expect(step.tracks).toBeNull();
+        expect(restored).toMatchObject({ name: 'New', id: 'New', metaData: { name: 'New' }, syncRouting: true });
+        expect(restored.layers).toBe(current.layers);
+        expect(restored.tracks).toBe(current.tracks);
+        expect(restored.routeTypes).toBe(current.routeTypes);
+        // the analysis tracks describe other points, so the graph is drawn from the restored points
+        expect(withEditedPoints(restored).tracks).toEqual([{ points: earlier }]);
+        const fresh = createPlainPoints(3);
+        addDistanceToPoints(fresh);
+        expect(earlier.map((point) => point.distanceTotal)).toEqual(fresh.map((point) => point.distanceTotal));
+        expect(restored.wpts).toEqual(wpts);
+        expect(restored.wpts).not.toBe(step.wpts);
+    });
+
+    test('the history keeps the last 50 steps', async () => {
+        let history;
+        const Probe = () => {
+            history = useUndoRedo();
+
+            return null;
+        };
+        const { root, unmount } = mountRoot();
+        await act(async () => root.render(createElement(Probe)));
+
+        for (let step = 1; step <= 55; step++) {
+            await act(async () => history.setState({ step }));
+        }
+
+        expect(history.pastStates.map(({ step }) => step)).toEqual(Array.from({ length: 50 }, (_, i) => i + 5));
+        unmount();
     });
 });
 

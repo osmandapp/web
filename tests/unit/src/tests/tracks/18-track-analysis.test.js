@@ -19,6 +19,7 @@ import {
     createEditorCtx,
     createEditorPoint,
     createGapPoints,
+    createPlainGapPoints,
     createPlainPoints,
     createPointsGroups,
     createRoutedPoints,
@@ -65,8 +66,7 @@ const createCtx = (points) => {
     return ctx;
 };
 
-const analyse = (ctx, setLoading = jest.fn()) =>
-    TracksManager.getTrackWithAnalysis(GET_ANALYSIS, ctx, setLoading, ctx.selectedGpxFile.points);
+const analyse = (ctx, setLoading = jest.fn()) => TracksManager.getTrackWithAnalysis(GET_ANALYSIS, ctx, setLoading);
 
 const requestsTo = (endpoint) => apiPost.mock.calls.filter(([url]) => url.endsWith(endpoint));
 const analysedLats = async () => {
@@ -119,6 +119,14 @@ describe('what is sent for the analysis', () => {
             expect(JSON.stringify(body)).not.toContain('"id"');
             expect(tracks[0].points.at(-1).profile).not.toBe(TracksManager.PROFILE_GAP);
         }
+    });
+
+    test('the analysis of a plain track with a gap does not change the points of the editor', async () => {
+        const points = createPlainGapPoints(4, 1);
+
+        await analyse(createCtx(points));
+
+        expect(points).toEqual(createPlainGapPoints(4, 1));
     });
 
     test('only the position, elevation, profile and geometry of the editor points are sent, the times are zeroed', async () => {
@@ -302,7 +310,7 @@ describe('the answer of the analysis', () => {
         expect(editorLoading.values).toEqual([1, 0]);
 
         const generalLoading = createCounter();
-        await TracksManager.getTrackWithAnalysis(GET_SRTM_DATA, ctx, generalLoading.set, ctx.selectedGpxFile.points);
+        await TracksManager.getTrackWithAnalysis(GET_SRTM_DATA, ctx, generalLoading.set);
         expect(generalLoading.values).toEqual([1, 0]);
         expect(editorLoading.values).toEqual([1, 0]);
     });

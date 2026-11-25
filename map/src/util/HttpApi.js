@@ -77,6 +77,9 @@ import { quickNaNfix, seleniumUpdateActivity } from './Utils';
     Cache:
 
         option { apiCache: true } will cache successful responses by key: md5(url+options+body)
+        option { apiCacheExpirySeconds: 300 } will drop the cached response after 300 seconds without a cache hit (default 300)
+        option { apiCacheKeepLastNumber: 10 } will keep only the last 10 cached responses of apiCacheKeepLastKey (default 10)
+        option { apiCacheKeepLastKey: 'key' } will group cached responses for apiCacheKeepLastNumber (default url without params)
         option { abortOnCacheHit: true } will abort the pending request of abortControllerKey on a cache hit
 
     Return:
@@ -125,12 +128,17 @@ export async function apiGet(url, options = null) {
     const fullURL = url + (qs === '?' ? '' : qs);
     const cacheKey = options?.apiCache ? await generateCacheKey(fullURL, options) : null;
 
-    if (cacheKey && cache[cacheKey]) {
+    if (cacheKey) {
+        deleteExpiredCached();
+    }
+
+    if (cacheKey && cacheResponses[cacheKey]) {
         // console.debug('cache-hit', url, cacheKey);
+        refreshCacheExpiry(cacheKey, options.apiCacheExpirySeconds);
         if (options?.abortOnCacheHit) {
             abortApiRequest(options.abortControllerKey); // a cached answer still replaces the request in flight
         }
-        return cache[cacheKey]; // TODO think about cloneDeep() here
+        return cacheResponses[cacheKey]; // TODO think about cloneDeep() here
     }
 
     let controller;
@@ -255,7 +263,13 @@ export async function apiGet(url, options = null) {
             json: async () => await response.clone().json(), // resolved
             text: async () => await response.clone().text(), // resolved
         });
-        cache[cacheKey] = cached;
+        cacheResponses[cacheKey] = cached;
+        refreshCacheExpiry(cacheKey, options.apiCacheExpirySeconds);
+        keepLastCached(
+            options.apiCacheKeepLastKey ?? url.split('?')[0],
+            cacheKey,
+            options.apiCacheKeepLastNumber ?? DEFAULT_CACHE_KEEP_LAST_NUMBER
+        );
     }
 
     seleniumUpdateActivity();
@@ -342,7 +356,47 @@ function isFormData(data) {
     );
 }
 
-const cache = {};
+const DEFAULT_CACHE_EXPIRY_SECONDS = 300;
+const DEFAULT_CACHE_KEEP_LAST_NUMBER = 10;
+
+const cacheResponses = Object.create(null);
+const cacheExpiryTimestamps = Object.create(null);
+const cacheKeepLastKeys = Object.create(null);
+
+function refreshCacheExpiry(cacheKey, expirySeconds) {
+    cacheExpiryTimestamps[cacheKey] = Date.now() + (expirySeconds ?? DEFAULT_CACHE_EXPIRY_SECONDS) * 1000;
+}
+
+function deleteCached(keys) {
+    keys.forEach((key) => {
+        delete cacheResponses[key];
+        delete cacheExpiryTimestamps[key];
+    });
+}
+
+function deleteExpiredCached() {
+    const now = Date.now();
+    const expiredKeys = Object.keys(cacheExpiryTimestamps).filter((key) => cacheExpiryTimestamps[key] <= now);
+    if (expiredKeys.length === 0) {
+        return;
+    }
+
+    deleteCached(expiredKeys);
+    Object.keys(cacheKeepLastKeys).forEach((keepLastKey) => {
+        const keys = cacheKeepLastKeys[keepLastKey].filter((key) => cacheResponses[key]);
+        if (keys.length > 0) {
+            cacheKeepLastKeys[keepLastKey] = keys;
+        } else {
+            delete cacheKeepLastKeys[keepLastKey];
+        }
+    });
+}
+
+function keepLastCached(keepLastKey, cacheKey, keepLastNumber) {
+    const keys = [...(cacheKeepLastKeys[keepLastKey] ?? []).filter((key) => key !== cacheKey), cacheKey];
+    deleteCached(keys.splice(0, keys.length - keepLastNumber));
+    cacheKeepLastKeys[keepLastKey] = keys;
+}
 
 // use native digest
 export async function digest(string) {

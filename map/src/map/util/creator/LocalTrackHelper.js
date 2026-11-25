@@ -93,14 +93,18 @@ export function addPointToTrack(track, newPoint) {
 }
 
 export function addRoutedSegment({ points, newPoint, geoRouter }) {
-    const lastPoint = points[points.length - 1];
-    lastPoint.geometry = deleteInfo(cloneDeep(points));
-    lastPoint.profile = newPoint.profile;
-    lastPoint.geoProfile = newPoint.geoProfile;
-    const firstPoint = points[0];
-    firstPoint.geometry = [];
-    firstPoint.profile = TracksManager.PROFILE_LINE;
-    firstPoint.geoProfile = geoRouter.getShortGeoProfile({ profile: TracksManager.PROFILE_LINE });
+    const lastPoint = {
+        ...points[points.length - 1],
+        geometry: deleteInfo(cloneDeep(points)),
+        profile: newPoint.profile,
+        geoProfile: newPoint.geoProfile,
+    };
+    const firstPoint = {
+        ...points[0],
+        geometry: [],
+        profile: TracksManager.PROFILE_LINE,
+        geoProfile: geoRouter.getShortGeoProfile({ profile: TracksManager.PROFILE_LINE }),
+    };
 
     return [firstPoint, lastPoint, newPoint];
 }

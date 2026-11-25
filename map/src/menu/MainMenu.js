@@ -152,7 +152,7 @@ export default function MainMenu({
     setMenuInfo,
     showInfoBlock,
     setShowInfoBlock,
-    setClearState,
+    setHistoryClears,
     showInstallBanner,
 }) {
     const ctx = useContext(AppContext);
@@ -1185,7 +1185,7 @@ export default function MainMenu({
                 <InformationBlock
                     showInfoBlock={showInfoBlock}
                     setShowInfoBlock={setShowInfoBlock}
-                    setClearState={setClearState}
+                    setHistoryClears={setHistoryClears}
                     mainMenuSize={size}
                     setSavePrevState={setSavePrevState}
                     trackUrlOpenLoading={trackUrlOpenLoading}

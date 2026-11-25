@@ -14,6 +14,7 @@ import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import PointManager from '../../../manager/PointManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import isEmpty from 'lodash-es/isEmpty';
 
@@ -62,7 +63,7 @@ const PointsTab = ({ width }) => {
                     const updatedSelectedGpxFile = {
                         ...ctx.selectedGpxFile,
                         points: [],
-                        tracks: [],
+                        tracks: TracksManager.createGpxTracks(),
                         updateLayers: true,
                         analysis: null,
                     };
