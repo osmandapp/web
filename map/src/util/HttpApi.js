@@ -77,7 +77,7 @@ import { quickNaNfix, seleniumUpdateActivity } from './Utils';
     Cache:
 
         option { apiCache: true } will cache successful responses by key: md5(url+options+body)
-        option { apiCacheExpirySeconds: 300 } will drop the cached response after 300 seconds (default 300)
+        option { apiCacheExpirySeconds: 300 } will drop the cached response after 300 seconds without a cache hit (default 300)
         option { apiCacheKeepLastNumber: 10 } will keep only the last 10 cached responses of apiCacheKeepLastKey (default 10)
         option { apiCacheKeepLastKey: 'key' } will group cached responses for apiCacheKeepLastNumber (default url without params)
         option { abortOnCacheHit: true } will abort the pending request of abortControllerKey on a cache hit
@@ -134,6 +134,7 @@ export async function apiGet(url, options = null) {
 
     if (cacheKey && cacheResponses[cacheKey]) {
         // console.debug('cache-hit', url, cacheKey);
+        refreshCacheExpiry(cacheKey, options.apiCacheExpirySeconds);
         if (options?.abortOnCacheHit) {
             abortApiRequest(options.abortControllerKey); // a cached answer still replaces the request in flight
         }
@@ -263,8 +264,7 @@ export async function apiGet(url, options = null) {
             text: async () => await response.clone().text(), // resolved
         });
         cacheResponses[cacheKey] = cached;
-        cacheExpiryTimestamps[cacheKey] =
-            Date.now() + (options.apiCacheExpirySeconds ?? DEFAULT_CACHE_EXPIRY_SECONDS) * 1000;
+        refreshCacheExpiry(cacheKey, options.apiCacheExpirySeconds);
         keepLastCached(
             options.apiCacheKeepLastKey ?? url.split('?')[0],
             cacheKey,
@@ -362,6 +362,10 @@ const DEFAULT_CACHE_KEEP_LAST_NUMBER = 10;
 const cacheResponses = Object.create(null);
 const cacheExpiryTimestamps = Object.create(null);
 const cacheKeepLastKeys = Object.create(null);
+
+function refreshCacheExpiry(cacheKey, expirySeconds) {
+    cacheExpiryTimestamps[cacheKey] = Date.now() + (expirySeconds ?? DEFAULT_CACHE_EXPIRY_SECONDS) * 1000;
+}
 
 function deleteCached(keys) {
     keys.forEach((key) => {

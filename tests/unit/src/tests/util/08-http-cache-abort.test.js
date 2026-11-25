@@ -86,7 +86,7 @@ test('the default cache group excludes query parameters already in the url', asy
     expect(global.fetch).toHaveBeenCalledTimes(4);
 });
 
-test('a cached answer expires after its time, a url or a given key keeps only its last answers', async () => {
+test('a cached answer expires after inactivity, a url or a given key keeps only its last answers', async () => {
     global.fetch = jest.fn((url) => Promise.resolve(jsonResponse({ url })));
     let now = Date.now();
     jest.spyOn(Date, 'now').mockImplementation(() => now);
@@ -98,10 +98,19 @@ test('a cached answer expires after its time, a url or a given key keeps only it
     expect(global.fetch).toHaveBeenCalledTimes(1);
     now += 2 * 1000;
     await ask('https://api.test/weather');
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+    now += 300 * 1000;
+    await ask('https://api.test/weather');
     expect(global.fetch).toHaveBeenCalledTimes(2);
 
     await ask('https://api.test/poi', { apiCacheExpirySeconds: 10 });
-    now += 11 * 1000;
+    now += 9 * 1000;
+    await ask('https://api.test/poi', { apiCacheExpirySeconds: 10 });
+    expect(global.fetch).toHaveBeenCalledTimes(3);
+    now += 2 * 1000;
+    await ask('https://api.test/poi', { apiCacheExpirySeconds: 10 });
+    expect(global.fetch).toHaveBeenCalledTimes(3);
+    now += 10 * 1000;
     await ask('https://api.test/poi', { apiCacheExpirySeconds: 10 });
     expect(global.fetch).toHaveBeenCalledTimes(4);
 
