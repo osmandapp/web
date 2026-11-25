@@ -153,7 +153,7 @@ The **Search by Categories** tool allows you to quickly find objects, places, an
 
 POI categories in OsmAnd are based on OpenStreetMap tags. Some places may appear under a more general category if a more specific type is not available in the map data (for example, a church may appear under `Place of worship`). Offices of a type that OsmAnd does not recognize appear under `Company`.
 
-Each category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics.
+Each category has a unique set of characteristics, and this tool has filters that allow you to refine the search results by selecting different values for additional characteristics. You can also find places by a characteristic: type its name in the search bar, for example, `Smoking`, and select the suggested category to see the places where this characteristic is available.
 
 How it works:
 
@@ -182,13 +182,13 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 <TabItem value="android" label="Android">
 
-![Search POI Android](@site/static/img/search/search_poi_filter_andr.png)
+![Search POI Android](@site/static/img/search/search_poi_filter_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search POI iOS](@site/static/img/search/search_poi_filter_ios.png)
+![Search POI iOS](@site/static/img/search/search_poi_filter_ios.webp)
 
 </TabItem>
 
@@ -201,6 +201,11 @@ With the **Filter** function, you can select the necessary characteristics and a
 - In the filter, select the type of characteristics.
 
 ![Search POI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
+
+Characteristics are shown in the filter in two ways:
+
+- *Characteristic with one value* — a switch, for example, *Bicycle*. Turn it on to show only the places that have this characteristic.
+- *Characteristic with several values* — a group with the characteristic name as the header. Expand it and select the values you need, for example, *Caravan access* → *Designated*, *Yes*.
 
 A filter can consist of quite a number of items, the presence of which depends on the selected category. Each category has a number of filters specific to it, organized in folders by type. There are a total of *21 default categories*. They are listed here:
 
