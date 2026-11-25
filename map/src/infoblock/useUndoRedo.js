@@ -33,7 +33,7 @@ const useUndoRedo = (initialState = {}, pastStates = [], futureStates = []) => {
             case CLEAR:
                 return {
                     past: [],
-                    present: {},
+                    present: action.data ?? {},
                     future: [],
                 };
             default:
@@ -51,7 +51,7 @@ const useUndoRedo = (initialState = {}, pastStates = [], futureStates = []) => {
     const setState = (newState) => dispatch({ type: SET_STATE, data: newState });
     const undo = () => dispatch({ type: UNDO });
     const redo = () => dispatch({ type: REDO });
-    const clear = () => dispatch({ type: CLEAR });
+    const clear = (keptState) => dispatch({ type: CLEAR, data: keptState });
     const isUndoPossible = past && past.length > 0;
     const isRedoPossible = future && future.length > 0;
 

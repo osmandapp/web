@@ -24,7 +24,8 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, histo
 
     useEffect(() => {
         if (historyClears) {
-            clear(); // setState() can't be used inside dispatch()
+            const openTrackState = state.name === ctx.selectedGpxFile.name ? state : undefined;
+            clear(openTrackState); // setState() can't be used inside dispatch()
         }
     }, [historyClears]);
 
