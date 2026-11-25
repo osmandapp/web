@@ -10,7 +10,7 @@ import { fmt } from '../../util/dateFmt';
 import { products } from '../../shop/products/ProductManager';
 import { PURCHASE_STATE_ACTIVE, PURCHASE_STATE_EXPIRED } from './PurchaseManager';
 
-export default function InAppItem({ id, onClick, name, purchaseTime, isValid }) {
+export default function InAppItem({ id, onClick, name, purchaseTime, isValid = true }) {
     const { t } = useTranslation();
 
     const purchaseDate = purchaseTime ? fmt.MMMdY(Number(purchaseTime)) : 'N/A';

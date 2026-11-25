@@ -70,19 +70,16 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
 
     // --- IN‑APP PURCHASES ---
     const activeInApps = []; // valid
-    const inactiveInApps = []; // non-valid
 
     for (const { item, index } of inAppItemsRaw) {
-        const isValid = isPurchaseValid(item);
+        if (!isPurchaseValid(item)) continue;
         const ts = item.purchaseTime ? Number(item.purchaseTime) : 0;
-        const target = isValid ? activeInApps : inactiveInApps;
-        target.push({ item, index, ts, isValid });
+        activeInApps.push({ item, index, ts });
     }
 
     const sortByPurchaseTimeDesc = (a, b) => b.ts - a.ts;
 
     activeInApps.sort(sortByPurchaseTimeDesc);
-    inactiveInApps.sort(sortByPurchaseTimeDesc);
 
     const hasActiveOrders = activeSubscriptions.length + activeInApps.length > 0;
 
@@ -93,14 +90,12 @@ function buildDisplayPurchases(subscriptions, inAppPurchases, now = Date.now()) 
         inactiveSubscriptions.sort(sortByStartTimeDesc);
     }
 
-    const hasPurchases =
-        activeSubscriptions.length + inactiveSubscriptions.length + activeInApps.length + inactiveInApps.length > 0;
+    const hasPurchases = activeSubscriptions.length + inactiveSubscriptions.length + activeInApps.length > 0;
 
     return {
         activeSubscriptions,
         inactiveSubscriptions,
         activeInApps,
-        inactiveInApps,
         hasPurchases,
     };
 }
@@ -120,7 +115,7 @@ export default function PurchasesMenu() {
     const subscriptions = ltx.accountInfo?.subscriptions && JSON.parse(ltx.accountInfo.subscriptions);
     const inAppPurchases = ltx.accountInfo?.inAppPurchases && JSON.parse(ltx.accountInfo.inAppPurchases);
 
-    const { activeSubscriptions, inactiveSubscriptions, activeInApps, inactiveInApps, hasPurchases } = useMemo(
+    const { activeSubscriptions, inactiveSubscriptions, activeInApps, hasPurchases } = useMemo(
         () => buildDisplayPurchases(subscriptions, inAppPurchases),
         [subscriptions, inAppPurchases]
     );
@@ -197,13 +192,12 @@ export default function PurchasesMenu() {
                                             onClick={() => clickOnSubscription(index)}
                                         />
                                     ))}
-                                    {activeInApps.map(({ item, index, isValid }) => (
+                                    {activeInApps.map(({ item, index }) => (
                                         <InAppItem
                                             id={item.name}
                                             key={`active-inapp-${index}-${item.name}`}
                                             name={item.name}
                                             purchaseTime={item.purchaseTime}
-                                            isValid={isValid}
                                             onClick={() => clickOnInApp(index)}
                                         />
                                     ))}
@@ -216,16 +210,6 @@ export default function PurchasesMenu() {
                                             state={getStatus(item.state)}
                                             billingDate={item.billingDate}
                                             onClick={() => clickOnSubscription(index)}
-                                        />
-                                    ))}
-                                    {inactiveInApps.map(({ item, index, isValid }) => (
-                                        <InAppItem
-                                            id={item.name}
-                                            key={`inactive-inapp-${index}-${item.name}`}
-                                            name={item.name}
-                                            purchaseTime={item.purchaseTime}
-                                            isValid={isValid}
-                                            onClick={() => clickOnInApp(index)}
                                         />
                                     ))}
                                 </>
