@@ -205,7 +205,7 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 </Tabs>
 
-**<Translate android="true" ids="analytics_pref_title"/>** (*Android*) or **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) setting allows you the choice whether to provide anonymous data about *Downloaded Maps* and *Visited Screens* (*Android*).  
+**<Translate android="true" ids="analytics_pref_title"/>** (*Android*) or **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) setting allows you the choice whether to provide anonymous data about *Downloaded Maps* and *Visited Screens* (*Android*). On iOS, this setting also controls whether the app sends information about the Apple Ads campaign that led to the app installation.  
 
 :::note
 Data about your location or the places you view on the map is not collected.
@@ -223,7 +223,8 @@ A **UUID** (*Unique User Identifier*) is generated for each installation of the 
 
 - A random UUID is used to download offline maps from OsmAnd servers to control the rational use of server resources, predict traffic usage, and provide general monthly reports on map downloads.
 - The UUID changes every 3 months.  
-- Starting with OsmAnd version 4.3, you can disable the collection of user data when using the OsmAnd app. Then the UUID will not be sent with any download request.  
+- Starting with OsmAnd version 4.3, you can disable the collection of user data when using the OsmAnd app. Then the UUID will not be sent with any download request.
+- For installations from Google Play, the app also sends the advertising campaign that led to the installation (campaign source, medium, and name, and whether the installation came from an ad click) with update-check and purchase requests. When sending the UUID is disabled, this information is not read or sent.
 - You can read more information in the [Terms of Use (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
 
 
