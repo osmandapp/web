@@ -56,7 +56,6 @@ const EDITOR_PICKS_POINT_CLASS = 'track-editor-picks-point';
 
 const CONTROL_ROUTER_REQUEST_DEBOUNCER_MS = 50;
 const REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS = 500;
-const REFRESH_ANALYTICS_DEBOUNCER_MS = 3000;
 export const LOCAL_TRACKS_LAYERS_ID = 'localTracksLayers';
 
 export default function LocalClientTrackLayer() {
@@ -97,13 +96,6 @@ export default function LocalClientTrackLayer() {
     useSelectMarkerOnMap({ ctx, getLayers: getLocalWptLayers, type: LOCAL_TRACKS_LAYERS_ID, map, zoom, move });
 
     let ctxTrack = ctx.selectedGpxFile;
-
-    useEffect(() => {
-        if (startedRouterJobs === 0 && !isEmpty(ctxTrack) && isLocalTrack(ctx)) {
-            const timeout = ctxTrack?.analysis ? REFRESH_ANALYTICS_DEBOUNCER_MS : GET_ANALYSIS_DEBOUNCE_MS;
-            setTimeout(() => requestAnalytics({ ctx, track: ctxTrack, debouncerTimer }), timeout);
-        }
-    }, [startedRouterJobs]);
 
     const geoRouter = ctx.trackRouter;
 
