@@ -66,7 +66,8 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, histo
 
     return (
         ctx.selectedGpxFile &&
-        isLocalTrack(ctx) && (
+        isLocalTrack(ctx) &&
+        !ctx.selectedWpt && (
             <div
                 style={{
                     marginTop: getMarginTop(),
