@@ -141,13 +141,18 @@ test('17.4 router answers of 200 route points with 100k vertices', async () => {
 test('17.6 save routed 50k to the local storage', async () => {
     fakeIndexedDbStore();
     const ctx = { localTracks: [], setLocalTracks: jest.fn(), setRoutingErrorMsg: jest.fn() };
-    const track = createTrack(createRouteTrackPoints());
-
-    const save = await measure(async () => {
+    const points = createRouteTrackPoints();
+    const saveTrack = async (track) => {
         saveTrackToLocalStorage({ ctx, track });
         await settle();
-    });
+    };
+
+    const save = await measure(saveTrack, { prepare: () => createTrack([...points]) });
     record('17.6 save routed 50k to IndexedDB', save, MS);
+
+    const unchanged = createTrack(points);
+    await saveTrack(unchanged);
+    record('17.6 save unchanged routed 50k', await measure(() => saveTrack(unchanged)), MS);
     removeIndexedDb();
 });
 
