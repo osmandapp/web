@@ -335,7 +335,7 @@ export function withEditedPoints(track) {
         return track;
     }
 
-    return track.analysisPoints === track.points
+    return track.analysisPoints === track.points && track.analysisTracks
         ? { ...track, tracks: track.analysisTracks }
         : { ...track, tracks: [{ points: track.points }] };
 }

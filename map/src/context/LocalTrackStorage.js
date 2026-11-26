@@ -141,6 +141,7 @@ export async function loadLocalTracksFromStorage(setLoading) {
                         continue;
                     }
                     fixNanEleWpt(json);
+                    json.analysisPoints = json.points;
                     localTracks.push(json);
                     DEBUG && console.log('Loaded local track (old id ' + record.id + '):', json.name);
                 } catch {

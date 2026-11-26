@@ -1,7 +1,13 @@
 import PointManager from '@map/manager/PointManager';
-import TracksManager, { GPX_FILE_TYPE, NAN_MARKER, takePointsFromTracks } from '@map/manager/track/TracksManager';
+import TracksManager, {
+    applySrtmElevation,
+    GPX_FILE_TYPE,
+    NAN_MARKER,
+    takePointsFromTracks,
+} from '@map/manager/track/TracksManager';
 import { saveTrackToCloud } from '@map/manager/track/SaveTrackManager';
 import TracksRoutingCache, {
+    applyAnalysisAnswer,
     effectControlRouterRequests,
     GET_ANALYSIS_DEBOUNCE_MS,
     requestAnalysisNow,
@@ -377,6 +383,20 @@ describe('srtm', () => {
             avgElevation: 102,
             maxElevation: 104,
         });
+    });
+
+    test('the srtm elevation of a navigation route reaches its tracks, so Edit keeps it', async () => {
+        const ctx = createSrtmCtx();
+        ctx.selectedGpxFile.tracks = [{ points: ctx.selectedGpxFile.points }];
+
+        applyAnalysisAnswer(
+            ctx,
+            await applySrtmElevation({ track: { ...ctx.selectedGpxFile }, setLoading: jest.fn() })
+        );
+
+        const edited = { ...ctx.selectedGpxFile };
+        takePointsFromTracks(edited);
+        expect(edited.points.map(({ ele }) => ele)).toEqual(SRTM_ELE);
     });
 
     test('the analysis is finished when srtm is applied, so routing is not blocked', async () => {

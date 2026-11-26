@@ -202,6 +202,7 @@ function withAnalysisAnswer(current, answer) {
             analysisTracks: answer.analysisTracks,
             points,
             analysisPoints: points,
+            ...(current.tracks && { tracks: answer.tracks }),
         };
     }
     if (!isPointsHaveSameGeo(answer.tracks?.[0]?.points, current.tracks?.[0]?.points)) {
