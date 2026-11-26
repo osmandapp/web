@@ -8,13 +8,24 @@ function deleteWpt(ind, ctx, save = false) {
     ctx.setSelectedGpxFile((o) => {
         o.wpts.splice(ind, 1);
         o.updateLayers = true;
-        o.wptChangedFlag++;
+        o.wptChangedFlag = (o.wptChangedFlag || 0) + 1;
         if (save) {
             o.save = true;
         }
         return { ...o };
     });
 
+    TracksManager.updateState(ctx);
+}
+
+function deleteAllWpts(ctx) {
+    ctx.setSelectedGpxFile((track) => ({
+        ...track,
+        wpts: [],
+        pointsGroups: {},
+        updateLayers: true,
+        wptChangedFlag: (track.wptChangedFlag || 0) + 1,
+    }));
     TracksManager.updateState(ctx);
 }
 
@@ -240,6 +251,7 @@ const PointManager = {
     deletePoint,
     deleteAllPoints,
     deleteWpt,
+    deleteAllWpts,
     reorder,
     trimBefore,
     trimAfter,

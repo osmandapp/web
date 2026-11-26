@@ -4,15 +4,12 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
 import actionDeleteWptFromTab from '../../actions/tracks/actionDeleteWptFromTab.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 const TRACK = 'test-track-wpt';
 const GROUP = 'groupA';
 const [FIRST, SECOND] = ['VELO-6', 'VELO-7'];
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap();
     await actionOpenLocalTrack(TRACK);
     await clickBy(By.css("[testid='se-tab-points']"));

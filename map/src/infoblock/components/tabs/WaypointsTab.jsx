@@ -16,7 +16,7 @@ import {
 } from '@mui/material';
 import { Cancel, ExpandLess, ExpandMore, KeyboardDoubleArrowDown, KeyboardDoubleArrowUp } from '@mui/icons-material';
 import PointManager from '../../../manager/PointManager';
-import TracksManager, { getResolvedPointsGroups, isWptGroupShown } from '../../../manager/track/TracksManager';
+import { getResolvedPointsGroups, isWptGroupShown } from '../../../manager/track/TracksManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import { useWindowSize } from '../../../util/hooks/useWindowSize';
 import { createPoiIcon } from '../../../map/markers/MarkerOptions';
@@ -283,10 +283,7 @@ export default function WaypointsTab() {
         confirm({
             ctx,
             text: 'Delete all waypoints?',
-            callback: () => {
-                TracksManager.updateState(ctx);
-                ctx.setSelectedGpxFile((track) => ({ ...track, wpts: [], updateLayers: true }));
-            },
+            callback: () => PointManager.deleteAllWpts(ctx),
         });
     }
 
