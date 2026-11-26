@@ -1123,7 +1123,7 @@ describe('the waypoints of the edited track', () => {
         }
     });
 
-    test('deleting the last point keeps the waypoints, their groups, the id, the metadata and the route types', async () => {
+    test('deleting the last point keeps the waypoints, their groups and the saved fields of the track', async () => {
         const ctx = createCtx(createRoutedPoints(1));
         const metaData = { name: 'Local', desc: 'About the track' };
         Object.assign(ctx.selectedGpxFile, {
@@ -1132,15 +1132,27 @@ describe('the waypoints of the edited track', () => {
             routeTypes: [{ tag: 'highway', value: 'primary' }],
             wpts: createWpts(),
             pointsGroups: createPointsGroups(),
+            ext: { color: '#ff0000' },
+            info: { color: '#ff0000', width: '3' },
+            trkExt: { name: 'Morning ride' },
+            originalName: 'Local.gpx',
+            selected: true,
         });
 
         await PointManager.deletePoint(0, ctx);
 
         expect(ctx.selectedGpxFile.wpts).toEqual(createWpts());
         expect(ctx.selectedGpxFile.pointsGroups).toEqual(createPointsGroups());
-        expect(ctx.selectedGpxFile.id).toBe('Local');
-        expect(ctx.selectedGpxFile.metaData).toEqual({ name: 'Local', desc: 'About the track' });
-        expect(ctx.selectedGpxFile.routeTypes).toEqual([{ tag: 'highway', value: 'primary' }]);
+        expect(ctx.selectedGpxFile).toMatchObject({
+            id: 'Local',
+            metaData: { name: 'Local', desc: 'About the track' },
+            routeTypes: [{ tag: 'highway', value: 'primary' }],
+            ext: { color: '#ff0000' },
+            info: { color: '#ff0000', width: '3' },
+            trkExt: { name: 'Morning ride' },
+            originalName: 'Local.gpx',
+            selected: true,
+        });
     });
 });
 

@@ -1244,6 +1244,11 @@ function clearTrack(file, points) {
     emptyFile.layers = file.layers;
     emptyFile.wpts = file.wpts;
     emptyFile.pointsGroups = file.pointsGroups;
+    emptyFile.ext = file.ext;
+    emptyFile.info = file.info;
+    emptyFile.trkExt = file.trkExt;
+    emptyFile.originalName = file.originalName;
+    emptyFile.selected = file.selected;
     emptyFile.updateLayers = true;
 
     return emptyFile;
