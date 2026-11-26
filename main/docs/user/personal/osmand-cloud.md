@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Overview {#overview}
 
 :::info Pro feature
-OsmAnd Cloud is an [**OsmAnd Pro**](../purchases/index.md) paid feature <ProFeature />.
+Full access to OsmAnd Cloud is included with [**OsmAnd Pro**](../purchases/index.md) <ProFeature />. Free backups of supported data types are available with [OsmAnd Start](#osmand-start).
 :::
 
 :::note cross-platform  
@@ -40,7 +40,7 @@ OsmAnd supports **cross-platform usage** across *([Android](../purchases/android
     1.1 **Subscribe to OsmAnd Pro for full Cloud access.**  
    Learn more about purchasing for [Android](../purchases/android.md#how-to-buy) or [iOS](../purchases/ios.md#how-to-buy).
 
-    2.1 **Use the free OsmAnd Start plan** for cloud backups of favorites, settings, and OSM edits/notes.  
+    2.1 **Use the free OsmAnd Start plan** for cloud backups of favorites, settings, OSM edits/notes, search and navigation history, active markers, marker history, itinerary groups (Android), and Quick Actions.
    The free storage limit is **5 MB**.
 
 2. **Use the registered email** as your login to activate [OsmAnd Pro](../purchases/cross.md), [OsmAnd Maps+](../purchases/cross.md) or OsmAnd Start on other platforms.
@@ -118,13 +118,19 @@ Go to: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,pur
 
 </Tabs>  
 
-The **OsmAnd Start** plan provides free access to **OsmAnd Cloud** with limited basic features and 5MB storage to store and synchronize your **Favorites, Settings, and OpenStreetMap (OSM) edits and notes**. This plan is available for users of [OsmAnd Free or Maps+](../purchases/index.md).  
+The **OsmAnd Start** plan provides free access to **OsmAnd Cloud** with **5 MB** of storage shared by all supported backup types listed below. This plan is available for users of [OsmAnd Free or Maps+](../purchases/index.md).
 
 Features included in OsmAnd Start:
 
 - [Free Favorites Backup](../personal/favorites.md#free-cloud-backup) – Store important locations and routes in your Favorites and access them from any device connected to OsmAnd Cloud.  
 - [Free Settings Backup](../personal/profiles.md#free-cloud-backup) – Save your OsmAnd app settings to OsmAnd Cloud and restore them on other devices for a seamless experience.  
 - [OSM Edits/Notes](../plugins/osm-editing.md) – Contribute to OpenStreetMap by creating and editing map data, adding notes, and saving changes directly to OsmAnd Cloud.
+- [Search and Navigation History](../search/search-history.md) – Back up your search history and previously used navigation destinations.
+- [Map Markers](../personal/markers.md) – Back up active markers and marker history.
+- [Itinerary Groups](../personal/markers.md) – Back up groups of markers and their points (Android only).
+- [Quick Actions](../widgets/quick-action.md) – Back up Quick Action buttons and their configured actions.
+
+Each compressed file can be up to **2 MB**, within the shared **5 MB** storage limit.
 
 ### How to Activate OsmAnd Start {#how-to-activate-osmand-start}
 
