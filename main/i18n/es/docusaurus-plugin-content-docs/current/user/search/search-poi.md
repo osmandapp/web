@@ -1,5 +1,5 @@
 ---
-source-hash: 97f2c33a4074c4cc756ff122bf583a92e9a6275e2f47dd97dda9ca19c19cf16f
+source-hash: 00356ae11e5462862ca31e05797cfe39a891bfd9daa0c313b6113a666a302ec0
 sidebar_position: 4
 title:  Buscar PDI
 ---
@@ -152,9 +152,9 @@ Este lugar puede aparecer al buscar:
 
 La herramienta **Búsqueda por categorías** le permite encontrar rápidamente objetos, lugares y rutas clasificados en diferentes categorías. 
 
-Las categorías de PDI en OsmAnd se basan en etiquetas de OpenStreetMap. Algunos lugares pueden aparecer bajo una categoría más general si no hay un tipo más específico disponible en los datos del mapa (por ejemplo, una iglesia puede aparecer bajo `Lugar de culto`).
+Las categorías de PDI en OsmAnd se basan en etiquetas de OpenStreetMap. Algunos lugares pueden aparecer bajo una categoría más general si no hay un tipo más específico disponible en los datos del mapa (por ejemplo, una iglesia puede aparecer bajo `Place of worship`). Las oficinas de un tipo que OsmAnd no reconoce aparecen bajo `Company`.
 
-Cada categoría tiene un conjunto único de características, y esta herramienta dispone de filtros que le permiten refinar los resultados de la búsqueda seleccionando diferentes valores para características adicionales.
+Cada categoría tiene un conjunto único de características, y esta herramienta dispone de filtros que le permiten refinar los resultados de la búsqueda seleccionando diferentes valores para características adicionales. También puede encontrar lugares por una característica: escriba su nombre en la barra de búsqueda, por ejemplo, `Smoking`, y seleccione la categoría sugerida para ver los lugares donde esa característica está disponible.
 
 Cómo funciona:
 
@@ -183,13 +183,13 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 <TabItem value="android" label="Android">
 
-![Buscar PDI Android](@site/static/img/search/search_poi_filter_andr.png)
+![Buscar PDI Android](@site/static/img/search/search_poi_filter_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Buscar PDI iOS](@site/static/img/search/search_poi_filter_ios.png)
+![Buscar PDI iOS](@site/static/img/search/search_poi_filter_ios.webp)
 
 </TabItem>
 
@@ -202,6 +202,11 @@ Con la función **Filtro**, puede seleccionar las características necesarias y,
 - En el filtro, seleccione el tipo de características.
 
 ![Buscar PDI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
+
+Las características se muestran en el filtro de dos maneras:
+
+- *Característica con un valor*: un interruptor, por ejemplo, *Bicicleta*. Actívelo para mostrar solo los lugares que tienen esta característica.
+- *Característica con varios valores*: un grupo con el nombre de la característica como encabezado. Despliéguelo y seleccione los valores que necesite, por ejemplo, *Acceso para caravanas* → *Designado*, *Sí*.
 
 Un filtro puede constar de un buen número de elementos, cuya presencia depende de la categoría seleccionada. Cada categoría tiene una serie de filtros específicos, organizados en carpetas por tipo. Hay un total de *21 categorías por defecto*. Algunas de ellas se enumeran aquí:
 
@@ -379,10 +384,9 @@ Para crear filtros personalizados para encontrar lugares en el mapa, seleccione 
 
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Incluye 25 tipos: *Parcelas, Atolón, Municipio, Ciudad, Manzana, País, Palacio de justicia, Aduñas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
 
-2. **Сhristmas**. Incluye 5 tipos de filtros:  
-    *Evento de Navidad, Mercado de Navidad, Pirámide de Navidad, Tienda de Navidad, Árbol de Navidad*.
+2. **Christmas**. Incluye 5 tipos de filtros: *Evento de Navidad, Mercado de Navidad, Pirámide de Navidad, Tienda de Navidad, Árbol de Navidad*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Incluye 16 tipos: *Parcelas, Atolón, Municipio, Ciudad, Manzana, País, Palacio de justicia, Aduñas, Oficina diplomática, Granja, Gobierno, Aldea, Isla, Islote, Vivienda aislada, Localidad, Barrio, Policía, Prisión, Barrio, Zona residencial, Suburbio, Pueblo, Ayuntamiento, Villa*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Incluye 18 tipos: *Adiestramiento de animales, Cuidado infantil, Colegio universitario, Escuela de baile, Dojo, Lugar de formación de conductores, Autoescuela, Institución educativa, Jardín de infancia, Escuela de idiomas, Biblioteca, Parada de biblioteca móvil, Escuela de música, Escuela, Alojamiento para estudiantes, Centro de formación, Escuela de tutorías, Universidad*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Incluye 26 tipos de filtros.  
 

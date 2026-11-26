@@ -61,15 +61,15 @@ To create a navigation route, follow these steps:
 
 ## Crear Nueva Ruta {#create-new-route}
 
-Hay dos formas de iniciar una nueva ruta en Planificar ruta. La primera opción es directamente desde el mapa: haga clic con el botón derecho en cualquier lugar del mapa y seleccione **Crear nueva ruta**. La segunda opción es desde el panel izquierdo: haga clic en el botón **Crear pista**.
+Hay dos formas de iniciar una nueva ruta en Planificar ruta. La primera opción es directamente desde el mapa: haga clic con el botón derecho en cualquier lugar del mapa y seleccione **Crear nueva ruta**. La segunda opción es desde el panel izquierdo: haga clic en el botón **Crear ruta**.
 
 Una vez creada la ruta, añada puntos directamente en el mapa. Cada clic coloca el siguiente punto y el planificador construye la ruta entre los puntos.
 
-![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
+![OsmAnd Web Crear nueva ruta](@site/static/img/web/create_new_route_1.png)
 
 ### Importar Pista {#import-track}
 
-Si ya tiene un archivo de pista, puede importarlo en Planificar ruta y continuar trabajando con él en el Planificador Web. Haga clic en el botón **Importar pista** y seleccione un archivo GPX de su ordenador. Después de la carga, la pista aparece en su lista local y se abre en el planificador, para que pueda revisarla en el mapa y proceder con la edición y gestión en los paneles de pista.
+Si ya tiene un archivo de pista, puede importarlo en Planificar ruta y continuar trabajando con él en el Planificador Web. Haga clic en el botón **Importar ruta** y seleccione un archivo GPX de su ordenador. Después de la carga, la pista aparece en su lista local y se abre en el planificador, para que pueda revisarla en el mapa y proceder con la edición y gestión en los paneles de pista.
 
 ### Archivos Locales {#local-files}
 
@@ -77,7 +77,7 @@ Todas las rutas y pistas que cree o importe en Planificar ruta se añaden a la l
 
 Cada elemento de la lista tiene un interruptor que le permite mostrar u ocultar rápidamente la pista en el mapa. Seleccione una pista de la lista para abrirla en el planificador y continuar trabajando con ella. 
 
-![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
+![OsmAnd Web Crear nueva ruta](@site/static/img/web/local_files.png)
 
 
 ## Gestionar Pista {#manage-track}
@@ -88,9 +88,9 @@ Haga clic en el control de perfil para abrir el diálogo **Cambiar perfil**. Sel
 
 Desde el panel de pista también puede **Eliminar** la pista de su lista local.
 
-En el [Panel de Visión General](#overview-panel), puede **Guardar en la Nube** para conservar la ruta para uso posterior y **Descargar** como archivo GPX.
+En el [Panel de Visión General](#overview-panel), puede **Guardar en la nube** para conservar la ruta para uso posterior y **Descargar** como archivo GPX.
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+![OsmAnd Web Gestionar pista](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Gestionar pista](@site/static/img/web/change_profile.png)
 
 
 ## Paneles de Detalles de Pista {#track-details-panels}
@@ -126,13 +126,13 @@ Para detalles adicionales de la pista, abra las secciones de análisis:
 - Superficie — muestra los tipos de superficie a lo largo de la ruta basados en datos OSM.
 - Suavidad — muestra la suavidad de los segmentos basada en etiquetas OSM.
 
-![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
+![OsmAnd Web Panel de información](@site/static/img/web/overview_panel.png) 
 
 ### Panel de Pista {#track-panel}
 
 El Panel de Pista muestra la lista de puntos de ruta utilizados para construir la pista. Úselo para revisar y editar la estructura de la ruta: arrastre puntos para reordenarlos, elimine puntos utilizando el icono de eliminar o utilice Limpiar puntos para eliminar todos los puntos y empezar de nuevo.
 
-![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
+![OsmAnd Web Panel de pista](@site/static/img/web/track_panel_new.png)
 
 ### Panel de Puntos {#points-panel}
 
@@ -142,7 +142,7 @@ La edición de puntos intermedios utiliza la misma interfaz que la [edición de 
 
 En la lista de Puntos Intermedios, puede controlar si los puntos intermedios se muestran en el mapa y eliminar puntos intermedios individuales cuando sea necesario. Para eliminar todos los puntos intermedios de la pista a la vez, utilice *Limpiar todos los puntos intermedios*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
+![OsmAnd Web Panel de puntos intermedios](@site/static/img/web/points_panel_new.png)
 
 
 ## Artículos Relacionados {#related-articles}

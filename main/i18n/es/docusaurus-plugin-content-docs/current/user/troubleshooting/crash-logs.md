@@ -1,5 +1,5 @@
 ---
-source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
+source-hash: 2e48c3b33b0a1b2f2052d01d162cbc2eea2150966936da2a46c59204f2985986
 sidebar_position: 5
 title: Registros de fallos
 ---
@@ -50,8 +50,8 @@ Tenga cuidado al enviar registros de la aplicación, ya que pueden contener info
 </Tabs>
 
 1. Vaya a *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* o *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Enviar registro de aplicación actual* (iOS). Dependiendo de su situación, seleccione el tipo de registro apropiado. Puede consultar la sección [Registros de fallos y registros de la aplicación](#crash-and-app-logs) para obtener detalles sobre las diferencias entre los tipos de registro.
-2. En el menú emergente, elija Gmail o su aplicación de correo electrónico preferida. Le recomendamos enviar los registros a `support@osmand.net`.
-3. Toque el botón *Enviar*.
+2. En el menú emergente, elija dónde enviar o guardar los registros: una aplicación de correo electrónico, una aplicación de almacenamiento en la nube o un administrador de archivos para guardarlos en su dispositivo. Le recomendamos enviar los registros a `support@osmand.net`.
+3. Si envía los registros por correo electrónico, toque el botón *Enviar*.
 
 <!--
 ### Send Logs from iOS Devices {#send-logs-from-ios-devices}

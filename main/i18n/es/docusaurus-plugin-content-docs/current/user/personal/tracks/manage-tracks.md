@@ -1,5 +1,5 @@
 ---
-source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
+source-hash: 0a04e7c5b81da2f4a24b1d70406494efb02bf28fb32a1d087fb5772ae29bca04
 sidebar_position: 2
 title:  Gestionar Tracks
 ---
@@ -73,6 +73,10 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_plac
 
 ![Mis Lugares con tracks en Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
+Todos los tracks grabados, creados o importados se muestran automáticamente en la carpeta [Mis Lugares](../../personal/myplaces.md) en la pestaña *Tracks*. Están organizados por carpetas o se muestran en una lista debajo de ellas.
+
+Cada track de la lista muestra el nombre de su carpeta principal en la segunda línea, separado por `|` (por ejemplo, `Hiking | Tracks`), lo que facilita identificar dónde se almacena un track. Esto se aplica en [Buscar](#search), [Carpetas inteligentes](../../personal/tracks/smart-folder.md) y [Configurar mapa → Tracks](../../map/tracks/index.md#configure-map).
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -81,13 +85,15 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,s
 
 ![Mis Lugares con tracks en iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
+Todos los tracks grabados, creados o importados se muestran automáticamente en la carpeta [Mis Lugares](../../personal/myplaces.md) en la pestaña *Tracks*. Están organizados por carpetas o se muestran en una lista debajo de ellas.
+
+Cada track de la lista muestra el nombre de su carpeta principal en la segunda línea, separado por `|` (por ejemplo, `Hiking | Tracks`), lo que facilita identificar dónde se almacena un track. Esto se aplica en [Buscar](#search), [Carpetas inteligentes](../../personal/tracks/smart-folder.md) y [Configurar mapa → Tracks](../../map/tracks/index.md#configure-map).
+
+**Nota:** Mientras OsmAnd calcula las estadísticas de los tracks, por ejemplo después de añadir muchos tracks a la vez, la fila *<Translate ios="true" ids="tracks_stats_are_being_calculated"/>* con un indicador de progreso circular se muestra en la parte superior de la lista. Todos los tracks aparecen en la lista de inmediato y sus estadísticas aparecen a medida que avanza el cálculo. Puede abrir, renombrar, mover, compartir o eliminar cualquier track durante el cálculo. La fila desaparece cuando se han calculado todas las estadísticas.
+
 </TabItem>
 
 </Tabs>
-
-Todos los tracks grabados, creados o importados se muestran automáticamente en la carpeta [Mis Lugares](../../personal/myplaces.md) en la pestaña *Tracks*. Están organizados por carpetas o se muestran en una lista debajo de ellas.
-
-Cada track de la lista muestra el nombre de su carpeta principal en la segunda línea, separado por `|` (por ejemplo, `Senderismo | Tracks`), lo que facilita identificar dónde se almacena un track. Esto se aplica en [Buscar](#search), [Carpetas inteligentes](../../personal/tracks/smart-folder.md) y [Configurar mapa → Tracks](../../map/tracks/index.md#configure-map).
 
 
 ### Menú del Track {#track-menu}
@@ -216,13 +222,13 @@ Una vez que haya hecho su elección, se proporcionan los siguientes pasos:
 
 <TabItem value="android" label="Android">
 
-![Función de ordenación de tracks en Mis Lugares Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![Función de ordenación de tracks en Mis Lugares Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.webp)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Función de ordenación de tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
+![Función de ordenación de tracks en Mis Lugares iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_3_ios.webp)
 
 </TabItem>
 
@@ -232,7 +238,8 @@ OsmAnd ofrece una forma sencilla de ordenar sus tracks, ayudándole a gestionar 
 
 ***Opciones de ordenación:***
 
-- **Más cercano** — Muestra los tracks más cercanos a su ubicación actual.
+- **Más cercano a la ubicación actual** — Muestra los tracks más cercanos a su ubicación actual.
+- **Más cercano al centro del mapa** — Muestra los tracks más cercanos al centro actual del mapa. Cada track muestra la distancia y una flecha naranja de dirección que parte del centro del mapa.
 - **Última modificación** — Muestra los tracks ordenados por su fecha de modificación más reciente.
 - **Nombre: A - Z** — Organiza los tracks alfabéticamente de la A a la Z.
 - **Nombre: Z - A** — Organiza los tracks alfabéticamente de la Z a la A.
@@ -310,7 +317,7 @@ El menú de la carpeta de tracks le permite ver, renombrar, exportar y gestionar
 
 Vaya a: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/> tab*
 
-![Mis Lugares con tracks en Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![Mis Lugares con tracks en Android](@site/static/img/personal/tracks/dashboard_andr.webp)
 
 </TabItem>
 
@@ -324,14 +331,14 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,s
 
 </Tabs>
 
-En la parte inferior de la lista en la pestaña *Tracks*, y debajo de la lista de tracks **en cada una de sus carpetas**, hay una sección de información que le permite ver las estadísticas de resumen general de los tracks en la carpeta seleccionada. Todos los valores se muestran en las [unidades](../../personal/profiles.md#units--formats) que ha seleccionado.
+En la parte inferior de la lista en la pestaña *Tracks*, y debajo de la lista de tracks de una carpeta, hay una sección de información que le permite ver las estadísticas de resumen general de los tracks en la carpeta seleccionada. En Android, la sección se muestra solo cuando la carpeta o sus subcarpetas contienen al menos un track. Todos los valores se muestran en las [unidades](../../personal/profiles.md#units--formats) que ha seleccionado.
 
 - *Número de **Tracks** en la carpeta* — Muestra el número de tracks contenidos en la carpeta seleccionada.
 - *Suma total de* **Distancias** — Se muestra la longitud total de todos los tracks en la carpeta seleccionada, medida en las unidades que ha seleccionado.
 - *Suma de* **Ascensos** — El dato indica el desnivel positivo total de todos los tracks de la carpeta seleccionada.
 - *Suma de* **Descensos** — Este parámetro es la suma de los descensos verticales en todos los tracks de la carpeta seleccionada.
 - *Suma de* **Duración** *tiempo* — Muestra el tiempo total necesario para completar todos los tracks de la carpeta seleccionada.
-- *Total **Tamaño** de los archivos descargados en MB* — El tamaño total de los archivos descargados en megabytes muestra cuánto espacio ocupan todos los tracks de la carpeta seleccionada en su dispositivo.
+- *Total* **Tamaño** — El tamaño total de todos los archivos de track de la carpeta seleccionada, que muestra cuánto espacio ocupan en su dispositivo.
 
 
 ### Acciones de Carpeta {#folder-actions}

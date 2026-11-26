@@ -1,8 +1,8 @@
 ---
 source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
-sidebar_label: Favorites
-title: Favorites
+sidebar_label: Favoritos
+title: Favoritos
 ---
 
 import Tabs from '@theme/Tabs';
@@ -30,7 +30,7 @@ Después de registrarte en una cuenta de [**OsmAnd Pro**](../personal/osmand-clo
 Las siguientes acciones están disponibles:
 
 - *Mostrar en el mapa* - muestra los puntos de favoritos de la carpeta elegida en el mapa.
-- *Fijar carpeta* - fija una carpeta en la parte superior de la lista de Favoritos para un acceso rápido. Las carpetas fijadas están separadas de las otras carpetas. Para quitar una carpeta de la sección superior, selecciona *Quitar fijación de carpeta*. La carpeta Personal está fijada de forma predeterminada.
+- *Anclar carpeta* - ancla una carpeta en la parte superior de la lista de Favoritos para un acceso rápido. Las carpetas ancladas están separadas de las otras carpetas. Para quitar una carpeta de la sección superior, selecciona *Desanclar carpeta*. La carpeta Personal está anclada de forma predeterminada.
 - *Renombrar* - nombre y descripción de la carpeta de favoritos.
 - *Compartir* - abre las opciones de compartición. Puedes elegir quién puede acceder a esta carpeta.
 - *Descargar* - descarga la carpeta de favoritos elegida.
@@ -38,7 +38,7 @@ Las siguientes acciones están disponibles:
 
 Al seleccionar una carpeta de favoritos, el mapa se centra automáticamente y ajusta el nivel de zoom para mostrar todos los puntos de favoritos de esa carpeta dentro del área visible del mapa.
 
-También puedes usar el botón **Enfocar** para ocultar todos los demás favoritos y trazados en el mapa, lo que facilita la revisión de la carpeta seleccionada. Desactiva el modo Enfocar para restaurar la visibilidad de otros objetos del mapa.
+También puedes usar el botón **Enfoque** para ocultar todos los demás favoritos y trazados en el mapa, lo que facilita la revisión de la carpeta seleccionada. Desactiva el modo Enfoque para restaurar la visibilidad de otros objetos del mapa.
 
 ### Compartir {#share}
 
@@ -49,9 +49,9 @@ Al seleccionar **Compartir** se abre la pantalla de compartición, donde se pued
 Dependiendo del modo de acceso seleccionado, el botón **Copiar enlace** se hace disponible. El enlace se puede compartir para permitir la visualización o solicitar acceso.
 
 La pantalla de compartición incluye tres listas de usuarios:
-- Aprobados — usuarios que actualmente tienen acceso a la carpeta.
-- Pendientes — usuarios que han solicitado acceso y están esperando aprobación o rechazo.
-- Bloqueados — usuarios que no están permitidos acceder o solicitar acceso.  
+- Aprobado — usuarios que actualmente tienen acceso a la carpeta.
+- Pendiente — usuarios que han solicitado acceso y están esperando aprobación o rechazo.
+- Bloqueado — usuarios que no están permitidos acceder o solicitar acceso.  
 Cada entrada de usuario incluye un menú que permite cambiar su estado o eliminar el acceso.
 
 Durante la configuración de acceso, pueden aparecer los siguientes diálogos:
@@ -72,7 +72,7 @@ La vista de Detalles proporciona información asociada con el lugar seleccionado
 
 ## Acciones de favoritos {#favorites-actions}
 
-[Para agregar](../personal/favorites.md#manage-favorites) un nuevo punto de favorito, haz clic derecho en la pantalla. Si el favorito no se puede guardar, el mensaje de error incluye el motivo informado por el servidor, por ejemplo, que no hay suficiente espacio en [OsmAnd Cloud](../personal/osmand-cloud.md).
+[Para añadir](../personal/favorites.md#manage-favorites) un nuevo punto de favorito, haz clic derecho en la pantalla. Si el favorito no se puede guardar, el mensaje de error incluye el motivo informado por el servidor, por ejemplo, que no hay suficiente espacio en [OsmAnd Cloud](../personal/osmand-cloud.md).
 
 Para editar un favorito existente, haz clic en el punto de favorito ya sea directamente en el mapa o selecciónalo de una carpeta de favoritos. Esto abre el panel de Detalles, donde está disponible la acción de Editar. La edición también se puede iniciar desde el menú de tres puntos (⋮) junto al favorito en la lista de Favoritos.
 

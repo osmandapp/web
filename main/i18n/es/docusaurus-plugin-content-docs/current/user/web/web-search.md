@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 El **menú de Búsqueda** se puede acceder desde el panel lateral o desde el icono de Búsqueda 🔍 en el mapa. Contiene:
 
-- [Barra de búsqueda](#search-bar). Introduce palabras clave para buscar ubicaciones específicas, puntos de interés, favoritos o tracks. 
+- [Barra de búsqueda](#search-bar). Introduce palabras clave para buscar ubicaciones específicas, puntos de interés, favoritos o pistas. 
 - [Sección de Categorías](#categories). Navega a través de opciones categorizadas para búsquedas de PDI más fáciles.  
 - [Sección Explorar](#explore). Ver PDI populares para el centro actual del mapa y explorar lugares con fotos en el mapa.
 
@@ -30,7 +30,7 @@ El **menú de Búsqueda** se puede acceder desde el panel lateral o desde el ico
 
 ### Barra de búsqueda {#search-bar}
 
-Usa la **Barra de búsqueda** para encontrar lugares específicos, puntos de interés, [favoritos](../web/web-favorites.md), y [tracks](../web/web-tracks.md) por nombre. Haz clic en el icono de Búsqueda, introduce tu consulta y selecciona un resultado de la lista. Seleccionar un PDI abre el [Menú contextual de PDI](#poi-context-menu), mientras que seleccionar un favorito o track abre sus detalles, donde puedes ver información y usar acciones rápidas.
+Usa la **Barra de búsqueda** para encontrar lugares específicos, puntos de interés, [favoritos](../web/web-favorites.md), y [pistas](../web/web-tracks.md) por nombre. Haz clic en el icono de Búsqueda, introduce tu consulta y selecciona un resultado de la lista. Seleccionar un PDI abre el [Menú contextual de PDI](#poi-context-menu), mientras que seleccionar un favorito o una pista abre sus detalles, donde puedes ver información y usar acciones rápidas.
 
 También puedes combinar varias partes en una sola consulta. Introduce una categoría o una marca junto con un nombre de lugar, por ejemplo, `Hotel Berlin` o `Billa Bratislava`, para encontrar PDI coincidentes en ese lugar. Introduce dos categorías o una categoría y una propiedad, por ejemplo, `Fuel Diesel` o `Cafe Vegan`, para encontrar lugares que coincidan con ambos.
 

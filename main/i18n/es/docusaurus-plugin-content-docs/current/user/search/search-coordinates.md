@@ -1,5 +1,5 @@
 ---
-source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
+source-hash: 19d6ff7c55c3913d09f5ad722d1053eb202a843057869e98633ff5ce9589d713
 sidebar_position: 6
 title:  Búsqueda por Coordenadas
 ---
@@ -43,7 +43,7 @@ OsmAnd proporciona varias formas de llegar a la *herramienta de Búsqueda → [p
 
 </Tabs>
 
-Las coordenadas se pueden introducir en cualquier formato disponible, pero la ubicación encontrada se muestra en el formato especificado en *Configurar perfil → Ajustes generales → Unidades y formatos*.
+Las coordenadas se pueden introducir en cualquier formato disponible, pero la ubicación encontrada se muestra en los formatos de la lista especificada en *Configurar perfil → Ajustes generales → Unidades y formatos*, con el formato principal en primer lugar.
 
 - Para utilizar la búsqueda por coordenadas, puede escribirlas en cada campo correspondiente individualmente, o pegar coordenadas previamente copiadas en el campo de búsqueda o introducirlas en él. La aplicación le pedirá que seleccione una ubicación adecuada.
 - La Búsqueda por Coordenadas convierte automáticamente un formato de coordenadas a otro cuando se cambia el formato especificado en el campo con su lista.
@@ -115,7 +115,7 @@ Hay varias formas de introducir las coordenadas para la búsqueda. Para utilizar
 - *Reglas de entrada*. Las coordenadas consisten en una zona MGRS, un cuadrado y dos dígitos más que indican los desplazamientos este y norte.
 - *Uso más común*. El formato MGRS se utiliza ampliamente en la navegación y las comunicaciones militares, y también puede ser útil para los entusiastas de las actividades al aire libre y los excursionistas.
 
-### Cuadrícula suiza (solo Android) {#swiss-grid}
+### Cuadrícula suiza {#swiss-grid}
 
 ![Búsqueda por Coordenadas Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -128,7 +128,7 @@ Hay varias formas de introducir las coordenadas para la búsqueda. Para utilizar
     - CH1903+ incluye correcciones para tener en cuenta los desplazamientos de coordenadas causados por cambios en los movimientos tectónicos en Suiza.
 - *Uso más común*. Los formatos Swiss Grid (CH1903) y Swiss Grid (CH1903+) se utilizan en Suiza para mediciones geodésicas, cartografía, sistemas de información geográfica y construcción e ingeniería. Estos formatos proporcionan un sistema de coordenadas local específico para Suiza.
 
-### Sistema localizador Maidenhead (solo Android) {#maidenhead-locator-system}
+### Sistema localizador Maidenhead {#maidenhead-locator-system}
 
 ![Búsqueda por Coordenadas Android](@site/static/img/search/coordinates_search_maidenhead.webp)
 
@@ -136,22 +136,41 @@ Hay varias formas de introducir las coordenadas para la búsqueda. Para utilizar
 - *Reglas de entrada*. Las coordenadas consisten en pares alternos de letras y dígitos. Los localizadores más largos proporcionan mayor precisión posicional.  
 - *Uso más común*. El Sistema localizador Maidenhead es ampliamente utilizado por radioaficionados para la ubicación de estaciones, comunicación por radio y concursos.
 
-Para cada perfil por separado puede establecer un formato de coordenadas diferente. Para ello, vaya a *Ajustes generales → [Formato de coordenadas](../personal/profiles.md#units--formats)*.
+Para cada perfil por separado puede establecer una lista diferente de formatos de coordenadas. Para ello, vaya a *Ajustes generales → [Formato de coordenadas](../personal/profiles.md#units--formats)*.
 
 
-## Personalizar formato de coordenadas (solo Android) {#customize-coordinate-format}
+## Personalizar formato de coordenadas {#customize-coordinate-format}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Búsqueda por Coordenadas Android](@site/static/img/search/customising_format.webp) ![Búsqueda por Coordenadas Android](@site/static/img/search/searching_format.webp)
 
 Puede personalizar la lista de formatos de coordenadas disponibles para el perfil actual.  
 Vaya a: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
 
-En esta pantalla puede:  
-- Tocar el botón *Editar* para establecer el formato de coordenadas principal, reordenar o eliminar formatos de coordenadas.
-- Tocar + para añadir otro formato de coordenadas.
-- Abrir el menú ⋮ para restaurar la lista predeterminada de formatos de coordenadas o copiar formatos de coordenadas de otro perfil.
+</TabItem>
 
-Al buscar por coordenadas, puede seleccionar un formato de coordenadas de la lista Recientes o tocar *Seleccionar otro formato* para explorar todos los sistemas de coordenadas disponibles. También puede buscar por nombre del sistema de coordenadas o código EPSG.
+<TabItem value="ios" label="iOS">
+
+![Búsqueda por Coordenadas iOS](@site/static/img/search/customising_format_ios.webp) ![Búsqueda por Coordenadas iOS](@site/static/img/search/searching_format_ios.webp)
+
+Puede personalizar la lista de formatos de coordenadas disponibles para el perfil actual.  
+Vaya a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,coords_format"/>*
+
+</TabItem>
+
+</Tabs>
+
+El primer formato de la lista es el formato **Principal**. Se muestra en primer lugar en el [menú contextual del mapa](../map/map-context-menu.md) y se utiliza de forma predeterminada en los [widgets de coordenadas](../widgets/info-widgets.md#coordinates-widget).
+
+En esta pantalla puede:  
+- Tocar el botón *Editar* para establecer el formato de coordenadas principal, reordenar o eliminar formatos de coordenadas. Debe quedar al menos un formato de coordenadas en la lista.
+- Tocar + para añadir otro formato de coordenadas. En la pantalla *Añadir formato*, busque en una base de datos de más de 5000 códigos EPSG locales y nacionales por país, nombre o ID. Cada formato añadido aparece al final de la lista.
+- Abrir el menú ⋮ para restaurar la lista predeterminada de formatos de coordenadas o copiar formatos de coordenadas de otro perfil. 
+
+Al buscar por coordenadas, puede seleccionar un formato de coordenadas de la lista Recientes o tocar *Seleccionar otro formato* para explorar todos los sistemas de coordenadas disponibles. También puede buscar por nombre del sistema de coordenadas o código EPSG. La lista *Recientes* muestra los últimos 5 formatos que ha añadido. Para los formatos EPSG, los campos de coordenadas son *Easting / X* y *Northing / Y*.
 
 
 <!--

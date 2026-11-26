@@ -1,5 +1,5 @@
 ---
-source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
+source-hash: 83c6b3cc35441b3510683f9cda657be179761027b2c6e5d5aac6777b74251f2f
 sidebar_position: 1
 title:  Buscar todo
 ---
@@ -20,7 +20,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-**Búsqueda** es una herramienta útil para encontrar ubicaciones rápidamente. Puede usar Búsqueda para encontrar una ubicación por dirección, coordenadas, puntos de interés (PDI), o búsquedas anteriores. La búsqueda de [Dirección](#search-address) le permite introducir la dirección que desea para obtener una ubicación exacta. La búsqueda de [Coordenadas](#search-coordinates) funciona con coordenadas geográficas como latitud y longitud. Con la búsqueda de [PDI](#search-poi) puede buscar lugares cercanos en categorías específicas, como cafeterías, hoteles o gasolineras. La pestaña [Explorar](#search-explore) resalta lugares populares cercanos y proporciona acceso rápido a ubicaciones visitadas recientemente. El [Historial](#search-history) de búsqueda guarda las búsquedas pasadas. La función de búsqueda facilita la planificación de viajes, la navegación por terrenos desconocidos y la búsqueda de PDI cercanos.
+**Búsqueda** es una herramienta útil para encontrar ubicaciones rápidamente. Puede usar Búsqueda para encontrar una ubicación por dirección, coordenadas, puntos de interés (PDI), o búsquedas anteriores. La búsqueda de [Dirección](#search-address) le permite introducir la dirección que desea para obtener una ubicación exacta. La búsqueda de [Coordenadas](#search-coordinates) funciona con coordenadas geográficas como latitud y longitud. Con la búsqueda de [PDI](#search-poi) puede buscar lugares cercanos en categorías específicas, como cafeterías, hoteles o gasolineras. La pestaña [Explorar](#search-explore) resalta lugares populares cercanos y proporciona acceso rápido a ubicaciones visitadas recientemente. La función de búsqueda facilita la planificación de viajes, la navegación por terrenos desconocidos y la búsqueda de PDI cercanos.
 
 
 ## Cómo usar {#how-to-use}
@@ -190,8 +190,13 @@ Con la Búsqueda espacial puede:
 - Buscar un PDI en un lugar específico. Introduzca una categoría y un nombre de lugar en una sola consulta, por ejemplo, Hotel Berlín. El nombre del lugar se utiliza como área de búsqueda y la categoría se busca dentro de él.
 - Buscar lugares que coincidan con dos condiciones. Introduzca dos categorías o una categoría y una propiedad, por ejemplo, Combustible Diésel o Café Vegano, para encontrar lugares que cumplan ambas. Una consulta como Combustible McDonald's encuentra gasolineras situadas cerca de un McDonald's. El orden de las palabras importa. La primera palabra establece lo que busca y la segunda lo que debe estar cerca. Por ejemplo, McDonald’s Combustible encuentra restaurantes McDonald’s situados cerca de gasolineras.
 - Buscar alrededor de un lugar encontrado. Introduzca una categoría y un nombre de lugar, por ejemplo, *Hotel Berlín*, y luego toque *Hotel cerca de Berlín* en la parte superior de los resultados de búsqueda. El nombre de este lugar se añade al chip [Buscar alrededor](#search-around).
-- Utilizar diferentes formatos de nombres de calles y nombres de categorías traducidos en sus consultas.
+- Utilizar diferentes formatos de nombres de calles y nombres de categorías traducidos en sus consultas. Las categorías se encuentran por sus nombres en el idioma de la aplicación, en inglés, en el [idioma del mapa](../map/vector-maps.md#map-language) y en el idioma principal de la región donde busca. Por ejemplo, con la aplicación en ucraniano, `schule` en Leipzig encuentra la categoría Escuela.
+- Encontrar una categoría por otras palabras que la gente usa habitualmente para referirse a ella. Por ejemplo, `RV park` encuentra Zona de caravanas.
 - Obtener resultados más rápidos al buscar por categorías de PDI populares, como farmacia, aparcamiento o restaurante.
+
+Mientras escribe una palabra, los resultados de búsqueda muestran las categorías de PDI coincidentes como filas y los lugares con nombres coincidentes. Los lugares de una categoría aparecen en los resultados cuando escribe completa una palabra del nombre de la categoría. Por ejemplo, `ca` muestra filas de categorías y nombres coincidentes, y `cafe` lista cafeterías.
+
+**Nota:** Si una palabra corta coincide con un número muy grande de objetos en sus mapas descargados, solo se busca como palabra completa. Escriba más letras para ver los resultados que empiezan por ella.
 
 ### Buscar alrededor {#search-around}
 

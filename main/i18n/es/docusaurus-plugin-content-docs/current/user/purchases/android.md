@@ -1,5 +1,5 @@
 ---
-source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
+source-hash: ac4b1ef2a793eeac796124826048717fd7b712c23f6ffb664ab0c28b45623390
 sidebar_position: 1
 title:  Compras en Android
 ---
@@ -95,13 +95,12 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 <!--
 
-
-|    | OsmAnd Gratis   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) en la aplicación | Suscripción [Maps+](#install-osmand-android) | [OsmAnd Pro](#install-osmand-android) |
+|    | OsmAnd Free   | [OsmAnd+](#install-osmand-android) /<br/> [Maps+](#install-osmand-android) In-App | [Maps+](#install-osmand-android) Subscription | [OsmAnd Pro](#install-osmand-android) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Tipo de compra** | **Gratis** | **Compra única** (de por vida) | **Suscripción** (12 meses) | **Suscripción** (1 mes / 12 meses) |
-| **Precio (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
-| **Precio (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 -->
 
@@ -125,7 +124,6 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Descargas ilimitadas de mapas](../start-with/download-maps.md) | <details><summary>**7 descargas de mapas**</summary>  - La descarga o actualización de un mapa se refiere únicamente a la descarga-actualización del mapa de un país (región). <br/> - **Mapa general del mundo**, **Corrección de altitud mundial**, **Fuentes de mapa** y **Indicaciones de voz** no se cuentan como parte de las 7 posibilidades de descarga. </details> | ✔ | ✔ |
 | [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates-menu)<br/>Una vez al mes (con 2 días de retraso) | <details><summary>**7 descargas de mapas**</summary> La actualización de un mapa cuenta como una descarga.</details> | ✔ | ✔ |
 | [Actualizaciones de mapas por hora](../personal/maps-resources.md#live-updates)<br/>Actualizaciones en vivo (retraso de 1 hora) - [**](#-map-updates) | **-** | **-** | ✔ |
-| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Soporte para sensores externos](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Datos topográficos](../plugins/topography.md#overview)<br/>(Curvas de nivel y Terreno) | **-** | ✔ | ✔ |
 | [Cuadrícula de coordenadas — Personalización de color](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -138,8 +136,9 @@ La siguiente tabla detalla las funciones incluidas en los paquetes gratuitos y d
 | [Plugin de astronomía](../plugins/astronomy.md) — [Modo AR interactivo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin de astronomía](../plugins/astronomy.md) — [Mapa del cielo sin conexión](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Plugin de astronomía](../plugins/astronomy.md) — [Explorador de eclipses](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
-| [Colores personalizados de widgets](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
+| [Color de fondo personalizado de widgets](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navegación con y sin conexión](../navigation/index.md)<br/>con indicaciones giro a giro | ✔ | ✔ | ✔ |
+| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | ✔ | ✔ | ✔ |
 | [Búsqueda instantánea sin conexión](../search/index.md) | ✔ | ✔ | ✔ |
 | [Grabación de viaje](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Exportar tracks GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
@@ -199,7 +198,7 @@ o
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Continuar con OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
+![Plan Pro](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Compra de Maps+ {#maps-purchase}
 
@@ -207,7 +206,7 @@ o
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Toca la lista de funciones de Maps+ → Continuar con Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
+![Plan Maps+](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Suscripciones heredadas (anteriores a la 4.0) {#legacy-subscriptions-prior-40}
@@ -245,7 +244,7 @@ Para restaurar la compra, por favor, comprueba qué plan de OsmAnd has comprado.
 - *Para abrir Restaurar compras*, sigue estos pasos: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* y en la parte superior de la pantalla debería aparecer que Maps+(Pro) está activado.
 - *Registra las funciones Pro* con la suscripción a OsmAnd Pro para todas las plataformas (Android e iOS). Si tienes una cuenta de OsmAnd Pro, necesitas usarla [para activar OsmAnd Pro](../personal/osmand-cloud.md) en tu dispositivo.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases.png)
+![Plan Pro](@site/static/img/purchases/maps_purchases.png)
 
 ### Otros casos {#other-cases}
 

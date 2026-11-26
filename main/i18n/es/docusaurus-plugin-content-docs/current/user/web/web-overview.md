@@ -20,9 +20,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 El **Planificador Web**, también conocido como el [**Portal de Mapas de OsmAnd**](https://osmand.net/map), es una extensión basada en navegador de la aplicación móvil OsmAnd. Permite a los usuarios ver mapas globales, planificar rutas, simular la navegación, gestionar datos personales y acceder al contenido sincronizado desde sus dispositivos a través de la nube.
 
-Diseñado como un complemento multiplataforma para OsmAnd en Android e iOS, el Portal Web ayuda a los usuarios a planificar viajes, analizar tracks, ver el terreno y gestionar archivos utilizando cualquier navegador de escritorio o tableta — sin necesidad de instalar una aplicación.
+Diseñado como un complemento multiplataforma para OsmAnd en Android e iOS, el Portal Web ayuda a los usuarios a planificar viajes, analizar pistas, ver el terreno y gestionar archivos utilizando cualquier navegador de escritorio o tableta — sin necesidad de instalar una aplicación.
 
-OsmAnd Web se integra estrechamente con el servicio **OsmAnd Cloud**, que permite sincronizar favoritos, tracks y copias de seguridad entre dispositivos y plataformas. Los usuarios con cuentas **OsmAnd Start** (gratuita) o **OsmAnd Pro** (de pago) pueden aprovechar al máximo este ecosistema sincronizando datos entre el móvil y la web. Puede encontrar una comparación detallada de las funciones de *Start* y *Pro* en la sección [Acceso por suscripción](#subscription-accesses) a continuación.
+OsmAnd Web se integra estrechamente con el servicio **OsmAnd Cloud**, que permite sincronizar favoritos, pistas y copias de seguridad entre dispositivos y plataformas. Los usuarios con cuentas **OsmAnd Start** (gratuita) o **OsmAnd Pro** (de pago) pueden aprovechar al máximo este ecosistema sincronizando datos entre el móvil y la web. Puede encontrar una comparación detallada de las funciones de *Start* y *Pro* en la sección [Acceso por suscripción](#subscription-accesses) a continuación.
 
 > **Nota:** Incluso sin iniciar sesión o verificar su cuenta, aún puede usar varias funciones principales del Portal de Mapas Web, incluyendo: [Ruta de navegación](./web-navigation.md), [Planificador de rutas](./planner.md), [Capas meteorológicas](./web-weather.md) y [Ajustes](./web-map.md#settings).
 
@@ -35,12 +35,12 @@ El Portal Web ofrece las siguientes capacidades principales para trabajar con ma
 - [Planificación de rutas](./planner.md) utilizando perfiles de peatón, coche, bicicleta y otros.
 - [Navegación](./web-navigation.md) vista previa con instrucciones paso a paso.
 - [Búsqueda](./web-search.md) y [exploración](./web-search.md#explore) de lugares populares cercanos.
-- Visualización de [Favoritos](./web-map.md#favorites), [Tracks](./web-map.md#tracks) y [PDI](./web-map.md#poi-overlay) en el mapa.
+- Visualización de [Favoritos](./web-map.md#favorites), [Pistas](./web-map.md#tracks) y [PDI](./web-map.md#poi-overlay) en el mapa.
 - [Capas meteorológicas](./web-weather.md): viento, temperatura y presión.
 - [Capas de terreno](./web-map.md#terrain): sombreado, pendientes y vista de altitud.
-- [Analizador de tracks](./web-tracks-analyzer.md) para perfiles de elevación y velocidad.
+- [Analizador de rutas](./web-tracks-analyzer.md) para perfiles de elevación y velocidad.
 - Acceso completo a los datos sincronizados a través de [OsmAnd Cloud](./web-cloud#cloud-sync).
-- Soporte para importación/exportación de archivos (GPX: tracks, favoritos).
+- Soporte para importación/exportación de archivos (GPX: pistas, favoritos).
 - Integración perfecta con **OsmAnd Pro** y **OsmAnd Start**.
 
 ### Acceso por suscripción {#subscription-accesses}
@@ -55,11 +55,11 @@ El Portal de Mapas Web admite varios niveles de acceso: sin inicio de sesión, c
 | [Planificador de rutas](./planner.md) | Sin inicio de sesión |
 | [Capas meteorológicas](./web-weather.md) | Sin inicio de sesión |
 | [Ajustes](./web-map.md#settings) | Sin inicio de sesión |
-| [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([PDI](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([PDI](./web-map.md#poi-overlay), [Favoritos](./web-map.md#favorites), [Pistas](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 | [Menú de configuración de mapa](./web-map.md#configure-map-menu) ([Terreno](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [Sincronización con OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [Búsqueda web, Lugares populares](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [Carpetas y capa de Tracks](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Sincronización con OsmAnd Cloud](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Búsqueda web, Lugares populares](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) o [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Carpetas y capa de Pistas](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 
 ## Cómo empezar {#how-to-start}
@@ -70,7 +70,7 @@ Para acceder a todas las funciones del Portal Web de OsmAnd, necesita iniciar se
 
 1. Vaya al [**Portal de Mapas de OsmAnd**](https://osmand.net/map).
 2. Abra el menú **Cuenta**:
-   - **Iniciar sesión**: Ingrese la dirección de correo electrónico vinculada a su suscripción Pro o Start, o
+   - **Iniciar sesión**: Introduzca la dirección de correo electrónico vinculada a su suscripción Pro o Start, o
    - **Crear cuenta**: Regístrese para obtener una cuenta gratuita de OsmAnd Start. Para una guía detallada paso a paso para crear una nueva cuenta, consulte el artículo [Cuenta de OsmAnd](./web-cloud).
 
 ![Cuenta Web](@site/static/img/web/web_account.png)

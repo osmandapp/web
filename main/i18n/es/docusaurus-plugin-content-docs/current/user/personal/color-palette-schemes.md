@@ -1,5 +1,5 @@
 ---
-source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
+source-hash: 91b3fc79e7f46347f28f33c9cff2ea7076efea72fe581a2fb0449136f979aece
 sidebar_position: 5
 title:  Esquemas de color
 ---
@@ -57,7 +57,7 @@ Ir a: *Menú → Mapas y recursos → Local → Colores*
 
 <TabItem value="android" label="Android">
 
-![Paletas](@site/static/img/personal/color-schemes/palette_new.png) ![Paletas](@site/static/img/personal/color-schemes/palette_new_2.png)
+![Paletas](@site/static/img/personal/color-schemes/palette_new.webp) ![Paletas](@site/static/img/personal/color-schemes/palette_new_2.png)
 
 </TabItem>
 
@@ -166,7 +166,7 @@ Si necesita cambiar un archivo de paleta existente dentro de OsmAnd (en lugar de
 
 Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Acciones de perfiles exportar Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Copia de seguridad local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -174,7 +174,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Acciones de perfiles exportar iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Acciones de perfiles exportar iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -199,7 +199,7 @@ Puede importar y exportar todas las paletas de colores personalizadas y por defe
 </table>
 
 
-La leyenda proporciona una forma fácil de ver y entender las diferentes marcas en el mapa. Se han añadido nuevas paletas de colores para mostrar la [**speed** for tracks](../map/tracks/appearance#track-colors-in-gpx-files), el [**line type** for routes](../navigation/guidance/map-during-navigation.md#color), la [**altitude and slope** for terrain](../plugins/topography.md#default-color-scheme), y todas las paletas de colores de las [**weather layer**](../plugins/weather.md#weather-layers).
+La leyenda proporciona una forma fácil de ver y entender las diferentes marcas en el mapa. Se han añadido nuevas paletas de colores para mostrar la [**velocidad** para tracks](../map/tracks/appearance#track-colors-in-gpx-files), el [**tipo de línea** para rutas](../navigation/guidance/map-during-navigation.md#color), la [**altitud y pendiente** para el terreno](../plugins/topography.md#default-color-scheme), y todas las paletas de colores de las [**capas meteorológicas**](../plugins/weather.md#weather-layers).
 
 La leyenda se genera automáticamente en función de la paleta seleccionada y muestra los pasos de gradiente con las unidades adecuadas (por ejemplo, km/h para la velocidad, % para la pendiente o metros para la altitud).
 
@@ -211,7 +211,7 @@ La leyenda se genera automáticamente en función de la paleta seleccionada y mu
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Add action → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
 
-![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
+![Esquema de color](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Esquema de color](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
 
 </TabItem>
 
@@ -219,7 +219,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Add action → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
 
-![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
+![Paleta de colores](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Paleta de colores](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
 
 </TabItem>
 
@@ -232,6 +232,6 @@ Al configurar esta acción, puede seleccionar una o varias paletas de colores de
 
 ## Artículos relacionados {#related-articles}
 
-- [Interact with Map](../../user/map/interact-with-map.md)
-- [Global Settings](../../user/personal/global-settings.md)
-- [Vector Maps (Map Styles)](../../user/map/vector-maps.md)
+- [Interactuar con el mapa](../../user/map/interact-with-map.md)
+- [Ajustes globales](../../user/personal/global-settings.md)
+- [Mapas vectoriales (Estilos de mapa)](../../user/map/vector-maps.md)

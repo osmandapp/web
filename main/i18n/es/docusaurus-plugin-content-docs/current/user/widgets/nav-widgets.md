@@ -1,5 +1,5 @@
 ---
-source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
+source-hash: 292d8a0b5fbc689d6e07f6ebd71d0b9a70856fabf41202c365ab38c143096e5d
 sidebar_position: 4
 title:  Widgets de navegación
 ---
@@ -192,6 +192,8 @@ El widget *Información de la ruta* proporciona datos en tiempo real sobre la ru
 
 > NOTA: El widget solo es visible durante la navegación.
 
+En teléfonos Android en orientación horizontal, el widget *<Translate android="true" ids="map_widget_route_information"/>* está oculto de forma predeterminada. En su lugar, el *<Translate android="true" ids="map_widget_right"/>* muestra los widgets [<Translate android="true" ids="map_widget_distance_to_destination"/>](#distance-to-destination), [<Translate android="true" ids="map_widget_time_to_destination"/>](#time-to-destination), [<Translate android="true" ids="map_widget_distance_to_intermediate"/>](#distance-to-intermediate) y [<Translate android="true" ids="map_widget_time_to_intermediate"/>](#time-to-intermediate). Puede mostrar u ocultar cualquiera de estos widgets en [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md).
+
 | | |
 |:------------|:------------|
 | Activar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Añadir widget →<Translate android="true" ids="map_widget_route_information"/>* |
@@ -249,7 +251,7 @@ El widget muestra la *Hora de llegada* o el *Tiempo restante* hasta el primer pu
 | | |
 |:------------|:------------|
 | Activar | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | Al tocar | Cambia entre *Hora de llegada* y *Tiempo restante* y viceversa. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -277,7 +279,7 @@ El widget muestra la *Hora de llegada* o el *Tiempo restante* hasta el último p
 | | |
 |:------------|:------------|
 | Activar |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Elija un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget → <Translate ios="true" ids="map_widget_time_to_destination"/>* |
+|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Elija un panel → Añadir widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
 | Al tocar | Cambia entre *Hora de llegada* y *Tiempo restante* y viceversa. |
 | Pulsación larga | Abre el [menú contextual del widget](../widgets/configure-screen.md#widget-context-menu) |  
 
@@ -397,7 +399,7 @@ El **Widget de alertas** combina varios tipos de alertas que se muestran en la e
 
 - Tiene la capacidad de activar y desactivar alertas como *<Translate android="true" ids="traffic_warning_speed_limit"/>, <Translate android="true" ids="show_traffic_warnings"/>, <Translate android="true" ids="show_pedestrian_warnings"/>, <Translate android="true" ids="show_cameras"/>,* y *<Translate android="true" ids="show_tunnels"/>*. Otras alertas están activas por defecto si el widget está habilitado.  
 
-- Para el tipo de alerta *Límite de velocidad*, puede ajustar el valor de <Translate android="true" ids="speed_limit_exceed"/> en la configuración de indicaciones de voz para que coincida mejor con la velocidad del vehículo y la velocidad del GPS.  
+- Para el tipo de alerta *Límite de velocidad*, puede ajustar el valor de <Translate android="true" ids="speed_limit_exceed"/>](../navigation/guidance/voice-navigation.md#speed-limit) en la configuración de indicaciones de voz para que coincida mejor con la velocidad del vehículo y la velocidad del GPS.  
 
 - La mayoría de las alertas se muestran en la pantalla y se anuncian mediante una indicación de voz durante 15 segundos, así como el tiempo de activación al pasar un punto de ruta, un punto favorito o un PDI. Lea más [aquí](../../technical/algorithms/voice-prompt-triggering.md#trigger-table).
 

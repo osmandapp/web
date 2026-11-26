@@ -1,5 +1,5 @@
 ---
-source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
+source-hash: 3f9fe278a6da459746d62fe7944d19ca8c1cae8acd07c9a389b2e49b40380b9d
 sidebar_position: 3
 sidebar_label: Mapa
 title: Mapa global en el sitio web
@@ -31,9 +31,9 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 ## Resumen {#overview}
 
-El mapa web de OsmAnd es un mapa global basado en datos de [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Permite a los usuarios ver sus propios datos, como tracks y favoritos, crear rutas de navegación para cualquier perfil y acceder a funciones adicionales como el tiempo, tracks GPX públicos, PDI e imágenes de Wikimedia. Explora y personaliza tu experiencia con los datos directamente en tu navegador.
+El mapa web de OsmAnd es un mapa global basado en datos de [OpenStreetMap (OSM)](https://www.openstreetmap.org/). Permite a los usuarios ver sus propios datos, como pistas y favoritos, crear rutas de navegación para cualquier perfil y acceder a funciones adicionales como el tiempo, pistas GPX públicas, PDI e imágenes de Wikimedia. Explora y personaliza tu experiencia con los datos directamente en tu navegador.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![Mapa completo de OsmAnd Web](@site/static/img/web/web_map_all.png)
 
 
 ## Menú contextual del mapa {#map-context-menu}
@@ -89,11 +89,11 @@ Si varios objetos están ubicados en el punto seleccionado, el panel los muestra
 
 ## Menú Configurar mapa {#configure-map-menu}
 
-El menú Configurar mapa te permite gestionar los ajustes de visualización de los datos del mapa, como las capas de PDI, Favoritos, tracks, terreno y tipo de mapa. Este menú está disponible después de que inicies sesión en tu cuenta de OsmAnd. Para abrirlo, haz clic en el botón en la **esquina superior izquierda** o accede a él a través del **Menú**.
+El menú Configurar mapa te permite gestionar los ajustes de visualización de los datos del mapa, como las capas de PDI, Favoritos, pistas, terreno y tipo de mapa. Este menú está disponible después de que inicies sesión en tu cuenta de OsmAnd. Para abrirlo, haz clic en el botón en la **esquina superior izquierda** o accede a él a través del **Menú**.
 
 - [Superposición de PDI...](#poi-overlay). Te permite elegir y mostrar las categorías de PDI necesarias en el mapa.
 - [Favoritos](#favorites). Activa o desactiva la visualización de favoritos en el mapa.
-- [Tracks](#tracks). Contiene los tracks GPX visibles en el mapa.
+- [Pistas](#tracks). Contiene las pistas GPX visibles en el mapa.
 - [Paradas de transporte](#transport-stops). Activa o desactiva la visualización de paradas de transporte público en el mapa. 
 - [Terreno](#terrain). Activa o desactiva el esquema de color del terreno en el mapa.
 - [Raster (tiles) / OsmAnd vector (beta)](#map-type). Muestra el tipo de mapa actualmente en uso y te permite cambiar entre el mapa raster y el vectorial.
@@ -127,32 +127,32 @@ En el panel de detalles de PDI, hay acciones rápidas disponibles desde los boto
 Con un solo clic, puedes activar o desactivar los favoritos en el mapa. Sin embargo, solo se mostrarán los favoritos con la opción [**Mostrar en el mapa activada**](../web/web-favorites.md#manage-favorites).
 
 
-### Tracks {#tracks}
+### Pistas {#tracks}
 
-Esta sección contiene una lista de tus [**tracks GPX visibles en el mapa**](../web/web-tracks.md#visible-on-the-map) y tracks **Visibles recientemente**.
+Esta sección contiene una lista de tus [**pistas GPX visibles en el mapa**](../web/web-tracks.md#visible-on-the-map) y pistas **Visibles recientemente**.
 
-- Puedes activar o desactivar los tracks directamente.  
-- Activa o desactiva los tracks desde la lista de **Visibles recientemente**.  
+- Puedes activar o desactivar las pistas directamente.  
+- Activa o desactiva las pistas desde la lista de **Visibles recientemente**.  
 
-Cada track tiene un menú (⋮) con los siguientes comandos:
+Cada pista tiene un menú (⋮) con los siguientes comandos:
 
-- **Ocultar track**: Oculta el track actualmente visible del mapa.  
-- **Hacer visible el track**: Muestra un track de la lista de Visibles recientemente en el mapa.  
-- **Renombrar**: Te permite renombrar el track para una identificación más fácil.
-- **Duplicar**: Crea una copia del track.
+- **Ocultar ruta**: Oculta la pista actualmente visible del mapa.  
+- **Hacer ruta visible**: Muestra una pista de la lista de Visibles recientemente en el mapa.  
+- **Renombrar**: Te permite renombrar la pista para una identificación más fácil.
+- **Duplicar**: Crea una copia de la pista.
 - **Compartir**: Abre la pantalla de compartición (igual que para [Favoritos](../web/web-favorites.md#share)).
-- **Descargar**: Guarda el track en tu dispositivo local.  
-- **Eliminar**: Elimina el track permanentemente de la lista.
+- **Descargar**: Guarda la pista en tu dispositivo local.  
+- **Eliminar**: Elimina la pista permanentemente de la lista.
 
-Cuando abres un track, se muestra un panel con una barra de acciones superior. La barra muestra el nombre del track y proporciona acceso rápido a acciones. Además de los comandos del menú de tres puntos, la barra superior incluye **Editar**. **Apariencia** actualmente no está activa.
+Cuando abres una pista, se muestra un panel con una barra de acciones superior. La barra muestra el nombre de la pista y proporciona acceso rápido a acciones. Además de los comandos del menú de tres puntos, la barra superior incluye **Editar**. **Apariencia** actualmente no está activa.
 
-El panel del track incluye las siguientes pestañas:
+El panel de la pista incluye las siguientes pestañas:
 
-- Resumen — muestra información general del track.
-- Track — actualmente no implementado.
+- Resumen — muestra información general de la pista.
+- Pista — actualmente no implementado.
 - Puntos — muestra waypoints y puntos de ruta agrupados por tipo.
 
-![Menú Configurar mapa Tracks](@site/static/img/web/configure_map_track_new.png) ![Menú Configurar mapa Tracks](@site/static/img/web/configure_map_track_2_new.png)
+![Menú Configurar mapa Pistas](@site/static/img/web/configure_map_track_new.png) ![Menú Configurar mapa Pistas](@site/static/img/web/configure_map_track_2_new.png)
 
 ### Paradas de transporte {#transport-stops}
 
@@ -268,7 +268,7 @@ In this section of the menu, you can change the map style. You can read more abo
 
 ## Esquemas de URL {#url-schemes}
 
-Para un uso fácil del servicio web de OsmAnd (y la aplicación), puedes aprovechar los enlaces directos. Estas son URL especiales que te permiten transferir datos de ubicación e incluir detalles sobre marcadores, tracks, tiempo y más.
+Para un uso fácil del servicio web de OsmAnd (y la aplicación), puedes aprovechar los enlaces directos. Estas son URL especiales que te permiten transferir datos de ubicación e incluir detalles sobre marcadores, pistas, tiempo y más.
 
 Estas URL se pueden copiar y compartir utilizando cualquier medio compatible con tu dispositivo y son compatibles con las versiones de OsmAnd para Android e iOS.
 
@@ -276,19 +276,21 @@ Estas URL se pueden copiar y compartir utilizando cualquier medio compatible con
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![Crear track en OsmAnd Web](@site/static/img/plan-route/web_url_pin.png)
+  ![Crear ruta en OsmAnd Web](@site/static/img/plan-route/web_url_pin.png)
+
+  El mapa se abre centrado en el pin. El nivel de zoom se toma de la parte de la URL posterior a `#`. Si la URL no tiene esa parte, el mapa se abre con el nivel de zoom 9. Esto también se aplica a los enlaces creados con el botón *Compartir* en el [Menú contextual de PDI](../web/web-search.md#poi-actions).
 
 2. **URL sin un marcador en el mapa:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![Crear track en OsmAnd Web](@site/static/img/plan-route/web_url_without.png)
+  ![Crear ruta en OsmAnd Web](@site/static/img/plan-route/web_url_without.png)
 
 3. **URL con navegación:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![Crear track en OsmAnd Web](@site/static/img/plan-route/web_url_track.png)
+  ![Crear ruta en OsmAnd Web](@site/static/img/plan-route/web_url_track.png)
 
 Dependiendo de los parámetros especificados, las cadenas de URL pueden contener:
 
@@ -307,7 +309,7 @@ Dependiendo de los parámetros especificados, las cadenas de URL pueden contener
 
 6. **Configurar mapa**&nbsp; – &nbsp;`osmand.net/map/configure/`
 
-7. **Tracks**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
+7. **Pistas**&nbsp; – &nbsp;`osmand.net/map/mydata/tracks`
 
 8. **Favoritos**&nbsp; – &nbsp;`osmand.net/map/mydata/favorites`
 
@@ -326,7 +328,7 @@ Dependiendo de los parámetros especificados, las cadenas de URL pueden contener
 
 - [Menú contextual del mapa](../map/map-context-menu.md)
 - [Cuenta de OsmAnd](./web-cloud.md)
-- [Tracks](./web-tracks.md)
+- [Pistas](./web-tracks.md)
 - [Favoritos](./web-favorites.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)
 -->

@@ -1,5 +1,5 @@
 ---
-source-hash: 229c58068a74b06d3fc63b8f92df8a4ca008fa25b9819b9b8d8243b8790942ed
+source-hash: 767578704635d01030c776c1a29804d758e70785b56523fd818befdf7a58df10
 sidebar_position: 5
 ---
 
@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.4 {#ios-54}
+# iOS 5.5 {#ios-55}
 
 ## Unirse a la versión beta {#join-beta}
 
@@ -28,40 +28,30 @@ Las compilaciones beta de iOS (TestFlight) suelen proporcionarse semanalmente (d
 
 ## Novedades {#whats-new}
 
-- Búsqueda actualizada con una nueva pestaña **[Explorar](https://osmand.net/docs/user/map/popular_places#explore-in-search)** que muestra lugares populares cercanos.
-- Nuevo **[complemento Astronomía](https://osmand.net/docs/user/plugins/astronomy)** experimental con una superposición astronómica que muestra las trayectorias del Sol, planetas y estrellas.
-- Se añadió un **[editor de paletas](https://osmand.net/docs/user/map/tracks/appearance#color-palette-editor)** para crear y personalizar esquemas de color para rutas y terreno.
-- Organización más inteligente de pistas con **[carpetas inteligentes](https://osmand.net/docs/user/personal/tracks/smart-folder)** y estadísticas de resumen más claras.
-- Diseño más flexible de **[widgets y botones del mapa](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especialmente en modo horizontal.
-- **[Planificar una ruta](https://osmand.net/docs/user/plan-route/create-route)** mejorado con gráfico de elevación, cálculo de elevación sin conexión y parámetros de ruta.
-- Se añadieron segmentos de subida, bajada y llanos al **[análisis de pista](https://osmand.net/docs/user/map/tracks/track-context-menu#analyze-by-intervals)**.
-
-<!--
-- Modo Última Subida / Última Bajada para **[Widgets de grabación de viaje](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, con cambio entre ascenso/desenso total y último.
-- **[Widget de distancia](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** actualizado con modos para distancia total, última distancia de subida/bajada.
-- **[Widget de velocidad máxima](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** que muestra la velocidad máxima para todo el viaje o para la sección de subida/bajada más reciente.
-- **[Widget de pendiente promedio](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** que muestra la pendiente promedio del último ascenso o descenso.
-- Acción rápida *Mostrar pista en el mapa* agregada al grupo de widgets de grabación de viaje.
-- Mejoras en la selección de rutas e integración del gráfico de altitud bajo el esquema de renderizado actualizado.
-- Widget de gráfico de elevación para navegación, que muestra un perfil compacto a lo largo de rutas o pistas GPX.
-- Capa **[Lugares populares](https://osmand.net/docs/user/map/popular_places/)** actualizada con selección de fuente de POI e vistas previas de imágenes opcionales en el mapa.
-- Nueva sección Explorar en Búsqueda con “Lugares populares cercanos” y estados mejorados sin conexión/sin datos.
-- Resultados de búsqueda de POI mejorados con visualización consistente de ciudades, diseño refinado y miniaturas opcionales.
-- Configuraciones de apariencia predeterminadas para carpetas de pistas, permitiendo que las nuevas pistas hereden un estilo de carpeta unificado.
--->
+- **[CarPlay](https://osmand.net/docs/user/navigation/car-play)** es gratuito para todos los usuarios y obtiene nuevos [ajustes](https://osmand.net/docs/user/navigation/car-play#settings) de orientación del mapa y frecuencia de fotogramas, con Inicio disponible con un toque desde el menú Navegación.
+- La **[versión gratuita](https://osmand.net/docs/user/purchases/ios#free-and-paid-features)** incluye todos los mapas de una región.
+- Nuevos **[formatos de coordenadas](https://osmand.net/docs/user/search/search-coordinates#customize-coordinate-format)**, incluidos los sistemas EPSG, el localizador Maidenhead y la cuadrícula suiza, con un formato principal y una lista de formatos preferidos.
+- **[Diseños de widgets](https://osmand.net/docs/user/widgets/configure-screen#single-and-separate-layouts)** separados para vertical y horizontal, además de paneles superior e inferior **[anchos o compactos](https://osmand.net/docs/user/widgets/configure-screen#panels-layout)**.
+- **[Apariencia del panel de widgets](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance)** personalizable con tamaño de widgets, iconos y colores de texto y de fondo.
+- Nuevo ajuste **[Mantener la pantalla encendida](https://osmand.net/docs/user/personal/profiles#appearance)** para cada perfil: seguir el tiempo de espera del sistema, mantener la pantalla encendida solo durante la navegación o mantenerla siempre encendida.
+- Las etiquetas de las **[curvas de nivel](https://osmand.net/docs/user/plugins/topography#contour-lines)** pueden orientarse cuesta arriba, como en los mapas topográficos en papel.
+- Ajustes de apariencia completos al **[modificar varios Favoritos](https://osmand.net/docs/user/personal/favorites#bulk-edit--delete)** a la vez.
+- Los **[destinos intermedios](https://osmand.net/docs/user/navigation/setup/route-details#turn-by-turn-information)** aparecen en los detalles de la ruta con su número, nombre, y la distancia y el tiempo desde el inicio.
 
 
 ## Corrección de errores {#bug-fixes}
 
-- Se corrigió que las [carpetas inteligentes](https://github.com/osmandapp/OsmAnd-iOS/issues/5358) no se sincronizaran con OsmAnd Cloud ni aparecieran en la exportación de Ajustes.
-- Se actualizó el [menú contextual de Wikipedia](https://github.com/osmandapp/OsmAnd-Issues/issues/3215) con un nuevo diseño y se añadieron fotos en línea.
-- Se corrigió la ausencia de [nombres de POI](https://github.com/osmandapp/OsmAnd-iOS/issues/5253) en el menú “¿Qué hay aquí?”.
-- Se corrigió la apertura de [guías de viaje](https://github.com/osmandapp/OsmAnd-Issues/issues/3212) desde los resultados de búsqueda para mostrar directamente el artículo.
-- Se ajustó la posición de la sección [Fotos en línea](https://github.com/osmandapp/OsmAnd-iOS/issues/5336) en el menú contextual de la región.
+- Se corrigió un [problema](https://github.com/osmandapp/OsmAnd-iOS/issues/5696) por el que al vaciar la papelera de OsmAnd Cloud se restauraban mapas y Favoritos eliminados.
+- Se corrigió que la [elevación cayera a 0](https://github.com/osmandapp/OsmAnd-iOS/issues/5526) en pistas grabadas en segundo plano.
+- Se resolvieron los [conflictos de sincronización de OsmAnd Cloud](https://github.com/osmandapp/OsmAnd-iOS/issues/5463) tras actualizar mapas en varios dispositivos.
+- Se impidió que [Favoritos de carpetas ocultas](https://github.com/osmandapp/OsmAnd-iOS/issues/5558) aparecieran en los resultados de búsqueda.
+- Se corrigió que [Planificar una ruta se cerrara](https://github.com/osmandapp/OsmAnd-iOS/issues/5947) al tocar una pista en el mapa.
+- Se corrigió el [tiempo de viaje a pie](https://github.com/osmandapp/OsmAnd-iOS/issues/5787) mostrado para rutas en coche tras Adjuntar a carreteras.
+- Se corrigió que los [waypoints añadidos a la pista en grabación](https://github.com/osmandapp/OsmAnd-iOS/issues/5893) no respondieran a los toques.
+- Se evitó que el [icono de waypoint parpadeara](https://github.com/osmandapp/OsmAnd-iOS/issues/2764) durante la grabación de pistas.
 
 <!--
-- Apertura más rápida de menús contextuales al tocar POIs, Favoritos, pistas y edificios.
-- Manejo correcto de POIs basados en relaciones en multipoligonos.
-- Corregido el “null” que aparecía en lugar de un nombre de ciudad en los resultados de búsqueda de POI y mejorada la consistencia del fondo en modo nocturno.
-- Restaurado el comportamiento táctil para rutas de fitness, correr y canoa con escudos.
+- Fixed map updates for mappers with Devanagari and Eastern Arabic numerals.
+- Fixed the map zooming out when you add a Quick Action while moving.
+- Fixed KML import creating an empty track.
 -->
