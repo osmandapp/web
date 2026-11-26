@@ -12,7 +12,7 @@ import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import i18n from '../i18n';
-import TracksManager from './track/TracksManager';
+import TracksManager, { GPX_FILE_EXT } from './track/TracksManager';
 import { getServerErrorMessage, refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
@@ -34,6 +34,14 @@ export const HIDDEN_FALSE = 'false';
 
 export function normalizeFavoritePointsGroupName(groupName) {
     return groupName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : groupName;
+}
+
+export function getFavPointsGroupName(group) {
+    if (!group?.file) {
+        return normalizeFavoritePointsGroupName(group?.name);
+    }
+
+    return group.file.name === DEFAULT_FAV_GROUP_NAME + GPX_FILE_EXT ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name;
 }
 
 const colors = [
@@ -155,7 +163,7 @@ async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGrou
 }
 
 export async function updateAllFavorites(group, data, hiddenChanged) {
-    const groupName = normalizeFavoritePointsGroupName(group.name);
+    const groupName = getFavPointsGroupName(group);
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
         params: {
             fileName: group.file.name,
@@ -267,8 +275,8 @@ function createGroup(file) {
     };
 }
 
-function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
-    groupName = normalizeFavoritePointsGroupName(groupName);
+function addHidden({ pointsGroups, favArr, mapId, menuId }) {
+    const groupName = getFavPointsGroupName(favArr.groups[menuId]);
     let hidden = false;
     if (pointsGroups?.[groupName]) {
         if (pointsGroups[groupName].hidden !== undefined) {
@@ -321,14 +329,14 @@ export async function updateFavGroupPinned({ group, updatedPointsGroups, groupNa
     });
 }
 
-function addPinned({ pointsGroups, groupName, favArr, menuId }) {
-    const normalizedGroupName = normalizeFavoritePointsGroupName(groupName);
-    const groupEntry = pointsGroups?.[normalizedGroupName];
+function addPinned({ pointsGroups, favArr, menuId }) {
+    const groupName = getFavPointsGroupName(favArr.groups[menuId]);
+    const groupEntry = pointsGroups?.[groupName];
     if (!groupEntry) {
         return favArr;
     }
 
-    if (normalizedGroupName === PERSONAL_FAV_GROUP_NAME && groupEntry.pinned === undefined) {
+    if (groupName === PERSONAL_FAV_GROUP_NAME && groupEntry.pinned === undefined) {
         favArr.groups[menuId].pinned = true;
         return favArr;
     }
@@ -446,7 +454,7 @@ function createDefaultWptGroup(wptGroup) {
 }
 
 function getGroupSize(group) {
-    const name = normalizeFavoritePointsGroupName(group.name);
+    const name = getFavPointsGroupName(group);
     const pointsGroup = group?.pointsGroups?.[name];
     if (pointsGroup?.groupSize) {
         return Number(pointsGroup.groupSize);
@@ -561,7 +569,6 @@ function addExistFavGroup(obj, g, favGroups) {
 
     favGroups = addHidden({
         pointsGroups: obj.pointsGroups,
-        groupName: g.name,
         favArr: favGroups,
         mapId: g.id,
         menuId: ind,
@@ -569,7 +576,6 @@ function addExistFavGroup(obj, g, favGroups) {
 
     favGroups = addPinned({
         pointsGroups: obj.pointsGroups,
-        groupName: g.name,
         favArr: favGroups,
         menuId: ind,
     });
@@ -620,7 +626,6 @@ async function createFavGroupObj(g, favGroups) {
             favGroups.groups[ind].name = groupName;
             favGroups = addHidden({
                 pointsGroups,
-                groupName,
                 favArr: favGroups,
                 mapId: g.id,
                 menuId: ind,
@@ -628,7 +633,6 @@ async function createFavGroupObj(g, favGroups) {
 
             favGroups = addPinned({
                 pointsGroups,
-                groupName,
                 favArr: favGroups,
                 menuId: ind,
             });

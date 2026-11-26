@@ -1,4 +1,4 @@
-import FavoritesManager, { normalizeFavoritePointsGroupName } from '../../../manager/FavoritesManager';
+import FavoritesManager, { getFavPointsGroupName } from '../../../manager/FavoritesManager';
 import { hexToRgba } from '../../../util/ColorUtil';
 import { collator } from '../../../context/AppContext';
 
@@ -15,7 +15,7 @@ export function buildGroupTree(groups, t) {
 
     // first pass — create entries for all real groups
     for (const group of sorted) {
-        const pgName = normalizeFavoritePointsGroupName(group.name);
+        const pgName = getFavPointsGroupName(group);
         const pg = group.pointsGroups?.[pgName];
         const isDefault = group.name === FavoritesManager.DEFAULT_GROUP_NAME;
         const parts = group.name.split('/');

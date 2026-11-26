@@ -14,9 +14,9 @@ import IconSelectionPanel from './structure/IconSelectionPanel';
 import ColorSelectionPanel from './structure/ColorSelectionPanel';
 import WptIconPreview, { getShapeSvg } from './structure/WptIconPreview';
 import FavoritesManager, {
-    DEFAULT_FAV_GROUP_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
     findSelectedWpt,
+    getFavPointsGroupName,
     openFavoriteObj,
     updateFavoriteGroups,
 } from '../../../manager/FavoritesManager';
@@ -530,8 +530,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 ? ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME)
                 : favoriteGroup;
         if (!selectedGroup) return false;
-        const groupName =
-            selectedGroup.name === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : selectedGroup.name;
+        const groupName = getFavPointsGroupName(selectedGroup);
         const points = selectedGroup.pointsGroups?.[groupName]?.points || [];
 
         return points.some(
