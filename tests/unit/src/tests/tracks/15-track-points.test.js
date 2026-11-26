@@ -29,7 +29,15 @@ import {
     createPointsGroups,
     WPT_GROUP,
 } from '../../util/fixtures/tracks';
-import { createDragEvent, createDrawnCtx, dragPoint, map, renderCtx, routeCached } from '../../util/editor';
+import {
+    createDragEvent,
+    createDrawnCtx,
+    dragPoint,
+    isAnalysisAsked,
+    map,
+    renderCtx,
+    routeCached,
+} from '../../util/editor';
 import { mountRoot } from '../../util/reactRoot';
 
 const GAP = TracksManager.PROFILE_GAP;
@@ -738,13 +746,14 @@ describe('drag a point', () => {
 
     test('a plain point is moved in its line, its elevation is dropped and the analysis is asked again', () => {
         const ctx = createDrawnCtx(createPlainPoints(3).map((point) => ({ ...point, ele: 100 })));
+        ctx.selectedGpxFile.analysisPoints = ctx.selectedGpxFile.points;
         const [line] = drawnLines(ctx);
 
         dragPoint(ctx, 1, 50.015);
 
         expect(lats(line.getLatLngs())).toEqual([50, 50.015, 50.02]);
         expect(ctx.selectedGpxFile.points[1].ele).toBeUndefined();
-        expect(ctx.selectedGpxFile.refreshAnalytics).toBe(true);
+        expect(isAnalysisAsked(ctx)).toBe(true);
         expect(ctx.routingCache).toEqual({});
     });
 
@@ -882,13 +891,14 @@ describe('insert a point from the line', () => {
 
     test('a point dropped on a plain line goes into the line and into the points at its place', async () => {
         const ctx = createDrawnCtx(createPlainPoints(4));
+        ctx.selectedGpxFile.analysisPoints = ctx.selectedGpxFile.points;
         const [line] = drawnLines(ctx);
 
         await insertPoint(ctx, line, 50.015);
 
         expect(lats(ctx.selectedGpxFile.points)).toEqual([50, 50.01, 50.015, 50.02, 50.03]);
         expect(lats(line.getLatLngs())).toEqual([50, 50.01, 50.015, 50.02, 50.03]);
-        expect(ctx.selectedGpxFile.refreshAnalytics).toBe(true);
+        expect(isAnalysisAsked(ctx)).toBe(true);
     });
 
     test('a point dropped on the second segment of a plain track goes into that line at its place', async () => {

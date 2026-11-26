@@ -2,6 +2,7 @@ import TracksRoutingCache, {
     debouncer,
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
+    effectRequestAnalysis,
     GET_ANALYSIS_DEBOUNCE_MS,
     routeWaitingSegments,
     syncTrackWithCache,
@@ -159,9 +160,7 @@ test('a routed segment goes into the track once, the segments that are gone leav
     const [abEntry, gapEntry, cdEntry, oldEntry] = entries(ctx);
     abEntry.geometry = gapEntry.geometry = oldEntry.geometry = ['routed'];
 
-    expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer: { current: null } })).toBe(
-        true
-    );
+    expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges })).toBe(true);
 
     const [[, , , routed]] = saveChanges.mock.calls;
     expect(routed.points[1].geometry).toEqual(['routed']);
@@ -175,9 +174,7 @@ test('a routed segment goes into the track once, the segments that are gone leav
     expect(entries(ctx)).toEqual([abEntry, gapEntry, cdEntry]);
 
     // a second pass finds nothing new
-    expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges, debouncerTimer: { current: null } })).toBe(
-        false
-    );
+    expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges })).toBe(false);
     expect(saveChanges).toHaveBeenCalledTimes(1);
 });
 
@@ -192,7 +189,9 @@ test('the analysis is asked when the last waiting segment is routed, not while o
     const debouncerTimer = { current: null };
     const analyses = () => apiPost.mock.calls.filter(([url]) => url.endsWith(`/gpx/${TracksManager.GET_ANALYSIS}`));
     const refresh = () => {
-        effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn(), debouncerTimer });
+        const saveChanges = (points, wpts, layers, track) => ctx.setSelectedGpxFile(track);
+        effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges });
+        effectRequestAnalysis({ ctx, track: ctx.selectedGpxFile, debouncerTimer });
         jest.advanceTimersByTime(GET_ANALYSIS_DEBOUNCE_MS);
     };
 
@@ -220,7 +219,6 @@ test('a cached route put back into a point gets the gap mark of that point', () 
         ctx,
         track: ctx.selectedGpxFile,
         geoRouter,
-        debouncerTimer: { current: null },
     });
     expect(points[1].geometry.at(-1).profile).toBe(GAP);
     expect(points[3].geometry.at(-1).profile).toBeUndefined();
@@ -254,7 +252,6 @@ test('a router answer for the place a point was dragged away from is not put on 
                 ctx,
                 geoRouter,
                 saveChanges: (points, wpts, layers, track) => (routed = track),
-                debouncerTimer: { current: null },
             });
         }
 
@@ -269,7 +266,7 @@ test.failing('the dashed line of a pair that starts at a gap is removed, not lef
     TracksRoutingCache.addRoutingToCache(gap, c, gapC, ctx);
     entries(ctx)[0].geometry = ['routed'];
 
-    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn(), debouncerTimer: { current: null } });
+    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn() });
 
     expect(gapC.removeFrom).toHaveBeenCalledWith(ctx.selectedGpxFile.layers);
 });
@@ -311,7 +308,6 @@ test('undo restores the geometry of every segment from the cache and drops the u
         ctx,
         track: ctx.selectedGpxFile,
         geoRouter,
-        debouncerTimer: { current: null },
     });
     expect(points[1].geometry).toEqual(['routed']);
     expect(points[3].geometry).toBeUndefined();
@@ -330,14 +326,13 @@ test('a segment still waiting for the router when it was undone is routed after 
     const dragged = { ...b, lat: 50.02, geometry: [] };
     const ctx = createCtx([a, dragged]);
     TracksRoutingCache.addRoutingToCache(a, dragged, line(), ctx);
-    const sync = (points) =>
-        syncTrackWithCache({ ctx, track: { points }, geoRouter, debouncerTimer: { current: null } });
+    const sync = (points) => syncTrackWithCache({ ctx, track: { points }, geoRouter });
 
     sync([a, b]);
     sync([a, dragged]);
     // the redraw after the redo draws a dashed line to the waiting point
     ctx.selectedGpxFile.layers = { getLayers: () => [{ point: dragged }] };
-    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn(), debouncerTimer: { current: null } });
+    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn() });
     effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
     jest.useRealTimers();
 

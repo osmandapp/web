@@ -1146,7 +1146,7 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
         if (isEmpty(postData.tracks)) {
             if (cloneFile.points) {
                 cloneFile.analysisTracks = [];
-                cloneFile.analysisPoints = cloneFile.points;
+                cloneFile.analysisPoints = ctx.selectedGpxFile.points;
             }
             return cloneFile; // no tracks = nothing to analyze
         }
@@ -1176,6 +1176,9 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
         if (resp?.data) {
             // data will be mutated, use cloneDeep to avoid apiCache mutations
             const data = FavoritesManager.prepareTrackData(cloneDeep(resp.data));
+            if (!data?.data) {
+                return ctx.selectedGpxFile;
+            }
 
             const newGpxFile = { ...ctx.selectedGpxFile }; // don't modify state
 
@@ -1198,7 +1201,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
                 newGpxFile.tracks = tracks;
             }
 
-            newGpxFile.update = true;
             newGpxFile.wpts = wpts;
             newGpxFile.pointsGroups = pointsGroups;
 
