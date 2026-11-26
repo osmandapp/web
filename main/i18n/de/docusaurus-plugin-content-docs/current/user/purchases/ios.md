@@ -1,5 +1,5 @@
 ---
-source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
+source-hash: fd62270946384571ddb0174dfd6f8910f5b39a06592a0da455d7339a651cd91e
 sidebar_position: 2
 title:  iOS-Käufe
 ---
@@ -98,7 +98,6 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [Karten-Downloads](../start-with/download-maps.md) |  <details><summary>**5 Karten-Downloads** <br /> (Kartenaktualisierung zählt als Download):</summary> <br /> - Karten-Download oder -Update bedeutet nur das Herunterladen/Aktualisieren einer Länder- (Regionen-) Karte.<br /> - **Weltübersichtskarte**, **Welt-Höhenkorrektur**, **Kartenschriftarten** und **Sprachansagen** werden nicht als 5 Download-Möglichkeiten gezählt.</details> | ✔ | ✔ |
 | [Monatliche Kartenupdates](../personal/maps-resources.md#updates-menu) |  <details><summary>**Einmal im Monat** <br /> (mit 2 Tagen Verzögerung):</summary> * beschränkt auf 5 Downloads (Kartenaktualisierung zählt als Download) </details> |  ✔ | ✔ |
 | [Stündliche Kartenupdates](../personal/maps-resources.md#live-updates)<br/>Live-Updates (1 Stunde Verzögerung) - [**](#-map-updates) | **-** | **-**| ✔ |
-| [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-Relief](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografiedaten](../plugins/topography.md#overview)<br/>(Höhenlinien und Gelände) | **-** | ✔ | ✔ |
 | [Koordinatenraster – Farbanpassung](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -110,7 +109,9 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [Astronomie-Plugin](../plugins/astronomy.md) — [Beobachtungsplanung](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Astronomie-Plugin](../plugins/astronomy.md) — [Interaktiver AR-Modus](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Astronomie-Plugin](../plugins/astronomy.md) — [Offline-Himmelskarte](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Benutzerdefinierte Widget-Hintergrundfarbe](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Offline- und Online-Navigation](../navigation/index.md)<br/>mit Abbiegehinweisen | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/car-play.md) | ✔ | ✔ | ✔ |
 | [Offline-Sofortsuche](../search/index.md) | ✔ | ✔ | ✔ |
 | [Routenaufzeichnung](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [GPX-Tracks exportieren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
@@ -122,7 +123,7 @@ In der Liste finden Sie Informationen zu den Preisen des OsmAnd-Produkts für di
 | [SQLitedb/mbtiles Kartenunterstützung](../map/raster-maps.md#manage-map-data) | ✔ | ✔ | ✔ |
 | [Favoritenpunkte](../map/point-layers-on-map.md)<br/>Lesezeichen und Wegpunkte | ✔ | ✔ | ✔ |
 | [Audio-/Bild-/Videopunkte](../plugins/audio-video-notes.md) | ✔ | ✔ | ✔ |
-| [OsmAnd Online GPS Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
+| [OsmAnd Online GPS-Tracker](../plugins/osmand-tracker.md) | ✔ | ✔ | ✔ |
 | [App-Profil exportieren/importieren](../personal/profiles.md#actions) | ✔ | ✔ | ✔ |
 
 #### ** Kartenupdates {#-map-updates}
@@ -163,7 +164,7 @@ or
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Weiter mit OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/pro_new.png)
+![Pro-Plan](@site/static/img/purchases/pro_new.png)
 
 ### Maps+ Kauf {#maps-purchase}
 
@@ -171,7 +172,7 @@ or
 
 *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tippen Sie auf die Liste der Maps+-Funktionen → Weiter mit Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_new.png)
+![Maps+-Plan](@site/static/img/purchases/maps_new.png)
 
 
 ## Alte Abonnements (vor 4.0) {#legacy-subscriptions-prior-40}
@@ -190,7 +191,7 @@ Verwenden Sie dieselbe Apple-ID, um Ihre Käufe wiederherzustellen.
 - Öffnen Sie OsmAnd Maps mit einer aktiven Internetverbindung.
 - Um Käufe wiederherzustellen, folgen Sie diesen Schritten: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* und oben auf dem Bildschirm sollte erscheinen, dass Maps+(Pro, Live) aktiviert ist.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases_ios.png)
+![Pro-Plan](@site/static/img/purchases/maps_purchases_ios.png)
 
 **Wenn keine der Methoden funktioniert hat:**
 

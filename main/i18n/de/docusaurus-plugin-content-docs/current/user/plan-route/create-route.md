@@ -1,5 +1,5 @@
 ---
-source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
+source-hash: 2a64e0aeff55cd96db9ba2213903853f49b98bb5accbd0b25bd10e61fe1c29aa
 sidebar_position: 1
 title:  Eine Route planen
 ---
@@ -17,21 +17,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-Das Werkzeug **Eine Route planen** (*Menü → Eine Route planen*) ist eine leistungsstarke Funktion der OsmAnd-Anwendung, mit der Sie [neue Routen erstellen](#create-new-route) als GPX-Tracks, bereits gespeicherte Tracks [bearbeiten und neue Segmente hinzufügen](#segments), [Entfernungen auf der Karte messen](#distance-measurement) und Track-[Segmente an die nächstgelegene verfügbare Straße anheften](#attach-track-to-roads) können, indem Sie verschiedene Navigationsprofile verwenden. Die Funktion ist für den *Offline-Modus* konzipiert.
-
-Eine Route besteht aus einer Reihe von Segmenten zwischen bestimmten Punkten. Die Segmente können gerade Linien oder an das ausgewählte Profil angepasste Routen sein. Die Route kann als GPX-Datei gespeichert werden, um sie später zu importieren, zu bearbeiten und zur [Navigation](../navigation/setup/gpx-navigation.md) zu verwenden.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_overview_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_overview_andr.png)
+
+Das Werkzeug **Eine Route planen** (*Menü → Eine Route planen*) ist eine leistungsstarke Funktion der OsmAnd-Anwendung, mit der Sie [neue Routen erstellen](#create-new-route) als GPX-Tracks, bereits gespeicherte Tracks [bearbeiten und neue Segmente hinzufügen](#segments), [Entfernungen auf der Karte messen](#distance-measurement) und Track-[Segmente an die nächstgelegene verfügbare Straße anheften](#attach-track-to-roads) können, indem Sie verschiedene Navigationsprofile verwenden. Die Funktion ist für den *Offline-Modus* konzipiert.
+
+Eine Route besteht aus einer Reihe von Segmenten zwischen bestimmten Punkten. Die Segmente können gerade Linien oder an das ausgewählte Profil angepasste Routen sein. Die Route kann als GPX-Datei gespeichert werden, um sie später zu importieren, zu bearbeiten und zur [Navigation](../navigation/setup/gpx-navigation.md) zu verwenden.
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
+![Route planen iOS](@site/static/img/plan-route/plan_route_overview_ios.webp)
+
+Das Werkzeug **Eine Route planen** (*Menü → Eine Route planen*) ist eine leistungsstarke Funktion der OsmAnd-Anwendung, mit der Sie [neue Routen erstellen](#create-new-route) als GPX-Tracks, bereits gespeicherte Tracks [bearbeiten und neue Segmente hinzufügen](#segments), [Entfernungen auf der Karte messen](#distance-measurement) und Track-[Segmente an die nächstgelegene verfügbare Straße anheften](#attach-track-to-roads) können, indem Sie verschiedene Navigationsprofile verwenden. Die Funktion ist für den *Offline-Modus* konzipiert.
+
+Eine Route besteht aus einer Reihe von Segmenten zwischen bestimmten Punkten. Die Segmente können gerade Linien oder an das ausgewählte Profil angepasste Routen sein. Die Route kann als GPX-Datei gespeichert werden, um sie später zu importieren, zu bearbeiten und zur [Navigation](../navigation/setup/gpx-navigation.md) zu verwenden.
+
+**Hinweis:** Auf dem iPad und Mac sowie auf dem iPhone im Querformat öffnet sich das Panel *Eine Route planen* auf der linken Bildschirmseite in voller Höhe, und die Schaltflächen *+ POI*, *Rückgängig*, *Wiederholen* und *Route +* befinden sich auf der Karte. Auf dem iPhone im Hochformat und in schmalen iPad-Fenstern, etwa in Split View oder Slide Over, öffnet sich das Panel am unteren Bildschirmrand.
 
 </TabItem>
 
@@ -46,7 +52,7 @@ Eine Route besteht aus einer Reihe von Segmenten zwischen bestimmten Punkten. Di
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>*  
 
-![Plan a route android](@site/static/img/plan-route/plan-route-menu-andr.png)
+![Route planen Android](@site/static/img/plan-route/plan-route-menu-andr.png)
 
 </TabItem>
 
@@ -54,7 +60,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plan_a_route"/>
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,plan_route"/>*  
 
-![Plan a route ios](@site/static/img/plan-route/plan-route-menu-ios.png)
+![Route planen iOS](@site/static/img/plan-route/plan-route-menu-ios.png)
 
 </TabItem>
 
@@ -97,13 +103,13 @@ Das Werkzeug *Eine Route planen* ermöglicht die Änderung eines bestehenden GPX
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_lines_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_lines_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
+![Route planen iOS](@site/static/img/plan-route/plan_route_lines_ios.webp)
 
 </TabItem>
 
@@ -126,13 +132,13 @@ Die *Gerade Linie* wird für Gebiete benötigt und verwendet, die nicht von Rout
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_graph_4_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
+![Route planen iOS](@site/static/img/plan-route/plan_route_graph_ios.webp)
 
 </TabItem>
 
@@ -157,13 +163,13 @@ Verwenden Sie stattdessen Offline-Optionen: An Straßen anheften oder Geländeka
 
 <TabItem value="android" label="Android">
 
-![Plan a route snap-road-andr](@site/static/img/plan-route/plan_route-snap_andr.png)
+![Route planen An Straße anheften Android](@site/static/img/plan-route/plan_route-snap_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
+![Route planen An Straße anheften iOS](@site/static/img/plan-route/plan_route-snap_ios.webp) ![Route planen An Straße anheften iOS](@site/static/img/plan-route/plan_route-snap_ios_2.webp)
 
 </TabItem>
 
@@ -195,7 +201,7 @@ Wenn Sie einen Track auswählen und das ***unspezifizierte*** Profilsymbol ("?")
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Plan a route Favorites android](@site/static/img/plan-route/plan_route_favorites_and.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_points_list_andr.png) ![Route planen Favoriten Android](@site/static/img/plan-route/plan_route_favorites_and.png)
 
 Um eine Entfernung zu messen oder eine Reise zu planen, fügen Sie nacheinander Punkte an der *Zeiger*-Position hinzu und tippen Sie auf die Schaltfläche *Hinzufügen*. Über die **Punkteliste** unten können Sie Punkte neu anordnen, löschen oder auf ein spezifisches [Punkt-Kontextmenü](#point-context-menu) zugreifen.
 
@@ -205,9 +211,9 @@ Sie können auch direkt von der Karte einen Zwischenpunkt hinzufügen, indem Sie
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
+![Route planen iOS](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-Um eine Entfernung zu messen oder eine Reise zu planen, fügen Sie nacheinander Punkte an der *Zeiger*-Position hinzu und tippen Sie auf die Schaltfläche *Route +*. Über die **Punkteliste** unten können Sie Punkte neu anordnen, löschen oder auf ein spezifisches [Punkt-Kontextmenü](#point-context-menu) zugreifen.
+Um eine Entfernung zu messen oder eine Reise zu planen, fügen Sie nacheinander Punkte an der *Zeiger*-Position hinzu und tippen Sie auf die Schaltfläche *Route +*. Über die **Punkteliste** im Panel *Eine Route planen* können Sie Punkte neu anordnen, löschen oder auf ein spezifisches [Punkt-Kontextmenü](#point-context-menu) zugreifen. Ein Punkt kann nur innerhalb seines [Abschnitts](#multimodal-routes) verschoben werden, das heißt unter den Punkten, die mit demselben Routentyp erreicht werden.
 
 </TabItem>
 
@@ -219,7 +225,7 @@ Sie können auch jede Aktion, die Sie bei der Routenplanung durchgeführt haben,
 
 ### Wegpunkte hinzufügen (nur iOS) {#adding-waypoints}
 
-![Plan a route ios](@site/static/img/plan-route/adding_poi_ios.webp) ![Plan a route ios](@site/static/img/plan-route/adding_poi_2_ios.webp)
+![Route planen iOS](@site/static/img/plan-route/adding_poi_ios.webp) ![Route planen iOS](@site/static/img/plan-route/adding_poi_2_ios.webp)
 
 Der POI-Tab ermöglicht das Hinzufügen und Verwalten von Wegpunkten während der Routenplanung.
 
@@ -243,7 +249,7 @@ Tippen Sie auf einen Punkt in einer Gruppe, um sein Kontextmenü zu öffnen. Sie
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Plan a route android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_between_points_andr.png) ![Route planen Android](@site/static/img/plan-route/plan_route_change-route-type_andr.png)
 
 Hinzugefügte Punkte im Editor können als gerade Linie oder als Route zwischen Punkten eines ausgewählten Profils verbunden werden. Auf *Route zwischen Punkten* kann auf verschiedene Weisen zugegriffen werden:
 
@@ -262,7 +268,7 @@ Sie können die Route zwischen 2 bestimmten Punkten oder zwischen mehreren Punkt
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Plan a route ios](@site/static/img/plan-route/route_between_points_complex_ios.webp)
+![Route planen iOS](@site/static/img/plan-route/route_between_points_ios_1.webp) ![Route planen iOS](@site/static/img/plan-route/route_between_points_complex_ios.webp)
 
 Hinzugefügte Punkte können mit einer geraden Linie oder einer Route verbunden werden, die mit einem ausgewählten Routing-Profil berechnet wird. Das Menü *Route zwischen Punkten* ermöglicht es Ihnen, den Routing-Typ und die Einstellungen für Routensegmente und Abschnitte anzuzeigen und zu ändern.
 
@@ -299,7 +305,7 @@ Ein Track-Segment ist eine Sammlung von Punkten, die ohne **Lücken** verbunden 
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/segment_menu_1.webp) ![Plan a route ios](@site/static/img/plan-route/section_menu.webp)
+![Route planen iOS](@site/static/img/plan-route/segment_menu_1.webp) ![Route planen iOS](@site/static/img/plan-route/section_menu.webp)
 
 Eine Route kann ein oder mehrere Segmente enthalten. Ein Segment kann einen einzelnen Routentyp verwenden oder mehrere Abschnitte mit unterschiedlichen Routentypen enthalten.
 
@@ -308,11 +314,11 @@ Im Tab *Route* wird jedes Segment mit seinem Routentyp und seiner Entfernung ang
 Sie können ein Segment über sein Drei-Punkte-Menü verwalten:
 - **Routentyp ändern** — verfügbar für ein Segment mit einem einzelnen Routentyp. Öffnet *Route zwischen Punkten*, wo Sie einen anderen Routentyp auswählen können.
 - **Einzelnen Routentyp festlegen** — verfügbar, wenn ein Segment mehrere Abschnitte mit unterschiedlichen Routentypen enthält. Öffnet *Route zwischen Punkten*, wo Sie einen Routentyp auf das Segment anwenden können. Das gesamte Segment wird mit dem ausgewählten Routing-Typ neu berechnet.
-- **Sortieren** — ordnen Sie Routenpunkte manuell neu oder verwenden Sie *Sortieren Tür-zu-Tür*, um sie so neu anzuordnen, dass die Gesamtentfernung minimiert wird.
+- **Sortieren** — ordnen Sie Routenpunkte manuell neu oder verwenden Sie *Sortieren Tür-zu-Tür*, um sie so neu anzuordnen, dass die Gesamtentfernung minimiert wird. In einem Segment mit mehreren Abschnitten werden die Punkte innerhalb jedes Abschnitts sortiert.
 - **Speichern unter…** — speichern Sie das Segment als separate Datei.
 - **Segment löschen** — löschen Sie das Segment.
 
-Um ein neues unverbundenes Segment zu erstellen, tippen Sie unten im Tab *Route* auf *Neues Segment starten*. Um das aktuelle Segment mit einem anderen Routing-Typ fortzusetzen, tippen Sie unter dem letzten Segment auf *Mit anderem Typ fortsetzen* und wählen Sie dann einen Routing-Typ für den nächsten Abschnitt aus.
+Um ein neues unverbundenes Segment zu erstellen, tippen Sie unten im Tab *Route* auf *Neues Segment starten*. Um das aktuelle Segment mit einem anderen Routing-Typ fortzusetzen, tippen Sie unter dem letzten Segment auf *Mit anderem Typ fortsetzen* und wählen Sie dann einen Routing-Typ für den nächsten Abschnitt aus. Der ausgewählte Typ wird in dieser Zeile als *Weiter: …* angezeigt, und der neue Abschnitt beginnt mit dem nächsten Punkt, den Sie hinzufügen.
 
 Ein Segment kann in [Abschnitte](#multimodal-routes) unterteilt werden, wenn für verschiedene Teile des Segments unterschiedliche Routentypen verwendet werden. Jeder Abschnitt zeigt seinen Routentyp und seine Entfernung an.
 
@@ -332,13 +338,13 @@ Tippen Sie auf das Drei-Punkte-Menü eines Abschnitts, um:
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_points_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
+![Route planen iOS](@site/static/img/plan-route/plan_route_points_menu_ios.webp)
 
 </TabItem>
 
@@ -376,13 +382,13 @@ Jeder Punkt auf Ihrer Route hat sein eigenes Kontextmenü. Es zeigt die *Sequenz
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-routeline](@site/static/img/plan-route/plan-route-routeline-android.png)
+![Route planen Routenlinie Android](@site/static/img/plan-route/plan-route-routeline-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-screen](@site/static/img/plan-route/plan-route-routeline-ios.webp)
+![Route planen Bildschirm iOS](@site/static/img/plan-route/plan-route-routeline-ios.webp)
 
 </TabItem>
 
@@ -399,7 +405,7 @@ Mit dem Werkzeug *Eine Route planen* und der Option [Route zwischen Punkten](#ro
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_save_changes_andr.png)
 
 Nachdem Sie [mindestens einen Punkt](#adding-points) zur Karte hinzugefügt haben, können Sie die Speicheroption verwenden. Alle in *Eine Route planen* gespeicherten Tracks finden Sie im Hauptmenü *<Translate android="true" ids="shared_string_menu"/> → <Translate android="true" ids="shared_string_my_places"/> →* *[<Translate android="true" ids="show_gpx"/>](../personal/tracks/manage-tracks.md)*.  
 
@@ -420,7 +426,7 @@ Beim Speichern eines neuen Tracks können Sie die Option ***Vereinfachter*** Tra
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
+![Route planen iOS](@site/static/img/plan-route/plan_route_save_changes_ios.webp)
 
 Nachdem Sie [mindestens einen Punkt](#adding-points) zur Karte hinzugefügt haben, können Sie die Speicheroption verwenden. Alle in *Eine Route planen* gespeicherten Tracks finden Sie im Hauptmenü *<Translate ios="true" ids="shared_string_menu"/> → <Translate ios="true" ids="shared_string_my_places"/> →* *[<Translate ios="true" ids="shared_string_gpx_tracks"/>](../personal/tracks/manage-tracks.md)*.
 
@@ -444,7 +450,7 @@ Beim Speichern erbt der Track den Aktivitätstyp des für die Planung verwendete
 
 <TabItem value="android" label="Android">
 
-![Plan a route android-options](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
+![Route planen Optionen Android](@site/static/img/plan-route/plan_route_menu_options_3_andr.png)
 
 - [<Translate android="true" ids="route_between_points"/>](#route-between-points). Zeigt das ausgewählte Anwendungsprofil an (Standard ist eine gerade Linie). Das Tippen auf diese Aktion ist dasselbe wie das Tippen auf die Schaltfläche *Profil*, die das [Profilmenü](../personal/profiles.md) der Anwendung öffnet.
 - **<Translate ios="true" ids="gpx_start_new_segment"/>** (*iOS*) oder **<Translate android="true" ids="plan_route_add_new_segment"/>** (*Android*). Zeichnet neue Routensegmente, die nicht mit dem vorherigen Segment verbunden sind.
@@ -462,7 +468,7 @@ Beim Speichern erbt der Track den Aktivitätstyp des für die Planung verwendete
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route ios-options](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
+![Route planen Optionen iOS](@site/static/img/plan-route/plan_route_menu_options_ios.webp)
 
 Tippen Sie auf das Drei-Punkte-Menü in der oberen Symbolleiste, um das Menü *Optionen* zu öffnen. Die verfügbaren Aktionen hängen davon ab, ob Sie eine neue Route erstellen oder einen bestehenden Track bearbeiten.
 
@@ -485,7 +491,7 @@ Tippen Sie auf das Drei-Punkte-Menü in der oberen Symbolleiste, um das Menü *O
 
 <TabItem value="android" label="Android">
 
-![Plan a route android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
+![Route planen Android](@site/static/img/plan-route/plan_route_graph_5_new_andr.png)
 
 Während der Routenplanung zeigt die [Grafik](../navigation/setup/route-details.md#elevation-graph) Informationen zur Routenhöhe und zum Steigungsprozentsatz an. Außerdem können Sie auf eine beliebige Stelle in der Grafik tippen, um einen Zeiger mit bestimmten Daten anzuzeigen.  
 
@@ -497,7 +503,7 @@ Bei der Berechnung einer Route für die Navigation in *Eine Route planen* könne
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Plan a route snap-road-ios](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
+![Route planen An Straße anheften iOS](@site/static/img/plan-route/plan_route_analyze_ios.webp) ![Route planen An Straße anheften iOS](@site/static/img/plan-route/plan_route_analyze_ios_2.webp)
 
 Der Abschnitt *Übersicht* zeigt eine Grafik basierend auf der ausgewählten Achse an. Verwenden Sie die Achsenauswahl-Steuerelemente, um die auf der Grafik angezeigten Daten auszuwählen. *Höhe neu berechnen* ermöglicht es Ihnen, Höhendaten bei Bedarf neu zu berechnen. Wenn keine Höhendaten verfügbar sind, zeigt der Tab *Analysieren* die Meldung „Keine Höhendaten“. Die Meldung erklärt, dass OsmAnd Höhendaten von nahegelegenen Straßen oder Geländekarten abrufen kann. Tippen Sie auf *Höhendaten abrufen*, um Höhendaten zu berechnen. Weitere Informationen finden Sie im Abschnitt [Höhendaten abrufen](#get-elevation-data).
 

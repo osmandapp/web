@@ -1,8 +1,8 @@
 ---
-source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
+source-hash: c35b48b75c008612b036302e055181306b64e216afa3939f782a05d93c7ed8f5
 sidebar_position: 7
-sidebar_label: Tracks Analyzer
-title: Tracks Analyzer
+sidebar_label: Tracks-Analyse
+title: Tracks-Analyse
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,14 +24,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Verwendung {#how-to-use}
 
 1. [Melden Sie sich](./web-cloud.md#login) mit Ihrem OsmAnd Pro-Konto beim Web Map Portal an. Ihre Tracks müssen mit [OsmAnd Cloud](./web-cloud.md#cloud-sync) synchronisiert sein.
-2. Öffnen Sie *Menü → Tracks analyzer* (Schraubenschlüssel-Symbol).
+2. Öffnen Sie *Menü → Tracks-Analyse* (Symbol mit Diagramm und Lupe).
 3. Wählen Sie im Panel **Tracks auswählen** entweder **Alle Tracks** oder nur die benötigten Ordner aus.
 4. Klicken Sie mit der rechten Maustaste auf die Karte und wählen Sie **Punkt A**. Um ein Segment zwischen zwei Punkten zu analysieren, legen Sie auch **Punkt B** fest.
 5. Überprüfen Sie die Liste der gefundenen Segmente, [sortieren Sie sie und wählen Sie aus, welche Parameter angezeigt werden sollen](#sorting-and-visible-parameters).
 
 Bei einem Punkt findet der Analyzer Track-Segmente, die durch den ausgewählten Ort verlaufen. Bei zwei Punkten findet und analysiert er Segmente zwischen Punkt A und Punkt B.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_select.png) ![Track Analyzer](@site/static/img/web/web_analyzer_points_new.png)
+![Tracks-Analyse](@site/static/img/web/web_analyzer_select.png) ![Tracks-Analyse](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Sortierung und sichtbare Parameter {#sorting-and-visible-parameters}
@@ -46,7 +46,7 @@ Die verfügbaren Parameter umfassen:
 - Zeitraum, Startzeit, Endzeit, Dauer und Zeit in Bewegung.
 - Länge.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_sort.png) ![Track Analyzer](@site/static/img/web/web_analyzer_fields.png)
+![Tracks-Analyse](@site/static/img/web/web_analyzer_sort.png) ![Tracks-Analyse](@site/static/img/web/web_analyzer_fields.png)
 
 ## Datenanalyse {#data-analysis}
 
@@ -57,7 +57,7 @@ Jedes Segment hat auch ein Menü mit drei Punkten (⋮) mit den folgenden Aktion
 - Track ausblenden / Track sichtbar machen — steuert, ob der Track auf der Karte angezeigt wird.
 - Ausschließen — entfernt das Segment aus den aktuellen Analyseergebnissen.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_menu.png)
+![Tracks-Analyse](@site/static/img/web/web_analyzer_menu.png)
 
 ### Diagramme {#graphs}
 
@@ -71,7 +71,7 @@ Nur ein Datentyp wird zur Zeit angezeigt, und die Änderung aktualisiert das Dia
 
 Wenn mehrere Segmente vorhanden sind, zeigt das Diagramm Daten für mehrere Segmente gleichzeitig. Ein Selector über dem Diagramm ermöglicht es, auszuwählen, wie viele Segmentdiagramme gleichzeitig angezeigt werden, und zwischen ihnen zu wechseln.
 
-![Track Analyzer](@site/static/img/web/web_analyzer_altitude.png) ![Track Analyzer](@site/static/img/web/web_analyzer_tracks.png)
+![Tracks-Analyse](@site/static/img/web/web_analyzer_altitude.png) ![Tracks-Analyse](@site/static/img/web/web_analyzer_tracks.png)
 
 ## Verwandte Artikel {#related-articles}
 

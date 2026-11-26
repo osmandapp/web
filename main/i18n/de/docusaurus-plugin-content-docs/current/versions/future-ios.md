@@ -1,5 +1,5 @@
 ---
-source-hash: 229c58068a74b06d3fc63b8f92df8a4ca008fa25b9819b9b8d8243b8790942ed
+source-hash: 767578704635d01030c776c1a29804d758e70785b56523fd818befdf7a58df10
 sidebar_position: 5
 ---
 
@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.4 {#ios-54}
+# iOS 5.5 {#ios-55}
 
 ## Beta beitreten {#join-beta}
 
@@ -28,40 +28,31 @@ iOS-Beta-Builds (TestFlight) werden in der Regel wöchentlich (nach einer Team-S
 
 ## Was ist neu {#whats-new}
 
-- Suche aktualisiert mit einem neuen **[Entdecken](https://osmand.net/docs/user/map/popular_places#explore-in-search)**-Tab mit beliebten Orten in der Nähe.
-- Neues experimentelles **[Astronomie-Plugin](https://osmand.net/docs/user/plugins/astronomy)** mit einer astronomischen Overlay-Anzeige der Pfade von Sonne, Planeten und Sternen.
-- Hinzugefügter **[Paletteneditor](https://osmand.net/docs/user/map/tracks/appearance#color-palette-editor)** zum Erstellen und Anpassen von Farbschemata für Routen und Gelände.
-- Intelligentere Spurorganisation mit **[Smart Folders](https://osmand.net/docs/user/personal/tracks/smart-folder)** und übersichtlicheren Zusammenfassungsstatistiken.
-- Flexibleres **[Widget- und Kartenbutton-Layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, insbesondere im Querformat.
-- Erweiterte **[Route planen](https://osmand.net/docs/user/plan-route/create-route)** mit Höhenprofil, Offline-Höhenberechnung und Routenparametern.
-- Hinzugefügte Anstiegs-, Abfahrts- und Flachsegmente zur **[Spuranalyse](https://osmand.net/docs/user/map/tracks/track-context-menu#analyze-by-intervals)**.
-
-<!--
-- Last Uphill / Last Downhill mode for **[Trip recording widgets](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, with switching between total and last ascent/descent.
-- Updated **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** with modes for total distance, last uphill/downhill distance.
-- **[Max Speed widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing maximum speed for the whole trip or for the most recent uphill/downhill section.
-- **[Average Slope widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing the average slope of the latest ascent or descent.
-- *Show track on map* quick action added to the Trip recording widget group.
-- Improvements in route selection and altitude graph integration under the updated rendering scheme.
-- Elevation graph widget for navigation, displaying a compact profile along routes or GPX tracks.
-- **[Popular places](https://osmand.net/docs/user/map/popular_places/)** layer updated with POI source selection and optional image previews on the map.
-- New Explore section in Search with “Popular places nearby” and improved offline/no-data states.
-- Enhanced POI search results with consistent city display, refined layout, and optional thumbnails.
-- Default appearance settings for track folders, allowing new tracks to inherit a unified folder style.
--->
-
+- **[CarPlay](https://osmand.net/docs/user/navigation/car-play)** ist für alle Nutzer kostenlos und erhält neue [Einstellungen](https://osmand.net/docs/user/navigation/car-play#settings) für Kartenausrichtung und Bildrate, wobei Zuhause mit einem Tippen aus dem Navigationsmenü erreichbar ist.
+- Die **[kostenlose Version](https://osmand.net/docs/user/purchases/ios#free-and-paid-features)** enthält alle Karten einer Region.
+- Neue **[Koordinatenformate](https://osmand.net/docs/user/search/search-coordinates#customize-coordinate-format)**, darunter EPSG-Systeme, Maidenhead-Locator und Schweizer Gitter, mit einem Primärformat und einer Liste bevorzugter Formate.
+- Getrennte **[Widget-Layouts](https://osmand.net/docs/user/widgets/configure-screen#single-and-separate-layouts)** für Hoch- und Querformat sowie **[breite oder kompakte](https://osmand.net/docs/user/widgets/configure-screen#panels-layout)** obere und untere Leisten.
+- Anpassbares **[Erscheinungsbild der Widget-Leiste](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance)** mit Widget-Größe, Symbolen sowie Text- und Hintergrundfarben.
+- Neue Einstellung **[Bildschirm anlassen](https://osmand.net/docs/user/personal/profiles#appearance)** für jedes Profil: dem System-Timeout folgen, den Bildschirm nur während der Navigation anlassen oder immer anlassen.
+- Beschriftungen der **[Höhenlinien](https://osmand.net/docs/user/plugins/topography#contour-lines)** können bergauf ausgerichtet werden, wie auf topografischen Papierkarten.
+- Vollständige Erscheinungseinstellungen, wenn Sie **[mehrere Favoriten gleichzeitig ändern](https://osmand.net/docs/user/personal/favorites#bulk-edit--delete)**.
+- **[Zwischenziele](https://osmand.net/docs/user/navigation/setup/route-details#turn-by-turn-information)** erscheinen in den Routendetails mit Nummer, Name sowie Entfernung und Zeit ab dem Start.
 
 ## Fehlerbehebungen {#bug-fixes}
 
-- [Smart Folders](https://github.com/osmandapp/OsmAnd-iOS/issues/5358) werden nicht mehr mit OsmAnd Cloud synchronisiert oder im Einstellungsexport angezeigt.
-- Das [Wikipedia-Kontextmenü](https://github.com/osmandapp/OsmAnd-Issues/issues/3215) wurde mit einem neuen Design aktualisiert und Online-Fotos hinzugefügt.
-- Fehlende [POI-Namen](https://github.com/osmandapp/OsmAnd-iOS/issues/5253) im Menü „Was ist hier“ behoben.
-- Das Öffnen von [Reiseführern](https://github.com/osmandapp/OsmAnd-Issues/issues/3212) aus Suchergebnissen wurde behoben, sodass der Artikel direkt angezeigt wird.
-- Die Position des Abschnitts [Online-Fotos](https://github.com/osmandapp/OsmAnd-iOS/issues/5336) im Regionskontextmenü angepasst.
+- Ein [Problem](https://github.com/osmandapp/OsmAnd-iOS/issues/5696) behoben, bei dem das Leeren des OsmAnd-Cloud-Papierkorbs gelöschte Karten und Favoriten wiederherstellte.
+- [Höhe fällt auf 0](https://github.com/osmandapp/OsmAnd-iOS/issues/5526) in im Hintergrund aufgezeichneten Tracks korrigiert.
+- [OsmAnd-Cloud-Synchronisationskonflikte](https://github.com/osmandapp/OsmAnd-iOS/issues/5463) nach der Aktualisierung von Karten auf mehreren Geräten behoben.
+- Verhindert, dass [Favoriten aus ausgeblendeten Ordnern](https://github.com/osmandapp/OsmAnd-iOS/issues/5558) in den Suchergebnissen erscheinen.
+- Das [Schließen von „Route planen“](https://github.com/osmandapp/OsmAnd-iOS/issues/5947) beim Tippen auf einen Track auf der Karte behoben.
+- Die [Fußgänger-Reisezeit](https://github.com/osmandapp/OsmAnd-iOS/issues/5787), die nach „An Straßen anhängen“ für Autorouten angezeigt wurde, korrigiert.
+- [Wegpunkte, die zum aufgezeichneten Track hinzugefügt wurden](https://github.com/osmandapp/OsmAnd-iOS/issues/5893) und nicht auf Tippen reagierten, behoben.
+- Das [Blinken des Wegpunktsymbols](https://github.com/osmandapp/OsmAnd-iOS/issues/2764) während der Streckenaufzeichnung gestoppt.
 
 <!--
-- Faster opening of context menus when tapping POIs, Favorites, tracks and buildings.
-- Correct handling of relation-based POIs on multipolygons.
-- Fixed “null” appearing instead of a city name in POI search results and improved night-mode background consistency.
-- Restored tappable behaviour for fitness, running and canoe routes with shields.
+- Fixed map updates for mappers with Devanagari and Eastern Arabic numerals.
+- Fixed the map zooming out when you add a Quick Action while moving.
+- Fixed KML import creating an empty track.
 -->
+
+

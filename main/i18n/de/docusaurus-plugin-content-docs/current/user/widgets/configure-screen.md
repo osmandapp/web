@@ -1,5 +1,5 @@
 ---
-source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
+source-hash: 2386d7bbbae5da7a0450b15924c450032e65b1488692771b1fc0b9200e01ffdc
 sidebar_position: 1
 title:  Bildschirm konfigurieren
 ---
@@ -26,7 +26,7 @@ Sie können:
 - Widgets in Leisten (oben, unten, links, rechts, zentriert) organisieren.
 - Mehrere **Seiten** innerhalb der Seitenleisten erstellen, die Größe der Widgets wählen.
 - Zeilenhöhe wählen und Widget-Symbole umschalten.
-- Auf Android das [Erscheinungsbild der Widget-Leiste](#widget-panel-appearance) anpassen.
+- Das [Erscheinungsbild der Widget-Leiste](#widget-panel-appearance) anpassen.
 
 Alle Widgets sind [profilabhängig](../personal/profiles.md) — jedes Profil hat sein eigenes Layout, seine eigene Reihenfolge, Sichtbarkeit und Einstellungen.
 
@@ -45,7 +45,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_conf
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+![Menü Bildschirm konfigurieren](@site/static/img/widgets/configure_screen_overview_ios.webp)  
 
 </TabItem>
 
@@ -361,11 +361,27 @@ Diese Einstellungen gelten nur für das ausgewählte Widget.
     - Schalten Sie im Feld *Symbol anzeigen* auf die Aus-Position.
 
 
-## Erscheinungsbild der Widget-Leiste (nur Android) {#widget-panel-appearance}
+## Erscheinungsbild der Widget-Leiste {#widget-panel-appearance}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
 ![Erscheinungsbild der Widget-Leiste](@site/static/img/widgets/widget_appearance.webp) ![Erscheinungsbild der Widget-Leiste](@site/static/img/widgets/widget_appearance_2.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_appearance"/>*
+
+![Erscheinungsbild der Widget-Leiste](@site/static/img/widgets/widget_appearance_ios.webp) ![Erscheinungsbild der Widget-Leiste](@site/static/img/widgets/widget_appearance_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Mit den Erscheinungseinstellungen können Sie das Aussehen aller Widgets in der ausgewählten Leiste anpassen. Jede Leiste (*Oben*, *Unten*, *Links*, *Rechts*) hat eigene Erscheinungseinstellungen.
 
@@ -375,13 +391,13 @@ Mit den Erscheinungseinstellungen können Sie das Aussehen aller Widgets in der 
 
 3. **Textfarbe**. Ändert die Farbe des primären Widget-Textes. Verfügbare Optionen: *Standard*, *Automatisch*, *Benutzerdefiniert*. Wenn **Benutzerdefiniert** ausgewählt ist, können Sie separate Farben für **Tag**- und **Nacht**-Modus festlegen. Eine Live-Vorschau zeigt die ausgewählten Farben an, bevor sie übernommen werden.
 
-:::tip Kauf
-Benutzerdefinierte Widget-Farben sind eine [kostenpflichtige Funktion](../purchases/index.md).  
-:::
-
 4. **Sekundäre Textfarbe**. Ändert die Farbe von Widget-Namen und Einheiten. Verfügbare Optionen: *Standard*, *Automatisch*, *Benutzerdefiniert*.
 
 5. **Hintergrundfarbe**. Ändert die Hintergrundfarbe der Widgets in der ausgewählten Leiste. Verfügbare Optionen: *Standard*, *Transparent*, *Benutzerdefiniert*.
+
+:::tip Kauf
+Die benutzerdefinierte Hintergrundfarbe ist eine [kostenpflichtige Funktion](../purchases/index.md).  
+:::
 
 6. **Vorschau**. Der Vorschau-Bereich zeigt, wie die Widgets mit den aktuell ausgewählten Erscheinungseinstellungen aussehen.
 
@@ -390,6 +406,11 @@ Benutzerdefinierte Widget-Farben sind eine [kostenpflichtige Funktion](../purcha
     - Tippen Sie im oberen rechten Menü auf ⋮.
     - Wählen Sie *Kopieren von*.
     - Wählen Sie eine der folgenden Optionen: *Ein anderes Profil* oder *Eine der anderen Leisten*.
+
+8. **Auf Standard zurücksetzen**. Setzt alle Erscheinungseinstellungen der ausgewählten Leiste auf ihre Standardwerte zurück.
+
+    - *Android*. Tippen Sie auf das Zurücksetzen-Symbol in der oberen rechten Ecke.
+    - *iOS*. Tippen Sie unten auf dem Bildschirm auf *Auf Standard zurücksetzen* und bestätigen Sie die Aktion.
 
 
 ## Anpassung der Leisten {#panels-customization}
@@ -491,7 +512,11 @@ Sie können Widgets auf dem Anwendungsbildschirm im **Bearbeiten**-Modus neu ano
 
 ## Kartenbildschirm-Layout {#map-screen-layout}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ![Kartenbildschirm-Layout](@site/static/img/widgets/map_screen_layout_1.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/map_screen_layout_2.png)
 
@@ -499,11 +524,29 @@ Die Einstellung **Kartenbildschirm-Layout** ermöglicht es Ihnen, zu steuern, wi
 
 Sie können die Einstellungen für das Kartenbildschirm-Layout aus dem Menü "Bildschirm konfigurieren" öffnen, entweder direkt über die Bildschirmaktionen oder über das Drei-Punkte-Menü.
 
-### Einzelne und getrennte Layouts {#single-and-separate-layouts}
+</TabItem>
 
-![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_single.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_separate.png)
+<TabItem value="ios" label="iOS"> 
+
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/map_screen_layout_ios.webp) ![Kartenbildschirm-Layout](@site/static/img/widgets/map_screen_layout_ios_2.webp) 
+
+Die Einstellungen für das Kartenbildschirm-Layout ermöglichen es Ihnen, zu steuern, wie Widget-Leisten auf dem Kartenbildschirm im **<Translate ios="true" ids="map_orientation_portrait"/>**- und **<Translate ios="true" ids="map_orientation_landscape"/>**-Modus angeordnet sind. Um festzulegen, wie die Ausrichtungen Bildschirmelemente gemeinsam nutzen, tippen Sie auf **⋮** und wählen Sie **<Translate ios="true" ids="screen_elements"/>**.
+
+</TabItem>
+
+</Tabs>
+
+### Einzelne und getrennte Layouts / Bildschirmelemente {#single-and-separate-layouts}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_single.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_separate.png)
 
 OsmAnd unterstützt zwei Layout-Modi für den Kartenbildschirm:
 - **<Translate android="true" ids="single_layout"/>** – verwendet das gleiche Widget-Layout für alle Bildschirmausrichtungen. Diese Option ist standardmäßig ausgewählt.
@@ -511,7 +554,33 @@ OsmAnd unterstützt zwei Layout-Modi für den Kartenbildschirm:
 
 Wenn Getrennte Layouts aktiviert ist, wirken Änderungen in einer Ausrichtung nicht auf die andere. Dies ist nützlich, wenn Sie den Kartenbildschirm unterschiedlich für Hoch- und Querformat optimieren möchten.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate ios="true" ids="screen_elements"/>*
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/screen_shared.webp) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_independent.webp)
+
+Die Einstellung **<Translate ios="true" ids="screen_elements"/>** legt fest, ob im **<Translate ios="true" ids="map_orientation_portrait"/>**- und im **<Translate ios="true" ids="map_orientation_landscape"/>**-Modus dieselben oder unabhängige Bildschirmelemente verwendet werden:
+
+- **<Translate ios="true" ids="screen_elements_shared"/>** – das Querformat verwendet dieselben Bildschirmelemente wie das Hochformat. Änderungen in einer Ausrichtung gelten für beide. Diese Option ist standardmäßig ausgewählt.
+- **<Translate ios="true" ids="screen_elements_independent"/>** – Hoch- und Querformat haben unabhängige Sätze von Bildschirmelementen. Änderungen in einer Ausrichtung wirken sich nicht auf die andere aus.
+
+Tippen Sie auf **✓**, um die ausgewählte Option zu übernehmen.
+
+Wenn **<Translate ios="true" ids="screen_elements_independent"/>** ausgewählt ist, werden Widget-Leisten und das Erscheinungsbild der Widget-Leiste für jede Ausrichtung separat konfiguriert.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Registerkarten Hochformat und Querformat {#portrait-and-landscape-tabs}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_tabs.png)
 
@@ -525,7 +594,39 @@ Nur die Widget-Liste wird kopiert, und die Operation gilt innerhalb desselben Pr
 
 ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_portrait.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_landscape.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_landscape.webp)
+
+Die Registerkarten **<Translate ios="true" ids="map_orientation_portrait"/>** und **<Translate ios="true" ids="map_orientation_landscape"/>** sind oben im Menü **<Translate ios="true" ids="layer_map_appearance"/>** immer verfügbar. Jede Registerkarte zeigt die Einstellungen für die entsprechende Bildschirmausrichtung. Wenn **<Translate ios="true" ids="screen_elements"/>** auf **<Translate ios="true" ids="screen_elements_independent"/>** eingestellt ist, öffnet sich das Menü auf der Registerkarte der aktuellen Geräteausrichtung. Andernfalls öffnet es sich auf der Registerkarte Hochformat.
+
+Wenn **<Translate ios="true" ids="screen_elements"/>** auf **<Translate ios="true" ids="screen_elements_shared"/>** eingestellt ist, zeigt die Registerkarte Querformat:
+
+- Karte **<Translate ios="true" ids="screen_elements"/>** – beschreibt den aktuellen Modus. Tippen Sie auf **<Translate ios="true" ids="switch_to_independent"/>**, um die Einstellungen für Bildschirmelemente zu öffnen.
+- **<Translate ios="true" ids="panels_layout"/>** und **<Translate ios="true" ids="shared_string_appearance"/>** – Einstellungen für die Querformat-Ausrichtung.
+
+Widget-Leisten, Schaltflächen und andere Einstellungen werden auf der Registerkarte Hochformat konfiguriert und gelten für beide Ausrichtungen.
+
+Wenn **<Translate ios="true" ids="screen_elements"/>** auf **<Translate ios="true" ids="screen_elements_independent"/>** eingestellt ist, können Sie die Widget-Liste einer Leiste aus der anderen Ausrichtung kopieren. Öffnen Sie die Widget-Leiste, tippen Sie auf **⋮** und wählen Sie:
+
+- **<Translate ios="true" ids="copy_from_landscape_layout"/>** – verfügbar auf der Registerkarte Hochformat. Kopiert die Widget-Liste der Leiste aus dem Querformat-Layout.
+- **<Translate ios="true" ids="copy_from_portrait_layout"/>** – verfügbar auf der Registerkarte Querformat. Kopiert die Widget-Liste der Leiste aus dem Hochformat-Layout.
+
+Nur die Widget-Liste wird kopiert, und die Operation gilt innerhalb desselben Profils.
+
+</TabItem>
+
+</Tabs>
+
 ### Leisten-Layout {#panels-layout}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,map_widget_config,panels_layout"/>*
 
 ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_wide.png) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_compact.png)
 
@@ -538,6 +639,27 @@ Sie können zwischen zwei Modi wählen:
 - **<Translate android="true" ids="panels_layout_compact"/>** – die oberen und unteren Leisten passen zwischen die Seitenleisten und Karten-Schaltflächen.
 
 Das Leisten-Layout kann unabhängig für Hoch- und Querformat konfiguriert werden, was eine bessere Anpassung an unterschiedliche Bildschirmgrößen und -ausrichtungen ermöglicht.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,panels_layout"/>*
+
+![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_wide.webp) ![Kartenbildschirm-Layout](@site/static/img/widgets/screen_layout_compact.webp)
+
+Die Einstellung **<Translate ios="true" ids="panels_layout"/>** steuert, wie die oberen und unteren Widget-Leisten angezeigt werden. Sie können zwischen zwei Modi wählen:
+
+- **<Translate ios="true" ids="panels_layout_wide"/>** – die oberen und unteren Leisten erstrecken sich über die volle Breite des Bildschirms. Diese Option ist standardmäßig ausgewählt.
+- **<Translate ios="true" ids="panels_layout_compact"/>** – die oberen und unteren Leisten passen zwischen die Seitenleisten und Karten-Schaltflächen.
+
+Die Vorschau zeigt den ausgewählten Modus für die aktuelle Ausrichtung. Tippen Sie auf **✓**, um den ausgewählten Modus zu übernehmen.
+
+Das Leisten-Layout wird auf den Registerkarten **<Translate ios="true" ids="map_orientation_portrait"/>** und **<Translate ios="true" ids="map_orientation_landscape"/>** separat konfiguriert, sowohl mit **<Translate ios="true" ids="screen_elements_shared"/>** als auch mit **<Translate ios="true" ids="screen_elements_independent"/>** Bildschirmelementen.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Schaltflächen {#buttons}

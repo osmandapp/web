@@ -1,5 +1,5 @@
 ---
-source-hash: 97f2c33a4074c4cc756ff122bf583a92e9a6275e2f47dd97dda9ca19c19cf16f
+source-hash: 00356ae11e5462862ca31e05797cfe39a891bfd9daa0c313b6113a666a302ec0
 sidebar_position: 4
 title:  POI-Suche
 ---
@@ -152,9 +152,9 @@ Dieser Ort kann erscheinen, wenn Sie nach folgendem suchen:
 
 Das Werkzeug **Suche nach Kategorien** ermöglicht es Ihnen, schnell Objekte, Orte und Routen zu finden, die in verschiedene Kategorien eingeteilt sind. 
 
-POI-Kategorien in OsmAnd basieren auf OpenStreetMap-Tags. Einige Orte können unter einer allgemeineren Kategorie erscheinen, wenn ein spezifischerer Typ in den Kartendaten nicht verfügbar ist (z. B. kann eine Kirche unter `Place of worship` erscheinen).
+POI-Kategorien in OsmAnd basieren auf OpenStreetMap-Tags. Einige Orte können unter einer allgemeineren Kategorie erscheinen, wenn ein spezifischerer Typ in den Kartendaten nicht verfügbar ist (z. B. kann eine Kirche unter `Place of worship` erscheinen). Büros eines Typs, den OsmAnd nicht erkennt, erscheinen unter `Company`.
 
-Jede Kategorie haben einen einzigartigen Satz von Merkmalen, und dieses Werkzeug verfügt über Filter, mit denen Sie die Suchergebnisse verfeinern können, indem Sie verschiedene Werte für zusätzliche Merkmale auswählen.
+Jede Kategorie hat einen einzigartigen Satz von Merkmalen, und dieses Werkzeug verfügt über Filter, mit denen Sie die Suchergebnisse verfeinern können, indem Sie verschiedene Werte für zusätzliche Merkmale auswählen. Sie können Orte auch anhand eines Merkmals finden: Geben Sie seinen Namen in die Suchleiste ein, zum Beispiel `Smoking`, und wählen Sie die vorgeschlagene Kategorie aus, um die Orte zu sehen, an denen dieses Merkmal verfügbar ist.
 
 So funktioniert es:
 
@@ -183,13 +183,13 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 <TabItem value="android" label="Android">
 
-![POI-Suche Android](@site/static/img/search/search_poi_filter_andr.png)
+![POI-Suche Android](@site/static/img/search/search_poi_filter_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![POI-Suche iOS](@site/static/img/search/search_poi_filter_ios.png)
+![POI-Suche iOS](@site/static/img/search/search_poi_filter_ios.webp)
 
 </TabItem>
 
@@ -203,7 +203,12 @@ Mit der **Filter**-Funktion können Sie die notwendigen Merkmale auswählen und 
 
 ![POI-Suche Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
 
-Ein Filter kann aus einer ganzen Reihe von Elementen bestehen, deren Vorhandensein von der ausgewählten Kategorie abhängt. Jede Kategorie hat eine Reihe von spezifischen Filtern, die in Ordnern nach Typ geordnet sind. Es gibt insgesamt *21 Standardkategorien*. Einige davon sind hier aufgeführt:
+Merkmale werden im Filter auf zwei Arten angezeigt:
+
+- *Merkmal mit einem Wert* — ein Schalter, zum Beispiel *Fahrrad*. Schalten Sie ihn ein, um nur die Orte anzuzeigen, die dieses Merkmal haben.
+- *Merkmal mit mehreren Werten* — eine Gruppe mit dem Merkmalsnamen als Überschrift. Erweitern Sie sie und wählen Sie die benötigten Werte aus, zum Beispiel *Zugang für Wohnmobile* → *Ausgewiesen*, *Ja*.
+
+Ein Filter kann aus einer ganzen Reihe von Elementen bestehen, deren Vorhandensein von der ausgewählten Kategorie abhängt. Jede Kategorie hat eine Reihe von spezifischen Filtern, die in Ordnern nach Typ geordnet sind. Es gibt insgesamt *21 Standardkategorien*. Sie sind hier aufgeführt:
 
  1. **<Translate android="true" ids="poi_filter_accomodation"/>**. [Unterkunft](https://wiki.openstreetmap.org/wiki/Key:building#Accommodation) umfasst Einrichtungen, die eine vorübergehende Unterkunft bieten, wie Hotels, Motels, Hostels, Pensionen und Campingplätze. Diese Orte bieten Annehmlichkeiten und Dienstleistungen für einen komfortablen Aufenthalt auf Reisen.  
         Enthält *10* Filtertypen: **Kühlschrank** (hat *2* Werte), **Heizung** (hat *7* Werte), **Internetzugangstyp** (hat *3* Werte), **Internetzugangstyp** (hat *3* Werte), **Matratze** (hat *2* Werte), **Zahlungsart** (mehr als *10* Werte), **Dusche** (hat *1* Wert), **Rauchen** (hat *6* Werte), **Sternebewertung** (hat *10* Werte), **Rollstuhlgerechtigkeit** (hat *4* Werte), Jetzt geöffnet / 24/7 geöffnet.
@@ -378,10 +383,9 @@ Um benutzerdefinierte Filter für die Suche nach Orten auf der Karte zu erstelle
 
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Enthält 25 Typen: *Kleingärten, Atoll, Stadtbezirk, Stadt, Stadtblock, Land, Gerichtsgebäude, Zoll, Diplomatische Vertretung, Bauernhof, Regierung, Weiler, Insel, Eiland, Einzelgehörm, Ort, Nachbarschaft, Polizei, Gefängnis, Viertel, Wohngebiet, Vorort, Kleinstadt, Rathaus, Dorf*.  
 
-2. **Weihnachten**. Enthält 5 Filtertypen:  
-    *Weihnachtsveranstaltung, Weihnachtsmarkt, Weihnachtspyramide, Weihnachtsgeschäft, Weihnachtsbaum*.
+2. **Weihnachten**. Enthält 5 Filtertypen: *Weihnachtsveranstaltung, Weihnachtsmarkt, Weihnachtspyramide, Weihnachtsgeschäft, Weihnachtsbaum*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Enthält 16 Typen: *Kleingärten, Atoll, Stadtbezirk, Stadt, Stadtblock, Land, Gerichtsgebäude, Zoll, Diplomatische Vertretung, Bauernhof, Regierung, Weiler, Insel, Eiland, Einzelgehörm, Ort, Nachbarschaft, Polizei, Gefängnis, Viertel, Wohngebiet, Vorort, Kleinstadt, Rathaus, Dorf*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Enthält 18 Typen: *Tiertraining, Kinderbetreuung, College, Tanzschule, Dojo, Fahrübungsplatz, Fahrschule, Bildungseinrichtung, Kindergarten, Sprachschule, Bibliothek, Haltestelle der Fahrbibliothek, Musikschule, Schule, Studentenunterkunft, Trainingseinrichtung, Nachhilfeschule, Universität*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Enthält 26 Filtertypen.  
 

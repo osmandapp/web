@@ -1,8 +1,8 @@
 ---
 source-hash: d8e3ac6bca80bf8500f62a33f57fa32a0ee54679443c3fba0d0abe6058494828
 sidebar_position: 6
-sidebar_label: Favorites
-title: Favorites
+sidebar_label: Favoriten
+title: Favoriten
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,7 +24,7 @@ Favoriten im Web-Planer ermöglichen es Ihnen, wichtige Orte direkt auf der Kart
 
 ## Favoriten verwalten {#manage-favorites}
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_1_new.png)
+![OsmAnd Web Cloud-Favoriten bearbeiten](@site/static/img/web/favorites_1_new.png)
 
 Nach der Anmeldung bei einem [**OsmAnd Pro**](../personal/osmand-cloud.md#login)- oder [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start)-Konto sind Ihre Favoriten im Web-Planer in Ordnern organisiert. Jeder Ordner gruppiert gespeicherte Orte und bietet eine Reihe von Aktionen, die über das Favoriten-Menü verfügbar sind. 
 Die folgenden Aktionen sind verfügbar:
@@ -58,7 +58,7 @@ Während der Zugriffskonfiguration können die folgenden Dialoge erscheinen:
 - *Zugriff ändern*. Wird angezeigt, wenn der Ordner auf Privat umgeschaltet wird. Der Dialog warnt, dass aller bestehender Benutzerzugriff widerrufen wird, bevor die Änderung bestätigt wird.
 - *Zugriffsanfragen*. Wird angezeigt, wenn Benutzer in der Ausstehend-Liste verwaltet werden, um Zugriffsanfragen zu genehmigen oder abzulehnen.
 
-![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share.png) ![OsmAnd Web cloud Favorites edit](@site/static/img/web/favorites_share_2.png)
+![OsmAnd Web Cloud-Favoriten bearbeiten](@site/static/img/web/favorites_share.png) ![OsmAnd Web Cloud-Favoriten bearbeiten](@site/static/img/web/favorites_share_2.png)
 
 
 ## Favoritendetails {#favorites-details} 
@@ -67,7 +67,7 @@ Das Auswählen eines Favoriten öffnet das **Details**-Panel. Dieses Panel ersch
 
 Die Detailansicht bietet Informationen, die mit dem ausgewählten Ort verbunden sind, und hängt von den für diesen spezifischen Favoriten verfügbaren Daten ab. Mindestens umfasst sie den Standort auf der Karte und seine geografischen Koordinaten. Für Orte, die mit OpenStreetMap-Objekten oder angereicherten Quellen verknüpft sind, können zusätzliche Metadaten angezeigt werden, wie Namen, Kategorien, Identifikatoren oder Referenzlinks (z. B. Wikipedia- oder Wikidata-Links). 
 
-![Web Favorites Details](@site/static/img/web/favorites_details.png)
+![Web-Favoriten Details](@site/static/img/web/favorites_details.png)
 
 
 ## Favoritenaktionen {#favorites-actions}
@@ -96,7 +96,7 @@ Neue Ordner können direkt aus dem Ordnerauswahlpanel erstellt werden. Durch Aus
 
 Der Dialog enthält auch einen Erweitert-Abschnitt, in dem Standarddarstellungseinstellungen für den Ordner konfiguriert werden können. Diese Einstellungen umfassen die Standardfarbe, das Symbol und die Form, die automatisch auf Favoritenpunkte angewendet werden, die diesem Ordner hinzugefügt werden.
 
-![Web Edit Folder](@site/static/img/web/edit_folder.png)
+![Web Ordner bearbeiten](@site/static/img/web/edit_folder.png)
 
 ### Darstellung {#appearance}
 
@@ -120,7 +120,7 @@ Die Option **Form** definiert die Hintergrundform, die für die Favoritenmarkier
 
 Die Darstellungsvorschau wird sofort sowohl im Bearbeitungspanel als auch auf der Karte aktualisiert, wenn Sie das Symbol, die Farbe oder die Form ändern.
 
-![Web Edit Appearance](@site/static/img/web/edit_icon.png)
+![Web Erscheinungsbild bearbeiten](@site/static/img/web/edit_icon.png)
 
 ### Andere Aktionen {#other-actions}
 

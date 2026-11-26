@@ -1,5 +1,5 @@
 ---
-source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
+source-hash: 21b1fd8d34d5459a2881d82dd878347eeb0a1d37ee8c942dada4da21348f7d08
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -18,10 +18,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Übersicht {#overview}
-
-:::tip Kauf
-Android Auto ist eine [bezahlte Funktion](../purchases/index.md).  
-:::
 
 ![Android Auto-Bildschirm](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -80,8 +76,6 @@ Damit OsmAnd in *Android Auto* funktioniert, müssen Sie Ihr Android-Gerät mit 
 
 - Nicht alle Fahrzeuge unterstützen die Geräteverbindung. Überprüfen Sie die [Liste für *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
 
-- Sie müssen eine **kostenpflichtige Version** der App erwerben oder ein [Abonnement](../purchases/android.md#free-and-paid-features) abschließen. Überprüfen Sie Ihr aktuelles Abonnement hier: *Menü → Einstellungen → Käufe*.  
-
 - *Android Auto* verwendet das erste [OsmAnd-Fahrprofil](#profile-first) in der Profilliste für die Navigation. Setzen Sie das bevorzugte Profil an die erste Stelle, mit Ausnahme des Profils *Karte ansehen*, da dieses von *Android Auto* nicht gelesen wird. Gehen Sie dazu zu OsmAnd *Menü → Einstellungen → App-Profile → Profilliste bearbeiten* → verschieben Sie Ihr [**Fahren**](#profile-first) Profil an die erste Stelle oder nach dem Profil *Karte ansehen*.  
 
 - Es ist wichtig zu bedenken, dass *Android Auto* eine datenintensive Anwendung ist, einschließlich mobiler Daten, und die Qualität des Systems von der Qualität Ihrer Verbindung und der Geschwindigkeit Ihres Internetzugangs abhängen kann.
@@ -106,7 +100,7 @@ Wenn Sie auf Ihrem Gerät kein *Fahrprofil* ausgewählt haben, das Ihrem Fahrzeu
 
 ![Android Auto-Bildschirm](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-Sie können zuvor voreingestellte und hinzugefügte [POIs](../map/point-layers-on-map.md#points-of-interest-pois), [Favoriten](../personal/favorites.md), oder [Markierungen](../personal/markers.md) als Zielpunkt auswählen. Es ist auch möglich, einen aufgezeichneten oder heruntergeladenen [Track](../personal/tracks/manage-tracks.md) für die Route auszuwählen, die [Suche](../search/index.md) zu verwenden, ein Ziel aus dem Routen-[Verlauf](../search/search-history.md) auszuwählen oder eine *freie Fahrt* zu unternehmen.
+Sie können zuvor voreingestellte und hinzugefügte [POIs](../map/point-layers-on-map.md#points-of-interest-pois), [Favoriten](../personal/favorites.md), oder [Markierungen](../personal/markers.md) als Zielpunkt auswählen. Es ist auch möglich, einen aufgezeichneten oder heruntergeladenen [Track](../personal/tracks/manage-tracks.md) für die Route auszuwählen, die [Suche](../search/index.md) zu verwenden, ein Ziel aus dem Routen-[Verlauf](../search/search-history.md) auszuwählen oder eine *freie Fahrt* zu unternehmen. Ihre vorherige Route und die letzten Ziele sind auch als [Karten im Android Auto-Dashboard](#dashboard-suggestions) verfügbar.
 
 1. Wenn Sie einen bestimmten Ort auf der Karte als Endpunkt wünschen, wählen Sie die entsprechende Kategorie von Punkten aus der Liste aus: [POIs](#poi-categories), [Favoriten](#favorites) oder [Kartenmarkierungen](#map-markers).  
   
@@ -119,7 +113,7 @@ Sie können zuvor voreingestellte und hinzugefügte [POIs](../map/point-layers-o
 
 3. Wählen Sie [Suche](#search), um ein Ziel aus den verfügbaren Suchkategorien einzugeben.  
 
-4. Wählen Sie **Freie Fahrt**, um eine Reise ohne angegebenen Endpunkt zu unternehmen.
+4. Wählen Sie **Freie Fahrt**, um eine Reise ohne angegebenen Endpunkt zu unternehmen. Wenn keine Route berechnet ist und Sie keine Kategorie auswählen, startet OsmAnd die *Freie Fahrt* automatisch, nachdem sich Ihr Fahrzeug 15 Sekunden lang schneller als 5 km/h bewegt hat. So erscheint die Karte nach dem erneuten Verbinden mit Android Auto ohne jede Interaktion mit dem Fahrzeugbildschirm.
 
 :::note
 Während der Fahrt können ausgewählte Punkte [angesagt](#voice-prompts) werden, wenn Sie sich ihnen nähern oder sie passieren. Sehen Sie sich die Einstellungen für [Sprachansagen](../navigation/guidance/voice-navigation.md) im entsprechenden Artikel an, um Sprachbenachrichtigungen einzurichten.
@@ -131,6 +125,28 @@ Während der Fahrt können ausgewählte Punkte [angesagt](#voice-prompts) werden
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)  
 
 In der Kategorie Verlauf können Sie ein Ziel aus einer Liste von Endpunkten auswählen. Sie sind nach der letzten Verwendung sortiert, beginnend mit der neuesten. Dies kann für den schnellen Zugriff auf häufig verwendete Routen praktisch sein. Um zu erfahren, wie man ein Ziel verwendet oder löscht, lesen Sie den Artikel [Suchverlauf](../search/search-history.md).  
+
+
+### Dashboard-Vorschläge {#dashboard-suggestions}
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_dashboard_suggestions.webp)
+
+Wenn keine Navigation aktiv ist, zeigt OsmAnd bis zu fünf Vorschlagskarten im Android Auto-Dashboard an, sodass Sie eine Route starten können, ohne das App-Menü zu öffnen. Die Karten sind verfügbar, wenn *Navigationsverlauf* in den [Verlaufseinstellungen](../search/search-history.md#sort-and-filter) aktiviert ist.
+
+- **Vorherige Route** — die erste Karte. Sie stellt den Startpunkt, die Zwischenpunkte und das Ziel Ihrer letzten Route wieder her.
+- **Letzte Ziele** — die nächsten Karten, entnommen aus dem [Verlauf](#history) und von neu nach alt sortiert. Jede Karte zeigt den Namen des Ziels, seine Adresse oder seinen Typ und ein Symbol des Zieltyps.
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_card_countdown.webp)
+
+So starten Sie eine Route über eine Karte:
+
+1. Tippen Sie auf eine Karte. OsmAnd öffnet sich im Vollbild und zeigt die Routenvorschau an.
+2. Die Schaltfläche **Start** zählt von 10 herunter, und die Navigation startet automatisch. Um sofort zu beginnen, tippen Sie auf **Start**.
+3. Um die Vorschau zu schließen, ohne die Navigation zu starten, tippen Sie auf **Zurück**. Wenn Sie während des Countdowns einen anderen Bildschirm oder eine andere App öffnen, stoppt der Countdown, und die Navigation beginnt erst, wenn Sie auf **Start** tippen.
+
+Wenn die Route Karten benötigt, die nicht heruntergeladen sind, zeigt OsmAnd den Bildschirm *Fehlende Karten* an und startet die Navigation nicht.
+
+**Hinweis:** Die Karten werden während der Navigation ausgeblendet. Nachdem Sie auf eine Karte getippt oder die Karten weggewischt haben, zeigt Android Auto sie wieder an, wenn Ihre nächste Navigation endet oder wenn Sie sich erneut mit dem Auto verbinden.
 
 
 ### POI-Kategorien {#poi-categories}
@@ -192,7 +208,7 @@ Tracks können auch direkt auf dem Fahrzeugbildschirm in *Android Auto* ausgewä
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
 
-Der Übergang zur Suche bietet Ihnen schnellen Zugriff auf eine Liste des letzten [Zielverlaufs](#history). Ähnlich wie im [Navigationsmenü](../navigation/setup/route-navigation.md#navigation-menu), in dem alle OsmAnd-Zielmethoden wie Adresse, POIs oder Koordinaten gesammelt sind.
+Der Übergang zur Suche bietet Ihnen schnellen Zugriff auf eine Liste des letzten [Zielverlaufs](#history). Ähnlich wie im [Navigationsmenü](../navigation/setup/route-navigation.md#navigation-menu), in dem alle OsmAnd-Zielmethoden wie Adresse, POIs oder Koordinaten gesammelt sind. Der Eintrag *Vorherige Route* stellt den Startpunkt, die Zwischenpunkte und das Ziel Ihrer letzten Route wieder her. Er wird angezeigt, wenn *Navigationsverlauf* aktiviert ist.
 
 Sie können das Suchwerkzeug verwenden, um den gewünschten Ort auf der Karte für die Routenplanung aus jeder verfügbaren Suchkategorie zu finden.
 
@@ -306,6 +322,29 @@ Verhalten beim Trennen von Android Auto:
 
 Dieses Update stellt auch sicher, dass Android Auto-Sitzungen nun korrekt geschlossen werden, unnötigen Akkuverbrauch verhindern und „Fahrt im Gange“-Benachrichtigungen stoppen, sobald die Navigation endet.
 
+### Sprachsteuerung {#voice-control}
+
+Sie können OsmAnd auf dem *Android Auto*-Bildschirm per Sprache mit Google Assistant oder Gemini steuern. Sprachaktionen funktionieren sowohl online als auch offline.
+
+Navigationsaktionen:
+
+- *Navigation beenden* — stoppt die aktuelle Route.
+- *Sprachführung stummschalten oder wieder einschalten* — schaltet [Sprachansagen](#voice-prompts) aus oder ein. Der Schalter *Sprachansagen* in den *Android Auto*-Einstellungen ändert sich entsprechend.
+- *Mautstraßen, Autobahnen oder Fähren vermeiden oder erlauben* — ändert den entsprechenden Routenparameter des für die Navigation verwendeten Profils, und die Route wird neu berechnet.
+- *Zurück zu meinem Standort* — zentriert die Karte auf Ihre aktuelle Position.
+- *Zurück* — kehrt zum vorherigen Bildschirm zurück.
+
+Routeninformationen. Die Antwort erscheint als Meldung auf dem *Android Auto*-Bildschirm:
+
+- *Ankunftszeit* — die voraussichtliche Ankunftszeit.
+- *Entfernung zum Ziel* — die verbleibende Entfernung.
+- *Zeit oder Entfernung bis zur nächsten Abbiegung* — wie bald die nächste Abbiegung kommt.
+- *Nächste Abbiegung* — eine Beschreibung des nächsten Manövers.
+- *Ziel* — der Name oder die Koordinaten des Zielpunkts.
+- *Aktuelle Straße* — der Name der Straße, auf der Sie sich befinden.
+
+Wenn keine Route berechnet ist, zeigt OsmAnd eine Meldung an, dass die Route nicht berechnet ist. Bei Anfragen zu Funktionen, die in OsmAnd nicht verfügbar sind, wie Verkehr, Satellitenansicht oder Meldung von Straßenereignissen, wird eine Meldung angezeigt, dass die Aktion nicht unterstützt wird.
+
 
 ## Einstellungen {#settings}
 
@@ -338,7 +377,7 @@ Um die [**Routeninformationen** für einen Zwischenpunkt (nächster Halt)](#next
 
 *Android Auto* und OsmAnd bieten die Möglichkeit, die Karte an die Lichtverhältnisse anzupassen. Im *Tag-Kartenmodus* bleibt das Farbschema hell und kontrastreich, was das Ablesen auch bei hellem Sonnenlicht erleichtert. Im *Nachtmodus* werden die Karten dunkler, was dem Fahrer hilft, sich bei Dunkelheit besser zu orientieren.  
 
-OsmAnd verfügt in *Android Auto* über eine eigene Kartenmodus-Einstellung, die von den [Kartenmodus](../map/vector-maps.md#map-mode)-Optionen in der OsmAnd-App auf Ihrem Gerät getrennt ist. Um sie zu ändern, gehen Sie zu *Android Auto (OsmAnd) → Einstellungsschaltfläche → Kartenmodus*, wählen Sie eine Option aus und tippen Sie auf *Übernehmen*. Die Karte wechselt nach dem Tippen auf *Übernehmen* in den ausgewählten Modus. Wenn Sie den Bildschirm mit dem Pfeil zurück verlassen, ohne auf *Übernehmen* zu tippen, bleibt der vorherige Modus ausgewählt.
+OsmAnd verfügt in *Android Auto* über eine eigene Kartenmodus-Einstellung, die von den [Kartenmodus](../map/vector-maps.md#map-mode)-Optionen in der OsmAnd-App auf Ihrem Gerät getrennt ist. Um sie zu ändern, gehen Sie zu *Android Auto (OsmAnd) → Einstellungsschaltfläche → Kartenmodus*, und wählen Sie eine Option aus. Der ausgewählte Modus wird sofort angewendet, und der Bildschirm kehrt zur Einstellungsliste zurück.
 
 - Wählen Sie *Tag* oder *Nacht*, um die Kartendarstellung unverändert zu lassen, unabhängig von Signalen Ihres Fahrzeugs.
 - Wenn Sie möchten, dass der Kartenanzeigemodus automatisch basierend auf Signalen Ihres Fahrzeugs wechselt, wählen Sie *Automatisch* (Standard).  
@@ -348,7 +387,7 @@ OsmAnd verfügt in *Android Auto* über eine eigene Kartenmodus-Einstellung, die
 
 ![Android Auto Kartenvergrößerung](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
 
-*Kartenvergrößerung* ändert die Vergrößerung der Karte auf dem *Android Auto*-Bildschirm. Um sie zu ändern, gehen Sie zu *Android Auto (OsmAnd) → Einstellungsschaltfläche → Kartenvergrößerung*, wählen Sie einen Wert von 50 % bis 125 % und tippen Sie auf *Übernehmen*. Der aktuelle Wert wird unter *Kartenvergrößerung* in der Einstellungsliste angezeigt.  
+*Kartenvergrößerung* ändert die Vergrößerung der Karte auf dem *Android Auto*-Bildschirm. Um sie zu ändern, gehen Sie zu *Android Auto (OsmAnd) → Einstellungsschaltfläche → Kartenvergrößerung*, wählen Sie einen Wert und tippen Sie auf *Übernehmen*. Der aktuelle Wert wird unter *Kartenvergrößerung* in der Einstellungsliste angezeigt.  
 
 Informationen dazu, wie sich die Vergrößerung auf die Kartendarstellung auswirkt, finden Sie unter [Kartenvergrößerung](../map/vector-maps.md#map-magnifier).
 

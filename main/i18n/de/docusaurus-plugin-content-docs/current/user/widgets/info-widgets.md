@@ -1,5 +1,5 @@
 ---
-source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
+source-hash: fb2f9a2ac137e8c0c2fc36ec770f090860ed927919d72b4d6bd7d058e53126af
 sidebar_position: 3
 title: Informations-Widgets
 ---
@@ -157,7 +157,7 @@ Das Widget **Durchschnittsgeschwindigkeit** berechnet und zeigt Ihre Durchschnit
    - Die Durchschnittsgeschwindigkeit wird basierend auf dem ausgewählten Zeitintervall berechnet, das von **15 Sekunden bis 60 Minuten** reichen kann.  
 
    - Die Berechnung basiert auf GPS-Daten unter Verwendung der Formel:  
-   `Durchschnittsgeschwindigkeit = DURCHSCHNITT(GPS_STANDORT.geschwindigkeit)`.
+   `Average Speed = AVERAGE(GPS_LOCATION.speed)`.
 
 3. ***Pausen berücksichtigen.***
 
@@ -257,7 +257,7 @@ Die [einfachen](../widgets/configure-screen.md#widget-panels) *Gleitverhältnis*
 - **Gleitverhältnis zum Ziel** zeigt das genaue Gleitverhältnis an, das erforderlich ist, um den Zielpunkt zu erreichen.
 - **Zielhöhe** zeigt die Höhe des Zielpunkts an. Der [Kartenmarker](../personal/markers.md) sollte als Zielpunkt verwendet werden.
 
-Um zwischen diesen Modi zu wechseln, tippen Sie direkt auf das Widget. Die Wechseloption ist im [Kontextmenü des Widgets](../widgets/configure-screen.md#widget-context-menu) nicht verfügbar. 
+Um zwischen diesen Modi zu wechseln, tippen Sie direkt auf das Widget. 
 
 | | |
 |:------------|:------------|
@@ -359,12 +359,17 @@ OsmAnd bietet zwei Arten von Koordinaten-Widgets:
 
 Koordinaten-Widgets werden oben auf dem Bildschirm angezeigt. Symbole mit grünem Hintergrund zeigen die Breiten- und Längengrade des Punktes im Zentrum des sichtbaren Teils der Karte an, und solche mit blauem Hintergrund zeigen die Koordinaten Ihres aktuellen Standorts. Informationen zu unterstützten *Koordinatenformaten* finden Sie im Artikel *[Koordinaten suchen](../search/search-coordinates.md#coordinate-format)*.
 
+Jedes Koordinaten-Widget hat eine eigene Einstellung *Format*. Standardmäßig zeigt das Widget die Koordinaten im Primärformat aus der [Koordinatenformat-Liste](../search/search-coordinates.md#customize-coordinate-format) des Profils an. Um ein anderes Format zu wählen, tippen Sie lange auf das Widget und wählen Sie im [Widget-Kontextmenü](../widgets/configure-screen.md#widget-context-menu) *Einstellungen*. Zwei Koordinaten-Widgets können die Koordinaten in unterschiedlichen Formaten anzeigen.
+
+Das gewählte Format wird in den Widget-Einstellungen gespeichert: Es wird zusammen mit den Profileinstellungen kopiert, und das Zurücksetzen der Widget-Einstellungen stellt das Primärformat wieder her.
+
 | | |
 |:------------|:------------|
 | Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | Durch Tippen | Kopiert die Koordinaten in die Zwischenablage. |
-| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) oder <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| Format | **Android:** *[Widget-Kontextmenü](../widgets/configure-screen.md#widget-context-menu) → <Translate android="true" ids="shared_string_settings,navigate_point_format"/>* |
+|   | **iOS:** *[Widget-Kontextmenü](../widgets/configure-screen.md#widget-context-menu) → <Translate ios="true" ids="shared_string_settings,coords_format"/>* |
 
 
 ## GPS-Info   {#gps-info}

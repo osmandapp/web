@@ -1,5 +1,5 @@
 ---
-source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
+source-hash: 36e97b90c3769611facb2ea509fb7332fc9cfadf389290599e8b1eb4dd90b35a
 sidebar_position: 7
 title:  Rasterkarten (Online / Offline)
 ---
@@ -62,7 +62,7 @@ Sie können auch [die Hauptkartenquelle](#main) von Vektorkarten auf Online-Kach
 - **iOS**. Bei *iOS* funktioniert diese Funktion standardmäßig.
 - **Android**. Um Rasterkarten in OsmAnd für *Android* zu verwenden, müssen Sie das [Online-Karten-Plugin](../plugins/online-map.md) aktivieren. Führen Sie die folgenden Schritte aus: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**[Ebenenparameter ändern](#layers)**. Um die Sichtbarkeit und Mischung von Rasterkartenebenen zu verbessern, können Sie die Ebenentransparenz mit dem Schieberegler auf dem Bildschirm anpassen. Zusätzlich können Sie den Stil der Vektorkarte ändern, indem Sie Polygone ausblenden, wodurch die unteren Ebenen besser sichtbar werden. Dies ist besonders nützlich beim Betrachten von Satellitenbildern.
+**[Ebenenparameter ändern](#layers)**. Um Rasterkartenebenen zu mischen, können Sie die Sichtbarkeit der Ebenen mit dem Schieberegler auf dem Bildschirm anpassen. Zusätzlich können Sie den Stil der Vektorkarte ändern, indem Sie Polygone ausblenden, wodurch die unteren Ebenen besser sichtbar werden. Dies ist besonders nützlich beim Betrachten von Satellitenbildern.
 
 
 ## Ebenen {#layers}
@@ -85,7 +85,7 @@ Sie können auch [die Hauptkartenquelle](#main) von Vektorkarten auf Online-Kach
 
 In OsmAnd können Rasterkarten als zusätzliche Kartenquelle neben den standardmäßigen Vektorkarten dienen, die für die Offline-Nutzung optimiert sind.  
 
-Sie haben die Flexibilität, eine oder zwei Online-Kachelebenen hinzuzufügen, um Ihre Basiskarte zu ergänzen. Dies ermöglicht es Ihnen, bis zu drei Kartenebenen gleichzeitig auf Ihrem Bildschirm anzuzeigen (plus Gelände). Stellen Sie sie sich wie einen Kuchen vor: [**Untere Ebene**](#underlay) (Rasterbasis darunter), [**Hauptkarte**](#main) (Vektor oder Rasterkern), [**Überlagerung**](#overlay) (Raster obenauf), mit [**Gelände**](#terrain) Schattierung darüber. Zum Beispiel können Sie Satellitenbilder als Untere Ebene verwenden, die Offline-Vektorkarte von OsmAnd als Hauptebene mit erhöhter Transparenz und eine Radwegkarte als Überlagerung darüber.
+Sie haben die Flexibilität, eine oder zwei Online-Kachelebenen hinzuzufügen, um Ihre Basiskarte zu ergänzen. Dies ermöglicht es Ihnen, bis zu drei Kartenebenen gleichzeitig auf Ihrem Bildschirm anzuzeigen (plus Gelände). Stellen Sie sie sich wie einen Kuchen vor: [**Untere Ebene**](#underlay) (Rasterbasis darunter), [**Hauptkarte**](#main) (Vektor oder Rasterkern), [**Überlagerung**](#overlay) (Raster obenauf), mit [**Gelände**](#terrain) Schattierung darüber. Zum Beispiel können Sie Satellitenbilder als Untere Ebene verwenden, die Offline-Vektorkarte von OsmAnd als Hauptebene mit reduzierter Sichtbarkeit und eine Radwegkarte als Überlagerung darüber.
 
 >[Vektorkarten](./vector-maps.md) sind **nur** in der [Hauptebene](#main) verfügbar (und sind dort standardmäßig). Rasterkarten können in allen drei Ebenen verwendet werden: Haupt, Untere Ebene und Überlagerung.
 
@@ -93,7 +93,7 @@ Sie haben die Flexibilität, eine oder zwei Online-Kachelebenen hinzuzufügen, u
 
 Wenn Sie diese Ebenen schneller wechseln möchten ([Hauptkartenquelle](#main), [Überlagerung](#overlay), [Untere Ebene](#underlay) und [Gelände](#terrain)), können Sie eine [Schnelle Aktion (Benutzerdefinierter Button)](../widgets/quick-action.md) zum Kartenbildschirm hinzufügen und die entsprechenden Kartenaktionen zuweisen.
 
-Sie können auch die Transparenz der Basiskarte anpassen, um sie mit Ihren Ebenen zu mischen. Bei Bedarf können Sie einen Transparenzregler auf dem Hauptbildschirm für schnelle Anpassungen aktivieren.
+Sie können auch die Sichtbarkeit der Basiskarte anpassen, um sie mit Ihren Ebenen zu mischen. Bei Bedarf können Sie einen Regler auf dem Hauptbildschirm für schnelle Anpassungen aktivieren.
 
 ### Hauptkarte {#main}
 
@@ -127,7 +127,7 @@ Standardmäßig ist die Hauptkarte auf [Offline-Vektorkarten](./vector-maps.md) 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Untere/Obere Ebene konfigurieren Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Untere/Obere Ebene konfigurieren Android](@site/static/img/plugins/online-maps/overlay-andr.webp)  
 
 </TabItem>
 
@@ -135,15 +135,15 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,l
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Untere/Obere Ebene konfigurieren iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Untere/Obere Ebene konfigurieren iOS](@site/static/img/plugins/online-maps/overlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Ein-/Ausschalten* der Überlagerungsebene.
-2. *Transparenz der Überlagerung* (*Android*)/ *Transparenz* der Überlagerungskarte (*iOS*).
-3. *Transparenzregler anzeigen* (*Android*) / *Regler auf der Karte anzeigen* (*iOS*). Schneller Zugriff auf die Transparenzeinstellung.
+2. *<Translate android="true" ids="overlay_transparency"/>* (*Android*) / *<Translate ios="true" ids="visibility"/>* (*iOS*). Bei 0 % ist die Überlagerungskarte ausgeblendet, bei 100 % vollständig sichtbar.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Schneller Zugriff auf die Sichtbarkeitseinstellung.
 4. *Quelle der Überlagerungskarte* (*Android*) / *Verfügbare Ebenen* (*iOS*). Wählen Sie eine Online-Kachelkarte aus der Liste aus, um sie direkt als Ihre Überlagerungsebene hinzuzufügen.
 5. *Kartensymbole anzeigen* - wie Text, Straßenschilder und andere.  
 6. *Online-Quelle hinzufügen* (*iOS*). [Neue Online-Quelle hinzufügen](#add-new-online-source).
@@ -157,7 +157,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_s
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Untere/Obere Ebene konfigurieren Android](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Untere/Obere Ebene konfigurieren Android](@site/static/img/plugins/online-maps/underlay-andr.webp)
 
 </TabItem>
 
@@ -165,15 +165,15 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,l
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Untere/Obere Ebene konfigurieren iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Untere/Obere Ebene konfigurieren iOS](@site/static/img/plugins/online-maps/underlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Ein-/Ausschalten* der unteren Ebene.
-2. *Transparenz der Basiskarte*.
-3. *Transparenzregler anzeigen* (*Android*) / *Regler auf der Karte anzeigen* (*iOS*). Schneller Zugriff auf die Transparenzeinstellung.
+2. *<Translate android="true" ids="map_transparency"/>*. Bei 100 % ist die Basiskarte vollständig sichtbar, bei 0 % wird nur die Untere-Ebene-Karte angezeigt.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Schneller Zugriff auf die Sichtbarkeitseinstellung.
 4. *Quelle der unteren Ebene* (*Android*) / *Verfügbare Ebenen* (*iOS*). Wählen Sie eine Online-Kachelkarte aus der Liste aus, um sie direkt als Ihre Untere Ebene hinzuzufügen.
 5. *Polygone anzeigen/ausblenden*.
 6. *Online-Quelle hinzufügen* (*iOS*). [Neue Online-Quelle hinzufügen](#add-new-online-source).

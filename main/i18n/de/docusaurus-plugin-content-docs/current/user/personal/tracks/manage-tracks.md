@@ -1,5 +1,5 @@
 ---
-source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
+source-hash: 0a04e7c5b81da2f4a24b1d70406494efb02bf28fb32a1d087fb5772ae29bca04
 sidebar_position: 2
 title:  Tracks verwalten
 ---
@@ -24,13 +24,13 @@ Alle Tracks in OsmAnd werden in einem Tab unter *<Translate android="true" ids="
 
 <TabItem value="android" label="Android">
 
-![Manage track Overview Android](@site/static/img/personal/tracks/track_on_map_android.png)
+![Track-Übersicht verwalten Android](@site/static/img/personal/tracks/track_on_map_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Manage track Overview iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+![Track-Übersicht verwalten iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
 
 </TabItem>
 
@@ -43,13 +43,13 @@ Alle Tracks in OsmAnd werden in einem Tab unter *<Translate android="true" ids="
 
 <TabItem value="android" label="Android">
 
-![Plan a route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+![Route planen Track bearbeiten Android](@site/static/img/plan-route/plan-route-modify-track-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+![Route planen Track bearbeiten iOS](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
 </TabItem>
 
@@ -72,7 +72,11 @@ Sie können Tracks in OsmAnd auf folgende Weisen hinzufügen:
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+
+Alle jemals aufgezeichneten, erstellten oder importierten Tracks werden automatisch im Ordner [My Places](../../personal/myplaces.md) im Tab *Tracks* angezeigt. Sie sind nach Ordnern geordnet oder werden in einer Liste darunter angezeigt.
+
+Jeder Track in der Liste zeigt im zweiten Eintrag den Namen des übergeordneten Ordners an, getrennt durch `|` (z. B. `Hiking | Tracks`). Dadurch lässt sich leichter erkennen, wo ein Track gespeichert ist. Dies gilt in [Suche](#search), [Intelligente Ordner](../../personal/tracks/smart-folder.md) und [Karte konfigurieren → Tracks](../../map/tracks/index.md#configure-map).
 
 </TabItem>
 
@@ -80,15 +84,17 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
+![Meine Orte mit Tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
+
+Alle jemals aufgezeichneten, erstellten oder importierten Tracks werden automatisch im Ordner [My Places](../../personal/myplaces.md) im Tab *Tracks* angezeigt. Sie sind nach Ordnern geordnet oder werden in einer Liste darunter angezeigt.
+
+Jeder Track in der Liste zeigt im zweiten Eintrag den Namen des übergeordneten Ordners an, getrennt durch `|` (z. B. `Hiking | Tracks`). Dadurch lässt sich leichter erkennen, wo ein Track gespeichert ist. Dies gilt in [Suche](#search), [Intelligente Ordner](../../personal/tracks/smart-folder.md) und [Karte konfigurieren → Tracks](../../map/tracks/index.md#configure-map).
+
+**Hinweis:** Während OsmAnd die Track-Statistiken berechnet, zum Beispiel nachdem viele Tracks auf einmal hinzugefügt wurden, wird oben in der Liste die Zeile *<Translate ios="true" ids="tracks_stats_are_being_calculated"/>* mit einem Fortschrittsring angezeigt. Alle Tracks werden sofort aufgelistet, und ihre Statistiken erscheinen, sobald die Berechnung voranschreitet. Sie können während der Berechnung jeden Track öffnen, umbenennen, verschieben, teilen oder löschen. Die Zeile verschwindet, wenn alle Statistiken berechnet sind.
 
 </TabItem>
 
 </Tabs>
-
-Alle jemals aufgezeichneten, erstellten oder importierten Tracks werden automatisch im Ordner [My Places](../../personal/myplaces.md) im Tab *Tracks* angezeigt. Sie sind nach Ordnern geordnet oder werden in einer Liste darunter angezeigt.
-
-Jeder Track in der Liste zeigt im zweiten Eintrag den Namen des übergeordneten Ordners an, getrennt durch `|` (z. B. `Wandern | Tracks`). Dadurch lässt sich leichter erkennen, wo ein Track gespeichert ist. Dies gilt in [Suche](#search), [Intelligente Ordner](../../personal/tracks/smart-folder.md) und [Karte konfigurieren → Tracks](../../map/tracks/index.md#configure-map).
 
 
 ### Track-Menü {#track-menu}
@@ -99,7 +105,7 @@ Jeder Track in der Liste zeigt im zweiten Eintrag den Namen des übergeordneten 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
+![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/one_track_menu_andr.png)
 
 </TabItem>
 
@@ -153,13 +159,13 @@ Das Menü bietet die folgenden Aktionen:
 
 <TabItem value="android" label="Android">
 
-![My places tracks seach function Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+![Meine Orte Tracks Suchfunktion Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks seach function iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
+![Meine Orte Tracks Suchfunktion iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -180,13 +186,13 @@ Verfügbar:
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
+![Meine Orte Tracks Sortierfunktion Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
+![Meine Orte Tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -217,13 +223,13 @@ Sobald Sie Ihre Auswahl getroffen haben, stehen folgende Schritte zur Verfügung
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![Meine Orte Tracks Sortierfunktion Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.webp)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
+![Meine Orte Tracks Sortierfunktion iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_3_ios.webp)
 
 </TabItem>
 
@@ -233,7 +239,8 @@ OsmAnd bietet eine einfache Möglichkeit, Ihre Tracks zu sortieren, was Ihnen hi
 
 ***Sortieroptionen:***
 
-- **Nächste** — Zeigt Tracks an, die Ihrem aktuellen Standort am nächsten sind.
+- **Nächste zum aktuellen Standort** — Zeigt Tracks an, die Ihrem aktuellen Standort am nächsten sind.
+- **Nächste zur Kartenmitte** — Zeigt Tracks an, die der aktuellen Kartenmitte am nächsten sind. Bei jedem Track werden die Entfernung und ein oranger Richtungspfeil angezeigt, der von der Kartenmitte aus zeigt.
 - **Zuletzt geändert** — Zeigt Tracks sortiert nach ihrem letzten Änderungsdatum an.
 - **Name: A - Z** — Ordnet Tracks alphabetisch von A bis Z.
 - **Name: Z - A** — Ordnet Tracks alphabetisch von Z bis A.
@@ -250,13 +257,13 @@ OsmAnd bietet eine einfache Möglichkeit, Ihre Tracks zu sortieren, was Ihnen hi
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
+![Meine Orte Tracks Sortierfunktion Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
+![Meine Orte Tracks Sortierfunktion iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -275,7 +282,7 @@ Die ausgewählte Sortieroption wird nicht nur auf den aktuellen Unterordner ange
 
 Tippen Sie auf das *Drei-Punkte-Menü* im Ordnerfeld, um das Ordnermenü zu **öffnen**.
 
-![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
+![Multitrack importieren](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
 </TabItem>
 
@@ -311,7 +318,7 @@ Das Track-Ordnermenü ermöglicht es Ihnen, Ordner anzuzeigen, umzubenennen, zu 
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/dashboard_andr.webp)
 
 </TabItem>
 
@@ -319,20 +326,20 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
+![Meine Orte mit Tracks in iOS](@site/static/img/personal/tracks/dashboard_2_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
-Am Ende der Liste im Tab *Tracks* und unter der Liste der Tracks **in jedem Ihrer Ordner** befindet sich ein Informationsbereich, der es Ihnen ermöglicht, die zusammenfassende Gesamtstatistik für die Tracks im ausgewählten Ordner anzuzeigen. Alle Werte werden in den von Ihnen gewählten [Einheiten](../../personal/profiles.md#units--formats) angezeigt.
+Am Ende der Liste im Tab *Tracks* und unter der Liste der Tracks in einem Ordner befindet sich ein Informationsbereich, der es Ihnen ermöglicht, die zusammenfassende Gesamtstatistik für die Tracks im ausgewählten Ordner anzuzeigen. Unter Android wird der Bereich nur angezeigt, wenn der Ordner oder seine Unterordner mindestens einen Track enthalten. Alle Werte werden in den von Ihnen gewählten [Einheiten](../../personal/profiles.md#units--formats) angezeigt.
 
 - *Anzahl der **Tracks** im Ordner* — Zeigt die Anzahl der im ausgewählten Ordner enthaltenen Tracks an.
 - *Gesamtsumme der* **Distanzen** — Die Gesamtlänge aller Tracks im ausgewählten Ordner, gemessen in den von Ihnen gewählten Einheiten, wird angezeigt.
 - *Summe der* **Anstiege** — Die Daten geben den gesamten Höhengewinn über alle Tracks im ausgewählten Ordner an.
 - *Summe der* **Abstiege** — Dieser Parameter ist die Summe der Höhenverluste auf allen Tracks im ausgewählten Ordner.
 - *Summe der* **Dauer** *Zeit* — Zeigt die Gesamtzeit an, die zum Absolvieren aller Tracks im ausgewählten Ordner benötigt wurde.
-- *Gesamt**Größe** der heruntergeladenen Dateien in MB* — Die Gesamtgröße der heruntergeladenen Dateien in Megabyte zeigt an, wie viel Speicherplatz alle Tracks im ausgewählten Ordner auf Ihrem Gerät belegen.
+- *Gesamte* **Größe** — Die Gesamtgröße aller Track-Dateien im ausgewählten Ordner, die zeigt, wie viel Speicherplatz sie auf Ihrem Gerät belegen.
 
 
 ### Ordneraktionen {#folder-actions}
@@ -343,7 +350,7 @@ Am Ende der Liste im Tab *Tracks* und unter der Liste der Tracks **in jedem Ihre
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
+![Meine Orte Tracks Sortierfunktion Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
@@ -351,7 +358,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_m
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
+![Meine Orte Tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -382,7 +389,7 @@ So öffnen Sie die Ordneraktionen:
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/> tab*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
+![Meine Orte mit Tracks in Android](@site/static/img/personal/tracks/tracks_delete_folder_andr.png)
 
 </TabItem>
 
@@ -436,7 +443,7 @@ Das Import-Werkzeug ermöglicht es Ihnen, Tracks aus externen Dateien für die O
 
 <TabItem value="android" label="Android">
 
-![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
+![Multitrack importieren](@site/static/img/personal/tracks/import_multitrack.png) ![Multitrack importieren](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
@@ -444,7 +451,7 @@ Das Import-Werkzeug ermöglicht es Ihnen, Tracks aus externen Dateien für die O
 
 | Export | Import |
 |:------------|:---------------|
-| ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Export </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Export </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
+| ![Multitrack importieren](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Export </summary> ![Multitrack importieren](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![Multitrack importieren](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Export </summary> ![Multitrack importieren](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
 
 <!--
 <table class="blogimage">

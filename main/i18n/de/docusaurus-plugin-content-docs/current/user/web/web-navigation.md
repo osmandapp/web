@@ -2,7 +2,7 @@
 source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
-title: Navigation on the Web
+title: Navigation im Web
 ---
 
 import Tabs from '@theme/Tabs';

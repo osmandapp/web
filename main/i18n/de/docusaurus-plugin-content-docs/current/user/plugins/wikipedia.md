@@ -1,5 +1,5 @@
 ---
-source-hash: 3a1b19203e3a6ba30e182f8b8c57f3ac468e000ae98042c571c03b94e20ce825
+source-hash: 15d49bb0a51bde6a96859143a096fc9ae43659fa8e1fada3dc9753b8a8f92c70
 sidebar_position: 20
 title:  Wikipedia
 ---
@@ -64,7 +64,7 @@ Sie können Wikipedia-Daten zum Herunterladen nach Regionen wie folgt öffnen:
 
 Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
 
-![Download Wikipedia in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
+![Wikipedia unter Android herunterladen](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
 </TabItem>
 
@@ -72,7 +72,7 @@ Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate a
 
 Um zu sehen, welche Daten bereits hochgeladen wurden, gehen Sie zu *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
 
-![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
+![Wikipedia unter iOS herunterladen](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
 
 </TabItem>
 
@@ -100,13 +100,13 @@ Um Wikipedia-POIs ein-/auszublenden, gehen Sie wie folgt vor:
 
 <TabItem value="android" label="Android">
 
-![Wikipedia POIs on Android](@site/static/img/map/map-wikipedia-on-map.png)
+![Wikipedia-POIs unter Android](@site/static/img/map/map-wikipedia-on-map.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia POI on iOS](@site/static/img/map/map-wikipedia-on-map_ios.png)
+![Wikipedia-POI unter iOS](@site/static/img/map/map-wikipedia-on-map_ios.png)
 
 </TabItem>
 
@@ -121,39 +121,19 @@ Wenn Sie auf die Schaltfläche "Suchen" tippen, erscheint ein zusätzliches Pane
 
 - In der **Android**-Version können Sie die [Suche](../search/index.md) öffnen, indem Sie auf das *Suchsymbol* in der oberen linken Ecke des Bildschirms tippen und/oder auf die *Suchoption* im Menü tippen.
 - In der **iOS**-Version befindet sich das Suchsymbol zum Öffnen der [Suche](../search/index.md) in der oberen linken Ecke des Bildschirms.
-
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
--->
-
 - Um nach der Wikipedia-[Kategorie](../search/search-poi.md#poi-search-by-categories) zu suchen, wählen Sie: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Wikipedia category on Android](@site/static/img/map/map-wikipedia-search-on-map.png)
+![Wikipedia-Kategorie unter Android](@site/static/img/map/map-wikipedia-search-on-map.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
+![Wikipedia-Kategorie unter iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
 
 </TabItem>
 
@@ -179,7 +159,7 @@ So öffnen Sie den Wikipedia-Artikel:
 - Wikipedia herunterladen und im Browser öffnen (kostenpflichtige Version).
 - Wikipedia offline lesen und im Browser öffnen (kostenlose Version).
 
-![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
+![Französischer Wikipedia-POI auf Englisch](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
@@ -193,7 +173,7 @@ So öffnen Sie den Wikipedia-Artikel:
 4. Wenn Sie auf diesen Text tippen, werden Sie zum Offline-Wikipedia-Artikel weitergeleitet.
 5. Verwenden Sie die Schaltfläche *Artikel lesen*, um die Vollversion des Wikipedia-Artikels zu öffnen.
 
-![French Wikipedia POI in English in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
+![Französischer Wikipedia-POI auf Englisch unter iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
 </TabItem>
 
@@ -202,7 +182,12 @@ So öffnen Sie den Wikipedia-Artikel:
 
 ## Wikipedia-Einstellungen {#wikipedia-settings}
 
-Sie können die [Sprache(n)](#set-preferred-language) festlegen, in der Sie bevorzugt [Artikel](#wikipedia-article) lesen möchten, und auch die [Optionen zum Herunterladen von Bildern](#download-images) für jedes [Profil](../personal/profiles.md) konfigurieren.
+Sie können die [Sprache(n)](#set-preferred-language) festlegen, in der Sie bevorzugt [Artikel](#wikipedia-article) lesen möchten, für jedes [Profil](../personal/profiles.md), die [Optionen zum Herunterladen von Bildern](#download-images) konfigurieren und den [Bild-Cache](#image-cache) verwalten. Unter iOS werden die Optionen zum Herunterladen von Bildern für jedes Profil festgelegt. Unter Android gelten sie für alle Profile.
+
+Alle Wikipedia-Einstellungen finden Sie in den Einstellungen des Wikipedia-Plugins:
+
+- **Android**. Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings"/>*. Wählen Sie mit der Profilschaltfläche oben auf dem Bildschirm das Profil aus, dessen Einstellungen Sie ändern möchten.
+- **iOS**. Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 ### Bevorzugte Sprache einstellen {#set-preferred-language}
 
@@ -217,23 +202,24 @@ In den **Android**- und **iOS**-Versionen der OsmAnd-App können Sie Ihre bevorz
 
 <TabItem value="android" label="Android">
 
-![Setting a preferred language on Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
+![Bevorzugte Sprache unter Android einstellen](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Setting a preferred language on iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
+![Bevorzugte Sprache unter iOS einstellen](@site/static/img/map/map-wikipedia-language-2-ios.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-In der **iOS**-Version können Sie die bevorzugte Sprache für Wikipedia-Artikel auch über folgende Wege einstellen:  
+Sie können die bevorzugte Sprache für Wikipedia-Artikel auch in den Einstellungen des Wikipedia-Plugins festlegen:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,shared_string_languages"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 :::
 
@@ -245,13 +231,13 @@ Falls der *Wikipedia-Artikel* in verschiedenen Sprachen verfügbar ist, können 
 
 <TabItem value="android" label="Android">
 
-![Switching languages for a specific article](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
+![Sprachen für einen bestimmten Artikel wechseln](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
+![Sprachen für einen bestimmten Artikel wechseln](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
 
 </TabItem>
 
@@ -269,24 +255,50 @@ Sie können wählen, ob Sie Bilder von Wikipedia auf Ihr Gerät herunterladen m�
 
 <TabItem value="android" label="Android">
 
-![Switching images](@site/static/img/plugins/wikipedia/images_android.png)
+![Bilder umschalten](@site/static/img/plugins/wikipedia/images_android.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
+![Bilder umschalten](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-In der **iOS**-Version der App können Sie auch über die *Wikipedia-Plugin-Einstellungen* auf die Optionen zum Herunterladen von Bildern zugreifen:
+Sie können auch in den *Wikipedia-Plugin-Einstellungen* auf die Optionen zum Herunterladen von Bildern zugreifen:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,download_images"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
-![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+![Bilder umschalten](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+
+### Bild-Cache {#image-cache}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Bild-Cache unter Android](@site/static/img/plugins/wikipedia/image_cache_android.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Bild-Cache unter iOS](@site/static/img/plugins/wikipedia/image_cache_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Die Einstellungen des Wikipedia-Plugins zeigen die Größe der auf Ihrem Gerät gespeicherten Bilder an. Der Bild-Cache wird mit den Reiseführern geteilt, daher werden beim Leeren auch die gespeicherten Bilder der Reiseführer gelöscht.
+
+Um die gespeicherten Bilder zu löschen, gehen Sie zu:
+
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,images_cache"/>* → *<Translate android="true" ids="shared_string_clear"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics,remove_cache"/>*
 
 
 ## Verwandte Artikel {#related-articles}
