@@ -399,6 +399,29 @@ describe('srtm', () => {
         expect(edited.points.map(({ ele }) => ele)).toEqual(SRTM_ELE);
     });
 
+    test('the srtm elevation of a track without editor points, as a travel route, reaches its tracks and not another route of the same name', async () => {
+        const ctx = createSrtmCtx();
+        const { points, ...track } = ctx.selectedGpxFile;
+        const route = { ...track, tracks: [{ points }] };
+        ctx.selectedGpxFile = route;
+        const answer = await applySrtmElevation({ track: { ...route }, setLoading: jest.fn() });
+
+        const otherRoute = { ...track, tracks: [{ points: createPlainPoints(5).reverse() }] };
+        ctx.selectedGpxFile = otherRoute;
+        applyAnalysisAnswer(ctx, answer);
+        expect(ctx.selectedGpxFile).toBe(otherRoute);
+
+        ctx.selectedGpxFile = route;
+        applyAnalysisAnswer(ctx, answer);
+        expect(ctx.selectedGpxFile.tracks[0].points.map(({ ele }) => ele)).toEqual(SRTM_ELE);
+        expect(ctx.selectedGpxFile.analysis).toMatchObject({
+            hasElevationData: true,
+            minElevation: 100,
+            avgElevation: 102,
+            maxElevation: 104,
+        });
+    });
+
     test('the analysis is finished when srtm is applied, so routing is not blocked', async () => {
         const ctx = createSrtmCtx();
 

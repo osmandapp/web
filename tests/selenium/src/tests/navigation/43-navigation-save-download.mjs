@@ -3,32 +3,21 @@
 import { By } from 'selenium-webdriver';
 import actionIdleWait from '../../actions/actionIdleWait.mjs';
 
-import {
-    clickBy,
-    waitBy,
-    waitByRemoved,
-    sendKeysBy,
-    assert,
-    enclose,
-    enumerateIds,
-    replaceTextBy,
-} from '../../lib.mjs';
+import { clickBy, waitBy, waitByRemoved, assert, enclose, replaceTextBy } from '../../lib.mjs';
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionLogIn from '../../actions/login/actionLogIn.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
+import actionBuildRoute from '../../actions/navigation/actionBuildRoute.mjs';
+import actionOpenRouteInfoBlock from '../../actions/navigation/actionOpenRouteInfoBlock.mjs';
+import actionEditRoute from '../../actions/navigation/actionEditRoute.mjs';
 import { deleteTrack, cleanupCloud } from '../../util.mjs';
-import { ROUTE_SUMMARY_SELECTOR } from '../../options.mjs';
 
 const ROUTE_TRACK = 'se-test-navigation-route';
 const INFO_BLOCK_TRACK = 'se-test-navigation-route-info';
 
 const START_COORDS = '50.45010, 30.52340';
 const FINISH_COORDS = '50.45466, 30.51660';
-const ROUTE_TRACK_ACTION_BUTTONS = [
-    'se-route-track-actions-edit',
-    'se-route-track-actions-save-to-cloud',
-    'se-route-track-actions-download',
-];
+
 export default async function test() {
     try {
         await actionOpenMap();
@@ -36,7 +25,7 @@ export default async function test() {
 
         await returnToNavigation();
 
-        await buildRoute();
+        await actionBuildRoute({ start: START_COORDS, finish: FINISH_COORDS });
 
         await saveRouteToCloud('se-route-save-to-cloud', ROUTE_TRACK);
         await verifyTrackInCloud(ROUTE_TRACK);
@@ -48,7 +37,7 @@ export default async function test() {
         await deleteTrack(ROUTE_TRACK);
 
         await returnToNavigation();
-        await openRouteInfoBlock();
+        await actionOpenRouteInfoBlock();
         await verifyDownloadDialog('se-route-track-actions-download');
         await saveRouteToCloud('se-route-track-actions-save-to-cloud', INFO_BLOCK_TRACK);
         // save from InfoBlock opens the cloud track, go back to the list
@@ -59,43 +48,13 @@ export default async function test() {
         await deleteTrack(INFO_BLOCK_TRACK);
 
         await returnToNavigation();
-        await openRouteInfoBlock();
-        await verifyEditOpensLocalTrack();
+        await actionOpenRouteInfoBlock();
+        await actionEditRoute();
 
         await actionFinish();
     } finally {
         await cleanupCloud({ tracks: [ROUTE_TRACK, INFO_BLOCK_TRACK] });
     }
-}
-
-async function buildRoute() {
-    await clickBy(By.id('se-route-start-point'));
-    await clickBy(By.id('se-route-start-point-clear'), { optional: true });
-    await clickBy(By.id('se-navigation-title'));
-    await clickBy(By.id('se-route-finish-point'));
-    await clickBy(By.id('se-route-finish-point-clear'), { optional: true });
-
-    await sendKeysBy(By.id('se-route-start-point'), START_COORDS + '\n');
-    await sendKeysBy(By.id('se-route-finish-point'), FINISH_COORDS + '\n');
-
-    await waitBy(ROUTE_SUMMARY_SELECTOR);
-}
-
-async function openRouteInfoBlock() {
-    await clickBy(By.id('se-route-more-information'));
-    await enclose(
-        async () => {
-            const actual = await enumerateIds('se-route-track-actions-');
-            return JSON.stringify(actual) === JSON.stringify(ROUTE_TRACK_ACTION_BUTTONS);
-        },
-        { tag: 'openRouteInfoBlock' }
-    );
-}
-
-async function verifyEditOpensLocalTrack() {
-    await clickBy(By.id('se-route-track-actions-edit'));
-    await waitByRemoved(By.id('se-route-track-actions-edit'));
-    await waitBy(By.id('se-local-track-actions-save-to-cloud'));
 }
 
 async function verifyDownloadDialog(buttonId) {

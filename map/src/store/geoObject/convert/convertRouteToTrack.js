@@ -97,6 +97,7 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
                     }
                 }
             }
+            const { lat, lng } = routeLL;
             const ele = geoLL.ele;
             if (ele !== undefined) {
                 const thisPointExtras = {
@@ -104,9 +105,9 @@ export function convertRouteToTrack({ id, route, trackName, geoProfile, start, f
                     srtmEle: null,
                     ext: { ele, extensions: {} },
                 };
-                points.push({ ...routeLL, ...thisPointExtras, profile, geoProfile, geometry });
+                points.push({ lat, lng, ...thisPointExtras, profile, geoProfile, geometry });
             } else {
-                points.push({ ...routeLL, ...defaultPointExtras, profile, geoProfile, geometry });
+                points.push({ lat, lng, ...defaultPointExtras, profile, geoProfile, geometry });
             }
             lastIndex = index;
         }
