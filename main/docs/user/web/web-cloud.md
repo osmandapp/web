@@ -117,7 +117,9 @@ When you are signed in, the OsmAnd Cloud section appears in Menu → Settings an
 
 ### Connected Apps {#connected-apps}
 
-The **Connected Apps** section allows you to link external services to your OsmAnd account. Currently, it supports integration with [Garmin Connect™](https://connect.garmin.com/app/), which allows automatic synchronization of Garmin activities. To open it, go to: *OsmAnd Web Map → Account → Connected apps*.
+The **Connected Apps** section allows you to link external services to your OsmAnd account: [Garmin Connect™](https://connect.garmin.com/app/) for automatic synchronization of Garmin activities, and AI assistants that work with your OsmAnd Cloud data. To open it, go to: *OsmAnd Web Map → Account → Connected apps*.
+
+**Garmin Connect**
 
 Garmin Connect integration is available only for [OsmAnd Pro](https://osmand.net/docs/user/purchases/) users. If you do not have an active Pro subscription, selecting the Garmin Connect item opens the Pricing page.
 
@@ -131,7 +133,36 @@ Activities are grouped into categories such as Cycling, Walking & Running, Water
 
 To disconnect your Garmin Connect™ account, go to *Settings → Disconnect* and confirm the action. Previously imported tracks remain in the Garmin Connect folder, but new activities will no longer be synchronized.
 
-![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
+**AI assistants**
+
+AI assistants, such as Claude, can work with your OsmAnd Cloud data on request. For example, an assistant can find a favorite, analyze a recorded track, build a route between points, or save a new track to OsmAnd Cloud. The assistant never receives your OsmAnd password.
+
+AI assistants are available only for [OsmAnd Pro](https://osmand.net/docs/user/purchases/) users. If you do not have an active Pro subscription, the **AI assistants** item shows the Pro button.
+
+Access is off by default. To allow it, turn on the **AI assistants** switch in Connected apps.
+
+To connect an assistant:
+
+1. In the assistant, add a custom connector with the server URL `https://osmand.net/mcp`.
+2. Log in to your OsmAnd account when the assistant opens the OsmAnd page.
+3. On the permission page, choose **View** or **Edit** for each data group, and approve access. Edit includes View and is always off at first.
+
+Data groups:
+
+- **Account** — email and OsmAnd Pro status (view only).
+- **Favorites** — saved places and their groups.
+- **Tracks** — GPX tracks and track folders.
+- **Map markers** — markers and itineraries.
+- **OSM edits** — your OpenStreetMap edits and notes.
+- **History** — search and navigation history.
+- **Settings** — profiles, plugins, quick actions, map sources.
+- **Other files** — map styles, routing files, media notes, maps.
+
+Tracks and other files saved by an assistant appear in OsmAnd Cloud and are synchronized with the OsmAnd mobile apps.
+
+Connected assistants are listed under the **AI assistants** switch, each with a summary of its permissions. Select an assistant to open the **Permissions** dialog, where you can change View and Edit for each group and select **Save**. Changes apply to the assistant's next request. To remove an assistant's access, select **Disconnect**. Turning off the **AI assistants** switch disconnects all assistants.
+
+![Garmin Connect](@site/static/img/web/garmin_connect_new.webp) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
 
 ## Troubleshooting {#troubleshooting}
