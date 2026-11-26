@@ -1,5 +1,5 @@
 ---
-source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
+source-hash: fb2f9a2ac137e8c0c2fc36ec770f090860ed927919d72b4d6bd7d058e53126af
 sidebar_position: 3
 title: الأدوات الإعلامية
 ---
@@ -346,7 +346,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![أداة الإحداثيات](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![أداة الإحداثيات iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -359,12 +359,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تُعرض أدوات الإحداثيات في أعلى الشاشة. تعرض الأيقونات ذات الخلفية الخضراء خط العرض وخط الطول للنقطة في مركز الجزء المرئي من الخريطة، وتلك ذات الخلفية الزرقاء تعرض إحداثيات موقعك الحالي. يمكن العثور على معلومات حول *تنسيقات الإحداثيات المدعومة* في [مقالة البحث عن الإحداثيات](../search/search-coordinates.md#coordinate-format)*.
 
+لكل أداة إحداثيات إعداد *التنسيق* الخاص بها. افتراضيًا، تعرض الأداة الإحداثيات بالتنسيق الأساسي من [قائمة تنسيقات الإحداثيات](../search/search-coordinates.md#customize-coordinate-format) في الملف الشخصي. لاختيار تنسيق آخر، انقر مطولاً على الأداة وحدد *الإعدادات* في [قائمة سياق الأداة](../widgets/configure-screen.md#widget-context-menu). يمكن لأداتي إحداثيات عرض الإحداثيات بتنسيقين مختلفين.
+
+يتم حفظ التنسيق المحدد في إعدادات الأداة: يُنسخ مع إعدادات الملف الشخصي، وتؤدي إعادة تعيين إعدادات الأداة إلى إعادته إلى التنسيق الأساسي.
+
 | | |
 |:------------|:------------|
 | تمكين | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | بالنقر | ينسخ الإحداثيات إلى الحافظة. |
-| تنسيق | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (آي أو إس) أو <Translate android="true" ids="configure_profile"/> (أندرويد) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| تنسيق | **أندرويد:** *[قائمة سياق الأداة](../widgets/configure-screen.md#widget-context-menu) → <Translate android="true" ids="shared_string_settings,navigate_point_format"/>* |
+|   | **آي أو إس:** *[قائمة سياق الأداة](../widgets/configure-screen.md#widget-context-menu) → <Translate ios="true" ids="shared_string_settings,coords_format"/>* |
 
 
 ## معلومات GPS   {#gps-info}

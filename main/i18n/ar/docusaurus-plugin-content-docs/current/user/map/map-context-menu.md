@@ -1,5 +1,5 @@
 ---
-source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
+source-hash: 5047fdb7a1e6795622974b9d6310cd105a7f39826c050a85f0c7f44d060772ce
 sidebar_position: 3
 title: قائمة سياق الخريطة
 ---
@@ -151,15 +151,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 بالإضافة إلى ذلك، قد تتضمن اللوحة [تفاصيل OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_features)، مثل:
 
 - [الموقع الإلكتروني](https://wiki.openstreetmap.org/wiki/Key:website)
-- [رقم الهاتف](https://wiki.openstreetmap.org/wiki/Key:contact)
-- [ساعات العمل](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+- [رقم الهاتف](https://wiki.openstreetmap.org/wiki/Key:contact) — تُقسَّم الأرقام التي تتضمن [رمز الدولة](https://wiki.openstreetmap.org/wiki/Key:phone) إلى مجموعات من الأرقام لتسهيل قراءتها، على سبيل المثال `+33 6 12 34 56 78`. عند الاتصال برقم أو نسخه، يستخدم OsmAnd القيمة المخزنة في [OpenStreetMap](https://www.openstreetmap.org/).
+- [ساعات العمل](https://wiki.openstreetmap.org/wiki/Key:opening_hours) — تُعرض بلغة التطبيق، بما في ذلك أيام الأسبوع والأشهر والعطل الرسمية والعطل المدرسية. تُعلَّم الأيام التي لا يعمل فيها المكان بأنها *مغلق*. إذا كانت OpenStreetMap تحتوي على تاريخ آخر تحقق من ساعات العمل ([check_date:opening_hours](https://wiki.openstreetmap.org/wiki/Key:check_date))، فانقر على الصف لتوسيعه. يظهر *<Translate android="true" ids="poi_check_date"/>* أسفل الساعات بصيغة التاريخ المختصرة للغة التطبيق.
+- [<Translate android="true" ids="poi_check_date"/>](https://wiki.openstreetmap.org/wiki/Key:check_date) — تاريخ آخر تحقق من بيانات الكائن في OpenStreetMap.
 - [الرسوم](https://wiki.openstreetmap.org/wiki/Key:fee)
+- [<Translate android="true" ids="poi_zone"/>](https://wiki.openstreetmap.org/wiki/Key:zone) — منطقة وقوف السيارات ضمن نظام مواقف المدينة، على سبيل المثال *M*. تظهر لمواقف السيارات.
 - [إمكانية الوصول](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [العرض](https://wiki.openstreetmap.org/wiki/Key:width) / [الارتفاع](https://wiki.openstreetmap.org/wiki/Key:height) 
 
 إذا كان حقل جهة اتصال (مثل *الموقع الإلكتروني، رقم الهاتف*، أو *البريد الإلكتروني*) يحتوي على قيم متعددة، فإن النقر عليه يعرض قائمة بالإدخالات المتاحة. حدد الإدخال المطلوب لتنفيذ الإجراء المقابل.
 
-بالإضافة إلى الحقول المذكورة أعلاه، قد يعرض OsmAnd أيضًا معلومات وصفية إضافية مأخوذة من OpenStreetMap. تساعد هذه السمات في فهم خصائص المكان بشكل أفضل وقد تشمل تفاصيل مثل الارتفاع، والاتجاه، وسنة البناء، ونوع السطح أو الغطاء، ومستوى الداخل، وخيارات الدفع، وتوافر التوصيل أو الوجبات الخارجية، وغيرها الكثير. يعرض OsmAnd هذه السمات بتسميات واضحة، وأيقونات حيثما أمكن، مما يجعل القراءة والتعرف على المعلومات أسهل. يعتمد المجموعة الدقيقة من السمات على البيانات المتاحة في OpenStreetMap للكائن المحدد.
+بالإضافة إلى الحقول المذكورة أعلاه، قد يعرض OsmAnd أيضًا معلومات وصفية إضافية مأخوذة من OpenStreetMap. تساعد هذه السمات في فهم خصائص المكان بشكل أفضل وقد تشمل تفاصيل مثل الارتفاع، والاتجاه، وسنة البناء، ونوع السطح أو الغطاء، ومستوى الداخل، وخيارات الدفع، وتوافر التوصيل أو الوجبات الخارجية، وغيرها الكثير. يعرض OsmAnd هذه السمات بتسميات واضحة، وأيقونات حيثما أمكن، مما يجعل القراءة والتعرف على المعلومات أسهل. تُعرض كل سمة باسمها مع قيمتها أسفلها، على سبيل المثال *التدخين* / *غير مسموح* أو *الوجبات الخارجية* / *نعم*. إذا كان للسمة عدة خيارات، فتُدرج في صف واحد مفصولة بـ `•`، على سبيل المثال *قوارب مستأجرة* / *كاياك • قارب كانو*. يعتمد المجموعة الدقيقة من السمات على البيانات المتاحة في OpenStreetMap للكائن المحدد.
 
 
 ### وصف المقال {#article-description}
@@ -263,9 +265,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 |تنسيق الإحداثيات| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (درجات عشرية بسيطة)</li><li>DDD.DDDDD (شمال/جنوب، شرق/غرب بفاصلة)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[معيار UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[رمز الموقع المفتوح](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[الشبكة السويسرية CH1903 و CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[رابط ويب OsmAnd](https://osmand.net/map)</li><li>[رابط ويب OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![الإحداثيات](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (درجات عشرية بسيطة)</li><li>DDD.DDDDD (شمال/جنوب، شرق/غرب بفاصلة)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[معيار UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[رمز الموقع المفتوح](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[الشبكة السويسرية CH1903 و CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Maidenhead](https://en.wikipedia.org/wiki/Maidenhead_Locator_System)</li><li>[تنسيقات EPSG](../search/search-coordinates.md#customize-coordinate-format)</li><li>[رابط ويب OsmAnd](https://osmand.net/map)</li><li>[رابط ويب OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![الإحداثيات](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-في قائمة السياق، يمكنك العثور على [الإحداثيات الجغرافية](../search/search-coordinates.md#coordinate-format) لنقطة بتنسيقات مختلفة وأيضًا روابط OsmAnd و [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) القابلة للمشاركة (الخيار الأخير متاح فقط عند تمكين [ملحق تحرير OpenStreetMap](../plugins/osm-editing.md)). إذا قمت بتوسيع قسم الإحداثيات ونقرت نقرة طويلة على أي سطر من القائمة، فسيتم نسخ قيمه تلقائيًا إلى الحافظة (**أندرويد**) أو يصبح خيار *النسخ* متاحًا في الرسالة المنبثقة (**iOS**).  
+في قائمة السياق، يمكنك العثور على [الإحداثيات الجغرافية](../search/search-coordinates.md#coordinate-format) لنقطة بالتنسيقات الواردة في [قائمة تنسيقات الإحداثيات](../search/search-coordinates.md#customize-coordinate-format) الخاصة بالملف الشخصي، مع عرض التنسيق الأساسي أولاً، وأيضًا روابط OsmAnd و [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) القابلة للمشاركة (الخيار الأخير متاح فقط عند تمكين [ملحق تحرير OpenStreetMap](../plugins/osm-editing.md)). إذا قمت بتوسيع قسم الإحداثيات ونقرت نقرة طويلة على أي سطر من القائمة، فسيتم نسخ قيمه تلقائيًا إلى الحافظة (**أندرويد**) أو يصبح خيار *النسخ* متاحًا في الرسالة المنبثقة (**iOS**).  
 
 يمكن لـ OsmAnd التعرف تلقائيًا على رابط ويب OsmAnd (مثال: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). يتم فتح كل من روابط OsmAnd و [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) على المواقع المقابلة مع علامة دبوس لمكان الاهتمام.  
 
@@ -404,7 +406,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-عندما تنقر على مكان شهير على الخريطة، يعرض قسم **الصور عبر الإنترنت** في *قائمة سياق نقاط الاهتمام* معاينات للصور مأخوذة من [ويكيبيديا](https://www.wikipedia.org/) و [ويكيميديا كومنز](https://www.wikimedia.org/).
+عندما تنقر على مكان شهير على الخريطة، يعرض قسم **الصور عبر الإنترنت** في *قائمة سياق نقاط الاهتمام* معاينات للصور مأخوذة من [ويكيبيديا](https://www.wikipedia.org/) و [ويكيميديا كومنز](https://www.wikimedia.org/). إذا كانت لنقطة الاهتمام صورة [Mapillary](../plugins/mapillary.md) مرتبطة في OpenStreetMap (الوسم `mapillary`)، فتُعرض هذه الصورة أولاً في قسم **الصور عبر الإنترنت**. لا يلزم تمكين ملحق Mapillary.
 
 يؤدي النقر على صورة إلى فتح عرض **المعرض**، حيث يمكنك:
 

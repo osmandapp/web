@@ -1,5 +1,5 @@
 ---
-source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
+source-hash: d0091f6c53e5bab1a3f712b907e2581913384d21865212be979549aae63d2d2c
 sidebar_position: 4
 title:  الملفات الشخصية (الإعدادات)
 ---
@@ -36,7 +36,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,configure_profile"/>* (تصفح الخريطة أو أي ملف شخصي آخر)
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*  
 
-![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
+![إعدادات الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_settings_overview_2_andr.png)
 
 </TabItem>
 
@@ -44,7 +44,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
+![إعدادات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_settings_ios.png)
 
 </TabItem>
 
@@ -61,13 +61,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![Profiles Settings Android](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
+![إعدادات الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_settings_menu_1_andr.png)  ![إعدادات الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_settings_menu_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles Settings iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
+![إعدادات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_settings_menu_2_ios.png)
 
 </TabItem>
 
@@ -84,7 +84,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile"/>*
 
-![Favorites folder functions android](@site/static/img/personal/profile_settings_free_backup_andr.png)
+![وظائف مجلد المفضلة أندرويد](@site/static/img/personal/profile_settings_free_backup_andr.png)
 
 </TabItem>
 
@@ -92,7 +92,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>*
 
-![Favorites actions ios](@site/static/img/personal/profile_settings_free_backup_ios.png)
+![إجراءات المفضلة iOS](@site/static/img/personal/profile_settings_free_backup_ios.png)
 
 </TabItem>
 
@@ -115,7 +115,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Appearance Android](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
+![الإعدادات العامة للملفات الشخصية: المظهر أندرويد](@site/static/img/personal/profiles/profiles_appearance_2_andr.png)
 
 </TabItem>
 
@@ -123,7 +123,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Profiles General Settings Apperance iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
+![الإعدادات العامة للملفات الشخصية: المظهر iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.webp)
 
 </TabItem>
 
@@ -149,6 +149,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*أندرويد فقط*). يفتح قائمة التحكم في الشاشة، حيث يمكنك تحديد خيارات لشاشة الجهاز أثناء الملاحة لتوفير استهلاك بطارية الجهاز.  
 
+- **إبقاء الشاشة قيد التشغيل** (*iOS فقط*). يحدد متى تبقى شاشة الجهاز قيد التشغيل أثناء فتح OsmAnd.
+  - *<Translate ios="true" ids="shared_string_system_default"/>*. تُطفأ الشاشة وفقًا لمدة القفل التلقائي المحددة في إعدادات جهازك.
+  - *أثناء الملاحة*. تبقى الشاشة قيد التشغيل أثناء نشاط الملاحة، وتُطفأ وفقًا لمدة القفل التلقائي عند إيقاف الملاحة مؤقتًا أو إنهائها. هذا الخيار غير متاح للملف الشخصي *<Translate ios="true" ids="rendering_value_browse_map_name"/>*.
+  - *<Translate ios="true" ids="shared_string_always"/>*. تبقى الشاشة قيد التشغيل طوال الوقت أثناء فتح OsmAnd.
+  - افتراضيًا، يستخدم الملف الشخصي *<Translate ios="true" ids="rendering_value_browse_map_name"/>* الخيار *<Translate ios="true" ids="shared_string_system_default"/>*، وتستخدم الملفات الشخصية الأخرى الخيار *أثناء الملاحة*.
+
 
 ### الوحدات والتنسيقات {#units--formats}
 
@@ -156,13 +162,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Profiles General Settings Units & formats Android](@site/static/img/personal/profiles/units_formats_android.png)
+![الإعدادات العامة للملفات الشخصية: الوحدات والتنسيقات أندرويد](@site/static/img/personal/profiles/units_formats_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles General Settings Units & formats iOS](@site/static/img/personal/profiles/units_formats_ios.png)
+![الإعدادات العامة للملفات الشخصية: الوحدات والتنسيقات iOS](@site/static/img/personal/profiles/units_formats_ios.png)
 
 </TabItem>
 
@@ -225,9 +231,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (منطقة شمال شرق) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | مثال: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | مثال:  9F2X4WFJ+7W ([رمز الموقع المفتوح](https://en.wikipedia.org/wiki/Open_Location_Code) يمثل منطقة 9م × 14م)  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (إصدار أندرويد فقط) | مثال: 2 215 227.87, 830 915.9 ([نظام الإحداثيات السويسري](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (إصدار أندرويد فقط) | مثال: 4 215 227.87, 1 830 915.9 ([نظام الإحداثيات السويسري](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
-|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (إصدار أندرويد فقط) | مثال: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> | مثال: 2 215 227.87, 830 915.9 ([نظام الإحداثيات السويسري](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> | مثال: 4 215 227.87, 1 830 915.9 ([نظام الإحداثيات السويسري](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> | مثال: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*أندرويد*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| درجات 180° | جميع القيم الزاوية لها قراءات من 0° إلى 180° ومن 0° إلى -180°.  |
 |          | درجات 360° | جميع القيم الزاوية لها قراءات من 0° إلى 360°.  |
@@ -260,7 +266,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,shared_string_other"/>*
 
-![Profiles General Settings Other Android](@site/static/img/personal/profiles/other_settings_android.png)
+![الإعدادات العامة للملفات الشخصية: أخرى أندرويد](@site/static/img/personal/profiles/other_settings_android.png)
 
 </TabItem>
 
@@ -268,7 +274,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_others"/>*
 
-![Profiles General Settings Other iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
+![الإعدادات العامة للملفات الشخصية: أخرى iOS](@site/static/img/personal/profiles/profile_general_settings_other_ios.png)  
 
 </TabItem>
 
@@ -300,7 +306,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_overview_andr.png)
+![إعدادات الملاحة أندرويد](@site/static/img/navigation/navigation_settings_overview_andr.png)
 
 </TabItem>
 
@@ -308,7 +314,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
+![إعدادات الملاحة iOS](@site/static/img/navigation/navigation_settings_overview_2_ios.png)
 
 </TabItem>
 
@@ -346,7 +352,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="shared_string_menu,configure_profile,configure_map"/>*  
 - *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles"/>* *→ تكوين الخريطة*
 
-![Profiles Configure map Settings Android](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
+![إعدادات تهيئة الخريطة للملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_configure_map_1_andr.png)
 
 </TabItem>
 
@@ -354,7 +360,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,configure_map"/>*  
 
-![Profiles Configure map Settings iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
+![إعدادات تهيئة الخريطة للملفات الشخصية iOS](@site/static/img/personal/profiles/profile_configure_map_ios.png)
 
 </TabItem>
 
@@ -384,7 +390,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 - اذهب إلى: *القائمة ← الإعدادات ← ملف تعريف التطبيق ← تكوين الشاشة*
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
+![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_1-1_andr.png)  ![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_3_andr.png)  
 
 </TabItem>
 
@@ -392,7 +398,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![Configure screen menu](@site/static/img/widgets/configure_screen_overview_ios_2.png)
+![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_ios_1.png)  ![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_ios_2.png)
 
 </TabItem>
 
@@ -409,7 +415,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
+![مظهر الملفات الشخصية](@site/static/img/personal/profiles/profile_appearance_1_andr.png)
 
 </TabItem>
 
@@ -417,7 +423,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![Profiles Appearance](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
+![مظهر الملفات الشخصية](@site/static/img/personal/profiles/profile_appearance_1_ios_new.png)
 
 </TabItem>
 
@@ -434,7 +440,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_profile,profile_appearance"/>*
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_andr.png)
+![مظهر موقعي](@site/static/img/personal/profiles/location_appearance_andr.png)
 
 تتيح لك إعدادات **مظهر موقعي** تخصيص كيفية عرض موقعك على الخريطة، سواء عند الثبات (الراحة) أو أثناء الحركة (الملاحة). يتم اكتشاف الحركة بواسطة نظام التشغيل عندما تكون سرعة الجهاز **أكبر من الصفر**.
 
@@ -444,7 +450,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,profile_appearance"/>*  
 
-![My location Appearance](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
+![مظهر موقعي](@site/static/img/personal/profiles/location_appearance_2_ios_new.png)
 
 تتيح لك إعدادات **مظهر موقعي** تخصيص كيفية عرض موقعك على الخريطة، سواء عند الثبات (الراحة) أو أثناء الحركة (الملاحة). يتم اكتشاف الحركة بواسطة نظام التشغيل عندما تكون سرعة الجهاز **أكبر من الصفر**.
 
@@ -499,14 +505,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,ui_customization"/>*
 
-![Profile UI Customization Android](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
+![تخصيص واجهة المستخدم للملف الشخصي أندرويد](@site/static/img/personal/profiles/profile_ui_customization_android.png)  
 
 باستخدام ميزة تخصيص واجهة المستخدم، يمكنك ضبط عدد العناصر في الإجراءات مثل [<Translate android="true" ids="shared_string_drawer"/>](../start-with/main-menu.md#customize-advanced-use-of-android)، [<Translate android="true" ids="configure_map"/>](../map/configure-map-menu.md) و [<Translate android="true" ids="context_menu_actions"/>](../map/map-context-menu.md). يمكن العثور على معلومات حول عدد العناصر المضافة من إجمالي العناصر الممكنة تحت عنوان كل ميزة.
 
 
 ### القائمة الجانبية (Drawer) {#drawer}
 
-![Profile Drawer Android](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![Profile Reset Android](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
+![القائمة الجانبية للملف الشخصي أندرويد](@site/static/img/personal/profiles/profile_drawer_moving_android.png)  ![إعادة تعيين الملف الشخصي أندرويد](@site/static/img/personal/profiles/profile_drawer_reset_item_android.png)  
 
 - **العناصر المرئية الرئيسية** - في قسم *تخصيص واجهة المستخدم*، يمكنك *إعادة ترتيب وإخفاء واستعادة* العناصر من [القائمة الجانبية](../start-with/main-menu.md#customize-advanced-use-of-android) لتتناسب مع تفضيلاتك.
 
@@ -516,7 +522,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### تكوين الخريطة {#configuring-the-map}
 
-![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![Profile Configure map menu Android](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
+![قائمة تهيئة الخريطة للملف الشخصي أندرويد](@site/static/img/personal/profiles/profile_configure_map_visible_andr.png) ![قائمة تهيئة الخريطة للملف الشخصي أندرويد](@site/static/img/personal/profiles/profile_configure_map_show_andr.png)
 
 - **قائمة تكوين الخريطة** - في قسم *تخصيص واجهة المستخدم*، يمكنك *إعادة ترتيب أو إخفاء العناصر* من [قائمة تكوين الخريطة](../map/configure-map-menu.md)، مما يتيح الوصول السريع إلى الإعدادات المستخدمة بشكل متكرر.
 
@@ -527,7 +533,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### إجراءات قائمة السياق {#context-menu-actions}
 
-![Profile Context menu Android](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![Profile Configure map menu Reset Android](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
+![القائمة السياقية للملف الشخصي أندرويد](@site/static/img/personal/profiles/profile_context_menu_visible_andr.png)  ![إعادة تعيين قائمة تهيئة الخريطة للملف الشخصي أندرويد](@site/static/img/personal/profiles/profile_context_menu_hidden_2_andr.png)
 
 - **قائمة سياق الخريطة** - في قسم تخصيص واجهة المستخدم، يمكنك إعادة ترتيب أو إخفاء العناصر في [قائمة سياق الخريطة](../map/map-context-menu.md) لتحسين الوصول إلى الميزات المستخدمة بشكل متكرر.
 
@@ -548,7 +554,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugin_settings"/>*  
 
-![Profile Settings Plugins Android](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
+![إعدادات ملحقات الملف الشخصي أندرويد](@site/static/img/personal/profiles/profile_plugins_1_andr.png)
 
 </TabItem>
 
@@ -556,7 +562,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group"/>*
 
-![Profile Settings Plugins iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
+![إعدادات ملحقات الملف الشخصي iOS](@site/static/img/personal/profiles/profile_plugins_1_ios.png)
 
 </TabItem>
 
@@ -581,7 +587,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
   > ***يؤثر تغيير إعدادات ملحق تطوير OsmAnd على جميع الملفات الشخصية.***
 
-- **ويكيبيديا** (iOS فقط). تفتح هذه القائمة *[إعدادات ملحق ويكيبيديا](../plugins/wikipedia.md#wikipedia-settings)*. يمكنك تحديد اللغة التي سيتم عرض المقالات بها واختيار ما إذا كنت تريد تنزيل الصور من ويكيبيديا. يعزز وجود ويكيبيديا في رحلتك تجربتك من خلال توفير معلومات حول الأماكن التي تزورها. يعمل دون اتصال بالإنترنت ويعرض مقالات ويكيبيديا ذات الصلة مباشرة على الخريطة المتعلقة بنقاط الاهتمام.
+- **ويكيبيديا**. تفتح هذه القائمة *[إعدادات ملحق ويكيبيديا](../plugins/wikipedia.md#wikipedia-settings)* للملف الشخصي المحدد. يمكنك تحديد اللغة التي سيتم عرض المقالات بها، واختيار ما إذا كنت تريد تنزيل الصور من ويكيبيديا، ومسح ذاكرة التخزين المؤقت للصور. يعزز وجود ويكيبيديا في رحلتك تجربتك من خلال توفير معلومات حول الأماكن التي تزورها. يعمل دون اتصال بالإنترنت ويعرض مقالات ويكيبيديا ذات الصلة مباشرة على الخريطة المتعلقة بنقاط الاهتمام.
 
 - **مقاييس المركبة**. تفتح هذه القائمة *[إعدادات ملحق مقاييس المركبة](../plugins/vehicle-metrics.md#scanner-settings)*. يسمح لك بتوصيل ماسح OBD-II بـ OsmAnd.
 
@@ -595,13 +601,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Profiles Actions Settings Android](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
+![إعدادات إجراءات الملفات الشخصية أندرويد](@site/static/img/personal/profiles/profile_actions_settings_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Profiles Actions Settings iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
+![إعدادات إجراءات الملفات الشخصية iOS](@site/static/img/personal/profiles/profile_actions_settings_ios.png)  
 
 </TabItem>
 

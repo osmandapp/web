@@ -1,5 +1,5 @@
 ---
-source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
+source-hash: ac4b1ef2a793eeac796124826048717fd7b712c23f6ffb664ab0c28b45623390
 sidebar_position: 1
 title:  عمليات الشراء في أندرويد
 ---
@@ -125,7 +125,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [تنزيلات خرائط غير محدودة](../start-with/download-maps.md) | <details><summary>**٧ تنزيلات للخرائط**</summary>  - تنزيل الخريطة أو تحديثها يعني فقط تنزيل-تحديث خريطة بلد (منطقة). <br/> - **خريطة العالم العامة**، و**تصحيح الارتفاع العالمي**، و**خطوط الخرائط** و**التوجيهات الصوتية** لا تُحتسب ضمن إمكانيات التنزيل السبع. </details> | ✔ | ✔ |
 | [تحديثات الخرائط الشهرية](../personal/maps-resources.md#updates-menu)<br/>مرة في الشهر (مع تأخير يومين) | <details><summary>**٧ تنزيلات للخرائط**</summary> يُحتسب تحديث الخريطة كتنزيل.</details> | ✔ | ✔ |
 | [تحديثات الخرائط كل ساعة](../personal/maps-resources.md#live-updates)<br/>تحديثات حية (تأخير ساعة واحدة) - [**](#-map-updates) | **-** | **-** | ✔ |
-| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [دعم المستشعرات الخارجية](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
 | [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -138,8 +137,9 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 | [ملحق علم الفلك](../plugins/astronomy.md) — [وضع الواقع المعزز التفاعلي](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [ملحق علم الفلك](../plugins/astronomy.md) — [خريطة السماء بدون اتصال](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [ملحق علم الفلك](../plugins/astronomy.md) — [مستكشف الكسوف](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
-| [ألوان الودجت المخصصة](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
+| [لون خلفية الودجت المخصص](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [الملاحة بدون اتصال وبالاتصال بالإنترنت](../navigation/index.md)<br/>مع توجيهات منعطف بمنعطف | ✔ | ✔ | ✔ |
+| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | ✔ | ✔ | ✔ |
 | [بحث فوري بدون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
 | [تسجيل الرحلة](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [تصدير مسارات GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |

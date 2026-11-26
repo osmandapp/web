@@ -1,5 +1,5 @@
 ---
-source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
+source-hash: 1dedf30fcafbdd4bf9df2e543bf8db14623c9186c879536ea1c090f7aff4544b
 sidebar_position: 16
 title: التضاريس
 ---
@@ -155,7 +155,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![قائمة خطوط الكونتور أندرويد](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![قائمة خطوط الكونتور أندرويد](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.webp)
 
 </TabItem>
 
@@ -163,7 +163,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Contour lines*
 
-![قائمة خطوط الكونتور آي أو إس](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![قائمة خطوط الكونتور آي أو إس](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.webp)
 
 </TabItem>
 
@@ -185,6 +185,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. تحديد كثافة خطوط الكونتور (منخفضة، متوسطة، عالية). قد تؤثر الكثافات الأعلى على سرعة التحميل.
 - *<Translate android="true" ids="maps_and_resources"/>*. عرض وتنزيل خرائط خطوط الكونتور للمنطقة الحالية والمناطق المجاورة.
 
+**إعدادات التسميات**:
+
+- *<Translate android="true" ids="rendering_attr_contourLabelDirection_name"/>*. اختيار اتجاه أرقام الارتفاع على خطوط الكونتور:
+    - *<Translate android="true" ids="rendering_value_upright_name"/>*. تدور الأرقام مع الخريطة لتبقى مقروءة على الشاشة.
+    - *<Translate android="true" ids="rendering_value_uphill_name"/>*. يتجه أعلى كل رقم نحو الأرض الأعلى، كما في الخرائط الطبوغرافية الورقية. تحافظ الأرقام على هذا الاتجاه عند تدوير الخريطة، لذا قد تظهر مقلوبة على الشاشة.
+
+تشير العلامات القصيرة على خطوط الكونتور إلى أسفل المنحدر.
+
 
 ## التضاريس {#terrain}
 
@@ -198,7 +206,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![قائمة التضاريس أندرويد](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![قائمة التضاريس أندرويد](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![قائمة التضاريس أندرويد](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.webp)  ![قائمة التضاريس أندرويد](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.webp)
 
 </TabItem>
 
@@ -212,13 +220,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>  
 
-خيار **التضاريس** يُمكّن ويسمح لك بتخصيص ثلاث ميزات مثل *تظليل التلال*، و*الميل*، و*الارتفاع*. في نظام iOS، تتضمن قائمة التصور أيضًا *ظلال التضاريس*، وهي وضع تظليل تضاريس فوري يعتمد على التضاريس ثلاثية الأبعاد.  
+خيار **التضاريس** يُمكّن ويسمح لك بتخصيص ثلاث ميزات مثل *تظليل التلال*، و*الميل*، و*الارتفاع*. في نظام iOS، تتضمن قائمة التصور أيضًا [*ظلال التضاريس*](#terrain-shadows)، وهي وضع تظليل تضاريس فوري يعتمد على التضاريس ثلاثية الأبعاد.  
 ميزات محددة:  
 
-- يمكن تمكين خيار واحد فقط في نفس الوقت، إما تظليل التلال أو الميل أو الارتفاع أو ظلال التضاريس.
+- يمكن تمكين خيار واحد فقط في نفس الوقت، إما تظليل التلال أو الميل أو الارتفاع أو ظلال التضاريس (الأخيرة متاحة على iOS فقط).
 - إذا لم تلاحظ أي تغييرات بعد تنزيل وتمكين الخريطة المقابلة، فمن المستحسن إعادة تشغيل التطبيق.
+- على أندرويد، تعرض شاشة التضاريس أيضًا صفّي [التضاريس ثلاثية الأبعاد](#3d-relief) و[المباني ثلاثية الأبعاد](#3d-buildings) اللذين يفتحان إعداداتهما. يبقى هذان الصفان مرئيين عندما يكون مفتاح التضاريس متوقفًا.
 
-تتضمن قائمة **التضاريس** اختيار [نظام الألوان](#default-color-scheme) (**التصور** على iOS) مع خيار [تعديله](#modify-color-scheme) (لـ [مشتركي Pro](../../user/purchases/index.md))، والقدرة على تغيير شفافية الطبقة على الخريطة ([الرؤية](#visibility))، واختيار [مستوى التقريب](#zoom-levels) لعرضها، ومعلومات حول حجم [البيانات المخزنة مؤقتًا](#cache-size)، وقائمة بـ [الخرائط](../../user/personal/maps-resources.md) اللازمة لعرض الطبقة.
+تتضمن قائمة **التضاريس** اختيار [التصور](#default-color-scheme) مع خيار [تعديله](#modify-color-scheme) (لـ [مشتركي Pro](../../user/purchases/index.md))، والقدرة على تغيير شفافية الطبقة على الخريطة ([الرؤية](#visibility))، واختيار [مستوى التقريب](#zoom-levels) لعرضها، ومعلومات حول حجم [البيانات المخزنة مؤقتًا](#cache-size)، وقائمة بـ [الخرائط](../../user/personal/maps-resources.md) اللازمة لعرض الطبقة.
 
 
 ## طبقات تظليل التلال والميل والارتفاع {#hillshade-slope-and-altitude-layers}
@@ -267,14 +276,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### تعديل نظام الألوان {#modify-color-scheme}
 
 :::info ميزة Pro
-*[تعديل نظام الألوان](../../user/personal/color-palette-schemes.md#terrain)* هي ميزة مدفوعة في **OsmAnd Pro** <ProFeature />.
+*[تعديل نظام الألوان](../../user/personal/color-palette-schemes.md#terrain)* هي ميزة مدفوعة في [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.webp)   ![تعديل نظام الألوان](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
@@ -309,7 +318,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 | ------ | ------- |
 | ![الرؤية ](../../../blog/2023-08-28-terrain/img/31.png) | ![الرؤية ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-تُستخدم وظيفة *الرؤية* لضبط شفافية الظلال لتظليل التلال والألوان المستخدمة لتمثيل الزاوية في معلمة الميل. بالنسبة لظلال التضاريس، تتحكم الرؤية في قوة تأثير تظليل التضاريس.
+تُستخدم وظيفة *الرؤية* لضبط شفافية الظلال لتظليل التلال والألوان المستخدمة لتمثيل الزاوية في معلمة الميل. بالنسبة لـ [ظلال التضاريس](#terrain-shadows) على iOS، تتحكم الرؤية في قوة تأثير تظليل التضاريس.
 
 ### مستويات التقريب {#zoom-levels}
 
@@ -317,7 +326,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تسمح لك وظيفة *مستويات المقياس* بتعيين القيم الدنيا والقصوى لمستويات تقريب الخريطة، والتي تتراوح من ٤ إلى ١٩، والتي سيتم عندها عرض طبقات خريطة تظليل التلال أو الميل.
 
-لا تتوفر مستويات التقريب لظلال التضاريس لأن هذا التصور يُعرض ديناميكيًا ولا يعتمد على نطاقات رؤية الطبقة النقطية.
+لا تتوفر مستويات التقريب لظلال التضاريس على iOS لأن هذا التصور يُعرض ديناميكيًا ولا يعتمد على نطاقات رؤية الطبقة النقطية.
 
 ### حجم ذاكرة التخزين المؤقت {#cache-size}
 
@@ -340,7 +349,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الإجراءات السريعة {#quick-actions}
 
-![QA for Terrain](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
+![الإجراءات السريعة للتضاريس](@site/static/img/plugins/contour-lines/QA_for_terrain.png)
 
 يمكنك استخدام أزرار *الإجراء السريع* على شاشة الخريطة لتبديل رؤية طبقات [خطوط الكونتور](#contour-lines) و[التضاريس](#terrain) و[نظام ألوان التضاريس](../../user/personal/color-palette-schemes.md#quick-actions). اعتمادًا على الطبقة المحددة في قائمة تخصيص الخريطة، سيؤدي تعيين إجراء *التضاريس* إلى الزر إلى عرض *تظليل التلال* أو *الميل* أو *الارتفاع*.  
 
@@ -358,7 +367,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_4_new.png) ![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_3_new.png)
+![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_4_new.webp) ![المباني ثلاثية الأبعاد](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -387,7 +396,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 على أندرويد، هذا الخيار متاح فقط عند تمكين إضافة التضاريس.  
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-تنقسم إعدادات المباني ثلاثية الأبعاد إلى مجموعتين: **المظهر** و**الأداء**.
+تنقسم إعدادات المباني ثلاثية الأبعاد إلى مجموعتين، **المظهر** و**الأداء**، يتبعهما إعداد منفصل هو [**موضع الشمس**](#sun-position) (*أندرويد فقط*).
 
 ### المظهر {#appearance}
 
@@ -425,7 +434,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الأداء {#performance}
 
-يتحكم **<Translate android="true" ids="performance"/>** في كيفية عرض المباني ثلاثية الأبعاد. ويشمل إعدادين: مستوى التفاصيل ومسافة العرض.
+يتحكم **<Translate android="true" ids="performance"/>** في كيفية عرض المباني ثلاثية الأبعاد. ويشمل ثلاثة إعدادات: مستوى التفاصيل، ومسافة العرض، والظلال.
 
 **<Translate android="true" ids="level_of_details"/>** يحدد تعقيد هندسة المبنى ثلاثي الأبعاد:
 - منخفض (افتراضي) — هندسة أبسط.
@@ -435,9 +444,32 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - قريب (افتراضي) — يعرض المباني أقرب إليك.
 - بعيد — يعرض المباني من مسافة أطول.
 
-كلا خياري الأداء يستخدمان مفتاح تبديل ذو موضعين مباشرة في شاشة إعدادات المباني ثلاثية الأبعاد.
+**<Translate android="true" ids="cast_shadows"/>** (*أندرويد فقط*) يتحكم في ظلال الشمس على الخريطة:
+- متوقف (افتراضي) — تُرسم المباني بدون ظلال.
+- يعمل — تُلقي المباني ظلالًا على الأرض وعلى جدران المباني المجاورة في الاتجاه المحدد في [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). عند تمكين [التضاريس ثلاثية الأبعاد](#3d-relief)، تُلقي التضاريس ظلالًا أيضًا. يعتمد مدى قتامة ظلال المباني على [الرؤية](#appearance) للمباني ثلاثية الأبعاد.
+
+جميع خيارات الأداء الثلاثة تستخدم مفتاح تبديل ذو موضعين مباشرة في شاشة إعدادات المباني ثلاثية الأبعاد. تُضبط الظلال بشكل منفصل لكل ملف تعريف، وهي متاحة فقط مع محرك العرض [الإصدار ٢ (OpenGL)](#rendering-engine-android).
 
 **ملاحظة:** استخدام *التفاصيل العالية* و*مسافة العرض البعيدة* يحسن المظهر البصري لكنه قد يؤثر على الأداء ويزيد من استهلاك البطارية.
+
+
+### موضع الشمس {#sun-position}
+
+<InfoAndroidOnly />
+
+![الشمس](@site/static/img/map/sun_setting.webp) ![ظلال الشمس](@site/static/img/map/sun_shadows.webp)
+
+يحدد إعداد **<Translate android="true" ids="map_widget_sun_position"/>** اتجاه الضوء لظلال المباني ولظلال التضاريس في التضاريس ثلاثية الأبعاد. يمكنك فتحه من شاشة المباني ثلاثية الأبعاد ومن شاشة التضاريس ثلاثية الأبعاد. يعرض الصف اتجاه الشمس الحالي، وعند النقر عليه تُفتح لوحة معاينة بثلاثة أوضاع:
+
+- **<Translate android="true" ids="sun_light_live"/>** — يستخدم الموضع الحقيقي للشمس فوق مركز الخريطة في الوقت الحالي. يُعرض السمت والارتفاع للإشارة.
+- **<Translate android="true" ids="shared_string_date"/>** — يستخدم الموضع الحقيقي للشمس فوق مركز الخريطة في التاريخ والوقت اللذين تحددهما. يُضبط الوقت حسب المنطقة الزمنية لجهازك.
+- **<Translate android="true" ids="shared_string_manual"/>** — يتيح لك ضبط اتجاه الضوء باستخدام شريطي تمرير:
+    - *<Translate android="true" ids="shared_string_azimuth"/>* — يتحكم في الاتجاه الأفقي لمصدر الضوء (اتجاه الشمس حسب البوصلة).
+    - *<Translate android="true" ids="altitude"/>* — يتحكم في ارتفاع الشمس فوق الأفق.
+
+تظهر التغييرات على الخريطة فورًا. اضغط على تطبيق لتأكيد موضع الشمس المحدد. تعيد إعادة التعيين إلى الافتراضي التبديل إلى الوضع اليدوي بسمت ٣١٥° وارتفاع ٤٥°.
+
+**ملاحظة:** موضع الشمس متاح فقط مع محرك العرض [الإصدار ٢ (OpenGL)](#rendering-engine-android).
 
 
 ## التضاريس ثلاثية الأبعاد {#3d-relief}
@@ -452,7 +484,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![التضاريس ثلاثية الأبعاد](@site/static/img/map/configure_map_topography_andr_new.webp) ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_screen_andr.webp)
 
 </TabItem>
 
@@ -468,6 +500,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تنتج ميزة التضاريس ثلاثية الأبعاد نقشًا بارزًا وتوفر تمثيلًا ثلاثي الأبعاد للمناظر الطبيعية. تعمل التضاريس ثلاثية الأبعاد دون اتصال بالإنترنت ويمكن استخدامها مع [خرائط OsmAnd المتجهة](../map/vector-maps.md) أو أي [خرائط نقطية](../map/raster-maps.md#layers) كـ [مصدر خريطة](../map/raster-maps.md#main) أو كـ [طبقة سفلية/علوية](../map/raster-maps.md#overlay).
 
+على أندرويد، تحتوي التضاريس ثلاثية الأبعاد على شاشة إعدادات خاصة بها تضم المفتاح الرئيسي، و[<Translate android="true" ids="vertical_exaggeration"/>](#vertical-exaggeration)، و[<Translate android="true" ids="terrain_shadows"/>](#terrain-shadows-android)، و[<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). يعرض عنصر التضاريس ثلاثية الأبعاد في قائمة تخصيص الخريطة ما إذا كانت التضاريس ثلاثية الأبعاد مفعلة وشدة ظلال التضاريس الحالية. يمكنك أيضًا فتح التضاريس ثلاثية الأبعاد من شاشة التضاريس.
+
 ***كيفية عرض التضاريس ثلاثية الأبعاد على الخريطة.***
 
 - اشترِ اشتراك **OsmAnd Pro** لـ [iOS](../purchases/ios.md#pro-features) أو [Android](../purchases/android.md#pro-features).
@@ -482,7 +516,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-| Vector map layer | Raster map layer |
+| طبقة الخريطة المتجهة | طبقة الخريطة النقطية |
 | ------ | ------- |
 | ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_button_android_1.png) | ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_button_android_2.png) |
 
@@ -490,7 +524,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-| Vector map layer | Raster map layer |
+| طبقة الخريطة المتجهة | طبقة الخريطة النقطية |
 | ------ | ------- |
 | ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_button_ios_1.png)  | ![التضاريس ثلاثية الأبعاد](@site/static/img/plugins/contour-lines/3drelief_button_ios_2.png) |
 
@@ -522,6 +556,18 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *المبالغة الرأسية* هي معامل خاص لـ *التضاريس ثلاثية الأبعاد*. يمكنك تغيير المقياس (*المبالغة الرأسية*) من x1 إلى x3. تتيح لك هذه الميزة عرض معالم تضاريس أكثر سلاسة مع تفاصيل متزايدة.
 
+### ظلال التضاريس (أندرويد) {#terrain-shadows-android}
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d,terrain_shadows"/>*
+
+![ظلال التضاريس على أندرويد](@site/static/img/plugins/contour-lines/terrain_shadows_andr.webp)
+
+تُظلل **<Translate android="true" ids="terrain_shadows"/>** التضاريس ثلاثية الأبعاد في الوقت الفعلي، بناءً على هندسة التضاريس و[موضع الشمس](#sun-position). تُرسم كلما كانت التضاريس ثلاثية الأبعاد مفعلة.
+
+اضغط على *ظلال التضاريس* لفتح لوحة معاينة، واضبط الشدة من ١٠٪ إلى ١٠٠٪ (٤٠٪ افتراضيًا)، ثم اضغط على تطبيق. تُضبط الشدة بشكل منفصل لكل ملف تعريف.
+
+**ملاحظة:** بينما تعرض التضاريس تظليل التلال، تكون ظلال التضاريس متوقفة، لأن تظليل التلال يظلل التضاريس بالفعل.
+
 
 ### تظليل التلال والتضاريس ثلاثية الأبعاد {#hillshade-and-3d-relief}
 
@@ -532,7 +578,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 **تظليل التلال** هو نوع من الخرائط يعرض التضاريس باستخدام الظلال، مما يخلق تمثيلًا مرئيًا لميل وشكل سطح الأرض.
 **التضاريس ثلاثية الأبعاد** هي ميزة تضيف تأثيرات ثلاثية الأبعاد إلى الخريطة.  
 
-إذا قمت **بتعطيل** *تظليل التلال* و**تمكين** *التضاريس ثلاثية الأبعاد*، فستظل ظلال التضاريس مرئية لأن *تظليل التلال* و*التضاريس ثلاثية الأبعاد* طريقتان مختلفتان لتصور الخريطة. ينشئ *تظليل التلال* ظلالًا بناءً على التضاريس ويضيفها إلى الخريطة، بينما تقوم *التضاريس ثلاثية الأبعاد* بنمذجة عناصر ثلاثية الأبعاد لإظهار عمق وشكل التضاريس، وتكون الظلال جزءًا من التصور. يمكن أن تعمل هذه الميزات بالتوازي، وتعطيل *تظليل التلال* لا يؤثر على كيفية عرض التأثيرات ثلاثية الأبعاد.  
+إذا قمت **بتعطيل** *تظليل التلال* و**تمكين** *التضاريس ثلاثية الأبعاد*، فستظل ظلال التضاريس مرئية لأن *تظليل التلال* و*التضاريس ثلاثية الأبعاد* طريقتان مختلفتان لتصور الخريطة. ينشئ *تظليل التلال* ظلالًا بناءً على التضاريس ويضيفها إلى الخريطة، بينما تقوم *التضاريس ثلاثية الأبعاد* بنمذجة عناصر ثلاثية الأبعاد لإظهار عمق وشكل التضاريس، وتكون الظلال جزءًا من التصور. يمكن أن تعمل هذه الميزات بالتوازي، وتعطيل *تظليل التلال* لا يؤثر على كيفية عرض التأثيرات ثلاثية الأبعاد. على أندرويد، ظلال التضاريس هذه هي [ظلال التضاريس](#terrain-shadows-android)، وتكون متوقفة بينما تعرض التضاريس تظليل التلال.  
 
 عند **تمكين** **تظليل التلال**، تظهر صورة بظلال التضاريس أكثر تفصيلاً وأكثر قتامة وأكثر تدرجًا من صورة *التضاريس ثلاثية الأبعاد*. التفسير هو أن *تظليل التلال* يؤكد على تدرجات وتباينات التضاريس، مما يخلق صورة أكثر حدة وتفصيلاً. تمنح ميزة *التضاريس ثلاثية الأبعاد* الخريطة مظهرًا أكثر سلاسة ونعومة، مما يخفف من حدة التضاريس وقد يقلل من رؤية بعض التفاصيل الدقيقة.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
+source-hash: f790174db079e7201b2947913d3a0d224ce27c6741666d1a3964ee54c47c6f3e
 sidebar_position: 3
 title:  استكشاف البحث
 ---
@@ -27,8 +27,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يوفر OsmAnd عدة طرق لعرض سجلك.
 
 - يتم عرض [زر البحث](../widgets/map-buttons.md#search) دائمًا على الخريطة، وسيؤدي النقر عليه إلى نقلك إلى [الشاشة العامة](#how-to-use) للأداة.
-- اذهب إلى القائمة الرئيسية *Menu → Search → Explore tab*.
-- عند التحضير لبدء مسار، انقر على *Navigation → Set destination → Search field*.
+- اذهب إلى القائمة الرئيسية *القائمة ← البحث ← تبويب الاستكشاف*.
+- عند التحضير لبدء مسار، انقر على *التنقل ← تعيين الوجهة ← حقل البحث*.
 - يعرض مربع المعلومات في قائمة التنقل الخاصة بـ [إعداد المسار](../navigation/setup/route-navigation.md#navigation-menu) قائمة بنقاط الوجهة الأخيرة، والتي تعد أيضًا جزءًا من سجل البحث.
 - سجل البحث متاح في [Android Auto](../navigation/auto-car.md#search).
 
@@ -41,7 +41,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 يوفر OsmAnd عدة طرق لعرض سجل البحث.  
 
 - يتم عرض [زر البحث](../widgets/map-buttons.md#search) دائمًا على الخريطة. انقر عليه لفتح [الشاشة العامة](#how-to-use) للأداة، ثم حدد تبويب *History*.
-- عند التحضير لبدء مسار، انقر على *Navigation → Set destination → Search field*.
+- عند التحضير لبدء مسار، انقر على *التنقل ← تعيين الوجهة ← حقل البحث*.
 - يعرض مربع المعلومات في قائمة التنقل الخاصة بـ [إعداد المسار](../navigation/setup/route-navigation.md#navigation-menu) قائمة بنقاط الوجهة الأخيرة، والتي تعد أيضًا جزءًا من سجل البحث.
 - سجل البحث متاح في [CarPlay](../navigation/car-play.md#search).
 
@@ -56,7 +56,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![Explore search](@site/static/img/search/explore_search_android.webp)
+![البحث في الاستكشاف](@site/static/img/search/explore_search_android.webp)
 
 يفتح تبويب **الاستكشاف** عند فتح أداة البحث. يعمل تبويب الاستكشاف على توفير معلومات ذات صلة بالأماكن من حولك وإجراءاتك السابقة.
 
@@ -71,7 +71,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![History search](@site/static/img/search/history_search_ios.png)
+![البحث في السجل](@site/static/img/search/history_search_ios.png)
 
 يعمل سجل البحث على توفير معلومات ذات صلة بإجراءاتك السابقة.
 
@@ -90,7 +90,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <InfoAndroidOnly/>
 
-![Popular Places Nearby](@site/static/img/search/popular_places_nearby.webp)
+![الأماكن الشائعة القريبة](@site/static/img/search/popular_places_nearby.webp)
 
 يعرض قسم **الأماكن الشائعة القريبة** قائمة قابلة للتمرير للمعالم والمعالم السياحية المعروفة بالقرب من موقعك. قد يتضمن كل عنصر اسم المكان وفئته والمسافة والاتجاه وصورة معاينة إن وجدت. انقر على *Show all* لفتح القائمة الكاملة أو *Show on map* لعرض هذه الأماكن على الخريطة.
 
@@ -103,9 +103,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![History section](@site/static/img/search/history_section_list.webp)
+![قسم السجل](@site/static/img/search/history_section_list.webp)
 
-يعرض قسم **السجل** في تبويب الاستكشاف حتى 25 عنصرًا من أحدث العناصر. انقر على عنوان القسم لطيه أو توسيعه. انقر على *View all* لفتح شاشة *History* الكاملة.
+يعرض قسم **السجل** في تبويب الاستكشاف حتى 25 عنصرًا من أحدث العناصر. القسم موسّع افتراضيًا. انقر على عنوان القسم لطيه أو توسيعه؛ يتذكر OsmAnd اختيارك. انقر على *View all* لفتح شاشة *History* الكاملة.
 
 إذا تم إيقاف تشغيل كل من *Search history* و*Navigation history*، يعرض القسم بطاقة *History is turned off*. انقر على *Open History settings* لتمكينها.
 
@@ -118,7 +118,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="ios" label="iOS">
 
-![History search](@site/static/img/search/history_search_ios.png)
+![البحث في السجل](@site/static/img/search/history_search_ios.png)
 
 يحتوي كل حقل في قائمة سجل البحث على بعض **المعلومات** المتاحة للتطبيق.
 
@@ -137,7 +137,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![History section](@site/static/img/search/history_section_android.webp) ![History section](@site/static/img/search/history_section_2_android.webp)
+![قسم السجل](@site/static/img/search/history_section_android.webp) ![قسم السجل](@site/static/img/search/history_section_2_android.webp)
 
 في شاشة *History* الكاملة، يمكنك ترتيب عناصر السجل وتصفيتها باستخدام الخيارات التالية:
 
@@ -200,7 +200,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 في أداة سجل البحث، يمكنك [حذف](#delete) الاستعلامات غير الضرورية، كلها مرة واحدة أو حسب العناصر الفردية. يمكنك استخدام [تصدير](#export-and-share) السجل. يوفر تطبيق أندرويد إجراءً إضافيًا لـ [مشاركة](#share-android) عناصر البحث كملف [GPX](../../technical/osmand-file-formats/osmand-gpx.md).  
 
-يمكنك **تعطيل أو تمكين** عرض سجل البحث بأكمله. في هذه الحالة، لا يتم حذف الاستعلامات من الجهاز. في أندرويد، يوجد المفتاح في أعلى شاشة [الحذف](#delete) وفي إعدادات السجل، والتي يمكنك فتحها باستخدام أيقونة الترس في شاشة [السجل](#sort-and-filter). في iOS، يوجد في *Menu → Settings → OsmAnd Settings → History → Search History*.
+يمكنك **تعطيل أو تمكين** عرض سجل البحث بأكمله. في هذه الحالة، لا يتم حذف الاستعلامات من الجهاز. في أندرويد، يوجد المفتاح في أعلى شاشة [الحذف](#delete) وفي إعدادات السجل، والتي يمكنك فتحها باستخدام أيقونة الترس في شاشة [السجل](#sort-and-filter). في iOS، يوجد في *القائمة ← الإعدادات ← إعدادات OsmAnd ← السجل ← سجل البحث*.
 
 
 ### حذف {#delete}
@@ -209,13 +209,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![History search](@site/static/img/search/history_search_delete_andr.png)
+![البحث في السجل](@site/static/img/search/history_search_delete_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![History search](@site/static/img/search/history_search_delete_ios.png)
+![البحث في السجل](@site/static/img/search/history_search_delete_ios.png)
 
 </TabItem>
 
@@ -228,7 +228,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *تحديد أو إلغاء تحديد عناصر عشوائية* - انقر على العنصر المطلوب في القائمة.
 - *تحديد الفترة المتاحة للحذف*، مثل اليوم أو آخر 7 أيام أو الشهر - حدد المربع الذي يحتوي على العنوان الفرعي في القائمة.
 - *يمكنك حذف السجل بأكمله* مرة واحدة عن طريق النقر على زر *تحديد الكل* في أسفل الشاشة.
-- *Menu → Settings → OsmAnd settings → History → Actions*. يحتوي هذا القسم على زر **Clear all history** (*Android*)/**Delete all history** (*iOS*).
+- *القائمة ← الإعدادات ← إعدادات OsmAnd ← السجل ← الإجراءات*. يحتوي هذا القسم على زر **Clear all history** (*Android*)/**Delete all history** (*iOS*).
 
 
 ### التصدير والمشاركة {#export-and-share}
@@ -239,7 +239,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![General Settings History Android](@site/static/img/personal/profiles/general_settings_history_android.png)  
+![إعدادات السجل العامة في أندرويد](@site/static/img/personal/profiles/general_settings_history_android.png)  
 
 </TabItem>
 
@@ -247,7 +247,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_history"/>*
 
-![General Settings History IOS](@site/static/img/personal/profiles/history_settings_ios.png)  
+![إعدادات السجل العامة في iOS](@site/static/img/personal/profiles/history_settings_ios.png)  
 
 </TabItem>
 
@@ -255,21 +255,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 هناك العديد من الخيارات المتاحة لتصدير سجل البحث. يتم تصدير جميع الملفات بتنسيق `.osf` (ملف إعدادات OsmAnd).
 
-1. *Menu → Settings → OsmAnd settings → History → Search history*.  
+1. *القائمة ← الإعدادات ← إعدادات OsmAnd ← السجل ← سجل البحث*.  
     التصدير متاح باستخدام قائمة إعدادات OsmAnd. بالنسبة لنظام أندرويد، يؤدي اتباع هذا المسار إلى شاشة الحذف، حيث تتوفر [مشاركة السجل](#share-android). في حالة iOS، يمكنك تحديد عناصر فردية أو السجل بأكمله على الشاشة، وبعد النقر على زر *تصدير*، انتقل إلى قائمة *النسخ الاحتياطي المحلي*.
 
-2. *Menu → Settings → OsmAnd settings → History → Actions → Back up as file* (أندرويد).  
-    *Menu → Settings → OsmAnd settings → History → Actions → Export* (iOS).  
+2. *القائمة ← الإعدادات ← إعدادات OsmAnd ← السجل ← الإجراءات ← نسخ احتياطي كملف* (أندرويد).  
+    *القائمة ← الإعدادات ← إعدادات OsmAnd ← السجل ← الإجراءات ← تصدير* (iOS).  
     يؤدي النقر على هذه العناصر إلى نقلك إلى قائمة *استيراد/تصدير* (أندرويد) أو *النسخ الاحتياطي المحلي* (iOS). قم بتوسيع قائمة *أماكني* وابحث عن *سجل البحث*. يتم تصدير جميع الاستعلامات في ملف واحد مرة واحدة.
 
-3. *Menu → Settings → Import/Export → Export to file* (أندرويد).  
-    *Menu → Settings → Local Backup → Back up as file* (iOS).  
+3. *القائمة ← الإعدادات ← استيراد/تصدير ← تصدير إلى ملف* (أندرويد).  
+    *القائمة ← الإعدادات ← النسخ الاحتياطي المحلي ← نسخ احتياطي كملف* (iOS).  
     يمكنك قراءة المزيد من التفاصيل في مقالة [الاستيراد/التصدير](../personal/import-export.md#export).
 
 4. [سحابة OsmAnd](../personal/osmand-cloud.md#select-data-to-back-up)  
-    يمكنك استخدام السحابة لعمل نسخة احتياطية من سجل البحث. في قائمة *التغييرات المحلية* أو *Settings → Back up data → My Places → Search History*.
+    يمكنك استخدام السحابة لعمل نسخة احتياطية من سجل البحث. في قائمة *التغييرات المحلية* أو *الإعدادات ← نسخ احتياطي للبيانات ← أماكني ← سجل البحث*.
 
-![Settings History](@site/static/img/search/history_search_share_andr.png)  
+![إعدادات السجل](@site/static/img/search/history_search_share_andr.png)  
 
 يمكن أن يكون تصدير العناصر أو سجل البحث بأكمله مفيدًا في الحالات التالية:
 
@@ -281,7 +281,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### المشاركة (أندرويد) {#share-android}
 
-![Settings History](@site/static/img/search/history_search_share_andr.png)
+![إعدادات السجل](@site/static/img/search/history_search_share_andr.png)
 
 تتشابه خطوات مشاركة عناصر سجل البحث مع [التصدير](#export-and-share)، مع اختلاف أنك تقوم بتصدير السجل بأكمله مرة واحدة كملف [osf](../../technical/osmand-file-formats/osmand-osf.md)، بينما يمكنك مشاركة الملفات المحددة الفردية بتنسيق gpx.
 

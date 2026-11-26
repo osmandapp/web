@@ -65,7 +65,7 @@ To create a navigation route, follow these steps:
 
 بمجرد إنشاء المسار، أضف النقاط مباشرة على الخريطة. يضع كل نقرة النقطة التالية، ويبني المخطط المسار بين النقاط.
 
-![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
+![إنشاء مسار جديد على الويب](@site/static/img/web/create_new_route_1.png)
 
 ### استيراد مسار {#import-track}
 
@@ -77,7 +77,7 @@ To create a navigation route, follow these steps:
 
 لكل عنصر في القائمة مفتاح تبديل يسمح لك بإظهار أو إخفاء المسار على الخريطة بسرعة. حدد مسارًا من القائمة لفتحه في المخطط ومواصلة العمل معه. 
 
-![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
+![إنشاء مسار جديد على الويب](@site/static/img/web/local_files.png)
 
 
 ## إدارة المسار {#manage-track}
@@ -90,7 +90,7 @@ To create a navigation route, follow these steps:
 
 في [لوحة النظرة العامة](#overview-panel)، يمكنك **الحفظ في السحابة** للحفاظ على المسار للاستخدام لاحقًا و**تنزيل**ه كملف GPX.
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+![إدارة المسار على الويب](@site/static/img/web/manage_track_2_new.png) ![إدارة المسار على الويب](@site/static/img/web/change_profile.png)
 
 
 ## لوحات تفاصيل المسار {#track-details-panels}
@@ -126,13 +126,13 @@ To create a navigation route, follow these steps:
 - السطح — يظهر أنواع السطح على طول المسار بناءً على بيانات OSM.
 - السلاسة — يظهر سلاسة المقاطع بناءً على علامات OSM.
 
-![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
+![لوحة المعلومات على الويب](@site/static/img/web/overview_panel.png) 
 
 ### لوحة المسار {#track-panel}
 
 تعرض لوحة المسار قائمة بنقاط المسار المستخدمة لبناء المسار. استخدمها لمراجعة وتحرير هيكل المسار: اسحب النقاط لإعادة ترتيبها، أزل النقاط باستخدام أيقونة الحذف، أو استخدم مسح النقاط لإزالة جميع النقاط والبدء من جديد.
 
-![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
+![لوحة المسار على الويب](@site/static/img/web/track_panel_new.png)
 
 ### لوحة النقاط {#points-panel}
 
@@ -142,7 +142,7 @@ To create a navigation route, follow these steps:
 
 في قائمة نقاط الطريق، يمكنك التحكم في ما إذا كانت نقاط الطريق تُظهر على الخريطة وإزالة نقاط الطريق الفردية عند الحاجة. لإزالة جميع نقاط الطريق من المسار دفعة واحدة، استخدم *مسح جميع نقاط الطريق*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
+![لوحة نقاط الطريق على الويب](@site/static/img/web/points_panel_new.png)
 
 
 ## المقالات ذات الصلة {#related-articles}
