@@ -1,5 +1,5 @@
 ---
-source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
+source-hash: ac4b1ef2a793eeac796124826048717fd7b712c23f6ffb664ab0c28b45623390
 sidebar_position: 1
 title:  Android-Käufe
 ---
@@ -125,7 +125,6 @@ Die folgende Tabelle listet die Funktionen auf, die in den kostenlosen und koste
 | [Unbegrenzte Kartendownloads](../start-with/download-maps.md) | <details><summary>**7 Karten-Downloads**</summary>  - Ein Karten-Download oder -Update bezieht sich nur auf den Download bzw. die Aktualisierung einer Länder- (Regions-)Karte. <br/> - **Weltübersichtskarte**, **Welt-Höhenkorrektur**, **Kartenschriftarten** und **Sprachansagen** werden nicht als eine der 7 Download-Möglichkeiten gezählt. </details> | ✔ | ✔ |
 | [Monatliche Karten-Updates](../personal/maps-resources.md#updates-menu)<br/>Einmal im Monat (mit 2 Tagen Verzögerung) | <details><summary>**7 Karten-Downloads**</summary> Ein Karten-Update zählt als Download.</details> | ✔ | ✔ |
 | [Stündliche Karten-Updates](../personal/maps-resources.md#live-updates)<br/>Live-Updates (1 Stunde Verzögerung) - [**](#-map-updates) | **-** | **-** | ✔ |
-| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Unterstützung externer Sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topografiedaten](../plugins/topography.md#overview)<br/>(Höhenlinien und Gelände) | **-** | ✔ | ✔ |
 | [Koordinatengitter — Farbanpassung](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -138,8 +137,9 @@ Die folgende Tabelle listet die Funktionen auf, die in den kostenlosen und koste
 | [Astronomie-Plugin](../plugins/astronomy.md) — [Interaktiver AR-Modus](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Astronomie-Plugin](../plugins/astronomy.md) — [Offline-Sternenkarte](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Astronomie-Plugin](../plugins/astronomy.md) — [Finsternis-Explorer](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
-| [Benutzerdefinierte Widget-Farben](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
+| [Benutzerdefinierte Widget-Hintergrundfarbe](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Offline- und Online-Navigation](../navigation/index.md)<br/>mit Abbiegehinweisen | ✔ | ✔ | ✔ |
+| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | ✔ | ✔ | ✔ |
 | [Offline-Sofortsuche](../search/index.md) | ✔ | ✔ | ✔ |
 | [Fahrtaufzeichnung](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [GPX-Tracks exportieren](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |
@@ -199,7 +199,7 @@ or
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Weiter mit OsmAnd Pro*
 
-![Pro Plan](@site/static/img/purchases/android_subscription_plan_new.png)
+![Pro-Plan](@site/static/img/purchases/android_subscription_plan_new.png)
 
 ### Maps+ Kauf {#maps-purchase}
 
@@ -207,7 +207,7 @@ or
 
 *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,shared_string_learn_more"/> → Tippen Sie auf die Liste der Maps+-Funktionen → Weiter mit Maps+*
 
-![Maps+ Plan](@site/static/img/purchases/maps_android_new.png)
+![Maps+-Plan](@site/static/img/purchases/maps_android_new.png)
 
 
 ## Ältere Abonnements (vor 4.0) {#legacy-subscriptions-prior-40}
@@ -245,7 +245,7 @@ Um den Kauf wiederherzustellen, prüfen Sie bitte, welchen OsmAnd-Plan Sie gekau
 - *Um „Käufe wiederherstellen“ zu öffnen*, gehen Sie wie folgt vor: *<Translate android="true" ids="shared_string_menu,shared_string_settings,purchases,restore_purchases"/>* und oben auf dem Bildschirm sollte angezeigt werden, dass Maps+ (Pro) aktiviert ist.
 - *Registrieren Sie Pro-Funktionen* mit dem OsmAnd Pro Abonnement für alle Plattformen (Android und iOS). Wenn Sie ein OsmAnd Pro-Konto haben, müssen Sie es [zur Aktivierung von OsmAnd Pro](../personal/osmand-cloud.md) auf Ihrem Gerät verwenden.
 
-![Pro Plan](@site/static/img/purchases/maps_purchases.png)
+![Pro-Plan](@site/static/img/purchases/maps_purchases.png)
 
 ### Andere Fälle {#other-cases}
 

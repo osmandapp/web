@@ -1,5 +1,5 @@
 ---
-source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
+source-hash: f790174db079e7201b2947913d3a0d224ce27c6741666d1a3964ee54c47c6f3e
 sidebar_position: 3
 title:  Suchen Erkunden
 ---
@@ -105,7 +105,7 @@ Weitere Details finden Sie im Artikel [Beliebte Orte](../map/popular_places.md#e
 
 ![Verlaufsabschnitt](@site/static/img/search/history_section_list.webp)
 
-Der Abschnitt **Verlauf** des Tabs Erkunden zeigt bis zu 25 der neuesten Einträge an. Tippen Sie auf den Abschnittstitel, um ihn ein- oder auszublenden. Tippen Sie auf *Alle anzeigen*, um den vollständigen *Verlaufs*bildschirm zu öffnen.
+Der Abschnitt **Verlauf** des Tabs Erkunden zeigt bis zu 25 der neuesten Einträge an. Der Abschnitt ist standardmäßig erweitert. Tippen Sie auf den Abschnittstitel, um ihn ein- oder auszublenden; OsmAnd merkt sich Ihre Auswahl. Tippen Sie auf *Alle anzeigen*, um den vollständigen *Verlaufs*bildschirm zu öffnen.
 
 Wenn sowohl *Suchverlauf* als auch *Navigationsverlauf* deaktiviert sind, zeigt der Abschnitt die Karte *Verlauf ist deaktiviert* an. Tippen Sie auf *Verlaufseinstellungen öffnen*, um sie zu aktivieren.
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
+source-hash: 178d141932f7b8720f2c8c3d8aecc4e60ae376a12c49b662bf86080720fb83d6
 sidebar_position: 5
 title:  Vektorkarten 
 ---
@@ -25,7 +25,7 @@ Vektorkarten stellen räumliche Daten dar, wie Straßen, Gebäude, Punkte und Po
 
 Da Vektordaten nicht als feste Bilder gespeichert sind, kann ihr Erscheinungsbild, einschließlich Farbe, Linienbreite, Transparenz oder Muster, leicht geändert werden. Dieser Ansatz ermöglicht effizientes Rendering, geringen Speicherverbrauch und reibungsloses Skalieren auf jedem Zoomniveau ohne Qualitätsverlust.
 
-:::info note
+:::info Hinweis
 Sehr kleine Polygone können während der Kartendatengenerierung vereinfacht oder verzerrt werden. Objekte mit einer Fläche kleiner als etwa ein Quadratmeter werden möglicherweise nicht angezeigt. Für eine korrekte Visualisierung sollten kleine Merkmale als einzelne Knoten statt als Polygone kartiert werden.
 :::
 
@@ -409,7 +409,7 @@ Die 3D-Relief-Funktion erzeugt ein erhöhtes Relief und bietet eine dreidimensio
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+![Nautische Tiefe Linienbreite Android](@site/static/img/map/nautical_depth_width_and.png)  ![Nautische Tiefe Farbe Android](@site/static/img/map/nautical_depth_color_and.png)
 
 </TabItem>
 
@@ -417,7 +417,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+![Nautische Tiefe Linienbreite iOS](@site/static/img/map/nautical_depth_width_ios.png)  ![Nautische Tiefe Farbe iOS](@site/static/img/map/nautical_depth_color_ios.png)
 
 </TabItem>
 
@@ -462,7 +462,7 @@ Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
+![Grenzen anzeigen Android](@site/static/img/map/show-borders-andr.png)  
 
 </TabItem>
 
@@ -470,7 +470,7 @@ Gehe zu: *<Translate android="true" ids="shared_string_menu,configure_map,show_b
 
 Gehe zu: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![show-borders-ios](@site/static/img/map/show-borders-ios.png)
+![Grenzen anzeigen iOS](@site/static/img/map/show-borders-ios.png)
 
 </TabItem>
 
@@ -498,12 +498,22 @@ Gehe zu: *Menü → Karte konfigurieren → Anzeigen → Koordinatengitter*
 
 <TabItem value="android" label="Android">  
 
-![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_settings_andr.png) ![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_format_andr.webp)
+![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_settings_andr.webp) ![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_format_andr.webp)
 
-Die Funktion **Koordinatengitter** überlagert die Karte mit einem Referenzgitter, mit dem Sie Breiten- und Längengrade basierend auf verschiedenen Koordinatensystemen visualisieren können. Diese Funktion ist nützlich für eine präzise Standortreferenz und geospatiale Navigation. 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_settings_ios.webp) ![Koordinatengitter-Menü](@site/static/img/map/coordinates_grid_format_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Die Funktion **Koordinatengitter** überlagert die Karte mit einem Referenzgitter, mit dem Sie Breiten- und Längengrade oder metrische Gitterlinien, abhängig vom ausgewählten Koordinatensystem, visualisieren können. Diese Funktion ist nützlich für eine präzise Standortreferenz und geospatiale Navigation. 
 
 Sie können die folgenden Optionen konfigurieren:
-- **Zoomstufen:** Stellen Sie die minimale und maximale Zoomstufe (2 - 22) ein, bei der das Gitter sichtbar ist.
+- **Zoomstufen:** Stellen Sie die minimale und maximale Zoomstufe (0 - 22) ein, bei der das Gitter sichtbar ist.
 - **Beschriftungsposition:** Wählen Sie zwischen *Ränder* (Standard) oder *Mitte* für Gitterbeschriftungen.
 - **Gitterfarbe:** Getrennt für Tag-/Nachtmodus verfügbar. 
 - **Koordinatenformat:** Wählen Sie aus mehreren verfügbaren Formaten (siehe Liste unten).
@@ -513,7 +523,7 @@ Sie können die folgenden Optionen konfigurieren:
 - **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Grade, Minuten, Sekunden)
 - **WGS84** (EPSG:4326) - **DD.DDDDD°** (Dezimalgrade - WGS84-Standardformat)
 - **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Grade, Dezimalminuten)
-- **UTM** (EPSG:6387, Universale Transversale Mercator - zonenbasiertes Gittersystem). Die minimale Zoomstufe ist 9, es wird immer nur eine UTM-Zone angezeigt, da die Zonen alle 6° durch Meridiane getrennt sind
+- **UTM** (EPSG:6387, Universale Transversale Mercator - zonenbasiertes Gittersystem). Die minimale Zoomstufe ist 9, es wird immer nur eine UTM-Zone angezeigt, da die Zonen alle 6° durch Meridiane getrennt sind.
 - **OLC** (Open Location Code, auch bekannt als Plus Code)
 - **MGRS** (Military Grid Reference System)
 - **Schweizer Koordinatensystem** - Swiss Grid (CH1903) und Swiss Grid (CH1903+)
@@ -521,39 +531,11 @@ Sie können die folgenden Optionen konfigurieren:
 
 Der Bereich **Zuletzt verwendet** zeigt kürzlich verwendete Koordinatensysteme an. Um ein weiteres unterstütztes Koordinatensystem hinzuzufügen, tippen Sie auf *Anderes Format auswählen*. Sie können nach dem Namen des Koordinatensystems oder nach dem EPSG-Code suchen und dann auf *+* tippen, um es der Liste hinzuzufügen.
 
-Standardmäßig verwendet die App das in den [Allgemeinen Einstellungen](../personal/profiles.md#units--formats) ausgewählte Koordinatenformat, aber Sie können es direkt in diesem Menü ändern.
+**Hinweis:** Die Liste enthält nur Koordinatensysteme, die das Gitter genau darstellen kann: Systeme, die in Metern gemessen werden, mit einer Datumstransformation nach WGS 84, die im gesamten Gebiet des Systems gültig ist. Systeme, die in Fuß oder anderen nicht-metrischen Einheiten gemessen werden, sowie Systeme, die mehrere regionale Transformationen erfordern, sind für das Gitter nicht verfügbar.
+
+Standardmäßig verwendet das Gitter das Format DDD.DDDDD. Das in diesem Menü ausgewählte Format gilt nur für das Koordinatengitter.
 
 [Schnelle Aktion](../widgets/quick-action.md#overview): Sie können auch einen schnellen Schalter *Koordinatengitter anzeigen/ausblenden* zur [Karte konfigurieren](../widgets/quick-action.md#configure-map)-Gruppe für schnellen Zugriff hinzufügen.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-Die Funktion **Koordinatengitter** überlagert die Karte mit einem Referenzgitter, mit dem Sie Breiten- und Längengrade basierend auf verschiedenen Koordinatensystemen visualisieren können. Diese Funktion ist nützlich für eine präzise Standortreferenz und geospatiale Navigation. 
-
-Sie können die folgenden Optionen konfigurieren:
-- **Zoomstufen:** Stellen Sie die minimale und maximale Zoomstufe (2 - 22) ein, bei der das Gitter sichtbar ist.
-- **Beschriftungsposition:** Wählen Sie zwischen *Ränder* (Standard) oder *Mitte* für Gitterbeschriftungen.
-- **Gitterfarbe:** Getrennt für Tag-/Nachtmodus verfügbar. 
-- **Koordinatenformat:** Wählen Sie aus mehreren verfügbaren Formaten (siehe Liste unten).
-
-***Verfügbare Koordinatenformate:***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Grade, Minuten, Sekunden)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Dezimalgrade - WGS84-Standardformat)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Grade, Dezimalminuten)
-- **UTM** (EPSG:6387, Universale Transversale Mercator - zonenbasiertes Gittersystem). Die minimale Zoomstufe ist 9, es wird immer nur eine UTM-Zone angezeigt, da die Zonen alle 6° durch Meridiane getrennt sind
-- **MGRS** (Military Grid Reference System)
-
-Standardmäßig verwendet die App das in den [Allgemeinen Einstellungen](../personal/profiles.md#units--formats) ausgewählte Koordinatenformat, aber Sie können es direkt in diesem Menü ändern.
-
-[Schnelle Aktion](../widgets/quick-action.md#overview): Sie können auch einen schnellen Schalter *Koordinatengitter anzeigen/ausblenden* zur [Karte konfigurieren](../widgets/quick-action.md#configure-map)-Gruppe für schnellen Zugriff hinzufügen.
-
-</TabItem>
-
-</Tabs>
 
 
 ## Routen {#routes}

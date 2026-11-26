@@ -1,5 +1,5 @@
 ---
-source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
+source-hash: 5047fdb7a1e6795622974b9d6310cd105a7f39826c050a85f0c7f44d060772ce
 sidebar_position: 3
 title: Kartenkontextmenü
 ---
@@ -151,15 +151,17 @@ Verfügbare Details umfassen:
 Zusätzlich kann das Panel [OpenStreetMap-Details](https://wiki.openstreetmap.org/wiki/Map_features) enthalten, wie zum Beispiel:
 
 - [Webseite](https://wiki.openstreetmap.org/wiki/Key:website)
-- [Telefonnummer](https://wiki.openstreetmap.org/wiki/Key:contact)
-- [Öffnungszeiten](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+- [Telefonnummer](https://wiki.openstreetmap.org/wiki/Key:contact) — Nummern mit [Landesvorwahl](https://wiki.openstreetmap.org/wiki/Key:phone) werden in Ziffernblöcke unterteilt, damit sie leichter lesbar sind, zum Beispiel `+33 6 12 34 56 78`. Wenn Sie eine Nummer anrufen oder kopieren, verwendet OsmAnd den in [OpenStreetMap](https://www.openstreetmap.org/) gespeicherten Wert.
+- [Öffnungszeiten](https://wiki.openstreetmap.org/wiki/Key:opening_hours) — werden in der App-Sprache angezeigt, einschließlich Wochentagen, Monaten, gesetzlichen Feiertagen und Schulferien. Tage, an denen der Ort nicht geöffnet hat, sind als *geschlossen* markiert. Wenn OpenStreetMap das Datum enthält, an dem die Öffnungszeiten zuletzt überprüft wurden ([check_date:opening_hours](https://wiki.openstreetmap.org/wiki/Key:check_date)), tippen Sie auf die Zeile, um sie zu erweitern. Das Feld *<Translate android="true" ids="poi_check_date"/>* wird unter den Öffnungszeiten im kurzen Datumsformat der App-Sprache angezeigt.
+- [<Translate android="true" ids="poi_check_date"/>](https://wiki.openstreetmap.org/wiki/Key:check_date) — das Datum, an dem die Daten des Objekts zuletzt in OpenStreetMap überprüft wurden.
 - [Gebühr](https://wiki.openstreetmap.org/wiki/Key:fee)
+- [<Translate android="true" ids="poi_zone"/>](https://wiki.openstreetmap.org/wiki/Key:zone) — die Parkzone innerhalb des Parksystems einer Stadt, zum Beispiel *M*. Wird für Parkplätze angezeigt.
 - [Barrierefreiheit](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Breite](https://wiki.openstreetmap.org/wiki/Key:width) / [Höhe](https://wiki.openstreetmap.org/wiki/Key:height) 
 
 Falls ein Kontaktfeld (z. B. *Webseite, Telefonnummer* oder *E-Mail*) mehrere Werte enthält, wird beim Antippen eine Liste der verfügbaren Einträge angezeigt. Wählen Sie den gewünschten Eintrag aus, um die entsprechende Aktion auszuführen.
 
-Über die oben genannten Felder hinaus kann OsmAnd auch zusätzliche beschreibende Informationen aus OpenStreetMap anzeigen. Diese Attribute helfen Ihnen, die Merkmale eines Ortes besser zu verstehen, und können Details wie Höhe, Richtung, Baujahr, Oberflächen- oder Bedeckungstyp, Innenraumebene, Zahlungsoptionen, Verfügbarkeit von Lieferung oder Abholung und viele andere enthalten. OsmAnd zeigt diese Attribute mit klaren Beschriftungen und, wo möglich, Symbolen an, um das Lesen und Erkennen der Informationen zu erleichtern. Der genaue Satz der Attribute hängt von den in OpenStreetMap für das ausgewählte Objekt verfügbaren Daten ab.
+Über die oben genannten Felder hinaus kann OsmAnd auch zusätzliche beschreibende Informationen aus OpenStreetMap anzeigen. Diese Attribute helfen Ihnen, die Merkmale eines Ortes besser zu verstehen, und können Details wie Höhe, Richtung, Baujahr, Oberflächen- oder Bedeckungstyp, Innenraumebene, Zahlungsoptionen, Verfügbarkeit von Lieferung oder Abholung und viele andere enthalten. OsmAnd zeigt diese Attribute mit klaren Beschriftungen und, wo möglich, Symbolen an, um das Lesen und Erkennen der Informationen zu erleichtern. Jedes Attribut wird mit seinem Namen und darunter dem Wert angezeigt, zum Beispiel *Rauchen* / *Nicht erlaubt* oder *Zum Mitnehmen* / *Ja*. Hat ein Attribut mehrere Optionen, werden sie in einer Zeile durch `•` getrennt aufgelistet, zum Beispiel *Gemietete Boote* / *Kajaks • Kanu*. Der genaue Satz der Attribute hängt von den in OpenStreetMap für das ausgewählte Objekt verfügbaren Daten ab.
 
 
 ### Artikelbeschreibung {#article-description}
@@ -262,9 +264,9 @@ Die Funktion **Innerhalb von Gebieten** listet die **Gebiete** auf, in denen sic
 
 |Koordinatenformat| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Einfache Dezimalgrade)</li><li>DDD.DDDDD (N/S, E/W Komma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM-Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Schweizer Gitter CH1903 und CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[OsmAnd Web-Link](https://osmand.net/map)</li><li>[OpenStreetMap Web-Link](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Koordinaten](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Einfache Dezimalgrade)</li><li>DDD.DDDDD (N/S, E/W Komma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM-Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Schweizer Gitter CH1903 und CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Maidenhead](https://en.wikipedia.org/wiki/Maidenhead_Locator_System)</li><li>[EPSG-Formate](../search/search-coordinates.md#customize-coordinate-format)</li><li>[OsmAnd Web-Link](https://osmand.net/map)</li><li>[OpenStreetMap Web-Link](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Koordinaten](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-Im Kontextmenü finden Sie [geografische Koordinaten](../search/search-coordinates.md#coordinate-format) eines Punktes in verschiedenen Formaten sowie teilbare OsmAnd- und [OpenStreetMap-Links](../map/map-context-menu.md#openstreetmap-link) (letztere Option ist nur verfügbar, wenn das [OpenStreetMap-Bearbeitungs-Plugin](../plugins/osm-editing.md) aktiviert ist). Wenn Sie den Koordinatenbereich erweitern und lange auf eine Zeile in der Liste tippen, werden deren Werte automatisch in die Zwischenablage kopiert (**Android**) oder die Option *Kopieren* wird in der Pop-up-Nachricht verfügbar (**iOS**).  
+Im Kontextmenü finden Sie [geografische Koordinaten](../search/search-coordinates.md#coordinate-format) eines Punktes in den Formaten aus der [Koordinatenformat-Liste](../search/search-coordinates.md#customize-coordinate-format) des Profils, wobei das Primärformat zuerst steht, sowie teilbare OsmAnd- und [OpenStreetMap-Links](../map/map-context-menu.md#openstreetmap-link) (letztere Option ist nur verfügbar, wenn das [OpenStreetMap-Bearbeitungs-Plugin](../plugins/osm-editing.md) aktiviert ist). Wenn Sie den Koordinatenbereich erweitern und lange auf eine Zeile in der Liste tippen, werden deren Werte automatisch in die Zwischenablage kopiert (**Android**) oder die Option *Kopieren* wird in der Pop-up-Nachricht verfügbar (**iOS**).  
 
 Der OsmAnd Web-Link kann von OsmAnd automatisch erkannt werden (Beispiel: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Sowohl OsmAnd- als auch [OpenStreetMap-Links](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) werden auf den entsprechenden Websites mit einer Markierung am gewünschten Ort geöffnet.  
 
@@ -403,7 +405,7 @@ Der OpenStreetMap-Link bietet einen direkten Link zum OpenStreetMap-Objekt, wo S
 
 </Tabs>
 
-Wenn Sie auf einen beliebten Ort auf der Karte tippen, zeigt der Abschnitt **Online-Fotos** im *POI-Kontextmenü* Bildvorschauen an, die von [Wikipedia](https://www.wikipedia.org/) und [Wikimedia Commons](https://www.wikimedia.org/) stammen.
+Wenn Sie auf einen beliebten Ort auf der Karte tippen, zeigt der Abschnitt **Online-Fotos** im *POI-Kontextmenü* Bildvorschauen an, die von [Wikipedia](https://www.wikipedia.org/) und [Wikimedia Commons](https://www.wikimedia.org/) stammen. Wenn ein POI ein in OpenStreetMap verknüpftes [Mapillary](../plugins/mapillary.md)-Bild hat (das Tag `mapillary`), wird dieses Bild im Abschnitt **Online-Fotos** zuerst angezeigt. Das Mapillary-Plugin muss dafür nicht aktiviert sein.
 
 Durch Antippen eines Fotos wird die **Galerieansicht** geöffnet, in der Sie:
 

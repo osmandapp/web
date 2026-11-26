@@ -1,5 +1,5 @@
 ---
-source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
+source-hash: d617276475fbfcfe927091d3c99740f157598c2b6f2ee38d9e9906a83d74b219
 sidebar_position: 4
 title:  Karte konfigurieren
 ---
@@ -27,7 +27,7 @@ Abschnitt **Anzeigen**:
 
 Abschnitt **Topografie**:  
 
-![Karte konfigurieren Android](@site/static/img/map/configure_map_topography_andr_new.png)  
+![Karte konfigurieren Android](@site/static/img/map/configure_map_topography_andr_new.webp)  
 
 Abschnitt **OpenStreetMap**:  
 
@@ -81,16 +81,16 @@ Das Menü **<Translate android="true" ids="configure_map"/>** ist in zwei Katego
 - Die Einstellungen für "Karte konfigurieren" hängen von Ihrem [Profil](../personal/profiles.md) ab.
 - Achtung - das Menü "Karte konfigurieren" **schließt sich**, wenn Sie auf das Kartenfeld tippen.
 
-## Map Layers {#map-layers}
+## Kartenebenen {#map-layers}
 
 - [Vektorkartenebene](../map/vector-maps.md) - zeigt alle Vektorkarteninformationen an, einschließlich OpenStreetMap, Konturlinien und nautische Daten.
-- [Karten-Rasterquellen](../map/raster-maps.md#layers) - ermöglicht die Auswahl von Untergrund- / Hauptquellen- / Überlagerungskarten mit Transparenzstufen.
+- [Karten-Rasterquellen](../map/raster-maps.md#layers) - ermöglicht die Auswahl von Untergrund- / Hauptquellen- / Überlagerungskarten mit Sichtbarkeitsstufen.
 - [Gelände](../plugins/topography.md#hillshade-slope-and-altitude-layers) - zeigt Hang- / Schummerungsinformationen, 3D-Relief an.
 - [3D-Gebäude](../map/vector-maps.md#3d-buildings) - zeigt volumetrische Gebäudermodelle auf der Karte an.
 - [Grenzen der heruntergeladenen Karten](../map/vector-maps.md#show-borders) - zeigt alle Grenzen der heruntergeladenen Karten auf der Hauptkartenebene an.
 - [Koordinatennetz](../map/vector-maps.md#coordinates-grid) - steuert die Sichtbarkeit des Koordinatennetzes auf der Karte.
 
-## Map Data Layers {#map-data-layers}
+## Kartendatenebenen {#map-data-layers}
 
    - [Favoriten](../map/point-layers-on-map.md) - zeigt Favoritenpunkte an.
    - [POI](../map/point-layers-on-map.md) - zeigt Sonderziele ausgewählter Kategorien an.
@@ -104,7 +104,7 @@ Das Menü **<Translate android="true" ids="configure_map"/>** ist in zwei Katego
    - [OSM-Bearbeitung](../plugins/osm-editing.md#osm-editing-layer) - zeigt OpenStreetMap-Bearbeitungen, Notizen und zu Kartenerstellung gehörende Hilfsebenen an.
    - [Andere Plugin-Ebenen](../plugins/index.md#configure-plugin) - viele Plugins fügen ihre Ebenen mit zusätzlichen Informationen hinzu.
 
-## Map style parameters {#map-style-parameters}
+## Kartenstil-Parameter {#map-style-parameters}
 
 Die Einstellungen für den Kartenstil hängen vom angezeigten Hauptkartenstil ab. Mehr dazu können Sie im Artikel [Kartenstile](../map/vector-maps) lesen.
 
@@ -119,7 +119,7 @@ Die Einstellungen für den Kartenstil hängen vom angezeigten Hauptkartenstil ab
    - [Routen](../map/vector-maps.md#routes) - ermöglicht das Hervorheben von Routen und deren Symbolen.  
 
 
-## UI Customization (Android) {#ui-customization-android}
+## UI-Anpassung (Android) {#ui-customization-android}
 
 Für jedes ausgewählte Profil im Android-System können Sie die Reihenfolge der Menüpunkte von <Translate android="true" ids="configure_map"/> ändern, die Punkte ausblenden, die Standardeinstellungen zurücksetzen oder sie von einem anderen Profil kopieren. Dies hilft, Ihre Interaktion mit der OsmAnd-App zu verbessern.  
 

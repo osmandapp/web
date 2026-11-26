@@ -28,7 +28,7 @@ Alle Änderungen werden automatisch über [OsmAnd Cloud](../personal/osmand-clou
 
 Es handelt sich um eine kostenpflichtige Funktion <ProFeature/>. Um sie zu nutzen, melden Sie sich mit Ihrem OsmAnd Pro-Konto an.
 
-![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
+![Track-Anmeldung](@site/static/img/web/track_login.png) ![Track-Anmeldung](@site/static/img/web/track_login_2.png)
 
 Der Tracks-Bereich enthält alle trackbezogenen Tools und Aktionen. Die folgenden Optionen sind verfügbar:
 
@@ -58,23 +58,23 @@ Nach Abschluss des Imports erscheint der Track in der Track-Liste, wird mit [Osm
 
 Wenn ein Track nicht importiert oder in OsmAnd Cloud gespeichert werden kann, zeigt ein Fehlerdialog den Dateinamen und, falls verfügbar, den vom Server gemeldeten Grund an.
 
-![Drag and drop](@site/static/img/web/drag_and_drop.png)
+![Drag-and-Drop](@site/static/img/web/drag_and_drop.png)
 
 
 ## Auf der Karte sichtbar {#visible-on-the-map}
 
-Die Ansicht **Auf Karte sichtbar** listet alle Tracks auf, die derzeit auf der Karte angezeigt werden. Jeder Track kann von der Haupttabelle Tracks aus zu dieser Liste hinzugefügt werden, indem Sie die Option **⋮ → Make track visible** verwenden.
+Die Ansicht **Auf Karte sichtbar** listet alle Tracks auf, die derzeit auf der Karte angezeigt werden. Jeder Track kann von der Haupttabelle Tracks aus zu dieser Liste hinzugefügt werden, indem Sie die Option **⋮ → Track sichtbar machen** verwenden.
 
 Tracks, die auf der Karte sichtbar sind, werden blau hervorgehoben, während derzeit ausgeblendete Tracks grau erscheinen. Ein Schalter neben jedem Track ermöglicht es Ihnen, ihn schnell anzuzeigen oder auszublenden. Der Button **Alle ausblenden** schaltet alle sichtbaren Tracks auf einmal aus.
 
 Unter der Hauptliste zeigt der Abschnitt **Zuletzt sichtbar** Tracks an, die zuvor auf der Karte angezeigt wurden. Dadurch können Sie einen Track einfach wieder aktivieren, ohne ihn erneut in Ihren Ordnern oder in OsmAnd Cloud suchen zu müssen.
 
-![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
+![Auf der Karte sichtbar](@site/static/img/web/visible_new.png) ![Auf der Karte sichtbar](@site/static/img/web/visible_new_2.png)
 
 
 ## Track-Ordner-Menü {#track-folder-menu}
 
-![Track folder menu](@site/static/img/web/collection_new.png)
+![Track-Ordner-Menü](@site/static/img/web/collection_new.png)
 
 Klicken Sie auf den Drei-Punkte-Button (⋮), um das *Track-Ordner*-Menü zu öffnen. Von hier aus können Sie:
 
@@ -85,24 +85,24 @@ Klicken Sie auf den Drei-Punkte-Button (⋮), um das *Track-Ordner*-Menü zu öf
  - Umbenennen. Öffnet einen Dialog, in dem Sie einen neuen Namen für den ausgewählten Ordner eingeben können. Die Änderung wird an OsmAnd Cloud synchronisiert und erscheint auf allen verbundenen Geräten.
  - Löschen. Öffnet einen Bestätigungsdialog. Das Löschen eines Ordners entfernt ihn dauerhaft zusammen mit allen enthaltenen Tracks. Diese Aktion wird ebenfalls über OsmAnd Cloud synchronisiert.
 
-![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+![Track-Ordner-Menü](@site/static/img/web/collection_rename.png) ![Track-Ordner-Menü](@site/static/img/web/collection_delete.png)
 
-### Smart Folders {#smart-folders}
+### Intelligente Ordner {#smart-folders}
 
-**Smart Folders**, die auf Mobilgeräten erstellt wurden, können über OsmAnd Cloud synchronisiert und in der Webversion angezeigt werden. Damit sie im Web erscheinen, muss die Synchronisierung von [OsmAnd-Einstellungen](../personal/osmand-cloud.md#select-data-to-back-up) in den Cloud-Einstellungen aktiviert sein.  
+**Intelligente Ordner**, die auf Mobilgeräten erstellt wurden, können über OsmAnd Cloud synchronisiert und in der Webversion angezeigt werden. Damit sie im Web erscheinen, muss die Synchronisierung von [OsmAnd-Einstellungen](../personal/osmand-cloud.md#select-data-to-back-up) in den Cloud-Einstellungen aktiviert sein.  
 Gehe zu: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-Smart Folders werden derzeit als Teil der globalen Einstellungen gespeichert, daher werden sie nur dann in die Cloud hochgeladen, wenn die Einstellungssynchronisierung aktiv ist. Nach dem Erstellen oder Bearbeiten eines Smart Folders wird empfohlen, eine manuelle Synchronisierung durchzuführen, um die Daten zu aktualisieren.
+Intelligente Ordner werden derzeit als Teil der globalen Einstellungen gespeichert, daher werden sie nur dann in die Cloud hochgeladen, wenn die Einstellungssynchronisierung aktiv ist. Nach dem Erstellen oder Bearbeiten eines intelligenten Ordners wird empfohlen, eine manuelle Synchronisierung durchzuführen, um die Daten zu aktualisieren.
 
-Im Web werden Smart Folders in der Track-Liste mit einem Sternsymbol angezeigt, wodurch sie sich leicht von regulären Ordnern unterscheiden lassen. Der Ordnername wird zuerst synchronisiert, während die Track-Liste davon abhängt, wie der Ordner auf dem Gerät konfiguriert ist.
+Im Web werden intelligente Ordner in der Track-Liste mit einem Sternsymbol angezeigt, wodurch sie sich leicht von regulären Ordnern unterscheiden lassen. Der Ordnername wird zuerst synchronisiert, während die Track-Liste davon abhängt, wie der Ordner auf dem Gerät konfiguriert ist.
 
 Tracks werden nur angezeigt, wenn die Smart-Folder-Konfiguration im Web unterstützt wird. Dazu gehören sowohl [Filtereinstellungen](../personal/tracks/smart-folder.md#search-filter) als auch [Gruppierungsoptionen](../personal/tracks/smart-folder.md#managing-smart-folders). Bei nicht unterstützten Parametern (z. B. nächstgelegene Stadt) kann der Ordner ohne Tracks erscheinen. Für beste Kompatibilität verwenden Sie gängige Parameter wie Aktivität, Datum, Entfernung oder Dauer.
 
-Die Synchronisierung von Smart Folders kann je nach Plattform und Sync-Konfiguration variieren. Für konsistente Ergebnisse stellen Sie sicher, dass die Cloud-Synchronisierung auf allen Geräten aktiviert und auf dem neuesten Stand ist.
+Die Synchronisierung intelligenter Ordner kann je nach Plattform und Sync-Konfiguration variieren. Für konsistente Ergebnisse stellen Sie sicher, dass die Cloud-Synchronisierung auf allen Geräten aktiviert und auf dem neuesten Stand ist.
 
-Das Drei-Punkte-Menü (⋮) bietet zusätzliche Aktionen für den Smart Folder. Sie können den Ordner als OSF herunterladen, als OBF-Sammlung herunterladen, umbenennen oder löschen.
+Das Drei-Punkte-Menü (⋮) bietet zusätzliche Aktionen für den intelligenten Ordner. Sie können den Ordner als OSF herunterladen, als OBF-Sammlung herunterladen, umbenennen oder löschen.
 
-![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
+![Intelligente Ordner](@site/static/img/web/smart_folder_new.png) ![Intelligente Ordner](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Cloud-Tracks {#cloud-tracks}
@@ -123,7 +123,7 @@ Die folgenden Funktionen sind verfügbar, nachdem Sie einen Cloud-Track ausgewä
 - *Oberfläche* - Zeigt die Arten von Track-Oberflächen entlang der Route.
 - *Glätte* - Zeigt die Glätte der Segmente basierend auf OSM-Tags an.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
+![OsmAnd Web Cloud-GPX bearbeiten](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web Cloud-GPX bearbeiten](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Verwandte Artikel {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
+source-hash: 89871f7189df3be0f44150ef057c8d28471823b1cd845448b1ca78cf1747a19a
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -17,10 +17,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 ## Übersicht {#overview}
-
-:::tip Purchase
-CarPlay ist eine [bezahlte Funktion](../purchases/index.md).  
-:::
 
 Das Führen eines Fahrzeugs und die gleichzeitige Benutzung Ihres Telefons oder Tablets ist aus Sicherheitsgründen in der Regel gesetzlich verboten. [***CarPlay***](https://www.apple.com/ios/carplay/) ist eine Software, die eine angepasste und optimierte Version der OsmAnd-App für die sichere Nutzung während der Fahrt bereitstellt und so den Zugriff auf die Navigationsfunktionen der App einfacher und sicherer macht.
 
@@ -61,7 +57,6 @@ Während Ihr Gerät mit *CarPlay* verbunden ist, ist die Karte auf dem App-Bilds
     - Ein praktisches Profil für die Verwendung von *CarPlay* kann *Fahren* sein, und die Art des Routings kann [Auto-Routing](../navigation/routing/car-based-routing.md) sein.
     - OsmAnd hat einen separaten Punkt [CarPlay-Profil](#carplay-profile) für den schnellen Zugriff auf die Liste der für die Verbindung mit *CarPlay* verfügbaren Profile.
 - Damit OsmAnd funktioniert, [verbinden Sie Ihr iOS-Gerät](#overview) mit dem Multimediasystem des Fahrzeugs. Um mehr darüber zu erfahren, wie Sie Ihr Gerät anschließen und einrichten, können Sie die [**CarPlay**](https://support.apple.com/en-us/HT205634) Website besuchen.
-- Sie benötigen eine der [kostenpflichtigen oder Abonnement-Versionen von OsmAnd](../purchases/ios#free-and-paid-features). Überprüfen Sie dies hier: *Menü → Einstellungen → Käufe*.
 - Sobald die Verbindung hergestellt ist, können Sie ein Ziel festlegen und die OsmAnd-Navigation in *CarPlay* starten.  
 
 :::note
@@ -72,8 +67,6 @@ Möglicherweise benötigen Sie eine Internetverbindung, um OsmAnd in *CarPlay* z
 ### Navigation starten {#start-navigation}
 
 ![CarPlay-Bildschirm](@site/static/img/navigation/auto-car/car-play-start(1).png)  
-
-Um die iOS-Version der OsmAnd-App in *CarPlay* zu verwenden, müssen Sie eine [kostenpflichtige Version der App erwerben oder abonnieren](../purchases/ios#free-and-paid-features).  
 
 1. Um eine Route zu erstellen, müssen Sie den [Routenendpunkt](#select-a-route-endpoint) auf dem *CarPlay-Bildschirm* oder in der [OsmAnd-App](../navigation/setup/route-navigation.md) auswählen.
 2. Sie können [Sprachanweisungen](#voice-prompts) verwenden, um Anweisungen oder Meldungen über Probleme auf der Straße zu hören.  
@@ -232,7 +225,7 @@ Um die Sprachanweisungen entsprechend dem ausgewählten Profil zu konfigurieren,
 
 ### Navigationswarnungen {#navigation-alerts}
 
-![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+![Fehlende Warnung](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Warnung](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
 
 Hilfreiche Warnungen werden automatisch vor dem Start der Navigation angezeigt, wenn zusätzliche Maßnahmen zur Berechnung der Route erforderlich sind. Diese Warnungen helfen Ihnen, Routing-Probleme vor Beginn der Navigation zu lösen.
 
@@ -275,7 +268,7 @@ Das **Tachometer**-Widget ist ein integriertes Oberflächenelement, das die *akt
 
 ### Kartenansicht (3D) {#map-appearance-3d}
 
-![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
+![CarPlay](@site/static/img/navigation/auto-car/car_play_3.png)
 
 Die OsmAnd-App ermöglicht es Ihnen, die 3D-Kartenansicht auf dem *CarPlay-Bildschirm* zu verwenden, um Ihre Route und Navigation anzuzeigen.
 
@@ -285,7 +278,7 @@ Die OsmAnd-App ermöglicht es Ihnen, die 3D-Kartenansicht auf dem *CarPlay-Bilds
 
 ### Multifunktions-Dashboard {#multifunction-dashboard}
 
-![Car Play](@site/static/img/navigation/auto-car/car_play_4.png)
+![CarPlay](@site/static/img/navigation/auto-car/car_play_4.png)
 
 Die OsmAnd-App kann geöffnet und zur Navigation in *CarPlay* auf dem Bildschirm des Fahrzeug-Multimediasystems gleichzeitig mit Musik-, Nachrichten- oder anderen Benachrichtigungs-Apps verwendet werden.
 
@@ -325,15 +318,29 @@ Sie können das Ansagen von Nachrichten auch direkt in *CarPlay* aktivieren oder
 
 ![Kartenmodus](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Kartenmodus](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-OsmAnd ermöglicht es Ihnen, das Kartenerscheinungsbild für CarPlay unabhängig vom Kartenmodus auf Ihrem Telefon zu konfigurieren. Um diese Einstellung zu öffnen, tippen Sie in der CarPlay-Navigationsleiste auf die Schaltfläche *Einstellungen* und wählen Sie dann *Kartenmodus*. Der aktuelle Modus wird als Detailtext der Zeile angezeigt.
+OsmAnd ermöglicht es Ihnen, das Kartenerscheinungsbild für CarPlay unabhängig vom Kartenmodus auf Ihrem Telefon zu konfigurieren. Um diese Einstellung zu öffnen, tippen Sie in der CarPlay-Navigationsleiste auf die Schaltfläche *Einstellungen* (Zahnradsymbol neben der Schwenk-Schaltfläche) und wählen Sie dann *Kartenmodus*. Die Schaltfläche ist beim Durchsuchen der Karte, in der Routenvorschau und während der Navigation verfügbar. Der ausgewählte Modus wird neben dem Eintrag *Kartenmodus* angezeigt.
 
 Sie können einen der folgenden Erscheinungsmodi wählen:
-- **Fahrzeugdarstellung** — Das Kartenerscheinungsbild folgt dem Anzeigestil des Fahrzeugs, basierend auf der CarPlay-Darstellungseinstellung auf Ihrem iPhone (*Automatisch* oder *Immer dunkel*) und der Tageszeit. Wenn in dieser Einstellung *Immer dunkle Karten anzeigen* aktiviert ist, bleibt die Karte unabhängig vom Scheinwerferstatus des Fahrzeugs oder der Tageszeit immer im Dunkelmodus.
+- **Fahrzeugdarstellung** — Das Kartenerscheinungsbild folgt dem Anzeigestil des Fahrzeugs, basierend auf der CarPlay-Darstellungseinstellung auf Ihrem iPhone (*Automatisch* oder *Immer dunkel*) und der Tageszeit. Wenn in dieser Einstellung *Immer dunkle Karten anzeigen* aktiviert ist, bleibt die Karte unabhängig vom Scheinwerferstatus des Fahrzeugs oder der Tageszeit immer im Dunkelmodus. Dieser Modus wird standardmäßig verwendet.
 - **Tag** — Die Karte verwendet in CarPlay immer das helle Thema, unabhängig von den Darstellungseinstellungen des Fahrzeugs.
 - **Nacht** — Die Karte verwendet in CarPlay immer das dunkle Thema, unabhängig von den Darstellungseinstellungen des Fahrzeugs.
 - **Sonnenaufgang/Sonnenuntergang** — Die Karte wechselt automatisch zwischen hellem und dunklem Thema, basierend auf den berechneten Sonnenauf- und -untergangszeiten für Ihren aktuellen Standort.
 
-**Hinweis:** Die Einstellung Kartenmodus in CarPlay wirkt sich nur auf das Kartenerscheinungsbild in CarPlay aus. Sie ändert nicht den Kartenmodus auf dem Bildschirm Ihres Telefons.
+**Hinweis:** Die Einstellung Kartenmodus in CarPlay wirkt sich nur auf das Kartenerscheinungsbild in CarPlay aus. Sie ändert nicht den Kartenmodus auf dem Bildschirm Ihres Telefons. Der Kartenmodus auf Ihrem Telefon ändert die CarPlay-Karte ebenfalls nicht. Alle Kartenelemente auf dem CarPlay-Bildschirm, einschließlich POI-Symbolen, der Routenlinie und der Positionsmarkierung, folgen dem CarPlay-Kartenmodus. Die Einstellung gilt für alle Profile und bleibt nach dem erneuten Verbinden von CarPlay oder dem Neustart der App erhalten.
+
+### Kartenausrichtung {#map-orientation}
+
+![Kartenausrichtung](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+Die Einstellung *Kartenausrichtung* legt fest, wie sich die Karte auf dem CarPlay-Bildschirm dreht. Um diese Einstellung zu öffnen, tippen Sie in der CarPlay-Navigationsleiste auf die Schaltfläche *Einstellungen* und wählen Sie dann *Kartenausrichtung*. Die aktuelle Ausrichtung wird als Detailtext der Zeile angezeigt.
+
+Sie können einen der folgenden Ausrichtungsmodi wählen:
+- **Manuell gedreht** — Die Karte dreht sich nicht automatisch.
+- **Bewegungsrichtung** — Die Karte dreht sich entsprechend Ihrer Fahrtrichtung.
+- **Kompassrichtung** — Die Karte dreht sich entsprechend dem Kompass des iPhone, sodass der Norden der Karte dem realen Norden entspricht.
+- **Norden ist oben** — Der Norden bleibt immer am oberen Bildschirmrand.
+
+**Hinweis:** Die Kartenausrichtung ist eine Profileinstellung, die von CarPlay und der OsmAnd-App auf Ihrem iPhone gemeinsam genutzt wird. Eine Änderung auf einem Bildschirm gilt auch für den anderen. Weitere Details finden Sie im Artikel [Kartenausrichtungsmodi](../widgets/map-buttons.md#map-orientation-modes).
 
 ### Position des Standorts in CarPlay {#location-position-in-carplay}
 

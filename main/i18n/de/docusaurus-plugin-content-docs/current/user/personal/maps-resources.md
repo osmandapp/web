@@ -1,5 +1,5 @@
 ---
-source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
+source-hash: 1813dc99e0d296bb43d344b143353280237925904b056f4feaed4a2040ba4c22
 sidebar_position: 2
 title:  Karten & Ressourcen
 ---
@@ -179,7 +179,7 @@ Lesen Sie mehr im Artikel [**Benutzerdefiniertes Paket**](../plugins/custom).
 
 </Tabs>
 
-Für Länder, die aus **mehreren Regionalkarten** bestehen, können Sie das Massenladen mehrerer Karten verwenden. Karten, die für diese Art von Download verfügbar sind, werden mit einem doppelten Download-Pfeil-Symbol und einer Beschriftung mit der Anzahl der enthaltenen Regionen angezeigt (z. B. Höhenlinien / Alle Regionen: 10). Sie können wählen, wie viele Karten Sie herunterladen möchten. Das Massenladen unterstützt mehrere Kartentypen, einschließlich Standard, Höhenlinien, Wikipedia und Gelände.
+Für Länder, die aus **mehreren Regionalkarten** bestehen, können Sie das Massenladen mehrerer Karten verwenden. Karten, die für diese Art von Download verfügbar sind, werden mit einem doppelten Download-Pfeil-Symbol und einer Beschriftung mit der Anzahl der enthaltenen Regionen angezeigt (z. B. Höhenlinien / Alle Regionen: 10). Sie können wählen, wie viele Karten Sie herunterladen möchten. Das Massenladen unterstützt mehrere Kartentypen, einschließlich Standard, Höhenlinien, Wikipedia und Gelände. Wenn eine Region vollständig innerhalb einer anderen Region desselben Landes liegt, etwa eine Hauptstadt innerhalb der sie umgebenden Region, ist ihre Karte nicht im Massendownload und nicht in der Regionenzahl enthalten, da die Karte der größeren Region ihre Daten bereits enthält. Sie können diese Karte separat von der Länderseite herunterladen.
 
 Wenn ein gruppiertes Landelement geöffnet wird, wird ein Bottom-Sheet mit der vollständigen Liste der Karten für dieses Land angezeigt, das es ermöglicht, einzelne Karten auszuwählen oder alle auf einmal herunterzuladen.
 
@@ -372,7 +372,7 @@ Der Reiter **Aktualisierungen** enthält auch einen Abschnitt zur Wettervorhersa
 
 ## Live-Updates {#live-updates}
 
-:::info Pro feature
+:::info Pro-Funktion
 Live-Updates sind eine [**OsmAnd Pro**](../purchases/index.md) kostenpflichtige Funktion <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">

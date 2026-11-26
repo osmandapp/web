@@ -1,5 +1,5 @@
 ---
-source-hash: 18bdcf0d20caf5aabbea26b8ec6fcda7bc035763be0d7facfcec6e68cdb29d7d
+source-hash: 130c83b8f6cc63700c70288424f77bbacf7aa8e0dc8112b623117a5229a4b17c
 sidebar_position: 3
 title:  Astronomie
 unlistead: true
@@ -66,9 +66,12 @@ Der dedizierte **Sternenkarten-Bildschirm** zeigt eine interaktive Himmelskuppel
 - [**Suche**](#search) — öffnet den Suchbildschirm, auf dem Sie nach Himmelskörpern suchen und Himmelskataloge und Kategorien durchsuchen können. 
 - **Zeit und Datum** — ermöglicht es Ihnen, das Datum und die Zeit zu ändern, um den Himmel zu verschiedenen Momenten in der Vergangenheit oder Zukunft zu beobachten. Dies ist nützlich für die Planung von Beobachtungen, das Verfolgen der Objektbewegung oder das Lernen, wie sich der Himmel im Laufe der Zeit verändert. Wenn Sie ein benutzerdefiniertes Datum/Zeit festlegen, zeigt der Chip das vollständige Datum und die Zeit an, und neben ihm erscheint eine Zurücksetzen-Schaltfläche, um zur aktuellen Systemzeit zurückzukehren.
 - **<Translate android="true" ids="magnitude_filter"/>** — ermöglicht es Ihnen, zu begrenzen, welche Sterne basierend auf ihrer Helligkeit angezeigt werden. Verwenden Sie den Schieberegler, um den maximalen Magnitude-Wert einzustellen. Niedrigere Werte zeigen nur die hellsten Sterne, während höhere Werte schwächere Sterne und Deep-Sky-Objekte enthüllen. Dies hilft, visuelle Unordnung zu reduzieren oder zu simulieren, was mit dem bloßen Auge sichtbar ist.
+- **<Translate android="true" ids="zoomIn"/> / <Translate android="true" ids="zoomOut"/>** — ändern den Maßstab der Sternenkarte stufenlos, ein Schritt pro Tippen. Die Schaltflächen werden auf Android-Tablets und auf dem Mac in einer Spalte über der Schaltfläche <Translate android="true" ids="magnitude_filter"/> angezeigt.
 - [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — öffnet Anzeigeeinstellungen, die steuern, wie Objekte, Bahnen und Referenzlinien auf der Sternenkarte angezeigt werden.
 
-Der Bildschirm rendert die volle Himmelshemisphäre über Ihrem Standort, ausgerichtet auf die Kompassrichtung. Die Sternenkarte kann manuell durch Ziehen am Bildschirm rotiert werden. Die manuelle Rotation der Sternenkarte beeinflusst nicht die Ausrichtung der Erdkarte. Die Erdkarte folgt immer dem [Kartenorientierungsmodus](../map/interact-with-map.md#map-orientation-modes), der in Ihren Einstellungen ausgewählt ist. Tippen Sie auf Himmelskörper für Details wie Magnitude, Auf- und Untergangszeiten oder Bahnen.
+Der Bildschirm rendert die volle Himmelshemisphäre über Ihrem Standort, ausgerichtet auf die Kompassrichtung. Die Sternenkarte kann manuell durch Ziehen am Bildschirm rotiert werden. Nach einem schnellen Wischen bewegt sich der Himmel noch einen Moment weiter und wird dann allmählich langsamer. Die manuelle Rotation der Sternenkarte beeinflusst nicht die Ausrichtung der Erdkarte. Die Erdkarte folgt immer dem [Kartenorientierungsmodus](../map/interact-with-map.md#map-orientation-modes), der in Ihren Einstellungen ausgewählt ist. Tippen Sie auf Himmelskörper für Details wie Magnitude, Auf- und Untergangszeiten oder Bahnen.
+
+Die Sternenkarte behält ihre letzte Ansicht. Wenn Sie sie erneut öffnen, auch nach einem Neustart der App, zeigt sie dieselbe Richtung und Zoomstufe wie beim Schließen.
 
 Die Sternenkarte kann auch mit der Geräteausrichtung ausgerichtet werden, wenn der Kompassmodus aktiviert ist. In diesem Modus rotiert der Himmel entsprechend den Beschleunigungssensor- und Kompasssensoren des Geräts, was es Ihnen ermöglicht, den Himmel zu erkunden, indem Sie Ihr Telefon physisch bewegen.
 
@@ -132,7 +135,7 @@ Diese Werte werden dynamisch basierend auf der ausgewählten Zeit und dem Stando
 
 Unter den Schnellinformationsblöcken kann das Menü auch zusätzliche Informationen und Ressourcen über das Objekt enthalten:  
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Ermöglicht es Ihnen, eine erweiterte Datenbank mit Wikipedia-Artikeln und Deep-Sky-Katalogen für die Offline-Nutzung herunterzuladen. Nach dem Herunterladen können detaillierte Informationen über Himmelskörper direkt in der App ohne Internetverbindung angezeigt werden.
-- <Translate android="true" ids="read_on_wiki"/> – Öffnet den Wikipedia-Artikel des Objekts im Browser.
+- <Translate android="true" ids="read_on_wiki"/> – Öffnet den Wikipedia-Artikel des Objekts im Browser. Wenn der Artikel in weiteren Sprachen verfügbar ist, erscheint im Artikel eine Sprachschaltfläche mit dem aktuellen Sprachcode (zum Beispiel `En`). Tippen Sie darauf, um in der Liste eine andere Sprache auszuwählen.
 - <Translate android="true" ids="astro_designations"/> – Zeigt alternative Namen und Katalog-Identifikatoren für das Objekt (z. B. HD, HIP, NGC). Dieser Abschnitt ist für Objekte mit Katalogeinträgen verfügbar, wie Sterne und Deep-Sky-Objekte. Wenn das Objekt keinen gängigen Namen hat, wird einer dieser Bezeichnungen als primärer Name verwendet.
 - <Translate android="true" ids="online_photos"/> – Zeigt verfügbare Fotos im Zusammenhang mit dem ausgewählten Himmelskörper.
 
@@ -150,13 +153,13 @@ Unter den Objektinformationen bietet das Kontextmenü mehrere Aktionen zur Inter
 
 <TabItem value="android" label="Android">
 
-![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_new.png)
+![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_new.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+![Sichtbarkeitsdiagramm](@site/static/img/plugins/starwatcher/visibility_ios_new.webp)
 
 </TabItem>
 
@@ -169,7 +172,7 @@ Das Diagramm zeigt die Höhe des Objekts über dem Horizont im Laufe der Zeit.
 - Die horizontale Achse stellt die Zeit von 12:00 bis 12:00 am nächsten Tag dar.
 - Die vertikale Achse stellt die Höhe von −30° bis +90° dar.
 
-Die farbige Kurve zeigt die Höhe des Objekts den ganzen Tag über.
+Die farbige Kurve zeigt die Höhe des Objekts den ganzen Tag über. Ein Pfeil nach oben im Diagramm markiert den Aufgang des Objekts, ein Pfeil nach unten seinen Untergang.
 
 Der Hintergrund des Diagramms stellt den Zustand des Himmels dar und ändert sich je nach Position der Sonne. Dies hilft zu identifizieren, wann Beobachtungen möglich sind.
 
@@ -191,7 +194,7 @@ Unter dem Diagramm werden wichtige Beobachtungsereignisse angezeigt:
 - **<Translate android="true" ids="astro_culmination"/>** – wenn das Objekt seine höchste Höhe erreicht.
 - **<Translate android="true" ids="astro_set"/>** – wenn das Objekt unter dem Horizont untergeht. Wenn das Objekt nie aufgeht oder nie untergeht, werden die entsprechenden Werte ausgeblendet.
 
-Das Diagramm öffnet sich mit dem Indikator an der aktuellen Systemzeit positioniert. Der für die Berechnungen verwendete Standort wird unter dem Diagramm angezeigt. Der Standort wird als Stadtname angezeigt.
+Das Diagramm öffnet sich mit dem Indikator an der aktuellen Systemzeit positioniert. Der für die Berechnungen verwendete Standort wird unter dem Diagramm angezeigt. Der Standort wird als Stadtname angezeigt. Unter iOS folgt auf den Stadtnamen die Zeitzone der angezeigten Zeiten, zum Beispiel `Canberra · Kyiv time (UTC+2)`. Alle Zeiten auf dem Reiter „Sichtbarkeit“ werden in der Zeitzone Ihres Geräts angezeigt. Wenn sich während des angezeigten Tages die Uhrzeit umstellt, werden beide UTC-Offsets angezeigt, zum Beispiel `UTC+3 → UTC+2`.
 
 ### Beobachtungsplan {#observation-schedule}
 
@@ -205,7 +208,7 @@ Das Diagramm öffnet sich mit dem Indikator an der aktuellen Systemzeit position
 
 <TabItem value="ios" label="iOS">
 
-![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+![Beobachtungsplan](@site/static/img/plugins/starwatcher/schedule_ios_new.webp)
 
 </TabItem>
 
@@ -221,6 +224,8 @@ Die Registerkarte **Plan** zeigt die Sichtbarkeit des ausgewählten Objekts für
 Das Mini-Diagramm zeigt, wann das Objekt während des Tages sichtbar ist und wie sich seine Höhe ändert. Der farbige Abschnitt der Leiste stellt den Zeitraum dar, in dem das Objekt über dem Horizont ist. Das Mini-Diagramm stellt den Zeitraum von 00:00 bis 23:59 für den ausgewählten Tag dar.
 
 Sie können zwischen Wochen mit den Pfeilschaltflächen im Plan-Header navigieren. Die Kalender-Schaltfläche ermöglicht es Ihnen, zur aktuellen Woche zurückzukehren.
+
+Unter iOS zeigt der Hinweis unter dem Plan die Zeitzone der angezeigten Zeiten an, zum Beispiel `Kyiv time (UTC+3)`. Alle Zeiten auf dem Reiter „Plan“ werden in der Zeitzone Ihres Geräts angezeigt. Wenn sich während der angezeigten Woche die Uhrzeit umstellt, werden beide UTC-Offsets angezeigt.
 
 <!--
 ## Celestial Object Info {#celestial-object-info}

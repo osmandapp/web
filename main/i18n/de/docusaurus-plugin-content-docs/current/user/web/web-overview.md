@@ -46,7 +46,7 @@ Das Web-Portal bietet die folgenden Hauptfunktionen zur Arbeit mit Karten und pe
 
 ### Abonnement-Zugang {#subscription-accesses}
 
-![Web Account](@site/static/img/web/web_start.png) ![Web Account](@site/static/img/web/web_pro.png)
+![Web-Konto](@site/static/img/web/web_start.png) ![Web-Konto](@site/static/img/web/web_pro.png)
 
 Das Web-Kartenportal unterstützt mehrere Zugriffsebenen: ohne Anmeldung, mit OsmAnd Start und mit OsmAnd Pro. Die folgende Tabelle fasst zusammen, welche Funktionen auf jeder Ebene verfügbar sind, damit Sie schnell sehen können, was Sie bereits haben und was mit einem Konto oder einem Upgrade verfügbar wird. Diese Übersicht soll Ihnen helfen zu entscheiden, ob Sie überhaupt ein Konto benötigen und, falls ja, welche Option am besten zu Ihrer Nutzung von OsmAnd passt.
 
@@ -74,7 +74,7 @@ Um auf alle Funktionen des OsmAnd Web-Portals zugreifen zu können, müssen Sie 
    - **Anmelden**: Geben Sie die E-Mail-Adresse ein, die mit Ihrem Pro- oder Start-Abonnement verknüpft ist, oder
    - **Konto erstellen**: Registrieren Sie sich für ein kostenloses OsmAnd Start-Konto. Für eine detaillierte schrittweise Anleitung zur Erstellung eines neuen Kontos siehe den Artikel [OsmAnd-Konto](./web-cloud).
 
-![Web Account](@site/static/img/web/web_account.png)
+![Web-Konto](@site/static/img/web/web_account.png)
 
 
 ## Verwandte Artikel {#related-articles}
