@@ -119,7 +119,6 @@ test('17.4 router answers of 200 route points with 100k vertices', async () => {
                 ctx,
                 geoRouter: ctx.trackRouter,
                 saveChanges: () => {},
-                debouncerTimer: { current: null },
             }),
         {
             prepare: () => {

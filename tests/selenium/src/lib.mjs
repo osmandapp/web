@@ -434,6 +434,22 @@ export async function getMapHash() {
     return `${z}/${lat.toFixed(3)}/${lon.toFixed(3)}`;
 }
 
+/** Counts the requests of the page to `endpoint` from now on, read them with getRequestCount(). */
+export async function countRequests(endpoint) {
+    await driver.executeScript(`
+        window.seRequestCount = 0;
+        const fetch = window.fetch;
+        window.fetch = function (url) {
+            String(url).includes('${endpoint}') && window.seRequestCount++;
+            return fetch.apply(this, arguments);
+        };
+    `);
+}
+
+export async function getRequestCount() {
+    return await driver.executeScript('return window.seRequestCount');
+}
+
 const TRACK_HIT_LINE_PANE = 'trackHitLinePane';
 
 // Counts on-map items (markers + vector layers) by opacity bucket.

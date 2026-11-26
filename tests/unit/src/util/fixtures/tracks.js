@@ -211,7 +211,6 @@ export function createEditorCtx({ points = [] } = {}) {
     ctx.setProcessRouting = jest.fn();
     ctx.setUpdateInfoBlock = jest.fn();
     ctx.setLoadingContextMenu = jest.fn();
-    ctx.setUnverifiedGpxFile = jest.fn();
 
     return ctx;
 }

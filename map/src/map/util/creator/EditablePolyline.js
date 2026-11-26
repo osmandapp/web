@@ -184,11 +184,7 @@ export default class EditablePolyline {
         if (isPointUnrouted({ point: segmentEndPoint, pointIndex: index, prevPoint })) {
             currentLayer._latlngs.splice(layerIndex, 0, { lat, lng });
             currentLayer.setLatLngs(currentLayer._latlngs);
-            // refresh analytics (newPoint ele is undefined)
-            track.refreshAnalytics = true;
-        } else if (isProtectedSegment({ startPoint: prevPoint, endPoint: segmentEndPoint })) {
-            track.refreshAnalytics = true;
-        } else {
+        } else if (!isProtectedSegment({ startPoint: prevPoint, endPoint: segmentEndPoint })) {
             const currentPoint = track.points[index];
             const nextPoint = track.points[index + 1];
 

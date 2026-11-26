@@ -29,13 +29,11 @@
     "pointsGroups": {} // dynamically created ???
     "zoom": <Boolean> // internal
     "hasGeo": <Boolean> // internal
-    "update": <Boolean> // internal
     "selected": <Boolean> // internal
     "syncRouting": <Boolean> // internal
     "updateLayers": <Boolean> // internal
     "localRedrawWpts": <Boolean> // internal
     "cloudRedwarWpts": <Boolean> // internal
-    "refreshAnalytics": <Boolean> // internal
     "layers": [] // leaflet layers (cyclic value)
 }
 

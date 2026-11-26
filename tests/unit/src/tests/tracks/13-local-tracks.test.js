@@ -6,8 +6,10 @@ import {
     saveTrackToLocalStorage,
 } from '@map/context/LocalTrackStorage';
 import { renameLocalTrack } from '@map/manager/track/SaveTrackManager';
+import { withEditedPoints } from '@map/manager/track/TracksManager';
 import { fakeIndexedDbStore, removeIndexedDb } from '../../util/indexedDb';
 import { settle } from '../../util/settle';
+import { isAnalysisAsked } from '../../util/editor';
 
 /** ctx as the local tracks menu keeps it: the list itself plus its setter. */
 function createCtx(localTracks = []) {
@@ -101,7 +103,7 @@ describe('an edited local track', () => {
         expect(record.analysis).toMatchObject({ totalDistance: 1112, srtmAnalysis: false, isSrtmApplied: false });
     });
 
-    test('opens after a reload with its edits', async () => {
+    test('opens after a reload with its edits and does not ask for its analysis again', async () => {
         saveTrackToLocalStorage({ ctx: createCtx(), track: edited() });
         await settle();
 
@@ -109,6 +111,8 @@ describe('an edited local track', () => {
 
         expect(loaded.points).toEqual(points);
         expect(loaded.selected).toBe(false);
+        expect(isAnalysisAsked({ selectedGpxFile: loaded })).toBe(false);
+        expect(withEditedPoints(loaded).tracks).toEqual([{ points }]);
     });
 });
 

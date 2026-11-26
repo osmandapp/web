@@ -140,18 +140,12 @@ export default class EditableMarker {
                     const latlngs = currentPolyline.getLatLngs();
                     latlngs[currentPolyline.options.pointIds.indexOf(currentPoint.id)] = L.latLng(lat, lng);
                     currentPolyline.setLatLngs(latlngs);
-
-                    // reset elevation/analytics when unrouted point was moved
-                    track.refreshAnalytics = true;
                 } else {
                     console.error('EditableMarker drag-drop unrouted-zero-geo failed');
                 }
             } else {
                 for (const index of [indPoint, indPoint + 1]) {
                     if (!isWaitingForRouter(track.points, index)) {
-                        if (track.points[index]?.geometry !== points[index]?.geometry) {
-                            track.refreshAnalytics = true;
-                        }
                         continue;
                     }
                     const start = track.points[index - 1];

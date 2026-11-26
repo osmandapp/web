@@ -6,10 +6,17 @@ import TracksManager, {
     updateTrackRouteTypes,
 } from '../manager/track/TracksManager';
 import EditablePolyline from '../map/util/creator/EditablePolyline';
-import { isWaitingForRouter, setSegmentGeometries, withAnsweredElevation } from '../manager/track/TrackOperations';
+import {
+    hasSegmentWaitingForRouter,
+    isWaitingForRouter,
+    setSegmentGeometries,
+    withAnsweredElevation,
+} from '../manager/track/TrackOperations';
 
 const MAX_STARTED_ROUTER_JOBS = 6;
 export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
+
+let pointsInAnalysis = null;
 
 export function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
     if (ctx.processingAnalytics) {
@@ -75,7 +82,7 @@ function routeOrLine(ctx, startPoint, endPoint, geoProfile) {
     });
 }
 
-export function effectRefreshTrackWithRouting({ ctx, map, geoRouter, saveChanges, debouncerTimer }) {
+export function effectRefreshTrackWithRouting({ ctx, map, geoRouter, saveChanges }) {
     const validKeys = {};
     const routes = [];
     const cache = ctx.routingCache;
@@ -100,9 +107,6 @@ export function effectRefreshTrackWithRouting({ ctx, map, geoRouter, saveChanges
 
     if (routes.length > 0) {
         saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
-        if (Object.keys(validKeys).every((key) => cache[key].geometry !== null)) {
-            requestAnalytics({ ctx, track, debouncerTimer });
-        }
     }
 
     return routes.length > 0;
@@ -135,17 +139,105 @@ export function debouncer(f, timerRef, ms) {
 }
 
 export function requestAnalysisNow({ ctx, track }) {
+    pointsInAnalysis = track.points;
     TracksManager.getTrackWithAnalysis(
         TracksManager.GET_ANALYSIS,
         { ...ctx, selectedGpxFile: track },
         ctx.setRunningEditorAnalyses
-    ).then((res) => {
-        if (res) ctx.setUnverifiedGpxFile(() => ({ ...res }));
+    ).then((answer) => {
+        if (pointsInAnalysis === track.points) {
+            pointsInAnalysis = null;
+        }
+        applyAnalysisAnswer(ctx, answer);
     });
 }
 
 export function requestAnalytics({ ctx, track, debouncerTimer }) {
     debouncer(() => requestAnalysisNow({ ctx, track }), debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
+}
+
+export function effectRequestAnalysis({ ctx, track, debouncerTimer }) {
+    if (track?.points === pointsInAnalysis) {
+        clearTimeout(debouncerTimer.current);
+        debouncerTimer.current = null;
+    } else if (isAnalysisWanted(track)) {
+        requestAnalytics({ ctx, track, debouncerTimer });
+    }
+}
+
+function isAnalysisWanted(track) {
+    if (!track?.points || track.points === track.analysisPoints) {
+        return false;
+    }
+    const newTrackWithoutSegment = !track.analysisPoints && track.points.length < 2;
+
+    return !newTrackWithoutSegment && !hasSegmentWaitingForRouter(track.points);
+}
+
+export function applyAnalysisAnswer(ctx, answer) {
+    ctx.setSelectedGpxFile((current) => withAnalysisAnswer(current, answer));
+    addElevationToCache({ ctx, points: answer?.points, geoRouter: ctx.trackRouter });
+}
+
+function withAnalysisAnswer(current, answer) {
+    if (!answer || !current) {
+        return current;
+    }
+    const sameTrack =
+        answer.name === current.name &&
+        answer.selected === current.selected &&
+        answer.metaData?.desc === current.metaData?.desc;
+    if (!sameTrack) {
+        return current;
+    }
+    if (current.points) {
+        if (answer.analysisPoints !== current.points) {
+            return current;
+        }
+        const points = withAnsweredElevation(current.points, answer.points);
+
+        return {
+            ...current,
+            analysis: answer.analysis,
+            analysisTracks: answer.analysisTracks,
+            points,
+            analysisPoints: points,
+            ...(current.tracks && { tracks: answer.tracks }),
+        };
+    }
+    if (!isPointsHaveSameGeo(answer.tracks?.[0]?.points, current.tracks?.[0]?.points)) {
+        return current;
+    }
+
+    return { ...current, analysis: answer.analysis, tracks: answer.tracks };
+}
+
+function isPointsHaveSameGeo(p1, p2) {
+    if (!p1 || !p2 || p1.length !== p2.length) {
+        return false;
+    }
+    for (let i = 0; i < p1.length; i++) {
+        if (TracksManager.isEqualPoints(p1[i], p2[i]) === false) {
+            return false;
+        }
+    }
+    for (let i = 0; i < p1.length; i++) {
+        const g1 = p1[i].geometry;
+        const g2 = p2[i].geometry;
+        if (!g1 && !g2) {
+            continue; // both w/o geometry = ok
+        }
+        if (!g1 || !g2 || g1.length !== g2.length) {
+            return false;
+        }
+        for (let j = 0; j < g1.length; j++) {
+            if (TracksManager.isEqualPoints(g1[j], g2[j]) === false) {
+                return false;
+            }
+        }
+    }
+
+    return true; // all-the-same
 }
 
 // refresh fresh data to previously created "temp-line" layer
@@ -220,7 +312,7 @@ export function routeWaitingSegments(track, ctx) {
 }
 
 // undo/redo: one-directional sync (cache -> track)
-export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
+export function syncTrackWithCache({ ctx, track, geoRouter }) {
     const cache = ctx.routingCache;
     const routes = [];
 
@@ -232,7 +324,6 @@ export function syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }) {
     });
     const synced = track.points ? { ...track, points: setSegmentGeometries(track.points, routes) } : track;
 
-    setTimeout(() => requestAnalytics({ ctx, track: synced, debouncerTimer }), GET_ANALYSIS_DEBOUNCE_MS); // delayed
     dropOutdatedCache({ ctx, validKeys: {}, killLayers: true });
 
     return synced;
