@@ -1,5 +1,5 @@
 ---
-source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
+source-hash: fd62270946384571ddb0174dfd6f8910f5b39a06592a0da455d7339a651cd91e
 sidebar_position: 2
 title:  Compras en iOS
 ---
@@ -64,7 +64,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 :::
 
 
-|    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
+|    | OsmAnd Free   | [Maps+](#install-osmand-ios) en la aplicación | Suscripción [Maps+](#install-osmand-ios) | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 Meses) | **Suscripción** (1 Mes / 12 Meses) |
@@ -77,9 +77,9 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 |    | OsmAnd Free   | [Maps+](#install-osmand-ios) In-App | [Maps+](#install-osmand-ios) Subscription | [OsmAnd Pro](#install-osmand-ios) |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
-| **Tipo de compra** | **Gratis** | **Compra única** (Vitalicia) | **Suscripción** (12 Meses) | **Suscripción** (1 Mes / 12 Meses) |
-| **Precio (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
-| **Precio (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
+| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
+| **Price (EUR)** | €0 | €69,99 | €14.99 | €5.99 / €39.99 |
+| **Price (USD)** | $0 | $69.99 | $14.99 | $5.99 / $39.99 |
 
 -->
 
@@ -88,7 +88,7 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 
 ### Funciones gratuitas y de pago {#free-and-paid-features}
 
-|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(in&#8209;app & suscripción) | [OsmAnd Pro](#install-osmand-ios) |
+|  | OsmAnd Free | [OsmAnd Maps+](#install-osmand-ios)<br/>(en la aplicación y suscripción) | [OsmAnd Pro](#install-osmand-ios) |
 | :------ | :------------- | :------------------ | :------------------ |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg)  |  ![Pro](@site/static/img/svg/pro_icon.svg) |
 |  |  |  |  |
@@ -98,7 +98,6 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [Descargas de mapas](../start-with/download-maps.md) |  <details><summary>**5 descargas de mapas** <br /> (la actualización del mapa cuenta como descarga):</summary> <br /> - La descarga o actualización de un mapa se refiere únicamente a la descarga-actualización de un mapa de un país (región).<br /> - El **mapa general del mundo**, la **corrección de altitud mundial**, las **fuentes de mapa** y las **indicaciones de voz** no se cuentan como 5 posibilidades de descarga.</details> | ✔ | ✔ |
 | [Actualizaciones mensuales de mapas](../personal/maps-resources.md#updates-menu) |  <details><summary>**Una vez al mes** <br /> (con 2 días de retraso):</summary> * limitado a 5 descargas (la actualización del mapa cuenta como descarga) </details> |  ✔ | ✔ |
 | [Actualizaciones horarias de mapas](../personal/maps-resources.md#live-updates)<br/>Actualizaciones en vivo (retraso de 1 hora) - [**](#-map-updates) | **-** | **-**| ✔ |
-| [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relieve 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Datos topográficos](../plugins/topography.md#overview)<br/>(Curvas de nivel y Terreno) | **-** | ✔ | ✔ |
 | [Rejilla de coordenadas — Personalización de color](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -110,7 +109,9 @@ En la lista, hay información sobre los precios del producto OsmAnd para la regi
 | [Plugin de Astronomía](../plugins/astronomy.md) — [Planificación de observación](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Plugin de Astronomía](../plugins/astronomy.md) — [Modo AR interactivo](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin de Astronomía](../plugins/astronomy.md) — [Mapa del cielo sin conexión](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Color de fondo personalizado de widgets](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navegación sin conexión y en línea](../navigation/index.md)<br/>con indicaciones giro a giro | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/car-play.md) | ✔ | ✔ | ✔ |
 | [Búsqueda instantánea sin conexión](../search/index.md) | ✔ | ✔ | ✔ |
 | [Grabación de viaje](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Exportar tracks GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |

@@ -1,5 +1,5 @@
 ---
-source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
+source-hash: 205f05e0d42fa5f92caada9c958cf5598bdde7fa74f9cdb424367495ffe5d104
 sidebar_position: 11
 title:  Desarrollo de OsmAnd
 ---
@@ -32,7 +32,7 @@ Para activar funciones especiales para desarrolladores y probadores:
 
 ## Ajustes del plugin {#plugin-settings}
 
-:::info info  
+:::info Información
 Los ajustes del plugin de desarrollo de OsmAnd son globales y se aplican a todos los perfiles.  
 :::  
 
@@ -66,7 +66,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 ### Solución de problemas {#troubleshooting}
 
 - **Simular tu posición** (*Android* / *iOS*). [Simular](#gpx-track-simulation) la ubicación y el movimiento usando una pista GPX.
-- **Modo de ahorro de batería** (*Android* / *iOS*). Este ajuste reduce [la tasa de refresco de la pantalla](#map-rendering-fps-widget) en 20 fotogramas por segundo para ayudar a ahorrar energía de la batería mientras se usan las aplicaciones.
+- **Modo de ahorro de batería** (*Android* / *iOS*). Este ajuste reduce [la tasa de refresco de la pantalla](#map-rendering-fps-widget) en 20 fotogramas por segundo para ayudar a ahorrar energía de la batería mientras se usan las aplicaciones. También desactiva el desvanecimiento suave de entrada y salida de los iconos y etiquetas del mapa.
 - **Usar iconos de posición de ubicación 3D** (*iOS*). Permite seleccionar un icono 3D para el [icono Mi Ubicación](../personal/profiles.md#my-location-appearance).
 - **Simular datos obd** (*Android* / *iOS*). Permite la simulación del uso del [escáner OBD](./vehicle-metrics.md).
 - **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Muestra el rendimiento de renderizado y navegación.
@@ -92,7 +92,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 ### Algoritmos internos {#internal-algorithms}
 
-:::caution Android only
+:::caution Solo Android
 :::
 
 - **Modo seguro**. Ejecuta OsmAnd sin la biblioteca nativa de C++, utilizando implementaciones en Java para el renderizado del mapa y el cálculo de rutas. La aplicación cambia automáticamente a este modo si la biblioteca nativa falla durante el inicio, permitiendo que se inicie y siga siendo utilizable. El renderizado del mapa y el cálculo de rutas son notablemente más lentos mientras el modo seguro está activo.  
@@ -101,7 +101,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 ### Ajustes de memoria {#memory-settings}
 
-:::caution Android only
+:::caution Solo Android
 :::  
 
 - La opción **Memoria asignada para el enrutamiento** le permite determinar la cantidad de memoria asignada para calcular rutas largas. Puede usar esta opción si se selecciona el [Enrutamiento estándar A*](../navigation/guidance/navigation-settings.md#development-settings) en los *Ajustes de navegación*.
@@ -116,7 +116,7 @@ Utilice una de las siguientes rutas para abrir los ajustes del plugin:
 
 ### Información y estadísticas {#info-and-statistics}
 
-:::caution Android only
+:::caution Solo Android
 :::  
 
 - **Memoria asignada**. Muestra la memoria del sistema asignada para la aplicación OsmAnd.  

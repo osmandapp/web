@@ -37,7 +37,7 @@ Esta sección cubre el trabajo con pistas GPX personales en la web, incluyendo s
 
 Lugares guardados mostrados en el mapa, con opciones para organizarlos en carpetas, gestionar el acceso y reutilizarlos para navegación o planificación de rutas.
 
-### [Analizador de Pistas](./web-tracks-analyzer.md) {#tracks-analyzer}
+### [Analizador de rutas](./web-tracks-analyzer.md) {#tracks-analyzer}
 
 Esta sección se centra en el análisis de segmentos de pista entre puntos seleccionados en el mapa y en la comparación de parámetros clave entre múltiples pistas.
 

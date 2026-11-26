@@ -1,5 +1,5 @@
 ---
-source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
+source-hash: b4619639adb2d5e3d6b6f586ec94e6848cf1ff4a970a0e9fc0c20c0320aa4f1e
 sidebar_position: 2
 title:  Guías de viaje
 ---
@@ -171,7 +171,7 @@ En este menú, puede personalizar la apariencia de los artículos cuando trabaja
 En el menú Opciones, puede elegir si desea guardar las imágenes de los artículos vistos para usarlas cuando esté sin conexión. También puede borrar la caché de imágenes existente o eliminar el historial de búsqueda (solo funciona al buscar en *Guías de viaje*).
 
 - &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Las imágenes de los artículos se pueden descargar para su uso sin conexión.  
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. Borra la caché de imágenes para liberar memoria.
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. Borra la caché de imágenes para liberar memoria. La caché se comparte con el plugin de Wikipedia, por lo que al borrarla también se eliminan las imágenes guardadas de los artículos de Wikipedia.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Borra el [historial de búsqueda](#search).
 
 ## Artículo de viaje {#travel-article}

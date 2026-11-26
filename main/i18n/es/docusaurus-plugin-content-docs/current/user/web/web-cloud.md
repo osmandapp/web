@@ -1,8 +1,8 @@
 ---
-source-hash: 3d7c0440f81fe7d7c68aa8cdc03f7757d017ff3c9522e4e2e9666eb2f8516db1
+source-hash: e69343f9eb21e770166c3f64840279d4909964e16e57f6ff88c67cf26d0d4397
 sidebar_position: 2
-sidebar_label:  Account
-title: OsmAnd Account
+sidebar_label:  Cuenta
+title: Cuenta de OsmAnd
 ---
 
 import Tabs from '@theme/Tabs';
@@ -36,7 +36,7 @@ Para acceder a las funciones de OsmAnd Web, necesita crear una cuenta. Utilice e
 
 Después de verificar el código, se crea su cuenta web y se inicia sesión automáticamente.
 
-![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
+![Registro web](@site/static/img/web/web_sign_up.png) ![Registro web](@site/static/img/web/web_ver_code.png)
 
 
 ### Inicio de sesión {#login}
@@ -65,9 +65,9 @@ Si desea guardar una copia de todos sus datos, utilice **Descargar todo**. Esto 
 - Elegir el formato de exportación (*ZIP o OSF*).
 - Ver una estimación del tamaño y tiempo de descarga.
 
-Haga clic en **Descargar copia de seguridad** para iniciar la exportación y guardar el archivo en su computadora.
+Haga clic en **Descargar copia de seguridad** para iniciar la exportación y guardar el archivo en su ordenador.
 
-![Web Account](@site/static/img/web/web_download_all.png)
+![Cuenta web](@site/static/img/web/web_download_all.png)
 
 ### Pagos y compras {#payments-and-purchases}
 
@@ -91,7 +91,7 @@ Si no hay compras vinculadas a su cuenta todavía, esta sección muestra un esta
 
 Para más detalles sobre el uso de sus compras en diferentes plataformas, lea sobre el [acceso multiplataforma](../purchases/cross.md).
 
-![Web Account](@site/static/img/web/web_purchases.png)
+![Cuenta web](@site/static/img/web/web_purchases.png)
 
 ### Sincronización en la nube {#cloud-sync}
 
@@ -103,17 +103,17 @@ La disponibilidad de Sincronización en la nube depende del tipo de cuenta:
 - [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start): sincroniza [Favoritos](../web/web-favorites.md) y los muestra en la web.
 - OsmAnd Pro: sincroniza [Pistas](../web/web-tracks.md), Favoritos y [Copias de seguridad](#my-data), y desbloquea el acceso completo en la web a los datos en la nube.
 
-![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+![Pista web](@site/static/img/web/web_track_start.png) ![Pista web](@site/static/img/web/web_track_pro.png)
 
 ### OsmAnd Cloud {#osmand-cloud}
 
 Cuando ha iniciado sesión, la sección de OsmAnd Cloud aparece en Menú → Configuración e incluye Cambios y Papelera.
 
-La opción **Cambios** muestra una lista cronológica de archivos almacenados en su cuenta de OsmAnd Cloud. Los elementos están agrupados por mes e incluyen el nombre del archivo, el tipo de cambio (por ejemplo, añadido, modificado o eliminado), la hora de la última actualización y el dispositivo que lo creó. Para cada entrada, puede abrir el menú de tres puntos y elegir *Descargar* para guardar el archivo seleccionado en su computadora, o *Eliminar*.
+La opción **Cambios** muestra una lista cronológica de archivos almacenados en su cuenta de OsmAnd Cloud. Los elementos están agrupados por mes e incluyen el nombre del archivo, el tipo de cambio (por ejemplo, añadido, modificado o eliminado), la hora de la última actualización y el dispositivo que lo creó. Para cada entrada, puede abrir el menú de tres puntos y elegir *Descargar* para guardar el archivo seleccionado en su ordenador, o *Eliminar*.
 
 La opción **Papelera** contiene archivos que se eliminaron de OsmAnd Cloud. La lista también está agrupada por mes y muestra cuándo se eliminó cada archivo y desde qué dispositivo. Utilice el menú de tres puntos junto a un archivo para *Descargar* una copia, *Restaurar de la papelera* (devolver el archivo a OsmAnd Cloud para que vuelva a estar disponible en sus datos) o *Eliminar inmediatamente* para quitarlo permanentemente. Esto ayuda a prevenir la pérdida accidental de datos mientras aún le permite liberar espacio de almacenamiento en la nube cuando está seguro de que un archivo ya no se necesita. También puede eliminar todos los elementos eliminados a la vez haciendo clic en el icono de Papelera en el encabezado del panel de Papelera. Esto abre el diálogo **Vaciar papelera**, donde confirma la eliminación para quitar permanentemente todos los archivos de la Papelera.
 
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+![Nube web](@site/static/img/web/web_changes.png) ![Nube web](@site/static/img/web/web_trash.png)
 
 ### Aplicaciones conectadas {#connected-apps}
 
@@ -138,30 +138,30 @@ Para desconectar su cuenta de Garmin Connect™, vaya a *Configuración → Desc
 
 ### Restablecer contraseña {#reset-password}
 
-Si no recuerda su contraseña, utilice el enlace **No tengo contraseña o la he olvidado** en el diálogo de inicio de sesión. Esto abre el panel **Cambiar o restablecer contraseña**. Introduzca la dirección de correo electrónico que utilizó para crear su cuenta y haga clic en **Continuar**. Se envía un mensaje con un código de verificación a este correo electrónico. En la siguiente pantalla, escriba el código de verificación y su nueva contraseña, luego seleccione **Continuar** para confirmar. Cuando se acepta el código, se actualiza su contraseña y puede iniciar sesión en OsmAnd Web con las nuevas credenciales.
+Si no recuerda su contraseña, utilice el enlace **No tengo o olvidé la contraseña** en el diálogo de inicio de sesión. Esto abre el panel **Cambiar o restablecer contraseña**. Introduzca la dirección de correo electrónico que utilizó para crear su cuenta y haga clic en **Continuar**. Se envía un mensaje con un código de verificación a este correo electrónico. En la siguiente pantalla, escriba el código de verificación y su nueva contraseña, luego seleccione **Continuar** para confirmar. Cuando se acepta el código, se actualiza su contraseña y puede iniciar sesión en OsmAnd Web con las nuevas credenciales.
 
-![Web Account](@site/static/img/web/web_password.png)
+![Cuenta web](@site/static/img/web/web_password.png)
 
 ### Cambiar dirección de correo electrónico {#change-email-address}
 
-Para actualizar su dirección de correo electrónico,
+Para actualizar su dirección de correo electrónico,  
 Vaya a *Menú General → Cuenta → Correo electrónico → ⋮ → Cambiar correo electrónico*
 
-Aparece el diálogo Cambiar correo electrónico. Se envía un código de verificación a la dirección de correo electrónico actual. Introduzca este código en el campo **Código del correo electrónico antiguo**, especifique la nueva dirección en **Nuevo correo electrónico**, luego seleccione **Siguiente**. Por razones de seguridad, se envía un mensaje de confirmación a su nueva dirección de correo electrónico informándole de que se ha actualizado el correo electrónico de la cuenta.
+Aparece el diálogo Cambiar correo electrónico. Se envía un código de verificación a la dirección de correo electrónico actual. Introduzca este código en el campo **Código del correo electrónico antiguo**, especifique la nueva dirección en **Nuevo correo electrónico**, luego seleccione **Siguiente**. Se envía un segundo código de verificación a la nueva dirección de correo electrónico. Introdúzcalo en el campo **Código del correo electrónico nuevo** y seleccione **Finalizar**. Cuando se acepta el código, aparece el mensaje *Correo electrónico cambiado correctamente*. Por razones de seguridad, también se envía una notificación a su dirección de correo electrónico anterior.
 
-![Web Account](@site/static/img/web/web_email_new.png)
+![Cuenta web](@site/static/img/web/web_email_new.png)
 
 ### Cerrar sesión y eliminar cuenta {#logout-and-delete}
 
-![Web Account](@site/static/img/web/web_logout_new.png)
+![Cuenta web](@site/static/img/web/web_logout_new.png)
 
 El panel de Cuenta de OsmAnd contiene controles para finalizar la sesión web actual y eliminar permanentemente la cuenta.
 
 Para cerrar sesión, abra Cuenta de OsmAnd y utilice el botón **Cerrar sesión** en la esquina superior derecha del panel (icono con una flecha saliendo de un cuadrado). Seleccionar Cerrar sesión cierra el panel de la cuenta y finaliza la sesión activa en el sitio web.
 
-Para eliminar una cuenta, seleccione **Eliminar cuenta** en la parte inferior del panel de Cuenta de OsmAnd. Aparece un diálogo de confirmación con el mensaje *“¿Está seguro de que desea hacer esto?”* y una breve explicación de que todos los datos y detalles de la cuenta se eliminarán de OsmAnd Cloud y los dispositivos secundarios perderán el acceso a las funciones de pago. Se envía un código de verificación a la dirección de correo electrónico de la cuenta. Introduzca el código en el campo Código del correo electrónico y elija **ELIMINAR ESTA CUENTA** para completar el proceso. Esta operación es permanente e irreversible.
+Para eliminar una cuenta, seleccione **Eliminar cuenta** en la parte inferior del panel de Cuenta de OsmAnd. Aparece un diálogo de confirmación con el mensaje *“¿Seguro que quieres hacer esto?”* y una breve explicación de que todos los datos y detalles de la cuenta se eliminarán de OsmAnd Cloud y los dispositivos secundarios perderán el acceso a las funciones de pago. Se envía un código de verificación a la dirección de correo electrónico de la cuenta. Introduzca la dirección de correo electrónico de su cuenta en el campo **Tu dirección de correo electrónico**. Si el campo está vacío o la dirección no coincide con la cuenta con la que ha iniciado sesión, aparece un error debajo del campo y no se envía nada. Introduzca el código en el campo **Código del correo electrónico**. Si el código es incorrecto, aparece un error debajo de este campo. Elija **ELIMINAR CUENTA** para completar el proceso. Esta operación es permanente e irreversible.
 
-![Web Account](@site/static/img/web/web_delete.png)
+![Cuenta web](@site/static/img/web/web_delete.webp)
 
 
 ## Artículos relacionados {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
+source-hash: f790174db079e7201b2947913d3a0d224ce27c6741666d1a3964ee54c47c6f3e
 sidebar_position: 3
 title:  Explorar búsqueda
 ---
@@ -109,7 +109,7 @@ Para más detalles, consulte el artículo [Lugares populares](../map/popular_pla
 
 ![Sección de historial](@site/static/img/search/history_section_list.webp)
 
-La sección **Historial** de la pestaña Explorar muestra hasta 25 elementos más recientes. Pulse el título de la sección para contraerla o expandirla. Pulse *Ver todo* para abrir la pantalla completa de *Historial*.
+La sección **Historial** de la pestaña Explorar muestra hasta 25 elementos más recientes. La sección está expandida de forma predeterminada. Pulse el título de la sección para contraerla o expandirla; OsmAnd recuerda su elección. Pulse *Ver todo* para abrir la pantalla completa de *Historial*.
 
 Si tanto el *Historial de búsqueda* como el *Historial de navegación* están desactivados, la sección muestra la tarjeta *El historial está desactivado*. Pulse *Abrir ajustes de historial* para activarlos.
 

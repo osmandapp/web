@@ -51,7 +51,7 @@ Puede modificar la apariencia de la pista utilizando uno de los siguientes méto
 
 ### Color {#color}
 
-:::tip purchases
+:::tip Compra
 Algunos ajustes solo se pueden usar con *OsmAnd Pro*. <a href="https://osmand.net/docs/user/purchases/android#free-and-paid-features">Android</a> e <a href="https://osmand.net/docs/user/purchases/ios#free-and-paid-features">iOS</a> Funciones gratuitas y de pago.
 :::
 
@@ -101,9 +101,9 @@ Toque el botón + en la pantalla Todos los colores. Hay dos tipos de paletas dis
 - **<Translate android="true" ids="gradient_range_type_relative"/>** — los colores se escalan automáticamente en función de los valores mínimo, medio y máximo de la pista.
 - **<Translate android="true" ids="gradient_range_type_fixed"/>** — los colores se asignan a números absolutos específicos (por ejemplo, 50 km/h). Los valores se pueden editar manualmente. Las unidades siguen los [ajustes del sistema](../../personal/profiles.md#units--formats). La escala de colores no se reescala automáticamente al aplicarla a diferentes pistas.
 
-:::info Pro feature
+:::info Función Pro
 Crear paletas personalizadas es una función de pago de [**OsmAnd Pro**](../../purchases/index.md) <ProFeature />.
-::;
+:::
 
 Para obtener más información sobre los esquemas de paletas de color como formato de datos y su uso en pistas y rutas, consulte el artículo [Esquemas de paletas de color](../../personal/color-palette-schemes.md#tracks-routes).
 
@@ -181,9 +181,9 @@ Restaura todos los **ajustes de apariencia de la pista** a sus valores predeterm
 
 ## Pista 3D {#3d-track}
 
-:::tip Purchase
+:::tip Compra
 La visualización de **Pista 3D** es una [función de pago](../../purchases/index.md).  
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
+source-hash: b076e363549de89788d39e28c794e1ab1884f389ec642e5833a3ff1b49f7e267
 sidebar_position: 4
 title:  Detalles de la ruta
 ---
@@ -248,7 +248,7 @@ Los atributos de la carretera son accesibles en los [Detalles de la ruta](#how-t
 
 La información giro a giro proporciona [instrucciones](#instructions) detalladas sobre cómo navegar por una ruta. Además del menú *Detalles*, también se muestra en los widgets [*Maniobras de ruta*](../../widgets/nav-widgets.md#route-guidance) y [*Carriles*](../../widgets/nav-widgets.md#lanes). Esta información le ayuda a navegar mejor por su ruta y le permite planificar con antelación.
 
-Toque una sección específica de la ruta en la lista para ver información detallada o realizar los cambios necesarios. El mapa se amplía y se abre un [Menú contextual](../../map/map-context-menu.md).
+Toque una sección específica de la ruta en la lista para ver información detallada o realizar los cambios necesarios. El mapa se amplía y se abre un [Menú contextual](../../map/map-context-menu.md). Toque un destino intermedio de la lista para abrir el mapa en ese destino (*Solo Android*).
 
 
 ### Instrucciones {#instructions}
@@ -257,13 +257,13 @@ Toque una sección específica de la ruta en la lista para ver información deta
 
 <TabItem value="android" label="Android">
 
-![Ruta de navegación Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![Ruta de navegación Android](@site/static/img/navigation/route/navigation_turn_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Ruta de navegación Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Ruta de navegación Android](@site/static/img/navigation/route/navigation_turn_ios.webp)
 
 </TabItem>
 
@@ -276,6 +276,8 @@ Las instrucciones incluyen información sobre el movimiento a lo largo de la rut
 - Una descripción de *qué hacer*, que incluye el *nombre de la calle o sendero*.
 - *Distancia total* y *tiempo de la ruta*.
 - *Disposición de [carriles](../../widgets/nav-widgets.md#lanes)* para la carretera actual.
+- *Destinos intermedios* en su orden a lo largo de la ruta, cada uno con su número, nombre o coordenadas, y la distancia y el tiempo desde el inicio.
+- *Destino final*, marcado con el icono de destino (*Solo Android*).
 - [*Indicador del lado de la carretera*](#roadside-indicator) (*Solo iOS*).
 
 

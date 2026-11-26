@@ -1,5 +1,5 @@
 ---
-source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
+source-hash: b638d9d8e009a5a53cef5967adccef5628a99fa1f2e102fa8ace4c83e831ee48
 sidebar_position: 17
 title:  Grabación de viaje
 ---
@@ -194,13 +194,13 @@ Para más detalles, puede explorar el [**Menú contextual de pistas**](../map/tr
 
 <TabItem value="android" label="Android">
 
-![show_tr_onmap_andr_1](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configurar pistas del mapa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
+![Mostrar grabación de viaje en el mapa en Android](@site/static/img/plugins/trip-recording/show_tr_onmap_andr_1.png) ![Configurar pistas del mapa Android](@site/static/img/map/tracks_and_routes/tracks_and_routes_display_1_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![sshow_tr_onmap_ios_1](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configurar pistas del mapa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
+![Mostrar grabación de viaje en el mapa en iOS](@site/static/img/plugins/trip-recording/show_tr_onmap_ios_1.png) ![Configurar pistas del mapa iOS](@site/static/img/personal/tracks/follow_track_1_ios.png)
 </TabItem>
 
 </Tabs>
@@ -267,7 +267,7 @@ Antes de comenzar a registrar sus viajes, debe configurar correctamente el **com
 
 <TabItem value="android" label="Android">  
 
-![Configurando Grabación de viaje en Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Configurando Grabación de viaje en Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
+![Configurando Grabación de viaje en Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Configurando Grabación de viaje en Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.webp)
 
 </TabItem>
 
@@ -295,7 +295,7 @@ Antes de comenzar a registrar sus viajes, debe configurar correctamente el **com
 | **Sensores externos** <br/> *Necesita complemento activado* | Los datos de [sensores externos](../plugins/external-sensors.md#trip-recording) como *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, o *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* se registran en el archivo GPX. Los datos de *Distancia* no se registran en Android o iOS. Se muestra solo cuando el [complemento Sensores externos](../plugins/external-sensors.md) está activado. |
 | **Métricas del vehículo** <br/> *Necesita complemento activado* | Los datos del [escáner OBD-II](../plugins/vehicle-metrics.md#trip-recording) se registran en el archivo GPX. Se muestra solo cuando el [complemento Métricas del vehículo](../plugins/vehicle-metrics.md) está activado.<br />*Nota*: Puede añadir qué métricas registrar en el archivo GPX desde la lista: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Carpeta de almacenamiento de pistas** (*Android*) | Define dónde se almacenan las pistas grabadas en la pestaña *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. Las opciones incluyen almacenar todas las pistas en la carpeta Rec u organizarlas por mes, como Rec/aaaa-mm. |
-| **Mostrar el botón 'Grabar' en Notificaciones** | Controla la visualización de una notificación del sistema de [grabación de viaje](#notifications) en el área de notificaciones del dispositivo que le permite comenzar a grabar viajes. |
+| **<Translate android="true" ids="trip_rec_start_from_notification"/>** | Controla la visualización de una notificación del sistema de [grabación de viaje](#notifications) en el área de notificaciones del dispositivo que le permite comenzar a grabar viajes. Desactivado por defecto. |
 | **Seguimiento en línea** (*Android*) | Permite el seguimiento en tiempo real de su ubicación enviando los puntos grabados a una URL especificada. El intervalo de seguimiento determina la frecuencia con la que se envían los puntos, y el búfer de tiempo almacena los puntos cuando no hay conexión a Internet.<details><summary>*Observación*</summary>Si esta opción está activada y la grabación de la pista está en curso, el widget Distancia/Iniciar-Detener (REC) se vuelve **verde** en lugar de **rojo**, lo que indica que cada punto grabado se está transmitiendo a una URL especificada. El campo **Dirección web** le permite introducir la URL utilizando el siguiente formato de parámetro:<ul><li>`lat={0}`: Latitud</li><li>`lon={1}`: Longitud</li><li>`timestamp={2}`: Marca de tiempo (hora Unix)</li><li>`hdop={3}`: Dilución de precisión horizontal</li><li>`altitude={4}`: Altitud</li><li>`speed={5}`: Velocidad</li><li>`bearing={6}`: Rumbo (dirección del movimiento)</li><li>`eta={7}`: Hora estimada de llegada (hora Unix)</li><li>`etfa={8}`: Tiempo estimado hasta el primer punto intermedio o punto final (hora Unix)</li><li>`eda={9}`: Distancia estimada hasta la llegada o un marcador (en metros)</li><li>`edfa={10}`: Distancia estimada hasta el primer punto intermedio o punto final (en metros)</li><li>`batproc={11}`: Nivel de batería del dispositivo (porcentaje)</li></ul>Puede establecer el **Intervalo de seguimiento** para especificar la frecuencia con la que se envían los puntos de ubicación, con opciones que van desde 0 segundos hasta 5 minutos. Además, el parámetro **Búfer de tiempo** determina cuánto tiempo se almacenan los puntos de ubicación si no hay conexión a Internet, asegurando que los datos se guarden y transmitan cuando se restablezca la conexión.</details><br />OsmAnd almacena los puntos de ubicación no enviados solo en la memoria temporal de la aplicación mientras la aplicación está en ejecución. Esto significa que el búfer no se escribe en el almacenamiento permanente. Si la aplicación se cierra, se detiene a la fuerza o el dispositivo se reinicia, todos los puntos en búfer se pierden.<br />La configuración de Búfer de tiempo no define cuánto tiempo se mantienen los puntos en memoria — solo funciona como un filtro en el momento de la carga. Cuando OsmAnd intenta enviar puntos en búfer, cada punto se verifica contra el límite de Búfer de tiempo. Los puntos más antiguos que el límite seleccionado (por ejemplo, 24 horas) se eliminan en lugar de ser cargados. Como resultado, el búfer puede contener temporalmente puntos más antiguos que el valor de Búfer de tiempo elegido, pero estos puntos se descartarán durante el proceso de carga. |
 | **Pistas** | Una referencia rápida a la carpeta donde se guardan las pistas en la pestaña *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Restablecer la configuración del complemento a los valores predeterminados** | Restablece todos los ajustes de grabación de viaje para el perfil actual a sus valores predeterminados. |
@@ -319,7 +319,7 @@ Esta función le permite gestionar los ajustes de optimización de la batería p
 
 ![Notificación de Grabación de Viaje](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
-Se muestra una notificación de grabación de viaje en la área de notificaciones del sistema mientras la grabación está activa. Esta notificación garantiza que el proceso de grabación no sea interrumpido por el sistema y no se puede desactivar durante una grabación activa. Si [Mostrar el botón 'Grabar' en Notificaciones](#recording-settings) está activado en los ajustes del complemento, la notificación siempre será visible y facilitará el inicio de una grabación desde ella.
+Se muestra una notificación de grabación de viaje en la área de notificaciones del sistema mientras la grabación está activa. Esta notificación garantiza que el proceso de grabación no sea interrumpido por el sistema y no se puede desactivar durante una grabación activa. Si [<Translate android="true" ids="trip_rec_start_from_notification"/>](#recording-settings) está activado en los ajustes del complemento, la notificación siempre será visible y facilitará el inicio de una grabación desde ella.
 
 - El área de notificaciones se abre al deslizar hacia abajo desde la parte superior de la pantalla y se cierra al deslizar hacia arriba. Estos mensajes le notifican acciones como iniciar/detener la grabación de viaje, especialmente cuando la grabación automática está activada durante la navegación.
 - Las notificaciones permanecen visibles independientemente de si la aplicación se está ejecutando en primer plano, en segundo plano o está cerrada. Puede borrar manualmente la notificación antigua si ya no es necesaria, pero esto no detendrá la grabación en curso.
@@ -329,7 +329,7 @@ Se muestra una notificación de grabación de viaje en la área de notificacione
 Este comportamiento es requerido por Android para que cualquier servicio en primer plano, como la grabación de viaje, permanezca visible para usted.
 
 - Si se elimina la notificación, Android detendrá automáticamente la grabación. Puede usar el ajuste [Evitar registro autónomo](#recording-settings).
-- El ajuste **Mostrar el botón 'Grabar' en Notificaciones** en OsmAnd afecta si la barra de notificaciones muestra un acceso directo para iniciar una grabación cuando no hay ninguna grabación activa. **No** controla la visibilidad de la notificación durante una grabación activa.
+- El ajuste **<Translate android="true" ids="trip_rec_start_from_notification"/>** en OsmAnd afecta si la barra de notificaciones muestra un acceso directo para iniciar una grabación cuando no hay ninguna grabación activa. **No** controla la visibilidad de la notificación durante una grabación activa.
 
 **Opciones adicionales de Android**.
 
@@ -432,6 +432,33 @@ Si la grabación actual aún no contiene una sección de ascenso o descenso, los
 
 ### Distancia (Iniciar-Detener) {#distance-start-stop}
 
+<!--
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Finish recording in Android](@site/static/img/plugins/trip-recording/distance_start_rec_new_andr.png)
+![Trip recording widget](@site/static/img/plugins/trip-recording/trip_rec_widgets_mode.png)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_new.png) ![Trip recording widget](@site/static/img/widgets/tr_rec_wid_conf_scr_2_new.png)
+
+</TabItem>
+
+</Tabs>  
+
+When widgets are displayed on the map, tapping any of them reveals additional track details and allows interaction with the recording.
+The *Distance* widget displays the total distance of your current recorded trip and acts as the main interface for managing your recordings. Tapping on it reveals the [Trip Recording dialog](#start-a-dialog), where you can start, stop, and view detailed information about your track.
+
+- The widget is added automatically when the *Trip recording plugin* is enabled, but it can be hidden via the [Configure screen menu](../widgets/configure-screen.md#overview).
+- If the *Show start dialog* option is disabled in the Trip Recording plugin settings, tapping the active widget will still open the *Trip Recording dialog* box, allowing you to access further options and information.  
+
+In addition to the *Distance/Start-Stop* widget, the **Trip Recording plugin** includes five other widgets: *Duration*, *Uphill*, *Downhill*, *Max Speed*, and *Average Slope*. These provide additional information about your trip, helping you track the real-time progress.
+-->
+
 | |
 |-----------|
 | **Distancia/Iniciar-Detener**. Este widget muestra la distancia de su grabación de viaje en curso. Se añade automáticamente cuando se activa el complemento Grabación de viaje, pero puede ocultarlo a través del menú Configurar pantalla. El widget presenta tres estados distintos: *Grabando*, *Pausado* e *Inactivo*, cada uno indicando el estado actual de su grabación de viaje. |
@@ -449,21 +476,45 @@ El widget Distancia admite varios modos de visualización:
 | |
 |------------|
 |**Pendiente promedio**. Muestra la pendiente promedio para la última sección de ascenso o descenso del viaje actual, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
+|![Widgets](@site/static/img/widgets/tr_rec_wid_average_slope.png)|
 |**Velocidad promedio** *(Solo Android)*. Muestra la velocidad promedio para el viaje grabado actualmente, o la velocidad promedio durante la última sección de ascenso o descenso, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
+|![Widgets](@site/static/img/widgets/tr_rec_wid_average_speed.png)|
 |**Descenso**. Indica el descenso total o la última sección de descenso, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
+|![Widgets](@site/static/img/widgets/tr_rec_wid_dow_new.png)|
 |**Duración**. Muestra el tiempo total de la grabación del viaje actual en horas y minutos. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
+|![Widgets](@site/static/img/widgets/tr_rec_wid_dur_new.png)|
 |**Velocidad máxima**. Muestra la velocidad máxima para el viaje grabado actualmente en el modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
+|![Widgets](@site/static/img/widgets/tr_rec_wid_max_speed.png)|
 |**Tiempo en movimiento**. Muestra el tiempo en movimiento para el viaje grabado actualmente, o el tiempo para el último ascenso y descenso, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
+|![Widgets](@site/static/img/widgets/tr_rec_wid_moving_time.png)|  
 |**Ascenso**. Muestra el ascenso total o la última sección de ascenso, dependiendo del modo seleccionado. |
-|![widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
+|![Widgets](@site/static/img/widgets/tr_rec_wid_up_new.png)|
 
 Si tiene varios widgets seleccionados, puede acceder al mismo cuadro de diálogo para cada uno sin necesidad de cambiarlo o cerrarlo. Esta interfaz unificada facilita la visualización y gestión de toda la información relacionada sin problemas.
+
+<!--
+### Max Speed & Average Slope {#max-speed--average-slope}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+![Max Speed Android](@site/static/img/widgets/max_speed_android.png) ![Average Slope Android](@site/static/img/widgets/average_slope_android.png) 
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Max Speed Android](@site/static/img/widgets/max_speed_ios.png) ![Average Slope Android](@site/static/img/widgets/average_slope_ios.png) 
+
+</TabItem>
+
+</Tabs> 
+
+The **Max Speed** widget shows the maximum speed for the currently recorded trip. Tap the widget to switch between the overall maximum speed and the maximum speed from the last uphill or downhill section.
+
+The **Average Slope** widget displays the average slope for the last uphill or downhill section of the current trip. It helps estimate how steep the previous climb or descent was, based on elevation gain and distance.
+-->
 
 
 ## Artículos relacionados {#related-articles}

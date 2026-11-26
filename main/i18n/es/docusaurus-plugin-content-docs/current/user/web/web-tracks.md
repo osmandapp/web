@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-El Planificador Web te ofrece una forma sencilla de trabajar con tus datos personales directamente en el navegador. Después de iniciar sesión, puedes abrir tus pistas, ajustarlas, crear nuevas o cargar archivos desde tu computadora. 
+El Planificador Web te ofrece una forma sencilla de trabajar con tus datos personales directamente en el navegador. Después de iniciar sesión, puedes abrir tus pistas, ajustarlas, crear nuevas o cargar archivos desde tu ordenador. 
 
 Todos los cambios se sincronizan automáticamente a través de [OsmAnd Cloud](../personal/osmand-cloud.md), por lo que cualquier actualización que realices en la web aparecerá en tus dispositivos, y cualquier cosa que crees en tu teléfono también se mostrará aquí. Esto facilita el cambio entre plataformas y mantener tus datos consistentes dondequiera que uses OsmAnd.
 
@@ -28,14 +28,14 @@ Todos los cambios se sincronizan automáticamente a través de [OsmAnd Cloud](..
 
 Es una función de pago <ProFeature/>. Para usarla, inicia sesión en tu cuenta de OsmAnd Pro.
 
-![Track login](@site/static/img/web/track_login.png) ![Track login](@site/static/img/web/track_login_2.png)
+![Inicio de sesión en Pistas](@site/static/img/web/track_login.png) ![Inicio de sesión en Pistas](@site/static/img/web/track_login_2.png)
 
 La sección de Pistas contiene todas las herramientas y acciones relacionadas con las pistas. Las siguientes opciones están disponibles:
 
 - Mostrar pistas de [OsmAnd Cloud](#cloud-tracks).
-- Agregar pistas en el mapa (carpeta **Visible en el mapa**).
+- Añadir pistas en el mapa (carpeta **Visible en el mapa**).
 - Ver toda la información de las pistas y el gráfico
-- Modificar pistas y agregarlas a la Nube.
+- Modificar pistas y añadirlas a la Nube.
 - Descargar y eliminar pistas.
 - Crear nuevas carpetas o eliminarlas.
 - Descargar carpetas como colección OSF u OBF.
@@ -47,7 +47,7 @@ Puedes importar pistas GPX al Planificador Web usando el botón Importar o arras
 
 Para importar una pista mediante arrastrar y soltar:
 - Abre la sección Pistas.
-- Arrastra uno o más archivos GPX desde tu computadora.
+- Arrastra uno o más archivos GPX desde tu ordenador.
 - Suelta los archivos sobre el mapa o sobre una carpeta de pistas específica.
 
 Cuando se arrastra un archivo sobre el mapa, se resalta el área disponible para soltarlo. Si sueltas el archivo directamente sobre el mapa, se importa en la carpeta Importar. Si lo sueltas sobre una carpeta existente, se importa en esa carpeta. Sin una suscripción activa de [OsmAnd Pro](../purchases/index.md), al soltar un archivo se abre un diálogo que explica que la importación de pistas requiere OsmAnd Pro.
@@ -58,51 +58,51 @@ Una vez completada la importación, la pista aparece en la lista de pistas, se s
 
 Si una pista no se puede importar o guardar en OsmAnd Cloud, un diálogo de error muestra el nombre del archivo y, cuando esté disponible, el motivo informado por el servidor.
 
-![Drag and drop](@site/static/img/web/drag_and_drop.png)
+![Arrastrar y soltar](@site/static/img/web/drag_and_drop.png)
 
 
 ## Visible en el mapa {#visible-on-the-map}
 
-La vista **Visible en el mapa** enumera todas las pistas que se muestran actualmente en el mapa. Cualquier pista se puede agregar a esta lista desde el panel principal de Pistas usando la opción **⋮ → Hacer la pista visible**.
+La vista **Visible en el mapa** enumera todas las pistas que se muestran actualmente en el mapa. Cualquier pista se puede añadir a esta lista desde el panel principal de Pistas usando la opción **⋮ → Hacer ruta visible**.
 
-Las pistas que son visibles en el mapa se resaltan en azul, mientras que las pistas que están actualmente ocultas aparecen en gris. Un interruptor junto a cada pista te permite mostrarla u ocultarla rápidamente. El botón **Hide all** desactiva todas las pistas visibles de una vez.
+Las pistas que son visibles en el mapa se resaltan en azul, mientras que las pistas que están actualmente ocultas aparecen en gris. Un interruptor junto a cada pista te permite mostrarla u ocultarla rápidamente. El botón **Ocultar todo** desactiva todas las pistas visibles de una vez.
 
-Debajo de la lista principal, la sección **Recently visible** muestra pistas que se mostraron en el mapa anteriormente. Esto facilita volver a activar una pista sin buscarla nuevamente en tus carpetas o en OsmAnd Cloud.
+Debajo de la lista principal, la sección **Vistos recientemente** muestra pistas que se mostraron en el mapa anteriormente. Esto facilita volver a activar una pista sin buscarla nuevamente en tus carpetas o en OsmAnd Cloud.
 
-![Visible on the map](@site/static/img/web/visible_new.png) ![Visible on the map](@site/static/img/web/visible_new_2.png)
+![Visible en el mapa](@site/static/img/web/visible_new.png) ![Visible en el mapa](@site/static/img/web/visible_new_2.png)
 
 
 ## Menú de carpeta de pistas {#track-folder-menu}
 
-![Track folder menu](@site/static/img/web/collection_new.png)
+![Menú de carpeta de pistas](@site/static/img/web/collection_new.png)
 
 Haz clic en el botón de tres puntos (⋮) para abrir el menú de *Carpeta de pistas*. Desde aquí, puedes:
 
  - Descargar como OSF.
- - Descargar como Colección OBF. Exporta la carpeta en Formato Binario de OsmAnd, eligiendo un [OBF file](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) o un [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
-      -  **OBF file**. Puedes descargar un mapa OBF sin conexión y abrirlo con OsmAnd en tu dispositivo. Es adecuado para mostrar un gran número de pistas en el mapa.
+ - Descargar como Colección OBF. Exporta la carpeta en Formato Binario de OsmAnd, eligiendo un [archivo OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) o un [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+      -  **Archivo OBF**. Puedes descargar un mapa OBF sin conexión y abrirlo con OsmAnd en tu dispositivo. Es adecuado para mostrar un gran número de pistas en el mapa.
       -  **Travel OBF**. También puedes importar un mapa de pistas como un libro de viajes, lo que te permite seleccionar pistas individuales en el mapa y usarlas como archivos GPX normales. Un libro de viajes también admite funciones como mostrar pistas como puntos, filtrar pistas por tipo de actividad y filtrar waypoints.
- - Renombrar. Abre un diálogo donde puedes ingresar un nuevo nombre para la carpeta seleccionada. El cambio se sincroniza con OsmAnd Cloud y aparecerá en todos los dispositivos conectados.
+ - Renombrar. Abre un diálogo donde puedes introducir un nuevo nombre para la carpeta seleccionada. El cambio se sincroniza con OsmAnd Cloud y aparecerá en todos los dispositivos conectados.
  - Eliminar. Abre un diálogo de confirmación. Eliminar una carpeta la elimina permanentemente junto con todas las pistas que contiene. Esta acción también se sincroniza a través de OsmAnd Cloud.
 
-![Track folder menu](@site/static/img/web/collection_rename.png) ![Track folder menu](@site/static/img/web/collection_delete.png)
+![Menú de carpeta de pistas](@site/static/img/web/collection_rename.png) ![Menú de carpeta de pistas](@site/static/img/web/collection_delete.png)
 
-### Smart Folders {#smart-folders}
+### Carpetas inteligentes {#smart-folders}
 
-**Smart Folders** creadas en dispositivos móviles se pueden sincronizar y ver en la versión web a través de OsmAnd Cloud. Para asegurarte de que aparezcan en la web, la sincronización de [OsmAnd Settings](../personal/osmand-cloud.md#select-data-to-back-up) debe estar habilitada en los ajustes de Cloud.  
+**Carpetas inteligentes** creadas en dispositivos móviles se pueden sincronizar y ver en la versión web a través de OsmAnd Cloud. Para asegurarte de que aparezcan en la web, la sincronización de [Ajustes de OsmAnd](../personal/osmand-cloud.md#select-data-to-back-up) debe estar habilitada en los ajustes de Cloud.  
 Ve a: *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_cloud,shared_string_settings,backup_data"/>*
 
-Las Smart Folders se almacenan actualmente como parte de la configuración global, por lo que se cargan en la Nube solo cuando la sincronización de Ajustes está activa. Después de crear o editar una Smart Folder, se recomienda ejecutar una sincronización manual para actualizar los datos.
+Las carpetas inteligentes se almacenan actualmente como parte de la configuración global, por lo que se cargan en la Nube solo cuando la sincronización de Ajustes está activa. Después de crear o editar una carpeta inteligente, se recomienda ejecutar una sincronización manual para actualizar los datos.
 
-En la web, las Smart Folders se muestran en la lista de pistas con un icono de estrella distintivo, lo que facilita distinguirlas de las carpetas normales. El nombre de la carpeta se sincroniza primero, mientras que la lista de pistas depende de cómo esté configurada la carpeta en el dispositivo.
+En la web, las carpetas inteligentes se muestran en la lista de pistas con un icono de estrella distintivo, lo que facilita distinguirlas de las carpetas normales. El nombre de la carpeta se sincroniza primero, mientras que la lista de pistas depende de cómo esté configurada la carpeta en el dispositivo.
 
-Las pistas se muestran solo si la configuración de la Smart Folder es compatible con la web. Esto incluye tanto los [ajustes de filtro](../personal/tracks/smart-folder.md#search-filter) como las [opciones de agrupación](../personal/tracks/smart-folder.md#managing-smart-folders). If unsupported parameters are used (for example, nearest city), the folder may appear without tracks. Para una mejor compatibilidad, utiliza parámetros comunes como actividad, fecha, distancia o duración.
+Las pistas se muestran solo si la configuración de la carpeta inteligente es compatible con la web. Esto incluye tanto los [ajustes de filtro](../personal/tracks/smart-folder.md#search-filter) como las [opciones de agrupación](../personal/tracks/smart-folder.md#managing-smart-folders). Si se utilizan parámetros no compatibles (por ejemplo, la ciudad más cercana), la carpeta puede aparecer sin pistas. Para una mejor compatibilidad, utiliza parámetros comunes como actividad, fecha, distancia o duración.
 
-La sincronización de Smart Folders puede variar según la plataforma y la configuración de sincronización. Para obtener los resultados más consistentes, asegúrate de que la sincronización de Cloud esté habilitada y actualizada en todos los dispositivos.
+La sincronización de las carpetas inteligentes puede variar según la plataforma y la configuración de sincronización. Para obtener los resultados más consistentes, asegúrate de que la sincronización de Cloud esté habilitada y actualizada en todos los dispositivos.
 
-En el menú de tres puntos (⋮) puedes realizar acciones adicionales para la Smart Folder. Puedes *Descargar como OSF*, *Descargar como colección OBF*, *Renombrar* o *Eliminar* la carpeta.
+En el menú de tres puntos (⋮) puedes realizar acciones adicionales para la carpeta inteligente. Puedes *Descargar como OSF*, *Descargar como colección OBF*, *Renombrar* o *Eliminar* la carpeta.
 
-![Smart Folders](@site/static/img/web/smart_folder_new.png) ![Smart Folders](@site/static/img/web/smart_folder_menu_new.png)
+![Carpetas inteligentes](@site/static/img/web/smart_folder_new.png) ![Carpetas inteligentes](@site/static/img/web/smart_folder_menu_new.png)
 
 
 ## Pistas en la nube {#cloud-tracks}
@@ -111,23 +111,23 @@ Las pistas GPX que tienes en [OsmAnd Cloud](../personal/osmand-cloud.md) estará
 
 Al seleccionar una pista, el mapa centra automáticamente y ajusta el nivel de zoom para mostrar toda la pista dentro del área visible del mapa.
 
-También puedes usar el botón **Focus** para ocultar todos los demás favoritos y pistas en el mapa, lo que facilita la revisión de la pista seleccionada. Desactiva el modo Focus para restaurar la visibilidad de otros objetos del mapa.
+También puedes usar el botón **Enfoque** para ocultar todos los demás favoritos y pistas en el mapa, lo que facilita la revisión de la pista seleccionada. Desactiva el modo Focus para restaurar la visibilidad de otros objetos del mapa.
 
 Las siguientes funciones están disponibles después de elegir una pista en la nube:
-- *Information* - mostrando los datos de la pista.
-- *Elevation* - gráfico de elevación.
-- *Speed* - gráfico de velocidad.
-- *Slope* - gráfico de pendiente.
-- *Recalculate Elevation (Satellite)* - recalcula los valores de elevación para la pista seleccionada y los muestra en el gráfico de elevación.
-- *Road type* - divide la pista en segmentos por clasificación de carretera.
-- *Surface* - muestra los tipos de superficies de la pista a lo largo de la ruta.
-- *Smoothness* - muestra la suavidad de los segmentos basada en etiquetas OSM.
+- *Información* - mostrando los datos de la pista.
+- *Elevación* - gráfico de elevación.
+- *Velocidad* - gráfico de velocidad.
+- *Pendiente* - gráfico de pendiente.
+- *Recalcular elevación (Satélite)* - recalcula los valores de elevación para la pista seleccionada y los muestra en el gráfico de elevación.
+- *Tipo de carretera* - divide la pista en segmentos por clasificación de carretera.
+- *Superficie* - muestra los tipos de superficies de la pista a lo largo de la ruta.
+- *Suavidad* - muestra la suavidad de los segmentos basada en etiquetas OSM.
 
-![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web cloud GPX edit](@site/static/img/web/cloud_track_details_new.png)
+![OsmAnd Web edición de GPX en la nube](@site/static/img/web/cloud_track_new.png) ![OsmAnd Web edición de GPX en la nube](@site/static/img/web/cloud_track_details_new.png)
 
 
 ## Artículos relacionados {#related-articles}
 
-- [Manage Tracks](../personal/tracks/manage-tracks.md)
-- [Tracks Analyzer](../web/web-tracks-analyzer.md)
+- [Administrar pistas](../personal/tracks/manage-tracks.md)
+- [Analizador de rutas](../web/web-tracks-analyzer.md)
 - [OsmAnd Cloud](../personal/osmand-cloud.md)

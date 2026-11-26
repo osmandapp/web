@@ -1,5 +1,5 @@
 ---
-source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
+source-hash: d617276475fbfcfe927091d3c99740f157598c2b6f2ee38d9e9906a83d74b219
 sidebar_position: 4
 title:  Configurar mapa
 ---
@@ -27,7 +27,7 @@ Sección **Mostrar**:
 
 Sección **Topografía**:  
 
-![Configurar mapa Android](@site/static/img/map/configure_map_topography_andr_new.png)  
+![Configurar mapa Android](@site/static/img/map/configure_map_topography_andr_new.webp)  
 
 Sección **OpenStreetMap**:  
 
@@ -84,7 +84,7 @@ El menú **<Translate android="true" ids="configure_map"/>** se divide en dos ca
 ## Capas del mapa {#map-layers}
 
 - [Capa de mapa vectorial](../map/vector-maps.md) - muestra toda la información del mapa vectorial, incluyendo OpenStreetMap, líneas de contorno y datos náuticos.
-- [Fuentes de mapa ráster](../map/raster-maps.md#layers) - permite seleccionar una subcapa / fuente principal / superposición con niveles de transparencia.
+- [Fuentes de mapa ráster](../map/raster-maps.md#layers) - permite seleccionar una subcapa / fuente principal / superposición con niveles de visibilidad.
 - [Terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers) - muestra información de pendiente / sombreado, relieve 3D.
 - [Edificios 3D](../map/vector-maps.md#3d-buildings) - muestra modelos volumétricos de edificios en el mapa.
 - [Límites de mapas descargados](../map/vector-maps.md#show-borders) - muestra todos los límites de los mapas descargados en la capa del mapa principal.
