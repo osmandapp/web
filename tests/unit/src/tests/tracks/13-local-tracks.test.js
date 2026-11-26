@@ -52,6 +52,24 @@ test('a track is saved under its own place and the list keeps the saved version,
     expect(ctx.setRoutingErrorMsg).toHaveBeenCalled();
 });
 
+test('a write held back for the analysis keeps the list current, so Back saves the edit, and the next write stores it', async () => {
+    const ctx = createCtx();
+    saveTrackToLocalStorage({ ctx, track: track('Track') });
+    await settle();
+    const edited = { ...track('Track'), points: [{ lat: 51, lng: 31 }] };
+
+    saveTrackToLocalStorage({ ctx, track: edited, writeToDB: false });
+    await settle();
+
+    expect(ctx.localTracks[0].points).toBe(edited.points);
+    expect(db.get(0).points).toEqual([{ lat: 50, lng: 30 }]);
+
+    saveTrackToLocalStorage({ ctx, track: edited });
+    await settle();
+
+    expect(db.get(0).points).toEqual([{ lat: 51, lng: 31 }]);
+});
+
 test('the tracks are loaded in the order of their ids, a record without a name is dropped', async () => {
     db.set(2, track('Third'));
     db.set(0, track('First'));

@@ -165,18 +165,15 @@ export async function loadLocalTracksFromStorage(setLoading) {
     });
 }
 
-export function saveTrackToLocalStorage({ ctx, track }) {
+export function saveTrackToLocalStorage({ ctx, track, writeToDB = true }) {
     const localTracks = ctx.localTracks;
     if (!track?.name) {
         ctx.setRoutingErrorMsg('⚠️ Cannot save nameless local track.');
         return;
     }
     let currentTrackIndex = localTracks.findIndex((t) => t?.name && track?.name && t.name === track.name);
-    const res = prepareLocalTrack(track);
-    const savedData = getSavedData(track, res);
-    const unchanged = isSameSavedData(savedDataByTrack.get(localTracks[currentTrackIndex]), savedData);
+    const savedBefore = savedDataByTrack.get(localTracks[currentTrackIndex]);
     const copy = { ...track };
-    savedDataByTrack.set(copy, savedData);
 
     if (currentTrackIndex === -1) {
         currentTrackIndex = localTracks.push(copy) - 1;
@@ -184,7 +181,14 @@ export function saveTrackToLocalStorage({ ctx, track }) {
     } else {
         localTracks[currentTrackIndex] = copy;
     }
-    if (unchanged) {
+    if (!writeToDB) {
+        return;
+    }
+
+    const res = prepareLocalTrack(track);
+    const savedData = getSavedData(track, res);
+    savedDataByTrack.set(copy, savedData);
+    if (isSameSavedData(savedBefore, savedData)) {
         return;
     }
 
