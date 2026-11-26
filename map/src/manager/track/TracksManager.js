@@ -1144,6 +1144,10 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
 
         const postData = prepareTrackData({ file: cloneFile, routeTypes: cloneFile.routeTypes, getAnalysis: true });
         if (isEmpty(postData.tracks)) {
+            if (cloneFile.points) {
+                cloneFile.analysisTracks = [];
+                cloneFile.analysisPoints = cloneFile.points;
+            }
             return cloneFile; // no tracks = nothing to analyze
         }
         // time vs better cache
