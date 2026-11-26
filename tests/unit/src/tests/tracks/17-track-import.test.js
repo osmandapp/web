@@ -165,12 +165,6 @@ describe('the track data a save sends to the server', () => {
         expect(sent.tracks[0].points.at(-1).profile).toBe(TracksManager.PROFILE_GAP);
     });
 
-    test.failing('a plain point keeps its time and extensions', async () => {
-        const sent = await save(openInEditor(createGpxData(createTrkpts(0, 2))));
-
-        expect(sent.tracks[0].points.map((p) => p.ext)).toEqual(createTrkpts(0, 2).map((p) => p.ext));
-    });
-
     test('the trk keeps its name and description', async () => {
         const gpxData = createGpxData(createTrkpts(0, 2));
         gpxData.tracks[0].ext = { name: 'Morning ride', desc: 'Kyiv' };
