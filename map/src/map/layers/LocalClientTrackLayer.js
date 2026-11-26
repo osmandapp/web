@@ -311,8 +311,10 @@ export default function LocalClientTrackLayer() {
                 }
 
                 // If the track was updated, refresh its layer on the map
-                const edited = ctx.createTrack?.enable && track.name === ctxTrack.name;
-                if (currLayer.track !== track && !edited) {
+                const edited =
+                    ctx.createTrack?.enable &&
+                    (track.name === ctxTrack.name || track.name === ctx.createTrack.closePrev?.file?.name);
+                if (currLayer.active && currLayer.track !== track && !edited) {
                     updateTrackOnMap(track, currLayer.active);
                 }
             }

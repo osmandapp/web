@@ -171,13 +171,9 @@ export function saveTrackToLocalStorage({ ctx, track }) {
         return;
     }
     let currentTrackIndex = localTracks.findIndex((t) => t?.name && track?.name && t.name === track.name);
-    const storedTrack = localTracks[currentTrackIndex];
     const res = prepareLocalTrack(track);
     const savedData = getSavedData(track, res);
-    if (storedTrack && isSameSavedData(savedDataByTrack.get(storedTrack), savedData)) {
-        storedTrack.selected = track.selected;
-        return;
-    }
+    const unchanged = isSameSavedData(savedDataByTrack.get(localTracks[currentTrackIndex]), savedData);
     const copy = { ...track };
     savedDataByTrack.set(copy, savedData);
 
@@ -186,6 +182,9 @@ export function saveTrackToLocalStorage({ ctx, track }) {
         ctx.setLocalTracks([...localTracks]);
     } else {
         localTracks[currentTrackIndex] = copy;
+    }
+    if (unchanged) {
+        return;
     }
 
     saveTrackToDB(currentTrackIndex, res)
