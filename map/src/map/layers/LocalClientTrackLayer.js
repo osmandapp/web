@@ -168,6 +168,12 @@ export default function LocalClientTrackLayer() {
                 unverified.cloudRedrawWpts = false;
                 unverified.refreshAnalytics = false;
 
+                unverified.wpts = trusted.wpts;
+                unverified.pointsGroups = trusted.pointsGroups;
+                unverified.wptChangedFlag = trusted.wptChangedFlag;
+                unverified.info = trusted.info;
+                unverified.infoChanged = trusted.infoChanged;
+
                 // keep layers
                 unverified.gpx = trusted.gpx;
                 unverified.layers = trusted.layers;

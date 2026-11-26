@@ -1123,6 +1123,18 @@ describe('the waypoints of the edited track', () => {
         }
     });
 
+    test('clearing the waypoints drops their groups too and asks for a snapshot', () => {
+        const ctx = createCtx([]);
+        Object.assign(ctx.selectedGpxFile, { wpts: createWpts(), pointsGroups: createPointsGroups() });
+
+        PointManager.deleteAllWpts(ctx);
+
+        expect(ctx.selectedGpxFile.wpts).toEqual([]);
+        expect(ctx.selectedGpxFile.pointsGroups).toEqual({});
+        expect(ctx.selectedGpxFile).toMatchObject({ updateLayers: true, wptChangedFlag: 1 });
+        expect(ctx.trackState.update).toBe(true);
+    });
+
     test('deleting the last point keeps the waypoints, their groups and the saved fields of the track', async () => {
         const ctx = createCtx(createRoutedPoints(1));
         const metaData = { name: 'Local', desc: 'About the track' };
@@ -1231,18 +1243,21 @@ describe('the history of the editor', () => {
     });
 });
 
-test('deleteWpt removes the waypoint and asks for a redraw', () => {
+test('deleteWpt removes the waypoint and asks for a redraw of the map and of the list each time', () => {
     const ctx = createCtx([]);
-    ctx.selectedGpxFile.wpts = [{ name: 'a' }, { name: 'b' }];
-    ctx.selectedGpxFile.wptChangedFlag = 0;
+    ctx.selectedGpxFile.wpts = [{ name: 'a' }, { name: 'b' }, { name: 'c' }];
 
     PointManager.deleteWpt(0, ctx, true);
 
     expect(ctx.selectedGpxFile).toMatchObject({
-        wpts: [{ name: 'b' }],
+        wpts: [{ name: 'b' }, { name: 'c' }],
         updateLayers: true,
         wptChangedFlag: 1,
         save: true,
     });
     expect(ctx.setTrackState).toHaveBeenCalledWith({ update: true });
+
+    PointManager.deleteWpt(0, ctx);
+
+    expect(ctx.selectedGpxFile).toMatchObject({ wpts: [{ name: 'c' }], wptChangedFlag: 2 });
 });

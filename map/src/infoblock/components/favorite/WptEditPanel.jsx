@@ -322,7 +322,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             ctx.selectedGpxFile.pointsGroups[favorite.category].points.push(favorite);
         }
         ctx.selectedGpxFile.updateLayers = true;
-        ctx.selectedGpxFile.wptChangedFlag++;
+        ctx.selectedGpxFile.wptChangedFlag = (ctx.selectedGpxFile.wptChangedFlag || 0) + 1;
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
         if (ctx.createTrack) {
             ctx.trackState.update = true;
@@ -400,7 +400,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 lon: editWpt.latlon?.lon ?? editWpt.lon,
             };
         }
-        ctx.selectedGpxFile.wptChangedFlag++;
+        ctx.selectedGpxFile.wptChangedFlag = (ctx.selectedGpxFile.wptChangedFlag || 0) + 1;
         ctx.selectedGpxFile.updateLayers = true;
         if (editWpt.mapObj) {
             ctx.selectedGpxFile.save = true;
