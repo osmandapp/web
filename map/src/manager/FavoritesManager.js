@@ -275,8 +275,7 @@ function createGroup(file) {
     };
 }
 
-function addHidden({ pointsGroups, favArr, mapId, menuId }) {
-    const groupName = getFavPointsGroupName(favArr.groups[menuId]);
+function addHidden({ pointsGroups, groupName, favArr, mapId, menuId }) {
     let hidden = false;
     if (pointsGroups?.[groupName]) {
         if (pointsGroups[groupName].hidden !== undefined) {
@@ -329,8 +328,7 @@ export async function updateFavGroupPinned({ group, updatedPointsGroups, groupNa
     });
 }
 
-function addPinned({ pointsGroups, favArr, menuId }) {
-    const groupName = getFavPointsGroupName(favArr.groups[menuId]);
+function addPinned({ pointsGroups, groupName, favArr, menuId }) {
     const groupEntry = pointsGroups?.[groupName];
     if (!groupEntry) {
         return favArr;
@@ -566,9 +564,11 @@ function addExistFavGroup(obj, g, favGroups) {
     const ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
     favGroups.groups[ind].pointsGroups = obj.pointsGroups;
     favGroups.groups[ind].name = obj.name;
+    const pointsGroupName = getFavPointsGroupName({ file: g.file, name: obj.name });
 
     favGroups = addHidden({
         pointsGroups: obj.pointsGroups,
+        groupName: pointsGroupName,
         favArr: favGroups,
         mapId: g.id,
         menuId: ind,
@@ -576,6 +576,7 @@ function addExistFavGroup(obj, g, favGroups) {
 
     favGroups = addPinned({
         pointsGroups: obj.pointsGroups,
+        groupName: pointsGroupName,
         favArr: favGroups,
         menuId: ind,
     });
@@ -624,8 +625,10 @@ async function createFavGroupObj(g, favGroups) {
             const groupName = getFavGroupName(pointsGroups, g.file.folder);
             favGroups.mapObjs[g.id].name = groupName;
             favGroups.groups[ind].name = groupName;
+            const pointsGroupName = getFavPointsGroupName({ file: g.file, name: groupName });
             favGroups = addHidden({
                 pointsGroups,
+                groupName: pointsGroupName,
                 favArr: favGroups,
                 mapId: g.id,
                 menuId: ind,
@@ -633,6 +636,7 @@ async function createFavGroupObj(g, favGroups) {
 
             favGroups = addPinned({
                 pointsGroups,
+                groupName: pointsGroupName,
                 favArr: favGroups,
                 menuId: ind,
             });
