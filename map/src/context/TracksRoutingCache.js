@@ -148,7 +148,12 @@ export function requestAnalysisNow({ ctx, track }) {
         if (pointsInAnalysis === track.points) {
             pointsInAnalysis = null;
         }
-        applyAnalysisAnswer(ctx, answer);
+        const answered = answer?.analysisPoints === track.points;
+        if (answered) {
+            applyAnalysisAnswer(ctx, answer);
+        } else {
+            ctx.setSelectedGpxFile((current) => withUnansweredAnalysis(current, track.points));
+        }
     });
 }
 
@@ -165,7 +170,7 @@ export function effectRequestAnalysis({ ctx, track, debouncerTimer }) {
     }
 }
 
-function isAnalysisWanted(track) {
+export function isAnalysisWanted(track) {
     if (!track?.points || track.points === track.analysisPoints) {
         return false;
     }
@@ -210,6 +215,14 @@ function withAnalysisAnswer(current, answer) {
     }
 
     return { ...current, analysis: answer.analysis, tracks: answer.tracks };
+}
+
+function withUnansweredAnalysis(current, points) {
+    if (current?.points !== points) {
+        return current;
+    }
+
+    return { ...current, analysisPoints: points, analysisTracks: undefined };
 }
 
 function isPointsHaveSameGeo(p1, p2) {

@@ -4,12 +4,14 @@ import TracksManager, {
     GPX_FILE_TYPE,
     NAN_MARKER,
     takePointsFromTracks,
+    withEditedPoints,
 } from '@map/manager/track/TracksManager';
 import { saveTrackToCloud } from '@map/manager/track/SaveTrackManager';
 import TracksRoutingCache, {
     applyAnalysisAnswer,
     effectControlRouterRequests,
     GET_ANALYSIS_DEBOUNCE_MS,
+    isAnalysisWanted,
     requestAnalysisNow,
     requestAnalytics,
 } from '@map/context/TracksRoutingCache';
@@ -300,6 +302,32 @@ describe('the answer of the analysis', () => {
 
         expect(loading.values).toEqual([1, 0]);
         expect(ctx.analyses.values).toEqual([1, 0]);
+    });
+
+    test('a failed or aborted analysis of the current points ends the wait for it, so the editor writes the track, an answer for points changed meanwhile does not', async () => {
+        apiPost.mockResolvedValue({ ok: false, status: 502, data: null });
+        const ctx = createCtx(createRoutedPoints(3));
+        ctx.selectedGpxFile.analysisTracks = [{ points: createRoutedPoints(2) }];
+
+        requestAnalysisNow({ ctx, track: ctx.selectedGpxFile });
+        await settle();
+
+        expect(isAnalysisWanted(ctx.selectedGpxFile)).toBe(false);
+        expect(withEditedPoints(ctx.selectedGpxFile).tracks).toEqual([{ points: ctx.selectedGpxFile.points }]);
+
+        apiPost.mockResolvedValue({ ok: false, aborted: true, data: null });
+        const aborted = createCtx(createRoutedPoints(3));
+        requestAnalysisNow({ ctx: aborted, track: aborted.selectedGpxFile });
+        await settle();
+
+        expect(isAnalysisWanted(aborted.selectedGpxFile)).toBe(false);
+
+        const changed = createCtx(createRoutedPoints(3));
+        requestAnalysisNow({ ctx: changed, track: changed.selectedGpxFile });
+        changed.setSelectedGpxFile((track) => ({ ...track, points: track.points.slice(0, 2) }));
+        await settle();
+
+        expect(isAnalysisWanted(changed.selectedGpxFile)).toBe(true);
     });
 
     test('an aborted analysis or srtm request gives no answer: the request that replaced it answers', async () => {

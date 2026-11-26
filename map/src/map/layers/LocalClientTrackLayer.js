@@ -20,6 +20,7 @@ import TracksRoutingCache, {
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
     effectRequestAnalysis,
+    isAnalysisWanted,
     routeWaitingSegments,
     syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
@@ -124,7 +125,7 @@ export default function LocalClientTrackLayer() {
             } else {
                 if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
                     if (ctx.localTracks.length > 0) {
-                        saveTrackToLocalStorage({ ctx, track: ctxTrack });
+                        saveTrackToLocalStorage({ ctx, track: ctxTrack, writeToDB: !isAnalysisWanted(ctxTrack) });
                     }
                     if (isNewTrack(ctx.localTracks, ctxTrack)) {
                         createLocalTrack({ ctx, map, file: ctxTrack });
