@@ -19,6 +19,7 @@ import TracksManager, {
     prepareName,
     renameLastFolderSegment,
     calculateLastModified,
+    takePointsFromTracks,
 } from './TracksManager';
 import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -45,6 +46,7 @@ export function saveTrackToLocal({ ctx, track, selected = true, overwrite = fals
     }
 
     TracksManager.prepareTrack(track, localName, originalName);
+    takePointsFromTracks(track);
 
     closeCloudTrack(ctx, track);
 
@@ -53,8 +55,7 @@ export function saveTrackToLocal({ ctx, track, selected = true, overwrite = fals
         openNewLocalTrack({ ctx, track, cloudAutoSave });
     } else {
         // used when multi-gpx uploaded
-        // generate points and save track
-        track.points = TracksManager.getEditablePoints(track);
+        // save track
         saveTrackToLocalStorage({ ctx, track });
     }
 

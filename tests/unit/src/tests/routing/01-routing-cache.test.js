@@ -185,7 +185,6 @@ test('the analysis is asked when the last waiting segment is routed, not while o
     jest.useFakeTimers();
     const [a, b, c] = [point(0), waitingPoint(1), waitingPoint(2)];
     const ctx = createCtx([a, b, c]);
-    ctx.selectedGpxFile.tracks = [{ points: [] }];
     mockEditablePolyline();
     TracksRoutingCache.addRoutingToCache(a, b, line(), ctx);
     TracksRoutingCache.addRoutingToCache(b, c, line(), ctx);

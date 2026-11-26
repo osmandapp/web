@@ -3,6 +3,8 @@ import { TRACKS_DB_NAME } from '../util/appDataVersion';
 
 const STORE_NAME = 'local_tracks';
 
+const savedDataByTrack = new WeakMap();
+
 const DEBUG = false;
 
 // create indexedDB
@@ -169,20 +171,43 @@ export function saveTrackToLocalStorage({ ctx, track }) {
         return;
     }
     let currentTrackIndex = localTracks.findIndex((t) => t?.name && track?.name && t.name === track.name);
+    const res = prepareLocalTrack(track);
+    const savedData = getSavedData(track, res);
+    const unchanged = isSameSavedData(savedDataByTrack.get(localTracks[currentTrackIndex]), savedData);
+    const copy = { ...track };
+    savedDataByTrack.set(copy, savedData);
 
     if (currentTrackIndex === -1) {
-        currentTrackIndex = localTracks.push(track) - 1;
+        currentTrackIndex = localTracks.push(copy) - 1;
         ctx.setLocalTracks([...localTracks]);
     } else {
-        localTracks[currentTrackIndex] = track;
+        localTracks[currentTrackIndex] = copy;
+    }
+    if (unchanged) {
+        return;
     }
 
-    const res = prepareLocalTrack(track);
     saveTrackToDB(currentTrackIndex, res)
         .then()
         .catch(() =>
             ctx.setRoutingErrorMsg('⚠️ Failed to save the local track. Please check your storage space or try again.')
         );
+}
+
+function getSavedData(track, record) {
+    return {
+        points: track.points,
+        analysis: track.analysis,
+        fields: JSON.stringify({ ...record, points: undefined, analysis: undefined }),
+    };
+}
+
+function isSameSavedData(saved, data) {
+    if (!saved) {
+        return false;
+    }
+
+    return saved.points === data.points && saved.analysis === data.analysis && saved.fields === data.fields;
 }
 
 async function updateStoredLocalTracks(tracks) {

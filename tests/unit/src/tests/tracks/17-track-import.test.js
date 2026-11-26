@@ -1,4 +1,8 @@
-import TracksManager, { getGpxFileFromTrackData, PROFILE_LINE } from '@map/manager/track/TracksManager';
+import TracksManager, {
+    getGpxFileFromTrackData,
+    PROFILE_LINE,
+    takePointsFromTracks,
+} from '@map/manager/track/TracksManager';
 import { isProtectedSegment } from '@map/manager/track/TrackOperations';
 import { saveTrackToLocal } from '@map/manager/track/SaveTrackManager';
 import { apiPost } from '@map/util/HttpApi';
@@ -63,7 +67,10 @@ function createRouteAnswer() {
 }
 
 function openInEditor(gpxData) {
-    return { ...gpxData, name: TRACK_NAME, points: TracksManager.getEditablePoints(gpxData) };
+    const track = { ...gpxData, name: TRACK_NAME };
+    takePointsFromTracks(track);
+
+    return track;
 }
 
 /** Save the track as a gpx and read the track data the app has sent to the server for it. */
@@ -138,7 +145,7 @@ describe('the track data a save sends to the server', () => {
         const points = createGapPoints(4, 1).map((point, i) => ({ ...point, ele: 100 + i }));
         const expected = snapshot(points);
 
-        const sent = await save({ name: TRACK_NAME, tracks: TracksManager.createGpxTracks(), wpts: [], points });
+        const sent = await save({ name: TRACK_NAME, wpts: [], points });
 
         expect(sent).toEqual({
             tracks: [{ points: expected }],
@@ -152,16 +159,19 @@ describe('the track data a save sends to the server', () => {
     test('a save does not change the points of the editor, the gap of a plain track goes on the last sent point', async () => {
         const points = createPlainGapPoints(4, 1);
 
-        const sent = await save({ name: TRACK_NAME, tracks: TracksManager.createGpxTracks(), wpts: [], points });
+        const sent = await save({ name: TRACK_NAME, wpts: [], points });
 
         expect(points).toEqual(createPlainGapPoints(4, 1));
         expect(sent.tracks[0].points.at(-1).profile).toBe(TracksManager.PROFILE_GAP);
     });
 
-    test.failing('a plain point keeps its time and extensions', async () => {
-        const sent = await save(openInEditor(createGpxData(createTrkpts(0, 2))));
+    test('the trk keeps its name and description', async () => {
+        const gpxData = createGpxData(createTrkpts(0, 2));
+        gpxData.tracks[0].ext = { name: 'Morning ride', desc: 'Kyiv' };
 
-        expect(sent.tracks[0].points.map((p) => p.ext)).toEqual(createTrkpts(0, 2).map((p) => p.ext));
+        const sent = await save(openInEditor(gpxData));
+
+        expect(sent.tracks[0].ext).toEqual({ name: 'Morning ride', desc: 'Kyiv' });
     });
 
     test('every point of a gpx of two trk is sent once', async () => {
@@ -170,7 +180,7 @@ describe('the track data a save sends to the server', () => {
         expect(lats(sentPoints(sent))).toEqual(lats(createPlainPoints(5)));
     });
 
-    test.failing('the points added to a gpx of waypoints only are sent', async () => {
+    test('the points added to a gpx of waypoints only are sent', async () => {
         const points = createRoutedPoints(2);
 
         const sent = await save({ ...openInEditor({ ...createGpxData(), wpts: [WPT] }), points });
