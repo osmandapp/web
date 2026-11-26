@@ -98,7 +98,7 @@ describe('deletePoint', () => {
         await PointManager.deletePoint(0, ctx);
         expect(ctx.selectedGpxFile.points).toEqual([]);
         expect(ctx.selectedGpxFile.name).toBe('Local');
-        expect(ctx.selectedGpxFile.tracks).toBeDefined();
+        expect(ctx.selectedGpxFile.tracks).toBeUndefined();
     });
 
     test('a point without a profile is removed alone, nothing is routed', async () => {
@@ -1170,13 +1170,14 @@ describe('the history of the editor', () => {
             name: 'Old',
             points: earlier,
             wpts,
-            tracks: [{ points: earlier }],
+            analysisTracks: [{ points: earlier }],
+            analysisPoints: earlier,
             routeTypes: [],
         });
         const moved = [{ ...earlier[0], lat: 49.99 }, earlier[1], earlier[2]];
-        const current = { name: 'New', id: 'New', metaData: { name: 'New' }, points: moved, tracksPoints: moved };
+        const current = { name: 'New', id: 'New', metaData: { name: 'New' }, points: moved, analysisPoints: moved };
         Object.assign(current, {
-            tracks: [{ points: [] }],
+            analysisTracks: [{ points: [] }],
             layers: {},
             routeTypes: [{ tag: 'highway', value: 'primary' }],
         });
@@ -1184,10 +1185,10 @@ describe('the history of the editor', () => {
 
         const restored = fromHistoryState(step, current);
 
-        expect(step.tracks).toBeNull();
+        expect(step.analysisTracks).toBeNull();
         expect(restored).toMatchObject({ name: 'New', id: 'New', metaData: { name: 'New' }, syncRouting: true });
         expect(restored.layers).toBe(current.layers);
-        expect(restored.tracks).toBe(current.tracks);
+        expect(restored.analysisTracks).toBe(current.analysisTracks);
         expect(restored.routeTypes).toBe(current.routeTypes);
         // the analysis tracks describe other points, so the graph is drawn from the restored points
         expect(withEditedPoints(restored).tracks).toEqual([{ points: earlier }]);

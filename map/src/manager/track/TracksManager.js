@@ -84,23 +84,22 @@ export function filterRegularFolders(tracksGroups) {
 }
 
 export function prepareLocalTrack(track) {
-    const prepareTrack = cloneTrackObject(track);
     return {
-        name: prepareTrack.name,
-        id: prepareTrack.id,
-        metaData: prepareTrack.metaData,
-        points: prepareTrack.points,
-        // tracks: prepareTrack.tracks, // tracks[] will be back
-        wpts: prepareTrack.wpts,
-        pointsGroups: prepareTrack.pointsGroups,
+        name: track.name,
+        id: track.id,
+        metaData: track.metaData,
+        points: track.points,
+        trkExt: track.trkExt,
+        wpts: track.wpts,
+        pointsGroups: track.pointsGroups,
         /** Cloud / .info payload (e.g. pointsGroups visibility); was omitted and lost on IndexedDB round-trip */
-        info: prepareTrack.info,
-        ext: prepareTrack.ext,
-        analysis: prepareAnalysis(prepareTrack.analysis),
+        info: track.info,
+        ext: track.ext,
+        analysis: prepareAnalysis(track.analysis),
         selected: false,
-        originalName: prepareTrack.originalName,
-        hasGeo: prepareTrack.hasGeo,
-        routeTypes: prepareTrack.routeTypes,
+        originalName: track.originalName,
+        hasGeo: track.hasGeo,
+        routeTypes: track.routeTypes,
     };
 }
 
@@ -332,9 +331,13 @@ export function getTrackPoints(track) {
 }
 
 export function withEditedPoints(track) {
-    return track.tracksPoints && track.tracksPoints !== track.points
-        ? { ...track, tracks: [{ points: track.points }] }
-        : track;
+    if (!track.points) {
+        return track;
+    }
+
+    return track.analysisPoints === track.points
+        ? { ...track, tracks: track.analysisTracks }
+        : { ...track, tracks: [{ points: track.points }] };
 }
 
 // Create an array of points that contains references to the points in tracks (the gap end of a track is a copy)
@@ -351,6 +354,14 @@ function getEditablePoints(track) {
         });
     }
     return points;
+}
+
+export function takePointsFromTracks(track) {
+    track.points = getEditablePoints(track);
+    track.trkExt = track.tracks?.[0]?.ext;
+    track.analysisTracks = track.tracks;
+    track.analysisPoints = track.points;
+    delete track.tracks;
 }
 
 export function getAllPoints(points) {
@@ -645,24 +656,35 @@ function withoutId(point) {
     return copy;
 }
 
+function getSentTracks(file) {
+    if (!file.points) {
+        return file.tracks;
+    }
+    if (isEmpty(file.points)) {
+        return [];
+    }
+    const points = file.points.map((point) => {
+        return {
+            lat: point.lat,
+            lng: point.lng,
+            ele: point.ele,
+            profile: point.profile,
+            geometry: point.geometry,
+        };
+    });
+    if (!validateRoutePoints(file.points)) {
+        return file.analysisTracks ?? file.tracks ?? [{ points }];
+    }
+    if (points.some((point) => !point.geometry && point.profile === PROFILE_GAP)) {
+        points[points.length - 1].profile = PROFILE_GAP;
+    }
+
+    return [{ points, ...(file.trkExt && { ext: file.trkExt }) }];
+}
+
 function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
     // add updated points to track
-    let tracks = file.tracks;
-    if (file.tracks?.[0] && validateRoutePoints(file.points)) {
-        const points = file.points.map((point) => {
-            return {
-                lat: point.lat,
-                lng: point.lng,
-                ele: point.ele,
-                profile: point.profile,
-                geometry: point.geometry,
-            };
-        });
-        if (points.some((point) => !point.geometry && point.profile === PROFILE_GAP)) {
-            points[points.length - 1].profile = PROFILE_GAP;
-        }
-        tracks = [{ ...file.tracks[0], points }];
-    }
+    const tracks = getSentTracks(file);
 
     // add metaData name if it isn't exist
     const metaData = file.metaData?.name ? file.metaData : { ...file.metaData, name: file.name };
@@ -1035,8 +1057,10 @@ export async function applySrtmElevation({ track, setLoading }) {
         }
         track.points?.forEach((p) => parse(p));
         track.points?.forEach((p) => p.geometry?.forEach((g) => parse(g)));
-        track.tracks?.forEach((t) => t.points?.forEach((p) => parse(p)));
-        track.tracks?.forEach((t) => t.points?.forEach((p) => p.geometry?.forEach((g) => parse(g))));
+        [track.tracks, track.analysisTracks].forEach((tracks) => {
+            tracks?.forEach((t) => t.points?.forEach((p) => parse(p)));
+            tracks?.forEach((t) => t.points?.forEach((p) => p.geometry?.forEach((g) => parse(g))));
+        });
         return cache;
     }
     function applySrtmPoints({ track, cache }) {
@@ -1049,8 +1073,12 @@ export async function applySrtmElevation({ track, setLoading }) {
         if (track.points) {
             track.points = track.points.map(withSrtmEle);
         }
+        const withSrtmTracks = (tracks) => tracks?.map((t) => ({ ...t, points: t.points?.map(withSrtmEle) }));
         if (track.tracks) {
-            track.tracks = track.tracks.map((t) => ({ ...t, points: t.points?.map(withSrtmEle) }));
+            track.tracks = withSrtmTracks(track.tracks);
+        }
+        if (track.analysisTracks) {
+            track.analysisTracks = withSrtmTracks(track.analysisTracks);
         }
     }
     const fakeCtx = { selectedGpxFile: track };
@@ -1111,14 +1139,13 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
     try {
         const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
 
-        if (cloneFile.tracks === undefined || cloneFile.tracks.length === 0) {
-            return cloneFile; // no tracks = nothing to analyze
-        }
-
         const wpts = cloneFile.wpts;
         const pointsGroups = cloneFile.pointsGroups;
 
         const postData = prepareTrackData({ file: cloneFile, routeTypes: cloneFile.routeTypes, getAnalysis: true });
+        if (isEmpty(postData.tracks)) {
+            return cloneFile; // no tracks = nothing to analyze
+        }
         // time vs better cache
         let saveStartTime = null;
         let saveEndTime = null;
@@ -1158,9 +1185,14 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
                 }
             }
 
-            Object.keys(data.data).forEach((t) => {
-                newGpxFile[`${t}`] = data.data[t];
-            });
+            const { tracks, ...answer } = data.data;
+            Object.assign(newGpxFile, answer);
+            if (tracks && newGpxFile.points) {
+                newGpxFile.analysisTracks = tracks;
+                newGpxFile.analysisPoints = newGpxFile.points;
+            } else if (tracks) {
+                newGpxFile.tracks = tracks;
+            }
 
             newGpxFile.update = true;
             newGpxFile.wpts = wpts;
@@ -1202,12 +1234,6 @@ function createTrack(ctx, latlng) {
     ctx.trackRouter.escapeFromLineProfile();
 }
 
-function createGpxTracks() {
-    let res = [];
-    res.push({ points: [] });
-    return res;
-}
-
 function clearTrack(file, points) {
     let emptyFile = {};
     emptyFile.name = file.name;
@@ -1215,7 +1241,6 @@ function clearTrack(file, points) {
     emptyFile.metaData = file.metaData;
     emptyFile.routeTypes = file.routeTypes;
     emptyFile.points = points ?? [];
-    emptyFile.tracks = TracksManager.createGpxTracks();
     emptyFile.layers = file.layers;
     emptyFile.wpts = file.wpts;
     emptyFile.pointsGroups = file.pointsGroups;
@@ -1789,7 +1814,6 @@ const TracksManager = {
     prepareTrack,
     addDistance,
     createTrack,
-    createGpxTracks,
     clearTrack,
     getGroup,
     formatRouteMode,

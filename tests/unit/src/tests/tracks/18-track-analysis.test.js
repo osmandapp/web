@@ -1,5 +1,5 @@
 import PointManager from '@map/manager/PointManager';
-import TracksManager, { GPX_FILE_TYPE, NAN_MARKER } from '@map/manager/track/TracksManager';
+import TracksManager, { GPX_FILE_TYPE, NAN_MARKER, takePointsFromTracks } from '@map/manager/track/TracksManager';
 import { saveTrackToCloud } from '@map/manager/track/SaveTrackManager';
 import TracksRoutingCache, {
     effectControlRouterRequests,
@@ -57,9 +57,18 @@ const withEditorFields = (points) =>
         srtmEle: 90 + i,
     }));
 
+const withGpxExt = (points) =>
+    points.map((point, i) => ({
+        ...point,
+        ext: {
+            time: START_TIME + i * 1000,
+            extensions: { hr: '120' },
+            attributes: { distance: 1112, timeDiff: 1, speed: 4, elevation: 100 + i },
+        },
+    }));
+
 const createCtx = (points) => {
     const ctx = createEditorCtx({ points });
-    ctx.selectedGpxFile.tracks = [{ points: [] }];
     ctx.analyses = createCounter();
     ctx.setRunningAnalyses = ctx.analyses.set;
 
@@ -105,19 +114,20 @@ describe('what is sent for the analysis', () => {
     test('a gpx of two tracks opened in the editor sends no point ids and gets no gap written into its tracks', async () => {
         for (const unrouted of [false, true]) {
             apiPost.mockClear();
-            const tracks = [{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }];
-            const points = assignPointIds(TracksManager.getEditablePoints({ tracks }));
+            const opened = { tracks: [{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }] };
+            takePointsFromTracks(opened);
+            const points = assignPointIds(opened.points);
             if (unrouted) {
                 delete points[1].geometry;
             }
             const ctx = createCtx(points);
-            ctx.selectedGpxFile.tracks = tracks;
+            Object.assign(ctx.selectedGpxFile, { analysisTracks: opened.analysisTracks, analysisPoints: points });
 
             await analyse(ctx);
 
             const body = await readGzipJson(findRequest(apiPost, ANALYSIS_URL).body);
             expect(JSON.stringify(body)).not.toContain('"id"');
-            expect(tracks[0].points.at(-1).profile).not.toBe(TracksManager.PROFILE_GAP);
+            expect(opened.analysisTracks[0].points.at(-1).profile).not.toBe(TracksManager.PROFILE_GAP);
         }
     });
 
@@ -130,7 +140,7 @@ describe('what is sent for the analysis', () => {
     });
 
     test('only the position, elevation, profile and geometry of the editor points are sent, the times are zeroed', async () => {
-        const points = withEditorFields(createRoutedPoints(3));
+        const points = withGpxExt(withEditorFields(createRoutedPoints(3)));
         const ctx = createCtx(points);
         ctx.selectedGpxFile.analysis = { totalDistance: TOTAL_DISTANCE, startTime: START_TIME, endTime: END_TIME };
 
@@ -145,7 +155,7 @@ describe('what is sent for the analysis', () => {
     });
 
     test('only the position, elevation, profile and geometry of the editor points are saved to the cloud', async () => {
-        const points = withEditorFields(createRoutedPoints(3));
+        const points = withGpxExt(withEditorFields(createRoutedPoints(3)));
         const ctx = createCtx(points);
         ctx.listFiles = { uniqueFiles: [{ name: CLOUD_TRACK_NAME }] };
         apiPost.mockImplementation(async (url) => {

@@ -174,7 +174,7 @@ export default function LocalClientTrackLayer() {
                 unverified.points = hasPoints
                     ? withAnsweredElevation(trusted.points, unverified.points)
                     : trusted.points;
-                unverified.tracksPoints = unverified.points;
+                unverified.analysisPoints = unverified.points;
                 if (hasPoints && isLocalTrack(ctx)) {
                     addElevationToCache({ ctx, points: unverified.points, geoRouter });
                 }
@@ -311,7 +311,8 @@ export default function LocalClientTrackLayer() {
                 }
 
                 // If the track was updated, refresh its layer on the map
-                if (track.updated) {
+                const edited = ctx.createTrack?.enable && track.name === ctxTrack.name;
+                if (currLayer.track !== track && !edited) {
                     updateTrackOnMap(track, currLayer.active);
                 }
             }
@@ -403,15 +404,10 @@ export default function LocalClientTrackLayer() {
     function saveResult(file, closePrev) {
         const ind = ctx.localTracks.findIndex((t) => t?.name === file?.name);
         if (ind !== -1) {
-            ctx.localTracks[ind] = file;
             if (ctx.createTrack.clear) {
-                ctx.localTracks[ind].selected = false;
-            } else {
-                if (ctx.createTrack.edit || closePrev) {
-                    ctx.localTracks[ind].updated = true;
-                } else {
-                    ctx.localTracks[ind].selected = true;
-                }
+                file.selected = false;
+            } else if (!ctx.createTrack.edit && !closePrev) {
+                file.selected = true;
             }
             saveTrackToLocalStorage({ ctx, track: file }); // ctx.localTracks might be modified there
             ctx.setLocalTracks([...ctx.localTracks]); // save our mutations which were made before
@@ -473,14 +469,8 @@ export default function LocalClientTrackLayer() {
     }
 
     function addTrackToMap(track, fitBounds, active) {
-        if (track.points) {
-            track.tracks = [{ points: track.points }];
-        }
-        if (track.updated) {
-            track.updated = false; // reset
-        }
         let layer = TrackLayerProvider.createLayersByTrackData({
-            data: track,
+            data: track.points ? { ...track, tracks: [{ points: track.points }] } : track,
             ctx,
             map,
             simplifyWpts: track?.wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
@@ -508,7 +498,7 @@ export default function LocalClientTrackLayer() {
             addLayerToMap(map, layer, 'add-local-track-layer');
             localLayers[track.name] = {
                 layer: layer,
-                points: track.points ? track.points : TracksManager.getEditablePoints(track),
+                track,
                 active: active,
             };
         }
@@ -739,7 +729,7 @@ export default function LocalClientTrackLayer() {
         if (currentTrack) {
             ctxTrack = currentTrack;
         }
-        const points = assignPointIds(TracksManager.getEditablePoints(ctxTrack));
+        const points = assignPointIds(ctxTrack.points);
         ctxTrack.layers = updateLayers({
             map,
             ctx,
@@ -750,7 +740,6 @@ export default function LocalClientTrackLayer() {
             trackLayers: new L.FeatureGroup(),
         });
         ctxTrack.points = points;
-        ctxTrack.tracksPoints = points;
         routeWaitingSegments(ctxTrack, ctx);
 
         ctxTrack.newPoint = points[points.length - 1];

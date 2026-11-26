@@ -12,10 +12,6 @@ export const ADDED_POINT = {
     ASK_ROUTING: 'ask-routing',
 };
 
-export function trackWasChanged(localTracks, track) {
-    return localTracks.find((t) => t?.name === track.name)?.updated;
-}
-
 export function isNewTrack(localTracks, track) {
     return !localTracks.find((t) => t?.name === track?.name);
 }
@@ -28,7 +24,6 @@ export function initNewSelectedTrack({ ctx, map, geoRouter, setRegisteredLayers 
 
     const track = {
         name: TracksManager.createName(ctx),
-        tracks: TracksManager.createGpxTracks(),
         pointsGroups: {},
         points: newPoint ? [newPoint] : [],
         newPoint: newPoint ?? null,
@@ -120,7 +115,7 @@ export function getLastSegmentGeoProfile(points, geoRouter) {
     return null;
 }
 
-export function createLocalTrack({ ctx, map, file, points = [], wpts = [] }) {
+export function createLocalTrack({ ctx, map, file }) {
     ctx.setLocalTracks((prev) => {
         const tracks = [...prev];
         TracksManager.prepareTrack(file);
@@ -128,9 +123,6 @@ export function createLocalTrack({ ctx, map, file, points = [], wpts = [] }) {
             ctx.setRoutingErrorMsg('Cannot save nameless local track.');
             return prev;
         }
-        const trackPoints = points ?? file.points;
-        const trackWpts = wpts ?? file.wpts;
-        file.tracks = [{ trackPoints, trackWpts }];
         file.layers = TrackLayerProvider.createLayersByTrackData({
             data: file,
             ctx,
