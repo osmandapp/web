@@ -57,17 +57,7 @@ const PointsTab = ({ width }) => {
         confirm({
             ctx,
             text: 'Delete all track points?',
-            callback: () => {
-                if (ctx.selectedGpxFile) {
-                    const updatedSelectedGpxFile = {
-                        ...ctx.selectedGpxFile,
-                        points: [],
-                        updateLayers: true,
-                        analysis: null,
-                    };
-                    ctx.setSelectedGpxFile(updatedSelectedGpxFile);
-                }
-            },
+            callback: () => PointManager.deleteAllPoints(ctx),
         });
     }
 

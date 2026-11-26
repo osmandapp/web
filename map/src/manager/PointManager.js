@@ -32,10 +32,7 @@ function deletePoint(index, ctx) {
         return;
     }
     if (ctx.selectedGpxFile.points.length === 1) {
-        const emptyFile = TracksManager.clearTrack(ctx.selectedGpxFile, []);
-        ctx.setSelectedGpxFile({ ...emptyFile });
-        ctx.setUpdateInfoBlock(true);
-        TracksManager.updateState(ctx);
+        deleteAllPoints(ctx);
         return;
     }
     const points = TrackOperations.deletePoint(ctx.selectedGpxFile.points, index);
@@ -43,6 +40,12 @@ function deletePoint(index, ctx) {
         ctx.setUpdateInfoBlock(true);
     }
     applyOperation(ctx, points, [index]);
+}
+
+function deleteAllPoints(ctx) {
+    ctx.setSelectedGpxFile(TracksManager.clearTrack(ctx.selectedGpxFile, []));
+    ctx.setUpdateInfoBlock(true);
+    TracksManager.updateState(ctx);
 }
 
 function deleteOldTempLayer(layers, point) {
@@ -235,6 +238,7 @@ function routeByCache(track, index, ctx) {
 
 const PointManager = {
     deletePoint,
+    deleteAllPoints,
     deleteWpt,
     reorder,
     trimBefore,

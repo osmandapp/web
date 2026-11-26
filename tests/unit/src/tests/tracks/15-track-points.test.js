@@ -1166,6 +1166,7 @@ describe('the history of the editor', () => {
             [createRoutedPoints(4), (ctx) => PointManager.reorder(1, 2, ctx)],
             [createRoutedPoints(4), (ctx) => dragPoint(ctx, 1, 50.015)],
             [createRoutedPoints(4), (ctx) => insertPoint(ctx, drawnLines(ctx)[1], 50.015)],
+            [createRoutedPoints(4), (ctx) => PointManager.deleteAllPoints(ctx)],
         ]) {
             const ctx = createDrawnCtx(points);
 
