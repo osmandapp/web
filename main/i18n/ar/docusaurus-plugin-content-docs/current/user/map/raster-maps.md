@@ -1,5 +1,5 @@
 ---
-source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
+source-hash: 36e97b90c3769611facb2ea509fb7332fc9cfadf389290599e8b1eb4dd90b35a
 sidebar_position: 7
 title:  الخرائط النقطية (عبر الإنترنت / دون اتصال)
 ---
@@ -62,7 +62,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - **iOS**. بالنسبة لنظام *iOS*، تعمل هذه الميزة بشكل افتراضي.
 - **Android**. بالنسبة لنظام *Android*، لاستخدام الخرائط النقطية في OsmAnd، تحتاج إلى تفعيل [إضافة الخرائط عبر الإنترنت](../plugins/online-map.md). اتبع هذه الخطوات: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**[تغيير معلمات الطبقة](#layers)**. لتحسين رؤية ومزج طبقات الخرائط النقطية، يمكنك ضبط شفافية الطبقة باستخدام شريط التمرير على الشاشة. بالإضاف إلى ذلك، يمكنك تعديل نمط الخريطة المتجهية عن طريق إخفاء المضلعات، مما يجعل الطبقات السفلية أكثر وضوحًا. هذا مفيد بشكل خاص عند عرض صور الأقمار الصناعية.
+**[تغيير معلمات الطبقة](#layers)**. لمزج طبقات الخرائط النقطية، يمكنك ضبط رؤية الطبقة باستخدام شريط التمرير على الشاشة. بالإضاف إلى ذلك، يمكنك تعديل نمط الخريطة المتجهية عن طريق إخفاء المضلعات، مما يجعل الطبقات السفلية أكثر وضوحًا. هذا مفيد بشكل خاص عند عرض صور الأقمار الصناعية.
 
 
 ## الطبقات {#layers}
@@ -85,7 +85,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 في OsmAnd، يمكن أن تعمل الخرائط النقطية كمصدر خريطة إضافي إلى جانب الخرائط المتجهية الافتراضية، والتي تم تحسينها للاستخدام دون اتصال بالإنترنت.  
 
-لديك المرونة لإضافة طبقة أو طبقتين من المربعات عبر الإنترنت لتكملة خريطتك الأساسية. يتيح لك هذا عرض ما يصل إلى ثلاث طبقات من الخرائط في وقت واحد على شاشتك (بالإضافة إلى التضاريس). فكر فيها مثل فطيرة: [**الطبقة السفلية**](#underlay) (قاعدة نقطية أسفل)، [**الرئيسية**](#main) (متجهية أو نقطية أساسية)، [**الطبقة العلوية**](#overlay) (نقطية فوق)، مع تظليل [**التضاريس**](#terrain) فوق الجميع. على سبيل المثال، يمكنك استخدام صور الأقمار الصناعية كطبقة سفلية، وخريطة OsmAnd المتجهية دون اتصال كطبقة رئيسية مع شفافية متزايدة، وخريطة مسار الدراجات كطبقة علوية فوقها.
+لديك المرونة لإضافة طبقة أو طبقتين من المربعات عبر الإنترنت لتكملة خريطتك الأساسية. يتيح لك هذا عرض ما يصل إلى ثلاث طبقات من الخرائط في وقت واحد على شاشتك (بالإضافة إلى التضاريس). فكر فيها مثل فطيرة: [**الطبقة السفلية**](#underlay) (قاعدة نقطية أسفل)، [**الرئيسية**](#main) (متجهية أو نقطية أساسية)، [**الطبقة العلوية**](#overlay) (نقطية فوق)، مع تظليل [**التضاريس**](#terrain) فوق الجميع. على سبيل المثال، يمكنك استخدام صور الأقمار الصناعية كطبقة سفلية، وخريطة OsmAnd المتجهية دون اتصال كطبقة رئيسية مع رؤية مخفضة، وخريطة مسار الدراجات كطبقة علوية فوقها.
 
 >[الخرائط المتجهية](./vector-maps.md) متوفرة **فقط** في [الطبقة الرئيسية](#main) (وهي الافتراضية هناك). يمكن استخدام الخرائط النقطية في جميع الطبقات الثلاث: الرئيسية، والسفلية، والعلوية.
 
@@ -93,7 +93,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 إذا كنت ترغب في تبديل هذه الطبقات بشكل أسرع ([مصدر الخريطة الرئيسي](#main)، [الطبقة العلوية](#overlay)، [الطبقة السفلية](#underlay)، و[التضاريس](#terrain))، يمكنك إضافة [إجراء سريع (زر مخصص)](../widgets/quick-action.md) إلى شاشة الخريطة وتعيين الإجراءات الخاصة بالخريطة المقابلة إليها.
 
-يمكنك أيضًا ضبط شفافية الخريطة الأساسية لمزجها مع طبقاتك. إذا لزم الأمر، يمكنك تمكين شريط تمرير الشفافية على الشاشة الرئيسية لإجراء تعديلات سريعة.
+يمكنك أيضًا ضبط رؤية الخريطة الأساسية لمزجها مع طبقاتك. إذا لزم الأمر، يمكنك تمكين شريط تمرير على الشاشة الرئيسية لإجراء تعديلات سريعة.
 
 ### الرئيسية {#main}
 
@@ -127,7 +127,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/overlay-andr.webp)  
 
 </TabItem>
 
@@ -135,15 +135,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/overlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 ١. *تشغيل/إيقاف* الطبقة العلوية.
-٢. *شفافية الطبقة العلوية* (*أندرويد*)/ *شفافية* خريطة الطبقة العلوية (*iOS*).
-٣. *إظهار شريط تمرير الشفافية* (*أندرويد*) / *إظهار شريط التمرير على الخريطة* (*iOS*). وصول سريع إلى إعداد الشفافية.
+٢. *<Translate android="true" ids="overlay_transparency"/>* (*أندرويد*) / *<Translate ios="true" ids="visibility"/>* (*iOS*). عند ٠٪ تكون خريطة الطبقة العلوية مخفية، وعند ١٠٠٪ تكون مرئية بالكامل.
+٣. *<Translate android="true" ids="show_transparency_seekbar"/>* (*أندرويد*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). وصول سريع إلى إعداد الرؤية.
 ٤. *مصدر خريطة الطبقة العلوية* (*أندرويد*) / *الطبقات المتاحة* (*iOS*). اختر خريطة مربعات عبر الإنترنت من القائمة لإضافتها مباشرة كطبقة علوية.
 ٥. *إظهار رموز الخريطة* - مثل النصوص وعلامات الطرق وغيرها.  
 ٦. *إضافة مصدر عبر الإنترنت* (*iOS*). [إضافة مصدر عبر الإنترنت جديد](#add-new-online-source).
@@ -157,7 +157,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/underlay-andr.png)
+![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/underlay-andr.webp)
 
 </TabItem>
 
@@ -165,15 +165,15 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/underlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 ١. *تشغيل/إيقاف* الطبقة السفلية.
-٢. *شفافية الخريطة الأساسية*.
-٣. *إظهار شريط تمرير الشفافية* (*أندرويد*) / *إظهار شريط التمرير على الخريطة* (*iOS*). وصول سريع إلى إعداد الشفافية.
+٢. *<Translate android="true" ids="map_transparency"/>*. عند ١٠٠٪ تكون الخريطة الأساسية مرئية بالكامل، وعند ٠٪ تظهر خريطة الطبقة السفلية فقط.
+٣. *<Translate android="true" ids="show_transparency_seekbar"/>* (*أندرويد*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). وصول سريع إلى إعداد الرؤية.
 ٤. *مصدر خريطة الطبقة السفلية* (*أندرويد*) / *الطبقات المتاحة* (*iOS*). اختر خريطة مربعات عبر الإنترنت من القائمة لإضافتها مباشرة كطبقة سفلية.
 ٥. *إظهار/إخفاء المضلعات*.
 ٦. *إضافة مصدر عبر الإنترنت* (*iOS*). [إضافة مصدر عبر الإنترنت جديد](#add-new-online-source).

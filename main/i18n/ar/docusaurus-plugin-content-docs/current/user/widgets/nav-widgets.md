@@ -1,5 +1,5 @@
 ---
-source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
+source-hash: 292d8a0b5fbc689d6e07f6ebd71d0b9a70856fabf41202c365ab38c143096e5d
 sidebar_position: 4
 title:  أدوات التنقل
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يتم تفعيل أدوات التنقل أثناء التنقل لعرض معلومات مثل المسافة، ووقت الوصول أو الوقت المتبقي، والمنعطفات التالية، والاتجاه، واسم الشارع الحالي، ومعلومات المسارات، والسرعة القصوى، وتنبيهات الاقتراب، ونقاط الاهتمام، ونقاط الطريق.
 
-![Navigational widgets all](@site/static/img/widgets/navigational_widgets_all.png)
+![جميع أدوات التنقل](@site/static/img/widgets/navigational_widgets_all.png)
 
 
 ## التنقل النشط والسلبي {#active-and-passive-navigation}
@@ -70,7 +70,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <InfoAndroidOnly/>  
 
-:::info Pro feature
+:::info ميزة Pro
 أداة الارتفاع هي ميزة مدفوعة لـ [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
@@ -78,7 +78,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*
 
-![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
+![أداة الارتفاع](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
 #### التفاعلات مع الرسم البياني {#interactions-with-the-graph}
@@ -98,37 +98,37 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 |:------------|
 | ***دبوس الموقع*** |
 | موقعك ***الحالي*** على الرسم البياني يشمل أيقونة موقع، وارتفاع، وقيمة نسبة الميل المئوية. الجانب الأيمن من الأداة يحتوي على أعلى ارتفاع وميل، والقيمة المتوسطة لهما، والقيمة الأدنى في القسم المحدد من الطريق المرئي على الرسم البياني. |
-| ![point](@site/static/img/widgets/sch_1-1.png)|
+| ![نقطة](@site/static/img/widgets/sch_1-1.png)|
 | ***معلومات إضافية*** |
 | الجانب الأيمن من الأداة يحتوي على بيانات حول أعلى ارتفاع وميل، والقيمة المتوسطة لكليهما، وأدنى ارتفاع وميل في القسم المحدد من الطريق المرئي على الرسم البياني. |
-|  ![data](@site/static/img/widgets/sch_1-2.png)|
+|  ![بيانات](@site/static/img/widgets/sch_1-2.png)|
 |القيمتا ***Uphill*** و***Downhill*** هما مجموع المسافات من نقطة موقعك إلى نهاية الرسم البياني المرئي. إذا لم يكن هناك نقطة موقع على الرسم البياني، فإنه مجموع الرسم البياني المرئي بأكمله على الشاشة (هذا يمكن أن يحدث عندما تغير المقياس ويخرج الموقع خارج الرسم البياني).|
 | **Uphill** – يعرض مجموع جميع المسافات مع زيادة الارتفاع من نقطة موقعك إلى نهاية الرسم البياني المرئي أو للقسم المحدد من الطريق بدون نقطة الموقع المرئية على الشاشة. |
-| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|  
+| ![مخطط الصعود](@site/static/img/widgets/sch_uphill_1.png) ![مخطط الصعود](@site/static/img/widgets/sch_uphill_2.png)|  
 | **Downhill** – يعرض مجموع جميع المسافات مع انخفاض الارتفاع من نقطة موقعك إلى نهاية الرسم البياني المرئي أو للقسم المحدد من الطريق بدون نقطة الموقع المرئية على الشاشة.|
-| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png) ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)|  
+| ![مخطط النزول](@site/static/img/widgets/sch_downhill_1.png) ![مخطط النزول](@site/static/img/widgets/sch_downhill_2.png)|  
 |***Grade*** هو نسبة المسار إلى الأفقي، حيث يشير الصفر إلى الأفقية وعدد الدرجات يشير إلى درجة ميل أعلى أو أكثر انحدارًا.|
 | **Grade** – يعرض أقصى ميل طريق كنسبة مئوية من نقطة موقعك إلى نهاية الرسم البياني المرئي أو للقسم المحدد من الطريق بدون نقطة الموقع المرئية على الشاشة. |
-|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
+|![مخطط الميل](@site/static/img/widgets/sch_grade_1.png) ![مخطط الميل](@site/static/img/widgets/sch_grade_2.png)|
 
 
 ## أداة الاتجاه   {#bearing-widget}
   
 الاتجاه هو الاتجاه نحو هدف خارج مركبتك، مثل وجهة أو نقطة أصل. يمكن أن يكون الاتجاه *نسبيًا* (وفقًا لمسارك) أو *مغناطيسيًا* (وفقًا للبوصلة). على سبيل المثال، الاتجاه المغناطيسي ١٨٠° هو الاتجاه نحو الجنوب، والاتجاه النسبي ١٨٠° هو مباشرة خلفك. النقاط الرئيسية هي الاتجاهات الأربعة الرئيسية للبوصلة. وهي الشمال (*N* - ٠° أو ٣٦٠°)، الشرق (*E* - ٩٠°)، الجنوب (*S* - ١٨٠°)، والغرب (*W* - ٢٧٠°).  
 
-![Trip recording widget](@site/static/img/widgets/bearing.png)
+![أداة تسجيل الرحلة](@site/static/img/widgets/bearing.png)
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)  
+![أداة تسجيل الرحلة](@site/static/img/widgets/bearing_widget.png) ![أداة تسجيل الرحلة](@site/static/img/widgets/bearing_widget_1.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)
+![أداة تسجيل الرحلة](@site/static/img/widgets/bearing_widget_ios_3.png)
 
 </TabItem>
 
@@ -136,11 +136,11 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="shared_string_bearing"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>  → Choose a panel → Add widget →  <Translate ios="true" ids="shared_string_bearing"/>* |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
-| Format | **Android:** You can change the data display format for angular units: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
-|  | **iOS:** You can change the data display format for angular units: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
+| تمكين  | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="shared_string_bearing"/>* |
+|  | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>  → اختر لوحة → أضف أداة →  <Translate ios="true" ids="shared_string_bearing"/>* |
+| النقر الطويل  | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| تنسيق | **أندرويد:** يمكنك تغيير تنسيق عرض البيانات للوحدات الزاوية: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats,angular_measeurement"/>* |
+|  | **آي أو إس:** يمكنك تغيير تنسيق عرض البيانات للوحدات الزاوية: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,angular_units"/>* |  
 
 
 #### كيفية العمل {#how-it-works}
@@ -174,7 +174,7 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 ### معلومات الطريق {#route-information}
 
 
-![Destination widget](@site/static/img/widgets/route_information_widget.png)  
+![أداة الوجهة](@site/static/img/widgets/route_information_widget.png)  
 
 توفر أداة *Route Information* بيانات في الوقت الفعلي حول طريق التنقل الجاري وطريقة سريعة [لإدارة طريق نشط](../navigation/setup/route-navigation.md#start--stop-navigation). تساعد في تتبع تفاصيل الطريق الرئيسية وتسمح لك بإيقاف أو استئناف جلسة التنقل الحالية بتفاعل أدنى.
 
@@ -192,39 +192,41 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 > ملاحظة: الأداة مرئية فقط أثناء التنقل.
 
+على هواتف أندرويد في الاتجاه الأفقي، تكون أداة *<Translate android="true" ids="map_widget_route_information"/>* مخفية افتراضيًا. وبدلاً من ذلك، تعرض *<Translate android="true" ids="map_widget_right"/>* الأدوات [<Translate android="true" ids="map_widget_distance_to_destination"/>](#distance-to-destination) و[<Translate android="true" ids="map_widget_time_to_destination"/>](#time-to-destination) و[<Translate android="true" ids="map_widget_distance_to_intermediate"/>](#distance-to-intermediate) و[<Translate android="true" ids="map_widget_time_to_intermediate"/>](#time-to-intermediate). يمكنك إظهار أو إخفاء أي من هذه الأدوات في [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md).
+
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget →<Translate android="true" ids="map_widget_route_information"/>* |
-| | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → Add widget  →معلومات الطريق* |
-| By tapping | Tap the button with arrow to open [Start/Stop Navigation panel](../navigation/setup/route-navigation.md#start--stop-navigation) |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
-| Format | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
+| تمكين  | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → أضف أداة → <Translate android="true" ids="map_widget_route_information"/>* |
+| | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → أضف أداة → معلومات الطريق* |
+| بالنقر  | اضغط على الزر ذي السهم لفتح [لوحة بدء/إيقاف التنقل](../navigation/setup/route-navigation.md#start--stop-navigation) |
+| النقر الطويل  | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
+| تنسيق | *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,units_and_formats"/>* |
 
 ### المسافة إلى الوجهة {#distance-to-destination}
 
-![Destination widget](@site/static/img/widgets/destination_widget.png)  
+![أداة الوجهة](@site/static/img/widgets/destination_widget.png)  
 
 تعرض الأداة المسافة المتبقية إلى آخر نقطة وجهة عند اتباع طريق محسوب.  
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
-| By tapping | Moves the map to the destination point. |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| تمكين  | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="map_widget_distance_to_destination"/>* |
+|  | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → <Translate ios="true" ids="map_widget_distance_to_destination"/>* |
+| بالنقر  | ينقل الخريطة إلى نقطة الوجهة. |
+| النقر الطويل  | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
 ### المسافة إلى الوسيط {#distance-to-intermediate}
 
-![Intermediate destination widget](@site/static/img/widgets/intermediate_destination_widget.png)
+![أداة الوجهة الوسيطة](@site/static/img/widgets/intermediate_destination_widget.png)
 
 تعرض الأداة المسافة إلى أول نقطة وسيطة على طول الطريق المحسوب. بعد المرور بنقاط وسيطة، سيتم تحديث المساحة إلى النقطة الوسيطة التالية. إذا لم تكن هناك نقاط وسيطة، فإن الأداة لا تُعرض.
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
-|  | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
-| By tapping | **One intermediate point** - move the map to the intermediate point. <br /> **Two or more intermediate points** - opens Destinations list menu. |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| تمكين  | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="map_widget_distance_to_intermediate"/>* |
+|  | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → <Translate ios="true" ids="map_widget_distance_to_intermediate"/>*|
+| بالنقر  | **نقطة وسيطة واحدة** - ينقل الخريطة إلى النقطة الوسيطة. <br /> **نقطتان وسيطتان أو أكثر** - يفتح قائمة الوجهات. |
+| النقر الطويل  | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
 ### الوقت إلى الوسيط {#time-to-intermediate}
 
@@ -232,13 +234,13 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <TabItem value="android" label="Android">  
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_android.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_android.png)  
+![أداة وقت الوصول والوقت المتبقي](@site/static/img/widgets/arrival_time_widget_android.png)  ![أداة وقت الوصول والوقت المتبقي](@site/static/img/widgets/time_to_go_widget_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_ios.png)  
+![أداة وقت الوصول والوقت المتبقي](@site/static/img/widgets/arrival_time_widget_ios.png)  ![أداة وقت الوصول والوقت المتبقي](@site/static/img/widgets/time_to_go_widget_ios.png)  
 
 </TabItem>
 
@@ -248,10 +250,10 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-| By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| تمكين  | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
+| بالنقر  | يبدل بين *وقت الوصول* و*الوقت المتبقي* والعكس. |
+| النقر الطويل  | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ### الوقت إلى الوجهة {#time-to-destination}
@@ -260,13 +262,13 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <TabItem value="android" label="Android">  
 
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![أداة وقت الوصول الوسيط والوقت](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![أداة وقت الوصول الوسيط والوقت](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
@@ -276,15 +278,15 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 | | |
 |:------------|:------------|
-| Enable |  **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_time_to_destination"/>* |
-| By tapping | Changes between *Arrival time* to *Time to go* and the reverse. |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |  
+| تمكين  |  **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="map_widget_time_to_destination"/>* |
+| بالنقر  | يبدل بين *وقت الوصول* و*الوقت المتبقي* والعكس. |
+| النقر الطويل  | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |  
 
 
 ## حظر السرعة {#speed-limit}
 
-![Speed limit widget](@site/static/img/widgets/speed_limit_widget_2.png)
+![أداة حظر السرعة](@site/static/img/widgets/speed_limit_widget_2.png)
 
 تعرض أداة *Speed Limit* حظر السرعة الحالي بناءً على بيانات الخريطة لطريقك.
 
@@ -296,16 +298,16 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 | |  |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choose a panel → Add widget → <Translate android="true" ids="map_widget_max_speed"/>* |
-|  |  **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choose a panel → Add widget → <Translate ios="true" ids="map_widget_max_speed"/>* |
-| By tapping | No changes |
-| Long tap | Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) |
+| تمكين  | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → اختر لوحة → أضف أداة → <Translate android="true" ids="map_widget_max_speed"/>* |
+|  |  **آي أو إس:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → اختر لوحة → أضف أداة → <Translate ios="true" ids="map_widget_max_speed"/>* |
+| بالنقر  | لا تغييرات |
+| النقر الطويل  | يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) |
 
 
 ## إرشاد الطريق {#route-guidance}
 
 
-![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
+![أداة المنعطفات التالية](@site/static/img/widgets/next_turns_widget.png)
 
 يوفر إرشاد طريق في الوقت الفعلي، بما في ذلك المسافة إلى المنعطف التالي، واسم الطريق، واسم الشارع الحالي، ومعلومات المسار. الأدوات نشطة أثناء التنقل.
 
@@ -318,15 +320,15 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 | | |
 |:------------|:------------|
-| Enable      | **Android:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*  |
-|      | **iOS:** *Menu → Configure screen →  Left / Right / Top / Bottom panel → Route Guidance → Add widget → Lane, Next turn, Second next turn*   |
-| By tapping  | **Next turn**: If [voice prompts](../navigation/guidance/voice-navigation.md) are enabled, the next maneuver and the distance to it are pronounced. <br/> **Lanes**: No changes. |
-| Long tap    | **Next turn**: Opens the [Context menu of the widget](../widgets/configure-screen.md#widget-context-menu) <br/> **Lanes**: No changes. |
+| تمكين       | **أندرويد:** *القائمة → تهيئة الشاشة → لوحة يسرى / يمنى / علوية / سفلية → إرشاد الطريق → أضف أداة → المسارات، المنعطف التالي، المنعطف التالي الثاني*  |
+|      | **آي أو إس:** *القائمة → تهيئة الشاشة → لوحة يسرى / يمنى / علوية / سفلية → إرشاد الطريق → أضف أداة → المسارات، المنعطف التالي، المنعطف التالي الثاني*   |
+| بالنقر   | **المنعطف التالي**: إذا كانت [المطالبات الصوتية](../navigation/guidance/voice-navigation.md) مفعّلة، يتم نطق المناورة التالية والمسافة إليها. <br/> **المسارات**: لا تغييرات. |
+| النقر الطويل     | **المنعطف التالي**: يفتح [قائمة السياق للأداة](../widgets/configure-screen.md#widget-context-menu) <br/> **المسارات**: لا تغييرات. |
 
 
 ### المسارات {#lanes}
 
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+![أدوات المسارات](@site/static/img/widgets/lanes_widget.png)
 
 تبرز أداة **Lanes** المسار الحالي عندما يكون التنقل نشطًا وتعرض تخطيط المسار للطريق الفعلي عندما يكون التنقل سلبيًا. كما يُعرض مؤشر مسافة أيضًا أسفل رسم المسار، يمثل المسافة المتبقية حتى المناورة التي ينطبق عليها إرشاد المسار. هذه الأداة متاحة فقط لـ Top وBottom panels. يتم أخذ البيانات من [مشروع OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn). إذا لم تحدد بيانات الخريطة اتجاهًا لكل مسار، يكمل OsmAnd الاتجاهات المفقودة بناءً على تخطيط التقاطع.
 
@@ -339,13 +341,13 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 <TabItem value="android" label="Android">  
 
-![route guidence widget](@site/static/img/widgets/route_guidence_widgets_andr.png)
+![أداة إرشاد الطريق](@site/static/img/widgets/route_guidence_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Approach POIs/Favorites ios](@site/static/img/widgets/route_guidence_widgets_ios.png)
+![اقتراب نقاط الاهتمام/المفضلات iOS](@site/static/img/widgets/route_guidence_widgets_ios.png)
 
 </TabItem>
 
@@ -369,11 +371,11 @@ Navigational widgets are mostly used with **active** or **passive** navigation w
 
 يعرض هذا الجدول الوقت التقريبي حتى تفعيل التلميحات والإشارة اللونية المقابلة للأسهم لأداء المناورة. لمزيد من المعلومات، راجع [الوثائق الفنية](../../technical/algorithms/voice-prompt-triggering.md#trigger-table) أو في المقالة [Voice prompts](../navigation/guidance/voice-navigation.md).
 
-| Color     | ~ Trigger Time | Distance   | Prompt type     |
+| اللون     | الوقت التقريبي للتفعيل | المسافة   | نوع التلميح     |
 | :-------- | :------------- | :--------- | :-------------- |
-| 🟢 Green  | 5 seconds      | Close by   | Turn now        |
-| 🟡 Yellow | 20 seconds     | Approaching| Turn in `x` m   |
-| ⚪ Grey   | > 100 seconds  | Distant    | Prepare to turn |
+| 🟢 أخضر  | ٥ ثوانٍ      | قريب   | انعطف الآن        |
+| 🟡 أصفر | ٢٠ ثانية     | اقتراب| انعطف بعد `x` م   |
+| ⚪ رمادي   | > ١٠٠ ثانية  | بعيد    | استعد للانعطاف |
 
 ينطبق نفس معنى اللون على أداة Lanes. تُعرض أداة Lanes وفقًا لإعدادات وقت الاقتراب، ولألوان المسارات تتبع مرحلة الإرشاد الصوتي.
 
@@ -391,7 +393,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 ## أداة التنبيه {#alert-widget}
 
-![Alert information widgets](@site/static/img/widgets/alert_information_widget.png)
+![أدوات معلومات التنبيه](@site/static/img/widgets/alert_information_widget.png)
 
 تجمع أداة **Alert** بين عدة أنواع من التنبيهات التي تُعرض في الزاوية اليسرى السفلية أثناء تنقلك.  
 
@@ -403,7 +405,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 | | |
 |:------------|:------------|
-| Enable | **<Translate android="true" ids="android_button_seq"/>** *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>* |
+| تمكين  | **<Translate android="true" ids="android_button_seq"/>** *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,screen_alerts"/>* |
 |  | **<Translate ios="true" ids="ios_button_seq"/>** *<Translate ios="true" ids="shared_string_menu,shared_string_settings,configure_profile,routing_settings_2,screen_alerts"/>* |
 
 
@@ -413,17 +415,17 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 | | | |
 |:------------|:------------|:------------|
-| Name | Description | Icon |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | [Traffic calming](https://en.wikipedia.org/wiki/Traffic_calming) uses physical design and other measures to improve safety for motorists, pedestrians and cyclists. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
-| *<Translate android="true" ids="show_pedestrian_warnings"/>* | [A pedestrian crossing](https://en.wikipedia.org/wiki/Pedestrian_crossing) (primarily British English) or crosswalk is a place designated for pedestrians to cross a road, street, or avenue. OsmAnd shows the alert of the uncontrolled pedestrian crossing.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In most countries, the [Road speed limits](https://en.wikipedia.org/wiki/Speed_limit) set the legal maximum, middle, or minimum speed at which road vehicles may travel on a given stretch of road. In OsmAnd, the alert is shown when you exceed the speed. You can set parameters of speed exceeding (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | A tunnel is an underground passageway, passing under a mountain, river, or a congested urban area. In OsmAnd, the alert *Tunnels* have information about tunnel length. If you are in a tunnel, it shows the distance to the end of the tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | [Traffic enforcement cameras](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) and [speed cameras](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) record traffic offenses, including speeding, running red lights, and other types of illegal behavior. <br />**NOTE:** Speed camera alerts are prohibited or illegal in some countries. To completely [remove speed cameras](../personal/global-settings.md#legal) from OsmAnd, go to main *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
-| *<Translate android="true" ids="traffic_warning_stop"/>* | [A stop sign](https://en.wikipedia.org/wiki/Stop_sign) is a traffic sign designed to notify drivers that they must come to a complete stop and make sure the intersection is safely clear of vehicles and pedestrians before continuing past the sign.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
-| *<Translate android="true" ids="show_railway_warnings"/>* |This warning means that there is a [railway crossing](https://en.wikipedia.org/wiki/Crossbuck) ahead. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* |This warning indicates that border control is ahead.| ![Alert border control widgets](@site/static/img/widgets/warnings_border_control.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Hazard symbols or warning symbols](https://en.wikipedia.org/wiki/Hazard_symbol) are recognizable symbols designed to warn about hazardous materials, locations, or objects, including electric currents, poisons, and radioactivity. | ![Alert warnings_hazard widgets](@site/static/img/widgets/warnings_hazard.png)  ![Alert warnings_hazard_us widgets](@site/static/img/widgets/warnings_hazard_us.png) |
-| *<Translate android="true" ids="traffic_warning_payment"/>* | This warning indicates that a toll booth for a toll road is ahead.   ![Alert toll_booth widgets](@site/static/img/widgets/ex_toll_booth.png) | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) |
+| الاسم | الوصف | الأيقونة |
+| *<Translate android="true" ids="show_traffic_warnings"/>* | [تهدئة حركة المرور](https://en.wikipedia.org/wiki/Traffic_calming) تستخدم التصميم المادي وإجراءات أخرى لتحسين السلامة لسائقي المركبات والمشاة وراكبي الدراجات. | ![تنبيه تهدئة حركة المرور](@site/static/img/widgets/warnings_traffic_calming.png)  ![تنبيه تهدئة حركة المرور الولايات المتحدة](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_pedestrian_warnings"/>* | [معبر المشاة](https://en.wikipedia.org/wiki/Pedestrian_crossing) (crosswalk) هو مكان مخصص لعبور المشاة طريقًا أو شارعًا أو جادة. يعرض OsmAnd تنبيه معبر المشاة غير المنظم.  | ![تنبيه تهدئة حركة المرور](@site/static/img/widgets/warnings_pedestrian.png)  ![تنبيه تهدئة حركة المرور الولايات المتحدة](@site/static/img/widgets/warnings_pedestrian_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | في معظم البلدان، تحدد [حدود سرعة الطرق](https://en.wikipedia.org/wiki/Speed_limit) السرعة القصوى أو المتوسطة أو الدنيا القانونية التي يمكن للمركبات السير بها على امتداد معين من الطريق. في OsmAnd، يُعرض التنبيه عند تجاوز السرعة. يمكنك ضبط معاملات تجاوز السرعة (٠، ٥، ١٠.. كم/س). ![تنبيه مثال تجاوز السرعة](@site/static/img/widgets/ex_warning_speed.png)  | ![تنبيه حظر السرعة](@site/static/img/widgets/warnings_limit.png) ![تنبيه حظر السرعة كندا](@site/static/img/widgets/warnings_speed_limit_ca.png) ![تنبيه حظر السرعة الولايات المتحدة](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_tunnels"/>* | النفق هو ممر تحت الأرض، يمر تحت جبل أو نهر أو منطقة حضرية مزدحمة. في OsmAnd، يحتوي تنبيه *الأنفاق* على معلومات عن طول النفق. إذا كنت داخل نفق، فإنه يعرض المسافة إلى نهاية النفق.   ![تنبيه مثال نفق](@site/static/img/widgets/ex_warning_tunnel.png)  | ![تنبيه نفق](@site/static/img/widgets/warnings_tunnel.png)  ![تنبيه نفق الولايات المتحدة](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_cameras"/>* | [كاميرات إنفاذ المرور](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) و[كاميرات السرعة](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) تسجل المخالفات المرورية، بما في ذلك تجاوز السرعة وقطع الإشارة الحمراء وأنواع أخرى من السلوك المخالف للقانون. <br />**ملاحظة:** تنبيهات كاميرات السرعة محظورة أو غير قانونية في بعض البلدان. لإزالة [كاميرات السرعة](../personal/global-settings.md#legal) بالكامل من OsmAnd، اذهب إلى *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![تنبيه تهدئة حركة المرور](@site/static/img/widgets/warnings_speed_camera.png)   |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | [إشارة التوقف](https://en.wikipedia.org/wiki/Stop_sign) هي إشارة مرورية مصممة لإبلاغ السائقين بوجوب التوقف التام والتأكد من خلو التقاطع بأمان من المركبات والمشاة قبل متابعة السير بعد الإشارة.  | ![تنبيه إشارة التوقف](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* | يعني هذا التحذير وجود [تقاطع سكة حديد](https://en.wikipedia.org/wiki/Crossbuck) في الأمام. | ![تنبيه تقاطع سكة حديد](@site/static/img/widgets/warnings_railways.png) ![تنبيه تقاطع سكة حديد كندا](@site/static/img/widgets/warnings_railways_ca.png)  ![تنبيه تقاطع سكة حديد الولايات المتحدة](@site/static/img/widgets/warnings_railways_us.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | يشير هذا التحذير إلى وجود نقطة مراقبة حدودية في الأمام. | ![تنبيه نقطة مراقبة حدودية](@site/static/img/widgets/warnings_border_control.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | [رموز الخطر أو رموز التحذير](https://en.wikipedia.org/wiki/Hazard_symbol) هي رموز معروفة مصممة للتحذير من المواد أو الأماكن أو الأجسام الخطرة، بما في ذلك التيارات الكهربائية والسموم والإشعاع. | ![تنبيه رمز الخطر](@site/static/img/widgets/warnings_hazard.png)  ![تنبيه رمز الخطر الولايات المتحدة](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_payment"/>* | يشير هذا التحذير إلى وجود كشك رسوم لطريق مدفوع في الأمام.   ![تنبيه كشك الرسوم](@site/static/img/widgets/ex_toll_booth.png) | ![تنبيه حظر السرعة](@site/static/img/widgets/warnings_limit.png) |
 
 
 ## اسم الشارع {#street-name}
@@ -437,13 +439,13 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 <TabItem value="android" label="Android">  
 
- ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
+ ![اسم الشارع بدون المنعطف التالي](@site/static/img/widgets/without_next_turn_and.png) ![اسم الشارع مع المنعطف التالي](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
+ ![اسم الشارع بدون المنعطف التالي iOS](@site/static/img/widgets/without_next_turn_ios.png) ![اسم الشارع مع المنعطف التالي iOS](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
@@ -452,10 +454,10 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="map_widget_top_text"/>* |
-|   | **iOS:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Add widget → <Translate android="true" ids="map_widget_top_text"/>* |
+| تمكين  | **أندرويد:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → أضف أداة → <Translate android="true" ids="map_widget_top_text"/>* |
+|   | **آي أو إس:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → أضف أداة → <Translate android="true" ids="map_widget_top_text"/>* |
 | Settings | اختر لعرض **اسم الشارع الحالي** دائمًا أو عرض **اسم الشارع التالي** عند الاقتراب من المناورة |
-| By tapping | Opens a context menu with Settings (toggle Next turn information ON/OFF) and Delete |
+| بالنقر  | يفتح قائمة سياق تحتوي على الإعدادات (تشغيل/إيقاف معلومات المنعطف التالي) والحذف |
 
 
 ## نقاط الاهتمام / المفضلات الاقتراب {#approach-pois--favorites}
@@ -464,13 +466,13 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 <TabItem value="android" label="Android">  
 
-![Approach POIs/Favorites android](@site/static/img/widgets/street_name_poi_widget_android.png)
+![اقتراب نقاط الاهتمام/المفضلات أندرويد](@site/static/img/widgets/street_name_poi_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Approach POIs/Favorites ios](@site/static/img/widgets/street_name_poi_widget_ios.png)
+![اقتراب نقاط الاهتمام/المفضلات iOS](@site/static/img/widgets/street_name_poi_widget_ios.png)
 
 </TabItem>
 
@@ -487,17 +489,17 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 | | |
 |:------------|:------------|
-| Enable | **Android:** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
-|   | **iOS:** *<Translate ios="true" ids="shared_string_menu"/> → Start navigation → pencil button* |
-| By tapping | No changes |
+| تمكين  | **أندرويد:** *<Translate android="true" ids="shared_string_menu,get_directions,shared_string_settings,show_along_the_route,points_of_interests"/>, <Translate android="true" ids="shared_string_my_favorites"/>, <Translate android="true" ids="way_alarms"/>* |
+|   | **آي أو إس:** *<Translate ios="true" ids="shared_string_menu"/> → ابدأ التنقل → زر القلم* |
+| بالنقر  | لا تغييرات |
 
 
 ## المقالات ذات الصلة {#related-articles}
 
-- [Configure Screen](./configure-screen.md)
-- [Map buttons](./map-buttons.md)
-- [Informational widgets](./info-widgets.md)
-- [Navigational widgets](./nav-widgets.md)
-- [Radius-ruler and Ruler](./radius-ruler.md)
-- [Marker widgets](./markers.md)
-- [Quick Action](./quick-action.md)
+- [تكوين الشاشة](./configure-screen.md)
+- [أزرار الخريطة](./map-buttons.md)
+- [الأدوات المعلوماتية](./info-widgets.md)
+- [أدوات التنقل](./nav-widgets.md)
+- [مسطرة النصف القطر والمسطرة](./radius-ruler.md)
+- [أدوات العلامات](./markers.md)
+- [الإجراء السريع](./quick-action.md)

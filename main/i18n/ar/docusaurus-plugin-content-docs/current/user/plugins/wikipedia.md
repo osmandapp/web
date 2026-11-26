@@ -1,5 +1,5 @@
 ---
-source-hash: 3a1b19203e3a6ba30e182f8b8c57f3ac468e000ae98042c571c03b94e20ce825
+source-hash: 15d49bb0a51bde6a96859143a096fc9ae43659fa8e1fada3dc9753b8a8f92c70
 sidebar_position: 20
 title:  ويكيبيديا
 ---
@@ -122,25 +122,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 - في إصدار **Android**، يمكنك فتح [البحث](../search/index.md) عن طريق النقر على *أيقونة البحث* في الزاوية العلوية اليسرى من الشاشة و/أو النقر على *خيار البحث* في القائمة.
 - في إصدار **iOS**، لفتح [البحث](../search/index.md)، توجد أيقونة البحث في الزاوية العلوية اليسرى من الشاشة.
 
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
--->
-
 - للبحث حسب [فئة](../search/search-poi.md#poi-search-by-categories) ويكيبيديا، حدد: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -202,7 +183,12 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## إعدادات ويكيبيديا {#wikipedia-settings}
 
-يمكنك [تعيين اللغة (اللغات)](#set-preferred-language) التي تفضل قراءة [المقالات](#wikipedia-article) بها وكذلك تكوين [خيارات تنزيل الصور](#download-images) لكل [ملف شخصي](../personal/profiles.md).
+يمكنك [تعيين اللغة (اللغات)](#set-preferred-language) التي تفضل قراءة [المقالات](#wikipedia-article) بها لكل [ملف شخصي](../personal/profiles.md)، وتكوين [خيارات تنزيل الصور](#download-images)، وإدارة [ذاكرة التخزين المؤقت للصور](#image-cache). في iOS، يتم تعيين خيارات تنزيل الصور لكل ملف شخصي. في Android، تنطبق على جميع الملفات الشخصية.
+
+يتم جمع جميع إعدادات ويكيبيديا في إعدادات إضافة ويكيبيديا:
+
+- **Android**. اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings"/>*. استخدم زر الملف الشخصي في أعلى الشاشة لتحديد الملف الشخصي الذي تريد تغيير إعداداته.
+- **iOS**. اذهب إلى: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 ### تعيين اللغة المفضلة {#set-preferred-language}
 
@@ -230,10 +216,11 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 </Tabs>
 
 :::note
-في إصدار **iOS**، يمكنك أيضًا تعيين اللغة المفضلة لمقالات ويكيبيديا باستخدام:  
+يمكنك أيضًا تعيين اللغة المفضلة لمقالات ويكيبيديا في إعدادات إضافة ويكيبيديا:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,shared_string_languages"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 :::
 
@@ -281,12 +268,38 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 </Tabs>
 
-في إصدار **iOS** من التطبيق، يمكنك أيضًا الوصول إلى خيارات تنزيل الصور باستخدام *إعدادات إضافة ويكيبيديا*:
+يمكنك أيضًا الوصول إلى خيارات تنزيل الصور في *إعدادات إضافة ويكيبيديا*:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,download_images"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
 ![تبديل الصور](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+
+### ذاكرة التخزين المؤقت للصور {#image-cache}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![ذاكرة التخزين المؤقت للصور على Android](@site/static/img/plugins/wikipedia/image_cache_android.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![ذاكرة التخزين المؤقت للصور على iOS](@site/static/img/plugins/wikipedia/image_cache_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+تعرض إعدادات إضافة ويكيبيديا حجم الصور المحفوظة على جهازك. ذاكرة التخزين المؤقت للصور مشتركة مع أدلة السفر، لذا فإن مسحها يؤدي أيضًا إلى حذف الصور المحفوظة لأدلة السفر.
+
+لحذف الصور المحفوظة، اذهب إلى:
+
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,images_cache"/>* → *<Translate android="true" ids="shared_string_clear"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics,remove_cache"/>*
 
 
 ## مقالات ذات صلة {#related-articles}

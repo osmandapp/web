@@ -1,5 +1,5 @@
 ---
-source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
+source-hash: 205f05e0d42fa5f92caada9c958cf5598bdde7fa74f9cdb424367495ffe5d104
 sidebar_position: 11
 title:  تطوير OsmAnd
 ---
@@ -68,7 +68,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ### استكشاف الأخطاء وإصلاحها {#troubleshooting}
 
 - **محاكاة موقعك** (*أندرويد* / *iOS*). [محاكاة](#gpx-track-simulation) الموقع والحركة باستخدام مسار GPX.
-- **وضع توفير البطارية** (*أندرويد* / *iOS*). يقلل هذا الإعداد من [معدل تحديث الشاشة](#map-rendering-fps-widget) بمقدار ٢٠ إطارًا في الثانية للمساعدة في توفير طاقة البطارية أثناء استخدام التطبيقات.
+- **وضع توفير البطارية** (*أندرويد* / *iOS*). يقلل هذا الإعداد من [معدل تحديث الشاشة](#map-rendering-fps-widget) بمقدار ٢٠ إطارًا في الثانية للمساعدة في توفير طاقة البطارية أثناء استخدام التطبيقات. كما يعطّل الظهور والاختفاء التدريجي السلس لأيقونات الخريطة وتسمياتها.
 - **استخدام أيقونات موقع ثلاثية الأبعاد** (*iOS*). يسمح لك بتحديد أيقونة ثلاثية الأبعاد لـ[أيقونة موقعي](../personal/profiles.md#my-location-appearance).
 - **محاكاة بيانات OBD** (*أندرويد* / *iOS*). يسمح بمحاكاة استخدام [ماسح OBD](./vehicle-metrics.md).
 - **<Translate android="true" ids="trace_rendering"/>** (*أندرويد* / *iOS*). يعرض أداء العرض والملاحة.

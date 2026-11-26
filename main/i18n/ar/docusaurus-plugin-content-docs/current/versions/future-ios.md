@@ -1,5 +1,5 @@
 ---
-source-hash: 229c58068a74b06d3fc63b8f92df8a4ca008fa25b9819b9b8d8243b8790942ed
+source-hash: 767578704635d01030c776c1a29804d758e70785b56523fd818befdf7a58df10
 sidebar_position: 5
 ---
 
@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.4 {#ios-54}
+# iOS 5.5 {#ios-55}
 
 ## انضم إلى الإصدار التجريبي {#join-beta}
 
@@ -28,40 +28,29 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## ما الجديد {#whats-new}
 
-- تم تحديث البحث مع تبويب **[استكشاف](https://osmand.net/docs/user/map/popular_places#explore-in-search)** جديد يعرض الأماكن الشائعة القريبة.
-- إضافة **[إضافة الفلك](https://osmand.net/docs/user/plugins/astronomy)** التجريبية الجديدة مع طبقة فلكية تعرض مسارات الشمس والكواكب والنجوم.
-- إضافة **[محرر لوحة الألوان](https://osmand.net/docs/user/map/tracks/appearance#color-palette-editor)** لإنشاء وتخصيص أنظمة الألوان للمسارات والتضاريس.
-- تنظيم أذكى للمسارات باستخدام **[المجلدات الذكية](https://osmand.net/docs/user/personal/tracks/smart-folder)** وإحصائيات ملخص أوضح.
-- تخطيط أكثر مرونة **[للويدجتات وأزرار الخريطة](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**، خاصة في الوضع الأفقي.
-- تحسين **[تخطيط المسار](https://osmand.net/docs/user/plan-route/create-route)** مع رسم بياني للارتفاع وحساب الارتفاع دون اتصال ومعاملات المسار.
-- إضافة مقاطع الصعود والهبوط والمسطحة إلى **[تحليل المسار](https://osmand.net/docs/user/map/tracks/track-context-menu#analyze-by-intervals)**.
-
-<!--
-- Last Uphill / Last Downhill mode for **[Trip recording widgets](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, with switching between total and last ascent/descent.
-- Updated **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** with modes for total distance, last uphill/downhill distance.
-- **[Max Speed widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing maximum speed for the whole trip or for the most recent uphill/downhill section.
-- **[Average Slope widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing the average slope of the latest ascent or descent.
-- *Show track on map* quick action added to the Trip recording widget group.
-- Improvements in route selection and altitude graph integration under the updated rendering scheme.
-- Elevation graph widget for navigation, displaying a compact profile along routes or GPX tracks.
-- **[Popular places](https://osmand.net/docs/user/map/popular_places/)** layer updated with POI source selection and optional image previews on the map.
-- New Explore section in Search with “Popular places nearby” and improved offline/no-data states.
-- Enhanced POI search results with consistent city display, refined layout, and optional thumbnails.
-- Default appearance settings for track folders, allowing new tracks to inherit a unified folder style.
--->
-
+- **[CarPlay](https://osmand.net/docs/user/navigation/car-play)** مجاني لجميع المستخدمين ويحصل على [إعدادات](https://osmand.net/docs/user/navigation/car-play#settings) جديدة لاتجاه الخريطة ومعدل الإطارات، مع إمكانية الوصول إلى الصفحة الرئيسية بنقرة واحدة من قائمة التنقل.
+- تتضمن **[النسخة المجانية](https://osmand.net/docs/user/purchases/ios#free-and-paid-features)** جميع خرائط منطقة واحدة.
+- **[تنسيقات إحداثيات](https://osmand.net/docs/user/search/search-coordinates#customize-coordinate-format)** جديدة، بما في ذلك أنظمة EPSG ومحدد Maidenhead وشبكة Swiss Grid، مع تنسيق أساسي وقائمة بالتنسيقات المفضلة.
+- **[تخطيطات أدوات](https://osmand.net/docs/user/widgets/configure-screen#single-and-separate-layouts)** منفصلة للوضع الرأسي والأفقي، بالإضافة إلى لوحات علوية وسفلية **[عريضة أو مدمجة](https://osmand.net/docs/user/widgets/configure-screen#panels-layout)**.
+- **[مظهر لوحة الأدوات](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance)** القابل للتخصيص مع حجم الأداة والرموز وألوان النص والخلفية.
+- إعداد **[إبقاء الشاشة قيد التشغيل](https://osmand.net/docs/user/personal/profiles#appearance)** الجديد لكل ملف تعريف: اتباع مهلة النظام، أو إبقاء الشاشة قيد التشغيل أثناء الملاحة فقط، أو إبقاؤها قيد التشغيل دائمًا.
+- يمكن لتسميات **[خطوط الكنتور](https://osmand.net/docs/user/plugins/topography#contour-lines)** أن تتجه نحو الأعلى، كما في الخرائط الطبوغرافية الورقية.
+- إعدادات مظهر كاملة عند **[تغيير عدة مفضلات](https://osmand.net/docs/user/personal/favorites#bulk-edit--delete)** دفعة واحدة.
+- تظهر **[الوجهات الوسيطة](https://osmand.net/docs/user/navigation/setup/route-details#turn-by-turn-information)** في تفاصيل المسار مع رقمها واسمها والمسافة والوقت من نقطة البداية.
 
 ## إصلاحات الأخطاء {#bug-fixes}
 
-- إصلاح عدم مزامنة [المجلدات الذكية](https://github.com/osmandapp/OsmAnd-iOS/issues/5358) مع OsmAnd Cloud أو ظهورها في تصدير الإعدادات.
-- تحديث [قائمة سياق ويكيبيديا](https://github.com/osmandapp/OsmAnd-Issues/issues/3215) بتصميم جديد وإضافة صور عبر الإنترنت.
-- إصلاح فقدان [أسماء نقاط الاهتمام](https://github.com/osmandapp/OsmAnd-iOS/issues/5253) في قائمة «ما هنا».
-- إصلاح فتح [أدلة السفر](https://github.com/osmandapp/OsmAnd-Issues/issues/3212) من نتائج البحث لعرض المقالة مباشرة.
-- تعديل موضع قسم [الصور عبر الإنترنت](https://github.com/osmandapp/OsmAnd-iOS/issues/5336) في قائمة سياق المنطقة.
+- إصلاح [مشكلة](https://github.com/osmandapp/OsmAnd-iOS/issues/5696) حيث كان إفراغ سلة محذوفات OsmAnd Cloud يستعيد الخرائط والمفضلات المحذوفة.
+- تصحيح [انخفاض الارتفاع إلى 0](https://github.com/osmandapp/OsmAnd-iOS/issues/5526) في المسارات المسجلة في الخلفية.
+- حل [تعارضات مزامنة OsmAnd Cloud](https://github.com/osmandapp/OsmAnd-iOS/issues/5463) بعد تحديث الخرائط على عدة أجهزة.
+- منع ظهور [المفضلات من المجلدات المخفية](https://github.com/osmandapp/OsmAnd-iOS/issues/5558) في نتائج البحث.
+- إصلاح [إغلاق تخطيط المسار](https://github.com/osmandapp/OsmAnd-iOS/issues/5947) عند النقر على مسار على الخريطة.
+- تصحيح [وقت السفر للمشاة](https://github.com/osmandapp/OsmAnd-iOS/issues/5787) المعروض لمسارات السيارة بعد الإرفاق بالطرق.
+- إصلاح [عدم استجابة نقاط الطريق المضافة إلى المسار المسجل](https://github.com/osmandapp/OsmAnd-iOS/issues/5893) للنقرات.
+- إيقاف [وميض رمز نقطة الطريق](https://github.com/osmandapp/OsmAnd-iOS/issues/2764) أثناء تسجيل المسار.
 
 <!--
-- Faster opening of context menus when tapping POIs, Favorites, tracks and buildings.
-- Correct handling of relation-based POIs on multipolygons.
-- Fixed “null” appearing instead of a city name in POI search results and improved night-mode background consistency.
-- Restored tappable behaviour for fitness, running and canoe routes with shields.
+- Fixed map updates for mappers with Devanagari and Eastern Arabic numerals.
+- Fixed the map zooming out when you add a Quick Action while moving.
+- Fixed KML import creating an empty track.
 -->

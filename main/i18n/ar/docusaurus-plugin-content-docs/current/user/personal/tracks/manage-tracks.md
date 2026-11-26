@@ -1,5 +1,5 @@
 ---
-source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
+source-hash: 0a04e7c5b81da2f4a24b1d70406494efb02bf28fb32a1d087fb5772ae29bca04
 sidebar_position: 2
 title:  إدارة المسارات
 ---
@@ -74,6 +74,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
+تُعرض جميع المسارات التي تم تسجيلها أو إنشاؤها أو استيرادها تلقائيًا في مجلد [أماكني](../../personal/myplaces.md) في تبويب *المسارات*. وهي منظمة حسب المجلد أو معروضة في قائمة أسفلها.
+
+يعرض كل مسار في القائمة اسم المجلد الأصلي في السطر الثاني مفصولاً بـ `|` (على سبيل المثال، `Hiking | Tracks`)، مما يسهل تحديد مكان تخزين المسار. ينطبق هذا في [البحث](#search) و[المجلدات الذكية](../../personal/tracks/smart-folder.md) و[تكوين الخريطة ← المسارات](../../map/tracks/index.md#configure-map).
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -82,13 +86,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![أماكني مع المسارات في iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
-</TabItem>
-
-</Tabs>
-
 تُعرض جميع المسارات التي تم تسجيلها أو إنشاؤها أو استيرادها تلقائيًا في مجلد [أماكني](../../personal/myplaces.md) في تبويب *المسارات*. وهي منظمة حسب المجلد أو معروضة في قائمة أسفلها.
 
 يعرض كل مسار في القائمة اسم المجلد الأصلي في السطر الثاني مفصولاً بـ `|` (على سبيل المثال، `Hiking | Tracks`)، مما يسهل تحديد مكان تخزين المسار. ينطبق هذا في [البحث](#search) و[المجلدات الذكية](../../personal/tracks/smart-folder.md) و[تكوين الخريطة ← المسارات](../../map/tracks/index.md#configure-map).
+
+**ملاحظة:** أثناء قيام OsmAnd بحساب إحصائيات المسارات، على سبيل المثال بعد إضافة العديد من المسارات دفعة واحدة، يظهر الصف *<Translate ios="true" ids="tracks_stats_are_being_calculated"/>* مع حلقة التقدم في أعلى القائمة. تُدرج جميع المسارات فورًا، وتظهر إحصائياتها مع تقدم الحساب. يمكنك فتح أي مسار أو إعادة تسميته أو نقله أو مشاركته أو حذفه أثناء الحساب. يختفي الصف عند حساب جميع الإحصائيات.
+
+</TabItem>
+
+</Tabs>
 
 
 ### قائمة المسار {#track-menu}
@@ -217,13 +223,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="Android">
 
-![وظيفة فرز المسارات في أماكني بأندرويد](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![وظيفة فرز المسارات في أماكني بأندرويد](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.webp)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![وظيفة فرز المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
+![وظيفة فرز المسارات في أماكني بـ iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_3_ios.webp)
 
 </TabItem>
 
@@ -233,7 +239,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ***خيارات الفرز:***
 
-- **الأقرب** — يعرض المسارات الأقرب إلى موقعك الحالي.
+- **الأقرب إلى الموقع الحالي** — يعرض المسارات الأقرب إلى موقعك الحالي.
+- **الأقرب إلى مركز الخريطة** — يعرض المسارات الأقرب إلى مركز الخريطة الحالي. يعرض كل مسار المسافة وسهمًا اتجاهيًا برتقاليًا يشير من مركز الخريطة.
 - **آخر تعديل** — يعرض المسارات مرتبة حسب تاريخ آخر تعديل لها.
 - **الاسم: أ - ي** — يرتب المسارات أبجديًا من أ إلى ي.
 - **الاسم: ي - أ** — يرتب المسارات أبجديًا من ي إلى أ.
@@ -311,7 +318,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *تبويب <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
-![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/dashboard_andr.png)
+![أماكني مع المسارات في أندرويد](@site/static/img/personal/tracks/dashboard_andr.webp)
 
 </TabItem>
 
@@ -325,14 +332,14 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-في أسفل القائمة في تبويب *المسارات*، وأسفل قائمة المسارات **في كل مجلد من مجلداتك**، يوجد قسم معلومات يتيح لك عرض الإحصائيات الموجزة الإجمالية للمسارات في المجلد المحدد. يتم عرض جميع القيم بـ [الوحدات](../../personal/profiles.md#units--formats) التي حددتها.
+في أسفل القائمة في تبويب *المسارات*، وأسفل قائمة المسارات في مجلد، يوجد قسم معلومات يتيح لك عرض الإحصائيات الموجزة الإجمالية للمسارات في المجلد المحدد. على أندرويد، يظهر هذا القسم فقط عندما يحتوي المجلد أو مجلداته الفرعية على مسار واحد على الأقل. يتم عرض جميع القيم بـ [الوحدات](../../personal/profiles.md#units--formats) التي حددتها.
 
 - *عدد **المسارات** في المجلد* — يعرض عدد المسارات الموجودة في المجلد المحدد.
 - *المجموع الكلي لـ **المسافات*** — يتم عرض الطول الإجمالي لجميع المسارات في المجلد المحدد، مقاسًا بالوحدات التي حددتها.
 - *مجموع **الصعود*** — تشير البيانات إلى إجمالي الارتفاع الرأسي عبر جميع المسارات في المجلد المحدد.
 - *مجموع **النزول*** — هذا المعامل هو مجموع الانخفاضات الرأسية على جميع المسارات في المجلد المحدد.
 - *مجموع وقت **المدة*** — يعرض هذا إجمالي الوقت المستغرق لإكمال جميع المسارات في المجلد المحدد.
-- *إجمالي **حجم** الملفات التي تم تنزيلها بالميجابايت* — يوضح إجمالي حجم الملفات التي تم تنزيلها بالميجابايت مقدار المساحة التي تشغلها جميع المسارات في المجلد المحدد على جهازك.
+- *إجمالي* **الحجم** — إجمالي حجم جميع ملفات المسارات في المجلد المحدد، مما يوضح مقدار المساحة التي تشغلها على جهازك.
 
 
 ### إجراءات المجلد {#folder-actions}

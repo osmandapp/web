@@ -1,5 +1,5 @@
 ---
-source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
+source-hash: 2386d7bbbae5da7a0450b15924c450032e65b1488692771b1fc0b9200e01ffdc
 sidebar_position: 1
 title: تهيئة الشاشة
 ---
@@ -26,7 +26,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تنظيم الأدوات في لوحات (علوية، سفلية، يسرى، يمنى، وسطى).
 - إنشاء **صفحات** متعددة داخل اللوحات الجانبية، واختيار حجم الأدوات.
 - اختيار ارتفاع الصف وتشغيل/إيقاف أيقونات الأدوات.
-- على أندرويد، تخصيص [مظهر لوحة الأداة](#widget-panel-appearance).
+- تخصيص [مظهر لوحة الأداة](#widget-panel-appearance).
 
 جميع الأدوات [تعتمد على الملف الشخصي](../personal/profiles.md) — لكل ملف شخصي تخطيطه وترتيبه ورؤيته وإعداداته الخاصة.
 
@@ -45,7 +45,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+![قائمة تهيئة الشاشة](@site/static/img/widgets/configure_screen_overview_ios.webp)  
 
 </TabItem>
 
@@ -361,11 +361,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - قم بالتبديل إلى وضع الإيقاف، في حقل *إظهار الأيقونة*.
 
 
-## مظهر لوحة الأداة (أندرويد فقط) {#widget-panel-appearance}
+## مظهر لوحة الأداة {#widget-panel-appearance}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
 ![مظهر لوحة الأداة](@site/static/img/widgets/widget_appearance.webp) ![مظهر لوحة الأداة](@site/static/img/widgets/widget_appearance_2.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_appearance"/>*
+
+![مظهر لوحة الأداة](@site/static/img/widgets/widget_appearance_ios.webp) ![مظهر لوحة الأداة](@site/static/img/widgets/widget_appearance_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 تتيح لك إعدادات المظهر تخصيص مظهر جميع الأدوات في اللوحة المحددة. لكل لوحة (*علوية*، *سفلية*، *يسرى*، *يمنى*) إعدادات مظهر خاصة بها.
 
@@ -375,13 +391,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ٣. **لون النص**. يغير لون نص الأداة الأساسي. الخيارات المتاحة: *افتراضي*، *تلقائي*، *مخصص*. عند اختيار **مخصص**، يمكنك تكوين ألوان منفصلة لوضعي **النهار** و**الليل**. تعرض معاينة مباشرة الألوان المحددة قبل تطبيقها.
 
-:::tip شراء
-ألوان الأدوات المخصصة هي [ميزة مدفوعة](../purchases/index.md).  
-:::
-
 ٤. **لون النص الثانوي**. يغير لون أسماء الأدوات ووحداتها. الخيارات المتاحة: *افتراضي*، *تلقائي*، *مخصص*.
 
 ٥. **لون الخلفية**. يغير لون خلفية الأدوات في اللوحة المحددة. الخيارات المتاحة: *افتراضي*، *شفاف*، *مخصص*.
+
+:::tip شراء
+لون الخلفية المخصص [ميزة مدفوعة](../purchases/index.md).  
+:::
 
 ٦. **المعاينة**. تعرض منطقة المعاينة كيف ستبدو الأدوات مع إعدادات المظهر المحددة حاليًا.
 
@@ -390,6 +406,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
     - انقر على قائمة ⋮ في الزاوية العلوية اليمنى.
     - اختر نسخ من.
     - اختر أحد الخيارات التالية: *ملف شخصي آخر* أو *إحدى اللوحات الأخرى*.
+
+٨. **إعادة التعيين إلى الافتراضي**. يعيد جميع إعدادات مظهر اللوحة المحددة إلى قيمها الافتراضية.
+
+    - *أندرويد*. انقر على أيقونة إعادة التعيين في الزاوية العلوية اليمنى.
+    - *iOS*. انقر على *إعادة التعيين إلى الافتراضي* في أسفل الشاشة وأكد الإجراء.
 
 
 ## تخصيص اللوحات {#panels-customization}
@@ -491,7 +512,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## تخطيط شاشة الخريطة {#map-screen-layout}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">  
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ![تخطيط شاشة الخريطة](@site/static/img/widgets/map_screen_layout_1.png) ![تخطيط شاشة الخريطة](@site/static/img/widgets/map_screen_layout_2.png)
 
@@ -499,11 +524,29 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 يمكنك فتح إعدادات تخطيط شاشة الخريطة من قائمة تهيئة الشاشة، إما مباشرة من إجراءات الشاشة أو عبر قائمة النقاط الثلاث.
 
-### التخطيطات الفردية والمنفصلة {#single-and-separate-layouts}
+</TabItem>
 
-![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_single.png) ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_separate.png)
+<TabItem value="ios" label="iOS"> 
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
+
+![تخطيط شاشة الخريطة](@site/static/img/widgets/map_screen_layout_ios.webp) ![تخطيط شاشة الخريطة](@site/static/img/widgets/map_screen_layout_ios_2.webp) 
+
+تسمح إعدادات تخطيط شاشة الخريطة لك بالتحكم في كيفية ترتيب لوحات الأدوات على شاشة الخريطة في الاتجاهين **<Translate ios="true" ids="map_orientation_portrait"/>** و**<Translate ios="true" ids="map_orientation_landscape"/>**. لاختيار كيفية مشاركة الاتجاهين لعناصر الشاشة، انقر على **⋮** واختر **<Translate ios="true" ids="screen_elements"/>**.
+
+</TabItem>
+
+</Tabs>
+
+### التخطيطات الفردية والمنفصلة / عناصر الشاشة {#single-and-separate-layouts}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
+
+![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_single.png) ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_separate.png)
 
 يدعم OsmAnd وضعين لتخطيط شاشة الخريطة:
 - **<Translate android="true" ids="single_layout"/>** – يستخدم نفس تخطيط الأدوات لجميع اتجاهات الشاشة. يتم اختيار هذا الخيار افتراضيًا.
@@ -511,7 +554,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 عند تمكين التخطيطات المنفصلة، لا تؤثر التغييرات المُجراة في اتجاه واحد على الآخر. هذا مفيد إذا كنت تريد تحسين شاشة الخريطة بشكل مختلف للاستخدام العمودي والأفقي.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate ios="true" ids="screen_elements"/>*
+
+![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_shared.webp) ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_independent.webp)
+
+يحدد إعداد **<Translate ios="true" ids="screen_elements"/>** ما إذا كان الاتجاهان **<Translate ios="true" ids="map_orientation_portrait"/>** و**<Translate ios="true" ids="map_orientation_landscape"/>** يستخدمان نفس عناصر الشاشة أو مجموعات مستقلة:
+
+- **<Translate ios="true" ids="screen_elements_shared"/>** – يستخدم الاتجاه الأفقي نفس عناصر الشاشة المستخدمة في الاتجاه العمودي. تنطبق التغييرات المُجراة في أحد الاتجاهين على كليهما. يتم اختيار هذا الخيار افتراضيًا.
+- **<Translate ios="true" ids="screen_elements_independent"/>** – للاتجاهين العمودي والأفقي مجموعتان مستقلتان من عناصر الشاشة. لا تؤثر التغييرات المُجراة في اتجاه واحد على الآخر.
+
+انقر على **✓** لتطبيق الخيار المحدد.
+
+عند اختيار **<Translate ios="true" ids="screen_elements_independent"/>**، تتم تهيئة لوحات الأدوات ومظهر لوحات الأدوات بشكل منفصل لكل اتجاه.
+
+</TabItem>
+
+</Tabs>
+
+
 ### علامتي تبويب العمودي والأفقي {#portrait-and-landscape-tabs}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
 
 ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_tabs.png)
 
@@ -525,7 +594,39 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_portrait.png) ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_landscape.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_landscape.webp)
+
+تتوفر علامتا التبويب **<Translate ios="true" ids="map_orientation_portrait"/>** و**<Translate ios="true" ids="map_orientation_landscape"/>** دائمًا في أعلى قائمة **<Translate ios="true" ids="layer_map_appearance"/>**. تعرض كل علامة تبويب إعدادات اتجاه الشاشة المقابل. عند ضبط **<Translate ios="true" ids="screen_elements"/>** على **<Translate ios="true" ids="screen_elements_independent"/>**، تفتح القائمة على علامة تبويب اتجاه الجهاز الحالي. وفي الحالات الأخرى، تفتح على علامة التبويب العمودي.
+
+عند ضبط **<Translate ios="true" ids="screen_elements"/>** على **<Translate ios="true" ids="screen_elements_shared"/>**، تعرض علامة التبويب الأفقي ما يلي:
+
+- بطاقة **<Translate ios="true" ids="screen_elements"/>** – تصف الوضع الحالي. انقر على **<Translate ios="true" ids="switch_to_independent"/>** لفتح إعدادات عناصر الشاشة.
+- **<Translate ios="true" ids="panels_layout"/>** و**<Translate ios="true" ids="shared_string_appearance"/>** – إعدادات الاتجاه الأفقي.
+
+تتم تهيئة لوحات الأدوات والأزرار والإعدادات الأخرى في علامة التبويب العمودي وتنطبق على كلا الاتجاهين.
+
+عند ضبط **<Translate ios="true" ids="screen_elements"/>** على **<Translate ios="true" ids="screen_elements_independent"/>**، يمكنك نسخ قائمة أدوات لوحة من الاتجاه الآخر. افتح لوحة الأدوات، وانقر على **⋮** واختر:
+
+- **<Translate ios="true" ids="copy_from_landscape_layout"/>** – متاح في علامة التبويب العمودي. ينسخ قائمة أدوات اللوحة من التخطيط الأفقي.
+- **<Translate ios="true" ids="copy_from_portrait_layout"/>** – متاح في علامة التبويب الأفقي. ينسخ قائمة أدوات اللوحة من التخطيط العمودي.
+
+يتم نسخ قائمة الأدوات فقط، ويتم تطبيق العملية داخل نفس الملف الشخصي.
+
+</TabItem>
+
+</Tabs>
+
 ### تخطيط اللوحات {#panels-layout}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="أندرويد">
+
+اذهب إلى: *<Translate android="true" ids="shared_string_menu,map_widget_config,panels_layout"/>*
 
 ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_wide.png) ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_compact.png)
 
@@ -538,6 +639,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **<Translate android="true" ids="panels_layout_compact"/>** – تتناسب اللوحتان العلوية والسفلية بين اللوحات الجانبية وأزرار الخريطة.
 
 يمكن تكوين تخطيط اللوحات بشكل مستقل للاتجاهات العمودية والأفقية، مما يسمح بتكييف أفضل مع أحجام الشاشات والاتجاهات المختلفة.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+اذهب إلى: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,panels_layout"/>*
+
+![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_wide.webp) ![تخطيط شاشة الخريطة](@site/static/img/widgets/screen_layout_compact.webp)
+
+يتحكم إعداد **<Translate ios="true" ids="panels_layout"/>** في كيفية عرض لوحات الأدوات العلوية والسفلية. يمكنك الاختيار بين وضعين:
+
+- **<Translate ios="true" ids="panels_layout_wide"/>** – تمتد اللوحتان العلوية والسفلية لعرض الشاشة الكامل. يتم اختيار هذا الخيار افتراضيًا.
+- **<Translate ios="true" ids="panels_layout_compact"/>** – تتناسب اللوحتان العلوية والسفلية بين اللوحات الجانبية وأزرار الخريطة.
+
+تعرض المعاينة الوضع المحدد للاتجاه الحالي. انقر على **✓** لتطبيق الوضع المحدد.
+
+تتم تهيئة تخطيط اللوحات بشكل منفصل في علامتي التبويب **<Translate ios="true" ids="map_orientation_portrait"/>** و**<Translate ios="true" ids="map_orientation_landscape"/>**، مع كل من عناصر الشاشة **<Translate ios="true" ids="screen_elements_shared"/>** و**<Translate ios="true" ids="screen_elements_independent"/>**.
+
+</TabItem>
+
+</Tabs>
 
 
 ## الأزرار {#buttons}
@@ -599,13 +721,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
     - [القائمة](../widgets/map-buttons.md#main-menu). يفتح قائمة التطبيق الرئيسية للوصول إلى جميع الميزات.
 
-    - [موقعي](../widgets/map-buttons.md#my-location-and-zoom). يركز الخريطة على موقعك الحالي.
+    - [موقعي](../widgets/map-buttons.md#my-position-and-zoom). يركز الخريطة على موقعك الحالي.
 
-    - [الملاحة](../widgets/map-buttons.md#directions). ضروري لتخطيط المسار وبدء الملاحة.
+    - [الملاحة](../widgets/map-buttons.md#navigation). ضروري لتخطيط المسار وبدء الملاحة.
 
     - [بحث](../widgets/map-buttons.md#search). يفتح أداة البحث للعثور على المواقع.
 
-    - [تكبير / تصغير](../widgets/map-buttons.md#my-location-and-zoom). يضبط مستوى تكبير الخريطة لإظهار تفاصيل أكثر أو أقل.
+    - [تكبير / تصغير](../widgets/map-buttons.md#my-position-and-zoom). يضبط مستوى تكبير الخريطة لإظهار تفاصيل أكثر أو أقل.
 
 تحتوي **قائمة النقاط الثلاث** على شاشة الأزرار الافتراضية على إجراءات مثل:
 
@@ -696,7 +818,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 > *موضع الموقع على الشاشة* هو اسم هذا الإعداد في إصدار iOS من OsmAnd.  
 
-يسمح لك بتعيين موضع المؤشر إلى *[موقعي](../map/interact-with-map.md#my-location-and-zoom)* على خريطة OsmAnd. هناك ثلاثة خيارات متاحة:  
+يسمح لك بتعيين موضع المؤشر إلى *[موقعي](../map/interact-with-map.md#my-position-and-zoom)* على خريطة OsmAnd. هناك ثلاثة خيارات متاحة:  
 
 - **<Translate android="true" ids="position_on_map_center"/>**. يتم وضع المؤشر دائمًا في وسط الشاشة.
 - **<Translate android="true" ids="position_on_map_bottom"/>**. يتم وضع *موقعي* أسفل مركز الشاشة قليلاً. يسمح هذا الوضع برؤية المزيد من معلومات الخريطة أمام حركتك، وهو أمر مفيد أثناء الملاحة.
