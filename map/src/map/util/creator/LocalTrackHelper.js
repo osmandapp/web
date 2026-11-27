@@ -3,7 +3,7 @@ import TrackLayerProvider, { WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvide
 import { createFirstLayers } from './LocalTrackLayerHelper';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
-import { createPointId } from '../../../manager/track/TrackOperations';
+import { createPointId, PROFILE_GAP } from '../../../manager/track/TrackOperations';
 
 export const ADDED_POINT = {
     FIRST: 'first',
@@ -109,6 +109,9 @@ export function getLastSegmentGeoProfile(points, geoRouter) {
         const beforeLast = points[points.length - 2];
         if (beforeLast?.geoProfile) {
             return geoRouter.getGeoProfile(beforeLast.geoProfile);
+        }
+        if (beforeLast?.profile && beforeLast.profile !== PROFILE_GAP) {
+            return geoRouter.getGeoProfile({ profile: beforeLast.profile });
         }
     }
 
