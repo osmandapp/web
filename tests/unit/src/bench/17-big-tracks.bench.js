@@ -1,4 +1,3 @@
-import L from 'leaflet';
 import PointManager from '@map/manager/PointManager';
 import TracksManager, {
     addDistance,
@@ -7,15 +6,16 @@ import TracksManager, {
     PROFILE_LINE,
 } from '@map/manager/track/TracksManager';
 import { effectRefreshTrackWithRouting, getWaitingSegments } from '@map/context/TracksRoutingCache';
-import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import { saveTrackToLocalStorage } from '@map/context/LocalTrackStorage';
 import { addPointToTrack } from '@map/map/util/creator/LocalTrackHelper';
+import { redrawTrackPoints } from '@map/map/util/creator/LocalTrackLayerHelper';
 import { apiPost } from '@map/util/HttpApi';
 import { cloneTrackObject } from '@map/util/Utils';
+import { setSegmentGeometries } from '@map/manager/track/TrackOperations';
 import { PROFILE_CAR } from '@map/store/geoRouter/profileConstants';
 import { BYTES, GENERATED_STEP, generatedVertex, MS, measure, record } from '../../../bench.mjs';
 import { createEditorCtx } from '../util/fixtures/tracks';
-import { createDrawnCtx, dragPoint } from '../util/editor';
+import { createDrawnCtx, dragPoint, map } from '../util/editor';
 import { fakeIndexedDbStore, removeIndexedDb } from '../util/indexedDb';
 import { findRequest } from '../util/requests';
 import { settle } from '../util/settle';
@@ -85,6 +85,11 @@ function createRecordedTrackPoints(n = POINTS) {
 }
 
 const createTrack = (points) => ({ name: 'Big', points, wpts: [] });
+const withElevation = (point) => ({
+    ...point,
+    ele: 100,
+    ...(point.geometry && { geometry: point.geometry.map((vertex) => ({ ...vertex, ele: 100 })) }),
+});
 
 const TRACK_KINDS = [
     { kind: 'plain', createPoints: createPlainTrackPoints, newPoint: 'a Line point', profile: PROFILE_LINE },
@@ -110,6 +115,60 @@ test('17.2 add, delete and drag a point on 50k', async () => {
     }
 });
 
+test('17.10 redraw after a drag on 50k', async () => {
+    for (const { kind, createPoints } of TRACK_KINDS) {
+        const redraw = await measure(
+            (ctx) =>
+                redrawTrackPoints({
+                    map,
+                    ctx,
+                    points: ctx.selectedGpxFile.points,
+                    trackLayers: ctx.selectedGpxFile.layers,
+                }),
+            {
+                prepare: () => {
+                    const ctx = createDrawnCtx(createPoints());
+                    dragPoint(ctx, MIDDLE, at(MIDDLE).lat + GENERATED_STEP / 2);
+
+                    return ctx;
+                },
+            }
+        );
+        record(`17.10 redraw after a drag of a point of ${kind} 50k`, redraw, MS);
+    }
+});
+
+test('17.11 redraw after the answers of the router and the analysis on 50k', async () => {
+    const redraw = (ctx) =>
+        redrawTrackPoints({ map, ctx, points: ctx.selectedGpxFile.points, trackLayers: ctx.selectedGpxFile.layers });
+    for (const { kind, createPoints } of TRACK_KINDS) {
+        const analysed = await measure(redraw, {
+            prepare: () => {
+                const ctx = createDrawnCtx(createPoints());
+                ctx.selectedGpxFile.points = ctx.selectedGpxFile.points.map(withElevation);
+
+                return ctx;
+            },
+        });
+        record(`17.11 redraw after the analysis answer of ${kind} 50k`, analysed, MS);
+    }
+
+    const routed = await measure(redraw, {
+        prepare: () => {
+            const points = createRouteTrackPoints();
+            const { geometry } = points[MIDDLE];
+            points[MIDDLE] = { ...points[MIDDLE], geometry: [] };
+            const ctx = createDrawnCtx(points);
+            ctx.selectedGpxFile.points = setSegmentGeometries(ctx.selectedGpxFile.points, [
+                { index: MIDDLE, geometry },
+            ]);
+
+            return ctx;
+        },
+    });
+    record('17.11 redraw after the router answer of one segment of routed 50k', routed, MS);
+});
+
 test('17.4 router answers of 200 route points with 100k vertices', async () => {
     const perSegment = ROUTE_VERTICES / ROUTE_POINTS;
     const answered = createRouteTrackPoints(ROUTE_POINTS, perSegment);
@@ -119,16 +178,13 @@ test('17.4 router answers of 200 route points with 100k vertices', async () => {
             effectRefreshTrackWithRouting({
                 ctx,
                 geoRouter: ctx.trackRouter,
-                saveChanges: () => {},
+                saveChanges: (points, wpts, layers, track) =>
+                    redrawTrackPoints({ map, ctx, points: track.points, trackLayers: ctx.selectedGpxFile.layers }),
             }),
         {
             prepare: () => {
                 const points = answered.map(({ lat, lng, profile }, id) => ({ id, lat, lng, profile, geometry: [] }));
-                const ctx = createEditorCtx({ points });
-                const tempLines = points
-                    .slice(1)
-                    .map((end, i) => TrackLayerProvider.createTempPolyline(points[i], end));
-                ctx.selectedGpxFile.layers = L.layerGroup(tempLines);
+                const ctx = createDrawnCtx(points);
                 getWaitingSegments(points, ctx.trackRouter).forEach(
                     ({ index, key }) => (ctx.routingCache[key] = { geometry: answered[index].geometry })
                 );

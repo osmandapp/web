@@ -211,6 +211,7 @@ export function createEditorCtx({ points = [] } = {}) {
     ctx.setProcessRouting = jest.fn();
     ctx.setUpdateInfoBlock = jest.fn();
     ctx.setLoadingContextMenu = jest.fn();
+    ctx.setPointContextMenu = jest.fn();
 
     return ctx;
 }

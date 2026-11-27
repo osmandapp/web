@@ -27,7 +27,7 @@ export function initNewSelectedTrack({ ctx, map, geoRouter, setRegisteredLayers 
         pointsGroups: {},
         points: newPoint ? [newPoint] : [],
         newPoint: newPoint ?? null,
-        layers: newPoint ? createFirstLayers({ map, ctx, newPoint, setRegisteredLayers }) : null,
+        layers: newPoint ? createFirstLayers(setRegisteredLayers) : null,
         updateLayers: !!newPoint,
         addPoint: !!newPoint,
         routeTypes: [],
@@ -123,12 +123,14 @@ export function createLocalTrack({ ctx, map, file }) {
             ctx.setRoutingErrorMsg('Cannot save nameless local track.');
             return prev;
         }
-        file.layers = TrackLayerProvider.createLayersByTrackData({
-            data: file,
-            ctx,
-            map,
-            simplifyWpts: file?.wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
-        });
+        if (!file.layers) {
+            file.layers = TrackLayerProvider.createLayersByTrackData({
+                data: file,
+                ctx,
+                map,
+                simplifyWpts: file?.wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
+            });
+        }
         tracks.push(file);
         ctx.setSelectedLocalTrackObj(file);
         return tracks;

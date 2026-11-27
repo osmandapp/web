@@ -1,28 +1,24 @@
 import L from 'leaflet';
 import { POINT_MARKER_Z_INDEX_OFFSET, TRACK_HIT_LINE_PANE_Z_INDEX } from './ZIndexes';
 import MarkerOptions, { createPoiIcon, DEFAULT_ICON_SIZE, DEFAULT_WPT_COLOR } from '../markers/MarkerOptions';
-import cloneDeep from 'lodash-es/cloneDeep';
 import indexOf from 'lodash-es/indexOf';
 import TracksManager, {
     getResolvedPointsGroups,
     GPX_FILE_TYPE,
     isWptGroupShown,
 } from '../../manager/track/TracksManager';
-import { isProtectedSegment } from '../../manager/track/TrackOperations';
+import { isWaitingForRouter } from '../../manager/track/TrackOperations';
 import { FAVORITE_FILE_TYPE, getFavoriteId, resolveWptAppearance } from '../../manager/FavoritesManager';
-import EditablePolyline from './creator/EditablePolyline';
 import { clusterMarkers, addMarkerTooltip, removeTooltip } from './Clusterizer';
 import Utils from '../../util/Utils';
 import { hexToRgba, numberToRgba } from '../../util/ColorUtil';
 import { createTooltip, TOOLTIP_MAX_LENGTH, formatTrackName } from './MapManager';
 import { disablePointerEventsIfHidden, ensureLeafletPane, TRACK_HIT_LINE_PANE } from './LayerUtils';
 
-export const TEMP_LAYER_FLAG = 'temp';
 export const TEMP_LINE_STYLE = {
     color: '#fbc73a',
     dashArray: '5, 5',
     dashOffset: '0',
-    // name: TEMP_LAYER_FLAG, // style.name was not used, instead of actual layer.options.name
 };
 export const WPT_SIMPLIFY_THRESHOLD = 500;
 export const POINTS_SIMPLIFY_THRESHOLD = 1000;
@@ -55,7 +51,6 @@ function createLayersByTrackData({ data, ctx, map, groupId, type = GPX_FILE_TYPE
                 ctx,
                 points: track.points,
                 layers,
-                hidden: true,
                 trackAppearance,
             });
             if (trackAppearance?.showStartFinish !== false) {
@@ -99,87 +94,82 @@ function setTrackName(layers, trackName) {
     }
 }
 
-function parsePoints({ map, ctx, points, layers, draggable = false, hidden = false, trackAppearance = null }) {
-    let coordsTrk = [];
-    let pointIdsTrk = [];
+function parsePoints({ map, ctx, points, layers, trackAppearance = null }) {
+    const lines = getTrackLines(points);
+    const last = lines.length - 1;
     let coordsAll = [];
-    points.forEach((point, index) => {
-        if (point.geometry !== undefined && point.geometry !== null) {
-            coordsAll = drawRoutePoints({
-                map,
-                points,
-                point,
-                coordsAll,
-                layers,
-                ctx,
-                draggable,
-                index,
-                trackAppearance,
-            });
+    let coordsTrk = [];
+    lines.forEach((line, index) => {
+        const coords = toLatLngs(line.vertices);
+        if (line.waiting) {
+            const [start, end] = line.vertices;
+            layers.push(createTempPolyline(start, end));
         } else {
-            coordsTrk.push(new L.LatLng(point.lat, point.lng));
-            pointIdsTrk.push(point.id);
-            if (point.profile === TracksManager.PROFILE_GAP && coordsTrk.length > 0) {
-                let polyline = createPolyline({
-                    coords: coordsTrk,
-                    ctx,
-                    map,
-                    point,
-                    points,
-                    trackAppearance,
-                    pointIds: pointIdsTrk,
-                    draggable,
-                });
-                addStartEndGap(point, points, layers, draggable);
-                layers.push(polyline);
-                coordsAll = coordsAll.concat(cloneDeep(coordsTrk));
-                coordsTrk = [];
-                pointIdsTrk = [];
+            if (line.gapPoint) {
+                addStartEndGap(line.gapPoint, points, layers);
             }
+            layers.push(
+                createPolyline({
+                    coords,
+                    map,
+                    color: getLineColor(ctx, line.colorPoint),
+                    trackAppearance,
+                    pointIds: line.pointIds,
+                })
+            );
+        }
+        if (index < last) {
+            coordsAll = coordsAll.concat(coords);
+        } else {
+            coordsTrk = coords;
         }
     });
-
-    if (hidden === false) {
-        const zoom = map.getZoom();
-        const mapBounds = map.getBounds();
-        const simplified = points.length > POINTS_SIMPLIFY_THRESHOLD && zoom < POINTS_SIMPLIFY_ZOOM_THRESHOLD;
-
-        points.forEach((p, index) => {
-            if (draggable || (!draggable && p.geometry !== undefined)) {
-                if (simplified && index % 30 !== 0) {
-                    return;
-                }
-                const markerLatLng = new L.LatLng(p.lat, p.lng);
-                if (!mapBounds.contains(markerLatLng)) {
-                    return;
-                }
-                const marker = new L.Marker(markerLatLng, {
-                    icon: MarkerOptions.options.route,
-                    draggable: draggable,
-                    isRoutePoint: true,
-                    pointId: p.id,
-                });
-                layers.push(marker);
-            }
-        });
-    }
-
-    const endPolyline = createPolyline({
-        coords: coordsTrk,
-        ctx,
-        map,
-        point: null,
-        points: null,
-        trackAppearance,
-        pointIds: pointIdsTrk,
-        draggable,
-    });
-    layers.push(endPolyline);
 
     return {
         coordsTrk: coordsTrk,
         coordsAll: coordsAll,
     };
+}
+
+function getTrackLines(points) {
+    const lines = [];
+    let plain = [];
+    points.forEach((point, index) => {
+        // find previous point if possible
+        const colorPoint = index > 0 ? points[index - 1] : point;
+        if (point.geometry !== undefined && point.geometry !== null) {
+            const pointIds = [points[index - 1]?.id, point.id];
+            // draw tempLine for orphaned empty geo but not for gap
+            if (isWaitingForRouter(points, index)) {
+                lines.push({ pointIds, vertices: [points[index - 1], point], waiting: true });
+                return;
+            }
+            let vertices = [];
+            point.geometry.forEach((vertex) => {
+                vertices.push(vertex);
+                if (vertex.profile === TracksManager.PROFILE_GAP && vertices.length > 1) {
+                    lines.push({ pointIds, vertices, colorPoint, gapPoint: point });
+                    vertices = [];
+                }
+            });
+            if (vertices.length > 0) {
+                lines.push({ pointIds, vertices, colorPoint });
+            }
+        } else {
+            plain.push(point);
+            if (point.profile === TracksManager.PROFILE_GAP) {
+                lines.push({ pointIds: plain.map(({ id }) => id), vertices: plain, colorPoint, gapPoint: point });
+                plain = [];
+            }
+        }
+    });
+    lines.push({ pointIds: plain.map(({ id }) => id), vertices: plain, colorPoint: null });
+
+    return lines;
+}
+
+function toLatLngs(vertices) {
+    return vertices.map(({ lat, lng }) => new L.LatLng(lat, lng));
 }
 
 function addStartEnd(points, layers, coordsTrk, coordsAll) {
@@ -189,60 +179,6 @@ function addStartEnd(points, layers, coordsTrk, coordsAll) {
     } else {
         addStartEndMarkers(points, layers);
     }
-}
-
-function drawRoutePoints({ map, ctx, points, point, coordsAll, layers, draggable, index, trackAppearance }) {
-    let coords = [];
-    const segmentIds = [points[index - 1]?.id, point.id];
-
-    // draw tempLine for orphaned empty geo but not for gap
-    if (ctx && map && point.geometry.length === 0 && index > 0) {
-        if (points[index - 1].profile !== TracksManager.PROFILE_GAP) {
-            let pointLayersFound = 0;
-            const trackLayers = ctx.selectedGpxFile.layers;
-            if (trackLayers && map.hasLayer(trackLayers)) {
-                trackLayers.eachLayer((l) => {
-                    if (point.id !== undefined && l.point?.id === point.id) {
-                        pointLayersFound++;
-                    }
-                });
-            }
-            if (pointLayersFound === 0) {
-                const start = points[index - 1];
-                const end = point;
-                coords.push(new L.LatLng(start.lat, start.lng));
-                coords.push(new L.LatLng(end.lat, end.lng));
-                coordsAll = coordsAll.concat(Object.assign([], coords));
-                const orphan = createTempPolyline(start, end);
-                orphan.options.name = undefined;
-                layers.push(orphan);
-                return coordsAll;
-            }
-        }
-    }
-
-    point.geometry.forEach((p) => {
-        if (p.profile === TracksManager.PROFILE_GAP && coords.length > 0) {
-            addStartEndGap(point, points, layers, draggable);
-            coords.push(new L.LatLng(p.lat, p.lng));
-            layers.push(
-                createPolyline({ coords, ctx, map, point, points, trackAppearance, pointIds: segmentIds, draggable })
-            );
-            coordsAll = coordsAll.concat(Object.assign([], coords));
-            coords = [];
-        } else {
-            coords.push(new L.LatLng(p.lat, p.lng));
-        }
-    });
-
-    if (coords.length > 0) {
-        coordsAll = coordsAll.concat(Object.assign([], coords));
-        layers.push(
-            createPolyline({ coords, ctx, map, point, points, trackAppearance, pointIds: segmentIds, draggable })
-        );
-    }
-
-    return coordsAll;
 }
 
 function addTooltipOnHover(polyline, map, coords) {
@@ -285,11 +221,11 @@ function addTooltipOnHover(polyline, map, coords) {
     });
 }
 
-function createPolyline({ coords, ctx, map, point, points, trackAppearance, pointIds, draggable = false }) {
-    let color =
-        point && points
-            ? ctx.trackRouter.getColor(getPointGeoProfile(point, points))
-            : ctx.trackRouter.getColor({ profile: TracksManager.PROFILE_LINE });
+function getLineColor(ctx, colorPoint) {
+    return ctx.trackRouter.getColor(getColorProfile(colorPoint));
+}
+
+function createPolyline({ coords, map, color, trackAppearance, pointIds, draggable = false }) {
     if (trackAppearance?.color) {
         if (typeof trackAppearance.color === 'string') {
             color = hexToRgba(trackAppearance.color);
@@ -513,36 +449,31 @@ function getDefaultArrowWidth(zoom) {
     return 2;
 }
 
-function addStartEndGap(point, allPoints, layers, editTrack) {
-    if (!editTrack) {
-        let end = new L.LatLng(point.lat, point.lng);
+function addStartEndGap(point, allPoints, layers) {
+    let end = new L.LatLng(point.lat, point.lng);
+    layers.push(
+        new L.Marker(end, {
+            icon: MarkerOptions.options.trackEnd,
+            zIndexOffset: POINT_MARKER_Z_INDEX_OFFSET,
+        })
+    );
+    let currentInd = indexOf(allPoints, point);
+    if (currentInd !== -1 && currentInd + 1 < allPoints.length) {
+        let start = new L.LatLng(allPoints[currentInd + 1].lat, allPoints[currentInd + 1].lng);
         layers.push(
-            new L.Marker(end, {
-                icon: MarkerOptions.options.trackEnd,
+            new L.Marker(start, {
+                icon: MarkerOptions.options.trackStart,
                 zIndexOffset: POINT_MARKER_Z_INDEX_OFFSET,
             })
         );
-        let currentInd = indexOf(allPoints, point);
-        if (currentInd !== -1 && currentInd + 1 < allPoints.length) {
-            let start = new L.LatLng(allPoints[currentInd + 1].lat, allPoints[currentInd + 1].lng);
-            layers.push(
-                new L.Marker(start, {
-                    icon: MarkerOptions.options.trackStart,
-                    zIndexOffset: POINT_MARKER_Z_INDEX_OFFSET,
-                })
-            );
-        }
     }
 }
 
 // used just to pick color
-// find previous point if possible
 // use PROFILE_LINE if no geoProfile found
-function getPointGeoProfile(point, points) {
-    const ind = indexOf(points, point, 0);
-    const usePoint = ind > 0 ? points[ind - 1] : point;
-    if (usePoint?.geoProfile || usePoint?.profile) {
-        return { profile: usePoint?.profile, geoProfile: usePoint?.geoProfile };
+function getColorProfile(point) {
+    if (point?.geoProfile || point?.profile) {
+        return { profile: point?.profile, geoProfile: point?.geoProfile };
     } else {
         return { profile: TracksManager.PROFILE_LINE };
     }
@@ -701,117 +632,12 @@ function addStartEndMarkers(points, layers) {
     );
 }
 
-function getPolylineOpt(map) {
-    return {
-        color: '#1976d2',
-        weight: getPolylineWeight('medium', map?.getZoom() ?? 9),
-    };
-}
-
-function getPolylineByPoints(point, polylines) {
-    if (point && point.geometry) {
-        const geo = point.geometry;
-        const res = polylines.find((polyline) => {
-            let layerPoints = polyline._latlngs;
-            if (layerPoints.length === geo.length) {
-                let matchedFirstPoint = geo[0].lat === layerPoints[0].lat && geo[0].lng === layerPoints[0].lng;
-                let matchedLastPoint =
-                    geo[geo.length - 1].lat === layerPoints[layerPoints.length - 1].lat &&
-                    geo[geo.length - 1].lng === layerPoints[layerPoints.length - 1].lng;
-                if (matchedFirstPoint && matchedLastPoint) {
-                    return polyline;
-                }
-            }
-            return null;
-        });
-        return res;
-    } else {
-        console.error('getPolylineByPoints empty geometry');
-    }
-}
-
-function getPolylineByStartEnd(startPoint, endPoint, polylines) {
-    return polylines.find((polyline) => {
-        const layerPoints = polyline._latlngs;
-        if (
-            TracksManager.isEqualPoints(layerPoints[0], startPoint) &&
-            TracksManager.isEqualPoints(layerPoints[layerPoints.length - 1], endPoint)
-        ) {
-            return polyline;
-        }
-        return null;
-    });
-}
-
-function updatePolylineToTemp(startPoint, endPoint, polyline) {
-    if (polyline) {
-        const polylineTemp = createTempPolyline(startPoint, endPoint);
-        polyline.setLatLngs(polylineTemp._latlngs);
-        return toTempLine(polyline, startPoint, endPoint);
-    } else {
-        console.error('updatePolylineToTemp empty polyline');
-    }
-}
-
-function getPolylines(layers) {
-    let res = [];
-    layers.forEach((layer) => {
-        if (layer instanceof L.Polyline) {
-            let points = layer.getLatLngs();
-            if (points.length > 0) {
-                res.push(layer);
-            }
-        }
-    });
-    return res;
-}
-
-// return null on protected segments (null must be processed by parent)
-function updatePolyline(startPoint, endPoint, polylines, oldStartPoint, oldEndPoint) {
-    const point2 = oldEndPoint ? oldEndPoint : endPoint;
-
-    if (isProtectedSegment({ startPoint, endPoint: point2 })) {
-        return null;
-    }
-
-    let polyline = getPolylineByPoints(point2, polylines);
-    if (!polyline) {
-        const point1 = oldStartPoint ? oldStartPoint : startPoint;
-
-        if (isProtectedSegment({ startPoint: point1, endPoint: point2 })) {
-            return null;
-        }
-
-        polyline = getPolylineByStartEnd(point1, point2, polylines);
-    }
-    if (!polyline) {
-        console.error('updatePolyline empty polylines');
-    }
-    polyline = updatePolylineToTemp(startPoint, endPoint, polyline);
-
-    return polyline;
-}
-
 function createTempPolyline(start, end) {
-    const startPoint = new L.LatLng(start.lat, start.lng);
-    const endPoint = new L.LatLng(end.lat, end.lng);
-
-    return toTempLine(new L.Polyline([startPoint, endPoint]), start, end);
-}
-
-function toTempLine(polyline, start, end) {
+    const polyline = new L.Polyline([new L.LatLng(start.lat, start.lng), new L.LatLng(end.lat, end.lng)]);
     polyline.setStyle(TEMP_LINE_STYLE);
-    polyline.point = end; // always store end-point ref inside layer, used in drawRoutePoints() and updateLayers()
-    polyline.options.name = TEMP_LAYER_FLAG; // use temp-flag
     polyline.options.pointIds = [start.id, end.id];
 
     return polyline;
-}
-
-function createEditableTempLPolyline(start, end, map, ctx) {
-    const startPoint = new L.LatLng(start.lat, start.lng);
-    const endPoint = new L.LatLng(end.lat, end.lng);
-    return toTempLine(new EditablePolyline(map, ctx, [startPoint, endPoint], null).create(), start, end);
 }
 
 // set visibility each time the marker is added to the map (Leaflet 'add' event)
@@ -847,17 +673,13 @@ export function redrawWptsOnLayer({ layer, pointsGroups }) {
 
 const TrackLayerProvider = {
     createLayersByTrackData,
-    parsePoints,
     parseWpt,
-    getPolylineOpt,
-    createTempPolyline,
-    toTempLine,
-    getPolylines,
-    updatePolyline,
-    createEditableTempLPolyline,
+    getTrackLines,
+    toLatLngs,
+    createPolyline,
+    getLineColor,
     setTrackName,
     TEMP_LINE_STYLE,
-    TEMP_LAYER_FLAG,
 };
 
 export default TrackLayerProvider;

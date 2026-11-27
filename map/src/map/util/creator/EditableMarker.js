@@ -1,44 +1,29 @@
 import L from 'leaflet';
 import MarkerOptions from '../../markers/MarkerOptions';
-import TrackLayerProvider from '../TrackLayerProvider';
-import { publishEditedTrack } from '../../../manager/track/TracksManager';
-import { findPointIndex, isPointUnrouted, isWaitingForRouter, movePoint } from '../../../manager/track/TrackOperations';
+import TracksManager, { getEditorActions, publishEditedTrack } from '../../../manager/track/TracksManager';
+import { findPointIndex, movePoint } from '../../../manager/track/TrackOperations';
 
 export default class EditableMarker {
     stopclick;
     dragPoint;
 
-    constructor(map, ctx, point, layer) {
+    constructor(map, ctx, latlng, options) {
         this.map = map;
-        this.ctx = ctx;
-        this.point = point;
-        this.layer = layer;
+        this.ctx = getEditorActions(ctx);
+        this.latlng = latlng;
+        this.options = options;
         this.dragPoint = null;
         this.stopclick = false;
     }
 
     create() {
-        let marker = this.layer;
-        let options;
-        let point;
-        if (marker) {
-            point = marker.getLatLng();
-            options = marker.options;
-        } else if (this.point) {
-            point = new L.LatLng(this.point.lat, this.point.lng);
-            options = { pointId: this.point.id };
-        }
-        if (point) {
-            marker = new L.Marker(point, {
-                icon: MarkerOptions.options.route,
-                draggable: true,
-                ...options,
-            });
-        }
+        const marker = new L.Marker(this.latlng, {
+            icon: MarkerOptions.options.route,
+            draggable: true,
+            ...this.options,
+        });
+        this.addEvents(marker);
 
-        if (marker) {
-            this.addEvents(marker);
-        }
         return marker;
     }
 
@@ -123,50 +108,20 @@ export default class EditableMarker {
         const indPoint = this.dragPoint.indPoint;
 
         if (indPoint !== undefined && indPoint !== -1) {
-            const points = track.points;
-            const polylines = TrackLayerProvider.getPolylines(track.layers?.getLayers() ?? []);
+            track.points = movePoint(track.points, indPoint, { lat, lng });
 
-            track.points = movePoint(points, indPoint, { lat, lng });
-            const currentPoint = track.points[indPoint];
-
-            if (isPointUnrouted({ point: points[indPoint], pointIndex: indPoint, prevPoint: points[indPoint - 1] })) {
-                const currentPolyline = polylines.find(
-                    (p) =>
-                        p.options.pointIds?.length === p.getLatLngs().length &&
-                        p.options.pointIds.includes(currentPoint.id)
-                );
-                if (currentPolyline) {
-                    const latlngs = currentPolyline.getLatLngs();
-                    latlngs[currentPolyline.options.pointIds.indexOf(currentPoint.id)] = L.latLng(lat, lng);
-                    currentPolyline.setLatLngs(latlngs);
-                } else {
-                    console.error('EditableMarker drag-drop unrouted-zero-geo failed');
-                }
-            } else {
-                for (const index of [indPoint, indPoint + 1]) {
-                    if (!isWaitingForRouter(track.points, index)) {
-                        continue;
-                    }
-                    TrackLayerProvider.updatePolyline(
-                        track.points[index - 1],
-                        track.points[index],
-                        polylines,
-                        points[index - 1],
-                        points[index]
-                    );
-                }
-            }
+            // finally
+            publishEditedTrack(this.ctx, track);
         } else {
             const indWpt = this.dragPoint.indWpt;
             if (indWpt !== undefined && indWpt !== -1) {
                 const currentWpt = track.wpts[indWpt];
                 currentWpt.lat = lat;
                 currentWpt.lon = lng;
+                this.ctx.setSelectedGpxFile({ ...track, updateLayers: true });
+                TracksManager.updateState(this.ctx);
             }
         }
-
-        // finally
-        publishEditedTrack(this.ctx, track);
 
         this.dragPoint = null;
     }
