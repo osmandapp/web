@@ -1,5 +1,5 @@
 ---
-source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
+source-hash: d675bf78b7d5f02b9e16ef27beaba0dfa88409214edd570ed49a75ad00bd2d71
 sidebar_position: 19
 title:  Météo
 ---
@@ -139,7 +139,7 @@ Aller à : *Plugin activé → <Translate ios="true" ids="shared_string_menu,con
 
 Pour afficher les couches météo sur l'écran de la carte OsmAnd, vous devez utiliser le menu *Configurer la carte*. Allez dans le menu, trouvez l'élément *Météo* dans la liste (disponible uniquement lorsque le plugin est activé), et appuyez dessus.  
 
-Dans ce menu, vous pouvez modifier la **visibilité** et les [paramètres](#weather-settings) de chaque couche, sélectionner le type de lignes de contour, et télécharger les [prévisions météo hors ligne sur 7 jours](#offline-forecast) (*disponible uniquement pour Android ici*).
+Dans ce menu, vous pouvez modifier la **visibilité** et les [paramètres](#weather-settings) de chaque couche, sélectionner le type de lignes de contour, et télécharger les [prévisions météo hors ligne sur 7 jours](#offline-forecast) (*disponible uniquement pour Android ici*). À 0 % de visibilité, la couche est masquée ; à 100 %, elle est entièrement visible.
 
 
 ### Paramètres météo {#weather-settings}
@@ -168,7 +168,7 @@ Dans ce menu, vous pouvez modifier la **visibilité** et les [paramètres](#weat
 Il est important de décider dans quelles unités de mesure il vous est pratique de voir les [données météo](#weather-layers) sur la carte et dans la section [Widgets météo](#weather-widgets) de l'écran. Vous pouvez choisir les unités de mesure appropriées pour chaque paramètre. Vous pouvez également utiliser les valeurs par défaut — sur iOS pour tous les paramètres, sur Android uniquement pour la température. L'unité de température est sélectionnée dans : *Menu → Profil → Paramètres généraux → Unités et formats → Température*. Dans la version iOS de l'application OsmAnd, vous pouvez également activer l'option de prévisions hors ligne pour éviter d'utiliser le trafic mobile lors de vos déplacements.  
 
 :::note
-Dans la version iOS d'OsmAnd, vous pouvez modifier les unités de mesure et le niveau de transparence dans le menu qui s'ouvre après un appui long sur l'icône de la couche de carte requise.  
+Dans la version iOS d'OsmAnd, vous pouvez modifier les unités de mesure et le niveau de visibilité dans le menu qui s'ouvre après un appui long sur l'icône de la couche de carte requise.  
 :::
 
 ### Couches météo {#weather-layers}

@@ -1,5 +1,5 @@
 ---
-source-hash: 229c58068a74b06d3fc63b8f92df8a4ca008fa25b9819b9b8d8243b8790942ed
+source-hash: 767578704635d01030c776c1a29804d758e70785b56523fd818befdf7a58df10
 sidebar_position: 5
 ---
 
@@ -13,7 +13,7 @@ import Translate from '@site/src/components/Translate.js';
 import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
 import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
-# iOS 5.4 {#ios-54}
+# iOS 5.5 {#ios-55}
 
 ## Rejoindre la version bêta {#join-beta}
 
@@ -28,40 +28,30 @@ Les versions bêta d'iOS (TestFlight) sont généralement fournies chaque semain
 
 ## Quoi de neuf {#whats-new}
 
-- Recherche mise à jour avec un nouvel onglet **[Explorer](https://osmand.net/docs/user/map/popular_places#explore-in-search)** présentant les lieux populaires à proximité.
-- Nouveau **[plugin Astronomie](https://osmand.net/docs/user/plugins/astronomy)** expérimental avec une superposition astronomique montrant les trajectoires du Soleil, des planètes et des étoiles.
-- Ajout d'un **[éditeur de palettes](https://osmand.net/docs/user/map/tracks/appearance#color-palette-editor)** pour créer et personnaliser des jeux de couleurs pour les itinéraires et le relief.
-- Organisation plus intelligente des traces avec les **[Dossiers intelligents](https://osmand.net/docs/user/personal/tracks/smart-folder)** et des statistiques récapitulatives plus claires.
-- Mise en page plus flexible des **[widgets et boutons de carte](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, notamment en mode paysage.
-- **[Planifier un itinéraire](https://osmand.net/docs/user/plan-route/create-route)** amélioré avec graphique d'altitude, calcul d'altitude hors ligne et paramètres d'itinéraire.
-- Ajout de segments en montée, en descente et plats à l'**[analyse de trace](https://osmand.net/docs/user/map/tracks/track-context-menu#analyze-by-intervals)**.
-
-<!--
-- Last Uphill / Last Downhill mode for **[Trip recording widgets](https://osmand.net/docs/user/plugins/trip-recording#widgets)**, with switching between total and last ascent/descent.
-- Updated **[Distance widget](https://osmand.net/docs/user/plugins/trip-recording#distance-start-stop)** with modes for total distance, last uphill/downhill distance.
-- **[Max Speed widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing maximum speed for the whole trip or for the most recent uphill/downhill section.
-- **[Average Slope widget](https://osmand.net/docs/user/plugins/trip-recording#max-speed--average-slope)** showing the average slope of the latest ascent or descent.
-- *Show track on map* quick action added to the Trip recording widget group.
-- Improvements in route selection and altitude graph integration under the updated rendering scheme.
-- Elevation graph widget for navigation, displaying a compact profile along routes or GPX tracks.
-- **[Popular places](https://osmand.net/docs/user/map/popular_places/)** layer updated with POI source selection and optional image previews on the map.
-- New Explore section in Search with “Popular places nearby” and improved offline/no-data states.
-- Enhanced POI search results with consistent city display, refined layout, and optional thumbnails.
-- Default appearance settings for track folders, allowing new tracks to inherit a unified folder style.
--->
+- **[CarPlay](https://osmand.net/docs/user/navigation/car-play)** est gratuit pour tous les utilisateurs et propose de nouveaux [paramètres](https://osmand.net/docs/user/navigation/car-play#settings) pour l'orientation de la carte et la fréquence d'images, avec Accueil accessible d'un seul appui depuis le menu Navigation.
+- La **[version gratuite](https://osmand.net/docs/user/purchases/ios#free-and-paid-features)** inclut toutes les cartes d'une région.
+- Nouveaux **[formats de coordonnées](https://osmand.net/docs/user/search/search-coordinates#customize-coordinate-format)**, y compris les systèmes EPSG, le localisateur Maidenhead et la grille suisse, avec un format principal et une liste de formats préférés.
+- **[Dispositions des widgets](https://osmand.net/docs/user/widgets/configure-screen#single-and-separate-layouts)** distinctes pour les modes Portrait et Paysage, ainsi que des panneaux supérieur et inférieur **[Larges ou Compacts](https://osmand.net/docs/user/widgets/configure-screen#panels-layout)**.
+- **[Apparence du panneau de widgets](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance)** personnalisable avec la taille des widgets, les icônes et les couleurs du texte et de l'arrière-plan.
+- Nouveau paramètre **[Garder l'écran allumé](https://osmand.net/docs/user/personal/profiles#appearance)** pour chaque profil : suivre le délai d'expiration du système, garder l'écran allumé uniquement pendant la navigation, ou le garder toujours allumé.
+- Les étiquettes des **[courbes de niveau](https://osmand.net/docs/user/plugins/topography#contour-lines)** peuvent être orientées vers le haut de la pente, comme sur les cartes topographiques papier.
+- Paramètres d'apparence complets lorsque vous **[modifiez plusieurs Favoris](https://osmand.net/docs/user/personal/favorites#bulk-edit--delete)** à la fois.
+- Les **[destinations intermédiaires](https://osmand.net/docs/user/navigation/setup/route-details#turn-by-turn-information)** apparaissent dans les détails de l'itinéraire avec leur numéro, leur nom, ainsi que la distance et le temps depuis le départ.
 
 
 ## Corrections de bugs {#bug-fixes}
 
-- Correction des [Dossiers intelligents](https://github.com/osmandapp/OsmAnd-iOS/issues/5358) qui ne se synchronisent pas avec OsmAnd Cloud ou n'apparaissent pas dans l'export des paramètres.
-- Mise à jour du [menu contextuel Wikipédia](https://github.com/osmandapp/OsmAnd-Issues/issues/3215) avec un nouveau design et ajout de photos en ligne.
-- Correction des [noms de POI](https://github.com/osmandapp/OsmAnd-iOS/issues/5253) manquants dans le menu « Que se trouve ici ».
-- Correction de l'ouverture des [Guides de voyage](https://github.com/osmandapp/OsmAnd-Issues/issues/3212) depuis les résultats de recherche pour afficher directement l'article.
-- Ajustement de la position de la section [Photos en ligne](https://github.com/osmandapp/OsmAnd-iOS/issues/5336) dans le menu contextuel de la région.
+- Correction d'un [problème](https://github.com/osmandapp/OsmAnd-iOS/issues/5696) où le vidage de la corbeille d'OsmAnd Cloud restaurait les cartes et Favoris supprimés.
+- Correction de l'[altitude tombant à 0](https://github.com/osmandapp/OsmAnd-iOS/issues/5526) dans les traces enregistrées en arrière-plan.
+- Résolution des [conflits de synchronisation d'OsmAnd Cloud](https://github.com/osmandapp/OsmAnd-iOS/issues/5463) après la mise à jour des cartes sur plusieurs appareils.
+- Empêchement des [Favoris de dossiers masqués](https://github.com/osmandapp/OsmAnd-iOS/issues/5558) d'apparaître dans les résultats de recherche.
+- Correction de la [fermeture de Planifier un itinéraire](https://github.com/osmandapp/OsmAnd-iOS/issues/5947) lorsque vous appuyez sur une trace sur la carte.
+- Correction du [temps de trajet à pied](https://github.com/osmandapp/OsmAnd-iOS/issues/5787) affiché pour les itinéraires en voiture après Attacher aux routes.
+- Correction des [points de passage ajoutés à la trace en cours d'enregistrement](https://github.com/osmandapp/OsmAnd-iOS/issues/5893) qui ne répondaient pas aux appuis.
+- Arrêt du [clignotement de l'icône de point de passage](https://github.com/osmandapp/OsmAnd-iOS/issues/2764) pendant l'enregistrement de trace.
 
 <!--
-- Faster opening of context menus when tapping POIs, Favorites, tracks and buildings.
-- Correct handling of relation-based POIs on multipolygons.
-- Fixed “null” appearing instead of a city name in POI search results and improved night-mode background consistency.
-- Restored tappable behaviour for fitness, running and canoe routes with shields.
+- Fixed map updates for mappers with Devanagari and Eastern Arabic numerals.
+- Fixed the map zooming out when you add a Quick Action while moving.
+- Fixed KML import creating an empty track.
 -->

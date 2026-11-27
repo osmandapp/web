@@ -1,5 +1,5 @@
 ---
-source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
+source-hash: a47a5483bfc64564296e520a3048e1d0b106bcac34bd4fc7262a7c22c21b7c3c
 sidebar_position: 3
 title:  Paramètres généraux
 ---
@@ -206,7 +206,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 </Tabs>
 
-Le paramètre **<Translate android="true" ids="analytics_pref_title"/>** (*Android*) ou **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) vous permet de choisir de fournir ou non des données anonymes sur les *Cartes téléchargées* et les *Écrans visités* (*Android*).  
+Le paramètre **<Translate android="true" ids="analytics_pref_title"/>** (*Android*) ou **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) vous permet de choisir de fournir ou non des données anonymes sur les *Cartes téléchargées* et les *Écrans visités* (*Android*). Sur iOS, ce paramètre contrôle également si l'application envoie des informations sur la campagne Apple Ads qui a conduit à l'installation de l'application.  
 
 :::note
 Les données sur votre emplacement ou les lieux que vous consultez sur la carte ne sont pas collectées.
@@ -224,7 +224,8 @@ Un **UUID** (*Identifiant unique d'utilisateur*) est généré pour chaque insta
 
 - Un UUID aléatoire est utilisé pour télécharger des cartes hors ligne depuis les serveurs OsmAnd afin de contrôler l'utilisation rationnelle des ressources du serveur, de prédire l'utilisation du trafic et de fournir des rapports mensuels généraux sur les téléchargements de cartes.
 - L'UUID change tous les 3 mois.  
-- À partir de la version 4.3 d'OsmAnd, vous pouvez désactiver la collecte de données utilisateur lors de l'utilisation de l'application OsmAnd. L'UUID ne sera alors envoyé avec aucune demande de téléchargement.  
+- À partir de la version 4.3 d'OsmAnd, vous pouvez désactiver la collecte de données utilisateur lors de l'utilisation de l'application OsmAnd. L'UUID ne sera alors envoyé avec aucune demande de téléchargement.
+- Pour les installations depuis Google Play, l'application envoie également la campagne publicitaire qui a conduit à l'installation (source, support et nom de la campagne, et si l'installation provient d'un clic sur une annonce) avec les requêtes de vérification de mise à jour et d'achat. Lorsque l'envoi de l'UUID est désactivé, ces informations ne sont ni lues ni envoyées.
 - Vous pouvez lire plus d'informations dans les [Conditions d'utilisation (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
 
 

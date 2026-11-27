@@ -1,7 +1,7 @@
 ---
-source-hash: 18bdcf0d20caf5aabbea26b8ec6fcda7bc035763be0d7facfcec6e68cdb29d7d
+source-hash: 130c83b8f6cc63700c70288424f77bbacf7aa8e0dc8112b623117a5229a4b17c
 sidebar_position: 3
-title:  Astronomy
+title:  Astronomie
 unlistead: true
 ---
 
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-:::tip Purchase
+:::tip Achat
 Le plugin Astronomie est une [fonctionnalité payante](../purchases/index.md).  
 :::
 
@@ -66,9 +66,12 @@ L'écran dédié **Carte des étoiles** affiche un dôme céleste interactif ave
 - [**Recherche**](#search) — ouvre l'écran de Recherche où vous pouvez rechercher des objets célestes et parcourir les catalogues et catégories du ciel. 
 - **Heure et date** — vous permet de changer la date et l'heure pour observer le ciel à différents moments dans le passé ou le futur. Cela est utile pour planifier des observations, suivre le mouvement des objets ou apprendre comment le ciel change au fil du temps. Si vous définissez une date/heure personnalisée, la puce affiche la date et l'heure complètes, et un bouton de réinitialisation apparaît à côté pour revenir à l'heure système actuelle.
 - **<Translate android="true" ids="magnitude_filter"/>** — vous permet de limiter quelles étoiles sont affichées en fonction de leur luminosité. Utilisez le curseur pour définir la valeur maximale de magnitude. Des valeurs plus basses n'affichent que les étoiles les plus brillantes, tandis que des valeurs plus élevées révèlent des étoiles plus faibles et des objets du ciel profond. Cela aide à réduire l'encombrement visuel ou à simuler ce qui est visible à l'œil nu.
+- **<Translate android="true" ids="zoomIn"/> / <Translate android="true" ids="zoomOut"/>** — modifient l'échelle de la Carte des étoiles en douceur, un pas à chaque appui. Les boutons sont affichés sur les tablettes Android et sur Mac, dans une colonne au-dessus du bouton <Translate android="true" ids="magnitude_filter"/>.
 - [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — ouvre les paramètres d'affichage qui contrôlent comment les objets, les trajectoires et les lignes de référence sont affichés sur la Carte des étoiles.
 
-L'écran rend l'hémisphère céleste complet au-dessus de votre emplacement, aligné sur la direction de la boussole. La Carte des étoiles peut être rotée manuellement en faisant glisser l'écran. La rotation manuelle de la Carte des étoiles n'affecte pas l'orientation de la carte de la Terre. La carte de la Terre suit toujours le [mode d'orientation de la carte](../map/interact-with-map.md#map-orientation-modes) sélectionné dans vos paramètres. Appuyez sur les objets célestes pour obtenir des détails comme la magnitude, les heures de lever/coucher ou les trajectoires.
+L'écran rend l'hémisphère céleste complet au-dessus de votre emplacement, aligné sur la direction de la boussole. La Carte des étoiles peut être rotée manuellement en faisant glisser l'écran. Après un balayage rapide, le ciel continue de bouger un instant puis ralentit progressivement. La rotation manuelle de la Carte des étoiles n'affecte pas l'orientation de la carte de la Terre. La carte de la Terre suit toujours le [mode d'orientation de la carte](../map/interact-with-map.md#map-orientation-modes) sélectionné dans vos paramètres. Appuyez sur les objets célestes pour obtenir des détails comme la magnitude, les heures de lever/coucher ou les trajectoires.
+
+La Carte des étoiles conserve sa dernière vue. Lorsque vous la rouvrez, y compris après le redémarrage de l'application, elle affiche la même direction et le même niveau de zoom qu'à sa fermeture.
 
 La Carte des étoiles peut également s'aligner sur l'orientation de votre appareil lorsque le mode boussole est activé. Dans ce mode, le ciel tourne en fonction des capteurs accéléromètre et boussole de l'appareil, vous permettant d'explorer le ciel en déplaçant physiquement votre téléphone.
 
@@ -132,7 +135,7 @@ Ces valeurs se mettent à jour dynamiquement en fonction de l'heure sélectionn�
 
 Sous les blocs d'informations rapides, le menu peut également inclure des informations et ressources supplémentaires sur l'objet :
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Vous permet de télécharger une base de données étendue avec des articles Wikipédia et des catalogues du ciel profond pour une utilisation hors ligne. Après le téléchargement, des informations détaillées sur les objets célestes peuvent être consultées directement dans l'application sans connexion Internet.
-- <Translate android="true" ids="read_on_wiki"/> – Ouvre l'article Wikipédia de l'objet dans le navigateur.
+- <Translate android="true" ids="read_on_wiki"/> – Ouvre l'article Wikipédia de l'objet dans le navigateur. Si l'article est disponible dans d'autres langues, un bouton de langue avec le code de la langue actuelle (par exemple, `En`) apparaît dans l'article. Appuyez dessus pour choisir une autre langue dans la liste.
 - <Translate android="true" ids="astro_designations"/> – Affiche les noms alternatifs et les identifiants de catalogue pour l'objet (par exemple, HD, HIP, NGC). Cette section est disponible pour les objets qui ont des entrées de catalogue, tels que les étoiles et les objets du ciel profond. Si l'objet n'a pas de nom commun, l'un de ces désignations est utilisé comme nom principal.
 - <Translate android="true" ids="online_photos"/> – Affiche les photos disponibles liées à l'objet céleste sélectionné.
 
@@ -150,13 +153,13 @@ Sous les informations sur l'objet, le Menu contextuel fournit plusieurs actions 
 
 <TabItem value="android" label="Android">
 
-![Graphique de visibilité](@site/static/img/plugins/starwatcher/visibility_new.png)
+![Graphique de visibilité](@site/static/img/plugins/starwatcher/visibility_new.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Graphique de visibilité](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+![Graphique de visibilité](@site/static/img/plugins/starwatcher/visibility_ios_new.webp)
 
 </TabItem>
 
@@ -169,7 +172,7 @@ Le graphique affiche l'altitude de l'objet au-dessus de l'horizon en fonction du
 - L'axe horizontal représente le temps de 12:00 à 12:00 le lendemain.
 - L'axe vertical représente l'altitude de −30° à +90°.
 
-La courbe colorée montre l'altitude de l'objet tout au long de la journée.
+La courbe colorée montre l'altitude de l'objet tout au long de la journée. Une flèche vers le haut sur le graphique marque le lever de l'objet, et une flèche vers le bas marque son coucher.
 
 L'arrière-plan du graphique représente l'état du ciel et change en fonction de la position du Soleil. Cela aide à identifier quand les observations sont possibles.
 
@@ -191,7 +194,7 @@ Sous le graphique, les événements d'observation importants sont affichés :
 - **<Translate android="true" ids="astro_culmination"/>** – quand l'objet atteint son altitude la plus élevée.
 - **<Translate android="true" ids="astro_set"/>** – quand l'objet se couche sous l'horizon. Si l'objet ne se lève jamais ou ne se couche jamais, les valeurs correspondantes sont masquées.
 
-Le graphique s'ouvre avec l'indicateur positionné à l'heure système actuelle. L'emplacement utilisé pour les calculs est indiqué sous le graphique. L'emplacement est affiché sous forme de nom de ville.
+Le graphique s'ouvre avec l'indicateur positionné à l'heure système actuelle. L'emplacement utilisé pour les calculs est indiqué sous le graphique. L'emplacement est affiché sous forme de nom de ville. Sur iOS, le nom de la ville est suivi du fuseau horaire des heures affichées, par exemple, `Canberra · Kyiv time (UTC+2)`. Toutes les heures de l'onglet Visibilité sont affichées dans le fuseau horaire de votre appareil. Si l'heure change pendant la journée affichée, les deux décalages UTC sont indiqués, par exemple, `UTC+3 → UTC+2`.
 
 ### Calendrier d'observation {#observation-schedule}
 
@@ -205,7 +208,7 @@ Le graphique s'ouvre avec l'indicateur positionné à l'heure système actuelle.
 
 <TabItem value="ios" label="iOS">
 
-![Calendrier d'observation](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+![Calendrier d'observation](@site/static/img/plugins/starwatcher/schedule_ios_new.webp)
 
 </TabItem>
 
@@ -221,6 +224,8 @@ L'onglet **Calendrier** affiche la visibilité de l'objet sélectionné pour la 
 Le mini graphique montre quand l'objet est visible pendant la journée et comment son altitude change. La section colorée de la barre représente la période où l'objet est au-dessus de l'horizon. Le mini graphique représente la plage horaire de 00:00 à 23:59 pour le jour sélectionné.
 
 Vous pouvez naviguer entre les semaines en utilisant les boutons fléchés dans l'en-tête du Calendrier. Le bouton calendrier vous permet de revenir à la semaine actuelle.
+
+Sur iOS, la note sous le calendrier indique le fuseau horaire des heures affichées, par exemple, `Kyiv time (UTC+3)`. Toutes les heures de l'onglet Calendrier sont affichées dans le fuseau horaire de votre appareil. Si l'heure change pendant la semaine affichée, les deux décalages UTC sont indiqués.
 
 <!--
 ## Celestial Object Info {#celestial-object-info}

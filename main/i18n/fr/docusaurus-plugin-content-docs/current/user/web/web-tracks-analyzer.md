@@ -1,8 +1,8 @@
 ---
-source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
+source-hash: c35b48b75c008612b036302e055181306b64e216afa3939f782a05d93c7ed8f5
 sidebar_position: 7
-sidebar_label: Tracks Analyzer
-title: Tracks Analyzer
+sidebar_label: Analyseur de traces
+title: Analyseur de traces
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Comment utiliser {#how-to-use}
 
 1. [Connectez-vous](./web-cloud.md#login) à votre compte OsmAnd Pro sur le portail de la carte Web. Vos traces doivent être synchronisées avec [OsmAnd Cloud](./web-cloud.md#cloud-sync).
-2. Ouvrez *Menu → Analyseur de traces* (l'icône clé à molette).
+2. Ouvrez *Menu → Analyseur de traces* (l'icône graphique avec une loupe).
 3. Dans le panneau **Sélectionner les traces**, choisissez **Toutes les traces** ou uniquement les dossiers dont vous avez besoin.
 4. Faites un clic droit sur la carte et sélectionnez **Point A**. Pour analyser un segment entre deux points, définissez également **Point B**.
 5. Consultez la liste des segments trouvés, [triez-la et choisissez les paramètres à afficher](#sorting-and-visible-parameters).
@@ -39,8 +39,8 @@ Après que l'analyseur a trouvé les segments correspondants, les résultats son
 
 Les paramètres disponibles comprennent :
 
-- Vitesse max., Vitesse moy. et Vitesse min.
-- Altitude max., Altitude moy. et Altitude min.
+- Vitesse max., Vitesse moyenne et Vitesse min.
+- Altitude max., Altitude moyenne et Altitude min.
 - Montée et Descente.
 - Date.
 - Étendue temporelle, Heure de début, Heure de fin, Durée et Temps en mouvement.

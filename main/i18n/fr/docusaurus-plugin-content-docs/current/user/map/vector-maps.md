@@ -1,5 +1,5 @@
 ---
-source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
+source-hash: 178d141932f7b8720f2c8c3d8aecc4e60ae376a12c49b662bf86080720fb83d6
 sidebar_position: 5
 title:  Cartes vectorielles 
 ---
@@ -25,7 +25,7 @@ Les cartes vectorielles représentent des données spatiales, telles que les rou
 
 Puisque les données vectorielles ne sont pas stockées sous forme d'images fixes, leur apparence, y compris la couleur, la largeur de ligne, la transparence ou le motif, peut être facilement modifiée. Cette approche permet un rendu efficace, une faible utilisation de la mémoire et un scaling fluide à tout niveau de zoom sans perte de qualité.
 
-:::info note
+:::info Remarque
 Très petits polygones peuvent être simplifiés ou déformés lors de la génération des données de carte. Les objets avec une surface inférieure à environ un mètre carré pourraient ne pas être affichés. Pour une visualisation correcte, les petites fonctionnalités devraient être cartographiées comme des nœuds uniques au lieu de polygones.
 :::
 
@@ -65,7 +65,7 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_widg
 
 </Tabs>
 
-La carte can be displayed with a light or dark theme based on the mode selected from a list of options. By default and for all new users, the [map style](#map-styles) aligns with the theme chosen in your device's system settings.
+La carte peut être affichée avec un thème clair ou sombre selon le mode sélectionné dans une liste d'options. Par défaut et pour tous les nouveaux utilisateurs, le [style de carte](#map-styles) s'aligne sur le thème choisi dans les paramètres système de votre appareil.
 
 - **<Translate android="true" ids="daynight_mode_day"/>**. Affiche toujours la carte avec un thème clair pour une visibilité optimale en journée.
 
@@ -498,12 +498,22 @@ Aller à : *Menu → Configurer la carte → Afficher → Grille de coordonnées
 
 <TabItem value="android" label="Android">  
 
-![Menu grille de coordonnées](@site/static/img/map/coordinates_grid_settings_andr.png) ![Menu grille de coordonnées](@site/static/img/map/coordinates_grid_format_andr.webp)
+![Menu grille de coordonnées](@site/static/img/map/coordinates_grid_settings_andr.webp) ![Menu grille de coordonnées](@site/static/img/map/coordinates_grid_format_andr.webp)
 
-La fonctionnalité **Grille de coordonnées** superpose une grille de référence sur la carte, vous permettant de visualiser les lignes de latitude et de longitude basées sur différents systèmes de coordonnées. Cette fonctionnalité est utile pour une référence de localisation précise et la navigation géospatiale. 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Menu grille de coordonnées](@site/static/img/map/coordinates_grid_settings_ios.webp) ![Menu grille de coordonnées](@site/static/img/map/coordinates_grid_format_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+La fonctionnalité **Grille de coordonnées** superpose une grille de référence sur la carte, vous permettant de visualiser les lignes de latitude et de longitude ou les lignes de grille métrique, selon le système de coordonnées sélectionné. Cette fonctionnalité est utile pour une référence de localisation précise et la navigation géospatiale. 
 
 Vous pouvez configurer les options suivantes :
-- **Niveaux de zoom :** définir les niveaux de zoom minimum et maximum (2 - 22) auxquels la grille est visible.
+- **Niveaux de zoom :** définir les niveaux de zoom minimum et maximum (0 - 22) auxquels la grille est visible.
 - **Position des étiquettes :** choisir entre *Bords* (par défaut) ou *Centre* pour les étiquettes de grille.
 - **Couleur de la grille :** disponible séparément pour les modes Jour/Nuit. 
 - **Format de coordonnées :** sélectionner parmi plusieurs formats disponibles (voir liste ci-dessous).
@@ -513,7 +523,7 @@ Vous pouvez configurer les options suivantes :
 - **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrés, Minutes, Secondes)
 - **WGS84** (EPSG:4326) - **DD.DDDDD°** (Degrés décimaux - format par défaut WGS84)
 - **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrés, Minutes décimales)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - système de grille basé sur des zones). Le niveau de zoom minimum est de 9, une seule zone UTM est affichée à la fois, car les zones sont séparées par des méridiens tous les 6°
+- **UTM** (EPSG:6387, Universal Transverse Mercator - système de grille basé sur des zones). Le niveau de zoom minimum est de 9, une seule zone UTM est affichée à la fois, car les zones sont séparées par des méridiens tous les 6°.
 - **OLC** (Open Location Code, également appelé Plus Code)
 - **MGRS** (Military Grid Reference System)
 - **Système de coordonnées suisse** - Swiss Grid (CH1903) et Swiss Grid (CH1903+)
@@ -521,39 +531,11 @@ Vous pouvez configurer les options suivantes :
 
 La section **Récents** affiche les systèmes de coordonnées récemment utilisés. Pour ajouter un autre système de coordonnées pris en charge, appuyez sur *Sélectionner un autre format*. Vous pouvez rechercher par nom de système de coordonnées ou par code EPSG, puis appuyer sur *+* pour l'ajouter à la liste.
 
-Par défaut, l'application utilise le format de coordonnées sélectionné dans les [Paramètres généraux](../personal/profiles.md#units--formats), mais vous pouvez le modifier directement dans ce menu.
+**Remarque :** la liste ne comprend que les systèmes de coordonnées que la grille peut afficher avec précision : les systèmes mesurés en mètres, avec une seule transformation de datum vers WGS 84 valable sur toute la zone du système. Les systèmes mesurés en pieds ou dans d'autres unités non métriques, ainsi que les systèmes nécessitant plusieurs transformations régionales, ne sont pas disponibles pour la grille.
+
+Par défaut, la grille utilise le format DDD.DDDDD. Le format que vous sélectionnez dans ce menu s'applique uniquement à la grille de coordonnées.
 
 [Action rapide](../widgets/quick-action.md#overview) : Vous pouvez également ajouter un basculement rapide *Afficher/Masquer la grille de coordonnées* au groupe [Configurer la carte](../widgets/quick-action.md#configure-map) pour un accès rapide.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![Paramètres grille de coordonnées iOS](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-La fonctionnalité **Grille de coordonnées** superpose une grille de référence sur la carte, vous permettant de visualiser les lignes de latitude et de longitude basées sur différents systèmes de coordonnées. Cette fonctionnalité est utile pour une référence de localisation précise et la navigation géospatiale. 
-
-Vous pouvez configurer les options suivantes :
-- **Niveaux de zoom :** définir les niveaux de zoom minimum et maximum (2 - 22) auxquels la grille est visible.
-- **Position des étiquettes :** choisir entre *Bords* (par défaut) ou *Centre* pour les étiquettes de grille.
-- **Couleur de la grille :** disponible séparément pour les modes Jour/Nuit. 
-- **Format de coordonnées :** sélectionner parmi plusieurs formats disponibles (voir liste ci-dessous).
-
-***Formats de coordonnées disponibles :***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Degrés, Minutes, Secondes)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Degrés décimaux - format par défaut WGS84)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Degrés, Minutes décimales)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - système de grille basé sur des zones). Le niveau de zoom minimum est de 9, une seule zone UTM est affichée à la fois, car les zones sont séparées par des méridiens tous les 6°
-- **MGRS** (Military Grid Reference System)
-
-Par défaut, l'application utilise le format de coordonnées sélectionné dans les [Paramètres généraux](../personal/profiles.md#units--formats), mais vous pouvez le modifier directement dans ce menu.
-
-[Action rapide](../widgets/quick-action.md#overview) : Vous pouvez également ajouter un basculement rapide *Afficher/Masquer la grille de coordonnées* au groupe [Configurer la carte](../widgets/quick-action.md#configure-map) pour un accès rapide.
-
-</TabItem>
-
-</Tabs>
 
 
 ## Itinéraires {#routes}

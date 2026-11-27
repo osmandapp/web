@@ -46,7 +46,7 @@ Cette section se concentre sur l'analyse des segments de traces entre les points
 
 Cette section explique comment construire et prévisualiser des itinéraires de navigation sur la carte web, y compris les profils de routage, les paramètres et les détails de l'itinéraire.
 
-### [Planifier un itinéraire](./planner.md) {#plan-route}
+### [Planifier l'itinéraire](./planner.md) {#plan-route}
 
 Cette section fournit des informations sur la planification d'itinéraires ou la création de navigation en utilisant différents profils.
 

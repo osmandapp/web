@@ -1,5 +1,5 @@
 ---
-source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
+source-hash: 19d6ff7c55c3913d09f5ad722d1053eb202a843057869e98633ff5ce9589d713
 sidebar_position: 6
 title:  Recherche par coordonnées
 ---
@@ -43,7 +43,7 @@ OsmAnd offre plusieurs moyens d'accéder à l'*Outil de recherche → [Onglet Re
 
 </Tabs>
 
-Les coordonnées peuvent être saisies dans n'importe quel format disponible, mais l'emplacement trouvé est affiché dans le format spécifié dans *Configurer le profil → Paramètres généraux → Unités et formats*.
+Les coordonnées peuvent être saisies dans n'importe quel format disponible, mais l'emplacement trouvé est affiché dans les formats de la liste spécifiée dans *Configurer le profil → Paramètres généraux → Unités et formats*, le format principal en premier.
 
 - Pour utiliser la recherche par coordonnées, vous pouvez les saisir individuellement dans chaque champ correspondant, ou coller des coordonnées précédemment copiées dans le champ de recherche ou les y entrer. L'application vous invite à sélectionner un emplacement approprié.
 - La recherche par coordonnées convertit automatiquement un format de coordonnées en un autre lorsque le format spécifié est modifié dans le champ avec leur liste.
@@ -115,7 +115,7 @@ Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour u
 - *Règles de saisie*. Les coordonnées se composent d'une zone MGRS, d'un carré et de deux autres chiffres indiquant les décalages est et nord.
 - *Utilisation la plus courante*. Le format MGRS est largement utilisé dans la navigation et les communications militaires, et peut également être utile pour les amateurs de plein air et les randonneurs.
 
-### Grille suisse (Android uniquement) {#swiss-grid}
+### Grille suisse {#swiss-grid}
 
 ![Recherche de coordonnées Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -128,7 +128,7 @@ Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour u
     - Le CH1903+ inclut des corrections pour tenir compte des décalages de coordonnées causés par les changements des mouvements tectoniques en Suisse.
 - *Utilisation la plus courante*. Les formats Grille suisse (CH1903) et Grille suisse (CH1903+) sont utilisés en Suisse pour les mesures géodésiques, la cartographie, les systèmes d'information géographique, ainsi que la construction et l'ingénierie. Ces formats fournissent un système de coordonnées local spécifique à la Suisse.
 
-### Système de localisateur Maidenhead (Android uniquement) {#maidenhead-locator-system}
+### Système de localisateur Maidenhead {#maidenhead-locator-system}
 
 ![Recherche de coordonnées Android](@site/static/img/search/coordinates_search_maidenhead.webp)
 
@@ -136,22 +136,41 @@ Il existe plusieurs façons de saisir les coordonnées pour la recherche. Pour u
 - *Règles de saisie*. Les coordonnées sont composées de paires alternées de lettres et de chiffres. Les localisateurs plus longs offrent une précision de position plus élevée.  
 - *Utilisation la plus courante*. Le système de localisateur Maidenhead est largement utilisé par les radioamateurs pour la localisation des stations, les communications radio et les concours.
 
-Pour chaque profil séparément, vous pouvez définir un format de coordonnées différent. Pour ce faire, allez dans *Paramètres généraux → [Format des coordonnées](../personal/profiles.md#units--formats)*.
+Pour chaque profil séparément, vous pouvez définir une liste différente de formats de coordonnées. Pour ce faire, allez dans *Paramètres généraux → [Format des coordonnées](../personal/profiles.md#units--formats)*.
 
 
-## Personnaliser le format des coordonnées (Android uniquement) {#customize-coordinate-format}
+## Personnaliser le format des coordonnées {#customize-coordinate-format}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Recherche de coordonnées Android](@site/static/img/search/customising_format.webp) ![Recherche de coordonnées Android](@site/static/img/search/searching_format.webp)
 
 Vous pouvez personnaliser la liste des formats de coordonnées disponibles pour le profil actuel.  
 Allez dans : *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
 
-Sur cet écran, vous pouvez :  
-- Appuyer sur le bouton *Modifier* pour définir le format de coordonnées principal, réorganiser ou supprimer des formats de coordonnées.
-- Appuyer sur + pour ajouter un autre format de coordonnées.
-- Ouvrir le menu ⋮ pour restaurer la liste par défaut des formats de coordonnées ou copier les formats de coordonnées d'un autre profil.
+</TabItem>
 
-Lorsque vous recherchez par coordonnées, vous pouvez sélectionner un format de coordonnées dans la liste Récent ou appuyer sur *Sélectionner un autre format* pour parcourir tous les systèmes de coordonnées disponibles. Vous pouvez également rechercher par nom de système de coordonnées ou par code EPSG.
+<TabItem value="ios" label="iOS">
+
+![Recherche de coordonnées iOS](@site/static/img/search/customising_format_ios.webp) ![Recherche de coordonnées iOS](@site/static/img/search/searching_format_ios.webp)
+
+Vous pouvez personnaliser la liste des formats de coordonnées disponibles pour le profil actuel.  
+Allez dans : *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,coords_format"/>*
+
+</TabItem>
+
+</Tabs>
+
+Le premier format de la liste est le format **principal**. Il est affiché en premier dans le [menu contextuel de la carte](../map/map-context-menu.md) et est utilisé par défaut dans les [widgets de coordonnées](../widgets/info-widgets.md#coordinates-widget).
+
+Sur cet écran, vous pouvez :  
+- Appuyer sur le bouton *Modifier* pour définir le format de coordonnées principal, réorganiser ou supprimer des formats de coordonnées. Au moins un format de coordonnées doit rester dans la liste.
+- Appuyer sur + pour ajouter un autre format de coordonnées. Sur l'écran *Ajouter un format*, recherchez dans une base de données de plus de 5 000 codes EPSG locaux et nationaux par pays, nom ou ID. Chaque format ajouté apparaît à la fin de la liste.
+- Ouvrir le menu ⋮ pour restaurer la liste par défaut des formats de coordonnées ou copier les formats de coordonnées d'un autre profil. 
+
+Lorsque vous recherchez par coordonnées, vous pouvez sélectionner un format de coordonnées dans la liste Récent ou appuyer sur *Sélectionner un autre format* pour parcourir tous les systèmes de coordonnées disponibles. Vous pouvez également rechercher par nom de système de coordonnées ou par code EPSG. La liste *Récent* affiche les 5 derniers formats que vous avez ajoutés. Pour les formats EPSG, les champs de coordonnées sont *Easting / X* et *Northing / Y*.
 
 
 <!--

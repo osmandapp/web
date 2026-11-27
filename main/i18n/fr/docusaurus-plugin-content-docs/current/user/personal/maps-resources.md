@@ -1,5 +1,5 @@
 ---
-source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
+source-hash: 1813dc99e0d296bb43d344b143353280237925904b056f4feaed4a2040ba4c22
 sidebar_position: 2
 title:  Cartes et ressources
 ---
@@ -179,7 +179,7 @@ Pour en savoir plus, consultez l'article [**Paquetage personnalisé**](../plugin
 
 </Tabs>
 
-Pour les pays composés de **plusieurs cartes régionales**, vous pouvez utiliser le chargement en masse de plusieurs cartes. Les cartes disponibles pour ce type de téléchargement sont affichées avec des icônes de double flèche de téléchargement et une étiquette avec le nombre de régions à l'intérieur (par exemple, Lignes de contour / Toutes les régions : 10). Vous pouvez choisir le nombre de cartes à télécharger. Le chargement en masse prend en charge plusieurs types de cartes, y compris Standard, Lignes de contour, Wikipédia et Relief.
+Pour les pays composés de **plusieurs cartes régionales**, vous pouvez utiliser le chargement en masse de plusieurs cartes. Les cartes disponibles pour ce type de téléchargement sont affichées avec des icônes de double flèche de téléchargement et une étiquette avec le nombre de régions à l'intérieur (par exemple, Lignes de contour / Toutes les régions : 10). Vous pouvez choisir le nombre de cartes à télécharger. Le chargement en masse prend en charge plusieurs types de cartes, y compris Standard, Lignes de contour, Wikipédia et Relief. Si une région se trouve entièrement à l'intérieur d'une autre région du même pays, par exemple une capitale au sein de sa région environnante, sa carte n'est pas incluse dans le téléchargement en masse ni dans le nombre de régions, car la carte de la région plus grande contient déjà ses données. Vous pouvez télécharger cette carte séparément depuis la page du pays.
 
 Lorsque l'élément de pays groupé est ouvert, une feuille inférieure s'affiche avec la liste complète des cartes pour ce pays, permettant de sélectionner des cartes individuelles ou de toutes les télécharger en une fois.
 
@@ -197,13 +197,13 @@ Allez à : *<Translate android="true" ids="shared_string_menu,maps_and_resources
 L'onglet Local fournit un aperçu de l'utilisation du stockage pour toutes les données OsmAnd sur votre appareil. Les données sont divisées en trois sections codées par couleur pour plus de clarté, avec les éléments triés par taille du plus grand au plus petit. Chaque section n'affiche que les éléments avec des données téléchargées :
 
 - ***Ressources*** (*bleu*).  
-    Inclut les cartes ([Standard](../map/vector-maps.md), &nbsp;[Nautical](../plugins/nautical-charts.md), &nbsp;[Topography](../plugins/topography.md), &nbsp;[Weather](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) and [Travel guides](../plan-route/travel-guides.md), &nbsp;[Live updates](../personal/maps-resources.md#live-updates), &nbsp;**Road only**,  &nbsp;[Map sources](../map/raster-maps.md), &nbsp;[Rendering styles](../map/map-styles.md#default-map-styles), &nbsp;**Map fonts, &nbsp;Voice prompts (recorded and TTS), &nbsp;Cache**.  
+    Inclut les cartes ([Standard](../map/vector-maps.md), &nbsp;[Nautique](../plugins/nautical-charts.md), &nbsp;[Topographie](../plugins/topography.md), &nbsp;[Météo](../plugins/weather.md)), &nbsp;[Wikipedia](../plugins/wikipedia.md) et [Guides de voyage](../plan-route/travel-guides.md), &nbsp;[Mises à jour en direct](../personal/maps-resources.md#live-updates), &nbsp;**Routes uniquement**,  &nbsp;[Sources de cartes](../map/raster-maps.md), &nbsp;[Styles de rendu](../map/map-styles.md#default-map-styles), &nbsp;**Polices de carte, &nbsp;Instructions vocales (enregistrées et TTS), &nbsp;Cache**.  
 
-- ***My Places*** (*yellow*).  
-    Includes [Favorites](../personal/favorites.md), &nbsp;[Tracks](../personal/tracks/manage-tracks.md), &nbsp;[OSM Notes](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[OSM Edits](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[A/V Notes](../plugins/audio-video-notes.md), &nbsp;[Map markers](../personal/markers.md), &nbsp;[History](../personal/global-settings.md#history), &nbsp;*Itinerary*.  
+- ***Mes lieux*** (*jaune*).  
+    Inclut les [Favoris](../personal/favorites.md), &nbsp;[Traces](../personal/tracks/manage-tracks.md), &nbsp;[Notes OSM](../plugins/osm-editing.md#create--modify-osm-note), &nbsp;[Modifications OSM](../plugins/osm-editing.md#osm-editing-layer), &nbsp;[Notes A/V](../plugins/audio-video-notes.md), &nbsp;[Marqueurs de carte](../personal/markers.md), &nbsp;[Historique](../personal/global-settings.md#history), &nbsp;*Itinéraire*.  
 
-- ***Settings*** (*green*).  
-    Includes [Profiles](../personal/profiles.md), &nbsp;[Colors](../personal/color-palette-schemes.md) and **Other** app configurations.
+- ***Paramètres*** (*vert*).  
+    Inclut les [Profils](../personal/profiles.md), &nbsp;[Couleurs](../personal/color-palette-schemes.md) et **d'autres** configurations de l'application.
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
+source-hash: ff258064d779b26129f3ed54a6c4982b439d96449a0d7c6d702aefdfb1ea57ae
 sidebar_position: 8
 title: Lieux populaires
 ---
@@ -176,7 +176,7 @@ Appuyer sur un POI sur la carte ouvre le [menu contextuel du POI](./map-context-
 
 </Tabs>
 
-Ceci est une section dans le [menu contextuel du POI](./map-context-menu.md) qui affiche un aperçu photo du Lieu populaire (Wikipedia) sélectionné. Vous pouvez faire défiler horizontalement pour parcourir les photos disponibles, ou appuyer sur n'importe quelle image pour l'ouvrir en [mode plein écran](#gallery).
+Ceci est une section dans le [menu contextuel du POI](./map-context-menu.md) qui affiche un aperçu photo du Lieu populaire (Wikipedia) sélectionné et les photos liées au POI dans OpenStreetMap. Une photo issue de la balise [`mapillary`](https://wiki.openstreetmap.org/wiki/Key:mapillary) du POI est affichée en premier, même lorsque le [plugin Mapillary](../plugins/mapillary.md) est désactivé. Sur Android, les photos issues de la balise [`panoramax`](https://wiki.openstreetmap.org/wiki/Key:panoramax) viennent ensuite, l'ordre étant donc Mapillary, Panoramax, Wikimedia. Vous pouvez faire défiler horizontalement pour parcourir les photos disponibles, ou appuyer sur n'importe quelle image pour l'ouvrir en [mode plein écran](#gallery).
 
 Les images consultées en ligne sont mises en cache automatiquement pour un accès hors ligne. Les photos mises en cache affichent un petit badge hors ligne dans le coin. La grille d'aperçu s'adapte à la taille de l'écran sur iPadOS et macOS, garantissant une mise en page confortable des images sur les écrans plus grands. OsmAnd évite également de déclencher des requêtes réseau répétées lorsque la section Photos en ligne est fermée, et annule les requêtes précédentes lors d'un basculement rapide entre différents POI.
 
@@ -210,12 +210,12 @@ Vous pouvez également effectuer les actions suivantes sur chaque photo :
   Partagez l'image sélectionnée en utilisant n'importe quelle application compatible installée sur votre appareil (par ex., messagerie, e-mail ou réseaux sociaux). Le contenu partagé inclut l'image et son lien source (si disponible).
 
 - **Détails**  
-  Ouvrez une vue détaillée affichant les métadonnées de l'image, y compris : *Description (texte complet)*, *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source*, et *Lien direct*
+    Ouvrez une vue détaillée affichant les métadonnées de l'image, y compris : *Description (texte complet)*, *Nom*, *Date d'ajout*, *Auteur*, *Licence*, *Source*, et *Lien direct* Sur Android, les photos Mapillary affichent *Auteur*, *Ajoutée* (la date de prise de vue), *Source*, *Licence* et un *Lien* vers la page de la photo sur [Mapillary](https://www.mapillary.com/).
 
   **Note :** La langue de la description dépend de la langue d'affichage de l'application. Si la description dans la langue sélectionnée n'est pas disponible, OsmAnd affiche la version anglaise ou la première traduction disponible.
 
 - **Ouvrir dans le navigateur**  
-  Lancez la page source de l'image (généralement sur [Wikimedia Commons](https://commons.wikimedia.org/)) dans votre navigateur par défaut. Cela vous permet de voir l'image complète, les informations de licence et le contenu associé.
+  Lancez la page source de l'image (généralement sur [Wikimedia Commons](https://commons.wikimedia.org/), ou la page de visionneuse pour les photos Mapillary) dans votre navigateur par défaut. Cela vous permet de voir l'image complète, les informations de licence et le contenu associé.
 
 - **Télécharger**  
   Enregistrez l'image dans le stockage de votre appareil. L'image téléchargée se trouve dans le dossier Téléchargements par défaut de votre appareil et est accessible hors ligne.

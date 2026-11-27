@@ -1,5 +1,5 @@
 ---
-source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
+source-hash: b076e363549de89788d39e28c794e1ab1884f389ec642e5833a3ff1b49f7e267
 sidebar_position: 4
 title:  Détails de l'itinéraire
 ---
@@ -248,7 +248,7 @@ Les attributs de la route sont accessibles dans les [Détails de l'itinéraire](
 
 Les informations virage par virage fournissent des [instructions](#instructions) détaillées sur la manière de naviguer sur un itinéraire. En plus du menu *Détails*, elles sont également affichées dans les widgets [*Manœuvres de l'itinéraire*](../../widgets/nav-widgets.md#route-guidance) et [*Voies*](../../widgets/nav-widgets.md#lanes). Ces informations vous aident à mieux naviguer sur votre itinéraire et vous permettent de planifier à l'avance.
 
-Appuyez sur une section spécifique de l'itinéraire dans la liste pour afficher des informations détaillées ou apporter des modifications si nécessaire. La carte s'agrandit et un [menu contextuel](../../map/map-context-menu.md) s'ouvre.
+Appuyez sur une section spécifique de l'itinéraire dans la liste pour afficher des informations détaillées ou apporter des modifications si nécessaire. La carte s'agrandit et un [menu contextuel](../../map/map-context-menu.md) s'ouvre. Appuyez sur une destination intermédiaire dans la liste pour ouvrir la carte à cette destination (*Android uniquement*).
 
 
 ### Instructions {#instructions}
@@ -257,13 +257,13 @@ Appuyez sur une section spécifique de l'itinéraire dans la liste pour afficher
 
 <TabItem value="android" label="Android">
 
-![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![Itinéraire de navigation Android](@site/static/img/navigation/route/navigation_turn_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Itinéraire de navigation iOS](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Itinéraire de navigation iOS](@site/static/img/navigation/route/navigation_turn_ios.webp)
 
 </TabItem>
 
@@ -276,6 +276,8 @@ Les instructions incluent des informations sur le déplacement le long de l'itin
 - Une description de *ce qu'il faut faire*, qui inclut le *nom de la rue ou du sentier*.
 - *Distance totale* et *durée de l'itinéraire*.
 - *Disposition des [voies](../../widgets/nav-widgets.md#lanes)* pour la route actuelle.
+- *Destinations intermédiaires* dans leur ordre le long de l'itinéraire, chacune avec son numéro, son nom ou ses coordonnées, ainsi que la distance et le temps depuis le départ.
+- *Destination finale*, marquée de l'icône de destination (*Android uniquement*).
 - *[Indicateur de côté de route](#roadside-indicator)* (*iOS uniquement*).
 
 

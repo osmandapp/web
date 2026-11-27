@@ -1,5 +1,5 @@
 ---
-source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
+source-hash: 5749833ed8004e11c20c4de19dd862afbe945281e8dc7187719f962bcf51fca1
 sidebar_position: 9
 title:  Cartes en ligne
 ---
@@ -34,7 +34,7 @@ La possibilité d'utiliser les cartes en ligne est automatiquement activée dans
 Vous trouverez des informations détaillées sur la visualisation et la personnalisation des cartes raster dans l'article [Cartes raster](../map/raster-maps.md). Comment les utiliser :
 
 1. [Sélectionner](../map/raster-maps.md#layers) la carte raster comme couche *Principale*, *Sous-couche* ou *Sur-couche*.
-    - [Modifier](../map/raster-maps.md#overlay) les paramètres de la couche (transparence).
+    - [Modifier](../map/raster-maps.md#overlay) les paramètres de la couche (visibilité).
 
 2. [Préparer / copier](../map/raster-maps.md#preparecopy-maps) les cartes raster sur l'appareil.
     - [Ajouter une nouvelle source de carte raster en ligne](../map/raster-maps.md#add-new-online-source)
@@ -51,7 +51,7 @@ Vous trouverez des informations détaillées sur la visualisation et la personna
 
 Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configurer la sous-couche / sur-couche Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Configurer la sous-couche / sur-couche Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.webp)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,laye
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configurer la sous-couche / sur-couche iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configurer la sous-couche / sur-couche iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.webp)
 
 </TabItem>
 

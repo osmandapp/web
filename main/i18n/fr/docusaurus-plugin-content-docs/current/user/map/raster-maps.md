@@ -1,5 +1,5 @@
 ---
-source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
+source-hash: 36e97b90c3769611facb2ea509fb7332fc9cfadf389290599e8b1eb4dd90b35a
 sidebar_position: 7
 title:  Cartes raster (en ligne / hors ligne)
 ---
@@ -64,7 +64,7 @@ Vous pouvez également changer [la source principale](#main) des cartes des cart
 - **iOS**. Pour *iOS*, cette fonctionnalité fonctionne par défaut.
 - **Android**. Pour *Android*, pour utiliser les cartes raster dans OsmAnd, vous devez activer le [plugin Cartes en ligne](../plugins/online-map.md). Suivez ces étapes : *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**[Modifier les paramètres de la couche](#layers)**. Pour améliorer la visibilité et le mélange des couches de carte raster, vous pouvez ajuster la transparence de la couche à l'aide du curseur à l'écran. De plus, vous pouvez modifier le style de la carte vectorielle en masquant les polygones, rendant les couches de sous-couche plus visibles. Ceci est particulièrement utile lors de la visualisation d'images satellites.
+**[Modifier les paramètres de la couche](#layers)**. Pour mélanger les couches de carte raster, vous pouvez ajuster la visibilité de la couche à l'aide du curseur à l'écran. De plus, vous pouvez modifier le style de la carte vectorielle en masquant les polygones, rendant les couches de sous-couche plus visibles. Ceci est particulièrement utile lors de la visualisation d'images satellites.
 
 
 ## Couches {#layers}
@@ -87,7 +87,7 @@ Vous pouvez également changer [la source principale](#main) des cartes des cart
 
 Dans OsmAnd, les cartes raster peuvent servir de source de carte supplémentaire aux côtés des cartes vectorielles par défaut, qui sont optimisées pour une utilisation hors ligne.  
 
-Vous avez la flexibilité d'ajouter une ou deux couches de tuiles en ligne pour compléter votre carte de base. Cela vous permet de visualiser jusqu'à trois couches de carte simultanément sur votre écran (plus le Terrain). Pensez-y comme à une tarte : [**Sous-couche**](#underlay) (base raster en dessous), [**Principale**](#main) (noyau vectoriel ou raster), [**Sur-couche**](#overlay) (raster au-dessus), avec l'ombrage [**Terrain**](#terrain) sur tout. Par exemple, vous pouvez utiliser l'imagerie satellite comme Sous-couche, la carte vectorielle hors ligne d'OsmAnd comme couche Principale avec une transparence accrue, et une carte des pistes cyclables comme Sur-couche par-dessus.
+Vous avez la flexibilité d'ajouter une ou deux couches de tuiles en ligne pour compléter votre carte de base. Cela vous permet de visualiser jusqu'à trois couches de carte simultanément sur votre écran (plus le Terrain). Pensez-y comme à une tarte : [**Sous-couche**](#underlay) (base raster en dessous), [**Principale**](#main) (noyau vectoriel ou raster), [**Sur-couche**](#overlay) (raster au-dessus), avec l'ombrage [**Terrain**](#terrain) sur tout. Par exemple, vous pouvez utiliser l'imagerie satellite comme Sous-couche, la carte vectorielle hors ligne d'OsmAnd comme couche Principale avec une visibilité réduite, et une carte des pistes cyclables comme Sur-couche par-dessus.
 
 >[Les cartes vectorielles](./vector-maps.md) sont disponibles **uniquement** dans la couche [Principale](#main) (et sont par défaut là). Les cartes raster peuvent être utilisées dans les trois couches : Principale, Sous-couche et Sur-couche.
 
@@ -95,7 +95,7 @@ Vous avez la flexibilité d'ajouter une ou deux couches de tuiles en ligne pour 
 
 Si vous souhaitez basculer plus rapidement entre ces couches ([Source de carte principale](#main), [Sur-couche](#overlay), [Sous-couche](#underlay) et [Terrain](#terrain)), vous pouvez ajouter une [Action rapide (Bouton personnalisé)](../widgets/quick-action.md) à l'écran de la carte et lui assigner les actions de carte correspondantes.
 
-Vous pouvez également ajuster la transparence de la carte de base pour la mélanger avec vos couches. Si nécessaire, vous pouvez activer un curseur de transparence sur l'écran principal pour des ajustements rapides.
+Vous pouvez également ajuster la visibilité de la carte de base pour la mélanger avec vos couches. Si nécessaire, vous pouvez activer un curseur sur l'écran principal pour des ajustements rapides.
 
 ### Principale {#main}
 
@@ -129,7 +129,7 @@ Par défaut, la carte principale est définie sur [Cartes vectorielles hors lign
 
 Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Configurer sous-couche / sur-couche Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Configurer sous-couche / sur-couche Android](@site/static/img/plugins/online-maps/overlay-andr.webp)  
 
 </TabItem>
 
@@ -137,15 +137,15 @@ Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,laye
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Configurer sous-couche / sur-couche iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Configurer sous-couche / sur-couche iOS](@site/static/img/plugins/online-maps/overlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Activer/désactiver* la couche de carte de sur-couche.
-2. *Transparence de la sur-couche* (*Android*) / *Transparence* de la carte de sur-couche (*iOS*).
-3. *Afficher le curseur de transparence* (*Android*) / *Afficher le curseur sur la carte* (*iOS*). Accès rapide au réglage de la transparence.
+2. *<Translate android="true" ids="overlay_transparency"/>* (*Android*) / *<Translate ios="true" ids="visibility"/>* (*iOS*). À 0 %, la carte de sur-couche est masquée ; à 100 %, elle est entièrement visible.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Accès rapide au réglage de la visibilité.
 4. *Source de la carte de sur-couche* (*Android*) / *Couches disponibles* (*iOS*). Sélectionnez une carte de tuiles en ligne dans la liste pour l'ajouter directement comme votre couche de sur-couche.
 5. *Afficher les symboles de la carte* - tels que le texte, les panneaux de signalisation, et autres.  
 6. *Ajouter une source en ligne* (*iOS*). [Ajouter une nouvelle source en ligne](#add-new-online-source).
@@ -159,7 +159,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_sett
 
 Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Configurer sous-couche / sur-couche Android](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Configurer sous-couche / sur-couche Android](@site/static/img/plugins/online-maps/underlay-andr.webp)
 
 </TabItem>
 
@@ -167,15 +167,15 @@ Allez à : *<Translate android="true" ids="shared_string_menu,configure_map,laye
 
 Allez à : *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Configurer sous-couche / sur-couche iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Configurer sous-couche / sur-couche iOS](@site/static/img/plugins/online-maps/underlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Activer/désactiver* la carte de sous-couche.
-2. *Transparence de la carte de base*.
-3. *Afficher le curseur de transparence* (*Android*) / *Afficher le curseur sur la carte* (*iOS*). Accès rapide au réglage de la transparence.
+2. *<Translate android="true" ids="map_transparency"/>*. À 100 %, la carte de base est entièrement visible ; à 0 %, seule la carte de sous-couche est affichée.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Accès rapide au réglage de la visibilité.
 4. *Source de la carte de sous-couche* (*Android*) / *Couches disponibles* (*iOS*). Sélectionnez une carte de tuiles en ligne dans la liste pour l'ajouter directement comme votre couche de sous-couche.
 5. *Afficher/Masquer les polygones*.
 6. *Ajouter une source en ligne* (*iOS*). [Ajouter une nouvelle source en ligne](#add-new-online-source).

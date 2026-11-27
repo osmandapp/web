@@ -1,5 +1,5 @@
 ---
-source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
+source-hash: fd62270946384571ddb0174dfd6f8910f5b39a06592a0da455d7339a651cd91e
 sidebar_position: 2
 title:  Achats iOS
 ---
@@ -98,7 +98,6 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | [Téléchargements de cartes](../start-with/download-maps.md) |  <details><summary>**5 téléchargements de cartes** <br /> (la mise à jour d'une carte compte comme un téléchargement) :</summary> <br /> - Le téléchargement ou la mise à jour d'une carte signifie uniquement le téléchargement-mise à jour de la carte d'un pays (région).<br /> - La **carte générale du monde**, la **correction d'altitude mondiale**, les **polices de carte** et les **invites vocales** ne sont pas comptabilisés dans les 5 possibilités de téléchargement.</details> | ✔ | ✔ |
 | [Mises à jour mensuelles des cartes](../personal/maps-resources.md#updates-menu) |  <details><summary>**Une fois par mois** <br /> (avec 2 jours de retard) :</summary> * limité à 5 téléchargements (la mise à jour d'une carte compte comme un téléchargement) </details> |  ✔ | ✔ |
 | [Mises à jour horaires des cartes](../personal/maps-resources.md#live-updates)<br/>Mises à jour en direct (délai d'1 heure) - [**](#-map-updates) | **-** | **-**| ✔ |
-| [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Relief 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Données topographiques](../plugins/topography.md#overview)<br/>(Courbes de niveau et Terrain) | **-** | ✔ | ✔ |
 | [Grille de coordonnées — Personnalisation de la couleur](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -110,7 +109,9 @@ La liste ci-dessous contient des informations sur les prix des produits OsmAnd p
 | [Plugin Astronomie](../plugins/astronomy.md) — [Planification d'observation](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Plugin Astronomie](../plugins/astronomy.md) — [Mode AR interactif](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin Astronomie](../plugins/astronomy.md) — [Carte du ciel hors ligne](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Couleur d'arrière-plan des widgets personnalisée](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navigation hors ligne et en ligne](../navigation/index.md)<br/>avec instructions détaillées | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/car-play.md) | ✔ | ✔ | ✔ |
 | [Recherche instantanée hors ligne](../search/index.md) | ✔ | ✔ | ✔ |
 | [Enregistrement de trajet](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Exporter des traces GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |

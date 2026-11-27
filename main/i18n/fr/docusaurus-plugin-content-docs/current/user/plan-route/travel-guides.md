@@ -1,5 +1,5 @@
 ---
-source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
+source-hash: b4619639adb2d5e3d6b6f586ec94e6848cf1ff4a970a0e9fc0c20c0320aa4f1e
 sidebar_position: 2
 title:  Guides de voyage
 ---
@@ -170,7 +170,7 @@ Dans ce menu, vous pouvez personnaliser l'apparence des articles lorsque vous tr
 Dans le menu Options, vous pouvez choisir d'enregistrer ou non les images des articles consultés pour les utiliser hors ligne. Vous pouvez également vider le cache des images existantes ou supprimer l'historique de recherche (ne fonctionne que lors de la recherche dans les *Guides de voyage*).
 
 - &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Les images des articles peuvent être téléchargées pour une utilisation hors ligne.  
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. Vide le cache des images pour libérer de la mémoire.
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. Vide le cache des images pour libérer de la mémoire. Le cache est partagé avec le plugin Wikipédia ; le vider supprime donc aussi les images enregistrées des articles Wikipédia.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Efface l'[historique de recherche](#search).
 
 ## Article de voyage {#travel-article}

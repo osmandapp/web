@@ -1,5 +1,5 @@
 ---
-source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
+source-hash: 2e48c3b33b0a1b2f2052d01d162cbc2eea2150966936da2a46c59204f2985986
 sidebar_position: 5
 title:  Journaux de plantage
 ---
@@ -50,8 +50,8 @@ Soyez prudent lorsque vous envoyez des journaux d'application, car ils peuvent c
 </Tabs>
 
 1. Allez dans *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* ou *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Envoyer le journal d'application en cours* (iOS). Selon votre situation, sélectionnez le type de journal approprié. Vous pouvez vous référer à la section [Journaux de plantage et journaux d'application](#crash-and-app-logs) pour plus de détails sur les différences entre les types de journaux.
-2. Dans le menu contextuel, choisissez Gmail ou votre application de messagerie préférée. Nous vous recommandons d'envoyer les journaux à `support@osmand.net`.
-3. Appuyez sur le bouton *Envoyer*.
+2. Dans le menu contextuel, choisissez où envoyer ou enregistrer les journaux : une application de messagerie, une application de stockage cloud ou un gestionnaire de fichiers pour les enregistrer sur votre appareil. Nous vous recommandons d'envoyer les journaux à `support@osmand.net`.
+3. Si vous envoyez les journaux par e-mail, appuyez sur le bouton *Envoyer*.
 
 <!--
 ### Send Logs from iOS Devices {#send-logs-from-ios-devices}

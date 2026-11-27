@@ -1,5 +1,5 @@
 ---
-source-hash: 3a1b19203e3a6ba30e182f8b8c57f3ac468e000ae98042c571c03b94e20ce825
+source-hash: 15d49bb0a51bde6a96859143a096fc9ae43659fa8e1fada3dc9753b8a8f92c70
 sidebar_position: 20
 title:  Wikipédia
 ---
@@ -122,25 +122,6 @@ Lorsque vous appuyez sur le bouton Rechercher, un panneau supplémentaire appara
 - Dans la version **Android**, vous pouvez ouvrir la [Recherche](../search/index.md) en appuyant sur l'*icône de recherche* dans le coin supérieur gauche de l'écran et/ou en appuyant sur l'*option de recherche* dans le menu.
 - Dans la version **iOS**, pour ouvrir la [Recherche](../search/index.md), l'icône de recherche se trouve dans le coin supérieur gauche de l'écran.
 
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
--->
-
 - Pour rechercher par [catégorie](../search/search-poi.md#poi-search-by-categories) Wikipédia, sélectionnez : *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -202,7 +183,12 @@ Pour ouvrir l'article Wikipédia :
 
 ## Paramètres de Wikipédia {#wikipedia-settings}
 
-Vous pouvez [définir la ou les langues](#set-preferred-language) dans lesquelles vous préférez lire les [articles](#wikipedia-article) et également configurer les [options de téléchargement des images](#download-images) pour chaque [profil](../personal/profiles.md).
+Vous pouvez [définir la ou les langues](#set-preferred-language) dans lesquelles vous préférez lire les [articles](#wikipedia-article) pour chaque [profil](../personal/profiles.md), configurer les [options de téléchargement des images](#download-images) et gérer le [cache des images](#image-cache). Sur iOS, les options de téléchargement des images sont définies pour chaque profil. Sur Android, elles s'appliquent à tous les profils.
+
+Tous les paramètres de Wikipédia sont regroupés dans les paramètres du plugin Wikipédia :
+
+- **Android**. Allez à : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings"/>*. Utilisez le bouton de profil en haut de l'écran pour sélectionner le profil dont vous souhaitez modifier les paramètres.
+- **iOS**. Allez à : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 ### Définir la langue préférée {#set-preferred-language}
 
@@ -230,10 +216,11 @@ Dans les versions **Android** et **iOS** de l'application OsmAnd, vous pouvez d�
 </Tabs>
 
 :::note
-Dans la version **iOS**, vous pouvez également définir la langue préférée pour les articles Wikipédia en utilisant :  
+Vous pouvez également définir la langue préférée pour les articles Wikipédia dans les paramètres du plugin Wikipédia :
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,shared_string_languages"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 :::
 
@@ -281,12 +268,38 @@ Vous pouvez choisir de télécharger ou non les images de Wikipédia sur votre a
 
 </Tabs>
 
-Dans la version **iOS** de l'application, vous pouvez également accéder aux options de téléchargement d'images via les *paramètres du plugin Wikipédia* :
+Vous pouvez également accéder aux options de téléchargement d'images dans les *paramètres du plugin Wikipédia* :
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,download_images"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
 ![Changer d'images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+
+### Cache des images {#image-cache}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Cache des images sur Android](@site/static/img/plugins/wikipedia/image_cache_android.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Cache des images sur iOS](@site/static/img/plugins/wikipedia/image_cache_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Les paramètres du plugin Wikipédia indiquent la taille des images enregistrées sur votre appareil. Le cache des images est partagé avec les guides de voyage ; le vider supprime donc aussi les images enregistrées des guides de voyage.
+
+Pour supprimer les images enregistrées, allez à :
+
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,images_cache"/>* → *<Translate android="true" ids="shared_string_clear"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics,remove_cache"/>*
 
 
 ## Articles connexes {#related-articles}

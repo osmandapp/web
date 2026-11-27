@@ -1,5 +1,5 @@
 ---
-source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
+source-hash: 2a64e0aeff55cd96db9ba2213903853f49b98bb5accbd0b25bd10e61fe1c29aa
 sidebar_position: 1
 title:  Planifier un itinéraire
 ---
@@ -17,21 +17,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Aperçu {#overview}
 
-L'outil **Planifier un itinéraire** (*Menu → Planifier un itinéraire*) est une fonctionnalité puissante de l'application OsmAnd qui vous permet de [créer de nouveaux itinéraires](#create-new-route) sous forme de traces GPX, de [modifier et d'ajouter de nouveaux segments](#segments) à des traces déjà enregistrées, de [mesurer des distances](#distance-measurement) sur la carte, et d'[attacher des segments de trace](#attach-track-to-roads) à la route disponible la plus proche en utilisant différents profils de navigation. La fonctionnalité est conçue pour fonctionner en *mode hors ligne*.
-
-Un itinéraire se compose d'un ensemble de segments entre des points spécifiés. Les segments peuvent être des lignes droites ou des itinéraires adaptés au profil sélectionné. L'itinéraire peut être enregistré au format GPX pour une importation, une modification et une [navigation](../navigation/setup/gpx-navigation.md) ultérieures.
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
 ![Planifier un itinéraire android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
+L'outil **Planifier un itinéraire** (*Menu → Planifier un itinéraire*) est une fonctionnalité puissante de l'application OsmAnd qui vous permet de [créer de nouveaux itinéraires](#create-new-route) sous forme de traces GPX, de [modifier et d'ajouter de nouveaux segments](#segments) à des traces déjà enregistrées, de [mesurer des distances](#distance-measurement) sur la carte, et d'[attacher des segments de trace](#attach-track-to-roads) à la route disponible la plus proche en utilisant différents profils de navigation. La fonctionnalité est conçue pour fonctionner en *mode hors ligne*.
+
+Un itinéraire se compose d'un ensemble de segments entre des points spécifiés. Les segments peuvent être des lignes droites ou des itinéraires adaptés au profil sélectionné. L'itinéraire peut être enregistré au format GPX pour une importation, une modification et une [navigation](../navigation/setup/gpx-navigation.md) ultérieures.
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Planifier un itinéraire ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
+
+L'outil **Planifier un itinéraire** (*Menu → Planifier un itinéraire*) est une fonctionnalité puissante de l'application OsmAnd qui vous permet de [créer de nouveaux itinéraires](#create-new-route) sous forme de traces GPX, de [modifier et d'ajouter de nouveaux segments](#segments) à des traces déjà enregistrées, de [mesurer des distances](#distance-measurement) sur la carte, et d'[attacher des segments de trace](#attach-track-to-roads) à la route disponible la plus proche en utilisant différents profils de navigation. La fonctionnalité est conçue pour fonctionner en *mode hors ligne*.
+
+Un itinéraire se compose d'un ensemble de segments entre des points spécifiés. Les segments peuvent être des lignes droites ou des itinéraires adaptés au profil sélectionné. L'itinéraire peut être enregistré au format GPX pour une importation, une modification et une [navigation](../navigation/setup/gpx-navigation.md) ultérieures.
+
+**Remarque :** sur iPad et Mac, ainsi que sur iPhone en orientation paysage, le panneau *Planifier un itinéraire* s'ouvre sur le côté gauche de l'écran sur toute la hauteur, et les boutons *+ POI*, *Annuler*, *Rétablir* et *Route +* se trouvent sur la carte. Sur iPhone en orientation portrait et dans les fenêtres iPad étroites, comme Split View ou Slide Over, le panneau s'ouvre en bas de l'écran.
 
 </TabItem>
 
@@ -207,7 +213,7 @@ Vous pouvez également ajouter un point intermédiaire directement depuis la car
 
 ![Planifier un itinéraire ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-Pour mesurer une distance ou planifier un trajet, ajoutez des points à l'emplacement du *Pointeur* un par un et appuyez sur le bouton *Route +*. En accédant à la **liste des points** ci-dessous, vous pouvez réorganiser les points, les supprimer ou accéder à un [menu contextuel de point](#point-context-menu) spécifique.
+Pour mesurer une distance ou planifier un trajet, ajoutez des points à l'emplacement du *Pointeur* un par un et appuyez sur le bouton *Route +*. En accédant à la **liste des points** dans le panneau *Planifier un itinéraire*, vous pouvez réorganiser les points, les supprimer ou accéder à un [menu contextuel de point](#point-context-menu) spécifique. Un point ne peut être déplacé qu'au sein de sa [section](#multimodal-routes), c'est-à-dire parmi les points atteints avec le même type d'itinéraire.
 
 </TabItem>
 
@@ -308,11 +314,11 @@ Dans l'onglet Itinéraire, chaque segment est affiché avec son type d'itinérai
 Vous pouvez gérer un segment à l'aide de son menu à trois points :
 - **Modifier le type d'itinéraire** — disponible pour un segment avec un seul type d'itinéraire. Ouvre Itinéraire entre les points, où vous pouvez sélectionner un type d'itinéraire différent.
 - **Définir un seul type d'itinéraire** — disponible lorsqu'un segment contient plusieurs sections avec différents types d'itinéraire. Ouvre Itinéraire entre les points, où vous pouvez appliquer un seul type d'itinéraire au segment. L'ensemble du segment est recalculé en utilisant le type de routage sélectionné.
-- **Trier** — réorganiser manuellement les points d'itinéraire ou utiliser Trier porte-à-porte pour les réorganiser afin de minimiser la distance totale de déplacement.
+- **Trier** — réorganiser manuellement les points d'itinéraire ou utiliser Trier porte-à-porte pour les réorganiser afin de minimiser la distance totale de déplacement. Dans un segment comportant plusieurs sections, les points sont triés au sein de chaque section.
 - **Enregistrer sous…** — enregistrer le segment comme un fichier séparé.
 - **Supprimer le segment** — supprimer le segment.
 
-Pour créer un nouveau segment non connecté, appuyez sur *Démarrer un nouveau segment* en bas de l'onglet Itinéraire. Pour continuer le segment actuel avec un type de routage différent, appuyez sur *Continuer avec un type différent* sous le dernier segment, puis sélectionnez un type de routage pour la section suivante.
+Pour créer un nouveau segment non connecté, appuyez sur *Démarrer un nouveau segment* en bas de l'onglet Itinéraire. Pour continuer le segment actuel avec un type de routage différent, appuyez sur *Continuer avec un type différent* sous le dernier segment, puis sélectionnez un type de routage pour la section suivante. Le type sélectionné s'affiche dans cette ligne sous la forme *Suivant : …*, et la nouvelle section commence avec le prochain point que vous ajoutez.
 
 Un segment peut être divisé en [sections](#multimodal-routes) lorsque différents types d'itinéraire sont utilisés pour différentes parties du segment. Chaque section affiche son type d'itinéraire et sa distance.
 
