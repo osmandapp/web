@@ -726,6 +726,19 @@ describe('changeProfile', () => {
             expect(ctx.selectedGpxFile.points[0].geoProfile).toBe(BICYCLE);
         }
     });
+
+    test('points of the Line profile without geometry are routed with the new profile', async () => {
+        const line = createPlainPoints(3).map((point) => ({ ...point, profile: PROFILE_LINE }));
+        const ctx = createProfileCtx(line, CHANGE_PROFILE_ALL);
+
+        await PointManager.changeProfile({ ctx, geoProfile: BICYCLE, changeAll: true });
+
+        expect(profiles(ctx)).toEqual([PROFILE_BICYCLE, PROFILE_BICYCLE, PROFILE_BICYCLE]);
+        expect(waitingWithProfile(ctx)).toEqual([
+            [50, 50.01, PROFILE_BICYCLE],
+            [50.01, 50.02, PROFILE_BICYCLE],
+        ]);
+    });
 });
 
 describe('drag a point', () => {
@@ -866,6 +879,23 @@ describe('drag a point', () => {
         );
         expect(waitingPairs(ctx)).toEqual([]);
     });
+
+    test('a marker being dragged stays on the map while a router answer redraws the track', async () => {
+        const points = createRoutedPoints(4);
+        points[3] = { ...points[3], geometry: [] };
+        const store = createDrawnCtx(points);
+        const point = store.selectedGpxFile.points[1];
+        const marker = markerOf(store, point);
+
+        marker.fire('dragstart');
+        marker.setLatLng({ lat: 50.015, lng: 30 });
+        await routeCached(store);
+
+        expect(dashedLines(store)).toEqual([]);
+        expect(markerOf(store, point)).toBe(marker);
+        marker.fire('dragend');
+        expect(lats(store.selectedGpxFile.points)).toEqual([50, 50.015, 50.02, 50.03]);
+    });
 });
 
 describe('insert a point from the line', () => {
@@ -927,6 +957,32 @@ describe('insert a point from the line', () => {
             [50.01, 50.015],
             [50.015, 50.02],
         ]);
+    });
+
+    test('a point is dragged out of a solid line, a dashed line waiting for the router gives none', () => {
+        const points = createRoutedPoints(3);
+        points[2] = { ...points[2], geometry: [] };
+
+        const [routed, waiting] = drawnLines(createDrawnCtx(points));
+
+        expect(routed.listens('mousemove')).toBe(true);
+        expect(waiting.listens('mousemove')).toBe(false);
+    });
+
+    test('a point dragged out of a line goes into the track after the editor has drawn the track anew', async () => {
+        const ctx = createDrawnCtx(createPlainPoints(3));
+        const track = ctx.selectedGpxFile;
+        const [line] = drawnLines(ctx);
+        const editable = new EditablePolyline(map, ctx, line);
+        editable.currentPolyline = line;
+        const view = { ...map, eachLayer: () => {}, addLayer: () => {} };
+
+        updateLayers({ map: view, ctx, ctxTrack: track, points: track.points, trackLayers: track.layers });
+        expect(drawnLines(ctx)).not.toContain(line);
+        editable.dragStartNewPoint(createDragEvent({ lat: 50.015, lng: 30 }), track);
+        await editable.dragEndNewPoint(createDragEvent({ lat: 50.015, lng: 30 }), jest.fn(), track);
+
+        expect(lats(ctx.selectedGpxFile.points)).toEqual([50, 50.01, 50.015, 50.02]);
     });
 
     test('the nearest segment of a line is the one the point lies on', () => {
@@ -1046,6 +1102,71 @@ describe('drawing in the editor', () => {
         expect(icons(shown.getLayers())).toEqual(
             expect.arrayContaining([MarkerOptions.options.trackStart, MarkerOptions.options.trackEnd])
         );
+    });
+
+    describe('a track shown on the map', () => {
+        const view = { ...map, getBounds: () => WORLD, getCenter: () => L.latLng(50, 30) };
+        const show = (data) => {
+            const ctx = createCtx([]);
+            ctx.trackRouter.getColor = ({ profile }) => profile;
+
+            return TrackLayerProvider.createLayersByTrackData({ data: { name: 'Track', ...data }, ctx, map: view });
+        };
+        const shownLines = (layers) => lines(layers.getLayers()).filter((line) => line.getLatLngs().length > 0);
+        const drawnPieces = (layers) =>
+            shownLines(layers).map((line) => [lats(line.getLatLngs()), !!line.options.dashArray]);
+        const ICON_NAMES = new Map([
+            [MarkerOptions.options.trackStart, 'start'],
+            [MarkerOptions.options.trackEnd, 'finish'],
+        ]);
+        const flags = (layers) =>
+            markers(layers.getLayers())
+                .map((marker) => [marker.getLatLng().lat, ICON_NAMES.get(marker.options.icon)])
+                .sort(([a], [b]) => a - b);
+
+        test('a gap ends one piece and starts the next, a segment waiting for the router is dashed', () => {
+            const routed = createGapPoints(5, 2);
+            routed[4].geometry = [];
+            const shownRouted = show({ tracks: [{ points: routed }] });
+
+            expect(drawnPieces(shownRouted)).toEqual([
+                [[50, 50.01], false],
+                [[50.01, 50.02], false],
+                [[50.03, 50.04], true],
+            ]);
+            expect(flags(shownRouted)).toEqual([
+                [50, 'start'],
+                [50.02, 'finish'],
+                [50.03, 'start'],
+                [50.04, 'finish'],
+            ]);
+
+            const shownPlain = show({ tracks: [{ points: createPlainGapPoints(5, 1) }] });
+
+            expect(drawnPieces(shownPlain)).toEqual([
+                [[50, 50.01], false],
+                [[50.02, 50.03, 50.04], false],
+            ]);
+            expect(flags(shownPlain)).toEqual([
+                [50, 'start'],
+                [50.01, 'finish'],
+                [50.02, 'start'],
+                [50.04, 'finish'],
+            ]);
+        });
+
+        test('the lines take the color of the appearance of the track, start and finish can be turned off', () => {
+            const points = createRoutedPoints(3);
+
+            const shown = show({ tracks: [{ points }], info: { color: '#ff0000', show_start_finish: false } });
+
+            expect(shownLines(shown).map((line) => line.options.color)).toEqual(['rgb(255 0 0)', 'rgb(255 0 0)']);
+            expect(flags(shown)).toEqual([]);
+            expect(flags(show({ tracks: [{ points }] }))).toEqual([
+                [50, 'start'],
+                [50.02, 'finish'],
+            ]);
+        });
     });
 
     test('the line weight follows the zoom', () => {
