@@ -46,7 +46,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, histo
     }, [ctx.trackState]);
 
     function getState(nextState) {
-        ctx.setSelectedGpxFile(fromHistoryState(nextState, ctx.selectedGpxFile));
+        ctx.setSelectedGpxFile(fromHistoryState(nextState, ctx));
         setUseSavedState(false);
     }
 

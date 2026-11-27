@@ -1,4 +1,4 @@
-import { effectControlRouterRequests } from '@map/context/TracksRoutingCache';
+import { effectControlRouterRequests, getWaitingSegments } from '@map/context/TracksRoutingCache';
 import { geoRouter } from '@map/store/geoRouter/geoRouter';
 import { createEditorCtx } from '../../util/fixtures/tracks';
 
@@ -97,6 +97,9 @@ describe('the params of a profile', () => {
         const ctx = createEditorCtx({ points: [start, end] });
         ctx.trackRouter = router();
         ctx.trackRouter.updateRouteBetweenPoints = jest.fn(async () => ({ points: [] }));
+        const waiting = [start, { ...end, geometry: [] }];
+        const [{ key }] = getWaitingSegments(waiting, ctx.trackRouter);
+        ctx.routingCache[key] = { geometry: ['routed'] };
 
         ctx.trackRouter.providers = [
             { ...OSMAND, profiles: OSMAND.profiles.map((profile) => ({ ...profile, params: profile.resetParams })) },
@@ -104,7 +107,7 @@ describe('the params of a profile', () => {
         ];
         expect(effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() })).toBe(false);
 
-        ctx.selectedGpxFile.points = [start, { ...end, geometry: [] }];
+        ctx.selectedGpxFile.points = waiting;
 
         expect(effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() })).toBe(true);
         expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(1);

@@ -221,8 +221,6 @@ export default class EditablePolyline {
 
         polyline.addTo(track.layers);
         // XXX register layers (but check is it still really need)
-
-        return polyline;
     }
 
     findTheNearestSegment({ point, segments }) {

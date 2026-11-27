@@ -68,37 +68,53 @@ function routeOrLine(ctx, startPoint, endPoint, geoProfile) {
 }
 
 export function effectRefreshTrackWithRouting({ ctx, map, geoRouter, saveChanges }) {
-    const track = ctx.selectedGpxFile;
-    const answered = getWaitingSegments(track.points, geoRouter).filter(({ key }) => ctx.routingCache[key]?.geometry);
-    if (answered.length === 0) {
+    const { routes, routeTypes } = takeCachedAnswers(ctx.selectedGpxFile, ctx.routingCache, geoRouter);
+    if (routes.length === 0) {
         return false;
     }
 
-    let routeTypes = track.routeTypes;
-    const routes = answered.map(({ index, key }) => {
-        const answer = ctx.routingCache[key];
-        const merged = mergeRouteTypes(answer.geometry, answer.routeTypes, routeTypes);
-        routeTypes = merged.routeTypes;
-
-        return { index, geometry: merged.geometry };
-    });
-
-    const layers = track.layers?.getLayers() ?? [];
+    const layers = ctx.selectedGpxFile.layers?.getLayers() ?? [];
     let updateLayers = false;
     routes.forEach(({ index, geometry }) => {
-        const { id } = track.points[index];
+        const { id } = ctx.selectedGpxFile.points[index];
         const tempLine = id !== undefined && layers.find((layer) => layer.point?.id === id);
         if (tempLine) {
-            refreshTempLine({ ctx, map, geometry, tempLine, color: geoRouter.getColor(track.points[index - 1]) });
+            const color = geoRouter.getColor(ctx.selectedGpxFile.points[index - 1]);
+            refreshTempLine({ ctx, map, geometry, tempLine, color });
         } else {
             updateLayers = true;
         }
     });
 
-    const points = setSegmentGeometries(track.points, routes);
-    saveChanges(null, null, null, { ...track, points, routeTypes, ...(updateLayers && { updateLayers }) }); // mutate track with more data and call setSelectedGpxFile({...})
+    const points = setSegmentGeometries(ctx.selectedGpxFile.points, routes);
+    saveChanges(null, null, null, {
+        ...ctx.selectedGpxFile,
+        points,
+        routeTypes,
+        ...(updateLayers && { updateLayers }),
+    }); // mutate track with more data and call setSelectedGpxFile({...})
 
     return true;
+}
+
+export function withCachedRoutes(track, ctx) {
+    const { routes, routeTypes } = takeCachedAnswers(track, ctx.routingCache, ctx.trackRouter);
+
+    return { ...track, points: setSegmentGeometries(track.points, routes), routeTypes };
+}
+
+function takeCachedAnswers(track, cache, geoRouter) {
+    let routeTypes = track.routeTypes;
+    const routes = getWaitingSegments(track.points, geoRouter)
+        .filter(({ key }) => cache[key]?.geometry)
+        .map(({ index, key }) => {
+            const merged = mergeRouteTypes(cache[key].geometry, cache[key].routeTypes, routeTypes);
+            routeTypes = merged.routeTypes;
+
+            return { index, geometry: merged.geometry };
+        });
+
+    return { routes, routeTypes };
 }
 
 function dropUnansweredCache(ctx, waiting) {

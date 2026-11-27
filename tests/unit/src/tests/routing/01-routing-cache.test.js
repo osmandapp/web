@@ -8,6 +8,7 @@ import {
 } from '@map/context/TracksRoutingCache';
 import TracksManager, { mergeRouteTypes, ROUTER_ERROR_LINE_USED } from '@map/manager/track/TracksManager';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
+import { fromHistoryState, toHistoryState } from '@map/manager/track/TrackHistory';
 import { apiPost } from '@map/util/HttpApi';
 import { createEditorCtx, createEditorPoint, createRecordedGeometry } from '../../util/fixtures/tracks';
 import { settle } from '../../util/settle';
@@ -279,21 +280,21 @@ test('the route types of an answer join the track, the indexes in its segments f
     expect(answered[0].segment.ext).toEqual({ types: '0,1', pointTypes: '1', names: '0' });
 });
 
-test('after an undo the waiting segments take their cached routes, the others are asked again', () => {
+test('after an undo the waiting segments take their cached routes at once, the others are asked again', () => {
     const [a, b, gap, c, d] = [point(0), waitingPoint(1), point(2, GAP), waitingPoint(3), waitingPoint(4)];
     const ctx = createCtx([a, b, gap, c, d]);
     const [abKey] = keys(ctx);
-    answer(ctx, abKey, ['routed']);
+    const route = [
+        { lat: 50, lng: 30 },
+        { lat: 50.01, lng: 30 },
+    ];
+    answer(ctx, abKey, route);
 
-    effectRefreshTrackWithRouting({
-        ctx,
-        geoRouter,
-        saveChanges: (points, wpts, layers, track) => ctx.setSelectedGpxFile(track),
-    });
+    ctx.selectedGpxFile = fromHistoryState(toHistoryState(ctx.selectedGpxFile), ctx);
     startRouting(ctx);
 
     const { points } = ctx.selectedGpxFile;
-    expect(points[1].geometry).toEqual(['routed']);
+    expect(points[1].geometry).toEqual(route);
     expect(points[3].geometry).toEqual([]);
     expect(askedPairs(ctx)).toEqual([[50.03, 50.04]]);
 });
