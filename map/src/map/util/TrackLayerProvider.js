@@ -660,6 +660,14 @@ export function isWptClick(e) {
     return !!e.propagatedFrom?.options?.wpt;
 }
 
+export function checkShowPoints(layers, showPoints, isWpts) {
+    layers.getLayers().forEach((layer) => {
+        if (layer instanceof L.Marker && !!layer.options.wpt === isWpts && layer._icon) {
+            layer._icon.style.display = showPoints ? null : 'none';
+        }
+    });
+}
+
 // for updating markers
 export function redrawWptsOnLayer({ layer, pointsGroups }) {
     if (!layer || !pointsGroups) return;

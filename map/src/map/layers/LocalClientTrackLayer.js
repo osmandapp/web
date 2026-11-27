@@ -3,7 +3,12 @@ import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context
 import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import TrackLayerProvider, { isWptClick, redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
+import TrackLayerProvider, {
+    checkShowPoints,
+    isWptClick,
+    redrawWptsOnLayer,
+    WPT_SIMPLIFY_THRESHOLD,
+} from '../util/TrackLayerProvider';
 import TracksManager, { getResolvedPointsGroups, isEmptyTrack } from '../../manager/track/TracksManager';
 import { applyZoomToFit, addLayerToMap } from '../util/MapManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -34,6 +39,7 @@ import {
     clearAllRegisteredLayers,
     createFirstLayers,
     deleteOldLayers,
+    redrawPointMarkers,
     redrawTrackPoints,
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
@@ -133,8 +139,7 @@ export default function LocalClientTrackLayer() {
     }, [ctxTrack]);
 
     useEffect(() => {
-        const layersOnMap = ctxTrack?.layers && map.hasLayer(ctxTrack.layers);
-        if (ctx.createTrack?.enable && isLocalTrack(ctx) && ctxTrack?.points && layersOnMap) {
+        if (isEditedTrackDrawn()) {
             redrawTrackPoints({ map, ctx, points: ctxTrack.points, trackLayers: ctxTrack.layers });
             hideMarkersUnderSelectedPin();
         }
@@ -158,6 +163,10 @@ export default function LocalClientTrackLayer() {
 
             setPrevZoom(zoom);
             setMove(false);
+        } else if (isEditedTrackDrawn()) {
+            redrawPointMarkers({ map, ctx, points: ctxTrack.points, trackLayers: ctxTrack.layers });
+            checkShowPoints(ctxTrack.layers, ctx.showPoints.points, false);
+            hideMarkersUnderSelectedPin();
         }
     }, [zoom, move]);
 
@@ -425,6 +434,16 @@ export default function LocalClientTrackLayer() {
             wpts: ctxTrack.wpts,
             trackLayers,
         });
+    }
+
+    function isEditedTrackDrawn() {
+        return (
+            ctx.createTrack?.enable &&
+            isLocalTrack(ctx) &&
+            ctxTrack?.points &&
+            ctxTrack.layers &&
+            map.hasLayer(ctxTrack.layers)
+        );
     }
 
     function hideMarkersUnderSelectedPin() {

@@ -10,7 +10,7 @@ import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import EditableMarker from '@map/map/util/creator/EditableMarker';
 import { assignPointIds, isProtectedSegment, isWaitingForRouter, setProfile } from '@map/manager/track/TrackOperations';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
-import { redrawTrackPoints, updateLayers } from '@map/map/util/creator/LocalTrackLayerHelper';
+import { redrawPointMarkers, redrawTrackPoints, updateLayers } from '@map/map/util/creator/LocalTrackLayerHelper';
 import MarkerOptions from '@map/map/markers/MarkerOptions';
 import useUndoRedo from '@map/infoblock/useUndoRedo';
 import { updateGroupsVisibility } from '@map/manager/track/TrackAppearanceManager';
@@ -1064,6 +1064,30 @@ describe('drawing in the editor', () => {
         );
         expect(markers(draw(big, { zoom: 17 }))).toHaveLength(1001);
         expect(markers(draw(createPlainPoints(3), { bounds: L.latLngBounds([0, 0], [1, 1]) }))).toEqual([]);
+    });
+
+    test('after a zoom or a pan the points in view get markers, the markers out of view go, a dragged one stays', () => {
+        const ctx = createDrawnCtx(createPlainPoints(1001));
+        const { points, layers } = ctx.selectedGpxFile;
+        const first = markerOf(ctx, points[0]);
+        const viewFrom = (south) => ({
+            ...map,
+            getZoom: () => 17,
+            getBounds: () => L.latLngBounds([south, 29], [south + 0.055, 31]),
+        });
+        const markerLats = () => lats(markers(layers.getLayers()).map((marker) => marker.getLatLng()));
+
+        redrawPointMarkers({ map: viewFrom(50), ctx, points, trackLayers: layers });
+
+        expect(markerLats()).toEqual([50, 50.01, 50.02, 50.03, 50.04, 50.05]);
+        expect(markerOf(ctx, points[0])).toBe(first);
+
+        const dragged = markerOf(ctx, points[1]);
+        dragged.setLatLng({ lat: 50.015, lng: 30 });
+        redrawPointMarkers({ map: viewFrom(50.5), ctx, points, trackLayers: layers });
+
+        expect(markerLats()).toEqual([50.015, 50.5, 50.51, 50.52, 50.53, 50.54, 50.55]);
+        expect(markerOf(ctx, points[1])).toBe(dragged);
     });
 
     test('a line has the color of the profile of its start point, a plain run the color of Line', () => {

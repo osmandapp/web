@@ -1,3 +1,4 @@
+import L from 'leaflet';
 import PointManager from '@map/manager/PointManager';
 import TracksManager, {
     addDistance,
@@ -8,7 +9,7 @@ import TracksManager, {
 import { effectRefreshTrackWithRouting, getWaitingSegments } from '@map/context/TracksRoutingCache';
 import { saveTrackToLocalStorage } from '@map/context/LocalTrackStorage';
 import { addPointToTrack } from '@map/map/util/creator/LocalTrackHelper';
-import { redrawTrackPoints } from '@map/map/util/creator/LocalTrackLayerHelper';
+import { redrawPointMarkers, redrawTrackPoints } from '@map/map/util/creator/LocalTrackLayerHelper';
 import { apiPost } from '@map/util/HttpApi';
 import { cloneTrackObject } from '@map/util/Utils';
 import { setSegmentGeometries } from '@map/manager/track/TrackOperations';
@@ -167,6 +168,35 @@ test('17.11 redraw after the answers of the router and the analysis on 50k', asy
         },
     });
     record('17.11 redraw after the router answer of one segment of routed 50k', routed, MS);
+});
+
+test('17.12 markers after a pan on 50k', async () => {
+    const pan = (view) => (ctx) =>
+        redrawPointMarkers({
+            map: view,
+            ctx,
+            points: ctx.selectedGpxFile.points,
+            trackLayers: ctx.selectedGpxFile.layers,
+        });
+    const viewFrom = (south) => ({
+        ...map,
+        getZoom: () => 17,
+        getBounds: () => L.latLngBounds([south, 29], [south + 0.01, 31]),
+    });
+    for (const { kind, createPoints } of TRACK_KINDS) {
+        const still = await measure(pan(map), { prepare: () => createDrawnCtx(createPoints()) });
+        record(`17.12 markers after a pan that shows no new point of ${kind} 50k`, still, MS);
+
+        const moved = await measure(pan(viewFrom(52)), {
+            prepare: () => {
+                const ctx = createDrawnCtx(createPoints());
+                pan(viewFrom(50))(ctx);
+
+                return ctx;
+            },
+        });
+        record(`17.12 markers after a pan into a new area of ${kind} 50k`, moved, MS);
+    }
 });
 
 test('17.4 router answers of 200 route points with 100k vertices', async () => {

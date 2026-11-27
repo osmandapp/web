@@ -147,14 +147,35 @@ export function redrawTrackPoints({ map, ctx, points, trackLayers }) {
         isDrawn: isDrawnLine,
         create: (line) => createEditableLine({ map, ctx, line }),
     });
+    redrawPointMarkers({ map, ctx, points, trackLayers, drawn: drawnMarkers });
+}
+
+export function redrawPointMarkers({ map, ctx, points, trackLayers, drawn = getDrawnMarkers(trackLayers) }) {
+    const dragged = new Set();
+    drawn.forEach((marker, pointId) => {
+        if (!TracksManager.isEqualPoints(marker.getLatLng(), marker.options.pointLatLng)) {
+            dragged.add(pointId);
+        }
+    });
     redrawByKey({
         trackLayers,
-        drawn: drawnMarkers,
-        items: getPointsWithMarkers(map, points),
+        drawn,
+        items: getPointsWithMarkers(map, points, dragged),
         keyOf: ({ id }) => id,
         isDrawn: (marker, point) => TracksManager.isEqualPoints(marker.options.pointLatLng, point),
         create: (point) => createEditableMarker({ map, ctx, point }),
     });
+}
+
+function getDrawnMarkers(trackLayers) {
+    const drawnMarkers = new Map();
+    trackLayers.eachLayer((layer) => {
+        if (layer.options.isRoutePoint) {
+            drawnMarkers.set(layer.options.pointId, layer);
+        }
+    });
+
+    return drawnMarkers;
 }
 
 function hasSameDrawing(drawnPoints, points) {
@@ -234,12 +255,14 @@ function createEditableMarker({ map, ctx, point }) {
     return new EditableMarker(map, ctx, pointLatLng, options).create();
 }
 
-function getPointsWithMarkers(map, points) {
+function getPointsWithMarkers(map, points, dragged) {
     const bounds = map.getBounds();
     const thinned = points.length > POINTS_SIMPLIFY_THRESHOLD && map.getZoom() < POINTS_SIMPLIFY_ZOOM_THRESHOLD;
 
     return points.filter(
-        (point, index) => (!thinned || index % 30 === 0) && bounds.contains(new L.LatLng(point.lat, point.lng))
+        (point, index) =>
+            dragged.has(point.id) ||
+            ((!thinned || index % 30 === 0) && bounds.contains(new L.LatLng(point.lat, point.lng)))
     );
 }
 
