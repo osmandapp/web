@@ -1,5 +1,5 @@
 ---
-source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
+source-hash: b4619639adb2d5e3d6b6f586ec94e6848cf1ff4a970a0e9fc0c20c0320aa4f1e
 sidebar_position: 2
 title:  Guide di viaggio
 ---
@@ -171,7 +171,7 @@ In questo menu, è possibile personalizzare l'aspetto degli articoli quando si l
 Nel menu Opzioni, è possibile scegliere se salvare le immagini negli articoli visualizzati per utilizzarle quando si è offline. È anche possibile svuotare la cache delle immagini esistenti o eliminare la cronologia delle ricerche (funziona solo quando si cerca nelle *Guide di viaggio*).
 
 - &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Le immagini negli articoli possono essere scaricate per l'uso offline.  
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. Svuota la cache delle immagini per liberare memoria.
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. Svuota la cache delle immagini per liberare memoria. La cache è condivisa con il plugin Wikipedia, quindi svuotarla elimina anche le immagini salvate degli articoli di Wikipedia.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Cancella la [cronologia delle ricerche](#search).
 
 ## Articolo di viaggio {#travel-article}

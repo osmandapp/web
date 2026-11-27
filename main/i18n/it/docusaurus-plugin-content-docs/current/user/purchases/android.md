@@ -1,5 +1,5 @@
 ---
-source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
+source-hash: ac4b1ef2a793eeac796124826048717fd7b712c23f6ffb664ab0c28b45623390
 sidebar_position: 1
 title:  Acquisti Android
 ---
@@ -126,7 +126,6 @@ La tabella seguente illustra in dettaglio le funzionalità incluse nei pacchetti
 | [Download illimitati delle mappe](../start-with/download-maps.md) | <details><summary>**7 download di mappe**</summary>  - Per download o aggiornamento di una mappa si intende solo il download-aggiornamento della mappa di un paese (regione). <br/> - **Mappa panoramica del mondo**, **Correzione altitudine mondiale**, **Caratteri mappa** e **Istruzioni vocali** non vengono conteggiati come 7 possibilità di download. </details> | ✔ | ✔ |
 | [Aggiornamenti mensili delle mappe](../personal/maps-resources.md#updates-menu)<br/>Una volta al mese (con 2 giorni di ritardo) | <details><summary>**7 download di mappe**</summary> L'aggiornamento della mappa conta come un download.</details> | ✔ | ✔ |
 | [Aggiornamenti orari delle mappe](../personal/maps-resources.md#live-updates)<br/>Aggiornamenti live (ritardo di 1 ora) - [**](#-map-updates) | **-** | **-** | ✔ |
-| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Supporto sensori esterni](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Dati topografici](../plugins/topography.md#overview)<br/>(Curve di livello e Terreno) | **-** | ✔ | ✔ |
 | [Griglia coordinate — Personalizzazione colore](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -139,8 +138,9 @@ La tabella seguente illustra in dettaglio le funzionalità incluse nei pacchetti
 | [Plugin Astronomia](../plugins/astronomy.md) — [Modalità AR interattiva](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin Astronomia](../plugins/astronomy.md) — [Mappa del cielo offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Plugin Astronomia](../plugins/astronomy.md) — [Esploratore eclissi](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
-| [Colori widget personalizzati](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
+| [Colore di sfondo personalizzato dei widget](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navigazione offline e online](../navigation/index.md)<br/>con indicazioni svolta per svolta | ✔ | ✔ | ✔ |
+| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | ✔ | ✔ | ✔ |
 | [Ricerca istantanea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Registrazione del viaggio](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Esporta tracce GPX](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |

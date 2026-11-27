@@ -1,5 +1,5 @@
 ---
-source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
+source-hash: 36e97b90c3769611facb2ea509fb7332fc9cfadf389290599e8b1eb4dd90b35a
 sidebar_position: 7
 title:  Mappe Raster (Online / Offline)
 ---
@@ -61,7 +61,7 @@ Le mappe raster hanno una vasta gamma di utilizzi. Ecco alcuni dei più popolari
 - **iOS**. Per *iOS*, questa funzione funziona per impostazione predefinita.
 - **Android**. Per *Android*, per utilizzare le mappe raster in OsmAnd è necessario abilitare il [plugin Mappe online](../plugins/online-map.md). Seguire questi passaggi: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**[Modifica i parametri del livello](#layers)**. Per migliorare la visibilità e la combinazione dei livelli di mappe raster, è possibile regolare la trasparenza del livello utilizzando il cursore sullo schermo. Inoltre, è possibile modificare lo stile della mappa vettoriale nascondendo i poligoni, rendendo più visibili i livelli di underlay. Ciò è particolarmente utile quando si visualizzano immagini satellitari.
+**[Modifica i parametri del livello](#layers)**. Per combinare i livelli di mappe raster, è possibile regolare la visibilità del livello utilizzando il cursore sullo schermo. Inoltre, è possibile modificare lo stile della mappa vettoriale nascondendo i poligoni, rendendo più visibili i livelli di underlay. Ciò è particolarmente utile quando si visualizzano immagini satellitari.
 
 
 ## Livelli {#layers}
@@ -84,7 +84,7 @@ Le mappe raster hanno una vasta gamma di utilizzi. Ecco alcuni dei più popolari
 
 In OsmAnd, le mappe raster possono fungere da fonte di mappa aggiuntiva accanto alle mappe vettoriali predefinite, ottimizzate per l'uso offline.  
 
-Si ha la flessibilità di aggiungere uno o due livelli di tile online per completare la mappa di base. Ciò consente di visualizzare fino a tre livelli di mappa contemporaneamente sullo schermo (più Terreno). Pensateli come una torta: [**Underlay**](#underlay) (base raster sottostante), [**Principale**](#main) (vettoriale o raster core), [**Overlay**](#overlay) (raster sovrapposto), con l'ombreggiatura del [**Terreno**](#terrain) su tutto. Ad esempio, è possibile utilizzare immagini satellitari come Underlay, la mappa vettoriale offline di OsmAnd come livello Principale con maggiore trasparenza e una mappa dei percorsi ciclabili come Overlay in cima.
+Si ha la flessibilità di aggiungere uno o due livelli di tile online per completare la mappa di base. Ciò consente di visualizzare fino a tre livelli di mappa contemporaneamente sullo schermo (più Terreno). Pensateli come una torta: [**Underlay**](#underlay) (base raster sottostante), [**Principale**](#main) (vettoriale o raster core), [**Overlay**](#overlay) (raster sovrapposto), con l'ombreggiatura del [**Terreno**](#terrain) su tutto. Ad esempio, è possibile utilizzare immagini satellitari come Underlay, la mappa vettoriale offline di OsmAnd come livello Principale con visibilità ridotta e una mappa dei percorsi ciclabili come Overlay in cima.
 
 >[Le mappe vettoriali](./vector-maps.md) sono disponibili **solo** nel livello [Principale](#main) (e sono quelle predefinite lì). Le mappe raster possono essere utilizzate in tutti e tre i livelli: Principale, Underlay e Overlay.
 
@@ -92,7 +92,7 @@ Si ha la flessibilità di aggiungere uno o due livelli di tile online per comple
 
 Se si desidera passare più rapidamente tra questi livelli ([fonte mappa principale](#main), [Overlay](#overlay), [Underlay](#underlay) e [Terreno](#terrain)), è possibile aggiungere un [Quick Action (Pulsante personalizzato)](../widgets/quick-action.md) allo schermo della mappa e assegnargli le azioni mappa corrispondenti.
 
-È anche possibile regolare la trasparenza della mappa di base per fonderla con i livelli. Se necessario, è possibile abilitare un cursore di trasparenza sulla schermata principale per regolazioni rapide.
+È anche possibile regolare la visibilità della mappa di base per fonderla con i livelli. Se necessario, è possibile abilitare un cursore sulla schermata principale per regolazioni rapide.
 
 ### Principale {#main}
 
@@ -126,7 +126,7 @@ Per impostazione predefinita, la mappa principale è impostata su [Mappe vettori
 
 Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Configura underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Configura underlay / overlay Android](@site/static/img/plugins/online-maps/overlay-andr.webp)  
 
 </TabItem>
 
@@ -134,15 +134,15 @@ Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Configura underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Configura underlay / overlay iOS](@site/static/img/plugins/online-maps/overlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Attiva/disattiva* il livello mappa Overlay.
-2. *Trasparenza overlay* (*Android*)/ *Trasparenza* della mappa Overlay (*iOS*).
-3. *Mostra cursore trasparenza* (*Android*) / *Mostra cursore sulla mappa* (*iOS*). Accesso rapido all'impostazione della trasparenza.
+2. *<Translate android="true" ids="overlay_transparency"/>* (*Android*) / *<Translate ios="true" ids="visibility"/>* (*iOS*). Allo 0%, la mappa Overlay è nascosta; al 100%, è completamente visibile.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Accesso rapido all'impostazione della visibilità.
 4. *Fonte mappa overlay* (*Android*) / *Livelli disponibili* (*iOS*). Selezionare una mappa a tile online dall'elenco per aggiungerla direttamente come livello Overlay.
 5. *Mostra simboli mappa* - come testo, segnali stradali e altro.  
 6. *Aggiungi fonte online* (*iOS*). [Aggiungi nuova fonte online](#add-new-online-source).
@@ -156,7 +156,7 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setti
 
 Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Configura underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Configura underlay / overlay Android](@site/static/img/plugins/online-maps/underlay-andr.webp)
 
 </TabItem>
 
@@ -164,15 +164,15 @@ Andare a: *<Translate android="true" ids="shared_string_menu,configure_map,layer
 
 Andare a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Configura underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Configura underlay / overlay iOS](@site/static/img/plugins/online-maps/underlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Attiva/disattiva* la mappa Underlay.
-2. *Trasparenza mappa di base*.
-3. *Mostra cursore trasparenza* (*Android*) / *Mostra cursore sulla mappa* (*iOS*). Accesso rapido all'impostazione della trasparenza.
+2. *<Translate android="true" ids="map_transparency"/>*. Al 100%, la mappa di base è completamente visibile; allo 0%, è mostrata solo la mappa Underlay.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Accesso rapido all'impostazione della visibilità.
 4. *Fonte mappa underlay* (*Android*) / *Livelli disponibili* (*iOS*). Selezionare una mappa a tile online dall'elenco per aggiungerla direttamente come livello Underlay.
 5. *Mostra/Nascondi poligoni*.
 6. *Aggiungi fonte online* (*iOS*). [Aggiungi nuova fonte online](#add-new-online-source).

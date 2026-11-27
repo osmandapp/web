@@ -1,5 +1,5 @@
 ---
-source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
+source-hash: 1813dc99e0d296bb43d344b143353280237925904b056f4feaed4a2040ba4c22
 sidebar_position: 2
 title:  Mappe e Risorse
 ---
@@ -179,7 +179,7 @@ Leggi di più nell'articolo [**Pacchetto personalizzato**](../plugins/custom).
 
 </Tabs>
 
-Per i paesi composti da **mappe di più regioni**, è possibile utilizzare il caricamento in blocco di più mappe. Le mappe disponibili per questo tipo di download sono visualizzate con icone a doppia freccia di download e un'etichetta con il numero di regioni all'interno (ad es. Linee di contorno / Tutte le regioni: 10). È possibile scegliere quante mappe scaricare. Il caricamento in blocco supporta diversi tipi di mappa, inclusi Standard, Linee di contorno, Wikipedia e Terreno.
+Per i paesi composti da **mappe di più regioni**, è possibile utilizzare il caricamento in blocco di più mappe. Le mappe disponibili per questo tipo di download sono visualizzate con icone a doppia freccia di download e un'etichetta con il numero di regioni all'interno (ad es. Linee di contorno / Tutte le regioni: 10). È possibile scegliere quante mappe scaricare. Il caricamento in blocco supporta diversi tipi di mappa, inclusi Standard, Linee di contorno, Wikipedia e Terreno. Se una regione si trova interamente all'interno di un'altra regione dello stesso paese, ad esempio una capitale all'interno della regione che la circonda, la sua mappa non è inclusa nel download in blocco né nel conteggio delle regioni, perché la mappa della regione più grande contiene già i suoi dati. Puoi scaricare questa mappa separatamente dalla pagina del paese.
 
 Quando un elemento di paese raggruppato viene aperto, viene visualizzata una scheda inferiore con l'elenco completo delle mappe per quel paese, consentendo di selezionare mappe individuali o di scaricarle tutte in una volta.
 

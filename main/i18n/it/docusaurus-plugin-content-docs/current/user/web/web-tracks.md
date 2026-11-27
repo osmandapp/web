@@ -33,7 +33,7 @@ Si tratta di una funzionalità a pagamento <ProFeature/>. Per utilizzarla, acced
 La sezione Tracce contiene tutti gli strumenti e le azioni relativi alle tracce. Sono disponibili le seguenti opzioni:
 
 - Mostra tracce da [OsmAnd Cloud](#cloud-tracks).
-- Aggiungere tracce sulla mappa (cartella **Visible on map**).
+- Aggiungere tracce sulla mappa (cartella **Visibili sulla mappa**).
 - Visualizzare tutte le info sulle tracce e il grafico
 - Modifica tracce e aggiungile al Cloud.
 - Scarica ed elimina tracce.
@@ -63,11 +63,11 @@ Se non è possibile importare o salvare una traccia in OsmAnd Cloud, una finestr
 
 ## Visibile sulla mappa {#visible-on-the-map}
 
-La vista **Visible on map** elenca tutte le tracce attualmente visualizzate sulla mappa. Qualsiasi traccia può essere aggiunta a questa lista dal pannello principale Tracce utilizzando l'opzione **⋮ → Make track visible**.
+La vista **Visibili sulla mappa** elenca tutte le tracce attualmente visualizzate sulla mappa. Qualsiasi traccia può essere aggiunta a questa lista dal pannello principale Tracce utilizzando l'opzione **⋮ → Rendi il percorso visibile**.
 
-Le tracce visibili sulla mappa sono evidenziate in blu, mentre le tracce attualmente nascoste appaiono in grigio. Un interruttore accanto a ogni traccia ti permette di mostrarla o nasconderla rapidamente. Il pulsante **Hide all** disattiva tutte le tracce visibili contemporaneamente.
+Le tracce visibili sulla mappa sono evidenziate in blu, mentre le tracce attualmente nascoste appaiono in grigio. Un interruttore accanto a ogni traccia ti permette di mostrarla o nasconderla rapidamente. Il pulsante **Nascondi tutto** disattiva tutte le tracce visibili contemporaneamente.
 
-Sotto l'elenco principale, la sezione **Recently visible** mostra le tracce che erano visualizzate sulla mappa in precedenza. Questo rende facile riattivare una traccia senza doverla cercare di nuovo nelle tue cartelle o in OsmAnd Cloud.
+Sotto l'elenco principale, la sezione **Visibili di recente** mostra le tracce che erano visualizzate sulla mappa in precedenza. Questo rende facile riattivare una traccia senza doverla cercare di nuovo nelle tue cartelle o in OsmAnd Cloud.
 
 ![Visibile sulla mappa](@site/static/img/web/visible_new.png) ![Visibile sulla mappa](@site/static/img/web/visible_new_2.png)
 
@@ -76,7 +76,7 @@ Sotto l'elenco principale, la sezione **Recently visible** mostra le tracce che 
 
 ![Menu cartella traccia](@site/static/img/web/collection_new.png)
 
-Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Track Folder*. Da qui, puoi:
+Fai clic sul pulsante a tre punti (⋮) per aprire il menu *Cartella traccia*. Da qui, puoi:
 
  - Scarica come OSF.
  - Scarica come Collezione OBF. Esporta la cartella in formato binario OsmAnd, scegliendo un [file OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/) o un [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
@@ -100,7 +100,7 @@ Le tracce vengono visualizzate solo se la configurazione dello Smart Folder è s
 
 La sincronizzazione degli Smart Folder può variare a seconda della piattaforma e della configurazione di sincronizzazione. Per risultati più coerenti, assicurati che la sincronizzazione Cloud sia abilitata e aggiornata su tutti i dispositivi.
 
-Il menu a tre punti (⋮) fornisce azioni aggiuntive per lo Smart Folder. Puoi *Download as OSF*, *Download as OBF collection*, *Rename* o *Delete* la cartella.
+Il menu a tre punti (⋮) fornisce azioni aggiuntive per lo Smart Folder. Puoi scaricare la cartella (*Scarica come OSF*, *Scarica come collezione OBF*), rinominarla (*Rinomina*) o eliminarla (*Elimina*).
 
 ![Cartelle intelligenti](@site/static/img/web/smart_folder_new.png) ![Cartelle intelligenti](@site/static/img/web/smart_folder_menu_new.png)
 
@@ -115,11 +115,11 @@ Puoi anche utilizzare il pulsante **Focus** per nascondere tutti gli altri prefe
 
 Le seguenti funzionalità sono disponibili dopo aver selezionato una traccia cloud:
 - *Information* - visualizzazione dei dati della traccia.
-- *Elevation* - grafico dell'elevazione.
-- *Speed* - grafico della velocità.
+- *Elevazione* - grafico dell'elevazione.
+- *Velocità* - grafico della velocità.
 - *Slope* - grafico della pendenza.
-- *Recalculate Elevation (Satellite)* - ricalcola i valori di elevazione per la traccia selezionata e li mostra nel grafico dell'elevazione.
-- *Road type* - divide la traccia in segmenti per classificazione stradale.
+- *Ricalcola elevazione (satellite)* - ricalcola i valori di elevazione per la traccia selezionata e li mostra nel grafico dell'elevazione.
+- *Tipo di strada* - divide la traccia in segmenti per classificazione stradale.
 - *Surface* - mostra i tipi di superfici della traccia lungo il percorso.
 - *Smoothness* - visualizza la fluidità del segmento basata sui tag OSM.
 

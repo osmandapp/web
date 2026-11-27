@@ -1,5 +1,5 @@
 ---
-source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
+source-hash: d675bf78b7d5f02b9e16ef27beaba0dfa88409214edd570ed49a75ad00bd2d71
 sidebar_position: 19
 title:  Meteo
 ---
@@ -139,7 +139,7 @@ Andare su: *Plugin abilitato → <Translate ios="true" ids="shared_string_menu,c
 
 Per visualizzare i livelli meteo sulla schermata della mappa di OsmAnd, è necessario utilizzare il menu *Configura mappa*. Andare al menu, trovare la voce *Meteo* nell'elenco (disponibile solo quando il plugin è abilitato) e toccarla.  
 
-In questo menu è possibile modificare la **visibilità** e le [impostazioni](#weather-settings) di ogni livello, selezionare il tipo di linee di contorno e scaricare le [previsioni meteo offline a 7 giorni](#offline-forecast) (*disponibile solo per Android qui*).
+In questo menu è possibile modificare la **visibilità** e le [impostazioni](#weather-settings) di ogni livello, selezionare il tipo di linee di contorno e scaricare le [previsioni meteo offline a 7 giorni](#offline-forecast) (*disponibile solo per Android qui*). Allo 0% di visibilità, il livello è nascosto; al 100%, è completamente visibile.
 
 
 ### Impostazioni Meteo {#weather-settings}
@@ -168,7 +168,7 @@ In questo menu è possibile modificare la **visibilità** e le [impostazioni](#w
 È importante decidere in quali unità di misura è più comodo visualizzare i [dati Meteo](#weather-layers) sulla mappa e nella sezione [widget Meteo](#weather-widgets) dello schermo. È possibile scegliere le unità di misura appropriate per ogni parametro. È anche possibile utilizzare i valori predefiniti — su iOS per tutti i parametri, su Android solo per la temperatura. L'unità di misura della temperatura si seleziona in: *Menu → Profilo → Impostazioni generali → Unità e formati → Temperatura*. Nella versione iOS dell'app OsmAnd, è anche possibile abilitare l'opzione di previsione offline per evitare di utilizzare il traffico mobile durante il viaggio.  
 
 :::note
-Nella versione iOS di OsmAnd, è possibile modificare le unità di misura e il livello di trasparenza nel menu che si apre dopo un tocco prolungato dell'icona del livello della mappa richiesto.  
+Nella versione iOS di OsmAnd, è possibile modificare le unità di misura e il livello di visibilità nel menu che si apre dopo un tocco prolungato dell'icona del livello della mappa richiesto.  
 :::
 
 ### Livelli Meteo {#weather-layers}

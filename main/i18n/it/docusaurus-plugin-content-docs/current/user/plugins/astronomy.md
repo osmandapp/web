@@ -1,5 +1,5 @@
 ---
-source-hash: 18bdcf0d20caf5aabbea26b8ec6fcda7bc035763be0d7facfcec6e68cdb29d7d
+source-hash: 130c83b8f6cc63700c70288424f77bbacf7aa8e0dc8112b623117a5229a4b17c
 sidebar_position: 3
 title:  Astronomia
 unlistead: true
@@ -65,9 +65,12 @@ La **schermata Mappa stellare** dedicata mostra una cupola celeste interattiva c
 - [**Cerca**](#search) — apre la schermata di ricerca in cui è possibile cercare oggetti celesti e sfogliare cataloghi e categorie del cielo. 
 - **Ora e data** — consente di modificare la data e l'ora per osservare il cielo in diversi momenti del passato o del futuro. Utile per pianificare osservazioni, tracciare il movimento degli oggetti o imparare come cambia il cielo nel tempo. Se si imposta una data/ora personalizzata, il chip mostra la data e l'ora complete e appare un pulsante di ripristino accanto per tornare all'ora di sistema corrente.
 - **<Translate android="true" ids="magnitude_filter"/>** — consente di limitare le stelle visualizzate in base alla loro luminosità. Usa il cursore per impostare il valore massimo della magnitudine. Valori inferiori mostrano solo le stelle più luminose, mentre valori superiori rivelano stelle più deboli e oggetti del cielo profondo. Questo aiuta a ridurre l'affollamento visivo o a simulare ciò che è visibile a occhio nudo.
+- **<Translate android="true" ids="zoomIn"/> / <Translate android="true" ids="zoomOut"/>** — cambiano la scala della Mappa stellare in modo graduale, un passo a ogni tocco. I pulsanti sono mostrati sui tablet Android e su Mac, in una colonna sopra il pulsante <Translate android="true" ids="magnitude_filter"/>.
 - [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — apre le impostazioni di visualizzazione che controllano come vengono mostrati sulla Mappa stellare oggetti, percorsi e linee di riferimento.
 
-La schermata visualizza l'intero emisfero celeste sopra la tua posizione, allineato con la direzione della bussola. La Mappa stellare può essere ruotata manualmente trascinando la schermata. La rotazione manuale della Mappa stellare non influisce sull'orientamento della mappa terrestre. La mappa terrestre segue sempre la [modalità di orientamento della mappa](../map/interact-with-map.md#map-orientation-modes) selezionata nelle impostazioni. Tocca gli oggetti celesti per dettagli come magnitudine, orari di alba/tramonto o percorsi.
+La schermata visualizza l'intero emisfero celeste sopra la tua posizione, allineato con la direzione della bussola. La Mappa stellare può essere ruotata manualmente trascinando la schermata. Dopo uno swipe rapido, il cielo continua a muoversi per un momento e poi rallenta gradualmente. La rotazione manuale della Mappa stellare non influisce sull'orientamento della mappa terrestre. La mappa terrestre segue sempre la [modalità di orientamento della mappa](../map/interact-with-map.md#map-orientation-modes) selezionata nelle impostazioni. Tocca gli oggetti celesti per dettagli come magnitudine, orari di alba/tramonto o percorsi.
+
+La Mappa stellare mantiene l'ultima vista. Quando la riapri, anche dopo aver riavviato l'app, mostra la stessa direzione e lo stesso livello di zoom di quando l'hai chiusa.
 
 La Mappa stellare può anche allinearsi con l'orientamento del dispositivo quando la modalità bussola è abilitata. In questa modalità, il cielo ruota in base ai sensori di accelerometro e bussola del dispositivo, consentendo di esplorare il cielo muovendo fisicamente il telefono.
 
@@ -131,7 +134,7 @@ Questi valori si aggiornano dinamicamente in base all'ora selezionata e alla pos
 
 Sotto i blocchi di informazioni rapide, il menu può includere anche informazioni e risorse aggiuntive sull'oggetto:
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Consente di scaricare un database esteso con articoli di Wikipedia e cataloghi del cielo profondo per uso offline. Dopo il download, le informazioni dettagliate sugli oggetti celesti possono essere visualizzate direttamente nell'app senza connessione Internet.
-- <Translate android="true" ids="read_on_wiki"/> – Apre l'articolo di Wikipedia dell'oggetto nel browser.
+- <Translate android="true" ids="read_on_wiki"/> – Apre l'articolo di Wikipedia dell'oggetto nel browser. Se l'articolo è disponibile in altre lingue, nell'articolo compare un pulsante della lingua con il codice della lingua corrente (ad esempio `En`). Toccalo per scegliere un'altra lingua dall'elenco.
 - <Translate android="true" ids="astro_designations"/> – Mostra nomi alternativi e identificatori di catalogo per l'oggetto (ad esempio, HD, HIP, NGC). Questa sezione è disponibile per gli oggetti che hanno voci di catalogo, come stelle e oggetti del cielo profondo. Se l'oggetto non ha un nome comune, viene utilizzata come nome principale una di queste designazioni.
 - <Translate android="true" ids="online_photos"/> – Visualizza le foto disponibili relative all'oggetto celeste selezionato.
 
@@ -149,13 +152,13 @@ Sotto le informazioni sull'oggetto, il Menu contestuale fornisce diverse azioni 
 
 <TabItem value="android" label="Android">
 
-![Grafico di visibilità](@site/static/img/plugins/starwatcher/visibility_new.png)
+![Grafico di visibilità](@site/static/img/plugins/starwatcher/visibility_new.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Grafico di visibilità](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+![Grafico di visibilità](@site/static/img/plugins/starwatcher/visibility_ios_new.webp)
 
 </TabItem>
 
@@ -168,7 +171,7 @@ Il grafico visualizza l'altitudine dell'oggetto sopra l'orizzonte nel tempo.
 - L'asse orizzontale rappresenta il tempo dalle 12:00 alle 12:00 del giorno successivo.
 - L'asse verticale rappresenta l'altitudine da −30° a +90°.
 
-La curva colorata mostra l'altitudine dell'oggetto durante il giorno.
+La curva colorata mostra l'altitudine dell'oggetto durante il giorno. Una freccia verso l'alto sul grafico segna il sorgere dell'oggetto e una freccia verso il basso ne segna il tramonto.
 
 Lo sfondo del grafico rappresenta lo stato del cielo e cambia in base alla posizione del Sole. Questo aiuta a identificare quando le osservazioni sono possibili.
 
@@ -190,7 +193,7 @@ Sotto il grafico vengono visualizzati gli eventi di osservazione importanti:
 - **<Translate android="true" ids="astro_culmination"/>** – quando l'oggetto raggiunge la sua altitudine massima.
 - **<Translate android="true" ids="astro_set"/>** – quando l'oggetto tramonta sotto l'orizzonte. Se l'oggetto non sorge o non tramonta mai, i valori corrispondenti vengono nascosti.
 
-Il grafico si apre con l'indicatore posizionato all'ora di sistema corrente. La posizione utilizzata per i calcoli viene mostrata sotto il grafico. La posizione è visualizzata come nome di città.
+Il grafico si apre con l'indicatore posizionato all'ora di sistema corrente. La posizione utilizzata per i calcoli viene mostrata sotto il grafico. La posizione è visualizzata come nome di città. Su iOS, il nome della città è seguito dal fuso orario degli orari mostrati, ad esempio `Canberra · Kyiv time (UTC+2)`. Tutti gli orari nella scheda Visibilità sono mostrati nel fuso orario del tuo dispositivo. Se l'ora cambia durante il giorno mostrato, vengono mostrati entrambi gli scostamenti UTC, ad esempio `UTC+3 → UTC+2`.
 
 ### Programma di osservazione {#observation-schedule}
 
@@ -204,7 +207,7 @@ Il grafico si apre con l'indicatore posizionato all'ora di sistema corrente. La 
 
 <TabItem value="ios" label="iOS">
 
-![Programma di osservazione](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+![Programma di osservazione](@site/static/img/plugins/starwatcher/schedule_ios_new.webp)
 
 </TabItem>
 
@@ -220,6 +223,8 @@ La scheda **Programma** mostra la visibilità dell'oggetto selezionato per la se
 Il mini grafico mostra quando l'oggetto è visibile durante il giorno e come cambia la sua altitudine. La sezione colorata della barra rappresenta il periodo in cui l'oggetto è sopra l'orizzonte. Il mini grafico rappresenta l'intervallo di tempo dalle 00:00 alle 23:59 del giorno selezionato.
 
 È possibile navigare tra le settimane utilizzando i pulsanti freccia nell'intestazione del Programma. Il pulsante del calendario consente di tornare alla settimana corrente.
+
+Su iOS, la nota sotto il programma mostra il fuso orario degli orari mostrati, ad esempio `Kyiv time (UTC+3)`. Tutti gli orari nella scheda Programma sono mostrati nel fuso orario del tuo dispositivo. Se l'ora cambia durante la settimana mostrata, vengono mostrati entrambi gli scostamenti UTC.
 
 <!--
 ## Celestial Object Info {#celestial-object-info}

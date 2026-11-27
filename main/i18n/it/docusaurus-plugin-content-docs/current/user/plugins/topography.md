@@ -1,5 +1,5 @@
 ---
-source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
+source-hash: 1dedf30fcafbdd4bf9df2e543bf8db14623c9186c879536ea1c090f7aff4544b
 sidebar_position: 16
 title: Topografia
 ---
@@ -155,7 +155,7 @@ Le curve di livello sono una [funzionalità a pagamento](../purchases/index.md).
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Menu curve di livello Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Menu curve di livello Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.webp)
 
 </TabItem>
 
@@ -163,7 +163,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plu
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Curve di livello*
 
-![Menu curve di livello iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Menu curve di livello iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.webp)
 
 </TabItem>
 
@@ -185,6 +185,14 @@ Quando si utilizza il [Motore di rendering della mappa](../personal/global-setti
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Seleziona la densità delle curve di livello (Bassa, Media, Alta). Densità più elevate possono influire sulla velocità di caricamento.
 - *<Translate android="true" ids="maps_and_resources"/>*. Visualizza e scarica le mappe delle curve di livello per la regione corrente e le aree vicine.
 
+**Impostazioni etichette**:
+
+- *<Translate android="true" ids="rendering_attr_contourLabelDirection_name"/>*. Scegli come sono orientati i numeri di quota sulle curve di livello:
+    - *<Translate android="true" ids="rendering_value_upright_name"/>*. I numeri ruotano con la mappa in modo da restare leggibili sullo schermo.
+    - *<Translate android="true" ids="rendering_value_uphill_name"/>*. La parte superiore di ogni numero è rivolta verso il terreno più alto, come nelle mappe topografiche cartacee. I numeri mantengono questa direzione quando la mappa ruota, quindi possono apparire capovolti sullo schermo.
+
+I piccoli trattini sulle curve di livello indicano la direzione di discesa.
+
 
 ## Terreno {#terrain}
 
@@ -198,7 +206,7 @@ Il Terreno è una [funzionalità a pagamento](../purchases/index.md).
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menu terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Menu terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Menu terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.webp)  ![Menu terreno Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.webp)
 
 </TabItem>
 
@@ -212,13 +220,14 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 </Tabs>  
 
-L'opzione **Terreno** abilita e consente di personalizzare tre funzionalità come *Ombreggiatura*, *Pendenza* e *Altitudine*. Su iOS, il menu Visualizzazione include anche *Ombre del terreno*, una modalità di ombreggiatura del terreno in tempo reale basata sul Rilievo 3D.  
+L'opzione **Terreno** abilita e consente di personalizzare tre funzionalità come *Ombreggiatura*, *Pendenza* e *Altitudine*. Su iOS, il menu Visualizzazione include anche [*Ombre del terreno*](#terrain-shadows), una modalità di ombreggiatura del terreno in tempo reale basata sul Rilievo 3D.  
 Caratteristiche specifiche:  
 
-- È possibile abilitare solo un'opzione alla volta, Ombreggiatura, Pendenza, Altitudine o Ombre del terreno.
+- È possibile abilitare solo un'opzione alla volta, Ombreggiatura, Pendenza, Altitudine o Ombre del terreno (quest'ultima è disponibile solo su iOS).
 - Se non si notano cambiamenti dopo aver scaricato e abilitato la mappa corrispondente, si consiglia di riavviare l'applicazione.
+- Su Android, la schermata Terreno mostra anche le righe [Rilievo 3D](#3d-relief) ed [Edifici 3D](#3d-buildings), che aprono le relative impostazioni. Queste righe restano visibili anche quando l'interruttore Terreno è disattivato.
 
-Il menu **Terreno** include la selezione dello [schema di colori](#default-color-scheme) (**visualizzazione** su iOS) con l'opzione di [modificarlo](#modify-color-scheme) (per gli [abbonati Pro](../../user/purchases/index.md)), la possibilità di cambiare la trasparenza del livello sulla mappa ([visibilità](#visibility)), e selezionare il [livello di zoom](#zoom-levels) per la sua visualizzazione, informazioni sulla dimensione dei [dati memorizzati nella cache](#cache-size), e un elenco di [mappe](../../user/personal/maps-resources.md) necessarie per visualizzare il livello.
+Il menu **Terreno** include la selezione della [visualizzazione](#default-color-scheme) con l'opzione di [modificarlo](#modify-color-scheme) (per gli [abbonati Pro](../../user/purchases/index.md)), la possibilità di cambiare la trasparenza del livello sulla mappa ([visibilità](#visibility)), e selezionare il [livello di zoom](#zoom-levels) per la sua visualizzazione, informazioni sulla dimensione dei [dati memorizzati nella cache](#cache-size), e un elenco di [mappe](../../user/personal/maps-resources.md) necessarie per visualizzare il livello.
 
 
 ## Livelli Ombreggiatura, Pendenza e Altitudine {#hillshade-slope-and-altitude-layers}
@@ -274,7 +283,7 @@ Ombre del terreno richiede il Rilievo 3D e lo abilita automaticamente quando sel
 
 <TabItem value="android" label="Android">
 
-![Modifica schema colori](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modifica schema colori](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Modifica schema colori](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.webp)   ![Modifica schema colori](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
@@ -309,7 +318,7 @@ Per una personalizzazione avanzata delle tavolozze utilizzando file di tavolozze
 | ------ | ------- |
 | ![Visibilità](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibilità](../../../blog/2023-08-28-terrain/img/74.png) |
 
-La funzione *Visibilità* viene utilizzata per regolare la trasparenza delle ombre per l'Ombreggiatura e i colori utilizzati per rappresentare l'angolo nel parametro Pendenza. Per Ombre del terreno, Visibilità controlla l'intensità dell'effetto di ombreggiatura del terreno.
+La funzione *Visibilità* viene utilizzata per regolare la trasparenza delle ombre per l'Ombreggiatura e i colori utilizzati per rappresentare l'angolo nel parametro Pendenza. Per [Ombre del terreno](#terrain-shadows) su iOS, Visibilità controlla l'intensità dell'effetto di ombreggiatura del terreno.
 
 ### Livelli di zoom {#zoom-levels}
 
@@ -317,7 +326,7 @@ La funzione *Visibilità* viene utilizzata per regolare la trasparenza delle omb
 
 La funzione *Livelli di scala* consente di impostare i valori minimo e massimo dei livelli di zoom della mappa, che vanno da 4 a 19, ai quali verranno visualizzati i livelli della mappa Ombreggiatura o Pendenza.
 
-I Livelli di zoom non sono disponibili per Ombre del terreno perché questa visualizzazione viene renderizzata dinamicamente e non dipende dagli intervalli di visibilità del livello raster.
+I Livelli di zoom non sono disponibili per Ombre del terreno su iOS perché questa visualizzazione viene renderizzata dinamicamente e non dipende dagli intervalli di visibilità del livello raster.
 
 ### Dimensione cache {#cache-size}
 
@@ -358,7 +367,7 @@ Le impostazioni principali per *Mostra o nascondi tipi di mappa* si trovano nell
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![Edifici 3D](@site/static/img/map/3d_buildings_4_new.png) ![Edifici 3D](@site/static/img/map/3d_buildings_3_new.png)
+![Edifici 3D](@site/static/img/map/3d_buildings_4_new.webp) ![Edifici 3D](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -387,7 +396,7 @@ Utilizza l'interruttore principale per abilitare o disabilitare il rendering 3D 
 Su Android, questa opzione è disponibile solo quando il plugin Topografia è abilitato.  
 Vai a: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-Le impostazioni per gli edifici 3D sono divise in due gruppi: **Aspetto** e **Prestazioni**.
+Le impostazioni per gli edifici 3D sono divise in due gruppi, **Aspetto** e **Prestazioni**, seguiti da un'impostazione separata, [**Posizione del sole**](#sun-position) (*solo Android*).
 
 ### Aspetto {#appearance}
 
@@ -425,7 +434,7 @@ Nelle schermate di anteprima (Colore / Visibilità), puoi utilizzare Ripristina 
 
 ### Prestazioni {#performance}
 
-I controlli **<Translate android="true" ids="performance"/>** determinano come vengono renderizzati gli edifici 3D. Include due impostazioni: Livello di dettaglio e Distanza di visualizzazione.
+I controlli **<Translate android="true" ids="performance"/>** determinano come vengono renderizzati gli edifici 3D. Include tre impostazioni: Livello di dettaglio, Distanza di visualizzazione e Ombre.
 
 **<Translate android="true" ids="level_of_details"/>** determina la complessità della geometria degli edifici 3D:
 - Basso (predefinito) — geometria più semplice.
@@ -435,23 +444,32 @@ I controlli **<Translate android="true" ids="performance"/>** determinano come v
 - Vicino (predefinito) — renderizza gli edifici più vicini a te.
 - Lontano — renderizza gli edifici da una distanza maggiore.
 
-Entrambe le opzioni di prestazioni utilizzano un interruttore a due posizione direttamente nella schermata delle impostazioni degli edifici 3D.
+**<Translate android="true" ids="cast_shadows"/>** (*solo Android*) controlla le ombre del sole sulla mappa:
+- Disattivato (predefinito) — gli edifici vengono disegnati senza ombre.
+- Attivato — gli edifici proiettano ombre sul terreno e sulle pareti degli edifici vicini nella direzione impostata in [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). Quando il [Rilievo 3D](#3d-relief) è abilitato, anche il terreno proietta ombre. L'intensità delle ombre degli edifici dipende dalla [Visibilità](#appearance) degli edifici 3D.
+
+Tutte e tre le opzioni di prestazioni utilizzano un interruttore a due posizioni direttamente nella schermata delle impostazioni degli edifici 3D. Le ombre sono impostate separatamente per ogni profilo e sono disponibili solo con il motore di rendering [Versione 2 (OpenGL)](#rendering-engine-android).
 
 **Nota:** Utilizzare *Dettaglio alto* e *Distanza di visualizzazione lontana* migliora l'aspetto visivo ma può influire sulle prestazioni e aumentare il consumo della batteria.
 
 
-<!--
-### Sole {#sun}
+### Posizione del sole {#sun-position}
 
-![Edifici 3D](@site/static/img/map/sun_setting.png)
+<InfoAndroidOnly />
 
-L'impostazione **Sole** controlla la direzione dell'illuminazione utilizzata per il rendering degli edifici 3D. Influenza il modo in cui luce e ombre appaiono sugli edifici nella vista 3D. Quando tocchi Sole, OsmAnd apre una schermata di anteprima dove puoi regolare l'illuminazione utilizzando due cursori:
+![Sole](@site/static/img/map/sun_setting.webp) ![Ombre del sole](@site/static/img/map/sun_shadows.webp)
 
-- Azimut — controlla la direzione orizzontale della fonte di luce (la direzione della bussola del sole).
-- Altitudine — controlla l'altezza del sole sopra l'orizzonte.
+L'impostazione **<Translate android="true" ids="map_widget_sun_position"/>** definisce la direzione della luce per le ombre degli edifici e per le Ombre del terreno del Rilievo 3D. Puoi aprirla dalla schermata Edifici 3D e dalla schermata Rilievo 3D. La riga mostra la direzione attuale del sole e, toccandola, si apre un pannello di anteprima con tre modalità:
 
-Cambiare questi parametri modifica il modo in cui le ombre cadono sugli edifici e può migliorare la percezione visiva delle forme degli edifici nella vista 3D. Tocca Applica per confermare i parametri di illuminazione selezionati.
--->
+- **<Translate android="true" ids="sun_light_live"/>** — utilizza la posizione reale del sole sopra il centro della mappa all'ora corrente. Azimut e Altitudine sono mostrati come riferimento.
+- **<Translate android="true" ids="shared_string_date"/>** — utilizza la posizione reale del sole sopra il centro della mappa alla data e all'ora che selezioni. L'ora è impostata nel fuso orario del tuo dispositivo.
+- **<Translate android="true" ids="shared_string_manual"/>** — ti permette di impostare la direzione della luce con due cursori:
+    - *<Translate android="true" ids="shared_string_azimuth"/>* — controlla la direzione orizzontale della fonte di luce (la direzione della bussola del sole).
+    - *<Translate android="true" ids="altitude"/>* — controlla l'altezza del sole sopra l'orizzonte.
+
+Le modifiche appaiono immediatamente sulla mappa. Tocca Applica per confermare la posizione del sole selezionata. Ripristina predefinito passa alla modalità Manuale con un azimut di 315° e un'altitudine di 45°.
+
+**Nota:** La posizione del sole è disponibile solo con il motore di rendering [Versione 2 (OpenGL)](#rendering-engine-android).
 
 
 ## Rilievo 3D {#3d-relief}
@@ -466,7 +484,7 @@ Il Rilievo 3D è una funzionalità a pagamento di [**OsmAnd Pro**](../purchases/
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![Rilievo 3D](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![Rilievo 3D](@site/static/img/map/configure_map_topography_andr_new.webp) ![Rilievo 3D](@site/static/img/plugins/contour-lines/3drelief_screen_andr.webp)
 
 </TabItem>
 
@@ -481,6 +499,8 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 </Tabs>  
 
 La funzione Rilievo 3D produce un rilievo innalzato e fornisce una rappresentazione tridimensionale del paesaggio. Il Rilievo 3D funziona offline e può essere utilizzato con le [mappe vettoriali di OsmAnd](../map/vector-maps.md) o qualsiasi [mappa raster](../map/raster-maps.md#layers) come [Sorgente mappa](../map/raster-maps.md#main) o come [Sottolivello/Sovrapposizione](../map/raster-maps.md#overlay).
+
+Su Android, il Rilievo 3D ha una propria schermata di impostazioni con l'interruttore principale, [<Translate android="true" ids="vertical_exaggeration"/>](#vertical-exaggeration), [<Translate android="true" ids="terrain_shadows"/>](#terrain-shadows-android) e [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). La voce Rilievo 3D nel menu Configura mappa indica se il Rilievo 3D è attivo e l'intensità attuale delle Ombre del terreno. Puoi aprire il Rilievo 3D anche dalla schermata Terreno.
 
 ***Come visualizzare il Rilievo 3D sulla mappa.***
 
@@ -536,6 +556,18 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 
 *L'esagerazione verticale* è un coefficiente speciale per il *rilievo 3D*. È possibile modificare la scala (*Esagerazione verticale*) da x1 a x3. Questa funzione consente di visualizzare contorni del terreno più fluidi con maggiori dettagli.
 
+### Ombre del terreno (Android) {#terrain-shadows-android}
+
+Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d,terrain_shadows"/>*
+
+![Ombre del terreno Android](@site/static/img/plugins/contour-lines/terrain_shadows_andr.webp)
+
+Le **<Translate android="true" ids="terrain_shadows"/>** ombreggiano il rilievo 3D in tempo reale, in base alla geometria del terreno e alla [Posizione del sole](#sun-position). Vengono disegnate ogni volta che il Rilievo 3D è attivo.
+
+Tocca *Ombre del terreno* per aprire un pannello di anteprima, imposta l'intensità dal 10% al 100% (40% per impostazione predefinita) e tocca Applica. L'intensità è impostata separatamente per ogni profilo.
+
+**Nota:** Mentre Terreno mostra l'Ombreggiatura, le Ombre del terreno sono disattivate, perché l'Ombreggiatura ombreggia già il rilievo.
+
 
 ### Ombreggiatura e Rilievo 3D {#hillshade-and-3d-relief}
 
@@ -546,7 +578,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_
 **L'ombreggiatura** è un tipo di mappa che visualizza il terreno utilizzando le ombre, creando una rappresentazione visiva della pendenza e della forma della superficie terrestre.  
 **Il Rilievo 3D** è una funzione che aggiunge effetti tridimensionali alla mappa.  
 
-Se si **disabilita** *l'Ombreggiatura* e si **abilita** il *Rilievo 3D*, le ombre del rilievo saranno ancora visibili perché *l'Ombreggiatura* e il *Rilievo 3D* sono due modi diversi di visualizzare una mappa. *l'Ombreggiatura* crea ombre basate sul terreno e le aggiunge alla mappa, mentre il *Rilievo 3D* modella elementi 3D per mostrare la profondità e la forma del terreno, e le ombre fanno parte della visualizzazione. Queste funzioni possono funzionare in parallelo e la disabilitazione dell'*Ombreggiatura* non influisce sulla visualizzazione degli effetti 3D.  
+Se si **disabilita** *l'Ombreggiatura* e si **abilita** il *Rilievo 3D*, le ombre del rilievo saranno ancora visibili perché *l'Ombreggiatura* e il *Rilievo 3D* sono due modi diversi di visualizzare una mappa. *l'Ombreggiatura* crea ombre basate sul terreno e le aggiunge alla mappa, mentre il *Rilievo 3D* modella elementi 3D per mostrare la profondità e la forma del terreno, e le ombre fanno parte della visualizzazione. Queste funzioni possono funzionare in parallelo e la disabilitazione dell'*Ombreggiatura* non influisce sulla visualizzazione degli effetti 3D. Su Android, queste ombre del rilievo sono [Ombre del terreno](#terrain-shadows-android) e sono disattivate mentre Terreno mostra l'Ombreggiatura.  
 
 Quando **l'Ombreggiatura** è **abilitata**, un'immagine con ombre di rilievo appare più dettagliata, più scura e più a gradini rispetto a un'immagine di *Rilievo 3D*. La spiegazione è che *l'Ombreggiatura* enfatizza i gradienti e i contrasti del terreno, creando un'immagine più nitida e dettagliata. La funzione *Rilievo 3D* conferisce alla mappa un aspetto più fluido e levigato, ammorbidendo il terreno e riducendo potenzialmente la visibilità di alcuni dettagli più fini.
 

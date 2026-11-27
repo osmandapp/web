@@ -1,5 +1,5 @@
 ---
-source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
+source-hash: c35b48b75c008612b036302e055181306b64e216afa3939f782a05d93c7ed8f5
 sidebar_position: 7
 sidebar_label: Analizzatore percorsi
 title: Analizzatore percorsi
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Come usare {#how-to-use}
 
 1. [Accedi](./web-cloud.md#login) al tuo account OsmAnd Pro sul Portale Mappe Web. Le tue tracce devono essere sincronizzate con [OsmAnd Cloud](./web-cloud.md#cloud-sync).
-2. Apri *Menu → Analizzatore percorsi* (l'icona della chiave inglese).
+2. Apri *Menu → Analizzatore percorsi* (l'icona del grafico con lente d'ingrandimento).
 3. Nel pannello **Seleziona tracce**, scegli **Tutte le tracce** oppure solo le cartelle che ti servono.
 4. Fai clic destro sulla mappa e seleziona **Punto A**. Per analizzare un segmento tra due punti, imposta anche il **Punto B**.
 5. Esamina l'elenco dei segmenti trovati, [ordinalo e scegli quali parametri visualizzare](#sorting-and-visible-parameters).

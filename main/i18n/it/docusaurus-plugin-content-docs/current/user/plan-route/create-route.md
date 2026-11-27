@@ -1,5 +1,5 @@
 ---
-source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
+source-hash: 2a64e0aeff55cd96db9ba2213903853f49b98bb5accbd0b25bd10e61fe1c29aa
 sidebar_position: 1
 title:  Pianifica un percorso
 ---
@@ -17,21 +17,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Lo strumento **Pianifica un percorso** (*Menu → Pianifica un percorso*) è una potente funzionalità dell'applicazione OsmAnd che consente di [creare nuovi percorsi](#create-new-route) come tracce GPX, [modificare e aggiungere nuovi segmenti](#segments) a tracce già salvate, [misurare le distanze](#distance-measurement) sulla mappa e [agganciare la traccia](#attach-track-to-roads) ai segmenti della strada disponibile più vicina utilizzando diversi profili di navigazione. La funzione è progettata per funzionare in *modalità offline*.
-
-Un percorso è costituito da un insieme di segmenti tra punti specificati. I segmenti possono essere linee rette o percorsi adattati al profilo selezionato. Il percorso può essere salvato come GPX per essere importato in seguito, modificato e utilizzato per la [navigazione](../navigation/setup/gpx-navigation.md).
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
 ![Pianifica un percorso Android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
+Lo strumento **Pianifica un percorso** (*Menu → Pianifica un percorso*) è una potente funzionalità dell'applicazione OsmAnd che consente di [creare nuovi percorsi](#create-new-route) come tracce GPX, [modificare e aggiungere nuovi segmenti](#segments) a tracce già salvate, [misurare le distanze](#distance-measurement) sulla mappa e [agganciare la traccia](#attach-track-to-roads) ai segmenti della strada disponibile più vicina utilizzando diversi profili di navigazione. La funzione è progettata per funzionare in *modalità offline*.
+
+Un percorso è costituito da un insieme di segmenti tra punti specificati. I segmenti possono essere linee rette o percorsi adattati al profilo selezionato. Il percorso può essere salvato come GPX per essere importato in seguito, modificato e utilizzato per la [navigazione](../navigation/setup/gpx-navigation.md).
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_overview_ios.webp)
+
+Lo strumento **Pianifica un percorso** (*Menu → Pianifica un percorso*) è una potente funzionalità dell'applicazione OsmAnd che consente di [creare nuovi percorsi](#create-new-route) come tracce GPX, [modificare e aggiungere nuovi segmenti](#segments) a tracce già salvate, [misurare le distanze](#distance-measurement) sulla mappa e [agganciare la traccia](#attach-track-to-roads) ai segmenti della strada disponibile più vicina utilizzando diversi profili di navigazione. La funzione è progettata per funzionare in *modalità offline*.
+
+Un percorso è costituito da un insieme di segmenti tra punti specificati. I segmenti possono essere linee rette o percorsi adattati al profilo selezionato. Il percorso può essere salvato come GPX per essere importato in seguito, modificato e utilizzato per la [navigazione](../navigation/setup/gpx-navigation.md).
+
+**Nota:** su iPad e Mac, e su iPhone in orientamento orizzontale, il pannello *Pianifica un percorso* si apre sul lato sinistro dello schermo a tutta altezza e i pulsanti *+ POI*, *Annulla*, *Ripeti* e *Route +* si trovano sulla mappa. Su iPhone in orientamento verticale e nelle finestre iPad strette, come Split View o Slide Over, il pannello si apre nella parte inferiore dello schermo.
 
 </TabItem>
 
@@ -208,7 +214,7 @@ Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella pos
 
 ![Pianifica un percorso iOS](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella posizione del *Puntatore* uno per uno e toccare il pulsante *Route +*. Accedendo all'**elenco dei punti** sottostante, è possibile riordinare i punti, eliminarli o accedere a un [menu contestuale del punto](#point-context-menu) specifico.
+Per misurare una distanza o pianificare un viaggio, aggiungere i punti nella posizione del *Puntatore* uno per uno e toccare il pulsante *Route +*. Accedendo all'**elenco dei punti** nel pannello *Pianifica un percorso*, è possibile riordinare i punti, eliminarli o accedere a un [menu contestuale del punto](#point-context-menu) specifico. Un punto può essere trascinato solo all'interno della propria [sezione](#multimodal-routes), cioè tra i punti raggiunti con lo stesso tipo di percorso.
 
 </TabItem>
 
@@ -309,11 +315,11 @@ Nella scheda Percorso, ogni segmento viene visualizzato con il suo tipo di perco
 È possibile gestire un segmento utilizzando il relativo menu a tre punti:
 - **Cambia tipo di percorso** — disponibile per un segmento con un singolo tipo di percorso. Apre Percorso tra i punti, dove è possibile selezionare un tipo di percorso diverso.
 - **Imposta tipo di percorso singolo** — disponibile quando un segmento contiene più sezioni con tipi di percorso diversi. Apre Percorso tra i punti, dove è possibile applicare un tipo di percorso al segmento. L'intero segmento viene ricalcolato utilizzando il tipo di routing selezionato.
-- **Ordina** — riordinare manualmente i punti del percorso o utilizzare Ordina porta a porta per riordinarli in modo da ridurre al minimo la distanza totale di viaggio.
+- **Ordina** — riordinare manualmente i punti del percorso o utilizzare Ordina porta a porta per riordinarli in modo da ridurre al minimo la distanza totale di viaggio. In un segmento con più sezioni, i punti vengono ordinati all'interno di ciascuna sezione.
 - **Salva come…** — salvare il segmento come file separato.
 - **Elimina segmento** — eliminare il segmento.
 
-Per creare un nuovo segmento non collegato, toccare *Avvia nuovo segmento* in fondo alla scheda Percorso. Per continuare il segmento corrente con un tipo di routing diverso, toccare *Continua con un tipo diverso* sotto l'ultimo segmento, quindi selezionare un tipo di routing per la sezione successiva.
+Per creare un nuovo segmento non collegato, toccare *Avvia nuovo segmento* in fondo alla scheda Percorso. Per continuare il segmento corrente con un tipo di routing diverso, toccare *Continua con un tipo diverso* sotto l'ultimo segmento, quindi selezionare un tipo di routing per la sezione successiva. Il tipo selezionato viene mostrato in questa riga come *Next: …*, e la nuova sezione inizia con il prossimo punto che aggiungi.
 
 Un segmento può essere suddiviso in [sezioni](#multimodal-routes) quando per diverse parti del segmento vengono utilizzati tipi di percorso diversi. Ogni sezione mostra il tipo di percorso e la distanza.
 

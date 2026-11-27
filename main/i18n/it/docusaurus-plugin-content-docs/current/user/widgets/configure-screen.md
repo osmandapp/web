@@ -1,5 +1,5 @@
 ---
-source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
+source-hash: 2386d7bbbae5da7a0450b15924c450032e65b1488692771b1fc0b9200e01ffdc
 sidebar_position: 1
 title:  Configura Schermata
 ---
@@ -27,7 +27,7 @@ Il menu **Configura schermata** in OsmAnd consente di personalizzare l'interfacc
 - Organizzare i widget in pannelli (superiore, inferiore, sinistro, destro, centrale).
 - Creare più **pagine** all'interno dei pannelli laterali, scegliere la dimensione dei widget.
 - Scegliere l'altezza della riga e attivare/disattivare le icone dei widget.
-- Su Android, personalizzare [l'aspetto del pannello widget](#widget-panel-appearance).
+- Personalizzare [l'aspetto del pannello widget](#widget-panel-appearance).
 
 Tutti i widget sono [dipendenti dal profilo](../personal/profiles.md): ogni profilo ha il proprio layout, ordine, visibilità e impostazioni.
 
@@ -46,7 +46,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+![Menu Configura schermata](@site/static/img/widgets/configure_screen_overview_ios.webp)  
 
 </TabItem>
 
@@ -362,11 +362,27 @@ Queste impostazioni si applicano solo al widget selezionato.
     - Passa alla posizione Off, nel campo *Mostra icona*.
 
 
-## Aspetto del pannello widget (solo Android) {#widget-panel-appearance}
+## Aspetto del pannello widget {#widget-panel-appearance}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
 ![Aspetto del pannello widget](@site/static/img/widgets/widget_appearance.webp) ![Aspetto del pannello widget](@site/static/img/widgets/widget_appearance_2.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_appearance"/>*
+
+![Aspetto del pannello widget](@site/static/img/widgets/widget_appearance_ios.webp) ![Aspetto del pannello widget](@site/static/img/widgets/widget_appearance_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Le impostazioni di aspetto consentono di personalizzare l'aspetto di tutti i widget nel pannello selezionato. Ogni pannello (*Superiore*, *Inferiore*, *Sinistro*, *Destro*) ha le proprie impostazioni di aspetto.
 
@@ -376,13 +392,13 @@ Le impostazioni di aspetto consentono di personalizzare l'aspetto di tutti i wid
 
 3. **Colore del testo**. Modifica il colore del testo principale del widget. Opzioni disponibili: *Predefinito*, *Automatico*, *Personalizzato*. Quando è selezionato **Personalizzato**, è possibile configurare colori separati per le modalità **Giorno** e **Notte**. Un'anteprima live mostra i colori selezionati prima che vengano applicati.
 
-:::tip Acquisto
-I colori personalizzati dei widget sono una [funzione a pagamento](../purchases/index.md).  
-:::
-
 4. **Colore del testo secondario**. Modifica il colore dei nomi e delle unità dei widget. Opzioni disponibili: *Predefinito*, *Automatico*, *Personalizzato*.
 
 5. **Colore di sfondo**. Modifica il colore di sfondo dei widget nel pannello selezionato. Opzioni disponibili: *Predefinito*, *Trasparente*, *Personalizzato*.
+
+:::tip Acquisto
+Il colore di sfondo personalizzato è una [funzione a pagamento](../purchases/index.md).  
+:::
 
 6. **Anteprima**. L'area di anteprima mostra come appariranno i widget con le impostazioni di aspetto attualmente selezionate.
 
@@ -391,6 +407,11 @@ I colori personalizzati dei widget sono una [funzione a pagamento](../purchases/
     - Tocca il menu ⋮ nell'angolo in alto a destra.
     - Seleziona Copia da.
     - Scegli una delle seguenti opzioni: *Un altro profilo* o *Uno degli altri pannelli*.
+
+8. **Ripristina predefiniti**. Riporta tutte le impostazioni di aspetto del pannello selezionato ai valori predefiniti.
+
+    - *Android*. Tocca l'icona di ripristino nell'angolo in alto a destra.
+    - *iOS*. Tocca *Ripristina predefiniti* in fondo alla schermata e conferma l'azione.
 
 
 ## Personalizzazione Pannelli {#panels-customization}
@@ -494,7 +515,11 @@ OsmAnd consente di aggiungere più istanze dello stesso widget a diversi pannell
 
 ## Layout Schermata Mappa {#map-screen-layout}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ![Layout Schermata Mappa](@site/static/img/widgets/map_screen_layout_1.png) ![Layout Schermata Mappa](@site/static/img/widgets/map_screen_layout_2.png)
 
@@ -502,11 +527,29 @@ L'impostazione **Layout schermata mappa** consente di controllare come i pannell
 
 È possibile aprire le impostazioni del Layout schermata mappa dal menu Configura schermata, direttamente dalle azioni della schermata o tramite il menu a tre punti.
 
-### Layout Singolo e Separati {#single-and-separate-layouts}
+</TabItem>
 
-![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_single.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_separate.png)
+<TabItem value="ios" label="iOS"> 
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
+
+![Layout Schermata Mappa](@site/static/img/widgets/map_screen_layout_ios.webp) ![Layout Schermata Mappa](@site/static/img/widgets/map_screen_layout_ios_2.webp) 
+
+Le impostazioni del layout della schermata mappa consentono di controllare come i pannelli dei widget sono disposti sulla schermata della mappa negli orientamenti **<Translate ios="true" ids="map_orientation_portrait"/>** e **<Translate ios="true" ids="map_orientation_landscape"/>**. Per scegliere come gli orientamenti condividono gli elementi della schermata, tocca **⋮** e seleziona **<Translate ios="true" ids="screen_elements"/>**.
+
+</TabItem>
+
+</Tabs>
+
+### Layout Singolo e Separati / Elementi della schermata {#single-and-separate-layouts}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
+
+![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_single.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_separate.png)
 
 OsmAnd supporta due modalità di layout per la schermata della mappa:
 - **<Translate android="true" ids="single_layout"/>** – utilizza lo stesso layout dei widget per tutte le orientamenti dello schermo. Questa opzione è selezionata per impostazione predefinita.
@@ -514,7 +557,33 @@ OsmAnd supporta due modalità di layout per la schermata della mappa:
 
 Quando Layout separati è abilitato, le modifiche apportate in un orientamento non influenzano l'altro. Questo è utile se si desidera ottimizzare la schermata della mappa in modo diverso per l'uso in portrait e landscape.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate ios="true" ids="screen_elements"/>*
+
+![Layout Schermata Mappa](@site/static/img/widgets/screen_shared.webp) ![Layout Schermata Mappa](@site/static/img/widgets/screen_independent.webp)
+
+L'impostazione **<Translate ios="true" ids="screen_elements"/>** definisce se gli orientamenti **<Translate ios="true" ids="map_orientation_portrait"/>** e **<Translate ios="true" ids="map_orientation_landscape"/>** utilizzano gli stessi elementi della schermata o set indipendenti:
+
+- **<Translate ios="true" ids="screen_elements_shared"/>** – Landscape utilizza gli stessi elementi della schermata di Portrait. Le modifiche in un orientamento si applicano a entrambi. Questa opzione è selezionata per impostazione predefinita.
+- **<Translate ios="true" ids="screen_elements_independent"/>** – Portrait e Landscape hanno set indipendenti di elementi della schermata. Le modifiche apportate in un orientamento non influenzano l'altro.
+
+Tocca **✓** per applicare l'opzione selezionata.
+
+Quando è selezionato **<Translate ios="true" ids="screen_elements_independent"/>**, i pannelli dei widget e l'aspetto dei pannelli dei widget vengono configurati separatamente per ciascun orientamento.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Schede Portrait e Landscape {#portrait-and-landscape-tabs}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_tabs.png)
 
@@ -528,7 +597,39 @@ Viene copiato solo l'elenco dei widget e l'operazione si applica all'interno del
 
 ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_portrait.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_landscape.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_landscape.webp)
+
+Le schede **<Translate ios="true" ids="map_orientation_portrait"/>** e **<Translate ios="true" ids="map_orientation_landscape"/>** sono sempre disponibili nella parte superiore del menu **<Translate ios="true" ids="layer_map_appearance"/>**. Ogni scheda mostra le impostazioni per l'orientamento dello schermo corrispondente. Quando **<Translate ios="true" ids="screen_elements"/>** è impostato su **<Translate ios="true" ids="screen_elements_independent"/>**, il menu si apre sulla scheda dell'orientamento attuale del dispositivo. Altrimenti, si apre sulla scheda Portrait.
+
+Quando **<Translate ios="true" ids="screen_elements"/>** è impostato su **<Translate ios="true" ids="screen_elements_shared"/>**, la scheda Landscape mostra:
+
+- Scheda **<Translate ios="true" ids="screen_elements"/>** – descrive la modalità attuale. Tocca **<Translate ios="true" ids="switch_to_independent"/>** per aprire le impostazioni degli Elementi della schermata.
+- **<Translate ios="true" ids="panels_layout"/>** e **<Translate ios="true" ids="shared_string_appearance"/>** – impostazioni per l'orientamento Landscape.
+
+I pannelli dei widget, i pulsanti e le altre impostazioni vengono configurati nella scheda Portrait e si applicano a entrambi gli orientamenti.
+
+Quando **<Translate ios="true" ids="screen_elements"/>** è impostato su **<Translate ios="true" ids="screen_elements_independent"/>**, è possibile copiare l'elenco dei widget di un pannello dall'altro orientamento. Apri il pannello dei widget, tocca **⋮** e seleziona:
+
+- **<Translate ios="true" ids="copy_from_landscape_layout"/>** – disponibile nella scheda Portrait. Copia l'elenco dei widget del pannello dal layout Landscape.
+- **<Translate ios="true" ids="copy_from_portrait_layout"/>** – disponibile nella scheda Landscape. Copia l'elenco dei widget del pannello dal layout Portrait.
+
+Viene copiato solo l'elenco dei widget e l'operazione si applica all'interno dello stesso profilo.
+
+</TabItem>
+
+</Tabs>
+
 ### Layout Pannelli {#panels-layout}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Vai a: *<Translate android="true" ids="shared_string_menu,map_widget_config,panels_layout"/>*
 
 ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_wide.png) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_compact.png)
 
@@ -541,6 +642,27 @@ L'impostazione **Layout pannelli** controlla come i pannelli widget superiore e 
 - **<Translate android="true" ids="panels_layout_compact"/>** – i pannelli superiore e inferiore si adattano tra i pannelli laterali e i pulsanti della mappa.
 
 Il Layout pannelli può essere configurato indipendentemente per orientamenti Portrait e Landscape, consentendo un migliore adattamento a diverse dimensioni e orientamenti dello schermo.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,panels_layout"/>*
+
+![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_wide.webp) ![Layout Schermata Mappa](@site/static/img/widgets/screen_layout_compact.webp)
+
+L'impostazione **<Translate ios="true" ids="panels_layout"/>** controlla come i pannelli widget superiore e inferiore sono visualizzati. È possibile scegliere tra due modalità:
+
+- **<Translate ios="true" ids="panels_layout_wide"/>** – i pannelli superiore e inferiore si estendono per l'intera larghezza dello schermo. Questa opzione è selezionata per impostazione predefinita.
+- **<Translate ios="true" ids="panels_layout_compact"/>** – i pannelli superiore e inferiore si adattano tra i pannelli laterali e i pulsanti della mappa.
+
+L'anteprima mostra la modalità selezionata per l'orientamento attuale. Tocca **✓** per applicare la modalità selezionata.
+
+Il layout pannelli viene configurato separatamente nelle schede **<Translate ios="true" ids="map_orientation_portrait"/>** e **<Translate ios="true" ids="map_orientation_landscape"/>**, sia con gli elementi della schermata **<Translate ios="true" ids="screen_elements_shared"/>** che **<Translate ios="true" ids="screen_elements_independent"/>**.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Pulsanti {#buttons}

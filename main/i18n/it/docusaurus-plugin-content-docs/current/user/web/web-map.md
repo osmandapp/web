@@ -1,5 +1,5 @@
 ---
-source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
+source-hash: 3f9fe278a6da459746d62fe7944d19ca8c1cae8acd07c9a389b2e49b40380b9d
 sidebar_position: 3
 sidebar_label: Mappa
 title: Mappa Globale sul Sito Web
@@ -277,6 +277,8 @@ Questi URL possono essere copiati e condivisi utilizzando qualsiasi mezzo suppor
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
   ![OsmAnd Web, URL](@site/static/img/plan-route/web_url_pin.png)
+
+  La mappa si apre centrata sul segnaposto. Il livello di zoom viene preso dalla parte dell'URL dopo `#`. Se l'URL non contiene questa parte, la mappa si apre al livello di zoom 9. Questo vale anche per i link creati con il pulsante *Condividi* nel [Menu contestuale PDI](../web/web-search.md#poi-actions).
 
 2. **URL senza segnaposto sulla mappa:**
 

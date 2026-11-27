@@ -1,5 +1,5 @@
 ---
-source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
+source-hash: 292d8a0b5fbc689d6e07f6ebd71d0b9a70856fabf41202c365ab38c143096e5d
 sidebar_position: 4
 title:  Widget di navigazione
 ---
@@ -191,6 +191,8 @@ Il widget *Informazioni percorso* fornisce dati in tempo reale sul percorso di n
 - Abilitare o disabilitare l'opzione **Mostra pulsante espandi** per mostrare o nascondere il pulsante di espansione dell'interfaccia di navigazione. Questa opzione è abilitata per impostazione predefinita.
 
 > NOTA: il widget è visibile solo durante la navigazione.
+
+Sui telefoni Android in orientamento landscape, il widget *<Translate android="true" ids="map_widget_route_information"/>* è nascosto per impostazione predefinita. Al suo posto, il *<Translate android="true" ids="map_widget_right"/>* mostra i widget [<Translate android="true" ids="map_widget_distance_to_destination"/>](#distance-to-destination), [<Translate android="true" ids="map_widget_time_to_destination"/>](#time-to-destination), [<Translate android="true" ids="map_widget_distance_to_intermediate"/>](#distance-to-intermediate) e [<Translate android="true" ids="map_widget_time_to_intermediate"/>](#time-to-intermediate). Puoi mostrare o nascondere uno qualsiasi di questi widget in [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md).
 
 | | |
 |:------------|:------------|

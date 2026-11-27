@@ -1,5 +1,5 @@
 ---
-source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
+source-hash: 21b1fd8d34d5459a2881d82dd878347eeb0a1d37ee8c942dada4da21348f7d08
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -18,10 +18,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Panoramica {#overview}
-
-:::tip Acquisto
-Android Auto è una [funzionalità a pagamento](../purchases/index.md).  
-:::
 
 ![Schermata di Android Auto](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -80,8 +76,6 @@ Affinché OsmAnd funzioni in *Android Auto*, è necessario [connettere](#connect
 
 - Non tutti i veicoli supportano la possibilità di connessione del dispositivo. Controllare l'[elenco per *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
 
-- È necessario acquistare una **versione a pagamento** dell'app o sottoscrivere un [abbonamento](../purchases/android.md#free-and-paid-features). Controllare l'abbonamento corrente qui *Menu → Impostazioni → Acquisti*.  
-
 - *Android Auto* utilizza il primo [profilo di guida OsmAnd](#profile-first) nell'elenco dei profili per la navigazione. Impostare il profilo preferito come primo, ad eccezione del profilo *Sfoglia mappa*, che non viene letto da *Android Auto*. Per fare ciò, andare su OsmAnd *Menu → Impostazioni → Profili app → Modifica elenco profili* → spostare il profilo [**Guida**](#profile-first) al primo posto o dopo il profilo *Sfoglia mappa*.  
 
 - È importante ricordare che *Android Auto* è un'applicazione che richiede un uso intensivo di dati, compresi i dati mobili, e la qualità del sistema può dipendere dalla qualità della connessione e dalla velocità di accesso a Internet.
@@ -106,7 +100,7 @@ Se sul dispositivo non è selezionato alcun profilo *Guida* corrispondente al ti
 
 ![Schermata di Android Auto](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-È possibile selezionare [POI](../map/point-layers-on-map.md#points-of-interest-pois) precedentemente preimpostati e aggiunti, [Preferiti](../personal/favorites.md) o [Segnalibri](../personal/markers.md) come punto di destinazione. È anche possibile selezionare una [Traccia](../personal/tracks/manage-tracks.md) registrata o scaricata per il percorso, utilizzare la [Ricerca](../search/index.md), selezionare una destinazione dalla [Cronologia](../search/search-history.md) del percorso o fare una *Guida libera*.
+È possibile selezionare [POI](../map/point-layers-on-map.md#points-of-interest-pois) precedentemente preimpostati e aggiunti, [Preferiti](../personal/favorites.md) o [Segnalibri](../personal/markers.md) come punto di destinazione. È anche possibile selezionare una [Traccia](../personal/tracks/manage-tracks.md) registrata o scaricata per il percorso, utilizzare la [Ricerca](../search/index.md), selezionare una destinazione dalla [Cronologia](../search/search-history.md) del percorso o fare una *Guida libera*. Il tuo percorso precedente e le destinazioni recenti sono disponibili anche come [schede nella dashboard di Android Auto](#dashboard-suggestions).
 
 1. Se si desidera una posizione particolare sulla mappa come punto finale, selezionare la categoria di punti appropriata dall'elenco, [POI](#poi-categories), [Preferiti](#favorites) o [Segnalibri mappa](#map-markers).  
   
@@ -119,7 +113,7 @@ Se sul dispositivo non è selezionato alcun profilo *Guida* corrispondente al ti
 
 3. Selezionare [Cerca](#search) per inserire una destinazione dalle categorie di ricerca disponibili.  
 
-4. Scegliere **Guida libera** per intraprendere un viaggio senza un punto finale specificato.
+4. Scegliere **Guida libera** per intraprendere un viaggio senza un punto finale specificato. Se non è stato calcolato alcun percorso e non selezioni nessuna categoria, OsmAnd avvia automaticamente la *Guida libera* dopo che il veicolo si è mosso a una velocità superiore a 5 km/h per 15 secondi. In questo modo la mappa appare dopo la riconnessione ad Android Auto senza alcuna interazione con lo schermo del veicolo.
 
 :::note
 Durante la guida, i punti selezionati possono essere [annunciati](#voice-prompts) quando ci si avvicina o li si supera. Vedere le impostazioni dei [Suggerimenti vocali](../navigation/guidance/voice-navigation.md) nell'articolo appropriato per impostare le notifiche vocali.
@@ -131,6 +125,28 @@ Durante la guida, i punti selezionati possono essere [annunciati](#voice-prompts
 ![Cronologia in Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)  
 
 Nella categoria Cronologia, è possibile selezionare una destinazione da un elenco di punti finali. Sono ordinati in base all'uso più recente, a partire dal più nuovo. Questo può essere comodo per un accesso rapido ai percorsi utilizzati di frequente. Per sapere come utilizzare o eliminare una destinazione, leggere l'articolo [Cronologia ricerche](../search/search-history.md).  
+
+
+### Suggerimenti nella dashboard {#dashboard-suggestions}
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_dashboard_suggestions.webp)
+
+Quando non è attiva alcuna navigazione, OsmAnd mostra fino a cinque schede di suggerimento nella dashboard di Android Auto, così puoi avviare un percorso senza aprire il menu dell'app. Le schede sono disponibili quando *Cronologia di navigazione* è attivata nelle [impostazioni della Cronologia](../search/search-history.md#sort-and-filter).
+
+- **Percorso precedente** — la prima scheda. Ripristina il punto di partenza, i punti intermedi e la destinazione del tuo ultimo percorso.
+- **Destinazioni recenti** — le schede successive, prese dalla [Cronologia](#history) e ordinate dalla più recente alla meno recente. Ogni scheda mostra il nome della destinazione, il suo indirizzo o tipo e un'icona del tipo di destinazione.
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_card_countdown.webp)
+
+Per avviare un percorso da una scheda:
+
+1. Tocca una scheda. OsmAnd si apre a schermo intero e mostra l'anteprima del percorso.
+2. Il pulsante **Avvia** conta alla rovescia da 10 e la navigazione si avvia automaticamente. Per iniziare subito, tocca **Avvia**.
+3. Per chiudere l'anteprima senza avviare la navigazione, tocca **Indietro**. Se apri un'altra schermata o un'altra app durante il conto alla rovescia, il conto alla rovescia si interrompe e la navigazione inizia solo quando tocchi **Avvia**.
+
+Se il percorso richiede mappe non scaricate, OsmAnd mostra la schermata *Mappe mancanti* e non avvia la navigazione.
+
+**Nota:** Le schede sono nascoste durante la navigazione. Dopo aver toccato una scheda o averle rimosse con uno swipe, Android Auto le mostra di nuovo al termine della navigazione successiva o quando ti riconnetti all'auto.
 
 
 ### Categorie POI {#poi-categories}
@@ -192,7 +208,7 @@ Le tracce possono anche essere selezionate direttamente sullo schermo del veicol
 
 ![Ricerca in Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
 
-Andare su Cerca offre un accesso rapido a un elenco della [cronologia delle destinazioni](#history) recenti. Analogamente al [menu Navigazione](../navigation/setup/route-navigation.md#navigation-menu), dove sono raccolti tutti i metodi di destinazione di OsmAnd come un indirizzo, POI o coordinate.
+Andare su Cerca offre un accesso rapido a un elenco della [cronologia delle destinazioni](#history) recenti. Analogamente al [menu Navigazione](../navigation/setup/route-navigation.md#navigation-menu), dove sono raccolti tutti i metodi di destinazione di OsmAnd come un indirizzo, POI o coordinate. La voce *Percorso precedente* ripristina il punto di partenza, i punti intermedi e la destinazione del tuo ultimo percorso. Viene mostrata quando *Cronologia di navigazione* è attivata.
 
 È possibile utilizzare lo strumento Cerca per trovare il luogo richiesto sulla mappa per la pianificazione del percorso da qualsiasi categoria di ricerca disponibile.
 
@@ -306,6 +322,29 @@ Comportamento durante la disconnessione da Android Auto:
 
 Questo aggiornamento garantisce anche che le sessioni di Android Auto ora si chiudano correttamente, prevenendo un uso inutile della batteria e fermando le notifiche “viaggio in corso” una volta terminata la navigazione.
 
+### Controllo vocale {#voice-control}
+
+Puoi controllare OsmAnd sullo schermo di *Android Auto* con la voce tramite Google Assistant o Gemini. Le azioni vocali funzionano sia online che offline.
+
+Azioni di navigazione:
+
+- *Termina navigazione* — interrompe il percorso corrente.
+- *Disattiva o attiva la guida vocale* — disattiva o attiva i [suggerimenti vocali](#voice-prompts). L'interruttore *Suggerimenti vocali* nelle impostazioni di *Android Auto* cambia di conseguenza.
+- *Evita o consenti strade a pedaggio, autostrade o traghetti* — modifica il parametro di percorso corrispondente del profilo usato per la navigazione e il percorso viene ricalcolato.
+- *Torna alla mia posizione* — centra la mappa sulla tua posizione attuale.
+- *Indietro* — torna alla schermata precedente.
+
+Informazioni sul percorso. La risposta appare come messaggio sullo schermo di *Android Auto*:
+
+- *Ora di arrivo* — l'ora di arrivo stimata.
+- *Distanza dalla destinazione* — la distanza rimanente.
+- *Tempo o distanza alla prossima svolta* — quanto manca alla prossima svolta.
+- *Prossima svolta* — una descrizione della prossima manovra.
+- *Destinazione* — il nome o le coordinate del punto di destinazione.
+- *Strada attuale* — il nome della strada su cui ti trovi.
+
+Se non è stato calcolato alcun percorso, OsmAnd mostra un messaggio che indica che il percorso non è calcolato. Le richieste di funzioni non disponibili in OsmAnd, come traffico, vista satellitare o segnalazione di eventi stradali, mostrano un messaggio che indica che l'azione non è supportata.
+
 
 ## Impostazioni {#settings}
 
@@ -338,7 +377,7 @@ Per abilitare o disabilitare le [**Info percorso** per un punto intermedio (ferm
 
 *Android Auto* e OsmAnd offrono la possibilità di regolare la mappa in base alle condizioni di illuminazione. In *Modalità mappa diurna*, la combinazione di colori rimane brillante e contrastata, facilitando la lettura anche in piena luce solare. In *Modalità notturna*, le mappe diventano più scure, il che aiuta il conducente a orientarsi meglio al buio.  
 
-OsmAnd in *Android Auto* ha una propria impostazione della modalità mappa, separata dalle opzioni di [modalità mappa](../map/vector-maps.md#map-mode) dell'app OsmAnd sul dispositivo. Per modificarla, andare su *Android Auto (OsmAnd) → Pulsante Impostazioni → Modalità mappa*, selezionare un'opzione e toccare *Applica*. La mappa passa alla modalità selezionata dopo aver toccato *Applica*. Se si esce dalla schermata con la freccia indietro senza toccare *Applica*, rimane selezionata la modalità precedente.
+OsmAnd in *Android Auto* ha una propria impostazione della modalità mappa, separata dalle opzioni di [modalità mappa](../map/vector-maps.md#map-mode) dell'app OsmAnd sul dispositivo. Per modificarla, andare su *Android Auto (OsmAnd) → Pulsante Impostazioni → Modalità mappa* e selezionare un'opzione. La modalità selezionata viene applicata immediatamente e la schermata torna all'elenco delle Impostazioni.
 
 - Selezionare *Giorno* o *Notte* per mantenere invariata la visualizzazione della mappa, indipendentemente dai segnali del veicolo.
 - Se si desidera che la modalità di visualizzazione della mappa cambi automaticamente in base ai segnali del veicolo, selezionare *Automatica* (predefinita).  
@@ -348,7 +387,7 @@ OsmAnd in *Android Auto* ha una propria impostazione della modalità mappa, sepa
 
 ![Lente d'ingrandimento Mappa in Android Auto](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
 
-La *Lente d'ingrandimento Mappa* modifica l'ingrandimento della mappa sullo schermo di *Android Auto*. Per modificarlo, andare su *Android Auto (OsmAnd) → Pulsante Impostazioni → Lente d'ingrandimento Mappa*, selezionare un valore da 50% a 125% e toccare *Applica*. Il valore corrente è mostrato sotto *Lente d'ingrandimento Mappa* nell'elenco delle impostazioni.  
+La *Lente d'ingrandimento Mappa* modifica l'ingrandimento della mappa sullo schermo di *Android Auto*. Per modificarlo, andare su *Android Auto (OsmAnd) → Pulsante Impostazioni → Lente d'ingrandimento Mappa*, selezionare un valore e toccare *Applica*. Il valore corrente è mostrato sotto *Lente d'ingrandimento Mappa* nell'elenco delle impostazioni.  
 
 Per scoprire come l'ingrandimento influisce sulla visualizzazione della mappa, vedere [Lente d'ingrandimento Mappa](../map/vector-maps.md#map-magnifier).
 

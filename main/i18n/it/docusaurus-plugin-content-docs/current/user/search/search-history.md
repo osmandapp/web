@@ -1,5 +1,5 @@
 ---
-source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
+source-hash: f790174db079e7201b2947913d3a0d224ce27c6741666d1a3964ee54c47c6f3e
 sidebar_position: 3
 title:  Ricerca Esplora
 ---
@@ -105,7 +105,7 @@ Per maggiori dettagli, consulta l'articolo [Luoghi popolari](../map/popular_plac
 
 ![Sezione Cronologia](@site/static/img/search/history_section_list.webp)
 
-La sezione **Cronologia** della scheda Esplora mostra fino a 25 elementi più recenti. Tocca il titolo della sezione per comprimerla o espanderla. Tocca *Visualizza tutto* per aprire la schermata completa della *Cronologia*.
+La sezione **Cronologia** della scheda Esplora mostra fino a 25 elementi più recenti. La sezione è espansa per impostazione predefinita. Tocca il titolo della sezione per comprimerla o espanderla; OsmAnd ricorda la tua scelta. Tocca *Visualizza tutto* per aprire la schermata completa della *Cronologia*.
 
 Se sia la *Cronologia ricerche* che la *Cronologia navigazione* sono disattivate, la sezione mostra la scheda *La cronologia è disattivata*. Tocca *Apri impostazioni Cronologia* per attivarle.
 

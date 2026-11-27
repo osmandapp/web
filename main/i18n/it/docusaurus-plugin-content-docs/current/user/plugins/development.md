@@ -1,5 +1,5 @@
 ---
-source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
+source-hash: 205f05e0d42fa5f92caada9c958cf5598bdde7fa74f9cdb424367495ffe5d104
 sidebar_position: 11
 title:  Sviluppo OsmAnd
 ---
@@ -47,13 +47,13 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 <TabItem value="android" label="Android">  
 
-![Development Settings Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
+![Impostazioni di sviluppo Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Impostazioni di sviluppo Android 2](@site/static/img/plugins/development/development_settings_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_3_new.png)
+![Impostazioni di sviluppo iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -68,7 +68,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 ### Risoluzione dei problemi {#troubleshooting}
 
 - **Simula la tua posizione** (*Android* / *iOS*). [Simula](#gpx-track-simulation) la posizione e il movimento utilizzando una traccia GPX.
-- **Modalità risparmio energetico** (*Android* / *iOS*). Questa impostazione riduce [la frequenza di aggiornamento dello schermo](#map-rendering-fps-widget) di 20 fotogrammi al secondo per aiutare a risparmiare la batteria durante l'uso delle applicazioni.
+- **Modalità risparmio energetico** (*Android* / *iOS*). Questa impostazione riduce [la frequenza di aggiornamento dello schermo](#map-rendering-fps-widget) di 20 fotogrammi al secondo per aiutare a risparmiare la batteria durante l'uso delle applicazioni. Disattiva anche la dissolvenza graduale in entrata e in uscita di icone ed etichette della mappa.
 - **Usa icone di posizione 3D** (*iOS*). Permette di selezionare un'icona 3D per l'[icona La mia posizione](../personal/profiles.md#my-location-appearance).
 - **Simula dati OBD** (*Android* / *iOS*). Permette la simulazione dell'uso dello [scanner OBD](./vehicle-metrics.md).
 - **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Visualizza le prestazioni di rendering e navigazione.
@@ -132,7 +132,7 @@ Usa uno dei seguenti percorsi per aprire le impostazioni del plugin:
 
 - **Ripristina le impostazioni predefinite del plugin**. Ripristina tutte le impostazioni del plugin ai loro valori predefiniti.
 
-    ![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png)
+    ![Impostazioni di sviluppo Android](@site/static/img/plugins/development/devplugin_stat_and.png)
 
 
 ## Widget FPS di rendering della mappa {#map-rendering-fps-widget}
@@ -147,7 +147,7 @@ I widget per sviluppatori di OsmAnd possono essere aggiunti allo schermo solo qu
 
 Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+![Widget FPS di sviluppo 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Widget FPS di sviluppo 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
 </TabItem>
 
@@ -155,7 +155,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,m
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*  
 
-![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+![Widget di sviluppo iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
 </TabItem>
 
@@ -176,7 +176,7 @@ I widget per sviluppatori di OsmAnd possono essere aggiunti allo schermo solo qu
 
 Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*  
 
-![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+![Widget posizione camera 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Widget posizione camera 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 </TabItem>
 
@@ -184,7 +184,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,m
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
 
-![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
+![Widget posizione camera 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Widget posizione camera 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
 
 </TabItem>
 
@@ -199,13 +199,13 @@ Puoi usare i [widget Posizione telecamera](../widgets/info-widgets.md#camera-wid
 
 <TabItem value="android" label="Android">  
 
-![Camera tilt widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
+![Widget inclinazione camera Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Widget inclinazione camera Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Camera tilt widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camera tilt widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)  
+![Widget inclinazione camera iOS 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Widget inclinazione camera iOS 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)  
 
 </TabItem>
 
@@ -225,13 +225,13 @@ Allo stesso tempo, a causa del movimento immaginario dell'osservatore, la distan
 
 <TabItem value="android" label="Android">  
 
-![Camera elevation widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
+![Widget elevazione camera Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Widget elevazione camera Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Camera elevation widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camera elevation widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)  
+![Widget elevazione camera iOS 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Widget elevazione camera iOS 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)  
 
 </TabItem>
 
@@ -246,13 +246,13 @@ Il widget Altitudine telecamera mostra l'altitudine della telecamera sopra il li
 
 <TabItem value="android" label="Android">  
 
-![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
+![Widget livello di zoom Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Widget livello di zoom Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)  
+![Widget livello di zoom iOS 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Widget livello di zoom iOS 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)  
 
 </TabItem>
 
@@ -276,13 +276,13 @@ Il widget ha due visualizzazioni che si alternano toccandolo:
 
 <TabItem value="android" label="Android">  
 
-![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+![Widget distanza dal bersaglio 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Widget distanza dal bersaglio 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
+![Widget distanza dal bersaglio 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Widget distanza dal bersaglio 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
 </TabItem>
 
 </Tabs>  
@@ -292,7 +292,7 @@ Il widget Distanza dalla telecamera al bersaglio mostra la distanza tra la telec
 
 ### Confronto con un'immagine satellitare {#comparison-with-a-satellite-imagery}
 
-![Comparison](@site/static/img/plugins/development/comparison.png)
+![Confronto](@site/static/img/plugins/development/comparison.png)
 
 Un confronto tra la mappa di OsmAnd e la superficie terrestre rivela i seguenti schemi:  
 
@@ -339,13 +339,13 @@ OsmAnd offre l'opportunità di simulare la posizione e il movimento del tuo disp
 
 <TabItem value="android" label="Android">  
 
-![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
+![Impostazioni di sviluppo Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Impostazioni di sviluppo Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
+![Impostazioni di sviluppo iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Impostazioni di sviluppo iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
 
 </TabItem>
 
