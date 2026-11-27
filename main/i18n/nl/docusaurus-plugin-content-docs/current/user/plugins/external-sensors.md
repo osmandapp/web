@@ -1,5 +1,5 @@
 ---
-source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+source-hash: 863d3df7ebcb8f1a0a362a1a56c188f42daa47139cbfa9d9825346e82b510df5
 sidebar_position: 6
 title:  Externe Sensoren
 ---
@@ -87,7 +87,8 @@ Volg deze stappen om een nieuwe sensor te koppelen:
 - Op **iOS** worden alleen **Bluetooth Low Energy (BLE)**-sensoren ondersteund vanwege hardwarebeperkingen. ANT+-sensoren zijn niet beschikbaar.
 - Op **Android** kunnen zowel BLE- als ANT+-sensoren worden ondersteund, afhankelijk van uw apparaat. Zie de [ANT+ compatibiliteitsgids](https://www.thisisant.com/consumer/ant-101/ant-in-phones) voor meer details.
 - Een **pop-upmelding** verschijnt telkens wanneer een sensor verbinding maakt of verbreekt.
-- **Fietsvermogensensoren** zijn alleen beschikbaar op Android via ANT+.
+- **Fietsvermogensensoren** zijn alleen beschikbaar op Android via ANT+ en BLE.
+- Op **Android** verschijnt een sensor die meerdere soorten gegevens verzendt (bijvoorbeeld een hartslagmeter die ook loopsnelheid en cadans meet, of oordopjes met hartslag en temperatuur) als één apparaat in de lijst. OsmAnd leest alle ondersteunde gegevenstypen ervan uit.
 
 
 ## Sensorinstellingen {#sensor-settings}
@@ -123,7 +124,7 @@ Elke gekoppelde externe sensor in de lijst van OsmAnd heeft zijn eigen configura
 - **Verbinden / Verbinding verbreken** – schakel de verbindingsstatus om.
 - **Hernoemen** – wijs een aangepaste naam toe aan de sensor.
 - **Sensor vergeten** – verwijder de sensor uit de lijst (kan later opnieuw worden gekoppeld).
-- **Instellingen** – open het scherm met sensordetails (sensortype, waarden, batterijniveau, instelling wielomtrek).
+- **Instellingen** – open het scherm met sensordetails (sensortype, waarden, batterijniveau, instelling wielomtrek). Op **Android** toont het scherm voor een sensor met meerdere gegevenstypen alle bijbehorende waarden.
 
 ***Opmerkingen:***
 
@@ -139,7 +140,7 @@ Elke gekoppelde externe sensor in de lijst van OsmAnd heeft zijn eigen configura
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![Externe sensoren](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![Externe sensoren](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
+![Externe sensoren](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.webp)  ![Externe sensoren](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.webp)  
 
 </TabItem>
 
@@ -147,7 +148,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,r
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![Externe sensoren plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![Externe sensoren plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
+![Externe sensoren plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.webp)  ![Externe sensoren plugin](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.webp)  
 
 </TabItem>
 
@@ -157,7 +158,7 @@ Om sensorgegevens op te nemen met de [Tripopname-plugin](../plugins/trip-recordi
 
 1. Zorg ervoor dat de **Externe Sensoren-plugin** is ingeschakeld.
 2. Ga naar *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
-3. Selecteer de sensortypes die u wilt opnemen (bijv. cadans, hartslag, snelheid).
+3. Selecteer voor elk gegevenstype dat u wilt opnemen (bijv. cadans, hartslag, snelheid) de sensor die u als gegevensbron wilt gebruiken.
 4. Start de opname van uw reis. OsmAnd slaat de geselecteerde sensorgegevens op in de GPX-track.
 
 ***Opmerkingen:***
@@ -165,6 +166,9 @@ Om sensorgegevens op te nemen met de [Tripopname-plugin](../plugins/trip-recordi
 - De lijst met beschikbare sensortypes wordt getoond, zelfs als er geen sensoren zijn verbonden.
 - Als er nog geen sensoren zijn gekoppeld, gebruik dan de knop [Nieuwe sensor koppelen](#pair-new-sensor) in de plugin-instellingen.
 - Gegevens over het batterijniveau worden **niet** opgenomen in GPX-bestanden en zijn niet beschikbaar voor analyse op de kaart.
+- Op **Android** kan één sensor met meerdere gegevenstypen worden geselecteerd als bron voor elk van die typen.
+- De standaardbron voor elk gegevenstype is *Elke verbonden*. OsmAnd neemt gegevens op van een verbonden sensor van dit type. Om het opnemen van een gegevenstype te stoppen, selecteert u *Geen*.
+- Op **Android** wordt de naam van de overeenkomende gekoppelde sensor getoond naast *Elke verbonden*. Als u een geselecteerde sensor vergeet, keert de bron terug naar *Elke verbonden*.
 
 :::note Formaatcompatibiliteit
 OsmAnd gebruikt [trackopname](../plugins/trip-recording.md#recorded-gpx-file) om sensorgegevens in te sluiten in GPX-bestanden. Dit formaat is compatibel met veel sport- en trainingsapps (bijv. Strava, Runkeeper).
@@ -235,7 +239,7 @@ Ondersteunde widgettypes:
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – toont de realtime hartslag van een gekoppelde monitor.
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Alleen Android*) – toont het huidige trapvermogen in watt.
-3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – toont het aantal pedaalomwentelingen per minuut.
+3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – toont het aantal pedaalomwentelingen per minuut. Cadansgegevens kunnen afkomstig zijn van een cadanssensor of van een fietsvermogensensor die cadans verzendt.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – huidige fietssnelheid.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – totale afstand gemeten door de sensor.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – huidige omgevingstemperatuur.
@@ -266,7 +270,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,sha
 
 </Tabs>
 
-Standaard toont de widget de eerste momenteel verbonden sensor van dit type. Als u een specifieke sensor wilt gebruiken, tikt u op **Gegevensbron** en kiest u uit de lijst met verbonden sensoren.
+Standaard toont de widget de eerste momenteel verbonden sensor van dit type. Als u een specifieke sensor wilt gebruiken, tikt u op **Gegevensbron** en kiest u uit de lijst met verbonden sensoren. Op **Android** is een sensor met meerdere gegevenstypen beschikbaar als bron in elke bijbehorende widget, bijvoorbeeld *Hartslag*, *Fietssnelheid* en *Fietscadans*.
 
 Op **iOS** kunt u kiezen welke waarde u in de widget wilt weergeven:  
 

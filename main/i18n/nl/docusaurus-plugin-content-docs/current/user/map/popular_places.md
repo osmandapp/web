@@ -1,5 +1,5 @@
 ---
-source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
+source-hash: ff258064d779b26129f3ed54a6c4982b439d96449a0d7c6d702aefdfb1ea57ae
 sidebar_position: 8
 title: Populaire Plaatsen
 ---
@@ -175,7 +175,7 @@ Door op een POI op de kaart te tikken, wordt het [POI-contextmenu](./map-context
 
 </Tabs>
 
-Dit is een sectie binnen het [POI-contextmenu](./map-context-menu.md) die een fotovoorbeeld van de geselecteerde Populaire Plaats (Wikipedia) weergeeft. U kunt horizontaal scrollen om door de beschikbare foto's te bladeren, of op een afbeelding tikken om deze in [volledig scherm](#gallery) te openen.
+Dit is een sectie binnen het [POI-contextmenu](./map-context-menu.md) die een fotovoorbeeld van de geselecteerde Populaire Plaats (Wikipedia) en foto's die in OpenStreetMap aan de POI zijn gekoppeld weergeeft. Een foto uit de tag [`mapillary`](https://wiki.openstreetmap.org/wiki/Key:mapillary) van de POI wordt als eerste getoond, ook als de [Mapillary-plugin](../plugins/mapillary.md) is uitgeschakeld. Op Android volgen daarna foto's uit de tag [`panoramax`](https://wiki.openstreetmap.org/wiki/Key:panoramax), dus de volgorde is Mapillary, Panoramax, Wikimedia. U kunt horizontaal scrollen om door de beschikbare foto's te bladeren, of op een afbeelding tikken om deze in [volledig scherm](#gallery) te openen.
 
 Online bekeken afbeeldingen worden automatisch gecachet voor offline toegang. Gecachte foto's tonen een klein offline badge in de hoek. Het voorbeeldrooster past zich aan aan de schermgrootte op iPadOS en macOS, voor een comfortabele afbeeldingslay-out op grotere schermen. OsmAnd voorkomt ook herhaalde netwerkverzoeken wanneer de sectie Online foto's wordt gesloten, en annuleert eerdere verzoeken bij snel schakelen tussen verschillende POI's.
 
@@ -209,12 +209,12 @@ U kunt ook de volgende acties uitvoeren op elke foto:
   Deel de geselecteerde afbeelding via een compatibele app die op uw apparaat is geïnstalleerd (bijv. berichten, e-mail of sociale media). De gedeelde inhoud bevat de afbeelding en de bronlink (indien beschikbaar).
 
 - **Details**  
-  Open een gedetailleerde weergave met metadata over de afbeelding, waaronder: *Beschrijving (volledige tekst)*, *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*.
+    Open een gedetailleerde weergave met metadata over de afbeelding, waaronder: *Beschrijving (volledige tekst)*, *Naam*, *Datum toegevoegd*, *Auteur*, *Licentie*, *Bron* en *Directe link*. Op Android tonen Mapillary-foto's *Auteur*, *Toegevoegd* (de opnamedatum), *Bron*, *Licentie* en een *Link* naar de fotopagina op [Mapillary](https://www.mapillary.com/).
 
   **Opmerking:** De beschrijvingstaal hangt af van de weergavetaal van de toepassing. Als de beschrijving in de geselecteerde taal niet beschikbaar is, toont OsmAnd de Engelse versie of de eerste beschikbare vertaling.
 
 - **Openen in browser**  
-  Open de bronpagina van de afbeelding (meestal op [Wikimedia Commons](https://commons.wikimedia.org/)) in uw standaardbrowser. Hiermee kunt u de volledige afbeelding, licentie-informatie en gerelateerde inhoud bekijken.
+  Open de bronpagina van de afbeelding (meestal op [Wikimedia Commons](https://commons.wikimedia.org/), of de fotoviewerpagina voor Mapillary-foto's) in uw standaardbrowser. Hiermee kunt u de volledige afbeelding, licentie-informatie en gerelateerde inhoud bekijken.
 
 - **Downloaden**  
   Sla de afbeelding op in de opslag van uw apparaat. De gedownloade afbeelding is te vinden in de standaard Downloads-map van uw apparaat en is offline toegankelijk.

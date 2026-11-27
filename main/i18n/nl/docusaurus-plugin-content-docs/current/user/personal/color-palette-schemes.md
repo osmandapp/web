@@ -1,5 +1,5 @@
 ---
-source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
+source-hash: 91b3fc79e7f46347f28f33c9cff2ea7076efea72fe581a2fb0449136f979aece
 sidebar_position: 5
 title:  Kleurenschema's
 ---
@@ -57,7 +57,7 @@ Ga naar: *Menu → Kaarten & Bronnen → Lokaal → Kleuren*
 
 <TabItem value="android" label="Android">
 
-![Paletten](@site/static/img/personal/color-schemes/palette_new.png) ![Paletten](@site/static/img/personal/color-schemes/palette_new_2.png)
+![Paletten](@site/static/img/personal/color-schemes/palette_new.webp) ![Paletten](@site/static/img/personal/color-schemes/palette_new_2.png)
 
 </TabItem>
 

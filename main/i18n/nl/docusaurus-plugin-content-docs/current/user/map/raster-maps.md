@@ -1,5 +1,5 @@
 ---
-source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
+source-hash: 36e97b90c3769611facb2ea509fb7332fc9cfadf389290599e8b1eb4dd90b35a
 sidebar_position: 7
 title:  Rasterkaarten (Online / Offline)
 ---
@@ -61,7 +61,7 @@ U kunt ook de [hoofdbron](#main) van kaarten wijzigen van vectorkaarten naar onl
 - **iOS**. Voor *iOS* werkt deze functie standaard.
 - **Android**. Voor *Android*, om rasterkaarten in OsmAnd te gebruiken, moet u de [Online kaarten plugin](../plugins/online-map.md) inschakelen. Volg deze stappen: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**[Laagparameters wijzigen](#layers)**. Om de zichtbaarheid en de mix van rasterkaartlagen te verbeteren, kunt u de laagtransparantie aanpassen met de schuifregelaar op het scherm. Bovendien kunt u de stijl van de vectorkaart aanpassen door polygonen te verbergen, waardoor de onderliggende lagen beter zichtbaar worden. Dit is vooral handig bij het bekijken van satellietbeelden.
+**[Laagparameters wijzigen](#layers)**. Om rasterkaartlagen te mengen, kunt u de zichtbaarheid van de lagen aanpassen met de schuifregelaar op het scherm. Bovendien kunt u de stijl van de vectorkaart aanpassen door polygonen te verbergen, waardoor de onderliggende lagen beter zichtbaar worden. Dit is vooral handig bij het bekijken van satellietbeelden.
 
 
 ## Lagen {#layers}
@@ -84,7 +84,7 @@ U kunt ook de [hoofdbron](#main) van kaarten wijzigen van vectorkaarten naar onl
 
 In OsmAnd kunnen rasterkaarten dienen als een extra kaartbron naast de standaard vectorkaarten, die zijn geoptimaliseerd voor offline gebruik.  
 
-U heeft de flexibiliteit om één of twee online tegel lagen toe te voegen als aanvulling op uw basiskaart. Hiermee kunt u maximaal drie kaartlagen tegelijk op uw scherm bekijken (plus Terrein). Denk eraan als een taart: [**Onderlaag**](#underlay) (rasterbasis eronder), [**Hoofd**](#main) (vector of raster kern), [**Overlay**](#overlay) (raster erbovenop), met [**Terrein**](#terrain) arcering over alles heen. U kunt bijvoorbeeld satellietbeelden als Onderlaag gebruiken, de offline vectorkaart van OsmAnd als Hoofdlaag met verhoogde transparantie en een fietspadenkaart als Overlay erbovenop.
+U heeft de flexibiliteit om één of twee online tegel lagen toe te voegen als aanvulling op uw basiskaart. Hiermee kunt u maximaal drie kaartlagen tegelijk op uw scherm bekijken (plus Terrein). Denk eraan als een taart: [**Onderlaag**](#underlay) (rasterbasis eronder), [**Hoofd**](#main) (vector of raster kern), [**Overlay**](#overlay) (raster erbovenop), met [**Terrein**](#terrain) arcering over alles heen. U kunt bijvoorbeeld satellietbeelden als Onderlaag gebruiken, de offline vectorkaart van OsmAnd als Hoofdlaag met verminderde zichtbaarheid en een fietspadenkaart als Overlay erbovenop.
 
 >[Vectorkaarten](./vector-maps.md) zijn **alleen** beschikbaar in de [Hoofd](#main) laag (en zijn daar de standaard). Rasterkaarten kunnen worden gebruikt in alle drie de lagen: Hoofd, Onderlaag en Overlay.
 
@@ -92,7 +92,7 @@ U heeft de flexibiliteit om één of twee online tegel lagen toe te voegen als a
 
 Als u deze lagen sneller wilt overschakelen ([Hoofdkaartbron](#main), [Overlay](#overlay), [Onderlaag](#underlay) en [Terrein](#terrain)), kunt u een [Snelle actie (Aangepaste knop)](../widgets/quick-action.md) toevoegen aan het kaartscherm en de bijbehorende kaartacties eraan toewijzen.
 
-U kunt ook de transparantie van de basiskaart aanpassen om deze met uw lagen te mengen. Indien nodig kunt u een transparantieschuifregelaar op het hoofdscherm inschakelen voor snelle aanpassingen.
+U kunt ook de zichtbaarheid van de basiskaart aanpassen om deze met uw lagen te mengen. Indien nodig kunt u een schuifregelaar op het hoofdscherm inschakelen voor snelle aanpassingen.
 
 ### Hoofd {#main}
 
@@ -126,7 +126,7 @@ Standaard is de hoofdkaart ingesteld op [Offline vectorkaarten](./vector-maps.md
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Onderlaag / overlay configureren Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Onderlaag / overlay configureren Android](@site/static/img/plugins/online-maps/overlay-andr.webp)  
 
 </TabItem>
 
@@ -134,15 +134,15 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Onderlaag / overlay configureren iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Onderlaag / overlay configureren iOS](@site/static/img/plugins/online-maps/overlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. De overlaykaart *in-/uitschakelen*.
-2. *Overlaytransparantie* (*Android*)/ *Transparantie* van de overlaykaart (*iOS*).
-3. *Transparantieschuifregelaar tonen* (*Android*) / *Schuifregelaar op de kaart tonen* (*iOS*). Snelle toegang tot de transparantie-instelling.
+2. *<Translate android="true" ids="overlay_transparency"/>* (*Android*) / *<Translate ios="true" ids="visibility"/>* (*iOS*). Bij 0% is de overlaykaart verborgen; bij 100% is deze volledig zichtbaar.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Snelle toegang tot de zichtbaarheidsinstelling.
 4. *Bron van overlaykaart* (*Android*) / *Beschikbare lagen* (*iOS*). Selecteer een online tegelkaart uit de lijst om deze direct als uw overlaylaag toe te voegen.
 5. *Kaartsymbolen tonen* - zoals tekst, verkeersborden en andere.  
 6. *Online bron toevoegen* (*iOS*). [Nieuwe online bron toevoegen](#add-new-online-source).
@@ -156,7 +156,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settin
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Onderlaag / overlay configureren Android](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Onderlaag / overlay configureren Android](@site/static/img/plugins/online-maps/underlay-andr.webp)
 
 </TabItem>
 
@@ -164,15 +164,15 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Onderlaag / overlay configureren iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Onderlaag / overlay configureren iOS](@site/static/img/plugins/online-maps/underlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. De onderlaagkaart *in-/uitschakelen*.
-2. *Transparantie van de basiskaart*.
-3. *Transparantieschuifregelaar tonen* (*Android*) / *Schuifregelaar op de kaart tonen* (*iOS*). Snelle toegang tot de transparantie-instelling.
+2. *<Translate android="true" ids="map_transparency"/>*. Bij 100% is de basiskaart volledig zichtbaar; bij 0% wordt alleen de onderlaagkaart getoond.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Snelle toegang tot de zichtbaarheidsinstelling.
 4. *Bron van onderlaagkaart* (*Android*) / *Beschikbare lagen* (*iOS*). Selecteer een online tegelkaart uit de lijst om deze direct als uw onderlaag toe te voegen.
 5. *Polygonen tonen/verbergen*.
 6. *Online bron toevoegen* (*iOS*). [Nieuwe online bron toevoegen](#add-new-online-source).

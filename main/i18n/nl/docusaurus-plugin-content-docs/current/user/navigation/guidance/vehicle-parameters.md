@@ -1,5 +1,5 @@
 ---
-source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
+source-hash: 54463b26bbd3157bf65aa4c615c7c5d58ded9f5e2adbff7977057bafa3b8a30c
 sidebar_position: 4
 title:  Voertuigparameters
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigatie-instellingen Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Navigatie-instellingen Android](@site/static/img/navigation/vehicle-parameters_andr.webp)
 
 </TabItem>
 
@@ -40,7 +40,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
 
 Voor een optimale routeberekening in OsmAnd dient u rekening te houden met de volgende voertuigparameters:
 
-1. Stel de [*Standaardsnelheid* of *Wegsnelheden*](#road-speeds) in, als de [minimum- en maximumsnelheid](#road-speeds) van het voertuig. Dit helpt de applicatie de benodigde tijd te bepalen om de route te voltooien en de beste route te kiezen, rekening houdend met de snelheidslimieten op verschillende wegsegmenten.
+1. Stel de [*Standaardsnelheid*](#default-speed) en het [*Snelheidsbereik*](#speed-range) in — de minimum- en maximumsnelheid van het voertuig. Dit helpt de applicatie de benodigde tijd te bepalen om de route te voltooien en de beste route te kiezen, rekening houdend met de snelheidslimieten op verschillende wegsegmenten.
 2. Specificeer het [*type*](#fuel-used-by-motor) brandstof dat door de motor wordt gebruikt. Hiermee kan de app de CO2-uitstoot schatten.
 3. Voer de [*capaciteit van uw tank*](#fuel-tank-capacity) in om uw brandstofniveau en -verbruik nauwkeurig bij te houden.
 4. Definieer de [*afmetings- en gewichtsparameters*](#size-parameters) van uw voertuig, wat de app kan helpen de optimale route te berekenen en obstakels op de weg als gevolg van beperkingen te vermijden.
@@ -171,6 +171,7 @@ De parameter **Brandstoftankcapaciteit** stelt u in staat om het [brandstofnivea
 
 De instelling **Brandstoftankcapaciteit** is alleen beschikbaar in voertuiggebaseerde navigatie. Voor navigatietypes zoals *Fiets*, *Paardrijden*, *Te voet* en *Ski* wordt deze parameter niet weergegeven in de Voertuigparameters.
 
+
 ## Snelheidsparameters
 
 ### Standaardsnelheid {#default-speed}
@@ -179,7 +180,18 @@ De instelling **Brandstoftankcapaciteit** is alleen beschikbaar in voertuiggebas
 
 <TabItem value="android" label="Android">
 
-![Navigatie-instellingen](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,vehicle_parameters,travel_speed"/>*
+
+![Reissnelheid Android](@site/static/img/navigation/navigation_settings_travel_speed_andr.webp)
+
+Het scherm *Reissnelheid* bevat de instellingen *Standaardsnelheid*, *Snelheidsbereik* en *Geschatte aankomsttijd* van het profiel. Wijzigingen worden direct opgeslagen. De knop *Standaardwaarden herstellen* in de bovenbalk herstelt de standaardwaarden van alle instellingen op het scherm.
+
+De **Standaardsnelheid** is de standaard bewegingssnelheid voor deze vervoersmodus ([Standaard snelheidslimieten](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Voor de profielen *Wandelen*, *Paardrijden* en *Fietsen*, in kleine stappen equivalent aan 0,1 km/u (mph) ([Eenheden & formaten](https://osmand.net/docs/user/personal/profiles#units--formats)), en voor de andere profielen, in stappen equivalent aan 1 km/u (1 mph). Het wordt gebruikt:
+- Om de [routetijd](../../widgets/nav-widgets.md#time-to-intermediate) te schatten wanneer de snelheid niet kan worden bepaald aan de hand van de wegen, zoals bij [GPX-navigatie](../setup/gpx-navigation.md), [Skiroutes](../routing/ski-routing.md), [Bootroutes](../routing/boat-navigation.md), [Voetganger](../routing/pedestrian-routing.md) en andere vergelijkbare profielen.
+- Om te bepalen wanneer [gesproken aanwijzingen](../guidance/voice-navigation.md) worden geactiveerd.
+- Om de geschatte aankomsttijd voor kaartmarkeringen te bepalen via een rechte lijn navigatie als de gemiddelde snelheid nog niet is berekend.
+
+De *Standaardsnelheid* kan alleen worden ingesteld binnen het [*Snelheidsbereik*](#speed-range): wanneer u het bereik versmalt, verschuift de *Standaardsnelheid* mee.
 
 </TabItem>
 
@@ -187,34 +199,39 @@ De instelling **Brandstoftankcapaciteit** is alleen beschikbaar in voertuiggebas
 
 ![Navigatie-instellingen](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
-</TabItem>
-
-</Tabs>  
-
 De **Standaardsnelheid** is de standaard bewegingssnelheid voor deze vervoersmodus ([Standaard snelheidslimieten](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Voor de profielen *Wandelen*, *Paardrijden* en *Fietsen*, in kleine stappen equivalent aan 0,1 km/u (mph) ([Eenheden & formaten](https://osmand.net/docs/user/personal/profiles#units--formats)), en voor de andere profielen, in stappen equivalent aan 1 km/u (1 mph). Het wordt gebruikt:
 - Om de [routetijd](../../widgets/nav-widgets.md#time-to-intermediate) te schatten wanneer de snelheid niet kan worden bepaald aan de hand van de wegen, zoals bij [GPX-navigatie](../setup/gpx-navigation.md), [Skiroutes](../routing/ski-routing.md), [Bootroutes](../routing/boat-navigation.md), [Voetganger](../routing/pedestrian-routing.md) en andere vergelijkbare profielen.
 - Om te bepalen wanneer [gesproken aanwijzingen](../guidance/voice-navigation.md) worden geactiveerd.
 - Om de geschatte aankomsttijd voor kaartmarkeringen te bepalen via een rechte lijn navigatie als de gemiddelde snelheid nog niet is berekend.
 
+</TabItem>
+
+</Tabs>
 
 
- Het wordt gebruikt om de aankomsttijd te berekenen en de optimale route te bepalen op basis van de bewegingssnelheid die de applicatie als typisch beschouwt. Bijvoorbeeld, auto, openbaar vervoer, voetganger, of de snelheid die u handmatig instelt.
+### Snelheidsbereik {#speed-range}
 
+<InfoAndroidOnly />
 
-### Wegsnelheden {#road-speeds}
-
-
-![Navigatie-instellingen](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-Voor sommige navigatietypes kan de minimaal en maximaal toegestane snelheid worden ingesteld. Als dit is ingesteld, gaat de routeberekeningsengine ervan uit dat het voertuig of de vervoersmodus niet sneller zal bewegen dan de limiet en niet langzamer dan de minimale snelheid. 
+Voor sommige navigatietypes kan de minimaal en maximaal toegestane snelheid worden ingesteld. Beide waarden worden ingesteld met één schuifregelaar met twee handvatten. Als ze zijn ingesteld, gaat de routeberekeningsengine ervan uit dat het voertuig of de vervoersmodus niet sneller zal bewegen dan de maximumsnelheid en niet langzamer dan de minimumsnelheid. Het *Snelheidsbereik* wordt gebruikt voor zowel de routeberekening als de aankomsttijd.
 Dit maakt het bijvoorbeeld mogelijk om een **brandstofefficiënte** route te creëren waarbij het brandstofverbruik optimaal is bij de ingestelde **maximumsnelheid** en de routeberekeningsengine een kortere route zal vinden door langere maar snellere wegen te vermijden.
 
-- **Minimumsnelheid**  
-    De instelling stelt de minimale rijsnelheid in voor alle wegtypes op de route. Het verhoogt de prioriteit voor wegen met een aanbevolen snelheid die lager is dan de minimale snelheid.  
-- **Maximumsnelheid**  
-    De instelling stelt de maximale rijsnelheid in en verlaagt de prioriteit voor wegen met een mogelijke snelheid die hoger is dan de maximale.
+- **Minimumsnelheid** — stelt de minimale rijsnelheid in voor alle wegtypes op de route. Het verhoogt de prioriteit voor wegen met een aanbevolen snelheid die lager is dan de minimale snelheid.
+- **Maximumsnelheid** — stelt de maximale rijsnelheid in en verlaagt de prioriteit voor wegen met een mogelijke snelheid die hoger is dan de maximale.
+
+Het *Snelheidsbereik* is niet beschikbaar voor profielen met rechte-lijnroutering, bijvoorbeeld *Vliegtuig*.
 
 
+### Geschatte aankomsttijd {#estimated-arrival-time}
+
+<InfoAndroidOnly />
+
+De instellingen voor *Geschatte aankomsttijd* bepalen hoe OsmAnd de aankomsttijd tijdens de navigatie berekent.
+
+- **Pas aan op mijn snelheid** — standaard uit. Wanneer de instelling uit staat, komt de aankomsttijd uit de verwachte snelheid op elke weg van de route. Wanneer deze aan staat, deelt OsmAnd de resterende afstand door uw gemiddelde snelheid over het geselecteerde *Interval*. Alleen beweging tijdens de navigatie wordt meegeteld, stops worden overgeslagen. Direct nadat de navigatie is gestart, combineert de aankomsttijd de routeschatting met uw gemiddelde snelheid totdat u gedurende het hele *Interval* in beweging bent geweest.
+- **Interval** — de periode waarover uw gemiddelde snelheid wordt gemeten, van 15 seconden tot 60 minuten. De standaardwaarde is 15 minuten. De instelling is beschikbaar wanneer *Pas aan op mijn snelheid* aan staat.
+
+De aangepaste aankomsttijd wordt getoond in de widgets [*Tijd tot bestemming*](../../widgets/nav-widgets.md#time-to-destination) en [*Tijd tot tussenpunt*](../../widgets/nav-widgets.md#time-to-intermediate), in de navigatiemelding en in [Android Auto](../auto-car.md). De tijd tot de volgende afslag en gesproken aanwijzingen worden niet beïnvloed.
 
 
 ## Gerelateerde artikelen {#related-articles}

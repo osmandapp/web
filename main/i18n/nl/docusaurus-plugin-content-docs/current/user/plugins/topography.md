@@ -1,5 +1,5 @@
 ---
-source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
+source-hash: 1dedf30fcafbdd4bf9df2e543bf8db14623c9186c879536ea1c090f7aff4544b
 sidebar_position: 16
 title: Topografie
 ---
@@ -155,7 +155,7 @@ Hoogtelijnen is een [betaalde functie](../purchases/index.md).
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Menu Hoogtelijnen Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Menu Hoogtelijnen Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.webp)
 
 </TabItem>
 
@@ -163,7 +163,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Hoogtelijnen*
 
-![Menu Hoogtelijnen iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Menu Hoogtelijnen iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.webp)
 
 </TabItem>
 
@@ -185,6 +185,14 @@ Bij gebruik van de [Kaartweergave-engine](../personal/global-settings.md#map-ren
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Selecteer de dichtheid van de hoogtelijnen (Laag, Gemiddeld, Hoog). Hogere dichtheden kunnen de laadsnelheid beïnvloeden.
 - *<Translate android="true" ids="maps_and_resources"/>*. Bekijk en download hoogtelijnkaarten voor de huidige regio en nabijgelegen gebieden.
 
+**Labelinstellingen**:
+
+- *<Translate android="true" ids="rendering_attr_contourLabelDirection_name"/>*. Kies hoe de hoogtecijfers op hoogtelijnen worden georiënteerd:
+    - *<Translate android="true" ids="rendering_value_upright_name"/>*. De cijfers draaien mee met de kaart, zodat ze leesbaar blijven op het scherm.
+    - *<Translate android="true" ids="rendering_value_uphill_name"/>*. De bovenkant van elk cijfer wijst naar hoger gelegen terrein, zoals op papieren topografische kaarten. De cijfers behouden deze richting wanneer de kaart draait, zodat ze op het scherm ondersteboven kunnen verschijnen.
+
+De korte streepjes op hoogtelijnen wijzen bergafwaarts.
+
 
 ## Terrein {#terrain}
 
@@ -198,7 +206,7 @@ Terrein is een [betaalde functie](../purchases/index.md).
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menu Terrein Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Menu Terrein Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Menu Terrein Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.webp)  ![Menu Terrein Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.webp)
 
 </TabItem>
 
@@ -212,13 +220,14 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 </Tabs>  
 
-De optie **Terrein** schakelt drie functies in en stelt u in staat deze aan te passen, zoals *Schaduwreliëf*, *Helling* en *Hoogte*. Op iOS bevat het Visualisatiemenu ook *Terreinschaduwen*, een realtime terreinschaduwmodus gebaseerd op 3D-reliëf.  
+De optie **Terrein** schakelt drie functies in en stelt u in staat deze aan te passen, zoals *Schaduwreliëf*, *Helling* en *Hoogte*. Op iOS bevat het Visualisatiemenu ook [*Terreinschaduwen*](#terrain-shadows), een realtime terreinschaduwmodus gebaseerd op 3D-reliëf.  
 Specifieke kenmerken:  
 
-- Er kan slechts één optie tegelijk worden ingeschakeld, ofwel Schaduwreliëf, Helling, Hoogte of Terreinschaduwen.
+- Er kan slechts één optie tegelijk worden ingeschakeld, ofwel Schaduwreliëf, Helling, Hoogte of Terreinschaduwen (laatstgenoemde is alleen beschikbaar op iOS).
 - Als u geen veranderingen ziet na het downloaden en inschakelen van de betreffende kaart, wordt aanbevolen de applicatie opnieuw te starten.
+- Op Android toont het Terrein-scherm ook de rijen [3D-reliëf](#3d-relief) en [3D-gebouwen](#3d-buildings), die hun instellingen openen. Deze rijen blijven zichtbaar wanneer de Terrein-schakelaar uit staat.
 
-Het **Terrein**-menu omvat de selectie van een [kleurenschema](#default-color-scheme) (**visualisatie** op iOS) met de optie om dit te [wijzigen](#modify-color-scheme) (voor [Pro-abonnees](../../user/purchases/index.md)), de mogelijkheid om de transparantie van de laag op de kaart te veranderen ([zichtbaarheid](#visibility)), en het selecteren van het [zoomniveau](#zoom-levels) voor de weergave ervan, informatie over de grootte van [gecachete gegevens](#cache-size), en een lijst met [kaarten](../../user/personal/maps-resources.md) die nodig zijn om de laag weer te geven.
+Het **Terrein**-menu omvat de selectie van [visualisatie](#default-color-scheme) met de optie om dit te [wijzigen](#modify-color-scheme) (voor [Pro-abonnees](../../user/purchases/index.md)), de mogelijkheid om de transparantie van de laag op de kaart te veranderen ([zichtbaarheid](#visibility)), en het selecteren van het [zoomniveau](#zoom-levels) voor de weergave ervan, informatie over de grootte van [gecachete gegevens](#cache-size), en een lijst met [kaarten](../../user/personal/maps-resources.md) die nodig zijn om de laag weer te geven.
 
 
 ## Schaduwreliëf-, Helling- en Hoogtelagen {#hillshade-slope-and-altitude-layers}
@@ -255,7 +264,7 @@ Terreinschaduwen vereist 3D-reliëf en schakelt dit automatisch in wanneer gesel
 
 | Schaduwreliëf | Helling | Hoogte |
 | ------ | ------- | ------- |
-|![Schaduwreliëf](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Helling](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
+|![Schaduwreliëf](@site/static/img/plugins/contour-lines/color_scheme_hillshade_menu_2.png)|![Helling](@site/static/img/plugins/contour-lines/color_scheme_slope_menu_2.png)| ![Menu Hoogte](@site/static/img/plugins/contour-lines/color_scheme_altitude_menu.png) |
 
 - *Schaduwreliëf* gebruikt donkere tinten om hellingen, pieken en laaglanden te tonen. De virtuele zon heeft een vaste azimut (richting) van 315 graden.
 
@@ -274,7 +283,7 @@ Terreinschaduwen vereist 3D-reliëf en schakelt dit automatisch in wanneer gesel
 
 <TabItem value="android" label="Android">
 
-![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.webp)   ![Kleurenschema wijzigen](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
@@ -309,15 +318,15 @@ Voor geavanceerde palet-aanpassing met behulp van paletbestanden, zie het artike
 | ------ | ------- |
 | ![Zichtbaarheid ](../../../blog/2023-08-28-terrain/img/31.png) | ![Zichtbaarheid ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-De functie *Zichtbaarheid* wordt gebruikt om de transparantie van de schaduwen voor Schaduwreliëf en de kleuren die worden gebruikt voor de weergave van de hoek in de Helling-parameter aan te passen. Voor Terreinschaduwen regelt Zichtbaarheid de sterkte van het terreinschaduweffect.
+De functie *Zichtbaarheid* wordt gebruikt om de transparantie van de schaduwen voor Schaduwreliëf en de kleuren die worden gebruikt voor de weergave van de hoek in de Helling-parameter aan te passen. Voor [Terreinschaduwen](#terrain-shadows) op iOS regelt Zichtbaarheid de sterkte van het terreinschaduweffect.
 
 ### Zoomniveaus {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Zoomniveaus](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 De functie *Schaalniveaus* stelt u in staat de minimum- en maximumwaarden van de kaartzoomniveaus in te stellen, variërend van 4 tot 19, waarop de Schaduwreliëf- of Helling-kaartlagen worden weergegeven.
 
-Zoomniveaus zijn niet beschikbaar voor Terreinschaduwen omdat deze visualisatie dynamisch wordt gerenderd en niet afhankelijk is van de zichtbaarheid van rasterlagen.
+Zoomniveaus zijn niet beschikbaar voor Terreinschaduwen op iOS omdat deze visualisatie dynamisch wordt gerenderd en niet afhankelijk is van de zichtbaarheid van rasterlagen.
 
 ### Cachegrootte {#cache-size}
 
@@ -357,7 +366,7 @@ De hoofdinstellingen voor *Toon of Verberg kaarttypes* bevinden zich in de secti
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![3D-gebouwen](@site/static/img/map/3d_buildings_4_new.png) ![3D-gebouwen](@site/static/img/map/3d_buildings_3_new.png)
+![3D-gebouwen](@site/static/img/map/3d_buildings_4_new.webp) ![3D-gebouwen](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -386,7 +395,7 @@ Gebruik de hoofdschakelaar om 3D-weergave van gebouwen in- of uit te schakelen. 
 Op Android is deze optie alleen beschikbaar wanneer de Topografie-plugin is ingeschakeld.  
 Ga naar: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-De 3D-gebouwen-instellingen zijn verdeeld in twee groepen: **Uiterlijk** en **Prestaties**.
+De 3D-gebouwen-instellingen zijn verdeeld in twee groepen, **Uiterlijk** en **Prestaties**, gevolgd door een afzonderlijke instelling [**Zonpositie**](#sun-position) (*alleen Android*).
 
 ### Uiterlijk {#appearance}
 
@@ -424,7 +433,7 @@ Op de voorbeeldschermen (Kleur / Zichtbaarheid) kunt u Reset naar standaard gebr
 
 ### Prestaties {#performance}
 
-De **<Translate android="true" ids="performance"/>** stuurt hoe 3D-gebouwen worden gerenderd. Het omvat twee instellingen: Detailniveau en Bezichtigingsafstand.
+De **<Translate android="true" ids="performance"/>** stuurt hoe 3D-gebouwen worden gerenderd. Het omvat drie instellingen: Detailniveau, Bezichtigingsafstand en Schaduwen.
 
 **<Translate android="true" ids="level_of_details"/>** bepaalt de complexiteit van de 3D-gebouwgeometrie:
 - Laag (standaard) — eenvoudigere geometrie.
@@ -434,22 +443,32 @@ De **<Translate android="true" ids="performance"/>** stuurt hoe 3D-gebouwen word
 - Dichtbij (standaard) — rendert gebouwen dichter bij u.
 - Ver — rendert gebouwen vanaf een grotere afstand.
 
-Beide prestatie-opties gebruiken een tweeposities schakelaar direct in het 3D-gebouwen-instellingen-scherm.
+**<Translate android="true" ids="cast_shadows"/>** (*alleen Android*) regelt zonneschaduwen op de kaart:
+- Uit (standaard) — gebouwen worden zonder schaduwen getekend.
+- Aan — gebouwen werpen schaduwen op de grond en op de wanden van naburige gebouwen in de richting die is ingesteld in [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). Wanneer [3D-reliëf](#3d-relief) is ingeschakeld, werpt het terrein ook schaduwen. De donkerte van gebouwschaduwen hangt af van de [Zichtbaarheid](#appearance) van 3D-gebouwen.
+
+Alle drie de prestatie-opties gebruiken een tweeposities schakelaar direct in het 3D-gebouwen-instellingen-scherm. Schaduwen worden voor elk profiel afzonderlijk ingesteld en zijn alleen beschikbaar met de renderengine [Versie 2 (OpenGL)](#rendering-engine-android).
 
 **Opmerking:** Het gebruik van *Hoog detail* en *Verre bezichtigingsafstand* verbetert het visuele uiterlijk maar kan de prestaties beïnvloeden en het batterijverbruik verhogen.
 
-<!--
-### Sun {#sun}
 
-![3D Buildings](@site/static/img/map/sun_setting.png)
+### Zonpositie {#sun-position}
 
-The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders:
+<InfoAndroidOnly />
 
-- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
-- Altitude — controls the height of the sun above the horizon.
+![Zon](@site/static/img/map/sun_setting.webp) ![Zonschaduwen](@site/static/img/map/sun_shadows.webp)
 
-Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
--->
+De instelling **<Translate android="true" ids="map_widget_sun_position"/>** bepaalt de richting van het licht voor gebouwschaduwen en voor de Terreinschaduwen van 3D-reliëf. U kunt deze openen vanuit het 3D-gebouwenscherm en vanuit het 3D-reliëfscherm. De rij toont de huidige zonrichting en door erop te tikken opent u een voorbeeldpaneel met drie modi:
+
+- **<Translate android="true" ids="sun_light_live"/>** — gebruikt de werkelijke positie van de zon boven het midden van de kaart op het huidige tijdstip. Azimut en Hoogte worden ter referentie getoond.
+- **<Translate android="true" ids="shared_string_date"/>** — gebruikt de werkelijke positie van de zon boven het midden van de kaart op de datum en tijd die u selecteert. De tijd wordt ingesteld in de tijdzone van uw apparaat.
+- **<Translate android="true" ids="shared_string_manual"/>** — stelt u in staat de lichtrichting in te stellen met twee schuifregelaars:
+    - *<Translate android="true" ids="shared_string_azimuth"/>* — bepaalt de horizontale richting van de lichtbron (de kompasrichting van de zon).
+    - *<Translate android="true" ids="altitude"/>* — bepaalt de hoogte van de zon boven de horizon.
+
+Wijzigingen verschijnen direct op de kaart. Tik op Toepassen om de geselecteerde zonpositie te bevestigen. Reset naar standaard schakelt over naar de modus Handmatig met een azimut van 315° en een hoogte van 45°.
+
+**Opmerking:** Zonpositie is alleen beschikbaar met de renderengine [Versie 2 (OpenGL)](#rendering-engine-android).
 
 
 ## 3D-reliëf {#3d-relief}
@@ -464,7 +483,7 @@ Changing these parameters modifies how shadows fall on buildings and can improve
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D-reliëf](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![3D-reliëf](@site/static/img/map/configure_map_topography_andr_new.webp) ![3D-reliëf](@site/static/img/plugins/contour-lines/3drelief_screen_andr.webp)
 
 </TabItem>
 
@@ -479,6 +498,8 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 </Tabs>  
 
 De 3D-reliëffunctie produceert een verhoogd reliëf en biedt een driedimensionale weergave van het landschap. 3D-reliëf werkt offline en kan worden gebruikt met [OsmAnd-vectorkaarten](../map/vector-maps.md) of elke [rasterkaart](../map/raster-maps.md#layers) als [Kaartbron](../map/raster-maps.md#main) of als [Onderlaag/Overlaag](../map/raster-maps.md#overlay).
+
+Op Android heeft 3D-reliëf een eigen instellingenscherm met de hoofdschakelaar, [<Translate android="true" ids="vertical_exaggeration"/>](#vertical-exaggeration), [<Translate android="true" ids="terrain_shadows"/>](#terrain-shadows-android) en [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). Het item 3D-reliëf in het menu Kaart configureren toont of 3D-reliëf aan staat en de huidige intensiteit van Terreinschaduwen. U kunt 3D-reliëf ook openen vanuit het Terrein-scherm.
 
 ***Hoe 3D-reliëf op de kaart weer te geven.***
 
@@ -534,6 +555,18 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 *Verticale overdrijving* is een speciale coëfficiënt voor *3D-reliëf*. U kunt de schaal (*Verticale overdrijving*) wijzigen van x1 tot x3. Met deze functie kunt u vloeiendere terreincontouren met meer detail bekijken.
 
+### Terreinschaduwen (Android) {#terrain-shadows-android}
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d,terrain_shadows"/>*
+
+![Terreinschaduwen Android](@site/static/img/plugins/contour-lines/terrain_shadows_andr.webp)
+
+**<Translate android="true" ids="terrain_shadows"/>** schaduwen het 3D-reliëf in realtime, op basis van de terreingeometrie en de [Zonpositie](#sun-position). Ze worden getekend zodra 3D-reliëf aan staat.
+
+Tik op *Terreinschaduwen* om een voorbeeldpaneel te openen, stel de intensiteit in van 10% tot 100% (standaard 40%) en tik op Toepassen. De intensiteit wordt voor elk profiel afzonderlijk ingesteld.
+
+**Opmerking:** Zolang Terrein Schaduwreliëf toont, staan Terreinschaduwen uit, omdat Schaduwreliëf het reliëf al schaduwt.
+
 
 ### Schaduwreliëf en 3D-reliëf {#hillshade-and-3d-relief}
 
@@ -544,7 +577,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 **Schaduwreliëf** is een type kaart dat terrein weergeeft met behulp van schaduwen, waardoor een visuele weergave van de helling en vorm van het aardoppervlak ontstaat.  
 **3D-reliëf** is een functie die driedimensionale effecten aan de kaart toevoegt.  
 
-Als u *Schaduwreliëf* **uitschakelt** en *3D-reliëf* **inschakelt**, zullen reliëfschaduwen nog steeds zichtbaar zijn omdat *Schaduwreliëf* en *3D-reliëf* twee verschillende manieren zijn om een kaart te visualiseren. *Schaduwreliëf* creëert schaduwen op basis van het terrein en voegt deze toe aan de kaart, terwijl *3D-reliëf* 3D-elementen modelleert om de diepte en vorm van het terrein te tonen, en de schaduwen maken deel uit van de visualisatie. Deze functies kunnen parallel werken, en het uitschakelen van *Schaduwreliëf* heeft geen invloed op hoe 3D-effecten worden weergegeven.  
+Als u *Schaduwreliëf* **uitschakelt** en *3D-reliëf* **inschakelt**, zullen reliëfschaduwen nog steeds zichtbaar zijn omdat *Schaduwreliëf* en *3D-reliëf* twee verschillende manieren zijn om een kaart te visualiseren. *Schaduwreliëf* creëert schaduwen op basis van het terrein en voegt deze toe aan de kaart, terwijl *3D-reliëf* 3D-elementen modelleert om de diepte en vorm van het terrein te tonen, en de schaduwen maken deel uit van de visualisatie. Deze functies kunnen parallel werken, en het uitschakelen van *Schaduwreliëf* heeft geen invloed op hoe 3D-effecten worden weergegeven. Op Android zijn deze reliëfschaduwen [Terreinschaduwen](#terrain-shadows-android) en staan ze uit zolang Terrein Schaduwreliëf toont.  
 
 Wanneer **Schaduwreliëf** is **ingeschakeld**, lijkt een afbeelding met reliëfschaduwen gedetailleerder, donkerder en meer getrapt dan een *3D-reliëf*-afbeelding. De verklaring is dat *Schaduwreliëf* de gradiënten en contrasten van het terrein benadrukt, waardoor een scherper en meer gedetailleerd beeld ontstaat. De *3D-reliëf*-functie geeft de kaart een vloeiender en gladder uiterlijk, waardoor het terrein wordt verzacht en de zichtbaarheid van sommige fijnere details mogelijk wordt verminderd.
 

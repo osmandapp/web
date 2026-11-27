@@ -1,5 +1,5 @@
 ---
-source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
+source-hash: fd62270946384571ddb0174dfd6f8910f5b39a06592a0da455d7339a651cd91e
 sidebar_position: 2
 title:  iOS-aankopen
 ---
@@ -68,8 +68,8 @@ In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en 
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |
 | **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €5.99 / <s>€39.99</s> **€19.99** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $5.99 / <s>$39.99</s> **$19.99** |
+| **Prijs (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €5.99 / <s>€39.99</s> **€19.99** |
+| **Prijs (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $5.99 / <s>$39.99</s> **$19.99** |
 
 <!--
 
@@ -98,7 +98,6 @@ In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en 
 | [Kaartdownloads](../start-with/download-maps.md) |  <details><summary>**5 kaartdownloads** <br /> (een kaartupdate telt als download):</summary> <br /> - Een kaartdownload of -update betreft alleen het downloaden/bijwerken van een land- (regio)kaart.<br /> - De **wereldoverzichtskaart**, **wereldhoogtecorrectie**, **kaartlettertypen** en **spraakaanwijzingen** tellen niet mee als 5 downloadmogelijkheden.</details> | ✔ | ✔ |
 | [Maandelijkse kaartupdates](../personal/maps-resources.md#updates-menu) |  <details><summary>**Eén keer per maand** <br /> (met 2 dagen vertraging):</summary> * beperkt tot 5 downloads (een kaartupdate telt als download) </details> |  ✔ | ✔ |
 | [Uurlijkse kaartupdates](../personal/maps-resources.md#live-updates)<br/>Live-updates (1 uur vertraging) - [**](#-map-updates) | **-** | **-**| ✔ |
-| [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [3D-reliëf](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Topografiegegevens](../plugins/topography.md#overview)<br/>(Hoogtelijnen en Terrein) | **-** | ✔ | ✔ |
 | [Coördinatenraster — Kleuraanpassing](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -110,7 +109,9 @@ In de lijst staat informatie over de prijzen van OsmAnd-producten voor de VS en 
 | [Astronomie-plugin](../plugins/astronomy.md) — [Waarnemingsplanning](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Astronomie-plugin](../plugins/astronomy.md) — [Interactieve AR-modus](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Astronomie-plugin](../plugins/astronomy.md) — [Offline sterrenkaart](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Aangepaste achtergrondkleur van widgets](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Offline en online navigatie](../navigation/index.md)<br/>met bocht-voor-bocht aanwijzingen | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/car-play.md) | ✔ | ✔ | ✔ |
 | [Offline direct zoeken](../search/index.md) | ✔ | ✔ | ✔ |
 | [Tochtopname](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [GPX-tracks exporteren](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |

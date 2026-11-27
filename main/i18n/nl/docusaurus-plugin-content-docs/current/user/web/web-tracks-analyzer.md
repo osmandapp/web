@@ -1,5 +1,5 @@
 ---
-source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
+source-hash: c35b48b75c008612b036302e055181306b64e216afa3939f782a05d93c7ed8f5
 sidebar_position: 7
 sidebar_label: Tracks-analysator
 title: Tracks-analysator
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ## Hoe te gebruiken {#how-to-use}
 
 1. [Log in](./web-cloud.md#login) bij uw OsmAnd Pro-account op het Web Map Portal. Uw tracks moeten zijn gesynchroniseerd met [OsmAnd Cloud](./web-cloud.md#cloud-sync).
-2. Open *Menu → Tracks-analysator* (het moersleutelpictogram).
+2. Open *Menu → Tracks-analysator* (het pictogram van een grafiek met een vergrootglas).
 3. Kies in het paneel **Tracks selecteren** voor **Alle tracks** of alleen de mappen die u nodig hebt.
 4. Klik met de rechtermuisknop op de kaart en selecteer **Punt A**. Om een segment tussen twee punten te analyseren, stelt u ook **Punt B** in.
 5. Bekijk de lijst met gevonden segmenten, [sorteer deze en kies welke parameters worden weergegeven](#sorting-and-visible-parameters).

@@ -1,5 +1,5 @@
 ---
-source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
+source-hash: fb2f9a2ac137e8c0c2fc36ec770f090860ed927919d72b4d6bd7d058e53126af
 sidebar_position: 3
 title:  Informatieve Widgets
 ---
@@ -344,7 +344,7 @@ De **Batterijniveau** widget toont het batterijpercentage van uw apparaat direct
 
 <TabItem value="ios" label="iOS">
 
-![Coördinatenwidget Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Coördinatenwidget iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -357,12 +357,17 @@ OsmAnd biedt twee soorten coördinatenwidgets:
 
 Coördinatenwidgets worden bovenaan het scherm weergegeven. Pictogrammen met een groene achtergrond tonen de breedte- en lengtegraad van het punt in het midden van het zichtbare deel van de kaart, en die met een blauwe achtergrond tonen de coördinaten van uw huidige locatie. Informatie over ondersteunde *Coördinatenformaten* is te vinden in het artikel *[Zoeken op coördinaten](../search/search-coordinates.md#coordinate-format)*.
 
+Elke coördinatenwidget heeft een eigen instelling *Formaat*. Standaard toont de widget coördinaten in het primaire formaat uit de [lijst met coördinatenformaten](../search/search-coordinates.md#customize-coordinate-format) van het profiel. Om een ander formaat te kiezen, tikt u lang op de widget en selecteert u *Instellingen* in het [contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu). Twee coördinatenwidgets kunnen coördinaten in verschillende formaten tonen.
+
+Het gekozen formaat wordt opgeslagen in de widgetinstellingen: het wordt samen met de profielinstellingen gekopieerd, en het resetten van de widgetinstellingen zet het terug naar het primaire formaat.
+
 | | |
 |:------------|:------------|
 | Inschakelen | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | Door te tikken | Kopieert de coördinaten naar het klembord. |
-| Formaat | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| Formaat | **Android:** *[Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) → <Translate android="true" ids="shared_string_settings,navigate_point_format"/>* |
+|   | **iOS:** *[Contextmenu van de widget](../widgets/configure-screen.md#widget-context-menu) → <Translate ios="true" ids="shared_string_settings,coords_format"/>* |
 
 
 ## GPS-info   {#gps-info}

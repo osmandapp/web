@@ -1,5 +1,5 @@
 ---
-source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
+source-hash: 205f05e0d42fa5f92caada9c958cf5598bdde7fa74f9cdb424367495ffe5d104
 sidebar_position: 11
 title:  OsmAnd Ontwikkeling
 ---
@@ -34,7 +34,7 @@ Om speciale functies voor ontwikkelaars en testers te activeren:
 
 ## Plugin-instellingen {#plugin-settings}
 
-:::info info  
+:::info informatie  
 De instellingen van de OsmAnd ontwikkelingsplugin zijn globaal en van toepassing op alle profielen.  
 :::  
 
@@ -47,13 +47,13 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 <TabItem value="android" label="Android">  
 
-![Development Settings Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Development Settings 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
+![Ontwikkelingsinstellingen Android](@site/static/img/plugins/development/development_settings_1_andr.png) ![Ontwikkelingsinstellingen 2 Android](@site/static/img/plugins/development/development_settings_2_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_ios_3_new.png)
+![Ontwikkelingsinstellingen iOS](@site/static/img/plugins/development/development_ios_3_new.png)
 
 </TabItem>
 
@@ -68,7 +68,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 ### Probleemoplossing {#troubleshooting}
 
 - **Simuleer uw positie** (*Android* / *iOS*). [Simuleer](#gpx-track-simulation) de locatie en beweging met behulp van een GPX-track.
-- **Batterijbesparingsmodus** (*Android* / *iOS*). Deze instelling verlaagt [de verversingssnelheid van het scherm](#map-rendering-fps-widget) met 20 frames per seconde om de batterij te sparen tijdens het gebruik van applicaties.
+- **Batterijbesparingsmodus** (*Android* / *iOS*). Deze instelling verlaagt [de verversingssnelheid van het scherm](#map-rendering-fps-widget) met 20 frames per seconde om de batterij te sparen tijdens het gebruik van applicaties. Ook schakelt het de vloeiende fade-in en fade-out van kaartpictogrammen en -labels uit.
 - **Gebruik 3D-locatiepositiepictogrammen** (*iOS*). Hiermee kunt u een 3D-pictogram selecteren voor het [Mijn Locatie-pictogram](../personal/profiles.md#my-location-appearance).
 - **Simuleer obd-gegevens** (*Android* / *iOS*). Maakt simulatie van het gebruik van een [OBD-scanner](./vehicle-metrics.md) mogelijk.
 - **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Toont weergave- en navigatieprestaties.
@@ -85,7 +85,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 - **Simuleer eerste app-start** (*Android*). Stelt de vlag in die de eerste app-start aangeeft, en laat alle andere instellingen ongewijzigd.  
 - **Test gesproken aanwijzingen** (*Android*). Selecteer een stem en test door aankondigingen af te spelen.
-- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Highlights screen touches with visual indicators.
+- **<Translate ios="true" ids="show_touches"/>** (*iOS*). Markeert aanrakingen van het scherm met visuele indicatoren.
 - **Transparante statusbalk** (*Android*). De kaart wordt zichtbaar onder de statusbalk.  
 - **Toon banner gratis versie** (*Android*). Toon de banner van de gratis versie, zelfs in de betaalde versie.  
 - **Toon debug-informatie** (*Android*). Toon grafische informatie over de plaatsing van elke tekst op de kaart.
@@ -94,7 +94,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Interne Algoritmen {#internal-algorithms}
 
-:::caution Android only
+:::caution Alleen Android
 :::
 
 - **Safe mode**. Voert OsmAnd uit zonder de native C++-bibliotheek, met Java-implementaties voor kaartweergave en routeberekening in plaats daarvan. De app schakelt automatisch over naar deze modus als de native bibliotheek tijdens het opstarten faalt, zodat de app kan starten en bruikbaar blijft. Kaartweergave en routeberekening zijn merkbaar langzamer terwijl de veilige modus actief is.  
@@ -103,7 +103,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Geheugeninstellingen {#memory-settings}
 
-:::caution Android only
+:::caution Alleen Android
 :::  
 
 - De optie **Geheugen toegewezen voor routering** stelt u in staat om de hoeveelheid geheugen te bepalen die wordt toegewezen voor het berekenen van lange routes. U kunt deze optie gebruiken als de [Standaard routering A*](../navigation/guidance/navigation-settings.md#development-settings) is geselecteerd in de *Navigatie-instellingen*.
@@ -118,7 +118,7 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 ### Info en Statistieken {#info-and-statistics}
 
-:::caution Android only
+:::caution Alleen Android
 :::  
 
 - **Toegewezen geheugen**. Toont het toegewezen systeemgeheugen voor de OsmAnd-applicatie.  
@@ -132,12 +132,12 @@ Gebruik een van de volgende paden om de plugin-instellingen te openen:
 
 - **Plugin-instellingen naar standaard resetten**. Reset alle plugin-instellingen naar hun standaardwaarden.
 
-    ![Development Settings Android](@site/static/img/plugins/development/devplugin_stat_and.png)
+    ![Ontwikkelingsinstellingen Android](@site/static/img/plugins/development/devplugin_stat_and.png)
 
 
 ## Kaartweergave FPS-widget {#map-rendering-fps-widget}
 
-:::info  Important
+:::info  Belangrijk
 OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als de OsmAnd ontwikkelingsplugin is ingeschakeld.  
 :::
 
@@ -147,7 +147,7 @@ OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als d
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*
 
-![Development widget fps 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Development widget fps 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
+![Ontwikkelingswidget FPS 1](@site/static/img/plugins/development/dev_widgets_fps_1.png) ![Ontwikkelingswidget FPS 2](@site/static/img/plugins/development/dev_widgets_fps_2.png)
 
 </TabItem>
 
@@ -155,7 +155,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets,map_widget_rendering_fps"/>*  
 
-![Development widget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
+![Ontwikkelingswidget iOS 2](@site/static/img/plugins/development/dev_widgets_ios_fps_2.png)
 
 </TabItem>
 
@@ -166,7 +166,7 @@ De [FPS-widget](../widgets/info-widgets.md#map-rendering-fps) toont hoe snel de 
 
 ## Camerapositie-widgets {#camera-position-widgets}
 
-:::info  Important
+:::info  Belangrijk
 OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als de OsmAnd ontwikkelingsplugin is ingeschakeld.  
 :::
 
@@ -176,7 +176,7 @@ OsmAnd ontwikkelaarswidgets kunnen alleen aan het scherm worden toegevoegd als d
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate android="true" ids="map_widget_left,developer_widgets"/>*  
 
-![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
+![Camerapositie-widgets 1](@site/static/img/plugins/development/dev_widgets_camera.png) ![Camerapositie-widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2.png)
 
 </TabItem>
 
@@ -184,7 +184,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,layer_map_appearance
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,map_widget_right"/> / <Translate ios="true" ids="map_widget_left,developer_widgets"/>*
 
-![Camera position Widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camera position Widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
+![Camerapositie-widgets 1](@site/static/img/plugins/development/dev_widgets_camera_ios.png) ![Camerapositie-widgets 2](@site/static/img/plugins/development/dev_widgets_camera_2_ios.png)
 
 </TabItem>
 
@@ -199,13 +199,13 @@ U kunt [Camerapositie-widgets](../widgets/info-widgets.md#camera-widgets) gebrui
 
 <TabItem value="android" label="Android">  
 
-![Camera tilt widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camera tilt widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
+![Camerakanteling-widget Android 1](@site/static/img/plugins/development/developer_widg_cam_tilt_1.png) ![Camerakanteling-widget Android 2](@site/static/img/plugins/development/developer_widg_cam_tilt_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Camera tilt widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camera tilt widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)  
+![Camerakanteling-widget ios 1](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_1.png) ![Camerakanteling-widget ios 2](@site/static/img/plugins/development/developer_widg_cam_tilt_ios_2.png)  
 
 </TabItem>
 
@@ -225,13 +225,13 @@ Tegelijkertijd verandert door de denkbeeldige beweging van de kijder de afstand 
 
 <TabItem value="android" label="Android">  
 
-![Camera elevation widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camera elevation widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
+![Camerahoogte-widget Android 1](@site/static/img/plugins/development/developer_widg_cam_elevation_1.png) ![Camerahoogte-widget Android 2](@site/static/img/plugins/development/developer_widg_cam_elevation_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Camera elevation widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camera elevation widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)  
+![Camerahoogte-widget ios 1](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_1.png) ![Camerahoogte-widget ios 2](@site/static/img/plugins/development/developer_widg_cam_elevation_ios_2.png)  
 
 </TabItem>
 
@@ -246,13 +246,13 @@ De Camerahoogte-widget toont de hoogte van de camera boven het oppervlakteniveau
 
 <TabItem value="android" label="Android">  
 
-![Zoom level widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoom level widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
+![Zoomniveau-widget Android 1](@site/static/img/plugins/development/developer_widget_zoom_2_andr.png) ![Zoomniveau-widget Android 2](@site/static/img/plugins/development/developer_widg_zoom_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Zoom level widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoom level widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)  
+![Zoomniveau-widget ios 1](@site/static/img/plugins/development/developer_widget_zoom_ios_1_ios.png) ![Zoomniveau-widget ios 2](@site/static/img/plugins/development/developer_widget_zoom_ios_2_ios.png)  
 
 </TabItem>
 
@@ -276,13 +276,13 @@ De widget heeft twee weergaven die worden omgeschakeld door erop te tikken:
 
 <TabItem value="android" label="Android">  
 
-![Distance to target widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Distance to target widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
+![Afstand-tot-doel-widget 1 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_1.png) ![Afstand-tot-doel-widget 2 Android](@site/static/img/plugins/development/developer_widg_distance_to_target_2.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Distance to target widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Distance to target widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
+![Afstand-tot-doel-widget 1 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_1.png) ![Afstand-tot-doel-widget 2 iOS](@site/static/img/plugins/development/developer_widg_distance_to_target_ios_2.png)  
 </TabItem>
 
 </Tabs>  
@@ -292,7 +292,7 @@ De widget Afstand van camera tot doel toont de afstand tussen de camera (kijder)
 
 ### Vergelijking met een satellietbeeld {#comparison-with-a-satellite-imagery}
 
-![Comparison](@site/static/img/plugins/development/comparison.png)
+![Vergelijking](@site/static/img/plugins/development/comparison.png)
 
 Een vergelijking van de OsmAnd-kaart en het aardoppervlak onthult de volgende patronen:  
 
@@ -339,13 +339,13 @@ OsmAnd biedt de mogelijkheid om de locatie en beweging van uw apparaat te simule
 
 <TabItem value="android" label="Android">  
 
-![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Development Settings Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
+![Ontwikkelingsinstellingen Android](@site/static/img/plugins/development/simulate_position_andr_1.png) ![Ontwikkelingsinstellingen Android](@site/static/img/plugins/development/simulate_position_andr_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Development Settings iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
+![Ontwikkelingsinstellingen iOS](@site/static/img/plugins/development/development_plugin_choose_track_1_ios.png) ![Ontwikkelingsinstellingen iOS](@site/static/img/plugins/development/development_plugin_choose_track_ios.png)  
 
 </TabItem>
 

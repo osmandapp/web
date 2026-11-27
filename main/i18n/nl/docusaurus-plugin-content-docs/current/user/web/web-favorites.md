@@ -50,7 +50,7 @@ Afhankelijk van de geselecteerde toegangsmode wordt de knop **Link kopiëren** b
 
 Het deelscherm bevat drie gebruikerslijsten:
 - Goedgekeurd — gebruikers die momenteel toegang hebben tot de map.
-- In afwachtend — gebruikers die toegang hebben aangevraagd en wachten op goedkeuring of afwijzing.
+- In afwachting — gebruikers die toegang hebben aangevraagd en wachten op goedkeuring of afwijzing.
 - Geblokkeerd — gebruikers die geen toegang mogen hebben of aanvragen.  
 Elke gebruikersvermelding bevat een menu waarmee hun status kan worden gewijzigd of de toegang kan worden verwijderd.
 
@@ -82,7 +82,7 @@ Het paneel Favoriet bewerken laat je de hoofdeigenschappen van de favoriet wijzi
 
 Het veld **Adres** ondersteunt automatische adresdetectie op basis van de geselecteerde kaartlocatie. Het veld kan in verschillende toestanden verschijnen:
 
-- Bezig met zoeken... — wordt weergegeven terwijl het adres automatisch wordt bepaald.
+- Zoeken... — wordt weergegeven terwijl het adres automatisch wordt bepaald.
 - Leeg veld — wordt weergegeven nadat het adres is gewist. In deze toestand kan de locatieknop worden gebruikt om het adres opnieuw automatisch te detecteren.
 - Ingevuld veld — geeft het automatisch gedetecteerde adres of handmatig ingevoerde tekst weer.
 

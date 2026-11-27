@@ -1,5 +1,5 @@
 ---
-source-hash: e0c18098e22e7ff020fd15511b7790d4f4a1c00cd0da7eb0148c8a01309bf2bc
+source-hash: ac4b1ef2a793eeac796124826048717fd7b712c23f6ffb664ab0c28b45623390
 sidebar_position: 1
 title:  Android Aankopen
 ---
@@ -125,7 +125,6 @@ De onderstaande tabel beschrijft de functies die zijn opgenomen in zowel de grat
 | [Onbeperkte kaartdownloads](../start-with/download-maps.md) | <details><summary>**7 kaartdownloads**</summary>  - Een kaartdownload of -update betreft alleen het downloaden/bijwerken van een land- (regio)kaart. <br/> - De **wereldoverzichtskaart**, **wereldhoogtecorrectie**, **kaartlettertypen** en **spraakaanwijzingen** tellen niet mee als 7 downloadmogelijkheden. </details> | ✔ | ✔ |
 | [Maandelijkse kaartupdates](../personal/maps-resources.md#updates-menu)<br/>Eén keer per maand (met 2 dagen vertraging) | <details><summary>**7 kaartdownloads**</summary> Een kaartupdate telt als download.</details> | ✔ | ✔ |
 | [Uurlijkse kaartupdates](../personal/maps-resources.md#live-updates)<br/>Live-updates (1 uur vertraging) - [**](#-map-updates) | **-** | **-** | ✔ |
-| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | **-** | ✔ | ✔ |
 | [Ondersteuning voor externe sensoren](../plugins/external-sensors.md) | **-** | ✔ | ✔ |
 | [Topografiegegevens](../plugins/topography.md#overview)<br/>(Hoogtelijnen en Terrein) | **-** | ✔ | ✔ |
 | [Coördinatenraster — Kleuraanpassing](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -138,8 +137,9 @@ De onderstaande tabel beschrijft de functies die zijn opgenomen in zowel de grat
 | [Astronomie-plugin](../plugins/astronomy.md) — [Interactieve AR-modus](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Astronomie-plugin](../plugins/astronomy.md) — [Offline sterrenkaart](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
 | [Astronomie-plugin](../plugins/astronomy.md) — [Verduisteringenverkenner](../plugins/astronomy.md#search) | **-** | ✔ | ✔ |
-| [Aangepaste widgetkleuren](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
+| [Aangepaste achtergrondkleur van widgets](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Offline en online navigatie](../navigation/index.md)<br/>met bocht-voor-bocht aanwijzingen | ✔ | ✔ | ✔ |
+| [Android Auto](../navigation/auto-car.md) - [***](#-android-auto) | ✔ | ✔ | ✔ |
 | [Offline direct zoeken](../search/index.md) | ✔ | ✔ | ✔ |
 | [Tochtopname](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [GPX-tracks exporteren](../personal/tracks/manage-tracks.md) | ✔ | ✔ | ✔ |

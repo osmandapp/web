@@ -1,5 +1,5 @@
 ---
-source-hash: 804ba145e63b29075a1cef3ed702f61c360a6aa3e9bf4ee2ca0ecd259ef4f39b
+source-hash: b638d9d8e009a5a53cef5967adccef5628a99fa1f2e102fa8ace4c83e831ee48
 sidebar_position: 17
 title:  Ritten Registreren
 ---
@@ -268,7 +268,7 @@ Voordat u begint met het volgen van uw ritten, moet u de **plug-in Ritten Regist
 
 <TabItem value="android" label="Android">  
 
-![Ritten registreren configureren in Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Ritten registreren configureren in Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.png)
+![Ritten registreren configureren in Android](@site/static/img/plugins/trip-recording/recording_sett_1_andr.png)  ![Ritten registreren configureren in Android](@site/static/img/plugins/trip-recording/recording_sett_3_andr.webp)
 
 </TabItem>
 
@@ -296,7 +296,7 @@ Voordat u begint met het volgen van uw ritten, moet u de **plug-in Ritten Regist
 | **Externe sensoren** <br/> *Plug-in moet ingeschakeld zijn* | Gegevens van [externe sensoren](../plugins/external-sensors.md#trip-recording) zoals *<Translate android="true" ids="map_widget_ant_heart_rate"/>*, of *<Translate android="true" ids="map_widget_ant_bicycle_speed"/>* worden gelogd in het GPX-bestand. *Afstands*gegevens worden niet opgenomen op Android of iOS. Alleen weergegeven wanneer de [plug-in Externe Sensoren](../plugins/external-sensors.md) is ingeschakeld. |
 | **Voertuigmetrieken** <br/> *Plug-in moet ingeschakeld zijn* | Gegevens van een [OBD-II scanner](../plugins/vehicle-metrics.md#trip-recording) worden gelogd in het GPX-bestand. Alleen weergegeven wanneer de [plug-in Voertuigmetrieken](../plugins/vehicle-metrics.md) is ingeschakeld.<br />*Opmerking*: U kunt toevoegen welke metrieken u wilt opnemen in het GPX-bestand uit de lijst: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_trip_recording,shared_string_settings"/>* |
 | **Opslagmap voor tracks** (*Android*) | Bepaalt waar in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>* opgenomen tracks worden opgeslagen. Opties zijn onder meer het opslaan van alle tracks in de map Rec of het organiseren ervan per maand, zoals Rec/jjjjj-mm. |
-| **Melding** | Regelt de weergave van een systeemmelding voor [ritregistratie](#notifications) in het meldingengebied van het apparaat, waarmee u ritten kunt starten. |
+| **<Translate android="true" ids="trip_rec_start_from_notification"/>** | Regelt de weergave van een systeemmelding voor [ritregistratie](#notifications) in het meldingengebied van het apparaat, waarmee u ritten kunt starten. Standaard uitgeschakeld. |
 | **Online tracking** (*Android*) | Maakt real-time tracking van uw locatie mogelijk door opgenomen punten naar een opgegeven URL te sturen. Het trackinginterval bepaalt hoe vaak punten worden verzonden, en de tijdbuffer slaat punten op wanneer er geen internetverbinding is.<details><summary>*Opmerking*</summary>Als deze optie is ingeschakeld en de trackregistratie bezig is, wordt de Afstand/Start-Stop (REC) widget **groen** in plaats van **rood**, wat aangeeft dat elk opgenomen punt wordt verzonden naar een opgegeven URL. Het veld **Webadres** stelt u in staat de URL in te voeren met het volgende parameterformaat:<ul><li>`lat={0}`: Breedtegraad</li><li>`lon={1}`: Lengtegraad</li><li>`timestamp={2}`: Tijdstempel (Unix-tijd)</li><li>`hdop={3}`: Horizontale dilutie van precisie</li><li>`altitude={4}`: Hoogte</li><li>`speed={5}`: Snelheid</li><li>`bearing={6}`: Peiling (bewegingsrichting)</li><li>`eta={7}`: Geschatte aankomsttijd (Unix-tijd)</li><li>`etfa={8}`: Geschatte tijd tot het eerste tussenpunt of eindpunt (Unix-tijd)</li><li>`eda={9}`: Geschatte afstand tot aankomst of een markering (in meters)</li><li>`edfa={10}`: Geschatte afstand tot het eerste tussenpunt of eindpunt (in meters)</li><li>`batproc={11}`: Batterijniveau van apparaat (percentage)</li></ul>U kunt het **Trackinginterval** instellen om te specificeren hoe vaak locatiepunten worden verzonden, met opties variërend van 0 seconden tot 5 minuten. Daarnaast bepaalt de parameter **Tijdbuffer** hoe lang locatiepunten worden opgeslagen als er geen internetverbinding is, zodat gegevens worden opgeslagen en verzonden wanneer de verbinding wordt hersteld.</details><br />OsmAnd slaat de niet-verzonden locatiepunten alleen op in het tijdelijke geheugen van de app terwijl de applicatie draait. Dit betekent dat de buffer niet naar permanente opslag wordt geschreven. Als de app wordt gesloten, geforceerd gestopt of het apparaat herstart, gaan alle gebufferde punten verloren.<br />De instelling Tijdbuffer definieert niet hoe lang punten in het geheugen worden bewaard — het fungeert alleen als een filter op het moment van uploaden. Wanneer OsmAnd probeert gebufferde punten te verzenden, wordt elk punt gecontroleerd op de limiet van de Tijdbuffer. Punten ouder dan de geselecteerde limiet (bijv. 24 uur) worden verwijderd in plaats van geüpload. Als gevolg hiervan kan de buffer tijdelijk punten bevatten die ouder dan de gekozen Tijdbuffer-waarde, maar deze punten worden weggegooid tijdens het uploadproces. |
 | **Tracks** | Een snelle verwijzing naar de map waar tracks worden opgeslagen in het tabblad *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*. |
 | **Plug-ininstellingen naar standaard resetten** | Reset alle ritregistratie-instellingen voor het huidige profiel naar hun standaardwaarden. |
@@ -320,7 +320,7 @@ Deze functie stelt u in staat om de batterij-optimalisatie-instellingen voor Osm
 
 ![Melding Ritten Registreren](@site/static/img/plugins/trip-recording/trip_rec_notific_1_andr.png)  
 
-Als [Melding](#recording-settings) is ingeschakeld in de plug-ininstellingen, worden meldingen voor ritregistratie altijd weergegeven in het systeemmeldingsgebied wanneer de opname actief is. Deze melding zorgt ervoor dat het opnameproces niet wordt onderbroken door het systeem en kan niet worden uitgeschakeld tijdens een actieve opname.
+Als [<Translate android="true" ids="trip_rec_start_from_notification"/>](#recording-settings) is ingeschakeld in de plug-ininstellingen, worden meldingen voor ritregistratie altijd weergegeven in het systeemmeldingsgebied wanneer de opname actief is. Deze melding zorgt ervoor dat het opnameproces niet wordt onderbroken door het systeem en kan niet worden uitgeschakeld tijdens een actieve opname.
 
 - Het meldingengebied wordt geopend wanneer u van boven naar beneden veegt op het scherm en sluit wanneer u omhoog veegt. Deze berichten informeren u over acties zoals het starten/stoppen van de ritregistratie, vooral wanneer automatische opname is ingeschakeld tijdens navigatie.
 - Meldingen blijven zichtbaar, ongeacht of de app op de voorgrond, achtergrond draait of gesloten is. U kunt de oude melding handmatig wissen als deze niet langer nodig is, maar dit stopt de lopende opname niet.
@@ -330,7 +330,7 @@ Als [Melding](#recording-settings) is ingeschakeld in de plug-ininstellingen, wo
 Dit gedrag is vereist door Android voor elke voorgrondservice, zoals ritregistratie, om voor u zichtbaar te blijven.
 
 - Als de melding wordt verwijderd, stopt Android automatisch de opname. U kunt de instelling [Voorkom standalone logging](#recording-settings) gebruiken.
-- De instelling **Melding** in OsmAnd beïnvloedt of de meldingsbalk een snelkoppeling toont om een opname te starten wanneer er geen opname actief is. Het regelt **niet** de zichtbaarheid van de melding tijdens een actieve opname.
+- De instelling **<Translate android="true" ids="trip_rec_start_from_notification"/>** beïnvloedt of de meldingsbalk een snelkoppeling toont om een opname te starten wanneer er geen opname actief is. Het regelt **niet** de zichtbaarheid van de melding tijdens een actieve opname.
 
 **Extra Android-opties**.
 

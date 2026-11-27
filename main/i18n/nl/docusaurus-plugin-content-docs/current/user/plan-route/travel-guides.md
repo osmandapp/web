@@ -1,5 +1,5 @@
 ---
-source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
+source-hash: b4619639adb2d5e3d6b6f586ec94e6848cf1ff4a970a0e9fc0c20c0320aa4f1e
 sidebar_position: 2
 title:  Reisgidsen
 ---
@@ -30,13 +30,13 @@ Wikivoyage-informatie omvat de belangrijkste feiten over een plaats, vervoer, be
 
 <TabItem value="android" label="Android">
 
-![Travel guides view General](@site/static/img/guides/travel_guides_view_android.png)
+![Reisgidsen algemeen overzicht](@site/static/img/guides/travel_guides_view_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
+![Kaartenmenu iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ Wikivoyage-informatie omvat de belangrijkste feiten over een plaats, vervoer, be
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
 
-![Travel guides download menu](@site/static/img/guides/travel_guides_download.png)
+![Downloadmenu reisgidsen](@site/static/img/guides/travel_guides_download.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_travel
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
-![Maps menu iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
+![Kaartenmenu iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
 
 </TabItem>
 
@@ -100,13 +100,13 @@ Wanneer u *Reisgidsen* opent (*<Translate android="true" ids="shared_string_menu
 
 <TabItem value="android" label="Android">
 
-![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1.png) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2.png)
+![Hoofdscherm reisgidsen](@site/static/img/guides/travel_guides_main_screen_1.png) ![Hoofdscherm reisgidsen 2](@site/static/img/guides/travel_guides_main_screen_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
+![Hoofdscherm reisgidsen](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Hoofdscherm reisgidsen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -125,13 +125,13 @@ Als u op de *Bladwijzerknop* tikt, wordt het artikel opgeslagen om later te leze
 
 <TabItem value="android" label="Android">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_search_android.png)
+![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.webp)
+![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 
@@ -155,13 +155,13 @@ Naast elk zoekresultaat staan de eerste 3 meest gebruikte talen waarin het gesel
 
 <TabItem value="android" label="Android">
 
-![Travel guides options menu](@site/static/img/guides/travel_guides_options_android.png)
+![Optiemenu reisgidsen](@site/static/img/guides/travel_guides_options_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_options_ios.png)
+![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_options_ios.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ In dit menu kunt u de weergave van artikelen aanpassen wanneer u offline werkt. 
 In het menu Opties kunt u kiezen of u afbeeldingen in de bekeken artikelen wilt opslaan om ze te gebruiken wanneer u offline bent. U kunt ook de bestaande afbeeldingencache wissen of de zoekgeschiedenis verwijderen (werkt alleen bij het zoeken in *Reisgidsen*).
 
 - &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Afbeeldingen in artikelen kunnen worden gedownload voor offline gebruik.  
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. Wist de afbeeldingencache om geheugen vrij te maken.
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. Wist de afbeeldingencache om geheugen vrij te maken. De cache wordt gedeeld met de Wikipedia-plugin, dus als u de cache wist, worden ook de opgeslagen afbeeldingen van Wikipedia-artikelen verwijderd.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Wist [zoekgeschiedenis](#search).
 
 ## Reisgidsartikel {#travel-article}
@@ -180,13 +180,13 @@ In het menu Opties kunt u kiezen of u afbeeldingen in de bekeken artikelen wilt 
 
 <TabItem value="android" label="Android">
 
-![Travel guides article](@site/static/img/guides/travel_guides_article.png)
+![Reisgidsartikel](@site/static/img/guides/travel_guides_article.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_article_ios.png)
+![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_article_ios.png)
 
 </TabItem>
 
@@ -213,13 +213,13 @@ Onderaan het scherm bevinden zich knoppen zoals:
 
 <TabItem value="android" label="Android">
 
-![Travel guides contents menu](@site/static/img/guides/travel_guides_navigation_menu.png)
+![Inhoudsmenu reisgidsen](@site/static/img/guides/travel_guides_navigation_menu.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
+![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
 
 </TabItem>
 
@@ -235,13 +235,13 @@ Als u op de pijl in de linkerbovenhoek van het scherm tikt, gaat u rechtstreeks 
 
 <TabItem value="android" label="Android">
 
-![Travel guides contents menu](@site/static/img/guides/travel_guides_contents_menu_android.png)
+![Inhoudsmenu reisgidsen](@site/static/img/guides/travel_guides_contents_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_contents_menu_ios.png)
+![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_contents_menu_ios.png)
 
 </TabItem>
 
@@ -265,13 +265,13 @@ De meeste *Reisgidsartikelen* hebben dezelfde inhoudsstructuur: *inleiding* (afb
 
 <TabItem value="android" label="Android">
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
+![Puntenmenu reisgidsen](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Puntenmenu reisgidsen](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
+![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
 
 </TabItem>
 
@@ -293,12 +293,12 @@ U kunt ook *[punten aan de kaart toevoegen](#travel-routes)* in het menu *Kaart 
 
 Een alternatieve manier om *Reisgidsen* te doorbladeren is door ze op de kaart weer te geven via het menu *Kaart configureren*. Deze functie is niet van toepassing op de mogelijkheid die OsmAnd biedt om Wikivoyage te gebruiken, het is alleen van toepassing op tracks. U kunt meer lezen in onze [blog](https://osmand.net/blog/routes#generated-travel-routes).
 
-![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_view.png)
+![Puntenmenu reisgidsen](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Puntenmenu reisgidsen](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
 ### Reisroutes en artikelen op de kaart {#travel-routes-and-articles-on-the-map}
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
+![Puntenmenu reisgidsen](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Puntenmenu reisgidsen](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
 Nadat u de weergave *Reisroutes* in het menu *Kaart configureren* hebt ingeschakeld, verschijnen er cirkels van verschillende kleuren op de kaart. De oranje cirkels vertegenwoordigen routetracks, routeartikelen en enkele waypoints. Tik op een specifieke route, artikel of punt en tik vervolgens op de knop *Downloaden* (&#9047;), en u kunt ze [beheren als een track](#manage-as-gpx-track).
 
@@ -315,7 +315,7 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 ## Beheren als GPX-track {#manage-as-gpx-track}
 
-![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
+![Puntenmenu reisgidsen 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Puntenmenu reisgidsen 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
 
 Nadat u *Reisgidsen* aan de kaart hebt toegevoegd, kunnen *Reisgidsartikelen* worden opgeslagen als een GPX-track en worden beheerd via het menu *[Mijn plaatsen](../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*). Ze kunnen op de kaart worden weergegeven, gedeeld, hernoemd, in een andere map geplaatst, geëxporteerd of verwijderd worden.  
 
@@ -335,13 +335,13 @@ In het *[trackcontextmenu](../map/tracks/track-context-menu.md)* van het GPX-bes
 
 <TabItem value="android" label="Android">
 
-![Travel guides combine with Wikipedia 1](@site/static/img/guides/travel_guides_wikipedia_1.png) ![Travel guides combine with Wikipedia 2](@site/static/img/guides/travel_guides_wikipedia_2.png)
+![Reisgidsen combineren met Wikipedia 1](@site/static/img/guides/travel_guides_wikipedia_1.png) ![Reisgidsen combineren met Wikipedia 2](@site/static/img/guides/travel_guides_wikipedia_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
+![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Zoekmenu reisgidsen](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
 
 </TabItem>
 
@@ -351,7 +351,7 @@ In de *Reisgidsartikelen* vindt u nuttige informatie over toeristische attractie
 
 In sommige gevallen zal het *[tabblad Bladwijzers](#explore-and-bookmark)* van OsmAnd u vragen om de [Wikipedia-kaartlaag](../plugins/wikipedia.md#download-wikipedia-packages) te downloaden om gerelateerde artikelen offline te kunnen bekijken.
 
-![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
+![Wikipedia downloaden in reisgidsen](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
 :::info OPMERKING
 De [Wikipedia-plugin](../plugins/wikipedia.md) is een [betaalde functie](../purchases/index.md) van de OsmAnd-app.

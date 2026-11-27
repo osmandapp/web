@@ -1,5 +1,5 @@
 ---
-source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
+source-hash: 83c6b3cc35441b3510683f9cda657be179761027b2c6e5d5aac6777b74251f2f
 sidebar_position: 1
 title:  Alles Zoeken
 ---
@@ -190,8 +190,13 @@ Met Ruimtelijk zoeken kunt u:
 - Zoeken naar een POI op een specifieke plaats. Voer een categorie en een plaatsnaam in één zoekopdracht in, bijvoorbeeld Hotel Berlijn. De plaatsnaam wordt gebruikt als zoekgebied en de categorie wordt daarbinnen gezocht.
 - Zoeken naar plaatsen die aan twee voorwaarden voldoen. Voer twee categorieën of een categorie en een eigenschap in, bijvoorbeeld Brandstof Diesel of Café Vegan, om plaatsen te vinden die aan beide voldoen. Een zoekopdracht zoals Brandstof McDonald's vindt tankstations die zich in de buurt van een McDonald's bevinden. De volgorde van de woorden is belangrijk. Het eerste woord bepaalt wat u zoekt en het tweede bepaalt waar het in de buurt van moet zijn. McDonald’s Brandstof vindt bijvoorbeeld McDonald’s-restaurants die zich in de buurt van tankstations bevinden.
 - Zoeken rond een gevonden plaats. Voer een categorie en een plaatsnaam in, bijvoorbeeld *Hotel Berlijn*, en tik vervolgens bovenaan de zoekresultaten op *Hotel bij Berlijn*. De naam van deze plaats wordt toegevoegd aan de chip [Zoeken in de buurt](#search-around).
-- Verschillende notaties van straatnamen en vertaalde categorienamen in uw zoekopdrachten gebruiken.
+- Verschillende notaties van straatnamen en vertaalde categorienamen in uw zoekopdrachten gebruiken. Categorieën worden gevonden op hun namen in de app-taal, in het Engels, in de [kaarttaal](../map/vector-maps.md#map-language) en in de hoofdtaal van de regio waarin u zoekt. Als de app bijvoorbeeld in het Oekraïens staat, vindt `schule` in Leipzig de categorie School.
+- Een categorie vinden via andere woorden die mensen er vaak voor gebruiken. `RV park` vindt bijvoorbeeld Caravanterrein.
 - Sneller resultaten krijgen bij het zoeken op populaire POI-categorieën, zoals apotheek, parkeerplaats of restaurant.
+
+Terwijl u een woord typt, tonen de zoekresultaten overeenkomende POI-categorieën als rijen en plaatsen met overeenkomende namen. Plaatsen van een categorie verschijnen in de resultaten nadat u een woord van de categorienaam volledig hebt getypt. `ca` toont bijvoorbeeld categorierijen en overeenkomende namen, en `cafe` toont cafés.
+
+**Opmerking:** Als een kort woord overeenkomt met een zeer groot aantal objecten in uw gedownloade kaarten, wordt het alleen als heel woord gematcht. Typ meer letters om resultaten te zien die ermee beginnen.
 
 ### Zoeken in de buurt {#search-around}
 

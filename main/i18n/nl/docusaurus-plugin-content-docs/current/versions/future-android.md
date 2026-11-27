@@ -1,5 +1,5 @@
 ---
-source-hash: 99f4f132ee5c0b6fd48949f2e16d91c53267fa3ebef0498549f074e425034b5d
+source-hash: 2da53a8aa242bb195e58636b6ecf74b3bda942f80025c592da823faa4061ce50
 sidebar_position: 4
 ---
 
@@ -15,7 +15,7 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';  
 
 
-# Android 5.4 {#android-54}
+# Android 5.5 {#android-55}
 
 
 
@@ -33,46 +33,37 @@ OsmAnd brengt dagelijks verschillende kant-en-klare builds uit, zodat u nieuwe f
 
 ## Wat is er nieuw {#whats-new}
 
-- Verbeterde **[Favorieten](https://osmand.net/docs/user/personal/favorites)** met ondersteuning voor mediabijlagen (foto's, audio en video) en verbeterde integratie van audio-/videonotities.
-- Verbeterde **[navigatiewidgets](https://osmand.net/docs/user/widgets/nav-widgets)** met flexibelere aanpassing van grootte en indeling voor verschillende schermdichtheden en oriëntaties.
-- Kaartlegenda toegevoegd aan **[Configureer kaart](https://osmand.net/docs/user/map/configure-map-menu)** voor een beter begrip van routetypes en kaartelementen.
-- Verbeterd routefilteren en visuele bediening in **[Configureer kaart](https://osmand.net/docs/user/map/configure-map-menu)**, inclusief routeclassificaties en prioriteiten.
-- Verbeterde trackanalyse met nieuwe grafiektypes en gedetailleerdere gegevens zoals ondergrond, wegtype en hellingsgraad.
-- Verbeterd trackbeheer met voorbeelden en verbeterde organisatie in **[Mijn plaatsen](https://osmand.net/docs/user/personal/myplaces)**.
-- Automatische back-up en betrouwbaardere synchronisatie van gebruikersgegevens in **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)**, inclusief **[Slimme mappen](https://osmand.net/docs/user/personal/tracks/smart-folder)**.
-- Initiële verbeteringen aan nautische navigatie met AIS-verbeteringen en extra navigatieparameters en widgets.
-- Verbeterde **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**-ervaring met verbeterde zoek- en navigatiebediening.
-- Mogelijkheid toegevoegd om te communiceren met de kaart op **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)**, inclusief het rechtstreeks selecteren van punten.
-- Herontworpen **[Hoogtewidget](https://osmand.net/docs/user/widgets/nav-widgets#elevation-widget)** met gedetailleerdere hoogte-informatie van de route.
+- **[Spatiaal zoeken](https://osmand.net/blog/offline-search-video)** is standaard ingeschakeld, met nauwkeurigere rangschikking, synoniemen en voorgestelde correcties voor verkeerd gespelde woorden.
+- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** is gratis voor alle gebruikers en krijgt [suggesties op basis van recente bestemmingen](https://osmand.net/docs/user/navigation/auto-car#dashboard-suggestions), automatisch [Vrij rijden](https://osmand.net/docs/user/navigation/auto-car#destination-points) tijdens het rijden en ondersteuning voor [Google Assistant en Gemini](https://osmand.net/docs/user/navigation/auto-car#voice-control).
+- De **[gratis versie](https://osmand.net/docs/user/purchases/android#free-and-paid-features)** bevat alle kaarten van één regio.
+- Nieuwe **Panoramax-plugin** met beelden op straatniveau als kaartlaag, te filteren op bijdrager, datum en type.
+- Realistische **[zonneschaduwen](https://osmand.net/docs/user/plugins/topography#sun-position)** van 3D-gebouwen en terrein, en aanpasbare **[Terreinschaduwen](https://osmand.net/docs/user/plugins/topography#terrain-shadows-android)** voor 3D-reliëf.
+- Mediabibliotheek in **[Mijn plaatsen](https://osmand.net/docs/user/personal/myplaces)** die uw foto's, video's en audionotities op één plek verzamelt.
+- Gestreepte en gestippelde lijnen in het **[trackuiterlijk](https://osmand.net/docs/user/map/tracks/appearance#track-appearance-settings)**, ook beschikbaar als standaarduiterlijk van een map.
+- Nieuwe instellingen voor reissnelheid met een snelheidsbereik voor routeberekening en een aankomsttijd op basis van uw werkelijke snelheid in de **[voertuigparameters](https://osmand.net/docs/user/navigation/guidance/vehicle-parameters#default-speed)**.
+- Nieuwe **[Snelle actie](https://osmand.net/docs/user/widgets/quick-action#my-places)** om een of meerdere tracks met één tik te tonen of te verbergen.
+- Labels van **[hoogtelijnen](https://osmand.net/docs/user/plugins/topography#contour-lines)** kunnen bergopwaarts gericht zijn, zoals op papieren topografische kaarten.
+- Ondersteuning voor BLE-vermogensmeters in **[Externe sensoren](https://osmand.net/docs/user/plugins/external-sensors#pair-new-sensor)**.
 
 <!--
-- New experimental **[Astronomy plugin](https://osmand.net/docs/user/plugins/astronomy)** with an astronomical overlay showing the paths of the Sun, planets and stars.
-- Improved **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** section with clearer backup, version history and automatic backup settings.
-- Updated **[Configure map](https://osmand.net/docs/user/map/configure-map-menu)** options with a clearer legend and improved filters for hiking, cycling and MTB routes.
-- New and redesigned elevation and navigation widgets with elevation profiles, uphill/downhill metrics and average grade.
-- **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** improvements with extended widget support and better OBD II integration.
-- More flexible **[widget and map button layout](https://osmand.net/docs/user/widgets/configure-screen#map-screen-layout)**, especially in landscape mode.
-- Enhanced Favorites management in **[My Places](https://osmand.net/docs/user/personal/myplaces)**.
-- Smarter track organization with Smart Folders and clearer summary statistics.
-- Advanced route and track analysis.
-- Improved accessibility features, including more flexible audio and haptic navigation feedback.
-- Initial groundwork for smartwatch integration for navigation and trip recording data.
+- Navigation settings included in route links.
+- The trip recording "Notification" option is renamed to "Start from notification" to make clear it only adds a start button.
 -->
 
 
 ## Bugopsporingen {#bug-fixes}
 
-- Een [probleem](https://github.com/osmandapp/OsmAnd/issues/16507) opgelost waarbij favorieteigenschappen (kleur, pictogram, vorm) niet werden bijgewerkt bij het wijzigen van de groep.
-- [Onjuiste afritrichtingen](https://github.com/osmandapp/OsmAnd/issues/23104) op rotondes in Android Auto opgelost.
-- Onjuiste [bergop- en bergaf-waarden](https://github.com/osmandapp/OsmAnd/issues/20624) in hoogtemeterwidgets gecorrigeerd.
-- Voorkomen dat [verborgen favorieten](https://github.com/osmandapp/OsmAnd/issues/24689) opnieuw op de kaart verschijnen bij het toevoegen van track-waypoints aan een map.
-- [Inconsistenties tussen grafieken](https://github.com/osmandapp/OsmAnd/issues/24712) op het detailsscherm opgelost.
-- Een [probleem](https://github.com/osmandapp/OsmAnd/issues/24791) opgelost waarbij losgemaakte Favorieten-mappen na het herstarten van de app opnieuw vastgemaakt leken.
+- Een [probleem](https://github.com/osmandapp/OsmAnd/issues/24228) opgelost waarbij het legen van de prullenbak van OsmAnd Cloud verwijderde gegevens herstelde.
+- [Aankondigingen bij routeherberekening](https://github.com/osmandapp/OsmAnd/issues/25544) gecorrigeerd die niet overeenkwamen met de werkelijke afwijking van de route.
+- Het [kompas dat 180° verkeerd wees](https://github.com/osmandapp/OsmAnd/issues/26147) in omgekeerde portretstand opgelost.
+- [Stops met nulsnelheid](https://github.com/osmandapp/OsmAnd/issues/26351) in snelheidsgrafieken hersteld.
+- Opgelost dat de [Start-knop van trackopname verdween](https://github.com/osmandapp/OsmAnd/issues/26305) bij een groot lettertype of schermformaat.
+- Voorkomen dat het [trackuiterlijk](https://github.com/osmandapp/OsmAnd/issues/25686) na Cloud-synchronisatie niet toegepast bleef.
+- [OSMC-symbolen](https://github.com/osmandapp/OsmAnd/issues/26148) teruggebracht in de lijst Wat is hier die opent wanneer u op overlappende routeschilden tikt.
+- [Tijden van zonsverduisteringen](https://github.com/osmandapp/OsmAnd/issues/25830) bijgewerkt zodat lokale tijden worden getoond in plaats van wereldwijde.
 
 <!--
-- Improved stability of **[OsmAnd Cloud](https://osmand.net/docs/user/personal/osmand-cloud)** sync and backup, reducing conflicts and ensuring widgets and settings restore correctly across devices.
-- Fixed incorrect uphill/downhill values in elevation widgets and improved accuracy of ascent/descent calculations in route analysis.
-- Improved **[Android Auto](https://osmand.net/docs/user/navigation/auto-car)** navigation behaviour, including correct exit directions at roundabouts and proper placement of on-screen tools such as the radius ruler.
-- Fixed several issues related to **[Accessibility](https://osmand.net/docs/user/plugins/accessibility)** mode, including navigation announcements and interaction with certain map tools.
-- General interface and performance fixes across map rendering, widget display and configuration screens.
+- Fixed the parking position marker not showing when Favorites are hidden.
+- Fixed imported Favorites going to the wrong folder.
 -->
+

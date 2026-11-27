@@ -1,5 +1,5 @@
 ---
-source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
+source-hash: 178d141932f7b8720f2c8c3d8aecc4e60ae376a12c49b662bf86080720fb83d6
 sidebar_position: 5
 title:  Vectorkaarten 
 ---
@@ -25,7 +25,7 @@ Vectorkaarten vertegenwoordigen ruimtelijke gegevens, zoals wegen, gebouwen, pun
 
 Omdat vectorgegevens niet zijn opgeslagen als vaste afbeeldingen, kan het uiterlijk, inclusief kleur, lijndikte, transparantie of patroon, eenvoudig worden gewijzigd. Deze aanpak maakt efficiënte weergave mogelijk, laag geheugengebruik en soepele schaling op elk zoomniveau zonder kwaliteitsverlies.
 
-:::info note
+:::info opmerking
 Zeer kleine polygonen kunnen worden vereenvoudigd of vervormd tijdens de generatie van kaartgegevens. Objecten met een oppervlakte kleiner dan ongeveer één vierkante meter worden mogelijk niet weergegeven. Voor een correcte visualisatie moeten kleine kenmerken worden gekarteerd als enkele knooppunten in plaats van polygonen.
 :::
 
@@ -409,7 +409,7 @@ De 3D Relief-functie produceert een verhoogd reliëf en biedt een driedimensiona
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+![Nautische diepte breedte Android](@site/static/img/map/nautical_depth_width_and.png)  ![Nautische diepte kleur Android](@site/static/img/map/nautical_depth_color_and.png)
 
 </TabItem>
 
@@ -417,7 +417,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_p
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+![Nautische diepte breedte Android](@site/static/img/map/nautical_depth_width_ios.png)  ![Nautische diepte kleur Android](@site/static/img/map/nautical_depth_color_ios.png)
 
 </TabItem>
 
@@ -462,7 +462,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugi
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
+![Randen tonen Android](@site/static/img/map/show-borders-andr.png)  
 
 </TabItem>
 
@@ -470,7 +470,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,show_b
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![show-borders-ios](@site/static/img/map/show-borders-ios.png)
+![Randen tonen iOS](@site/static/img/map/show-borders-ios.png)
 
 </TabItem>
 
@@ -498,12 +498,22 @@ Ga naar: *Menu → Kaart configureren → Tonen → Coördinatenraster*
 
 <TabItem value="android" label="Android">  
 
-![Coördinatenraster menu](@site/static/img/map/coordinates_grid_settings_andr.png) ![Coördinatenraster menu](@site/static/img/map/coordinates_grid_format_andr.webp)
+![Coördinatenraster menu](@site/static/img/map/coordinates_grid_settings_andr.webp) ![Coördinatenraster menu](@site/static/img/map/coordinates_grid_format_andr.webp)
 
-De functie **Coördinatenraster** legt een referentieraster over de kaart, waardoor u breedte- en lengtegraadlijnen kunt visualiseren op basis van verschillende coördinatensystemen. Deze functie is handig voor nauwkeurige locatiereferentie en geospatiale navigatie. 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Coördinatenraster menu](@site/static/img/map/coordinates_grid_settings_ios.webp) ![Coördinatenraster menu](@site/static/img/map/coordinates_grid_format_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+De functie **Coördinatenraster** legt een referentieraster over de kaart, waardoor u breedte- en lengtegraadlijnen of metrische rasterlijnen kunt visualiseren, afhankelijk van het geselecteerde coördinatensysteem. Deze functie is handig voor nauwkeurige locatiereferentie en geospatiale navigatie. 
 
 U kunt de volgende opties configureren:
-- **Zoomniveaus:** stel het minimale en maximale zoomniveau in (2 - 22) waarop het raster zichtbaar is.
+- **Zoomniveaus:** stel het minimale en maximale zoomniveau in (0 - 22) waarop het raster zichtbaar is.
 - **Labelpositie:** kies tussen *Randen* (standaard) of *Midden* voor rasterlabels.
 - **Rasterkleur:** beschikbaar afzonderlijk voor Dag/Nacht-modus. 
 - **Coördinaatformaat:** selecteer uit verschillende beschikbare formaten (zie lijst hieronder).
@@ -513,7 +523,7 @@ U kunt de volgende opties configureren:
 - **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Graden, Minuten, Seconden)
 - **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimale Graden - WGS84 standaardformaat)
 - **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Graden, Decimale Minuten)
-- **UTM** (EPSG:6387, Universele Transversale Mercator - zone-gebaseerd rastersysteem). Het minimale zoomniveau is 9, er wordt slechts één UTM-zone tegelijk weergegeven, aangezien zones elke 6° door meridianen worden gescheiden
+- **UTM** (EPSG:6387, Universele Transversale Mercator - zone-gebaseerd rastersysteem). Het minimale zoomniveau is 9, er wordt slechts één UTM-zone tegelijk weergegeven, aangezien zones elke 6° door meridianen worden gescheiden.
 - **OLC** (Open Location Code, ook bekend als Plus Code)
 - **MGRS** (Militair Raster Referentie Systeem)
 - **Zwitsers coördinatesysteem** - Swiss Grid (CH1903) en Swiss Grid (CH1903+)
@@ -521,39 +531,11 @@ U kunt de volgende opties configureren:
 
 De sectie **Recent** toont recent gebruikte coördinatesystemen. Om een ander ondersteund coördinatesysteem toe te voegen, tik op *Selecteer ander formaat*. U kunt zoeken op coördinatesysteemnaam of EPSG-code en vervolgens op *+* tikken om het aan de lijst toe te voegen.
 
-Standaard gebruikt de app het coördinaatformaat dat is geselecteerd in [Algemene instellingen](../personal/profiles.md#units--formats), maar u kunt het direct in dit menu wijzigen.
+**Opmerking:** De lijst bevat alleen coördinatesystemen die het raster nauwkeurig kan weergeven: systemen in meters, met één datumtransformatie naar WGS 84 die geldig is voor het hele gebied van het systeem. Systemen in voet of andere niet-metrische eenheden, en systemen die meerdere regionale transformaties vereisen, zijn niet beschikbaar voor het raster.
+
+Standaard gebruikt het raster het formaat DDD.DDDDD. Het formaat dat u in dit menu selecteert, geldt alleen voor het coördinatenraster.
 
 [Snelle actie](../widgets/quick-action.md#overview): U kunt ook een snelle schakelaar *Coördinatenraster tonen/verbergen* toevoegen aan de groep [Kaart configureren](../widgets/quick-action.md#configure-map) voor snelle toegang.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-De functie **Coördinatenraster** legt een referentieraster over de kaart, waardoor u breedte- en lengtegraadlijnen kunt visualiseren op basis van verschillende coördinatensystemen. Deze functie is handig voor nauwkeurige locatiereferentie en geospatiale navigatie. 
-
-U kunt de volgende opties configureren:
-- **Zoomniveaus:** stel het minimale en maximale zoomniveau in (2 - 22) waarop het raster zichtbaar is.
-- **Labelpositie:** kies tussen *Randen* (standaard) of *Midden* voor rasterlabels.
-- **Rasterkleur:** beschikbaar afzonderlijk voor Dag/Nacht-modus. 
-- **Coördinaatformaat:** selecteer uit verschillende beschikbare formaten (zie lijst hieronder).
-
-***Beschikbare coördinaatformaten:***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Graden, Minuten, Seconden)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Decimale Graden - WGS84 standaardformaat)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Graden, Decimale Minuten)
-- **UTM** (EPSG:6387, Universele Transversale Mercator - zone-gebaseerd rastersysteem). Het minimale zoomniveau is 9, er wordt slechts één UTM-zone tegelijk weergegeven, aangezien zones elke 6° door meridianen worden gescheiden
-- **MGRS** (Militair Raster Referentie Systeem)
-
-Standaard gebruikt de app het coördinaatformaat dat is geselecteerd in [Algemene instellingen](../personal/profiles.md#units--formats), maar u kunt het direct in dit menu wijzigen.
-
-[Snelle actie](../widgets/quick-action.md#overview): U kunt ook een snelle schakelaar *Coördinatenraster tonen/verbergen* toevoegen aan de groep [Kaart configureren](../widgets/quick-action.md#configure-map) voor snelle toegang.
-
-</TabItem>
-
-</Tabs>
 
 
 ## Routes {#routes}

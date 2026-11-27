@@ -1,5 +1,5 @@
 ---
-source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
+source-hash: 5749833ed8004e11c20c4de19dd862afbe945281e8dc7187719f962bcf51fca1
 sidebar_position: 9
 title:  Online Kaarten
 ---
@@ -34,7 +34,7 @@ De mogelijkheid om Online kaarten te gebruiken is automatisch ingeschakeld in de
 U kunt gedetailleerde informatie over het visualiseren en aanpassen van rasterkaarten vinden in het artikel [Raster Maps](../map/raster-maps.md). Hoe te gebruiken:
 
 1. [Selecteer](../map/raster-maps.md#layers) de rasterkaart als een *Hoofdlaag*, *Underlay* of *Overlay* laag.
-    - [Wijzig](../map/raster-maps.md#overlay) laagparameters (transparantie).
+    - [Wijzig](../map/raster-maps.md#overlay) laagparameters (zichtbaarheid).
 
 2. [Bereid voor / kopieer](../map/raster-maps.md#preparecopy-maps) rasterkaarten naar het apparaat.
     - [Nieuwe online rasterkaartbron toevoegen](../map/raster-maps.md#add-new-online-source)
@@ -51,7 +51,7 @@ U kunt gedetailleerde informatie over het visualiseren en aanpassen van rasterka
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Underlay / Overlay configureren Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Underlay / Overlay configureren Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.webp)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_map,layer_
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Underlay / Overlay configureren iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Underlay / Overlay configureren iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.webp)
 
 </TabItem>
 

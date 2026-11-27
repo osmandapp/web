@@ -1,5 +1,5 @@
 ---
-source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
+source-hash: d0091f6c53e5bab1a3f712b907e2581913384d21865212be979549aae63d2d2c
 sidebar_position: 4
 title:  Profielen (Instellingen)
 ---
@@ -123,7 +123,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,ge
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Algemene profielinstellingen Uiterlijk iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
+![Algemene profielinstellingen Uiterlijk iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.webp)
 
 </TabItem>
 
@@ -148,6 +148,12 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,a
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Alleen Android*). Opent het menu voor schermbediening, waar u opties kunt selecteren voor het apparaatscherm tijdens het navigeren om het batterijverbruik van het apparaat te verminderen.  
+
+- **Scherm aanhouden** (*alleen iOS*). Bepaalt wanneer het apparaatscherm aan blijft terwijl OsmAnd geopend is.
+  - *<Translate ios="true" ids="shared_string_system_default"/>*. Het scherm gaat uit volgens de tijd voor Automatisch vergrendelen die in uw apparaatinstellingen is ingesteld.
+  - *Tijdens navigatie*. Het scherm blijft aan zolang de navigatie actief is en gaat uit volgens de tijd voor Automatisch vergrendelen wanneer de navigatie is gepauzeerd of gestopt. Deze optie is niet beschikbaar voor het profiel *<Translate ios="true" ids="rendering_value_browse_map_name"/>*.
+  - *<Translate ios="true" ids="shared_string_always"/>*. Het scherm blijft altijd aan zolang OsmAnd geopend is.
+  - Standaard gebruikt het profiel *<Translate ios="true" ids="rendering_value_browse_map_name"/>* de optie *<Translate ios="true" ids="shared_string_system_default"/>*, en gebruiken andere profielen *Tijdens navigatie*.
 
 
 ### Eenheden & Formaten {#units--formats}
@@ -225,9 +231,9 @@ In het gedeelte **Eenheden en formaten** kunt u meeteenheden en formaten aanpass
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Voorbeeld: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Voorbeeld:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) vertegenwoordigt een gebied van 9m x 14m)  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Alleen Android-versie) | Voorbeeld: 2 215 227.87, 830 915.9 ([Zwitsers coördinatensysteem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Alleen Android-versie) | Voorbeeld: 4 215 227.87, 1 830 915.9 ([Zwitsers coördinatensysteem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
-|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (Alleen Android-versie) | Voorbeeld: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> | Voorbeeld: 2 215 227.87, 830 915.9 ([Zwitsers coördinatensysteem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> | Voorbeeld: 4 215 227.87, 1 830 915.9 ([Zwitsers coördinatensysteem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> | Voorbeeld: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Graden 180° | Alle hoekwaarden hebben metingen van 0° tot 180° en van 0° tot -180°.  |
 |          | Graden 360° | Alle hoekwaarden hebben metingen van 0° tot 360°.  |
@@ -540,7 +546,7 @@ Met de functie voor UI-aanpassing kunt u het aantal items in acties aanpassen, z
 
 :::caution Toegang tot plug-ininstellingen
 Om toegang te krijgen tot de instellingen van de plug-in, moet u eerst de [**plug-in inschakelen**](../plugins/index.md#enable--disable) in het *Plug-ingedeelte van het hoofdmenu*.
-::;
+:::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
@@ -581,7 +587,7 @@ Plug-ins ontgrendelen extra functies van de applicatie en kunnen [betaald of gra
 
   > ***Het wijzigen van de instellingen van de OsmAnd ontwikkelingsplug-in is van invloed op alle profielen.***
 
-- **Wikipedia** (alleen iOS). Dit menu opent *[Wikipedia plug-ininstellingen](../plugins/wikipedia.md#wikipedia-settings)*. U kunt de taal selecteren waarin artikelen worden weergegeven en kiezen of u afbeeldingen van Wikipedia wilt downloaden. Wikipedia tijdens uw reis verbetert uw ervaring door informatie te verstrekken over de plaatsen die u bezoekt. Het werkt offline en toont relevante Wikipedia-artikelen direct op de kaart met betrekking tot nuttige plaatsen.
+- **Wikipedia**. Dit menu opent *[Wikipedia plug-ininstellingen](../plugins/wikipedia.md#wikipedia-settings)* voor het geselecteerde profiel. U kunt de taal selecteren waarin artikelen worden weergegeven, kiezen of u afbeeldingen van Wikipedia wilt downloaden en de afbeeldingscache wissen. Wikipedia tijdens uw reis verbetert uw ervaring door informatie te verstrekken over de plaatsen die u bezoekt. Het werkt offline en toont relevante Wikipedia-artikelen direct op de kaart met betrekking tot nuttige plaatsen.
 
 - **Voertuigmetrics**. Dit menu opent *[instellingen van de Voertuigmetrics plug-in](../plugins/vehicle-metrics.md#scanner-settings)*. Hiermee kunt u een OBD-II-scanner met OsmAnd verbinden.
 

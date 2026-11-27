@@ -1,5 +1,5 @@
 ---
-source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
+source-hash: 1813dc99e0d296bb43d344b143353280237925904b056f4feaed4a2040ba4c22
 sidebar_position: 2
 title:  Kaarten & Bronnen
 ---
@@ -178,7 +178,7 @@ Lees meer in het artikel [**Aangepast pakket**](../plugins/custom).
 
 </Tabs>
 
-Voor landen die bestaan uit **meerdere regiokaarten**, kunt u bulksgewijs meerdere kaarten laden. Kaarten die beschikbaar zijn voor dit type download worden weergegeven met een dubbel downloadpijlicoon en een label met het aantal regio's erin (bijv. Hoogtelijnen / Alle regio's: 10). U kunt kiezen hoeveel kaarten u wilt downloaden. Bulkladen ondersteunt verschillende kaarttypes, waaronder Standaard, Hoogtelijnen, Wikipedia en Terrein.
+Voor landen die bestaan uit **meerdere regiokaarten**, kunt u bulksgewijs meerdere kaarten laden. Kaarten die beschikbaar zijn voor dit type download worden weergegeven met een dubbel downloadpijlicoon en een label met het aantal regio's erin (bijv. Hoogtelijnen / Alle regio's: 10). U kunt kiezen hoeveel kaarten u wilt downloaden. Bulkladen ondersteunt verschillende kaarttypes, waaronder Standaard, Hoogtelijnen, Wikipedia en Terrein. Als een regio volledig binnen een andere regio van hetzelfde land ligt, zoals een hoofdstad binnen de omringende regio, wordt de kaart ervan niet opgenomen in de bulkdownload of in het aantal regio's, omdat de gegevens al in de grotere regiokaart zitten. U kunt deze kaart apart downloaden via de landpagina.
 
 Wanneer een gegroepeerd landitem wordt geopend, wordt een bodemsheet weergegeven met de volledige lijst van kaarten voor dat land, waardoor individuele kaarten kunnen worden geselecteerd of ze allemaal tegelijk kunnen worden gedownload.
 
@@ -397,10 +397,6 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab
 **Live Updates** biedt frequente, incrementele kaartupdates via een [abonnement](../purchases/index.md) of is gratis voor [OSM-bijdragers](#free-for-osm-mappers). Updates vinden elke 15 minuten plaats op de OsmAnd-servers en zijn per uur, dagelijks of wekelijks te downloaden. Deze updates verbruiken minimale opslagruimte — ongeveer 2-4% van de volledige kaartgrootte per maand.
 
 Live Updates worden toegepast bovenop de gedownloade kaart en vervangen het volledige kaartbestand niet. Hierdoor weerspiegelt de datum die voor een kaart in het tabblad Lokaal wordt weergegeven geen Live Updates en kan deze ongewijzigd blijven nadat ze zijn toegepast. Om een nieuwere versie van de volledige kaart te downloaden, gebruikt u Bijwerken of Alles bijwerken in het [Updatemenu](#updates-menu).
-
-<!--
-Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
--->
 
 Belangrijkste kenmerken:
 

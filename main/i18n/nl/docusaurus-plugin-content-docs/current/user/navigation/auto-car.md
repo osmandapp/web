@@ -1,5 +1,5 @@
 ---
-source-hash: 472be5fc6c10b891a9754cdb8b5b1ca64022989917b9172be3a1d85fcf65e66f
+source-hash: 21b1fd8d34d5459a2881d82dd878347eeb0a1d37ee8c942dada4da21348f7d08
 sidebar_position: 9
 title:  Android Auto
 ios: false
@@ -18,10 +18,6 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
 ## Overzicht {#overview}
-
-:::tip Aankoop
-Android Auto is een [betaalde functie](../purchases/index.md).  
-:::
 
 ![Android Auto-scherm](@site/static/img/navigation/auto-car/android_auto_overview.png)  
 
@@ -80,8 +76,6 @@ Om OsmAnd in *Android Auto* te laten werken, moet u uw Android-apparaat [verbind
 
 - Niet alle voertuigen ondersteunen de mogelijkheid om een apparaat aan te sluiten. Controleer de [lijst voor *Android Auto*](https://www.android.com/auto/compatibility/#compatibility-vehicles).  
 
-- U moet een **betaalde versie** van de app aanschaffen of een [abonnement](../purchases/android.md#free-and-paid-features) nemen. Controleer hier uw huidige abonnement *Menu → Instellingen → Aankopen*.  
-
 - *Android Auto* gebruikt het eerste [OsmAnd-rijprofiel](#profile-first) in de profielenlijst voor navigatie. Stel het voorkeursprofiel als eerste in, behalve het *Kaart bekijken*-profiel, dit wordt niet gelezen door *Android Auto*. Ga hiervoor naar OsmAnd *Menu → Instellingen → App-profielen → Profiellijst bewerken* → verplaats uw [**Rijden**](#profile-first)-profiel naar de eerste plaats of na het *Kaart bekijken*-profiel.  
 
 - Het is belangrijk om te onthouden dat *Android Auto* een data-intensieve applicatie is, inclusief mobiele data, en de kwaliteit van het systeem kan afhangen van de kwaliteit van uw verbinding en de snelheid van uw internettoegang.
@@ -106,7 +100,7 @@ Als u geen *Rijden*-profiel op uw apparaat hebt geselecteerd dat overeenkomt met
 
 ![Android Auto-scherm](@site/static/img/navigation/auto-car/android_auto_landing_screen_1.png)
 
-U kunt eerder ingestelde en toegevoegde [POI's](../map/point-layers-on-map.md#points-of-interest-pois), of [Favorieten](../personal/favorites.md), of [Markeringen](../personal/markers.md) als bestemmingspunt selecteren. Het is ook mogelijk om een opgenomen of gedownloade [Track](../personal/tracks/manage-tracks.md) voor de route te selecteren, de [Zoekfunctie](../search/index.md) te gebruiken, of een bestemming uit de [Geschiedenis](../search/search-history.md) van de route te selecteren of een *Vrije rit* te maken.
+U kunt eerder ingestelde en toegevoegde [POI's](../map/point-layers-on-map.md#points-of-interest-pois), of [Favorieten](../personal/favorites.md), of [Markeringen](../personal/markers.md) als bestemmingspunt selecteren. Het is ook mogelijk om een opgenomen of gedownloade [Track](../personal/tracks/manage-tracks.md) voor de route te selecteren, de [Zoekfunctie](../search/index.md) te gebruiken, of een bestemming uit de [Geschiedenis](../search/search-history.md) van de route te selecteren of een *Vrije rit* te maken. Uw vorige route en recente bestemmingen zijn ook beschikbaar als [kaarten op het Android Auto-dashboard](#dashboard-suggestions).
 
 1. Als u een bepaalde locatie op de kaart als eindpunt wilt, selecteert u de juiste categorie punten uit de lijst, [POI's](#poi-categories), [Favorieten](#favorites), of [Kaartmarkeringen](#map-markers).  
   
@@ -119,7 +113,7 @@ U kunt eerder ingestelde en toegevoegde [POI's](../map/point-layers-on-map.md#po
 
 3. Selecteer [Zoeken](#search) om een bestemming in te voeren uit de beschikbare zoekcategorieën.  
 
-4. Kies **Vrije rit** om een reis te maken zonder een gespecificeerd eindpunt.
+4. Kies **Vrije rit** om een reis te maken zonder een gespecificeerd eindpunt. Als er geen route is berekend en u geen categorie selecteert, start OsmAnd automatisch een *Vrije rit* nadat uw voertuig 15 seconden sneller dan 5 km/u heeft gereden. Zo verschijnt de kaart na het opnieuw verbinden met Android Auto zonder enige interactie met het voertuigscherm.
 
 :::note
 Tijdens het rijden kunnen geselecteerde punten worden [aangekondigd](#voice-prompts) wanneer u ze nadert of passeert. Zie de instellingen voor [Gesproken aanwijzingen](../navigation/guidance/voice-navigation.md) in het betreffende artikel om gesproken meldingen in te stellen.
@@ -131,6 +125,28 @@ Tijdens het rijden kunnen geselecteerde punten worden [aangekondigd](#voice-prom
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_history.png)  
 
 In de categorie Geschiedenis kunt u een bestemming selecteren uit een lijst met eindpunten. Ze zijn gesorteerd op meest recent gebruik, beginnend met de nieuwste. Dit kan handig zijn voor snelle toegang tot veelgebruikte routes. Om te leren hoe u een bestemming gebruikt of verwijdert, leest u het artikel [Zoekgeschiedenis](../search/search-history.md).  
+
+
+### Dashboardsuggesties {#dashboard-suggestions}
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_dashboard_suggestions.webp)
+
+Wanneer er geen navigatie actief is, toont OsmAnd maximaal vijf suggestiekaarten op het Android Auto-dashboard, zodat u een route kunt starten zonder het app-menu te openen. De kaarten zijn beschikbaar wanneer *Navigatiegeschiedenis* is ingeschakeld in de [Geschiedenisinstellingen](../search/search-history.md#sort-and-filter).
+
+- **Vorige route** — de eerste kaart. Deze herstelt het startpunt, de tussenliggende punten en de bestemming van uw laatste route.
+- **Recente bestemmingen** — de volgende kaarten, afkomstig uit de [Geschiedenis](#history) en gesorteerd van nieuw naar oud. Elke kaart toont de naam van de bestemming, het adres of type en een pictogram van het bestemmingstype.
+
+![Android Auto](@site/static/img/navigation/auto-car/android_auto_card_countdown.webp)
+
+Een route starten vanaf een kaart:
+
+1. Tik op een kaart. OsmAnd wordt op volledig scherm geopend en toont het routevoorbeeld.
+2. De knop **Start** telt af vanaf 10 en de navigatie start automatisch. Tik op **Start** om direct te beginnen.
+3. Om het voorbeeld te sluiten zonder de navigatie te starten, tikt u op **Terug**. Als u tijdens het aftellen een ander scherm of een andere app opent, stopt het aftellen en begint de navigatie pas wanneer u op **Start** tikt.
+
+Als de route kaarten nodig heeft die niet zijn gedownload, toont OsmAnd het scherm *Ontbrekende kaarten* en start de navigatie niet.
+
+**Opmerking:** De kaarten worden tijdens de navigatie verborgen. Nadat u op een kaart hebt getikt of de kaarten weg hebt geveegd, toont Android Auto ze opnieuw wanneer uw volgende navigatie eindigt of wanneer u opnieuw verbinding maakt met de auto.
 
 
 ### POI-categorieën {#poi-categories}
@@ -192,7 +208,7 @@ Tracks kunnen ook rechtstreeks op het voertuigscherm in *Android Auto* worden ge
 
 ![Android Auto](@site/static/img/navigation/auto-car/android_auto_search.png)
 
-Naar Zoeken gaan geeft u snelle toegang tot een lijst met recente [bestemmingsgeschiedenis](#history). Vergelijkbaar met het [Navigatiemenu](../navigation/setup/route-navigation.md#navigation-menu), waar alle OsmAnd-bestemmingsmethoden zoals een adres, POI's of coördinaten zijn verzameld.
+Naar Zoeken gaan geeft u snelle toegang tot een lijst met recente [bestemmingsgeschiedenis](#history). Vergelijkbaar met het [Navigatiemenu](../navigation/setup/route-navigation.md#navigation-menu), waar alle OsmAnd-bestemmingsmethoden zoals een adres, POI's of coördinaten zijn verzameld. Het item *Vorige route* herstelt het startpunt, de tussenliggende punten en de bestemming van uw laatste route. Het wordt getoond wanneer *Navigatiegeschiedenis* is ingeschakeld.
 
 U kunt de Zoekfunctie gebruiken om de gewenste plaats op de kaart te vinden voor routeplanning vanuit elke beschikbare zoekcategorie.
 
@@ -306,6 +322,29 @@ Gedrag bij ontkoppelen van Android Auto:
 
 Deze update zorgt er ook voor dat Android Auto-sessies nu correct worden afgesloten, waardoor onnodig batterijverbruik wordt voorkomen en "reis in uitvoering"-meldingen stoppen zodra de navigatie eindigt.
 
+### Spraakbediening {#voice-control}
+
+U kunt OsmAnd op het *Android Auto*-scherm met uw stem bedienen met Google Assistant of Gemini. Spraakacties werken zowel online als offline.
+
+Navigatieacties:
+
+- *Navigatie beëindigen* — stopt de huidige route.
+- *Gesproken aanwijzingen dempen of dempen opheffen* — schakelt [gesproken aanwijzingen](#voice-prompts) uit of aan. De schakelaar *Gesproken aanwijzingen* in de *Android Auto*-instellingen verandert dienovereenkomstig.
+- *Tolwegen, snelwegen of veerponten vermijden of toestaan* — wijzigt de overeenkomstige routeparameter van het profiel dat voor navigatie wordt gebruikt, en de route wordt opnieuw berekend.
+- *Terug naar mijn locatie* — centreert de kaart op uw huidige positie.
+- *Terug* — keert terug naar het vorige scherm.
+
+Route-informatie. Het antwoord verschijnt als bericht op het *Android Auto*-scherm:
+
+- *Aankomsttijd* — de geschatte aankomsttijd.
+- *Afstand tot bestemming* — de resterende afstand.
+- *Tijd of afstand tot de volgende afslag* — hoe snel de volgende afslag komt.
+- *Volgende afslag* — een beschrijving van de volgende manoeuvre.
+- *Bestemming* — de naam of coördinaten van het bestemmingspunt.
+- *Huidige weg* — de naam van de weg waarop u zich bevindt.
+
+Als er geen route is berekend, toont OsmAnd een bericht dat de route niet is berekend. Verzoeken om functies die niet beschikbaar zijn in OsmAnd, zoals verkeer, satellietweergave of het melden van wegincidenten, tonen een bericht dat de actie niet wordt ondersteund.
+
 
 ## Instellingen {#settings}
 
@@ -338,7 +377,7 @@ Om [**Route-informatie** voor een tussenliggend punt (volgende stop)](#next-turn
 
 *Android Auto* en OsmAnd bieden de mogelijkheid om de kaart aan te passen aan de lichtomstandigheden. In de *Dagkaartmodus* blijft het kleurenschema helder en contrastrijk, waardoor het zelfs in fel zonlicht gemakkelijker te lezen is. In de *Nachtmodus* worden de kaarten donkerder, wat de bestuurder helpt om beter te navigeren in het donker.  
 
-OsmAnd in *Android Auto* heeft een eigen instelling voor de kaartmodus, los van de [kaartmodus](../map/vector-maps.md#map-mode)-opties in de OsmAnd-app op uw apparaat. Om deze te wijzigen, gaat u naar *Android Auto (OsmAnd) → Instellingenknop → Kaartmodus*, selecteert u een optie en tikt u op *Toepassen*. De kaart schakelt over naar de geselecteerde modus nadat u op *Toepassen* hebt getikt. Als u het scherm verlaat met de terugpijl zonder op *Toepassen* te tikken, blijft de vorige modus geselecteerd.
+OsmAnd in *Android Auto* heeft een eigen instelling voor de kaartmodus, los van de [kaartmodus](../map/vector-maps.md#map-mode)-opties in de OsmAnd-app op uw apparaat. Om deze te wijzigen, gaat u naar *Android Auto (OsmAnd) → Instellingenknop → Kaartmodus* en selecteert u een optie. De geselecteerde modus wordt direct toegepast en het scherm keert terug naar de lijst met instellingen.
 
 - Selecteer *Dag* of *Nacht* om de kaartweergave ongewijzigd te houden, ongeacht de signalen van uw voertuig.
 - Als u wilt dat de kaartweergavemodus automatisch schakelt op basis van signalen van uw voertuig, selecteer dan *Automatisch* (standaard).  
@@ -348,7 +387,7 @@ OsmAnd in *Android Auto* heeft een eigen instelling voor de kaartmodus, los van 
 
 ![Android Auto-kaartvergroting](@site/static/img/navigation/auto-car/android_auto_map_magnifier.webp)
 
-*Kaartvergroting* wijzigt de vergroting van de kaart op het *Android Auto*-scherm. Om deze te wijzigen, gaat u naar *Android Auto (OsmAnd) → Instellingenknop → Kaartvergroting*, selecteert u een waarde van 50% tot 125% en tikt u op *Toepassen*. De huidige waarde wordt weergegeven onder *Kaartvergroting* in de lijst met instellingen.  
+*Kaartvergroting* wijzigt de vergroting van de kaart op het *Android Auto*-scherm. Om deze te wijzigen, gaat u naar *Android Auto (OsmAnd) → Instellingenknop → Kaartvergroting*, selecteert u een waarde en tikt u op *Toepassen*. De huidige waarde wordt weergegeven onder *Kaartvergroting* in de lijst met instellingen.  
 
 Zie [Kaartvergroting](../map/vector-maps.md#map-magnifier) voor meer informatie over hoe vergroting de kaartweergave beïnvloedt.
 

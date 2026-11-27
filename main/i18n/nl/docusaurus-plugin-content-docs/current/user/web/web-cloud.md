@@ -1,5 +1,5 @@
 ---
-source-hash: 3d7c0440f81fe7d7c68aa8cdc03f7757d017ff3c9522e4e2e9666eb2f8516db1
+source-hash: e69343f9eb21e770166c3f64840279d4909964e16e57f6ff88c67cf26d0d4397
 sidebar_position: 2
 sidebar_label:  Account
 title: OsmAnd-account
@@ -29,7 +29,7 @@ Om toegang te krijgen tot de OsmAnd Web-functies, moet u een account aanmaken. G
 
 - Ga naar de [**OsmAnd Kaartportaal**](https://osmand.net/map).
 - Open het **Account** menu.
-- Selecteer **Nieuw account aanmaken**. Het dialoogvenster Nieuw account aanmaken opent.
+- Selecteer **Account aanmaken**. Het dialoogvenster Account aanmaken opent.
 - In het veld **E-mail** voert u het e-mailadres in dat u voor uw OsmAnd-account wilt gebruiken en klikt u op **Doorgaan**.
 - Er wordt een verificatiecode naar dit e-mailadres gestuurd. Controleer uw inbox (en de map Ongewenst e-mail indien nodig).
 - In het volgende dialoogvenster voert u de verificatiecode in en klikt u op **Doorgaan** om uw e-mail te bevestigen. Als u de code niet hebt ontvangen, gebruikt u de koppeling **Ik heb geen verificatiecode ontvangen** en volgt u de instructies.
@@ -144,10 +144,10 @@ Als u uw wachtwoord niet meer weet, gebruikt u de koppeling **Ik heb geen wachtw
 
 ### E-mailadres wijzigen {#change-email-address}
 
-Om uw e-mailadres bij te werken,
-Ga naar *Algemeen Menu → Account → E-mail → ⋮ → E-mail wijzigen*
+Om uw e-mailadres bij te werken,  
+Ga naar *Algemeen Menu → Account → E-mail → ⋮ → E-mailadres wijzigen*
 
-Het dialoogvenster E-mail wijzigen verschijnt. Er wordt een verificatiecode naar het huidige e-mailadres gestuurd. Voer deze code in het veld **Code van Oude E-mail** in, specificeer het nieuwe adres in **Nieuwe E-mail**, en selecteer vervolgens **Volgende**. Om veiligheidsredenen wordt een bevestigingsbericht naar uw nieuwe e-mailadres gestuurd waarin u wordt geïnformeerd dat het account-e-mailadres is bijgewerkt.
+Het dialoogvenster E-mailadres wijzigen verschijnt. Er wordt een verificatiecode naar het huidige e-mailadres gestuurd. Voer deze code in het veld **Code uit de oude e-mail** in, specificeer het nieuwe adres in **Nieuw e-mailadres**, en selecteer vervolgens **Volgende**. Er wordt een tweede verificatiecode naar het nieuwe e-mailadres gestuurd. Voer deze in het veld **Code uit de nieuwe e-mail** in en selecteer **Voltooien**. Wanneer de code is geaccepteerd, verschijnt het bericht *E-mailadres is gewijzigd*. Om veiligheidsredenen wordt ook een melding naar uw vorige e-mailadres gestuurd.
 
 ![Web-account](@site/static/img/web/web_email_new.png)
 
@@ -159,9 +159,9 @@ Het OsmAnd Account-paneel bevat bedieningselementen voor het beëindigen van de 
 
 Om uit te loggen, opent u OsmAnd Account en gebruikt u de knop **Uitloggen** in de rechterbovenhoek van het paneel (icoon met een pijl die een vierkant verlaat). Het selecteren van Uitloggen sluit het account-paneel en beëindigt de actieve sessie op de website.
 
-Om een account te verwijderen, selecteert u **Account verwijderen** onderaan het OsmAnd Account-paneel. Er verschijnt een bevestigingsdialoogvenster met de boodschap *“Weet u zeker dat u dit wilt doen?”* en een korte uitleg dat alle gegevens en accountdetails worden verwijderd uit OsmAnd Cloud en dat secundaire apparaten de toegang tot betaalde functies verliezen. Er wordt een verificatiecode naar het account-e-mailadres gestuurd. Voer de code in het veld Code van E-mail in en kies **DIT ACCOUNT VERWIJDEREN** om het proces te voltooien. Deze bewerking is permanent en kan niet worden ongedaan gemaakt.
+Om een account te verwijderen, selecteert u **Account verwijderen** onderaan het OsmAnd Account-paneel. Er verschijnt een bevestigingsdialoogvenster met de boodschap *“Weet u zeker dat u dit wilt doen?”* en een korte uitleg dat alle gegevens en accountdetails worden verwijderd uit OsmAnd Cloud en dat secundaire apparaten de toegang tot betaalde functies verliezen. Er wordt een verificatiecode naar het account-e-mailadres gestuurd. Voer het e-mailadres van uw account in het veld **Uw e-mailadres** in. Als het veld leeg is of het adres niet overeenkomt met het account waarmee u bent ingelogd, verschijnt er een foutmelding onder het veld en wordt er niets verzonden. Voer de code in het veld **Code uit de e-mail** in. Als de code onjuist is, verschijnt er een foutmelding onder dit veld. Kies **ACCOUNT VERWIJDEREN** om het proces te voltooien. Deze bewerking is permanent en kan niet worden ongedaan gemaakt.
 
-![Web-account](@site/static/img/web/web_delete.png)
+![Web-account](@site/static/img/web/web_delete.webp)
 
 
 ## Gerelateerde artikelen {#related-articles}

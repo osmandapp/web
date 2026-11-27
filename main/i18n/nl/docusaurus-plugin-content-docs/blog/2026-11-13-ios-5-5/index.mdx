@@ -1,0 +1,188 @@
+---
+slug: osmand-ios-5-5-released
+title: OsmAnd 5.5 (iOS)
+authors: eugene
+tags: [release, ios]
+unlisted: true
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import AndroidStore from '@site/src/components/buttons/AndroidStore.mdx';
+import AppleStore from '@site/src/components/buttons/AppleStore.mdx';
+import LinksTelegram from '@site/src/components/_linksTelegram.mdx';
+import LinksSocial from '@site/src/components/_linksSocialNetworks.mdx';
+import Translate from '@site/src/components/Translate.js';
+import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.mdx';
+import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
+
+
+OsmAnd 5.5 has reached iPhone, iPad, and CarPlay, and the update is already waiting for you in the App Store.
+
+This update makes CarPlay free for everyone and gives it new settings, and the free version now includes all maps of one region. It also brings EPSG coordinate systems, separate widget layouts for Portrait and Landscape, appearance settings for widget panels, and many other improvements and bug fixes.
+
+
+[🔄 **Update Now**](https://itunes.apple.com/us/app/osmand-maps-travel-navigate/id934850257)
+
+{/*truncate*/}
+
+## What's new
+
+
+- [CarPlay updates](#carplay-updates): free for everyone, map orientation, Home in one tap, and frame rate limit
+- [Free version](#free-version-maps-of-one-region): all maps of one region
+- [New coordinate formats](#new-coordinate-formats): EPSG systems, Maidenhead, and Swiss Grid
+- [Separate widget layouts](#separate-widget-layouts-for-portrait-and-landscape) for Portrait and Landscape
+- [Appearance settings for widget panels](#appearance-settings-for-widget-panels)
+- ["Keep screen on" setting](#keep-screen-on) for each profile
+- [Contour line labels face uphill](#contour-line-labels-face-uphill)
+- [Full appearance settings](#full-appearance-settings-for-several-favorites) for several Favorites at once
+- [Intermediate destinations in route details](#intermediate-destinations-in-route-details)
+- ["Nearest to map center" sorting](#nearest-to-map-center-sorting-for-tracks) for tracks
+- [Holidays in opening hours](#holidays-in-opening-hours)
+- [Other updates and improvements](#other-updates-and-improvements)
+- [Bug fixes](#bug-fixes).
+
+
+## CarPlay updates
+
+[**CarPlay**](https://osmand.net/docs/user/navigation/car-play) is free for everyone, with no purchase or subscription needed. It also gets three practical changes:
+
+* **Map orientation** is now available in [CarPlay Settings](https://osmand.net/docs/user/navigation/car-play#settings). It shares the profile setting with the phone, so a change in one place applies in both.
+* **Home** sits at the top of Favorites in the Navigation menu, and one tap builds the route home.
+* A new option **limits the map frame rate**, which keeps CarPlay responsive on head units that slow down when the map moves constantly.
+
+
+## Free version: maps of one region
+
+The [**free version**](https://osmand.net/docs/user/purchases/ios#free-and-paid-features) of OsmAnd includes all maps of one region instead of a limited number of downloads. A region is a country, or a state in the USA, Canada, Russia, Brazil, India, China, and Australia. The first map you download sets your free region, and other maps of the same region download without limits. Updates of the maps you already have are always free.
+
+To download a map from another region, you can replace your free region: the maps of the previous region are deleted, while the world map and plugin maps such as contour lines and Wikipedia stay. When a replacement isn't available, OsmAnd asks for your email or offers **Maps+** with maps of all regions. If you already use the free version, your free region is set by your current location or by the region with the most map data, and everything you have downloaded stays.
+
+
+## New coordinate formats
+
+OsmAnd for iOS now supports a much wider range of [**coordinate formats**](https://osmand.net/docs/user/search/search-coordinates#customize-coordinate-format), which is useful for field work, surveying, amateur radio, and any activity that relies on a specific coordinate system.
+
+* **EPSG systems.** Search a database of over 5,000 local and national EPSG codes by country, name, or ID.
+* **Maidenhead locator**, used by amateur radio operators.
+* **Swiss Grid** in both CH1903 and CH1903+ versions.
+
+Choose a **Primary** format and a list of preferred formats for quick access from the context menu and Search. Each [Coordinates widget](https://osmand.net/docs/user/widgets/info-widgets#coordinates-widget) can show its own format, and the [Coordinates grid](https://osmand.net/docs/user/map/vector-maps#coordinates-grid) supports the new formats too.
+
+|| |
+|:--------|:---------|
+|![Coordinate format iOS](@site/static/img/search/customising_format_ios.webp)| ![Coordinate format search iOS](@site/static/img/search/searching_format_ios.webp) |
+
+
+## Separate widget layouts for Portrait and Landscape
+
+The [**map screen layout**](https://osmand.net/docs/user/widgets/configure-screen#single-and-separate-layouts) can now differ between orientations. In **Screen elements**, choose:
+
+* **Shared** — Portrait and Landscape use the same screen elements, and changes in one orientation apply to both.
+* **Independent** — each orientation has its own set. You can copy the layout from the other orientation as a starting point.
+
+The new [**Panels layout**](https://osmand.net/docs/user/widgets/configure-screen#panels-layout) setting controls how top and bottom panels fit on the screen: **Wide** panels span the full screen width, while **Compact** panels fit between the side panels and buttons.
+
+|| |
+|:--------|:---------|
+|![Screen elements Shared iOS](@site/static/img/widgets/screen_shared.webp)| ![Screen elements Independent iOS](@site/static/img/widgets/screen_independent.webp) |
+
+
+## Appearance settings for widget panels
+
+Each widget panel now has its own [**appearance settings**](https://osmand.net/docs/user/widgets/configure-screen#widget-panel-appearance). Instead of adjusting widgets one by one, set the look of a whole panel:
+
+* **Widget height** or **row height** and **icon** visibility, or **Original** to keep the individual size and icon of each widget.
+* **Text**, **secondary text**, and **background** colors, including a transparent background. **Automatic** text color stays readable on any background, and custom colors can be set separately for day and night.
+
+You can also copy appearance settings from another panel or another profile, keeping your layout consistent across profiles.
+
+![Widget Panel Appearance](@site/static/img/widgets/widget_appearance_2_ios.webp)
+
+
+## Keep screen on
+
+The new [**Keep screen on**](https://osmand.net/docs/user/personal/profiles#appearance) setting lets each profile decide when the screen stays on: follow the system screen timeout, keep it on during navigation only, or keep it on all the time.
+
+![Keep Screen On](./img/keep-screen-on.webp)
+
+
+## Contour line labels face uphill
+
+[**Contour lines**](https://osmand.net/docs/user/plugins/topography#contour-lines) get a new **Label direction** setting. **Upright** keeps the numbers easy to read, while **Uphill** turns them the way paper topographic maps do: the top of each height number faces higher ground, and the short ticks on the lines point downhill.
+
+|| |
+|:--------|:---------|
+|![Contour Labels Upright](./img/contour_labels_upright_ios.webp)| ![Contour Labels Uphill](./img/contour_labels_uphill_ios.webp) |
+
+
+## Full appearance settings for several Favorites
+
+When you select several Favorites and choose [**Change appearance**](https://osmand.net/docs/user/personal/favorites#bulk-edit--delete), you get the same settings as in a folder's default appearance, not only the color.
+
+
+## Intermediate destinations in route details
+
+[**Route details**](https://osmand.net/docs/user/navigation/setup/route-details#instructions) now list all intermediate destinations of your route. Each one appears in the turn-by-turn list at its place along the route, with its number, name, and the distance and time from the start. The **Time to intermediate** and **Route information** widgets show the matching time to the next intermediate destination.
+
+![Intermediate destinations in route details](@site/static/img/navigation/route/navigation_turn_ios.webp)
+
+
+## Nearest to map center sorting for tracks
+
+[**Tracks**](https://osmand.net/docs/user/personal/tracks/manage-tracks#sort-by) can be sorted by distance from the current map center, the same way as Favorites.
+
+![Nearest to map center sorting](@site/static/img/personal/tracks/my_places_tracks_sort_by_3_ios.webp)
+
+
+## Holidays in opening hours
+
+[**Opening hours**](https://osmand.net/docs/user/map/map-context-menu#object-info) in the object information now show public holidays and school holidays in the app language instead of short OpenStreetMap codes such as *PH* and *SH*. Days when the place doesn't work are marked as *closed*.
+
+
+## Other updates and improvements
+
+- **[Plan a route on larger screens](https://osmand.net/docs/user/plan-route/create-route?current-os=ios#overview).** On iPad, Mac, and iPhone in landscape orientation, the route panel now sits on the left side of the screen, and *+ POI*, *Undo*, *Redo*, and *Route +* move to the map, so more of the map stays visible while you plan.
+
+- **[Speed limit tolerance](https://osmand.net/docs/user/navigation/guidance/voice-navigation?current-os=ios#speed-limit).** The allowed deviation from the speed limit is set with a slider, with limits and steps that depend on the profile.
+
+- **Safer OSM note uploads.** If OsmAnd cannot confirm that a note was uploaded, it warns you before sending it again, so you don't create a duplicate note on OpenStreetMap.
+
+- **[Large track libraries](https://osmand.net/docs/user/personal/tracks/manage-tracks?current-os=ios#manage-tracks).** My Places opens faster with a large number of tracks and shows the indexing progress while track statistics are still being calculated.
+
+- **OSM Edits** shows a clear message when you have no pending map edits.
+
+
+## Bug fixes 
+
+* Fixed [emptying the OsmAnd Cloud trash restoring deleted maps and Favorites](https://github.com/osmandapp/OsmAnd-iOS/issues/5696);
+* Fixed [elevation dropping to 0 in tracks recorded in the background](https://github.com/osmandapp/OsmAnd-iOS/issues/5526);
+* Fixed [OsmAnd Cloud sync conflicts after updating maps on several devices](https://github.com/osmandapp/OsmAnd-iOS/issues/5463);
+* Fixed [Favorites from hidden folders appearing in search results](https://github.com/osmandapp/OsmAnd-iOS/issues/5558);
+* Fixed [Plan a route closing when you tap a track on the map](https://github.com/osmandapp/OsmAnd-iOS/issues/5947);
+* Fixed [pedestrian travel time shown for car routes after Attach to roads](https://github.com/osmandapp/OsmAnd-iOS/issues/5787);
+* Fixed [waypoints added to the recording track not responding to taps](https://github.com/osmandapp/OsmAnd-iOS/issues/5893);
+* Fixed [the waypoint icon blinking during track recording](https://github.com/osmandapp/OsmAnd-iOS/issues/2764);
+* Fixed [the map zooming out when you add a Quick Action while moving](https://github.com/osmandapp/OsmAnd-iOS/issues/5592);
+* Fixed [KML import creating an empty track](https://github.com/osmandapp/OsmAnd-iOS/issues/5956);
+* Fixed [Radius ruler circles rendering with artifacts near the poles in globe view](https://github.com/osmandapp/OsmAnd-iOS/issues/5830);
+* Fixed [the map list jumping after downloading USFS maps](https://github.com/osmandapp/OsmAnd-iOS/issues/4363);
+* Fixed [some OBD-II Bluetooth adapters connecting without receiving data](https://github.com/osmandapp/OsmAnd-iOS/pull/6066);
+* Fixed [tapping a point group always applying the red color to the point](https://github.com/osmandapp/OsmAnd-iOS/issues/5644).
+
+
+
+_______________________
+
+
+If you have suggestions for improving the iOS version of the app, please get in touch with us. We appreciate and welcome your contribution to the further development of OsmAnd.
+
+______________________
+- **Follow**: <LinksSocial/>  
+
+- **Join**: <LinksTelegram/>  
+
+- **Get**: 
+
+&nbsp;<AppleStore/>

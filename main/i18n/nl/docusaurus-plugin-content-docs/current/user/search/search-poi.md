@@ -1,5 +1,5 @@
 ---
-source-hash: 97f2c33a4074c4cc756ff122bf583a92e9a6275e2f47dd97dda9ca19c19cf16f
+source-hash: 00356ae11e5462862ca31e05797cfe39a891bfd9daa0c313b6113a666a302ec0
 sidebar_position: 4
 title:  POI zoeken
 ---
@@ -152,9 +152,9 @@ Deze plaats kan verschijnen bij het zoeken naar:
 
 Met de tool **Zoeken op categorieën** kunt u snel objecten, plaatsen en routes vinden die in verschillende categorieën zijn ingedeeld. 
 
-POI-categorieën in OsmAnd zijn gebaseerd op OpenStreetMap-tags. Sommige plaatsen kunnen onder een meer algemene categorie verschijnen als een specifiekere type niet beschikbaar is in de kaartgegevens (bijvoorbeeld, een kerk kan verschijnen onder `Place of worship`).
+POI-categorieën in OsmAnd zijn gebaseerd op OpenStreetMap-tags. Sommige plaatsen kunnen onder een meer algemene categorie verschijnen als een specifiekere type niet beschikbaar is in de kaartgegevens (bijvoorbeeld, een kerk kan verschijnen onder `Place of worship`). Kantoren van een type dat OsmAnd niet herkent, verschijnen onder `Company`.
 
-Elke categorie heeft een unieke set kenmerken, en deze tool heeft filters waarmee u de zoekresultaten kunt verfijnen door verschillende waarden voor extra kenmerken te selecteren.
+Elke categorie heeft een unieke set kenmerken, en deze tool heeft filters waarmee u de zoekresultaten kunt verfijnen door verschillende waarden voor extra kenmerken te selecteren. U kunt ook plaatsen vinden via een kenmerk: typ de naam ervan in de zoekbalk, bijvoorbeeld `Smoking`, en selecteer de voorgestelde categorie om de plaatsen te zien waar dit kenmerk beschikbaar is.
 
 Hoe het werkt:
 
@@ -183,13 +183,13 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 <TabItem value="android" label="Android">
 
-![POI zoeken Android](@site/static/img/search/search_poi_filter_andr.png)
+![POI zoeken Android](@site/static/img/search/search_poi_filter_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![POI zoeken iOS](@site/static/img/search/search_poi_filter_ios.png)
+![POI zoeken iOS](@site/static/img/search/search_poi_filter_ios.webp)
 
 </TabItem>
 
@@ -202,6 +202,11 @@ Met de **Filter**-functie kunt u de nodige kenmerken selecteren en als resultaat
 - Selecteer in het filter het type kenmerken.
 
 ![POI zoeken Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
+
+Kenmerken worden op twee manieren in het filter getoond:
+
+- *Kenmerk met één waarde* — een schakelaar, bijvoorbeeld *Fiets*. Schakel deze in om alleen de plaatsen te tonen die dit kenmerk hebben.
+- *Kenmerk met meerdere waarden* — een groep met de naam van het kenmerk als kop. Vouw deze uit en selecteer de waarden die u nodig hebt, bijvoorbeeld *Toegang voor caravans* → *Aangewezen*, *Ja*.
 
 Een filter kan uit een groot aantal items bestaan, waarvan de aanwezigheid afhangt van de geselecteerde categorie. Elke categorie heeft een aantal specifieke filters, georganiseerd in mappen per type. Er zijn in totaal *21 standaardcategorieën*. Enkele daarvan worden hier vermeld:
 
@@ -378,10 +383,9 @@ Om aangepaste filters te maken voor het vinden van plaatsen op de kaart, selecte
 
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Bevat 25 types: *Volkstuinen, Atol, Stadsdeel, Stad, Stadsblok, Land, Gerechtsgebouw, Douane, Diplomatiek kantoor, Boerderij, Overheid, Gehucht, Eiland, Eilandje, Geïsoleerde woning, Plaats, Wijk, Politie, Gevangenis, Kwartier, Woonwijk, Voorstad, Stad, Stadhuis, Dorp*.  
 
-2. **Kerstmis**. Bevat 5 soorten filters:  
-    *Kerstevenement, Kerstmarkt, Kerstpiramide, Kerstwinkel, Kerstboom*.
+2. **Kerstmis**. Bevat 5 soorten filters: *Kerstevenement, Kerstmarkt, Kerstpiramide, Kerstwinkel, Kerstboom*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Bevat 16 types: *Volkstuinen, Atol, Stadsdeel, Stad, Stadsblok, Land, Gerechtsgebouw, Doume, Diplomatiek kantoor, Boerderij, Overheid, Gehucht, Eiland, Eilandje, Geïsoleerde woning, Plaats, Wijk, Politie, Gevangenis, Kwartier, Woonwijk, Voorstad, Stad, Stadhuis, Dorp*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Bevat 18 types: *Dierentraining, Kinderopvang, College, Dansschool, Dojo, Rijopleidingsplaats, Rijschool, Onderwijsinstelling, Kleuterschool, Taalschool, Bibliotheek, Halteplaats van mobiele bibliotheek, Muziekschool, School, Studentenhuisvesting, Opleidingsfaciliteit, Bijlesschool, Universiteit*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Bevat 26 soorten filters.  
 

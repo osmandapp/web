@@ -1,5 +1,5 @@
 ---
-source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
+source-hash: 3f9fe278a6da459746d62fe7944d19ca8c1cae8acd07c9a389b2e49b40380b9d
 sidebar_position: 3
 sidebar_label: Kaart
 title: Wereldkaart op de Website
@@ -129,15 +129,15 @@ Met één klik kunt u favorieten op de kaart in- of uitschakelen. Echter, alleen
 
 ### Tracks {#tracks}
 
-Deze sectie bevat een lijst van uw [**GPX-tracks die zichtbaar zijn op de kaart**](../web/web-tracks.md#visible-on-the-map) en **Recent Zichtbare** tracks.
+Deze sectie bevat een lijst van uw [**GPX-tracks die zichtbaar zijn op de kaart**](../web/web-tracks.md#visible-on-the-map) en **Recent zichtbaar**-tracks.
 
 - U kunt tracks direct in- of uitschakelen.  
-- Schakel tracks in of uit vanuit de lijst **Recent Zichtbaar**.  
+- Schakel tracks in of uit vanuit de lijst **Recent zichtbaar**.  
 
 Elke track heeft een menu (⋮) met de volgende commando's:
 
 - **Track verbergen**: Verbergt de momenteel zichtbare track van de kaart.  
-- **Track zichtbaar maken**: Toont een track uit de lijst Recent Zichtbaar op de kaart.  
+- **Track zichtbaar maken**: Toont een track uit de lijst Recent zichtbaar op de kaart.  
 - **Hernoemen**: Hiermee kunt u de track hernoemen voor eenvoudiger identificatie.  
 - **Dupliceren**: Maakt een kopie van de track.
 - **Delen**: Opent het deelscherm (dezelfde als voor [Favorieten](../web/web-favorites.md#share)).
@@ -174,11 +174,11 @@ Navigatieknoppen stellen u in staat om tussen stops langs de route te navigeren 
 
 **3. Vervoerstypefilter**
 
-Een vervoerstypefilter stelt u in staat om de routes in de lijst te filteren. Standaard is de filter ingesteld op *Alles* en worden alle beschikbare routes weergegeven. U kunt een specifiek vervoerstype selecteren (bijvoorbeeld Bus, Tram of Metro) om alleen routes van dat type te tonen. De filter wordt elke keer dat het stoppaneel wordt geopend teruggezet naar *Alles*.
+Een vervoerstypefilter stelt u in staat om de routes in de lijst te filteren. Standaard is de filter ingesteld op *Alle* en worden alle beschikbare routes weergegeven. U kunt een specifiek vervoerstype selecteren (bijvoorbeeld Bus, Tram of Metro) om alleen routes van dat type te tonen. De filter wordt elke keer dat het stoppaneel wordt geopend teruggezet naar *Alle*.
 
-**4. Nabijgelegen routes**
+**4. Dichtbijzijnde routes**
 
-De sectie Nabijgelegen routes kan aanvullende routes tonen die zich dicht bij de geselecteerde stop bevinden. Dit helpt u om snel alternatieve vervoersopties in de omliggende omgeving te ontdekken.
+De sectie Dichtbijzijnde routes kan aanvullende routes tonen die zich dicht bij de geselecteerde stop bevinden. Dit helpt u om snel alternatieve vervoersopties in de omliggende omgeving te ontdekken.
 
 ![Vervoersstops](@site/static/img/web/configure_map_transport_stops.png)
 
@@ -229,21 +229,21 @@ U kunt kiezen welke eenheden worden gebruikt om afstand, hoogte en snelheid weer
 
 De optie **Lengte-eenheden** definieert hoe horizontale afstand en hoogte worden weergegeven:
 - Kilometers/meters.
-- Miles/feet.
-- Miles/meters.
-- Miles/yards.
-- Nautical miles/meters.
-- Nautical miles/feet. 
+- Mijlen/voeten.
+- Mijlen/meters.
+- Mijlen/yards.
+- Zeemijlen/meters.
+- Zeemijlen/voeten. 
 
-Bijvoorbeeld, een afstand van 10 km wordt weergegeven als ongeveer 6,21 mi als u een van de Miles/... opties kiest, of als ongeveer 5,40 nmi wanneer Nautical miles/... is geselecteerd.
+Bijvoorbeeld, een afstand van 10 km wordt weergegeven als ongeveer 6,21 mi als u een van de opties Mijlen/... kiest, of als ongeveer 5,40 nmi wanneer Zeemijlen/... is geselecteerd.
 
 De optie **Snelheidseenheid** bepaalt hoe de huidige snelheid en snelheidslimieten worden weergegeven:
-- Kilometers per hour.
-- Miles per hour.
-- Meters per second.
-- Minutes per mile.
-- Minutes per kilometer.
-- Nautical miles per hour (knots). 
+- Kilometer per uur.
+- Mijl per uur.
+- Meter per seconde.
+- Minuten per mijl.
+- Minuten per kilometer.
+- Zeemijlen per uur (knopen). 
 
 Bijvoorbeeld, een snelheid van 90 km/u komt overeen met 25 m/s of ongeveer 55,92 mph.
 
@@ -277,6 +277,8 @@ Deze URL's kunnen worden gekopieerd en gedeeld via elk medium dat door uw appara
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
   ![OsmAnd Web Track maken](@site/static/img/plan-route/web_url_pin.png)
+
+  De kaart opent gecentreerd op de pin. Het zoomniveau wordt overgenomen uit het deel van de URL na `#`. Als de URL geen dergelijk deel heeft, opent de kaart op zoomniveau 9. Dit geldt ook voor links die zijn gemaakt met de knop *Delen* in het [POI-contextmenu](../web/web-search.md#poi-actions).
 
 2. **URL zonder pin op de kaart:**
 

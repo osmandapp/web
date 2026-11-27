@@ -1,5 +1,5 @@
 ---
-source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
+source-hash: a47a5483bfc64564296e520a3048e1d0b106bcac34bd4fc7262a7c22c21b7c3c
 sidebar_position: 3
 title:  Algemene instellingen
 ---
@@ -208,7 +208,7 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,o
 
 </Tabs>
 
-De instelling **<Translate android="true" ids="analytics_pref_title"/>** (*Android*) of **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) geeft u de keuze of u anonieme gegevens wilt verstrekken over *Gedownloade kaarten* en *Bezochte schermen* (*Android*).  
+De instelling **<Translate android="true" ids="analytics_pref_title"/>** (*Android*) of **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) geeft u de keuze of u anonieme gegevens wilt verstrekken over *Gedownloade kaarten* en *Bezochte schermen* (*Android*). Op iOS bepaalt deze instelling ook of de app informatie verzendt over de Apple Ads-campagne die tot de installatie van de app heeft geleid.  
 
 :::note
 Gegevens over uw locatie of de plaatsen die u op de kaart bekijkt, worden niet verzameld.
@@ -220,13 +220,14 @@ Gegevens over uw locatie of de plaatsen die u op de kaart bekijkt, worden niet v
 
 *Menu → Instellingen → OsmAnd-instellingen → Privacy en beveiliging → Identificatoren*  
 
-![UUID Android](@site/static/img/personal/profiles/uuid_android.png)  
+![UUID-instellingen Android](@site/static/img/personal/profiles/uuid_android.png)  
 
 Een **UUID** (*Unique User Identifier*) wordt gegenereerd voor elke installatie van de OsmAnd-applicatie en naar de servers gestuurd tijdens het laden van de kaart.
 
 - Een willekeurige UUID wordt gebruikt om offline kaarten van OsmAnd-servers te downloaden om het rationele gebruik van serverbronnen te controleren, het verkeersgebruik te voorspellen en algemene maandelijkse rapporten over kaartdownloads te verstrekken.
 - De UUID verandert elke 3 maanden.  
-- Vanaf OsmAnd versie 4.3 kunt u het verzamelen van gebruikersgegevens uitschakelen wanneer u de OsmAnd-app gebruikt. Dan wordt de UUID niet meegestuurd met een downloadverzoek.  
+- Vanaf OsmAnd versie 4.3 kunt u het verzamelen van gebruikersgegevens uitschakelen wanneer u de OsmAnd-app gebruikt. Dan wordt de UUID niet meegestuurd met een downloadverzoek.
+- Bij installaties via Google Play verzendt de app ook de advertentiecampagne die tot de installatie heeft geleid (campagnebron, medium en naam, en of de installatie afkomstig was van een advertentieklik) mee met verzoeken voor updatecontrole en aankoop. Als het verzenden van de UUID is uitgeschakeld, wordt deze informatie niet gelezen of verzonden.
 - U kunt meer informatie lezen in de [Gebruiksvoorwaarden (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
 
 

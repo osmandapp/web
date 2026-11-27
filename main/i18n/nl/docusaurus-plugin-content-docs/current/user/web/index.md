@@ -24,7 +24,7 @@ Dit gedeelte legt uit hoe u kunt inloggen en aanmelden op [www.osmand.net/map](h
 
 ### [Kaart](./web-map.md) {#map}
 
-Dit gedeelte behandelt de OsmAnd Web-kaartinterface, inclusief het kaartmenu, laagdconfiguratie, instellingen en URL-koppelingen.
+Dit gedeelte behandelt de OsmAnd Web-kaartinterface, inclusief het kaartmenu, laagconfiguratie, instellingen en URL-koppelingen.
 
 ### [Weer](./web-weather.md) {#weather}
 
@@ -38,7 +38,7 @@ Dit gedeelte behandelt het werken met persoonlijke GPX-tracks op het web, inclus
 
 Opgeslagen plaatsen weergegeven op de kaart, met opties om ze in mappen te organiseren, toegang te beheren en ze te hergebruiken voor navigatie of routeplanning.
 
-### [Trackanalysator](./web-tracks-analyzer.md) {#tracks-analyzer}
+### [Tracks-analysator](./web-tracks-analyzer.md) {#tracks-analyzer}
 
 Dit gedeelte richt zich op het analyseren van tracksegmenten tussen geselecteerde punten op de kaart en het vergelijken van belangrijke parameters over meerdere tracks.
 

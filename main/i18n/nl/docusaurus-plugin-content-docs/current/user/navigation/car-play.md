@@ -1,5 +1,5 @@
 ---
-source-hash: 9f605668d58af560cd42ef64d15f56577a03661cd8b6c24cb599d9fe82542af1
+source-hash: 89871f7189df3be0f44150ef057c8d28471823b1cd845448b1ca78cf1747a19a
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -17,10 +17,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 ## Overzicht {#overview}
-
-:::tip Aankoop
-CarPlay is een [betaalde functie](../purchases/index.md).  
-:::
 
 Een voertuig besturen en tegelijkertijd uw telefoon of tablet gebruiken is om veiligheidsredenen meestal bij wet verboden. [***CarPlay***](https://www.apple.com/ios/carplay/) is software die een aangepaste en geoptimaliseerde versie van de OsmAnd-app biedt voor veilig gebruik tijdens het rijden, waardoor het gemakkelijker en veiliger wordt om toegang te krijgen tot de navigatiefuncties van de app.
 
@@ -61,7 +57,6 @@ Terwijl uw apparaat is verbonden met *CarPlay*, is de kaart op het app-scherm ve
     - Een handig profiel voor het gebruik van *CarPlay* kan *Rijden* zijn, en het type routebepaling kan [Autoroute](../navigation/routing/car-based-routing.md) zijn.
     - OsmAnd heeft een apart item [CarPlay-profiel](#carplay-profile) voor snelle toegang tot de lijst met profielen die beschikbaar zijn voor verbinding met *CarPlay*.
 - Om OsmAnd te laten werken, [verbindt u uw iOS-apparaat](#overview) met het multimediasysteem van het voertuig. Voor meer informatie over hoe u uw apparaat kunt verbinden en instellen, kunt u de [**CarPlay**](https://support.apple.com/en-us/HT205634) website bezoeken.
-- U moet een van de [betaalde of abonnementsversies van OsmAnd](../purchases/ios#free-and-paid-features) hebben. Controleer dit hier *Menu → Instellingen → Aankopen*.
 - Eenmaal verbonden, kunt u een bestemming instellen en de OsmAnd-navigatie starten in *CarPlay*.  
 
 :::note
@@ -72,8 +67,6 @@ U heeft mogelijk een internetverbinding nodig om OsmAnd in *CarPlay* te gebruike
 ### Start navigatie {#start-navigation}
 
 ![CarPlay-scherm](@site/static/img/navigation/auto-car/car-play-start(1).png)  
-
-Om de iOS-versie van de OsmAnd-app in *CarPlay* te gebruiken, moet u een [betaalde versie van de app kopen of een abonnement nemen](../purchases/ios#free-and-paid-features).  
 
 1. Om een route te maken, moet u het [eindpunt van de route](#select-a-route-endpoint) kiezen op het *CarPlay-scherm* of in de [OsmAnd-app](../navigation/setup/route-navigation.md).
 2. U kunt [gesproken aanwijzingen](#voice-prompts) gebruiken om te luisteren naar aanwijzingen of berichten over problemen op de weg.  
@@ -324,15 +317,15 @@ U kunt het aankondigen van berichten ook rechtstreeks in *CarPlay* in- of uitsch
 
 ![Kaartmodus](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Kaartmodus](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-OsmAnd stelt u in staat om de kaartweergave voor CarPlay onafhankelijk van de kaartmodus op uw telefoon te configureren. Om deze instelling te openen, tikt u op de knop *Instellingen* in de CarPlay-navigatiebalk en selecteert u vervolgens *Kaartmodus*. De huidige modus wordt weergegeven als de detailtekst van de rij.
+OsmAnd stelt u in staat om de kaartweergave voor CarPlay onafhankelijk van de kaartmodus op uw telefoon te configureren. Om deze instelling te openen, tikt u op de knop *Instellingen* (tandwielpictogram naast de pan-knop) in de CarPlay-navigatiebalk en selecteert u vervolgens *Kaartmodus*. De knop is beschikbaar tijdens het bekijken van de kaart, in het reisvoorbeeld en tijdens de navigatie. De geselecteerde modus wordt naast het item *Kaartmodus* weergegeven.
 
 U kunt kiezen uit de volgende weergavemodi:
-- **Voertuigweergave** — De kaartweergave volgt de eigen weergavestijl van het voertuig, gebaseerd op de CarPlay-weergave-instelling op uw iPhone (*Automatisch* of *Altijd donker*) en het tijdstip van de dag. Wanneer *Altijd donkere kaarten weergeven* is ingeschakeld in die instelling, blijft de kaart altijd in de donkere modus, ongeacht de status van de koplampen van het voertuig of het tijdstip van de dag.
+- **Voertuigweergave** — De kaartweergave volgt de eigen weergavestijl van het voertuig, gebaseerd op de CarPlay-weergave-instelling op uw iPhone (*Automatisch* of *Altijd donker*) en het tijdstip van de dag. Wanneer *Altijd donkere kaarten weergeven* is ingeschakeld in die instelling, blijft de kaart altijd in de donkere modus, ongeacht de status van de koplampen van het voertuig of het tijdstip van de dag. Deze modus wordt standaard gebruikt.
 - **Dag** — De kaart gebruikt altijd het lichte thema in CarPlay, ongeacht de weergave-instellingen van het voertuig.
 - **Nacht** — De kaart gebruikt altijd het donkere thema in CarPlay, ongeacht de weergave-instellingen van het voertuig.
 - **Zonsopgang/zonsondergang** — De kaart schakelt automatisch tussen lichte en donkere thema's op basis van de berekende zonsopgang- en zonsondergangstijden voor uw huidige locatie.
 
-**Opmerking:** De instelling Kaartmodus in CarPlay heeft alleen invloed op de kaartweergave in CarPlay. Het verandert de Kaartmodus niet op uw telefoonscherm.
+**Opmerking:** De instelling Kaartmodus in CarPlay heeft alleen invloed op de kaartweergave in CarPlay. Het verandert de Kaartmodus niet op uw telefoonscherm. De Kaartmodus op uw telefoon verandert de CarPlay-kaart ook niet. Alle kaartelementen op het CarPlay-scherm, inclusief POI-pictogrammen, de routelijn en de positiemarkering, volgen de CarPlay-Kaartmodus. De instelling geldt voor alle profielen en blijft behouden na het opnieuw verbinden van CarPlay of het herstarten van de app.
 
 ### Kaartoriëntatie {#map-orientation}
 

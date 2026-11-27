@@ -1,5 +1,5 @@
 ---
-source-hash: 3a1b19203e3a6ba30e182f8b8c57f3ac468e000ae98042c571c03b94e20ce825
+source-hash: 15d49bb0a51bde6a96859143a096fc9ae43659fa8e1fada3dc9753b8a8f92c70
 sidebar_position: 20
 title:  Wikipedia
 ---
@@ -64,7 +64,7 @@ U kunt Wikipedia-gegevens als volgt per regio openen om te downloaden:
 
 Om te zien welke gegevens al zijn geüpload, gaat u naar *<Translate android="true" ids="shared_string_menu,download_tab_local,download_wikipedia_maps"/>*  
 
-![Download Wikipedia in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
+![Wikipedia downloaden in Android](@site/static/img/plugins/wikipedia/download_wikipedia_android2.png)
 
 </TabItem>
 
@@ -72,14 +72,14 @@ Om te zien welke gegevens al zijn geüpload, gaat u naar *<Translate android="tr
 
 Om te zien welke gegevens al zijn geüpload, gaat u naar *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_local"/>*  
 
-![Download Wikipedia in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
+![Wikipedia downloaden in iOS](@site/static/img/plugins/wikipedia/download_wikipedia_ios2.png)
 
 </TabItem>
 
 </Tabs>
 
 
-## Display Wikipedia on the Map {#display-wikipedia-on-the-map}
+## Wikipedia op de kaart weergeven {#display-wikipedia-on-the-map}
 
 Door Wikipedia-gegevens voor de vereiste regio's te laden, kunt u de zichtbaarheid van die gegevens op de kaart regelen. De zichtbaarheid wordt geregeld door [Popular Places (Wikipedia)](../map/point-layers-on-map.md#-wikipedia) **for Android** / [Wikipedia POIs](../map/point-layers-on-map.md#-wikipedia) **for iOS**, die kunnen worden getoond of verborgen voor alle geüploade regio's door een bepaald [profiel](../personal/profiles.md), bijvoorbeeld een profiel voor driving, een profiel voor cycling, een ander profiel om public transport te tonen, en anderen.  
 
@@ -100,13 +100,13 @@ Om Wikipedia POIs te tonen/verbergen, doet u het volgende:
 
 <TabItem value="android" label="Android">
 
-![Wikipedia POIs on Android](@site/static/img/map/map-wikipedia-on-map.png)
+![Wikipedia-POI's op Android](@site/static/img/map/map-wikipedia-on-map.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia POI on iOS](@site/static/img/map/map-wikipedia-on-map_ios.png)
+![Wikipedia-POI op iOS](@site/static/img/map/map-wikipedia-on-map_ios.png)
 
 </TabItem>
 
@@ -121,39 +121,19 @@ Wanneer u op de Search button tikt, verschijnt er een extra paneel waarmee u de 
 
 - In de **Android** versie kunt u [Search](../search/index.md) openen door op het *Search icon* in de upper left corner van het scherm te tikken en/of op de *Search option* in het menu te tikken.
 - In de **iOS** versie, om [Search](../search/index.md) te openen, bevindt het Search icon zich in de upper left corner van het scherm.
-
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
--->
-
 - Om te zoeken naar de Wikipedia [category](../search/search-poi.md#poi-search-by-categories), selecteer: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Wikipedia category on Android](@site/static/img/map/map-wikipedia-search-on-map.png)
+![Wikipedia-categorie op Android](@site/static/img/map/map-wikipedia-search-on-map.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Wikipedia category on iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
+![Wikipedia-categorie op iOS](@site/static/img/map/map-wikipedia-search-on-map_ios.png)
 
 </TabItem>
 
@@ -176,10 +156,10 @@ Om het Wikipedia-artikel te openen:
 4. Gebruik de *Read full article* knop om de volledige versie van het Wikipedia-artikel te openen.
 5. Als de Wikipedia-gegevens niet zijn gedownload, verschijnt de *Read on Wikipedia* knop.
 6. Tikken op deze knop opent een dialoog met de volgende opties: 
-- Download Wikipedia and Open in Browser (paid version).
-- Read Wikipedia offline and Open in Browser (free version).
+- Wikipedia downloaden en openen in de browser (betaalde versie).
+- Wikipedia offline lezen en openen in de browser (gratis versie).
 
-![French Wikipedia POI in English](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
+![Franse Wikipedia-POI in het Engels](@site/static/img/plugins/wikipedia/wikipedia_article_android.png)
 
 </TabItem>
 
@@ -193,7 +173,7 @@ Om het Wikipedia-artikel te openen:
 4. Als u op die tekst tikt, wordt u doorgestuurd naar het offline Wikipedia-artikel.
 5. Gebruik de *Read article* knop om de volledige versie van het Wikipedia-artikel te openen.
 
-![French Wikipedia POI in English in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
+![Franse Wikipedia-POI in het Engels in iOS](@site/static/img/plugins/wikipedia/ios_wiki_language2.png)
 
 </TabItem>
 
@@ -202,7 +182,12 @@ Om het Wikipedia-artikel te openen:
 
 ## Wikipedia Settings {#wikipedia-settings}
 
-U kunt de [taal(-en)](#set-preferred-language) instellen waarin u de voorkeur hebt om [artikelen](#wikipedia-article) te lezen en ook de [images download options](#download-images) configureren voor elk [profiel](../personal/profiles.md).
+U kunt de [taal(-en)](#set-preferred-language) instellen waarin u [artikelen](#wikipedia-article) het liefst leest voor elk [profiel](../personal/profiles.md), de [opties voor het downloaden van afbeeldingen](#download-images) configureren en de [afbeeldingscache](#image-cache) beheren. In iOS worden de opties voor het downloaden van afbeeldingen per profiel ingesteld. In Android gelden ze voor alle profielen.
+
+Alle Wikipedia-instellingen zijn verzameld in de instellingen van de Wikipedia-plugin:
+
+- **Android**. Ga naar: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings"/>*. Gebruik de profielknop bovenaan het scherm om het profiel te selecteren waarvan u de instellingen wilt wijzigen.
+- **iOS**. Ga naar: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 ### Set Preferred Language {#set-preferred-language}
 
@@ -217,27 +202,28 @@ In de **Android** en **iOS** versies van de OsmAnd-app kunt u uw voorkeurstaal (
 
 <TabItem value="android" label="Android">
 
-![Setting a preferred language on Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
+![Een voorkeurstaal instellen op Android](@site/static/img/plugins/wikipedia/and_select_languages_wiki1.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Setting a preferred language on iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
+![Een voorkeurstaal instellen op iOS](@site/static/img/map/map-wikipedia-language-2-ios.png)
 
 </TabItem>
 
 </Tabs>
 
 :::note
-In de **iOS** versie kunt u de voorkeurstaal voor Wikipedia-artikelen ook instellen met behulp van:  
+U kunt de voorkeurstaal voor Wikipedia-artikelen ook instellen in de instellingen van de Wikipedia-plugin:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,shared_string_languages"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 :::
 
-### Switch Languages Inside the Article {#switch-languages-inside-the-article}
+### Van taal wisselen binnen het artikel {#switch-languages-inside-the-article}
 
 In geval het *Wikipedia article* beschikbaar is in verschillende talen, kunt u de taal wisselen tijdens het lezen. Na het tikken op het bijbehorende icoon in de upper right corner van het scherm krijgt u opties om uit te kiezen.
 
@@ -245,13 +231,13 @@ In geval het *Wikipedia article* beschikbaar is in verschillende talen, kunt u d
 
 <TabItem value="android" label="Android">
 
-![Switching languages for a specific article](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
+![Van taal wisselen voor een specifiek artikel](@site/static/img/plugins/wikipedia/and_lang_inside_article.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Switching languages for a specific article](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
+![Van taal wisselen voor een specifiek artikel](@site/static/img/plugins/wikipedia/switch_languages_ios_1.png)
 
 </TabItem>
 
@@ -262,31 +248,57 @@ In geval het *Wikipedia article* beschikbaar is in verschillende talen, kunt u d
 
 U kunt kiezen of u afbeeldingen van Wikipedia op uw apparaat wilt downloaden of niet binnen het *Wikipedia article*:
 
-- **Android**. Open *[Wikipedia article](#display-wikipedia-on-the-map) → &#8942; → Options*
-- **iOS**. Open *[Wikipedia article](#display-wikipedia-on-the-map) → Image icon*
+- **Android**. Open *[Wikipedia-artikel](#display-wikipedia-on-the-map) → &#8942; → Opties*
+- **iOS**. Open *[Wikipedia-artikel](#display-wikipedia-on-the-map) → Afbeeldingspictogram*
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Switching images](@site/static/img/plugins/wikipedia/images_android.png)
+![Afbeeldingen in- of uitschakelen](@site/static/img/plugins/wikipedia/images_android.png)
 
 </TabItem>  
 
 <TabItem value="ios" label="iOS">
 
-![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
+![Afbeeldingen in- of uitschakelen](@site/static/img/plugins/wikipedia/images_menu_ios_2.png)
 
 </TabItem>
 
 </Tabs>
 
-In de **iOS** versie van de app kunt u ook toegang krijgen tot de image download options met behulp van *Wikipedia plugin settings*:
+U kunt de opties voor het downloaden van afbeeldingen ook openen in de *instellingen van de Wikipedia-plugin*:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,download_images"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
-![Switching images](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+![Afbeeldingen in- of uitschakelen](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+
+### Afbeeldingscache {#image-cache}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Afbeeldingscache op Android](@site/static/img/plugins/wikipedia/image_cache_android.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Afbeeldingscache op iOS](@site/static/img/plugins/wikipedia/image_cache_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+De instellingen van de Wikipedia-plugin tonen de grootte van de op uw apparaat opgeslagen afbeeldingen. De afbeeldingscache wordt gedeeld met Travel guides, dus als u de cache wist, worden ook de opgeslagen afbeeldingen van reisgidsen verwijderd.
+
+Om de opgeslagen afbeeldingen te verwijderen, gaat u naar:
+
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,images_cache"/>* → *<Translate android="true" ids="shared_string_clear"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics,remove_cache"/>*
 
 
 ## Related Articles {#related-articles}

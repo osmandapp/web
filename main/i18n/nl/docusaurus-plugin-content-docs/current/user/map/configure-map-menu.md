@@ -1,7 +1,7 @@
 ---
-source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
+source-hash: d617276475fbfcfe927091d3c99740f157598c2b6f2ee38d9e9906a83d74b219
 sidebar_position: 4
-title:  Configure Map
+title: Kaart configureren
 ---
 
 import Tabs from '@theme/Tabs';
@@ -27,7 +27,7 @@ Sectie **Weergeven**:
 
 Sectie **Topografie**:  
 
-![Kaart configureren android](@site/static/img/map/configure_map_topography_andr_new.png)  
+![Kaart configureren android](@site/static/img/map/configure_map_topography_andr_new.webp)  
 
 Sectie **OpenStreetMap**:  
 
@@ -84,7 +84,7 @@ Het **<Translate android="true" ids="configure_map"/>** menu is verdeeld in twee
 ## Kaartlagen {#map-layers}
 
 - [Vector Kaartlaag](../map/vector-maps.md) - geeft alle vectorkaartinformatie weer, inclusief OpenStreetMap, Contourlijnen en Nautische gegevens.
-- [Rasterkaartbronnen](../map/raster-maps.md#layers) - hiermee kunt u een onderlaag / hoofdbron / overlay-kaart selecteren met transparantieniveaus.
+- [Rasterkaartbronnen](../map/raster-maps.md#layers) - hiermee kunt u een onderlaag / hoofdbron / overlay-kaart selecteren met zichtbaarheidsniveaus.
 - [Terrein](../plugins/topography.md#hillshade-slope-and-altitude-layers) - geeft helling- / schaduwinformatie, 3D-reliëf weer.
 - [3D-gebouwen](../map/vector-maps.md#3d-buildings) - toont volumetrische gebouwmodellen op de kaart.
 - [Grenzen van gedownloade kaarten](../map/vector-maps.md#show-borders) - geeft alle grenzen van gedownloade kaarten weer op de hoofdkaartlaag.

@@ -1,8 +1,8 @@
 ---
 source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
-sidebar_label:  Navigation
-title: Navigation on the Web
+sidebar_label:  Navigatie
+title: Navigatie op het Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-Gebruik **Navigation on the Web** om een route op de kaart te bouwen en een voorbeeld van de bocht-na-bocht begeleiding te bekijken. Het berekent een route voor de geselecteerde reismodus, toont de verwachte afstand en tijd, en laat je hoogteveranderingen en aankomende bochten controleren. Je kunt de route verfijnen in de Navigatie-instellingen (bijvoorbeeld door bepaalde wegtypen toe te staan of te vermijden of voertuigparameters te gebruiken) en meerdere routepunten gebruiken wanneer nodig.
+Gebruik **Route** om een route op de kaart te bouwen en een voorbeeld van de bocht-na-bocht begeleiding te bekijken. Het berekent een route voor de geselecteerde reismodus, toont de verwachte afstand en tijd, en laat je hoogteveranderingen en aankomende bochten controleren. Je kunt de route verfijnen in de Navigatie-instellingen (bijvoorbeeld door bepaalde wegtypen toe te staan of te vermijden of voertuigparameters te gebruiken) en meerdere routepunten gebruiken wanneer nodig.
 
 
 ## Een Route Starten {#start-a-route}
@@ -70,7 +70,7 @@ Typische secties omvatten:
 
 ## Track Koppelen {#attaching-track}
 
-Het **[Aan wegen koppelen](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** blok laat je een bestaande GPX-track gebruiken als basis voor navigatie. OsmAnd Web past de track aan op nabijgelegen wegen om bocht-na-bocht begeleiding te bieden.
+Het **[Bevestigen aan wegen](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** blok laat je een bestaande GPX-track gebruiken als basis voor navigatie. OsmAnd Web past de track aan op nabijgelegen wegen om bocht-na-bocht begeleiding te bieden.
 
 Wanneer je Track selecteren klikt, opent de browser een bestandskiezer waar je een .gpx-bestand van je computer kunt kiezen. Nadat je een track hebt geselecteerd:
 - De track wordt weergegeven op de kaart en gebruikt om de route te berekenen.
@@ -118,7 +118,7 @@ Wat is het verschil:
 - Volledige trackgegevens kan route/navigatie-informatie bevatten naast de trackgeometrie (handig als je navigatie-instructies wilt behouden of de route opnieuw wilt bewerken in OsmAnd).
 - Vereenvoudigde track exporteert een schonere GPX bedoeld voor andere apps door route/navigatiegegevens te verwijderen en alleen de tracks vorm achter te laten. Waypoints worden behouden bij het exporteren van een vereenvoudigde track.
 
-Je kunt de route opslaan als een track met *Opslaan in Cloud / Uploaden naar OsmAnd Cloud*. Dit opent een dialoog waar je het opslaan in cloud-tracks kunt bevestigen, de Naam kunt bewerken, optioneel een Map kunt kiezen, en dan Opslaan of Annuleren. Als je niet bent ingelogd, opent *Opslaan in Cloud / Uploaden naar OsmAnd Cloud* de Prijslijstpagina.
+Je kunt de route opslaan als een track met *Opslaan in cloud / Opslaan in OsmAnd Cloud*. Dit opent een dialoog waar je het opslaan in cloud-tracks kunt bevestigen, de Naam kunt bewerken, optioneel een Map kunt kiezen, en dan Opslaan of Annuleren. Als je niet bent ingelogd, opent *Opslaan in cloud / Opslaan in OsmAnd Cloud* de pagina Prijzen.
 
 ![Web Navigatie](@site/static/img/web/download_options.png)
 
@@ -129,7 +129,7 @@ Om de route te delen, kopieer je de URL. Voorbeeld: [https://osmand.net/map/?sta
 Wanneer je een gedeelde link opent, wordt de route hersteld op de kaart. Indien nodig kun je het [routingprofiel](#routing-profile) handmatig wijzigen in het Routepaneel.
 
 
-## Gerelateerde Artikelen {#related-articles}
+## Gerelateerde artikelen {#related-articles}
 
 - [Routevoorbereiding](../navigation/setup/route-navigation.md)
 - [Navigatie-instellingen](../navigation/guidance/navigation-settings.md)
