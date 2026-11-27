@@ -1,5 +1,5 @@
 ---
-source-hash: 97f2c33a4074c4cc756ff122bf583a92e9a6275e2f47dd97dda9ca19c19cf16f
+source-hash: 00356ae11e5462862ca31e05797cfe39a891bfd9daa0c313b6113a666a302ec0
 sidebar_position: 4
 title:  Recherche de POI
 ---
@@ -108,7 +108,7 @@ Exemple :
 `St.`  
 → de nombreux résultats
 
-`Cathédrale St. Volodymyr`  
+`St. Volodymyr's Cathedral`  
 → objet spécifique
 
 **3. Rechercher par noms alternatifs**
@@ -152,9 +152,9 @@ Ce lieu peut apparaître lors de la recherche de :
 
 L'outil **Recherche par catégories** vous permet de trouver rapidement des objets, des lieux et des itinéraires classés dans différentes catégories. 
 
-Les catégories de POI dans OsmAnd sont basées sur les étiquettes OpenStreetMap. Certains lieux peuvent apparaître sous une catégorie plus générale si un type plus spécifique n'est pas disponible dans les données de la carte (par exemple, une église peut apparaître sous `Lieu de culte`).
+Les catégories de POI dans OsmAnd sont basées sur les étiquettes OpenStreetMap. Certains lieux peuvent apparaître sous une catégorie plus générale si un type plus spécifique n'est pas disponible dans les données de la carte (par exemple, une église peut apparaître sous `Place of worship`). Les bureaux d'un type qu'OsmAnd ne reconnaît pas apparaissent sous `Company`.
 
-Chaque catégorie possède un ensemble unique de caractéristiques, et cet outil dispose de filtres qui vous permettent d'affiner les résultats de la recherche en sélectionnant différentes valeurs pour des caractéristiques supplémentaires.
+Chaque catégorie possède un ensemble unique de caractéristiques, et cet outil dispose de filtres qui vous permettent d'affiner les résultats de la recherche en sélectionnant différentes valeurs pour des caractéristiques supplémentaires. Vous pouvez également trouver des lieux par une caractéristique : saisissez son nom dans la barre de recherche, par exemple, `Smoking`, puis sélectionnez la catégorie suggérée pour voir les lieux où cette caractéristique est disponible.
 
 Comment ça marche :
 
@@ -183,13 +183,13 @@ Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-me
 
 <TabItem value="android" label="Android">
 
-![Recherche POI Android](@site/static/img/search/search_poi_filter_andr.png)
+![Recherche POI Android](@site/static/img/search/search_poi_filter_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Recherche POI iOS](@site/static/img/search/search_poi_filter_ios.png)
+![Recherche POI iOS](@site/static/img/search/search_poi_filter_ios.webp)
 
 </TabItem>
 
@@ -202,6 +202,11 @@ Avec la fonction **Filtre**, vous pouvez sélectionner les caractéristiques né
 - Dans le filtre, sélectionnez le type de caractéristiques.
 
 ![Recherche POI Android](@site/static/img/search/search_poi_filter_icon_andr.webp)  
+
+Les caractéristiques sont présentées dans le filtre de deux façons :
+
+- *Caractéristique à une seule valeur* — un interrupteur, par exemple, *Vélo*. Activez-le pour n'afficher que les lieux qui possèdent cette caractéristique.
+- *Caractéristique à plusieurs valeurs* — un groupe dont l'en-tête est le nom de la caractéristique. Développez-le et sélectionnez les valeurs dont vous avez besoin, par exemple, *Accès caravane* → *Désigné*, *Oui*.
 
 Un filtre peut comporter un grand nombre d'éléments, dont la présence dépend de la catégorie sélectionnée. Chaque catégorie dispose d'un certain nombre de filtres qui lui sont propres, organisés en dossiers par type. Il y a un total de *21 catégories par défaut*. Elles sont listées ici :
 
@@ -378,10 +383,9 @@ Pour créer des filtres personnalisés pour trouver des lieux sur la carte, sél
 
 1. **<Translate android="true" ids="amenity_type_administrative"/>**. Comprend 25 types : *Jardins familiaux, Atoll, Arrondissement, Ville, Pâté de maisons, Pays, Palais de justice, Douanes, Bureau diplomatique, Ferme, Gouvernement, Hameau, Île, Îlot, Habitation isolée, Localité, Quartier, Police, Prison, Quartier, Zone résidentielle, Banlieue, Ville, Mairie, Village*.  
 
-2. **Noël**. Comprend 5 types de filtres :  
-    *Événement de Noël, Marché de Noël, Pyramide de Noël, Boutique de Noël, Sapin de Noël*.
+2. **Noël**. Comprend 5 types de filtres : *Événement de Noël, Marché de Noël, Pyramide de Noël, Boutique de Noël, Sapin de Noël*.
 
-3. **<Translate android="true" ids="amenity_type_education"/>**. Comprend 16 types : *Jardins familiaux, Atoll, Arrondissement, Ville, Pâté de maisons, Pays, Palais de justice, Douanes, Bureau diplomatique, Ferme, Gouvernement, Hameau, Île, Îlot, Habitation isolée, Localité, Quartier, Police, Prison, Quartier, Zone résidentielle, Banlieue, Ville, Mairie, Village*.  
+3. **<Translate android="true" ids="amenity_type_education"/>**. Comprend 18 types : *Dressage d'animaux, Garde d'enfants, Collège, École de danse, Dojo, Terrain d'entraînement à la conduite, Auto-école, Établissement d'enseignement, Maternelle, École de langues, Bibliothèque, Arrêt de bibliobus, École de musique, École, Logement étudiant, Centre de formation, École de soutien, Université*.  
 
 4. **<Translate android="true" ids="amenity_type_emergency"/>**. Comprend 26 types de filtres.  
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+source-hash: 863d3df7ebcb8f1a0a362a1a56c188f42daa47139cbfa9d9825346e82b510df5
 sidebar_position: 6
 title:  Capteurs externes
 ---
@@ -87,7 +87,8 @@ Pour jumeler un nouveau capteur, suivez ces étapes :
 - Sur **iOS**, seuls les capteurs **Bluetooth Low Energy (BLE)** sont pris en charge en raison de limitations matérielles. Les capteurs ANT+ ne sont pas disponibles.
 - Sur **Android**, les capteurs BLE et ANT+ peuvent être pris en charge en fonction de votre appareil. Consultez le [guide de compatibilité ANT+](https://www.thisisant.com/consumer/ant-101/ant-in-phones) pour plus de détails.
 - Une **notification contextuelle** apparaîtra chaque fois qu'un capteur se connecte ou se déconnecte.
-- Les **capteurs de puissance pour vélo** sont disponibles uniquement sur Android via ANT+.
+- Les **capteurs de puissance pour vélo** sont disponibles uniquement sur Android via ANT+ et BLE.
+- Sur **Android**, un capteur qui transmet plusieurs types de données (par exemple, un moniteur de fréquence cardiaque qui mesure aussi la vitesse de course et la cadence, ou des écouteurs avec fréquence cardiaque et température) apparaît dans la liste comme un seul appareil. OsmAnd lit tous les types de données pris en charge depuis cet appareil.
 
 
 ## Paramètres du capteur {#sensor-settings}
@@ -123,7 +124,7 @@ Chaque capteur externe jumelé listé dans OsmAnd a son propre écran de configu
 - **Connecter / Déconnecter** – basculer l'état de la connexion.
 - **Renommer** – attribuer un nom personnalisé au capteur.
 - **Oublier le capteur** – supprimer le capteur de la liste (peut être re-jumelé plus tard).
-- **Paramètres** – ouvrir l'écran des détails du capteur (type de capteur, valeurs, niveau de batterie, réglage de la circonférence de la roue).
+- **Paramètres** – ouvrir l'écran des détails du capteur (type de capteur, valeurs, niveau de batterie, réglage de la circonférence de la roue). Sur **Android**, pour un capteur avec plusieurs types de données, l'écran affiche toutes ses valeurs.
 
 ***Remarques :***
 
@@ -139,7 +140,7 @@ Chaque capteur externe jumelé listé dans OsmAnd a son propre écran de configu
 
 Allez dans : *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![Capteurs externes](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![Capteurs externes](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
+![Capteurs externes](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.webp)  ![Capteurs externes](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.webp)  
 
 </TabItem>
 
@@ -147,7 +148,7 @@ Allez dans : *<Translate android="true" ids="shared_string_menu,plugins_menu_gro
 
 Allez dans : *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![Plugin Capteurs externes](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![Plugin Capteurs externes](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
+![Plugin Capteurs externes](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.webp)  ![Plugin Capteurs externes](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.webp)  
 
 </TabItem>
 
@@ -157,7 +158,7 @@ Pour enregistrer les données des capteurs à l'aide du [plugin Enregistrement d
 
 1. Assurez-vous que le **plugin Capteurs externes** est activé.
 2. Allez dans *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
-3. Sélectionnez les types de capteurs que vous souhaitez enregistrer (par ex. cadence, fréquence cardiaque, vitesse).
+3. Pour chaque type de données que vous souhaitez enregistrer (par ex. cadence, fréquence cardiaque, vitesse), sélectionnez le capteur à utiliser comme source de données.
 4. Commencez à enregistrer votre trajet. OsmAnd sauvegardera les données des capteurs sélectionnés dans la trace GPX.
 
 ***Remarques :***
@@ -165,6 +166,9 @@ Pour enregistrer les données des capteurs à l'aide du [plugin Enregistrement d
 - La liste des types de capteurs disponibles est affichée même si aucun capteur n'est connecté.
 - Si aucun capteur n'est encore jumelé, utilisez le bouton [Jumeler un nouveau capteur](#pair-new-sensor) dans les paramètres des plugins.
 - Les données de niveau de batterie ne sont **pas** enregistrées dans les fichiers GPX et ne sont pas disponibles pour l'analyse sur la carte.
+- Sur **Android**, un même capteur avec plusieurs types de données peut être sélectionné comme source pour chacun d'eux.
+- La source par défaut pour chaque type de données est *Tout capteur connecté*. OsmAnd enregistre les données d'un capteur connecté de ce type. Pour arrêter l'enregistrement d'un type de données, sélectionnez *Aucun*.
+- Sur **Android**, le nom du capteur jumelé correspondant est affiché à côté de *Tout capteur connecté*. Si vous oubliez un capteur sélectionné, la source revient à *Tout capteur connecté*.
 
 :::note Compatibilité des formats
 OsmAnd utilise l'[enregistrement de trace](../plugins/trip-recording.md#recorded-gpx-file) pour intégrer les données des capteurs dans les fichiers GPX. Ce format est compatible avec de nombreuses applications de sport et d'entraînement (par ex. Strava, Runkeeper).
@@ -235,7 +239,7 @@ Types de widgets pris en charge :
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – affiche la fréquence cardiaque en temps réel d'un moniteur jumelé.
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*Android uniquement*) – affiche la puissance de pédalage actuelle en watts.
-3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – affiche le nombre de tours de pédale par minute.
+3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – affiche le nombre de tours de pédale par minute. Les données de cadence peuvent provenir d'un capteur de cadence ou d'un capteur de puissance pour vélo qui transmet la cadence.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – vitesse de cyclisme actuelle.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – distance totale mesurée par le capteur.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – température ambiante actuelle.
@@ -266,7 +270,7 @@ Allez dans : *<Translate ios="true" ids="shared_string_menu,layer_map_appearance
 
 </Tabs>
 
-Par défaut, le widget affiche le premier capteur de ce type actuellement connecté. Si vous souhaitez utiliser un capteur spécifique, appuyez sur **Source des données** et choisissez dans la liste des capteurs connectés.
+Par défaut, le widget affiche le premier capteur de ce type actuellement connecté. Si vous souhaitez utiliser un capteur spécifique, appuyez sur **Source des données** et choisissez dans la liste des capteurs connectés. Sur **Android**, un capteur avec plusieurs types de données est disponible comme source dans chaque widget correspondant, par exemple, *Fréquence cardiaque*, *Vitesse du vélo* et *Cadence du vélo*.
 
 Sur **iOS**, vous pouvez choisir la valeur à afficher dans le widget :  
 

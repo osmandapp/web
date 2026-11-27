@@ -1,5 +1,5 @@
 ---
-source-hash: 3d7c0440f81fe7d7c68aa8cdc03f7757d017ff3c9522e4e2e9666eb2f8516db1
+source-hash: e69343f9eb21e770166c3f64840279d4909964e16e57f6ff88c67cf26d0d4397
 sidebar_position: 2
 sidebar_label:  Compte
 title: Compte OsmAnd
@@ -33,11 +33,11 @@ Pour accéder aux fonctionnalités d'OsmAnd Web, vous devez créer un compte. Ut
 - Sélectionnez **Créer un nouveau compte**. La boîte de dialogue Créer un nouveau compte s'ouvre.
 - Dans le champ **E-mail**, saisissez l'adresse e-mail que vous souhaitez utiliser pour votre compte OsmAnd et cliquez sur **Continuer**.
 - Un code de vérification est envoyé à cette adresse e-mail. Vérifiez votre boîte de réception (et le dossier spam si nécessaire).
-- Dans la boîte de dialogue suivante, saisissez le Code de vérification et cliquez sur **Continuer** pour confirmer votre e-mail. Si vous n'avez pas reçu le code, utilisez le lien **Je n'ai pas reçu de code de vérification** et suivez les instructions.
+- Dans la boîte de dialogue suivante, saisissez le Code de vérification et cliquez sur **Continuer** pour confirmer votre e-mail. Si vous n'avez pas reçu le code, utilisez le lien **Je n'ai pas reçu le code de vérification** et suivez les instructions.
 
 Après la vérification du code, votre compte web est créé et vous êtes connecté automatiquement.
 
-![Web Sign Up](@site/static/img/web/web_sign_up.png) ![Web Sign Up](@site/static/img/web/web_ver_code.png)
+![Inscription web](@site/static/img/web/web_sign_up.png) ![Inscription web](@site/static/img/web/web_ver_code.png)
 
 
 ### Connexion {#login}
@@ -68,12 +68,12 @@ Si vous souhaitez sauvegarder une copie de toutes vos données, utilisez **Tout 
 
 Cliquez sur **Télécharger la sauvegarde** pour démarrer l'exportation et sauvegarder l'archive sur votre ordinateur.
 
-![Web Account](@site/static/img/web/web_download_all.png)
+![Compte web](@site/static/img/web/web_download_all.png)
 
 ### Paiements et achats {#payments-and-purchases}
 
 Cette section affiche tous les produits et abonnements liés à votre compte OsmAnd. Pour l'ouvrir,  
-Allez à : *Menu Général → Compte → Paiements et Achats*
+Allez à : *Menu Général → Compte → Paiements et achats*
 
 Ici, vous pouvez voir une liste de tous les achats associés à votre e-mail :
 - Plans gratuits et payants (tels qu'OsmAnd Start ou OsmAnd Pro).
@@ -92,7 +92,7 @@ S'il n'y a aucun achat lié à votre compte pour le moment, cette section affich
 
 Pour plus de détails sur l'utilisation de vos achats sur différentes plateformes, lisez l'article sur [l'accès multiplateforme](../purchases/cross.md).
 
-![Web Account](@site/static/img/web/web_purchases.png)
+![Compte web](@site/static/img/web/web_purchases.png)
 
 ### Synchronisation Cloud {#cloud-sync}
 
@@ -104,7 +104,7 @@ La disponibilité de la Synchronisation Cloud dépend du type de votre compte :
 - [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) – synchronise [Favoris](../web/web-favorites.md) et les affiche sur le web.
 - OsmAnd Pro – synchronise [Pistes](../web/web-tracks.md), Favoris, et [Sauvegardes](#my-data), et débloque l'accès complet au web aux données cloud.
 
-![Web Track](@site/static/img/web/web_track_start.png) ![Web Track](@site/static/img/web/web_track_pro.png)
+![Trace web](@site/static/img/web/web_track_start.png) ![Trace web](@site/static/img/web/web_track_pro.png)
 
 ### OsmAnd Cloud {#osmand-cloud}
 
@@ -114,7 +114,7 @@ L'option **Modifications** affiche une liste chronologique des fichiers stockés
 
 L'option **Corbeille** contient les fichiers qui ont été supprimés d'OsmAnd Cloud. La liste est également regroupée par mois et montre quand chaque fichier a été supprimé et depuis quel appareil. Utilisez le menu à trois points à côté d'un fichier pour *Télécharger* une copie, *Restaurer de la corbeille* (retourner le fichier à OsmAnd Cloud pour qu'il redevienne disponible dans vos données), ou *Supprimer immédiatement* pour le supprimer définitivement. Cela aide à prévenir la perte accidentelle de données tout en vous permettant de libérer de l'espace de stockage cloud lorsque vous êtes sûr qu'un fichier n'est plus nécessaire. Vous pouvez également vider tous les éléments supprimés en une fois en cliquant sur l'icône Corbeille dans l'en-tête du panneau Corbeille. Cela ouvre la boîte de dialogue **Vider la corbeille**, où vous confirmez la suppression pour supprimer définitivement tous les fichiers de la Corbeille.
 
-![Web Cloud](@site/static/img/web/web_changes.png) ![Web Cloud](@site/static/img/web/web_trash.png)
+![Cloud web](@site/static/img/web/web_changes.png) ![Cloud web](@site/static/img/web/web_trash.png)
 
 ### Applications connectées {#connected-apps}
 
@@ -122,15 +122,15 @@ La section **Applications connectées** vous permet de lier des services externe
 
 L'intégration Garmin Connect est disponible uniquement pour les utilisateurs d'[OsmAnd Pro](https://osmand.net/docs/user/purchases/). Si vous n'avez pas d'abonnement Pro actif, la sélection de l'élément Garmin Connect ouvre la page Tarification.
 
-Pour connecter votre compte Garmin Connect™, cliquez sur **Connecter**. Vous serez redirigé vers la page d'autorisation Garmin, où vous devrez vous connecter et accorder l'accès à vos données Garmin Connect™. Pendant l'autorisation, vous pouvez activer la synchronisation des activités récentes pour importer des données des 30 derniers jours. Les activités datant de plus de 30 jours ne peuvent pas être importées automatiquement.
+Pour connecter votre compte Garmin Connect™, cliquez sur **Se connecter**. Vous serez redirigé vers la page d'autorisation Garmin, où vous devrez vous connecter et accorder l'accès à vos données Garmin Connect™. Pendant l'autorisation, vous pouvez activer la synchronisation des activités récentes pour importer des données des 30 derniers jours. Les activités datant de plus de 30 jours ne peuvent pas être importées automatiquement.
 
 Après la connexion, OsmAnd crée un dossier Garmin Connect dédié dans la [section Pistes](./web-tracks.md) et commence à importer automatiquement les activités. Les nouvelles activités enregistrées dans Garmin Connect™ sont ajoutées à ce dossier sans importation manuelle. Le dossier est également synchronisé avec les applications mobiles OsmAnd lorsque [OsmAnd Cloud](../personal/osmand-cloud.md) est activé.
 
 Le menu Garmin Connect contient deux sections : **Mes données** et **Paramètres**. Dans Mes données, vous pouvez voir le nombre d'activités synchronisées, ouvrir la dernière activité récupérée ou ouvrir la page Activités Garmin Connect™ à l'aide du bouton **Voir sur Garmin Connect™**. Dans Paramètres, vous pouvez configurer les types d'activités à synchroniser à l'aide de l'option Activités à synchroniser.
 
-Les activités sont regroupées en catégories telles que Cyclisme, Marche et Course, Sports nautiques, et Sports d'hiver et autres. Les types d'activités individuels peuvent être activés ou désactivés. Par défaut, tous les types d'activités pris en charge sont sélectionnés après la connexion.
+Les activités sont regroupées en catégories telles que Cyclisme, Marche et course, Sports nautiques, et Sports d'hiver et autres. Les types d'activités individuels peuvent être activés ou désactivés. Par défaut, tous les types d'activités pris en charge sont sélectionnés après la connexion.
 
-Pour déconnecter votre compte Garmin Connect™, allez à *Paramètres → Déconnecter* et confirmez l'action. Les pistes précédemment importées restent dans le dossier Garmin Connect, mais les nouvelles activités ne seront plus synchronisées.
+Pour déconnecter votre compte Garmin Connect™, allez à *Paramètres → Se déconnecter* et confirmez l'action. Les pistes précédemment importées restent dans le dossier Garmin Connect, mais les nouvelles activités ne seront plus synchronisées.
 
 ![Garmin Connect](@site/static/img/web/garmin_connect_new.png) ![Garmin Connect](@site/static/img/web/garmin_connect_2_new.png)
 
@@ -141,28 +141,28 @@ Pour déconnecter votre compte Garmin Connect™, allez à *Paramètres → Déc
 
 Si vous ne vous souvenez pas de votre mot de passe, utilisez le lien **Je n'ai pas de mot de passe ou je l'ai oublié** dans la boîte de dialogue de connexion. Cela ouvre le panneau **Changer ou réinitialiser le mot de passe**. Saisissez l'adresse e-mail que vous avez utilisée pour créer votre compte et cliquez sur **Continuer**. Un message avec un code de vérification est envoyé à cet e-mail. Sur l'écran suivant, saisissez le code de vérification et votre nouveau mot de passe, puis sélectionnez **Continuer** pour confirmer. Lorsque le code est accepté, votre mot de passe est mis à jour et vous pouvez vous connecter à OsmAnd Web avec les nouveaux identifiants.
 
-![Web Account](@site/static/img/web/web_password.png)
+![Compte web](@site/static/img/web/web_password.png)
 
 ### Changer l'adresse e-mail {#change-email-address}
 
-Pour mettre à jour votre adresse e-mail,
+Pour mettre à jour votre adresse e-mail,  
 Allez à *Menu Général → Compte → E-mail → ⋮ → Changer l'e-mail*
 
-La boîte de dialogue Changer l'e-mail apparaît. Un code de vérification est envoyé à l'adresse e-mail actuelle. Saisissez ce code dans le champ **Code de l'ancien e-mail**, spécifiez la nouvelle adresse dans **Nouvel e-mail**, puis sélectionnez **Suivant**. Pour des raisons de sécurité, un message de confirmation est envoyé à votre nouvelle adresse e-mail vous informant que l'e-mail du compte a été mis à jour.
+La boîte de dialogue Changer l'e-mail apparaît. Un code de vérification est envoyé à l'adresse e-mail actuelle. Saisissez ce code dans le champ **Code de l'ancien e-mail**, spécifiez la nouvelle adresse dans **Nouvel e-mail**, puis sélectionnez **Suivant**. Un second code de vérification est envoyé à la nouvelle adresse e-mail. Saisissez-le dans le champ **Code du nouvel e-mail** et sélectionnez **Terminer**. Lorsque le code est accepté, le message *E-mail modifié avec succès* apparaît. Pour des raisons de sécurité, une notification est également envoyée à votre ancienne adresse e-mail.
 
-![Web Account](@site/static/img/web/web_email_new.png)
+![Compte web](@site/static/img/web/web_email_new.png)
 
 ### Déconnexion et suppression du compte {#logout-and-delete}
 
-![Web Account](@site/static/img/web/web_logout_new.png)
+![Compte web](@site/static/img/web/web_logout_new.png)
 
 Le panneau Compte OsmAnd contient des contrôles pour mettre fin à la session web actuelle et supprimer définitivement le compte.
 
 Pour vous déconnecter, ouvrez Compte OsmAnd et utilisez le bouton **Déconnexion** dans le coin supérieur droit du panneau (icône avec une flèche sortant d'un carré). La sélection de Déconnexion ferme le panneau du compte et met fin à la session active sur le site web.
 
-Pour supprimer un compte, sélectionnez **Supprimer le compte** en bas du panneau Compte OsmAnd. Une boîte de dialogue de confirmation apparaît avec le message *« Êtes-vous sûr de vouloir faire cela ? »* et une brève explication que toutes les données et détails du compte seront supprimés d'OsmAnd Cloud et que les appareils secondaires perdront l'accès aux fonctionnalités payantes. Un code de vérification est envoyé à l'adresse e-mail du compte. Saisissez le code dans le champ Code de l'e-mail et choisissez **SUPPRIMER CE COMPTE** pour compléter le processus. Cette opération est permanente et ne peut pas être annulée.
+Pour supprimer un compte, sélectionnez **Supprimer le compte** en bas du panneau Compte OsmAnd. Une boîte de dialogue de confirmation apparaît avec le message *« Êtes-vous sûr de vouloir faire cela ? »* et une brève explication que toutes les données et détails du compte seront supprimés d'OsmAnd Cloud et que les appareils secondaires perdront l'accès aux fonctionnalités payantes. Un code de vérification est envoyé à l'adresse e-mail du compte. Saisissez l'adresse e-mail de votre compte dans le champ **Votre adresse e-mail**. Si le champ est vide ou si l'adresse ne correspond pas au compte avec lequel vous êtes connecté, une erreur apparaît sous le champ et rien n'est envoyé. Saisissez le code dans le champ **Code reçu par e-mail**. Si le code est incorrect, une erreur apparaît sous ce champ. Choisissez **SUPPRIMER LE COMPTE** pour compléter le processus. Cette opération est permanente et ne peut pas être annulée.
 
-![Web Account](@site/static/img/web/web_delete.png)
+![Compte web](@site/static/img/web/web_delete.webp)
 
 
 ## Articles associés {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
+source-hash: 54463b26bbd3157bf65aa4c615c7c5d58ded9f5e2adbff7977057bafa3b8a30c
 sidebar_position: 4
 title:  Paramètres du véhicule
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Paramètres de navigation Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Paramètres de navigation Android](@site/static/img/navigation/vehicle-parameters_andr.webp)
 
 </TabItem>
 
@@ -40,7 +40,7 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_settings
 
 Pour un calcul d'itinéraire optimal dans OsmAnd, vous devez prendre en compte les paramètres suivants du véhicule :
 
-1. Définissez la [*Vitesse par défaut* ou les *Vitesses sur route*](#road-speeds), comme la [vitesse minimale et maximale](#road-speeds) du véhicule. Cela aidera l'application à déterminer le temps nécessaire pour parcourir l'itinéraire et lui permettra de choisir le meilleur trajet, en tenant compte des limitations de vitesse sur les différents tronçons de route.
+1. Définissez la [*Vitesse par défaut*](#default-speed) et la [*Plage de vitesse*](#speed-range) — la vitesse minimale et maximale du véhicule. Cela aidera l'application à déterminer le temps nécessaire pour parcourir l'itinéraire et lui permettra de choisir le meilleur trajet, en tenant compte des limitations de vitesse sur les différents tronçons de route.
 2. Spécifiez le [*type*](#fuel-used-by-motor) de carburant utilisé par le moteur. Cela permettra à l'application d'estimer les émissions de CO2.
 3. Saisissez la [*capacité de votre réservoir*](#fuel-tank-capacity) pour suivre avec précision votre niveau de carburant et votre consommation.
 4. Définissez les [*paramètres de taille et de poids*](#size-parameters) de votre véhicule, ce qui peut aider l'application à calculer l'itinéraire optimal et à éviter les obstacles sur la route en raison des restrictions.
@@ -171,6 +171,7 @@ Le paramètre **Capacité du réservoir de carburant** vous permet de suivre plu
 
 Le paramètre **Capacité du réservoir de carburant** n'est disponible que pour la navigation basée sur un véhicule. Pour les types de navigation tels que *Vélo*, *Équitation*, *À pied* et *Ski*, ce paramètre n'est pas affiché dans les Paramètres du véhicule.
 
+
 ## Paramètres de vitesse
 
 ### Vitesse par défaut {#default-speed}
@@ -179,7 +180,18 @@ Le paramètre **Capacité du réservoir de carburant** n'est disponible que pour
 
 <TabItem value="android" label="Android">
 
-![Paramètres de navigation](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+Allez à : *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,vehicle_parameters,travel_speed"/>*
+
+![Vitesse de déplacement Android](@site/static/img/navigation/navigation_settings_travel_speed_andr.webp)
+
+L'écran *Vitesse de déplacement* contient les paramètres *Vitesse par défaut*, *Plage de vitesse* et *Heure d'arrivée estimée* du profil. Les modifications sont enregistrées immédiatement. Le bouton *Réinitialiser par défaut* dans la barre supérieure rétablit les valeurs par défaut de tous les paramètres de l'écran.
+
+La **Vitesse par défaut** est la vitesse de déplacement par défaut pour ce mode de transport ([Limites de vitesse par défaut](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Pour les profils *Marche*, *Équitation* et *Cyclisme*, par petits incréments équivalents à 0,1 km/h (mph) ([Unités et formats](https://osmand.net/docs/user/personal/profiles#units--formats)), et pour les autres profils, par incréments équivalents à 1 km/h (1 mph). Elle est utilisée :
+- Pour estimer le [temps de parcours](../../widgets/nav-widgets.md#time-to-intermediate) lorsque la vitesse ne peut être déterminée à partir des routes, comme pour la [Navigation GPX](../setup/gpx-navigation.md), les [itinéraires de ski](../routing/ski-routing.md), les [itinéraires en bateau](../routing/boat-navigation.md), les [itinéraires piétons](../routing/pedestrian-routing.md) et autres profils similaires.
+- Pour déterminer quand les [annonces vocales](../guidance/voice-navigation.md) sont activées.
+- Pour déterminer l'heure d'arrivée estimée (ETA) pour les marqueurs de carte par une navigation en ligne droite si la vitesse moyenne n'est pas encore calculée.
+
+La *Vitesse par défaut* ne peut être définie que dans la [*Plage de vitesse*](#speed-range) : lorsque vous réduisez la plage, la *Vitesse par défaut* se déplace avec elle.
 
 </TabItem>
 
@@ -187,34 +199,39 @@ Le paramètre **Capacité du réservoir de carburant** n'est disponible que pour
 
 ![Paramètres de navigation](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
-</TabItem>
-
-</Tabs>  
-
 La **Vitesse par défaut** est la vitesse de déplacement par défaut pour ce mode de transport ([Limites de vitesse par défaut](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Pour les profils *Marche*, *Équitation* et *Cyclisme*, par petits incréments équivalents à 0,1 km/h (mph) ([Unités et formats](https://osmand.net/docs/user/personal/profiles#units--formats)), et pour les autres profils, par incréments équivalents à 1 km/h (1 mph). Elle est utilisée :
 - Pour estimer le [temps de parcours](../../widgets/nav-widgets.md#time-to-intermediate) lorsque la vitesse ne peut être déterminée à partir des routes, comme pour la [Navigation GPX](../setup/gpx-navigation.md), les [itinéraires de ski](../routing/ski-routing.md), les [itinéraires en bateau](../routing/boat-navigation.md), les [itinéraires piétons](../routing/pedestrian-routing.md) et autres profils similaires.
 - Pour déterminer quand les [annonces vocales](../guidance/voice-navigation.md) sont activées.
 - Pour déterminer l'heure d'arrivée estimée (ETA) pour les marqueurs de carte par une navigation en ligne droite si la vitesse moyenne n'est pas encore calculée.
 
+</TabItem>
+
+</Tabs>
 
 
-Elle est utilisée pour calculer l'heure d'arrivée et déterminer l'itinéraire optimal en fonction de la vitesse de déplacement que l'application considère comme typique. Par exemple, voiture, transport en commun, piéton, ou la vitesse que vous définissez manuellement.
+### Plage de vitesse {#speed-range}
 
+<InfoAndroidOnly />
 
-### Vitesses sur route {#road-speeds}
-
-
-![Paramètres de navigation](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-Pour certains types de navigation, la vitesse minimale et maximale autorisée peut être définie. Si elle est définie, le moteur de routage suppose que le véhicule ou le mode de transport ne se déplacera pas plus vite que la limite et pas plus lentement que la vitesse minimale.
+Pour certains types de navigation, la vitesse minimale et maximale autorisée peut être définie. Les deux valeurs sont définies avec un seul curseur à deux poignées. Si elles sont définies, le moteur de routage suppose que le véhicule ou le mode de transport ne se déplacera pas plus vite que la vitesse maximale et pas plus lentement que la vitesse minimale. La *Plage de vitesse* est utilisée à la fois pour le calcul de l'itinéraire et pour l'heure d'arrivée.
 Par exemple, cela permet de créer un itinéraire **économe en carburant** où la consommation de carburant est optimale à la **vitesse maximale** définie et le moteur trouvera un itinéraire plus court en évitant les routes plus longues mais plus rapides.
 
-- **Vitesse minimale**  
-    Ce paramètre définit la vitesse de conduite minimale pour tous les types de routes sur l'itinéraire. Il augmente la priorité pour les routes avec une vitesse recommandée inférieure à la vitesse minimale.  
-- **Vitesse maximale**  
-    Ce paramètre définit la vitesse de conduite maximale et diminue la priorité pour les routes avec une vitesse possible supérieure à la vitesse maximale.
+- **Vitesse minimale** — définit la vitesse de conduite minimale pour tous les types de routes sur l'itinéraire. Elle augmente la priorité pour les routes avec une vitesse recommandée inférieure à la vitesse minimale.
+- **Vitesse maximale** — définit la vitesse de conduite maximale et diminue la priorité pour les routes avec une vitesse possible supérieure à la vitesse maximale.
+
+La *Plage de vitesse* n'est pas disponible pour les profils avec routage en ligne droite, par exemple *Avion*.
 
 
+### Heure d'arrivée estimée {#estimated-arrival-time}
+
+<InfoAndroidOnly />
+
+Les paramètres de l'*Heure d'arrivée estimée* définissent comment OsmAnd calcule l'heure d'arrivée pendant la navigation.
+
+- **S'adapter à ma vitesse** — désactivé par défaut. Lorsque ce paramètre est désactivé, l'heure d'arrivée est calculée à partir de la vitesse prévue sur chaque route de l'itinéraire. Lorsqu'il est activé, OsmAnd divise la distance restante par votre vitesse moyenne sur l'*Intervalle* sélectionné. Seul le déplacement pendant la navigation est pris en compte, les arrêts sont ignorés. Juste après le début de la navigation, l'heure d'arrivée combine l'estimation de l'itinéraire avec votre vitesse moyenne jusqu'à ce que vous vous déplaciez depuis la durée complète de l'*Intervalle*.
+- **Intervalle** — la période sur laquelle votre vitesse moyenne est mesurée, de 15 secondes à 60 minutes. La valeur par défaut est de 15 minutes. Le paramètre est disponible lorsque *S'adapter à ma vitesse* est activé.
+
+L'heure d'arrivée adaptée est affichée dans les widgets [*Temps jusqu'à la destination*](../../widgets/nav-widgets.md#time-to-destination) et [*Temps jusqu'à l'intermédiaire*](../../widgets/nav-widgets.md#time-to-intermediate), dans la notification de navigation et dans [Android Auto](../auto-car.md). Le temps jusqu'au prochain virage et les instructions vocales ne sont pas affectés.
 
 
 ## Articles connexes {#related-articles}

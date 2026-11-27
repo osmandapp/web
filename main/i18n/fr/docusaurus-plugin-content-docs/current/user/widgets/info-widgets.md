@@ -1,5 +1,5 @@
 ---
-source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
+source-hash: fb2f9a2ac137e8c0c2fc36ec770f090860ed927919d72b4d6bd7d058e53126af
 sidebar_position: 3
 title:  Widgets d'information
 ---
@@ -157,7 +157,7 @@ Le widget **Vitesse moyenne** calcule et affiche votre vitesse moyenne sur un in
    - La vitesse moyenne est calculée sur la base de l'intervalle de temps sélectionné, qui peut aller de **15 secondes à 60 minutes**.  
 
    - Le calcul est basé sur les données GPS en utilisant la formule :  
-   `Vitesse moyenne = MOYENNE(LOCALISATION_GPS.vitesse)`.
+   `Average Speed = AVERAGE(GPS_LOCATION.speed)`.
 
 3. ***Prendre en compte les arrêts.***
 
@@ -243,7 +243,7 @@ Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse*
 - Valeur **≤ 0.1** :  
   - "0.05" est affiché comme "0".
 - Valeur **> 0.1 et < 100** :  
-  - par exemple, "50.7643" is affiché comme "50.8:1".
+  - par exemple, "50.7643" est affiché comme "50.8:1".
 - Valeur **> 100 :**  
   - "102.35" est affiché comme "102:1."
 
@@ -257,7 +257,7 @@ Les widgets [simples](../widgets/configure-screen.md#widget-panels) de *Finesse*
 - **Finesse vers la cible** indique la finesse exacte requise pour atteindre le point cible.
 - **Élévation de la cible** indique l'élévation du point cible. Le [marqueur de carte](../personal/markers.md) doit être utilisé comme point cible.
 
-Pour basculer entre ces modes, appuyez directement sur le widget. L'option de basculement n'est pas disponible dans le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu). 
+Pour basculer entre ces modes, appuyez directement sur le widget.
 
 | | |
 |:------------|:------------|
@@ -359,12 +359,17 @@ OsmAnd propose deux types de widgets de coordonnées :
 
 Les widgets de coordonnées sont affichés en haut de l'écran. Les icônes avec un fond vert indiquent la latitude et la longitude du point au centre de la partie visible de la carte, et celles avec un fond bleu indiquent les coordonnées de votre position actuelle. Des informations sur les *formats de coordonnées* pris en charge se trouvent dans l'*[article sur la recherche de coordonnées](../search/search-coordinates.md#coordinate-format)*.
 
+Chaque widget de coordonnées possède son propre paramètre *Format*. Par défaut, le widget affiche les coordonnées dans le format principal de la [liste des formats de coordonnées](../search/search-coordinates.md#customize-coordinate-format) du profil. Pour choisir un autre format, appuyez longuement sur le widget et sélectionnez *Paramètres* dans le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu). Deux widgets de coordonnées peuvent afficher les coordonnées dans des formats différents.
+
+Le format sélectionné est enregistré dans les paramètres du widget : il est copié avec les paramètres du profil, et la réinitialisation des paramètres du widget le ramène au format principal.
+
 | | |
 |:------------|:------------|
 | Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | Par appui | Copie les coordonnées dans le presse-papiers. |
-| Format | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) ou <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| Format | **Android :** *[Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) → <Translate android="true" ids="shared_string_settings,navigate_point_format"/>* |
+|   | **iOS :** *[Menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) → <Translate ios="true" ids="shared_string_settings,coords_format"/>* |
 
 
 ## Infos GPS   {#gps-info}

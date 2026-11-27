@@ -67,7 +67,7 @@ La vue **Visible sur la carte** répertorie toutes les traces actuellement affic
 
 Les traces visibles sur la carte sont surlignées en bleu, tandis que les traces actuellement masquées apparaissent en gris. Un interrupteur à côté de chaque trace permet de l'afficher ou de la masquer rapidement. Le bouton **Tout masquer** désactive toutes les traces visibles en une seule fois.
 
-Sous la liste principale, la section **Récemment visibles** affiche les traces qui ont été affichées précédemment sur la carte. Cela permet de réactiver facilement une trace sans avoir à la rechercher à nouveau dans vos dossiers ou dans OsmAnd Cloud.
+Sous la liste principale, la section **Récemment visible** affiche les traces qui ont été affichées précédemment sur la carte. Cela permet de réactiver facilement une trace sans avoir à la rechercher à nouveau dans vos dossiers ou dans OsmAnd Cloud.
 
 ![Visible sur la carte](@site/static/img/web/visible_new.png) ![Visible sur la carte](@site/static/img/web/visible_new_2.png)
 
@@ -78,8 +78,8 @@ Sous la liste principale, la section **Récemment visibles** affiche les traces 
 
 Cliquez sur le bouton à trois points (⋮) pour ouvrir le menu *Dossier de traces*. Vous pouvez alors :
 
- - Télécharger au format OSF.
- - Télécharger comme collection OBF. Exportez le dossier au format binaire OsmAnd, en choisissant soit un [fichier OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/), soit un [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
+ - Télécharger en tant que OSF.
+ - Télécharger en tant que collection OBF. Exportez le dossier au format binaire OsmAnd, en choisissant soit un [fichier OBF](https://osmand.net/docs/technical/osmand-file-formats/osmand-obf/), soit un [Travel OBF](https://osmand.net/blog/routes#generated-travel-routes).
       -  **Fichier OBF**. Vous pouvez télécharger une carte OBF hors ligne et l'ouvrir avec OsmAnd sur votre appareil. Elle convient pour afficher un grand nombre de traces sur la carte.
       -  **Travel OBF**. Vous pouvez également importer une carte de traces sous forme de guide de voyage (Travel), ce qui vous permet de sélectionner individuellement des traces sur la carte et de les utiliser comme de simples fichiers GPX. Un guide de voyage prend également en charge des fonctions telles que l'affichage des traces sous forme de points, le filtrage des traces par type d'activité et le filtrage des points de cheminement.
  - Renommer. Ouvre une boîte de dialogue où vous pouvez saisir un nouveau nom pour le dossier sélectionné. La modification est synchronisée avec OsmAnd Cloud et apparaîtra sur tous les appareils connectés.
@@ -100,7 +100,7 @@ Les traces ne sont affichées que si la configuration du Dossier intelligent est
 
 La synchronisation des Dossiers intelligents peut varier selon la plateforme et la configuration de la synchronisation. Pour des résultats les plus cohérents possible, assurez-vous que la synchronisation du Cloud est activée et à jour sur tous les appareils.
 
-Le menu à trois points (⋮) propose des actions supplémentaires pour le Dossier intelligent. Vous pouvez *Télécharger au format OSF*, *Télécharger comme collection OBF*, *Renommer* ou *Supprimer* le dossier.
+Le menu à trois points (⋮) propose des actions supplémentaires pour le Dossier intelligent. Vous pouvez *Télécharger en tant que OSF*, *Télécharger en tant que collection OBF*, *Renommer* ou *Supprimer* le dossier.
 
 ![Dossiers intelligents](@site/static/img/web/smart_folder_new.png) ![Dossiers intelligents](@site/static/img/web/smart_folder_menu_new.png)
 

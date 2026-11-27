@@ -1,5 +1,5 @@
 ---
-source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
+source-hash: 1dedf30fcafbdd4bf9df2e543bf8db14623c9186c879536ea1c090f7aff4544b
 sidebar_position: 16
 title: Topographie
 ---
@@ -155,7 +155,7 @@ Les lignes de niveau sont une [fonctionnalité payante](../purchases/index.md).
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Menu des lignes de niveau Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Menu des lignes de niveau Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.webp)
 
 </TabItem>
 
@@ -163,7 +163,7 @@ Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm
 
 Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Lignes de niveau*
 
-![Menu des lignes de niveau iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Menu des lignes de niveau iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.webp)
 
 </TabItem>
 
@@ -185,6 +185,14 @@ Lors de l'utilisation du [Moteur de rendu de la carte](../personal/global-settin
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Sélectionner la densité des lignes de niveau (Faible, Moyenne, Élevée). Des densités plus élevées peuvent affecter la vitesse de chargement.
 - *<Translate android="true" ids="maps_and_resources"/>*. Afficher et télécharger les cartes de lignes de niveau pour la région actuelle et les zones voisines.
 
+**Paramètres des étiquettes** :
+
+- *<Translate android="true" ids="rendering_attr_contourLabelDirection_name"/>*. Choisir l'orientation des chiffres d'altitude sur les lignes de niveau :
+    - *<Translate android="true" ids="rendering_value_upright_name"/>*. Les chiffres tournent avec la carte afin de rester lisibles à l'écran.
+    - *<Translate android="true" ids="rendering_value_uphill_name"/>*. Le haut de chaque chiffre est orienté vers le terrain le plus élevé, comme sur les cartes topographiques papier. Les chiffres conservent cette direction lorsque la carte pivote, ils peuvent donc apparaître à l'envers à l'écran.
+
+Les petits traits sur les lignes de niveau pointent vers le bas de la pente.
+
 
 ## Terrain {#terrain}
 
@@ -198,7 +206,7 @@ Le Terrain est une [fonctionnalité payante](../purchases/index.md).
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Menu Terrain Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Menu Terrain Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Menu Terrain Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.webp)  ![Menu Terrain Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.webp)
 
 </TabItem>
 
@@ -212,13 +220,14 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plu
 
 </Tabs>  
 
-L'option **Terrain** active et permet de personnaliser trois fonctionnalités telles que l' *Estompage*, la *Pente* et l' *Altitude*. Sur iOS, le menu Visualisation inclut également *Ombres de terrain*, un mode d'ombrage du terrain en temps réel basé sur le Relief 3D.  
+L'option **Terrain** active et permet de personnaliser trois fonctionnalités telles que l' *Estompage*, la *Pente* et l' *Altitude*. Sur iOS, le menu Visualisation inclut également les [*Ombres de terrain*](#terrain-shadows), un mode d'ombrage du terrain en temps réel basé sur le Relief 3D.  
 Fonctionnalités spécifiques :  
 
-- Une seule option peut être activée à la fois, soit l'Estompage, la Pente, l'Altitude ou les Ombres de terrain.
+- Une seule option peut être activée à la fois, soit l'Estompage, la Pente, l'Altitude ou les Ombres de terrain (cette dernière n'est disponible que sur iOS).
 - Si vous ne voyez aucun changement après avoir téléchargé et activé la carte correspondante, il est recommandé de redémarrer l'application.
+- Sur Android, l'écran Terrain affiche aussi les lignes [Relief 3D](#3d-relief) et [Bâtiments 3D](#3d-buildings), qui ouvrent leurs paramètres. Ces lignes restent visibles lorsque l'interrupteur Terrain est désactivé.
 
-Le menu **Terrain** inclut la sélection du [jeu de couleurs](#default-color-scheme) (**visualisation** sur iOS) avec l'option de le [modifier](#modify-color-scheme) (pour les [abonnés Pro](../../user/purchases/index.md)), la possibilité de changer la transparence de la couche sur la carte ([visibilité](#visibility)), et de sélectionner le [niveau de zoom](#zoom-levels) pour son affichage, des informations sur la taille des [données en cache](#cache-size), et une liste des [cartes](../../user/personal/maps-resources.md) nécessaires pour afficher la couche.
+Le menu **Terrain** inclut la sélection de la [visualisation](#default-color-scheme) avec l'option de le [modifier](#modify-color-scheme) (pour les [abonnés Pro](../../user/purchases/index.md)), la possibilité de changer la transparence de la couche sur la carte ([visibilité](#visibility)), et de sélectionner le [niveau de zoom](#zoom-levels) pour son affichage, des informations sur la taille des [données en cache](#cache-size), et une liste des [cartes](../../user/personal/maps-resources.md) nécessaires pour afficher la couche.
 
 
 ## Couches d'estompage, de pente et d'altitude {#hillshade-slope-and-altitude-layers}
@@ -267,14 +276,14 @@ Les Ombres de terrain nécessitent le Relief 3D et l'activent automatiquement lo
 ### Modifier le jeu de couleurs {#modify-color-scheme}
 
 :::info Fonctionnalité Pro
-*[Modifier le jeu de couleurs](../../user/personal/color-palette-schemes.md#terrain)* est une fonctionnalité payante d'**OsmAnd Pro** <ProFeature />.
+*[Modifier le jeu de couleurs](../../user/personal/color-palette-schemes.md#terrain)* est une fonctionnalité payante d'[**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.webp)   ![Modifier le jeu de couleurs](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
@@ -309,7 +318,7 @@ Pour une personnalisation avancée des palettes à l'aide de fichiers de palette
 | ------ | ------- |
 | ![Visibilité ](../../../blog/2023-08-28-terrain/img/31.png) | ![Visibilité ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-La fonction *Visibilité* est utilisée pour ajuster la transparence des ombres pour l'Estompage et des couleurs utilisées pour représenter l'angle dans le paramètre Pente. Pour les Ombres de terrain, Visibilité contrôle l'intensité de l'effet d'ombrage du terrain.
+La fonction *Visibilité* est utilisée pour ajuster la transparence des ombres pour l'Estompage et des couleurs utilisées pour représenter l'angle dans le paramètre Pente. Pour les [Ombres de terrain](#terrain-shadows) sur iOS, Visibilité contrôle l'intensité de l'effet d'ombrage du terrain.
 
 ### Niveaux de zoom {#zoom-levels}
 
@@ -317,7 +326,7 @@ La fonction *Visibilité* est utilisée pour ajuster la transparence des ombres 
 
 La fonction *Niveaux d'échelle* vous permet de définir les valeurs minimales et maximales des niveaux de zoom de la carte, allant de 4 à 19, auxquels les couches de carte Estompage ou Pente seront affichées.
 
-Les Niveaux de zoom ne sont pas disponibles pour les Ombres de terrain car cette visualisation est rendue dynamiquement et ne dépend pas des plages de visibilité des couches raster.
+Les Niveaux de zoom ne sont pas disponibles pour les Ombres de terrain sur iOS car cette visualisation est rendue dynamiquement et ne dépend pas des plages de visibilité des couches raster.
 
 ### Taille du cache {#cache-size}
 
@@ -358,7 +367,7 @@ Les principaux paramètres pour *Afficher ou Masquer les types de carte* se trou
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![Bâtiments 3D](@site/static/img/map/3d_buildings_4_new.png) ![Bâtiments 3D](@site/static/img/map/3d_buildings_3_new.png)
+![Bâtiments 3D](@site/static/img/map/3d_buildings_4_new.webp) ![Bâtiments 3D](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -387,7 +396,7 @@ Utilisez l'interrupteur principal pour activer ou désactiver le rendu 3D des b�
 Sur Android, cette option n'est disponible que lorsque le plugin Topographie est activé.  
 Aller à : *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-Les paramètres des bâtiments 3D sont divisés en deux groupes : **Apparence** et **Performance**.
+Les paramètres des bâtiments 3D sont divisés en deux groupes, **Apparence** et **Performance**, suivis d'un paramètre distinct [**Position du soleil**](#sun-position) (*Android uniquement*).
 
 ### Apparence {#appearance}
 
@@ -425,7 +434,7 @@ Sur les écrans d'aperçu (Couleur / Visibilité), vous pouvez utiliser Réiniti
 
 ### Performance {#performance}
 
-Les contrôles **<Translate android="true" ids="performance"/>** déterminent la façon dont les bâtiments 3D sont rendus. Ils incluent deux paramètres : Niveau de détail et Distance de vue.
+Les contrôles **<Translate android="true" ids="performance"/>** déterminent la façon dont les bâtiments 3D sont rendus. Ils incluent trois paramètres : Niveau de détail, Distance de vue et Ombres.
 
 **<Translate android="true" ids="level_of_details"/>** détermine la complexité de la géométrie des bâtiments 3D :
 - Faible (par défaut) — géométrie plus simple.
@@ -435,23 +444,32 @@ Les contrôles **<Translate android="true" ids="performance"/>** déterminent la
 - Proche (par défaut) — rend les bâtiments plus près de vous.
 - Lointaine — rend les bâtiments à une distance plus longue.
 
-Les deux options de performance utilisent un interrupteur à deux positions directement dans l'écran des paramètres des bâtiments 3D.
+**<Translate android="true" ids="cast_shadows"/>** (*Android uniquement*) contrôle les ombres du soleil sur la carte :
+- Désactivé (par défaut) — les bâtiments sont dessinés sans ombres.
+- Activé — les bâtiments projettent des ombres sur le sol et sur les murs des bâtiments voisins, dans la direction définie dans [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). Lorsque le [Relief 3D](#3d-relief) est activé, le terrain projette également des ombres. L'intensité des ombres des bâtiments dépend de la [Visibilité](#appearance) des bâtiments 3D.
+
+Les trois options de performance utilisent un interrupteur à deux positions directement dans l'écran des paramètres des bâtiments 3D. Les ombres sont définies séparément pour chaque profil et ne sont disponibles qu'avec le moteur de rendu [Version 2 (OpenGL)](#rendering-engine-android).
 
 **Note :** Utiliser *Détail élevé* et *Distance de vue lointaine* améliore l'apparence visuelle mais peut impacter les performances et augmenter la consommation de batterie.
 
 
-<!--
-### Sun {#sun}
+### Position du soleil {#sun-position}
 
-![3D Buildings](@site/static/img/map/sun_setting.png)
+<InfoAndroidOnly />
 
-The **Sun** setting controls the lighting direction used for rendering 3D buildings. It affects how light and shadows appear on buildings in the 3D view. When you tap Sun, OsmAnd opens a preview screen where you can adjust the lighting using two sliders:
+![Soleil](@site/static/img/map/sun_setting.webp) ![Ombres du soleil](@site/static/img/map/sun_shadows.webp)
 
-- Azimuth — controls the horizontal direction of the light source (the compass direction of the sun).
-- Altitude — controls the height of the sun above the horizon.
+Le paramètre **<Translate android="true" ids="map_widget_sun_position"/>** définit la direction de la lumière pour les ombres des bâtiments et pour les ombres de terrain du Relief 3D. Vous pouvez l'ouvrir depuis l'écran des bâtiments 3D et depuis l'écran du Relief 3D. La ligne affiche la direction actuelle du soleil ; en appuyant dessus, vous ouvrez un panneau d'aperçu avec trois modes :
 
-Changing these parameters modifies how shadows fall on buildings and can improve the visual perception of building shapes in 3D view. Tap Apply to confirm the selected lighting parameters.
--->
+- **<Translate android="true" ids="sun_light_live"/>** — utilise la position réelle du soleil au-dessus du centre de la carte à l'heure actuelle. L'azimut et l'altitude sont affichés à titre indicatif.
+- **<Translate android="true" ids="shared_string_date"/>** — utilise la position réelle du soleil au-dessus du centre de la carte à la date et à l'heure que vous sélectionnez. L'heure est définie dans le fuseau horaire de votre appareil.
+- **<Translate android="true" ids="shared_string_manual"/>** — vous permet de définir la direction de la lumière avec deux curseurs :
+    - *<Translate android="true" ids="shared_string_azimuth"/>* — contrôle la direction horizontale de la source de lumière (la direction du soleil sur la boussole).
+    - *<Translate android="true" ids="altitude"/>* — contrôle la hauteur du soleil au-dessus de l'horizon.
+
+Les changements apparaissent immédiatement sur la carte. Appuyez sur Appliquer pour confirmer la position du soleil sélectionnée. Réinitialiser par défaut passe en mode Manuel avec un azimut de 315° et une altitude de 45°.
+
+**Note :** La position du soleil n'est disponible qu'avec le moteur de rendu [Version 2 (OpenGL)](#rendering-engine-android).
 
 
 ## Relief 3D {#3d-relief}
@@ -466,7 +484,7 @@ Le Relief 3D est une fonctionnalité payante d'[**OsmAnd Pro**](../purchases/ind
 
 Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![Relief 3D](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![Relief 3D](@site/static/img/map/configure_map_topography_andr_new.webp) ![Relief 3D](@site/static/img/plugins/contour-lines/3drelief_screen_andr.webp)
 
 </TabItem>
 
@@ -481,6 +499,8 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plu
 </Tabs>  
 
 La fonction Relief 3D produit un relief surélevé et fournit une représentation tridimensionnelle du paysage. Le Relief 3D fonctionne hors ligne et peut être utilisé avec les [cartes vectorielles OsmAnd](../map/vector-maps.md) ou n'importe quelles [cartes raster](../map/raster-maps.md#layers) comme [Source de carte](../map/raster-maps.md#main) ou comme [Sous-couche/Sur-couche](../map/raster-maps.md#overlay).
+
+Sur Android, le Relief 3D dispose de son propre écran de paramètres avec l'interrupteur principal, [<Translate android="true" ids="vertical_exaggeration"/>](#vertical-exaggeration), [<Translate android="true" ids="terrain_shadows"/>](#terrain-shadows-android) et [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). L'élément Relief 3D du menu Configurer la carte indique si le Relief 3D est activé et l'intensité actuelle des ombres de terrain. Vous pouvez également ouvrir le Relief 3D depuis l'écran Terrain.
 
 ***Comment afficher le Relief 3D sur la carte.***
 
@@ -536,6 +556,18 @@ Aller à : *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plu
 
 L'*Exagération verticale* est un coefficient spécial pour le *Relief 3D*. Vous pouvez changer l'échelle (*Exagération verticale*) de x1 à x3. Cette fonction vous permet de visualiser des contours de terrain plus lisses avec des détails accrus.
 
+### Ombres de terrain (Android) {#terrain-shadows-android}
+
+Aller à : *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d,terrain_shadows"/>*
+
+![Ombres de terrain Android](@site/static/img/plugins/contour-lines/terrain_shadows_andr.webp)
+
+Les **<Translate android="true" ids="terrain_shadows"/>** ombrent le relief 3D en temps réel, en fonction de la géométrie du terrain et de la [position du soleil](#sun-position). Elles sont dessinées dès que le Relief 3D est activé.
+
+Appuyez sur *Ombres de terrain* pour ouvrir un panneau d'aperçu, réglez l'intensité de 10 % à 100 % (40 % par défaut), puis appuyez sur Appliquer. L'intensité est définie séparément pour chaque profil.
+
+**Note :** Lorsque Terrain affiche l'Estompage, les ombres de terrain sont désactivées, car l'Estompage ombre déjà le relief.
+
 
 ### Estompage et Relief 3D {#hillshade-and-3d-relief}
 
@@ -546,7 +578,7 @@ L'*Exagération verticale* est un coefficient spécial pour le *Relief 3D*. Vous
 **L'estompage** est un type de carte qui affiche le terrain en utilisant des ombres, créant une représentation visuelle de la pente et de la forme de la surface terrestre.  
 **Le Relief 3D** est une fonctionnalité qui ajoute des effets tridimensionnels à la carte.  
 
-Si vous **désactivez** l'*Estompage* et **activez** le *Relief 3D*, les ombres du relief seront toujours visibles car l'*Estompage* et le *Relief 3D* sont deux manières différentes de visualiser une carte. L'*Estompage* crée des ombres basées sur le terrain et ajoute ces ombres à la carte, tandis que le *Relief 3D* modélise des éléments 3D pour montrer la profondeur et la forme du terrain, et les ombres font partie de la visualisation. Ces fonctionnalités peuvent fonctionner en parallèle, et la désactivation de l'*Estompage* n'affecte pas la manière dont les effets 3D sont affichés.  
+Si vous **désactivez** l'*Estompage* et **activez** le *Relief 3D*, les ombres du relief seront toujours visibles car l'*Estompage* et le *Relief 3D* sont deux manières différentes de visualiser une carte. L'*Estompage* crée des ombres basées sur le terrain et ajoute ces ombres à la carte, tandis que le *Relief 3D* modélise des éléments 3D pour montrer la profondeur et la forme du terrain, et les ombres font partie de la visualisation. Ces fonctionnalités peuvent fonctionner en parallèle, et la désactivation de l'*Estompage* n'affecte pas la manière dont les effets 3D sont affichés. Sur Android, ces ombres de relief sont les [ombres de terrain](#terrain-shadows-android), et elles sont désactivées lorsque Terrain affiche l'Estompage.  
 
 Lorsque l'**Estompage** est **activé**, une image avec des ombres de relief apparaît plus détaillée, plus sombre et plus étagée qu'une image de *Relief 3D*. L'explication est que l'*Estompage* accentue les gradients et les contrastes du terrain, créant une image plus nette et plus détaillée. La fonction *Relief 3D* donne à la carte une apparence plus fluide et lissée, adoucissant le terrain et réduisant potentiellement la visibilité de certains détails plus fins.
 

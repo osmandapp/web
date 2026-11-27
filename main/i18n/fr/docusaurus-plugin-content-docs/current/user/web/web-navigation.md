@@ -2,7 +2,7 @@
 source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
 sidebar_label:  Navigation
-title: Navigation on the Web
+title: Navigation sur le Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -68,22 +68,22 @@ Les sections typiques incluent :
 ![Navigation Web](@site/static/img/web/navigation_settings.png) ![Navigation Web](@site/static/img/web/navigation_settings_2.png)
 
 
-## Attacher une piste {#attaching-track}
+## Attacher une trace {#attaching-track}
 
 Le bloc **[Attacher aux routes](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** vous permet d'utiliser une piste GPX existante comme base pour la navigation. OsmAnd Web fait correspondre la piste aux routes proches pour fournir des instructions au virage par virage.
 
-Lorsque vous cliquez sur Sélectionner une piste, le navigateur ouvre un sélecteur de fichiers où vous pouvez choisir un fichier .gpx depuis votre ordinateur. Après avoir sélectionné une piste :
+Lorsque vous cliquez sur Sélectionner la trace, le navigateur ouvre un sélecteur de fichiers où vous pouvez choisir un fichier .gpx depuis votre ordinateur. Après avoir sélectionné une piste :
 - La piste est affichée sur la carte et utilisée pour calculer l'itinéraire.
 - Le résumé de l'itinéraire (distance et temps) est affiché dans le panneau Itinéraire.
-- Le fichier sélectionné apparaît sous Piste sélectionnée (avec le nom de fichier de la piste).
-- Vous pouvez supprimer la piste attachée en utilisant le bouton moins (–) à côté de Piste sélectionnée.
+- Le fichier sélectionné apparaît sous Trace sélectionnée (avec le nom de fichier de la piste).
+- Vous pouvez supprimer la piste attachée en utilisant le bouton moins (–) à côté de Trace sélectionnée.
 
 
 ## Détails de l'itinéraire {#route-details}
 
 ![Navigation Web](@site/static/img/web/navigation_overview.png) ![Navigation Web](@site/static/img/web/navigation_turns_new.png)
 
-Lorsque un itinéraire est calculé, le panneau affiche un résumé de base (distance, temps, montée/descente) et un bouton **Détails**. Utilisez Détails pour ouvrir la vue de l'itinéraire avec plusieurs onglets. Les onglets principaux incluent Aperçu, Piste et Points. L'onglet Virages est disponible via la flèche (›) dans la barre d'onglets.
+Lorsqu'un itinéraire est calculé, le panneau affiche un résumé de base (distance, temps, montée/descente) et un bouton **Détails**. Utilisez Détails pour ouvrir la vue de l'itinéraire avec plusieurs onglets. Les onglets principaux incluent Aperçu, Piste et Points. L'onglet Virages est disponible via la flèche (›) dans la barre d'onglets.
 
 Aperçu résume l'itinéraire et les données d'altitude :
 - **Points** — le nombre de points d'itinéraire utilisés pour construire l'itinéraire.
@@ -109,16 +109,16 @@ Vous pouvez affiner l'itinéraire directement sur la carte en glissant les marqu
 ### Télécharger et enregistrer {#download-and-save}
 
 Utilisez *Télécharger* pour exporter l'itinéraire sous forme de piste. La boîte de dialogue de téléchargement propose deux options :
-**Données complètes de la piste** — inclut toutes les données, y compris les instructions de navigation.
-**[Piste simplifiée](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — une version plus légère plus adaptée à l'utilisation avec d'autres applications.
+**Données de trace complètes** — inclut toutes les données, y compris les instructions de navigation.
+**[Trace simplifiée](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — une version plus légère plus adaptée à l'utilisation avec d'autres applications.
 
-Si vous prévoyez d'ouvrir le GPX dans des applications tierces, choisissez Piste simplifiée pour une meilleure compatibilité. Cela aide à éviter les cas où une autre application peut afficher un segment incorrect après l'importation.
+Si vous prévoyez d'ouvrir le GPX dans des applications tierces, choisissez Trace simplifiée pour une meilleure compatibilité. Cela aide à éviter les cas où une autre application peut afficher un segment incorrect après l'importation.
 
 Quelle est la différence :
-- Les données complètes de la piste peuvent inclure des informations d'itinéraire/navigation en plus de la géométrie de la piste (utile si vous souhaitez conserver les instructions de navigation ou rééditer l'itinéraire dans OsmAnd).
-- La piste simplifiée exporte un GPX plus propre destiné à d'autres applications en supprimant les données d'itinéraire/navigation et en ne laissant que la forme de la piste. Les points de passage sont conservés lors de l'exportation d'une piste simplifiée.
+- Les données de trace complètes peuvent inclure des informations d'itinéraire/navigation en plus de la géométrie de la piste (utile si vous souhaitez conserver les instructions de navigation ou rééditer l'itinéraire dans OsmAnd).
+- La trace simplifiée exporte un GPX plus propre destiné à d'autres applications en supprimant les données d'itinéraire/navigation et en ne laissant que la forme de la piste. Les points de passage sont conservés lors de l'exportation d'une trace simplifiée.
 
-Vous pouvez enregistrer l'itinéraire sous forme de piste en utilisant *Enregistrer dans le Cloud / Téléverser vers OsmAnd Cloud*. Cela ouvre une boîte de dialogue où vous pouvez confirmer l'enregistrement dans les pistes cloud, modifier le Nom, choisir optionnellement un Dossier, puis Enregistrer ou Annuler. Si vous n'êtes pas connecté, *Enregistrer dans le Cloud / Téléverser vers OsmAnd Cloud* ouvre la page Tarification.
+Vous pouvez enregistrer l'itinéraire sous forme de piste en utilisant *Enregistrer dans le cloud / Téléverser vers OsmAnd Cloud*. Cela ouvre une boîte de dialogue où vous pouvez confirmer l'enregistrement dans les pistes cloud, modifier le Nom, choisir optionnellement un Dossier, puis Enregistrer ou Annuler. Si vous n'êtes pas connecté, *Enregistrer dans le cloud / Téléverser vers OsmAnd Cloud* ouvre la page Tarification.
 
 ![Navigation Web](@site/static/img/web/download_options.png)
 

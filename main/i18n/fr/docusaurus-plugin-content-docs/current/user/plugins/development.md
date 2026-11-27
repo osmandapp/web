@@ -1,5 +1,5 @@
 ---
-source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
+source-hash: 205f05e0d42fa5f92caada9c958cf5598bdde7fa74f9cdb424367495ffe5d104
 sidebar_position: 11
 title:  Développement OsmAnd
 ---
@@ -34,7 +34,7 @@ Pour activer les fonctionnalités spéciales pour les développeurs et les teste
 
 ## Paramètres du plugin {#plugin-settings}
 
-:::info info  
+:::info Information
 Les paramètres du plugin de développement OsmAnd sont globaux et s'appliquent à tous les profils.  
 :::  
 
@@ -68,7 +68,7 @@ Utilisez l'un des chemins suivants pour ouvrir les paramètres du plugin :
 ### Dépannage {#troubleshooting}
 
 - **Simuler votre position** (*Android* / *iOS*). [Simuler](#gpx-track-simulation) la position et le mouvement à l'aide d'une trace GPX.
-- **Mode d'économie de batterie** (*Android* / *iOS*). Ce paramètre réduit [le taux de rafraîchissement de l'écran](#map-rendering-fps-widget) de 20 images par seconde pour aider à économiser la batterie lors de l'utilisation des applications.
+- **Mode d'économie de batterie** (*Android* / *iOS*). Ce paramètre réduit [le taux de rafraîchissement de l'écran](#map-rendering-fps-widget) de 20 images par seconde pour aider à économiser la batterie lors de l'utilisation des applications. Il désactive également le fondu progressif à l'apparition et à la disparition des icônes et des étiquettes de la carte.
 - **Utiliser des icônes de position 3D** (*iOS*). Permet de sélectionner une icône 3D pour l'[icône Ma position](../personal/profiles.md#my-location-appearance).
 - **Simuler les données OBD** (*Android* / *iOS*). Permet de simuler l'utilisation du [scanner OBD](./vehicle-metrics.md).
 - **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Affiche les performances de rendu et de navigation.

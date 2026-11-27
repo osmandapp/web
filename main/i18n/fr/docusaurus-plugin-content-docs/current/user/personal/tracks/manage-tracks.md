@@ -1,5 +1,5 @@
 ---
-source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
+source-hash: 0a04e7c5b81da2f4a24b1d70406494efb02bf28fb32a1d087fb5772ae29bca04
 sidebar_position: 2
 title:  Gérer les traces
 ---
@@ -74,6 +74,10 @@ Allez à : *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 ![Mes lieux avec des traces sur Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
+Toutes les traces jamais enregistrées, créées ou importées sont automatiquement affichées dans le dossier [Mes lieux](../../personal/myplaces.md) dans l'onglet *Traces*. Elles sont organisées par dossier ou affichées dans une liste en dessous.
+
+Chaque trace de la liste affiche le nom de son dossier parent sur la deuxième ligne, séparé par `|` (par exemple, `Hiking | Tracks`), ce qui facilite l'identification de l'emplacement de stockage d'une trace. Cela s'applique dans la [Recherche](#search), les [Dossiers intelligents](../../personal/tracks/smart-folder.md) et [Configurer la carte → Traces](../../map/tracks/index.md#configure-map).
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -82,13 +86,15 @@ Allez à : *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 ![Mes lieux avec des traces sur iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
+Toutes les traces jamais enregistrées, créées ou importées sont automatiquement affichées dans le dossier [Mes lieux](../../personal/myplaces.md) dans l'onglet *Traces*. Elles sont organisées par dossier ou affichées dans une liste en dessous.
+
+Chaque trace de la liste affiche le nom de son dossier parent sur la deuxième ligne, séparé par `|` (par exemple, `Hiking | Tracks`), ce qui facilite l'identification de l'emplacement de stockage d'une trace. Cela s'applique dans la [Recherche](#search), les [Dossiers intelligents](../../personal/tracks/smart-folder.md) et [Configurer la carte → Traces](../../map/tracks/index.md#configure-map).
+
+**Remarque :** pendant que OsmAnd calcule les statistiques des traces, par exemple après l'ajout de nombreuses traces à la fois, la ligne *<Translate ios="true" ids="tracks_stats_are_being_calculated"/>* avec un anneau de progression s'affiche en haut de la liste. Toutes les traces sont listées immédiatement, et leurs statistiques apparaissent au fur et à mesure du calcul. Vous pouvez ouvrir, renommer, déplacer, partager ou supprimer n'importe quelle trace pendant le calcul. La ligne disparaît lorsque toutes les statistiques sont calculées.
+
 </TabItem>
 
 </Tabs>
-
-Toutes les traces jamais enregistrées, créées ou importées sont automatiquement affichées dans le dossier [Mes lieux](../../personal/myplaces.md) dans l'onglet *Traces*. Elles sont organisées par dossier ou affichées dans une liste en dessous.
-
-Chaque trace de la liste affiche le nom de son dossier parent sur la deuxième ligne, séparé par `|` (par exemple, `Randonnée | Traces`), ce qui facilite l'identification de l'emplacement de stockage d'une trace. Cela s'applique dans la [Recherche](#search), les [Dossiers intelligents](../../personal/tracks/smart-folder.md) et [Configurer la carte → Traces](../../map/tracks/index.md#configure-map).
 
 
 ### Menu de la trace {#track-menu}
@@ -217,13 +223,13 @@ Une fois votre choix fait, les étapes suivantes sont proposées :
 
 <TabItem value="android" label="Android">
 
-![Fonction de tri des traces dans Mes lieux sur Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![Fonction de tri des traces dans Mes lieux sur Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.webp)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Fonction de tri des traces dans Mes lieux sur iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
+![Fonction de tri des traces dans Mes lieux sur iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_3_ios.webp)
 
 </TabItem>
 
@@ -233,7 +239,8 @@ OsmAnd offre un moyen facile de trier vos traces, vous aidant à gérer une gran
 
 ***Options de tri :***
 
-- **Le plus proche** — Affiche les traces les plus proches de votre position actuelle.
+- **Le plus proche de la position actuelle** — Affiche les traces les plus proches de votre position actuelle.
+- **Le plus proche du centre de la carte** — Affiche les traces les plus proches du centre actuel de la carte. Chaque trace affiche la distance et une flèche de direction orange partant du centre de la carte.
 - **Dernière modification** — Affiche les traces triées par leur date de modification la plus récente.
 - **Nom : A - Z** — Organise les traces par ordre alphabétique de A à Z.
 - **Nom : Z - A** — Organise les traces par ordre alphabétique de Z à A.
@@ -311,7 +318,7 @@ Le menu du dossier de traces vous permet de visualiser, renommer, exporter et g�
 
 Allez à : *Onglet <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
-![Mes lieux avec des traces sur Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![Mes lieux avec des traces sur Android](@site/static/img/personal/tracks/dashboard_andr.webp)
 
 </TabItem>
 
@@ -325,14 +332,14 @@ Allez à : *Onglet <Translate ios="true" ids="shared_string_menu,shared_string_m
 
 </Tabs>
 
-En bas de la liste dans l'onglet *Traces*, et sous la liste des traces **dans chacun de vos dossiers**, se trouve une section d'information qui vous permet de visualiser les statistiques récapitulatives globales pour les traces du dossier sélectionné. Toutes les valeurs sont affichées dans les [unités](../../personal/profiles.md#units--formats) que vous avez sélectionnées.
+En bas de la liste dans l'onglet *Traces*, et sous la liste des traces d'un dossier, se trouve une section d'information qui vous permet de visualiser les statistiques récapitulatives globales pour les traces du dossier sélectionné. Sur Android, la section n'est affichée que si le dossier ou ses sous-dossiers contiennent au moins une trace. Toutes les valeurs sont affichées dans les [unités](../../personal/profiles.md#units--formats) que vous avez sélectionnées.
 
 - *Nombre de **Traces** dans le dossier* — Affiche le nombre de traces contenues dans le dossier sélectionné.
 - *Somme totale des* **Distances** — La longueur totale de toutes les traces dans le dossier sélectionné, mesurée dans les unités que vous avez choisies, est affichée.
 - *Somme des* **Montées** — Les données indiquent le dénivelé positif total sur toutes les traces du dossier sélectionné.
 - *Somme des* **Descentes** — Ce paramètre est la somme des dénivelés négatifs sur toutes les traces du dossier sélectionné.
 - *Somme de la* **Durée** *totale* — Affiche le temps total nécessaire pour parcourir toutes les traces du dossier sélectionné.
-- *Taille totale des fichiers téléchargés en Mo* — La taille totale des fichiers téléchargés en mégaoctets indique l'espace que toutes les traces du dossier sélectionné occupent sur votre appareil.
+- **Taille** *totale* — La taille totale de tous les fichiers de traces du dossier sélectionné, qui indique l'espace qu'ils occupent sur votre appareil.
 
 
 ### Actions sur le dossier {#folder-actions}

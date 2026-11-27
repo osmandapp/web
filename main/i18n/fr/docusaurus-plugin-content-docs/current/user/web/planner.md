@@ -1,8 +1,8 @@
 ---
 source-hash: fe4113db0ceca0de38082d9504ed29de109b51547823235ea2036e5b59e91998
 sidebar_position: 9
-sidebar_label:  Planifier un itinéraire
-title: Planifier un itinéraire sur le site web
+sidebar_label: Planifier l'itinéraire
+title: Planifier l'itinéraire sur le site web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -61,41 +61,41 @@ To create a navigation route, follow these steps :
 
 ## Créer un nouvel itinéraire {#create-new-route}
 
-Il existe deux façons de démarrer un nouvel itinéraire dans Planifier un itinéraire. La première option consiste à le faire directement depuis la carte : clic droit n'importe où sur la carte et sélectionnez **Créer un nouvel itinéraire**. La seconde option est depuis le panneau de gauche : cliquez sur le bouton **Créer une trace**.
+Il existe deux façons de démarrer un nouvel itinéraire dans Planifier l'itinéraire. La première option consiste à le faire directement depuis la carte : clic droit n'importe où sur la carte et sélectionnez **Créer un nouvel itinéraire**. La seconde option est depuis le panneau de gauche : cliquez sur le bouton **Créer une trace**.
 
 Une fois l'itinéraire créé, ajoutez des points directement sur la carte. Chaque clic place le point suivant, et le planificateur construit l'itinéraire entre les points.
 
-![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
+![OsmAnd Web Création d'un nouvel itinéraire](@site/static/img/web/create_new_route_1.png)
 
 ### Importer une trace {#import-track}
 
-Si vous avez déjà un fichier de trace, vous pouvez l'importer dans Planifier un itinéraire et continuer à y travailler dans le Planificateur Web. Cliquez sur le bouton **Importer une trace** et sélectionnez un fichier GPX depuis votre ordinateur. Après le téléchargement, la trace apparaît dans votre liste locale et s'ouvre dans le planificateur, afin que vous puissiez la consulter sur la carte et procéder à l'édition et à la gestion dans les panneaux de trace.
+Si vous avez déjà un fichier de trace, vous pouvez l'importer dans Planifier l'itinéraire et continuer à y travailler dans le Planificateur Web. Cliquez sur le bouton **Importer une trace** et sélectionnez un fichier GPX depuis votre ordinateur. Après le téléchargement, la trace apparaît dans votre liste locale et s'ouvre dans le planificateur, afin que vous puissiez la consulter sur la carte et procéder à l'édition et à la gestion dans les panneaux de trace.
 
 ### Fichiers locaux {#local-files}
 
-Tous les itinéraires et traces que vous créez ou importez dans Planifier un itinéraire sont ajoutés à la liste Locale dans le panneau de gauche. Cela facilite la gestion de plusieurs fichiers GPX en un seul endroit et le passage d'un à l'autre lors de la planification.
+Tous les itinéraires et traces que vous créez ou importez dans Planifier l'itinéraire sont ajoutés à la liste Locale dans le panneau de gauche. Cela facilite la gestion de plusieurs fichiers GPX en un seul endroit et le passage d'un à l'autre lors de la planification.
 
 Chaque élément de la liste dispose d'un interrupteur qui vous permet d'afficher ou de masquer rapidement la trace sur la carte. Sélectionnez une trace dans la liste pour l'ouvrir dans le planificateur et continuer à y travailler. 
 
-![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
+![OsmAnd Web Création d'un nouvel itinéraire](@site/static/img/web/local_files.png)
 
 
 ## Gérer une trace {#manage-track}
 
-Lorsque vous créez ou importez un itinéraire dans Planifier un itinéraire, un panneau de trace vertical s'ouvre. Ce panneau vous permet de changer le profil de routage et de gérer l'itinéraire.
+Lorsque vous créez ou importez un itinéraire dans Planifier l'itinéraire, un panneau de trace vertical s'ouvre. Ce panneau vous permet de changer le profil de routage et de gérer l'itinéraire.
 
 Cliquez sur le contrôle de profil pour ouvrir la boîte de dialogue **Changer de profil**. Sélectionnez le profil requis (par exemple, Voiture, Vélo ou Piéton), puis choisissez comment l'appliquer : *Segments suivants* applique le profil uniquement aux nouvelles parties ajoutées à partir de ce point, tandis que *Tous les segments* recalcule l'ensemble de l'itinéraire avec le profil sélectionné.
 
 Depuis le panneau de trace, vous pouvez également **Supprimer** la trace de votre liste locale.
 
-Dans le [panneau Aperçu](#overview-panel), vous pouvez **Enregistrer sur le Cloud** pour conserver l'itinéraire pour une utilisation ultérieure et **Télécharger** en tant que fichier GPX.
+Dans le [panneau Aperçu](#overview-panel), vous pouvez **Enregistrer dans le cloud** pour conserver l'itinéraire pour une utilisation ultérieure et **Télécharger** en tant que fichier GPX.
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+![OsmAnd Web Gestion de la trace](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Gestion de la trace](@site/static/img/web/change_profile.png)
 
 
 ## Panneaux de détails de trace {#track-details-panels}
 
-Le menu de trace locale comprend trois panneaux : **Aperçu**, **Trace** et **Points**. Utilisez-les pour afficher les informations de la trace et gérer les points d'itinéraire et les points de cheminement.
+Le menu de trace locale comprend trois panneaux : **Aperçu**, **Trace** et **Points**. Utilisez-les pour afficher les informations de la trace et gérer les points d'itinéraire et les points de passage.
 
 ### Panneau Aperçu {#overview-panel}
 
@@ -118,7 +118,7 @@ Sous le résumé, le panneau fournit des graphiques :
 Vous pouvez activer ou désactiver les options suivantes :
 
 - Afficher les points de trace — affiche les points de trace sur la carte.
-- Afficher les points de cheminement — affiche les points de cheminement sur la carte.
+- Afficher les points de passage — affiche les points de passage sur la carte.
 
 Pour des détails supplémentaires sur la trace, ouvrez les sections d'analyse :
 
@@ -126,23 +126,23 @@ Pour des détails supplémentaires sur la trace, ouvrez les sections d'analyse :
 - Surface — affiche les types de surface le long de l'itinéraire basés sur les données OSM.
 - Fluidité — affiche la fluidité des segments basée sur les étiquettes OSM.
 
-![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
+![OsmAnd Web Panneau Aperçu](@site/static/img/web/overview_panel.png) 
 
 ### Panneau Trace {#track-panel}
 
 Le panneau Trace affiche la liste des points d'itinéraire utilisés pour construire la trace. Utilisez-le pour examiner et modifier la structure de l'itinéraire : glissez les points pour les réorganiser, supprimez des points à l'aide de l'icône de suppression, ou utilisez Effacer les points pour supprimer tous les points et recommencer.
 
-![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
+![OsmAnd Web Panneau Trace](@site/static/img/web/track_panel_new.png)
 
 ### Panneau Points {#points-panel}
 
-Le panneau Points est utilisé pour afficher et gérer les points de cheminement pour la trace sélectionnée. Les points de cheminement peuvent être ajoutés depuis le menu contextuel de la carte — clic droit sur la carte et choisissez l'option pour **Ajouter un point de cheminement**, puis remplissez les détails du point de cheminement (tels que le nom, l'icône et la couleur) et enregistrez-le.
+Le panneau Points est utilisé pour afficher et gérer les points de passage pour la trace sélectionnée. Les points de passage peuvent être ajoutés depuis le menu contextuel de la carte — clic droit sur la carte et choisissez l'option pour **Ajouter un point de passage**, puis remplissez les détails du point de passage (tels que le nom, l'icône et la couleur) et enregistrez-le.
 
-L'édition des points de cheminement utilise la même interface que [l'édition des favoris](../web/web-favorites.md#edit-favorites). Vous pouvez modifier les propriétés des points de cheminement telles que le nom, l'adresse, la description, l'icône, la couleur et la forme à l'aide du panneau d'édition unifié. L'apparence sélectionnée est prévisualisée à la fois dans le panneau d'édition et directement sur la carte.
+L'édition des points de passage utilise la même interface que [l'édition des favoris](../web/web-favorites.md#edit-favorites). Vous pouvez modifier les propriétés des points de passage telles que le nom, l'adresse, la description, l'icône, la couleur et la forme à l'aide du panneau d'édition unifié. L'apparence sélectionnée est prévisualisée à la fois dans le panneau d'édition et directement sur la carte.
 
-Dans la liste des Points de cheminement, vous pouvez contrôler si les points de cheminement sont affichés sur la carte et supprimer des points de cheminement individuels si nécessaire. Pour supprimer tous les points de cheminement de la trace en une seule fois, utilisez *Effacer tous les points de cheminement*.
+Dans la liste des Points de passage, vous pouvez contrôler si les points de passage sont affichés sur la carte et supprimer des points de passage individuels si nécessaire. Pour supprimer tous les points de passage de la trace en une seule fois, utilisez *Effacer tous les points de passage*.
 
-![OsmAnd Web Waypoints Panel](@site/static/img/web/points_panel_new.png)
+![OsmAnd Web Panneau Points de passage](@site/static/img/web/points_panel_new.png)
 
 
 ## Articles connexes {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
+source-hash: 83c6b3cc35441b3510683f9cda657be179761027b2c6e5d5aac6777b74251f2f
 sidebar_position: 1
 title:  Recherche globale
 ---
@@ -190,8 +190,13 @@ Avec la recherche spatiale, vous pouvez :
 - Rechercher un POI dans un lieu spécifique. Saisissez une catégorie et un nom de lieu dans une seule requête, par exemple, Hôtel Berlin. Le nom du lieu est utilisé comme zone de recherche, et la catégorie est recherchée à l'intérieur.
 - Rechercher des lieux correspondant à deux conditions. Saisissez deux catégories ou une catégorie et une propriété, par exemple, Carburant Diesel ou Café Vegan, pour trouver des lieux correspondant aux deux. Une requête telle que Carburant McDonald's trouve les stations-service situées près d'un McDonald's. L'ordre des mots est important. Le premier mot définit ce que vous recherchez, et le second définit ce qui doit être à proximité. Par exemple, McDonald’s Carburant trouve les restaurants McDonald’s situés près de stations-service.
 - Rechercher autour d'un lieu trouvé. Saisissez une catégorie et un nom de lieu, par exemple, *Hôtel Berlin*, puis appuyez sur *Hôtel près de Berlin* en haut des résultats de recherche. Le nom de ce lieu est ajouté à la puce [Rechercher à proximité](#search-around).
-- Utiliser différents formats de noms de rue et des noms de catégories traduits dans vos requêtes.
+- Utiliser différents formats de noms de rue et des noms de catégories traduits dans vos requêtes. Les catégories sont trouvées par leurs noms dans la langue de l'application, en anglais, dans la [langue de la carte](../map/vector-maps.md#map-language) et dans la langue principale de la région où vous effectuez la recherche. Par exemple, avec l'application en ukrainien, `schule` à Leipzig trouve la catégorie École.
+- Trouver une catégorie par d'autres mots couramment utilisés pour la désigner. Par exemple, `RV park` trouve Terrain de caravaning.
 - Obtenir des résultats plus rapides lors de la recherche par catégories de POI populaires, comme pharmacie, parking ou restaurant.
+
+Pendant que vous saisissez un mot, les résultats de recherche affichent les catégories de POI correspondantes sous forme de lignes, ainsi que les lieux dont le nom correspond. Les lieux d'une catégorie apparaissent dans les résultats après que vous avez saisi en entier un mot du nom de la catégorie. Par exemple, `ca` affiche des lignes de catégories et des noms correspondants, et `cafe` liste les cafés.
+
+**Remarque :** si un mot court correspond à un très grand nombre d'objets dans vos cartes téléchargées, il n'est recherché que comme mot entier. Saisissez plus de lettres pour voir les résultats qui commencent par ce mot.
 
 ### Recherche à proximité {#search-around}
 

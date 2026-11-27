@@ -1,8 +1,8 @@
 ---
 source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
-sidebar_label:  Weather
-title: Weather on the Web
+sidebar_label:  Météo
+title: Météo sur le Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -58,7 +58,7 @@ En bas du panneau, des informations sur l'heure de génération des données mé
 ![Météo OsmAnd Web](@site/static/img/web/weather_menu.png)
 
 
-## Couches météorologiques {#weather-layers}
+## Couches météo {#weather-layers}
 
 Les couches météorologiques permettent de visualiser les données de prévision directement sur la carte sous forme de superposition. Elles aident à évaluer rapidement les conditions météorologiques sur une zone plus large au lieu de visualiser les valeurs uniquement pour un seul point.
 

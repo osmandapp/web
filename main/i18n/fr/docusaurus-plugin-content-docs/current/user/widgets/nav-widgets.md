@@ -1,5 +1,5 @@
 ---
-source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
+source-hash: 292d8a0b5fbc689d6e07f6ebd71d0b9a70856fabf41202c365ab38c143096e5d
 sidebar_position: 4
 title:  Widgets de navigation
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Les widgets de navigation sont activés pendant la navigation pour afficher des informations telles que la distance, l'heure d'arrivée ou le temps restant, les prochains virages, le relèvement, le nom de la rue actuelle, les informations sur les voies, la vitesse maximale, les alertes d'approche, les POI et les points de cheminement.
 
-![Navigational widgets all](@site/static/img/widgets/navigational_widgets_all.png)
+![Tous les widgets de navigation](@site/static/img/widgets/navigational_widgets_all.png)
 
 
 ## Navigation active et passive {#active-and-passive-navigation}
@@ -78,7 +78,7 @@ Le widget d'altitude affiche un graphique avec l'altitude et la pente de votre i
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*
 
-![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
+![Widget Altitude](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
 #### Interactions avec le graphique {#interactions-with-the-graph}
@@ -101,34 +101,34 @@ Lorsque vous sélectionnez un itinéraire et appuyez sur le bouton **Démarrer**
 | ![point](@site/static/img/widgets/sch_1-1.png)|
 | ***Informations supplémentaires*** |
 | Le côté droit du widget contient des données sur l'altitude et la pente les plus élevées, la valeur moyenne pour les deux, et l'altitude et la pente les plus basses sur la section de l'itinéraire sélectionnée visible sur le graphique. |
-|  ![data](@site/static/img/widgets/sch_1-2.png)|
+|  ![données](@site/static/img/widgets/sch_1-2.png)|
 |Les valeurs de ***Montée*** et ***Descente*** sont les sommes des distances depuis votre point de localisation jusqu'à la fin du graphique visible. S'il n'y a pas de point de localisation sur le graphique, alors c'est la somme de tout le graphique visible à l'écran (cela peut se produire lorsque vous changez l'échelle et que la localisation sort du graphique).|
 | **Montée** – montre la somme de toutes les distances avec une altitude croissante depuis votre point de localisation jusqu'à la fin du graphique visible ou pour la section de l'itinéraire sélectionnée sans le point de localisation visible à l'écran. |
-| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|  
+| ![Schéma de montée](@site/static/img/widgets/sch_uphill_1.png) ![Schéma de montée](@site/static/img/widgets/sch_uphill_2.png)|  
 | **Descente** – montre la somme de toutes les distances avec une altitude décroissante depuis votre point de localisation jusqu'à la fin du graphique visible ou pour la section de l'itinéraire sélectionnée sans le point de localisation visible à l'écran.|
-| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png) ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)|  
+| ![Schéma de descente](@site/static/img/widgets/sch_downhill_1.png) ![Schéma de descente](@site/static/img/widgets/sch_downhill_2.png)|  
 |***Pente*** est le rapport du chemin à l'horizontale, où zéro indique l'horizontalité et le nombre de degrés indique un degré de pente plus élevé ou plus raide.|
 | **Pente** – montre la pente maximale de la route en pourcentage depuis votre point de localisation jusqu'à la fin du graphique visible ou pour la section de l'itinéraire sélectionnée sans le point de localisation visible à l'écran. |
-|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
+|![Schéma de pente](@site/static/img/widgets/sch_grade_1.png) ![Schéma de pente](@site/static/img/widgets/sch_grade_2.png)|
 
 
 ## Widget de relèvement   {#bearing-widget}
   
 Le relèvement est la direction vers une cible en dehors de votre véhicule, comme une destination ou un point d'origine. Un relèvement peut être *Relatif* (selon votre cap) ou *Magnétique* (selon la boussole). Par exemple, un relèvement magnétique de 180° est la direction vers le sud, et un relèvement relatif de 180° est directement derrière vous. Les points cardinaux sont les quatre directions principales de la boussole. Ce sont le Nord (*N* - 0° ou 360°), l'Est (*E* - 90°), le Sud (*S* - 180°) et l'Ouest (*O* - 270°).  
 
-![Trip recording widget](@site/static/img/widgets/bearing.png)
+![Widget Enregistrement de trajet](@site/static/img/widgets/bearing.png)
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)  
+![Widget Enregistrement de trajet](@site/static/img/widgets/bearing_widget.png) ![Widget Enregistrement de trajet](@site/static/img/widgets/bearing_widget_1.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)
+![Widget Enregistrement de trajet](@site/static/img/widgets/bearing_widget_ios_3.png)
 
 </TabItem>
 
@@ -174,7 +174,7 @@ Le groupe de widgets *Point de navigation* affiche la distance restante jusqu'à
 ### Informations sur l'itinéraire {#route-information}
 
 
-![Destination widget](@site/static/img/widgets/route_information_widget.png)  
+![Widget Destination](@site/static/img/widgets/route_information_widget.png)  
 
 Le widget *Informations sur l'itinéraire* fournit des données en temps réel sur l'itinéraire de navigation en cours et un moyen rapide de [gérer un itinéraire actif](../navigation/setup/route-navigation.md#start--stop-navigation). Il aide à suivre les détails clés de l'itinéraire et vous permet d'arrêter ou de reprendre la session de navigation actuelle avec une interaction minimale.
 
@@ -192,6 +192,8 @@ Le widget *Informations sur l'itinéraire* fournit des données en temps réel s
 
 > NOTE : Le widget n'est visible que pendant la navigation.
 
+Sur les téléphones Android en orientation paysage, le widget *<Translate android="true" ids="map_widget_route_information"/>* est masqué par défaut. À la place, le *<Translate android="true" ids="map_widget_right"/>* affiche les widgets [<Translate android="true" ids="map_widget_distance_to_destination"/>](#distance-to-destination), [<Translate android="true" ids="map_widget_time_to_destination"/>](#time-to-destination), [<Translate android="true" ids="map_widget_distance_to_intermediate"/>](#distance-to-intermediate) et [<Translate android="true" ids="map_widget_time_to_intermediate"/>](#time-to-intermediate). Vous pouvez afficher ou masquer chacun de ces widgets dans [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md).
+
 | | |
 |:------------|:------------|
 | Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Ajouter un widget →<Translate android="true" ids="map_widget_route_information"/>* |
@@ -202,7 +204,7 @@ Le widget *Informations sur l'itinéraire* fournit des données en temps réel s
 
 ### Distance jusqu'à la destination {#distance-to-destination}
 
-![Destination widget](@site/static/img/widgets/destination_widget.png)  
+![Widget Destination](@site/static/img/widgets/destination_widget.png)  
 
 Le widget affiche la distance restante jusqu'au dernier point de destination en suivant un itinéraire calculé.  
 
@@ -215,7 +217,7 @@ Le widget affiche la distance restante jusqu'au dernier point de destination en 
 
 ### Distance jusqu'à l'intermédiaire {#distance-to-intermediate}
 
-![Intermediate destination widget](@site/static/img/widgets/intermediate_destination_widget.png)
+![Widget Destination intermédiaire](@site/static/img/widgets/intermediate_destination_widget.png)
 
 Le widget affiche la distance jusqu'au premier point intermédiaire le long de l'itinéraire calculé. Après avoir passé les points intermédiaires, l'espace sera mis à jour pour le prochain point intermédiaire. S'il n'y a pas de points intermédiaires, le widget n'est pas affiché.
 
@@ -232,13 +234,13 @@ Le widget affiche la distance jusqu'au premier point intermédiaire le long de l
 
 <TabItem value="android" label="Android">  
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_android.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_android.png)  
+![Widget Heure d'arrivée et Temps restant](@site/static/img/widgets/arrival_time_widget_android.png)  ![Widget Heure d'arrivée et Temps restant](@site/static/img/widgets/time_to_go_widget_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_ios.png)  
+![Widget Heure d'arrivée et Temps restant](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Widget Heure d'arrivée et Temps restant](@site/static/img/widgets/time_to_go_widget_ios.png)  
 
 </TabItem>
 
@@ -249,7 +251,7 @@ Le widget affiche l'*Heure d'arrivée* ou le *Temps à parcourir* jusqu'au premi
 | | |
 |:------------|:------------|
 | Activer | **Android :** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → Choisir un panneau → Ajouter un widget → <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
-|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget →  <Translate ios="true" ids="map_widget_time_to_intermediate"/>* |
+|   | **iOS :** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → Choisir un panneau → Ajouter un widget →  <Translate android="true" ids="map_widget_time_to_intermediate"/>* |
 | Par appui | Bascule entre *Heure d'arrivée* et *Temps à parcourir* et inversement. |
 | Appui long | Ouvre le [menu contextuel du widget](../widgets/configure-screen.md#widget-context-menu) |
 
@@ -260,13 +262,13 @@ Le widget affiche l'*Heure d'arrivée* ou le *Temps à parcourir* jusqu'au premi
 
 <TabItem value="android" label="Android">  
 
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Widget Heure d'arrivée et Temps restant intermédiaires](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Widget Heure d'arrivée et Temps restant intermédiaires](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
@@ -284,7 +286,7 @@ Le widget affiche l'*Heure d'arrivée* ou le *Temps à parcourir* jusqu'au derni
 
 ## Limitation de vitesse {#speed-limit}
 
-![Speed limit widget](@site/static/img/widgets/speed_limit_widget_2.png)
+![Widget Limitation de vitesse](@site/static/img/widgets/speed_limit_widget_2.png)
 
 Le widget *Limitation de vitesse* affiche la limitation de vitesse actuelle en fonction des données cartographiques de votre itinéraire.
 
@@ -305,7 +307,7 @@ Le widget *Limitation de vitesse* affiche la limitation de vitesse actuelle en f
 ## Guidage d'itinéraire {#route-guidance}
 
 
-![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
+![Widget Prochains virages](@site/static/img/widgets/next_turns_widget.png)
 
 Fournit un guidage d'itinéraire en temps réel, y compris la distance jusqu'au prochain virage, le nom de la route, le nom de la rue actuelle et les informations sur les voies. Les widgets sont actifs pendant la navigation.
 
@@ -326,7 +328,7 @@ Les widgets de *Guidage d'itinéraire* contiennent des informations sur :
 
 ### Voies {#lanes}
 
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+![Widgets de voies](@site/static/img/widgets/lanes_widget.png)
 
 Le widget **Voies** met en évidence la voie actuelle lorsque la navigation est active et affiche la disposition des voies pour la route réelle lorsque la navigation est passive. Un indicateur de distance est également affiché sous le diagramme des voies, représentant la distance restante jusqu'à la manœuvre à laquelle s'applique le guidage des voies. Ce widget est disponible uniquement pour les panneaux Haut et Bas. Les données sont extraites du [projet OpenStreetMap](https://wiki.openstreetmap.org/wiki/Key:turn). Si les données cartographiques ne spécifient pas de direction pour chaque voie, OsmAnd complète les directions manquantes en fonction de la disposition de l'intersection.
 
@@ -339,13 +341,13 @@ Sur Android, les paramètres du widget incluent l'option *Afficher aux intersect
 
 <TabItem value="android" label="Android">  
 
-![route guidence widget](@site/static/img/widgets/route_guidence_widgets_andr.png)
+![Widget de guidage d'itinéraire](@site/static/img/widgets/route_guidence_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Approach POIs/Favorites ios](@site/static/img/widgets/route_guidence_widgets_ios.png)
+![Approche des POI/Favoris iOS](@site/static/img/widgets/route_guidence_widgets_ios.png)
 
 </TabItem>
 
@@ -391,7 +393,7 @@ Affiche un widget selon les paramètres de temps d'approche. La couleur de la vo
 
 ## Widget d'alerte {#alert-widget}
 
-![Alert information widgets](@site/static/img/widgets/alert_information_widget.png)
+![Widgets d'alerte information](@site/static/img/widgets/alert_information_widget.png)
 
 Le **widget d'alerte** combine plusieurs types d'alertes qui sont affichées dans le coin inférieur gauche pendant que vous naviguez.  
 
@@ -414,16 +416,16 @@ Les types d'alertes ont un design visuel différent, qui dépend de la **<Transl
 | | | |
 |:------------|:------------|:------------|
 | Nom | Description | Icône |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | La [modération de la circulation](https://en.wikipedia.org/wiki/Traffic_calming) utilise des aménagements physiques et d'autres mesures pour améliorer la sécurité des automobilistes, des piétons et des cyclistes. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
-| *<Translate android="true" ids="show_pedestrian_warnings"/>* | Un [passage piéton](https://en.wikipedia.org/wiki/Pedestrian_crossing) (principalement en anglais britannique) ou passage clouté est un endroit désigné pour que les piétons traversent une route, une rue ou une avenue. OsmAnd affiche l'alerte du passage piéton non contrôlé.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | Dans la plupart des pays, les [limitations de vitesse routière](https://en.wikipedia.org/wiki/Speed_limit) fixent la vitesse maximale, moyenne ou minimale légale à laquelle les véhicules routiers peuvent circuler sur un tronçon de route donné. Dans OsmAnd, l'alerte est affichée lorsque vous dépassez la vitesse. Vous pouvez définir les paramètres de dépassement de vitesse (0, 5, 10.. km/h). ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | Un tunnel est un passage souterrain, passant sous une montagne, une rivière ou une zone urbaine congestionnée. Dans OsmAnd, l'alerte *Tunnels* contient des informations sur la longueur du tunnel. Si vous êtes dans un tunnel, elle indique la distance jusqu'à la fin du tunnel.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | Les [radars de contrôle routier](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) et les [radars de vitesse](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) enregistrent les infractions au code de la route, y compris les excès de vitesse, le non-respect des feux rouges et d'autres types de comportements illégaux. <br />**NOTE :** Les alertes de radars de vitesse sont interdites ou illégales dans certains pays. Pour [supprimer complètement les radars de vitesse](../personal/global-settings.md#legal) d'OsmAnd, allez dans le menu principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
-| *<Translate android="true" ids="traffic_warning_stop"/>* | Un [panneau stop](https://en.wikipedia.org/wiki/Stop_sign) est un panneau de signalisation conçu pour notifier aux conducteurs qu'ils doivent s'arrêter complètement et s'assurer que l'intersection est dégale de véhicules et de piétons avant de continuer au-delà du panneau.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
-| *<Translate android="true" ids="show_railway_warnings"/>* |Cet avertissement signifie qu'il y a un [passage à niveau](https://en.wikipedia.org/wiki/Crossbuck) devant. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* |Cet avertissement indique qu'un contrôle frontalier est à venir.| ![Alert border control widgets](@site/static/img/widgets/warnings_border_control.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* | Les [symboles de danger ou symboles d'avertissement](https://en.wikipedia.org/wiki/Hazard_symbol) sont des symboles reconnaissables conçus pour avertir des matières, des lieux ou des objets dangereux, y compris les courants électriques, les poisons et la radioactivité. | ![Alert warnings_hazard widgets](@site/static/img/widgets/warnings_hazard.png)  ![Alert warnings_hazard_us widgets](@site/static/img/widgets/warnings_hazard_us.png) |
-| *<Translate android="true" ids="traffic_warning_payment"/>* | Cet avertissement indique qu'un péage pour une route à péage est à venir.   ![Alert toll_booth widgets](@site/static/img/widgets/ex_toll_booth.png) | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) |
+| *<Translate android="true" ids="show_traffic_warnings"/>* | La [modération de la circulation](https://en.wikipedia.org/wiki/Traffic_calming) utilise des aménagements physiques et d'autres mesures pour améliorer la sécurité des automobilistes, des piétons et des cyclistes. | ![Widgets d'alerte ralentisseurs](@site/static/img/widgets/warnings_traffic_calming.png)  ![Widgets d'alerte ralentisseurs us](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_pedestrian_warnings"/>* | Un [passage piéton](https://en.wikipedia.org/wiki/Pedestrian_crossing) (principalement en anglais britannique) ou passage clouté est un endroit désigné pour que les piétons traversent une route, une rue ou une avenue. OsmAnd affiche l'alerte du passage piéton non contrôlé.  | ![Widgets d'alerte ralentisseurs](@site/static/img/widgets/warnings_pedestrian.png)  ![Widgets d'alerte ralentisseurs us](@site/static/img/widgets/warnings_pedestrian_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | Dans la plupart des pays, les [limitations de vitesse routière](https://en.wikipedia.org/wiki/Speed_limit) fixent la vitesse maximale, moyenne ou minimale légale à laquelle les véhicules routiers peuvent circuler sur un tronçon de route donné. Dans OsmAnd, l'alerte est affichée lorsque vous dépassez la vitesse. Vous pouvez définir les paramètres de dépassement de vitesse (0, 5, 10.. km/h). ![Widgets d'alerte ex_speed](@site/static/img/widgets/ex_warning_speed.png)  | ![Widgets d'alerte speed_limit](@site/static/img/widgets/warnings_limit.png) ![Widgets d'alerte speed_limit_ca](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Widgets d'alerte speed_limit_us](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_tunnels"/>* | Un tunnel est un passage souterrain, passant sous une montagne, une rivière ou une zone urbaine congestionnée. Dans OsmAnd, l'alerte *Tunnels* contient des informations sur la longueur du tunnel. Si vous êtes dans un tunnel, elle indique la distance jusqu'à la fin du tunnel.   ![Widgets d'alerte ex_tunnel](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Widgets d'alerte warnings_tunnel](@site/static/img/widgets/warnings_tunnel.png)  ![Widgets d'alerte warnings_tunnel_us](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_cameras"/>* | Les [radars de contrôle routier](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) et les [radars de vitesse](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) enregistrent les infractions au code de la route, y compris les excès de vitesse, le non-respect des feux rouges et d'autres types de comportements illégaux. <br />**NOTE :** Les alertes de radars de vitesse sont interdites ou illégales dans certains pays. Pour [supprimer complètement les radars de vitesse](../personal/global-settings.md#legal) d'OsmAnd, allez dans le menu principal *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Widgets d'alerte ralentisseurs](@site/static/img/widgets/warnings_speed_camera.png)   |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | Un [panneau stop](https://en.wikipedia.org/wiki/Stop_sign) est un panneau de signalisation conçu pour notifier aux conducteurs qu'ils doivent s'arrêter complètement et s'assurer que l'intersection est dégale de véhicules et de piétons avant de continuer au-delà du panneau.  | ![Widgets d'alerte stop](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* |Cet avertissement signifie qu'il y a un [passage à niveau](https://en.wikipedia.org/wiki/Crossbuck) devant. | ![Widgets d'alerte warnings_railways](@site/static/img/widgets/warnings_railways.png) ![Widgets d'alerte warnings_railways_ca](@site/static/img/widgets/warnings_railways_ca.png)  ![Widgets d'alerte warnings_railways_us](@site/static/img/widgets/warnings_railways_us.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* |Cet avertissement indique qu'un contrôle frontalier est à venir.| ![Widgets d'alerte border control](@site/static/img/widgets/warnings_border_control.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | Les [symboles de danger ou symboles d'avertissement](https://en.wikipedia.org/wiki/Hazard_symbol) sont des symboles reconnaissables conçus pour avertir des matières, des lieux ou des objets dangereux, y compris les courants électriques, les poisons et la radioactivité. | ![Widgets d'alerte warnings_hazard](@site/static/img/widgets/warnings_hazard.png)  ![Widgets d'alerte warnings_hazard_us](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_payment"/>* | Cet avertissement indique qu'un péage pour une route à péage est à venir.   ![Widgets d'alerte toll_booth](@site/static/img/widgets/ex_toll_booth.png) | ![Widgets d'alerte speed_limit](@site/static/img/widgets/warnings_limit.png) |
 
 
 ## Nom de la rue {#street-name}
@@ -438,13 +440,13 @@ Dans les **Paramètres** du widget, vous pouvez choisir d'afficher toujours **le
 
 <TabItem value="android" label="Android">  
 
- ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
+ ![Nom de rue sans prochain virage](@site/static/img/widgets/without_next_turn_and.png) ![Nom de rue avec prochain virage](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
+ ![Nom de rue sans prochain virage iOS](@site/static/img/widgets/without_next_turn_ios.png) ![Nom de rue avec prochain virage iOS](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
@@ -465,13 +467,13 @@ Dans les **Paramètres** du widget, vous pouvez choisir d'afficher toujours **le
 
 <TabItem value="android" label="Android">  
 
-![Approach POIs/Favorites android](@site/static/img/widgets/street_name_poi_widget_android.png)
+![Approche des POI/Favoris Android](@site/static/img/widgets/street_name_poi_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Approach POIs/Favorites ios](@site/static/img/widgets/street_name_poi_widget_ios.png)
+![Approche des POI/Favoris iOS](@site/static/img/widgets/street_name_poi_widget_ios.png)
 
 </TabItem>
 

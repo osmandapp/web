@@ -1,5 +1,5 @@
 ---
-source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
+source-hash: d617276475fbfcfe927091d3c99740f157598c2b6f2ee38d9e9906a83d74b219
 sidebar_position: 4
 title:  Configurer la carte
 ---
@@ -27,7 +27,7 @@ Section **Afficher** :
 
 Section **Topographie** :  
 
-![Configurer la carte android](@site/static/img/map/configure_map_topography_andr_new.png)  
+![Configurer la carte android](@site/static/img/map/configure_map_topography_andr_new.webp)  
 
 Section **OpenStreetMap** :  
 
@@ -84,7 +84,7 @@ Le menu **<Translate android="true" ids="configure_map"/>** est divisé en deux 
 ## Couches de la carte {#map-layers}
 
 - [Couche de carte vectorielle](../map/vector-maps.md) - affiche toutes les informations de la carte vectorielle, y compris OpenStreetMap, les lignes de contour et les données nautiques.
-- [Sources de cartes raster](../map/raster-maps.md#layers) - permet de sélectionner une carte de fond / source principale / de superposition avec des niveaux de transparence.
+- [Sources de cartes raster](../map/raster-maps.md#layers) - permet de sélectionner une carte de fond / source principale / de superposition avec des niveaux de visibilité.
 - [Terrain](../plugins/topography.md#hillshade-slope-and-altitude-layers) - affiche les informations de pente / d'ombrage, le relief 3D.
 - [Bâtiments 3D](../map/vector-maps.md#3d-buildings) - affiche les modèles de bâtiments volumétriques sur la carte.
 - [Bordures des cartes téléchargées](../map/vector-maps.md#show-borders) - affiche toutes les bordures des cartes téléchargées sur la couche de la carte principale.

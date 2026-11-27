@@ -1,5 +1,5 @@
 ---
-source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
+source-hash: f790174db079e7201b2947913d3a0d224ce27c6741666d1a3964ee54c47c6f3e
 sidebar_position: 3
 title:  Exploration de recherche
 ---
@@ -105,7 +105,7 @@ Pour plus de détails, consultez l'article [Lieux populaires](../map/popular_pla
 
 ![Section Historique](@site/static/img/search/history_section_list.webp)
 
-La section **Historique** de l'onglet Exploration affiche jusqu'à 25 éléments les plus récents. Appuyez sur le titre de la section pour la réduire ou l'agrandir. Appuyez sur *Afficher tout* pour ouvrir l'écran *Historique* complet.
+La section **Historique** de l'onglet Exploration affiche jusqu'à 25 éléments les plus récents. La section est développée par défaut. Appuyez sur le titre de la section pour la réduire ou l'agrandir ; OsmAnd mémorise votre choix. Appuyez sur *Afficher tout* pour ouvrir l'écran *Historique* complet.
 
 Si les options *Historique de recherche* et *Historique de navigation* sont toutes deux désactivées, la section affiche la carte *L'historique est désactivé*. Appuyez sur *Ouvrir les paramètres de l'historique* pour les activer.
 
