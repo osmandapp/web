@@ -9,18 +9,32 @@ import {
     MenuItem,
     Typography,
 } from '@mui/material';
-import React, { useContext, useState, useCallback } from 'react';
+import React, { useContext, useState, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import PointManager from '../../../manager/PointManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import isEmpty from 'lodash-es/isEmpty';
+import { TabScrollerContext } from './TabPanels';
+import { getVisibleRange } from '../../../util/Utils';
+
+const ROWS_OVERSCAN = 10;
+const FIRST_ROWS = 50;
+const ESTIMATED_ROW_HEIGHT = 60;
 
 const PointsTab = ({ width }) => {
     const ctx = useContext(AppContext);
+    const scrollerRef = useContext(TabScrollerContext);
+
+    const listRef = useRef(null);
+    const rowsRef = useRef(null);
 
     const [openPointAlert, setOpenPointAlert] = useState(true);
+    const [measuredRowHeight, setMeasuredRowHeight] = useState(null);
+    const [visibleRows, setVisibleRows] = useState({ first: 0, last: FIRST_ROWS - 1 });
+
+    const rowHeight = measuredRowHeight ?? ESTIMATED_ROW_HEIGHT;
 
     function showPointOnMap(point) {
         ctx.setSelectedGpxFile((prevState) => ({
@@ -40,6 +54,45 @@ const PointsTab = ({ width }) => {
         },
         [ctx.trackRouter, ctx.selectedGpxFile]
     );
+
+    useEffect(() => {
+        const scroller = scrollerRef?.current;
+        if (!scroller) {
+            return;
+        }
+        const showRowsInView = () => {
+            const list = listRef.current;
+            if (!list?.offsetParent) {
+                return;
+            }
+            const range = getVisibleRange({
+                scrollTop: scroller.scrollTop,
+                viewHeight: scroller.clientHeight,
+                listTop: list.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop,
+                rowHeight,
+                count: getPoints().length,
+                overscan: ROWS_OVERSCAN,
+            });
+            setVisibleRows((prev) => (prev.first === range.first && prev.last === range.last ? prev : range));
+        };
+        showRowsInView();
+        scroller.addEventListener('scroll', showRowsInView);
+        const observer = new ResizeObserver(showRowsInView);
+        observer.observe(scroller);
+
+        return () => {
+            scroller.removeEventListener('scroll', showRowsInView);
+            observer.disconnect();
+        };
+    }, [scrollerRef, rowHeight, getPoints().length]);
+
+    useLayoutEffect(() => {
+        const rendered = rowsRef.current?.childElementCount;
+        const height = rendered > 0 ? rowsRef.current.getBoundingClientRect().height / rendered : 0;
+        if (measuredRowHeight === null && height > 0) {
+            setMeasuredRowHeight(height);
+        }
+    }, [measuredRowHeight, visibleRows, getPoints().length]);
 
     const getItemStyle = (isDragging, draggableStyle) => ({
         userSelect: 'none',
@@ -61,49 +114,64 @@ const PointsTab = ({ width }) => {
         });
     }
 
-    const PointRow = ({ point, index }) => {
+    function renderListRow(point, index, draggingId) {
+        if (draggingId === getDraggableId(index)) {
+            return <div key={index} style={{ height: rowHeight }} />;
+        }
+
         return (
-            <Draggable key={index} draggableId={index + ' row'} index={index}>
-                {(provided, snapshot) => (
-                    <MenuItem
-                        id={`se-track-point-${index}`}
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        key={index}
-                        divider
-                        onClick={() => showPointOnMap(point)}
-                        style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
-                    >
-                        <ListItemIcon>
-                            <ViewHeadline fontSize="small" />
-                        </ListItemIcon>
-                        <ListItemText>
-                            <Typography noWrap>
-                                Point - {index + 1}
-                                <br />
-                                {point.distanceSegment === 0 ? 'start' : Math.round(point.distanceSegment) + ' m'}
-                                {point.profile && ' • '}
-                                {point.profile}
-                            </Typography>
-                        </ListItemText>
-                        <ListItemAvatar>
-                            <IconButton
-                                id={`se-track-point-delete-${index}`}
-                                x={{ mr: 1 }}
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    PointManager.deletePoint(index, ctx);
-                                }}
-                            >
-                                <Cancel fontSize="small" />
-                            </IconButton>
-                        </ListItemAvatar>
-                    </MenuItem>
-                )}
+            <Draggable key={index} draggableId={getDraggableId(index)} index={index}>
+                {(provided, snapshot) => renderPointItem(point, index, provided, snapshot)}
             </Draggable>
         );
-    };
+    }
+
+    const renderClone = (provided, snapshot, rubric) =>
+        renderPointItem(getPoints()[rubric.source.index], rubric.source.index, provided, snapshot);
+
+    function renderPointItem(point, index, provided, snapshot) {
+        return (
+            <MenuItem
+                id={`se-track-point-${index}`}
+                ref={provided.innerRef}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+                key={index}
+                divider
+                onClick={() => showPointOnMap(point)}
+                style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
+            >
+                <ListItemIcon>
+                    <ViewHeadline fontSize="small" />
+                </ListItemIcon>
+                <ListItemText>
+                    <Typography noWrap>
+                        Point - {index + 1}
+                        <br />
+                        {point.distanceSegment === 0 ? 'start' : Math.round(point.distanceSegment) + ' m'}
+                        {point.profile && ' • '}
+                        {point.profile}
+                    </Typography>
+                </ListItemText>
+                <ListItemAvatar>
+                    <IconButton
+                        id={`se-track-point-delete-${index}`}
+                        x={{ mr: 1 }}
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            PointManager.deletePoint(index, ctx);
+                        }}
+                    >
+                        <Cancel fontSize="small" />
+                    </IconButton>
+                </ListItemAvatar>
+            </MenuItem>
+        );
+    }
+
+    const lastRow = Math.min(visibleRows.last, getPoints().length - 1);
+    const firstRow = Math.min(visibleRows.first, lastRow + 1);
+    const rowsBelow = getPoints().length - 1 - lastRow;
 
     return (
         <>
@@ -138,13 +206,28 @@ const PointsTab = ({ width }) => {
             {ctx.selectedGpxFile?.points && (
                 <DragDropContext onDragEnd={onDragEnd}>
                     <Box sx={{ mt: 2 }} minWidth={width}>
-                        <Droppable droppableId="droppable-1">
-                            {(provided) => (
-                                <div ref={provided.innerRef} {...provided.droppableProps}>
-                                    {getPoints().map((point, index) => {
-                                        return PointRow({ point: point, index: index });
-                                    })}
-                                    {provided.placeholder}
+                        <Droppable droppableId="droppable-1" mode="virtual" renderClone={renderClone}>
+                            {(provided, snapshot) => (
+                                <div
+                                    ref={(el) => {
+                                        provided.innerRef(el);
+                                        listRef.current = el;
+                                    }}
+                                    {...provided.droppableProps}
+                                >
+                                    <div style={{ height: firstRow * rowHeight }} />
+                                    <div ref={rowsRef}>
+                                        {getPoints()
+                                            .slice(firstRow, lastRow + 1)
+                                            .map((point, i) =>
+                                                renderListRow(point, firstRow + i, snapshot.draggingFromThisWith)
+                                            )}
+                                    </div>
+                                    <div
+                                        style={{
+                                            height: (rowsBelow + (snapshot.isUsingPlaceholder ? 1 : 0)) * rowHeight,
+                                        }}
+                                    />
                                 </div>
                             )}
                         </Droppable>
@@ -156,3 +239,7 @@ const PointsTab = ({ width }) => {
 };
 
 export default PointsTab;
+
+function getDraggableId(index) {
+    return index + ' row';
+}

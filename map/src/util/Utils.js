@@ -341,6 +341,13 @@ export function decodeString(str) {
     }
 }
 
+export function getVisibleRange({ scrollTop, viewHeight, listTop, rowHeight, count, overscan }) {
+    const first = Math.min(count, Math.max(0, Math.floor((scrollTop - listTop) / rowHeight) - overscan));
+    const last = Math.min(count - 1, Math.ceil((scrollTop - listTop + viewHeight) / rowHeight) + overscan);
+
+    return { first, last: Math.max(first - 1, last) };
+}
+
 export function truncateText(text, maxLength) {
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 }
