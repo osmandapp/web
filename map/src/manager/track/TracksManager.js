@@ -383,58 +383,45 @@ export function equalsPoints(arr1, arr2) {
 }
 
 /**
- * Updates track routeTypes from routing result
- * Processes geometry points and merges route types into track's global routeTypes array
+ * Merges the route types of a routing result into the track's global routeTypes array.
+ * Returns copies of the geometry points whose segments point to the merged indexes.
  *
- * @param {Array} newGeo - Array of geometry points with segments
- * @param {Array} routeTypes - Array of route types from routing result
- * @param {Object} ctx - Application context
+ * @param {Array} geometry - Array of geometry points with segments
+ * @param {Array} segmentRouteTypes - Array of route types from routing result
+ * @param {Array} baseRouteTypes - routeTypes of the track
  */
-export function updateTrackRouteTypes(newGeo, routeTypes, ctx) {
-    const segmentTypes = routeTypes ?? [];
-    ctx.setSelectedGpxFile((prev) => {
-        const base = prev.routeTypes ?? [];
-        const merged = processGeometryPoints(newGeo, segmentTypes, base);
-        return { ...prev, routeTypes: merged };
-    });
-}
-
-function processGeometryPoints(result, segmentRouteTypes, baseRouteTypes = []) {
-    const base = [...(baseRouteTypes || [])];
+export function mergeRouteTypes(geometry, segmentRouteTypes, baseRouteTypes = []) {
+    const routeTypes = [...(baseRouteTypes || [])];
     const updatedSegmentRouteTypes = new Map();
 
     if (segmentRouteTypes?.length > 0) {
         segmentRouteTypes.forEach((type, oldIndex) => {
-            const existingIndex = base.findIndex((t) => t.tag === type.tag && t.value === type.value);
-            const newIndex = existingIndex !== -1 ? existingIndex : base.push(type) - 1;
+            const existingIndex = routeTypes.findIndex((t) => t.tag === type.tag && t.value === type.value);
+            const newIndex = existingIndex !== -1 ? existingIndex : routeTypes.push(type) - 1;
             updatedSegmentRouteTypes.set(oldIndex, newIndex);
         });
     }
 
-    result.forEach((point) => {
-        if (point.segment) {
-            const segment = point.segment;
+    const merged = geometry.map((point) =>
+        point.segment ? { ...point, segment: withRouteTypeIndexes(point.segment, updatedSegmentRouteTypes) } : point
+    );
 
-            const segmentTypes = segment.ext.types ?? null;
-            const segmentPointTypes = segment.ext.pointTypes ?? null;
-            const segmentNames = segment.ext.names ?? null;
+    return { geometry: merged, routeTypes };
+}
 
-            if (updatedSegmentRouteTypes.size > 0) {
-                if (segmentTypes) {
-                    segment.ext.types = updateRouteTypeIndexes(segmentTypes, updatedSegmentRouteTypes);
-                }
-                if (segmentPointTypes) {
-                    segment.ext.pointTypes = updateRouteTypeIndexes(segmentPointTypes, updatedSegmentRouteTypes);
-                }
-                if (segmentNames) {
-                    segment.ext.names = updateRouteTypeIndexes(segmentNames, updatedSegmentRouteTypes);
-                }
+function withRouteTypeIndexes(segment, updatedSegmentRouteTypes) {
+    const ext = { ...segment.ext };
+    if (updatedSegmentRouteTypes.size > 0) {
+        ['types', 'pointTypes', 'names'].forEach((key) => {
+            if (ext[key]) {
+                ext[key] = updateRouteTypeIndexes(ext[key], updatedSegmentRouteTypes);
             }
+        });
+    }
+    const result = { ...segment, ext };
+    delete result.routeTypes;
 
-            delete segment.routeTypes;
-        }
-    });
-    return base;
+    return result;
 }
 
 function updateRouteTypeIndexes(value, updatedSegmentRouteTypes) {

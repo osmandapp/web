@@ -1,10 +1,5 @@
-import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
-import TracksManager, {
-    PROFILE_LINE,
-    ROUTER_ERROR_LINE_USED,
-    updateTrackRouteTypes,
-} from '../manager/track/TracksManager';
+import TracksManager, { mergeRouteTypes, PROFILE_LINE, ROUTER_ERROR_LINE_USED } from '../manager/track/TracksManager';
 import EditablePolyline from '../map/util/creator/EditablePolyline';
 import {
     hasSegmentWaitingForRouter,
@@ -19,10 +14,8 @@ export const GET_ANALYSIS_DEBOUNCE_MS = 1000; // don't flood get-analysis
 let pointsInAnalysis = null;
 
 export function effectControlRouterRequests({ ctx, startedRouterJobs, setStartedRouterJobs }) {
-    if (ctx.processingAnalytics) {
-        console.debug('Skip routing while processingAnalytics');
-        return false;
-    }
+    const waiting = getWaitingSegments(ctx.selectedGpxFile.points, ctx.trackRouter);
+    dropUnansweredCache(ctx, waiting);
 
     if (startedRouterJobs >= MAX_STARTED_ROUTER_JOBS) {
         console.debug('Too many startedRouterJobs', startedRouterJobs);
@@ -30,36 +23,28 @@ export function effectControlRouterRequests({ ctx, startedRouterJobs, setStarted
     }
 
     let started = 0;
-    const cache = ctx.routingCache;
+    for (const { key, start, end, geoProfile } of waiting) {
+        if (ctx.routingCache[key]) {
+            continue;
+        }
+        ctx.setProcessRouting(true);
+        setStartedRouterJobs((x) => x + 1);
+        ctx.mutateRoutingCache((o) => (o[key] = { busy: true }));
 
-    for (const key in cache) {
-        if (cache[key].geometry === null && cache[key].busy !== true) {
-            ctx.setProcessRouting(true);
-            setStartedRouterJobs((x) => x + 1);
-            ctx.mutateRoutingCache((o) => o[key] && (o[key].busy = true));
-
-            const { startPoint, endPoint, geoProfile } = cache[key];
-
-            Promise.resolve(
-                routeOrLine(ctx, startPoint, endPoint, geoProfile).then(
-                    (result) => {
-                        setStartedRouterJobs((x) => x - 1);
-                        if (result) {
-                            updateTrackRouteTypes(result.points, result.routeTypes, ctx);
-                        }
-                        ctx.mutateRoutingCache((o) => o[key] && (o[key].geometry = result?.points));
-                    },
-                    (error) => {
-                        // keep busy=true till next init
-                        setStartedRouterJobs((x) => x - 1);
-                        console.error('updateRouteBeetwenPoints failed', error);
-                    }
-                )
-            );
-
-            if (++started >= MAX_STARTED_ROUTER_JOBS - startedRouterJobs) {
-                break;
+        routeOrLine(ctx, start, end, geoProfile).then(
+            (result) => {
+                setStartedRouterJobs((x) => x - 1);
+                ctx.mutateRoutingCache((o) => (o[key] = { geometry: result?.points, routeTypes: result?.routeTypes }));
+            },
+            (error) => {
+                setStartedRouterJobs((x) => x - 1);
+                ctx.mutateRoutingCache((o) => (o[key] = { failed: true }));
+                console.error('updateRouteBeetwenPoints failed', error);
             }
+        );
+
+        if (++started >= MAX_STARTED_ROUTER_JOBS - startedRouterJobs) {
+            break;
         }
     }
 
@@ -83,33 +68,60 @@ function routeOrLine(ctx, startPoint, endPoint, geoProfile) {
 }
 
 export function effectRefreshTrackWithRouting({ ctx, map, geoRouter, saveChanges }) {
-    const validKeys = {};
-    const routes = [];
-    const cache = ctx.routingCache;
-
-    forEachCachedSegment(ctx.selectedGpxFile.points, cache, geoRouter, (index, key, startPoint) => {
-        const { geometry, tempLine } = cache[key];
-        validKeys[key] = true;
-        if (geometry && tempLine && isWaitingForRouter(ctx.selectedGpxFile.points, index)) {
-            // used when tempLine exist (segment recalculation, new points, etc), skip PROFILE_GAP
-            refreshTempLine({ ctx, map, geometry, tempLine, color: geoRouter.getColor(startPoint) });
-            ctx.mutateRoutingCache((o) => o[key] && (o[key].tempLine = null)); // use tempLine only once
-            routes.push({ index, geometry });
-        }
-    });
-    const track =
-        routes.length > 0
-            ? { ...ctx.selectedGpxFile, points: setSegmentGeometries(ctx.selectedGpxFile.points, routes) }
-            : ctx.selectedGpxFile;
-
-    dropOutdatedCache({ ctx, validKeys, killLayers: false });
-    routeWaitingSegments(track, ctx);
-
-    if (routes.length > 0) {
-        saveChanges(null, null, null, track); // mutate track with more data and call setSelectedGpxFile({...})
+    const track = ctx.selectedGpxFile;
+    const answered = getWaitingSegments(track.points, geoRouter).filter(({ key }) => ctx.routingCache[key]?.geometry);
+    if (answered.length === 0) {
+        return false;
     }
 
-    return routes.length > 0;
+    let routeTypes = track.routeTypes;
+    const routes = answered.map(({ index, key }) => {
+        const answer = ctx.routingCache[key];
+        const merged = mergeRouteTypes(answer.geometry, answer.routeTypes, routeTypes);
+        routeTypes = merged.routeTypes;
+
+        return { index, geometry: merged.geometry };
+    });
+
+    const layers = track.layers?.getLayers() ?? [];
+    let updateLayers = false;
+    routes.forEach(({ index, geometry }) => {
+        const { id } = track.points[index];
+        const tempLine = id !== undefined && layers.find((layer) => layer.point?.id === id);
+        if (tempLine) {
+            refreshTempLine({ ctx, map, geometry, tempLine, color: geoRouter.getColor(track.points[index - 1]) });
+        } else {
+            updateLayers = true;
+        }
+    });
+
+    const points = setSegmentGeometries(track.points, routes);
+    saveChanges(null, null, null, { ...track, points, routeTypes, ...(updateLayers && { updateLayers }) }); // mutate track with more data and call setSelectedGpxFile({...})
+
+    return true;
+}
+
+function dropUnansweredCache(ctx, waiting) {
+    const waitingKeys = new Set(waiting.map(({ key }) => key));
+    const unanswered = Object.keys(ctx.routingCache).filter(
+        (key) => !ctx.routingCache[key].geometry && !waitingKeys.has(key)
+    );
+    if (unanswered.length > 0) {
+        ctx.mutateRoutingCache((o) => unanswered.forEach((key) => delete o[key]));
+    }
+}
+
+export function getWaitingSegments(points, geoRouter) {
+    const segments = [];
+    points?.forEach((end, index) => {
+        if (isWaitingForRouter(points, index)) {
+            const start = points[index - 1];
+            const geoProfile = geoRouter.getGeoProfile(start);
+            segments.push({ index, start, end, geoProfile, key: createRoutingKey(start, end, geoProfile) });
+        }
+    });
+
+    return segments;
 }
 
 function forEachCachedSegment(points, cache, geoRouter, visit) {
@@ -273,75 +285,6 @@ function isEditableLine(line) {
     return line.listens('mousemove');
 }
 
-// cleanup but keep: by validKeys or if geometry finished
-function dropOutdatedCache({ ctx, validKeys, killLayers = false }) {
-    const cache = ctx.routingCache;
-    for (const key in cache) {
-        if (validKeys[key]) {
-            continue;
-        }
-        if (cache[key].geometry && cache[key].tempLine === null) {
-            continue;
-        }
-        if (killLayers && cache[key].tempLine && ctx.selectedGpxFile.layers) {
-            cache[key].tempLine.removeFrom(ctx.selectedGpxFile.layers);
-        }
-        ctx.mutateRoutingCache((o) => delete o[key]);
-    }
-}
-
-// add start-end segment to cache, re-use cached geometry
-function addRoutingToCache(startPoint, endPoint, tempLine, ctx) {
-    if (tempLine === null) {
-        return; // protected segment
-    }
-    const geoProfile = ctx.trackRouter.getGeoProfile(startPoint);
-    const routingKey = createRoutingKey(startPoint, endPoint, geoProfile);
-    ctx.mutateRoutingCache(
-        (o) =>
-            (o[routingKey] = {
-                tempLine: tempLine,
-                startPoint: cloneDeep(startPoint),
-                endPoint: cloneDeep(endPoint),
-                geoProfile: geoProfile,
-                geometry: o[routingKey]?.geometry ?? null,
-                busy: false,
-            })
-    );
-}
-
-export function routeWaitingSegments(track, ctx) {
-    const layers = track.layers?.getLayers() ?? [];
-    track.points?.forEach((end, index) => {
-        if (end.id === undefined || !isWaitingForRouter(track.points, index)) {
-            return;
-        }
-        const start = track.points[index - 1];
-        const line = layers.find((layer) => layer.point?.id === end.id);
-        if (line && !ctx.routingCache[createRoutingKey(start, end, ctx.trackRouter.getGeoProfile(start))]) {
-            addRoutingToCache(start, end, line, ctx);
-        }
-    });
-}
-
-// undo/redo: one-directional sync (cache -> track)
-export function syncTrackWithCache({ ctx, track, geoRouter }) {
-    const cache = ctx.routingCache;
-    const routes = [];
-
-    forEachCachedSegment(track.points, cache, geoRouter, (index, key, startPoint) => {
-        // skip PROFILE_GAP profile
-        if (cache[key].geometry && startPoint.profile !== TracksManager.PROFILE_GAP) {
-            routes.push({ index, geometry: cache[key].geometry });
-        }
-    });
-    const synced = track.points ? { ...track, points: setSegmentGeometries(track.points, routes) } : track;
-
-    dropOutdatedCache({ ctx, validKeys: {}, killLayers: true });
-
-    return synced;
-}
-
 export function addElevationToCache({ ctx, points, geoRouter }) {
     const cache = ctx.routingCache;
     if (isEmpty(cache)) {
@@ -370,9 +313,3 @@ function createRoutingKey(startPoint, endPoint, geoProfile) {
 
     return ll + geo;
 }
-
-const TracksRoutingCache = {
-    addRoutingToCache,
-};
-
-export default TracksRoutingCache;

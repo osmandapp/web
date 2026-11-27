@@ -3,7 +3,6 @@ import MarkerOptions from '../../markers/MarkerOptions';
 import TrackLayerProvider from '../TrackLayerProvider';
 import { publishEditedTrack } from '../../../manager/track/TracksManager';
 import { findPointIndex, isPointUnrouted, isWaitingForRouter, movePoint } from '../../../manager/track/TrackOperations';
-import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
 export default class EditableMarker {
     stopclick;
@@ -148,18 +147,13 @@ export default class EditableMarker {
                     if (!isWaitingForRouter(track.points, index)) {
                         continue;
                     }
-                    const start = track.points[index - 1];
-                    const end = track.points[index];
-                    const polyline = TrackLayerProvider.updatePolyline(
-                        start,
-                        end,
+                    TrackLayerProvider.updatePolyline(
+                        track.points[index - 1],
+                        track.points[index],
                         polylines,
                         points[index - 1],
                         points[index]
                     );
-                    if (polyline) {
-                        TracksRoutingCache.addRoutingToCache(start, end, polyline, this.ctx);
-                    }
                 }
             }
         } else {

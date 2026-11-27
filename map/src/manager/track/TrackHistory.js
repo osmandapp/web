@@ -16,8 +16,7 @@ export function fromHistoryState(state, current) {
         analysisTracks: current.analysisTracks,
         analysisPoints: current.analysisPoints,
         routeTypes: current.routeTypes,
-        syncRouting: true, // will be 1st effect
-        updateLayers: true, // will be 2nd effect
+        updateLayers: true, // will be 1st effect
         layers: current.layers,
     };
     if (restored.points) {
