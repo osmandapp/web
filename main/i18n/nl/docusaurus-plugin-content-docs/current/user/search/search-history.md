@@ -1,5 +1,5 @@
 ---
-source-hash: e750c3ad7de0205a9500f893c56be0ee9d096f570987bbd67c2ad004df8b1816
+source-hash: f790174db079e7201b2947913d3a0d224ce27c6741666d1a3964ee54c47c6f3e
 sidebar_position: 3
 title:  Zoeken verkennen
 ---
@@ -105,7 +105,7 @@ Voor meer details, zie het artikel [Populaire plaatsen](../map/popular_places.md
 
 ![Geschiedenissectie](@site/static/img/search/history_section_list.webp)
 
-De sectie **Geschiedenis** van het tabblad Verkennen toont maximaal 25 meest recente items. Tik op de titel van de sectie om deze samen te vouwen of uit te vouwen. Tik op *Alles bekijken* om het volledige scherm *Geschiedenis* te openen.
+De sectie **Geschiedenis** van het tabblad Verkennen toont maximaal 25 meest recente items. De sectie is standaard uitgevouwen. Tik op de titel van de sectie om deze samen te vouwen of uit te vouwen; OsmAnd onthoudt uw keuze. Tik op *Alles bekijken* om het volledige scherm *Geschiedenis* te openen.
 
 Als zowel *Zoekgeschiedenis* als *Navigatiegeschiedenis* zijn uitgeschakeld, toont de sectie de kaart *Geschiedenis is uitgeschakeld*. Tik op *Geschiedenisinstellingen openen* om ze in te schakelen.
 

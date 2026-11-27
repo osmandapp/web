@@ -1,5 +1,5 @@
 ---
-source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
+source-hash: 2e48c3b33b0a1b2f2052d01d162cbc2eea2150966936da2a46c59204f2985986
 sidebar_position: 5
 title: Crashlogs
 ---
@@ -49,8 +49,8 @@ Wees voorzichtig bij het verzenden van app-logs, aangezien deze privé-informati
 </Tabs>
 
 1. Ga naar *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* of *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Send current app log* (iOS). Afhankelijk van uw situatie, selecteert u het juiste type log. U kunt de sectie [Crash and App Logs](#crash-and-app-logs) raadplegen voor details over de verschillen tussen de logtypen.
-2. Kies in het pop-upmenu Gmail of uw favoriete e-mailapp. We raden aan de logs naar `support@osmand.net` te verzenden.
-3. Tik op de knop *Verzenden*.
+2. Kies in het pop-upmenu waar u de logs naartoe wilt sturen of waar u ze wilt opslaan: een e-mailapp, een cloudopslagapp of een bestandsbeheerder om ze op uw apparaat op te slaan. We raden aan de logs naar `support@osmand.net` te verzenden.
+3. Als u de logs per e-mail verstuurt, tik dan op de knop *Verzenden*.
 
 <!--
 ### Send Logs from iOS Devices {#send-logs-from-ios-devices}

@@ -1,5 +1,5 @@
 ---
-source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
+source-hash: b076e363549de89788d39e28c794e1ab1884f389ec642e5833a3ff1b49f7e267
 sidebar_position: 4
 title:  Route details
 ---
@@ -25,13 +25,13 @@ Met OsmAnd kunt u de beste route vinden en de details ervan bekijken. De app gee
 
 <TabItem value="android" label="Android">
 
-![Route details Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
+![Routedetails Android](@site/static/img/navigation/route/route_detail_overview_4_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
+![Routedetails iOS](@site/static/img/navigation/route/route_detail_overview_4_ios.png)
 
 </TabItem>
 
@@ -56,7 +56,7 @@ Afhankelijk van de geselecteerde [profielinstellingen](../../personal/profiles.m
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
+![Routedetails](@site/static/img/navigation/route/route_details_distance-time-CO2_2_andr.png)
 
 </TabItem>
 
@@ -83,7 +83,7 @@ Afhankelijk van de geselecteerde [profielinstellingen](../../personal/profiles.m
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_info-block_andr.png)
+![Routedetails](@site/static/img/navigation/route/route_details_info-block_andr.png)
 
 </TabItem>
 
@@ -122,7 +122,7 @@ De hoogtegegevens op de kaart (tussen 70 graden noorderbreedte en 70 graden zuid
 
 <TabItem value="android" label="Android">
 
-![Route details](@site/static/img/navigation/route/route_details_el_graph_andr.png)
+![Routedetails](@site/static/img/navigation/route/route_details_el_graph_andr.png)
 
 </TabItem>
 
@@ -147,13 +147,13 @@ De [grafieken](../../map/tracks/track-context-menu.md#altitude--speed-graphs) ge
 
 <TabItem value="android" label="Android">
 
-![Route details Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
+![Routedetails Android](@site/static/img/navigation/route/navigation_route_analiz_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Route details iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
+![Routedetails iOS](@site/static/img/navigation/route/navigation_route_analiz_ios.png)
 
 </TabItem>
 
@@ -248,7 +248,7 @@ Wegkenmerken zijn toegankelijk in de [Route details](#how-to-access) en geven se
 
 Afslag-voor-afslag informatie geeft gedetailleerde [instructies](#instructions) over hoe u een route moet navigeren. Naast het menu *Details* wordt het ook weergegeven in de widgets [*Routemanoeuvres*](../../widgets/nav-widgets.md#route-guidance) en [*Rijstroken*](../../widgets/nav-widgets.md#lanes). Deze informatie helpt u om uw route beter te navigeren en stelt u in staat om vooruit te plannen.
 
-Tik op een specifiek gedeelte van de route in de lijst om gedetailleerde informatie te bekijken of wijzigingen aan te brengen indien nodig. De kaart wordt vergroot en er wordt een [Contextmenu](../../map/map-context-menu.md) geopend.
+Tik op een specifiek gedeelte van de route in de lijst om gedetailleerde informatie te bekijken of wijzigingen aan te brengen indien nodig. De kaart wordt vergroot en er wordt een [Contextmenu](../../map/map-context-menu.md) geopend. Tik op een tussenbestemming in de lijst om de kaart op die bestemming te openen (*alleen Android*).
 
 
 ### Instructies {#instructions}
@@ -257,13 +257,13 @@ Tik op een specifiek gedeelte van de route in de lijst om gedetailleerde informa
 
 <TabItem value="android" label="Android">
 
-![Navigatieroute Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![Navigatieroute Android](@site/static/img/navigation/route/navigation_turn_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigatieroute Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Navigatieroute Android](@site/static/img/navigation/route/navigation_turn_ios.webp)
 
 </TabItem>
 
@@ -276,6 +276,8 @@ Instructies bevatten informatie over het verplaatsen langs de route, zoals:
 - Een beschrijving van *wat te doen*, inclusief de *naam van de straat of het pad*.
 - *Totale afstand* en *tijd van de route*.
 - *[Rijstrookindeling](../../widgets/nav-widgets.md#lanes)* voor de huidige weg.
+- *Tussenbestemmingen* in hun volgorde langs de route, elk met zijn nummer, naam of coördinaten, en de afstand en tijd vanaf de start.
+- *Eindbestemming*, gemarkeerd met het bestemmingspictogram (*alleen Android*).
 - [*Wegkantindicator*](#roadside-indicator) (*alleen iOS*).
 
 

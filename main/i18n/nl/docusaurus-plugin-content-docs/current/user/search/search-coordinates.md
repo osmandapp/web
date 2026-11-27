@@ -1,5 +1,5 @@
 ---
-source-hash: 30ffc7f0d41543a8f54731ed3262469f812497db1848deacdc4b0eb554ec2b26
+source-hash: 19d6ff7c55c3913d09f5ad722d1053eb202a843057869e98633ff5ce9589d713
 sidebar_position: 6
 title:  Coördinaten zoeken
 ---
@@ -43,7 +43,7 @@ OsmAnd biedt verschillende manieren om naar de *Zoekfunctie → [Tabblad Adres z
 
 </Tabs>
 
-Coördinaten kunnen in elk beschikbaar formaat worden ingevoerd, maar de gevonden locatie wordt weergegeven in het formaat dat is opgegeven in *Profiel configureren → Algemene instellingen → Eenheden & formaten*.
+Coördinaten kunnen in elk beschikbaar formaat worden ingevoerd, maar de gevonden locatie wordt weergegeven in de formaten uit de lijst die is opgegeven in *Profiel configureren → Algemene instellingen → Eenheden & formaten*, met het primaire formaat eerst.
 
 - Om de coördinatenzoekfunctie te gebruiken, kunt u ze afzonderlijk in elk overeenkomstig veld typen, of eerder gekopieerde coördinaten in het zoekveld plakken of invoeren. De applicatie vraagt u om een geschikte locatie te selecteren.
 - Coördinaten zoeken converteert automatisch het ene coördinaatformaat naar het andere wanneer het opgegeven formaat wordt gewijzigd in het veld met hun lijst.
@@ -115,7 +115,7 @@ Er zijn verschillende manieren om coördinaten in te voeren voor de zoekopdracht
 - *Invoerregels*. De coördinaten bestaan uit een MGRS-zone, een vierkant en nog twee cijfers die de oostelijke en noordelijke offsets aangeven.
 - *Meest gebruikt*. Het MGRS-formaat wordt veel gebruikt in militaire navigatie en communicatie, en kan ook nuttig zijn voor outdoorliefhebbers en wandelaars.
 
-### Swiss Grid (Android only) {#swiss-grid}
+### Swiss Grid {#swiss-grid}
 
 ![Coördinaten zoeken Android](@site/static/img/search/coordinates_search_Swiss_andr.png)  
 
@@ -129,7 +129,7 @@ Er zijn verschillende manieren om coördinaten in te voeren voor de zoekopdracht
 - *Meest gebruikt*. De formaten Swiss Grid (CH1903) en Swiss Grid (CH1903+) worden in Zwitserland gebruikt voor geodetische metingen, cartografie, geografische informatiesystemen en bouw- en ingenieurswerken. Deze formaten bieden een lokaal coördinatensysteem dat specifiek is voor Zwitserland.
 
 
-### Maidenhead Locator System (Android only) {#maidenhead-locator-system}
+### Maidenhead Locator System {#maidenhead-locator-system}
 
 ![Coördinaten zoeken Android](@site/static/img/search/coordinates_search_maidenhead.webp)
 
@@ -137,22 +137,41 @@ Er zijn verschillende manieren om coördinaten in te voeren voor de zoekopdracht
 - *Invoerregels*. De coördinaten bestaan uit afwisselende paren letters en cijfers. Langere locators bieden een hogere positionele nauwkeurigheid.  
 - *Meest gebruikt*. Het Maidenhead Locator System wordt veel gebruikt door radioamateurs voor stationlocatie, radiocommunicatie en wedstrijden.
 
-Voor elk profiel kunt u afzonderlijk een ander coördinaatformaat instellen. Ga hiervoor naar *Algemene instellingen → [Coördinaatformaat](../personal/profiles.md#units--formats)*.
+Voor elk profiel kunt u afzonderlijk een andere lijst met coördinaatformaten instellen. Ga hiervoor naar *Algemene instellingen → [Coördinaatformaat](../personal/profiles.md#units--formats)*.
 
 
-## Coördinaatformaat aanpassen (Android only) {#customize-coordinate-format}
+## Coördinaatformaat aanpassen {#customize-coordinate-format}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Coördinaten zoeken Android](@site/static/img/search/customising_format.webp) ![Coördinaten zoeken Android](@site/static/img/search/searching_format.webp)
 
 U kunt de lijst met coördinaatformaten die beschikbaar zijn voor het huidige profiel aanpassen.  
 Ga naar: *<Translate android="true" ids="shared_string_menu,configure_profile,general_settings_2,coordinates_format"/>*
 
-Op dit scherm kunt u:  
-- Tik op de knop *Bewerken* om het primaire coördinaatformaat in te stellen, coördinaatformaten opnieuw te ordenen of te verwijderen.
-- Tik op + om een ander coördinaatformaat toe te voegen.
-- Open het ⋮-menu om de standaardlijst met coördinaatformaten te herstellen of coördinaatformaten van een ander profiel te kopiëren.
+</TabItem>
 
-Wanneer u zoekt op coördinaten, kunt u een coördinaatformaat selecteren uit de lijst Recente of tikken op *Ander formaat selecteren* om alle beschikbare coördinatesystemen te bekijken. U kunt ook zoeken op naam van het coördinatesysteem of EPSG-code.
+<TabItem value="ios" label="iOS">
+
+![Coördinaten zoeken iOS](@site/static/img/search/customising_format_ios.webp) ![Coördinaten zoeken iOS](@site/static/img/search/searching_format_ios.webp)
+
+U kunt de lijst met coördinaatformaten die beschikbaar zijn voor het huidige profiel aanpassen.  
+Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,units_and_formats,coords_format"/>*
+
+</TabItem>
+
+</Tabs>
+
+Het eerste formaat in de lijst is het **primaire** formaat. Het wordt als eerste getoond in het [contextmenu van de kaart](../map/map-context-menu.md) en wordt standaard gebruikt in [coördinatenwidgets](../widgets/info-widgets.md#coordinates-widget).
+
+Op dit scherm kunt u:  
+- Tik op de knop *Bewerken* om het primaire coördinaatformaat in te stellen, coördinaatformaten opnieuw te ordenen of te verwijderen. Er moet minstens één coördinaatformaat in de lijst blijven.
+- Tik op + om een ander coördinaatformaat toe te voegen. Op het scherm *Formaat toevoegen* kunt u in een database met meer dan 5.000 lokale en nationale EPSG-codes zoeken op land, naam of ID. Elk toegevoegd formaat verschijnt aan het einde van de lijst.
+- Open het ⋮-menu om de standaardlijst met coördinaatformaten te herstellen of coördinaatformaten van een ander profiel te kopiëren. 
+
+Wanneer u zoekt op coördinaten, kunt u een coördinaatformaat selecteren uit de lijst Recente of tikken op *Ander formaat selecteren* om alle beschikbare coördinatesystemen te bekijken. U kunt ook zoeken op naam van het coördinatesysteem of EPSG-code. De lijst *Recente* toont de laatste 5 formaten die u hebt toegevoegd. Voor EPSG-formaten zijn de coördinaatvelden *Easting / X* en *Northing / Y*.
 
 
 <!--

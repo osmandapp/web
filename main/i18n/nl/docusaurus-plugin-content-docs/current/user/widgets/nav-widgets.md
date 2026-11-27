@@ -1,5 +1,5 @@
 ---
-source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
+source-hash: 292d8a0b5fbc689d6e07f6ebd71d0b9a70856fabf41202c365ab38c143096e5d
 sidebar_position: 4
 title:  Navigatiewidgets
 ---
@@ -191,6 +191,8 @@ De widget *Route-informatie* biedt realtime gegevens over de lopende navigatiero
 - Schakel de optie **Uitvouwknop weergeven** in of uit om de navigatie-UI-uitvouwknop weer te geven of te verbergen. Deze optie is standaard ingeschakeld.
 
 > OPMERKING: De widget is alleen zichtbaar tijdens navigatie.
+
+Op Android-telefoons in liggende stand is de widget *<Translate android="true" ids="map_widget_route_information"/>* standaard verborgen. In plaats daarvan toont het *<Translate android="true" ids="map_widget_right"/>* de widgets [<Translate android="true" ids="map_widget_distance_to_destination"/>](#distance-to-destination), [<Translate android="true" ids="map_widget_time_to_destination"/>](#time-to-destination), [<Translate android="true" ids="map_widget_distance_to_intermediate"/>](#distance-to-intermediate) en [<Translate android="true" ids="map_widget_time_to_intermediate"/>](#time-to-intermediate). U kunt elk van deze widgets tonen of verbergen in [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md).
 
 | | |
 |:------------|:------------|

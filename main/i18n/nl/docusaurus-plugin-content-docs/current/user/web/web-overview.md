@@ -38,7 +38,7 @@ De Web Portal biedt de volgende belangrijkste mogelijkheden voor werken met kaar
 - Weergave van [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks), en [POI's](./web-map.md#poi-overlay) op de kaart.
 - [Weer-overlays](./web-weather.md): wind, temperatuur en druk.
 - [Terreinlagen](./web-map.md#terrain): schaduwreliëf, hellingen en hoogte-aanzicht.
-- [Track Analyzer](./web-tracks-analyzer.md) voor hoogte- en snelheidsprofielen.
+- [Tracks-analysator](./web-tracks-analyzer.md) voor hoogte- en snelheidsprofielen.
 - Volledige toegang tot gesynchroniseerde gegevens via [OsmAnd Cloud](./web-cloud#cloud-sync).
 - Ondersteuning voor import/export van bestanden (GPX: tracks, favorieten).
 - Naadloze integratie met **OsmAnd Pro** en **OsmAnd Start**.
@@ -55,10 +55,10 @@ De Web Kaartportaal ondersteunt verschillende toegangsniveaus: zonder inloggen, 
 | [Routeplanner](./planner.md) | Zonder Inloggen |
 | [Weer-overlays](./web-weather.md) | Zonder Inloggen |
 | [Instellingen](./web-map.md#settings) | Zonder Inloggen |
-| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([POI's](./web-map.md#poi-overlay), [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([POI's](./web-map.md#poi-overlay), [Favorieten](./web-map.md#favorites), [Tracks](./web-map.md#tracks))| [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 | [Kaartmenu Configureren](./web-map.md#configure-map-menu) ([Terrein](./web-map.md#terrain))| [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
-| [Webzoekopdracht, Populaire Plaatsen](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) or [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [OsmAnd Cloud Sync](./web-cloud.md#cloud-sync) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
+| [Webzoekopdracht, Populaire Plaatsen](./web-search.md) | [OsmAnd Start](https://osmand.net/docs/user/personal/osmand-cloud#osmand-start) of [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 | [Tracks-mappen en -laag](./web-tracks.md) | [OsmAnd Pro](https://osmand.net/docs/user/purchases/) |
 
 

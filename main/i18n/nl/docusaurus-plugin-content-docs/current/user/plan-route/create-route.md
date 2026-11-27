@@ -1,5 +1,5 @@
 ---
-source-hash: 0c391d35a3129ebecc88e3b06164672e3d2eb1e956124269d90ae604b5ee4b32
+source-hash: 2a64e0aeff55cd96db9ba2213903853f49b98bb5accbd0b25bd10e61fe1c29aa
 sidebar_position: 1
 title:  Een route plannen
 ---
@@ -17,21 +17,27 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Overzicht {#overview}
 
-De tool **Een route plannen** (*Menu → Een route plannen*) is een krachtige functie van de OsmAnd-applicatie waarmee u [nieuwe routes kunt aanmaken](#create-new-route) als GPX-tracks, [reeds opgeslagen tracks kunt bewerken en er nieuwe segmenten aan kunt toevoegen](#segments), [afstanden kunt meten](#distance-measurement) op de kaart en [tracksegmenten kunt koppelen](#attach-track-to-roads) aan de dichtstbijzijnde beschikbare weg met behulp van verschillende navigatieprofielen. De functie is ontworpen om in *offline modus* te werken.
-
-Een route bestaat uit een reeks segmenten tussen gespecificeerde punten. De segmenten kunnen rechte lijnen zijn或 routes die zijn aangepast aan het geselecteerde profiel. De route kan worden opgeslagen als GPX om later te importeren, te bewerken en voor [navigatie](../navigation/setup/gpx-navigation.md).
-
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
 ![Een route plannen android](@site/static/img/plan-route/plan_route_overview_andr.png)
 
+De tool **Een route plannen** (*Menu → Een route plannen*) is een krachtige functie van de OsmAnd-applicatie waarmee u [nieuwe routes kunt aanmaken](#create-new-route) als GPX-tracks, [reeds opgeslagen tracks kunt bewerken en er nieuwe segmenten aan kunt toevoegen](#segments), [afstanden kunt meten](#distance-measurement) op de kaart en [tracksegmenten kunt koppelen](#attach-track-to-roads) aan de dichtstbijzijnde beschikbare weg met behulp van verschillende navigatieprofielen. De functie is ontworpen om in *offline modus* te werken.
+
+Een route bestaat uit een reeks segmenten tussen gespecificeerde punten. De segmenten kunnen rechte lijnen zijn of routes die zijn aangepast aan het geselecteerde profiel. De route kan worden opgeslagen als GPX om later te importeren, te bewerken en voor [navigatie](../navigation/setup/gpx-navigation.md).
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
 ![Een route plannen ios](@site/static/img/plan-route/plan_route_overview_ios.webp)
+
+De tool **Een route plannen** (*Menu → Een route plannen*) is een krachtige functie van de OsmAnd-applicatie waarmee u [nieuwe routes kunt aanmaken](#create-new-route) als GPX-tracks, [reeds opgeslagen tracks kunt bewerken en er nieuwe segmenten aan kunt toevoegen](#segments), [afstanden kunt meten](#distance-measurement) op de kaart en [tracksegmenten kunt koppelen](#attach-track-to-roads) aan de dichtstbijzijnde beschikbare weg met behulp van verschillende navigatieprofielen. De functie is ontworpen om in *offline modus* te werken.
+
+Een route bestaat uit een reeks segmenten tussen gespecificeerde punten. De segmenten kunnen rechte lijnen zijn of routes die zijn aangepast aan het geselecteerde profiel. De route kan worden opgeslagen als GPX om later te importeren, te bewerken en voor [navigatie](../navigation/setup/gpx-navigation.md).
+
+**Opmerking:** Op iPad en Mac, en op iPhone in liggende stand, opent het paneel *Een route plannen* aan de linkerkant van het scherm op volledige hoogte en bevinden de knoppen *+ POI*, *Ongedaan maken*, *Opnieuw* en *Route +* zich op de kaart. Op iPhone in staande stand en in smalle iPad-vensters, zoals Split View of Slide Over, opent het paneel onderaan het scherm.
 
 </TabItem>
 
@@ -207,7 +213,7 @@ U kunt ook een via-punt direct vanaf de kaart toevoegen door op een POI of Favor
 
 ![Een route plannen ios](@site/static/img/plan-route/plan_route_points_list_ios.webp)
 
-Om een afstand te meten of een reis te plannen, voegt u één voor één punten toe op de locatie van de *Aanwijzer* en tikt u op de knop *Route +*. Via de **puntenlijst** hieronder kunt u punten opnieuw ordenen, verwijderen of een specifiek [contextmenu voor punten](#point-context-menu) openen.
+Om een afstand te meten of een reis te plannen, voegt u één voor één punten toe op de locatie van de *Aanwijzer* en tikt u op de knop *Route +*. Via de **puntenlijst** in het paneel *Een route plannen* kunt u punten opnieuw ordenen, verwijderen of een specifiek [contextmenu voor punten](#point-context-menu) openen. Een punt kan alleen binnen zijn [sectie](#multimodal-routes) worden versleept, dat wil zeggen tussen de punten die met hetzelfde routetype worden bereikt.
 
 </TabItem>
 
@@ -308,11 +314,11 @@ In het tabblad Route wordt elk segment weergegeven met zijn routetype en afstand
 U kunt een segment beheren via het menu met drie puntjes:
 - **Routetype wijzigen** — beschikbaar voor een segment met één routetype. Opent Route tussen punten, waar u een ander routetype kunt selecteren.
 - **Enkelvoudig routetype instellen** — beschikbaar wanneer een segment meerdere secties met verschillende routetypes bevat. Opent Route tussen punten, waar u één routetype kunt toepassen op het segment. Het hele segment wordt opnieuw berekend met het geselecteerde routeringstype.
-- **Sorteren** — routepunten handmatig herschikken of Sorteer deur-tot-deur gebruiken om ze te herschikken zodat de totale reisafstand wordt geminimaliseerd.
+- **Sorteren** — routepunten handmatig herschikken of Sorteer deur-tot-deur gebruiken om ze te herschikken zodat de totale reisafstand wordt geminimaliseerd. In een segment met meerdere secties worden punten binnen elke sectie gesorteerd.
 - **Opslaan als…** — sla het segment op als een apart bestand.
 - **Segment verwijderen** — verwijder het segment.
 
-Om een nieuw niet-verbonden segment aan te maken, tikt u op *Nieuw segment starten* onderaan het tabblad Route. Om het huidige segment voort te zetten met een ander routeringstype, tikt u op *Doorgaan met een ander type* onder het laatste segment en selecteert u vervolgens een routeringstype voor de volgende sectie.
+Om een nieuw niet-verbonden segment aan te maken, tikt u op *Nieuw segment starten* onderaan het tabblad Route. Om het huidige segment voort te zetten met een ander routeringstype, tikt u op *Doorgaan met een ander type* onder het laatste segment en selecteert u vervolgens een routeringstype voor de volgende sectie. Het geselecteerde type wordt in deze rij getoond als *Volgende: …*, en de nieuwe sectie begint bij het volgende punt dat u toevoegt.
 
 Een segment kan worden verdeeld in [secties](#multimodal-routes) wanneer verschillende routetypes worden gebruikt voor verschillende delen van het segment. Elke sectie toont zijn routetype en afstand.
 

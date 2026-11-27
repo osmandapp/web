@@ -1,5 +1,5 @@
 ---
-source-hash: 4cb2ed2e64ad67932de85f92c1b0ee0610ca8ce9b931abadf70fab7f4c01d2b9
+source-hash: d675bf78b7d5f02b9e16ef27beaba0dfa88409214edd570ed49a75ad00bd2d71
 sidebar_position: 19
 title:  Weer
 ---
@@ -139,7 +139,7 @@ Ga naar: *Ingeschakelde plugin → <Translate ios="true" ids="shared_string_menu
 
 Om weerlagen op het OsmAnd-kaartscherm weer te geven, moet u het menu *Kaart configureren* gebruiken. Ga naar het menu, zoek het item *Weer* in de lijst (alleen beschikbaar als de plugin is ingeschakeld) en tik erop.  
 
-In dit menu kunt u de **zichtbaarheid** en [instellingen](#weather-settings) voor elke laag wijzigen, het type contourlijnen selecteren en de [offline 7-daagse weersvoorspelling](#offline-forecast) downloaden (*hier alleen beschikbaar voor Android*).
+In dit menu kunt u de **zichtbaarheid** en [instellingen](#weather-settings) voor elke laag wijzigen, het type contourlijnen selecteren en de [offline 7-daagse weersvoorspelling](#offline-forecast) downloaden (*hier alleen beschikbaar voor Android*). Bij 0% zichtbaarheid is de laag verborgen; bij 100% is deze volledig zichtbaar.
 
 
 ### Weerinstellingen {#weather-settings}
@@ -168,7 +168,7 @@ In dit menu kunt u de **zichtbaarheid** en [instellingen](#weather-settings) voo
 Het is belangrijk om te beslissen in welke meeteenheden u de [Weergegevens](#weather-layers) op de kaart en in de sectie [Weer-widgets](#weather-widgets) van het scherm wilt zien. U kunt voor elke parameter de juiste meeteenheden kiezen. U kunt ook standaardwaarden gebruiken — op iOS voor alle parameters, op Android alleen voor temperatuur. De temperatuureenheid wordt geselecteerd in: *Menu → Profiel → Algemene instellingen → Eenheden & formaten → Temperatuur*. In de iOS-versie van de OsmAnd-app kunt u ook de optie voor offline voorspelling inschakelen om het gebruik van mobiele data tijdens het reizen te vermijden.  
 
 :::note
-In de iOS-versie van OsmAnd kunt u de meeteenheden en het transparantieniveau wijzigen in het menu dat wordt geopend na lang tikken op het pictogram van de vereiste kaartlaag.  
+In de iOS-versie van OsmAnd kunt u de meeteenheden en het zichtbaarheidsniveau wijzigen in het menu dat wordt geopend na lang tikken op het pictogram van de vereiste kaartlaag.  
 :::
 
 ### Weerlagen {#weather-layers}

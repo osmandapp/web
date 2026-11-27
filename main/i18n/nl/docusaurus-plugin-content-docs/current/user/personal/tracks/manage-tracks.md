@@ -1,5 +1,5 @@
 ---
-source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
+source-hash: 0a04e7c5b81da2f4a24b1d70406494efb02bf28fb32a1d087fb5772ae29bca04
 sidebar_position: 2
 title:  Tracks beheren
 ---
@@ -23,13 +23,13 @@ Alle tracks in OsmAnd worden opgeslagen in een tabblad in *<Translate android="t
 
 <TabItem value="android" label="Android">
 
-![Manage track Overview Android](@site/static/img/personal/tracks/track_on_map_android.png)
+![Overzicht trackbeheer Android](@site/static/img/personal/tracks/track_on_map_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Manage track Overview iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
+![Overzicht trackbeheer iOS](@site/static/img/personal/tracks/track_on_map_ios.png)
 
 </TabItem>
 
@@ -42,13 +42,13 @@ Alle tracks in OsmAnd worden opgeslagen in een tabblad in *<Translate android="t
 
 <TabItem value="android" label="Android">
 
-![Plan a route modify-track-android](@site/static/img/plan-route/plan-route-modify-track-android.png)
+![Route plannen track wijzigen Android](@site/static/img/plan-route/plan-route-modify-track-android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Plan a route modify-track-ios](@site/static/img/plan-route/plan-route-modify-track-ios.png)
+![Route plannen track wijzigen iOS](@site/static/img/plan-route/plan-route-modify-track-ios.png)
 
 </TabItem>
 
@@ -71,7 +71,11 @@ U kunt tracks toevoegen in OsmAnd op de volgende manieren:
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_files"/>*
 
-![My Places with tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
+
+Alle tracks die ooit zijn opgenomen, aangemaakt of geïmporteerd, worden automatisch weergegeven in de map [Mijn plaatsen](../../personal/myplaces.md) in het tabblad *Tracks*. Ze zijn georganiseerd per map of worden weergegeven in een lijst eronder.
+
+Elke track in de lijst toont de naam van de bovenliggende map op de tweede regel, gescheiden door `|` (bijvoorbeeld `Hiking | Tracks`), zodat u gemakkelijker kunt zien waar een track is opgeslagen. Dit geldt in [Zoeken](#search), [Slimme mappen](../../personal/tracks/smart-folder.md) en [Kaart configureren → Tracks](../../map/tracks/index.md#configure-map).
 
 </TabItem>
 
@@ -79,15 +83,17 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My Places with tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
+![Mijn plaatsen met tracks in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
+
+Alle tracks die ooit zijn opgenomen, aangemaakt of geïmporteerd, worden automatisch weergegeven in de map [Mijn plaatsen](../../personal/myplaces.md) in het tabblad *Tracks*. Ze zijn georganiseerd per map of worden weergegeven in een lijst eronder.
+
+Elke track in de lijst toont de naam van de bovenliggende map op de tweede regel, gescheiden door `|` (bijvoorbeeld `Hiking | Tracks`), zodat u gemakkelijker kunt zien waar een track is opgeslagen. Dit geldt in [Zoeken](#search), [Slimme mappen](../../personal/tracks/smart-folder.md) en [Kaart configureren → Tracks](../../map/tracks/index.md#configure-map).
+
+**Opmerking:** Terwijl OsmAnd trackstatistieken berekent, bijvoorbeeld nadat veel tracks tegelijk zijn toegevoegd, wordt bovenaan de lijst de rij *<Translate ios="true" ids="tracks_stats_are_being_calculated"/>* met een voortgangsring getoond. Alle tracks worden direct weergegeven en hun statistieken verschijnen naarmate de berekening vordert. U kunt tijdens de berekening elke track openen, hernoemen, verplaatsen, delen of verwijderen. De rij verdwijnt wanneer alle statistieken zijn berekend.
 
 </TabItem>
 
 </Tabs>
-
-Alle tracks die ooit zijn opgenomen, aangemaakt of geïmporteerd, worden automatisch weergegeven in de map [Mijn plaatsen](../../personal/myplaces.md) in het tabblad *Tracks*. Ze zijn georganiseerd per map of worden weergegeven in een lijst eronder.
-
-Elke track in de lijst toont de naam van de bovenliggende map op de tweede regel, gescheiden door `|` (bijvoorbeeld `Wandelen | Tracks`), zodat u gemakkelijker kunt zien waar een track is opgeslagen. Dit geldt in [Zoeken](#search), [Slimme mappen](../../personal/tracks/smart-folder.md) en [Kaart configureren → Tracks](../../map/tracks/index.md#configure-map).
 
 
 ### Trackmenu {#track-menu}
@@ -152,13 +158,13 @@ Het menu biedt de volgende acties:
 
 <TabItem value="android" label="Android">
 
-![My places tracks seach function Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
+![Zoekfunctie voor tracks in Mijn plaatsen Android](@site/static/img/personal/tracks/my_places_tracks_search_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks seach function iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
+![Zoekfunctie voor tracks in Mijn plaatsen iOS](@site/static/img/personal/tracks/my_places_tracks_search_ios.webp)
 
 </TabItem>
 
@@ -179,13 +185,13 @@ Beschikbaar:
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
+![Sorteerfunctie voor tracks in Mijn plaatsen Android](@site/static/img/personal/tracks/manage_tracks_selection_mode_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
+![Mijn plaatsen tracks iOS](@site/static/img/personal/tracks/manage_tracks_selection_mode_2_ios.webp)
 
 </TabItem>
 
@@ -216,13 +222,13 @@ Nadat u uw keuze heeft gemaakt, zijn de volgende stappen beschikbaar:
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![Sorteerfunctie voor tracks in Mijn plaatsen Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.webp)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
+![Sorteerfunctie voor tracks in Mijn plaatsen iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_3_ios.webp)
 
 </TabItem>
 
@@ -232,7 +238,8 @@ OsmAnd biedt een eenvoudige manier om uw tracks te sorteren, zodat u een grote v
 
 ***Sorteeropties:***
 
-- **Dichtstbijzijnde** — Toont tracks die het dichtst bij uw huidige locatie zijn.
+- **Dichtstbijzijnde bij huidige locatie** — Toont tracks die het dichtst bij uw huidige locatie zijn.
+- **Dichtstbijzijnde bij kaartcentrum** — Toont tracks die het dichtst bij het huidige kaartcentrum zijn. Bij elke track worden de afstand en een oranje richtingspijl getoond die vanaf het kaartcentrum wijst.
 - **Laatst gewijzigd** — Toont tracks gesorteerd op hun meest recente wijzigingsdatum.
 - **Naam: A - Z** — Rangschikt tracks alfabetisch van A tot Z.
 - **Naam: Z - A** — Rangschikt tracks alfabetisch van Z tot A.
@@ -249,13 +256,13 @@ OsmAnd biedt een eenvoudige manier om uw tracks te sorteren, zodat u een grote v
 
 <TabItem value="android" label="Android">
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
+![Sorteerfunctie voor tracks in Mijn plaatsen Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_andr.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My places tracks sort function iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
+![Sorteerfunctie voor tracks in Mijn plaatsen iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_ios.webp)
 
 </TabItem>
 
@@ -274,7 +281,7 @@ De geselecteerde sorteeroptie wordt niet alleen toegepast op de huidige submap, 
 
 Tik op het *drie-puntenmenu* in het mapveld om het mapmenu te **openen**.
 
-![import multitrack](@site/static/img/personal/tracks/tracks_folder_menu.png)
+![multitrack importeren](@site/static/img/personal/tracks/tracks_folder_menu.png)
 
 </TabItem>
 
@@ -310,7 +317,7 @@ Met het trackmapmenu kunt u mappen bekijken, hernoemen, exporteren en beheren.
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
-![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![Mijn plaatsen met tracks in Android](@site/static/img/personal/tracks/dashboard_andr.webp)
 
 </TabItem>
 
@@ -324,14 +331,14 @@ Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,
 
 </Tabs>
 
-Onderaan de lijst in het tabblad *Tracks*, en onder de lijst met tracks **in elk van uw mappen**, bevindt zich een informatiesectie waarmee u de algemene samenvattende statistieken voor de tracks in de geselecteerde map kunt bekijken. Alle waarden worden weergegeven in de door u geselecteerde [eenheden](../../personal/profiles.md#units--formats).
+Onderaan de lijst in het tabblad *Tracks*, en onder de lijst met tracks in een map, bevindt zich een informatiesectie waarmee u de algemene samenvattende statistieken voor de tracks in de geselecteerde map kunt bekijken. In Android wordt de sectie alleen getoond wanneer de map of de submappen ervan minstens één track bevatten. Alle waarden worden weergegeven in de door u geselecteerde [eenheden](../../personal/profiles.md#units--formats).
 
 - *Aantal **Tracks** in de map* — Toont het aantal tracks in de geselecteerde map.
 - *Totale som van* **Afstanden** — De totale lengte van alle tracks in de geselecteerde map, gemeten in de door u geselecteerde eenheden, wordt weergegeven.
 - *Som van* **Stijgingen** — De gegevens geven de totale verticale stijging aan over alle tracks in de geselecteerde map.
 - *Som van* **Dalingen** — Deze parameter is de som van de verticale dalingen op alle tracks in de geselecteerde map.
 - *Som van* **Duur** *tijd* — Dit toont de totale tijd die nodig is om alle tracks in de geselecteerde map te voltooien.
-- *Totale **Grootte** van gedownloade bestanden in MB* — De totale gedownloade bestandsgrootte in megabytes toont hoeveel ruimte alle tracks in de geselecteerde map op uw apparaat innemen.
+- *Totale* **Grootte** — De totale grootte van alle trackbestanden in de geselecteerde map, die toont hoeveel ruimte ze op uw apparaat innemen.
 
 
 ### Mapacties {#folder-actions}
@@ -342,7 +349,7 @@ Onderaan de lijst in het tabblad *Tracks*, en onder de lijst met tracks **in elk
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks sort function Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
+![Sorteerfunctie voor tracks in Mijn plaatsen Android](@site/static/img/personal/tracks/my_places_tracks_menu_andr.png)
 
 </TabItem>
 
@@ -350,7 +357,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,shared_string_my_pla
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,shared_string_my_places,shared_string_gpx_tracks"/>*
 
-![My places tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
+![Mijn plaatsen tracks iOS](@site/static/img/personal/tracks/my_places_tracks_menu_ios_2.webp)
 
 </TabItem>
 
@@ -435,7 +442,7 @@ Met de importtool kunt u tracks uit externe bestanden toevoegen voor offline nav
 
 <TabItem value="android" label="Android">
 
-![import multitrack](@site/static/img/personal/tracks/import_multitrack.png) ![import multitrack](@site/static/img/personal/tracks/import_multitrack_1.png)
+![multitrack importeren](@site/static/img/personal/tracks/import_multitrack.png) ![multitrack importeren](@site/static/img/personal/tracks/import_multitrack_1.png)
 
 </TabItem>
 
@@ -443,7 +450,7 @@ Met de importtool kunt u tracks uit externe bestanden toevoegen voor offline nav
 
 | Exporteren | Importeren |
 |:------------|:---------------|
-| ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Exporteren </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Exporteren </summary> ![import multitrack](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
+| ![multitrack importeren](@site/static/img/personal/tracks/import_gpx_ios_1.png) <details><summary> Exporteren </summary> ![multitrack importeren](@site/static/img/personal/tracks/import_gpx_ios.png) </details> | ![multitrack importeren](@site/static/img/personal/tracks/import_gpx_ios_3.png) <details><summary> Exporteren </summary> ![multitrack importeren](@site/static/img/personal/tracks/import_gpx_ios_2.png) </details> |
 
 <!--
 <table class="blogimage">

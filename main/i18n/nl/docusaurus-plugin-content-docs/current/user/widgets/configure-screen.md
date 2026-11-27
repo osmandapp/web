@@ -1,5 +1,5 @@
 ---
-source-hash: 26310b5387d94c669aae27cba7406330850ca09a7b6238073df255b366a97c99
+source-hash: 2386d7bbbae5da7a0450b15924c450032e65b1488692771b1fc0b9200e01ffdc
 sidebar_position: 1
 title:  Scherm configureren
 ---
@@ -27,7 +27,7 @@ U kunt:
 - Widgets organiseren in panelen (boven, onder, links, rechts, midden).
 - Meerdere **pagina's** aanmaken binnen zijpanelen, de grootte van widgets kiezen.
 - Rijhoogte kiezen en widgetpictogrammen in- of uitschakelen.
-- Op Android de [weergave van widgetpanelen](#widget-panel-appearance) aanpassen.
+- De [weergave van widgetpanelen](#widget-panel-appearance) aanpassen.
 
 Alle widgets zijn [profielafhankelijk](../personal/profiles.md) — elk profiel heeft zijn eigen lay-out, volgorde, zichtbaarheid en instellingen.
 
@@ -46,7 +46,7 @@ Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*  
 
-![Menu Scherm configureren](@site/static/img/widgets/configure_screen_overview_ios_1.png)  
+![Menu Scherm configureren](@site/static/img/widgets/configure_screen_overview_ios.webp)  
 
 </TabItem>
 
@@ -362,11 +362,27 @@ Deze instellingen gelden alleen voor de geselecteerde widget.
     - Schakel naar de Uit-positie in het veld *Pictogram tonen*.
 
 
-## Weergave van widgetpanelen (alleen Android) {#widget-panel-appearance}
+## Weergave van widgetpanelen {#widget-panel-appearance}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,shared_string_appearance"/>*
 
 ![Weergave van widgetpanelen](@site/static/img/widgets/widget_appearance.webp) ![Weergave van widgetpanelen](@site/static/img/widgets/widget_appearance_2.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_appearance"/>*
+
+![Weergave van widgetpanelen](@site/static/img/widgets/widget_appearance_ios.webp) ![Weergave van widgetpanelen](@site/static/img/widgets/widget_appearance_2_ios.webp)
+
+</TabItem>
+
+</Tabs>
 
 Met de weergave-instellingen kunt u het uiterlijk van alle widgets in het geselecteerde paneel aanpassen. Elk paneel (*Boven*, *Onder*, *Links*, *Rechts*) heeft eigen weergave-instellingen.
 
@@ -376,13 +392,13 @@ Met de weergave-instellingen kunt u het uiterlijk van alle widgets in het gesele
 
 3. **Tekstkleur**. Wijzigt de kleur van de primaire widgettekst. Beschikbare opties: *Standaard*, *Automatisch*, *Aangepast*. Wanneer **Aangepast** is geselecteerd, kunt u afzonderlijke kleuren configureren voor **Dag**- en **Nacht**-modus. Een live voorbeeld toont de geselecteerde kleuren voordat ze worden toegepast.
 
-:::tip Aankoop
-Aangepaste widgetkleuren is een [betaalde functie](../purchases/index.md).  
-:::
-
 4. **Secundaire tekstkleur**. Wijzigt de kleur van widgetnamen en eenheden. Beschikbare opties: *Standaard*, *Automatisch*, *Aangepast*.
 
 5. **Achtergrondkleur**. Wijzigt de achtergrondkleur van widgets in het geselecteerde paneel. Beschikbare opties: *Standaard*, *Transparant*, *Aangepast*.
+
+:::tip Aankoop
+Aangepaste achtergrondkleur is een [betaalde functie](../purchases/index.md).  
+:::
 
 6. **Voorbeeld**. Het voorbeeldgebied toont hoe widgets eruitzien met de momenteel geselecteerde weergave-instellingen.
 
@@ -391,6 +407,11 @@ Aangepaste widgetkleuren is een [betaalde functie](../purchases/index.md).
     - Tik op het ⋮-menu in de rechterbovenhoek.
     - Selecteer Kopiëren van.
     - Kies een van de volgende opties: *Ander profiel* of *Een van de andere panelen*.
+
+8. **Terugzetten naar standaard**. Zet alle weergave-instellingen van het geselecteerde paneel terug naar hun standaardwaarden.
+
+    - *Android*. Tik op het resetpictogram in de rechterbovenhoek.
+    - *iOS*. Tik onderaan het scherm op *Terugzetten naar standaard* en bevestig de actie.
 
 
 ## Aanpassing van panelen {#panels-customization}
@@ -492,7 +513,11 @@ U kunt widgets van het applicationscherm herschikken of verwijderen met behulp v
 
 ## Kaartschermlay-out {#map-screen-layout}
 
-<InfoAndroidOnly/>
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">  
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config"/>*
 
 ![Kaartschermlay-out](@site/static/img/widgets/map_screen_layout_1.png) ![Kaartschermlay-out](@site/static/img/widgets/map_screen_layout_2.png)
 
@@ -500,11 +525,29 @@ De instelling **Kaartschermlay-out** stelt u in staat om te beheren hoe widgetpa
 
 U kunt de Kaartschermlay-out-instellingen openen vanuit het Scherm configureren-menu, direct vanuit de schermacties of via het driepuntmenu.
 
-### Enkele & aparte lay-outs {#single-and-separate-layouts}
+</TabItem>
 
-![Kaartschermlay-out](@site/static/img/widgets/screen_layout_single.png) ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_separate.png)
+<TabItem value="ios" label="iOS"> 
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/>*
+
+![Kaartschermlay-out](@site/static/img/widgets/map_screen_layout_ios.webp) ![Kaartschermlay-out](@site/static/img/widgets/map_screen_layout_ios_2.webp) 
+
+Met de instellingen voor de kaartschermlay-out beheert u hoe widgetpanelen op het kaartscherm zijn gerangschikt in de oriëntaties **<Translate ios="true" ids="map_orientation_portrait"/>** en **<Translate ios="true" ids="map_orientation_landscape"/>**. Om te kiezen hoe de oriëntaties schermelementen delen, tikt u op **⋮** en selecteert u **<Translate ios="true" ids="screen_elements"/>**.
+
+</TabItem>
+
+</Tabs>
+
+### Enkele & aparte lay-outs / Schermelementen {#single-and-separate-layouts}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate android="true" ids="map_screen_layout"/>*
+
+![Kaartschermlay-out](@site/static/img/widgets/screen_layout_single.png) ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_separate.png)
 
 OsmAnd ondersteunt twee lay-outmodi voor het kaartscherm:
 - **<Translate android="true" ids="single_layout"/>** – gebruikt dezelfde widgetlay-out voor alle schermoriëntaties. Deze optie is standaard geselecteerd.
@@ -512,7 +555,33 @@ OsmAnd ondersteunt twee lay-outmodi voor het kaartscherm:
 
 Wanneer Aparte lay-outs is ingeschakeld, hebben wijzigingen in één oriëntatie geen invloed op de andere. Dit is nuttig als u het kaartscherm anders wilt optimaliseren voor staand en liggend gebruik.
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → ⋮ → <Translate ios="true" ids="screen_elements"/>*
+
+![Kaartschermlay-out](@site/static/img/widgets/screen_shared.webp) ![Kaartschermlay-out](@site/static/img/widgets/screen_independent.webp)
+
+De instelling **<Translate ios="true" ids="screen_elements"/>** bepaalt of de oriëntaties **<Translate ios="true" ids="map_orientation_portrait"/>** en **<Translate ios="true" ids="map_orientation_landscape"/>** dezelfde schermelementen of onafhankelijke sets gebruiken:
+
+- **<Translate ios="true" ids="screen_elements_shared"/>** – Liggend gebruikt dezelfde schermelementen als Staand. Wijzigingen in één oriëntatie gelden voor beide. Deze optie is standaard geselecteerd.
+- **<Translate ios="true" ids="screen_elements_independent"/>** – Staand en Liggend hebben onafhankelijke sets schermelementen. Wijzigingen in één oriëntatie hebben geen invloed op de andere.
+
+Tik op **✓** om de geselecteerde optie toe te passen.
+
+Wanneer **<Translate ios="true" ids="screen_elements_independent"/>** is geselecteerd, worden widgetpanelen en de weergave van widgetpanelen afzonderlijk voor elke oriëntatie geconfigureerd.
+
+</TabItem>
+
+</Tabs>
+
+
 ### Staande & liggende tabbladen {#portrait-and-landscape-tabs}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
 
 ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_tabs.png)
 
@@ -526,7 +595,39 @@ Alleen de widgetlijst wordt gekopieerd, en de bewerking geldt binnen hetzelfde p
 
 ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_portrait.png) ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_landscape.png)
 
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Kaartschermlay-out](@site/static/img/widgets/screen_layout_landscape.webp)
+
+De tabbladen **<Translate ios="true" ids="map_orientation_portrait"/>** en **<Translate ios="true" ids="map_orientation_landscape"/>** zijn altijd beschikbaar bovenaan het menu **<Translate ios="true" ids="layer_map_appearance"/>**. Elk tabblad toont de instellingen voor de bijbehorende schermoriëntatie. Wanneer **<Translate ios="true" ids="screen_elements"/>** is ingesteld op **<Translate ios="true" ids="screen_elements_independent"/>**, opent het menu op het tabblad van de huidige apparaatoriëntatie. Anders opent het op het tabblad Staand.
+
+Wanneer **<Translate ios="true" ids="screen_elements"/>** is ingesteld op **<Translate ios="true" ids="screen_elements_shared"/>**, toont het tabblad Liggend:
+
+- Kaartje **<Translate ios="true" ids="screen_elements"/>** – beschrijft de huidige modus. Tik op **<Translate ios="true" ids="switch_to_independent"/>** om de instellingen voor Schermelementen te openen.
+- **<Translate ios="true" ids="panels_layout"/>** en **<Translate ios="true" ids="shared_string_appearance"/>** – instellingen voor de oriëntatie Liggend.
+
+Widgetpanelen, knoppen en andere instellingen worden geconfigureerd op het tabblad Staand en gelden voor beide oriëntaties.
+
+Wanneer **<Translate ios="true" ids="screen_elements"/>** is ingesteld op **<Translate ios="true" ids="screen_elements_independent"/>**, kunt u de widgetlijst van een paneel kopiëren vanuit de andere oriëntatie. Open het widgetpaneel, tik op **⋮** en selecteer:
+
+- **<Translate ios="true" ids="copy_from_landscape_layout"/>** – beschikbaar op het tabblad Staand. Kopieert de widgetlijst van het paneel vanuit de Liggende lay-out.
+- **<Translate ios="true" ids="copy_from_portrait_layout"/>** – beschikbaar op het tabblad Liggend. Kopieert de widgetlijst van het paneel vanuit de Staande lay-out.
+
+Alleen de widgetlijst wordt gekopieerd, en de bewerking geldt binnen hetzelfde profiel.
+
+</TabItem>
+
+</Tabs>
+
 ### Paneellay-out {#panels-layout}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+Ga naar: *<Translate android="true" ids="shared_string_menu,map_widget_config,panels_layout"/>*
 
 ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_wide.png) ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_compact.png)
 
@@ -539,6 +640,27 @@ U kunt kiezen tussen twee modi:
 - **<Translate android="true" ids="panels_layout_compact"/>** – de boven- en onderpanelen passen tussen de zijpanelen en kaartknoppen.
 
 Paneellay-out kan onafhankelijk worden geconfigureerd voor Staande en Liggende oriëntaties, waardoor betere aanpassing aan verschillende schermformaten en oriëntaties mogelijk is.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+Ga naar: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,panels_layout"/>*
+
+![Kaartschermlay-out](@site/static/img/widgets/screen_layout_wide.webp) ![Kaartschermlay-out](@site/static/img/widgets/screen_layout_compact.webp)
+
+De instelling **<Translate ios="true" ids="panels_layout"/>** beheert hoe de boven- en onderwidgetpanelen worden weergegeven. U kunt kiezen tussen twee modi:
+
+- **<Translate ios="true" ids="panels_layout_wide"/>** – de boven- en onderpanelen beslaan de volledige breedte van het scherm. Deze optie is standaard geselecteerd.
+- **<Translate ios="true" ids="panels_layout_compact"/>** – de boven- en onderpanelen passen tussen de zijpanelen en kaartknoppen.
+
+Het voorbeeld toont de geselecteerde modus voor de huidige oriëntatie. Tik op **✓** om de geselecteerde modus toe te passen.
+
+Paneellay-out wordt afzonderlijk geconfigureerd op de tabbladen **<Translate ios="true" ids="map_orientation_portrait"/>** en **<Translate ios="true" ids="map_orientation_landscape"/>**, zowel met **<Translate ios="true" ids="screen_elements_shared"/>** als met **<Translate ios="true" ids="screen_elements_independent"/>** schermelementen.
+
+</TabItem>
+
+</Tabs>
 
 
 ## Knoppen {#buttons}
@@ -710,13 +832,13 @@ Stelt u in staat om de plaatsing van de cursor in te stellen op *[Mijn locatie](
 
 <TabItem value="android" label="Android">
 
-![Distance by Tap Android](@site/static/img/widgets/distance_tap_android.png)
+![Afstand op tik Android](@site/static/img/widgets/distance_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Distance by Tap IOS](@site/static/img/widgets/distance_tap_ios.png)
+![Afstand op tik iOS](@site/static/img/widgets/distance_tap_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 7dd018034f91c3c379a76d03258772b0e506136d147238424b5ac05df4862680
+source-hash: f8670339cfccb0d19b9c0a4cfd6784df8ae5a2d73ff489f654522447fd5c3ae1
 sidebar_position: 3
 title:  Webaankopen
 ---
@@ -54,7 +54,7 @@ Hieronder staan de prijzen voor OsmAnd-producten in de VS en de EU. Prijzen in a
 | **Prijs (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $5.99 / <s>$39.99</s> **$19.99** | <s>$450</s> **$299.00** |
 
 :::note 
-Als je een abonnement met korting afsluit via onze [website](https://osmand.net/pricing), krijg je een tarief met korting voor 2 jaar.  
+Als u een abonnement met korting afsluit via onze [website](https://osmand.net/pricing), krijgt u een tarief met korting voor 2 jaar.  
 Vanaf het derde jaar geldt de volledige prijs.
 :::
 
