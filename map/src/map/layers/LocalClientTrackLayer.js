@@ -45,7 +45,7 @@ import {
 } from '../util/creator/LocalTrackLayerHelper';
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { passClickToNavigation } from '../../manager/NavigationManager';
-import { assignPointIds, findPointIndex } from '../../manager/track/TrackOperations';
+import { assignPointIds, assignWptIds, findPointIndex } from '../../manager/track/TrackOperations';
 
 const EDITOR_PICKS_POINT_CLASS = 'track-editor-picks-point';
 
@@ -565,6 +565,7 @@ export default function LocalClientTrackLayer() {
             ctxTrack = currentTrack;
         }
         const points = assignPointIds(ctxTrack.points);
+        assignWptIds(ctxTrack.wpts);
         ctxTrack.layers = updateTrackLayers(new L.FeatureGroup());
         ctxTrack.points = points;
 

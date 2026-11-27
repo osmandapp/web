@@ -318,6 +318,7 @@ export default function WptDetails({ setOpenWptTab, setShowInfoBlock }) {
         } else if (type?.isWpt) {
             const newWpt = getDataFromWpt(type, ctx.selectedWpt);
             newWpt.id = ctx.selectedWpt.id;
+            newWpt.wptId = ctx.selectedWpt.wptId;
             newWpt.trackWpt = true;
             return newWpt;
         } else if (type?.isFav || type?.isShareFav) {

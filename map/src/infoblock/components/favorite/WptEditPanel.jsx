@@ -37,6 +37,7 @@ import {
     WEB_PREFIX,
 } from '../wpt/WptTagsProvider';
 import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
+import { createPointId, findWptIndex, updateWpt } from '../../../manager/track/TrackOperations';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import { getUniqFileId, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
 import HeaderWithUnderline from '../../../frame/components/header/HeaderWithUnderline';
@@ -303,7 +304,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
         if (!ctx.selectedGpxFile.pointsGroups) {
             ctx.selectedGpxFile.pointsGroups = {};
         }
-        ctx.selectedGpxFile.wpts.push(favorite);
+        ctx.selectedGpxFile.wpts.push({ ...favorite, wptId: createPointId() });
         if (ctx.createTrack) {
             prepareLocalTrack();
         }
@@ -385,10 +386,9 @@ export default function WptEditPanel({ setShowInfoBlock }) {
     // Edit existing track waypoint
     function saveEditTrackWpt() {
         const selectedGroupName = favoriteGroup === null ? editWpt.category : favoriteGroup.name;
-        const currentWpt = getCurrentWpt(selectedGroupName);
-        const ind = ctx.selectedGpxFile.wpts.findIndex((w) => w === currentWpt);
+        const ind = findWptIndex(ctx.selectedGpxFile.wpts, editWpt.wptId);
         if (ind !== -1) {
-            ctx.selectedGpxFile.wpts[ind] = {
+            ctx.selectedGpxFile.wpts = updateWpt(ctx.selectedGpxFile.wpts, ind, {
                 name: favoriteName,
                 address: favoriteAddress === '' || favoriteAddress === ADDRESS_NOT_FOUND ? null : favoriteAddress,
                 desc: favoriteDescription === '' ? null : favoriteDescription,
@@ -398,14 +398,13 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 category: getCategoryName(selectedGroupName),
                 lat: editWpt.latlon?.lat ?? editWpt.lat,
                 lon: editWpt.latlon?.lon ?? editWpt.lon,
-            };
+                ...(shortDescriptionsChanged && {
+                    ext: withShortDescriptions(ctx.selectedGpxFile.wpts[ind].ext, filledShortDescriptions),
+                }),
+            });
         }
         ctx.selectedGpxFile.wptChangedFlag = (ctx.selectedGpxFile.wptChangedFlag || 0) + 1;
         ctx.selectedGpxFile.updateLayers = true;
-        if (editWpt.mapObj) {
-            ctx.selectedGpxFile.save = true;
-            ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: true });
-        }
         ctx.setSelectedGpxFile({ ...ctx.selectedGpxFile });
 
         const newWpt = ctx.selectedGpxFile.wpts[ind];
@@ -430,7 +429,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             w.icon = favoriteIcon;
             w.category = selectedGroupName !== FavoritesManager.DEFAULT_GROUP_NAME ? selectedGroupName : null;
             if (shortDescriptionsChanged) {
-                w.ext = { ...w.ext, extensions: replaceShortDescriptions(w.ext?.extensions, filledShortDescriptions) };
+                w.ext = withShortDescriptions(w.ext, filledShortDescriptions);
             }
         }
 
@@ -763,6 +762,10 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             </Box>
         </>
     );
+}
+
+function withShortDescriptions(ext, shortDescriptions) {
+    return { ...ext, extensions: replaceShortDescriptions(ext?.extensions, shortDescriptions) };
 }
 
 function replaceShortDescriptions(extensions, shortDescriptions) {

@@ -22,8 +22,8 @@ export const map = {
 };
 
 /** Drag event of the marker of `point`: the marker holds the id of its point. */
-export const createDragEvent = (point) => ({
-    target: { _latlng: L.latLng(point.lat, point.lng), options: { pointId: point.id } },
+export const createDragEvent = (point, options = { pointId: point.id }) => ({
+    target: { _latlng: L.latLng(point.lat, point.lng), options },
 });
 
 /** ctx of the editor with the track drawn on its layers, as the editor holds it after opening. */

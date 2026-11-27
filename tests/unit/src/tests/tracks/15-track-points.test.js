@@ -8,7 +8,13 @@ import { fromHistoryState, toHistoryState } from '@map/manager/track/TrackHistor
 import { getWaitingSegments } from '@map/context/TracksRoutingCache';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import EditableMarker from '@map/map/util/creator/EditableMarker';
-import { assignPointIds, isProtectedSegment, isWaitingForRouter, setProfile } from '@map/manager/track/TrackOperations';
+import {
+    assignPointIds,
+    assignWptIds,
+    isProtectedSegment,
+    isWaitingForRouter,
+    setProfile,
+} from '@map/manager/track/TrackOperations';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
 import { redrawPointMarkers, redrawTrackPoints, updateLayers } from '@map/map/util/creator/LocalTrackLayerHelper';
 import MarkerOptions from '@map/map/markers/MarkerOptions';
@@ -863,16 +869,20 @@ describe('drag a point', () => {
         expect(waitingPairs(last)).toEqual([[50.01, 50.025]]);
     });
 
-    test('a dragged waypoint gets its new place, the route points stay', () => {
+    test('a dragged waypoint moves, its twin of the same place and name and the route points stay', () => {
         const ctx = createDrawnCtx(createRoutedPoints(2));
         const track = ctx.selectedGpxFile;
-        track.wpts = [{ lat: 50.005, lon: 30.001, name: 'wpt' }];
+        const [wpt, twin] = assignWptIds([
+            { lat: 50.005, lon: 30.001, name: 'wpt' },
+            { lat: 50.005, lon: 30.001, name: 'wpt' },
+        ]);
+        track.wpts = [twin, wpt];
         const marker = new EditableMarker(null, ctx);
 
-        marker.dragStartPoint(createDragEvent({ lat: 50.005, lng: 30.001 }), track);
-        marker.dragEndPoint(createDragEvent({ lat: 50.006, lng: 30.002 }), track);
+        marker.dragStartPoint(createDragEvent({ lat: 50.005, lng: 30.001 }, { point: wpt }), track);
+        marker.dragEndPoint(createDragEvent({ lat: 50.006, lng: 30.002 }, { point: wpt }), track);
 
-        expect(track.wpts[0]).toMatchObject({ lat: 50.006, lon: 30.002 });
+        expect(ctx.selectedGpxFile.wpts).toEqual([twin, { ...wpt, lat: 50.006, lon: 30.002 }]);
         const ids = ctx.selectedGpxFile.points.map(({ id }) => id);
         expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(2).map((point, i) => ({ ...point, id: ids[i] })));
         expect(waitingPairs(ctx)).toEqual([]);
@@ -1402,13 +1412,12 @@ test('deleteWpt removes the waypoint and asks for a redraw of the map and of the
     const ctx = createCtx([]);
     ctx.selectedGpxFile.wpts = [{ name: 'a' }, { name: 'b' }, { name: 'c' }];
 
-    PointManager.deleteWpt(0, ctx, true);
+    PointManager.deleteWpt(0, ctx);
 
     expect(ctx.selectedGpxFile).toMatchObject({
         wpts: [{ name: 'b' }, { name: 'c' }],
         updateLayers: true,
         wptChangedFlag: 1,
-        save: true,
     });
     expect(ctx.setTrackState).toHaveBeenCalledWith({ update: true });
 

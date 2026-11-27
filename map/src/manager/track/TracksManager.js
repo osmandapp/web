@@ -90,7 +90,7 @@ export function prepareLocalTrack(track) {
         metaData: track.metaData,
         points: track.points,
         trkExt: track.trkExt,
-        wpts: track.wpts,
+        wpts: withoutIds(track.wpts, 'wptId'),
         pointsGroups: track.pointsGroups,
         /** Cloud / .info payload (e.g. pointsGroups visibility); was omitted and lost on IndexedDB round-trip */
         info: track.info,
@@ -632,13 +632,13 @@ export const downloadCurrentLocalGpx = async ({ selectedGpxFile, routeTypes, isL
     }
 };
 
-function withoutIds(points) {
-    return points?.some((point) => point.id !== undefined) ? points.map(withoutId) : points;
+function withoutIds(items, key = 'id') {
+    return items?.some((item) => item[key] !== undefined) ? items.map((item) => withoutId(item, key)) : items;
 }
 
-function withoutId(point) {
-    const copy = { ...point };
-    delete copy.id;
+function withoutId(item, key) {
+    const copy = { ...item };
+    delete copy[key];
 
     return copy;
 }
@@ -678,7 +678,7 @@ function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
 
     return {
         tracks: tracks?.map((track) => ({ ...track, points: withoutIds(track.points) })),
-        wpts: file.wpts,
+        wpts: withoutIds(file.wpts, 'wptId'),
         metaData,
         pointsGroups: file.pointsGroups,
         ext: file.ext,

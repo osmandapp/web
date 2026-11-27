@@ -9,6 +9,7 @@ import AppContext, { OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '..
 import FavoritesManager, { findSelectedWpt } from '../../manager/FavoritesManager';
 import FavoriteHelper from '../../infoblock/components/favorite/FavoriteHelper';
 import PointManager from '../../manager/PointManager';
+import { findWptIndex } from '../../manager/track/TrackOperations';
 import isEmpty from 'lodash-es/isEmpty';
 import { MENU_INFO_CLOSE_SIZE, FAVORITES_URL, MAIN_URL_WITH_SLASH } from '../../manager/GlobalManager';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -31,15 +32,9 @@ export default function DeleteWptDialog({ dialogOpen, setDialogOpen, wpt = null,
         //delete wpt from track
         if (ctx.addFavorite.editTrack || wpt?.trackWpt) {
             if (ctx.selectedWpt) {
-                const lat = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lat : ctx.selectedWpt.lat;
-                const lng = ctx.selectedWpt.latlng ? ctx.selectedWpt.latlng.lng : ctx.selectedWpt.lon;
-                const ind = ctx.selectedGpxFile.wpts.findIndex((wpt) => wpt.lat === lat && wpt.lon === lng);
-                PointManager.deleteWpt(ind, ctx, wpt.mapObj);
+                PointManager.deleteWpt(findWptIndex(ctx.selectedGpxFile.wpts, ctx.selectedWpt.wptId), ctx);
                 ctx.setSelectedWpt(null);
                 ctx.setSelectedFavoriteObj(null);
-                if (wpt.mapObj) {
-                    ctx.setCreateTrack({ ...ctx.createTrack, cloudAutoSave: true });
-                }
                 closeDialog();
             }
         } else {

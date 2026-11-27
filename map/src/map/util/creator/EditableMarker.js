@@ -1,7 +1,7 @@
 import L from 'leaflet';
 import MarkerOptions from '../../markers/MarkerOptions';
 import TracksManager, { getEditorActions, publishEditedTrack } from '../../../manager/track/TracksManager';
-import { findPointIndex, movePoint } from '../../../manager/track/TrackOperations';
+import { findPointIndex, findWptIndex, movePoint, updateWpt } from '../../../manager/track/TrackOperations';
 
 export default class EditableMarker {
     stopclick;
@@ -47,12 +47,8 @@ export default class EditableMarker {
                 if (this.stopclick) {
                     this.stopclick = false;
                 } else {
-                    let lat = e.target._latlng.lat;
-                    let lng = e.target._latlng.lng;
                     const track = this.ctx.selectedGpxFileRef.current;
-                    const point = track.wpts.find(
-                        (point) => parseFloat(point.lat) === lat && parseFloat(point.lon) === lng
-                    );
+                    const point = track.wpts[findWptIndex(track.wpts, e.target.options.point?.wptId)];
                     const wpt = {
                         trackWpt: true,
                         mapObj: true,
@@ -87,9 +83,7 @@ export default class EditableMarker {
                 lng: lng,
             };
         } else {
-            let indWpt = track?.wpts.findIndex((point) => {
-                return point.lat === lat && point.lon === lng;
-            });
+            const indWpt = findWptIndex(track.wpts, e.target.options.point?.wptId);
             if (indWpt !== -1) {
                 this.dragPoint = {
                     indWpt: indWpt,
@@ -115,9 +109,7 @@ export default class EditableMarker {
         } else {
             const indWpt = this.dragPoint.indWpt;
             if (indWpt !== undefined && indWpt !== -1) {
-                const currentWpt = track.wpts[indWpt];
-                currentWpt.lat = lat;
-                currentWpt.lon = lng;
+                track.wpts = updateWpt(track.wpts, indWpt, { lat, lon: lng });
                 this.ctx.setSelectedGpxFile({ ...track, updateLayers: true });
                 TracksManager.updateState(this.ctx);
             }

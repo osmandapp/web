@@ -15,7 +15,7 @@ import {
     requestAnalysisNow,
     requestAnalytics,
 } from '@map/context/TracksRoutingCache';
-import { assignPointIds, setProfile, withAnsweredElevation } from '@map/manager/track/TrackOperations';
+import { assignPointIds, assignWptIds, setProfile, withAnsweredElevation } from '@map/manager/track/TrackOperations';
 import { apiPost } from '@map/util/HttpApi';
 import { findRequest } from '../../util/requests';
 import { readGzipJson } from '../../util/infoFile';
@@ -119,7 +119,7 @@ beforeEach(() => {
 });
 
 describe('what is sent for the analysis', () => {
-    test('a gpx of two tracks opened in the editor sends no point ids and gets no gap written into its tracks', async () => {
+    test('a gpx of two tracks opened in the editor sends no point or waypoint ids and gets no gap written into its tracks', async () => {
         for (const unrouted of [false, true]) {
             apiPost.mockClear();
             const opened = { tracks: [{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }] };
@@ -129,12 +129,17 @@ describe('what is sent for the analysis', () => {
                 delete points[1].geometry;
             }
             const ctx = createCtx(points);
-            Object.assign(ctx.selectedGpxFile, { analysisTracks: opened.analysisTracks, analysisPoints: points });
+            Object.assign(ctx.selectedGpxFile, {
+                analysisTracks: opened.analysisTracks,
+                analysisPoints: points,
+                wpts: assignWptIds([{ lat: 50, lon: 30, name: 'wpt' }]),
+            });
 
             await analyse(ctx);
 
             const body = await readGzipJson(findRequest(apiPost, ANALYSIS_URL).body);
             expect(JSON.stringify(body)).not.toContain('"id"');
+            expect(body.wpts).toEqual([{ lat: 50, lon: 30, name: 'wpt' }]);
             expect(opened.analysisTracks[0].points.at(-1).profile).not.toBe(TracksManager.PROFILE_GAP);
         }
     });

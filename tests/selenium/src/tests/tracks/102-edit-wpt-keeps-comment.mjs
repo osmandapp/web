@@ -3,7 +3,6 @@ import { clickBy, matchTextBy, sendKeysBy, waitBy, waitByRemoved } from '../../l
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 const TRACK = 'test-track-wpt';
 const WPT = 'VELO-0';
@@ -11,8 +10,6 @@ const COMMENT = /Comment\s+6\/13\/2016 9:32:27 PM/;
 const DETAILS = By.css('[id^="se-wpt-item-info-"]');
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap();
     await actionOpenLocalTrack(TRACK);
     await clickBy(By.css("[testid='se-tab-points']"));
