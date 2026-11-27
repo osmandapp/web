@@ -248,7 +248,6 @@ test('17.7 the analysis request of routed 50k', async () => {
     apiPost.mockResolvedValue(null);
     const ctx = createEditorCtx({ points: createRouteTrackPoints() });
     ctx.selectedGpxFile.tracks = [{ points: [] }];
-    ctx.setRunningAnalyses = jest.fn();
 
     const prepare = await measure(() => TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, jest.fn()));
     record('17.7 analysis request of routed 50k', prepare, MS);
@@ -267,7 +266,6 @@ test('17.9 the save and analysis requests of recorded 50k', async () => {
     apiPost.mockResolvedValue(null);
     const ctx = createEditorCtx({ points: createRecordedTrackPoints() });
     ctx.selectedGpxFile.tracks = [{ points: [] }];
-    ctx.setRunningAnalyses = jest.fn();
     const file = ctx.selectedGpxFile;
 
     const save = await measure(() => getGpxFileFromTrackData(file, file.routeTypes));

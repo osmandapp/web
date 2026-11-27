@@ -241,7 +241,7 @@ export function setProfile(points, index, geoProfile) {
     return setProfiles(points, [index], geoProfile);
 }
 
-export function setProfiles(points, indexes, geoProfile) {
+function setProfiles(points, indexes, geoProfile) {
     const result = [...points];
     indexes.forEach((index) => {
         result[index] = { ...points[index], profile: geoProfile.profile, geoProfile };

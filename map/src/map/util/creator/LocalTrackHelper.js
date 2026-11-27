@@ -26,10 +26,8 @@ export function initNewSelectedTrack({ ctx, map, geoRouter, setRegisteredLayers 
         name: TracksManager.createName(ctx),
         pointsGroups: {},
         points: newPoint ? [newPoint] : [],
-        newPoint: newPoint ?? null,
         layers: newPoint ? createFirstLayers(setRegisteredLayers) : null,
         updateLayers: !!newPoint,
-        addPoint: !!newPoint,
         routeTypes: [],
     };
 

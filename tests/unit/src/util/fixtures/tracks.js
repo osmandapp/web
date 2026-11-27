@@ -212,6 +212,11 @@ export function createEditorCtx({ points = [] } = {}) {
     ctx.setUpdateInfoBlock = jest.fn();
     ctx.setLoadingContextMenu = jest.fn();
     ctx.setPointContextMenu = jest.fn();
+    const editorAnalyses = createCounter();
+    ctx.setRunningEditorAnalyses = (update) => {
+        editorAnalyses.set(update);
+        ctx.analysisLoading = editorAnalyses.value > 0;
+    };
 
     return ctx;
 }

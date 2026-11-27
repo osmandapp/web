@@ -1122,7 +1122,6 @@ function countRunning(setRunning, step) {
 
 async function getTrackWithAnalysis(path, ctx, setLoading) {
     countRunning(setLoading, 1);
-    countRunning(ctx.setRunningAnalyses, 1);
     try {
         const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
 
@@ -1204,7 +1203,6 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
             return ctx.selectedGpxFile;
         }
     } finally {
-        countRunning(ctx.setRunningAnalyses, -1);
         countRunning(setLoading, -1);
     }
 }
@@ -1281,7 +1279,7 @@ export function getEditorActions(ctx) {
 }
 
 export function publishEditedTrack(ctx, track) {
-    const edited = { ...track, zoom: false, addPoint: false };
+    const edited = { ...track, zoom: false };
     addDistance(edited);
     ctx.setSelectedGpxFile(edited);
     updateState(ctx);

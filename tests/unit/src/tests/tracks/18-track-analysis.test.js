@@ -75,13 +75,7 @@ const withGpxExt = (points) =>
         },
     }));
 
-const createCtx = (points) => {
-    const ctx = createEditorCtx({ points });
-    ctx.analyses = createCounter();
-    ctx.setRunningAnalyses = ctx.analyses.set;
-
-    return ctx;
-};
+const createCtx = (points) => createEditorCtx({ points });
 
 const analyse = (ctx, setLoading = jest.fn()) => TracksManager.getTrackWithAnalysis(GET_ANALYSIS, ctx, setLoading);
 
@@ -298,7 +292,7 @@ describe('the answer of the analysis', () => {
         expect(result.analysis).toEqual({ totalDistance: TOTAL_DISTANCE, startTime: START_TIME, endTime: END_TIME });
     });
 
-    test('a failed analysis keeps the track and ends the loading and the analysis', async () => {
+    test('a failed analysis keeps the track and ends the loading', async () => {
         const ctx = createCtx(createRoutedPoints(3));
         const loading = createCounter();
         apiPost.mockResolvedValue({ ok: false, status: 502, data: null });
@@ -306,7 +300,6 @@ describe('the answer of the analysis', () => {
         await expect(analyse(ctx, loading.set)).resolves.toBe(ctx.selectedGpxFile);
 
         expect(loading.values).toEqual([1, 0]);
-        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 
     test('a failed or aborted analysis of the current points ends the wait for it, so the editor writes the track, an answer for points changed meanwhile does not', async () => {
@@ -378,13 +371,11 @@ describe('the answer of the analysis', () => {
         expect(ctx.selectedGpxFile.analysisPoints).toBeUndefined();
     });
 
-    test('an analysis answer without data keeps the track and ends the analysis', async () => {
+    test('an analysis answer without data keeps the track', async () => {
         const ctx = createCtx(createRoutedPoints(3));
         apiPost.mockResolvedValue({ data: {} });
 
         await expect(analyse(ctx)).resolves.toBe(ctx.selectedGpxFile);
-
-        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 });
 
@@ -453,14 +444,6 @@ describe('srtm', () => {
             avgElevation: 102,
             maxElevation: 104,
         });
-    });
-
-    test('the analysis is finished when srtm is applied, so routing is not blocked', async () => {
-        const ctx = createSrtmCtx();
-
-        await analyse(ctx);
-
-        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 });
 

@@ -547,7 +547,6 @@ export default function LocalClientTrackLayer() {
                     // saveChanges does useful job, but setSelectedGpxFile() is double-called (later, by parent)
                     saveChanges(null, null, null, ctxTrack);
                 }
-                ctxTrack.newPoint = newPoint;
                 ctx.setSelectedGpxFile({ ...ctxTrack });
                 TracksManager.updateState(ctx);
             }
@@ -569,10 +568,10 @@ export default function LocalClientTrackLayer() {
         ctxTrack.layers = updateTrackLayers(new L.FeatureGroup());
         ctxTrack.points = points;
 
-        ctxTrack.newPoint = points[points.length - 1];
+        const lastPoint = points[points.length - 1];
 
-        if (ctxTrack.newPoint?.geoProfile || ctxTrack.newPoint?.profile) {
-            geoRouter.onGeoProfile(ctxTrack.newPoint);
+        if (lastPoint?.geoProfile || lastPoint?.profile) {
+            geoRouter.onGeoProfile(lastPoint);
         } else {
             geoRouter.onGeoProfile({ profile: TracksManager.PROFILE_LINE });
         }
