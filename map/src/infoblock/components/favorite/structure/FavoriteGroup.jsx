@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import FavoritesManager from '../../../../manager/FavoritesManager';
+import FavoritesManager, { isDefaultFavGroup } from '../../../../manager/FavoritesManager';
 import ChevronItem from '../../../../frame/components/items/ChevronItem';
 import FolderSelectionPanel from './FolderSelectionPanel';
 import itemStyles from '../../../../frame/components/items/items.module.css';
@@ -43,7 +43,7 @@ function getDisplayName(group, defaultGroup, t) {
         return parts[parts.length - 1];
     }
     const { name } = group;
-    if (!name || name === FavoritesManager.DEFAULT_GROUP_NAME || name === '') {
+    if (!name || isDefaultFavGroup(group)) {
         return t('shared_string_my_favorites');
     }
     const parts = name.split('/');

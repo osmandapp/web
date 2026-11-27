@@ -11,7 +11,7 @@ import { refreshGlobalFiles } from '../../manager/track/SaveTrackManager';
 import FavoritesManager, {
     normalizeGroupNameForFile,
     extractBaseFavFileName,
-    getFavPointsGroupName,
+    getFavPointsGroupKey,
 } from '../../manager/FavoritesManager';
 import { updateSortList } from '../../menu/actions/SortActions';
 import { GPX_FILE_EXT } from '../../manager/track/TracksManager';
@@ -44,7 +44,7 @@ export default function RenameFavDialog({ setOpenDialog, group, setOpenActions }
 
     async function renameFavGroup(group, newName, ctx) {
         let newGroupName = FavoritesManager.FAV_FILE_PREFIX + newName + GPX_FILE_EXT;
-        const oldName = getFavPointsGroupName(group);
+        const oldName = getFavPointsGroupKey(group);
         newGroupName = normalizeGroupNameForFile(newGroupName);
         if (newGroupName !== group.file.name) {
             const res = await apiGet(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/rename-fav-group`, {

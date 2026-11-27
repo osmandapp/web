@@ -102,6 +102,7 @@ module.exports = {
         'layers/(FavoriteLayer|ExploreLayer)$': `${STUBS}/empty.js`,
         // rebuilding the favorite groups after a change is plain logic over the server response
         'favorite/FavoriteHelper$': path.join(MAP_DIR, 'src/infoblock/components/favorite/FavoriteHelper.js'),
+        'favorite/FavoriteGroupTree$': path.join(MAP_DIR, 'src/infoblock/components/favorite/FavoriteGroupTree.js'),
         // the description html helpers are plain logic over the tiptap schema, no editor is rendered
         'editor/htmlUtils$': path.join(MAP_DIR, 'src/frame/components/editor/htmlUtils.js'),
         // UI layers - unit tests cover managers, not components

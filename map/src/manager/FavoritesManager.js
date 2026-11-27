@@ -12,7 +12,7 @@ import { hexToRgba } from '../util/ColorUtil';
 import isEmpty from 'lodash-es/isEmpty';
 import { apiPost } from '../util/HttpApi';
 import i18n from '../i18n';
-import TracksManager, { GPX_FILE_EXT } from './track/TracksManager';
+import TracksManager from './track/TracksManager';
 import { getServerErrorMessage, refreshGlobalFiles } from './track/SaveTrackManager';
 import { OBJECT_SEARCH, OBJECT_TYPE_FAVORITE, FAVORITES_URL_PARAM_FOLDER } from '../context/AppContext';
 import FavoriteHelper from '../infoblock/components/favorite/FavoriteHelper';
@@ -21,6 +21,7 @@ import { getFavoriteFromDB, saveFavoriteToDB } from '../context/FavoriteStorage'
 
 export const FAVORITE_FILE_TYPE = 'FAVOURITES';
 export const DEFAULT_FAV_GROUP_NAME = 'favorites';
+export const DEFAULT_FAV_FILE_NAME = 'favorites.gpx';
 export const PERSONAL_FAV_GROUP_NAME = 'personal';
 const DEFAULT_TAB_ICONS = 'used';
 const DEFAULT_GROUP_WPT_COLOR = '#eecc22';
@@ -36,12 +37,16 @@ export function normalizeFavoritePointsGroupName(groupName) {
     return groupName === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : groupName;
 }
 
-export function getFavPointsGroupName(group) {
+export function getFavPointsGroupKey(group) {
     if (!group?.file) {
         return normalizeFavoritePointsGroupName(group?.name);
     }
 
-    return group.file.name === DEFAULT_FAV_GROUP_NAME + GPX_FILE_EXT ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name;
+    return group.file.name === DEFAULT_FAV_FILE_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : group.name;
+}
+
+export function isDefaultFavGroup(group) {
+    return getFavPointsGroupKey(group) === DEFAULT_GROUP_NAME_POINTS_GROUPS;
 }
 
 const colors = [
@@ -163,7 +168,7 @@ async function updateFavorite(data, wptName, oldGroupName, newGroupName, oldGrou
 }
 
 export async function updateAllFavorites(group, data, hiddenChanged) {
-    const groupName = getFavPointsGroupName(group);
+    const groupName = getFavPointsGroupKey(group);
     let resp = await apiPost(`${process.env.REACT_APP_USER_API_SITE}/mapapi/fav/update-all-favorites`, data, {
         params: {
             fileName: group.file.name,
@@ -243,7 +248,6 @@ function orderList(items, defaultItem) {
 
 function getColorGroup({ selectedFile = null, favoritesGroup = null, gpxFile = null, groupName }) {
     let color;
-    groupName = normalizeFavoritePointsGroupName(groupName);
     if (selectedFile) {
         const currentGroup =
             selectedFile?.pointsGroups && !isEmpty(selectedFile?.pointsGroups) && selectedFile.pointsGroups[groupName];
@@ -452,7 +456,7 @@ function createDefaultWptGroup(wptGroup) {
 }
 
 function getGroupSize(group) {
-    const name = getFavPointsGroupName(group);
+    const name = getFavPointsGroupKey(group);
     const pointsGroup = group?.pointsGroups?.[name];
     if (pointsGroup?.groupSize) {
         return Number(pointsGroup.groupSize);
@@ -564,11 +568,11 @@ function addExistFavGroup(obj, g, favGroups) {
     const ind = favGroups.groups.findIndex((obj) => obj.name === g.name);
     favGroups.groups[ind].pointsGroups = obj.pointsGroups;
     favGroups.groups[ind].name = obj.name;
-    const pointsGroupName = getFavPointsGroupName({ file: g.file, name: obj.name });
+    const pointsGroupKey = getFavPointsGroupKey({ file: g.file, name: obj.name });
 
     favGroups = addHidden({
         pointsGroups: obj.pointsGroups,
-        groupName: pointsGroupName,
+        groupName: pointsGroupKey,
         favArr: favGroups,
         mapId: g.id,
         menuId: ind,
@@ -576,7 +580,7 @@ function addExistFavGroup(obj, g, favGroups) {
 
     favGroups = addPinned({
         pointsGroups: obj.pointsGroups,
-        groupName: pointsGroupName,
+        groupName: pointsGroupKey,
         favArr: favGroups,
         menuId: ind,
     });
@@ -625,10 +629,10 @@ async function createFavGroupObj(g, favGroups) {
             const groupName = getFavGroupName(pointsGroups, g.file.folder);
             favGroups.mapObjs[g.id].name = groupName;
             favGroups.groups[ind].name = groupName;
-            const pointsGroupName = getFavPointsGroupName({ file: g.file, name: groupName });
+            const pointsGroupKey = getFavPointsGroupKey({ file: g.file, name: groupName });
             favGroups = addHidden({
                 pointsGroups,
-                groupName: pointsGroupName,
+                groupName: pointsGroupKey,
                 favArr: favGroups,
                 mapId: g.id,
                 menuId: ind,
@@ -636,7 +640,7 @@ async function createFavGroupObj(g, favGroups) {
 
             favGroups = addPinned({
                 pointsGroups,
-                groupName: pointsGroupName,
+                groupName: pointsGroupKey,
                 favArr: favGroups,
                 menuId: ind,
             });

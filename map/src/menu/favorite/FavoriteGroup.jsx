@@ -1,7 +1,7 @@
 import { ListItemIcon, ListItemText, MenuItem, Typography } from '@mui/material';
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AppContext, { FAVORITES_URL_PARAM_FOLDER, OBJECT_TYPE_FAVORITE } from '../../context/AppContext';
-import FavoritesManager, { FAVORITE_FILE_TYPE, getSize } from '../../manager/FavoritesManager';
+import FavoritesManager, { FAVORITE_FILE_TYPE, getFavPointsGroupKey, getSize } from '../../manager/FavoritesManager';
 import styles from '../trackfavmenu.module.css';
 import ActionsMenu from '../actions/ActionsMenu';
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
@@ -36,7 +36,7 @@ export default function FavoriteGroup({ index, group, smartf = null, showDivider
 
     const sharedFile = smartf?.type === SHARE_TYPE;
 
-    const iconColor = FavoritesManager.getColorGroup({ favoritesGroup: group, groupName: group.name });
+    const iconColor = FavoritesManager.getColorGroup({ favoritesGroup: group, groupName: getFavPointsGroupKey(group) });
     const iconStyle = { fill: group.name && iconColor };
 
     useEffect(() => {

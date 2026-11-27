@@ -3,16 +3,23 @@ import FavoritesManager, {
     addLocDist,
     createFavGroupFreeName,
     decodeGroupNameFromFile,
+    DEFAULT_FAV_FILE_NAME,
     DEFAULT_FAV_GROUP_NAME,
+    DEFAULT_GROUP_NAME_POINTS_GROUPS,
     extractBaseFavFileName,
     findFavGroupByFileName,
     findSelectedWpt,
     getFavGroupKey,
     getFavMenuListByLayers,
+    getFavPointsGroupKey,
     getSize,
+    isDefaultFavGroup,
     normalizeFavoritePointsGroupName,
     normalizeGroupNameForFile,
 } from '@map/manager/FavoritesManager';
+import TracksManager from '@map/manager/track/TracksManager';
+import { buildGroupTree, groupTreeToList } from '@map/infoblock/components/favorite/FavoriteGroupTree';
+import { apiGet } from '@map/util/HttpApi';
 import { fakeIndexedDbStore } from '../../util/indexedDb';
 import { SHARE_TYPE } from '@map/menu/share/shareConstants';
 import { FAVORITE_SORT_KEYS_VERSION, getFavoriteSortKey, migrateFavoriteSortKeys } from '@map/menu/actions/SortActions';
@@ -34,6 +41,18 @@ describe('group names', () => {
         // the default group is kept under an empty name inside the file
         expect(normalizeFavoritePointsGroupName(FavoritesManager.DEFAULT_GROUP_NAME)).toBe('');
         expect(normalizeFavoritePointsGroupName(groupName)).toBe(groupName);
+    });
+
+    test('the default group is kept in its file under an empty name, a group named favorites under its name', () => {
+        const defaultGroup = FavoritesManager.createGroup({ name: DEFAULT_FAV_FILE_NAME, userid: 1 });
+        const favoritesGroup = FavoritesManager.createGroup(favFile(DEFAULT_FAV_GROUP_NAME));
+
+        expect([defaultGroup.name, favoritesGroup.name]).toEqual([DEFAULT_FAV_GROUP_NAME, DEFAULT_FAV_GROUP_NAME]);
+        expect(getFavPointsGroupKey(defaultGroup)).toBe(DEFAULT_GROUP_NAME_POINTS_GROUPS);
+        expect(getFavPointsGroupKey(favoritesGroup)).toBe(DEFAULT_FAV_GROUP_NAME);
+        expect(getFavPointsGroupKey({ name: DEFAULT_FAV_GROUP_NAME })).toBe(DEFAULT_GROUP_NAME_POINTS_GROUPS);
+        expect(getFavPointsGroupKey({ name: 'Trips' })).toBe('Trips');
+        expect([defaultGroup, favoritesGroup, null].map(isDefaultFavGroup)).toEqual([true, false, false]);
     });
 
     test('a new group gets a free name', () => {
@@ -79,6 +98,108 @@ describe('groups restored from the cache', () => {
         expect(res.groups.map((g) => g.hidden)).toEqual(['true', 'true', 'false', 'false']);
         expect(res.mapObjs[res.groups[0].id].hidden).toBe('true');
         expect(res.groups.map((g) => g.pinned)).toEqual([true, undefined, undefined, true]);
+    });
+});
+
+describe('the default group next to a group named favorites on load', () => {
+    const defaultGroupFile = (pointsGroup) => ({
+        file: { name: DEFAULT_FAV_FILE_NAME, type: 'FAVOURITES', userid: 1, updatetimems: 1000 },
+        pointsGroups: { [DEFAULT_GROUP_NAME_POINTS_GROUPS]: { points: [{}], ...pointsGroup } },
+    });
+    const favoritesGroupFile = (pointsGroup) => ({
+        file: favFile(DEFAULT_FAV_GROUP_NAME),
+        pointsGroups: { [DEFAULT_FAV_GROUP_NAME]: { points: [{}], ...pointsGroup } },
+    });
+
+    function fromCache(groups, files) {
+        fakeIndexedDbStore(
+            new Map(
+                groups.map((group, i) => [
+                    getFavGroupKey(group),
+                    { name: DEFAULT_FAV_GROUP_NAME, pointsGroups: files[i].pointsGroups },
+                ])
+            )
+        );
+    }
+
+    function fromFile(groups, files) {
+        fakeIndexedDbStore();
+        apiGet.mockResolvedValue({ ok: true, text: async () => '<gpx/>' });
+        jest.spyOn(TracksManager, 'getTrackData').mockImplementation(async (file) => ({
+            pointsGroups: files.find((f) => f.file.name === file.name).pointsGroups,
+            wpts: [],
+        }));
+    }
+
+    async function load(source, files) {
+        const groups = files.map((f) => FavoritesManager.createGroup(f.file));
+        source(groups, files);
+        const res = await addFavGroupsToMap({ groups, mapObjs: {} });
+
+        return {
+            map: groups.map((g) => res.mapObjs[g.id].hidden),
+            menu: res.groups.map((g) => ({ hidden: g.hidden, pinned: g.pinned })),
+        };
+    }
+
+    describe.each([
+        ['the cache', fromCache],
+        ['the file', fromFile],
+    ])('read from %s', (_, source) => {
+        test('a group named favorites gets the hidden and pinned flags of its own file', async () => {
+            const res = await load(source, [favoritesGroupFile({ hidden: true, pinned: true })]);
+
+            expect(res.map).toEqual(['true']);
+            expect(res.menu).toEqual([{ hidden: 'true', pinned: true }]);
+        });
+
+        test('each of the two groups is shown or hidden on the map by its own file', async () => {
+            const favoritesFirst = await load(source, [
+                favoritesGroupFile({ hidden: false }),
+                defaultGroupFile({ hidden: true }),
+            ]);
+            const defaultFirst = await load(source, [
+                defaultGroupFile({ hidden: false }),
+                favoritesGroupFile({ hidden: true }),
+            ]);
+
+            expect(favoritesFirst.map).toEqual(['false', 'true']);
+            expect(defaultFirst.map).toEqual(['false', 'true']);
+        });
+    });
+});
+
+describe('the folder tree of the favorite groups', () => {
+    const DEFAULT_FILE = { name: DEFAULT_FAV_FILE_NAME, userid: 1 };
+    const FAVORITES_FILE = favFile(DEFAULT_FAV_GROUP_NAME);
+
+    function tree(files) {
+        const groups = files.map((file) => FavoritesManager.createGroup({ ...file }));
+
+        return groupTreeToList(buildGroupTree(groups, t)).map((f) => [f.displayName, f.group.file.name]);
+    }
+
+    test('only the group of favorites.gpx is My favorites and goes first', () => {
+        expect(tree([favFile('Zoo'), DEFAULT_FILE, favFile('Alps')])).toEqual([
+            ['shared_string_my_favorites', DEFAULT_FAV_FILE_NAME],
+            ['Alps', 'favorites-Alps.gpx'],
+            ['Zoo', 'favorites-Zoo.gpx'],
+        ]);
+        expect(tree([favFile('Zoo'), FAVORITES_FILE, favFile('Alps')])).toEqual([
+            ['Alps', 'favorites-Alps.gpx'],
+            [DEFAULT_FAV_GROUP_NAME, FAVORITES_FILE.name],
+            ['Zoo', 'favorites-Zoo.gpx'],
+        ]);
+    });
+
+    test('next to a group named favorites, the default group keeps the row of My favorites', () => {
+        const myFavorites = [
+            ['shared_string_my_favorites', DEFAULT_FAV_FILE_NAME],
+            ['Alps', 'favorites-Alps.gpx'],
+        ];
+
+        expect(tree([DEFAULT_FILE, FAVORITES_FILE, favFile('Alps')])).toEqual(myFavorites);
+        expect(tree([FAVORITES_FILE, DEFAULT_FILE, favFile('Alps')])).toEqual(myFavorites);
     });
 });
 

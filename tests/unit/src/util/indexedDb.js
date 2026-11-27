@@ -32,6 +32,7 @@ export function fakeIndexedDbStore(records = new Map()) {
     const store = {
         get: (id) => request({ id, data: records.get(id) }),
         getAll: () => request([...records.entries()].map(([id, data]) => ({ id, data }))),
+        getAllKeys: () => request([...records.keys()]),
         put: ({ id, data }) => request(records.set(id, data)),
         delete: (id) => request(records.delete(id)),
         clear: () => request(records.clear()),
