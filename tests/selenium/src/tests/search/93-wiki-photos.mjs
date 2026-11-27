@@ -21,7 +21,15 @@ export default async function test() {
     await waitBy(By.id('se-wpt-photos'));
 
     // the photo is hidden until it is loaded
-    await clickBy(By.css('#se-photo-35992817[style*="display: block"]'));
+    await clickBy(By.css('#se-photo-177590434[style*="display: block"]'));
+    await waitBy(By.css('.swiper-slide-active #se-photo-modal-177590434'));
+
+    await matchInnerTextBy(By.id('se-photo-date'), 'Date: 10 August 2014');
+    await matchInnerTextBy(By.id('se-photo-author'), 'Author: Canercangul');
+    await matchInnerTextBy(By.id('se-photo-license'), 'License: CC-BY-SA-4.0');
+    await matchInnerTextBy(By.id('se-photo-description'), 'Description: Монумент Незалежності');
+
+    await clickBy(By.id('se-next-photo'));
     await waitBy(By.css('.swiper-slide-active #se-photo-modal-35992817'));
 
     await matchInnerTextBy(By.id('se-photo-date'), 'Date: 10 November 2013');
@@ -29,16 +37,8 @@ export default async function test() {
     await matchInnerTextBy(By.id('se-photo-license'), 'License: CC-BY-SA-4.0');
     await matchInnerTextBy(By.id('se-photo-description'), 'Description: Монумент Незалежності');
 
-    await clickBy(By.id('se-next-photo'));
-    await waitBy(By.css('.swiper-slide-active #se-photo-modal-43077173'));
-
-    await matchInnerTextBy(By.id('se-photo-date'), '2 August 2013');
-    await matchInnerTextBy(By.id('se-photo-author'), 'Klymenko Tatyana');
-    await matchInnerTextBy(By.id('se-photo-license'), 'CC-BY-SA-4.0');
-    await matchInnerTextBy(By.id('se-photo-description'), 'Монумент Незалежності, Київ, Незалежності Майдан');
-
     await clickBy(By.id('se-close-photo'));
-    await waitByRemoved(By.id('se-photo-modal-43077173'));
+    await waitByRemoved(By.id('se-photo-modal-35992817'));
 
     await actionFinish();
 }
