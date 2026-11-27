@@ -1,5 +1,5 @@
 ---
-source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
+source-hash: ff258064d779b26129f3ed54a6c4982b439d96449a0d7c6d702aefdfb1ea57ae
 sidebar_position: 8
 title: Lugares populares
 ---
@@ -34,7 +34,7 @@ Actualmente, la base de datos seleccionada incluye aproximadamente **50.000 a 15
 
 <TabItem value="android" label="Android">
 
-![Popular places](@site/static/img/map/popular_places/popular_places.png) ![Popular places](@site/static/img/map/popular_places/popular_places_1.png)
+![Lugares populares](@site/static/img/map/popular_places/popular_places.png) ![Lugares populares](@site/static/img/map/popular_places/popular_places_1.png)
 
 </TabItem>
 
@@ -85,7 +85,7 @@ Hay dos formas principales de acceder a esta función:
 
 Ir a: *<Translate android="true" ids="map_widget_search,shared_string_explore,popular_places_nearby"/>*
 
-![Explore Mode](@site/static/img/map/popular_places/popular_places_search.webp) ![Explore Mode](@site/static/img/map/popular_places/popular_places_search_2.webp)
+![Modo Explorar](@site/static/img/map/popular_places/popular_places_search.webp) ![Modo Explorar](@site/static/img/map/popular_places/popular_places_search_2.webp)
 
 </TabItem>
 
@@ -117,7 +117,7 @@ Para usarlo **fuera de línea**, necesita una suscripción a [Maps+ u OsmAnd Pro
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwiki"/>*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu.png)
+![Menú de lugares populares](@site/static/img/map/popular_places/popular_places_menu.png)
 
 </TabItem>
 
@@ -125,7 +125,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,poi_osmwi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map"/> → Lugares populares (Wikipedia)*
 
-![Popular places menu](@site/static/img/map/popular_places/popular_places_menu_ios.png)
+![Menú de lugares populares](@site/static/img/map/popular_places/popular_places_menu_ios.png)
 
 </TabItem>
 
@@ -163,19 +163,19 @@ Al tocar un PDI en el mapa se abre el [menú contextual de PDI](./map-context-me
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/popular_places/online_photos_android.png)
+![Menú contextual de fotos en línea Android](@site/static/img/map/popular_places/online_photos_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/popular_places/online_photos_ios.png)
+![Menú contextual de fotos en línea iOS](@site/static/img/map/popular_places/online_photos_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Esta es una sección dentro del [menú contextual de PDI](./map-context-menu.md) que muestra una vista previa de la foto del Lugar Popular (Wikipedia) seleccionado. Puede desplazarse horizontalmente para navegar por las fotos disponibles, o tocar cualquier imagen para abrirla en [modo de pantalla completa](#gallery).
+Esta es una sección dentro del [menú contextual de PDI](./map-context-menu.md) que muestra una vista previa de la foto del Lugar Popular (Wikipedia) seleccionado y fotos enlazadas al PDI en OpenStreetMap. Una foto de la etiqueta [`mapillary`](https://wiki.openstreetmap.org/wiki/Key:mapillary) del PDI se muestra primero, incluso cuando el [plugin de Mapillary](../plugins/mapillary.md) está desactivado. En Android, las fotos de la etiqueta [`panoramax`](https://wiki.openstreetmap.org/wiki/Key:panoramax) vienen a continuación, por lo que el orden es Mapillary, Panoramax, Wikimedia. Puede desplazarse horizontalmente para navegar por las fotos disponibles, o tocar cualquier imagen para abrirla en [modo de pantalla completa](#gallery).
 
 Las imágenes vistas en línea se almacenan en caché automáticamente para acceso sin conexión. Las fotos en caché muestran una pequeña insignia de modo sin conexión en la esquina. La cuadrícula de vista previa se adapta al tamaño de la pantalla en iPadOS y macOS, asegurando un diseño de imagen cómodo en pantallas más grandes. OsmAnd también evita activar solicitudes de red repetidas cuando se cierra la sección de Fotos en línea, y cancela solicitudes anteriores al cambiar rápidamente entre diferentes PDI.
 
@@ -185,15 +185,15 @@ Las imágenes vistas en línea se almacenan en caché automáticamente para acce
 
 <TabItem value="android" label="Android">  
 
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android.png)
-![Gallery Menu – Android](@site/static/img/map/gallery_menu_android_1_new.png)
+![Menú de galería Android](@site/static/img/map/gallery_menu_android.png)
+![Menú de galería Android](@site/static/img/map/gallery_menu_android_1_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios.png)
-![Gallery Menu – iOS](@site/static/img/map/gallery_menu_ios_1.png)
+![Menú de galería iOS](@site/static/img/map/gallery_menu_ios.png)
+![Menú de galería iOS](@site/static/img/map/gallery_menu_ios_1.png)
 
 </TabItem>
 
@@ -209,12 +209,12 @@ También puede realizar las siguientes acciones en cada foto:
   Comparta la imagen seleccionada utilizando cualquier aplicación compatible instalada en su dispositivo (por ejemplo, mensajería, correo electrónico o redes sociales). El contenido compartido incluye la imagen y su enlace de origen (si está disponible).
 
 - **Detalles**  
-  Abre una vista detallada que muestra metadatos sobre la imagen, incluyendo: *Descripción (texto completo)*, *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*
+    Abre una vista detallada que muestra metadatos sobre la imagen, incluyendo: *Descripción (texto completo)*, *Nombre*, *Fecha de adición*, *Autor*, *Licencia*, *Fuente* y *Enlace directo*. En Android, las fotos de Mapillary muestran *Autor*, *Añadida* (la fecha de captura), *Fuente*, *Licencia* y un *Enlace* a la página de la foto en [Mapillary](https://www.mapillary.com/).
 
   **Nota:** El idioma de la descripción depende del idioma de visualización de la aplicación. Si la descripción en el idioma seleccionado no está disponible, OsmAnd muestra la versión en inglés o la primera traducción disponible.
 
 - **Abrir en el navegador**  
-  Abre la página de origen de la imagen (generalmente en [Wikimedia Commons](https://commons.wikimedia.org/)) en su navegador predeterminado. Esto le permite ver la imagen completa, la información de licencia y el contenido relacionado.
+  Abre la página de origen de la imagen (generalmente en [Wikimedia Commons](https://commons.wikimedia.org/), o la página del visor de fotos para las fotos de Mapillary) en su navegador predeterminado. Esto le permite ver la imagen completa, la información de licencia y el contenido relacionado.
 
 - **Descargar**  
   Guarda la imagen en el almacenamiento de su dispositivo. La imagen descargada se puede encontrar en la carpeta de descargas predeterminada de su dispositivo y se puede acceder a ella sin conexión.

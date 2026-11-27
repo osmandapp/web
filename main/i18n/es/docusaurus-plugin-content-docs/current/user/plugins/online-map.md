@@ -1,5 +1,5 @@
 ---
-source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
+source-hash: 5749833ed8004e11c20c4de19dd862afbe945281e8dc7187719f962bcf51fca1
 sidebar_position: 9
 title:  Mapas en línea
 ---
@@ -34,7 +34,7 @@ La capacidad de usar mapas en línea se habilita automáticamente en la versión
 Puede encontrar información detallada sobre la visualización y personalización de mapas ráster en el artículo [Mapas ráster](../map/raster-maps.md). Cómo usar:
 
 1. [Seleccione](../map/raster-maps.md#layers) el mapa ráster como capa *Principal*, *Subcapa* o *Superposición*.
-    - [Cambie](../map/raster-maps.md#overlay) los parámetros de la capa (transparencia).
+    - [Cambie](../map/raster-maps.md#overlay) los parámetros de la capa (visibilidad).
 
 2. [Prepare / copie](../map/raster-maps.md#preparecopy-maps) mapas ráster en el dispositivo.
     - [Añadir nueva fuente de mapa ráster en línea](../map/raster-maps.md#add-new-online-source)
@@ -51,7 +51,7 @@ Puede encontrar información detallada sobre la visualización y personalizació
 
 Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configurar subcapa / superposición Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Configurar subcapa / superposición Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.webp)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_o
 
 Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configurar subcapa / superposición iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configurar subcapa / superposición iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.webp)
 
 </TabItem>
 

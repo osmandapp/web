@@ -1,5 +1,5 @@
 ---
-source-hash: 7dd018034f91c3c379a76d03258772b0e506136d147238424b5ac05df4862680
+source-hash: f8670339cfccb0d19b9c0a4cfd6784df8ae5a2d73ff489f654522447fd5c3ae1
 sidebar_position: 3
 title: عمليات الشراء عبر الويب
 ---

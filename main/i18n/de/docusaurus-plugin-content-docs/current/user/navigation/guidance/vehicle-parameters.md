@@ -1,5 +1,5 @@
 ---
-source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
+source-hash: 54463b26bbd3157bf65aa4c615c7c5d58ded9f5e2adbff7977057bafa3b8a30c
 sidebar_position: 4
 title:  Fahrzeugparameter
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/vehicle-parameters_andr.webp)
 
 </TabItem>
 
@@ -32,7 +32,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -40,7 +40,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 Für eine optimale Routenberechnung in OsmAnd sollten Sie die folgenden Fahrzeugparameter berücksichtigen:
 
-1. Stellen Sie die [*Standardgeschwindigkeit* oder *Straßengeschwindigkeiten*](#road-speeds) als [Mindest- und Höchstgeschwindigkeit](#road-speeds) des Fahrzeugs ein. Dies hilft der Anwendung, die für die Route benötigte Zeit zu ermitteln und die beste Route unter Berücksichtigung der Geschwindigkeitsbegrenzungen auf verschiedenen Straßenabschnitten auszuwählen.
+1. Stellen Sie die [*Standardgeschwindigkeit*](#default-speed) und den [*Geschwindigkeitsbereich*](#speed-range) — die Mindest- und Höchstgeschwindigkeit des Fahrzeugs — ein. Dies hilft der Anwendung, die für die Route benötigte Zeit zu ermitteln und die beste Route unter Berücksichtigung der Geschwindigkeitsbegrenzungen auf verschiedenen Straßenabschnitten auszuwählen.
 2. Geben Sie den [*Typ*](#fuel-used-by-motor) des vom Motor verwendeten Kraftstoffs an. Dies ermöglicht der App, die CO2-Emissionen abzuschätzen.
 3. Geben Sie die [*Kapazität Ihres Tanks*](#fuel-tank-capacity) ein, um Ihren Kraftstoffstand und -verbrauch genau zu verfolgen.
 4. Definieren Sie die [*Größen- und Gewichtsparameter*](#size-parameters) Ihres Fahrzeugs, die der App helfen können, die optimale Route zu berechnen und Hindernisse auf der Straße aufgrund von Beschränkungen zu vermeiden.
@@ -56,7 +56,7 @@ Die korrekte Einstellung der Parameter in der OsmAnd-App hilft Ihnen, Probleme b
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -82,33 +82,33 @@ Fahrzeugparameter beeinflussen die Navigation und den Routenverlauf, da sie die 
 
 **1.** [**<Translate android="true" ids="routing_attr_weight_name"/>-Beschränkung**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> Der Gewichtsparameter ist nur in Navigationstypen wie [*Auto, LKW* und *Motorrad*](../../navigation/routing/car-based-routing.md) verfügbar.  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
 **2.**  [**<Translate android="true" ids="routing_attr_height_name"/>-Beschränkung**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> Der Höhenparameter ist nur in Navigationstypen wie *[Auto, LKW, Motorrad](../../navigation/routing/car-based-routing.md)* und *[Boot](../../navigation/routing/boat-navigation.md)* verfügbar.  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_height_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
 
 **3.** [**<Translate android="true" ids="routing_attr_length_name"/>-Beschränkung**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> Der Längenparameter ist nur in Navigationstypen wie [*Auto, LKW* und *Motorrad*](../../navigation/routing/car-based-routing.md) verfügbar.  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
 **4.** [**<Translate android="true" ids="routing_attr_width_name"/>-Beschränkung**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> Der Breitenparameter ist nur in Navigationstypen wie *[Auto, LKW, Motorrad](../../navigation/routing/car-based-routing.md)* und *[Boot](../../navigation/routing/boat-navigation.md)* verfügbar.  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_width_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
 Auf Android ist dieser Parameter auch für *[Fahrradprofile](../../navigation/routing/bicycle-based-routing.md)* verfügbar, um enge Radwege zu vermeiden.
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Achslastgrenze**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Geben Sie die maximale Achslast Ihres Fahrzeugs an, um Straßen und Brücken mit Achsgewichtsbeschränkungen zu vermeiden. Dieser Parameter ist nur in Navigationstypen wie [*LKW*](../../navigation/routing/car-based-routing.md) verfügbar.  
 
-![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/max_axle_load.png)
 
 **6.** [**Maximalgewicht bei Volllast**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Geben Sie das maximale Gesamtgewicht Ihres Fahrzeugs bei Volllast an, um Straßen und Brücken mit Gesamtgewichtsbeschränkungen zu vermeiden. Dieser Parameter ist nur in Navigationstypen wie [*LKW*](../../navigation/routing/car-based-routing.md) verfügbar.  
 
-![Navigation Settings Android](@site/static/img/navigation/max_weight_at_full_load.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 Beschränkungen der Fahrzeugparameter können für die Navigation und die Verkehrssicherheit wichtig sein. Einige dieser Einschränkungen können sein:  
 
@@ -126,13 +126,13 @@ Beschränkungen der Fahrzeugparameter können für die Navigation und die Verkeh
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
+![Navigationsroute Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
+![Navigationsroute iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
@@ -152,13 +152,13 @@ Die Einstellung **Vom Motor verwendeter Kraftstoff** ist nur in der fahrzeugbasi
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Navigationseinstellungen Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
@@ -171,6 +171,7 @@ Der Parameter **Tankinhalt** ermöglicht es Ihnen, den [Kraftstoffstand](../../w
 
 Die Einstellung **Tankinhalt** ist nur in der fahrzeugbasierten Navigation verfügbar. Für Navigationstypen wie *Fahrrad*, *Reiten*, *Zu Fuß* und *Ski* wird dieser Parameter nicht in den Fahrzeugparametern angezeigt.
 
+
 ## Geschwindigkeitsparameter
 
 ### Standardgeschwindigkeit {#default-speed}
@@ -179,42 +180,58 @@ Die Einstellung **Tankinhalt** ist nur in der fahrzeugbasierten Navigation verf�
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,vehicle_parameters,travel_speed"/>*
 
-</TabItem>
+![Reisegeschwindigkeit Android](@site/static/img/navigation/navigation_settings_travel_speed_andr.webp)
 
-<TabItem value="ios" label="iOS">
-
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
-
-</TabItem>
-
-</Tabs>  
+Der Bildschirm *Reisegeschwindigkeit* enthält die Einstellungen *Standardgeschwindigkeit*, *Geschwindigkeitsbereich* und *Voraussichtliche Ankunftszeit* des Profils. Änderungen werden sofort gespeichert. Die Schaltfläche *Auf Standard zurücksetzen* in der oberen Leiste stellt die Standardwerte aller Einstellungen auf dem Bildschirm wieder her.
 
 Die **Standardgeschwindigkeit** ist die Standardbewegungsgeschwindigkeit für dieses Verkehrsmittel ([Standardgeschwindigkeitsbegrenzungen](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Für die Profile *Gehen*, *Reiten* und *Radfahren* in kleinen Schritten von 0,1 km/h (mph) ([Einheiten & Formate](https://osmand.net/docs/user/personal/profiles#units--formats)) und für die anderen Profile in Schritten von 1 km/h (1 mph). Sie wird verwendet:
 - Zur Schätzung der [Routenzeit](../../widgets/nav-widgets.md#time-to-intermediate), wenn die Geschwindigkeit nicht aus den Straßen bestimmt werden kann, wie bei der [GPX-Navigation](../setup/gpx-navigation.md), [Skirouten](../routing/ski-routing.md), [Bootsrouten](../routing/boat-navigation.md), [Fußgänger](../routing/pedestrian-routing.md) und anderen ähnlichen Profilen.
 - Um zu bestimmen, wann [Sprachansagen](../guidance/voice-navigation.md) aktiviert werden.
 - Zur Bestimmung der Ankunftszeit für Kartenmarkierungen durch eine Luftlinienavigation, wenn die Durchschnittsgeschwindigkeit noch nicht berechnet wurde.
 
+Die *Standardgeschwindigkeit* kann nur innerhalb des [*Geschwindigkeitsbereichs*](#speed-range) eingestellt werden: Wenn Sie den Bereich verengen, bewegt sich die *Standardgeschwindigkeit* mit.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Navigationseinstellungen](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+
+Die **Standardgeschwindigkeit** ist die Standardbewegungsgeschwindigkeit für dieses Verkehrsmittel ([Standardgeschwindigkeitsbegrenzungen](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Für die Profile *Gehen*, *Reiten* und *Radfahren* in kleinen Schritten von 0,1 km/h (mph) ([Einheiten & Formate](https://osmand.net/docs/user/personal/profiles#units--formats)) und für die anderen Profile in Schritten von 1 km/h (1 mph). Sie wird verwendet:
+- Zur Schätzung der [Routenzeit](../../widgets/nav-widgets.md#time-to-intermediate), wenn die Geschwindigkeit nicht aus den Straßen bestimmt werden kann, wie bei der [GPX-Navigation](../setup/gpx-navigation.md), [Skirouten](../routing/ski-routing.md), [Bootsrouten](../routing/boat-navigation.md), [Fußgänger](../routing/pedestrian-routing.md) und anderen ähnlichen Profilen.
+- Um zu bestimmen, wann [Sprachansagen](../guidance/voice-navigation.md) aktiviert werden.
+- Zur Bestimmung der Ankunftszeit für Kartenmarkierungen durch eine Luftlinienavigation, wenn die Durchschnittsgeschwindigkeit noch nicht berechnet wurde.
+
+</TabItem>
+
+</Tabs>
 
 
- Sie wird verwendet, um die Ankunftszeit zu berechnen und die optimale Route basierend auf der Bewegungsgeschwindigkeit zu bestimmen, die die Anwendung als typisch ansieht. Zum Beispiel Auto, öffentliche Verkehrsmittel, Fußgänger oder die von Ihnen manuell eingestellte Geschwindigkeit.
+### Geschwindigkeitsbereich {#speed-range}
 
+<InfoAndroidOnly />
 
-### Straßengeschwindigkeiten {#road-speeds}
-
-
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-Für einige Navigationstypen kann die minimale und maximale zulässige Geschwindigkeit eingestellt werden. Wenn sie eingestellt ist, geht die Routing-Engine davon aus, dass sich das Fahrzeug oder Verkehrsmittel nicht schneller als das Limit und nicht langsamer als die Mindestgeschwindigkeit bewegt. 
+Für einige Navigationstypen kann die minimale und maximale zulässige Geschwindigkeit eingestellt werden. Beide Werte werden mit einem Schieberegler mit zwei Griffen eingestellt. Wenn sie eingestellt sind, geht die Routing-Engine davon aus, dass sich das Fahrzeug oder Verkehrsmittel nicht schneller als die Höchstgeschwindigkeit und nicht langsamer als die Mindestgeschwindigkeit bewegt. Der *Geschwindigkeitsbereich* wird sowohl für die Routenberechnung als auch für die Ankunftszeit verwendet.
 Zum Beispiel ermöglicht dies die Erstellung einer **kraftstoffsparenden** Route, bei der der Kraftstoffverbrauch bei der eingestellten **Höchstgeschwindigkeit** optimal ist und die Engine eine kürzere Route findet, die längere, aber schnellere Straßen vermeidet.
 
-- **Mindestgeschwindigkeit**  
-    Die Einstellung legt die minimale Fahrgeschwindigkeit für alle Straßentypen auf der Route fest. Sie erhöht die Priorität für Straßen mit einer empfohlenen Geschwindigkeit, die niedriger als die Mindestgeschwindigkeit ist.  
-- **Höchstgeschwindigkeit**  
-    Die Einstellung legt die maximale Fahrgeschwindigkeit fest und verringert die Priorität für Straßen mit einer möglichen Geschwindigkeit, die höher als die maximale ist.
+- **Mindestgeschwindigkeit** — legt die minimale Fahrgeschwindigkeit für alle Straßentypen auf der Route fest. Sie erhöht die Priorität für Straßen mit einer empfohlenen Geschwindigkeit, die niedriger als die Mindestgeschwindigkeit ist.
+- **Höchstgeschwindigkeit** — legt die maximale Fahrgeschwindigkeit fest und verringert die Priorität für Straßen mit einer möglichen Geschwindigkeit, die höher als die maximale ist.
+
+Der *Geschwindigkeitsbereich* ist für Profile mit Luftlinien-Routing, zum Beispiel *Flugzeug*, nicht verfügbar.
 
 
+### Voraussichtliche Ankunftszeit {#estimated-arrival-time}
+
+<InfoAndroidOnly />
+
+Die Einstellungen für die *Voraussichtliche Ankunftszeit* legen fest, wie OsmAnd die Ankunftszeit während der Navigation berechnet.
+
+- **An meine Geschwindigkeit anpassen** — standardmäßig deaktiviert. Ist die Einstellung deaktiviert, ergibt sich die Ankunftszeit aus der erwarteten Geschwindigkeit auf jeder Straße der Route. Ist sie aktiviert, teilt OsmAnd die verbleibende Entfernung durch Ihre Durchschnittsgeschwindigkeit über das gewählte *Intervall*. Es wird nur die Bewegung während der Navigation berücksichtigt, Stopps werden übersprungen. Unmittelbar nach dem Start der Navigation kombiniert die Ankunftszeit die Routenschätzung mit Ihrer Durchschnittsgeschwindigkeit, bis Sie sich über das gesamte *Intervall* bewegt haben.
+- **Intervall** — der Zeitraum, über den Ihre Durchschnittsgeschwindigkeit gemessen wird, von 15 Sekunden bis 60 Minuten. Der Standardwert beträgt 15 Minuten. Die Einstellung ist verfügbar, wenn *An meine Geschwindigkeit anpassen* aktiviert ist.
+
+Die angepasste Ankunftszeit wird in den Widgets [*Zeit bis zum Ziel*](../../widgets/nav-widgets.md#time-to-destination) und [*Zeit bis zum Zwischenziel*](../../widgets/nav-widgets.md#time-to-intermediate), in der Navigationsbenachrichtigung und in [Android Auto](../auto-car.md) angezeigt. Die Zeit bis zur nächsten Abbiegung und die Sprachansagen sind nicht betroffen.
 
 
 ## Verwandte Artikel {#related-articles}

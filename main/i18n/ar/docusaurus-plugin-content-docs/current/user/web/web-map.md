@@ -1,5 +1,5 @@
 ---
-source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
+source-hash: 3f9fe278a6da459746d62fe7944d19ca8c1cae8acd07c9a389b2e49b40380b9d
 sidebar_position: 3
 sidebar_label: الخريطة
 title: الخريطة العالمية على الموقع الإلكتروني
@@ -33,7 +33,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 الخريطة الإلكترونية لـ OsmAnd هي خريطة عالمية تستند إلى بيانات [أوبن ستريت ماب (OSM)](https://www.openstreetmap.org/). تتيح للمستخدمين عرض بياناتهم الخاصة، مثل المسارات والمفضلات، وإنشاء مسارات ملاحة لأي ملف تعريف، والوصول إلى ميزات إضافية مثل الطقس، ومسارات GPX العامة، ونقاط الاهتمام، وصور ويكيميديا. استكشف وخصص تجربة بياناتك مباشرة في متصفحك.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![OsmAnd Web — عرض عام](@site/static/img/web/web_map_all.png)
 
 
 ## قائمة سياق الخريطة {#map-context-menu}
@@ -55,12 +55,12 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 <!--
 - **إضافة دبوس** – يضع دبوسًا لتحديد موقع على الخريطة. ([مثال](https://osmand.net/map/?pin=37.546483,-77.446446#15/37.5458/-77.4470))
 
-![Map Context menu](@site/static/img/web/map_context_menu.png)
+![قائمة سياق الخريطة](@site/static/img/web/map_context_menu.png)
 
 سيتم إضافة خيار إضافة الدبوس مرة أخرى بمجرد توفره مرة أخرى.
 -->
 
-![Map Context menu](@site/static/img/web/map_context_menu_2_new.png)
+![قائمة سياق الخريطة](@site/static/img/web/map_context_menu_2_new.png)
 
 
 ## الكائن المحدد {#selected-object}
@@ -83,7 +83,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 إذا كانت عدة كائنات موجودة في النقطة المحددة، تعرض اللوحة كائنًا واحدًا في كل مرة. استخدم الأسهم بجوار زر الإغلاق للتبديل بينها. يظهر السهم الخلفي بدءًا من الكائن الثاني، ويكون السهم الأمامي غير نشط على الكائن الأخير.
 
-![Selected Object](@site/static/img/web/selected_object_favorite.png) ![Selected Object](@site/static/img/web/several_objects.webp)
+![الكائن المحدد](@site/static/img/web/selected_object_favorite.png) ![الكائن المحدد](@site/static/img/web/several_objects.webp)
 
 
 
@@ -98,7 +98,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - [التضاريس](#terrain). تمكين أو تعطيل نظام ألوان التضاريس على الخريطة.
 - [Raster (tiles) / OsmAnd vector (beta)](#map-type). يعرض نوع الخريطة المستخدم حاليًا ويتيح التبديل بين الخريطة النقطية والمتجهة.
 
-![POIs menu](@site/static/img/web/configure_map_web_new.webp)
+![قائمة نقاط الاهتمام](@site/static/img/web/configure_map_web_new.webp)
 
 
 ### تراكب نقاط الاهتمام {#poi-overlay}
@@ -119,7 +119,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *الاتجاهات من* — يعين POI المحدد كنقطة بداية ويفتح لوحة المسار حتى تتمكن من اختيار وجهة وملف تعريف.
 - *الملاحة* — يعين POI المحدد كنقطة وجهة للملاحة.
 
-![POIs menu](@site/static/img/web/poi_categories.png) ![POIs menu](@site/static/img/web/poi_photo_new.png)
+![قائمة نقاط الاهتمام](@site/static/img/web/poi_categories.png) ![قائمة نقاط الاهتمام](@site/static/img/web/poi_photo_new.png)
 
 
 ### المفضلات {#favorites}
@@ -129,15 +129,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### المسارات {#tracks}
 
-يحتوي هذا القسم على قائمة بـ [**مسارات GPX المرئية على الخريطة**](../web/web-tracks.md#visible-on-the-map) و**المسارات المرئية مؤخرًا**.
+يحتوي هذا القسم على قائمة بـ [**مسارات GPX المرئية على الخريطة**](../web/web-tracks.md#visible-on-the-map) ومسارات **مرئي مؤخرًا**.
 
 - يمكنك تبديل المسارات أو إيقافها مباشرة.  
-- قم بتبديل المسارات أو إيقافها من قائمة **المرئية مؤخرًا**.  
+- قم بتبديل المسارات أو إيقافها من قائمة **مرئي مؤخرًا**.  
 
 لكل مسار **قائمة سياق** (يمكن الوصول إليها عبر زر ⋮) بالأوامر التالية:
 
 - **إخفاء المسار**: يخفي المسار المرئي حاليًا من الخريطة.  
-- **جعل المسار مرئيًا**: يعرض مسارًا من قائمة المرئية مؤخرًا على الخريطة.  
+- **جعل المسار مرئيًا**: يعرض مسارًا من قائمة مرئي مؤخرًا على الخريطة.  
 - **إعادة التسمية**: يتيح لك إعادة تسمية المسار لتسهيل التعرف عليه.  
 - **تكرار**: ينشئ نسخة من المسار.
 - **مشاركة**: يفتح شاشة المشاركة (نفسها كما لـ [المفضلات](../web/web-favorites.md#share)).
@@ -152,7 +152,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - المسار — غير مُنفذ حاليًا.
 - النقاط — تعرض نقاط الطريق ونقاط المسار مجمعة حسب النوع.
 
-![Configure map menu Tracks](@site/static/img/web/configure_map_track_new.png) ![Configure map menu Tracks](@site/static/img/web/configure_map_track_2_new.png)
+![قائمة تكوين الخريطة — المسارات](@site/static/img/web/configure_map_track_new.png) ![قائمة تكوين الخريطة — المسارات](@site/static/img/web/configure_map_track_2_new.png)
 
 ### محطات النقل {#transport-stops}
 
@@ -180,7 +180,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 قد يعرض قسم المسارات القريبة مسارات إضافية تقع بالقرب من المحطة المحددة. هذا يساعدك على اكتشاف خيارات نقل بديلة بسرعة في المنطقة المحيطة.
 
-![Transport Stops](@site/static/img/web/configure_map_transport_stops.png)
+![محطات النقل](@site/static/img/web/configure_map_transport_stops.png)
 
 ### التضاريس {#terrain}
 
@@ -188,13 +188,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 في هذا القسم، يمكنك:
 
-- اختيار **نظام ألوان** للتضاريس:
+- اختيار **نظام الألوان** للتضاريس:
   - **تظليل التلال**
   - **الميل**
   - **الارتفاع**
 - ضبط رؤية طبقة التضاريس المحددة من **0% إلى 100%**.
 
-![Configure map menu Terrain](@site/static/img/web/configure_map_terrain.png)
+![قائمة تكوين الخريطة — التضاريس](@site/static/img/web/configure_map_terrain.png)
 
 ### نوع الخريطة {#map-type}
 
@@ -218,7 +218,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 *اذهب إلى: القائمة → ⚙ الإعدادات → لغة العرض*
 
-![Web Language](@site/static/img/web/web_language.png)
+![لغة الويب](@site/static/img/web/web_language.png)
 
 ### الوحدات {#units}
 
@@ -247,7 +247,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 على سبيل المثال، سرعة 90 كم/ساعة تتوافق مع 25 م/س أو نحو 55.92 ميل/ساعة.
 
-![Web Units](@site/static/img/web/web_units_len.png) ![Web Units](@site/static/img/web/web_units_spe.png)
+![وحدات الويب](@site/static/img/web/web_units_len.png) ![وحدات الويب](@site/static/img/web/web_units_spe.png)
 
 
 <!--
@@ -258,11 +258,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - نمط خريطة بحرية
 
-![OsmAnd Web Map Style](@site/static/img/web/web_map_style_nautical.png)
+![نمط خريطة OsmAnd Web](@site/static/img/web/web_map_style_nautical.png)
 
 - نمط خريطة طوبوغرافية
 
-![OsmAnd Web Favorites add](@site/static/img/web/web_map_style_topo.png)
+![إضافة مفضلة في OsmAnd Web](@site/static/img/web/web_map_style_topo.png)
 -->
 
 
@@ -276,19 +276,21 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_pin.png)
+  ![إنشاء مسار في OsmAnd Web](@site/static/img/plan-route/web_url_pin.png)
+
+  تفتح الخريطة متمركزة على الدبوس. يؤخذ مستوى التكبير من الجزء الذي يلي `#` في عنوان URL. إذا لم يكن في عنوان URL هذا الجزء، تفتح الخريطة على مستوى التكبير 9. ينطبق هذا أيضًا على الروابط التي تم إنشاؤها بزر *مشاركة* في [قائمة سياق POI](../web/web-search.md#poi-actions).
 
 2. **عنوان URL بدون دبوس على الخريطة:**
 
   https://osmand.net/map/#9/52.3924/6.3116
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_without.png)
+  ![إنشاء مسار في OsmAnd Web](@site/static/img/plan-route/web_url_without.png)
 
 3. **عنوان URL مع الملاحة:** `osmand.net/map/navigate`
 
   https://osmand.net/map/navigate/?start=52.236210,5.119629&finish=52.412472,4.855957&type=osmand&profile=car&pin=52.491143,7.116394#9/52.3873/5.2570
 
-  ![OsmAnd Web Create Track](@site/static/img/plan-route/web_url_track.png)
+  ![إنشاء مسار في OsmAnd Web](@site/static/img/plan-route/web_url_track.png)
 
 اعتمادًا على المعلمات المحددة، يمكن أن تحتوي سلاسل عناوين URL على:
 

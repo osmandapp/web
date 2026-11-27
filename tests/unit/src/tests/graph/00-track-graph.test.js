@@ -2,7 +2,7 @@ import { analyzerProfile, trackProfile } from '@map/graph/model/profile';
 import { computeSlopes } from '@map/graph/model/slopes';
 import { sampleSeries } from '@map/graph/model/sampling';
 import { graphUnits } from '@map/menu/settings/units/UnitsConverter';
-import TracksManager, { NAN_MARKER, withEditedPoints } from '@map/manager/track/TracksManager';
+import TracksManager, { NAN_MARKER, takePointsFromTracks, withEditedPoints } from '@map/manager/track/TracksManager';
 import { assignPointIds, movePoint, setSegmentGeometries } from '@map/manager/track/TrackOperations';
 import { createEditorPoint, createPointAt, createRoutedPoints } from '../../util/fixtures/tracks';
 
@@ -39,8 +39,9 @@ test('the distance skips the gap between segments and tracks, a point without el
 
 test('the graph of a track opened in the editor follows its edited points until an analysis answer brings new tracks', () => {
     const tracks = [{ points: createRoutedPoints(3) }];
-    const points = assignPointIds(TracksManager.getEditablePoints({ tracks }));
-    const opened = { tracks, points, tracksPoints: points };
+    const opened = { tracks };
+    takePointsFromTracks(opened);
+    const points = assignPointIds(opened.points);
     const moved = { lat: 50.025, lng: 30 };
     const edited = {
         ...opened,
@@ -49,10 +50,14 @@ test('the graph of a track opened in the editor follows its edited points until 
         ]),
     };
 
-    expect(withEditedPoints(opened)).toBe(opened);
+    expect(withEditedPoints(opened).tracks).toBe(tracks);
     expect(trackProfile(withEditedPoints(edited)).map((p) => p.lat)).toEqual([50, 50.01, 50.01, 50.025]);
 
-    const answered = { ...edited, tracks: [{ points: [point(0, 100), point(2.5, 110)] }], tracksPoints: edited.points };
+    const answered = {
+        ...edited,
+        analysisTracks: [{ points: [point(0, 100), point(2.5, 110)] }],
+        analysisPoints: edited.points,
+    };
     expect(trackProfile(withEditedPoints(answered)).map((p) => [p.lat, p.elevation])).toEqual([
         [50, 100],
         [50.025, 110],

@@ -1,5 +1,5 @@
 ---
-source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+source-hash: 863d3df7ebcb8f1a0a362a1a56c188f42daa47139cbfa9d9825346e82b510df5
 sidebar_position: 6
 title:  Externe Sensoren
 ---
@@ -87,7 +87,8 @@ Um einen neuen Sensor zu koppeln, folgen Sie diesen Schritten:
 - Unter **iOS** werden aufgrund von Hardware-Einschränkungen nur **Bluetooth Low Energy (BLE)**-Sensoren unterstützt. ANT+-Sensoren sind nicht verfügbar.
 - Unter **Android** können je nach Gerät sowohl BLE- als auch ANT+-Sensoren unterstützt werden. Weitere Informationen finden Sie im [ANT+-Kompatibilitätsleitfaden](https://www.thisisant.com/consumer/ant-101/ant-in-phones).
 - Eine **Pop-up-Benachrichtigung** wird jedes Mal angezeigt, wenn ein Sensor eine Verbindung herstellt oder trennt.
-- **Fahrradleistungssensoren** sind nur auf Android über ANT+ verfügbar.
+- **Fahrradleistungssensoren** sind nur auf Android über ANT+ und BLE verfügbar.
+- Unter **Android** erscheint ein Sensor, der mehrere Datentypen überträgt (zum Beispiel ein Herzfrequenzmesser, der auch Laufgeschwindigkeit und Trittfrequenz misst, oder Ohrhörer mit Herzfrequenz und Temperatur), in der Liste als ein Gerät. OsmAnd liest alle unterstützten Datentypen von ihm aus.
 
 
 ## Sensoreinstellungen {#sensor-settings}
@@ -123,7 +124,7 @@ Jeder in OsmAnd aufgelistete gekoppelte externe Sensor hat seinen eigenen Konfig
 - **Verbinden / Trennen** – schaltet den Verbindungsstatus um.
 - **Umbenennen** – weisen Sie dem Sensor einen benutzerdefinierten Namen zu.
 - **Sensor vergessen** – entfernt den Sensor aus der Liste (kann später erneut gekoppelt werden).
-- **Einstellungen** – öffnet den Detailbildschirm des Sensors (Sensortyp, Werte, Batteriestand, Einstellung des Radumfangs).
+- **Einstellungen** – öffnet den Detailbildschirm des Sensors (Sensortyp, Werte, Batteriestand, Einstellung des Radumfangs). Unter **Android** zeigt der Bildschirm für einen Sensor mit mehreren Datentypen alle seine Werte an.
 
 ***Hinweise:***
 
@@ -139,7 +140,7 @@ Jeder in OsmAnd aufgelistete gekoppelte externe Sensor hat seinen eigenen Konfig
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![Externe Sensoren](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![Externe Sensoren](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
+![Externe Sensoren](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.webp)  ![Externe Sensoren](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.webp)  
 
 </TabItem>
 
@@ -147,7 +148,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugins_menu_gr
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![Plugin für externe Sensoren](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![Plugin für externe Sensoren](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
+![Plugin für externe Sensoren](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.webp)  ![Plugin für externe Sensoren](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.webp)  
 
 </TabItem>
 
@@ -157,7 +158,7 @@ Um Sensordaten während Ihrer Reise mit dem [Plugin für die Reiseaufzeichnung](
 
 1. Stellen Sie sicher, dass das **Plugin 'Externe Sensoren'** aktiviert ist.
 2. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
-3. Wählen Sie die Sensortypen aus, die Sie aufzeichnen möchten (z. B. Trittfrequenz, Herzfrequenz, Geschwindigkeit).
+3. Wählen Sie für jeden Datentyp, den Sie aufzeichnen möchten (z. B. Trittfrequenz, Herzfrequenz, Geschwindigkeit), den Sensor aus, der als Datenquelle dienen soll.
 4. Starten Sie die Aufzeichnung Ihrer Reise. OsmAnd speichert die ausgewählten Sensordaten im GPX-Track.
 
 ***Hinweise:***
@@ -165,6 +166,9 @@ Um Sensordaten während Ihrer Reise mit dem [Plugin für die Reiseaufzeichnung](
 - Die Liste der verfügbaren Sensortypen wird auch dann angezeigt, wenn keine Sensoren verbunden sind.
 - Wenn noch keine Sensoren gekoppelt sind, verwenden Sie die Schaltfläche [Neuen Sensor koppeln](#pair-new-sensor) in den Plugin-Einstellungen.
 - Batteriestandsdaten werden **nicht** in GPX-Dateien aufgezeichnet und sind nicht für die Analyse auf der Karte verfügbar.
+- Unter **Android** kann ein Sensor mit mehreren Datentypen als Quelle für jeden dieser Datentypen ausgewählt werden.
+- Die Standardquelle für jeden Datentyp ist *Beliebig verbunden*. OsmAnd zeichnet Daten von einem verbundenen Sensor dieses Typs auf. Um die Aufzeichnung eines Datentyps zu beenden, wählen Sie *Keine*.
+- Unter **Android** wird neben *Beliebig verbunden* der Name des passenden gekoppelten Sensors angezeigt. Wenn Sie einen ausgewählten Sensor entfernen, kehrt die Quelle zu *Beliebig verbunden* zurück.
 
 :::note Formatkompatibilität
 OsmAnd verwendet die [Trackaufzeichnung](../plugins/trip-recording.md#recorded-gpx-file), um Sensordaten in GPX-Dateien einzubetten. Dieses Format ist mit vielen Sport- und Trainings-Apps (z. B. Strava, Runkeeper) kompatibel.
@@ -235,7 +239,7 @@ Unterstützte Widget-Typen:
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – zeigt die Echtzeit-Herzfrequenz von einem gekoppelten Monitor an.
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*nur Android*) – zeigt die aktuelle Tretleistung in Watt an.
-3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – zeigt die Anzahl der Pedalumdrehungen pro Minute an.
+3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – zeigt die Anzahl der Pedalumdrehungen pro Minute an. Die Trittfrequenzdaten können von einem Trittfrequenzsensor oder von einem Fahrradleistungssensor stammen, der die Trittfrequenz überträgt.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – aktuelle Fahrradgeschwindigkeit.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – vom Sensor gemessene Gesamtdistanz.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – aktuelle Umgebungstemperatur.
@@ -266,7 +270,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,layer_map_appearanc
 
 </Tabs>
 
-Standardmäßig zeigt das Widget den ersten aktuell verbundenen Sensor dieses Typs an. Wenn Sie einen bestimmten Sensor verwenden möchten, tippen Sie auf **Datenquelle** und wählen Sie aus der Liste der verbundenen Sensoren.
+Standardmäßig zeigt das Widget den ersten aktuell verbundenen Sensor dieses Typs an. Wenn Sie einen bestimmten Sensor verwenden möchten, tippen Sie auf **Datenquelle** und wählen Sie aus der Liste der verbundenen Sensoren. Unter **Android** steht ein Sensor mit mehreren Datentypen in jedem passenden Widget als Quelle zur Verfügung, zum Beispiel in *Herzfrequenz*, *Fahrradgeschwindigkeit* und *Fahrradtrittfrequenz*.
 
 Unter **iOS** können Sie wählen, welcher Wert im Widget angezeigt werden soll:  
 

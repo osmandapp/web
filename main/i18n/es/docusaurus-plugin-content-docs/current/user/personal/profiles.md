@@ -1,5 +1,5 @@
 ---
-source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
+source-hash: d0091f6c53e5bab1a3f712b907e2581913384d21865212be979549aae63d2d2c
 sidebar_position: 4
 title:  Perfiles (Ajustes)
 ---
@@ -123,7 +123,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,gener
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Ajustes Generales de Perfiles Apariencia iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
+![Ajustes Generales de Perfiles Apariencia iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.webp)
 
 </TabItem>
 
@@ -148,6 +148,12 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - [<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control) (*Solo Android*). Abre el menú de control de pantalla, donde puede seleccionar opciones para la pantalla del dispositivo mientras navega para ahorrar el consumo de batería del dispositivo.  
+
+- **Mantener la pantalla encendida** (*solo iOS*). Define cuándo permanece encendida la pantalla del dispositivo mientras OsmAnd está abierto.
+  - *<Translate ios="true" ids="shared_string_system_default"/>*. La pantalla se apaga según el tiempo de Bloqueo automático establecido en los ajustes de su dispositivo.
+  - *Durante la navegación*. La pantalla permanece encendida mientras la navegación está activa y se apaga según el tiempo de Bloqueo automático cuando la navegación se pausa o se detiene. Esta opción no está disponible para el perfil *<Translate ios="true" ids="rendering_value_browse_map_name"/>*.
+  - *<Translate ios="true" ids="shared_string_always"/>*. La pantalla permanece encendida todo el tiempo mientras OsmAnd está abierto.
+  - De forma predeterminada, el perfil *<Translate ios="true" ids="rendering_value_browse_map_name"/>* usa *<Translate ios="true" ids="shared_string_system_default"/>*, y los demás perfiles usan *Durante la navegación*.
 
 
 ### Unidades y Formatos {#units--formats}
@@ -225,9 +231,9 @@ En la sección **Unidades y Formatos**, puede ajustar las unidades de medida y l
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zona Norte Este) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Ejemplo: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Ejemplo:  9F2X4WFJ+7W ([Código de Ubicación Abierto](https://en.wikipedia.org/wiki/Open_Location_Code) representa un área de 9m x 14m)  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (solo versión de Android) | Ejemplo: 2 215 227.87, 830 915.9 ([Sistema de coordenadas suizo](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (solo versión de Android) | Ejemplo: 4 215 227.87, 1 830 915.9 ([Sistema de coordenadas suizo](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
-|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (solo versión de Android) | Ejemplo: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> | Ejemplo: 2 215 227.87, 830 915.9 ([Sistema de coordenadas suizo](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> | Ejemplo: 4 215 227.87, 1 830 915.9 ([Sistema de coordenadas suizo](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> | Ejemplo: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Grados 180° | Todos los valores angulares tienen lecturas de 0° a 180° y de 0° a -180°.  |
 |          | Grados 360° | Todos los valores angulares tienen lecturas de 0° a 360°.  |
@@ -448,7 +454,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 Los ajustes de **Apariencia de Mi Ubicación** le permiten personalizar cómo se muestra su ubicación en el mapa, tanto cuando está parado (Reposo) como en movimiento (Navegación). El movimiento es detectado por el sistema operativo cuando la velocidad del dispositivo es **mayor que cero**.
 
-Utilice **<Translate ios="true" ids="icon_size"/>** para ajustar el tamaño del icono de posición de Mi Ubicación de forma independiente del tamaño de texto de la aplicación. Puede establecer tamaños diferentes para los modos Reposo y Navegación. El tamaño se puede ajustar desde el 50% hasta el 300% (50, 75, 100, 125, 150, 200, 250, 300%). El valor predeterminado es 100%. Toque <Translate ios="true" ids="icon_size"/> para abrir la configuración de tamaño, luego use el control deslizante o los botones de paso + / – para cambiar el valor. Utilice **<Translate ios="true" ids="reset_to_default"/>** para volver al 100%.
+Utilice **<Translate ios="true" ids="icon_size"/>** para ajustar el tamaño del icono de posición de Mi Ubicación de forma independiente del tamaño de texto de la aplicación. Puede establecer tamaños diferentes para los modos Reposo y Navegación. El tamaño se puede ajustar desde el 50% hasta el 300% (50, 75, 100, 125, 150, 200, 250, 300%). El valor predeterminado es 100%. Toque Tamaño del icono para abrir la configuración de tamaño, luego use el control deslizante o los botones de paso + / – para cambiar el valor. Utilice **<Translate ios="true" ids="reset_to_default"/>** para volver al 100%.
 
 </TabItem>
 
@@ -581,7 +587,7 @@ Los plugins desbloquean características adicionales de la aplicación y pueden 
 
   > ***Cambiar los ajustes del plugin de desarrollo de OsmAnd afecta a todos los perfiles.***
 
-- **Wikipedia** (solo iOS). Este menú abre los *[ajustes del plugin de Wikipedia](../plugins/wikipedia.md#wikipedia-settings)*. Puede seleccionar el idioma en el que se mostrarán los artículos y elegir si desea descargar imágenes de Wikipedia. Tener Wikipedia en su viaje mejora su experiencia al proporcionar información sobre los lugares que visita. Funciona sin conexión y muestra artículos de Wikipedia relevantes directamente en el mapa relacionados con los puntos de interés.
+- **Wikipedia**. Este menú abre los *[ajustes del plugin de Wikipedia](../plugins/wikipedia.md#wikipedia-settings)* del perfil seleccionado. Puede seleccionar el idioma en el que se mostrarán los artículos, elegir si desea descargar imágenes de Wikipedia y borrar la caché de imágenes. Tener Wikipedia en su viaje mejora su experiencia al proporcionar información sobre los lugares que visita. Funciona sin conexión y muestra artículos de Wikipedia relevantes directamente en el mapa relacionados con los puntos de interés.
 
 - **Métricas del vehículo**. Este menú abre los *[ajustes del plugin de métricas del vehículo](../plugins/vehicle-metrics.md#scanner-settings)*. Le permite conectar un escáner OBD-II a OsmAnd.
 

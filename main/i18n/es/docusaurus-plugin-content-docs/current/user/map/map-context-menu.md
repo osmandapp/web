@@ -1,5 +1,5 @@
 ---
-source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
+source-hash: def504c8061e9412da05582355a82eb94bcb15a44582cc2f7cbebb675a15b6d2
 sidebar_position: 3
 title: Menú contextual del mapa
 ---
@@ -56,13 +56,13 @@ Puede seleccionar varios tipos de objetos del mapa, como *PDI*, *favoritos*, *pa
 
 <TabItem value="android" label="Android">
 
-![Context menu long_tap_Android](@site/static/img/map/map_context_menu_long_tap_android.png)
+![Menú contextual con pulsación larga Android](@site/static/img/map/map_context_menu_long_tap_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Context menu long_tap_iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
+![Menú contextual con pulsación larga iOS](@site/static/img/map/map_context_menu_long_tap_ios.png)
 
 </TabItem>
 
@@ -77,13 +77,13 @@ Cuando realiza una **pulsación larga** en cualquier lugar del mapa, aparece un 
 
 <TabItem value="android" label="Android">  
 
-![Context track menu Android](@site/static/img/map/context_track_menu_Android.png) ![What's here Android](@site/static/img/map/whats_here_Android.png)
+![Menú contextual del track Android](@site/static/img/map/context_track_menu_Android.png) ![Qué hay aquí Android](@site/static/img/map/whats_here_Android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Statistics screen track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![What's here iOS](@site/static/img/map/whats_here_ios.png)
+![Pantalla de estadísticas del track iOS](@site/static/img/personal/tracks/statistics_track_ios_new.png) ![Qué hay aquí iOS](@site/static/img/map/whats_here_ios.png)
 
 </TabItem>
 
@@ -94,7 +94,7 @@ Al tocar un [track GPX](../map/tracks/index.md) en el mapa se abre el [menú con
 
 ### Rutas, pistas de esquí y senderos {#routes-and-trails}
 
-![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb.png)  ![Ski Slopes and MTB Trails](@site/static/img/map/ski_mtb_2.png)
+![Pistas de esquí y rutas de MTB](@site/static/img/map/ski_mtb.png)  ![Pistas de esquí y rutas de MTB](@site/static/img/map/ski_mtb_2.png)
 
 Puede tocar elementos del mapa como **pistas de esquí**, **rutas de bicicleta de montaña (BTT)** y **senderos de motocross** para abrir su menú contextual con información detallada. Consulte el [artículo de Rutas](../map/routes/index.md#actions-with-routes) para obtener más información.
 
@@ -151,15 +151,18 @@ Los detalles disponibles incluyen:
 Además, el panel puede incluir [Detalles de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_features), como:
 
 - [Sitio web](https://wiki.openstreetmap.org/wiki/Key:website)
-- [Número de teléfono](https://wiki.openstreetmap.org/wiki/Key:contact)
-- [Horario de apertura](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+- [Número de teléfono](https://wiki.openstreetmap.org/wiki/Key:contact) — los números que incluyen un [prefijo de país](https://wiki.openstreetmap.org/wiki/Key:phone) se dividen en grupos de dígitos para que sean más fáciles de leer, por ejemplo, `+33 6 12 34 56 78`. Cuando llama a un número o lo copia, OsmAnd utiliza el valor almacenado en [OpenStreetMap](https://www.openstreetmap.org/).
+- [Horario de apertura](https://wiki.openstreetmap.org/wiki/Key:opening_hours) — se muestra en el idioma de la aplicación, e incluye días de la semana, meses, festivos y vacaciones escolares. Los días en que el lugar no abre se marcan como *cerrado*. Si OpenStreetMap contiene la fecha en que se verificó por última vez el horario de apertura ([check_date:opening_hours](https://wiki.openstreetmap.org/wiki/Key:check_date)), toque la fila para expandirla. La *<Translate android="true" ids="poi_check_date"/>* se muestra debajo del horario en el formato de fecha corto del idioma de la aplicación.
+- **<Translate android="true" ids="poi_xmas_opening_hours"/>** — el horario de apertura de un evento navideño, como un mercado de Navidad, con el período del evento en la línea siguiente. Si el horario no se puede reconocer por completo, se muestra tal como está almacenado en OpenStreetMap. Este horario no afecta al estado de abierto o cerrado del lugar.
+- [<Translate android="true" ids="poi_check_date"/>](https://wiki.openstreetmap.org/wiki/Key:check_date) — la fecha en que se verificaron por última vez los datos del objeto en OpenStreetMap.
 - [Tarifa](https://wiki.openstreetmap.org/wiki/Key:fee)
+- [<Translate android="true" ids="poi_zone"/>](https://wiki.openstreetmap.org/wiki/Key:zone) — la zona de aparcamiento dentro del sistema de aparcamiento de una ciudad, por ejemplo, *M*. Se muestra para aparcamientos.
 - [Accesibilidad](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Ancho](https://wiki.openstreetmap.org/wiki/Key:width) / [Alto](https://wiki.openstreetmap.org/wiki/Key:height) 
 
 Si un campo de contacto (como *Sitio web, Número de teléfono* o *Correo electrónico*) contiene varios valores, al tocarlo se muestra una lista de entradas disponibles. Seleccione la entrada deseada para realizar la acción correspondiente.
 
-Más allá de los campos enumerados anteriormente, OsmAnd también puede mostrar información descriptiva adicional extraída de OpenStreetMap. Estos atributos le ayudan a comprender mejor las características de un lugar e incluyen detalles como elevación, dirección, año de construcción, tipo de superficie o cobertura, nivel interior, opciones de pago, disponibilidad de entrega o para llevar, y muchos otros. OsmAnd muestra estos atributos con etiquetas claras y, cuando es posible, iconos, lo que facilita su lectura y reconocimiento. El conjunto exacto de atributos depende de los datos disponibles en OpenStreetMap para el objeto seleccionado.
+Más allá de los campos enumerados anteriormente, OsmAnd también puede mostrar información descriptiva adicional extraída de OpenStreetMap. Estos atributos le ayudan a comprender mejor las características de un lugar e incluyen detalles como elevación, dirección, año de construcción, tipo de superficie o cobertura, nivel interior, opciones de pago, disponibilidad de entrega o para llevar, y muchos otros. OsmAnd muestra estos atributos con etiquetas claras y, cuando es posible, iconos, lo que facilita su lectura y reconocimiento. Cada atributo se muestra como su nombre con el valor debajo, por ejemplo, *Smoking* / *Not allowed* o *Takeaway* / *Yes*. Si un atributo tiene varias opciones, se enumeran en una sola fila separadas por `•`, por ejemplo, *Rented boats* / *Kayaks • Canoe*. El conjunto exacto de atributos depende de los datos disponibles en OpenStreetMap para el objeto seleccionado.
 
 
 ### Descripción del artículo {#article-description}
@@ -168,13 +171,13 @@ Más allá de los campos enumerados anteriormente, OsmAnd también puede mostrar
 
 <TabItem value="android" label="Android">  
 
-![Description list](@site/static/img/map/description_list_new_android.png) ![Description list](@site/static/img/map/description_list_dialog.png)
+![Lista de descripción](@site/static/img/map/description_list_new_android.png) ![Lista de descripción](@site/static/img/map/description_list_dialog.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Description list](@site/static/img/map/description_list_ios.webp) ![Description list](@site/static/img/map/description_list_dialog.webp)
+![Lista de descripción](@site/static/img/map/description_list_ios.webp) ![Lista de descripción](@site/static/img/map/description_list_dialog.webp)
 
 </TabItem>
 
@@ -250,7 +253,7 @@ Toque cualquier elemento de la lista para abrir su menú contextual del mapa. Es
 
 <TabItem value="ios" label="iOS">
 
-![Polygon Information Android](@site/static/img/map/polygon_information_ios_new.png)
+![Información de polígono Android](@site/static/img/map/polygon_information_ios_new.png)
 
 </TabItem>
 
@@ -262,9 +265,9 @@ La función **Dentro del área** enumera las **áreas** en las que se encuentra 
 
 |Formato de coordenadas| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Grados decimales simples)</li><li>DDD.DDDDD (N/S, E/W coma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[Estándar UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Swiss Grid CH1903 y CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Enlace web de OsmAnd](https://osmand.net/map)</li><li>[Enlace web de OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordenadas](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Grados decimales simples)</li><li>DDD.DDDDD (N/S, E/W coma)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[Estándar UTM](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Swiss Grid CH1903 y CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Maidenhead](https://en.wikipedia.org/wiki/Maidenhead_Locator_System)</li><li>[Formatos EPSG](../search/search-coordinates.md#customize-coordinate-format)</li><li>[Enlace web de OsmAnd](https://osmand.net/map)</li><li>[Enlace web de OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordenadas](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-En el menú contextual, puede encontrar [coordenadas geográficas](../search/search-coordinates.md#coordinate-format) de un punto en varios formatos y también enlaces compartibles de OsmAnd y [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (la última opción solo está disponible cuando el [plugin de edición de OpenStreetMap](../plugins/osm-editing.md) está habilitado). Si expande la sección de coordenadas y realiza una pulsación larga en cualquier línea de la lista, sus valores se copiarán automáticamente al portapapeles (**Android**) o la opción *Copiar* estará disponible en el mensaje emergente (**iOS**).  
+En el menú contextual, puede encontrar [coordenadas geográficas](../search/search-coordinates.md#coordinate-format) de un punto en los formatos de la [lista de formatos de coordenadas](../search/search-coordinates.md#customize-coordinate-format) del perfil, con el formato principal en primer lugar, y también enlaces compartibles de OsmAnd y [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (la última opción solo está disponible cuando el [plugin de edición de OpenStreetMap](../plugins/osm-editing.md) está habilitado). Si expande la sección de coordenadas y realiza una pulsación larga en cualquier línea de la lista, sus valores se copiarán automáticamente al portapapeles (**Android**) o la opción *Copiar* estará disponible en el mensaje emergente (**iOS**).  
 
 El enlace web de OsmAnd puede ser reconocido automáticamente por OsmAnd (ejemplo: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Tanto los enlaces de OsmAnd como los de [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) se abren en los sitios correspondientes con una marca de chincheta en el lugar de interés.  
 
@@ -281,7 +284,7 @@ El enlace web de OsmAnd puede ser reconocido automáticamente por OsmAnd (ejempl
 
 <TabItem value="ios" label="iOS">
 
-![Nearby POI IOS](@site/static/img/map/nearby_poi_ios.png)
+![PDI cercanos iOS](@site/static/img/map/nearby_poi_ios.png)
 
 </TabItem>
 
@@ -298,7 +301,7 @@ Al tocar *PDI cercanos* se abre una lista de puntos. Un toque en uno de estos pu
 
 <TabItem value="android" label="Android">  
 
-![Nearby Places Android](@site/static/img/map/nearby_places_android.png)
+![Lugares cercanos Android](@site/static/img/map/nearby_places_android.png)
 
 Esta sección resalta lugares populares que le ayudan a descubrir destinos interesantes y puntos de referencia alrededor de su ubicación actual. Use *<Translate android="true" ids="shared_string_show_on_map"/>* y *<Translate android="true" ids="search_more"/>* para navegar y buscar todos los lugares populares. 
 
@@ -308,7 +311,7 @@ Al tocar *Lugares populares cercanos* ([Popular Places](https://osmand.net/docs/
 
 <TabItem value="ios" label="iOS">
 
-![Nearby Places IOS](@site/static/img/map/nearby_places_ios.png)
+![Lugares cercanos iOS](@site/static/img/map/nearby_places_ios.png)
 
 Esta sección resalta lugares populares que le ayudan a descubrir destinos interesantes y puntos de referencia alrededor de su ubicación actual. Use *<Translate android="true" ids="shared_string_show_on_map"/>* y *<Translate android="true" ids="search_more"/>* para navegar y buscar todos los lugares populares. 
 
@@ -326,13 +329,13 @@ Al tocar *Lugares populares cercanos* ([Popular Places](https://osmand.net/docs/
 
 <TabItem value="android" label="Android">  
 
-![Guides Android](@site/static/img/map/details_guides.png)
+![Guías Android](@site/static/img/map/details_guides.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Guides iOS](@site/static/img/map/details_guides.webp)
+![Guías iOS](@site/static/img/map/details_guides.webp)
 
 </TabItem>
 
@@ -389,21 +392,21 @@ El enlace de OpenStreetMap proporciona un enlace directo al objeto de OpenStreet
 
 <TabItem value="android" label="Android">  
 
-![Online Photos context menu Android](@site/static/img/map/images_nearby_1_andr.png)
-![Online Photos context menu Android](@site/static/img/map/gallery_menu_andr.png)
+![Menú contextual de fotos en línea Android](@site/static/img/map/images_nearby_1_andr.png)
+![Menú contextual de fotos en línea Android](@site/static/img/map/gallery_menu_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Online Photos context menu iOS](@site/static/img/map/online_photo_ios_new.png)
-![Online Photos context menu iOS](@site/static/img/map/gallery_menu_2_ios.png)
+![Menú contextual de fotos en línea iOS](@site/static/img/map/online_photo_ios_new.png)
+![Menú contextual de fotos en línea iOS](@site/static/img/map/gallery_menu_2_ios.png)
 
 </TabItem>
 
 </Tabs>
 
-Cuando toca un Lugar Popular en el mapa, la sección **Fotos en línea** en el *menú contextual de PDI* muestra vistas previas de imágenes obtenidas de [Wikipedia](https://www.wikipedia.org/) y [Wikimedia Commons](https://www.wikimedia.org/).
+Cuando toca un Lugar Popular en el mapa, la sección **Fotos en línea** en el *menú contextual de PDI* muestra vistas previas de imágenes obtenidas de [Wikipedia](https://www.wikipedia.org/) y [Wikimedia Commons](https://www.wikimedia.org/). Si un PDI tiene una imagen de [Mapillary](../plugins/mapillary.md) enlazada en OpenStreetMap (la etiqueta `mapillary`), esta imagen se muestra primero en la sección **Fotos en línea**. No es necesario que el plugin de Mapillary esté habilitado.
 
 Al tocar una foto se abre la vista de **Galería**, donde puede:
 
@@ -422,13 +425,13 @@ Para más información, consulte: [Fotos en línea](https://osmand.net/docs/user
 
 <TabItem value="android" label="Android">  
 
-![Street-Level Imagery Android](@site/static/img/map/street_level_imagery_andr.png)
+![Imágenes a nivel de calle Android](@site/static/img/map/street_level_imagery_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Street-Level Imagery iOS](@site/static/img/map/street_level_imagery_ios.png)
+![Imágenes a nivel de calle iOS](@site/static/img/map/street_level_imagery_ios.png)
 
 </TabItem>
 

@@ -1,5 +1,5 @@
 ---
-source-hash: 97f2c33a4074c4cc756ff122bf583a92e9a6275e2f47dd97dda9ca19c19cf16f
+source-hash: 00356ae11e5462862ca31e05797cfe39a891bfd9daa0c313b6113a666a302ec0
 sidebar_position: 4
 title: البحث عن نقاط الاهتمام
 ---
@@ -152,9 +152,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 تسمح أداة **البحث حسب الفئات** بالعثور بسرعة على الكائنات والأماكن والمسارات المصنفة في فئات مختلفة. 
 
-تعتمد فئات POI في OsmAnd على علامات OpenStreetMap. قد تظهر بعض الأماكن تحت فئة أكثر عمومية إذا لم يكن النوع الأكثر تحديدًا متاحًا في بيانات الخريطة (على سبيل المثال، قد تظهر كنيسة تحت `Place of worship`).
+تعتمد فئات POI في OsmAnd على علامات OpenStreetMap. قد تظهر بعض الأماكن تحت فئة أكثر عمومية إذا لم يكن النوع الأكثر تحديدًا متاحًا في بيانات الخريطة (على سبيل المثال، قد تظهر كنيسة تحت `Place of worship`). تظهر المكاتب من نوع لا يتعرف عليه OsmAnd تحت `Company`.
 
-تحتوي كل فئة على مجموعة فريدة من الخصائص، وتحتوي هذه الأداة على فلاتر تسمح بتحسين نتائج البحث من خلال اختيار قيم مختلفة للخصائص الإضافية.
+تحتوي كل فئة على مجموعة فريدة من الخصائص، وتحتوي هذه الأداة على فلاتر تسمح بتحسين نتائج البحث من خلال اختيار قيم مختلفة للخصائص الإضافية. يمكنك أيضًا العثور على الأماكن حسب خاصية: اكتب اسمها في شريط البحث، على سبيل المثال، `Smoking`، ثم اختر الفئة المقترحة لرؤية الأماكن التي تتوفر فيها هذه الخاصية.
 
 كيفية عملها:
 
@@ -163,19 +163,33 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - *تطبيق الفلاتر* - تقوم باختيار القيم المطلوبة في الفلاتر، ثم يطبق التطبيق هذه الفلاتر على نتائج البحث لعرض الخصائص التي تطابق الخصائص المحددة فقط.
 - *عرض النتائج* - بعد تطبيق الفلاتر، يعرض OsmAnd قائمة بمعلومات موجزة تطابق الفئة والخصائص المحددة.
 
+<!--
+Benefits:
+
+- *User Customization* - Feature filters allow you to customize searches to meet their specific needs and preferences.
+- *Refined results* - Filters help refine search results, making them more relevant and accurate.
+- *Multiple Categories* - The OpenStreetMap database has an extensive set of POI categories, allowing you to find sites of different types and categories.
+
+POI category search allows you to quickly find and select places of interest based on your needs. It is a handy tool for traveling, finding nearby services or places of interest, and planning routes based on selected POI categories.  
+
+OsmAnd starts to find names and categories of POI by entered words. First results will be categories, second resolts will be POI with additional info, full name, categorie name, direction and distance to POI, work time. Pressing to needed categorie opens POI list of this categorie. 
+
+Tapping to chosen POI in the list opens [Map Context menu](../map/map-context-menu.md#select-an-object-single-tap) of POI.   
+-->
+
 ### أنواع الفلاتر {#types-of-filters}
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![البحث عن POI في أندرويد](@site/static/img/search/search_poi_filter_andr.png)
+![البحث عن POI في أندرويد](@site/static/img/search/search_poi_filter_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![البحث عن POI في iOS](@site/static/img/search/search_poi_filter_ios.png)
+![البحث عن POI في iOS](@site/static/img/search/search_poi_filter_ios.webp)
 
 </TabItem>
 
@@ -188,6 +202,11 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - في التصفية، اختر نوع الخصائص.
 
 ![البحث عن POI في أندرويد](@site/static/img/search/search_poi_filter_icon_andr.webp)  
+
+تُعرض الخصائص في التصفية بطريقتين:
+
+- *خاصية ذات قيمة واحدة* — مفتاح تبديل، على سبيل المثال، *الدراجة*. شغّله لعرض الأماكن التي تتوفر فيها هذه الخاصية فقط.
+- *خاصية ذات عدة قيم* — مجموعة يكون اسم الخاصية عنوانها. وسّعها واختر القيم التي تحتاجها، على سبيل المثال، *الوصول للقوافل* ← *مخصص*، *نعم*.
 
 يمكن أن تتكون التصفية من عدد كبير من العناصر، وجودها يعتمد على الفئة المختارة. تحتوي كل فئة على عدد من الفلاتر الخاصة بها، منظمة في مجلدات حسب النوع. هناك إجمالي *٢١ فئة افتراضية*. بعضها مدرج هنا:
 
@@ -362,14 +381,17 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### الفئات وفلاترها {#categories-and-their-filters}
 
-١. **<Translate android="true" ids="amenity_type_administrative"/>**. تشمل ٢٥ نوعًا: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
+١. **<Translate android="true" ids="amenity_type_administrative"/>**. تشمل ٢٥ نوعًا: *حدائق مخصصة، جزيرة مرجانية، دائرة بلدية، مدينة، مربع سكني، دولة، محكمة، جمارك، مكتب دبلوماسي، مزرعة، جهة حكومية، نجع، جزيرة، جزيرة صغيرة، مسكن منعزل، موضع، حي، شرطة، سجن، حارة، منطقة سكنية، ضاحية، بلدة، مبنى البلدية، قرية*.  
 
-٢. **عيد الميلاد**. تشمل ٥ أنواع من الفلاتر:  
-    *حدث عيد الميلاد، سوق عيد الميلاد، هرم عيد الميلاد، متجر عيد الميلاد، شجرة عيد الميلاد*.
+٢. **عيد الميلاد**. تشمل ٥ أنواع من الفلاتر: *حدث عيد الميلاد، سوق عيد الميلاد، هرم عيد الميلاد، متجر عيد الميلاد، شجرة عيد الميلاد*.
 
-٣. **<Translate android="true" ids="amenity_type_education"/>**. تشمل ١٦ نوعًا: *Allotments, Atoll, Borough, City, City block, Country, Courthouse, Customs, Diplomatic office, Farm, Government, Hamlet, Island, Islet, Isolated dwelling, Locality, Neighbourhood, Police, Prison, Quarter, Residential area, Suburb, Town, Townhall, Village*.  
+٣. **<Translate android="true" ids="amenity_type_education"/>**. تشمل ١٨ نوعًا: *تدريب الحيوانات، رعاية الأطفال، كلية، مدرسة رقص، دوجو، مكان تدريب السائقين، مدرسة قيادة، مؤسسة تعليمية، روضة أطفال، مدرسة لغات، مكتبة، موقف مكتبة متنقلة، مدرسة موسيقى، مدرسة، سكن طلابي، منشأة تدريب، مدرسة دروس خصوصية، جامعة*.  
 
 ٤. **<Translate android="true" ids="amenity_type_emergency"/>**. تشمل ٢٦ أنواع من الفلاتر.  
+
+<!--
+5. **Emergency infrastructure**. Includes 12 types of filters.  
+-->
 
 ٥. **<Translate android="true" ids="amenity_type_finance"/>**. تشمل ١٢ أنواع من الفلاتر.
 
@@ -393,6 +415,10 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ١٥. **الأماكن الشائعة (ويكيبيديا)**. تشمل ١ نوع: *ويكيبيديا*.
 
+<!--
+17. **Private access**. Does not include any filters.
+-->
+
 ١٦. **المسارات**. تشمل ١٥ أنواع من الفلاتر.  
 
 ١٧. **الخدمة**. تشمل ١١١ أنواع من الفلاتر.
@@ -408,6 +434,15 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 ٢٢. **السفر**. تشمل ٢ أنواع من الفلاتر.
 
 ٢٣. **مُعرَّف من قبل المستخدم**. تشمل ١ نوع: *رمز بريدي آخر مُعرَّف من قبل المستخدم*.
+
+<!--
+:::note since OsmAnd 5.0 for Android
+Available for search:
+
+- Religious POIs based on the `amenity=place_of_worship` tag are divided into religious-specific locations such as churches, mosques, or synagogues.
+- Minor amenities such as “bench”, "youth bench" (`amenity=bench`) are available in the category list.
+:::
+-->
 
 ### حفظ فلاتر مخصصة جديدة {#save-new-custom-filters}
 

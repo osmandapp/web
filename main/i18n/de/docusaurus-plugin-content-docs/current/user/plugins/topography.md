@@ -1,5 +1,5 @@
 ---
-source-hash: 419b1d3181228e789d47319998bd398df009d2ef58e3e1bfcd5ea61047213c4f
+source-hash: 1dedf30fcafbdd4bf9df2e543bf8db14623c9186c879536ea1c090f7aff4544b
 sidebar_position: 16
 title: Topografie
 ---
@@ -41,7 +41,7 @@ Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:
 
 | Höhenlinien | Schummerung | Neigung |
 |:---|:---|:---|
-| ![Contour_lines_android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Hillshade_android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Slopes_android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
+| ![Höhenlinien Android](@site/static/img/plugins/contour-lines/Contour_lines_android.png) | ![Schummerung Android](@site/static/img/plugins/contour-lines/Hillshade_android.png) | ![Neigung Android](@site/static/img/plugins/contour-lines/Slopes_android.png) |
 
 </TabItem>
 
@@ -49,7 +49,7 @@ Das Topografie-Plugin bietet Zugriff auf die folgenden Kartentypen:
 
 | Höhenlinien | Schummerung | Neigung |
 |:---|:---|:---|
-| ![Contour_lines_ios](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Hillshades_ios](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Slopes_ios](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
+| ![Höhenlinien iOS](@site/static/img/plugins/contour-lines/Contour_lines_ios.png) | ![Schummerung iOS](@site/static/img/plugins/contour-lines/Hillshades_ios.png) | ![Neigung iOS](@site/static/img/plugins/contour-lines/Slopes_ios.png) |
 
 </TabItem>
 
@@ -155,7 +155,7 @@ Höhenlinien sind eine [kostenpflichtige Funktion](../purchases/index.md).
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,download_srtm_maps"/>*
 
-![Höhenlinien-Menü Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.png)
+![Höhenlinien-Menü Android](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_andr.webp)
 
 </TabItem>
 
@@ -163,7 +163,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,s
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name"/> → Höhenlinien*
 
-![Höhenlinien-Menü iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.png)
+![Höhenlinien-Menü iOS](@site/static/img/plugins/contour-lines/topography_plugin_contour_lines_1_ios.webp)
 
 </TabItem>
 
@@ -185,6 +185,14 @@ Bei Verwendung der [Karten-Rendering-Engine](../personal/global-settings.md#map-
 - *<Translate android="true" ids="rendering_attr_contourDensity_name"/>*. Wählen Sie die Dichte der Höhenlinien (Niedrig, Mittel, Hoch). Höhere Dichten können die Ladegeschwindigkeit beeinträchtigen.
 - *<Translate android="true" ids="maps_and_resources"/>*. Anzeigen und Herunterladen von Höhenlinienkarten für die aktuelle Region und nahegelegene Gebiete.
 
+**Beschriftungseinstellungen**:
+
+- *<Translate android="true" ids="rendering_attr_contourLabelDirection_name"/>*. Legen Sie fest, wie die Höhenzahlen auf den Höhenlinien ausgerichtet werden:
+    - *<Translate android="true" ids="rendering_value_upright_name"/>*. Die Zahlen drehen sich mit der Karte mit, sodass sie auf dem Bildschirm lesbar bleiben.
+    - *<Translate android="true" ids="rendering_value_uphill_name"/>*. Die Oberseite jeder Zahl zeigt zum höheren Gelände, wie auf topografischen Papierkarten. Die Zahlen behalten diese Ausrichtung auch beim Drehen der Karte bei, sodass sie auf dem Bildschirm auch auf dem Kopf stehen können.
+
+Die kurzen Striche an den Höhenlinien zeigen bergab.
+
 
 ## Gelände {#terrain}
 
@@ -198,7 +206,7 @@ Gelände ist eine [kostenpflichtige Funktion](../purchases/index.md).
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,shared_string_terrain"/>*
 
-![Gelände-Menü Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.png)  ![Gelände-Menü Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.png)
+![Gelände-Menü Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_1_andr.webp)  ![Gelände-Menü Android](@site/static/img/plugins/contour-lines/topography_plugin_terrain_menu_4_andr.webp)
 
 </TabItem>
 
@@ -212,20 +220,21 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 
 </Tabs>  
 
-Die Option **Gelände** aktiviert und ermöglicht die Anpassung von drei Funktionen wie *Schummerung*, *Neigung* und *Höhe*. Auf iOS enthält das Visualisierungsmenü auch *Geländeschatten*, einen Echtzeit-Geländeschattierungsmodus basierend auf 3D-Relief.  
+Die Option **Gelände** aktiviert und ermöglicht die Anpassung von drei Funktionen wie *Schummerung*, *Neigung* und *Höhe*. Auf iOS enthält das Visualisierungsmenü auch [*Geländeschatten*](#terrain-shadows), einen Echtzeit-Geländeschattierungsmodus basierend auf 3D-Relief.  
 Spezifische Merkmale:  
 
-- Es kann immer nur eine Option gleichzeitig aktiviert sein, entweder Schummerung, Neigung, Höhe oder Geländeschatten.
+- Es kann immer nur eine Option gleichzeitig aktiviert sein, entweder Schummerung, Neigung, Höhe oder Geländeschatten (Letzteres ist nur auf iOS verfügbar).
 - Wenn Sie nach dem Herunterladen und Aktivieren der entsprechenden Karte keine Änderungen sehen, wird empfohlen, die Anwendung neu zu starten.
+- Auf Android zeigt der Gelände-Bildschirm außerdem die Zeilen [3D-Relief](#3d-relief) und [3D-Gebäude](#3d-buildings) an, die deren Einstellungen öffnen. Diese Zeilen bleiben sichtbar, wenn der Gelände-Schalter ausgeschaltet ist.
 
-Das **Gelände**-Menü umfasst die Auswahl eines [Farbschemas](#default-color-scheme) (**Visualisierung** auf iOS) mit der Option, es zu [ändern](#modify-color-scheme) (für [Pro-Abonnenten](../../user/purchases/index.md)), die Möglichkeit, die Transparenz der Ebene auf der Karte zu ändern ([Sichtbarkeit](#visibility)), und die Auswahl der [Zoomstufe](#zoom-levels) für ihre Anzeige, Informationen über die Größe der [zwischengespeicherten Daten](#cache-size) und eine Liste der [Karten](../../user/personal/maps-resources.md), die zur Anzeige der Ebene benötigt werden.
+Das **Gelände**-Menü umfasst die Auswahl einer [Visualisierung](#default-color-scheme) mit der Option, es zu [ändern](#modify-color-scheme) (für [Pro-Abonnenten](../../user/purchases/index.md)), die Möglichkeit, die Transparenz der Ebene auf der Karte zu ändern ([Sichtbarkeit](#visibility)), und die Auswahl der [Zoomstufe](#zoom-levels) für ihre Anzeige, Informationen über die Größe der [zwischengespeicherten Daten](#cache-size) und eine Liste der [Karten](../../user/personal/maps-resources.md), die zur Anzeige der Ebene benötigt werden.
 
 
 ## Schummerungs-, Neigungs- und Höhenschichten {#hillshade-slope-and-altitude-layers}
 
 | Schummerung | Neigung | Höhe |
 | ------ | ------- | ------- |
-| ![Hillshade](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) | ![Slope](../../../blog/2023-08-28-terrain/img/slope.png) |
+| ![Schummerung](../../../blog/2023-08-28-terrain/img/hillshade.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) | ![Neigung](../../../blog/2023-08-28-terrain/img/slope.png) |
 
 **Schummerung** basiert auf der Simulation der Oberflächenbeleuchtung unter Verwendung von Geländedaten. Diese Methode beinhaltet die Erzeugung von Schatten und Lichtern basierend auf dem Winkel der Oberfläche zur Lichtquelle. Als Ergebnis sehen Sie natürliche Hügel, Täler und andere Geländedetails auf der Karte.  
 
@@ -274,7 +283,7 @@ Geländeschatten erfordert 3D-Relief und aktiviert es automatisch bei Auswahl. D
 
 <TabItem value="android" label="Android">
 
-![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.png)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
+![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_slope_andr_new.webp)   ![Farbschema ändern](@site/static/img/plugins/contour-lines/modify_color_scheme_2_2_andr_new.png)
 
 </TabItem>
 
@@ -309,15 +318,15 @@ Für erweiterte Palettenanpassung mit Palettendateien siehe den Artikel [Farbsch
 | ------ | ------- |
 | ![Sichtbarkeit ](../../../blog/2023-08-28-terrain/img/31.png) | ![Sichtbarkeit ](../../../blog/2023-08-28-terrain/img/74.png) |
 
-Die Funktion *Sichtbarkeit* wird verwendet, um die Transparenz der Schatten für die Schummerung und der Farben, die zur Darstellung des Winkels im Neigungsparameter verwendet werden, anzupassen. Für Geländeschatten steuert Sichtbarkeit die Stärke des Geländeschattierungseffekts.
+Die Funktion *Sichtbarkeit* wird verwendet, um die Transparenz der Schatten für die Schummerung und der Farben, die zur Darstellung des Winkels im Neigungsparameter verwendet werden, anzupassen. Für [Geländeschatten](#terrain-shadows) auf iOS steuert Sichtbarkeit die Stärke des Geländeschattierungseffekts.
 
 ### Zoomstufen {#zoom-levels}
 
-![Zoom](../../../blog/2023-08-28-terrain/img/zoom.png)  
+![Zoomstufen](../../../blog/2023-08-28-terrain/img/zoom.png)  
 
 Die Funktion *Zoomstufen* ermöglicht es Ihnen, die minimalen und maximalen Werte der Kartenzoomstufen von 4 bis 19 festzulegen, bei denen die Schummerungs- oder Neigungskartenebenen angezeigt werden.
 
-Zoomstufen sind für Geländeschatten nicht verfügbar, da diese Visualisierung dynamisch gerendert wird und nicht von der Sichtbarkeitsspanne der Rasterebene abhängt.
+Zoomstufen sind für Geländeschatten auf iOS nicht verfügbar, da diese Visualisierung dynamisch gerendert wird und nicht von der Sichtbarkeitsspanne der Rasterebene abhängt.
 
 ### Cache-Größe {#cache-size}
 
@@ -358,7 +367,7 @@ Die Haupteinstellungen für *Kartentypen anzeigen oder ausblenden* befinden sich
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,enable_3d_objects"/>* 
 
-![3D-Gebäude](@site/static/img/map/3d_buildings_4_new.png) ![3D-Gebäude](@site/static/img/map/3d_buildings_3_new.png)
+![3D-Gebäude](@site/static/img/map/3d_buildings_4_new.webp) ![3D-Gebäude](@site/static/img/map/3d_buildings_3_new.png)
 
 </TabItem>
 
@@ -387,7 +396,7 @@ Verwenden Sie den Hauptschalter, um die 3D-Darstellung von Gebäuden ein- oder a
 Auf Android ist diese Option nur verfügbar, wenn das Topografie-Plugin aktiviert ist.  
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,plugin_settings,srtm_plugin_name"/>*
 
-Die Einstellungen für 3D-Gebäude sind in zwei Gruppen unterteilt: **Darstellung** und **Leistung**.
+Die Einstellungen für 3D-Gebäude sind in zwei Gruppen unterteilt, **Darstellung** und **Leistung**, gefolgt von einer separaten Einstellung [**Sonnenstand**](#sun-position) (*nur Android*).
 
 ### Darstellung {#appearance}
 
@@ -425,7 +434,7 @@ Auf den Vorschaubildschirmen (Farbe / Sichtbarkeit) können Sie in der App-Leist
 
 ### Leistung {#performance}
 
-Die **<Translate android="true" ids="performance"/>** steuert, wie 3D-Gebäude gerendert werden. Sie umfasst zwei Einstellungen: Detailgrad und Sichtweite.
+Die **<Translate android="true" ids="performance"/>** steuert, wie 3D-Gebäude gerendert werden. Sie umfasst drei Einstellungen: Detailgrad, Sichtweite und Schatten.
 
 **<Translate android="true" ids="level_of_details"/>** bestimmt die Komplexität der 3D-Gebäudegeometrie:
 - Niedrig (Standard) — einfachere Geometrie.
@@ -435,23 +444,32 @@ Die **<Translate android="true" ids="performance"/>** steuert, wie 3D-Gebäude g
 - Nah (Standard) — rendert Gebäude näher bei Ihnen.
 - Fern — rendert Gebäude aus größerer Entfernung.
 
-Beide Leistungseinstellungen verwenden einen Zweipositionsschalter direkt im 3D-Gebäude-Einstellungsbildschirm.
+**<Translate android="true" ids="cast_shadows"/>** (*nur Android*) steuert Sonnenschatten auf der Karte:
+- Aus (Standard) — Gebäude werden ohne Schatten dargestellt.
+- Ein — Gebäude werfen Schatten auf den Boden und auf die Wände benachbarter Gebäude in der Richtung, die unter [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position) festgelegt ist. Wenn [3D-Relief](#3d-relief) aktiviert ist, wirft auch das Gelände Schatten. Die Dunkelheit der Gebäudeschatten hängt von der [Sichtbarkeit](#appearance) der 3D-Gebäude ab.
+
+Alle drei Leistungseinstellungen verwenden einen Zweipositionsschalter direkt im 3D-Gebäude-Einstellungsbildschirm. Schatten werden für jedes Profil separat festgelegt und sind nur mit der Rendering-Engine [Version 2 (OpenGL)](#rendering-engine-android) verfügbar.
 
 **Hinweis:** Die Verwendung von *Hohem Detailgrad* und *ferner Sichtweite* verbessert das visuelle Erscheinungsbild, kann jedoch die Leistung beeinträchtigen und den Akkuverbrauch erhöhen.
 
 
-<!--
-### Sonne {#sun}
+### Sonnenstand {#sun-position}
 
-![3D-Gebäude](@site/static/img/map/sun_setting.png)
+<InfoAndroidOnly />
 
-Die **Sonne**-Einstellung steuert die Beleuchtungsrichtung, die zum Rendern von 3D-Gebäuden verwendet wird. Sie beeinflusst, wie Licht und Schatten auf Gebäuden in der 3D-Ansicht erscheinen. Wenn Sie auf Sonne tippen, öffnet OsmAnd einen Vorschaubildschirm, auf dem Sie die Beleuchtung mit zwei Schiebereglern anpassen können:
+![Sonne](@site/static/img/map/sun_setting.webp) ![Sonnenschatten](@site/static/img/map/sun_shadows.webp)
 
-- Azimut — steuert die horizontale Richtung der Lichtquelle (die Kompassrichtung der Sonne).
-- Höhe — steuert die Höhe der Sonne über dem Horizont.
+Die Einstellung **<Translate android="true" ids="map_widget_sun_position"/>** legt die Lichtrichtung für Gebäudeschatten und für die Geländeschatten des 3D-Reliefs fest. Sie können sie im 3D-Gebäude-Bildschirm und im 3D-Relief-Bildschirm öffnen. Die Zeile zeigt die aktuelle Sonnenrichtung an; ein Tippen darauf öffnet ein Vorschaufenster mit drei Modi:
 
-Das Ändern dieser Parameter verändert, wie Schatten auf Gebäude fallen, und kann die visuelle Wahrnehmung der Gebäudeformen in der 3D-Ansicht verbessern. Tippen Sie auf Anwenden, um die ausgewählten Beleuchtungsparameter zu bestätigen.
--->
+- **<Translate android="true" ids="sun_light_live"/>** — verwendet den realen Sonnenstand über der Kartenmitte zur aktuellen Zeit. Azimut und Höhe werden zur Orientierung angezeigt.
+- **<Translate android="true" ids="shared_string_date"/>** — verwendet den realen Sonnenstand über der Kartenmitte zu dem von Ihnen gewählten Datum und der gewählten Uhrzeit. Die Zeit wird in der Zeitzone Ihres Geräts festgelegt.
+- **<Translate android="true" ids="shared_string_manual"/>** — ermöglicht es Ihnen, die Lichtrichtung mit zwei Schiebereglern festzulegen:
+    - *<Translate android="true" ids="shared_string_azimuth"/>* — steuert die horizontale Richtung der Lichtquelle (die Kompassrichtung der Sonne).
+    - *<Translate android="true" ids="altitude"/>* — steuert die Höhe der Sonne über dem Horizont.
+
+Änderungen erscheinen sofort auf der Karte. Tippen Sie auf Anwenden, um den ausgewählten Sonnenstand zu bestätigen. „Auf Standard zurücksetzen“ wechselt in den manuellen Modus mit einem Azimut von 315° und einer Höhe von 45°.
+
+**Hinweis:** Der Sonnenstand ist nur mit der Rendering-Engine [Version 2 (OpenGL)](#rendering-engine-android) verfügbar.
 
 
 ## 3D-Relief {#3d-relief}
@@ -466,7 +484,7 @@ Das Ändern dieser Parameter verändert, wie Schatten auf Gebäude fallen, und k
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d"/>*
 
-![3D-Relief](@site/static/img/plugins/contour-lines/3drelief_switch_andr.png)
+![3D-Relief](@site/static/img/map/configure_map_topography_andr_new.webp) ![3D-Relief](@site/static/img/plugins/contour-lines/3drelief_screen_andr.webp)
 
 </TabItem>
 
@@ -481,6 +499,8 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 </Tabs>  
 
 Die 3D-Relief-Funktion erzeugt ein erhabenes Relief und bietet eine dreidimensionale Darstellung der Landschaft. 3D-Relief funktioniert offline und kann mit [OsmAnd-Vektorkarten](../map/vector-maps.md) oder beliebigen [Rasterkarten](../map/raster-maps.md#layers) als [Kartenquelle](../map/raster-maps.md#main) oder als [Unterlage/Überlagerung](../map/raster-maps.md#overlay) verwendet werden.
+
+Auf Android hat 3D-Relief einen eigenen Einstellungsbildschirm mit dem Hauptschalter, [<Translate android="true" ids="vertical_exaggeration"/>](#vertical-exaggeration), [<Translate android="true" ids="terrain_shadows"/>](#terrain-shadows-android) und [<Translate android="true" ids="map_widget_sun_position"/>](#sun-position). Der Eintrag 3D-Relief im Menü „Karte konfigurieren“ zeigt an, ob 3D-Relief eingeschaltet ist, und die aktuelle Intensität der Geländeschatten. Sie können 3D-Relief auch über den Gelände-Bildschirm öffnen.
 
 ***Wie man 3D-Relief auf der Karte anzeigt.***
 
@@ -537,6 +557,19 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 *Vertikale Überhöhung* ist ein spezieller Koeffizient für das *3D-Relief*. Sie können den Maßstab (*Vertikale Überhöhung*) von x1 bis x3 ändern. Diese Funktion ermöglicht es Ihnen, glattere Geländekonturen mit erhöhter Detailgenauigkeit anzuzeigen.
 
 
+### Geländeschatten (Android) {#terrain-shadows-android}
+
+Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,relief_3d,terrain_shadows"/>*
+
+![Geländeschatten Android](@site/static/img/plugins/contour-lines/terrain_shadows_andr.webp)
+
+**<Translate android="true" ids="terrain_shadows"/>** schattieren das 3D-Relief in Echtzeit, basierend auf der Geländegeometrie und dem [Sonnenstand](#sun-position). Sie werden immer dargestellt, wenn 3D-Relief eingeschaltet ist.
+
+Tippen Sie auf *Geländeschatten*, um ein Vorschaufenster zu öffnen, stellen Sie die Intensität von 10 % bis 100 % ein (standardmäßig 40 %) und tippen Sie auf Anwenden. Die Intensität wird für jedes Profil separat festgelegt.
+
+**Hinweis:** Solange Gelände die Schummerung anzeigt, sind Geländeschatten ausgeschaltet, da die Schummerung das Relief bereits schattiert.
+
+
 ### Schummerung und 3D-Relief {#hillshade-and-3d-relief}
 
 | Schummerung | 3D-Relief |
@@ -546,7 +579,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_
 **Schummerung** ist ein Kartentyp, der das Gelände mithilfe von Schatten darstellt und so eine visuelle Darstellung der Neigung und Form der Erdoberfläche erzeugt.  
 **3D-Relief** ist eine Funktion, die der Karte dreidimensionale Effekte hinzufügt.  
 
-Wenn Sie *Schummerung* **deaktivieren** und *3D-Relief* **aktivieren**, sind Reliefschatten weiterhin sichtbar, da *Schummerung* und *3D-Relief* zwei verschiedene Arten der Visualisierung einer Karte sind. *Schummerung* erzeugt Schatten basierend auf dem Gelände und fügt sie der Karte hinzu, während *3D-Relief* 3D-Elemente modelliert, um die Tiefe und Form des Geländes zu zeigen, und die Schatten Teil der Visualisierung sind. Diese Funktionen können parallel arbeiten, und das Deaktivieren von *Schummerung* hat keinen Einfluss darauf, wie 3D-Effekte angezeigt werden.  
+Wenn Sie *Schummerung* **deaktivieren** und *3D-Relief* **aktivieren**, sind Reliefschatten weiterhin sichtbar, da *Schummerung* und *3D-Relief* zwei verschiedene Arten der Visualisierung einer Karte sind. *Schummerung* erzeugt Schatten basierend auf dem Gelände und fügt sie der Karte hinzu, während *3D-Relief* 3D-Elemente modelliert, um die Tiefe und Form des Geländes zu zeigen, und die Schatten Teil der Visualisierung sind. Diese Funktionen können parallel arbeiten, und das Deaktivieren von *Schummerung* hat keinen Einfluss darauf, wie 3D-Effekte angezeigt werden. Auf Android sind diese Reliefschatten [Geländeschatten](#terrain-shadows-android), und sie sind ausgeschaltet, solange Gelände die Schummerung anzeigt.  
 
 Wenn **Schummerung** **aktiviert** ist, erscheint ein Bild mit Reliefschatten detaillierter, dunkler und stufiger als ein *3D-Relief*-Bild. Die Erklärung ist, dass *Schummerung* die Gradienten und Kontraste des Geländes hervorhebt und ein schärferes und detaillierteres Bild erzeugt. Die *3D-Relief*-Funktion verleiht der Karte ein flüssigeres und geglättetes Aussehen, was das Gelände weicher macht und möglicherweise die Sichtbarkeit einiger feinerer Details reduziert.
 

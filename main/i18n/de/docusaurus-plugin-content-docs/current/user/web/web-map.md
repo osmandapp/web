@@ -1,5 +1,5 @@
 ---
-source-hash: 670b993ab89a49a8c970ddd6ea7f743e8db7a6d237b593694ef4dc494322f65b
+source-hash: 3f9fe278a6da459746d62fe7944d19ca8c1cae8acd07c9a389b2e49b40380b9d
 sidebar_position: 3
 sidebar_label: Karte
 title: Globale Karte auf der Webseite
@@ -33,7 +33,7 @@ We created the [Discussion theme](https://github.com/osmandapp/OsmAnd/discussion
 
 Die OsmAnd-Webkarte ist eine globale Karte, die auf Daten von [OpenStreetMap (OSM)](https://www.openstreetmap.org/) basiert. Sie ermöglicht es Benutzern, ihre eigenen Daten wie Tracks und Favoriten anzuzeigen, Navigationsrouten für jedes Profil zu erstellen und auf zusätzliche Funktionen wie Wetter, öffentliche GPX-Tracks, POIs und Wikimedia-Bilder zuzugreifen. Erkunden und passen Sie Ihr Datenerlebnis direkt in Ihrem Browser an.
 
-![OsmAnd Web all](@site/static/img/web/web_map_all.png)
+![OsmAnd Web Gesamtansicht](@site/static/img/web/web_map_all.png)
 
 
 ## Kartenkontextmenü {#map-context-menu}
@@ -277,6 +277,8 @@ Diese URLs können kopiert und über jedes von Ihrem Gerät unterstützte Medium
   https://osmand.net/map/?pin=52.491143,7.116394#9/52.3924/6.3116
 
   ![OsmAnd Web Track erstellen](@site/static/img/plan-route/web_url_pin.png)
+
+  Die Karte öffnet sich zentriert auf den Pin. Die Zoomstufe wird dem Teil der URL nach `#` entnommen. Wenn die URL keinen solchen Teil enthält, öffnet sich die Karte mit Zoomstufe 9. Das gilt auch für Links, die mit der Schaltfläche *Teilen* im [POI-Kontextmenü](../web/web-search.md#poi-actions) erstellt wurden.
 
 2. **URL ohne Pin auf der Karte:**
 

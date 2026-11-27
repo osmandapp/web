@@ -6,8 +6,10 @@ import {
     saveTrackToLocalStorage,
 } from '@map/context/LocalTrackStorage';
 import { renameLocalTrack } from '@map/manager/track/SaveTrackManager';
+import { withEditedPoints } from '@map/manager/track/TracksManager';
 import { fakeIndexedDbStore, removeIndexedDb } from '../../util/indexedDb';
 import { settle } from '../../util/settle';
+import { isAnalysisAsked } from '../../util/editor';
 
 /** ctx as the local tracks menu keeps it: the list itself plus its setter. */
 function createCtx(localTracks = []) {
@@ -48,6 +50,24 @@ test('a track is saved under its own place and the list keeps the saved version,
     expect([...db.keys()]).toEqual([0]);
     expect(db.get(0).points).toEqual([{ lat: 51, lng: 31 }]);
     expect(ctx.setRoutingErrorMsg).toHaveBeenCalled();
+});
+
+test('a write held back for the analysis keeps the list current, so Back saves the edit, and the next write stores it', async () => {
+    const ctx = createCtx();
+    saveTrackToLocalStorage({ ctx, track: track('Track') });
+    await settle();
+    const edited = { ...track('Track'), points: [{ lat: 51, lng: 31 }] };
+
+    saveTrackToLocalStorage({ ctx, track: edited, writeToDB: false });
+    await settle();
+
+    expect(ctx.localTracks[0].points).toBe(edited.points);
+    expect(db.get(0).points).toEqual([{ lat: 50, lng: 30 }]);
+
+    saveTrackToLocalStorage({ ctx, track: edited });
+    await settle();
+
+    expect(db.get(0).points).toEqual([{ lat: 51, lng: 31 }]);
 });
 
 test('the tracks are loaded in the order of their ids, a record without a name is dropped', async () => {
@@ -101,7 +121,7 @@ describe('an edited local track', () => {
         expect(record.analysis).toMatchObject({ totalDistance: 1112, srtmAnalysis: false, isSrtmApplied: false });
     });
 
-    test('opens after a reload with its edits', async () => {
+    test('opens after a reload with its edits and does not ask for its analysis again', async () => {
         saveTrackToLocalStorage({ ctx: createCtx(), track: edited() });
         await settle();
 
@@ -109,6 +129,8 @@ describe('an edited local track', () => {
 
         expect(loaded.points).toEqual(points);
         expect(loaded.selected).toBe(false);
+        expect(isAnalysisAsked({ selectedGpxFile: loaded })).toBe(false);
+        expect(withEditedPoints(loaded).tracks).toEqual([{ points }]);
     });
 });
 

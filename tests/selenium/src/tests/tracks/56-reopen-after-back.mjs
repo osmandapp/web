@@ -11,14 +11,11 @@ import {
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 const TRACK = 'test-track-two-segments';
 const TRACK_POINTS = 20;
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap();
     await actionOpenLocalTrack(TRACK);
     await matchPointsCount(TRACK_POINTS);

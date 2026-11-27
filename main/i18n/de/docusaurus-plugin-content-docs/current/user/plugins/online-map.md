@@ -1,7 +1,7 @@
 ---
-source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
+source-hash: 5749833ed8004e11c20c4de19dd862afbe945281e8dc7187719f962bcf51fca1
 sidebar_position: 9
-title:  Online Maps
+title:  Online-Karten
 ---
 
 import Tabs from '@theme/Tabs';
@@ -34,7 +34,7 @@ Die Möglichkeit, Online-Karten zu verwenden, ist in der iOS-Version von OsmAnd 
 Detaillierte Informationen zur Visualisierung und Anpassung von Rasterkarten finden Sie im Artikel [Rasterkarten](../map/raster-maps.md). Wie zu verwenden:
 
 1. [Wählen](../map/raster-maps.md#layers) Sie die Rasterkarte als *Haupt*-, *Untergrund*- oder *Überlagerungs*-Ebene aus.
-    - [Ändern](../map/raster-maps.md#overlay) Sie die Ebenenparameter (Transparenz).
+    - [Ändern](../map/raster-maps.md#overlay) Sie die Ebenenparameter (Sichtbarkeit).
 
 2. [Vorbereiten / kopieren](../map/raster-maps.md#preparecopy-maps) Sie Rasterkarten auf das Gerät.
     - [Neue Online-Rasterkartenquelle hinzufügen](../map/raster-maps.md#add-new-online-source)
@@ -51,7 +51,7 @@ Detaillierte Informationen zur Visualisierung und Anpassung von Rasterkarten fin
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Untergrund / Überlagerung konfigurieren Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Untergrund / Überlagerung konfigurieren Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.webp)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_map,l
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Untergrund / Überlagerung konfigurieren iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Untergrund / Überlagerung konfigurieren iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.webp)
 
 </TabItem>
 
@@ -84,9 +84,9 @@ Wie Sie eine SQ-Lite-Datei in der Android- und iOS-Version von OsmAnd hinzufüge
 
 Online-Kacheln können hilfreich sein, wenn Sie nur einen kleinen Ausschnitt der Karte oder einen bestimmten Kartentyp für einen begrenzten Bereich benötigen, aber nicht die ganze Region herunterladen möchten. Sie können in unzähligen Situationen nützlich sein.
 
-![Online Maps](@site/static/img/plugins/online-maps/map_creator.jpg)
+![Online-Karten](@site/static/img/plugins/online-maps/map_creator.jpg)
 
-![Online Maps](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
+![Online-Karten](@site/static/img/plugins/online-maps/map_creator_menu.jpg)
 
 
 ## Verwandte Artikel {#related-articles}

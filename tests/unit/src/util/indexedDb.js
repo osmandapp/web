@@ -1,3 +1,7 @@
+import { deserialize, serialize } from 'node:v8';
+
+const structuredCopy = (value) => deserialize(serialize(value));
+
 /** Minimal indexedDB fake: records the names of the deleted databases. */
 export function fakeIndexedDb() {
     const deleted = [];
@@ -30,10 +34,10 @@ export function fakeIndexedDbStore(records = new Map()) {
     };
 
     const store = {
-        get: (id) => request({ id, data: records.get(id) }),
-        getAll: () => request([...records.entries()].map(([id, data]) => ({ id, data }))),
+        get: (id) => request({ id, data: structuredCopy(records.get(id)) }),
+        getAll: () => request([...records.entries()].map(([id, data]) => ({ id, data: structuredCopy(data) }))),
         getAllKeys: () => request([...records.keys()]),
-        put: ({ id, data }) => request(records.set(id, data)),
+        put: ({ id, data }) => request(records.set(id, structuredCopy(data))),
         delete: (id) => request(records.delete(id)),
         clear: () => request(records.clear()),
     };

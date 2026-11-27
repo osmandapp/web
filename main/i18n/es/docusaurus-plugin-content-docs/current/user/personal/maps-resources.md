@@ -1,5 +1,5 @@
 ---
-source-hash: f17497492330ccbdb83e2cb6e939d79cf38266954f5756f1c8b58bc5e4beec12
+source-hash: 1813dc99e0d296bb43d344b143353280237925904b056f4feaed4a2040ba4c22
 sidebar_position: 2
 title:  Mapas y Recursos
 ---
@@ -130,7 +130,7 @@ La pestaña **Descargar** le permite descargar varios tipos de mapas de los serv
 - **Contador de mapas** (***Versión gratuita***). Muestra cuántos mapas le quedan por descargar.
 - [Mapas adicionales](#extra-maps). Muestra los datos del mapa para el [Paquete personalizado](../plugins/custom.md).
 - **Regiones**. Lista por continente y región del mundo: *África, Antártida, Asia, Australia y Oceanía, América Central, Europa, América del Norte, Rusia y América del Sur.*
-- [Mapas del mundo](#world-maps). Una lista de mapas de todo el mundo: *<Translate android="true" ids="index_item_world_altitude_correction"/> (solo Android)*, *<Translate android="true" ids="index_item_world_basemap"/>*, *Mapa meteorológico mundial*
+- [Mapas del mundo](#world-maps). Una lista de mapas de todo el mundo: *Corrección de altitud del mundo (solo Android)*, *Mapa general del mundo*, *Mapa meteorológico mundial*
 - [Mapas náuticos](../plugins/nautical-charts.md) ([*función de pago*](../purchases/index.md)). Mapas vectoriales con elevaciones como puntos o líneas.
 - [Guías de viaje (Wikivoyage)](../plan-route/travel-guides.md) ([*función de pago*](../purchases/index.md)). Mapas vectoriales con una colección de artículos en formato HTML y adicionalmente archivos GPX.
 - **Otros mapas**. Mapas que no se pueden asignar a la jerarquía de mapas actual porque no son compatibles o estarán disponibles en futuras versiones.
@@ -179,7 +179,7 @@ Lea más en el artículo [**Paquete personalizado**](../plugins/custom).
 
 </Tabs>
 
-Para países que constan de **múltiples mapas de región**, puede utilizar la carga masiva de múltiples mapas. Los mapas disponibles para este tipo de descarga se muestran con iconos de flecha de descarga doble y una etiqueta con el número de regiones dentro (p. ej., Curvas de nivel / Todas las regiones: 10). Puede elegir cuántos mapas descargar. La carga masiva admite varios tipos de mapa, incluidos Estándar, Curvas de nivel, Wikipedia y Terreno.
+Para países que constan de **múltiples mapas de región**, puede utilizar la carga masiva de múltiples mapas. Los mapas disponibles para este tipo de descarga se muestran con iconos de flecha de descarga doble y una etiqueta con el número de regiones dentro (p. ej., Curvas de nivel / Todas las regiones: 10). Puede elegir cuántos mapas descargar. La carga masiva admite varios tipos de mapa, incluidos Estándar, Curvas de nivel, Wikipedia y Terreno. Si una región se encuentra íntegramente dentro de otra región del mismo país, como una ciudad capital dentro de su región circundante, su mapa no se incluye en la descarga masiva ni en el recuento de regiones, porque el mapa de la región mayor ya contiene sus datos. Puede descargar este mapa por separado desde la página del país.
 
 Cuando se abre un elemento de país agrupado, se muestra una hoja inferior con la lista completa de mapas para ese país, lo que permite seleccionar mapas individuales o descargarlos todos a la vez.
 
@@ -372,7 +372,7 @@ La pestaña **Actualizaciones** también incluye una sección de Pronóstico del
 
 ## Actualizaciones en vivo {#live-updates}
 
-:::info Pro feature
+:::info Función Pro
 Las actualizaciones en vivo son una función de pago de [**OsmAnd Pro**](../purchases/index.md) <ProFeature />.
 :::
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -398,10 +398,6 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,res_mapsres,download_tab_up
 **Actualizaciones en vivo** proporciona actualizaciones de mapas frecuentes e incrementales a través de una [suscripción](../purchases/index.md) o es gratuito para los [colaboradores de OSM](#free-for-osm-mappers). Las actualizaciones ocurren cada 15 minutos en los servidores de OsmAnd y se pueden descargar por hora, día o semana. Estas actualizaciones consumen un almacenamiento mínimo, alrededor del 2-4% del tamaño completo del mapa por mes.
 
 Las actualizaciones en vivo se aplican sobre el mapa descargado y no reemplazan el archivo de mapa completo. Como resultado, la fecha que se muestra para un mapa en la pestaña Local no refleja las actualizaciones en vivo y puede permanecer sin cambios después de aplicarlas. Para descargar una versión más reciente del mapa completo, utilice Actualizar mapa o Actualizar todo en el [Menú de actualizaciones](#updates-menu).
-
-<!--
-Each card has an independent collection of tiny updates, so **be careful** if you have overlapping areas. If you want to revert to the original state, you can *disable updates and clear the cache*.
--->
 
 Características clave:
 

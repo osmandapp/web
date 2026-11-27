@@ -1,4 +1,4 @@
-import TracksRoutingCache, { effectControlRouterRequests } from '@map/context/TracksRoutingCache';
+import { effectControlRouterRequests, getWaitingSegments } from '@map/context/TracksRoutingCache';
 import { geoRouter } from '@map/store/geoRouter/geoRouter';
 import { createEditorCtx } from '../../util/fixtures/tracks';
 
@@ -90,14 +90,16 @@ describe('the profile of a track point', () => {
 
 describe('the params of a profile', () => {
     test('other params route a pair again only when the profile is applied again', () => {
-        const ctx = createEditorCtx();
-        ctx.trackRouter = router();
         const [start, end] = [
             { lat: 50, lng: 30, profile: 'car' },
-            { lat: 50.01, lng: 30, profile: 'car' },
+            { lat: 50.01, lng: 30, profile: 'car', geometry: ['routed'] },
         ];
-        TracksRoutingCache.addRoutingToCache(start, end, {}, ctx);
-        Object.values(ctx.routingCache)[0].geometry = ['routed'];
+        const ctx = createEditorCtx({ points: [start, end] });
+        ctx.trackRouter = router();
+        ctx.trackRouter.updateRouteBetweenPoints = jest.fn(async () => ({ points: [] }));
+        const waiting = [start, { ...end, geometry: [] }];
+        const [{ key }] = getWaitingSegments(waiting, ctx.trackRouter);
+        ctx.routingCache[key] = { geometry: ['routed'] };
 
         ctx.trackRouter.providers = [
             { ...OSMAND, profiles: OSMAND.profiles.map((profile) => ({ ...profile, params: profile.resetParams })) },
@@ -105,9 +107,33 @@ describe('the params of a profile', () => {
         ];
         expect(effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() })).toBe(false);
 
-        TracksRoutingCache.addRoutingToCache(start, end, {}, ctx);
+        ctx.selectedGpxFile.points = waiting;
 
-        expect(Object.values(ctx.routingCache).map((entry) => entry.geometry)).toEqual([['routed'], null]);
+        expect(effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() })).toBe(true);
+        expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(1);
+    });
+
+    test('a waiting pair is asked again with the params changed meanwhile', () => {
+        const ctx = createEditorCtx({
+            points: [
+                { lat: 50, lng: 30, profile: 'car' },
+                { lat: 50.01, lng: 30, profile: 'car', geometry: [] },
+            ],
+        });
+        ctx.trackRouter = router();
+        ctx.trackRouter.updateRouteBetweenPoints = jest.fn(() => new Promise(() => {}));
+
+        effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
+        ctx.trackRouter.providers = [
+            { ...OSMAND, profiles: OSMAND.profiles.map((profile) => ({ ...profile, params: profile.resetParams })) },
+            OSRM,
+        ];
+        effectControlRouterRequests({ ctx, startedRouterJobs: 1, setStartedRouterJobs: jest.fn() });
+
+        const askedAvoid = ctx.trackRouter.updateRouteBetweenPoints.mock.calls.map(
+            ([, , , geoProfile]) => geoProfile.params.avoid.value
+        );
+        expect(askedAvoid).toEqual(['toll', '']);
     });
 
     test('the caller gets a copy, the provider is not changed by it', () => {

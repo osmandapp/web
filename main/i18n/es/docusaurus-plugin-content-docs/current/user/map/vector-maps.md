@@ -1,5 +1,5 @@
 ---
-source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
+source-hash: 178d141932f7b8720f2c8c3d8aecc4e60ae376a12c49b662bf86080720fb83d6
 sidebar_position: 5
 title:  Mapas vectoriales 
 ---
@@ -25,7 +25,7 @@ Los mapas vectoriales representan datos espaciales, como carreteras, edificios, 
 
 Dado que los datos vectoriales no se almacenan como imágenes fijas, su apariencia, incluyendo color, ancho de línea, transparencia o patrón, se puede modificar fácilmente. Este enfoque permite un renderizado eficiente, bajo uso de memoria y escalado suave en cualquier nivel de zoom sin pérdida de calidad.
 
-:::info note
+:::info nota
 Los polígonos muy pequeños pueden simplificarse o distorsionarse durante la generación de datos de mapa. Los objetos con un área menor a aproximadamente un metro cuadrado podrían no mostrarse. Para una visualización correcta, las características pequeñas deben mapearse como nodos individuales en lugar de polígonos.
 :::
 
@@ -409,7 +409,7 @@ La función de Relieve 3D produce un relieve elevado y proporciona una represent
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_and.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_and.png)
+![Profundidad náutica: ancho Android](@site/static/img/map/nautical_depth_width_and.png)  ![Profundidad náutica: color Android](@site/static/img/map/nautical_depth_color_and.png)
 
 </TabItem>
 
@@ -417,7 +417,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,srtm_plug
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,srtm_plugin_name,nautical_depth"/>*  
 
-![nautical_depth_width_and](@site/static/img/map/nautical_depth_width_ios.png)  ![nautical_depth_color_and](@site/static/img/map/nautical_depth_color_ios.png)
+![Profundidad náutica: ancho iOS](@site/static/img/map/nautical_depth_width_ios.png)  ![Profundidad náutica: color iOS](@site/static/img/map/nautical_depth_color_ios.png)
 
 </TabItem>
 
@@ -462,7 +462,7 @@ La **Vista de Globo** te permite mostrar el mapa como una Tierra esférica en lu
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![show-borders-andr](@site/static/img/map/show-borders-andr.png)  
+![Mostrar bordes Android](@site/static/img/map/show-borders-andr.png)  
 
 </TabItem>
 
@@ -470,7 +470,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_map,show_bord
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,configure_map,show_borders_of_downloaded_maps"/>*
 
-![show-borders-ios](@site/static/img/map/show-borders-ios.png)
+![Mostrar bordes iOS](@site/static/img/map/show-borders-ios.png)
 
 </TabItem>
 
@@ -498,12 +498,22 @@ Ir a: *Menú → Configurar mapa → Mostrar → Cuadrícula de coordenadas*
 
 <TabItem value="android" label="Android">  
 
-![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_settings_andr.png) ![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_format_andr.webp)
+![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_settings_andr.webp) ![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_format_andr.webp)
 
-La función **Cuadrícula de coordenadas** superpone una cuadrícula de referencia en el mapa, permitiéndote visualizar las líneas de latitud y longitud basadas en diferentes sistemas de coordenadas. Esta función es útil para la referencia de ubicación precisa y la navegación geoespacial. 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_settings_ios.webp) ![Menú de cuadrícula de coordenadas](@site/static/img/map/coordinates_grid_format_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+La función **Cuadrícula de coordenadas** superpone una cuadrícula de referencia en el mapa, permitiéndote visualizar las líneas de latitud y longitud o líneas de cuadrícula métrica, dependiendo del sistema de coordenadas seleccionado. Esta función es útil para la referencia de ubicación precisa y la navegación geoespacial. 
 
 Puedes configurar las siguientes opciones:
-- **Niveles de zoom:** establece los niveles de zoom mínimo y máximo (2 - 22) en los que se muestra la cuadrícula.
+- **Niveles de zoom:** establece los niveles de zoom mínimo y máximo (0 - 22) en los que se muestra la cuadrícula.
 - **Posición de las etiquetas:** elige entre *Bordes* (predeterminado) o *Centro* para las etiquetas de la cuadrícula.
 - **Color de la cuadrícula:** disponible por separado para el modo Día/Noche. 
 - **Formato de coordenadas:** selecciona de varios formatos disponibles (ver lista a continuación).
@@ -513,7 +523,7 @@ Puedes configurar las siguientes opciones:
 - **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Grados, Minutos, Segundos)
 - **WGS84** (EPSG:4326) - **DD.DDDDD°** (Grados Decimales - formato por defecto de WGS84)
 - **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Grados, Minutos Decimales)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - sistema de cuadrícula basado en zonas). El nivel de zoom mínimo es 9, solo se muestra una zona UTM a la vez, ya que las zonas están separadas por meridianos cada 6°
+- **UTM** (EPSG:6387, Universal Transverse Mercator - sistema de cuadrícula basado en zonas). El nivel de zoom mínimo es 9, solo se muestra una zona UTM a la vez, ya que las zonas están separadas por meridianos cada 6°.
 - **OLC** (Código de ubicación abierto, también conocido como Código Plus)
 - **MGRS** (Sistema de Referencia de Cuadrícula Militar)
 - **Sistema de coordenadas suizo** - Swiss Grid (CH1903) y Swiss Grid (CH1903+)
@@ -521,39 +531,11 @@ Puedes configurar las siguientes opciones:
 
 La sección **Recientes** muestra los sistemas de coordenadas utilizados recientemente. Para añadir otro sistema de coordenadas compatible, toca *Seleccionar otro formato*. Puedes buscar por nombre del sistema de coordenadas o código EPSG y luego tocar *+* para añadirlo a la lista.
 
-Por defecto, la aplicación utiliza el formato de coordenadas seleccionado en los [Ajustes generales](../personal/profiles.md#units--formats), pero puedes cambiarlo directamente en este menú.
+**Nota:** La lista incluye solo los sistemas de coordenadas que la cuadrícula puede mostrar con precisión: sistemas medidos en metros, con una única transformación de datum a WGS 84 que sea válida en toda el área del sistema. Los sistemas medidos en pies u otras unidades no métricas, y los sistemas que requieren varias transformaciones regionales, no están disponibles para la cuadrícula.
+
+Por defecto, la cuadrícula utiliza el formato DDD.DDDDD. El formato que selecciones en este menú se aplica solo a la cuadrícula de coordenadas.
 
 [Acción rápida](../widgets/quick-action.md#overview): También puedes agregar un interruptor rápido *Mostrar/Ocultar Cuadrícula de coordenadas* al grupo [Configurar mapa](../widgets/quick-action.md#configure-map) para un acceso rápido.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-La función **Cuadrícula de coordenadas** superpone una cuadrícula de referencia en el mapa, permitiéndote visualizar las líneas de latitud y longitud basadas en diferentes sistemas de coordenadas. Esta función es útil para la referencia de ubicación precisa y la navegación geoespacial. 
-
-Puedes configurar las siguientes opciones:
-- **Niveles de zoom:** establece los niveles de zoom mínimo y máximo (2 - 22) en los que se muestra la cuadrícula.
-- **Posición de las etiquetas:** elige entre *Bordes* (predeterminado) o *Centro* para las etiquetas de la cuadrícula.
-- **Color de la cuadrícula:** disponible por separado para el modo Día/Noche. 
-- **Formato de coordenadas:** selecciona de varios formatos disponibles (ver lista a continuación).
-
-***Formatos de coordenadas disponibles:***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Grados, Minutos, Segundos)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Grados Decimales - formato por defecto de WGS84)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Grados, Minutos Decimales)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - sistema de cuadrícula basado en zonas). El nivel de zoom mínimo es 9, solo se muestra una zona UTM a la vez, ya que las zonas están separadas por meridianos cada 6°
-- **MGRS** (Sistema de Referencia de Cuadrícula Militar)
-
-Por defecto, la aplicación utiliza el formato de coordenadas seleccionado en los [Ajustes generales](../personal/profiles.md#units--formats), pero puedes cambiarlo directamente en este menú.
-
-[Acción rápida](../widgets/quick-action.md#overview): También puedes agregar un interruptor rápido *Mostrar/Ocultar Cuadrícula de coordenadas* al grupo [Configurar mapa](../widgets/quick-action.md#configure-map) para un acceso rápido.
-
-</TabItem>
-
-</Tabs>
 
 
 ## Rutas {#routes}

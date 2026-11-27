@@ -1,5 +1,5 @@
 ---
-source-hash: 2455ddb532c89fb83aa7353d256f542e27354d6009bb2c1842942dd55583b54b
+source-hash: 205f05e0d42fa5f92caada9c958cf5598bdde7fa74f9cdb424367495ffe5d104
 sidebar_position: 11
 title:  OsmAnd-Entwicklung
 ---
@@ -34,7 +34,7 @@ So aktivieren Sie spezielle Funktionen für Entwickler und Tester:
 
 ## Plugin-Einstellungen {#plugin-settings}
 
-:::info info  
+:::info Info  
 Die Einstellungen des OsmAnd-Entwicklungs-Plugins sind global und gelten für alle Profile.  
 :::  
 
@@ -68,7 +68,7 @@ Verwenden Sie einen der folgenden Pfade, um die Plugin-Einstellungen zu öffnen:
 ### Fehlerbehebung {#troubleshooting}
 
 - **Ihre Position simulieren** (*Android* / *iOS*). [Simulieren](#gpx-track-simulation) Sie den Standort und die Bewegung mithilfe eines GPX-Tracks.
-- **Energiesparmodus** (*Android* / *iOS*). Diese Einstellung reduziert [die Bildschirmaktualisierungsrate](#map-rendering-fps-widget) um 20 Bilder pro Sekunde, um die Akkulaufzeit bei der Verwendung von Anwendungen zu verlängern.
+- **Energiesparmodus** (*Android* / *iOS*). Diese Einstellung reduziert [die Bildschirmaktualisierungsrate](#map-rendering-fps-widget) um 20 Bilder pro Sekunde, um die Akkulaufzeit bei der Verwendung von Anwendungen zu verlängern. Außerdem wird das sanfte Ein- und Ausblenden von Kartensymbolen und Beschriftungen deaktiviert.
 - **3D-Standortsymbole verwenden** (*iOS*). Ermöglicht die Auswahl eines 3D-Symbols für das [Symbol "Mein Standort"](../personal/profiles.md#my-location-appearance).
 - **OBD-Daten simulieren** (*Android* / *iOS*). Ermöglicht die Simulation der Verwendung eines [OBD-Scanners](./vehicle-metrics.md).
 - **<Translate android="true" ids="trace_rendering"/>** (*Android* / *iOS*). Zeigt die Rendering- und Navigationsleistung an.

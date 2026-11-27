@@ -5,6 +5,7 @@ import { assignPointIds } from '@map/manager/track/TrackOperations';
 import {
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
+    effectRequestAnalysis,
     requestAnalysisNow,
 } from '@map/context/TracksRoutingCache';
 import { createEditorCtx } from './fixtures/tracks';
@@ -46,9 +47,8 @@ export function dragPoint(ctx, index, lat) {
 /** ctx of one render: it keeps the track of that render while the setters update the store. */
 export const renderCtx = (store) => ({ ...store });
 
-/** Runs the routing cache of `store` as the editor effects do: the router answers the waiting segments, they go on the track; `analysis` sends the analysis they ask for without its debounce. */
+/** Runs the routing cache of `store` as the editor effects do: the router answers the waiting segments, they go on the track; `analysis` sends the analysis the track asks for then. */
 export async function routeCached(store, { analysis = false } = {}) {
-    const debouncerTimer = { current: null };
     effectControlRouterRequests({ ctx: store, startedRouterJobs: 0, setStartedRouterJobs: () => {} });
     await settle();
     effectRefreshTrackWithRouting({
@@ -56,11 +56,25 @@ export async function routeCached(store, { analysis = false } = {}) {
         map,
         geoRouter: store.trackRouter,
         saveChanges: (points, wpts, layers, track) => store.setSelectedGpxFile({ ...track }),
-        debouncerTimer,
     });
-    const analysisAsked = debouncerTimer.current !== null;
+    if (analysis) {
+        analyseAsked(store);
+    }
+}
+
+/** Whether the analysis effect of the editor asks for the analysis of the open track of `store`. */
+export function isAnalysisAsked(store) {
+    const debouncerTimer = { current: null };
+    effectRequestAnalysis({ ctx: store, track: store.selectedGpxFile, debouncerTimer });
+    const asked = debouncerTimer.current !== null;
     clearTimeout(debouncerTimer.current);
-    if (analysis && analysisAsked) {
+
+    return asked;
+}
+
+/** Sends the analysis the analysis effect of the editor asks for, without its debounce. */
+export function analyseAsked(store) {
+    if (isAnalysisAsked(store)) {
         requestAnalysisNow({ ctx: store, track: store.selectedGpxFile });
     }
 }

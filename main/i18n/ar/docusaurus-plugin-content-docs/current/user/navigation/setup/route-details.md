@@ -1,5 +1,5 @@
 ---
-source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
+source-hash: b076e363549de89788d39e28c794e1ab1884f389ec642e5833a3ff1b49f7e267
 sidebar_position: 4
 title:  تفاصيل المسار
 ---
@@ -248,7 +248,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 توفر معلومات الانعطافات [تعليمات](#instructions) مفصلة حول كيفية التنقل في المسار. بالإضافة إلى قائمة *التفاصيل*، يتم عرضها أيضًا في ودجات [*مناورات المسار*](../../widgets/nav-widgets.md#route-guidance) و[*الحارات*](../../widgets/nav-widgets.md#lanes). تساعدك هذه المعلومات على التنقل بشكل أفضل في مسارك وتسمح لك بالتخطيط المسبق.
 
-انقر على قسم معين من المسار في القائمة لعرض معلومات مفصلة أو إجراء تغييرات حسب الحاجة. يتم تكبير الخريطة وفتح [قائمة السياق](../../map/map-context-menu.md).
+انقر على قسم معين من المسار في القائمة لعرض معلومات مفصلة أو إجراء تغييرات حسب الحاجة. يتم تكبير الخريطة وفتح [قائمة السياق](../../map/map-context-menu.md). انقر على وجهة متوسطة في القائمة لفتح الخريطة عند تلك الوجهة (*أندرويد فقط*).
 
 
 ### التعليمات {#instructions}
@@ -257,13 +257,13 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 <TabItem value="android" label="أندرويد">
 
-![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_turn_andr.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_turn_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_turn_ios.png)
+![مسار الملاحة أندرويد](@site/static/img/navigation/route/navigation_turn_ios.webp)
 
 </TabItem>
 
@@ -276,6 +276,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - وصف *ما يجب فعله*، والذي يتضمن *اسم الشارع أو الممر*.
 - *المسافة الإجمالية* و*وقت المسار*.
 - *تخطيط [الحارات](../../widgets/nav-widgets.md#lanes)* للطريق الحالي.
+- *الوجهات المتوسطة* بترتيبها على طول المسار، لكل منها رقمها واسمها أو إحداثياتها، والمسافة والوقت من نقطة البداية.
+- *الوجهة النهائية*، موضوع عليها أيقونة الوجهة (*أندرويد فقط*).
 - [*مؤشر جانب الطريق*](#roadside-indicator) (*iOS فقط*).
 
 

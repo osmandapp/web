@@ -1,5 +1,5 @@
 ---
-source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
+source-hash: b4619639adb2d5e3d6b6f586ec94e6848cf1ff4a970a0e9fc0c20c0320aa4f1e
 sidebar_position: 2
 title:  Reiseführer
 ---
@@ -30,13 +30,13 @@ Die Informationen von Wikivoyage umfassen die wichtigsten Fakten über einen Ort
 
 <TabItem value="android" label="Android">
 
-![Travel guides view General](@site/static/img/guides/travel_guides_view_android.png)
+![Reiseführer Allgemeine Ansicht](@site/static/img/guides/travel_guides_view_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Maps menu iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
+![Karten-Menü iOS](@site/static/img/personal/maps/travel_guides_overview_ios.png)
 
 </TabItem>
 
@@ -67,7 +67,7 @@ Die Artikel der *Reiseführer* werden in OsmAnd als GPX-Tracks mit Wegpunkten ge
 
 Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_travel_guides"/>*
 
-![Travel guides download menu](@site/static/img/guides/travel_guides_download.png)
+![Reiseführer Download-Menü](@site/static/img/guides/travel_guides_download.png)
 
 </TabItem>
 
@@ -75,7 +75,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,shared_string_t
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,travel_guides_beta"/>*
 
-![Maps menu iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
+![Karten-Menü iOS](@site/static/img/guides/travel_guides_download_1_ios.png)
 
 </TabItem>
 
@@ -100,13 +100,13 @@ Wenn Sie die *Reiseführer* öffnen (*<Translate android="true" ids="shared_stri
 
 <TabItem value="android" label="Android">
 
-![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1.png) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2.png)
+![Reiseführer Hauptbildschirm](@site/static/img/guides/travel_guides_main_screen_1.png) ![Reiseführer Hauptbildschirm 2](@site/static/img/guides/travel_guides_main_screen_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides main screen](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Travel guides main screen 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
+![Reiseführer Hauptbildschirm](@site/static/img/guides/travel_guides_main_screen_1_ios.webp) ![Reiseführer Hauptbildschirm 2](@site/static/img/guides/travel_guides_main_screen_2_ios.webp)
 
 </TabItem>
 
@@ -125,13 +125,13 @@ Wenn Sie auf die *Lesezeichen-Schaltfläche* tippen, wird der Artikel zum späte
 
 <TabItem value="android" label="Android">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_search_android.png)
+![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_search_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_search_1_ios.webp)
+![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_search_1_ios.webp)
 
 </TabItem>
 
@@ -155,13 +155,13 @@ Neben jedem Suchergebnis werden die ersten 3 am häufigsten verwendeten Sprachen
 
 <TabItem value="android" label="Android">
 
-![Travel guides options menu](@site/static/img/guides/travel_guides_options_android.png)
+![Reiseführer Optionsmenü](@site/static/img/guides/travel_guides_options_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_options_ios.png)
+![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_options_ios.png)
 
 </TabItem>
 
@@ -171,7 +171,7 @@ In diesem Menü können Sie das Erscheinungsbild von Artikeln für die Offline-N
 Im Optionsmenü können Sie wählen, ob Bilder in den angesehenen Artikeln gespeichert werden sollen, um sie offline zu verwenden. Sie können auch den vorhandenen Bilder-Cache leeren oder den Suchverlauf löschen (funktioniert nur bei der Suche in *Reiseführern*).
 
 - &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. Bilder in Artikeln können für die Offline-Nutzung heruntergeladen werden.  
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. Leert den Bilder-Cache, um Speicher freizugeben.
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. Leert den Bilder-Cache, um Speicher freizugeben. Der Cache wird mit dem Wikipedia-Plugin geteilt, daher werden beim Leeren auch die gespeicherten Bilder von Wikipedia-Artikeln gelöscht.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. Löscht den [Suchverlauf](#search).
 
 ## Reiseartikel {#travel-article}
@@ -180,13 +180,13 @@ Im Optionsmenü können Sie wählen, ob Bilder in den angesehenen Artikeln gespe
 
 <TabItem value="android" label="Android">
 
-![Travel guides article](@site/static/img/guides/travel_guides_article.png)
+![Reiseführer Artikel](@site/static/img/guides/travel_guides_article.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_article_ios.png)
+![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_article_ios.png)
 
 </TabItem>
 
@@ -213,13 +213,13 @@ Am unteren Bildschirmrand befinden sich Schaltflächen wie:
 
 <TabItem value="android" label="Android">
 
-![Travel guides contents menu](@site/static/img/guides/travel_guides_navigation_menu.png)
+![Reiseführer Inhaltsmenü](@site/static/img/guides/travel_guides_navigation_menu.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
+![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_navigation_menu_ios.png)
 
 </TabItem>
 
@@ -235,13 +235,13 @@ Wenn Sie auf den Pfeil in der oberen linken Ecke des Bildschirms tippen, gelange
 
 <TabItem value="android" label="Android">
 
-![Travel guides contents menu](@site/static/img/guides/travel_guides_contents_menu_android.png)
+![Reiseführer Inhaltsmenü](@site/static/img/guides/travel_guides_contents_menu_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_contents_menu_ios.png)
+![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_contents_menu_ios.png)
 
 </TabItem>
 
@@ -265,13 +265,13 @@ Die meisten *Reiseführerartikel* haben die gleiche Inhaltsstruktur: *Einleitung
 
 <TabItem value="android" label="Android">
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
+![Reiseführer Punktemenü](@site/static/img/guides/travel_guides_points_on_the_map_2.png) ![Reiseführer Punktemenü](@site/static/img/guides/travel_guides_articles_three_dots_point.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Travel guides search menu](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
+![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_points_on_the_map_1_ios.png) ![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_points_on_the_map_2_ios.png)
 
 </TabItem>
 
@@ -293,12 +293,12 @@ Sie können auch *[Punkte zur Karte hinzufügen](#travel-routes)* im Menü *Kart
 
 Eine alternative Möglichkeit, *Reiseführer* zu durchsuchen, besteht darin, sie über das Menü *Karte konfigurieren* auf der Karte anzuzeigen. Diese Funktion bezieht sich nicht auf die von OsmAnd bereitgestellte Möglichkeit, Wikivoyage zu nutzen, sondern nur auf Tracks. Mehr dazu können Sie in unserem [Blog](https://osmand.net/blog/routes#generated-travel-routes) lesen.
 
-![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Travel guides points menu](@site/static/img/guides/travel_guides_travel_routes_view.png)
+![Reiseführer Punktemenü](@site/static/img/guides/travel_guides_travel_routes_path.png) ![Reiseführer Punktemenü](@site/static/img/guides/travel_guides_travel_routes_view.png)
 
 
 ### Reiserouten und Artikel auf der Karte {#travel-routes-and-articles-on-the-map}
 
-![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Travel guides points  menu](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
+![Reiseführer Punktemenü](@site/static/img/guides/travel_guides_articles_routes_on_the_map.png) ![Reiseführer Punktemenü](@site/static/img/guides/travel_guides_articles_routes_context_menu.png)  
 
 Nachdem Sie die Anzeige von *Reiserouten* im Menü *Karte konfigurieren* aktiviert haben, erscheinen Kreise in verschiedenen Farben auf der Karte. Die orangefarbenen stehen für Routen-Tracks, Routenartikel und einige Wegpunkte. Tippen Sie auf eine bestimmte Route, einen Artikel oder einen Punkt und dann auf die Schaltfläche *Herunterladen* (&#9047;), und Sie können sie [als Track verwalten](#manage-as-gpx-track).
 
@@ -315,7 +315,7 @@ https://osmand.net/blog/routes/#generated-travel-routes
 
 ## Als GPX-Track verwalten {#manage-as-gpx-track}
 
-![Travel guides points menu 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Travel guides points menu 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
+![Reiseführer Punktemenü 2](@site/static/img/guides/travel_guides_points_on_the_map.png) ![Reiseführer Punktemenü 2](@site/static/img/guides/travel_guides_articles_my_places.png)  
 
 Nachdem Sie *Reiseführer* zur Karte hinzugefügt haben, können *Reiseartikel* als GPX-Track gespeichert und über das Menü *[Meine Orte](../personal/myplaces.md)* (*<Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks,icon_group_travel"/>*) verwaltet werden. Sie können auf der Karte angezeigt, geteilt, umbenannt, in einen anderen Ordner verschoben, exportiert oder gelöscht werden.  
 
@@ -335,13 +335,13 @@ Im *[Track-Kontextmenü](../map/tracks/track-context-menu.md)* der GPX-Datei fin
 
 <TabItem value="android" label="Android">
 
-![Travel guides combine with Wikipedia 1](@site/static/img/guides/travel_guides_wikipedia_1.png) ![Travel guides combine with Wikipedia 2](@site/static/img/guides/travel_guides_wikipedia_2.png)
+![Reiseführer Mit Wikipedia kombinieren 1](@site/static/img/guides/travel_guides_wikipedia_1.png) ![Reiseführer Mit Wikipedia kombinieren 2](@site/static/img/guides/travel_guides_wikipedia_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Travel guides search menu](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
+![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_wikipedia_1_ios.png)  ![Reiseführer Suchmenü](@site/static/img/guides/travel_guides_wikipedia_2_ios.png)
 
 </TabItem>
 
@@ -351,7 +351,7 @@ In den *Reiseführerartikeln* finden Sie nützliche Informationen über touristi
 
 In einigen Fällen werden Sie auf der Registerkarte *[Lesezeichen](#explore-and-bookmark)* von OsmAnd aufgefordert, die [Wikipedia-Kartenebene](../plugins/wikipedia.md#download-wikipedia-packages) herunterzuladen, um verwandte Artikel offline zu durchsuchen.
 
-![Travel guides download Wikipedia](@site/static/img/guides/travel_guides_wikipedia_download.png)
+![Reiseführer Wikipedia herunterladen](@site/static/img/guides/travel_guides_wikipedia_download.png)
 
 :::info HINWEIS
 Das [Wikipedia-Plugin](../plugins/wikipedia.md) ist eine [kostenpflichtige Funktion](../purchases/index.md) der OsmAnd-App.

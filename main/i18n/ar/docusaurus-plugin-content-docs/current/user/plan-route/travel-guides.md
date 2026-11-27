@@ -1,5 +1,5 @@
 ---
-source-hash: 12859aed31054d27571dc9a0910d7e62a38fcd714e1d7bfee71f8429a0d97b36
+source-hash: b4619639adb2d5e3d6b6f586ec94e6848cf1ff4a970a0e9fc0c20c0320aa4f1e
 sidebar_position: 2
 title:  أدلة السفر
 ---
@@ -171,7 +171,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 في قائمة الخيارات، يمكنك اختيار ما إذا كنت تريد حفظ الصور في المقالات التي تم عرضها لاستخدامها عندما تكون غير متصل بالإنترنت. يمكنك أيضًا مسح ذاكرة التخزين المؤقت للصور الحالية أو حذف سجل البحث (يعمل فقط عند البحث في *أدلة السفر*).
 
 - &nbsp;**<Translate android="true" ids="wikivoyage_download_pics"/>**. يمكن تنزيل الصور في المقالات للاستخدام دون اتصال بالإنترنت.  
-- &nbsp;**<Translate android="true" ids="images_cache"/>**. يمسح ذاكرة التخزين المؤقت للصور لتوفير الذاكرة.
+- &nbsp;**<Translate android="true" ids="images_cache"/>**. يمسح ذاكرة التخزين المؤقت للصور لتوفير الذاكرة. ذاكرة التخزين المؤقت مشتركة مع ملحق ويكيبيديا، لذا فإن مسحها يؤدي أيضًا إلى حذف الصور المحفوظة لمقالات ويكيبيديا.
 - &nbsp;**<Translate android="true" ids="delete_search_history"/>**. يمسح [سجل البحث](#search).
 
 ## مقال السفر {#travel-article}

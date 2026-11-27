@@ -1,5 +1,5 @@
 ---
-source-hash: 0ff7364a256b1982c1f9ac7f66d9ab349e65572382849506fac7f1774a3047d0
+source-hash: ff258064d779b26129f3ed54a6c4982b439d96449a0d7c6d702aefdfb1ea57ae
 sidebar_position: 8
 title: Beliebte Orte
 ---
@@ -17,7 +17,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Übersicht {#overview}
 
-:::tip Purchase
+:::tip Kauf
 Beliebte Orte ist eine [bezahlte Funktion](../purchases/index.md).  
 :::
 
@@ -176,7 +176,7 @@ Durch Tippen auf einen POI auf der Karte wird das [POI-Kontextmenü](./map-conte
 
 </Tabs>
 
-Dies ist ein Abschnitt im [POI-Kontextmenü](./map-context-menu.md), der eine Fotovorschau des ausgewählten beliebten Ortes (Wikipedia) anzeigt. Sie können horizontal scrollen, um die verfügbaren Fotos zu durchsuchen, oder auf ein beliebiges Bild tippen, um es im [Vollbildmodus](#gallery) zu öffnen.
+Dies ist ein Abschnitt im [POI-Kontextmenü](./map-context-menu.md), der eine Fotovorschau des ausgewählten beliebten Ortes (Wikipedia) und mit dem POI in OpenStreetMap verknüpfte Fotos anzeigt. Ein Foto aus dem Tag [`mapillary`](https://wiki.openstreetmap.org/wiki/Key:mapillary) des POI wird zuerst angezeigt, auch wenn das [Mapillary-Plugin](../plugins/mapillary.md) deaktiviert ist. Unter Android folgen Fotos aus dem Tag [`panoramax`](https://wiki.openstreetmap.org/wiki/Key:panoramax), die Reihenfolge lautet also Mapillary, Panoramax, Wikimedia. Sie können horizontal scrollen, um die verfügbaren Fotos zu durchsuchen, oder auf ein beliebiges Bild tippen, um es im [Vollbildmodus](#gallery) zu öffnen.
 
 Online angesehene Bilder werden automatisch für den Offline-Zugriff zwischengespeichert. Zwischengespeicherte Fotos zeigen ein kleines Offline-Abzeichen in der Ecke an. Das Vorschauraster passt sich der Bildschirmgröße auf iPadOS und macOS an und gewährleistet eine bequeme Bildanordnung auf größeren Displays. OsmAnd vermeidet auch wiederholte Netzwerkanfragen, wenn der Abschnitt Online-Fotos geschlossen wird, und bricht vorherige Anfragen ab, wenn schnell zwischen verschiedenen POIs gewechselt wird.
 
@@ -210,12 +210,12 @@ Sie können auch die folgenden Aktionen für jedes Foto durchführen:
   Teilen Sie das ausgewählte Bild über eine beliebige kompatible App, die auf Ihrem Gerät installiert ist (z. B. Messaging, E-Mail oder soziale Medien). Der geteilte Inhalt enthält das Bild und seinen Quelllink (falls verfügbar).
 
 - **Details**  
-  Öffnet eine detaillierte Ansicht mit Metadaten zum Bild, einschließlich: *Beschreibung (vollständiger Text, nur Android)*, *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*, *Quelle* und *Direkter Link*
+  Öffnet eine detaillierte Ansicht mit Metadaten zum Bild, einschließlich: *Beschreibung (vollständiger Text)*, *Name*, *Hinzugefügt am*, *Autor*, *Lizenz*, *Quelle* und *Direkter Link*. Unter Android zeigen Mapillary-Fotos *Autor*, *Hinzugefügt* (das Aufnahmedatum), *Quelle*, *Lizenz* und einen *Link* zur Fotoseite auf [Mapillary](https://www.mapillary.com/) an.
 
   **Hinweis:** Die Sprache der Beschreibung hängt von der Anzeigesprache der Anwendung ab. Wenn die Beschreibung in der ausgewählten Sprache nicht verfügbar ist, zeigt OsmAnd die englische Version oder die erste verfügbare Übersetzung an.
 
 - **Im Browser öffnen**  
-  Startet die Quellseite des Bildes (normalerweise auf [Wikimedia Commons](https://commons.wikimedia.org/)) in Ihrem Standardbrowser. Dies ermöglicht es Ihnen, das vollständige Bild, Lizenzinformationen und verwandte Inhalte anzuzeigen.
+  Startet die Quellseite des Bildes (normalerweise auf [Wikimedia Commons](https://commons.wikimedia.org/) oder die Foto-Viewer-Seite bei Mapillary-Fotos) in Ihrem Standardbrowser. Dies ermöglicht es Ihnen, das vollständige Bild, Lizenzinformationen und verwandte Inhalte anzuzeigen.
 
 - **Herunterladen**  
   Speichert das Bild im Speicher Ihres Geräts. Das heruntergeladene Bild befindet sich im Standard-Download-Ordner Ihres Geräts und kann offline aufgerufen werden.

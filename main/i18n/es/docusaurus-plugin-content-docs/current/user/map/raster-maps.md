@@ -1,5 +1,5 @@
 ---
-source-hash: 043c3d053988abe0ba83e837d783f54de689b5001b7403f71bb4437218bfb9e4
+source-hash: 36e97b90c3769611facb2ea509fb7332fc9cfadf389290599e8b1eb4dd90b35a
 sidebar_position: 7
 title:  Mapas ráster (en línea / sin conexión)
 ---
@@ -61,7 +61,7 @@ También puede cambiar [la fuente principal](#main) de mapas de mapas vectoriale
 - **iOS**. Para *iOS*, esta función funciona por defecto.
 - **Android**. Para *Android*, para usar mapas ráster en OsmAnd necesita activar el [plugin de Mapas en línea](../plugins/online-map.md). Siga estos pasos: *<Translate android="true" ids="shared_string_menu,plugin_settings,shared_string_online_maps"/> → &#8942; → <Translate android="true" ids="shared_string_enable"/>*
 
-**[Cambiar parámetros de la capa](#layers)**. Para mejorar la visibilidad y la mezcla de las capas de mapas ráster, puede ajustar la transparencia de la capa utilizando el control deslizante en pantalla. Además, puede modificar el estilo del mapa vectorial ocultando polígonos, haciendo que las capas de subcapa sean más visibles. Esto es especialmente útil al ver imágenes de satélite.
+**[Cambiar parámetros de la capa](#layers)**. Para mezclar las capas de mapas ráster, puede ajustar la visibilidad de la capa utilizando el control deslizante en pantalla. Además, puede modificar el estilo del mapa vectorial ocultando polígonos, haciendo que las capas de subcapa sean más visibles. Esto es especialmente útil al ver imágenes de satélite.
 
 
 ## Capas {#layers}
@@ -84,7 +84,7 @@ También puede cambiar [la fuente principal](#main) de mapas de mapas vectoriale
 
 En OsmAnd, los mapas ráster pueden servir como una fuente de mapa adicional junto con los mapas vectoriales predeterminados, que están optimizados para su uso sin conexión.  
 
-Tiene la flexibilidad de agregar una o dos capas de teselas en línea para complementar su mapa base. Esto le permite ver hasta tres capas de mapa simultáneamente en su pantalla (más Terreno). Piense en ellas como un pastel: [**Subcapa**](#underlay) (base ráster debajo), [**Principal**](#main) (núcleo vectorial o ráster), [**Superposición**](#overlay) (ráster encima), con sombreado de [**Terreno**](#terrain) sobre todo. Por ejemplo, puede usar imágenes de satélite como Subcapa, el mapa vectorial sin conexión de OsmAnd como capa Principal con mayor transparencia y un mapa de carriles bici como Superposición.
+Tiene la flexibilidad de agregar una o dos capas de teselas en línea para complementar su mapa base. Esto le permite ver hasta tres capas de mapa simultáneamente en su pantalla (más Terreno). Piense en ellas como un pastel: [**Subcapa**](#underlay) (base ráster debajo), [**Principal**](#main) (núcleo vectorial o ráster), [**Superposición**](#overlay) (ráster encima), con sombreado de [**Terreno**](#terrain) sobre todo. Por ejemplo, puede usar imágenes de satélite como Subcapa, el mapa vectorial sin conexión de OsmAnd como capa Principal con visibilidad reducida y un mapa de carriles bici como Superposición.
 
 >[Los mapas vectoriales](./vector-maps.md) están disponibles **solo** en la capa [Principal](#main) (y son los predeterminados allí). Los mapas ráster se pueden usar en las tres capas: Principal, Subcapa y Superposición.
 
@@ -92,7 +92,7 @@ Tiene la flexibilidad de agregar una o dos capas de teselas en línea para compl
 
 Si desea cambiar estas capas más rápido ([Fuente de mapa principal](#main), [Superposición](#overlay), [Subcapa](#underlay) y [Terreno](#terrain)), puede agregar una [Acción rápida (Botón personalizado)](../widgets/quick-action.md) a la pantalla del mapa y asignar las acciones de mapa correspondientes a ella.
 
-También puede ajustar la transparencia del mapa base para mezclarlo con sus capas. Si es necesario, puede habilitar un control deslizante de transparencia en la pantalla principal para ajustes rápidos.
+También puede ajustar la visibilidad del mapa base para mezclarlo con sus capas. Si es necesario, puede habilitar un control deslizante en la pantalla principal para ajustes rápidos.
 
 ### Principal {#main}
 
@@ -126,7 +126,7 @@ Por defecto, el mapa principal está configurado en [Mapas vectoriales sin conex
 
 Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/>*  
 
-![Configurar subcapa / superposición Android](@site/static/img/plugins/online-maps/overlay-andr.png)  
+![Configurar subcapa / superposición Android](@site/static/img/plugins/online-maps/overlay-andr.webp)  
 
 </TabItem>
 
@@ -134,15 +134,15 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_o
 
 Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_over"/>*  
 
-![Configurar subcapa / superposición iOS](@site/static/img/plugins/online-maps/overlay-ios.png)  
+![Configurar subcapa / superposición iOS](@site/static/img/plugins/online-maps/overlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Activar/desactivar* la capa de mapa de Superposición.
-2. *Transparencia de superposición* (*Android*)/ *Transparencia* de la superposición (*iOS*).
-3. *Mostrar control deslizante de transparencia* (*Android*) / *Mostrar control deslizante en el mapa* (*iOS*). Acceso rápido a la configuración de transparencia.
+2. *<Translate android="true" ids="overlay_transparency"/>* (*Android*) / *<Translate ios="true" ids="visibility"/>* (*iOS*). Al 0%, el mapa de Superposición está oculto; al 100%, es totalmente visible.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Acceso rápido a la configuración de visibilidad.
 4. *Fuente del mapa de superposición* (*Android*) / *Capas disponibles* (*iOS*). Seleccione un mapa de teselas en línea de la lista para agregarlo directamente como su capa de Superposición.
 5. *Mostrar símbolos del mapa* - como texto, señales de tráfico y otros.  
 6. *Agregar fuente en línea* (*iOS*). [Agregar nueva fuente en línea](#add-new-online-source).
@@ -156,7 +156,7 @@ Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_setting
 
 Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_underlay"/>*  
 
-![Configurar subcapa / superposición Android](@site/static/img/plugins/online-maps/underlay-andr.png)
+![Configurar subcapa / superposición Android](@site/static/img/plugins/online-maps/underlay-andr.webp)
 
 </TabItem>
 
@@ -164,15 +164,15 @@ Vaya a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_u
 
 Vaya a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder,map_settings_under"/>*
 
-![Configurar subcapa / superposición iOS](@site/static/img/plugins/online-maps/underlay-ios.png)  
+![Configurar subcapa / superposición iOS](@site/static/img/plugins/online-maps/underlay-ios.webp)  
 
 </TabItem>
 
 </Tabs>
 
 1. *Activar/desactivar* la Subcapa.
-2. *Transparencia del mapa base*.
-3. *Mostrar control deslizante de transparencia* (*Android*) / *Mostrar control deslizante en el mapa* (*iOS*). Acceso rápido a la configuración de transparencia.
+2. *<Translate android="true" ids="map_transparency"/>*. Al 100%, el mapa base es totalmente visible; al 0%, solo se muestra el mapa de Subcapa.
+3. *<Translate android="true" ids="show_transparency_seekbar"/>* (*Android*) / *<Translate ios="true" ids="map_settings_show_slider_map"/>* (*iOS*). Acceso rápido a la configuración de visibilidad.
 4. *Fuente del mapa de subcapa* (*Android*) / *Capas disponibles* (*iOS*). Seleccione un mapa de teselas en línea de la lista para agregarlo directamente como su capa de Subcapa.
 5. *Mostrar/Ocultar polígonos*.
 6. *Agregar fuente en línea* (*iOS*). [Agregar nueva fuente en línea](#add-new-online-source).
@@ -241,7 +241,7 @@ Aquí están los parámetros clave para configurar al establecer una nueva fuent
 | Parámetro | Descripción |
 |:------------|:---------------|
 | *<Translate ios="true" ids="shared_string_name"/>* | Proporcione un nombre para la nueva fuente de mapa en línea. |
-| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Ingrese o pegue la URL de la fuente de teselas en línea. Asegúrese de que siga el formato de URL de tesela. La URL puede contener ciertos marcadores de posición, que OsmAnd reemplazará automáticamente según la tesela específica necesaria. Los marcadores de posición más comúnmente utilizados se basan en la [convención de nombres de teselas de mapa deslizante de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` o `{0}`: Nivel de zoom</li><li>`{x}` o `{1}`: Índice X de tesela</li><li>`{y}` o `{2}`: Índice Y de tesela</li></ul> Para ejemplos de marcadores de posición menos comúnmente utilizados, consulte las [fuentes de mapas ráster en línea predefinidas](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
+| *<Translate ios="true" ids="edit_tilesource_url_to_load"/>* | Introduzca o pegue la URL de la fuente de teselas en línea. Asegúrese de que siga el formato de URL de tesela. La URL puede contener ciertos marcadores de posición, que OsmAnd reemplazará automáticamente según la tesela específica necesaria. Los marcadores de posición más comúnmente utilizados se basan en la [convención de nombres de teselas de mapa deslizante de OpenStreetMap](https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames): <ul><li>`{z}` o `{0}`: Nivel de zoom</li><li>`{x}` o `{1}`: Índice X de tesela</li><li>`{y}` o `{2}`: Índice Y de tesela</li></ul> Para ejemplos de marcadores de posición menos comúnmente utilizados, consulte las [fuentes de mapas ráster en línea predefinidas](https://github.com/osmandapp/web/blob/main/main/static/tile_sources.xml). |
 | *<Translate ios="true" ids="shared_string_zoom_levels"/>* | Este parámetro afecta cómo se muestra el mapa. <br/><ul><li>Como *tipo de mapa*, el mapa se limitará a los niveles de zoom seleccionados.</li><li>Como *superposición/subcapa*, el mapa aparecerá en los niveles de zoom seleccionados, con escalado hacia arriba o hacia abajo aplicado fuera de esos niveles.</li></ul> |
 | *<Translate ios="true" ids="res_expire_time"/>* | Establezca la duración (en minutos) después de la cual las teselas en caché se actualizarán. Puede dejar este campo en blanco si no desea que las teselas se recarguen automáticamente. <br/><ul><li>1 día = 1440 minutos</li><li>1 semana = 10,080 minutos</li><li>30 días = 43,200 minutos</li></ul> |
 | *<Translate ios="true" ids="res_mercator"/>* | Elija entre *Proyección Pseudo-Mercator* y *Proyección Elíptica de Mercator*, dependiendo de la fuente. |

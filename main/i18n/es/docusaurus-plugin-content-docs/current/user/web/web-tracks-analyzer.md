@@ -1,8 +1,8 @@
 ---
-source-hash: b9d29f72bcf2d43d5cc26838609d63efd31b5183a4de6ef652bd49117b2c1149
+source-hash: c35b48b75c008612b036302e055181306b64e216afa3939f782a05d93c7ed8f5
 sidebar_position: 7
-sidebar_label: Tracks Analyzer
-title: Tracks Analyzer
+sidebar_label: Analizador de rutas
+title: Analizador de rutas
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,19 +19,19 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Resumen {#overview}
 
-**Analizador de pistas** es una herramienta web que ayuda a analizar segmentos de pistas repetidos entre puntos seleccionados en el mapa. Por ejemplo, puedes usarla para comparar tus recorridos en la misma subida o tus desplazamientos diarios. Para usar esta función con tus propios datos, necesitas una cuenta de OsmAnd Pro con pistas sincronizadas a OsmAnd Cloud; de lo contrario, tus pistas no estarán disponibles en el Planificador Web. Escanea tus pistas y encuentra todos los segmentos que pasan por la(s) ubicación(es) elegida(s), permitiéndote comparar velocidad, elevación, distancia y tiempo en múltiples actividades.
+**Analizador de rutas** es una herramienta web que ayuda a analizar segmentos de pistas repetidos entre puntos seleccionados en el mapa. Por ejemplo, puedes usarla para comparar tus recorridos en la misma subida o tus desplazamientos diarios. Para usar esta función con tus propios datos, necesitas una cuenta de OsmAnd Pro con pistas sincronizadas a OsmAnd Cloud; de lo contrario, tus pistas no estarán disponibles en el Planificador Web. Escanea tus pistas y encuentra todos los segmentos que pasan por la(s) ubicación(es) elegida(s), permitiéndote comparar velocidad, elevación, distancia y tiempo en múltiples actividades.
 
 ## Cómo usar {#how-to-use}
 
 1. [Inicia sesión](./web-cloud.md#login) en tu cuenta de OsmAnd Pro en el Portal de mapas web. Tus pistas deben estar sincronizadas con [OsmAnd Cloud](./web-cloud.md#cloud-sync).
-2. Abre *Menú → Analizador de pistas* (el icono de llave inglesa).
-3. En el panel **Seleccionar pistas**, elige **Todas las pistas** o solo las carpetas que necesites.
+2. Abre *Menú → Analizador de rutas* (el icono de gráfico con una lupa).
+3. En el panel **Seleccionar rutas**, elige **Todas las pistas** o solo las carpetas que necesites.
 4. Haz clic derecho en el mapa y selecciona **Punto A**. Para analizar un segmento entre dos puntos, también establece **Punto B**.
 5. Revisa la lista de segmentos encontrados, [ordénala y elige qué parámetros mostrar](#sorting-and-visible-parameters).
 
 Con un punto, el analizador encuentra segmentos de pistas que pasan por la ubicación seleccionada. Con dos puntos, encuentra y analiza segmentos entre el Punto A y el Punto B.
 
-![Analizador de pistas](@site/static/img/web/web_analyzer_select.png) ![Analizador de pistas](@site/static/img/web/web_analyzer_points_new.png)
+![Analizador de rutas](@site/static/img/web/web_analyzer_select.png) ![Analizador de rutas](@site/static/img/web/web_analyzer_points_new.png)
 
 
 ## Ordenación y parámetros visibles {#sorting-and-visible-parameters}
@@ -46,7 +46,7 @@ Los parámetros disponibles incluyen:
 - Período de tiempo, Hora de inicio, Hora de fin, Duración y Tiempo en movimiento.
 - Longitud.
 
-![Analizador de pistas](@site/static/img/web/web_analyzer_sort.png) ![Analizador de pistas](@site/static/img/web/web_analyzer_fields.png)
+![Analizador de rutas](@site/static/img/web/web_analyzer_sort.png) ![Analizador de rutas](@site/static/img/web/web_analyzer_fields.png)
 
 ## Análisis de datos {#data-analysis}
 
@@ -54,10 +54,10 @@ Cada segmento coincidente se muestra en la lista de resultados a la izquierda. P
 
 Cada segmento también tiene un menú de tres puntos (⋮) con las siguientes acciones:
 - Abrir pista — abre la pista completa relacionada con el segmento seleccionado.
-- Ocultar pista / Hacer visible la pista — controla si la pista se muestra en el mapa.
+- Ocultar ruta / Hacer ruta visible — controla si la pista se muestra en el mapa.
 - Excluir — elimina el segmento de los resultados actuales del análisis.
 
-![Analizador de pistas](@site/static/img/web/web_analyzer_menu.png)
+![Analizador de rutas](@site/static/img/web/web_analyzer_menu.png)
 
 ### Gráficos {#graphs}
 
@@ -71,7 +71,7 @@ Solo se muestra un tipo de dato a la vez, y cambiarlo actualiza el gráfico inme
 
 Cuando hay múltiples segmentos, el gráfico muestra datos para varios segmentos simultáneamente. Un selector encima del gráfico te permite elegir cuántos gráficos de segmentos se muestran a la vez y cambiar entre ellos.
 
-![Analizador de pistas](@site/static/img/web/web_analyzer_altitude.png) ![Analizador de pistas](@site/static/img/web/web_analyzer_tracks.png)
+![Analizador de rutas](@site/static/img/web/web_analyzer_altitude.png) ![Analizador de rutas](@site/static/img/web/web_analyzer_tracks.png)
 
 ## Artículos relacionados {#related-articles}
 

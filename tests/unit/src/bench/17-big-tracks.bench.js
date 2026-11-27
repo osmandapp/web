@@ -1,7 +1,13 @@
 import L from 'leaflet';
 import PointManager from '@map/manager/PointManager';
-import TracksManager, { addDistance, getTrackPoints, PROFILE_LINE } from '@map/manager/track/TracksManager';
-import TracksRoutingCache, { effectRefreshTrackWithRouting } from '@map/context/TracksRoutingCache';
+import TracksManager, {
+    addDistance,
+    getGpxFileFromTrackData,
+    getTrackPoints,
+    PROFILE_LINE,
+} from '@map/manager/track/TracksManager';
+import { effectRefreshTrackWithRouting, getWaitingSegments } from '@map/context/TracksRoutingCache';
+import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import { saveTrackToLocalStorage } from '@map/context/LocalTrackStorage';
 import { addPointToTrack } from '@map/map/util/creator/LocalTrackHelper';
 import { apiPost } from '@map/util/HttpApi';
@@ -20,6 +26,9 @@ const ROUTE_POINTS = 200;
 const ROUTE_VERTICES = 100000;
 
 const ANALYSIS_URL = `/gpx/${TracksManager.GET_ANALYSIS}`;
+const SAVE_URL = '/gpx/save-track-data';
+
+const RECORDED_START_TIME = 1682954055000;
 
 const at = (i) => {
     const [lat, lng] = generatedVertex(i);
@@ -36,6 +45,43 @@ function createRouteTrackPoints(n = POINTS, perSegment = 1) {
         profile: PROFILE_CAR,
         geometry: i === 0 ? [] : Array.from({ length: perSegment + 1 }, (_, k) => at((i - 1) * perSegment + k)),
     }));
+}
+
+const asShortFloat = (value) => Number(Math.fround(value).toPrecision(7));
+
+function createRecordedTrackPoints(n = POINTS) {
+    let total = 0;
+
+    return Array.from({ length: n }, (_, i) => {
+        const ele = 200 + (i % 500) / 10;
+        const speed = 1 + (i % 90) / 10;
+        const distance = 10 + (i % 37) / 7;
+        total += distance;
+
+        return {
+            ...at(i),
+            ele,
+            srtmEle: null,
+            speed: Math.fround(speed),
+            distance: Math.fround(distance),
+            ext: {
+                lat: null,
+                lon: null,
+                time: RECORDED_START_TIME + i * 1000,
+                distance: Math.fround(total),
+                speed: null,
+                attributes: {
+                    distance: asShortFloat(distance),
+                    timeDiff: 1,
+                    firstPoint: false,
+                    lastPoint: false,
+                    speed: asShortFloat(speed),
+                    elevation: asShortFloat(ele),
+                },
+                extensions: { 'gpxtpx:hr': String(120 + (i % 60)) },
+            },
+        };
+    });
 }
 
 const createTrack = (points) => ({ name: 'Big', points, wpts: [] });
@@ -74,17 +120,18 @@ test('17.4 router answers of 200 route points with 100k vertices', async () => {
                 ctx,
                 geoRouter: ctx.trackRouter,
                 saveChanges: () => {},
-                debouncerTimer: { current: null },
             }),
         {
             prepare: () => {
-                const points = answered.map(({ lat, lng, profile }) => ({ lat, lng, profile, geometry: [] }));
+                const points = answered.map(({ lat, lng, profile }, id) => ({ id, lat, lng, profile, geometry: [] }));
                 const ctx = createEditorCtx({ points });
-                for (let i = 1; i < points.length; i++) {
-                    const tempLine = L.polyline([points[i - 1], points[i]]);
-                    TracksRoutingCache.addRoutingToCache(points[i - 1], points[i], tempLine, ctx);
-                }
-                Object.values(ctx.routingCache).forEach((entry, i) => (entry.geometry = answered[i + 1].geometry));
+                const tempLines = points
+                    .slice(1)
+                    .map((end, i) => TrackLayerProvider.createTempPolyline(points[i], end));
+                ctx.selectedGpxFile.layers = L.layerGroup(tempLines);
+                getWaitingSegments(points, ctx.trackRouter).forEach(
+                    ({ index, key }) => (ctx.routingCache[key] = { geometry: answered[index].geometry })
+                );
 
                 return ctx;
             },
@@ -96,13 +143,18 @@ test('17.4 router answers of 200 route points with 100k vertices', async () => {
 test('17.6 save routed 50k to the local storage', async () => {
     fakeIndexedDbStore();
     const ctx = { localTracks: [], setLocalTracks: jest.fn(), setRoutingErrorMsg: jest.fn() };
-    const track = createTrack(createRouteTrackPoints());
-
-    const save = await measure(async () => {
+    const points = createRouteTrackPoints();
+    const saveTrack = async (track) => {
         saveTrackToLocalStorage({ ctx, track });
         await settle();
-    });
+    };
+
+    const save = await measure(saveTrack, { prepare: () => createTrack([...points]) });
     record('17.6 save routed 50k to IndexedDB', save, MS);
+
+    const unchanged = createTrack(points);
+    await saveTrack(unchanged);
+    record('17.6 save unchanged routed 50k', await measure(() => saveTrack(unchanged)), MS);
     removeIndexedDb();
 });
 
@@ -123,4 +175,20 @@ test('17.8 pure functions on routed 50k', async () => {
     record('17.8 getTrackPoints of routed 50k', await measure(() => getTrackPoints(track)), MS);
     record('17.8 addDistance of routed 50k', await measure(() => addDistance(track)), MS);
     record('17.8 cloneTrackObject of routed 50k', await measure(() => cloneTrackObject(track)), MS);
+});
+
+test('17.9 the save and analysis requests of recorded 50k', async () => {
+    apiPost.mockResolvedValue(null);
+    const ctx = createEditorCtx({ points: createRecordedTrackPoints() });
+    ctx.selectedGpxFile.tracks = [{ points: [] }];
+    ctx.setRunningAnalyses = jest.fn();
+    const file = ctx.selectedGpxFile;
+
+    const save = await measure(() => getGpxFileFromTrackData(file, file.routeTypes));
+    record('17.9 save request of recorded 50k', save, MS);
+    record('17.9 save request size of recorded 50k', findRequest(apiPost, SAVE_URL).body.size, BYTES);
+
+    const analyse = () => TracksManager.getTrackWithAnalysis(TracksManager.GET_ANALYSIS, ctx, jest.fn());
+    record('17.9 analysis request of recorded 50k', await measure(analyse), MS);
+    record('17.9 analysis request size of recorded 50k', findRequest(apiPost, ANALYSIS_URL).body.size, BYTES);
 });

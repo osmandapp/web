@@ -1,8 +1,8 @@
 ---
 source-hash: fd205bd8da4fa948237a1a1762076fcaf9999e1871d3d4404be7641f1b5a2583
 sidebar_position: 4
-sidebar_label:  Weather
-title: Weather on the Web
+sidebar_label:  Wetter
+title: Wetter im Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -17,14 +17,14 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 
-## Overview {#overview}
+## Übersicht {#overview}
 
 Die Wetter-Funktion auf der OsmAnd Web-Karte zeigt aktuelle Wetterbedingungen und Prognosedaten direkt auf der Karte an. Sie bietet Zugriff auf Wetterinformationen aus mehreren Prognosequellen, unterstützt die Zeitanpassung und ermöglicht das Anzeigen von Wetterschichten wie Temperatur, Wind, Druck, Wolkenbedeckung und Niederschlag.
 
 Wetterdaten sind verfügbar, ohne sich anzumelden. Die Wetteransicht kann direkt von der Kartenoberfläche aus geöffnet werden, entweder durch Klicken auf das Regenschirm-Symbol im Menüpanel oder durch Rechtsklick auf die Karte und Auswählen von Wetter öffnen aus dem Kontextmenü.
 
 
-## Data Source {#data-source}
+## Datenquelle {#data-source}
 
 Die OsmAnd Web stellt Wetterinformationen aus zwei Prognosequellen bereit:
 
@@ -36,7 +36,7 @@ Um zwischen ihnen zu wechseln, klicken Sie auf die **Regenschirm-Schaltfläche**
 ![OsmAnd Web Wetter](@site/static/img/web/weather_source.png)
 
 
-## Weather Menu {#weather-menu}
+## Wettermenü {#weather-menu}
 
 Das **Wettermenü** zeigt aktuelle Wetterbedingungen und Prognosedaten für den ausgewählten Ort auf der Karte an. Es kombiniert eine Zusammenfassungsansicht, Zeitsteuerungen und Wetterschichten in einem einzigen Panel.
 
@@ -58,7 +58,7 @@ Am unteren Rand des Panels wird Information über die Erzeugungszeit der Wetterd
 ![OsmAnd Web Wetter](@site/static/img/web/weather_menu.png)
 
 
-## Weather Layers {#weather-layers}
+## Wetterschichten {#weather-layers}
 
 Wetterschichten ermöglichen die Visualisierung von Prognosedaten direkt auf der Karte als Überlagerung. Sie helfen, Wetterbedingungen in einem größeren Bereich schnell zu bewerten, anstatt Werte nur für einen einzelnen Punkt anzusehen.
 
@@ -76,7 +76,7 @@ Alle Wetterschichten sind mit dem ausgewählten Datum und der Uhrzeit im Wetterm
 ![OsmAnd Web Wetter](@site/static/img/web/weather_layers.png)
 
 
-## Forecast View {#forecast-view}
+## Vorhersageansicht {#forecast-view}
 
 Wetterprognosen sind für bis zu 7 Tage im Voraus verfügbar. Prognosewerte werden in 3-Stunden-Intervallen berechnet, was es ermöglicht, kurzfristige Änderungen während eines jeden Tags zu untersuchen.
 
@@ -89,7 +89,7 @@ Sie können zwischen verschiedenen Wetterparametern mit den Symbolen oben im Pro
 ![OsmAnd Web Wetter](@site/static/img/web/weather_forecast.png)
 
 
-## Related Articles {#related-articles}
+## Verwandte Artikel {#related-articles}
 
 - [Wetter](../plugins/weather.md)
 - [Einführung](../web/web-overview.md)

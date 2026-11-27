@@ -1,5 +1,5 @@
 ---
-source-hash: 18bdcf0d20caf5aabbea26b8ec6fcda7bc035763be0d7facfcec6e68cdb29d7d
+source-hash: 130c83b8f6cc63700c70288424f77bbacf7aa8e0dc8112b623117a5229a4b17c
 sidebar_position: 3
 title:  Astronomía
 unlistead: true
@@ -47,7 +47,7 @@ En Android, el plugin funciona con ambos motores de renderizado de mapa, pero of
 
 **Ir a:** *Plugin habilitado → <Translate android="true" ids="shared_string_menu,star_map"/>* 
 
-![Star map screen](@site/static/img/plugins/starwatcher/view_new_1.png)
+![Pantalla del Mapa estelar](@site/static/img/plugins/starwatcher/view_new_1.png)
 
 </TabItem>
 
@@ -55,7 +55,7 @@ En Android, el plugin funciona con ambos motores de renderizado de mapa, pero of
 
 **Ir a:** *Plugin habilitado → <Translate ios="true" ids="shared_string_menu,star_map"/>* 
 
-![Star map screen](@site/static/img/plugins/starwatcher/view_ios.webp)
+![Pantalla del Mapa estelar](@site/static/img/plugins/starwatcher/view_ios.webp)
 
 </TabItem>
 
@@ -65,11 +65,14 @@ La pantalla dedicada del **Mapa estelar** muestra un domo celeste interactivo co
 - [**Búsqueda**](#search) — abre la pantalla de Búsqueda donde puede buscar objetos celestes y explorar catálogos y categorías del cielo. 
 - **Hora y fecha** — le permite cambiar la fecha y hora para observar el cielo en diferentes momentos del pasado o futuro. Esto es útil para planificar observaciones, rastrear el movimiento de objetos o aprender cómo cambia el cielo con el tiempo. Si establece una fecha/hora personalizada, el chip muestra la fecha y hora completa, y aparece un botón de restablecimiento junto a él para regresar a la hora actual del sistema.
 - **<Translate android="true" ids="magnitude_filter"/>** — le permite limitar qué estrellas se muestran según su brillo. Use el deslizador para establecer el valor máximo de magnitud. Los valores más bajos muestran solo las estrellas más brillantes, mientras que los valores más altos revelan estrellas más tenues y objetos de cielo profundo. Esto ayuda a reducir el desorden visual o simular lo que es visible a simple vista.
+- **<Translate android="true" ids="zoomIn"/> / <Translate android="true" ids="zoomOut"/>** — cambian la escala del Mapa estelar de forma suave, un paso por cada toque. Los botones se muestran en tabletas Android y en Mac, en una columna sobre el botón <Translate android="true" ids="magnitude_filter"/>.
 - [**<Translate android="true" ids="astro_configure_view"/>**](#configure-view) — abre los ajustes de visualización que controlan cómo se muestran los objetos, trayectorias y líneas de referencia en el Mapa estelar.
 
-La pantalla renderiza el hemisferio completo del cielo sobre su ubicación, alineado con la dirección de la brújosa. El Mapa estelar se puede rotar manualmente arrastrando la pantalla. La rotación manual del Mapa estelar no afecta la orientación del mapa de la Tierra. El mapa de la Tierra siempre sigue el [modo de orientación del mapa](../map/interact-with-map.md#map-orientation-modes) seleccionado en sus ajustes. Toque los objetos celestes para obtener detalles como magnitud, horas de salida/puesta o trayectorias.
+La pantalla renderiza el hemisferio completo del cielo sobre su ubicación, alineado con la dirección de la brújula. El Mapa estelar se puede rotar manualmente arrastrando la pantalla. Después de un deslizamiento rápido, el cielo sigue moviéndose un momento y luego se ralentiza gradualmente. La rotación manual del Mapa estelar no afecta la orientación del mapa de la Tierra. El mapa de la Tierra siempre sigue el [modo de orientación del mapa](../map/interact-with-map.md#map-orientation-modes) seleccionado en sus ajustes. Toque los objetos celestes para obtener detalles como magnitud, horas de salida/puesta o trayectorias.
 
-El Mapa estelar también puede alinearse con la orientación de su dispositivo cuando el modo brújosa está habilitado. En este modo, el cielo rota según los sensores de acelerómetro y brújosa del dispositivo, lo que le permite explorar el cielo moviendo físicamente su teléfono.
+El Mapa estelar conserva su última vista. Cuando lo abre de nuevo, incluso después de reiniciar la aplicación, muestra la misma dirección y el mismo nivel de zoom que tenía al cerrarlo.
+
+El Mapa estelar también puede alinearse con la orientación de su dispositivo cuando el modo brújula está habilitado. En este modo, el cielo rota según los sensores de acelerómetro y brújula del dispositivo, lo que le permite explorar el cielo moviendo físicamente su teléfono.
 
 
 ## Menú contextual {#context-menu}
@@ -78,13 +81,13 @@ El Mapa estelar también puede alinearse con la orientación de su dispositivo c
 
 <TabItem value="android" label="Android">
 
-![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view.png)
+![Menú contextual](@site/static/img/plugins/starwatcher/context_menu_view.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Context Menu](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
+![Menú contextual](@site/static/img/plugins/starwatcher/context_menu_view_ios.webp)
 
 </TabItem>
 
@@ -102,13 +105,13 @@ El Menú contextual aparece en la parte inferior de la pantalla y contiene infor
 
 <TabItem value="android" label="Android">
 
-![Object Information](@site/static/img/plugins/starwatcher/object_view_new.png) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2.png)
+![Información del objeto](@site/static/img/plugins/starwatcher/object_view_new.png) ![Información del objeto](@site/static/img/plugins/starwatcher/object_view_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Object Information](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Object Information](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
+![Información del objeto](@site/static/img/plugins/starwatcher/object_view_ios.webp) ![Información del objeto](@site/static/img/plugins/starwatcher/object_view_2_ios.webp)
 
 </TabItem>
 
@@ -131,7 +134,7 @@ Estos valores se actualizan dinámicamente según la hora seleccionada y la ubic
 
 Debajo de los bloques de información rápida, el menú también puede incluir información adicional y recursos sobre el objeto:
 - <Translate android="true" ids="astro_offline_knowledge_base_title"/> – Permite descargar una base de datos extendida con artículos de Wikipedia y catálogos de cielo profundo para uso sin conexión. Después de descargar, la información detallada sobre objetos celestes se puede ver directamente en la aplicación sin una conexión a internet.
-- <Translate android="true" ids="read_on_wiki"/> – Abre el artículo de Wikipedia del objeto en el navegador.
+- <Translate android="true" ids="read_on_wiki"/> – Abre el artículo de Wikipedia del objeto. Si el artículo está disponible en otros idiomas, en el artículo aparece un botón de idioma con el código del idioma actual (por ejemplo, `En`). Tóquelo para elegir otro idioma de la lista.
 - <Translate android="true" ids="astro_designations"/> – Muestra nombres alternativos e identificadores de catálogo para el objeto (por ejemplo, HD, HIP, NGC). Esta sección está disponible para objetos que tienen entradas en catálogos, como estrellas y objetos de cielo profundo. Si el objeto no tiene un nombre común, una de estas designaciones se usa como nombre principal.
 - <Translate android="true" ids="online_photos"/> – Muestra fotos disponibles relacionadas con el objeto celeste seleccionado.
 
@@ -149,13 +152,13 @@ Debajo de la información del objeto, el Menú contextual proporciona varias acc
 
 <TabItem value="android" label="Android">
 
-![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_new.png)
+![Gráfico de visibilidad](@site/static/img/plugins/starwatcher/visibility_new.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Visibility Graph](@site/static/img/plugins/starwatcher/visibility_ios.webp)
+![Gráfico de visibilidad](@site/static/img/plugins/starwatcher/visibility_ios_new.webp)
 
 </TabItem>
 
@@ -168,7 +171,7 @@ El gráfico muestra la altitud del objeto por encima del horizonte con el tiempo
 - El eje horizontal representa el tiempo desde las 12:00 hasta las 12:00 del día siguiente.
 - El eje vertical representa la altitud desde −30° hasta +90°.
 
-La curva coloreada muestra la altitud del objeto a lo largo del día.
+La curva coloreada muestra la altitud del objeto a lo largo del día. Una flecha hacia arriba en el gráfico marca la salida del objeto y una flecha hacia abajo marca su puesta.
 
 El fondo del gráfico representa el estado del cielo y cambia dependiendo de la posición del Sol. Esto ayuda a identificar cuándo son posibles las observaciones.
 
@@ -183,14 +186,14 @@ El color de la trayectoria del objeto también refleja su altitud:
 - rojo – cerca del horizonte
 - púrpura – por debajo del horizonte (no visible)
 
-Un indicador móvil le permite explorar la posición del objeto en diferentes momentos. Cuando se mueve el indicador, se actualizan la hora actual, la altitud y los valores de azimut. El valor de azimut también incluye la dirección de la brújosa correspondiente (por ejemplo, 354° Az (N)).
+Un indicador móvil le permite explorar la posición del objeto en diferentes momentos. Cuando se mueve el indicador, se actualizan la hora actual, la altitud y los valores de azimut. El valor de azimut también incluye la dirección de la brújula correspondiente (por ejemplo, 354° Az (N)).
 
 Debajo del gráfico, se muestran eventos importantes de observación: 
 - **<Translate android="true" ids="astro_rise"/>** – cuando el objeto sale por encima del horizonte.
 - **<Translate android="true" ids="astro_culmination"/>** – cuando el objeto alcanza su altitud máxima.
 - **<Translate android="true" ids="astro_set"/>** – cuando el objeto se pone por debajo del horizonte. Si el objeto nunca sale o nunca se pone, los valores correspondientes se ocultan.
 
-El gráfico se abre con el indicador posicionado en la hora actual del sistema. La ubicación utilizada para los cálculos se muestra debajo del gráfico. La ubicación se muestra como un nombre de ciudad.
+El gráfico se abre con el indicador posicionado en la hora actual del sistema. La ubicación utilizada para los cálculos se muestra debajo del gráfico. La ubicación se muestra como un nombre de ciudad. En iOS, después del nombre de la ciudad aparece la zona horaria de las horas mostradas, por ejemplo, `Canberra · Kyiv time (UTC+2)`. Todas las horas de la pestaña Visibilidad se muestran en la zona horaria de su dispositivo. Si el reloj cambia durante el día mostrado, se muestran ambos desfases UTC, por ejemplo, `UTC+3 → UTC+2`.
 
 ### Horario de observación {#observation-schedule}
 
@@ -198,13 +201,13 @@ El gráfico se abre con el indicador posicionado en la hora actual del sistema. 
 
 <TabItem value="android" label="Android">
 
-![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_new.png)
+![Horario de observación](@site/static/img/plugins/starwatcher/schedule_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Observation Schedule](@site/static/img/plugins/starwatcher/schedule_ios.webp)
+![Horario de observación](@site/static/img/plugins/starwatcher/schedule_ios_new.webp)
 
 </TabItem>
 
@@ -220,6 +223,8 @@ La pestaña **Horario** muestra la visibilidad del objeto seleccionado para la s
 El mini gráfico muestra cuándo el objeto es visible durante el día y cómo cambia su altitud. La sección coloreada de la barra representa el período en que el objeto está por encima del horizonte. El mini gráfico representa el rango de tiempo desde las 00:00 hasta las 23:59 para el día seleccionado.
 
 Puede navegar entre semanas usando los botones de flecha en el encabezado del Horario. El botón de calendario le permite regresar a la semana actual.
+
+En iOS, la nota bajo el horario muestra la zona horaria de las horas mostradas, por ejemplo, `Kyiv time (UTC+3)`. Todas las horas de la pestaña Horario se muestran en la zona horaria de su dispositivo. Si el reloj cambia durante la semana mostrada, se muestran ambos desfases UTC.
 
 <!--
 ## Celestial Object Info {#celestial-object-info}
@@ -248,7 +253,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 <TabItem value="android" label="Android">
 
-![AR View](@site/static/img/plugins/starwatcher/ar_view_android.webp)
+![Vista AR](@site/static/img/plugins/starwatcher/ar_view_android.webp)
 
 **Ir a:** *Plugin habilitado → <Translate android="true" ids="shared_string_menu,star_map"/> → modo AR* 
 
@@ -256,7 +261,7 @@ This feature helps identify objects in real sky, plan observations, and learn as
 
 <TabItem value="ios" label="iOS">
 
-![AR View](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
+![Vista AR](@site/static/img/plugins/starwatcher/ar_view_ios.webp)
 
 **Ir a:** *Plugin habilitado → <Translate ios="true" ids="shared_string_menu,star_map"/> → modo AR*
 
@@ -267,12 +272,12 @@ This feature helps identify objects in real sky, plan observations, and learn as
 La capa de **Astronomía** funciona con la **cámara del dispositivo** para habilitar la **observación de estrellas en Realidad Aumentada (AR)**. Apunte la cámara de su teléfono al cielo nocturno real y vea estrellas, planetas, constelaciones, Sol/Luna superpuestos en tiempo real.
 
 **Cómo funciona la búsqueda de estrellas AR:**
-- La vista de **cámara en vivo** muestra el cielo real con superposiciones astronómicas transparentes alineadas al horizonte/brújosa.
+- La vista de **cámara en vivo** muestra el cielo real con superposiciones astronómicas transparentes alineadas al horizonte/brújula.
 - **Mueva la cámara** para escanear el cielo — los objetos se resaltan cuando aparecen en su campo de visión.
 - **Toque los objetos resaltados** para ver azimut, altitud, magnitud, horas de salida/puesta y enlace a Wikipedia.
-- Se requiere **calibración de brújosa** para una alineación precisa (mueva el teléfono en forma de 8 si es necesario).
+- Se requiere **calibración de brújula** para una alineación precisa (mueva el teléfono en forma de 8 si es necesario).
 
-El modo AR utiliza sensores del dispositivo (giroscopio, acelerómetro y brújosa) para alinear objetos celestes con el cielo real.
+El modo AR utiliza sensores del dispositivo (giroscopio, acelerómetro y brújula) para alinear objetos celestes con el cielo real.
 
 **Perfecto para:**
 - Identificar estrellas/planetas tenues invisibles a simple vista.
@@ -286,13 +291,13 @@ El modo AR utiliza sensores del dispositivo (giroscopio, acelerómetro y brújos
 
 <TabItem value="android" label="Android">
 
-![Configure View](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configure View](@site/static/img/plugins/starwatcher/full_state.png)
+![Configurar vista](@site/static/img/plugins/starwatcher/half_state_new.png) ![Configurar vista](@site/static/img/plugins/starwatcher/full_state.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configure View](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/full_state_ios.webp)
+![Configurar vista](@site/static/img/plugins/starwatcher/half_state_ios.webp) ![Configurar vista](@site/static/img/plugins/starwatcher/full_state_ios.webp)
 
 </TabItem>
 
@@ -308,13 +313,13 @@ Para abrir Configurar vista, toque el botón Configurar vista en la esquina infe
 
 <TabItem value="android" label="Android">
 
-![Configure View](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_new.png)
+![Configurar vista](@site/static/img/plugins/starwatcher/view_with_map_new.png) ![Configurar vista](@site/static/img/plugins/starwatcher/red_filter_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configure View](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
+![Configurar vista](@site/static/img/plugins/starwatcher/view_with_map_ios.webp) ![Configurar vista](@site/static/img/plugins/starwatcher/red_filter_ios.webp)
 
 </TabItem>
 
@@ -332,13 +337,13 @@ Esta sección controla los modos principales de visualización del Mapa estelar.
 
 <TabItem value="android" label="Android">
 
-![Configure View](@site/static/img/plugins/starwatcher/solar_system.png) ![Configure View](@site/static/img/plugins/starwatcher/constellations.png)
+![Configurar vista](@site/static/img/plugins/starwatcher/solar_system.png) ![Configurar vista](@site/static/img/plugins/starwatcher/constellations.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Configure View](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configure View](@site/static/img/plugins/starwatcher/constellations_ios.webp)
+![Configurar vista](@site/static/img/plugins/starwatcher/solar_system_ios.webp) ![Configurar vista](@site/static/img/plugins/starwatcher/constellations_ios.webp)
 
 </TabItem>
 
@@ -405,13 +410,13 @@ All astronomical data appears as map overlays, visible at zoom scales 5-15. Laye
 
 <TabItem value="android" label="Android">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen.webp)
+![Buscar](@site/static/img/plugins/starwatcher/explore_screen.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Search](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
+![Buscar](@site/static/img/plugins/starwatcher/explore_screen_ios.webp)
 
 </TabItem>
 
@@ -433,7 +438,7 @@ La sección Categorías le permite explorar objetos por tipo: Sistema solar, Con
 
 ### Eclipse solar (solo Android) {#solar-eclipse}
 
-![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Solar Eclipse](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
+![Eclipse solar](@site/static/img/plugins/starwatcher/solar_eclipse_andr.webp) ![Eclipse solar](@site/static/img/plugins/starwatcher/solar_eclipse_path_andr.webp)
 
 El **Explorador de eclipses solares** permite explorar eclipses solares pasados y futuros en todo el mundo. Combina el Mapa estelar con una línea de tiempo interactiva y visualización de mapa para mostrar cómo se desarrolla un eclipse en diferentes ubicaciones.
 
@@ -452,7 +457,7 @@ Nunca mire directamente al Sol sin la protección adecuada para la visualizació
 
 ### Eclipse lunar (solo Android) {#lunar-eclipse}
 
-![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Lunar Eclipse](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
+![Eclipse lunar](@site/static/img/plugins/starwatcher/lunar_eclipse_andr.webp) ![Eclipse lunar](@site/static/img/plugins/starwatcher/lunar_eclipse_path_andr.webp)
 
 El **Explorador de eclipses lunares** permite explorar eclipses lunares en todo el mundo y observar cómo la Luna pasa a través de la sombra de la Tierra.
 
@@ -476,13 +481,13 @@ Los colores y el brillo de las sombras son esquemáticos y solo están pensados 
 
 <TabItem value="android" label="Android">
 
-![Sorting](@site/static/img/plugins/starwatcher/sorting.png) ![Filters](@site/static/img/plugins/starwatcher/filters.png)
+![Ordenación](@site/static/img/plugins/starwatcher/sorting.png) ![Filtros](@site/static/img/plugins/starwatcher/filters.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Sorting](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filters](@site/static/img/plugins/starwatcher/filters_ios.webp)
+![Ordenación](@site/static/img/plugins/starwatcher/sorting_ios.webp) ![Filtros](@site/static/img/plugins/starwatcher/filters_ios.webp)
 
 </TabItem>
 
@@ -516,13 +521,13 @@ Puede filtrar resultados por tipo de objeto. Seleccionar categorías específica
 
 <TabItem value="android" label="Android">
 
-![My Data](@site/static/img/plugins/starwatcher/my_data_new.png)
+![Mis datos](@site/static/img/plugins/starwatcher/my_data_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![My Data](@site/static/img/plugins/starwatcher/my_data_ios.webp)
+![Mis datos](@site/static/img/plugins/starwatcher/my_data_ios.webp)
 
 </TabItem>
 
@@ -542,13 +547,13 @@ Seleccionar un elemento abre el menú contextual del objeto.
 
 <TabItem value="android" label="Android">
 
-![Catalogs](@site/static/img/plugins/starwatcher/catalogs_new.png)
+![Catálogos](@site/static/img/plugins/starwatcher/catalogs_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Catalogs](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
+![Catálogos](@site/static/img/plugins/starwatcher/catalogs_ios.webp)
 
 </TabItem>
 

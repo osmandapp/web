@@ -1,5 +1,5 @@
 ---
-source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
+source-hash: a47a5483bfc64564296e520a3048e1d0b106bcac34bd4fc7262a7c22c21b7c3c
 sidebar_position: 3
 title: الإعدادات العامة
 ---
@@ -71,7 +71,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ### ملف CarPlay الشخصي {#carplay-profile}
 
-:::caution iOS ONLY
+:::caution iOS فقط
 هذه الميزة متاحة لإصدار iOS من تطبيق OsmAnd.
 :::
 
@@ -206,7 +206,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-إعداد **<Translate android="true" ids="analytics_pref_title"/>** (*أندرويد*) أو **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) يسمح لك باختيار ما إذا كنت تريد تقديم بيانات مجهولة حول *الخرائط المحملة* و*الشاشات المزارة* (*أندرويد*).  
+إعداد **<Translate android="true" ids="analytics_pref_title"/>** (*أندرويد*) أو **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) يسمح لك باختيار ما إذا كنت تريد تقديم بيانات مجهولة حول *الخرائط المحملة* و*الشاشات المزارة* (*أندرويد*). على iOS، يتحكم هذا الإعداد أيضًا في ما إذا كان التطبيق يرسل معلومات عن حملة Apple Ads التي أدت إلى تثبيت التطبيق.  
 
 :::note
 لا يتم جمع بيانات حول موقعك أو الأماكن التي تتصفحها على الخريطة.
@@ -224,7 +224,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 - يُستخدم UUID عشوائي لتحميل الخرائط دون اتصال من خوادم OsmAnd للتحكم في الاستخدام الرشيد لموارد الخادم، وتوقع استخدام الحركة المرورية، وتقديم تقارير شهرية عامة حول تحميل الخرائط.
 - يتغير UUID كل 3 أشهر.  
-- بدءًا من إصدار OsmAnd 4.3، يمكنك تعطيل جمع بيانات المستخدم عند استخدام تطبيق OsmAnd. ثم لن يتم إرسال UUID مع أي طلب تحميل.  
+- بدءًا من إصدار OsmAnd 4.3، يمكنك تعطيل جمع بيانات المستخدم عند استخدام تطبيق OsmAnd. ثم لن يتم إرسال UUID مع أي طلب تحميل.
+- بالنسبة إلى عمليات التثبيت من Google Play، يرسل التطبيق أيضًا الحملة الإعلانية التي أدت إلى التثبيت (مصدر الحملة ووسيلتها واسمها، وما إذا كان التثبيت قد جاء من نقرة على إعلان) مع طلبات التحقق من التحديثات وطلبات الشراء. عند تعطيل إرسال UUID، لا تتم قراءة هذه المعلومات ولا إرسالها.
 - يمكنك قراءة مزيد من المعلومات في [شروط الاستخدام (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
 
 

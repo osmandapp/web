@@ -1,7 +1,7 @@
 ---
-source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
+source-hash: 54463b26bbd3157bf65aa4c615c7c5d58ded9f5e2adbff7977057bafa3b8a30c
 sidebar_position: 4
-title:  Vehicle parameters
+title:  Parámetros del vehículo
 ---
 
 import Tabs from '@theme/Tabs';
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Ajustes de navegación Android](@site/static/img/navigation/vehicle-parameters_andr.webp)
 
 </TabItem>
 
@@ -32,7 +32,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_ios.png)
 
 </TabItem>
 
@@ -40,7 +40,7 @@ Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,appl
 
 Para un cálculo óptimo de la ruta en OsmAnd, debe tener en cuenta los siguientes parámetros del vehículo:
 
-1. Establezca la [*Velocidad por defecto* o *Velocidades en carretera*](#road-speeds), como la [velocidad mínima y máxima](#road-speeds) del vehículo. Esto ayudará a la aplicación a determinar el tiempo necesario para completar la ruta y le permitirá elegir la mejor ruta, teniendo en cuenta los límites de velocidad en los diferentes segmentos de la carretera.
+1. Establezca la [*Velocidad por defecto*](#default-speed) y el [*Rango de velocidad*](#speed-range): la velocidad mínima y máxima del vehículo. Esto ayudará a la aplicación a determinar el tiempo necesario para completar la ruta y le permitirá elegir la mejor ruta, teniendo en cuenta los límites de velocidad en los diferentes segmentos de la carretera.
 2. Especifique el [*tipo*](#fuel-used-by-motor) de combustible utilizado por el motor. Esto permitirá a la aplicación estimar las emisiones de CO2.
 3. Introduzca la [*capacidad de su depósito*](#fuel-tank-capacity) para realizar un seguimiento preciso del nivel y el consumo de combustible.
 4. Defina los [*parámetros de tamaño y peso*](#size-parameters) de su vehículo, que pueden ayudar a la aplicación a calcular la ruta óptima y evitar obstáculos en la carretera debidos a restricciones.
@@ -56,7 +56,7 @@ La configuración correcta de los parámetros en la aplicación OsmAnd le ayudar
 
 Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_sizes2_andr.png)
 
 </TabItem>
 
@@ -64,7 +64,7 @@ Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routi
 
 Ir a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,routing_settings_2"/>*  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_sizes2_ios.png)
 
 </TabItem>
 
@@ -82,33 +82,33 @@ Los parámetros del vehículo afectan a la navegación y a la construcción de l
 
 **1.** [**<Translate android="true" ids="routing_attr_weight_name"/> límite**](https://wiki.openstreetmap.org/wiki/Key:maxweight) - <Translate android="true" ids="weight_limit_description"/> El parámetro Peso sólo está disponible en tipos de navegación como [*Coche, Camión* y *Motocicleta*](../../navigation/routing/car-based-routing.md).  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_weight_andr.png)
 
 **2.**  [**<Translate android="true" ids="routing_attr_height_name"/> límite**](https://wiki.openstreetmap.org/wiki/Key:maxheight) - <Translate android="true" ids="height_limit_description"/> El parámetro Altura sólo está disponible en tipos de navegación como *[Coche, Camión, Motocicleta](../../navigation/routing/car-based-routing.md)* y *[Barco](../../navigation/routing/boat-navigation.md)*.  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_height_andr.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_height_boat_andr.png)  
 
 **3.** [**<Translate android="true" ids="routing_attr_length_name"/> límite**](https://wiki.openstreetmap.org/wiki/Key:maxlength) - <Translate android="true" ids="lenght_limit_description"/> El parámetro Longitud sólo está disponible en tipos de navegación como [*Coche, Camión* y *Motocicleta*](../../navigation/routing/car-based-routing.md).  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_length_andr.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_length_andr.png)
 
 **4.** [**<Translate android="true" ids="routing_attr_width_name"/> límite**](https://wiki.openstreetmap.org/wiki/Key:maxwidth) - <Translate android="true" ids="width_limit_description"/> El parámetro Anchura sólo está disponible en tipos de navegación como *[Coche, Camión, Motocicleta](../../navigation/routing/car-based-routing.md)* y *[Barco](../../navigation/routing/boat-navigation.md)*.  
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_andr.png)
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_width_andr.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_width_boat_andr.png)
 
 En Android, este parámetro también está disponible para *[Perfiles de ciclismo](../../navigation/routing/bicycle-based-routing.md)* para ayudar a evitar caminos ciclistas estrechos.
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_width_bicycle.png)
 
 **5.** [**Límite de carga máxima por eje**](https://wiki.openstreetmap.org/wiki/Key:maxaxleload) - Proporcione la carga máxima por eje de su vehículo para evitar carreteras y puentes con restricciones de peso por eje. Este parámetro sólo está disponible en tipos de navegación como [*Camión*](../../navigation/routing/car-based-routing.md).  
 
-![Navigation Settings Android](@site/static/img/navigation/max_axle_load.png)
+![Ajustes de navegación Android](@site/static/img/navigation/max_axle_load.png)
 
 **6.** [**Peso máximo con carga completa**](https://wiki.openstreetmap.org/wiki/Key:maxweightrating) - Proporcione el peso total máximo de su vehículo cuando está completamente cargado para evitar carreteras y puentes con restricciones de peso general. Este parámetro sólo está disponible en tipos de navegación como [*Camión*](../../navigation/routing/car-based-routing.md).  
 
-![Navigation Settings Android](@site/static/img/navigation/max_weight_at_full_load.png)
+![Ajustes de navegación Android](@site/static/img/navigation/max_weight_at_full_load.png)
 
 Los límites de los parámetros del vehículo pueden ser importantes para la navegación y la seguridad vial. Algunas de estas restricciones pueden ser:  
 
@@ -126,13 +126,13 @@ Los límites de los parámetros del vehículo pueden ser importantes para la nav
 
 <TabItem value="android" label="Android">
 
-![Navigation route Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
+![Ruta de navegación Android](@site/static/img/navigation/route/navigation_settings_fuel_motor_andr_new.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation route iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
+![Ruta de navegación iOS](@site/static/img/navigation/route/navigation_settings_fuel_motor_ios_new.png)
 
 </TabItem>
 
@@ -152,13 +152,13 @@ El ajuste **Combustible utilizado por el motor** sólo está disponible en la na
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_tank_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigation Settings Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
+![Ajustes de navegación Android](@site/static/img/navigation/navigation_settings_tank_ios.png)
 
 </TabItem>
 
@@ -179,42 +179,58 @@ El ajuste **Capacidad del depósito de combustible** sólo está disponible en l
 
 <TabItem value="android" label="Android">
 
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+Ir a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,vehicle_parameters,travel_speed"/>*
 
-</TabItem>
+![Velocidad de viaje Android](@site/static/img/navigation/navigation_settings_travel_speed_andr.webp)
 
-<TabItem value="ios" label="iOS">
-
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds_ios.png)
-
-</TabItem>
-
-</Tabs>  
+La pantalla *Velocidad de viaje* contiene los ajustes *Velocidad por defecto*, *Rango de velocidad* y *Hora estimada de llegada* del perfil. Los cambios se guardan inmediatamente. El botón *Restablecer valores por defecto* de la barra superior restaura los valores por defecto de todos los ajustes de la pantalla.
 
 La **Velocidad por defecto** es la velocidad de movimiento por defecto para este modo de transporte ([Límites de velocidad por defecto](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Para los perfiles *A pie*, *Paseo a caballo* y *Ciclismo*, en pequeños incrementos equivalentes a 0,1 km/h (mph) ([Unidades y formatos](https://osmand.net/docs/user/personal/profiles#units--formats)), y para los demás perfiles, en incrementos equivalentes a 1 km/h (1 mph). Se utiliza:
 - Para estimar el [tiempo de ruta](../../widgets/nav-widgets.md#time-to-intermediate) cuando la velocidad no puede determinarse a partir de las carreteras, como en la [Navegación GPX](../setup/gpx-navigation.md), [Rutas de esquí](../routing/ski-routing.md), [Rutas en barco](../routing/boat-navigation.md), [Peatón](../routing/pedestrian-routing.md) y otros perfiles similares.
 - Para determinar cuándo se activan los [anuncios de voz](../guidance/voice-navigation.md).
 - Para determinar la hora estimada de llegada a los marcadores del mapa mediante una navegación en línea recta si aún no se ha calculado la velocidad media.
 
+La *Velocidad por defecto* solo puede establecerse dentro del [*Rango de velocidad*](#speed-range): al reducir el rango, la *Velocidad por defecto* se desplaza con él.
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Ajustes de navegación](@site/static/img/navigation/navigation_settings_speeds_ios.png)
+
+La **Velocidad por defecto** es la velocidad de movimiento por defecto para este modo de transporte ([Límites de velocidad por defecto](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Para los perfiles *A pie*, *Paseo a caballo* y *Ciclismo*, en pequeños incrementos equivalentes a 0,1 km/h (mph) ([Unidades y formatos](https://osmand.net/docs/user/personal/profiles#units--formats)), y para los demás perfiles, en incrementos equivalentes a 1 km/h (1 mph). Se utiliza:
+- Para estimar el [tiempo de ruta](../../widgets/nav-widgets.md#time-to-intermediate) cuando la velocidad no puede determinarse a partir de las carreteras, como en la [Navegación GPX](../setup/gpx-navigation.md), [Rutas de esquí](../routing/ski-routing.md), [Rutas en barco](../routing/boat-navigation.md), [Peatón](../routing/pedestrian-routing.md) y otros perfiles similares.
+- Para determinar cuándo se activan los [anuncios de voz](../guidance/voice-navigation.md).
+- Para determinar la hora estimada de llegada a los marcadores del mapa mediante una navegación en línea recta si aún no se ha calculado la velocidad media.
+
+</TabItem>
+
+</Tabs>
 
 
- Se utiliza para calcular la hora de llegada y determinar la ruta óptima en función de la velocidad de movimiento que la aplicación considera típica. Por ejemplo, en coche, transporte público, a pie o la velocidad que usted establezca manualmente.
+### Rango de velocidad {#speed-range}
 
+<InfoAndroidOnly />
 
-### Velocidades en carretera {#road-speeds}
-
-
-![Navigation Settings](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-Para algunos tipos de navegación se puede establecer la velocidad mínima y máxima permitida. Si se establece, el motor de enrutamiento asume que el vehículo o el modo de transporte no se moverá más rápido que el límite y no se moverá más lento que la velocidad mínima. 
+Para algunos tipos de navegación se puede establecer la velocidad mínima y máxima permitida. Ambos valores se establecen con un único control deslizante de dos tiradores. Si se establecen, el motor de enrutamiento asume que el vehículo o el modo de transporte no se moverá más rápido que la velocidad máxima y no se moverá más lento que la velocidad mínima. El *Rango de velocidad* se utiliza tanto para el cálculo de la ruta como para la hora de llegada.
 Por ejemplo, permite crear una ruta **eficiente en combustible** en la que el consumo de combustible es óptimo a la **velocidad máxima** establecida y el motor encontrará una ruta más corta evitando carreteras más largas pero más rápidas.
 
-- **Velocidad mínima**  
-    El ajuste establece la velocidad mínima de conducción para todos los tipos de carretera de la ruta. Aumenta la prioridad para las carreteras con una velocidad recomendada inferior a la velocidad mínima.  
-- **Velocidad máxima**  
-    El ajuste establece la velocidad máxima de conducción y disminuye la prioridad para las carreteras con una velocidad posible superior a la máxima.
+- **Velocidad mínima** — establece la velocidad mínima de conducción para todos los tipos de carretera de la ruta. Aumenta la prioridad para las carreteras con una velocidad recomendada inferior a la velocidad mínima.
+- **Velocidad máxima** — establece la velocidad máxima de conducción y disminuye la prioridad para las carreteras con una velocidad posible superior a la máxima.
+
+El *Rango de velocidad* no está disponible para los perfiles con enrutamiento en línea recta, por ejemplo, *Aeronave*.
 
 
+### Hora estimada de llegada {#estimated-arrival-time}
+
+<InfoAndroidOnly />
+
+Los ajustes de *Hora estimada de llegada* definen cómo calcula OsmAnd la hora de llegada durante la navegación.
+
+- **Adaptar a mi velocidad** — desactivado por defecto. Cuando el ajuste está desactivado, la hora de llegada se obtiene de la velocidad prevista en cada carretera de la ruta. Cuando está activado, OsmAnd divide la distancia restante por su velocidad media durante el *Intervalo* seleccionado. Solo se cuenta el movimiento durante la navegación, las paradas se omiten. Justo después de iniciar la navegación, la hora de llegada combina la estimación de la ruta con su velocidad media hasta que se haya movido durante todo el *Intervalo*.
+- **Intervalo** — el periodo durante el cual se mide su velocidad media, de 15 segundos a 60 minutos. El valor por defecto es de 15 minutos. El ajuste está disponible cuando *Adaptar a mi velocidad* está activado.
+
+La hora de llegada adaptada se muestra en los widgets [*Tiempo hasta el destino*](../../widgets/nav-widgets.md#time-to-destination) y [*Tiempo hasta el intermedio*](../../widgets/nav-widgets.md#time-to-intermediate), en la notificación de navegación y en [Android Auto](../auto-car.md). El tiempo hasta el próximo giro y las indicaciones de voz no se ven afectados.
 
 
 ## Artículos relacionados {#related-articles}

@@ -7,6 +7,7 @@ import TracksManager, {
     prepareDesc,
 } from '../../../manager/track/TracksManager';
 import { toHHMMSS } from '../../../util/Utils';
+import { applyAnalysisAnswer } from '../../../context/TracksRoutingCache';
 import {
     Box,
     CircularProgress,
@@ -93,7 +94,7 @@ export default function GeneralInfo({ width }) {
             const track = { ...ctx.selectedGpxFile };
             // mark now as already-implied (to skip dupe effects)
             ctx.setSelectedGpxFile((o) => ({ ...o, isSrtmApplied: true }));
-            applySrtmElevation({ track, setLoading }).then((success) => ctx.setUnverifiedGpxFile(success));
+            applySrtmElevation({ track, setLoading }).then((success) => applyAnalysisAnswer(ctx, success));
         }
     }, [ctx.selectedGpxFile.name, ctx.selectedGpxFile.analysis]);
 
@@ -326,7 +327,7 @@ export default function GeneralInfo({ width }) {
                                                     ).then((track) => {
                                                         if (track) {
                                                             // getSRTMEle(track); // set by distinct Effect
-                                                            ctx.setUnverifiedGpxFile(() => ({ ...track }));
+                                                            applyAnalysisAnswer(ctx, track);
                                                         }
                                                     });
                                                 }}

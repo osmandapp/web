@@ -1,5 +1,5 @@
 ---
-source-hash: 69a15a23cc725f22e2dd8962fb91debccdaa86603e6f39ec18ec3c598315a9c5
+source-hash: 863d3df7ebcb8f1a0a362a1a56c188f42daa47139cbfa9d9825346e82b510df5
 sidebar_position: 6
 title:  المستشعرات الخارجية
 ---
@@ -87,7 +87,8 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - على **iOS**، يتم دعم مستشعرات **Bluetooth Low Energy (BLE)** فقط بسبب قيود العتاد. مستشعرات ANT+ غير متاحة.
 - على **أندرويد**، قد يتم دعم كل من مستشعرات BLE و ANT+ حسب جهازك. راجع [دليل توافق ANT+](https://www.thisisant.com/consumer/ant-101/ant-in-phones) لمزيد من التفاصيل.
 - سيظهر **إشعار منبثق** في كل مرة يتصل فيها مستشعر أو ينفصل.
-- **مستشعرات طاقة الدراجة** متاحة فقط على أندرويد عبر ANT+.
+- **مستشعرات طاقة الدراجة** متاحة فقط على أندرويد عبر ANT+ و BLE.
+- على **أندرويد**، يظهر المستشعر الذي يرسل عدة أنواع من البيانات (على سبيل المثال، جهاز قياس معدل ضربات القلب الذي يقيس أيضًا سرعة الجري والإيقاع، أو سماعات الأذن مع معدل ضربات القلب ودرجة الحرارة) في القائمة كجهاز واحد. يقرأ OsmAnd جميع أنواع البيانات المدعومة منه.
 
 
 ## إعدادات المستشعر {#sensor-settings}
@@ -123,7 +124,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - **اتصال / قطع الاتصال** – تبديل حالة الاتصال.
 - **إعادة تسمية** – تعيين اسم مخصص للمستشعر.
 - **نسيان المستشعر** – إزالة المستشعر من القائمة (يمكن إعادة إقرانه لاحقًا).
-- **الإعدادات** – فتح شاشة تفاصيل المستشعر (نوع المستشعر، القيم، مستوى البطارية، إعداد محيط العجلة).
+- **الإعدادات** – فتح شاشة تفاصيل المستشعر (نوع المستشعر، القيم، مستوى البطارية، إعداد محيط العجلة). على **أندرويد**، بالنسبة للمستشعر الذي يرسل عدة أنواع من البيانات، تعرض الشاشة جميع قيمه.
 
 ***ملاحظات:***
 
@@ -139,7 +140,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*
 
-![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.png)  ![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.png)  
+![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_1.webp)  ![المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_trip_recording_2.webp)  
 
 </TabItem>
 
@@ -147,7 +148,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,shared_string_external"/>*
 
-![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.png)  ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.png)  
+![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_5_ios.webp)  ![ملحق المستشعرات الخارجية](@site/static/img/plugins/sensors/external_sensors_pair_sensors_6_ios.webp)  
 
 </TabItem>
 
@@ -157,7 +158,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 1. تأكد من تمكين **ملحق المستشعرات الخارجية**.
 2. اذهب إلى *<Translate android="true" ids="shared_string_menu,plugins_menu_group,record_plugin_name,shared_string_settings,data_settings,external_sensor_widgets"/>*.
-3. حدد أنواع المستشعرات التي تريد تسجيلها (مثل الإيقاع، معدل ضربات القلب، السرعة).
+3. لكل نوع بيانات تريد تسجيله (مثل الإيقاع، معدل ضربات القلب، السرعة)، حدد المستشعر الذي سيُستخدم كمصدر للبيانات.
 4. ابدأ تسجيل رحلتك. سيقوم OsmAnd بحفظ بيانات المستشعر المحددة في مسار GPX.
 
 ***ملاحظات:***
@@ -165,6 +166,9 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 - تُعرض قائمة أنواع المستشعرات المتاحة حتى لو لم تكن هناك مستشعرات متصلة.
 - إذا لم يتم إقران أي مستشعرات بعد، فاستخدم زر [إقران مستشعر جديد](#pair-new-sensor) في إعدادات الملحقات.
 - بيانات مستوى البطارية **لا** يتم تسجيلها في ملفات GPX وليست متاحة للتحليل على الخريطة.
+- على **أندرويد**، يمكن تحديد مستشعر واحد يرسل عدة أنواع من البيانات كمصدر لكل نوع منها.
+- المصدر الافتراضي لكل نوع بيانات هو *أي مستشعر متصل*. يسجل OsmAnd البيانات من مستشعر متصل من هذا النوع. لإيقاف تسجيل نوع بيانات، حدد *لا شيء*.
+- على **أندرويد**، يظهر اسم المستشعر المقترن المطابق بجانب *أي مستشعر متصل*. إذا نسيت مستشعرًا محددًا، يعود المصدر إلى *أي مستشعر متصل*.
 
 :::note توافق التنسيق
 يستخدم OsmAnd [تسجيل المسار](../plugins/trip-recording.md#recorded-gpx-file) لتضمين بيانات المستشعر في ملفات GPX. هذا التنسيق متوافق مع العديد من تطبيقات الرياضة والتدريب (مثل Strava، Runkeeper).
@@ -235,7 +239,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 1. **<Translate android="true" ids="map_widget_ant_heart_rate"/>** – يعرض معدل ضربات القلب في الوقت الفعلي من جهاز مراقبة مقترن.
 2. **<Translate android="true" ids="map_widget_ant_bicycle_power"/>** (*لأندرويد فقط*) – يعرض طاقة الدواسة الحالية بالواط.
-3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – يعرض عدد دورات الدواسة في الدقيقة.
+3. **<Translate android="true" ids="map_widget_ant_bicycle_cadence"/>** – يعرض عدد دورات الدواسة في الدقيقة. يمكن أن تأتي بيانات الإيقاع من مستشعر إيقاع أو من مستشعر طاقة الدراجة الذي يرسل الإيقاع.
 4. **<Translate android="true" ids="map_widget_ant_bicycle_speed"/>** – سرعة ركوب الدراجة الحالية.
 5. **<Translate android="true" ids="map_widget_ant_bicycle_dist"/>** – المسافة الإجمالية التي قاسها المستشعر.
 6. **<Translate android="true" ids="external_device_characteristic_temperature"/>** – درجة الحرارة المحيطة الحالية.
@@ -266,7 +270,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 </Tabs>
 
-بشكل افتراضي، يعرض الودجت أول مستشعر متصل حاليًا من هذا النوع. إذا كنت ترغب في استخدام مستشعر معين، فانقر على **مصدر البيانات** واختر من قائمة المستشعرات المتصلة.
+بشكل افتراضي، يعرض الودجت أول مستشعر متصل حاليًا من هذا النوع. إذا كنت ترغب في استخدام مستشعر معين، فانقر على **مصدر البيانات** واختر من قائمة المستشعرات المتصلة. على **أندرويد**، يتوفر المستشعر الذي يرسل عدة أنواع من البيانات كمصدر في كل ودجت مطابق، على سبيل المثال، *معدل ضربات القلب* و*سرعة الدراجة* و*إيقاع الدراجة*.
 
 على **iOS**، يمكنك اختيار القيمة التي سيتم عرضها في الودجت:  
 

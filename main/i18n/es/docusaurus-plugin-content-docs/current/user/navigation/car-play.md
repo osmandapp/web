@@ -1,5 +1,5 @@
 ---
-source-hash: 16f4dc10b7b9cda1b6a3e74ce8cf82ba6501dcdf68775cf25c053ed7a48058e8
+source-hash: 89871f7189df3be0f44150ef057c8d28471823b1cd845448b1ca78cf1747a19a
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -18,10 +18,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 ## Descripción general {#overview}
 
-:::tip Purchase
-*CarPlay* es una [función de pago](../purchases/index.md).  
-:::
-
 Conducir un vehículo y usar su teléfono o tableta al mismo tiempo suele estar prohibido por ley por razones de seguridad. [***CarPlay***](https://www.apple.com/ios/carplay/) es un software que proporciona una versión adaptada y optimizada de la aplicación OsmAnd para un uso seguro mientras se conduce, haciendo más fácil y seguro el acceso a las funciones de navegación de la aplicación.
 
 Para usar *CarPlay* en la pantalla de su vehículo, siga estos pasos:
@@ -38,7 +34,7 @@ La posición de los botones y el widget de navegación en *CarPlay* coincide con
 
 ### Pantalla de conexión {#connection-screen}
 
-![CarPlay](@site/static/img/navigation/auto-car/car_play_connect_screen.png)
+![Pantalla de CarPlay](@site/static/img/navigation/auto-car/car_play_connect_screen.png)
 
 Mientras su dispositivo está conectado a *CarPlay*, el mapa en la pantalla de la aplicación está bloqueado. Esta es una característica de seguridad intencionada para garantizar que la navegación se controle exclusivamente desde la pantalla del coche, minimizando las distracciones mientras se conduce. Consulte las [preguntas comunes](#common-issues-and-solutions) sobre la pantalla de conexión.
 
@@ -61,7 +57,6 @@ Mientras su dispositivo está conectado a *CarPlay*, el mapa en la pantalla de l
     - Un perfil conveniente para usar *CarPlay* puede ser *Conducción*, y el tipo de enrutamiento puede ser [Enrutamiento para coche](../navigation/routing/car-based-routing.md).
     - OsmAnd tiene un elemento separado [Perfil de CarPlay](#carplay-profile) para un acceso rápido a la lista de perfiles disponibles para conectarse a *CarPlay*.
 - Para que OsmAnd funcione, [conecte su dispositivo iOS](#overview) al sistema multimedia del vehículo. Para obtener más información sobre cómo conectar y configurar su dispositivo, puede visitar el sitio web de [**CarPlay**](https://support.apple.com/en-us/HT205634).
-- Necesita tener una de las [versiones de pago o suscripción de OsmAnd](../purchases/ios#free-and-paid-features). Compruébelo aquí *Menú → Ajustes → Compras*.
 - Una vez conectado, puede establecer un destino e iniciar la navegación de OsmAnd en *CarPlay*.  
 
 :::note
@@ -72,8 +67,6 @@ Es posible que necesite una conexión a Internet para usar OsmAnd en *CarPlay*. 
 ### Iniciar navegación {#start-navigation}
 
 ![Pantalla de CarPlay](@site/static/img/navigation/auto-car/car-play-start(1).png)  
-
-Para usar la versión de iOS de la aplicación OsmAnd en *CarPlay*, debe comprar una [versión de pago de la aplicación o suscribirse](../purchases/ios#free-and-paid-features).  
 
 1. Para crear una ruta, debe elegir el [punto final de la ruta](#select-a-route-endpoint) en la *pantalla de CarPlay* o en la [aplicación OsmAnd](../navigation/setup/route-navigation.md).
 2. Puede usar [indicaciones de voz](#voice-prompts) para escuchar las direcciones o los mensajes sobre problemas en la carretera.  
@@ -232,7 +225,7 @@ Para configurar las indicaciones de voz según el perfil seleccionado, debe hace
 
 ### Alertas de navegación {#navigation-alerts}
 
-![Missing Alert](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Private Alert](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
+![Alerta faltante](@site/static/img/navigation/auto-car/missing_alert_carplay.webp) ![Alerta privada](@site/static/img/navigation/auto-car/private_alert_carplay.webp)
 
 Las alertas útiles se muestran automáticamente antes de iniciar la navegación cuando se requiere una acción adicional para calcular la ruta. Estas alertas le ayudan a resolver problemas de enrutamiento antes de que comience la navegación.
 
@@ -275,7 +268,7 @@ El widget **Velocímetro** es un elemento de interfaz integrado que muestra la *
 
 ### Apariencia del mapa (3D) {#map-appearance-3d}
 
-![Car Play](@site/static/img/navigation/auto-car/car_play_3.png)
+![Pantalla de CarPlay](@site/static/img/navigation/auto-car/car_play_3.png)
 
 La aplicación OsmAnd le permite usar la vista de mapa 3D en la *pantalla de CarPlay* para mostrar su ruta y navegación.
 
@@ -285,7 +278,7 @@ La aplicación OsmAnd le permite usar la vista de mapa 3D en la *pantalla de Car
 
 ### Panel multifunción {#multifunction-dashboard}
 
-![Car Play](@site/static/img/navigation/auto-car/car_play_4.png)
+![Pantalla de CarPlay](@site/static/img/navigation/auto-car/car_play_4.png)
 
 La aplicación OsmAnd se puede abrir y usar para navegar en *CarPlay* en la pantalla del sistema multimedia del vehículo simultáneamente con aplicaciones de música, mensajes u otras notificaciones.
 
@@ -325,15 +318,29 @@ También puede habilitar o deshabilitar el anuncio de mensajes directamente en *
 
 ![Modo del mapa](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Modo del mapa](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-OsmAnd le permite configurar la apariencia del mapa para CarPlay de forma independiente del modo de mapa en su teléfono. Para abrir esta configuración, toque el botón *Ajustes* en la barra de navegación de CarPlay y luego seleccione *Modo del mapa*. El modo actual se muestra como el texto de detalle de la fila.
+OsmAnd le permite configurar la apariencia del mapa para CarPlay de forma independiente del modo de mapa en su teléfono. Para abrir esta configuración, toque el botón *Ajustes* (icono de engranaje junto al botón de desplazamiento) en la barra de navegación de CarPlay y luego seleccione *Modo del mapa*. El botón está disponible al explorar el mapa, en la vista previa del viaje y durante la navegación. El modo seleccionado se muestra junto al elemento *Modo del mapa*.
 
 Puede elegir uno de los siguientes modos de apariencia:
-- **Apariencia del vehículo** — La apariencia del mapa sigue el estilo de visualización propio del vehículo, basado en la configuración de Apariencia de CarPlay en su iPhone (*Automático* o *Siempre oscuro*) y la hora del día. Cuando *Mostrar siempre mapas oscuros* está activado en esa configuración, el mapa permanece siempre en Modo oscuro independientemente del estado de las luces del vehículo o de la hora del día.
+- **Apariencia del vehículo** — La apariencia del mapa sigue el estilo de visualización propio del vehículo, basado en la configuración de Apariencia de CarPlay en su iPhone (*Automático* o *Siempre oscuro*) y la hora del día. Cuando *Mostrar siempre mapas oscuros* está activado en esa configuración, el mapa permanece siempre en Modo oscuro independientemente del estado de las luces del vehículo o de la hora del día. Este modo se utiliza por defecto.
 - **Día** — El mapa siempre utiliza el tema claro en CarPlay, independientemente de la configuración de apariencia del vehículo.
 - **Noche** — El mapa siempre utiliza el tema oscuro en CarPlay, independientemente de la configuración de apariencia del vehículo.
 - **Amanecer/atardecer** — El mapa cambia automáticamente entre temas claros y oscuros según las horas calculadas de amanecer y atardecer para su ubicación actual.
 
-**Nota:** La configuración del modo de mapa en CarPlay solo afecta la apariencia del mapa en CarPlay. No cambia el modo de mapa en la pantalla de su teléfono.
+**Nota:** La configuración del modo de mapa en CarPlay solo afecta la apariencia del mapa en CarPlay. No cambia el modo de mapa en la pantalla de su teléfono. El modo de mapa del teléfono tampoco cambia el mapa de CarPlay. Todos los elementos del mapa en la pantalla de CarPlay, incluidos los iconos de PDI, la línea de la ruta y el marcador de posición, siguen el modo de mapa de CarPlay. El ajuste es común a todos los perfiles y se conserva tras reconectar CarPlay o reiniciar la aplicación.
+
+### Orientación del mapa {#map-orientation}
+
+![Orientación del mapa](@site/static/img/navigation/auto-car/map_orientation_carplay.webp)
+
+El ajuste *Orientación del mapa* define cómo gira el mapa en la pantalla de CarPlay. Para abrir este ajuste, toque el botón *Ajustes* en la barra de navegación de CarPlay y luego seleccione *Orientación del mapa*. La orientación actual se muestra como el texto de detalle de la fila.
+
+Puede elegir uno de los siguientes modos de orientación:
+- **Rotado manualmente** — El mapa no gira automáticamente.
+- **Dirección del movimiento** — El mapa gira para seguir su dirección de desplazamiento.
+- **Dirección de la brújula** — El mapa gira para seguir la brújula del iPhone, de modo que el norte del mapa coincida con el norte real.
+- **Norte hacia arriba** — El norte permanece siempre en la parte superior de la pantalla.
+
+**Nota:** La orientación del mapa es un ajuste de perfil compartido entre CarPlay y la aplicación OsmAnd en su iPhone. Un cambio realizado en una pantalla se aplica a la otra. Para más detalles, consulte el artículo [Modos de orientación del mapa](../widgets/map-buttons.md#map-orientation-modes).
 
 ### Posición de la ubicación en CarPlay {#location-position-in-carplay}
 

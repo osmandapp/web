@@ -16,16 +16,11 @@ import EditablePolyline from '../util/creator/EditablePolyline';
 import EditableMarker from '../util/creator/EditableMarker';
 import { effectDebouncer } from '../../util/Utils';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
-import TracksRoutingCache, {
-    addElevationToCache,
-    debouncer,
+import {
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
-    GET_ANALYSIS_DEBOUNCE_MS,
-    requestAnalysisNow,
-    requestAnalytics,
-    routeWaitingSegments,
-    syncTrackWithCache,
+    effectRequestAnalysis,
+    isAnalysisWanted,
 } from '../../context/TracksRoutingCache';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
@@ -50,7 +45,7 @@ import {
 } from '../util/creator/LocalTrackLayerHelper';
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { passClickToNavigation } from '../../manager/NavigationManager';
-import { assignPointIds, hasSegmentWaitingForRouter, withAnsweredElevation } from '../../manager/track/TrackOperations';
+import { assignPointIds } from '../../manager/track/TrackOperations';
 
 const EDITOR_PICKS_POINT_CLASS = 'track-editor-picks-point';
 
@@ -103,91 +98,6 @@ export default function LocalClientTrackLayer() {
 
     const geoRouter = ctx.trackRouter;
 
-    /*
-        unverifiedGpxFile is a kind of selectedGpxFile
-
-        They're calculated by async get-analysis calls. Due to delayed/async
-        nature, user might have already choosen another selectedGpxFile when
-        we've got get-analysis results. This is the reason why we can't
-        directly update unverifiedGpxFile to selectedGpxFile.
-
-        To avoid mis-overwriting selectedGpxFile with unverifiedGpxFile, we
-        have to compare name, description, 'selected', and points before
-        setting selectedGpxFile.
-    */
-    useEffect(() => {
-        const trusted = ctx.selectedGpxFile;
-        const unverified = ctx.unverifiedGpxFile;
-
-        function isPointsHaveSameGeo(p1, p2) {
-            if (!p1 || !p2 || p1.length !== p2.length) {
-                return false;
-            }
-            for (let i = 0; i < p1.length; i++) {
-                if (TracksManager.isEqualPoints(p1[i], p2[i]) === false) {
-                    return false;
-                }
-            }
-            for (let i = 0; i < p1.length; i++) {
-                const g1 = p1[i].geometry;
-                const g2 = p2[i].geometry;
-                if (!g1 && !g2) {
-                    return true; // both w/o geometry = ok
-                }
-                if (!g1 || !g2 || g1.length !== g2.length) {
-                    return false;
-                }
-                for (let j = 0; j < g1.length; j++) {
-                    if (TracksManager.isEqualPoints(g1[j], g2[j]) === false) {
-                        return false;
-                    }
-                }
-            }
-            return true; // all-the-same
-        }
-
-        if (unverified && trusted) {
-            const sameTrack =
-                unverified.name === trusted.name &&
-                unverified.selected === trusted.selected &&
-                unverified.metaData?.desc === trusted.metaData?.desc;
-            const hasPoints = unverified.points && trusted.points;
-            if (
-                sameTrack &&
-                (isPointsHaveSameGeo(unverified.points, trusted.points) ||
-                    (!hasPoints &&
-                        unverified.tracks &&
-                        trusted.tracks &&
-                        isPointsHaveSameGeo(unverified.tracks[0]?.points, trusted.tracks[0]?.points)))
-            ) {
-                // cleanup triggers
-                unverified.zoom = false;
-                unverified.syncRouting = false;
-                unverified.updateLayers = false;
-                unverified.localRedrawWpts = false;
-                unverified.cloudRedrawWpts = false;
-                unverified.refreshAnalytics = false;
-
-                // keep layers
-                unverified.gpx = trusted.gpx;
-                unverified.layers = trusted.layers;
-                unverified.points = hasPoints
-                    ? withAnsweredElevation(trusted.points, unverified.points)
-                    : trusted.points;
-                unverified.tracksPoints = unverified.points;
-                if (hasPoints && isLocalTrack(ctx)) {
-                    addElevationToCache({ ctx, points: unverified.points, geoRouter });
-                }
-
-                ctx.setSelectedGpxFile(unverified);
-            } else if (sameTrack && hasPoints && isLocalTrack(ctx) && !hasSegmentWaitingForRouter(trusted.points)) {
-                requestAnalytics({ ctx, track: trusted, debouncerTimer });
-            } else {
-                console.debug('unverified-gpx-file', unverified.name);
-            }
-        }
-    }, [ctx.unverifiedGpxFile]);
-
     /**
      * Note: run on any selectedGpxFile including Cloud-mode
      *
@@ -196,9 +106,7 @@ export default function LocalClientTrackLayer() {
      * SortActions:
      *
      * - finish track rename (oldName)
-     * - check/get routing from cache (syncRouting)
      * - redraw (force visible) track waypoints (localRedrawWpts)
-     * - refresh analytics (used after unrouted Line-segment changes)
      * - save Local tracks (when editor enabled)
      * - check/set Zoom (fitBounds) for Local tracks
      * - .updateLayers processing (?)
@@ -207,16 +115,15 @@ export default function LocalClientTrackLayer() {
         if (ctxTrack && isLocalTrack(ctx)) {
             if (ctxTrack.oldName) {
                 finishTrackRename();
-            } else if (ctxTrack.syncRouting) {
-                syncRouting();
             } else if (ctxTrack.localRedrawWpts) {
                 localRedrawWpts();
-            } else if (ctxTrack.refreshAnalytics) {
-                refreshAnalytics();
             } else {
-                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
+                if (
+                    ctx.createTrack?.enable &&
+                    (isEmptyTrack(ctxTrack) === false || !isNewTrack(ctx.localTracks, ctxTrack))
+                ) {
                     if (ctx.localTracks.length > 0) {
-                        saveTrackToLocalStorage({ ctx, track: ctxTrack });
+                        saveTrackToLocalStorage({ ctx, track: ctxTrack, writeToDB: !isAnalysisWanted(ctxTrack) });
                     }
                     if (isNewTrack(ctx.localTracks, ctxTrack)) {
                         createLocalTrack({ ctx, map, file: ctxTrack });
@@ -266,15 +173,7 @@ export default function LocalClientTrackLayer() {
 
         return () => map.off('click', clickMap);
         // ctx.pointContextMenu was added to monitor menu state and ignore click
-        // ctx.routingCache was added to have actual context for addRoutingToCache()
-    }, [
-        ctx.createTrack,
-        ctxTrack,
-        geoRouter.getEffectDeps(),
-        ctx.pointContextMenu,
-        ctx.routingCache,
-        ctx.openContextMenu,
-    ]);
+    }, [ctx.createTrack, ctxTrack, geoRouter.getEffectDeps(), ctx.pointContextMenu, ctx.openContextMenu]);
 
     /**
      * Refresh visible (active) localTracks.
@@ -311,7 +210,10 @@ export default function LocalClientTrackLayer() {
                 }
 
                 // If the track was updated, refresh its layer on the map
-                if (track.updated) {
+                const edited =
+                    ctx.createTrack?.enable &&
+                    (track.name === ctxTrack.name || track.name === ctx.createTrack.closePrev?.file?.name);
+                if (currLayer.active && currLayer.track !== track && !edited) {
                     updateTrackOnMap(track, currLayer.active);
                 }
             }
@@ -403,15 +305,10 @@ export default function LocalClientTrackLayer() {
     function saveResult(file, closePrev) {
         const ind = ctx.localTracks.findIndex((t) => t?.name === file?.name);
         if (ind !== -1) {
-            ctx.localTracks[ind] = file;
             if (ctx.createTrack.clear) {
-                ctx.localTracks[ind].selected = false;
-            } else {
-                if (ctx.createTrack.edit || closePrev) {
-                    ctx.localTracks[ind].updated = true;
-                } else {
-                    ctx.localTracks[ind].selected = true;
-                }
+                file.selected = false;
+            } else if (!ctx.createTrack.edit && !closePrev) {
+                file.selected = true;
             }
             saveTrackToLocalStorage({ ctx, track: file }); // ctx.localTracks might be modified there
             ctx.setLocalTracks([...ctx.localTracks]); // save our mutations which were made before
@@ -426,17 +323,6 @@ export default function LocalClientTrackLayer() {
         if (layers) {
             map.removeLayer(layers);
         }
-    }
-
-    function refreshAnalytics() {
-        if (startedRouterJobs > 0) return;
-        requestAnalytics({ ctx, track: ctxTrack, debouncerTimer });
-        ctx.setSelectedGpxFile({ ...ctxTrack, refreshAnalytics: false });
-    }
-
-    function syncRouting() {
-        const track = { ...ctxTrack, syncRouting: false };
-        ctx.setSelectedGpxFile(syncTrackWithCache({ ctx, track, geoRouter, debouncerTimer }));
     }
 
     function localRedrawWpts() {
@@ -473,14 +359,8 @@ export default function LocalClientTrackLayer() {
     }
 
     function addTrackToMap(track, fitBounds, active) {
-        if (track.points) {
-            track.tracks = [{ points: track.points }];
-        }
-        if (track.updated) {
-            track.updated = false; // reset
-        }
         let layer = TrackLayerProvider.createLayersByTrackData({
-            data: track,
+            data: track.points ? { ...track, tracks: [{ points: track.points }] } : track,
             ctx,
             map,
             simplifyWpts: track?.wpts?.length >= WPT_SIMPLIFY_THRESHOLD,
@@ -508,7 +388,7 @@ export default function LocalClientTrackLayer() {
             addLayerToMap(map, layer, 'add-local-track-layer');
             localLayers[track.name] = {
                 layer: layer,
-                points: track.points ? track.points : TracksManager.getEditablePoints(track),
+                track,
                 active: active,
             };
         }
@@ -563,7 +443,7 @@ export default function LocalClientTrackLayer() {
             setTrigger: setTriggerControlRouterRequests,
             delay: CONTROL_ROUTER_REQUEST_DEBOUNCER_MS,
         });
-    }, [ctx.routingCache, startedRouterJobs, triggerControlRouterRequests, ctx.processingAnalytics]);
+    }, [ctxTrack?.points, ctx.routingCache, startedRouterJobs, triggerControlRouterRequests]);
 
     // after-routing
     useEffect(() => {
@@ -574,13 +454,18 @@ export default function LocalClientTrackLayer() {
                     map,
                     geoRouter,
                     saveChanges,
-                    debouncerTimer,
                 }),
             timerRef: timerRefreshTrackWithRouting,
             setTrigger: setTriggerRefreshTrackWithRouting,
             delay: REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS,
         });
-    }, [ctx.routingCache, triggerRefreshTrackWithRouting]);
+    }, [ctxTrack?.points, ctx.routingCache, triggerRefreshTrackWithRouting]);
+
+    useEffect(() => {
+        if (ctx.createTrack?.enable && isLocalTrack(ctx)) {
+            effectRequestAnalysis({ ctx, track: ctxTrack, debouncerTimer });
+        }
+    }, [ctxTrack?.points]);
 
     function createNewRouteLine(prevPoint, newPoint, points, layers) {
         newPoint = points[points.length - 1];
@@ -610,13 +495,6 @@ export default function LocalClientTrackLayer() {
             polyline.options.pointIds = [prevPoint.id, newPoint.id];
             layers.addLayer(polyline);
         }
-
-        const analysis = () => {
-            if (startedRouterJobs > 0) return;
-            requestAnalysisNow({ ctx, track: ctxTrack });
-        };
-
-        debouncer(analysis, debouncerTimer, GET_ANALYSIS_DEBOUNCE_MS);
 
         // saveChanges does useful job, but setSelectedGpxFile() is double-called (later, by parent)
         saveChanges(null, null, null, ctxTrack);
@@ -656,8 +534,6 @@ export default function LocalClientTrackLayer() {
             let tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, addNewPoint, map, ctx);
             tempLine.options = { ...tempLine.options, name: TEMP_LAYER_FLAG };
             layers.addLayer(tempLine);
-
-            TracksRoutingCache.addRoutingToCache(prevPoint, addNewPoint, tempLine, ctx);
 
             ctxTrack.addNewPoint = addNewPoint;
             ctxTrack.points = points;
@@ -709,7 +585,6 @@ export default function LocalClientTrackLayer() {
                     } else {
                         const tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, newPoint, map, ctx);
                         layers.addLayer(tempLine);
-                        TracksRoutingCache.addRoutingToCache(prevPoint, newPoint, tempLine, ctx);
                     }
                 }
                 ctxTrack.newPoint = newPoint;
@@ -739,7 +614,7 @@ export default function LocalClientTrackLayer() {
         if (currentTrack) {
             ctxTrack = currentTrack;
         }
-        const points = assignPointIds(TracksManager.getEditablePoints(ctxTrack));
+        const points = assignPointIds(ctxTrack.points);
         ctxTrack.layers = updateLayers({
             map,
             ctx,
@@ -750,11 +625,8 @@ export default function LocalClientTrackLayer() {
             trackLayers: new L.FeatureGroup(),
         });
         ctxTrack.points = points;
-        ctxTrack.tracksPoints = points;
-        routeWaitingSegments(ctxTrack, ctx);
 
         ctxTrack.newPoint = points[points.length - 1];
-        ctxTrack.update = false;
 
         if (ctxTrack.newPoint?.geoProfile || ctxTrack.newPoint?.profile) {
             geoRouter.onGeoProfile(ctxTrack.newPoint);

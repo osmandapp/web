@@ -1,5 +1,5 @@
 ---
-source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
+source-hash: 83c6b3cc35441b3510683f9cda657be179761027b2c6e5d5aac6777b74251f2f
 sidebar_position: 1
 title:  Alles durchsuchen
 ---
@@ -190,8 +190,13 @@ Mit der räumlichen Suche können Sie:
 - Nach einem POI an einem bestimmten Ort suchen. Geben Sie eine Kategorie und einen Ortsnamen in einer Abfrage ein, z. B. Hotel Berlin. Der Ortsname wird als Suchbereich verwendet, und die Kategorie wird darin gesucht.
 - Nach Orten suchen, die zwei Bedingungen erfüllen. Geben Sie zwei Kategorien oder eine Kategorie und eine Eigenschaft ein, z. B. Kraftstoff Diesel oder Café Vegan, um Orte zu finden, die beide Bedingungen erfüllen. Eine Abfrage wie Kraftstoff McDonald's findet Tankstellen in der Nähe eines McDonald's. Die Reihenfolge der Wörter ist wichtig. Das erste Wort legt fest, was Sie suchen, und das zweite, was in der Nähe sein soll. Zum Beispiel findet McDonald’s Kraftstoff McDonald’s-Restaurants in der Nähe von Tankstellen.
 - Um einen gefundenen Ort herum suchen. Geben Sie eine Kategorie und einen Ortsnamen ein, z. B. *Hotel Berlin*, und tippen Sie dann oben in den Suchergebnissen auf *Hotel in der Nähe von Berlin*. Der Name dieses Ortes wird zum Chip [Umgebungssuche](#search-around) hinzugefügt.
-- Verwenden Sie verschiedene Formate von Straßennamen und übersetzte Kategorienamen in Ihren Abfragen.
+- Verwenden Sie verschiedene Formate von Straßennamen und übersetzte Kategorienamen in Ihren Abfragen. Kategorien werden anhand ihrer Namen in der App-Sprache, auf Englisch, in der [Kartensprache](../map/vector-maps.md#map-language) und in der Hauptsprache der Region gefunden, in der Sie suchen. Wenn die App zum Beispiel auf Ukrainisch eingestellt ist, findet `schule` in Leipzig die Kategorie Schule.
+- Finden Sie eine Kategorie anhand anderer Wörter, die Menschen häufig dafür verwenden. Zum Beispiel findet `RV park` die Kategorie Wohnmobilstellplatz.
 - Erhalten Sie schnellere Ergebnisse bei der Suche nach beliebten POI-Kategorien wie Apotheke, Parkplatz oder Restaurant.
+
+Während Sie ein Wort eingeben, zeigen die Suchergebnisse passende POI-Kategorien als Zeilen sowie Orte mit passenden Namen an. Orte einer Kategorie erscheinen in den Ergebnissen, nachdem Sie ein Wort des Kategorienamens vollständig eingegeben haben. Zum Beispiel zeigt `ca` Kategoriezeilen und passende Namen an, und `cafe` listet Cafés auf.
+
+**Hinweis:** Wenn ein kurzes Wort auf sehr viele Objekte in Ihren heruntergeladenen Karten passt, wird es nur als ganzes Wort abgeglichen. Geben Sie mehr Buchstaben ein, um Ergebnisse zu sehen, die damit beginnen.
 
 ### Umgebungssuche {#search-around}
 

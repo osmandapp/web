@@ -97,7 +97,7 @@ async function calculateRouteOSRM({ changeRouteText, setRoutingErrorMsg, style }
         dataOnErrors: true,
         abortControllerKey: NAVIGATION_ROUTE_ABORT_KEY,
     });
-    if (!response || reponse.aborted) {
+    if (!response || response.aborted) {
         changeRouteText(false);
         return;
     }

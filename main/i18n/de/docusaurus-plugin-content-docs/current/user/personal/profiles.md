@@ -1,5 +1,5 @@
 ---
-source-hash: fa323937a6f8b9e71f3965a64b9e36b00b79538a81a6cd1b22920fdc762da5cf
+source-hash: d0091f6c53e5bab1a3f712b907e2581913384d21865212be979549aae63d2d2c
 sidebar_position: 4
 title:  Profile (Einstellungen)
 ---
@@ -123,7 +123,7 @@ Gehen Sie zu: *<Translate android="true" ids="shared_string_menu,configure_profi
 
 Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,general_settings_2,shared_string_appearance"/>*
 
-![Allgemeine Profileinstellungen Erscheinungsbild iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.png)
+![Allgemeine Profileinstellungen Erscheinungsbild iOS](@site/static/img/personal/profiles/profiles_appearance_3_ios.webp)
 
 </TabItem>
 
@@ -148,6 +148,12 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
   - *<Translate android="true" ids="map_orientation_default"/>*  
 
 - **[<Translate android="true" ids="screen_control"/>](../navigation/guidance/voice-navigation.md#screen-control)** (*Nur Android*). Öffnet das Bildschirmsteuerungsmenü, in dem Sie Optionen für den Gerätebildschirm während der Navigation auswählen können, um den Akkuverbrauch des Geräts zu senken.  
+
+- **Bildschirm eingeschaltet lassen** (*Nur iOS*). Legt fest, wann der Gerätebildschirm eingeschaltet bleibt, während OsmAnd geöffnet ist.
+  - *<Translate ios="true" ids="shared_string_system_default"/>*. Der Bildschirm schaltet sich gemäß der in Ihren Geräteeinstellungen festgelegten Zeit für die automatische Sperre aus.
+  - *Während der Navigation*. Der Bildschirm bleibt eingeschaltet, solange die Navigation aktiv ist, und schaltet sich gemäß der Zeit für die automatische Sperre aus, wenn die Navigation pausiert oder beendet wird. Diese Option ist für das Profil *<Translate ios="true" ids="rendering_value_browse_map_name"/>* nicht verfügbar.
+  - *<Translate ios="true" ids="shared_string_always"/>*. Der Bildschirm bleibt die ganze Zeit eingeschaltet, solange OsmAnd geöffnet ist.
+  - Standardmäßig verwendet das Profil *<Translate ios="true" ids="rendering_value_browse_map_name"/>* die Option *<Translate ios="true" ids="shared_string_system_default"/>*, und andere Profile verwenden *Während der Navigation*.
 
 
 ### Einheiten & Formate {#units--formats}
@@ -225,9 +231,9 @@ Im Abschnitt **Einheiten und Formate** können Sie Maßeinheiten und Formate an 
 |          | <Translate android="true" ids="navigate_point_format_utm"/> | 34N 5552876 423678 (Zone Northing Easting) . [<Translate android="true" ids="utm_format_descr"/>](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) |
 |          | <Translate android="true" ids="navigate_point_format_mgrs"/> | Beispiel: 34U DA 23678 52873 . [<Translate android="true" ids="mgrs_format_descr"/>](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)  |
 |          | <Translate android="true" ids="navigate_point_format_olc"/> | Beispiel:  9F2X4WFJ+7W ([Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code) repräsentiert eine Fläche von 9m x 14m)  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> (Nur Android-Version) | Beispiel: 2 215 227.87, 830 915.9 ([Schweizer Koordinatensystem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
-|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> (Nur Android-Version) | Beispiel: 4 215 227.87, 1 830 915.9 ([Schweizer Koordinatensystem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
-|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> (Nur Android-Version) | Beispiel: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid"/> | Beispiel: 2 215 227.87, 830 915.9 ([Schweizer Koordinatensystem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).)))  |
+|          | <Translate android="true" ids="navigate_point_format_swiss_grid_plus"/> | Beispiel: 4 215 227.87, 1 830 915.9 ([Schweizer Koordinatensystem](https://en.wikipedia.org/wiki/Swiss_coordinate_system#:~:text=The%20Swiss%20coordinate%20system%20(or,Office%20of%20Topography%20(Swisstopo).))) |
+|          | <Translate android="true" ids="navigate_point_format_maidenhead"/> | Beispiel: KN29AS 19CX. [<Translate android="true" ids="maidenhead_format_descr"/>](https://en.wikipedia.org/wiki/Maidenhead_Locator_System) |
 |  |  |  |
 | **<Translate android="true" ids="angular_measeurement"/>** (*Android*) / **<Translate ios="true" ids="angular_units"/>** (iOS)| Grad 180° | Alle Winkelwerte haben Messwerte von 0° bis 180° und von 0° bis -180°.  |
 |          | Grad 360° | Alle Winkelwerte haben Messwerte von 0° bis 360°.  |
@@ -448,7 +454,7 @@ Gehen Sie zu: *<Translate ios="true" ids="shared_string_menu,shared_string_setti
 
 Die Einstellungen für das **Erscheinungsbild "Mein Standort"** ermöglichen es Ihnen, anzupassen, wie Ihr Standort auf der Karte angezeigt wird, sowohl im Stillstand (Ruhend) als auch in Bewegung (Navigation). Bewegung wird vom Betriebssystem erkannt, wenn die Geschwindigkeit des Geräts **größer als Null** ist.
 
-Verwenden Sie **<Translate ios="true" ids="icon_size"/>**, um die Größe des Mein-Standort-Positionsymbols unabhängig von der Textgröße der App anzupassen. Sie können unterschiedliche Größen für die Modi Ruhend und Navigation festlegen. Die Größe kann von 50 % bis 300 % (50, 75, 100, 125, 150, 200, 250, 300 %) eingestellt werden. Der Standardwert beträgt 100 %. Tippen Sie auf <Translate ios="true" ids="icon_size"/>, um die Größeneinstellungen zu öffnen, und verwenden Sie dann den Schieberegler oder die Schritttasten + / – , um den Wert zu ändern. Verwenden Sie **<Translate ios="true" ids="reset_to_default"/>**, um zu 100 % zurückzukehren.
+Verwenden Sie **<Translate ios="true" ids="icon_size"/>**, um die Größe des Mein-Standort-Positionsymbols unabhängig von der Textgröße der App anzupassen. Sie können unterschiedliche Größen für die Modi Ruhend und Navigation festlegen. Die Größe kann von 50 % bis 300 % (50, 75, 100, 125, 150, 200, 250, 300 %) eingestellt werden. Der Standardwert beträgt 100 %. Tippen Sie auf „Symbolgröße“, um die Größeneinstellungen zu öffnen, und verwenden Sie dann den Schieberegler oder die Schritttasten + / – , um den Wert zu ändern. Verwenden Sie **<Translate ios="true" ids="reset_to_default"/>**, um zu 100 % zurückzukehren.
 
 </TabItem>
 
@@ -581,7 +587,7 @@ Plugins schalten zusätzliche Funktionen der Anwendung frei und können entweder
 
   > ***Das Ändern der Einstellungen des OsmAnd-Entwicklungsplugins wirkt sich auf alle Profile aus.***
 
-- **Wikipedia** (nur iOS). Dieses Menü öffnet die *[Wikipedia-Plugin-Einstellungen](../plugins/wikipedia.md#wikipedia-settings)*. Sie können die Sprache auswählen, in der Artikel angezeigt werden, und wählen, ob Bilder von Wikipedia heruntergeladen werden sollen. Wikipedia auf Ihrer Reise zu haben, verbessert Ihr Erlebnis, indem es Informationen über die Orte liefert, die Sie besuchen. Es funktioniert offline und zeigt relevante Wikipedia-Artikel direkt auf der Karte an, die sich auf Points of Interest beziehen.
+- **Wikipedia**. Dieses Menü öffnet die *[Wikipedia-Plugin-Einstellungen](../plugins/wikipedia.md#wikipedia-settings)* für das ausgewählte Profil. Sie können die Sprache auswählen, in der Artikel angezeigt werden, auswählen, ob Bilder von Wikipedia heruntergeladen werden sollen, und den Bildcache leeren. Wikipedia auf Ihrer Reise zu haben, verbessert Ihr Erlebnis, indem es Informationen über die Orte liefert, die Sie besuchen. Es funktioniert offline und zeigt relevante Wikipedia-Artikel direkt auf der Karte an, die sich auf Points of Interest beziehen.
 
 - **Fahrzeugmetriken**. Dieses Menü öffnet die *[Einstellungen des Fahrzeugmetriken-Plugins](../plugins/vehicle-metrics.md#scanner-settings)*. Es ermöglicht Ihnen, einen OBD-II-Scanner mit OsmAnd zu verbinden.
 

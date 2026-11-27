@@ -3,6 +3,8 @@ import { TRACKS_DB_NAME } from '../util/appDataVersion';
 
 const STORE_NAME = 'local_tracks';
 
+const savedDataByTrack = new WeakMap();
+
 const DEBUG = false;
 
 // create indexedDB
@@ -139,6 +141,7 @@ export async function loadLocalTracksFromStorage(setLoading) {
                         continue;
                     }
                     fixNanEleWpt(json);
+                    json.analysisPoints = json.points;
                     localTracks.push(json);
                     DEBUG && console.log('Loaded local track (old id ' + record.id + '):', json.name);
                 } catch {
@@ -162,27 +165,54 @@ export async function loadLocalTracksFromStorage(setLoading) {
     });
 }
 
-export function saveTrackToLocalStorage({ ctx, track }) {
+export function saveTrackToLocalStorage({ ctx, track, writeToDB = true }) {
     const localTracks = ctx.localTracks;
     if (!track?.name) {
         ctx.setRoutingErrorMsg('⚠️ Cannot save nameless local track.');
         return;
     }
     let currentTrackIndex = localTracks.findIndex((t) => t?.name && track?.name && t.name === track.name);
+    const savedBefore = savedDataByTrack.get(localTracks[currentTrackIndex]);
+    const copy = { ...track };
 
     if (currentTrackIndex === -1) {
-        currentTrackIndex = localTracks.push(track) - 1;
+        currentTrackIndex = localTracks.push(copy) - 1;
         ctx.setLocalTracks([...localTracks]);
     } else {
-        localTracks[currentTrackIndex] = track;
+        localTracks[currentTrackIndex] = copy;
+    }
+    if (!writeToDB) {
+        return;
     }
 
     const res = prepareLocalTrack(track);
+    const savedData = getSavedData(track, res);
+    savedDataByTrack.set(copy, savedData);
+    if (isSameSavedData(savedBefore, savedData)) {
+        return;
+    }
+
     saveTrackToDB(currentTrackIndex, res)
         .then()
         .catch(() =>
             ctx.setRoutingErrorMsg('⚠️ Failed to save the local track. Please check your storage space or try again.')
         );
+}
+
+function getSavedData(track, record) {
+    return {
+        points: track.points,
+        analysis: track.analysis,
+        fields: JSON.stringify({ ...record, points: undefined, analysis: undefined }),
+    };
+}
+
+function isSameSavedData(saved, data) {
+    if (!saved) {
+        return false;
+    }
+
+    return saved.points === data.points && saved.analysis === data.analysis && saved.fields === data.fields;
 }
 
 async function updateStoredLocalTracks(tracks) {

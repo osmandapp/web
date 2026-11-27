@@ -1,5 +1,5 @@
 ---
-source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
+source-hash: 2e48c3b33b0a1b2f2052d01d162cbc2eea2150966936da2a46c59204f2985986
 sidebar_position: 5
 title:  سجلات الأعطال
 ---
@@ -50,8 +50,8 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 </Tabs>
 
 1. انتقل إلى *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* أو *<Translate android="true" ids="send_logcat_log"/>* (أندرويد)/*إرسال سجل التطبيق الحالي* (iOS). بناءً على حالتك، حدد نوع السجل المناسب. يمكنك الرجوع إلى قسم [سجلات الأعطال وسجلات التطبيق](#crash-and-app-logs) للحصول على تفاصيل حول الاختلافات بين أنواع السجلات.
-2. في القائمة المنبثقة، اختر Gmail أو تطبيق البريد الإلكتروني المفضل لديك. نوصي بإرسال السجلات إلى `support@osmand.net`.
-3. اضغط على زر *إرسال*.
+2. في القائمة المنبثقة، اختر المكان الذي سترسل إليه السجلات أو تحفظها فيه: تطبيق بريد إلكتروني، أو تطبيق تخزين سحابي، أو مدير ملفات لحفظها على جهازك. نوصي بإرسال السجلات إلى `support@osmand.net`.
+3. إذا أرسلت السجلات بالبريد الإلكتروني، فاضغط على زر *إرسال*.
 
 <!--
 ### Send Logs from iOS Devices {#send-logs-from-ios-devices}

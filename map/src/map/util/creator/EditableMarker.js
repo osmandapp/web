@@ -3,7 +3,6 @@ import MarkerOptions from '../../markers/MarkerOptions';
 import TrackLayerProvider from '../TrackLayerProvider';
 import { publishEditedTrack } from '../../../manager/track/TracksManager';
 import { findPointIndex, isPointUnrouted, isWaitingForRouter, movePoint } from '../../../manager/track/TrackOperations';
-import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
 export default class EditableMarker {
     stopclick;
@@ -140,32 +139,21 @@ export default class EditableMarker {
                     const latlngs = currentPolyline.getLatLngs();
                     latlngs[currentPolyline.options.pointIds.indexOf(currentPoint.id)] = L.latLng(lat, lng);
                     currentPolyline.setLatLngs(latlngs);
-
-                    // reset elevation/analytics when unrouted point was moved
-                    track.refreshAnalytics = true;
                 } else {
                     console.error('EditableMarker drag-drop unrouted-zero-geo failed');
                 }
             } else {
                 for (const index of [indPoint, indPoint + 1]) {
                     if (!isWaitingForRouter(track.points, index)) {
-                        if (track.points[index]?.geometry !== points[index]?.geometry) {
-                            track.refreshAnalytics = true;
-                        }
                         continue;
                     }
-                    const start = track.points[index - 1];
-                    const end = track.points[index];
-                    const polyline = TrackLayerProvider.updatePolyline(
-                        start,
-                        end,
+                    TrackLayerProvider.updatePolyline(
+                        track.points[index - 1],
+                        track.points[index],
                         polylines,
                         points[index - 1],
                         points[index]
                     );
-                    if (polyline) {
-                        TracksRoutingCache.addRoutingToCache(start, end, polyline, this.ctx);
-                    }
                 }
             }
         } else {

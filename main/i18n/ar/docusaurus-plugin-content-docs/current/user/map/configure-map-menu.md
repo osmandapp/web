@@ -1,5 +1,5 @@
 ---
-source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
+source-hash: d617276475fbfcfe927091d3c99740f157598c2b6f2ee38d9e9906a83d74b219
 sidebar_position: 4
 title:  تهيئة الخريطة
 ---
@@ -27,7 +27,7 @@ import Translate from '@site/src/components/Translate.js';
 
 قسم **التضاريس**:  
 
-![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_topography_andr_new.png)  
+![تهيئة الخريطة أندرويد](@site/static/img/map/configure_map_topography_andr_new.webp)  
 
 قسم **OpenStreetMap**:  
 
@@ -84,7 +84,7 @@ import Translate from '@site/src/components/Translate.js';
 ## طبقات الخريطة {#map-layers}
 
 - [طبقة الخريطة المتجهية](../map/vector-maps.md) - تعرض جميع معلومات الخريطة المتجهية بما في ذلك OpenStreetMap، وخطوط الكنتور، والبيانات البحرية.
-- [مصادر الخريطة النقطية](../map/raster-maps.md#layers) - تسمح باختيار خريطة الطبقة السفلية / المصدر الرئيسي / الطبقة العلوية مع مستويات الشفافية.
+- [مصادر الخريطة النقطية](../map/raster-maps.md#layers) - تسمح باختيار خريطة الطبقة السفلية / المصدر الرئيسي / الطبقة العلوية مع مستويات الرؤية.
 - [التضاريس](../plugins/topography.md#hillshade-slope-and-altitude-layers) - تعرض معلومات المنحدر / تظليل التلال، والارتفاع ثلاثي الأبعاد.
 - [المباني ثلاثية الأبعاد](../map/vector-maps.md#3d-buildings) - تعرض نماذج المباني الحجمية على الخريطة.
 - [حدود الخرائط التي تم تنزيلها](../map/vector-maps.md#show-borders) - تعرض جميع حدود الخرائط التي تم تنزيلها على طبقة الخريطة الرئيسية.

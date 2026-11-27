@@ -179,7 +179,6 @@ export const AppContextProvider = (props) => {
     const [selectedGpxFile, setSelectedGpxFile] = useState({});
     const selectedGpxFileRef = useRef(selectedGpxFile);
     selectedGpxFileRef.current = selectedGpxFile;
-    const [unverifiedGpxFile, setUnverifiedGpxFile] = useState(null); // see Effect in LocalClientTrackLayer
 
     const [mapMarkerListener, setMapMarkerListener] = useState(null);
     const [tracksGroups, setTracksGroups] = useState([]);
@@ -520,8 +519,6 @@ export const AppContextProvider = (props) => {
                 selectedGpxFile,
                 setSelectedGpxFile,
                 selectedGpxFileRef,
-                unverifiedGpxFile,
-                setUnverifiedGpxFile,
                 mapMarkerListener,
                 setMapMarkerListener,
                 allTileURLs,

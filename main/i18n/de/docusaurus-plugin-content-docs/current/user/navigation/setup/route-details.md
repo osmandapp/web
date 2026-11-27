@@ -1,5 +1,5 @@
 ---
-source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
+source-hash: b076e363549de89788d39e28c794e1ab1884f389ec642e5833a3ff1b49f7e267
 sidebar_position: 4
 title:  Routendetails
 ---
@@ -248,7 +248,7 @@ Straßenattribute sind in den [Routendetails](#how-to-access) zugänglich und ze
 
 Abbiegehinweise bieten detaillierte [Anweisungen](#instructions) zur Navigation einer Route. Zusätzlich zum Menü *Details* werden sie auch in den Widgets [*Routenmanöver*](../../widgets/nav-widgets.md#route-guidance) und [*Fahrspuren*](../../widgets/nav-widgets.md#lanes) angezeigt. Diese Informationen helfen Ihnen, Ihre Route besser zu navigieren und ermöglichen es Ihnen, vorausschauend zu planen.
 
-Tippen Sie auf einen bestimmten Abschnitt der Route in der Liste, um detaillierte Informationen anzuzeigen oder bei Bedarf Änderungen vorzunehmen. Die Karte wird vergrößert und ein [Kontextmenü](../../map/map-context-menu.md) öffnet sich.
+Tippen Sie auf einen bestimmten Abschnitt der Route in der Liste, um detaillierte Informationen anzuzeigen oder bei Bedarf Änderungen vorzunehmen. Die Karte wird vergrößert und ein [Kontextmenü](../../map/map-context-menu.md) öffnet sich. Tippen Sie in der Liste auf ein Zwischenziel, um die Karte an diesem Ziel zu öffnen (*nur Android*).
 
 
 ### Anweisungen {#instructions}
@@ -257,13 +257,13 @@ Tippen Sie auf einen bestimmten Abschnitt der Route in der Liste, um detailliert
 
 <TabItem value="android" label="Android">
 
-![Navigationsroute Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![Navigationsroute Android](@site/static/img/navigation/route/navigation_turn_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Navigationsroute Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Navigationsroute Android](@site/static/img/navigation/route/navigation_turn_ios.webp)
 
 </TabItem>
 
@@ -276,6 +276,8 @@ Anweisungen enthalten Informationen zur Bewegung entlang der Route, wie zum Beis
 - Eine Beschreibung dessen, *was zu tun ist*, die den *Namen der Straße oder des Weges* enthält.
 - *Gesamtentfernung* und *Zeit der Route*.
 - *[Fahrspuren](../../widgets/nav-widgets.md#lanes)-Layout* für die aktuelle Straße.
+- *Zwischenziele* in ihrer Reihenfolge entlang der Route, jeweils mit Nummer, Name oder Koordinaten sowie Entfernung und Zeit ab dem Start.
+- *Endziel*, markiert mit dem Zielsymbol (*nur Android*).
 - [*Straßenseitenanzeige*](#roadside-indicator) (*nur iOS*).
 
 

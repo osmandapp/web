@@ -14,7 +14,6 @@ import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import PointManager from '../../../manager/PointManager';
-import TracksManager from '../../../manager/track/TracksManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import isEmpty from 'lodash-es/isEmpty';
 
@@ -58,18 +57,7 @@ const PointsTab = ({ width }) => {
         confirm({
             ctx,
             text: 'Delete all track points?',
-            callback: () => {
-                if (ctx.selectedGpxFile) {
-                    const updatedSelectedGpxFile = {
-                        ...ctx.selectedGpxFile,
-                        points: [],
-                        tracks: TracksManager.createGpxTracks(),
-                        updateLayers: true,
-                        analysis: null,
-                    };
-                    ctx.setSelectedGpxFile(updatedSelectedGpxFile);
-                }
-            },
+            callback: () => PointManager.deleteAllPoints(ctx),
         });
     }
 
@@ -121,8 +109,7 @@ const PointsTab = ({ width }) => {
         <>
             {openPointAlert &&
                 ctx.createTrack &&
-                (!ctx.selectedGpxFile?.points || isEmpty(ctx.selectedGpxFile?.points)) &&
-                (!ctx.selectedGpxFile?.tracks || isEmpty(ctx.selectedGpxFile?.tracks[0]?.points)) && (
+                (!ctx.selectedGpxFile?.points || isEmpty(ctx.selectedGpxFile?.points)) && (
                     <Alert
                         severity="info"
                         sx={{ mt: 2 }}

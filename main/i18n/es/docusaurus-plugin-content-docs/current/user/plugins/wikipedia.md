@@ -1,5 +1,5 @@
 ---
-source-hash: 3a1b19203e3a6ba30e182f8b8c57f3ac468e000ae98042c571c03b94e20ce825
+source-hash: 15d49bb0a51bde6a96859143a096fc9ae43659fa8e1fada3dc9753b8a8f92c70
 sidebar_position: 20
 title:  Wikipedia
 ---
@@ -122,25 +122,6 @@ Cuando tocas el botón Buscar, aparece un panel adicional que te permite [buscar
 - En la versión de **Android**, puedes abrir [Buscar](../search/index.md) tocando el *icono de búsqueda* en la esquina superior izquierda de la pantalla y/o tocando la *opción Buscar* en el menú.
 - En la versión de **iOS**, para abrir [Buscar](../search/index.md), el icono de búsqueda se encuentra en la esquina superior izquierda de la pantalla.
 
-<!--
-<Tabs groupId="operating-systems" queryString="current-os">
-
-<TabItem value="android" label="Android">
-
-![Wikipedia search on Android](@site/static/img/map/map-wikipedia-search.png)
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">
-
-![Wikipedia search on iOS](@site/static/img/map/map-wikipedia-search_ios.png)
-
-</TabItem>
-
-</Tabs>
-
--->
-
 - Para buscar por la [categoría](../search/search-poi.md#poi-search-by-categories) de Wikipedia, selecciona: *<Translate android="true" ids="map_widget_search,search_categories,shared_string_wikipedia"/>*
 
 <Tabs groupId="operating-systems" queryString="current-os">
@@ -202,7 +183,12 @@ Para abrir el artículo de Wikipedia:
 
 ## Ajustes de Wikipedia {#wikipedia-settings}
 
-Puedes [establecer el(los) idioma(s)](#set-preferred-language) en el que prefieres leer los [artículos](#wikipedia-article) y también configurar las [opciones de descarga de imágenes](#download-images) para cada [perfil](../personal/profiles.md).
+Puedes [establecer el(los) idioma(s)](#set-preferred-language) en el que prefieres leer los [artículos](#wikipedia-article) para cada [perfil](../personal/profiles.md), configurar las [opciones de descarga de imágenes](#download-images) y gestionar la [caché de imágenes](#image-cache). En iOS, las opciones de descarga de imágenes se establecen para cada perfil. En Android, se aplican a todos los perfiles.
+
+Todos los ajustes de Wikipedia se reúnen en los ajustes del complemento de Wikipedia:
+
+- **Android**. Ve a: *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings"/>*. Usa el botón de perfil de la parte superior de la pantalla para seleccionar el perfil cuyos ajustes quieres cambiar.
+- **iOS**. Ve a: *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 ### Establecer idioma preferido {#set-preferred-language}
 
@@ -230,10 +216,11 @@ En las versiones de **Android** e **iOS** de la aplicación OsmAnd, puedes estab
 </Tabs>
 
 :::note
-En la versión de **iOS**, también puedes establecer el idioma preferido para los artículos de Wikipedia usando:  
+También puedes establecer el idioma preferido para los artículos de Wikipedia en los ajustes del complemento de Wikipedia:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/>* → &#x2699
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,shared_string_languages"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699;*
 
 :::
 
@@ -281,12 +268,39 @@ Puedes elegir si descargar o no las imágenes de Wikipedia en tu dispositivo den
 
 </Tabs>
 
-En la versión de **iOS** de la aplicación, también puedes acceder a las opciones de descarga de imágenes utilizando los *ajustes del complemento de Wikipedia*:
+También puedes acceder a las opciones de descarga de imágenes en los *ajustes del complemento de Wikipedia*:
 
-- *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*  
-- *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699 → <Translate ios="true" ids="wikivoyage_download_pics"/>*
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,download_images"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles,plugins_menu_group,download_wikipedia_maps,wikivoyage_download_pics"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics"/>*
 
 ![Cambiar imágenes](@site/static/img/plugins/wikipedia/images_menu_ios.png)
+
+### Caché de imágenes {#image-cache}
+
+<Tabs groupId="operating-systems" queryString="current-os">
+
+<TabItem value="android" label="Android">
+
+![Caché de imágenes en Android](@site/static/img/plugins/wikipedia/image_cache_android.webp)
+
+</TabItem>
+
+<TabItem value="ios" label="iOS">
+
+![Caché de imágenes en iOS](@site/static/img/plugins/wikipedia/image_cache_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+Los ajustes del complemento de Wikipedia muestran el tamaño de las imágenes guardadas en tu dispositivo. La caché de imágenes se comparte con las guías de viaje, por lo que al borrarla también se eliminan las imágenes guardadas de las guías de viaje.
+
+Para eliminar las imágenes guardadas, ve a:
+
+- **Android**. *<Translate android="true" ids="shared_string_menu,plugins_menu_group,shared_string_wikipedia,shared_string_settings,images_cache"/>* → *<Translate android="true" ids="shared_string_clear"/>*
+- **iOS**. *<Translate ios="true" ids="shared_string_menu,plugins_menu_group,download_wikipedia_maps"/> → &#x2699; → <Translate ios="true" ids="wikivoyage_download_pics,remove_cache"/>*
+
 
 
 ## Artículos relacionados {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 7e74d8e729a7775c93238e36743008fee12f77b91a8c85d8e584e27960d9c988
+source-hash: 292d8a0b5fbc689d6e07f6ebd71d0b9a70856fabf41202c365ab38c143096e5d
 sidebar_position: 4
 title:  Navigations-Widgets
 ---
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Navigations-Widgets werden während der Navigation aktiviert, um Informationen wie Entfernung, Ankunfts- oder verbleibende Zeit, nächste Abbiegungen, Peilung, aktuellen Straßennamen, Fahrspurinformationen, Höchstgeschwindigkeit, Annäherungswarnungen, POIs und Wegpunkte anzuzeigen.
 
-![Navigational widgets all](@site/static/img/widgets/navigational_widgets_all.png)
+![Alle Navigations-Widgets](@site/static/img/widgets/navigational_widgets_all.png)
 
 
 ## Aktive und passive Navigation {#active-and-passive-navigation}
@@ -78,7 +78,7 @@ Das Höhenprofil-Widget zeigt ein Diagramm mit der Höhe und der Steigung Ihrer 
 
 *<Translate android="true" ids="shared_string_menu,layer_map_appearance,bottom_widgets_panel,available_widgets,elevation_profile"/>*
 
-![Elevation widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
+![Höhen-Widget](@site/blog/2021-12-10-android-4-1/elevation_widget.png)
 
 
 #### Interaktionen mit dem Diagramm {#interactions-with-the-graph}
@@ -98,37 +98,37 @@ Wenn Sie eine Route auswählen und die **Start**-Schaltfläche drücken, öffnet
 |:------------|
 | ***Standort-Pin*** |
 | Ihr ***aktueller Standort*** auf dem Diagramm enthält ein Standortsymbol, die Höhe und den prozentualen Steigungswert. Die rechte Seite des Widgets enthält die höchste Höhe und Steigung, den Durchschnittswert für beide und den niedrigsten Wert auf dem ausgewählten, im Diagramm sichtbaren Routenabschnitt. |
-| ![point](@site/static/img/widgets/sch_1-1.png)|
+| ![Punkt](@site/static/img/widgets/sch_1-1.png)|
 | ***Zusätzliche Informationen*** |
 | Die rechte Seite des Widgets enthält Daten über die höchste Höhe und Steigung, den Durchschnittswert für beide und die niedrigste Höhe und Steigung auf dem ausgewählten, im Diagramm sichtbaren Routenabschnitt. |
-|  ![data](@site/static/img/widgets/sch_1-2.png)|
+|  ![Daten](@site/static/img/widgets/sch_1-2.png)|
 |Die Werte für ***Anstieg*** und ***Gefälle*** sind die Summen der Entfernungen von Ihrem Standortpunkt bis zum Ende des sichtbaren Diagramms. Wenn kein Standortpunkt auf dem Diagramm vorhanden ist, ist es die Summe des gesamten sichtbaren Diagramms auf dem Bildschirm (dies kann passieren, wenn Sie den Maßstab ändern und der Standort außerhalb des Diagramms liegt).|
 | **Anstieg** – zeigt die Summe aller Entfernungen mit zunehmender Höhe von Ihrem Standortpunkt bis zum Ende des sichtbaren Diagramms oder für den ausgewählten Routenabschnitt ohne den auf dem Bildschirm sichtbaren Standortpunkt. |
-| ![uphill scheme](@site/static/img/widgets/sch_uphill_1.png) ![uphill scheme](@site/static/img/widgets/sch_uphill_2.png)|  
+| ![Schema Anstieg](@site/static/img/widgets/sch_uphill_1.png) ![Schema Anstieg](@site/static/img/widgets/sch_uphill_2.png)|  
 | **Gefälle** – zeigt die Summe aller Entfernungen mit abnehmender Höhe von Ihrem Standortpunkt bis zum Ende des sichtbaren Diagramms oder für den ausgewählten Routenabschnitt ohne den auf dem Bildschirm sichtbaren Standortpunkt.|
-| ![downhill scheme](@site/static/img/widgets/sch_downhill_1.png) ![downhill scheme](@site/static/img/widgets/sch_downhill_2.png)|  
+| ![Schema Gefälle](@site/static/img/widgets/sch_downhill_1.png) ![Schema Gefälle](@site/static/img/widgets/sch_downhill_2.png)|  
 |***Steigung*** ist das Verhältnis des Weges zur Horizontalen, wobei Null Horizontalität anzeigt und die Gradzahl einen höheren oder steileren Neigungsgrad angibt.|
 | **Steigung** – zeigt die maximale Straßenneigung in Prozent von Ihrem Standortpunkt bis zum Ende des sichtbaren Diagramms oder für den ausgewählten Routenabschnitt ohne den auf dem Bildschirm sichtbaren Standortpunkt. |
-|![grade scheme](@site/static/img/widgets/sch_grade_1.png) ![grade scheme](@site/static/img/widgets/sch_grade_2.png)|
+|![Schema Steigung](@site/static/img/widgets/sch_grade_1.png) ![Schema Steigung](@site/static/img/widgets/sch_grade_2.png)|
 
 
 ## Peilungs-Widget   {#bearing-widget}
   
 Peilung ist die Richtung zu einem Ziel außerhalb Ihres Fahrzeugs, wie z. B. einem Ziel- oder Ausgangspunkt. Eine Peilung kann *relativ* (entsprechend Ihrem Kurs) oder *magnetisch* (entsprechend dem Kompass) sein. Zum Beispiel ist eine magnetische Peilung von 180° die Richtung nach Süden, und eine relative Peilung von 180° ist direkt hinter Ihnen. Die Himmelsrichtungen sind die vier Hauptrichtungen des Kompasses. Sie sind Nord (*N* - 0° or 360°), Ost (*E* - 90°), Süd (*S* - 180°) und West (*W* - 270°).  
 
-![Trip recording widget](@site/static/img/widgets/bearing.png)
+![Widget Streckenaufzeichnung](@site/static/img/widgets/bearing.png)
 
 <Tabs groupId="operating-systems" queryString="current-os">
 
 <TabItem value="android" label="Android">
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget.png) ![Trip recording widget](@site/static/img/widgets/bearing_widget_1.png)  
+![Widget Streckenaufzeichnung](@site/static/img/widgets/bearing_widget.png) ![Widget Streckenaufzeichnung](@site/static/img/widgets/bearing_widget_1.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Trip recording widget](@site/static/img/widgets/bearing_widget_ios_3.png)
+![Widget Streckenaufzeichnung](@site/static/img/widgets/bearing_widget_ios_3.png)
 
 </TabItem>
 
@@ -174,7 +174,7 @@ Die Widget-Gruppe *Navigationspunkt* zeigt die verbleibende Entfernung zu Ihrem 
 ### Routeninformationen {#route-information}
 
 
-![Destination widget](@site/static/img/widgets/route_information_widget.png)  
+![Ziel-Widget](@site/static/img/widgets/route_information_widget.png)  
 
 Das Widget *Routeninformationen* liefert Echtzeitdaten über die laufende Navigationsroute und eine schnelle Möglichkeit, [eine aktive Route zu verwalten](../navigation/setup/route-navigation.md#start--stop-navigation). Es hilft, wichtige Routendetails im Auge zu behalten und ermöglicht es Ihnen, die aktuelle Navigationssitzung mit minimaler Interaktion zu stoppen oder fortzusetzen.
 
@@ -192,6 +192,8 @@ Das Widget *Routeninformationen* liefert Echtzeitdaten über die laufende Naviga
 
 > HINWEIS: Das Widget ist nur während der Navigation sichtbar.
 
+Auf Android-Smartphones im Querformat ist das Widget *<Translate android="true" ids="map_widget_route_information"/>* standardmäßig ausgeblendet. Stattdessen zeigt das *<Translate android="true" ids="map_widget_right"/>* die Widgets [<Translate android="true" ids="map_widget_distance_to_destination"/>](#distance-to-destination), [<Translate android="true" ids="map_widget_time_to_destination"/>](#time-to-destination), [<Translate android="true" ids="map_widget_distance_to_intermediate"/>](#distance-to-intermediate) und [<Translate android="true" ids="map_widget_time_to_intermediate"/>](#time-to-intermediate) an. Sie können jedes dieser Widgets in [<Translate android="true" ids="map_widget_config"/>](../widgets/configure-screen.md) ein- oder ausblenden.
+
 | | |
 |:------------|:------------|
 | Aktivieren | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → Widget hinzufügen →<Translate android="true" ids="map_widget_route_information"/>* |
@@ -202,7 +204,7 @@ Das Widget *Routeninformationen* liefert Echtzeitdaten über die laufende Naviga
 
 ### Entfernung zum Ziel {#distance-to-destination}
 
-![Destination widget](@site/static/img/widgets/destination_widget.png)  
+![Ziel-Widget](@site/static/img/widgets/destination_widget.png)  
 
 Das Widget zeigt die verbleibende Entfernung zum letzten Zielpunkt an, wenn einer berechneten Route gefolgt wird.  
 
@@ -215,7 +217,7 @@ Das Widget zeigt die verbleibende Entfernung zum letzten Zielpunkt an, wenn eine
 
 ### Entfernung zum Zwischenziel {#distance-to-intermediate}
 
-![Intermediate destination widget](@site/static/img/widgets/intermediate_destination_widget.png)
+![Zwischenziel-Widget](@site/static/img/widgets/intermediate_destination_widget.png)
 
 Das Widget zeigt die Entfernung zum ersten Zwischenziel entlang der berechneten Route. Nach dem Passieren von Zwischenzielen wird der Platz für das nächste Zwischenziel aktualisiert. Wenn keine Zwischenziele vorhanden sind, wird das Widget nicht angezeigt.
 
@@ -232,13 +234,13 @@ Das Widget zeigt die Entfernung zum ersten Zwischenziel entlang der berechneten 
 
 <TabItem value="android" label="Android">  
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_android.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_android.png)  
+![Widget Ankunftszeit und verbleibende Zeit](@site/static/img/widgets/arrival_time_widget_android.png)  ![Widget Ankunftszeit und verbleibende Zeit](@site/static/img/widgets/time_to_go_widget_android.png)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Arrival time Time to go widget](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Arrival time Time to go widget](@site/static/img/widgets/time_to_go_widget_ios.png)  
+![Widget Ankunftszeit und verbleibende Zeit](@site/static/img/widgets/arrival_time_widget_ios.png)  ![Widget Ankunftszeit und verbleibende Zeit](@site/static/img/widgets/time_to_go_widget_ios.png)  
 
 </TabItem>
 
@@ -260,13 +262,13 @@ Das Widget zeigt die *Ankunftszeit* oder die *Fahrzeit* bis zum ersten Zwischenz
 
 <TabItem value="android" label="Android">  
 
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Widget Zwischenankunftszeit und Zeit](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Intermediate Arrival time Time widget](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
+![Widget Zwischenankunftszeit und Zeit](@site/static/img/widgets/intermediate_arrival_time_and_time_widget.png)
 
 </TabItem>
 
@@ -284,7 +286,7 @@ Das Widget zeigt die *Ankunftszeit* oder die *Fahrzeit* bis zum letzten Zielpunk
 
 ## Geschwindigkeitsbegrenzung {#speed-limit}
 
-![Speed limit widget](@site/static/img/widgets/speed_limit_widget_2.png)
+![Geschwindigkeitsbegrenzungs-Widget](@site/static/img/widgets/speed_limit_widget_2.png)
 
 Das Widget *Geschwindigkeitsbegrenzung* zeigt die aktuelle Geschwindigkeitsbegrenzung basierend auf den Kartendaten für Ihre Route an.
 
@@ -305,7 +307,7 @@ Das Widget *Geschwindigkeitsbegrenzung* zeigt die aktuelle Geschwindigkeitsbegre
 ## Routenführung {#route-guidance}
 
 
-![Next turns widget](@site/static/img/widgets/next_turns_widget.png)
+![Widget Nächste Abbiegungen](@site/static/img/widgets/next_turns_widget.png)
 
 Bietet Echtzeit-Routenführung, einschließlich der Entfernung zur nächsten Abbiegung, des Straßennamens, des aktuellen Straßennamens und der Fahrspurinformationen. Die Widgets sind während der Navigation aktiv.
 
@@ -326,7 +328,7 @@ Die *Routenführungs*-Widgets enthalten Informationen über:
 
 ### Fahrspuren {#lanes}
 
-![Lanes widgets](@site/static/img/widgets/lanes_widget.png)
+![Fahrspur-Widgets](@site/static/img/widgets/lanes_widget.png)
 
 Das **Fahrspur**-Widget hebt die aktuelle Fahrspur bei aktiver Navigation hervor und zeigt das Fahrspurlayout für die tatsächliche Straße bei passiver Navigation an. Unter dem Fahrspurdiagramm wird auch ein Entfernungsindikator angezeigt, der angibt, wie weit es noch bis zum Manöver ist, auf das sich die Fahrspurführung bezieht. Dieses Widget ist nur für die oberen und unteren Leisten verfügbar. Die Daten stammen aus dem [OpenStreetMap-Projekt](https://wiki.openstreetmap.org/wiki/Key:turn). Wenn die Kartendaten keine Richtung für jede Fahrspur angeben, ergänzt OsmAnd die fehlenden Richtungen basierend auf dem Layout der Kreuzung.
 
@@ -339,13 +341,13 @@ Auf Android enthält die Widget-Einstellung die Option *Anzeige an kleineren Kre
 
 <TabItem value="android" label="Android">  
 
-![route guidence widget](@site/static/img/widgets/route_guidence_widgets_andr.png)
+![Routenführungs-Widget](@site/static/img/widgets/route_guidence_widgets_andr.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Approach POIs/Favorites ios](@site/static/img/widgets/route_guidence_widgets_ios.png)
+![Annäherung an POIs/Favoriten iOS](@site/static/img/widgets/route_guidence_widgets_ios.png)
 
 </TabItem>
 
@@ -391,7 +393,7 @@ Displays a widget by approach time settings. Lane's color is associated with [vo
 
 ## Warnungs-Widget {#alert-widget}
 
-![Alert information widgets](@site/static/img/widgets/alert_information_widget.png)
+![Warnungsinformations-Widgets](@site/static/img/widgets/alert_information_widget.png)
 
 Das **Warnungs-Widget** kombiniert verschiedene Arten von Warnungen, die während der Navigation in der unteren linken Ecke angezeigt werden.  
 
@@ -414,16 +416,16 @@ Warnungstypen haben ein unterschiedliches visuelles Design, das von der **<Trans
 | | | |
 |:------------|:------------|:------------|
 | Name | Beschreibung | Symbol |
-| *<Translate android="true" ids="show_traffic_warnings"/>* | [Verkehrsberuhigung](https://en.wikipedia.org/wiki/Traffic_calming) nutzt bauliche Gestaltung und andere Maßnahmen, um die Sicherheit für Autofahrer, Fußgänger und Radfahrer zu verbessern. | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_traffic_calming.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_traffic_calming_us.png)|
-| *<Translate android="true" ids="show_pedestrian_warnings"/>* | [Ein Fußgängerüberweg](https://en.wikipedia.org/wiki/Pedestrian_crossing) (vor allem im britischen Englisch) oder Zebrastreifen ist ein für Fußgänger vorgesehener Ort zum Überqueren einer Straße, Gasse oder Allee. OsmAnd zeigt die Warnung vor ungesicherten Fußgängerüberwegen an.  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_pedestrian.png)  ![Alert traffic calming us widgets](@site/static/img/widgets/warnings_pedestrian_us.png) |
-| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In den meisten Ländern legen die [Straßengeschwindigkeitsbegrenzungen](https://en.wikipedia.org/wiki/Speed_limit) die gesetzliche Höchst-, Mittel- oder Mindestgeschwindigkeit fest, mit der Straßenfahrzeuge auf einem bestimmten Straßenabschnitt fahren dürfen. In OsmAnd wird die Warnung angezeigt, wenn Sie die Geschwindigkeit überschreiten. Sie können die Parameter der Geschwindigkeitsüberschreitung (0, 5, 10.. km/h) einstellen. ![Alert ex_speed widgets](@site/static/img/widgets/ex_warning_speed.png)  | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) ![Alert speed_limit_ca widgets](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Alert speed_limit_us widgets](@site/static/img/widgets/warnings_speed_limit_us.png)|
-| *<Translate android="true" ids="show_tunnels"/>* | Ein Tunnel ist ein unterirdischer Durchgang, der unter einem Berg, einem Fluss oder einem verkehrsreichen Stadtgebiet verläuft. In OsmAnd enthält die Warnung *Tunnel* Informationen über die Tunnellänge. Wenn Sie sich in einem Tunnel befinden, wird die Entfernung bis zum Ende des Tunnels angezeigt.   ![Alert ex_tunnel widgets](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Alert warnings_tunnel widgets](@site/static/img/widgets/warnings_tunnel.png)  ![Alert warnings_tunnel_us widgets](@site/static/img/widgets/warnings_tunnel_us.png) |
-| *<Translate android="true" ids="show_cameras"/>* | [Verkehrsüberwachungskameras](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) und [Radarkameras](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) zeichnen Verkehrsverstöße auf, einschließlich Geschwindigkeitsüberschreitungen, Rotlichtverstöße und andere Arten von illegalem Verhalten. <br />**HINWEIS:** Warnungen vor Radarkameras sind in einigen Ländern verboten oder illegal. Um Radarkameras vollständig aus OsmAnd zu [entfernen](../personal/global-settings.md#legal), gehen Sie zum Hauptmenü *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Alert traffic calming widgets](@site/static/img/widgets/warnings_speed_camera.png)   |
-| *<Translate android="true" ids="traffic_warning_stop"/>* | [Ein Stoppschild](https://en.wikipedia.org/wiki/Stop_sign) ist ein Verkehrszeichen, das Fahrer darauf hinweist, dass sie vollständig anhalten und sicherstellen müssen, dass die Kreuzung frei von Fahrzeugen und Fußgängern ist, bevor sie das Schild passieren.  | ![Alert stop widgets](@site/static/img/widgets/warnings_stop.png) |
-| *<Translate android="true" ids="show_railway_warnings"/>* |Diese Warnung bedeutet, dass sich vor Ihnen ein [Bahnübergang](https://en.wikipedia.org/wiki/Crossbuck) befindet. | ![Alert warnings_railways widgets](@site/static/img/widgets/warnings_railways.png) ![Alert warnings_railways_ca widgets](@site/static/img/widgets/warnings_railways_ca.png)  ![Alert warnings_railways_us widgets](@site/static/img/widgets/warnings_railways_us.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* |Diese Warnung zeigt an, dass sich eine Grenzkontrolle vor Ihnen befindet.| ![Alert border control widgets](@site/static/img/widgets/warnings_border_control.png)  |
-| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Gefahrensymbole oder Warnsymbole](https://en.wikipedia.org/wiki/Hazard_symbol) sind erkennbare Symbole, die vor gefährlichen Materialien, Orten oder Objekten warnen, einschließlich elektrischer Ströme, Gifte und Radioaktivität. | ![Alert warnings_hazard widgets](@site/static/img/widgets/warnings_hazard.png)  ![Alert warnings_hazard_us widgets](@site/static/img/widgets/warnings_hazard_us.png) |
-| *<Translate android="true" ids="traffic_warning_payment"/>* | Diese Warnung zeigt an, dass sich eine Mautstelle für eine mautpflichtige Straße vor Ihnen befindet.   ![Alert toll_booth widgets](@site/static/img/widgets/ex_toll_booth.png) | ![Alert speed_limit widgets](@site/static/img/widgets/warnings_limit.png) |
+| *<Translate android="true" ids="show_traffic_warnings"/>* | [Verkehrsberuhigung](https://en.wikipedia.org/wiki/Traffic_calming) nutzt bauliche Gestaltung und andere Maßnahmen, um die Sicherheit für Autofahrer, Fußgänger und Radfahrer zu verbessern. | ![Warnungs-Widgets traffic calming](@site/static/img/widgets/warnings_traffic_calming.png)  ![Warnungs-Widgets traffic calming us](@site/static/img/widgets/warnings_traffic_calming_us.png)|
+| *<Translate android="true" ids="show_pedestrian_warnings"/>* | [Ein Fußgängerüberweg](https://en.wikipedia.org/wiki/Pedestrian_crossing) (vor allem im britischen Englisch) oder Zebrastreifen ist ein für Fußgänger vorgesehener Ort zum Überqueren einer Straße, Gasse oder Allee. OsmAnd zeigt die Warnung vor ungesicherten Fußgängerüberwegen an.  | ![Warnungs-Widgets traffic calming](@site/static/img/widgets/warnings_pedestrian.png)  ![Warnungs-Widgets traffic calming us](@site/static/img/widgets/warnings_pedestrian_us.png) |
+| *<Translate android="true" ids="traffic_warning_speed_limit"/>* | In den meisten Ländern legen die [Straßengeschwindigkeitsbegrenzungen](https://en.wikipedia.org/wiki/Speed_limit) die gesetzliche Höchst-, Mittel- oder Mindestgeschwindigkeit fest, mit der Straßenfahrzeuge auf einem bestimmten Straßenabschnitt fahren dürfen. In OsmAnd wird die Warnung angezeigt, wenn Sie die Geschwindigkeit überschreiten. Sie können die Parameter der Geschwindigkeitsüberschreitung (0, 5, 10.. km/h) einstellen. ![Warnungs-Widgets ex_speed](@site/static/img/widgets/ex_warning_speed.png)  | ![Warnungs-Widgets speed_limit](@site/static/img/widgets/warnings_limit.png) ![Warnungs-Widgets speed_limit_ca](@site/static/img/widgets/warnings_speed_limit_ca.png) ![Warnungs-Widgets speed_limit_us](@site/static/img/widgets/warnings_speed_limit_us.png)|
+| *<Translate android="true" ids="show_tunnels"/>* | Ein Tunnel ist ein unterirdischer Durchgang, der unter einem Berg, einem Fluss oder einem verkehrsreichen Stadtgebiet verläuft. In OsmAnd enthält die Warnung *Tunnel* Informationen über die Tunnellänge. Wenn Sie sich in einem Tunnel befinden, wird die Entfernung bis zum Ende des Tunnels angezeigt.   ![Warnungs-Widgets ex_tunnel](@site/static/img/widgets/ex_warning_tunnel.png)  | ![Warnungs-Widgets warnings_tunnel](@site/static/img/widgets/warnings_tunnel.png)  ![Warnungs-Widgets warnings_tunnel_us](@site/static/img/widgets/warnings_tunnel_us.png) |
+| *<Translate android="true" ids="show_cameras"/>* | [Verkehrsüberwachungskameras](https://en.wikipedia.org/wiki/Traffic_enforcement_camera) und [Radarkameras](https://wiki.openstreetmap.org/wiki/Tag:highway%3Dspeed_camera) zeichnen Verkehrsverstöße auf, einschließlich Geschwindigkeitsüberschreitungen, Rotlichtverstöße und andere Arten von illegalem Verhalten. <br />**HINWEIS:** Warnungen vor Radarkameras sind in einigen Ländern verboten oder illegal. Um Radarkameras vollständig aus OsmAnd zu [entfernen](../personal/global-settings.md#legal), gehen Sie zum Hauptmenü *<Translate android="true" ids="shared_string_menu,shared_string_settings,osmand_settings,shared_string_legal,uninstall_speed_cameras"/>*  | ![Warnungs-Widgets traffic calming](@site/static/img/widgets/warnings_speed_camera.png)   |
+| *<Translate android="true" ids="traffic_warning_stop"/>* | [Ein Stoppschild](https://en.wikipedia.org/wiki/Stop_sign) ist ein Verkehrszeichen, das Fahrer darauf hinweist, dass sie vollständig anhalten und sicherstellen müssen, dass die Kreuzung frei von Fahrzeugen und Fußgängern ist, bevor sie das Schild passieren.  | ![Warnungs-Widgets stop](@site/static/img/widgets/warnings_stop.png) |
+| *<Translate android="true" ids="show_railway_warnings"/>* |Diese Warnung bedeutet, dass sich vor Ihnen ein [Bahnübergang](https://en.wikipedia.org/wiki/Crossbuck) befindet. | ![Warnungs-Widgets warnings_railways](@site/static/img/widgets/warnings_railways.png) ![Warnungs-Widgets warnings_railways_ca](@site/static/img/widgets/warnings_railways_ca.png)  ![Warnungs-Widgets warnings_railways_us](@site/static/img/widgets/warnings_railways_us.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* |Diese Warnung zeigt an, dass sich eine Grenzkontrolle vor Ihnen befindet.| ![Warnungs-Widgets border control](@site/static/img/widgets/warnings_border_control.png)  |
+| *<Translate android="true" ids="traffic_warning_border_control"/>* | [Gefahrensymbole oder Warnsymbole](https://en.wikipedia.org/wiki/Hazard_symbol) sind erkennbare Symbole, die vor gefährlichen Materialien, Orten oder Objekten warnen, einschließlich elektrischer Ströme, Gifte und Radioaktivität. | ![Warnungs-Widgets warnings_hazard](@site/static/img/widgets/warnings_hazard.png)  ![Warnungs-Widgets warnings_hazard_us](@site/static/img/widgets/warnings_hazard_us.png) |
+| *<Translate android="true" ids="traffic_warning_payment"/>* | Diese Warnung zeigt an, dass sich eine Mautstelle für eine mautpflichtige Straße vor Ihnen befindet.   ![Warnungs-Widgets toll_booth](@site/static/img/widgets/ex_toll_booth.png) | ![Warnungs-Widgets speed_limit](@site/static/img/widgets/warnings_limit.png) |
 
 
 ## Straßenname {#street-name}
@@ -437,13 +439,13 @@ In den **Einstellungen** des Widgets können Sie auswählen, dass immer **der ak
 
 <TabItem value="android" label="Android">  
 
- ![Street name without next turn](@site/static/img/widgets/without_next_turn_and.png) ![Street name with next turn](@site/static/img/widgets/with_next_turn_and.png) 
+ ![Straßenname ohne nächste Abbiegung](@site/static/img/widgets/without_next_turn_and.png) ![Straßenname mit nächster Abbiegung](@site/static/img/widgets/with_next_turn_and.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
- ![Street name without next turn ios](@site/static/img/widgets/without_next_turn_ios.png) ![Street name with next turn ios](@site/static/img/widgets/with_next_turn_ios.png) 
+ ![Straßenname ohne nächste Abbiegung iOS](@site/static/img/widgets/without_next_turn_ios.png) ![Straßenname mit nächster Abbiegung iOS](@site/static/img/widgets/with_next_turn_ios.png) 
 
 </TabItem>
 
@@ -464,13 +466,13 @@ In den **Einstellungen** des Widgets können Sie auswählen, dass immer **der ak
 
 <TabItem value="android" label="Android">  
 
-![Approach POIs/Favorites android](@site/static/img/widgets/street_name_poi_widget_android.png)
+![Annäherung an POIs/Favoriten Android](@site/static/img/widgets/street_name_poi_widget_android.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">  
 
-![Approach POIs/Favorites ios](@site/static/img/widgets/street_name_poi_widget_ios.png)
+![Annäherung an POIs/Favoriten iOS](@site/static/img/widgets/street_name_poi_widget_ios.png)
 
 </TabItem>
 

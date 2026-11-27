@@ -1,5 +1,5 @@
 ---
-source-hash: 3bc842959661dd828d9755b0f44afc2e5abbc0efe8dd436c70f19058082f43e0
+source-hash: 2e48c3b33b0a1b2f2052d01d162cbc2eea2150966936da2a46c59204f2985986
 sidebar_position: 5
 title:  Absturzprotokolle
 ---
@@ -37,21 +37,21 @@ Seien Sie vorsichtig beim Senden von App-Protokollen, da diese private Informati
 
 <TabItem value="android" label="Android">
 
-![Send crash logs from Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Send crash logs from Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
+![Absturzprotokolle senden Android 1](@site/static/img/troubleshooting/send_logs_andr_5.webp)  ![Absturzprotokolle senden Android 2](@site/static/img/troubleshooting/send_logs_andr_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Send crash logs from iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
+![Absturzprotokolle senden iOS](@site/static/img/troubleshooting/send_logs_ios.webp)
 
 </TabItem>
 
 </Tabs>
 
 1. Gehen Sie zu *<Translate android="true" ids="shared_string_menu,shared_string_help,send_crash_log"/>* oder *<Translate android="true" ids="send_logcat_log"/>* (Android)/*Send current app log* (iOS). Wählen Sie je nach Situation den geeigneten Protokolltyp aus. Sie können sich auf den Abschnitt [Absturz- und App-Protokolle](#crash-and-app-logs) für Details zu den Unterschieden zwischen den Protokolltypen beziehen.
-2. Wählen Sie im Pop-up-Menü Gmail oder Ihre bevorzugte E-Mail-App aus. Wir empfehlen, die Protokolle an `support@osmand.net` zu senden.
-3. Tippen Sie auf die Schaltfläche *Senden*.
+2. Wählen Sie im Pop-up-Menü aus, wohin die Protokolle gesendet oder gespeichert werden sollen: eine E-Mail-App, eine Cloud-Speicher-App oder ein Dateimanager, um sie auf Ihrem Gerät zu speichern. Wir empfehlen, die Protokolle an `support@osmand.net` zu senden.
+3. Wenn Sie die Protokolle per E-Mail senden, tippen Sie auf die Schaltfläche *Senden*.
 
 <!--
 ### Send Logs from iOS Devices {#send-logs-from-ios-devices}
@@ -159,7 +159,7 @@ Um Tombstone-Dateien zu exportieren, müssen Sie einen Fehlerbericht über die A
   
 Nachdem der Fehlerbericht fertig ist, erhalten Sie eine Benachrichtigung. Tippen Sie auf das Benachrichtigungsfeld, um den Bericht auf Ihr Gerät herunterzuladen. Entpacken Sie die Datei und senden Sie die Tombstone-Dateien an das OsmAnd-Entwicklerteam (E-Mail: `support@osmand.net`).
 
-![Send crash logs from Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Send crash logs from Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
+![Absturzprotokolle senden Android 3](@site/static/img/troubleshooting/send_logs_andr_3.png)  ![Absturzprotokolle senden Android 4](@site/static/img/troubleshooting/send_logs_andr_4.png)
 
 :::note
 Bitte beachten Sie, dass Fehlerberichte private Daten enthalten können, einschließlich App-Nutzung oder Standort.

@@ -1,5 +1,5 @@
 ---
-source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
+source-hash: 5749833ed8004e11c20c4de19dd862afbe945281e8dc7187719f962bcf51fca1
 sidebar_position: 9
 title:  الخرائط عبر الإنترنت
 ---
@@ -34,7 +34,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 يمكنك العثور على معلومات مفصلة حول تصور وتخصيص الخرائط النقطية في مقال [الخرائط النقطية](../map/raster-maps.md). كيفية الاستخدام:
 
 1. [اختر](../map/raster-maps.md#layers) الخريطة النقطية كطبقة *رئيسية* أو *سفلية* أو *علوية*.
-    - [تغيير](../map/raster-maps.md#overlay) معلمات الطبقة (الشفافية).
+    - [تغيير](../map/raster-maps.md#overlay) معلمات الطبقة (الرؤية).
 
 2. [تحضير / نسخ](../map/raster-maps.md#preparecopy-maps) الخرائط النقطية إلى الجهاز.
     - [إضافة مصدر خريطة نقطية جديد عبر الإنترنت](../map/raster-maps.md#add-new-online-source)
@@ -51,7 +51,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 اذهب إلى: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![تكوين الطبقة السفلية / العلوية في أندرويد](@site/static/img/plugins/online-maps/config-underlay-overlay-android.webp)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ import InfoIncompleteArticle from '@site/src/components/_infoIncompleteArticle.m
 
 اذهب إلى: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![تكوين الطبقة السفلية / العلوية في iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.webp)
 
 </TabItem>
 

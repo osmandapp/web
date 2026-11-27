@@ -1,27 +1,28 @@
 import cloneDeep from 'lodash-es/cloneDeep';
-import isEmpty from 'lodash-es/isEmpty';
 import { addDistanceToPoints } from './TracksManager';
+import { withCachedRoutes } from '../../context/TracksRoutingCache';
 
 export function toHistoryState(track) {
     const { wpts, pointsGroups } = cloneDeep({ wpts: track.wpts, pointsGroups: track.pointsGroups });
-    const tracks = isEmpty(track.points) ? track.tracks : null;
 
-    return { ...track, wpts, pointsGroups, layers: null, tracks };
+    return { ...track, wpts, pointsGroups, layers: null, analysisTracks: null, analysisPoints: null };
 }
 
-export function fromHistoryState(state, current) {
-    const restored = {
-        ...toHistoryState(state),
-        name: current.name,
-        id: current.id,
-        metaData: current.metaData,
-        tracks: state.tracks ?? current.tracks,
-        tracksPoints: current.tracksPoints,
-        routeTypes: current.routeTypes,
-        syncRouting: true, // will be 1st effect
-        updateLayers: true, // will be 2nd effect
-        layers: current.layers,
-    };
+export function fromHistoryState(state, ctx) {
+    const restored = withCachedRoutes(
+        {
+            ...toHistoryState(state),
+            name: ctx.selectedGpxFile.name,
+            id: ctx.selectedGpxFile.id,
+            metaData: ctx.selectedGpxFile.metaData,
+            analysisTracks: ctx.selectedGpxFile.analysisTracks,
+            analysisPoints: ctx.selectedGpxFile.analysisPoints,
+            routeTypes: ctx.selectedGpxFile.routeTypes,
+            updateLayers: true, // will be 1st effect
+            layers: ctx.selectedGpxFile.layers,
+        },
+        ctx
+    );
     if (restored.points) {
         addDistanceToPoints(restored.points);
     }

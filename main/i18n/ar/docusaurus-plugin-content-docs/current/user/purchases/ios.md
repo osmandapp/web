@@ -1,5 +1,5 @@
 ---
-source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
+source-hash: fd62270946384571ddb0174dfd6f8910f5b39a06592a0da455d7339a651cd91e
 sidebar_position: 2
 title: مشتريات iOS
 ---
@@ -100,7 +100,6 @@ import Translate from '@site/src/components/Translate.js';
 | [تنزيلات الخرائط](../start-with/download-maps.md) |  <details><summary>**٥ تنزيلات للخرائط** <br /> (يُحتسب تحديث الخريطة كتنزيل):</summary> <br /> - يُقصد بتنزيل الخريطة أو تحديثها فقط تنزيل-تحديث خريطة بلد (منطقة).<br /> - **خريطة العالم العامة**، **تصحيح الارتفاع العالمي**، **خطوط الخرائط** و**التوجيهات الصوتية** لا تُحتسب ضمن إمكانيات التنزيل الخمس.</details> | ✔ | ✔ |
 | [تحديثات الخرائط الشهرية](../personal/maps-resources.md#updates-menu) |  <details><summary>**مرة واحدة شهريًا** <br /> (مع تأخير يومين):</summary> * تقتصر على ٥ تنزيلات (يُحتسب تحديث الخريطة كتنزيل) </details> |  ✔ | ✔ |
 | [تحديثات الخرائط كل ساعة](../personal/maps-resources.md#live-updates)<br/>تحديثات حية (تأخير ساعة واحدة) - [**](#-map-updates) | **-** | **-**| ✔ |
-| [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [تضاريس ثلاثية الأبعاد](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [بيانات التضاريس](../plugins/topography.md#overview)<br/>(خطوط الكنتور والتضاريس) | **-** | ✔ | ✔ |
 | [تخصيص ألوان شبكة الإحداثيات](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -112,7 +111,9 @@ import Translate from '@site/src/components/Translate.js';
 | [ملحق علم الفلك](../plugins/astronomy.md) — [تخطيط المراقبة](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [ملحق علم الفلك](../plugins/astronomy.md) — [وضع الواقع المعزز التفاعلي](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [ملحق علم الفلك](../plugins/astronomy.md) — [خريطة السماء دون اتصال](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [لون خلفية الودجت المخصص](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [الملاحة عبر الإنترنت وغير متصل](../navigation/index.md)<br/>مع توجيهات منعطف بمنعطف | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/car-play.md) | ✔ | ✔ | ✔ |
 | [بحث فوري دون اتصال](../search/index.md) | ✔ | ✔ | ✔ |
 | [تسجيل الرحلة](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [تصدير مسارات GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |
