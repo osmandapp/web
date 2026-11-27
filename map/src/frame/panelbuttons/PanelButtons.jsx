@@ -17,9 +17,8 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, histo
 
     const { state, setState, undo, redo, clear, isUndoPossible, isRedoPossible, pastStates } = useUndoRedo();
 
-    const isUndoDisabled =
-        !isUndoPossible || (pastStates.length === 1 && isEmpty(pastStates[0])) || ctx.selectedGpxFile.syncRouting;
-    const isRedoDisabled = !isRedoPossible || ctx.selectedGpxFile.syncRouting;
+    const isUndoDisabled = !isUndoPossible || (pastStates.length === 1 && isEmpty(pastStates[0]));
+    const isRedoDisabled = !isRedoPossible;
     const isProfileProgress = ctx.processRouting;
 
     useEffect(() => {
@@ -47,7 +46,7 @@ const PanelButtons = ({ orientation, tooltipOrientation, setShowInfoBlock, histo
     }, [ctx.trackState]);
 
     function getState(nextState) {
-        ctx.setSelectedGpxFile(fromHistoryState(nextState, ctx.selectedGpxFile));
+        ctx.setSelectedGpxFile(fromHistoryState(nextState, ctx));
         setUseSavedState(false);
     }
 

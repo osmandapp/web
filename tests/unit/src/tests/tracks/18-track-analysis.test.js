@@ -7,7 +7,7 @@ import TracksManager, {
     withEditedPoints,
 } from '@map/manager/track/TracksManager';
 import { saveTrackToCloud } from '@map/manager/track/SaveTrackManager';
-import TracksRoutingCache, {
+import {
     applyAnalysisAnswer,
     effectControlRouterRequests,
     GET_ANALYSIS_DEBOUNCE_MS,
@@ -461,10 +461,9 @@ describe('srtm', () => {
 
 describe('routing in progress', () => {
     test('save stays disabled from the start of a routing job till the last job is done', async () => {
-        const ctx = createCtx();
+        const ctx = createCtx([createEditorPoint(0), createEditorPoint(1, { geometry: [] })]);
         let answer;
         ctx.trackRouter.updateRouteBetweenPoints.mockImplementation(() => new Promise((resolve) => (answer = resolve)));
-        TracksRoutingCache.addRoutingToCache(createEditorPoint(0), createEditorPoint(1), {}, ctx);
         let jobs = 0;
         const setStartedRouterJobs = (update) => (jobs = update(jobs));
         const control = () => effectControlRouterRequests({ ctx, startedRouterJobs: jobs, setStartedRouterJobs });

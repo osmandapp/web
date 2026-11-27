@@ -16,13 +16,11 @@ import EditablePolyline from '../util/creator/EditablePolyline';
 import EditableMarker from '../util/creator/EditableMarker';
 import { effectDebouncer } from '../../util/Utils';
 import AddRoutingToTrackDialog from '../components/AddRoutingToTrackDialog';
-import TracksRoutingCache, {
+import {
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
     effectRequestAnalysis,
     isAnalysisWanted,
-    routeWaitingSegments,
-    syncTrackWithCache,
 } from '../../context/TracksRoutingCache';
 import useZoomMoveMapHandlers from '../../util/hooks/map/useZoomMoveMapHandlers';
 import { useSelectMarkerOnMap } from '../../util/hooks/map/useSelectMarkerOnMap';
@@ -108,7 +106,6 @@ export default function LocalClientTrackLayer() {
      * SortActions:
      *
      * - finish track rename (oldName)
-     * - check/get routing from cache (syncRouting)
      * - redraw (force visible) track waypoints (localRedrawWpts)
      * - save Local tracks (when editor enabled)
      * - check/set Zoom (fitBounds) for Local tracks
@@ -118,8 +115,6 @@ export default function LocalClientTrackLayer() {
         if (ctxTrack && isLocalTrack(ctx)) {
             if (ctxTrack.oldName) {
                 finishTrackRename();
-            } else if (ctxTrack.syncRouting) {
-                syncRouting();
             } else if (ctxTrack.localRedrawWpts) {
                 localRedrawWpts();
             } else {
@@ -175,15 +170,7 @@ export default function LocalClientTrackLayer() {
 
         return () => map.off('click', clickMap);
         // ctx.pointContextMenu was added to monitor menu state and ignore click
-        // ctx.routingCache was added to have actual context for addRoutingToCache()
-    }, [
-        ctx.createTrack,
-        ctxTrack,
-        geoRouter.getEffectDeps(),
-        ctx.pointContextMenu,
-        ctx.routingCache,
-        ctx.openContextMenu,
-    ]);
+    }, [ctx.createTrack, ctxTrack, geoRouter.getEffectDeps(), ctx.pointContextMenu, ctx.openContextMenu]);
 
     /**
      * Refresh visible (active) localTracks.
@@ -335,11 +322,6 @@ export default function LocalClientTrackLayer() {
         }
     }
 
-    function syncRouting() {
-        const track = { ...ctxTrack, syncRouting: false };
-        ctx.setSelectedGpxFile(syncTrackWithCache({ ctx, track, geoRouter }));
-    }
-
     function localRedrawWpts() {
         const pg = getResolvedPointsGroups(ctxTrack);
         redrawWptsOnLayer({ layer: ctxTrack.layers, pointsGroups: pg });
@@ -458,7 +440,7 @@ export default function LocalClientTrackLayer() {
             setTrigger: setTriggerControlRouterRequests,
             delay: CONTROL_ROUTER_REQUEST_DEBOUNCER_MS,
         });
-    }, [ctx.routingCache, startedRouterJobs, triggerControlRouterRequests, ctx.processingAnalytics]);
+    }, [ctxTrack?.points, ctx.routingCache, startedRouterJobs, triggerControlRouterRequests]);
 
     // after-routing
     useEffect(() => {
@@ -474,7 +456,7 @@ export default function LocalClientTrackLayer() {
             setTrigger: setTriggerRefreshTrackWithRouting,
             delay: REFRESH_TRACKS_WITH_ROUTING_DEBOUNCER_MS,
         });
-    }, [ctx.routingCache, triggerRefreshTrackWithRouting]);
+    }, [ctxTrack?.points, ctx.routingCache, triggerRefreshTrackWithRouting]);
 
     useEffect(() => {
         if (ctx.createTrack?.enable && isLocalTrack(ctx)) {
@@ -550,8 +532,6 @@ export default function LocalClientTrackLayer() {
             tempLine.options = { ...tempLine.options, name: TEMP_LAYER_FLAG };
             layers.addLayer(tempLine);
 
-            TracksRoutingCache.addRoutingToCache(prevPoint, addNewPoint, tempLine, ctx);
-
             ctxTrack.addNewPoint = addNewPoint;
             ctxTrack.points = points;
 
@@ -602,7 +582,6 @@ export default function LocalClientTrackLayer() {
                     } else {
                         const tempLine = TrackLayerProvider.createEditableTempLPolyline(prevPoint, newPoint, map, ctx);
                         layers.addLayer(tempLine);
-                        TracksRoutingCache.addRoutingToCache(prevPoint, newPoint, tempLine, ctx);
                     }
                 }
                 ctxTrack.newPoint = newPoint;
@@ -643,7 +622,6 @@ export default function LocalClientTrackLayer() {
             trackLayers: new L.FeatureGroup(),
         });
         ctxTrack.points = points;
-        routeWaitingSegments(ctxTrack, ctx);
 
         ctxTrack.newPoint = points[points.length - 1];
 

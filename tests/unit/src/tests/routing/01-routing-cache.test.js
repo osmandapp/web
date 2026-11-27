@@ -1,23 +1,26 @@
-import TracksRoutingCache, {
+import {
     debouncer,
     effectControlRouterRequests,
     effectRefreshTrackWithRouting,
     effectRequestAnalysis,
     GET_ANALYSIS_DEBOUNCE_MS,
-    routeWaitingSegments,
-    syncTrackWithCache,
+    getWaitingSegments,
 } from '@map/context/TracksRoutingCache';
-import TracksManager, { ROUTER_ERROR_LINE_USED, updateTrackRouteTypes } from '@map/manager/track/TracksManager';
+import TracksManager, { mergeRouteTypes, ROUTER_ERROR_LINE_USED } from '@map/manager/track/TracksManager';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
+import { fromHistoryState, toHistoryState } from '@map/manager/track/TrackHistory';
 import { apiPost } from '@map/util/HttpApi';
-import { createEditorCtx, createEditorPoint } from '../../util/fixtures/tracks';
+import { createEditorCtx, createEditorPoint, createRecordedGeometry } from '../../util/fixtures/tracks';
 import { settle } from '../../util/settle';
 
 jest.mock('@map/map/util/creator/EditablePolyline');
 
-const point = (i, profile) => createEditorPoint(i, { profile });
-const waitingPoint = (i) => createEditorPoint(i, { geometry: [] });
-const line = () => ({
+const GAP = TracksManager.PROFILE_GAP;
+
+const point = (i, profile) => ({ ...createEditorPoint(i, { profile }), id: i });
+const waitingPoint = (i, profile) => ({ ...createEditorPoint(i, { profile, geometry: [] }), id: i });
+const line = (end) => ({
+    point: end,
     setStyle: jest.fn(),
     setLatLngs: jest.fn(),
     removeFrom: jest.fn(),
@@ -31,89 +34,87 @@ const mockEditablePolyline = () =>
 const createCtx = (points) => createEditorCtx({ points });
 const geoRouter = createEditorCtx().trackRouter;
 
-const entries = (ctx) => Object.values(ctx.routingCache);
+const keys = (ctx) => getWaitingSegments(ctx.selectedGpxFile.points, ctx.trackRouter).map(({ key }) => key);
+const answer = (ctx, key, geometry) => (ctx.routingCache[key] = { geometry });
+const startRouting = (ctx) =>
+    effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
+const askedPairs = (ctx) =>
+    ctx.trackRouter.updateRouteBetweenPoints.mock.calls.map(([, start, end]) => [start.lat, end.lat]);
 
-test('a segment is cached by its points and profile, a protected one is not cached', () => {
-    const ctx = createCtx();
-    const [a, b] = [point(0), point(1)];
+test('a waiting segment is asked by its points and profile, an answered pair is reused, a recorded one is not asked', () => {
+    const recorded = { ...createEditorPoint(1, { geometry: createRecordedGeometry(0, 1) }), id: 1 };
+    expect(keys(createCtx([point(0), recorded]))).toEqual([]);
 
-    TracksRoutingCache.addRoutingToCache(a, b, null, ctx);
-    expect(entries(ctx)).toEqual([]);
+    const ctx = createCtx([point(0), waitingPoint(1)]);
+    const [carKey] = keys(ctx);
+    expect(carKey).toContain('key-car');
 
-    TracksRoutingCache.addRoutingToCache(a, b, line(), ctx);
-    expect(entries(ctx)).toMatchObject([{ geometry: null, busy: false, geoProfile: { cacheKey: 'key-car' } }]);
-    // the cache keeps copies, a point dragged later does not change the cached segment
-    a.lat = 49;
-    expect(entries(ctx)[0].startPoint.lat).toBe(50);
+    answer(ctx, carKey, ['routed']);
+    startRouting(ctx);
+    expect(ctx.trackRouter.updateRouteBetweenPoints).not.toHaveBeenCalled();
 
-    entries(ctx)[0].geometry = ['routed'];
-    TracksRoutingCache.addRoutingToCache(point(0), b, line(), ctx);
-    TracksRoutingCache.addRoutingToCache(point(0, 'bike'), b, line(), ctx);
-    expect(entries(ctx).map((e) => e.geometry)).toEqual([['routed'], null]);
+    ctx.selectedGpxFile.points = [point(0, 'bike'), waitingPoint(1)];
+    startRouting(ctx);
+    expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(1);
 });
 
 test('the router is asked for the segments without geometry, six at a time', async () => {
-    const ctx = createCtx();
-    const setStartedRouterJobs = jest.fn();
+    const ctx = createCtx([point(0), ...Array.from({ length: 8 }, (_, i) => waitingPoint(i + 1))]);
     jest.spyOn(console, 'debug').mockImplementation(() => {});
     ctx.trackRouter.updateRouteBetweenPoints.mockResolvedValue({ points: ['routed'] });
-    for (let i = 0; i < 8; i++) {
-        TracksRoutingCache.addRoutingToCache(point(i), point(i + 1), line(), ctx);
-    }
 
-    expect(effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs })).toBe(true);
+    expect(startRouting(ctx)).toBe(true);
     expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(6);
-    expect(entries(ctx).filter((e) => e.busy)).toHaveLength(6);
 
     // with six requests in flight nothing more is started
-    expect(effectControlRouterRequests({ ctx, startedRouterJobs: 6, setStartedRouterJobs })).toBe(false);
+    expect(effectControlRouterRequests({ ctx, startedRouterJobs: 6, setStartedRouterJobs: jest.fn() })).toBe(false);
     expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(6);
 
     await settle();
-    expect(
-        entries(ctx)
-            .filter((e) => e.geometry)
-            .map((e) => e.geometry)
-    ).toEqual(Array(6).fill(['routed']));
+    expect(Object.values(ctx.routingCache).map((entry) => entry.geometry)).toEqual(Array(6).fill(['routed']));
 });
 
-test('nothing is sent to the router while the analysis is running', () => {
-    const ctx = createCtx();
+test('the router is asked while the analysis is running', () => {
+    const ctx = createCtx([point(0), waitingPoint(1)]);
     ctx.processingAnalytics = true;
-    jest.spyOn(console, 'debug').mockImplementation(() => {});
-    TracksRoutingCache.addRoutingToCache(point(0), point(1), line(), ctx);
 
-    expect(effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() })).toBe(false);
-    expect(ctx.trackRouter.updateRouteBetweenPoints).not.toHaveBeenCalled();
+    expect(startRouting(ctx)).toBe(true);
+    expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(1);
 });
 
-test('a failed request is not repeated', async () => {
-    const ctx = createCtx();
+test('a failed request is not repeated while its segment waits, a changed segment is asked again', async () => {
+    const failed = [point(0), waitingPoint(1)];
+    const ctx = createCtx(failed);
     ctx.setRoutingErrorMsg = jest.fn();
     ctx.trackRouter.updateRouteBetweenPoints.mockRejectedValue(new Error('router down'));
     jest.spyOn(console, 'error').mockImplementation(() => {});
-    TracksRoutingCache.addRoutingToCache(point(0), point(1), line(), ctx);
 
-    effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
+    startRouting(ctx);
     await settle();
-    effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
+    startRouting(ctx);
 
     // the request and its straight line fallback
     expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(2);
     expect(ctx.setProcessRouting).toHaveBeenLastCalledWith(false);
+
+    ctx.selectedGpxFile.points = [point(0), point(1)];
+    startRouting(ctx);
+    ctx.selectedGpxFile.points = failed;
+    startRouting(ctx);
+
+    expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(3);
 });
 
 test('a router error leaves a straight line and a message', async () => {
     jest.spyOn(console, 'error').mockImplementation(() => {});
-    const ctx = createCtx();
+    const ctx = createCtx([point(0), waitingPoint(1)]);
     ctx.setRoutingErrorMsg = jest.fn();
     ctx.trackRouter.updateRouteBetweenPoints.mockRejectedValueOnce(new Error('router down'));
-    TracksRoutingCache.addRoutingToCache(point(0), point(1), line(), ctx);
 
-    effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
+    startRouting(ctx);
     await settle();
 
-    expect(entries(ctx)[0].geometry.map(({ lat }) => lat)).toEqual([50, 50.01]);
+    expect(Object.values(ctx.routingCache)[0].geometry.map(({ lat }) => lat)).toEqual([50, 50.01]);
     expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenLastCalledWith(
         ctx,
         expect.anything(),
@@ -125,40 +126,26 @@ test('a router error leaves a straight line and a message', async () => {
     expect(ctx.setRoutingErrorMsg).toHaveBeenCalledWith(ROUTER_ERROR_LINE_USED);
 });
 
-test('a segment that waits for the router without a cache entry is cached once, as a reopened track has it', () => {
-    const [a, b] = [
-        { ...point(0), id: 1 },
-        { ...point(1), id: 2, geometry: [] },
-    ];
-    const ctx = createCtx([a, b]);
-    const waiting = { point: b };
-    ctx.selectedGpxFile.layers = { getLayers: () => [waiting] };
+test('a segment that waits for the router in a reopened track is asked once', () => {
+    const ctx = createCtx([point(0), waitingPoint(1)]);
+    let jobs = 0;
+    const setStartedRouterJobs = (update) => (jobs = update(jobs));
 
-    routeWaitingSegments(ctx.selectedGpxFile, ctx);
-    routeWaitingSegments(ctx.selectedGpxFile, ctx);
+    effectControlRouterRequests({ ctx, startedRouterJobs: jobs, setStartedRouterJobs });
+    effectControlRouterRequests({ ctx, startedRouterJobs: jobs, setStartedRouterJobs });
 
-    expect(entries(ctx)).toMatchObject([{ tempLine: waiting, geometry: null, endPoint: { lat: 50.01 } }]);
+    expect(askedPairs(ctx)).toEqual([[50, 50.01]]);
 });
 
-test('a routed segment goes into the track once, the segments that are gone leave the cache', () => {
-    const [a, b, gap, c, d] = [
-        point(0),
-        waitingPoint(1),
-        point(2, TracksManager.PROFILE_GAP),
-        waitingPoint(3),
-        waitingPoint(4),
-    ];
+test('a routed segment goes into the track once, a gap is never routed, a segment still waiting is kept', () => {
+    const [a, b, gap, c, d] = [point(0), waitingPoint(1), point(2, GAP), waitingPoint(3), waitingPoint(4)];
     const ctx = createCtx([a, b, gap, c, d]);
     const saveChanges = jest.fn();
     mockEditablePolyline();
-    const [ab, gapC, old] = [line(), line(), line()];
-    TracksRoutingCache.addRoutingToCache(a, b, ab, ctx);
-    TracksRoutingCache.addRoutingToCache(gap, c, gapC, ctx);
-    TracksRoutingCache.addRoutingToCache(c, d, line(), ctx);
-    TracksRoutingCache.addRoutingToCache(point(10), point(11), old, ctx);
-    TracksRoutingCache.addRoutingToCache(point(12), point(13), null, ctx);
-    const [abEntry, gapEntry, cdEntry, oldEntry] = entries(ctx);
-    abEntry.geometry = gapEntry.geometry = oldEntry.geometry = ['routed'];
+    const [ab, gapC] = [line(b), line(c)];
+    ctx.selectedGpxFile.layers = { getLayers: () => [ab, gapC] };
+    const [abKey] = keys(ctx);
+    answer(ctx, abKey, ['routed']);
 
     expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges })).toBe(true);
 
@@ -166,26 +153,35 @@ test('a routed segment goes into the track once, the segments that are gone leav
     expect(routed.points[1].geometry).toEqual(['routed']);
     expect(ab.setLatLngs).toHaveBeenCalledWith(['latlng']);
     expect(ab.setStyle).toHaveBeenCalledWith({ color: '#0000ff', dashArray: null });
-    expect(abEntry.tempLine).toBeNull();
     expect(saveChanges).toHaveBeenCalledTimes(1);
     // a gap is never routed, a segment still waiting for the router is kept
     expect(routed.points[3].geometry).toEqual([]);
+    expect(routed.points[4].geometry).toEqual([]);
     expect(gapC.setLatLngs).not.toHaveBeenCalled();
-    expect(entries(ctx)).toEqual([abEntry, gapEntry, cdEntry]);
 
     // a second pass finds nothing new
+    ctx.selectedGpxFile = routed;
     expect(effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges })).toBe(false);
     expect(saveChanges).toHaveBeenCalledTimes(1);
 });
 
+test('a routed segment without its dashed line on the map is put on the track and redrawn', () => {
+    const ctx = createCtx([point(0), waitingPoint(1)]);
+    const saveChanges = jest.fn();
+    answer(ctx, keys(ctx)[0], ['routed']);
+
+    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges });
+
+    const [[, , , routed]] = saveChanges.mock.calls;
+    expect(routed.points[1].geometry).toEqual(['routed']);
+    expect(routed.updateLayers).toBe(true);
+});
+
 test('the analysis is asked when the last waiting segment is routed, not while others still wait', () => {
     jest.useFakeTimers();
-    const [a, b, c] = [point(0), waitingPoint(1), waitingPoint(2)];
-    const ctx = createCtx([a, b, c]);
+    const ctx = createCtx([point(0), waitingPoint(1), waitingPoint(2)]);
     mockEditablePolyline();
-    TracksRoutingCache.addRoutingToCache(a, b, line(), ctx);
-    TracksRoutingCache.addRoutingToCache(b, c, line(), ctx);
-    const [abEntry, bcEntry] = entries(ctx);
+    const [abKey, bcKey] = keys(ctx);
     const debouncerTimer = { current: null };
     const analyses = () => apiPost.mock.calls.filter(([url]) => url.endsWith(`/gpx/${TracksManager.GET_ANALYSIS}`));
     const refresh = () => {
@@ -195,31 +191,29 @@ test('the analysis is asked when the last waiting segment is routed, not while o
         jest.advanceTimersByTime(GET_ANALYSIS_DEBOUNCE_MS);
     };
 
-    abEntry.geometry = ['routed'];
+    answer(ctx, abKey, ['routed']);
     refresh();
     expect(analyses()).toHaveLength(0);
 
-    bcEntry.geometry = ['routed'];
+    answer(ctx, bcKey, ['routed']);
     refresh();
     expect(analyses()).toHaveLength(1);
     jest.useRealTimers();
 });
 
 test('a cached route put back into a point gets the gap mark of that point', () => {
-    const GAP = TracksManager.PROFILE_GAP;
-    const [a, gap, b, c] = [point(0), point(1, GAP), point(2), point(3)];
-    const ctx = createCtx([a, gap, b, c]);
-    TracksRoutingCache.addRoutingToCache(a, gap, line(), ctx);
-    TracksRoutingCache.addRoutingToCache(b, c, line(), ctx);
-    const [toGap, toC] = entries(ctx);
-    toGap.geometry = [point(0), point(1)];
-    toC.geometry = [point(2), point(3, GAP)];
+    const ctx = createCtx([point(0), waitingPoint(1, GAP), point(2), waitingPoint(3)]);
+    const [toGap, toC] = keys(ctx);
+    answer(ctx, toGap, [point(0), point(1)]);
+    answer(ctx, toC, [point(2), point(3, GAP)]);
 
-    const { points } = syncTrackWithCache({
+    effectRefreshTrackWithRouting({
         ctx,
-        track: ctx.selectedGpxFile,
         geoRouter,
+        saveChanges: (points, wpts, layers, track) => ctx.setSelectedGpxFile(track),
     });
+
+    const { points } = ctx.selectedGpxFile;
     expect(points[1].geometry.at(-1).profile).toBe(GAP);
     expect(points[3].geometry.at(-1).profile).toBeUndefined();
 });
@@ -229,17 +223,16 @@ test('a router answer for the place a point was dragged away from is not put on 
         [0, 1],
         [1, 0],
     ]) {
-        const [a, b] = [point(0), waitingPoint(1)];
-        const ctx = createCtx([a, b]);
+        const a = point(0);
+        const ctx = createCtx([a, waitingPoint(1)]);
         const answers = [];
         mockEditablePolyline();
         ctx.trackRouter.updateRouteBetweenPoints.mockImplementation(
             (ctx, start, end) => new Promise((resolve) => answers.push(() => resolve({ points: [`to ${end.lat}`] })))
         );
         const drag = (lat) => {
-            b.lat = lat;
-            TracksRoutingCache.addRoutingToCache(a, b, line(), ctx);
-            effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
+            ctx.selectedGpxFile = { ...ctx.selectedGpxFile, points: [a, { ...waitingPoint(1), lat }] };
+            startRouting(ctx);
         };
 
         let routed;
@@ -260,83 +253,63 @@ test('a router answer for the place a point was dragged away from is not put on 
 });
 
 test.failing('the dashed line of a pair that starts at a gap is removed, not left', () => {
-    const [gap, c] = [point(0, TracksManager.PROFILE_GAP), point(1)];
-    const ctx = createCtx([gap, c]);
-    const gapC = line();
-    TracksRoutingCache.addRoutingToCache(gap, c, gapC, ctx);
-    entries(ctx)[0].geometry = ['routed'];
+    const c = waitingPoint(1);
+    const ctx = createCtx([point(0, GAP), c]);
+    const gapC = line(c);
+    ctx.selectedGpxFile.layers = { getLayers: () => [gapC] };
 
     effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn() });
 
     expect(gapC.removeFrom).toHaveBeenCalledWith(ctx.selectedGpxFile.layers);
 });
 
-test('the route types of an answer join the track, the indexes in its segments follow them', () => {
-    const ctx = createCtx();
-    ctx.selectedGpxFile.routeTypes = [{ tag: 'highway', value: 'primary' }];
-    const answer = [{ lat: 50, lng: 30, segment: { ext: { types: '0,1', pointTypes: '1', names: '0' } } }];
+test('the route types of an answer join the track, the indexes in its segments follow them, the answer is kept', () => {
+    const answered = [{ lat: 50, lng: 30, segment: { ext: { types: '0,1', pointTypes: '1', names: '0' } } }];
+    const segmentTypes = [
+        { tag: 'highway', value: 'residential' },
+        { tag: 'highway', value: 'primary' },
+    ];
 
-    updateTrackRouteTypes(
-        answer,
-        [
-            { tag: 'highway', value: 'residential' },
-            { tag: 'highway', value: 'primary' },
-        ],
-        ctx
-    );
+    const { geometry, routeTypes } = mergeRouteTypes(answered, segmentTypes, [{ tag: 'highway', value: 'primary' }]);
 
-    expect(ctx.selectedGpxFile.routeTypes).toEqual([
+    expect(routeTypes).toEqual([
         { tag: 'highway', value: 'primary' },
         { tag: 'highway', value: 'residential' },
     ]);
-    expect(answer[0].segment.ext).toEqual({ types: '1,0', pointTypes: '0', names: '1' });
+    expect(geometry[0].segment.ext).toEqual({ types: '1,0', pointTypes: '0', names: '1' });
+    expect(answered[0].segment.ext).toEqual({ types: '0,1', pointTypes: '1', names: '0' });
 });
 
-test('undo restores the geometry of every segment from the cache and drops the unfinished ones', () => {
-    jest.useFakeTimers();
-    const [a, b, gap, c, d] = [point(0), point(1), point(2, TracksManager.PROFILE_GAP), point(3), point(4)];
+test('after an undo the waiting segments take their cached routes at once, the others are asked again', () => {
+    const [a, b, gap, c, d] = [point(0), waitingPoint(1), point(2, GAP), waitingPoint(3), waitingPoint(4)];
     const ctx = createCtx([a, b, gap, c, d]);
-    const pending = line();
-    TracksRoutingCache.addRoutingToCache(a, b, line(), ctx);
-    TracksRoutingCache.addRoutingToCache(gap, c, line(), ctx);
-    TracksRoutingCache.addRoutingToCache(c, d, pending, ctx);
-    const [abEntry, gapEntry] = entries(ctx);
-    abEntry.geometry = gapEntry.geometry = ['routed'];
-    abEntry.tempLine = gapEntry.tempLine = null;
+    const [abKey] = keys(ctx);
+    const route = [
+        { lat: 50, lng: 30 },
+        { lat: 50.01, lng: 30 },
+    ];
+    answer(ctx, abKey, route);
 
-    const { points } = syncTrackWithCache({
-        ctx,
-        track: ctx.selectedGpxFile,
-        geoRouter,
-    });
-    expect(points[1].geometry).toEqual(['routed']);
-    expect(points[3].geometry).toBeUndefined();
-    expect(points[4].geometry).toBeUndefined();
-    expect(pending.removeFrom).toHaveBeenCalledWith(ctx.selectedGpxFile.layers);
-    expect(entries(ctx)).toEqual([abEntry, gapEntry]);
-    jest.useRealTimers();
+    ctx.selectedGpxFile = fromHistoryState(toHistoryState(ctx.selectedGpxFile), ctx);
+    startRouting(ctx);
+
+    const { points } = ctx.selectedGpxFile;
+    expect(points[1].geometry).toEqual(route);
+    expect(points[3].geometry).toEqual([]);
+    expect(askedPairs(ctx)).toEqual([[50.03, 50.04]]);
 });
 
 test('a segment still waiting for the router when it was undone is routed after a redo', () => {
-    jest.useFakeTimers();
-    const [a, b] = [
-        { ...point(0), id: 1 },
-        { ...point(1), id: 2 },
-    ];
+    const [a, b] = [point(0), point(1)];
     const dragged = { ...b, lat: 50.02, geometry: [] };
     const ctx = createCtx([a, dragged]);
-    TracksRoutingCache.addRoutingToCache(a, dragged, line(), ctx);
-    const sync = (points) => syncTrackWithCache({ ctx, track: { points }, geoRouter });
 
-    sync([a, b]);
-    sync([a, dragged]);
-    // the redraw after the redo draws a dashed line to the waiting point
-    ctx.selectedGpxFile.layers = { getLayers: () => [{ point: dragged }] };
-    effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges: jest.fn() });
-    effectControlRouterRequests({ ctx, startedRouterJobs: 0, setStartedRouterJobs: jest.fn() });
-    jest.useRealTimers();
+    ctx.selectedGpxFile = { ...ctx.selectedGpxFile, points: [a, b] };
+    startRouting(ctx);
+    ctx.selectedGpxFile = { ...ctx.selectedGpxFile, points: [a, dragged] };
+    startRouting(ctx);
 
-    expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalled();
+    expect(askedPairs(ctx)).toEqual([[50, 50.02]]);
 });
 
 test('only the last call of a burst runs', () => {

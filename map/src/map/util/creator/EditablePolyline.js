@@ -10,7 +10,6 @@ import {
     isProtectedSegment,
 } from '../../../manager/track/TrackOperations';
 import EditableMarker from './EditableMarker';
-import TracksRoutingCache from '../../../context/TracksRoutingCache';
 
 export default class EditablePolyline {
     currentPolyline;
@@ -190,16 +189,8 @@ export default class EditablePolyline {
 
             this.map.removeLayer(currentLayer);
 
-            const polylineTempCurrent = this.activatePolyline({
-                track,
-                start: prevPoint,
-                end: currentPoint,
-                temp: true,
-            });
-            const polylineTempNext = this.activatePolyline({ track, start: currentPoint, end: nextPoint, temp: true });
-
-            TracksRoutingCache.addRoutingToCache(prevPoint, currentPoint, polylineTempCurrent, this.ctx);
-            TracksRoutingCache.addRoutingToCache(currentPoint, nextPoint, polylineTempNext, this.ctx);
+            this.activatePolyline({ track, start: prevPoint, end: currentPoint, temp: true });
+            this.activatePolyline({ track, start: currentPoint, end: nextPoint, temp: true });
         }
 
         // finally
@@ -230,8 +221,6 @@ export default class EditablePolyline {
 
         polyline.addTo(track.layers);
         // XXX register layers (but check is it still really need)
-
-        return polyline;
     }
 
     findTheNearestSegment({ point, segments }) {

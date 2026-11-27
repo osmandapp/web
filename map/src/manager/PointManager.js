@@ -1,7 +1,7 @@
 import TracksManager from './track/TracksManager';
 import * as TrackOperations from './track/TrackOperations';
 import TrackLayerProvider from '../map/util/TrackLayerProvider';
-import TracksRoutingCache, { requestAnalysisNow } from '../context/TracksRoutingCache';
+import { requestAnalysisNow } from '../context/TracksRoutingCache';
 import isEmpty from 'lodash-es/isEmpty';
 
 function deleteWpt(ind, ctx, save = false) {
@@ -95,11 +95,11 @@ function updateLastPointProfile(track, geoProfile) {
     }
 }
 
-function changeSegmentProfile(track, index, polylines, geoProfile, ctx) {
-    changeSegmentsProfile(track, index, index + 1, polylines, geoProfile, ctx);
+function changeSegmentProfile(track, index, polylines, geoProfile) {
+    changeSegmentsProfile(track, index, index + 1, polylines, geoProfile);
 }
 
-function changeSegmentsProfile(track, from, to, polylines, geoProfile, ctx) {
+function changeSegmentsProfile(track, from, to, polylines, geoProfile) {
     const points = track.points;
     const changed = [];
     for (let i = from; i < to; i++) {
@@ -112,19 +112,11 @@ function changeSegmentsProfile(track, from, to, polylines, geoProfile, ctx) {
                 points[i + 1]
             );
             if (polyline) {
-                changed.push({ index: i, polyline });
+                changed.push(i);
             }
         }
     }
-    const updated = TrackOperations.setSegmentsProfile(
-        points,
-        changed.map(({ index }) => index),
-        geoProfile
-    );
-    track.points = updated;
-    changed.forEach(({ index, polyline }) =>
-        TracksRoutingCache.addRoutingToCache(updated[index], updated[index + 1], polyline, ctx)
-    );
+    track.points = TrackOperations.setSegmentsProfile(points, changed, geoProfile);
 }
 
 function changeProfile({ ctx, geoProfile, changeOne, changeAll }) {
@@ -150,7 +142,7 @@ function changeTrackProfile({ track, ctx, geoProfile, changeOne, changeAll }) {
         if (changeAll) {
             // whole track - all segments
             if (track.points?.length > 1) {
-                changeSegmentsProfile(track, 0, track.points.length - 1, polylines, geoProfile, ctx);
+                changeSegmentsProfile(track, 0, track.points.length - 1, polylines, geoProfile);
                 updateLastPointProfile(track, geoProfile);
                 return true;
             } else {
@@ -167,16 +159,16 @@ function changeTrackProfile({ track, ctx, geoProfile, changeOne, changeAll }) {
         if (changeOne) {
             // before or after - one segment
             if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                changeSegmentProfile(track, ctx.trackProfileManager.pointInd - 1, polylines, geoProfile, ctx);
+                changeSegmentProfile(track, ctx.trackProfileManager.pointInd - 1, polylines, geoProfile);
                 return true;
             } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
-                changeSegmentProfile(track, ctx.trackProfileManager.pointInd, polylines, geoProfile, ctx);
+                changeSegmentProfile(track, ctx.trackProfileManager.pointInd, polylines, geoProfile);
                 return true;
             }
         } else if (changeAll) {
             // before or after - all segments
             if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_BEFORE) {
-                changeSegmentsProfile(track, 0, ctx.trackProfileManager.pointInd, polylines, geoProfile, ctx);
+                changeSegmentsProfile(track, 0, ctx.trackProfileManager.pointInd, polylines, geoProfile);
                 return true;
             } else if (ctx.trackProfileManager?.change === TracksManager.CHANGE_PROFILE_AFTER) {
                 changeSegmentsProfile(
@@ -184,8 +176,7 @@ function changeTrackProfile({ track, ctx, geoProfile, changeOne, changeAll }) {
                     ctx.trackProfileManager.pointInd,
                     track.points.length - 1,
                     polylines,
-                    geoProfile,
-                    ctx
+                    geoProfile
                 );
                 updateLastPointProfile(track, geoProfile);
                 return true;
@@ -230,7 +221,7 @@ function getPointMenuItems(points, index) {
 function applyOperation(ctx, points, indexes = []) {
     const track = { ...ctx.selectedGpxFile, points, updateLayers: true };
     const routed = [...new Set(indexes)].filter((index) => TrackOperations.isWaitingForRouter(points, index));
-    routed.forEach((index) => routeByCache(track, index, ctx));
+    routed.forEach((index) => drawWaitingSegment(track, index));
     ctx.setSelectedGpxFile(track);
     TracksManager.updateState(ctx);
     if (routed.length === 0) {
@@ -238,13 +229,10 @@ function applyOperation(ctx, points, indexes = []) {
     }
 }
 
-function routeByCache(track, index, ctx) {
-    const start = track.points[index - 1];
+function drawWaitingSegment(track, index) {
     const end = track.points[index];
-    const tempLine = TrackLayerProvider.createTempPolyline(start, end);
     deleteOldTempLayer(track.layers, end);
-    track.layers.addLayer(tempLine);
-    TracksRoutingCache.addRoutingToCache(start, end, tempLine, ctx);
+    track.layers.addLayer(TrackLayerProvider.createTempPolyline(track.points[index - 1], end));
 }
 
 const PointManager = {

@@ -30,7 +30,6 @@
     "zoom": <Boolean> // internal
     "hasGeo": <Boolean> // internal
     "selected": <Boolean> // internal
-    "syncRouting": <Boolean> // internal
     "updateLayers": <Boolean> // internal
     "localRedrawWpts": <Boolean> // internal
     "cloudRedwarWpts": <Boolean> // internal

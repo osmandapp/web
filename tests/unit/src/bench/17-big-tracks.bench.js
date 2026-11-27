@@ -6,7 +6,8 @@ import TracksManager, {
     getTrackPoints,
     PROFILE_LINE,
 } from '@map/manager/track/TracksManager';
-import TracksRoutingCache, { effectRefreshTrackWithRouting } from '@map/context/TracksRoutingCache';
+import { effectRefreshTrackWithRouting, getWaitingSegments } from '@map/context/TracksRoutingCache';
+import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
 import { saveTrackToLocalStorage } from '@map/context/LocalTrackStorage';
 import { addPointToTrack } from '@map/map/util/creator/LocalTrackHelper';
 import { apiPost } from '@map/util/HttpApi';
@@ -122,13 +123,15 @@ test('17.4 router answers of 200 route points with 100k vertices', async () => {
             }),
         {
             prepare: () => {
-                const points = answered.map(({ lat, lng, profile }) => ({ lat, lng, profile, geometry: [] }));
+                const points = answered.map(({ lat, lng, profile }, id) => ({ id, lat, lng, profile, geometry: [] }));
                 const ctx = createEditorCtx({ points });
-                for (let i = 1; i < points.length; i++) {
-                    const tempLine = L.polyline([points[i - 1], points[i]]);
-                    TracksRoutingCache.addRoutingToCache(points[i - 1], points[i], tempLine, ctx);
-                }
-                Object.values(ctx.routingCache).forEach((entry, i) => (entry.geometry = answered[i + 1].geometry));
+                const tempLines = points
+                    .slice(1)
+                    .map((end, i) => TrackLayerProvider.createTempPolyline(points[i], end));
+                ctx.selectedGpxFile.layers = L.layerGroup(tempLines);
+                getWaitingSegments(points, ctx.trackRouter).forEach(
+                    ({ index, key }) => (ctx.routingCache[key] = { geometry: answered[index].geometry })
+                );
 
                 return ctx;
             },
