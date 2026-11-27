@@ -56,7 +56,7 @@ export const ROUTER_ERROR_LINE_USED = 'Router error, Line used';
 const CHANGE_PROFILE_BEFORE = 'before';
 const CHANGE_PROFILE_AFTER = 'after';
 
-const isPlaceholderFile = (file) => file?.name?.endsWith(EMPTY_FILE_NAME) && file?.filesize === 0;
+const isPlaceholderFile = (file) => file?.name?.endsWith(EMPTY_FILE_NAME);
 const CHANGE_PROFILE_ALL = 'all';
 export const TRACK_VISIBLE_FLAG = 'visible';
 const HOURS_24_MS = 86400000;
