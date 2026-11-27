@@ -39,7 +39,7 @@ import {
 } from '../util/creator/LocalTrackLayerHelper';
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { passClickToNavigation } from '../../manager/NavigationManager';
-import { assignPointIds } from '../../manager/track/TrackOperations';
+import { assignPointIds, findPointIndex } from '../../manager/track/TrackOperations';
 
 const EDITOR_PICKS_POINT_CLASS = 'track-editor-picks-point';
 
@@ -137,6 +137,10 @@ export default function LocalClientTrackLayer() {
         if (ctx.createTrack?.enable && isLocalTrack(ctx) && ctxTrack?.points && layersOnMap) {
             redrawTrackPoints({ map, ctx, points: ctxTrack.points, trackLayers: ctxTrack.layers });
             hideMarkersUnderSelectedPin();
+        }
+        if (selectedPointMarker && findPointIndex(ctxTrack?.points ?? [], selectedPointMarker.pointId) === -1) {
+            map.removeLayer(selectedPointMarker.marker);
+            setSelectedPointMarker(null);
         }
     }, [ctxTrack?.points]);
 

@@ -1355,7 +1355,7 @@ function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedP
             map.removeLayer(selectedPointMarker.marker);
         }
         let marker = createPointMarkerOnMap(ctxTrack, map);
-        setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name });
+        setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name, pointId: showPoint.id });
     }
 }
 
