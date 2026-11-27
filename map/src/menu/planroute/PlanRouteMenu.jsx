@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import LocalTrackGroup from './LocalTrackGroup';
 import AppContext, { OBJECT_TYPE_LOCAL_TRACK } from '../../context/AppContext';
-import TracksManager, { createTrackGroups, getGpxFiles } from '../../manager/track/TracksManager';
+import TracksManager, { createTrackGroups, getGpxFiles, withClosePrev } from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
 import { HEADER_SIZE } from '../../manager/GlobalManager';
 import gStyles from '../gstylesmenu.module.css';
@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next';
 import { useWindowSize } from '../../util/hooks/useWindowSize';
 import LocalGpxUploader from '../../frame/util/LocalGpxUploader';
 import { closeHeader } from '../actions/HeaderHelper';
-import { cloneTrackObject } from '../../util/Utils';
 
 export function openSelectedLocalTrack(ctx) {
     const track = ctx.selectedLocalTrackObj;
@@ -42,20 +41,13 @@ export function updateLocalTrack(ref, ctx) {
 }
 
 export function startEdit(ctx) {
-    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        ctx.setCreateTrack({
+    // call startEdit() before modifications
+    ctx.setCreateTrack(
+        withClosePrev(ctx, {
             enable: true, // start-editor
             edit: true,
-            closePrev: {
-                file: cloneTrackObject(ctx.selectedGpxFile), // call startEdit() before modifications
-            },
-        });
-    } else {
-        ctx.setCreateTrack({
-            enable: true, // start-editor
-            edit: true,
-        });
-    }
+        })
+    );
 }
 
 export default function PlanRouteMenu() {

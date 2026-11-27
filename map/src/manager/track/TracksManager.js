@@ -1209,6 +1209,14 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
     }
 }
 
+export function withClosePrev(ctx, createState) {
+    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
+        return { ...createState, closePrev: { file: cloneTrackObject(ctx.selectedGpxFile) } };
+    }
+
+    return createState;
+}
+
 function createTrack(ctx, latlng) {
     const createState = {
         enable: true, // start-editor
@@ -1217,12 +1225,7 @@ function createTrack(ctx, latlng) {
         createState.latlng = latlng;
     }
     // cleanup
-    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        createState.closePrev = {
-            file: cloneTrackObject(ctx.selectedGpxFile),
-        };
-    }
-    ctx.setCreateTrack({ ...createState });
+    ctx.setCreateTrack(withClosePrev(ctx, createState));
 
     ctx.trackRouter.escapeFromLineProfile();
 }
@@ -1555,12 +1558,7 @@ export async function openTrackOnMap({
 }) {
     // cleanup edited localTrack
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        ctx.setCreateTrack({
-            enable: false,
-            closePrev: {
-                file: cloneTrackObject(ctx.selectedGpxFile),
-            },
-        });
+        ctx.setCreateTrack(withClosePrev(ctx, { enable: false }));
     }
     const sharedFile = smartf?.type === SHARE_TYPE;
     const files = getFileStorage({ ctx, smartf, type: GPX });
