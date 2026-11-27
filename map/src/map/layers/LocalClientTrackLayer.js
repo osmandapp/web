@@ -118,7 +118,10 @@ export default function LocalClientTrackLayer() {
             } else if (ctxTrack.localRedrawWpts) {
                 localRedrawWpts();
             } else {
-                if (ctx.createTrack?.enable && isEmptyTrack(ctxTrack) === false) {
+                if (
+                    ctx.createTrack?.enable &&
+                    (isEmptyTrack(ctxTrack) === false || !isNewTrack(ctx.localTracks, ctxTrack))
+                ) {
                     if (ctx.localTracks.length > 0) {
                         saveTrackToLocalStorage({ ctx, track: ctxTrack, writeToDB: !isAnalysisWanted(ctxTrack) });
                     }
