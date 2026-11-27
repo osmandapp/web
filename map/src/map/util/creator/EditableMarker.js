@@ -1,6 +1,6 @@
 import L from 'leaflet';
 import MarkerOptions from '../../markers/MarkerOptions';
-import { getEditorActions, publishEditedTrack } from '../../../manager/track/TracksManager';
+import TracksManager, { getEditorActions, publishEditedTrack } from '../../../manager/track/TracksManager';
 import { findPointIndex, movePoint } from '../../../manager/track/TrackOperations';
 
 export default class EditableMarker {
@@ -109,18 +109,19 @@ export default class EditableMarker {
 
         if (indPoint !== undefined && indPoint !== -1) {
             track.points = movePoint(track.points, indPoint, { lat, lng });
+
+            // finally
+            publishEditedTrack(this.ctx, track);
         } else {
             const indWpt = this.dragPoint.indWpt;
             if (indWpt !== undefined && indWpt !== -1) {
                 const currentWpt = track.wpts[indWpt];
                 currentWpt.lat = lat;
                 currentWpt.lon = lng;
-                track.updateLayers = true;
+                this.ctx.setSelectedGpxFile({ ...track, updateLayers: true });
+                TracksManager.updateState(this.ctx);
             }
         }
-
-        // finally
-        publishEditedTrack(this.ctx, track);
 
         this.dragPoint = null;
     }

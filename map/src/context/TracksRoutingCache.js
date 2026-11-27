@@ -238,7 +238,7 @@ function withUnansweredAnalysis(current, points) {
     return { ...current, analysisPoints: points, analysisTracks: undefined };
 }
 
-function isPointsHaveSameGeo(p1, p2) {
+export function isPointsHaveSameGeo(p1, p2) {
     if (!p1 || !p2 || p1.length !== p2.length) {
         return false;
     }

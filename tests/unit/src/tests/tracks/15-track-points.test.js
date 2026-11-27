@@ -874,9 +874,7 @@ describe('drag a point', () => {
 
         expect(track.wpts[0]).toMatchObject({ lat: 50.006, lon: 30.002 });
         const ids = ctx.selectedGpxFile.points.map(({ id }) => id);
-        expect(ctx.selectedGpxFile.points).toEqual(
-            withDistances(createRoutedPoints(2).map((point, i) => ({ ...point, id: ids[i] })))
-        );
+        expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(2).map((point, i) => ({ ...point, id: ids[i] })));
         expect(waitingPairs(ctx)).toEqual([]);
     });
 
@@ -1084,6 +1082,7 @@ describe('drawing in the editor', () => {
 
         expect(routed.options.dashArray).toBeFalsy();
         expect(waiting.options.dashArray).toBeTruthy();
+        expect(waiting.options.weight).toBe(routed.options.weight);
         expect(lats(waiting.getLatLngs())).toEqual([50.01, 50.02]);
     });
 

@@ -12,6 +12,7 @@ import TracksManager, { getResolvedPointsGroups, isWptGroupShown } from '../../.
 import EditablePolyline from './EditablePolyline';
 import { LOCAL_TRACKS_LAYERS_ID } from '../../layers/LocalClientTrackLayer';
 import { addLayerToMap } from '../MapManager';
+import { isPointsHaveSameGeo } from '../../../context/TracksRoutingCache';
 
 export function createFirstLayers(setRegisteredLayers) {
     const layers = new L.FeatureGroup();
@@ -112,10 +113,11 @@ export function updateLayers({ map, ctx, localLayers, ctxTrack, points, wpts, tr
 }
 
 export function redrawTrackPoints({ map, ctx, points, trackLayers }) {
-    if (trackLayers.options.drawnPoints === points) {
+    const { drawnPoints } = trackLayers.options;
+    trackLayers.options.drawnPoints = points;
+    if (drawnPoints === points || hasSameDrawing(drawnPoints, points)) {
         return;
     }
-    trackLayers.options.drawnPoints = points;
     const drawnLines = new Map();
     const drawnMarkers = new Map();
     trackLayers.eachLayer((layer) => {
@@ -133,9 +135,7 @@ export function redrawTrackPoints({ map, ctx, points, trackLayers }) {
             return;
         }
         line.key = getLineKey(line, lineKeys);
-        line.color = line.waiting
-            ? TEMP_LINE_STYLE.color
-            : ctx.trackRouter.getColor(TrackLayerProvider.getColorProfile(line.colorPoint));
+        line.color = line.waiting ? TEMP_LINE_STYLE.color : TrackLayerProvider.getLineColor(ctx, line.colorPoint);
         lineKeys.add(line.key);
         lines.push(line);
     });
@@ -155,6 +155,17 @@ export function redrawTrackPoints({ map, ctx, points, trackLayers }) {
         isDrawn: (marker, point) => TracksManager.isEqualPoints(marker.options.pointLatLng, point),
         create: (point) => createEditableMarker({ map, ctx, point }),
     });
+}
+
+function hasSameDrawing(drawnPoints, points) {
+    return (
+        isPointsHaveSameGeo(drawnPoints, points) &&
+        points.every(({ id, profile, geoProfile }, i) => {
+            const drawn = drawnPoints[i];
+
+            return drawn.id === id && drawn.profile === profile && drawn.geoProfile === geoProfile;
+        })
+    );
 }
 
 function redrawByKey({ trackLayers, drawn, items, keyOf, isDrawn, create }) {
@@ -200,24 +211,20 @@ function isDrawnLine(layer, line) {
 }
 
 function createEditableLine({ map, ctx, line }) {
-    const polyline = line.waiting
-        ? createWaitingLine(line)
-        : TrackLayerProvider.createPolyline({
-              coords: TrackLayerProvider.toLatLngs(line.vertices),
-              ctx,
-              map,
-              colorPoint: line.colorPoint,
-              pointIds: line.pointIds,
-              draggable: true,
-          });
+    const polyline = TrackLayerProvider.createPolyline({
+        coords: TrackLayerProvider.toLatLngs(line.vertices),
+        map,
+        color: line.color,
+        pointIds: line.pointIds,
+        draggable: true,
+    });
     polyline.options.lineKey = line.key;
     polyline.options.type = LOCAL_TRACKS_LAYERS_ID;
+    if (line.waiting) {
+        return polyline.setStyle(TEMP_LINE_STYLE);
+    }
 
-    return line.waiting ? polyline : new EditablePolyline(map, ctx, polyline).create();
-}
-
-function createWaitingLine({ vertices: [start, end] }) {
-    return TrackLayerProvider.createTempPolyline(start, end);
+    return new EditablePolyline(map, ctx, polyline).create();
 }
 
 function createEditableMarker({ map, ctx, point }) {

@@ -111,9 +111,8 @@ function parsePoints({ map, ctx, points, layers, trackAppearance = null }) {
             layers.push(
                 createPolyline({
                     coords,
-                    ctx,
                     map,
-                    colorPoint: line.colorPoint,
+                    color: getLineColor(ctx, line.colorPoint),
                     trackAppearance,
                     pointIds: line.pointIds,
                 })
@@ -222,8 +221,11 @@ function addTooltipOnHover(polyline, map, coords) {
     });
 }
 
-function createPolyline({ coords, ctx, map, colorPoint, trackAppearance, pointIds, draggable = false }) {
-    let color = ctx.trackRouter.getColor(getColorProfile(colorPoint));
+function getLineColor(ctx, colorPoint) {
+    return ctx.trackRouter.getColor(getColorProfile(colorPoint));
+}
+
+function createPolyline({ coords, map, color, trackAppearance, pointIds, draggable = false }) {
     if (trackAppearance?.color) {
         if (typeof trackAppearance.color === 'string') {
             color = hexToRgba(trackAppearance.color);
@@ -671,13 +673,11 @@ export function redrawWptsOnLayer({ layer, pointsGroups }) {
 
 const TrackLayerProvider = {
     createLayersByTrackData,
-    parsePoints,
     parseWpt,
     getTrackLines,
     toLatLngs,
     createPolyline,
-    createTempPolyline,
-    getColorProfile,
+    getLineColor,
     setTrackName,
     TEMP_LINE_STYLE,
 };
