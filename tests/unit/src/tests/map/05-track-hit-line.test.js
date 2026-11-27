@@ -2,6 +2,8 @@ import { createElement } from 'react';
 import L from 'leaflet';
 import { OBJECT_TYPE_CLOUD_TRACK } from '@map/context/AppContext';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
+import { redrawTrackPoints } from '@map/map/util/creator/LocalTrackLayerHelper';
+import { assignPointIds } from '@map/manager/track/TrackOperations';
 import { createTooltip, formatTrackName } from '@map/map/util/MapManager';
 import { useFocusVisibility } from '@map/util/hooks/map/useFocusMode';
 import { createCtx, createEditorCtx, createPlainPoints, createTrack } from '../../util/fixtures/tracks';
@@ -40,7 +42,8 @@ const showTrack = (name, info = {}) => {
     return track;
 };
 
-const trackLines = (track) => TrackLayerProvider.getPolylines(track.getLayers());
+const trackLines = (track) =>
+    track.getLayers().filter((layer) => layer instanceof L.Polyline && layer.getLatLngs().length > 0);
 
 const linesOnMap = () => {
     const lines = [];
@@ -102,16 +105,14 @@ test('hit lines lie in their own pane under the lines of all tracks, also after 
 });
 
 test('lines of the track editor get no hit line, a line with arrows keeps its arrows and gets one', () => {
-    const editorLayers = [];
-    TrackLayerProvider.parsePoints({
+    const editor = L.featureGroup();
+    redrawTrackPoints({
         map,
         ctx: createEditorCtx(),
-        points: createPlainPoints(11),
-        layers: editorLayers,
-        draggable: true,
-        hidden: true,
+        points: assignPointIds(createPlainPoints(11)),
+        trackLayers: editor,
     });
-    const editor = L.featureGroup(editorLayers).addTo(map);
+    editor.addTo(map);
     expect(linesOnMap()).toEqual(trackLines(editor));
     map.removeLayer(editor);
 

@@ -1262,8 +1262,25 @@ function updateState(ctx) {
     ctx.setTrackState({ ...ctx.trackState });
 }
 
+export function getEditorActions(ctx) {
+    const { selectedGpxFileRef, setSelectedGpxFile, trackState, setTrackState } = ctx;
+    const { setPointContextMenu, setSelectedWpt, setGpxLoading } = ctx;
+
+    return {
+        selectedGpxFileRef,
+        setSelectedGpxFile,
+        trackState,
+        setTrackState,
+        setPointContextMenu,
+        setSelectedWpt,
+        setGpxLoading,
+    };
+}
+
 export function publishEditedTrack(ctx, track) {
-    ctx.setSelectedGpxFile({ ...track, zoom: false, addPoint: false, updateLayers: true });
+    const edited = { ...track, zoom: false, addPoint: false };
+    addDistance(edited);
+    ctx.setSelectedGpxFile(edited);
     updateState(ctx);
 }
 
