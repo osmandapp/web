@@ -1,5 +1,5 @@
 ---
-source-hash: c07d2e93086e78f1bbd8bfeef486d35d111d3a7a1584a0d958e67bda2131fdaa
+source-hash: a47a5483bfc64564296e520a3048e1d0b106bcac34bd4fc7262a7c22c21b7c3c
 sidebar_position: 3
 title:  Impostazioni globali
 ---
@@ -208,7 +208,7 @@ Vai a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,osm
 
 </Tabs>
 
-L'impostazione **<Translate android="true" ids="analytics_pref_title"/>** (*Android*) o **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) consente di scegliere se fornire dati anonimi su *Mappe scaricate* e *Schermate visitate* (*Android*).  
+L'impostazione **<Translate android="true" ids="analytics_pref_title"/>** (*Android*) o **<Translate ios="true" ids="send_anonymous_data"/>** (*iOS*) consente di scegliere se fornire dati anonimi su *Mappe scaricate* e *Schermate visitate* (*Android*). Su iOS, questa impostazione controlla anche se l'app invia informazioni sulla campagna Apple Ads che ha portato all'installazione dell'app.  
 
 :::note
 I dati sulla vostra posizione o sui luoghi visualizzati sulla mappa non vengono raccolti.
@@ -226,7 +226,8 @@ Un **UUID** (*Unique User Identifier* - Identificatore Unico Utente) viene gener
 
 - Un UUID casuale viene utilizzato per scaricare le mappe offline dai server di OsmAnd per controllare l'uso razionale delle risorse del server, prevedere l'utilizzo del traffico e fornire rapporti mensili generali sui download delle mappe.
 - L'UUID cambia ogni 3 mesi.  
-- A partire dalla versione 4.3 di OsmAnd, è possibile disabilitare la raccolta dei dati utente quando si utilizza l'app OsmAnd. In tal caso, l'UUID non verrà inviato con alcuna richiesta di download.  
+- A partire dalla versione 4.3 di OsmAnd, è possibile disabilitare la raccolta dei dati utente quando si utilizza l'app OsmAnd. In tal caso, l'UUID non verrà inviato con alcuna richiesta di download.
+- Per le installazioni da Google Play, l'app invia anche la campagna pubblicitaria che ha portato all'installazione (sorgente, mezzo e nome della campagna, e se l'installazione proviene da un clic su un annuncio) con le richieste di controllo aggiornamenti e di acquisto. Quando l'invio dell'UUID è disabilitato, queste informazioni non vengono lette né inviate.
 - È possibile leggere ulteriori informazioni nei [Termini di utilizzo (ToS)](../../legal/terms-of-use.md#6-unique-user-indentifier).
 
 

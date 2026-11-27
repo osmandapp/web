@@ -1,5 +1,5 @@
 ---
-source-hash: 2adb13c68e6d1304b673a152f725cd4104801bab877937f4358a34e107b72449
+source-hash: d617276475fbfcfe927091d3c99740f157598c2b6f2ee38d9e9906a83d74b219
 sidebar_position: 4
 title:  Configura Mappa
 ---
@@ -27,7 +27,7 @@ Sezione **Mostra**:
 
 Sezione **Topografia**:  
 
-![Configura mappa Android](@site/static/img/map/configure_map_topography_andr_new.png)  
+![Configura mappa Android](@site/static/img/map/configure_map_topography_andr_new.webp)  
 
 Sezione **OpenStreetMap**:  
 
@@ -84,7 +84,7 @@ Il menu **<Translate android="true" ids="configure_map"/>** è suddiviso in due 
 ## Livelli Mappa {#map-layers}
 
 - [Livello mappa vettoriale](../map/vector-maps.md) - visualizza tutte le informazioni della mappa vettoriale, inclusi OpenStreetMap, linee di contorno e dati nautici.
-- [Sorgenti raster mappa](../map/raster-maps.md#layers) - consente di selezionare la mappa di sottofondo / fonte principale / sovrapposizione con livelli di trasparenza.
+- [Sorgenti raster mappa](../map/raster-maps.md#layers) - consente di selezionare la mappa di sottofondo / fonte principale / sovrapposizione con livelli di visibilità.
 - [Terreno](../plugins/topography.md#hillshade-slope-and-altitude-layers) - visualizza informazioni su pendenza / ombreggiatura, Rilievo 3D.
 - [Edifici 3D](../map/vector-maps.md#3d-buildings) - visualizza modelli volumetrici degli edifici sulla mappa.
 - [Confini delle mappe scaricate](../map/vector-maps.md#show-borders) - visualizza tutti i confini delle mappe scaricate sul livello della mappa principale.

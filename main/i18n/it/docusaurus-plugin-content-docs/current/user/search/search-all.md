@@ -1,5 +1,5 @@
 ---
-source-hash: 10cbeafd902c636e09520ab4df9f764d8c01529060c7ee38d4e0bf4ae741b6a2
+source-hash: 83c6b3cc35441b3510683f9cda657be179761027b2c6e5d5aac6777b74251f2f
 sidebar_position: 1
 title:  Cerca Tutto
 ---
@@ -191,8 +191,13 @@ Con la Ricerca spaziale puoi:
 - Cercare un PDI in un luogo specifico. Inserisci una categoria e il nome di un luogo in un'unica query, ad esempio, Hotel Berlino. Il nome del luogo viene usato come area di ricerca e la categoria viene cercata al suo interno.
 - Cercare luoghi che soddisfano due condizioni. Inserisci due categorie o una categoria e una proprietà, ad esempio, Carburante Diesel o Caffè Vegano, per trovare i luoghi che soddisfano entrambe. Una query come Carburante McDonald's trova i distributori di carburante situati vicino a un McDonald's. L'ordine delle parole è importante. La prima parola indica cosa stai cercando e la seconda indica cosa deve essere vicino. Ad esempio, McDonald’s Carburante trova i ristoranti McDonald’s situati vicino ai distributori di carburante.
 - Cercare intorno a un luogo trovato. Inserisci una categoria e il nome di un luogo, ad esempio, *Hotel Berlino*, poi tocca *Hotel vicino a Berlino* in cima ai risultati di ricerca. Il nome di questo luogo viene aggiunto al chip [Cerca intorno](#search-around).
-- Usare diversi formati di nomi di vie e nomi di categorie tradotti nelle tue query.
+- Usare diversi formati di nomi di vie e nomi di categorie tradotti nelle tue query. Le categorie vengono trovate in base ai loro nomi nella lingua dell'app, in inglese, nella [lingua della mappa](../map/vector-maps.md#map-language) e nella lingua principale della regione in cui cerchi. Ad esempio, con l'app in ucraino, `schule` a Lipsia trova la categoria Scuola.
+- Trovare una categoria tramite altre parole che le persone usano comunemente per indicarla. Ad esempio, `RV park` trova Area camper.
 - Ottenere risultati più rapidi cercando per categorie di PDI popolari, come farmacia, parcheggio o ristorante.
+
+Mentre digiti una parola, i risultati della ricerca mostrano come righe le categorie di PDI corrispondenti e i luoghi con nomi corrispondenti. I luoghi di una categoria compaiono nei risultati dopo aver digitato per intero una parola del nome della categoria. Ad esempio, `ca` mostra le righe delle categorie e i nomi corrispondenti, mentre `cafe` elenca i caffè.
+
+**Nota:** se una parola breve corrisponde a un numero molto elevato di oggetti nelle mappe scaricate, viene cercata solo come parola intera. Digita più lettere per vedere i risultati che iniziano con essa.
 
 ### Cerca intorno {#search-around}
 

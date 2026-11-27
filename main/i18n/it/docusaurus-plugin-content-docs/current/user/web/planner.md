@@ -65,7 +65,7 @@ Esistono due modi per iniziare un nuovo itinerario in Pianifica itinerario. La p
 
 Una volta creato l'itinerario, aggiungi punti direttamente sulla mappa. Ogni clic posiziona il punto successivo e il pianificatore costruisce l'itinerario tra i punti.
 
-![OsmAnd Web Create New Route](@site/static/img/web/create_new_route_1.png)
+![Crea nuovo percorso in OsmAnd Web](@site/static/img/web/create_new_route_1.png)
 
 ### Importa Traccia {#import-track}
 
@@ -77,7 +77,7 @@ Tutti gli itinerari e le tracce che crei o importi in Pianifica itinerario vengo
 
 Ogni elemento nella lista ha un interruttore che ti permette di mostrare o nascondere rapidamente la traccia sulla mappa. Seleziona una traccia dalla lista per aprirla nel pianificatore e continuare a lavorare con essa. 
 
-![OsmAnd Web Create New Route](@site/static/img/web/local_files.png)
+![Crea nuovo percorso in OsmAnd Web](@site/static/img/web/local_files.png)
 
 
 ## Gestisci Traccia {#manage-track}
@@ -90,7 +90,7 @@ Dal pannello della traccia puoi anche **Eliminare** la traccia dalla tua lista l
 
 Nel [pannello Panoramica](#overview-panel), puoi **Salva su Cloud** per mantenere l'itinerario per un uso successivo e **Scarica** come file GPX.
 
-![OsmAnd Web Manage Track](@site/static/img/web/manage_track_2_new.png) ![OsmAnd Web Manage Track](@site/static/img/web/change_profile.png)
+![Gestisci traccia in OsmAnd Web](@site/static/img/web/manage_track_2_new.png) ![Gestisci traccia in OsmAnd Web](@site/static/img/web/change_profile.png)
 
 
 ## Pannelli Dettagli Traccia {#track-details-panels}
@@ -126,13 +126,13 @@ Per dettagli aggiuntivi sulla traccia, apri le sezioni di analisi:
 - Superficie — mostra i tipi di superficie lungo l'itinerario basati sui dati OSM.
 - Fluidità — mostra la fluidità dei segmenti basata sui tag OSM.
 
-![OsmAnd Web Info Panel](@site/static/img/web/overview_panel.png) 
+![Pannello informazioni di OsmAnd Web](@site/static/img/web/overview_panel.png) 
 
 ### Pannello Traccia {#track-panel}
 
 Il pannello Traccia mostra l'elenco dei punti dell'itinerario utilizzati per costruire la traccia. Usalo per rivedere e modificare la struttura dell'itinerario: trascina i punti per riordinarli, rimuovi i punti usando l'icona di eliminazione o usa Cancella punti per rimuovere tutti i punti e ricominciare.
 
-![OsmAnd Web Track Panel](@site/static/img/web/track_panel_new.png)
+![Pannello traccia di OsmAnd Web](@site/static/img/web/track_panel_new.png)
 
 ### Pannello Punti {#points-panel}
 

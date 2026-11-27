@@ -1,5 +1,5 @@
 ---
-source-hash: 9f605668d58af560cd42ef64d15f56577a03661cd8b6c24cb599d9fe82542af1
+source-hash: 89871f7189df3be0f44150ef057c8d28471823b1cd845448b1ca78cf1747a19a
 sidebar_position: 10
 title:  CarPlay
 android: false
@@ -17,10 +17,6 @@ import ProFeature from '@site/src/components/buttons/ProFeature.mdx';
 
 
 ## Panoramica {#overview}
-
-:::tip Acquisto
-CarPlay è una [funzionalità a pagamento](../purchases/index.md).  
-:::
 
 Guidare un veicolo e utilizzare contemporaneamente il telefono o il tablet è solitamente vietato dalla legge per motivi di sicurezza. [***CarPlay***](https://www.apple.com/ios/carplay/) è un software che fornisce una versione adattata e ottimizzata dell'app OsmAnd per un uso sicuro durante la guida, rendendo più facile e sicuro l'accesso alle funzioni di navigazione dell'app.
 
@@ -61,7 +57,6 @@ Mentre il dispositivo è connesso a *CarPlay*, la mappa sulla schermata dell'app
     - Un profilo comodo per l'utilizzo di *CarPlay* può essere *Guida*, e il tipo di percorso può essere [Percorso in auto](../navigation/routing/car-based-routing.md).
     - OsmAnd ha una voce separata [Profilo CarPlay](#carplay-profile) per un accesso rapido all'elenco dei profili disponibili per la connessione a *CarPlay*.
 - Per il funzionamento di OsmAnd, [collegare il dispositivo iOS](#overview) al sistema multimediale del veicolo. Per saperne di più su come collegare e configurare il dispositivo, è possibile visitare il sito web di [**CarPlay**](https://support.apple.com/en-us/HT205634).
-- È necessario disporre di una delle [versioni a pagamento o in abbonamento di OsmAnd](../purchases/ios#free-and-paid-features). Controllare qui *Menu → Impostazioni → Acquisti*.
 - Una volta connessi, è possibile impostare una destinazione e avviare la navigazione OsmAnd in *CarPlay*.  
 
 :::note
@@ -72,8 +67,6 @@ Potrebbe essere necessaria una connessione a Internet per utilizzare OsmAnd in *
 ### Avviare la navigazione {#start-navigation}
 
 ![Schermata CarPlay](@site/static/img/navigation/auto-car/car-play-start(1).png)  
-
-Per utilizzare la versione iOS dell'app OsmAnd in *CarPlay*, è necessario acquistare una [versione a pagamento dell'app o sottoscrivere un abbonamento](../purchases/ios#free-and-paid-features).  
 
 1. Per creare un percorso, è necessario scegliere il [punto finale del percorso](#select-a-route-endpoint) sulla *schermata di CarPlay* o nell'[app OsmAnd](../navigation/setup/route-navigation.md).
 2. È possibile utilizzare le [istruzioni vocali](#voice-prompts) per ascoltare le indicazioni o i messaggi sui problemi della strada.  
@@ -325,15 +318,15 @@ Se CarPlay viene disconnesso mentre la navigazione è attiva, OsmAnd applica una
 
 ![Modalità mappa](@site/static/img/navigation/auto-car/map_mode_carplay.webp) ![Modalità mappa](@site/static/img/navigation/auto-car/map_mode_carplay_2.webp)
 
-OsmAnd consente di configurare l'aspetto della mappa per CarPlay indipendentemente dalla modalità mappa sul telefono. Per aprire questa impostazione, toccare il pulsante *Impostazioni* nella barra di navigazione di CarPlay, quindi selezionare *Modalità mappa*. La modalità corrente viene mostrata come testo di dettaglio della riga.
+OsmAnd consente di configurare l'aspetto della mappa per CarPlay indipendentemente dalla modalità mappa sul telefono. Per aprire questa impostazione, toccare il pulsante *Impostazioni* (icona a forma di ingranaggio accanto al pulsante di spostamento) nella barra di navigazione di CarPlay, quindi selezionare *Modalità mappa*. Il pulsante è disponibile durante la consultazione della mappa, nell'anteprima del viaggio e durante la navigazione. La modalità selezionata viene mostrata accanto alla voce *Modalità mappa*.
 
 È possibile scegliere una delle seguenti modalità di aspetto:
-- **Aspetto veicolo** — L'aspetto della mappa segue lo stile di visualizzazione del veicolo, in base all'impostazione Aspetto CarPlay sull'iPhone (*Automatico* o *Sempre scuro*) e all'ora del giorno. Quando *Mostra sempre mappe scure* è abilitato in tale impostazione, la mappa rimane sempre in modalità scura indipendentemente dallo stato dei fari del veicolo o dall'ora del giorno.
+- **Aspetto veicolo** — L'aspetto della mappa segue lo stile di visualizzazione del veicolo, in base all'impostazione Aspetto CarPlay sull'iPhone (*Automatico* o *Sempre scuro*) e all'ora del giorno. Quando *Mostra sempre mappe scure* è abilitato in tale impostazione, la mappa rimane sempre in modalità scura indipendentemente dallo stato dei fari del veicolo o dall'ora del giorno. Questa modalità è utilizzata per impostazione predefinita.
 - **Giorno** — La mappa utilizza sempre il tema chiaro in CarPlay, indipendentemente dalle impostazioni di aspetto del veicolo.
 - **Notte** — La mappa utilizza sempre il tema scuro in CarPlay, indipendentemente dalle impostazioni di aspetto del veicolo.
 - **Alba/tramonto** — La mappa passa automaticamente tra i temi chiaro e scuro in base agli orari calcolati di alba e tramonto per la posizione corrente.
 
-**Nota:** L'impostazione Modalità mappa in CarPlay influisce solo sull'aspetto della mappa in CarPlay. Non modifica la modalità mappa sullo schermo del telefono.
+**Nota:** L'impostazione Modalità mappa in CarPlay influisce solo sull'aspetto della mappa in CarPlay. Non modifica la modalità mappa sullo schermo del telefono. Anche la modalità mappa del telefono non modifica la mappa di CarPlay. Tutti gli elementi della mappa sulla schermata di CarPlay, comprese le icone dei POI, la linea del percorso e l'indicatore di posizione, seguono la modalità mappa di CarPlay. L'impostazione è comune a tutti i profili e viene mantenuta dopo la riconnessione di CarPlay o il riavvio dell'app.
 
 ### Orientamento della mappa {#map-orientation}
 

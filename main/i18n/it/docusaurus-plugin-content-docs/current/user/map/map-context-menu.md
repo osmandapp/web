@@ -1,5 +1,5 @@
 ---
-source-hash: 78e245c1e063aac9bf1a68ebcf4b78f4b69ef4d4a502bff60caed4a8d533517b
+source-hash: def504c8061e9412da05582355a82eb94bcb15a44582cc2f7cbebb675a15b6d2
 sidebar_position: 3
 title: Menu Contestuale Mappa
 ---
@@ -151,15 +151,18 @@ I dettagli disponibili includono:
 Inoltre, il pannello può includere [Dettagli OpenStreetMap](https://wiki.openstreetmap.org/wiki/Map_features), come ad esempio:
 
 - [Sito web](https://wiki.openstreetmap.org/wiki/Key:website)
-- [Numero di telefono](https://wiki.openstreetmap.org/wiki/Key:contact)
-- [Orari di apertura](https://wiki.openstreetmap.org/wiki/Key:opening_hours)
+- [Numero di telefono](https://wiki.openstreetmap.org/wiki/Key:contact) — i numeri che includono un [prefisso internazionale](https://wiki.openstreetmap.org/wiki/Key:phone) sono suddivisi in gruppi di cifre per essere più facili da leggere, ad esempio `+33 6 12 34 56 78`. Quando chiami o copi un numero, OsmAnd usa il valore memorizzato in [OpenStreetMap](https://www.openstreetmap.org/).
+- [Orari di apertura](https://wiki.openstreetmap.org/wiki/Key:opening_hours) — mostrati nella lingua dell'app, inclusi giorni della settimana, mesi, festività pubbliche e vacanze scolastiche. I giorni in cui il luogo non è aperto sono contrassegnati come *chiuso*. Se OpenStreetMap contiene la data dell'ultima verifica degli orari di apertura ([check_date:opening_hours](https://wiki.openstreetmap.org/wiki/Key:check_date)), tocca la riga per espanderla. *<Translate android="true" ids="poi_check_date"/>* è mostrata sotto gli orari nel formato di data breve della lingua dell'app.
+- **<Translate android="true" ids="poi_xmas_opening_hours"/>** — gli orari di apertura di un evento natalizio, come un mercatino di Natale, con il periodo dell'evento nella riga successiva. Se gli orari non possono essere riconosciuti completamente, vengono mostrati così come sono memorizzati in OpenStreetMap. Questi orari non influiscono sullo stato di apertura o chiusura del luogo.
+- [<Translate android="true" ids="poi_check_date"/>](https://wiki.openstreetmap.org/wiki/Key:check_date) — la data dell'ultima verifica dei dati dell'oggetto in OpenStreetMap.
 - [Tariffa](https://wiki.openstreetmap.org/wiki/Key:fee)
+- [<Translate android="true" ids="poi_zone"/>](https://wiki.openstreetmap.org/wiki/Key:zone) — la zona di parcheggio all'interno del sistema di parcheggi di una città, ad esempio *M*. Mostrata per i parcheggi.
 - [Accessibilità](https://wiki.openstreetmap.org/wiki/Key:wheelchair)
 - [Larghezza](https://wiki.openstreetmap.org/wiki/Key:width) / [Altezza](https://wiki.openstreetmap.org/wiki/Key:height) 
 
 Se un campo di contatto (come *Sito web, Numero di telefono* o *Email*) contiene più valori, toccandolo viene visualizzato un elenco delle voci disponibili. Selezionare la voce desiderata per eseguire l'azione corrispondente.
 
-Oltre ai campi elencati sopra, OsmAnd può mostrare anche informazioni descrittive extra prese da OpenStreetMap. Questi attributi aiutano a comprendere meglio le caratteristiche di un luogo e possono includere dettagli come elevazione, direzione, anno di costruzione, tipo di superficie o copertura, livello interno, opzioni di pagamento, disponibilità di consegna o asporto e molti altri. OsmAnd visualizza questi attributi con etichette chiare e, dove possibile, icone, rendendo più facile leggere e riconoscere le informazioni. L'insieme esatto di attributi dipende dai dati disponibili in OpenStreetMap per l'oggetto selezionato.
+Oltre ai campi elencati sopra, OsmAnd può mostrare anche informazioni descrittive extra prese da OpenStreetMap. Questi attributi aiutano a comprendere meglio le caratteristiche di un luogo e possono includere dettagli come elevazione, direzione, anno di costruzione, tipo di superficie o copertura, livello interno, opzioni di pagamento, disponibilità di consegna o asporto e molti altri. OsmAnd visualizza questi attributi con etichette chiare e, dove possibile, icone, rendendo più facile leggere e riconoscere le informazioni. Ogni attributo è mostrato con il suo nome e il valore sotto, ad esempio *Fumo* / *Non consentito* o *Asporto* / *Sì*. Se un attributo ha più opzioni, sono elencate in una riga separate da `•`, ad esempio *Barche a noleggio* / *Kayak • Canoa*. L'insieme esatto di attributi dipende dai dati disponibili in OpenStreetMap per l'oggetto selezionato.
 
 
 ### Descrizione dell'articolo {#article-description}
@@ -262,9 +265,9 @@ La funzione **All'interno dell'area** elenca le **aree** in cui si trova un ogge
 
 |Formato coordinate| |
 |:------|:------|
-| <ul><li>DDD.DDDDD (Gradi decimali semplici)</li><li>DDD.DDDDD (N/S, E/O virgola)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Rete svizzera CH1903 e CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Link Web OsmAnd](https://osmand.net/map)</li><li>[Link Web OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordinate](@site/static/img/map/map_context_menu_Coordinates.png) |
+| <ul><li>DDD.DDDDD (Gradi decimali semplici)</li><li>DDD.DDDDD (N/S, E/O virgola)</li><li>DDD MM.MMM</li><li> DDD MM SS.S</li><li>[UTM Standard](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system)</li><li>[Open Location Code](https://en.wikipedia.org/wiki/Open_Location_Code)</li><li>[MGRS](https://en.wikipedia.org/wiki/Military_Grid_Reference_System)</li><li>[Rete svizzera CH1903 e CH1903+](https://en.wikipedia.org/wiki/Swiss_coordinate_system)</li><li>[Maidenhead](https://en.wikipedia.org/wiki/Maidenhead_Locator_System)</li><li>[Formati EPSG](../search/search-coordinates.md#customize-coordinate-format)</li><li>[Link Web OsmAnd](https://osmand.net/map)</li><li>[Link Web OpenStreetMap](../map/map-context-menu.md#openstreetmap-link)</li></ul> | ![Coordinate](@site/static/img/map/map_context_menu_Coordinates.png) |
 
-Nel menu contestuale è possibile trovare le [coordinate geografiche](../search/search-coordinates.md#coordinate-format) di un punto in vari formati e anche i link condivisibili di OsmAnd e [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (quest'ultima opzione è disponibile solo quando il [plugin di modifica OpenStreetMap](../plugins/osm-editing.md) è abilitato). Se si espande la sezione delle coordinate e si tocca a lungo una qualsiasi riga dell'elenco, i suoi valori verranno automaticamente copiati negli appunti (**Android**) o l'opzione *Copia* diventerà disponibile nel messaggio a comparsa (**iOS**).  
+Nel menu contestuale è possibile trovare le [coordinate geografiche](../search/search-coordinates.md#coordinate-format) di un punto nei formati dell'[elenco dei formati di coordinate](../search/search-coordinates.md#customize-coordinate-format) del profilo, con il formato Primario per primo, e anche i link condivisibili di OsmAnd e [OpenStreetMap](../map/map-context-menu.md#openstreetmap-link) (quest'ultima opzione è disponibile solo quando il [plugin di modifica OpenStreetMap](../plugins/osm-editing.md) è abilitato). Se si espande la sezione delle coordinate e si tocca a lungo una qualsiasi riga dell'elenco, i suoi valori verranno automaticamente copiati negli appunti (**Android**) o l'opzione *Copia* diventerà disponibile nel messaggio a comparsa (**iOS**).  
 
 Il link web di OsmAnd può essere riconosciuto automaticamente da OsmAnd (esempio: `https://osmand.net/map?pin=52.51628,13.37771#15/52.51628/13.37771`). Sia i link di OsmAnd che quelli di [OpenStreetMap](https://wiki.openstreetmap.org/wiki/Browsing#Adding_a_Marker) vengono aperti sui siti corrispondenti con un segnaposto sul luogo di interesse.  
 
@@ -402,7 +405,7 @@ Il link OpenStreetMap fornisce un collegamento diretto all'oggetto OpenStreetMap
 
 </Tabs>
 
-Quando si tocca un Luogo Popolare sulla mappa, la sezione **Foto online** nel *menu contestuale dei POI* mostra le anteprime delle immagini provenienti da [Wikipedia](https://www.wikipedia.org/) e [Wikimedia Commons](https://www.wikimedia.org/).
+Quando si tocca un Luogo Popolare sulla mappa, la sezione **Foto online** nel *menu contestuale dei POI* mostra le anteprime delle immagini provenienti da [Wikipedia](https://www.wikipedia.org/) e [Wikimedia Commons](https://www.wikimedia.org/). Se un POI ha un'immagine [Mapillary](../plugins/mapillary.md) collegata in OpenStreetMap (il tag `mapillary`), questa immagine viene mostrata per prima nella sezione **Foto online**. Il plugin Mapillary non deve essere abilitato.
 
 Toccando una foto si apre la vista **Galleria**, dove è possibile:
 

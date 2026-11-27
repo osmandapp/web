@@ -1,5 +1,5 @@
 ---
-source-hash: 36038585c23bb2f3013d8163abd46b60138b3a6da9250431b659a3e72f6f0695
+source-hash: fd62270946384571ddb0174dfd6f8910f5b39a06592a0da455d7339a651cd91e
 sidebar_position: 2
 title:  Acquisti iOS
 ---
@@ -98,7 +98,6 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | [Download delle mappe](../start-with/download-maps.md) |  <details><summary>**5 download di mappe** <br /> (l'aggiornamento della mappa conta come download):</summary> <br /> - Il download o l'aggiornamento della mappa si intende solo per il download-aggiornamento della mappa di un paese (regione).<br /> - **Mappa panoramica del mondo**, **Correzione dell'altitudine mondiale**, **Caratteri della mappa** e **Istruzioni vocali** non vengono conteggiati come 5 possibilità di download.</details> | ✔ | ✔ |
 | [Aggiornamenti mensili delle mappe](../personal/maps-resources.md#updates-menu) |  <details><summary>**Una volta al mese** <br /> (con 2 giorni di ritardo):</summary> * limitato a 5 download (l'aggiornamento della mappa conta come download) </details> |  ✔ | ✔ |
 | [Aggiornamenti orari delle mappe](../personal/maps-resources.md#live-updates)<br/>Aggiornamenti Live (ritardo di 1 ora) - [**](#-map-updates) | **-** | **-**| ✔ |
-| [CarPlay](../navigation/car-play.md) | **-** | ✔ | ✔ |
 | [Rilievo 3D](../plugins/topography.md#3d-relief) | **-** | **-** | ✔ |
 | [Dati topografici](../plugins/topography.md#overview)<br/>(Curve di livello e Terreno) | **-** | ✔ | ✔ |
 | [Personalizzazione del colore della griglia delle coordinate](../map/vector-maps.md#coordinates-grid)| **-** | ✔ | ✔ |
@@ -110,7 +109,9 @@ Nell'elenco sono riportate le informazioni sui prezzi dei prodotti OsmAnd per le
 | [Plugin Astronomia](../plugins/astronomy.md) — [Pianificazione delle osservazioni](../plugins/astronomy.md#visibility-graph) | **-** | ✔ | ✔ |
 | [Plugin Astronomia](../plugins/astronomy.md) — [Modalità AR interattiva](../plugins/astronomy.md#ar-star-finding) | **-** | ✔ | ✔ |
 | [Plugin Astronomia](../plugins/astronomy.md) — [Mappa del cielo offline](../plugins/astronomy.md#object-information) | **-** | ✔ | ✔ |
+| [Colore di sfondo personalizzato dei widget](../widgets/configure-screen.md#widget-panel-appearance) | **-** | ✔ | ✔ |
 | [Navigazione offline e online](../navigation/index.md)<br/>con indicazioni svolta per svolta | ✔ | ✔ | ✔ |
+| [CarPlay](../navigation/car-play.md) | ✔ | ✔ | ✔ |
 | [Ricerca istantanea offline](../search/index.md) | ✔ | ✔ | ✔ |
 | [Registrazione del viaggio](../plugins/trip-recording.md) | ✔ | ✔ | ✔ |
 | [Esporta tracce GPX](../personal/tracks/manage-tracks.md#import--export-track) | ✔ | ✔ | ✔ |

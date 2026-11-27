@@ -18,7 +18,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Il **Pianificatore Web**, noto anche come [**OsmAnd Map Portal**](https://osmand.net/map), è un'estensione basata su browser dell'app mobile OsmAnd. Consente agli utenti di visualizzare mappe globali, pianificare percorsi, simulare la navigazione, gestire dati personali e accedere a contenuti sincronizzati dai propri dispositivi tramite il cloud.
+Il **Pianificatore Web**, noto anche come [**Portale Mappe di OsmAnd**](https://osmand.net/map), è un'estensione basata su browser dell'app mobile OsmAnd. Consente agli utenti di visualizzare mappe globali, pianificare percorsi, simulare la navigazione, gestire dati personali e accedere a contenuti sincronizzati dai propri dispositivi tramite il cloud.
 
 Progettato come compagno multipiattaforma di OsmAnd per Android e iOS, il Portale Web aiuta gli utenti a pianificare viaggi, analizzare tracce, visualizzare il terreno e gestire file utilizzando qualsiasi browser per desktop o tablet — senza installare un'app.
 
@@ -68,7 +68,7 @@ Per accedere a tutte le funzionalità del Portale Web OsmAnd, è necessario acce
 
 - Se hai già un abbonamento [**OsmAnd Pro**](../personal/osmand-cloud.md#login) o vuoi creare un account gratuito [**OsmAnd Start**](../personal/osmand-cloud.md#osmand-start), segui questi passaggi:
 
-1. Vai al [**OsmAnd Map Portal**](https://osmand.net/map).
+1. Vai al [**Portale Mappe di OsmAnd**](https://osmand.net/map).
 2. Apri il menu **Account**:
    - **Accedi**: Inserisci l'indirizzo email collegato al tuo abbonamento Pro o Start, o
    - **Crea account**: Registrati per un account gratuito OsmAnd Start. Per una guida dettagliata passo-passo alla creazione di un nuovo account, consulta l'articolo [Account OsmAnd](./web-cloud).

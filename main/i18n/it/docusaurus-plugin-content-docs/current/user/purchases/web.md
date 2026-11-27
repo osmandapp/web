@@ -1,5 +1,5 @@
 ---
-source-hash: 7dd018034f91c3c379a76d03258772b0e506136d147238424b5ac05df4862680
+source-hash: f8670339cfccb0d19b9c0a4cfd6784df8ae5a2d73ff489f654522447fd5c3ae1
 sidebar_position: 3
 title:  Acquisti Web
 ---
@@ -46,12 +46,12 @@ Di seguito sono riportati i prezzi dei prodotti OsmAnd negli Stati Uniti e nell'
 :::
 
 
-|    | OsmAnd Free   | **Maps+** One-Time | **Maps+** Subscription | **OsmAnd Pro** |**OsmAnd XV** |
+|    | OsmAnd Gratuito   | **Maps+** Una tantum | **Maps+** Abbonamento | **OsmAnd Pro** |**OsmAnd XV** |
 | :------------- | :------------- | :----------------------- | :------------------- | :----------- |:----------- |
 |  | ![Maps+](@site/static/img/svg/osmand_maps.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Maps+](@site/static/img/svg/osmand_maps_plus.svg) | ![Pro](@site/static/img/svg/pro_icon.svg) |![XV](@site/static/img/svg/osmand_xv.svg) |
-| **Purchase Type** | **Free** | **One-Time Purchase** (Lifetime) | **Subscription** (12 Months) | **Subscription** (1 Month / 12 Months) |**One-Time Purchase** (15 Years Pro / Maps+ Lifetime) |
-| **Price (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €5.99 / <s>€39.99</s> **€19.99** | <s>€450</s> **€299.00** |
-| **Price (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $5.99 / <s>$39.99</s> **$19.99** | <s>$450</s> **$299.00** |
+| **Tipo di acquisto** | **Gratuito** | **Acquisto una tantum** (a vita) | **Abbonamento** (12 mesi) | **Abbonamento** (1 mese / 12 mesi) |**Acquisto una tantum** (15 anni Pro / Maps+ a vita) |
+| **Prezzo (EUR)** | €0 | <s>€69,99</s> **€34.99** | <s>€14.99</s> **€7.49** | €5.99 / <s>€39.99</s> **€19.99** | <s>€450</s> **€299.00** |
+| **Prezzo (USD)** | $0 | <s>$69,99</s> **$34.99** | <s>$14.99</s> **$7.49** | $5.99 / <s>$39.99</s> **$19.99** | <s>$450</s> **$299.00** |
 
 :::note 
 Acquistando un abbonamento a prezzo scontato sul nostro [sito web](https://osmand.net/pricing), ottieni un piano scontato di 2 anni.  

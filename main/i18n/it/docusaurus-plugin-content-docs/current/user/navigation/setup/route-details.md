@@ -1,5 +1,5 @@
 ---
-source-hash: 83ba44a6b8120924bf8226fd362d0affe753ea82cd98cf22d3340db50c6c23f1
+source-hash: b076e363549de89788d39e28c794e1ab1884f389ec642e5833a3ff1b49f7e267
 sidebar_position: 4
 title:  Dettagli del percorso
 ---
@@ -108,7 +108,7 @@ I dati di altitudine sulla mappa (tra 70 gradi di latitudine nord e 70 gradi di 
 
 <details>
 <summary>Dati DEM (DSM)</summary>
- - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. The original data used for this product was supplied by JAXA’s AW3D.<br/>
+ - <a href="https://www.eorc.jaxa.jp/ALOS/en/index_e.htm">ALOS DEM</a>. I dati originali utilizzati per questo prodotto sono stati forniti da AW3D di JAXA.<br/>
  - <a href="http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM">MERIT DEM.</a><br/>
  - <a href="https://doi.org/10.7910/DVN/OHHUKH">ArcticDEM</a>: Porter, Claire; Morin, Paul; Howat, Ian; Noh, Myoung-Jon; Bates, Brian; Peterman, Kenneth; Keesey, Scott; Schlenk, Matthew; Gardiner, Judith; Tomko, Karen; Willis, Michael; Kelleher, Cole; Cloutier, Michael; Husby, Eric; Foga, Steven; Nakamura, Hitomi; Platson, Melisa; Wethington, Michael, Jr.; Williamson, Cathleen; Bauer, Gregory; Enos, Jeremy; Arnold, Galen; Kramer, William; Becker, Peter; Doshi, Abhijit; D’Souza, Cristelle; Cummens, Pat; Laurier, Fabien; Bojesen, Mikkel, 2018, “ArcticDEM”, Harvard Dataverse, V1.<br/>
  - <a href="https://sonny.4lima.de">Sonny's LiDAR Digital Terrain Models of Europe</a> (DTM).
@@ -248,7 +248,7 @@ Gli attributi della strada sono accessibili in [Dettagli del percorso](#how-to-a
 
 Le informazioni svolta per svolta forniscono [istruzioni](#instructions) dettagliate su come percorrere un itinerario. Oltre che nel menu *Dettagli*, vengono visualizzate anche nei widget [*Manovre del percorso*](../../widgets/nav-widgets.md#route-guidance) e [*Corsie*](../../widgets/nav-widgets.md#lanes). Queste informazioni aiutano a navigare meglio nel percorso e consentono di pianificare in anticipo.
 
-Toccare una sezione specifica del percorso nell'elenco per visualizzare informazioni dettagliate o apportare le modifiche necessarie. La mappa si ingrandisce e si apre un [Menu contestuale](../../map/map-context-menu.md).
+Toccare una sezione specifica del percorso nell'elenco per visualizzare informazioni dettagliate o apportare le modifiche necessarie. La mappa si ingrandisce e si apre un [Menu contestuale](../../map/map-context-menu.md). Toccare una destinazione intermedia nell'elenco per aprire la mappa su tale destinazione (*solo Android*).
 
 
 ### Istruzioni {#instructions}
@@ -257,13 +257,13 @@ Toccare una sezione specifica del percorso nell'elenco per visualizzare informaz
 
 <TabItem value="android" label="Android">
 
-![Percorso di navigazione Android](@site/static/img/navigation/route/navigation_turn_andr.png)
+![Percorso di navigazione Android](@site/static/img/navigation/route/navigation_turn_andr.webp)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Percorso di navigazione Android](@site/static/img/navigation/route/navigation_turn_ios.png)
+![Percorso di navigazione Android](@site/static/img/navigation/route/navigation_turn_ios.webp)
 
 </TabItem>
 
@@ -276,6 +276,8 @@ Le istruzioni includono informazioni sullo spostamento lungo il percorso, quali:
 - Una descrizione di *cosa fare*, che include il *nome della strada o del sentiero*.
 - *Distanza totale* e *tempo del percorso*.
 - *Layout delle [Corsie](../../widgets/nav-widgets.md#lanes)* per la strada corrente.
+- *Destinazioni intermedie* nell'ordine lungo il percorso, ciascuna con il proprio numero, nome o coordinate, e la distanza e il tempo dalla partenza.
+- *Destinazione finale*, contrassegnata con l'icona di destinazione (*solo Android*).
 - [*Indicatore del lato della strada*](#roadside-indicator) (*solo iOS*).
 
 

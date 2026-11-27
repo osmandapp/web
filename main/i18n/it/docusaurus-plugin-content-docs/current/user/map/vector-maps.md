@@ -1,5 +1,5 @@
 ---
-source-hash: 29aee15aa7d6e1296c66724ac7bbabc3ae16f2dfc66408b0df93bdc937bf4164
+source-hash: 178d141932f7b8720f2c8c3d8aecc4e60ae376a12c49b662bf86080720fb83d6
 sidebar_position: 5
 title:  Mappe Vettoriali 
 ---
@@ -24,7 +24,7 @@ Le mappe vettoriali rappresentano dati spaziali, come strade, edifici, punti e p
 
 Poiché i dati vettoriali non sono memorizzati come immagini fisse, il loro aspetto, inclusi colore, larghezza della linea, trasparenza o motivo, può essere facilmente modificato. Questo approccio consente un rendering efficiente, un basso utilizzo della memoria e una scalatura fluida a qualsiasi livello di zoom senza perdita di qualità.
 
-:::info note
+:::info nota
 I poligoni molto piccoli potrebbero essere semplificati o distorti durante la generazione dei dati della mappa. Gli oggetti con un'area inferiore a circa un metro quadrato potrebbero non essere visualizzati. Per una visualizzazione corretta, le piccole feature dovrebbero essere mappate come singoli nodi invece che come poligoni.
 :::
 
@@ -498,12 +498,22 @@ Vai a: *Menu → Configura mappa → Mostra → Griglia coordinate*
 
 <TabItem value="android" label="Android">  
 
-![Menu Griglia coordinate](@site/static/img/map/coordinates_grid_settings_andr.png) ![Menu Griglia coordinate](@site/static/img/map/coordinates_grid_format_andr.webp)
+![Menu Griglia coordinate](@site/static/img/map/coordinates_grid_settings_andr.webp) ![Menu Griglia coordinate](@site/static/img/map/coordinates_grid_format_andr.webp)
 
-La funzione **Griglia coordinate** sovrappone una griglia di riferimento alla mappa, consentendo di visualizzare le linee di latitudine e longitudine basate su diversi sistemi di coordinate. Questa funzione è utile per un riferimento preciso della posizione e per la navigazione geospaziale. 
+</TabItem>
+
+<TabItem value="ios" label="iOS">  
+
+![Menu Griglia coordinate](@site/static/img/map/coordinates_grid_settings_ios.webp) ![Menu Griglia coordinate](@site/static/img/map/coordinates_grid_format_ios.webp)
+
+</TabItem>
+
+</Tabs>
+
+La funzione **Griglia coordinate** sovrappone una griglia di riferimento alla mappa, consentendo di visualizzare le linee di latitudine e longitudine o le linee di una griglia metrica, a seconda del sistema di coordinate selezionato. Questa funzione è utile per un riferimento preciso della posizione e per la navigazione geospaziale. 
 
 È possibile configurare le seguenti opzioni:
-- **Livelli di zoom:** impostare i livelli di zoom minimo e massimo (2 - 22) in cui la griglia è visibile.
+- **Livelli di zoom:** impostare i livelli di zoom minimo e massimo (0 - 22) in cui la griglia è visibile.
 - **Posizione etichette:** scegliere tra *Bordi* (predefinito) o *Centro* per le etichette della griglia.
 - **Colore griglia:** disponibile separatamente per la modalità Giorno/Notte. 
 - **Formato coordinate:** selezionare da diversi formati disponibili (vedere elenco di seguito).
@@ -513,7 +523,7 @@ La funzione **Griglia coordinate** sovrappone una griglia di riferimento alla ma
 - **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Gradi, Minuti, Secondi)
 - **WGS84** (EPSG:4326) - **DD.DDDDD°** (Gradi Decimali - formato predefinito WGS84)
 - **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Gradi, Minuti Decimali)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - sistema a griglia basato su fusi). Il livello minimo di zoom è 9, viene visualizzato un solo fuso UTM alla volta, poiché i fusi sono separati da meridiani ogni 6°
+- **UTM** (EPSG:6387, Universal Transverse Mercator - sistema a griglia basato su fusi). Il livello minimo di zoom è 9, viene visualizzato un solo fuso UTM alla volta, poiché i fusi sono separati da meridiani ogni 6°.
 - **OLC** (Open Location Code, noto anche come Plus Code)
 - **MGRS** (Military Grid Reference System)
 - **Sistema di coordinate svizzero** - Swiss Grid (CH1903) e Swiss Grid (CH1903+)
@@ -521,39 +531,11 @@ La funzione **Griglia coordinate** sovrappone una griglia di riferimento alla ma
 
 La sezione **Recenti** mostra i sistemi di coordinate utilizzati di recente. Per aggiungere un altro sistema di coordinate supportato, toccare *Seleziona altro formato*. È possibile cercare per nome del sistema di coordinate o codice EPSG, quindi toccare *+* per aggiungerlo all'elenco.
 
-Per impostazione predefinita, l'app utilizza il formato delle coordinate selezionato in [Impostazioni generali](../personal/profiles.md#units--formats), ma è possibile cambiarlo direttamente in questo menu.
+**Nota:** L'elenco include solo i sistemi di coordinate che la griglia può visualizzare con precisione: sistemi misurati in metri, con una sola trasformazione di datum verso WGS 84 valida su tutta l'area del sistema. I sistemi misurati in piedi o in altre unità non metriche, e i sistemi che richiedono più trasformazioni regionali, non sono disponibili per la griglia.
+
+Per impostazione predefinita, la griglia utilizza il formato DDD.DDDDD. Il formato selezionato in questo menu si applica solo alla griglia delle coordinate.
 
 [Azione rapida](../widgets/quick-action.md#overview): È anche possibile aggiungere un interruttore rapido *Mostra/Nascondi Griglia Coordinate* al gruppo [Configura Mappa](../widgets/quick-action.md#configure-map) per un accesso veloce.
-
-</TabItem>
-
-<TabItem value="ios" label="iOS">  
-
-![show-borders-ios](@site/static/img/map/coordinates_grid_settings_ios.png)
-
-La funzione **Griglia coordinate** sovrappone una griglia di riferimento alla mappa, consentendo di visualizzare le linee di latitudine e longitudine basate su diversi sistemi di coordinate. Questa funzione è utile per un riferimento preciso della posizione e per la navigazione geospaziale. 
-
-È possibile configurare le seguenti opzioni:
-- **Livelli di zoom:** impostare i livelli di zoom minimo e massimo (2 - 22) in cui la griglia è visibile.
-- **Posizione etichette:** scegliere tra *Bordi* (predefinito) o *Centro* per le etichette della griglia.
-- **Colore griglia:** disponibile separatamente per la modalità Giorno/Notte. 
-- **Formato coordinate:** selezionare da diversi formati disponibili (vedere elenco di seguito).
-
-***Formati di coordinate disponibili:***
-
-- **WGS84** (EPSG:4326) -  **DD°MM′SS″** (Gradi, Minuti, Secondi)
-- **WGS84** (EPSG:4326) - **DD.DDDDD°** (Gradi Decimali - formato predefinito WGS84)
-- **WGS84** (EPSG:4326) - **DD°MM.MMM′** (Gradi, Minuti Decimali)
-- **UTM** (EPSG:6387, Universal Transverse Mercator - sistema a griglia basato su fusi). Il livello minimo di zoom è 9, viene visualizzato un solo fuso UTM alla volta, poiché i fusi sono separati da meridiani ogni 6°
-- **MGRS** (Military Grid Reference System)
-
-Per impostazione predefinita, l'app utilizza il formato delle coordinate selezionato in [Impostazioni generali](../personal/profiles.md#units--formats), ma è possibile cambiarlo direttamente in questo menu.
-
-[Azione rapida](../widgets/quick-action.md#overview): È anche possibile aggiungere un interruttore rapido *Mostra/Nascondi Griglia Coordinate* al gruppo [Configura Mappa](../widgets/quick-action.md#configure-map) per un accesso veloce.
-
-</TabItem>
-
-</Tabs>
 
 
 ## Percorsi {#routes}

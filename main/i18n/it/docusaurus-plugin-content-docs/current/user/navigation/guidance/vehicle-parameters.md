@@ -1,5 +1,5 @@
 ---
-source-hash: 6ab59e8a8e177b3e1c1a06bbd48f1c4d1199ad73025623d89aee58bf02fe8195
+source-hash: 54463b26bbd3157bf65aa4c615c7c5d58ded9f5e2adbff7977057bafa3b8a30c
 sidebar_position: 4
 title:  Parametri del veicolo
 ---
@@ -24,7 +24,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 Andare a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2"/>*  
 
-![Impostazioni di navigazione Android](@site/static/img/navigation/navigation_settings_vehicle-parameters_1_andr.png)
+![Impostazioni di navigazione Android](@site/static/img/navigation/vehicle-parameters_andr.webp)
 
 </TabItem>
 
@@ -40,7 +40,7 @@ Andare a: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,
 
 Per un calcolo ottimale del percorso in OsmAnd, è necessario considerare i seguenti parametri del veicolo:
 
-1. Impostare la [*Velocità predefinita* o le *Velocità su strada*](#road-speeds), come [velocità minima e massima](#road-speeds) del veicolo. Ciò aiuterà l'applicazione a determinare il tempo necessario per completare il percorso e le consentirà di scegliere il percorso migliore, tenendo conto dei limiti di velocità sui diversi segmenti stradali.
+1. Impostare la [*Velocità predefinita*](#default-speed) e l'[*Intervallo di velocità*](#speed-range): la velocità minima e massima del veicolo. Ciò aiuterà l'applicazione a determinare il tempo necessario per completare il percorso e le consentirà di scegliere il percorso migliore, tenendo conto dei limiti di velocità sui diversi segmenti stradali.
 2. Specificare il [*tipo*](#fuel-used-by-motor) di carburante utilizzato dal motore. Ciò consentirà all'app di stimare le emissioni di CO2.
 3. Inserire la [*capacità del serbatoio*](#fuel-tank-capacity) per monitorare con precisione il livello e il consumo di carburante.
 4. Definire i [*parametri di dimensione e peso*](#size-parameters) del veicolo, che possono aiutare l'app a calcolare il percorso ottimale ed evitare ostacoli sulla strada dovuti a restrizioni.
@@ -171,6 +171,7 @@ Il parametro **Capacità del serbatoio** consente di monitorare più accuratamen
 
 L'impostazione **Capacità del serbatoio** è disponibile solo nella navigazione basata su veicoli. Per i tipi di navigazione come *Bicicletta*, *A cavallo*, *A piedi* e *Sci*, questo parametro non viene visualizzato nei Parametri del veicolo.
 
+
 ## Parametri di velocità
 
 ### Velocità predefinita {#default-speed}
@@ -179,7 +180,18 @@ L'impostazione **Capacità del serbatoio** è disponibile solo nella navigazione
 
 <TabItem value="android" label="Android">
 
-![Impostazioni di navigazione](@site/static/img/navigation/navigation_settings_speeds_andr.png)
+Andare a: *<Translate android="true" ids="shared_string_menu,configure_profile,routing_settings_2,vehicle_parameters,travel_speed"/>*
+
+![Velocità di viaggio Android](@site/static/img/navigation/navigation_settings_travel_speed_andr.webp)
+
+La schermata *Velocità di viaggio* contiene le impostazioni *Velocità predefinita*, *Intervallo di velocità* e *Orario di arrivo stimato* del profilo. Le modifiche vengono salvate immediatamente. Il pulsante *Ripristina predefiniti* nella barra superiore ripristina i valori predefiniti di tutte le impostazioni della schermata.
+
+La **Velocità predefinita** è la velocità di movimento predefinita per questa modalità di trasporto ([Limiti di velocità predefiniti](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Per i profili *A piedi*, *A cavallo* e *Bicicletta*, in piccoli incrementi equivalenti a 0,1 km/h (mph) ([Unità e formati](https://osmand.net/docs/user/personal/profiles#units--formats)), e per gli altri profili, in incrementi equivalenti a 1 km/h (1 mph). Viene utilizzata:
+- Per stimare il [tempo del percorso](../../widgets/nav-widgets.md#time-to-intermediate) quando la velocità non può essere determinata dalle strade, come nella [Navigazione GPX](../setup/gpx-navigation.md), nei [percorsi sciistici](../routing/ski-routing.md), nei [percorsi in barca](../routing/boat-navigation.md), nei [percorsi pedonali](../routing/pedestrian-routing.md) e in altri profili simili.
+- Per determinare quando vengono attivati gli [annunci vocali](../guidance/voice-navigation.md).
+- Per determinare l'ETA per i marcatori sulla mappa tramite navigazione in linea retta se la velocità media non è ancora stata calcolata.
+
+La *Velocità predefinita* può essere impostata solo all'interno dell'[*Intervallo di velocità*](#speed-range): quando restringi l'intervallo, la *Velocità predefinita* si sposta con esso.
 
 </TabItem>
 
@@ -187,34 +199,39 @@ L'impostazione **Capacità del serbatoio** è disponibile solo nella navigazione
 
 ![Impostazioni di navigazione](@site/static/img/navigation/navigation_settings_speeds_ios.png)
 
-</TabItem>
-
-</Tabs>  
-
 La **Velocità predefinita** è la velocità di movimento predefinita per questa modalità di trasporto ([Limiti di velocità predefiniti](https://wiki.openstreetmap.org/wiki/Default_speed_limits)). Per i profili *A piedi*, *A cavallo* e *Bicicletta*, in piccoli incrementi equivalenti a 0,1 km/h (mph) ([Unità e formati](https://osmand.net/docs/user/personal/profiles#units--formats)), e per gli altri profili, in incrementi equivalenti a 1 km/h (1 mph). Viene utilizzata:
 - Per stimare il [tempo del percorso](../../widgets/nav-widgets.md#time-to-intermediate) quando la velocità non può essere determinata dalle strade, come nella [Navigazione GPX](../setup/gpx-navigation.md), nei [percorsi sciistici](../routing/ski-routing.md), nei [percorsi in barca](../routing/boat-navigation.md), nei [percorsi pedonali](../routing/pedestrian-routing.md) e in altri profili simili.
 - Per determinare quando vengono attivati gli [annunci vocali](../guidance/voice-navigation.md).
 - Per determinare l'ETA per i marcatori sulla mappa tramite navigazione in linea retta se la velocità media non è ancora stata calcolata.
 
+</TabItem>
+
+</Tabs>
 
 
- Viene utilizzata per calcolare l'orario di arrivo e determinare il percorso ottimale in base alla velocità di movimento che l'applicazione considera tipica. Ad esempio, auto, trasporto pubblico, pedone o la velocità impostata manualmente.
+### Intervallo di velocità {#speed-range}
 
+<InfoAndroidOnly />
 
-### Velocità su strada {#road-speeds}
-
-
-![Impostazioni di navigazione](@site/static/img/navigation/navigation_settings_speeds-r_andr.png)
-
-Per alcuni tipi di navigazione è possibile impostare la velocità minima e massima consentita. Se impostata, il motore di routing presume che il veicolo o la modalità di trasporto non si muoverà più velocemente del limite e non si muoverà più lentamente della velocità minima. 
+Per alcuni tipi di navigazione è possibile impostare la velocità minima e massima consentita. Entrambi i valori si impostano con un unico cursore a due maniglie. Se impostati, il motore di routing presume che il veicolo o la modalità di trasporto non si muoverà più velocemente della velocità massima e non si muoverà più lentamente della velocità minima. L'*Intervallo di velocità* viene utilizzato sia per il calcolo del percorso sia per l'orario di arrivo.
 Ad esempio, consente di creare un percorso a **basso consumo di carburante** in cui il consumo è ottimale alla **velocità massima** impostata e il motore troverà un percorso più breve evitando strade più lunghe ma più veloci.
 
-- **Velocità minima**  
-    L'impostazione imposta la velocità di guida minima per tutti i tipi di strada del percorso. Aumenta la priorità per le strade con una velocità consigliata inferiore alla velocità minima.  
-- **Velocità massima**  
-    L'impostazione imposta la velocità di guida massima e diminuisce la priorità per le strade con una velocità possibile superiore a quella massima.
+- **Velocità minima** — imposta la velocità di guida minima per tutti i tipi di strada del percorso. Aumenta la priorità per le strade con una velocità consigliata inferiore alla velocità minima.
+- **Velocità massima** — imposta la velocità di guida massima e diminuisce la priorità per le strade con una velocità possibile superiore a quella massima.
+
+L'*Intervallo di velocità* non è disponibile per i profili con routing in linea retta, ad esempio *Aereo*.
 
 
+### Orario di arrivo stimato {#estimated-arrival-time}
+
+<InfoAndroidOnly />
+
+Le impostazioni *Orario di arrivo stimato* definiscono come OsmAnd calcola l'orario di arrivo durante la navigazione.
+
+- **Adattati alla mia velocità** — disattivata per impostazione predefinita. Quando l'impostazione è disattivata, l'orario di arrivo deriva dalla velocità prevista su ciascuna strada del percorso. Quando è attivata, OsmAnd divide la distanza rimanente per la tua velocità media nell'*Intervallo* selezionato. Viene conteggiato solo il movimento durante la navigazione, le soste vengono ignorate. Subito dopo l'avvio della navigazione, l'orario di arrivo combina la stima del percorso con la tua velocità media finché non ti sei mosso per l'intero *Intervallo*.
+- **Intervallo** — il periodo in cui viene misurata la tua velocità media, da 15 secondi a 60 minuti. Il valore predefinito è 15 minuti. L'impostazione è disponibile quando *Adattati alla mia velocità* è attivata.
+
+L'orario di arrivo adattato viene mostrato nei widget [*Tempo alla destinazione*](../../widgets/nav-widgets.md#time-to-destination) e [*Tempo al punto intermedio*](../../widgets/nav-widgets.md#time-to-intermediate), nella notifica di navigazione e in [Android Auto](../auto-car.md). Il tempo alla prossima svolta e i suggerimenti vocali non sono interessati.
 
 
 ## Articoli correlati {#related-articles}

@@ -1,5 +1,5 @@
 ---
-source-hash: 715cc1866e8798c8281f4c91efad6ff24fa2900fae1dcbd29b577e03c5511a04
+source-hash: 5749833ed8004e11c20c4de19dd862afbe945281e8dc7187719f962bcf51fca1
 sidebar_position: 9
 title:  Mappe Online
 ---
@@ -34,7 +34,7 @@ La possibilità di utilizzare le mappe online è abilitata automaticamente nella
 Puoi trovare informazioni dettagliate sulla visualizzazione e personalizzazione delle mappe raster nell'articolo [Mappe Raster](../map/raster-maps.md). Come usare:
 
 1. [Seleziona](../map/raster-maps.md#layers) la mappa raster come livello *Principale*, *Sottostante* o *Sovrapposto*.
-    - [Modifica](../map/raster-maps.md#overlay) i parametri del livello (trasparenza).
+    - [Modifica](../map/raster-maps.md#overlay) i parametri del livello (visibilità).
 
 2. [Prepara / copia](../map/raster-maps.md#preparecopy-maps) le mappe raster sul dispositivo.
     - [Aggiungi una nuova sorgente di mappe raster online](../map/raster-maps.md#add-new-online-source)
@@ -51,7 +51,7 @@ Puoi trovare informazioni dettagliate sulla visualizzazione e personalizzazione 
 
 Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_overlay"/> / <Translate android="true" ids="layer_underlay"/>*
 
-![Configura sottostrato / sovrapposizione Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.png)
+![Configura sottostrato / sovrapposizione Android](@site/static/img/plugins/online-maps/config-underlay-overlay-android.webp)
 
 </TabItem>
 
@@ -59,7 +59,7 @@ Vai a: *<Translate android="true" ids="shared_string_menu,configure_map,layer_ov
 
 Vai a: *<Translate ios="true" ids="shared_string_menu,configure_map,map_settings_overunder"/>*
 
-![Configura sottostrato / sovrapposizione iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.png)
+![Configura sottostrato / sovrapposizione iOS](@site/static/img/plugins/online-maps/config-underlay-overlay-ios.webp)
 
 </TabItem>
 

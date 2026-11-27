@@ -1,5 +1,5 @@
 ---
-source-hash: 21a646047bc3c8d5503776f8551f9275bc2e25b9c61f75a0006ab1cd26152e14
+source-hash: 0a04e7c5b81da2f4a24b1d70406494efb02bf28fb32a1d087fb5772ae29bca04
 sidebar_position: 2
 title:  Gestire le Tracce
 ---
@@ -74,6 +74,10 @@ Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_my_p
 
 ![I miei luoghi con tracce in Android](@site/static/img/personal/tracks/view_all_tracks_andr.png)
 
+Tutte le tracce registrate, create o importate vengono visualizzate automaticamente nella cartella [I miei luoghi](../../personal/myplaces.md) nella scheda *Tracce*. Sono organizzate per cartella o visualizzate in un elenco sottostante.
+
+Ogni traccia nell'elenco mostra il nome della cartella principale sulla seconda riga, separato da `|` (ad esempio, `Hiking | Tracks`), rendendo più facile identificare dove è memorizzata una traccia. Questo si applica in [Cerca](#search), [Cartelle smart](../../personal/tracks/smart-folder.md) e [Configura mappa → Tracce](../../map/tracks/index.md#configure-map).
+
 </TabItem>
 
 <TabItem value="ios" label="iOS">
@@ -82,13 +86,15 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_my_place
 
 ![I miei luoghi con tracce in iOS](@site/static/img/personal/tracks/my_places_tracks_menu_1_ios.webp)
 
+Tutte le tracce registrate, create o importate vengono visualizzate automaticamente nella cartella [I miei luoghi](../../personal/myplaces.md) nella scheda *Tracce*. Sono organizzate per cartella o visualizzate in un elenco sottostante.
+
+Ogni traccia nell'elenco mostra il nome della cartella principale sulla seconda riga, separato da `|` (ad esempio, `Hiking | Tracks`), rendendo più facile identificare dove è memorizzata una traccia. Questo si applica in [Cerca](#search), [Cartelle smart](../../personal/tracks/smart-folder.md) e [Configura mappa → Tracce](../../map/tracks/index.md#configure-map).
+
+**Nota:** mentre OsmAnd calcola le statistiche delle tracce, ad esempio dopo l'aggiunta di molte tracce in una volta, in cima all'elenco viene mostrata la riga *<Translate ios="true" ids="tracks_stats_are_being_calculated"/>* con un anello di avanzamento. Tutte le tracce sono elencate subito e le loro statistiche compaiono man mano che il calcolo procede. Puoi aprire, rinominare, spostare, condividere o eliminare qualsiasi traccia durante il calcolo. La riga scompare quando tutte le statistiche sono state calcolate.
+
 </TabItem>
 
 </Tabs>
-
-Tutte le tracce registrate, create o importate vengono visualizzate automaticamente nella cartella [I miei luoghi](../../personal/myplaces.md) nella scheda *Tracce*. Sono organizzate per cartella o visualizzate in un elenco sottostante.
-
-Ogni traccia nell'elenco mostra il nome della cartella principale sulla seconda riga, separato da `|` (ad esempio, `Escursionismo | Tracce`), rendendo più facile identificare dove è memorizzata una traccia. Questo si applica in [Cerca](#search), [Cartelle smart](../../personal/tracks/smart-folder.md) e [Configura mappa → Tracce](../../map/tracks/index.md#configure-map).
 
 
 ### Menu Traccia {#track-menu}
@@ -217,13 +223,13 @@ Una volta effettuata la scelta, vengono forniti i seguenti passaggi:
 
 <TabItem value="android" label="Android">
 
-![Funzione di ordinamento tracce I miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.png)  
+![Funzione di ordinamento tracce I miei luoghi Android](@site/static/img/personal/tracks/my_places_tracks_sort_by_andr.webp)  
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Funzione di ordinamento tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_2_ios.webp)
+![Funzione di ordinamento tracce I miei luoghi iOS](@site/static/img/personal/tracks/my_places_tracks_sort_by_3_ios.webp)
 
 </TabItem>
 
@@ -233,7 +239,8 @@ OsmAnd offre un modo semplice per ordinare le tracce, aiutandovi a gestire una v
 
 ***Opzioni di ordinamento:***
 
-- **Più vicine** — Mostra le tracce più vicine alla posizione corrente.
+- **Più vicine alla posizione corrente** — Mostra le tracce più vicine alla posizione corrente.
+- **Più vicine al centro della mappa** — Mostra le tracce più vicine al centro attuale della mappa. Ogni traccia mostra la distanza e una freccia di direzione arancione che parte dal centro della mappa.
 - **Ultima modifica** — Visualizza le tracce ordinate in base alla data di modifica più recente.
 - **Nome: A - Z** — Ordina le tracce in ordine alfabetico dalla A alla Z.
 - **Nome: Z - A** — Ordina le tracce in ordine alfabetico dalla Z alla A.
@@ -311,7 +318,7 @@ Il menu della cartella delle tracce consente di visualizzare, rinominare, esport
 
 Andare su: *scheda <Translate android="true" ids="shared_string_menu,shared_string_my_places,shared_string_tracks"/>*
 
-![I miei luoghi con tracce in Android](@site/static/img/personal/tracks/dashboard_andr.png)
+![I miei luoghi con tracce in Android](@site/static/img/personal/tracks/dashboard_andr.webp)
 
 </TabItem>
 
@@ -325,14 +332,14 @@ Andare su: *scheda <Translate ios="true" ids="shared_string_menu,shared_string_m
 
 </Tabs>
 
-In fondo all'elenco nella scheda *Tracce*, e sotto l'elenco delle tracce **in ciascuna delle vostre cartelle**, c'è una sezione informativa che permette di visualizzare le statistiche riassuntive complessive per le tracce nella cartella selezionata. Tutti i valori sono visualizzati nelle [unità](../../personal/profiles.md#units--formats) che avete selezionato.
+In fondo all'elenco nella scheda *Tracce*, e sotto l'elenco delle tracce in una cartella, c'è una sezione informativa che permette di visualizzare le statistiche riassuntive complessive per le tracce nella cartella selezionata. Su Android, la sezione viene mostrata solo quando la cartella o le sue sottocartelle contengono almeno una traccia. Tutti i valori sono visualizzati nelle [unità](../../personal/profiles.md#units--formats) che avete selezionato.
 
 - *Numero di **Tracce** nella cartella* — Visualizza il numero di tracce contenute nella cartella selezionata.
 - *Somma totale delle* **Distanze** — Viene visualizzata la lunghezza totale di tutte le tracce nella cartella selezionata, misurata nelle unità selezionate.
 - *Somma delle* **Salite** — Il dato indica il dislivello totale in salita di tutte le tracce nella cartella selezionata.
 - *Somma delle* **Discese** — Questo parametro è la somma dei dislivelli in discesa di tutte le tracce nella cartella selezionata.
 - *Somma del* **Tempo** *di durata* — Visualizza il tempo totale impiegato per completare tutte le tracce nella cartella selezionata.
-- *Dimensione **Totale** dei file scaricati in MB* — La dimensione totale dei file scaricati in megabyte mostra quanto spazio occupano tutte le tracce nella cartella selezionata sul dispositivo.
+- *Dimensione* **Totale** — La dimensione totale di tutti i file delle tracce nella cartella selezionata, che mostra quanto spazio occupano sul dispositivo.
 
 
 ### Azioni Cartella {#folder-actions}

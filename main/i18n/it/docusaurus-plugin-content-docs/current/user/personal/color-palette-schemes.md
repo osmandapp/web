@@ -1,5 +1,5 @@
 ---
-source-hash: dbc282b79505cd384a0dba6c8257a5b1313a439b1bd859b4b218fc6afef21aae
+source-hash: 91b3fc79e7f46347f28f33c9cff2ea7076efea72fe581a2fb0449136f979aece
 sidebar_position: 5
 title:  Schemi di colori
 ---
@@ -34,7 +34,7 @@ I dati della palette di colori sono disponibili nel menu [*Maps & Resources*](..
 
 Andare su: *Menu → Maps & Resources → Local → Colors*
 
-![Palettes](@site/static/img/personal/color-schemes/colors.png)
+![Palette](@site/static/img/personal/color-schemes/colors.png)
 
 </TabItem>
 
@@ -42,7 +42,7 @@ Andare su: *Menu → Maps & Resources → Local → Colors*
 
 Andare su: *Menu → Maps & Resources → Local → Colors*
 
-![Color palette](@site/static/img/personal/color-schemes/color_palette_ios.png)
+![Palette di colori](@site/static/img/personal/color-schemes/color_palette_ios.png)
 
 </TabItem>
 
@@ -57,13 +57,13 @@ Andare su: *Menu → Maps & Resources → Local → Colors*
 
 <TabItem value="android" label="Android">
 
-![Palettes](@site/static/img/personal/color-schemes/palette_new.png) ![Palettes](@site/static/img/personal/color-schemes/palette_new_2.png)
+![Palette](@site/static/img/personal/color-schemes/palette_new.webp) ![Palette](@site/static/img/personal/color-schemes/palette_new_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Color palette](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/palette_ios_2.png)
+![Palette di colori](@site/static/img/personal/color-schemes/palette_ios_new.png) ![Palette di colori](@site/static/img/personal/color-schemes/palette_ios_2.png)
 
 </TabItem>
 
@@ -79,13 +79,13 @@ Su Android, le palette per gli schemi di colori *Slope* e *Altitude* possono anc
 
 <TabItem value="android" label="Android">
 
-![Palettes](@site/static/img/personal/color-schemes/track_palette_android.png) 
+![Palette](@site/static/img/personal/color-schemes/track_palette_android.png) 
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Color palette](@site/static/img/personal/color-schemes/track_palette_ios.png) 
+![Palette di colori](@site/static/img/personal/color-schemes/track_palette_ios.png) 
 
 </TabItem>
 
@@ -104,13 +104,13 @@ Su Android, le palette possono anche essere create o modificate direttamente nel
 
 <TabItem value="android" label="Android">
 
-![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Palettes](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
+![Palette](@site/static/img/personal/color-schemes/favorites_palette_android.png) ![Palette](@site/static/img/personal/color-schemes/favorites_palette_android_2.png)
 
 </TabItem>
 
 <TabItem value="ios" label="iOS">
 
-![Color palette](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
+![Palette di colori](@site/static/img/personal/color-schemes/favorites_palette_ios.png) 
 
 </TabItem>
 
@@ -166,7 +166,7 @@ Se è necessario modificare un file di palette esistente all'interno di OsmAnd (
 
 Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_settings,import_export,export_to_file"/>*  
 
-![Profiles Actions Export Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup local Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
+![Azioni profilo Esporta Android](@site/static/img/personal/profiles/profile_actions_export_1_andr.png)   ![Backup locale Android](@site/static/img/personal/profiles/profile_actions_export_3_andr.png)
 
 </TabItem>
 
@@ -174,7 +174,7 @@ Andare su: *<Translate android="true" ids="shared_string_menu,shared_string_sett
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,shared_string_settings,local_backup,backup_into_file"/>*
 
-![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Profiles Actions Export iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
+![Azioni profilo Esporta iOS](@site/static/img/personal/profiles/profile_actions_export_1_ios.png)    ![Azioni profilo Esporta iOS](@site/static/img/personal/profiles/profile_actions_export_3_ios.png)
 
 </TabItem>
 
@@ -211,7 +211,7 @@ La legenda viene generata automaticamente in base alla palette selezionata e mos
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> →*&nbsp;  "**＋**"  &nbsp;*→ <Translate ios="true" ids="add_button"/>*  *→ Aggiungi azione → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
 
-![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Color Scheme](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
+![Schema di colori](@site/static/img/personal/color-schemes/color_scheme_new.png) ![Schema di colori](@site/static/img/personal/color-schemes/color_scheme_new_2.png)
 
 </TabItem>
 
@@ -219,7 +219,7 @@ Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,s
 
 Andare su: *<Translate ios="true" ids="shared_string_menu,layer_map_appearance,shared_string_buttons,custom_buttons"/> → &nbsp;  "**＋**"  &nbsp; → <Translate ios="true" ids="add_button"/> → Aggiungi azione → <Translate ios="true" ids="configure_map"/> → Change Terrain color scheme*
 
-![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Color palette](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
+![Palette di colori](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new.png) ![Palette di colori](@site/static/img/personal/color-schemes/color_scheme_qa_ios_new_2.png)
 
 </TabItem>
 

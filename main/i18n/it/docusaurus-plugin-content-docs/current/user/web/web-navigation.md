@@ -1,8 +1,8 @@
 ---
 source-hash: 6bb2edef8790f3e082f00346364007855bbd0c0ab79783fee69199064de06fae
 sidebar_position: 8
-sidebar_label:  Navigation
-title: Navigation on the Web
+sidebar_label:  Navigazione
+title: Navigazione sul Web
 ---
 
 import Tabs from '@theme/Tabs';
@@ -19,7 +19,7 @@ import InfoAndroidOnly from '@site/src/components/_infoAndroidOnly.mdx';
 
 ## Panoramica {#overview}
 
-Utilizza **Navigation on the Web** per creare un percorso sulla mappa e visualizzare in anteprima la guida con indicazioni turn-by-turn. Calcola un percorso per la modalità di viaggio selezionata, mostra la distanza e il tempo previsti e ti permette di controllare le variazioni di altitudine e le curve imminenti. Puoi affinare il percorso nelle impostazioni di Navigazione (ad esempio, consentendo o evitando determinati tipi di strade o utilizzando parametri del veicolo) e utilizzare più punti di percorso quando necessario.
+Utilizza **Navigazione sul Web** per creare un percorso sulla mappa e visualizzare in anteprima la guida con indicazioni turn-by-turn. Calcola un percorso per la modalità di viaggio selezionata, mostra la distanza e il tempo previsti e ti permette di controllare le variazioni di altitudine e le curve imminenti. Puoi affinare il percorso nelle impostazioni di Navigazione (ad esempio, consentendo o evitando determinati tipi di strade o utilizzando parametri del veicolo) e utilizzare più punti di percorso quando necessario.
 
 
 ## Avvia un Percorso {#start-a-route}
@@ -70,7 +70,7 @@ Le sezioni tipiche includono:
 
 ## Allegare Traccia {#attaching-track}
 
-Il blocco **[Attach to roads](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** ti permette di utilizzare una traccia GPX esistente come base per la navigazione. OsmAnd Web abbina la traccia alle strade vicine per fornire indicazioni turn-by-turn.
+Il blocco **[Associa alle strade](https://osmand.net/docs/user/navigation/setup/gpx-navigation?_highlight=attach&_highlight=roads#attach-to-the-roads)** ti permette di utilizzare una traccia GPX esistente come base per la navigazione. OsmAnd Web abbina la traccia alle strade vicine per fornire indicazioni turn-by-turn.
 
 Quando clicchi Seleziona traccia, il browser apre un selettore di file dove puoi scegliere un file .gpx dal tuo computer. Dopo aver selezionato una traccia:
 - La traccia viene visualizzata sulla mappa e utilizzata per calcolare il percorso.
@@ -108,7 +108,7 @@ Puoi affinare il percorso direttamente sulla mappa trascinando i marker del perc
 
 ### Scarica e Salva {#download-and-save}
 
-Utilizza *Download* per esportare il percorso come traccia. La finestra di download offre due opzioni:
+Utilizza *Scarica* per esportare il percorso come traccia. La finestra di download offre due opzioni:
 **Dati traccia completa** — include dati completi, incluse le istruzioni di navigazione.
 **[Traccia semplificata](https://osmand.net/docs/user/plan-route/create-route/?current-os=ios&#save-route)** — una versione più leggera più adatta per l'uso con altre app.
 

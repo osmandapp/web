@@ -1,5 +1,5 @@
 ---
-source-hash: 28da3c8e50c83852f7ae6bc8230206e0c213ee65bd5af30e3431826db73d30bf
+source-hash: fb2f9a2ac137e8c0c2fc36ec770f090860ed927919d72b4d6bd7d058e53126af
 sidebar_position: 3
 title: Widget informativi
 ---
@@ -346,7 +346,7 @@ Il widget **Livello batteria** visualizza la percentuale della batteria del disp
 
 <TabItem value="ios" label="iOS">
 
-![Widget coordinate Android](@site/static/img/widgets/coordinates_widget_ios_2.png)  
+![Widget coordinate iOS](@site/static/img/widgets/coordinates_widget_ios_2.png)  
 
 </TabItem>
 
@@ -359,12 +359,17 @@ OsmAnd offre due tipi di widget per le coordinate:
 
 I widget delle coordinate vengono visualizzati nella parte superiore dello schermo. Le icone con sfondo verde mostrano la latitudine e la longitudine del punto al centro della parte visibile della mappa, mentre quelle con sfondo blu mostrano le coordinate della posizione corrente. Le informazioni sui *formati delle coordinate* supportati sono disponibili nell'articolo *[Ricerca coordinate](../search/search-coordinates.md#coordinate-format)*.
 
+Ogni widget delle coordinate ha la propria impostazione *Formato*. Per impostazione predefinita, il widget mostra le coordinate nel formato Primario dall'[elenco dei formati delle coordinate](../search/search-coordinates.md#customize-coordinate-format) del profilo. Per scegliere un altro formato, tocca a lungo il widget e seleziona *Impostazioni* nel [menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu). Due widget delle coordinate possono mostrare le coordinate in formati diversi.
+
+Il formato selezionato viene salvato nelle impostazioni del widget: viene copiato insieme alle impostazioni del profilo e il ripristino delle impostazioni del widget lo riporta al formato Primario.
+
 | | |
 |:------------|:------------|
 | Abilita | **Android:** *<Translate android="true" ids="shared_string_menu,map_widget_config"/> → <Translate android="true" ids="top_widgets_panel"/>/<Translate android="true" ids="bottom_widgets_panel"/> → <Translate android="true" ids="coordinates_widget"/>* |
 |   | **iOS:** *<Translate ios="true" ids="shared_string_menu,layer_map_appearance"/> → <Translate ios="true" ids="top_widgets_panel"/>/<Translate ios="true" ids="bottom_widgets_panel"/> → <Translate ios="true" ids="coordinates"/>* |
 | Con un tocco | Copia le coordinate negli appunti. |
-| Formato | *<Translate ios="true" ids="shared_string_menu,shared_string_settings,application_profiles"/> (iOS) or <Translate android="true" ids="configure_profile"/> (Android) → <br/> <Translate ios="true" ids="general_settings_2,units_and_formats,coords_format"/>* |
+| Formato | **Android:** *[Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) → <Translate android="true" ids="shared_string_settings,navigate_point_format"/>* |
+|   | **iOS:** *[Menu contestuale del widget](../widgets/configure-screen.md#widget-context-menu) → <Translate ios="true" ids="shared_string_settings,coords_format"/>* |
 
 
 ## Info GPS {#gps-info}
