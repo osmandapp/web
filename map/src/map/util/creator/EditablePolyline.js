@@ -1,45 +1,29 @@
 import L from 'leaflet';
-import TrackLayerProvider from '../TrackLayerProvider';
 import MarkerOptions from '../../markers/MarkerOptions';
 import GeometryUtil from 'leaflet-geometryutil';
-import TracksManager, { publishEditedTrack } from '../../../manager/track/TracksManager';
-import {
-    findPointIndex,
-    insertOnLine,
-    isPointUnrouted,
-    isProtectedSegment,
-} from '../../../manager/track/TrackOperations';
-import EditableMarker from './EditableMarker';
+import { getEditorActions, publishEditedTrack } from '../../../manager/track/TracksManager';
+import { findPointIndex, insertOnLine } from '../../../manager/track/TrackOperations';
 
 export default class EditablePolyline {
     currentPolyline;
     dragPoint;
 
-    constructor(map, ctx, points, layer) {
+    constructor(map, ctx, layer) {
         this.map = map;
-        this.ctx = ctx;
-        this.points = points;
+        this.ctx = getEditorActions(ctx);
         this.layer = layer;
         this.dragPoint = null;
     }
 
     create() {
-        let polyline = this.layer;
-        if (!polyline && this.points) {
-            polyline = this.createBasePolyline();
-        }
-        if (polyline) {
-            const marker = new L.Marker(new L.LatLng(null, null), {
-                icon: MarkerOptions.options.route,
-                title: 'poly',
-                draggable: true,
-            });
-            if (this.map) {
-                // map=null used by refreshTempLine()
-                this.addEvents(this.map, polyline, marker);
-            }
-        }
-        return polyline;
+        const marker = new L.Marker(new L.LatLng(null, null), {
+            icon: MarkerOptions.options.route,
+            title: 'poly',
+            draggable: true,
+        });
+        this.addEvents(this.map, this.layer, marker);
+
+        return this.layer;
     }
 
     addEvents(map, polyline, marker) {
@@ -102,14 +86,6 @@ export default class EditablePolyline {
         });
     }
 
-    createBasePolyline() {
-        const polyline = new L.Polyline(this.points, TrackLayerProvider.getPolylineOpt(this.map));
-        polyline.setStyle({
-            color: this.ctx.trackRouter.getColor(),
-        });
-        return polyline;
-    }
-
     mousemovePolyline(e, marker) {
         const coordinates = this.map.mouseEventToLatLng(e.originalEvent);
         marker.setLatLng(coordinates);
@@ -117,14 +93,14 @@ export default class EditablePolyline {
             marker.addTo(this.map);
         }
         marker._icon.style.display = '';
-        this.currentPolyline = e.target._leaflet_id;
+        this.currentPolyline = e.target;
     }
 
     dragStartNewPoint(e, track) {
         const lat = e.target._latlng.lat;
         const lng = e.target._latlng.lng;
 
-        const currentLayer = track.layers._layers[this.currentPolyline];
+        const currentLayer = this.currentPolyline;
         const findPoint = new L.LatLng(lat, lng);
 
         const { index: segmentIndex } = this.findTheNearestSegment({
@@ -151,7 +127,6 @@ export default class EditablePolyline {
                 lng: lng,
                 geometryIndex,
                 index,
-                layerIndex: segmentIndex + 1,
             };
         }
     }
@@ -166,61 +141,14 @@ export default class EditablePolyline {
         const track = { ...current };
         const lat = e.target._latlng.lat;
         const lng = e.target._latlng.lng;
+        const { index, geometryIndex } = this.dragPoint;
 
-        const currentLayer = track.layers._layers[this.currentPolyline];
-        const points = track.points;
-        const { index, geometryIndex, layerIndex } = this.dragPoint;
-
-        const prevPoint = points[index - 1];
-        const segmentEndPoint = points[index];
-
-        track.points = insertOnLine(points, index, { lat, lng }, geometryIndex);
-        if (track.points.length > points.length) {
-            const newMarker = new EditableMarker(this.map, this.ctx, track.points[index], null).create();
-            track.layers.addLayer(newMarker);
-        }
-
-        if (isPointUnrouted({ point: segmentEndPoint, pointIndex: index, prevPoint })) {
-            currentLayer._latlngs.splice(layerIndex, 0, { lat, lng });
-            currentLayer.setLatLngs(currentLayer._latlngs);
-        } else if (!isProtectedSegment({ startPoint: prevPoint, endPoint: segmentEndPoint })) {
-            const currentPoint = track.points[index];
-            const nextPoint = track.points[index + 1];
-
-            this.map.removeLayer(currentLayer);
-
-            this.activatePolyline({ track, start: prevPoint, end: currentPoint, temp: true });
-            this.activatePolyline({ track, start: currentPoint, end: nextPoint, temp: true });
-        }
+        track.points = insertOnLine(track.points, index, { lat, lng }, geometryIndex);
 
         // finally
         publishEditedTrack(this.ctx, track);
 
         this.dragPoint = null;
-    }
-
-    activatePolyline({ track, start, end, temp }) {
-        let polyline = null;
-
-        if (end.geometry && end.geometry.length > 0) {
-            polyline = new EditablePolyline(this.map, this.ctx, end.geometry, null).create();
-        } else {
-            polyline = new EditablePolyline(this.map, this.ctx, [start, end], null).create();
-        }
-
-        if (temp) {
-            TrackLayerProvider.toTempLine(polyline, start, end);
-        } else {
-            const color = this.ctx.trackRouter.getColor(
-                // use PROFILE_LINE color for unrouted segments
-                start.profile ? start : { profile: TracksManager.PROFILE_LINE }
-            );
-            polyline.setStyle({ color });
-            polyline.options.pointIds = [start.id, end.id];
-        }
-
-        polyline.addTo(track.layers);
-        // XXX register layers (but check is it still really need)
     }
 
     findTheNearestSegment({ point, segments }) {

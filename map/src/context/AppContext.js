@@ -325,7 +325,6 @@ export const AppContextProvider = (props) => {
     const [closableMenu, setClosableMenu] = useState(false);
     const [saveTrackToCloud, setSaveTrackToCloud] = useState(false);
 
-    const [runningAnalyses, setRunningAnalyses] = useState(0);
     const [runningEditorAnalyses, setRunningEditorAnalyses] = useState(0);
     const [openNavigationSettings, setOpenNavigationSettings] = useState(false);
 
@@ -734,8 +733,6 @@ export const AppContextProvider = (props) => {
                 setProcessingPoiByUrl,
                 processingStopByUrl,
                 setProcessingStopByUrl,
-                processingAnalytics: runningAnalyses > 0,
-                setRunningAnalyses,
                 analysisLoading: runningEditorAnalyses > 0,
                 setRunningEditorAnalyses,
                 openNavigationSettings,

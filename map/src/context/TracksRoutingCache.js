@@ -1,6 +1,5 @@
 import isEmpty from 'lodash-es/isEmpty';
 import TracksManager, { mergeRouteTypes, PROFILE_LINE, ROUTER_ERROR_LINE_USED } from '../manager/track/TracksManager';
-import EditablePolyline from '../map/util/creator/EditablePolyline';
 import {
     hasSegmentWaitingForRouter,
     isWaitingForRouter,
@@ -67,31 +66,17 @@ function routeOrLine(ctx, startPoint, endPoint, geoProfile) {
     });
 }
 
-export function effectRefreshTrackWithRouting({ ctx, map, geoRouter, saveChanges }) {
+export function effectRefreshTrackWithRouting({ ctx, geoRouter, saveChanges }) {
     const { routes, routeTypes } = takeCachedAnswers(ctx.selectedGpxFile, ctx.routingCache, geoRouter);
     if (routes.length === 0) {
         return false;
     }
-
-    const layers = ctx.selectedGpxFile.layers?.getLayers() ?? [];
-    let updateLayers = false;
-    routes.forEach(({ index, geometry }) => {
-        const { id } = ctx.selectedGpxFile.points[index];
-        const tempLine = id !== undefined && layers.find((layer) => layer.point?.id === id);
-        if (tempLine) {
-            const color = geoRouter.getColor(ctx.selectedGpxFile.points[index - 1]);
-            refreshTempLine({ ctx, map, geometry, tempLine, color });
-        } else {
-            updateLayers = true;
-        }
-    });
 
     const points = setSegmentGeometries(ctx.selectedGpxFile.points, routes);
     saveChanges(null, null, null, {
         ...ctx.selectedGpxFile,
         points,
         routeTypes,
-        ...(updateLayers && { updateLayers }),
     }); // mutate track with more data and call setSelectedGpxFile({...})
 
     return true;
@@ -253,7 +238,7 @@ function withUnansweredAnalysis(current, points) {
     return { ...current, analysisPoints: points, analysisTracks: undefined };
 }
 
-function isPointsHaveSameGeo(p1, p2) {
+export function isPointsHaveSameGeo(p1, p2) {
     if (!p1 || !p2 || p1.length !== p2.length) {
         return false;
     }
@@ -281,27 +266,7 @@ function isPointsHaveSameGeo(p1, p2) {
     return true; // all-the-same
 }
 
-// refresh fresh data to previously created "temp-line" layer
-function refreshTempLine({ ctx, map, geometry, tempLine, color }) {
-    // don't destroy tempLine (empty geo)
-    if (geometry && geometry.length > 0) {
-        const polyline = new EditablePolyline(null, ctx, geometry, null).create(); // latlngs-only
-        tempLine.setStyle({ color, dashArray: null });
-        tempLine.setLatLngs(polyline._latlngs);
-        tempLine.options.name = undefined;
-        if (!isEditableLine(tempLine)) {
-            new EditablePolyline(map, ctx, null, tempLine).create();
-        }
-    } else {
-        tempLine.setStyle({ color });
-    }
-}
-
-function isEditableLine(line) {
-    return line.listens('mousemove');
-}
-
-export function addElevationToCache({ ctx, points, geoRouter }) {
+function addElevationToCache({ ctx, points, geoRouter }) {
     const cache = ctx.routingCache;
     if (isEmpty(cache)) {
         return;

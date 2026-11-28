@@ -7,6 +7,7 @@ import {
 } from '@map/context/LocalTrackStorage';
 import { renameLocalTrack } from '@map/manager/track/SaveTrackManager';
 import { withEditedPoints } from '@map/manager/track/TracksManager';
+import { assignWptIds } from '@map/manager/track/TrackOperations';
 import { fakeIndexedDbStore, removeIndexedDb } from '../../util/indexedDb';
 import { settle } from '../../util/settle';
 import { isAnalysisAsked } from '../../util/editor';
@@ -102,18 +103,20 @@ describe('an edited local track', () => {
         ...track('Track'),
         points,
         tracks: [{ points }],
+        wpts: assignWptIds([{ lat: 50, lon: 30, name: 'wpt' }]),
         layers: {},
         updateLayers: true,
         selected: true,
         analysis: { totalDistance: 1112, srtmAnalysis: true, isSrtmApplied: true },
     });
 
-    test('is stored with its points, profiles and geometry, without its lines and the tracks of the gpx', async () => {
+    test('is stored with its points, profiles, geometry and waypoints, without lines, gpx tracks and waypoint ids', async () => {
         saveTrackToLocalStorage({ ctx: createCtx(), track: edited() });
         await settle();
 
         const record = db.get(0);
         expect(record.points).toEqual(points);
+        expect(record.wpts).toEqual([{ lat: 50, lon: 30, name: 'wpt' }]);
         expect(record).not.toHaveProperty('tracks');
         expect(record).not.toHaveProperty('layers');
         expect(record).not.toHaveProperty('updateLayers');

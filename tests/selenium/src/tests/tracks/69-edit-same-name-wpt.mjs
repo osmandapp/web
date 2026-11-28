@@ -4,7 +4,6 @@ import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionCreateRoute from '../../actions/tracks/actionCreateRoute.mjs';
 import actionAddWpt from '../../actions/tracks/actionAddWpt.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 const ROUTE_POINT = [50.4925, 30.514];
 const WPT_NAME = 'WPT-SAME';
@@ -12,8 +11,6 @@ const FIRST = [50.4925, 30.515];
 const SECOND = [50.4925, 30.516];
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap('#17/50.4925/30.5150');
     await actionCreateRoute([ROUTE_POINT]);
     await actionAddWpt(WPT_NAME, FIRST);

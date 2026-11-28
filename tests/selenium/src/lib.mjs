@@ -654,6 +654,11 @@ export async function hasRoutePointNear(lat, lon) {
     return (await getMarkersNear(lat, lon)).some(isRoutePointMarker);
 }
 
+/** A point of the edited track at [lat, lon] with its marker hidden. */
+export async function hasHiddenRoutePointNear(lat, lon) {
+    return (await getMarkersNear(lat, lon)).some((marker) => isRoutePointMarker(marker) && !marker.visible);
+}
+
 /** The pointer of a point picked in the Track tab at [lat, lon]. */
 export async function hasPointerNear(lat, lon) {
     return (await getMarkersNear(lat, lon)).some((marker) => !marker.type && !marker.draggable);

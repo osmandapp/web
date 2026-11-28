@@ -20,6 +20,7 @@ import TracksManager, {
     renameLastFolderSegment,
     calculateLastModified,
     takePointsFromTracks,
+    withClosePrev,
 } from './TracksManager';
 import { syncCloudTrackInfo, findInfoFile } from './TrackAppearanceManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -453,13 +454,7 @@ async function downloadAfterUpload(ctx, file, showOnMap) {
     };
 
     // cleanup
-    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        createState.closePrev = {
-            file: cloneTrackObject(ctx.selectedGpxFile),
-        };
-    }
-
-    ctx.setCreateTrack({ ...createState });
+    ctx.setCreateTrack(withClosePrev(ctx, createState));
 
     const newGpxFiles = { ...ctx.gpxFiles };
 
@@ -540,13 +535,7 @@ function openNewLocalTrack({ ctx, track, cloudAutoSave = false }) {
     };
 
     // cleanup
-    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        createState.closePrev = {
-            file: cloneTrackObject(ctx.selectedGpxFile),
-        };
-    }
-
-    ctx.setCreateTrack(createState);
+    ctx.setCreateTrack(withClosePrev(ctx, createState));
 
     // parent needs our track.selected = true
     track.selected = true; // track is ref

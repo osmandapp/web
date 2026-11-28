@@ -3,7 +3,6 @@ import { clickBy, getTrackLines, hoverBy, setMapCenter, waitBy, waitByRemoved } 
 import actionOpenMap from '../../actions/map/actionOpenMap.mjs';
 import actionFinish from '../../actions/actionFinish.mjs';
 import actionUploadGpx from '../../actions/actionUploadGpx.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 
 const SHOWN = 'test-track-trkpt';
 const EDITED = 'test-track-mixed';
@@ -11,8 +10,6 @@ const ZOOM = 16;
 const TOOLTIP = By.xpath(`//*[contains(@class, 'leaflet-tooltip') and contains(., '${SHOWN}')]`);
 
 export default async function test() {
-    ignoreTest();
-
     await actionOpenMap();
     await actionUploadGpx({ mask: 'test-track-*.gpx', multiple: true });
     await clickBy(By.id('se-local-track-' + SHOWN));
