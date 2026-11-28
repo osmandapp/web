@@ -5,6 +5,7 @@ import {
     effectRequestAnalysis,
     GET_ANALYSIS_DEBOUNCE_MS,
     getWaitingSegments,
+    requestAnalysisNow,
 } from '@map/context/TracksRoutingCache';
 import L from 'leaflet';
 import TracksManager, { mergeRouteTypes, ROUTER_ERROR_LINE_USED } from '@map/manager/track/TracksManager';
@@ -69,12 +70,16 @@ test('the router is asked for the segments without geometry, six at a time', asy
     expect(Object.values(ctx.routingCache).map((entry) => entry.geometry)).toEqual(Array(6).fill(['routed']));
 });
 
-test('the router is asked while the analysis is running', () => {
-    const ctx = createCtx([point(0), waitingPoint(1)]);
-    ctx.processingAnalytics = true;
+test('an edit made while the analysis of the track waits for its answer is routed', () => {
+    const ctx = createCtx([point(0), point(1)]);
+    apiPost.mockReturnValue(new Promise(() => {}));
 
+    requestAnalysisNow({ ctx, track: ctx.selectedGpxFile });
+    ctx.selectedGpxFile.points = [point(0), waitingPoint(1)];
+
+    expect(ctx.analysisLoading).toBe(true);
     expect(startRouting(ctx)).toBe(true);
-    expect(ctx.trackRouter.updateRouteBetweenPoints).toHaveBeenCalledTimes(1);
+    expect(askedPairs(ctx)).toEqual([[50, 50.01]]);
 });
 
 test('a failed request is not repeated while its segment waits, a changed segment is asked again', async () => {

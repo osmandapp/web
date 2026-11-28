@@ -99,6 +99,7 @@ export default function GeneralInfoTab() {
                                     label={'Show track points'}
                                     control={
                                         <Checkbox
+                                            id="se-show-track-points"
                                             sx={{ marginLeft: '-30px' }}
                                             checked={ctx.showPoints.points}
                                             onChange={() => ctx.mutateShowPoints((o) => (o.points = !o.points))}

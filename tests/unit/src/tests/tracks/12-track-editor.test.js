@@ -322,10 +322,13 @@ describe('the profile of the next segment after an undo', () => {
         expect(getLastSegmentGeoProfile(points.slice(0, 1), router)).toBeNull();
     });
 
-    test.failing('is the profile of the second-to-last point of an imported track too', () => {
+    test('is the profile of the second-to-last point of an imported track too, none after a gap', () => {
         const points = createRoutedPoints(3);
         points[1].profile = PROFILE_PEDESTRIAN;
 
         expect(getLastSegmentGeoProfile(points, router)).toMatchObject({ profile: PROFILE_PEDESTRIAN });
+
+        points[1].profile = TracksManager.PROFILE_GAP;
+        expect(getLastSegmentGeoProfile(points, router)).toBeNull();
     });
 });

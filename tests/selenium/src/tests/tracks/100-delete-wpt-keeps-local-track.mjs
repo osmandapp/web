@@ -6,15 +6,12 @@ import actionFinish from '../../actions/actionFinish.mjs';
 import actionOpenLocalTrack from '../../actions/tracks/actionOpenLocalTrack.mjs';
 import actionDeleteWptFromDetails from '../../actions/tracks/actionDeleteWptFromDetails.mjs';
 import actionDeleteTracksByPattern from '../../actions/tracks/actionDeleteTracksByPattern.mjs';
-import ignoreTest from '../../actions/actionIgnoreTest.mjs';
 import { cleanupCloud } from '../../util.mjs';
 
 const TRACK = 'test-track-wpt';
 const WPT = [50.71871, 29.588748];
 
 export default async function test() {
-    ignoreTest();
-
     try {
         await actionOpenMap();
         await actionLogIn();

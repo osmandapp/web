@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
+import React, { createContext, useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import { TabContext, TabList } from '@mui/lab';
 import PersistentTabPanel from './PersistentTabPanel';
 import styles from './tabpanels.module.css';
 import ThickDivider from '../../../frame/components/dividers/ThickDivider';
+
+export const TabScrollerContext = createContext(null);
 
 export default function TabPanels({ tabsObj, scrollAreaHandlers, scrollPaddingBottom = 0 }) {
     const [value, setValue] = useState(tabsObj?.defaultTab);
@@ -63,15 +65,22 @@ export default function TabPanels({ tabsObj, scrollAreaHandlers, scrollPaddingBo
                 <ThickDivider />
                 <div
                     ref={contentScrollerRef}
+                    id="se-tab-panels-scroller"
                     className={styles.contentScroller}
                     style={{ paddingBottom: scrollPaddingBottom }}
                     onScroll={handleContentScroll}
                 >
-                    {Object.values(tabsObj.tabs).map((item) => (
-                        <PersistentTabPanel key={'tabpanel-track:' + item.key} selectedTabId={value} tabId={item.key}>
-                            {item}
-                        </PersistentTabPanel>
-                    ))}
+                    <TabScrollerContext.Provider value={contentScrollerRef}>
+                        {Object.values(tabsObj.tabs).map((item) => (
+                            <PersistentTabPanel
+                                key={'tabpanel-track:' + item.key}
+                                selectedTabId={value}
+                                tabId={item.key}
+                            >
+                                {item}
+                            </PersistentTabPanel>
+                        ))}
+                    </TabScrollerContext.Provider>
                 </div>
             </div>
         </TabContext>

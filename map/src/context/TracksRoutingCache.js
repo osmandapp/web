@@ -266,7 +266,7 @@ export function isPointsHaveSameGeo(p1, p2) {
     return true; // all-the-same
 }
 
-export function addElevationToCache({ ctx, points, geoRouter }) {
+function addElevationToCache({ ctx, points, geoRouter }) {
     const cache = ctx.routingCache;
     if (isEmpty(cache)) {
         return;

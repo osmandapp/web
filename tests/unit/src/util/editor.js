@@ -58,7 +58,7 @@ export function markerOf(ctx, point) {
 /** Drags point `index` of the open track along its meridian to `lat`, as the marker of the point does. */
 export function dragPoint(ctx, index, lat) {
     const track = ctx.selectedGpxFile;
-    const marker = new EditableMarker(null, ctx);
+    const marker = new EditableMarker(ctx);
     marker.dragStartPoint(createDragEvent(track.points[index]), track);
     marker.dragEndPoint(createDragEvent({ lat, lng: track.points[index].lng }), track);
 }

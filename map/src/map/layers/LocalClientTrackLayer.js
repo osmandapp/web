@@ -3,7 +3,12 @@ import AppContext, { isLocalTrack, OBJECT_TYPE_LOCAL_TRACK } from '../../context
 import MapContext from '../../context/MapContext';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
-import TrackLayerProvider, { isWptClick, redrawWptsOnLayer, WPT_SIMPLIFY_THRESHOLD } from '../util/TrackLayerProvider';
+import TrackLayerProvider, {
+    checkShowPoints,
+    isWptClick,
+    redrawWptsOnLayer,
+    WPT_SIMPLIFY_THRESHOLD,
+} from '../util/TrackLayerProvider';
 import TracksManager, { getResolvedPointsGroups, isEmptyTrack } from '../../manager/track/TracksManager';
 import { applyZoomToFit, addLayerToMap } from '../util/MapManager';
 import isEmpty from 'lodash-es/isEmpty';
@@ -25,6 +30,7 @@ import {
     createLocalTrack,
     createNewPoint,
     getLastSegmentGeoProfile,
+    getLastSegmentStart,
     initNewSelectedTrack,
     isAddPointByClick,
     isNewTrack,
@@ -34,12 +40,13 @@ import {
     clearAllRegisteredLayers,
     createFirstLayers,
     deleteOldLayers,
+    redrawPointMarkers,
     redrawTrackPoints,
     updateLayers,
 } from '../util/creator/LocalTrackLayerHelper';
 import { hideMarkersUnderPin } from '../util/MarkerSelectionService';
 import { passClickToNavigation } from '../../manager/NavigationManager';
-import { assignPointIds } from '../../manager/track/TrackOperations';
+import { assignPointIds, assignWptIds, findPointIndex } from '../../manager/track/TrackOperations';
 
 const EDITOR_PICKS_POINT_CLASS = 'track-editor-picks-point';
 
@@ -133,10 +140,13 @@ export default function LocalClientTrackLayer() {
     }, [ctxTrack]);
 
     useEffect(() => {
-        const layersOnMap = ctxTrack?.layers && map.hasLayer(ctxTrack.layers);
-        if (ctx.createTrack?.enable && isLocalTrack(ctx) && ctxTrack?.points && layersOnMap) {
+        if (isEditedTrackDrawn()) {
             redrawTrackPoints({ map, ctx, points: ctxTrack.points, trackLayers: ctxTrack.layers });
             hideMarkersUnderSelectedPin();
+        }
+        if (selectedPointMarker && findPointIndex(ctxTrack?.points ?? [], selectedPointMarker.pointId) === -1) {
+            map.removeLayer(selectedPointMarker.marker);
+            setSelectedPointMarker(null);
         }
     }, [ctxTrack?.points]);
 
@@ -154,6 +164,10 @@ export default function LocalClientTrackLayer() {
 
             setPrevZoom(zoom);
             setMove(false);
+        } else if (isEditedTrackDrawn()) {
+            redrawPointMarkers({ map, ctx, points: ctxTrack.points, trackLayers: ctxTrack.layers });
+            checkShowPoints(ctxTrack.layers, ctx.showPoints.points, false);
+            hideMarkersUnderSelectedPin();
         }
     }, [zoom, move]);
 
@@ -423,6 +437,16 @@ export default function LocalClientTrackLayer() {
         });
     }
 
+    function isEditedTrackDrawn() {
+        return (
+            ctx.createTrack?.enable &&
+            isLocalTrack(ctx) &&
+            ctxTrack?.points &&
+            ctxTrack.layers &&
+            map.hasLayer(ctxTrack.layers)
+        );
+    }
+
     function hideMarkersUnderSelectedPin() {
         if (ctx.selectedCreatedLayerRef?.current && map.hasLayer(ctx.selectedCreatedLayerRef.current)) {
             hideMarkersUnderPin(map, ctx);
@@ -524,7 +548,6 @@ export default function LocalClientTrackLayer() {
                     // saveChanges does useful job, but setSelectedGpxFile() is double-called (later, by parent)
                     saveChanges(null, null, null, ctxTrack);
                 }
-                ctxTrack.newPoint = newPoint;
                 ctx.setSelectedGpxFile({ ...ctxTrack });
                 TracksManager.updateState(ctx);
             }
@@ -542,13 +565,14 @@ export default function LocalClientTrackLayer() {
             ctxTrack = currentTrack;
         }
         const points = assignPointIds(ctxTrack.points);
+        assignWptIds(ctxTrack.wpts);
         ctxTrack.layers = updateTrackLayers(new L.FeatureGroup());
         ctxTrack.points = points;
 
-        ctxTrack.newPoint = points[points.length - 1];
+        const lastPoint = points[points.length - 1];
 
-        if (ctxTrack.newPoint?.geoProfile || ctxTrack.newPoint?.profile) {
-            geoRouter.onGeoProfile(ctxTrack.newPoint);
+        if (lastPoint?.geoProfile || lastPoint?.profile) {
+            geoRouter.onGeoProfile(lastPoint);
         } else {
             geoRouter.onGeoProfile({ profile: TracksManager.PROFILE_LINE });
         }
@@ -562,14 +586,15 @@ export default function LocalClientTrackLayer() {
         TracksManager.updateState(ctx);
     }
 
-    const lastSegmentGeoProfile = getLastSegmentGeoProfile(ctxTrack.points, geoRouter);
+    const lastSegmentStart = getLastSegmentStart(ctxTrack.points);
 
     useEffect(() => {
         // useful with Undo/Redo
+        const lastSegmentGeoProfile = getLastSegmentGeoProfile(ctxTrack.points, geoRouter);
         if (lastSegmentGeoProfile) {
             geoRouter.onGeoProfile(lastSegmentGeoProfile);
         }
-    }, [JSON.stringify(lastSegmentGeoProfile)]);
+    }, [JSON.stringify(lastSegmentStart?.geoProfile ?? lastSegmentStart?.profile)]);
 
     return (
         openAddRoutingToTrackDialog && (

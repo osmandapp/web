@@ -3,16 +3,14 @@ import * as TrackOperations from './track/TrackOperations';
 import { requestAnalysisNow } from '../context/TracksRoutingCache';
 import isEmpty from 'lodash-es/isEmpty';
 
-function deleteWpt(ind, ctx, save = false) {
-    ctx.setSelectedGpxFile((o) => {
-        o.wpts.splice(ind, 1);
-        o.updateLayers = true;
-        o.wptChangedFlag = (o.wptChangedFlag || 0) + 1;
-        if (save) {
-            o.save = true;
-        }
-        return { ...o };
-    });
+function deleteWpt(ind, ctx) {
+    if (ind === -1) return;
+    ctx.setSelectedGpxFile((track) => ({
+        ...track,
+        wpts: track.wpts.filter((_, i) => i !== ind),
+        updateLayers: true,
+        wptChangedFlag: (track.wptChangedFlag || 0) + 1,
+    }));
 
     TracksManager.updateState(ctx);
 }

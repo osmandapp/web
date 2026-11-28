@@ -21,6 +21,22 @@ export function findPointIndex(points, id) {
     return id === undefined ? -1 : points.findIndex((point) => point.id === id);
 }
 
+export function assignWptIds(wpts) {
+    wpts?.forEach((wpt) => {
+        wpt.wptId = createPointId();
+    });
+
+    return wpts;
+}
+
+export function findWptIndex(wpts, wptId) {
+    return wptId === undefined ? -1 : wpts.findIndex((wpt) => wpt.wptId === wptId);
+}
+
+export function updateWpt(wpts, index, changes) {
+    return wpts.map((wpt, i) => (i === index ? { ...wpt, ...changes } : wpt));
+}
+
 export function isPointUnrouted({ point, pointIndex, prevPoint }) {
     return (
         !point.profile || // empty profile is Unrouted but PROFILE_LINE is Routed
@@ -225,7 +241,7 @@ export function setProfile(points, index, geoProfile) {
     return setProfiles(points, [index], geoProfile);
 }
 
-export function setProfiles(points, indexes, geoProfile) {
+function setProfiles(points, indexes, geoProfile) {
     const result = [...points];
     indexes.forEach((index) => {
         result[index] = { ...points[index], profile: geoProfile.profile, geoProfile };

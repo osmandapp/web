@@ -3,7 +3,7 @@ import TrackLayerProvider, { WPT_SIMPLIFY_THRESHOLD } from '../TrackLayerProvide
 import { createFirstLayers } from './LocalTrackLayerHelper';
 import cloneDeep from 'lodash-es/cloneDeep';
 import isEmpty from 'lodash-es/isEmpty';
-import { createPointId } from '../../../manager/track/TrackOperations';
+import { createPointId, PROFILE_GAP } from '../../../manager/track/TrackOperations';
 
 export const ADDED_POINT = {
     FIRST: 'first',
@@ -26,10 +26,8 @@ export function initNewSelectedTrack({ ctx, map, geoRouter, setRegisteredLayers 
         name: TracksManager.createName(ctx),
         pointsGroups: {},
         points: newPoint ? [newPoint] : [],
-        newPoint: newPoint ?? null,
         layers: newPoint ? createFirstLayers(setRegisteredLayers) : null,
         updateLayers: !!newPoint,
-        addPoint: !!newPoint,
         routeTypes: [],
     };
 
@@ -104,15 +102,19 @@ export function addRoutedSegment({ points, newPoint, geoRouter }) {
     return [firstPoint, lastPoint, newPoint];
 }
 
-export function getLastSegmentGeoProfile(points, geoRouter) {
-    if (points?.length > 1) {
-        const beforeLast = points[points.length - 2];
-        if (beforeLast?.geoProfile) {
-            return geoRouter.getGeoProfile(beforeLast.geoProfile);
-        }
+export function getLastSegmentStart(points) {
+    const beforeLast = points?.length > 1 ? points[points.length - 2] : null;
+    if (beforeLast?.geoProfile || (beforeLast?.profile && beforeLast.profile !== PROFILE_GAP)) {
+        return beforeLast;
     }
 
     return null;
+}
+
+export function getLastSegmentGeoProfile(points, geoRouter) {
+    const start = getLastSegmentStart(points);
+
+    return start && geoRouter.getGeoProfile(start.geoProfile ?? { profile: start.profile });
 }
 
 export function createLocalTrack({ ctx, map, file }) {

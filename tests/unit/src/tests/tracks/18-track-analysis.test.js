@@ -15,7 +15,7 @@ import {
     requestAnalysisNow,
     requestAnalytics,
 } from '@map/context/TracksRoutingCache';
-import { assignPointIds, setProfile, withAnsweredElevation } from '@map/manager/track/TrackOperations';
+import { assignPointIds, assignWptIds, setProfile, withAnsweredElevation } from '@map/manager/track/TrackOperations';
 import { apiPost } from '@map/util/HttpApi';
 import { findRequest } from '../../util/requests';
 import { readGzipJson } from '../../util/infoFile';
@@ -75,13 +75,7 @@ const withGpxExt = (points) =>
         },
     }));
 
-const createCtx = (points) => {
-    const ctx = createEditorCtx({ points });
-    ctx.analyses = createCounter();
-    ctx.setRunningAnalyses = ctx.analyses.set;
-
-    return ctx;
-};
+const createCtx = (points) => createEditorCtx({ points });
 
 const analyse = (ctx, setLoading = jest.fn()) => TracksManager.getTrackWithAnalysis(GET_ANALYSIS, ctx, setLoading);
 
@@ -119,7 +113,7 @@ beforeEach(() => {
 });
 
 describe('what is sent for the analysis', () => {
-    test('a gpx of two tracks opened in the editor sends no point ids and gets no gap written into its tracks', async () => {
+    test('a gpx of two tracks opened in the editor sends no point or waypoint ids and gets no gap written into its tracks', async () => {
         for (const unrouted of [false, true]) {
             apiPost.mockClear();
             const opened = { tracks: [{ points: createRoutedPoints(3) }, { points: createPlainPoints(2) }] };
@@ -129,12 +123,17 @@ describe('what is sent for the analysis', () => {
                 delete points[1].geometry;
             }
             const ctx = createCtx(points);
-            Object.assign(ctx.selectedGpxFile, { analysisTracks: opened.analysisTracks, analysisPoints: points });
+            Object.assign(ctx.selectedGpxFile, {
+                analysisTracks: opened.analysisTracks,
+                analysisPoints: points,
+                wpts: assignWptIds([{ lat: 50, lon: 30, name: 'wpt' }]),
+            });
 
             await analyse(ctx);
 
             const body = await readGzipJson(findRequest(apiPost, ANALYSIS_URL).body);
             expect(JSON.stringify(body)).not.toContain('"id"');
+            expect(body.wpts).toEqual([{ lat: 50, lon: 30, name: 'wpt' }]);
             expect(opened.analysisTracks[0].points.at(-1).profile).not.toBe(TracksManager.PROFILE_GAP);
         }
     });
@@ -293,7 +292,7 @@ describe('the answer of the analysis', () => {
         expect(result.analysis).toEqual({ totalDistance: TOTAL_DISTANCE, startTime: START_TIME, endTime: END_TIME });
     });
 
-    test('a failed analysis keeps the track and ends the loading and the analysis', async () => {
+    test('a failed analysis keeps the track and ends the loading', async () => {
         const ctx = createCtx(createRoutedPoints(3));
         const loading = createCounter();
         apiPost.mockResolvedValue({ ok: false, status: 502, data: null });
@@ -301,7 +300,6 @@ describe('the answer of the analysis', () => {
         await expect(analyse(ctx, loading.set)).resolves.toBe(ctx.selectedGpxFile);
 
         expect(loading.values).toEqual([1, 0]);
-        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 
     test('a failed or aborted analysis of the current points ends the wait for it, so the editor writes the track, an answer for points changed meanwhile does not', async () => {
@@ -373,13 +371,11 @@ describe('the answer of the analysis', () => {
         expect(ctx.selectedGpxFile.analysisPoints).toBeUndefined();
     });
 
-    test('an analysis answer without data keeps the track and ends the analysis', async () => {
+    test('an analysis answer without data keeps the track', async () => {
         const ctx = createCtx(createRoutedPoints(3));
         apiPost.mockResolvedValue({ data: {} });
 
         await expect(analyse(ctx)).resolves.toBe(ctx.selectedGpxFile);
-
-        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 });
 
@@ -448,14 +444,6 @@ describe('srtm', () => {
             avgElevation: 102,
             maxElevation: 104,
         });
-    });
-
-    test('the analysis is finished when srtm is applied, so routing is not blocked', async () => {
-        const ctx = createSrtmCtx();
-
-        await analyse(ctx);
-
-        expect(ctx.analyses.values).toEqual([1, 0]);
     });
 });
 

@@ -90,7 +90,7 @@ export function prepareLocalTrack(track) {
         metaData: track.metaData,
         points: track.points,
         trkExt: track.trkExt,
-        wpts: track.wpts,
+        wpts: withoutIds(track.wpts, 'wptId'),
         pointsGroups: track.pointsGroups,
         /** Cloud / .info payload (e.g. pointsGroups visibility); was omitted and lost on IndexedDB round-trip */
         info: track.info,
@@ -632,13 +632,13 @@ export const downloadCurrentLocalGpx = async ({ selectedGpxFile, routeTypes, isL
     }
 };
 
-function withoutIds(points) {
-    return points?.some((point) => point.id !== undefined) ? points.map(withoutId) : points;
+function withoutIds(items, key = 'id') {
+    return items?.some((item) => item[key] !== undefined) ? items.map((item) => withoutId(item, key)) : items;
 }
 
-function withoutId(point) {
-    const copy = { ...point };
-    delete copy.id;
+function withoutId(item, key) {
+    const copy = { ...item };
+    delete copy[key];
 
     return copy;
 }
@@ -678,7 +678,7 @@ function prepareTrackData({ file, routeTypes, getAnalysis = false }) {
 
     return {
         tracks: tracks?.map((track) => ({ ...track, points: withoutIds(track.points) })),
-        wpts: file.wpts,
+        wpts: withoutIds(file.wpts, 'wptId'),
         metaData,
         pointsGroups: file.pointsGroups,
         ext: file.ext,
@@ -1122,7 +1122,6 @@ function countRunning(setRunning, step) {
 
 async function getTrackWithAnalysis(path, ctx, setLoading) {
     countRunning(setLoading, 1);
-    countRunning(ctx.setRunningAnalyses, 1);
     try {
         const cloneFile = cloneTrackObject(ctx.selectedGpxFile);
 
@@ -1204,9 +1203,16 @@ async function getTrackWithAnalysis(path, ctx, setLoading) {
             return ctx.selectedGpxFile;
         }
     } finally {
-        countRunning(ctx.setRunningAnalyses, -1);
         countRunning(setLoading, -1);
     }
+}
+
+export function withClosePrev(ctx, createState) {
+    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
+        return { ...createState, closePrev: { file: cloneTrackObject(ctx.selectedGpxFile) } };
+    }
+
+    return createState;
 }
 
 function createTrack(ctx, latlng) {
@@ -1217,12 +1223,7 @@ function createTrack(ctx, latlng) {
         createState.latlng = latlng;
     }
     // cleanup
-    if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        createState.closePrev = {
-            file: cloneTrackObject(ctx.selectedGpxFile),
-        };
-    }
-    ctx.setCreateTrack({ ...createState });
+    ctx.setCreateTrack(withClosePrev(ctx, createState));
 
     ctx.trackRouter.escapeFromLineProfile();
 }
@@ -1278,7 +1279,7 @@ export function getEditorActions(ctx) {
 }
 
 export function publishEditedTrack(ctx, track) {
-    const edited = { ...track, zoom: false, addPoint: false };
+    const edited = { ...track, zoom: false };
     addDistance(edited);
     ctx.setSelectedGpxFile(edited);
     updateState(ctx);
@@ -1355,7 +1356,7 @@ function showSelectedPointOnMap(ctxTrack, map, selectedPointMarker, setSelectedP
             map.removeLayer(selectedPointMarker.marker);
         }
         let marker = createPointMarkerOnMap(ctxTrack, map);
-        setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name });
+        setSelectedPointMarker({ marker: marker, trackName: ctxTrack.name, pointId: showPoint.id });
     }
 }
 
@@ -1555,12 +1556,7 @@ export async function openTrackOnMap({
 }) {
     // cleanup edited localTrack
     if (ctx.createTrack?.enable && ctx.selectedGpxFile) {
-        ctx.setCreateTrack({
-            enable: false,
-            closePrev: {
-                file: cloneTrackObject(ctx.selectedGpxFile),
-            },
-        });
+        ctx.setCreateTrack(withClosePrev(ctx, { enable: false }));
     }
     const sharedFile = smartf?.type === SHARE_TYPE;
     const files = getFileStorage({ ctx, smartf, type: GPX });

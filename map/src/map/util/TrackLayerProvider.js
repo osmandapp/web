@@ -24,8 +24,6 @@ export const WPT_SIMPLIFY_THRESHOLD = 500;
 export const POINTS_SIMPLIFY_THRESHOLD = 1000;
 export const POINTS_SIMPLIFY_ZOOM_THRESHOLD = 17;
 
-export const DEFAULT_TRACK_LINE_WEIGHT = 7;
-
 const TRACK_HIT_LINE_WEIGHT = 16;
 const TRACK_HIT_LINE_SMOOTH_FACTOR = 3;
 const TRACK_HIT_LINES_MAX_TRACKS = 20;
@@ -642,7 +640,7 @@ function createTempPolyline(start, end) {
 
 // set visibility each time the marker is added to the map (Leaflet 'add' event)
 // visible - '' , hidden - 'none'
-export function bindWptVisibilityOnAdd(marker, pointsGroups) {
+function bindWptVisibilityOnAdd(marker, pointsGroups) {
     if (!marker?.options?.wpt || !pointsGroups) {
         return;
     }
@@ -658,6 +656,14 @@ export function bindWptVisibilityOnAdd(marker, pointsGroups) {
 
 export function isWptClick(e) {
     return !!e.propagatedFrom?.options?.wpt;
+}
+
+export function checkShowPoints(layers, showPoints, isWpts) {
+    layers.getLayers().forEach((layer) => {
+        if (layer instanceof L.Marker && !!layer.options.wpt === isWpts && layer._icon) {
+            layer._icon.style.display = showPoints ? null : 'none';
+        }
+    });
 }
 
 // for updating markers

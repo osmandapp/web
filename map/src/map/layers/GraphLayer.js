@@ -4,6 +4,7 @@ import AppContext from '../../context/AppContext';
 import { useMap } from 'react-leaflet';
 import TracksManager from '../../manager/track/TracksManager';
 import isEmpty from 'lodash-es/isEmpty';
+import { checkShowPoints } from '../util/TrackLayerProvider';
 
 export default function GraphLayer() {
     const ctx = useContext(AppContext);
@@ -46,34 +47,10 @@ export default function GraphLayer() {
 
     useEffect(() => {
         if (ctx.selectedGpxFile.layers) {
-            checkShowPoints(ctx.showPoints.points, false);
-            checkShowPoints(ctx.showPoints.wpts, true);
+            checkShowPoints(ctx.selectedGpxFile.layers, ctx.showPoints.points, false);
+            checkShowPoints(ctx.selectedGpxFile.layers, ctx.showPoints.wpts, true);
         }
     }, [ctx.showPoints.points, ctx.showPoints.wpts, ctx.selectedGpxFile]);
-
-    function checkShowPoints(showPoints, isWpts) {
-        if (!showPoints) {
-            ctx.selectedGpxFile.layers.getLayers().forEach((l) => {
-                if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    if (l._icon) {
-                        l._icon.style.display = 'none';
-                    }
-                }
-            });
-        } else {
-            ctx.selectedGpxFile.layers.getLayers().forEach((l) => {
-                if (l instanceof L.Marker && checkWpts(isWpts, l)) {
-                    if (l._icon) {
-                        l._icon.style.display = null;
-                    }
-                }
-            });
-        }
-    }
-
-    function checkWpts(isWpts, layer) {
-        return isWpts ? layer.options.wpt : !layer.options.wpt;
-    }
 
     function removeTrackRangeLine() {
         if (trackRangeLine) {

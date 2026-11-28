@@ -7,10 +7,9 @@ import TracksManager, { addDistanceToPoints, PROFILE_LINE, withEditedPoints } fr
 import { fromHistoryState, toHistoryState } from '@map/manager/track/TrackHistory';
 import { getWaitingSegments } from '@map/context/TracksRoutingCache';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
-import EditableMarker from '@map/map/util/creator/EditableMarker';
 import { assignPointIds, isProtectedSegment, isWaitingForRouter, setProfile } from '@map/manager/track/TrackOperations';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
-import { redrawTrackPoints, updateLayers } from '@map/map/util/creator/LocalTrackLayerHelper';
+import { redrawPointMarkers, redrawTrackPoints, updateLayers } from '@map/map/util/creator/LocalTrackLayerHelper';
 import MarkerOptions from '@map/map/markers/MarkerOptions';
 import useUndoRedo from '@map/infoblock/useUndoRedo';
 import { updateGroupsVisibility } from '@map/manager/track/TrackAppearanceManager';
@@ -863,21 +862,6 @@ describe('drag a point', () => {
         expect(waitingPairs(last)).toEqual([[50.01, 50.025]]);
     });
 
-    test('a dragged waypoint gets its new place, the route points stay', () => {
-        const ctx = createDrawnCtx(createRoutedPoints(2));
-        const track = ctx.selectedGpxFile;
-        track.wpts = [{ lat: 50.005, lon: 30.001, name: 'wpt' }];
-        const marker = new EditableMarker(null, ctx);
-
-        marker.dragStartPoint(createDragEvent({ lat: 50.005, lng: 30.001 }), track);
-        marker.dragEndPoint(createDragEvent({ lat: 50.006, lng: 30.002 }), track);
-
-        expect(track.wpts[0]).toMatchObject({ lat: 50.006, lon: 30.002 });
-        const ids = ctx.selectedGpxFile.points.map(({ id }) => id);
-        expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(2).map((point, i) => ({ ...point, id: ids[i] })));
-        expect(waitingPairs(ctx)).toEqual([]);
-    });
-
     test('a marker being dragged stays on the map while a router answer redraws the track', async () => {
         const points = createRoutedPoints(4);
         points[3] = { ...points[3], geometry: [] };
@@ -1064,6 +1048,30 @@ describe('drawing in the editor', () => {
         );
         expect(markers(draw(big, { zoom: 17 }))).toHaveLength(1001);
         expect(markers(draw(createPlainPoints(3), { bounds: L.latLngBounds([0, 0], [1, 1]) }))).toEqual([]);
+    });
+
+    test('after a zoom or a pan the points in view get markers, the markers out of view go, a dragged one stays', () => {
+        const ctx = createDrawnCtx(createPlainPoints(1001));
+        const { points, layers } = ctx.selectedGpxFile;
+        const first = markerOf(ctx, points[0]);
+        const viewFrom = (south) => ({
+            ...map,
+            getZoom: () => 17,
+            getBounds: () => L.latLngBounds([south, 29], [south + 0.055, 31]),
+        });
+        const markerLats = () => lats(markers(layers.getLayers()).map((marker) => marker.getLatLng()));
+
+        redrawPointMarkers({ map: viewFrom(50), ctx, points, trackLayers: layers });
+
+        expect(markerLats()).toEqual([50, 50.01, 50.02, 50.03, 50.04, 50.05]);
+        expect(markerOf(ctx, points[0])).toBe(first);
+
+        const dragged = markerOf(ctx, points[1]);
+        dragged.setLatLng({ lat: 50.015, lng: 30 });
+        redrawPointMarkers({ map: viewFrom(50.5), ctx, points, trackLayers: layers });
+
+        expect(markerLats()).toEqual([50.015, 50.5, 50.51, 50.52, 50.53, 50.54, 50.55]);
+        expect(markerOf(ctx, points[1])).toBe(dragged);
     });
 
     test('a line has the color of the profile of its start point, a plain run the color of Line', () => {
@@ -1378,13 +1386,12 @@ test('deleteWpt removes the waypoint and asks for a redraw of the map and of the
     const ctx = createCtx([]);
     ctx.selectedGpxFile.wpts = [{ name: 'a' }, { name: 'b' }, { name: 'c' }];
 
-    PointManager.deleteWpt(0, ctx, true);
+    PointManager.deleteWpt(0, ctx);
 
     expect(ctx.selectedGpxFile).toMatchObject({
         wpts: [{ name: 'b' }, { name: 'c' }],
         updateLayers: true,
         wptChangedFlag: 1,
-        save: true,
     });
     expect(ctx.setTrackState).toHaveBeenCalledWith({ update: true });
 
