@@ -14,9 +14,10 @@ import IconSelectionPanel from './structure/IconSelectionPanel';
 import ColorSelectionPanel from './structure/ColorSelectionPanel';
 import WptIconPreview, { getShapeSvg } from './structure/WptIconPreview';
 import FavoritesManager, {
-    DEFAULT_FAV_GROUP_NAME,
+    DEFAULT_FAV_FILE_NAME,
     DEFAULT_GROUP_NAME_POINTS_GROUPS,
     findSelectedWpt,
+    getFavPointsGroupKey,
     openFavoriteObj,
     updateFavoriteGroups,
 } from '../../../manager/FavoritesManager';
@@ -36,7 +37,7 @@ import {
     WEB_POI_PREFIX,
     WEB_PREFIX,
 } from '../wpt/WptTagsProvider';
-import TracksManager, { GPX_FILE_EXT } from '../../../manager/track/TracksManager';
+import TracksManager from '../../../manager/track/TracksManager';
 import { createPointId, findWptIndex, updateWpt } from '../../../manager/track/TrackOperations';
 import { saveTrackToLocalStorage } from '../../../context/LocalTrackStorage';
 import { getUniqFileId, MENU_INFO_OPEN_SIZE } from '../../../manager/GlobalManager';
@@ -245,7 +246,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
             selectedGroup = {
                 name: FavoritesManager.DEFAULT_GROUP_NAME,
                 file: {
-                    name: FavoritesManager.DEFAULT_GROUP_NAME + GPX_FILE_EXT,
+                    name: DEFAULT_FAV_FILE_NAME,
                     type: FavoritesManager.FAVORITE_FILE_TYPE,
                 },
             };
@@ -529,8 +530,7 @@ export default function WptEditPanel({ setShowInfoBlock }) {
                 ? ctx.favorites.groups?.find((g) => g.name === FavoritesManager.DEFAULT_GROUP_NAME)
                 : favoriteGroup;
         if (!selectedGroup) return false;
-        const groupName =
-            selectedGroup.name === DEFAULT_FAV_GROUP_NAME ? DEFAULT_GROUP_NAME_POINTS_GROUPS : selectedGroup.name;
+        const groupName = getFavPointsGroupKey(selectedGroup);
         const points = selectedGroup.pointsGroups?.[groupName]?.points || [];
 
         return points.some(

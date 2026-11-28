@@ -11,4 +11,5 @@ module.exports = {
     OBJECT_TYPE_CLOUD_TRACK,
     isLocalTrack: (ctx) => ctx.currentObjectType === OBJECT_TYPE_LOCAL_TRACK,
     isCloudTrack: (ctx) => ctx.currentObjectType === OBJECT_TYPE_CLOUD_TRACK,
+    collator: new Intl.Collator(undefined, { numeric: true }),
 };

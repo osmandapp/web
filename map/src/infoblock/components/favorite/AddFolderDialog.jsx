@@ -19,7 +19,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from 'react-i18next';
 import AppContext from '../../../context/AppContext';
 import MarkerOptions from '../../../map/markers/MarkerOptions';
-import FavoritesManager, { decodeGroupNameFromFile, saveFavoriteGroup } from '../../../manager/FavoritesManager';
+import { decodeGroupNameFromFile, isDefaultFavGroup, saveFavoriteGroup } from '../../../manager/FavoritesManager';
 import { sanitizedFileName } from '../../../util/Utils';
 import SmallRadio from '../../../frame/components/items/SmallRadio';
 import dialogStyles from '../../../dialogs/dialog.module.css';
@@ -270,7 +270,7 @@ function buildFullPath(parentGroup, name) {
 
 function getDisplayName(group, t) {
     if (!group) return t('web:fav_top_level');
-    if (group.name === FavoritesManager.DEFAULT_GROUP_NAME) return t('shared_string_my_favorites');
+    if (isDefaultFavGroup(group)) return t('shared_string_my_favorites');
     const parts = group.name.split('/');
     return parts[parts.length - 1];
 }

@@ -1,4 +1,4 @@
-import FavoritesManager, { normalizeFavoritePointsGroupName } from '../../../manager/FavoritesManager';
+import FavoritesManager, { getFavPointsGroupKey, isDefaultFavGroup } from '../../../manager/FavoritesManager';
 import { hexToRgba } from '../../../util/ColorUtil';
 import { collator } from '../../../context/AppContext';
 
@@ -6,8 +6,8 @@ export function buildGroupTree(groups, t) {
     const sorted = [...groups]
         .filter((g) => !g.sharedWithMe)
         .sort((a, b) => {
-            if (a.name === FavoritesManager.DEFAULT_GROUP_NAME) return -1;
-            if (b.name === FavoritesManager.DEFAULT_GROUP_NAME) return 1;
+            if (isDefaultFavGroup(a)) return -1;
+            if (isDefaultFavGroup(b)) return 1;
             return collator.compare(a.name, b.name);
         });
 
@@ -15,9 +15,10 @@ export function buildGroupTree(groups, t) {
 
     // first pass — create entries for all real groups
     for (const group of sorted) {
-        const pgName = normalizeFavoritePointsGroupName(group.name);
+        if (folderMap[group.name]) continue;
+        const pgName = getFavPointsGroupKey(group);
         const pg = group.pointsGroups?.[pgName];
-        const isDefault = group.name === FavoritesManager.DEFAULT_GROUP_NAME;
+        const isDefault = isDefaultFavGroup(group);
         const parts = group.name.split('/');
         const displayName = isDefault ? t('shared_string_my_favorites') : parts[parts.length - 1];
 
@@ -33,7 +34,7 @@ export function buildGroupTree(groups, t) {
 
     // second pass — create virtual entries for any missing intermediate folders
     for (const group of sorted) {
-        if (group.name === FavoritesManager.DEFAULT_GROUP_NAME || !group.name.includes('/')) {
+        if (isDefaultFavGroup(group) || !group.name.includes('/')) {
             continue;
         }
         const parts = group.name.split('/');
@@ -56,14 +57,14 @@ export function buildGroupTree(groups, t) {
     // third pass — attach subfolders to their parents
     const rootFolders = [];
     const allNames = Object.keys(folderMap).sort((a, b) => {
-        if (a === FavoritesManager.DEFAULT_GROUP_NAME) return -1;
-        if (b === FavoritesManager.DEFAULT_GROUP_NAME) return 1;
+        if (isDefaultFavGroup(folderMap[a].group)) return -1;
+        if (isDefaultFavGroup(folderMap[b].group)) return 1;
         return collator.compare(a, b);
     });
 
     for (const name of allNames) {
         const folder = folderMap[name];
-        if (name === FavoritesManager.DEFAULT_GROUP_NAME || !name.includes('/')) {
+        if (isDefaultFavGroup(folder.group) || !name.includes('/')) {
             rootFolders.push(folder);
         } else {
             const parts = name.split('/');

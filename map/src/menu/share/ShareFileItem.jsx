@@ -9,7 +9,11 @@ import { ReactComponent as FolderHiddenIcon } from '../../assets/icons/ic_action
 import { ReactComponent as FolderIcon } from '../../assets/icons/ic_action_folder.svg';
 import AppContext from '../../context/AppContext';
 import { FAVOURITES, GPX } from '../../manager/GlobalManager';
-import FavoritesManager, { findFavGroupByFileName, getSize } from '../../manager/FavoritesManager';
+import FavoritesManager, {
+    findFavGroupByFileName,
+    getFavPointsGroupKey,
+    getSize,
+} from '../../manager/FavoritesManager';
 import { useTranslation } from 'react-i18next';
 import DividerWithMargin from '../../frame/components/dividers/DividerWithMargin';
 import { convertMeters, getLargeLengthUnit, LARGE_UNIT } from '../settings/units/UnitsConverter';
@@ -45,7 +49,7 @@ export default function ShareFileItem({ file, type }) {
                                             favGroup.name &&
                                             FavoritesManager.getColorGroup({
                                                 favoritesGroup: favGroup,
-                                                groupName: favGroup.name,
+                                                groupName: getFavPointsGroupKey(favGroup),
                                             }),
                                     }}
                                 />
