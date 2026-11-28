@@ -102,18 +102,19 @@ export function addRoutedSegment({ points, newPoint, geoRouter }) {
     return [firstPoint, lastPoint, newPoint];
 }
 
-export function getLastSegmentGeoProfile(points, geoRouter) {
-    if (points?.length > 1) {
-        const beforeLast = points[points.length - 2];
-        if (beforeLast?.geoProfile) {
-            return geoRouter.getGeoProfile(beforeLast.geoProfile);
-        }
-        if (beforeLast?.profile && beforeLast.profile !== PROFILE_GAP) {
-            return geoRouter.getGeoProfile({ profile: beforeLast.profile });
-        }
+export function getLastSegmentStart(points) {
+    const beforeLast = points?.length > 1 ? points[points.length - 2] : null;
+    if (beforeLast?.geoProfile || (beforeLast?.profile && beforeLast.profile !== PROFILE_GAP)) {
+        return beforeLast;
     }
 
     return null;
+}
+
+export function getLastSegmentGeoProfile(points, geoRouter) {
+    const start = getLastSegmentStart(points);
+
+    return start && geoRouter.getGeoProfile(start.geoProfile ?? { profile: start.profile });
 }
 
 export function createLocalTrack({ ctx, map, file }) {

@@ -30,6 +30,7 @@ import {
     createLocalTrack,
     createNewPoint,
     getLastSegmentGeoProfile,
+    getLastSegmentStart,
     initNewSelectedTrack,
     isAddPointByClick,
     isNewTrack,
@@ -585,14 +586,15 @@ export default function LocalClientTrackLayer() {
         TracksManager.updateState(ctx);
     }
 
-    const lastSegmentGeoProfile = getLastSegmentGeoProfile(ctxTrack.points, geoRouter);
+    const lastSegmentStart = getLastSegmentStart(ctxTrack.points);
 
     useEffect(() => {
         // useful with Undo/Redo
+        const lastSegmentGeoProfile = getLastSegmentGeoProfile(ctxTrack.points, geoRouter);
         if (lastSegmentGeoProfile) {
             geoRouter.onGeoProfile(lastSegmentGeoProfile);
         }
-    }, [JSON.stringify(lastSegmentGeoProfile)]);
+    }, [JSON.stringify(lastSegmentStart?.geoProfile ?? lastSegmentStart?.profile)]);
 
     return (
         openAddRoutingToTrackDialog && (
