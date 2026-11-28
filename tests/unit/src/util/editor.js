@@ -22,8 +22,8 @@ export const map = {
 };
 
 /** Drag event of the marker of `point`: the marker holds the id of its point. */
-export const createDragEvent = (point, options = { pointId: point.id }) => ({
-    target: { _latlng: L.latLng(point.lat, point.lng), options },
+export const createDragEvent = (point) => ({
+    target: { _latlng: L.latLng(point.lat, point.lng), options: { pointId: point.id } },
 });
 
 /** ctx of the editor with the track drawn on its layers, as the editor holds it after opening. */
@@ -58,7 +58,7 @@ export function markerOf(ctx, point) {
 /** Drags point `index` of the open track along its meridian to `lat`, as the marker of the point does. */
 export function dragPoint(ctx, index, lat) {
     const track = ctx.selectedGpxFile;
-    const marker = new EditableMarker(null, ctx);
+    const marker = new EditableMarker(ctx);
     marker.dragStartPoint(createDragEvent(track.points[index]), track);
     marker.dragEndPoint(createDragEvent({ lat, lng: track.points[index].lng }), track);
 }

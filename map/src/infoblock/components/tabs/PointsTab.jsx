@@ -34,8 +34,6 @@ const PointsTab = ({ width }) => {
     const [measuredRowHeight, setMeasuredRowHeight] = useState(null);
     const [visibleRows, setVisibleRows] = useState({ first: 0, last: FIRST_ROWS - 1 });
 
-    const rowHeight = measuredRowHeight ?? ESTIMATED_ROW_HEIGHT;
-
     function showPointOnMap(point) {
         ctx.setSelectedGpxFile((prevState) => ({
             ...prevState,
@@ -69,7 +67,7 @@ const PointsTab = ({ width }) => {
                 scrollTop: scroller.scrollTop,
                 viewHeight: scroller.clientHeight,
                 listTop: list.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop,
-                rowHeight,
+                rowHeight: getRowHeight(),
                 count: getPoints().length,
                 overscan: ROWS_OVERSCAN,
             });
@@ -79,12 +77,15 @@ const PointsTab = ({ width }) => {
         scroller.addEventListener('scroll', showRowsInView);
         const observer = new ResizeObserver(showRowsInView);
         observer.observe(scroller);
+        if (listRef.current) {
+            observer.observe(listRef.current);
+        }
 
         return () => {
             scroller.removeEventListener('scroll', showRowsInView);
             observer.disconnect();
         };
-    }, [scrollerRef, rowHeight, getPoints().length]);
+    }, [scrollerRef, getRowHeight(), getPoints().length]);
 
     useLayoutEffect(() => {
         const rendered = rowsRef.current?.childElementCount;
@@ -106,6 +107,10 @@ const PointsTab = ({ width }) => {
         return ctx.selectedGpxFile.points ?? []; // distance is already exist
     }
 
+    function getRowHeight() {
+        return measuredRowHeight ?? ESTIMATED_ROW_HEIGHT;
+    }
+
     function deleteAllPoints() {
         confirm({
             ctx,
@@ -116,7 +121,7 @@ const PointsTab = ({ width }) => {
 
     function renderListRow(point, index, draggingId) {
         if (draggingId === getDraggableId(index)) {
-            return <div key={index} style={{ height: rowHeight }} />;
+            return <div key={index} style={{ height: getRowHeight() }} />;
         }
 
         return (
@@ -215,7 +220,7 @@ const PointsTab = ({ width }) => {
                                     }}
                                     {...provided.droppableProps}
                                 >
-                                    <div style={{ height: firstRow * rowHeight }} />
+                                    <div style={{ height: firstRow * getRowHeight() }} />
                                     <div ref={rowsRef}>
                                         {getPoints()
                                             .slice(firstRow, lastRow + 1)
@@ -225,7 +230,8 @@ const PointsTab = ({ width }) => {
                                     </div>
                                     <div
                                         style={{
-                                            height: (rowsBelow + (snapshot.isUsingPlaceholder ? 1 : 0)) * rowHeight,
+                                            height:
+                                                (rowsBelow + (snapshot.isUsingPlaceholder ? 1 : 0)) * getRowHeight(),
                                         }}
                                     />
                                 </div>

@@ -163,7 +163,7 @@ export function redrawPointMarkers({ map, ctx, points, trackLayers, drawn = getD
         items: getPointsWithMarkers(map, points, dragged),
         keyOf: ({ id }) => id,
         isDrawn: (marker, point) => TracksManager.isEqualPoints(marker.options.pointLatLng, point),
-        create: (point) => createEditableMarker({ map, ctx, point }),
+        create: (point) => createEditableMarker({ ctx, point }),
     });
 }
 
@@ -248,11 +248,11 @@ function createEditableLine({ map, ctx, line }) {
     return new EditablePolyline(map, ctx, polyline).create();
 }
 
-function createEditableMarker({ map, ctx, point }) {
+function createEditableMarker({ ctx, point }) {
     const pointLatLng = new L.LatLng(point.lat, point.lng);
     const options = { isRoutePoint: true, pointId: point.id, pointLatLng, type: LOCAL_TRACKS_LAYERS_ID };
 
-    return new EditableMarker(map, ctx, pointLatLng, options).create();
+    return new EditableMarker(ctx, pointLatLng, options).create();
 }
 
 function getPointsWithMarkers(map, points, dragged) {
@@ -273,7 +273,7 @@ function createEditableLayers(map, ctx, ctxTrack, layers) {
     layers.forEach((layer) => {
         if (layer instanceof L.Marker) {
             if (!layer.options.wpt || isWptGroupShown(pointsGroups, layer.options.category ?? '')) {
-                res.push(new EditableMarker(map, ctx, layer.getLatLng(), layer.options).create());
+                res.push(new EditableMarker(ctx, layer.getLatLng(), layer.options).create());
             }
         }
         map.removeLayer(layer);

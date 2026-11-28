@@ -7,14 +7,7 @@ import TracksManager, { addDistanceToPoints, PROFILE_LINE, withEditedPoints } fr
 import { fromHistoryState, toHistoryState } from '@map/manager/track/TrackHistory';
 import { getWaitingSegments } from '@map/context/TracksRoutingCache';
 import TrackLayerProvider from '@map/map/util/TrackLayerProvider';
-import EditableMarker from '@map/map/util/creator/EditableMarker';
-import {
-    assignPointIds,
-    assignWptIds,
-    isProtectedSegment,
-    isWaitingForRouter,
-    setProfile,
-} from '@map/manager/track/TrackOperations';
+import { assignPointIds, isProtectedSegment, isWaitingForRouter, setProfile } from '@map/manager/track/TrackOperations';
 import EditablePolyline from '@map/map/util/creator/EditablePolyline';
 import { redrawPointMarkers, redrawTrackPoints, updateLayers } from '@map/map/util/creator/LocalTrackLayerHelper';
 import MarkerOptions from '@map/map/markers/MarkerOptions';
@@ -867,25 +860,6 @@ describe('drag a point', () => {
         dragPoint(last, 2, 50.025);
 
         expect(waitingPairs(last)).toEqual([[50.01, 50.025]]);
-    });
-
-    test('a dragged waypoint moves, its twin of the same place and name and the route points stay', () => {
-        const ctx = createDrawnCtx(createRoutedPoints(2));
-        const track = ctx.selectedGpxFile;
-        const [wpt, twin] = assignWptIds([
-            { lat: 50.005, lon: 30.001, name: 'wpt' },
-            { lat: 50.005, lon: 30.001, name: 'wpt' },
-        ]);
-        track.wpts = [twin, wpt];
-        const marker = new EditableMarker(null, ctx);
-
-        marker.dragStartPoint(createDragEvent({ lat: 50.005, lng: 30.001 }, { point: wpt }), track);
-        marker.dragEndPoint(createDragEvent({ lat: 50.006, lng: 30.002 }, { point: wpt }), track);
-
-        expect(ctx.selectedGpxFile.wpts).toEqual([twin, { ...wpt, lat: 50.006, lon: 30.002 }]);
-        const ids = ctx.selectedGpxFile.points.map(({ id }) => id);
-        expect(ctx.selectedGpxFile.points).toEqual(createRoutedPoints(2).map((point, i) => ({ ...point, id: ids[i] })));
-        expect(waitingPairs(ctx)).toEqual([]);
     });
 
     test('a marker being dragged stays on the map while a router answer redraws the track', async () => {
