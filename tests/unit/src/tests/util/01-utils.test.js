@@ -6,7 +6,6 @@ import {
     formatMeters,
     getBearing,
     getDistance,
-    getVisibleRange,
     isToday,
     isYesterday,
     quickNaNfix,
@@ -215,17 +214,5 @@ describe('isToday / isYesterday', () => {
         const weekAgo = new Date(Date.now() - 7 * DAY_MS);
         expect(isToday(weekAgo)).toBe(false);
         expect(isYesterday(weekAgo)).toBe(false);
-    });
-});
-
-describe('getVisibleRange', () => {
-    test('the rows in view and a margin around them, never outside the list', () => {
-        const range = (scrollTop, count = 1000) =>
-            getVisibleRange({ scrollTop, viewHeight: 600, listTop: 100, rowHeight: 60, count, overscan: 10 });
-
-        expect(range(0)).toEqual({ first: 0, last: 19 });
-        expect(range(3100)).toEqual({ first: 40, last: 70 });
-        expect(range(59500)).toEqual({ first: 980, last: 999 });
-        expect(range(0, 0)).toEqual({ first: 0, last: -1 });
     });
 });

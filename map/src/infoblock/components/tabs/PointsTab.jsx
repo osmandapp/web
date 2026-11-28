@@ -9,7 +9,7 @@ import {
     MenuItem,
     Typography,
 } from '@mui/material';
-import React, { useContext, useState, useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useContext, useState, useCallback } from 'react';
 import { Cancel, ViewHeadline } from '@mui/icons-material';
 import AppContext from '../../../context/AppContext';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
@@ -17,22 +17,15 @@ import PointManager from '../../../manager/PointManager';
 import { confirm } from '../../../dialogs/GlobalConfirmationDialog';
 import isEmpty from 'lodash-es/isEmpty';
 import { TabScrollerContext } from './TabPanels';
-import { getVisibleRange } from '../../../util/Utils';
+import VirtualizedList from '../../../frame/components/VirtualizedList';
 
-const ROWS_OVERSCAN = 10;
-const FIRST_ROWS = 50;
 const ESTIMATED_ROW_HEIGHT = 60;
 
 const PointsTab = ({ width }) => {
     const ctx = useContext(AppContext);
     const scrollerRef = useContext(TabScrollerContext);
 
-    const listRef = useRef(null);
-    const rowsRef = useRef(null);
-
     const [openPointAlert, setOpenPointAlert] = useState(true);
-    const [measuredRowHeight, setMeasuredRowHeight] = useState(null);
-    const [visibleRows, setVisibleRows] = useState({ first: 0, last: FIRST_ROWS - 1 });
 
     function showPointOnMap(point) {
         ctx.setSelectedGpxFile((prevState) => ({
@@ -53,48 +46,6 @@ const PointsTab = ({ width }) => {
         [ctx.trackRouter, ctx.selectedGpxFile]
     );
 
-    useEffect(() => {
-        const scroller = scrollerRef?.current;
-        if (!scroller) {
-            return;
-        }
-        const showRowsInView = () => {
-            const list = listRef.current;
-            if (!list?.offsetParent) {
-                return;
-            }
-            const range = getVisibleRange({
-                scrollTop: scroller.scrollTop,
-                viewHeight: scroller.clientHeight,
-                listTop: list.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop,
-                rowHeight: getRowHeight(),
-                count: getPoints().length,
-                overscan: ROWS_OVERSCAN,
-            });
-            setVisibleRows((prev) => (prev.first === range.first && prev.last === range.last ? prev : range));
-        };
-        showRowsInView();
-        scroller.addEventListener('scroll', showRowsInView);
-        const observer = new ResizeObserver(showRowsInView);
-        observer.observe(scroller);
-        if (listRef.current) {
-            observer.observe(listRef.current);
-        }
-
-        return () => {
-            scroller.removeEventListener('scroll', showRowsInView);
-            observer.disconnect();
-        };
-    }, [scrollerRef, getRowHeight(), getPoints().length]);
-
-    useLayoutEffect(() => {
-        const rendered = rowsRef.current?.childElementCount;
-        const height = rendered > 0 ? rowsRef.current.getBoundingClientRect().height / rendered : 0;
-        if (measuredRowHeight === null && height > 0) {
-            setMeasuredRowHeight(height);
-        }
-    }, [measuredRowHeight, visibleRows, getPoints().length]);
-
     const getItemStyle = (isDragging, draggableStyle) => ({
         userSelect: 'none',
         background: isDragging ? '#fbc73a' : 'white',
@@ -107,10 +58,6 @@ const PointsTab = ({ width }) => {
         return ctx.selectedGpxFile.points ?? []; // distance is already exist
     }
 
-    function getRowHeight() {
-        return measuredRowHeight ?? ESTIMATED_ROW_HEIGHT;
-    }
-
     function deleteAllPoints() {
         confirm({
             ctx,
@@ -120,8 +67,8 @@ const PointsTab = ({ width }) => {
     }
 
     function renderListRow(point, index, draggingId) {
-        if (draggingId === getDraggableId(index)) {
-            return <div key={index} style={{ height: getRowHeight() }} />;
+        if (!point || draggingId === getDraggableId(index)) {
+            return null;
         }
 
         return (
@@ -174,10 +121,6 @@ const PointsTab = ({ width }) => {
         );
     }
 
-    const lastRow = Math.min(visibleRows.last, getPoints().length - 1);
-    const firstRow = Math.min(visibleRows.first, lastRow + 1);
-    const rowsBelow = getPoints().length - 1 - lastRow;
-
     return (
         <>
             {openPointAlert &&
@@ -213,26 +156,14 @@ const PointsTab = ({ width }) => {
                     <Box sx={{ mt: 2 }} minWidth={width}>
                         <Droppable droppableId="droppable-1" mode="virtual" renderClone={renderClone}>
                             {(provided, snapshot) => (
-                                <div
-                                    ref={(el) => {
-                                        provided.innerRef(el);
-                                        listRef.current = el;
-                                    }}
-                                    {...provided.droppableProps}
-                                >
-                                    <div style={{ height: firstRow * getRowHeight() }} />
-                                    <div ref={rowsRef}>
-                                        {getPoints()
-                                            .slice(firstRow, lastRow + 1)
-                                            .map((point, i) =>
-                                                renderListRow(point, firstRow + i, snapshot.draggingFromThisWith)
-                                            )}
-                                    </div>
-                                    <div
-                                        style={{
-                                            height:
-                                                (rowsBelow + (snapshot.isUsingPlaceholder ? 1 : 0)) * getRowHeight(),
-                                        }}
+                                <div ref={provided.innerRef} {...provided.droppableProps}>
+                                    <VirtualizedList
+                                        items={snapshot.isUsingPlaceholder ? [...getPoints(), null] : getPoints()}
+                                        renderItem={(point, index) =>
+                                            renderListRow(point, index, snapshot.draggingFromThisWith)
+                                        }
+                                        estimatedItemHeight={ESTIMATED_ROW_HEIGHT}
+                                        scrollerRef={scrollerRef}
                                     />
                                 </div>
                             )}

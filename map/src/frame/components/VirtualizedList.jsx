@@ -14,6 +14,10 @@ import styles from './virtualizedList.module.css';
 const DEFAULT_ESTIMATED_ITEM_HEIGHT = 56;
 const DEFAULT_OVERSCAN_COUNT = 3;
 
+const getIndexKey = (item, index) => index;
+
+const FOLLOW_SCROLLER_STYLE = { overflowX: 'visible', overflowY: 'visible', willChange: 'auto' };
+
 const VirtualizedList = forwardRef(function VirtualizedList(
     {
         items,
@@ -22,20 +26,24 @@ const VirtualizedList = forwardRef(function VirtualizedList(
         width = '100%',
         itemSize = undefined,
         estimatedItemHeight = DEFAULT_ESTIMATED_ITEM_HEIGHT,
-        getItemKey = (item, index) => index,
+        getItemKey = getIndexKey,
         overscanCount = DEFAULT_OVERSCAN_COUNT,
         style = undefined,
         overlayIndex = undefined,
         overlayContent = undefined,
         fillHeight = false,
+        scrollerRef = undefined,
     },
     ref
 ) {
     const listRef = useRef(null);
     const outerElRef = useRef(null);
     const heightsRef = useRef({});
+    const measuredRef = useRef({ sum: 0, count: 0 });
     const [contentHeight, setContentHeight] = useState(0);
     const [overlayTop, setOverlayTop] = useState(null);
+    const [scrollerHeight, setScrollerHeight] = useState(0);
+    const [measureVersion, setMeasureVersion] = useState(0);
 
     const rows = items ?? [];
     const autoMeasure = itemSize == null;
@@ -56,7 +64,7 @@ const VirtualizedList = forwardRef(function VirtualizedList(
                 return itemSize(index);
             }
 
-            return heightsRef.current[getItemKey(rows[index], index)] ?? estimatedItemHeight;
+            return heightsRef.current[getItemKey(rows[index], index)] ?? getEstimatedItemHeight();
         },
         [itemSize, getItemKey, rows, estimatedItemHeight]
     );
@@ -98,27 +106,66 @@ const VirtualizedList = forwardRef(function VirtualizedList(
     const setRowHeight = useCallback(
         (index, key, measured) => {
             if (measured > 0 && heightsRef.current[key] !== measured) {
+                const previous = heightsRef.current[key];
+                const before = measuredRef.current;
+                if (scrollerRef) {
+                    measuredRef.current = {
+                        sum: before.sum + measured - (previous ?? 0),
+                        count: before.count + (previous === undefined ? 1 : 0),
+                    };
+                }
                 heightsRef.current[key] = measured;
-                listRef.current?.resetAfterIndex(index);
-                recomputeContentHeight();
+                listRef.current?.resetAfterIndex(getAverage(before) === getAverage(measuredRef.current) ? index : 0);
+                setMeasureVersion((version) => version + 1);
             }
         },
-        [recomputeContentHeight]
+        [scrollerRef]
     );
 
     useEffect(() => {
         listRef.current?.resetAfterIndex(0);
-        recomputeContentHeight();
-    }, [rows, recomputeContentHeight]);
+    }, [rows]);
+
+    useLayoutEffect(recomputeContentHeight, [recomputeContentHeight, measureVersion]);
 
     useLayoutEffect(() => {
         recomputeOverlayTop();
     }, [recomputeOverlayTop]);
 
+    // With scrollerRef an outer block scrolls, not the list: tab panels collapse their header on that scroll.
+    useLayoutEffect(() => {
+        const scroller = scrollerRef?.current;
+        const outer = outerElRef.current;
+        if (!scroller || !outer) {
+            return;
+        }
+        const followScroller = () => {
+            if (!outer.offsetParent) {
+                return;
+            }
+            setScrollerHeight(scroller.clientHeight);
+            listRef.current?.scrollTo(scroller.scrollTop - getListTop(outer, scroller));
+        };
+        followScroller();
+        scroller.addEventListener('scroll', followScroller);
+        const observer = new ResizeObserver(followScroller);
+        observer.observe(scroller);
+        observer.observe(outer);
+
+        return () => {
+            scroller.removeEventListener('scroll', followScroller);
+            observer.disconnect();
+        };
+    }, [scrollerRef]);
+
     const itemData = useMemo(
         () => ({ rows, renderItem, getItemKey, setRowHeight, autoMeasure }),
         [rows, renderItem, getItemKey, setRowHeight, autoMeasure]
     );
+
+    function getEstimatedItemHeight() {
+        return getAverage(measuredRef.current) ?? estimatedItemHeight;
+    }
 
     return (
         <div className={styles.container}>
@@ -126,14 +173,18 @@ const VirtualizedList = forwardRef(function VirtualizedList(
                 ref={listRef}
                 outerRef={outerElRef}
                 onScroll={overlayIndex != null ? recomputeOverlayTop : undefined}
-                height={safeHeight}
+                height={scrollerRef ? scrollerHeight : safeHeight}
                 width={width}
                 itemCount={rows.length}
                 itemSize={resolveItemSize}
                 overscanCount={overscanCount}
                 itemData={itemData}
                 itemKey={(index, data) => data.getItemKey(data.rows[index], index)}
-                style={{ overflowX: 'hidden', ...style }}
+                style={{
+                    overflowX: 'hidden',
+                    ...style,
+                    ...(scrollerRef && { ...FOLLOW_SCROLLER_STYLE, height: measuredContent }),
+                }}
             >
                 {VirtualizedRow}
             </VariableSizeList>
@@ -175,6 +226,14 @@ function VirtualizedRow({ data, index, style }) {
             </div>
         </div>
     );
+}
+
+function getAverage({ sum, count }) {
+    return count > 0 ? sum / count : null;
+}
+
+function getListTop(outer, scroller) {
+    return outer.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop;
 }
 
 export default VirtualizedList;
